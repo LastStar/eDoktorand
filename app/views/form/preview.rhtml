@@ -11,7 +11,7 @@
   </p> 
   <hr/>
   <p>
-  Adresa trvalého bydli¹tì:&nbsp;<b class="info"><%= @candidate.street + ", " + @candidate.city + ", " + @candidate.zip %></b><br /> 
+  Adresa trvalého bydli¹tì:&nbsp;<b class="info"><%= @candidate.street + " " +  @candidate.number.to_s + ", " + @candidate.city + ", " + @candidate.zip %></b><br /> 
   <% unless @candidate.phone.empty? %>
   <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon:&nbsp;<b class="info"><%= @candidate.phone %></b><br /> 
   <% end %>
@@ -20,7 +20,7 @@
   <hr/>
   <% unless @candidate.postal_street.empty? %>
   <p>
-  Korespondenèní adresa:&nbsp;<b class="info"><%= @candidate.postal_street + ", " + @candidate.postal_city + ", " + @candidate.postal_zip %></b><br /> 
+  Korespondenèní adresa:&nbsp;<b class="info"><%= @candidate.postal_street + " " + @candidate.postal_number.to_s + ", " + @candidate.postal_city + ", " + @candidate.postal_zip %></b><br /> 
   </p> 
   <hr/>
   <% end %>

@@ -16,6 +16,7 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :studied_branch, :message => "Obor nesmí bıt prázdnı"
   validates_presence_of :birth_number, :message => "Rodné èíslo nesmí bıt prázdné"
   validates_presence_of :title, :message => "Titul nesmí bıt prázdnı"
+  validates_presence_of :number, :message => "Èislo popisné nesmí bıt prázdné"
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, 
   :on => :create, :message => "Email nemá správnı formát"
   # validates_format_of :birth_number, :with => /^[\d]{6}\/?[\d]{4}/, 
