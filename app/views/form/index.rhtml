@@ -4,6 +4,9 @@
     <li>
       <a onClick="show(<%= f.id %>)">Fakulta: <%= f.name %></a>
       <ol class="hidden" id="<%= f.id %>">
+        <li>
+        <a href="/vyberove_rizeni.pdf" >Dokument o výbìrovém øízení</a >
+        </li>
       <% for c in f.coridors do %>
         <li>
         <%= link_to c.name, :action => "details", :id => c.id %>
