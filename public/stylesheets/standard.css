@@ -171,9 +171,10 @@ input, select  {
   margin: 5px 0 5px 0;
 } 
 fieldset {
-  margin-left: 10%;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid #80BCFF;
-  width: 43em;
+  width: 41em;
 }
 legend {
   padding: 1px;
