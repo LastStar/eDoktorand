@@ -50,6 +50,19 @@ CREATE TABLE `faculties` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL auto_increment,
+  `login` varchar(80) character set latin1 collate latin1_bin default NULL,
+  `password` varchar(40) character set latin1 collate latin1_bin default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `login` (`login`),
+  KEY `password` (`password`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

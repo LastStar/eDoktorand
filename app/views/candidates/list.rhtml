@@ -1,0 +1,24 @@
+<h1>Listing candidates</h1>
+
+<table>
+  <tr>
+<% for column in Candidate.content_columns %>
+    <th><%= column.human_name %></th>
+<% end %>
+  </tr>
+  
+<% for candidate in @candidates %>
+  <tr>
+  <% for column in Candidate.content_columns %>
+    <td><%=h candidate.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => candidate.id %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => candidate.id %></td>
+    <td><%= link_to 'Destroy', :action => 'destroy', :id => candidate.id %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New candidate', :action => 'new' %>

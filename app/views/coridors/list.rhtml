@@ -1,0 +1,24 @@
+<h1>Listing coridors</h1>
+
+<table>
+  <tr>
+<% for column in Coridor.content_columns %>
+    <th><%= column.human_name %></th>
+<% end %>
+  </tr>
+  
+<% for coridor in @coridors %>
+  <tr>
+  <% for column in Coridor.content_columns %>
+    <td><%=h coridor.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => coridor.id %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => coridor.id %></td>
+    <td><%= link_to 'Destroy', :action => 'destroy', :id => coridor.id %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New coridor', :action => 'new' %>
