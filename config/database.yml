@@ -1,9 +1,9 @@
 development:
   adapter: mysql
-  database: rails_development
+  database: phdstudy_development
   host: localhost
   username: root
-  password: 
+  password: r00t1k
 
 test:
   adapter: mysql
