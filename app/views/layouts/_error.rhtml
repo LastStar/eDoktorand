@@ -1,0 +1,13 @@
+<% if @flash['error'] %>
+<div id='error'>
+Error:
+<%= @flash['error'] %>
+<% if @test_term && !@test_term.errors.empty? %>
+<ul>
+<% @test_term.errors.each_full { |message| %>
+     <li><%= message %></li>
+<% } %>
+</ul>
+<% end %>
+</div>
+<% end %>

@@ -1,0 +1,23 @@
+  <% unless @faculties.empty? %>
+  <ul>
+    <% for f in @faculties do %>
+    <li class="faculties">
+      <a onClick="show(<%= f.id %>)">Fakulta: <%= f.name %></a>
+      <ol class="hidden" id="<%= f.id %>">
+      <% for c in f.coridors do %>
+        <li class="coridors">
+        <%= link_to c.name, :action => "details", :id => c.id %>
+        </li>
+      <% end %>
+      </ol>
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+<h3>Error!</h3>
+<% end %>
+<script>
+function show(id) {
+  document.getElementById(id).style.display = 'block';
+}
+</script>

@@ -1,0 +1,39 @@
+  <p>
+  Jméno a pøíjmení:&nbsp;<b class="info"><%= @candidate.name + " " + @candidate.last_name %></b><br /> 
+  Datum a místo narození:&nbsp;<b class="info"><%= @candidate.birth_on.strftime("%d. %m. %Y") + " " + @candidate.birth_at %></b><br /> 
+  Rodné èíslo:&nbsp;<b class="info"><%= @candidate.birth_number %></b><br />  
+  Státní pøíslu¹nost:&nbsp;<b class="info"><%= @candidate.state %></b><br /> 
+  </p> 
+  <hr/>
+  <p>
+  Bydli¹tì trvalé:&nbsp;<b class="info"><%= @candidate.street + ", " + @candidate.city + ", " + @candidate.zip %></b><br /> 
+  telefon:&nbsp;<b class="info"><%= @candidate.phone %></b><br /> 
+  email:&nbsp;<b class="info"><%= @candidate.email.to_s %></b><br />
+  </p> 
+  <hr/>
+  <p>
+  V© vzdìlání (¹kola, fakulta):&nbsp;<b class="info"><%= @candidate.studied %></b><br />
+  studijní obor:&nbsp;<b class="info"><%= @candidate.studied_branch %></b><br />
+  datum státní závìreènì zkou¹ky:&nbsp;<b class="info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></b><br />
+  </p> 
+  <hr/>
+  <p>
+  Dosavadní praxe:&nbsp;<b class="info"><%= @candidate.practice %></b><br /> 
+  Zamìstnavatel, adresa:&nbsp;<b class="info"><%= @candidate.employer + " " + @candidate.employer_address %></b> <br /> 
+  telefon, email: <b class="info"><%= @candidate.employer_phone + ', ' + @candidate.employer_email %></b><br />  
+  pracovní zaøazení:&nbsp;<b class="info"><%= @candidate.position %></b> 
+  </p> 
+  <hr/>
+  <p>
+  <b class="info">Pøihla¹uji se ke studiu v doktorském studijním programu.</b><br /> 
+  Studijni obor:&nbsp;<b class="info"><%= @candidate.coridor.name %></b> <br /> 
+  Katedra:&nbsp;<b class="info"><%= @candidate.department.name %></b><br /> 
+  Forma studia:&nbsp;<b class="info"><%= @candidate.study.name %></b><br /> 
+  Jazyky pøíjímacích zkou¹ek:&nbsp;<b class="info"><%= Language.find(@candidate.language1).name + ', ' + Language.find(@candidate.language2).name %></b>
+  </p> 
+  <hr/>
+  <p>Datum: <b class="info"><%= Date.today.strftime("%d. %m. %Y") %></b></p>
+  <hr/>
+  <p>
+  Jestli¾e tyto informace souhlasí vytisknìte si následující stránku a spolu s vyti¹tìným ¾ivotopisem, fotokopiemi dokladù o V© vzdìlání (diplom, osvìdèení o státní zkou¹ce), dokladu o zaplacení poplatku je za¹lete na adresu oddìlení pro vìdu a výkum na adresu:
+  </p>

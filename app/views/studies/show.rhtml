@@ -1,0 +1,8 @@
+<% for column in Study.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%= @study.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @study.id %> |
+<%= link_to 'Back', :action => 'list' %>

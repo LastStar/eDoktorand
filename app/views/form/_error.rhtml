@@ -1,0 +1,13 @@
+<% if @flash['error'] %>
+<div id='error'>
+Chyba:
+<%= @flash['error'] %>
+<% if @candidate && !@candidate.errors.empty? %>
+<ul>
+<% @candidate.errors.each { |attr, message| %>
+     <li><%= message %></li>
+<% } %>
+</ul>
+<% end %>
+</div>
+<% end %>

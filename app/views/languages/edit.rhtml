@@ -1,0 +1,14 @@
+<h1>Editing language</h1>
+
+<%= error_messages_for 'language' %>
+<!--[form:language]-->
+<%= start_form_tag :action => 'update' %>
+<%= hidden_field 'language', 'id' %>
+<p><label for="language_name">Name</label><br /><%= text_field 'language', 'name'  %></p>
+<input type="submit" value="Update" />
+<%= end_form_tag %>
+<!--[eoform:language]-->
+
+
+<%= link_to 'Show', :action => 'show', :id => @language.id %> |
+<%= link_to 'Back', :action => 'list' %>

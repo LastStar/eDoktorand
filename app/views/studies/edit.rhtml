@@ -1,0 +1,14 @@
+<h1>Editing study</h1>
+
+<%= error_messages_for 'study' %>
+<!--[form:study]-->
+<%= start_form_tag :action => 'update' %>
+<%= hidden_field 'study', 'id' %>
+<p><label for="study_name">Name</label><br /><%= text_field 'study', 'name'  %></p>
+<input type="submit" value="Update" />
+<%= end_form_tag %>
+<!--[eoform:study]-->
+
+
+<%= link_to 'Show', :action => 'show', :id => @study.id %> |
+<%= link_to 'Back', :action => 'list' %>
