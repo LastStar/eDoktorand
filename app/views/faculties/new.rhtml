@@ -4,7 +4,6 @@
 <!--[form:faculty]-->
 <%= start_form_tag :action => 'create' %>
 <%= hidden_field 'faculty', 'id' %>
-<p><label for="faculty_int">Int</label><br /><%= text_field 'faculty', 'int'  %></p>
 <p><label for="faculty_name">Name</label><br /><%= text_field 'faculty', 'name'  %></p>
 <input type="submit" value="Create" />
 <%= end_form_tag %>

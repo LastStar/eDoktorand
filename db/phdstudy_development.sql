@@ -21,7 +21,6 @@ CREATE TABLE `candidates` (
   `name` varchar(50) default NULL,
   `last_name` varchar(50) default NULL,
   `coridor_id` int(11) default NULL,
-  `faculty_id` varchar(50) default NULL,
   `study_average` float default NULL,
   PRIMARY KEY  (`id`),
   KEY `name` (`name`),
@@ -35,6 +34,7 @@ CREATE TABLE `candidates` (
 CREATE TABLE `coridors` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(50) default NULL,
+  `faculty_id` varchar(50) default NULL,
   PRIMARY KEY  (`id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -44,9 +44,9 @@ CREATE TABLE `coridors` (
 --
 
 CREATE TABLE `faculties` (
-  `int` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL auto_increment,
   `name` varchar(50) default NULL,
-  PRIMARY KEY  (`int`),
+  PRIMARY KEY  (`id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
