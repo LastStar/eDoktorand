@@ -24,7 +24,7 @@ class FormController < ApplicationController
       render_action 'preview'
     else
       @title = "Formuláø pøihlá¹ky - nedostatky"
-      flash['error'] = "Ve vámi zadaných informacích jsou následující chyby"
+      flash.now['error'] = "Ve vámi zadaných informacích jsou následující chyby"
       @action = 'save'
       all_ids
       render_action "details"
