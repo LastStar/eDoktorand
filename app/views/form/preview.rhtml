@@ -7,25 +7,24 @@
   <hr/>
   <p>
   Bydli¹tì trvalé:&nbsp;<b class="info"><%= @candidate.street + ", " + @candidate.city + ", " + @candidate.zip %></b><br /> 
-  telefon:&nbsp;<b class="info"><%= @candidate.phone %></b><br /> 
-  email:&nbsp;<b class="info"><%= @candidate.email.to_s %></b><br />
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon:&nbsp;<b class="info"><%= @candidate.phone %></b><br /> 
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >email:&nbsp;<b class="info"><%= @candidate.email.to_s %></b><br />
   </p> 
   <hr/>
   <p>
   V© vzdìlání (¹kola, fakulta):&nbsp;<b class="info"><%= @candidate.studied %></b><br />
-  studijní obor:&nbsp;<b class="info"><%= @candidate.studied_branch %></b><br />
-  datum státní závìreènì zkou¹ky:&nbsp;<b class="info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></b><br />
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >studijní obor:&nbsp;<b class="info"><%= @candidate.studied_branch %></b><br />
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >datum státní závìreènì zkou¹ky:&nbsp;<b class="info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></b><br />
   </p> 
   <hr/>
   <p>
   Dosavadní praxe:&nbsp;<b class="info"><%= @candidate.practice %></b><br /> 
   Zamìstnavatel, adresa:&nbsp;<b class="info"><%= @candidate.employer + " " + @candidate.employer_address %></b> <br /> 
-  telefon, email: <b class="info"><%= @candidate.employer_phone + ', ' + @candidate.employer_email %></b><br />  
-  pracovní zaøazení:&nbsp;<b class="info"><%= @candidate.position %></b> 
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon, email: <b class="info"><%= @candidate.employer_phone + ', ' + @candidate.employer_email %></b><br />  
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >pracovní zaøazení:&nbsp;<b class="info"><%= @candidate.position %></b> 
   </p> 
   <hr/>
   <p>
-  <b class="info">Pøihla¹uji se ke studiu v doktorském studijním programu.</b><br /> 
   Studijni obor:&nbsp;<b class="info"><%= @candidate.coridor.name %></b> <br /> 
   Katedra:&nbsp;<b class="info"><%= @candidate.department.name %></b><br /> 
   Forma studia:&nbsp;<b class="info"><%= @candidate.study.name %></b><br /> 
@@ -34,6 +33,13 @@
   <hr/>
   <p>Datum: <b class="info"><%= Date.today.strftime("%d. %m. %Y") %></b></p>
   <hr/>
-  <p>
-  Jestli¾e tyto informace souhlasí vytisknìte si následující stránku a spolu s vyti¹tìným ¾ivotopisem, fotokopiemi dokladù o V© vzdìlání (diplom, osvìdèení o státní zkou¹ce), dokladu o zaplacení poplatku je za¹lete na adresu oddìlení pro vìdu a výkum na adresu:
+  <p class='signature'>Podpis:</p>
+  <p class='instruction'>
+  Jestli¾e tyto informace souhlasí vytisknìte si tuto stránku a spolu s vyti¹tìným ¾ivotopisem, fotokopiemi dokladù o V© vzdìlání (diplom, osvìdèení o státní zkou¹ce), dokladu o zaplacení poplatku je za¹lete na adresu oddìlení pro vìdu a výkum na adresu:
+  </p>
+  <p class='instruction'>
+  Pokud nesouhlasí <%= link_to "opravte", :action => 'correct', :id => @candidate.id  %> je prosím.
+  </p>
+  <p class='instruction'>
+  Pokud <%= link_to "ukonèíte", :action => 'finish'   %> práci s aplikací, budete zaregistrován/-a bude Vám odeslán mail se v¹emi potøebnými informacemi.
   </p>

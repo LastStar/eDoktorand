@@ -1,0 +1,22 @@
+h1 {
+  font-size: 18pt;
+}
+.info {
+  position: absolute;
+  left: 20em;
+}
+hr {
+  border: none;
+}
+.instruction {
+  display: none;
+}
+#error {
+  display: none;
+}
+#notice {
+  display: none;
+}
+h1 {
+  display: none;
+}

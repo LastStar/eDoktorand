@@ -1,7 +1,8 @@
 
-<%= form_tag :action => 'preview' %>
+<%= form_tag :action => @action%>
   <fieldset id='personal'>
     <legend>Osobní údaje</legend>
+    <%= hidden_field 'candidate', 'id' %>
     <label for='candidate_name' class='required'>jméno</label>
     <%= text_field 'candidate', 'name', 'size' => '30' %><br /> 
     <label for='candidate_last_name' class='required'>pøíjmení</label>
@@ -59,6 +60,7 @@
   </fieldset>
   <fieldset id='study'>
     <legend>Pøihlá¹ka ke studiu</legend>
+    <%= hidden_field 'candidate', 'coridor_id' %>
     <label for="candidate_department_id" class="required">katedra</label>
     <%= select 'candidate', 'department_id', @department_ids %><br /> 
     <label for="candidate_study_id" class="required">forma studia</label>

@@ -16,8 +16,8 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :birth_number, :message => "Rodné èíslo nesmí bıt prázdné"
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, 
   :on => :create, :message => "Email nemá správnı formát"
-  validates_format_of :birth_number, :with => /^[\d]{6}\/?[\d]{4}/, 
-  :on => :create, :message => "Rodné èíslo nemá správnı formát"
+  # validates_format_of :birth_number, :with => /^[\d]{6}\/?[\d]{4}/, 
+  # :on => :create, :message => "Rodné èíslo nemá správnı formát"
 
   # validates if languages are not same
   def validate

@@ -10,28 +10,62 @@ class FormController < ApplicationController
   end
   # form details  
   def details
-    @candidate = Candidate.new
-    @candidate.coridor = Coridor.find(@params['id'])
-    @candidate.state = "Èeská republika"
-    department_ids(@candidate.coridor.faculty.id)
-    language_ids
-    study_ids
+    @candidate = Candidate.new do |c| 
+      c.coridor = Coridor.find(@params['id'])
+      c.state = "Èeská republika"
+    end
+    @action = 'save'
     @title = "Formuláø pøihlá¹ky na obor " + @candidate.coridor.name
-    flash['notice'] = 'vyplñte prosím v¹echny údaje, jejich¾ popiska je èervená'
+    flash['notice'] = 'Vyplñte prosím v¹echny údaje, jejich¾ popiska je èervená'
+    all_ids
   end
   # preview what has been inserted
-  def preview
+  def save
     @candidate = Candidate.new(@params['candidate'])
-    if @candidate.valid?
-      @title = "Kontrola zadaného"
-      flash['notice'] = "Prohlédnìte si pozornì Vámi zadané informace. Po té postupujte podle návodu na spodu stránky." 
+    if @candidate.save
+      preview
+      render_action 'preview'
     else
       @title = "Formuláø pøihlá¹ky - nedostatky"
       flash['error'] = "Ve vámi zadaných informacích jsou následující chyby"
-      language_ids
-      department_ids(@candidate.coridor.faculty.id)
-      study_ids
+      @action = 'save'
+      all_ids
       render_action "details"
     end
+  end
+  # update candidate
+  def update
+    @candidate = Candidate.find(@params['candidate']['id'])
+    @candidate.attributes = @params['candidate']
+    if @candidate.save
+      preview
+      render_action 'preview'
+    else
+      @title = "Formuláø pøihlá¹ky - nedostatky"
+      flash['error'] = "Ve vámi zadaných informacích jsou následující chyby"
+      @action = 'update'
+      all_ids
+      render_action "details"
+    end
+  end
+  # preview information
+  def preview
+      @title = "Kontrola zadaného"
+      flash['notice'] = "Prohlédnìte si pozornì Vámi zadané informace. Poté postupujte podle návodu ve spodní èásti stránky." 
+  end
+  # correct details
+  def correct
+    @candidate = Candidate.find(@params['id'])
+    flash['notice'] = 'Vyplñte prosím v¹echny údaje, jejich¾ popiska je èervená'
+    @action = 'update'
+    all_ids
+    render_action 'details'
+  end
+  private
+  # get all ids
+  def all_ids
+    department_ids(@candidate.coridor.faculty.id)
+    language_ids
+    study_ids
   end
 end

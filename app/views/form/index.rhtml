@@ -1,11 +1,11 @@
   <% unless @faculties.empty? %>
   <ul>
     <% for f in @faculties do %>
-    <li class="faculties">
+    <li>
       <a onClick="show(<%= f.id %>)">Fakulta: <%= f.name %></a>
       <ol class="hidden" id="<%= f.id %>">
       <% for c in f.coridors do %>
-        <li class="coridors">
+        <li>
         <%= link_to c.name, :action => "details", :id => c.id %>
         </li>
       <% end %>
