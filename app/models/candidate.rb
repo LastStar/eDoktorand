@@ -11,9 +11,11 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :city, :message => "Obec bydli¹tì nesmí bıt prázdná"
   validates_presence_of :zip, :message => "PSÈ bydli¹tì nesmí bıt prázdné"
   validates_presence_of :state, :message => "Státní pøíslu¹nost nesmí bıt prázdná"
-  validates_presence_of :studied, :message => "Univerzita, fakulta nesmí bıt prázdná"
+  validates_presence_of :university, :message => "Univerzita nesmí bıt prázdná"
+  validates_presence_of :faculty, :message => "Fakulta nesmí bıt prázdná"
   validates_presence_of :studied_branch, :message => "Obor nesmí bıt prázdnı"
   validates_presence_of :birth_number, :message => "Rodné èíslo nesmí bıt prázdné"
+  validates_presence_of :title, :message => "Titul nesmí bıt prázdnı"
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, 
   :on => :create, :message => "Email nemá správnı formát"
   # validates_format_of :birth_number, :with => /^[\d]{6}\/?[\d]{4}/, 
@@ -22,5 +24,9 @@ class Candidate < ActiveRecord::Base
   # validates if languages are not same
   def validate
     errors.add_to_base("Jazyky musí bıt rozdílné") if language1 == language2
+  end
+  # finishes candidate
+  def finish!
+    self.finished_on = Time.now
   end
 end

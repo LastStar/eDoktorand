@@ -1,6 +1,3 @@
-h1 {
-  font-size: 18pt;
-}
 .info {
   position: absolute;
   left: 20em;
@@ -18,5 +15,16 @@ hr {
   display: none;
 }
 h1 {
+  display: none;
+}
+.printHeader {
+  display: block;
+  text-align: center;
+}
+.printHeader h3, h4 {
+  display: block;
+  text-align: center;
+}
+#footer {
   display: none;
 }

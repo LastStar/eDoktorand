@@ -2,7 +2,7 @@
 body { margin: 0px; background-color: #E6F2FF; color: black; }
 
 body, p, ol, ul, td {
-    font-family: oldbookman, times, serif;
+    font-family: "lucida", sans-serif;
     font-size:   16px;
     line-height: 18px;
 }
@@ -208,5 +208,11 @@ div.fieldWithErrors label {
   display: none;
 }
 .strut {
+  display: none;
+}
+.printHeader h2, h3, h4 {
+  display: none;
+}
+.printHeader {
   display: none;
 }

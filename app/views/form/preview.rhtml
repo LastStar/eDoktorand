@@ -1,3 +1,8 @@
+  <div class="printHeader">
+    <h3>Èeská zemìdìlská univerzita v Praze</h3>
+    <h3><%= @candidate.coridor.faculty.name %></h3>
+    <h4>Pøihlá¹ka ke studiu v doktorském studijním programu</h4>
+  </div>
   <p>
   Jméno a pøíjmení:&nbsp;<b class="info"><%= @candidate.name + " " + @candidate.last_name %></b><br /> 
   Datum a místo narození:&nbsp;<b class="info"><%= @candidate.birth_on.strftime("%d. %m. %Y") + " " + @candidate.birth_at %></b><br /> 
@@ -6,31 +11,52 @@
   </p> 
   <hr/>
   <p>
-  Bydli¹tì trvalé:&nbsp;<b class="info"><%= @candidate.street + ", " + @candidate.city + ", " + @candidate.zip %></b><br /> 
+  Adresa trvalého bydli¹tì:&nbsp;<b class="info"><%= @candidate.street + ", " + @candidate.city + ", " + @candidate.zip %></b><br /> 
+  <% unless @candidate.phone.empty? %>
   <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon:&nbsp;<b class="info"><%= @candidate.phone %></b><br /> 
+  <% end %>
   <span class='strut'>&nbsp;&nbsp;&nbsp;</span >email:&nbsp;<b class="info"><%= @candidate.email.to_s %></b><br />
   </p> 
   <hr/>
+  <% unless @candidate.postal_street.empty? %>
   <p>
-  V© vzdìlání (¹kola, fakulta):&nbsp;<b class="info"><%= @candidate.studied %></b><br />
+  Korespondenèní adresa:&nbsp;<b class="info"><%= @candidate.postal_street + ", " + @candidate.postal_city + ", " + @candidate.postal_zip %></b><br /> 
+  </p> 
+  <hr/>
+  <% end %>
+  <p>
+  Univerzita:&nbsp;<b class="info"><%= @candidate.university %></b><br />
+  Fakulta:&nbsp;<b class="info"><%= @candidate.faculty %></b><br />
   <span class='strut'>&nbsp;&nbsp;&nbsp;</span >studijní obor:&nbsp;<b class="info"><%= @candidate.studied_branch %></b><br />
   <span class='strut'>&nbsp;&nbsp;&nbsp;</span >datum státní závìreènì zkou¹ky:&nbsp;<b class="info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></b><br />
   </p> 
   <hr/>
+  <% unless @candidate.employer.empty? %>
   <p>
-  Dosavadní praxe:&nbsp;<b class="info"><%= @candidate.practice %></b><br /> 
-  Zamìstnavatel, adresa:&nbsp;<b class="info"><%= @candidate.employer + " " + @candidate.employer_address %></b> <br /> 
+  Zamìstnavatel:&nbsp;<b class="info"><%= @candidate.employer %></b> <br /> 
+  <span class='strut'>adresa:&nbsp;<b class='info'><%= @candidate.employer_address %></b> <br /> 
   <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon, email: <b class="info"><%= @candidate.employer_phone + ', ' + @candidate.employer_email %></b><br />  
   <span class='strut'>&nbsp;&nbsp;&nbsp;</span >pracovní zaøazení:&nbsp;<b class="info"><%= @candidate.position %></b> 
   </p> 
   <hr/>
+  <% end %>
   <p>
   Studijni obor:&nbsp;<b class="info"><%= @candidate.coridor.name %></b> <br /> 
   Katedra:&nbsp;<b class="info"><%= @candidate.department.name %></b><br /> 
   Forma studia:&nbsp;<b class="info"><%= @candidate.study.name %></b><br /> 
-  Jazyky pøíjímacích zkou¹ek:&nbsp;<b class="info"><%= Language.find(@candidate.language1).name + ', ' + Language.find(@candidate.language2).name %></b>
+  Jazyky pøíjímacích zkou¹ek:&nbsp;<b class="info"><%= Language.find(@candidate.language1).name + ', ' + Language.find(@candidate.language2).name %></b><br /> 
+  <% unless @candidate.study_theme.empty? %>
+  Tématický okruh:&nbsp;<b class="info"><%= @candidate.study_theme %></b >
+  <% end %>
   </p> 
   <hr/>
+  <% unless @candidate.note.empty? %>
+  <p>
+    Poznámka:<br /> 
+    <%= @candidate.note %>
+  </p>
+  <hr /> 
+  <% end %>
   <p>Datum: <b class="info"><%= Date.today.strftime("%d. %m. %Y") %></b></p>
   <hr/>
   <p class='signature'>Podpis:</p>
@@ -41,5 +67,8 @@
   Pokud nesouhlasí <%= link_to "opravte", :action => 'correct', :id => @candidate.id  %> je prosím.
   </p>
   <p class='instruction'>
-  Pokud <%= link_to "ukonèíte", :action => 'finish'   %> práci s aplikací, budete zaregistrován/-a bude Vám odeslán mail se v¹emi potøebnými informacemi.
+  Pokud <%= link_to "ukonèíte", :action => 'finish', :id => @candidate.id   %> práci s aplikací, budete zaregistrován/-a. V tomto pøípadì Vás budeme informovat o v¹ech dùle¾itých událostech.
+  </p>
+  <p class="instruction">
+  Dìkujeme Vám za strávený èas a pøejeme hodnì ¹tìstí.
   </p>

@@ -6,17 +6,14 @@ class FormController < ApplicationController
   def index
     @faculties = Faculty.find_all
     @title = "Výbìr koridoru"
-    flash['notice'] = "Kliknutím na fakultu se dostanete na seznam oborù/témat pro ni."
+    flash.now['notice'] = "Kliknutím na fakultu se dostanete na seznam oborù/témat pro ni."
   end
   # form details  
   def details
-    @candidate = Candidate.new do |c| 
-      c.coridor = Coridor.find(@params['id'])
-      c.state = "Èeská republika"
-    end
+    prepare_candidate
     @action = 'save'
     @title = "Formuláø pøihlá¹ky na obor " + @candidate.coridor.name
-    flash['notice'] = 'Vyplñte prosím v¹echny údaje, jejich¾ popiska je èervená'
+    flash.now['notice'] = 'Vyplñte prosím v¹echny údaje, jejich¾ popiska je èervená'
     all_ids
   end
   # preview what has been inserted
@@ -42,7 +39,7 @@ class FormController < ApplicationController
       render_action 'preview'
     else
       @title = "Formuláø pøihlá¹ky - nedostatky"
-      flash['error'] = "Ve vámi zadaných informacích jsou následující chyby"
+      flash.now['error'] = "Ve vámi zadaných informacích jsou následující chyby"
       @action = 'update'
       all_ids
       render_action "details"
@@ -51,15 +48,22 @@ class FormController < ApplicationController
   # preview information
   def preview
       @title = "Kontrola zadaného"
-      flash['notice'] = "Prohlédnìte si pozornì Vámi zadané informace. Poté postupujte podle návodu ve spodní èásti stránky." 
+      flash.now['notice'] = "Prohlédnìte si pozornì Vámi zadané informace. Poté postupujte podle návodu ve spodní èásti stránky." 
   end
   # correct details
   def correct
     @candidate = Candidate.find(@params['id'])
-    flash['notice'] = 'Vyplñte prosím v¹echny údaje, jejich¾ popiska je èervená'
+    flash.now['notice'] = 'Vyplñte prosím v¹echny údaje, jejich¾ popiska je èervená'
     @action = 'update'
     all_ids
+    @title = "Oprava pøihlá¹ky"
     render_action 'details'
+  end
+  # finish submition
+  def finish
+    @candidate = Candidate.find(@params['id'])
+    @candidate.finish!
+    @title = "Pøihlá¹ka zaregistrována"
   end
   private
   # get all ids
@@ -67,5 +71,14 @@ class FormController < ApplicationController
     department_ids(@candidate.coridor.faculty.id)
     language_ids
     study_ids
+  end
+  # prepares candidate with some preloaded values
+  def prepare_candidate
+    @candidate = Candidate.new do |c| 
+      c.coridor = Coridor.find(@params['id'])
+      c.state = "Èeská republika"
+      c.university = "Èeská zemìdìlská univerzita v Praze"
+      c.faculty = c.coridor.faculty.name
+    end
   end
 end
