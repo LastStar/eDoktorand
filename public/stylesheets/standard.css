@@ -17,10 +17,10 @@ hr {
   color: black;
   border-top: 1px solid black;
 }
-h1, h2, h3, h4, h5 { color: #BF6060; font-family: times; }
+h1, h2, h3, h4, h5 { color: #BF6060; font-family: times; line-height: 20pt }
 h1 { 
   color: white;
-  font-size: 28px;
+  font-size: 20pt;
   background-color: #608DBF;
   padding-left: 12%;
   padding-top: 20px;

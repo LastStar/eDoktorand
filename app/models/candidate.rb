@@ -1,30 +1,31 @@
-class Candidate < ActiveRecord::Base
-  belongs_to :coridor
-  belongs_to :department
-  belongs_to :study
+  class Candidate < ActiveRecord::Base
+    belongs_to :coridor
+    belongs_to :department
+    belongs_to :study
 
-  validates_presence_of :name, :message => "Jméno nesmí bıt prázdné"
-  validates_presence_of :last_name, :message => "Pøíjmení nesmí bıt prázdné"
-  validates_presence_of :birth_at, :message => "Místo narození nesmí bıt prázdné"
-  validates_presence_of :email, :message => "Email nesmí bıt prázdnı"
-  validates_presence_of :street, :message => "Ulice bydli¹tì nesmí bıt prázdná"
-  validates_presence_of :city, :message => "Obec bydli¹tì nesmí bıt prázdná"
-  validates_presence_of :zip, :message => "PSÈ bydli¹tì nesmí bıt prázdné"
-  validates_presence_of :state, :message => "Státní pøíslu¹nost nesmí bıt prázdná"
-  validates_presence_of :university, :message => "Univerzita nesmí bıt prázdná"
-  validates_presence_of :faculty, :message => "Fakulta nesmí bıt prázdná"
-  validates_presence_of :studied_branch, :message => "Obor nesmí bıt prázdnı"
-  validates_presence_of :birth_number, :message => "Rodné èíslo nesmí bıt prázdné"
-  validates_presence_of :title, :message => "Titul nesmí bıt prázdnı"
-  validates_presence_of :number, :message => "Èislo popisné nesmí bıt prázdné"
-  validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, 
-  :on => :create, :message => "Email nemá správnı formát"
-  # validates_format_of :birth_number, :with => /^[\d]{6}\/?[\d]{4}/, 
-  # :on => :create, :message => "Rodné èíslo nemá správnı formát"
+    validates_presence_of :name, :message => "JmÃ©no nesmÃ­ bÃ½t prazdnÃ©"
+    validates_presence_of :last_name, :message => "PÅ™Ã­jmenÃ­ nesmÃ­ bÃ½t prazdnÃ©"
+    validates_presence_of :birth_at, :message => "MÃ­sto narozenÃ­ nesmÃ­ bÃ½t prazdnÃ©"
+    validates_presence_of :email, :message => "Email nesmÃ­ bÃ½t prazdnÃ½"
+    validates_presence_of :street, :message => "Ulice bydliÅ¡tÄ› nesmÃ­ bÃ½t prazdnÃ¡"
+    validates_presence_of :city, :message => "Obec bydliÅ¡tÄ› nesmÃ­ bÃ½t prazdnÃ¡"
+    validates_presence_of :zip, :message => "PSÄŒ bydliÅ¡tÄ› nesmÃ­ bÃ½t prazdnÃ©"
+    validates_presence_of :state, :message => "StÃ¡tnÃ­ pÅ™Ã­sluÅ¡nost nesmÃ­ bÃ½t prazdnÃ¡"
+    validates_presence_of :university, :message => "Univerzita nesmÃ­ bÃ½t prazdnÃ¡"
+    validates_presence_of :faculty, :message => "Fakulta nesmÃ­ bÃ½t prazdnÃ¡"
+    validates_presence_of :studied_branch, :message => "Obor nesmÃ­ bÃ½t prazdnÃ½"
+    validates_presence_of :birth_number, :message => "RodnÃ© ÄÃ­slo nesmÃ­ bÃ½t prazdnÃ©"
+    validates_presence_of :title, :message => "Titul nesmÃ­ bÃ½t prazdnÃ½"
+    validates_presence_of :number, :message => "ÄŒislo popisnÃ© nesmÃ­ bÃ½t prazdnÃ©"
+    validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, 
+    :on => :create, :message => "Email nemÃ¡ sprÃ¡vnÃ½ formÃ¡t"
+      validates_uniqueness_of :birth_number, :message => "VÃ¡mi zadanÃ© rodnÃ© ÄÃ­slo jiÅ¾ v systÃ©mu existuje. ProsÃ­m kontaktujte <a href='mailto:pepe@gravastar.cz'>sprÃ¡vce systÃ©mu</a>."
+    # validates_format_of :birth_number, :with => /^[\d]{6}\/?[\d]{4}/, 
+    # :on => :create, :message => "Rodné èíslo nemá správnı formát"
 
-  # validates if languages are not same
-  def validate
-    errors.add_to_base("Jazyky musí bıt rozdílné") if language1 == language2
+    # validates if languages are not same
+    def validate
+      errors.add_to_base("Jazyky musÃ­ bÃ½t rozdÃ­lnÃ©") if language1 == language2
   end
   # finishes candidate
   def finish!

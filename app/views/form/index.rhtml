@@ -1,14 +1,10 @@
+  <div class='notice'
   <% unless @faculties.empty? %>
   <ul>
     <% for f in @faculties do %>
     <li>
       <a onClick="show(<%= f.id %>)">Fakulta: <%= f.name %></a>
       <ol class="hidden" id="<%= f.id %>">
-        <% if f.id == 3 %>
-        <li>
-        <a href="/vyberove_rizeni.pdf" >Dokument o výbìrovém øízení</a >
-        </li>
-        <% end %>
       <% for c in f.coridors do %>
         <li>
         <%= link_to c.name, :action => "details", :id => c.id %>

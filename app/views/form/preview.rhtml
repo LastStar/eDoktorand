@@ -1,17 +1,17 @@
   <div class="printHeader">
-    <h3>Èeská zemìdìlská univerzita v Praze</h3>
-    <h3><%= @candidate.coridor.faculty.name %></h3>
-    <h4>Pøihlá¹ka ke studiu v doktorském studijním programu</h4>
+    <h3>ÄŒeskÃ¡ zemÄ›dÄ›lskÃ¡ univerzita v Praze</h3>
+    <h3>Fakulta: <%= @candidate.coridor.faculty.name %></h3>
+    <h4>PÅ™ihlÃ¡Å¡ka ke studiu v doktorskÃ©m studijnÃ­m programu</h4>
   </div>
   <p>
-  Jméno a pøíjmení:&nbsp;<b class="info"><%= @candidate.name + " " + @candidate.last_name %></b><br /> 
-  Datum a místo narození:&nbsp;<b class="info"><%= @candidate.birth_on.strftime("%d. %m. %Y") + " " + @candidate.birth_at %></b><br /> 
-  Rodné èíslo:&nbsp;<b class="info"><%= @candidate.birth_number %></b><br />  
-  Státní pøíslu¹nost:&nbsp;<b class="info"><%= @candidate.state %></b><br /> 
+  JmÃ©no a pÅ™Ã­jmenÃ­:&nbsp;<b class="info"><%= @candidate.name + " " + @candidate.last_name %></b><br /> 
+  Datum a mÃ­sto narozenÃ­:&nbsp;<b class="info"><%= @candidate.birth_on.strftime("%d. %m. %Y") + " " + @candidate.birth_at %></b><br /> 
+  RodnÃ© ÄÃ­slo:&nbsp;<b class="info"><%= @candidate.birth_number %></b><br />  
+  StÃ¡tnÃ­ pÅ™Ã­sluÅ¡nost:&nbsp;<b class="info"><%= @candidate.state %></b><br /> 
   </p> 
   <hr/>
   <p>
-  Adresa trvalého bydli¹tì:&nbsp;<b class="info"><%= @candidate.street + " " +  @candidate.number.to_s + ", " + @candidate.city + ", " + @candidate.zip %></b><br /> 
+  Adresa trvalÃ©ho bydliÅ¡tÄ›:&nbsp;<b class="info"><%= @candidate.street + " " +  @candidate.number.to_s + ", " + @candidate.city + ", " + @candidate.zip %></b><br /> 
   <% unless @candidate.phone.empty? %>
   <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon:&nbsp;<b class="info"><%= @candidate.phone %></b><br /> 
   <% end %>
@@ -20,39 +20,39 @@
   <hr/>
   <% unless @candidate.postal_street.empty? %>
   <p>
-  Korespondenèní adresa:&nbsp;<b class="info"><%= @candidate.postal_street + " " + @candidate.postal_number.to_s + ", " + @candidate.postal_city + ", " + @candidate.postal_zip %></b><br /> 
+  KorespondenÄnÃ­ adresa:&nbsp;<b class="info"><%= @candidate.postal_street + " " + @candidate.postal_number.to_s + ", " + @candidate.postal_city + ", " + @candidate.postal_zip %></b><br /> 
   </p> 
   <hr/>
   <% end %>
   <p>
   Univerzita:&nbsp;<b class="info"><%= @candidate.university %></b><br />
   Fakulta:&nbsp;<b class="info"><%= @candidate.faculty %></b><br />
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >studijní obor:&nbsp;<b class="info"><%= @candidate.studied_branch %></b><br />
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >datum státní závìreènì zkou¹ky:&nbsp;<b class="info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></b><br />
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >studijnÃ­ obor:&nbsp;<b class="info"><%= @candidate.studied_branch %></b><br />
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >datum stÃ¡tnÃ­ zÃ¡vÄ›reÄnÃ© zkouÅ¡ky:&nbsp;<b class="info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></b><br />
   </p> 
   <hr/>
   <% unless @candidate.employer.empty? %>
   <p>
-  Zamìstnavatel:&nbsp;<b class="info"><%= @candidate.employer %></b> <br /> 
-  <span class='strut'>adresa:&nbsp;<b class='info'><%= @candidate.employer_address %></b> <br /> 
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon, email: <b class="info"><%= @candidate.employer_phone + ', ' + @candidate.employer_email %></b><br />  
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >pracovní zaøazení:&nbsp;<b class="info"><%= @candidate.position %></b> 
+  ZamÄ›stnavatel:&nbsp;<b class="info"><%= @candidate.employer %></b> <br /> 
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >adresa:&nbsp;<b class='info'><%= @candidate.employer_address %></b> <br /> 
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon, email:&nbsp;<b class="info"><%= @candidate.employer_phone + ', ' + @candidate.employer_email %></b><br />  
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >pracovnÃ­ zaÅ™azenÃ­:&nbsp;<b class="info"><%= @candidate.position %></b> 
   </p> 
   <hr/>
   <% end %>
   <p>
-  Studijni obor:&nbsp;<b class="info"><%= @candidate.coridor.name %></b> <br /> 
+  StudijnÃ­ obor:&nbsp;<b class="info"><%= @candidate.coridor.name %></b> <br /> 
   Katedra:&nbsp;<b class="info"><%= @candidate.department.name %></b><br /> 
   Forma studia:&nbsp;<b class="info"><%= @candidate.study.name %></b><br /> 
   Jazyky pøíjímacích zkou¹ek:&nbsp;<b class="info"><%= Language.find(@candidate.language1).name + ', ' + Language.find(@candidate.language2).name %></b><br /> 
   <% unless @candidate.study_theme.empty? %>
-  Tématickı okruh:&nbsp;<b class="info"><%= @candidate.study_theme %></b >
+  TÃ©matickÃ½ okruh:&nbsp;<b class="info"><%= @candidate.study_theme %></b >
   <% end %>
   </p> 
   <hr/>
   <% unless @candidate.note.empty? %>
   <p>
-    Poznámka:<br /> 
+    PoznÃ¡mka:<br /> 
     <%= @candidate.note %>
   </p>
   <hr /> 
@@ -61,18 +61,18 @@
   <hr/>
   <p class='signature'>Podpis:</p>
   <p class='instruction'>
-  Jestli¾e tyto informace souhlasí vytisknìte si tuto stránku a spolu s vyti¹tìnım ¾ivotopisem, fotokopiemi dokladù o V© vzdìlání (diplom, osvìdèení o státní zkou¹ce), dokladu o zaplacení poplatku je za¹lete na adresu oddìlení pro vìdu a vıkum na adresu:<br /> 
-  Èeská zemìdìlská univerzita v Praze<br /> 
-  Fakulta lesnická a environmentální, odd. VaV<br />
-  Kamıcká 1176<br /> 
+  JestliÅ¾e tyto informace souhlasÃ­ vytisknÄ›te si tuto strÃ¡nku a spolu s vytiÅ¡tÄ›nÃ½m Å¾ivotopisem, fotokopiemi dokladÅ¯ o VÅ  vzdÄ›lÃ¡nÃ­ (diplom, osvÄ›dÄenÃ­ o stÃ¡tnÃ­ zkouÅ¡ce), dokladu o zaplacenÃ­ poplatku je zaÅ¡lete na adresu oddÄ›lenÃ­ pro vÄ›du a vÃ½kum na adresu:<br /> 
+  ÄŒeskÃ¡ zemÄ›dÄ›lskÃ¡ univerzita v Praze<br /> 
+  Fakulta lesnickÃ¡ a environmentÃ¡lnÃ­, odd. VaV<br />
+  KamÃ½ckÃ¡ 1176<br /> 
   165 21 Praha 6 - Suchdol. 
   </p>
   <p class='instruction'>
-  Pokud nesouhlasí <%= link_to "opravte", :action => 'correct', :id => @candidate.id  %> je prosím.
+  Pokud nesouhlasÃ­ <%= link_to "opravte", :action => 'correct', :id => @candidate.id  %> je prosÃ­m.
   </p>
   <p class='instruction'>
-  Pokud <%= link_to "ukonèíte", :action => 'finish', :id => @candidate.id   %> práci s aplikací, budete zaregistrován/-a. V tomto pøípadì Vás budeme informovat o v¹ech dùle¾itıch událostech.
+  Pokud <%= link_to "ukonÄÃ­te", :action => 'finish', :id => @candidate.id   %> prÃ¡ci s aplikacÃ­, budete zaregistrovÃ¡n/-a. V tomto pÅ™Ã­padÄ› VÃ¡s budeme informovat o vÅ¡ech dÅ¯leÅ¾itÃ½ch udÃ¡lostech.
   </p>
   <p class="instruction">
-  Dìkujeme Vám za strávenı èas a pøejeme hodnì ¹tìstí.
+  DÄ›kujeme VÃ¡m za strÃ¡venÃ½ Äas a pÅ™ejeme hodnÄ› Å¡tÄ›stÃ­.
   </p>

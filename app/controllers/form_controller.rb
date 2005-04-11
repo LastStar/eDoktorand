@@ -5,15 +5,13 @@ class FormController < ApplicationController
   # or logins for edit or check older adminition
   def index
     @faculties = Faculty.find_all
-    @title = "Výbìr koridoru"
-    flash.now['notice'] = "Kliknutím na fakultu se dostanete na seznam oborù/témat pro ni."
   end
   # form details  
   def details
     prepare_candidate
     @action = 'save'
-    @title = "Formuláø pøihlá¹ky na obor " + @candidate.coridor.name
-    flash.now['notice'] = 'Vyplñte prosím v¹echny údaje, jejich¾ popiska je èervená'
+    @title = "FormulÃ¡Å™ pÅ™ihlÃ¡Å¡ky na obor " + @candidate.coridor.name
+    flash.now['notice'] = 'VyplÅˆte prosÃ­m vÅ¡echny Ãºdaje, jejichÅ¾ popiska je ÄervenÃ¡'
     all_ids
   end
   # preview what has been inserted
@@ -23,8 +21,8 @@ class FormController < ApplicationController
       preview
       render_action 'preview'
     else
-      @title = "Formuláø pøihlá¹ky - nedostatky"
-      flash.now['error'] = "Ve vámi zadaných informacích jsou následující chyby"
+      @title = "FormulÃ¡Å™ pÅ™ihlÃ¡Å¡ky - nedostatky"
+      flash.now['error'] = "Ve VÃ¡mi zadanÃ½ch informacÃ­ch jsou nÃ¡sledujÃ­cÃ­ chyby"
       @action = 'save'
       all_ids
       render_action "details"
@@ -47,8 +45,8 @@ class FormController < ApplicationController
   end
   # preview information
   def preview
-      @title = "Kontrola zadaného"
-      flash.now['notice'] = "Prohlédnìte si pozornì Vámi zadané informace. Poté postupujte podle návodu ve spodní èásti stránky." 
+      @title = "Kontrola zadanÃ©ho"
+      flash.now['notice'] = "ProhlÃ­dnÄ›te si pozornÄ› VÃ¡mi zadanÃ© informace. PotÃ© postupujte podle nÃ¡vodu ve spodnÃ­ ÄÃ¡sti strÃ¡nky." 
   end
   # correct details
   def correct
@@ -63,7 +61,7 @@ class FormController < ApplicationController
   def finish
     @candidate = Candidate.find(@params['id'])
     @candidate.finish!
-    @title = "Pøihlá¹ka zaregistrována"
+    @title = "PÅ™ihlÃ¡Å¡ka zaregistrovÃ¡na"
   end
   private
   # get all ids
@@ -76,8 +74,8 @@ class FormController < ApplicationController
   def prepare_candidate
     @candidate = Candidate.new do |c| 
       c.coridor = Coridor.find(@params['id'])
-      c.state = "Èeská republika"
-      c.university = "Èeská zemìdìlská univerzita v Praze"
+      c.state = "ÄŒeskÃ¡ republika"
+      c.university = "ÄŒeskÃ¡ zemÄ›dÄ›lskÃ¡ univerzita v Praze"
       c.faculty = c.coridor.faculty.name
     end
   end
