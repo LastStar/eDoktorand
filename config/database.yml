@@ -1,9 +1,6 @@
 development:
-  adapter: mysql
-  database: phdstudy_development
-  host: localhost
-  username: root
-  password: r00t1k
+  adapter: sqlite
+  dbfile: db/phdstudy.db
 
 test:
   adapter: mysql
