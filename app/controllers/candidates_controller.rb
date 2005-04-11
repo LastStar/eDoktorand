@@ -1,11 +1,15 @@
 class CandidatesController < ApplicationController
+  model :candidate
+  layout 'employers'
+  # lists all candidates
   def index
     list
     render_action 'list'
   end
 
+  # lists all candidates
   def list
-    @candidates = Candidate.find_all
+    @pages, @candidates = paginate :candidates, :order_by => 'finished_on'
   end
 
   def show

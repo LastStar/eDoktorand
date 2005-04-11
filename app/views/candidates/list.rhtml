@@ -1,24 +1,31 @@
-<h1>Listing candidates</h1>
 
-<table>
-  <tr>
-<% for column in Candidate.content_columns %>
-    <th><%= column.human_name %></th>
-<% end %>
-  </tr>
-  
-<% for candidate in @candidates %>
-  <tr>
-  <% for column in Candidate.content_columns %>
-    <td><%=h candidate.send(column.name) %></td>
-  <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => candidate.id %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => candidate.id %></td>
-    <td><%= link_to 'Destroy', :action => 'destroy', :id => candidate.id %></td>
-  </tr>
-<% end %>
-</table>
-
+<ul>
+   <% for candidate in @candidates  %>
+   <li>
+    <div class='right'>
+      <a href='#' onclick='show(<%= candidate.id %>)'>kontakt</a>
+      <%= link_to 'detail', :action => 'show', :id => candidate.id %>
+     </div>
+     Jméno a příjmení: 
+     <%= candidate.display_name %><br /> 
+     Rodné číslo:
+     <%= candidate.birth_number %>
+     <div class='detail' id='<%= candidate.id %>'>
+       Email: <%= candidate.email %><br /> 
+       Telefon: ;<%= candidate.phone %><br /> 
+       Adresa: <%= candidate.address %><br /> 
+       <% if candidate.postal_street %>
+       Korespondenční adresa: <%= candidate.postal_address %>
+       <% end %>
+     </div >
+   </li>
+   <% end %>
+</ul>
 <br />
+<script>
+function show(id) {
+  document.getElementById(id).style.display = 'block';
+}
+</script>
 
-<%= link_to 'New candidate', :action => 'new' %>
+<%= pagination_links(@pages) %>

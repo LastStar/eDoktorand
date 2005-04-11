@@ -28,8 +28,9 @@
   </fieldset>
   <fieldset id='address'>
     <legend>Adresa trvalého bydliště</legend>
-    <label for='candidate_street' class='required'>ulice a číslo popisné</label>
+    <label for='candidate_street' class='required'>ulice</label>
     <%= text_field 'candidate', 'street', 'size' => '30' %> 
+    <label for='candidate_street' class='required'>číslo popisné</label>
     <%= text_field 'candidate', 'number', 'size' => '6' %><br /> 
     <label for='candidate_city' class='required'>obec</label>
     <%= text_field 'candidate', 'city', 'size' => '30' %><br /> 
@@ -38,8 +39,9 @@
   </fieldset>
   <fieldset id='postal_address'>
     <legend>Korespondenční adresa - nevyplňovat je li shodná s bydlištěm</legend>
-    <label for='candidate_postal_street' >ulice a číslo popisné</label>
+    <label for='candidate_postal_street' >ulice</label>
     <%= text_field 'candidate', 'postal_street', 'size' => '30' %>
+    <label for='candidate_postal_number' >číslo popisné</label>
     <%= text_field 'candidate', 'postal_number', 'size' => '6' %><br /> 
     <label for='candidate_postal_city' >obec</label>
     <%= text_field 'candidate', 'postal_city', 'size' => '30' %><br /> 

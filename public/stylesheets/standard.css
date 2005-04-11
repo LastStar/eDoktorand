@@ -46,10 +46,8 @@ li {
   list-style: none;
 }
 
-.hidden {
-  display: none;
-}
-
+.hidden { display: none; }
+.detail { display: none; background-color: white; padding: 10px; border: 1px solid gray }
 pre { background-color: #eee; padding: 10px; font-size: 11px; }
 
 table {
@@ -171,8 +169,6 @@ input, select  {
   margin: 5px 0 5px 0;
 } 
 fieldset {
-  margin-left: auto;
-  margin-right: auto;
   border: 1px solid #80BCFF;
   width: 41em;
 }
@@ -193,27 +189,15 @@ div.fieldWithErrors {
   margin: 0px;
   padding: 0px;
 }
-div.fieldWithErrors label {
-  color: red;
-}
+div.fieldWithErrors label { color: red; }
 .info {
   padding-left: 2em;
   position: absolute;
   left: 20em;
 }
-.footer {
-  padding-top: 10em;
-  font-size: 10pt;
-}
-.signature {
-  display: none;
-}
-.strut {
-  display: none;
-}
-.printHeader h2, h3, h4 {
-  display: none;
-}
-.printHeader {
-  display: none;
-}
+.footer { padding-top: 10em; font-size: 10pt; }
+.signature { display: none; }
+.strut { display: none; }
+.printHeader h2, h3, h4 { display: none; }
+.printHeader { display: none; }
+.right { float: right; width: 30em;}

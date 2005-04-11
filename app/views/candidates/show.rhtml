@@ -1,8 +1,4 @@
-<% for column in Candidate.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%= @candidate.send(column.name) %>
-</p>
-<% end %>
-
-<%= link_to 'Edit', :action => 'edit', :id => @candidate.id %> |
-<%= link_to 'Back', :action => 'list' %>
+<%= render 'shared/candidate_detail' %>
+<div class='instruction'>
+  <%= link_to 'Zpět na výpis', :action => 'list' %>
+</div >
