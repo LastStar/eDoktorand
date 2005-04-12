@@ -40,7 +40,8 @@ CREATE TABLE candidates (
   finished_on timestamp,
   note text,
   number integer,
-  postal_number integer
+  postal_number integer,
+  status integer
 );
 
 --
@@ -116,4 +117,5 @@ CREATE TABLE users (
   login varchar(80),
   password varchar(40)
 );
+
 
