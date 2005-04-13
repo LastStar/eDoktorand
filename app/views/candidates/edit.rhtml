@@ -1,16 +1,3 @@
-<h1>Editing candidate</h1>
 
-<%= error_messages_for 'candidate' %>
-<!--[form:candidate]-->
-<%= start_form_tag :action => 'update' %>
-<%= hidden_field 'candidate', 'id' %>
-<p><label for="candidate_name">Name</label><br /><%= text_field 'candidate', 'name'  %></p>
-<p><label for="candidate_last_name">Last name</label><br /><%= text_field 'candidate', 'last_name'  %></p>
-<p><label for="candidate_study_average">Study average</label><br /><%= text_field 'candidate', 'study_average'  %></p>
-<input type="submit" value="Update" />
-<%= end_form_tag %>
-<!--[eoform:candidate]-->
-
-
-<%= link_to 'Show', :action => 'show', :id => @candidate.id %> |
-<%= link_to 'Back', :action => 'list' %>
+<%= render 'shared/candidate_edit' %>
+<%= render_partial 'back' %>

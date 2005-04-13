@@ -3,7 +3,10 @@
   <ul>
     <% for f in @faculties do %>
     <li>
-      <a onClick="show(<%= f.id %>)">Fakulta: <%= f.name %></a>
+    <a href='#' onClick="show(<%= f.id %>)">Fakulta: <%= f.name %></a><br /> 
+      <% unless f.documents.empty? %>
+      <b>dokumenty:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
+      <% end %>
       <ol class="hidden" id="<%= f.id %>">
       <% for c in f.coridors do %>
         <li>
@@ -15,7 +18,7 @@
     <% end %>
   </ul>
 <% else %>
-<h3>V aplikaci se vyskytla chyba, prosím uvìdomte zprávce systému na adrese: <a href="mailto:pepe@gravastar.cz">pepe@gravastar.cz</a ></h3>
+<h3>V aplikaci se vyskytla chyba, prosÃ­m uvÄ›domte zprÃ¡vce systÃ©mu na adrese: <a href="mailto:pepe@gravastar.cz">pepe@gravastar.cz</a ></h3>
 <% end %>
 <script>
 function show(id) {

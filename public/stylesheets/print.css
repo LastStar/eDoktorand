@@ -17,6 +17,9 @@ hr {
 h1 {
   display: none;
 }
+li {
+  margin-bottom: 1em;
+}
 .printHeader {
   display: block;
   text-align: center;
@@ -26,5 +29,11 @@ h1 {
   text-align: center;
 }
 #footer {
+  display: none;
+}
+.links {
+  display: none;
+}
+.right {
   display: none;
 }

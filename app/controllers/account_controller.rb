@@ -1,5 +1,6 @@
 class AccountController < ApplicationController
   model   :user
+  include LoginSystem
   layout  'scaffold'
 
   def login

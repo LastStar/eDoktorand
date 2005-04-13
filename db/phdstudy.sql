@@ -6,8 +6,8 @@
 DROP TABLE candidates;
 CREATE TABLE candidates (
   id integer primary key,
-  name varchar(50),
-  last_name varchar(50),
+  firstname varchar(50),
+  lastname varchar(50),
   title varchar(20),
   coridor_id integer,
   study_end date,
@@ -38,10 +38,11 @@ CREATE TABLE candidates (
   studied_specialization varchar(100),
   study_theme varchar(100),
   finished_on timestamp,
+  created_on timestamp,
+  admited_on timestamp,
   note text,
   number integer,
-  postal_number integer,
-  status integer
+  postal_number integer
 );
 
 --
@@ -118,4 +119,15 @@ CREATE TABLE users (
   password varchar(40)
 );
 
+--
+-- Table structure for table Documents
+--
+
+DROP TABLE documents;
+CREATE TABLE documents (
+  id integer primary key,
+  name varchar(100),
+  path varchar(100),
+  faculty_id integer
+);
 

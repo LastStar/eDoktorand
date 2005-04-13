@@ -8,10 +8,6 @@
 </head>
 <body>
   <h1 id='title'><%= @title %></h1>
-  <% unless @print %>
-  <%= render_partial 'notice' %>
-  <%= render_partial 'error' %>
-  <% end %>
   <div id="main">
     <%= @content_for_layout %>
   </div>

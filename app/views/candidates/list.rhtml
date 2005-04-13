@@ -1,25 +1,25 @@
 
 <ul>
-   <% for candidate in @candidates  %>
-   <li>
+<% for candidate in @candidates  %>
+  <li>
     <div class='right'>
-      <a href='#' onclick='show(<%= candidate.id %>)'>kontakt</a>
       <%= link_to 'detail', :action => 'show', :id => candidate.id %>
-     </div>
-     Jméno a příjmení: 
-     <%= candidate.display_name %><br /> 
-     Rodné číslo:
-     <%= candidate.birth_number %>
-     <div class='detail' id='<%= candidate.id %>'>
-       Email: <%= candidate.email %><br /> 
-       Telefon: <%= candidate.phone %><br /> 
-       Adresa: <%= candidate.address %><br /> 
-       <% if candidate.postal_street %>
-       Korespondenční adresa: <%= candidate.postal_address %>
-       <% end %>
-     </div >
-   </li>
-   <% end %>
+      <%= link_to 'oprava', :action => 'edit', :id => candidate.id %>
+      <a href='#' onclick='show(<%= candidate.id %>); this.style.display="none"'>kontakt</a>
+    </div>
+  <b><%= candidate.display_name %>
+  rč.&nbsp;<%= candidate.birth_number %><br /></b>
+  <%= candidate.coridor.name %>
+  <div class='detail' id='<%= candidate.id %>'>
+    Email: <%= candidate.email %><br /> 
+    Telefon: <%= candidate.phone %><br /> 
+    Adresa: <%= candidate.address %><br /> 
+    <% if candidate.postal_street %>
+    Korespondenční adresa: <%= candidate.postal_address %>
+    <% end %>
+  </div >
+  </li>
+<% end %>
 </ul>
 <br />
 <script>
@@ -28,4 +28,8 @@ function show(id) {
 }
 </script>
 
-<%= pagination_links(@pages) %>
+<div class='links'>
+  <%= link_to "předchozí stránka", { :page => @pages.current.previous } if @pages.current.previous %>
+  <%= pagination_links(@pages) %>
+    <%= link_to "následující stránka", { :page => @pages.current.next } if @pages.current.next %>
+</div>

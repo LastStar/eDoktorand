@@ -1,6 +1,6 @@
 
   <p>
-  Jméno a příjmení:&nbsp;<b class="info"><%= @candidate.name + " " + @candidate.last_name %></b><br /> 
+  Jméno a příjmení:&nbsp;<b class="info"><%= @candidate.display_name %></b><br /> 
   Datum a místo narození:&nbsp;<b class="info"><%= @candidate.birth_on.strftime("%d. %m. %Y") + " " + @candidate.birth_at %></b><br /> 
   Rodné číslo:&nbsp;<b class="info"><%= @candidate.birth_number %></b><br />  
   Státní příslušnost:&nbsp;<b class="info"><%= @candidate.state %></b><br /> 

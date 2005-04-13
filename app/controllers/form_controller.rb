@@ -5,6 +5,8 @@ class FormController < ApplicationController
   # or logins for edit or check older adminition
   def index
     @faculties = Faculty.find_all
+    @title = "Přijímací řízení k doktorskému studiu"
+    flash.now['notice'] = "Po kliknutí na fakultu se Vám zobrazí všechny obory pro ni."
   end
   # form details  
   def details
@@ -12,7 +14,6 @@ class FormController < ApplicationController
     @action = 'save'
     @title = "Formulář přihlášky na obor " + @candidate.coridor.name
     flash.now['notice'] = 'Vyplňte prosím všechny údaje, jejichž popiska je červená'
-    all_ids
   end
   # preview what has been inserted
   def save
@@ -24,23 +25,20 @@ class FormController < ApplicationController
       @title = "Formulář přihlášky - nedostatky"
       flash.now['error'] = "Ve Vámi zadaných informacích jsou následující chyby"
       @action = 'save'
-      all_ids
-      render_action "details"
+      render_action 'details'
     end
   end
   # update candidate
   def update
     @candidate = Candidate.find(@params['candidate']['id'])
-    @candidate.attributes = @params['candidate']
-    if @candidate.save
+    if @candidate.update_attributes(@params['candidate'])
       preview
       render_action 'preview'
     else
-      @title = "Formul�� p�ihl�ky - nedostatky"
-      flash.now['error'] = "Ve v�mi zadan�ch informac�ch jsou n�sleduj�c� chyby"
-      @action = 'update'
-      all_ids
-      render_action "details"
+      @title = "Formulář přihlášky - nedostatky"
+      flash.now['error'] = "Ve vámi zadaných informacích jsou následující chyby"
+            @action = 'update'
+      render_action 'details'
     end
   end
   # preview information
@@ -51,10 +49,9 @@ class FormController < ApplicationController
   # correct details
   def correct
     @candidate = Candidate.find(@params['id'])
-    flash.now['notice'] = 'Vypl�te pros�m v�echny �daje, jejich� popiska je �erven�'
+    flash.now['notice'] = 'Vyplňte prosím všechny údaje, jejichž popiska je červená'
     @action = 'update'
-    all_ids
-    @title = "Oprava p�ihl�ky"
+    @title = "Oprava přihlášky"
     render_action 'details'
   end
   # finish submition
@@ -64,12 +61,6 @@ class FormController < ApplicationController
     @title = "Přihláška zaregistrována"
   end
   private
-  # get all ids
-  def all_ids
-    department_ids(@candidate.coridor.faculty.id)
-    language_ids
-    study_ids
-  end
   # prepares candidate with some preloaded values
   def prepare_candidate
     @candidate = Candidate.new do |c| 

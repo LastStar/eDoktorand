@@ -1,5 +1,5 @@
 
-body { margin: 0px; background-color: #E6F2FF; color: black; }
+body { margin: 0px;  color: black; }
 
 body, p, ol, ul, td {
     font-family: "lucida", sans-serif;
@@ -17,16 +17,15 @@ hr {
   color: black;
   border-top: 1px solid black;
 }
-h1, h2, h3, h4, h5 { color: #BF6060; font-family: times; line-height: 20pt }
+h1, h2, h3, h4, h5 { color: black; font-family: times; line-height: 20pt }
 h1 { 
-  color: white;
   font-size: 20pt;
-  background-color: #608DBF;
+  background-color: #ffd;
   padding-left: 12%;
   padding-top: 20px;
   padding-bottom: 20px;
   margin: 0px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid gray;
   background-image: url(../images/logo.png);
   background-repeat: no-repeat;
   background-position: 10px 40%;
@@ -47,36 +46,9 @@ li {
 }
 
 .hidden { display: none; }
-.detail { display: none; background-color: white; padding: 10px; border: 1px solid gray }
+.detail { display: none; background-color: #ffd; padding: 10px; width: 30em; margin-bottom: 10px;}
 pre { background-color: #eee; padding: 10px; font-size: 11px; }
 
-table {
-  border-collapse: collapse;
-  border: none;
-  background-color: white;
-  margin-bottom: 10px;
-  width: 100%
-}
-td { padding: 4px; border: none; text-align: left; vertical-align: bottom; }
-td.number { text-align: right; }
-th { color: #003366; padding: 4px; background-color: white; }
-td a { 
-  margin: 0px;
-  font-size: 12px; 
-  color: red;
-  padding-left: 0px;
-  background-image: none ;
-}
-.smaller { 
-  font-size: 12px;
-}
-
-div.form, div.general { 
-  background-color: white;
-  border: 1px solid #E6F2FF;
-  margin-bottom: 10px;
-  width: 100%;
-}
 
 p {
   padding-left: 20px;
@@ -97,28 +69,22 @@ form {
   padding-left: 10px;
 }
 
-#main {  padding: 6px; }
+#main {  padding: 0px; }
 #notice { 
   color: darkblue;
   font-style: italic;
-  padding: 2px;
+  padding: 6px;
   padding-left: 12%;
-  background-color: white;
   font-size: 12pt;
-  border-bottom: 1px solid #80BCFF;
-  border-top: 1px solid #B80BCFF;
+  margin-bottom: 2px;
 }
 #error {
   color: red;
   font-style: italic;
-  padding: 2px;
+  padding: 6px;
   padding-left: 12%;
   background-color: white;
   font-size: 12pt;
-  border-bottom: 1px solid #80BCFF;
-  border-top: 1px solid #B80BCFF;
-  bottom-bottom: 1px solid #;
-  bottom-top: 1px solid #BFDEFF;
 }
 #error li {
   font-size: 9pt;
@@ -136,11 +102,9 @@ form {
   
 .noact { color: #666; font-size: 10px; }
 .links {
-  padding-bottom: 2px;
-  padding-top: 2px;
-  background-color: white;
+  padding: 2px;
+  background-color: #ffd;
   width: 100%;
-  border: 1px solid #E6F2FF;
 }
 .centered, .smaller {
   text-align: center;
@@ -148,11 +112,10 @@ form {
 #footer {
   background-color: white;
   width: 100%;
-  border-bottom: 1px solid #E6F2FF;
-  border-top: 1px solid #E6F2FF;
+  border-top: 1px solid #ffd;
   font-size: 9px;
   text-align: right;
-  padding: 0px;
+  padding: 6px;
 }
 label {
   margin: 0px;
@@ -169,8 +132,9 @@ input, select  {
   margin: 5px 0 5px 0;
 } 
 fieldset {
-  border: 1px solid #80BCFF;
+  border: 1px solid #ffa;
   width: 41em;
+  margin-bottom: 5px;
 }
 legend {
   padding: 1px;
@@ -200,4 +164,22 @@ div.fieldWithErrors label { color: red; }
 .strut { display: none; }
 .printHeader h2, h3, h4 { display: none; }
 .printHeader { display: none; }
-.right { float: right; width: 30em;}
+.right { float: right; width: 20em;}
+.right a {
+  font-size: smaller;
+  background-color: white;
+  padding: 3px;
+  border: 1px solid gray;
+  text-decoration: none;
+} 
+.links {
+  font-size: smaller;
+}
+.links a {
+  background-color: white;
+  padding: 3px;
+  width: 50%;
+  margin-left: 10%;
+  border: 1px solid gray;
+  text-decoration: none;
+}
