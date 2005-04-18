@@ -1,0 +1,6 @@
+Opravdu si přejete přijmout tohoto uchazeče?
+<%= render 'shared/candidate_detail' %>
+<div class='links'>
+  <%= link_to 'zpět na výpis', :action => 'list' %>
+  <%= link_to 'ano, přeji si přijmout tohoto uchazeče.', :action => 'confirm_admit', :id => @candidate.id %>
+</div >

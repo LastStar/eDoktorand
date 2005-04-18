@@ -42,7 +42,8 @@ CREATE TABLE candidates (
   admited_on timestamp,
   note text,
   number integer,
-  postal_number integer
+  postal_number integer,
+  student_id integer
 );
 
 --
@@ -87,15 +88,17 @@ CREATE TABLE languages (
   name varchar(50)
 );
 
+
 --
--- Table structure for table sessions
+-- Table structure for table Documents
 --
 
-DROP TABLE sessions;
-CREATE TABLE sessions (
+DROP TABLE documents;
+CREATE TABLE documents (
   id integer primary key,
-  sessid text,
-  data text
+  name varchar(100),
+  path varchar(100),
+  faculty_id integer
 );
 
 --
@@ -109,6 +112,131 @@ CREATE TABLE studies (
 );
 
 --
+-- Table structure for table people
+--
+
+DROP TABLE people;
+CREATE TABLE people (
+  id integer primary key,
+  firstname varchar(101),
+  lastname varchar(100),
+  birth_on date,
+  birth_number varchar,
+  state varchar(100),
+  birth_at varchar(100),
+  type varchar(20)
+);
+
+--
+-- Table structure for table indexes
+--
+
+DROP TABLE indexes;
+CREATE TABLE indexes (
+  id integer primary key,
+  year integer,
+  study_id integer,
+  student_id integer,
+  tutorship_id integer
+);
+
+--
+-- Table structure for table study plans statuses
+--
+
+DROP TABLE study_plans_statuses;
+CREATE TABLE study_plans_statuses (
+  id integer primary key,
+  name varchar(100)
+);
+
+--
+-- Table structure for table study plans
+--
+
+DROP TABLE study_plans;
+CREATE TABLE study_plans (
+  id integer primary key,
+  index_id integer,
+  actual integer,
+  status_id integer
+);
+
+--
+-- Table structure for table addresses
+--
+
+DROP TABLE addresses;
+CREATE TABLE addresses (
+  id integer primary key,
+  street varchar(100),
+  desc_number varchar(20),
+  orient_number varchar(20),
+  city varchar(20),
+  zip varchar(20),
+  state varchar(20),
+  address_type_id integer,
+  student_id integer
+);
+
+
+--
+-- Table structure for table address types
+--
+
+DROP TABLE address_types;
+CREATE TABLE address_types (
+  id integer primary key,
+  name varchar(20)
+);
+
+--
+-- Table structure for table contacts
+--
+
+DROP TABLE contacts;
+CREATE TABLE contacts (
+  id integer primary key,
+  name varchar(20),
+  contact_type_id integer,
+  person_id integer
+);
+
+--
+-- Table structure for table contacts
+--
+
+DROP TABLE contact_types;
+CREATE TABLE contact_types (
+  id integer primary key,
+  name varchar(20)
+);
+
+--
+-- Table structure for table tutorships
+--
+
+DROP TABLE tutorships;
+CREATE TABLE tutorships (
+  id integer,
+  department_id integer,
+  tutor_id integer,
+  corridor_id integer
+);
+
+--
+-- Table structure for table sessions
+--
+
+DROP TABLE sessions;
+CREATE TABLE sessions (
+  id integer primary key,
+  sessid text,
+  data text
+);
+
+
+--
 -- Table structure for table users
 --
 
@@ -117,17 +245,5 @@ CREATE TABLE users (
   id integer primary key,
   login varchar(80),
   password varchar(40)
-);
-
---
--- Table structure for table Documents
---
-
-DROP TABLE documents;
-CREATE TABLE documents (
-  id integer primary key,
-  name varchar(100),
-  path varchar(100),
-  faculty_id integer
 );
 
