@@ -1,13 +1,14 @@
 
 <div class="memo">
-    <h3>Welcome</h3>
 
-    <p>You are now logged into the system...</p>
+    <p>Nyní jste přihlášen-a do systému.</p>
     <p>
-    Since you are here it's safe to assume the application never called store_location, otherwise
-    you would have been redirected somewhere else after a successful login.
+      Máte možnost a práva provádět tyto operace.
     </p>
       
-    <%= link_to "&#171; logout", :action=>"logout"%>  
+    <div class='links'>
+      <%= link_to 'pracovat s uchazeči o studium', :controller => 'candidates'%>
+      <%= link_to 'pracovat se studenty', :controller => 'students' %>
+    </div>  
       
 </div>

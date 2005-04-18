@@ -8,7 +8,8 @@ CREATE TABLE candidates (
   id integer primary key,
   firstname varchar(50),
   lastname varchar(50),
-  title varchar(20),
+  title_before_id integer,
+  title_after_id integer,
   coridor_id integer,
   study_end date,
   university varchar(100),
@@ -124,7 +125,9 @@ CREATE TABLE people (
   birth_number varchar,
   state varchar(100),
   birth_at varchar(100),
-  type varchar(20)
+  type varchar(20),
+  title_before_id integer,
+  title_after_id integer
 );
 
 --
@@ -218,10 +221,20 @@ CREATE TABLE contact_types (
 
 DROP TABLE tutorships;
 CREATE TABLE tutorships (
-  id integer,
+  id integer primary key,
   department_id integer,
   tutor_id integer,
   corridor_id integer
+);
+--
+-- Table structure for table titles
+--
+
+DROP TABLE titles;
+CREATE TABLE titles (
+  id integer primary key,
+  name varchar(100),
+  before integer
 );
 
 --

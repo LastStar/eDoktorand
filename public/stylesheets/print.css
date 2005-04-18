@@ -37,3 +37,11 @@ li {
 .right {
   display: none;
 }
+.info {
+  padding-left: 2em;
+  position: absolute;
+  left: 13em;
+}
+.detail {
+  display: block;
+}

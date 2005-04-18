@@ -1,8 +1,23 @@
-<% for column in Student.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @student.send(column.name) %>
-</p>
-<% end %>
+  <p>
+  Jméno a příjmení:&nbsp;<b class="info"><%= @student.display_name %></b><br /> 
+  Datum a místo narození:&nbsp;<b class="info"><%= @student.birth_on.strftime("%d. %m. %Y") + " " + @student.birth_at %></b><br /> 
+  Rodné číslo:&nbsp;<b class="info"><%= @student.birth_number %></b><br />  
+  Státní příslušnost:&nbsp;<b class="info"><%= @student.state %></b><br /> 
+  </p> 
+  <p>
+  Adresa trvalého bydliště:&nbsp;<b class="info"><%= @student.address.to_line_s %></b><br /> 
+  <% unless @student.phone.nil? %>
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon:&nbsp;<b class="info"><%= @student.phone.name %></b><br /> 
+  <% end %>
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >email:&nbsp;<b class="info"><%= @student.email.name %></b><br />
+  </p> 
+  <% unless @student.postal_address.nil? %>
+  <p>
+  Korespondenční adresa:&nbsp;<b class="info"><%= @student.postal_address.to_line_s %></b><br /> 
+  </p> 
+  <hr/>
+  <% end %>
 
-<%= link_to 'Edit', :action => 'edit', :id => @student %> |
-<%= link_to 'Back', :action => 'list' %>
+  <div>
+    <%= link_to 'zpět na výpis', :action => 'list'%>
+  </div>

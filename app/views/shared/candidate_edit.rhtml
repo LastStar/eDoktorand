@@ -19,38 +19,40 @@ Chyba:&nbsp;systém nebyl schopen uložit Vaše úpravy z nasledujících důvod
     <legend>Osobní údaje</legend>
     <%= hidden_field 'candidate', 'id' %>
     <label for='candidate_firstname' class='required'>jméno</label>
-    <%= text_field 'candidate', 'firstname', 'size' => '30' %><br /> 
+    <%= text_field 'candidate', 'firstname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_lastname' class='required'>příjmení</label>
-    <%= text_field 'candidate', 'lastname', 'size' => '30' %><br /> 
-    <label for='candidate_title' class='required'>titul</label>
-    <%= text_field 'candidate', 'title', 'size' => '10' %><br /> 
+    <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_title_before_id' class='required'>titul před jménem</label>
+    <%= select 'candidate', 'title_before_id', title_before_ids %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_title_after_id'>titul za jménem</label>
+    <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
     <label class='required'>datum narození</label>
     <%= date_select 'candidate', 'birth_on', :start_year => 1950, :end_year => 1983,
-    :order => [:day, :month, :year], :use_month_numbers => true %><br /> 
-    <label for='candidate_birth_at' class='required'>narozen v</label>
-    <%= text_field 'candidate', 'birth_at', 'size' => '30' %><br /> 
+    :order => [:day, :month, :year], :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_birth_at' class='required'>místo narození</label>
+    <%= text_field 'candidate', 'birth_at', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_birth_number' class='required'>rodné číslo</label>
-    <%= text_field 'candidate', 'birth_number', 'size' => '11' %><br /> 
+    <%= text_field 'candidate', 'birth_number', 'size' => '11' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_state' class='required'>státní příslušnost</label>
-    <%= text_field 'candidate', 'state', 'size' => '30' %><br /> 
+    <%= text_field 'candidate', 'state', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
   <fieldset id='contact'>
     <legend>Kontakt</legend>
     <label for='candidate_email' class='required'>email</label>
-    <%= text_field 'candidate', 'email', 'size' => '30' %><br /> 
+    <%= text_field 'candidate', 'email', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_phone'>telefon</label>
-    <%= text_field 'candidate', 'phone', 'size' => '30' %><br /> 
+    <%= text_field 'candidate', 'phone', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
   <fieldset id='address'>
     <legend>Adresa trvalého bydliště</legend>
     <label for='candidate_street' class='required'>ulice</label>
-    <%= text_field 'candidate', 'street', 'size' => '30' %> 
+    <%= text_field 'candidate', 'street', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br />  
     <label for='candidate_street' class='required'>číslo popisné</label>
-    <%= text_field 'candidate', 'number', 'size' => '6' %><br /> 
+    <%= text_field 'candidate', 'number', 'size' => '6' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_city' class='required'>obec</label>
-    <%= text_field 'candidate', 'city', 'size' => '30' %><br /> 
+    <%= text_field 'candidate', 'city', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_zip' class='required'>psč</label>
-    <%= text_field 'candidate', 'zip', 'size' => '10' %><br /> 
+    <%= text_field 'candidate', 'zip', 'size' => '10' %><span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
   <fieldset id='postal_address'>
     <legend>Korespondenční adresa - nevyplňovat je li shodná s bydlištěm</legend>
@@ -66,16 +68,16 @@ Chyba:&nbsp;systém nebyl schopen uložit Vaše úpravy z nasledujících důvod
   <fieldset id='sholarship'>
     <legend>Vzdělání</legend>
     <label for="candidate_university" class='required'>univerzita</label>
-    <%= text_field 'candidate', 'university', 'size' => '30' %><br /> 
+    <%= text_field 'candidate', 'university', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for="candidate_faculty" class='required'>fakulta</label>
-    <%= text_field 'candidate', 'faculty', 'size' => '30' %><br /> 
+    <%= text_field 'candidate', 'faculty', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for="candidate_studied_branch" class='required'>obor</label>
-    <%= text_field 'candidate', 'studied_branch', 'size' => '30'  %><br /> 
+    <%= text_field 'candidate', 'studied_branch', 'size' => '30'  %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for="candidate_studied_specializatio">specializace</label>
     <%= text_field 'candidate', 'studied_specialization', 'size' => '30'  %><br /> 
     <label class='required'>datum SZZ</label>
     <%= date_select 'candidate', 'study_end', :start_year => 1970,
-    :order => [:day, :month, :year], :use_month_numbers => true %><br /> 
+    :order => [:day, :month, :year], :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
   <fieldset id='practice'>
     <legend>Zaměstnavatel</legend>
@@ -96,10 +98,10 @@ Chyba:&nbsp;systém nebyl schopen uložit Vaše úpravy z nasledujících důvod
     <label for="candidate_department_id">katedra</label>
     <%= select 'candidate', 'department_id', department_ids(@candidate.coridor.faculty.id) %><br /> 
     <label for="candidate_study_id" class="required">forma studia</label>
-    <%= select 'candidate', 'study_id', study_ids %><br /> 
+    <%= select 'candidate', 'study_id', study_ids %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for="candidate_language1" class="required">jazyky příjímacích zkoušek</label>
     <%= select 'candidate', 'language1', language_ids %>
-    <%= select 'candidate', 'language2', language_ids %>
+    <%= select 'candidate', 'language2', language_ids %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for="candidate_study_theme">tématický okruh</label>
     <%= text_field 'candidate', 'study_theme', 'size' => '30'  %><br /> 
   </fieldset>

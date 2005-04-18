@@ -1,24 +1,34 @@
-<h1>Listing students</h1>
-
-<table>
-  <tr>
-<% for column in Student.content_columns %>
-    <th><%= column.human_name %></th>
+<%= javascript_include_tag "prototype" %>
+<ul>
+<% for student in @students  %>
+  <li>
+    <div class='right'>
+      <%= link_to 'detail', :action => 'show', :id => student.id %>
+      <a href='#' onclick="Toggle.display('info<%= student.id %>'); new Effect.Highlight('info<%= student.id %>'); this.style.display='none'">kontakt</a>
+    </div>
+  <b><%= student.display_name %>
+  rč.&nbsp;<%= student.birth_number %><br /></b>
+  <div class='detail' id='info<%= student.id %>' style="display: none">
+    Email: <%= student.email.name %><br /> 
+    Telefon: <%= student.phone.name %><br /> 
+    Adresa: <%= student.address.to_line_s %><br /> 
+    <% if student.postal_address %>
+    Korespondenční adresa: <%= student.postal_address.to_line_s %>
+    <% end %>
+  </div >
+  </li>
 <% end %>
-  </tr>
-  
-<% for student in @students %>
-  <tr>
-  <% for column in Student.content_columns %>
-    <td><%=h student.send(column.name) %></td>
-  <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => student %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => student %></td>
-    <td><%= link_to 'Destroy', {:action => 'destroy', :id => student}, :confirm => "Are you sure?" %></td>
-  </tr>
-<% end %>
-</table>
-
+</ul>
 <br />
+<script>
+function show(id) {
+  document.getElementById(id).style.display = 'block';
+}
+</script>
 
-<%= link_to 'New student', :action => 'new' %>
+<div class='links'>
+  <%= link_to "předchozí stránka", { :page => @pages.current.previous } if @pages.current.previous %>
+  <%= pagination_links(@pages) %>
+    <%= link_to "následující stránka", { :page => @pages.current.next } if @pages.current.next %>
+</div>
+

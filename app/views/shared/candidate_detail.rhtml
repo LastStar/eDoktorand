@@ -40,7 +40,7 @@
   StudijnÃ­ obor:&nbsp;<b class="info"><%= @candidate.coridor.name %></b> <br /> 
   Katedra:&nbsp;<b class="info"><%= @candidate.department.name %></b><br /> 
   Forma studia:&nbsp;<b class="info"><%= @candidate.study.name %></b><br /> 
-  Jazyky pøíjímacích zkou¹ek:&nbsp;<b class="info"><%= Language.find(@candidate.language1).name + ', ' + Language.find(@candidate.language2).name %></b><br /> 
+  Jazyky pÅ™Ã­jÃ­macÃ­ch zkouÅ¡ek:&nbsp;<b class="info"><%= Language.find(@candidate.language1).name + ', ' + Language.find(@candidate.language2).name %></b><br /> 
   <% unless @candidate.study_theme.empty? %>
   TÃ©matickÃ½ okruh:&nbsp;<b class="info"><%= @candidate.study_theme %></b >
   <% end %>

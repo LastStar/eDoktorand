@@ -1,21 +1,26 @@
 class StudentsController < ApplicationController
+  model :student
+  model :user
+  include LoginSystem
+  layout 'employers'
+  before_filter :login_required
+  before_filter :set_title
+  # lists all students
   def index
     list
     render_action 'list'
   end
-
+  # lists all students
   def list
-    @students = Student.find_all
+    @pages, @students = paginate :students, :per_page => 5, :order_by => 'lastname'
   end
-
+  # show student's detail
   def show
     @student = Student.find(@params[:id])
   end
-
   def new
     @student = Student.new
   end
-
   def create
     @student = Student.new(@params[:student])
     if @student.save
@@ -25,11 +30,9 @@ class StudentsController < ApplicationController
       render_action 'new'
     end
   end
-
   def edit
     @student = Student.find(@params[:id])
   end
-
   def update
     @student = Student.find(@params[:id])
     if @student.update_attributes(@params[:student])
@@ -39,9 +42,13 @@ class StudentsController < ApplicationController
       render_action 'edit'
     end
   end
-
   def destroy
     Student.find(@params[:id]).destroy
     redirect_to :action => 'list'
+  end
+  private
+  # sets title of the controller
+  def set_title
+    @title = 'Studenti'
   end
 end

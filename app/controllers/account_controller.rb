@@ -1,7 +1,10 @@
 class AccountController < ApplicationController
   model   :user
   include LoginSystem
-  layout  'scaffold'
+  layout  'employers'
+  before_filter :login_required, :except => [:login, :logout]
+  before_filter :set_title
+  
 
   def login
     case @request.method
@@ -21,7 +24,6 @@ class AccountController < ApplicationController
     case @request.method
       when :post
         @user = User.new(@params['user'])
-        
         if @user.save      
           @session['user'] = User.authenticate(@user.login, @params['user']['password'])
           flash['notice']  = "Signup successful"
@@ -47,4 +49,9 @@ class AccountController < ApplicationController
   def welcome
   end
   
+  private
+  # sets title of the controller
+  def set_title
+    @title = 'Systém e-doktorand'
+  end
 end

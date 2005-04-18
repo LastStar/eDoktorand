@@ -43,8 +43,13 @@ class FormController < ApplicationController
   end
   # preview information
   def preview
-      @title = "Kontrola zadaného"
-      flash.now['notice'] = "Prohlídněte si pozorně Vámi zadané informace. Poté postupujte podle návodu ve spodní části stránky." 
+      if @candidate
+        @title = "Kontrola zadaného"
+        flash.now['notice'] = "Prohlídněte si pozorně Vámi zadané informace. Poté postupujte podle návodu ve spodní části stránky." 
+      else
+        @candidate = Candidate.find(@params['id'])
+        @title = "Tisk"
+      end
   end
   # correct details
   def correct

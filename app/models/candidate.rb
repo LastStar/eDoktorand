@@ -3,6 +3,8 @@ class Candidate < ActiveRecord::Base
   belongs_to :department
   belongs_to :study
   belongs_to :student
+  belongs_to :title_before, :class_name => 'Title', :foreign_key => 'title_before_id'
+  belongs_to :title_after, :class_name => 'Title', :foreign_key => 'title_after_id'
   validates_presence_of :firstname, :message => "Jméno nesmí být prazdné"
   validates_presence_of :lastname, :message => "Příjmení nesmí být prazdné"
   validates_presence_of :birth_at, :message => "Místo narození nesmí být prazdné"
@@ -15,7 +17,7 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :faculty, :message => "Fakulta nesmí být prazdná"
   validates_presence_of :studied_branch, :message => "Obor nesmí být prazdný"
   validates_presence_of :birth_number, :message => "Rodné číslo nesmí být prazdné"
-  validates_presence_of :title, :message => "Titul nesmí být prazdný"
+  validates_presence_of :title_before, :message => "Titul před jménem nesmí být prázdný"
   validates_presence_of :number, :message => "Čislo popisné nesmí být prazdné"
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, 
   :on => :create, :message => "Email nemá správný formát"
@@ -31,8 +33,9 @@ class Candidate < ActiveRecord::Base
   end
   # returns name for displaying
   def display_name
-    dn = self.firstname + " " + self.lastname
-    dn = self.title + ' ' + dn unless self.title.nil?
+    arr = [self.title_before.name, self.firstname, self.lastname]
+    arr <<  self.title_after.name if self.title_after
+    return arr.join(' ')
   end
   # returns address for displaying
   def address
@@ -50,18 +53,19 @@ class Candidate < ActiveRecord::Base
     student.birth_number = self.birth_number
     student.birth_on = self.birth_on
     student.birth_at = self.birth_at
+    student.title_before = self.title_before
+    student.title_after = self.title_after
     student.state = self.state
     student.firstname, student.lastname = self.firstname, self.lastname
-    student.address = self.create_address
+    student.save
+    create_address(student.id)
     if self.postal_city
-      student.postal_address = self.create_postal_address
+      create_postal_address(student.id)
     end
     student.email = self.contact_email
     student.phone = self.contact_phone if self.phone
-    student.save
     self.student = student
     self.save
-    # breakpoint
   end
   # checks if candidate is allready admited
   def admited?
@@ -82,21 +86,27 @@ class Candidate < ActiveRecord::Base
     end
   end
   # returns new address with attributes set by self 
-  def create_address
-    Address.new {|a|
+  def create_address(id)
+    add = Address.new {|a|
+      a.student_id = id
       a.street = self.street
       a.desc_number = self.number
       a.city = self.city
       a.zip = self.zip
+      a.type = AddressType.find(1)
     }
+    add.save
   end
   # returns new postal address with attributes set by self
-  def create_postal_address
-    Address.new {|a|
+  def create_postal_address(id)
+    add = Address.new {|a|
+      a.student_id = id
       a.street = self.postal_street
       a.desc_number = self.postal_number
       a.city = self.postal_city
       a.zip = self.postal_zip
+      a.type = AddressType.find(2)
     }
+    add.save
   end
 end

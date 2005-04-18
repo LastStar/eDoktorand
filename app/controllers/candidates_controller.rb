@@ -4,6 +4,7 @@ class CandidatesController < ApplicationController
   include LoginSystem
   layout 'employers'
   before_filter :login_required
+  before_filter :set_title
   # lists all candidates
   def index
     list
@@ -11,7 +12,7 @@ class CandidatesController < ApplicationController
   end
   # lists all candidates
   def list
-    @pages, @candidates = paginate :candidates, :per_page => 5, :order_by => 'finished_on', :conditions => 'finished_on IS NOT NULL'
+    @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => 'finished_on', :conditions => 'finished_on IS NOT NULL'
   end
   # shows candidate details
   def show
@@ -47,5 +48,10 @@ class CandidatesController < ApplicationController
     @candidate.admit!
     flash['notice'] = 'Uchazeč byl úspěšně přijat.'
     redirect_to :action => 'list'
+  end
+  private
+  # sets title of the controller
+  def set_title
+    @title = 'Uchazeči o studium'
   end
 end
