@@ -71,6 +71,15 @@ class Candidate < ActiveRecord::Base
   def admited?
     return !self.admited_on.nil?
   end
+  # sets candidate ready for admition
+  def ready!
+    self.ready_on = Time.now
+    self.save
+  end
+  # checks if student is ready
+  def ready?
+    !self.ready_on.nil?
+  end
   # returns email like contact object
   def contact_email
     return Contact.new do |c|

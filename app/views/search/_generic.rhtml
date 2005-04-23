@@ -1,0 +1,7 @@
+<div class="record">
+    <table>
+            <% generic.class.searchable_fields.each do |field| %>
+            <tr> <th><%= field.to_s %></th> <td><%= generic.send(field) %></td> </tr>
+            <% end %>
+    </table> 
+</div>

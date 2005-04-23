@@ -1,0 +1,9 @@
+xml.OpenSearchDescription(:xmlns => "http://a9.com/-/spec/opensearchrss/1.0/") do
+    xml.url("http://localhost:3000/opensearch/{searchTerms}/{count}")
+    xml.format("http://a9.com/-/spec/opensearchrss/1.0/")
+    xml.shortname("site shortname")
+    xml.longname("site longname")
+    xml.description("site description")
+    xml.syndicationright("open")
+    xml.adultcontent("false")
+end

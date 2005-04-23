@@ -1,7 +1,11 @@
-  <div class='notice'
-  <% unless @faculties.empty? %>
+<div class='notice'>
+    Po kliknutí na fakultu se Vám zobrazí všechny obory pro ni.
+</div>
+<%= print_notice %>
+<% unless @faculties.empty? %>
   <ul>
     <% for f in @faculties do %>
+    <% if f.coridors.empty? then next end %>
     <li>
     <a href='#' onClick="show(<%= f.id %>)">Fakulta: <%= f.name %></a><br /> 
       <% unless f.documents.empty? %>

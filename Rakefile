@@ -151,7 +151,7 @@ task :db_structure_dump => :environment do
       ENV['PGHOST']     = abcs[RAILS_ENV]["host"] if abcs[RAILS_ENV]["host"]
       ENV['PGPORT']     = abcs[RAILS_ENV]["port"].to_s if abcs[RAILS_ENV]["port"]
       ENV['PGPASSWORD'] = abcs[RAILS_ENV]["password"]
-      `pg_dump -U "#{abcs[RAILS_ENV]["username"]}" -s -x -f db/#{RAILS_ENV}_structure.sql #{abcs[RAILS_ENV]["database"]}`
+      `pg_dump -U "#{abcs[RAILS_ENV]["username"]}" -s -x -O -f db/#{RAILS_ENV}_structure.sql #{abcs[RAILS_ENV]["database"]}`
     when "sqlite", "sqlite3"
       `#{abcs[RAILS_ENV]["adapter"]} #{abcs[RAILS_ENV]["dbfile"]} .schema > db/#{RAILS_ENV}_structure.sql`
     else 
@@ -164,7 +164,7 @@ task :purge_test_database => :environment do
   abcs = ActiveRecord::Base.configurations
   case abcs["test"]["adapter"]
     when "mysql"
-      ActiveRecord::Base.establish_connection(abcs[RAILS_ENV])
+      ActiveRecord::Base.establish_connection(:test)
       ActiveRecord::Base.connection.recreate_database(abcs["test"]["database"])
     when "postgresql"
       ENV['PGHOST']     = abcs["test"]["host"] if abcs["test"]["host"]
@@ -176,5 +176,13 @@ task :purge_test_database => :environment do
       File.delete(abcs["test"]["dbfile"]) if File.exist?(abcs["test"]["dbfile"])
     else 
       raise "Unknown database adapter '#{abcs["test"]["adapter"]}'"
+  end
+end
+
+desc "Clears all *.log files in log/"
+task :clear_logs => :environment do
+  FileList["log/*.log"].each do |log_file|
+    f = File.open(log_file, "w")
+    f.close
   end
 end

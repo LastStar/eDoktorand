@@ -44,6 +44,7 @@ CREATE TABLE candidates (
   note text,
   number integer,
   postal_number integer,
+  ready_on timestamp,
   student_id integer
 );
 
@@ -224,8 +225,9 @@ CREATE TABLE tutorships (
   id integer primary key,
   department_id integer,
   tutor_id integer,
-  corridor_id integer
+  coridor_id integer
 );
+
 --
 -- Table structure for table titles
 --
@@ -235,6 +237,30 @@ CREATE TABLE titles (
   id integer primary key,
   name varchar(100),
   before integer
+);
+
+
+--
+-- Table structure for table disert_themes
+--
+
+DROP TABLE disert_themes;
+CREATE TABLE disert_themes (
+  id integer primary key,
+  title varchar(100),
+  index_id integer
+);
+
+
+--
+-- Table structure for table methodologies
+--
+
+DROP TABLE methodologies;
+CREATE TABLE methodologies (
+  id integer primary key,
+  text varchar(255),
+  disert_theme_id integer
 );
 
 --
@@ -257,6 +283,49 @@ DROP TABLE users;
 CREATE TABLE users (
   id integer primary key,
   login varchar(80),
-  password varchar(40)
+  password varchar(40),
+  person_id integer
 );
 
+
+--
+-- Table structure for table roles
+--
+
+DROP TABLE roles;
+CREATE TABLE roles (
+  id integer primary key,
+  name varchar(20),
+  info varchar(100)
+);
+
+--
+-- Table structure for table permissions
+--
+DROP TABLE permissions;
+CREATE TABLE permissions (
+  id integer primary key,
+  name varchar(20),
+  info varchar(100)
+);
+
+--
+-- Table structure for table roles_users
+--
+
+DROP TABLE roles_users;
+CREATE TABLE roles_users (
+  user_id integer,
+  role_id integer 
+);
+
+
+--
+-- Table structure for table permissions_roles
+--
+
+DROP TABLE permissions_roles;
+CREATE TABLE permissions_roles (
+  role_id integer,
+  permission_id integer 
+);

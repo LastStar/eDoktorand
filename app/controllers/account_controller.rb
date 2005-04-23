@@ -2,9 +2,8 @@ class AccountController < ApplicationController
   model   :user
   include LoginSystem
   layout  'employers'
-  before_filter :login_required, :except => [:login, :logout]
+  before_filter :login_required, :except => [:login, :logout, :error]
   before_filter :set_title
-  
 
   def login
     case @request.method
@@ -47,6 +46,9 @@ class AccountController < ApplicationController
   end
     
   def welcome
+  end
+  # error page for system
+  def error
   end
   
   private

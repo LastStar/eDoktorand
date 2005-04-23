@@ -22,5 +22,10 @@ module ApplicationHelper
     arr.concat(Title.find_all(['before = ?', '0']).map {|s| [s.name, s.id]})
     return arr
   end
-
+  # prints notice from flash
+  def print_notice
+    if @flash[:notice]
+      content_tag('div', @flash['notice'], :class => 'notice')
+    end 
+  end
 end

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>SITE TITLE</title>
+    </head>
+    <body>
+
+            <h1>Search SITE</h1>
+            
+            <form action="/search" method="get">
+                <% if @search_terms.size > 0 %>
+                <input type="text" name="search_terms" value="<%= @search_terms.join(" ") %>" size="30" />
+                <% else %>
+                <input type="text" name="search_terms" value="" size="30" />
+                <% end %>
+            </form>
+
+            <hr />
+
+            <h2>Results</h2>
+            <%= @content_for_layout %>
+
+    </body>
+</html>

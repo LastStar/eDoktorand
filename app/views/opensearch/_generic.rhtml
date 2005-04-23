@@ -1,0 +1,11 @@
+<title><%= generic.class.name %></title>
+<link>INSERT CODE TO GET LINK TO THIS ITEM</link>
+<description>
+<div class="record">
+    <table>
+            <% generic.class.searchable_fields.each do |field| %>
+            <tr> <th><%= field.to_s %></th> <td><%= generic.send(field) %></td> </tr>
+            <% end %>
+    </table> 
+</div>
+</description>

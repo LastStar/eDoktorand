@@ -19,4 +19,13 @@ class ApplicationController < ActionController::Base
   def study_ids
     Study.find_all.map {|s| [s.name, s.id]}
   end
+  # authorizes user
+  def authorize?(user)
+    if user.has_permission?("%s/%s" % [ @params["controller"], @params["action"] ])
+      return true
+    else
+      flash['error'] = 'K přístupu na požadovanou stránku nemáte dostačující práva'
+      redirect_to :controller => 'account', :action => 'error'
+    end
+  end
 end

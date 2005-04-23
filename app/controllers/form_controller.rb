@@ -6,14 +6,12 @@ class FormController < ApplicationController
   def index
     @faculties = Faculty.find_all
     @title = "Přijímací řízení k doktorskému studiu"
-    flash.now['notice'] = "Po kliknutí na fakultu se Vám zobrazí všechny obory pro ni."
   end
   # form details  
   def details
     prepare_candidate
     @action = 'save'
     @title = "Formulář přihlášky na obor " + @candidate.coridor.name
-    flash.now['notice'] = 'Vyplňte prosím všechny údaje, jejichž popiska je červená'
   end
   # preview what has been inserted
   def save

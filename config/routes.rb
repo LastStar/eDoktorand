@@ -14,6 +14,10 @@ ActionController::Routing::Routes.draw do |map|
   # instead of a file named 'wsdl'
   map.connect ':controller/service.wsdl', :action => 'wsdl'
 
+  # sorting routes for candidate
+  map.connect 'candidates/by/:category', :controller => 'candidates', :action => 'list'
+  # add path for prijimacky
+  map.connect 'prijimacky/:action/:id', :controller => 'form'
   # Install the default route as the lowest priority.
   map.connect ':controller/:action/:id'
 end

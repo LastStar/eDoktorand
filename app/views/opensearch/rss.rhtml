@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+  <rss version="1.0" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/">
+  <channel>
+      <title>Site title</title>
+      <link><%= @request.env['REQUEST_URI'] %></link>
+      <description>Site description</description>
+      <language>en-us</language>
+      <copyright>&amp;copy;2003-2005, site its affiliates.</copyright>
+      <openSearch:totalResults><%= @results.size %></openSearch:totalResults>
+      <openSearch:startIndex>1</openSearch:startIndex>
+      <openSearch:itemsPerPage><%= @results.size %></openSearch:itemsPerPage>
+
+
+      <% for result in @results %>
+            <% begin %>
+            <%= render_partial "opensearch/#{Inflector.underscore(result.class)}", result %>
+            <% rescue ActionView::ActionViewError %>
+            <%= render_partial "opensearch/generic", result %>
+            <% end %>
+       <% end %>
+  </channel>
+  </rss>
+

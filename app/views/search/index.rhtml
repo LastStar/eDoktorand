@@ -1,0 +1,14 @@
+<% @results.each do |result|  %>
+<hr />
+
+<%# Try to render a partial based upon the class name %>
+<%# but if that does not work, reneder a generic one %>
+
+    <%  begin %>
+    <%= render_partial Inflector.underscore(result.class), result %>
+    <%  rescue ActionView::ActionViewError %>
+    <pre>No parital available for <%= result.class %>, using generic </pre>
+    <%= render_partial "generic", result %>
+    <%  end %>
+
+<% end %>

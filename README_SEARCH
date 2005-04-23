@@ -1,0 +1,81 @@
+== Installation
+
+    After the search engine has been generated, there are still tasks to
+    fully integrate the search engine into your site.
+
+=== Inspect
+
+    execute:
+
+        script/generate search Search --inspect 
+
+    This will report which of your models can be made searchable.  Feel
+    free to run it many times.
+
+=== Models 
+
+    In each of your Models in which you want to have the content
+    searched, and are ActiveRecord descendants, you need to add a
+    require_dependency "search_system".  Then you are able to invoke the
+    class method 'make_searchable' with an Array of field symbols.
+
+    For example:
+            
+        require_dependency "search_system"
+        class Article < ActiveRecord::Base
+            make_searchable [ :title, :author, :content ]
+        end 
+
+=== Routes
+
+    Add the following lines to your config/routes.rb to hook in search
+
+        # allow for searching view the route
+        map.connect 'search/:search_terms/:count', :controller => 'search', :action => 'index', :count => '-1' 
+
+        # allow for Open Search RSS feeds searching
+        map.connect 'rss/opensearch/description.xml', :controller => 'search', :action => 'description'
+        map.connect 'rss/opensearch/:search_terms/:count', :controller => 'search', :action => 'rss', :count => '-1'  
+
+=== Layouts
+
+    A 'very' basic layout/search.rhtml is installed that shows the basic
+    results.  This should be customized for your site.  
+
+=== Views
+
+    Two new views have been added to your rails application.
+
+    1. Search
+
+       This view should be customized for your site so that the search
+       results fit in well with your site.  The default _partial
+       template that exists will render out a generic table showing all
+       the fields and their values for the search results.  You should
+       customize the index.rhtml file to integrate with your site, and
+       you should create a _partial.rhtml for each Model that you could
+       have search results for.
+
+       That is, if you have an application with an Article Model, you
+       should create a _article.rhtml file in this view to render out
+       the results of your search that are of Article class.  
+
+       The generic index.rhtml that is present will automatically use
+       the appropriate _parital.rhtml file based upon the class name if
+       it is present.
+
+    2. Open Search
+
+        This view is to return results in the format of OpenSearch RSS
+        (http://opensearch.a9.com/spec/opensearchrss/1.0/).  This
+        combined with the rss/opensearch Routes above and the 
+        description.rxml file found in this view should provide you with
+        an OpenSearch-able site.  
+      
+        Again, you should create a _partial.rhtml file in this directory
+        for each Model you have that can return search results.  
+   
+        Also, the description.xml file should be configure with your
+        sites information.
+        
+
