@@ -22,6 +22,10 @@ module ApplicationHelper
     arr.concat(Title.find_all(['before = ?', '0']).map {|s| [s.name, s.id]})
     return arr
   end
+  # get role ids
+  def role_ids(collection)
+    collection.map {|s| [s.name, s.id]}
+  end
   # prints notice from flash
   def print_notice
     if @flash[:notice]

@@ -1,0 +1,17 @@
+<h2>PŘIŘAZENÍ SKUPIN UŽIVATELI</h2>
+
+<p>
+Uživatel: <%= @user.login %>
+
+<p>
+Záznam byl aktualizován v databázi<br><br>
+
+<%if @roles_down %>
+  <p>Uživateli byly odebrany tyto role:<br>
+  <%= @roles_down.map {|r| r.name}.join('; ') %>
+<% end %>
+
+<%if @roles_up %>
+<p>Uživatel byl přidán do těchto skupin:<br>
+<%= @roles_up.map {|r| r.name}.join('; ') %>
+<% end %>

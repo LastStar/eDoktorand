@@ -1,0 +1,50 @@
+<h2>PŘIŘAZENÍ SKUPIN UŽIVATELI</h2>
+
+<%= javascript_include_tag "OptionTransfer.js" %>
+<%= javascript_include_tag "selectbox.js" %>
+
+<p>
+Uživatel: <%= @user.login %>
+<%= form_tag :action => 'user_roles_update' %>
+
+<BR>
+  <table>
+<TR>
+  <TD>Nepřiřazeno:<br>
+  <%= select 'unassigned_roles', 'id', role_ids(@unassigned_roles), {}, {:multiple => 'true', :size => 15, :ondblclick => 'opt.transferRight()'} %>
+  </TD>
+  <TD VALIGN=MIDDLE ALIGN=CENTER>
+
+    <INPUT TYPE="button" NAME="right" VALUE="&gt;&gt;" ONCLICK="opt.transferRight()"><BR><BR>
+    <INPUT TYPE="button" NAME="right" VALUE="All &gt;&gt;" ONCLICK="opt.transferAllRight()"><BR><BR>
+    <INPUT TYPE="button" NAME="left" VALUE="&lt;&lt;" ONCLICK="opt.transferLeft()"><BR><BR>
+    <INPUT TYPE="button" NAME="left" VALUE="All &lt;&lt;" ONCLICK="opt.transferAllLeft()">
+  </TD>
+  <TD>Přiřazeno:<br>
+  <%= select 'user_roles', 'id', role_ids(@user_roles), {}, {:multiple => 'true', :size => 15, :ondblclick => 'opt.transferLeft()'} %>
+  </TD>
+  </tr><tr><td colspan="3" align="center">
+  Nepřesouvat: <INPUT TYPE="text" NAME="regex" SIZE="15" VALUE=""
+  onChange="opt.setStaticOptionRegex(this.value);opt.update()">
+  </td>
+</TR>
+
+</TABLE>
+
+<INPUT TYPE="hidden" NAME="id" VALUE="<%=@user.id%>"><BR>
+<INPUT TYPE="hidden" NAME="addedLeft" VALUE=""><BR>
+<INPUT TYPE="hidden" NAME="addedRight" VALUE=""><BR>
+<INPUT TYPE="submit" VALUE="Uložit" SIZE=70><BR>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+var opt = new OptionTransfer("unassigned_roles[id]","user_roles[id]");
+opt.setAutoSort(true);
+opt.saveRemovedLeftOptions("removedLeft");
+opt.saveRemovedRightOptions("removedRight");
+opt.saveAddedLeftOptions("addedLeft");
+opt.saveAddedRightOptions("addedRight");
+opt.saveNewLeftOptions("newLeft");
+opt.saveNewRightOptions("newRight");
+opt.init(document.forms[0]);
+</script>

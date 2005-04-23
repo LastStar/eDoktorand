@@ -50,7 +50,23 @@ class AccountController < ApplicationController
   # error page for system
   def error
   end
-  
+
+  def user_roles
+    @user = User.find(@params['id'])
+    @unassigned_roles = Role.find(:all) - @user.roles
+    @user_roles = @user.roles
+  end
+
+  def user_roles_update
+    @user = User.find(@params['id'])
+    @roles_up   = Role.find(@params['addedRight'].split(',')) unless @params['addedRight'].empty?
+    @roles_down = Role.find(@params['addedLeft'].split(',')) unless @params['addedLeft'].empty?
+
+    # adding and removing
+    @user.roles.delete(@roles_down) if @roles_down
+    @user.roles << @roles_up if @roles_up
+  end
+
   private
   # sets title of the controller
   def set_title
