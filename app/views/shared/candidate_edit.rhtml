@@ -114,3 +114,8 @@ Chyba:&nbsp;systém nebyl schopen uložit Vaše úpravy z nasledujících důvod
     <input type='reset' value='Vymazat' />
   </fieldset>
   <%= end_form_tag %>
+  <%= javascript_include_tag "prototype" %>
+  <script>
+    Field.activate('candidate_firstname')
+  </script>
+  <%= render_partial 'system_menu' %>

@@ -30,22 +30,4 @@
 <br />
 
 <%= list_links %>
-
-<script>
-function open_all_details() {
-  <% for id in ids %>
-  $('info' + <%= id %>).style.display = '';
-  $('link' + <%= id %>).style.background = '#ffd';
-  $('link' + <%= id %>).style.color = 'gray';
-  <% end %>
-}
-function close_all_details() {
-  <% for id in ids %>
-  $('info' + <%= id %>).style.display = 'none';
-  $('link' + <%= id %>).style.background = 'white';
-  $('link' + <%= id %>).style.color = '';
-  <% end %>
-}
-</script>
-<%= javascript_include_tag "prototype" %>
-<%= javascript_include_tag "candidates_list" %>
+<%= render_partial 'list_script', :ids => ids %>

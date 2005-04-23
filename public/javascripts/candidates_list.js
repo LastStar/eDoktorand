@@ -1,6 +1,6 @@
 // needs a prototype by Fuchs
 function toggle_detail(id) {
-  Toggle.display('info' + id);
+  Element.toggle('info' + id);
   if($('info' + id).style.display == '') {
     new Effect.Highlight('info' + id);
     $('link' + id).style.background = '#ffd';
