@@ -163,10 +163,10 @@ div.fieldWithErrors label { color: red; }
 .right { float: right; width: 20em;}
 .right a {
   font-size: smaller;
-  background-color: white;
-  padding: 3px;
-  border: 1px solid gray;
   text-decoration: none;
+  background-color: white;
+  padding: 1px;
+  border: 1px solid gray;
 } 
 .links {
   background-color: #ffd;

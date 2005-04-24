@@ -8,6 +8,13 @@
   <link href="/stylesheets/standard.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
+  <div class='right'>
+    <%= link_to_unless_current('úvodní stránka', :controller => 'account', :action => 'welcome') {} %>
+    <%= link_to_unless_current('odhlásit', {:controller => 'account', :action => 'logout'},
+    :confirm => 'opravdu se chcete odhlásit?'){} %>
+    <%= link_to_unless_current('uchazeči', :controller => 'candidates'){} %>
+    <%= link_to_unless_current('studenti', :controller => 'students'){} %>
+  </div>
   <h1 id='title'><%= @title %></h1>
   <div id="main">
     <%= @content_for_layout %>
