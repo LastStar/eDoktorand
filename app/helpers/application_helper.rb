@@ -14,7 +14,9 @@ module ApplicationHelper
   end
   # get title_before ids
   def title_before_ids
-    Title.find_all(['before = ?', '1']).map {|s| [s.name, s.id]}
+    arr = [['---', '0']]
+    arr.concat(Title.find_all(['before = ?', '1']).map {|s| [s.name, s.id]})
+    return arr
   end
   # get title_before ids
   def title_after_ids
