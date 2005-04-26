@@ -93,7 +93,7 @@ CREATE TABLE languages (
 
 
 --
--- Table structure for table Documents
+-- Table structure for table documents
 --
 
 DROP TABLE documents;
@@ -319,6 +319,65 @@ CREATE TABLE disert_themes (
   -- name varchar(100)
 -- );
 
+----------------------------------------
+-- security part of the application
+----------------------------------------
+
+--
+-- Table structure for table users
+--
+
+DROP TABLE users;
+CREATE TABLE users (
+  id integer primary key,
+  login varchar(80),
+  password varchar(40),
+  person_id integer
+);
+
+
+--
+-- Table structure for table roles
+--
+
+DROP TABLE roles;
+CREATE TABLE roles (
+  id integer primary key,
+  name varchar(20),
+  info varchar(100)
+);
+
+--
+-- Table structure for table permissions
+--
+DROP TABLE permissions;
+CREATE TABLE permissions (
+  id integer primary key,
+  name varchar(20),
+  info varchar(100)
+);
+
+--
+-- Table structure for table roles_users
+--
+
+DROP TABLE roles_users;
+CREATE TABLE roles_users (
+  user_id integer,
+  role_id integer 
+);
+
+
+--
+-- Table structure for table permissions_roles
+--
+
+DROP TABLE permissions_roles;
+CREATE TABLE permissions_roles (
+  role_id integer,
+  permission_id integer 
+);
+
 -----------------------------------------
 -- folowing structures are related to DWH
 -----------------------------------------
@@ -398,57 +457,3 @@ CREATE TABLE sessions (
 );
 
 
---
--- Table structure for table users
---
-
-DROP TABLE users;
-CREATE TABLE users (
-  id integer primary key,
-  login varchar(80),
-  password varchar(40),
-  person_id integer
-);
-
-
---
--- Table structure for table roles
---
-
-DROP TABLE roles;
-CREATE TABLE roles (
-  id integer primary key,
-  name varchar(20),
-  info varchar(100)
-);
-
---
--- Table structure for table permissions
---
-DROP TABLE permissions;
-CREATE TABLE permissions (
-  id integer primary key,
-  name varchar(20),
-  info varchar(100)
-);
-
---
--- Table structure for table roles_users
---
-
-DROP TABLE roles_users;
-CREATE TABLE roles_users (
-  user_id integer,
-  role_id integer 
-);
-
-
---
--- Table structure for table permissions_roles
---
-
-DROP TABLE permissions_roles;
-CREATE TABLE permissions_roles (
-  role_id integer,
-  permission_id integer 
-);
