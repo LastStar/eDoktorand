@@ -50,34 +50,37 @@ CREATE TABLE candidates (
 
 --
 -- Table structure for table coridors
+-- just stub for admit form
 --
 
 DROP TABLE coridors;
 CREATE TABLE coridors (
   id integer primary key,
   name varchar(50),
-  faculty_id varchar(50)
+  faculty_id integer
 );
 
 --
 -- Table structure for table departments
+-- just stub for admit form
 --
 
 DROP TABLE departments;
 CREATE TABLE departments (
   id integer primary key,
-  name varchar(50),
+  name varchar(256),
   faculty_id integer
 );
 
 --
 -- Table structure for table faculties
+-- just stub for admit form
 --
 
 DROP TABLE faculties;
 CREATE TABLE faculties (
   id integer primary key,
-  name varchar(50)
+  name varchar(256)
 );
 
 --
@@ -108,8 +111,8 @@ CREATE TABLE documents (
 -- Table structure for table studies
 --
 
-DROP TABLE studies;
-CREATE TABLE studies (
+DROP TABLE study_types;
+CREATE TABLE study_types (
   id integer primary key,
   name varchar(50)
 );
@@ -163,11 +166,11 @@ CREATE TABLE study_plans (
   admited_on timestamp,
   canceled_on timestamp,
   approved_on timestamp
-  -- status_id integer -- deprecated in favor of method drven checks
+  -- status_id integer -- deprecated in favor of method driven checks
 );
 
 --
--- Table structure for table plansubjects
+-- Table structure for table plan_subjects
 --
 
 DROP TABLE plan_subjects;
@@ -175,6 +178,7 @@ CREATE TABLE plan_subjects (
   id integer primary key,
   study_plan_id integer,
   subject_id integer,
+  finishing_to timestamp,
   created_on timestamp,
   updated_on timestamp
 );
@@ -203,14 +207,14 @@ CREATE TABLE exam (
 DROP TABLE interupts;
 CREATE TABLE interupts (
   id integer primary key,
-  study_plan_id integer,
+  index_id integer,
   note varchar(100),
   created_on timestamp,
   updated_on timestamp
 );
 
 --
--- Table structure for table approvments
+-- Table structure for table approvements
 -- aproovements are related to study_plans, disert_themes and interupts
 --
 
@@ -219,10 +223,10 @@ CREATE TABLE approvements (
   id integer primary key,
   type varchar(30),
   document_id integer,
-  tutor_deliverance_id integer,
-  leader_deliverance_id integer,
-  dean_deliverance_id integer,
-  board_deliverance_id integer,
+  tutor_statement_id integer,
+  leader_statement_id integer,
+  dean_statement_id integer,
+  board_statement_id integer,
   created_on timestamp,
   updated_on timestamp
 );
@@ -231,8 +235,8 @@ CREATE TABLE approvements (
 -- Table structure for table deliverance
 --
 
-DROP TABLE deliverance;
-CREATE TABLE deliverance (
+DROP TABLE statement;
+CREATE TABLE statement (
   id integer primary key,
   note varchar(100),
   result integer,
@@ -293,6 +297,7 @@ CREATE TABLE disert_themes (
   title varchar(100),
   index_id integer,
   methodology_file varchar(30),
+  finishing_to timestamp,
   created_on timestamp,
   updated_on timestamp
 );
