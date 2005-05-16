@@ -143,10 +143,11 @@ DROP TABLE indexes;
 CREATE TABLE indexes (
   id integer primary key,
   -- year integer, -- should be computed in class?
-  study_id integer,
+  study_plan_id integer,
   student_id integer,
   department_id integer,
   coridor_id integer,
+  disert_theme_id integer,
   tutorship_id integer,
   created_on timestamp,
   updated_on timestamp
