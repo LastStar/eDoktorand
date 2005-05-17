@@ -3,7 +3,7 @@ class CandidatesController < ApplicationController
   model :user
   include LoginSystem
   layout 'employers'
-  before_filter :login_required
+  before_filter :login_required, :except => [:invitation]
   before_filter :set_title, :change_sort
   # lists all candidates
   def index
@@ -12,7 +12,9 @@ class CandidatesController < ApplicationController
   end
   # lists all candidates
   def list
-    @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => @params['category'], :conditions => 'finished_on IS NOT NULL'
+		conditions = 'finished_on IS NOT NULL'
+		conditions << " AND #{@params['filter']}_on NOT NULL" if @params['filter']
+    @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => @params['category'], :conditions => conditions
   end
   # shows candidate details
   def show
@@ -40,14 +42,10 @@ class CandidatesController < ApplicationController
   end
   # amits candidate
   def admit
-    @candidate = Candidate.find(@params['id'])
-  end
-  # confirms admition of student
-  def confirm_admit
-    candidate = Candidate.find(@params['id'])
-    candidate.admit!
-    flash['notice'] = 'Uchazeč byl úspěšně přijat.'
-    redirect_to :action => 'list'
+  	candidate = Candidate.find(@params['id'])
+  	candidate.admit!
+  	flash['notice'] = 'Uchazeč byl úspěšně přijat.'
+  	redirect_to :action => 'list'
   end
   # set candidate ready for admition
   def ready
@@ -58,12 +56,15 @@ class CandidatesController < ApplicationController
   end
   # set candidate ready for admition
   def invite
-    candidate = Candidate.find(@params['id'])
-    candidate.invite!
-		Notifications::deliver_invite_candidate(candidate) #
-    flash['notice'] = "Uchazeč #{candidate.display_name} je pozván na příjimací zkoušky"
-    redirect_to :action => 'list'
+    @candidate = Candidate.find(@params['id'])
+    @candidate.invite!
+		Notifications::deliver_invite_candidate(@candidate)
+    render_action 'invitation'
   end
+	# shows invitation for candidate
+	def invitation
+		@candidate = Candidate.find(@params['id'])
+	end
 
   private
   # sets title of the controller
