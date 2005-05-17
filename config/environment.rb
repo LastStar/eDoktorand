@@ -67,5 +67,6 @@ Controllers = Dependencies::LoadingModule.root(
 ActionMailer::Base.server_settings = {
   :address  => "smtp.beneta.cz",
   :port  => 25, 
+	:domain  => "smtp.beneta.cz",
   :authentication  => :plain
-    } 
+  } 

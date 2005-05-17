@@ -60,7 +60,7 @@ class CandidatesController < ApplicationController
   def invite
     candidate = Candidate.find(@params['id'])
     candidate.invite!
-		Notifications::invite_candidate(candidate)
+		Notifications::deliver_invite_candidate(candidate)
     flash['notice'] = "Uchazeč #{candidate.display_name} je pozván na příjimací zkoušky"
     redirect_to :action => 'list'
   end
