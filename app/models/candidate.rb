@@ -47,6 +47,15 @@ class Candidate < ActiveRecord::Base
   def postal_address
     return [[self.postal_street, self.postal_number.to_s].join(' '), self.postal_city, self.postal_zip].join(', ')
   end
+  # invites candidate to entrance exam
+  def invite!
+    self.invited_on = Time.now
+    self.save
+  end
+  # checks if candidate is allready invited 
+  def invited?
+    return !self.invited_on.nil?
+  end
   # admits candidate to study and returns new student based on 
   # candidates details. 
   def admit!

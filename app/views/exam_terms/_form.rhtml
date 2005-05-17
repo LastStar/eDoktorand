@@ -1,0 +1,18 @@
+
+<%= errors_for(@exam_term) %>
+
+<!--[form:exam_term]-->
+<p><label for="exam_term_start_time">Začátek</label>
+<%= text_field 'exam_term', 'start_time'  %></p>
+
+<p><label for="exam_term_room">Místnost</label>
+<%= text_field 'exam_term', 'room'  %></p>
+
+<p><label for="exam_term_chairman">Předseda komise</label>
+<%= text_field 'exam_term', 'chairman'  %></p>
+
+<p><label for='candidate_title_before_id'>Koridor</label>
+<%= select 'exam_term', 'coridor_id', coridor_ids %></p>
+
+<!--[eoform:exam_term]-->
+

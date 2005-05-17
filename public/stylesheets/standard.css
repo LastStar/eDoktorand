@@ -106,7 +106,6 @@ form {
 }
 #footer {
   background-color: white;
-  width: 100%;
   border-top: 1px solid #ffd;
   font-size: 9px;
   text-align: right;
@@ -160,17 +159,13 @@ div.fieldWithErrors label { color: red; }
 .strut { display: none; }
 .printHeader h2, h3, h4 { display: none; }
 .printHeader { display: none; }
-.right { float: right; width: 20em;}
+.right { float: right; text-align: right; padding-right: 1em}
 .right a {
   font-size: smaller;
-  text-decoration: none;
-  background-color: white;
   padding: 1px;
-  border: 1px solid gray;
 } 
 .links {
   background-color: #ffd;
-  width: 100%;
   font-size: smaller;
   margin-left: 1%;
 }

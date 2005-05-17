@@ -44,16 +44,24 @@ class CandidatesController < ApplicationController
   end
   # confirms admition of student
   def confirm_admit
-    @candidate = Candidate.find(@params['id'])
-    @candidate.admit!
+    candidate = Candidate.find(@params['id'])
+    candidate.admit!
     flash['notice'] = 'Uchazeč byl úspěšně přijat.'
     redirect_to :action => 'list'
   end
   # set candidate ready for admition
   def ready
-    @candidate = Candidate.find(@params['id'])
-    @candidate.ready!
+    candidate = Candidate.find(@params['id'])
+    candidate.ready!
     flash['notice'] = "Uchazeč #{@candidate.display_name} je připraven na příjimací zkoušky"
+    redirect_to :action => 'list'
+  end
+  # set candidate ready for admition
+  def invite
+    candidate = Candidate.find(@params['id'])
+    candidate.invite!
+		Notifications::invite_candidate(candidate)
+    flash['notice'] = "Uchazeč #{candidate.display_name} je pozván na příjimací zkoušky"
     redirect_to :action => 'list'
   end
 

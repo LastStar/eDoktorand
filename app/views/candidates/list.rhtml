@@ -1,12 +1,15 @@
 <% ids = [] %>
 <%= print_notice %>
+<% unless @candidates.empty? %>
 <ul>
 <% for candidate in @candidates  %>
   <li>
     <div class='right'>
-      <%= link_to 'detail', :action => 'show', :id => candidate.id %>
-      <%= link_to 'oprava', :action => 'edit', :id => candidate.id %>
-      <%= ready_link(candidate) %>
+      <%= link_to 'detail', :action => 'show', :id => candidate %>
+      <%= link_to 'oprava', :action => 'edit', :id => candidate %>
+      <%= link_to 'smazání', {:action => 'destroy', :id => candidate}, :confirm => 'Opravdu si přejete smazat tento termín?' %>
+      <%= ready_link(candidate) %>     
+			<%= invite_link(candidate) %>
       <%= admit_link(candidate) %>
       <a href="#" onclick="toggle_detail('<%= candidate.id %>'); return true" id="link<%= candidate.id %>">kontakt</a>
     </div>
@@ -18,7 +21,7 @@
     email: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br /> 
     telefon: <%= candidate.phone %><br /> 
     adresa: <%= candidate.address %><br /> 
-    <% if candidate.postal_street %>
+    <% unless candidate.postal_street.empty? %>
     korespondenční adresa: <%= candidate.postal_address %>
     <% end %>
   </div >
@@ -29,7 +32,9 @@
 <%= sort_tags(:list, 'coridor_id' => 'oboru', 'lastname' => 'příjmení', 'finished_on' => 'data vyplnění', 'ready_on' => 'připravenosti') %>
 <br />
 
-<%= list_links %>
-<br /> 
-<%= render_partial 'shared/system_menu' %>
+<%= list_links %>                      
+<br />           
+<% else %>
+<h5>V systému nejsou žádní uchazeči</h5>
+<% end %>
 <%= render_partial 'list_script', :ids => ids %>

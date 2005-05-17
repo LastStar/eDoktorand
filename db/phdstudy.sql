@@ -18,9 +18,13 @@ CREATE TABLE candidates (
   birth_at varchar(100),
   email varchar(100),
   street varchar(100),
+  number integer,
   city varchar(100),
   zip varchar(10),
   postal_street varchar(100),
+  postal_number integer,
+  postal_city varchar(100),
+  postal_zip varchar(10),
   phone varchar(50),
   state varchar(50),
   studied_branch varchar(200),
@@ -33,18 +37,15 @@ CREATE TABLE candidates (
   language1 integer,
   language2 integer,
   study_id integer,
-  postal_city varchar(100),
-  postal_zip varchar(10),
   faculty varchar(100),
   studied_specialization varchar(100),
   study_theme varchar(100),
-  finished_on timestamp,
-  created_on timestamp,
-  admited_on timestamp,
   note text,
-  number integer,
-  postal_number integer,
+  created_on timestamp,
+  finished_on timestamp,
   ready_on timestamp,
+  admited_on timestamp,  
+	invited_on timestamp,
   student_id integer
 );
 
@@ -299,6 +300,21 @@ CREATE TABLE disert_themes (
   index_id integer,
   methodology_file varchar(30),
   finishing_to timestamp,
+  created_on timestamp,
+  updated_on timestamp
+);
+
+--
+-- Table structure for table disert_themes
+--
+
+DROP TABLE exam_terms;
+CREATE TABLE exam_terms (
+  id integer primary key,
+	coridor_id integer,
+	start_time varchar(6),
+	room varchar(20),
+	chairman varchar(100),	
   created_on timestamp,
   updated_on timestamp
 );

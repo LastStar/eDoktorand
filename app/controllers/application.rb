@@ -28,4 +28,15 @@ class ApplicationController < ActionController::Base
       redirect_to :controller => 'account', :action => 'error'
     end
   end
+  # prints errors for object
+	helper_method :errors_for
+  def errors_for(object)
+    unless object.errors.empty?
+      tb = "<div id='error'>Chyba:&nbsp;ve vašem vstupu se vyskytly následující chyby:<ul>"
+      object.errors.each do |attr, message|
+        tb << '<li>' + message + '</li>'
+      end
+      tb << '</ul></div>'
+    end
+  end
 end

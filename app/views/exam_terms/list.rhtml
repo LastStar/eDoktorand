@@ -1,0 +1,20 @@
+<% unless @exam_terms.empty? %>
+<ul>
+<% for exam_term in @exam_terms  %>
+  <li>
+    <div class='right'>
+      <%= link_to 'detail', :action => 'show', :id => exam_term %>
+      <%= link_to 'oprava', :action => 'edit', :id => exam_term %>
+      <%= link_to 'smazání', {:action => 'destroy', :id => exam_term}, :confirm => 'Opravdu si přejete smazat tento termín?' %>
+    </div>
+    <b><%= exam_term.coridor.name %><br/></b>
+	  čas: &nbsp;<%= exam_term.start_time %><br/>
+	  místnost: <%= exam_term.room %><br />
+	  předseda: <%= exam_term.chairman %>
+  </li>
+<% end %>
+</ul>
+<% else %>
+<h5>v systému nejsou žádné termíny příjimacích zkoušek</h5>
+<% end %>
+<div class='links'><%= link_to 'nový termín', :action => 'new' %></div>

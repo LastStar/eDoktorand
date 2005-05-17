@@ -12,6 +12,10 @@ module ApplicationHelper
   def study_ids
     Study.find_all.map {|s| [s.name, s.id]}
   end
+  # get coridor ids
+  def coridor_ids
+    Coridor.find_all.map {|s| [s.name, s.id]}
+  end
   # get title_before ids
   def title_before_ids
     arr = [['---', '0']]

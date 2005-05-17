@@ -1,0 +1,2 @@
+module ExamTermsHelper
+end

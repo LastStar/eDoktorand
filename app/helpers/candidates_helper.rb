@@ -7,8 +7,14 @@ module CandidatesHelper
   end
   # admit link
   def admit_link(candidate)
-    if !candidate.admited? and candidate.ready?
+    if !candidate.admited? and candidate.invited? and candidate.ready?
       link_to 'příjmout', :action => 'admit', :id => candidate.id 
+    end
+  end
+  # invite link
+  def invite_link(candidate)
+    if !candidate.invited? and candidate.ready?
+      link_to 'pozvat', :action => 'invite', :id => candidate.id 
     end
   end
   # prints sorting tags
@@ -34,12 +40,14 @@ module CandidatesHelper
     links << "<a href='javascript:close_all_details()'>skrýt všechny kontakty</a>"
     links << '&nbsp;'
     links << "<a href='javascript:print_details()'>vytisknout tento seznam</a>"
-    links << '&nbsp;'
-    links << link_to("předchozí stránka", { :page => @pages.current.previous }) if @pages.current.previous
-    links << '&nbsp;'
-    links << pagination_links(@pages)
-    links << '&nbsp;'
-    links << link_to("následující stránka", { :page => @pages.current.next }) if @pages.current.next 
+    if pagination_links(@pages)
+	    links << '&nbsp;'                           
+	    links << link_to("předchozí stránka", { :page => @pages.current.previous }) if @pages.current.previous           
+	    links << '&nbsp;'
+	    links << pagination_links(@pages)
+	    links << '&nbsp;'
+	    links << link_to("následující stránka", { :page => @pages.current.next }) if @pages.current.next 
+    end
     content_tag('div', links, :class => 'links')
   end
 end
