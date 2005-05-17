@@ -50,4 +50,12 @@ module CandidatesHelper
     end
     content_tag('div', links, :class => 'links')
   end
+	# prints status of the candidate
+	def status_tag(candidate)
+		if candidate.ready? and !candidate.invited?
+			content_tag('span', 'připraven', :class => 'smallInfo')
+		elsif candidate.invited?
+			content_tag('span', 'pozván', :class => 'smallInfo')
+		end			
+	end
 end

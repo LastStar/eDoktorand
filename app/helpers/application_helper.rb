@@ -34,7 +34,7 @@ module ApplicationHelper
   end
   # prints notice from flash
   def print_notice
-    if @flash[:notice]
+    if @flash['notice']
       content_tag('div', @flash['notice'], :class => 'notice')
     end 
   end

@@ -53,7 +53,7 @@ class CandidatesController < ApplicationController
   def ready
     candidate = Candidate.find(@params['id'])
     candidate.ready!
-    flash['notice'] = "Uchazeč #{@candidate.display_name} je připraven na příjimací zkoušky"
+    flash['notice'] = "Uchazeč #{candidate.display_name} je připraven na příjimací zkoušky"
     redirect_to :action => 'list'
   end
   # set candidate ready for admition
