@@ -8,7 +8,7 @@
       <%= link_to 'smazání', {:action => 'destroy', :id => exam_term}, :confirm => 'Opravdu si přejete smazat tento termín?' %>
     </div>
     <b><%= exam_term.coridor.name %><br/></b>
-	  čas: &nbsp;<%= exam_term.start_time %><br/>
+	  datum a čas: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %><br/>
 	  místnost: <%= exam_term.room %><br />
 	  předseda: <%= exam_term.chairman %>
   </li>

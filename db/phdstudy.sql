@@ -312,7 +312,8 @@ DROP TABLE exam_terms;
 CREATE TABLE exam_terms (
   id integer primary key,
 	coridor_id integer,
-	start_time varchar(6),
+	date date,
+	start_time varchar(5),
 	room varchar(20),
 	chairman varchar(100),	
   created_on timestamp,

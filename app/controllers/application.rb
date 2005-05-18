@@ -39,4 +39,15 @@ class ApplicationController < ActionController::Base
       tb << '</ul></div>'
     end
   end
+	# returns array of the time by quarter from start time to end time
+	helper_method :str_time_select
+	def str_time_select(start_time = 8, stop_time = 16)
+		items = []
+		(start_time..stop_time-1).each do |hour|
+			['00', '15', '30', '45'].each {|minute| items << ("#{hour.to_s}:#{minute}")}
+		end
+		items << "#{stop_time.to_s}:00"
+		return items
+	end
+		
 end

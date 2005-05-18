@@ -2,8 +2,9 @@
 <%= errors_for(@exam_term) %>
 
 <!--[form:exam_term]-->
-<p><label for="exam_term_start_time">Začátek</label>
-<%= text_field 'exam_term', 'start_time'  %></p>
+<p><label for="exam_term_start_time">Datum a čas</label>
+<%= date_select 'exam_term', 'date', :order => [:day, :month, :year], :use_month_numbers => true %>
+&mdash;<%= select 'exam_term', 'start_time', str_time_select %></p>
 
 <p><label for="exam_term_room">Místnost</label>
 <%= text_field 'exam_term', 'room'  %></p>

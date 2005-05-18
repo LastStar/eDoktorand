@@ -19,12 +19,12 @@ pozvánku k přijímacímu řízení do DSP pro školní rok 2005/06
 
 které proběhne 
 
-dne 21. června 2005
+dne @exam_term.date.strftime("%d. %m. %Y")
 
 Uchazeči se dostaví v 9,00 hod. do zasedací místnosti FLE (přízemí, č. dveří 125), kde budou podány základní informace.
 
 Přijímací zkouška pro obor <%= @coridor %>
-proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>, předseda komise prof.<%= @exam_term.chairman %>
+proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>, předseda komise <%= @exam_term.chairman %>
 
 K přijímacímu řízení si přineste:
 průkaz totožnosti

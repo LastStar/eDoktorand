@@ -2,9 +2,9 @@
 * add emailing on admiting student
 * add admit protocol for candidate
 
-
 done:
 + fix script tag 
 + filtering for candidates by statuses to list view
 + candidates grouped by entrance exam
 + polish entrance exam forms
+* exam term add date
