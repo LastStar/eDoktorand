@@ -14,6 +14,7 @@ class CandidatesController < ApplicationController
   def list
 		conditions = 'finished_on IS NOT NULL'
 		conditions << " AND #{@params['filter']}_on NOT NULL" if @params['filter']
+		conditions << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
     @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => @params['category'], :conditions => conditions
   end
   # shows candidate details

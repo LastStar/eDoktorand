@@ -18,6 +18,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'candidates/by/:category', :controller => 'candidates', :action => 'list'
   # filter routes for candidate
   map.connect 'candidates/only/:filter', :controller => 'candidates', :action => 'list'
+  # candidates for corridor
+  map.connect 'candidates/in/:coridor', :controller => 'candidates', :action => 'list'
   # add path for prijimacky
   map.connect 'prijimacky/:action/:id', :controller => 'form'
   # Install the default route as the lowest priority.

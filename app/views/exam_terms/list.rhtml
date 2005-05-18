@@ -3,8 +3,8 @@
 <% for exam_term in @exam_terms  %>
   <li>
     <div class='right'>
-      <%= link_to 'detail', :action => 'show', :id => exam_term %>
       <%= link_to 'oprava', :action => 'edit', :id => exam_term %>
+      <%= link_to "uchazeči(#{exam_term.coridor.candidates.size})", :controller => 'candidates', :action => 'list', :coridor => exam_term.coridor.id %>
       <%= link_to 'smazání', {:action => 'destroy', :id => exam_term}, :confirm => 'Opravdu si přejete smazat tento termín?' %>
     </div>
     <b><%= exam_term.coridor.name %><br/></b>
