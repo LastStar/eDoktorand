@@ -1,7 +1,7 @@
 
 <%= javascript_include_tag "prototype" %>
 <%= javascript_include_tag "candidates_list" %>
-<script>
+<script type="text/javascript">
 function open_all_details() {
   <% for id in ids %>
   Element.show('info' + <%= id %>);
