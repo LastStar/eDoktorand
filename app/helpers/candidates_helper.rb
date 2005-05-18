@@ -32,6 +32,15 @@ module CandidatesHelper
     end
     content_tag('div', 'setřidit podle:' + links, :class => :links)
   end
+  # prints sorting tags
+  def filter_tags(action, args)
+    links = ''
+    for arg in args
+      links << '&nbsp;'
+      links << link_to(arg.last, :action => action, :filter => arg.first)
+    end
+    content_tag('div', 'zobrazit jen:' + links, :class => :links)
+  end
   # prints list links
   def list_links
     links = ''

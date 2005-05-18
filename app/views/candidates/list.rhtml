@@ -1,6 +1,7 @@
 <% ids = [] %>
 <%= print_notice %>
 <% unless @candidates.empty? %>
+<%= filter_tags(:list, [['ready', 'připravené'], ['invited', 'pozvané'], ['admited', 'příjmuté']]) %>
 <ul>
 <% for candidate in @candidates  %>
   <li>
@@ -29,7 +30,7 @@
   <% ids << candidate.id %>
 <% end %>
 </ul>
-<%= sort_tags(:list, 'coridor_id' => 'oboru', 'lastname' => 'příjmení', 'finished_on' => 'data vyplnění', 'ready_on' => 'připravenosti') %>
+<%= sort_tags(:list, [['coridor_id', 'oboru'], ['lastname', 'příjmení'], ['finished_on', 'data vyplnění'], ['ready_on', 'připravenosti']]) %>
 <br />
 
 <%= list_links %>                      
