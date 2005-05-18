@@ -1,0 +1,37 @@
+<h3 class='printHeader'>ČESKÁ ZEMĚDĚLSKÁ UNIVERZITA V PRAZE</h3>
+<h3 class='printHeader'>FAKULTA LESNICKÁ A ENVIRONMENTÁLNÍ</h3>
+<h3 class='printHeader'>DĚKANÁT – ODDĚLENÍ VĚDY A VÝZKUMU</h3>
+<h4 class='printHeader'>165 21 Praha 6 – Suchdol &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tel.č. 22438 2877</h4>
+
+<p class='rightAlign'>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
+<p class='rightAlign'>Vážený pan/paní<br/>
+<%= @candidate.display_name %><br/>
+<%= @candidate.address %></p>
+
+<p><b>Věc: pozvánka k přijímacímu řízení do DSP na FLE ČZU v Praze</b></p>
+
+<p>Na základě Vaší přihlášky ke studiu v DSP na FLE ČZU v Praze a v souladu s § 50 zákona č. 111/98 Sb. o vysokých školách Vám zasílám</p>
+<h5 class='centerAlign'>pozvánku k přijímacímu řízení do DSP pro školní rok 2005/06</h4>
+
+<h5 class='centerAlign'>které proběhne</h5>
+
+<h5 class='centerAlign'>dne 21. června 2005</h5>
+
+<p>Uchazeči se dostaví v 9,00 hod. do zasedací místnosti FLE (přízemí, č. dveří 125), kde budou podány základní informace.</p>
+
+<p>Přijímací zkouška pro obor <%= @candidate.coridor.name %> proběhne od <%= @candidate.coridor.exam_term.start_time %> v místnosti č. <%= @candidate.coridor.exam_term.room %>, předseda komise prof.<%= @candidate.coridor.exam_term.chairman %></p>
+
+<p>K přijímacímu řízení si přineste:
+<ul>
+	<li>průkaz totožnosti</li>
+	<li>přehled složených zkoušek a celkový studijní průměr potvrzený fakultou</li>
+	<li>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou</li>
+</ul>
+</p>
+<div class='links'>
+	<a href='javascript:window.print()'>tisk</a>
+	<%= link_to 'zpět', :action => 'list' if @session['user']%>
+</div>
+<script>window.print()</script>
+
+
