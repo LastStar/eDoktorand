@@ -61,7 +61,7 @@ class Candidate < ActiveRecord::Base
   # admits candidate to study and returns new student based on 
   # candidates details. 
   def admit!
-		if self.admited.dean_conclusion_admit == 1
+		if self.admittance.dean_conclusion_admit == 1
 			self.admited_on = Time.now
 	    student = Student.new
 	    student.birth_number = self.birth_number

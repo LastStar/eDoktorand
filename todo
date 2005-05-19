@@ -1,8 +1,8 @@
 ? add some facility to chairman for view candidates for his coridor
-* add emailing on admiting student
-* add admit protocol for candidate
 
 done:
++ add emailing on admiting student
++ add admit protocol for candidate
 + fix script tag 
 + filtering for candidates by statuses to list view
 + candidates grouped by entrance exam
