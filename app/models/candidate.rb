@@ -62,7 +62,6 @@ class Candidate < ActiveRecord::Base
   # candidates details. 
   def admit!
 		if self.admittance.dean_conclusion_admit == 1
-			self.admited_on = Time.now
 	    student = Student.new
 	    student.birth_number = self.birth_number
 	    student.birth_on = self.birth_on
@@ -79,8 +78,9 @@ class Candidate < ActiveRecord::Base
 	    student.email = self.contact_email
 	    student.phone = self.contact_phone if self.phone
 	    self.student = student
-	    self.save
 		end
+		self.admited_on = Time.now
+		self.save
   end
   # checks if candidate is allready admited
   def admited?

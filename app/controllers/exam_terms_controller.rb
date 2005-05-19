@@ -21,6 +21,7 @@ class ExamTermsController < ApplicationController
   def new
   	@title = 'Vytváření termínu příjimacích zkoušek'
     @exam_term = ExamTerm.new
+		@exam_term.coridor_id = @params['id'] if @params['id']
   end
 
   def create

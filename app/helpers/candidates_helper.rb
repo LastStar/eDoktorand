@@ -7,14 +7,19 @@ module CandidatesHelper
   end
   # admit link
   def admit_link(candidate)
-    if !candidate.admited? and candidate.invited? and candidate.ready?
-      link_to 'příjmout', :action => 'admit', :id => candidate.id 
+    if !candidate.admited? and candidate.invited? and candidate.ready? 
+				link_to('příjmout', :action => 'admit', :id => candidate.id) 
     end
   end
   # invite link
   def invite_link(candidate)
-    if !candidate.invited? and candidate.ready? and candidate.exam_term
-      link_to 'pozvat', :action => 'invite', :id => candidate.id 
+    if !candidate.invited? and candidate.ready? 
+      unless candidate.coridor.exam_term  
+      	link_to('vytvořit termín', :controller => 'exam_terms', 
+      	:action => 'new', :id => candidate.coridor.id )
+			else
+	      link_to 'pozvat', :action => 'invite', :id => candidate.id 
+			end
     end
   end
   # prints sorting tags
@@ -70,22 +75,5 @@ module CandidatesHelper
 		elsif candidate.admittance and !candidate.admited?
 			content_tag('span', 'nepříjmut', :class => 'smallInfo')
 		end
-	end
-	# returns admit ids array
-	def admit_ids
-		[['nepříjmout', 0], ['příjmout', 1]]
-	end
-	# return pass ids	 array	
-	def pass_ids
-		[['neprospěl', 0], ['prospěl', 1]]
-	end
-	# returns pass word
-	def pass_word(id)
-		['neprospěl', 'prospěl'][id]
-	end
-	# returns admit word
-	def admit_word(id)	
-		['nepříjmout', 'příjmout'][id]
-	end
-			
+	end			
 end

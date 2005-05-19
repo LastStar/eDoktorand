@@ -10,5 +10,3 @@
 <h5>V systému nejsou žádní uchazeči podle Vašeho výběru</h5>
 <% end %>
 <%= sort_tags(:list, [['coridor_id', 'oboru'], ['lastname', 'příjmení'], ['finished_on', 'data vyplnění'], ['ready_on', 'připravenosti'], ['invited_on', 'pozvání']], :message => 'setřídit podle:') %>
-<%= debug @params %><br/>
-<%= debug @session %><br/>

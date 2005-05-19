@@ -13,8 +13,14 @@ class CandidatesController < ApplicationController
   # lists all candidates
   def list
 		conditions = 'finished_on IS NOT NULL'
-		conditions << " AND #{@params['filter']}_on NOT NULL" if @params['filter']
+		conditions << case @params['filter']
+									when 'ready': ' AND ready_on IS NOT NULL AND invited_on IS NULL'
+									when 'invited': ' AND invited_on IS NOT NULL AND admited_on IS NULL'
+									when 'admited': ' AND admited_on IS NOT NULL'
+									when nil: ''
+									end
 		conditions << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
+    conditions << " AND #{@params['category'].split.slice(0)} IS NOT NULL" if @params['category']
     @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => @params['category'], :conditions => conditions
   end
 	# lists all candidates ordered by category
@@ -47,9 +53,9 @@ class CandidatesController < ApplicationController
   end
   # amits candidate form
   def admit
-		@admittance = Admittance.new
 		@candidate = Candidate.find(@params['id'])
-		@admittance.candidate = @candidate
+		@candidate.admittance = Admittance.new unless @candidate.admittance
+		@admittance = @candidate.admittance
   end
 	# finishes admittance
 	def admittance
@@ -93,7 +99,7 @@ class CandidatesController < ApplicationController
 	      @session['order'] = ''
 	    end
 	    @session['category'] = @params['category']
-	    @params['category'] += @session['order'] if @params['category']
+	    @params['category'] << @session['order'] if @params['category'] 
 		else
 			@session['page'] = @params['page']
 		end
