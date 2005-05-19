@@ -17,6 +17,10 @@ class CandidatesController < ApplicationController
 		conditions << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
     @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => @params['category'], :conditions => conditions
   end
+	# lists all candidates ordered by category
+	def list_all
+		@candidates = Candidate.find(:all, :order_by => @params['category'])
+	end
   # shows candidate details
   def show
     @candidate = Candidate.find(@params['id'])
@@ -41,11 +45,21 @@ class CandidatesController < ApplicationController
     Candidate.find(@params['id']).destroy
     redirect_to :action => 'list'
   end
-  # amits candidate
+  # amits candidate form
   def admit
-  	@candidate = Candidate.find(@params['id'])
+		@admittance = Admittance.new
+		@candidate = Candidate.find(@params['id'])
+		@admittance.candidate = @candidate
   end
-  # set candidate ready for admition
+	# finishes admittance
+	def admittance
+    @admittance = Admittance.new(@params[:admittance])
+    @candidate = Candidate.find(@params[:admittance]['candidate_id'])
+	  render_action 'admit' unless @admittance.save
+		@candidate.admit!
+	end
+						
+  # set candidate ready for invitation
   def ready
     candidate = Candidate.find(@params['id'])
     candidate.ready!
@@ -71,12 +85,17 @@ class CandidatesController < ApplicationController
   end
   # changes sorting
   def change_sort
-    if @params['category'] == @session['category']
-      @session['order'] = @session['order'] == ' desc' ? '' : ' desc'
-    else
-      @session['order'] = ''
-    end
-    @session['category'] = @params['category']
-    @params['category'] += @session['order'] if @params['category']
+		@params['page'] = '1' unless @params['page'] # cause nil page means first :-)
+		if @session['page'] == @params['page']
+	    if @params['category'] == @session['category']
+	      @session['order'] = @session['order'] == ' desc' ? '' : ' desc'
+	    else
+	      @session['order'] = ''
+	    end
+	    @session['category'] = @params['category']
+	    @params['category'] += @session['order'] if @params['category']
+		else
+			@session['page'] = @params['page']
+		end
   end
 end

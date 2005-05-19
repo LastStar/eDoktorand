@@ -1,0 +1,8 @@
+<% for column in Admittance.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @admittance.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @admittance %> |
+<%= link_to 'Back', :action => 'list' %>

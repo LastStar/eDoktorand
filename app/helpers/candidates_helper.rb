@@ -13,12 +13,12 @@ module CandidatesHelper
   end
   # invite link
   def invite_link(candidate)
-    if !candidate.invited? and candidate.ready?
+    if !candidate.invited? and candidate.ready? and candidate.exam_term
       link_to 'pozvat', :action => 'invite', :id => candidate.id 
     end
   end
   # prints sorting tags
-  def sort_tags(action, args)
+  def sort_tags(action, args, options = {})
     links = ''
     for arg in args
       links << '&nbsp;'
@@ -30,7 +30,7 @@ module CandidatesHelper
         links << link_to(arg.last, :action => action, :category => arg.first)
       end
     end
-    content_tag('div', 'setřidit podle:' + links, :class => :links)
+    content_tag('div', options[:message] + links, :class => :links)
   end
   # prints sorting tags
   def filter_tags(action, args)
@@ -63,8 +63,29 @@ module CandidatesHelper
 	def status_tag(candidate)
 		if candidate.ready? and !candidate.invited?
 			content_tag('span', 'připraven', :class => 'smallInfo')
-		elsif candidate.invited?
+		elsif candidate.invited? and !candidate.admited? and !candidate.admittance
 			content_tag('span', 'pozván', :class => 'smallInfo')
-		end			
+		elsif candidate.admittance and candidate.admited?
+			content_tag('span', 'příjmut', :class => 'smallInfo')
+		elsif candidate.admittance and !candidate.admited?
+			content_tag('span', 'nepříjmut', :class => 'smallInfo')
+		end
 	end
+	# returns admit ids array
+	def admit_ids
+		[['nepříjmout', 0], ['příjmout', 1]]
+	end
+	# return pass ids	 array	
+	def pass_ids
+		[['neprospěl', 0], ['prospěl', 1]]
+	end
+	# returns pass word
+	def pass_word(id)
+		['neprospěl', 'prospěl'][id]
+	end
+	# returns admit word
+	def admit_word(id)	
+		['nepříjmout', 'příjmout'][id]
+	end
+			
 end

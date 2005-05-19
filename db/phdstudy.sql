@@ -339,7 +339,6 @@ CREATE TABLE admittances (
 	second_examinator varchar(100),
 	third_examinator varchar(100),
 	fourth_examinator varchar(100),
-	dean_conclusion varchar(100),
 	dean_conclusion_admit integer,
 	candidate_id integer
 );

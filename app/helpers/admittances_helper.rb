@@ -1,0 +1,2 @@
+module AdmittancesHelper
+end
