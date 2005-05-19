@@ -43,10 +43,7 @@ class CandidatesController < ApplicationController
   end
   # amits candidate
   def admit
-  	candidate = Candidate.find(@params['id'])
-  	candidate.admit!
-  	flash['notice'] = 'Uchazeč byl úspěšně přijat.'
-  	redirect_to :action => 'list'
+  	@candidate = Candidate.find(@params['id'])
   end
   # set candidate ready for admition
   def ready

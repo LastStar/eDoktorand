@@ -305,7 +305,7 @@ CREATE TABLE disert_themes (
 );
 
 --
--- Table structure for table disert_themes
+-- Table structure for table exam_terms
 --
 
 DROP TABLE exam_terms;
@@ -320,6 +320,29 @@ CREATE TABLE exam_terms (
   updated_on timestamp
 );
 
+--
+-- Table structure for table admittances
+--
+
+DROP TABLE admittances;
+CREATE TABLE admittances (
+  id integer primary key,
+	skilled_exam varchar(100),
+	first_language integer,
+	second_language integer,
+	passed integer,
+	rank integer,
+	admit integer,
+	recomended_tutor varchar(100),
+	notes text,
+	first_examinator varchar(100),
+	second_examinator varchar(100),
+	third_examinator varchar(100),
+	fourth_examinator varchar(100),
+	dean_conclusion varchar(100),
+	dean_conclusion_admit integer,
+	candidate_id integer
+);
 
 -- deprecated in favor of simple methodology file in disert
 -- Table structure for table methodologies

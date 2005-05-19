@@ -1,5 +1,7 @@
-Opravdu si přejete přijmout tohoto uchazeče?
-<%= render 'shared/candidate_detail' %>
+<h3 class='printHeader'>ZÁPIS O PŘIJÍMACÍ ZKOUŠCE</h3>
+Uchazeč: <%= @candidate.display_name %>
+Obor: <%= @candidate.coridor.name %>
+Forma studia: <%= @candidate.study.name %>
 <div class='links'>
   <%= link_to 'zpět na výpis', :action => 'list' %>
   <%= link_to 'ano, přeji si přijmout tohoto uchazeče.', :action => 'confirm_admit', :id => @candidate.id %>
