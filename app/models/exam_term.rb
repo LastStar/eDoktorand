@@ -5,5 +5,8 @@ class ExamTerm < ActiveRecord::Base
 	validates_presence_of :chairman, :message => 'Termín musí mít přiděleného předsedu'
 	validates_presence_of :start_time, :message => 'Termín musí mít přidělený čas začátku'
 	validates_presence_of :date, :message => 'Termín musí mít přidělený datum začátku'
+	validates_presence_of :first_examinator, :message => 'Termín musí mít přiděleného prvního zkoušejícího'
+	validates_presence_of :second_examinator, :message => 'Termín musí mít přiděleného druhého zkoušejícího'
+	validates_presence_of :third_examinator, :message => 'Termín musí mít přiděleného třetího zkoušejícího'
 	validates_uniqueness_of :coridor_id, :message => 'Pro tento koridor termín již existuje'
 end

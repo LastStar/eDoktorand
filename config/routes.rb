@@ -16,6 +16,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # sorting routes for candidate
   map.connect 'candidates/by/:category', :controller => 'candidates', :action => 'list'
+  # sorting routes for all candidate
+  map.connect 'candidates/all_by/:category', :controller => 'candidates', :action => 'list_all'
   # filter routes for candidate
   map.connect 'candidates/only/:filter', :controller => 'candidates', :action => 'list'
   # candidates for corridor

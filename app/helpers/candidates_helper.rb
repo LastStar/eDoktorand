@@ -7,8 +7,9 @@ module CandidatesHelper
   end
   # admit link
   def admit_link(candidate)
-    if !candidate.admited? and candidate.invited? and candidate.ready? 
-				link_to('příjmout', :action => 'admit', :id => candidate.id) 
+    if !candidate.admited? and candidate.invited? and candidate.ready?
+    	link_to('protokol', :action => 'admittance', :id => candidate) +
+    	link_to('příjmout', :action => 'admit', :id => candidate) 
     end
   end
   # invite link
@@ -29,11 +30,10 @@ module CandidatesHelper
       links << '&nbsp;'
       if @session['category'] == arg.first 
         arg.last << (@session['order'] != ' desc' ? ' &darr;' : ' &uarr;')
-        links << link_to(arg.last, {:action => action, :category => arg.first}, :class => 'choosen')
       else
         arg.last << ' &uarr;'
-        links << link_to(arg.last, :action => action, :category => arg.first)
       end
+      links << link_to(arg.last, :action => action, :category => arg.first)
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
@@ -54,7 +54,7 @@ module CandidatesHelper
     links << "<a href='javascript:close_all_details()'>skrýt všechny kontakty</a>"
     links << '&nbsp;'
     links << "<a href='javascript:print_details()'>vytisknout tento seznam</a>"
-    if pagination_links(@pages)
+    if @pages and pagination_links(@pages)
 	    links << '&nbsp;'                           
 	    links << link_to("předchozí stránka", { :page => @pages.current.previous }) if @pages.current.previous           
 	    links << '&nbsp;'
@@ -76,4 +76,21 @@ module CandidatesHelper
 			content_tag('span', 'nepříjmut', :class => 'smallInfo')
 		end
 	end			
+	# returns admit ids array
+  def admit_ids
+          [['nepřijmout', 0], ['přijmout', 1]]
+  end
+  # return pass ids        array  
+  def pass_ids
+          [['neprospěl', 0], ['prospěl', 1]]
+  end
+  # returns pass word
+  def pass_word(id)
+          ['neprospěl', 'prospěl'][id]
+  end
+  # returns admit word
+  def admit_word(id)      
+          ['nepřijmout', 'přijmout'][id]
+  end
+
 end

@@ -20,12 +20,12 @@ class CandidatesController < ApplicationController
 									when nil: ''
 									end
 		conditions << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
-    conditions << " AND #{@params['category'].split.slice(0)} IS NOT NULL" if @params['category']
     @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => @params['category'], :conditions => conditions
   end
 	# lists all candidates ordered by category
 	def list_all
 		@candidates = Candidate.find(:all, :order_by => @params['category'])
+		render_action 'list'
 	end
   # shows candidate details
   def show

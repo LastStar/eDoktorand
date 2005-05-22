@@ -5,27 +5,27 @@
 	Forma studia: <%= @candidate.study.name %>
 </p>
 <p><b>Zhodnocení a výsledek přijímací zkoušky:</b></p>
-<p>Odborná zkouška: <%= @admittance.skilled_exam %></p>
+<p>Odborná zkouška: </p>
 
-<p>1. jazyk: <%= Language.find(@admittance.candidate.language1).name %> hodnocení: <%= pass_word(@admittance.first_language) %><br/>
- 2. jazyk: <%= Language.find(@admittance.candidate.language2).name %> hodnocení: <%= pass_word(@admittance.second_language) %></p>
-<p>Celkový výsledek zkoušky: <%= pass_word(@admittance.passed) %><br/>
- Pořadí uchazeče: <%= @admittance.rank %></p>
-<p>Doporučení přijímací komise: <%= admit_word(@admittance.admit) %></p>
+<p>1. jazyk: <%= Language.find(@candidate.language1).name %> hodnocení: <br/>
+ 2. jazyk: <%= Language.find(@candidate.language2).name %> hodnocení: </p>
+<p>Celkový výsledek zkoušky: <br/>
+ Pořadí uchazeče: </p>
+<p>Doporučení přijímací komise: </p>
 
-<p>Doporučený školitel: <%= @admittance.recomended_tutor %><br/>
-Poznámky, změny: <%= @admittance.notes %></p>
+<p>Doporučený školitel: <br/>
+Poznámky, změny: </p>
 
 <p>Podpisy předsedy a členů komise: <br/>
-předseda: <%= @admittance.candidate.coridor.exam_term.chairman %> <br/>
+předseda: <%= @candidate.coridor.exam_term.chairman %> <br/>
 členové:<br/>
-<%= @admittance.first_examinator %><br/>
-<%= @admittance.second_examinator %><br/>
-<%= @admittance.third_examinator %><br/>
-<p><%= @admittance.fourth_examinator %></p></p>
-<p>Datum přijímací zkoušky: <%= @admittance.candidate.coridor.exam_term.date %></p>
+<%= @candidate.coridor.exam_term.first_examinator %><br/>
+<%= @candidate.coridor.exam_term.second_examinator %><br/>
+<%= @candidate.coridor.exam_term.third_examinator %><br/>
+<p><%= @candidate.coridor.exam_term.fourth_examinator %></p></p>
+<p>Datum přijímací zkoušky: <%= @candidate.coridor.exam_term.date %></p>
 
-<p>Rozhodnutí děkana fakulty: <%= admit_word(@admittance.dean_conclusion_admit) %></p>
+<p>Rozhodnutí děkana fakulty:</p>
 
 <p>Datum:<br/>
  Podpis:</p>
