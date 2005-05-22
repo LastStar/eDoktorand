@@ -61,6 +61,20 @@ CREATE TABLE coridors (
   faculty_id integer
 );
 
+
+--
+-- table stucture for corridors_subjects
+-- just stub for admit form
+--
+
+DROP TABLE coridor_subjects;
+CREATE TABLE coridor_subjects (
+  id integer primary key,
+  coridor_id integer,
+  subject_id integer,
+  type varchar(32)
+);
+
 --
 -- Table structure for table departments
 -- just stub for admit form
@@ -222,6 +236,19 @@ CREATE TABLE plan_subjects (
   created_on timestamp,
   updated_on timestamp
 );
+
+
+--
+-- Table structure for table Subject
+--
+
+DROP TABLE subjects
+CREATE TABLE subjects (
+  id integer primary key,
+  label varchar(1024),
+  code varchar(7)
+);
+
 
 --
 -- Table structure for table exam
