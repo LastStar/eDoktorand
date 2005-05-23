@@ -59,8 +59,7 @@ class Candidate < ActiveRecord::Base
   def invited?
     return !self.invited_on.nil?
   end
-  # admits candidate to study and returns new student based on 
-  # candidates details. 
+  # admits candidate to study. 
   def admit!
 		self.admited_on = Time.now
 		self.save
@@ -68,6 +67,17 @@ class Candidate < ActiveRecord::Base
   # checks if candidate is allready admited
   def admited?
     return !self.admited_on.nil?
+  end
+  # enroll candidate to study and returns new student based on 
+  # candidates details. 
+  def enroll!
+		self.enrolled_on = Time.now
+		self.save
+		# convert candidate to (student+index)
+  end
+  # checks if candidate is allready enrolled
+  def enrolled?
+    return !self.enrolled_on.nil?
   end
   # sets candidate ready for admition
   def ready!

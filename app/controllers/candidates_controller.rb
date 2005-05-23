@@ -16,7 +16,8 @@ class CandidatesController < ApplicationController
 		conditions << case @params['filter']
 									when 'ready': ' AND ready_on IS NOT NULL AND invited_on IS NULL'
 									when 'invited': ' AND invited_on IS NOT NULL AND admited_on IS NULL'
-									when 'admited': ' AND admited_on IS NOT NULL'
+									when 'admited': ' AND admited_on IS NOT NULL AND enrolled_on IS NULL'
+									when 'enrolled': ' AND enrolled_on IS NOT NULL'
 									when nil: ''
 									end
 		conditions << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
@@ -51,6 +52,17 @@ class CandidatesController < ApplicationController
     Candidate.find(@params['id']).destroy
     redirect_to :action => 'list'
   end
+  # enroll candidate form
+  def enroll
+		@candidate = Candidate.find(@params['id'])
+  end
+	# confirms enrollment of candidate and sends email
+	def confirm_enroll
+		@candidate = Candidate.find(@params['id'])
+		# Notifications::deliver_admit_candidate(@candidate)
+		@candidate.enroll!
+    redirect_to :action => 'list'
+	end
   # amits candidate form
   def admit
 		@candidate = Candidate.find(@params['id'])

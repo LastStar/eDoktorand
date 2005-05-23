@@ -23,6 +23,12 @@ module CandidatesHelper
 			end
     end
   end
+  # enroll link
+  def enroll_link(candidate)
+    if !candidate.enrolled? and candidate.admited?
+    	link_to('zapsat', :action => 'enroll', :id => candidate) 
+    end
+  end
   # prints sorting tags
   def sort_tags(action, args, options = {})
     links = ''
@@ -66,12 +72,14 @@ module CandidatesHelper
   end
 	# prints status of the candidate
 	def status_tag(candidate)
-		if candidate.ready? and !candidate.invited?
-			content_tag('span', 'připraven', :class => 'smallInfo')
-		elsif candidate.invited? and !candidate.admited?
-			content_tag('span', 'pozván', :class => 'smallInfo')
+		if candidate.enrolled?
+			content_tag('span', 'zapsán', :class => 'smallInfo')
 		elsif candidate.admited?
 			content_tag('span', 'příjmut', :class => 'smallInfo')
+		elsif candidate.invited?
+			content_tag('span', 'pozván', :class => 'smallInfo')
+		elsif candidate.ready?
+			content_tag('span', 'připraven', :class => 'smallInfo')
 		end
 	end			
 	# returns admit ids array
