@@ -1,0 +1,2 @@
+class VoluntarySubject < CoridorSubject 
+end

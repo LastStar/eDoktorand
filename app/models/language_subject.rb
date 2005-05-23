@@ -1,0 +1,2 @@
+class LanguageSubject < CoridorSubject 
+end

@@ -1,0 +1,2 @@
+class ObligateSubject < CoridorSubject
+end
