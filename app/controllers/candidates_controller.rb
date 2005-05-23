@@ -54,9 +54,14 @@ class CandidatesController < ApplicationController
   # amits candidate form
   def admit
 		@candidate = Candidate.find(@params['id'])
+  end
+	# confirms admittance of candidate and sends email
+	def confirm_admit
+		@candidate = Candidate.find(@params['id'])
+		@candidate.tutor_id = @params['candidate']['tutor_id']
 		Notifications::deliver_admit_candidate(@candidate)
 		@candidate.admit!
-  end
+	end
 	# finishes admittance
 	def admittance
 		@candidate = Candidate.find(@params['id'])

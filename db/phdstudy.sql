@@ -46,7 +46,7 @@ CREATE TABLE candidates (
   ready_on timestamp,
   admited_on timestamp,  
 	invited_on timestamp,
-  student_id integer
+  tutor_id integer
 );
 
 --
@@ -240,7 +240,7 @@ CREATE TABLE plan_subjects (
 -- Table structure for table Subject
 --
 
-DROP TABLE subjects
+DROP TABLE subjects;
 CREATE TABLE subjects (
   id integer primary key,
   label varchar(1024),

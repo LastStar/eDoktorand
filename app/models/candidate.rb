@@ -6,6 +6,7 @@ class Candidate < ActiveRecord::Base
   belongs_to :title_before, :class_name => 'Title', :foreign_key => 'title_before_id'
   belongs_to :title_after, :class_name => 'Title', :foreign_key => 'title_after_id'
   belongs_to :exam_term
+	belongs_to :tutor
 	has_one :admittance
   validates_presence_of :firstname, :message => "Jméno nesmí být prazdné"
   validates_presence_of :lastname, :message => "Příjmení nesmí být prazdné"
@@ -61,24 +62,6 @@ class Candidate < ActiveRecord::Base
   # admits candidate to study and returns new student based on 
   # candidates details. 
   def admit!
-		if self.admittance.dean_conclusion_admit == 1
-	    student = Student.new
-	    student.birth_number = self.birth_number
-	    student.birth_on = self.birth_on
-	    student.birth_at = self.birth_at
-	    student.title_before = self.title_before
-	    student.title_after = self.title_after
-	    student.state = self.state
-	    student.firstname, student.lastname = self.firstname, self.lastname
-	    student.save
-	    create_address(student.id)
-	    if self.postal_city
-	      create_postal_address(student.id)
-	    end
-	    student.email = self.contact_email
-	    student.phone = self.contact_phone if self.phone
-	    self.student = student
-		end
 		self.admited_on = Time.now
 		self.save
   end

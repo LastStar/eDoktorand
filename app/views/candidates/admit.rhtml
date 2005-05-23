@@ -1,52 +1,10 @@
-Všechny údaje jsou povinné
-
-<%= errors_for(@admittance) %>
-
-<%= start_form_tag :action => 'admittance', :id => @admitance %>
-	<p><label for="admittance_skilled_exam">Oborná zkouška</label>
-	<%= text_field 'admittance', 'skilled_exam'  %></p>
-
-	<p><label for="admittance_first_language">1. jazyk &mdash; <%= Language.find(@candidate.language1).name %></label>
-	<%= select 'admittance', 'first_language', pass_ids  %></p>
-
-	<p><label for="admittance_second_language">2. jazyk &mdash; <%= Language.find(@candidate.language2).name %></label>
-	<%= select 'admittance', 'second_language', pass_ids  %></p>
-
-	<p><label for="admittance_passed">Celkový výsledek zkoušky:</label>
-	<%= select 'admittance', 'passed', pass_ids  %></p>
-
-	<p><label for="admittance_rank">Pořadí</label>
-	<%= text_field 'admittance', 'rank' %></p>
-
-	<p><label for="admittance_admit">Doporučení přijímací komise:</label>
-	<%= select 'admittance', 'admit', admit_ids  %></p>
-
-	<p><label for="admittance_recomended_tutor">Doporučený školitel:</label>
-	<%= text_field 'admittance', 'recomended_tutor'  %></p>
-
-	<p><label for="admittance_notes">Poznámky, změny</label>
-	<%= text_area 'admittance', 'notes'  %></p>
-
-	<p><label for="admittance_first_examinator">1. člen komise</label>
-	<%= text_field 'admittance', 'first_examinator'  %></p>
-
-	<p><label for="admittance_second_examinator">2. člen komise</label>
-	<%= text_field 'admittance', 'second_examinator'  %></p>
-
-	<p><label for="admittance_third_examinator">3. člen komise</label>
-	<%= text_field 'admittance', 'third_examinator'  %></p>
-
-	<p><label for="admittance_fourth_examinator">4. člen komise</label>
-	<%= text_field 'admittance', 'fourth_examinator'  %></p>
-
-	<p><label for="admittance_dean_conclusion">Rozhodnutí děkana fakulty:</label>
-	<%= select 'admittance', 'dean_conclusion_admit', admit_ids  %></p>
-	
-	<%= hidden_field 'admittance', 'candidate_id' %>
+<%= start_form_tag :action => 'confirm_admit', :id => @candidate %>	<p><label for="candidate_tutor_id">Školitel:</label>
+	<%= select 'candidate', 'tutor_id', tutor_ids(:coridor => @candidate.coridor)  %></p>
 	
 	<%= submit_tag "Potvrdit" %>
 <%= end_form_tag %>
 
 <div class='links'>
-  <%= link_to 'zpět na výpis', :action => 'list' %>
+  <%= link_to 'zpět', :action => 'list' %>
 </div >
+

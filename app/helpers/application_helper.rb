@@ -39,7 +39,13 @@ module ApplicationHelper
     end 
   end
 	# get tutor ids
-	def tutor_ids
-		Tutorship.find(:all).map {|ts| [ts.tutor.display_name, ts.tutor.id]}
+	# if options['coridor'] setted only for this coridor
+	def tutor_ids(options = {})
+		if options[:coridor]
+			ts = Tutorship.find_all_by_coridor_id(options[:coridor].id)
+		else
+			ts = Tutorship.find(:all)
+		end
+		ts.map {|ts| [ts.tutor.display_name, ts.tutor.id]}
 	end
 end
