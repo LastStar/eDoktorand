@@ -10,7 +10,7 @@
 <%= text_field 'exam_term', 'room'  %></p>
 
 <p><label for="exam_term_chairman">Předseda komise</label>
-<%= text_field 'exam_term', 'chairman'  %></p>
+<%= select 'exam_term', 'chairman_id', tutor_ids()  %></p>
 
 <p><label for='candidate_title_before_id'>Koridor</label>
 <%= select 'exam_term', 'coridor_id', coridor_ids %></p>

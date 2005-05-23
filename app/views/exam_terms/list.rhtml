@@ -10,7 +10,7 @@
     <b><%= exam_term.coridor.name %><br/></b>
 	  datum a čas: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %><br/>
 	  místnost: <%= exam_term.room %><br />
-	  předseda: <%= exam_term.chairman %>
+	  předseda: <%= exam_term.chairman.display_name %>
   </li>
 <% end %>
 </ul>

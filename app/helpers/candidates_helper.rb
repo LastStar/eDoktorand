@@ -68,12 +68,10 @@ module CandidatesHelper
 	def status_tag(candidate)
 		if candidate.ready? and !candidate.invited?
 			content_tag('span', 'připraven', :class => 'smallInfo')
-		elsif candidate.invited? and !candidate.admited? and !candidate.admittance
+		elsif candidate.invited? and !candidate.admited?
 			content_tag('span', 'pozván', :class => 'smallInfo')
-		elsif candidate.admittance and candidate.admited?
+		elsif candidate.admited?
 			content_tag('span', 'příjmut', :class => 'smallInfo')
-		elsif candidate.admittance and !candidate.admited?
-			content_tag('span', 'nepříjmut', :class => 'smallInfo')
 		end
 	end			
 	# returns admit ids array

@@ -51,7 +51,7 @@ CREATE TABLE candidates (
 
 --
 -- Table structure for table coridors
--- just stub for admit form
+-- should be renamed to corridors
 --
 
 DROP TABLE coridors;
@@ -77,7 +77,6 @@ CREATE TABLE coridor_subjects (
 
 --
 -- Table structure for table departments
--- just stub for admit form
 --
 
 DROP TABLE departments;
@@ -89,7 +88,6 @@ CREATE TABLE departments (
 
 --
 -- Table structure for table faculties
--- just stub for admit form
 --
 
 DROP TABLE faculties;
@@ -120,7 +118,7 @@ CREATE TABLE exam_terms (
 	date date,
 	start_time varchar(5),
 	room varchar(20),
-	chairman varchar(100),	
+	chairman_id integer,	
   created_on timestamp,
   updated_on timestamp,
 	first_examinator varchar(100),
@@ -321,7 +319,7 @@ DROP TABLE tutorships;
 CREATE TABLE tutorships (
   id integer primary key,
   department_id integer,
-  employee_id integer,
+  tutor_id integer,
   coridor_id integer,
   created_on timestamp,
   updated_on timestamp

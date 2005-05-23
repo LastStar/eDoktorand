@@ -14,7 +14,7 @@
     <b><%= candidate.display_name %>
 	  rč.&nbsp;<%= candidate.birth_number %>&nbsp;<%= status_tag(candidate) %><br /></b>
 	  obor: <%= candidate.coridor.name %><br />
-	  vyplnil: <%= candidate.finished_on.strftime("%m. %d. %Y") %>
+	  vyplnil: <%= candidate.finished_on.strftime("%d. %m. %Y") %>
 	  <div class='detail' id='info<%= candidate.id %>' style='display: none; '>
 	    email: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br /> 
 	    telefon: <%= candidate.phone %><br /> 

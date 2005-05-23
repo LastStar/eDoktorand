@@ -38,4 +38,8 @@ module ApplicationHelper
       content_tag('div', @flash['notice'], :class => 'notice')
     end 
   end
+	# get tutor ids
+	def tutor_ids
+		Tutorship.find(:all).map {|ts| [ts.tutor.display_name, ts.tutor.id]}
+	end
 end

@@ -5,27 +5,31 @@
 	Forma studia: <%= @candidate.study.name %>
 </p>
 <p><b>Zhodnocení a výsledek přijímací zkoušky:</b></p>
-<p>Odborná zkouška: </p>
+<p>Odborná zkouška: ...........................................</p>
 
-<p>1. jazyk: <%= Language.find(@candidate.language1).name %> hodnocení: <br/>
- 2. jazyk: <%= Language.find(@candidate.language2).name %> hodnocení: </p>
-<p>Celkový výsledek zkoušky: <br/>
- Pořadí uchazeče: </p>
-<p>Doporučení přijímací komise: </p>
+<p>1. jazyk: <%= Language.find(@candidate.language1).name %> hodnocení: ....................<br/>
+ 2. jazyk: <%= Language.find(@candidate.language2).name %> hodnocení: ....................</p>
+<p>Celkový výsledek zkoušky: prospěl x neprospěl<br/>
+ Pořadí uchazeče: ....</p>
+<p>Doporučení přijímací komise: příjmout x nepříjmout</p>
 
-<p>Doporučený školitel: <br/>
-Poznámky, změny: </p>
+<p>Doporučený školitel: ......................................</p>
+<p>Poznámky, změny: </p><br/><br/><br/>
 
 <p>Podpisy předsedy a členů komise: <br/>
-předseda: <%= @candidate.coridor.exam_term.chairman %> <br/>
+předseda: <br/>
+<%= @candidate.coridor.exam_term.chairman.display_name %> ....................<br/>
 členové:<br/>
-<%= @candidate.coridor.exam_term.first_examinator %><br/>
-<%= @candidate.coridor.exam_term.second_examinator %><br/>
-<%= @candidate.coridor.exam_term.third_examinator %><br/>
-<p><%= @candidate.coridor.exam_term.fourth_examinator %></p></p>
-<p>Datum přijímací zkoušky: <%= @candidate.coridor.exam_term.date %></p>
+<%= @candidate.coridor.exam_term.first_examinator %> ....................<br/>
+<%= @candidate.coridor.exam_term.second_examinator %> ....................<br/>
+<%= @candidate.coridor.exam_term.third_examinator %> ....................<br/>
+<% unless @candidate.coridor.exam_term.fourth_examinator.empty? %>
+<%= @candidate.coridor.exam_term.fourth_examinator %> ....................
+<% end %>
+</p>
+<p>Datum přijímací zkoušky: <%= @candidate.coridor.exam_term.date.strftime("%d. %m. %Y") %></p>
 
-<p>Rozhodnutí děkana fakulty:</p>
+<p>Rozhodnutí děkana fakulty: příjmout x nepříjmout</p>
 
 <p>Datum:<br/>
  Podpis:</p>

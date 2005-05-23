@@ -11,10 +11,4 @@ class Student < Person
   validates_associated :address, :on => :update
   validates_presence_of :email, :on => :update
   validates_associated :email, :on => :update
-  # returns display name for student
-  def display_name
-    arr = [self.title_before.name, self.firstname, self.lastname]
-    arr <<  self.title_after.name if self.title_after
-    return arr.join(' ')
-  end
 end 

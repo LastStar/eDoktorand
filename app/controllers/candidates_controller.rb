@@ -54,16 +54,12 @@ class CandidatesController < ApplicationController
   # amits candidate form
   def admit
 		@candidate = Candidate.find(@params['id'])
-		@candidate.admittance = Admittance.new unless @candidate.admittance
-		@admittance = @candidate.admittance
+		Notifications::deliver_admit_candidate(@candidate)
+		@candidate.admit!
   end
 	# finishes admittance
 	def admittance
-    @admittance = Admittance.new(@params[:admittance])
-    @candidate = Candidate.find(@params[:admittance]['candidate_id'])
-	  render_action 'admit' unless @admittance.save
-		Notifications::deliver_admit_candidate(@candidate)
-		@candidate.admit!
+		@candidate = Candidate.find(@params['id'])
 	end
   # set candidate ready for invitation
   def ready
