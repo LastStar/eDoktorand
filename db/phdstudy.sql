@@ -66,7 +66,6 @@ CREATE TABLE coridors (
 
 --
 -- table stucture for corridors_subjects
--- just stub for admit form
 --
 
 DROP TABLE coridor_subjects;
@@ -368,20 +367,6 @@ CREATE TABLE disert_themes (
   created_on timestamp,
   updated_on timestamp
 );
-
---
--- Table structure for table units
---
-
-DROP TABLE units;
-CREATE TABLE units (
-  id integer primary key,
-  name varchar(100),
-	type varchar(5),
-	parent_id integer
-);
-
-
 
 -- deprecated in favor of simple methodology file in disert
 -- Table structure for table methodologies
