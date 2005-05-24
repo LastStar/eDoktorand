@@ -1,1 +1,1196 @@
 nil
+
+
+Processing FormController#details (for 80.250.1.238 at Tue May 24 15:09:28 CEST 2005)
+  Parameters: {"action"=>"details", "id"=>"4", "controller"=>"form"}
+  [4;33mCandidate Columns (0.003504)[m   [1;37mSHOW FIELDS FROM candidates[m
+  [4;35mCoridor Load (0.000955)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = '4' LIMIT 1[m
+  [4;33mCoridor Columns (0.001022)[m   [1;37mSHOW FIELDS FROM coridors[m
+  [4;35mCandidate Columns (0.003172)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mFaculty Load (0.000790)[m   [1;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+  [4;35mFaculty Columns (0.000970)[m   [0;37mSHOW FIELDS FROM faculties[m
+Rendering form/details within layouts/standard
+  [4;33mTitle Load (0.000000)[m   [1;37m#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = '1'' at line 1: SELECT * FROM titles WHERE before = '1' [m
+
+
+ActionView::TemplateError (#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = '1'' at line 1: SELECT * FROM titles WHERE before = '1' ) on line #25 of /shared/candidate_edit.rhtml:
+22:     <label for='candidate_lastname' class='required'>p≈ô√≠jmen√≠</label>
+23:     <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+24:     <label for='candidate_title_before_id'>titul p≈ôed jm√©nem</label>
+25:     <%= select 'candidate', 'title_before_id', title_before_ids %><br /> 
+26:     <label for='candidate_title_after_id'>titul za jm√©nem</label>
+27:     <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
+28:     <label class='required'>datum narozen√≠</label>
+
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/abstract_adapter.rb:422:in `log'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:116:in `execute'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:202:in `select'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:94:in `select_all'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:366:in `find_by_sql'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:334:in `find'
+    /gems/activerecord-1.10.1/lib/active_record/deprecated_finders.rb:37:in `find_all'
+    ./script/../config/..//app/helpers/application_helper.rb:22:in `title_before_ids'
+    (erb):25:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    (erb):1:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:709:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing FormController#details (for 80.250.1.238 at Tue May 24 15:09:32 CEST 2005)
+  Parameters: {"action"=>"details", "id"=>"4", "controller"=>"form"}
+  [4;35mCandidate Columns (0.003259)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mCoridor Load (0.000898)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = '4' LIMIT 1[m
+  [4;35mFaculty Load (0.000907)[m   [0;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+Rendering form/details within layouts/standard
+  [4;33mTitle Load (0.000000)[m   [1;37m#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = '1'' at line 1: SELECT * FROM titles WHERE before = '1' [m
+
+
+ActionView::TemplateError (#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = '1'' at line 1: SELECT * FROM titles WHERE before = '1' ) on line #25 of /shared/candidate_edit.rhtml:
+22:     <label for='candidate_lastname' class='required'>p≈ô√≠jmen√≠</label>
+23:     <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+24:     <label for='candidate_title_before_id'>titul p≈ôed jm√©nem</label>
+25:     <%= select 'candidate', 'title_before_id', title_before_ids %><br /> 
+26:     <label for='candidate_title_after_id'>titul za jm√©nem</label>
+27:     <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
+28:     <label class='required'>datum narozen√≠</label>
+
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/abstract_adapter.rb:422:in `log'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:116:in `execute'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:202:in `select'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:94:in `select_all'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:366:in `find_by_sql'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:334:in `find'
+    /gems/activerecord-1.10.1/lib/active_record/deprecated_finders.rb:37:in `find_all'
+    ./script/../config/..//app/helpers/application_helper.rb:22:in `title_before_ids'
+    (erb):25:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    (erb):1:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:709:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+  [4;33mTitle Columns (0.001027)[m   [1;37mSHOW FIELDS FROM titles[m
+  [4;35mSQL (0.000445)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Ing.', 1, 1)[m
+  [4;33mSQL (0.000325)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Dr. Ing.', 2, 1)[m
+  [4;35mSQL (0.000300)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc.', 3, 1)[m
+  [4;33mSQL (0.000322)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc. RNDr.', 4, 1)[m
+  [4;35mSQL (0.000308)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('RNDr.', 5, 1)[m
+  [4;33mSQL (0.000305)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc. Ing.', 6, 1)[m
+  [4;35mSQL (0.000307)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Prof. Ing.', 7, 1)[m
+  [4;33mSQL (0.000326)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Mgr.', 8, 1)[m
+  [4;35mSQL (0.000294)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('PhDr.', 9, 1)[m
+  [4;33mSQL (0.000293)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('PhDr. Mgr.', 10, 1)[m
+  [4;35mSQL (0.000289)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('JUDr.', 11, 1)[m
+  [4;33mSQL (0.000308)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('JUDr. Ing.', 12, 1)[m
+  [4;35mSQL (0.000285)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Prof. RNDr.', 13, 1)[m
+  [4;33mSQL (0.000288)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('PaedDr.', 14, 1)[m
+  [4;35mSQL (0.000289)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Prof. MVDr.', 15, 1)[m
+  [4;33mSQL (0.000315)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Mag.', 16, 1)[m
+  [4;35mSQL (0.000304)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc. Ing. Mgr.', 17, 1)[m
+  [4;33mSQL (0.000303)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Prof. JUDr.', 18, 1)[m
+  [4;35mSQL (0.000303)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Prof. Dr.', 19, 1)[m
+  [4;33mSQL (0.000303)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Dr.', 20, 1)[m
+  [4;35mSQL (0.000303)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Ing. arch.', 21, 1)[m
+  [4;33mSQL (0.000306)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc. PhDr.', 22, 1)[m
+  [4;35mSQL (0.000311)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc. Ing. PhDr.', 23, 1)[m
+  [4;33mSQL (0.000309)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc. JUDr. PhDr.', 24, 1)[m
+  [4;35mSQL (0.000308)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('PaedDr. Ing.', 26, 1)[m
+  [4;33mSQL (0.000302)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Bc.', 27, 1)[m
+  [4;35mSQL (0.000303)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Prof.PhDr.Ing.', 28, 1)[m
+  [4;33mSQL (0.000308)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc. Mgr.', 29, 1)[m
+  [4;35mSQL (0.000304)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('PhDr. RNDr.', 30, 1)[m
+  [4;33mSQL (0.000304)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('B.A.', 31, 1)[m
+  [4;35mSQL (0.000331)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('M.A.', 32, 1)[m
+  [4;33mSQL (0.000306)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Dr..', 33, 1)[m
+  [4;35mSQL (0.000325)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Dott.', 34, 1)[m
+  [4;33mSQL (0.000308)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Mag.Phil.', 35, 1)[m
+  [4;35mSQL (0.000306)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Prof. MVDr. Ing.', 36, 1)[m
+  [4;33mSQL (0.000302)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('MVDr.', 37, 1)[m
+  [4;35mSQL (0.000302)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc. MVDr.', 38, 1)[m
+  [4;33mSQL (0.000314)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Doc. Dr. Ing.', 39, 1)[m
+  [4;35mSQL (0.000305)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Mgr.Ing.', 40, 1)[m
+  [4;33mSQL (0.000300)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('MUDr.', 41, 1)[m
+  [4;35mSQL (0.000307)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Ing. RNDr.', 42, 1)[m
+  [4;33mSQL (0.000306)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('PhDr. Ing.', 43, 1)[m
+  [4;35mSQL (0.000306)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('CSc.', 44, 0)[m
+  [4;33mSQL (0.000303)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('DrSc., Dr. h. c.', 45, 0)[m
+  [4;35mSQL (0.000341)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('DrSc.', 46, 0)[m
+  [4;33mSQL (0.000299)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('MBA', 47, 0)[m
+  [4;35mSQL (0.000293)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('Ph.D.', 48, 0)[m
+  [4;33mSQL (0.000288)[m   [1;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('DiS.', 49, 0)[m
+  [4;35mSQL (0.000288)[m   [0;37mINSERT INTO titles (`name`, `id`, `before`) VALUES('CSc., dr.h.c.', 51, 0)[m
+
+
+Processing FormController#details (for 80.250.1.238 at Tue May 24 15:15:23 CEST 2005)
+  Parameters: {"action"=>"details", "id"=>"4", "controller"=>"form"}
+  [4;35mCandidate Columns (0.003387)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mCoridor Load (0.000897)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = '4' LIMIT 1[m
+  [4;35mFaculty Load (0.000721)[m   [0;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+Rendering form/details within layouts/standard
+  [4;33mTitle Load (0.000000)[m   [1;37m#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = '1'' at line 1: SELECT * FROM titles WHERE before = '1' [m
+
+
+ActionView::TemplateError (#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = '1'' at line 1: SELECT * FROM titles WHERE before = '1' ) on line #25 of /shared/candidate_edit.rhtml:
+22:     <label for='candidate_lastname' class='required'>p≈ô√≠jmen√≠</label>
+23:     <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+24:     <label for='candidate_title_before_id'>titul p≈ôed jm√©nem</label>
+25:     <%= select 'candidate', 'title_before_id', title_before_ids %><br /> 
+26:     <label for='candidate_title_after_id'>titul za jm√©nem</label>
+27:     <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
+28:     <label class='required'>datum narozen√≠</label>
+
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/abstract_adapter.rb:422:in `log'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:116:in `execute'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:202:in `select'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:94:in `select_all'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:366:in `find_by_sql'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:334:in `find'
+    /gems/activerecord-1.10.1/lib/active_record/deprecated_finders.rb:37:in `find_all'
+    ./script/../config/..//app/helpers/application_helper.rb:22:in `title_before_ids'
+    (erb):25:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    (erb):1:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:709:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing FormController#details (for 80.250.1.238 at Tue May 24 15:16:13 CEST 2005)
+  Parameters: {"action"=>"details", "id"=>"4", "controller"=>"form"}
+  [4;35mCandidate Columns (0.003350)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mCoridor Load (0.001084)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = '4' LIMIT 1[m
+  [4;35mFaculty Load (0.000934)[m   [0;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+Rendering form/details within layouts/standard
+  [4;33mTitle Load (0.000000)[m   [1;37m#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = '1'' at line 1: SELECT * FROM titles WHERE before = '1' [m
+
+
+ActionView::TemplateError (#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = '1'' at line 1: SELECT * FROM titles WHERE before = '1' ) on line #25 of /shared/candidate_edit.rhtml:
+22:     <label for='candidate_lastname' class='required'>p≈ô√≠jmen√≠</label>
+23:     <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+24:     <label for='candidate_title_before_id'>titul p≈ôed jm√©nem</label>
+25:     <%= select 'candidate', 'title_before_id', title_before_ids %><br /> 
+26:     <label for='candidate_title_after_id'>titul za jm√©nem</label>
+27:     <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
+28:     <label class='required'>datum narozen√≠</label>
+
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/abstract_adapter.rb:422:in `log'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:116:in `execute'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:202:in `select'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:94:in `select_all'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:366:in `find_by_sql'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:334:in `find'
+    /gems/activerecord-1.10.1/lib/active_record/deprecated_finders.rb:37:in `find_all'
+    ./script/../config/..//app/helpers/application_helper.rb:22:in `title_before_ids'
+    (erb):25:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    (erb):1:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:709:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing FormController#details (for 80.250.1.238 at Tue May 24 15:16:29 CEST 2005)
+  Parameters: {"action"=>"details", "id"=>"4", "controller"=>"form"}
+  [4;33mCandidate Columns (0.003374)[m   [1;37mSHOW FIELDS FROM candidates[m
+  [4;35mCoridor Load (0.000954)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = '4' LIMIT 1[m
+  [4;33mCoridor Columns (0.001032)[m   [1;37mSHOW FIELDS FROM coridors[m
+  [4;35mCandidate Columns (0.003249)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mFaculty Load (0.000793)[m   [1;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+  [4;35mFaculty Columns (0.000983)[m   [0;37mSHOW FIELDS FROM faculties[m
+Rendering form/details within layouts/standard
+  [4;33mTitle Load (0.000000)[m   [1;37m#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = 1' at line 1: SELECT * FROM titles WHERE before = 1 [m
+
+
+ActionView::TemplateError (#42000You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before = 1' at line 1: SELECT * FROM titles WHERE before = 1 ) on line #25 of /shared/candidate_edit.rhtml:
+22:     <label for='candidate_lastname' class='required'>p≈ô√≠jmen√≠</label>
+23:     <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+24:     <label for='candidate_title_before_id'>titul p≈ôed jm√©nem</label>
+25:     <%= select 'candidate', 'title_before_id', title_before_ids %><br /> 
+26:     <label for='candidate_title_after_id'>titul za jm√©nem</label>
+27:     <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
+28:     <label class='required'>datum narozen√≠</label>
+
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/abstract_adapter.rb:422:in `log'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:116:in `execute'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:202:in `select'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:94:in `select_all'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:366:in `find_by_sql'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:334:in `find'
+    /gems/activerecord-1.10.1/lib/active_record/deprecated_finders.rb:37:in `find_all'
+    ./script/../config/..//app/helpers/application_helper.rb:22:in `title_before_ids'
+    (erb):25:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    (erb):1:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:709:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing FormController#details (for 80.250.1.238 at Tue May 24 15:20:02 CEST 2005)
+  Parameters: {"action"=>"details", "id"=>"4", "controller"=>"form"}
+  [4;33mCandidate Columns (0.003405)[m   [1;37mSHOW FIELDS FROM candidates[m
+  [4;35mCoridor Load (0.000944)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = '4' LIMIT 1[m
+  [4;33mCoridor Columns (0.001018)[m   [1;37mSHOW FIELDS FROM coridors[m
+  [4;35mCandidate Columns (0.003164)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mFaculty Load (0.000829)[m   [1;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+  [4;35mFaculty Columns (0.000961)[m   [0;37mSHOW FIELDS FROM faculties[m
+Rendering form/details within layouts/standard
+  [4;33mTitle Load (0.000000)[m   [1;37m#42S22Unknown column 'prefix' in 'where clause': SELECT * FROM titles WHERE prefix = 1 [m
+
+
+ActionView::TemplateError (#42S22Unknown column 'prefix' in 'where clause': SELECT * FROM titles WHERE prefix = 1 ) on line #25 of /shared/candidate_edit.rhtml:
+22:     <label for='candidate_lastname' class='required'>p≈ô√≠jmen√≠</label>
+23:     <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+24:     <label for='candidate_title_before_id'>titul p≈ôed jm√©nem</label>
+25:     <%= select 'candidate', 'title_before_id', title_before_ids %><br /> 
+26:     <label for='candidate_title_after_id'>titul za jm√©nem</label>
+27:     <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
+28:     <label class='required'>datum narozen√≠</label>
+
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/abstract_adapter.rb:422:in `log'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:116:in `execute'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:202:in `select'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:94:in `select_all'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:366:in `find_by_sql'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:334:in `find'
+    /gems/activerecord-1.10.1/lib/active_record/deprecated_finders.rb:37:in `find_all'
+    ./script/../config/..//app/helpers/application_helper.rb:22:in `title_before_ids'
+    (erb):25:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    (erb):1:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:709:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing FormController#details (for 80.250.1.238 at Tue May 24 15:20:04 CEST 2005)
+  Parameters: {"action"=>"details", "id"=>"4", "controller"=>"form"}
+  [4;35mCandidate Columns (0.003322)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mCoridor Load (0.001084)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = '4' LIMIT 1[m
+  [4;35mFaculty Load (0.000932)[m   [0;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+Rendering form/details within layouts/standard
+  [4;33mTitle Load (0.000000)[m   [1;37m#42S22Unknown column 'prefix' in 'where clause': SELECT * FROM titles WHERE prefix = 1 [m
+
+
+ActionView::TemplateError (#42S22Unknown column 'prefix' in 'where clause': SELECT * FROM titles WHERE prefix = 1 ) on line #25 of /shared/candidate_edit.rhtml:
+22:     <label for='candidate_lastname' class='required'>p≈ô√≠jmen√≠</label>
+23:     <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+24:     <label for='candidate_title_before_id'>titul p≈ôed jm√©nem</label>
+25:     <%= select 'candidate', 'title_before_id', title_before_ids %><br /> 
+26:     <label for='candidate_title_after_id'>titul za jm√©nem</label>
+27:     <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
+28:     <label class='required'>datum narozen√≠</label>
+
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/abstract_adapter.rb:422:in `log'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:116:in `execute'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:202:in `select'
+    /gems/activerecord-1.10.1/lib/active_record/connection_adapters/mysql_adapter.rb:94:in `select_all'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:366:in `find_by_sql'
+    /gems/activerecord-1.10.1/lib/active_record/base.rb:334:in `find'
+    /gems/activerecord-1.10.1/lib/active_record/deprecated_finders.rb:37:in `find_all'
+    ./script/../config/..//app/helpers/application_helper.rb:22:in `title_before_ids'
+    (erb):25:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    (erb):1:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:709:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing FormController#details (for 80.250.1.238 at Tue May 24 15:20:37 CEST 2005)
+  Parameters: {"action"=>"details", "id"=>"4", "controller"=>"form"}
+  [4;35mCandidate Columns (0.003434)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mCoridor Load (0.001076)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = '4' LIMIT 1[m
+  [4;35mFaculty Load (0.000931)[m   [0;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+Rendering form/details within layouts/standard
+  [4;33mTitle Load (0.002454)[m   [1;37mSELECT * FROM titles WHERE prefix = 1 [m
+  [4;35mTitle Columns (0.001183)[m   [0;37mSHOW FIELDS FROM titles[m
+  [4;33mTitle Load (0.001135)[m   [1;37mSELECT * FROM titles WHERE prefix = 0 [m
+  [4;35mDepartment Load (0.001327)[m   [0;37mSELECT * FROM departments WHERE faculty_id = 5 [m
+  [4;33mDepartment Columns (0.001166)[m   [1;37mSHOW FIELDS FROM departments[m
+  [4;35mStudy Load (0.000921)[m   [0;37mSELECT * FROM studies [m
+  [4;33mStudy Columns (0.001097)[m   [1;37mSHOW FIELDS FROM studies[m
+  [4;35mLanguage Load (0.000950)[m   [0;37mSELECT * FROM languages [m
+  [4;33mLanguage Columns (0.001044)[m   [1;37mSHOW FIELDS FROM languages[m
+  [4;35mLanguage Load (0.001027)[m   [0;37mSELECT * FROM languages [m
+Rendering layouts/standard (200 OK)
+Completed in 0.05594 (17 reqs/sec) | Rendering: 0.03176 (56%) | DB: 0.01775 (31%)
+
+
+Processing FormController#save (for 80.250.1.238 at Tue May 24 15:21:25 CEST 2005)
+  Parameters: {"candidate"=>{"city"=>"Nove Mesto pod Smrkem", "studied_specialization"=>"", "birth_on(1i)"=>"1950", "study_theme"=>"", "zip"=>"46365", "studied_branch"=>"dfasdf", "birth_on(2i)"=>"5", "number"=>"61", "title_before_id"=>"0", "study_end(1i)"=>"2005", "birth_on(3i)"=>"24", "employer_phone"=>"+420777835566", "university"=>"\304\214esk\303\241 zem\304\233d\304\233lsk\303\241 univerzita v Praze", "study_end(2i)"=>"5", "coridor_id"=>"4", "faculty"=>"lesnick\303\241 a environment\303\241ln\303\255", "id"=>"", "study_end(3i)"=>"24", "firstname"=>"Josef", "postal_street"=>"", "lastname"=>"Posp\303\255\305\241il", "title_after_id"=>"0", "employer"=>"", "postal_zip"=>"", "employer_email"=>"pepe@pef.czu.cz", "study_id"=>"1", "language1"=>"1", "street"=>"Hajniste", "postal_number"=>"", "note"=>"", "phone"=>"+420777835566", "birth_at"=>"Frydlant", "department_id"=>"1", "language2"=>"3", "employer_address"=>"", "position"=>"", "birth_number"=>"99999999", "postal_city"=>"", "state"=>"\304\214esk\303\241 republika", "email"=>"pepe@pef.czu.cz"}, "action"=>"save", "controller"=>"form"}
+  [4;33mCandidate Columns (0.003320)[m   [1;37mSHOW FIELDS FROM candidates[m
+  [4;35mSQL (0.000298)[m   [0;37mBEGIN[m
+  [4;33mCandidate Load (0.004517)[m   [1;37mSELECT * FROM candidates WHERE birth_number = '99999999' LIMIT 1[m
+  [4;35mSQL (0.000749)[m   [0;37mINSERT INTO candidates (`city`, `created_on`, `studied_specialization`, `study_theme`, `zip`, `number`, `student_id`, `studied_branch`, `title_before_id`, `employer_phone`, `enrolled_on`, `university`, `coridor_id`, `faculty`, `tutor_id`, `employer`, `finished_on`, `firstname`, `lastname`, `postal_street`, `ready_on`, `title_after_id`, `employer_email`, `postal_zip`, `study_id`, `invited_on`, `language1`, `note`, `phone`, `postal_number`, `street`, `birth_at`, `department_id`, `language2`, `birth_number`, `birth_on`, `employer_address`, `position`, `postal_city`, `study_end`, `admited_on`, `email`, `state`) VALUES('Nove Mesto pod Smrkem', '2005-05-24 15:21:25', '', '', '46365', 61, NULL, 'dfasdf', 0, '+420777835566', NULL, 'ƒåesk√° zemƒõdƒõlsk√° univerzita v Praze', 4, 'lesnick√° a environment√°ln√≠', NULL, '', NULL, 'Josef', 'Posp√≠≈°il', '', NULL, 0, 'pepe@pef.czu.cz', '', 1, NULL, 1, '', '+420777835566', NULL, 'Hajniste', 'Frydlant', 1, 3, '99999999', '1950-05-24', '', '', '', '2005-05-24', NULL, 'pepe@pef.czu.cz', 'ƒåesk√° republika')[m
+  [4;33mSQL (0.000365)[m   [1;37mCOMMIT[m
+Rendering form/preview within layouts/standard
+  [4;35mCoridor Load (0.000960)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 4 LIMIT 1[m
+  [4;33mFaculty Load (0.000826)[m   [1;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+  [4;35mTitle Load (0.000890)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000909)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mDepartment Load (0.001077)[m   [0;37mSELECT * FROM departments WHERE departments.id = 1 LIMIT 1[m
+  [4;33mStudy Load (0.000915)[m   [1;37mSELECT * FROM studies WHERE studies.id = 1 LIMIT 1[m
+  [4;35mLanguage Load (0.001004)[m   [0;37mSELECT * FROM languages WHERE languages.id = 1 LIMIT 1[m
+  [4;33mLanguage Load (0.000923)[m   [1;37mSELECT * FROM languages WHERE languages.id = 3 LIMIT 1[m
+Rendering layouts/standard (200 OK)
+Completed in 0.06498 (15 reqs/sec) | Rendering: 0.02352 (36%) | DB: 0.01675 (25%)
+
+
+Processing FormController#correct (for 80.250.1.238 at Tue May 24 15:21:30 CEST 2005)
+  Parameters: {"action"=>"correct", "id"=>"44", "controller"=>"form"}
+  [4;35mCandidate Load (0.004585)[m   [0;37mSELECT * FROM candidates WHERE candidates.id = '44' LIMIT 1[m
+Rendering form/details within layouts/standard
+  [4;33mTitle Load (0.002675)[m   [1;37mSELECT * FROM titles WHERE prefix = 1 [m
+  [4;35mTitle Load (0.001150)[m   [0;37mSELECT * FROM titles WHERE prefix = 0 [m
+  [4;33mCoridor Load (0.000912)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 4 LIMIT 1[m
+  [4;35mFaculty Load (0.000904)[m   [0;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+  [4;33mDepartment Load (0.001418)[m   [1;37mSELECT * FROM departments WHERE faculty_id = 5 [m
+  [4;35mStudy Load (0.000779)[m   [0;37mSELECT * FROM studies [m
+  [4;33mLanguage Load (0.001044)[m   [1;37mSELECT * FROM languages [m
+  [4;35mLanguage Load (0.001063)[m   [0;37mSELECT * FROM languages [m
+Rendering layouts/standard (200 OK)
+Completed in 0.04562 (21 reqs/sec) | Rendering: 0.02864 (62%) | DB: 0.01453 (31%)
+
+
+Processing FormController#update (for 80.250.1.238 at Tue May 24 15:21:35 CEST 2005)
+  Parameters: {"candidate"=>{"city"=>"Nove Mesto pod Smrkem", "studied_specialization"=>"", "birth_on(1i)"=>"1950", "study_theme"=>"", "zip"=>"46365", "studied_branch"=>"dfasdf", "birth_on(2i)"=>"5", "number"=>"61", "title_before_id"=>"0", "study_end(1i)"=>"2005", "birth_on(3i)"=>"24", "employer_phone"=>"+420777835566", "university"=>"\304\214esk\303\241 zem\304\233d\304\233lsk\303\241 univerzita v Praze", "study_end(2i)"=>"5", "coridor_id"=>"4", "faculty"=>"lesnick\303\241 a environment\303\241ln\303\255", "id"=>"44", "study_end(3i)"=>"24", "firstname"=>"Josef", "postal_street"=>"", "lastname"=>"Posp\303\255\305\241il", "title_after_id"=>"0", "employer"=>"", "postal_zip"=>"", "employer_email"=>"pepe@pef.czu.cz", "study_id"=>"1", "language1"=>"1", "street"=>"Hajniste", "postal_number"=>"", "note"=>"", "phone"=>"+420777835566", "birth_at"=>"Frydlant", "department_id"=>"1", "language2"=>"3", "employer_address"=>"", "position"=>"", "birth_number"=>"99999999", "postal_city"=>"", "state"=>"\304\214esk\303\241 republika", "email"=>"pepe@pef.czu.cz"}, "action"=>"update", "controller"=>"form"}
+  [4;33mCandidate Load (0.004664)[m   [1;37mSELECT * FROM candidates WHERE candidates.id = '44' LIMIT 1[m
+  [4;35mSQL (0.000299)[m   [0;37mBEGIN[m
+  [4;33mCandidate Load (0.004592)[m   [1;37mSELECT * FROM candidates WHERE birth_number = '99999999' AND id <> 44 LIMIT 1[m
+  [4;35mCandidate Update (0.000804)[m   [0;37mUPDATE candidates SET `phone` = '+420777835566', `university` = 'ƒåesk√° zemƒõdƒõlsk√° univerzita v Praze', `employer_phone` = '+420777835566', `postal_city` = '', `birth_number` = '99999999', `postal_zip` = '', `employer_email` = 'pepe@pef.czu.cz', `number` = 61, `lastname` = 'Posp√≠≈°il', `finished_on` = NULL, `zip` = '46365', `study_theme` = '', `postal_number` = NULL, `city` = 'Nove Mesto pod Smrkem', `admited_on` = NULL, `study_id` = 1, `study_end` = '2005-05-24', `position` = '', `birth_on` = '1950-05-24', `ready_on` = NULL, `title_before_id` = 0, `studied_branch` = 'dfasdf', `student_id` = NULL, `language2` = 3, `department_id` = 1, `birth_at` = 'Frydlant', `tutor_id` = NULL, `street` = 'Hajniste', `note` = '', `language1` = 1, `invited_on` = NULL, `enrolled_on` = '2005-05-24 15:21:25', `studied_specialization` = '', `state` = 'ƒåesk√° republika', `email` = 'pepe@pef.czu.cz', `employer_address` = '', `title_after_id` = 0, `postal_street` = '', `firstname` = 'Josef', `employer` = '', `faculty` = 'lesnick√° a environment√°ln√≠', `coridor_id` = 4, `created_on` = '2005-05-24 15:21:25' WHERE id = 44[m
+  [4;33mSQL (0.000381)[m   [1;37mCOMMIT[m
+Rendering form/preview within layouts/standard
+  [4;35mCoridor Load (0.000886)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 4 LIMIT 1[m
+  [4;33mFaculty Load (0.000846)[m   [1;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+  [4;35mTitle Load (0.000932)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000850)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mDepartment Load (0.000889)[m   [0;37mSELECT * FROM departments WHERE departments.id = 1 LIMIT 1[m
+  [4;33mStudy Load (0.000822)[m   [1;37mSELECT * FROM studies WHERE studies.id = 1 LIMIT 1[m
+  [4;35mLanguage Load (0.000821)[m   [0;37mSELECT * FROM languages WHERE languages.id = 1 LIMIT 1[m
+  [4;33mLanguage Load (0.000807)[m   [1;37mSELECT * FROM languages WHERE languages.id = 3 LIMIT 1[m
+Rendering layouts/standard (200 OK)
+Completed in 0.04974 (20 reqs/sec) | Rendering: 0.01544 (31%) | DB: 0.01759 (35%)
+
+
+Processing FormController#finish (for 80.250.1.238 at Tue May 24 15:21:50 CEST 2005)
+  Parameters: {"action"=>"finish", "id"=>"44", "controller"=>"form"}
+  [4;35mCandidate Load (0.004808)[m   [0;37mSELECT * FROM candidates WHERE candidates.id = '44' LIMIT 1[m
+  [4;33mSQL (0.000438)[m   [1;37mBEGIN[m
+  [4;35mCandidate Load (0.004704)[m   [0;37mSELECT * FROM candidates WHERE birth_number = '99999999' AND id <> 44 LIMIT 1[m
+  [4;33mCandidate Update (0.000867)[m   [1;37mUPDATE candidates SET `phone` = '+420777835566', `university` = 'ƒåesk√° zemƒõdƒõlsk√° univerzita v Praze', `employer_phone` = '+420777835566', `postal_city` = '', `birth_number` = '99999999', `postal_zip` = '', `employer_email` = 'pepe@pef.czu.cz', `number` = 61, `lastname` = 'Posp√≠≈°il', `finished_on` = '2005-05-24 15:21:50', `zip` = '46365', `study_theme` = '', `postal_number` = NULL, `city` = 'Nove Mesto pod Smrkem', `admited_on` = NULL, `study_id` = 1, `study_end` = '2005-05-24', `position` = '', `birth_on` = '1950-05-24', `ready_on` = NULL, `title_before_id` = 0, `studied_branch` = 'dfasdf', `student_id` = NULL, `language2` = 3, `department_id` = 1, `birth_at` = 'Frydlant', `tutor_id` = NULL, `street` = 'Hajniste', `note` = '', `language1` = 1, `invited_on` = NULL, `enrolled_on` = '2005-05-24 15:21:25', `studied_specialization` = '', `state` = 'ƒåesk√° republika', `email` = 'pepe@pef.czu.cz', `employer_address` = '', `title_after_id` = 0, `postal_street` = '', `firstname` = 'Josef', `employer` = '', `faculty` = 'lesnick√° a environment√°ln√≠', `coridor_id` = 4, `created_on` = '2005-05-24 15:21:25' WHERE id = 44[m
+  [4;35mSQL (0.000249)[m   [0;37mCOMMIT[m
+Rendering form/finish within layouts/standard
+Rendering layouts/standard (200 OK)
+Completed in 0.02882 (34 reqs/sec) | Rendering: 0.00302 (10%) | DB: 0.01107 (38%)
+  [4;33mUser Columns (0.001388)[m   [1;37mSHOW FIELDS FROM users[m
+  [4;35mSQL (0.000461)[m   [0;37mINSERT INTO users (`id`, `login`, `password`, `person_id`) VALUES(1, 'pepe', '6f25cbda060e63dc20c780c9d8c85ef2880d4dd4', 1)[m
+  [4;33mSQL (0.000345)[m   [1;37mINSERT INTO users (`id`, `login`, `password`, `person_id`) VALUES(2, 'gothmog', 'a6ebb7d01d1d61f288f6a92c2c15ed7d8309d809', NULL)[m
+  [4;35mRole Columns (0.001358)[m   [0;37mSHOW FIELDS FROM roles[m
+  [4;33mSQL (0.000433)[m   [1;37mINSERT INTO roles (`name`, `info`, `id`) VALUES('admin', 'Administr·tor', 1)[m
+  [4;35mSQL (0.000313)[m   [0;37mINSERT INTO roles (`name`, `info`, `id`) VALUES('referentka', 'Referentka na VaV', 2)[m
+  [4;33mPermission Columns (0.001424)[m   [1;37mSHOW FIELDS FROM permissions[m
+  [4;35mSQL (0.000442)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('account/welcome', '⁄vodnÌ str·nka systÈmu', 1)[m
+  [4;33mSQL (0.000322)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('account/logout', 'OdhlaöovacÌ str·nka', 2)[m
+  [4;35mSQL (0.000298)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/index', 'UchazeËi - ˙vodnÌ str·nka', 3)[m
+  [4;33mSQL (0.000300)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/edit', 'UchazeËi - oprava', 4)[m
+  [4;35mSQL (0.000322)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/ready', 'UchazeËi - p¯ipraven', 5)[m
+  [4;33mSQL (0.000301)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/admit', 'UchazeËi - p¯Ìjmut', 6)[m
+  [4;35mSQL (0.000299)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/by', 'UchazeËi - v˝pis uchazeË˘ set¯ÌdÏn˝', 7)[m
+  [4;33mSQL (0.000303)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/list', 'UchazeËi - v˝pis uchazeË˘', 8)[m
+  [4;35mSQL (0.000300)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('account/signup', '', 9)[m
+  [4;33mSQL (0.000297)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('account/create', '', 10)[m
+  [4;35mSQL (0.000296)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/update', '', 11)[m
+  [4;33mSQL (0.000319)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('exam_terms/index', '', 12)[m
+  [4;35mSQL (0.000311)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('exam_terms/list', '', 13)[m
+  [4;33mSQL (0.000301)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('exam_terms/edit', '', 14)[m
+  [4;35mSQL (0.000296)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('exam_terms/new', '', 15)[m
+  [4;33mSQL (0.000296)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('exam_terms/create', '', 16)[m
+  [4;35mSQL (0.000301)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('exam_terms/update', '', 17)[m
+  [4;33mSQL (0.000299)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('exam_terms/show', '', 18)[m
+  [4;35mSQL (0.000316)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/invite', '', 19)[m
+  [4;33mSQL (0.000301)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/destroy', '', 20)[m
+  [4;35mSQL (0.000310)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('exam_terms/destroy', '', 21)[m
+  [4;33mSQL (0.000338)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/admittance', '', 22)[m
+  [4;35mSQL (0.000307)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/list_all', '', 23)[m
+  [4;33mSQL (0.000301)[m   [1;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/show', '', 24)[m
+  [4;35mSQL (0.000303)[m   [0;37mINSERT INTO permissions (`name`, `info`, `id`) VALUES('candidates/confirm_admit', '', 25)[m
+  [4;33mUser Load (0.001263)[m   [1;37mSELECT * FROM users WHERE login = 'pepe' LIMIT 1[m
+  [4;35mRole Load (0.000728)[m   [0;37mSELECT * FROM roles LIMIT 1[m
+  [4;33mUser Load (0.001145)[m   [1;37mSELECT * FROM users WHERE login = 'pepe' LIMIT 1[m
+  [4;35mRole Load (0.000774)[m   [0;37mSELECT * FROM roles LIMIT 1[m
+  [4;33mRole Load (0.001113)[m   [1;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 1 [m
+  [4;35mSQL (0.000190)[m   [0;37mBEGIN[m
+  [4;33mRole Update (0.000441)[m   [1;37mUPDATE roles SET `info` = 'Administr·tor', `name` = 'admin' WHERE id = 1[m
+  [4;35mroles_users Columns (0.000880)[m   [0;37mSHOW FIELDS FROM roles_users[m
+  [4;33mSQL (0.000324)[m   [1;37mINSERT INTO roles_users (`role_id`, `user_id`) VALUES ('1', '1')[m
+  [4;35mSQL (0.000142)[m   [0;37mCOMMIT[m
+  [4;33mRole Load (0.000868)[m   [1;37mSELECT * FROM roles LIMIT 1[m
+  [4;35mPermission Load (0.001589)[m   [0;37mSELECT * FROM permissions [m
+  [4;33mPermission Load (0.001135)[m   [1;37mSELECT t.*, j.* FROM permissions_roles j, permissions t WHERE t.id = j.permission_id AND j.role_id = 1 [m
+  [4;35mSQL (0.000179)[m   [0;37mBEGIN[m
+  [4;33mPermission Update (0.000438)[m   [1;37mUPDATE permissions SET `info` = '⁄vodnÌ str·nka systÈmu', `name` = 'account/welcome' WHERE id = 1[m
+  [4;35mpermissions_roles Columns (0.000886)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000326)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('1', '1')[m
+  [4;35mPermission Update (0.000457)[m   [0;37mUPDATE permissions SET `info` = 'OdhlaöovacÌ str·nka', `name` = 'account/logout' WHERE id = 2[m
+  [4;33mpermissions_roles Columns (0.000878)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000269)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('2', '1')[m
+  [4;33mPermission Update (0.000425)[m   [1;37mUPDATE permissions SET `info` = 'UchazeËi - ˙vodnÌ str·nka', `name` = 'candidates/index' WHERE id = 3[m
+  [4;35mpermissions_roles Columns (0.000877)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000268)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('3', '1')[m
+  [4;35mPermission Update (0.000428)[m   [0;37mUPDATE permissions SET `info` = 'UchazeËi - oprava', `name` = 'candidates/edit' WHERE id = 4[m
+  [4;33mpermissions_roles Columns (0.000889)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000274)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('4', '1')[m
+  [4;33mPermission Update (0.000425)[m   [1;37mUPDATE permissions SET `info` = 'UchazeËi - p¯ipraven', `name` = 'candidates/ready' WHERE id = 5[m
+  [4;35mpermissions_roles Columns (0.000874)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000266)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('5', '1')[m
+  [4;35mPermission Update (0.000425)[m   [0;37mUPDATE permissions SET `info` = 'UchazeËi - p¯Ìjmut', `name` = 'candidates/admit' WHERE id = 6[m
+  [4;33mpermissions_roles Columns (0.000896)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000327)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('6', '1')[m
+  [4;33mPermission Update (0.000419)[m   [1;37mUPDATE permissions SET `info` = 'UchazeËi - v˝pis uchazeË˘ set¯ÌdÏn˝', `name` = 'candidates/by' WHERE id = 7[m
+  [4;35mpermissions_roles Columns (0.000860)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000253)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('7', '1')[m
+  [4;35mPermission Update (0.000408)[m   [0;37mUPDATE permissions SET `info` = 'UchazeËi - v˝pis uchazeË˘', `name` = 'candidates/list' WHERE id = 8[m
+  [4;33mpermissions_roles Columns (0.000901)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000257)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('8', '1')[m
+  [4;33mPermission Update (0.000403)[m   [1;37mUPDATE permissions SET `info` = '', `name` = 'account/signup' WHERE id = 9[m
+  [4;35mpermissions_roles Columns (0.000927)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000275)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('9', '1')[m
+  [4;35mPermission Update (0.000432)[m   [0;37mUPDATE permissions SET `info` = '', `name` = 'account/create' WHERE id = 10[m
+  [4;33mpermissions_roles Columns (0.000881)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000271)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('10', '1')[m
+  [4;33mPermission Update (0.000426)[m   [1;37mUPDATE permissions SET `info` = '', `name` = 'candidates/update' WHERE id = 11[m
+  [4;35mpermissions_roles Columns (0.000881)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000271)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('11', '1')[m
+  [4;35mPermission Update (0.000422)[m   [0;37mUPDATE permissions SET `info` = '', `name` = 'exam_terms/index' WHERE id = 12[m
+  [4;33mpermissions_roles Columns (0.000897)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000269)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('12', '1')[m
+  [4;33mPermission Update (0.000428)[m   [1;37mUPDATE permissions SET `info` = '', `name` = 'exam_terms/list' WHERE id = 13[m
+  [4;35mpermissions_roles Columns (0.000876)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000272)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('13', '1')[m
+  [4;35mPermission Update (0.000423)[m   [0;37mUPDATE permissions SET `info` = '', `name` = 'exam_terms/edit' WHERE id = 14[m
+  [4;33mpermissions_roles Columns (0.000875)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000272)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('14', '1')[m
+  [4;33mPermission Update (0.000429)[m   [1;37mUPDATE permissions SET `info` = '', `name` = 'exam_terms/new' WHERE id = 15[m
+  [4;35mpermissions_roles Columns (0.000888)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000270)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('15', '1')[m
+  [4;35mPermission Update (0.000444)[m   [0;37mUPDATE permissions SET `info` = '', `name` = 'exam_terms/create' WHERE id = 16[m
+  [4;33mpermissions_roles Columns (0.000890)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000272)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('16', '1')[m
+  [4;33mPermission Update (0.000427)[m   [1;37mUPDATE permissions SET `info` = '', `name` = 'exam_terms/update' WHERE id = 17[m
+  [4;35mpermissions_roles Columns (0.000885)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000275)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('17', '1')[m
+  [4;35mPermission Update (0.000426)[m   [0;37mUPDATE permissions SET `info` = '', `name` = 'exam_terms/show' WHERE id = 18[m
+  [4;33mpermissions_roles Columns (0.000884)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000315)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('18', '1')[m
+  [4;33mPermission Update (0.000450)[m   [1;37mUPDATE permissions SET `info` = '', `name` = 'candidates/invite' WHERE id = 19[m
+  [4;35mpermissions_roles Columns (0.000916)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000297)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('19', '1')[m
+  [4;35mPermission Update (0.000436)[m   [0;37mUPDATE permissions SET `info` = '', `name` = 'candidates/destroy' WHERE id = 20[m
+  [4;33mpermissions_roles Columns (0.000968)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000306)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('20', '1')[m
+  [4;33mPermission Update (0.000435)[m   [1;37mUPDATE permissions SET `info` = '', `name` = 'exam_terms/destroy' WHERE id = 21[m
+  [4;35mpermissions_roles Columns (0.000921)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000297)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('21', '1')[m
+  [4;35mPermission Update (0.000448)[m   [0;37mUPDATE permissions SET `info` = '', `name` = 'candidates/admittanc' WHERE id = 22[m
+  [4;33mpermissions_roles Columns (0.000929)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000292)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('22', '1')[m
+  [4;33mPermission Update (0.000449)[m   [1;37mUPDATE permissions SET `info` = '', `name` = 'candidates/list_all' WHERE id = 23[m
+  [4;35mpermissions_roles Columns (0.000913)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000290)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('23', '1')[m
+  [4;35mPermission Update (0.000443)[m   [0;37mUPDATE permissions SET `info` = '', `name` = 'candidates/show' WHERE id = 24[m
+  [4;33mpermissions_roles Columns (0.000904)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000291)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('24', '1')[m
+  [4;33mPermission Update (0.000434)[m   [1;37mUPDATE permissions SET `info` = '', `name` = 'candidates/confirm_a' WHERE id = 25[m
+  [4;35mpermissions_roles Columns (0.000948)[m   [0;37mSHOW FIELDS FROM permissions_roles[m
+  [4;33mSQL (0.000293)[m   [1;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('25', '1')[m
+  [4;35mSQL (0.000152)[m   [0;37mCOMMIT[m
+
+
+Processing AccountController#welcome (for 80.250.1.238 at Tue May 24 15:30:35 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+Redirected to http://gravastar.cz:3000/account/login
+Completed in 0.00083 (1203 reqs/sec) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 80.250.1.238 at Tue May 24 15:30:35 CEST 2005)
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering account/login within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00769 (129 reqs/sec) | Rendering: 0.00643 (83%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 80.250.1.238 at Tue May 24 15:30:38 CEST 2005)
+  Parameters: {"user_login"=>"pepe", "action"=>"login", "controller"=>"account", "user_password"=>"pepek", "login"=>"p\305\231ihl\303\241sit \302\273"}
+  [4;33mUser Load (0.001002)[m   [1;37mSELECT * FROM users WHERE login = 'pepe' AND password = '4edd36daaaf84544d4ddb1fbcc82ba3e3332575d' LIMIT 1[m
+Rendering account/login within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00555 (180 reqs/sec) | Rendering: 0.00277 (49%) | DB: 0.00100 (18%)
+  [4;33mUser Load (0.000940)[m   [1;37mSELECT * FROM users [m
+  [4;35mUser Load (0.001065)[m   [0;37mSELECT * FROM users LIMIT 1[m
+  [4;33mUser Columns (0.001250)[m   [1;37mSHOW FIELDS FROM users[m
+  [4;35mSQL (0.000377)[m   [0;37mBEGIN[m
+  [4;33mSQL (0.000170)[m   [1;37mCOMMIT[m
+  [4;35mSQL (0.019414)[m   [0;37mBEGIN[m
+  [4;33mUser Update (0.008389)[m   [1;37mUPDATE users SET `login` = 'pepe', `person_id` = 1, `password` = 'pepek' WHERE id = 1[m
+  [4;35mSQL (0.009447)[m   [0;37mCOMMIT[m
+
+
+Processing AccountController#login (for 80.250.1.238 at Tue May 24 15:32:21 CEST 2005)
+  Parameters: {"user_login"=>"pepe", "action"=>"login", "controller"=>"account", "user_password"=>"pepek", "login"=>"p\305\231ihl\303\241sit \302\273"}
+  [4;35mUser Load (0.000972)[m   [0;37mSELECT * FROM users WHERE login = 'pepe' AND password = '4edd36daaaf84544d4ddb1fbcc82ba3e3332575d' LIMIT 1[m
+Rendering account/login within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00545 (183 reqs/sec) | Rendering: 0.00274 (50%) | DB: 0.00097 (17%)
+
+
+Processing AccountController#login (for 80.250.1.238 at Tue May 24 15:32:25 CEST 2005)
+  Parameters: {"user_login"=>"pepe", "action"=>"login", "controller"=>"account", "user_password"=>"pepek", "login"=>"p\305\231ihl\303\241sit \302\273"}
+  [4;33mUser Load (0.000975)[m   [1;37mSELECT * FROM users WHERE login = 'pepe' AND password = '4edd36daaaf84544d4ddb1fbcc82ba3e3332575d' LIMIT 1[m
+Rendering account/login within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00545 (183 reqs/sec) | Rendering: 0.00270 (49%) | DB: 0.00098 (17%)
+  [4;33mUser Load (0.000840)[m   [1;37mSELECT * FROM users LIMIT 1[m
+  [4;35mUser Columns (0.001000)[m   [0;37mSHOW FIELDS FROM users[m
+  [4;33mSQL (0.000153)[m   [1;37mBEGIN[m
+  [4;35mUser Update (0.000436)[m   [0;37mUPDATE users SET `login` = 'pepe', `person_id` = 1, `password` = '4edd36daaaf84544d4ddb1fbcc82ba3e3332575d' WHERE id = 1[m
+  [4;33mSQL (0.000159)[m   [1;37mCOMMIT[m
+
+
+Processing AccountController#login (for 80.250.1.238 at Tue May 24 15:33:57 CEST 2005)
+  Parameters: {"user_login"=>"pepe", "action"=>"login", "controller"=>"account", "user_password"=>"pepek", "login"=>"p\305\231ihl\303\241sit \302\273"}
+  [4;35mUser Load (0.001018)[m   [0;37mSELECT * FROM users WHERE login = 'pepe' AND password = '4edd36daaaf84544d4ddb1fbcc82ba3e3332575d' LIMIT 1[m
+Redirected to /
+  [4;33mUser Columns (0.001066)[m   [1;37mSHOW FIELDS FROM users[m
+Completed in 0.00440 (227 reqs/sec) | DB: 0.00208 (47%)
+
+
+Processing AccountController#welcome (for 80.250.1.238 at Tue May 24 15:33:57 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+  [4;35mRole Load (0.001090)[m   [0;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 1 [m
+  [4;33mRole Columns (0.001035)[m   [1;37mSHOW FIELDS FROM roles[m
+  [4;35mPermission Load (0.002461)[m   [0;37mSELECT t.*, j.* FROM permissions_roles j, permissions t WHERE t.id = j.permission_id AND j.role_id = 1 [m
+  [4;33mPermission Columns (0.000985)[m   [1;37mSHOW FIELDS FROM permissions[m
+Rendering account/welcome within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01778 (56 reqs/sec) | Rendering: 0.00680 (38%) | DB: 0.00557 (31%)
+
+
+Processing CandidatesController#index (for 80.250.1.238 at Tue May 24 15:33:59 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"candidates"}
+  [4;35mCandidate Count (0.000849)[m   [0;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;33mCandidate Load (0.006497)[m   [1;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 0, 7[m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000936)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000688)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000840)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000931)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000693)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000848)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000921)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000699)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000856)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000921)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000841)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000850)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000869)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000741)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000846)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000916)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000720)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000844)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.000829)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000726)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000843)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.10508 (9 reqs/sec) | Rendering: 0.07615 (72%) | DB: 0.02470 (23%)
+
+
+Processing CandidatesController#index (for 80.250.1.238 at Tue May 24 15:34:04 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"candidates", "page"=>"2"}
+  [4;33mCandidate Count (0.000844)[m   [1;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;35mCandidate Load (0.006487)[m   [0;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 7, 7[m
+Rendering candidates/list within layouts/employers
+  [4;33mTitle Load (0.000943)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000697)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.001276)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;35mTitle Load (0.000845)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000707)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000870)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;33mTitle Load (0.000909)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000682)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000938)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;35mTitle Load (0.000929)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000695)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000840)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;33mTitle Load (0.000842)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000728)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000851)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.000842)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000703)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000868)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000837)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000724)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000835)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 4 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.09838 (10 reqs/sec) | Rendering: 0.06956 (70%) | DB: 0.02489 (25%)
+
+
+Processing CandidatesController#show (for 80.250.1.238 at Tue May 24 15:38:06 CEST 2005)
+  Parameters: {"action"=>"show", "id"=>"44", "controller"=>"candidates"}
+  [4;35mCandidate Load (0.004646)[m   [0;37mSELECT * FROM candidates WHERE candidates.id = '44' LIMIT 1[m
+Rendering candidates/show within layouts/employers
+  [4;33mTitle Load (0.000822)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000698)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000891)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 4 LIMIT 1[m
+  [4;35mDepartment Load (0.000786)[m   [0;37mSELECT * FROM departments WHERE departments.id = 1 LIMIT 1[m
+  [4;33mStudy Load (0.000683)[m   [1;37mSELECT * FROM studies WHERE studies.id = 1 LIMIT 1[m
+  [4;35mLanguage Load (0.000783)[m   [0;37mSELECT * FROM languages WHERE languages.id = 1 LIMIT 1[m
+  [4;33mLanguage Load (0.000655)[m   [1;37mSELECT * FROM languages WHERE languages.id = 3 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.08665 (11 reqs/sec) | Rendering: 0.07445 (85%) | DB: 0.00996 (11%)
+  [4;33mCandidate Load (0.004696)[m   [1;37mSELECT * FROM candidates WHERE candidates.id = 44 LIMIT 1[m
+  [4;35mCandidate Load (0.004913)[m   [0;37mSELECT * FROM candidates WHERE candidates.id = 44 LIMIT 1[m
+  [4;33mCandidate Columns (0.003245)[m   [1;37mSHOW FIELDS FROM candidates[m
+
+
+Processing CandidatesController#destroy (for 80.250.1.238 at Tue May 24 15:39:22 CEST 2005)
+  Parameters: {"action"=>"destroy", "id"=>"44", "controller"=>"candidates"}
+  [4;35mCandidate Load (0.004606)[m   [0;37mSELECT * FROM candidates WHERE candidates.id = '44' LIMIT 1[m
+  [4;33mSQL (0.000249)[m   [1;37mBEGIN[m
+  [4;35mCandidate Destroy (0.000423)[m   [0;37mDELETE FROM candidates WHERE id = 44[m
+  [4;33mSQL (0.000229)[m   [1;37mCOMMIT[m
+Redirected to http://gravastar.cz:3000/candidates/list
+Completed in 0.00920 (108 reqs/sec) | DB: 0.00551 (59%)
+
+
+Processing CandidatesController#list (for 80.250.1.238 at Tue May 24 15:39:23 CEST 2005)
+  Parameters: {"action"=>"list", "controller"=>"candidates"}
+  [4;35mCandidate Count (0.000829)[m   [0;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;33mCandidate Load (0.006325)[m   [1;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 0, 7[m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000933)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000699)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000847)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000953)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000712)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000944)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000916)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000705)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.001269)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000910)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000690)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000841)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000837)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000712)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000858)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000914)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000692)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000845)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.000853)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000695)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000855)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.09852 (10 reqs/sec) | Rendering: 0.06978 (70%) | DB: 0.02483 (25%)
+
+
+Processing FormController#details (for 80.250.1.238 at Tue May 24 15:39:34 CEST 2005)
+  Parameters: {"action"=>"details", "id"=>"4", "controller"=>"form"}
+  [4;33mCandidate Columns (0.003327)[m   [1;37mSHOW FIELDS FROM candidates[m
+  [4;35mCoridor Load (0.000872)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = '4' LIMIT 1[m
+  [4;33mFaculty Load (0.000716)[m   [1;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+Rendering form/details within layouts/standard
+  [4;35mTitle Load (0.002558)[m   [0;37mSELECT * FROM titles WHERE prefix = 1 [m
+  [4;33mTitle Load (0.001183)[m   [1;37mSELECT * FROM titles WHERE prefix = 0 [m
+  [4;35mDepartment Load (0.001355)[m   [0;37mSELECT * FROM departments WHERE faculty_id = 5 [m
+  [4;33mStudy Load (0.000732)[m   [1;37mSELECT * FROM studies [m
+  [4;35mLanguage Load (0.000874)[m   [0;37mSELECT * FROM languages [m
+  [4;33mLanguage Load (0.000861)[m   [1;37mSELECT * FROM languages [m
+Rendering layouts/standard (200 OK)
+Completed in 0.04288 (23 reqs/sec) | Rendering: 0.02541 (59%) | DB: 0.01248 (29%)
+
+
+Processing FormController#save (for 80.250.1.238 at Tue May 24 15:39:45 CEST 2005)
+  Parameters: {"candidate"=>{"city"=>"Nove Mesto pod Smrkem", "studied_specialization"=>"", "birth_on(1i)"=>"1950", "study_theme"=>"", "zip"=>"46365", "studied_branch"=>"dfasdf", "birth_on(2i)"=>"5", "number"=>"61", "title_before_id"=>"0", "study_end(1i)"=>"2005", "birth_on(3i)"=>"24", "employer_phone"=>"+420777835566", "university"=>"\304\214esk\303\241 zem\304\233d\304\233lsk\303\241 univerzita v Praze", "study_end(2i)"=>"5", "coridor_id"=>"4", "faculty"=>"lesnick\303\241 a environment\303\241ln\303\255", "id"=>"", "study_end(3i)"=>"24", "firstname"=>"Josef", "postal_street"=>"", "lastname"=>"Posp\303\255\305\241il", "title_after_id"=>"0", "employer"=>"", "postal_zip"=>"", "employer_email"=>"pepe@pef.czu.cz", "study_id"=>"1", "language1"=>"1", "street"=>"Hajniste", "postal_number"=>"", "note"=>"", "phone"=>"+420777835566", "birth_at"=>"Frydlant", "department_id"=>"1", "language2"=>"2", "employer_address"=>"", "position"=>"", "birth_number"=>"99999999", "postal_city"=>"", "state"=>"\304\214esk\303\241 republika", "email"=>"pepe@pef.czu.cz"}, "action"=>"save", "controller"=>"form"}
+  [4;35mCandidate Columns (0.003297)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mSQL (0.000323)[m   [1;37mBEGIN[m
+  [4;35mCandidate Load (0.004379)[m   [0;37mSELECT * FROM candidates WHERE birth_number = '99999999' LIMIT 1[m
+  [4;33mSQL (0.000855)[m   [1;37mINSERT INTO candidates (`city`, `created_on`, `studied_specialization`, `study_theme`, `zip`, `number`, `student_id`, `studied_branch`, `title_before_id`, `employer_phone`, `enrolled_on`, `university`, `coridor_id`, `faculty`, `tutor_id`, `employer`, `finished_on`, `firstname`, `lastname`, `postal_street`, `ready_on`, `title_after_id`, `employer_email`, `postal_zip`, `study_id`, `invited_on`, `language1`, `note`, `phone`, `postal_number`, `street`, `birth_at`, `department_id`, `language2`, `birth_number`, `birth_on`, `employer_address`, `position`, `postal_city`, `study_end`, `admited_on`, `email`, `state`) VALUES('Nove Mesto pod Smrkem', '2005-05-24 15:39:45', '', '', '46365', 61, NULL, 'dfasdf', 0, '+420777835566', NULL, 'ƒåesk√° zemƒõdƒõlsk√° univerzita v Praze', 4, 'lesnick√° a environment√°ln√≠', NULL, '', NULL, 'Josef', 'Posp√≠≈°il', '', NULL, 0, 'pepe@pef.czu.cz', '', 1, NULL, 1, '', '+420777835566', NULL, 'Hajniste', 'Frydlant', 1, 2, '99999999', '1950-05-24', '', '', '', '2005-05-24', NULL, 'pepe@pef.czu.cz', 'ƒåesk√° republika')[m
+  [4;35mSQL (0.000209)[m   [0;37mCOMMIT[m
+Rendering form/preview within layouts/standard
+  [4;33mCoridor Load (0.000880)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 4 LIMIT 1[m
+  [4;35mFaculty Load (0.000676)[m   [0;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+  [4;33mTitle Load (0.000825)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000827)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mDepartment Load (0.000901)[m   [1;37mSELECT * FROM departments WHERE departments.id = 1 LIMIT 1[m
+  [4;35mStudy Load (0.000691)[m   [0;37mSELECT * FROM studies WHERE studies.id = 1 LIMIT 1[m
+  [4;33mLanguage Load (0.000668)[m   [1;37mSELECT * FROM languages WHERE languages.id = 1 LIMIT 1[m
+  [4;35mLanguage Load (0.000649)[m   [0;37mSELECT * FROM languages WHERE languages.id = 2 LIMIT 1[m
+Rendering layouts/standard (200 OK)
+Completed in 0.05142 (19 reqs/sec) | Rendering: 0.01402 (27%) | DB: 0.01518 (29%)
+
+
+Processing FormController#finish (for 80.250.1.238 at Tue May 24 15:39:48 CEST 2005)
+  Parameters: {"action"=>"finish", "id"=>"45", "controller"=>"form"}
+  [4;33mCandidate Load (0.005155)[m   [1;37mSELECT * FROM candidates WHERE candidates.id = '45' LIMIT 1[m
+  [4;35mSQL (0.000266)[m   [0;37mBEGIN[m
+  [4;33mCandidate Load (0.004527)[m   [1;37mSELECT * FROM candidates WHERE birth_number = '99999999' AND id <> 45 LIMIT 1[m
+  [4;35mCandidate Update (0.000797)[m   [0;37mUPDATE candidates SET `phone` = '+420777835566', `university` = 'ƒåesk√° zemƒõdƒõlsk√° univerzita v Praze', `employer_phone` = '+420777835566', `postal_city` = '', `birth_number` = '99999999', `postal_zip` = '', `employer_email` = 'pepe@pef.czu.cz', `number` = 61, `lastname` = 'Posp√≠≈°il', `finished_on` = '2005-05-24 15:39:48', `zip` = '46365', `study_theme` = '', `postal_number` = NULL, `city` = 'Nove Mesto pod Smrkem', `admited_on` = NULL, `study_id` = 1, `study_end` = '2005-05-24', `position` = '', `birth_on` = '1950-05-24', `ready_on` = NULL, `title_before_id` = 0, `studied_branch` = 'dfasdf', `student_id` = NULL, `language2` = 2, `department_id` = 1, `birth_at` = 'Frydlant', `tutor_id` = NULL, `street` = 'Hajniste', `note` = '', `language1` = 1, `invited_on` = NULL, `enrolled_on` = NULL, `studied_specialization` = '', `state` = 'ƒåesk√° republika', `email` = 'pepe@pef.czu.cz', `employer_address` = '', `title_after_id` = 0, `postal_street` = '', `firstname` = 'Josef', `employer` = '', `faculty` = 'lesnick√° a environment√°ln√≠', `coridor_id` = 4, `created_on` = '2005-05-24 15:39:45' WHERE id = 45[m
+  [4;33mSQL (0.000204)[m   [1;37mCOMMIT[m
+Rendering form/finish within layouts/standard
+Rendering layouts/standard (200 OK)
+Completed in 0.02725 (36 reqs/sec) | Rendering: 0.00224 (8%) | DB: 0.01095 (40%)
+
+
+Processing CandidatesController#index (for 80.250.1.238 at Tue May 24 15:39:55 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"candidates"}
+  [4;35mCandidate Count (0.000834)[m   [0;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;33mCandidate Load (0.006467)[m   [1;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 0, 7[m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000927)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000704)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000857)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000919)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000684)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000843)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000911)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000685)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000837)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000909)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000687)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000835)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000867)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000712)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000865)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000918)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000718)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000967)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.000837)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000696)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000959)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.09827 (10 reqs/sec) | Rendering: 0.06961 (70%) | DB: 0.02464 (25%)
+
+
+Processing CandidatesController#index (for 80.250.1.238 at Tue May 24 15:39:59 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"candidates", "page"=>"2"}
+  [4;33mCandidate Count (0.000844)[m   [1;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;35mCandidate Load (0.006484)[m   [0;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 7, 7[m
+Rendering candidates/list within layouts/employers
+  [4;33mTitle Load (0.000942)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000792)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000858)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;35mTitle Load (0.000845)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000716)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000864)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;33mTitle Load (0.000917)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000697)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000841)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;35mTitle Load (0.000928)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000713)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000840)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;33mTitle Load (0.000831)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000722)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000853)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.000904)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000711)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000844)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000832)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000722)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000804)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 4 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.09705 (10 reqs/sec) | Rendering: 0.06864 (70%) | DB: 0.02450 (25%)
+
+
+Processing CandidatesController#destroy (for 80.250.1.238 at Tue May 24 15:40:09 CEST 2005)
+  Parameters: {"action"=>"destroy", "id"=>"45", "controller"=>"candidates"}
+  [4;35mCandidate Load (0.004580)[m   [0;37mSELECT * FROM candidates WHERE candidates.id = '45' LIMIT 1[m
+  [4;33mSQL (0.000241)[m   [1;37mBEGIN[m
+  [4;35mCandidate Destroy (0.000425)[m   [0;37mDELETE FROM candidates WHERE id = 45[m
+  [4;33mSQL (0.000174)[m   [1;37mCOMMIT[m
+Redirected to http://gravastar.cz:3000/candidates/list
+Completed in 0.00912 (109 reqs/sec) | DB: 0.00542 (59%)
+
+
+Processing CandidatesController#list (for 80.250.1.238 at Tue May 24 15:40:09 CEST 2005)
+  Parameters: {"action"=>"list", "controller"=>"candidates"}
+  [4;35mCandidate Count (0.000845)[m   [0;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;33mCandidate Load (0.006406)[m   [1;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 0, 7[m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000925)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000717)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000855)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000927)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000699)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000850)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000894)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000694)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000831)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000962)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000718)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000850)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000834)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000707)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000850)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000922)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000702)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000867)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.000841)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000731)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000842)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.10050 (9 reqs/sec) | Rendering: 0.07182 (71%) | DB: 0.02447 (24%)
+
+
+Processing CandidatesController#list (for 80.250.1.238 at Tue May 24 15:40:13 CEST 2005)
+  Parameters: {"action"=>"list", "controller"=>"candidates", "page"=>"2"}
+  [4;33mCandidate Count (0.000868)[m   [1;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;35mCandidate Load (0.006166)[m   [0;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 7, 7[m
+Rendering candidates/list within layouts/employers
+  [4;33mTitle Load (0.001087)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000743)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000857)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;35mTitle Load (0.000876)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000719)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000851)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;33mTitle Load (0.000958)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000707)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000843)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;35mTitle Load (0.000965)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000701)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000839)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;33mTitle Load (0.000887)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000717)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000849)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.000820)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000711)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000847)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.08795 (11 reqs/sec) | Rendering: 0.06215 (70%) | DB: 0.02201 (25%)
+
+
+Processing CandidatesController#edit (for 80.250.1.238 at Tue May 24 15:40:22 CEST 2005)
+  Parameters: {"action"=>"edit", "id"=>"34", "controller"=>"candidates"}
+  [4;33mCandidate Load (0.004600)[m   [1;37mSELECT * FROM candidates WHERE candidates.id = '34' LIMIT 1[m
+Rendering candidates/edit within layouts/employers
+  [4;35mTitle Load (0.002504)[m   [0;37mSELECT * FROM titles WHERE prefix = 1 [m
+  [4;33mTitle Load (0.001164)[m   [1;37mSELECT * FROM titles WHERE prefix = 0 [m
+  [4;35mCoridor Load (0.000944)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;33mFaculty Load (0.000683)[m   [1;37mSELECT * FROM faculties WHERE faculties.id = 5 LIMIT 1[m
+  [4;35mDepartment Load (0.001182)[m   [0;37mSELECT * FROM departments WHERE faculty_id = 5 [m
+  [4;33mStudy Load (0.000743)[m   [1;37mSELECT * FROM studies [m
+  [4;35mLanguage Load (0.000974)[m   [0;37mSELECT * FROM languages [m
+  [4;33mLanguage Load (0.000886)[m   [1;37mSELECT * FROM languages [m
+Rendering layouts/employers (200 OK)
+Completed in 0.05138 (19 reqs/sec) | Rendering: 0.03545 (68%) | DB: 0.01368 (26%)
+
+
+Processing CandidatesController#list (for 80.250.1.238 at Tue May 24 15:40:30 CEST 2005)
+  Parameters: {"action"=>"list", "controller"=>"candidates", "page"=>"1"}
+  [4;35mCandidate Count (0.000841)[m   [0;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;33mCandidate Load (0.006382)[m   [1;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 0, 7[m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000934)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000696)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000855)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000914)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000710)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000836)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000907)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000690)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000840)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000917)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000704)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000874)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000831)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000699)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000858)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000927)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000713)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000849)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.000832)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000697)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000842)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.09846 (10 reqs/sec) | Rendering: 0.07020 (71%) | DB: 0.02435 (24%)

@@ -526,7 +526,7 @@ DROP TABLE titles;
 CREATE TABLE titles (
   id integer primary key,
   name varchar(100),
-  before integer
+  prefix integer
 );
 
 

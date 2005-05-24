@@ -11,7 +11,7 @@ test:
 
 production:
   adapter: mysql
-  database: rails_production
+  database: phdstudy
   host: localhost
-  username: root
-  password: 
+  username: pepe
+  password: p3p3
