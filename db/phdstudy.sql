@@ -161,11 +161,11 @@ CREATE TABLE documents (
 );
 
 --
--- Table structure for table study_types
+-- Table structure for table studies
 --
 
-DROP TABLE study_types;
-CREATE TABLE study_types (
+DROP TABLE studies;
+CREATE TABLE studies (
   id integer primary key,
   name varchar(50)
 );
@@ -364,7 +364,7 @@ CREATE TABLE disert_themes (
   title varchar(100),
   index_id integer,
   methodology_file varchar(30),
-  finishing_to timestamp,
+  finishing_on timestamp,
   created_on timestamp,
   updated_on timestamp
 );
