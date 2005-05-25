@@ -1194,3 +1194,978 @@ Rendering candidates/list within layouts/employers
   [4;35mCoridor Load (0.000842)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
 Rendering layouts/employers (200 OK)
 Completed in 0.09846 (10 reqs/sec) | Rendering: 0.07020 (71%) | DB: 0.02435 (24%)
+
+
+Processing CandidatesController#list (for 80.250.1.238 at Tue May 24 15:52:41 CEST 2005)
+  Parameters: {"action"=>"list", "controller"=>"candidates", "page"=>"2"}
+  [4;33mCandidate Count (0.000847)[m   [1;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;35mCandidate Load (0.006215)[m   [0;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 7, 7[m
+Rendering candidates/list within layouts/employers
+  [4;33mCandidate Columns (0.003331)[m   [1;37mSHOW FIELDS FROM candidates[m
+  [4;35mTitle Load (0.000904)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Columns (0.000956)[m   [1;37mSHOW FIELDS FROM titles[m
+  [4;35mTitle Load (0.000694)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000867)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;35mCoridor Columns (0.000963)[m   [0;37mSHOW FIELDS FROM coridors[m
+  [4;33mTitle Load (0.000848)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000708)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000852)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;35mTitle Load (0.000921)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000692)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000862)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000918)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000712)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000836)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;35mTitle Load (0.000840)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000716)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000843)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;33mTitle Load (0.000841)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000708)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000856)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+  [4;35mUser Columns (0.001202)[m   [0;37mSHOW FIELDS FROM users[m
+Completed in 0.10656 (9 reqs/sec) | Rendering: 0.07356 (69%) | DB: 0.02813 (26%)
+
+
+Processing AccountController#signup (for 80.250.1.238 at Tue May 24 15:52:53 CEST 2005)
+  Parameters: {"action"=>"signup", "controller"=>"account"}
+  [4;33mUser Columns (0.001158)[m   [1;37mSHOW FIELDS FROM users[m
+Rendering account/signup within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01261 (79 reqs/sec) | Rendering: 0.00953 (75%) | DB: 0.00116 (9%)
+
+
+Processing ExamTermsController#index (for 80.250.1.238 at Tue May 24 15:53:10 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"exam_terms"}
+  [4;35mExamTerm Count (0.000607)[m   [0;37mSELECT COUNT(*) FROM exam_terms [m
+  [4;33mExamTerm Load (0.001382)[m   [1;37mSELECT * FROM exam_terms LIMIT 0, 10[m
+Rendering exam_terms/list within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01353 (73 reqs/sec) | Rendering: 0.00904 (66%) | DB: 0.00199 (14%)
+
+
+Processing StudentsController#index (for 80.250.1.238 at Tue May 24 15:53:16 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"students"}
+Redirected to http://gravastar.cz:3000/account/error
+Completed in 0.00087 (1149 reqs/sec) | DB: 0.00000 (0%)
+
+
+Processing AccountController#error (for 80.250.1.238 at Tue May 24 15:53:16 CEST 2005)
+  Parameters: {"action"=>"error", "controller"=>"account"}
+Rendering account/error within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.06224 (16 reqs/sec) | Rendering: 0.06113 (98%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#welcome (for 80.250.1.238 at Tue May 24 15:53:28 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+Rendering account/welcome within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00803 (124 reqs/sec) | Rendering: 0.00689 (85%) | DB: 0.00000 (0%)
+
+
+Processing FormController#index (for 193.84.34.118 at Wed May 25 10:10:35 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"form"}
+  [4;33mFaculty Load (0.001050)[m   [1;37mSELECT * FROM faculties [m
+Rendering form/index within layouts/standard
+  [4;35mFaculty Columns (0.001183)[m   [0;37mSHOW FIELDS FROM faculties[m
+  [4;33mCoridor Count (0.000710)[m   [1;37mSELECT COUNT(*) FROM coridors WHERE coridors.faculty_id = 1 [m
+  [4;35mCoridor Count (0.000652)[m   [0;37mSELECT COUNT(*) FROM coridors WHERE coridors.faculty_id = 2 [m
+  [4;33mCoridor Count (0.000668)[m   [1;37mSELECT COUNT(*) FROM coridors WHERE coridors.faculty_id = 3 [m
+  [4;35mCoridor Count (0.000635)[m   [0;37mSELECT COUNT(*) FROM coridors WHERE coridors.faculty_id = 4 [m
+  [4;33mCoridor Count (0.000686)[m   [1;37mSELECT COUNT(*) FROM coridors WHERE coridors.faculty_id = 5 [m
+  [4;35mDocument Count (0.000619)[m   [0;37mSELECT COUNT(*) FROM documents WHERE documents.faculty_id = 5 [m
+  [4;33mCoridor Load (0.001172)[m   [1;37mSELECT * FROM coridors WHERE coridors.faculty_id = 5 [m
+  [4;35mCoridor Columns (0.001060)[m   [0;37mSHOW FIELDS FROM coridors[m
+Rendering layouts/standard (200 OK)
+Completed in 0.08813 (11 reqs/sec) | Rendering: 0.01907 (21%) | DB: 0.00844 (9%)
+
+
+Processing AccountController#welcome (for 193.84.34.118 at Wed May 25 10:11:13 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+Redirected to http://194.228.3.218/account/login
+Completed in 0.00086 (1161 reqs/sec) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:11:13 CEST 2005)
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering account/login within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00790 (126 reqs/sec) | Rendering: 0.00662 (83%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:11:15 CEST 2005)
+  Parameters: {"user_login"=>"pepe", "action"=>"login", "controller"=>"account", "user_password"=>"pepek", "login"=>"p\305\231ihl\303\241sit \302\273"}
+  [4;33mUser Load (0.001084)[m   [1;37mSELECT * FROM users WHERE login = 'pepe' AND password = '4edd36daaaf84544d4ddb1fbcc82ba3e3332575d' LIMIT 1[m
+Redirected to /
+  [4;35mUser Columns (0.001087)[m   [0;37mSHOW FIELDS FROM users[m
+Completed in 0.00458 (218 reqs/sec) | DB: 0.00217 (47%)
+
+
+Processing AccountController#welcome (for 193.84.34.118 at Wed May 25 10:11:16 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+  [4;33mRole Load (0.001164)[m   [1;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 1 [m
+  [4;35mRole Columns (0.001058)[m   [0;37mSHOW FIELDS FROM roles[m
+  [4;33mPermission Load (0.002647)[m   [1;37mSELECT t.*, j.* FROM permissions_roles j, permissions t WHERE t.id = j.permission_id AND j.role_id = 1 [m
+  [4;35mPermission Columns (0.001037)[m   [0;37mSHOW FIELDS FROM permissions[m
+Rendering account/welcome within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01885 (53 reqs/sec) | Rendering: 0.00736 (39%) | DB: 0.00591 (31%)
+
+
+Processing CandidatesController#index (for 193.84.34.118 at Wed May 25 10:11:18 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"candidates"}
+  [4;33mCandidate Count (0.000937)[m   [1;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;35mCandidate Load (0.006264)[m   [0;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 0, 7[m
+Rendering candidates/list within layouts/employers
+  [4;33mCandidate Columns (0.003368)[m   [1;37mSHOW FIELDS FROM candidates[m
+  [4;35mTitle Load (0.000824)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000741)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000862)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000854)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000764)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000833)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.000939)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Columns (0.001051)[m   [1;37mSHOW FIELDS FROM titles[m
+  [4;35mTitle Load (0.000725)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000837)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;35mTitle Load (0.000923)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000806)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000851)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000854)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000716)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000826)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;35mTitle Load (0.000936)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000705)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000811)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;33mTitle Load (0.000832)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000739)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000823)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.16022 (6 reqs/sec) | Rendering: 0.12675 (79%) | DB: 0.02882 (17%)
+
+
+Processing CandidatesController#index (for 193.84.34.118 at Wed May 25 10:12:25 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"candidates"}
+  [4;35mCandidate Count (0.000875)[m   [0;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;33mCandidate Load (0.006370)[m   [1;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 0, 7[m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000850)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000716)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000856)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000827)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000712)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000805)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.000906)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000719)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000808)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;33mTitle Load (0.000910)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000711)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000815)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;35mTitle Load (0.000898)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000714)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000795)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;33mTitle Load (0.000926)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000727)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000812)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;35mTitle Load (0.000843)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000706)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000830)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.08642 (11 reqs/sec) | Rendering: 0.05837 (67%) | DB: 0.02413 (27%)
+
+
+Processing AccountController#signup (for 193.84.34.118 at Wed May 25 10:12:38 CEST 2005)
+  Parameters: {"action"=>"signup", "controller"=>"account"}
+  [4;33mUser Columns (0.001157)[m   [1;37mSHOW FIELDS FROM users[m
+Rendering account/signup within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01232 (81 reqs/sec) | Rendering: 0.00945 (76%) | DB: 0.00116 (9%)
+
+
+Processing AccountController#signup (for 193.84.34.118 at Wed May 25 10:12:51 CEST 2005)
+  Parameters: {"user"=>{"password_confirmation"=>"doktorand", "password"=>"doktorand", "login"=>"vav"}, "action"=>"signup", "controller"=>"account"}
+  [4;35mUser Columns (0.001198)[m   [0;37mSHOW FIELDS FROM users[m
+  [4;33mSQL (0.000216)[m   [1;37mBEGIN[m
+  [4;35mUser Load (0.000865)[m   [0;37mSELECT * FROM users WHERE login = 'vav' LIMIT 1[m
+  [4;33mSQL (0.000508)[m   [1;37mINSERT INTO users (`login`, `password`, `person_id`) VALUES('vav', '5fb7f6efa594d6a61bf6ebe118d9448d46902f11', NULL)[m
+  [4;35mSQL (0.000193)[m   [0;37mCOMMIT[m
+  [4;33mUser Load (0.000902)[m   [1;37mSELECT * FROM users WHERE login = 'vav' AND password = '5fb7f6efa594d6a61bf6ebe118d9448d46902f11' LIMIT 1[m
+Redirected to http://194.228.3.218/
+Completed in 0.00995 (100 reqs/sec) | DB: 0.00388 (39%)
+
+
+Processing AccountController#welcome (for 193.84.34.118 at Wed May 25 10:12:51 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+  [4;35mRole Load (0.001070)[m   [0;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 3 [m
+Redirected to http://194.228.3.218/account/error
+Completed in 0.00274 (365 reqs/sec) | DB: 0.00107 (39%)
+
+
+Processing AccountController#error (for 193.84.34.118 at Wed May 25 10:12:51 CEST 2005)
+  Parameters: {"action"=>"error", "controller"=>"account"}
+Rendering account/error within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00811 (123 reqs/sec) | Rendering: 0.00686 (84%) | DB: 0.00000 (0%)
+
+
+Processing PermissionsController#index (for 193.84.34.118 at Wed May 25 10:13:01 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"permissions"}
+  [4;33mPermission Count (0.000604)[m   [1;37mSELECT COUNT(*) FROM permissions [m
+  [4;35mPermission Load (0.001081)[m   [0;37mSELECT * FROM permissions LIMIT 0, 10[m
+Rendering permissions/list within layouts/permissions
+Rendering layouts/permissions (200 OK)
+Completed in 0.02864 (34 reqs/sec) | Rendering: 0.02397 (83%) | DB: 0.00169 (5%)
+
+
+Processing AccountController#logout (for 193.84.34.118 at Wed May 25 10:16:42 CEST 2005)
+  Parameters: {"action"=>"logout", "controller"=>"account"}
+Rendering account/logout within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00414 (241 reqs/sec) | Rendering: 0.00310 (74%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:16:45 CEST 2005)
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering account/login within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00363 (275 reqs/sec) | Rendering: 0.00259 (71%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:16:46 CEST 2005)
+  Parameters: {"user_login"=>"pepe", "action"=>"login", "controller"=>"account", "user_password"=>"pepek", "login"=>"p\305\231ihl\303\241sit \302\273"}
+  [4;33mUser Load (0.001035)[m   [1;37mSELECT * FROM users WHERE login = 'pepe' AND password = '4edd36daaaf84544d4ddb1fbcc82ba3e3332575d' LIMIT 1[m
+Redirected to http://194.228.3.218/
+Completed in 0.00303 (330 reqs/sec) | DB: 0.00103 (34%)
+
+
+Processing AccountController#welcome (for 193.84.34.118 at Wed May 25 10:16:47 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+  [4;35mRole Load (0.001117)[m   [0;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 1 [m
+  [4;33mPermission Load (0.002527)[m   [1;37mSELECT t.*, j.* FROM permissions_roles j, permissions t WHERE t.id = j.permission_id AND j.role_id = 1 [m
+Rendering account/welcome within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01486 (67 reqs/sec) | Rendering: 0.00661 (44%) | DB: 0.00364 (24%)
+
+
+Processing AccountController#signup (for 193.84.34.118 at Wed May 25 10:16:51 CEST 2005)
+  Parameters: {"action"=>"signup", "controller"=>"account"}
+  [4;35mUser Columns (0.001148)[m   [0;37mSHOW FIELDS FROM users[m
+Rendering account/signup within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01096 (91 reqs/sec) | Rendering: 0.00809 (73%) | DB: 0.00115 (10%)
+
+
+Processing AccountController#signup (for 193.84.34.118 at Wed May 25 10:17:07 CEST 2005)
+  Parameters: {"user"=>{"password_confirmation"=>"doktorand", "password"=>"doktorand", "login"=>"vavfle"}, "action"=>"signup", "controller"=>"account"}
+  [4;33mUser Columns (0.001203)[m   [1;37mSHOW FIELDS FROM users[m
+  [4;35mSQL (0.000217)[m   [0;37mBEGIN[m
+  [4;33mUser Load (0.000865)[m   [1;37mSELECT * FROM users WHERE login = 'vavfle' LIMIT 1[m
+  [4;35mSQL (0.000515)[m   [0;37mINSERT INTO users (`login`, `password`, `person_id`) VALUES('vavfle', '5fb7f6efa594d6a61bf6ebe118d9448d46902f11', NULL)[m
+  [4;33mSQL (0.000190)[m   [1;37mCOMMIT[m
+  [4;35mUser Load (0.000894)[m   [0;37mSELECT * FROM users WHERE login = 'vavfle' AND password = '5fb7f6efa594d6a61bf6ebe118d9448d46902f11' LIMIT 1[m
+Redirected to http://194.228.3.218/
+Completed in 0.01000 (100 reqs/sec) | DB: 0.00388 (38%)
+
+
+Processing AccountController#welcome (for 193.84.34.118 at Wed May 25 10:17:07 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+  [4;33mRole Load (0.001039)[m   [1;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 4 [m
+Redirected to http://194.228.3.218/account/error
+Completed in 0.00274 (365 reqs/sec) | DB: 0.00104 (37%)
+
+
+Processing AccountController#error (for 193.84.34.118 at Wed May 25 10:17:07 CEST 2005)
+  Parameters: {"action"=>"error", "controller"=>"account"}
+Rendering account/error within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00749 (133 reqs/sec) | Rendering: 0.00637 (85%) | DB: 0.00000 (0%)
+
+
+Processing CandidatesController#index (for 193.84.34.118 at Wed May 25 10:17:38 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"candidates"}
+Redirected to http://194.228.3.218/account/error
+Completed in 0.00095 (1054 reqs/sec) | DB: 0.00000 (0%)
+
+
+Processing AccountController#error (for 193.84.34.118 at Wed May 25 10:17:38 CEST 2005)
+  Parameters: {"action"=>"error", "controller"=>"account"}
+Rendering account/error within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00746 (134 reqs/sec) | Rendering: 0.00632 (84%) | DB: 0.00000 (0%)
+
+
+Processing StudentsController#index (for 193.84.34.118 at Wed May 25 10:17:39 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"students"}
+Redirected to http://194.228.3.218/account/error
+Completed in 0.00087 (1142 reqs/sec) | DB: 0.00000 (0%)
+
+
+Processing AccountController#error (for 193.84.34.118 at Wed May 25 10:17:39 CEST 2005)
+  Parameters: {"action"=>"error", "controller"=>"account"}
+Rendering account/error within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00741 (135 reqs/sec) | Rendering: 0.00631 (85%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#logout (for 193.84.34.118 at Wed May 25 10:17:44 CEST 2005)
+  Parameters: {"action"=>"logout", "controller"=>"account"}
+Rendering account/logout within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00352 (283 reqs/sec) | Rendering: 0.00249 (70%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:17:46 CEST 2005)
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering account/login within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00387 (258 reqs/sec) | Rendering: 0.00282 (72%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:17:47 CEST 2005)
+  Parameters: {"user_login"=>"pepe", "action"=>"login", "controller"=>"account", "user_password"=>"pepek", "login"=>"p\305\231ihl\303\241sit \302\273"}
+  [4;35mUser Load (0.001045)[m   [0;37mSELECT * FROM users WHERE login = 'pepe' AND password = '4edd36daaaf84544d4ddb1fbcc82ba3e3332575d' LIMIT 1[m
+Redirected to http://194.228.3.218/
+Completed in 0.00316 (316 reqs/sec) | DB: 0.00104 (33%)
+
+
+Processing AccountController#welcome (for 193.84.34.118 at Wed May 25 10:17:47 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+  [4;33mRole Load (0.001113)[m   [1;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 1 [m
+  [4;35mPermission Load (0.002524)[m   [0;37mSELECT t.*, j.* FROM permissions_roles j, permissions t WHERE t.id = j.permission_id AND j.role_id = 1 [m
+Rendering account/welcome within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01449 (69 reqs/sec) | Rendering: 0.00630 (43%) | DB: 0.00364 (25%)
+
+
+Processing AccountController#signup (for 193.84.34.118 at Wed May 25 10:17:57 CEST 2005)
+  Parameters: {"action"=>"signup", "controller"=>"account"}
+  [4;33mUser Columns (0.001148)[m   [1;37mSHOW FIELDS FROM users[m
+Rendering account/signup within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01109 (90 reqs/sec) | Rendering: 0.00813 (73%) | DB: 0.00115 (10%)
+
+
+Processing AccountController#signup (for 193.84.34.118 at Wed May 25 10:18:09 CEST 2005)
+  Parameters: {"user"=>{"password_confirmation"=>"doktorand", "password"=>"doktorand", "login"=>"vavfle"}, "action"=>"signup", "controller"=>"account"}
+  [4;35mUser Columns (0.001145)[m   [0;37mSHOW FIELDS FROM users[m
+  [4;33mSQL (0.000215)[m   [1;37mBEGIN[m
+  [4;35mUser Load (0.000921)[m   [0;37mSELECT * FROM users WHERE login = 'vavfle' LIMIT 1[m
+  [4;33mSQL (0.000201)[m   [1;37mCOMMIT[m
+Rendering account/signup within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01445 (69 reqs/sec) | Rendering: 0.00830 (57%) | DB: 0.00248 (17%)
+
+
+Processing AccountController#logout (for 193.84.34.118 at Wed May 25 10:18:37 CEST 2005)
+  Parameters: {"action"=>"logout", "controller"=>"account"}
+Rendering account/logout within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00358 (279 reqs/sec) | Rendering: 0.00249 (69%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:18:39 CEST 2005)
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering account/login within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00373 (267 reqs/sec) | Rendering: 0.00263 (70%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:18:49 CEST 2005)
+  Parameters: {"user_login"=>"vavfle", "action"=>"login", "controller"=>"account", "user_password"=>"doktorand", "login"=>"p\305\231ihl\303\241sit \302\273"}
+  [4;35mUser Load (0.001016)[m   [0;37mSELECT * FROM users WHERE login = 'vavfle' AND password = '5fb7f6efa594d6a61bf6ebe118d9448d46902f11' LIMIT 1[m
+Redirected to http://194.228.3.218/
+Completed in 0.00308 (324 reqs/sec) | DB: 0.00102 (33%)
+
+
+Processing AccountController#welcome (for 193.84.34.118 at Wed May 25 10:18:49 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+  [4;33mRole Load (0.001038)[m   [1;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 4 [m
+Redirected to http://194.228.3.218/account/error
+Completed in 0.00275 (363 reqs/sec) | DB: 0.00104 (37%)
+
+
+Processing AccountController#error (for 193.84.34.118 at Wed May 25 10:18:50 CEST 2005)
+  Parameters: {"action"=>"error", "controller"=>"account"}
+Rendering account/error within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00752 (132 reqs/sec) | Rendering: 0.00639 (84%) | DB: 0.00000 (0%)
+  [4;33mPermission Columns (0.001098)[m   [1;37mSHOW FIELDS FROM permissions[m
+  [4;35mPermission Load (0.000806)[m   [0;37mSELECT * FROM permissions WHERE name = 'account/create' LIMIT 1[m
+  [4;33mRole Load (0.001036)[m   [1;37mSELECT * FROM roles WHERE roles.id = 1 LIMIT 1[m
+  [4;35mRole Columns (0.000991)[m   [0;37mSHOW FIELDS FROM roles[m
+  [4;33mPermission Load (0.000787)[m   [1;37mSELECT * FROM permissions WHERE name = 'account/create' LIMIT 1[m
+  [4;35mPermission Load (0.002372)[m   [0;37mSELECT t.*, j.* FROM permissions_roles j, permissions t WHERE t.id = j.permission_id AND j.role_id = 1 [m
+  [4;33mSQL (0.000191)[m   [1;37mBEGIN[m
+  [4;35mPermission Update (0.000443)[m   [0;37mUPDATE permissions SET `info` = '', `name` = 'account/create' WHERE id = 10[m
+  [4;33mpermissions_roles Columns (0.000908)[m   [1;37mSHOW FIELDS FROM permissions_roles[m
+  [4;35mSQL (0.000281)[m   [0;37mINSERT INTO permissions_roles (`permission_id`, `role_id`) VALUES ('10', '1')[m
+  [4;33mSQL (0.000140)[m   [1;37mCOMMIT[m
+  [4;35mUser Columns (0.001256)[m   [0;37mSHOW FIELDS FROM users[m
+  [4;33mUser Load (0.000888)[m   [1;37mSELECT * FROM users WHERE login = 'vavfle' LIMIT 1[m
+  [4;35mUser Load (0.001157)[m   [0;37mSELECT * FROM users WHERE login = 'vavfle' LIMIT 1[m
+  [4;33mRole Load (0.000770)[m   [1;37mSELECT * FROM roles WHERE roles.id = 1 LIMIT 1[m
+  [4;35mRole Load (0.000806)[m   [0;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 4 [m
+  [4;33mSQL (0.000164)[m   [1;37mBEGIN[m
+  [4;35mRole Update (0.000438)[m   [0;37mUPDATE roles SET `info` = 'Administr�tor', `name` = 'admin' WHERE id = 1[m
+  [4;33mroles_users Columns (0.000886)[m   [1;37mSHOW FIELDS FROM roles_users[m
+  [4;35mSQL (0.000277)[m   [0;37mINSERT INTO roles_users (`role_id`, `user_id`) VALUES ('1', '4')[m
+  [4;33mSQL (0.000140)[m   [1;37mCOMMIT[m
+
+
+Processing AccountController#logout (for 193.84.34.118 at Wed May 25 10:21:50 CEST 2005)
+  Parameters: {"action"=>"logout", "controller"=>"account"}
+Rendering account/logout within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00354 (282 reqs/sec) | Rendering: 0.00244 (68%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:21:54 CEST 2005)
+  Parameters: {"action"=>"login", "controller"=>"account"}
+Rendering account/login within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.00382 (261 reqs/sec) | Rendering: 0.00276 (72%) | DB: 0.00000 (0%)
+
+
+Processing AccountController#login (for 193.84.34.118 at Wed May 25 10:21:57 CEST 2005)
+  Parameters: {"user_login"=>"pepe", "action"=>"login", "controller"=>"account", "user_password"=>"pepek", "login"=>"p\305\231ihl\303\241sit \302\273"}
+  [4;35mUser Load (0.001028)[m   [0;37mSELECT * FROM users WHERE login = 'pepe' AND password = '4edd36daaaf84544d4ddb1fbcc82ba3e3332575d' LIMIT 1[m
+Redirected to http://194.228.3.218/
+Completed in 0.00302 (330 reqs/sec) | DB: 0.00103 (34%)
+
+
+Processing AccountController#welcome (for 193.84.34.118 at Wed May 25 10:21:57 CEST 2005)
+  Parameters: {"action"=>"welcome", "controller"=>"account"}
+  [4;33mRole Load (0.001182)[m   [1;37mSELECT t.*, j.* FROM roles_users j, roles t WHERE t.id = j.role_id AND j.user_id = 1 [m
+  [4;35mPermission Load (0.002558)[m   [0;37mSELECT t.*, j.* FROM permissions_roles j, permissions t WHERE t.id = j.permission_id AND j.role_id = 1 [m
+Rendering account/welcome within layouts/employers
+Rendering layouts/employers (200 OK)
+Completed in 0.01477 (67 reqs/sec) | Rendering: 0.00638 (43%) | DB: 0.00374 (25%)
+
+
+Processing CandidatesController#index (for 193.84.34.118 at Wed May 25 10:22:00 CEST 2005)
+  Parameters: {"action"=>"index", "controller"=>"candidates"}
+  [4;33mCandidate Count (0.000976)[m   [1;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;35mCandidate Load (0.006319)[m   [0;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL LIMIT 0, 7[m
+Rendering candidates/list within layouts/employers
+  [4;33mTitle Load (0.000888)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000745)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000822)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.000847)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000721)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000836)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;33mTitle Load (0.000950)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000723)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000879)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;35mTitle Load (0.000951)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000781)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000821)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000832)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000720)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000816)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;35mTitle Load (0.000909)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000702)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000810)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;33mTitle Load (0.000956)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000716)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000853)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.08721 (11 reqs/sec) | Rendering: 0.05868 (67%) | DB: 0.02457 (28%)
+
+
+Processing CandidatesController#list_all (for 193.84.34.118 at Wed May 25 10:22:06 CEST 2005)
+  Parameters: {"category"=>"updated_on", "action"=>"list_all", "controller"=>"candidates"}
+  [4;35mCandidate Load (0.012746)[m   [0;37mSELECT * FROM candidates [m
+Rendering candidates/list within layouts/employers
+  [4;33mTitle Load (0.000855)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000716)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000809)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.000972)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000744)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000820)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;33mTitle Load (0.000909)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000757)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000837)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;35mTitle Load (0.000833)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000732)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000851)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 5 LIMIT 1[m
+
+
+ActionView::TemplateError (undefined method `strftime' for nil:NilClass) on line #18 of /candidates/_list.rhtml:
+15:     <b><%= candidate.display_name %>
+16: 	  rč.&nbsp;<%= candidate.birth_number %>&nbsp;<%= status_tag(candidate) %><br /></b>
+17: 	  obor: <%= candidate.coridor.name %><br />
+18: 	  vyplnil: <%= candidate.finished_on.strftime("%d. %m. %Y") %>
+19: 	  <div class='detail' id='info<%= candidate.id %>' style='display: none; '>
+20: 	    email: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br /> 
+21: 	    telefon: <%= candidate.phone %><br /> 
+
+    (erb):18:in `evaluate_locals'
+    (erb):3:in `each'
+    (erb):3:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    /gems/actionpack-1.8.1/lib/action_view/partials.rb:51:in `render_partial'
+    (erb):6:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:447:in `render_action'
+    ./script/../config/../app/controllers/candidates_controller.rb:29:in `list_all'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing CandidatesController#list_all (for 193.84.34.118 at Wed May 25 10:22:10 CEST 2005)
+  Parameters: {"category"=>"lastname", "action"=>"list_all", "controller"=>"candidates"}
+  [4;33mCandidate Load (0.013021)[m   [1;37mSELECT * FROM candidates [m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000861)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000747)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.001825)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000860)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000717)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000825)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.000935)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000708)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000837)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;33mTitle Load (0.000859)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000738)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000821)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 5 LIMIT 1[m
+
+
+ActionView::TemplateError (undefined method `strftime' for nil:NilClass) on line #18 of /candidates/_list.rhtml:
+15:     <b><%= candidate.display_name %>
+16: 	  rč.&nbsp;<%= candidate.birth_number %>&nbsp;<%= status_tag(candidate) %><br /></b>
+17: 	  obor: <%= candidate.coridor.name %><br />
+18: 	  vyplnil: <%= candidate.finished_on.strftime("%d. %m. %Y") %>
+19: 	  <div class='detail' id='info<%= candidate.id %>' style='display: none; '>
+20: 	    email: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br /> 
+21: 	    telefon: <%= candidate.phone %><br /> 
+
+    (erb):18:in `evaluate_locals'
+    (erb):3:in `each'
+    (erb):3:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    /gems/actionpack-1.8.1/lib/action_view/partials.rb:51:in `render_partial'
+    (erb):6:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:447:in `render_action'
+    ./script/../config/../app/controllers/candidates_controller.rb:29:in `list_all'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing CandidatesController#list (for 193.84.34.118 at Wed May 25 10:22:28 CEST 2005)
+  Parameters: {"category"=>"lastname", "action"=>"list", "controller"=>"candidates"}
+  [4;35mCandidate Count (0.000873)[m   [0;37mSELECT COUNT(*) FROM candidates WHERE finished_on IS NOT NULL [m
+  [4;33mCandidate Load (0.006716)[m   [1;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL ORDER BY lastname desc LIMIT 0, 7[m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000852)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000924)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.001020)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000916)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000904)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.001034)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000924)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000849)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000976)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000900)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000848)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000948)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000904)[m   [0;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;33mTitle Load (0.000832)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000949)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000885)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000841)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000956)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.001492)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000852)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000950)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+Completed in 0.09459 (10 reqs/sec) | Rendering: 0.06314 (66%) | DB: 0.02735 (28%)
+
+
+Processing CandidatesController#list_all (for 193.84.34.118 at Wed May 25 10:22:32 CEST 2005)
+  Parameters: {"category"=>"lastname", "action"=>"list_all", "controller"=>"candidates"}
+  [4;33mCandidate Load (0.012730)[m   [1;37mSELECT * FROM candidates [m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000812)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000927)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.001040)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000805)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000908)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.001024)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.001136)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000911)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000962)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;33mTitle Load (0.001166)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000944)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.001014)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 5 LIMIT 1[m
+
+
+ActionView::TemplateError (undefined method `strftime' for nil:NilClass) on line #18 of /candidates/_list.rhtml:
+15:     <b><%= candidate.display_name %>
+16: 	  rč.&nbsp;<%= candidate.birth_number %>&nbsp;<%= status_tag(candidate) %><br /></b>
+17: 	  obor: <%= candidate.coridor.name %><br />
+18: 	  vyplnil: <%= candidate.finished_on.strftime("%d. %m. %Y") %>
+19: 	  <div class='detail' id='info<%= candidate.id %>' style='display: none; '>
+20: 	    email: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br /> 
+21: 	    telefon: <%= candidate.phone %><br /> 
+
+    (erb):18:in `evaluate_locals'
+    (erb):3:in `each'
+    (erb):3:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    /gems/actionpack-1.8.1/lib/action_view/partials.rb:51:in `render_partial'
+    (erb):6:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:447:in `render_action'
+    ./script/../config/../app/controllers/candidates_controller.rb:29:in `list_all'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+  [4;33mCandidate Columns (0.003301)[m   [1;37mSHOW FIELDS FROM candidates[m
+  [4;35mCandidate Load (0.004609)[m   [0;37mSELECT * FROM candidates WHERE finished_on = '' LIMIT 1[m
+  [4;33mCandidate Load (0.004914)[m   [1;37mSELECT * FROM candidates WHERE finished_on IS NULL LIMIT 1[m
+
+
+Processing CandidatesController#list_all (for 193.84.34.118 at Wed May 25 10:25:15 CEST 2005)
+  Parameters: {"category"=>"lastname", "action"=>"list_all", "controller"=>"candidates"}
+  [4;35mCandidate Load (0.012870)[m   [0;37mSELECT * FROM candidates [m
+Rendering candidates/list within layouts/employers
+  [4;33mTitle Load (0.000865)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000736)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000840)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.000839)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000787)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000817)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;33mTitle Load (0.000905)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000713)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000845)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;35mTitle Load (0.000828)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000700)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000802)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 5 LIMIT 1[m
+
+
+ActionView::TemplateError (undefined method `strftime' for nil:NilClass) on line #18 of /candidates/_list.rhtml:
+15:     <b><%= candidate.display_name %>
+16: 	  rč.&nbsp;<%= candidate.birth_number %>&nbsp;<%= status_tag(candidate) %><br /></b>
+17: 	  obor: <%= candidate.coridor.name %><br />
+18: 	  vyplnil: <%= candidate.finished_on.strftime("%d. %m. %Y") %>
+19: 	  <div class='detail' id='info<%= candidate.id %>' style='display: none; '>
+20: 	    email: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br /> 
+21: 	    telefon: <%= candidate.phone %><br /> 
+
+    (erb):18:in `evaluate_locals'
+    (erb):3:in `each'
+    (erb):3:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    /gems/actionpack-1.8.1/lib/action_view/partials.rb:51:in `render_partial'
+    (erb):6:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:447:in `render_action'
+    ./script/../config/../app/controllers/candidates_controller.rb:29:in `list_all'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing CandidatesController#list_all (for 193.84.34.118 at Wed May 25 10:25:24 CEST 2005)
+  Parameters: {"category"=>"lastname", "action"=>"list_all", "controller"=>"candidates"}
+  [4;33mCandidate Load (0.012564)[m   [1;37mSELECT * FROM candidates [m
+Rendering candidates/list within layouts/employers
+  [4;35mTitle Load (0.000831)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000728)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000812)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000821)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000705)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000805)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.000906)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000709)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000814)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;33mTitle Load (0.000852)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000713)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.001399)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 5 LIMIT 1[m
+
+
+ActionView::TemplateError (undefined method `strftime' for nil:NilClass) on line #18 of /candidates/_list.rhtml:
+15:     <b><%= candidate.display_name %>
+16: 	  rč.&nbsp;<%= candidate.birth_number %>&nbsp;<%= status_tag(candidate) %><br /></b>
+17: 	  obor: <%= candidate.coridor.name %><br />
+18: 	  vyplnil: <%= candidate.finished_on.strftime("%d. %m. %Y") %>
+19: 	  <div class='detail' id='info<%= candidate.id %>' style='display: none; '>
+20: 	    email: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br /> 
+21: 	    telefon: <%= candidate.phone %><br /> 
+
+    (erb):18:in `evaluate_locals'
+    (erb):3:in `each'
+    (erb):3:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:195:in `render'
+    /gems/actionpack-1.8.1/lib/action_view/partials.rb:51:in `render_partial'
+    (erb):6:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:265:in `evaluate_locals'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:276:in `rhtml_render'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `send'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:201:in `render_template'
+    /gems/actionpack-1.8.1/lib/action_view/base.rb:181:in `render_file'
+    /gems/actionpack-1.8.1/lib/action_controller/layout.rb:208:in `render_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:23:in `render'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:447:in `render_action'
+    ./script/../config/../app/controllers/candidates_controller.rb:29:in `list_all'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:708:in `perform_action_without_filters'
+    /gems/actionpack-1.8.1/lib/action_controller/filters.rb:294:in `perform_action_without_benchmark'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `measure'
+    /gems/actionpack-1.8.1/lib/action_controller/benchmarking.rb:37:in `perform_action_without_rescue'
+    /gems/actionpack-1.8.1/lib/action_controller/rescue.rb:79:in `perform_action'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `send'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:330:in `process'
+    /gems/actionpack-1.8.1/lib/action_controller/base.rb:273:in `process'
+    /gems/rails-0.12.1/lib/dispatcher.rb:32:in `dispatch'
+    /usr/home/pepe/projects/phdstudy-new/public/dispatch.rb:10
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/activesupport-1.0.4/lib/active_support/dependencies.rb:189:in `load'
+    /gems/rails-0.12.1/lib/webrick_server.rb:82:in `handle_dispatch'
+    /gems/rails-0.12.1/lib/webrick_server.rb:35:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:155:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:144:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:94:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:89:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:79:in `start'
+    /gems/rails-0.12.1/lib/webrick_server.rb:21:in `dispatch'
+    ./script/server:48
+
+
+
+
+Processing CandidatesController#list_all (for 193.84.34.118 at Wed May 25 10:26:07 CEST 2005)
+  Parameters: {"category"=>"lastname", "action"=>"list_all", "controller"=>"candidates"}
+  [4;33mCandidate Load (0.009275)[m   [1;37mSELECT * FROM candidates WHERE finished_on IS NOT NULL [m
+Rendering candidates/list within layouts/employers
+  [4;35mCandidate Columns (0.003369)[m   [0;37mSHOW FIELDS FROM candidates[m
+  [4;33mTitle Load (0.001283)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000817)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000879)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mCoridor Columns (0.001010)[m   [0;37mSHOW FIELDS FROM coridors[m
+  [4;33mTitle Load (0.000823)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000729)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000812)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.000945)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Columns (0.001008)[m   [1;37mSHOW FIELDS FROM titles[m
+  [4;35mTitle Load (0.000749)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000831)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 6 LIMIT 1[m
+  [4;35mTitle Load (0.000940)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000767)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000864)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000879)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000774)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000870)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;35mTitle Load (0.000941)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000737)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000880)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;33mTitle Load (0.000862)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000739)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000839)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000952)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000751)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000833)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;33mTitle Load (0.000852)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000759)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000853)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 10 LIMIT 1[m
+  [4;35mTitle Load (0.000957)[m   [0;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;33mTitle Load (0.000743)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000850)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000908)[m   [1;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000736)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000828)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000994)[m   [0;37mSELECT * FROM titles WHERE titles.id = 1 LIMIT 1[m
+  [4;33mTitle Load (0.000750)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000856)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 11 LIMIT 1[m
+  [4;33mTitle Load (0.000946)[m   [1;37mSELECT * FROM titles WHERE titles.id = 8 LIMIT 1[m
+  [4;35mTitle Load (0.000748)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000828)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 1 LIMIT 1[m
+  [4;35mTitle Load (0.000864)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000740)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000864)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 3 LIMIT 1[m
+  [4;33mTitle Load (0.000850)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mTitle Load (0.000737)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mCoridor Load (0.000966)[m   [1;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+  [4;35mTitle Load (0.000854)[m   [0;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;33mTitle Load (0.000757)[m   [1;37mSELECT * FROM titles WHERE titles.id = 0 LIMIT 1[m
+  [4;35mCoridor Load (0.000827)[m   [0;37mSELECT * FROM coridors WHERE coridors.id = 9 LIMIT 1[m
+Rendering layouts/employers (200 OK)
+  [4;33mUser Columns (0.001237)[m   [1;37mSHOW FIELDS FROM users[m
+Completed in 0.18867 (5 reqs/sec) | Rendering: 0.12643 (67%) | DB: 0.05646 (29%)
