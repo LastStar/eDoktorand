@@ -245,9 +245,26 @@ DROP TABLE subjects;
 CREATE TABLE subjects (
   id integer primary key,
   label varchar(1024),
-  code varchar(7)
+  code varchar(7),
+  type varchar(32),
+  created_on timestamp,
+  updated_on timestamp
 );
 
+
+-- 
+-- Table structure for relationship externalSubject_detail
+--
+
+DROP TABLE external_subject_details;
+CREATE TABLE external_subject_details (
+  id integer primary key,
+  subject_id integer,
+  university varchar(1024),
+  person varchar (256),
+  created_on timestamp,
+  updated_on timestamp
+);
 
 --
 -- Table structure for table exam
