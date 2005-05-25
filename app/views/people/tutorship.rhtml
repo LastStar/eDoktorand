@@ -1,0 +1,9 @@
+<h1>Tutorship</h1><br/>
+<%= form_tag :action => "create_tutorship" %>
+    <label for='coridor'>Choose corridor </label>
+    <%= select 'tutorship', 'coridor_id', coridor_ids %><br /> 
+    <label for='department'>Choose department </label>
+    <%= select 'tutorship', 'department_id', department_ids %><br /> 
+    <input type='submit' value='Save' />&nbsp;
+    <input type='hidden' name='tutor_id' value=<%= @person.id %>
+<%= end_form_tag %>

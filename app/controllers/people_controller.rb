@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
 	model :title
+  layout "employers"
   def index
     list
     render_action 'list'
@@ -45,4 +46,22 @@ class PeopleController < ApplicationController
     Person.find(@params[:id]).destroy
     redirect_to :action => 'list'
   end
+
+  def tutorship
+    @person = Person.find(@params[:id])
+    @person.type = 'Tutor'
+    @tutorship = Tutorship.new
+    @tutorship.tutor = @person
+  end
+
+  def create_tutorship
+    @tutorship = Tutorship.new(@params[:tutorship])
+    if @tutorship.save
+      flash['notice'] = 'tutorship was successfully created.'
+      redirect_to :action => 'list'
+    else
+      render_action 'tutorship'
+    end
+  end
+    
 end

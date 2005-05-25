@@ -1,8 +1,9 @@
 # The methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   # get department ids
-  def department_ids(faculty_id)
-    Department.find_all(["faculty_id = ?", faculty_id]).map { |a| [a.name , a.id] }
+  def department_ids(faculty_id = nil)
+    conditions = ["faculty_id = ?", faculty_id] if faculty_id
+    Department.find(:all, :conditions => conditions).map { |a| [a.name , a.id] }
   end
   # get language ids
   def language_ids
