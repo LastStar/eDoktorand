@@ -71,9 +71,29 @@ class Candidate < ActiveRecord::Base
   # enroll candidate to study and returns new student based on 
   # candidates details. 
   def enroll!
+    # convert candidate to (student+index)
+		student = Student.new
+		student.firstname = self.firstname
+		student.lastname = self.lastname
+		student.birth_on = self.birth_on
+		student.birth_number = self.birth_number
+		student.state = self.state
+		student.birth_at = self.birth_at
+		student.title_before = self.title_before
+		student.title_after = self.title_after
+		student.save
+		
+		index = Index.new
+		index.student = student
+		index.department = self.department
+		index.coridor = self.coridor
+		index.tutor = self.tutor
+		index.save
+		
+		# update candidate
 		self.enrolled_on = Time.now
+		self.student = student
 		self.save
-		# convert candidate to (student+index)
   end
   # checks if candidate is allready enrolled
   def enrolled?

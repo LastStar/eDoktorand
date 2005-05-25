@@ -1,8 +1,10 @@
 class Index < ActiveRecord::Base
   belongs_to :student 
-  belongs_to :tutorship
-  belongs_to :department
-  belongs_to :study_plan
-  belongs_to :disert_theme
+  belongs_to :tutor
+  has_one :study_plan
+  has_one :disert_theme
   belongs_to :coridor
+  belongs_to :department
+  validates_presence_of :student
+  validates_presence_of :tutor
 end

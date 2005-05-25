@@ -200,7 +200,7 @@ CREATE TABLE indexes (
   department_id integer,
   coridor_id integer,
   disert_theme_id integer,
-  tutorship_id integer,
+  tutor_id integer,
   created_on timestamp,
   updated_on timestamp
 );
