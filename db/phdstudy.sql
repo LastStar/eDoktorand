@@ -179,7 +179,7 @@ CREATE TABLE people (
   firstname varchar(101),
   lastname varchar(100),
   birth_on date,
-  birth_number varchar,
+  birth_number varchar(10),
   state varchar(100),
   birth_at varchar(100),
   type varchar(20),
@@ -501,7 +501,6 @@ CREATE TABLE contact_types (
   id integer primary key,
   name varchar(20)
 );
-
 
 --
 -- Table structure for table titles

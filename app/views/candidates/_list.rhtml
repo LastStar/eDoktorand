@@ -5,7 +5,6 @@
     <div class='right'>
       <%= link_to 'detail', :action => 'show', :id => candidate %>
       <%= link_to 'opravit', :action => 'edit', :id => candidate %>
-      <%= link_to 'smazat', {:action => 'destroy', :id => candidate}, :confirm => 'Opravdu si přejete smazat tento termín?' %>
       <%= ready_link(candidate) %>     
 			<%= invite_link(candidate) %>
       <%= admit_link(candidate) %>

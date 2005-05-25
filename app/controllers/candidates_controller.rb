@@ -23,12 +23,12 @@ class CandidatesController < ApplicationController
 		conditions << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
     @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => @params['category'], :conditions => conditions
   end
-    # lists all candidates ordered by category
-    def list_all
-        @candidates = Candidate.find(:all, :order_by => @params['category'],
-        :conditions => 'finished_on IS NOT NULL')
-        render_action 'list'
-    end
+  # lists all candidates ordered by category
+  def list_all
+	  @candidates = Candidate.find(:all, :order_by => @params['category'],
+	  :conditions => 'finished_on IS NOT NULL')
+	  render_action 'list'
+  end
   # shows candidate details
   def show
     @candidate = Candidate.find(@params['id'])
@@ -71,7 +71,7 @@ class CandidatesController < ApplicationController
 	# confirms admittance of candidate and sends email
 	def confirm_admit
 		@candidate = Candidate.find(@params['id'])
-		@candidate.tutor_id = @params['candidate']['tutor_id']
+		@candidate.update_attributes(@params['candidate'])
 		Notifications::deliver_admit_candidate(@candidate)
 		@candidate.admit!
 	end

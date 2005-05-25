@@ -1,6 +1,11 @@
-<%= start_form_tag :action => 'confirm_admit', :id => @candidate %>	<p><label for="candidate_tutor_id">Školitel:</label>
-	<%= select 'candidate', 'tutor_id', tutor_ids(:coridor => @candidate.coridor)  %></p>
-	
+<%= start_form_tag :action => 'confirm_admit', :id => @candidate %>	
+	<label for="candidate_tutor_id">Školitel:</label>
+	<%= select 'candidate', 'tutor_id', tutor_ids(:coridor => @candidate.coridor)  %><br/>
+	<label for="candidate_study_id">forma studia</label>
+	<%= select 'candidate', 'study_id', study_ids %><br/>
+	<label for="candidate_coridor_id">obor</label>
+	<%= select 'candidate', 'coridor_id', coridor_ids %><br/>
+	 	
 	<%= submit_tag "Potvrdit" %>
 <%= end_form_tag %>
 
