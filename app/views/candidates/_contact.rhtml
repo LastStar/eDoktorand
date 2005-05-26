@@ -1,0 +1,6 @@
+email: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br /> 
+telefon: <%= candidate.phone %><br /> 
+adresa: <%= candidate.address %><br /> 
+<% unless candidate.postal_street.empty? %>
+korespondenční adresa: <%= candidate.postal_address %>
+<% end %>

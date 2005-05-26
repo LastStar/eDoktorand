@@ -1,0 +1,37 @@
+--- 
+- !ruby/object:Tutor 
+  attributes: 
+    title_before_id: "13"
+    type: Tutor
+    id: "1"
+    firstname: Karel
+    lastname: "Šťastný"
+    title_after_id: "44"
+    birth_at: ''
+    birth_on: "2005-05-25"
+    birth_number: ''
+    state: ''
+- !ruby/object:Tutor 
+  attributes: 
+    title_before_id: "13"
+    type: Tutor
+    id: "2"
+    firstname: Vladimír
+    lastname: Bejček
+    title_after_id: "44"
+    birth_at: ''
+    birth_on: "2005-05-25"
+    birth_number: ''
+    state: ''
+- !ruby/object:Tutor 
+  attributes: 
+    title_before_id: "6"
+    type: Tutor
+    id: "3"
+    firstname: Josef
+    lastname: Linhart
+    title_after_id: "44"
+    birth_at: ''
+    birth_on: "2005-05-25"
+    birth_number: ''
+    state: ''

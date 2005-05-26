@@ -37,9 +37,9 @@ class Candidate < ActiveRecord::Base
   # returns name for displaying
   def display_name  
 		arr = []
-		arr << self.title_before.name if self.title_before
+		arr << self.title_before.label if self.title_before
     arr = [ self.firstname, self.lastname]
-    arr <<  self.title_after.name if self.title_after
+    arr <<  self.title_after.label if self.title_after
     return arr.join(' ')
   end
   # returns address for displaying

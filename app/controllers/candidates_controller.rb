@@ -25,7 +25,7 @@ class CandidatesController < ApplicationController
   end
   # lists all candidates ordered by category
   def list_all
-	  @candidates = Candidate.find(:all, :order_by => @params['category'],
+	  @candidates = Candidate.find(:all, :order => @params['category'],
 	  :conditions => 'finished_on IS NOT NULL')
 	  render_action 'list'
   end

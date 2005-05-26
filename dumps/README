@@ -1,0 +1,22 @@
+﻿In this directory, there are dumps of all 'lookup' tables in application. If you
+are changing those, you must include it in UPDATING file and create appropriate
+dumps of tables do it is easy to recovery. Dumps are easy to create and load. In
+console:
+
+for dumping:
+
+File.open('_dumpfile_.yml', 'w') {|out| YAML.dump(_DumpedClass_.find(:all), out)
+
+for loading:
+
+File.open('_dumpfile_.yml', 'w') {|out| yaml.load(out)}.each {|obj| obj.create}
+
+When changing column name preffered way is to create dump and then loadit
+through modification block like this:
+
+File.open('_dumpfile_.yml', 'w') {|out| yaml.load(out)}.each do |obj|
+        new_obj = _ModifiedClass_.new
+        new_obj.attributes = obj.attributes
+        new_obj._new_attribute_ = obj._old_attribute
+        new_obj.save
+end

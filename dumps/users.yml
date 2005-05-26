@@ -1,0 +1,25 @@
+--- 
+- !ruby/object:User 
+  attributes: 
+    id: "1"
+    login: pepe
+    password: 4edd36daaaf84544d4ddb1fbcc82ba3e3332575d
+    person_id: "1"
+- !ruby/object:User 
+  attributes: 
+    id: "2"
+    login: gothmog
+    password: a6ebb7d01d1d61f288f6a92c2c15ed7d8309d809
+    person_id: 
+- !ruby/object:User 
+  attributes: 
+    id: "3"
+    login: vav
+    password: 5fb7f6efa594d6a61bf6ebe118d9448d46902f11
+    person_id: 
+- !ruby/object:User 
+  attributes: 
+    id: "4"
+    login: vavfle
+    password: 5fb7f6efa594d6a61bf6ebe118d9448d46902f11
+    person_id: 

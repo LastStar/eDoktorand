@@ -1,0 +1,51 @@
+--- 
+- !ruby/object:Coridor 
+  attributes: 
+    name: aplikovaná a krajinná ekologie
+    faculty_id: "5"
+    id: "1"
+- !ruby/object:Coridor 
+  attributes: 
+    name: ekologie
+    faculty_id: "5"
+    id: "3"
+- !ruby/object:Coridor 
+  attributes: 
+    name: ochrana půdy a meliorace
+    faculty_id: "5"
+    id: "4"
+- !ruby/object:Coridor 
+  attributes: 
+    name: zemědělská a lesnická hydrologie
+    faculty_id: "5"
+    id: "5"
+- !ruby/object:Coridor 
+  attributes: 
+    name: dendrologie a šlechtění lesních dřevin
+    faculty_id: "5"
+    id: "6"
+- !ruby/object:Coridor 
+  attributes: 
+    name: hospodářská úprava lesa
+    faculty_id: "5"
+    id: "7"
+- !ruby/object:Coridor 
+  attributes: 
+    name: ochrana lesů a myslivost
+    faculty_id: "5"
+    id: "8"
+- !ruby/object:Coridor 
+  attributes: 
+    name: pěstování lesa
+    faculty_id: "5"
+    id: "9"
+- !ruby/object:Coridor 
+  attributes: 
+    name: technika a mechanizace v lesním hospodářství
+    faculty_id: "5"
+    id: "10"
+- !ruby/object:Coridor 
+  attributes: 
+    name: "řízení a ekonomika podniku"
+    faculty_id: "5"
+    id: "11"

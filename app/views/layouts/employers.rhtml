@@ -14,7 +14,7 @@
     <%= link_to_unless_current('odhlásit', {:controller => 'account', :action => 'logout'},
     :confirm => 'opravdu se chcete odhlásit?'){} %>
     <%= link_to_unless_current('uchazeči', :controller => 'candidates'){} %>
-    <%= link_to_unless_current('termíny', :controller => 'exam_terms'){} %>
+    <%= link_to_unless_current('komise', :controller => 'exam_terms'){} %>
     <%= link_to_unless_current('studenti', :controller => 'students'){} %>
   </div>
 	<% end %>

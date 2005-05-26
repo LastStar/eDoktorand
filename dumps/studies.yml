@@ -1,0 +1,9 @@
+--- 
+- !ruby/object:Study 
+  attributes: 
+    name: prezenční
+    id: "1"
+- !ruby/object:Study 
+  attributes: 
+    name: kombinované
+    id: "2"

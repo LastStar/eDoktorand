@@ -10,7 +10,7 @@ class ExamTermsController < ApplicationController
   end
 
   def list
-		@title = 'Výpis termínů příjimacích zkoušek'
+		@title = 'Výpis komisí příjimacích zkoušek'
     @exam_term_pages, @exam_terms = paginate :exam_term, :per_page => 10
   end
 
@@ -19,7 +19,7 @@ class ExamTermsController < ApplicationController
   end
 
   def new
-  	@title = 'Vytváření termínu příjimacích zkoušek'
+  	@title = 'Vytváření komise příjimacích zkoušek'
     @exam_term = ExamTerm.new
 		@exam_term.coridor_id = @params['id'] if @params['id']
   end
@@ -27,7 +27,7 @@ class ExamTermsController < ApplicationController
   def create
     @exam_term = ExamTerm.new(@params[:exam_term])
     if @exam_term.save
-      flash['notice'] = 'ExamTerm was successfully created.'
+      flash['notice'] = 'Komise byla úspěšně vytvořena.'
       redirect_to :action => 'list'
     else
       render_action 'new'
@@ -41,7 +41,7 @@ class ExamTermsController < ApplicationController
   def update
     @exam_term = ExamTerm.find(@params[:id])
     if @exam_term.update_attributes(@params[:exam_term])
-      flash['notice'] = 'termín přijímacích zkoušek'
+      flash['notice'] = 'Komise byla úspěšně opravena'
       redirect_to :action => 'list'
     else
       render_action 'edit'

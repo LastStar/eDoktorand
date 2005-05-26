@@ -16,7 +16,7 @@ module CandidatesHelper
   def invite_link(candidate)
     if !candidate.invited? and candidate.ready? 
       unless candidate.coridor.exam_term  
-      	link_to('vytvořit termín', :controller => 'exam_terms', 
+      	link_to('vytvořit komisi', :controller => 'exam_terms', 
       	:action => 'new', :id => candidate.coridor.id )
 			else
 	      link_to 'pozvat', :action => 'invite', :id => candidate.id 
@@ -75,7 +75,7 @@ module CandidatesHelper
 		if candidate.enrolled?
 			content_tag('span', 'zapsán', :class => 'smallInfo')
 		elsif candidate.admited?
-			content_tag('span', 'příjmut', :class => 'smallInfo')
+			content_tag('span', 'příjat', :class => 'smallInfo')
 		elsif candidate.invited?
 			content_tag('span', 'pozván', :class => 'smallInfo')
 		elsif candidate.ready?

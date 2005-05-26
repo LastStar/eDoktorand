@@ -8,5 +8,5 @@ class ExamTerm < ActiveRecord::Base
 	validates_presence_of :date, :message => 'Termín musí mít přidělený datum začátku'
 	validates_presence_of :first_examinator, :message => 'Termín musí mít přiděleného prvního zkoušejícího'
 	validates_presence_of :second_examinator, :message => 'Termín musí mít přiděleného druhého zkoušejícího'
-	validates_uniqueness_of :coridor_id, :message => 'Pro tento koridor termín již existuje'
+#	validates_uniqueness_of :coridor_id, :message => 'Pro tento koridor termín již existuje'
 end

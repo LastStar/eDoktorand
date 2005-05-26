@@ -1,0 +1,11 @@
+--- 
+- !ruby/object:Role 
+  attributes: 
+    name: admin
+    info: Administrátor
+    id: "1"
+- !ruby/object:Role 
+  attributes: 
+    name: referentka
+    info: Referentka na VaV
+    id: "2"

@@ -1,0 +1,29 @@
+--- 
+- !ruby/object:Language 
+  attributes: 
+    name: angličtina
+    id: "1"
+- !ruby/object:Language 
+  attributes: 
+    name: francouzština
+    id: "2"
+- !ruby/object:Language 
+  attributes: 
+    name: ruština
+    id: "3"
+- !ruby/object:Language 
+  attributes: 
+    name: němčina
+    id: "4"
+- !ruby/object:Language 
+  attributes: 
+    name: italština
+    id: "5"
+- !ruby/object:Language 
+  attributes: 
+    name: "španělština"
+    id: "6"
+- !ruby/object:Language 
+  attributes: 
+    name: "čeština"
+    id: "7"

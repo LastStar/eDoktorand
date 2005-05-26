@@ -1,0 +1,61 @@
+--- 
+- !ruby/object:Department 
+  attributes: 
+    name: pěstování lesů
+    faculty_id: "5"
+    id: "1"
+- !ruby/object:Department 
+  attributes: 
+    name: ekologie a životního prostředí
+    faculty_id: "5"
+    id: "2"
+- !ruby/object:Department 
+  attributes: 
+    name: dendrologie a šlechtění lesních dřevin
+    faculty_id: "5"
+    id: "3"
+- !ruby/object:Department 
+  attributes: 
+    name: hospodářské úpravy lesů
+    faculty_id: "5"
+    id: "4"
+- !ruby/object:Department 
+  attributes: 
+    name: ochrany lesa a myslivosti
+    faculty_id: "5"
+    id: "5"
+- !ruby/object:Department 
+  attributes: 
+    name: lesní těžby
+    faculty_id: "5"
+    id: "6"
+- !ruby/object:Department 
+  attributes: 
+    name: zpracování dřeva
+    faculty_id: "5"
+    id: "7"
+- !ruby/object:Department 
+  attributes: 
+    name: ekonomiky a řízení lesního hospodářství
+    faculty_id: "5"
+    id: "8"
+- !ruby/object:Department 
+  attributes: 
+    name: biotechnických úprav krajiny
+    faculty_id: "5"
+    id: "9"
+- !ruby/object:Department 
+  attributes: 
+    name: vodního hospodářství
+    faculty_id: "5"
+    id: "10"
+- !ruby/object:Department 
+  attributes: 
+    name: staveb
+    faculty_id: "5"
+    id: "11"
+- !ruby/object:Department 
+  attributes: 
+    name: laboratoř ekologie krajiny
+    faculty_id: "5"
+    id: "12"

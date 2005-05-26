@@ -1,0 +1,21 @@
+--- 
+- !ruby/object:Faculty 
+  attributes: 
+    name: " provozně ekonomická"
+    id: "1"
+- !ruby/object:Faculty 
+  attributes: 
+    name: "technická "
+    id: "2"
+- !ruby/object:Faculty 
+  attributes: 
+    name: "agrobiologie, potravinových a přírodních zdrojů "
+    id: "3"
+- !ruby/object:Faculty 
+  attributes: 
+    name: institut tropů a subtropů
+    id: "4"
+- !ruby/object:Faculty 
+  attributes: 
+    name: lesnická a environmentální
+    id: "5"

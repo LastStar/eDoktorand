@@ -5,7 +5,7 @@
     <div class='right'>
       <%= link_to 'oprava', :action => 'edit', :id => exam_term %>
       <%= link_to "uchazeči(#{exam_term.coridor.candidates.size})", :controller => 'candidates', :action => 'list', :coridor => exam_term.coridor.id %>
-      <%= link_to 'smazání', {:action => 'destroy', :id => exam_term}, :confirm => 'Opravdu si přejete smazat tento termín?' %>
+      <%= link_to 'smazání', {:action => 'destroy', :id => exam_term}, :confirm => 'Opravdu si přejete smazat tuto komisi?' %>
     </div>
     <b><%= exam_term.coridor.name %><br/></b>
 	  datum a čas: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %><br/>
@@ -15,6 +15,6 @@
 <% end %>
 </ul>
 <% else %>
-<h5>v systému nejsou žádné termíny příjimacích zkoušek</h5>
+<h5>V systému nejsou žádné komise pro příjimací zkoušky</h5>
 <% end %>
 <div class='links'><%= link_to 'nový termín', :action => 'new' %></div>

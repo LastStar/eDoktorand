@@ -1,0 +1,126 @@
+--- 
+- !ruby/object:Permission 
+  attributes: 
+    name: account/welcome
+    info: "Úvodní stránka systému"
+    id: "1"
+- !ruby/object:Permission 
+  attributes: 
+    name: account/logout
+    info: Odhlašovací stránka
+    id: "2"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/index
+    info: "Uchazeèi - úvodní stránka"
+    id: "3"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/edit
+    info: "Uchazeèi - oprava"
+    id: "4"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/ready
+    info: "Uchazeèi - pøipraven"
+    id: "5"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/admit
+    info: "Uchazeèi - pøíjmut"
+    id: "6"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/by
+    info: "Uchazeèi - výpis uchazeèù setøídìný"
+    id: "7"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/list
+    info: "Uchazeèi - výpis uchazeèù"
+    id: "8"
+- !ruby/object:Permission 
+  attributes: 
+    name: account/signup
+    info: ''
+    id: "9"
+- !ruby/object:Permission 
+  attributes: 
+    name: account/create
+    info: ''
+    id: "10"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/update
+    info: ''
+    id: "11"
+- !ruby/object:Permission 
+  attributes: 
+    name: exam_terms/index
+    info: ''
+    id: "12"
+- !ruby/object:Permission 
+  attributes: 
+    name: exam_terms/list
+    info: ''
+    id: "13"
+- !ruby/object:Permission 
+  attributes: 
+    name: exam_terms/edit
+    info: ''
+    id: "14"
+- !ruby/object:Permission 
+  attributes: 
+    name: exam_terms/new
+    info: ''
+    id: "15"
+- !ruby/object:Permission 
+  attributes: 
+    name: exam_terms/create
+    info: ''
+    id: "16"
+- !ruby/object:Permission 
+  attributes: 
+    name: exam_terms/update
+    info: ''
+    id: "17"
+- !ruby/object:Permission 
+  attributes: 
+    name: exam_terms/show
+    info: ''
+    id: "18"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/invite
+    info: ''
+    id: "19"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/destroy
+    info: ''
+    id: "20"
+- !ruby/object:Permission 
+  attributes: 
+    name: exam_terms/destroy
+    info: ''
+    id: "21"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/admittance
+    info: ''
+    id: "22"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/list_all
+    info: ''
+    id: "23"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/show
+    info: ''
+    id: "24"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/confirm_admit
+    info: ''
+    id: "25"

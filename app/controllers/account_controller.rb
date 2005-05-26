@@ -10,11 +10,11 @@ class AccountController < ApplicationController
       when :post
         if @session['user'] = User.authenticate(@params['user_login'], @params['user_password'])
 
-          flash['notice']  = "Login successful"
+          flash['notice']  = "Přihlášení proběhlo v pořádku"
           redirect_back_or_default :action => "welcome"
         else
           @login    = @params['user_login']
-          @message  = "Login unsuccessful"
+          @message  = "Přihlášení se nepodařilo"
       end
     end
   end
