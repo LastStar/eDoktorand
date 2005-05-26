@@ -9,7 +9,7 @@ File.open('_dumpfile_.yml', 'w') {|out| YAML.dump(_DumpedClass_.find(:all), out)
 
 for loading:
 
-File.open('_dumpfile_.yml', 'w') {|out| yaml.load(out)}.each {|obj| obj.create}
+File.open('_dumpfile_.yml', 'r') {|out| YAML.load(out)}.each {|obj| obj.create}
 
 When changing column name preffered way is to create dump and then loadit
 through modification block like this:
