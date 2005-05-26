@@ -90,6 +90,11 @@ class Candidate < ActiveRecord::Base
 		index.tutor = self.tutor
 		index.save
 		
+    create_address(student.id)
+	  create_postal_address(student.id) if self.postal_city
+	  student.email = self.contact_email
+	  student.phone = self.contact_phone if self.phone 		
+
 		# update candidate
 		self.enrolled_on = Time.now
 		self.student = student

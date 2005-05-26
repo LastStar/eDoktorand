@@ -20,13 +20,13 @@ module ApplicationHelper
   # get title_before ids
   def title_before_ids
     arr = [['---', '0']]
-    arr.concat(Title.find_all(['prefix = ?', 1]).map {|s| [s.name, s.id]})
+    arr.concat(Title.find_all(['before = ?', 1]).map {|s| [s.name, s.id]})
     return arr
   end
   # get title_before ids
   def title_after_ids
     arr = [['---', '0']]
-    arr.concat(Title.find_all(['prefix = ?', 0]).map {|s| [s.name, s.id]})
+    arr.concat(Title.find_all(['before = ?', 0]).map {|s| [s.name, s.id]})
     return arr
   end
   # get role ids
