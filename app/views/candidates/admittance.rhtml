@@ -22,9 +22,11 @@ předseda: <br/>
 členové:<br/>
 <%= @candidate.coridor.exam_term.first_examinator %> ....................<br/>
 <%= @candidate.coridor.exam_term.second_examinator %> ....................<br/>
-<%= @candidate.coridor.exam_term.third_examinator %> ....................<br/>
+<% unless @candidate.coridor.exam_term.third_examinator.empty? %>
+	<%= @candidate.coridor.exam_term.third_examinator %> ....................<br/>
+<% end %>
 <% unless @candidate.coridor.exam_term.fourth_examinator.empty? %>
-<%= @candidate.coridor.exam_term.fourth_examinator %> ....................
+	<%= @candidate.coridor.exam_term.fourth_examinator %> ....................
 <% end %>
 </p>
 <p>Datum přijímací zkoušky: <%= @candidate.coridor.exam_term.date.strftime("%d. %m. %Y") %></p>
@@ -33,7 +35,6 @@ předseda: <br/>
 
 <p>Datum:<br/>
  Podpis:</p>
-
  <div class='links'>
  	<a href='javascript:window.print()'>tisk</a>
  	<%= link_to 'zpět', :action => 'list' if @session['user']%>

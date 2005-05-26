@@ -1,3 +1,5 @@
+<%= javascript_include_tag "prototype" %>
+
 <p>V Praze dne <%= Time.now.strftime('%d. %m. %Y') %></p>
 
 <p>Vážený pane inženýre/paní inženýrko,</p>
@@ -24,8 +26,12 @@
 <%= @candidate.display_name %><br/>
 <%= @candidate.address %></p>
 <div class='links'>
-	<a href='javascript:window.print()'>tisk</a>
-  <%= link_to 'zpět', :action => 'list' %>
-</div >
-
 <script type="text/javascript">window.print()</script>
+<% if @session['user'] %>
+<%= link_to 'zpět', :action => 'list'%>
+<% unless @candidate.admited? %>
+<span id='mailLink'><%= link_to_remote 'odešli mail s dekretem o přijetí', :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id} %></span>
+<% end %>
+<% end %>
+</div>
+

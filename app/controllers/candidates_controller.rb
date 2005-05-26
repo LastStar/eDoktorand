@@ -72,9 +72,15 @@ class CandidatesController < ApplicationController
 	def confirm_admit
 		@candidate = Candidate.find(@params['id'])
 		@candidate.update_attributes(@params['candidate'])
+	end
+	# action for remote link that invite candidate
+	def admit_now
+		@candidate = Candidate.find(@params['id'])
 		Notifications::deliver_admit_candidate(@candidate)
 		@candidate.admit!
+		render_text 'mail odeslán'
 	end
+	
 	# finishes admittance
 	def admittance
 		@candidate = Candidate.find(@params['id'])
@@ -89,10 +95,15 @@ class CandidatesController < ApplicationController
   # set candidate ready for admition
   def invite
     @candidate = Candidate.find(@params['id'])
-    @candidate.invite!
-		Notifications::deliver_invite_candidate(@candidate)
     render_action 'invitation'
   end
+	# action for remote link that invite candidate
+	def invite_now
+		@candidate = Candidate.find(@params['id'])
+    @candidate.invite!
+		Notifications::deliver_invite_candidate(@candidate)
+		render_text 'mail odeslán'
+	end
 	# shows invitation for candidate
 	def invitation
 		@candidate = Candidate.find(@params['id'])

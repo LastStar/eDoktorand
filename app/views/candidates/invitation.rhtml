@@ -1,3 +1,5 @@
+<%= javascript_include_tag "prototype" %>
+
 <h3 class='printHeader'>ČESKÁ ZEMĚDĚLSKÁ UNIVERZITA V PRAZE</h3>
 <h3 class='printHeader'>FAKULTA LESNICKÁ A ENVIRONMENTÁLNÍ</h3>
 <h3 class='printHeader'>DĚKANÁT – ODDĚLENÍ VĚDY A VÝZKUMU</h3>
@@ -30,7 +32,12 @@
 </p>
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
-	<%= link_to 'zpět', :action => 'list' if @session['user']%>
+	<% if @session['user'] %>
+	<%= link_to 'zpět', :action => 'list'%>
+	<% unless @candidate.invited? %>
+	<span id='mailLink'><%= link_to_remote 'odešli mail s pozvánkou', :update => 'mailLink', :url => {:action => 'invite_now', :id => @candidate.id} %></span>
+	<% end %>
+	<% end %>
 </div>
 <script type="text/javascript">window.print()</script>
 
