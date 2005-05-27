@@ -5,7 +5,7 @@
 
 DROP TABLE candidates;
 CREATE TABLE candidates (
-  id integer primary key autoincrement,
+  id integer primary key,
   firstname varchar(50),
   lastname varchar(50),
   title_before_id integer,
@@ -58,7 +58,7 @@ CREATE TABLE candidates (
 
 DROP TABLE coridors;
 CREATE TABLE coridors (
-  id integer primary key autoincrement,
+  id integer primary key,
   name varchar(50),
   faculty_id integer
 );
@@ -70,7 +70,7 @@ CREATE TABLE coridors (
 
 DROP TABLE coridor_subjects;
 CREATE TABLE coridor_subjects (
-  id integer primary key autoincrement,
+  id integer primary key,
   coridor_id integer,
   subject_id integer,
   type varchar(32)
@@ -82,7 +82,7 @@ CREATE TABLE coridor_subjects (
 
 DROP TABLE departments;
 CREATE TABLE departments (
-  id integer primary key autoincrement,
+  id integer primary key,
   name varchar(256),
   faculty_id integer
 );
@@ -93,7 +93,7 @@ CREATE TABLE departments (
 
 DROP TABLE faculties;
 CREATE TABLE faculties (
-  id integer primary key autoincrement,
+  id integer primary key,
   name varchar(256)
 );
 
@@ -104,7 +104,7 @@ CREATE TABLE faculties (
 
 DROP TABLE languages;
 CREATE TABLE languages (
-  id integer primary key autoincrement,
+  id integer primary key,
   name varchar(50)
 );
 
@@ -114,7 +114,7 @@ CREATE TABLE languages (
 
 DROP TABLE exam_terms;
 CREATE TABLE exam_terms (
-  id integer primary key autoincrement,
+  id integer primary key,
 	coridor_id integer,
 	date date,
 	start_time varchar(5),
@@ -134,7 +134,7 @@ CREATE TABLE exam_terms (
 
 --DROP TABLE admittances;
 --CREATE TABLE admittances (
---  id integer primary key autoincrement,
+--  id integer primary key,
 --	skilled_exam varchar(100),
 --	first_language integer,
 --	second_language integer,
@@ -153,7 +153,7 @@ CREATE TABLE exam_terms (
 
 DROP TABLE documents;
 CREATE TABLE documents (
-  id integer primary key autoincrement,
+  id integer primary key,
   name varchar(100),
   path varchar(100),
   faculty_id integer
@@ -165,7 +165,7 @@ CREATE TABLE documents (
 
 DROP TABLE studies;
 CREATE TABLE studies (
-  id integer primary key autoincrement,
+  id integer primary key,
   name varchar(50)
 );
 
@@ -175,7 +175,7 @@ CREATE TABLE studies (
 
 DROP TABLE people;
 CREATE TABLE people (
-  id integer primary key autoincrement,
+  id integer primary key,
   firstname varchar(101),
   lastname varchar(100),
   birth_on date,
@@ -193,7 +193,7 @@ CREATE TABLE people (
 
 DROP TABLE indexes;
 CREATE TABLE indexes (
-  id integer primary key autoincrement,
+  id integer primary key,
   -- year integer, -- should be computed in class?
   study_plan_id integer,
   student_id integer,
@@ -211,7 +211,7 @@ CREATE TABLE indexes (
 
 DROP TABLE study_plans;
 CREATE TABLE study_plans (
-  id integer primary key autoincrement,
+  id integer primary key,
   index_id integer,
   actual integer,
   created_on timestamp,
@@ -228,7 +228,7 @@ CREATE TABLE study_plans (
 
 DROP TABLE plan_subjects;
 CREATE TABLE plan_subjects (
-  id integer primary key autoincrement,
+  id integer primary key,
   study_plan_id integer,
   subject_id integer,
   finishing_to timestamp,
@@ -243,7 +243,7 @@ CREATE TABLE plan_subjects (
 
 DROP TABLE subjects;
 CREATE TABLE subjects (
-  id integer primary key autoincrement,
+  id integer primary key,
   label varchar(1024),
   code varchar(7),
   type varchar(32),
@@ -272,7 +272,7 @@ CREATE TABLE external_subject_details (
 
 DROP TABLE exam;
 CREATE TABLE exam (
-  id integer primary key autoincrement,
+  id integer primary key,
   index_id integer,
   first_examinator_id integer,
   second_examinator_id integer,
@@ -289,7 +289,7 @@ CREATE TABLE exam (
 
 DROP TABLE interupts;
 CREATE TABLE interupts (
-  id integer primary key autoincrement,
+  id integer primary key,
   index_id integer,
   note varchar(100),
   created_on timestamp,
@@ -303,7 +303,7 @@ CREATE TABLE interupts (
 
 DROP TABLE approvements;
 CREATE TABLE approvements (
-  id integer primary key autoincrement,
+  id integer primary key,
   type varchar(30),
   document_id integer,
   tutor_statement_id integer,
@@ -320,7 +320,7 @@ CREATE TABLE approvements (
 
 DROP TABLE statement;
 CREATE TABLE statement (
-  id integer primary key autoincrement,
+  id integer primary key,
   note varchar(100),
   result integer,
   created_on timestamp,
@@ -335,7 +335,7 @@ CREATE TABLE statement (
 
 DROP TABLE tutorships;
 CREATE TABLE tutorships (
-  id integer primary key autoincrement,
+  id integer primary key,
   department_id integer,
   tutor_id integer,
   coridor_id integer,
@@ -349,7 +349,7 @@ CREATE TABLE tutorships (
 
 DROP TABLE leaderships;
 CREATE TABLE leaderships (
-  id integer primary key autoincrement,
+  id integer primary key,
   department_id integer,
   employee_id integer,
   created_on timestamp,
@@ -362,7 +362,7 @@ CREATE TABLE leaderships (
 
 DROP TABLE deanships;
 CREATE TABLE deanships (
-  id integer primary key autoincrement,
+  id integer primary key,
   faculty_id integer,
   employee_id integer,
   created_on timestamp,
@@ -376,7 +376,7 @@ CREATE TABLE deanships (
 
 DROP TABLE disert_themes;
 CREATE TABLE disert_themes (
-  id integer primary key autoincrement,
+  id integer primary key,
   title varchar(100),
   index_id integer,
   methodology_file varchar(30),
@@ -391,7 +391,7 @@ CREATE TABLE disert_themes (
 
 -- DROP TABLE methodologies;
 -- CREATE TABLE methodologies (
---   id integer primary key autoincrement,
+--   id integer primary key,
 --   text varchar(255),
 --   disert_theme_id integer
 -- );
@@ -416,7 +416,7 @@ CREATE TABLE disert_themes (
 
 DROP TABLE users;
 CREATE TABLE users (
-  id integer primary key autoincrement,
+  id integer primary key,
   login varchar(80),
   password varchar(40),
   person_id integer
@@ -429,7 +429,7 @@ CREATE TABLE users (
 
 DROP TABLE roles;
 CREATE TABLE roles (
-  id integer primary key autoincrement,
+  id integer primary key,
   name varchar(20),
   info varchar(100)
 );
@@ -439,7 +439,7 @@ CREATE TABLE roles (
 --
 DROP TABLE permissions;
 CREATE TABLE permissions (
-  id integer primary key autoincrement,
+  id integer primary key,
   name varchar(20),
   info varchar(100)
 );
@@ -475,7 +475,7 @@ CREATE TABLE permissions_roles (
 
 DROP TABLE addresses;
 CREATE TABLE addresses (
-  id integer primary key autoincrement,
+  id integer primary key,
   street varchar(100),
   desc_number varchar(20),
   orient_number varchar(20),
@@ -493,7 +493,7 @@ CREATE TABLE addresses (
 
 DROP TABLE address_types;
 CREATE TABLE address_types (
-  id integer primary key autoincrement,
+  id integer primary key,
   label varchar(20)
 );
 
@@ -503,7 +503,7 @@ CREATE TABLE address_types (
 
 DROP TABLE contacts;
 CREATE TABLE contacts (
-  id integer primary key autoincrement,
+  id integer primary key,
   name varchar(20),
   contact_type_id integer,
   person_id integer
@@ -515,7 +515,7 @@ CREATE TABLE contacts (
 
 DROP TABLE contact_types;
 CREATE TABLE contact_types (
-  id integer primary key autoincrement,
+  id integer primary key,
   label varchar(20)
 );
 
@@ -525,7 +525,7 @@ CREATE TABLE contact_types (
 
 DROP TABLE titles;
 CREATE TABLE titles (
-  id integer primary key autoincrement,
+  id integer primary key,
   label varchar(100),
   prefix integer
 );
@@ -537,7 +537,7 @@ CREATE TABLE titles (
 
 DROP TABLE sessions;
 CREATE TABLE sessions (
-  id integer primary key autoincrement,
+  id integer primary key,
   sessid text,
   data text
 );

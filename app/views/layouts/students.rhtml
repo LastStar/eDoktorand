@@ -1,11 +1,29 @@
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Students: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title><%= @title %></title>
+  <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
+  <link href="/stylesheets/standard.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-<%= @content_for_layout %>
-
+	<% if @session['user'] %>
+  <div class='right'>
+    <%= link_to_unless_current('úvodní stránka', :controller => 'account', :action => 'welcome') {} %>
+    <%= link_to_unless_current('odhlásit', {:controller => 'account', :action => 'logout'},
+    :confirm => 'opravdu se chcete odhlásit?'){} %>
+    <% unless @student.index.study_plan %>
+      <%= link_to_unless_current('sestavit studijní plán', :action => 'create', :id => @student) %>
+    <% end %>
+  </div>
+	<% end %>
+  <h1 id='title'><%= @title %></h1>
+  <div id="main">
+    <%= @content_for_layout %>
+  </div>
+  <div id="footer">
+    phdstudy in early version. All designed and coded by GravaStar.&nbsp;
+  </div>
 </body>
 </html>

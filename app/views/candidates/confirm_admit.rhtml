@@ -26,12 +26,13 @@
 <%= @candidate.display_name %><br/>
 <%= @candidate.address %></p>
 <div class='links'>
-<script type="text/javascript">window.print()</script>
-<% if @session['user'] %>
-<%= link_to 'zpět', :action => 'list'%>
-<% unless @candidate.admited? %>
-<span id='mailLink'><%= link_to_remote 'odešli mail s dekretem o přijetí', :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id} %></span>
-<% end %>
-<% end %>
+	<a href='javascript:window.print()'>tisk</a>
+	<% if @session['user'] %>
+	<%= link_to 'zpět', :action => 'list'%>
+	<% unless @candidate.admited? %>
+	<span id='mailLink'><%= link_to_remote 'odešli mail s dekretem o přijetí', :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id} %></span>
+	<% end %>
+	<% end %>
 </div>
+<script type="text/javascript">window.print()</script>
 

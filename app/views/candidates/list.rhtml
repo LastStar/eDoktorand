@@ -1,5 +1,5 @@
 <%= print_notice %>
-<%= filter_tags(:list, [['ready', 'připravené'], ['invited', 'pozvané'], ['admited', 'příjaté'], ['enrolled', 'zapsané']]) %>
+<%= filter_tags(:list, [['ready', 'připravené'], ['invited', 'pozvané'], ['admited', 'přijaté'], ['enrolled', 'zapsané']]) %>
 <%= sort_tags(:list, [['coridor_id', 'oboru'], ['lastname', 'příjmení'], ['updated_on', 'data modifikace']], :message => 'setřídit podle:') %>
 <%= sort_tags(:list_all, [['coridor_id', 'oboru'], ['lastname', 'příjmení'], ['updated_on', 'data modifikace']], :message => 'všechny podle:') %>
 <% unless @candidates.empty? %>

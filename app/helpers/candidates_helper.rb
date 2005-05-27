@@ -75,7 +75,7 @@ module CandidatesHelper
 		if candidate.enrolled?
 			content_tag('span', 'zapsán', :class => 'smallInfo')
 		elsif candidate.admited?
-			content_tag('span', 'příjat', :class => 'smallInfo')
+			content_tag('span', 'přijat', :class => 'smallInfo')
 		elsif candidate.invited?
 			content_tag('span', 'pozván', :class => 'smallInfo')
 		elsif candidate.ready?
