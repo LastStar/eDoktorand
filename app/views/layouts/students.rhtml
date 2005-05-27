@@ -1,8 +1,8 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= @htmllang %>" lang="<% @htmllang%>">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="content-type" content="text/html; charset=<%= @charset %>" />
   <title><%= @title %></title>
   <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
   <link href="/stylesheets/standard.css" media="screen" rel="stylesheet" type="text/css" />
@@ -10,11 +10,11 @@
 <body>
 	<% if @session['user'] %>
   <div class='right'>
-    <%= link_to_unless_current('úvodní stránka', :controller => 'account', :action => 'welcome') {} %>
-    <%= link_to_unless_current('odhlásit', {:controller => 'account', :action => 'logout'},
-    :confirm => 'opravdu se chcete odhlásit?'){} %>
+    <%= link_to_unless_current(_("welcome page"), :action => 'index') {} %>
+    <%= link_to_unless_current(_("logoff"), {:controller => 'account', :action => 'logout'},
+    :confirm =>  _("do you really want to") + _("logoff") + '?'){} %>
     <% unless @student.index.study_plan %>
-      <%= link_to_unless_current('sestavit studijní plán', :action => 'create', :id => @student) %>
+      <%= link_to_unless_current(_("create study plan"), :action => 'create', :id => @student) %>
     <% end %>
   </div>
 	<% end %>

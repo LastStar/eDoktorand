@@ -1,16 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Localization strings for edoktorand
+# Copyright (C) 2005
+# This file is distributed under the same license as the edoktorand package.
+# Josef Pospíšil <pepe@gravastar.cz>, 2005.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2005-05-27 15:57+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: 90\n"
+"POT-Creation-Date: 2005-05-27 17:42+0200\n"
+"PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
+"Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
+"Language-Team: czech <cz@gravastar.cz>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,6 +53,54 @@ msgstr "Česká republika"
 
 msgid "Czech agriculture university"
 msgstr "Česká zemědělská univerzita v Praze"
+
+msgid "firstname can not be empty"
+msgstr ""
+
+msgid "lastname can not be empty"
+msgstr ""
+
+msgid "birth place cannot be empty"
+msgstr ""
+
+msgid "email cannot be empty"
+msgstr ""
+
+msgid "street cannot be empty"
+msgstr ""
+
+msgid "city cannot be empty"
+msgstr ""
+
+msgid "zip cannot be empty"
+msgstr ""
+
+msgid "state cannot be empty"
+msgstr ""
+
+msgid "university cannot be empty"
+msgstr ""
+
+msgid "faculty cannot be empty"
+msgstr ""
+
+msgid "corridor cannot be empty"
+msgstr ""
+
+msgid "birth number cannot be empty"
+msgstr ""
+
+msgid "street number cannot be empty"
+msgstr ""
+
+msgid "email does not have right format"
+msgstr ""
+
+msgid "birth number allready in database. Contact administrator"
+msgstr ""
+
+msgid "languages have to be different"
+msgstr ""
 
 msgid "Error"
 msgstr ""
@@ -128,6 +176,18 @@ msgid "you will be registered and noticed about all events"
 msgstr ""
 
 msgid "Thank you for spent time and wish good luck"
+msgstr ""
+
+msgid "welcome page"
+msgstr ""
+
+msgid "logoff"
+msgstr ""
+
+msgid "do you really want to"
+msgstr ""
+
+msgid "create study plan"
 msgstr ""
 
 msgid "Full name"
@@ -262,11 +322,11 @@ msgstr ""
 msgid "note"
 msgstr ""
 
-msgid "Action"
+msgid "action"
 msgstr ""
 
-msgid "Next"
+msgid "next"
 msgstr ""
 
-msgid "Reset"
+msgid "reset"
 msgstr ""

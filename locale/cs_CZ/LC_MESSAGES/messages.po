@@ -1,16 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Localization strings for edoktorand
+# Copyright (C) 2005
+# This file is distributed under the same license as the edoktorand package.
+# Josef Pospíšil <pepe@gravastar.cz>, 2005.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2005-05-27 15:57+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: 90\n"
+"POT-Creation-Date: 2005-05-27 17:42+0200\n"
+"PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
+"Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
+"Language-Team: czech <cz@gravastar.cz>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,8 +37,9 @@ msgstr ""
 "Prohlédněte si pozorně Vámi zadané informace. Poté postupujte podle návodu "
 "ve spodní části stránky."
 
-msgid "print"
-msgstr "tisk"
+
+msgid "Print"
+msgstr "Tisk"
 
 msgid "Fields in red are required"
 msgstr "Vyplňte prosím všechny údaje, jejichž popiska je červená"
@@ -55,16 +56,69 @@ msgstr "Česká republika"
 msgid "Czech agriculture university"
 msgstr "Česká zemědělská univerzita v Praze"
 
-msgid "error"
+msgid "firstname can not be empty"
+msgstr "jméno nesmí být prazdné"
+
+msgid "lastname can not be empty"
+msgstr "příjmení nesmí být prazdné"
+
+msgid "birth place cannot be empty"
+msgstr "místo narození nesmí být prazdné"
+
+msgid "email cannot be empty"
+msgstr "email nesmí být prazdný"
+
+msgid "street cannot be empty"
+msgstr "ulice bydliště nesmí být prazdná"
+
+msgid "city cannot be empty"
+msgstr "obec bydliště nesmí být prazdná"
+
+msgid "zip cannot be empty"
+msgstr "psč bydliště nesmí být prazdné"
+
+msgid "state cannot be empty"
+msgstr "státní příslušnost nesmí být prazdná"
+
+msgid "university cannot be empty"
+msgstr "univerzita nesmí být prazdná"
+
+msgid "faculty cannot be empty"
+msgstr "fakulta nesmí být prazdná"
+
+msgid "corridor cannot be empty"
+msgstr "obor nesmí být prazdný"
+
+msgid "birth number cannot be empty"
+msgstr "rodné číslo nesmí být prazdné"
+
+msgid "street number cannot be empty"
+msgstr "číslo popisné nemůže být prázdné"
+
+msgid "email does not have right format"
+msgstr "email nemá správný formát"
+
+msgid "birth number allready in database. Contact administrator"
+msgstr ""
+"zadané rodné číslo již v systému existuje. Prosím kontaktujte <a "
+"href='mailto:pepe@gravastar.cz'>správce systému</a>."
+
+msgid "languages have to be different"
+msgstr "jazyky musí být rozdílné"
+
+#, fuzzy
+msgid "Error"
 msgstr "chyba"
 
-msgid "notice"
+#, fuzzy
+msgid "Notice"
 msgstr "poznámka"
 
 msgid "Your application form have been registered"
 msgstr "Vaše přihláška byla zaregistrována."
 
-msgid "fill another form"
+#, fuzzy
+msgid "Fill another form"
 msgstr "vyplnit další přihlášku"
 
 msgid "After clicking the name of faculty, list of corridors  will be shown"
@@ -76,7 +130,8 @@ msgstr "dokumenty"
 msgid ""
 "There is error in application. Please contact system administrator on "
 "address:"
-msgstr "V aplikaci se vyskytla chyba, prosím uvědomte správce systému na adrese: "
+msgstr ""
+"V aplikaci se vyskytla chyba, prosím uvědomte správce systému na adrese: "
 
 msgid "Czech agriculture university in Prague"
 msgstr "Česká zemědělská univerzita v Praze"
@@ -95,10 +150,12 @@ msgid ""
 "a> this page and together with printed curriculum vitae, photo copy of "
 "documents about accomplishment (diploma, final exam documents), proof of the "
 "payment send it to Department of science and research. Address:"
-msgstr "Jestliže tyto informace souhlasí <a href='javascript:window.print()'>vytiskněte</a>"
-" si tuto stránku a spolu s vytištěným životopisem, fotokopiemi dokladů o VŠ vzdělání (diplom,"
-" osvědčení o státní zkoušce), dokladu o zaplacení poplatku je zašlete na adresu oddělení"
-" pro vědu a výkum na adresu:"
+msgstr ""
+"Jestliže tyto informace souhlasí <a href='javascript:window.print"
+"()'>vytiskněte</a> si tuto stránku a spolu s vytištěným životopisem, "
+"fotokopiemi dokladů o VŠ vzdělání (diplom, osvědčení o státní zkoušce), "
+"dokladu o zaplacení poplatku je zašlete na adresu oddělení pro vědu a výkum "
+"na adresu:"
 
 msgid "Faculty of Forestry and Environment"
 msgstr "Fakulta lesnická a environmentální"
@@ -128,11 +185,25 @@ msgid "finish"
 msgstr "ukončíte"
 
 msgid "you will be registered and noticed about all events"
-msgstr "práci s aplikací, budete zaregistrován/-a. V tomto případě Vás budeme informovat"
-" o všech důležitých událostech."
+msgstr ""
+"práci s aplikací, budete zaregistrován/-a. V tomto případě Vás budeme "
+"informovat o všech důležitých událostech."
 
 msgid "Thank you for spent time and wish good luck"
 msgstr "Děkujeme Vám za strávený čas a přejeme hodně štěstí."
+
+msgid "welcome page"
+msgstr "úvodní stránka"
+
+msgid "logoff"
+msgstr "odhlásit"
+
+msgid "do you really want to"
+msgstr "opravdu se chcete"
+
+
+msgid "create study plan"
+msgstr "nový studijní plán"
 
 msgid "Full name"
 msgstr "Jméno a příjmení"
@@ -215,7 +286,8 @@ msgstr "rodné číslo"
 msgid "state"
 msgstr "státní příslušnost"
 
-msgid "contact"
+#, fuzzy
+msgid "Contact"
 msgstr "kontakt"
 
 msgid "street"
@@ -233,8 +305,8 @@ msgstr "psč"
 msgid "don't fill if identic to habitat address"
 msgstr "nevyplňovat je li shodná s bydlištěm"
 
-msgid "accomplishments"
-msgstr "vzdělání"
+msgid "Accomplishments"
+msgstr "Vzdělání"
 
 msgid "university"
 msgstr "univerzita"
@@ -248,16 +320,14 @@ msgstr "specializace"
 msgid "employer"
 msgstr "zaměstnavatel"
 
-msgid "study registration"
-msgstr "přihláška ke studiu"
-
+msgid "Study registration"
+msgstr "Přihláška ke studiu"
 
 msgid "department"
 msgstr "katedra"
 
 msgid "study form"
 msgstr "forma studia"
-
 
 msgid "language exams"
 msgstr "jazyky příjímacích zkoušek"
@@ -269,7 +339,7 @@ msgid "note"
 msgstr "poznámka"
 
 msgid "action"
-msgstr "Akce"
+msgstr "akce"
 
 msgid "next"
 msgstr "další"

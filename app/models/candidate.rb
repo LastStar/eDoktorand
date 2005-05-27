@@ -8,26 +8,26 @@ class Candidate < ActiveRecord::Base
   belongs_to :exam_term
 	belongs_to :tutor
 	has_one :admittance
-  validates_presence_of :firstname, :message => "Jméno nesmí být prazdné"
-  validates_presence_of :lastname, :message => "Příjmení nesmí být prazdné"
-  validates_presence_of :birth_at, :message => "Místo narození nesmí být prazdné"
-  validates_presence_of :email, :message => "Email nesmí být prazdný"
-  validates_presence_of :street, :message => "Ulice bydliště nesmí být prazdná"
-  validates_presence_of :city, :message => "Obec bydliště nesmí být prazdná"
-  validates_presence_of :zip, :message => "PSČ bydliště nesmí být prazdné"
-  validates_presence_of :state, :message => "Státní příslušnost nesmí být prazdná"
-  validates_presence_of :university, :message => "Univerzita nesmí být prazdná"
-  validates_presence_of :faculty, :message => "Fakulta nesmí být prazdná"
-  validates_presence_of :studied_branch, :message => "Obor nesmí být prazdný"
-  validates_presence_of :birth_number, :message => "Rodné číslo nesmí být prazdné"
-  #validates_presence_of :title_before, :message => "Titul před jménem nesmí být prázdný"
-  validates_presence_of :number, :message => "Čislo popisné nesmí být prazdné"
+  validates_presence_of :firstname, :message => _("firstname can not be empty")
+  validates_presence_of :lastname, :message => _("lastname can not be empty")
+  validates_presence_of :birth_at, :message => _("birth place cannot be empty")
+  validates_presence_of :email, :message => _("email cannot be empty")
+  validates_presence_of :street, :message => _("street cannot be empty")
+  validates_presence_of :city, :message => _("city cannot be empty")
+  validates_presence_of :zip, :message => _("zip cannot be empty")
+  validates_presence_of :state, :message => _("state cannot be empty")
+  validates_presence_of :university, :message => _("university cannot be empty")
+  validates_presence_of :faculty, :message => _("faculty cannot be empty")
+  validates_presence_of :studied_branch, :message => _("corridor cannot be empty")
+  validates_presence_of :birth_number, :message => _("birth number cannot be empty")
+  validates_presence_of :number, :message => _("street number cannot be empty")
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, 
-  :on => :create, :message => "Email nemá správný formát"
-  validates_uniqueness_of :birth_number, :message => "Vámi zadané rodné číslo již v systému existuje. Prosím kontaktujte <a href='mailto:pepe@gravastar.cz'>správce systému</a>."
+  :on => :create, :message => _("email does not have right format")
+  validates_uniqueness_of :birth_number, 
+  :message => _("birth number allready in database. Contact administrator")
   # validates if languages are not same
   def validate
-    errors.add_to_base("Jazyky musí být rozdílné") if language1 == language2
+    errors.add_to_base(_("languages have to be different")) if language1 == language2
   end
   # finishes candidate
   def finish!
