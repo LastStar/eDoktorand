@@ -2,6 +2,7 @@
 # Likewise will all the methods added be available for all controllers.
 require_dependency "login_system"
 class ApplicationController < ActionController::Base
+  before_filter :localize
   include LoginSystem
   model :user
   # get department ids
@@ -49,5 +50,33 @@ class ApplicationController < ActionController::Base
 		items << "#{stop_time.to_s}:00"
 		return items
 	end
+  private
+
+  def localize
+    # We will use instance vars for the locale so we can make use of them in
+    # the templates.
+    @charset  = 'utf-8'
+    @headers['Content-Type'] = "text/html; charset=#{@charset}"
+    # Here is a very simplified approach to extract the prefered language
+    # from the request. If all fails, just use 'en_EN' as the default.
+    if @request.env['HTTP_ACCEPT_LANGUAGE'].nil?
+      temp = []
+    else
+      temp = @request.env['HTTP_ACCEPT_LANGUAGE'].split(',').first.split('-') rescue []
+    end
+    language = temp.slice(0)
+    dialect  = temp.slice(1)
+    @language = language.nil? ? 'en' : language.downcase # default is en
+    # If there is no dialect use the language code ('en' becomes 'en_EN').
+    @dialect  = dialect.nil? ? @language : dialect
+    # The complete locale string consists of
+    # language_DIALECT (en_EN, en_GB, de_DE, ...)
+    @locale = "#{@language}_#{@dialect.upcase}"
+    @htmllang = @language == @dialect ? @language : "#{@language}-#{@dialect}"
+    # Finally, bind the textdomain to the locale. From now on every used
+    # _('String') will get translated into the right language. (Provided
+    # that we have a corresponding mo file in the right place).
+    bindtextdomain('messages', "#{RAILS_ROOT}/locale", @locale, @charset)
+  end
 		
 end

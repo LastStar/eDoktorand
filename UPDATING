@@ -1,3 +1,6 @@
 ﻿revision: 85 Thu May 26 12:36:55 CEST 2005: changed title's attribute name to label for some
 unification reasons. It's needed to drop table ;-(, but there is
 mechanism for recreate it easy. See dump/README 
+revision: 88 Fri May 27 16:49:58 CEST 2005: localization added to project.
+Please read http://manuals.rubyonrails.com/read/chapter/82 and ask me if you got
+any problems.

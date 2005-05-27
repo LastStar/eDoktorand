@@ -1,117 +1,105 @@
-<% unless @candidate.errors.empty? %>
-<div id='error'>
-Chyba:&nbsp;systém nebyl schopen uložit Vaše úpravy z nasledujících důvodů:
-<ul>
-<% @candidate.errors.each { |attr, message| %>
-     <li><%= message %></li>
-<% } %>
-</ul>
-</div>
-<% else %>
-<div class='notice'>
-   Všechny údaje jejichž popiska je červená a jsou označeny hvězdičkou, jsou povinné.
-</div>
-<% end %>
+<%= render_partial "error" %>
+<%= render_partial "notice" %>
 
 <%= form_tag :action => @action %>
   <fieldset id='personal'>
-    <legend>Osobní údaje</legend>
+    <legend><%= _("Personal informations") %></legend>
     <%= hidden_field 'candidate', 'id' %>
-    <label for='candidate_firstname' class='required'>jméno</label>
+    <label for='candidate_firstname' class='required'><%= _("firstname") %></label>
     <%= text_field 'candidate', 'firstname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for='candidate_lastname' class='required'>příjmení</label>
+    <label for='candidate_lastname' class='required'><%= _("lastname") %></label>
     <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for='candidate_title_before_id'>titul před jménem</label>
+    <label for='candidate_title_before_id'><%= _("prefix title") %></label>
     <%= select 'candidate', 'title_before_id', title_before_ids %><br /> 
-    <label for='candidate_title_after_id'>titul za jménem</label>
+    <label for='candidate_title_after_id'><%= _("suffix title") %></label>
     <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
     <label class='required'>datum narození</label>
     <%= date_select 'candidate', 'birth_on', :start_year => 1950, :end_year => 1983,
     :order => [:day, :month, :year], :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for='candidate_birth_at' class='required'>místo narození</label>
+    <label for='candidate_birth_at' class='required'><%= _("birth place") %></label>
     <%= text_field 'candidate', 'birth_at', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for='candidate_birth_number' class='required'>rodné číslo</label>
+    <label for='candidate_birth_number' class='required'><%= _("birth number") %></label>
     <%= text_field 'candidate', 'birth_number', 'size' => '11' %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for='candidate_state' class='required'>státní příslušnost</label>
+    <label for='candidate_state' class='required'><%= _("state") %></label>
     <%= text_field 'candidate', 'state', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
   <fieldset id='contact'>
-    <legend>Kontakt</legend>
-    <label for='candidate_email' class='required'>email</label>
+    <legend><%= _("Contact") %></legend>
+    <label for='candidate_email' class='required'><%= _("email") %></label>
     <%= text_field 'candidate', 'email', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for='candidate_phone'>telefon</label>
+    <label for='candidate_phone'><%= _("phone") %></label>
     <%= text_field 'candidate', 'phone', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
   <fieldset id='address'>
-    <legend>Adresa trvalého bydliště</legend>
-    <label for='candidate_street' class='required'>ulice</label>
+    <legend><%= _("habitat address") %></legend>
+    <label for='candidate_street' class='required'><%= _("street") %></label>
     <%= text_field 'candidate', 'street', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br />  
-    <label for='candidate_street' class='required'>číslo popisné</label>
+    <label for='candidate_street' class='required'><%= _("street number") %></label>
     <%= text_field 'candidate', 'number', 'size' => '6' %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for='candidate_city' class='required'>obec</label>
+    <label for='candidate_city' class='required'><%= _("city") %></label>
     <%= text_field 'candidate', 'city', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for='candidate_zip' class='required'>psč</label>
+    <label for='candidate_zip' class='required'><%= _("zip") %></label>
     <%= text_field 'candidate', 'zip', 'size' => '10' %><span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
   <fieldset id='postal_address'>
-    <legend>Korespondenční adresa - nevyplňovat je li shodná s bydlištěm</legend>
-    <label for='candidate_postal_street' >ulice</label>
+    <legend><%= _("Postal address") %> - <%= _("don't fill if identic to habitat address") %></legend>
+    <label for='candidate_postal_street' > <%= _("street") %></label>
     <%= text_field 'candidate', 'postal_street', 'size' => '30' %><br /> 
-    <label for='candidate_postal_number' >číslo popisné</label>
+    <label for='candidate_postal_number' ><%= _("street number") %></label>
     <%= text_field 'candidate', 'postal_number', 'size' => '6' %><br /> 
-    <label for='candidate_postal_city' >obec</label>
+    <label for='candidate_postal_city' ><%= _("city") %></label>
     <%= text_field 'candidate', 'postal_city', 'size' => '30' %><br /> 
-    <label for='candidate_postal_zip'>psč</label>
+    <label for='candidate_postal_zip'><%= _("zip") %></label>
     <%= text_field 'candidate', 'postal_zip', 'size' => '10' %><br /> 
   </fieldset>
   <fieldset id='sholarship'>
-    <legend>Vzdělání</legend>
-    <label for="candidate_university" class='required'>univerzita</label>
+    <legend><%= _("Accomplishments") %></legend>
+    <label for="candidate_university" class='required'><%= _("university") %></label>
     <%= text_field 'candidate', 'university', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for="candidate_faculty" class='required'>fakulta</label>
+    <label for="candidate_faculty" class='required'><%= _("faculty") %></label>
     <%= text_field 'candidate', 'faculty', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for="candidate_studied_branch" class='required'>obor</label>
+    <label for="candidate_studied_branch" class='required'><%= _("corridor") %></label>
     <%= text_field 'candidate', 'studied_branch', 'size' => '30'  %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for="candidate_studied_specializatio">specializace</label>
+    <label for="candidate_studied_specializatio"><%= _("specialization") %></label>
     <%= text_field 'candidate', 'studied_specialization', 'size' => '30'  %><br /> 
-    <label class='required'>datum SZZ</label>
+    <label class='required'><%= _("date of study end") %></label>
     <%= date_select 'candidate', 'study_end', :start_year => 1970,
     :order => [:day, :month, :year], :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
   <fieldset id='practice'>
-    <legend>Zaměstnavatel</legend>
-    <label for="candidate_employer">zaměstnavatel</label>
+    <legend><%= _("Employer") %></legend>
+    <label for="candidate_employer"><%= _("employer") %></label>
     <%= text_field 'candidate', 'employer', 'size' => '30'  %><br /> 
-    <label for="candidate_employer_address">adresa</label>
+    <label for="candidate_employer_address"><%= _("address") %></label>
     <%= text_field 'candidate', 'employer_address', 'size' => '30'  %><br /> 
-    <label for="candidate_employer_email">email</label>
+    <label for="candidate_employer_email"><%= _("email") %></label>
     <%= text_field 'candidate', 'employer_email', 'size' => '30'  %><br /> 
-    <label for="candidate_employer_phone">telefon</label>
+    <label for="candidate_employer_phone"><%= _("phone") %></label>
     <%= text_field 'candidate', 'employer_phone', 'size' => '30'  %><br /> 
-    <label for="candidate_position">pracovní zařazení</label>
+    <label for="candidate_position"><%= _("job position") %></label>
     <%= text_field 'candidate', 'position', 'size' => '30'  %><br /> 
   </fieldset>
   <fieldset id='study'>
-    <legend>Přihláška ke studiu</legend>
+    <legend><%= _("Study registration") %></legend>
     <%= hidden_field 'candidate', 'coridor_id' %>
-    <label for="candidate_department_id">katedra</label>
+    <label for="candidate_department_id"><%= _("department") %></label>
     <%= select 'candidate', 'department_id', department_ids(@candidate.coridor.faculty.id) %><br /> 
-    <label for="candidate_study_id" class="required">forma studia</label>
+    <label for="candidate_study_id" class="required"><%= _("study form") %></label>
     <%= select 'candidate', 'study_id', study_ids %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for="candidate_language1" class="required">jazyky příjímacích zkoušek</label>
+    <label for="candidate_language1" class="required"><%= _("language exams") %></label>
     <%= select 'candidate', 'language1', language_ids %>
     <%= select 'candidate', 'language2', language_ids %><span class='required'>&nbsp;&lowast;</span ><br /> 
-    <label for="candidate_study_theme">tématický okruh</label>
+    <label for="candidate_study_theme"><%= _("theme area") %></label>
     <%= text_field 'candidate', 'study_theme', 'size' => '30'  %><br /> 
   </fieldset>
   <fieldset id='note'>
-    <label for="candidate_note">poznámka</label>
+    <label for="candidate_note"><%= _("note") %></label>
     <%= text_area 'candidate', 'note', :cols => 40, :rows => 6 %>
   </fieldset>
   <fieldset id='action'>
-    <legend>Akce</legend>
-    <input type='submit' value='Další' />&nbsp;
-    <input type='reset' value='Vymazat' />
+    <legend><%= _("Action") %></legend>
+    <input type='submit' value='<%= _("Next") %>' />&nbsp;
+    <input type='reset' value='<%= _("Reset") %>' />
   </fieldset>
   <%= end_form_tag %>
   <%= javascript_include_tag "prototype" %>

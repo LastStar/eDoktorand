@@ -1,13 +1,17 @@
-<% if @flash['error'] %>
+<% unless @candidate.errors.empty? %>
 <div id='error'>
-Chyba:&nbsp;
+<%= _("Error") %>:¨
 <%= @flash['error'] %>
 <% if @candidate && !@candidate.errors.empty? %>
 <ul>
-<% @candidate.errors.each { |attr, message| %>
+<% @candidate.errors.each do |attr, message| %>
      <li><%= message %></li>
-<% } %>
+<% end %>
 </ul>
 <% end %>
+</div>
+<% else %>
+<div class='notice'>
+   <%= _("Fields in red are required") %>
 </div>
 <% end %>

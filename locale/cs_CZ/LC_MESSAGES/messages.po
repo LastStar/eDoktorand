@@ -1,0 +1,278 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2005-05-27 15:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Admittance process"
+msgstr "Přijímací řízení k doktorskému studiu"
+
+msgid "Admittance form for corridor"
+msgstr "Formulář přihlášky na obor "
+
+msgid "Admittance form - errors"
+msgstr "Formulář přihlášky - nedostatky"
+
+msgid "Provided informations contains errors"
+msgstr "Ve Vámi zadaných informacích jsou následující chyby"
+
+msgid "Check submited"
+msgstr "Kontrola zadaného"
+
+msgid ""
+"Please check what you submited. Then folow guide on the bottom of the page"
+msgstr ""
+"Prohlédněte si pozorně Vámi zadané informace. Poté postupujte podle návodu "
+"ve spodní části stránky."
+
+msgid "print"
+msgstr "tisk"
+
+msgid "Fields in red are required"
+msgstr "Vyplňte prosím všechny údaje, jejichž popiska je červená"
+
+msgid "Correct admit form"
+msgstr "Oprava přihlášky"
+
+msgid "Admit form registered"
+msgstr "Přihláška zaregistrována"
+
+msgid "Czech republic"
+msgstr "Česká republika"
+
+msgid "Czech agriculture university"
+msgstr "Česká zemědělská univerzita v Praze"
+
+msgid "error"
+msgstr "chyba"
+
+msgid "notice"
+msgstr "poznámka"
+
+msgid "Your application form have been registered"
+msgstr "Vaše přihláška byla zaregistrována."
+
+msgid "fill another form"
+msgstr "vyplnit další přihlášku"
+
+msgid "After clicking the name of faculty, list of corridors  will be shown"
+msgstr "Po kliknutí na fakultu se Vám zobrazí všechny obory pro ni."
+
+msgid "documents"
+msgstr "dokumenty"
+
+msgid ""
+"There is error in application. Please contact system administrator on "
+"address:"
+msgstr "V aplikaci se vyskytla chyba, prosím uvědomte správce systému na adrese: "
+
+msgid "Czech agriculture university in Prague"
+msgstr "Česká zemědělská univerzita v Praze"
+
+msgid "Faculty"
+msgstr "Fakulta"
+
+msgid "Appllication form for doctoral study"
+msgstr "Přihláška ke studiu v doktorském studijním programu"
+
+msgid "Signature"
+msgstr "Podpis"
+
+msgid ""
+"If above informations are right <a href='javascript:window.print()'>print</"
+"a> this page and together with printed curriculum vitae, photo copy of "
+"documents about accomplishment (diploma, final exam documents), proof of the "
+"payment send it to Department of science and research. Address:"
+msgstr "Jestliže tyto informace souhlasí <a href='javascript:window.print()'>vytiskněte</a>"
+" si tuto stránku a spolu s vytištěným životopisem, fotokopiemi dokladů o VŠ vzdělání (diplom,"
+" osvědčení o státní zkoušce), dokladu o zaplacení poplatku je zašlete na adresu oddělení"
+" pro vědu a výkum na adresu:"
+
+msgid "Faculty of Forestry and Environment"
+msgstr "Fakulta lesnická a environmentální"
+
+msgid "dep. s&r"
+msgstr "odd. VaV"
+
+msgid "Kamycka 1176"
+msgstr "Kamýcká 1176"
+
+msgid "165 21 Praha 6 - Suchdol."
+msgstr "165 21 Praha 6 - Suchdol."
+
+msgid "If they are not right"
+msgstr "Pokud nesouhlasí"
+
+msgid "correct"
+msgstr "opravte"
+
+msgid "them, please."
+msgstr "je prosím."
+
+msgid "If you"
+msgstr "Pokud"
+
+msgid "finish"
+msgstr "ukončíte"
+
+msgid "you will be registered and noticed about all events"
+msgstr "práci s aplikací, budete zaregistrován/-a. V tomto případě Vás budeme informovat"
+" o všech důležitých událostech."
+
+msgid "Thank you for spent time and wish good luck"
+msgstr "Děkujeme Vám za strávený čas a přejeme hodně štěstí."
+
+msgid "Full name"
+msgstr "Jméno a příjmení"
+
+msgid "Birth date and place"
+msgstr "Datum a místo narození"
+
+msgid "Birth number"
+msgstr "Rodné číslo"
+
+msgid "State"
+msgstr "Státní příslušnost"
+
+msgid "habitat address"
+msgstr "adresa"
+
+msgid "email"
+msgstr "email"
+
+msgid "phone"
+msgstr "telefon"
+
+msgid "Postal address"
+msgstr "Korespondenční adresa"
+
+msgid "University"
+msgstr "Univerzita"
+
+msgid "corridor"
+msgstr "obor"
+
+msgid "date of study end"
+msgstr "datum SZZ"
+
+msgid "Employer"
+msgstr "Zaměstnavatel"
+
+msgid "address"
+msgstr "adresa"
+
+msgid "job position"
+msgstr "pracovní zařazení"
+
+msgid "Corridor"
+msgstr "Obor"
+
+msgid "Department"
+msgstr "Katedra"
+
+msgid "Study form"
+msgstr "Forma studia"
+
+msgid "Exam languages"
+msgstr "Jazyky příjímacích zkoušek"
+
+msgid "Theme area"
+msgstr "Tématický okruh"
+
+msgid "Personal informations"
+msgstr "Osobní údaje"
+
+msgid "firstname"
+msgstr "jméno"
+
+msgid "lastname"
+msgstr "příjmení"
+
+msgid "prefix title"
+msgstr "titul před jménem"
+
+msgid "suffix title"
+msgstr "titul za jménem"
+
+msgid "birth place"
+msgstr "datum a místo narození"
+
+msgid "birth number"
+msgstr "rodné číslo"
+
+msgid "state"
+msgstr "státní příslušnost"
+
+msgid "contact"
+msgstr "kontakt"
+
+msgid "street"
+msgstr "ulice"
+
+msgid "street number"
+msgstr "rodné číslo"
+
+msgid "city"
+msgstr "obec"
+
+msgid "zip"
+msgstr "psč"
+
+msgid "don't fill if identic to habitat address"
+msgstr "nevyplňovat je li shodná s bydlištěm"
+
+msgid "accomplishments"
+msgstr "vzdělání"
+
+msgid "university"
+msgstr "univerzita"
+
+msgid "faculty"
+msgstr "fakulta"
+
+msgid "specialization"
+msgstr "specializace"
+
+msgid "employer"
+msgstr "zaměstnavatel"
+
+msgid "study registration"
+msgstr "přihláška ke studiu"
+
+
+msgid "department"
+msgstr "katedra"
+
+msgid "study form"
+msgstr "forma studia"
+
+
+msgid "language exams"
+msgstr "jazyky příjímacích zkoušek"
+
+msgid "theme area"
+msgstr "tématický okruh"
+
+msgid "note"
+msgstr "poznámka"
+
+msgid "action"
+msgstr "Akce"
+
+msgid "next"
+msgstr "další"
+
+msgid "reset"
+msgstr "vymazat"

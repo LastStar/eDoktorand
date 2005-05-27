@@ -1,5 +1,5 @@
 ﻿<div class='notice'>
-    Po kliknutí na fakultu se Vám zobrazí všechny obory pro ni.
+    <%= _("After clicking the name of faculty, list of corridors  will be shown") %>
 </div>
 <%= print_notice %>
 <% unless @faculties.empty? %>
@@ -9,7 +9,7 @@
     <li>
     <a href='#' onClick="show(<%= f.id %>)">Fakulta: <%= f.name %></a><br /> 
       <% unless f.documents.empty? %>
-      <b>dokumenty:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
+      <b><%= _("documents") %>:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
       <% end %>
       <ol class="hidden" id="<%= f.id %>">
       <% for c in f.coridors do %>
@@ -22,7 +22,7 @@
     <% end %>
   </ul>
 <% else %>
-<h3>V aplikaci se vyskytla chyba, prosím uvědomte správce systému na adrese: <a href="mailto:pepe@gravastar.cz">pepe@gravastar.cz</a ></h3>
+<h3><%= _("There is error in application. Please contact system administrator on address:") %><a href="mailto:pepe@gravastar.cz">pepe@gravastar.cz</a ></h3>
 <% end %>
 <script  type="text/javascript">
 function show(id) {

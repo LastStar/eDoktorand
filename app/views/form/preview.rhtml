@@ -1,26 +1,26 @@
 
   <div class="printHeader">
-    <h3>Česká zemědělská univerzita v Praze</h3>
-    <h3>Fakulta: <%= @candidate.coridor.faculty.name %></h3>
-    <h4>Přihláška ke studiu v doktorském studijním programu</h4>
+    <h3><%= _("Czech agriculture university in Prague") %></h3>
+    <h3><%= _("Faculty") %>: <%= @candidate.coridor.faculty.name %></h3>
+    <h4><%= _("Appllication form for doctoral study") %></h4>
   </div>
   <%= render 'shared/candidate_detail' %>
   <p>Datum: <b class="info"><%= Date.today.strftime("%d. %m. %Y") %></b></p>
   <hr/>
-  <p class='signature'>Podpis:</p>
+  <p class='signature'><%= _("Signature") %>:</p>
   <p class='instruction'>
-  Jestliže tyto informace souhlasí <a href="javascript:window.print()">vytiskněte</a> si tuto stránku a spolu s vytištěným životopisem, fotokopiemi dokladů o VŠ vzdělání (diplom, osvědčení o státní zkoušce), dokladu o zaplacení poplatku je zašlete na adresu oddělení pro vědu a výkum na adresu:<br /> 
-  Česká zemědělská univerzita v Praze<br /> 
-  Fakulta lesnická a environmentální, odd. VaV<br />
-  Kamýcká 1176<br /> 
-  165 21 Praha 6 - Suchdol. 
+  <%= _("If above informations are right <a href='javascript:window.print()'>print</a> this page and together with printed curriculum vitae, photo copy of documents about accomplishment (diploma, final exam documents), proof of the payment send it to Department of science and research. Address:") %><br /> 
+  <%= _("Czech agriculture university in Prague") %><br /> 
+  <%= _("Faculty of Forestry and Environment")%>, <%= _("dep. s&r") %> <br />
+  <%= _("Kamycka 1176") %><br /> 
+  <%= _("165 21 Praha 6 - Suchdol.") %> 
   </p>
   <p class='instruction'>
-  Pokud nesouhlasí <%= link_to "opravte", :action => 'correct', :id => @candidate.id  %> je prosím.
+  <%= _("If they are not right") %> <%= link_to _("correct"), :action => 'correct', :id => @candidate.id  %> <%= _("them, please.") %>
   </p>
   <p class='instruction'>
-  Pokud <%= link_to "ukončíte", :action => 'finish', :id => @candidate.id   %> práci s aplikací, budete zaregistrován/-a. V tomto případě Vás budeme informovat o všech důležitých událostech.
+  <%= _("If you") %> <%= link_to _("finish"), :action => 'finish', :id => @candidate.id   %> <%= _("you will be registered and noticed about all events") %>
   </p>
   <p class="instruction">
-  Děkujeme Vám za strávený čas a přejeme hodně štěstí.
+  <%= _("Thank you for spent time and wish good luck") %>
   </p>

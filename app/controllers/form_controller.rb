@@ -5,13 +5,13 @@ class FormController < ApplicationController
   # or logins for edit or check older adminition
   def index
     @faculties = Faculty.find_all
-    @title = "Přijímací řízení k doktorskému studiu"
+    @title = _("Admittance process")
   end
   # form details  
   def details
     prepare_candidate
     @action = 'save'
-    @title = "Formulář přihlášky na obor " + @candidate.coridor.name
+    @title = _("Admittance form for corridor") + @candidate.coridor.name
   end
   # preview what has been inserted
   def save
@@ -20,8 +20,8 @@ class FormController < ApplicationController
       preview
       render_action 'preview'
     else
-      @title = "Formulář přihlášky - nedostatky"
-      flash.now['error'] = "Ve Vámi zadaných informacích jsou následující chyby"
+      @title = _("Admittance form - errors")
+      flash.now['error'] = _("Provided informations contains errors")
       @action = 'save'
       render_action 'details'
     end
@@ -33,43 +33,43 @@ class FormController < ApplicationController
       preview
       render_action 'preview'
     else
-      @title = "Formulář přihlášky - nedostatky"
-      flash.now['error'] = "Ve vámi zadaných informacích jsou následující chyby"
-            @action = 'update'
+      @title = _("Admittance form - errors")
+      flash.now['error'] = _("Provided informations contains errors")
+      @action = 'update'
       render_action 'details'
     end
   end
   # preview information
   def preview
       if @candidate
-        @title = "Kontrola zadaného"
-        flash.now['notice'] = "Prohlídněte si pozorně Vámi zadané informace. Poté postupujte podle návodu ve spodní části stránky." 
+        @title = _("Check submited")
+        flash.now['notice'] = _("Please check what you submited. Then folow guide on the bottom of the page") 
       else
         @candidate = Candidate.find(@params['id'])
-        @title = "Tisk"
+        @title = _("Print")
       end
   end
   # correct details
   def correct
     @candidate = Candidate.find(@params['id'])
-    flash.now['notice'] = 'Vyplňte prosím všechny údaje, jejichž popiska je červená'
+    flash.now['notice'] = _("Fields in red are required")
     @action = 'update'
-    @title = "Oprava přihlášky"
+    @title = _("Correct admit form")
     render_action 'details'
   end
   # finish submition
   def finish
     @candidate = Candidate.find(@params['id'])
     @candidate.finish!
-    @title = "Přihláška zaregistrována"
+    @title = _("Admit form registered")
   end
   private
   # prepares candidate with some preloaded values
   def prepare_candidate
     @candidate = Candidate.new do |c| 
       c.coridor = Coridor.find(@params['id'])
-      c.state = "Česká republika"
-      c.university = "Česká zemědělská univerzita v Praze"
+      c.state = _("Czech republic")
+      c.university = _("Czech agriculture university")
       c.faculty = c.coridor.faculty.name
     end
   end
