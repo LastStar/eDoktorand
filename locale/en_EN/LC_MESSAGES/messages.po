@@ -346,3 +346,18 @@ msgid ""
 "On the top right of this page is menu with actions available to you at this "
 "moment."
 msgstr ""
+
+msgid "Candidate was changed"
+msgstr ""
+
+msgid "Candidate "
+msgstr ""
+
+msgid " is ready for application form"
+msgstr ""
+
+msgid "e-mail sent"
+msgstr ""
+
+msgid "Candidates"
+msgstr ""

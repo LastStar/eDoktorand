@@ -362,3 +362,18 @@ msgid ""
 "moment."
 msgstr "Vpravo nahoře se nachází menu s možnými akcemi, které jsou pro Vás v"
 " této chvíli přístupné."
+
+msgid "Candidate was changed"
+msgstr "Uchazeč byl opraven"
+
+msgid "Candidate "
+msgstr "Uchazeč "
+
+msgid " is ready for application form"
+msgstr " je připraven na příjimací zkoušky"
+
+msgid "e-mail sent"
+msgstr "e-mail odeslán"
+
+msgid "Candidates"
+msgstr "Uchazeči o studium"

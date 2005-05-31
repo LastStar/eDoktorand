@@ -43,7 +43,7 @@ class CandidatesController < ApplicationController
   def update
     @candidate = Candidate.find(@params['candidate']['id'])
     if @candidate.update_attributes(@params['candidate'])
-      flash['notice'] = 'Uchazeč byl opraven'
+      flash['notice'] = _('Candidate was changed')
       redirect_to :action => 'show', :id => @candidate.id
     else
       render_action 'edit'
@@ -79,7 +79,7 @@ class CandidatesController < ApplicationController
 		@candidate = Candidate.find(@params['id'])
 		Notifications::deliver_admit_candidate(@candidate)
 		@candidate.admit!
-		render_text 'mail odeslán'
+		render_text 'e-mail sent'
 	end
 	
 	# finishes admittance
@@ -90,7 +90,7 @@ class CandidatesController < ApplicationController
   def ready
     candidate = Candidate.find(@params['id'])
     candidate.ready!
-    flash['notice'] = "Uchazeč #{candidate.display_name} je připraven na příjimací zkoušky"
+    flash['notice'] = _("Candidate ") + candidate.display_name + _(" is ready for application form")
     redirect_to :action => 'list'
   end
   # set candidate ready for admition
@@ -103,7 +103,7 @@ class CandidatesController < ApplicationController
 		@candidate = Candidate.find(@params['id'])
     @candidate.invite!
 		Notifications::deliver_invite_candidate(@candidate)
-		render_text 'mail odeslán'
+		render_text 'e-mail sent'
 	end
 	# shows invitation for candidate
 	def invitation
@@ -113,7 +113,7 @@ class CandidatesController < ApplicationController
   private
   # sets title of the controller
   def set_title
-    @title = 'Uchazeči o studium'
+    @title = 'Candidates'
   end
   # changes sorting
   def change_sort
