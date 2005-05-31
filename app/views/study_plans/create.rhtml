@@ -1,0 +1,16 @@
+﻿<p>
+<%= _("On this page you are starting to create your study plan. Remember that
+consulting it with your tutor is highly recommended.") %>
+</p>
+<p>
+  <%= _("So first step is to fill title of the disert theme and its defense
+  semester.") %>
+</p>
+<%= start_form_tag :action => 'save_disert' %>	
+<%= hidden_field 'disert_theme', 'index_id' %>
+<label for="disert_theme_title"><%= _("title") %>:</label>
+<%= text_field 'disert_theme', 'title' %><br/>
+<label for="candidate_study_id"><%= _("semester of disert theme defense") %></label>
+<%= select 'disert_theme', 'finishing_to', 5..6 %><br/>
+<%= submit_tag _("next") %>
+<%= end_form_tag %>

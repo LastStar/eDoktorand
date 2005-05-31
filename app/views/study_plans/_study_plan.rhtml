@@ -1,0 +1,20 @@
+<ul>
+  <li>
+   <%= _("Disert theme") %>: <%= study_plan.index.disert_theme.title %>
+   &mdash; <%= study_plan.index.disert_theme.finishing_to %>. <%= _("semester") %>
+  </li>
+  <li>
+  <%= _("Final exam") %>: <%= study_plan.finishing_to %>. <%= _("semester") %>
+  </li>
+  <li>
+    <%= _("Subjects") %>
+    <ul>
+      <% for subject in study_plan.plan_subjects %>
+      <li>
+        <%= subject.subject.label %> &mdash; <%= subject.finishing_on %>. <%= _("semester") %>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
+

@@ -195,13 +195,13 @@ CREATE TABLE people (
 DROP TABLE indexes;
 CREATE TABLE indexes (
   id integer primary key,
-  -- year integer, -- should be computed in class?
   study_plan_id integer,
   student_id integer,
   department_id integer,
   coridor_id integer,
   disert_theme_id integer,
   tutor_id integer,
+  study_id integer,
   created_on timestamp,
   updated_on timestamp
 );
@@ -215,12 +215,12 @@ CREATE TABLE study_plans (
   id integer primary key,
   index_id integer,
   actual integer,
-  created_on timestamp,
-  updated_on timestamp,
+  finishing_to integer,
   admited_on timestamp,
   canceled_on timestamp,
-  approved_on timestamp
-  -- status_id integer -- deprecated in favor of method driven checks
+  approved_on timestamp,
+  created_on timestamp,
+  updated_on timestamp
 );
 
 --
@@ -232,7 +232,7 @@ CREATE TABLE plan_subjects (
   id integer primary key,
   study_plan_id integer,
   subject_id integer,
-  finishing_to timestamp,
+  finishing_on integer,
   created_on timestamp,
   updated_on timestamp
 );
@@ -260,7 +260,7 @@ CREATE TABLE subjects (
 DROP TABLE external_subject_details;
 CREATE TABLE external_subject_details (
   id integer primary key,
-  subject_id integer,
+  external_subject_id integer,
   university varchar(1024),
   person varchar (256),
   created_on timestamp,
@@ -381,7 +381,7 @@ CREATE TABLE disert_themes (
   title varchar(100),
   index_id integer,
   methodology_file varchar(30),
-  finishing_on timestamp,
+  finishing_to integer,
   created_on timestamp,
   updated_on timestamp
 );

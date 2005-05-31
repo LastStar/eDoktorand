@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2005-05-27 17:42+0200\n"
+"POT-Creation-Date: 2005-05-28 12:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Print"
 msgstr ""
 
-#: app/controllers/form_controller.rb:55 /tmp/erb-gettext587.0:15
+#: app/controllers/form_controller.rb:55 /tmp/erb-gettext1986.0:15
 msgid "Fields in red are required"
 msgstr ""
 
@@ -62,6 +62,14 @@ msgstr ""
 
 #: app/controllers/form_controller.rb:72
 msgid "Czech agriculture university"
+msgstr ""
+
+#: app/controllers/study_plans_controller.rb:9
+msgid "Study plan"
+msgstr ""
+
+#: app/controllers/study_plans_controller.rb:18
+msgid "Those pages are only for students"
 msgstr ""
 
 #: app/models/candidate.rb:11
@@ -132,11 +140,11 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: app/views/form/details.rhtml:3 /tmp/erb-gettext587.0:51
+#: app/views/form/details.rhtml:3 /tmp/erb-gettext1986.0:51
 msgid "Notice"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:2
+#: /tmp/erb-gettext1986.0:2
 msgid "Your application form have been registered"
 msgstr ""
 
@@ -144,11 +152,11 @@ msgstr ""
 msgid "Fill another form"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:2
+#: /tmp/erb-gettext1986.0:2
 msgid "After clicking the name of faculty, list of corridors  will be shown"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:12
+#: /tmp/erb-gettext1986.0:12
 msgid "documents"
 msgstr ""
 
@@ -156,63 +164,63 @@ msgstr ""
 msgid "There is error in application. Please contact system administrator on address:"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:3 /tmp/erb-gettext587.0:13
+#: /tmp/erb-gettext1986.0:3 /tmp/erb-gettext1986.0:13
 msgid "Czech agriculture university in Prague"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:4 /tmp/erb-gettext587.0:25
+#: /tmp/erb-gettext1986.0:4 /tmp/erb-gettext1986.0:25
 msgid "Faculty"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:5
+#: /tmp/erb-gettext1986.0:5
 msgid "Appllication form for doctoral study"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:10
+#: /tmp/erb-gettext1986.0:10
 msgid "Signature"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:12
+#: /tmp/erb-gettext1986.0:12
 msgid "If above informations are right <a href='javascript:window.print()'>print</a> this page and together with printed curriculum vitae, photo copy of documents about accomplishment (diploma, final exam documents), proof of the payment send it to Department of science and research. Address:"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:14
+#: /tmp/erb-gettext1986.0:14
 msgid "Faculty of Forestry and Environment"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:14
+#: /tmp/erb-gettext1986.0:14
 msgid "dep. s&r"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:15
+#: /tmp/erb-gettext1986.0:15
 msgid "Kamycka 1176"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:16
+#: /tmp/erb-gettext1986.0:16
 msgid "165 21 Praha 6 - Suchdol."
 msgstr ""
 
-#: /tmp/erb-gettext587.0:19
+#: /tmp/erb-gettext1986.0:19
 msgid "If they are not right"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:19
+#: /tmp/erb-gettext1986.0:19
 msgid "correct"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:19
+#: /tmp/erb-gettext1986.0:19
 msgid "them, please."
 msgstr ""
 
-#: /tmp/erb-gettext587.0:22
+#: /tmp/erb-gettext1986.0:22
 msgid "If you"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:22
+#: /tmp/erb-gettext1986.0:22
 msgid "finish"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:22
+#: /tmp/erb-gettext1986.0:22
 msgid "you will be registered and noticed about all events"
 msgstr ""
 
@@ -220,15 +228,15 @@ msgstr ""
 msgid "Thank you for spent time and wish good luck"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:13
+#: /tmp/erb-gettext1986.0:13
 msgid "welcome page"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:14 /tmp/erb-gettext587.0:15
+#: /tmp/erb-gettext1986.0:14 /tmp/erb-gettext1986.0:15
 msgid "logoff"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:15
+#: /tmp/erb-gettext1986.0:15
 msgid "do you really want to"
 msgstr ""
 
@@ -236,77 +244,77 @@ msgstr ""
 msgid "create study plan"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:3
+#: /tmp/erb-gettext1986.0:3
 msgid "Full name"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:4
+#: /tmp/erb-gettext1986.0:4
 msgid "Birth date and place"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:5
+#: /tmp/erb-gettext1986.0:5
 msgid "Birth number"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:6
+#: /tmp/erb-gettext1986.0:6
 msgid "State"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:10 /tmp/erb-gettext587.0:34
+#: /tmp/erb-gettext1986.0:10 /tmp/erb-gettext1986.0:34
 msgid "habitat address"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:12 /tmp/erb-gettext587.0:34 /tmp/erb-gettext587.0:28
-#: /tmp/erb-gettext587.0:75
+#: /tmp/erb-gettext1986.0:12 /tmp/erb-gettext1986.0:34 /tmp/erb-gettext1986.0:28
+#: /tmp/erb-gettext1986.0:75
 msgid "email"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:13 /tmp/erb-gettext587.0:34 /tmp/erb-gettext587.0:30
-#: /tmp/erb-gettext587.0:77
+#: /tmp/erb-gettext1986.0:13 /tmp/erb-gettext1986.0:34 /tmp/erb-gettext1986.0:30
+#: /tmp/erb-gettext1986.0:77
 msgid "phone"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:19 /tmp/erb-gettext587.0:45
+#: /tmp/erb-gettext1986.0:19 /tmp/erb-gettext1986.0:45
 msgid "Postal address"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:24
+#: /tmp/erb-gettext1986.0:24
 msgid "University"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:26 /tmp/erb-gettext587.0:61
+#: /tmp/erb-gettext1986.0:26 /tmp/erb-gettext1986.0:61
 msgid "corridor"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:27 /tmp/erb-gettext587.0:65
+#: /tmp/erb-gettext1986.0:27 /tmp/erb-gettext1986.0:65
 msgid "date of study end"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:32 /tmp/erb-gettext587.0:70
+#: /tmp/erb-gettext1986.0:32 /tmp/erb-gettext1986.0:70
 msgid "Employer"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:33 /tmp/erb-gettext587.0:73
+#: /tmp/erb-gettext1986.0:33 /tmp/erb-gettext1986.0:73
 msgid "address"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:35 /tmp/erb-gettext587.0:79
+#: /tmp/erb-gettext1986.0:35 /tmp/erb-gettext1986.0:79
 msgid "job position"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:40
+#: /tmp/erb-gettext1986.0:40
 msgid "Corridor"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:41
+#: /tmp/erb-gettext1986.0:41
 msgid "Department"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:42
+#: /tmp/erb-gettext1986.0:42
 msgid "Study form"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:43
+#: /tmp/erb-gettext1986.0:43
 msgid "Exam languages"
 msgstr ""
 
@@ -314,114 +322,122 @@ msgstr ""
 msgid "Theme area"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:6
+#: /tmp/erb-gettext1986.0:6
 msgid "Personal informations"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:8
+#: /tmp/erb-gettext1986.0:8
 msgid "firstname"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:10
+#: /tmp/erb-gettext1986.0:10
 msgid "lastname"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:12
+#: /tmp/erb-gettext1986.0:12
 msgid "prefix title"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:14
+#: /tmp/erb-gettext1986.0:14
 msgid "suffix title"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:19
+#: /tmp/erb-gettext1986.0:19
 msgid "birth place"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:21
+#: /tmp/erb-gettext1986.0:21
 msgid "birth number"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:23
+#: /tmp/erb-gettext1986.0:23
 msgid "state"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:27
+#: /tmp/erb-gettext1986.0:27
 msgid "Contact"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:35 /tmp/erb-gettext587.0:46
+#: /tmp/erb-gettext1986.0:35 /tmp/erb-gettext1986.0:46
 msgid "street"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:37 /tmp/erb-gettext587.0:48
+#: /tmp/erb-gettext1986.0:37 /tmp/erb-gettext1986.0:48
 msgid "street number"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:39 /tmp/erb-gettext587.0:50
+#: /tmp/erb-gettext1986.0:39 /tmp/erb-gettext1986.0:50
 msgid "city"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:41 /tmp/erb-gettext587.0:52
+#: /tmp/erb-gettext1986.0:41 /tmp/erb-gettext1986.0:52
 msgid "zip"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:45
+#: /tmp/erb-gettext1986.0:45
 msgid "don't fill if identic to habitat address"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:56
+#: /tmp/erb-gettext1986.0:56
 msgid "Accomplishments"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:57
+#: /tmp/erb-gettext1986.0:57
 msgid "university"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:59
+#: /tmp/erb-gettext1986.0:59
 msgid "faculty"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:63
+#: /tmp/erb-gettext1986.0:63
 msgid "specialization"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:71
+#: /tmp/erb-gettext1986.0:71
 msgid "employer"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:83
+#: /tmp/erb-gettext1986.0:83
 msgid "Study registration"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:85
+#: /tmp/erb-gettext1986.0:85
 msgid "department"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:87
+#: /tmp/erb-gettext1986.0:87
 msgid "study form"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:89
+#: /tmp/erb-gettext1986.0:89
 msgid "language exams"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:92
+#: /tmp/erb-gettext1986.0:92
 msgid "theme area"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:96
+#: /tmp/erb-gettext1986.0:96
 msgid "note"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:100
+#: /tmp/erb-gettext1986.0:100
 msgid "action"
 msgstr ""
 
-#: /tmp/erb-gettext587.0:101
+#: /tmp/erb-gettext1986.0:101
 msgid "next"
 msgstr ""
 
 #: app/views/students/_form.rhtml:102
 msgid "reset"
+msgstr ""
+
+#: /tmp/erb-gettext1986.0:1
+msgid "Welcome to edoktorand application. Please check all information on this page for correctness."
+msgstr ""
+
+#: app/views/subjects/_form.rhtml:3
+msgid "On the top right of this page is menu with actions available to you at this moment."
 msgstr ""

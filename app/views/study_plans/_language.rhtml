@@ -1,0 +1,6 @@
+
+<%= content_tag('select', options_for_select(language_subject_ids), 
+{'id' => "language_#{counter}",'name' => "language[#{counter}]"}) %>
+&mdash;<%= content_tag('select', options_for_select(1..4), 
+{'id' => "language_semester_#{counter}",'name' => "language_semester[#{counter}]"}) %>
+<%= "." + _("semester") %>

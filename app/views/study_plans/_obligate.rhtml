@@ -1,0 +1,6 @@
+
+<label><%= plan_subject.subject.label %></label>
+<%= content_tag('select', options_for_select(1..4), { 'id' => 
+"obligate_semester_#{plan_subject.subject.id}",'name' =>
+"obligate_semester[#{plan_subject.id}]"}) %>
+<%= "." + _("semester") %>

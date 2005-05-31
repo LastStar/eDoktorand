@@ -11,7 +11,8 @@
 	<% if @session['user'] %>
   <div class='right'>
     <%= link_to_unless_current(_("welcome page"), :action => 'index') {} %>
-    <%= link_to_unless_current(_("logoff"), {:controller => 'account', :action => 'logout'},
+    <%= link_to_unless_current(_("logoff"),
+     {:controller => 'account', :action => 'logout'},
     :confirm =>  _("do you really want to") + _("logoff") + '?'){} %>
     <% unless @student.index.study_plan %>
       <%= link_to_unless_current(_("create study plan"), :action => 'create', :id => @student) %>

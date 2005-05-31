@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 90\n"
-"POT-Creation-Date: 2005-05-27 17:42+0200\n"
+"POT-Creation-Date: 2005-05-28 12:00+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -53,6 +53,12 @@ msgstr "Česká republika"
 
 msgid "Czech agriculture university"
 msgstr "Česká zemědělská univerzita v Praze"
+
+msgid "Study plan"
+msgstr ""
+
+msgid "Those pages are only for students"
+msgstr ""
 
 msgid "firstname can not be empty"
 msgstr ""
@@ -329,4 +335,14 @@ msgid "next"
 msgstr ""
 
 msgid "reset"
+msgstr ""
+
+msgid ""
+"Welcome to edoktorand application. Please check all information on this page "
+"for correctness."
+msgstr ""
+
+msgid ""
+"On the top right of this page is menu with actions available to you at this "
+"moment."
 msgstr ""

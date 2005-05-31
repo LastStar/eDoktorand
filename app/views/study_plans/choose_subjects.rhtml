@@ -1,0 +1,79 @@
+<%= render_partial 'plan_error' %>
+<p>
+<%= _("On this page you have to choose your voluntary subjects and terms for
+    finishing all subjects") %>
+</p>
+<%= start_form_tag(:action => 'save')%>
+<fieldset>
+<%= hidden_field 'study_plan', 'index_id' %>
+<label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
+<%= select 'study_plan', 'finishing_to', 5..6 %>
+<%= "." + _("semester") %>
+</fieldset>
+<fieldset>
+<legend><%= _("Obligate subjects") %></legend>
+<% for plan_subject in @obligate_subjects do %>
+<%= render_partial 'obligate', :plan_subject => plan_subject %>
+<br/> 
+<% end %>
+</fieldset>
+<fieldset>
+<legend><%= _("Language subjects") %></legend>
+<% (1..2).each do |counter| %>
+<label>
+<%= counter.to_s + ".&nbsp;"  + _("language") %>
+</label>
+<%= render_partial 'language', :counter => counter %>
+<br/> 
+<% end %>
+</fieldset>
+<fieldset>
+<legend><%= _("Voluntary subjects") %></legend>
+<% (1..3).each do |counter| %>
+<%= render_partial 'voluntary', :counter => counter %>
+<% end %>
+
+</fieldset>
+<%= submit_tag(_("next"), :onclick => 'check_submit(); return false;') %>
+<%= end_form_tag %>
+
+<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag "study_plan" %>
+<script type="text/javascript">
+function check_submit() {
+  ok = true;
+  form = document.forms[0];
+  if(form.language_1.value 
+      == form.language_2.value) {
+    alert('<%= _("languages be have to be different") %>');
+    ok = false;
+  }
+  if((form.voluntary_1.value != 0 &&
+        (form.voluntary_1.value == 
+         form.voluntary_2.value || 
+         form.voluntary_1.value ==
+         form.voluntary_3.value)) ||
+      (form.voluntary_2.value != 0 &&
+       (form.voluntary_2.value ==
+        form.voluntary_3.value))) {
+    alert('<%= _("voluntary subjects have to be different") %>');
+    ok = false;
+  }
+  if((form.voluntary_1 == 0 && form.voluntary_subject_1.value == '') ||
+      (form.voluntary_2 == 0 && form.voluntary_subject_2.value == '') ||
+      (form.voluntary_3 == 0 && form.voluntary_subject_3.value == '')) {
+    alert('<%= _("external subjects university cannot be empty") %>');
+    ok = false;
+  }
+  if((form.voluntary_1.value == 0 &&
+     form.voluntary_university_1.value == '') ||
+      (form.voluntary_2.value == 0 &&
+       form.voluntary_university_2.value == '') ||
+      (form.voluntary_3.value == 0 &&
+       form.voluntary_university_3.value == '')) {
+    alert('<%= _("external subjects university cannot be empty") %>');
+    ok = false;
+  }
+  if(ok) form.submit();
+}
+</script>

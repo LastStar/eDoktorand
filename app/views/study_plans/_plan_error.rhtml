@@ -1,0 +1,11 @@
+<% if @flash[:errors] and !@flash[:errors].empty? %>
+<div id='error'>
+<ul>
+<% for error in @flash[:errors] %>
+  <li>
+  <%= error %>
+  </li>
+<% end %>
+</ul>
+<% end %>
+</div>

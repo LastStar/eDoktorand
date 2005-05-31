@@ -1,5 +1,6 @@
 class AccountController < ApplicationController
   model   :user
+  model   :student
   include LoginSystem
   layout  'employers'
   before_filter :login_required, :except => [:login, :logout, :error]

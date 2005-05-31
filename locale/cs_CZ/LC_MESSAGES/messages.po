@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 90\n"
-"POT-Creation-Date: 2005-05-27 17:42+0200\n"
+"POT-Creation-Date: 2005-05-28 12:00+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -37,7 +37,6 @@ msgstr ""
 "Prohlédněte si pozorně Vámi zadané informace. Poté postupujte podle návodu "
 "ve spodní části stránky."
 
-
 msgid "Print"
 msgstr "Tisk"
 
@@ -55,6 +54,12 @@ msgstr "Česká republika"
 
 msgid "Czech agriculture university"
 msgstr "Česká zemědělská univerzita v Praze"
+
+msgid "Study plan"
+msgstr "Studijní plán"
+
+msgid "Those pages are only for students"
+msgstr "Tyto stránky jsou pouze pro studenty"
 
 msgid "firstname can not be empty"
 msgstr "jméno nesmí být prazdné"
@@ -201,7 +206,6 @@ msgstr "odhlásit"
 msgid "do you really want to"
 msgstr "opravdu se chcete"
 
-
 msgid "create study plan"
 msgstr "nový studijní plán"
 
@@ -346,3 +350,15 @@ msgstr "další"
 
 msgid "reset"
 msgstr "vymazat"
+
+msgid ""
+"Welcome to edoktorand application. Please check all information on this page "
+"for correctness."
+msgstr "Vítejte v applikaci e-doktorand. Prosím zkontrolujte jestli údaje na této"
+" stránce odpovídají Vašim osobním údajům a údajům o Vašem studiu."
+
+msgid ""
+"On the top right of this page is menu with actions available to you at this "
+"moment."
+msgstr "Vpravo nahoře se nachází menu s možnými akcemi, které jsou pro Vás v"
+" této chvíli přístupné."

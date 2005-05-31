@@ -1,0 +1,121 @@
+--- 
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX11Y
+    id: "1"
+    label: obecná ekologie
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX14Y
+    id: "2"
+    label: ekologie stanovišť
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX15Y
+    id: "3"
+    label: metody studia ekosystémů
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX21Y
+    id: "4"
+    label: botanika obecná
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX22Y
+    id: "5"
+    label: botanika speciální
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX23Y
+    id: "6"
+    label: geobotanika
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX24Y
+    id: "7"
+    label: ekologie rostlin
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX32Y
+    id: "8"
+    label: zoologie obratlovců
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX33Y
+    id: "9"
+    label: entomologie
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX34Y
+    id: "10"
+    label: ekologie živočichů
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX35Y
+    id: "11"
+    label: ekologie hmyzu
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX36Y
+    id: "12"
+    label: ekologie ptáků
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX37Y
+    id: "13"
+    label: ekologie savců
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX38Y
+    id: "14"
+    label: zoogeografie
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX41Y
+    id: "15"
+    label: ochrana přírody
+- !ruby/object:Subject 
+  attributes: 
+    code: DLEX43Y
+    id: "16"
+    label: ochrana prostředí
+- !ruby/object:Subject 
+  attributes: 
+    code: DLUX01Y
+    id: "17"
+    label: krajinná ekologie
+- !ruby/object:Subject 
+  attributes: 
+    code: 
+    id: "18"
+    label: angličtina
+- !ruby/object:Subject 
+  attributes: 
+    code: 
+    id: "19"
+    label: francouzština
+- !ruby/object:Subject 
+  attributes: 
+    code: 
+    id: "20"
+    label: ruština
+- !ruby/object:Subject 
+  attributes: 
+    code: 
+    id: "21"
+    label: němčina
+- !ruby/object:Subject 
+  attributes: 
+    code: 
+    id: "22"
+    label: italština
+- !ruby/object:Subject 
+  attributes: 
+    code: 
+    id: "23"
+    label: "španělština"
+- !ruby/object:Subject 
+  attributes: 
+    code: 
+    id: "24"
+    label: "čeština"

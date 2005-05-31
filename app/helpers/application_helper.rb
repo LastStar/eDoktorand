@@ -1,4 +1,3 @@
-# The methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   # get department ids
   def department_ids(faculty_id = nil)
@@ -48,5 +47,15 @@ module ApplicationHelper
                   ts = Tutorship.find(:all)
           end
           ts.map {|ts| [ts.tutor.display_name, ts.tutor.id]}
+  end
+  # get language  subject ids
+  def language_subject_ids
+    LanguageSubject.find_all.map {|l| [l.subject.label, l.subject.id]}
+  end
+  # get voluntary subjects for corridor 
+  def voluntary_ids(coridor)
+    arr = [[_("external subject"), 0]]
+    arr.concat(Coridor.find(coridor).voluntary_subjects.map {|s|
+      [s.subject.label, s.subject_id]})
   end
 end

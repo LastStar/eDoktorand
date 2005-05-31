@@ -6,8 +6,8 @@ class Candidate < ActiveRecord::Base
   belongs_to :title_before, :class_name => 'Title', :foreign_key => 'title_before_id'
   belongs_to :title_after, :class_name => 'Title', :foreign_key => 'title_after_id'
   belongs_to :exam_term
-	belongs_to :tutor
-	has_one :admittance
+  belongs_to :tutor
+  has_one :admittance
   validates_presence_of :firstname, :message => _("firstname can not be empty")
   validates_presence_of :lastname, :message => _("lastname can not be empty")
   validates_presence_of :birth_at, :message => _("birth place cannot be empty")
@@ -36,8 +36,8 @@ class Candidate < ActiveRecord::Base
   end
   # returns name for displaying
   def display_name  
-		arr = []
-		arr << self.title_before.label if self.title_before
+    arr = []
+    arr << self.title_before.label if self.title_before
     arr = [ self.firstname, self.lastname]
     arr <<  self.title_after.label if self.title_after
     return arr.join(' ')
@@ -61,8 +61,8 @@ class Candidate < ActiveRecord::Base
   end
   # admits candidate to study. 
   def admit!
-		self.admited_on = Time.now
-		self.save
+    self.admited_on = Time.now
+    self.save
   end
   # checks if candidate is allready admited
   def admited?
@@ -72,33 +72,34 @@ class Candidate < ActiveRecord::Base
   # candidates details. 
   def enroll!
     # convert candidate to (student+index)
-		student = Student.new
-		student.firstname = self.firstname
-		student.lastname = self.lastname
-		student.birth_on = self.birth_on
-		student.birth_number = self.birth_number
-		student.state = self.state
-		student.birth_at = self.birth_at
-		student.title_before = self.title_before
-		student.title_after = self.title_after
-		student.save
-		
-		index = Index.new
-		index.student = student
-		index.department = self.department
-		index.coridor = self.coridor
-		index.tutor = self.tutor
-		index.save
-		
-    create_address(student.id)
-	  create_postal_address(student.id) if self.postal_city
-	  student.email = self.contact_email
-	  student.phone = self.contact_phone if self.phone 		
+    student = Student.new
+    student.firstname = self.firstname
+    student.lastname = self.lastname
+    student.birth_on = self.birth_on
+    student.birth_number = self.birth_number
+    student.state = self.state
+    student.birth_at = self.birth_at
+    student.title_before = self.title_before
+    student.title_after = self.title_after
+    student.save
 
-		# update candidate
-		self.enrolled_on = Time.now
-		self.student = student
-		self.save
+    index = Index.new
+    index.student = student
+    index.department = self.department
+    index.coridor = self.coridor
+    index.tutor = self.tutor
+    index.study = self.study
+    index.save
+
+    create_address(student.id)
+    create_postal_address(student.id) if self.postal_city
+    student.email = self.contact_email
+    student.phone = self.contact_phone if self.phone 		
+
+    # update candidate
+    self.enrolled_on = Time.now
+    self.student = student
+    self.save
   end
   # checks if candidate is allready enrolled
   def enrolled?

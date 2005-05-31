@@ -1,3 +1,12 @@
-<p>Vítejte v applikaci e-doktorand. Prosím zkontrolujte jestli údaje na této stránce odpovídají Vašim osobním údaji a údaji o Vašem studiu.</p> 
+<p><%= _("Welcome to edoktorand application. Please check all information on this page for correctness.") %></p> 
 
-<p>Vpravo nahoře se nachází menu s možnými akcemi, které jsou pro Vás v této chvíli přístupné.</p>
+<h5><%= _("Personal and study details") %></h5>
+<%= render_partial 'student_detail', :student => @student %>
+<% if @study_plan %>
+<h5><%= _("Study plan") %></h5>
+<div class='right'>
+  <%= link_to _("change"), :action => 'change' %>
+</div>
+<%= render_partial 'study_plan', :study_plan => @study_plan %>
+<% end %>
+<p><%= _("On the top right of this page is menu with actions available to you at this moment.") %></p>

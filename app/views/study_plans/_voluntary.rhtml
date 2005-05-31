@@ -1,0 +1,26 @@
+
+<label>
+<%= counter.to_s + ".&nbsp;" + _("voluntary subject") %>
+</label>
+<%= content_tag('select',
+options_for_select(voluntary_ids(@student.index.coridor.id), 0),
+ { 'id' => "voluntary_#{counter}",'name' => "voluntary[#{counter}]",
+ 'onChange' => "hide_on_internal(#{counter})"}) %>
+&mdash;<%= content_tag('select', options_for_select(1..4),
+ { 'id' => "voluntary_semester_#{counter}",'name' => "voluntary_semester[#{counter}]"})
+%>
+<%= "." + _("semester") %>
+<br/> 
+<div id="external<%= counter %>">
+<label><%= _("subject") %></label>
+<%= tag('input', { 'type' => 'text', 'id' => "voluntary_subject_#{counter}", 
+'name' => "voluntary_subject[#{counter}]"}) %>
+<br/> 
+<label><%= _("university") %></label>
+<%= tag('input', { 'type' => 'text', 'id' => "voluntary_university_#{counter}", 
+'name' => "voluntary_university[#{counter}]"}) %>
+<br/> 
+<label><%= _("examinator") %></label>
+<%= tag('input', { 'type' => 'text', 'id' => "voluntary_examinator_#{counter}", 
+'name' => "voluntary_examinator[#{counter}]"}) %>
+</div>

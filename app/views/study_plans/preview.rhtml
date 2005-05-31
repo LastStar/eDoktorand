@@ -1,0 +1,6 @@
+<p><%= _("Here you can see how does look your study plan. If it's how you
+intended confirm it please.") %></p>
+<%= render_partial 'study_plan', :study_plan => @study_plan %>
+<div id='links'>
+<%= link_to(_("confirm"), :action => :confirm) %>
+</div>
