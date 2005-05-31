@@ -43,6 +43,20 @@ module CandidatesHelper
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
+  # prints ordered sorting tags
+  def filtered_sort_tags(action, args, filtered_by, options = {})
+    links = ''
+    for arg in args
+      links << '&nbsp;'
+      if @session['category'] == arg.first 
+        arg.last << (@session['order'] != ' desc' ? ' &darr;' : ' &uarr;')
+      else
+        arg.last << ' &uarr;'
+      end
+      links << link_to(arg.last, :action => action, :filter => filtered_by, :category => arg.first)
+    end
+    content_tag('div', options[:message] + links, :class => :links)
+  end
   # prints sorting tags
   def filter_tags(action, args)
     links = ''
@@ -55,9 +69,13 @@ module CandidatesHelper
   # prints list links
   def list_links
     links = ''
-    links << "<a href='javascript:open_all_details()'>ukázat všechny kontakty</a>"
+    links << "<a href='javascript:open_all_contacts()'>ukázat kontakty</a>"
     links << '&nbsp;'
-    links << "<a href='javascript:close_all_details()'>skrýt všechny kontakty</a>"
+    links << "<a href='javascript:close_all_contacts()'>skrýt kontakty</a>"
+    links << '&nbsp;'
+    links << "<a href='javascript:open_all_histories()'>ukázat historii</a>"
+    links << '&nbsp;'
+    links << "<a href='javascript:close_all_histories()'>skrýt historii</a>"
     links << '&nbsp;'
     links << "<a href='javascript:print_details()'>vytisknout tento seznam</a>"
     if @pages and pagination_links(@pages)

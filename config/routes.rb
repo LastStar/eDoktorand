@@ -20,6 +20,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'candidates/all_by/:category', :controller => 'candidates', :action => 'list_all'
   # filter routes for candidate
   map.connect 'candidates/only/:filter', :controller => 'candidates', :action => 'list'
+  # sorted filter routes for candidate
+  map.connect 'candidates/only/:filter/by/:category', :controller => 'candidates', :action => 'list'
   # candidates for corridor
   map.connect 'candidates/in/:coridor', :controller => 'candidates', :action => 'list'
   # add path for prijimacky

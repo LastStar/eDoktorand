@@ -1,0 +1,16 @@
+<% if candidate.finished_on %>
+  <%= candidate.finished_on.strftime("%d. %m. %Y") %> vyplnil<br />
+<% end %>
+<% if candidate.ready_on %>
+  <%= candidate.ready_on.strftime("%d. %m. %Y") %> připraven<br />
+<% end %>
+<% if candidate.invited_on %>
+  <%= candidate.invited_on.strftime("%d. %m. %Y") %> pozván<br />
+<% end %>
+<% if candidate.admited_on %>
+  <%= candidate.admited_on.strftime("%d. %m. %Y") %> přijat<br />
+<% end %>
+<% if candidate.enrolled_on %>
+  <%= candidate.enrolled_on.strftime("%d. %m. %Y") %> zapsán<br />
+<% end %>
+

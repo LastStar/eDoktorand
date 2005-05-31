@@ -12,6 +12,7 @@ class CandidatesController < ApplicationController
   end
   # lists all candidates
   def list
+	 @filtered_by = @params['filter'] 
 		conditions = 'finished_on IS NOT NULL'
 		conditions << case @params['filter']
 									when 'ready': ' AND ready_on IS NOT NULL AND invited_on IS NULL'
