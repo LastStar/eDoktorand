@@ -51,7 +51,6 @@ class ApplicationController < ActionController::Base
 		return items
 	end
   private
-
   def localize
     # We will use instance vars for the locale so we can make use of them in
     # the templates.
@@ -78,5 +77,9 @@ class ApplicationController < ActionController::Base
     # that we have a corresponding mo file in the right place).
     bindtextdomain('messages', "#{RAILS_ROOT}/locale", @locale, @charset)
   end
-		
+  # checks if user is student. 
+  # if true creates @student variable with current student
+  def student_required
+    @student = @session['user'].person unless @student.kind_of?(Student)
+  end
 end

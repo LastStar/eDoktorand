@@ -5,6 +5,7 @@ class StudyPlansController < ApplicationController
   model :leader
   model :dean
   model :language_subject
+  model :external_subject
   layout 'students'
   before_filter :login_required, :student_required
   # page with basic informations for student 
@@ -109,11 +110,6 @@ class StudyPlansController < ApplicationController
     redirect_to :action => 'show', :id => @study_plan.id
   end
   private	
-  # checks if user is student. 
-  # if true creates @student variable with current student
-  def student_required
-    @student = @session['user'].person unless @student.kind_of?(Student)
-  end
   # gets obligate subjects from request
   def prepare_obligate
     @params['obligate_semester'].each do |key, value|

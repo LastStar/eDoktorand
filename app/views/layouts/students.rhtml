@@ -14,8 +14,13 @@
     <%= link_to_unless_current(_("logoff"),
      {:controller => 'account', :action => 'logout'},
     :confirm =>  _("do you really want to") + _("logoff") + '?'){} %>
-    <% unless @student.index.study_plan %>
-      <%= link_to_unless_current(_("create study plan"), :action => 'create', :id => @student) %>
+    <% if !@student.index.study_plan || @student.index.study_plan.canceled? %>
+      <%= link_to(_("create study plan"),
+      :action => 'create', :id => @student) %>
+    <% elsif @student.index.study_plan.approved? &&
+    !@student.index.disert_theme.has_methodology?  %>
+      <%= link_to(_("add methodology"), :action => 'methodology',
+      :controller => 'disert_themes', :id => @student.index.disert_theme)  %>
     <% end %>
   </div>
 	<% end %>

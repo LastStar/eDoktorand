@@ -382,7 +382,7 @@ CREATE TABLE disert_themes (
   id integer primary key,
   title varchar(100),
   index_id integer,
-  methodology_file varchar(30),
+  methodology_added_on timestamp,
   finishing_to integer,
   created_on timestamp,
   updated_on timestamp
