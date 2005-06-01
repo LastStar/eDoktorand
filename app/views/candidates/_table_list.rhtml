@@ -1,0 +1,40 @@
+<% @ids = [] %>
+<table class="list">
+	<tr>
+	  <th>
+	    <%= _('Candidate') %>
+	  </th>
+	  <th>
+	    <%= _('birth number') %>
+	  </th>
+	  <th>
+	  	 <%= _('coridor') %>
+	  </th>
+	  <th>
+	  	 <%= _('status') %>
+	  </th>
+	  <th width="100%" class="hidden">
+	  	 <%= _('Note') %>
+	  </th>
+	</tr>
+<% for candidate in @candidates  %>
+  <tr>
+    <td>
+      <%= candidate.display_name %>
+    </td>
+    <td>
+      <%= candidate.birth_number %>
+    </td>
+    <td>
+      <%= candidate.coridor.name %>
+    </td>
+    <td>
+ 	  <%= status_tag(candidate) %>
+    </td>
+    <td width="100%" class="hidden">
+    	 &nbsp;
+    </td>
+  </tr>
+  <% @ids << candidate.id %>
+<% end %>
+</table>

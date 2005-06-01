@@ -5,9 +5,9 @@ module ExamsHelper
 	  links << "<a href='new'>nový protokol</a>"
 	  links << '&nbsp;'
      if @params['prefix']
-       links << "<a href='list'>list</a>"
+     	 links << link_to(_("list"), {:prefix => nil})
 	  else
-  	  	 links << "<a href='table'>table</a>"
+ 	  	 links << link_to(_("table"), {:prefix => 'table_'})
      end
 	  links << '&nbsp;'
 	  links << "<a href='javascript:window.print();'>vytisknout tento seznam</a>"

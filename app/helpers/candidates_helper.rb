@@ -69,15 +69,23 @@ module CandidatesHelper
   # prints list links
   def list_links
     links = ''
-    links << "<a href='javascript:open_all_contacts()'>ukázat kontakty</a>"
-    links << '&nbsp;'
-    links << "<a href='javascript:close_all_contacts()'>skrýt kontakty</a>"
-    links << '&nbsp;'
-    links << "<a href='javascript:open_all_histories()'>ukázat historii</a>"
-    links << '&nbsp;'
-    links << "<a href='javascript:close_all_histories()'>skrýt historii</a>"
-    links << '&nbsp;'
-    links << "<a href='javascript:print_details()'>vytisknout tento seznam</a>"
+    if @params['prefix']
+      links << link_to(_("list"), {:prefix => nil})
+      links << '&nbsp;'
+      links << "<a href='javascript:window.print();'>vytisknout tento seznam</a>"
+    else
+    	links << "<a href='javascript:open_all_contacts()'>ukázat kontakty</a>"
+    	links << '&nbsp;'
+    	links << "<a href='javascript:close_all_contacts()'>skrýt kontakty</a>"
+    	links << '&nbsp;'
+    	links << "<a href='javascript:open_all_histories()'>ukázat historii</a>"
+    	links << '&nbsp;'
+    	links << "<a href='javascript:close_all_histories()'>skrýt historii</a>"
+    	links << '&nbsp;'
+	   links << link_to(_("table"), {:prefix => 'table_'})
+    	links << '&nbsp;'
+    	links << "<a href='javascript:print_details()'>vytisknout tento seznam</a>"
+	 end
     if @pages and pagination_links(@pages)
 	    links << '&nbsp;'                           
 	    links << link_to("předchozí stránka", { :page => @pages.current.previous }) if @pages.current.previous           
