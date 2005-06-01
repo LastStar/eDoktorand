@@ -148,6 +148,9 @@ div.fieldWithErrors label { color: red; }
   left: 20em;
   font-size: smaller;
 }
+pre.detail {
+  background-color: #ffffff; padding: 10px; padding-left: 30px; font-size: 11px;
+}
 .footer { padding-top: 10em; font-size: 10pt; }
 .signature { display: none; }
 .strut { display: none; }

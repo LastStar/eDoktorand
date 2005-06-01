@@ -1,0 +1,9 @@
+<% unless @exams.empty? %>
+<%= render_partial 'list' %>
+
+<%= exam_list_links %>                      
+<br />           
+<% else %>
+<h5>V systému nejsou žádní uchazeči podle Vašeho výběru</h5>
+<% end %>
+<br/>

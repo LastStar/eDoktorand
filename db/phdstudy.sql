@@ -268,18 +268,19 @@ CREATE TABLE external_subject_details (
 );
 
 --
--- Table structure for table exam
+-- Table structure for table exams
 --
 
-DROP TABLE exam;
-CREATE TABLE exam (
+DROP TABLE exams;
+CREATE TABLE exams (
   id integer primary key,
   index_id integer,
   first_examinator_id integer,
   second_examinator_id integer,
   result integer,
-  questions varchar(100),
+  questions text,
   subject_id integer,
+  created_by integer,
   created_on timestamp,
   updated_on timestamp
 );

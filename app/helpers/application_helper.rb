@@ -48,6 +48,24 @@ module ApplicationHelper
           end
           ts.map {|ts| [ts.tutor.display_name, ts.tutor.id]}
   end
+  # get examinator ids
+  def examinator_ids
+    Person.find(:all).map {|p| [p.display_name, p.id]}
+  end
+  # get examinator ids
+  # allows null
+  def examinator_null_ids
+    arr = [['---', '0']]
+    arr.concat(Person.find(:all).map {|p| [p.display_name, p.id]})
+  end
+  # get index ids
+  def index_ids
+    Student.find(:all).map {|s| [s.display_name, s.index.id]}
+  end
+  # get subject ids
+  def subject_ids
+    Subject.find(:all).map {|s| [s.label, s.id]}
+  end
   # get language  subject ids
   def language_subject_ids
     LanguageSubject.find_all.map {|l| [l.subject.label, l.subject.id]}

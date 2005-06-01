@@ -1,9 +1,8 @@
 
-  <div class="printHeader">
-    <h3><%= _("Czech agriculture university in Prague") %></h3>
-    <h3><%= _("Faculty") %>: <%= @candidate.coridor.faculty.name %></h3>
-    <h4><%= _("Appllication form for doctoral study") %></h4>
-  </div>
+<%= render_partial 'preview_header'%>
+<div class="printHeader">
+  <h4><%= _("Appllication form for doctoral study") %></h4>
+</div>
   <%= render 'shared/candidate_detail' %>
   <p>Datum: <b class="info"><%= Date.today.strftime("%d. %m. %Y") %></b></p>
   <hr/>

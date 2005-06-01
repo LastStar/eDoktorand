@@ -1,0 +1,14 @@
+<% @ids = [] %>
+<ul>
+<% for exam in @exams  %>
+  <li>
+    <div class='right'>
+      <%= link_to 'detail', :action => 'show', :id => exam %>
+      <%= link_to 'opravit', :action => 'edit', :id => exam %>
+    </div>
+    <b><%= exam.index.student.display_name %></b><br />
+	  <%=_("subject")%>: <%= exam.subject.label %>;&nbsp;<%=_("result")%>: <%= result_word(exam.result) %><br /></b>
+  </li>
+  <% @ids << exam.id %>
+<% end %>
+</ul>
