@@ -79,7 +79,7 @@ class CandidatesController < ApplicationController
 		@candidate = Candidate.find(@params['id'])
 		Notifications::deliver_admit_candidate(@candidate)
 		@candidate.admit!
-		render_text 'e-mail sent'
+		render_text _('e-mail sent')
 	end
 	
 	# finishes admittance
@@ -103,7 +103,7 @@ class CandidatesController < ApplicationController
 		@candidate = Candidate.find(@params['id'])
     @candidate.invite!
 		Notifications::deliver_invite_candidate(@candidate)
-		render_text 'e-mail sent'
+		render_text _('e-mail sent')
 	end
 	# shows invitation for candidate
 	def invitation
@@ -113,7 +113,7 @@ class CandidatesController < ApplicationController
   private
   # sets title of the controller
   def set_title
-    @title = 'Candidates'
+    @title = _('Candidates')
   end
   # changes sorting
   def change_sort
