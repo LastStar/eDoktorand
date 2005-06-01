@@ -1,0 +1,9 @@
+
+  <div class='detail' id='info<%= student.id %>' style="display: none">
+    <%= _("email") %>: <%= student.email.name %><br /> 
+    <%= _("phone") %>: <%= student.phone.name %><br /> 
+    <%= _("habitat address") %>: <%= student.address.to_line_s %><br /> 
+    <% if student.postal_address %>
+    <%= _("postal address") %>: <%= student.postal_address.to_line_s %>
+    <% end %>
+  </div >

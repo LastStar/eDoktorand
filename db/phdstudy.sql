@@ -319,11 +319,12 @@ CREATE TABLE approvements (
 -- Table structure for table deliverance
 --
 
-DROP TABLE statement;
-CREATE TABLE statement (
+DROP TABLE statements;
+CREATE TABLE statements (
   id integer primary key,
   note varchar(100),
   result integer,
+  person_id integer,
   created_on timestamp,
   updated_on timestamp
 );

@@ -1,0 +1,7 @@
+<%= student_action_links(student) %>
+<%= link_to _("show"), :action => 'show', :id => student.id %>
+<a href='#' onclick="Element.toggle('info<%= student.id %>');return false;"><%=
+_("contact") %></a>
+<% if @session['user'].person.kind_of?(Tutor) &&
+@session['user'].person == student.index.tutor && student.index.study_plan %>
+<% end %>

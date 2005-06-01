@@ -3,19 +3,11 @@
 <% for student in @students  %>
   <li>
     <div class='right'>
-      <%= link_to 'detail', :action => 'show', :id => student.id %>
-      <a href='#' onclick="Toggle.display('info<%= student.id %>'); new Effect.Highlight('info<%= student.id %>'); this.style.display='none'">kontakt</a>
+    <%= render_partial 'student_links', :student => student %>
     </div>
   <b><%= student.display_name %>
-  rč.&nbsp;<%= student.birth_number %><br /></b>
-  <div class='detail' id='info<%= student.id %>' style="display: none">
-    Email: <%= student.email.name %><br /> 
-    Telefon: <%= student.phone.name %><br /> 
-    Adresa: <%= student.address.to_line_s %><br /> 
-    <% if student.postal_address %>
-    Korespondenční adresa: <%= student.postal_address.to_line_s %>
-    <% end %>
-  </div >
+  <%= _("birth number") %>&nbsp;<%= student.birth_number %><br /></b>
+  <%= render_partial 'student_contact', :student => student %>
   </li>
 <% end %>
 </ul>
@@ -27,8 +19,8 @@ function show(id) {
 </script>
 
 <div class='links'>
-  <%= link_to "předchozí stránka", { :page => @pages.current.previous } if @pages.current.previous %>
+  <%= link_to _("previous page"), { :page => @pages.current.previous } if @pages.current.previous %>
   <%= pagination_links(@pages) %>
-    <%= link_to "následující stránka", { :page => @pages.current.next } if @pages.current.next %>
+    <%= link_to _("next page"), { :page => @pages.current.next } if @pages.current.next %>
 </div>
 

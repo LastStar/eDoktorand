@@ -1,23 +1,23 @@
   <p>
-  Jméno a příjmení:&nbsp;<b class="info"><%= @student.display_name %></b><br /> 
-  Datum a místo narození:&nbsp;<b class="info"><%= @student.birth_on.strftime("%d. %m. %Y") + " " + @student.birth_at %></b><br /> 
-  Rodné číslo:&nbsp;<b class="info"><%= @student.birth_number %></b><br />  
-  Státní příslušnost:&nbsp;<b class="info"><%= @student.state %></b><br /> 
+  <%= _("Full name") %>:&nbsp;<b class="info"><%= @student.display_name %></b><br /> 
+  <%= _("Place and date of birth") %>:&nbsp;<b class="info"><%= @student.birth_on.strftime("%d. %m. %Y") + " " + @student.birth_at %></b><br /> 
+  <%= _("Birth number") %>:&nbsp;<b class="info"><%= @student.birth_number %></b><br />  
+  <%= _("State") %>:&nbsp;<b class="info"><%= @student.state %></b><br /> 
   </p> 
   <p>
-  Adresa trvalého bydliště:&nbsp;<b class="info"><%= @student.address.to_line_s %></b><br /> 
+  <%= _("Address") %>:&nbsp;<b class="info"><%= @student.address.to_line_s %></b><br /> 
   <% unless @student.phone.nil? %>
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >telefon:&nbsp;<b class="info"><%= @student.phone.name %></b><br /> 
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span ><%= _("phone") %>:&nbsp;<b class="info"><%= @student.phone.name %></b><br /> 
   <% end %>
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span >email:&nbsp;<b class="info"><%= @student.email.name %></b><br />
+  <span class='strut'>&nbsp;&nbsp;&nbsp;</span ><%= _("email") %>:&nbsp;<b class="info"><%= @student.email.name %></b><br />
   </p> 
   <% unless @student.postal_address.nil? %>
   <p>
-  Korespondenční adresa:&nbsp;<b class="info"><%= @student.postal_address.to_line_s %></b><br /> 
+  <%= _("Postal address") %>:&nbsp;<b class="info"><%= @student.postal_address.to_line_s %></b><br /> 
   </p> 
   <hr/>
   <% end %>
 
-  <div>
-    <%= link_to 'zpět na výpis', :action => 'list'%>
+  <div class='links'>
+    <%= link_to _("back"), :action => 'index' %>
   </div>

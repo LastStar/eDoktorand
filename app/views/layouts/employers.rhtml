@@ -13,8 +13,10 @@
     <%= link_to_unless_current('úvodní stránka', :controller => 'account', :action => 'welcome') {} %>
     <%= link_to_unless_current('odhlásit', {:controller => 'account', :action => 'logout'},
     :confirm => 'opravdu se chcete odhlásit?'){} %>
+    <% if @session['user'].roles.include? Role.find_by_name('admin') %>
     <%= link_to_unless_current('uchazeči', :controller => 'candidates'){} %>
     <%= link_to_unless_current('komise', :controller => 'exam_terms'){} %>
+    <% end %>
     <%= link_to_unless_current('studenti', :controller => 'students'){} %>
     <%= link_to_unless_current('zkoušky', :controller => 'exams'){} %>
   </div>

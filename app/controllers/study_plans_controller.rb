@@ -50,6 +50,7 @@ class StudyPlansController < ApplicationController
   end
   # previews what have been filled. 
   def preview
+    @title = _("Creating study plan")
     @study_plan = @session['study_plan']
     @study_plan.index.disert_theme = @session['disert_theme']
   end
@@ -60,15 +61,40 @@ class StudyPlansController < ApplicationController
     @study_plan.save
     redirect_to :action => 'index'
   end
+  # shows study plan to employer
+  def show
+    @study_plan = StudyPlan.find(@params['id'])
+    @title = _("Study plan for ") + @study_plan.index.student.display_name 
+  end
+  # approves study plan 
+  def approve
+    @study_plan = StudyPlan.find(@params['id'])
+    @title = _("Approve study plan for ") +
+    @study_plan.index.student.display_name
+    @study_plan.approvement ||= Approvement.create
+    if @session['user'].person.is_a?(Tutor) && !@study_plan.approvement.tutor_statement
+      @statement = TutorStatement.new
+    else
+      @flash['error'] = _("you don't have rights to do this")
+      redirect_to :action => 'login', :controller => 'account'
+    end
+  end
+  # confirms and saves statement
+  def confirm_approve
+    @statement = TutorStatement.create(@params['statement'])
+    @study_plan = StudyPlan.find(@params['id'])
+    if @session['user'].person.is_a?(Tutor)
+      @study_plan.approvement.tutor_statement = @statement
+      @study_plan.canceled_on = @statement.cancel? ? Time.now : nil
+      @study_plan.save
+    end
+    redirect_to :action => 'show', :id => @study_plan.id
+  end
   private	
   # checks if user is student. 
   # if true creates @student variable with current student
   def student_required
-    @student = @session['user'].person
-    unless @student.kind_of?(Student)	
-      flash['error'] = _("Those pages are only for students")
-      redirect_to :controller => 'account', :action => 'error' 
-    end
+    @student = @session['user'].person unless @student.kind_of?(Student)
   end
   # gets obligate subjects from request
   def prepare_obligate

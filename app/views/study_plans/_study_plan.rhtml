@@ -1,3 +1,6 @@
+<% if study_plan.canceled? %>
+<h5><%= _("Canceled") %>!!!</h5>
+<% end %>
 <ul>
   <li>
    <%= _("Disert theme") %>: <%= study_plan.index.disert_theme.title %>
@@ -11,10 +14,16 @@
     <ul>
       <% for subject in study_plan.plan_subjects %>
       <li>
-        <%= subject.subject.label %> &mdash; <%= subject.finishing_on %>. <%= _("semester") %>
+        <%= subject.subject.label %> <br/> 
+        <div class='info><%= subject.finishing_on %>. <%= _("semester") %></div>
       </li>
       <% end %>
     </ul>
   </li>
+  <% if study_plan.approvement && study_plan.approvement.tutor_statement %>
+  <li>
+  <%= tutor_statement(study_plan.approvement.tutor_statement) %>
+  </li>
+  <% end %>
 </ul>
 

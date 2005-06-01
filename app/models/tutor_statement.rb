@@ -1,0 +1,2 @@
+class TutorStatement < Statement
+end

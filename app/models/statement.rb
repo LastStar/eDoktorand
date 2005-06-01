@@ -1,4 +1,8 @@
 class Statement < ActiveRecord::Base
+  belongs_to :person
   has_many :approvements
-  validates_presence_of :approvements
+  # returns if it cancels document
+  def cancel?
+    return true if self.result == 0 
+  end
 end
