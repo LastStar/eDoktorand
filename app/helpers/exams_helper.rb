@@ -4,6 +4,12 @@ module ExamsHelper
 	  links = ''
 	  links << "<a href='new'>nový protokol</a>"
 	  links << '&nbsp;'
+     if @params['prefix']
+       links << "<a href='list'>list</a>"
+	  else
+  	  	 links << "<a href='table'>table</a>"
+     end
+	  links << '&nbsp;'
 	  links << "<a href='javascript:window.print();'>vytisknout tento seznam</a>"
 	  if @pages and pagination_links(@pages)
 		    links << '&nbsp;'                           

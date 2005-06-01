@@ -26,6 +26,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'candidates/in/:coridor', :controller => 'candidates', :action => 'list'
   # add path for prijimacky
   map.connect 'prijimacky/:action/:id', :controller => 'form'
+  # add path for prijimacky
+  map.connect ':controller/table', :action => 'list', :prefix => 'table_'
   # Install the default route as the lowest priority.
   map.connect ':controller/:action/:id'
 end

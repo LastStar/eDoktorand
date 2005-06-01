@@ -1,5 +1,5 @@
 <% unless @exams.empty? %>
-<%= render_partial 'list' %>
+<%= render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list' %>
 
 <%= exam_list_links %>                      
 <br />           

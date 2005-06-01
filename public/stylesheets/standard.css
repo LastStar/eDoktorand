@@ -181,3 +181,22 @@ pre.detail {
 .centerAlign {
 	text-align: center;
 }
+table.list {
+  margin: 10px;
+  border-collapse: collapse;
+}
+table.list th {
+  text-align: center;
+  padding: 2px;
+  margin: 0px;
+  border:1px solid;
+  font-weight: bold;
+}
+table.list td {
+  padding-left: 5px;	
+  padding-right: 3px;	
+  padding-top: 1px;	
+  padding-bottom: 1px;	
+  margin: 0px;
+  border:1px solid;
+}
