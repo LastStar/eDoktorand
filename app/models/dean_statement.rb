@@ -1,0 +1,2 @@
+class DeanStatement < Statement
+end

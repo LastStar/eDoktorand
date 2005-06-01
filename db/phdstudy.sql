@@ -354,7 +354,7 @@ DROP TABLE leaderships;
 CREATE TABLE leaderships (
   id integer primary key,
   department_id integer,
-  employee_id integer,
+  leader_id integer,
   created_on timestamp,
   updated_on timestamp
 );
@@ -367,7 +367,7 @@ DROP TABLE deanships;
 CREATE TABLE deanships (
   id integer primary key,
   faculty_id integer,
-  employee_id integer,
+  dean_id integer,
   created_on timestamp,
   updated_on timestamp
 );

@@ -1,0 +1,2 @@
+class LeaderStatement < Statement
+end

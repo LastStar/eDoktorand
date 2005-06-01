@@ -2,6 +2,8 @@ class StudyPlansController < ApplicationController
   include LoginSystem
   model :student
   model :user
+  model :leader
+  model :dean
   model :language_subject
   layout 'students'
   before_filter :login_required, :student_required
@@ -72,8 +74,14 @@ class StudyPlansController < ApplicationController
     @title = _("Approve study plan for ") +
     @study_plan.index.student.display_name
     @study_plan.approvement ||= Approvement.create
-    if @session['user'].person.is_a?(Tutor) && !@study_plan.approvement.tutor_statement
+    if @session['user'].person.is_a?(Tutor) &&
+      !@study_plan.approvement.tutor_statement
       @statement = TutorStatement.new
+    elsif @session['user'].person.is_a?(Leader) &&
+      !@study_plan.approvement.leader_statement
+      @statement = LeaderStatement.new
+    elsif @session['user'].person.is_a?(Dean)
+      @statement = DeanStatement.new
     else
       @flash['error'] = _("you don't have rights to do this")
       redirect_to :action => 'login', :controller => 'account'
@@ -81,13 +89,23 @@ class StudyPlansController < ApplicationController
   end
   # confirms and saves statement
   def confirm_approve
-    @statement = TutorStatement.create(@params['statement'])
     @study_plan = StudyPlan.find(@params['id'])
-    if @session['user'].person.is_a?(Tutor)
+    if @session['user'].person.is_a?(Tutor) && 
+      !@study_plan.approvement.tutor_statement
+      @statement = TutorStatement.create(@params['statement'])
       @study_plan.approvement.tutor_statement = @statement
-      @study_plan.canceled_on = @statement.cancel? ? Time.now : nil
-      @study_plan.save
+    elsif @session['user'].person.is_a?(Leader) &&
+      !@study_plan.approvement.leader_statement
+      @statement = LeaderStatement.create(@params['statement'])
+      @study_plan.approvement.leader_statement = @statement
+    elsif @session['user'].person.is_a?(Dean) 
+      @statement = DeanStatement.create(@params['statement'])
+      @study_plan.approvement.dean_statement = @statement
     end
+    @study_plan.canceled_on = @statement.cancel? ? Time.now : nil
+    @study_plan.approved_on = Time.now if @statement.is_a?(DeanStatement) &&
+    !@statement.cancel?
+    @study_plan.save
     redirect_to :action => 'show', :id => @study_plan.id
   end
   private	

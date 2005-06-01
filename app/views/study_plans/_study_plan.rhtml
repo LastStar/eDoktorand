@@ -1,29 +1,34 @@
 <% if study_plan.canceled? %>
-<h5><%= _("Canceled") %>!!!</h5>
+<h5><%= _("Canceled on") %></h5>: <%= study_plan.canceled_on %></h5>
 <% end %>
+<% if study_plan.approved? %>
+<h5><%= _("Approved on") %>: <%= study_plan.approved_on %></h5>
+<% end %>
+  <% if study_plan.approvement %>
+  <%= render_partial 'print_statements', :approvement => study_plan.approvement %>
+  <% end %>
 <ul>
   <li>
    <%= _("Disert theme") %>: <%= study_plan.index.disert_theme.title %>
    &mdash; <%= study_plan.index.disert_theme.finishing_to %>. <%= _("semester") %>
   </li>
+</ul>
+<ul>
   <li>
   <%= _("Final exam") %>: <%= study_plan.finishing_to %>. <%= _("semester") %>
   </li>
+</ul>
+<ul>
   <li>
     <%= _("Subjects") %>
     <ul>
       <% for subject in study_plan.plan_subjects %>
       <li>
-        <%= subject.subject.label %> <br/> 
-        <div class='info><%= subject.finishing_on %>. <%= _("semester") %></div>
+        <%= subject.subject.label %>
+        <div><%= subject.finishing_on %>. <%= _("semester") %></div>
       </li>
       <% end %>
     </ul>
   </li>
-  <% if study_plan.approvement && study_plan.approvement.tutor_statement %>
-  <li>
-  <%= tutor_statement(study_plan.approvement.tutor_statement) %>
-  </li>
-  <% end %>
 </ul>
 

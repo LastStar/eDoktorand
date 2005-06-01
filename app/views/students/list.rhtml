@@ -5,8 +5,21 @@
     <div class='right'>
     <%= render_partial 'student_links', :student => student %>
     </div>
-  <b><%= student.display_name %>
-  <%= _("birth number") %>&nbsp;<%= student.birth_number %><br /></b>
+  <b><%= student.display_name %></b>
+  <div class='info'>
+  <% if student.index.study_plan %>
+  <%= _("Study plan created on") %>: <%= student.index.study_plan.created_on
+  %><br/> 
+  <% if student.index.study_plan.canceled? %>
+  <%= _("Study plan canceled on") %>: <%= student.index.study_plan.canceled_on
+  %><br/> 
+  <% end %>
+  <% if  student.index.study_plan.approved? %>
+  <%= _("Study plan approved on") %>: <%= student.index.study_plan.approved_on
+  %><br/> 
+  <% end %>
+  <% end %>
+  </div>
   <%= render_partial 'student_contact', :student => student %>
   </li>
 <% end %>
