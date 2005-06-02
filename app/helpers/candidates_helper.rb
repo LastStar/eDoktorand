@@ -8,7 +8,7 @@ module CandidatesHelper
   # admit link
   def admit_link(candidate)
     if !candidate.admited? and candidate.invited? and candidate.ready?
-    	link_to('protokol', :action => 'admittance', :id => candidate) +
+    	link_to('protokol', :action => 'admittance', :id => candidate) + "&nbsp;" +
     	link_to('příjmout', :action => 'admit', :id => candidate) 
     end
   end
