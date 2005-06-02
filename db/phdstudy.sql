@@ -42,7 +42,7 @@ CREATE TABLE candidates (
   study_theme varchar(100),
   note text,
   created_on timestamp,
-  modified_on timestamp,
+  updated_on timestamp,
   finished_on timestamp,
   ready_on timestamp,
   admited_on timestamp,  
