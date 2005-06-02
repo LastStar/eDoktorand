@@ -9,3 +9,13 @@
     name: referentka
     info: Referentka na VaV
     id: "2"
+- !ruby/object:Role 
+  attributes: 
+    name: student
+    info: Student
+    id: "3"
+- !ruby/object:Role 
+  attributes: 
+    name: tutor
+    info: Tutor
+    id: "4"

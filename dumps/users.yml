@@ -4,22 +4,34 @@
     id: "1"
     login: pepe
     password: 4edd36daaaf84544d4ddb1fbcc82ba3e3332575d
-    person_id: "1"
+    person_id: 
 - !ruby/object:User 
   attributes: 
     id: "2"
     login: gothmog
-    password: a6ebb7d01d1d61f288f6a92c2c15ed7d8309d809
+    password: 9a12be29da93153943ffd8c5451db1b61253cc49
     person_id: 
 - !ruby/object:User 
   attributes: 
     id: "3"
-    login: vav
-    password: 5fb7f6efa594d6a61bf6ebe118d9448d46902f11
-    person_id: 
+    login: stastny
+    password: 8eeae9515ca321e923e757848ec26f78779a369a
+    person_id: "9"
 - !ruby/object:User 
   attributes: 
     id: "4"
-    login: vavfle
-    password: 5fb7f6efa594d6a61bf6ebe118d9448d46902f11
-    person_id: 
+    login: linhart
+    password: 3802d2f32b2f3cb7d8fc35479161962ee31dd996
+    person_id: "11"
+- !ruby/object:User 
+  attributes: 
+    id: "5"
+    login: bejcek
+    password: cdac760ee4bac92fc1fc89a0077ea4977a409f5c
+    person_id: "10"
+- !ruby/object:User 
+  attributes: 
+    id: "6"
+    login: pospisil
+    password: f23d03226f45cfd335e3637b0aa8565deafc89f9
+    person_id: "12"

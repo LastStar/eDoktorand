@@ -1,4 +1,5 @@
 <%= javascript_include_tag "prototype" %>
+<% unless @students.empty? %>
 <ul>
 <% for student in @students  %>
   <li>
@@ -36,4 +37,6 @@ function show(id) {
   <%= pagination_links(@pages) %>
     <%= link_to _("next page"), { :page => @pages.current.next } if @pages.current.next %>
 </div>
-
+<% else %>
+<h5><%= _("There are no students in system") %>
+<% end %>

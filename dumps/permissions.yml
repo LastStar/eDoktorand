@@ -32,7 +32,8 @@
 - !ruby/object:Permission 
   attributes: 
     name: candidates/by
-    info: "Uchazeèi - výpis uchazeèù setøídìný"
+    info: "Uchazeèi -
+      výpis uchazeèù setøídìný"
     id: "7"
 - !ruby/object:Permission 
   attributes: 
@@ -124,3 +125,98 @@
     name: candidates/confirm_admit
     info: ''
     id: "25"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/invite_now
+    info: ''
+    id: "26"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/admit_now
+    info: ''
+    id: "27"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/enroll
+    info: ''
+    id: "28"
+- !ruby/object:Permission 
+  attributes: 
+    name: candidates/confirm_enroll
+    info: ''
+    id: "29"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/index
+    info: ''
+    id: "30"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/index
+    info: ''
+    id: "31"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/choose_subjects
+    info: ''
+    id: "32"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/create
+    info: ''
+    id: "33"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/finish
+    info: ''
+    id: "34"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/save_disert
+    info: ''
+    id: "35"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/save
+    info: ''
+    id: "36"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/preview
+    info: ''
+    id: "37"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/confirm
+    info: ''
+    id: "38"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/show
+    info: ''
+    id: "39"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/show
+    info: ''
+    id: "40"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/approve
+    info: ''
+    id: "41"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/confirm_approve
+    info: ''
+    id: "42"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/methodology
+    info: 
+    id: "44"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/save_methodology
+    info: 
+    id: "45"

@@ -11,7 +11,7 @@ class AccountController < ApplicationController
       when :post
         if @session['user'] = User.authenticate(@params['user_login'], @params['user_password'])
 
-          flash['notice']  = "Přihlášení proběhlo v pořádku"
+          flash['notice']  = _("Login was succesful")
           redirect_back_or_default :action => "welcome"
         else
           @login    = @params['user_login']
@@ -47,6 +47,9 @@ class AccountController < ApplicationController
   end
     
   def welcome
+    if @session['user'].person.is_a? Student
+      redirect_to :controller => 'study_plans'
+    end
   end
   # error page for system
   def error

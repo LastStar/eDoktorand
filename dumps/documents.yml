@@ -1,0 +1,7 @@
+--- 
+- !ruby/object:Document 
+  attributes: 
+    name: Výběrové řízení
+    faculty_id: "5"
+    id: "1"
+    path: vyberove_rizeni.pdf
