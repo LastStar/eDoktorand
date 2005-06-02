@@ -2,7 +2,7 @@ module ExamsHelper
 	# prints list links
 	def exam_list_links
 	  links = ''
-	  links << "<a href='new'>nový protokol</a>"
+	  links << link_to(_("new exam"), {:action => 'new'})
 	  links << '&nbsp;'
      if @params['prefix']
      	 links << link_to(_("list"), {:prefix => nil})

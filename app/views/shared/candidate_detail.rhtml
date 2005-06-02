@@ -48,8 +48,8 @@
   <hr/>
   <% unless @candidate.note.empty? %>
   <p>
-    <%= _("Notice") %>:<br /> 
-    <%= @candidate.note %>
+    <%= _("Notice") %>: 
+    <pre class="detail"><%= @candidate.note %></pre>
   </p>
   <hr /> 
   <% end %>

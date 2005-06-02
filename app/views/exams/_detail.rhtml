@@ -2,7 +2,7 @@
 <%= _("Student") %>:&nbsp;<b class="info"><%= @exam.index.student.display_name %></b><br /> 
 <%= _("Subject") %>:&nbsp;<b class="info"><%= @exam.subject.label%></b><br /> 
 <%= _("1. examinator") %>:&nbsp;<b class="info"><%= @exam.first_examinator.display_name %></b><br />  
-<%= _("2. examinator") %>:&nbsp;<b class="info"><%= @exam.second_examinator.display_name %></b><br /> 
+<%= _("2. examinator") %>:&nbsp;<b class="info"><%= @exam.second_examinator.display_name if @exam.second_examinator%></b><br /> 
 <%= _("Created by") %>:&nbsp;<b class="info"><%= @exam.creator.display_name %></b><br /> 
 </p> 
 <hr/>

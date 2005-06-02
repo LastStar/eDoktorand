@@ -11,7 +11,7 @@ class FormController < ApplicationController
   def details
     prepare_candidate
     @action = 'save'
-    @title = _("Admittance form for corridor") + @candidate.coridor.name
+    @title = _("Admittance form for corridor ") + @candidate.coridor.name
   end
   # preview what has been inserted
   def save
