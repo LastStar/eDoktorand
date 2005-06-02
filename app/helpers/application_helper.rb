@@ -50,13 +50,13 @@ module ApplicationHelper
   end
   # get examinator ids
   def examinator_ids
-    Person.find(:all).map {|p| [p.display_name, p.id]}
+    Tutor.find(:all).map {|p| [p.display_name, p.id]}
   end
   # get examinator ids
   # allows null
   def examinator_null_ids
     arr = [['---', '0']]
-    arr.concat(Person.find(:all).map {|p| [p.display_name, p.id]})
+    arr.concat(Tutor.find(:all).map {|p| [p.display_name, p.id]})
   end
   # get index ids
   def index_ids
