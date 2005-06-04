@@ -1,7 +1,9 @@
 <%= print_notice %>
 <%= filter_tags(:list, [['ready', 'připravené'], ['invited', 'pozvané'], ['admited', 'přijaté'], ['enrolled', 'zapsané']]) %>
-<%= filtered_sort_tags(:list, [['coridor_id', 'oboru'], ['lastname', 'příjmení'], ['updated_on', 'data modifikace']], @filtered_by, :message => 'setřídit podle:') %>
-<%= sort_tags(:list_all, [['coridor_id', 'oboru'], ['lastname', 'příjmení'], ['updated_on', 'data modifikace']],  :message => 'všechny podle:') %>
+<%= filtered_sort_tags(:list, [['coridor_id', _("by corridor")], ['lastname',
+_("lastname")], ['updated_on', _("by modification")]], @filtered_by, :message => _("order ")) %>
+<%= sort_tags(:list_all, [['coridor_id', _("by corridor")], ['lastname',
+_("lastname")], ['updated_on', _("by modification")]], :message => _("order ")) %>
 <% unless @candidates.empty? %>
 <%= render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list' %>
 
@@ -9,6 +11,6 @@
 <%= render_partial 'list_script'%>
 <br />           
 <% else %>
-<h5>V systému nejsou žádní uchazeči podle Vašeho výběru</h5>
+<h5><%= _("There is no candidates by your selection") %></h5>
 <% end %>
 <br/>

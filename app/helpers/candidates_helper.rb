@@ -2,14 +2,14 @@ module CandidatesHelper
   # ready link
   def ready_link(candidate)
     if !candidate.ready? 
-      link_to 'v pořádku', :action => 'ready', :id => candidate.id 
+      link_to(_("make ready"), :action => 'ready', :id => candidate)
     end
   end
   # admit link
   def admit_link(candidate)
     if !candidate.admited? and candidate.invited? and candidate.ready?
-    	link_to('protokol', :action => 'admittance', :id => candidate) + "&nbsp;" +
-    	link_to('příjmout', :action => 'admit', :id => candidate) 
+    	link_to(_('protocol'), :action => 'admittance', :id => candidate) + "&nbsp;" +
+    	link_to(_("admit"), :action => 'admit', :id => candidate) 
     end
   end
   # invite link
