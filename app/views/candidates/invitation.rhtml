@@ -1,15 +1,16 @@
 <%= javascript_include_tag "prototype" %>
 
-<h3 class='printHeader'>ČESKÁ ZEMĚDĚLSKÁ UNIVERZITA V PRAZE</h3>
-<h3 class='printHeader'>FAKULTA LESNICKÁ A ENVIRONMENTÁLNÍ</h3>
-<h3 class='printHeader'>DĚKANÁT – ODDĚLENÍ VĚDY A VÝZKUMU</h3>
-<h4 class='printHeader'>165 21 Praha 6 – Suchdol &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tel.č. 22438 2877</h4>
-
-<p class='rightAlign'>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
+<br />
+<br />
+<br />
+<br />
 <p class='rightAlign'>Vážený pan/paní<br/>
 <%= @candidate.display_name %><br/>
-<%= @candidate.address %></p>
-
+<% unless @candidate.postal_city.empty? %>
+<%= @candidate.sending_postal_address %></p>
+<% else %>
+<%= @candidate.sending_address %></p>
+<% end %>
 <p><b>Věc: pozvánka k přijímacímu řízení do DSP na FLE ČZU v Praze</b></p>
 
 <p>Na základě Vaší přihlášky ke studiu v DSP na FLE ČZU v Praze a v souladu s § 50 zákona č. 111/98 Sb. o vysokých školách Vám zasílám</p>
@@ -21,15 +22,23 @@
 
 <p>Uchazeči se dostaví v 9,00 hod. do zasedací místnosti FLE (přízemí, č. dveří 125), kde budou podány základní informace.</p>
 
-<p>Přijímací zkouška pro obor <%= @candidate.coridor.name %> proběhne od <%= @candidate.coridor.exam_term.start_time %> v místnosti č. <%= @candidate.coridor.exam_term.room %>, předseda komise <%= @candidate.coridor.exam_term.chairman.display_name %></p>
+<%= @candidate.coridor.exam_term.start_time %> v místnosti č. <%=
+@candidate.coridor.exam_term.room %>, předseda komise <%=
+@candidate.coridor.exam_term.chairman.display_name %></p>
 
 <p>K přijímacímu řízení si přineste:
 <ul>
-	<li>průkaz totožnosti</li>
+	<li>průkaz totožnosti</>
 	<li>přehled složených zkoušek a celkový studijní průměr potvrzený fakultou</li>
 	<li>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou</li>
 </ul>
 </p>
+<br/>
+<p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
+<p class='rightAlign'>Ing. Petr Zasadil, Ph.D.<br/>
+proděkan pro vědu a
+výzkum</p>
+
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
 	<% if @session['user'] %>

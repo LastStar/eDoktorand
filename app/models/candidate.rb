@@ -45,9 +45,19 @@ class Candidate < ActiveRecord::Base
   def address
     return [[self.street, self.number.to_s].join(' '), self.city, self.zip].join(', ')
   end
+  # returns address for sending
+  def sending_address
+    return [[self.street, self.number.to_s].join(' '), [self.zip,
+    self.city].join(' ')].join('<br/>')
+  end
   # returns postal address for displaying
   def postal_address
     return [[self.postal_street, self.postal_number.to_s].join(' '), self.postal_city, self.postal_zip].join(', ')
+  end
+  # returns postal address for displaying
+  def sending_postal_address
+    return [[self.postal_street, self.postal_number.to_s].join(' '),
+    [self.postal_zip, self.postal_city].join(' ')].join('<br/>')
   end
   # invites candidate to entrance exam
   def invite!
