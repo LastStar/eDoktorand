@@ -1,9 +1,10 @@
 <%= print_notice %>
-<%= filter_tags(:list, [['ready', 'připravené'], ['invited', 'pozvané'], ['admited', 'přijaté'], ['enrolled', 'zapsané']]) %>
-<%= filtered_sort_tags(:list, [['coridor_id', _("by corridor")], ['lastname',
-_("lastname")], ['updated_on', _("by modification")]], @filtered_by, :message => _("order ")) %>
-<%= sort_tags(:list_all, [['coridor_id', _("by corridor")], ['lastname',
-_("lastname")], ['updated_on', _("by modification")]], :message => _("order ")) %>
+<% sort_array = [['coridor_id', _("by corridor")], ['lastname',
+_("by lastname")], ['updated_on', _("by modification")]] %>
+<%= filter_tags(:list, ['ready', 'invited', 'admited', 'enrolled'],
+:message => _("filter"))  %>
+<%= filtered_sort_tags(:list, sort_array, @filtered_by, :message => _("order")) %>
+<%= sort_tags(:list_all, sort_array, :message => _("order all")) %>
 <% unless @candidates.empty? %>
 <%= render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list' %>
 

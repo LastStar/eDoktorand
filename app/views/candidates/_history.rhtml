@@ -1,16 +1,19 @@
 <% if candidate.finished_on %>
-  <%= candidate.finished_on.strftime("%d. %m. %Y") %> vyplnil<br />
+  <%= candidate.finished_on.strftime("%d. %m. %Y") %> <%= _("finished") %><br />
 <% end %>
 <% if candidate.ready_on %>
-  <%= candidate.ready_on.strftime("%d. %m. %Y") %> připraven<br />
+  <%= candidate.ready_on.strftime("%d. %m. %Y") %> <%= _("ready") %><br />
 <% end %>
 <% if candidate.invited_on %>
-  <%= candidate.invited_on.strftime("%d. %m. %Y") %> pozván<br />
+  <%= candidate.invited_on.strftime("%d. %m. %Y") %> <%= link_to(_("invited"),
+  :action => 'invitation', :id => candidate) %><br />
 <% end %>
 <% if candidate.admited_on %>
-  <%= candidate.admited_on.strftime("%d. %m. %Y") %> přijat<br />
+  <%= candidate.admited_on.strftime("%d. %m. %Y") %> <%= link_to(_("admited"),
+  :action => 'confirm_admit', :id => candidate) %>&nbsp;<%= link_to(_("protocol"),
+  :action => 'admittance', :id => candidate) %><br />
 <% end %>
 <% if candidate.enrolled_on %>
-  <%= candidate.enrolled_on.strftime("%d. %m. %Y") %> zapsán<br />
+  <%= candidate.enrolled_on.strftime("%d. %m. %Y") %> <br />
 <% end %>
 

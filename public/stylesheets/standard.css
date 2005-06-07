@@ -173,6 +173,11 @@ pre.detail {
   font-size: x-small;
   color: gray;
 }
+.statusInfo {
+  font-size: small;
+  color: red;
+  padding-left: 3em;
+}
 .rightAlign {
 	text-align: right;
 	padding-right: 1em;	

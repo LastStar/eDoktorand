@@ -1,4 +1,14 @@
 module ApplicationHelper
+  # prints errors for object
+  def errors_for(object)
+    unless object.errors.empty?
+      tb = _("There were errors in your input")
+      tb << content_tag('ul',
+        object.errors.to_a.map {|attr, message| content_tag('li',
+        _(message))}.join(' '))
+      content_tag('div', tb)
+    end
+  end
   # get department ids
   def department_ids(faculty_id = nil)
     conditions = ["faculty_id = ?", faculty_id] if faculty_id

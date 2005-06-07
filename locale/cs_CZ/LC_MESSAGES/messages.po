@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 90\n"
-"POT-Creation-Date: 2005-05-28 12:00+0200\n"
+"POT-Creation-Date: 2005-06-07 13:39+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -16,10 +16,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "Login was succesful"
+msgstr "Přihlášení proběhlo v pořádku"
+
+msgid "you don't have rights to do this"
+msgstr "na požadovanou akci nemáte práva"
+
+msgid "Candidate was changed"
+msgstr "Uchazeč byl opraven"
+
+msgid "e-mail sent"
+msgstr "e-mail odeslán"
+
+msgid "Candidate "
+msgstr "Uchazeč "
+
+msgid " is ready for application form"
+msgstr " je připraven na příjimací zkoušky"
+
+msgid "Candidates"
+msgstr "Uchazeči o studium"
+
+msgid "Upload methodology"
+msgstr "Nahrát metodiku"
+
+msgid "Exam was successfully created."
+msgstr "Zkouška byla úspěšně vytvořena"
+
+msgid "Exam was successfully updated."
+msgstr "Zkouška byla úspěšně vytvořena"
+
+msgid "Exams"
+msgstr "Zkoušky"
+
 msgid "Admittance process"
 msgstr "Přijímací řízení k doktorskému studiu"
 
-msgid "Admittance form for corridor"
+msgid "Admittance form for corridor "
 msgstr "Formulář přihlášky na obor "
 
 msgid "Admittance form - errors"
@@ -58,8 +91,112 @@ msgstr "Česká zemědělská univerzita v Praze"
 msgid "Study plan"
 msgstr "Studijní plán"
 
-msgid "Those pages are only for students"
-msgstr "Tyto stránky jsou pouze pro studenty"
+msgid "Creating study plan"
+msgstr "Vytváření nového studijního plánu"
+
+msgid "Study plan for "
+msgstr "Studijní plán pro"
+
+msgid "Approve study plan for "
+msgstr "Schválit studijní plán"
+
+msgid "languages have to be different"
+msgstr "jazyky musí být rozdílné"
+
+msgid ""
+"university for external subject cannot be\n"
+"            empty"
+msgstr "univerzita pro externí předmět nesmí být prazdná"
+
+msgid "name of the external subject cannot be empty"
+msgstr "jméno externího předmětu nesmí být prázdné"
+
+msgid "There were errors in your input"
+msgstr "Ve Vašem vstupu jsou chyby"
+
+msgid "external subject"
+msgstr "externí předmět"
+
+msgid "make ready"
+msgstr "odsouhlasit"
+
+msgid "protocol"
+msgstr "protokol"
+
+msgid "admit"
+msgstr "přijmout"
+
+msgid "create commission"
+msgstr "vytvořit komisi"
+
+msgid "enroll"
+msgstr "zapsát"
+
+msgid "list"
+msgstr "seznam"
+
+msgid "print this list"
+msgstr "vytisknout tento seznam"
+
+msgid "show all contacts"
+msgstr "ukázat kontakty"
+
+msgid "hide all contacts"
+msgstr "skrýt kontakty"
+
+msgid "show all histories"
+msgstr "ukázat historii"
+
+msgid "hide all histories"
+msgstr "skrýt historii"
+
+msgid "table"
+msgstr "tabulka"
+
+msgid "print this page"
+msgstr "vytisknout tuto stránku"
+
+msgid "previous page"
+msgstr "předchozí stránka"
+
+msgid "next page"
+msgstr "další stránka"
+
+msgid "enrolled"
+msgstr "zapsán"
+
+msgid "admitted"
+msgstr "přijat"
+
+msgid "invited"
+msgstr "pozván"
+
+msgid "ready"
+msgstr "odsouhlasen"
+
+msgid "reject"
+msgstr "nechválit"
+
+msgid "not pass"
+msgstr "neprospěl"
+
+msgid "pass"
+msgstr "prospěl"
+
+msgid "new exam"
+msgstr "nová zkouška"
+
+msgid "study plan"
+msgstr "studijní plán"
+
+msgid "approve"
+msgstr "schválit"
+
+msgid "with note: "
+msgstr "s poznámkou "
+
+msgid "cancel"
+msgstr "neschválit"
 
 msgid "firstname can not be empty"
 msgstr "jméno nesmí být prazdné"
@@ -108,23 +245,150 @@ msgstr ""
 "zadané rodné číslo již v systému existuje. Prosím kontaktujte <a "
 "href='mailto:pepe@gravastar.cz'>správce systému</a>."
 
-msgid "languages have to be different"
-msgstr "jazyky musí být rozdílné"
+msgid "candidate must be finished before invitation"
+msgstr "uchazeč musí být zaregistrován před pozváním"
 
-#, fuzzy
+msgid "candidate must be invited before admittance"
+msgstr "uchazeč musí být pozván před příjetím"
+
+msgid "candidate must be admited before enrollment"
+msgstr "uchazeč musí být přijat před zápisem"
+
 msgid "Error"
-msgstr "chyba"
+msgstr "Chyba"
 
-#, fuzzy
+msgid "finished"
+msgstr "zadán"
+
+msgid "admited"
+msgstr "přijat"
+
+msgid "contact"
+msgstr "kontakt"
+
+msgid "history"
+msgstr "historie"
+
+msgid "b.n."
+msgstr "r.č."
+
+msgid "corridor"
+msgstr "obor"
+
+msgid "study form"
+msgstr "forma studia"
+
 msgid "Notice"
-msgstr "poznámka"
+msgstr "Poznámka"
+
+msgid "Candidate"
+msgstr "Uchazeč"
+
+msgid "birth number"
+msgstr "rodné číslo"
+
+msgid "coridor"
+msgstr "obor"
+
+msgid "status"
+msgstr "státní příslušnost"
+
+msgid "Note"
+msgstr "Poznámka"
+
+msgid "by corridor"
+msgstr "podle oboru"
+
+msgid "by lastname"
+msgstr "podle příjmení"
+
+msgid "by modification"
+msgstr "podle data změny"
+
+msgid "filter"
+msgstr "filtrovat"
+
+msgid "order"
+msgstr "seřaď"
+
+msgid "order all"
+msgstr "seřaď všechny"
+
+msgid "There is no candidates by your selection"
+msgstr "Není žádný uchazeč podle Vašeho výběru"
+
+msgid ""
+"On this page you can add your methodology file. File should be only in\n"
+"PDF format."
+msgstr ""
+"Na této stránce můžete přidat svůj soubor metodikou. Soubor musí býtve "
+"formátu PDF."
+
+msgid "file"
+msgstr "soubor"
+
+msgid "upload"
+msgstr "nahrát"
+
+msgid "Student"
+msgstr ""
+
+msgid "Subject"
+msgstr "Předmět"
+
+msgid "1. examinator"
+msgstr "1. zkoušející"
+
+msgid "2. examinator"
+msgstr "2. zkoušející"
+
+msgid "Created by"
+msgstr "Vytvořeno"
+
+msgid "Result"
+msgstr "Výsledek"
+
+msgid "Questions"
+msgstr "Otázky"
+
+msgid "Exam agenda"
+msgstr "Zkoušková agenda"
+
+msgid "1. Examinator"
+msgstr "1. zkoušející"
+
+msgid "2. Examinator"
+msgstr "2. zkoušející"
+
+msgid "Exam result"
+msgstr "Výsledek zkoušky"
+
+msgid "action"
+msgstr "akce"
+
+msgid "next"
+msgstr "další"
+
+msgid "reset"
+msgstr "vymazat"
+
+msgid "subject"
+msgstr "předmět"
+
+msgid "result"
+msgstr "výsledek"
+
+msgid "Czech agriculture university in Prague"
+msgstr "Česká zemědělská univerzita v Praze"
+
+msgid "Faculty"
+msgstr "Fakulta"
 
 msgid "Your application form have been registered"
 msgstr "Vaše přihláška byla zaregistrována."
 
-#, fuzzy
 msgid "Fill another form"
-msgstr "vyplnit další přihlášku"
+msgstr "Vyplnit další přihlášku"
 
 msgid "After clicking the name of faculty, list of corridors  will be shown"
 msgstr "Po kliknutí na fakultu se Vám zobrazí všechny obory pro ni."
@@ -137,12 +401,6 @@ msgid ""
 "address:"
 msgstr ""
 "V aplikaci se vyskytla chyba, prosím uvědomte správce systému na adrese: "
-
-msgid "Czech agriculture university in Prague"
-msgstr "Česká zemědělská univerzita v Praze"
-
-msgid "Faculty"
-msgstr "Fakulta"
 
 msgid "Appllication form for doctoral study"
 msgstr "Přihláška ke studiu v doktorském studijním programu"
@@ -209,6 +467,9 @@ msgstr "opravdu se chcete"
 msgid "create study plan"
 msgstr "nový studijní plán"
 
+msgid "add methodology"
+msgstr "přidat metodiku"
+
 msgid "Full name"
 msgstr "Jméno a příjmení"
 
@@ -235,9 +496,6 @@ msgstr "Korespondenční adresa"
 
 msgid "University"
 msgstr "Univerzita"
-
-msgid "corridor"
-msgstr "obor"
 
 msgid "date of study end"
 msgstr "datum SZZ"
@@ -284,15 +542,11 @@ msgstr "titul za jménem"
 msgid "birth place"
 msgstr "datum a místo narození"
 
-msgid "birth number"
-msgstr "rodné číslo"
-
 msgid "state"
 msgstr "státní příslušnost"
 
-#, fuzzy
 msgid "Contact"
-msgstr "kontakt"
+msgstr "Kontakt"
 
 msgid "street"
 msgstr "ulice"
@@ -330,9 +584,6 @@ msgstr "Přihláška ke studiu"
 msgid "department"
 msgstr "katedra"
 
-msgid "study form"
-msgstr "forma studia"
-
 msgid "language exams"
 msgstr "jazyky příjímacích zkoušek"
 
@@ -342,38 +593,158 @@ msgstr "tématický okruh"
 msgid "note"
 msgstr "poznámka"
 
-msgid "action"
-msgstr "akce"
+msgid "postal address"
+msgstr "korespondenční adresa"
 
-msgid "next"
-msgstr "další"
+msgid "show"
+msgstr "detail"
 
-msgid "reset"
-msgstr "vymazat"
+msgid "Study plan created on"
+msgstr "Studijní plán vytvořen dne"
+
+msgid "Study plan canceled on"
+msgstr "Studijní plán neschválen dne"
+
+msgid "Study plan approved on"
+msgstr "Studijní plán schválen dne"
+
+msgid "There are no students in system"
+msgstr "Tyto stránky jsou pouze pro studenty"
+
+msgid "Place and date of birth"
+msgstr "Místo a datum narození"
+
+msgid "Address"
+msgstr "adresa"
+
+msgid "back"
+msgstr "zpět"
+
+msgid "semester"
+msgstr "semestr"
+
+msgid "Tutor statement"
+msgstr "Vyjádření školitele"
+
+msgid "Leader statement"
+msgstr "Vyjádření vedoucího katedry"
+
+msgid "Dean statement"
+msgstr "Vyjádření děkana"
+
+msgid "Tutor"
+msgstr "Školitel"
+
+msgid "Canceled on"
+msgstr "Neschválen dne"
+
+msgid "Approved on"
+msgstr "Schválen dne"
+
+msgid "Disert theme"
+msgstr "Disertační práce"
+
+msgid "methodology file"
+msgstr "soubor s metodikou"
+
+msgid "Final exam"
+msgstr "Satátní závěrečná zkouška"
+
+msgid "Subjects"
+msgstr "Předměty"
+
+msgid "voluntary subject"
+msgstr "volitelný předmět"
+
+msgid "examinator"
+msgstr "zkoušející"
+
+msgid ""
+"On this page you have to choose your voluntary subjects and terms for\n"
+"    finishing all subjects"
+msgstr ""
+"Na této stránce musíte vybrat své volitelné předměty a termín jejich splnění"
+
+msgid "semester of final exam"
+msgstr "semestr státní závěrečné zkoušky"
+
+msgid "Obligate subjects"
+msgstr "Povinné předměty"
+
+msgid "Language subjects"
+msgstr "Jazyky"
+
+msgid "language"
+msgstr "jazyk"
+
+msgid "Voluntary subjects"
+msgstr "Volitelné předměty"
+
+msgid "languages be have to be different"
+msgstr "jazyky musí být rozdílné"
+
+msgid "voluntary subjects have to be different"
+msgstr "volitelné předměty musí být rozdílné"
+
+msgid "external subjects university cannot be empty"
+msgstr "univerzita nesmí být prazdná"
+
+msgid ""
+"On this page you are starting to create your study plan. Remember that\n"
+"consulting it with your tutor is highly recommended."
+msgstr ""
+"Na této stránce si začínáte sestavovat studijní plán.Pamatujte, že "
+"konzultace s Vaším školitelném je velkmi doporučena."
+
+msgid ""
+"So first step is to fill title of the disert theme and its defense\n"
+"  semester."
+msgstr "Jako první krok vyplňte název dizertační práce a semestr obhajoby"
+
+msgid "title"
+msgstr "název"
+
+msgid "semester of disert theme defense"
+msgstr "semestr obhajoby dizertační práce"
 
 msgid ""
 "Welcome to edoktorand application. Please check all information on this page "
 "for correctness."
-msgstr "Vítejte v applikaci e-doktorand. Prosím zkontrolujte jestli údaje na této"
-" stránce odpovídají Vašim osobním údajům a údajům o Vašem studiu."
+msgstr ""
+"Vítejte v applikaci e-doktorand. Prosím zkontrolujte jestli údaje na této "
+"stránce odpovídají Vašim osobním údajům a údajům o Vašem studiu."
+
+msgid "Personal and study details"
+msgstr "Osobí a studijní údaje"
+
+msgid "change"
+msgstr "změnit"
 
 msgid ""
 "On the top right of this page is menu with actions available to you at this "
 "moment."
-msgstr "Vpravo nahoře se nachází menu s možnými akcemi, které jsou pro Vás v"
-" této chvíli přístupné."
+msgstr ""
+"Vpravo nahoře se nachází menu s možnými akcemi, které jsou pro Vás v této "
+"chvíli přístupné."
 
-msgid "Candidate was changed"
-msgstr "Uchazeč byl opraven"
+msgid ""
+"Here you can see how does look your study plan. If it's how you\n"
+"intended confirm it please."
+msgstr ""
+"Na této stránce vidíte Váš sestavený studijní plán.Pokud je tak jste to "
+"zamýšleli potvrďte ho prosím"
 
-msgid "Candidate "
-msgstr "Uchazeč "
+msgid "confirm"
+msgstr "potvrdit"
 
-msgid " is ready for application form"
-msgstr " je připraven na příjimací zkoušky"
+msgid "print"
+msgstr "Tisk"
 
-msgid "e-mail sent"
-msgstr "e-mail odeslán"
+msgid "only invited"
+msgstr "jen pozvaní"
 
-msgid "Candidates"
-msgstr "Uchazeči o studium"
+msgid "only admited"
+msgstr "jen přijatí"
+
+msgid "only enrolled"
+msgstr "jen zapsaní"

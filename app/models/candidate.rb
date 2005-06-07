@@ -28,11 +28,28 @@ class Candidate < ActiveRecord::Base
   # validates if languages are not same
   def validate
     errors.add_to_base(_("languages have to be different")) if language1 == language2
+    errors.add_to_base(_("candidate must be finished before invitation")) if
+    !finished? && invited?
+    errors.add_to_base(_("candidate must be invited before admittance")) if
+    !invited? && admited?
+    errors.add_to_base(_("candidate must be admited before enrollment")) if
+    !admited? && enrolled?
+  end
+  # hooks: create student
+  def before_update
+    if self.enrolled? && self.valid? && !student
+      self.student = create_student
+    end
+    
   end
   # finishes candidate
   def finish!
     self.finished_on = Time.now
     self.save
+  end
+  # checks if candidate is allready finished 
+  def finished?
+    return !self.finished_on.nil?
   end
   # returns name for displaying
   def display_name
@@ -80,6 +97,65 @@ class Candidate < ActiveRecord::Base
   # enroll candidate to study and returns new student based on 
   # candidates details. 
   def enroll!
+    # update candidate
+    self.enrolled_on = Time.now
+    self.save
+  end
+  # checks if candidate is allready enrolled
+  def enrolled?
+    return !self.enrolled_on.nil?
+  end
+  # sets candidate ready for admition
+  def ready!
+    self.ready_on = Time.now
+    self.save
+  end
+  # checks if student is ready
+  def ready?
+    !self.ready_on.nil?
+  end
+  # returns email like contact object
+  def contact_email
+    return Contact.new do |c|
+      c.name = self.email
+      c.contact_type_id = 1
+    end
+  end
+  # returns phone like contact object
+  def contact_phone
+    return Contact.new do |c|
+      c.name = self.phone
+      c.contact_type_id = 2
+    end
+  end
+  # returns new address with attributes set by self 
+  def create_address(id)
+    add = Address.new {|a|
+      a.student_id = id
+      a.street = self.street
+      a.desc_number = self.number
+      a.city = self.city
+      a.zip = self.zip
+      a.type = AddressType.find(1)
+    }
+    add.save
+  end
+  # returns new postal address with attributes set by self
+  def create_postal_address(id)
+    if self.postal_city
+      add = Address.new {|a|
+        a.student_id = id
+        a.street = self.postal_street
+        a.desc_number = self.postal_number
+        a.city = self.postal_city
+        a.zip = self.postal_zip
+        a.type = AddressType.find(2)
+      }
+      add.save
+    end
+  end
+  # creates student 
+  def create_student
     # convert candidate to (student+index)
     student = Student.new
     student.firstname = self.firstname
@@ -104,61 +180,7 @@ class Candidate < ActiveRecord::Base
     create_postal_address(student.id) if self.postal_city
     student.email = self.contact_email
     student.phone = self.contact_phone if self.phone 		
-
-    # update candidate
-    self.enrolled_on = Time.now
-    self.student = student
-    self.save
-  end
-  # checks if candidate is allready enrolled
-  def enrolled?
-    return !self.enrolled_on.nil?
-  end
-  # sets candidate ready for admition
-  def ready!
-    self.ready_on = Time.now
-    self.save
-  end
-  # checks if student is ready
-  def ready?
-    !self.ready_on.nil?
-  end
-  # returns email like contact object
-  def contact_email
-    return Contact.new do |c|
-      c.name = self.email
-      c.contact_type_id = 1
-    end
-  end
-  # returns phone like contact object
-  def contact_phone 
-    return Contact.new do |c|
-      c.name = self.phone
-      c.contact_type_id = 2
-    end
-  end
-  # returns new address with attributes set by self 
-  def create_address(id)
-    add = Address.new {|a|
-      a.student_id = id
-      a.street = self.street
-      a.desc_number = self.number
-      a.city = self.city
-      a.zip = self.zip
-      a.type = AddressType.find(1)
-    }
-    add.save
-  end
-  # returns new postal address with attributes set by self
-  def create_postal_address(id)
-    add = Address.new {|a|
-      a.student_id = id
-      a.street = self.postal_street
-      a.desc_number = self.postal_number
-      a.city = self.postal_city
-      a.zip = self.postal_zip
-      a.type = AddressType.find(2)
-    }
-    add.save
+    
+    return student
   end
 end

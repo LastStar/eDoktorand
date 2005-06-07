@@ -120,7 +120,7 @@ class CandidatesController < ApplicationController
 		@params['page'] = '1' unless @params['page'] # cause nil page means first :-)
 		if @session['page'] == @params['page']
 	    if @params['category'] == @session['category']
-	      @session['order'] = @session['order'] == ' desc' ? '' : ' desc'
+        @session['order'] = @session['order'] == ' desc' ? '' : ' desc'
 	    else
 	      @session['order'] = ''
 	    end

@@ -25,19 +25,8 @@ class ApplicationController < ActionController::Base
     if user.has_permission?("%s/%s" % [ @params["controller"], @params["action"] ])
       return true
     else
-      flash['error'] = 'K přístupu na požadovanou stránku nemáte dostačující práva'
+      flash['error'] = _("you don't have rights to do this")
       redirect_to :controller => 'account', :action => 'error'
-    end
-  end
-  # prints errors for object
-	helper_method :errors_for
-  def errors_for(object)
-    unless object.errors.empty?
-      tb = "<div id='error'>Chyba:&nbsp;ve vašem vstupu se vyskytly následující chyby:<ul>"
-      object.errors.each do |attr, message|
-        tb << '<li>' + message + '</li>'
-      end
-      tb << '</ul></div>'
     end
   end
 	# returns array of the time by quarter from start time to end time
@@ -65,9 +54,9 @@ class ApplicationController < ActionController::Base
     end
     language = temp.slice(0)
     dialect  = temp.slice(1)
-    @language = language.nil? ? 'en' : language.downcase # default is en
+    @language = language.nil? ? 'cs' : language.downcase # default is en
     # If there is no dialect use the language code ('en' becomes 'en_EN').
-    @dialect  = dialect.nil? ? @language : dialect
+    @dialect  = dialect.nil? ? 'CZ' : dialect
     # The complete locale string consists of
     # language_DIALECT (en_EN, en_GB, de_DE, ...)
     @locale = "#{@language}_#{@dialect.upcase}"
@@ -83,3 +72,4 @@ class ApplicationController < ActionController::Base
     @student = @session['user'].person unless @student.kind_of?(Student)
   end
 end
+

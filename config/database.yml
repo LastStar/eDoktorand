@@ -3,11 +3,8 @@ development:
   dbfile: db/phdstudy.db
 
 test:
-  adapter: mysql
-  database: rails_test
-  host: localhost
-  username: root
-  password:
+  adapter: sqlite
+  dbfile: db/test.db
 
 production:
   adapter: mysql
