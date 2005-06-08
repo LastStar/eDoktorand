@@ -13,6 +13,9 @@
 	  <th>
 	  	 <%= _('status') %>
 	  </th>
+          <th>
+                 <%= _('study form') %>
+          </th>
 	  <th width="100%" class="hidden">
 	  	 <%= _('Note') %>
 	  </th>
@@ -30,6 +33,9 @@
     </td>
     <td>
  	  <%= status_tag(candidate) %>
+    </td>
+    <td>
+          <%= candidate.study.name %>
     </td>
     <td width="100%" class="hidden">
     	 &nbsp;
