@@ -126,6 +126,9 @@ msgstr "protokol"
 msgid "admit"
 msgstr "přijmout"
 
+msgid "invite"
+msgstr "pozvat"
+
 msgid "create commission"
 msgstr "vytvořit komisi"
 
@@ -291,7 +294,7 @@ msgid "coridor"
 msgstr "obor"
 
 msgid "status"
-msgstr "státní příslušnost"
+msgstr "status"
 
 msgid "Note"
 msgstr "Poznámka"
@@ -739,6 +742,9 @@ msgstr "potvrdit"
 
 msgid "print"
 msgstr "Tisk"
+
+msgid "only ready"
+msgstr "jen odsouhlasení"
 
 msgid "only invited"
 msgstr "jen pozvaní"

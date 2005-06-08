@@ -14,20 +14,32 @@ ActionController::Routing::Routes.draw do |map|
   # instead of a file named 'wsdl'
   map.connect ':controller/service.wsdl', :action => 'wsdl'
 
+  # add path for table changer
+  map.connect 'table/:controller/:action', :prefix => 'table_'
+  ### table versions 
   # sorting routes for candidate
-  map.connect 'candidates/by/:category', :controller => 'candidates', :action => 'list'
+  map.connect 'table/:controller/by/:category', :action => 'list', :prefix => 'table_'
   # sorting routes for all candidate
-  map.connect 'candidates/all_by/:category', :controller => 'candidates', :action => 'list_all'
+  map.connect 'table/:controller/all_by/:category', :action => 'list_all', 
+    :prefix => 'table_'
   # filter routes for candidate
-  map.connect 'candidates/only/:filter', :controller => 'candidates', :action => 'list'
+  map.connect 'table/:controller/only/:filter', :action => 'list', :prefix => 'table_'
   # sorted filter routes for candidate
-  map.connect 'candidates/only/:filter/by/:category', :controller => 'candidates', :action => 'list'
+  map.connect 'table/:controller/only/:filter/by/:category', :action => 'list', 
+    :prefix => 'table_'
+  # sorting routes for candidate
+  map.connect ':controller/by/:category', :action => 'list'
+  # sorting routes for all candidate
+  map.connect ':controller/all_by/:category', :action => 'list_all'
+  # filter routes for candidate
+  map.connect ':controller/only/:filter', :action => 'list'
+  # sorted filter routes for candidate
+  map.connect ':controller/only/:filter/by/:category', :action => 'list'
   # candidates for corridor
-  map.connect 'candidates/in/:coridor', :controller => 'candidates', :action => 'list'
+  map.connect 'candidates/in/:coridor', :controller => 'candidates', 
+    :action => 'list'
   # add path for prijimacky
   map.connect 'prijimacky/:action/:id', :controller => 'form'
-  # add path for prijimacky
-  map.connect ':controller/table/:action', :prefix => 'table_'
   # Install the default route as the lowest priority.
   map.connect ':controller/:action/:id'
 end

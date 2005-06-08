@@ -19,7 +19,7 @@ module CandidatesHelper
         link_to(_("create commission"), :controller => 'exam_terms', 
         :action => 'new', :id => candidate.coridor.id )
       else
-        link_to _("admit"), :action => 'invite', :id => candidate.id 
+        link_to(_("invite"), :action => 'invite', :id => candidate.id)
       end
     end
   end
@@ -39,7 +39,8 @@ module CandidatesHelper
       else
         link = arg.last + ' &uarr;'
       end
-      links << link_to(link, :action => action, :category => arg.first)
+      links << link_to(link, :action => action, :category => arg.first, 
+      :prefix => @params['prefix'])
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
@@ -53,7 +54,8 @@ module CandidatesHelper
       else
         link = arg.last + ' &uarr;'
       end
-      links << link_to(link, :action => action, :filter => filtered_by, :category => arg.first)
+      links << link_to(link, :action => action, :filter => filtered_by, 
+        :category => arg.first, :prefix => @params['prefix'])
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
