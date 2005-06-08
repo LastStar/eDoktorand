@@ -754,3 +754,6 @@ msgstr "jen přijatí"
 
 msgid "only enrolled"
 msgstr "jen zapsaní"
+
+msgid "summary"
+msgstr "sumarizace"
