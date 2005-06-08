@@ -88,6 +88,8 @@ module CandidatesHelper
       links << '&nbsp;'
       links << link_to(_("table"), {:prefix => 'table_'})
       links << '&nbsp;'
+      links << link_to(_("summary"), {:action => 'summary'})
+      links << '&nbsp;'
       links << link_to_function(_("print this page"), 'print_details()')
     end
     if @pages and pagination_links(@pages)
@@ -102,6 +104,16 @@ module CandidatesHelper
     end
     content_tag('div', links, :class => 'links')
   end
+
+  # print summary department/coridor switcher
+  def summary_links
+    links = ''
+    links << link_to(_(@params["id"] == "department" ||  !@params["id"] ?
+    "By corridors" : "By departments"), {:action => 'summary', 
+      :id => @params["id"] == "department" ||  !@params["id"] ? 'corridor' : 'department'})
+    content_tag('div', links, :class => 'links')
+  end
+  
   # prints status of the candidate
   def status_tag(candidate)
     if candidate.enrolled?

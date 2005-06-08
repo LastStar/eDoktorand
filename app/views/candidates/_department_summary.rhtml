@@ -1,0 +1,16 @@
+<ul>
+<% for department in @departments do %>
+  <% unless department.candidates.empty? %>
+    <li>
+     <%= department.name %>
+     <ul>
+       <%= _("present") %>: <%= department.candidates.select {|c| c.study.id ==
+       1}.size %><br/> 
+       <%= _("combined") %>: <%= department.candidates.select {|c| c.study.id ==
+       2}.size %>
+     </ul> 
+    </li>
+  <% end %>
+<% end %>
+</ul>
+<br/> 

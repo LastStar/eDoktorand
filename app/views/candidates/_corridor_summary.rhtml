@@ -1,0 +1,16 @@
+<ul>
+<% for corridor in @corridors do %>
+  <% unless corridor.candidates.empty? %>
+    <li>
+     <%= corridor.name %>
+     <ul>
+       <%= _("present") %>: <%= corridor.candidates.select {|c| c.study.id ==
+       1}.size %><br/> 
+       <%= _("combined") %>: <%= corridor.candidates.select {|c| c.study.id ==
+       2}.size %>
+     </ul> 
+    </li>
+  <% end %>
+<% end %>
+</ul>
+<br/> 

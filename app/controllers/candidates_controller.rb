@@ -110,6 +110,15 @@ class CandidatesController < ApplicationController
 		@candidate = Candidate.find(@params['id'])
 	end
 
+  # summary method for candidates
+  def summary
+    if @params["id"] == "department" || @params["id"].empty?
+      @departments = Department.find(:all)
+    else
+      @corridors = Coridor.find(:all)
+    end
+  end
+  
   private
   # sets title of the controller
   def set_title

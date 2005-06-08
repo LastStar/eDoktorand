@@ -11,7 +11,7 @@ for loading:
 
 File.open('_dumpfile_.yml', 'r') {|out| YAML.load(out)}.each {|obj| obj.create}
 
-When changing column name preffered way is to create dump and then loadit
+When changing column name, preffered way is to create dump and then load it
 through modification block like this:
 
 File.open('_dumpfile_.yml', 'w') {|out| yaml.load(out)}.each do |obj|
