@@ -543,7 +543,7 @@ msgid "suffix title"
 msgstr "titul za jménem"
 
 msgid "birth place"
-msgstr "datum a místo narození"
+msgstr "místo narození"
 
 msgid "state"
 msgstr "státní příslušnost"
@@ -555,7 +555,7 @@ msgid "street"
 msgstr "ulice"
 
 msgid "street number"
-msgstr "rodné číslo"
+msgstr "číslo popisné"
 
 msgid "city"
 msgstr "obec"
