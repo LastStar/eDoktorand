@@ -88,7 +88,7 @@ module CandidatesHelper
       links << '&nbsp;'
       links << link_to(_("table"), {:prefix => 'table_'})
       links << '&nbsp;'
-      links << link_to(_("summary"), {:action => 'summary'})
+      links << link_to(_("summary"), {:action => 'summary', :id => "department"})
       links << '&nbsp;'
       links << link_to_function(_("print this page"), 'print_details()')
     end
