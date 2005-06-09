@@ -14,6 +14,27 @@ module StudyPlansHelper
       link_to(_("approve"), :action => 'approve', :id => @study_plan)
     end
   end
+
+  # prints out the methodology approvement links
+  def approve_methodology_links
+    @methodology = @study_plan.index.disert_theme
+    if @session['user'].person == @methodology.index.tutor &&
+      !@methodology.approvement
+      link_to(_("approve methodology"), :action => 'approve', 
+      :id => @methodology)
+    elsif @session['user'].person.is_a?(Leader) &&
+      @session['user'].person == @methodology.index.leader &&
+      @methodology.approvement && !@methodology.approvement.leader_statement
+      link_to(_("approve methodology"), :action => 'approve', 
+      :id => @methodology)
+    elsif @session['user'].person.is_a?(Dean) &&
+      @methodology.approvement && @methodology.approvement.leader_statement && 
+      !@methodology.approvement.dean_statement
+      link_to(_("approve methodology"), :action => 'approve', 
+      :id => @methodology)
+    end
+  end
+  
   # prints tutor statement
   def print_statement(message, statement)
     result = message + ': ' 

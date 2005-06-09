@@ -1,5 +1,6 @@
 class DisertTheme < ActiveRecord::Base
   belongs_to :index
+  has_one :approvement, :foreign_key => 'document_id'
   validates_presence_of :title
   validates_presence_of :finishing_to
   def self.save(disert_theme)
