@@ -6,6 +6,7 @@ class StudyPlansController < ApplicationController
   model :dean
   model :language_subject
   model :external_subject
+  model :study_plan
   layout 'students'
   before_filter :login_required, :student_required
   # page with basic informations for student 
@@ -26,42 +27,84 @@ class StudyPlansController < ApplicationController
       render_action 'create'
     else
       @session['disert_theme'] = @disert_theme
-      redirect_to :action => 'choose_subjects'
+      redirect_to :action => 'choose_obligate'
     end
   end
-  # page where student adds subjects to his study plan
-  def choose_subjects
+  # page where student adds obligate subjects to his study plan
+  def choose_obligate
     @title = _("Creating study plan")
     @study_plan = @student.index.build_study_plan
-    @obligate_subjects = @student.index.coridor.obligate_subjects
+    @session['study_plan'] = @study_plan
+    @session['plan_subjects'] = []
+    create_obligate
   end
-  # saves study plan
-  def save
-    @study_plan = StudyPlan.new(@params['study_plan'])
-    flash.now[:errors] = []
-    @study_plan.save
-    prepare_obligate
-    prepare_language
-    prepare_voluntary
-    unless flash[:errors].empty?
-      choose_subjects
-      render_action 'choose_subjects'
+  # saves obligate subjects to session
+  def save_obligate
+    @session['study_plan'].attributes = @params['study_plan']
+    @params['plan_subject'].each do |id, ps|
+      plan_subject = PlanSubject.new
+      plan_subject.attributes = ps
+      @session['plan_subjects'] << plan_subject
+    end
+    redirect_to :action => 'choose_language'
+  end
+  # page where student adds language subjects to his study plan
+  def choose_language
+    @title = _("Creating study plan")
+    @study_plan = StudyPlan.new
+    create_language
+  end
+  # saves language subjects to session
+  def save_language
+    extract_language
+    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 2
+      @session['plan_subjects'] << @plan_subjects
+      redirect_to :action => 'choose_voluntary'
     else
-      @session['study_plan'] = @study_plan
+      extract_language(true)
+      @title = _("Error in creating study plan")
+      flash.now['error'] = _("languages have to be different")
+      render_action 'choose_language'
+    end
+  end
+  # page where student adds voluntary subjects to his study plan
+  def choose_voluntary
+    @title = _("Creating study plan")
+    @study_plan = StudyPlan.new
+    create_voluntary
+  end
+  # saves voluntary subjects to session
+  def save_voluntary
+    @errors = []
+    extract_voluntary
+    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 3 && @errors.empty?
+      @session['plan_subjects'] << @plan_subjects
       redirect_to :action => 'preview'
+    else
+      extract_voluntary(true)
+      @title = _("Error in creating study plan")
+      @errors << _("subjects have to be different") unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 3
+      flash.now['errors'] = @errors.uniq!
+      render_action 'choose_voluntary'
     end
   end
   # previews what have been filled. 
   def preview
     @title = _("Creating study plan")
     @study_plan = @session['study_plan']
+    @study_plan.plan_subjects << @session['plan_subjects']
     @study_plan.index.disert_theme = @session['disert_theme']
   end
   # confirms study plan 
   def confirm
     @study_plan = @session['study_plan']
     @study_plan.admited_on = Time.now
+    @study_plan.plan_subjects << @session['plan_subjects']
+    @study_plan.index.disert_theme = @session['disert_theme']
     @study_plan.save
+    @session['study_plan'] = nil
+    @session['plan_subjects'] = nil
+    @session['disert_theme'] = nil
     redirect_to :action => 'index'
   end
   # shows study plan to employer
@@ -110,46 +153,70 @@ class StudyPlansController < ApplicationController
     redirect_to :action => 'show', :id => @study_plan.id
   end
   private	
-  # gets obligate subjects from request
-  def prepare_obligate
-    @params['obligate_semester'].each do |key, value|
-      @study_plan.plan_subjects.create('subject_id' => key,
-      'finishing_on' => value)
+  # prepares obligate subjects
+  def create_obligate
+    @plan_subjects = []
+    index = 0
+    @study_plan.index.coridor.obligate_subjects.each do |sub|
+      ps = PlanSubject.new('subject_id' => sub.id)
+      ps.id = index
+      @plan_subjects << ps
+      index += 1
     end
   end
-  # gets language  subject from request
-  def prepare_language
-    unless @params['language'].values.uniq.size == 1
-      @params['language'].each do  |key, value|
-        @study_plan.plan_subjects.create('subject_id' => value,
-        'finishing_on' => @params['language_semester'][key])
-      end
-    else
-      flash[:errors] << _("languages have to be different")
+  # prepares language  subject
+  def create_language
+    @plan_subjects = []
+    (1..2).each do |index|
+      ps = PlanSubject.new
+      ps.id = index
+      @plan_subjects << ps
     end
   end
-  # gets voluntary subject from request
-  def prepare_voluntary
-    @params['voluntary'].each do |key, value|
-      if value == '0'
-        es = ExternalSubject.new('label' => 
-        @params['voluntary_subject'][key])
-        if es.save
-          if es.create_external_subject_detail(
-            'university' => @params['voluntary_university'][key],
-            'person' => @params['voluntary_examinator'][key])
-            value = es.id
-          else 
-            flash[:errors] << _("university for external subject cannot be
-            empty")
-          end
-        else
-          flash[:errors] << _("name of the external subject cannot be empty")
+  # prepares voluntary subject 
+  def create_voluntary
+    @plan_subjects = []
+    (1..3).each do |index|
+      ps = PlanSubject.new
+      ps.id = index
+      @plan_subjects << ps
+    end
+  end
+  # extracts language subjects from request
+  def extract_language(remap_id = false)
+    @plan_subjects = []
+    @params['plan_subject'].each do |id, ps|
+      plan_subject = PlanSubject.new
+      plan_subject.attributes = ps
+      plan_subject.id = id if remap_id
+      @plan_subjects << plan_subject
+    end
+  end
+  # extracts voluntary subjects from request
+  def extract_voluntary(remap_id = false)
+    @plan_subjects = []
+    @params['plan_subject'].each do |id, ps|
+      if(ps['subject_id'] == '0')
+        subject = ExternalSubject.new
+        subject.label = ps['label']
+        unless subject.valid?
+          @errors << _("title for external subject cannot be empty")
         end
+        esd =
+        subject.build_external_subject_detail(@params['external_subject_detail'][id])
+        unless esd.valid?
+          @errors << _("university for external subject cannot be empty")
+        else
+          subject.external_subject_detail = esd
+        end
+      else
+        subject = Subject.find(ps['subject_id'])
       end
-      @study_plan.plan_subjects.create('subject_id' => value,
-      'finishing_on' => @params['voluntary_semester'][key])
-      flash[:errors].uniq!
+      plan_subject = PlanSubject.new
+      plan_subject.finishing_on = ps['finishing_on']
+      plan_subject.subject = subject
+      plan_subject.id = id if remap_id
+      @plan_subjects << plan_subject
     end
   end
 end

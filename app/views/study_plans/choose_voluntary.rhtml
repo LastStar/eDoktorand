@@ -1,0 +1,21 @@
+<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag "study_plan" %>
+
+<% if @flash['errors'] && !@flash['errors'].empty? %>
+<div id='error'>
+<ul>
+<% @flash['errors'].each do |err| %>
+<%= content_tag('li', err) %>
+<% end %>
+</ul>
+</div>
+<% end %>
+<%= start_form_tag(:action => 'save_voluntary')%>
+<fieldset>
+<legend><%= _("Voluntary subjects") %></legend>
+<% for plan_subject in @plan_subjects do %>
+<%= render_partial 'voluntary', :plan_subject => plan_subject %>
+<% end %>
+</fieldset>
+<%= submit_tag(_("next")) %>
+<%= end_form_tag %>

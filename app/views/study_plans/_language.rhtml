@@ -1,6 +1,12 @@
-
-<%= content_tag('select', options_for_select(language_subject_ids), 
-{'id' => "language_#{counter}",'name' => "language[#{counter}]"}) %>
-&mdash;<%= content_tag('select', options_for_select(1..4), 
-{'id' => "language_semester_#{counter}",'name' => "language_semester[#{counter}]"}) %>
+<label>
+<%= _("language") %>
+</label>
+<%= content_tag('select', options_for_select(language_subject_ids,
+plan_subject.subject_id), 
+{'id' => "plan_subject_#{plan_subject.id}_subject_id",'name' =>
+"plan_subject[#{plan_subject.id}][subject_id]"}) %>
+&mdash;<%= content_tag('select', options_for_select(1..4,
+plan_subject.finishing_on), 
+{'id' => "plan_subject_#{plan_subject.id}_finishing_on",'name' =>
+"plan_subject[#{plan_subject.id}][finishing_on]"}) %>
 <%= "." + _("semester") %>

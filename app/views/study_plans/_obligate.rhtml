@@ -1,6 +1,9 @@
 
 <label><%= plan_subject.subject.label %></label>
-<%= content_tag('select', options_for_select(1..4), { 'id' => 
-"obligate_semester_#{plan_subject.subject.id}",'name' =>
-"obligate_semester[#{plan_subject.id}]"}) %>
+<%= content_tag('select', options_for_select((1..4), plan_subject.finishing_on), { 'id' => 
+"plan_subject_#{plan_subject.id}",'name' =>
+"plan_subject[#{plan_subject.id}][finishing_on]"}) %>
 <%= "." + _("semester") %>
+<%= tag('input', {'type' => 'hidden', 'value' => plan_subject.subject_id, 'id' => 
+"plan_subject_#{plan_subject.id}_subject_id", 'name' =>
+"plan_subject[#{plan_subject.id}][subject_id]"}) %>

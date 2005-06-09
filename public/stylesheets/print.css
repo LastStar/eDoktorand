@@ -50,6 +50,11 @@ h1 {
 	padding-left: 13cm;	
 	padding-bottom: 1em;	
 }
+.rightAlignLefter {
+	text-align: left;
+	padding-left: 10cm;	
+	padding-bottom: 1em;	
+}
 .centerAlign {
 	text-align: center;
 	display: block;
