@@ -57,14 +57,23 @@ class CandidatesController < ApplicationController
   # enroll candidate form
   def enroll
 		@candidate = Candidate.find(@params['id'])
+		@user = User.new
   end
 	# confirms enrollment of candidate and sends email
-	def confirm_enroll
-		@candidate = Candidate.find(@params['id'])
-		# Notifications::deliver_admit_candidate(@candidate)
-		@candidate.enroll!
+  def confirm_enroll
+    @candidate = Candidate.find(@params['id'])
+    # Notifications::deliver_admit_candidate(@candidate)
+    @candidate.enroll!
+    if !@params['user']['login'].empty?
+      @user = User.new(@params['user'])
+      @user.person = @candidate.student
+      @user.roles << Role.find_by_name('student')
+      if !@user.save
+        render_action 'enroll'
+      end  
+    end
     redirect_to :action => 'list'
-	end
+  end
   # amits candidate form
   def admit
 		@candidate = Candidate.find(@params['id'])
