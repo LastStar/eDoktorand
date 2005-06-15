@@ -29,7 +29,7 @@ ActionController::Routing::Routes.draw do |map|
     :prefix => 'table_'
   # candidates for corridor
   map.connect 'table/candidates/in/:coridor', :controller => 'candidates', 
-    :action => 'list', :prefix => 'table_'
+    :action => 'list_all', :prefix => 'table_'
   # sorting routes for candidate
   map.connect ':controller/by/:category', :action => 'list'
   # sorting routes for all candidate
@@ -40,7 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/only/:filter/by/:category', :action => 'list'
   # candidates for corridor
   map.connect 'candidates/in/:coridor', :controller => 'candidates', 
-    :action => 'list'
+    :action => 'list_all'
   # add path for prijimacky
   map.connect 'prijimacky/:action/:id', :controller => 'form'
   # Install the default route as the lowest priority.

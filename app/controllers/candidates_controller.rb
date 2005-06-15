@@ -28,8 +28,10 @@ class CandidatesController < ApplicationController
   end
   # lists all candidates ordered by category
   def list_all
+    conditions = 'finished_on IS NOT NULL'
+    conditions << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
 	  @candidates = Candidate.find(:all, :order => @params['category'],
-	  :conditions => 'finished_on IS NOT NULL')
+	  :conditions => conditions)
 	  render_action 'list'
   end
   # shows candidate details
