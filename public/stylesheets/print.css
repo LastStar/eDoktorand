@@ -37,6 +37,11 @@ h1 {
 .right {
   display: none;
 }
+.dots {
+  padding-left: 2em;
+  position: absolute;
+  left: 18em;
+}
 .info {
   padding-left: 2em;
   position: absolute;
