@@ -743,6 +743,9 @@ msgstr "potvrdit"
 msgid "print"
 msgstr "Tisk"
 
+msgid "only unready"
+msgstr "jen nepřipravení"
+
 msgid "only ready"
 msgstr "jen odsouhlasení"
 
@@ -757,3 +760,7 @@ msgstr "jen zapsaní"
 
 msgid "summary"
 msgstr "sumarizace"
+
+msgid "all"
+msgstr "všichni"
+

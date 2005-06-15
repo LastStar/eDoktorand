@@ -15,6 +15,8 @@ class CandidatesController < ApplicationController
 	 @filtered_by = @params['filter'] 
 		conditions = 'finished_on IS NOT NULL'
 		conditions << case @params['filter']
+                  when 'unready':' AND finished_on IS NOT NULL AND ready_on IS
+                    NULL'
 									when 'ready': ' AND ready_on IS NOT NULL AND invited_on IS NULL'
 									when 'invited': ' AND invited_on IS NOT NULL AND admited_on IS NULL'
 									when 'admited': ' AND admited_on IS NOT NULL AND enrolled_on IS NULL'

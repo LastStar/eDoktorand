@@ -61,7 +61,7 @@ module CandidatesHelper
   end
   # prints sorting tags
   def filter_tags(action, args, options)
-    links = ''
+    links = '&nbsp;' + link_to(_("all"), :action => '')
     for arg in args
       links << '&nbsp;'
       links << link_to(_("only " + arg), :action => action, :filter => arg)
@@ -86,7 +86,9 @@ module CandidatesHelper
       links << link_to_function(_("hide all histories"),
       'close_all_histories()')
       links << '&nbsp;'
-      links << link_to(_("table"), {:prefix => 'table_'})
+      links << link_to(_("table"), {:prefix => 'table_', :coridor =>
+      @params['coridor'], :filter => @params['filter'], :category =>
+      @params['category']})
       links << '&nbsp;'
       links << link_to(_("summary"), {:action => 'summary', :id => "department"})
       links << '&nbsp;'
