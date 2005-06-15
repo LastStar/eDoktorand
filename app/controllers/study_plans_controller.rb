@@ -7,6 +7,8 @@ class StudyPlansController < ApplicationController
   model :language_subject
   model :external_subject
   model :study_plan
+  model :plan_subject
+  model :subject
   layout 'students'
   before_filter :login_required, :student_required
   # page with basic informations for student 
@@ -107,11 +109,6 @@ class StudyPlansController < ApplicationController
     @session['disert_theme'] = nil
     redirect_to :action => 'index'
   end
-  # shows study plan to employer
-  def show
-    @study_plan = StudyPlan.find(@params['id'])
-    @title = _("Study plan for ") + @study_plan.index.student.display_name 
-  end
   # approves study plan 
   def approve
     @study_plan = StudyPlan.find(@params['id'])
@@ -127,9 +124,10 @@ class StudyPlansController < ApplicationController
     elsif @session['user'].person.is_a?(Dean)
       @statement = DeanStatement.new
     else
-      @flash['error'] = _("you don't have rights to do this")
+      flash['error'] = _("you don't have rights to do this")
       redirect_to :action => 'login', :controller => 'account'
     end
+    render_partial "approve"
   end
   # confirms and saves statement
   def confirm_approve
@@ -148,9 +146,15 @@ class StudyPlansController < ApplicationController
     end
     @study_plan.canceled_on = @statement.cancel? ? Time.now : nil
     @study_plan.approved_on = Time.now if @statement.is_a?(DeanStatement) &&
-    !@statement.cancel?
+      !@statement.cancel?
     @study_plan.save
-    redirect_to :action => 'show', :id => @study_plan.id
+    redirect_to :controller => 'students'
+  end
+  # for remote adding subjects to page
+  def subjects
+    render_partial("shared/subjects", :subjects =>
+    PlanSubject.find(:all, :contions => ['study_plan_id = ?', @params['id']],
+    :include => [:subject]))
   end
   private	
   # prepares obligate subjects

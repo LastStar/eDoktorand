@@ -1,0 +1,52 @@
+<% if study_plan.canceled? %>
+<h5><%= _("Canceled on") %></h5>: <%= study_plan.canceled_on %></h5>
+<% end %>
+<% if study_plan.approved? %>
+<h5><%= _("Approved on") %>: <%= study_plan.approved_on %></h5>
+<% end %>
+  <% if study_plan.approvement %>
+  <%= render_partial 'shared/print_statements', :approvement => study_plan.approvement %>
+  <% end %>
+<ul>
+  <li>
+   <%= _("Disert theme") %>: <%= study_plan.index.disert_theme.title %>
+   &mdash; <%= study_plan.index.disert_theme.finishing_to %>. <%= _("semester") %>
+   <%= render_partial 'methodology', :study_plan => study_plan %>
+  </li>
+</ul>
+<ul>
+  <li>
+  <%= _("Final exam") %>: <%= study_plan.finishing_to %>. <%= _("semester") %>
+  </li>
+</ul>
+<% if study_plan.admited_on %>
+<ul>
+  <li>
+    <%= subjects_link(study_plan) %>
+  </li>
+</ul>
+<%= approve_links(study_plan) %>
+<% end %>
+<div class='links'>
+<a href='javascript:window.print()'><%= _("print") %></a>
+<%= link_to(_("back"), :controller => 'students') %>
+</div>
+<%= javascript_include_tag 'prototype' %>
+<script>
+function showSubjects(id)  {
+  if($('subjects' + id).style.display == 'none') {
+    new Effect.Appear('subjects' + id);
+    new Effect.Fade('link' + id)
+  } else {
+    new Effect.Fade('subjects' + id)
+    new Effect.Appear('link' + id)
+  }
+}
+function showApproveForm(id)  {
+  if($('approveForm' + id).style.display == 'none') {
+    new Effect.Appear('approveForm' + id);
+  } else {
+    new Effect.Fade('approveForm' + id)
+  }
+}
+</script>

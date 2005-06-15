@@ -1,27 +1,36 @@
 <%= javascript_include_tag "prototype" %>
 <% unless @students.empty? %>
-<ul>
+<ul class='peopleList'>
 <% for student in @students  %>
   <li>
-    <div class='right'>
-    <%= render_partial 'student_links', :student => student %>
-    </div>
+  <div class='right'>
+  <%= render_partial 'student_links', :student => student %>
+  </div>
   <b><%= student.display_name %></b>
-  <div class='info'>
+  <div>
   <% if student.index.study_plan %>
-  <%= _("Study plan created on") %>: <%= student.index.study_plan.created_on
+  <%= _("created on") + ': ' +
+  student.index.study_plan.created_on.strftime('%m. %d. %Y')
   %><br/> 
   <% if student.index.study_plan.canceled? %>
-  <%= _("Study plan canceled on") %>: <%= student.index.study_plan.canceled_on
+  <%= _("canceled on") %>: <%=
+  student.index.study_plan.canceled_on.strftime('%m. %d. %Y')
   %><br/> 
   <% end %>
   <% if  student.index.study_plan.approved? %>
-  <%= _("Study plan approved on") %>: <%= student.index.study_plan.approved_on
+  <%= _("approved on") %>: <%=
+  student.index.study_plan.approved_on.strftime('%m. %d. %Y')
   %><br/> 
   <% end %>
   <% end %>
   </div>
   <%= render_partial 'student_contact', :student => student %>
+  <% if student.index.study_plan %>
+  <div id='study_plan_<%= student.id %>' style='display: none'>
+  <%= render_partial 'shared/study_plan', :study_plan =>
+  student.index.study_plan %>
+  </div>
+  <% end %>
   </li>
 <% end %>
 </ul>

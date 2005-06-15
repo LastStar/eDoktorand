@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
   model :student
   model :user
+  model :leader
+  model :dean
   include LoginSystem
   layout 'employers'
   before_filter :login_required
@@ -12,7 +14,8 @@ class StudentsController < ApplicationController
   end
   # lists all students
   def list
-    @pages, @students = paginate :students, :per_page => 5, :order_by => 'lastname'
+    @pages, @students = paginate(:students, :per_page => 5, :order_by =>
+    'lastname')
   end
   # show student's detail
   def show

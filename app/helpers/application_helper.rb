@@ -86,4 +86,50 @@ module ApplicationHelper
     arr.concat(Coridor.find(coridor).voluntary_subjects.map {|s|
       [s.subject.label, s.subject_id]})
   end
+  # prints tutor statement
+  def print_statement(message, statement)
+    result = message + ': ' 
+    result << approve_word(statement.result)
+    unless statement.note.empty?
+      result << ', ' + (_("with note: ") + statement.note)
+    end
+    return result
+  end
+  # returns approve word for statement result
+  def approve_word(result)
+    [ _("cancel"), _("approve")][result]
+  end
+  # prints approve links
+  def approve_links(object)
+    if @session['user'].person == study_plan.index.tutor &&
+      !object.approvement
+      approve_link(study_plan)
+    elsif @session['user'].person.is_a?(Leader) &&
+      @session['user'].person == study_plan.index.leader &&
+      object.approvement && !object.approvement.leader_statement
+      approve_link(study_plan) 
+    elsif @session['user'].person.is_a?(Dean) &&
+      object.approvement && study_plan.approvement.leader_statement && 
+      !object.approvement.dean_statement
+      approve_link(study_plan)
+    end
+  end
+  # prints subjects link
+  def subjects_link(study_plan)
+    link_to_remote(_("subjects"), {:url => {:action => 'subjects',
+      :controller => 'study_plans', :id => study_plan}, :update =>
+      "subjects#{study_plan.id}", :complete =>
+      "showSubjects(#{study_plan.id})"}, {:id => "link#{study_plan.id}"}) +
+    content_tag('div', '', :id => "subjects#{study_plan.id}", :style =>
+    'display: none')
+  end
+  private 
+  # prints approvement piece of code
+  def approve_link(study_plan)
+      link_to_remote(_("approve"), :url => {:controller => 'study_plans', :action => 'approve', :id =>
+        study_plan}, :update => 'approveForm' + study_plan.id.to_s, :complete =>
+        "showApproveForm(#{study_plan.id})") +
+      content_tag('div', '', :id => 'approveForm' + study_plan.id.to_s, 
+        :style => 'display: none')
+  end
 end

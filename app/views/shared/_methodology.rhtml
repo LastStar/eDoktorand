@@ -1,0 +1,5 @@
+<% if study_plan.index.disert_theme.has_methodology? %>
+<a href="/pdf/methodology<%= study_plan.index.disert_theme.id %>.pdf"><%=
+   _("methodology file") %></a>
+<%= approve_links %>
+<% end %>

@@ -1,0 +1,10 @@
+<ul>
+<% for subject in subjects %>
+<li>
+<%=
+"#{subject.subject.label}&nbsp;#{subject.finishing_on}.#{_('semester')}" %>
+</li>
+<% end %>
+</ul>
+<%= link_to_function(_("close"), "showSubjects(#{@params['id']})") %>
+
