@@ -17,11 +17,7 @@ class DisertThemesController < ApplicationController
 
   # approves disertation theme 
   def approve
-    @study_plan = StudyPlan.find(@params['id'])
-    @disert_theme = @study_plan.index.disert_theme
-
-    @title = _("Approve methodology for ") +
-    @disert_theme.index.student.display_name
+    @disert_theme = DisertTheme.find(@params['id'])
     @disert_theme.approvement ||= Approvement.create
     if @session['user'].person.is_a?(Tutor) &&
       !@disert_theme.approvement.tutor_statement
@@ -35,12 +31,12 @@ class DisertThemesController < ApplicationController
       @flash['error'] = _("you don't have rights to do this")
       redirect_to :action => 'login', :controller => 'account'
     end
+    render_partial("shared/approve", :document => @disert_theme)
   end
   
   # confirms and saves statement
   def confirm_approve
-    @study_plan = StudyPlan.find(@params['id'])
-    @disert_theme = @study_plan.index.disert_theme
+    @disert_theme = DisertTheme.find(@params['id'])
     if @session['user'].person.is_a?(Tutor) && 
       !@disert_theme.approvement.tutor_statement
       @statement = TutorStatement.create(@params['statement'])
@@ -53,10 +49,7 @@ class DisertThemesController < ApplicationController
       @statement = DeanStatement.create(@params['statement'])
       @disert_theme.approvement.dean_statement = @statement
     end
-    #@disert_theme.canceled_on = @statement.cancel? ? Time.now : nil
-    #@disert_theme.approved_on = Time.now if @statement.is_a?(DeanStatement) &&
-    #!@statement.cancel?
     @disert_theme.save
-    redirect_to :action => 'show', :id => @study_plan.id
+    redirect_to :controller => 'students'
   end
 end

@@ -11,7 +11,7 @@
   <li>
    <%= _("Disert theme") %>: <%= study_plan.index.disert_theme.title %>
    &mdash; <%= study_plan.index.disert_theme.finishing_to %>. <%= _("semester") %>
-   <%= render_partial 'methodology', :study_plan => study_plan %>
+   <%= render_partial 'shared/methodology', :study_plan => study_plan %>
   </li>
 </ul>
 <ul>
@@ -25,7 +25,7 @@
     <%= subjects_link(study_plan) %>
   </li>
 </ul>
-<%= approve_links(study_plan) %>
+<%= approve_links(study_plan, 'study_plans') %>
 <% end %>
 <div class='links'>
 <a href='javascript:window.print()'><%= _("print") %></a>

@@ -112,8 +112,6 @@ class StudyPlansController < ApplicationController
   # approves study plan 
   def approve
     @study_plan = StudyPlan.find(@params['id'])
-    @title = _("Approve study plan for ") +
-    @study_plan.index.student.display_name
     @study_plan.approvement ||= Approvement.create
     if @session['user'].person.is_a?(Tutor) &&
       !@study_plan.approvement.tutor_statement
@@ -127,7 +125,7 @@ class StudyPlansController < ApplicationController
       flash['error'] = _("you don't have rights to do this")
       redirect_to :action => 'login', :controller => 'account'
     end
-    render_partial "approve"
+    render_partial("shared/approve", :document => @study_plan)
   end
   # confirms and saves statement
   def confirm_approve

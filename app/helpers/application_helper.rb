@@ -100,18 +100,19 @@ module ApplicationHelper
     [ _("cancel"), _("approve")][result]
   end
   # prints approve links
-  def approve_links(object)
-    if @session['user'].person == study_plan.index.tutor &&
-      !object.approvement
-      approve_link(study_plan)
+  def approve_links(document, controller)
+    if @session['user'].person == document.index.tutor &&
+      (!document.approvement || (document.approvement &&
+      !document.approvement.tutor_statement))
+      approve_link(document, controller)
     elsif @session['user'].person.is_a?(Leader) &&
-      @session['user'].person == study_plan.index.leader &&
-      object.approvement && !object.approvement.leader_statement
-      approve_link(study_plan) 
+      @session['user'].person == document.index.leader &&
+      document.approvement && !document.approvement.leader_statement
+      approve_link(document, controller) 
     elsif @session['user'].person.is_a?(Dean) &&
-      object.approvement && study_plan.approvement.leader_statement && 
-      !object.approvement.dean_statement
-      approve_link(study_plan)
+      document.approvement && document.approvement.leader_statement && 
+      !document.approvement.dean_statement
+      approve_link(document, controller)
     end
   end
   # prints subjects link
@@ -125,11 +126,11 @@ module ApplicationHelper
   end
   private 
   # prints approvement piece of code
-  def approve_link(study_plan)
-      link_to_remote(_("approve"), :url => {:controller => 'study_plans', :action => 'approve', :id =>
-        study_plan}, :update => 'approveForm' + study_plan.id.to_s, :complete =>
-        "showApproveForm(#{study_plan.id})") +
-      content_tag('div', '', :id => 'approveForm' + study_plan.id.to_s, 
+  def approve_link(document, controller)
+      link_to_remote(_("approve"), :url => {:controller => controller, :action => 'approve', :id =>
+        document}, :update => 'approveForm' + document.id.to_s, :complete =>
+        "showApproveForm(#{document.id})") +
+      content_tag('div', '', :id => 'approveForm' + document.id.to_s, 
         :style => 'display: none')
   end
 end

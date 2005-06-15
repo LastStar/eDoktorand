@@ -1,5 +1,12 @@
 <% if study_plan.index.disert_theme.has_methodology? %>
+<div>
 <a href="/pdf/methodology<%= study_plan.index.disert_theme.id %>.pdf"><%=
    _("methodology file") %></a>
-<%= approve_links %>
+<% if study_plan.approvement %>
+<%= render_partial 'shared/print_statements', :approvement =>
+study_plan.index.disert_theme.approvement %>
 <% end %>
+<%= approve_links(study_plan.index.disert_theme, 'disert_themes') %>
+</div>
+<% end %>
+
