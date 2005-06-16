@@ -372,6 +372,19 @@ CREATE TABLE deanships (
   updated_on timestamp
 );
 
+--
+-- Table structure for table employments
+--
+
+DROP TABLE employments;
+CREATE TABLE employments (
+  id integer primary key,
+  unit_id integer,
+  person_id integer,
+  created_on timestamp,
+  updated_on timestamp
+);
+
 
 --
 -- Table structure for table disert_themes

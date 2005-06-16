@@ -16,6 +16,15 @@ class User < ActiveRecord::Base
   def has_permission?(permission)
     my_permissions.include?(permission)
   end
+  # checks if user has role
+  # role should be both Role class or string
+  def has_role?(role)
+    if role.is_a?(Role)
+      self.roles.include?(role)
+    else
+      self.roles.include?(Role.find_by_name(role))
+    end
+  end
     
   protected
 

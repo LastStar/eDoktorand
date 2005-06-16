@@ -49,6 +49,12 @@ class AccountController < ApplicationController
   def welcome
     if @session['user'].person.is_a? Student
       redirect_to :controller => 'study_plans'
+    elsif @session['user'].person.is_a? Tutor
+      redirect_to :controller => 'students'
+    elsif @session['user'].person.is_a? DepartmentSecretary
+      redirect_to :controller => 'students'
+    elsif @session['user'].person.is_a? FacultySecretary
+      redirect_to :controller => 'candidates'
     end
   end
   # error page for system

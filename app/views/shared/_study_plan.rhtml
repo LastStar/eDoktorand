@@ -27,10 +27,6 @@
 </ul>
 <%= approve_links(study_plan, 'study_plans') %>
 <% end %>
-<div class='links'>
-<a href='javascript:window.print()'><%= _("print") %></a>
-<%= link_to(_("back"), :controller => 'students') %>
-</div>
 <%= javascript_include_tag 'prototype' %>
 <script>
 function showSubjects(id)  {

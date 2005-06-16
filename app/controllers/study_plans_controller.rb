@@ -9,7 +9,7 @@ class StudyPlansController < ApplicationController
   model :study_plan
   model :plan_subject
   model :subject
-  layout 'students'
+  layout 'employers'
   before_filter :login_required, :student_required
   # page with basic informations for student 
   def index

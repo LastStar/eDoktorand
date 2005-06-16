@@ -1,4 +1,5 @@
 <ul>
+    <% if approvement %>
     <% if approvement.tutor_statement %>
   <li>
     <%= print_statement(_("Tutor statement"), approvement.tutor_statement) %>
@@ -13,6 +14,7 @@
   <li>
     <%= print_statement(_("Dean statement"), approvement.dean_statement) %>
   </li>
+    <% end %>
     <% end %>
  
 </ul>

@@ -14,8 +14,18 @@ class StudentsController < ApplicationController
   end
   # lists all students
   def list
-    @pages, @students = paginate(:students, :per_page => 5, :order_by =>
-    'lastname')
+    if @session['user'].person.is_a? Dean || @session['user'].person.is_a?
+        FacultySecretary
+      conditions = "department_id IN (" +  @session['user'].person.deanship.faculty.departments.map {|dep|
+        dep.id}.join(', ') + ")"
+    elsif @session['user'].person.is_a? Leader || @session['user'].person.is_a?
+        DepartmentSecretary
+      conditions = ['department_id = ?', @session['user'].person.leadership.department_id]
+    elsif @session['user'].person.is_a? Tutor
+      conditions = ['tutor_id = ?', @session['user'].person.id]
+    end
+    @indexes = Index.find(:all, :conditions => conditions, :include =>
+    :study_plan)
   end
   # show student's detail
   def show
@@ -48,6 +58,11 @@ class StudentsController < ApplicationController
   def destroy
     Student.find(@params[:id]).destroy
     redirect_to :action => 'list'
+  end
+  # renders contact for student
+  def contact
+    render_partial('student_contact', :student =>
+      Student.find(@params['id']))
   end
   private
   # sets title of the controller

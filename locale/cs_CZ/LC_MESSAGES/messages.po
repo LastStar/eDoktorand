@@ -651,7 +651,7 @@ msgid "methodology file"
 msgstr "soubor s metodikou"
 
 msgid "Final exam"
-msgstr "Satátní závěrečná zkouška"
+msgstr "Státní závěrečná zkouška"
 
 msgid "Subjects"
 msgstr "Předměty"
@@ -763,4 +763,25 @@ msgstr "sumarizace"
 
 msgid "all"
 msgstr "všichni"
+
+msgid "exams"
+msgstr "zkoušky"
+
+msgid "exam_terms"
+msgstr "komise"
+
+msgid "students"
+msgstr "studenti"
+
+msgid "you are logged like"
+msgstr "jste přihlášen jako"
+
+msgid "close"
+msgstr "zavřít"
+
+msgid "subjects"
+msgstr "předměty"
+
+msgid "candidates"
+msgstr "uchazeči"
 

@@ -1,4 +1,4 @@
 <%= student_action_links(student) %>
-<%= link_to(_("show"), :action => 'show', :id => student.id) %>
-<a href='#' onclick="Element.toggle('info<%= student.id %>');return false;"><%=
-_("contact") %></a>
+<%= link_to_remote(_("contact"), :url => {:action => 'contact', :id =>
+  student.id}, :update => 'info' + student.id.to_s, :complete =>
+  "showContact(#{student.id})") %>
