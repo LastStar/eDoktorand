@@ -1,0 +1,2 @@
+class Secretary < Person
+end
