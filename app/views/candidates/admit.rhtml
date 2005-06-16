@@ -1,15 +1,15 @@
 <%= start_form_tag :action => 'confirm_admit', :id => @candidate %>	
-	<label for="candidate_tutor_id">Školitel:</label>
-	<%= select 'candidate', 'tutor_id', tutor_ids(:coridor => @candidate.coridor)  %><br/>
-	<label for="candidate_study_id">forma studia</label>
+	<label for="candidate_tutor_id"><%= _("tutor") %></label>
+	<%= select 'candidate', 'tutor_id', tutor_ids %><br/>
+	<label for="candidate_study_id"><%= _("study form") %></label>
 	<%= select 'candidate', 'study_id', study_ids %><br/>
-	<label for="candidate_coridor_id">obor</label>
+	<label for="candidate_coridor_id"><%= _("corridor") %></label>
 	<%= select 'candidate', 'coridor_id', coridor_ids %><br/>
-	 	
-	<%= submit_tag "Potvrdit" %>
+	<label for="candidate_department_id"><%= _("department") %></label>
+	<%= select 'candidate', 'department_id', department_ids %><br/>
+	<%= submit_tag(_("submit")) %>
 <%= end_form_tag %>
-
 <div class='links'>
-  <%= link_to 'zpět', :action => 'list' %>
+  <%= link_to(_("back"), :action => 'list') %>
 </div >
 

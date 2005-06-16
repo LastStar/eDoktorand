@@ -1,25 +1,46 @@
 <%= javascript_include_tag "prototype" %>
-
+<br />
+<br />
+<br />
+<br />
+<p class='rightAlign'>Vážený pan/paní<br/>
+<%= @candidate.display_name %><br/>
+<% unless @candidate.postal_city.empty? %>
+<%= @candidate.sending_postal_address %></p>
+<% else %>
+<%= @candidate.sending_address %></p>
+<% end %>
+<br/> 
+<br/>
 <p>V Praze dne <%= Time.now.strftime('%d. %m. %Y') %></p>
 
-<p>Vážený pane inženýre/paní inženýrko,</p>
+<p>Vážený pane/paní,</p>
 
-<p>na základě úspěšně vykonané přijímací zkoušky, jste byl/a s účinností od 1. října 2005 přijat/a ve smyslu § 47, zákona č. 111/98 Sb., o vysokých školách, do <%= @candidate.study.name %> formy doktorského studia na fakultě lesnické a environmentální České zemědělské univerzity v Praze</p>
+<p>na základě úspěšně vykonané přijímací zkoušky, jste byl/a s účinností od 
+1. října 2005 přijat/a ve smyslu § 47, zákona č. 111/98 Sb., o vysokých školách,
+do <%= @candidate.study.name %> formy doktorského studia na fakultě lesnické a 
+environmentální České zemědělské univerzity v Praze</p>
 
 <p>studijní obor: <%= @candidate.coridor.name %></p>
 
-<p>Vaším školitelem byl/a ustanoven/a <%= @candidate.tutor.display_name %>, katedra <%= @candidate.department.name %> FLE.</p>
+<p>Vaším školitelem byl/a ustanoven/a <%= @candidate.tutor.display_name %>, 
+katedra <%= @candidate.department.name %> FLE.</p>
 
-<p>Zápis do studia se uskuteční dne 21. 9. 2005 od 9:00 v zasedací místnosti FLE. Zároveň Vám přiznávám stipendium ve výši 4 600,- Kč měsíčně, které Vám bude vypláceno s účinností od 1. října 2005, vždy zpětně 15. následujícího měsíce na Váš peněžní účet. Upozorňuji Vás, že je Vaší povinností do 1 měsíce od nástupu do studia vypracovat a předložit studijní plán a do 3 měsíců od nástupu pak metodiku disertační práce.</p>
+<p>Zápis do studia se uskuteční dne 21. 9. 2005 od 9:00 v zasedací místnosti FLE.
+<% if @candidate.study_id == 1 %>
+Zároveň Vám přiznávám stipendium ve výši 4 600,- Kč měsíčně, které Vám bude 
+vypláceno s účinností od 1. října 2005, vždy zpětně 15. následujícího měsíce na 
+Váš peněžní účet.
+<% end %>
+Upozorňuji Vás, že je Vaší povinností do 1 měsíce od nástupu 
+do studia vypracovat a předložit studijní plán a do 3 měsíců od nástupu pak 
+metodiku disertační práce.</p>
 
 <p>Proti tomuto rozhodnutí se můžete odvolat …..</p>
 
 
-
-
-
-
-	<p>Prof. Ing. Vilém Podrázský, CSc.<br/>
+<p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
+<p class='rightAlignLefter'>Prof. Ing. Vilém Podrázský, CSc.<br/>
 	 děkan FLE</p>
 
 <p>Vážený/á pan/í<br/>
