@@ -35,7 +35,6 @@ nepříjmout</span></p>
 <span class='info'>...................................................................................................</span>
 <br/>
 </p>
-<br/>
 <p><b>Podpisy předsedy a členů komise:</b> <br/>
 předseda: <%= @candidate.coridor.exam_term.chairman.display_name %>
 <span class='dots'>........................................</span><br/>
@@ -61,6 +60,9 @@ nepříjmout</span></b></p>
 
 <p>Datum:<br/><br/> 
  Podpis:</p>
+ 
+<br/>
+<p>POZN: * HODNOCENÍ: čtyřstupňově - výborně, velmi dobře, dobře a neprospěl</p>
  <div class='links'>
  	<a href='javascript:window.print()'>tisk</a>
  	<%= link_to 'zpět', :action => 'list' if @session['user']%>
