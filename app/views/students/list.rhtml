@@ -1,38 +1,21 @@
 <%= javascript_include_tag "prototype" %>
 <% unless @indexes.empty? %>
-<ul class='peopleList'>
-<% for index in @indexes  %>
-  <li>
-  <div class='right'>
-  <%= render_partial 'student_links', :student => index.student %>
-  </div>
-  <b><%= index.student.display_name %></b>
-  <div>
-  <% if index.study_plan %>
-  <%= _("created on") + ': ' +
-    index.study_plan.created_on.strftime('%m. %d. %Y')
-  %><br/> 
-  <% if index.study_plan.canceled? %>
-  <%= _("canceled on") %>: <%=
-    index.study_plan.canceled_on.strftime('%m. %d. %Y')
-  %><br/> 
-  <% end %>
-  <% if index.study_plan.approved? %>
-  <%= _("approved on") %>: <%=
-    index.study_plan.approved_on.strftime('%m. %d. %Y')
-  %><br/> 
-  <% end %>
-  <% end %>
-  </div>
-  <div class='detail' id='info<%= index.student.id %>' style="display: none">
-  </div >
-  <% if index.study_plan %>
-  <div id='study_plans<%= index.study_plan.id %>' style='display: none'>
-  </div>
-  <% end %>
-  </li>
-<% end %>
-</ul>
+<<<<<<< .mine
+<div id='search'>
+<form name='searchForm' id='searchForm'>
+<fieldset>
+  <label for="search_what"><%= _("search by lastname") %></label>
+  <%= tag('input', :name => 'search', :id => 'search', 'size' => '10') %>
+  <%= end_form_tag %>
+  <%= observe_form("searchForm", :url => {:action => 'search'}, :frequency =>
+  5, :update => 'students_list') %>
+</fieldset>
+</div>
+
+</div>
+<div id='students_list'>
+<%= render_partial "list" %>
+</div>
 <br />
 <script type="text/javascript">
 function showStudyPlan(id) {

@@ -785,3 +785,5 @@ msgstr "předměty"
 msgid "candidates"
 msgstr "uchazeči"
 
+msgid "search by lastname"
+msgstr "hledat podle příjmení"

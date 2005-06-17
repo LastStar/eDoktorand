@@ -32,6 +32,12 @@ class StudentsController < ApplicationController
   def show
     @student = Student.find(@params[:id])
   end
+  # searches in students lastname
+  def search
+    @indexes = Student.find(:all, :conditions => ['lastname like ?',
+    "#{@params['search']}%"]).map {|s| s.index}
+    render_partial "list"
+  end
   def new
     @student = Student.new
   end
