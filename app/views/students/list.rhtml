@@ -27,9 +27,7 @@
   <div class='detail' id='info<%= index.student.id %>' style="display: none">
   </div >
   <% if index.study_plan %>
-  <div id='study_plan_<%= index.student.id %>' style='display: none'>
-  <%= render_partial 'shared/study_plan', :study_plan =>
-    index.study_plan %>
+  <div id='study_plans<%= index.study_plan.id %>' style='display: none'>
   </div>
   <% end %>
   </li>
@@ -37,6 +35,13 @@
 </ul>
 <br />
 <script type="text/javascript">
+function showStudyPlan(id) {
+  if($('study_plans' + id).style.display == 'none') {
+    new Effect.Appear('study_plans' + id);
+  } else {
+    new Effect.Fade('study_plans' + id)
+  }
+}
 function showContact(id) {
   if($('info' + id).style.display == 'none') {
     new Effect.Appear('info' + id);

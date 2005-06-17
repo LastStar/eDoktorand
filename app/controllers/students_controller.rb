@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
   model :user
   model :leader
   model :dean
+  model :faculty_secretary
   include LoginSystem
   layout 'employers'
   before_filter :login_required

@@ -154,6 +154,10 @@ class StudyPlansController < ApplicationController
     PlanSubject.find(:all, :contions => ['study_plan_id = ?', @params['id']],
     :include => [:subject]))
   end
+  # renders study plan
+  def show
+    render_partial('study_plan', :study_plan => StudyPlan.find(@params['id']))
+  end
   private	
   # prepares obligate subjects
   def create_obligate
