@@ -1,16 +1,8 @@
 <%= javascript_include_tag "prototype" %>
 <% unless @indexes.empty? %>
 <div id='search'>
-<form name='searchForm' id='searchForm'>
-<fieldset>
-  <label for="search_what"><%= _("search by lastname") %></label>
-  <%= tag('input', :name => 'search', :id => 'search', 'size' => '10') %>
-  <%= end_form_tag %>
-  <%= observe_form("searchForm", :url => {:action => 'search'}, :frequency =>
-  5, :update => 'students_list') %>
-</fieldset>
+<%= render_partial "search" %>
 </div>
-
 </div>
 <div id='students_list'>
 <%= render_partial "list" %>

@@ -8,6 +8,7 @@ class StudentsController < ApplicationController
   layout 'employers'
   before_filter :login_required
   before_filter :set_title
+  before_filter :prepare_conditions
   # lists all students
   def index
     list
@@ -15,18 +16,8 @@ class StudentsController < ApplicationController
   end
   # lists all students
   def list
-    if @session['user'].person.is_a? Dean || @session['user'].person.is_a?
-        FacultySecretary
-      conditions = "department_id IN (" +  @session['user'].person.deanship.faculty.departments.map {|dep|
-        dep.id}.join(', ') + ")"
-    elsif @session['user'].person.is_a? Leader || @session['user'].person.is_a?
-        DepartmentSecretary
-      conditions = ['department_id = ?', @session['user'].person.leadership.department_id]
-    elsif @session['user'].person.is_a? Tutor
-      conditions = ['tutor_id = ?', @session['user'].person.id]
-    end
-    @indexes = Index.find(:all, :conditions => conditions, :include =>
-    :study_plan)
+    @indexes = Index.find(:all, :conditions => @conditions, :include =>
+    [:study_plan, :student])
   end
   # show student's detail
   def show
@@ -34,8 +25,10 @@ class StudentsController < ApplicationController
   end
   # searches in students lastname
   def search
-    @indexes = Student.find(:all, :conditions => ['lastname like ?',
-    "#{@params['search']}%"]).map {|s| s.index}
+    @conditions.first <<  ' AND lastname like ?'
+    @conditions << "#{@params['search_field']}%"
+    @indexes = Student.find(:all, :conditions => @conditions, :include =>
+      :index).map {|s| s.index}
     render_partial "list"
   end
   def new
@@ -75,5 +68,19 @@ class StudentsController < ApplicationController
   # sets title of the controller
   def set_title
     @title = 'Studenti'
+  end
+  # prepares conditions for various queries
+  def prepare_conditions
+    @conditions = "null is not null"
+    if @session['user'].person.is_a? Dean || @session['user'].person.is_a?
+        FacultySecretary
+      @conditions = ["department_id IN (" +  @session['user'].person.deanship.faculty.departments.map {|dep|
+        dep.id}.join(', ') + ")"]
+    elsif @session['user'].person.is_a? Leader || @session['user'].person.is_a?
+        DepartmentSecretary
+      @conditions = ['department_id = ?', @session['user'].person.leadership.department_id]
+    elsif @session['user'].person.is_a? Tutor
+      @conditions = ['tutor_id = ?', @session['user'].person.id]
+    end
   end
 end

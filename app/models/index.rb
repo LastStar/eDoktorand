@@ -1,5 +1,5 @@
 class Index < ActiveRecord::Base
-  belongs_to :student 
+  belongs_to :student, :foreign_key => 'student_id'
   belongs_to :tutor
   belongs_to :study
   has_one :study_plan, :conditions => 'admited_on IS NOT NULL'
