@@ -1,4 +1,7 @@
 <%= start_form_tag :action => 'confirm_admit', :id => @candidate %>	
+	<label for="admit"><%= _("admit") %></label>
+  <%= content_tag('select', options_for_select(admit_ids), 
+  {'id' => "admit_id",'name' => "admit_id"}) %><br/> 
 	<label for="candidate_tutor_id"><%= _("tutor") %></label>
 	<%= select 'candidate', 'tutor_id', tutor_ids %><br/>
 	<label for="candidate_study_id"><%= _("study form") %></label>

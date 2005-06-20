@@ -178,7 +178,7 @@ msgid "ready"
 msgstr "odsouhlasen"
 
 msgid "reject"
-msgstr "nechválit"
+msgstr "neschválit"
 
 msgid "not pass"
 msgstr "neprospěl"
@@ -787,3 +787,12 @@ msgstr "uchazeči"
 
 msgid "search by lastname"
 msgstr "hledat podle příjmení"
+
+msgid "not admit"
+msgstr "nepřijmout"
+
+msgid "conditional admit"
+msgstr "podmínečně přijmout"
+
+msgid "tutor"
+msgstr "školitel"

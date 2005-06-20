@@ -2,7 +2,7 @@
 <% for index in @indexes  %>
   <li>
   <div class='right'>
-  <%= render_partial 'student_links', :student => index.student %>
+  <%= render_partial 'student_links', :index => index %>
   </div>
   <b><%= index.student.display_name %></b>
   <div>
@@ -22,12 +22,10 @@
   <% end %>
   <% end %>
   </div>
-  <div class='detail' id='info<%= index.student.id %>' style="display: none">
+  <div class='detail' id='info<%= index.study_plan.id %>' style="display: none">
   </div >
   <% if index.study_plan %>
-  <div id='study_plan_<%= index.student.id %>' style='display: none'>
-  <%= render_partial 'shared/study_plan', :study_plan =>
-    index.study_plan %>
+  <div id='study_plans<%= index.study_plan.id %>' style='display: none'>
   </div>
   <% end %>
   </li>

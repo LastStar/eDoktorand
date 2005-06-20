@@ -1,0 +1,42 @@
+<%= javascript_include_tag "prototype" %>
+<br />
+<br />
+<br />
+<br />
+<p class='rightAlign'>Vážený pan/paní<br/>
+<%= @candidate.display_name %><br/>
+<% unless @candidate.postal_city.empty? %>
+<%= @candidate.sending_postal_address %></p>
+<% else %>
+<%= @candidate.sending_address %></p>
+<% end %>
+<br/> 
+<br/>
+
+<p>Vážený pane/paní,</p>
+
+<p>po projednání Vaší přihlášky ke studiu v doktorském oboru <%= @candidate.coridor.name %>
+na fakultě lesnické a environmentální ČZU v Praze Vám sděluji, že jste <b>nebyl</b>
+ke studiu přijat</p>
+
+<p>Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana fakulty lesnické a environmentální
+ČZU v Praze do 30&nbsp;dnů ode dne doručení.</p>
+
+<p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
+<br/> 
+<br/>
+<p class='rightAlignLefter'>Prof. Ing. Vilém Podrázský, CSc.<br/>
+	 děkan FLE</p>
+
+<div class='links'>
+	<a href='javascript:window.print()'>tisk</a>
+	<% if @session['user'] %>
+	<%= link_to 'zpět', :action => 'list'%>
+	<% unless @candidate.admited? %>
+	<span id='mailLink'><%= link_to_remote 'odešli mail s dekretem o
+    nepřijetí', :update => 'mailLink', :url => {:action => 'reject_now', :id => @candidate.id} %></span>
+	<% end %>
+	<% end %>
+</div>
+<script type="text/javascript">window.print()</script>
+

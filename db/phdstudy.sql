@@ -47,6 +47,7 @@ CREATE TABLE candidates (
   ready_on timestamp,
   admited_on timestamp,  
   invited_on timestamp,
+  rejected_on timestamp,
   enrolled_on timestamp,
   student_id integer,
   tutor_id integer

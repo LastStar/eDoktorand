@@ -7,9 +7,10 @@ module CandidatesHelper
   end
   # admit link
   def admit_link(candidate)
-    if !candidate.admited? and candidate.invited? and candidate.ready?
-      link_to(_('protocol'), :action => 'admittance', :id => candidate) + "&nbsp;" +
-      link_to(_("admit"), :action => 'admit', :id => candidate) 
+    links = ''
+    if !candidate.admited? && !candidate.rejected? && candidate.invited? && candidate.ready?
+      links << link_to(_('protocol'), :action => 'admittance', :id => candidate) + "&nbsp;" +
+      link_to(_("admit"), :action => 'admit', :id => candidate)  
     end
   end
   # invite link
@@ -120,6 +121,8 @@ module CandidatesHelper
   def status_tag(candidate)
     if candidate.enrolled?
       content_tag('span', _("enrolled"), :class => 'statusInfo')
+    elsif candidate.rejected?
+      content_tag('span', _("not admitted"), :class => 'statusInfo')
     elsif candidate.admited?
       content_tag('span', _("admitted"), :class => 'statusInfo')
     elsif candidate.invited?
@@ -130,7 +133,7 @@ module CandidatesHelper
   end			
   # returns admit ids array
   def admit_ids
-    [[_("reject"), 0], [_("admit"), 1]]
+    [[_("not admit"), 0], [_("admit"), 1], [_("conditional admit"), 2]]
   end
   # return pass ids array  
   def pass_ids

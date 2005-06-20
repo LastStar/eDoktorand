@@ -52,7 +52,7 @@ h1 {
 }
 .rightAlign {
 	text-align: left;
-	padding-left: 13cm;	
+	padding-left: 10cm;	
 	padding-bottom: 1em;	
 }
 .rightAlignLefter {
@@ -83,4 +83,7 @@ table.list td {
   padding-bottom: 1px;	
   margin: 0px;
   border:1px solid;
+}
+.topMenu {
+  display: none;
 }

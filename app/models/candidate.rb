@@ -114,6 +114,15 @@ class Candidate < ActiveRecord::Base
   def ready?
     !self.ready_on.nil?
   end
+  # sets candidate reject for admition
+  def reject!
+    self.rejected_on = Time.now
+    self.save
+  end
+  # checks if student is reject
+  def rejected?
+    !self.rejected_on.nil?
+  end
   # returns email like contact object
   def contact_email
     return Contact.new do |c|
@@ -167,7 +176,6 @@ class Candidate < ActiveRecord::Base
     student.title_before = self.title_before
     student.title_after = self.title_after
     student.save
-
     index = Index.new
     index.student = student
     index.department = self.department
@@ -175,12 +183,10 @@ class Candidate < ActiveRecord::Base
     index.tutor = self.tutor
     index.study = self.study
     index.save
-
     create_address(student.id)
     create_postal_address(student.id) if self.postal_city
     student.email = self.contact_email
     student.phone = self.contact_phone if self.phone 		
-    
     return student
   end
 end

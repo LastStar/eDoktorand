@@ -5,3 +5,4 @@ revision: 88 Fri May 27 16:49:58 CEST 2005: localization added to project.
 Please read http://manuals.rubyonrails.com/read/chapter/82 and ask me if you got
 any problems.
 revision: 95 Wed Jun  1 12:55:45 CEST 2005: changed statement table
+revision: 138 Mon Jun 20 12:45:51 CEST 2005: changed candidate table
