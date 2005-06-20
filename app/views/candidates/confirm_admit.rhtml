@@ -16,9 +16,9 @@
 <p>Vážený pane/paní,</p>
 
 <p>na základě úspěšně vykonané přijímací zkoušky, jste byl/a
-<% unless @conditional %> s účinností od 
-1. října 2005 přijat/a<% end %> ve smyslu § 47, zákona č. 111/98 Sb. o vysokých školách,
-<% if @conditional %>podmínečně přijat<% end %> 
+<% unless @conditional %><b> s účinností od 
+1. října 2005 přijat/a</b><% end %> ve smyslu § 47, zákona č. 111/98 Sb. o vysokých školách,
+<% if @conditional %><b>podmínečně přijat/a</b><% end %> 
 do <%= @candidate.study.name %> formy doktorského studia na fakultě lesnické a 
 environmentální České zemědělské univerzity v Praze</p>
 
@@ -27,7 +27,8 @@ environmentální České zemědělské univerzity v Praze</p>
 <p>Vaším školitelem byl/a ustanoven/a <%= @candidate.tutor.display_name %>, 
 katedra <%= @candidate.department.name %> FLE.</p>
 <% unless @conditional %>
-<p>Zápis do studia se uskuteční dne 21. 9. 2005 od 9:00 v zasedací místnosti FLE.</p>
+<p>Zápis do studia se uskuteční dne <b>21. 9. 2005 od 9:00 v zasedací
+  místnosti FLE.</b></p>
 <% else %>
 <p>Do studia budete zapsán po předložení dokladů o ukončení magisterského stupně vzdělání.</p>
 <% end %>

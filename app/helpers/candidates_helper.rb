@@ -133,7 +133,7 @@ module CandidatesHelper
   end			
   # returns admit ids array
   def admit_ids
-    [[_("not admit"), 0], [_("admit"), 1], [_("conditional admit"), 2]]
+    [[_("admit"), 1], [_("conditional admit"), 2], [_("not admit"), 0]]
   end
   # return pass ids array  
   def pass_ids
