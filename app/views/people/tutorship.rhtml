@@ -5,5 +5,5 @@
     <label for='department'>Choose department </label>
     <%= select 'tutorship', 'department_id', department_ids %><br /> 
     <input type='submit' value='Save' />&nbsp;
-    <input type='hidden' name='tutor_id' value=<%= @person.id %>
+    <%= hidden_field('tutorship', 'tutor_id') %>
 <%= end_form_tag %>

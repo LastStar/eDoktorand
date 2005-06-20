@@ -49,7 +49,8 @@ class PeopleController < ApplicationController
 
   def tutorship
     @person = Person.find(@params[:id])
-    @person.type = 'Tutor'
+    @person.update_attribute('type', 'Tutor')
+    @person = Person.find(@params[:id])
     @tutorship = Tutorship.new
     @tutorship.tutor = @person
   end
