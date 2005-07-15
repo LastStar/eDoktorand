@@ -61,7 +61,9 @@ CREATE TABLE candidates (
 DROP TABLE coridors;
 CREATE TABLE coridors (
   id integer primary key,
-  name varchar(50),
+  name varchar(1024),
+  name_english varchar(1024),
+  code varchar(16),
   faculty_id integer
 );
 
@@ -86,6 +88,8 @@ DROP TABLE departments;
 CREATE TABLE departments (
   id integer primary key,
   name varchar(256),
+  name_english varchar(256),
+  short_name varchar(8),
   faculty_id integer
 );
 
@@ -96,7 +100,10 @@ CREATE TABLE departments (
 DROP TABLE faculties;
 CREATE TABLE faculties (
   id integer primary key,
-  name varchar(256)
+  name varchar(256),
+  name_english varchar(256),
+  short_name varchar(8),
+  ldap_context varchar(256)
 );
 
 --
