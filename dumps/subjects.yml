@@ -4,118 +4,167 @@
     code: DLEX11Y
     id: "1"
     label: obecná ekologie
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX14Y
     id: "2"
     label: ekologie stanovišť
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX15Y
     id: "3"
     label: metody studia ekosystémů
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX21Y
     id: "4"
     label: botanika obecná
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX22Y
     id: "5"
     label: botanika speciální
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX23Y
     id: "6"
     label: geobotanika
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX24Y
     id: "7"
     label: ekologie rostlin
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX32Y
     id: "8"
     label: zoologie obratlovců
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX33Y
     id: "9"
     label: entomologie
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX34Y
     id: "10"
     label: ekologie živočichů
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX35Y
     id: "11"
     label: ekologie hmyzu
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX36Y
     id: "12"
     label: ekologie ptáků
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX37Y
     id: "13"
     label: ekologie savců
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX38Y
     id: "14"
     label: zoogeografie
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX41Y
     id: "15"
     label: ochrana přírody
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLEX43Y
     id: "16"
     label: ochrana prostředí
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: DLUX01Y
     id: "17"
     label: krajinná ekologie
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: 
     id: "18"
     label: angličtina
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: 
     id: "19"
     label: francouzština
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: 
     id: "20"
     label: ruština
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: 
     id: "21"
     label: němčina
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: 
     id: "22"
     label: italština
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: 
     id: "23"
     label: "španělština"
+    created_on: 
+    updated_on:
 - !ruby/object:Subject 
   attributes: 
     code: 
     id: "24"
     label: "čeština"
+    created_on: 
+    updated_on:
+

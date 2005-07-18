@@ -1,6 +1,10 @@
 development:
-  adapter: sqlite
-  dbfile: db/phdstudy.db
+  adapter: mysql
+  database: phdstudy
+  host: localhost
+  username: pepe
+  password: p3p3
+  socket: /usr/local/var/run/mysqld/mysqld.sock 
 
 test:
   adapter: sqlite

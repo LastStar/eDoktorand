@@ -16,7 +16,7 @@ task :environment do
   end
 end
 
-desc "Generate API documentatio, show coding stats"
+desc "Generate API documentation, show coding stats"
 task :doc => [ :appdoc, :stats ]
 
 
@@ -131,10 +131,12 @@ task :clone_structure_to_test => [ :db_structure_dump, :purge_test_database ] do
     when "postgresql"
       ENV['PGHOST']     = abcs["test"]["host"] if abcs["test"]["host"]
       ENV['PGPORT']     = abcs["test"]["port"].to_s if abcs["test"]["port"]
-      ENV['PGPASSWORD'] = abcs["test"]["password"]
+      ENV['PGPASSWORD'] = abcs["test"]["password"].to_s if abcs["test"]["password"]
       `psql -U "#{abcs["test"]["username"]}" -f db/#{RAILS_ENV}_structure.sql #{abcs["test"]["database"]}`
     when "sqlite", "sqlite3"
       `#{abcs[RAILS_ENV]["adapter"]} #{abcs["test"]["dbfile"]} < db/#{RAILS_ENV}_structure.sql`
+    when "sqlserver"
+      `osql -E -S #{abcs["test"]["host"]} -d #{abcs["test"]["database"]} -i db\\#{RAILS_ENV}_structure.sql`
     else 
       raise "Unknown database adapter '#{abcs["test"]["adapter"]}'"
   end
@@ -150,10 +152,13 @@ task :db_structure_dump => :environment do
     when "postgresql"
       ENV['PGHOST']     = abcs[RAILS_ENV]["host"] if abcs[RAILS_ENV]["host"]
       ENV['PGPORT']     = abcs[RAILS_ENV]["port"].to_s if abcs[RAILS_ENV]["port"]
-      ENV['PGPASSWORD'] = abcs[RAILS_ENV]["password"]
+      ENV['PGPASSWORD'] = abcs[RAILS_ENV]["password"].to_s if abcs[RAILS_ENV]["password"]
       `pg_dump -U "#{abcs[RAILS_ENV]["username"]}" -s -x -O -f db/#{RAILS_ENV}_structure.sql #{abcs[RAILS_ENV]["database"]}`
     when "sqlite", "sqlite3"
       `#{abcs[RAILS_ENV]["adapter"]} #{abcs[RAILS_ENV]["dbfile"]} .schema > db/#{RAILS_ENV}_structure.sql`
+    when "sqlserver"
+      `scptxfr /s #{abcs[RAILS_ENV]["host"]} /d #{abcs[RAILS_ENV]["database"]} /I /f db\\#{RAILS_ENV}_structure.sql /q /A /r`
+      `scptxfr /s #{abcs[RAILS_ENV]["host"]} /d #{abcs[RAILS_ENV]["database"]} /I /F db\ /q /A /r`
     else 
       raise "Unknown database adapter '#{abcs["test"]["adapter"]}'"
   end
@@ -169,11 +174,15 @@ task :purge_test_database => :environment do
     when "postgresql"
       ENV['PGHOST']     = abcs["test"]["host"] if abcs["test"]["host"]
       ENV['PGPORT']     = abcs["test"]["port"].to_s if abcs["test"]["port"]
-      ENV['PGPASSWORD'] = abcs["test"]["password"]
+      ENV['PGPASSWORD'] = abcs["test"]["password"].to_s if abcs["test"]["password"]
       `dropdb -U "#{abcs["test"]["username"]}" #{abcs["test"]["database"]}`
       `createdb -T template0 -U "#{abcs["test"]["username"]}" #{abcs["test"]["database"]}`
     when "sqlite","sqlite3"
       File.delete(abcs["test"]["dbfile"]) if File.exist?(abcs["test"]["dbfile"])
+    when "sqlserver"
+      dropfkscript = "#{abcs["test"]["host"]}.#{abcs["test"]["database"]}.DP1".gsub(/\\/,'-')
+      `osql -E -S #{abcs["test"]["host"]} -d #{abcs["test"]["database"]} -i db\\#{dropfkscript}`
+      `osql -E -S #{abcs["test"]["host"]} -d #{abcs["test"]["database"]} -i db\\#{RAILS_ENV}_structure.sql`
     else 
       raise "Unknown database adapter '#{abcs["test"]["adapter"]}'"
   end
@@ -185,4 +194,9 @@ task :clear_logs => :environment do
     f = File.open(log_file, "w")
     f.close
   end
+end
+
+desc "Migrate the database according to the migrate scripts in db/migrate (only supported on PG/MySQL). A specific version can be targetted with VERSION=x"
+task :migrate => :environment do
+  ActiveRecord::Migrator.migrate(File.dirname(__FILE__) + '/db/migrate/', ENV["VERSION"] ? ENV["VERSION"].to_i : nil)
 end

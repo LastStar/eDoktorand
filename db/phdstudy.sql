@@ -3,9 +3,9 @@
 -- Table structure for table candidates
 --
 
-DROP TABLE candidates;
+DROP TABLE IF EXISTS candidates;
 CREATE TABLE candidates (
-  id integer primary key,
+  id integer primary key auto_increment,
   firstname varchar(50),
   lastname varchar(50),
   title_before_id integer,
@@ -58,9 +58,9 @@ CREATE TABLE candidates (
 -- should be renamed to corridors
 --
 
-DROP TABLE coridors;
+DROP TABLE IF EXISTS coridors;
 CREATE TABLE coridors (
-  id integer primary key,
+  id integer primary key auto_increment,
   name varchar(1024),
   name_english varchar(1024),
   code varchar(16),
@@ -72,9 +72,9 @@ CREATE TABLE coridors (
 -- table stucture for corridors_subjects
 --
 
-DROP TABLE coridor_subjects;
+DROP TABLE IF EXISTS coridor_subjects;
 CREATE TABLE coridor_subjects (
-  id integer primary key,
+  id integer primary key auto_increment,
   coridor_id integer,
   subject_id integer,
   type varchar(32)
@@ -84,9 +84,9 @@ CREATE TABLE coridor_subjects (
 -- Table structure for table departments
 --
 
-DROP TABLE departments;
+DROP TABLE IF EXISTS departments;
 CREATE TABLE departments (
-  id integer primary key,
+  id integer primary key auto_increment,
   name varchar(256),
   name_english varchar(256),
   short_name varchar(8),
@@ -97,9 +97,9 @@ CREATE TABLE departments (
 -- Table structure for table faculties
 --
 
-DROP TABLE faculties;
+DROP TABLE IF EXISTS faculties;
 CREATE TABLE faculties (
-  id integer primary key,
+  id integer primary key auto_increment,
   name varchar(256),
   name_english varchar(256),
   short_name varchar(8),
@@ -111,9 +111,9 @@ CREATE TABLE faculties (
 -- just stub for admit form
 --
 
-DROP TABLE languages;
+DROP TABLE IF EXISTS languages;
 CREATE TABLE languages (
-  id integer primary key,
+  id integer primary key auto_increment,
   name varchar(50)
 );
 
@@ -121,29 +121,29 @@ CREATE TABLE languages (
 -- Table structure for table exam_terms
 --
 
-DROP TABLE exam_terms;
+DROP TABLE IF EXISTS exam_terms;
 CREATE TABLE exam_terms (
-  id integer primary key,
+  id integer primary key auto_increment,
 	coridor_id integer,
 	date date,
 	start_time varchar(5),
 	room varchar(20),
 	chairman_id integer,	
-  created_on timestamp,
-  updated_on timestamp,
 	first_examinator varchar(100),
 	second_examinator varchar(100),
 	third_examinator varchar(100),
-	fourth_examinator varchar(100)
+	fourth_examinator varchar(100),
+  created_on timestamp,
+  updated_on timestamp
 );
 
 --
 -- Table structure for table admittances
 --
 
---DROP TABLE admittances;
+--DROP TABLE IF EXISTS admittances;
 --CREATE TABLE admittances (
---  id integer primary key,
+--  id integer primary key auto_increment,
 --	skilled_exam varchar(100),
 --	first_language integer,
 --	second_language integer,
@@ -160,21 +160,23 @@ CREATE TABLE exam_terms (
 -- Table structure for table documents
 --
 
-DROP TABLE documents;
+DROP TABLE IF EXISTS documents;
 CREATE TABLE documents (
-  id integer primary key,
+  id integer primary key auto_increment,
   name varchar(100),
   path varchar(100),
-  faculty_id integer
+  faculty_id integer,
+  created_on timestamp,
+  updated_on timestamp
 );
 
 --
 -- Table structure for table studies
 --
 
-DROP TABLE studies;
+DROP TABLE IF EXISTS studies;
 CREATE TABLE studies (
-  id integer primary key,
+  id integer primary key auto_increment,
   name varchar(50)
 );
 
@@ -182,9 +184,9 @@ CREATE TABLE studies (
 -- Table structure for table people
 --
 
-DROP TABLE people;
+DROP TABLE IF EXISTS people;
 CREATE TABLE people (
-  id integer primary key,
+  id integer primary key auto_increment,
   firstname varchar(101),
   lastname varchar(100),
   birth_on date,
@@ -193,16 +195,18 @@ CREATE TABLE people (
   birth_at varchar(100),
   type varchar(20),
   title_before_id integer,
-  title_after_id integer
+  title_after_id integer,
+  created_on timestamp,
+  updated_on timestamp
 );
 
 --
--- Table structure for table indexes
+-- Table structure for table indices
 --
 
-DROP TABLE indexes;
-CREATE TABLE indexes (
-  id integer primary key,
+DROP TABLE IF EXISTS indices;
+CREATE TABLE indices (
+  id integer primary key auto_increment,
   study_plan_id integer,
   student_id integer,
   department_id integer,
@@ -218,9 +222,9 @@ CREATE TABLE indexes (
 -- Table structure for table study plans
 --
 
-DROP TABLE study_plans;
+DROP TABLE IF EXISTS study_plans;
 CREATE TABLE study_plans (
-  id integer primary key,
+  id integer primary key auto_increment,
   index_id integer,
   actual integer,
   finishing_to integer,
@@ -235,9 +239,9 @@ CREATE TABLE study_plans (
 -- Table structure for table plan_subjects
 --
 
-DROP TABLE plan_subjects;
+DROP TABLE IF EXISTS plan_subjects;
 CREATE TABLE plan_subjects (
-  id integer primary key,
+  id integer primary key auto_increment,
   study_plan_id integer,
   subject_id integer,
   finishing_on integer,
@@ -250,9 +254,9 @@ CREATE TABLE plan_subjects (
 -- Table structure for table Subject
 --
 
-DROP TABLE subjects;
+DROP TABLE IF EXISTS subjects;
 CREATE TABLE subjects (
-  id integer primary key,
+  id integer primary key auto_increment,
   label varchar(1024),
   code varchar(7),
   type varchar(32),
@@ -265,9 +269,9 @@ CREATE TABLE subjects (
 -- Table structure for relationship externalSubject_detail
 --
 
-DROP TABLE external_subject_details;
+DROP TABLE IF EXISTS external_subject_details;
 CREATE TABLE external_subject_details (
-  id integer primary key,
+  id integer primary key auto_increment,
   external_subject_id integer,
   university varchar(1024),
   person varchar (256),
@@ -279,9 +283,9 @@ CREATE TABLE external_subject_details (
 -- Table structure for table exams
 --
 
-DROP TABLE exams;
+DROP TABLE IF EXISTS exams;
 CREATE TABLE exams (
-  id integer primary key,
+  id integer primary key auto_increment,
   index_id integer,
   first_examinator_id integer,
   second_examinator_id integer,
@@ -297,9 +301,9 @@ CREATE TABLE exams (
 -- Table structure for table interupts
 --
 
-DROP TABLE interupts;
+DROP TABLE IF EXISTS interupts;
 CREATE TABLE interupts (
-  id integer primary key,
+  id integer primary key auto_increment,
   index_id integer,
   note varchar(100),
   created_on timestamp,
@@ -311,9 +315,9 @@ CREATE TABLE interupts (
 -- aproovements are related to study_plans, disert_themes and interupts
 --
 
-DROP TABLE approvements;
+DROP TABLE IF EXISTS approvements;
 CREATE TABLE approvements (
-  id integer primary key,
+  id integer primary key auto_increment,
   type varchar(30),
   document_id integer,
   tutor_statement_id integer,
@@ -328,9 +332,9 @@ CREATE TABLE approvements (
 -- Table structure for table deliverance
 --
 
-DROP TABLE statements;
+DROP TABLE IF EXISTS statements;
 CREATE TABLE statements (
-  id integer primary key,
+  id integer primary key auto_increment,
   note varchar(100),
   result integer,
   person_id integer,
@@ -344,9 +348,9 @@ CREATE TABLE statements (
 -- Table structure for table tutorships
 --
 
-DROP TABLE tutorships;
+DROP TABLE IF EXISTS tutorships;
 CREATE TABLE tutorships (
-  id integer primary key,
+  id integer primary key auto_increment,
   department_id integer,
   tutor_id integer,
   coridor_id integer,
@@ -358,9 +362,9 @@ CREATE TABLE tutorships (
 -- Table structure for table leaderships
 --
 
-DROP TABLE leaderships;
+DROP TABLE IF EXISTS leaderships;
 CREATE TABLE leaderships (
-  id integer primary key,
+  id integer primary key auto_increment,
   department_id integer,
   leader_id integer,
   created_on timestamp,
@@ -371,9 +375,9 @@ CREATE TABLE leaderships (
 -- Table structure for table deanships
 --
 
-DROP TABLE deanships;
+DROP TABLE IF EXISTS deanships;
 CREATE TABLE deanships (
-  id integer primary key,
+  id integer primary key auto_increment,
   faculty_id integer,
   dean_id integer,
   created_on timestamp,
@@ -384,9 +388,9 @@ CREATE TABLE deanships (
 -- Table structure for table employments
 --
 
-DROP TABLE employments;
+DROP TABLE IF EXISTS employments;
 CREATE TABLE employments (
-  id integer primary key,
+  id integer primary key auto_increment,
   unit_id integer,
   person_id integer,
   created_on timestamp,
@@ -398,9 +402,9 @@ CREATE TABLE employments (
 -- Table structure for table disert_themes
 --
 
-DROP TABLE disert_themes;
+DROP TABLE IF EXISTS disert_themes;
 CREATE TABLE disert_themes (
-  id integer primary key,
+  id integer primary key auto_increment,
   title varchar(100),
   index_id integer,
   methodology_added_on timestamp,
@@ -413,9 +417,9 @@ CREATE TABLE disert_themes (
 -- Table structure for table methodologies
 --
 
--- DROP TABLE methodologies;
+-- DROP TABLE IF EXISTS methodologies;
 -- CREATE TABLE methodologies (
---   id integer primary key,
+--   id integer primary key auto_increment,
 --   text varchar(255),
 --   disert_theme_id integer
 -- );
@@ -424,7 +428,7 @@ CREATE TABLE disert_themes (
 -- Table structure for table study plans statuses
 --
 
--- DROP TABLE study_plans_statuses;
+-- DROP TABLE IF EXISTS study_plans_statuses;
 -- CREATE TABLE study_plans_statuses (
   -- id integer primary key,
   -- name varchar(100)
@@ -438,12 +442,14 @@ CREATE TABLE disert_themes (
 -- Table structure for table users
 --
 
-DROP TABLE users;
+DROP TABLE IF EXISTS users;
 CREATE TABLE users (
-  id integer primary key,
+  id integer primary key auto_increment,
   login varchar(80),
   password varchar(40),
-  person_id integer
+  person_id integer,
+  created_on timestamp,
+  updated_on timestamp
 );
 
 
@@ -451,28 +457,32 @@ CREATE TABLE users (
 -- Table structure for table roles
 --
 
-DROP TABLE roles;
+DROP TABLE IF EXISTS roles;
 CREATE TABLE roles (
-  id integer primary key,
+  id integer primary key auto_increment,
   name varchar(20),
-  info varchar(100)
+  info varchar(100),
+  created_on timestamp,
+  updated_on timestamp
 );
 
 --
 -- Table structure for table permissions
 --
-DROP TABLE permissions;
+DROP TABLE IF EXISTS permissions;
 CREATE TABLE permissions (
-  id integer primary key,
+  id integer primary key auto_increment,
   name varchar(20),
-  info varchar(100)
+  info varchar(100),
+  created_on timestamp,
+  updated_on timestamp
 );
 
 --
 -- Table structure for table roles_users
 --
 
-DROP TABLE roles_users;
+DROP TABLE IF EXISTS roles_users;
 CREATE TABLE roles_users (
   user_id integer,
   role_id integer 
@@ -483,7 +493,7 @@ CREATE TABLE roles_users (
 -- Table structure for table permissions_roles
 --
 
-DROP TABLE permissions_roles;
+DROP TABLE IF EXISTS permissions_roles;
 CREATE TABLE permissions_roles (
   role_id integer,
   permission_id integer 
@@ -497,9 +507,9 @@ CREATE TABLE permissions_roles (
 -- Table structure for table addresses
 --
 
-DROP TABLE addresses;
+DROP TABLE IF EXISTS addresses;
 CREATE TABLE addresses (
-  id integer primary key,
+  id integer primary key auto_increment,
   street varchar(100),
   desc_number varchar(20),
   orient_number varchar(20),
@@ -515,9 +525,9 @@ CREATE TABLE addresses (
 -- Table structure for table address types
 --
 
-DROP TABLE address_types;
+DROP TABLE IF EXISTS address_types;
 CREATE TABLE address_types (
-  id integer primary key,
+  id integer primary key auto_increment,
   label varchar(20)
 );
 
@@ -525,9 +535,9 @@ CREATE TABLE address_types (
 -- Table structure for table contacts
 --
 
-DROP TABLE contacts;
+DROP TABLE IF EXISTS contacts;
 CREATE TABLE contacts (
-  id integer primary key,
+  id integer primary key auto_increment,
   name varchar(20),
   contact_type_id integer,
   person_id integer
@@ -537,9 +547,9 @@ CREATE TABLE contacts (
 -- Table structure for table contacts
 --
 
-DROP TABLE contact_types;
+DROP TABLE IF EXISTS contact_types;
 CREATE TABLE contact_types (
-  id integer primary key,
+  id integer primary key auto_increment,
   label varchar(20)
 );
 
@@ -547,9 +557,9 @@ CREATE TABLE contact_types (
 -- Table structure for table titles
 --
 
-DROP TABLE titles;
+DROP TABLE IF EXISTS titles;
 CREATE TABLE titles (
-  id integer primary key,
+  id integer primary key auto_increment,
   label varchar(100),
   prefix integer
 );
@@ -559,9 +569,9 @@ CREATE TABLE titles (
 -- Table structure for table sessions
 --
 
-DROP TABLE sessions;
+DROP TABLE IF EXISTS sessions;
 CREATE TABLE sessions (
-  id integer primary key,
+  id integer primary key auto_increment,
   sessid text,
   data text
 );

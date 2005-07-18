@@ -1,17 +1,25 @@
 --- 
 - !ruby/object:Tutorship 
   attributes: 
-    created_on: 
-    updated_on: 2005-05-31 18:16:15
-    tutor_id: "9"
+    created_on: 2005-05-25 12:14:02
+    updated_on: 2005-05-25 12:14:02
+    tutor_id: "1"
     coridor_id: "3"
     id: "1"
     department_id: "2"
 - !ruby/object:Tutorship 
   attributes: 
-    created_on: 2005-06-01 12:25:44
-    updated_on: 2005-06-01 13:26:30
-    tutor_id: "11"
+    created_on: 2005-05-25 12:14:02
+    updated_on: 2005-05-25 12:14:02
+    tutor_id: "2"
     coridor_id: "3"
     id: "2"
+    department_id: "2"
+- !ruby/object:Tutorship 
+  attributes: 
+    created_on: 2005-05-25 12:14:02
+    updated_on: 2005-05-25 12:14:02
+    tutor_id: "3"
+    coridor_id: "3"
+    id: "3"
     department_id: "2"

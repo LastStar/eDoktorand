@@ -4,219 +4,307 @@
     name: account/welcome
     info: "Úvodní stránka systému"
     id: "1"
+    created_on: 
+    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: account/logout
     info: Odhlašovací stránka
     id: "2"
+    created_on: 
+    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/index
     info: "Uchazeèi - úvodní stránka"
     id: "3"
+    created_on: 
+    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/edit
     info: "Uchazeèi - oprava"
     id: "4"
+    created_on: 
+    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/ready
     info: "Uchazeèi - pøipraven"
     id: "5"
+    created_on: 
+    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/admit
     info: "Uchazeèi - pøíjmut"
     id: "6"
+    created_on: 
+    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/by
     info: "Uchazeèi -
       vıpis uchazeèù setøídìnı"
+    created_on: 
+    updated_on:
     id: "7"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/list
     info: "Uchazeèi - vıpis uchazeèù"
+    created_on: 
+    updated_on:
     id: "8"
 - !ruby/object:Permission 
   attributes: 
     name: account/signup
     info: ''
+    created_on: 
+    updated_on:
     id: "9"
 - !ruby/object:Permission 
   attributes: 
     name: account/create
     info: ''
+    created_on: 
+    updated_on:
     id: "10"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/update
     info: ''
+    created_on: 
+    updated_on:
     id: "11"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/index
     info: ''
+    created_on: 
+    updated_on:
     id: "12"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/list
     info: ''
+    created_on: 
+    updated_on:
     id: "13"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/edit
     info: ''
+    created_on: 
+    updated_on:
     id: "14"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/new
     info: ''
+    created_on: 
+    updated_on:
     id: "15"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/create
     info: ''
+    created_on: 
+    updated_on:
     id: "16"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/update
     info: ''
+    created_on: 
+    updated_on:
     id: "17"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/show
     info: ''
+    created_on: 
+    updated_on:
     id: "18"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/invite
     info: ''
+    created_on: 
+    updated_on:
     id: "19"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/destroy
     info: ''
+    created_on: 
+    updated_on:
     id: "20"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/destroy
     info: ''
+    created_on: 
+    updated_on:
     id: "21"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/admittance
     info: ''
+    created_on: 
+    updated_on:
     id: "22"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/list_all
     info: ''
+    created_on: 
+    updated_on:
     id: "23"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/show
     info: ''
+    created_on: 
+    updated_on:
     id: "24"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/confirm_admit
     info: ''
+    created_on: 
+    updated_on:
     id: "25"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/invite_now
     info: ''
+    created_on: 
+    updated_on:
     id: "26"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/admit_now
     info: ''
+    created_on: 
+    updated_on:
     id: "27"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/enroll
     info: ''
+    created_on: 
+    updated_on:
     id: "28"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/confirm_enroll
     info: ''
+    created_on: 
+    updated_on:
     id: "29"
 - !ruby/object:Permission 
   attributes: 
     name: students/index
     info: ''
+    created_on: 
+    updated_on:
     id: "30"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/index
     info: ''
+    created_on: 
+    updated_on:
     id: "31"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/choose_subjects
     info: ''
+    created_on: 
+    updated_on:
     id: "32"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/create
     info: ''
+    created_on: 
+    updated_on:
     id: "33"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/finish
     info: ''
+    created_on: 
+    updated_on:
     id: "34"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/save_disert
     info: ''
+    created_on: 
+    updated_on:
     id: "35"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/save
     info: ''
+    created_on: 
+    updated_on:
     id: "36"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/preview
     info: ''
+    created_on: 
+    updated_on:
     id: "37"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/confirm
     info: ''
+    created_on: 
+    updated_on:
     id: "38"
 - !ruby/object:Permission 
   attributes: 
     name: students/show
     info: ''
+    created_on: 
+    updated_on:
     id: "39"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/show
     info: ''
+    created_on: 
+    updated_on:
     id: "40"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/approve
     info: ''
+    created_on: 
+    updated_on:
     id: "41"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/confirm_approve
     info: ''
+    created_on: 
+    updated_on:
     id: "42"
 - !ruby/object:Permission 
   attributes: 
     name: disert_themes/methodology
     info: 
+    created_on: 
+    updated_on:
     id: "44"
 - !ruby/object:Permission 
   attributes: 
     name: disert_themes/save_methodology
     info: 
+    created_on: 
+    updated_on:
     id: "45"

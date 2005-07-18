@@ -11,6 +11,8 @@
     birth_on: "2005-05-23"
     birth_number: ''
     state: ''
+    created_on: 
+    updated_on:
 - !ruby/object:Dean 
   attributes: 
     title_before_id: "13"
@@ -23,6 +25,8 @@
     birth_on: "2005-05-23"
     birth_number: ''
     state: ''
+    created_on: 
+    updated_on:
 - !ruby/object:Leader 
   attributes: 
     title_before_id: "6"
@@ -35,6 +39,8 @@
     birth_on: "2005-05-23"
     birth_number: ''
     state: ''
+    created_on: 
+    updated_on:
 - !ruby/object:Student 
   attributes: 
     title_before_id: 
@@ -47,3 +53,6 @@
     birth_on: "1950-06-02"
     birth_number: "7604242624"
     state: "Česká republika"
+    created_on: 
+    updated_on:
+

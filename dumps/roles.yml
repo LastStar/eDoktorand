@@ -4,18 +4,26 @@
     name: admin
     info: Administrátor
     id: "1"
+    created_on: 
+    updated_on:
 - !ruby/object:Role 
   attributes: 
     name: referentka
     info: Referentka na VaV
     id: "2"
+    created_on: 
+    updated_on:
 - !ruby/object:Role 
   attributes: 
     name: student
     info: Student
     id: "3"
+    created_on: 
+    updated_on:
 - !ruby/object:Role 
   attributes: 
     name: tutor
     info: Tutor
+    created_on: 
+    updated_on:
     id: "4"
