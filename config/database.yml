@@ -4,7 +4,6 @@ development:
   host: localhost
   username: pepe
   password: p3p3
-  socket: /usr/local/var/run/mysqld/mysqld.sock 
 
 test:
   adapter: sqlite
