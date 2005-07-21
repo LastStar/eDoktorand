@@ -2,8 +2,8 @@ development:
   adapter: mysql
   database: phdstudy
   host: localhost
-  username: pepe
-  password: p3p3
+  username: web 
+  password: w3b
 
 test:
   adapter: sqlite

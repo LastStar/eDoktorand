@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
   model :candidate
-  model :user
+  model :user, :dean
   model :faculty_secretary
   include LoginSystem
   layout 'employers'
@@ -75,9 +75,10 @@ class CandidatesController < ApplicationController
       @user.roles << Role.find_by_name('student')
       if !@user.save
         render_action 'enroll'
+      else
+        redirect_to :action => 'list'
       end  
     end
-    redirect_to :action => 'list'
   end
   # amits candidate form
   def admit

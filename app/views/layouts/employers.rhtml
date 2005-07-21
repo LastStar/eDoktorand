@@ -10,7 +10,7 @@
 <body>
 	<% if @session['user'] %>
   <div class='topMenu'>
-	<% if @session['user'].person.is_a?(Student) %>
+	<% if @session['user'].person.is_a?(Student) and @student %>
     <%= link_to_unless_current(_("welcome page"), :action => 'index') {} %>
     <% if !@student.index.study_plan || @student.index.study_plan.canceled? %>
       <%= link_to(_("create study plan"),
@@ -20,16 +20,16 @@
       <%= link_to(_("add methodology"), :action => 'methodology',
         :controller => 'disert_themes', :id => @student.index.disert_theme)  %>
     <% end %>
-    <% else %>
-    <%= link_to_unless_current(_("welcome page"), :controller => 'account', :action => 'welcome') {} %>
-    <% if @session['user'].has_role?('admin') ||
-        @session['user'].has_role?('faculty_secretary') %>
-      <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>
-      <%= link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} %>
-      <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
-    <% end %>
-    <%= link_to_unless_current(_("students"), :controller => 'students'){} %>
-    <% end %>
+  <% else %>
+  <%= link_to_unless_current(_("welcome page"), :controller => 'account', :action => 'welcome') {} %>
+  <% if @session['user'].has_role?('admin') ||
+      @session['user'].has_role?('faculty_secretary') %>
+    <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>
+    <%= link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} %>
+    <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
+  <% end %>
+  <%= link_to_unless_current(_("students"), :controller => 'students'){} %>
+  <% end %>
     <%= link_to_unless_current(_("logoff"), {:controller => 'account', 
       :action => 'logout'}, :confirm =>  _("do you really want to") + ' ' +
       _("logoff") + '?'){} %>

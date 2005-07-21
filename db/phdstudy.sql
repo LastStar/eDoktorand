@@ -41,14 +41,14 @@ CREATE TABLE candidates (
   studied_specialization varchar(100),
   study_theme varchar(100),
   note text,
-  created_on timestamp,
-  updated_on timestamp,
-  finished_on timestamp,
-  ready_on timestamp,
-  admited_on timestamp,  
-  invited_on timestamp,
-  rejected_on timestamp,
-  enrolled_on timestamp,
+  created_on datetime,
+  updated_on datetime,
+  finished_on datetime default 0,
+  ready_on datetime default 0,
+  admited_on datetime default 0, 
+  invited_on datetime default 0,
+  rejected_on datetime default 0,
+  enrolled_on datetime default 0,
   student_id integer,
   tutor_id integer
 );
@@ -133,8 +133,8 @@ CREATE TABLE exam_terms (
 	second_examinator varchar(100),
 	third_examinator varchar(100),
 	fourth_examinator varchar(100),
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -166,8 +166,8 @@ CREATE TABLE documents (
   name varchar(100),
   path varchar(100),
   faculty_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -196,8 +196,8 @@ CREATE TABLE people (
   type varchar(20),
   title_before_id integer,
   title_after_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -214,8 +214,8 @@ CREATE TABLE indices (
   disert_theme_id integer,
   tutor_id integer,
   study_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -228,11 +228,11 @@ CREATE TABLE study_plans (
   index_id integer,
   actual integer,
   finishing_to integer,
-  admited_on timestamp,
-  canceled_on timestamp,
-  approved_on timestamp,
-  created_on timestamp,
-  updated_on timestamp
+  admited_on datetime,
+  canceled_on datetime,
+  approved_on datetime,
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -245,8 +245,8 @@ CREATE TABLE plan_subjects (
   study_plan_id integer,
   subject_id integer,
   finishing_on integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 
@@ -260,8 +260,8 @@ CREATE TABLE subjects (
   label varchar(1024),
   code varchar(7),
   type varchar(32),
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 
@@ -275,8 +275,8 @@ CREATE TABLE external_subject_details (
   external_subject_id integer,
   university varchar(1024),
   person varchar (256),
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -293,8 +293,8 @@ CREATE TABLE exams (
   questions text,
   subject_id integer,
   created_by integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -306,8 +306,8 @@ CREATE TABLE interupts (
   id integer primary key auto_increment,
   index_id integer,
   note varchar(100),
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -324,8 +324,8 @@ CREATE TABLE approvements (
   leader_statement_id integer,
   dean_statement_id integer,
   board_statement_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -338,8 +338,8 @@ CREATE TABLE statements (
   note varchar(100),
   result integer,
   person_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 
@@ -354,8 +354,8 @@ CREATE TABLE tutorships (
   department_id integer,
   tutor_id integer,
   coridor_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -367,8 +367,8 @@ CREATE TABLE leaderships (
   id integer primary key auto_increment,
   department_id integer,
   leader_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -380,8 +380,8 @@ CREATE TABLE deanships (
   id integer primary key auto_increment,
   faculty_id integer,
   dean_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -393,8 +393,8 @@ CREATE TABLE employments (
   id integer primary key auto_increment,
   unit_id integer,
   person_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 
@@ -407,10 +407,10 @@ CREATE TABLE disert_themes (
   id integer primary key auto_increment,
   title varchar(100),
   index_id integer,
-  methodology_added_on timestamp,
+  methodology_added_on datetime,
   finishing_to integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 -- deprecated in favor of simple methodology file in disert
@@ -448,8 +448,8 @@ CREATE TABLE users (
   login varchar(80),
   password varchar(40),
   person_id integer,
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 
@@ -462,8 +462,8 @@ CREATE TABLE roles (
   id integer primary key auto_increment,
   name varchar(20),
   info varchar(100),
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --
@@ -472,10 +472,10 @@ CREATE TABLE roles (
 DROP TABLE IF EXISTS permissions;
 CREATE TABLE permissions (
   id integer primary key auto_increment,
-  name varchar(20),
+  name varchar(100),
   info varchar(100),
-  created_on timestamp,
-  updated_on timestamp
+  created_on datetime,
+  updated_on datetime
 );
 
 --

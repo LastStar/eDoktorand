@@ -1,3 +1,3 @@
 class AddressType < ActiveRecord::Base
-  validates_presence_of :name
+  validates_presence_of :label
 end

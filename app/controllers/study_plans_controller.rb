@@ -26,19 +26,13 @@ class StudyPlansController < ApplicationController
   def save_disert
     @disert_theme = DisertTheme.new(@params['disert_theme'])
     unless @disert_theme.valid?
-      render_action 'create'
+      render(:partial => 'not_valid_disert')
     else
       @session['disert_theme'] = @disert_theme
-      redirect_to :action => 'choose_obligate'
+      create_obligate
+      render(:partial => 'valid_disert', :locals => {:disert_theme =>
+      @disert_theme}) 
     end
-  end
-  # page where student adds obligate subjects to his study plan
-  def choose_obligate
-    @title = _("Creating study plan")
-    @study_plan = @student.index.build_study_plan
-    @session['study_plan'] = @study_plan
-    @session['plan_subjects'] = []
-    create_obligate
   end
   # saves obligate subjects to session
   def save_obligate
@@ -48,32 +42,24 @@ class StudyPlansController < ApplicationController
       plan_subject.attributes = ps
       @session['plan_subjects'] << plan_subject
     end
-    redirect_to :action => 'choose_language'
-  end
-  # page where student adds language subjects to his study plan
-  def choose_language
-    @title = _("Creating study plan")
-    @study_plan = StudyPlan.new
     create_language
+    render(:partial => 'languages', :locals => {:plan_subjects =>
+    @session['plan_subjects']})  
   end
   # saves language subjects to session
   def save_language
     extract_language
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 2
+      language_subjects = @plan_subjects
       @session['plan_subjects'] << @plan_subjects
-      redirect_to :action => 'choose_voluntary'
+      create_voluntary
+      render(:partial => 'voluntarys', :locals => {:plan_subjects =>
+      language_subjects, :form_plan_subjects => @plan_subjects})
     else
       extract_language(true)
-      @title = _("Error in creating study plan")
       flash.now['error'] = _("languages have to be different")
-      render_action 'choose_language'
+      render(:partial => 'not_valid_languages')  
     end
-  end
-  # page where student adds voluntary subjects to his study plan
-  def choose_voluntary
-    @title = _("Creating study plan")
-    @study_plan = StudyPlan.new
-    create_voluntary
   end
   # saves voluntary subjects to session
   def save_voluntary
@@ -81,21 +67,15 @@ class StudyPlansController < ApplicationController
     extract_voluntary
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 3 && @errors.empty?
       @session['plan_subjects'] << @plan_subjects
-      redirect_to :action => 'preview'
+      render(:partial => 'valid_voluntarys', 
+      :locals => {:plan_subjects => @plan_subjects})
     else
       extract_voluntary(true)
       @title = _("Error in creating study plan")
       @errors << _("subjects have to be different") unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 3
       flash.now['errors'] = @errors.uniq!
-      render_action 'choose_voluntary'
+      render(:partial => 'not_valid_voluntarys', :locals => {:form_plan_subjects => @plan_subjects})
     end
-  end
-  # previews what have been filled. 
-  def preview
-    @title = _("Creating study plan")
-    @study_plan = @session['study_plan']
-    @study_plan.plan_subjects << @session['plan_subjects']
-    @study_plan.index.disert_theme = @session['disert_theme']
   end
   # confirms study plan 
   def confirm
@@ -104,6 +84,7 @@ class StudyPlansController < ApplicationController
     @study_plan.plan_subjects << @session['plan_subjects']
     @study_plan.index.disert_theme = @session['disert_theme']
     @study_plan.save
+    breakpoint 
     @session['study_plan'] = nil
     @session['plan_subjects'] = nil
     @session['disert_theme'] = nil
@@ -161,6 +142,9 @@ class StudyPlansController < ApplicationController
   private	
   # prepares obligate subjects
   def create_obligate
+    @study_plan = @student.index.build_study_plan
+    @session['study_plan'] = @study_plan
+    @session['plan_subjects'] = []
     @plan_subjects = []
     index = 0
     @study_plan.index.coridor.obligate_subjects.each do |sub|
