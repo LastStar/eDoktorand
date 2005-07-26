@@ -1,9 +1,8 @@
-<ul>
+<li><b><%= title %></b></li>
 <% for subject in subjects %>
-<li>
-<%=
-"#{subject.subject.label}&nbsp;#{subject.finishing_on}.#{_('semester')}" %>
+<li class='second'>
+<div class='info'><%= subject.finishing_on %>.<%= _("semester") %></div>
+<%= subject.subject.label %>
 </li>
 <% end %>
-</ul>
 

@@ -1,0 +1,14 @@
+<%= form_remote_tag(:url => {:action => 'save_methodology'}, :loading =>
+      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+      "loading"), :complete => evaluate_remote_response, :html => {'enctype' =>
+      'multipart/form-data'}) %>	
+<input type='hidden' name="disert_theme[id]" id="disert_theme_id" value="<%=
+disert_theme.id %>" />
+<fieldset>
+<label for="disert_theme_methodology_file"><%= _("file") %>:</label>
+<input type="file" name="disert_theme[methodology_file]"
+id="disert_theme_methodology_file"/>
+</fieldset>
+<%= submit_tag _("upload")
+%>
+<%= end_form_tag %>

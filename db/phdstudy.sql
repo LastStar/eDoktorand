@@ -228,9 +228,9 @@ CREATE TABLE study_plans (
   index_id integer,
   actual integer,
   finishing_to integer,
-  admited_on datetime,
-  canceled_on datetime,
-  approved_on datetime,
+  admited_on datetime default 0,
+  canceled_on datetime default 0,
+  approved_on datetime default 0,
   created_on datetime,
   updated_on datetime
 );
@@ -407,7 +407,7 @@ CREATE TABLE disert_themes (
   id integer primary key auto_increment,
   title varchar(100),
   index_id integer,
-  methodology_added_on datetime,
+  methodology_added_on datetime default 0,
   finishing_to integer,
   created_on datetime,
   updated_on datetime

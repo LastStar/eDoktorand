@@ -612,7 +612,7 @@ msgid "Study plan approved on"
 msgstr "Studijní plán schválen dne"
 
 msgid "There are no students in system"
-msgstr "Tyto stránky jsou pouze pro studenty"
+msgstr "V systému nejsou žádní studenti"
 
 msgid "Place and date of birth"
 msgstr "Místo a datum narození"

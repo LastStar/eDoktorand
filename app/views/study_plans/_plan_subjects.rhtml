@@ -1,0 +1,5 @@
+<%= visual_effect(:appear, "study_plan") %>
+<%= update_element_function('study_plan', :position => :bottom,
+:content => render(:partial => "shared/subjects", 
+:locals => {:subjects => subjects , :title => _("subjects")})) %>
+<%= update_element_function('subjectLink', :action => :remove) %>

@@ -1,3 +1,4 @@
+# TODO rewamp to use index instead of student 
 class StudyPlansController < ApplicationController
   include LoginSystem
   model :student
@@ -20,6 +21,8 @@ class StudyPlansController < ApplicationController
   # namely disert theme
   def create
     @title = _("Creating study plan")
+    @study_plan = @student.index.build_study_plan
+    @session['study_plan'] = @study_plan
     @disert_theme = @student.index.build_disert_theme
   end
   # saves disert theme to session
@@ -44,7 +47,7 @@ class StudyPlansController < ApplicationController
     end
     create_language
     render(:partial => 'languages', :locals => {:plan_subjects =>
-    @session['plan_subjects']})  
+    @session['plan_subjects'], :study_plan => @session['study_plan']})  
   end
   # saves language subjects to session
   def save_language
@@ -82,9 +85,11 @@ class StudyPlansController < ApplicationController
     @study_plan = @session['study_plan']
     @study_plan.admited_on = Time.now
     @study_plan.plan_subjects << @session['plan_subjects']
-    @study_plan.index.disert_theme = @session['disert_theme']
+    @study_plan.index_id = @student.index.id
+    disert_theme = @session['disert_theme']
+    disert_theme.index = @study_plan.index 
+    disert_theme.save
     @study_plan.save
-    breakpoint 
     @session['study_plan'] = nil
     @session['plan_subjects'] = nil
     @session['disert_theme'] = nil
@@ -94,18 +99,7 @@ class StudyPlansController < ApplicationController
   def approve
     @study_plan = StudyPlan.find(@params['id'])
     @study_plan.approvement ||= Approvement.create
-    if @session['user'].person.is_a?(Tutor) &&
-      !@study_plan.approvement.tutor_statement
-      @statement = TutorStatement.new
-    elsif @session['user'].person.is_a?(Leader) &&
-      !@study_plan.approvement.leader_statement
-      @statement = LeaderStatement.new
-    elsif @session['user'].person.is_a?(Dean)
-      @statement = DeanStatement.new
-    else
-      flash['error'] = _("you don't have rights to do this")
-      redirect_to :action => 'login', :controller => 'account'
-    end
+    @statement = prepare_approvement(@study_plan) 
     render_partial("shared/approve", :document => @study_plan)
   end
   # confirms and saves statement
@@ -131,23 +125,21 @@ class StudyPlansController < ApplicationController
   end
   # for remote adding subjects to page
   def subjects
-    render_partial("shared/subjects", :subjects =>
-    PlanSubject.find(:all, :contions => ['study_plan_id = ?', @params['id']],
-    :include => [:subject]))
+    render(:partial => 'plan_subjects', :locals => {:subjects =>
+    PlanSubject.find(:all, :conditions => ['study_plan_id = ?', @params['id']],
+    :include => [:subject])})
   end
   # renders study plan
   def show
-    render_partial('study_plan', :study_plan => StudyPlan.find(@params['id']))
+    render_partial('shared/study_plan', :study_plan => StudyPlan.find(@params['id']))
   end
   private	
   # prepares obligate subjects
   def create_obligate
-    @study_plan = @student.index.build_study_plan
-    @session['study_plan'] = @study_plan
     @session['plan_subjects'] = []
     @plan_subjects = []
     index = 0
-    @study_plan.index.coridor.obligate_subjects.each do |sub|
+    @session['study_plan'].index.coridor.obligate_subjects.each do |sub|
       ps = PlanSubject.new('subject_id' => sub.id)
       ps.id = index
       @plan_subjects << ps

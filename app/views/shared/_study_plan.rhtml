@@ -1,33 +1,35 @@
+<%= render(:partial => 'disert_theme', 
+    :locals => {:disert_theme => study_plan.index.disert_theme, :methodology =>
+    true}) %>
+<h5>
+  <div class='right'>
+  <%= subjects_link(study_plan) %>
+<% if @student %>
+  <%= link_to _("change"), :action => 'change' %>
+<% end %>
+  </div>
+  <%= _("Study plan") %>
+</h5>
+<ul id='study_plan'>
 <% if study_plan.canceled? %>
-<h5><%= _("Canceled on") %></h5>: <%= study_plan.canceled_on %></h5>
+  <li>
+  <b><%= _("canceled on") %>: <%= study_plan.canceled_on %></b>
+  </li>
 <% end %>
 <% if study_plan.approved? %>
-<h5><%= _("Approved on") %>: <%= study_plan.approved_on %></h5>
+  <li>
+  <b><%= _("approved on") %>: <%= study_plan.approved_on %></b>
+  </li>
 <% end %>
-  <% if study_plan.approvement %>
+<% if study_plan.approvement %>
   <%= render_partial 'shared/print_statements', :approvement => study_plan.approvement %>
-  <% end %>
-<ul>
+<% end %>
   <li>
-   <%= _("Disert theme") %>: <%= study_plan.index.disert_theme.title %>
-   &mdash; <%= study_plan.index.disert_theme.finishing_to %>. <%= _("semester") %>
-   <%= render_partial 'shared/methodology', :study_plan => study_plan %>
-  </li>
-</ul>
-<ul>
-  <li>
-  <%= _("Final exam") %>: <%= study_plan.finishing_to %>. <%= _("semester") %>
-  </li>
-</ul>
-<% if study_plan.admited_on %>
-<ul>
-  <li>
-    <%= subjects_link(study_plan) %>
+  <div class='info'><%= study_plan.finishing_to %>. <%= _("semester") %></div> <%= _("final exam") %> 
   </li>
 </ul>
 <%= approve_links(study_plan, 'study_plans') %>
-<% end %>
-<%= javascript_include_tag 'prototype' %>
+</ul>
 <script>
 function showSubjects(id)  {
   if($('subjects' + id).style.display == 'none') {

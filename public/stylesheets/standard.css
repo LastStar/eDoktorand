@@ -1,10 +1,16 @@
 
-body { margin: 0px;  color: black; }
+body { 
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0px;
+  border: 1px solid #452;
+  width: 760px;
+  background-color: #FFFFFF;
+}
 
 body, p, ol, ul, td {
     font-family: "lucida", sans-serif;
-    font-size:   16px;
-    line-height: 18px;
+    font-size:   14px;
 }
 
 a {
@@ -16,28 +22,49 @@ hr {
   color: black;
   border-top: 1px solid black;
 }
-h1, h2, h3, h4, h5 { color: black; font-family: times; line-height: 20pt }
+h1, h2, h3, h4, h5 { color: black;}
 h1 { 
-  font-size: 20pt;
-  background-color: #ffd;
+  font-size: 12pt;
+  background-color: #452;
   padding-left: 1.5em;
-  padding-top: .5em;
   margin: 0px;
+  color: #ddc;
+  line-height: 15pt;
+
 }
 h2 { font-size: 24px; margin: 5px; }
 h3 { font-size: 20px; margin: 5px; }
-h4, h5 { padding: 4px; margin: 0px; }
-h4 { font-size: 18px; }
-h5 { font-size: 14px; margin-top: 10px;}
+h4 { padding: 4px; margin: 0px; font-size: 18px; }
+h5 { 
+  font-size: 14px;
+  margin: 0px;
+  border-bottom: 1px solid #784;
+  border-top: 1px solid #784;
+  border-left: 10px solid #784;
+}
 
 li { 
-  margin-bottom: 8px;
-  padding-left: 15px;
-  background-image: url(../images/arrow.gif);
-  background-repeat: no-repeat;
-  background-position: 0 .3em;
-  list-style: none;
+  margin: 0 0 1px 0;
+  padding: 2px 2px 2px 1em;
+  border-bottom: 1px solid #ddc;
+  border-left: 3px solid #ddc;
+  list-style: none; 
+  width: 46em;
 }
+
+li.second { 
+  padding-left: 2em;
+  background-color: white;
+  width: 45em;
+}
+
+
+ul {
+  margin-top: 0px;
+  padding-left: 5ex;
+}
+
+
 
 .hidden { display: none; }
 .detail {  padding: 10px; width: 30em; margin-bottom: 10px;}
@@ -107,8 +134,7 @@ form {
 }
 label {
   margin: 0px;
-  font-size: 12pt;
-  width: 30ex;
+  width: 23em;
   text-align: right; 
   margin: 5px 1em 5px 0;
   clear: both;
@@ -120,12 +146,15 @@ input, select  {
   margin: 5px 0 5px 0;
 } 
 fieldset {
-  border: 1px solid #ffa;
-  width: 41em;
+  border: 1px solid #b00;
+  width: 46em;
   margin-bottom: 5px;
+  margin-left: 4.5ex;
+  padding: 0px;
+  padding-bottom: 1ex;
 }
 legend {
-  padding: 1px;
+  padding: 1ex;
 }
 .required {
   color: red;
@@ -142,22 +171,41 @@ div.fieldWithErrors {
   padding: 0px;
 }
 div.fieldWithErrors label { color: red; }
+.second .info {
+  padding-right: 4em;
+}
 .info {
-  padding-left: 2em;
-  position: absolute;
-  left: 20em;
-  font-size: smaller;
+  float: right;
+  padding-right: 2em;
 }
 pre.detail {
   background-color: #ffffff; padding: 10px; padding-left: 30px; font-size: 11px;
 }
-.footer { padding-top: 10em; font-size: 10pt; }
+.footer { padding-top: 11em; font-size: 10pt; }
 .signature { display: none; }
 .strut { display: none; }
 .printHeader h2, h3, h4 { display: none; }
 .printHeader { display: none; }
 .right { float: right; text-align: right; padding-right: 1em; font-size: 14px;}
-.topMenu { float: right; text-align: right; padding-right: 1em; font-size: 14px;}
+.topMenu { 
+  float: right;
+  text-align: right;
+  font-size: 11pt;
+  border: 1px solid #ddc;
+  border-left: 1px solid #ddc;
+  margin-top: 1px;
+  background-color: #ddc;
+}
+
+.topMenu a { 
+ color: #b00;
+ padding: 2px;
+  text-decoration: none;
+}
+
+.topMenu a:hover { 
+ color: #784;
+}
 .right a {
   padding: 1px;
 } 
@@ -205,4 +253,23 @@ table.list td {
   padding-bottom: 1px;	
   margin: 0px;
   border:1px solid;
+}
+#loading {
+  position: absolute; 
+  top: .4ex;
+  width: 760px;
+  z-index: 1;
+  background-color: #b00;
+  color: white;
+  font-size: 10pt;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-align: center;
+  border-top: 1px solid #ddc;
+  border-bottom: 1px solid #ddc;
+}
+
+
+  padding-bottom: 4px;
+  text-align: center;
 }

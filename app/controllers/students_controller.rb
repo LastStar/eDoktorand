@@ -1,10 +1,10 @@
 class StudentsController < ApplicationController
+  include LoginSystem
   model :student
   model :user
   model :leader
   model :dean
   model :faculty_secretary
-  include LoginSystem
   layout 'employers'
   before_filter :login_required
   before_filter :set_title
@@ -67,12 +67,14 @@ class StudentsController < ApplicationController
   private
   # sets title of the controller
   def set_title
-    @title = 'Studenti'
+    @title = _("Students")
   end
   # prepares conditions for various queries
   def prepare_conditions
     @conditions = "null is not null"
-    if @session['user'].person.is_a? Dean || @session['user'].person.is_a?
+    if @session['user'].has_role?(Role.find_by_name('admin'))
+      @conditions  = nil
+    elsif @session['user'].person.is_a? Dean || @session['user'].person.is_a?
         FacultySecretary
       @conditions = ["department_id IN (" +  @session['user'].person.deanship.faculty.departments.map {|dep|
         dep.id}.join(', ') + ")"]

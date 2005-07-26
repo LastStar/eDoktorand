@@ -73,6 +73,9 @@ class CandidatesController < ApplicationController
       @user = User.new(@params['user'])
       @user.person = @candidate.student
       @user.roles << Role.find_by_name('student')
+      @user.person.index = Index.create('tutor_id' => @candidate.tutor_id,
+      'department_id' => @candidate.department_id, 'study_id' => @candidate.study_id,
+      'coridor_id' => @candidate.coridor_id)
       if !@user.save
         render_action 'enroll'
       else

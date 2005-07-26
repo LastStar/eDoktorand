@@ -1,0 +1,20 @@
+<% if @flash['errors'] && !@flash['errors'].empty? %>
+<div id='error'>
+<ul>
+<% @flash['errors'].each do |err| %>
+<%= content_tag('li', err) %>
+<% end %>
+</ul>
+</div>
+<% end %>
+<%= form_remote_tag(:url => {:action => 'save_voluntary'}, :loading =>
+      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+      "loading"), :complete => evaluate_remote_response) %>	
+<fieldset>
+<legend><%= _("Voluntary subjects") %></legend>
+<% for plan_subject in @plan_subjects do %>
+<%= render_partial 'voluntary', :plan_subject => plan_subject %>
+<% end %>
+</fieldset>
+<%= submit_tag(_("next")) %>
+<%= end_form_tag %>

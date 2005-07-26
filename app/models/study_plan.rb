@@ -11,4 +11,9 @@ class StudyPlan < ActiveRecord::Base
   def canceled?
     return true if self.canceled_on
   end
+  # returns if study plan is admited
+  def admited?
+    return true if self.admited_on
+  end
+
 end

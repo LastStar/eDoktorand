@@ -1,5 +1,4 @@
-﻿<%= javascript_include_tag :defaults %>
-<%= javascript_include_tag "study_plan" %>
+﻿<%= javascript_include_tag 'study_plan' %>
 <p>
 <%= _("On this page you are starting to create your study plan. Remember that
 consulting it with your tutor is highly recommended.") %>
@@ -9,4 +8,28 @@ consulting it with your tutor is highly recommended.") %>
 <div id="form">
   <%= render :partial => 'disert_form' %>
 </div>
+<%= 
+javascript_tag <<-CODE
+last = []
+last[1] = 0
+last[2] = 0
+last[3] = 0
+function hide_on_internal(id) {
+  var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
+  if((element.value == 0 && last[id] != 0) || (element.value != 0 && last[id] == 0)) {
+    if($('external' + id).style.display == 'none') {
+    new Effect.SlideDown('external' + id,{})
+    last[id] = element.value;
+    }
+    else {
+    new Effect.SlideUp('external' + id,{})
+    last[id] = element.value;
+    }
+  };
+}
+CODE
+    
+  
 
+
+%>

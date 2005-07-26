@@ -40,6 +40,21 @@ class ApplicationController < ActionController::Base
 		return items
 	end
   private
+  # prepares approvement for object if it doesn't exists
+  # returns statement for user
+  def prepare_approvement(object)
+    if @session['user'].person.is_a?(Tutor) &&
+      !object.approvement.tutor_statement
+      statement = TutorStatement.new
+    elsif @session['user'].person.is_a?(Leader) &&
+      !object.approvement.leader_statement
+      statement = LeaderStatement.new
+    elsif @session['user'].person.is_a?(Dean) &&
+      !object.approvement.dean_statement
+      statement = DeanStatement.new
+    end
+    return statement
+  end
   def localize
     # We will use instance vars for the locale so we can make use of them in
     # the templates.
@@ -69,7 +84,9 @@ class ApplicationController < ActionController::Base
   # checks if user is student. 
   # if true creates @student variable with current student
   def student_required
-    @student = @session['user'].person unless @student.kind_of?(Student)
+    if @session['user'].person.kind_of?(Student)
+      @student = @session['user'].person 
+    end
   end
 end
 

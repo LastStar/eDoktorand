@@ -118,19 +118,19 @@ module ApplicationHelper
   # prints subjects link
   def subjects_link(study_plan)
     link_to_remote(_("subjects"), {:url => {:action => 'subjects',
-      :controller => 'study_plans', :id => study_plan}, :update =>
-      "subjects#{study_plan.id}", :complete =>
-      "showSubjects(#{study_plan.id})"}, {:id => "link#{study_plan.id}"}) +
-    content_tag('div', '', :id => "subjects#{study_plan.id}", :style =>
-    'display: none')
+      :controller => 'study_plans', :id => study_plan}, :loading =>
+      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+      "loading"), :complete => evaluate_remote_response}, :id => 'subjectLink')
   end
   private 
   # prints approvement piece of code
   def approve_link(document, controller)
-      link_to_remote(_("approve"), :url => {:controller => controller, :action => 'approve', :id =>
-        document}, :update => 'approveForm' + document.id.to_s, :complete =>
-        "showApproveForm(#{document.id})") +
+      link_to_remote(_("approve"), :url => {:controller => controller, 
+      :action => 'approve', :id => document}, :update => 'approveForm' +
+      document.id.to_s, :loading => visual_effect(:appear, 'loading'), 
+      :interactive => visual_effect(:fade, "loading"), 
+      :complete => visual_effect(:appear, "approveForm#{document.id}")) +
       content_tag('div', '', :id => 'approveForm' + document.id.to_s, 
-        :style => 'display: none')
+      :style => 'display: none')
   end
 end
