@@ -1,0 +1,23 @@
+<% if @flash['error'] %>
+<div id='error'>
+<%= @flash['error'] %>
+</div>
+<% end %>
+<%= form_remote_tag(:url => {:action => 'save_student_subject'}, :loading =>
+      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+      "loading"), :complete => evaluate_remote_response) %>	
+<fieldset>
+<legend><%= _("Examined students") %></legend>
+<label>
+<%= _("student") %>
+</label>
+<%= content_tag('select', options_for_select(students.map{|stud|
+[stud.display_name,
+stud.id]}), 
+{'id' => "student_id",'name' =>
+"student[id]"}) %>
+<br/> 
+</fieldset>
+<%= submit_tag(_("next")) %>
+<%= end_form_tag %>
+

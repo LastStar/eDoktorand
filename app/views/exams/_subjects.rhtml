@@ -1,0 +1,6 @@
+<%= update_element_function("done", :position => :bottom,
+:content => render(:inline => "<ul><li>Creating exam by subject</li></ul>")) %>
+<%= update_element_function("form", 
+:content => render(:partial => "subject_form",
+:locals => {:subjects => @subjects}))%>
+<%= visual_effect(:slide_down, 'form') %>
