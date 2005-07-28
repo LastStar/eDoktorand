@@ -9,7 +9,7 @@
   </div>
   <%= _("Study plan") %>
 </h5>
-<ul id='study_plan'>
+<ul id='<%= "study_plan#{study_plan.id}" %>'>
 <% if study_plan.canceled? %>
   <li>
   <b><%= _("canceled on") %>: <%= study_plan.canceled_on %></b>
@@ -26,30 +26,12 @@
   <li>
   <div class='info'><%= study_plan.finishing_to %>. <%= _("semester") %></div> <%= _("final exam") %> 
   </li>
-  <li id='subjects'>
+  <li id='<%= "subject_link#{study_plan.id}" %>'>
   <%= subjects_link(study_plan) %>
   </li>
-  <li id='approve'>
+  <li id='<%= "approve_link#{study_plan.id}" %>'>
     <%= approve_links(study_plan, 'study_plans') %>
   </li>
 
 </ul>
 </ul>
-<script>
-function showSubjects(id)  {
-  if($('subjects' + id).style.display == 'none') {
-    new Effect.Appear('subjects' + id);
-    new Effect.Fade('link' + id)
-  } else {
-    new Effect.Fade('subjects' + id)
-    new Effect.Appear('link' + id)
-  }
-}
-function showApproveForm(id)  {
-  if($('approveForm' + id).style.display == 'none') {
-    new Effect.Appear('approveForm' + id);
-  } else {
-    new Effect.Fade('approveForm' + id)
-  }
-}
-</script>

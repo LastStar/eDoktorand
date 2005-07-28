@@ -1,0 +1,11 @@
+<%= start_form_tag :action => 'confirm_approve', :id => document %>	
+<fieldset>
+  <legend><%= _("approvement") %></legend>
+  <label for="statement_note"><%= _("note") %>:</label>
+  <%= text_area 'statement', 'note', :cols => '30', :rows => '5' %><br/>
+  <label for="statement_result"><%= _("result") %></label>
+  <%= select 'statement', 'result', [[_("approve"), 1], [_("cancel"), 0]] %><br/>
+</fieldset>
+<%= submit_tag _("next") %>
+<%= end_form_tag %>
+

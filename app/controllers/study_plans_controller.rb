@@ -125,9 +125,10 @@ class StudyPlansController < ApplicationController
   end
   # for remote adding subjects to page
   def subjects
+    study_plan = StudyPlan.find(@params['id'])
     render(:partial => 'plan_subjects', :locals => {:subjects =>
     PlanSubject.find(:all, :conditions => ['study_plan_id = ?', @params['id']],
-    :include => [:subject])})
+    :include => [:subject]), :study_plan => study_plan})
   end
   # renders study plan
   def show

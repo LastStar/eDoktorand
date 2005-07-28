@@ -4,28 +4,13 @@
   <div class='right'>
   <%= render_partial 'student_links', :index => index %>
   </div>
-  <b><%= index.student.display_name %></b>
   <div>
-  <% if index.study_plan %>
-  <%= _("created on") + ': ' +
-    index.study_plan.created_on.strftime('%m. %d. %Y')
-  %><br/> 
-  <% if index.study_plan.canceled? %>
-  <%= _("canceled on") %>: <%=
-    index.study_plan.canceled_on.strftime('%m. %d. %Y')
-  %><br/> 
-  <% end %>
-  <% if index.study_plan.approved? %>
-  <%= _("approved on") %>: <%=
-    index.study_plan.approved_on.strftime('%m. %d. %Y')
-  %><br/> 
-  <% end %>
-  <% end %>
+  <b><%= index.student.display_name %></b>
   </div>
   <div class='detail' id='info<%= index.id %>' style="display: none">
   </div >
   <% if index.study_plan %>
-  <div id='study_plans<%= index.study_plan.id %>' style='display: none'>
+  <div id='study_plans<%= index.study_plan.id %>'>
   </div>
   <% end %>
   </li>

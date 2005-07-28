@@ -4,8 +4,8 @@ module ApplicationHelper
     unless object.errors.empty?
       tb = _("There were errors in your input")
       tb << content_tag('ul',
-        object.errors.to_a.map {|attr, message| content_tag('li',
-        _(message))}.join(' '))
+      object.errors.to_a.map {|attr, message| content_tag('li',
+      _(message))}.join(' '))
       content_tag('div', tb)
     end
   end
@@ -51,12 +51,12 @@ module ApplicationHelper
   # get tutor ids
   # if options['coridor'] setted only for this coridor
   def tutor_ids(options = {})
-          if options[:coridor]
-                  ts = Tutorship.find_all_by_coridor_id(options[:coridor].id)
-          else
-                  ts = Tutorship.find(:all)
-          end
-          ts.map {|ts| [ts.tutor.display_name, ts.tutor.id]}
+    if options[:coridor]
+      ts = Tutorship.find_all_by_coridor_id(options[:coridor].id)
+    else
+      ts = Tutorship.find(:all)
+    end
+    ts.map {|ts| [ts.tutor.display_name, ts.tutor.id]}
   end
   # get examinator ids
   def examinator_ids
@@ -118,19 +118,16 @@ module ApplicationHelper
   # prints subjects link
   def subjects_link(study_plan)
     link_to_remote(_("subjects"), {:url => {:action => 'subjects',
-      :controller => 'study_plans', :id => study_plan}, :loading =>
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-      "loading"), :complete => evaluate_remote_response}, :id => 'subjectLink')
+    :controller => 'study_plans', :id => study_plan}, :loading =>
+    visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+    "loading"), :complete => evaluate_remote_response})
   end
   private 
   # prints approvement piece of code
   def approve_link(document, controller)
-      link_to_remote(_("approve"), :url => {:controller => controller, 
-      :action => 'approve', :id => document}, :update => 'approveForm' +
-      document.id.to_s, :loading => visual_effect(:appear, 'loading'), 
-      :interactive => visual_effect(:fade, "loading"), 
-      :complete => visual_effect(:appear, "approveForm#{document.id}")) +
-      content_tag('div', '', :id => 'approveForm' + document.id.to_s, 
-      :style => 'display: none')
+    link_to_remote(_("approve"), :url => {:controller => controller, 
+    :action => 'approve', :id => document}, :loading => visual_effect(:appear, 'loading'), 
+    :interactive => visual_effect(:fade, "loading"), 
+    :complete => evaluate_remote_response)
   end
 end
