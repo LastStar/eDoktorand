@@ -1,6 +1,18 @@
 <%= error_messages_for 'exam' %>
+<br>
+<ul>
+  <li>
+    <%= link_to_remote(_("exam by subject"), :url => {:action =>
+    'exam_by_subject'}, :update => "examForm") %>
+  </li>
+  <li>
+    <%= link_to_remote(_("exam by person"), :url => {:action =>
+    'exam_by_person'}, :update => "examForm", :complete =>
+        "showExam(#{exam.id})") %>
+  </li>
+</ul>
 
-<p>
+<div id="examForm">
 
 <!--[form:exam]-->
 <fieldset id='agenda'>
@@ -40,5 +52,6 @@
   <input type='submit' value='<%= _("next") %>' />&nbsp;
   <input type='reset' value='<%= _("reset") %>' />
 </fieldset>
+</div>
 <!--[eoform:exam]-->
 

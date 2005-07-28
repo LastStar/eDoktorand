@@ -263,6 +263,16 @@ CREATE TABLE subjects (
   updated_on datetime
 );
 
+--
+-- Table structure for table Departments_Subjects
+--
+
+DROP TABLE IF EXISTS departments_subjects;
+CREATE TABLE departments_subjects (
+  department_id integer,
+  subject_id integer
+);
+
 
 -- 
 -- Table structure for relationship externalSubject_detail

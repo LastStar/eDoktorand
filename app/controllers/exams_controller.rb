@@ -3,6 +3,7 @@ class ExamsController < ApplicationController
   include LoginSystem
   layout "employers"
   before_filter :set_title
+  before_filter :login_required
   before_filter :prepare_conditions
 
   def index
@@ -28,7 +29,46 @@ class ExamsController < ApplicationController
     @exam.creator = @session['user'].person
   end
 
+  # start of the exam creating process
+  # rendering the two links
   def create
+    @title = _("Creating exam")
+    @session['exam'] = nil
+    @session['exam'] = Exam.new
+  end
+
+  # continue the exam creation process
+  def exam_by_subject
+    @exam = @session['exam']
+    @exam.created_by = @session['user']
+    
+    if @session['user'].has_role?(Role.find_by_name('admin'))
+      @subjects  = Subject.find_all()
+    elsif (@session['user'].person.is_a? Dean) ||
+      (@session['user'].person.is_a? FacultySecretary)
+      @faculty = @session['user'].person.department.faculty 
+      @subjects = []
+      @faculty.departments.each {|dep| @subjects << dep.subjects}
+    elsif (@session['user'].person.is_a? Leader) ||
+      (@session['user'].person.is_a? DepartmentSecretary) ||
+      (@session['user'].person.is_a? Tutor)
+      @subjects = @session['user'].person.tutorship.department.subjects
+    end
+    render(:partial => "subjects") 
+  end
+  
+  def save_exam_subject
+    breakpoint 
+    @exam = @session['exam']
+    @exam.subject_id = @params['subject']
+    @session['exam'] = @exam
+    @plan_subjects = Plan_Subject.find_by_subject_id(@params['subject'])
+    @students = []
+    @plan_subjects.each {|plan| @students << plan.study_plan.index.students}
+    render(:partial => "examined_student")
+  end
+  
+  def create_old
     @exam = Exam.new(@params[:exam])
     if @exam.save
       flash['notice'] = _("Exam was successfully created.")
