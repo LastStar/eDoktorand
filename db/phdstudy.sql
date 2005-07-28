@@ -207,7 +207,6 @@ CREATE TABLE people (
 DROP TABLE IF EXISTS indices;
 CREATE TABLE indices (
   id integer primary key auto_increment,
-  study_plan_id integer,
   student_id integer,
   department_id integer,
   coridor_id integer,

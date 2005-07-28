@@ -18,10 +18,11 @@
   <label for="exam_second_examinator"><%=_("2. Examinator")%></label>
   <%= select 'exam', 'second_examinator_id', examinator_null_ids%><br />
 
-  <label for="exam_student"><%=_("Created by")%></label>
-  <%= @exam.creator.display_name%>
-  <%= hidden_field 'exam', 'created_by' %>
-
+  <% if @exam.creator %>
+    <label for="exam_student"><%=_("Created by")%></label>
+    <%= @exam.creator.display_name%>
+    <%= hidden_field 'exam', 'created_by' %>
+  <% end %>
 </fieldset>
 
 <fieldset id='result'>

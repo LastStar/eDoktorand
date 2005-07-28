@@ -69,20 +69,4 @@ class StudentsController < ApplicationController
   def set_title
     @title = _("Students")
   end
-  # prepares conditions for various queries
-  def prepare_conditions
-    @conditions = "null is not null"
-    if @session['user'].has_role?(Role.find_by_name('admin'))
-      @conditions  = nil
-    elsif @session['user'].person.is_a? Dean || @session['user'].person.is_a?
-        FacultySecretary
-      @conditions = ["department_id IN (" +  @session['user'].person.deanship.faculty.departments.map {|dep|
-        dep.id}.join(', ') + ")"]
-    elsif @session['user'].person.is_a? Leader || @session['user'].person.is_a?
-        DepartmentSecretary
-      @conditions = ['department_id = ?', @session['user'].person.leadership.department_id]
-    elsif @session['user'].person.is_a? Tutor
-      @conditions = ['tutor_id = ?', @session['user'].person.id]
-    end
-  end
 end

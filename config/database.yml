@@ -2,7 +2,7 @@ development:
   adapter: mysql
   database: phdstudy
   host: localhost
-  username: web 
+  username: web
   password: w3b
 
 test:
