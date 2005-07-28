@@ -1,5 +1,5 @@
 <h5>
-  <%= _("disert theme") %>
+  <%= _('disert theme') %>
 </h5>
 <ul id='disert_theme'>
   <li>
@@ -9,4 +9,18 @@
   <div class='info'><%= disert_theme.finishing_to %>.<%= _("semester") %></div>
   <%= "#{_("disert theme defense")}" %>
   </li>
+  <% if study_plan && study_plan.approved? &&
+    !disert_theme.has_methodology_summary?  %>
+    <li id='methodology_link'>
+    <%= link_to_remote(_("add methodology summary"), {:url => {:action => 
+    'methodology_summary', :controller => 'disert_themes', :id => 
+    disert_theme}, :loading => visual_effect(:appear, 'loading'),
+    :interactive => visual_effect(:fade, "loading"), :complete => 
+    evaluate_remote_response})  %>
+    </li>
+  <% elsif disert_theme && disert_theme.has_methodology_summary? %>
+    <%= render(:partial => 'shared/methodology', :locals => {:disert_theme =>
+    disert_theme}) %>
+  <% end %>
+
 </ul>

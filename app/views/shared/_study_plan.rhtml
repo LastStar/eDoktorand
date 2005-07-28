@@ -1,9 +1,8 @@
 <%= render(:partial => 'disert_theme', 
-    :locals => {:disert_theme => study_plan.index.disert_theme, :methodology =>
-    true}) %>
+    :locals => {:disert_theme => study_plan.index.disert_theme, :study_plan =>
+    study_plan, :methodology => true}) %>
 <h5>
   <div class='right'>
-  <%= subjects_link(study_plan) %>
 <% if @student %>
   <%= link_to _("change"), :action => 'change' %>
 <% end %>
@@ -27,8 +26,14 @@
   <li>
   <div class='info'><%= study_plan.finishing_to %>. <%= _("semester") %></div> <%= _("final exam") %> 
   </li>
+  <li id='subjects'>
+  <%= subjects_link(study_plan) %>
+  </li>
+  <li id='approve'>
+    <%= approve_links(study_plan, 'study_plans') %>
+  </li>
+
 </ul>
-<%= approve_links(study_plan, 'study_plans') %>
 </ul>
 <script>
 function showSubjects(id)  {

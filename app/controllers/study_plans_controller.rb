@@ -131,7 +131,8 @@ class StudyPlansController < ApplicationController
   end
   # renders study plan
   def show
-    render_partial('shared/study_plan', :study_plan => StudyPlan.find(@params['id']))
+    @study_plan = StudyPlan.find(@params['id'])
+    render(:action => 'show', :layout => false)
   end
   private	
   # prepares obligate subjects

@@ -407,6 +407,8 @@ CREATE TABLE disert_themes (
   id integer primary key auto_increment,
   title varchar(100),
   index_id integer,
+  methodology_summary text, 
+  methodology_summary_added_on datetime default 0,
   methodology_added_on datetime default 0,
   finishing_to integer,
   created_on datetime,

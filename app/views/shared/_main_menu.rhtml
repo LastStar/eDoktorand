@@ -3,10 +3,6 @@
     <% if !@student.index.study_plan || @student.index.study_plan.canceled? %>
       <%= link_to(_("create study plan"),
         :action => 'create', :id => @student) %>
-    <% elsif @student.index.study_plan.approved? &&
-    !@student.index.disert_theme.has_methodology?  %>
-      <%= link_to(_("add methodology"), :action => 'methodology',
-        :controller => 'disert_themes', :id => @student.index.disert_theme)  %>
     <% end %>
     <%= link_to _("refresh") %>
   <% else %>

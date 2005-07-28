@@ -13,7 +13,6 @@ class DisertThemesController < ApplicationController
     dt.update_attribute('methodology_added_on', Time.now)
     render(:partial => 'methodology_saved', :locals => {:disert_theme => dt})
   end
-
   # approves disertation theme 
   def approve
     @disert_theme = DisertTheme.find(@params['id'])
@@ -32,7 +31,6 @@ class DisertThemesController < ApplicationController
     end
     render_partial("shared/approve", :document => @disert_theme)
   end
-  
   # confirms and saves statement
   def confirm_approve
     @disert_theme = DisertTheme.find(@params['id'])
@@ -50,5 +48,22 @@ class DisertThemesController < ApplicationController
     end
     @disert_theme.save
     redirect_to :controller => 'students'
+  end
+  # renders partial for adding methodology summary do disert theme
+  def methodology_summary
+    render(:partial => 'methodology_summary', :locals => {:disert_theme =>
+    DisertTheme.find(@params['id'])})
+  end
+  # saves methodology summary and renders new disert theme
+  def save_methodology_summary
+    disert_theme = DisertTheme.find(@params['disert_theme']['id'])
+    disert_theme.methodology_summary = @params['disert_theme']['methodology_summary']
+    if disert_theme.save
+      render(:partial => 'valid_methodology', :locals => {:disert_theme =>
+      disert_theme})
+    else
+      render(:partial => 'notvalid_methodology', :locals => {:disert_theme =>
+      disert_theme}) 
+    end
   end
 end

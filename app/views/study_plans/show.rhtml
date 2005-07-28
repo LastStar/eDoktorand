@@ -1,8 +1,3 @@
-<% breakpoint  %>
 
-<%= render_partial 'shared/study_plan', :study_plan => @study_plan %>
-<div class='links'>
-<%= approve_links %>
-<a href='javascript:window.print()'><%= _("print") %></a>
-<%= link_to(_("back"), :controller => 'students') %>
-</div>
+<%= update_element_function('study_plan', render(:partial => 'shared/study_plan',
+:locals => {:study_plan => @study_plan}))  %>
