@@ -3,6 +3,7 @@
 require_dependency "login_system"
 class ApplicationController < ActionController::Base
   before_filter :localize
+  model :user
   include LoginSystem
   model :user
   # get department ids

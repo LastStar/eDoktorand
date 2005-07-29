@@ -4,10 +4,10 @@
 </p>
 <ul>
 <li>
-<%= link_to_remote(_("exam by subject"), :url => {:action =>
-'exam_by_subject'}, :update => "form", :complete =>
-  evaluate_remote_response) %></li>
+<%= link_to_remote(_("exam by subject"), :url => {:action => 'exam_by_subject'},
+:loading => visual_effect(:appear, 'loading'), :interactive => 
+visual_effect(:fade, "loading"), :complete => evaluate_remote_response) %>
+</li>
 <li>
-  <%= link_to_remote(_("exam by person"), {:action => 'exam_by_person'}) %>
 </li>
 </ul>

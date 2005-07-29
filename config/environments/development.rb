@@ -9,7 +9,7 @@ require 'active_support/whiny_nil'
 Dependencies.mechanism                             = :load
 ActionController::Base.consider_all_requests_local = true
 ActionController::Base.perform_caching             = false
-ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(:database_manager => CGI::Session::ActiveRecordStore)
+#ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(:database_manager => CGI::Session::ActiveRecordStore)
 
 # The breakpoint server port that script/breakpointer connects to.
 BREAKPOINT_SERVER_PORT = 42531

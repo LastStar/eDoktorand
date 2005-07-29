@@ -1,8 +1,3 @@
-<% if @flash['error'] %>
-<div id='error'>
-<%= @flash['error'] %>
-</div>
-<% end %>
 <%= form_remote_tag(:url => {:action => 'save_exam_subject'}, :loading =>
       visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
       "loading"), :complete => evaluate_remote_response) %>	
@@ -12,9 +7,7 @@
 <%= _("subject") %>
 </label>
 <%= content_tag('select', options_for_select(subjects.map{|sub| [sub.label,
-sub.id]}), 
-{'id' => "subject_id",'name' =>
-"subject[id]"}) %>
+sub.id]}), {'id' => "subject_id",'name' => "subject[id]"}) %>
 <br/> 
 </fieldset>
 <%= submit_tag(_("next")) %>

@@ -1,11 +1,10 @@
-<%= javascript_include_tag 'study_plan' %>
 <p>
 <%= _("Starting to create exam.") %>
 </p>
 <div id="done">
 </div>
 <div id="form">
-  <%= render :partial => 'choose_exam_creation_style' %>
+  <%= render(:partial => 'choose_exam_creation_style') %>
 </div>
 <%= 
 javascript_tag <<-CODE

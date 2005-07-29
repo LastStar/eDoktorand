@@ -1,6 +1,8 @@
 <% 
 if document.kind_of? StudyPlan 
-element = "study_plan#{document.id}"
+  element = "study_plan#{document.id}"
+  elsif document.kind_of? DisertTheme
+  element = "disert_theme#{document.id}"
 end
 %>
 

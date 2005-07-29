@@ -121,7 +121,7 @@ class StudyPlansController < ApplicationController
     @study_plan.approved_on = Time.now if @statement.is_a?(DeanStatement) &&
       !@statement.cancel?
     @study_plan.save
-    redirect_to :controller => 'students'
+    render(:action => 'show', :layout => false)
   end
   # for remote adding subjects to page
   def subjects

@@ -117,17 +117,19 @@ module ApplicationHelper
   end
   # prints subjects link
   def subjects_link(study_plan)
-    link_to_remote(_("subjects"), {:url => {:action => 'subjects',
+    content_tag('li', link_to_remote(_("subjects"), {:url => {:action => 'subjects',
     :controller => 'study_plans', :id => study_plan}, :loading =>
     visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-    "loading"), :complete => evaluate_remote_response})
+    "loading"), :complete => evaluate_remote_response}, :id =>
+    "study_plan#{study_plan.id}"))
   end
   private 
   # prints approvement piece of code
   def approve_link(document, controller)
-    link_to_remote(_("approve"), :url => {:controller => controller, 
+    element = "approve_link#{document.id}"
+    content_tag('li', link_to_remote(_("approve"), :url => {:controller => controller, 
     :action => 'approve', :id => document}, :loading => visual_effect(:appear, 'loading'), 
     :interactive => visual_effect(:fade, "loading"), 
-    :complete => evaluate_remote_response)
+    :complete => evaluate_remote_response), :id => element)
   end
 end

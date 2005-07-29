@@ -1,7 +1,4 @@
-<%= form_remote_tag(:url => {:action => 'save_methodology'}, :loading =>
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-      "loading"), :complete => evaluate_remote_response, :html => {'enctype' =>
-      'multipart/form-data'}) %>	
+<%= form_tag({:action => 'save_methodology'}, {:multipart => true}) %>	
 <input type='hidden' name="disert_theme[id]" id="disert_theme_id" value="<%=
 disert_theme.id %>" />
 <fieldset>

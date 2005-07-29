@@ -4,3 +4,18 @@
 <li>
 <%= disert_theme.methodology_summary %>
 </li>
+<% unless disert_theme.has_methodology? %>
+<li>
+<%= link_to(_("upload methodology"), :controller => "disert_themes", :action => 
+"upload_methodology", :id => disert_theme.id) %>
+</li>
+<% else %>
+<li>
+<a href='<%= "pdf/methodology#{disert_theme.id}.pdf" %>'><%= _("methodology
+  file") %></a>
+</li>
+<% if disert_theme.approvement %>
+  <%= render_partial 'shared/print_statements', :approvement => disert_theme.approvement %>
+<% end %>
+<%= approve_links(disert_theme, 'disert_themes') %>
+<% end %>

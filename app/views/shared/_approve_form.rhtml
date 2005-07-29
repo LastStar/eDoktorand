@@ -1,4 +1,8 @@
-<%= start_form_tag :action => 'confirm_approve', :id => document %>	
+<%= form_remote_tag(:url => {:action => 'confirm_approve', :id => document},
+:loading => visual_effect(:appear, 'loading'), :interactive => 
+visual_effect(:fade, "loading"), :complete => evaluate_remote_response,:html => {:id =>
+"approve_form#{document.id}"}) %>	
+
 <fieldset>
   <legend><%= _("approvement") %></legend>
   <label for="statement_note"><%= _("note") %>:</label>

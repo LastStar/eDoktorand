@@ -1,0 +1,29 @@
+<%= form_tag(:action => 'save') %>	
+      <% @exam = exam %>
+<fieldset id='agenda'>
+<legend><%= _("Exam agenda") %></legend>
+
+  <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
+  <%= select 'exam', 'first_examinator_id', examinator_ids%><br />
+
+  <label for="exam_second_examinator"><%=_("2. Examinator")%></label>
+  <%= select 'exam', 'second_examinator_id', examinator_null_ids%><br />
+
+</fieldset>
+
+<fieldset id='result'>
+<legend><%= _("Exam result") %></legend>
+
+  <label for="exam_result"><%=_("Result")%></label>
+  <%= select 'exam', 'result', [[_("pass"), 1], [_("not pass"), 0]]%><br />
+
+  <label for="exam_questions"><%=_("Questions")%></label>
+  <%= text_area 'exam', 'questions'  %><br />
+</fieldset>
+
+<fieldset id='action'>
+  <legend><%= _("action") %></legend>
+  <input type='submit' value='<%= _("next") %>' />&nbsp;
+  <input type='reset' value='<%= _("reset") %>' />
+</fieldset>
+

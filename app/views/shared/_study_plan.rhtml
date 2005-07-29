@@ -26,12 +26,8 @@
   <li>
   <div class='info'><%= study_plan.finishing_to %>. <%= _("semester") %></div> <%= _("final exam") %> 
   </li>
-  <li id='<%= "subject_link#{study_plan.id}" %>'>
   <%= subjects_link(study_plan) %>
-  </li>
-  <li id='<%= "approve_link#{study_plan.id}" %>'>
-    <%= approve_links(study_plan, 'study_plans') %>
-  </li>
+  <%= approve_links(study_plan, 'study_plans') %>
 
 </ul>
 </ul>

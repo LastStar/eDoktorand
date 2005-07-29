@@ -1,6 +1,7 @@
 class DisertThemesController < ApplicationController
+  model :user
   include LoginSystem
-  layout 'students'
+  layout 'employers'
   before_filter :login_required, :student_required
   # page for adding methodology to disert theme
   def methodology
@@ -11,7 +12,7 @@ class DisertThemesController < ApplicationController
     DisertTheme.save(@params['disert_theme'])
     dt = DisertTheme.find(@params['disert_theme']['id'])
     dt.update_attribute('methodology_added_on', Time.now)
-    render(:partial => 'methodology_saved', :locals => {:disert_theme => dt})
+    redirect_to(:action => 'index', :controller => 'study_plans')
   end
   # approves disertation theme 
   def approve
@@ -33,21 +34,22 @@ class DisertThemesController < ApplicationController
   end
   # confirms and saves statement
   def confirm_approve
-    @disert_theme = DisertTheme.find(@params['id'])
+    disert_theme = DisertTheme.find(@params['id'])
     if @session['user'].person.is_a?(Tutor) && 
-      !@disert_theme.approvement.tutor_statement
+      !disert_theme.approvement.tutor_statement
       @statement = TutorStatement.create(@params['statement'])
-      @disert_theme.approvement.tutor_statement = @statement
+      disert_theme.approvement.tutor_statement = @statement
     elsif @session['user'].person.is_a?(Leader) &&
-      !@disert_theme.approvement.leader_statement
+      !disert_theme.approvement.leader_statement
       @statement = LeaderStatement.create(@params['statement'])
-      @disert_theme.approvement.leader_statement = @statement
+      disert_theme.approvement.leader_statement = @statement
     elsif @session['user'].person.is_a?(Dean) 
       @statement = DeanStatement.create(@params['statement'])
-      @disert_theme.approvement.dean_statement = @statement
+      disert_theme.approvement.dean_statement = @statement
     end
-    @disert_theme.save
-    redirect_to :controller => 'students'
+    disert_theme.save
+    render(:partial => 'valid_methodology', :locals => {:disert_theme =>
+    disert_theme, :element => 'approve_form'})
   end
   # renders partial for adding methodology summary do disert theme
   def methodology_summary
@@ -60,10 +62,15 @@ class DisertThemesController < ApplicationController
     disert_theme.methodology_summary = @params['disert_theme']['methodology_summary']
     if disert_theme.save
       render(:partial => 'valid_methodology', :locals => {:disert_theme =>
-      disert_theme})
+      disert_theme, :element => })
     else
       render(:partial => 'notvalid_methodology', :locals => {:disert_theme =>
       disert_theme}) 
     end
+  end
+  # renders partial for upload methodology form
+  def upload_methodology
+    @title = _("Upload disert theme") 
+    @disert_theme = DisertTheme.find(@params['id'])
   end
 end
