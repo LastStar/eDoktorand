@@ -53,8 +53,21 @@ class ExamsController < ApplicationController
       subjects = @session['user'].person.tutorship.department.subjects
     end
     # viz TODO
-    subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
+    # subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
     render(:partial => "subjects", :locals => {:subjects => subjects}) 
+  end
+  
+  # created exam object and subjects for select 
+  # TODO sql finder for only subjects wich actually any student has
+  # TODO sql finder for the students, that actually have the subjects
+  # this person teaches (maybe the department)
+  def exam_by_student
+    @exam = Exam.new('created_by' => @session['user'].person.id)
+    @session['exam'] = @exam
+    students  = Student.find_all()
+    # viz TODO
+    # subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
+    render(:partial => "students", :locals => {:students => students}) 
   end
   
   # save subject of exam to session
@@ -64,11 +77,42 @@ class ExamsController < ApplicationController
     @session['exam'] = exam
     @plan_subjects = PlanSubject.find_all_by_subject_id(@params['subject']['id'])
     students = []
-    @plan_subjects.each {|plan| students << plan.study_plan.index.student}
+    # @plan_subjects.each {|plan| students << plan.study_plan.index.student}
     render(:partial => "examined_student", :locals => {:exam => exam, 
     :students => students})
   end
-
+  
+  # save the examined subject for the examined student
+  def save_exam_student_subject
+    exam = @session['exam']
+    exam.subject_id = @params['subject']['id']
+    @session['exam'] = exam
+    @plan_subjects = PlanSubject.find_all_by_subject_id(@params['subject']['id'])
+    render(:partial => 'main_exam', :locals => {:exam => exam})
+  end
+  
+  # save the examindex student to session
+  def save_exam_student
+    exam = @session['exam']
+    exam.student_id = @params['student']['id']
+    @session['exam'] = exam
+    
+    if @session['user'].has_role?(Role.find_by_name('admin'))
+      subjects  = Subject.find_all()
+    elsif (@session['user'].person.is_a? Dean) ||
+      (@session['user'].person.is_a? FacultySecretary)
+      faculty = @session['user'].person.department.faculty 
+      subjects = []
+      faculty.departments.each {|dep| subjects << dep.subjects}
+    elsif (@session['user'].person.is_a? Leader) ||
+      (@session['user'].person.is_a? DepartmentSecretary) ||
+      (@session['user'].person.is_a? Tutor)
+      subjects = @session['user'].person.tutorship.department.subjects
+    end
+    subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
+    render(:partial => "student_subjects", :locals => {:subjects => subjects}) 
+  end
+  
   # save student of exam to session
   def save_student_subject
     exam = @session['exam']
