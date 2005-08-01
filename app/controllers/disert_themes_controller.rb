@@ -49,7 +49,7 @@ class DisertThemesController < ApplicationController
     end
     disert_theme.save
     render(:partial => 'valid_methodology', :locals => {:disert_theme =>
-    disert_theme, :element => 'approve_form'})
+    disert_theme, :element => "approve_form#{disert_theme.id}"})
   end
   # renders partial for adding methodology summary do disert theme
   def methodology_summary
@@ -62,7 +62,7 @@ class DisertThemesController < ApplicationController
     disert_theme.methodology_summary = @params['disert_theme']['methodology_summary']
     if disert_theme.save
       render(:partial => 'valid_methodology', :locals => {:disert_theme =>
-      disert_theme, :element => })
+      disert_theme, :element => 'disert_theme' })
     else
       render(:partial => 'notvalid_methodology', :locals => {:disert_theme =>
       disert_theme}) 

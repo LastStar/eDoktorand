@@ -102,7 +102,7 @@ class ExamsController < ApplicationController
   # save the examindex student to session
   def save_exam_student
     exam = @session['exam']
-    exam.student_id = @params['student']['id']
+    exam.index = Index.find_by_student_id(@params['student']['id'])
     @session['exam'] = exam
     
     if @session['user'].has_role?(Role.find_by_name('admin'))
@@ -118,7 +118,7 @@ class ExamsController < ApplicationController
       subjects = @session['user'].person.tutorship.department.subjects
     end
     subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
-    render(:partial => "student_subjects", :locals => {:subjects => subjects}) 
+    render(:partial => "student_subjects", :locals => {:exam => exam, :subjects => subjects}) 
   end
   
   # save student of exam to session

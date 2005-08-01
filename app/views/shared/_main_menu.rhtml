@@ -8,7 +8,8 @@
   <% else %>
   <%= link_to_unless_current(_("welcome page"), :controller => 'account', :action => 'welcome') {} %>
   <% if @session['user'].has_role?('admin') ||
-      @session['user'].has_role?('faculty_secretary') %>
+      @session['user'].has_role?('faculty_secretary') ||
+      @session['user'].has_role?('dean') %>
     <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>
     <%= link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} %>
     <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
