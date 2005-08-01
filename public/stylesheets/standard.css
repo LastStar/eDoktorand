@@ -30,7 +30,8 @@ h1 {
   margin: 0px;
   color: #ddc;
   line-height: 15pt;
-
+  border-bottom: 1px solid #784;
+  border-top: 1px solid #784;
 }
 h2 { font-size: 24px; margin: 5px; }
 h3 { font-size: 20px; margin: 5px; }
@@ -38,33 +39,37 @@ h4 { padding: 4px; margin: 0px; font-size: 18px; }
 h5 { 
   font-size: 14px;
   margin: 0px;
+  margin-top: 0.5ex; 
   border-bottom: 1px solid #784;
   border-top: 1px solid #784;
   border-left: 10px solid #784;
+  background-color: #ddc;
+  color: #452;
 }
 
 li { 
   margin: 0 0 1px 0;
-  padding: 2px 2px 2px 1em;
+  padding: 2px 0 0 1ex;
   border-bottom: 1px solid #ddc;
   border-left: 3px solid #ddc;
   list-style: none; 
-  width: 46em;
 }
 
 li.second { 
   padding-left: 2em;
   background-color: white;
-  width: 45em;
 }
 
 
 ul {
   margin-top: 0px;
   padding-left: 5ex;
+  margin-bottom: 1ex;
 }
 
-
+ul.peopleList {
+  padding-left: 0;
+}
 
 .hidden { display: none; }
 .detail {  padding: 10px; width: 30em; margin-bottom: 10px;}

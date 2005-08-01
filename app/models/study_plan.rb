@@ -13,7 +13,7 @@ class StudyPlan < ActiveRecord::Base
   end
   # returns if study plan is admited
   def admited?
-    return true if self.admited_on
+    return true unless self.admited_on.nil?
   end
 
 end

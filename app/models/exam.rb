@@ -8,4 +8,8 @@ class Exam < ActiveRecord::Base
  validates_presence_of :subject
  validates_presence_of :first_examinator
  validates_presence_of :creator
+ # returns true if result is pass
+ def passed?
+   return true if result == 1
+ end
 end

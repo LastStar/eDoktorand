@@ -1,0 +1,3 @@
+<%= update_element_function("info#{student.index.id}", :content => render(:partial => 
+'student_contact', :locals => {:student => student})) %>
+<%= update_element_function("contact_link#{student.index.id}", :action => :remove) %>

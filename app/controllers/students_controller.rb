@@ -61,7 +61,7 @@ class StudentsController < ApplicationController
   end
   # renders contact for student
   def contact
-    render_partial('student_contact', :student =>
+    render_partial('contact', :student =>
       Student.find(@params['id']))
   end
   private

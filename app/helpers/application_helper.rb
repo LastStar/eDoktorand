@@ -120,8 +120,8 @@ module ApplicationHelper
     content_tag('li', link_to_remote(_("subjects"), {:url => {:action => 'subjects',
     :controller => 'study_plans', :id => study_plan}, :loading =>
     visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-    "loading"), :complete => evaluate_remote_response}, :id =>
-    "study_plan#{study_plan.id}"))
+    "loading"), :complete => evaluate_remote_response}), :id =>
+    "subject_link#{study_plan.id}")
   end
   private 
   # prints approvement piece of code

@@ -5,8 +5,9 @@
   <li>
     <div class='right'>
       <%= link_to_remote(_("detail"), :url => {:action => 'detail', :id =>
-        exam.id}, :update => "info#{exam.id}", :complete =>
-        "showExam(#{exam.id})") %>
+      exam.id}, :loading => visual_effect(:appear, 'loading'), :interactive => 
+      visual_effect(:fade, "loading"), :update => "info#{exam.id}", :complete =>
+      "showExam(#{exam.id})") %>
       <%= link_to 'opravit', :action => 'edit', :id => exam %>
     </div>
     <b><%= exam.index.student.display_name %></b><br />

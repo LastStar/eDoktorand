@@ -1,6 +1,19 @@
-<%= _("email") %>: <%= student.email.name %><br /> 
+<h5><%= _("Contact") %></h5>
+<ul>
+<li>
+<%= _("email") %>: <%= student.email.name %>
+</li>
+<li>
 <%= _("phone") %>: <%= student.phone.name %><br /> 
+</li>
+<li>
 <%= _("habitat address") %>: <%=student.address.to_line_s %><br /> 
+</li>
+
 <% if student.postal_address %>
+<li>
 <%= _("postal address") %>: <%= student.postal_address.to_line_s %>
+</li>
 <% end %>
+</ul>
+

@@ -54,6 +54,12 @@ class ExamsController < ApplicationController
     end
     # viz TODO
     # subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
+    subjects = subjects.select do |sub|
+      not_finished = sub.plan_subjects.select do 
+        |ps| !ps.finished? && ps.study_plan.approved?
+      end
+      not_finished.size > 0
+    end
     render(:partial => "subjects", :locals => {:subjects => subjects}) 
   end
   
@@ -70,12 +76,14 @@ class ExamsController < ApplicationController
     render(:partial => "students", :locals => {:students => students}) 
   end
   
-  # save subject of exam to session
+  # save subject of exam to session and adds students 
   def save_exam_subject
     exam = @session['exam']
     exam.subject_id = @params['subject']['id']
     @session['exam'] = exam
-    @plan_subjects = PlanSubject.find_all_by_subject_id(@params['subject']['id'])
+    @plan_subjects = PlanSubject.find(:all, :conditions => ['subject_id = ? and
+    finished_on is null', @params['subject']['id']])
+    @plan_subjects = @plan_subjects.select {|ps| ps.study_plan.approved?}
     students = []
     # @plan_subjects.each {|plan| students << plan.study_plan.index.student}
     render(:partial => "examined_student", :locals => {:exam => exam, 
@@ -126,7 +134,9 @@ class ExamsController < ApplicationController
     exam = @session['exam']
     exam.attributes = @params['exam']
     exam.created_by
-    breakpoint 
+    ps = PlanSubject.find(:first, :conditions => ["subject_id = ? and
+    study_plan_id =?", exam.subject_id, exam.index.study_plan.id])
+    ps.update_attribute('finished_on', Time.now) if exam.passed?
     exam.save
     redirect_to :action => 'index'
   end

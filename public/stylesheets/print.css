@@ -87,3 +87,6 @@ table.list td {
 .topMenu {
   display: none;
 }
+#search {
+  display: none;
+}

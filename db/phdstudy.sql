@@ -244,6 +244,7 @@ CREATE TABLE plan_subjects (
   study_plan_id integer,
   subject_id integer,
   finishing_on integer,
+  finished_on datetime default 0,
   created_on datetime,
   updated_on datetime
 );
