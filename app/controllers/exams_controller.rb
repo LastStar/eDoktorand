@@ -162,8 +162,13 @@ class ExamsController < ApplicationController
   def search
     @conditions.first <<  ' AND lastname like ?'
     @conditions << "#{@params['search_field']}%"
-    @exams = Student.find(:all, :conditions => @conditions, :include =>
-      :exam).map {|s| s.exam}
+    @indexes = Student.find(:all, :conditions => @conditions, :include =>
+      :index).map {|s| s.index}
+    @indexes = @indexes.select {|ind| !ind.exams.empty?}
+    @exams = []
+    @indexes.each {|ind| @exams.concat (ind.exams)}
+    # @exams = Student.find(:all, :conditions => @conditions, :include =>
+    #  :exam).map {|s| s.index.exams}
     render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
   end
   # sets title of the controller
