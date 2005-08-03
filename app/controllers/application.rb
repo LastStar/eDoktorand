@@ -43,15 +43,15 @@ class ApplicationController < ActionController::Base
   private
   # prepares approvement for object if it doesn't exists
   # returns statement for user
-  def prepare_approvement(object)
-    if @session['user'].person.is_a?(Tutor) &&
-      !object.approvement.tutor_statement
+  def prepare_approvement(approvement)
+    if @person.is_a?(Tutor) &&
+      !approvement.tutor_statement
       statement = TutorStatement.new
-    elsif @session['user'].person.is_a?(Leader) &&
-      !object.approvement.leader_statement
+    elsif @person.is_a?(Leader) &&
+      !approvement.leader_statement
       statement = LeaderStatement.new
-    elsif @session['user'].person.is_a?(Dean) &&
-      !object.approvement.dean_statement
+    elsif @person.is_a?(Dean) &&
+      !approvement.dean_statement
       statement = DeanStatement.new
     end
     return statement
@@ -89,7 +89,6 @@ class ApplicationController < ActionController::Base
       @student = @session['user'].person 
     end
   end
-
   # prepares conditions for various queries
   def prepare_conditions
     @conditions = "null is not null"
@@ -105,6 +104,10 @@ class ApplicationController < ActionController::Base
     elsif @session['user'].person.is_a? Tutor
       @conditions = ['tutor_id = ?', @session['user'].person.id]
     end
+  end
+  # prepares person class variable
+  def prepare_person
+    @person = @session['user'].person if @session['user']
   end
 end
 

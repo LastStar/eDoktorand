@@ -7,5 +7,6 @@ end
 %>
 
 <%= update_element_function(element, :position => :after, :content =>
-render(:partial => 'shared/approve_form', :locals => {:document => document})) %>
+render(:partial => 'shared/approve_form', :locals => {:document => document,
+:title => title, :options => options})) %>
 <%= update_element_function("approve_link#{document.id}", :action => :remove) %>

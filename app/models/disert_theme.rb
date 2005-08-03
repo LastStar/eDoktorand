@@ -1,6 +1,6 @@
 class DisertTheme < ActiveRecord::Base
   belongs_to :index
-  has_one :approvement, :foreign_key => 'document_id'
+  has_one :approvement, :class_name => 'DisertThemeApprovement', :foreign_key => 'document_id'
   validates_presence_of :title
   validates_presence_of :methodology_summary, :on => :update
   validates_presence_of :finishing_to

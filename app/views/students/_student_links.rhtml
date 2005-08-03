@@ -1,6 +1,0 @@
-<%= student_action_links(index.student) %>
-<%= content_tag('b', link_to_remote(_("contact"), :url => {:action => 'contact',
-:id => index.student.id}, :loading => visual_effect(:appear, 'loading'), 
-:interactive => visual_effect(:fade, "loading"), :complete =>
-evaluate_remote_response), :id => "contact_link#{index.id}") 
-%>

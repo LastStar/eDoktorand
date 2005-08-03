@@ -2,11 +2,6 @@
     :locals => {:disert_theme => study_plan.index.disert_theme, :study_plan =>
     study_plan, :methodology => true}) %>
 <h5>
-  <div class='right'>
-<% if @student %>
-  <%= link_to _("change"), :action => 'change' %>
-<% end %>
-  </div>
   <%= _("Study plan") %>
 </h5>
 <ul id='<%= "study_plan#{study_plan.id}" %>'>
@@ -28,6 +23,7 @@
   </li>
   <%= subjects_link(study_plan) %>
   <%= approve_links(study_plan, 'study_plans') %>
+  <%= atestation_links(study_plan) %>
 
 </ul>
 </ul>

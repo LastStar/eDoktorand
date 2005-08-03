@@ -11,7 +11,7 @@ class StudyPlansController < ApplicationController
   model :plan_subject
   model :subject
   layout 'employers'
-  before_filter :login_required, :student_required
+  before_filter :login_required, :student_required, :prepare_person
   # page with basic informations for student 
   def index
     @title = _("Study plan")
@@ -98,9 +98,10 @@ class StudyPlansController < ApplicationController
   # approves study plan 
   def approve
     @study_plan = StudyPlan.find(@params['id'])
-    @study_plan.approvement ||= Approvement.create
-    @statement = prepare_approvement(@study_plan) 
-    render_partial("shared/approve", :document => @study_plan)
+    @study_plan.approvement ||= StudyPlanApprovement.create
+    @statement = prepare_approvement(@study_plan.approvement) 
+    render_partial("shared/approve", :document => @study_plan, :title =>
+    _("approvement"), :options => [[_("approve"), 1], [_("cancel"), 0]])
   end
   # confirms and saves statement
   def confirm_approve
@@ -121,8 +122,40 @@ class StudyPlansController < ApplicationController
     @study_plan.approved_on = Time.now if @statement.is_a?(DeanStatement) &&
       !@statement.cancel?
     @study_plan.save
-    render(:action => 'show', :layout => false)
+    render(:partial => 'show', :locals => {:remove =>
+    "link#{@study_plan.id}", :study_plan => @study_plan})
   end
+  # atests study plan 
+  def atest
+    @study_plan = StudyPlan.find(@params['id'])
+    @study_plan.atestation ||= Atestation.create
+    @statement = prepare_approvement(@study_plan.atestation) 
+    render_partial("shared/approve", :document => @study_plan, :title =>
+    _("atestation"), :options => [[_("approve"), 1], [_("approve with condition"), 2], [_("cancel"), 0]] )
+  end
+  # confirms and saves statement
+  def confirm_approve
+    @study_plan = StudyPlan.find(@params['id'])
+    if @session['user'].person.is_a?(Tutor) && 
+      !@study_plan.approvement.tutor_statement
+      @statement = TutorStatement.create(@params['statement'])
+      @study_plan.approvement.tutor_statement = @statement
+    elsif @session['user'].person.is_a?(Leader) &&
+      !@study_plan.approvement.leader_statement
+      @statement = LeaderStatement.create(@params['statement'])
+      @study_plan.approvement.leader_statement = @statement
+    elsif @session['user'].person.is_a?(Dean) 
+      @statement = DeanStatement.create(@params['statement'])
+      @study_plan.approvement.dean_statement = @statement
+    end
+    @study_plan.canceled_on = @statement.cancel? ? Time.now : nil
+    @study_plan.approved_on = Time.now if @statement.is_a?(DeanStatement) &&
+      !@statement.cancel?
+    @study_plan.save
+    render(:partial => 'show', :locals => {:remove =>
+    "link#{@study_plan.id}", :study_plan => @study_plan})
+  end
+  # for remote adding subjects to page
   # for remote adding subjects to page
   def subjects
     study_plan = StudyPlan.find(@params['id'])
@@ -132,8 +165,9 @@ class StudyPlansController < ApplicationController
   end
   # renders study plan
   def show
-    @study_plan = StudyPlan.find(@params['id'])
-    render(:action => 'show', :layout => false)
+    study_plan = StudyPlan.find(@params['id'])
+    render(:partial => 'show', :locals => {:study_plan => study_plan, :remove =>
+    nil})
   end
   private	
   # prepares obligate subjects

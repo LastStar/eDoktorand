@@ -6,9 +6,9 @@ class StudentsController < ApplicationController
   model :dean
   model :faculty_secretary
   layout 'employers'
-  before_filter :login_required
-  before_filter :set_title
-  before_filter :prepare_conditions
+  before_filter :login_required, :set_title, :prepare_conditions,
+  :prepare_person 
+  
   # lists all students
   def index
     list

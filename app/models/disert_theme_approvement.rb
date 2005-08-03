@@ -1,0 +1,2 @@
+class DisertThemeApprovement < Approvement
+end

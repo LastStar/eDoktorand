@@ -1,0 +1,3 @@
+class Atestation < Approvement
+
+end

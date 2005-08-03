@@ -2,7 +2,7 @@
 <% for index in @indexes  %>
   <li>
   <div class='right'>
-  <%= render_partial 'student_links', :index => index %>
+    <%= student_action_link(index) %>
   </div>
   <div>
   <b><%= index.student.display_name %></b>

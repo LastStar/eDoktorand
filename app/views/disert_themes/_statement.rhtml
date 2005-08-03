@@ -1,0 +1,8 @@
+<%= update_element_function("approvement.disert_theme#{disert_theme.id}", 
+:content => render(:partial => "shared/print_statements", 
+:locals => {:approvement => approvement, :disert_theme => approvement.disert_theme})) %>
+<%= update_element_function(element, :action => :remove) %>
+
+
+
+

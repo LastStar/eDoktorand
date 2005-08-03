@@ -1,0 +1,5 @@
+<%= update_element_function("form", :position => :before,
+:content => render(:partial => "atestation_term", 
+:locals => {:atestation_term => atestation_term})) %>
+<%= update_element_function("form", :action => :remove) %> 
+

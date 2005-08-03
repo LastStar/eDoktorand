@@ -9,4 +9,8 @@ class Student < Person
   validates_associated :address, :on => :update
   validates_presence_of :email, :on => :update
   validates_associated :email, :on => :update
+  # returns faculty on which student is
+  def faculty
+    index.department.faculty
+  end
 end 

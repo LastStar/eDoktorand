@@ -3,7 +3,10 @@ body {
   margin-right: auto;
   margin-left: auto;
   margin-top: 0px;
-  border: 1px solid #452;
+  border-top: 1px solid #452;
+  border-right: 1px solid #452;
+  border-left: 1px solid #ddc;
+  border-bottom: 1px solid #ddc;
   width: 760px;
   background-color: #FFFFFF;
 }

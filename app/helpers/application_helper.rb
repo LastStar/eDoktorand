@@ -101,18 +101,36 @@ module ApplicationHelper
   end
   # prints approve links
   def approve_links(document, controller)
-    if @session['user'].person == document.index.tutor &&
+    if @person == document.index.tutor &&
       (!document.approvement || (document.approvement &&
       !document.approvement.tutor_statement))
       approve_link(document, controller)
-    elsif @session['user'].person.is_a?(Leader) &&
-      @session['user'].person == document.index.leader &&
+    elsif @person.is_a?(Leader) &&
+      @person == document.index.leader &&
       document.approvement && !document.approvement.leader_statement
       approve_link(document, controller) 
-    elsif @session['user'].person.is_a?(Dean) &&
+    elsif @person.is_a?(Dean) &&
       document.approvement && document.approvement.leader_statement && 
       !document.approvement.dean_statement
       approve_link(document, controller)
+    end
+  end
+  # prints atestation links
+  def atestation_links(study_plan)
+    if AtestationTerm.actual?(@person.faculty) && study_plan.approved?
+      if @person == study_plan.index.tutor &&
+        (!study_plan.atestation || (study_plan.atestation &&
+        !study_plan.atestation.tutor_statement))
+        atestation_link(study_plan)
+      elsif @person.is_a?(Leader) &&
+        @person == study_plan.index.leader &&
+        study_plan.atestation && !study_plan.atestation.leader_statement
+        atestation_link(study_plan) 
+      elsif @person.is_a?(Dean) &&
+        study_plan.atestation && study_plan.atestation.leader_statement && 
+        !study_plan.atestation.dean_statement
+        atestation_link(study_plan)
+      end
     end
   end
   # prints subjects link
@@ -124,7 +142,15 @@ module ApplicationHelper
     "subject_link#{study_plan.id}")
   end
   private 
-  # prints approvement piece of code
+  # prints atestation link
+  def atestation_link(study_plan)
+    element = "approve_link#{study_plan.id}"
+    content_tag('li', link_to_remote(_("atest"), :url => {:controller =>
+    'study_plans', :action => 'atest', :id => study_plan}, :loading => 
+    visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+    "loading"), :complete => evaluate_remote_response), :id => element)
+  end
+  # prints approvement link
   def approve_link(document, controller)
     element = "approve_link#{document.id}"
     content_tag('li', link_to_remote(_("approve"), :url => {:controller => controller, 

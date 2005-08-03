@@ -2,7 +2,7 @@ class DisertThemesController < ApplicationController
   model :user
   include LoginSystem
   layout 'employers'
-  before_filter :login_required, :student_required
+  before_filter :login_required, :student_required, :prepare_person
   # page for adding methodology to disert theme
   def methodology
     disert_theme = DisertTheme.find(@params['id'])
@@ -17,20 +17,10 @@ class DisertThemesController < ApplicationController
   # approves disertation theme 
   def approve
     @disert_theme = DisertTheme.find(@params['id'])
-    @disert_theme.approvement ||= Approvement.create
-    if @session['user'].person.is_a?(Tutor) &&
-      !@disert_theme.approvement.tutor_statement
-      @statement = TutorStatement.new
-    elsif @session['user'].person.is_a?(Leader) &&
-      !@disert_theme.approvement.leader_statement
-      @statement = LeaderStatement.new
-    elsif @session['user'].person.is_a?(Dean)
-      @statement = DeanStatement.new
-    else
-      @flash['error'] = _("you don't have rights to do this")
-      redirect_to :action => 'login', :controller => 'account'
-    end
-    render_partial("shared/approve", :document => @disert_theme)
+    @disert_theme.approvement ||= DisertThemeApprovement.create
+    prepare_approvement(@disert_theme.approvement)
+    render_partial("shared/approve", :document => @disert_theme, :title =>
+    _("atestation"), :options => [[_("approve"), 1], [_("cancel"), 0]])
   end
   # confirms and saves statement
   def confirm_approve
@@ -48,8 +38,7 @@ class DisertThemesController < ApplicationController
       disert_theme.approvement.dean_statement = @statement
     end
     disert_theme.save
-    render(:partial => 'valid_methodology', :locals => {:disert_theme =>
-    disert_theme, :element => "approve_form#{disert_theme.id}"})
+    render(:partial => 'statement', :locals => {:approvement => @approvement, :element => "approve_form#{disert_theme.id}"})
   end
   # renders partial for adding methodology summary do disert theme
   def methodology_summary
@@ -62,7 +51,7 @@ class DisertThemesController < ApplicationController
     disert_theme.methodology_summary = @params['disert_theme']['methodology_summary']
     if disert_theme.save
       render(:partial => 'valid_methodology', :locals => {:disert_theme =>
-      disert_theme, :element => 'disert_theme' })
+      disert_theme, :element => 'methodology_form' })
     else
       render(:partial => 'notvalid_methodology', :locals => {:disert_theme =>
       disert_theme}) 

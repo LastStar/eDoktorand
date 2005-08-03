@@ -1,7 +1,13 @@
 class AtestationTermsController < ApplicationController
+  model :user
+  include LoginSystem
+  layout 'employers'
+  before_filter :login_required, :prepare_person
+  # prints actual atestation if any exists
+  # dean and faculty secretary should have chance to create new one
   def index
-    list
-    render :action => 'list'
+    @title = _("Atestation")
+    @atestation_term = AtestationTerm.actual
   end
 
   def list
@@ -17,13 +23,10 @@ class AtestationTermsController < ApplicationController
   end
 
   def create
-    @atestation_terms = AtestationTerms.new(params[:atestation_terms])
-    if @atestation_terms.save
-      flash[:notice] = 'AtestationTerms was successfully created.'
-      redirect_to :action => 'list'
-    else
-      render :action => 'new'
-    end
+    atestation_term = AtestationTerm.new(params[:atestation_term])
+    atestation_term.faculty_id = @person.faculty.id 
+    atestation_term.save 
+    render(:partial => 'saved', :locals => {:atestation_term => atestation_term})
   end
 
   def edit
