@@ -16,10 +16,11 @@ class DisertThemesController < ApplicationController
   end
   # approves disertation theme 
   def approve
-    @disert_theme = DisertTheme.find(@params['id'])
-    @disert_theme.approvement ||= DisertThemeApprovement.create
-    prepare_approvement(@disert_theme.approvement)
-    render_partial("shared/approve", :document => @disert_theme, :title =>
+    disert_theme = DisertTheme.find(@params['id'])
+    disert_theme.approvement ||= DisertThemeApprovement.create
+    approvement = disert_theme.approvement
+    @statement = prepare_statement(@disert_theme.approvement)
+    render_partial("shared/approve", :approvement => approvement, :title =>
     _("atestation"), :options => [[_("approve"), 1], [_("cancel"), 0]])
   end
   # confirms and saves statement

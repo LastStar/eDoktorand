@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
   private
   # prepares approvement for object if it doesn't exists
   # returns statement for user
-  def prepare_approvement(approvement)
+  def prepare_statement(approvement)
     if @person.is_a?(Tutor) &&
       !approvement.tutor_statement
       statement = TutorStatement.new

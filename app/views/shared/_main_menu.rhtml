@@ -12,7 +12,11 @@
   <% end %>
   <%= link_to_unless_current(_("students"), :controller => 'students'){} %>
   <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
+  <% if AtestationTerm.actual?(@session['user'].person.faculty) ||
+  @session['user'].person.is_a?(Dean) ||
+  @session['user'].person.is_a?(FacultySecretary)  %>
   <%= link_to_unless_current(_("atestations"), :controller => 'atestation_terms'){} %>
+  <% end %>
   <% end %>
     <%= link_to_unless_current(_("logoff"), {:controller => 'account', 
       :action => 'logout'}, :confirm =>  _("do you really want to") + ' ' +

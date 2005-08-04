@@ -1,12 +1,21 @@
 <% 
-if document.kind_of? StudyPlan 
+if approvement.kind_of?(StudyPlanApprovement) ||
+  approvement.kind_of?(Atestation)
+  document = approvement.study_plan
   element = "study_plan#{document.id}"
-  elsif document.kind_of? DisertTheme
+else
+  document = approvement.disert_theme
   element = "disert_theme#{document.id}"
 end
+if approvement.kind_of?(Atestation) 
+  action = 'confirm_atest' 
+else
+  action = 'confirm_approve'
+end 
+
 %>
 
 <%= update_element_function(element, :position => :after, :content =>
 render(:partial => 'shared/approve_form', :locals => {:document => document,
-:title => title, :options => options})) %>
+:title => title, :options => options, :action => action})) %>
 <%= update_element_function("approve_link#{document.id}", :action => :remove) %>

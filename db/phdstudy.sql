@@ -213,6 +213,7 @@ CREATE TABLE indices (
   disert_theme_id integer,
   tutor_id integer,
   study_id integer,
+  finished_on datetime default 0,
   created_on datetime,
   updated_on datetime
 );
@@ -225,7 +226,6 @@ DROP TABLE IF EXISTS study_plans;
 CREATE TABLE study_plans (
   id integer primary key auto_increment,
   index_id integer,
-  actual integer,
   finishing_to integer,
   admited_on datetime default 0,
   canceled_on datetime default 0,

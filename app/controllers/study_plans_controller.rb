@@ -103,10 +103,11 @@ class StudyPlansController < ApplicationController
   end
   # approves study plan 
   def approve
-    @study_plan = StudyPlan.find(@params['id'])
-    @study_plan.approvement ||= StudyPlanApprovement.create
-    @statement = prepare_approvement(@study_plan.approvement) 
-    render_partial("shared/approve", :document => @study_plan, :title =>
+    study_plan = StudyPlan.find(@params['id'])
+    study_plan.approvement ||= StudyPlanApprovement.create
+    approvement = study_plan.approvement
+    @statement = prepare_statement(study_plan.approvement) 
+    render_partial("shared/approve", :approvement => approvement, :title =>
     _("approvement"), :options => [[_("approve"), 1], [_("cancel"), 0]])
   end
   # confirms and saves statement
@@ -133,30 +134,33 @@ class StudyPlansController < ApplicationController
   end
   # atests study plan 
   def atest
-    @study_plan = StudyPlan.find(@params['id'])
-    @study_plan.atestation ||= Atestation.create
-    @statement = prepare_approvement(@study_plan.atestation) 
-    render_partial("shared/approve", :document => @study_plan, :title =>
-    _("atestation"), :options => [[_("approve"), 1], [_("approve with condition"), 2], [_("cancel"), 0]] )
+    study_plan = StudyPlan.find(@params['id'])
+    study_plan.atestation ||= Atestation.create
+    approvement = study_plan.atestation
+    @statement = prepare_statement(study_plan.atestation) 
+    render_partial("shared/approve", :title => _("atestation"), :options => 
+    [[_("approve"), 1], [_("approve with condition"), 2], [_("cancel"), 0]],
+    :approvement => approvement)
   end
   # confirms and saves statement
   def confirm_atest
     @study_plan = StudyPlan.find(@params['id'])
     if @session['user'].person.is_a?(Tutor) && 
-      !@study_plan.approvement.tutor_statement
+      !@study_plan.atestation.tutor_statement
       @statement = TutorStatement.create(@params['statement'])
-      @study_plan.approvement.tutor_statement = @statement
+      @study_plan.atestation.tutor_statement = @statement
     elsif @session['user'].person.is_a?(Leader) &&
-      !@study_plan.approvement.leader_statement
+      !@study_plan.atestation.leader_statement
       @statement = LeaderStatement.create(@params['statement'])
-      @study_plan.approvement.leader_statement = @statement
+      @study_plan.atestation.leader_statement = @statement
     elsif @session['user'].person.is_a?(Dean) 
       @statement = DeanStatement.create(@params['statement'])
-      @study_plan.approvement.dean_statement = @statement
+      @study_plan.atestation.dean_statement = @statement
     end
-    @study_plan.canceled_on = @statement.cancel? ? Time.now : nil
-    @study_plan.approved_on = Time.now if @statement.is_a?(DeanStatement) &&
-      !@statement.cancel?
+    if @statement.cancel? && @statement.is_a?(DeanStatement)
+      @study_plan.index.finished_on =  Time.now 
+      @study_plan.index.save
+    end
     @study_plan.save
     render(:partial => 'show', :locals => {:remove =>
     "link#{@study_plan.id}", :study_plan => @study_plan})

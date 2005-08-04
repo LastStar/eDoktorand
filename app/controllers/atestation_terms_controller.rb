@@ -7,7 +7,7 @@ class AtestationTermsController < ApplicationController
   # dean and faculty secretary should have chance to create new one
   def index
     @title = _("Atestation")
-    @atestation_term = AtestationTerm.actual
+    @atestation_term = AtestationTerm.actual(@person.faculty)
   end
 
   def list

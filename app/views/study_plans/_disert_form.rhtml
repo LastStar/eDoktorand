@@ -4,7 +4,7 @@
       "loading"), :complete => evaluate_remote_response) %>	
 <fieldset>
 <label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
-<%= select 'study_plan', 'finishing_to', (@session['last_semester']+1)..6 %>
+<%= select 'study_plan', 'finishing_to', @session['last_semester']..6 %>
 <%= "." + _("semester") %>
 </fieldset>
 <fieldset>
@@ -12,7 +12,7 @@
 <label for="disert_theme_title"><%= _("title") %>:</label>
 <%= text_field 'disert_theme', 'title' %><br/>
 <label for="candidate_study_id"><%= _("semester of disert theme defense") %></label>
-<%= select 'disert_theme', 'finishing_to', (@session['last_semester']+1)..6 %><br/>
+<%= select 'disert_theme', 'finishing_to', @session['last_semester']..6 %><br/>
 </fieldset>
 <%= submit_tag _("next") %>
 <%= end_form_tag %>

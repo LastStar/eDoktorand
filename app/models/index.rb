@@ -14,4 +14,9 @@ class Index < ActiveRecord::Base
   def leader
     self.department.leadership.leader
   end
+  # returns if study plan is finished
+  def finished?
+    return true unless self.finished_on.nil?
+  end
+
 end

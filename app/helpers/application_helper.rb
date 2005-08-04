@@ -86,15 +86,6 @@ module ApplicationHelper
     arr.concat(Coridor.find(coridor).voluntary_subjects.map {|s|
       [s.subject.label, s.subject_id]})
   end
-  # prints tutor statement
-  def print_statement(message, statement)
-    result = message + ': ' 
-    result << approve_word(statement.result)
-    unless statement.note.empty?
-      result << ', ' + (_("with note: ") + statement.note)
-    end
-    return result
-  end
   # returns approve word for statement result
   def approve_word(result)
     [ _("cancel"), _("approve")][result]
@@ -141,7 +132,37 @@ module ApplicationHelper
     "loading"), :complete => evaluate_remote_response}), :id =>
     "subject_link#{study_plan.id}")
   end
+  # prints tutor links 
+  def tutor_links(study_plan)
+    if !study_plan.canceled?
+      [approve_links(study_plan, 'study_plans'),
+      atestation_links(study_plan)].join
+    end
+  end
+  # prints statements approvement 
+  def print_statements(approvement)
+    links = ''
+    if approvement.tutor_statement
+      links << print_statement(_("Tutor statement"), approvement.tutor_statement)
+    end
+    if approvement.leader_statement
+      links << print_statement(_("Leader statement"), approvement.leader_statement)
+    end
+    if approvement.dean_statement
+      links << print_statement(_("Dean statement"), approvement.dean_statement) 
+    end
+    return links
+  end
   private 
+  # prints statement
+  def print_statement(message, statement)
+    result = ''
+    result << approve_word(statement.result)
+    unless statement.note.empty?
+      result << ', ' + (_("with note: ") + statement.note)
+    end
+    return content_tag('li', message + ': ' + result, :class => 'second')
+  end
   # prints atestation link
   def atestation_link(study_plan)
     element = "approve_link#{study_plan.id}"
@@ -157,12 +178,5 @@ module ApplicationHelper
     :action => 'approve', :id => document}, :loading => visual_effect(:appear, 'loading'), 
     :interactive => visual_effect(:fade, "loading"), 
     :complete => evaluate_remote_response), :id => element)
-  end
-  # prints tutor links 
-  def tutor_links(study_plan)
-    if !study_plan.canceled?
-      [approve_links(study_plan, 'study_plans'),
-      atestation_links(study_plan)].join
-    end
   end
 end

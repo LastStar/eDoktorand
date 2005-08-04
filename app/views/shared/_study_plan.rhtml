@@ -1,7 +1,16 @@
+<% if study_plan.index.finished? %>
+<h5><%= _("This study has been finished") %></h5>
+<ul>
+  <li>
+  <b><%= _("finished on") %>: <%= study_plan.index.finished_on %></b>
+  </li>
+</ul>
+<% end %>
 <h5>
   <%= _("Study plan") %>
 </h5>
 <ul id='<%= "study_plan#{study_plan.id}" %>'>
+
 <% if study_plan.canceled? %>
   <li>
   <b><%= _("canceled on") %>: <%= study_plan.canceled_on %></b>
@@ -12,8 +21,16 @@
   <b><%= _("approved on") %>: <%= study_plan.approved_on %></b>
   </li>
 <% end %>
-<% if study_plan.approvement %>
-  <%= render_partial 'shared/print_statements', :approvement => study_plan.approvement %>
+<% if study_plan.atestation  %>
+<li>
+<b><%= _("last atestation:") %></b>
+</li>
+<%= print_statements(study_plan.atestation) %>
+<% elsif study_plan.approvement %>
+<li>
+<b><%= _("approvement process:") %></b>
+</li>
+<%= print_statements(study_plan.approvement) %>
 <% end %>
   <%= subjects_link(study_plan) %>
   <li class='second'>
