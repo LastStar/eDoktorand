@@ -1,5 +1,5 @@
 <%= update_element_function("done", :position => :bottom,
-:content => render(:inline => "<ul><li>Creating exam by subject</li></ul>")) %>
+:content => render(:inline => "<h5>#{_('Creating exam from subject')}</h5>")) %>
 <%= update_element_function("form", 
 :content => render(:partial => "subject_form",
 :locals => {:subjects => subjects}))%>

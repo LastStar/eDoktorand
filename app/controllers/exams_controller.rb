@@ -5,6 +5,7 @@ class ExamsController < ApplicationController
   before_filter :set_title
   before_filter :login_required
   before_filter :prepare_conditions
+  before_filter :prepare_person
 
   def index
     list
@@ -85,7 +86,7 @@ class ExamsController < ApplicationController
     finished_on is null', @params['subject']['id']])
     @plan_subjects = @plan_subjects.select {|ps| ps.study_plan.approved?}
     students = []
-    # @plan_subjects.each {|plan| students << plan.study_plan.index.student}
+    @plan_subjects.each {|plan| students << plan.study_plan.index.student}
     render(:partial => "examined_student", :locals => {:exam => exam, 
     :students => students})
   end
@@ -102,22 +103,31 @@ class ExamsController < ApplicationController
   # save the examindex student to session
   def save_exam_student
     exam = @session['exam']
-    exam.index = Index.find_by_student_id(@params['student']['id'])
+    index = Index.find_by_student_id(@params['student']['id'])
+    exam.index = index 
+    study_plan = StudyPlan.find_by_index_id(index.id)
     @session['exam'] = exam
     
+    plan_subjects = PlanSubject.find(:all, :conditions => ['study_plan_id = ? and
+    finished_on is null', study_plan.id])
+    
+    subjects = []
+    
     if @session['user'].has_role?(Role.find_by_name('admin'))
-      subjects  = Subject.find_all()
+      plan_subjects.each{|plan| @subjects << plan.subject}
     elsif (@session['user'].person.is_a? Dean) ||
       (@session['user'].person.is_a? FacultySecretary)
-      faculty = @session['user'].person.department.faculty 
-      subjects = []
-      faculty.departments.each {|dep| subjects << dep.subjects}
+      plan_subjects.each{|plan| subjects << plan.subject} 
     elsif (@session['user'].person.is_a? Leader) ||
       (@session['user'].person.is_a? DepartmentSecretary) ||
       (@session['user'].person.is_a? Tutor)
-      subjects = @session['user'].person.tutorship.department.subjects
+      department = @session['user'].person.tutorship.department
+      plan_subjects.each do |plan| 
+          subjects << plan.subject if plan.subject.departments.include? department
+      end
     end
-    subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
+
+    #@subjects = @subjects.select {|sub| !sub.plan_subjects.empty?}
     render(:partial => "student_subjects", :locals => {:exam => exam, :subjects => subjects}) 
   end
   
@@ -158,7 +168,7 @@ class ExamsController < ApplicationController
     Exam.find(@params[:id]).destroy
     redirect_to :action => 'list'
   end
-  # searches in students lastname
+  # searches in exam list for students with desired lastname
   def search
     @conditions.first <<  ' AND lastname like ?'
     @conditions << "#{@params['search_field']}%"
@@ -171,6 +181,21 @@ class ExamsController < ApplicationController
     #  :exam).map {|s| s.index.exams}
     render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
   end
+
+  # searches in exam list for students with desired lastname
+  def search_exam
+    @conditions_exam = "null is not null"
+    @conditions_exam.first << ' label like ?'
+    @conditions_exam << "#{@params['search_exam_field']}%"
+    @subjects = Subject.find(:all, :conditions => @conditions_exam)
+    @subjects = @subjects.select {|sub| !sub.exams.empty?}
+    @exams = []
+    @subjects.each {|sub| @exams.concat (sub.exams)}
+    # @exams = Student.find(:all, :conditions => @conditions, :include =>
+    #  :exam).map {|s| s.index.exams}
+    render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
+  end
+
   # sets title of the controller
   def set_title
     @title = _('Exams')
