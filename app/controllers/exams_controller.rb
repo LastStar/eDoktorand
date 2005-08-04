@@ -72,6 +72,7 @@ class ExamsController < ApplicationController
     @exam = Exam.new('created_by' => @session['user'].person.id)
     @session['exam'] = @exam
     students  = Student.find_all()
+    students = students.select {|stud| !stud.index.finished?}
     # viz TODO
     # subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
     render(:partial => "students", :locals => {:students => students}) 
@@ -87,6 +88,7 @@ class ExamsController < ApplicationController
     @plan_subjects = @plan_subjects.select {|ps| ps.study_plan.approved?}
     students = []
     @plan_subjects.each {|plan| students << plan.study_plan.index.student}
+    students = students.select {|stud| !stud.index.finished?}
     render(:partial => "examined_student", :locals => {:exam => exam, 
     :students => students})
   end
