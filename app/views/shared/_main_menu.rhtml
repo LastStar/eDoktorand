@@ -1,12 +1,9 @@
 	<% if @session['user'].person.is_a?(Student) and @student %>
-    <%= link_to_unless_current(_("welcome page"), :action => 'index') {} %>
     <% if !@student.index.study_plan || @student.index.study_plan.canceled? %>
       <%= link_to(_("create study plan"),
         :action => 'create', :id => @student) %>
     <% end %>
-    <%= link_to _("refresh") %>
   <% else %>
-  <%= link_to_unless_current(_("welcome page"), :controller => 'account', :action => 'welcome') {} %>
   <% if @session['user'].has_role?('admin') ||
       @session['user'].has_role?('faculty_secretary') %>
     <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>

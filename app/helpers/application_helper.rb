@@ -158,4 +158,11 @@ module ApplicationHelper
     :interactive => visual_effect(:fade, "loading"), 
     :complete => evaluate_remote_response), :id => element)
   end
+  # prints tutor links 
+  def tutor_links(study_plan)
+    if !study_plan.canceled?
+      [approve_links(study_plan, 'study_plans'),
+      atestation_links(study_plan)].join
+    end
+  end
 end

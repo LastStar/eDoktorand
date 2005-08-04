@@ -87,6 +87,13 @@ table.list td {
 .topMenu {
   display: none;
 }
+.help {
+  display: none;
+}
+
 #search {
   display: none;
+}
+li.second {
+  list-style: none;
 }

@@ -1,5 +1,7 @@
 <%= visual_effect(:appear, "study_plan#{study_plan.id}") %>
-<%= update_element_function("study_plan#{study_plan.id}", :position => :bottom,
+<%= update_element_function("study_plan#{study_plan.id}", :position => :top,
 :content => render(:partial => "shared/subjects", 
-:locals => {:subjects => subjects , :title => _("subjects")})) %>
+:locals => {:subjects => subjects, :title => _("subjects")})) %>
+<%= update_element_function("study_plan#{study_plan.id}", :position => :bottom,
+:content => tutor_links(study_plan)) %>
 <%= update_element_function("subject_link#{study_plan.id}", :action => :remove) %>

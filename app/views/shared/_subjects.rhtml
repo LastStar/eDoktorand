@@ -1,7 +1,8 @@
 <li><b><%= title %></b></li>
+<% subjects.sort! {|x, y| x.finishing_on <=> y.finishing_on} %>
 <% for subject in subjects %>
 <li class='second'>
-<div class='info'><%= subject.finishing_on %>.<%= _("semester") %></div>
+<div class='info'><%= subject.finishing_on %>. <%= _("semester") %></div>
 <%= subject.subject.label %>
 </li>
 <% if subject.finished? %>

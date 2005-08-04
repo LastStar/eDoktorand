@@ -3,14 +3,9 @@
       "loading"), :complete => evaluate_remote_response) %>	
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
-<label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
-<%= select 'study_plan', 'finishing_to', 5..6 %>
-<%= "." + _("semester") %>
-</fieldset>
-<fieldset>
 <legend><%= _("Obligate subjects") %></legend>
 <% for plan_subject in @plan_subjects do %>
-<%= render_partial 'obligate', :plan_subject => plan_subject %>
+<%= render_partial 'obligate_form', :plan_subject => plan_subject %>
 <br/> 
 <% end %>
 </fieldset>

@@ -2,7 +2,8 @@ class Index < ActiveRecord::Base
   belongs_to :student, :foreign_key => 'student_id'
   belongs_to :tutor
   belongs_to :study
-  has_one :study_plan, :conditions => 'admited_on IS NOT NULL'
+  has_one :study_plan, :conditions => 'admited_on IS NOT NULL', :order =>
+  'created_on desc'
   has_one :disert_theme
   has_many :exams
   belongs_to :coridor

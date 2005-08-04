@@ -1,7 +1,8 @@
 <h5><%= _("study plan") %></h5>
 <ul id='studyPlan'>
   <li>
-  <%= "#{_("semester of final exam")}: #{finishing_to}" %>
-  </li>
+  <div class='info'><%= study_plan.finishing_to %>.<%= _("semester") %></div>
+  <%= "#{_("final exam")}" %>
+</li>
 </ul>
 

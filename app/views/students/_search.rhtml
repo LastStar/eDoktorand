@@ -1,9 +1,9 @@
-<%= form_remote_tag(:url => {:action => 'search'}, :update => 'students_list') %>
+<%= form_remote_tag(:url => {:action => 'search'}, :loading =>
+visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+"loading"), :complete => evaluate_remote_response) %>
 <fieldset>
   <label for="search_what"><%= _("search by lastname") %></label>
   <%= tag('input', :name => 'search', :id => 'search_field', 'size' => '10') %>
   <%= end_form_tag %>
-  <%= observe_field("search_field", :url => {:action => 'search'}, :frequency =>
-  0.5, :update => 'students_list', :with => "'search_field=' + escape(value)") %>
 </fieldset>
 <%= end_form_tag %>

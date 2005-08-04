@@ -1,7 +1,10 @@
-<%= update_element_function("done",
+<%= update_element_function("done", :position => :bottom,
+:content => render(:partial => "final_exam", 
+:locals => {:study_plan => study_plan})) %>
+<%= update_element_function("done", :position => :bottom,
 :content => render(:partial => 'disert_theme', 
 :locals => {:disert_theme => disert_theme })) %>
 <%= update_element_function("form", 
-    :content => render(:partial => "obligates"))%>
+    :content => render(:partial => "accept"))%>
 <%= visual_effect(:slide_down, 'form')  %>    
       

@@ -1,16 +1,18 @@
-<p>
-  <%= _("So first step is to fill title of the disert theme and its defense
-  semester.") %>
-</p>
+<% @disert_theme = disert_theme # is this necessary_ %>
 <%= form_remote_tag(:url => {:action => 'save_disert'}, :loading =>
       visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
       "loading"), :complete => evaluate_remote_response) %>	
+<fieldset>
+<label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
+<%= select 'study_plan', 'finishing_to', (@session['last_semester']+1)..6 %>
+<%= "." + _("semester") %>
+</fieldset>
 <fieldset>
 <%= hidden_field 'disert_theme', 'index_id' %>
 <label for="disert_theme_title"><%= _("title") %>:</label>
 <%= text_field 'disert_theme', 'title' %><br/>
 <label for="candidate_study_id"><%= _("semester of disert theme defense") %></label>
-<%= select 'disert_theme', 'finishing_to', 5..6 %><br/>
+<%= select 'disert_theme', 'finishing_to', (@session['last_semester']+1)..6 %><br/>
 </fieldset>
 <%= submit_tag _("next") %>
 <%= end_form_tag %>

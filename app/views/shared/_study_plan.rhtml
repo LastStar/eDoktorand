@@ -1,6 +1,3 @@
-<%= render(:partial => 'disert_theme', 
-    :locals => {:disert_theme => study_plan.index.disert_theme, :study_plan =>
-    study_plan, :methodology => true}) %>
 <h5>
   <%= _("Study plan") %>
 </h5>
@@ -18,12 +15,14 @@
 <% if study_plan.approvement %>
   <%= render_partial 'shared/print_statements', :approvement => study_plan.approvement %>
 <% end %>
-  <li>
+  <%= subjects_link(study_plan) %>
+  <li class='second'>
   <div class='info'><%= study_plan.finishing_to %>. <%= _("semester") %></div> <%= _("final exam") %> 
   </li>
-  <%= subjects_link(study_plan) %>
-  <%= approve_links(study_plan, 'study_plans') %>
-  <%= atestation_links(study_plan) %>
 
 </ul>
 </ul>
+<%= render(:partial => 'disert_theme', 
+    :locals => {:disert_theme => study_plan.index.disert_theme, :study_plan =>
+    study_plan, :methodology => true}) %>
+

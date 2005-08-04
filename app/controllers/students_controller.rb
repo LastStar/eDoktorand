@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
   model :faculty_secretary
   layout 'employers'
   before_filter :login_required, :set_title, :prepare_conditions,
-  :prepare_person 
+  :prepare_person, :prepare_order 
   
   # lists all students
   def index
@@ -16,8 +16,8 @@ class StudentsController < ApplicationController
   end
   # lists all students
   def list
-    @indexes = Index.find(:all, :conditions => @conditions, :include =>
-    [:study_plan, :student])
+    @indices = Index.find(:all, :conditions => @conditions, :include =>
+    [:study_plan, :student], :order => @order)
   end
   # show student's detail
   def show
@@ -27,37 +27,13 @@ class StudentsController < ApplicationController
   def search
     @conditions.first <<  ' AND lastname like ?'
     @conditions << "#{@params['search_field']}%"
-    @indexes = Student.find(:all, :conditions => @conditions, :include =>
+    @indices = Student.find(:all, :conditions => @conditions, :include =>
       :index).map {|s| s.index}
-    render_partial "list"
-  end
-  def new
-    @student = Student.new
-  end
-  def create
-    @student = Student.new(@params[:student])
-    if @student.save
-      flash['notice'] = 'Student was successfully created.'
-      redirect_to :action => 'list'
+    if @indices.empty?
+      render(:partial => 'search_unsuccesfull')
     else
-      render_action 'new'
+      render(:partial => 'search_succesfull')
     end
-  end
-  def edit
-    @student = Student.find(@params[:id])
-  end
-  def update
-    @student = Student.find(@params[:id])
-    if @student.update_attributes(@params[:student])
-      flash['notice'] = 'Student was successfully updated.'
-      redirect_to :action => 'show', :id => @student
-    else
-      render_action 'edit'
-    end
-  end
-  def destroy
-    Student.find(@params[:id]).destroy
-    redirect_to :action => 'list'
   end
   # renders contact for student
   def contact
@@ -68,5 +44,16 @@ class StudentsController < ApplicationController
   # sets title of the controller
   def set_title
     @title = _("Students")
+  end
+  # prepares order variable for listin 
+  def prepare_order
+    @order = 'study_plans.created_on, study_plans.updated_on desc'
+    if @session['user'].person.is_a? Dean || @session['user'].person.is_a?
+        FacultySecretary
+      @order.concat(', department_id') 
+    elsif @session['user'].person.is_a? Leader || @session['user'].person.is_a?
+        DepartmentSecretary
+      @order.concat(', tutor_id') 
+    end
   end
 end

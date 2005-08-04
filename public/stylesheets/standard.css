@@ -12,8 +12,8 @@ body {
 }
 
 body, p, ol, ul, td {
-    font-family: "lucida", sans-serif;
-    font-size:   14px;
+    font-family: "Calibri", "lucida", sans-serif;
+    font-size:   16px;
 }
 
 a {
@@ -40,7 +40,7 @@ h2 { font-size: 24px; margin: 5px; }
 h3 { font-size: 20px; margin: 5px; }
 h4 { padding: 4px; margin: 0px; font-size: 18px; }
 h5 { 
-  font-size: 14px;
+  font-size: 16px;
   margin: 0px;
   margin-top: 0.5ex; 
   border-bottom: 1px solid #784;
@@ -62,11 +62,9 @@ li.second {
   padding-left: 2em;
   background-color: white;
 }
-
-
 ul {
   margin-top: 0px;
-  padding-left: 5ex;
+  padding-left: 3ex;
   margin-bottom: 1ex;
 }
 
@@ -155,9 +153,9 @@ input, select  {
 } 
 fieldset {
   border: 1px solid #b00;
-  width: 46em;
+  width: 44em;
   margin-bottom: 5px;
-  margin-left: 4.5ex;
+  margin-left: 2.0ex;
   padding: 0px;
   padding-bottom: 1ex;
 }
@@ -179,9 +177,6 @@ div.fieldWithErrors {
   padding: 0px;
 }
 div.fieldWithErrors label { color: red; }
-.second .info {
-  padding-right: 4em;
-}
 .info {
   float: right;
   padding-right: 2em;
@@ -275,5 +270,6 @@ table.list td {
   text-align: center;
   border-top: 1px solid #ddc;
   border-bottom: 1px solid #ddc;
+
 }
 
