@@ -46,13 +46,13 @@ class ApplicationController < ActionController::Base
   def prepare_statement(approvement)
     if @person.is_a?(Tutor) &&
       !approvement.tutor_statement
-      statement = TutorStatement.new
+      statement = TutorStatement.new('person_id' => @person.id)
     elsif @person.is_a?(Leader) &&
       !approvement.leader_statement
-      statement = LeaderStatement.new
+      statement = LeaderStatement.new('person_id' => @person.id)
     elsif @person.is_a?(Dean) &&
       !approvement.dean_statement
-      statement = DeanStatement.new
+      statement = DeanStatement.new('person_id' => @person.id)
     end
     return statement
   end

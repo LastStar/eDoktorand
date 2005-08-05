@@ -10,6 +10,8 @@ visual_effect(:fade, "loading"), :complete => evaluate_remote_response,:html => 
   <%= text_area 'statement', 'note', :cols => '30', :rows => '5' %><br/>
   <label for="statement_result"><%= _("result") %></label>
   <%= select 'statement', 'result', options %><br/>
+  <%= hidden_field 'statement', 'person_id' %>
+  <%= hidden_field 'statement', 'type' %>
 </fieldset>
 <%= submit_tag _("next") %>
 <%= end_form_tag %>

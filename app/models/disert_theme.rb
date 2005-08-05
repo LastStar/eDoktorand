@@ -17,6 +17,15 @@ class DisertTheme < ActiveRecord::Base
   def has_methodology_summary?
     return true if self.methodology_summary
   end
-
-
+  # returns true if disert theme is approved
+  def approved?
+    return true unless self.approved_on.nil?
+  end
+  # resets disert theme
+  def reset
+    self.methodology_summary = nil
+    self.methodology_summary_added_on = nil
+    self.methodology_added_on = nil
+    self.save
+  end
 end

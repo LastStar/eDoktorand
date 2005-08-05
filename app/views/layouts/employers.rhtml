@@ -9,7 +9,6 @@
 </head>
 <body onload="<%= visual_effect(:fade, 'loading', :duration => 0) %>">
   <%= javascript_include_tag :defaults %>
-  <div id='loading'><%= _("loading ...") %></div>
 	<% if @session['user'] %>
   <div class='topMenu'>
     <%= render(:partial => 'shared/main_menu') %>
@@ -17,6 +16,7 @@
 	<% end %>
   <h1 id='title'><%= @title %></h1>
   <div id="main">
+    <div id='loading'><%= _("loading ...") %></div>
     <%= @content_for_layout %>
   </div>
 </body>

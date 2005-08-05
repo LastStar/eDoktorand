@@ -4,7 +4,7 @@ class Index < ActiveRecord::Base
   belongs_to :study
   has_one :study_plan, :conditions => 'admited_on IS NOT NULL', :order =>
   'created_on desc'
-  has_one :disert_theme
+  has_one :disert_theme, :order => 'created_on desc'
   has_many :exams
   belongs_to :coridor
   belongs_to :department

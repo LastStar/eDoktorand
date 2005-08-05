@@ -19,27 +19,26 @@ class DisertThemesController < ApplicationController
     disert_theme = DisertTheme.find(@params['id'])
     disert_theme.approvement ||= DisertThemeApprovement.create
     approvement = disert_theme.approvement
-    @statement = prepare_statement(@disert_theme.approvement)
+    @statement = prepare_statement(disert_theme.approvement)
     render_partial("shared/approve", :approvement => approvement, :title =>
     _("atestation"), :options => [[_("approve"), 1], [_("cancel"), 0]])
   end
   # confirms and saves statement
   def confirm_approve
     disert_theme = DisertTheme.find(@params['id'])
-    if @session['user'].person.is_a?(Tutor) && 
-      !disert_theme.approvement.tutor_statement
-      @statement = TutorStatement.create(@params['statement'])
-      disert_theme.approvement.tutor_statement = @statement
-    elsif @session['user'].person.is_a?(Leader) &&
-      !disert_theme.approvement.leader_statement
-      @statement = LeaderStatement.create(@params['statement'])
-      disert_theme.approvement.leader_statement = @statement
-    elsif @session['user'].person.is_a?(Dean) 
-      @statement = DeanStatement.create(@params['statement'])
-      disert_theme.approvement.dean_statement = @statement
+    # this way must go to hell. Compare with last revision
+    statement = \
+    eval("#{@params['statement']['type']}.create(@params['statement'])") 
+    eval("disert_theme.approvement.#{@params['statement']['type'].underscore} =
+    statement")
+    if statement.cancel?
+      disert_theme.clone.reset
+    elsif statement.is_a?(DeanStatement)
+      disert_theme.approved_on = Time.now
     end
     disert_theme.save
-    render(:partial => 'statement', :locals => {:approvement => @approvement, :element => "approve_form#{disert_theme.id}"})
+    render(:partial => 'statement', :locals => {:statement =>
+    statement, :remove => "approve_form#{disert_theme.id}"})
   end
   # renders partial for adding methodology summary do disert theme
   def methodology_summary

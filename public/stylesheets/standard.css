@@ -205,7 +205,6 @@ pre.detail {
  padding: 2px;
   text-decoration: none;
 }
-
 .topMenu a:hover { 
  color: #784;
 }
@@ -213,7 +212,7 @@ pre.detail {
   padding: 1px;
 } 
 .links {
-  background-color: #ffd;
+  background-color: #ddc;
 	padding-right: 1em;
 	text-align: right;
 	font-size: 14px;
@@ -259,8 +258,10 @@ table.list td {
 }
 #loading {
   position: absolute; 
-  top: .4ex;
-  width: 760px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1;
   background-color: #b00;
   color: white;
@@ -270,6 +271,5 @@ table.list td {
   text-align: center;
   border-top: 1px solid #ddc;
   border-bottom: 1px solid #ddc;
-
 }
 

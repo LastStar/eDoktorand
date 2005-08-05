@@ -15,7 +15,10 @@
   file") %></a>
 </li>
 <% if disert_theme.approvement %>
-  <%= render_partial 'shared/print_statements', :approvement => disert_theme.approvement %>
+<li>
+<b><%= _("approvement process") %></b> 
+</li>
+<%= print_statements(disert_theme.approvement) %>
 <% end %>
 <%= approve_links(disert_theme, 'disert_themes') %>
 <% end %>

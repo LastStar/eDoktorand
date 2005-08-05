@@ -108,7 +108,8 @@ module ApplicationHelper
   end
   # prints atestation links
   def atestation_links(study_plan)
-    if AtestationTerm.actual?(@person.faculty) && study_plan.approved?
+    if AtestationTerm.actual?(@person.faculty) && study_plan.approved? &&
+      study_plan.index.disert_theme.approved?
       if @person == study_plan.index.tutor &&
         (!study_plan.atestation || (study_plan.atestation &&
         !study_plan.atestation.tutor_statement))
@@ -143,25 +144,26 @@ module ApplicationHelper
   def print_statements(approvement)
     links = ''
     if approvement.tutor_statement
-      links << print_statement(_("Tutor statement"), approvement.tutor_statement)
+      links << print_statement(approvement.tutor_statement)
     end
     if approvement.leader_statement
-      links << print_statement(_("Leader statement"), approvement.leader_statement)
+      links << print_statement(approvement.leader_statement)
     end
     if approvement.dean_statement
-      links << print_statement(_("Dean statement"), approvement.dean_statement) 
+      links << print_statement(approvement.dean_statement) 
     end
     return links
   end
   private 
   # prints statement
-  def print_statement(message, statement)
+  def print_statement(statement)
     result = ''
     result << approve_word(statement.result)
     unless statement.note.empty?
       result << ', ' + (_("with note: ") + statement.note)
     end
-    return content_tag('li', message + ': ' + result, :class => 'second')
+    return content_tag('li', "#{_(statement.type.to_s.underscore.humanize)}:
+    #{result}", :class => 'second')
   end
   # prints atestation link
   def atestation_link(study_plan)
