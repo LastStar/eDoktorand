@@ -1,15 +1,21 @@
 <% if @flash['error'] %>
 <div id='error'>
+<ul>
+  <li>
 <%= @flash['error'] %>
+  </li>
+</ul>
 </div>
 <% end %>
 <%= form_remote_tag(:url => {:action => 'save_language'}, :loading =>
       visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
       "loading"), :complete => evaluate_remote_response) %>	
 <fieldset>
-<legend><%= _("Language subjects") %></legend>
+  <legend><%= _("language subjects") %></legend>
+  <% subjects = language_subject_ids %>
 <% for plan_subject in plan_subjects do %>
-<%= render_partial 'language', :plan_subject => plan_subject %>
+<%= render_partial 'language', :plan_subject => plan_subject, :subjects =>
+subjects  %>
 <br/> 
 <% end %>
 </fieldset>

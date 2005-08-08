@@ -127,11 +127,11 @@ module ApplicationHelper
   end
   # prints subjects link
   def subjects_link(study_plan)
-    content_tag('li', link_to_remote(_("subjects"), {:url => {:action => 'subjects',
+    link_to_remote(_("subjects"), {:url => {:action => 'subjects',
     :controller => 'study_plans', :id => study_plan}, :loading =>
     visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-    "loading"), :complete => evaluate_remote_response}), :id =>
-    "subject_link#{study_plan.id}")
+    "loading"), :complete => evaluate_remote_response}, {:id =>
+    "subject_link#{study_plan.id}"})
   end
   # prints tutor links 
   def tutor_links(study_plan)
@@ -160,25 +160,27 @@ module ApplicationHelper
     result = ''
     result << approve_word(statement.result)
     unless statement.note.empty?
-      result << ', ' + (_("with note: ") + statement.note)
+      result << ', ' + (_("with note: ") + truncate(statement.note, 50))
     end
-    return content_tag('li', "#{_(statement.type.to_s.underscore.humanize)}:
-    #{result}", :class => 'second')
+    return content_tag('li', "#{content_tag('div', result, :class => 'long_info')}
+    #{_(statement.type.to_s.underscore.humanize)}", 
+    :class => 'second')
   end
   # prints atestation link
   def atestation_link(study_plan)
     element = "approve_link#{study_plan.id}"
-    content_tag('li', link_to_remote(_("atest"), :url => {:controller =>
+    link_to_remote(_("atest"), {:url => {:controller =>
     'study_plans', :action => 'atest', :id => study_plan}, :loading => 
     visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-    "loading"), :complete => evaluate_remote_response), :id => element)
+    "loading"), :complete => evaluate_remote_response}, {:id =>
+    element})
   end
   # prints approvement link
   def approve_link(document, controller)
     element = "approve_link#{document.id}"
-    content_tag('li', link_to_remote(_("approve"), :url => {:controller => controller, 
+    link_to_remote(_("approve"), :url => {:controller => controller, 
     :action => 'approve', :id => document}, :loading => visual_effect(:appear, 'loading'), 
     :interactive => visual_effect(:fade, "loading"), 
-    :complete => evaluate_remote_response), :id => element)
+    :complete => evaluate_remote_response,:html => {:id => element})
   end
 end

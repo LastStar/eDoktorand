@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 90\n"
-"POT-Creation-Date: 2005-06-07 13:39+0200\n"
+"POT-Creation-Date: 2005-08-08 09:08+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -20,6 +20,9 @@ msgid "Login was succesful"
 msgstr ""
 
 msgid "you don't have rights to do this"
+msgstr ""
+
+msgid "Atestation"
 msgstr ""
 
 msgid "Candidate was changed"
@@ -37,10 +40,19 @@ msgstr ""
 msgid "Candidates"
 msgstr ""
 
+msgid "atestation"
+msgstr ""
+
+msgid "approve"
+msgstr ""
+
+msgid "cancel"
+msgstr ""
+
 msgid "Upload methodology"
 msgstr ""
 
-msgid "Exam was successfully created."
+msgid "Creating exam"
 msgstr ""
 
 msgid "Exam was successfully updated."
@@ -88,33 +100,46 @@ msgstr "Česká republika"
 msgid "Czech agriculture university"
 msgstr "Česká zemědělská univerzita v Praze"
 
+msgid "Students"
+msgstr ""
+
 msgid "Study plan"
 msgstr ""
 
 msgid "Creating study plan"
 msgstr ""
 
-msgid "Study plan for "
-msgstr ""
-
-msgid "Approve study plan for "
-msgstr ""
-
 msgid "languages have to be different"
 msgstr ""
 
-msgid ""
-"university for external subject cannot be\n"
-"            empty"
+msgid "subjects have to be different"
 msgstr ""
 
-msgid "name of the external subject cannot be empty"
+msgid "approvement"
+msgstr ""
+
+msgid "approve with condition"
+msgstr ""
+
+msgid "title for external subject cannot be empty"
+msgstr ""
+
+msgid "university for external subject cannot be empty"
 msgstr ""
 
 msgid "There were errors in your input"
 msgstr ""
 
 msgid "external subject"
+msgstr ""
+
+msgid "subjects"
+msgstr ""
+
+msgid "with note: "
+msgstr ""
+
+msgid "atest"
 msgstr ""
 
 msgid "make ready"
@@ -129,7 +154,13 @@ msgstr ""
 msgid "create commission"
 msgstr ""
 
+msgid "invite"
+msgstr ""
+
 msgid "enroll"
+msgstr ""
+
+msgid "all"
 msgstr ""
 
 msgid "only "
@@ -156,6 +187,9 @@ msgstr ""
 msgid "table"
 msgstr ""
 
+msgid "summary"
+msgstr ""
+
 msgid "print this page"
 msgstr ""
 
@@ -165,7 +199,13 @@ msgstr ""
 msgid "next page"
 msgstr ""
 
+msgid "id"
+msgstr ""
+
 msgid "enrolled"
+msgstr ""
+
+msgid "not admitted"
 msgstr ""
 
 msgid "admitted"
@@ -177,7 +217,10 @@ msgstr ""
 msgid "ready"
 msgstr ""
 
-msgid "reject"
+msgid "conditional admit"
+msgstr ""
+
+msgid "not admit"
 msgstr ""
 
 msgid "not pass"
@@ -186,19 +229,22 @@ msgstr ""
 msgid "pass"
 msgstr ""
 
+msgid "reject"
+msgstr ""
+
 msgid "new exam"
 msgstr ""
 
-msgid "study plan"
+msgid "exam by subject"
 msgstr ""
 
-msgid "approve"
+msgid "exam by person"
 msgstr ""
 
-msgid "with note: "
+msgid "study"
 msgstr ""
 
-msgid "cancel"
+msgid "contact"
 msgstr ""
 
 msgid "firstname can not be empty"
@@ -255,6 +301,22 @@ msgstr ""
 msgid "candidate must be admited before enrollment"
 msgstr ""
 
+msgid "Current atestation term"
+msgstr ""
+
+msgid "Atestation date"
+msgstr ""
+
+msgid "Atestation ends"
+msgstr ""
+
+#, fuzzy
+msgid "present"
+msgstr "Print"
+
+msgid "combined"
+msgstr ""
+
 msgid "Error"
 msgstr ""
 
@@ -262,9 +324,6 @@ msgid "finished"
 msgstr ""
 
 msgid "admited"
-msgstr ""
-
-msgid "contact"
 msgstr ""
 
 msgid "history"
@@ -297,6 +356,33 @@ msgstr ""
 msgid "Note"
 msgstr ""
 
+msgid "tutor"
+msgstr ""
+
+msgid "department"
+msgstr ""
+
+msgid "submit"
+msgstr ""
+
+msgid "back"
+msgstr ""
+
+msgid "Desired login"
+msgstr ""
+
+msgid "Choose password"
+msgstr ""
+
+msgid "Confirm password"
+msgstr ""
+
+msgid "Zapsat"
+msgstr ""
+
+msgid "zpět"
+msgstr ""
+
 msgid "by corridor"
 msgstr ""
 
@@ -315,7 +401,19 @@ msgstr ""
 msgid "order all"
 msgstr ""
 
-msgid "There is no candidates by your selection"
+msgid "There are no candidates in your selection"
+msgstr ""
+
+msgid "file"
+msgstr ""
+
+msgid "upload"
+msgstr ""
+
+msgid "methodology summary"
+msgstr ""
+
+msgid "next"
 msgstr ""
 
 msgid ""
@@ -323,10 +421,10 @@ msgid ""
 "PDF format."
 msgstr ""
 
-msgid "file"
+msgid "The first step is to choose the creation type of an exam."
 msgstr ""
 
-msgid "upload"
+msgid "exam by student"
 msgstr ""
 
 msgid "Student"
@@ -350,6 +448,15 @@ msgstr ""
 msgid "Questions"
 msgstr ""
 
+msgid "Creating exam by subject"
+msgstr ""
+
+msgid "Examined students"
+msgstr ""
+
+msgid "student"
+msgstr ""
+
 msgid "Exam agenda"
 msgstr ""
 
@@ -365,16 +472,28 @@ msgstr ""
 msgid "action"
 msgstr ""
 
-msgid "next"
+msgid "reset"
 msgstr ""
 
-msgid "reset"
+msgid "detail"
 msgstr ""
 
 msgid "subject"
 msgstr ""
 
 msgid "result"
+msgstr ""
+
+msgid "search by lastname"
+msgstr ""
+
+msgid "exam subjects"
+msgstr ""
+
+msgid "exam students"
+msgstr ""
+
+msgid "Starting to create exam."
 msgstr ""
 
 #, fuzzy
@@ -447,7 +566,28 @@ msgstr ""
 msgid "Thank you for spent time and wish good luck"
 msgstr ""
 
-msgid "welcome page"
+msgid "loading ..."
+msgstr ""
+
+msgid "note"
+msgstr ""
+
+msgid "create study plan"
+msgstr ""
+
+msgid "candidates"
+msgstr ""
+
+msgid "exam_terms"
+msgstr ""
+
+msgid "exams"
+msgstr ""
+
+msgid "students"
+msgstr ""
+
+msgid "atestations"
 msgstr ""
 
 msgid "logoff"
@@ -456,10 +596,36 @@ msgstr ""
 msgid "do you really want to"
 msgstr ""
 
-msgid "create study plan"
+msgid "upload methodology"
 msgstr ""
 
-msgid "add methodology"
+msgid ""
+"methodology\n"
+"  file"
+msgstr ""
+
+msgid "approvement process"
+msgstr ""
+
+msgid "This study has been finished"
+msgstr ""
+
+msgid "finished on"
+msgstr ""
+
+msgid "canceled on"
+msgstr ""
+
+msgid "approved on"
+msgstr ""
+
+msgid "last atestation:"
+msgstr ""
+
+msgid "approvement process:"
+msgstr ""
+
+msgid "semester"
 msgstr ""
 
 msgid "Full name"
@@ -573,31 +739,16 @@ msgstr ""
 msgid "Study registration"
 msgstr ""
 
-msgid "department"
-msgstr ""
-
 msgid "language exams"
 msgstr ""
 
 msgid "theme area"
 msgstr ""
 
-msgid "note"
-msgstr ""
-
 msgid "postal address"
 msgstr ""
 
-msgid "show"
-msgstr ""
-
-msgid "Study plan created on"
-msgstr ""
-
-msgid "Study plan canceled on"
-msgstr ""
-
-msgid "Study plan approved on"
+msgid "There is atestation going"
 msgstr ""
 
 msgid "There are no students in system"
@@ -609,10 +760,31 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-msgid "back"
+msgid "confirm"
 msgstr ""
 
-msgid "semester"
+msgid "Are you sure, your plan is ready?"
+msgstr ""
+
+msgid "semester of final exam"
+msgstr ""
+
+msgid "theme of disert theme"
+msgstr ""
+
+msgid "term of disert theme defense"
+msgstr ""
+
+msgid "add methodology summary"
+msgstr ""
+
+msgid "language"
+msgstr ""
+
+msgid "language subjects"
+msgstr ""
+
+msgid "obligate subjects"
 msgstr ""
 
 msgid "Tutor statement"
@@ -645,81 +817,67 @@ msgstr ""
 msgid "Subjects"
 msgstr ""
 
+msgid "study plan"
+msgstr ""
+
+msgid ""
+"Now you can see your plan how you have created\n"
+"in previous steps. You have to confirm it otherwise it will be lost."
+msgstr ""
+
+msgid "voluntary subjects"
+msgstr ""
+
 msgid "voluntary subject"
 msgstr ""
 
 msgid "examinator"
 msgstr ""
 
-msgid ""
-"On this page you have to choose your voluntary subjects and terms for\n"
-"    finishing all subjects"
-msgstr ""
-
-msgid "semester of final exam"
-msgstr ""
-
-msgid "Obligate subjects"
-msgstr ""
-
-msgid "Language subjects"
-msgstr ""
-
-msgid "language"
-msgstr ""
-
-msgid "Voluntary subjects"
-msgstr ""
-
-msgid "languages be have to be different"
-msgstr ""
-
-msgid "voluntary subjects have to be different"
-msgstr ""
-
-msgid "external subjects university cannot be empty"
+msgid "languages"
 msgstr ""
 
 msgid ""
-"On this page you are starting to create your study plan. Remember that\n"
-"consulting it with your tutor is highly recommended."
+"On this page you are starting to create your study plan. Study plan\n"
+"should be consulted with your tutor."
 msgstr ""
 
 msgid ""
-"So first step is to fill title of the disert theme and its defense\n"
-"  semester."
-msgstr ""
-
-msgid "title"
-msgstr ""
-
-msgid "semester of disert theme defense"
+"Your study plan, details of it you can see here, is\n"
+"processed now. Final approvement you will get by email. "
 msgstr ""
 
 msgid ""
-"Welcome to edoktorand application. Please check all information on this page "
-"for correctness."
+"Your study plan, details of it you can see here, is\n"
+"approved now. You should add methodics summary as soon as possible and\n"
+"methodics in three months."
+msgstr ""
+
+msgid ""
+"Your methodolgy is processed now. Final approvement you \n"
+"will get by email. "
+msgstr ""
+
+msgid "Welcome to edoktorand application."
+msgstr ""
+
+msgid ""
+"This page shows informations which are stored in\n"
+"information system."
+msgstr ""
+
+msgid " If you have found any error please contact "
+msgstr ""
+
+msgid ""
+"Menu in right top corner shows actions you have acces\n"
+"to."
 msgstr ""
 
 msgid "Personal and study details"
-msgstr ""
-
-msgid "change"
-msgstr ""
-
-msgid ""
-"On the top right of this page is menu with actions available to you at this "
-"moment."
 msgstr ""
 
 msgid ""
 "Here you can see how does look your study plan. If it's how you\n"
 "intended confirm it please."
 msgstr ""
-
-msgid "confirm"
-msgstr ""
-
-#, fuzzy
-msgid "print"
-msgstr "Print"

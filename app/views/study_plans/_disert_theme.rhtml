@@ -1,14 +1,13 @@
 <% study_plan = disert_theme.index.study_plan %>
-<h5>
-  <%= _('disert theme') %>
-</h5>
-<ul id='<%= "disert_theme#{disert_theme.id}" %>'>
   <li>
-  <b><%= "#{disert_theme.title}" %></b>
+  <b><%= _("theme of disert theme") %></b>
   </li>
   <li class="second">
+    <%= "#{disert_theme.title}" %>
+  </li>
+  <li>
   <div class='info'><%= disert_theme.finishing_to %>.<%= _("semester") %></div>
-  <%= "#{_("disert theme defense")}" %>
+  <b><%= "#{_("term of disert theme defense")}" %></b>
   </li>
   <% if study_plan && study_plan.approved? &&
     !disert_theme.has_methodology_summary?  %>
@@ -25,5 +24,3 @@
     <%= render(:partial => 'shared/methodology', :locals => {:disert_theme =>
     disert_theme}) %>
   <% end %>
-
-</ul>

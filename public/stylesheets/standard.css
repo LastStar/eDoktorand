@@ -114,16 +114,12 @@ form {
   font-size: 12pt;
 }
 #error li {
-  font-size: 9pt;
+  font-size: 12pt;
   padding: 1px;
-  margin: 1px;
-  padding-left: 12px;
-  background-position: 0 .5em;
-  background-image: url(../images/sarrow.gif);
+  padding-left: 3px;
 }
 #error ul {
   padding: 1px;
-  margin: 1px;
   padding-left: 30px;
 }
   
@@ -179,7 +175,18 @@ div.fieldWithErrors {
 div.fieldWithErrors label { color: red; }
 .info {
   float: right;
-  padding-right: 2em;
+  width: 12ex;
+}
+.long_info {
+  float: right;
+  width: 30em;
+  position: static;
+}
+.important_notice {
+  color: red;
+}
+h5 a {
+  font-size: 14px;
 }
 pre.detail {
   background-color: #ffffff; padding: 10px; padding-left: 30px; font-size: 11px;
@@ -246,7 +253,6 @@ table.list th {
   padding: 2px;
   margin: 0px;
   border:1px solid;
-  font-weight: bold;
 }
 table.list td {
   padding-left: 5px;	

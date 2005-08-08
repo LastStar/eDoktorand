@@ -14,7 +14,10 @@
     <%= render(:partial => 'shared/main_menu') %>
   </div>
 	<% end %>
-  <h1 id='title'><%= @title %></h1>
+  <% if @person %>
+  <h1 id='title'><%= "#{_(@title)} - #{_(@person.type)}:
+    #{@person.display_name}" %></h1>
+  <% end %>
   <div id="main">
     <div id='loading'><%= _("loading ...") %></div>
     <%= @content_for_layout %>

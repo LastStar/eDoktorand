@@ -51,7 +51,7 @@ class DisertThemesController < ApplicationController
     disert_theme.methodology_summary = @params['disert_theme']['methodology_summary']
     if disert_theme.save
       render(:partial => 'valid_methodology', :locals => {:disert_theme =>
-      disert_theme, :element => 'methodology_form' })
+      disert_theme, :remove => 'methodology_form' })
     else
       render(:partial => 'notvalid_methodology', :locals => {:disert_theme =>
       disert_theme}) 
@@ -59,7 +59,7 @@ class DisertThemesController < ApplicationController
   end
   # renders partial for upload methodology form
   def upload_methodology
-    @title = _("Upload disert theme") 
+    @title = _("Upload methodology") 
     @disert_theme = DisertTheme.find(@params['id'])
   end
 end

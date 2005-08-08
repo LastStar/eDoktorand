@@ -3,7 +3,7 @@
       "loading"), :complete => evaluate_remote_response) %>	
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
-<legend><%= _("Obligate subjects") %></legend>
+<legend><%= _("obligate subjects") %></legend>
 <% for plan_subject in @plan_subjects do %>
 <%= render_partial 'obligate_form', :plan_subject => plan_subject %>
 <br/> 

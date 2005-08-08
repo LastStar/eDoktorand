@@ -1,18 +1,22 @@
 <h5><%= _("Contact") %></h5>
 <ul>
 <li>
-<%= _("email") %>: <%= student.email.name %>
+<div class='long_info'><%= student.email.name %> </div>
+<%= _("email") %>
 </li>
 <li>
-<%= _("phone") %>: <%= student.phone.name %><br /> 
+<div class='long_info'> <%= student.phone.name %> </div>
+<%= _("phone") %>
 </li>
 <li>
-<%= _("habitat address") %>: <%=student.address.to_line_s %><br /> 
+<div class='long_info'> <%=student.address.to_line_s %> </div>
+<%= _("habitat address") %>
 </li>
 
 <% if student.postal_address %>
 <li>
-<%= _("postal address") %>: <%= student.postal_address.to_line_s %>
+<div class='long_info'> <%= student.postal_address.to_line_s %> </div>
+<%= _("postal address") %>
 </li>
 <% end %>
 </ul>

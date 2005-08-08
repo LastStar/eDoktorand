@@ -1,7 +1,7 @@
 <li>
 <b><%= _("methodology summary") %></b>
 </li>
-<li>
+<li class="second">
 <%= disert_theme.methodology_summary %>
 </li>
 <% unless disert_theme.has_methodology? %>
@@ -14,7 +14,7 @@
 <a href='<%= "pdf/methodology#{disert_theme.id}.pdf" %>'><%= _("methodology
   file") %></a>
 </li>
-<% if disert_theme.approvement %>
+<% if disert_theme.approvement && !disert_theme.index.study_plan.atestation %>
 <li>
 <b><%= _("approvement process") %></b> 
 </li>

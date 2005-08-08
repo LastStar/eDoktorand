@@ -1,7 +1,7 @@
-<%= update_element_function("disert_theme#{disert_theme.id}", 
+<%= update_element_function("study_plan#{disert_theme.index.study_plan.id}", 
 :position => :bottom, :content => render(:partial => "shared/methodology", 
 :locals => {:disert_theme => disert_theme})) %>
-<%= update_element_function(element, :action => :remove) %>
+<%= update_element_function(remove, :action => :remove) %>
 
 
 

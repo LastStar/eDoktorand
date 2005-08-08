@@ -1,3 +1,6 @@
+<% if AtestationTerm.actual?(@person.faculty) %>
+<p class='important_notice'><%= _("There is atestation going") %></p>
+<% end %>
 <% unless @indices.empty? %>
 <div id='search'>
 <%= render_partial "search" %>

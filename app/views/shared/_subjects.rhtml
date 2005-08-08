@@ -7,7 +7,8 @@
 </li>
 <% if subject.finished? %>
 <li class='second'>
-<%= "#{_("date finished")}: #{subject.finished_on}" %>
+<div class='long_info'><%= subject.finished_on %> </div>
+<%= "#{_("date finished")}: " %>
 </li>
 <% end %>
 <% end %>

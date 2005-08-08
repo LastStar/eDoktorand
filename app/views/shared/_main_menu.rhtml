@@ -9,11 +9,12 @@
     <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>
     <%= link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} %>
     <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
+  <% elsif @session['user'].has_role?('tutor') ||
+    @session['user'].has_role?('department_secretary') %>
+    <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
   <% end %>
   <%= link_to_unless_current(_("students"), :controller => 'students'){} %>
-  <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
-  <% if AtestationTerm.actual?(@session['user'].person.faculty) ||
-  @session['user'].person.is_a?(Dean) ||
+  <% if @session['user'].person.is_a?(Dean) ||
   @session['user'].person.is_a?(FacultySecretary)  %>
   <%= link_to_unless_current(_("atestations"), :controller => 'atestation_terms'){} %>
   <% end %>

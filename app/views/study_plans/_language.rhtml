@@ -1,7 +1,7 @@
 <label>
 <%= _("language") %>
 </label>
-<%= content_tag('select', options_for_select(language_subject_ids,
+<%= content_tag('select', options_for_select(subjects,
 plan_subject.subject_id), 
 {'id' => "plan_subject_#{plan_subject.id}_subject_id",'name' =>
 "plan_subject[#{plan_subject.id}][subject_id]"}) %>

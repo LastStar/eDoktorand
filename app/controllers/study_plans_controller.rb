@@ -69,9 +69,8 @@ class StudyPlansController < ApplicationController
       disert_theme})
     else
       extract_voluntary(true)
-      @title = _("Error in creating study plan")
       @errors << _("subjects have to be different") unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 3
-      flash.now['errors'] = @errors.uniq!
+      flash.now['errors'] = @errors.uniq
       render(:partial => 'not_valid_voluntarys', :locals => {:form_plan_subjects => @plan_subjects})
     end
   end
@@ -112,25 +111,17 @@ class StudyPlansController < ApplicationController
   end
   # confirms and saves statement
   def confirm_approve
-    @study_plan = StudyPlan.find(@params['id'])
-    if @session['user'].person.is_a?(Tutor) && 
-      !@study_plan.approvement.tutor_statement
-      @statement = TutorStatement.create(@params['statement'])
-      @study_plan.approvement.tutor_statement = @statement
-    elsif @session['user'].person.is_a?(Leader) &&
-      !@study_plan.approvement.leader_statement
-      @statement = LeaderStatement.create(@params['statement'])
-      @study_plan.approvement.leader_statement = @statement
-    elsif @session['user'].person.is_a?(Dean) 
-      @statement = DeanStatement.create(@params['statement'])
-      @study_plan.approvement.dean_statement = @statement
-    end
-    @study_plan.canceled_on = @statement.cancel? ? Time.now : nil
-    @study_plan.approved_on = Time.now if @statement.is_a?(DeanStatement) &&
-      !@statement.cancel?
-    @study_plan.save
+    study_plan = StudyPlan.find(@params['id'])
+    statement = \
+    eval("#{@params['statement']['type']}.create(@params['statement'])") 
+    eval("study_plan.approvement.#{@params['statement']['type'].underscore} =
+    statement")
+    study_plan.canceled_on = statement.cancel? ? Time.now : nil
+    study_plan.approved_on = Time.now if statement.is_a?(DeanStatement) &&
+      !statement.cancel?
+    study_plan.save
     render(:partial => 'show', :locals => {:remove =>
-    "link#{@study_plan.id}", :study_plan => @study_plan})
+    "link#{study_plan.id}", :study_plan => study_plan})
   end
   # atests study plan 
   def atest
@@ -144,26 +135,18 @@ class StudyPlansController < ApplicationController
   end
   # confirms and saves statement
   def confirm_atest
-    @study_plan = StudyPlan.find(@params['id'])
-    if @session['user'].person.is_a?(Tutor) && 
-      !@study_plan.atestation.tutor_statement
-      @statement = TutorStatement.create(@params['statement'])
-      @study_plan.atestation.tutor_statement = @statement
-    elsif @session['user'].person.is_a?(Leader) &&
-      !@study_plan.atestation.leader_statement
-      @statement = LeaderStatement.create(@params['statement'])
-      @study_plan.atestation.leader_statement = @statement
-    elsif @session['user'].person.is_a?(Dean) 
-      @statement = DeanStatement.create(@params['statement'])
-      @study_plan.atestation.dean_statement = @statement
+    study_plan = StudyPlan.find(@params['id'])
+    statement = \
+    eval("#{@params['statement']['type']}.create(@params['statement'])") 
+    eval("study_plan.atestation.#{@params['statement']['type'].underscore} =
+    statement")
+    if statement.cancel? && statement.is_a?(DeanStatement)
+      study_plan.index.finished_on =  Time.now 
+      study_plan.index.save
     end
-    if @statement.cancel? && @statement.is_a?(DeanStatement)
-      @study_plan.index.finished_on =  Time.now 
-      @study_plan.index.save
-    end
-    @study_plan.save
+    study_plan.save
     render(:partial => 'show', :locals => {:remove =>
-    "link#{@study_plan.id}", :study_plan => @study_plan})
+    "link#{study_plan.id}", :study_plan => study_plan})
   end
   # for remote adding subjects to page
   def subjects
@@ -184,7 +167,7 @@ class StudyPlansController < ApplicationController
     @plan_subjects = []
     index = 0
     @session['study_plan'].index.coridor.obligate_subjects.each do |sub|
-      ps = PlanSubject.new('subject_id' => sub.id)
+      ps = PlanSubject.new('subject_id' => sub.subject.id)
       ps.id = index
       @plan_subjects << ps
       index += 1

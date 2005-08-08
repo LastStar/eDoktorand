@@ -9,4 +9,12 @@ class AtestationTermsController < ApplicationController
     @title = _("Atestation")
     @atestation_term = AtestationTerm.actual(@person.faculty)
   end
+  # creates atestation
+  def create
+    atestation_term = AtestationTerm.new(params[:atestation_term])
+    atestation_term.faculty_id = @person.faculty.id 
+    atestation_term.save 
+    render(:partial => 'saved', :locals => {:atestation_term => atestation_term})
+  end
+
 end
