@@ -2,7 +2,10 @@
 <h5><%= _("This study has been finished") %></h5>
 <ul>
   <li>
-  <b><%= _("finished on") %>: <%= study_plan.index.finished_on %></b>
+  <div class='info'>
+    <%= study_plan.index.finished_on.strftime('%d. %m. %Y') %>
+  </div>
+  <b><%= _("finished on") %>: </b>
   </li>
 </ul>
 <% end %>
@@ -14,12 +17,13 @@
 
 <% if study_plan.canceled? %>
   <li>
-  <b><%= _("canceled on") %>: <%= study_plan.canceled_on %></b>
+  <div class='info'><%= study_plan.canceled_on.strftime('%d. %m. %Y') %></div>
+  <b><%= _("canceled on") %>:</b>
   </li>
 <% end %>
 <% if study_plan.approved? %>
   <li>
-  <div class='long_info'><%= study_plan.approved_on %></div>
+  <div class='info'><%= study_plan.approved_on.strftime('%d. %m. %Y') %></div>
   <b><%= _("approved on") %>: </b>
   </li>
 <% end %>

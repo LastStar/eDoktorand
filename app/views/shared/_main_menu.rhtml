@@ -1,7 +1,8 @@
 	<% if @session['user'].person.is_a?(Student) and @student %>
     <% if !@student.index.study_plan || @student.index.study_plan.canceled? %>
-      <%= link_to(_("create study plan"),
-        :action => 'create', :id => @student) %>
+    <%= link_to(_("create study plan"), {:action => 'create', :id => @student}, 
+    :confirm => 
+    _("Have you consulted your study plan with tutor. It is highly recomended")) %>
     <% end %>
   <% else %>
   <% if @session['user'].has_role?('admin') ||

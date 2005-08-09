@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 90\n"
-"POT-Creation-Date: 2005-08-08 09:08+0200\n"
+"POT-Creation-Date: 2005-08-09 09:20+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -134,9 +134,6 @@ msgid "external subject"
 msgstr ""
 
 msgid "subjects"
-msgstr ""
-
-msgid "with note: "
 msgstr ""
 
 msgid "atest"
@@ -575,6 +572,9 @@ msgstr ""
 msgid "create study plan"
 msgstr ""
 
+msgid "Have you consulted your study plan with tutor. It is highly recomended"
+msgstr ""
+
 msgid "candidates"
 msgstr ""
 
@@ -746,9 +746,6 @@ msgid "theme area"
 msgstr ""
 
 msgid "postal address"
-msgstr ""
-
-msgid "There is atestation going"
 msgstr ""
 
 msgid "There are no students in system"

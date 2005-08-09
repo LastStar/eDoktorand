@@ -179,8 +179,7 @@ div.fieldWithErrors label { color: red; }
 }
 .long_info {
   float: right;
-  width: 30em;
-  position: static;
+  width: 480px;
 }
 .important_notice {
   color: red;

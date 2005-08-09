@@ -6,7 +6,7 @@
     <%= "#{disert_theme.title}" %>
   </li>
   <li>
-  <div class='info'><%= disert_theme.finishing_to %>.<%= _("semester") %></div>
+  <div class='info'><%= "#{disert_theme.finishing_to}. #{_('semester')}" %></div>
   <b><%= "#{_("term of disert theme defense")}" %></b>
   </li>
   <% if study_plan && study_plan.approved? &&

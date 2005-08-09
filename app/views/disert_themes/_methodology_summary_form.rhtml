@@ -7,9 +7,8 @@
   disert_theme.id %>'>
 <label for="disert_theme_title"><%= _("methodology summary") %>:</label><br/> 
 <textarea name='disert_theme[methodology_summary]'
-  id='disert_theme_methodology_summary' cols='60' rows='15'> 
-  <%= disert_theme.methodology_summary %>
-</textarea>
+  id='disert_theme_methodology_summary' cols='60' rows='15'><%= 
+  disert_theme.methodology_summary %></textarea>
 </fieldset>
 <%= submit_tag _("next") %>
 <%= end_form_tag %>

@@ -160,11 +160,12 @@ module ApplicationHelper
     result = ''
     result << approve_word(statement.result)
     unless statement.note.empty?
-      result << ', ' + (_("with note: ") + truncate(statement.note, 50))
+      result << ", #{_('with note: ')} #{truncate(statement.note, 30)}"
     end
+    result = content_tag('div', statement.created_on.strftime('%d. %m. %Y'),
+    :class => 'info') + result
     return content_tag('li', "#{content_tag('div', result, :class => 'long_info')}
-    #{_(statement.type.to_s.underscore.humanize)}", 
-    :class => 'second')
+    #{_(statement.type.to_s.underscore.humanize)}", :class => 'second')
   end
   # prints atestation link
   def atestation_link(study_plan)
