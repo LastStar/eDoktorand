@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 90\n"
-"POT-Creation-Date: 2005-08-09 09:20+0200\n"
+"POT-Creation-Date: 2005-08-10 08:22+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -131,6 +131,12 @@ msgid "There were errors in your input"
 msgstr ""
 
 msgid "external subject"
+msgstr ""
+
+msgid "canceled"
+msgstr ""
+
+msgid "approved"
 msgstr ""
 
 msgid "subjects"
@@ -410,7 +416,7 @@ msgstr ""
 msgid "methodology summary"
 msgstr ""
 
-msgid "next"
+msgid "commit"
 msgstr ""
 
 msgid ""
@@ -488,9 +494,6 @@ msgid "exam subjects"
 msgstr ""
 
 msgid "exam students"
-msgstr ""
-
-msgid "Starting to create exam."
 msgstr ""
 
 #, fuzzy
@@ -604,7 +607,7 @@ msgid ""
 "  file"
 msgstr ""
 
-msgid "approvement process"
+msgid "methodogy approvement process"
 msgstr ""
 
 msgid "This study has been finished"
@@ -622,7 +625,7 @@ msgstr ""
 msgid "last atestation:"
 msgstr ""
 
-msgid "approvement process:"
+msgid "study plan approvement process:"
 msgstr ""
 
 msgid "semester"

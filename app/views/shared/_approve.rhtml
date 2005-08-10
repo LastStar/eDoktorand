@@ -3,9 +3,11 @@ if approvement.kind_of?(StudyPlanApprovement) ||
   approvement.kind_of?(Atestation)
   document = approvement.study_plan
   element = "study_plan#{document.id}"
+  remove = "approve_link#{document.id}"
 else
   document = approvement.disert_theme
   element = "study_plan#{document.index.study_plan.id}"
+  remove = "approve_link#{document.index.study_plan.id}"
 end
 if approvement.kind_of?(Atestation) 
   action = 'confirm_atest' 
@@ -18,4 +20,4 @@ end
 <%= update_element_function(element, :position => :before, :content =>
 render(:partial => 'shared/approve_form', :locals => {:document => document,
 :title => title, :options => options, :action => action})) %>
-<%= update_element_function("approve_link#{document.id}", :action => :remove) %>
+<%= update_element_function(remove, :action => :remove) %>

@@ -9,5 +9,5 @@
 <%= content_tag('select', options_for_select(students.map{|stud| [stud.display_name, stud.id]}), {'id' => "student_id",'name' => "student[id]"}) %>
 <br/> 
 </fieldset>
-<%= submit_tag(_("next")) %>
+<%= submit_tag(_("commit")) %>
 <%= end_form_tag %>

@@ -88,7 +88,7 @@ module ApplicationHelper
   end
   # returns approve word for statement result
   def approve_word(result)
-    [ _("cancel"), _("approve")][result]
+    [ _("canceled"), _("approved")][result]
   end
   # prints approve links
   def approve_links(document, controller)
@@ -178,10 +178,14 @@ module ApplicationHelper
   end
   # prints approvement link
   def approve_link(document, controller)
-    element = "approve_link#{document.id}"
-    link_to_remote(_("approve"), :url => {:controller => controller, 
+    if document.kind_of?(StudyPlan)
+      element = "approve_link#{document.id}"
+    else
+      element = "approve_link#{document.index.study_plan.id}"
+    end
+    link_to_remote(_("approve"), {:url => {:controller => controller, 
     :action => 'approve', :id => document}, :loading => visual_effect(:appear, 'loading'), 
     :interactive => visual_effect(:fade, "loading"), 
-    :complete => evaluate_remote_response,:html => {:id => element})
+    :complete => evaluate_remote_response}, {:id => element})
   end
 end
