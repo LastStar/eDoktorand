@@ -1,0 +1,31 @@
+<%= form_remote_tag(:url => {:action => 'save_probation_term_details'}, :loading =>
+      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+      "loading"), :complete => evaluate_remote_response) %>	
+<fieldset id="details">
+<legend><%= _("Probation term details") %></legend>
+<label>
+  <%= _("room") %>
+</label>
+  <%= text_field 'probation_term', 'room', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br />
+<label>
+  <%= _("starting time") %>
+</label>
+  <%= text_field 'probation_term', 'start_time', 'size' => '5' %><span class='required'>&nbsp;&lowast;</span ><br />
+<label>
+  <%= _("date") %>
+</label>
+  <%= date_select 'probation_term', 'date', :start_year => 2005,
+    :order => [:day, :month, :year], :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br />
+<label>
+  <%= _("maximum of students") %>
+</label>
+  <%= text_field 'probation_term', 'max_students', 'size' => '3' %><span class='required'>&nbsp;&lowast;</span ><br />
+  <label>
+  <%= _("note for students") %>
+</label>
+  <%= text_area 'probation_term', 'note', :cols => 40, :rows => 6 %><br />
+<br/> 
+</fieldset>
+<%= submit_tag(_("commit")) %>
+<%= end_form_tag %>
+

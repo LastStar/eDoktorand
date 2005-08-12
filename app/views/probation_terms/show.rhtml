@@ -1,0 +1,8 @@
+<% for column in ProbationTerm.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @probation_term.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @probation_term %> |
+<%= link_to 'Back', :action => 'list' %>

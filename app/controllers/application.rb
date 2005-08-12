@@ -105,6 +105,8 @@ class ApplicationController < ActionController::Base
       @conditions = ['tutor_id = ?', @session['user'].person.id]
     end
   end
+
+  
   # prepares person class variable
   def prepare_person
     @person = @session['user'].person if @session['user']

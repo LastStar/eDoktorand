@@ -4,15 +4,27 @@
     :confirm => 
     _("Have you consulted your study plan with tutor. It is highly recomended")) %>
     <% end %>
+    <% 
+      if @student.index.study_plan.approved? 
+    %>
+      <%= link_to_unless_current(_("probation_terms"), :controller =>
+    'probation_terms'){} %>
+      <%= link_to_unless_current(_("study plan"), :controller =>
+    'study_plans'){} %>
+    <% end %>
   <% else %>
   <% if @session['user'].has_role?('admin') ||
       @session['user'].has_role?('faculty_secretary') %>
     <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>
     <%= link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} %>
     <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
+    <%= link_to_unless_current(_("probation_terms"), :controller =>
+    'probation_terms'){} %>
   <% elsif @session['user'].has_role?('tutor') ||
     @session['user'].has_role?('department_secretary') %>
     <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
+    <%= link_to_unless_current(_("probation_terms"), :controller =>
+    'probation_terms'){} %>
   <% end %>
   <%= link_to_unless_current(_("students"), :controller => 'students'){} %>
   <% if @session['user'].person.is_a?(Dean) ||

@@ -1,0 +1,21 @@
+<h5><%= _("Creating probation term") %></h5>
+  <% if !probation_term.subject.nil? %>
+    <li>
+      <%= "#{_('Probation term from subject')}: #{probation_term.subject.label}" %>
+    </li>
+    <li>
+      <%= "#{_('Date')}: #{probation_term.date.strftime("%d. %m. %Y")}" %> 
+    </li>
+    <li>
+      <%= "#{_('In room')}: #{probation_term.room}" %> 
+    </li>
+    <li>
+      <%= "#{_('Starting time')}: #{probation_term.start_time}" %> 
+    </li>
+    <li>
+      <%= "#{_('Maximum of students')}: #{probation_term.max_students}" %> 
+    </li>
+    <li>
+      <%= "#{_('With note')}: #{probation_term.note}" %> 
+    </li>
+  <% end %>

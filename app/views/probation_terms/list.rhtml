@@ -1,0 +1,26 @@
+<%= javascript_include_tag "prototype" %>
+<% unless @probation_terms.empty? %>
+<div id='search'>
+<%= render_partial "search" %>
+</div>
+<div id="probation_terms_list">
+<%= render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list' %>
+</div>
+
+<%= probation_term_list_links %>                      
+<br />           
+<% else %>
+<h5>V systému nejsou žádné zkoušky podle Vašeho výběru</h5>
+<%= probation_term_list_links %>                      
+<% end %>
+<br/>
+<script type="text/javascript">
+function showProbationTerm(id) {
+  if($('info' + id).style.display == 'none') {
+    new Effect.Appear('info' + id);
+  } else {
+    new Effect.Fade('info' + id)
+  }
+}
+</script>
+

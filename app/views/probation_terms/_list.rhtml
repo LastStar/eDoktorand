@@ -1,0 +1,46 @@
+<%= javascript_include_tag :defaults %>
+<% @ids = [] %>
+<ul>
+<%  
+  has_enrolled_subjects = []
+  if (@session['user'].person.is_a?(Student))
+    @probation_terms.each{|prob| has_enrolled_subjects << prob.subject if
+      ((!prob.students.empty?) && (prob.students.include?(@session['user'].person)))}
+  end
+%>
+<% for probation_term in @probation_terms  %>
+  <li>
+    <div class='right'>
+      <% if (@session['user'].person.is_a?(Student)) %>
+        <% if ((has_enrolled_subjects) && (has_enrolled_subjects.include? (probation_term.subject))) %>
+          <% if(probation_term.students.include?(@session['user'].person)) %>
+            <%= _("You are already enrolled for this term") %>
+          <% else %>
+            <%= _("You are already enrolled for an exam from this subject") %>
+          <% end %>
+        <% else %>
+          <%= link_to(_("enroll"), {:action => 'enroll', :id =>
+          probation_term.id}) %>
+        <% end %>
+      <% else %>
+        <%= link_to_remote(_("detail"), :url => {:action => 'detail', :id =>
+      probation_term.id}, :loading => visual_effect(:appear, 'loading'), :interactive => 
+      visual_effect(:fade, "loading"), :update => "info#{probation_term.id}", :complete =>
+      "showProbationTerm(#{probation_term.id})") %>
+        <%= link_to(_("edit"), {:action => 'edit', :id => probation_term.id}) %>
+      <% end %>
+    </div>
+    <b><%= probation_term.subject.label %></b><br />
+    <%= _("maximum/enrolled") %>&nbsp;:&nbsp;
+    <%= probation_term.max_students %>&nbsp;/&nbsp;
+    <%= probation_term.students.size %>
+    <br />
+    <%=_("date")%>: <%= probation_term.date.strftime("%d. %m. %Y") %><br />
+	  <%=_("room")%>: <%= probation_term.room %>;&nbsp;<%=_("starting time")%>:
+    <%= probation_term.start_time %><br />
+    <div class='detail' id='info<%= probation_term.id %>' style="display: none">
+    </div >
+  </li>
+  <% @ids << probation_term.id %>
+<% end %>
+</ul>

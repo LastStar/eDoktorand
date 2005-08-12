@@ -1,0 +1,7 @@
+<p>
+<%= _("note") %>:&nbsp;<%= probation_term.note %><br /> 
+<%= _("1. examinator") %>:&nbsp;<%= probation_term.first_examinator.display_name %><br />  
+<%= _("2. examinator") %>:&nbsp;<%= probation_term.second_examinator.display_name if probation_term.second_examinator %><br /> 
+<%= _("Created by") %>:&nbsp;<%= probation_term.creator.display_name %><br /> 
+</p> 
+<hr/>

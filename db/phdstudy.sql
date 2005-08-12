@@ -308,6 +308,36 @@ CREATE TABLE exams (
 );
 
 --
+-- Table structure for probation term
+--
+
+DROP TABLE IF EXISTS probation_terms;
+CREATE TABLE probation_terms (
+  id integer primary key auto_increment,
+  subject_id integer,
+  first_examinator_id integer,
+  second_examinator_id integer,
+	date date,
+	start_time varchar(5),
+	room varchar(20),
+  max_students integer,
+  note text,
+  created_by integer,
+  created_on datetime,
+  updated_on datetime
+);
+
+--
+-- Table structure for probation term student
+--
+
+DROP TABLE IF EXISTS probation_terms_students;
+CREATE TABLE probation_terms_students (
+  probation_term_id integer,
+  student_id integer
+);
+
+--
 -- Table structure for table interupts
 --
 
