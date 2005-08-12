@@ -1,13 +1,2 @@
-+ add some facility to chairman for view candidates for his coridor
-+ finish model works and start to create some other parts of application :-)
-+ clean table structures
-+ add notice to all lists
-
-done:
-+ add emailing on admiting student
-+ add admit protocol for candidate
-+ fix script tag 
-+ filtering for candidates by statuses to list view
-+ candidates grouped by entrance exam
-+ polish entrance exam forms
-+ exam term add date
+add chanse for student to write some aditional informations for atestation
+change subjects to materials for atestation

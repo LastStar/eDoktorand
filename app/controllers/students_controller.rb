@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
   model :faculty_secretary
   layout 'employers'
   before_filter :login_required, :set_title, :prepare_conditions,
-  :prepare_person, :prepare_order 
+  :prepare_person, :prepare_order, :prepare_filter 
   
   # lists all students
   def index
@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
   # lists all students
   def list
     @indices = Index.find(:all, :conditions => @conditions, :include =>
-    [:study_plan, :student], :order => @order)
+    [:study_plan, :student, :disert_theme], :order => @order)
   end
   # show student's detail
   def show
@@ -35,6 +35,19 @@ class StudentsController < ApplicationController
       render(:partial => 'search_succesfull')
     end
   end
+  # filters students
+  def filter
+    case @params['filter_by']
+    when "2"
+      @conditions.first << ' AND study_plans.approved_on IS NULL'
+      list
+    when "1"
+      @indices = @person.indexes
+    when "0"
+      list
+    end
+    render(:partial => 'list')
+  end
   # renders contact for student
   def contact
     render_partial('contact', :student =>
@@ -46,6 +59,7 @@ class StudentsController < ApplicationController
     @title = _("Students")
   end
   # prepares order variable for listin 
+  # TODO create some better mechanism to do ordering
   def prepare_order
     @order = 'study_plans.created_on, study_plans.updated_on desc'
     if @session['user'].person.is_a? Dean || @session['user'].person.is_a?
@@ -54,6 +68,13 @@ class StudentsController < ApplicationController
     elsif @session['user'].person.is_a? Leader || @session['user'].person.is_a?
         DepartmentSecretary
       @order.concat(', tutor_id') 
+    end
+  end
+  # prepares filter variable
+  def prepare_filter 
+    @filters = [[_("all students"), 0], [_("not approved"), 2]]
+    if (@person.is_a?(Leader) || @person.is_a?(Dean)) && !@person.indexes.empty?
+     @filters <<  [_("my students"), 1]
     end
   end
 end

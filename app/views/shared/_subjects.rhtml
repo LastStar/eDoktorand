@@ -7,8 +7,11 @@
 </li>
 <% if subject.finished? %>
 <li class='second'>
+<div class='long_info'>
 <div class='info'><%= subject.finished_on.strftime("%d. %m. %Y") %> </div>
-<%= "#{_('date finished')}: " %>
+<%= "#{_('date finished')} " %>
+</div>
+&nbsp;  
 </li>
 <% end %>
 <% end %>

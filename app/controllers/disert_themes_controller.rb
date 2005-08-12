@@ -17,10 +17,8 @@ class DisertThemesController < ApplicationController
   # approves disertation theme 
   def approve
     disert_theme = DisertTheme.find(@params['id'])
-    disert_theme.approvement ||= DisertThemeApprovement.create
-    approvement = disert_theme.approvement
-    @statement = prepare_statement(disert_theme.approvement)
-    render_partial("shared/approve", :approvement => approvement, :title =>
+    @statement = disert_theme.index.statement_for(@person) 
+    render_partial("shared/approve", :approvement => disert_theme.approvement, :title =>
     _("atestation"), :options => [[_("approve"), 1], [_("cancel"), 0]])
   end
   # confirms and saves statement
@@ -61,5 +59,11 @@ class DisertThemesController < ApplicationController
   def upload_methodology
     @title = _("Upload methodology") 
     @disert_theme = DisertTheme.find(@params['id'])
+  end
+  # opens new window and shows approvement links if any
+  def file_clicked
+    disert_theme = DisertTheme.find(@params['id'])
+    render(:partial => 'file_clicked', :locals => {:disert_theme =>
+    disert_theme})
   end
 end

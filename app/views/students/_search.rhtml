@@ -3,7 +3,15 @@ visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
 "loading"), :complete => evaluate_remote_response) %>
 <fieldset>
   <label for="search_what"><%= _("search by lastname") %></label>
-  <%= tag('input', :name => 'search', :id => 'search_field', 'size' => '10') %>
-  <%= end_form_tag %>
+  <%= tag('input', :name => 'search_field', :id => 'search_field', 'size' => '10')
+  %><br/> 
+  <% if @filters %>
+  <label for="filter_by"><%= _("filter") %></label>
+  <%= content_tag('select', options_for_select(@filters), {'id' => "filter_by",
+  'name' => "filter_by"}) %>
+  <%= observe_field('filter_by', :url => {:action => 'filter'}, :frequence =>
+  1, :update => 'students_list', :loading => visual_effect(:appear, 'loading'),
+  :interactive => visual_effect(:fade, "loading"), :with => "'filter_by=' + escape(value)" ) %>
+  <% end %>
 </fieldset>
 <%= end_form_tag %>

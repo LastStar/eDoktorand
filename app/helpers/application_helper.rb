@@ -95,15 +95,15 @@ module ApplicationHelper
     if @person == document.index.tutor &&
       (!document.approvement || (document.approvement &&
       !document.approvement.tutor_statement))
-      approve_link(document, controller)
+      approve_link(document, controller, 'tutor')
     elsif @person.is_a?(Leader) &&
       @person == document.index.leader &&
       document.approvement && !document.approvement.leader_statement
-      approve_link(document, controller) 
+      approve_link(document, controller, 'leader') 
     elsif @person.is_a?(Dean) &&
       document.approvement && document.approvement.leader_statement && 
       !document.approvement.dean_statement
-      approve_link(document, controller)
+      approve_link(document, controller, 'dean')
     end
   end
   # prints atestation links
@@ -113,15 +113,15 @@ module ApplicationHelper
       if @person == study_plan.index.tutor &&
         (!study_plan.atestation || (study_plan.atestation &&
         !study_plan.atestation.tutor_statement))
-        atestation_link(study_plan)
+        atestation_link(study_plan, 'tutor')
       elsif @person.is_a?(Leader) &&
         @person == study_plan.index.leader &&
         study_plan.atestation && !study_plan.atestation.leader_statement
-        atestation_link(study_plan) 
+        atestation_link(study_plan, 'leader') 
       elsif @person.is_a?(Dean) &&
         study_plan.atestation && study_plan.atestation.leader_statement && 
         !study_plan.atestation.dean_statement
-        atestation_link(study_plan)
+        atestation_link(study_plan, 'dean')
       end
     end
   end
@@ -168,24 +168,33 @@ module ApplicationHelper
     #{_(statement.type.to_s.underscore.humanize)}", :class => 'second')
   end
   # prints atestation link
-  def atestation_link(study_plan)
+  def atestation_link(study_plan, person)
     element = "approve_link#{study_plan.id}"
-    link_to_remote(_("atest"), {:url => {:controller =>
+    link_to_remote(_("atest like #{person}"), {:url => {:controller =>
     'study_plans', :action => 'atest', :id => study_plan}, :loading => 
     visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
     "loading"), :complete => evaluate_remote_response}, {:id =>
     element})
   end
   # prints approvement link
-  def approve_link(document, controller)
+  def approve_link(document, controller, person)
     if document.kind_of?(StudyPlan)
       element = "approve_link#{document.id}"
     else
       element = "approve_link#{document.index.study_plan.id}"
     end
-    link_to_remote(_("approve"), {:url => {:controller => controller, 
-    :action => 'approve', :id => document}, :loading => visual_effect(:appear, 'loading'), 
-    :interactive => visual_effect(:fade, "loading"), 
-    :complete => evaluate_remote_response}, {:id => element})
+    link_to_remote(_("approve #{document.class.to_s.underscore.humanize.downcase}
+    like #{person}"), {:url => {:controller => controller, :action => 'approve',
+    :id => document}, :loading => visual_effect(:appear, 'loading'), 
+    :interactive => visual_effect(:fade, "loading"), :complete => 
+    evaluate_remote_response}, {:id => element})
+  end
+  # prints methodology link
+  def methodology_link(disert_theme)
+    content_tag('li', link_to_remote(_("methodology file (opens new window)"), 
+    {:url => {:controller => 'disert_themes', :action => 'file_clicked', 
+    :id => disert_theme}, :loading => visual_effect(:appear, 'loading'), 
+    :interactive => visual_effect(:fade, "loading"), :complete => 
+    evaluate_remote_response}), {:id => "methodology_link#{disert_theme.id}"})
   end
 end

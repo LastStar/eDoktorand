@@ -1,9 +1,9 @@
 <% unless @indices.empty? %>
 <div id='search'>
-<%= render_partial "search" %>
+  <%= render(:partial => 'search') %>
 </div>
 <div id='students_list'>
-<%= render_partial "list" %>
+  <%= render(:partial => 'list') %>
 </div>
 </div>
 <% else %>

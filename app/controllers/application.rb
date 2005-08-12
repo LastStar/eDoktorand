@@ -41,21 +41,6 @@ class ApplicationController < ActionController::Base
 		return items
 	end
   private
-  # prepares approvement for object if it doesn't exists
-  # returns statement for user
-  def prepare_statement(approvement)
-    if @person.is_a?(Tutor) &&
-      !approvement.tutor_statement
-      statement = TutorStatement.new('person_id' => @person.id)
-    elsif @person.is_a?(Leader) &&
-      !approvement.leader_statement
-      statement = LeaderStatement.new('person_id' => @person.id)
-    elsif @person.is_a?(Dean) &&
-      !approvement.dean_statement
-      statement = DeanStatement.new('person_id' => @person.id)
-    end
-    return statement
-  end
   def localize
     # We will use instance vars for the locale so we can make use of them in
     # the templates.

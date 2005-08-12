@@ -103,11 +103,9 @@ class StudyPlansController < ApplicationController
   # approves study plan 
   def approve
     study_plan = StudyPlan.find(@params['id'])
-    study_plan.approvement ||= StudyPlanApprovement.create
-    approvement = study_plan.approvement
-    @statement = prepare_statement(study_plan.approvement) 
-    render_partial("shared/approve", :approvement => approvement, :title =>
-    _("approvement"), :options => [[_("approve"), 1], [_("cancel"), 0]])
+    @statement = study_plan.index.statement_for(@person) 
+    render_partial("shared/approve", :approvement => study_plan.approvement,
+    :title => _("approvement"), :options => [[_("approve"), 1], [_("cancel"), 0]])
   end
   # confirms and saves statement
   def confirm_approve
@@ -121,17 +119,15 @@ class StudyPlansController < ApplicationController
       !statement.cancel?
     study_plan.save
     render(:partial => 'show', :locals => {:remove =>
-    "link#{study_plan.id}", :study_plan => study_plan})
+    "approve_form#{study_plan.id}", :study_plan => study_plan})
   end
   # atests study plan 
   def atest
     study_plan = StudyPlan.find(@params['id'])
-    study_plan.atestation ||= Atestation.create
-    approvement = study_plan.atestation
-    @statement = prepare_statement(study_plan.atestation) 
+    @statement = study_plan.index.statement_for(@person) 
     render_partial("shared/approve", :title => _("atestation"), :options => 
     [[_("approve"), 1], [_("approve with condition"), 2], [_("cancel"), 0]],
-    :approvement => approvement)
+    :approvement => study_plan.atestation)
   end
   # confirms and saves statement
   def confirm_atest
@@ -146,7 +142,7 @@ class StudyPlansController < ApplicationController
     end
     study_plan.save
     render(:partial => 'show', :locals => {:remove =>
-    "link#{study_plan.id}", :study_plan => study_plan})
+    "approve_form#{study_plan.id}", :study_plan => study_plan})
   end
   # for remote adding subjects to page
   def subjects

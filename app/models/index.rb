@@ -18,5 +18,22 @@ class Index < ActiveRecord::Base
   def finished?
     return true unless self.finished_on.nil?
   end
-
+  # returns statement if this index waits for approvement from person
+  def statement_for(person)
+    if self.study_plan && !self.study_plan.approved?
+      self.study_plan.approvement ||= StudyPlanApprovement.create
+      if result = self.study_plan.approvement.prepare_statement(person)
+        return result
+      end
+    elsif !self.disert_theme.approved? 
+      self.disert_theme.approvement ||= DisertThemeApprovement.create 
+      if result = self.disert_theme.approvement.prepare_statement(person)
+        return result
+      end
+    elsif AtestationTerm.actual?(self.student.faculty) &&
+        !self.study_plan.atested_for?(AtestationTerm.actual(self.student.faculty))
+      self.study_plan.atestation ||= Atestation.create
+      return self.study_plan.atestation.prepare_statement(person)
+    end
+  end
 end

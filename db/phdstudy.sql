@@ -228,6 +228,7 @@ CREATE TABLE study_plans (
   index_id integer,
   finishing_to integer,
   admited_on datetime default 0,
+  last_atested_on default 0,
   canceled_on datetime default 0,
   approved_on datetime default 0,
   created_on datetime,
