@@ -57,7 +57,7 @@ class ProbationTermsController < ApplicationController
   end
   
   # created exam object and subjects for select 
-  # TODO sql finder for only subjects wich actually any student has
+  # TODO sql finder for only subjects which actually any student has
   def create
     @probation_term = ProbationTerm.new('created_by' => @session['user'].person.id)
     @session['probation_term'] = @probation_term
@@ -145,8 +145,26 @@ class ProbationTermsController < ApplicationController
     if (!@session['user'].person.nil?) 
       person = @session['user']
       @subjects = Subject.for_person(person)
+      if (@params['search_field'].length > 0)
+        @subjects_new = []
+        @subjects.each do |sub| 
+            label = sub.label
+           search_field = @params['search_field']
+           if ((label.length) <= (search_field.length))
+             search_string = @params['search_field'][0..(label.length - 1)]
+           else
+             search_string = @params['search_field']
+           end
+           label_cutted = label[0..(search_string.length - 1)]
+           if (search_string.eql?(label_cutted))
+             @subjects_new << sub
+           end
+          end
+      else
+        @subjects_new = @subjects
+      end
       @probation_terms = []
-      @subjects.each {|sub| @probation_terms.concat(sub.probation_terms)}
+      @subjects_new.each {|sub| @probation_terms.concat(sub.probation_terms)}
       render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
     end
   end

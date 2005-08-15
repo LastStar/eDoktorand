@@ -184,7 +184,7 @@ class ExamsController < ApplicationController
     render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
   end
 
-  # searches in exam list for students with desired lastname
+  # searches in exam list for subject with desired lastname
   def search_exam
     @conditions_exam = "null is not null"
     @conditions_exam.first << ' label like ?'
