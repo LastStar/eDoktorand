@@ -9,7 +9,7 @@ class StudyPlan < ActiveRecord::Base
   def approved?
     return true if self.approved_on
   end
-  # returns if study plan is canceled
+  # returns if study plan is canceled 
   def canceled?
     return true if self.canceled_on
   end
@@ -20,5 +20,31 @@ class StudyPlan < ActiveRecord::Base
   #  returns true if study plan has been atested for last atestation
   def atested_for?(atestation)
     return true if self.last_atested_on && self.last_atested_on > atestation.opening_on
+  end
+  # returns atestation detail for next atestation  
+  def next_atestation_detail
+    if AtestationTerm.next?(self.index.student.faculty)
+      at = AtestationTerm.next(self.index.student.faculty)
+      return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
+      atestation_term_id = ?', self.id, at.id ])
+    end
+  end
+  # returns atestation detail for actual atestations
+  def actual_atestation_detail
+    if AtestationTerm.actual?(self.index.student.faculty)
+      at = AtestationTerm.actual(self.index.student.faculty)
+      return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
+      atestation_term_id = ?', self.id, at.id ])
+    end
+  end
+  # returns count of atestation for study plan
+  def atestation_count
+    Atestation.count(['document_id = ?', self.id])
+  end
+  # return plan subjects for atestation
+  def atestation_subjects
+    PlanSubject.find(:all, :conditions => ['study_plan_id = ? and finishing_on
+    >= ? and finishing_on <= ?', self.id, self.atestation_count * 2 - 2,
+    self.atestation_count * 2])
   end
 end

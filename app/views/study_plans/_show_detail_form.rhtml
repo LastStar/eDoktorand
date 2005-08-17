@@ -1,0 +1,4 @@
+<%= update_element_function("study_plan#{study_plan.id}", :position => :before,
+:content => render(:partial => "detail_form")) %>
+<%= update_element_function("detail_link#{study_plan.id}", :action => :remove) %>
+

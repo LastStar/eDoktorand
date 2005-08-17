@@ -1,12 +1,8 @@
 
-<h5><%= _("Current atestation term") %></h5>
+<h5><%= title%></h5>
 <ul>
 <li>
 <%= "#{_('Atestation date')}: 
 #{atestation_term.opening_on.strftime('%d. %m. %Y')}" %>
-</li>
-<li>
-<%= "#{_('Atestation ends')}: 
-#{atestation_term.closing_on.strftime('%d. %m. %Y')}" %>
 </li>
 </ul>

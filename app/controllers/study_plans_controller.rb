@@ -18,7 +18,7 @@ class StudyPlansController < ApplicationController
     @study_plan = @student.index.study_plan
   end
   # start of the study plan creating process
-  # namely disert theme
+  # namely obligate subjects
   def create
     reset_plan_session
     @session['plan_subjects'] = []
@@ -29,6 +29,7 @@ class StudyPlansController < ApplicationController
     create_obligate
   end
   # saves obligate subjects to session
+  # and creates language subjects
   def save_obligate
     @session['study_plan'].attributes = @params['study_plan']
     @params['plan_subject'].each do |id, ps|
@@ -42,6 +43,7 @@ class StudyPlansController < ApplicationController
     @session['plan_subjects'], :study_plan => @session['study_plan']})  
   end
   # saves language subjects to session
+  # and creates voluntary subjects
   def save_language
     extract_language
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 2
@@ -57,6 +59,7 @@ class StudyPlansController < ApplicationController
     end
   end
   # saves voluntary subjects to session
+  # and prepares disert theme
   def save_voluntary
     @errors = []
     extract_voluntary
@@ -125,9 +128,8 @@ class StudyPlansController < ApplicationController
   def atest
     study_plan = StudyPlan.find(@params['id'])
     @statement = study_plan.index.statement_for(@person) 
-    render_partial("shared/approve", :title => _("atestation"), :options => 
-    [[_("approve"), 1], [_("approve with condition"), 2], [_("cancel"), 0]],
-    :approvement => study_plan.atestation)
+    render(:partial => 'show_atestation', :locals => {:approvement =>
+    study_plan.atestation, :study_plan => study_plan})
   end
   # confirms and saves statement
   def confirm_atest
@@ -137,7 +139,7 @@ class StudyPlansController < ApplicationController
     eval("study_plan.atestation.#{@params['statement']['type'].underscore} =
     statement")
     if statement.cancel? && statement.is_a?(DeanStatement)
-      study_plan.index.finished_on =  Time.now 
+      study_plan.index.finished_on = Time.now 
       study_plan.index.save
     end
     study_plan.save
@@ -155,6 +157,20 @@ class StudyPlansController < ApplicationController
     study_plan = StudyPlan.find(@params['id'])
     render(:partial => 'show', :locals => {:study_plan => study_plan, :remove =>
     nil})
+  end
+  # prepares form for atestation details
+  def atestation_details
+    @atestation_detail = @student.index.study_plan.next_atestation_detail ||
+    AtestationDetail.new('study_plan_id' => @student.index.study_plan.id,
+    'atestation_term_id' => AtestationTerm.next(@student.faculty).id) 
+    render(:partial => 'show_detail_form', :locals => {:study_plan =>
+    @student.index.study_plan})
+  end
+  # saves atestation detail 
+  def save_atestation_detail
+    atestation_detail = AtestationDetail.create(@params['atestation_detail'])  
+    render(:partial => 'after_save_detail', :locals => {:study_plan => 
+    @student.index.study_plan})
   end
   private	
   # prepares obligate subjects

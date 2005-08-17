@@ -1,0 +1,12 @@
+<div id='form'>
+<%= form_remote_tag(:url => {:action => 'save_atestation_detail'}, 
+:loading => visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+"loading"), :complete => evaluate_remote_response) %>	
+<label class='smaller' for="atestation_detail_detail"><%= _('additional information') %></label>
+<%= text_area 'atestation_detail', 'detail'  %><br/> 
+<%= hidden_field 'atestation_detail', 'study_plan_id' %>
+<%= hidden_field 'atestation_detail', 'atestation_term_id' %>
+<%= submit_tag "commit" %>
+<%= end_form_tag %>
+</div> 
+

@@ -92,18 +92,20 @@ module ApplicationHelper
   end
   # prints approve links
   def approve_links(document, controller)
-    if @person == document.index.tutor &&
-      (!document.approvement || (document.approvement &&
-      !document.approvement.tutor_statement))
-      approve_link(document, controller, 'tutor')
-    elsif @person.is_a?(Leader) &&
-      @person == document.index.leader &&
-      document.approvement && !document.approvement.leader_statement
-      approve_link(document, controller, 'leader') 
-    elsif @person.is_a?(Dean) &&
-      document.approvement && document.approvement.leader_statement && 
-      !document.approvement.dean_statement
-      approve_link(document, controller, 'dean')
+    if !study_plan.canceled?
+      if @person == document.index.tutor &&
+        (!document.approvement || (document.approvement &&
+        !document.approvement.tutor_statement))
+        approve_link(document, controller, 'tutor')
+      elsif @person.is_a?(Leader) &&
+        @person == document.index.leader &&
+        document.approvement && !document.approvement.leader_statement
+        approve_link(document, controller, 'leader') 
+      elsif @person.is_a?(Dean) &&
+        document.approvement && document.approvement.leader_statement && 
+        !document.approvement.dean_statement
+        approve_link(document, controller, 'dean')
+      end
     end
   end
   # prints atestation links
@@ -133,13 +135,6 @@ module ApplicationHelper
     "loading"), :complete => evaluate_remote_response}, {:id =>
     "subject_link#{study_plan.id}"})
   end
-  # prints tutor links 
-  def tutor_links(study_plan)
-    if !study_plan.canceled?
-      [approve_links(study_plan, 'study_plans'),
-      atestation_links(study_plan)].join
-    end
-  end
   # prints statements approvement 
   def print_statements(approvement)
     links = ''
@@ -153,6 +148,21 @@ module ApplicationHelper
       links << print_statement(approvement.dean_statement) 
     end
     return links
+  end
+  # prints atestaion subject line wihch depends on finishing of the subject
+  def atestation_subject_line(plan_subject, atestation_term)
+    content = ''
+    if plan_subject.finished? && (plan_subject.finished_on <= atestation_term.opening_on)
+      content << content_tag('div', 
+      plan_subject.finished_on.strftime('%d. %m. %Y'), :class => 'info')
+      html_class = ''
+    else
+      content << content_tag('div', "#{plan_subject.finishing_on}.
+      #{_('semester')}", :class => 'info')
+      html_class = 'unfinished'
+    end
+    content << plan_subject.subject.label
+    content_tag('li', content, :class => html_class)
   end
   private 
   # prints statement
@@ -196,5 +206,13 @@ module ApplicationHelper
     :id => disert_theme}, :loading => visual_effect(:appear, 'loading'), 
     :interactive => visual_effect(:fade, "loading"), :complete => 
     evaluate_remote_response}), {:id => "methodology_link#{disert_theme.id}"})
+  end
+  # prints atestation detail link
+  def atestation_detail_link(study_plan)
+    link_to_remote(_("additional information"), {:url => {:controller => 
+    'study_plans', :action => 'atestation_details', :id => study_plan}, 
+    :loading => visual_effect(:appear, 'loading'), :interactive => 
+    visual_effect(:fade, "loading"), :complete => evaluate_remote_response}, 
+    {:id => "detail_link#{study_plan.id}"})
   end
 end

@@ -1,0 +1,17 @@
+<% if atestation_subjects = study_plan.atestation_subjects 
+  atestation_term = AtestationTerm.actual(study_plan.index.student.faculty)%> 
+<p><%= _("Unfinished subjects are in red.") %></p>
+<ul>
+  <% for subject in atestation_subjects %> 
+    <%= atestation_subject_line(subject, atestation_term) %>
+  <% end %>
+</ul>
+<% else %>
+<p><%= _("Student didn't have any subject for this atestation.") %></p>
+<% end %>
+<% if study_plan.actual_atestation_detail  %>
+<p> <%= _("Additional information provided by student") %></p>
+<p>
+<%= study_plan.actual_atestation_detail.detail %>
+</p>
+<% end %>

@@ -456,6 +456,19 @@ CREATE TABLE disert_themes (
   updated_on datetime
 );
 
+--
+-- Table structure for table atestation_details
+--
+
+DROP TABLE IF EXISTS atestation_details;
+CREATE TABLE atestation_details (
+  id integer primary key auto_increment,
+  atestation_id integer,
+  detail text, 
+  created_on datetime,
+  updated_on datetime
+);
+
 -- deprecated in favor of simple methodology file in disert
 -- Table structure for table methodologies
 --

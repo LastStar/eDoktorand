@@ -13,8 +13,16 @@
   <%= _("Study plan") %>
 </h5>
 <%= subjects_link(study_plan) %>
+<%= atestation_links(study_plan) %>
+<% if @study_plan && AtestationTerm.next?(@student.faculty) %>
+<%= atestation_detail_link(study_plan) %>
+<% end %>
 <ul id='<%= "study_plan#{study_plan.id}" %>'>
-
+<% if AtestationTerm.actual?(@person.faculty) && study_plan.approved? &&
+study_plan.index.disert_theme.approved? %>
+<%= render(:partial => 'shared/atestation_materials', :locals => {:study_plan =>
+study_plan}) %>
+<% end %>
 <% if study_plan.canceled? %>
   <li>
   <div class='info'><%= study_plan.canceled_on.strftime('%d. %m. %Y') %></div>

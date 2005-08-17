@@ -1,16 +1,19 @@
-<% if @atestation_term %>
+<% if @atestation_terms['actual'] %>
 <%= render(:partial => 'atestation_term', :locals => {:atestation_term =>
-@atestation_term }) %>
+@atestation_terms['actual'], :title => _("Current atestation term")}) %>
+<% end %>
+<% if @atestation_terms['next'] %>
+<%= render(:partial => 'atestation_term', :locals => {:atestation_term =>
+@atestation_terms['next'], :title => _("Next atestation term")}) %>
 <% elsif @session['user'].person.is_a? Dean ||@session['user'].person.is_a?
 FacultySecretary %>
 <div id='form'>
+<h5><%= _("Next atestation term") %></h5>
 <%= form_remote_tag(:url => {:action => 'create'}, :loading =>
       visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
       "loading"), :complete => evaluate_remote_response) %>	
       <p><label for="atestation_terms_opening_on"><%= _('Atestation date') %></label>
 <%= date_select 'atestation_term', 'opening_on'  %></p>
-<p><label for="atestation_terms_closing_on"><%= _('Atestation ends') %></label>
-<%= date_select 'atestation_term', 'closing_on'  %></p>
 <%= submit_tag "commit" %>
 <%= end_form_tag %>
 </div>

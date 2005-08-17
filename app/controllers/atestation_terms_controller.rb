@@ -7,7 +7,13 @@ class AtestationTermsController < ApplicationController
   # dean and faculty secretary should have chance to create new one
   def index
     @title = _("Atestation")
-    @atestation_term = AtestationTerm.actual(@person.faculty)
+    @atestation_terms = {}
+    @atestation_terms['actual'] = AtestationTerm.actual(@person.faculty)
+    if AtestationTerm.next?(@person.faculty)
+      @atestation_terms['next'] = AtestationTerm.next(@person.faculty)
+    else
+      @atestation_term = AtestationTerm.new
+    end
   end
   # creates atestation
   def create
