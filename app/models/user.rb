@@ -1,13 +1,36 @@
 require 'digest/sha1'
+require 'ldap'
 
 # this model expects a certain database layout and its based on the name/login pattern. 
 class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
 	belongs_to :person
-
+  
   def self.authenticate(login, pass)
-    find_first(["login = ? AND password = ?", login, sha1(pass)])
-  end  
+    if RAILS_ENV == 'production'
+      result = find(:first, :conditions => ['login = ?', login])
+      if result 
+          ldap_context = result.person.faculty.ldap_context
+          conn = LDAP::Conn.new('193.84.33.9', 389)
+          conn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
+        begin
+          conn.bind( "cn=#{login},ou=#{ldap_context},o=czu, c=cz", pass )
+          return result
+        rescue => e
+          false
+        ensure
+          conn.unbind unless conn == nil
+          conn = nil
+        end
+      end
+    else
+      find_first(["login = ? AND password = ?", login, sha1(pass)])
+    end
+  end
+  
+  #def self.authenticate(login, pass)
+  #  find_first(["login = ? AND password = ?", login, sha1(pass)])
+  #end  
 
   def change_password(pass)
     update_attribute "password", self.class.sha1(pass)
