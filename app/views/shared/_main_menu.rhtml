@@ -1,12 +1,11 @@
 	<% if @session['user'].person.is_a?(Student) and @student %>
     <% if !@student.index.study_plan || @student.index.study_plan.canceled? %>
     <%= link_to(_("create study plan"), {:action => 'create', :id => @student}, 
-    :confirm => 
-    _("Have you consulted your study plan with tutor. It is highly recomended")) %>
+    :confirm => _("Have you consulted your study plan with tutor. It is highly recomended")) %>
     <% 
       elsif @student.index.study_plan.approved? 
     %>
-      <%= link_to_unless_current(_("probation_terms"), :controller =>
+      <%= link_to_unless_current(_("probation terms"), :controller =>
     'probation_terms'){} %>
       <%= link_to_unless_current(_("study plan"), :controller =>
     'study_plans'){} %>
@@ -17,12 +16,12 @@
     <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>
     <%= link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} %>
     <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
-    <%= link_to_unless_current(_("probation_terms"), :controller =>
+    <%= link_to_unless_current(_("probation terms"), :controller =>
     'probation_terms'){} %>
   <% elsif @session['user'].has_role?('tutor') ||
     @session['user'].has_role?('department_secretary') %>
     <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
-    <%= link_to_unless_current(_("probation_terms"), :controller =>
+    <%= link_to_unless_current(_("probation terms"), :controller =>
     'probation_terms'){} %>
   <% end %>
   <%= link_to_unless_current(_("students"), :controller => 'students'){} %>
@@ -31,7 +30,7 @@
   <%= link_to_unless_current(_("atestations"), :controller => 'atestation_terms'){} %>
   <% end %>
   <% end %>
-    <%= link_to_unless_current(_("logoff"), {:controller => 'account', 
-      :action => 'logout'}, :confirm =>  _("do you really want to") + ' ' +
-      _("logoff") + '?'){} %>
+  <%= link_to_unless_current(_("logoff"), {:controller => 'account', 
+    :action => 'logout'}, :confirm =>  _("do you really want to") + ' ' +
+    _("logoff") + '?'){} %>
 

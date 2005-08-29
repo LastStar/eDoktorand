@@ -1004,8 +1004,14 @@ msgstr ""
 
  msgid "date finished"
  msgstr "splněna dne"
+ 
+ msgid "probation terms"
+ msgstr "termíny zkoušek"
+ 
+ msgid "There are no probation terms by your selection"
+ msgstr "V systému nejsou žádné zkouškové termíny podle Vašeho výběru"
 
-
-
+msgid "Probation term from subject"
+msgstr "Zkouškový termín z předmětu"
 
 

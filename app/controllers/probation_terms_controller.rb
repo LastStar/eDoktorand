@@ -85,6 +85,7 @@ class ProbationTermsController < ApplicationController
   end
 
   # saves the subject of probation term to session and adds students 
+  # TODO rename to save_subject
   def save_probation_term_subject
     probation_term = @session['probation_term']
     probation_term.subject_id = @params['subject']['id']
@@ -94,6 +95,7 @@ class ProbationTermsController < ApplicationController
   
   # saves the details of the probation term and prepares the examinators
   # selection
+  # TODO rename to save_details
   def save_probation_term_details
     probation_term = @session['probation_term']
     probation_term.attributes = @params['probation_term']

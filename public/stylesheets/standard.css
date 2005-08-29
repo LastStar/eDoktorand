@@ -26,20 +26,19 @@ hr {
   border-top: 1px solid black;
 }
 h1, h2, h3, h4, h5 { color: black;}
-h1 { 
+/*h1 { 
   font-size: 12pt;
-  background-color: #452;
   padding-left: 1.5em;
   margin: 0px;
   color: #ddc;
   line-height: 15pt;
   border-bottom: 1px solid #784;
   border-top: 1px solid #784;
-}
+}*/
 h2 { font-size: 24px; margin: 5px; }
 h3 { font-size: 20px; margin: 5px; }
 h4 { padding: 4px; margin: 0px; font-size: 18px; }
-h5 { 
+/*h5 { 
   font-size: 16px;
   margin: 0px;
   margin-top: 0.5ex; 
@@ -48,7 +47,7 @@ h5 {
   border-left: 10px solid #784;
   background-color: #ddc;
   color: #452;
-}
+}*/
 
 li { 
   margin: 0 0 1px 0;
@@ -283,4 +282,62 @@ table.list td {
   border-top: 1px solid #ddc;
   border-bottom: 1px solid #ddc;
 }
+#HeadMenu {
+	margin-left: auto;
+	margin-right: auto;
+	width: 760px;
+	height: 36px;
+	background-image: url(/images/head_bg.gif);
+	background-repeat: repeat-x;
+	text-align: left;
+  padding: 0px;
+}
+#HeadMenuContent {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#HeadMenu h1 {
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+	font-size: 14px;
+	color: White;
+}
+#Head {
+	margin-left: auto;
+	margin-right: auto;
+  padding: 0px;
+}
+
+#HeadMenu a {
+  padding: 5px;
+	/*width: 51px;*/
+	height: 20px;
+	/*background-image: url(/images/tl.off.gif);*/
+	/*background-repeat: no-repeat;*/
+	float: right;
+	font-size: 14px;
+	color: White;
+	text-decoration: none;
+}
+h5 {
+	margin: 0;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	padding: 0;
+	color: white;
+	font-size: 14px;
+	height: 17px;
+	padding-left: 30px;
+	padding-top: 3px;
+	background-image: url(/images/h5_bg.gif);
+	background-repeat: no-repeat;
+}
+
+/*
+#HeadMenu a:hover {
+	background-image: url(/images/tl.on.gif);	
+}
+*/
 
