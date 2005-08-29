@@ -9,3 +9,5 @@ ActionMailer::Base.server_settings = {
 require 'gettext_extension'
 $KCODE = 'u'
 require 'jcode'
+FACULTY_CFG =
+YAML::load(File.open("#{RAILS_ROOT}/config/faculty_configurations.yml"))

@@ -187,7 +187,9 @@ CREATE TABLE studies (
 DROP TABLE IF EXISTS people;
 CREATE TABLE people (
   id integer primary key auto_increment,
+  uic integer,
   firstname varchar(101),
+  birthname varchar(100),
   lastname varchar(100),
   birth_on date,
   birth_number varchar(10),

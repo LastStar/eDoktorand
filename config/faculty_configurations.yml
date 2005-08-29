@@ -1,0 +1,5 @@
+# this file stores configuration values for each faculty
+
+lf:
+  atestation_semester: 1
+  subjects_count: 5 

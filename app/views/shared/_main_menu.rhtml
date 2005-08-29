@@ -3,9 +3,8 @@
     <%= link_to(_("create study plan"), {:action => 'create', :id => @student}, 
     :confirm => 
     _("Have you consulted your study plan with tutor. It is highly recomended")) %>
-    <% end %>
     <% 
-      if @student.index.study_plan.approved? 
+      elsif @student.index.study_plan.approved? 
     %>
       <%= link_to_unless_current(_("probation_terms"), :controller =>
     'probation_terms'){} %>

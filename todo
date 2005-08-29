@@ -1,8 +1,12 @@
+- import data
+  - departments
+  - tutors
+  - students
++ add configuration
 - enhance study plan
   - number of subjects is variable depends on coridor and faculty
   - atestation summary is added on study plan creation
   - longer text field for disert theme title
-  - 
 - student detail printing  
   - subjects are shown on all details 
   - approvement process have its own part

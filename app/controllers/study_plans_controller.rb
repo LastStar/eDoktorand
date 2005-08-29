@@ -1,4 +1,3 @@
-# TODO rewamp to use index instead of student 
 class StudyPlansController < ApplicationController
   include LoginSystem
   model :student

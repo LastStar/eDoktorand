@@ -92,7 +92,8 @@ module ApplicationHelper
   end
   # prints approve links
   def approve_links(document, controller)
-    if !study_plan.canceled?
+    if (document.is_a?(StudyPlan) && !document.canceled?) ||
+      document.is_a?(DisertTheme)
       if @person == document.index.tutor &&
         (!document.approvement || (document.approvement &&
         !document.approvement.tutor_statement))

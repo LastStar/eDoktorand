@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 90\n"
-"POT-Creation-Date: 2005-08-10 08:22+0200\n"
+"POT-Creation-Date: 2005-08-29 11:49+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -100,7 +100,19 @@ msgstr "Česká republika"
 msgid "Czech agriculture university"
 msgstr "Česká zemědělská univerzita v Praze"
 
+msgid "Probation terms"
+msgstr ""
+
 msgid "Students"
+msgstr ""
+
+msgid "all students"
+msgstr ""
+
+msgid "not approved"
+msgstr ""
+
+msgid "my students"
 msgstr ""
 
 msgid "Study plan"
@@ -116,9 +128,6 @@ msgid "subjects have to be different"
 msgstr ""
 
 msgid "approvement"
-msgstr ""
-
-msgid "approve with condition"
 msgstr ""
 
 msgid "title for external subject cannot be empty"
@@ -142,7 +151,10 @@ msgstr ""
 msgid "subjects"
 msgstr ""
 
-msgid "atest"
+msgid "methodology file (opens new window)"
+msgstr ""
+
+msgid "additional information"
 msgstr ""
 
 msgid "make ready"
@@ -244,6 +256,9 @@ msgstr ""
 msgid "exam by person"
 msgstr ""
 
+msgid "new term"
+msgstr ""
+
 msgid "study"
 msgstr ""
 
@@ -304,13 +319,13 @@ msgstr ""
 msgid "candidate must be admited before enrollment"
 msgstr ""
 
+msgid "Next atestation term"
+msgstr ""
+
 msgid "Current atestation term"
 msgstr ""
 
 msgid "Atestation date"
-msgstr ""
-
-msgid "Atestation ends"
 msgstr ""
 
 #, fuzzy
@@ -572,10 +587,64 @@ msgstr ""
 msgid "note"
 msgstr ""
 
+msgid "enrolled students"
+msgstr ""
+
+msgid "Probation term details"
+msgstr ""
+
+msgid "room"
+msgstr ""
+
+msgid "starting time"
+msgstr ""
+
+msgid "date"
+msgstr ""
+
+msgid "maximum of students"
+msgstr ""
+
+msgid "note for students"
+msgstr ""
+
+msgid "Probation term agenda"
+msgstr ""
+
+msgid "You are already enrolled for this term"
+msgstr ""
+
+msgid "You are already enrolled for an exam from this subject"
+msgstr ""
+
+msgid "edit"
+msgstr ""
+
+msgid "maximum/enrolled"
+msgstr ""
+
+msgid "Creating probation term"
+msgstr ""
+
+msgid "search by subject"
+msgstr ""
+
+msgid "probation term subjects"
+msgstr ""
+
+msgid "Please select the subject of the probation term."
+msgstr ""
+
 msgid "create study plan"
 msgstr ""
 
 msgid "Have you consulted your study plan with tutor. It is highly recomended"
+msgstr ""
+
+msgid "probation_terms"
+msgstr ""
+
+msgid "study plan"
 msgstr ""
 
 msgid "candidates"
@@ -600,11 +669,6 @@ msgid "do you really want to"
 msgstr ""
 
 msgid "upload methodology"
-msgstr ""
-
-msgid ""
-"methodology\n"
-"  file"
 msgstr ""
 
 msgid "methodogy approvement process"
@@ -766,6 +830,15 @@ msgstr ""
 msgid "Are you sure, your plan is ready?"
 msgstr ""
 
+msgid "Unfinished subjects are in red."
+msgstr ""
+
+msgid "Student didn't have any subject for this atestation."
+msgstr ""
+
+msgid "Additional information provided by student"
+msgstr ""
+
 msgid "semester of final exam"
 msgstr ""
 
@@ -796,6 +869,9 @@ msgstr ""
 msgid "Dean statement"
 msgstr ""
 
+msgid "approve with condition"
+msgstr ""
+
 msgid "Tutor"
 msgstr ""
 
@@ -815,9 +891,6 @@ msgid "Final exam"
 msgstr ""
 
 msgid "Subjects"
-msgstr ""
-
-msgid "study plan"
 msgstr ""
 
 msgid ""
@@ -854,7 +927,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Your methodolgy is processed now. Final approvement you \n"
+"Your methodology is processed now. Final approvement you \n"
 "will get by email. "
 msgstr ""
 
