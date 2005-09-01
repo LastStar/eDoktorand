@@ -1,0 +1,37 @@
+<h5><%= _("Finished creating exam") %></h5>
+<div>
+<%= _("Czech university of agriculture") %><br />
+<%= _("Faculty (institute): ") %><%= exam.first_examinator.faculty.name if exam.first_examinator %>
+</div>
+<br />
+<div style="text-align: right;">
+  <%= _("In Prague the") %><%= plan_subject.finished_on.strftime("%d. %m. %Y")%>
+</div>
+<br />
+<div style="text-align: center">
+  <%= _("Exam from subject") %>:&nbsp;&nbsp;<%= exam.subject.label.strip%><br /> 
+</div>
+<br />
+<br />
+<div>
+<%= _("Student") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.student.display_name.strip %><br /> 
+<%= _("Branch") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.coridor.name %><br />
+<%= _("Tutor") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.tutor.display_name %><br />
+<%= _("Department") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
+exam.index.tutor.tutorship.department.name %>
+</div>
+<br />
+<br />
+<div>
+<%= _("Questions") %>:&nbsp;&nbsp;&nbsp;&nbsp;<pre class="detail"><%= exam.questions%></pre><br /> 
+</div>
+<br />
+<div>
+<%= _("Exam clasification") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= result_word(exam.result) %><br /> 
+</div>
+<div>
+<%= _("1. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
+exam.first_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature")
+%>:&nbsp;&nbsp;<br />  
+<%= _("2. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name if exam.second_examinator%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature") %>:&nbsp;&nbsp;<br /> 
+</div>

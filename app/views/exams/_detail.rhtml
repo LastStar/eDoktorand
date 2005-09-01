@@ -1,17 +1,17 @@
 <p>
-<%= _("Student") %>:&nbsp;<b class="info"><%= exam.index.student.display_name %></b><br /> 
-<%= _("Subject") %>:&nbsp;<b class="info"><%= exam.subject.label%></b><br /> 
-<%= _("1. examinator") %>:&nbsp;<b class="info"><%= exam.first_examinator.display_name %></b><br />  
-<%= _("2. examinator") %>:&nbsp;<b class="info"><%= exam.second_examinator.display_name if exam.second_examinator%></b><br /> 
-<%= _("Created by") %>:&nbsp;<b class="info"><%= exam.creator.display_name %></b><br /> 
+<%= _("Student") %>:&nbsp;&nbsp;<%= exam.index.student.display_name.strip %><br /> 
+<%= _("Subject") %>:&nbsp;&nbsp;<%= exam.subject.label.strip%><br /> 
+<%= _("1. examinator") %>:&nbsp;&nbsp;<%= exam.first_examinator.display_name %><br />  
+<%= _("2. examinator") %>:&nbsp;&nbsp;<%= exam.second_examinator.display_name if exam.second_examinator%><br /> 
+<%= _("Created by") %>:&nbsp;&nbsp;<%= exam.creator.display_name %><br /> 
 </p> 
 <hr/>
 <p>
-<%= _("Result") %>:&nbsp;<b class="info"><%= result_word(exam.result) %></b><br /> 
+<%= _("Result") %>:&nbsp;&nbsp;<%= result_word(exam.result) %><br /> 
 </p> 
 <hr/>
 <p>
-<%= _("Questions") %>:&nbsp;<pre class="detail"><%= exam.questions%></pre><br /> 
+<%= _("Questions") %>:&nbsp;&nbsp;<pre class="detail"><%= exam.questions%></pre><br /> 
 </p> 
 <hr/>
 

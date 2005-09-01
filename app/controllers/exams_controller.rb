@@ -99,7 +99,10 @@ class ExamsController < ApplicationController
     exam.subject_id = @params['subject']['id']
     @session['exam'] = exam
     @plan_subjects = PlanSubject.find_all_by_subject_id(@params['subject']['id'])
-    render(:partial => 'main_exam', :locals => {:exam => exam})
+    plan_subject = PlanSubject.find(:all, :conditions => ['subject_id = ? and
+    study_plan_id = ?', @params['subject']['id'], exam.index.study_plan.id])
+    render(:partial => 'main_exam', :locals => {:exam => exam, :plan_subject =>
+  plan_subject})
   end
   
   # save the examindex student to session
@@ -138,7 +141,10 @@ class ExamsController < ApplicationController
     exam = @session['exam']
     exam.index = Student.find(@params['student']['id']).index
     @session['exam'] = exam
-    render(:partial => 'main_exam', :locals => {:exam => exam})
+    plan_subject = PlanSubject.find(:all, :conditions => ['subject_id = ? and
+    study_plan_id = ?', exam.subject.id, exam.index.study_plan.id])
+    render(:partial => 'main_exam', :locals => {:exam => exam, :plan_subject =>
+  plan_subject})
   end
   
   # saves exam 
@@ -146,11 +152,15 @@ class ExamsController < ApplicationController
     exam = @session['exam']
     exam.attributes = @params['exam']
     exam.created_by
+    # select the appropriate plan_subject to update the finished_on tag
     ps = PlanSubject.find(:first, :conditions => ["subject_id = ? and
-    study_plan_id =?", exam.subject_id, exam.index.study_plan.id])
-    ps.update_attribute('finished_on', Time.now) if exam.passed?
+    study_plan_id = ?", exam.subject_id, exam.index.study_plan.id])
+    ps.attributes = @params['plan_subject'] if exam.passed?
+    ps.save
     exam.save
-    redirect_to :action => 'index'
+    #redirect_to :action => 'index'
+    render(:partial => 'show', :locals => {:exam => exam,
+    :plan_subject => ps})
   end
   def edit
     @exam = Exam.find(@params[:id])

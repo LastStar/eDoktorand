@@ -3,6 +3,6 @@
 :locals => {:exam => exam})) %>
 <%= update_element_function("form", 
 :content => render(:partial => "main_exam_form",
-:locals => {:exam => exam}))%>
+:locals => {:exam => exam, :plan_subject => plan_subject}))%>
 <%= visual_effect(:slide_down, 'form') %>
 

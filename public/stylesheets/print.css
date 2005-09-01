@@ -6,6 +6,7 @@ hr {
   border: none;
 }
 h5 {
+  display: none;
 	font-size: 14pt;
 }
 .instruction {

@@ -1,0 +1,6 @@
+<%= update_element_function("done", 
+:content => render(:partial => "show_protocol", 
+:locals => {:exam => exam, :plan_subject => plan_subject})) %>
+<%= update_element_function("form", 
+:content => render(:partial => "show_protocol_link"))%>
+<%= visual_effect(:slide_down, 'form') %>
