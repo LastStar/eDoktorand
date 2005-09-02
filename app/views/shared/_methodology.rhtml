@@ -11,11 +11,4 @@
 </li>
 <% else %>
 <%= methodology_link(disert_theme) %>
-<% if disert_theme.approvement && disert_theme.approvement.tutor_statement && 
-  !disert_theme.index.study_plan.atestation %>
-<li>
-<b><%= _("methodogy approvement process") %></b> 
-</li>
-<%= print_statements(disert_theme.approvement) %>
-<% end %>
 <% end %>

@@ -28,7 +28,7 @@ class StudyPlansController < ApplicationController
     create_obligate
   end
   # saves obligate subjects to session
-  # and creates language subjects
+  # and creates voluntary subjects
   def save_obligate
     @session['study_plan'].attributes = @params['study_plan']
     @params['plan_subject'].each do |id, ps|
@@ -37,43 +37,44 @@ class StudyPlansController < ApplicationController
       last_semester(ps['finishing_on'])
       @session['plan_subjects'] << plan_subject
     end
-    create_language
-    render(:partial => 'languages', :locals => {:plan_subjects =>
-    @session['plan_subjects'], :study_plan => @session['study_plan']})  
-  end
-  # saves language subjects to session
-  # and creates voluntary subjects
-  def save_language
-    extract_language
-    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 2
-      language_subjects = @plan_subjects
-      @session['plan_subjects'] << @plan_subjects
-      create_voluntary
-      render(:partial => 'voluntarys', :locals => {:plan_subjects =>
-      language_subjects, :form_plan_subjects => @plan_subjects})
-    else
-      extract_language(true)
-      flash.now['error'] = _("languages have to be different")
-      render(:partial => 'not_valid_languages')  
-    end
+    create_voluntary
+    render(:partial => 'voluntarys', :locals => {:plan_subjects =>
+    @session['plan_subjects'], :form_plan_subjects => @plan_subjects})
   end
   # saves voluntary subjects to session
   # and prepares disert theme
   def save_voluntary
     @errors = []
     extract_voluntary
-    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 3 && @errors.empty?
+    count = FACULTY_CFG['lf']['subjects_count'] -
+    @session['plan_subjects'].size
+    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == count && @errors.empty?
       @plan_subjects.each {|ps| last_semester(ps.finishing_on)}
       @session['plan_subjects'] << @plan_subjects
-      disert_theme = @student.index.build_disert_theme
-      render(:partial => 'valid_voluntarys', 
-      :locals => {:plan_subjects => @plan_subjects, :disert_theme =>
-      disert_theme})
+      voluntary_subjects = @plan_subjects
+      create_language
+      render(:partial => 'languages', :locals => {:plan_subjects =>
+      voluntary_subjects, :study_plan => @session['study_plan']})  
     else
       extract_voluntary(true)
       @errors << _("subjects have to be different") unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 3
       flash.now['errors'] = @errors.uniq
       render(:partial => 'not_valid_voluntarys', :locals => {:form_plan_subjects => @plan_subjects})
+    end
+  end
+  # saves language subjects to session
+  # and creates voluntary subjects
+  def save_language
+    extract_language
+    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 2
+      @session['plan_subjects'] << @plan_subjects
+      disert_theme = @student.index.build_disert_theme
+      render(:partial => 'valid_languages', :locals => {:plan_subjects =>
+      @plan_subjects, :disert_theme => disert_theme})
+    else
+      extract_language(true)
+      flash.now['error'] = _("languages have to be different")
+      render(:partial => 'not_valid_languages')  
     end
   end
   # saves disert theme to session
@@ -101,13 +102,6 @@ class StudyPlansController < ApplicationController
     @study_plan.save
     reset_plan_session
     redirect_to :action => 'index'
-  end
-  # approves study plan 
-  def approve
-    study_plan = StudyPlan.find(@params['id'])
-    @statement = study_plan.index.statement_for(@person) 
-    render_partial("shared/approve", :approvement => study_plan.approvement,
-    :title => _("approvement"), :options => [[_("approve"), 1], [_("cancel"), 0]])
   end
   # confirms and saves statement
   def confirm_approve
@@ -154,6 +148,7 @@ class StudyPlansController < ApplicationController
   # renders study plan
   def show
     study_plan = StudyPlan.find(@params['id'])
+    @statement = study_plan.index.statement_for(@person)
     render(:partial => 'show', :locals => {:study_plan => study_plan, :remove =>
     nil})
   end
@@ -183,6 +178,10 @@ class StudyPlansController < ApplicationController
       @plan_subjects << ps
       index += 1
     end
+    if index == 0
+      create_voluntary
+      @voluntary = true
+    end
   end
   # prepares language  subject
   def create_language
@@ -196,7 +195,9 @@ class StudyPlansController < ApplicationController
   # prepares voluntary subject 
   def create_voluntary
     @plan_subjects = []
-    (1..3).each do |index|
+    count = FACULTY_CFG['lf']['subjects_count'] -
+    @session['plan_subjects'].size
+    (1..count).each do |index|
       ps = PlanSubject.new
       ps.id = index
       @plan_subjects << ps

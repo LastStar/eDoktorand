@@ -91,21 +91,21 @@ module ApplicationHelper
     [ _("canceled"), _("approved")][result]
   end
   # prints approve links
-  def approve_links(document, controller)
+  def approve_forms(document)
     if (document.is_a?(StudyPlan) && !document.canceled?) ||
       document.is_a?(DisertTheme)
       if @person == document.index.tutor &&
         (!document.approvement || (document.approvement &&
         !document.approvement.tutor_statement))
-        approve_link(document, controller, 'tutor')
+        approve_form(document, 'tutor')
       elsif @person.is_a?(Leader) &&
         @person == document.index.leader &&
         document.approvement && !document.approvement.leader_statement
-        approve_link(document, controller, 'leader') 
+        approve_form(document, 'leader') 
       elsif @person.is_a?(Dean) &&
         document.approvement && document.approvement.leader_statement && 
         !document.approvement.dean_statement
-        approve_link(document, controller, 'dean')
+        approve_form(document, 'dean')
       end
     end
   end
@@ -180,7 +180,7 @@ module ApplicationHelper
   end
   # prints atestation link
   def atestation_link(study_plan, person)
-    element = "approve_link#{study_plan.id}"
+    element = "approve_form#{study_plan.id}"
     link_to_remote(_("atest like #{person}"), {:url => {:controller =>
     'study_plans', :action => 'atest', :id => study_plan}, :loading => 
     visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
@@ -188,17 +188,10 @@ module ApplicationHelper
     element})
   end
   # prints approvement link
-  def approve_link(document, controller, person)
-    if document.kind_of?(StudyPlan)
-      element = "approve_link#{document.id}"
-    else
-      element = "approve_link#{document.index.study_plan.id}"
-    end
-    link_to_remote(_("approve #{document.class.to_s.underscore.humanize.downcase}
-    like #{person}"), {:url => {:controller => controller, :action => 'approve',
-    :id => document}, :loading => visual_effect(:appear, 'loading'), 
-    :interactive => visual_effect(:fade, "loading"), :complete => 
-    evaluate_remote_response}, {:id => element})
+  def approve_form(document, person)
+    render(:partial => 'shared/approve_form', :locals => {:document => document,
+    :title => _("approve like #{person}"), :options => [[_("approve"), 1], [_("cancel"),
+    0]], :action => 'confirm_approve'})
   end
   # prints methodology link
   def methodology_link(disert_theme)

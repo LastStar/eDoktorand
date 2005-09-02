@@ -1,6 +1,6 @@
 <%= update_element_function("studyPlan", :position => :bottom,
 :content => render(:partial => "shared/subjects", 
-:locals => {:subjects => plan_subjects, :title => _("languages")})) %>
+:locals => {:subjects => plan_subjects, :title => _("obligate subjects")})) %>
 <%= update_element_function("form",
 :content => render(:partial => "voluntary_form", 
 :locals => {:subjects => form_plan_subjects})) %>

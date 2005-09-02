@@ -3,9 +3,15 @@
 should be consulted with your tutor.") %>
 </p>
 <div id="done">
+<ul id='studyPlan'>
+</ul>
 </div>
 <div id="form">
+  <% unless @voluntary %>
   <%= render :partial => 'obligates' %>
+  <% else %>
+  <%= render :partial => 'voluntary_form' %>
+  <% end %>
 </div>
 <%= 
 javascript_tag <<-CODE
@@ -13,6 +19,8 @@ last = []
 last[1] = 0
 last[2] = 0
 last[3] = 0
+last[4] = 0
+last[5] = 0
 function hide_on_internal(id) {
   var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
   if((element.value == 0 && last[id] != 0) || (element.value != 0 && last[id] == 0)) {
