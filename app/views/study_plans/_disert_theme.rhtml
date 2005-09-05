@@ -1,6 +1,10 @@
 <% study_plan = disert_theme.index.study_plan %>
 <h5><%= _("Disert theme") %></h5>
+<% if disert_theme.index.study_plan %>
+<ul id=<%= "disert_theme#{disert_theme.index.study_plan.id}" %>>
+<% else %>
 <ul>
+<% end %>
   <li>
   <b><%= _("theme of disert theme") %></b>
   </li>
@@ -11,19 +15,6 @@
   <div class='info'><%= "#{disert_theme.finishing_to}. #{_('semester')}" %></div>
   <b><%= "#{_("term of disert theme defense")}" %></b>
   </li>
-  <% if study_plan && study_plan.approved? &&
-    !disert_theme.has_methodology_summary?  %>
-    <% if @student %>
-    <li id='methodology_link'>
-    <%= link_to_remote(_("add methodology summary"), {:url => {:action => 
-    'methodology_summary', :controller => 'disert_themes', :id => 
-    disert_theme}, :loading => visual_effect(:appear, 'loading'),
-    :interactive => visual_effect(:fade, "loading"), :complete => 
-    evaluate_remote_response})  %>
-    </li>
-    <% end %>
-  <% elsif disert_theme && disert_theme.has_methodology_summary? %>
     <%= render(:partial => 'shared/methodology', :locals => {:disert_theme =>
     disert_theme}) %>
-  <% end %>
 </ul>
