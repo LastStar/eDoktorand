@@ -2,21 +2,23 @@
   - departments
   - tutors
   - students
-+ add configuration
-- enhance study plan
-  - number of subjects is variable depends on coridor and faculty
-  - atestation summary is added on study plan creation
-  - longer text field for disert theme title
-- student detail printing  
-  - subjects are shown on all details 
-  - approvement process have its own part
-  - show all steps in approvement even unfinished
-  - in list view hide other study plans when one is selected
-  - subjects list with planed finishing and status (date) on same line
-- warning, that methodology must be in pdf
-- add printing
+- create infrastructure for faculty secretarys  
 - exams 
-  - swap result and questions
-  - protocol printing when exam is created
+  + swap result and questions
+  + protocol printing when exam is created
   - chance for student to print protocol for external subject
+
++ add configuration
++ enhance study plan
+  + number of subjects is variable depends on coridor and faculty
+  + atestation summary is added on study plan creation
+  + longer text field for disert theme title
++ warning, that methodology must be in pdf
++ add printing
++ student detail printing  
+  + subjects are shown on all details 
+  + approvement process have its own part
+  + show all steps in approvement even unfinished
+  + in list view hide other study plans when one is selected
+  ? subjects list with planed finishing and status (date) on same line
 

@@ -159,8 +159,7 @@ fieldset {
   width: 44em;
   margin-bottom: 5px;
   margin-left: 2.0ex;
-  padding: 0px;
-  padding-bottom: 1ex;
+  padding: 1ex;
 }
 legend {
   padding: 1ex;

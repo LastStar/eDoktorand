@@ -90,19 +90,19 @@ module ApplicationHelper
   def approve_word(result)
     [ _("canceled"), _("approved")][result]
   end
-  # prints approve links
+  # prints approve form
   def approve_forms(document)
     if (document.is_a?(StudyPlan) && !document.canceled?) ||
       document.is_a?(DisertTheme)
-      if @person == document.index.tutor &&
+      if @user.person == document.index.tutor &&
         (!document.approvement || (document.approvement &&
         !document.approvement.tutor_statement))
         approve_form(document, 'tutor')
-      elsif @person.is_a?(Leader) &&
-        @person == document.index.leader &&
+      elsif @user.person.is_a?(Leader) &&
+        @user.person == document.index.leader &&
         document.approvement && !document.approvement.leader_statement
         approve_form(document, 'leader') 
-      elsif @person.is_a?(Dean) &&
+      elsif @user.person.is_a?(Dean) &&
         document.approvement && document.approvement.leader_statement && 
         !document.approvement.dean_statement
         approve_form(document, 'dean')
@@ -111,17 +111,17 @@ module ApplicationHelper
   end
   # prints atestation links
   def atestation_links(study_plan)
-    if AtestationTerm.actual?(@person.faculty) && study_plan.approved? &&
+    if AtestationTerm.actual?(@user.person.faculty) && study_plan.approved? &&
       study_plan.index.disert_theme.approved?
-      if @person == study_plan.index.tutor &&
+      if @user.person == study_plan.index.tutor &&
         (!study_plan.atestation || (study_plan.atestation &&
         !study_plan.atestation.tutor_statement))
         atestation_link(study_plan, 'tutor')
-      elsif @person.is_a?(Leader) &&
-        @person == study_plan.index.leader &&
+      elsif @user.person.is_a?(Leader) &&
+        @user.person == study_plan.index.leader &&
         study_plan.atestation && !study_plan.atestation.leader_statement
         atestation_link(study_plan, 'leader') 
-      elsif @person.is_a?(Dean) &&
+      elsif @user.person.is_a?(Dean) &&
         study_plan.atestation && study_plan.atestation.leader_statement && 
         !study_plan.atestation.dean_statement
         atestation_link(study_plan, 'dean')
@@ -138,17 +138,9 @@ module ApplicationHelper
   end
   # prints statements approvement 
   def print_statements(approvement)
-    links = ''
-    if approvement.tutor_statement
-      links << print_statement(approvement.tutor_statement)
-    end
-    if approvement.leader_statement
-      links << print_statement(approvement.leader_statement)
-    end
-    if approvement.dean_statement
-      links << print_statement(approvement.dean_statement) 
-    end
-    return links
+    print_statement(approvement.tutor_statement, _("Tutor statement")) +
+    print_statement(approvement.leader_statement, _("Leader statement")) +
+    print_statement(approvement.dean_statement, _("Dean statement") ) 
   end
   # prints atestaion subject line wihch depends on finishing of the subject
   def atestation_subject_line(plan_subject, atestation_term)
@@ -167,16 +159,18 @@ module ApplicationHelper
   end
   private 
   # prints statement
-  def print_statement(statement)
+  def print_statement(statement, statement_type)
     result = ''
-    result << approve_word(statement.result)
-    unless statement.note.empty?
-      result << ", #{_('with note: ')} #{truncate(statement.note, 30)}"
+    if statement
+      result << approve_word(statement.result)
+      unless statement.note.empty?
+        result << ", #{_('with note: ')} #{truncate(statement.note, 30)}"
+      end
+      result = content_tag('div', statement.created_on.strftime('%d. %m. %Y'),
+      :class => 'info') + result
     end
-    result = content_tag('div', statement.created_on.strftime('%d. %m. %Y'),
-    :class => 'info') + result
     return content_tag('li', "#{content_tag('div', result, :class => 'long_info')}
-    #{_(statement.type.to_s.underscore.humanize)}", :class => 'second')
+    #{statement_type}", :class => 'second')
   end
   # prints atestation link
   def atestation_link(study_plan, person)

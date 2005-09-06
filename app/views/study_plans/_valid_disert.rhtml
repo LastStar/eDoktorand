@@ -3,10 +3,10 @@
 in previous steps. You have to confirm it otherwise it will be lost. Also
 printing it (by ctrl+p or file print) is recomended."))) %>
 <%= update_element_function("studyPlan", :position => :bottom,
-:content => render(:partial => "final_exam", 
+:content => render(:partial => "shared/final_exam", 
 :locals => {:study_plan => study_plan})) %>
 <%= update_element_function("studyPlan", :position => :bottom,
-:content => render(:partial => 'disert_theme', 
+:content => render(:partial => 'shared/disert_theme', 
 :locals => {:disert_theme => disert_theme })) %>
 <%= update_element_function("form", 
     :content => render(:partial => "accept"))%>

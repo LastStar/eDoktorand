@@ -1,11 +1,14 @@
 class ProbationTermsController < ApplicationController
   model :user
+  model :tutor
+  model :leader
+  model :dean
   include LoginSystem
   layout "employers"
   before_filter :set_title
   before_filter :login_required
-  before_filter :student_required
-  before_filter :prepare_person
+  before_filter :prepare_student
+  before_filter :prepare_user
 
   def index
     list
@@ -13,15 +16,16 @@ class ProbationTermsController < ApplicationController
   end
   
   def list
-    @subjects = []
+     []
     if (@session['user'].person.is_a?(Student) &&
       !@session['user'].person.index.study_plan.nil?)
       @plan_subjects = @session['user'].person.index.study_plan.plan_subjects
-      @plan_subjects.each{|plan| @subjects << plan.subject}
+      @subjects = @plan_subjects.inject([]) {|subjects, plan| subjects << plan.subject}
     elsif (@session['user'].person.is_a? Dean) ||
       (@session['user'].person.is_a? FacultySecretary)
-      faculty = @session['user'].person.department.faculty 
-      faculty.departments.each {|dep| @subjects << dep.subjects}
+      faculty = @session['user'].person.faculty 
+      @subjects = faculty.departments.inject([]) {|subjects, dep|
+        subjects.concat(dep.subjects)}
     elsif (@session['user'].person.is_a? Leader) ||
       (@session['user'].person.is_a? DepartmentSecretary) ||
       (@session['user'].person.is_a? Tutor)
@@ -64,17 +68,17 @@ class ProbationTermsController < ApplicationController
       subjects  = Subject.find_all()
     elsif (@session['user'].person.is_a? Dean) ||
       (@session['user'].person.is_a? FacultySecretary)
-      faculty = @session['user'].person.department.faculty 
-      subjects = []
-      faculty.departments.each {|dep| subjects << dep.subjects}
+      faculty = @session['user'].person.faculty 
+      subjects = faculty.departments.inject([]) {|subjs, dep|
+        subjs.concat(dep.subjects)}
     elsif (@session['user'].person.is_a? Leader) ||
       (@session['user'].person.is_a? DepartmentSecretary) ||
       (@session['user'].person.is_a? Tutor)
       subjects = @session['user'].person.tutorship.department.subjects
     end
     subjects = subjects.select do |sub|
-      not_finished = sub.plan_subjects.select do 
-        |ps| !ps.finished? && ps.study_plan.approved?
+      not_finished = sub.plan_subjects.select do |ps|
+        ps.study_plan.approved? && !ps.finished?  
       end
       not_finished.size > 0
     end

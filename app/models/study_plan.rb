@@ -1,10 +1,4 @@
 class StudyPlan < ActiveRecord::Base
-  belongs_to :index
-  has_many :plan_subjects
-  has_one :approvement, :class_name => 'StudyPlanApprovement', :foreign_key =>
-  'document_id'
-  has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
-  validates_presence_of :index
   # returns true if study plan is approved
   def approved?
     return true if self.approved_on
@@ -47,4 +41,11 @@ class StudyPlan < ActiveRecord::Base
     >= ? and finishing_on <= ?', self.id, self.atestation_count * 2 - 2,
     self.atestation_count * 2])
   end
+  belongs_to :index
+  has_many :plan_subjects
+  has_one :approvement, :class_name => 'StudyPlanApprovement', :foreign_key =>
+  'document_id'
+  has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
+  acts_as_audited
+  validates_presence_of :index
 end

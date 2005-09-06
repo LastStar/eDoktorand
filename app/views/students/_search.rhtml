@@ -11,12 +11,12 @@ visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
   "'search_field=' + escape(value)", :frequency => 2) %>
   <% if @filters %>
   <label for="filter_by"><%= _("filter") %></label>
-  <%= content_tag('select', options_for_select(@filters), {'id' => "filter_by",
-  'name' => "filter_by"}) %>
+  <%= content_tag('select', options_for_select(@filters, @filter.to_i), {'id' => "filter_by",
+  'name' => "filter_by", "size" => @filters.size}) %>
   <%= observe_field('filter_by', :url => {:action => 'filter'}, :update => 
   'students_list', :loading => visual_effect(:appear, 'loading'),
   :interactive => visual_effect(:fade, "loading"), :with => 
-  "'filter_by=' + escape(value)", :frequency => 1) %>
+  "'filter_by=' + escape(value)") %>
   <% end %>
 </fieldset>
 <%= end_form_tag %>

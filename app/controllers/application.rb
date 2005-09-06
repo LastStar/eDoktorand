@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
   end
   # checks if user is student. 
   # if true creates @student variable with current student
-  def student_required
+  def prepare_student
     if @session['user'].person.kind_of?(Student)
       @student = @session['user'].person 
     end
@@ -93,8 +93,8 @@ class ApplicationController < ActionController::Base
 
   
   # prepares person class variable
-  def prepare_person
-    @person = @session['user'].person if @session['user']
+  def prepare_user
+    @user = ActiveRecord::Acts::Audited.current_user = @session['user']
   end
 end
 

@@ -16,12 +16,13 @@
 <ul>
   <%= print_statements(study_plan.atestation) %>
 </ul>
-<% elsif study_plan.approvement && !disert_theme.approvement %>
+<% elsif study_plan.approvement && !disert_theme.has_methodology? %>
 <h5><%= _("study plan approvement process:") %></h5>
 <ul>
   <%= print_statements(study_plan.approvement) %>
 </ul>
-<% elsif disert_theme.approvement && disert_theme.approvement.tutor_statement %>
+<% elsif disert_theme.approvement && !disert_theme.approved? &&
+!study_plan.atestation %>
 <h5><%= _("methodogy approvement process") %></h5> 
 <ul>
   <%= print_statements(disert_theme.approvement) %>
@@ -44,11 +45,11 @@
   <b><%= _("approved on") %>: </b>
   </li>
 <% end %>
-<%= render(:partial => 'final_exam', :locals => {:study_plan => study_plan})
+<%= render(:partial => 'shared/final_exam', :locals => {:study_plan => study_plan})
 render(:partial => 'shared/subjects', :locals => {:subjects => 
 study_plan.plan_subjects, :title => _("subjects")}) %>
 </ul>
-<%= render(:partial => 'disert_theme', 
+<%= render(:partial => 'shared/disert_theme', 
   :locals => {:disert_theme => study_plan.index.disert_theme, :study_plan =>
   study_plan, :methodology => true}) %>
 <%= approve_forms(study_plan) %>

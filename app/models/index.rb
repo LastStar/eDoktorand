@@ -14,6 +14,10 @@ class Index < ActiveRecord::Base
   def leader
     self.department.leadership.leader
   end
+  # returns dean of department for this student
+  def dean
+    self.department.faculty.deanship.dean
+  end
   # returns if study plan is finished
   def finished?
     return true unless self.finished_on.nil?
@@ -25,7 +29,7 @@ class Index < ActiveRecord::Base
       if result = self.study_plan.approvement.prepare_statement(person)
         return result
       end
-    elsif !self.disert_theme.approved? 
+    elsif self.disert_theme && !self.disert_theme.approved? 
       self.disert_theme.approvement ||= DisertThemeApprovement.create 
       if result = self.disert_theme.approvement.prepare_statement(person)
         return result

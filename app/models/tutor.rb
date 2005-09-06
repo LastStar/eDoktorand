@@ -1,3 +1,4 @@
+require 'leader'
 class Tutor < Person
   has_one :tutorship
   has_many :indexes

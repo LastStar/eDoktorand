@@ -1,12 +1,9 @@
-<% unless @indices.empty? %>
 <div id='search'>
   <%= render(:partial => 'search') %>
 </div>
 <div id='students_list'>
+<% if @indices && !@indices.empty? %>
   <%= render(:partial => 'list') %>
-</div>
-</div>
-<% else %>
-<h5><%= _("There are no students in system") %>
 <% end %>
+</div>
 

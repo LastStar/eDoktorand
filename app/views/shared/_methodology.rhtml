@@ -4,11 +4,13 @@
 <li class="second">
 <%= disert_theme.methodology_summary %>
 </li>
-<% unless disert_theme.has_methodology? %>
+<% if disert_theme.index.study_plan && disert_theme.index.study_plan.approved? %>
+<%  if @student && !disert_theme.has_methodology? %>
 <li>
 <%= link_to(_("upload methodology"), :controller => "disert_themes", :action => 
 "upload_methodology", :id => disert_theme.id) %>
 </li>
-<% else %>
+<% elsif disert_theme.has_methodology? %>
 <%= methodology_link(disert_theme) %>
+<% end %>
 <% end %>

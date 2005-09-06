@@ -1,13 +1,16 @@
 class StudentsController < ApplicationController
   include LoginSystem
-  model :student
   model :user
+  model :tutor
   model :leader
   model :dean
+  model :student
   model :faculty_secretary
   layout 'employers'
-  before_filter :login_required, :set_title, :prepare_conditions,
-  :prepare_person, :prepare_order, :prepare_filter 
+  before_filter :login_required, :set_title, 
+  :prepare_user
+  before_filter :prepare_order, :prepare_conditions, :prepare_filter, :except => [:show,
+  :contact]
   
   # lists all students
   def index
@@ -33,18 +36,19 @@ class StudentsController < ApplicationController
   end
   # filters students
   def filter(options = {})
-    filter = @params['filter_by'] || @session['filter']
-    case filter
+    @filter = @params['filter_by'] || @session['filter']
+    case @filter
     when "2"
-      @conditions.first << ' AND study_plans.approved_on IS NULL'
+      @conditions.first << ' AND (study_plans.approved_on IS NULL OR
+      disert_themes.approved_on IS NULL)'
       list
-      @indices = @indices.select {|i| i.statement_for(@person)} 
+      @indices = @indices.select {|i| i.statement_for(@user.person)} 
     when "1"
-      @indices = @person.indexes
+      @indices = @user.person.indexes
     when "0"
       list
     end
-    @session['filter'] = @params['filter_by']
+    @session['filter'] = @filter
     unless options[:dont_render]
       render(:partial => 'list')
     end 
@@ -74,8 +78,9 @@ class StudentsController < ApplicationController
   # prepares filter variable
   def prepare_filter 
     @filters = [[_("all students"), 0], [_("waitining for my approvement"), 2]]
-    @session['filter'] ||= '0' 
-    if (@person.is_a?(Leader) || @person.is_a?(Dean)) && !@person.indexes.empty?
+    # default filter to waiting for approvement 
+    @session['filter'] ||= '2'
+    if (@user.person.is_a?(Leader) || @user.person.is_a?(Dean)) && !@user.person.indexes.empty?
      @filters <<  [_("my students"), 1]
     end
   end

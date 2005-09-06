@@ -10,9 +10,13 @@
 <fieldset>
 <%= hidden_field 'disert_theme', 'index_id' %>
 <label for="disert_theme_title"><%= _("theme of disert theme") %>:</label>
-<%= text_field 'disert_theme', 'title' %><br/>
+<%= text_field 'disert_theme', 'title', 'size' => 35 %><br/>
 <label for="candidate_study_id"><%= _("term of disert theme defense") %></label>
 <%= select 'disert_theme', 'finishing_to', @session['last_semester']..6 %><br/>
+<label class='smaller' for="disert_theme_methodology_summary"><%= _("methodology summary") %>:</label>
+<textarea name='disert_theme[methodology_summary]'
+id='disert_theme_methodology_summary' cols='50' rows='45'><%= 
+disert_theme.methodology_summary %></textarea>
 </fieldset>
 <%= submit_tag _("commit") %>
 <%= end_form_tag %>

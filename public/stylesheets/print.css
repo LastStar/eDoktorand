@@ -98,3 +98,9 @@ table.list td {
 li.second {
   list-style: none;
 }
+a { 
+  display: none;
+}
+#Head {
+  display: none;
+}

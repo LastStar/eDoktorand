@@ -1,9 +1,4 @@
 class DisertTheme < ActiveRecord::Base
-  belongs_to :index
-  has_one :approvement, :class_name => 'DisertThemeApprovement', :foreign_key => 'document_id'
-  validates_presence_of :title
-  validates_presence_of :methodology_summary, :on => :update
-  validates_presence_of :finishing_to
   def self.save(disert_theme)
     File.open("public/pdf/methodology#{disert_theme['id']}.pdf", "w") do |f|
       f.write(disert_theme['methodology_file'].read) 
@@ -28,4 +23,10 @@ class DisertTheme < ActiveRecord::Base
     self.methodology_added_on = nil
     self.save
   end
+  belongs_to :index
+  has_one :approvement, :class_name => 'DisertThemeApprovement', :foreign_key => 'document_id'
+  validates_presence_of :title
+  validates_presence_of :methodology_summary, :on => :update
+  validates_presence_of :finishing_to
+  acts_as_audited
 end

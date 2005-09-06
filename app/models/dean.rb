@@ -4,5 +4,4 @@ class Dean < Leader
   def faculty
     deanship.faculty
   end
-
 end

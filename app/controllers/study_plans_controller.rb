@@ -1,3 +1,4 @@
+require 'leader'
 class StudyPlansController < ApplicationController
   include LoginSystem
   model :student
@@ -10,7 +11,7 @@ class StudyPlansController < ApplicationController
   model :plan_subject
   model :subject
   layout 'employers'
-  before_filter :login_required, :student_required, :prepare_person
+  before_filter :login_required, :prepare_student, :prepare_user
   # page with basic informations for student 
   def index
     @title = _("Study plan")
@@ -114,13 +115,13 @@ class StudyPlansController < ApplicationController
     study_plan.approved_on = Time.now if statement.is_a?(DeanStatement) &&
       !statement.cancel?
     study_plan.save
-    render(:partial => 'show', :locals => {:remove =>
+    render(:partial => 'shared/show', :locals => {:remove =>
     "approve_form#{study_plan.id}", :study_plan => study_plan})
   end
   # atests study plan 
   def atest
     study_plan = StudyPlan.find(@params['id'])
-    @statement = study_plan.index.statement_for(@person) 
+    @statement = study_plan.index.statement_for(@user.person) 
     render(:partial => 'show_atestation', :locals => {:approvement =>
     study_plan.atestation, :study_plan => study_plan})
   end
@@ -136,7 +137,7 @@ class StudyPlansController < ApplicationController
       study_plan.index.save
     end
     study_plan.save
-    render(:partial => 'show', :locals => {:remove =>
+    render(:partial => 'shared/show', :locals => {:remove =>
     "approve_form#{study_plan.id}", :study_plan => study_plan})
   end
   # for remote adding subjects to page
@@ -148,8 +149,8 @@ class StudyPlansController < ApplicationController
   # renders study plan
   def show
     study_plan = StudyPlan.find(@params['id'])
-    @statement = study_plan.index.statement_for(@person)
-    render(:partial => 'show', :locals => {:study_plan => study_plan, :remove =>
+    @statement = study_plan.index.statement_for(@user.person)
+    render(:partial => 'shared/show', :locals => {:study_plan => study_plan, :remove =>
     nil})
   end
   # prepares form for atestation details

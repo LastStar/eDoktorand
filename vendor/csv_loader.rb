@@ -1,5 +1,10 @@
 require 'csv'
 # class for loading objects to database from csv
+# import plan:
+#   faculty
+#   department
+#   coridors
+#   tutors
 class CSVLoader
   # loads faculties to system
   def self.load_faculties
@@ -10,7 +15,7 @@ class CSVLoader
       f.save
     end
   end
-    # loads departments to system
+  # loads departments to system
   def self.load_departments
     CSV::Reader.parse(File.open('dumps/csv/departments.csv', 'rb'), ';') do |row|
       f = Department.new('name' => row[1], 'name_english' =>
@@ -19,12 +24,20 @@ class CSVLoader
       f.save
     end
   end
-# loads tutors to system
+  # loads coridors to system
+  def self.load_coridors
+    CSV::Reader.parse(File.open('dumps/csv/coridors.csv', 'rb'), ';') do |row|
+      f = Coridor.new('name' => row[2], 'faculty_id' =>
+      row[1], 'code' => row[4])
+      f.id = row[0]
+      f.save
+    end
+  end
+    # loads tutors to system
   def load_tutors
     CSV::Reader.parse(File.open('dumps/tutors.csv', 'rb'), ';') do |row|
       t = Tutor.new
-      s.firstname = row[0]
-      s.birthname = row[1]
+      s.firstname = row[2]
       s.lastname = row[2]
       s.birth_on = row[3]
       s.birth_number = row[4]
