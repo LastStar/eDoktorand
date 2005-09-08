@@ -23,26 +23,10 @@ include LoginSystem
     dt.update_attribute('methodology_added_on', Time.now)
     redirect_to(:action => 'index', :controller => 'study_plans')
   end
-  # approves disertation theme 
-  def approve
-    disert_theme = DisertTheme.find(@params['id'])
-    @statement = disert_theme.index.statement_for(@user.person) 
-    render_partial("shared/approve", :approvement => disert_theme.approvement, :title =>
-    _("atestation"), :options => [[_("approve"), 1], [_("cancel"), 0]])
-  end
   # confirms and saves statement
   def confirm_approve
     disert_theme = DisertTheme.find(@params['id'])
-    statement = \
-    eval("#{@params['statement']['type']}.create(@params['statement'])") 
-    eval("disert_theme.approvement.#{@params['statement']['type'].underscore} =
-    statement")
-    if statement.cancel?
-      disert_theme.clone.reset
-    elsif statement.is_a?(DeanStatement)
-      disert_theme.approved_on = Time.now
-    end
-    disert_theme.save
+    disert_theme.approve_with(@params['statement'])
     render(:partial => 'shared/show', :locals => {:remove =>
     "approve_form#{disert_theme.index.study_plan.id}", :study_plan => disert_theme.index.study_plan})
   end

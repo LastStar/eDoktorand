@@ -21,8 +21,7 @@
 <ul>
   <%= print_statements(study_plan.approvement) %>
 </ul>
-<% elsif disert_theme.approvement && !disert_theme.approved? &&
-!study_plan.atestation %>
+<% elsif disert_theme.approvement && !study_plan.atestation %>
 <h5><%= _("methodogy approvement process") %></h5> 
 <ul>
   <%= print_statements(disert_theme.approvement) %>
@@ -52,7 +51,12 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
 <%= render(:partial => 'shared/disert_theme', 
   :locals => {:disert_theme => study_plan.index.disert_theme, :study_plan =>
   study_plan, :methodology => true}) %>
-<%= approve_forms(study_plan) %>
+  <% unless study_plan.approved?
+    document = study_plan
+  else 
+    document = study_plan.index.disert_theme
+  end %>
+<%= approve_forms(document) %>
 <% if @session['user'].has_role?('tutor') %>
 <%= link_to_remote("back", :url => {:controller => 'students', :action => 
 "filter", :filter_by => @session['filter']}, :update => 'students_list',

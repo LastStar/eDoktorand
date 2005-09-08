@@ -5,6 +5,12 @@
 <% else %>
 <ul>
 <% end %>
+  <% if disert_theme.approved? %>
+  <li>
+  <div class='info'><%= disert_theme.approved_on.strftime('%d. %m. %Y') %></div>
+  <b><%= _("approved on") %>: </b>
+  </li>
+  <% end %>
   <li>
   <b><%= _("theme of disert theme") %></b>
   </li>

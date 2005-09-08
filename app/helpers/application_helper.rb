@@ -14,6 +14,10 @@ module ApplicationHelper
     conditions = ["faculty_id = ?", faculty_id] if faculty_id
     Department.find(:all, :conditions => conditions).map { |a| [a.name , a.id] }
   end
+  # returns all years ids
+  def year_ids
+    [[_("1. year"), 1], [_("2. year"), 2], [_("3. year"), 3]]
+  end
   # get language ids
   def language_ids
     Language.find_all.map {|l| [l.name, l.id]}
@@ -94,23 +98,14 @@ module ApplicationHelper
   def approve_forms(document)
     if (document.is_a?(StudyPlan) && !document.canceled?) ||
       document.is_a?(DisertTheme)
-      if @user.person == document.index.tutor &&
-        (!document.approvement || (document.approvement &&
-        !document.approvement.tutor_statement))
-        approve_form(document, 'tutor')
-      elsif @user.person.is_a?(Leader) &&
-        @user.person == document.index.leader &&
-        document.approvement && !document.approvement.leader_statement
-        approve_form(document, 'leader') 
-      elsif @user.person.is_a?(Dean) &&
-        document.approvement && document.approvement.leader_statement && 
-        !document.approvement.dean_statement
-        approve_form(document, 'dean')
+      if statement = document.index.statement_for(@user.person)
+        approve_form(document, statement)
       end
     end
   end
   # prints atestation links
   def atestation_links(study_plan)
+    return
     if AtestationTerm.actual?(@user.person.faculty) && study_plan.approved? &&
       study_plan.index.disert_theme.approved?
       if @user.person == study_plan.index.tutor &&
@@ -182,10 +177,13 @@ module ApplicationHelper
     element})
   end
   # prints approvement link
-  def approve_form(document, person)
+  def approve_form(document, statement)
+    statement.class.to_s =~ /(.*)Statement/
+    person = $1.downcase
     render(:partial => 'shared/approve_form', :locals => {:document => document,
     :title => _("approve like #{person}"), :options => [[_("approve"), 1], [_("cancel"),
-    0]], :action => 'confirm_approve'})
+    0]], :action => 'confirm_approve', :statement => statement, :controller =>
+    document.class.to_s.underscore.pluralize})
   end
   # prints methodology link
   def methodology_link(disert_theme)

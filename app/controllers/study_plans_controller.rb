@@ -107,14 +107,7 @@ class StudyPlansController < ApplicationController
   # confirms and saves statement
   def confirm_approve
     study_plan = StudyPlan.find(@params['id'])
-    statement = \
-    eval("#{@params['statement']['type']}.create(@params['statement'])") 
-    eval("study_plan.approvement.#{@params['statement']['type'].underscore} =
-    statement")
-    study_plan.canceled_on = statement.cancel? ? Time.now : nil
-    study_plan.approved_on = Time.now if statement.is_a?(DeanStatement) &&
-      !statement.cancel?
-    study_plan.save
+    study_plan.approve_with(@params['statement'])
     render(:partial => 'shared/show', :locals => {:remove =>
     "approve_form#{study_plan.id}", :study_plan => study_plan})
   end

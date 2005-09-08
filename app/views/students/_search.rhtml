@@ -1,6 +1,6 @@
-<%= form_remote_tag(:url => {:action => 'search_filter'}, :loading =>
+<%= form_remote_tag(:url => {:action => 'multiple_filter'}, :loading =>
 visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-"loading"), :complete => evaluate_remote_response) %>
+"loading"), :update => 'students_list') %>
 <fieldset>
   <label for="search_what"><%= _("search by lastname") %></label>
   <%= tag('input', :name => 'search_field', :id => 'search_field', 'size' => '10')
@@ -12,11 +12,22 @@ visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
   <% if @filters %>
   <label for="filter_by"><%= _("filter") %></label>
   <%= content_tag('select', options_for_select(@filters, @filter.to_i), {'id' => "filter_by",
-  'name' => "filter_by", "size" => @filters.size}) %>
+  'name' => "filter_by", "size" => @filters.size}) %><br/>
   <%= observe_field('filter_by', :url => {:action => 'filter'}, :update => 
   'students_list', :loading => visual_effect(:appear, 'loading'),
   :interactive => visual_effect(:fade, "loading"), :with => 
   "'filter_by=' + escape(value)") %>
   <% end %>
+<% if @user.has_role?('dean')  %>
+  <label for="filter_by_department"><%= _("department") %></label>
+  <%= content_tag('select', options_for_select([[_("all"), 0]] +
+  department_ids(@user.person.faculty.id)), {'id' => "filter_by_department", 
+  'name' => "filter_by_department"}) %><br/>
+  <label for="filter_by"><%= _("year") %></label>
+  <%= content_tag('select', options_for_select([[_("all"), 0]] + year_ids), 
+  {'id' => "filter_by_year", 'name' => "filter_by_year"}) %>
+<% end %>
 </fieldset>
+<%= submit_tag(_("commit")) %>
 <%= end_form_tag %>
+

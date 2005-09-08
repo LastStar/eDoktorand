@@ -1,3 +1,4 @@
+require 'tutor'
 class StudentsController < ApplicationController
   include LoginSystem
   model :user
@@ -52,6 +53,23 @@ class StudentsController < ApplicationController
     unless options[:dont_render]
       render(:partial => 'list')
     end 
+  end
+  # multiple filtering
+  def multiple_filter
+    year = @params['filter_by_year'].to_i
+    department = @params['filter_by_department'].to_i
+    if year != 0
+      @conditions.first << ' AND indices.created_on > ? AND indices.created_on
+      < ?'
+      @conditions << Time.now - year.year
+      @conditions << Time.now - (year - 1).year
+    end
+    if department != 0
+      @conditions.first << ' AND indices.department_id = ?'
+      @conditions << @params['filter_by_department']
+    end
+    list
+    render(:partial => 'list')
   end
   # renders contact for student
   def contact

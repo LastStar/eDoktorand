@@ -1,13 +1,14 @@
-- import data
-  - departments
-  - tutors
-  - students
+- changed atestation to hard configured terms
 - create infrastructure for faculty secretarys  
 - exams 
   + swap result and questions
   + protocol printing when exam is created
   - chance for student to print protocol for external subject
 
++ import data
+  + departments
+  + tutors
+  + students
 + add configuration
 + enhance study plan
   + number of subjects is variable depends on coridor and faculty

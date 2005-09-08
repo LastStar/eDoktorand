@@ -41,6 +41,21 @@ class StudyPlan < ActiveRecord::Base
     >= ? and finishing_on <= ?', self.id, self.atestation_count * 2 - 2,
     self.atestation_count * 2])
   end
+  # aproves study plan with statement from parameters 
+  def approve_with(params)
+    statement = \
+    eval("#{params['type']}.create(params)") 
+    eval("self.approvement.#{params['type'].underscore} =
+    statement")
+    if statement.is_a?(LeaderStatement) && !self.approvement.tutor_statement
+      self.approvement.tutor_statement =
+      TutorStatement.create(statement.attributes)
+    end
+    self.canceled_on = statement.cancel? ? Time.now : nil
+    self.approved_on = Time.now if statement.is_a?(DeanStatement) &&
+      !statement.cancel?
+    self.save
+  end
   belongs_to :index
   has_many :plan_subjects
   has_one :approvement, :class_name => 'StudyPlanApprovement', :foreign_key =>

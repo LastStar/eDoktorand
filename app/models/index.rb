@@ -34,10 +34,10 @@ class Index < ActiveRecord::Base
       if result = self.disert_theme.approvement.prepare_statement(person)
         return result
       end
-    elsif AtestationTerm.actual?(self.student.faculty) &&
-        !self.study_plan.atested_for?(AtestationTerm.actual(self.student.faculty))
-      self.study_plan.atestation ||= Atestation.create
-      return self.study_plan.atestation.prepare_statement(person)
+#   elsif AtestationTerm.actual?(self.student.faculty) &&
+#       !self.study_plan.atested_for?(AtestationTerm.actual(self.student.faculty))
+#     self.study_plan.atestation ||= Atestation.create
+#     return self.study_plan.atestation.prepare_statement(person)
     end
   end
 end
