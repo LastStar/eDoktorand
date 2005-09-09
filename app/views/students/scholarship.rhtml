@@ -1,0 +1,6 @@
+<div id='students_list'>
+<h5><%= _("Scholarship for students") %></h5>
+<% if @indices && !@indices.empty? %>
+  <%= render(:partial => 'scholarship_list') %>
+<% end %>
+</div>

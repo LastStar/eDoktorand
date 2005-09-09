@@ -252,7 +252,6 @@ CREATE TABLE plan_subjects (
   updated_on datetime
 );
 
-
 --
 -- Table structure for table Subject
 --

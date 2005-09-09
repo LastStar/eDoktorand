@@ -76,6 +76,17 @@ class StudentsController < ApplicationController
     render_partial('contact', :student =>
       Student.find(@params['id']))
   end
+
+  # scholarship list preparation
+  def scholarship
+    if (@session['user'].person.is_a? Dean) ||
+      (@session['user'].person.is_a? FacultySecretary)
+      faculty = @session['user'].person.faculty
+      @indices = []
+      faculty.departments.each{|dep| @indices.concat (dep.indices)}
+      @indices.select{|ind| ind.study_id == 1}
+    end
+  end
   private
   # sets title of the controller
   def set_title
@@ -102,4 +113,5 @@ class StudentsController < ApplicationController
      @filters <<  [_("my students"), 1]
     end
   end
+
 end

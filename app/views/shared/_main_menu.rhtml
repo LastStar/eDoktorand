@@ -7,8 +7,7 @@
     %>
       <%= link_to_unless_current(_("probation terms"), :controller =>
     'probation_terms'){} %>
-      <%= link_to_unless_current(_("study plan"), :controller =>
-    'study_plans'){} %>
+      <%= link_to_unless_current(_("study plan"), :controller => 'study_plans'){} %>
     <% end %>
   <% else %>
   <% if @session['user'].has_role?('admin') ||
@@ -25,8 +24,11 @@
     'probation_terms'){} %>
   <% end %>
   <%= link_to_unless_current(_("students"), :controller => 'students'){} %>
+  <% if @session['user'].person.is_a?(Dean) ||
+  @session['user'].person.is_a?(FacultySecretary)  %>
+    <%= link_to_unless_current(_("scholarship"), {:controller => 'students', :action => 'scholarship'}){} %>
   <% end %>
-  <%= link_to_unless_current(_("logoff"), {:controller => 'account', 
-    :action => 'logout'}, :confirm =>  _("do you really want to") + ' ' +
+  <% end %>
+  <%= link_to_unless_current(_("logoff"), {:controller => 'account', :action => 'logout'}, :confirm =>  _("do you really want to") + ' ' +
     _("logoff") + '?'){} %>
 

@@ -38,7 +38,7 @@ class ExamsController < ApplicationController
   # created exam object and subjects for select 
   # TODO sql finder for only subjects wich actually any student has
   def exam_by_subject
-    @exam = Exam.new('created_by' => @session['user'].person.id)
+    @exam = Exam.new('created_by_id' => @session['user'].person.id)
     @session['exam'] = @exam
     if @session['user'].has_role?(Role.find_by_name('admin'))
       subjects  = Subject.find_all()
@@ -68,7 +68,7 @@ class ExamsController < ApplicationController
   # TODO sql finder for the students, that actually have the subjects
   # this person teaches (maybe the department)
   def exam_by_student
-    @exam = Exam.new('created_by' => @session['user'].person.id)
+    @exam = Exam.new('created_by_id' => @session['user'].person.id)
     @session['exam'] = @exam
     students  = Student.find_all()
     students = students.select {|stud| !stud.index.finished?}
@@ -150,7 +150,6 @@ class ExamsController < ApplicationController
   def save
     exam = @session['exam']
     exam.attributes = @params['exam']
-    exam.created_by
     # select the appropriate plan_subject to update the finished_on tag
     ps = PlanSubject.find(:first, :conditions => ["subject_id = ? and
     study_plan_id = ?", exam.subject_id, exam.index.study_plan.id])

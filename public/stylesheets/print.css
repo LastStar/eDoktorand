@@ -98,9 +98,15 @@ table.list td {
 li.second {
   list-style: none;
 }
+img {
+  display: none;
+}
 a { 
   display: none;
 }
 #Head {
+  display: none;
+}
+#printFooter {
   display: none;
 }
