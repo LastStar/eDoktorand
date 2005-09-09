@@ -1,8 +1,4 @@
 class ProbationTermsController < ApplicationController
-  model :user
-  model :tutor
-  model :leader
-  model :dean
   include LoginSystem
   layout "employers"
   before_filter :set_title

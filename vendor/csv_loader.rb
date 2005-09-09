@@ -1,3 +1,6 @@
+require 'tutor'
+require 'subject'
+require 'index'
 require 'csv'
 # class for loading objects to database from csv
 # import plan:
@@ -36,8 +39,7 @@ class CSVLoader
   # loads coridors to system
   def self.load_subjects
     CSV::Reader.parse(File.open('dumps/csv/subjects.csv', 'rb'), ';') do |row|
-      s = Subject.new('label' => row[2], 'code' =>
-      row[3])
+      s = Subject.new('label' => row[2], 'code' => row[3])
       s.id = row[1]
       s.departments << Department.find(row[4])
       s.save
@@ -97,5 +99,46 @@ class CSVLoader
       u.save
       i.save
     end
+  end
+  # loads study plans to system
+  def self.load_study_plans
+    CSV::Reader.parse(File.open('dumps/csv/studyPlansPEF.csv', 'rb'), ';') do |row|
+      if (row[3].to_i > 0)
+        puts row[0]
+        s = Student.find_by_uic(row[1].to_i)
+        if s.index
+          s.index.created_on = Time.mktime(2006 - row[2].to_i, 9,30)
+          s.index.study_id = row[3].to_i
+          s.index.payment_id = row[4].to_i
+          sp = StudyPlan.new('index_id' => s.index.id)
+          sp.finishing_to = row[6].to_i
+          dt = DisertTheme.new('index_id' => s.index.id)
+          dt.title = row[7]
+          dt.finishing_to = row[9].to_i
+          dt.save
+          sp.admited_on = Time.now 
+          sp.id = row[0]
+          sp.save
+          s.save
+        end
+      end
+    end
+  end
+  # loads plans subjects
+  def self.load_plan_subjects
+    CSV::Reader.parse(File.open('dumps/csv/studyPlans_SubjectsPEF.csv', 'rb'), ';') do |row|
+      puts row[4]
+      if row[4] == 'false'
+        s = Student.find_by_uic(row[0])
+        if s.index
+          sp = s.index.study_plan
+          puts sp
+          if sp
+            PlanSubject.create('study_plan_id' => sp.id, 'subject_id' => row[3], 'finishing_on' => row[6])
+          end
+        end
+      end
+    end
+
   end
 end

@@ -4,6 +4,7 @@ class Person < ActiveRecord::Base
   belongs_to :title_before, :class_name => 'Title', :foreign_key => 'title_before_id'
   belongs_to :title_after, :class_name => 'Title', :foreign_key =>
   'title_after_id'
+  has_one :user
   # returns display name for person
   def display_name
   	arr = self.title_before ? [self.title_before.label] : []

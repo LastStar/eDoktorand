@@ -1,6 +1,5 @@
 class FormController < ApplicationController
   layout "standard"
-  model :candidate
   # page where candidate chooses desired coridor
   # or logins for edit or check older adminition
   def index

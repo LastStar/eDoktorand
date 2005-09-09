@@ -1,5 +1,4 @@
 class AtestationTermsController < ApplicationController
-  model :user
   include LoginSystem
   layout 'employers'
   before_filter :login_required, :prepare_user

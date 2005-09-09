@@ -1,9 +1,4 @@
-require 'leader'
 class DisertThemesController < ApplicationController
-  model :user
-  model :tutor
-  model :leader
-  model :dean
 include LoginSystem
   layout 'employers'
   before_filter :login_required, :prepare_student, :prepare_user

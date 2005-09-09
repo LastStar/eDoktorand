@@ -1,7 +1,4 @@
 class CandidatesController < ApplicationController
-  model :candidate
-  model :user, :dean
-  model :faculty_secretary
   include LoginSystem
   layout 'employers'
   before_filter :login_required, :except => [:invitation]

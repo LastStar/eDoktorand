@@ -1,15 +1,5 @@
-require 'leader'
 class StudyPlansController < ApplicationController
   include LoginSystem
-  model :student
-  model :user
-  model :leader
-  model :dean
-  model :language_subject
-  model :external_subject
-  model :study_plan
-  model :plan_subject
-  model :subject
   layout 'employers'
   before_filter :login_required, :prepare_student, :prepare_user
   # page with basic informations for student 

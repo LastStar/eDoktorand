@@ -1,11 +1,8 @@
 # The filters added to this controller will be run for all controllers in the application.
 # Likewise will all the methods added be available for all controllers.
-require_dependency "login_system"
 class ApplicationController < ActionController::Base
   before_filter :localize
-  model :user
   include LoginSystem
-  model :user
   # get department ids
   helper_method :language_ids
   def department_ids(faculty_id)
@@ -76,8 +73,8 @@ class ApplicationController < ActionController::Base
   end
   # prepares conditions for various queries
   def prepare_conditions
-    @conditions = "null is not null"
-    if @session['user'].has_role?(Role.find_by_name('admin'))
+    @conditions = ["null is not null"]
+    if @session['user'].has_role?('admin')
       @conditions  = nil
     elsif @session['user'].person.is_a? Dean || @session['user'].person.is_a?
         FacultySecretary

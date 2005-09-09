@@ -7,25 +7,25 @@ class User < ActiveRecord::Base
 	belongs_to :person
   
   def self.authenticate(login, pass)
-    if RAILS_ENV == 'production'
-      result = find(:first, :conditions => ['login = ?', login])
-      if result 
-          ldap_context = result.person.faculty.ldap_context
-          conn = LDAP::Conn.new('193.84.33.9', 389)
-          conn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
-        begin
-          conn.bind( "cn=#{login},ou=#{ldap_context},o=czu, c=cz", pass )
-          return result
-        rescue => e
-          false
-        ensure
-          conn.unbind unless conn == nil
-          conn = nil
-        end
-      end
-    else
+#   if RAILS_ENV == 'production'
+#     result = find(:first, :conditions => ['login = ?', login])
+#     if result 
+#         ldap_context = result.person.faculty.ldap_context
+#         conn = LDAP::Conn.new('193.84.33.9', 389)
+#         conn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
+#       begin
+#         conn.bind( "cn=#{login},ou=#{ldap_context},o=czu, c=cz", pass )
+#         return result
+#       rescue => e
+#         false
+#       ensure
+#         conn.unbind unless conn == nil
+#         conn = nil
+#       end
+#     end
+#   else
       find_first(["login = ? AND password = ?", login, sha1(pass)])
-    end
+#    end
   end
   
   #def self.authenticate(login, pass)

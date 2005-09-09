@@ -1,8 +1,4 @@
-require 'tutor'
 class AccountController < ApplicationController
-  model :user
-  model :tutor
-  model :student
   include LoginSystem
   layout  'employers'
   before_filter :login_required, :except => [:login, :logout, :error]
@@ -12,7 +8,6 @@ class AccountController < ApplicationController
     case @request.method
       when :post
         if @session['user'] = User.authenticate(@params['user_login'], @params['user_password'])
-
           flash['notice']  = _("Login was succesful")
           redirect_back_or_default :action => "welcome"
         else
@@ -49,9 +44,10 @@ class AccountController < ApplicationController
   end
     
   def welcome
-    if @session['user'].person.is_a? Student
+    if @session['user'].has_role?('student')
       redirect_to :controller => 'study_plans'
-    elsif @session['user'].person.is_a? Tutor
+    elsif @session['user'].has_role?('tutor') &&
+      @session['user'].has_role?('dean')
       redirect_to :controller => 'students'
     elsif @session['user'].person.is_a? DepartmentSecretary
       redirect_to :controller => 'students'

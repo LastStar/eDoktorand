@@ -1,5 +1,4 @@
 class ExamsController < ApplicationController
-  model :user
   include LoginSystem
   layout "employers"
   before_filter :set_title

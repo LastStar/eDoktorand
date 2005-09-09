@@ -1,12 +1,5 @@
-require 'tutor'
 class StudentsController < ApplicationController
   include LoginSystem
-  model :user
-  model :tutor
-  model :leader
-  model :dean
-  model :student
-  model :faculty_secretary
   layout 'employers'
   before_filter :login_required, :set_title, 
   :prepare_user
@@ -109,7 +102,7 @@ class StudentsController < ApplicationController
     @filters = [[_("all students"), 0], [_("waitining for my approvement"), 2]]
     # default filter to waiting for approvement 
     @session['filter'] ||= '2'
-    if (@user.person.is_a?(Leader) || @user.person.is_a?(Dean)) && !@user.person.indexes.empty?
+    if (@user.has_role?('leader') || @user.has_role?('leader')) && !@user.person.indexes.empty?
      @filters <<  [_("my students"), 1]
     end
   end

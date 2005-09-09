@@ -1,5 +1,4 @@
 class PeopleController < ApplicationController
-	model :title
   layout "employers"
   def index
     list

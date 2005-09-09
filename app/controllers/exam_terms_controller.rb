@@ -1,5 +1,4 @@
 class ExamTermsController < ApplicationController
-  model :user, :tutor, :leader, :dean
   include LoginSystem
   layout 'employers'
   before_filter :login_required
