@@ -5,7 +5,15 @@
 <fieldset>
 <label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
 <%= select 'study_plan', 'finishing_to', @session['last_semester']..6 %>
-<%= "." + _("semester") %>
+<%= "." + _("semester") %><br/> 
+<% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
+<% 4.times do |index| %>
+<% i = index + 1 %>
+<label class='smaller' for="final_area_<%= i %>"><%= "#{i}. " + _("final area") %></label>
+<input type='text' id="study_plan_final_areas_<%= i %>"
+name="study_plan[final_areas][<%= i %>]" size="30"/><br/>   
+<% end %>
+<% end %>
 </fieldset>
 <fieldset>
 <%= hidden_field 'disert_theme', 'index_id' %>
@@ -15,7 +23,7 @@
 <%= select 'disert_theme', 'finishing_to', @session['last_semester']..6 %><br/>
 <label class='smaller' for="disert_theme_methodology_summary"><%= _("methodology summary") %>:</label>
 <textarea name='disert_theme[methodology_summary]'
-id='disert_theme_methodology_summary' cols='50' rows='45'><%= 
+id='disert_theme_methodology_summary' cols='55' rows='35'><%= 
 disert_theme.methodology_summary %></textarea>
 </fieldset>
 <%= submit_tag _("commit") %>

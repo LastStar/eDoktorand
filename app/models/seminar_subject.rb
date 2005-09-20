@@ -1,0 +1,2 @@
+class SeminarSubject < CoridorSubject
+end

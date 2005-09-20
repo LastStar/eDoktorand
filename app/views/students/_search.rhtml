@@ -18,13 +18,17 @@ visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
   :interactive => visual_effect(:fade, "loading"), :with => 
   "'filter_by=' + escape(value)") %>
   <% end %>
-<% if @user.has_role?('dean')  %>
+<% if @user.has_one_of_roles?(['dean', 'faculty_secretary'])  %>
   <label for="filter_by_department"><%= _("department") %></label>
-  <%= content_tag('select', options_for_select([[_("all"), 0]] +
+  <%= content_tag('select', options_for_select(
   department_ids(@user.person.faculty.id)), {'id' => "filter_by_department", 
   'name' => "filter_by_department"}) %><br/>
+  <label for="filter_by_coridor"><%= _("corridor") %></label>
+  <%= content_tag('select', options_for_select(
+  coridor_ids(@user.person.faculty.id)), {'id' => "filter_by_coridor", 
+  'name' => "filter_by_coridor"}) %><br/>
   <label for="filter_by"><%= _("year") %></label>
-  <%= content_tag('select', options_for_select([[_("all"), 0]] + year_ids), 
+  <%= content_tag('select', options_for_select(year_ids), 
   {'id' => "filter_by_year", 'name' => "filter_by_year"}) %>
 <% end %>
 </fieldset>

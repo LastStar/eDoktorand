@@ -40,19 +40,16 @@ class AccountController < ApplicationController
   end  
     
   def logout
-    @session['user'] = nil
+    reset_session
+    redirect_to :action => 'login'
   end
     
   def welcome
     if @session['user'].has_role?('student')
       redirect_to :controller => 'study_plans'
-    elsif @session['user'].has_role?('tutor') &&
-      @session['user'].has_role?('dean')
+    elsif @session['user'].has_one_of_roles?(['tutor', 'dean',
+      'department_secretary', 'faculty_secretary'])
       redirect_to :controller => 'students'
-    elsif @session['user'].person.is_a? DepartmentSecretary
-      redirect_to :controller => 'students'
-    elsif @session['user'].person.is_a? FacultySecretary
-      redirect_to :controller => 'candidates'
     end
   end
   # error page for system

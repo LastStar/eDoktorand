@@ -12,7 +12,7 @@
       "loading"), :complete => evaluate_remote_response) %>	
 <fieldset>
 <legend><%= _("voluntary subjects") %></legend>
-  <% subjects = voluntary_ids(@student.index.coridor.id) %>
+<% subjects = voluntary_ids(@student.index.coridor.id) %>
 <% for plan_subject in @plan_subjects do %>
 <%= render_partial 'voluntary', :plan_subject => plan_subject, :subjects =>
 subjects %>

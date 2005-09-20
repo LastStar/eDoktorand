@@ -27,7 +27,6 @@ include LoginSystem
   end
   def file_clicked
     disert_theme = DisertTheme.find(@params['id'])
-    @statement = disert_theme.index.statement_for(@user.person)
     render(:partial => 'file_clicked', :locals => {:disert_theme =>
     disert_theme})
   end

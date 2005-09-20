@@ -929,7 +929,7 @@ msgid ""
 "should be consulted with your tutor."
 msgstr ""
 "V následujících několika krocích si volbou z nabídky sestavte studijní plán. "
-"K této činnosti by jste měli přistoupit po konzultaci se školitelem. "
+"K této činnosti byste měli přistoupit po konzultaci se školitelem. "
 "Aplikace neuchovává žádné rozpracované verze. Sestavujte svůj studijní plán, "
 "až po té co budete mít jasnou představu o jeho obsahu a termínech."
 
@@ -1013,5 +1013,49 @@ msgstr ""
 
 msgid "Probation term from subject"
 msgstr "Zkouškový termín z předmětu"
+
+msgid "waiting for my approvement"
+msgstr "čekající na mé schválení"
+
+msgid "approve like tutor"
+msgstr "schválit jako školitel"
+
+msgid "approve like leader"
+msgstr "schválit jako vedoucí katedry"
+
+msgid "approve like dean"
+msgstr "schválit jako děkan"
+
+msgid "scholarship"
+msgstr "stipendia"
+
+msgid "FacultySecretary"
+msgstr "Referentka VaV"
+
+msgid "Scholarship for students"
+msgstr "Stipendia pro studenty"
+
+msgid "Regular"
+msgstr "Řádné"
+
+msgid "Extra"
+msgstr "Mimořádné"
+
+msgid "Exam for student"
+msgstr "Zkouška pro studenta"
+
+msgid "Exam from subject"
+msgstr "Zkouška z předmětu"
+
+msgid "Exam date"
+msgstr "Datum zkoušky"
+
+msgid "seminar subjects"
+msgstr "odborný seminář"
+
+msgid "final area"
+msgstr "oblast předmětů"
+
+
 
 

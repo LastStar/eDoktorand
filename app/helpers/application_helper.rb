@@ -10,13 +10,16 @@ module ApplicationHelper
     end
   end
   # get department ids
-  def department_ids(faculty_id = nil)
-    conditions = ["faculty_id = ?", faculty_id] if faculty_id
-    Department.find(:all, :conditions => conditions).map { |a| [a.name , a.id] }
+  def department_ids(faculty)
+    if faculty.is_a?(Faculty)
+      faculty = faculty.id
+    end
+    [['---', '0']].concat(Department.find_all_by_faculty_id(faculty).map { |a|
+      [truncate(a.name, 40), a.id] })
   end
   # returns all years ids
   def year_ids
-    [[_("1. year"), 1], [_("2. year"), 2], [_("3. year"), 3]]
+    [['---', '0'], [_("1. year"), 1], [_("2. year"), 2], [_("3. year"), 3]]
   end
   # get language ids
   def language_ids
@@ -27,8 +30,12 @@ module ApplicationHelper
     Study.find_all.map {|s| [s.name, s.id]}
   end
   # get coridor ids
-  def coridor_ids
-    Coridor.find_all.map {|s| [s.name, s.id]}
+  def coridor_ids(faculty)
+    if faculty.is_a?(Faculty)
+      faculty = faculty.id
+    end
+    [['---', '0']].concat(Coridor.find_all_by_faculty_id(faculty).map {|s|
+      [truncate(s.name, 40), s.id]})
   end
   # get title_before ids
   def title_before_ids
@@ -63,14 +70,17 @@ module ApplicationHelper
     ts.map {|ts| [ts.tutor.display_name, ts.tutor.id]}
   end
   # get examinator ids
-  def examinator_ids
-    Tutor.find(:all).map {|p| [p.display_name, p.id]}
+  def examinator_ids(faculty)
+    # bloody hack evarybody should have faculty 
+    Tutor.find(:all).select{|t| t.faculty && t.faculty.id == faculty}.map {|p| [p.display_name, p.id]}
   end
   # get examinator ids
   # allows null
-  def examinator_null_ids
+  def examinator_null_ids(faculty)
     arr = [['---', '0']]
-    arr.concat(Tutor.find(:all).map {|p| [p.display_name, p.id]})
+    # bloody hack evarybody should have faculty 
+    arr.concat(Tutor.find(:all).select{|t| t.faculty && t.faculty.id ==
+    faculty}.map {|p| [p.display_name, p.id]})
   end
   # get index ids
   def index_ids
@@ -88,7 +98,16 @@ module ApplicationHelper
   def voluntary_ids(coridor)
     arr = [[_("external subject"), 0]]
     arr.concat(Coridor.find(coridor).voluntary_subjects.map {|s|
-      [s.subject.label, s.subject_id]})
+      [truncate(s.subject.label, 40), s.subject_id]})
+  end
+  # get voluntary subjects for corridor 
+  def seminar_ids(coridor)
+    if coridor.is_a? Coridor
+      coridor = coridor.id
+    end
+    arr = []
+    arr.concat(Coridor.find(coridor).seminar_subjects.map {|s|
+      [truncate(s.subject.label, 40), s.subject_id]})
   end
   # returns approve word for statement result
   def approve_word(result)
@@ -98,7 +117,7 @@ module ApplicationHelper
   def approve_forms(document)
     if (document.is_a?(StudyPlan) && !document.canceled?) ||
       document.is_a?(DisertTheme)
-      if statement = document.index.statement_for(@user.person)
+      if statement = document.index.statement_for(@user)
         approve_form(document, statement)
       end
     end

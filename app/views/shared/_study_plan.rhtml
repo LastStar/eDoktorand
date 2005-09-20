@@ -44,8 +44,8 @@
   <b><%= _("approved on") %>: </b>
   </li>
 <% end %>
-<%= render(:partial => 'shared/final_exam', :locals => {:study_plan => study_plan})
-render(:partial => 'shared/subjects', :locals => {:subjects => 
+<%= render(:partial => 'shared/final_exam', :locals => {:study_plan => study_plan}) %>
+<%= render(:partial => 'shared/subjects', :locals => {:subjects => 
 study_plan.plan_subjects, :title => _("subjects")}) %>
 </ul>
 <%= render(:partial => 'shared/disert_theme', 

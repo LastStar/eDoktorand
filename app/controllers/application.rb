@@ -1,5 +1,11 @@
 # The filters added to this controller will be run for all controllers in the application.
 # Likewise will all the methods added be available for all controllers.
+require_dependency 'dean'
+require_dependency 'obligate_subject'
+require_dependency 'plan_subject'
+require_dependency 'study_plan'
+require_dependency 'disert_theme'
+
 class ApplicationController < ActionController::Base
   before_filter :localize
   include LoginSystem
@@ -71,25 +77,7 @@ class ApplicationController < ActionController::Base
       @student = @session['user'].person 
     end
   end
-  # prepares conditions for various queries
-  def prepare_conditions
-    @conditions = ["null is not null"]
-    if @session['user'].has_role?('admin')
-      @conditions  = nil
-    elsif @session['user'].person.is_a? Dean || @session['user'].person.is_a?
-        FacultySecretary
-      @conditions = ["department_id IN (" +  @session['user'].person.deanship.faculty.departments.map {|dep|
-        dep.id}.join(', ') + ")"]
-    elsif @session['user'].person.is_a? Leader || @session['user'].person.is_a?
-        DepartmentSecretary
-      @conditions = ['department_id = ?', @session['user'].person.leadership.department_id]
-    elsif @session['user'].person.is_a? Tutor
-      @conditions = ['tutor_id = ?', @session['user'].person.id]
-    end
-  end
-
-  
-  # prepares person class variable
+  # prepares user class variable
   def prepare_user
     @user = ActiveRecord::Acts::Audited.current_user = @session['user']
   end

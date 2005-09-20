@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2005-08-29 11:49+0200\n"
+"POT-Creation-Date: 2005-09-11 16:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,162 +16,144 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: app/controllers/account_controller.rb:14
+#: app/controllers/account_controller.rb:11
 msgid "Login was succesful"
 msgstr ""
 
-#: app/controllers/application.rb:29
+#: app/controllers/application.rb:26
 msgid "you don't have rights to do this"
 msgstr ""
 
-#: app/controllers/atestation_terms_controller.rb:9
+#: app/controllers/atestation_terms_controller.rb:8
 msgid "Atestation"
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:51
+#: app/controllers/candidates_controller.rb:48
 msgid "Candidate was changed"
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:105 app/controllers/candidates_controller.rb:128
-#: app/controllers/candidates_controller.rb:143
+#: app/controllers/candidates_controller.rb:102 app/controllers/candidates_controller.rb:125
+#: app/controllers/candidates_controller.rb:140
 msgid "e-mail sent"
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:115
+#: app/controllers/candidates_controller.rb:112
 msgid "Candidate "
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:115
+#: app/controllers/candidates_controller.rb:112
 msgid " is ready for application form"
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:157
+#: app/controllers/candidates_controller.rb:154
 msgid "Candidates"
 msgstr ""
 
-#: app/controllers/disert_themes_controller.rb:22 /tmp/erb-gettext5512.0:4
-msgid "atestation"
-msgstr ""
-
-#: app/controllers/disert_themes_controller.rb:22 app/controllers/study_plans_controller.rb:110
-#: /tmp/erb-gettext5512.0:5
-msgid "approve"
-msgstr ""
-
-#: app/controllers/disert_themes_controller.rb:22 app/controllers/study_plans_controller.rb:110
-#: /tmp/erb-gettext5512.0:5
-msgid "cancel"
-msgstr ""
-
-#: app/controllers/disert_themes_controller.rb:60
+#: app/controllers/disert_themes_controller.rb:11
 msgid "Upload methodology"
 msgstr ""
 
-#: app/controllers/exams_controller.rb:36 /tmp/erb-gettext5512.0:1 /tmp/erb-gettext5512.0:1
+#: app/controllers/exams_controller.rb:34 /tmp/erb-gettext1562.0:1 /tmp/erb-gettext1562.0:1
 msgid "Creating exam"
 msgstr ""
 
-#: app/controllers/exams_controller.rb:162
+#: app/controllers/exams_controller.rb:169
 msgid "Exam was successfully updated."
 msgstr ""
 
-#: app/controllers/exams_controller.rb:203
+#: app/controllers/exams_controller.rb:210
 msgid "Exams"
 msgstr ""
 
-#: app/controllers/form_controller.rb:8
+#: app/controllers/form_controller.rb:7
 msgid "Admittance process"
 msgstr ""
 
-#: app/controllers/form_controller.rb:14
+#: app/controllers/form_controller.rb:13
 msgid "Admittance form for corridor "
 msgstr ""
 
-#: app/controllers/form_controller.rb:23 app/controllers/form_controller.rb:36
+#: app/controllers/form_controller.rb:22 app/controllers/form_controller.rb:35
 msgid "Admittance form - errors"
 msgstr ""
 
-#: app/controllers/form_controller.rb:24 app/controllers/form_controller.rb:37
+#: app/controllers/form_controller.rb:23 app/controllers/form_controller.rb:36
 msgid "Provided informations contains errors"
 msgstr ""
 
-#: app/controllers/form_controller.rb:45
+#: app/controllers/form_controller.rb:44
 msgid "Check submited"
 msgstr ""
 
-#: app/controllers/form_controller.rb:46
+#: app/controllers/form_controller.rb:45
 msgid "Please check what you submited. Then folow guide on the bottom of the page"
 msgstr ""
 
-#: app/controllers/form_controller.rb:49
+#: app/controllers/form_controller.rb:48
 msgid "Print"
 msgstr ""
 
-#: app/controllers/form_controller.rb:55 /tmp/erb-gettext5512.0:15 /tmp/erb-gettext5512.0:15
+#: app/controllers/form_controller.rb:54 /tmp/erb-gettext1562.0:15 /tmp/erb-gettext1562.0:15
 msgid "Fields in red are required"
 msgstr ""
 
-#: app/controllers/form_controller.rb:57
+#: app/controllers/form_controller.rb:56
 msgid "Correct admit form"
 msgstr ""
 
-#: app/controllers/form_controller.rb:64
+#: app/controllers/form_controller.rb:63
 msgid "Admit form registered"
 msgstr ""
 
-#: app/controllers/form_controller.rb:71
+#: app/controllers/form_controller.rb:70
 msgid "Czech republic"
 msgstr ""
 
-#: app/controllers/form_controller.rb:72
+#: app/controllers/form_controller.rb:71
 msgid "Czech agriculture university"
 msgstr ""
 
-#: app/controllers/probation_terms_controller.rb:140
+#: app/controllers/probation_terms_controller.rb:132
 msgid "Probation terms"
 msgstr ""
 
-#: app/controllers/students_controller.rb:59
+#: app/controllers/students_controller.rb:82
 msgid "Students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:75
+#: app/controllers/students_controller.rb:98
 msgid "all students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:75
-msgid "not approved"
+#: app/controllers/students_controller.rb:98
+msgid "waitining for my approvement"
 msgstr ""
 
-#: app/controllers/students_controller.rb:77
+#: app/controllers/students_controller.rb:102
 msgid "my students"
 msgstr ""
 
-#: app/controllers/study_plans_controller.rb:16 /tmp/erb-gettext5512.0:13
+#: app/controllers/study_plans_controller.rb:7 /tmp/erb-gettext1562.0:31
 msgid "Study plan"
 msgstr ""
 
-#: app/controllers/study_plans_controller.rb:25
+#: app/controllers/study_plans_controller.rb:16
 msgid "Creating study plan"
 msgstr ""
 
-#: app/controllers/study_plans_controller.rb:56 app/models/candidate.rb:30
-msgid "languages have to be different"
-msgstr ""
-
-#: app/controllers/study_plans_controller.rb:74
+#: app/controllers/study_plans_controller.rb:51
 msgid "subjects have to be different"
 msgstr ""
 
-#: app/controllers/study_plans_controller.rb:110
-msgid "approvement"
+#: app/controllers/study_plans_controller.rb:67 app/models/candidate.rb:30
+msgid "languages have to be different"
 msgstr ""
 
-#: app/controllers/study_plans_controller.rb:224
+#: app/controllers/study_plans_controller.rb:209
 msgid "title for external subject cannot be empty"
 msgstr ""
 
-#: app/controllers/study_plans_controller.rb:229
+#: app/controllers/study_plans_controller.rb:214
 msgid "university for external subject cannot be empty"
 msgstr ""
 
@@ -179,27 +161,59 @@ msgstr ""
 msgid "There were errors in your input"
 msgstr ""
 
-#: app/helpers/application_helper.rb:85
+#: app/helpers/application_helper.rb:19
+msgid "1. year"
+msgstr ""
+
+#: app/helpers/application_helper.rb:19
+msgid "2. year"
+msgstr ""
+
+#: app/helpers/application_helper.rb:19
+msgid "3. year"
+msgstr ""
+
+#: app/helpers/application_helper.rb:89
 msgid "external subject"
 msgstr ""
 
-#: app/helpers/application_helper.rb:91
+#: app/helpers/application_helper.rb:95
 msgid "canceled"
 msgstr ""
 
-#: app/helpers/application_helper.rb:91
+#: app/helpers/application_helper.rb:95
 msgid "approved"
 msgstr ""
 
-#: app/helpers/application_helper.rb:132 /tmp/erb-gettext5512.0:4
+#: app/helpers/application_helper.rb:128 /tmp/erb-gettext1562.0:49 /tmp/erb-gettext1562.0:4
 msgid "subjects"
 msgstr ""
 
-#: app/helpers/application_helper.rb:204
+#: app/helpers/application_helper.rb:136 /tmp/erb-gettext1562.0:4
+msgid "Tutor statement"
+msgstr ""
+
+#: app/helpers/application_helper.rb:137 /tmp/erb-gettext1562.0:9
+msgid "Leader statement"
+msgstr ""
+
+#: app/helpers/application_helper.rb:138 /tmp/erb-gettext1562.0:14
+msgid "Dean statement"
+msgstr ""
+
+#: app/helpers/application_helper.rb:184 /tmp/erb-gettext1562.0:5
+msgid "approve"
+msgstr ""
+
+#: app/helpers/application_helper.rb:184 /tmp/erb-gettext1562.0:5
+msgid "cancel"
+msgstr ""
+
+#: app/helpers/application_helper.rb:190
 msgid "methodology file (opens new window)"
 msgstr ""
 
-#: app/helpers/application_helper.rb:212 /tmp/erb-gettext5512.0:5
+#: app/helpers/application_helper.rb:198 /tmp/erb-gettext1562.0:5
 msgid "additional information"
 msgstr ""
 
@@ -207,12 +221,12 @@ msgstr ""
 msgid "make ready"
 msgstr ""
 
-#: app/helpers/candidates_helper.rb:12 /tmp/erb-gettext5512.0:13
+#: app/helpers/candidates_helper.rb:12 /tmp/erb-gettext1562.0:13
 msgid "protocol"
 msgstr ""
 
 #: app/helpers/candidates_helper.rb:13 app/helpers/candidates_helper.rb:136
-#: app/helpers/candidates_helper.rb:148 /tmp/erb-gettext5512.0:2
+#: app/helpers/candidates_helper.rb:148 /tmp/erb-gettext1562.0:2
 msgid "admit"
 msgstr ""
 
@@ -224,11 +238,11 @@ msgstr ""
 msgid "invite"
 msgstr ""
 
-#: app/helpers/candidates_helper.rb:30 /tmp/erb-gettext5512.0:22
+#: app/helpers/candidates_helper.rb:30 /tmp/erb-gettext1562.0:22
 msgid "enroll"
 msgstr ""
 
-#: app/helpers/candidates_helper.rb:65
+#: app/helpers/candidates_helper.rb:65 /tmp/erb-gettext1562.0:23 /tmp/erb-gettext1562.0:27
 msgid "all"
 msgstr ""
 
@@ -298,11 +312,11 @@ msgstr ""
 msgid "admitted"
 msgstr ""
 
-#: app/helpers/candidates_helper.rb:129 /tmp/erb-gettext5512.0:8
+#: app/helpers/candidates_helper.rb:129 /tmp/erb-gettext1562.0:8
 msgid "invited"
 msgstr ""
 
-#: app/helpers/candidates_helper.rb:131 /tmp/erb-gettext5512.0:5
+#: app/helpers/candidates_helper.rb:131 /tmp/erb-gettext1562.0:5
 msgid "ready"
 msgstr ""
 
@@ -315,12 +329,12 @@ msgid "not admit"
 msgstr ""
 
 #: app/helpers/candidates_helper.rb:140 app/helpers/candidates_helper.rb:144 app/helpers/exams_helper.rb:27
-#: /tmp/erb-gettext5512.0:44 /tmp/erb-gettext5512.0:18
+#: /tmp/erb-gettext1562.0:44 /tmp/erb-gettext1562.0:29
 msgid "not pass"
 msgstr ""
 
 #: app/helpers/candidates_helper.rb:140 app/helpers/candidates_helper.rb:144 app/helpers/exams_helper.rb:27
-#: /tmp/erb-gettext5512.0:44 /tmp/erb-gettext5512.0:18
+#: /tmp/erb-gettext1562.0:44 /tmp/erb-gettext1562.0:29
 msgid "pass"
 msgstr ""
 
@@ -332,11 +346,11 @@ msgstr ""
 msgid "new exam"
 msgstr ""
 
-#: app/helpers/exams_helper.rb:31 /tmp/erb-gettext5512.0:7 /tmp/erb-gettext5512.0:5
+#: app/helpers/exams_helper.rb:31 /tmp/erb-gettext1562.0:6 /tmp/erb-gettext1562.0:5
 msgid "exam by subject"
 msgstr ""
 
-#: app/helpers/exams_helper.rb:38 /tmp/erb-gettext5512.0:9
+#: app/helpers/exams_helper.rb:38 /tmp/erb-gettext1562.0:9
 msgid "exam by person"
 msgstr ""
 
@@ -348,7 +362,7 @@ msgstr ""
 msgid "study"
 msgstr ""
 
-#: app/helpers/students_helper.rb:13 /tmp/erb-gettext5512.0:17
+#: app/helpers/students_helper.rb:13 /tmp/erb-gettext1562.0:17
 msgid "contact"
 msgstr ""
 
@@ -424,11 +438,11 @@ msgstr ""
 msgid "candidate must be admited before enrollment"
 msgstr ""
 
-#: app/views/atestation_terms/edit.rhtml:3 /tmp/erb-gettext5512.0:7 /tmp/erb-gettext5512.0:11
+#: app/views/atestation_terms/edit.rhtml:3 /tmp/erb-gettext1562.0:7 /tmp/erb-gettext1562.0:11
 msgid "Next atestation term"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:3
 msgid "Current atestation term"
 msgstr ""
 
@@ -436,7 +450,7 @@ msgstr ""
 msgid "Atestation date"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:7 /tmp/erb-gettext5512.0:7
+#: /tmp/erb-gettext1562.0:7 /tmp/erb-gettext1562.0:7
 msgid "present"
 msgstr ""
 
@@ -444,11 +458,11 @@ msgstr ""
 msgid "combined"
 msgstr ""
 
-#: app/views/candidates/_history.rhtml:3 /tmp/erb-gettext5512.0:3
+#: app/views/candidates/_history.rhtml:3 /tmp/erb-gettext1562.0:3
 msgid "Error"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:2
+#: /tmp/erb-gettext1562.0:2
 msgid "finished"
 msgstr ""
 
@@ -456,77 +470,77 @@ msgstr ""
 msgid "admited"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:20
+#: /tmp/erb-gettext1562.0:20
 msgid "history"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:23
+#: /tmp/erb-gettext1562.0:23
 msgid "b.n."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:25 /tmp/erb-gettext5512.0:5 /tmp/erb-gettext5512.0:26
-#: /tmp/erb-gettext5512.0:61
+#: /tmp/erb-gettext1562.0:25 /tmp/erb-gettext1562.0:5 /tmp/erb-gettext1562.0:26
+#: /tmp/erb-gettext1562.0:61
 msgid "corridor"
 msgstr ""
 
-#: app/views/candidates/_list_script.rhtml:26 /tmp/erb-gettext5512.0:17 /tmp/erb-gettext5512.0:11
-#: /tmp/erb-gettext5512.0:87
+#: app/views/candidates/_list_script.rhtml:26 /tmp/erb-gettext1562.0:17 /tmp/erb-gettext1562.0:11
+#: /tmp/erb-gettext1562.0:87
 msgid "study form"
 msgstr ""
 
-#: app/views/candidates/_table_list.rhtml:3 /tmp/erb-gettext5512.0:3 /tmp/erb-gettext5512.0:51
+#: app/views/candidates/_table_list.rhtml:3 /tmp/erb-gettext1562.0:3 /tmp/erb-gettext1562.0:51
 msgid "Notice"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:5
 msgid "Candidate"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:8 /tmp/erb-gettext5512.0:21
+#: /tmp/erb-gettext1562.0:8 /tmp/erb-gettext1562.0:21
 msgid "birth number"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:11
+#: /tmp/erb-gettext1562.0:11
 msgid "coridor"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:14
+#: /tmp/erb-gettext1562.0:14
 msgid "status"
 msgstr ""
 
-#: app/views/candidates/admit.rhtml:20 /tmp/erb-gettext5512.0:14
+#: app/views/candidates/admit.rhtml:20 /tmp/erb-gettext1562.0:14
 msgid "Note"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:7
+#: /tmp/erb-gettext1562.0:7
 msgid "tutor"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:9 /tmp/erb-gettext5512.0:85
+#: /tmp/erb-gettext1562.0:9 /tmp/erb-gettext1562.0:85 /tmp/erb-gettext1562.0:22
 msgid "department"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:13
+#: /tmp/erb-gettext1562.0:13
 msgid "submit"
 msgstr ""
 
-#: app/views/candidates/admittance.rhtml:16 /tmp/erb-gettext5512.0:22
+#: app/views/candidates/admittance.rhtml:16 /tmp/erb-gettext1562.0:22
 msgid "back"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:4
+#: /tmp/erb-gettext1562.0:4
 msgid "Desired login"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:6
+#: /tmp/erb-gettext1562.0:6
 msgid "Choose password"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:8
+#: /tmp/erb-gettext1562.0:8
 msgid "Confirm password"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:10
+#: /tmp/erb-gettext1562.0:10
 msgid "Zapsat"
 msgstr ""
 
@@ -534,27 +548,27 @@ msgstr ""
 msgid "zpět"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:2
+#: /tmp/erb-gettext1562.0:2
 msgid "by corridor"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:3
 msgid "by lastname"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:3
 msgid "by modification"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:5 /tmp/erb-gettext5512.0:9
+#: /tmp/erb-gettext1562.0:5 /tmp/erb-gettext1562.0:13
 msgid "filter"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:6
+#: /tmp/erb-gettext1562.0:6
 msgid "order"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:7
+#: /tmp/erb-gettext1562.0:7
 msgid "order all"
 msgstr ""
 
@@ -562,65 +576,58 @@ msgstr ""
 msgid "There are no candidates in your selection"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:5 /tmp/erb-gettext5512.0:8
+#: /tmp/erb-gettext1562.0:2
+msgid "On this page you can add your methodology file. File should be only in\nPDF format."
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:9 /tmp/erb-gettext1562.0:8
 msgid "file"
 msgstr ""
 
-#: app/views/disert_themes/_methodology_saved.rhtml:9 /tmp/erb-gettext5512.0:10
+#: app/views/disert_themes/_methodology_saved.rhtml:13 /tmp/erb-gettext1562.0:10
 msgid "upload"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:8 /tmp/erb-gettext5512.0:2
-msgid "methodology summary"
-msgstr ""
-
-#: app/views/disert_themes/_notvalid_methodology.rhtml:13 /tmp/erb-gettext5512.0:14 /tmp/erb-gettext5512.0:52
-#: /tmp/erb-gettext5512.0:26 /tmp/erb-gettext5512.0:13 /tmp/erb-gettext5512.0:12
-#: /tmp/erb-gettext5512.0:13 /tmp/erb-gettext5512.0:29 /tmp/erb-gettext5512.0:16
-#: /tmp/erb-gettext5512.0:29 /tmp/erb-gettext5512.0:13 /tmp/erb-gettext5512.0:16
-#: /tmp/erb-gettext5512.0:101 /tmp/erb-gettext5512.0:17 /tmp/erb-gettext5512.0:22
-#: /tmp/erb-gettext5512.0:12 /tmp/erb-gettext5512.0:21
-msgid "commit"
 msgstr ""
 
 #: app/views/disert_themes/upload_methodology.rhtml:2
 msgid "On this page you can add your methodology file. File should be only in\nPDF format."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:2
 msgid "The first step is to choose the creation type of an exam."
 msgstr ""
 
-#: app/views/exams/_detail.rhtml:12
+#: app/views/exams/_detail.rhtml:11
 msgid "exam by student"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:2 /tmp/erb-gettext5512.0:24 /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:2 /tmp/erb-gettext1562.0:24 /tmp/erb-gettext1562.0:17
+#: /tmp/erb-gettext1562.0:5
 msgid "Student"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3 /tmp/erb-gettext5512.0:21 /tmp/erb-gettext5512.0:8
+#: /tmp/erb-gettext1562.0:3 /tmp/erb-gettext1562.0:21 /tmp/erb-gettext1562.0:8
 msgid "Subject"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:4 /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:4 /tmp/erb-gettext1562.0:33 /tmp/erb-gettext1562.0:3
 msgid "1. examinator"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:5 /tmp/erb-gettext5512.0:4
+#: /tmp/erb-gettext1562.0:5 /tmp/erb-gettext1562.0:36 /tmp/erb-gettext1562.0:4
 msgid "2. examinator"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:6 /tmp/erb-gettext5512.0:34 /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:6 /tmp/erb-gettext1562.0:34 /tmp/erb-gettext1562.0:5
 msgid "Created by"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:10 /tmp/erb-gettext5512.0:43 /tmp/erb-gettext5512.0:17
-#: /tmp/erb-gettext5512.0:11
+#: /tmp/erb-gettext1562.0:10 /tmp/erb-gettext1562.0:43 /tmp/erb-gettext1562.0:28
+#: /tmp/erb-gettext1562.0:11
 msgid "Result"
 msgstr ""
 
-#: app/views/exams/_exam_with_student.rhtml:14 /tmp/erb-gettext5512.0:46 /tmp/erb-gettext5512.0:20
+#: app/views/exams/_exam_with_student.rhtml:14 /tmp/erb-gettext1562.0:46 /tmp/erb-gettext1562.0:26
+#: /tmp/erb-gettext1562.0:26
 msgid "Questions"
 msgstr ""
 
@@ -628,58 +635,121 @@ msgstr ""
 msgid "Creating exam by subject"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:5
 msgid "Examined students"
 msgstr ""
 
-#: app/views/exams/_form.rhtml:7 /tmp/erb-gettext5512.0:7
+#: /tmp/erb-gettext1562.0:7 /tmp/erb-gettext1562.0:7
 msgid "student"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:19 /tmp/erb-gettext5512.0:4
+#: app/views/exams/_form.rhtml:14 /tmp/erb-gettext1562.0:52 /tmp/erb-gettext1562.0:34
+#: /tmp/erb-gettext1562.0:13 /tmp/erb-gettext1562.0:12 /tmp/erb-gettext1562.0:13
+#: /tmp/erb-gettext1562.0:29 /tmp/erb-gettext1562.0:16 /tmp/erb-gettext1562.0:29
+#: /tmp/erb-gettext1562.0:13 /tmp/erb-gettext1562.0:16 /tmp/erb-gettext1562.0:101
+#: /tmp/erb-gettext1562.0:31 /tmp/erb-gettext1562.0:21 /tmp/erb-gettext1562.0:22
+#: /tmp/erb-gettext1562.0:12 /tmp/erb-gettext1562.0:21
+msgid "commit"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:19 /tmp/erb-gettext1562.0:14
 msgid "Exam agenda"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:27 /tmp/erb-gettext5512.0:6 /tmp/erb-gettext5512.0:6
+#: /tmp/erb-gettext1562.0:27 /tmp/erb-gettext1562.0:16 /tmp/erb-gettext1562.0:6
 msgid "1. Examinator"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:30 /tmp/erb-gettext5512.0:9 /tmp/erb-gettext5512.0:9
+#: /tmp/erb-gettext1562.0:30 /tmp/erb-gettext1562.0:19 /tmp/erb-gettext1562.0:9
 msgid "2. Examinator"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:41 /tmp/erb-gettext5512.0:15 /tmp/erb-gettext5512.0:1
+#: /tmp/erb-gettext1562.0:41 /tmp/erb-gettext1562.0:25 /tmp/erb-gettext1562.0:1
 msgid "Exam result"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:51 /tmp/erb-gettext5512.0:25 /tmp/erb-gettext5512.0:15
-#: /tmp/erb-gettext5512.0:100
+#: /tmp/erb-gettext1562.0:51 /tmp/erb-gettext1562.0:33 /tmp/erb-gettext1562.0:15
+#: /tmp/erb-gettext1562.0:100
 msgid "action"
 msgstr ""
 
-#: app/views/exams/_list.rhtml:53 /tmp/erb-gettext5512.0:27 /tmp/erb-gettext5512.0:17
-#: /tmp/erb-gettext5512.0:102
+#: app/views/exams/_list.rhtml:53 /tmp/erb-gettext1562.0:35 /tmp/erb-gettext1562.0:17
+#: /tmp/erb-gettext1562.0:102
 msgid "reset"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:7 /tmp/erb-gettext5512.0:26
+#: /tmp/erb-gettext1562.0:7 /tmp/erb-gettext1562.0:26
 msgid "detail"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:13 /tmp/erb-gettext5512.0:7 /tmp/erb-gettext5512.0:7
-#: /tmp/erb-gettext5512.0:7 /tmp/erb-gettext5512.0:19
+#: /tmp/erb-gettext1562.0:13 /tmp/erb-gettext1562.0:7 /tmp/erb-gettext1562.0:7
+#: /tmp/erb-gettext1562.0:7 /tmp/erb-gettext1562.0:19
 msgid "subject"
 msgstr ""
 
-#: app/views/exams/_main_exam.rhtml:13 /tmp/erb-gettext5512.0:11
+#: app/views/exams/_main_exam.rhtml:13 /tmp/erb-gettext1562.0:11
 msgid "result"
 msgstr ""
 
-#: app/views/exams/_student_subjects.rhtml:3 /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:6
+msgid "Exam date"
+msgstr ""
+
+#: app/views/exams/_search.rhtml:8 /tmp/erb-gettext1562.0:15 /tmp/erb-gettext1562.0:38
+#: /tmp/erb-gettext1562.0:15
+msgid "date"
+msgstr ""
+
+#: app/views/exams/_show.rhtml:3 /tmp/erb-gettext1562.0:5
 msgid "search by lastname"
 msgstr ""
 
-#: app/views/exams/_students.rhtml:5 /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:1
+msgid "Finished creating exam"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:3
+msgid "Czech university of agriculture"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:4
+msgid "Faculty (institute): "
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:8
+msgid "In Prague the"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:12
+msgid "Exam from subject"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:18
+msgid "Branch"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:19 /tmp/erb-gettext1562.0:12
+msgid "Tutor"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:20 /tmp/erb-gettext1562.0:41 /tmp/erb-gettext1562.0:5
+msgid "Department"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:30
+msgid "Exam clasification"
+msgstr ""
+
+#: app/views/exams/_show_protocol_link.rhtml:34 app/views/exams/_show_protocol_link.rhtml:36
+#: /tmp/erb-gettext1562.0:9
+msgid "Signature"
+msgstr ""
+
+#: app/views/exams/_student_subjects.rhtml:2
+msgid "To print the exam protocol press Ctrl+P"
+msgstr ""
+
+#: app/views/exams/_students.rhtml:5 /tmp/erb-gettext1562.0:5
 msgid "exam subjects"
 msgstr ""
 
@@ -687,15 +757,15 @@ msgstr ""
 msgid "exam students"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:2 /tmp/erb-gettext5512.0:12
+#: /tmp/erb-gettext1562.0:2 /tmp/erb-gettext1562.0:12
 msgid "Czech agriculture university in Prague"
 msgstr ""
 
-#: app/views/form/details.rhtml:3 /tmp/erb-gettext5512.0:25
+#: app/views/form/details.rhtml:3 /tmp/erb-gettext1562.0:25
 msgid "Faculty"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:2
+#: /tmp/erb-gettext1562.0:2
 msgid "Your application form have been registered"
 msgstr ""
 
@@ -703,11 +773,11 @@ msgstr ""
 msgid "Fill another form"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:2
+#: /tmp/erb-gettext1562.0:2
 msgid "After clicking the name of faculty, list of corridors  will be shown"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:12
+#: /tmp/erb-gettext1562.0:12
 msgid "documents"
 msgstr ""
 
@@ -715,55 +785,51 @@ msgstr ""
 msgid "There is error in application. Please contact system administrator on address:"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:4
+#: /tmp/erb-gettext1562.0:4
 msgid "Appllication form for doctoral study"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:9
-msgid "Signature"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:11
+#: /tmp/erb-gettext1562.0:11
 msgid "If above informations are right <a href='javascript:window.print()'>print</a> this page and together with printed curriculum vitae, photo copy of documents about accomplishment (diploma, final exam documents), proof of the payment send it to Department of science and research. Address:"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:13
+#: /tmp/erb-gettext1562.0:13
 msgid "Faculty of Forestry and Environment"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:13
+#: /tmp/erb-gettext1562.0:13
 msgid "dep. s&r"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:14
+#: /tmp/erb-gettext1562.0:14
 msgid "Kamycka 1176"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:15
+#: /tmp/erb-gettext1562.0:15
 msgid "165 21 Praha 6 - Suchdol."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:18
+#: /tmp/erb-gettext1562.0:18
 msgid "If they are not right"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:18
+#: /tmp/erb-gettext1562.0:18
 msgid "correct"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:18
+#: /tmp/erb-gettext1562.0:18
 msgid "them, please."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:21
+#: /tmp/erb-gettext1562.0:21
 msgid "If you"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:21
+#: /tmp/erb-gettext1562.0:21
 msgid "finish"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:21
+#: /tmp/erb-gettext1562.0:21
 msgid "you will be registered and noticed about all events"
 msgstr ""
 
@@ -775,7 +841,7 @@ msgstr ""
 msgid "loading ..."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:2 /tmp/erb-gettext5512.0:9 /tmp/erb-gettext5512.0:96
+#: /tmp/erb-gettext1562.0:2 /tmp/erb-gettext1562.0:9 /tmp/erb-gettext1562.0:96
 msgid "note"
 msgstr ""
 
@@ -783,27 +849,23 @@ msgstr ""
 msgid "enrolled students"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:5 /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:5 /tmp/erb-gettext1562.0:5
 msgid "Probation term details"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:7 /tmp/erb-gettext5512.0:39 /tmp/erb-gettext5512.0:7
+#: /tmp/erb-gettext1562.0:7 /tmp/erb-gettext1562.0:39 /tmp/erb-gettext1562.0:7
 msgid "room"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:11 /tmp/erb-gettext5512.0:39 /tmp/erb-gettext5512.0:11
+#: /tmp/erb-gettext1562.0:11 /tmp/erb-gettext1562.0:39 /tmp/erb-gettext1562.0:11
 msgid "starting time"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:15 /tmp/erb-gettext5512.0:38 /tmp/erb-gettext5512.0:15
-msgid "date"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:20 /tmp/erb-gettext5512.0:20
+#: /tmp/erb-gettext1562.0:20 /tmp/erb-gettext1562.0:20
 msgid "maximum of students"
 msgstr ""
 
-#: app/views/probation_terms/_examinators.rhtml:24 /tmp/erb-gettext5512.0:24
+#: app/views/probation_terms/_examinators.rhtml:24 /tmp/erb-gettext1562.0:24
 msgid "note for students"
 msgstr ""
 
@@ -811,15 +873,15 @@ msgstr ""
 msgid "Probation term agenda"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:17
+#: /tmp/erb-gettext1562.0:17
 msgid "You are already enrolled for this term"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:19
+#: /tmp/erb-gettext1562.0:19
 msgid "You are already enrolled for an exam from this subject"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:30
+#: /tmp/erb-gettext1562.0:30
 msgid "edit"
 msgstr ""
 
@@ -843,155 +905,167 @@ msgstr ""
 msgid "Please select the subject of the probation term."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3
-msgid "create study plan"
+#: app/views/probation_terms/new.rhtml:13
+msgid "There are no probation terms by your selection"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:5
-msgid "Have you consulted your study plan with tutor. It is highly recomended"
+#: /tmp/erb-gettext1562.0:2 /tmp/erb-gettext1562.0:12
+msgid "Disert theme"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:9 /tmp/erb-gettext5512.0:20 /tmp/erb-gettext5512.0:25
-msgid "probation_terms"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:11 /tmp/erb-gettext5512.0:1
-msgid "study plan"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:17
-msgid "candidates"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:18
-msgid "exam_terms"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:19 /tmp/erb-gettext5512.0:24
-msgid "exams"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:28
-msgid "students"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:31
-msgid "atestations"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:34 /tmp/erb-gettext5512.0:36
-msgid "logoff"
-msgstr ""
-
-#: app/views/shared/_methodology.rhtml:35
-msgid "do you really want to"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:9
-msgid "upload methodology"
-msgstr ""
-
-#: app/views/shared/_study_plan.rhtml:17
-msgid "methodogy approvement process"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:2
-msgid "This study has been finished"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:8
-msgid "finished on"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:29
-msgid "canceled on"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:35
+#: /tmp/erb-gettext1562.0:11 /tmp/erb-gettext1562.0:44
 msgid "approved on"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:40
+#: app/views/shared/_final_exam.rhtml:15 /tmp/erb-gettext1562.0:12
+msgid "theme of disert theme"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:3
+msgid "create study plan"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:4
+msgid "Have you consulted your study plan with tutor. It is highly recomended"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:8 /tmp/erb-gettext1562.0:18 /tmp/erb-gettext1562.0:22
+msgid "probation terms"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:10 /tmp/erb-gettext1562.0:1
+msgid "study plan"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:15
+msgid "candidates"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:16
+msgid "exam_terms"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:17
+msgid "exams"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:25
+msgid "students"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:27
+msgid "scholarship"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:30 /tmp/erb-gettext1562.0:31
+msgid "logoff"
+msgstr ""
+
+#: app/views/shared/_methodology.rhtml:30
+msgid "do you really want to"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:2 /tmp/erb-gettext1562.0:16
+msgid "methodology summary"
+msgstr ""
+
+#: app/views/shared/_show.rhtml:10
+msgid "upload methodology"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:4
+msgid "This study has been finished"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:10
+msgid "finished on"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:15
 msgid "last atestation:"
 msgstr ""
 
-#: app/views/shared/_subjects.rhtml:45
+#: /tmp/erb-gettext1562.0:20
 msgid "study plan approvement process:"
 msgstr ""
 
-#: app/views/shared/_system_menu.rhtml:5 /tmp/erb-gettext5512.0:8 /tmp/erb-gettext5512.0:12
-#: /tmp/erb-gettext5512.0:5 /tmp/erb-gettext5512.0:13 /tmp/erb-gettext5512.0:23
-#: /tmp/erb-gettext5512.0:33 /tmp/erb-gettext5512.0:16
+#: /tmp/erb-gettext1562.0:25
+msgid "methodogy approvement process"
+msgstr ""
+
+#: app/views/shared/_subjects.rhtml:38
+msgid "canceled on"
+msgstr ""
+
+#: app/views/shared/_system_menu.rhtml:7 /tmp/erb-gettext1562.0:8 /tmp/erb-gettext1562.0:12
+#: /tmp/erb-gettext1562.0:5 /tmp/erb-gettext1562.0:13 /tmp/erb-gettext1562.0:23
+#: /tmp/erb-gettext1562.0:33 /tmp/erb-gettext1562.0:16
 msgid "semester"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3 /tmp/erb-gettext5512.0:2 /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:3 /tmp/erb-gettext1562.0:2 /tmp/erb-gettext1562.0:3
 msgid "Full name"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:4
+#: /tmp/erb-gettext1562.0:4
 msgid "Birth date and place"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:5 /tmp/erb-gettext5512.0:4
+#: /tmp/erb-gettext1562.0:5 /tmp/erb-gettext1562.0:4
 msgid "Birth number"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:6 /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:6 /tmp/erb-gettext1562.0:5
 msgid "State"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:10 /tmp/erb-gettext5512.0:34 /tmp/erb-gettext5512.0:13
+#: /tmp/erb-gettext1562.0:10 /tmp/erb-gettext1562.0:34 /tmp/erb-gettext1562.0:13
 msgid "habitat address"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:12 /tmp/erb-gettext5512.0:34 /tmp/erb-gettext5512.0:28
-#: /tmp/erb-gettext5512.0:75 /tmp/erb-gettext5512.0:5 /tmp/erb-gettext5512.0:12
+#: /tmp/erb-gettext1562.0:12 /tmp/erb-gettext1562.0:34 /tmp/erb-gettext1562.0:28
+#: /tmp/erb-gettext1562.0:75 /tmp/erb-gettext1562.0:5 /tmp/erb-gettext1562.0:12
 msgid "email"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:13 /tmp/erb-gettext5512.0:34 /tmp/erb-gettext5512.0:30
-#: /tmp/erb-gettext5512.0:77 /tmp/erb-gettext5512.0:9 /tmp/erb-gettext5512.0:10
+#: /tmp/erb-gettext1562.0:13 /tmp/erb-gettext1562.0:34 /tmp/erb-gettext1562.0:30
+#: /tmp/erb-gettext1562.0:77 /tmp/erb-gettext1562.0:9 /tmp/erb-gettext1562.0:10
 msgid "phone"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:19 /tmp/erb-gettext5512.0:45 /tmp/erb-gettext5512.0:16
+#: /tmp/erb-gettext1562.0:19 /tmp/erb-gettext1562.0:45 /tmp/erb-gettext1562.0:16
 msgid "Postal address"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:24
+#: /tmp/erb-gettext1562.0:24
 msgid "University"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:27 /tmp/erb-gettext5512.0:65
+#: /tmp/erb-gettext1562.0:27 /tmp/erb-gettext1562.0:65
 msgid "date of study end"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:32 /tmp/erb-gettext5512.0:70
+#: /tmp/erb-gettext1562.0:32 /tmp/erb-gettext1562.0:70
 msgid "Employer"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:33 /tmp/erb-gettext5512.0:73
+#: /tmp/erb-gettext1562.0:33 /tmp/erb-gettext1562.0:73
 msgid "address"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:35 /tmp/erb-gettext5512.0:79
+#: /tmp/erb-gettext1562.0:35 /tmp/erb-gettext1562.0:79
 msgid "job position"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:40 /tmp/erb-gettext5512.0:6
+#: /tmp/erb-gettext1562.0:40 /tmp/erb-gettext1562.0:6
 msgid "Corridor"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:41
-msgid "Department"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:42 /tmp/erb-gettext5512.0:9
+#: /tmp/erb-gettext1562.0:42 /tmp/erb-gettext1562.0:9
 msgid "Study form"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:43
+#: /tmp/erb-gettext1562.0:43
 msgid "Exam languages"
 msgstr ""
 
@@ -999,83 +1073,83 @@ msgstr ""
 msgid "Theme area"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:6
+#: /tmp/erb-gettext1562.0:6
 msgid "Personal informations"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:8
+#: /tmp/erb-gettext1562.0:8
 msgid "firstname"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:10
+#: /tmp/erb-gettext1562.0:10
 msgid "lastname"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:12
+#: /tmp/erb-gettext1562.0:12
 msgid "prefix title"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:14
+#: /tmp/erb-gettext1562.0:14
 msgid "suffix title"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:19
+#: /tmp/erb-gettext1562.0:19
 msgid "birth place"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:23
+#: /tmp/erb-gettext1562.0:23
 msgid "state"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:27 /tmp/erb-gettext5512.0:1
+#: /tmp/erb-gettext1562.0:27 /tmp/erb-gettext1562.0:1
 msgid "Contact"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:35 /tmp/erb-gettext5512.0:46
+#: /tmp/erb-gettext1562.0:35 /tmp/erb-gettext1562.0:46
 msgid "street"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:37 /tmp/erb-gettext5512.0:48
+#: /tmp/erb-gettext1562.0:37 /tmp/erb-gettext1562.0:48
 msgid "street number"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:39 /tmp/erb-gettext5512.0:50
+#: /tmp/erb-gettext1562.0:39 /tmp/erb-gettext1562.0:50
 msgid "city"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:41 /tmp/erb-gettext5512.0:52
+#: /tmp/erb-gettext1562.0:41 /tmp/erb-gettext1562.0:52
 msgid "zip"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:45
+#: /tmp/erb-gettext1562.0:45
 msgid "don't fill if identic to habitat address"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:56
+#: /tmp/erb-gettext1562.0:56
 msgid "Accomplishments"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:57 /tmp/erb-gettext5512.0:25
+#: /tmp/erb-gettext1562.0:57 /tmp/erb-gettext1562.0:25
 msgid "university"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:59
+#: /tmp/erb-gettext1562.0:59
 msgid "faculty"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:63
+#: /tmp/erb-gettext1562.0:63
 msgid "specialization"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:71
+#: /tmp/erb-gettext1562.0:71
 msgid "employer"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:83
+#: /tmp/erb-gettext1562.0:83
 msgid "Study registration"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:89
+#: /tmp/erb-gettext1562.0:89
 msgid "language exams"
 msgstr ""
 
@@ -1083,15 +1157,39 @@ msgstr ""
 msgid "theme area"
 msgstr ""
 
+#: /tmp/erb-gettext1562.0:4
+msgid "Student name"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:6
+msgid "Regular"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:7
+msgid "Extra"
+msgstr ""
+
+#: /tmp/erb-gettext1562.0:30
+msgid "Kc"
+msgstr ""
+
+#: app/views/students/_search.rhtml:39
+msgid "To print this page, please press Ctrl+P"
+msgstr ""
+
+#: app/views/students/_search_succesfull.rhtml:26
+msgid "year"
+msgstr ""
+
 #: app/views/students/_student_links.rhtml:19
 msgid "postal address"
 msgstr ""
 
-#: app/views/students/new.rhtml:10
-msgid "There are no students in system"
+#: app/views/students/show.rhtml:2
+msgid "Scholarship for students"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:3
 msgid "Place and date of birth"
 msgstr ""
 
@@ -1099,7 +1197,7 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:1 /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:1 /tmp/erb-gettext1562.0:5
 msgid "confirm"
 msgstr ""
 
@@ -1107,11 +1205,11 @@ msgstr ""
 msgid "Are you sure, your plan is ready?"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:3
 msgid "Unfinished subjects are in red."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:10
+#: /tmp/erb-gettext1562.0:10
 msgid "Student didn't have any subject for this atestation."
 msgstr ""
 
@@ -1119,20 +1217,12 @@ msgstr ""
 msgid "Additional information provided by student"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:6
+#: /tmp/erb-gettext1562.0:6
 msgid "semester of final exam"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:12 /tmp/erb-gettext5512.0:3
-msgid "theme of disert theme"
-msgstr ""
-
-#: app/views/study_plans/_disert_theme.rhtml:14
+#: app/views/study_plans/_language.rhtml:14
 msgid "term of disert theme defense"
-msgstr ""
-
-#: app/views/study_plans/_final_exam.rhtml:16
-msgid "add methodology summary"
 msgstr ""
 
 #: app/views/study_plans/_language_form.rhtml:2
@@ -1143,47 +1233,35 @@ msgstr ""
 msgid "language subjects"
 msgstr ""
 
-#: app/views/study_plans/_not_valid_disert.rhtml:5 app/views/study_plans/_plan_error.rhtml:6
+#: app/views/study_plans/_not_valid_disert.rhtml:3 /tmp/erb-gettext1562.0:14
+msgid "voluntary subjects"
+msgstr ""
+
+#: app/views/study_plans/_plan_error.rhtml:6 /tmp/erb-gettext1562.0:3
 msgid "obligate subjects"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:4
-msgid "Tutor statement"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:9
-msgid "Leader statement"
-msgstr ""
-
-#: app/views/study_plans/_show.rhtml:14
-msgid "Dean statement"
+#: /tmp/erb-gettext1562.0:4
+msgid "atestation"
 msgstr ""
 
 #: app/views/study_plans/_show_detail_form.rhtml:5
 msgid "approve with condition"
 msgstr ""
 
-#: app/views/study_plans/_study_plan.rhtml:12
-msgid "Tutor"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:2
+#: /tmp/erb-gettext1562.0:2
 msgid "Canceled on"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:5
+#: /tmp/erb-gettext1562.0:5
 msgid "Approved on"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:12
-msgid "Disert theme"
-msgstr ""
-
-#: /tmp/erb-gettext5512.0:17
+#: /tmp/erb-gettext1562.0:17
 msgid "methodology file"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:23
+#: /tmp/erb-gettext1562.0:23
 msgid "Final exam"
 msgstr ""
 
@@ -1191,15 +1269,15 @@ msgstr ""
 msgid "Subjects"
 msgstr ""
 
-#: app/views/study_plans/_valid_voluntarys.rhtml:2
-msgid "Now you can see your plan how you have created\nin previous steps. You have to confirm it otherwise it will be lost."
+#: app/views/study_plans/_valid_languages.rhtml:2
+msgid "Now you can see your plan how you have created\nin previous steps. You have to confirm it otherwise it will be lost. Also\nprinting it (by ctrl+p or file print) is recomended."
 msgstr ""
 
-#: app/views/study_plans/_voluntary.rhtml:3 /tmp/erb-gettext5512.0:14
-msgid "voluntary subjects"
+#: app/views/study_plans/_valid_voluntarys.rhtml:3 app/views/study_plans/_voluntary.rhtml:3
+msgid "languages"
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:3
 msgid "voluntary subject"
 msgstr ""
 
@@ -1207,39 +1285,35 @@ msgstr ""
 msgid "examinator"
 msgstr ""
 
-#: app/views/study_plans/create.rhtml:3
-msgid "languages"
-msgstr ""
-
 #: app/views/study_plans/index.rhtml:2
 msgid "On this page you are starting to create your study plan. Study plan\nshould be consulted with your tutor."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:3
+#: /tmp/erb-gettext1562.0:3
 msgid "Your study plan, details of it you can see here, is\nprocessed now. Final approvement you will get by email. "
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:6
+#: /tmp/erb-gettext1562.0:6
 msgid "Your study plan, details of it you can see here, is\napproved now. You should add methodics summary as soon as possible and\nmethodics in three months."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:10
+#: /tmp/erb-gettext1562.0:10
 msgid "Your methodology is processed now. Final approvement you \nwill get by email. "
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:15
+#: /tmp/erb-gettext1562.0:15
 msgid "Welcome to edoktorand application."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:16
+#: /tmp/erb-gettext1562.0:16
 msgid "This page shows informations which are stored in\ninformation system."
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:18
+#: /tmp/erb-gettext1562.0:18
 msgid " If you have found any error please contact "
 msgstr ""
 
-#: /tmp/erb-gettext5512.0:20
+#: /tmp/erb-gettext1562.0:20
 msgid "Menu in right top corner shows actions you have acces\nto."
 msgstr ""
 

@@ -7,11 +7,7 @@ should be consulted with your tutor.") %>
 </ul>
 </div>
 <div id="form">
-  <% unless @voluntary %>
-  <%= render :partial => 'obligates' %>
-  <% else %>
-  <%= render :partial => 'voluntary_form' %>
-  <% end %>
+  <%= render :partial => "#{@type}_form" %>
 </div>
 <%= 
 javascript_tag <<-CODE

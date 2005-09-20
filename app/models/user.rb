@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
       self.roles.include?(Role.find_by_name(role))
     end
   end
+  # checks if user have one of the roles from array
+  def has_one_of_roles?(roles)
+    !roles.select {|r| has_role?(r)}.empty?
+  end
     
   protected
 

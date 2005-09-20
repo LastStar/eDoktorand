@@ -3,7 +3,6 @@ class ExamsController < ApplicationController
   layout "employers"
   before_filter :set_title
   before_filter :login_required
-  before_filter :prepare_conditions
   before_filter :prepare_user
   def index
     list
@@ -39,17 +38,13 @@ class ExamsController < ApplicationController
   def exam_by_subject
     @exam = Exam.new('created_by_id' => @session['user'].person.id)
     @session['exam'] = @exam
-    if @session['user'].has_role?(Role.find_by_name('admin'))
+    if @session['user'].has_role?('admin')
       subjects  = Subject.find_all()
-    elsif (@session['user'].person.is_a? Dean) ||
-      (@session['user'].person.is_a? FacultySecretary)
-      faculty = @session['user'].person.department.faculty 
-      subjects = []
-      faculty.departments.each {|dep| subjects << dep.subjects}
-    elsif (@session['user'].person.is_a? Leader) ||
-      (@session['user'].person.is_a? DepartmentSecretary) ||
-      (@session['user'].person.is_a? Tutor)
-      subjects = @session['user'].person.tutorship.department.subjects
+    elsif @session['user'].has_role?('faculty_secretary')
+      faculty = @session['user'].person.faculty 
+      subjects = faculty.departments.inject([]) {|arr, dep| arr.concat(dep.subjects)}
+    elsif @session['user'].has_role?('department_secretary')
+      subjects = @session['user'].person.department_employment.department.subjects
     end
     # viz TODO
     # subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
@@ -69,10 +64,10 @@ class ExamsController < ApplicationController
   def exam_by_student
     @exam = Exam.new('created_by_id' => @session['user'].person.id)
     @session['exam'] = @exam
-    students  = Student.find_all()
-    students = students.select {|stud| !stud.index.finished?}
-    # viz TODO
-    # subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
+    @conditions = ['indices.finished_on IS NULL AND study_plans.approved_on 
+    IS NOT NULL']
+    students = Index.find(:all, :conditions => @conditions, :include => [:student,
+    :study_plan]).map {|i| i.student}
     render(:partial => "students", :locals => {:students => students}) 
   end
   

@@ -1,8 +1,14 @@
-<label><%= plan_subject.subject.label %></label>
-<%= content_tag('select', options_for_select((1..4), plan_subject.finishing_on), { 'id' => 
-"plan_subject_#{plan_subject.id}",'name' =>
-"plan_subject[#{plan_subject.id}][finishing_on]"}) %>
-<%= "." + _("semester") %>
-<%= tag('input', {'type' => 'hidden', 'value' => plan_subject.subject_id, 'id' => 
-"plan_subject_#{plan_subject.id}_subject_id", 'name' =>
-"plan_subject[#{plan_subject.id}][subject_id]"}) %>
+<%= form_remote_tag(:url => {:action => 'save_obligate'}, :loading =>
+      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+      "loading"), :complete => evaluate_remote_response) %>	
+<fieldset>
+<%= hidden_field 'study_plan', 'index_id' %>
+<legend><%= _("obligate subjects") %></legend>
+<% for plan_subject in @plan_subjects do %>
+<%= render_partial 'obligate', :plan_subject => plan_subject %>
+<br/> 
+<% end %>
+</fieldset>
+<%= submit_tag(_("commit")) %>
+<%= end_form_tag %>
+

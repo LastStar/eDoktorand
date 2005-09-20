@@ -1,4 +1,3 @@
-"id";"firstname";"lastname";"birth_on";"birth_at";"title_before_id";"title_after_id"
 1913;"Václav";"Hejnák";;"";6;5
 1943;"Jaromír";"Lachman";;"";7;1
 1539;"Josef";"Kozák";;"";7;2
@@ -28,7 +27,7 @@
 2304;"Radimír";"Novotný";;"";6;3
 2134;"Marek";"Vach";;"";8;5
 2208;"Josef";"Gross";;"";7;1
-52;"Pavla";"Rymešová";1969-10-02 00:00:00;"Praha";9;0
+52;"Pavla";"Rymešová";1969-10-02 00:00:00;"Praha";9;""
 11;"Ivan";"Vrana";1941-06-12 00:00:00;"Myjava, okr. Senica";7;3
 175;"Vìra";"Majerová";1944-07-15 00:00:00;"Èeské Budìjovice";30;1
 22;"Miroslav";"Svatoš";1948-12-21 00:00:00;"Radim  21.12.1948";7;1
@@ -49,4 +48,4 @@
 2391;"Karel";"Pokorný";;"";7;1
 2472;"Miroslav";"Kavka";;"";7;3
 140;"Josef                                             ";"Pošta                                             ";;"";7;1
-1286;"Dušan";"Vavrla";;"";14;0
+1286;"Dušan";"Vavrla";;"";14;""

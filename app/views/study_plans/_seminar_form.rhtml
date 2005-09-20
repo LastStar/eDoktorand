@@ -1,0 +1,29 @@
+<%= form_remote_tag(:url => {:action => 'save_seminar'}, :loading =>
+      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
+      "loading"), :complete => evaluate_remote_response) %>	
+<fieldset>
+<%= hidden_field 'study_plan', 'index_id' %>
+<legend><%= _("seminar subjects") %></legend>
+<label>
+<%= _("seminar subject") %>
+</label>
+<% subjects = seminar_ids(@session['study_plan'].index.coridor) %>
+<%= content_tag('select', options_for_select(subjects),
+  { 'id' => "plan_subject", 'name' => "plan_subject"}) %><br/>  
+<% 2.times do |i| %>
+<label>
+  <%= _("#{'I' * (i+1)}. part") %>
+</label>
+
+<%= content_tag('select', options_for_select(1..5),
+  { 'id' => "plan_subject_finishing_on[#{i}]",
+  'name' => "plan_subject_finishing_on[#{i}]"})
+%>
+<%= "." + _("semester") %>
+<br/> 
+<% end %>
+</fieldset>
+<%= submit_tag(_("commit")) %>
+<%= end_form_tag %>
+
+

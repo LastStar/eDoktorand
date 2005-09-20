@@ -14,10 +14,12 @@
 <legend><%= _("Exam agenda") %></legend>
 
   <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
-  <%= select 'exam', 'first_examinator_id', examinator_ids%><br />
+  <%= select 'exam', 'first_examinator_id',
+  examinator_ids(@user.person.faculty.id)%><br />
 
   <label for="exam_second_examinator"><%=_("2. Examinator")%></label>
-  <%= select 'exam', 'second_examinator_id', examinator_null_ids%><br />
+  <%= select 'exam', 'second_examinator_id',
+  examinator_null_ids(@user.person.faculty.id)%><br />
 
 </fieldset>
 

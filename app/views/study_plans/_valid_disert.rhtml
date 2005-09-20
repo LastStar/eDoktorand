@@ -1,7 +1,6 @@
 <%= update_element_function("guide",
 :content => render(:inline => _("Now you can see your plan how you have created
-in previous steps. You have to confirm it otherwise it will be lost. Also
-printing it (by ctrl+p or file print) is recomended."))) %>
+in previous steps. You have to confirm it otherwise it will be lost."))) %>
 <%= update_element_function("studyPlan", :position => :bottom,
 :content => render(:partial => "shared/final_exam", 
 :locals => {:study_plan => study_plan})) %>

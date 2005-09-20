@@ -1,4 +1,12 @@
 class StudyPlan < ActiveRecord::Base
+  belongs_to :index
+  has_many :plan_subjects
+  has_one :approvement, :class_name => 'StudyPlanApprovement', :foreign_key =>
+  'document_id'
+  has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
+  acts_as_audited
+  validates_presence_of :index
+  serialize :final_areas, Hash
   # returns true if study plan is approved
   def approved?
     return true if self.approved_on
@@ -11,6 +19,7 @@ class StudyPlan < ActiveRecord::Base
   def admited?
     return true unless self.admited_on.nil?
   end
+  # TODO should be redone 
   #  returns true if study plan has been atested for last atestation
   def atested_for?(atestation)
     return true if self.last_atested_on && self.last_atested_on > atestation.opening_on
@@ -56,11 +65,4 @@ class StudyPlan < ActiveRecord::Base
       !statement.cancel?
     self.save
   end
-  belongs_to :index
-  has_many :plan_subjects
-  has_one :approvement, :class_name => 'StudyPlanApprovement', :foreign_key =>
-  'document_id'
-  has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
-  acts_as_audited
-  validates_presence_of :index
 end

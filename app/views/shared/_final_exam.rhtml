@@ -2,4 +2,11 @@
 <div class='info'><%= "#{study_plan.finishing_to}. #{_('semester')}" %></div>
   <b><%= "#{_('final exam')}" %></b>
 </li>
-
+<% if study_plan.final_areas %>
+<% study_plan.final_areas.each do |fa| %>
+<li>
+<div class='long_info'><%= "#{fa.last}" %></div>
+<b><%= "#{fa.first.to_i}. " + _("final area") %></b>
+</li>
+<% end %>
+<% end %>

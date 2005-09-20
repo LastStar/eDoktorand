@@ -6,10 +6,6 @@ class Student < Person
   has_one :phone, :class_name => 'Contact', :foreign_key => 'person_id', :conditions => 'contact_type_id = 2'
   has_one :candidate
   has_and_belongs_to_many :probation_terms
-  validates_presence_of :address, :on => :update
-  validates_associated :address, :on => :update
-  validates_presence_of :email, :on => :update
-  validates_associated :email, :on => :update
   # returns faculty on which student is
   def faculty
     index.department.faculty

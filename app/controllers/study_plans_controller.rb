@@ -29,6 +29,24 @@ class StudyPlansController < ApplicationController
       @session['plan_subjects'] << plan_subject
     end
     create_voluntary
+    @type = 'obligate'
+    render(:partial => 'voluntarys', :locals => {:plan_subjects =>
+    @session['plan_subjects'], :form_plan_subjects => @plan_subjects})
+  end
+  # saves seminar subjects to session
+  # and creates voluntary subjects
+  def save_seminar
+    @session['study_plan'].attributes = @params['study_plan']
+    plan_subject = PlanSubject.new('subject_id' => @params['plan_subject'])
+    last_semester(@params['plan_subject_finishing_on']['0'])
+    plan_subject.finishing_on = @params['plan_subject_finishing_on']['0']
+    @session['plan_subjects'] << plan_subject
+    plan_subject = plan_subject.clone
+    last_semester(@params['plan_subject_finishing_on']['1'])
+    plan_subject.finishing_on = @params['plan_subject_finishing_on']['1']
+    @session['plan_subjects'] << plan_subject
+    create_voluntary
+    @type = 'seminar'
     render(:partial => 'voluntarys', :locals => {:plan_subjects =>
     @session['plan_subjects'], :form_plan_subjects => @plan_subjects})
   end
@@ -37,7 +55,7 @@ class StudyPlansController < ApplicationController
   def save_voluntary
     @errors = []
     extract_voluntary
-    count = FACULTY_CFG['lf']['subjects_count'] -
+    count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
     @session['plan_subjects'].size
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == count && @errors.empty?
       @plan_subjects.each {|ps| last_semester(ps.finishing_on)}
@@ -132,7 +150,6 @@ class StudyPlansController < ApplicationController
   # renders study plan
   def show
     study_plan = StudyPlan.find(@params['id'])
-    @statement = study_plan.index.statement_for(@user.person)
     render(:partial => 'shared/show', :locals => {:study_plan => study_plan, :remove =>
     nil})
   end
@@ -153,6 +170,7 @@ class StudyPlansController < ApplicationController
   private	
   # prepares obligate subjects
   def create_obligate
+    @type = 'obligate'
     @session['plan_subjects'] = []
     @plan_subjects = []
     index = 0
@@ -163,8 +181,22 @@ class StudyPlansController < ApplicationController
       index += 1
     end
     if index == 0
+      create_seminar
+    end
+  end
+  # prepares seminar subjects
+  def create_seminar
+    @type = 'seminar'
+    index == 0
+    @plan_subjects = []
+    @session['study_plan'].index.coridor.obligate_subjects.each do |sub|
+      ps = PlanSubject.new('subjec_id' => sub.subject.id)
+      ps.id = index
+      @plan_subjects << ps
+      index += 1
+    end
+    if index == 0
       create_voluntary
-      @voluntary = true
     end
   end
   # prepares language  subject
@@ -178,8 +210,9 @@ class StudyPlansController < ApplicationController
   end
   # prepares voluntary subject 
   def create_voluntary
+    @type = 'voluntary'
     @plan_subjects = []
-    count = FACULTY_CFG['lf']['subjects_count'] -
+    count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
     @session['plan_subjects'].size
     (1..count).each do |index|
       ps = PlanSubject.new

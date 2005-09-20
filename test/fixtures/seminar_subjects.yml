@@ -1,0 +1,5 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first_seminar_subject:
+  id: 1
+another_seminar_subject:
+  id: 2

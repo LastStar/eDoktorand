@@ -1,5 +1,10 @@
 # this file stores configuration values for each faculty
 
-lf:
-  atestation_semester: 1
+3:
   subjects_count: 5 
+4:
+  subjects_count: 8  
+1:
+  final_areas_on: create   
+  subjects_count: 7  
+    
