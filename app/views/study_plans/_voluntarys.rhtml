@@ -1,5 +1,3 @@
-<%= update_element_function("studyPlan", :position => :before,
-:content => render(:inline => content_tag('h5', _("Study plan")))) %>
 <%= update_element_function("studyPlan", :position => :bottom,
 :content => render(:partial => "shared/subjects", 
 :locals => {:subjects => plan_subjects, :title => _("#{@type} subjects")})) %>

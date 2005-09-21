@@ -1,6 +1,7 @@
 # The filters added to this controller will be run for all controllers in the application.
 # Likewise will all the methods added be available for all controllers.
 require_dependency 'dean'
+require_dependency 'user'
 require_dependency 'obligate_subject'
 require_dependency 'plan_subject'
 require_dependency 'study_plan'

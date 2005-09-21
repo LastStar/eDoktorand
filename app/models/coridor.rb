@@ -4,6 +4,7 @@ class Coridor < ActiveRecord::Base
   has_many :obligate_subjects
   has_many :voluntary_subjects
   has_many :seminar_subjects 
+  has_many :requisite_subjects 
   has_one :exam_term
 	has_many :indexes
   validates_presence_of :faculty

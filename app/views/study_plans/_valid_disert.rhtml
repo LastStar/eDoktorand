@@ -4,7 +4,7 @@ in previous steps. You have to confirm it otherwise it will be lost."))) %>
 <%= update_element_function("studyPlan", :position => :bottom,
 :content => render(:partial => "shared/final_exam", 
 :locals => {:study_plan => study_plan})) %>
-<%= update_element_function("studyPlan", :position => :bottom,
+<%= update_element_function("studyPlan", :position => :after,
 :content => render(:partial => 'shared/disert_theme', 
 :locals => {:disert_theme => disert_theme })) %>
 <%= update_element_function("form", 

@@ -14,8 +14,10 @@ class StudyPlansController < ApplicationController
     @session['plan_subjects'] = []
     @session['disert_theme'] = nil
     @title = _("Creating study plan")
-    @study_plan = @student.index.build_study_plan
-    @session['study_plan'] = @study_plan
+    @session['study_plan'] = @study_plan = @student.index.build_study_plan
+    if RequisiteSubject.has_for_coridor?(@student.index.coridor)
+      create_requisite
+    end
     create_obligate
   end
   # saves obligate subjects to session
@@ -23,8 +25,7 @@ class StudyPlansController < ApplicationController
   def save_obligate
     @session['study_plan'].attributes = @params['study_plan']
     @params['plan_subject'].each do |id, ps|
-      plan_subject = PlanSubject.new
-      plan_subject.attributes = ps
+      plan_subject = PlanSubject.new(ps)
       last_semester(ps['finishing_on'])
       @session['plan_subjects'] << plan_subject
     end
@@ -37,14 +38,12 @@ class StudyPlansController < ApplicationController
   # and creates voluntary subjects
   def save_seminar
     @session['study_plan'].attributes = @params['study_plan']
-    plan_subject = PlanSubject.new('subject_id' => @params['plan_subject'])
-    last_semester(@params['plan_subject_finishing_on']['0'])
-    plan_subject.finishing_on = @params['plan_subject_finishing_on']['0']
-    @session['plan_subjects'] << plan_subject
-    plan_subject = plan_subject.clone
-    last_semester(@params['plan_subject_finishing_on']['1'])
-    plan_subject.finishing_on = @params['plan_subject_finishing_on']['1']
-    @session['plan_subjects'] << plan_subject
+    2.times do |i|
+      plan_subject = PlanSubject.new('subject_id' => @params['plan_subject'])
+      last_semester(@params['plan_subject_finishing_on'][i.to_s])
+      plan_subject.finishing_on = @params['plan_subject_finishing_on'][i.to_s]
+      @session['plan_subjects'] << plan_subject
+    end
     create_voluntary
     @type = 'seminar'
     render(:partial => 'voluntarys', :locals => {:plan_subjects =>
@@ -168,34 +167,34 @@ class StudyPlansController < ApplicationController
     @student.index.study_plan})
   end
   private	
+  # adds requisite subjects to study plan
+  def create_requisite
+    @student.index.coridor.requisite_subjects.each do |sub|
+      @session['plan_subjects'] << PlanSubject.new('subject_id' => 
+      sub.subject.id, 'finishing_on' => sub.requisite_on)
+    end
+  end
   # prepares obligate subjects
   def create_obligate
     @type = 'obligate'
-    @session['plan_subjects'] = []
     @plan_subjects = []
-    index = 0
     @session['study_plan'].index.coridor.obligate_subjects.each do |sub|
       ps = PlanSubject.new('subject_id' => sub.subject.id)
-      ps.id = index
+      ps.id = sub.subject.id
       @plan_subjects << ps
-      index += 1
     end
-    if index == 0
-      create_seminar
-    end
+    create_seminar if @plan_subjects.empty?
   end
   # prepares seminar subjects
   def create_seminar
     @type = 'seminar'
-    index == 0
     @plan_subjects = []
     @session['study_plan'].index.coridor.obligate_subjects.each do |sub|
       ps = PlanSubject.new('subjec_id' => sub.subject.id)
-      ps.id = index
+      ps.id = sub.subject.id
       @plan_subjects << ps
-      index += 1
     end
-    if index == 0
+    if @plan_subjects.empty?
       create_voluntary
     end
   end
@@ -214,21 +213,10 @@ class StudyPlansController < ApplicationController
     @plan_subjects = []
     count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
     @session['plan_subjects'].size
-    (1..count).each do |index|
+    count.times do |index|
       ps = PlanSubject.new
       ps.id = index
       @plan_subjects << ps
-    end
-  end
-  # extracts language subjects from request
-  def extract_language(remap_id = false)
-    @plan_subjects = []
-    @params['plan_subject'].each do |id, ps|
-      plan_subject = PlanSubject.new
-      plan_subject.attributes = ps
-      plan_subject.id = id if remap_id
-      last_semester(ps['finishing_on'])
-      @plan_subjects << plan_subject
     end
   end
   # extracts voluntary subjects from request
@@ -241,8 +229,7 @@ class StudyPlansController < ApplicationController
         unless subject.valid?
           @errors << _("title for external subject cannot be empty")
         end
-        esd =
-        subject.build_external_subject_detail(@params['external_subject_detail'][id])
+        esd = subject.build_external_subject_detail(@params['external_subject_detail'][id])
         unless esd.valid?
           @errors << _("university for external subject cannot be empty")
         else
@@ -255,6 +242,17 @@ class StudyPlansController < ApplicationController
       plan_subject.finishing_on = ps['finishing_on']
       plan_subject.subject = subject
       plan_subject.id = id if remap_id
+      @plan_subjects << plan_subject
+    end
+  end
+  # extracts language subjects from request
+  def extract_language(remap_id = false)
+    @plan_subjects = []
+    @params['plan_subject'].each do |id, ps|
+      plan_subject = PlanSubject.new
+      plan_subject.attributes = ps
+      plan_subject.id = id if remap_id
+      last_semester(ps['finishing_on'])
       @plan_subjects << plan_subject
     end
   end

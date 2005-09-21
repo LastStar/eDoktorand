@@ -4,6 +4,11 @@ should be consulted with your tutor.") %>
 </p>
 <div id="done">
 <ul id='studyPlan'>
+  <%= content_tag('h5', _("Study plan")) %>
+  <% unless @session['plan_subjects'].empty? %>
+  <%= render(:partial => "shared/subjects", 
+  :locals => {:subjects => @session['plan_subjects'], :title => _("requisite subjects")}) %>
+  <% end %>
 </ul>
 </div>
 <div id="form">
@@ -12,11 +17,11 @@ should be consulted with your tutor.") %>
 <%= 
 javascript_tag <<-CODE
 last = []
+last[0] = 0
 last[1] = 0
 last[2] = 0
 last[3] = 0
 last[4] = 0
-last[5] = 0
 function hide_on_internal(id) {
   var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
   if((element.value == 0 && last[id] != 0) || (element.value != 0 && last[id] == 0)) {

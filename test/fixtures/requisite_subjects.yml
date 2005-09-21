@@ -1,0 +1,5 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first_requisite_subject:
+  id: 1
+another_requisite_subject:
+  id: 2
