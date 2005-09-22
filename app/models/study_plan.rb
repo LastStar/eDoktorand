@@ -21,24 +21,20 @@ class StudyPlan < ActiveRecord::Base
   end
   # TODO should be redone 
   #  returns true if study plan has been atested for last atestation
-  def atested_for?(atestation)
-    return true if self.last_atested_on && self.last_atested_on > atestation.opening_on
+  def atested_for?(date)
+    return true if self.last_atested_on && self.last_atested_on > date
   end
   # returns atestation detail for next atestation  
   def next_atestation_detail
-    if AtestationTerm.next?(self.index.student.faculty)
-      at = AtestationTerm.next(self.index.student.faculty)
-      return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
-      atestation_term_id = ?', self.id, at.id ])
-    end
+    return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
+    atestation_term = ?', self.id,
+    Atestation.next_for_faculty(self.index.student.faculty)])
   end
   # returns atestation detail for actual atestations
   def actual_atestation_detail
-    if AtestationTerm.actual?(self.index.student.faculty)
-      at = AtestationTerm.actual(self.index.student.faculty)
-      return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
-      atestation_term_id = ?', self.id, at.id ])
-    end
+    at = Atestation.actual_for_faculty(self.index.student.faculty)
+    return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
+    atestation_term = ?', self.id, at])
   end
   # returns count of atestation for study plan
   def atestation_count

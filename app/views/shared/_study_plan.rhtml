@@ -13,8 +13,9 @@
 <% end %>
 <% if study_plan.atestation  %>
 <h5><%= _("last atestation:") %></h5>
-<ul>
+<ul id='atestation'>
   <%= print_statements(study_plan.atestation) %>
+  <%= atestation_detail(study_plan) %>
 </ul>
 <% elsif study_plan.approvement && !disert_theme.has_methodology? %>
 <h5><%= _("study plan approvement process:") %></h5>
@@ -30,7 +31,6 @@
 <h5>
   <%= _("Study plan") %>
 </h5>
-<%= atestation_links(study_plan) %>
 <ul id='<%= "study_plan#{study_plan.id}" %>'>
 <% if study_plan.canceled? %>
   <li>
@@ -51,13 +51,13 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
 <%= render(:partial => 'shared/disert_theme', 
   :locals => {:disert_theme => study_plan.index.disert_theme, :study_plan =>
   study_plan, :methodology => true}) %>
-  <% unless study_plan.approved?
-    document = study_plan
-  else 
-    document = study_plan.index.disert_theme
-  end %>
+<% if !study_plan.approved? || study_plan.index.disert_theme.approved? 
+  document = study_plan
+else 
+  document = study_plan.index.disert_theme
+end %>
 <%= approve_forms(document) %>
-<% if @session['user'].has_role?('tutor') %>
+<% if @user.has_role?('tutor') %>
 <%= link_to_remote("back", :url => {:controller => 'students', :action => 
 "filter", :filter_by => @session['filter']}, :update => 'students_list',
 :loading => visual_effect(:appear, 'loading'), :interactive => 

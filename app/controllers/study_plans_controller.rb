@@ -121,9 +121,7 @@ class StudyPlansController < ApplicationController
   # atests study plan 
   def atest
     study_plan = StudyPlan.find(@params['id'])
-    @statement = study_plan.index.statement_for(@user.person) 
-    render(:partial => 'show_atestation', :locals => {:approvement =>
-    study_plan.atestation, :study_plan => study_plan})
+    render(:partial => 'show_atestation', :locals => {:study_plan => study_plan})
   end
   # confirms and saves statement
   def confirm_atest
@@ -156,7 +154,7 @@ class StudyPlansController < ApplicationController
   def atestation_details
     @atestation_detail = @student.index.study_plan.next_atestation_detail ||
     AtestationDetail.new('study_plan_id' => @student.index.study_plan.id,
-    'atestation_term_id' => AtestationTerm.next(@student.faculty).id) 
+    'atestation_term' => Atestation.next_for_faculty(@student.faculty)) 
     render(:partial => 'show_detail_form', :locals => {:study_plan =>
     @student.index.study_plan})
   end

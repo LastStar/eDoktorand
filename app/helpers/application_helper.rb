@@ -124,22 +124,8 @@ module ApplicationHelper
   end
   # prints atestation links
   def atestation_links(study_plan)
-    return
-    if AtestationTerm.actual?(@user.person.faculty) && study_plan.approved? &&
-      study_plan.index.disert_theme.approved?
-      if @user.person == study_plan.index.tutor &&
-        (!study_plan.atestation || (study_plan.atestation &&
-        !study_plan.atestation.tutor_statement))
-        atestation_link(study_plan, 'tutor')
-      elsif @user.person.is_a?(Leader) &&
-        @user.person == study_plan.index.leader &&
-        study_plan.atestation && !study_plan.atestation.leader_statement
-        atestation_link(study_plan, 'leader') 
-      elsif @user.person.is_a?(Dean) &&
-        study_plan.atestation && study_plan.atestation.leader_statement && 
-        !study_plan.atestation.dean_statement
-        atestation_link(study_plan, 'dean')
-      end
+    if Atestation.actual_for_faculty(@user.person.faculty)
+      atestation_link(study_plan)
     end
   end
   # prints subjects link
@@ -159,7 +145,7 @@ module ApplicationHelper
   # prints atestaion subject line wihch depends on finishing of the subject
   def atestation_subject_line(plan_subject, atestation_term)
     content = ''
-    if plan_subject.finished? && (plan_subject.finished_on <= atestation_term.opening_on)
+    if plan_subject.finished? && (plan_subject.finished_on <= atestation_term)
       content << content_tag('div', 
       plan_subject.finished_on.strftime('%d. %m. %Y'), :class => 'info')
       html_class = ''
@@ -187,9 +173,9 @@ module ApplicationHelper
     #{statement_type}", :class => 'second')
   end
   # prints atestation link
-  def atestation_link(study_plan, person)
+  def atestation_link(study_plan)
     element = "approve_form#{study_plan.id}"
-    link_to_remote(_("atest like #{person}"), {:url => {:controller =>
+    link_to_remote(_("see atestation informations"), {:url => {:controller =>
     'study_plans', :action => 'atest', :id => study_plan}, :loading => 
     visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
     "loading"), :complete => evaluate_remote_response}, {:id =>
@@ -199,9 +185,16 @@ module ApplicationHelper
   def approve_form(document, statement)
     statement.class.to_s =~ /(.*)Statement/
     person = $1.downcase
+    if document.is_a?(StudyPlan) && document.approved?
+      action = 'confirm_atest'
+      title = _("atest like #{person}")
+    else
+      action = 'confirm_approve'
+      title = _("approve like #{person}")
+    end
     render(:partial => 'shared/approve_form', :locals => {:document => document,
-    :title => _("approve like #{person}"), :options => [[_("approve"), 1], [_("cancel"),
-    0]], :action => 'confirm_approve', :statement => statement, :controller =>
+    :title => title, :options => [[_("approve"), 1], [_("cancel"),
+    0]], :action => action, :statement => statement, :controller =>
     document.class.to_s.underscore.pluralize})
   end
   # prints methodology link
@@ -213,11 +206,15 @@ module ApplicationHelper
     evaluate_remote_response}), {:id => "methodology_link#{disert_theme.id}"})
   end
   # prints atestation detail link
-  def atestation_detail_link(study_plan)
-    link_to_remote(_("additional information"), {:url => {:controller => 
-    'study_plans', :action => 'atestation_details', :id => study_plan}, 
-    :loading => visual_effect(:appear, 'loading'), :interactive => 
-    visual_effect(:fade, "loading"), :complete => evaluate_remote_response}, 
-    {:id => "detail_link#{study_plan.id}"})
+  def atestation_detail(study_plan)
+    if @student
+      link_to_remote(_("additional information for next atestation"), {:url => {:controller => 
+      'study_plans', :action => 'atestation_details', :id => study_plan}, 
+      :loading => visual_effect(:appear, 'loading'), :interactive => 
+      visual_effect(:fade, "loading"), :complete => evaluate_remote_response}, 
+      {:id => "detail_link#{study_plan.id}"})
+    else
+      atestation_links(study_plan)
+    end
   end
 end

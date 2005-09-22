@@ -34,22 +34,27 @@ class Index < ActiveRecord::Base
       if result = self.disert_theme.approvement.prepare_statement(user)
         return result
       end
-#   elsif AtestationTerm.actual?(self.student.faculty) &&
-#       !self.study_plan.atested_for?(AtestationTerm.actual(self.student.faculty))
-#     self.study_plan.atestation ||= Atestation.create
-#     return self.study_plan.atestation.prepare_statement(user.person)
+    elsif self.disert_theme.approved? && Atestation.actual_for_faculty(self.student.faculty) &&
+    !self.study_plan.atested_for?(Atestation.actual_for_faculty(self.student.faculty))
+      self.study_plan.atestation ||= Atestation.create
+      return self.study_plan.atestation.prepare_statement(user)
     end
   end
   # returns statement if this index waits for approvement from person
-  def waits_for_statement?(person)
+  def waits_for_statement?(user)
     if self.study_plan && !self.study_plan.approved?
       self.study_plan.approvement ||= StudyPlanApprovement.create
-      if self.study_plan.approvement.prepares_statement?(person)
+      if self.study_plan.approvement.prepares_statement?(user)
         return true
       end
     elsif self.disert_theme && self.disert_theme.has_methodology? && !self.disert_theme.approved? 
       self.disert_theme.approvement ||= DisertThemeApprovement.create 
-      if self.disert_theme.approvement.prepares_statement?(person)
+      if self.disert_theme.approvement.prepares_statement?(user)
+        return true
+      end
+    elsif self.study_plan && self.study_plan.approved? &&
+    !self.study_plan.atested_for?(Atestation.actual_for_faculty(user.person.faculty))
+      if self.study_plan.atestation.prepares_statement?(user)
         return true
       end
     end
@@ -80,7 +85,9 @@ class Index < ActiveRecord::Base
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user, options = {})
     result = self.find_for_user(user, :conditions => [' AND (study_plans.approved_on IS NULL OR
-      disert_themes.approved_on IS NULL)'], :include => [:study_plan, :disert_theme])
+    disert_themes.approved_on IS NULL OR study_plans.last_atested_on IS NULL OR
+    study_plans.last_atested_on < ?)', Atestation.actual_for_faculty(user.person.faculty)],
+    :include => [:study_plan, :disert_theme])
     if user.has_one_of_roles?(['tutor', 'leader', 'dean'])
       result.select {|i| i.waits_for_statement?(user)} 
     else

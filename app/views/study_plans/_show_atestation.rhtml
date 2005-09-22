@@ -1,8 +1,4 @@
-<%= update_element_function("study_plan#{study_plan.id}", :position => :before,
+<%= update_element_function("study_plan#{study_plan.id}",
 :content => render(:partial => "atest_information", :locals =>
 {:study_plan => study_plan})) %>
-<%= render(:partial => "shared/approve", :locals => {:title => _("atestation"), :options => 
-[[_("approve"), 1], [_("approve with condition"), 2], [_("cancel"), 0]],
-:approvement => approvement}) %>
-
 

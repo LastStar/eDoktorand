@@ -3,7 +3,7 @@
 <% end %>
 <% subjects.sort! {|x, y| x.finishing_on <=> y.finishing_on} %>
 <% for subject in subjects %>
-<li class='second'>
+<li class='second' id='<%= "subject#{subject.id}" %>'>
 <div class='info'><%= subject.finishing_on %>. <%= _("semester") %></div>
 <%= subject.subject.label %>
 </li>
