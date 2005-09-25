@@ -1,6 +1,4 @@
-<%= form_remote_tag(:url => {:action => 'save_seminar'}, :loading =>
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-      "loading"), :complete => evaluate_remote_response) %>	
+<%= form_remote_with_loading(:action => 'save_seminar')%>	
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
 <legend><%= _("seminar subjects") %></legend>

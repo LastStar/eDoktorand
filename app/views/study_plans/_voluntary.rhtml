@@ -1,36 +1,16 @@
-
 <label class='smaller'>
 <%= _("voluntary subject") %>
 </label>
-<%= content_tag('select', options_for_select(subjects, plan_subject.subject_id),
-  { 'id' => "plan_subject_#{plan_subject.id}_subject_id",
-  'name' => "plan_subject[#{plan_subject.id}][subject_id]",
-  'onChange' => "hide_on_internal(#{plan_subject.id})"}) %>
-&mdash;<%= content_tag('select', options_for_select(1..4,
-  plan_subject.finishing_on ),
-  { 'id' => "plan_subject_#{plan_subject.id}_finishing_on",
-  'name' => "plan_subject[#{plan_subject.id}][finishing_on]"})
-%>
+<%= voluntary_select(subjects, voluntary) %>
 <%= "." + _("semester") %>
 <br/> 
-<div id="external<%= plan_subject.id %>">
+<div id="external<%= voluntary.id %>" style='<%= hide_style(voluntary) %>' >
 <label><%= _("subject") %></label>
-<%= tag('input', { 'type' => 'text', 'id' =>
-"external_subject_detail_#{plan_subject.id}_label", 
-'name' => "plan_subject[#{plan_subject.id}][label]", "value" =>
- plan_subject.subject.is_a?(ExternalSubject) ? plan_subject.subject.label : ''}) %>
+<%= external_subject_input(voluntary) %>
 <br/> 
 <label><%= _("university") %></label>
-<%= tag('input', { 'type' => 'text', 'id' =>
-"external_subject_detail_#{plan_subject.id}_university", 
-'name' => "external_subject_detail[#{plan_subject.id}][university]", 'value' =>
-plan_subject.subject.is_a?(ExternalSubject) ?
-plan_subject.subject.external_subject_detail.university : ''}) %>
+<%= external_university_input(voluntary) %>
 <br/> 
 <label><%= _("examinator") %></label>
-<%= tag('input', { 'type' => 'text', 'id' =>
-"external_subject_detail_#{plan_subject.id}_person", 
-'name' => "external_subject_detail[#{plan_subject.id}][person]", 'value' =>
-plan_subject.subject.is_a?(ExternalSubject) ?
-plan_subject.subject.external_subject_detail.person : ''}) %>
+<%= external_person_input(voluntary) %>
 </div>

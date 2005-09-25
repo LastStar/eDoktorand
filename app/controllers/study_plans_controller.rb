@@ -1,3 +1,4 @@
+require 'study_plan_creator'
 class StudyPlansController < ApplicationController
   include LoginSystem
   layout 'employers'
@@ -10,11 +11,8 @@ class StudyPlansController < ApplicationController
   # start of the study plan creating process
   # namely obligate subjects
   def create
-    reset_plan_session
-    @session['plan_subjects'] = []
-    @session['disert_theme'] = nil
+    prepare_plan_session
     @title = _("Creating study plan")
-    @session['study_plan'] = @study_plan = @student.index.build_study_plan
     if RequisiteSubject.has_for_coridor?(@student.index.coridor)
       create_requisite
     end
@@ -23,16 +21,18 @@ class StudyPlansController < ApplicationController
   # saves obligate subjects to session
   # and creates voluntary subjects
   def save_obligate
+    created_subjects = []
     @session['study_plan'].attributes = @params['study_plan']
     @params['plan_subject'].each do |id, ps|
       plan_subject = PlanSubject.new(ps)
       last_semester(ps['finishing_on'])
-      @session['plan_subjects'] << plan_subject
+      created_subjects << plan_subject
     end
+    @session['plan_subjects'].concat(created_subjects)
     create_voluntary
     @type = 'obligate'
     render(:partial => 'voluntarys', :locals => {:plan_subjects =>
-    @session['plan_subjects'], :form_plan_subjects => @plan_subjects})
+    created_subjects})
   end
   # saves seminar subjects to session
   # and creates voluntary subjects
@@ -56,7 +56,7 @@ class StudyPlansController < ApplicationController
     extract_voluntary
     count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
     @session['plan_subjects'].size
-    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == count && @errors.empty?
+    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size >= count && @errors.empty?
       @plan_subjects.each {|ps| last_semester(ps.finishing_on)}
       @session['plan_subjects'] << @plan_subjects
       voluntary_subjects = @plan_subjects
@@ -108,7 +108,7 @@ class StudyPlansController < ApplicationController
     disert_theme.index = @study_plan.index 
     disert_theme.save
     @study_plan.save
-    reset_plan_session
+    prepare_plan_session
     redirect_to :action => 'index'
   end
   # confirms and saves statement
@@ -164,108 +164,6 @@ class StudyPlansController < ApplicationController
     render(:partial => 'after_save_detail', :locals => {:study_plan => 
     @student.index.study_plan})
   end
-  private	
-  # adds requisite subjects to study plan
-  def create_requisite
-    @student.index.coridor.requisite_subjects.each do |sub|
-      @session['plan_subjects'] << PlanSubject.new('subject_id' => 
-      sub.subject.id, 'finishing_on' => sub.requisite_on)
-    end
-  end
-  # prepares obligate subjects
-  def create_obligate
-    @type = 'obligate'
-    @plan_subjects = []
-    @session['study_plan'].index.coridor.obligate_subjects.each do |sub|
-      ps = PlanSubject.new('subject_id' => sub.subject.id)
-      ps.id = sub.subject.id
-      @plan_subjects << ps
-    end
-    create_seminar if @plan_subjects.empty?
-  end
-  # prepares seminar subjects
-  def create_seminar
-    @type = 'seminar'
-    @plan_subjects = []
-    @session['study_plan'].index.coridor.obligate_subjects.each do |sub|
-      ps = PlanSubject.new('subjec_id' => sub.subject.id)
-      ps.id = sub.subject.id
-      @plan_subjects << ps
-    end
-    if @plan_subjects.empty?
-      create_voluntary
-    end
-  end
-  # prepares language  subject
-  def create_language
-    @plan_subjects = []
-    (1..2).each do |index|
-      ps = PlanSubject.new
-      ps.id = index
-      @plan_subjects << ps
-    end
-  end
-  # prepares voluntary subject 
-  def create_voluntary
-    @type = 'voluntary'
-    @plan_subjects = []
-    count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
-    @session['plan_subjects'].size
-    count.times do |index|
-      ps = PlanSubject.new
-      ps.id = index
-      @plan_subjects << ps
-    end
-  end
-  # extracts voluntary subjects from request
-  def extract_voluntary(remap_id = false)
-    @plan_subjects = []
-    @params['plan_subject'].each do |id, ps|
-      if(ps['subject_id'] == '0')
-        subject = ExternalSubject.new
-        subject.label = ps['label']
-        unless subject.valid?
-          @errors << _("title for external subject cannot be empty")
-        end
-        esd = subject.build_external_subject_detail(@params['external_subject_detail'][id])
-        unless esd.valid?
-          @errors << _("university for external subject cannot be empty")
-        else
-          subject.external_subject_detail = esd
-        end
-      else
-        subject = Subject.find(ps['subject_id'])
-      end
-      plan_subject = PlanSubject.new
-      plan_subject.finishing_on = ps['finishing_on']
-      plan_subject.subject = subject
-      plan_subject.id = id if remap_id
-      @plan_subjects << plan_subject
-    end
-  end
-  # extracts language subjects from request
-  def extract_language(remap_id = false)
-    @plan_subjects = []
-    @params['plan_subject'].each do |id, ps|
-      plan_subject = PlanSubject.new
-      plan_subject.attributes = ps
-      plan_subject.id = id if remap_id
-      last_semester(ps['finishing_on'])
-      @plan_subjects << plan_subject
-    end
-  end
-  # controls last semester
-  def last_semester(semester)
-    @session['last_semester'] ||= 0
-    if @session['last_semester'] < semester.to_i
-      @session['last_semester'] = semester.to_i   
-    end
-  end
-  # resets variables used in creation form
-  def reset_plan_session
-    @session['study_plan'] = nil
-    @session['plan_subjects'] = nil
-    @session['disert_theme'] = nil
-    @session['last_semester'] = nil
-  end
+  private 
+  include StudyPlanCreator
 end

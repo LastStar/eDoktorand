@@ -7,16 +7,11 @@
 </ul>
 </div>
 <% end %>
-<%= form_remote_tag(:url => {:action => 'save_voluntary'}, :loading =>
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-      "loading"), :complete => evaluate_remote_response) %>	
+<%= form_remote_with_loading(:action => 'save_voluntary') %>	
 <fieldset>
 <legend><%= _("voluntary subjects") %></legend>
-<% subjects = voluntary_ids(@student.index.coridor.id) %>
-<% for plan_subject in @plan_subjects do %>
-<%= render_partial 'voluntary', :plan_subject => plan_subject, :subjects =>
-subjects %>
-<% end %>
+<%= render(:partial => 'voluntary', :collection => @plan_subjects, :locals => {:subjects =>
+voluntary_ids(@student.index.coridor.id)}) %>
 </fieldset>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>

@@ -7,17 +7,11 @@
 </ul>
 </div>
 <% end %>
-<%= form_remote_tag(:url => {:action => 'save_language'}, :loading =>
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-      "loading"), :complete => evaluate_remote_response) %>	
+<%= form_remote_with_loading(:action => 'save_language')%>	
 <fieldset>
-  <legend><%= _("language subjects") %></legend>
-  <% subjects = language_subject_ids %>
-<% for plan_subject in plan_subjects do %>
-<%= render_partial 'language', :plan_subject => plan_subject, :subjects =>
-subjects  %>
-<br/> 
-<% end %>
+<legend><%= _("language subjects") %></legend>
+<%= render(:partial => 'language', :collection => @plan_subjects, :locals => {:subjects =>
+language_subject_ids}) %>
 </fieldset>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>

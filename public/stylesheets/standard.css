@@ -268,13 +268,13 @@ table.list td {
   border:1px solid;
 }
 #loading {
-  position: absolute; 
+  position: fixed; 
   top: 0;
   width: 760px;
   z-index: 1;
   background-color: #b00;
   color: white;
-  font-size: 10pt;
+  font-size: 20pt;
   padding-top: 4px;
   padding-bottom: 4px;
   text-align: center;

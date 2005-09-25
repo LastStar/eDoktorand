@@ -1,13 +1,8 @@
-<%= form_remote_tag(:url => {:action => 'save_obligate'}, :loading =>
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-      "loading"), :complete => evaluate_remote_response) %>	
+<%= form_remote_with_loading(:action => 'save_obligate')  %>	
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
 <legend><%= _("obligate subjects") %></legend>
-<% for plan_subject in @plan_subjects do %>
-<%= render_partial 'obligate', :plan_subject => plan_subject %>
-<br/> 
-<% end %>
+<%= render(:partial => 'obligate', :collection => @plan_subjects) %>
 </fieldset>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>

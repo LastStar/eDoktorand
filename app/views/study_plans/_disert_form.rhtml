@@ -1,7 +1,5 @@
 <% @disert_theme = disert_theme # is this necessary_ %>
-<%= form_remote_tag(:url => {:action => 'save_disert'}, :loading =>
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-      "loading"), :complete => evaluate_remote_response) %>	
+<%= form_remote_with_loading(:action => 'save_disert')%>	
 <fieldset>
 <label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
 <%= select 'study_plan', 'finishing_to', @session['last_semester']..6 %>
