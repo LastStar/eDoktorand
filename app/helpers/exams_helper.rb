@@ -28,16 +28,14 @@ module ExamsHelper
 	end
 	
   def exam_by_subject_link()
-      content_tag('li', link_to_remote(_("exam by subject"), {:url => {:action =>
-      'examBySubject', :controller => 'exams'}, :loading => 
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade, 
-      "loading"), :complete => evaluate_remote_response}))
+    content_tag('li', link_to_remote_with_loading(_("exam by subject"), 
+      :url => {:action => 'examBySubject', :controller => 'exams'}, 
+      :evaluate => true))
   end
   
   def exam_by_person_link()
-      content_tag('li', link_to_remote(_("exam by person"), {:url => {:action =>
-      'examByPerson', :controller => 'exams'}, :loading => 
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade, 
-      "loading"), :complete => evaluate_remote_response}))
+    content_tag('li', link_to_remote_with_loading(_("exam by person"), 
+      :url => {:action => 'examByPerson', :controller => 'exams'},
+      :evaluate => true))
   end
 end

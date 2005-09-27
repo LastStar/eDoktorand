@@ -1,14 +1,7 @@
 <ul class='peopleList'>
 <% for index in @indices  %>
   <li>
-  <div class='right'>
     <%= student_action_link(index) %>
-  </div>
-  <div>
-  <b><%= index.student.display_name %></b>
-  </div>
-  <div id='info<%= index.id %>'>
-  </div >
   </li>
 <% end %>
 </ul>

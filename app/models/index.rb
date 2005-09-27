@@ -8,6 +8,7 @@ class Index < ActiveRecord::Base
   has_many :exams
   belongs_to :coridor
   belongs_to :department
+  has_many :interupts
   validates_presence_of :student
   validates_presence_of :tutor
   # returns leader of department for this student

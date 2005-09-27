@@ -9,7 +9,6 @@ class StudyPlansController < ApplicationController
     @study_plan = @student.index.study_plan
   end
   # start of the study plan creating process
-  # namely obligate subjects
   def create
     prepare_plan_session
     @title = _("Creating study plan")
@@ -163,6 +162,11 @@ class StudyPlansController < ApplicationController
     atestation_detail = AtestationDetail.create(@params['atestation_detail'])  
     render(:partial => 'after_save_detail', :locals => {:study_plan => 
     @student.index.study_plan})
+  end
+  # renders change page for study plan
+  def change
+    @study_plan = StudyPlan.find(@params['id'])
+    render(:partial => 'change')
   end
   private 
   include StudyPlanCreator

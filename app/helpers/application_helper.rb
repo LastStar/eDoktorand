@@ -1,3 +1,4 @@
+# TODO move all ids methods to corresponding models
 module ApplicationHelper
   # prints errors for object
   def errors_for(object)
@@ -114,11 +115,12 @@ module ApplicationHelper
     [ _("canceled"), _("approved")][result]
   end
   # prints approve form
-  def approve_forms(document)
-    if (document.is_a?(StudyPlan) && !document.canceled?) ||
-      document.is_a?(DisertTheme)
-      if statement = document.index.statement_for(@user)
-        approve_form(document, statement)
+  def approve_forms(study_plan)
+    if statement = study_plan.index.statement_for(@user)
+      if study_plan.approved? && !study_plan.index.disert_theme.approved?
+        approve_form(study_plan.index.disert_theme, statement)
+      else
+       approve_form(study_plan, statement)
       end
     end
   end
@@ -127,14 +129,6 @@ module ApplicationHelper
     if Atestation.actual_for_faculty(@user.person.faculty)
       atestation_link(study_plan)
     end
-  end
-  # prints subjects link
-  def subjects_link(study_plan)
-    link_to_remote(_("subjects"), {:url => {:action => 'subjects',
-    :controller => 'study_plans', :id => study_plan}, :loading =>
-    visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-    "loading"), :complete => evaluate_remote_response}, {:id =>
-    "subject_link#{study_plan.id}"})
   end
   # prints statements approvement 
   def print_statements(approvement)
@@ -157,6 +151,17 @@ module ApplicationHelper
     content << plan_subject.subject.label
     content_tag('li', content, :class => html_class)
   end
+  # prints link to remote with apearing and disapearing of the loading _
+  # you should say if it's evaluating response by setting options[:evaluate]
+  # to true, or updating by setting options[:update]
+  def link_to_remote_with_loading(name, options = {}, html_options = {})
+    options[:loading] = visual_effect(:appear, 'loading', :to => 0.8, 
+    :duration => 0.1)
+    options[:interactive] = visual_effect(:fade, "loading", :from => 0.8,
+    :duration => 0.1) 
+    options[:complete] = evaluate_remote_response if options[:evaluate] 
+    link_to_remote(name, options, html_options)
+  end
   private 
   # prints statement
   def print_statement(statement, statement_type)
@@ -175,11 +180,9 @@ module ApplicationHelper
   # prints atestation link
   def atestation_link(study_plan)
     element = "approve_form#{study_plan.id}"
-    link_to_remote(_("see atestation informations"), {:url => {:controller =>
-    'study_plans', :action => 'atest', :id => study_plan}, :loading => 
-    visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-    "loading"), :complete => evaluate_remote_response}, {:id =>
-    element})
+    link_to_remote_with_loading(_("see atestation informations"), {:controller =>
+      'study_plans', :action => 'atest', :id => study_plan, :evaluate => true},
+      {:id => element})
   end
   # prints approvement link
   def approve_form(document, statement)
@@ -188,31 +191,30 @@ module ApplicationHelper
     if document.is_a?(StudyPlan) && document.approved?
       action = 'confirm_atest'
       title = _("atest like #{person}")
+      options = [[_("approve"), 1], [_("approve with earfull"), 2], [_("cancel"), 0]]    
     else
       action = 'confirm_approve'
       title = _("approve like #{person}")
+      options = [[_("approve"), 1], [_("cancel"), 0]]
     end
     render(:partial => 'shared/approve_form', :locals => {:document => document,
-    :title => title, :options => [[_("approve"), 1], [_("cancel"),
-    0]], :action => action, :statement => statement, :controller =>
-    document.class.to_s.underscore.pluralize})
+      :title => title, :options => options, :action => action, :statement => 
+      statement, :controller => document.class.to_s.underscore.pluralize})
   end
   # prints methodology link
   def methodology_link(disert_theme)
-    content_tag('li', link_to_remote(_("methodology file (opens new window)"), 
-    {:url => {:controller => 'disert_themes', :action => 'file_clicked', 
-    :id => disert_theme}, :loading => visual_effect(:appear, 'loading'), 
-    :interactive => visual_effect(:fade, "loading"), :complete => 
-    evaluate_remote_response}), {:id => "methodology_link#{disert_theme.id}"})
+    content_tag('li', link_to_remote_with_loading(
+      _("methodology file (opens new window)"), {:url => {:controller => 
+      'disert_themes', :action => 'file_clicked', :id => disert_theme},
+      :evaluate => true}), {:id => "methodology_link#{disert_theme.id}"})
   end
   # prints atestation detail link
   def atestation_detail(study_plan)
     if @student
-      link_to_remote(_("additional information for next atestation"), {:url => {:controller => 
-      'study_plans', :action => 'atestation_details', :id => study_plan}, 
-      :loading => visual_effect(:appear, 'loading'), :interactive => 
-      visual_effect(:fade, "loading"), :complete => evaluate_remote_response}, 
-      {:id => "detail_link#{study_plan.id}"})
+      link_to_remote_with_loading(_("additional information for next atestation"),
+        {:controller => 'study_plans', :action => 'atestation_details', :id => 
+        study_plan, :evaluate => true}, {:id => 
+        "detail_link#{study_plan.id}"})
     else
       atestation_links(study_plan)
     end

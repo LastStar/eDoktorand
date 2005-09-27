@@ -50,8 +50,8 @@ h4 { padding: 4px; margin: 0px; font-size: 18px; }
 }*/
 
 li { 
-  margin: 0 0 1px 0;
-  padding: 2px 0 0 1ex;
+  margin: 0 0 0 0;
+  padding: 2px 0 0 0.5ex;
   border-bottom: 1px solid #ddc;
   border-left: 3px solid #ddc;
   list-style: none; 
@@ -272,14 +272,15 @@ table.list td {
   top: 0;
   width: 760px;
   z-index: 1;
-  background-color: #b00;
-  color: white;
-  font-size: 20pt;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  background-color: lightgray;
+  color: darkgray;
+  font-size: 30pt;
+  padding-top: 20%;
   text-align: center;
   border-top: 1px solid #ddc;
   border-bottom: 1px solid #ddc;
+  height: 100%;
+  vertical-align: middle;
 }
 #HeadMenu {
 	margin-left: auto;
@@ -323,7 +324,7 @@ table.list td {
 h5 {
 	margin: 0;
 	margin-top: 20px;
-	margin-bottom: 5px;
+	margin-bottom: 0;
 	padding: 0;
 	color: white;
 	font-size: 13px;

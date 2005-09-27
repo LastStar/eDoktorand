@@ -2,13 +2,12 @@
 <br>
 <ul>
   <li>
-    <%= link_to_remote(_("exam by subject"), :url => {:action =>
+    <%= link_to_remote_with_loading(_("exam by subject"), :url => {:action =>
     'exam_by_subject'}, :update => "examForm") %>
   </li>
   <li>
-    <%= link_to_remote(_("exam by person"), :url => {:action =>
-    'exam_by_person'}, :update => "examForm", :complete =>
-        "showExam(#{exam.id})") %>
+    <%= link_to_remote_with_loading(_("exam by person"), :url => {:action =>
+    'exam_by_person'}, :update => "examForm", :complete => "showExam(#{exam.id})") %>
   </li>
 </ul>
 

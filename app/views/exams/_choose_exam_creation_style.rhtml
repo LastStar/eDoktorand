@@ -3,14 +3,12 @@
 </p>
 <ul>
 <li>
-<%= link_to_remote(_("exam by subject"), :url => {:action => 'exam_by_subject'},
-:loading => visual_effect(:appear, 'loading'), :interactive => 
-visual_effect(:fade, "loading"), :complete => evaluate_remote_response) %>
+<%= link_to_remote_with_loading(_("exam by subject"), :action => 
+  'exam_by_subject', :evaluate => true) %>
 </li>
 <li>
-<%= link_to_remote(_("exam by student"), :url => {:action => 'exam_by_student'},
-:loading => visual_effect(:appear, 'loading'), :interactive => 
-visual_effect(:fade, "loading"), :complete => evaluate_remote_response) %>
+<%= link_to_remote_with_loading(_("exam by student"), :action => 
+  'exam_by_student', :evaluate => true) %>
 </li>
 <li>
 </li>

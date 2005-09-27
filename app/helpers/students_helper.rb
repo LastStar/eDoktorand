@@ -4,15 +4,10 @@ module StudentsHelper
     links = ''
     study_plan = index.study_plan
     if study_plan
-      links.concat(content_tag('b', link_to_remote(_("study"), {:url => {:action =>
-      'show', :controller => 'study_plans', :id => study_plan}, :loading => 
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade, 
-      "loading"), :complete => evaluate_remote_response}), 
-      {:id => "link#{study_plan.id}"}))
+      links.concat(content_tag('b',
+      link_to_remote_with_loading(index.student.display_name, 
+        :url => {:action => 'show', :controller => 'study_plans', :id =>
+        study_plan}, :evaluate => true), {:id => "link#{study_plan.id}"}))
     end
-    links.concat(content_tag('b', link_to_remote(_("contact"), :url => {:action => 'contact',
-    :id => index.student.id}, :loading => visual_effect(:appear, 'loading'), 
-    :interactive => visual_effect(:fade, "loading"), :complete =>
-    evaluate_remote_response), :id => "contact_link#{index.id}"))
   end
 end

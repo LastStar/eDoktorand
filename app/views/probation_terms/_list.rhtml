@@ -23,10 +23,9 @@
           probation_term.id}) %>
         <% end %>
       <% else %>
-        <%= link_to_remote(_("detail"), :url => {:action => 'detail', :id =>
-      probation_term.id}, :loading => visual_effect(:appear, 'loading'), :interactive => 
-      visual_effect(:fade, "loading"), :update => "info#{probation_term.id}", :complete =>
-      "showProbationTerm(#{probation_term.id})") %>
+        <%= link_to_remote_with_loading(_("detail"), :url => {:action => 'detail', :id =>
+          probation_term.id}, :update => "info#{probation_term.id}", 
+          :complete => "showProbationTerm(#{probation_term.id})") %>
         <%= link_to(_("edit"), {:action => 'edit', :id => probation_term.id}) %>
       <% end %>
     </div>
