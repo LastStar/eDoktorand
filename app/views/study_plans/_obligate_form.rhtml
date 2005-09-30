@@ -1,4 +1,5 @@
-<%= form_remote_with_loading(:action => 'save_obligate')  %>	
+<%= form_remote_with_loading(:url => {:action => 'save_obligate'}, :evaluate =>
+  true) %>	
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
 <legend><%= _("obligate subjects") %></legend>

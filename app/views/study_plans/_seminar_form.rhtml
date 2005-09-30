@@ -1,4 +1,5 @@
-<%= form_remote_with_loading(:action => 'save_seminar')%>	
+<%= form_remote_with_loading(:url => {:action => 'save_seminar'}, :evaluate =>
+  true)%>	
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
 <legend><%= _("seminar subjects") %></legend>

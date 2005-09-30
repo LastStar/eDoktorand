@@ -51,13 +51,6 @@ module StudyPlansHelper
   def hide_style(plan_subject)
     'display: none' if plan_subject.id == 0 
   end
-  # prints form tag with loading apearing and disapearing
-  # also evaluate remote response is built in
-  def form_remote_with_loading(url)
-    form_remote_tag(:url => url, :loading => "Element.show('loading')",
-      :interactive => "Element.hide('loading')", :complete => 
-      evaluate_remote_response, :html => {:autocomplete => "off"})
-  end
   # prints select tags for language subject
   def language_select(plan_subject, subjects)
     content_tag('select', options_for_select(subjects,

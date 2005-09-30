@@ -1,6 +1,5 @@
-<%= form_remote_tag(:url => {:action => 'save_details'}, :loading =>
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-      "loading"), :complete => evaluate_remote_response) %>	
+<%= form_remote_with_loading(:url => {:action => 'save_details'}, :evaluate =>
+  true) %>	
 <fieldset id="details">
 <legend><%= _("Probation term details") %></legend>
 <label>

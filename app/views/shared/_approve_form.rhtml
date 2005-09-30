@@ -1,8 +1,6 @@
 <% @statement = statement %>
-<%= form_remote_tag(:url => {:controller => controller, :action => action, :id => document},
-:loading => visual_effect(:appear, 'loading'), :interactive => 
-visual_effect(:fade, "loading"), :complete => evaluate_remote_response,:html => {:id =>
-"approve_form#{document.id}"}) %>	
+<%= form_remote_with_loading(:url => {:controller => controller, :action => action, :id => document},
+  :evaluate => true, :html => {:id => "approve_form#{document.id}"}) %>	
 
 <fieldset>
   <legend><%= title %></legend>

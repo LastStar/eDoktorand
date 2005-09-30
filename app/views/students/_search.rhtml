@@ -1,6 +1,5 @@
-<%= form_remote_tag(:url => {:action => 'multiple_filter'}, :loading =>
-visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-"loading"), :update => 'students_list') %>
+<%= form_remote_with_loading(:url => {:action => 'multiple_filter'}, :update =>
+  'students_list') %>
 <fieldset>
   <label for="search_what"><%= _("search by lastname") %></label>
   <%= tag('input', :name => 'search_field', :id => 'search_field', 'size' => '10')

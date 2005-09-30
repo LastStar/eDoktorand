@@ -1,6 +1,5 @@
-<%= form_remote_tag(:url => {:action => 'save_subject'}, :loading =>
-      visual_effect(:appear, 'loading'), :interactive => visual_effect(:fade,
-      "loading"), :complete => evaluate_remote_response) %>	
+<%= form_remote_with_loading(:url => {:action => 'save_subject'}, :evaluate =>
+  true) %>	
 <fieldset>
 <legend><%= _("probation term subjects") %></legend>
 <label>

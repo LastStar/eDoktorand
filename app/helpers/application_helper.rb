@@ -155,14 +155,26 @@ module ApplicationHelper
   # you should say if it's evaluating response by setting options[:evaluate]
   # to true, or updating by setting options[:update]
   def link_to_remote_with_loading(name, options = {}, html_options = {})
-    options[:loading] = visual_effect(:appear, 'loading', :to => 0.8, 
-    :duration => 0.1)
-    options[:interactive] = visual_effect(:fade, "loading", :from => 0.8,
-    :duration => 0.1) 
-    options[:complete] = evaluate_remote_response if options[:evaluate] 
+    option = set_remote_options(options)
     link_to_remote(name, options, html_options)
   end
+  # prints form tag with loading apearing and disapearing
+  # also evaluate remote response is built in
+  def form_remote_with_loading(options)
+    option = set_remote_options(options)
+    options[:html] = {:autocomplete => "off"} 
+    form_remote_tag(options)
+  end
   private 
+  # sets options for remote tags
+  def set_remote_options(options)
+    options[:loading] = visual_effect(:appear, 'loading', :to => 0.6, 
+    :duration => 0.1)
+    options[:interactive] = visual_effect(:fade, "loading", :from => 0.6,
+    :duration => 0.1) 
+    options[:complete] = evaluate_remote_response if options[:evaluate] 
+    return options
+  end
   # prints statement
   def print_statement(statement, statement_type)
     result = ''

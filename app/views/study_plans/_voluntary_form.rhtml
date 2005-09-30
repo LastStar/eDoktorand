@@ -7,7 +7,8 @@
 </ul>
 </div>
 <% end %>
-<%= form_remote_with_loading(:action => 'save_voluntary') %>	
+<%= form_remote_with_loading(:url => {:action => 'save_voluntary'}, :evaluate =>
+  true) %>	
 <fieldset>
 <legend><%= _("voluntary subjects") %></legend>
 <%= render(:partial => 'voluntary', :collection => @plan_subjects, :locals => {:subjects =>

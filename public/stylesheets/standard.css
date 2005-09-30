@@ -1,4 +1,3 @@
-
 body { 
   margin-right: auto;
   margin-left: auto;
@@ -267,20 +266,18 @@ table.list td {
   margin: 0px;
   border:1px solid;
 }
-#loading {
-  position: fixed; 
+div#loading {
+  position: absolute; 
   top: 0;
   width: 760px;
   z-index: 1;
-  background-color: lightgray;
+  background-color: red;
   color: darkgray;
   font-size: 30pt;
   padding-top: 20%;
   text-align: center;
   border-top: 1px solid #ddc;
   border-bottom: 1px solid #ddc;
-  height: 100%;
-  vertical-align: middle;
 }
 #HeadMenu {
 	margin-left: auto;
