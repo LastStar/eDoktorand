@@ -1,0 +1,9 @@
+--- 
+- !ruby/object:ContactType 
+  attributes: 
+    id: "1"
+    label: email
+- !ruby/object:ContactType 
+  attributes: 
+    id: "2"
+    label: phone

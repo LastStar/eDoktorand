@@ -27,12 +27,9 @@ include Log4r
     self.load_subjects('dumps/csv/subjects.csv', :destroy => true)
     self.load_tutors({:tutor => 'dumps/csv/tutors.csv', :tutorship => 'dumps/csv/tutorship.csv'}, :destroy => true)
     self.load_leaders({:leader => 'dumps/csv/leaders.csv',:leadership =>
-    'dumps/csv/leadership.csv'}, :destroy => true)
+      'dumps/csv/leadership.csv'}, :destroy => true)
     self.load_deans({:dean => 'dumps/csv/deans.csv', :deanship =>
-    'dumps/csv/deanship.csv'}, :destroy => true)
-    self.load_students('dumps/csv/students.csv', :destroy => true)
-    self.load_study_plans('dumps/csv/studyPlansPEF.csv', :destroy => true)
-    self.load_plan_subjects('dumps/csv/studyPlans_SubjectsPEF.csv', :destroy => true)
+      'dumps/csv/deanship.csv'}, :destroy => true)
   end
   # loads data for enrollment
   def self.load_for_enrollment
@@ -46,7 +43,7 @@ include Log4r
     self.load_deans({:dean => 'dumps/csv/deans.csv', :deanship =>
     'dumps/csv/deanship.csv'}, :destroy => true)
     CoridorSubject.destroy_all
-    self.load_fle_subjects_coridors('dumps/csv//Corridors_Subjects_FLE.csv')
+    self.load_fle_subjects_coridors('dumps/csv/Corridors_Subjects_FLE.csv')
     self.load_pef_subject_coridors('dumps/csv/subjects_corridors.csv')
     self.set_agro_subjects_coridors
     Student.destroy_all
@@ -123,7 +120,7 @@ def self.load_subjects(file, options = {} )
       end
       t.uic = row[7]
       t.id = row[6]
-      @@mylog.debug "Tutor id: #{row[6]} created" if t.save
+      @@mylog.debug "Tutor: #{t.display_name} created" if t.save
     end
     @@mylog.info "Loading tutorships..."
     CSV::Reader.parse(File.open(files[:tutorship], 'rb'), ';') do |row|
@@ -154,7 +151,7 @@ def self.load_subjects(file, options = {} )
           l.title_after = Title.find(@@suffixes[row[6].to_i])
         end
         l.id = row[0]
-        @@mylog.debug "Leader id: #{l.id} created" if l.save
+        @@mylog.debug "Leader: #{l.display_name} created" if l.save
       end
     end
     @@mylog.info "Loading leaderships..."
@@ -188,7 +185,7 @@ def self.load_subjects(file, options = {} )
           d.title_after = Title.find(@@suffixes[row[6].to_i])
         end
         d.id = row[0]
-        @@mylog.info "Dean id: #{l.id} created" if d.save
+        @@mylog.info "Dean: #{l.display_name} created" if d.save
       end
     end
     @@mylog.info "Loading deanships..."
@@ -212,7 +209,7 @@ def self.load_subjects(file, options = {} )
         u.roles << Role.find(4)
         u.save
       else
-        @@mylog.debug "Tutor uic: #{row[0]} not found"
+        @@mylog.error "Tutor uic: #{row[0]} not found"
       end
     end
   end
@@ -355,11 +352,11 @@ def self.load_subjects(file, options = {} )
       u.password = u.password_confirmation = u.login = row[7]
       s.index = i
       s.id = row[0]
-      s.save
+      @@mylog.debug "Student #{s.display_name}" if s.save
       u.person = s
-      u.save
       u.roles << Role.find(3)
-      @@mylog.debug "Student #{s.display_name}"
+      u.save(false)
+      @@mylog.debug "User #{u.login}" 
       i.save
     end
   end

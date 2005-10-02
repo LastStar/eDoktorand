@@ -2,28 +2,49 @@
 - !ruby/object:Role 
   attributes: 
     name: admin
-    info: Administrátor
+    created_on: 2005-10-02 13:42:28
+    info: ''
+    updated_on: 2005-07-18 09:19:29
     id: "1"
-    created_on: 
-    updated_on:
 - !ruby/object:Role 
   attributes: 
-    name: referentka
-    info: Referentka na VaV
+    name: faculty_secretary
+    created_on: 2005-10-02 13:42:29
+    info: ''
+    updated_on: 2005-09-11 18:00:26
     id: "2"
-    created_on: 
-    updated_on:
 - !ruby/object:Role 
   attributes: 
     name: student
-    info: Student
+    created_on: 2005-10-02 13:42:30
+    info: ''
+    updated_on: 2005-07-18 09:19:29
     id: "3"
-    created_on: 
-    updated_on:
 - !ruby/object:Role 
   attributes: 
     name: tutor
-    info: Tutor
-    created_on: 
-    updated_on:
+    created_on: 2005-10-02 13:42:31
+    info: ''
+    updated_on: 2005-07-18 09:19:29
     id: "4"
+- !ruby/object:Role 
+  attributes: 
+    name: dean
+    created_on: 2005-10-02 13:42:32
+    info: ''
+    updated_on: 2005-09-08 19:54:08
+    id: "5"
+- !ruby/object:Role 
+  attributes: 
+    name: department_secretary
+    created_on: 2005-10-02 13:42:48
+    info: ''
+    updated_on: 0000-00-00 00:00:00
+    id: "7"
+- !ruby/object:Role 
+  attributes: 
+    name: leader
+    created_on: 2005-10-02 13:42:33
+    info: ''
+    updated_on: 2005-09-21 16:12:16
+    id: "6"

@@ -1,0 +1,9 @@
+--- 
+- !ruby/object:AddressType 
+  attributes: 
+    id: "1"
+    label: habitat
+- !ruby/object:AddressType 
+  attributes: 
+    id: "2"
+    label: postal

@@ -2,309 +2,658 @@
 - !ruby/object:Permission 
   attributes: 
     name: account/welcome
-    info:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "1"
-    created_on: 
-    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: account/logout
-    info:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "2"
-    created_on: 
-    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/index
-    info:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "3"
-    created_on: 
-    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/edit
-    info:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "4"
-    created_on: 
-    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/ready
-    info:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "5"
-    created_on: 
-    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/admit
-    info:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "6"
-    created_on: 
-    updated_on:
 - !ruby/object:Permission 
   attributes: 
     name: candidates/by
-    info:
-      vıpis uchazeèù setøídìnı"
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: ''
+    updated_on: 2005-07-19 10:10:47
     id: "7"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/list
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "8"
 - !ruby/object:Permission 
   attributes: 
     name: account/signup
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "9"
 - !ruby/object:Permission 
   attributes: 
     name: account/create
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "10"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/update
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "11"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/index
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "12"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/list
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "13"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/edit
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "14"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/new
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "15"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/create
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "16"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/update
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "17"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/show
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "18"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/invite
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "19"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/destroy
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "20"
 - !ruby/object:Permission 
   attributes: 
     name: exam_terms/destroy
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "21"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/admittance
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "22"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/list_all
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "23"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/show
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "24"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/confirm_admit
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "25"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/invite_now
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "26"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/admit_now
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "27"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/enroll
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "28"
 - !ruby/object:Permission 
   attributes: 
     name: candidates/confirm_enroll
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "29"
 - !ruby/object:Permission 
   attributes: 
     name: students/index
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "30"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/index
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "31"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/choose_subjects
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "32"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/create
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "33"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/finish
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "34"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/save_disert
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "35"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/save
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "36"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/preview
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "37"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/confirm
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "38"
 - !ruby/object:Permission 
   attributes: 
     name: students/show
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "39"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/show
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "40"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/approve
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "41"
 - !ruby/object:Permission 
   attributes: 
     name: study_plans/confirm_approve
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "42"
 - !ruby/object:Permission 
   attributes: 
     name: disert_themes/methodology
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "44"
 - !ruby/object:Permission 
   attributes: 
     name: disert_themes/save_methodology
-    info:
-    created_on: 
-    updated_on:
+    created_on: 2005-07-19 10:10:47
+    info: 
+    updated_on: 2005-07-19 10:10:47
     id: "45"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/save_obligate
+    created_on: 2005-07-19 15:07:14
+    info: 
+    updated_on: 2005-07-19 15:07:14
+    id: "46"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/save_obligate
+    created_on: 2005-07-19 15:09:58
+    info: 
+    updated_on: 2005-07-19 15:09:58
+    id: "47"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/save_language
+    created_on: 2005-07-20 11:57:04
+    info: 
+    updated_on: 2005-07-20 11:57:04
+    id: "48"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/save_voluntary
+    created_on: 2005-07-21 13:45:23
+    info: 
+    updated_on: 2005-07-21 13:45:23
+    id: "49"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/subjects
+    created_on: 2005-07-21 15:45:37
+    info: 
+    updated_on: 2005-07-21 15:45:37
+    id: "50"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/list
+    created_on: 2005-07-23 19:04:57
+    info: 
+    updated_on: 2005-07-23 19:04:57
+    id: "51"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/search
+    created_on: 2005-07-23 20:04:23
+    info: 
+    updated_on: 2005-07-23 20:04:23
+    id: "52"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/contact
+    created_on: 2005-07-23 20:05:34
+    info: 
+    updated_on: 2005-07-23 20:05:34
+    id: "53"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/upload_methodology
+    created_on: 2005-07-28 13:19:03
+    info: 
+    updated_on: 2005-07-28 13:19:03
+    id: "59"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/approve
+    created_on: 2005-07-28 14:56:36
+    info: 
+    updated_on: 2005-07-28 14:56:36
+    id: "61"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/save_methodology_summary
+    created_on: 2005-07-27 10:27:11
+    info: 
+    updated_on: 2005-07-27 10:27:11
+    id: "56"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/methodology_summary
+    created_on: 2005-07-27 10:27:17
+    info: 
+    updated_on: 2005-07-27 10:27:17
+    id: "57"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/approve
+    created_on: 2005-07-28 14:55:08
+    info: 
+    updated_on: 2005-07-28 14:55:08
+    id: "60"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/confirm_approve
+    created_on: 2005-07-28 15:26:36
+    info: 
+    updated_on: 2005-07-28 15:26:36
+    id: "62"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/exam_by_subject
+    created_on: 2005-07-28 19:12:04
+    info: 
+    updated_on: 2005-07-28 19:12:04
+    id: "68"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/save_exam_subject
+    created_on: 2005-07-28 19:03:37
+    info: 
+    updated_on: 2005-07-28 19:03:37
+    id: "65"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/create
+    created_on: 2005-07-28 19:03:40
+    info: 
+    updated_on: 2005-07-28 19:03:40
+    id: "66"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/index
+    created_on: 2005-07-28 19:03:46
+    info: 
+    updated_on: 2005-07-28 19:03:46
+    id: "67"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/save_student_subject
+    created_on: 2005-07-29 13:38:45
+    info: 
+    updated_on: 2005-07-29 13:38:45
+    id: "69"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/save
+    created_on: 2005-07-29 14:07:50
+    info: 
+    updated_on: 2005-07-29 14:07:50
+    id: "70"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/edit
+    created_on: 2005-07-29 14:19:28
+    info: 
+    updated_on: 2005-07-29 14:19:28
+    id: "71"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/detail
+    created_on: 2005-07-29 15:48:26
+    info: 
+    updated_on: 2005-07-29 15:48:26
+    id: "72"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/search
+    created_on: 2005-07-29 15:55:07
+    info: 
+    updated_on: 2005-07-29 15:55:07
+    id: "73"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/exam_by_student
+    created_on: 2005-08-01 13:10:03
+    info: 
+    updated_on: 2005-08-01 13:10:03
+    id: "74"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/save_exam_student
+    created_on: 2005-08-01 13:12:12
+    info: 
+    updated_on: 2005-08-01 13:12:12
+    id: "75"
+- !ruby/object:Permission 
+  attributes: 
+    name: exams/save_exam_student_subject
+    created_on: 2005-08-01 13:23:06
+    info: 
+    updated_on: 2005-08-01 13:23:06
+    id: "76"
+- !ruby/object:Permission 
+  attributes: 
+    name: atestation_terms/index
+    created_on: 2005-08-02 14:36:02
+    info: 
+    updated_on: 2005-08-02 14:36:02
+    id: "77"
+- !ruby/object:Permission 
+  attributes: 
+    name: atestation_terms/create
+    created_on: 2005-08-02 16:40:18
+    info: 
+    updated_on: 2005-08-02 16:40:18
+    id: "78"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/atest
+    created_on: 2005-08-02 22:02:23
+    info: 
+    updated_on: 2005-08-02 22:02:23
+    id: "79"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/confirm_atest
+    created_on: 2005-08-04 12:04:59
+    info: 
+    updated_on: 2005-08-04 12:04:59
+    id: "80"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/filter
+    created_on: 2005-08-11 10:37:17
+    info: 
+    updated_on: 2005-08-11 10:37:17
+    id: "81"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/file_clicked
+    created_on: 2005-08-11 16:04:45
+    info: 
+    updated_on: 2005-08-11 16:04:45
+    id: "82"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/index
+    created_on: 2005-08-12 11:33:44
+    info: 
+    updated_on: 2005-08-12 11:33:44
+    id: "83"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/list
+    created_on: 2005-08-12 11:33:47
+    info: 
+    updated_on: 2005-08-12 11:33:47
+    id: "84"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/atestation_details
+    created_on: 2005-08-15 12:54:41
+    info: 
+    updated_on: 2005-08-15 12:54:41
+    id: "87"
+- !ruby/object:Permission 
+  attributes: 
+    name: disert_themes/file_clicked
+    created_on: 2005-08-12 11:37:30
+    info: 
+    updated_on: 2005-08-12 11:37:30
+    id: "86"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/save_atestation_detail
+    created_on: 2005-08-15 12:54:59
+    info: 
+    updated_on: 2005-08-15 12:54:59
+    id: "88"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/index
+    created_on: 2005-08-29 20:30:55
+    info: 
+    updated_on: 2005-08-29 20:30:55
+    id: "89"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/list
+    created_on: 2005-08-29 20:31:00
+    info: 
+    updated_on: 2005-08-29 20:31:00
+    id: "90"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/create
+    created_on: 2005-08-29 20:36:17
+    info: 
+    updated_on: 2005-08-29 20:36:17
+    id: "91"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/save_probation_term_details
+    created_on: 2005-08-29 20:54:27
+    info: 
+    updated_on: 2005-08-29 20:54:27
+    id: "92"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/save_probation_term_subject
+    created_on: 2005-08-29 20:54:43
+    info: 
+    updated_on: 2005-08-29 20:54:43
+    id: "93"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/save
+    created_on: 2005-08-29 20:55:14
+    info: 
+    updated_on: 2005-08-29 20:55:14
+    id: "94"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/detail
+    created_on: 2005-08-29 21:04:03
+    info: 
+    updated_on: 2005-08-29 21:04:03
+    id: "95"
+- !ruby/object:Permission 
+  attributes: 
+    name: probation_terms/enroll
+    created_on: 2005-08-29 21:32:18
+    info: 
+    updated_on: 2005-08-29 21:32:18
+    id: "96"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/multiple_search
+    created_on: 2005-09-08 20:36:28
+    info: 
+    updated_on: 2005-09-08 20:36:28
+    id: "97"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/multiple_filter
+    created_on: 2005-09-08 20:52:48
+    info: 
+    updated_on: 2005-09-08 20:52:48
+    id: "98"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/sholarship
+    created_on: 2005-09-09 08:34:19
+    info: 
+    updated_on: 2005-09-09 08:34:19
+    id: "99"
+- !ruby/object:Permission 
+  attributes: 
+    name: students/scholarship
+    created_on: 2005-09-09 08:35:16
+    info: 
+    updated_on: 2005-09-09 08:35:16
+    id: "100"
+- !ruby/object:Permission 
+  attributes: 
+    name: study_plans/save_seminar
+    created_on: 2005-09-19 19:12:52
+    info: 
+    updated_on: 2005-09-19 19:12:52
+    id: "101"
