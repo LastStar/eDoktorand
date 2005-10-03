@@ -119,7 +119,7 @@ def self.load_subjects(file, options = {} )
         ts = Tutorship.new  
         t.tutorship = ts
         ts.department = Department.find(row[8])
-        ts.save
+        ts.save(false)
       end
     end
     @@mylog.info "Loading tutorships..."
