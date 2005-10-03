@@ -16,8 +16,8 @@ include Log4r
   @@mylog.outputters = Outputter.stdout
   @@mylog.level = 1
   @@prefixes = [nil, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 20,
-  17, 21, 18, 22, nil, 23, 19, nil, 24, nil, 27, 26, 28, 43, 29, 30, 31, 32,
-  33, 34, 35, 36, 37, 38, 39, 40, 41, 42]
+    17, 21, 18, 22, nil, 23, 19, nil, 24, nil, 27, 26, 28, 43, 29, 30, 31, 32,
+    33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 52]
   @@suffixes = [nil, 44, 45, 46, 47, 48, 49, 51]
   # loads all to database
   def self.load_all
@@ -112,15 +112,15 @@ def self.load_subjects(file, options = {} )
       if row[11] && !row[11].empty?
         t.title_after = Title.find(@@suffixes[row[11].to_i])
       end
+      t.uic = row[7]
+      t.id = row[6]
+      @@mylog.debug "Tutor: #{t.id} " if t.save
       if row[8] && !row[8].empty?
         ts = Tutorship.new  
         t.tutorship = ts
         ts.department = Department.find(row[8])
         ts.save
       end
-      t.uic = row[7]
-      t.id = row[6]
-      @@mylog.debug "Tutor: #{t.display_name} created" if t.save
     end
     @@mylog.info "Loading tutorships..."
     CSV::Reader.parse(File.open(files[:tutorship], 'rb'), ';') do |row|
@@ -349,6 +349,31 @@ def self.load_subjects(file, options = {} )
       i.coridor = Coridor.find(row[4])
       i.study = Study.find(row[5])
       i.tutor = Tutor.find_by_uic(row[6])
+      u.password = u.password_confirmation = u.login = row[7]
+      s.index = i
+      s.id = row[0]
+      @@mylog.debug "Student #{s.display_name}" if s.save
+      u.person = s
+      u.roles << Role.find(3)
+      u.save(false)
+      @@mylog.debug "User #{u.login}" 
+      i.save
+    end
+  end
+  # loads student to system
+  def self.load_enrolled_students_fle(file)
+    @@mylog.info "Loading enrolled students..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      puts row
+      s = Student.new
+      i = Index.new
+      u = User.new
+      s.firstname = row[2]
+      s.lastname = row[1]
+      i.department = Department.find(row[3])
+      i.coridor = Coridor.find(row[4])
+      i.study = Study.find(row[5])
+      i.tutor = Tutor.find(row[6])
       u.password = u.password_confirmation = u.login = row[7]
       s.index = i
       s.id = row[0]
