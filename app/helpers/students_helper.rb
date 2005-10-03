@@ -8,6 +8,8 @@ module StudentsHelper
       link_to_remote_with_loading(index.student.display_name, 
         :url => {:action => 'show', :controller => 'study_plans', :id =>
         study_plan}, :evaluate => true), {:id => "link#{study_plan.id}"}))
+    else
+      links.concat(content_tag('b',index.student.display_name))
     end
   end
 end
