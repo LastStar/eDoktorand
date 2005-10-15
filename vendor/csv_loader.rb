@@ -223,14 +223,12 @@ def self.load_subjects(file, options = {} )
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       s = Student.new
       i = Index.new
-      u = User.new
       s.firstname = row[1]
       s.birthname = row[2]
       s.lastname = row[3]
       s.birth_on = row[4]
       s.birth_number = row[5]
       i.coridor = Coridor.find(row[6])
-      u.password = u.password_confirmation = u.login = row[7]
       s.uic = row[10]
       i.tutor = Tutor.find_by_uic(row[8])
       if row[11] && !row[11].empty?
@@ -267,8 +265,12 @@ def self.load_subjects(file, options = {} )
           dt.finishing_to = row[9].to_i
           dt.save
           sp.admited_on = Time.now 
-          sp.id = row[0]
+          sp.id = row[11]
           sp.save
+          u = User.new
+          u.login = u.password = u.password_confirmation = row[13]
+          u.person = s
+          u.save
           s.save
         end
       end
@@ -277,22 +279,24 @@ def self.load_subjects(file, options = {} )
   # loads plans subjects
   def self.load_plan_subjects(file, options = {} )
     PlanSubject.destroy_all if options[:destroy]
+    arr = File.open('conv_table.yml') {|out| YAML.load(out)}
     @@mylog.info "Loading plan subjects..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       @@mylog.info row[4]
-      if row[4] == 'false'
-        s = Student.find_by_uic(row[0])
-        if s.index
-          if sp = s.index.study_plan
-            if sub = Subject.exists?(row[3])
-              PlanSubject.create('study_plan_id' => sp.id, 'subject_id' => row[3], 'finishing_on' => row[6])
-            end
-          else 
-            @@mylog.debug "student uic: #{s.display_name} doesn't have study plan" 
+      s = Student.find_by_uic(row[0])
+      if s.index
+        if sp = s.index.study_plan
+          if row[4] == 'false' && sub = Subject.exists?(row[3])
+            PlanSubject.create('study_plan_id' => sp.id, 'subject_id' => row[3], 'finishing_on' => row[6])
+          else
+           PlanSubject.create('study_plan_id' => sp.id, 'subject_id' =>
+           arr[row[3].to_i], 'finishing_on' => row[6])
           end
-        else
-          @@mylog.debug "student uic: #{s.display_name} doesn't have index" 
+        else 
+          @@mylog.debug "student uic: #{s.display_name} doesn't have study plan" 
         end
+      else
+        @@mylog.debug "student uic: #{s.display_name} doesn't have index" 
       end
     end
   end
@@ -328,6 +332,7 @@ def self.load_subjects(file, options = {} )
   end
   # sets voluntary subjects for agro
   def self.set_agro_subjects_coridors
+    return false
     Faculty.find(1).coridors.each do |c|
       Subject.find(:all).each do |s| 
         cs = VoluntarySubject.new
@@ -383,6 +388,52 @@ def self.load_subjects(file, options = {} )
       u.save(false)
       @@mylog.debug "User #{u.login}" 
       i.save
+    end
+  end
+  # loads external subjects
+  def self.load_external_subjects(file)
+    @@mylog.info "Loading external subjects..."
+    arr = [] 
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      es = ExternalSubject.new
+      es.label = row[2]
+      esd = ExternalSubjectDetail.new
+      esd.university = row[1] 
+      es.save
+      esd.external_subject = es
+      esd.save
+      arr[row[0].to_i] = es.id
+    end
+    @@mylog.debug arr
+    File.open('conv_table.yml', 'w') {|out| YAML.dump(arr, out)}
+  end
+  # loads examinators
+  def self.load_examinators(file)
+    @@mylog.info "Loading examinators..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      p = Person.new
+      p.firstname = row[4]
+      p.lastname = row[3]
+      p.uic = row[2]
+      p.id = row[1]
+      p.save
+    end
+  end
+  # loads exams
+  def self.load_exams(file)
+    @@mylog.info "Loading exams..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if Student.exists?(row[4])
+        e = Exam.new
+        e.subject = Subject.find(row[1])
+        e.result = 1 
+        e.questions = row[3]
+        e.index_id = Student.find(row[4]).index.id
+        e.created_on = row[6]
+        e.first_examinator = Person.find(row[9]) unless row[9].to_i == -1
+        e.second_examinator = Person.find(row[10]) unless row[10].to_i == -1
+        e.save
+      end
     end
   end
 end

@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   :prepare_user
   before_filter :prepare_order, :prepare_filter, :except => [:show,
   :contact]
+  before_filter :prepare_conditions
   # lists all students
   def index
     filter(:dont_render => true)

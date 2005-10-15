@@ -63,7 +63,7 @@ class Index < ActiveRecord::Base
   # returns all indexes for person
   # accepts Base.find options. Include and order for now
   def self.find_for_user(user, options ={})
-    if user.has_role?('admin')
+    if user.has_one_of_roles?(['admin', 'vicerector'])
       conditions  = ['NULL IS NULL']
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary'])
       conditions = ["department_id IN (" +  user.person.faculty.departments.map {|dep|

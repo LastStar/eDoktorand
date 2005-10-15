@@ -181,7 +181,7 @@ module ApplicationHelper
     if statement
       result << approve_word(statement.result)
       unless statement.note.empty?
-        result << ", #{_('with note: ')} #{truncate(statement.note, 30)}"
+        result << ", #{_('with note')}: #{truncate(statement.note, 30)}"
       end
       result = content_tag('div', statement.created_on.strftime('%d. %m. %Y'),
       :class => 'info') + result

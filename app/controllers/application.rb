@@ -82,5 +82,19 @@ class ApplicationController < ActionController::Base
   def prepare_user
     @user = ActiveRecord::Acts::Audited.current_user = @session['user']
   end
+  # prepares conditions for various queries
+  def prepare_conditions
+    @conditions = "null is not null"
+    if @session['user'].has_one_of_roles?(['admin', 'vicerector'])
+      @conditions  = nil
+    elsif @session['user'].has_one_of_roles?(['dean', 'faculty_secretary'])
+      @conditions = ["department_id IN (" +  @session['user'].person.faculty.departments.map {|dep|
+        dep.id}.join(', ') + ")"]
+    elsif @session['user'].has_one_of_roles?(['leader', 'department_secretary'])
+      @conditions = ['department_id = ?', @session['user'].person.leadership.department_id]
+    elsif @session['user'].has_role?('tutor')
+      @conditions = ['tutor_id = ?', @session['user'].person.id]
+    end
+  end
 end
 

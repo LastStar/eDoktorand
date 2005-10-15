@@ -6,8 +6,6 @@ class Exam < ActiveRecord::Base
  belongs_to :second_examinator, :class_name => "Person", :foreign_key => "second_examinator_id"
  validates_presence_of :index
  validates_presence_of :subject
- validates_presence_of :first_examinator
- validates_presence_of :creator
  # returns true if result is pass
  def passed?
    return true if result == 1

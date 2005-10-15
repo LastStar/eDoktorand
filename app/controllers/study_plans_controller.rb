@@ -54,14 +54,14 @@ class StudyPlansController < ApplicationController
     @errors = []
     extract_voluntary
     count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
-    @session['plan_subjects'].size
+      @session['plan_subjects'].size
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size >= count && @errors.empty?
       @plan_subjects.each {|ps| last_semester(ps.finishing_on)}
       @session['plan_subjects'] << @plan_subjects
       voluntary_subjects = @plan_subjects
       create_language
       render(:partial => 'languages', :locals => {:plan_subjects =>
-      voluntary_subjects, :study_plan => @session['study_plan']})  
+        voluntary_subjects, :study_plan => @session['study_plan']})  
     else
       extract_voluntary(true)
       @errors << _("subjects have to be different") unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 3

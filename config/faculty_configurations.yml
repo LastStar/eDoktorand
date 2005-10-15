@@ -1,14 +1,15 @@
 # this file stores configuration values for each faculty
-
+1:
+  final_areas_on: create   
+  subjects_count: 7  
+  atestation_month: 9
+  atestation_day: 15
 3:
   subjects_count: 7 
   atestation_month: 9
   atestation_day: 20
 4:
   subjects_count: 8  
-1:
-  final_areas_on: create   
-  subjects_count: 7  
-  atestation_month: 9
-  atestation_day: 15
+  atestation_month: 1
+  atestation_day: 31
     
