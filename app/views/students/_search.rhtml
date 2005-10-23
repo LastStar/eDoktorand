@@ -29,8 +29,10 @@
   <label for="filter_by"><%= _("year") %></label>
   <%= content_tag('select', options_for_select(year_ids), 
   {'id' => "filter_by_year", 'name' => "filter_by_year"}) %>
-<% end %>
 </fieldset>
 <%= submit_tag(_("commit")) %>
+<% else %> 
+</fieldset>
+<% end %>
 <%= end_form_tag %>
 

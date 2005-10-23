@@ -39,6 +39,16 @@ class YMLLoader
       YAML.dump(permissions_roles, out)
     end
   end
+  # dumps all classes in class arr to directory like yml fixtures
+  def self.dump_models(*class_arr)
+    class_arr.each do |cl|
+      hsh = {}
+      file = "#{cl.underscore.pluralize}.yml"
+      eval(cl).find(:all).each {|inst| hsh["#{cl.underscore}#{inst.id}"] = inst.attributes}
+      File.open(file, 'w') {|out| YAML.dump(hsh, out)}
+    end
+  end
+
 end
 
 

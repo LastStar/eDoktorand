@@ -52,10 +52,11 @@ class StudyPlansController < ApplicationController
   # and prepares disert theme
   def save_voluntary
     @errors = []
-    extract_voluntary
+    external = extract_voluntary
     count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
       @session['plan_subjects'].size
-    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size >= count && @errors.empty?
+    if @plan_subjects.map {|ps| ps.subject_id}.uniq.size >= (count - external) &&
+        @errors.empty?
       @plan_subjects.each {|ps| last_semester(ps.finishing_on)}
       @session['plan_subjects'] << @plan_subjects
       voluntary_subjects = @plan_subjects

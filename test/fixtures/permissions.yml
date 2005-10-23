@@ -1,5 +1,565 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_permission:
-  id: 1
-another_permission:
+--- 
+permission2: 
+  name: account/logout
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
   id: 2
+permission21: 
+  name: exam_terms/destroy
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 21
+permission42: 
+  name: study_plans/confirm_approve
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 42
+permission84: 
+  name: probation_terms/list
+  created_on: 2005-08-12 11:33:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 84
+permission3: 
+  name: candidates/index
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 3
+permission22: 
+  name: candidates/admittance
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 22
+permission4: 
+  name: candidates/edit
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 4
+permission23: 
+  name: candidates/list_all
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 23
+permission44: 
+  name: disert_themes/methodology
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 44
+permission65: 
+  name: exams/save_exam_subject
+  created_on: 2005-07-28 19:03:37 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 65
+permission86: 
+  name: disert_themes/file_clicked
+  created_on: 2005-08-12 11:37:30 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 86
+permission5: 
+  name: candidates/ready
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 5
+permission24: 
+  name: candidates/show
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 24
+permission45: 
+  name: disert_themes/save_methodology
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 45
+permission66: 
+  name: exams/create
+  created_on: 2005-07-28 19:03:40 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 66
+permission87: 
+  name: study_plans/atestation_details
+  created_on: 2005-08-15 12:54:41 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 87
+permission6: 
+  name: candidates/admit
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 6
+permission25: 
+  name: candidates/confirm_admit
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 25
+permission46: 
+  name: study_plans/save_obligate
+  created_on: 2005-07-19 15:07:14 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 46
+permission67: 
+  name: exams/index
+  created_on: 2005-07-28 19:03:46 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 67
+permission88: 
+  name: study_plans/save_atestation_detail
+  created_on: 2005-08-15 12:54:59 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 88
+permission7: 
+  name: candidates/by
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: ''
+  id: 7
+permission26: 
+  name: candidates/invite_now
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 26
+permission47: 
+  name: study_plans/save_obligate
+  created_on: 2005-07-19 15:09:58 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 47
+permission90: 
+  name: probation_terms/list
+  created_on: 2005-08-29 20:31:00 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 90
+permission68: 
+  name: exams/exam_by_subject
+  created_on: 2005-07-28 19:12:04 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 68
+permission89: 
+  name: probation_terms/index
+  created_on: 2005-08-29 20:30:55 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 89
+permission91: 
+  name: probation_terms/create
+  created_on: 2005-08-29 20:36:17 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 91
+permission8: 
+  name: candidates/list
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 8
+permission27: 
+  name: candidates/admit_now
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 27
+permission70: 
+  name: exams/save
+  created_on: 2005-07-29 14:07:50 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 70
+permission48: 
+  name: study_plans/save_language
+  created_on: 2005-07-20 11:57:04 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 48
+permission69: 
+  name: exams/save_student_subject
+  created_on: 2005-07-29 13:38:45 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 69
+permission92: 
+  name: probation_terms/save_probation_term_details
+  created_on: 2005-08-29 20:54:27 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 92
+permission9: 
+  name: account/signup
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 9
+permission50: 
+  name: study_plans/subjects
+  created_on: 2005-07-21 15:45:37 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 50
+permission28: 
+  name: candidates/enroll
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 28
+permission71: 
+  name: exams/edit
+  created_on: 2005-07-29 14:19:28 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 71
+permission49: 
+  name: study_plans/save_voluntary
+  created_on: 2005-07-21 13:45:23 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 49
+permission93: 
+  name: probation_terms/save_probation_term_subject
+  created_on: 2005-08-29 20:54:43 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 93
+permission72: 
+  name: exams/detail
+  created_on: 2005-07-29 15:48:26 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 72
+permission30: 
+  name: students/index
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 30
+permission51: 
+  name: students/list
+  created_on: 2005-07-23 19:04:57 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 51
+permission29: 
+  name: candidates/confirm_enroll
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 29
+permission94: 
+  name: probation_terms/save
+  created_on: 2005-08-29 20:55:14 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 94
+permission10: 
+  name: account/create
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 10
+permission31: 
+  name: study_plans/index
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 31
+permission52: 
+  name: students/search
+  created_on: 2005-07-23 20:04:23 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 52
+permission73: 
+  name: exams/search
+  created_on: 2005-07-29 15:55:07 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 73
+permission95: 
+  name: probation_terms/detail
+  created_on: 2005-08-29 21:04:03 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 95
+permission11: 
+  name: candidates/update
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 11
+permission32: 
+  name: study_plans/choose_subjects
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 32
+permission53: 
+  name: students/contact
+  created_on: 2005-07-23 20:05:34 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 53
+permission74: 
+  name: exams/exam_by_student
+  created_on: 2005-08-01 13:10:03 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 74
+permission96: 
+  name: probation_terms/enroll
+  created_on: 2005-08-29 21:32:18 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 96
+permission12: 
+  name: exam_terms/index
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 12
+permission33: 
+  name: study_plans/create
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 33
+permission75: 
+  name: exams/save_exam_student
+  created_on: 2005-08-01 13:12:12 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 75
+permission97: 
+  name: students/multiple_search
+  created_on: 2005-09-08 20:36:28 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 97
+permission13: 
+  name: exam_terms/list
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 13
+permission34: 
+  name: study_plans/finish
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 34
+permission76: 
+  name: exams/save_exam_student_subject
+  created_on: 2005-08-01 13:23:06 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 76
+permission100: 
+  name: students/scholarship
+  created_on: 2005-09-09 08:35:16 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: 
+  id: 100
+permission98: 
+  name: students/multiple_filter
+  created_on: 2005-09-08 20:52:48 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 98
+permission14: 
+  name: exam_terms/edit
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 14
+permission35: 
+  name: study_plans/save_disert
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 35
+permission56: 
+  name: disert_themes/save_methodology_summary
+  created_on: 2005-07-27 10:27:11 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 56
+permission77: 
+  name: atestation_terms/index
+  created_on: 2005-08-02 14:36:02 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 77
+permission101: 
+  name: study_plans/save_seminar
+  created_on: 2005-09-19 19:12:52 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: 
+  id: 101
+permission99: 
+  name: students/sholarship
+  created_on: 2005-09-09 08:34:19 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: 
+  id: 99
+permission15: 
+  name: exam_terms/new
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 15
+permission36: 
+  name: study_plans/save
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 36
+permission57: 
+  name: disert_themes/methodology_summary
+  created_on: 2005-07-27 10:27:17 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 57
+permission78: 
+  name: atestation_terms/create
+  created_on: 2005-08-02 16:40:18 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 78
+permission16: 
+  name: exam_terms/create
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 16
+permission37: 
+  name: study_plans/preview
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 37
+permission80: 
+  name: study_plans/confirm_atest
+  created_on: 2005-08-04 12:04:59 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 80
+permission79: 
+  name: study_plans/atest
+  created_on: 2005-08-02 22:02:23 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 79
+permission17: 
+  name: exam_terms/update
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 17
+permission60: 
+  name: disert_themes/approve
+  created_on: 2005-07-28 14:55:08 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 60
+permission38: 
+  name: study_plans/confirm
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 38
+permission81: 
+  name: students/filter
+  created_on: 2005-08-11 10:37:17 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 81
+permission59: 
+  name: disert_themes/upload_methodology
+  created_on: 2005-07-28 13:19:03 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 59
+permission61: 
+  name: disert_themes/approve
+  created_on: 2005-07-28 14:56:36 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 61
+permission39: 
+  name: students/show
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 39
+permission82: 
+  name: disert_themes/file_clicked
+  created_on: 2005-08-11 16:04:45 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 82
+permission40: 
+  name: study_plans/show
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 40
+permission18: 
+  name: exam_terms/show
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 18
+permission1: 
+  name: account/welcome
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 1
+permission83: 
+  name: probation_terms/index
+  created_on: 2005-08-12 11:33:44 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 83
+permission20: 
+  name: candidates/destroy
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 20
+permission41: 
+  name: study_plans/approve
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 41
+permission19: 
+  name: candidates/invite
+  created_on: 2005-07-19 10:10:47 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 19
+permission62: 
+  name: disert_themes/confirm_approve
+  created_on: 2005-07-28 15:26:36 +02:00
+  updated_on: 2005-10-02 15:43:41 +02:00
+  info: 
+  id: 62

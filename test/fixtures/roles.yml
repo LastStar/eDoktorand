@@ -1,5 +1,49 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_role:
+--- 
+role3: 
+  name: student
+  created_on: 2005-10-02 13:42:30 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: ''
+  id: 3
+role4: 
+  name: tutor
+  created_on: 2005-10-02 13:42:31 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: ''
+  id: 4
+role5: 
+  name: dean
+  created_on: 2005-10-02 13:42:32 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: ''
+  id: 5
+role6: 
+  name: leader
+  created_on: 2005-10-02 13:42:33 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: ''
+  id: 6
+role7: 
+  name: department_secretary
+  created_on: 2005-10-02 13:42:48 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: ''
+  id: 7
+role8: 
+  name: vicerector
+  created_on: 2005-10-15 13:53:29 +02:00
+  updated_on: 2005-10-15 13:53:29 +02:00
+  info: 
+  id: 8
+role1: 
+  name: admin
+  created_on: 2005-10-02 13:42:28 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: ''
   id: 1
-another_role:
+role2: 
+  name: faculty_secretary
+  created_on: 2005-10-02 13:42:29 +02:00
+  updated_on: 2005-10-02 15:43:42 +02:00
+  info: ''
   id: 2

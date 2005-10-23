@@ -1,5 +1,313 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_obligate_subject:
+--- 
+obligate_subject289: 
+  type: ObligateSubject
+  coridor_id: 12
+  id: 289
+  subject_id: 1751
+  requisite_on: 
+obligate_subject212: 
+  type: ObligateSubject
+  coridor_id: 11
+  id: 212
+  subject_id: 1334
+  requisite_on: 
+obligate_subject80: 
+  type: ObligateSubject
+  coridor_id: 63
+  id: 80
+  subject_id: 7139
+  requisite_on: 
+obligate_subject36: 
+  type: ObligateSubject
+  coridor_id: 58
+  id: 36
+  subject_id: 6879
+  requisite_on: 
+obligate_subject290: 
+  type: ObligateSubject
+  coridor_id: 12
+  id: 290
+  subject_id: 1340
+  requisite_on: 
+obligate_subject213: 
+  type: ObligateSubject
+  coridor_id: 11
+  id: 213
+  subject_id: 1356
+  requisite_on: 
+obligate_subject81: 
+  type: ObligateSubject
+  coridor_id: 63
+  id: 81
+  subject_id: 7379
+  requisite_on: 
+obligate_subject37: 
+  type: ObligateSubject
+  coridor_id: 58
+  id: 37
+  subject_id: 7121
+  requisite_on: 
+obligate_subject368: 
+  type: ObligateSubject
+  coridor_id: 13
+  id: 368
+  subject_id: 1328
+  requisite_on: 
+obligate_subject291: 
+  type: ObligateSubject
+  coridor_id: 12
+  id: 291
+  subject_id: 1750
+  requisite_on: 
+obligate_subject214: 
+  type: ObligateSubject
+  coridor_id: 11
+  id: 214
+  subject_id: 1801
+  requisite_on: 
+obligate_subject93: 
+  type: ObligateSubject
+  coridor_id: 64
+  id: 93
+  subject_id: 7002
+  requisite_on: 
+obligate_subject38: 
+  type: ObligateSubject
+  coridor_id: 58
+  id: 38
+  subject_id: 7078
+  requisite_on: 
+obligate_subject1: 
+  type: ObligateSubject
+  coridor_id: 60
   id: 1
-another_obligate_subject:
-  id: 2
+  subject_id: 7285
+  requisite_on: 
+obligate_subject369: 
+  type: ObligateSubject
+  coridor_id: 13
+  id: 369
+  subject_id: 1801
+  requisite_on: 
+obligate_subject292: 
+  type: ObligateSubject
+  coridor_id: 12
+  id: 292
+  subject_id: 1380
+  requisite_on: 
+obligate_subject215: 
+  type: ObligateSubject
+  coridor_id: 11
+  id: 215
+  subject_id: 1751
+  requisite_on: 
+obligate_subject94: 
+  type: ObligateSubject
+  coridor_id: 64
+  id: 94
+  subject_id: 7302
+  requisite_on: 
+obligate_subject39: 
+  type: ObligateSubject
+  coridor_id: 59
+  id: 39
+  subject_id: 6879
+  requisite_on: 
+obligate_subject370: 
+  type: ObligateSubject
+  coridor_id: 13
+  id: 370
+  subject_id: 1751
+  requisite_on: 
+obligate_subject216: 
+  type: ObligateSubject
+  coridor_id: 11
+  id: 216
+  subject_id: 1742
+  requisite_on: 
+obligate_subject40: 
+  type: ObligateSubject
+  coridor_id: 59
+  id: 40
+  subject_id: 7121
+  requisite_on: 
+obligate_subject371: 
+  type: ObligateSubject
+  coridor_id: 13
+  id: 371
+  subject_id: 1351
+  requisite_on: 
+obligate_subject129: 
+  type: ObligateSubject
+  coridor_id: 67
+  id: 129
+  subject_id: 7217
+  requisite_on: 
+obligate_subject107: 
+  type: ObligateSubject
+  coridor_id: 66
+  id: 107
+  subject_id: 7366
+  requisite_on: 
+obligate_subject41: 
+  type: ObligateSubject
+  coridor_id: 59
+  id: 41
+  subject_id: 7078
+  requisite_on: 
+obligate_subject526: 
+  type: ObligateSubject
+  coridor_id: 16
+  id: 526
+  subject_id: 1336
+  requisite_on: 
+obligate_subject449: 
+  type: ObligateSubject
+  coridor_id: 15
+  id: 449
+  subject_id: 1380
+  requisite_on: 
+obligate_subject372: 
+  type: ObligateSubject
+  coridor_id: 13
+  id: 372
+  subject_id: 1382
+  requisite_on: 
+obligate_subject130: 
+  type: ObligateSubject
+  coridor_id: 67
+  id: 130
+  subject_id: 7062
+  requisite_on: 
+obligate_subject53: 
+  type: ObligateSubject
+  coridor_id: 61
+  id: 53
+  subject_id: 7301
+  requisite_on: 
+obligate_subject20: 
+  type: ObligateSubject
+  coridor_id: 21
+  id: 20
+  subject_id: 7285
+  requisite_on: 
+obligate_subject1854: 
+  type: ObligateSubject
+  coridor_id: 66
+  id: 1854
+  subject_id: 9007
+  requisite_on: 
+obligate_subject527: 
+  type: ObligateSubject
+  coridor_id: 16
+  id: 527
+  subject_id: 1362
+  requisite_on: 
+obligate_subject450: 
+  type: ObligateSubject
+  coridor_id: 15
+  id: 450
+  subject_id: 1755
+  requisite_on: 
+obligate_subject54: 
+  type: ObligateSubject
+  coridor_id: 61
+  id: 54
+  subject_id: 7302
+  requisite_on: 
+obligate_subject21: 
+  type: ObligateSubject
+  coridor_id: 21
+  id: 21
+  subject_id: 7101
+  requisite_on: 
+obligate_subject1855: 
+  type: ObligateSubject
+  coridor_id: 66
+  id: 1855
+  subject_id: 9008
+  requisite_on: 
+obligate_subject528: 
+  type: ObligateSubject
+  coridor_id: 16
+  id: 528
+  subject_id: 1396
+  requisite_on: 
+obligate_subject451: 
+  type: ObligateSubject
+  coridor_id: 15
+  id: 451
+  subject_id: 1751
+  requisite_on: 
+obligate_subject99: 
+  type: ObligateSubject
+  coridor_id: 65
+  id: 99
+  subject_id: 7311
+  requisite_on: 
+obligate_subject66: 
+  type: ObligateSubject
+  coridor_id: 62
+  id: 66
+  subject_id: 7323
+  requisite_on: 
+obligate_subject529: 
+  type: ObligateSubject
+  coridor_id: 16
+  id: 529
+  subject_id: 1752
+  requisite_on: 
+obligate_subject452: 
+  type: ObligateSubject
+  coridor_id: 15
+  id: 452
+  subject_id: 1366
+  requisite_on: 
+obligate_subject100: 
+  type: ObligateSubject
+  coridor_id: 65
+  id: 100
+  subject_id: 6696
+  requisite_on: 
+obligate_subject67: 
+  type: ObligateSubject
+  coridor_id: 62
+  id: 67
+  subject_id: 7143
+  requisite_on: 
+obligate_subject34: 
+  type: ObligateSubject
+  coridor_id: 58
+  id: 34
+  subject_id: 7074
+  requisite_on: 
+obligate_subject530: 
+  type: ObligateSubject
+  coridor_id: 16
+  id: 530
+  subject_id: 1351
+  requisite_on: 
+obligate_subject288: 
+  type: ObligateSubject
+  coridor_id: 12
+  id: 288
+  subject_id: 1332
+  requisite_on: 
+obligate_subject79: 
+  type: ObligateSubject
+  coridor_id: 63
+  id: 79
+  subject_id: 6929
+  requisite_on: 
+obligate_subject68: 
+  type: ObligateSubject
+  coridor_id: 62
+  id: 68
+  subject_id: 7321
+  requisite_on: 
+obligate_subject35: 
+  type: ObligateSubject
+  coridor_id: 58
+  id: 35
+  subject_id: 6881
+  requisite_on: 

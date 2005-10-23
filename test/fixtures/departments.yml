@@ -1,5 +1,327 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_department:
-  id: 1
-another_department:
+--- 
+department2: 
+  name: Katedra matematiky
+  faculty_id: 5
   id: 2
+  short_name: KM
+  name_english: ''
+department15: 
+  name: Katedra řízení
+  faculty_id: 4
+  id: 15
+  short_name: KR
+  name_english: Department of Management
+department26: 
+  name: Katedra botaniky a fyziologie rostlin
+  faculty_id: 1
+  id: 26
+  short_name: KBFR
+  name_english: Department of Botany and Plant Physiology
+department48: 
+  name: Katedra lesní těžby
+  faculty_id: 3
+  id: 48
+  short_name: KLT
+  name_english: ''
+department59: 
+  name: "Katedra inženýrství, ekonomiky a rozvoje venkova tropů a subtropů"
+  faculty_id: 2
+  id: 59
+  short_name: KIERVTS
+  name_english: ''
+department101: 
+  name: Katedra kvality zemědělských produktů
+  faculty_id: 1
+  id: 101
+  short_name: KKZP
+  name_english: Department of Quality of Agricultural Products
+department3: 
+  name: Katedra fyziky
+  faculty_id: 5
+  id: 3
+  short_name: KF
+  name_english: ''
+department16: 
+  name: Katedra informačních technologií
+  faculty_id: 4
+  id: 16
+  short_name: KIT
+  name_english: Department of Information Technologies
+department27: 
+  name: Katedra pedologie a geologie
+  faculty_id: 1
+  id: 27
+  short_name: KPG
+  name_english: Department of Soil Science and Geology
+department49: 
+  name: Katedra vodn. hosp.
+  faculty_id: 3
+  id: 49
+  short_name: KVH
+  name_english: ''
+department4: 
+  name: Katedra mechan. a strojnic.
+  faculty_id: 5
+  id: 4
+  short_name: KMS
+  name_english: ''
+department17: 
+  name: Katedra operační a systémové analýzy
+  faculty_id: 4
+  id: 17
+  short_name: KOSA
+  name_english: Department of Operational and System Analysis
+department28: 
+  name: "Katedra agroekologie a biometeorologie \r
+
+    "
+  faculty_id: 1
+  id: 28
+  short_name: KAB
+  name_english: Department of Agroecology and  Biometeorology
+department39: 
+  name: Katedra chemie
+  faculty_id: 1
+  id: 39
+  short_name: KCh
+  name_english: Department of Chemistry
+department50: 
+  name: Katedra biotechn. úpr. kraj.
+  faculty_id: 3
+  id: 50
+  short_name: KBUK
+  name_english: ''
+department61: 
+  name: Katedra trop. a subtr. plodin
+  faculty_id: 2
+  id: 61
+  short_name: KTSP
+  name_english: ''
+department104: 
+  name: Katedra speciální zootechniky
+  faculty_id: 1
+  id: 104
+  short_name: KSZ
+  name_english: Department of
+department5: 
+  name: Katedra materiálu a strojírenské technologie
+  faculty_id: 5
+  id: 5
+  short_name: KMST
+  name_english: ''
+department18: 
+  name: Katedra práva
+  faculty_id: 4
+  id: 18
+  short_name: KPr
+  name_english: Department of Law
+department29: 
+  name: Katedra rostlinné výroby
+  faculty_id: 1
+  id: 29
+  short_name: KRV
+  name_english: Department of Crop Production
+department40: 
+  name: Katedra agrochemie a výživy rostlin
+  faculty_id: 1
+  id: 40
+  short_name: KAVR
+  name_english: Department of Agrochemistry and Plant Nutrition
+department51: 
+  name: Katedra staveb
+  faculty_id: 3
+  id: 51
+  short_name: KStav
+  name_english: ''
+department6: 
+  name: Katedra vozidel a pozemní dopravy
+  faculty_id: 5
+  id: 6
+  short_name: KVPD
+  name_english: ''
+department19: 
+  name: Katedra humanitních věd
+  faculty_id: 4
+  id: 19
+  short_name: KHV
+  name_english: Department of Humanities
+department30: 
+  name: Katedra ochrany rostlin
+  faculty_id: 1
+  id: 30
+  short_name: KOR
+  name_english: Department of Crop Protection
+department41: 
+  name: Katedra zahradnictví a krajinářské architektury
+  faculty_id: 1
+  id: 41
+  short_name: KZKA
+  name_english: Department of Horticulture and Landscape Architecture
+department63: 
+  name: "Ústav aplikované ekologie"
+  faculty_id: 3
+  id: 63
+  short_name: UAE
+  name_english: ''
+department7: 
+  name: Katedra zeměděl. strojů
+  faculty_id: 5
+  id: 7
+  short_name: KZS
+  name_english: ''
+department20: 
+  name: Katedra obchodu a financí
+  faculty_id: 4
+  id: 20
+  short_name: KOF
+  name_english: Department of Trade and Accounting
+department42: 
+  name: Katedra genetiky a šlechtění
+  faculty_id: 1
+  id: 42
+  short_name: KGŠ
+  name_english: Department of Genetics and Breeding
+department53: 
+  name: Katedra pěstování lesů
+  faculty_id: 3
+  id: 53
+  short_name: KPL
+  name_english: ''
+department8: 
+  name: Katedra využit. strojů
+  faculty_id: 5
+  id: 8
+  short_name: KVS
+  name_english: ''
+department10: 
+  name: Katedra elektrot. a automat.
+  faculty_id: 5
+  id: 10
+  short_name: KEA
+  name_english: ''
+department21: 
+  name: Katedra psychologie
+  faculty_id: 4
+  id: 21
+  short_name: KPs
+  name_english: Department of Psychology
+department54: 
+  name: Katedra ochrany lesa a myslivosti
+  faculty_id: 3
+  id: 54
+  short_name: KOL
+  name_english: ''
+department98: 
+  name: Katedra zpracování dřeva
+  faculty_id: 3
+  id: 98
+  short_name: KZD
+  name_english: ''
+department9: 
+  name: Katedra jakosti a spol. strojů
+  faculty_id: 5
+  id: 9
+  short_name: KJSS
+  name_english: ''
+department11: 
+  name: Katedra tech. zař. staveb
+  faculty_id: 5
+  id: 11
+  short_name: KTZS
+  name_english: ''
+department44: 
+  name: "Katedra mikrobiologie, výživy a dietetiky"
+  faculty_id: 1
+  id: 44
+  short_name: KMVD
+  name_english: "Department of Microbiology, Nutrition and Dietetics"
+department55: 
+  name: Katedra ekonom. a říz. les. hosp.
+  faculty_id: 3
+  id: 55
+  short_name: KERLH
+  name_english: ''
+department23: 
+  name: Katedra statistiky
+  faculty_id: 4
+  id: 23
+  short_name: KS
+  name_english: Department of Statistics
+department34: 
+  name: Katedra veterinárních  disciplin
+  faculty_id: 1
+  id: 34
+  short_name: KVD
+  name_english: Department of Veterinary Sciences
+department45: 
+  name: Katedra ekologie a životního prostředí
+  faculty_id: 3
+  id: 45
+  short_name: KEZP
+  name_english: ''
+department56: 
+  name: Katedra tělesné výchovy
+  faculty_id: 6
+  id: 56
+  short_name: KTV
+  name_english: ''
+department13: 
+  name: Katedra zemědělské ekonomiky
+  faculty_id: 4
+  id: 13
+  short_name: KZE
+  name_english: Department of Agricultural Economics
+department24: 
+  name: Katedra jazyků
+  faculty_id: 4
+  id: 24
+  short_name: KJ
+  name_english: Department of Languages
+department35: 
+  name: Katedra pícninářství a trávníkářství
+  faculty_id: 1
+  id: 35
+  short_name: KPT
+  name_english: Department of Forage Crops and Grassland Management
+department46: 
+  name: Katedra dendr. a šl. les. dř.
+  faculty_id: 3
+  id: 46
+  short_name: KDSLD
+  name_english: ''
+department57: 
+  name: Katedra pedagogiky
+  faculty_id: 6
+  id: 57
+  short_name: KPe
+  name_english: Department of Education
+department14: 
+  name: Katedra ekonomických teorií
+  faculty_id: 4
+  id: 14
+  short_name: KET
+  name_english: Department of Economic Theories
+department25: 
+  name: Katedra informačního inženýrství
+  faculty_id: 4
+  id: 25
+  short_name: KII
+  name_english: Department of Information Engineering
+department36: 
+  name: Katedra zoologie a rybářství
+  faculty_id: 1
+  id: 36
+  short_name: KZR
+  name_english: Department of Zoology and Fish Farming
+department47: 
+  name: Katedra hospod. úpravy lesů
+  faculty_id: 3
+  id: 47
+  short_name: KHUL
+  name_english: ''
+department58: 
+  name: Katedra živ.prod.tr. a subt.
+  faculty_id: 2
+  id: 58
+  short_name: KZPTS
+  name_english: ''

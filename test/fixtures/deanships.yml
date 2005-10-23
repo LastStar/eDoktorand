@@ -1,5 +1,37 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_deanship:
-  id: 1
-another_deanship:
-  id: 2
+--- 
+deanship12: 
+  created_on: 2005-10-02 15:46:58 +02:00
+  dean_id: 1213
+  updated_on: 2005-10-02 15:46:59 +02:00
+  faculty_id: 5
+  id: 12
+deanship13: 
+  created_on: 2005-10-02 15:46:59 +02:00
+  dean_id: 1539
+  updated_on: 2005-10-02 15:46:59 +02:00
+  faculty_id: 1
+  id: 13
+deanship14: 
+  created_on: 2005-10-02 15:46:59 +02:00
+  dean_id: 2221
+  updated_on: 2005-10-02 15:46:59 +02:00
+  faculty_id: 3
+  id: 14
+deanship15: 
+  created_on: 2005-10-02 15:46:59 +02:00
+  dean_id: 2318
+  updated_on: 2005-10-02 15:46:59 +02:00
+  faculty_id: 2
+  id: 15
+deanship16: 
+  created_on: 2005-10-11 11:19:00 +02:00
+  dean_id: 5257
+  updated_on: 2005-10-11 11:19:00 +02:00
+  faculty_id: 3
+  id: 16
+deanship11: 
+  created_on: 2005-10-02 15:46:58 +02:00
+  dean_id: 22
+  updated_on: 2005-10-02 15:46:58 +02:00
+  faculty_id: 4
+  id: 11

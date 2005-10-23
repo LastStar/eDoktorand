@@ -3,12 +3,12 @@
 </p>
 <ul>
 <li>
-<%= link_to_remote_with_loading(_("exam by subject"), :action => 
-  'exam_by_subject', :evaluate => true) %>
+<%= link_to_remote_with_loading(_("exam by subject"), :url => {:action => 
+'exam_by_subject'}, :evaluate => true) %>
 </li>
 <li>
-<%= link_to_remote_with_loading(_("exam by student"), :action => 
-  'exam_by_student', :evaluate => true) %>
+<%= link_to_remote_with_loading(_("exam by student"), :url => {:action => 
+'exam_by_student'}, :evaluate => true) %>
 </li>
 <li>
 </li>

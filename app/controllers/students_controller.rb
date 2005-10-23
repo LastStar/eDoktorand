@@ -22,10 +22,11 @@ class StudentsController < ApplicationController
   end
   # searches in students lastname
   def search
+    prepare_conditions
     @conditions.first <<  ' AND lastname like ?'
     @conditions << "#{@params['search_field']}%"
     @indices = Student.find(:all, :conditions => @conditions, :include =>
-    :index).map {|s| s.index}
+    :index).map {|s| s.index}.compact
     render(:partial => 'list')
   end
   # filters students

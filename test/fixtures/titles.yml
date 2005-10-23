@@ -1,5 +1,201 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_title:
+--- 
+title49: 
+  prefix: 0
+  id: 49
+  label: DiS.
+title38: 
+  prefix: 1
+  id: 38
+  label: Doc. MVDr.
+title8: 
+  prefix: 1
+  id: 8
+  label: Mgr.
+title16: 
+  prefix: 1
+  id: 16
+  label: Mag.
+title27: 
+  prefix: 1
+  id: 27
+  label: Bc.
+title39: 
+  prefix: 1
+  id: 39
+  label: Doc. Dr. Ing.
+title9: 
+  prefix: 1
+  id: 9
+  label: PhDr.
+title17: 
+  prefix: 1
+  id: 17
+  label: Doc. Ing. Mgr.
+title28: 
+  prefix: 1
+  id: 28
+  label: Prof.PhDr.Ing.
+title51: 
+  prefix: 1
+  id: 51
+  label: "CSc., dr.h.c."
+title40: 
+  prefix: 1
+  id: 40
+  label: Mgr.Ing.
+title18: 
+  prefix: 1
+  id: 18
+  label: Prof. JUDr.
+title29: 
+  prefix: 1
+  id: 29
+  label: Doc. Mgr.
+title52: 
+  prefix: 1
+  id: 52
+  label: Prof. Ing. Arch.
+title41: 
+  prefix: 1
+  id: 41
+  label: MUDr.
+title1: 
+  prefix: 1
   id: 1
-another_title:
+  label: Ing.
+title30: 
+  prefix: 1
+  id: 30
+  label: PhDr. RNDr.
+title42: 
+  prefix: 1
+  id: 42
+  label: Ing. RNDr.
+title2: 
+  prefix: 1
   id: 2
+  label: Dr. Ing.
+title19: 
+  prefix: 1
+  id: 19
+  label: Prof. Dr.
+title20: 
+  prefix: 1
+  id: 20
+  label: Dr.
+title31: 
+  prefix: 1
+  id: 31
+  label: B.A.
+title43: 
+  prefix: 1
+  id: 43
+  label: PhDr. Ing.
+title3: 
+  prefix: 1
+  id: 3
+  label: Doc.
+title10: 
+  prefix: 1
+  id: 10
+  label: PhDr. Mgr.
+title21: 
+  prefix: 1
+  id: 21
+  label: Ing. arch.
+title32: 
+  prefix: 1
+  id: 32
+  label: M.A.
+title44: 
+  prefix: 0
+  id: 44
+  label: CSc.
+title4: 
+  prefix: 1
+  id: 4
+  label: Doc. RNDr.
+title11: 
+  prefix: 1
+  id: 11
+  label: JUDr.
+title22: 
+  prefix: 1
+  id: 22
+  label: Doc. PhDr.
+title33: 
+  prefix: 1
+  id: 33
+  label: Dr..
+title45: 
+  prefix: 0
+  id: 45
+  label: "DrSc., Dr. h. c."
+title5: 
+  prefix: 1
+  id: 5
+  label: RNDr.
+title12: 
+  prefix: 1
+  id: 12
+  label: JUDr. Ing.
+title23: 
+  prefix: 1
+  id: 23
+  label: Doc. Ing. PhDr.
+title34: 
+  prefix: 1
+  id: 34
+  label: Dott.
+title46: 
+  prefix: 0
+  id: 46
+  label: DrSc.
+title6: 
+  prefix: 1
+  id: 6
+  label: Doc. Ing.
+title13: 
+  prefix: 1
+  id: 13
+  label: Prof. RNDr.
+title24: 
+  prefix: 1
+  id: 24
+  label: Doc. JUDr. PhDr.
+title35: 
+  prefix: 1
+  id: 35
+  label: Mag.Phil.
+title47: 
+  prefix: 0
+  id: 47
+  label: MBA
+title7: 
+  prefix: 1
+  id: 7
+  label: Prof. Ing.
+title14: 
+  prefix: 1
+  id: 14
+  label: PaedDr.
+title36: 
+  prefix: 1
+  id: 36
+  label: Prof. MVDr. Ing.
+title48: 
+  prefix: 0
+  id: 48
+  label: Ph.D.
+title15: 
+  prefix: 1
+  id: 15
+  label: Prof. MVDr.
+title26: 
+  prefix: 1
+  id: 26
+  label: PaedDr. Ing.
+title37: 
+  prefix: 1
+  id: 37
+  label: MVDr.

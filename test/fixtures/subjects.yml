@@ -1,5 +1,2669 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_subject:
-  id: 1
-another_subject:
-  id: 2
+--- 
+subject9420: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9420
+  label: "drbal - objektová analýza a návrh"
+subject6825: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 6825
+  label: Aplikovaná meteorologie a klimatologie
+subject7257: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX22Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7257
+  label: Botanika speciální
+subject6932: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLBX21Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 6932
+  label: Malé vodní toky a nádrže
+subject7364: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLTX53Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7364
+  label: Teorie a stavba stroj¨
+subject9421: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9421
+  label: "Objektové programování - .NET"
+subject1133: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DELX01Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 1133
+  label: "Angličtina - doktorské studium"
+subject7177: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIZI05Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7177
+  label: Chov prasat v TS
+subject6933: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLBX22Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 6933
+  label: Malé vodní toky a hrazení bystřin
+subject7391: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLTX67Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7391
+  label: ZPŘÍSTUPNĚNÍ LESA
+subject9422: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9422
+  label: Kalkulace nákladů a cen
+subject1134: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DELX05Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1134
+  label: "Němčina  - doktorské studium"
+subject7473: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLE46Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7473
+  label: Ochrana životního prostředí
+subject7097: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE17Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 7097
+  label: Evropská integrace
+subject7259: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLEX23Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7259
+  label: Geobotanika
+subject7285: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLEX11Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7285
+  label: "Obecn- ekologie"
+subject6934: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLBX23Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 6934
+  label: Matematické modelování hydrologických procesů
+subject7366: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLTX51Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7366
+  label: Mechanizace v lesním hospodářství
+subject9423: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9423
+  label: Manažerské účetnictví
+subject1135: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DELX03Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1135
+  label: "Francouzština  - doktorské studium"
+subject1323: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEIX32Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1323
+  label: Informační systémy
+subject7179: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIZI09Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7179
+  label: Chov ovcí v TS
+subject6935: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLBX24Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 6935
+  label: Zásady vodního hospodářství a management povodí
+subject7367: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLTX52Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7367
+  label: Teorie dělení dřeva
+subject7393: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLTX61Z
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7393
+  label: CHEMIE DŘEVA
+subject9424: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9424
+  label: Mezinárodní právo a právo EU
+subject1136: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DELX07Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1136
+  label: "Španělština  - doktorské studium"
+subject6881: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLDX14Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 6881
+  label: "Lesnick- botanika"
+subject7851: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEA51Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7851
+  label: Ekologie pro AF
+subject7287: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLEX32Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7287
+  label: Zoologie obratlovců
+subject9425: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9425
+  label: Strategický management
+subject1351: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DEAE05Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1351
+  label: Teorie systémů a aplikovaná systémová věda
+subject1137: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DELX06Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1137
+  label: "Ruština  - doktorské studium"
+subject8831: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DACX02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8831
+  label: Speciální biochemie rostlin
+subject7369: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLTX55Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7369
+  label: Základy terramechaniky
+subject7395: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLTX62Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7395
+  label: OCHRANA DŘEVA
+subject9426: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9426
+  label: Metody získávání znalostí
+subject1352: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEAE09Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1352
+  label: "Měkké systémy, metodologie a aplikace"
+subject6883: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLDX23Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 6883
+  label: "Ve-ejn- zele-"
+subject7289: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLEX31Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7289
+  label: Zoologie
+subject1138: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DELX04Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1138
+  label: "Italština  - doktorské studium"
+subject9427: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9427
+  label: Ekonomika
+subject6696: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLRX09Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 6696
+  label: "Řízení lesního hospodářství"
+subject4945: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEIE03Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 4945
+  label: Information Engineering
+subject8833: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DACX03Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8833
+  label: Speciální biochemie živočichů
+subject7397: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLHX11Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7397
+  label: Matematické modelování
+subject1139: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DELX02Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1139
+  label: "Čeština  - doktorské studium"
+subject9428: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9428
+  label: "Měkké systémy, metodologie a aplikace"
+subject1328: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE05
+  updated_on: 2005-10-03 11:42:58 +02:00
+  type: 
+  id: 1328
+  label: "EKONOMIKA - doktorské studium"
+subject7101: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLUX01Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7101
+  label: "Krajinn- ekologie"
+subject4946: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEIE04Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 4946
+  label: Information Systems
+subject1380: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DETE04Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1380
+  label: Informační management
+subject1730: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEIX03Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1730
+  label: Geografické IS
+subject9374: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9374
+  label: Umělá inteligence
+subject9429: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9429
+  label: "Molhanec - Software v průmyslovém inženýrství"
+subject1731: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DEIE16E
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1731
+  label: Výpočetní systémy II.
+subject1355: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DEJE01Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1355
+  label: Vybrané kapitoly z práva
+subject6698: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLRX12Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 6698
+  label: Oceňování lesů
+subject1381: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DETEO2Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1381
+  label: Infrastruktura informačních systémů
+subject9375: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9375
+  label: Umělá inteligence
+subject7103: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLUX05Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7103
+  label: Ekologické aplikace v krajině
+subject1356: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEIX31Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1356
+  label: Informační inženýrství
+subject1382: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DETE01Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1382
+  label: Informační technologie
+subject1732: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEIX06Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1732
+  label: Objektově orientovaný přístup ve tvorbě softwaru
+subject9376: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9376
+  label: "Školský management"
+subject8970: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAGX02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8970
+  label: Molekulární genetika a šlechtění rostlin
+subject1357: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEIX04Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1357
+  label: Matematická teorie programů
+subject1383: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DETE03Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1383
+  label: Informační technologie a e-business
+subject1733: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEIX07Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1733
+  label: Operační systémy
+subject9377: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9377
+  label: "Školský management"
+subject1384: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DESE04Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1384
+  label: Vybrané metody aktuárské matematiky
+subject1358: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DEIX14Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1358
+  label: Umělá inteligence a znalostní inženýrství
+subject3899: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE12Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 3899
+  label: Statistika pro sociology
+subject8971: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOA08Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8971
+  label: Monitoring a management v ochraně rostlin
+subject1760: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DERE04Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1760
+  label: Komunikace v řízení
+subject9378: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9378
+  label: Distribuované systémy (P36DSY)
+subject1385: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE06Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1385
+  label: Statistické techniky zpracování dotazníkových anket
+subject1735: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEIX10Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1735
+  label: Prostředky DTP
+subject8891: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAHX01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8891
+  label: Agrochemie a výživa rostlin
+subject8972: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DARA05Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8972
+  label: "Nauka o rostlinné produkci - spec. produkce rost."
+subject6700: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLRX11Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 6700
+  label: Oceňování přírodních zdrojů
+subject1359: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEUE09Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1359
+  label: Finanční management
+subject9000: 
+  created_on: 2005-10-03 11:48:47 +02:00
+  code: ''
+  updated_on: 2005-10-03 11:48:47 +02:00
+  type: 
+  id: 9000
+  label: Odborný seminář ZOO
+subject9379: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9379
+  label: "IT904, Strategické řízení informačních systémů"
+subject9001: 
+  created_on: 2005-10-03 11:48:55 +02:00
+  code: ''
+  updated_on: 2005-10-03 11:48:55 +02:00
+  type: 
+  id: 9001
+  label: Odborný seminář FYTO
+subject1736: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DEIX11Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1736
+  label: Systémová integrace
+subject1386: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DESE10Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 1386
+  label: Analýza kategorizovaných dat
+subject7214: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLSX01Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7214
+  label: Urbanismus venkova a územní plánování
+subject7321: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLOX05Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7321
+  label: "Ochrana lesů - hmyzí škůdci"
+subject8973: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOA01Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8973
+  label: Nematologie obecná a speciální
+subject9002: 
+  created_on: 2005-10-03 16:31:12 +02:00
+  code: ''
+  updated_on: 2005-10-03 16:31:12 +02:00
+  type: 
+  id: 9002
+  label: Prezentační a pedagogické dovednosti
+subject1737: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DEIX12Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1737
+  label: Systémové inženýrství
+subject1387: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE08Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1387
+  label: Sociálně hospodářská statistika
+subject8893: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAVX03Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8893
+  label: Fyziologie živočichů
+subject7241: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLEX15Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7241
+  label: Metody studia ekosystémů
+subject8974: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOA14Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8974
+  label: Obecná fytopatologie
+subject7403: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLSX08Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7403
+  label: "CAD - využití počítačů"
+subject9003: 
+  created_on: 2005-10-03 16:31:40 +02:00
+  code: ''
+  updated_on: 2005-10-03 16:31:40 +02:00
+  type: 
+  id: 9003
+  label: Metodologie výzkumu
+subject7323: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLOX01Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7323
+  label: "Ochrana lesů - abitiotičtí škodliví činitelé a obratlovci"
+subject8975: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAAA03Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8975
+  label: Obecná produkce rostlinná
+subject7081: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLDX16Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7081
+  label: Fytocenologie a typologie
+subject9004: 
+  created_on: 2005-10-03 16:58:08 +02:00
+  code: ''
+  updated_on: 2005-10-03 16:58:08 +02:00
+  type: 
+  id: 9004
+  label: Angličtina speciální
+subject1389: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE05Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1389
+  label: Statistické výpočetní prostředí
+subject3633: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEPE01
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 3633
+  label: Psychologie v řízení
+subject1739: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEIX08Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1739
+  label: Projecting of information systems
+subject7217: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLSX06Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7217
+  label: Hydroinformatika
+subject7243: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX37Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7243
+  label: Ekologie savců
+subject8976: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOA12Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8976
+  label: Obecná rostlinolékařská zoologie
+subject7431: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLTX61Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7431
+  label: Wood chemistry
+subject7082: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLDX20Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7082
+  label: Geobiocenologie
+subject9005: 
+  created_on: 2005-10-03 16:58:18 +02:00
+  code: ''
+  updated_on: 2005-10-03 16:58:18 +02:00
+  type: 
+  id: 9005
+  label: Angličtina odborná
+subject7163: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIRI02Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7163
+  label: Speciální produkce rostlinnáv tropech a subtropech
+subject7190: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX45Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7190
+  label: Ekologické zátěže
+subject7325: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX24Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7325
+  label: Ekologie rostlin
+subject8977: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAGX05Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8977
+  label: Obecná zootechnika
+subject7406: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLEX13Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7406
+  label: Populační ekologie rostlin a živočichů
+subject7245: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLEX38Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7245
+  label: Zoogeografie
+subject8978: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DARA02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8978
+  label: Obilniny
+subject1929: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEUE11Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1929
+  label: Evropské standardy pro oceňování majetku
+subject9007: 
+  created_on: 2005-10-11 16:02:52 +02:00
+  code: DLTX50Y
+  updated_on: 2005-10-11 16:02:52 +02:00
+  type: 
+  id: 9007
+  label: Lesní těžba a dopravnictví
+subject8979: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOA17Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8979
+  label: Ochrana okrasných rostlin
+subject7408: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLEX18Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7408
+  label: Sběr a zpracování ekologických dat
+subject7139: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLBX31Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7139
+  label: "Úprava vláhového režimu půd"
+subject9410: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9410
+  label: Ekonomika
+subject9008: 
+  created_on: 2005-10-11 16:06:13 +02:00
+  code: DLRX08Y
+  updated_on: 2005-10-11 16:06:13 +02:00
+  type: 
+  id: 9008
+  label: Odvětvová ekonomika a řízení podniku
+subject8038: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DELX08Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 8038
+  label: "Portugalština - doktorské studium"
+subject8899: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAGA04Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8899
+  label: Molekularni genetika
+subject8091: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DIRI17Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8091
+  label: Explantátové kultury
+subject9411: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9411
+  label: Informatika
+subject7381: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLRX03Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7381
+  label: Lesnická ekonomika
+subject7167: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIRI16Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7167
+  label: "Šlechtění rostlin a semenářství v tropecha a subtropech"
+subject9412: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9412
+  label: Ekonomika
+subject2210: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEST16Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 2210
+  label: "Statistika - pro doktorské studium TF"
+subject7249: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX21Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7249
+  label: "Botanika obecn-"
+subject7194: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX33Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7194
+  label: Entomologie
+subject9413: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9413
+  label: Informatika
+subject7383: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLRX02Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7383
+  label: Ekonomika
+subject7169: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIRI01Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7169
+  label: Obecná produkce rostlinná v TS
+subject9414: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9414
+  label: Mezinárodní účetnictví
+subject9440: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9440
+  label: "Školský management"
+subject1340: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE01Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1340
+  label: "STATISTIKA - pro doktorské studium"
+subject8820: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DACA04Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8820
+  label: Chemie přírodních látek
+subject8901: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAGA07Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8901
+  label: Molekularní genetika speciální
+subject7358: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLBX41Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7358
+  label: Geografické informační systémy
+subject7196: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX35Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7196
+  label: Ekologie hmyzu
+subject9415: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9415
+  label: Oceňování majetku a podniku
+subject9441: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9441
+  label: "Školský management"
+subject7385: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLTX59Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7385
+  label: NAUKA O DŘEVĚ
+subject9416: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9416
+  label: Umělá inteligence
+subject9442: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9442
+  label: Evropská integrace
+subject9417: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9417
+  label: Metody získávání znalostí
+subject9443: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9443
+  label: Kombinatorická a výpočetní geometrie
+subject6929: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLBX12Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 6929
+  label: Protierozní ochrana půdy
+subject7387: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLTX65Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7387
+  label: LESNÍ PŘIDRUŽENÁ VÝROBA
+subject8823: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DACA05Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8823
+  label: Speciální analytická chemie
+subject9390: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9390
+  label: Evropská integrace
+subject9418: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9418
+  label: Měnová politika
+subject9444: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9444
+  label: Kombinatorika a grafy
+subject7683: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEJE02Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 7683
+  label: Právní regulace veřejné správy a regionálního rozvoje
+subject5879: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAZA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 5879
+  label: Dendrologie
+subject1801: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEAE03Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1801
+  label: Kvantitativní metody a modelování
+subject1370: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DENE02Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1370
+  label: Hospodářské politiky
+subject9391: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9391
+  label: Metody získávání znalostí
+subject9419: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9419
+  label: "polák - objektové programování"
+subject9445: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9445
+  label: "Úvod do matematického programování a polyedrální kombinatoriky"
+subject1371: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEHE03Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1371
+  label: "Sociální sítě, aktéři a instituce v regionálním rozvoji - DSP"
+subject8825: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DACX01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8825
+  label: Biochemie
+subject7389: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLHX04Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7389
+  label: Dendrochronologie
+subject8851: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAPA02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8851
+  label: Speciální pedologie
+subject9392: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9392
+  label: Programovani pro .NET
+subject1372: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DENE03Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1372
+  label: Mezinárodní ekonomie
+subject7200: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLOX04Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7200
+  label: Obecna fytopatologie
+subject8960: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAOA15Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8960
+  label: Choroby polních a zahradních plodin
+subject1159: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DENE05Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1159
+  label: Makroekonomie pro doktorandy
+subject1373: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEPE03Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1373
+  label: Komunikace mezi kulturami (Aplikace v obchodním jednání)
+subject9393: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9393
+  label: Komunikace v rízení
+subject1750: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DERE11Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1750
+  label: Teorie řízení
+subject1374: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEHE04Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1374
+  label: "Politologie regionálního rozvoje - DSP"
+subject8961: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DADA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8961
+  label: Chov drůbeže
+subject7121: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLDX17Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7121
+  label: Lesnická genetika a šlechtění lesních dřevin
+subject6879: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLDX15Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 6879
+  label: Dendrologie lesnická
+subject9394: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9394
+  label: Personální rízení
+subject1751: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DERX03Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1751
+  label: "Řízení (management a marketing)"
+subject8962: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DASA06Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8962
+  label: Chov koní
+subject7122: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLDX21Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7122
+  label: Moderní metody ve šlechtění lesních dřevin
+subject1375: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEUE08Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1375
+  label: Bankovnictví
+subject9395: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9395
+  label: Psychologie rízení
+subject1376: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DEUE02Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1376
+  label: "Účetní systémy podniků agrokomplexu"
+subject1752: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DERE10Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1752
+  label: Strategické řízení
+subject8963: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DADA02Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8963
+  label: Chov kožešinových zvířat a králíků
+subject8856: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DADA04Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8856
+  label: Kvalita živočišných produktů
+subject7230: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLSX02Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7230
+  label: Stavby pro venkov
+subject7311: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLRX04Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7311
+  label: Ekonomika lesního hospodářství
+subject9396: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9396
+  label: P36DSY
+subject7500: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEHE05Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 7500
+  label: Regionální rozvoj v evropském správním prostoru DSP
+subject8964: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DASA05Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8964
+  label: Chov ovcí
+subject1753: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE02
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1753
+  label: Ekonomika světového zemědělství
+subject7070: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLVX18Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7070
+  label: Transport znečištění v povodí
+subject7124: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLDX25Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7124
+  label: "Šlechtitelské strategie a programy pro lesní dřeviny"
+subject1377: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEUE03Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1377
+  label: Daňová soustava
+subject7150: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLDX24Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7150
+  label: Speciální dendrologie
+subject7205: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLBX11Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7205
+  label: PozemkovÚ ˙pravy
+subject8990: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOA06Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8990
+  label: Rostlinolékařská mykologie
+subject9397: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9397
+  label: Principy regionální správy
+subject8965: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DADA03Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8965
+  label: Chov prasat
+subject1728: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEIX01Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1728
+  label: Databázové systémy I.
+subject5911: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAZA04Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 5911
+  label: Zelinářství
+subject7313: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLRX01Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7313
+  label: Ekonometrie
+subject8991: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAEA03Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8991
+  label: Rybářství
+subject9398: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9398
+  label: Ekonomika
+subject1755: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEEE11
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1755
+  label: Regionální ekonomika
+subject8966: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: dasa01y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8966
+  label: Chov skotu
+subject1729: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEIX02Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1729
+  label: Nové přístupy v databázových systémech
+subject7126: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLDX26Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7126
+  label: Zachování a využívání genetických zdrojů lesních dřevin
+subject1379: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEHA06Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1379
+  label: "Metodologie vědy - DSP - AF"
+subject7152: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLDX19Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7152
+  label: Dřeviny v rámci systému rostlin
+subject8992: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DACA02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8992
+  label: Speciální biochemie rostlin
+subject9399: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9399
+  label: Ekonomika
+subject8967: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DATA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8967
+  label: Lukařství
+subject5913: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAZA05Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 5913
+  label: Ovocnictví
+subject7315: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLRX10Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7315
+  label: Marketing lesního hospodářství
+subject7341: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLVX24Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7341
+  label: Matematické modelování hydrol.procesů
+subject8993: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DACA03Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8993
+  label: Speciální biochemie živočichů
+subject8968: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAOA04Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8968
+  label: Metody v zemědělské entomologii
+subject7181: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIZI10Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7181
+  label: Chov koz v TS
+subject8994: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DADA05Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8994
+  label: Speciální zootechnika
+subject8969: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DASA02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8969
+  label: Mlékařství
+subject1758: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DERE06Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1758
+  label: Personální řízení
+subject7074: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLDX11Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7074
+  label: Anatomie lesních dřevin
+subject7262: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLEX41Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7262
+  label: Ochrana přírody
+subject5915: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAZA03Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 5915
+  label: Sadovnictví
+subject7317: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLOX06Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7317
+  label: Obecná entomologie
+subject7343: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLVX23Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7343
+  label: Matematické modelování hydrol.procesů
+subject8995: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOA13Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8995
+  label: "Škůdci polních a zahradních plodin"
+subject9400: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9400
+  label: Ekonomika
+subject7237: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLSX03Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7237
+  label: Stavební mechanika
+subject8996: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DATA06Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8996
+  label: Trávníkářství
+subject9401: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9401
+  label: Umělá inteligence
+subject5917: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAZA02Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 5917
+  label: Květinářství
+subject7076: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLDX12Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7076
+  label: Anatomie a fyziologie lesních dřevin
+subject7183: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIZI01Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7183
+  label: Speciální zootechnika v TS
+subject7264: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLEX43Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7264
+  label: Ochrana prostředí
+subject7291: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX34Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7291
+  label: Ekologie živočLichů
+subject7319: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLOX07Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7319
+  label: Systematická entomologie
+subject7371: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLTX56Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7371
+  label: "Lesnick- mechanizace"
+subject8997: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAKA01Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8997
+  label: Výživa a krmení HZ
+subject9402: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9402
+  label: Metody získávání znalostí
+subject7239: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLSX07Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7239
+  label: Numerické metody a programování
+subject8998: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAAA04Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8998
+  label: Základní agrotechnika
+subject9403: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9403
+  label: Metody získávání znalostí
+subject7078: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLDX18Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7078
+  label: Fyziologie lesních dřevin
+subject7159: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIRI13Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7159
+  label: Rostlinná výroba v tropech a subtropech
+subject7185: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIZI03Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7185
+  label: Výživa a krmení hospodářských zvířat v TS
+subject7266: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLEX42Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7266
+  label: Ochrana přírody a krajiny
+subject7373: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLTX57Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7373
+  label: Modelování lesních výrobních systémů
+subject8999: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAVA05Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8999
+  label: Zoohygiena HZ
+subject9404: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9404
+  label: Mezinárodní účetnictví
+subject9430: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9430
+  label: "drbal - objektová analýza a návrh"
+subject1330: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE07
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1330
+  label: "Ekonometrie  - Kvantitativní metody pro doktorský obor Odvětvová a podniková
+    ekonomika"
+subject7293: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX36Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7293
+  label: Ekologie ptáků
+subject7348: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLTX54Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7348
+  label: VYUŽITÍ BIOMASY
+subject9405: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9405
+  label: Oceňování majetku a podniku
+subject9431: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9431
+  label: Metody získávání znalostí (IZI904)
+subject1331: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DEAE01
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1331
+  label: "Systémová metodologie (Kvantitativní metody - Matematické modelování)"
+subject7187: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIZI06Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7187
+  label: Výroba krmných směsí v TS
+subject7832: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DKOF01Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 7832
+  label: Finance regionální správy
+subject7268: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLEX44Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7268
+  label: Vybrané problémy ochrany Život. prostředí
+subject7375: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLTX58Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7375
+  label: Vliv lesní techniky na ŽP
+subject9406: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9406
+  label: Mezinárodní účetnictví
+subject9432: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9432
+  label: 128 AVK Architektury výpočetních a komunikačních systémů
+subject2204: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DERE13Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 2204
+  label: Strategický management
+subject1332: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE01
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1332
+  label: EKONOMIE pro doktorský obor Management
+subject8355: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DIRI10
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8355
+  label: Ekology in TS
+subject7295: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLBX32Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7295
+  label: "Lesotechnick- meliorace"
+subject1251: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DENE04Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1251
+  label: Mikroekonomie pro doktorandy
+subject9407: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9407
+  label: Oceňování majetku a podniku
+subject9433: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9433
+  label: IT 903 Komunikační a distribuované informační systémy
+subject1333: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEUE07Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1333
+  label: Mezinárodní obchod
+subject7296: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLBX33Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7296
+  label: Rekultivace půdy a odpadové hospodářství
+subject7377: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLTX66Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7377
+  label: Technická mechanika pro LI
+subject9380: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9380
+  label: Objektově orientované modelování
+subject9408: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9408
+  label: Ekonomika
+subject9434: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9434
+  label: Sociální ekologie
+subject1334: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE04
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1334
+  label: EKONOMIKA pro doktorské studium oboru Informační mamagement
+subject9381: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9381
+  label: "Objektové programování - .NET"
+subject9409: 
+  created_on: 2005-10-13 12:24:30 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:30 +02:00
+  type: ExternalSubject
+  id: 9409
+  label: Ekonomika
+subject9435: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9435
+  label: Globální problémy životního prostředí
+subject7379: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLRX06Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7379
+  label: Lesnická a zemědělská ekonomika
+subject8089: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DIRI10Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8089
+  label: Ekologie v TS
+subject1335: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE06
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1335
+  label: Ekonomika výrobkových vertikál
+subject9436: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9436
+  label: Modelování a simulace biomedicínských systémů
+subject7299: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLHX02Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7299
+  label: Dendrometrie
+subject2127: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DERE12Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 2127
+  label: Finanční řízení
+subject7970: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLDX23y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7970
+  label: Veřejná zeleň
+subject7002: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLPX02Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7002
+  label: Pěstování lesa DSP
+subject1336: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE10
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1336
+  label: MATEMATICKÁ EKONOMIE pro doktorský obor Systémové inženýrství
+subject1362: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEAE01Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1362
+  label: Matematické modelování
+subject9382: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9382
+  label: Finanční trhy a instituce
+subject9437: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9437
+  label: Ekonomika
+subject1632: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEIX05Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1632
+  label: Měření a hodnocení jakosti IS
+subject1337: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE09
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1337
+  label: Ekonomika a politika životního prostředí
+subject1363: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEUE01Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1363
+  label: Finance regionální správy
+subject9383: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9383
+  label: test
+subject9438: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9438
+  label: Počítače
+subject1390: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE11Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1390
+  label: Statistické vícerozměrné metody
+subject8951: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAEA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8951
+  label: Agroekologie
+subject5440: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEIX17Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 5440
+  label: Metody a nástroje pro podporu informačního managementu
+subject1338: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DEEE08
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 1338
+  label: "Agrární politika - pro doktorské studium"
+subject1364: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEUE04Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1364
+  label: Finance a úvěr
+subject9384: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9384
+  label: Language for artificial intelligence
+subject9439: 
+  created_on: 2005-10-13 12:24:31 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:31 +02:00
+  type: ExternalSubject
+  id: 9439
+  label: Neurčitost v umělé inteligenci   
+subject1391: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESA14Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1391
+  label: Statistické procedury v SAS
+subject8952: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAVA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8952
+  label: Anatomie a fyziologie drůbeže
+subject1339: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEEE03
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1339
+  label: "INVESTICE A DLOUHODOBÉ FINANCOVÁNÍ - doktorské studium"
+subject1365: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DEUE05Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1365
+  label: Jakost a certifikace potravin
+subject9385: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9385
+  label: language for artificial intelligence
+subject1742: 
+  created_on: 2005-10-03 11:41:46 +02:00
+  code: DESE17Y
+  updated_on: 2005-10-03 11:41:46 +02:00
+  type: 
+  id: 1742
+  label: Statistika v informatice
+subject1392: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE02Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1392
+  label: Statistické metody v marketingu
+subject1366: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEHE01Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1366
+  label: Sociologie venkovského prostoru  DSP
+subject8953: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAVX02Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8953
+  label: Anatomie HZ
+subject7220: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLTX63Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7220
+  label: Lesní dopravnictví
+subject7301: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLHX01Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7301
+  label: Hospodářská úprava lesů
+subject9386: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9386
+  label: Languages for Artificial Intelligence
+subject1393: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESA15Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1393
+  label: Statistické metody
+subject8954: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAOA16Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8954
+  label: Biologická a nechemická ochrana rostlin
+subject7302: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLHX03Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7302
+  label: Produkce lesů
+subject8980: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOX02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8980
+  label: Ochrana rostlin
+subject7060: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLDX13Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7060
+  label: Anatomie a fyziologie d-eva
+subject1367: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DAE02Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1367
+  label: Metody projektového řízení
+subject9387: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9387
+  label: languages for Artificial Intelligence
+subject1368: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEHE02Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1368
+  label: "Sociální rozvoj oblastí v ČR - DSP"
+subject8955: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DABA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8955
+  label: Botanika
+subject8874: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAMA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8874
+  label: Mikrobiologie FYTO
+subject8981: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DARA04Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8981
+  label: Olejniny
+subject5444: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DEIX09Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 5444
+  label: Metody tvorby informačních systémů
+subject7141: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLUX04Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7141
+  label: Posuzovaní vlivů na životní prostředí
+subject7222: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLTX64Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7222
+  label: Lesní těžba
+subject9388: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9388
+  label: "101OBJ - Objektové programování - .NET"
+subject1395: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE07Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1395
+  label: Statistické metody v managementu
+subject8956: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAGA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8956
+  label: Genetika a šlechtění HZ
+subject8849: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DARA01Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8849
+  label: Hodnocení jakosti rostlinných produktů
+subject7304: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLHX12Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7304
+  label: Aplikovaná statistika
+subject8982: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DATA02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8982
+  label: Pastvinářství
+subject1745: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DERE05Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1745
+  label: Marketingové řízení
+subject1369: 
+  created_on: 2005-10-03 11:41:44 +02:00
+  code: DENE01Y
+  updated_on: 2005-10-03 11:41:44 +02:00
+  type: 
+  id: 1369
+  label: Dějiny ekonomických teorií
+subject9389: 
+  created_on: 2005-10-13 12:24:29 +02:00
+  code: 
+  updated_on: 2005-10-13 12:24:29 +02:00
+  type: ExternalSubject
+  id: 9389
+  label: Architektury informačních systémů
+subject1396: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE13Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1396
+  label: Statistické modelování
+subject8957: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAGX03Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8957
+  label: Genetika zvířat
+subject8876: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAMA02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8876
+  label: Mikrobiologie ZOO
+subject8983: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DARA03Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8983
+  label: Pěstování okopanin
+subject7062: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLVX01Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7062
+  label: Hydrologie a hydraulika
+subject7143: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLOX02Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7143
+  label: Ochrana lesů lesnická fytopatologie
+subject7224: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX14Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7224
+  label: Ekologie stanovi-˙
+subject1397: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE03Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1397
+  label: Statistická analýza ekonomických časových řad
+subject1747: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DERE07Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1747
+  label: Poradenství pro řízení
+subject8958: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAAA02Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8958
+  label: Herbologie
+subject8984: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DATA04Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8984
+  label: Pícniny na orné půdě
+subject1748: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DERE08Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1748
+  label: Provoz a hospodaření podniku
+subject8959: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DAPA03Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8959
+  label: Hydropedologie
+subject8985: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAVA04Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8985
+  label: Prevence chorob a poruch plodnosti
+subject7064: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLVX03Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7064
+  label: Vodní hospodářství
+subject7145: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLOX03Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7145
+  label: Mykologie
+subject7226: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX16Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7226
+  label: Ekologie mokřadů
+subject7307: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLRX07Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7307
+  label: "Lesnick- politika"
+subject1399: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DESE09Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1399
+  label: Statistická prognostika
+subject1749: 
+  created_on: 2005-10-03 11:41:45 +02:00
+  code: DERE09Y
+  updated_on: 2005-10-03 11:41:45 +02:00
+  type: 
+  id: 1749
+  label: Plánování a prognostika
+subject7360: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DL0X08Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7360
+  label: Myslivost
+subject8986: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAEA02Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8986
+  label: Prevence parazitóz HZ
+subject8126: 
+  created_on: 2005-10-03 11:41:39 +02:00
+  code: DABX03Y
+  updated_on: 2005-10-03 11:41:39 +02:00
+  type: 
+  id: 8126
+  label: Fyziologie rostlin pro doktorandy
+subject8987: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DASA03Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8987
+  label: Reprodukce
+subject7066: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLVX19Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7066
+  label: Zdravotní inženýrství
+subject7309: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLRX05Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7309
+  label: Ekonomika životního prostředí
+subject7362: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLTX60Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7362
+  label: ANATOMIE DŘEVA
+subject8988: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOA05Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8988
+  label: Rostlinná virologie
+subject7148: 
+  created_on: 2005-10-03 11:41:43 +02:00
+  code: DLDX22Y
+  updated_on: 2005-10-03 11:41:43 +02:00
+  type: 
+  id: 7148
+  label: Regionální dendrologie
+subject7229: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX17Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7229
+  label: Biomonitoring
+subject7068: 
+  created_on: 2005-10-03 11:41:42 +02:00
+  code: DLVX02Y
+  updated_on: 2005-10-03 11:41:42 +02:00
+  type: 
+  id: 7068
+  label: Hydrologie a hydraulika
+subject7094: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLPL01Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7094
+  label: Ekologie lesa
+subject7175: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DIZI04Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7175
+  label: Chov drůbeže v TS
+subject7282: 
+  created_on: 2005-10-03 11:41:41 +02:00
+  code: DLEX12Y
+  updated_on: 2005-10-03 11:41:41 +02:00
+  type: 
+  id: 7282
+  label: Ekologie
+subject8989: 
+  created_on: 2005-10-03 11:41:40 +02:00
+  code: DAOA03Y
+  updated_on: 2005-10-03 11:41:40 +02:00
+  type: 
+  id: 8989
+  label: Rostlinolékařská bakteriologie

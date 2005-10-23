@@ -1060,10 +1060,11 @@ msgid "final area"
 msgstr "oblast předmětů"
 
 msgid "with note"
-msgstr "s poznámkou"¨
+msgstr "s poznámkou"
 
-msgid "back"
-msgstr "zpět"
+msgid "requisite subjects"
+msgstr "předepsané předměty"
 
-
+msgid "none subject"
+msgstr "žádný předmět"
 

@@ -6,8 +6,11 @@ development:
   password: w3b
 
 test:
-  adapter: sqlite
-  dbfile: db/test.db
+  adapter: mysql
+  database: phdstudy-test
+  host: localhost
+  username: web
+  password: w3b
 
 production:
   adapter: mysql

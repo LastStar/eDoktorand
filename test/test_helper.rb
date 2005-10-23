@@ -1,15 +1,13 @@
 ENV["RAILS_ENV"] = "test"
-require File.dirname(__FILE__) + "/../config/environment"
-require 'application'
+require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
+require 'test_help'
 
-require 'test/unit'
-require 'active_record/fixtures'
-require 'action_controller/test_process'
-require 'action_web_service/test_invoke'
-require 'breakpoint'
+class Test::Unit::TestCase
+  # Turn off transactional fixtures if you're working with MyISAM tables in MySQL
+  self.use_transactional_fixtures = true
+  
+  # Instantiated fixtures are slow, but give you @david where you otherwise would need people(:david)
+  self.use_instantiated_fixtures  = false
 
-def create_fixtures(*table_names)
-  Fixtures.create_fixtures(File.dirname(__FILE__) + "/fixtures", table_names)
+  # Add more helper methods to be used by all tests here...
 end
-
-Test::Unit::TestCase.fixture_path = File.dirname(__FILE__) + "/fixtures/"

@@ -287,10 +287,10 @@ def self.load_subjects(file, options = {} )
       if s.index
         if sp = s.index.study_plan
           if row[4] == 'false' && sub = Subject.exists?(row[3])
-            PlanSubject.create('study_plan_id' => sp.id, 'subject_id' => row[3], 'finishing_on' => row[6])
+            PlanSubject.create('study_plan_id' => sp.id, 'subject_id' => row[3], 'finishing_on' => row[5])
           else
            PlanSubject.create('study_plan_id' => sp.id, 'subject_id' =>
-           arr[row[3].to_i], 'finishing_on' => row[6])
+             arr[row[3].to_i], 'finishing_on' => row[5])
           end
         else 
           @@mylog.debug "student uic: #{s.display_name} doesn't have study plan" 
@@ -434,6 +434,50 @@ def self.load_subjects(file, options = {} )
         e.second_examinator = Person.find(row[10]) unless row[10].to_i == -1
         e.save
       end
+    end
+  end
+  # loads fle logins and study
+  def self.load_logins_fle(file)
+    @@mylog.info "Loading fle logins..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if Student.exists?(row[0])
+        u = Student.find(row[0]).user
+        u.login = u.password = u.password_confirmation = row[1] if u
+        u.save if u
+        i = Student.find(row[0]).index 
+        i.study = Study.find(row[2]) if i
+        i.save if i
+      end
+    end   
+  end
+  # loads tutors
+  def self.load_secretaries(file, options = {})
+    if options[:destroy]
+      DepartmentSecretary.destroy_all 
+      DepartmentEmployment.destroy_all
+    end
+    @@mylog.info "Loading department secretaries..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      ds = DepartmentSecretary.new
+      ds.firstname = row[1]
+      ds.lastname = row[2]
+      if row[3] && !row[3].empty?
+        ds.title_before = Title.find(@@prefixes[row[3].to_i])
+      end
+      if row[4] && !row[4].empty?
+        ds.title_after = Title.find(@@suffixes[row[4].to_i])
+      end
+      ds.uic = row[6]
+      ds.id = row[0]
+      @@mylog.debug "Secretary: #{t.id} " if ds.save
+      de = DepartmentEmployment.new  
+      ds.employment = de
+      de.unit_id = Department.find(row[7])
+      de.save(false)
+      u = User.new
+      u.login = u.password = u.password_confirmation = row[9]
+      u.person = ds
+      u.save
     end
   end
 end
