@@ -1,6 +1,6 @@
 development:
   adapter: mysql
-  database: phdstudy-devel
+  database: phdstudy
   host: localhost
   username: web
   password: w3b

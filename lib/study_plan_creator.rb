@@ -30,6 +30,7 @@ module StudyPlanCreator
   end
   # prepares language  subject
   def create_language
+    @type = 'language'
     @plan_subjects = []
     (1..2).each do |index|
       ps = PlanSubject.new
@@ -47,8 +48,11 @@ module StudyPlanCreator
       (ps = PlanSubject.new).id = index + 1
       @plan_subjects << ps
     end
-    (ps = PlanSubject.new).id = 0
-    @plan_subjects << ps
+    if count > 1
+      (ps = PlanSubject.new).id = 0
+      @plan_subjects << ps
+    end
+    create_language if @plan_subjects.empty?
   end
   # extracts voluntary subjects from request
   def extract_voluntary(remap_id = false)
