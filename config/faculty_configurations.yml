@@ -4,6 +4,10 @@
   subjects_count: 7  
   atestation_month: 9
   atestation_day: 15
+2:
+  subjects_count: 7 
+  atestation_month: 11
+  atestation_day: 30
 3:
   subjects_count: 7 
   atestation_month: 9
@@ -13,7 +17,7 @@
   atestation_month: 1
   atestation_day: 31
 5:
-  subjects_count: 0  
+  subjects_count: 2  
   atestation_month: 1
   atestation_day: 31
     

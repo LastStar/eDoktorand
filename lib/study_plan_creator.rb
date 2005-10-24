@@ -48,18 +48,21 @@ module StudyPlanCreator
       (ps = PlanSubject.new).id = index + 1
       @plan_subjects << ps
     end
-    if count > 1
+    unless @plan_subjects.empty? 
       (ps = PlanSubject.new).id = 0
       @plan_subjects << ps
+    else
+      create_language
     end
-    create_language if @plan_subjects.empty?
   end
   # extracts voluntary subjects from request
   def extract_voluntary(remap_id = false)
+    external = 0
     @plan_subjects = []
     @params['plan_subject'].each do |id, ps|
       next if ps['subject_id'] == '-1'
       if ps['subject_id'] == '0' 
+        external += 1
         subject = ExternalSubject.new
         subject.label = ps['label']
         unless subject.valid?
@@ -79,6 +82,12 @@ module StudyPlanCreator
       plan_subject.subject = subject
       plan_subject.id = id if remap_id
       @plan_subjects << plan_subject
+    end
+    # bloody hack
+    unless external == 0
+      return external - 1
+    else
+      return 0
     end
   end
   # extracts language subjects from request
