@@ -1,15 +1,18 @@
 <ul>
 <li>
-  <%= _("Full name") + ":&nbsp;" + @student.display_name %>
+<%= "#{_('Full name')} :&nbsp; <div class='long_info'>#{student.display_name}</div>" %>
 </li>
 <li>
-  <%= _("Corridor")  + ":&nbsp;" + @student.index.coridor.name %>
+<%= "#{_('Corridor')}  :&nbsp; <div class='long_info'>#{student.index.coridor.name}</div>" %>
 </li>
 <li>
-  <%= _("Study form") + ":&nbsp;" + @student.index.study.name %>
+<%= "#{_('Study form')} :&nbsp; <div class='long_info'>#{student.index.study.name}</div>" %>
 </li>
 <li>
- <%= _("Tutor")  + ":&nbsp;" +  @student.index.tutor.display_name %> 
+<%= "#{_('Tutor')} :&nbsp;  <div class='long_info'>#{student.index.tutor.display_name}</div>" %> 
+</li>
+<li>
+<%= "#{_('Year')} :&nbsp; <div class='long_info'>#{student.index.year}.</div>" %> 
 </li>
 </ul>
 

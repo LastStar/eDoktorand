@@ -11,6 +11,9 @@ class Index < ActiveRecord::Base
   has_many :interupts
   validates_presence_of :student
   validates_presence_of :tutor
+  def year
+    (Time.now - enrolled_on).div(1.year) + 1
+  end
   # returns leader of department for this student
   def leader
     self.department.leadership.leader

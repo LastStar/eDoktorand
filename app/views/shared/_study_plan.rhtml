@@ -1,5 +1,6 @@
+<h5><%= _("Personal and study details") %></h5>
+<%= render_partial 'student_detail', :student => study_plan.index.student %>
 <% disert_theme = study_plan.index.disert_theme %>
-<b><%= study_plan.index.student.display_name %></b>
 <% if study_plan.index.finished? %>
 <h5><%= _("This study has been finished") %></h5>
 <ul>
@@ -53,6 +54,6 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
   study_plan, :methodology => true}) %>
 <%= approve_forms(study_plan) %>
 <% if @user.has_role?('tutor') %>
-<%= link_to_remote_with_loading("back", :url => {:controller => 'students', :action => 
+<%= link_to_remote_with_loading(_("back"), :url => {:controller => 'students', :action => 
 "filter", :filter_by => @session['filter']}, :update => 'students_list') %>
 <% end %>

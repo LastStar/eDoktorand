@@ -178,6 +178,11 @@ div.fieldWithErrors {
   padding: 0px;
 }
 div.fieldWithErrors label { color: red; }
+.smallinfo {
+  float: right;
+  width: 14ex;
+  font-size: small;
+}
 .info {
   float: right;
   width: 14ex;

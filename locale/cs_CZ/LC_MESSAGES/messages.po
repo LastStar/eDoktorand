@@ -1068,3 +1068,12 @@ msgstr "předepsané předměty"
 msgid "none subject"
 msgstr "žádný předmět"
 
+
+msgid "year"
+msgstr "ročník"
+
+msgid "Year"
+msgstr "Ročník"
+
+
+
