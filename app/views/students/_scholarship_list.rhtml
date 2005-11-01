@@ -11,24 +11,7 @@
     <td style="width: 30%"><b><%= index.student.display_name %></b></td>
     <td style="width: 20%; padding-left: 10px; text-align: left;"><%= index.department.short_name %></td>
     <td style="width: 20%; padding-left: 10px; text-align: left;">
-      <%
-        # TODO english names  
-        @puvodni_castka = 4250
-        if index.study_plan != nil
-          @slozene_zkousky = index.study_plan.plan_subjects
-          @slozene_zkousky = @slozene_zkousky.select{|zk| zk.finished_on != nil}
-          if @slozene_zkousky.size() >= 2
-            @puvodni_castka += 1000
-          end
-          if @slozene_zkousky.size() >= 4
-           @puvodni_castka += 500
-          end
-          if @slozene_zkousky.size() >= 6
-            @puvodni_castka += 500
-          end
-        end
-      %>
-      <%= @puvodni_castka %> <%= _("Kc") %>
+      <%= print_scholarship(index) %> <%= _("Kc") %>
     </td>
     <td style="border: 1px solid black; width: 30%;">&nbsp;</td>
 </tr>

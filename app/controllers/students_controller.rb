@@ -84,9 +84,9 @@ class StudentsController < ApplicationController
   def prepare_filter 
     @filters = [[_("all students"), 0], [_("waiting for my review"), 2]]
     # default filter to waiting for approvement 
-    @session['filter'] ||= @user.has_one_of_roles?(['leader', 'dean', 'tutor']) ? 
+    @session['filter'] ||= @user.has_one_of_roles?(['vicerector', 'leader', 'dean', 'tutor']) ? 
     '2' : '0' 
-    if (@user.has_one_of_roles?(['leader', 'dean'])) && !@user.person.indexes.empty?
+    if (@user.has_one_of_roles?(['vicerector', 'leader', 'dean'])) && !@user.person.indexes.empty?
       @filters <<  [_("my students"), 1]
     end
   end

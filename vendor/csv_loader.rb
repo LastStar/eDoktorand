@@ -252,26 +252,29 @@ def self.load_subjects(file, options = {} )
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if (row[3].to_i > 0)
         @@mylog.info row[0]
-        s = Student.find_by_uic(row[1].to_i)
-        if i = s.index
-          i.enrolled_on = Time.mktime(2006 - row[2].to_i, 9,30)
-          i.study = Study.find(row[3].to_i)
-          i.payment_id = row[4].to_i
-          i.save
-          sp = StudyPlan.new('index_id' => s.index.id)
-          sp.finishing_to = row[6].to_i
-          dt = DisertTheme.new('index_id' => s.index.id)
-          dt.title = row[7]
-          dt.finishing_to = row[9].to_i
-          dt.save
-          sp.admited_on = Time.now 
-          sp.id = row[11]
-          sp.save
-          u = User.new
-          u.login = u.password = u.password_confirmation = row[13]
-          u.person = s
-          u.save
-          s.save
+        if s = Student.find_by_uic(row[1].to_i)
+          if i = s.index
+            i.enrolled_on = Time.mktime(2006 - row[2].to_i, 9,30)
+            i.study = Study.find(row[3].to_i)
+            i.payment_id = row[4].to_i
+            i.save
+            sp = StudyPlan.new('index_id' => s.index.id)
+            sp.finishing_to = row[6].to_i
+            dt = DisertTheme.new('index_id' => s.index.id)
+            dt.title = row[7]
+            dt.finishing_to = row[9].to_i
+            dt.save
+            sp.admited_on = Time.now 
+            sp.id = row[11]
+            sp.save
+            u = User.new
+            u.login = u.password = u.password_confirmation = row[13]
+            u.person = s
+            u.save
+            s.save
+          end
+        else
+          @@mylog.debug "uic #{row[1]} not found" 
         end
       end
     end
@@ -390,6 +393,32 @@ def self.load_subjects(file, options = {} )
       i.save
     end
   end
+  # loads student to system
+  def self.load_enrolled_students_its(file)
+    @@mylog.info "Loading enrolled students..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      s = Student.new
+      i = Index.new
+      u = User.new
+      s.firstname = row[2]
+      s.lastname = row[1]
+      s.birthname = row[9]
+      i.department = Department.find(row[3])
+      i.coridor = Coridor.find(row[4])
+      i.study = Study.find(row[5])
+      i.tutor = Tutor.find_by_uic(row[6])
+      i.payment_id = row[10]
+      u.password = u.password_confirmation = u.login = row[7]
+      s.index = i
+      s.id = row[0]
+      @@mylog.debug "Student #{s.display_name}" if s.save
+      u.person = s
+      u.roles << Role.find(3)
+      u.save(false)
+      @@mylog.debug "User #{u.login}" 
+      i.save
+    end
+  end
   # loads external subjects
   def self.load_external_subjects(file)
     @@mylog.info "Loading external subjects..."
@@ -423,7 +452,7 @@ def self.load_subjects(file, options = {} )
   def self.load_exams(file)
     @@mylog.info "Loading exams..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      if Student.exists?(row[4])
+      if Student.exists?(row[4]) && Subject.exists?(row[1])
         e = Exam.new
         e.subject = Subject.find(row[1])
         e.result = 1 
@@ -433,6 +462,8 @@ def self.load_subjects(file, options = {} )
         e.first_examinator = Person.find(row[9]) unless row[9].to_i == -1
         e.second_examinator = Person.find(row[10]) unless row[10].to_i == -1
         e.save
+      else
+        @@mylog.debug "Student #{row[4]} or subject #{row[1]}"
       end
     end
   end
@@ -443,6 +474,21 @@ def self.load_subjects(file, options = {} )
       if Student.exists?(row[0])
         u = Student.find(row[0]).user
         u.login = u.password = u.password_confirmation = row[1] if u
+        u.save if u
+        i = Student.find(row[0]).index 
+        i.study = Study.find(row[2]) if i
+        i.save if i
+      end
+    end   
+  end
+  # loads fle logins and study
+  def self.load_logins_tf(file)
+    @@mylog.info "Loading tf logins..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if Student.exists?(row[0])
+        u = User.new
+        u.login = u.password = u.password_confirmation = row[1] if u
+        u.person = Student.find(row[0])
         u.save if u
         i = Student.find(row[0]).index 
         i.study = Study.find(row[2]) if i
@@ -461,18 +507,19 @@ def self.load_subjects(file, options = {} )
       ds = DepartmentSecretary.new
       ds.firstname = row[1]
       ds.lastname = row[2]
-      if row[3] && !row[3].empty?
+      if row[3] && !row[3].empty? && row[3].to_i !=0
         ds.title_before = Title.find(@@prefixes[row[3].to_i])
       end
-      if row[4] && !row[4].empty?
+      if row[4] && !row[4].empty? && row[4].to_i !=0
         ds.title_after = Title.find(@@suffixes[row[4].to_i])
       end
       ds.uic = row[6]
       ds.id = row[0]
-      @@mylog.debug "Secretary: #{t.id} " if ds.save
+      @@mylog.debug "Secretary: #{ds.id} " if ds.save
       de = DepartmentEmployment.new  
-      ds.employment = de
-      de.unit_id = Department.find(row[7])
+      de.person = ds
+      de.department = Department.find(row[7])
+      @@mylog.debug "department #{de.department.name}"
       de.save(false)
       u = User.new
       u.login = u.password = u.password_confirmation = row[9]

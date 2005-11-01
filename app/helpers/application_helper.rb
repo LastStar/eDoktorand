@@ -73,12 +73,14 @@ module ApplicationHelper
   # get examinator ids
   def examinator_ids(faculty)
     # bloody hack evarybody should have faculty 
+    faculty = faculty.id if faculty.is_a?(Faculty)
     Tutor.find(:all).select{|t| t.faculty && t.faculty.id == faculty}.map {|p| [p.display_name, p.id]}
   end
   # get examinator ids
   # allows null
   def examinator_null_ids(faculty)
     arr = [['---', '0']]
+    faculty = faculty.id if faculty.is_a?(Faculty)
     # bloody hack evarybody should have faculty 
     arr.concat(Tutor.find(:all).select{|t| t.faculty && t.faculty.id ==
     faculty}.map {|p| [p.display_name, p.id]})
@@ -155,13 +157,13 @@ module ApplicationHelper
   # you should say if it's evaluating response by setting options[:evaluate]
   # to true, or updating by setting options[:update]
   def link_to_remote_with_loading(name, options = {}, html_options = {})
-    option = set_remote_options(options)
+    options = set_remote_options(options)
     link_to_remote(name, options, html_options)
   end
   # prints form tag with loading apearing and disapearing
   # also evaluate remote response is built in
   def form_remote_with_loading(options)
-    option = set_remote_options(options)
+    options = set_remote_options(options)
     options[:html] = {:autocomplete => "off"} 
     form_remote_tag(options)
   end

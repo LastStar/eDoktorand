@@ -1035,6 +1035,9 @@ msgstr "stipendia"
 msgid "FacultySecretary"
 msgstr "Referentka VaV"
 
+msgid "DepartmentSecretary"
+msgstr "Sekretářka"
+
 msgid "Scholarship for students"
 msgstr "Stipendia pro studenty"
 
@@ -1053,7 +1056,7 @@ msgstr "Zkouška z předmětu"
 msgid "Exam date"
 msgstr "Datum zkoušky"
 
-msgid "seminar subjects"
+msgid "seminar subject"
 msgstr "odborný seminář"
 
 msgid "final area"
@@ -1062,18 +1065,24 @@ msgstr "oblast předmětů"
 msgid "with note"
 msgstr "s poznámkou"
 
+msgid "waiting for my review"
+msgstr "čekající na mé schválení"
+
 msgid "requisite subjects"
 msgstr "předepsané předměty"
 
 msgid "none subject"
 msgstr "žádný předmět"
 
+msgid "There are no exams for you"
+msgstr "V systému pro Vás nejsou zkoušky"
+
+msgid "Questions:"
+msgstr "Otázky:"
 
 msgid "year"
 msgstr "ročník"
 
 msgid "Year"
 msgstr "Ročník"
-
-
 

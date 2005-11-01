@@ -10,7 +10,16 @@ class ExamsController < ApplicationController
   end
 
   def list
-    @exam_pages, @exams = paginate :exam, :per_page => 10
+    if @session['user'].has_one_of_roles?(['faculty_secretary', 'dean'])
+      subjects = @session['user'].person.faculty.departments.map {|d| d.subjects}.flatten
+      conditions = "subject_id IN (#{subjects.map {|s| s.id}.join(',')})"
+    elsif @session['user'].has_one_of_roles?(['leader', 'department_secretary'])
+      subjects = @session['user'].person.department.subjects
+      conditions = "subject_id IN (#{subjects.map {|s| s.id}.join(',')})"
+    elsif @session['user'].has_role?('tutor') 
+      conditions = ['first_examinator_id = ?', @session['user'].person.id]
+    end
+    @exams = Exam.find(:all, :conditions => conditions)
   end
 
   def show

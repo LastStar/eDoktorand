@@ -84,14 +84,16 @@ class ApplicationController < ActionController::Base
   end
   # prepares conditions for various queries
   def prepare_conditions
-    @conditions = "null is not null"
+    @conditions = ["null is not null"]
     if @session['user'].has_one_of_roles?(['admin', 'vicerector'])
-      @conditions  = nil
+      @conditions  = ['null is null']
     elsif @session['user'].has_one_of_roles?(['dean', 'faculty_secretary'])
       @conditions = ["department_id IN (" +  @session['user'].person.faculty.departments.map {|dep|
         dep.id}.join(', ') + ")"]
     elsif @session['user'].has_one_of_roles?(['leader', 'department_secretary'])
-      @conditions = ['department_id = ?', @session['user'].person.leadership.department_id]
+      department_id = @session['user'].person.leadership.department_id if  @session['user'].has_role?('leader')
+      department_id = @session['user'].person.department_employment.unit_id if @session['user'].has_role?('department_secretary')
+      @conditions = ['department_id = ?', department_id]
     elsif @session['user'].has_role?('tutor')
       @conditions = ['tutor_id = ?', @session['user'].person.id]
     end

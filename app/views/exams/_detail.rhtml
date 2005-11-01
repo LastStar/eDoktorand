@@ -3,7 +3,7 @@
 <%= _("Subject") %>:&nbsp;&nbsp;<%= exam.subject.label.strip%><br /> 
 <%= _("1. examinator") %>:&nbsp;&nbsp;<%= exam.first_examinator.display_name %><br />  
 <%= _("2. examinator") %>:&nbsp;&nbsp;<%= exam.second_examinator.display_name if exam.second_examinator%><br /> 
-<%= _("Created by") %>:&nbsp;&nbsp;<%= exam.creator.display_name %><br /> 
+<%= _("Created by") %>:&nbsp;&nbsp;<%= exam.created_by.display_name %><br /> 
 </p> 
 <hr/>
 <p>

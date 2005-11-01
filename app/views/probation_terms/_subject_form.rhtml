@@ -5,6 +5,7 @@
 <label>
 <%= _("subject") %>
 </label>
+<% subjects = @subjects %>
 <%= content_tag('select', options_for_select(subjects.map{|sub| [sub.label,
 sub.id]}), {'id' => "subject_id",'name' => "subject[id]"}) %>
 <br/> 

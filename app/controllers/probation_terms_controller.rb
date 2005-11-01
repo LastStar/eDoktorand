@@ -25,7 +25,14 @@ class ProbationTermsController < ApplicationController
     elsif (@session['user'].person.is_a? Leader) ||
       (@session['user'].person.is_a? DepartmentSecretary) ||
       (@session['user'].person.is_a? Tutor)
-      @subjects = @session['user'].person.tutorship.department.subjects
+      if (@session['user'].person.is_a? Leader)
+        department = @session['user'].person.leadership.department
+      elsif (@session['user'].person.is_a? Tutor)
+        department = @session['user'].person.tutorship.department
+      else
+        department = @session['user'].person.department
+      end
+      @subjects = department.subjects
     else
       @subjects = Subject.find_all()
     end
@@ -70,7 +77,14 @@ class ProbationTermsController < ApplicationController
     elsif (@session['user'].person.is_a? Leader) ||
       (@session['user'].person.is_a? DepartmentSecretary) ||
       (@session['user'].person.is_a? Tutor)
-      subjects = @session['user'].person.tutorship.department.subjects
+      if(@session['user'].person.is_a? Leader)
+        department = @session['user'].person.leadership.department
+      elseif (@session['user'].person.is_a? Tutor)
+        department = @session['user'].person.tutorship.department
+      else
+        department = @session['user'].person.department
+      end
+      subjects = department.subjects
     end
     subjects = subjects.select do |sub|
       not_finished = sub.plan_subjects.select do |ps|
@@ -129,7 +143,7 @@ class ProbationTermsController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = _('Probation terms')
+    @title = _("Probation terms")
   end
 
   # searches the probation terms in the list

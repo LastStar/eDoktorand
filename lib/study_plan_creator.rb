@@ -43,7 +43,7 @@ module StudyPlanCreator
     @type = 'voluntary'
     @plan_subjects = []
     count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
-    @session['plan_subjects'].size
+      @session['plan_subjects'].size
     count.times do |index|
       (ps = PlanSubject.new).id = index + 1
       @plan_subjects << ps

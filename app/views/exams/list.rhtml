@@ -1,8 +1,5 @@
 <%= javascript_include_tag "prototype" %>
 <% unless @exams.empty? %>
-<div id='search'>
-<%= render_partial "search" %>
-</div>
 <div id="exams_list">
 <%= render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list' %>
 </div>
@@ -10,7 +7,7 @@
 <%= exam_list_links %>                      
 <br />           
 <% else %>
-<h5>V systému nejsou žádné zkoušky podle Vašeho výběru</h5>
+<h5><%= _("There are no exams for you") %></h5>
 <%= exam_list_links %>                      
 <% end %>
 <br/>

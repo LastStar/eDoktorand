@@ -16,5 +16,6 @@ production:
   adapter: mysql
   database: phdstudy
   host: localhost
-  username: pepe
-  password: p3p3
+  username: phdstudy
+  password: s.S453sasD5
+  socket: /var/lib/mysql/4.0/mysql.sock

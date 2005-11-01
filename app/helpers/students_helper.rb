@@ -1,3 +1,4 @@
+require 'scholarship_calculator'
 module StudentsHelper
   # prints action links on student
   def student_action_link(index)
@@ -16,5 +17,8 @@ module StudentsHelper
       links.concat(content_tag('div', "#{index.department.short_name}", {:class => 'smallinfo'})) 
     end
     links.concat(content_tag('div', "#{index.year}. #{_('year')}", {:class => 'smallinfo'}))
+  end 
+  def print_scholarship(index)
+    ScholarshipCalculator.scholarship_for(index.student)
   end
 end

@@ -1,0 +1,5 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first_scholarship:
+  id: 1
+another_scholarship:
+  id: 2

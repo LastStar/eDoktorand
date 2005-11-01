@@ -48,7 +48,7 @@ class AccountController < ApplicationController
     if @session['user'].has_role?('student')
       redirect_to :controller => 'study_plans'
     elsif @session['user'].has_one_of_roles?(['tutor', 'dean',
-      'department_secretary', 'faculty_secretary', 'leader'])
+      'department_secretary', 'faculty_secretary'])
       redirect_to :controller => 'students'
     end
   end

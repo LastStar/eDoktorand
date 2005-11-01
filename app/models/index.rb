@@ -16,7 +16,7 @@ class Index < ActiveRecord::Base
   end
   # returns leader of department for this student
   def leader
-    self.department.leadership.leader
+    self.department.leadership.leader if self.department.leadership
   end
   # returns dean of department for this student
   def dean
@@ -58,7 +58,7 @@ class Index < ActiveRecord::Base
       end
     elsif self.study_plan && self.study_plan.approved? &&
     !self.study_plan.atested_for?(Atestation.actual_for_faculty(user.person.faculty))
-      if self.study_plan.atestation.prepares_statement?(user)
+      if (self.study_plan.atestation) && (self.study_plan.atestation.prepares_statement?(user))
         return true
       end
     end
@@ -72,7 +72,9 @@ class Index < ActiveRecord::Base
       conditions = ["department_id IN (" +  user.person.faculty.departments.map {|dep|
       dep.id}.join(', ') + ")"]
     elsif user.has_one_of_roles?(['leader', 'department_secretary'])
-      conditions = ['department_id = ?', user.person.leadership.department_id]
+      department_id = user.person.leadership.department_id if  user.has_role?('leader')
+      department_id = user.person.department_employment.unit_id if user.has_role?('department_secretary')
+      conditions = ['department_id = ?', department_id]
     elsif user.has_role?('tutor')
       conditions = ['tutor_id = ?', user.person.id]
     else
