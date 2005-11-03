@@ -233,4 +233,8 @@ module ApplicationHelper
       atestation_links(study_plan)
     end
   end
+  # prints small info div 
+  def long_info_helper(content)
+    content_tag('div', content, :class => 'long_info')
+  end
 end

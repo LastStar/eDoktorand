@@ -1,18 +1,18 @@
 <ul>
 <li>
-<%= "#{_('Full name')} :&nbsp; <div class='long_info'>#{student.display_name}</div>" %>
+<%= "#{long_info_helper(student.display_name)}#{_('Full name')}: " %>
 </li>
 <li>
-<%= "#{_('Corridor')}  :&nbsp; <div class='long_info'>#{student.index.coridor.name}</div>" %>
+<%= "#{long_info_helper(student.index.coridor.name)}#{_('Corridor')}: " %>
 </li>
 <li>
-<%= "#{_('Study form')} :&nbsp; <div class='long_info'>#{student.index.study.name}</div>" %>
+<%= "#{long_info_helper(student.index.study.name)}#{_('Study form')}: " %>
 </li>
 <li>
-<%= "#{_('Tutor')} :&nbsp;  <div class='long_info'>#{student.index.tutor.display_name}</div>" %> 
+<%= "#{long_info_helper(student.index.tutor.display_name)}#{_('Tutor')}: " %> 
 </li>
 <li>
-<%= "#{_('Year')} :&nbsp; <div class='long_info'>#{student.index.year}.</div>" %> 
+<%= "#{long_info_helper(student.index.year.to_s.concat('.'))}#{_('Year')}: " %> 
 </li>
 </ul>
 
