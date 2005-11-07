@@ -329,7 +329,7 @@ def self.load_subjects(file, options = {} )
     end
   end
   # sets voluntary subjects for agro
-  def self.set_agro_subjects_coridors
+  def self.set_faapz_subjects_coridors
     return false
     Faculty.find(1).coridors.each do |c|
       Subject.find(:all).each do |s| 
@@ -473,6 +473,7 @@ def self.load_subjects(file, options = {} )
         ps = PlanSubject.new 
         e.subject = sub
         ps.subject = sub
+        ps.finishing_on = row[10] 
         case row[1]
         when 'S'
           e.result = 1 
@@ -492,7 +493,7 @@ def self.load_subjects(file, options = {} )
     end
   end
   def self.load_study_starts(file)
-    @@mylog.info "Loading exams..."
+    @@mylog.info "Loading study starts..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if Student.exists?(row[0]) && i = Student.find(row[0]).index
         i.enrolled_on = row[1]
@@ -503,9 +504,9 @@ def self.load_subjects(file, options = {} )
       end
     end
   end
-  # loads fle logins and study
-  def self.load_logins_fle(file)
-    @@mylog.info "Loading fle logins..."
+  # loads logins and study
+  def self.load_logins(file)
+    @@mylog.info "Loading logins..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if Student.exists?(row[0])
         u = Student.find(row[0]).user
