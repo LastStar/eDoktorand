@@ -3,11 +3,6 @@ require 'csv'
 require 'log4r'
 
 # class for loading objects to database from csv
-# import plan:
-#   faculty
-#   department
-#   coridors
-#   tutors
 class CSVLoader
 include Log4r
 
@@ -464,6 +459,47 @@ def self.load_subjects(file, options = {} )
         e.save
       else
         @@mylog.debug "Student #{row[4]} or subject #{row[1]}"
+      end
+    end
+  end
+  # loads exams
+  def self.load_exams_faapz(file)
+    @@mylog.info "Loading exams..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if Student.exists?(row[3]) && Subject.exists?(row[0])
+        s = Student.find(row[3])
+        sub = Subject.find(row[0])
+        e = Exam.new
+        ps = PlanSubject.new 
+        e.subject = sub
+        ps.subject = sub
+        case row[1]
+        when 'S'
+          e.result = 1 
+          ps.finished_on = row[5]
+        when 'N'
+          e.result = 0
+        end
+        e.questions = row[2]
+        e.index_id = s.index.id
+        e.created_on = row[5]
+        ps.study_plan = s.index.study_plan
+        e.save
+        ps.save
+      else
+        @@mylog.debug "Student #{row[3]} or subject #{row[0]} not found"
+      end
+    end
+  end
+  def self.load_study_starts(file)
+    @@mylog.info "Loading exams..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if Student.exists?(row[0]) && i = Student.find(row[0]).index
+        i.enrolled_on = row[1]
+        i.study_plan = StudyPlan.create('admited_on' => row[1])
+        i.save
+      else
+        @@mylog.debug "Student #{row[0]} or his index not found"
       end
     end
   end

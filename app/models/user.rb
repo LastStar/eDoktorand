@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, :on => :create     
   
   def self.authenticate(login, pass)
+    return nil if pass.empty?
     if RAILS_ENV == 'production'
       result = find(:first, :conditions => ['login = ?', login])
       if result
