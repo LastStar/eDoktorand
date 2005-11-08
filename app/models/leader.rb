@@ -4,4 +4,7 @@ class Leader < Tutor
   def faculty
     leadership.department.faculty
   end
+  def department
+    leadership.department
+  end
 end
