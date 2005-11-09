@@ -20,8 +20,8 @@ class Approvement < ActiveRecord::Base
     if ((self.tutor_statement || self.index.tutor == user.person) &&
       !self.leader_statement && self.index.leader == user.person) || 
       (!self.leader_statement && !self.tutor_statement && self.index.tutor ==
-      user.person) || (self.leader_statement && !self.dean_statement && 
-      self.index.dean == user.person)
+      user.person) || (self.leader_statement && !self.dean_statement &&
+      user.person.is_dean_of?(self.index.student))
       return true
     end
   end
