@@ -1,4 +1,9 @@
 class Approvement < ActiveRecord::Base
+  belongs_to :tutor_statement
+  belongs_to :leader_statement
+  belongs_to :dean_statement
+  belongs_to :board_statement
+  acts_as_audited
   # prepares approvement for object if it doesn't exists
   # returns statement for user
   def prepare_statement(user)
@@ -6,7 +11,7 @@ class Approvement < ActiveRecord::Base
       return LeaderStatement.new('person_id' => user.person.id)
     elsif !self.leader_statement && !self.tutor_statement && self.index.tutor == user.person 
       return TutorStatement.new('person_id' => user.person.id)
-    elsif self.leader_statement && !self.dean_statement && self.index.dean == user.person
+    elsif self.leader_statement && !self.dean_statement && user.person.is_dean_of?(self.index.student)
       return DeanStatement.new('person_id' => user.person.id)
     end
   end
@@ -20,9 +25,4 @@ class Approvement < ActiveRecord::Base
       return true
     end
   end
-  belongs_to :tutor_statement
-  belongs_to :leader_statement
-  belongs_to :dean_statement
-  belongs_to :board_statement
-  acts_as_audited
 end

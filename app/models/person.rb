@@ -7,9 +7,12 @@ class Person < ActiveRecord::Base
   has_one :user
   # returns display name for person
   def display_name
-  	arr = self.title_before ? [self.title_before.label] : []
+    arr = self.title_before ? [self.title_before.label] : []
     arr << [ self.firstname, self.lastname + (self.title_after ? ',' : '')]
     arr << self.title_after.label if self.title_after
     return arr.join(' ')
+  end
+  def is_dean_of?(student)
+    return false
   end
 end
