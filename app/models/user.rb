@@ -4,7 +4,7 @@ require 'ldap'
 # this model expects a certain database layout and its based on the name/login pattern. 
 class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
-	belongs_to :person
+  belongs_to :person
   validates_length_of :login, :within => 3..40
   validates_length_of :password, :within => 5..40
   validates_presence_of :login, :password, :password_confirmation
@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, :on => :create     
   
   def self.authenticate(login, pass)
+    return nil if pass.empty?
     if RAILS_ENV == 'production'
       result = find(:first, :conditions => ['login = ?', login])
       # return if universal password has been given. BLOODY HACK
