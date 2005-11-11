@@ -49,11 +49,11 @@ class ExamsController < ApplicationController
     @session['exam'] = @exam
     if @session['user'].has_role?('admin')
       subjects  = Subject.find_all()
-    elsif @session['user'].has_role?('faculty_secretary')
+    elsif @session['user'].has_one_of_roles?(['faculty_secretary', 'dean'])
       faculty = @session['user'].person.faculty 
       subjects = faculty.departments.inject([]) {|arr, dep| arr.concat(dep.subjects)}
-    elsif @session['user'].has_role?('department_secretary')
-      subjects = @session['user'].person.department_employment.department.subjects
+    elsif @session['user'].has_one_of_roles?(['department_secretary', 'leader'])
+      subjects = @session['user'].person.department.subjects
     end
     # viz TODO
     # subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
@@ -189,7 +189,7 @@ class ExamsController < ApplicationController
       :index).map {|s| s.index}
     @indexes = @indexes.select {|ind| !ind.exams.empty?}
     @exams = []
-    @indexes.each {|ind| @exams.concat (ind.exams)}
+    @indexes.each {|ind| @exams.concat(ind.exams)}
     # @exams = Student.find(:all, :conditions => @conditions, :include =>
     #  :exam).map {|s| s.index.exams}
     render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
@@ -203,7 +203,7 @@ class ExamsController < ApplicationController
     @subjects = Subject.find(:all, :conditions => @conditions_exam)
     @subjects = @subjects.select {|sub| !sub.exams.empty?}
     @exams = []
-    @subjects.each {|sub| @exams.concat (sub.exams)}
+    @subjects.each {|sub| @exams.concat(sub.exams)}
     # @exams = Student.find(:all, :conditions => @conditions, :include =>
     #  :exam).map {|s| s.index.exams}
     render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
