@@ -13,24 +13,24 @@ class ProbationTermsController < ApplicationController
   
   def list
      []
-    if (@session['user'].person.is_a?(Student) &&
-      !@session['user'].person.index.study_plan.nil?)
-      @plan_subjects = @session['user'].person.index.study_plan.plan_subjects
+    if (@user.person.is_a?(Student) &&
+      !@user.person.index.study_plan.nil?)
+      @plan_subjects = @user.person.index.study_plan.plan_subjects
       @subjects = @plan_subjects.inject([]) {|subjects, plan| subjects << plan.subject}
-    elsif (@session['user'].person.is_a? Dean) ||
-      (@session['user'].person.is_a? FacultySecretary)
-      faculty = @session['user'].person.faculty 
+    elsif (@user.person.is_a? Dean) ||
+      (@user.person.is_a? FacultySecretary)
+      faculty = @user.person.faculty 
       @subjects = faculty.departments.inject([]) {|subjects, dep|
         subjects.concat(dep.subjects)}
-    elsif (@session['user'].person.is_a? Leader) ||
-      (@session['user'].person.is_a? DepartmentSecretary) ||
-      (@session['user'].person.is_a? Tutor)
-      if (@session['user'].person.is_a? Leader)
-        department = @session['user'].person.leadership.department
-      elsif (@session['user'].person.is_a? Tutor)
-        department = @session['user'].person.tutorship.department
+    elsif (@user.person.is_a? Leader) ||
+      (@user.person.is_a? DepartmentSecretary) ||
+      (@user.person.is_a? Tutor)
+      if (@user.person.is_a? Leader)
+        department = @user.person.leadership.department
+      elsif (@user.person.is_a? Tutor)
+        department = @user.person.tutorship.department
       else
-        department = @session['user'].person.department
+        department = @user.person.department
       end
       @subjects = department.subjects
     else
@@ -43,8 +43,8 @@ class ProbationTermsController < ApplicationController
   
   # enrolls student for a probation term
   def enroll
-    if (@session['user'].person.is_a?(Student))
-      @session['user'].person.probation_terms << ProbationTerm.find(@params['id'])
+    if (@user.person.is_a?(Student))
+      @user.person.probation_terms << ProbationTerm.find(@params['id'])
     end
     redirect_to :action => 'index'
   end
@@ -55,7 +55,7 @@ class ProbationTermsController < ApplicationController
 
   def new
     @probation_term = ProbationTerm.new
-    @probation_term.creator = @session['user'].person
+    @probation_term.creator = @user.person
   end
 
   def detail
@@ -65,24 +65,24 @@ class ProbationTermsController < ApplicationController
   
   # created exam object and subjects for select 
   def create
-    @probation_term = ProbationTerm.new('created_by' => @session['user'].person.id)
+    @probation_term = ProbationTerm.new('created_by' => @user.person.id)
     @session['probation_term'] = @probation_term
-    if @session['user'].has_role?(Role.find_by_name('admin'))
+    if @user.has_role?(Role.find_by_name('admin'))
       subjects  = Subject.find_all()
-    elsif (@session['user'].person.is_a? Dean) ||
-      (@session['user'].person.is_a? FacultySecretary)
-      faculty = @session['user'].person.faculty 
+    elsif (@user.person.is_a? Dean) ||
+      (@user.person.is_a? FacultySecretary)
+      faculty = @user.person.faculty 
       subjects = faculty.departments.inject([]) {|subjs, dep|
         subjs.concat(dep.subjects)}
-    elsif (@session['user'].person.is_a? Leader) ||
-      (@session['user'].person.is_a? DepartmentSecretary) ||
-      (@session['user'].person.is_a? Tutor)
-      if(@session['user'].person.is_a? Leader)
-        department = @session['user'].person.leadership.department
-      elseif (@session['user'].person.is_a? Tutor)
-        department = @session['user'].person.tutorship.department
+    elsif (@user.person.is_a? Leader) ||
+      (@user.person.is_a? DepartmentSecretary) ||
+      (@user.person.is_a? Tutor)
+      if(@user.person.is_a? Leader)
+        department = @user.person.leadership.department
+      elseif (@user.person.is_a? Tutor)
+        department = @user.person.tutorship.department
       else
-        department = @session['user'].person.department
+        department = @user.person.department
       end
       subjects = department.subjects
     end
@@ -148,8 +148,8 @@ class ProbationTermsController < ApplicationController
 
   # searches the probation terms in the list
   def search
-    if (!@session['user'].person.nil?) 
-      person = @session['user']
+    if (!@user.person.nil?) 
+      person = @user.person
       @subjects = Subject.for_person(person)
       if (@params['search_field'].length > 0)
         @subjects_new = []

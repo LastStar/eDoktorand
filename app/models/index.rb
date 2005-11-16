@@ -90,10 +90,13 @@ class Index < ActiveRecord::Base
   # returns all indexes which waits for approvement from persons 
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user, options = {})
-    result = self.find_for_user(user, :conditions => [' AND (study_plans.approved_on IS NULL OR
-    disert_themes.approved_on IS NULL OR study_plans.last_atested_on IS NULL OR
-    study_plans.last_atested_on < ?)', Atestation.actual_for_faculty(user.person.faculty)],
-    :include => [:study_plan, :disert_theme])
+    condition_sql = <<-SQL
+      AND (study_plans.approved_on IS NULL OR disert_themes.approved_on IS NULL \
+      OR study_plans.last_atested_on IS NULL OR \
+      study_plans.last_atested_on < ?) AND indices.finished_on IS NULL 
+      SQL
+    result = self.find_for_user(user, :conditions => [condition_sql, Atestation.actual_for_faculty(user.person.faculty)],
+      :include => [:student, :study_plan, :disert_theme, :department, :study, :coridor])
     if user.has_one_of_roles?(['tutor', 'leader', 'dean'])
       result.select {|i| i.waits_for_statement?(user)} 
     else
@@ -102,13 +105,7 @@ class Index < ActiveRecord::Base
   end
   # search on selected criteria
   def self.find_by_criteria(options = {})
-    conditions = ['NULL IS NULL']
-    if options[:year] != 0
-      conditions.first << ' AND indices.created_on > ? AND indices.created_on
-      < ?'
-      conditions << Time.mktime(Time.now.year - options[:year], 10, 1)
-      conditions << Time.mktime(Time.now.year - (options[:year] - 1), 10, 1)
-    end
+    conditions = ['']
     if options[:department] != 0
       conditions.first << ' AND indices.department_id = ?'
       conditions << options[:department]
@@ -116,6 +113,13 @@ class Index < ActiveRecord::Base
       conditions.first << ' AND indices.coridor_id = ?'
       conditions << options[:coridor]
     end
-    Index.find(:all, :conditions => conditions)
+    indices = Index.find_for_user(options[:user], :conditions => conditions, 
+      :include => [:study_plan, :student, :disert_theme, :department, :study,
+        :coridor])
+    if options[:year] != 0
+      indices.select {|i| i.year == options[:year]}
+    else
+      return indices
+    end
   end
 end

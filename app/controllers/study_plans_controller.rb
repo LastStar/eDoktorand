@@ -17,6 +17,21 @@ class StudyPlansController < ApplicationController
     end
     create_obligate
   end
+  # create study plan like no-student 
+  def create_by_other
+    @student = Student.find(@params['id'])
+    @title = _("Creating study plan")
+    @requisite_subjects = RequisiteSubject.has_for_coridor?(@student.index.coridor)
+    @subjects = Subject.for_faculty_select(@student.faculty)
+    @subjects.concat(LanguageSubject.for_select)
+    @study_plan = @student.index.build_study_plan
+    @plan_subjects = []
+    10.times do |i|
+      (plan_subject = PlanSubject.new('subject_id' => 0)).id = (i+1)
+      @plan_subjects << plan_subject
+    end
+    @disert_theme = @student.index.build_disert_theme
+  end
   # saves obligate subjects to session
   # and creates voluntary subjects
   def save_obligate
@@ -65,7 +80,7 @@ class StudyPlansController < ApplicationController
         voluntary_subjects, :study_plan => @session['study_plan']})  
     else
       extract_voluntary(true)
-      @errors << _("subjects have to be different") unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 3
+      @errors << _("subjects have to be different") unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size < (count - external)
       flash.now['errors'] = @errors.uniq
       render(:partial => 'not_valid_voluntarys', :locals => {:form_plan_subjects => @plan_subjects})
     end
@@ -97,6 +112,35 @@ class StudyPlansController < ApplicationController
       render(:partial => 'valid_disert', :locals => {:disert_theme =>
       @disert_theme, :study_plan => @session['study_plan']}) 
     end
+  end
+# saves full form
+  def save_full
+    @errors = []
+    extract_voluntary
+    unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size <= @plan_subjects.size
+      @errors << _("subjects have to be different")     
+    end
+    @study_plan = StudyPlan.new(@params['study_plan'])
+    @student = Student.find(@params['student']['id'])
+    @disert_theme = DisertTheme.new(@params['disert_theme'])
+    @disert_theme.index = @student.index
+    @study_plan.admited_on = Time.now
+    @study_plan.plan_subjects << @plan_subjects
+    @study_plan.index = @student.index
+    if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
+      @study_plan.save
+      @disert_theme.save
+      @plan_subjects.each do |ps|
+        ps.study_plan = @study_plan
+        ps.save
+      end
+      redirect_to(:action => 'list', :controller => 'students')
+    else
+      @subjects = Subject.for_faculty_select(@student.faculty)
+      extract_voluntary
+      render(:action => 'create_by_other')
+    end
+
   end
   # confirms study plan 
   def confirm

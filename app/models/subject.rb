@@ -6,7 +6,7 @@ class Subject < ActiveRecord::Base
   has_and_belongs_to_many :departments
   validates_presence_of :label
 
-  # returns subjects for user
+# returns subjects for user
   def self.for_person(person)
     if (person.is_a? Dean) ||
       (person.is_a? FacultySecretary)
@@ -24,6 +24,16 @@ class Subject < ActiveRecord::Base
       @subjects = Subject.find_all()
     end
     return @subjects
+  end
+# returns subjects for faculty
+  def self.for_faculty_select(faculty)
+    faculty = Faculty.find(faculty) unless faculty.is_a?(Faculty)
+    subs = faculty.departments.inject([]) {|arr, d| arr << d.subjects}.flatten
+    [[_("external subject"), 0]].concat(subs.map {|sub| [sub.label, sub.id]})
+  end
+# returns options for html select
+  def self.language_for_select
+    self.find(:all).map {|sub| [sub.label, sub.id]}
   end
 
 end

@@ -10,40 +10,16 @@ require_dependency 'disert_theme'
 class ApplicationController < ActionController::Base
   before_filter :localize
   include LoginSystem
-  # get department ids
-  helper_method :language_ids
-  def department_ids(faculty_id)
-    Department.find_all(["faculty_id = ?", faculty_id]).map { |a| [a.name , a.id] }
-  end
-  # get language ids
-  helper_method :language_ids
-  def language_ids
-    Language.find_all.map {|l| [l.name, l.id]}
-  end
-  # get study ids
-  helper_method :study_ids
-  def study_ids
-    Study.find_all.map {|s| [s.name, s.id]}
-  end
+  # TODO redo with model methods
   # authorizes user
   def authorize?(user)
-    if user.has_permission?("%s/%s" % [ @params["controller"], @params["action"] ])
+    if user.has_permission?("%s/%s" % [@params["controller"], @params["action"]])
       return true
     else
       flash['error'] = _("you don't have rights to do this")
       redirect_to :controller => 'account', :action => 'error'
     end
   end
-	# returns array of the time by quarter from start time to end time
-	helper_method :str_time_select
-	def str_time_select(start_time = 8, stop_time = 16)
-		items = []
-		(start_time..stop_time-1).each do |hour|
-			['00', '15', '30', '45'].each {|minute| items << ("#{hour.to_s}:#{minute}")}
-		end
-		items << "#{stop_time.to_s}:00"
-		return items
-	end
   private
   def localize
     # We will use instance vars for the locale so we can make use of them in
@@ -91,8 +67,7 @@ class ApplicationController < ActionController::Base
       @conditions = ["department_id IN (" +  @session['user'].person.faculty.departments.map {|dep|
         dep.id}.join(', ') + ")"]
     elsif @session['user'].has_one_of_roles?(['leader', 'department_secretary'])
-      department_id = @session['user'].person.leadership.department_id if  @session['user'].has_role?('leader')
-      department_id = @session['user'].person.department_employment.unit_id if @session['user'].has_role?('department_secretary')
+      department_id = @session['user'].person.department.id
       @conditions = ['department_id = ?', department_id]
     elsif @session['user'].has_role?('tutor')
       @conditions = ['tutor_id = ?', @session['user'].person.id]

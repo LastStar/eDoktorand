@@ -61,6 +61,9 @@ class User < ActiveRecord::Base
   def has_one_of_roles?(roles)
     !roles.select {|r| has_role?(r)}.empty?
   end
+  def non_student?
+    self.has_one_of_roles?(['tutor', 'faculty_secretary', 'department_secretary', 'dean', 'leader', 'vicerector'])
+  end
   # returns array of all permissions names of user
   def my_permissions
     @my_permissions ||= self.roles.map {|r| r.permissions.map {|p| p.name}}.flatten.freeze

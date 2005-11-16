@@ -61,4 +61,14 @@ class StudyPlan < ActiveRecord::Base
       !statement.cancel?
     self.save
   end
+# returns status of study plan
+  def status
+    if self.canceled?
+      _('SP canceled')
+    elsif self.approved?
+      _('SP approved')
+    elsif self.admited?
+      _('SP admited')
+    end
+  end
 end

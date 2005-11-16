@@ -19,12 +19,12 @@
   <% end %>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary'])  %>
   <label for="filter_by_department"><%= _("department") %></label>
-  <%= content_tag('select', options_for_select(
-  department_ids(@user.person.faculty.id)), {'id' => "filter_by_department", 
+  <%= content_tag('select', department_options(:faculty => @user.person.faculty,
+  :include_empty => true), {'id' => "filter_by_department", 
   'name' => "filter_by_department"}) %><br/>
   <label for="filter_by_coridor"><%= _("corridor") %></label>
-  <%= content_tag('select', options_for_select(
-  coridor_ids(@user.person.faculty.id)), {'id' => "filter_by_coridor", 
+  <%= content_tag('select', coridor_options(:faculty => @user.person.faculty, 
+  :include_empty => true), {'id' => "filter_by_coridor", 
   'name' => "filter_by_coridor"}) %><br/>
   <label for="filter_by"><%= _("year") %></label>
   <%= content_tag('select', options_for_select(year_ids), 

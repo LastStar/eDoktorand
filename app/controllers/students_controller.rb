@@ -1,8 +1,7 @@
 class StudentsController < ApplicationController
   include LoginSystem
   layout 'employers'
-  before_filter :login_required, :set_title, 
-  :prepare_user
+  before_filter :login_required, :set_title, :prepare_user
   before_filter :prepare_order, :prepare_filter, :except => [:show,
   :contact]
   before_filter :prepare_conditions
@@ -13,8 +12,8 @@ class StudentsController < ApplicationController
   end
   # lists all students
   def list
-    @indices = Index.find_for_user(@user, :include =>
-    [:study_plan, :student, :disert_theme], :order => @order)
+    @indices = Index.find_for_user(@user, :include => [:study_plan, :student,
+      :disert_theme, :department, :study, :coridor], :order => @order)
   end
   # show student's detail
   def show
@@ -47,11 +46,9 @@ class StudentsController < ApplicationController
   end
   # multiple filtering
   def multiple_filter
-    year = @params['filter_by_year'].to_i
-    department = @params['filter_by_department'].to_i
-    coridor = @params['filter_by_coridor'].to_i
-    @indices = Index.find_by_criteria(:year => year, :department => department,
-    :coridor => coridor)
+    @indices = Index.find_by_criteria(:year => @params['filter_by_year'].to_i, 
+      :department => @params['filter_by_department'].to_i, :coridor => 
+      @params['filter_by_coridor'].to_i, :user => @user)
     render(:partial => 'list')
   end
   # renders contact for student
@@ -64,6 +61,18 @@ class StudentsController < ApplicationController
     conditions = [' AND indices.study_id = 1']
     @indices = Index.find_for_user(@user, :conditions => conditions)
   end
+# finishes study
+  def finish
+    @student = Student.find(@params['id'])
+    @student.index.update_attribute('finished_on', Time.now)
+    render(:inline => "<%= switch_student(@student) %>")
+  end
+# unfinishes study
+  def unfinish
+    @student = Student.find(@params['id'])
+    @student.index.update_attribute('finished_on', nil)
+    render(:inline => "<%= switch_student(@student) %>")
+  end
   private
   # sets title of the controller
   def set_title
@@ -72,13 +81,8 @@ class StudentsController < ApplicationController
   # prepares order variable for listin 
   # TODO create some better mechanism to do ordering
   def prepare_order
-    @order = 'study_plans.created_on, study_plans.updated_on desc'
-    if @session['user'].has_one_of_roles?(['dean', 'faculty_secretary'])
-      @order.concat(', department_id') 
-    elsif @session['user'].has_one_of_roles?(['leader',
-      'department_secretary'])
-      @order.concat(', tutor_id') 
-    end
+# add url driven ordering
+    @order = 'people.lastname'
   end
   # prepares filter variable
   def prepare_filter 

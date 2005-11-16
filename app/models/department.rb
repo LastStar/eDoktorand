@@ -6,4 +6,19 @@ class Department < ActiveRecord::Base
   has_one :leadership
   belongs_to :faculty
   has_and_belongs_to_many :subjects
+# returns array structured for html select
+  def self.for_select(options = {})
+    if options[:faculty]
+      faculty = options[:faculty].is_a?(Faculty) ? options[:faculty].id : options[:faculty]
+      result = Department.find_all_by_faculty_id(faculty)
+    else
+      result = Department.find(:all)
+    end
+    result = result.map {|d| [d.name, d.id]}
+    if options[:include_empty]
+      [['---', '0']].concat(result)
+    else
+      result
+    end
+  end
 end

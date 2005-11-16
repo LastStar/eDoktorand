@@ -1,6 +1,6 @@
 <ul class='peopleList'>
 <% for index in @indices  %>
-  <li>
+<li id="<%= "index_line_#{index.id}" %>">
     <%= student_action_link(index) %>
   </li>
 <% end %>

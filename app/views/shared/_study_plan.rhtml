@@ -53,7 +53,7 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
   :locals => {:disert_theme => study_plan.index.disert_theme, :study_plan =>
   study_plan, :methodology => true}) %>
 <%= approve_forms(study_plan) %>
-<% if @user.has_role?('tutor') %>
+<% if @user.non_student? %>
 <%= link_to_remote_with_loading(_("back"), :url => {:controller => 'students', :action => 
 "filter", :filter_by => @session['filter']}, :update => 'students_list') %>
 <% end %>

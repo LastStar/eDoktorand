@@ -11,8 +11,8 @@
   true) %>	
 <fieldset>
 <legend><%= _("voluntary subjects") %></legend>
-<%= render(:partial => 'voluntary', :collection => @plan_subjects, :locals => {:subjects =>
-voluntary_ids(@student.index.coridor.id)}) %>
+<%= render(:partial => 'voluntary', :collection => @plan_subjects, :locals =>
+  {:subjects => voluntary_ids(@student.index.coridor.id)}) %>
 </fieldset>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>

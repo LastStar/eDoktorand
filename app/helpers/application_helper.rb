@@ -1,5 +1,13 @@
 # TODO move all ids methods to corresponding models
 module ApplicationHelper
+  # prints department options
+  def department_options(options = {})
+    options_for_select(Department.for_select(options))
+  end
+  # prints corridor options 
+  def coridor_options(options = {})
+    options_for_select(Coridor.for_select(options))
+  end
   # prints errors for object
   def errors_for(object)
     unless object.errors.empty?
@@ -9,14 +17,6 @@ module ApplicationHelper
       _(message))}.join(' '))
       content_tag('div', tb)
     end
-  end
-  # get department ids
-  def department_ids(faculty)
-    if faculty.is_a?(Faculty)
-      faculty = faculty.id
-    end
-    [['---', '0']].concat(Department.find_all_by_faculty_id(faculty).map { |a|
-      [truncate(a.name, 40), a.id] })
   end
   # returns all years ids
   def year_ids
@@ -167,6 +167,15 @@ module ApplicationHelper
     options[:html] = {:autocomplete => "off"} 
     form_remote_tag(options)
   end
+	# returns array of the time by quarter from start time to end time
+	def str_time_select(start_time = 8, stop_time = 16)
+		items = []
+		(start_time..stop_time-1).each do |hour|
+			['00', '15', '30', '45'].each {|minute| items << ("#{hour.to_s}:#{minute}")}
+		end
+		items << "#{stop_time.to_s}:00"
+		return items
+	end
   private 
   # sets options for remote tags
   def set_remote_options(options)
@@ -236,5 +245,9 @@ module ApplicationHelper
   # prints small info div 
   def long_info_helper(content)
     content_tag('div', content, :class => 'long_info')
+  end
+# prints div tag
+  def div_tag(content, options = {})
+    content_tag('div', content, options)
   end
 end

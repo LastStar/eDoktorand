@@ -10,14 +10,14 @@ class ExamsController < ApplicationController
   end
 
   def list
-    if @session['user'].has_one_of_roles?(['faculty_secretary', 'dean'])
-      subjects = @session['user'].person.faculty.departments.map {|d| d.subjects}.flatten
+    if @user.has_one_of_roles?(['faculty_secretary', 'dean'])
+      subjects = @user.person.faculty.departments.map {|d| d.subjects}.flatten
       conditions = "subject_id IN (#{subjects.map {|s| s.id}.join(',')})"
-    elsif @session['user'].has_one_of_roles?(['leader', 'department_secretary'])
-      subjects = @session['user'].person.department.subjects
+    elsif @user.has_one_of_roles?(['leader', 'department_secretary'])
+      subjects = @user.person.department.subjects
       conditions = "subject_id IN (#{subjects.map {|s| s.id}.join(',')})"
-    elsif @session['user'].has_role?('tutor') 
-      conditions = ['first_examinator_id = ?', @session['user'].person.id]
+    elsif @user.has_role?('tutor') 
+      conditions = ['first_examinator_id = ?', @user.person.id]
     end
     @exams = Exam.find(:all, :conditions => conditions)
   end
@@ -33,7 +33,7 @@ class ExamsController < ApplicationController
   
   def new
     @exam = Exam.new
-    @exam.creator = @session['user'].person
+    @exam.creator = @user.person
   end
 
   # start of the exam creating process
@@ -45,15 +45,15 @@ class ExamsController < ApplicationController
   # created exam object and subjects for select 
   # TODO sql finder for only subjects wich actually any student has
   def exam_by_subject
-    @exam = Exam.new('created_by_id' => @session['user'].person.id)
+    @exam = Exam.new('created_by_id' => @user.person.id)
     @session['exam'] = @exam
-    if @session['user'].has_role?('admin')
+    if @user.has_role?('admin')
       subjects  = Subject.find_all()
-    elsif @session['user'].has_one_of_roles?(['faculty_secretary', 'dean'])
-      faculty = @session['user'].person.faculty 
+    elsif @user.has_one_of_roles?(['faculty_secretary', 'dean'])
+      faculty = @user.person.faculty 
       subjects = faculty.departments.inject([]) {|arr, dep| arr.concat(dep.subjects)}
-    elsif @session['user'].has_one_of_roles?(['department_secretary', 'leader'])
-      subjects = @session['user'].person.department.subjects
+    elsif @user.has_one_of_roles?(['department_secretary', 'leader'])
+      subjects = @user.person.department.subjects
     end
     # viz TODO
     # subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
@@ -71,7 +71,7 @@ class ExamsController < ApplicationController
   # TODO sql finder for the students, that actually have the subjects
   # this person teaches (maybe the department)
   def exam_by_student
-    @exam = Exam.new('created_by_id' => @session['user'].person.id)
+    @exam = Exam.new('created_by_id' => @user.person.id)
     @session['exam'] = @exam
     @conditions = ['indices.finished_on IS NULL AND study_plans.approved_on 
     IS NOT NULL']
@@ -120,15 +120,15 @@ class ExamsController < ApplicationController
     
     subjects = []
     
-    if @session['user'].has_role?(Role.find_by_name('admin'))
+    if @user.has_role?(Role.find_by_name('admin'))
       plan_subjects.each{|plan| @subjects << plan.subject}
-    elsif (@session['user'].person.is_a? Dean) ||
-      (@session['user'].person.is_a? FacultySecretary)
+    elsif (@user.person.is_a? Dean) ||
+      (@user.person.is_a? FacultySecretary)
       plan_subjects.each{|plan| subjects << plan.subject} 
-    elsif (@session['user'].person.is_a? Leader) ||
-      (@session['user'].person.is_a? DepartmentSecretary) ||
-      (@session['user'].person.is_a? Tutor)
-      department = @session['user'].person.tutorship.department
+    elsif (@user.person.is_a? Leader) ||
+      (@user.person.is_a? DepartmentSecretary) ||
+      (@user.person.is_a? Tutor)
+      department = @user.person.tutorship.department
       plan_subjects.each do |plan| 
           subjects << plan.subject if plan.subject.departments.include? department
       end

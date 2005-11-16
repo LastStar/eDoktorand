@@ -1,0 +1,16 @@
+<label class='smaller'>
+<%= _("subject") %>
+</label>
+<%= subject_select(subjects, general) %>
+<%= "." + _("semester") %>
+<br/> 
+<div id="external<%= general.id %>" style='<%= hide_style(general) %>' >
+<label><%= _("subject") %></label>
+<%= external_subject_input(general) %>
+<br/> 
+<label><%= _("university") %></label>
+<%= external_university_input(general) %>
+<br/> 
+<label><%= _("examinator") %></label>
+<%= external_person_input(general) %>
+</div>
