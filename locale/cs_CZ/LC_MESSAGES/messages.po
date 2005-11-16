@@ -1065,9 +1065,6 @@ msgstr "oblast předmětů"
 msgid "with note"
 msgstr "s poznámkou"
 
-msgid "waiting for my review"
-msgstr "čekající na mé schválení"
-
 msgid "requisite subjects"
 msgstr "předepsané předměty"
 
@@ -1085,4 +1082,28 @@ msgstr "ročník"
 
 msgid "Year"
 msgstr "Ročník"
+
+msgid "SP canceled"
+msgstr "SP neschválen"
+
+msgid "SP approved"
+msgstr "SP schválen"
+
+msgid "SP admited"
+msgstr "SP sestaven"
+
+msgid "ST finished"
+msgstr "ST ukončeno"
+
+msgid "ST running"
+msgstr "ST běží"
+
+msgid "SP admited"
+msgstr "SP sestaven"
+
+msgid "finish study"
+msgstr "ukonči studium"
+
+msgid "unfinish study"
+msgstr "zprovozni studium"
 
