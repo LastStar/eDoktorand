@@ -1102,5 +1102,5 @@ msgid "finish study"
 msgstr "ukonči studium"
 
 msgid "unfinish study"
-msgstr "zprovozni studium"
+msgstr "obnov studium"
 
