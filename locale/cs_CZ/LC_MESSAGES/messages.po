@@ -1098,9 +1098,6 @@ msgstr "ST ukončeno"
 msgid "ST running"
 msgstr "ST běží"
 
-msgid "SP admited"
-msgstr "SP sestaven"
-
 msgid "finish study"
 msgstr "ukonči studium"
 
