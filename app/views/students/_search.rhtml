@@ -17,15 +17,11 @@
   :interactive => visual_effect(:fade, "loading"), :with => 
   "'filter_by=' + escape(value)") %>
   <% end %>
-<% if @user.has_one_of_roles?(['dean', 'faculty_secretary'])  %>
+<% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])  %>
   <label for="filter_by_department"><%= _("department") %></label>
-  <%= content_tag('select', department_options(:faculty => @user.person.faculty,
-  :include_empty => true), {'id' => "filter_by_department", 
-  'name' => "filter_by_department"}) %><br/>
+  <%= department_select(:include_empty => true, :user => @user) %><br/>
   <label for="filter_by_coridor"><%= _("corridor") %></label>
-  <%= content_tag('select', coridor_options(:faculty => @user.person.faculty, 
-  :include_empty => true), {'id' => "filter_by_coridor", 
-  'name' => "filter_by_coridor"}) %><br/>
+  <%= coridor_select(:include_empty => true, :user => @user) %><br/>
   <label for="filter_by"><%= _("year") %></label>
   <%= content_tag('select', options_for_select(year_ids), 
   {'id' => "filter_by_year", 'name' => "filter_by_year"}) %>

@@ -176,7 +176,6 @@ ActiveRecord::Schema.define() do
     t.column "result", :integer
     t.column "questions", :text
     t.column "subject_id", :integer
-    t.column "created_by", :integer
     t.column "created_on", :timestamp
     t.column "updated_on", :timestamp
     t.column "created_by_id", :integer
@@ -331,6 +330,10 @@ ActiveRecord::Schema.define() do
     t.column "updated_by_id", :integer
     t.column "final_areas", :text
   end
+
+  add_index "study_plans", ["admited_on"], :name => "admited_on"
+  add_index "study_plans", ["canceled_on"], :name => "canceled_on"
+  add_index "study_plans", ["approved_on"], :name => "approved_on"
 
   create_table "subjects", :force => true do |t|
     t.column "label", :text

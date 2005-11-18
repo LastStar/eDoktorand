@@ -56,4 +56,23 @@ module StudentsHelper
     end
     return result
   end
+# prints select for departments
+  def department_select(options = {})
+    options = if options[:user].has_role?('vicerector')
+      department_options(:include_empty => options[:include_empty])
+    else
+      department_options(:faculty => options[:user].person.faculty, :include_empty => options[:include_empty])
+    end
+    content_tag('select', options, {'id' => "filter_by_department", 
+      'name' => "filter_by_department"})
+  end
+  def coridor_select(options = {})
+    options = if options[:user].has_role?('vicerector')
+      coridor_options(:include_empty => options[:include_empty])
+    else
+      coridor_options(:faculty => options[:user].person.faculty, :include_empty => options[:include_empty])
+    end
+    content_tag('select', options, {'id' => "filter_by_coridor", 
+      'name' => "filter_by_coridor"})
+  end
 end

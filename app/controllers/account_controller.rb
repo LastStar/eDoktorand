@@ -7,14 +7,16 @@ class AccountController < ApplicationController
 
   def login
     case @request.method
-      when :post
-        if @session['user'] = User.authenticate(@params['user_login'], @params['user_password'])
-          flash['notice']  = _("Login was succesful")
-          redirect_back_or_default :action => "welcome"
-        else
-          @login    = @params['user_login']
-          @message  = "Přihlášení se nepodařilo"
+    when :post
+      if @session['user'] = User.authenticate(@params['user_login'], @params['user_password'])
+        flash['notice']  = _("Login was succesful")
+        redirect_back_or_default :action => "welcome"
+      else
+        @login    = @params['user_login']
+        @message  = _('Login was unsuccesful')
       end
+    else
+      @actualities = Actuality.find(:all)
     end
   end
   
