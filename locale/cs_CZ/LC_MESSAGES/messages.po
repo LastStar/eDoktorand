@@ -19,6 +19,9 @@ msgstr ""
 msgid "Login was succesful"
 msgstr "Přihlášení proběhlo v pořádku"
 
+msgid "Login was unsuccesful"
+msgstr "Přihlášení se nepodařilo"
+
 msgid "you don't have rights to do this"
 msgstr "na požadovanou akci nemáte práva"
 
@@ -1104,3 +1107,26 @@ msgstr "ukonči studium"
 msgid "unfinish study"
 msgstr "obnov studium"
 
+msgid "create SP"
+msgstr "vytvoř SP"
+
+msgid "SP approved by tutor"
+msgstr "SP schválen školitelem"
+
+msgid "SP approved by leader"
+msgstr "SP schválen vedoucím"
+
+msgid "SP approved by dean"
+msgstr "SP schválen děkanem"
+
+msgid "back and remove from list"
+msgstr "zpět a vyřadit ze seznamu"
+
+msgid "Login name"
+msgstr "Uživatelské jméno"
+
+msgid "Login"
+msgstr "Přihlásit"
+
+msgid "Password"
+msgstr "Heslo"
