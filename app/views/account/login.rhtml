@@ -1,13 +1,13 @@
 <%= start_form_tag :action=> "login" %>
 
-<div title="přihlášení do systému" id="loginform" class="form">
+<div title="<%= _('Login form') %>" id="loginform" class="form">
     <h3><%= _('Please login') %></h3>
     
     <% if @message %>
       <div id="message"><%= @message %></div>
     <% end %>
 
-    <label for="user_login"><%= _('Login') %></label>
+    <label for="user_login"><%= _('Login name') %></label>
     <input type="text" name="user_login" id="user_login" size="30" value=""/><br/>
 
     <label for="user_password"><%= _('Password') %></label>
@@ -18,7 +18,7 @@
 
 <%= end_form_tag %>
 
-<% if @actualities %>
+<% unless @actualities.empty? %>
 <h5><%= _('Actualities') %></h5>
 <ul id='actuallities'>
   <%= render(:partial => 'actuality', :collection => @actualities) %>

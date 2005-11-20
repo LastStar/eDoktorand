@@ -15,9 +15,8 @@ class AccountController < ApplicationController
         @login    = @params['user_login']
         @message  = _('Login was unsuccesful')
       end
-    else
-      @actualities = Actuality.find(:all)
     end
+    @actualities = Actuality.find(:all)
   end
   
   def signup

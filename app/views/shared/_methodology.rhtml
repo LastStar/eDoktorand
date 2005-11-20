@@ -1,9 +1,11 @@
+<% if disert_theme.methodology_summary %>
 <li>
 <b><%= _("methodology summary") %></b>
 </li>
 <li class="second">
-<%= disert_theme.methodology_summary %>
+<%= disert_theme.methodology_summary.gsub(/\n/, '<br>') %>
 </li>
+<% end %>
 <% if disert_theme.index.study_plan && disert_theme.index.study_plan.approved? %>
 <%  if @student && !disert_theme.has_methodology? %>
 <li>

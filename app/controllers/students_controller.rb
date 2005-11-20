@@ -21,11 +21,10 @@ class StudentsController < ApplicationController
   end
   # searches in students lastname
   def search
-    prepare_conditions
-    @conditions.first <<  ' AND lastname like ?'
-    @conditions << "#{@params['search_field']}%"
-    @indices = Student.find(:all, :conditions => @conditions, :include =>
-    :index).map {|s| s.index}.compact
+    conditions = [' AND people.lastname like ?']
+    conditions << "#{@params['search_field']}%"
+    @indices = Index.find_for_user(@user, :conditions => conditions, :include => [:study_plan, :student,
+      :disert_theme, :department, :study, :coridor], :order => 'people.lastname')
     render(:partial => 'list')
   end
   # filters students
@@ -35,7 +34,8 @@ class StudentsController < ApplicationController
     when "2"
       @indices = Index.find_waiting_for_statement(@user)
     when "1"
-      @indices = @user.person.indexes
+      @indices = Index.find_all_by_tutor_id(@user.person.id, :include => [:study_plan,
+        :student, :disert_theme, :department, :study, :coridor], :order => 'people.lastname')
     when "0"
       list
     end
@@ -46,9 +46,11 @@ class StudentsController < ApplicationController
   end
   # multiple filtering
   def multiple_filter
-    @indices = Index.find_by_criteria(:year => @params['filter_by_year'].to_i, 
-      :department => @params['filter_by_department'].to_i, :coridor => 
-      @params['filter_by_coridor'].to_i, :user => @user)
+    @indices = Index.find_by_criteria(:faculty => @params['filter_by_faculty'],
+      :year => @params['filter_by_year'].to_i, :department => 
+      @params['filter_by_department'].to_i, :coridor => 
+      @params['filter_by_coridor'].to_i, :status => @params['filter_by_status'],
+      :user => @user, :order => 'people.lastname')
     render(:partial => 'list')
   end
   # renders contact for student
@@ -90,9 +92,8 @@ class StudentsController < ApplicationController
     # default filter to waiting for approvement 
     @session['filter'] ||= @user.has_one_of_roles?(['vicerector', 'leader', 'dean', 'tutor']) ? 
     '2' : '0' 
-    if (@user.has_one_of_roles?(['leader', 'dean'])) && !@user.person.indexes.empty?
-      @filters.concat([[_("my students"), 1], [_('waiting for my review')]])
+    if (@user.has_one_of_roles?(['leader', 'dean', 'vicerector'])) && !@user.person.indexes.empty?
+      @filters.concat([[_("my students"), 1], [_('waiting for my review'), 2]])
     end
   end
-
 end

@@ -4,18 +4,19 @@ module StudentsHelper
   def student_action_link(index)
     links = ''
     study_plan = index.study_plan
-    if @session['user'].has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
+    if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
       links.concat(div_tag("#{index.coridor.code}", {:class => 'smallinfo'}))
       links.concat(div_tag("#{index.department.short_name}", {:class => 'smallinfo'})) 
     end
     links.concat(div_tag("#{index.year}. #{_('year')}", {:class => 'smallinfo'}))
     if study_plan
-      links.concat(div_tag(index.study_plan.status, {:class => 'smallinfo'})) unless index.finished?
+      links.concat(div_tag(study_plan.status, {:class => 'smallinfo'})) unless index.finished?
       links.concat(finish_link(index))
       links.concat(content_tag('b',
       link_to_remote_with_loading(index.student.display_name, 
         :url => {:action => 'show', :controller => 'study_plans', :id =>
-        study_plan}, :evaluate => true), {:id => "link#{study_plan.id}"}))
+        study_plan}, :evaluate => true), {:id => "link#{study_plan.id}", 
+        :class => 'printable'}))
     else
       links.concat(finish_link(index))
       if @user.has_one_of_roles?(['admin', 'department_secretary', 'faculty_secretary', 'dean']) && !index.finished?
@@ -66,6 +67,7 @@ module StudentsHelper
     content_tag('select', options, {'id' => "filter_by_department", 
       'name' => "filter_by_department"})
   end
+# prints select for coridor
   def coridor_select(options = {})
     options = if options[:user].has_role?('vicerector')
       coridor_options(:include_empty => options[:include_empty])
@@ -74,5 +76,15 @@ module StudentsHelper
     end
     content_tag('select', options, {'id' => "filter_by_coridor", 
       'name' => "filter_by_coridor"})
+  end
+# prints select for faculty
+  def faculty_select(options = {})
+    content_tag('select', faculty_options(:include_empty => true), {'id' => 
+      "filter_by_faculty", 'name' => "filter_by_faculty"})
+  end
+# prints select for statuses
+  def status_select(options = {})
+    content_tag('select', status_options, {'id' => 
+      "filter_by_status", 'name' => "filter_by_status"})
   end
 end

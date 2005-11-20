@@ -1,2 +1,3 @@
-<%= update_element_function("students_list", :content => render(:partial => 
-'shared/study_plan', :locals => {:study_plan => study_plan}))  %>
+<%= update_element_function("people_list", :content => render(:partial => 
+'shared/study_plan', :locals => {:study_plan => study_plan}), :position => :before)  %>
+<%= "Element.hide('search', 'people_list')" %>

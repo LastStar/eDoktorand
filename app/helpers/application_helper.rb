@@ -8,6 +8,20 @@ module ApplicationHelper
   def coridor_options(options = {})
     options_for_select(Coridor.for_select(options))
   end
+# prints faculty options
+  def faculty_options(options = {})
+    options_for_select(Faculty.for_select(options))
+  end
+  # returns all years options
+  def year_options
+    options_for_select([['---', '0'], [_("1. year"), 1], [_("2. year"), 2], \
+      [_("3. year"), 3]])
+  end
+  # returns all statuses options
+  def status_options
+    options_for_select([['---', '0'], [_("SP admited"), 1], [_("SP approved by tutor"), 2], \
+      [_("SP approved by leader"), 3], [_('SP approved by dean'), 4]])
+  end
   # prints errors for object
   def errors_for(object)
     unless object.errors.empty?
@@ -17,10 +31,6 @@ module ApplicationHelper
       _(message))}.join(' '))
       content_tag('div', tb)
     end
-  end
-  # returns all years ids
-  def year_ids
-    [['---', '0'], [_("1. year"), 1], [_("2. year"), 2], [_("3. year"), 3]]
   end
   # get language ids
   def language_ids

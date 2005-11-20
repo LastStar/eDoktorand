@@ -12,9 +12,9 @@ class Coridor < ActiveRecord::Base
   def self.for_select(options = {})
     if options[:faculty]
       faculty = options[:faculty].is_a?(Faculty) ? options[:faculty].id : options[:faculty]
-      result = Coridor.find_all_by_faculty_id(faculty)
+      result = self.find_all_by_faculty_id(faculty)
     else
-      result = Coridor.find(:all)
+      result = self.find(:all)
     end
     result = result.map {|d| [d.name, d.id]}
     if options[:include_empty]

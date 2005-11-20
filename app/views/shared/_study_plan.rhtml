@@ -1,3 +1,4 @@
+<div id='student_detail'>
 <h5><%= _("Personal and study details") %></h5>
 <%= render_partial 'student_detail', :student => study_plan.index.student %>
 <% disert_theme = study_plan.index.disert_theme %>
@@ -54,6 +55,17 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
   study_plan, :methodology => true}) %>
 <%= approve_forms(study_plan) %>
 <% if @user.non_student? %>
-<%= link_to_remote_with_loading(_("back"), :url => {:controller => 'students', :action => 
-"filter", :filter_by => @session['filter']}, :update => 'students_list') %>
+<%= link_to_function(_("back"), "Element.show('people_list', 'search');
+Element.remove('student_detail'); return false;") %>
+<%= link_to_function(_("back and remove from list"), "switch_to_list_and_remove()") %>
 <% end %>
+</div>
+<%= javascript_tag <<-CODE
+function switch_to_list_and_remove() {
+  Element.remove('index_line_#{study_plan.index.id}')
+  Element.remove('student_detail'); 
+  Element.show('people_list', 'search');
+  return false; 
+  }
+  CODE
+%>

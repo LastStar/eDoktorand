@@ -67,16 +67,19 @@ class Index < ActiveRecord::Base
   # accepts Base.find options. Include and order for now
   def self.find_for_user(user, options ={})
     if user.has_one_of_roles?(['admin', 'vicerector'])
-      conditions  = ['NULL IS NULL']
+      if options[:faculty] && options[:faculty] != '0'
+       faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : \
+         Faculty.find(options[:faculty])
+         conditions = ["indices.department_id IN (#{faculty.departments_for_sql})"]
+      else
+        conditions  = ['NULL IS NULL']
+      end
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary'])
-      conditions = ["department_id IN (" +  user.person.faculty.departments.map {|dep|
-      dep.id}.join(', ') + ")"]
+      conditions = ["indices.department_id IN (#{user.person.faculty.departments_for_sql})"]
     elsif user.has_one_of_roles?(['leader', 'department_secretary'])
-      department_id = user.person.leadership.department_id if  user.has_role?('leader')
-      department_id = user.person.department_employment.unit_id if user.has_role?('department_secretary')
-      conditions = ['department_id = ?', department_id]
+      conditions = ['indices.department_id = ?', user.person.department.id]
     elsif user.has_role?('tutor')
-      conditions = ['tutor_id = ?', user.person.id]
+      conditions = ['indices.tutor_id = ?', user.person.id]
     else
       conditions = ["NULL IS NOT NULL"]
     end
@@ -85,15 +88,16 @@ class Index < ActiveRecord::Base
       conditions.concat(options[:conditions][1..-1])
     end
     self.find(:all, :conditions => conditions, :include => options[:include],
-    :order => options[:order])
+      :order => options[:order])
   end
   # returns all indexes which waits for approvement from persons 
   # only for tutors, leader a deans
-  def self.find_waiting_for_statement(user, options = {})
+  def self.find_waiting_for_statement(user)
     condition_sql = <<-SQL
       AND (study_plans.approved_on IS NULL OR disert_themes.approved_on IS NULL \
       OR study_plans.last_atested_on IS NULL OR \
-      study_plans.last_atested_on < ?) AND indices.finished_on IS NULL 
+      study_plans.last_atested_on < ?) AND (indices.finished_on IS NULL OR \
+      indices.finished_on = '0000-00-00 00:00:00') 
       SQL
     result = self.find_for_user(user, :conditions => [condition_sql, Atestation.actual_for_faculty(user.person.faculty)],
       :include => [:student, :study_plan, :disert_theme, :department, :study, :coridor])
@@ -115,11 +119,22 @@ class Index < ActiveRecord::Base
     end
     indices = Index.find_for_user(options[:user], :conditions => conditions, 
       :include => [:study_plan, :student, :disert_theme, :department, :study,
-        :coridor])
+      :coridor], :faculty => options[:faculty], :order => options[:order])
     if options[:year] != 0
       indices.select {|i| i.year == options[:year]}
-    else
-      return indices
     end
+    if options[:status] && options[:status] != '0'
+      case options[:status]
+      when '1'
+        indices.reject! {|i| !i.study_plan || !i.study_plan.admited?}
+      when '2'
+        indices.reject! {|i| !i.study_plan || i.study_plan.approvement.leader_statement || !i.study_plan.approvement.tutor_statement}
+      when '3'
+        indices.reject! {|i| !i.study_plan || i.study_plan.approvement.dean_statement || !i.study_plan.approvement.leader_statement}
+      when '4'
+        indices.reject! {|i| !i.study_plan || !i.study_plan.approvement.dean_statement && i.study_plan.approvement.leader_statement}
+      end
+    end
+      return indices
   end
 end

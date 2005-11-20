@@ -1,7 +1,7 @@
 <%= form_remote_with_loading(:url => {:action => 'multiple_filter'}, :update =>
   'students_list') %>
 <fieldset>
-  <label for="search_what"><%= _("search by lastname") %></label>
+  <label class='smaller' for="search_what"><%= _("search by lastname") %></label>
   <%= tag('input', :name => 'search_field', :id => 'search_field', 'size' => '10')
   %><br/> 
   <%= observe_field('search_field', :url => {:action => 'search'}, :update =>
@@ -9,7 +9,7 @@
   :interactive => visual_effect(:fade, "loading"), :with => 
   "'search_field=' + escape(value)", :frequency => 2) %>
   <% if @filters %>
-  <label for="filter_by"><%= _("filter") %></label>
+  <label class='smaller' for="filter_by"><%= _("filter") %></label>
   <%= content_tag('select', options_for_select(@filters, @filter.to_i), {'id' => "filter_by",
   'name' => "filter_by", "size" => @filters.size}) %><br/>
   <%= observe_field('filter_by', :url => {:action => 'filter'}, :update => 
@@ -18,12 +18,18 @@
   "'filter_by=' + escape(value)") %>
   <% end %>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])  %>
-  <label for="filter_by_department"><%= _("department") %></label>
+  <% if @user.has_role?('vicerector') %>
+  <label class='smaller' for="filter_by_faculty"><%= _("faculty") %></label>
+  <%= faculty_select(:include_empty => true, :user => @user) %><br/>
+  <% end %>
+  <label class='smaller' for="filter_by_status"><%= _("status") %></label>
+  <%= status_select(:include_empty => true, :user => @user) %><br/>
+  <label class='smaller' for="filter_by_department"><%= _("department") %></label>
   <%= department_select(:include_empty => true, :user => @user) %><br/>
-  <label for="filter_by_coridor"><%= _("corridor") %></label>
+  <label class='smaller' for="filter_by_coridor"><%= _("corridor") %></label>
   <%= coridor_select(:include_empty => true, :user => @user) %><br/>
-  <label for="filter_by"><%= _("year") %></label>
-  <%= content_tag('select', options_for_select(year_ids), 
+  <label class='smaller' for="filter_by"><%= _("year") %></label>
+  <%= content_tag('select', year_options, 
   {'id' => "filter_by_year", 'name' => "filter_by_year"}) %>
 </fieldset>
 <%= submit_tag(_("commit")) %>

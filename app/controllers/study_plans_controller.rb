@@ -59,7 +59,7 @@ class StudyPlansController < ApplicationController
       @session['plan_subjects'] << plan_subject
     end
     create_voluntary
-    @type = 'seminar'
+@type = 'seminar'
     render(:partial => 'voluntarys', :locals => {:plan_subjects =>
     @session['plan_subjects'], :form_plan_subjects => @plan_subjects})
   end
@@ -159,8 +159,7 @@ class StudyPlansController < ApplicationController
   def confirm_approve
     study_plan = StudyPlan.find(@params['id'])
     study_plan.approve_with(@params['statement'])
-    render(:partial => 'shared/show', :locals => {:remove =>
-    "approve_form#{study_plan.id}", :study_plan => study_plan})
+    render(:inline => "Element.hide('approve_form#{study_plan.id}'); Element.remove('index_line_#{study_plan.index.id}')")
   end
   # atests study plan 
   def atest
@@ -191,8 +190,7 @@ class StudyPlansController < ApplicationController
   # renders study plan
   def show
     study_plan = StudyPlan.find(@params['id'])
-    render(:partial => 'shared/show', :locals => {:study_plan => study_plan, :remove =>
-    nil})
+    render(:partial => 'shared/show', :locals => {:study_plan => study_plan})
   end
   # prepares form for atestation details
   def atestation_details
