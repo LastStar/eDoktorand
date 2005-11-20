@@ -1130,3 +1130,12 @@ msgstr "Přihlásit"
 
 msgid "Password"
 msgstr "Heslo"
+
+msgid "1. year"
+msgstr "1. ročník"
+
+msgid "2. year"
+msgstr "2. ročník"
+
+msgid "3. year"
+msgstr "3. ročník"

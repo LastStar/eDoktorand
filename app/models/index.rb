@@ -121,7 +121,7 @@ class Index < ActiveRecord::Base
       :include => [:study_plan, :student, :disert_theme, :department, :study,
       :coridor], :faculty => options[:faculty], :order => options[:order])
     if options[:year] != 0
-      indices.select {|i| i.year == options[:year]}
+      indices.reject! {|i| i.year != options[:year]}
     end
     if options[:status] && options[:status] != '0'
       case options[:status]
