@@ -60,6 +60,10 @@ li.second {
   padding-left: 2em;
   background-color: white;
 }
+li.third { 
+  padding-left: 4em;
+  background-color: #ddc;
+}
 ul {
   margin-top: 0px;
   padding-left: 3ex;
@@ -134,7 +138,7 @@ form {
 }
 label {
   margin: 0px;
-  width: 23em;
+  width: 20em;
   text-align: right; 
   margin: 5px 1em 5px 0;
   clear: both;
@@ -181,6 +185,11 @@ div.fieldWithErrors label { color: red; }
 .smallinfo {
   float: right;
   width: 14ex;
+  font-size: small;
+}
+.smallerinfo {
+  float: right;
+  width: 8ex;
   font-size: small;
 }
 .info {

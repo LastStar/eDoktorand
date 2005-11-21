@@ -1,6 +1,6 @@
 .info {
-  position: absolute;
-  left: 20em;
+  float: right;
+  width: 14ex;
 }
 hr {
   border: none;
@@ -103,6 +103,16 @@ img {
 }
 a { 
   display: none;
+}
+.smallinfo {
+  float: right;
+  width: 14ex;
+  font-size: small;
+}
+.printable a {
+  display: inline;
+  text-decoration: none;
+  color: black;
 }
 #Head {
   display: none;
