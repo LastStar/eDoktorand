@@ -56,16 +56,10 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
 <%= approve_forms(study_plan) %>
 <% if @user.non_student? %>
 <%= link_to_function(_("back"), "Element.show('people_list', 'search');
-Element.remove('student_detail'); return false;") %>
-<%= link_to_function(_("back and remove from list"), "switch_to_list_and_remove()") %>
+Element.remove('student_detail')") %>
+<%= link_to_function(_("back and remove from list"), \
+"Element.remove('index_line_#{study_plan.index.id}'); \
+Element.remove('student_detail'); \
+Element.show('people_list', 'search');") %>
 <% end %>
 </div>
-<%= javascript_tag <<-CODE
-function switch_to_list_and_remove() {
-  Element.remove('index_line_#{study_plan.index.id}')
-  Element.remove('student_detail'); 
-  Element.show('people_list', 'search');
-  return false; 
-  }
-  CODE
-%>

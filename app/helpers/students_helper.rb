@@ -2,17 +2,26 @@ require 'scholarship_calculator'
 module StudentsHelper
   # prints action links on student
   def student_action_link(index)
+    info = ''
     links = ''
     study_plan = index.study_plan
     if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
-      links.concat(div_tag("#{index.coridor.code}", {:class => 'smallinfo'}))
-      links.concat(div_tag("#{index.department.short_name}", {:class => 'smallinfo'})) 
+      info.concat(div_tag("#{index.coridor.code}", {:class => 'smallerinfo'}))
+      info.concat(div_tag("#{index.department.short_name}", {:class => 'smallerinfo'})) 
+      if study_plan
+        links.concat(div_tag(link_to_remote_with_loading(
+          _('switch study'), :url => {:action => 'show', :controller =>
+          'study_plans', :id => study_plan}, :evaluate => true), {:id =>
+          "link#{study_plan.id}", :class => 'smallinfo'})) 
+      end
     end
-    links.concat(div_tag("#{index.year}. #{_('year')}", {:class => 'smallinfo'}))
+    info.concat(div_tag("#{index.study.name}", {:class => 'smallinfo'}))
+    info.concat(div_tag("#{index.year}. #{_('year')}", {:class => 'smallinfo'}))
+    info.concat(div_tag(index.status, {:class => 'smallinfo'}))
     if study_plan
-      links.concat(div_tag(study_plan.status, {:class => 'smallinfo'})) unless index.finished?
+      info.concat(div_tag(study_plan.status, {:class => 'smallinfo'}))
       links.concat(finish_link(index))
-      links.concat(content_tag('b',
+      info.concat(content_tag('b',
       link_to_remote_with_loading(index.student.display_name, 
         :url => {:action => 'show', :controller => 'study_plans', :id =>
         study_plan}, :evaluate => true), {:id => "link#{study_plan.id}", 
@@ -24,8 +33,14 @@ module StudentsHelper
           'create_by_other', :controller => 'study_plans', :id =>
           index.student), {:class => 'smallinfo'}))
       end
-      links.concat(content_tag('b',index.student.display_name))
+      info.concat(content_tag('b',index.student.display_name))
     end
+    unless links.empty?
+      info = div_tag(link_to_function(_('menu'), "Element.toggle( \
+        'index_menu_#{index.id}')"), :class => 'smallinfo').concat(info)
+      links.concat('&nbsp;')
+    end
+    div_tag(links, :id => "index_menu_#{index.id}", :style => 'display: none') + div_tag(info)
   end 
 # prints code to switch old student link to new one
   def switch_student(student)
@@ -37,7 +52,6 @@ module StudentsHelper
   def finish_link(index)
     result = ''
     if index.finished? 
-      result.concat(div_tag(_('ST finished'), {:class => 'smallinfo'}))
       if @user.has_one_of_roles?(['faculty_secretary', 'dean'])
         result.concat(div_tag(link_to_remote_with_loading(_('unfinish study'),
           :url => {:action => 'unfinish', :controller => 'students', :id => 
@@ -46,7 +60,6 @@ module StudentsHelper
           'smallinfo'}))
       end
     else 
-      result.concat(div_tag(_('ST running'), {:class => 'smallinfo'}))
       if @user.has_one_of_roles?(['faculty_secretary', 'dean'])
         result.concat(div_tag(link_to_remote_with_loading(_('finish study'), 
           :url => {:action => 'finish', :controller => 'students', :id =>

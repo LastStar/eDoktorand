@@ -137,4 +137,12 @@ class Index < ActiveRecord::Base
     end
       return indices
   end
+# returns status of index
+  def status
+    if self.finished?
+      _('ST finished')
+    else
+      _('ST running')
+    end
+  end
 end

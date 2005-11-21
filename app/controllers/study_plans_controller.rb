@@ -21,7 +21,7 @@ class StudyPlansController < ApplicationController
   def create_by_other
     @student = Student.find(@params['id'])
     @title = _("Creating study plan")
-    @requisite_subjects = RequisiteSubject.has_for_coridor?(@student.index.coridor)
+    @requisite_subjects = prepare_requisite(@student)
     @subjects = Subject.for_faculty_select(@student.faculty)
     @subjects.concat(LanguageSubject.for_select)
     @study_plan = @student.index.build_study_plan
@@ -117,11 +117,12 @@ class StudyPlansController < ApplicationController
   def save_full
     @errors = []
     extract_voluntary
+    @student = Student.find(@params['student']['id'])
+    @plan_subjects.concat(prepare_requisite(@student))
     unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size <= @plan_subjects.size
       @errors << _("subjects have to be different")     
     end
     @study_plan = StudyPlan.new(@params['study_plan'])
-    @student = Student.find(@params['student']['id'])
     @disert_theme = DisertTheme.new(@params['disert_theme'])
     @disert_theme.index = @student.index
     @study_plan.admited_on = Time.now
@@ -213,4 +214,13 @@ class StudyPlansController < ApplicationController
   end
   private 
   include StudyPlanCreator
+# returns requisite subject like plansubjects for student
+  def prepare_requisite(student)
+    if RequisiteSubject.has_for_coridor?(student.index.coridor)
+      student.index.coridor.requisite_subjects.map do |sub|
+        PlanSubject.new('subject_id' => sub.subject.id, 'finishing_on' => 
+          sub.requisite_on)
+      end
+    end
+  end
 end
