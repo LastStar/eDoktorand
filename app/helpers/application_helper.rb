@@ -19,8 +19,8 @@ module ApplicationHelper
   end
   # returns all statuses options
   def status_options
-    options_for_select([['---', '0'], [_("SP admited"), 1], [_("SP approved by tutor"), 2], \
-      [_("SP approved by leader"), 3], [_('SP approved by dean'), 4]])
+    options_for_select([['---', '0'], [_("SP not admited"), 1], [_("SP admited"), 2], [_("SP approved by tutor"), 3], \
+      [_("SP approved by leader"), 4], [_('SP approved by dean'), 5]])
   end
   # prints errors for object
   def errors_for(object)

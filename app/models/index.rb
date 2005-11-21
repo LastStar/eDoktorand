@@ -126,10 +126,12 @@ class Index < ActiveRecord::Base
     if options[:status] && options[:status] != '0'
       case options[:status]
       when '1'
-        indices.reject! {|i| !i.study_plan || !i.study_plan.admited?}
+        indices.reject! {|i| i.study_plan && i.study_plan.admited?}
       when '2'
-        indices.reject! {|i| !i.study_plan || i.study_plan.approvement.leader_statement || !i.study_plan.approvement.tutor_statement}
+        indices.reject! {|i| !i.study_plan || !i.study_plan.admited? || i.study_plan.approvement.tutor_statement}
       when '3'
+        indices.reject! {|i| !i.study_plan || i.study_plan.approvement.leader_statement || !i.study_plan.approvement.tutor_statement}
+      when '4'
         indices.reject! {|i| !i.study_plan || i.study_plan.approvement.dean_statement || !i.study_plan.approvement.leader_statement}
       when '4'
         indices.reject! {|i| !i.study_plan || !i.study_plan.approvement.dean_statement && i.study_plan.approvement.leader_statement}
