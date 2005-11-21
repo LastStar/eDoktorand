@@ -36,9 +36,9 @@ class ProbationTermsController < ApplicationController
     else
       @subjects = Subject.find_all()
     end
-    @subjects.select {|sub| !sub.probation_terms.empty?}
+    #@subjects.select {|sub| !sub.probation_terms.empty?}
     @probation_terms = []
-    @subjects.each {|sub| @probation_terms.concat(sub.probation_terms)}
+    @subjects.each {|sub| !sub.probation_terms.empty && @probation_terms.concat(sub.probation_terms)}
   end
   
   # enrolls student for a probation term
@@ -139,6 +139,38 @@ class ProbationTermsController < ApplicationController
   def destroy
     ProbationTerm.find(params[:id]).destroy
     redirect_to :action => 'list'
+  end
+  
+  # enroll exam for student from probation term
+  def enroll_exam
+    exam = Exam.new('created_by_id' => @session['user'].person.id)
+    pt = ProbationTerm.find(@params['id'])
+    student = Student.find(@params['student_id'])
+    exam.index = student.index
+    exam.subject_id = pt.subject.id
+    exam.first_examinator_id = pt.first_examinator_id
+    exam.second_examinator_id = pt.second_examinator_id
+    @session['exam'] = exam
+
+    plan_subject = PlanSubject.find(:all, :conditions => ['subject_id = ? and
+    study_plan_id = ?', exam.subject.id, exam.index.study_plan.id])
+    render(:partial => 'main_exam', :locals => {:exam => exam, :plan_subject =>
+  plan_subject, :probation_term => pt})
+  end
+  
+  # saves exam 
+  def save_exam
+    exam = @session['exam']
+    exam.attributes = @params['exam']
+    # select the appropriate plan_subject to update the finished_on tag
+    ps = PlanSubject.find(:first, :conditions => ["subject_id = ? and
+    study_plan_id = ?", exam.subject_id, exam.index.study_plan.id])
+    ps.attributes = @params['plan_subject'] if exam.passed?
+    ps.save
+    exam.save
+    render_partial('render_detail', :probation_term =>
+      ProbationTerm.find(@params['probation_term']))
+    #redirect_to :action => 'list'
   end
 
   # sets title of the controller

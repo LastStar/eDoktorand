@@ -1,0 +1,20 @@
+<ul class='peopleList'>
+  <div class="smallinfo"><%= _("Extra") %></div>
+  <div class="smallinfo"><%= _("Regular") %></div>
+  <div class="smallinfo"><%= _("Department") %></div>
+  <%= _("Full name") %>
+  <br /><br />
+  <% @indices.sort! {|x, y| x.student.lastname <=> y.student.lastname} %>
+<% for index in @indices  %>
+  <div class="smallinfo">
+    <%= link_to_remote_with_loading(_("detail"), :url => {:action => 'detail', :id =>
+    index.id}, :update => "info#{index.id}", :complete => "showDetail(#{index.id})") %>
+  </div>
+  <div class="smallinfo"><%= print_scholarship(index) %> <%= _("Kc") %></div>
+  <div class="smallinfo"><%= index.department.short_name %></div>
+  <b><%= index.student.display_name %></b>
+  <br />
+  <div class='detail' id='info<%= index.id %>' style="display: none">
+  </div >
+<% end %>
+</ul>

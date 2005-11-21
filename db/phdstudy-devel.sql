@@ -336,6 +336,29 @@ CREATE TABLE `indices` (
   `update_by_id` int(11) default NULL,
   `payment_id` int(11) default NULL,
   `enrolled_on` timestamp NULL default NULL,
+  `account_number_prefix` int(5) default NULL ,
+  `account_number` int(10) default NULL,
+  `account_bank_number` varchar(4),
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=UTF8;
+
+
+--
+-- Table structure for table `scholarships`
+--
+
+CREATE TABLE `scholarships` (
+  `id` int(11) NOT NULL auto_increment,
+  `index_id` int(11) default NULL,
+  `amount` float,
+  `commission_head` int(4) default null,
+  `commission_body` int(6) default null,
+  `commission_tail` int(4) default null,
+  `payed_on` timestamp NOT NULL default  '0000-00-00 00:00:00',
+  `created_on` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `updated_on` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `created_by_id` int(11) default NULL,
+  `update_by_id` int(11) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=UTF8;
 

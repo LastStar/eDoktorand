@@ -1,0 +1,16 @@
+<%= javascript_include_tag :defaults %>
+<% @ids = [] %>
+<% @scholarships.sort! {|x, y| x.payed_on <=> y.payed_on} %>
+<ul>
+<% for scholarship in @scholarships  %>
+  <li>
+    <b><%= scholarship.amount %></b>&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= _("Payed on")  %>:&nbsp;<%= scholarship.payed_on.strftime("%d. %m. %Y") %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= _("Commission") %>:&nbsp;&nbsp;
+    <%= scholarship.commission_head %>/<%= scholarship.commission_body %>/<%=
+    scholarship.commission_tail %> 
+    <br />
+  </li>
+  <% @ids << scholarship.id %>
+<% end %>
+</ul>

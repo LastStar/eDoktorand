@@ -6,11 +6,15 @@
       <%= link_to_unless_current(_("probation terms"), :controller =>
       'probation_terms'){} %>
     <% end %>
+    <%= link_to_unless_current(_("study plan"), :controller => 'study_plans',
+    :action => 'index'){} %>
+    <%= link_to_unless_current(_("scholarship"), :controller => 'scholarships',
+    :action => 'list'){} %>
   <% else %>
   <% if @session['user'].has_one_of_roles?(['admin', 'faculty_secretary']) %>
     <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>
     <%= link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} %>
-    <%= link_to_unless_current(_("scholarship"), :controller => 'students',
+    <%= link_to_unless_current(_("scholarship"), :controller => 'scholarships',
     :action => 'scholarship'){} %>
     <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
   <% elsif @session['user'].has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) %>

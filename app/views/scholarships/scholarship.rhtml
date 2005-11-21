@@ -1,0 +1,18 @@
+<div id='students_list'>
+<h5><%= _("Scholarship for students") %></h5>
+<% if @indices && !@indices.empty? %>
+  <%= render(:partial => 'scholarship_list') %>
+<% else %>
+  <%= _("no scholarships") %>
+<% end %>
+</div>
+<br/>
+<script type="text/javascript">
+function showDetail(id) {
+  if($('info' + id).style.display == 'none') {
+    new Effect.Appear('info' + id);
+  } else {
+    new Effect.Fade('info' + id)
+  }
+}
+</script>

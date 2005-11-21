@@ -106,7 +106,7 @@ class ExamsController < ApplicationController
     render(:partial => 'main_exam', :locals => {:exam => exam, :plan_subject =>
   plan_subject})
   end
-  
+
   # save the examindex student to session
   def save_exam_student
     exam = @session['exam']

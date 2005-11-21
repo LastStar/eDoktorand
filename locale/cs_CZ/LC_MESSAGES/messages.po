@@ -1020,9 +1020,6 @@ msgstr "Zkouškový termín z předmětu"
 msgid "waiting for my approvement"
 msgstr "čekající na mé schválení"
 
-msgid "waiting for my review"
-msgstr "čekající na mé schválení"
-
 msgid "approve like tutor"
 msgstr "schválit jako školitel"
 

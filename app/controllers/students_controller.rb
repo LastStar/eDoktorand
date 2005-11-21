@@ -58,11 +58,7 @@ class StudentsController < ApplicationController
     render_partial('contact', :student =>
       Student.find(@params['id']))
   end
-  # scholarship list preparation
-  def scholarship
-    conditions = [' AND indices.study_id = 1']
-    @indices = Index.find_for_user(@user, :conditions => conditions)
-  end
+
 # finishes study
   def finish
     @student = Student.find(@params['id'])

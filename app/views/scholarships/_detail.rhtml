@@ -1,0 +1,48 @@
+<% if scholarships.size > 0 %>
+  <ul>
+  <% for scholarship in scholarships  %>
+    <li>
+      <b><%= scholarship.amount %></b>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= scholarship.payed_on.strftime("%d. %m. %Y") %>&nbsp;&nbsp;
+      &nbsp;&nbsp;
+      <%= scholarship.commission_head %>/<%= scholarship.commission_body %>/<%=
+      scholarship.commission_tail %> 
+      <br />
+    </li>
+  <% end %>
+  </ul>
+<% else %>
+  <%= _("no scholarship") %>
+<% end %>
+<br />
+<div id="done">
+  <%= 
+    link_to_remote_with_loading(_("Add scholarship"), 
+    :url => {:action => 'add_scholarship', :controller => 'scholarships', :id =>
+    @index.id}, :evaluate => true)
+  %>
+</div>
+<div id="form">
+</div>
+<hr/>
+<%= 
+javascript_tag <<-CODE
+last = []
+last[1] = 0
+last[2] = 0
+last[3] = 0
+function hide_on_internal(id) {
+  var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
+  if((element.value == 0 && last[id] != 0) || (element.value != 0 && last[id] == 0)) {
+    if($('external' + id).style.display == 'none') {
+    new Effect.SlideDown('external' + id,{})
+    last[id] = element.value;
+    }
+    else {
+    new Effect.SlideUp('external' + id,{})
+    last[id] = element.value;
+    }
+  };
+}
+CODE
+%>

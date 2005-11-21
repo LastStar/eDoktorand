@@ -1,4 +1,3 @@
-require 'scholarship_calculator'
 module StudentsHelper
   # prints action links on student
   def student_action_link(index)
