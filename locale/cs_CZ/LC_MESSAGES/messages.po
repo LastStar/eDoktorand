@@ -1139,3 +1139,7 @@ msgstr "2. ročník"
 
 msgid "3. year"
 msgstr "3. ročník"
+
+msgid "SP not admited"
+msgstr "SP nesestaven"
+
