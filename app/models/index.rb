@@ -133,7 +133,7 @@ class Index < ActiveRecord::Base
         indices.reject! {|i| !i.study_plan || i.study_plan.approvement.leader_statement || !i.study_plan.approvement.tutor_statement}
       when '4'
         indices.reject! {|i| !i.study_plan || i.study_plan.approvement.dean_statement || !i.study_plan.approvement.leader_statement}
-      when '4'
+      when '5'
         indices.reject! {|i| !i.study_plan || !i.study_plan.approvement.dean_statement && i.study_plan.approvement.leader_statement}
       end
     end
