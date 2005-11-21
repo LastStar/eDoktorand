@@ -38,7 +38,7 @@ class ProbationTermsController < ApplicationController
     end
     #@subjects.select {|sub| !sub.probation_terms.empty?}
     @probation_terms = []
-    @subjects.each {|sub| !sub.probation_terms.empty && @probation_terms.concat(sub.probation_terms)}
+    @subjects.each {|sub| !sub.probation_terms.empty? && @probation_terms.concat(sub.probation_terms)}
   end
   
   # enrolls student for a probation term
