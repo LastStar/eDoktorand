@@ -134,7 +134,7 @@ class Index < ActiveRecord::Base
       when '4'
         indices.reject! {|i| !i.study_plan || i.study_plan.approvement.dean_statement || !i.study_plan.approvement.leader_statement}
       when '5'
-        indices.reject! {|i| !i.study_plan || !i.study_plan.approvement.dean_statement && i.study_plan.approvement.leader_statement}
+        indices.reject! {|i| !i.study_plan or (i.study_plan && !i.study_plan.approvement.dean_statement)}
       end
     end
       return indices
