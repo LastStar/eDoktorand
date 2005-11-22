@@ -216,11 +216,18 @@ class StudyPlansController < ApplicationController
   include StudyPlanCreator
 # returns requisite subject like plansubjects for student
   def prepare_requisite(student)
-    if RequisiteSubject.has_for_coridor?(student.index.coridor)
-      student.index.coridor.requisite_subjects.map do |sub|
-        PlanSubject.new('subject_id' => sub.subject.id, 'finishing_on' => 
-          sub.requisite_on)
-      end
+    #if RequisiteSubject.has_for_coridor?(student.index.coridor)
+    #  student.index.coridor.requisite_subjects.map do |sub|
+    #    PlanSubject.new('subject_id' => sub.subject.id, 'finishing_on' => 
+    #      sub.requisite_on)
+    #  end
+    #else
+    #  # return blank array for to work properly (gothmog)
+    #  return []
+    #end
+    student.index.coridor.requisite_subjects.map do |sub|
+            PlanSubject.new('subject_id' => sub.subject.id, 'finishing_on' => 
+              sub.requisite_on)
     end
   end
 end
