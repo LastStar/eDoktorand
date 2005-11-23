@@ -176,7 +176,7 @@ msgid "invite"
 msgstr "pozvat"
 
 msgid "enroll"
-msgstr "zapsát"
+msgstr "zapsat"
 
 msgid "all"
 msgstr "všichni"
@@ -1140,3 +1140,20 @@ msgstr "3. ročník"
 msgid "SP not admited"
 msgstr "SP nesestaven"
 
+msgid "no scholarship"
+msgstr "žádné stipendium"
+
+msgid "Add scholarship"
+msgstr "přidat stipendium"
+
+msgid "commission"
+msgstr "zakázka"
+
+msgid "amount"
+msgstr "částka"
+
+msgid "payed on"
+msgstr "vyplaceno dne"
+
+msgid "create account"
+msgstr "vytvořit účet"
