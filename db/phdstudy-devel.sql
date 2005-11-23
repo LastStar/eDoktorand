@@ -336,8 +336,8 @@ CREATE TABLE `indices` (
   `update_by_id` int(11) default NULL,
   `payment_id` int(11) default NULL,
   `enrolled_on` timestamp NULL default NULL,
-  `account_number_prefix` int(5) default NULL ,
-  `account_number` int(10) default NULL,
+  `account_number_prefix` varchar(5) default NULL ,
+  `account_number` varchar(10) default NULL,
   `account_bank_number` varchar(4),
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=UTF8;

@@ -79,7 +79,7 @@ class ProbationTermsController < ApplicationController
       (@user.person.is_a? Tutor)
       if(@user.person.is_a? Leader)
         department = @user.person.leadership.department
-      elseif (@user.person.is_a? Tutor)
+      elsif (@user.person.is_a? Tutor)
         department = @user.person.tutorship.department
       else
         department = @user.person.department
