@@ -152,7 +152,7 @@ belongs_to :coridor
     end
   end
   def switch_study
-    if self.study == 1 
+    if self.study_id == 1 
       self.update_attribute('study_id', 2)
     else
       self.update_attribute('study_id', 1)
