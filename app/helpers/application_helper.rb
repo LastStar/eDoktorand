@@ -15,7 +15,7 @@ module ApplicationHelper
   # returns all years options
   def year_options
     options_for_select([['---', '0'], [_("1. year"), 1], [_("2. year"), 2], \
-      [_("3. year"), 3]])
+      [_("3. year"), 3], [_('x'), 4]])
   end
   # returns all statuses options
   def status_options

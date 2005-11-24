@@ -14,11 +14,11 @@ function hide_on_internal(id) {
   var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
   if((element.value == 0 && last[id] != 0) || (element.value != 0 && last[id] == 0)) {
     if($('external' + id).style.display == 'none') {
-    new Effect.SlideDown('external' + id,{})
+    Element.show('external' + id,{})
     last[id] = element.value;
     }
     else {
-    new Effect.SlideUp('external' + id,{})
+    Element.hide('external' + id)
     last[id] = element.value;
     }
   };
