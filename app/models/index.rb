@@ -120,8 +120,12 @@ belongs_to :coridor
     indices = Index.find_for_user(options[:user], :conditions => conditions, 
       :include => [:study_plan, :student, :disert_theme, :department, :study,
       :coridor], :faculty => options[:faculty], :order => options[:order])
-    if options[:year] != 0
-      indices.reject! {|i| i.year != options[:year]}
+    if options[:year] != 0 
+      if options[:year] == 4
+        indices.reject! {|i| i.year < 4}
+      else
+        indices.reject! {|i| i.year != options[:year]}
+      end
     end
     if options[:status] && options[:status] != '0'
       case options[:status]
