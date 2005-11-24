@@ -1140,6 +1140,24 @@ msgstr "3. ročník"
 msgid "SP not admited"
 msgstr "SP nesestaven"
 
+msgid "Actualities"
+msgstr "Aktuality"
+
+msgid "Students list"
+msgstr "Výpis studentů"
+
+msgid "Are you sure you want to finish this study?"
+msgstr "Jste si jist-/á, že chcete ukončit toto studium?"
+
+msgid "Are you sure you want to unfinish this study?"
+msgstr "Jste si jist-/á, že chcete obnovit toto studium?"
+
+msgid "change SP"
+msgstr "změnit SP"
+
+msgid "switch study"
+msgid "přehodit formu"
+
 msgid "no scholarship"
 msgstr "žádné stipendium"
 
@@ -1157,3 +1175,4 @@ msgstr "vyplaceno dne"
 
 msgid "create account"
 msgstr "vytvořit účet"
+
