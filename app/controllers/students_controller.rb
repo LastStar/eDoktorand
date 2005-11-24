@@ -61,15 +61,21 @@ class StudentsController < ApplicationController
 
 # finishes study
   def finish
-    @student = Student.find(@params['id'])
-    @student.index.update_attribute('finished_on', Time.now)
-    render(:inline => "<%= switch_student(@student) %>")
+    @index = Index.find(@params['id'])
+    @index.update_attribute('finished_on', Time.now)
+    render(:inline => "<%= switch_student(@index) %>")
   end
 # unfinishes study
   def unfinish
-    @student = Student.find(@params['id'])
-    @student.index.update_attribute('finished_on', nil)
-    render(:inline => "<%= switch_student(@student) %>")
+    @index = Index.find(@params['id'])
+    @index.update_attribute('finished_on', nil)
+    render(:inline => "<%= switch_student(@index) %>")
+  end
+# switches study on index
+  def switch_study
+    @index = Index.find(@params['id'])
+    @index.switch_study
+    render(:inline => "<%= switch_student(@index) %>")
   end
   private
   # sets title of the controller

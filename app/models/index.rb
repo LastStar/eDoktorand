@@ -6,7 +6,7 @@ class Index < ActiveRecord::Base
   'created_on desc'
   has_one :disert_theme, :order => 'created_on desc'
   has_many :exams
-  belongs_to :coridor
+belongs_to :coridor
   belongs_to :department
   has_many :interupts
   validates_presence_of :student
@@ -145,6 +145,13 @@ class Index < ActiveRecord::Base
       _('ST finished')
     else
       _('ST running')
+    end
+  end
+  def switch_study
+    if self.study == 1 
+      self.update_attribute('study_id', 2)
+    else
+      self.update_attribute('study_id', 1)
     end
   end
 end

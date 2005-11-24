@@ -10,7 +10,7 @@ methodics in three months.") %></p>
 <p class='help'><%= _("Your methodology is processed now. Final approvement you 
 will get by email. ") %></p> 
 <% end %>
-<%= render_partial 'shared/study_plan', :study_plan => @study_plan %>
+<%= render(:partial => 'shared/study_plan', :locals => {:study_plan => @study_plan}) %>
 <% else %>
 <p class='help'><%= _("Welcome to edoktorand application.") %></p> 
 <p class='help'><%= _("This page shows informations which are stored in

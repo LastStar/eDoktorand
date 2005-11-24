@@ -2,7 +2,7 @@ class StudyPlan < ActiveRecord::Base
   belongs_to :index
   has_many :plan_subjects
   has_one :approvement, :class_name => 'StudyPlanApprovement', :foreign_key =>
-  'document_id'
+'document_id'
   has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
   acts_as_audited
   validates_presence_of :index

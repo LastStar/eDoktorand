@@ -27,10 +27,23 @@ class StudyPlansController < ApplicationController
     @study_plan = @student.index.build_study_plan
     @plan_subjects = []
     10.times do |i|
-      (plan_subject = PlanSubject.new('subject_id' => 0)).id = (i+1)
+      (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
       @plan_subjects << plan_subject
     end
     @disert_theme = @student.index.build_disert_theme
+  end
+  # renders change page for study plan
+  def change
+    if !@student
+      @student = Student.find(@params['id'])
+    end
+    @subjects = Subject.for_faculty_select(@student.faculty)
+    @subjects.concat(LanguageSubject.for_select)
+    @subjects.concat(RequisiteSubject.for_select(@student.index.coridor))
+    @study_plan = @student.index.study_plan
+    @plan_subjects = @student.index.study_plan.plan_subjects
+    @disert_theme = @student.index.disert_theme
+    render(:action => 'create_by_other')
   end
   # saves obligate subjects to session
   # and creates voluntary subjects
@@ -46,7 +59,7 @@ class StudyPlansController < ApplicationController
     create_voluntary
     @type = 'obligate'
     render(:partial => 'voluntarys', :locals => {:plan_subjects =>
-    created_subjects})
+           created_subjects})
   end
   # saves seminar subjects to session
   # and creates voluntary subjects
@@ -59,9 +72,9 @@ class StudyPlansController < ApplicationController
       @session['plan_subjects'] << plan_subject
     end
     create_voluntary
-@type = 'seminar'
+    @type = 'seminar'
     render(:partial => 'voluntarys', :locals => {:plan_subjects =>
-    @session['plan_subjects'], :form_plan_subjects => @plan_subjects})
+           @session['plan_subjects'], :form_plan_subjects => @plan_subjects})
   end
   # saves voluntary subjects to session
   # and prepares disert theme
@@ -71,13 +84,13 @@ class StudyPlansController < ApplicationController
     count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
       @session['plan_subjects'].size
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size >= (count - external) &&
-        @errors.empty?
+      @errors.empty?
       @plan_subjects.each {|ps| last_semester(ps.finishing_on)}
       @session['plan_subjects'] << @plan_subjects
       voluntary_subjects = @plan_subjects
       create_language
       render(:partial => 'languages', :locals => {:plan_subjects =>
-        voluntary_subjects, :study_plan => @session['study_plan']})  
+             voluntary_subjects, :study_plan => @session['study_plan']})  
     else
       extract_voluntary(true)
       @errors << _("subjects have to be different") unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size < (count - external)
@@ -93,7 +106,7 @@ class StudyPlansController < ApplicationController
       @session['plan_subjects'] << @plan_subjects
       disert_theme = @student.index.build_disert_theme
       render(:partial => 'valid_languages', :locals => {:plan_subjects =>
-      @plan_subjects, :disert_theme => disert_theme})
+             @plan_subjects, :disert_theme => disert_theme})
     else
       extract_language(true)
       flash.now['error'] = _("languages have to be different")
@@ -106,14 +119,14 @@ class StudyPlansController < ApplicationController
     @disert_theme = DisertTheme.new(@params['disert_theme'])
     unless @disert_theme.valid?
       render(:partial => 'not_valid_disert', :locals => {:disert_theme =>
-      @disert_theme})
+             @disert_theme})
     else
       @session['disert_theme'] = @disert_theme
       render(:partial => 'valid_disert', :locals => {:disert_theme =>
-      @disert_theme, :study_plan => @session['study_plan']}) 
+             @disert_theme, :study_plan => @session['study_plan']}) 
     end
   end
-# saves full form
+  # saves full form
   def save_full
     @errors = []
     extract_voluntary
@@ -141,7 +154,6 @@ class StudyPlansController < ApplicationController
       extract_voluntary
       render(:action => 'create_by_other')
     end
-
   end
   # confirms study plan 
   def confirm
@@ -190,7 +202,7 @@ class StudyPlansController < ApplicationController
   end
   # renders study plan
   def show
-    study_plan = StudyPlan.find(@params['id'])
+    study_plan = StudyPlan.find(@params['id'], :include => [:plan_subjects, :index])
     render(:partial => 'shared/show', :locals => {:study_plan => study_plan})
   end
   # prepares form for atestation details
@@ -206,11 +218,6 @@ class StudyPlansController < ApplicationController
     atestation_detail = AtestationDetail.create(@params['atestation_detail'])  
     render(:partial => 'after_save_detail', :locals => {:study_plan => 
     @student.index.study_plan})
-  end
-  # renders change page for study plan
-  def change
-    @study_plan = StudyPlan.find(@params['id'])
-    render(:partial => 'change')
   end
   private 
   include StudyPlanCreator

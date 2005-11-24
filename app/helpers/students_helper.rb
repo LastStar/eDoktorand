@@ -7,11 +7,14 @@ module StudentsHelper
     if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
       info.concat(div_tag("#{index.coridor.code}", {:class => 'smallerinfo'}))
       info.concat(div_tag("#{index.department.short_name}", {:class => 'smallerinfo'})) 
-      if study_plan
+      if study_plan && @user.has_one_of_roles?(['dean', 'faculty_secretary'])
         links.concat(div_tag(link_to_remote_with_loading(
-          _('switch study'), :url => {:action => 'show', :controller =>
-          'study_plans', :id => study_plan}, :evaluate => true), {:id =>
+          _('switch study'), :url => {:action => 'switch_study', :controller =>
+          'students', :id => index}, :evaluate => true), {:id =>
           "link#{study_plan.id}", :class => 'smallinfo'})) 
+        links.concat(div_tag(link_to(_('change SP'), :action => 
+          'change', :controller => 'study_plans', :id =>
+          index.student), {:class => 'smallinfo'}))
       end
     end
     info.concat(div_tag("#{index.study.name}", {:class => 'smallinfo'}))
@@ -20,7 +23,7 @@ module StudentsHelper
     if study_plan
       info.concat(div_tag(study_plan.status, {:class => 'smallinfo'}))
       links.concat(finish_link(index))
-      info.concat(content_tag('b',
+      info.concat(content_tag('span',
       link_to_remote_with_loading(index.student.display_name, 
         :url => {:action => 'show', :controller => 'study_plans', :id =>
         study_plan}, :evaluate => true), {:id => "link#{study_plan.id}", 
@@ -32,18 +35,18 @@ module StudentsHelper
           'create_by_other', :controller => 'study_plans', :id =>
           index.student), {:class => 'smallinfo'}))
       end
-      info.concat(content_tag('b',index.student.display_name))
+      info.concat(content_tag('span',index.student.display_name))
     end
     unless links.empty?
       info = div_tag(link_to_function(_('menu'), "Element.toggle( \
-        'index_menu_#{index.id}')"), :class => 'smallinfo').concat(info)
+        'index_menu_#{index.id}')"), :class => 'smallerinfo').concat(info)
       links.concat('&nbsp;')
     end
-    div_tag(links, :id => "index_menu_#{index.id}", :style => 'display: none') + div_tag(info)
+    div_tag(links, :id => "index_menu_#{index.id}", :style => 'display: none', :class => 'menu_line') + div_tag(info)
   end 
 # prints code to switch old student link to new one
-  def switch_student(student)
-    update_element_function("index_line_#{student.index.id}", :content => student_action_link(student.index))
+  def switch_student(index)
+    update_element_function("index_line_#{index.id}", :content => student_action_link(index))
   end
   def print_scholarship(index)
     ScholarshipCalculator.scholarship_for(index.student)
@@ -54,7 +57,7 @@ module StudentsHelper
       if @user.has_one_of_roles?(['faculty_secretary', 'dean'])
         result.concat(div_tag(link_to_remote_with_loading(_('unfinish study'),
           :url => {:action => 'unfinish', :controller => 'students', :id => 
-          index.student}, :evaluate => true, :confirm => 
+          index}, :evaluate => true, :confirm => 
           _('Are you sure you want to unfinish this study?')), {:class => 
           'smallinfo'}))
       end
@@ -62,7 +65,7 @@ module StudentsHelper
       if @user.has_one_of_roles?(['faculty_secretary', 'dean'])
         result.concat(div_tag(link_to_remote_with_loading(_('finish study'), 
           :url => {:action => 'finish', :controller => 'students', :id =>
-          index.student}, :evaluate => true, :confirm =>
+          index}, :evaluate => true, :confirm =>
           _('Are you sure you want to finish this study?')), 
           {:class => 'smallinfo'}))
       end

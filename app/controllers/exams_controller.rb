@@ -92,7 +92,7 @@ class ExamsController < ApplicationController
     @plan_subjects.each {|plan| students << plan.study_plan.index.student}
     students = students.select {|stud| !stud.index.finished?}
     render(:partial => "examined_student", :locals => {:exam => exam, 
-    :students => students})
+      :students => students})
   end
   
   # save the examined subject for the examined student

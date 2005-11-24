@@ -68,7 +68,10 @@ module StudyPlansHelper
   end
   # return style for hiding external div
   def hide_style(plan_subject)
-    'display: none' if plan_subject.id == 0 
+    if plan_subject.id == 0 || plan_subject.subject_id == -1 || \
+      plan_subject.subject.is_a?(ExternalSubject)
+      'display: none'  
+    end
   end
   # prints select tags for language subject
   def language_select(plan_subject, subjects)
