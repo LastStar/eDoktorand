@@ -23,8 +23,9 @@ class StudentsController < ApplicationController
   def search
     conditions = [' AND people.lastname like ?']
     conditions << "#{@params['search_field']}%"
-    @indices = Index.find_for_user(@user, :conditions => conditions, :include => [:study_plan, :student,
-      :disert_theme, :department, :study, :coridor], :order => 'people.lastname')
+    @indices = Index.find_for_user(@user, :conditions => conditions, :include =>
+      [:study_plan, :student, :disert_theme, :department, :study, :coridor],
+      :order => 'people.lastname, study_plans.created_on')
     render(:partial => 'list')
   end
   # filters students
@@ -58,20 +59,19 @@ class StudentsController < ApplicationController
     render_partial('contact', :student =>
       Student.find(@params['id']))
   end
-
-# finishes study
+  # finishes study
   def finish
     @index = Index.find(@params['id'])
     @index.update_attribute('finished_on', Time.now)
     render(:inline => "<%= redraw_student(@index) %>")
   end
-# unfinishes study
+  # unfinishes study
   def unfinish
     @index = Index.find(@params['id'])
     @index.update_attribute('finished_on', nil)
     render(:inline => "<%= redraw_student(@index) %>")
   end
-# switches study on index
+  # switches study on index
   def switch_study
     @index = Index.find(@params['id'])
     @index.switch_study
@@ -86,7 +86,7 @@ class StudentsController < ApplicationController
   # TODO create some better mechanism to do ordering
   def prepare_order
 # add url driven ordering
-    @order = 'people.lastname'
+    @order = 'people.lastname, study_plans.created_on'
   end
   # prepares filter variable
   def prepare_filter 

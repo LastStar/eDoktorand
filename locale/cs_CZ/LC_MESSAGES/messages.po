@@ -399,12 +399,6 @@ msgstr ""
 msgid "Confirm password"
 msgstr ""
 
-msgid "Zapsat"
-msgstr ""
-
-msgid "zpět"
-msgstr ""
-
 msgid "by corridor"
 msgstr "podle oboru"
 
@@ -653,9 +647,6 @@ msgstr "nový studijní plán"
 
 msgid "Have you consulted your study plan with tutor. It is highly recomended"
 msgstr "Konzultovali jste Váš studijní plán se školitelem?"
-
-msgid "probation_terms"
-msgstr ""
 
 msgid "study plan"
 msgstr "studijní plán"
@@ -988,36 +979,39 @@ msgstr ""
 "Na této stránce vidíte Váš sestavený studijní plán.Pokud je tak jste to "
 "zamýšleli potvrďte ho prosím"
 
- msgid "Atestation ends"
- msgstr "Uzavření atestace"
+msgid "Atestation ends"
+msgstr "Uzavření atestace"
 
- msgid ""
+msgid ""
  "methodology\n"
  "  file"
- msgstr "soubor s metodikou"
+msgstr "soubor s metodikou"
 
- msgid "final exam"
- msgstr "státní doktorská zkouška"
+msgid "final exam"
+msgstr "státní doktorská zkouška"
 
- msgid "Leader"
- msgstr "Vedoucí katedry"
+msgid "Leader"
+msgstr "Vedoucí katedry"
 
- msgid "Dean"
- msgstr "Děkan"
+msgid "Dean"
+msgstr "Děkan"
 
- msgid "date finished"
- msgstr "splněna dne"
+msgid "date finished"
+msgstr "splněna dne"
  
- msgid "probation terms"
- msgstr "termíny zkoušek"
+msgid "probation terms"
+msgstr "termíny zkoušek"
  
- msgid "There are no probation terms by your selection"
- msgstr "V systému nejsou žádné zkouškové termíny podle Vašeho výběru"
+msgid "There are no probation terms by your selection"
+msgstr "V systému nejsou žádné zkouškové termíny podle Vašeho výběru"
 
 msgid "Probation term from subject"
 msgstr "Zkouškový termín z předmětu"
 
 msgid "waiting for my approvement"
+msgstr "čekající na mé schválení"
+
+msgid "waiting for my review"
 msgstr "čekající na mé schválení"
 
 msgid "approve like tutor"
@@ -1156,7 +1150,7 @@ msgid "change SP"
 msgstr "změnit SP"
 
 msgid "switch study"
-msgid "přehodit formu"
+msgstr "přehodit formu"
 
 msgid "no scholarship"
 msgstr "žádné stipendium"
@@ -1176,3 +1170,53 @@ msgstr "vyplaceno dne"
 msgid "create account"
 msgstr "vytvořit účet"
 
+msgid "This student admited interupt"
+msgstr "Podána žádost o přerušení"
+
+msgid "approvement process"
+msgstr "schvalovací proces"
+
+msgid "start"
+msgstr "začátek"
+
+msgid "duration"
+msgstr "trvání"
+
+msgid "with study change"
+msgstr "se změnou studijního plánu"
+
+msgid "yes"
+msgstr "ano"
+
+msgid "no"
+msgstr "ne"
+
+msgid "Interupting study plan"
+msgstr "Přerušení studijního plánu"
+
+msgid "interupt"
+msgstr "přerušení"
+
+msgid "change study plan"
+msgstr "změna studijního plánu"
+
+msgid "months"
+msgstr "měsíce"
+
+msgid "Fast filter"
+msgstr "Rychlý filtr"
+
+msgid "Detail filter"
+msgstr "Detailní filtr"
+
+msgid "ST interupted"
+msgstr "ST přerušeno"
+
+msgid "interupted on"
+msgstr "přerušeno od"
+
+msgid "This is interupted"
+msgstr "Toto studium je přerušeno"
+
+msgid "interupted to"
+msgstr "přerušeno do"

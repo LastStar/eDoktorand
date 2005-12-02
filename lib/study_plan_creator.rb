@@ -1,3 +1,4 @@
+# TODO redone with more generality, don't use class variables and so....
 module StudyPlanCreator
   # adds requisite subjects to study plan
   def create_requisite
@@ -83,7 +84,7 @@ module StudyPlanCreator
       plan_subject.id = id if remap_id
       @plan_subjects << plan_subject
     end
-    # bloody hack
+    # BLOODY HACK
     unless external == 0
       return external - 1
     else

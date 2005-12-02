@@ -15,6 +15,13 @@ module StudentsHelper
         links.concat(div_tag(link_to(_('change SP'), :action => 
           'change', :controller => 'study_plans', :id =>
           index.student), {:class => 'smallinfo'}))
+        if index.admited_interupt? && index.interupt.approved?
+          links.concat(div_tag(link_to_remote_with_loading(
+            _('interupt'), :url => {:action => 'confirm', :controller => 
+            'interupts', :id => index}, :evaluate => true, :confirm => 
+            _('Do you really want to interupt this study?')), {:class => 
+            'smallinfo'})) 
+        end
       end
     end
     info.concat(div_tag("#{index.study.name}", {:class => 'smallinfo'}))

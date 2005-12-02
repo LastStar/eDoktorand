@@ -8,7 +8,7 @@ class Index < ActiveRecord::Base
   has_many :exams
 belongs_to :coridor
   belongs_to :department
-  has_many :interupts
+  has_one :interupt, :order => 'created_on desc'
   validates_presence_of :student
   validates_presence_of :tutor
   def year
@@ -16,58 +16,76 @@ belongs_to :coridor
   end
   # returns leader of department for this student
   def leader
-    self.department.leadership.leader if self.department.leadership
+    department.leadership.leader if department.leadership
   end
   # returns dean of department for this student
   def dean
-    self.department.faculty.deanship.dean
+    department.faculty.deanship.dean
   end
   # returns if study plan is finished
   def finished?
-    return true unless self.finished_on.nil?
+    return true unless finished_on.nil?
+  end
+  # returns true if interupt just admited
+  def admited_interupt?
+    return true if interupt && !interupted?
+  end
+  # returns if stduy plan is interupted
+  def interupted?
+    if interupted_on && interupted_on < Time.now
+      return true 
+    end
   end
   # returns statement if this index waits for approvement from person
   def statement_for(user)
-    if self.study_plan && !self.study_plan.approved?
-      self.study_plan.approvement ||= StudyPlanApprovement.create
-      if result = self.study_plan.approvement.prepare_statement(user)
-        return result
+    if study_plan 
+      if !study_plan.approved?
+        study_plan.approvement ||= StudyPlanApprovement.create
+        if study_plan.approvement.prepares_statement?(user)
+          return study_plan.approvement.prepare_statement(user)
+        end
+      elsif admited_interupt?
+        interupt.approvement ||= InteruptApprovement.create
+        if interupt.approvement.prepares_statement?(user)
+          return interupt.approvement.prepare_statement(user)
+        end
       end
-    elsif self.disert_theme && self.disert_theme.has_methodology? && !self.disert_theme.approved? 
-      self.disert_theme.approvement ||= DisertThemeApprovement.create 
-      if result = self.disert_theme.approvement.prepare_statement(user)
-        return result
+    elsif disert_theme && disert_theme.has_methodology? && !disert_theme.approved? 
+      disert_theme.approvement ||= DisertThemeApprovement.create 
+      if disert_theme.approvement.prepares_statement?(user)
+        return disert_theme.approvement.prepare_statement(user)
       end
-    elsif self.disert_theme.approved? && Atestation.actual_for_faculty(self.student.faculty) &&
-    !self.study_plan.atested_for?(Atestation.actual_for_faculty(self.student.faculty))
-      self.study_plan.atestation ||= Atestation.create
-      return self.study_plan.atestation.prepare_statement(user)
+    elsif disert_theme.approved? && Atestation.actual_for_faculty(student.faculty) &&
+      !study_plan.atested_for?(Atestation.actual_for_faculty(student.faculty))
+      study_plan.atestation ||= Atestation.create
+      return study_plan.atestation.prepare_statement(user)
     end
   end
   # returns statement if this index waits for approvement from person
   def waits_for_statement?(user)
-    if self.study_plan && !self.study_plan.approved?
-      self.study_plan.approvement ||= StudyPlanApprovement.create
-      if self.study_plan.approvement.prepares_statement?(user)
+    if study_plan && !study_plan.approved?
+      approvement = study_plan.approvement ||= StudyPlanApprovement.create
+    elsif admited_interupt?
+      approvement = interupt.approvement ||= InteruptApprovement.create
+    elsif disert_theme && disert_theme.has_methodology? && !disert_theme.approved? 
+      approvement = disert_theme.approvement ||= DisertThemeApprovement.create 
+    elsif study_plan && study_plan.approved? &&
+      !study_plan.atested_for?(Atestation.actual_for_faculty(user.person.faculty))
+      if study_plan.atestation && study_plan.atestation.prepares_statement?(user)
         return true
       end
-    elsif self.disert_theme && self.disert_theme.has_methodology? && !self.disert_theme.approved? 
-      self.disert_theme.approvement ||= DisertThemeApprovement.create 
-      if self.disert_theme.approvement.prepares_statement?(user)
-        return true
-      end
-    elsif self.study_plan && self.study_plan.approved? &&
-    !self.study_plan.atested_for?(Atestation.actual_for_faculty(user.person.faculty))
-      if (self.study_plan.atestation) && (self.study_plan.atestation.prepares_statement?(user))
-        return true
-      end
+    end
+    if approvement && approvement.prepares_statement?(user)
+      return true
     end
   end
   # returns all indexes for person
   # accepts Base.find options. Include and order for now
   def self.find_for_user(user, options ={})
     if user.has_one_of_roles?(['admin', 'vicerector'])
-      if options[:faculty] && options[:faculty] != '0'
+      if options[:only_tutor]
+        conditions = ['indices.tutor_id = ?', user.person.id]
+      elsif options[:faculty] && options[:faculty] != '0'
        faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : \
          Faculty.find(options[:faculty])
          conditions = ["indices.department_id IN (#{faculty.departments_for_sql})"]
@@ -87,7 +105,7 @@ belongs_to :coridor
       conditions.first << options[:conditions].first 
       conditions.concat(options[:conditions][1..-1])
     end
-    self.find(:all, :conditions => conditions, :include => options[:include],
+    find(:all, :conditions => conditions, :include => options[:include],
       :order => options[:order])
   end
   # returns all indexes which waits for approvement from persons 
@@ -95,12 +113,14 @@ belongs_to :coridor
   def self.find_waiting_for_statement(user)
     condition_sql = <<-SQL
       AND (study_plans.approved_on IS NULL OR disert_themes.approved_on IS NULL \
-      OR study_plans.last_atested_on IS NULL OR \
+      OR study_plans.last_atested_on IS NULL OR indices.interupted_on IS NULL OR \
       study_plans.last_atested_on < ?) AND (indices.finished_on IS NULL OR \
       indices.finished_on = '0000-00-00 00:00:00') 
       SQL
-    result = self.find_for_user(user, :conditions => [condition_sql, Atestation.actual_for_faculty(user.person.faculty)],
-      :include => [:student, :study_plan, :disert_theme, :department, :study, :coridor])
+    result = find_for_user(user, :conditions => [condition_sql, 
+      Atestation.actual_for_faculty(user.person.faculty)], :include => 
+      [:student, :study_plan, :disert_theme, :department, :study, :coridor,
+      :interupt], :order => 'study_plans.created_on', :only_tutor => true)
     if user.has_one_of_roles?(['tutor', 'leader', 'dean'])
       result.select {|i| i.waits_for_statement?(user)} 
     else
@@ -145,17 +165,19 @@ belongs_to :coridor
   end
 # returns status of index
   def status
-    if self.finished?
+    if finished?
       _('ST finished')
+    elsif interupted?
+      _('ST interupted')
     else
       _('ST running')
     end
   end
   def switch_study
-    if self.study_id == 1 
-      self.update_attribute('study_id', 2)
+    if study_id == 1 
+      update_attribute('study_id', 2)
     else
-      self.update_attribute('study_id', 1)
+      update_attribute('study_id', 1)
     end
   end
 end

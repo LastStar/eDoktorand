@@ -1,9 +1,12 @@
 ﻿<div id="done">
 <ul id='studyPlan'>
   <%= content_tag('h5', _("Study plan")) %>
-  <% if @requisite_subjects  %>
+  <% if @requisite_subjects && !@requisite_subjects.empty? %>
   <%= render(:partial => "shared/subjects", :locals => {:subjects => 
       @requisite_subjects, :title => _("requisite subjects")}) %>
+  <% elsif @session['finished_subjects'] %>
+  <%= render(:partial => "shared/subjects", :locals => {:subjects => 
+  @session['finished_subjects'], :title => _("allready finished subjects")}) %>
   <% end %>
 </ul>
 </div>

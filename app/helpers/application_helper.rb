@@ -1,4 +1,4 @@
-# TODO move all ids methods to corresponding models
+  # TODO move all ids methods to corresponding models
 module ApplicationHelper
   # prints department options
   def department_options(options = {})
@@ -8,7 +8,7 @@ module ApplicationHelper
   def coridor_options(options = {})
     options_for_select(Coridor.for_select(options))
   end
-# prints faculty options
+  # prints faculty options
   def faculty_options(options = {})
     options_for_select(Faculty.for_select(options))
   end
@@ -19,8 +19,13 @@ module ApplicationHelper
   end
   # returns all statuses options
   def status_options
-    options_for_select([['---', '0'], [_("SP not admited"), 1], [_("SP admited"), 2], [_("SP approved by tutor"), 3], \
+    options_for_select([['---', '0'], [_("SP not admited"), 1], \
+      [_("SP admited"), 2], [_("SP approved by tutor"), 3], \
       [_("SP approved by leader"), 4], [_('SP approved by dean'), 5]])
+  end
+  # returns yes or no options
+  def yes_no_options
+    [[_('yes'), 1], [_('no'), 2]]
   end
   # prints errors for object
   def errors_for(object)
@@ -132,7 +137,7 @@ module ApplicationHelper
       if study_plan.approved? && !study_plan.index.disert_theme.approved?
         approve_form(study_plan.index.disert_theme, statement)
       else
-       approve_form(study_plan, statement)
+        approve_form(study_plan, statement)
       end
     end
   end
@@ -186,13 +191,54 @@ module ApplicationHelper
 		items << "#{stop_time.to_s}:00"
 		return items
 	end
+# prints main menu
+  def main_menu
+    links = []
+    if @session['user'].person.is_a?(Student) and @student 
+      if !@student.index.study_plan 
+        links << link_to(_("create study plan"), {:action => 'create', :id => @student}, 
+          :confirm => _("Have you consulted your study plan with tutor. It is highly recomended")) 
+      else
+        links << link_to(_("change study plan"), {:action => 'change', :id => @student})
+        if @student.index.study_plan.approved? 
+          links << link_to_unless_current(_("probation terms"), :controller =>
+            'probation_terms'){} 
+          links << link_to_unless_current(_('interupt'), :controller => 'interupts'){}
+        end 
+        links << link_to_unless_current(_("study plan"), :controller => 'study_plans',
+          :action => 'index'){} 
+        links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
+          :action => 'list'){} 
+      end
+    else 
+      if @session['user'].has_one_of_roles?(['admin', 'faculty_secretary']) 
+        links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
+        links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
+        links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
+          :action => 'scholarship'){} 
+        links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
+      elsif @session['user'].has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) 
+        links << link_to_unless_current(_("probation terms"), :controller =>
+          'probation_terms'){} 
+        links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
+      end 
+      links << link_to_unless_current(_("students"), :controller => 'students'){} 
+    end 
+    links << link_to_unless_current(_("logoff"), {:controller => 'account', :action => 'logout'}, :confirm =>  _("do you really want to") + ' ' +
+      _("logoff") + '?'){} 
+    links.flatten.join("\n")
+  end
+# prints code to switch old student link to new one
+  def redraw_student(index)
+    update_element_function("index_line_#{index.id}", :content => student_action_link(index))
+  end
   private 
   # sets options for remote tags
   def set_remote_options(options)
     options[:loading] = visual_effect(:appear, 'loading', :to => 0.6, 
-    :duration => 0.1)
+      :duration => 0.1)
     options[:interactive] = visual_effect(:fade, "loading", :from => 0.6,
-    :duration => 0.1) 
+      :duration => 0.1) 
     options[:complete] = evaluate_remote_response if options[:evaluate] 
     return options
   end
@@ -256,8 +302,9 @@ module ApplicationHelper
   def long_info_helper(content)
     content_tag('div', content, :class => 'long_info')
   end
-# prints div tag
+  # prints div tag
   def div_tag(content, options = {})
     content_tag('div', content, options)
   end
+
 end

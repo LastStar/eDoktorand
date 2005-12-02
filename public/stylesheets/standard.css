@@ -136,15 +136,18 @@ form {
   text-align: right;
   padding: 6px;
 }
+label.bigger {
+  font-weight: bolder;
+}
 label {
   margin: 0px;
-  width: 20em;
+  width: 14em;
   text-align: right; 
   margin: 5px 1em 5px 0;
   clear: both;
   float: left;
 }
-label.smaller {
+label.small {
   width: 13em;
 }
 li.unfinished {
@@ -199,6 +202,9 @@ div.fieldWithErrors label { color: red; }
 .long_info {
   float: right;
   width: 480px;
+}
+.menu_line {
+  z-index: 1;
 }
 .important_notice {
   color: red;
@@ -283,7 +289,8 @@ table.list td {
 div#loading {
   position: absolute; 
   top: 0;
-  width: 760px;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   background-color: red;
   color: darkgray;

@@ -1,4 +1,4 @@
 <%= update_element_function("info#{index.id}", 
 :content => render(:partial => "detail", 
 :locals => {:scholarships => scholarships, :index => index})) %>
-<%= visual_effect(:slide_down, "info#{index.id}") %>
+<%= "Elementshow('info#{index.id}')" %>

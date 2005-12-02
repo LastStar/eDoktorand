@@ -32,6 +32,7 @@ module StudyPlansHelper
   def subject_select(subjects, plan_subject)
     select = ''
     subjects = [[_("none subject"), -1]].concat(subjects)
+    plan_subject.subject_id = 0 if plan_subject.subject.is_a?(ExternalSubject)
     select << content_tag('select', options_for_select(subjects, plan_subject.subject_id),
       {'id' => "plan_subject_#{plan_subject.id}_subject_id",
       'name' => "plan_subject[#{plan_subject.id}][subject_id]",
@@ -69,7 +70,8 @@ module StudyPlansHelper
   # return style for hiding external div
   def hide_style(plan_subject)
     if plan_subject.id == 0 || plan_subject.subject_id == -1 || \
-      plan_subject.subject.is_a?(ExternalSubject)
+      (plan_subject.subject_id.id > 0 && \
+       !plan_subject.subject.is_a?(ExternalSubject))
       'display: none'  
     end
   end

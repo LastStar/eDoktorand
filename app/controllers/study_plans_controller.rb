@@ -41,7 +41,8 @@ class StudyPlansController < ApplicationController
     @subjects.concat(LanguageSubject.for_select)
     @subjects.concat(RequisiteSubject.for_select(@student.index.coridor))
     @study_plan = @student.index.study_plan
-    @plan_subjects = @student.index.study_plan.plan_subjects
+    @plan_subjects = @student.index.study_plan.unfinished_subjects
+    @session['finished_subjects'] = @student.index.study_plan.finished_subjects
     @disert_theme = @student.index.disert_theme
     render(:action => 'create_by_other')
   end
@@ -132,6 +133,11 @@ class StudyPlansController < ApplicationController
     extract_voluntary
     @student = Student.find(@params['student']['id'])
     @plan_subjects.concat(prepare_requisite(@student))
+    if @session['finished_subjects']
+      @session['finished_subjects'].each do |sub|
+       @plan_subjects << sub.clone 
+      end 
+    end
     unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size <= @plan_subjects.size
       @errors << _("subjects have to be different")     
     end
@@ -139,7 +145,6 @@ class StudyPlansController < ApplicationController
     @disert_theme = DisertTheme.new(@params['disert_theme'])
     @disert_theme.index = @student.index
     @study_plan.admited_on = Time.now
-    @study_plan.plan_subjects << @plan_subjects
     @study_plan.index = @student.index
     if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
       @study_plan.save
@@ -148,7 +153,15 @@ class StudyPlansController < ApplicationController
         ps.study_plan = @study_plan
         ps.save
       end
-      redirect_to(:action => 'list', :controller => 'students')
+      if @user.person.is_a?(Student)
+        if @session['interupt']
+          redirect_to(:controller => 'interupts', :action => 'finish')
+        else
+          redirect_to(:controller => 'study_plans')
+        end
+      else
+        redirect_to(:action => 'list', :controller => 'students')
+      end
     else
       @subjects = Subject.for_faculty_select(@student.faculty)
       extract_voluntary
@@ -172,7 +185,8 @@ class StudyPlansController < ApplicationController
   def confirm_approve
     study_plan = StudyPlan.find(@params['id'])
     study_plan.approve_with(@params['statement'])
-    render(:inline => "Element.hide('approve_form#{study_plan.id}'); Element.remove('index_line_#{study_plan.index.id}')")
+    render(:inline => "Element.hide('approve_form#{study_plan.id}'); \
+      Element.remove('index_line_#{study_plan.index.id}')")
   end
   # atests study plan 
   def atest
@@ -185,14 +199,14 @@ class StudyPlansController < ApplicationController
     statement = \
     eval("#{@params['statement']['type']}.create(@params['statement'])") 
     eval("study_plan.atestation.#{@params['statement']['type'].underscore} =
-    statement")
+      statement")
     if statement.cancel? && statement.is_a?(DeanStatement)
       study_plan.index.finished_on = Time.now 
       study_plan.index.save
     end
     study_plan.save
     render(:partial => 'shared/show', :locals => {:remove =>
-    "approve_form#{study_plan.id}", :study_plan => study_plan})
+      "approve_form#{study_plan.id}", :study_plan => study_plan})
   end
   # for remote adding subjects to page
   def subjects

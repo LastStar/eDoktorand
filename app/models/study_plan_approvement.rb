@@ -3,6 +3,6 @@ class StudyPlanApprovement < Approvement
   acts_as_audited
   # returns index
   def index
-    self.study_plan.index
+    study_plan.index
   end
 end

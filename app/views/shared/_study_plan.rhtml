@@ -13,6 +13,47 @@
   </li>
 </ul>
 <% end %>
+<% if study_plan.index.admited_interupt? || study_plan.index.interupted? %>
+<% interupt = study_plan.index.interupt %>
+  <% if study_plan.index.interupted? %>
+<h5><%= _('This is interupted') %></h5>
+<ul>
+  <li>
+  <div class='info'><%= study_plan.index.interupted_on.strftime('%d. %m. %Y') %></div>
+  <%= _('interupted on') %>
+  </li>
+  <li>
+  <div class='info'><%= interupt.end_on.strftime('%d. %m. %Y')%></div>
+  <%= _('interupted to') %>
+  </li>
+  <% else %>
+<h5><%= _('This student admited interupt') %></h5>
+<ul>
+  <li>
+  <div class='info'><%= study_plan.index.interupt.start_on.strftime('%m/%Y') %></div>
+  <%= _('start') %>
+  </li>
+  <li>
+  <div class='info'><%= study_plan.index.interupt.duration %></div>
+  <%= _('duration') %>
+  </li>
+  <% end %>
+  <% if study_plan.index.interupt.note && !study_plan.index.interupt.note.empty? %>
+  <li>
+  <div class='info'><%= study_plan.index.interupt.note %></div>
+  <%= _('note') %>
+  </li>
+  <% end %>
+  <% if study_plan.index.interupt.plan_changed == 1 %>
+  <li>
+  <%= _('study plan has changed') %>
+  </li>
+  <% end %>
+  <% if study_plan.index.interupt.approvement %>
+  <%= print_statements(study_plan.index.interupt.approvement) %>
+  <% end %>
+</ul>
+<% end %>
 <% if study_plan.atestation  %>
 <h5><%= _("last atestation:") %></h5>
 <ul id='atestation'>
@@ -20,8 +61,8 @@
   <%= atestation_detail(study_plan) %>
 </ul>
 <% elsif study_plan.approvement && !disert_theme.has_methodology? %>
-<h5><%= _("study plan approvement process:") %></h5>
-<ul>
+<h5><%= _("study plan approvement process") %></h5>
+<ul id='approvement'>
   <%= print_statements(study_plan.approvement) %>
 </ul>
 <% elsif disert_theme.approvement && !study_plan.atestation %>
@@ -53,7 +94,11 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
 <%= render(:partial => 'shared/disert_theme', 
   :locals => {:disert_theme => study_plan.index.disert_theme, :study_plan =>
   study_plan, :methodology => true}) %>
-<%= approve_forms(study_plan) %>
+<% if study_plan.index.admited_interupt? %>
+  <%= approve_forms(study_plan.index.interupt) %>
+<% elsif !study_plan.approved?  %>
+  <%= approve_forms(study_plan) %>
+<% end %>
 <% if @user.non_student? %>
 <%= link_to_function(_("back"), "Element.show('people_list', 'search');
 Element.remove('student_detail')") %>

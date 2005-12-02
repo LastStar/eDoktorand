@@ -15,7 +15,7 @@
     alt="logo"/><div id="HeadMenu">
   <% if @user %>
     <div id="HeadMenuContent">
-    <%= render(:partial => 'shared/main_menu') %>
+    <%= main_menu %>
     <h1 id="title"><%= "#{_(@title)} - #{_(@user.person.type.to_s)}: #{@user.person.display_name}" %></h1>
     </div>
   <% end %>
