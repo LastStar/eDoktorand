@@ -18,6 +18,11 @@ class ScholarshipsController < ApplicationController
     Scholarship.find_all_by_index_id(@index.id)
   end
 
+# claim for accommodation scholarship
+  def claim
+    @student = @user.person
+  end
+  
   # form for changing account number
   def account_change
     @index = Index.find(@params['id'])

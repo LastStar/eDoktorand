@@ -1,0 +1,35 @@
+<%= form_tag :action => @action %>
+  <fieldset id='citizenship'>
+    <legend><%= _("Citizenship rights") %></legend>
+      <label for='citizenship_rights'><%= _("citizenship rights") %></label>
+      <%= text_field 'student', 'citizenship', 'size' => '6', 'maxlength' => '6' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+  </fieldset>
+
+  <fieldset id='contact'>
+    <legend><%= _("Contact") %></legend>
+    <label for='student_email' class='required'><%= _("email") %></label>
+    <%= text_field 'email', 'name', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+      <%= hidden_field 'email', 'contact_type_id' %>
+      <label for='student_phone'><%= _("phone") %></label>
+      <%= text_field 'phone', 'name', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+      <%= hidden_field 'phone', 'contact_type_id' %>
+  </fieldset>
+  <fieldset id='address'>
+    <legend><%= _("habitat address") %></legend>
+    <label for='student_street' class='required'><%= _("street") %></label>
+    <%= text_field 'address', 'street', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br />  
+      <label for='student_street' class='required'><%= _("street number") %></label>
+      <%= text_field 'address', 'desc_number', 'size' => '6' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+        <label for='student_city' class='required'><%= _("city") %></label>
+        <%= text_field 'address', 'city', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+          <label for='student_zip' class='required'><%= _("zip") %></label>
+          <%= text_field 'address', 'zip', 'size' => '10' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+      <%= hidden_field 'address', 'address_type_id' %>
+  </fieldset>
+  <fieldset id='action'>
+    <legend><%= _("action") %></legend>
+    <%= hidden_field 'address', 'student_id' %>
+    <input type='submit' value='<%= _("commit") %>' />&nbsp;
+    <input type='reset' value='<%= _("reset") %>' />
+  </fieldset>
+  <%= end_form_tag %>

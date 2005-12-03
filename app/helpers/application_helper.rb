@@ -198,6 +198,7 @@ module ApplicationHelper
       if !@student.index.study_plan 
         links << link_to(_("create study plan"), {:action => 'create', :id => @student}, 
           :confirm => _("Have you consulted your study plan with tutor. It is highly recomended")) 
+        links << link_to_unless_current(_("contacts"), :controller => 'addresses', :action => 'edit'){}
       else
         links << link_to(_("change study plan"), {:action => 'change', :id => @student})
         if @student.index.study_plan.approved? 
@@ -210,6 +211,7 @@ module ApplicationHelper
         links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
           :action => 'list'){} 
       end
+        links << link_to_unless_current(_("contacts"), :controller => 'address', :action => 'edit'){}
     else 
       if @session['user'].has_one_of_roles?(['admin', 'faculty_secretary']) 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 

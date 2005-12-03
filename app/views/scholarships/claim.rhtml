@@ -1,0 +1,120 @@
+<div>
+  <b><%= _("Claim for accomodation scholarship for academic year 2005/2006") %></b>
+</div>
+<br />
+<p>
+<span><%= _("UIC") %></span> &nbsp;&nbsp;&nbsp;&nbsp;<%= @student.uic %><br /><br />
+  <table>
+    <tr>
+      <td width="200px;">
+        <%= _("First name (names)") %>
+      </td>
+      <td>
+        <%= @student.firstname %>
+      </td>
+    </tr>
+    <tr>
+      <td width="200px;">
+        <%= _("Last name") %>
+      </td>
+      <td>
+        <%= @student.lastname %>
+      </td>
+    </tr>
+    <tr>
+      <td width="200px;">
+        <%= _("Birth name") %>
+      </td>
+      <td>
+        <%= @student.birthname %>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table>
+    <tr>
+      <td width="200px;">
+        <%= _("Citizenship rights") %>
+      </td>
+      <td>
+        <%= @student.citizenship %>
+      </td>
+    </tr>
+    <tr>
+      <td width="200px;">
+        <%= _("Date of birth") %>
+      </td>
+      <td>
+        <% if @student.birth_on %>
+          <%= @student.birth_on.strftime("%d. %m. %Y") %>
+        <% end  %>
+      </td>
+    </tr>
+  </table>
+  <br /><br />
+  <%= _("Habitat address") %>
+  <br /><br />
+  <table>
+    <tr>
+      <td width="100px;">
+        <%= _("Street") %>
+      </td>
+      <td width="200px;">
+        <%= @student.address.street %>
+      </td>
+      <td>
+        <%= _("Description number") %>&nbsp;&nbsp;
+      </td>
+      <td>
+        <%= @student.address.desc_number %>
+      </td>
+    </tr>
+    <tr>
+      <td width="100px;">
+        <%= _("City") %>
+      </td>
+      <td width="100px;">
+        <%= @student.address.city %>
+      </td>
+    </tr>
+    <tr>
+      <td width="100px;">
+        <%= _("Zip") %>
+      </td>
+      <td>
+        <%= @student.address.zip %>
+      </td>
+    </tr>
+  </table>
+  <br /><br />
+  <%= _("Claiming sequence") %>
+  <br /><br />
+  <table width="80%">
+    <tr>
+      <td width="50%">
+        <div>
+          <span style="font-size: 16px; font-weight: bold;"><%= _("Claimer") %></span>
+        </div>
+        <div>
+          <%= _("Signature") %>:
+        </div>
+        <br /><br />
+        <div>
+          <%= _("Date") %>:
+        </div>
+      </td>
+      <td width="50%">
+        <div>
+          <span style="font-size: 16px; font-weight: bold;"><%= _("Study department") %></span>
+        </div>
+        <div>
+          <%= _("Signature") %>:
+        </div>
+        <br /><br />
+        <div>
+          <%= _("Date") %>:
+        </div>
+      </td>
+    </tr>
+  </table>
+</p>

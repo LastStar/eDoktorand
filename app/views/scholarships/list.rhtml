@@ -12,6 +12,7 @@
     <div class="right">
       <%= link_to_remote_with_loading(_("create account"), :url => {:action => 'account_change', :id =>
       @index.id}, :update => "account_change", :complete => "accountChange()") %>
+      <%= link_to_unless_current(_("claim"), :controller => 'scholarships', :action => 'claim'){} %>
     </div>
   <% end %>
     <div id="account_change" style="display: none;">

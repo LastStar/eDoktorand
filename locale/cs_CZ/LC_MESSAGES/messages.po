@@ -1220,3 +1220,60 @@ msgstr "Toto studium je přerušeno"
 
 msgid "interupted to"
 msgstr "přerušeno do"
+
+msgid "contacts"
+msgstr "kontakty"
+
+msgid "Claim for accomodation scholarship for academic year 2005/2006"
+msgstr "Žádost o ubytovací stipendium na ČZU pro akademický rok 2005/2006"
+
+msgid "First name (names)"
+msgstr "Jméno (jména)"
+
+msgid "Last name"
+msgstr "Příjmení"
+
+msgid "Birth name"
+msgstr "Rodné příjmení"
+
+msgid "Citizenship rights"
+msgstr "Státní občanství"
+
+msgid "citizenship rights"
+msgstr "státní občanství"
+
+msgid "Date of birth"
+msgstr "Datum narození"
+
+msgid "Habitat address"
+msgstr "Adresa místa trvalého pobytu:"
+
+msgid "Street"
+msgstr "Ulice"
+
+msgid "City"
+msgstr "Obec"
+
+msgid "Zip"
+msgstr "PSČ"
+
+msgid "Description number"
+msgstr "Č.P."
+
+msgid "Claiming sequence"
+msgstr "Prohlašuji a svým podpisem stvrzuji, že všechny mnou uvedené údaje v této žádosti jsou pravdivé a úplné."
+
+msgid "Claimer"
+msgstr "ŽADATEL"
+
+msgid "claim"
+msgstr "vytisknout žádost"
+
+msgid "Study department"
+msgstr "STUDIJNÍ ODDĚLENÍ"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "UIC"
+msgstr "UIC (číslo studenta)"

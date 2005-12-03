@@ -417,6 +417,7 @@ CREATE TABLE `people` (
   `updated_on` timestamp NOT NULL default '0000-00-00 00:00:00',
   `uic` int(11) default NULL,
   `birthname` varchar(100) default NULL,
+  `citizenship` varchar(6) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=UTF8;
 
