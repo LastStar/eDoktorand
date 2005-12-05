@@ -21,6 +21,8 @@ class ScholarshipsController < ApplicationController
 # claim for accommodation scholarship
   def claim
     @student = @user.person
+    @student.index.scholarship_claim_date = Time.now
+    @student.save
   end
   
   # form for changing account number

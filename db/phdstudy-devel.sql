@@ -339,6 +339,7 @@ CREATE TABLE `indices` (
   `account_number_prefix` varchar(5) default NULL ,
   `account_number` varchar(10) default NULL,
   `account_bank_number` varchar(4),
+  `scholarship_claim_date` timestamp NULL default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=UTF8;
 
