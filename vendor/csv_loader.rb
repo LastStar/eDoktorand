@@ -564,4 +564,16 @@ def self.load_subjects(file, options = {} )
       u.save
     end
   end
+  def self.load_birthdays(file)
+    @@mylog.info "Loading department secretaries..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if s = Student.find_by_uic(row[4])
+        puts s
+        s.birthname = row[2]
+        s.birth_at = row[3]
+        s.save
+      end
+    end
+
+  end
 end

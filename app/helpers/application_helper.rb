@@ -230,10 +230,6 @@ module ApplicationHelper
       _("logoff") + '?'){} 
     links.flatten.join("\n")
   end
-# prints code to switch old student link to new one
-  def redraw_student(index)
-    update_element_function("index_line_#{index.id}", :content => student_action_link(index))
-  end
   private 
   # sets options for remote tags
   def set_remote_options(options)
