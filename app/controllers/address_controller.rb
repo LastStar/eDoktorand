@@ -11,7 +11,7 @@ class AddressController < ApplicationController
     @email = student.email ? student.email : Contact.new('contact_type_id' =>
       '1', 'person_id' => student.id)
     @phone = student.phone ? student.phone : Contact.new('contact_type_id' => '2', 'person_id' => student.id)
-    @address = student.address ? student.address : Address.new('address_type_id' => AddressType.find(1), 'student_id' => student.id)
+    @address = student.address ? student.address : Address.new('address_type_id' => '1', 'student_id' => student.id)
     @student = student
     @action = 'save'
     #render :action => 'edit'
@@ -25,7 +25,14 @@ class AddressController < ApplicationController
     @student.phone = Contact.create(@params['phone'])
 
     # and address
-    @student.address = Address.create(@params['address'])
+    if @student.address
+      @student.address = Address.create(@params['address'])
+      @student.address.save
+    else
+      address = Address.new(@params['address'])
+      address.student = @student
+      address.save
+    end
     @student.citizenship = @params['student']['citizenship']
     @student.save
     redirect_to :controller => 'study_plans'
