@@ -52,40 +52,46 @@
     </tr>
   </table>
   <br /><br />
-  <%= _("Habitat address") %>
-  <br /><br />
-  <table>
-    <tr>
-      <td width="100px;">
-        <%= _("Street") %>
-      </td>
-      <td width="200px;">
-        <%= @student.address.street %>
-      </td>
-      <td>
-        <%= _("Description number") %>&nbsp;&nbsp;
-      </td>
-      <td>
-        <%= @student.address.desc_number %>
-      </td>
-    </tr>
-    <tr>
-      <td width="100px;">
-        <%= _("City") %>
-      </td>
-      <td width="100px;">
-        <%= @student.address.city %>
-      </td>
-    </tr>
-    <tr>
-      <td width="100px;">
-        <%= _("Zip") %>
-      </td>
-      <td>
-        <%= @student.address.zip %>
-      </td>
-    </tr>
-  </table>
+  <% if @student.address %>
+    <%= _("Habitat address") %>
+    <br /><br />
+    <table>
+      <tr>
+        <td width="100px;">
+          <%= _("Street") %>
+        </td>
+        <td width="200px;">
+          <%= @student.address.street %>
+        </td>
+        <td>
+          <%= _("Description number") %>&nbsp;&nbsp;
+        </td>
+        <td>
+          <%= @student.address.desc_number %>
+        </td>
+      </tr>
+      <tr>
+        <td width="100px;">
+          <%= _("City") %>
+        </td>
+        <td width="100px;">
+          <%= @student.address.city %>
+        </td>
+      </tr>
+      <tr>
+        <td width="100px;">
+          <%= _("Zip") %>
+        </td>
+        <td>
+          <%= @student.address.zip %>
+        </td>
+      </tr>
+    </table>
+  <% else %>
+    <div>
+      <%= _("No address") %>
+    </div>  
+  <% end %>
   <br /><br />
   <%= _("Claiming sequence") %>
   <br /><br />
