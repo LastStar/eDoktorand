@@ -570,7 +570,7 @@ def self.load_subjects(file, options = {} )
       if s = Student.find_by_uic(row[4])
         puts s
         s.birthname = row[2]
-        s.birth_at = row[3]
+        s.birth_on = row[3]
         s.save
       end
     end
