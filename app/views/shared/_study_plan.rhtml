@@ -1,6 +1,10 @@
 <div id='student_detail'>
 <h5><%= _("Personal and study details") %></h5>
 <%= render_partial 'student_detail', :student => study_plan.index.student %>
+<% if study_plan.index.student.address %>
+  <h5><%= _("Contact details") %></h5>
+  <%= render_partial 'address_detail', :student => study_plan.index.student %>
+<% end %>
 <% disert_theme = study_plan.index.disert_theme %>
 <% if study_plan.index.finished? %>
 <h5><%= _("This study has been finished") %></h5>

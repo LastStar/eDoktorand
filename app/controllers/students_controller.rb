@@ -77,6 +77,15 @@ class StudentsController < ApplicationController
     @index.switch_study
     render(:inline => "<%= redraw_student(@index) %>")
   end
+
+  # supervise scholarship by faculty_secretary
+  def supervise_scholarship_claim
+    @index = Index.find(@params['id'])
+    @student = @index.student
+    @student.update_attribute('scholarship_supervised_date', Time.now)
+    render(:inline => "<%= redraw_student(@index) %>")
+  end
+
   private
   # sets title of the controller
   def set_title

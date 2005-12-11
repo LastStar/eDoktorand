@@ -693,7 +693,7 @@ msgstr "schválen dne"
 msgid "last atestation:"
 msgstr "poslední atestace"
 
-msgid "study plan approvement process:"
+msgid "study plan approvement process"
 msgstr "schvalovací proces studijního plánu"
 
 msgid "semester"
@@ -1280,3 +1280,9 @@ msgstr "UIC (číslo studenta)"
 
 msgid "No address"
 msgstr "Nutné vyplnit adresu trvalého bydliště"
+
+msgid "Contact details"
+msgstr "Kontaktní údaje"
+
+msgid "supervise scholarship"
+msgstr "potvrdit žádost"

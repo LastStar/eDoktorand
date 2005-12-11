@@ -15,6 +15,12 @@ module StudentsHelper
         links.concat(div_tag(link_to(_('change SP'), :action => 
           'change', :controller => 'study_plans', :id =>
           index.student), {:class => 'smallinfo'}))
+        if index.student.scholarship_claim_date && !index.student.scholarship_supervised_date
+          links.concat(div_tag(link_to_remote_with_loading(
+          _('supervise scholarship'), :url => {:action => 'supervise_scholarship_claim', :controller =>
+          'students', :id => index}, :evaluate => true), {:id =>
+          "link#{study_plan.id}", :class => 'smallinfo'})) 
+        end
         if index.admited_interupt? && index.interupt.approved?
           links.concat(div_tag(link_to_remote_with_loading(
             _('interupt'), :url => {:action => 'confirm', :controller => 
