@@ -8,7 +8,7 @@
   <%= observe_field('search_field', :url => {:action => 'search'}, :update =>
   'students_list', :loading => visual_effect(:appear, 'loading'), 
   :interactive => visual_effect(:fade, "loading"), :with => 
-  "'search_field=' + escape(value)", :frequency => 2) %>
+  "'search_field=' + escape(value)", :frequency => 5) %>
   <% if @filters %>
   <label class='small' for="filter_by"><%= _("filter") %></label>
   <%= content_tag('select', options_for_select(@filters, @filter.to_i), {'id' => "filter_by",
@@ -26,8 +26,10 @@
   <label class='small' for="filter_by_faculty"><%= _("faculty") %></label>
   <%= faculty_select(:include_empty => true, :user => @user) %><br/>
   <% end %>
-  <label class='small' for="filter_by_status"><%= _("status") %></label>
+  <label class='small' for="filter_by_status"><%= _("SP status") %></label>
   <%= status_select(:include_empty => true, :user => @user) %><br/>
+  <label class='small' for="filter_by_study_status"><%= _("ST status") %></label>
+  <%= study_status_select(:include_empty => true, :user => @user) %><br/>
   <label class='small' for="filter_by_department"><%= _("department") %></label>
   <%= department_select(:include_empty => true, :user => @user) %><br/>
   <label class='small' for="filter_by_coridor"><%= _("corridor") %></label>

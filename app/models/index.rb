@@ -147,6 +147,16 @@ belongs_to :coridor
         indices.reject! {|i| i.year != options[:year]}
       end
     end
+    if options[:study_status] && options[:study_status] != '0'
+      case options[:study_status]
+      when '1'
+        indices.reject! {|i| i.status != _('ST running')}
+      when '2'
+        indices.reject! {|i| i.status != _('ST finished')}
+      when '3'
+        indices.reject! {|i| i.status != _('ST interupted') }
+      end
+    end
     if options[:status] && options[:status] != '0'
       case options[:status]
       when '1'

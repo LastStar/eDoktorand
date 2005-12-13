@@ -115,4 +115,9 @@ module StudentsHelper
     content_tag('select', status_options, {'id' => 
       "filter_by_status", 'name' => "filter_by_status"})
   end
+# prints select for statuses
+  def study_status_select(options = {})
+    content_tag('select', study_status_options, {'id' => 
+      "filter_by_study_status", 'name' => "filter_by_study_status"})
+  end
 end
