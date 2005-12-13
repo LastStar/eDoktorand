@@ -104,8 +104,11 @@ class StudentsController < ApplicationController
     # default filter to waiting for approvement 
     @session['filter'] ||= @user.has_one_of_roles?(['vicerector', 'leader', 'dean', 'tutor']) ? 
     '2' : '0' 
-    if (@user.has_one_of_roles?(['leader', 'dean', 'vicerector'])) && !@user.person.indexes.empty?
-      @filters.concat([[_("my students"), 1], [_('waiting for my review'), 2]])
+    if (@user.has_one_of_roles?(['leader', 'dean', 'vicerector']))
+      if !@user.person.indexes.empty?
+        @filters.concat([[_("my students"), 1]])
+      end
+      @filters.concat([[_('waiting for my review'), 2]])
     end
   end
 end
