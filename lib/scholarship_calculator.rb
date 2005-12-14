@@ -2,10 +2,10 @@ class ScholarshipCalculator
   AMOUNTS = {
     1 => {0 => 5700, 1 => 6100, 2 => 6400, 3 => 6700, 4 => 7000,
           5 => 7300, 6 => 7600, 7 => 7900, 8 => 7900, 9 => 7900, 
-          'final_exam' => 8400},
+          10 => 7900, 11 => 7900, 'final_exam' => 8400},
     3 => {0 => 4600, 1 => 4900, 2 => 5200, 3 => 5500, 4 => 5800,
           5 => 6100, 6 => 6400, 7 => 6700, 8 => 6700, 9 => 6700,
-          'final_exam' => 8000},      
+          10 => 6700, 'final_exam' => 8000},      
     4 => {0 => 4250, 1 => 4250, 2 => 5250, 3 => 5250, 4 => 5750,
           5 => 5750, 6 => 6250, 7 => 6250, 8 => 6250, 9 => 6250,
           10 => 6250, 'final_exam' => 7250},
@@ -22,6 +22,7 @@ class ScholarshipCalculator
         by_year(student.index)
     end
   end
+
   private
   # calculates stipendia by exams
   def self.by_exams(index)
@@ -42,5 +43,9 @@ class ScholarshipCalculator
     else
       amount = AMOUNTS[index.student.faculty.id][0]
     end
+  end
+
+  def self.by_year(index)
+    AMOUNTS[index.student.faculty.id][index.year]
   end
 end
