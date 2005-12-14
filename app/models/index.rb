@@ -164,11 +164,11 @@ belongs_to :coridor
       when '2'
         indices.reject! {|i| !i.study_plan || !i.study_plan.admited? || i.study_plan.approvement.tutor_statement}
       when '3'
-        indices.reject! {|i| !i.study_plan || i.study_plan.approvement.leader_statement || !i.study_plan.approvement.tutor_statement}
+        indices.reject! {|i| i.study_plan_approved_by != 'tutor'}
       when '4'
-        indices.reject! {|i| !i.study_plan || i.study_plan.approvement.dean_statement || !i.study_plan.approvement.leader_statement}
+        indices.reject! {|i| i.study_plan_approved_by != 'leader'}
       when '5'
-        indices.reject! {|i| !i.study_plan or (i.study_plan && !i.study_plan.approvement.dean_statement)}
+        indices.reject! {|i| i.study_plan_approved_by != 'dean'}
       end
     end
       return indices
@@ -188,6 +188,11 @@ belongs_to :coridor
       update_attribute('study_id', 2)
     else
       update_attribute('study_id', 1)
+    end
+  end
+  def study_plan_approved_by
+    if study_plan
+      study_plan.approved_by
     end
   end
 end

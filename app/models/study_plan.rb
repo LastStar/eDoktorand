@@ -73,6 +73,13 @@ class StudyPlan < ActiveRecord::Base
       _('SP admited')
     end
   end
+  def approved_by
+    if approved?
+      _('dean')
+    elsif
+      approvement.approved_by
+    end
+  end
 # returns subjects which are finished
   def finished_subjects
    PlanSubject.find(:all, :conditions =>  [ \

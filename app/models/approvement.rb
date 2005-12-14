@@ -25,4 +25,13 @@ class Approvement < ActiveRecord::Base
       return true
     end
   end
+  def approved_by
+    if dean_statement
+      _('dean')
+    elsif leader_statement
+      _('leader')
+    elsif tutor_statement
+      _('tutor')
+    end
+  end
 end
