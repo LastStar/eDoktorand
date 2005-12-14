@@ -23,10 +23,15 @@ module ApplicationHelper
       [_("SP admited"), 2], [_("SP approved by tutor"), 3], \
       [_("SP approved by leader"), 4], [_('SP approved by dean'), 5]])
   end
-  # returns all statuses options
+  # returns all study statuses options
   def study_status_options
     options_for_select([['---', '0'], [_("ST running"), 1], \
       [_("ST finished"), 2], [_("ST interupted"), 3]])
+  end
+  # returns all form options
+  def form_options
+    options_for_select([['---', '0'], [_("present"), 1], \
+      [_("combined"), 2]])
   end
   # returns yes or no options
   def yes_no_options

@@ -30,6 +30,8 @@
   <%= status_select(:include_empty => true, :user => @user) %><br/>
   <label class='small' for="filter_by_study_status"><%= _("ST status") %></label>
   <%= study_status_select(:include_empty => true, :user => @user) %><br/>
+  <label class='small' for="filter_by_form"><%= _("form") %></label>
+  <%= form_select(:include_empty => true, :user => @user) %><br/>
   <label class='small' for="filter_by_department"><%= _("department") %></label>
   <%= department_select(:include_empty => true, :user => @user) %><br/>
   <label class='small' for="filter_by_coridor"><%= _("corridor") %></label>

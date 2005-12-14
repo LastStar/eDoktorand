@@ -137,9 +137,13 @@ belongs_to :coridor
       conditions.first << ' AND indices.coridor_id = ?'
       conditions << options[:coridor]
     end
+    if options[:form]
+      conditions.first << ' AND indices.study_id = ?'
+      conditions << options[:form]
+    end
     indices = Index.find_for_user(options[:user], :conditions => conditions, 
       :include => [:study_plan, :student, :disert_theme, :department, :study,
-      :coridor], :faculty => options[:faculty], :order => options[:order])
+      :coridor, :interupt], :faculty => options[:faculty], :order => options[:order])
     if options[:year] != 0 
       if options[:year] == 4
         indices.reject! {|i| i.year < 4}

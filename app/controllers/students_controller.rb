@@ -45,16 +45,19 @@ class StudentsController < ApplicationController
       render(:partial => 'list')
     end 
   end
+
   # multiple filtering
   def multiple_filter
+    # move to model
     @indices = Index.find_by_criteria(:faculty => @params['filter_by_faculty'],
       :year => @params['filter_by_year'].to_i, :department => 
       @params['filter_by_department'].to_i, :coridor => 
       @params['filter_by_coridor'].to_i, :status => @params['filter_by_status'],
-      :study_status => @params['filter_by_study_status'], :user => @user, 
-      :order => 'people.lastname')
+      :study_status => @params['filter_by_study_status'], :form => 
+      @params['filter_by_form'], :user => @user, :order => 'people.lastname')
     render(:partial => 'list')
   end
+
   # renders contact for student
   def contact
     render_partial('contact', :student =>
