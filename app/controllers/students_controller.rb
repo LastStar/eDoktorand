@@ -48,7 +48,7 @@ class StudentsController < ApplicationController
 
   # multiple filtering
   def multiple_filter
-    # move to model
+    # TODO move to model
     @indices = Index.find_by_criteria(:faculty => @params['filter_by_faculty'],
       :year => @params['filter_by_year'].to_i, :department => 
       @params['filter_by_department'].to_i, :coridor => 

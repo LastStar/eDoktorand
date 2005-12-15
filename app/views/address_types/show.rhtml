@@ -1,8 +1,0 @@
-<% for column in AddressType.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @address_type.send(column.name) %>
-</p>
-<% end %>
-
-<%= link_to 'Edit', :action => 'edit', :id => @address_type %> |
-<%= link_to 'Back', :action => 'list' %>

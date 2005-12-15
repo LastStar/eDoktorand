@@ -67,12 +67,10 @@ class ExamsController < ApplicationController
   end
   
   # created exam object and subjects for select 
-  # TODO sql finder for only subjects wich actually any student has
   # TODO sql finder for the students, that actually have the subjects
   # this person teaches (maybe the department)
   def exam_by_student
-    @exam = Exam.new('created_by_id' => @user.person.id)
-    @session['exam'] = @exam
+    @session['exam'] = @exam = Exam.new('created_by_id' => @user.person.id)
     @conditions = ['indices.finished_on IS NULL AND study_plans.approved_on 
     IS NOT NULL']
     students = Index.find(:all, :conditions => @conditions, :include => [:student,
