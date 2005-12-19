@@ -54,7 +54,7 @@ class StudentsController < ApplicationController
       @params['filter_by_department'].to_i, :coridor => 
       @params['filter_by_coridor'].to_i, :status => @params['filter_by_status'],
       :study_status => @params['filter_by_study_status'], :form => 
-      @params['filter_by_form'], :user => @user, :order => 'people.lastname')
+      @params['filter_by_form'].to_i, :user => @user, :order => 'people.lastname')
     render(:partial => 'list')
   end
 

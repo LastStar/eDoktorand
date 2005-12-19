@@ -137,7 +137,7 @@ belongs_to :coridor
       conditions.first << ' AND indices.coridor_id = ?'
       conditions << options[:coridor]
     end
-    if options[:form]
+    if options[:form] != 0
       conditions.first << ' AND indices.study_id = ?'
       conditions << options[:form]
     end
