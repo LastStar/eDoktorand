@@ -3,12 +3,14 @@ class StudyPlansController < ApplicationController
   include LoginSystem
   layout 'employers'
   before_filter :login_required, :prepare_student, :prepare_user
-  # page with basic informations for student 
+  
+# page with basic informations for student 
   def index
     @title = _("Study plan")
     @study_plan = @student.index.study_plan
   end
-  # start of the study plan creating process
+  
+# start of the study plan creating process
   def create
     prepare_plan_session
     @title = _("Creating study plan")
@@ -17,7 +19,8 @@ class StudyPlansController < ApplicationController
     end
     create_obligate
   end
-  # create study plan like no-student 
+  
+# create study plan like no-student 
   def create_by_other
     @student = Student.find(@params['id'])
     @title = _("Creating study plan")
@@ -32,7 +35,8 @@ class StudyPlansController < ApplicationController
     end
     @disert_theme = @student.index.build_disert_theme
   end
-  # renders change page for study plan
+  
+# renders change page for study plan
   def change
     if !@student
       @student = Student.find(@params['id'])
@@ -46,8 +50,10 @@ class StudyPlansController < ApplicationController
     @disert_theme = @student.index.disert_theme
     render(:action => 'create_by_other')
   end
-  # saves obligate subjects to session
-  # and creates voluntary subjects
+  
+# saves obligate subjects to session
+  
+# and creates voluntary subjects
   def save_obligate
     created_subjects = []
     @session['study_plan'].attributes = @params['study_plan']
@@ -62,8 +68,10 @@ class StudyPlansController < ApplicationController
     render(:partial => 'voluntarys', :locals => {:plan_subjects =>
            created_subjects})
   end
-  # saves seminar subjects to session
-  # and creates voluntary subjects
+  
+# saves seminar subjects to session
+  
+# and creates voluntary subjects
   def save_seminar
     @session['study_plan'].attributes = @params['study_plan']
     2.times do |i|
@@ -77,8 +85,10 @@ class StudyPlansController < ApplicationController
     render(:partial => 'voluntarys', :locals => {:plan_subjects =>
            @session['plan_subjects'], :form_plan_subjects => @plan_subjects})
   end
-  # saves voluntary subjects to session
-  # and prepares disert theme
+  
+# saves voluntary subjects to session
+  
+# and prepares disert theme
   def save_voluntary
     @errors = []
     external = extract_voluntary
@@ -99,8 +109,10 @@ class StudyPlansController < ApplicationController
       render(:partial => 'not_valid_voluntarys', :locals => {:form_plan_subjects => @plan_subjects})
     end
   end
-  # saves language subjects to session
-  # and creates voluntary subjects
+  
+# saves language subjects to session
+  
+# and creates voluntary subjects
   def save_language
     extract_language
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 2
@@ -114,7 +126,8 @@ class StudyPlansController < ApplicationController
       render(:partial => 'not_valid_languages')  
     end
   end
-  # saves disert theme to session
+  
+# saves disert theme to session
   def save_disert
     @session['study_plan'].attributes = @params['study_plan']
     @disert_theme = DisertTheme.new(@params['disert_theme'])
@@ -127,7 +140,8 @@ class StudyPlansController < ApplicationController
              @disert_theme, :study_plan => @session['study_plan']}) 
     end
   end
-  # saves full form
+  
+# saves full form
   def save_full
     @errors = []
     extract_voluntary
@@ -168,7 +182,8 @@ class StudyPlansController < ApplicationController
       render(:action => 'create_by_other')
     end
   end
-  # confirms study plan 
+  
+# confirms study plan 
   def confirm
     @study_plan = @session['study_plan']
     @study_plan.admited_on = Time.now
@@ -181,19 +196,22 @@ class StudyPlansController < ApplicationController
     prepare_plan_session
     redirect_to :action => 'index'
   end
-  # confirms and saves statement
+  
+# confirms and saves statement
   def confirm_approve
     study_plan = StudyPlan.find(@params['id'])
     study_plan.approve_with(@params['statement'])
     render(:inline => "Element.hide('approve_form#{study_plan.id}'); \
       Element.remove('index_line_#{study_plan.index.id}')")
   end
-  # atests study plan 
+  
+# atests study plan 
   def atest
     study_plan = StudyPlan.find(@params['id'])
     render(:partial => 'show_atestation', :locals => {:study_plan => study_plan})
   end
-  # confirms and saves statement
+  
+# confirms and saves statement
   def confirm_atest
     study_plan = StudyPlan.find(@params['id'])
     statement = \
@@ -208,18 +226,15 @@ class StudyPlansController < ApplicationController
     render(:partial => 'shared/show', :locals => {:remove =>
       "approve_form#{study_plan.id}", :study_plan => study_plan})
   end
-  # for remote adding subjects to page
+  
+# for remote adding subjects to page
   def subjects
     render(:partial => 'plan_subjects', :locals => {:subjects =>
     PlanSubject.find(:all, :conditions => ['study_plan_id = ?', @params['id']],
     :include => [:subject]), :study_plan => StudyPlan.find(@params['id'])})
   end
-  # renders study plan
-  def show
-    study_plan = StudyPlan.find(@params['id'], :include => [:plan_subjects, :index])
-    render(:partial => 'shared/show', :locals => {:study_plan => study_plan})
-  end
-  # prepares form for atestation details
+  
+# prepares form for atestation details
   def atestation_details
     @atestation_detail = @student.index.study_plan.next_atestation_detail ||
     AtestationDetail.new('study_plan_id' => @student.index.study_plan.id,
@@ -227,28 +242,23 @@ class StudyPlansController < ApplicationController
     render(:partial => 'show_detail_form', :locals => {:study_plan =>
     @student.index.study_plan})
   end
-  # saves atestation detail 
+  
+# saves atestation detail 
   def save_atestation_detail
     atestation_detail = AtestationDetail.create(@params['atestation_detail'])  
     render(:partial => 'after_save_detail', :locals => {:study_plan => 
     @student.index.study_plan})
   end
+
   private 
+
   include StudyPlanCreator
+
 # returns requisite subject like plansubjects for student
   def prepare_requisite(student)
-    #if RequisiteSubject.has_for_coridor?(student.index.coridor)
-    #  student.index.coridor.requisite_subjects.map do |sub|
-    #    PlanSubject.new('subject_id' => sub.subject.id, 'finishing_on' => 
-    #      sub.requisite_on)
-    #  end
-    #else
-    #  # return blank array for to work properly (gothmog)
-    #  return []
-    #end
     student.index.coridor.requisite_subjects.map do |sub|
-            PlanSubject.new('subject_id' => sub.subject.id, 'finishing_on' => 
-              sub.requisite_on)
+      PlanSubject.new('subject_id' => sub.subject.id, 'finishing_on' => 
+        sub.requisite_on)
     end
   end
 end

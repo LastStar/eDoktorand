@@ -1,42 +1,52 @@
-  # TODO move all ids methods to corresponding models
+  
+# TODO move all ids methods to corresponding models
 module ApplicationHelper
+  
   # prints department options
   def department_options(options = {})
     options_for_select(Department.for_select(options))
   end
+  
   # prints corridor options 
   def coridor_options(options = {})
     options_for_select(Coridor.for_select(options))
   end
+  
   # prints faculty options
   def faculty_options(options = {})
     options_for_select(Faculty.for_select(options))
   end
+  
   # returns all years options
   def year_options
     options_for_select([['---', '0'], [_("1. year"), 1], [_("2. year"), 2], \
       [_("3. year"), 3], [_('x'), 4]])
   end
+  
   # returns all statuses options
   def status_options
     options_for_select([['---', '0'], [_("SP not admited"), 1], \
       [_("SP admited"), 2], [_("SP approved by tutor"), 3], \
       [_("SP approved by leader"), 4], [_('SP approved by dean'), 5]])
   end
+  
   # returns all study statuses options
   def study_status_options
     options_for_select([['---', '0'], [_("ST running"), 1], \
       [_("ST finished"), 2], [_("ST interupted"), 3]])
   end
+  
   # returns all form options
   def form_options
     options_for_select([['---', '0'], [_("present"), 1], \
       [_("combined"), 2]])
   end
+  
   # returns yes or no options
   def yes_no_options
     [[_('yes'), 1], [_('no'), 2]]
   end
+  
   # prints errors for object
   def errors_for(object)
     unless object.errors.empty?
@@ -47,14 +57,17 @@ module ApplicationHelper
       content_tag('div', tb)
     end
   end
+  
   # get language ids
   def language_ids
     Language.find_all.map {|l| [l.name, l.id]}
   end
+  
   # get study ids
   def study_ids
     Study.find_all.map {|s| [s.name, s.id]}
   end
+  
   # get coridor ids
   def coridor_ids(faculty)
     if faculty.is_a?(Faculty)
@@ -63,29 +76,35 @@ module ApplicationHelper
     [['---', '0']].concat(Coridor.find_all_by_faculty_id(faculty).map {|s|
       [truncate(s.name, 40), s.id]})
   end
+  
   # get title_before ids
   def title_before_ids
     arr = [['---', '0']]
     arr.concat(Title.find_all(['prefix = ?', 1]).map {|s| [s.label, s.id]})
     return arr
   end
+  
   # get title_before ids
   def title_after_ids
     arr = [['---', '0']]
     arr.concat(Title.find_all(['prefix = ?', 0]).map {|s| [s.label, s.id]})
     return arr
   end
+  
   # get role ids
   def role_ids(collection)
     collection.map {|s| [s.name, s.id]}
   end
+  
   # prints notice from flash
   def print_notice
     if @flash['notice']
       content_tag('div', @flash['notice'], :class => 'notice')
     end 
   end
+  
   # get tutor ids
+  
   # if options['coridor'] setted only for this coridor
   def tutor_ids(options = {})
     if options[:coridor]
@@ -95,39 +114,49 @@ module ApplicationHelper
     end
     ts.map {|ts| [ts.tutor.display_name, ts.tutor.id]}
   end
+  
   # get examinator ids
   def examinator_ids(faculty)
-    # bloody hack evarybody should have faculty 
+    
+  # bloody hack evarybody should have faculty 
     faculty = faculty.id if faculty.is_a?(Faculty)
     Tutor.find(:all).select{|t| t.faculty && t.faculty.id == faculty}.map {|p| [p.display_name, p.id]}
   end
+  
   # get examinator ids
+  
   # allows null
   def examinator_null_ids(faculty)
     arr = [['---', '0']]
     faculty = faculty.id if faculty.is_a?(Faculty)
-    # bloody hack evarybody should have faculty 
+    
+  # bloody hack evarybody should have faculty 
     arr.concat(Tutor.find(:all).select{|t| t.faculty && t.faculty.id ==
     faculty}.map {|p| [p.display_name, p.id]})
   end
+  
   # get index ids
   def index_ids
     Student.find(:all).map {|s| [s.display_name, s.index.id]}
   end
+  
   # get subject ids
   def subject_ids
     Subject.find(:all).map {|s| [s.label, s.id]}
   end
+  
   # get language  subject ids
   def language_subject_ids
     LanguageSubject.find_all.map {|l| [l.subject.label, l.subject.id]}
   end
+  
   # get voluntary subjects for corridor 
   def voluntary_ids(coridor)
     arr = [[_("external subject"), 0]]
     arr.concat(Coridor.find(coridor).voluntary_subjects.map {|s|
       [truncate(s.subject.label, 40), s.subject_id]})
   end
+  
   # get voluntary subjects for corridor 
   def seminar_ids(coridor)
     if coridor.is_a? Coridor
@@ -137,10 +166,12 @@ module ApplicationHelper
     arr.concat(Coridor.find(coridor).seminar_subjects.map {|s|
       [truncate(s.subject.label, 40), s.subject_id]})
   end
+  
   # returns approve word for statement result
   def approve_word(result)
     [ _("canceled"), _("approved")][result]
   end
+  
   # prints approve form
   def approve_forms(study_plan)
     if statement = study_plan.index.statement_for(@user)
@@ -151,18 +182,21 @@ module ApplicationHelper
       end
     end
   end
+  
   # prints atestation links
   def atestation_links(study_plan)
     if Atestation.actual_for_faculty(@user.person.faculty)
       atestation_link(study_plan)
     end
   end
+  
   # prints statements approvement 
   def print_statements(approvement)
     print_statement(approvement.tutor_statement, _("Tutor statement")) +
     print_statement(approvement.leader_statement, _("Leader statement")) +
     print_statement(approvement.dean_statement, _("Dean statement") ) 
   end
+  
   # prints atestaion subject line wihch depends on finishing of the subject
   def atestation_subject_line(plan_subject, atestation_term)
     content = ''
@@ -178,21 +212,27 @@ module ApplicationHelper
     content << plan_subject.subject.label
     content_tag('li', content, :class => html_class)
   end
+  
   # prints link to remote with apearing and disapearing of the loading _
+  
   # you should say if it's evaluating response by setting options[:evaluate]
+  
   # to true, or updating by setting options[:update]
   def link_to_remote_with_loading(name, options = {}, html_options = {})
     options = set_remote_options(options)
     link_to_remote(name, options, html_options)
   end
+  
   # prints form tag with loading apearing and disapearing
+  
   # also evaluate remote response is built in
   def form_remote_with_loading(options)
     options = set_remote_options(options)
     options[:html] = {:autocomplete => "off"} 
     form_remote_tag(options)
   end
-	# returns array of the time by quarter from start time to end time
+	
+  # returns array of the time by quarter from start time to end time
 	def str_time_select(start_time = 8, stop_time = 16)
 		items = []
 		(start_time..stop_time-1).each do |hour|
@@ -201,7 +241,8 @@ module ApplicationHelper
 		items << "#{stop_time.to_s}:00"
 		return items
 	end
-# prints main menu
+
+  # prints main menu
   def main_menu
     links = []
     if @session['user'].person.is_a?(Student) and @student 
@@ -240,6 +281,7 @@ module ApplicationHelper
     links.flatten.join("\n")
   end
   private 
+  
   # sets options for remote tags
   def set_remote_options(options)
     options[:loading] = visual_effect(:appear, 'loading', :to => 0.6, 
@@ -249,6 +291,7 @@ module ApplicationHelper
     options[:complete] = evaluate_remote_response if options[:evaluate] 
     return options
   end
+  
   # prints statement
   def print_statement(statement, statement_type)
     result = ''
@@ -263,6 +306,7 @@ module ApplicationHelper
     return content_tag('li', "#{content_tag('div', result, :class => 'long_info')}
     #{statement_type}", :class => 'second')
   end
+  
   # prints atestation link
   def atestation_link(study_plan)
     element = "approve_form#{study_plan.id}"
@@ -270,6 +314,7 @@ module ApplicationHelper
       'study_plans', :action => 'atest', :id => study_plan, :evaluate => true},
       {:id => element})
   end
+  
   # prints approvement link
   def approve_form(document, statement)
     statement.class.to_s =~ /(.*)Statement/
@@ -287,6 +332,7 @@ module ApplicationHelper
       :title => title, :options => options, :action => action, :statement => 
       statement, :controller => document.class.to_s.underscore.pluralize})
   end
+  
   # prints methodology link
   def methodology_link(disert_theme)
     content_tag('li', link_to_remote_with_loading(
@@ -294,6 +340,7 @@ module ApplicationHelper
       'disert_themes', :action => 'file_clicked', :id => disert_theme},
       :evaluate => true}), {:id => "methodology_link#{disert_theme.id}"})
   end
+  
   # prints atestation detail link
   def atestation_detail(study_plan)
     if @student
@@ -305,10 +352,12 @@ module ApplicationHelper
       atestation_links(study_plan)
     end
   end
+  
   # prints small info div 
   def long_info_helper(content)
     content_tag('div', content, :class => 'long_info')
   end
+  
   # prints div tag
   def div_tag(content, options = {})
     content_tag('div', content, options)

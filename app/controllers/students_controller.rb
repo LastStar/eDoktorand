@@ -5,20 +5,19 @@ class StudentsController < ApplicationController
   before_filter :prepare_order, :prepare_filter, :except => [:show,
   :contact]
   before_filter :prepare_conditions
+  
   # lists all students
   def index
     filter(:dont_render => true)
     render(:action => 'list')
   end
+  
   # lists all students
   def list
     @indices = Index.find_for_user(@user, :include => [:study_plan, :student,
       :disert_theme, :department, :study, :coridor], :order => @order)
   end
-  # show student's detail
-  def show
-    @student = Student.find(@params[:id])
-  end
+  
   # searches in students lastname
   def search
     conditions = [' AND people.lastname like ?']
@@ -28,6 +27,7 @@ class StudentsController < ApplicationController
       :order => 'people.lastname, study_plans.created_on')
     render(:partial => 'list')
   end
+  
   # filters students
   def filter(options = {})
     @filter = @params['filter_by'] || @session['filter']
@@ -45,10 +45,11 @@ class StudentsController < ApplicationController
       render(:partial => 'list')
     end 
   end
-
+  
   # multiple filtering
   def multiple_filter
-    # TODO move to model
+    
+  # TODO move to model
     @indices = Index.find_by_criteria(:faculty => @params['filter_by_faculty'],
       :year => @params['filter_by_year'].to_i, :department => 
       @params['filter_by_department'].to_i, :coridor => 
@@ -57,24 +58,33 @@ class StudentsController < ApplicationController
       @params['filter_by_form'].to_i, :user => @user, :order => 'people.lastname')
     render(:partial => 'list')
   end
-
+  
+  # renders student details
+  def show
+    index = Index.find(@params['id'])
+    render(:partial => 'shared/show', :locals => {:index => index})
+  end
+  
   # renders contact for student
   def contact
     render_partial('contact', :student =>
       Student.find(@params['id']))
   end
+  
   # finishes study
   def finish
     @index = Index.find(@params['id'])
     @index.update_attribute('finished_on', Time.now)
     render(:inline => "<%= redraw_student(@index) %>")
   end
+  
   # unfinishes study
   def unfinish
     @index = Index.find(@params['id'])
     @index.update_attribute('finished_on', nil)
     render(:inline => "<%= redraw_student(@index) %>")
   end
+  
   # switches study on index
   def switch_study
     @index = Index.find(@params['id'])
@@ -91,16 +101,18 @@ class StudentsController < ApplicationController
   end
 
   private
+  
   # sets title of the controller
   def set_title
     @title = _("Students")
   end
+  
   # prepares order variable for listin 
   # TODO create some better mechanism to do ordering
   def prepare_order
-# add url driven ordering
     @order = 'people.lastname, study_plans.created_on'
   end
+  
   # prepares filter variable
   def prepare_filter 
     @filters = [[_("all students"), 0]]
