@@ -1,31 +1,31 @@
 --- 
-faculty1: 
-  name: "Fakulta agrobiologie, potravinových a přírodních zdrojů"
-  ldap_context: af
-  id: 1
-  short_name: FAPPZ
-  name_english: "Faculty of Agrobiology, Food and Natural Resources"
-faculty2: 
-  name: Institut tropů a subtropů
-  ldap_context: itsz
-  id: 2
-  short_name: ITS
-  name_english: Institute of Tropics and Subtorpics
-faculty3: 
-  name: Fakulta lesnická a environmentální
-  ldap_context: lf
-  id: 3
-  short_name: FLE
-  name_english: The Faculty of Forestry
-faculty4: 
-  name: Provozně ekonomická fakulta
-  ldap_context: pef
-  id: 4
-  short_name: PEF
-  name_english: Faculty of economics and management
-faculty5: 
+faculties_001: 
   name: Technická fakulta
   ldap_context: tf
-  id: 5
+  id: "5"
   short_name: TF
   name_english: The Technical Faculty
+faculties_002: 
+  name: Fakulta lesnická a environmentální
+  ldap_context: lf
+  id: "3"
+  short_name: FLE
+  name_english: The Faculty of Forestry
+faculties_003: 
+  name: Provozně ekonomická fakulta
+  ldap_context: pef
+  id: "4"
+  short_name: PEF
+  name_english: Faculty of economics and management
+faculties_004: 
+  name: Institut tropů a subtropů
+  ldap_context: itsz
+  id: "2"
+  short_name: ITS
+  name_english: Institute of Tropics and Subtorpics
+faculties_005: 
+  name: "Fakulta agrobiologie, potravinových a přírodních zdrojů"
+  ldap_context: af
+  id: "1"
+  short_name: FAPPZ
+  name_english: "Faculty of Agrobiology, Food and Natural Resources"

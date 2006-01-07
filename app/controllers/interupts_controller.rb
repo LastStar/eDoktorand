@@ -10,7 +10,6 @@ class InteruptsController < ApplicationController
     @interupt = @student.index.build_interupt
   end
   def create
-    breakpoint 
     @interupt = Interupt.new(@params['interupt'])
     if @interupt.plan_changed.to_i == 1
       @session['interupt'] = @interupt

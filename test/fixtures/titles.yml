@@ -1,201 +1,201 @@
 --- 
-title49: 
-  prefix: 0
-  id: 49
-  label: DiS.
-title38: 
-  prefix: 1
-  id: 38
-  label: Doc. MVDr.
-title8: 
-  prefix: 1
-  id: 8
-  label: Mgr.
-title16: 
-  prefix: 1
-  id: 16
-  label: Mag.
-title27: 
-  prefix: 1
-  id: 27
-  label: Bc.
-title39: 
-  prefix: 1
-  id: 39
-  label: Doc. Dr. Ing.
-title9: 
-  prefix: 1
-  id: 9
-  label: PhDr.
-title17: 
-  prefix: 1
-  id: 17
-  label: Doc. Ing. Mgr.
-title28: 
-  prefix: 1
-  id: 28
-  label: Prof.PhDr.Ing.
-title51: 
-  prefix: 1
-  id: 51
+titles_050: 
+  prefix: "1"
+  id: "51"
   label: "CSc., dr.h.c."
-title40: 
-  prefix: 1
-  id: 40
-  label: Mgr.Ing.
-title18: 
-  prefix: 1
-  id: 18
-  label: Prof. JUDr.
-title29: 
-  prefix: 1
-  id: 29
-  label: Doc. Mgr.
-title52: 
-  prefix: 1
-  id: 52
-  label: Prof. Ing. Arch.
-title41: 
-  prefix: 1
-  id: 41
-  label: MUDr.
-title1: 
-  prefix: 1
-  id: 1
+titles_039: 
+  prefix: "1"
+  id: "1"
   label: Ing.
-title30: 
-  prefix: 1
-  id: 30
-  label: PhDr. RNDr.
-title42: 
-  prefix: 1
-  id: 42
-  label: Ing. RNDr.
-title2: 
-  prefix: 1
-  id: 2
-  label: Dr. Ing.
-title19: 
-  prefix: 1
-  id: 19
-  label: Prof. Dr.
-title20: 
-  prefix: 1
-  id: 20
-  label: Dr.
-title31: 
-  prefix: 1
-  id: 31
-  label: B.A.
-title43: 
-  prefix: 1
-  id: 43
-  label: PhDr. Ing.
-title3: 
-  prefix: 1
-  id: 3
-  label: Doc.
-title10: 
-  prefix: 1
-  id: 10
-  label: PhDr. Mgr.
-title21: 
-  prefix: 1
-  id: 21
-  label: Ing. arch.
-title32: 
-  prefix: 1
-  id: 32
-  label: M.A.
-title44: 
-  prefix: 0
-  id: 44
-  label: CSc.
-title4: 
-  prefix: 1
-  id: 4
-  label: Doc. RNDr.
-title11: 
-  prefix: 1
-  id: 11
-  label: JUDr.
-title22: 
-  prefix: 1
-  id: 22
-  label: Doc. PhDr.
-title33: 
-  prefix: 1
-  id: 33
-  label: Dr..
-title45: 
-  prefix: 0
-  id: 45
-  label: "DrSc., Dr. h. c."
-title5: 
-  prefix: 1
-  id: 5
-  label: RNDr.
-title12: 
-  prefix: 1
-  id: 12
-  label: JUDr. Ing.
-title23: 
-  prefix: 1
-  id: 23
-  label: Doc. Ing. PhDr.
-title34: 
-  prefix: 1
-  id: 34
-  label: Dott.
-title46: 
-  prefix: 0
-  id: 46
-  label: DrSc.
-title6: 
-  prefix: 1
-  id: 6
-  label: Doc. Ing.
-title13: 
-  prefix: 1
-  id: 13
-  label: Prof. RNDr.
-title24: 
-  prefix: 1
-  id: 24
-  label: Doc. JUDr. PhDr.
-title35: 
-  prefix: 1
-  id: 35
-  label: Mag.Phil.
-title47: 
-  prefix: 0
-  id: 47
-  label: MBA
-title7: 
-  prefix: 1
-  id: 7
-  label: Prof. Ing.
-title14: 
-  prefix: 1
-  id: 14
+titles_028: 
+  prefix: "1"
+  id: "14"
   label: PaedDr.
-title36: 
-  prefix: 1
-  id: 36
-  label: Prof. MVDr. Ing.
-title48: 
-  prefix: 0
-  id: 48
+titles_017: 
+  prefix: "1"
+  id: "43"
+  label: PhDr. Ing.
+titles_006: 
+  prefix: "1"
+  id: "31"
+  label: B.A.
+titles_040: 
+  prefix: "0"
+  id: "48"
   label: Ph.D.
-title15: 
-  prefix: 1
-  id: 15
+titles_029: 
+  prefix: "1"
+  id: "3"
+  label: Doc.
+titles_018: 
+  prefix: "1"
+  id: "28"
+  label: Prof.PhDr.Ing.
+titles_007: 
+  prefix: "1"
+  id: "19"
+  label: Prof. Dr.
+titles_041: 
+  prefix: "1"
+  id: "34"
+  label: Dott.
+titles_030: 
+  prefix: "0"
+  id: "46"
+  label: DrSc.
+titles_019: 
+  prefix: "1"
+  id: "16"
+  label: Mag.
+titles_008: 
+  prefix: "1"
+  id: "8"
+  label: Mgr.
+titles_042: 
+  prefix: "1"
+  id: "22"
+  label: Doc. PhDr.
+titles_031: 
+  prefix: "1"
+  id: "36"
+  label: Prof. MVDr. Ing.
+titles_020: 
+  prefix: "1"
+  id: "5"
+  label: RNDr.
+titles_009: 
+  prefix: "1"
+  id: "41"
+  label: MUDr.
+titles_043: 
+  prefix: "1"
+  id: "11"
+  label: JUDr.
+titles_032: 
+  prefix: "1"
+  id: "24"
+  label: Doc. JUDr. PhDr.
+titles_021: 
+  prefix: "0"
+  id: "44"
+  label: CSc.
+titles_010: 
+  prefix: "1"
+  id: "30"
+  label: PhDr. RNDr.
+titles_044: 
+  prefix: "1"
+  id: "38"
+  label: Doc. MVDr.
+titles_033: 
+  prefix: "1"
+  id: "13"
+  label: Prof. RNDr.
+titles_022: 
+  prefix: "1"
+  id: "27"
+  label: Bc.
+titles_011: 
+  prefix: "1"
+  id: "18"
+  label: Prof. JUDr.
+titles_045: 
+  prefix: "0"
+  id: "49"
+  label: DiS.
+titles_034: 
+  prefix: "1"
+  id: "2"
+  label: Dr. Ing.
+titles_023: 
+  prefix: "1"
+  id: "15"
   label: Prof. MVDr.
-title26: 
-  prefix: 1
-  id: 26
-  label: PaedDr. Ing.
-title37: 
-  prefix: 1
-  id: 37
+titles_012: 
+  prefix: "1"
+  id: "7"
+  label: Prof. Ing.
+titles_001: 
+  prefix: "1"
+  id: "32"
+  label: M.A.
+titles_046: 
+  prefix: "1"
+  id: "33"
+  label: Dr..
+titles_035: 
+  prefix: "0"
+  id: "47"
+  label: MBA
+titles_024: 
+  prefix: "1"
+  id: "4"
+  label: Doc. RNDr.
+titles_013: 
+  prefix: "1"
+  id: "42"
+  label: Ing. RNDr.
+titles_002: 
+  prefix: "1"
+  id: "20"
+  label: Dr.
+titles_047: 
+  prefix: "1"
+  id: "21"
+  label: Ing. arch.
+titles_036: 
+  prefix: "1"
+  id: "35"
+  label: Mag.Phil.
+titles_025: 
+  prefix: "0"
+  id: "45"
+  label: "DrSc., Dr. h. c."
+titles_014: 
+  prefix: "1"
+  id: "29"
+  label: Doc. Mgr.
+titles_003: 
+  prefix: "1"
+  id: "9"
+  label: PhDr.
+titles_048: 
+  prefix: "1"
+  id: "10"
+  label: PhDr. Mgr.
+titles_037: 
+  prefix: "1"
+  id: "23"
+  label: Doc. Ing. PhDr.
+titles_026: 
+  prefix: "1"
+  id: "37"
   label: MVDr.
+titles_015: 
+  prefix: "1"
+  id: "17"
+  label: Doc. Ing. Mgr.
+titles_004: 
+  prefix: "1"
+  id: "40"
+  label: Mgr.Ing.
+titles_049: 
+  prefix: "1"
+  id: "39"
+  label: Doc. Dr. Ing.
+titles_038: 
+  prefix: "1"
+  id: "12"
+  label: JUDr. Ing.
+titles_027: 
+  prefix: "1"
+  id: "26"
+  label: PaedDr. Ing.
+titles_016: 
+  prefix: "1"
+  id: "6"
+  label: Doc. Ing.
+titles_005: 
+  prefix: "1"
+  id: "52"
+  label: Prof. Ing. Arch.

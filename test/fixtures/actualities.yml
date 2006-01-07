@@ -1,5 +1,18 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first:
-  id: 1
-another:
-  id: 2
+--- 
+actualities_001: 
+  id: "1"
+  content: "Vyhlášení doktorské vědecké konference na Provozně ekonomické fakultě České
+    zemědělské univerzity v Praze 2006.\r
+
+    Bližší informace nalzenete na adrese http://dsp2006.pef.czu.cz\r
+
+    "
+  label: Seminář DSP 2006
+actualities_002: 
+  id: "2"
+  content: "Dnes 5.12.2005 od 13:00 bude v systému umožněno studentům doktorského studia
+    tisknout žádosti o ubytovací stipendium. Pro korektní tisk žádosti je potřeba
+    vyplnit v modulu kontakty státní občanství a adresu trvalého bydliště. Samotnou
+    žádost je možno vytisknout v modulu stipendia. V systému je potřeba mít vyplněno
+    číslo účtu, na který bude platba poukázána."
+  label: Podávání žádostí o ubytovací stipendia

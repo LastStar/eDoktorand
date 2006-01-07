@@ -59,8 +59,8 @@ module ApplicationHelper
   end
   
   # get language ids
-  def language_ids
-    Language.find_all.map {|l| [l.name, l.id]}
+  def language_options
+    LanguageSubject.find_all.map {|l| [l.name, l.id]}
   end
   
   # get study ids
@@ -146,7 +146,7 @@ module ApplicationHelper
   end
   
   # get language  subject ids
-  def language_subject_ids
+  def language_subject_options
     LanguageSubject.find_all.map {|l| [l.subject.label, l.subject.id]}
   end
   

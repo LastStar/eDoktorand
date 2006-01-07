@@ -1,7 +1,7 @@
 class AddStudentChangePermissions < ActiveRecord::Migration
   def self.up
-    Role.find(1).permissions << Permission.find_by_name('study_plans/change')
-    Role.find(1).permissions << Permission.find_by_name('study_plans/save_full')
+    Role.find(1).permissions << Permission.create('name' => 'study_plans/change')
+    Role.find(1).permissions << Permission.create('name' => 'study_plans/save_full')
   end
 
   def self.down

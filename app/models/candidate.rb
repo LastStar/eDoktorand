@@ -8,6 +8,10 @@ class Candidate < ActiveRecord::Base
   belongs_to :exam_term
   belongs_to :tutor
   has_one :admittance
+  belongs_to :language1, :class_name => 'Subject', :foreign_key => 
+    'language1_id'
+  belongs_to :language2, :class_name => 'Subject', :foreign_key => 
+    'language2_id' 
   validates_presence_of :firstname, :message => _("firstname can not be empty")
   validates_presence_of :lastname, :message => _("lastname can not be empty")
   validates_presence_of :birth_at, :message => _("birth place cannot be empty")
@@ -27,7 +31,7 @@ class Candidate < ActiveRecord::Base
   :message => _("birth number allready in database. Contact administrator")
   # validates if languages are not same
   def validate
-    errors.add_to_base(_("languages have to be different")) if language1 == language2
+    errors.add_to_base(_("languages have to be different")) if language1_id == language2_id
     errors.add_to_base(_("candidate must be finished before invitation")) if
     !finished? && invited?
     errors.add_to_base(_("candidate must be invited before admittance")) if

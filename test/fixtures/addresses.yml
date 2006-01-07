@@ -1,5 +1,2521 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_address:
-  id: 1
-another_address:
-  id: 2
+--- 
+addresses_098: 
+  city: Havířov
+  zip: "73601"
+  student_id: "4551"
+  orient_number: 
+  desc_number: "37"
+  id: "13"
+  street: Těšínská
+  address_type_id: "0"
+  state: 
+addresses_179: 
+  city: Nové Město nad Met
+  zip: 549 01
+  student_id: 
+  orient_number: 
+  desc_number: "28"
+  id: "30"
+  street: Vrchoviny
+  address_type_id: "1"
+  state: 
+addresses_099: 
+  city: Horní Slavkov
+  zip: "35731"
+  student_id: "1243"
+  orient_number: 
+  desc_number: 846/11
+  id: "120"
+  street: "Školní"
+  address_type_id: "1"
+  state: 
+addresses_100: 
+  city: Velvary
+  zip: 273 24
+  student_id: "3828"
+  orient_number: 
+  desc_number: "57"
+  id: "201"
+  street: Velká Bučina
+  address_type_id: "1"
+  state: 
+addresses_020: 
+  city: Uherský Brod
+  zip: "68801"
+  student_id: 
+  orient_number: 
+  desc_number: "1980"
+  id: "24"
+  street: Na láne
+  address_type_id: "1"
+  state: 
+addresses_101: 
+  city: Ostrov
+  zip: "36301"
+  student_id: "4593"
+  orient_number: 
+  desc_number: "1160"
+  id: "14"
+  street: Májová
+  address_type_id: "0"
+  state: 
+addresses_021: 
+  city: Pardubice
+  zip: "53012"
+  student_id: "3740"
+  orient_number: 
+  desc_number: "837"
+  id: "106"
+  street: Bartoňova
+  address_type_id: "1"
+  state: 
+addresses_102: 
+  city: Havířov
+  zip: "73601"
+  student_id: "4551"
+  orient_number: 
+  desc_number: "37"
+  id: "40"
+  street: Těšínská
+  address_type_id: "1"
+  state: 
+addresses_022: 
+  city: Soběslav
+  zip: 165 21
+  student_id: 
+  orient_number: 
+  desc_number: 708/III
+  id: "132"
+  street: Svákov
+  address_type_id: "1"
+  state: 
+addresses_103: 
+  city: Pardubice
+  zip: "53002"
+  student_id: "4406"
+  orient_number: 
+  desc_number: "1886"
+  id: "121"
+  street: Závodu míru
+  address_type_id: "1"
+  state: 
+addresses_210: 
+  city: Kutná Hora
+  zip: 284 01
+  student_id: "3144"
+  orient_number: 
+  desc_number: "135"
+  id: "250"
+  street: Studentů
+  address_type_id: "1"
+  state: 
+addresses_104: 
+  city: Velké Přílepy
+  zip: "25264"
+  student_id: 
+  orient_number: 
+  desc_number: "169"
+  id: "202"
+  street: Spojovací
+  address_type_id: "1"
+  state: 
+addresses_130: 
+  city: Lučenec
+  zip: 984 03
+  student_id: 
+  orient_number: 
+  desc_number: 2/36
+  id: "126"
+  street: Rúbanisko
+  address_type_id: "1"
+  state: 
+addresses_211: 
+  city: Trutnov
+  zip: "54101"
+  student_id: "3541"
+  orient_number: 
+  desc_number: "721"
+  id: "37"
+  street: O. Nedbala
+  address_type_id: "1"
+  state: 
+addresses_023: 
+  city: Kňovice
+  zip: "26401"
+  student_id: 
+  orient_number: 
+  desc_number: "5"
+  id: "213"
+  street: Kňovičky
+  address_type_id: "1"
+  state: 
+addresses_050: 
+  city: Praha 6
+  zip: 165 21
+  student_id: 
+  orient_number: 
+  desc_number: "1072"
+  id: "243"
+  street: Kamýcká
+  address_type_id: "1"
+  state: 
+addresses_105: 
+  city: Havirov
+  zip: "73601"
+  student_id: "4551"
+  orient_number: 
+  desc_number: "37"
+  id: "15"
+  street: Tesinska
+  address_type_id: "0"
+  state: 
+addresses_131: 
+  city: Bohušovice nad Ohř
+  zip: "41156"
+  student_id: 
+  orient_number: 
+  desc_number: "43"
+  id: "152"
+  street: Husovo náměstí
+  address_type_id: "1"
+  state: 
+addresses_212: 
+  city: Mukařov
+  zip: 251 62
+  student_id: "4645"
+  orient_number: 
+  desc_number: "150"
+  id: "63"
+  street: Louňovice
+  address_type_id: "1"
+  state: 
+addresses_024: 
+  city: Trutnov
+  zip: "54101"
+  student_id: 
+  orient_number: 
+  desc_number: "721"
+  id: "25"
+  street: O. Nedbala
+  address_type_id: "1"
+  state: 
+addresses_106: 
+  city: Nové Město nad Met
+  zip: 549 01
+  student_id: "3382"
+  orient_number: 
+  desc_number: "28"
+  id: "41"
+  street: Vrchoviny
+  address_type_id: "1"
+  state: 
+addresses_132: 
+  city: Praha 5
+  zip: 158 00
+  student_id: "3173"
+  orient_number: 
+  desc_number: "2155"
+  id: "207"
+  street: Ovčí hájek
+  address_type_id: "1"
+  state: 
+addresses_213: 
+  city: "Český Těšín"
+  zip: 737 01
+  student_id: "4429"
+  orient_number: 
+  desc_number: "15"
+  id: "118"
+  street: Dvořákova
+  address_type_id: "1"
+  state: 
+addresses_025: 
+  city: Heřmanova Huť
+  zip: "33024"
+  student_id: 
+  orient_number: 
+  desc_number: "127"
+  id: "51"
+  street: Vlkýš
+  address_type_id: "1"
+  state: 
+addresses_051: 
+  city: Klatovy
+  zip: "33901"
+  student_id: "4592"
+  orient_number: 
+  desc_number: "628"
+  id: "29"
+  street: Domažlické předměstí
+  address_type_id: "1"
+  state: 
+addresses_240: 
+  city: "Žebrák"
+  zip: "26753"
+  student_id: "2945"
+  orient_number: 
+  desc_number: "329"
+  id: "67"
+  street: Loškovská
+  address_type_id: "1"
+  state: 
+addresses_107: 
+  city: Strašice
+  zip: "33845"
+  student_id: "3042"
+  orient_number: 
+  desc_number: 379/I
+  id: "122"
+  street: "-"
+  address_type_id: "1"
+  state: 
+addresses_133: 
+  city: Praha 10
+  zip: 108 00
+  student_id: "4550"
+  orient_number: 
+  desc_number: 641/46
+  id: "233"
+  street: Káranská
+  address_type_id: "1"
+  state: 
+addresses_214: 
+  city: Tršice
+  zip: "78357"
+  student_id: "4526"
+  orient_number: 
+  desc_number: "64"
+  id: "144"
+  street: není
+  address_type_id: "1"
+  state: 
+addresses_026: 
+  city: Brno
+  zip: "61800"
+  student_id: "3975"
+  orient_number: 
+  desc_number: "18"
+  id: "107"
+  street: Turgeněvova
+  address_type_id: "1"
+  state: 
+addresses_052: 
+  city: Kladno
+  zip: "27201"
+  student_id: "4409"
+  orient_number: 
+  desc_number: "2491"
+  id: "55"
+  street: Norská
+  address_type_id: "1"
+  state: 
+addresses_241: 
+  city: Hradec Králové
+  zip: 500 06
+  student_id: "3328"
+  orient_number: 
+  desc_number: "374"
+  id: "229"
+  street: A.Malé
+  address_type_id: "1"
+  state: 
+addresses_108: 
+  city: Velké Přílepy
+  zip: "25264"
+  student_id: "1706"
+  orient_number: 
+  desc_number: "169"
+  id: "203"
+  street: Spojovací
+  address_type_id: "1"
+  state: 
+addresses_134: 
+  city: Beroun
+  zip: 266 01
+  student_id: "1366"
+  orient_number: 
+  desc_number: "13"
+  id: "46"
+  street: Hostím
+  address_type_id: "1"
+  state: 
+addresses_160: 
+  city: Ostrov
+  zip: "36301"
+  student_id: 
+  orient_number: 
+  desc_number: "1073"
+  id: "183"
+  street: U koupaliste
+  address_type_id: "1"
+  state: 
+addresses_215: 
+  city: Kutná Hora
+  zip: "28401"
+  student_id: 
+  orient_number: 
+  desc_number: "466"
+  id: "170"
+  street: Jeneweinova
+  address_type_id: "1"
+  state: 
+addresses_027: 
+  city: Litomyšl
+  zip: "57001"
+  student_id: "3770"
+  orient_number: 
+  desc_number: "776"
+  id: "133"
+  street: T.G.Masaryka
+  address_type_id: "1"
+  state: 
+addresses_053: 
+  city: Golčův Jeníkov
+  zip: "58282"
+  student_id: "3088"
+  orient_number: 
+  desc_number: "12"
+  id: "81"
+  street: Leškovice
+  address_type_id: "1"
+  state: 
+addresses_242: 
+  city: Lochenice
+  zip: "50302"
+  student_id: "1631"
+  orient_number: 
+  desc_number: "503021"
+  id: "175"
+  street: Lochenice
+  address_type_id: "1"
+  state: 
+addresses_135: 
+  city: Krnsko
+  zip: "29431"
+  student_id: "3360"
+  orient_number: 
+  desc_number: "24"
+  id: "72"
+  street: Jizerní Vtelno
+  address_type_id: "1"
+  state: 
+addresses_161: 
+  city: Trutnov
+  zip: "54101"
+  student_id: 
+  orient_number: 
+  desc_number: 169/2
+  id: "238"
+  street: Janáčkova
+  address_type_id: "1"
+  state: 
+addresses_216: 
+  city: Křivoklat
+  zip: 270 23
+  student_id: "1650"
+  orient_number: 
+  desc_number: "147"
+  id: "225"
+  street: Na sokolí
+  address_type_id: "1"
+  state: 
+addresses_028: 
+  city: Kňovice
+  zip: "26401"
+  student_id: "4515"
+  orient_number: 
+  desc_number: "5"
+  id: "214"
+  street: Kňovičky
+  address_type_id: "1"
+  state: 
+addresses_054: 
+  city: Jilemnice
+  zip: 514 01
+  student_id: "5049"
+  orient_number: 
+  desc_number: "67"
+  id: "163"
+  street: Kruh
+  address_type_id: "1"
+  state: 
+addresses_080: 
+  city: Bílina
+  zip: "41801"
+  student_id: 
+  orient_number: 
+  desc_number: "838"
+  id: "167"
+  street: "Čapkova"
+  address_type_id: "1"
+  state: 
+addresses_109: 
+  city: Koclířov
+  zip: "56911"
+  student_id: "5034"
+  orient_number: 
+  desc_number: "165"
+  id: "16"
+  street: Koclířov
+  address_type_id: "0"
+  state: 
+addresses_243: 
+  city: Velká Skrovnice
+  zip: "56201"
+  student_id: "2703"
+  orient_number: 
+  desc_number: "4"
+  id: "149"
+  street: Velká Skrovnice
+  address_type_id: "1"
+  state: 
+addresses_136: 
+  city: Lučenec
+  zip: 984 03
+  student_id: "1730"
+  orient_number: 
+  desc_number: 2/36
+  id: "127"
+  street: Rúbanisko
+  address_type_id: "1"
+  state: 
+addresses_162: 
+  city: Libice nad Cidlinou
+  zip: 289 07
+  student_id: "2940"
+  orient_number: 
+  desc_number: "432"
+  id: "77"
+  street: Vojtěchova
+  address_type_id: "1"
+  state: 
+addresses_217: 
+  city: Poděbrady
+  zip: "29001"
+  student_id: "3940"
+  orient_number: 
+  desc_number: "183"
+  id: "251"
+  street: Pátek
+  address_type_id: "1"
+  state: 
+addresses_029: 
+  city: Polička
+  zip: "57201"
+  student_id: "3023"
+  orient_number: 
+  desc_number: "204"
+  id: "240"
+  street: Oldřiš-Babka 204
+  address_type_id: "1"
+  state: 
+addresses_055: 
+  city: "Tábor - Klokoty"
+  zip: "39003"
+  student_id: "3359"
+  orient_number: 
+  desc_number: "266"
+  id: "218"
+  street: Ke Chlumu
+  address_type_id: "1"
+  state: 
+addresses_081: 
+  city: Horní Kruty
+  zip: "28146"
+  student_id: "3936"
+  orient_number: 
+  desc_number: "86"
+  id: "193"
+  street: Horní Kruty
+  address_type_id: "1"
+  state: 
+addresses_244: 
+  city: Plzeň
+  zip: "31808"
+  student_id: "2908"
+  orient_number: 
+  desc_number: "56"
+  id: "94"
+  street: Macháčkova
+  address_type_id: "1"
+  state: 
+addresses_163: 
+  city: Brtnice
+  zip: 588 32
+  student_id: "5259"
+  orient_number: 
+  desc_number: "691"
+  id: "158"
+  street: Nad Práchovnou
+  address_type_id: "1"
+  state: 
+addresses_218: 
+  city: Malešov
+  zip: "28401"
+  student_id: "4591"
+  orient_number: 
+  desc_number: "16"
+  id: "171"
+  street: Maxovna
+  address_type_id: "1"
+  state: 
+addresses_056: 
+  city: Praha 6
+  zip: 165 21
+  student_id: 
+  orient_number: 
+  desc_number: "1072"
+  id: "244"
+  street: Kamýcká
+  address_type_id: "1"
+  state: 
+addresses_082: 
+  city: Vyšší Brod
+  zip: "38273"
+  student_id: "3298"
+  orient_number: 
+  desc_number: "283"
+  id: "249"
+  street: Na Vyhlidce
+  address_type_id: "1"
+  state: 
+addresses_137: 
+  city: Bohušovice n. O.
+  zip: "41156"
+  student_id: "4018"
+  orient_number: 
+  desc_number: "43"
+  id: "153"
+  street: Husovo náměstí
+  address_type_id: "1"
+  state: 
+addresses_245: 
+  city: Domažlice
+  zip: 344 01
+  student_id: 
+  orient_number: 
+  desc_number: "168"
+  id: "68"
+  street: Kostelní
+  address_type_id: "1"
+  state: 
+addresses_164: 
+  city: Ostrov
+  zip: "36301"
+  student_id: "3767"
+  orient_number: 
+  desc_number: "1073"
+  id: "184"
+  street: U koupaliste
+  address_type_id: "1"
+  state: 
+addresses_190: 
+  city: Roudnice n.L.
+  zip: "41301"
+  student_id: 
+  orient_number: 
+  desc_number: "988"
+  id: "114"
+  street: Masarykova
+  address_type_id: "1"
+  state: 
+addresses_219: 
+  city: Senomaty
+  zip: "27031"
+  student_id: 
+  orient_number: 
+  desc_number: "12"
+  id: "145"
+  street: Hostokryje
+  address_type_id: "1"
+  state: 
+addresses_057: 
+  city: "Žamberk"
+  zip: 564 01
+  student_id: 
+  orient_number: 
+  desc_number: "136"
+  id: "56"
+  street: Helvíkovice
+  address_type_id: "1"
+  state: 
+addresses_083: 
+  city: Rychnov nad Kněžno
+  zip: 516 01
+  student_id: "4401"
+  orient_number: 
+  desc_number: "1340"
+  id: "87"
+  street: Anatola Provazníka
+  address_type_id: "1"
+  state: 
+addresses_138: 
+  city: Plzeň
+  zip: "31200"
+  student_id: 
+  orient_number: 
+  desc_number: "76"
+  id: "208"
+  street: Pod Vrchem
+  address_type_id: "1"
+  state: 
+addresses_246: 
+  city: Vlčkovice v Podkrko
+  zip: "54444"
+  student_id: 
+  orient_number: 
+  desc_number: "13"
+  id: "176"
+  street: " -"
+  address_type_id: "1"
+  state: 
+addresses_191: 
+  city: Bohušovice nad Ohř
+  zip: "41156"
+  student_id: 
+  orient_number: 
+  desc_number: "43"
+  id: "140"
+  street: Husovo náměstí
+  address_type_id: "1"
+  state: 
+addresses_058: 
+  city: Uherský Brod
+  zip: "68801"
+  student_id: "3799"
+  orient_number: 
+  desc_number: "1980"
+  id: "82"
+  street: Na láně
+  address_type_id: "1"
+  state: 
+addresses_084: 
+  city: Bílina
+  zip: "41801"
+  student_id: "3953"
+  orient_number: 
+  desc_number: "838"
+  id: "168"
+  street: "Čapkova"
+  address_type_id: "1"
+  state: 
+addresses_139: 
+  city: "Hostivice - Břve"
+  zip: 253 01
+  student_id: "4557"
+  orient_number: 
+  desc_number: "1103"
+  id: "234"
+  street: Hájecká
+  address_type_id: "1"
+  state: 
+addresses_165: 
+  city: Trutnov
+  zip: "54101"
+  student_id: "3949"
+  orient_number: 
+  desc_number: 169/2
+  id: "239"
+  street: Janáčkova
+  address_type_id: "1"
+  state: 
+addresses_247: 
+  city: "Ústí nad Labem"
+  zip: "40001"
+  student_id: "2941"
+  orient_number: 
+  desc_number: "4"
+  id: "95"
+  street: Ostrčilova
+  address_type_id: "1"
+  state: 
+addresses_192: 
+  city: Ulanbatar
+  zip: "-"
+  student_id: 
+  orient_number: 
+  desc_number: 6-233
+  id: "221"
+  street: Songinohairhan dvvreg
+  address_type_id: "1"
+  state: 
+addresses_059: 
+  city: Bystřice pod Hostý
+  zip: "76861"
+  student_id: 
+  orient_number: 
+  desc_number: "1611"
+  id: "137"
+  street: Třída Legií
+  address_type_id: "1"
+  state: 
+addresses_085: 
+  city: Roudnice nad Labem
+  zip: "41301"
+  student_id: "2958"
+  orient_number: 
+  desc_number: "169"
+  id: "194"
+  street: Bříza
+  address_type_id: "1"
+  state: 
+addresses_166: 
+  city: Rakovník
+  zip: 269 01
+  student_id: "3629"
+  orient_number: 
+  desc_number: "1885"
+  id: "78"
+  street: Kollárova
+  address_type_id: "1"
+  state: 
+addresses_248: 
+  city: Domažlice
+  zip: 344 01
+  student_id: "3771"
+  orient_number: 
+  desc_number: "168"
+  id: "69"
+  street: Kostelní
+  address_type_id: "1"
+  state: 
+addresses_086: 
+  city: Stará Bystrica
+  zip: "02304"
+  student_id: 
+  orient_number: 
+  desc_number: "299"
+  id: "88"
+  street: Kanderovia
+  address_type_id: "1"
+  state: 
+addresses_167: 
+  city: Hradec Králové
+  zip: 500 12
+  student_id: "2916"
+  orient_number: 
+  desc_number: "1359"
+  id: "159"
+  street: Jana Msaryka
+  address_type_id: "1"
+  state: 
+addresses_193: 
+  city: Lité
+  zip: "33152"
+  student_id: "4553"
+  orient_number: 
+  desc_number: "2"
+  id: "8"
+  street: Dolní Bělá
+  address_type_id: "0"
+  state: 
+addresses_249: 
+  city: Dvůr Králové nad
+  zip: "54401"
+  student_id: "2907"
+  orient_number: 
+  desc_number: "2222"
+  id: "177"
+  street: Pod Hřištěm
+  address_type_id: "1"
+  state: 
+addresses_087: 
+  city: Plzeň
+  zip: "31200"
+  student_id: 
+  orient_number: 
+  desc_number: "76"
+  id: "169"
+  street: Pod Vrchem
+  address_type_id: "1"
+  state: 
+addresses_168: 
+  city: Dvůr Králové nad
+  zip: "54401"
+  student_id: 
+  orient_number: 
+  desc_number: "1779"
+  id: "185"
+  street: Polní
+  address_type_id: "1"
+  state: 
+addresses_194: 
+  city: "Liberec 19 - Horní"
+  zip: "46008"
+  student_id: 
+  orient_number: 
+  desc_number: "257"
+  id: "34"
+  street: Charbinská
+  address_type_id: "1"
+  state: 
+addresses_088: 
+  city: Uhliřské Janovice
+  zip: 285 04
+  student_id: 
+  orient_number: 
+  desc_number: "18"
+  id: "195"
+  street: Staňkovice
+  address_type_id: "1"
+  state: 
+addresses_169: 
+  city: Karlovy Vary
+  zip: "36001"
+  student_id: 
+  orient_number: 
+  desc_number: "9"
+  id: "79"
+  street: "Škroupova"
+  address_type_id: "1"
+  state: 
+addresses_195: 
+  city: Krnov
+  zip: "79401"
+  student_id: "2905"
+  orient_number: 
+  desc_number: 2240/5
+  id: "60"
+  street: "Česká"
+  address_type_id: "1"
+  state: 
+addresses_089: 
+  city: Stará Bystrica
+  zip: "02304"
+  student_id: "4419"
+  orient_number: 
+  desc_number: "299"
+  id: "89"
+  street: Kanderovia
+  address_type_id: "1"
+  state: 
+addresses_196: 
+  city: Nový Bydžov
+  zip: "50401"
+  student_id: "3381"
+  orient_number: 
+  desc_number: "1218"
+  id: "115"
+  street: Třída B. Smetany
+  address_type_id: "1"
+  state: 
+addresses_197: 
+  city: Bystřice pod Host.
+  zip: "76861"
+  student_id: "5071"
+  orient_number: 
+  desc_number: "1611"
+  id: "141"
+  street: Třída Legií
+  address_type_id: "1"
+  state: 
+addresses_198: 
+  city: Ulanbatar
+  zip: "-"
+  student_id: "4355"
+  orient_number: 
+  desc_number: 6-233
+  id: "222"
+  street: Songinohairhan dvvreg
+  address_type_id: "1"
+  state: 
+addresses_199: 
+  city: Lité
+  zip: "33152"
+  student_id: "4553"
+  orient_number: 
+  desc_number: "2"
+  id: "9"
+  street: Dolní Bělá
+  address_type_id: "0"
+  state: 
+addresses_010: 
+  city: "Ostrava - Poruba"
+  zip: "70800"
+  student_id: "5025"
+  orient_number: 
+  desc_number: "1779"
+  id: "103"
+  street: Zd. Štěpánka
+  address_type_id: "1"
+  state: 
+addresses_011: 
+  city: Liberec
+  zip: "46006"
+  student_id: "3917"
+  orient_number: 
+  desc_number: 694/8
+  id: "210"
+  street: Vlnařská
+  address_type_id: "1"
+  state: 
+addresses_012: 
+  city: "Žamberk"
+  zip: 564 01
+  student_id: "4385"
+  orient_number: 
+  desc_number: "136"
+  id: "104"
+  street: Helvíkovice
+  address_type_id: "1"
+  state: 
+addresses_200: 
+  city: Liberec 19
+  zip: "46008"
+  student_id: 
+  orient_number: 
+  desc_number: "257"
+  id: "35"
+  street: Charbinská
+  address_type_id: "1"
+  state: 
+addresses_013: 
+  city: Praha 12
+  zip: 143 00
+  student_id: "2943"
+  orient_number: 
+  desc_number: "1980"
+  id: "130"
+  street: Hornocholupická
+  address_type_id: "1"
+  state: 
+addresses_120: 
+  city: Praha 4 Lhotka
+  zip: "14200"
+  student_id: "993"
+  orient_number: 
+  desc_number: 54/67
+  id: "18"
+  street: Na větrově
+  address_type_id: "0"
+  state: 
+addresses_201: 
+  city: Olomouc
+  zip: "77900"
+  student_id: "2901"
+  orient_number: 
+  desc_number: "60"
+  id: "61"
+  street: Schweitzerova
+  address_type_id: "1"
+  state: 
+addresses_014: 
+  city: Chodov
+  zip: "35735"
+  student_id: "3249"
+  orient_number: 
+  desc_number: "463"
+  id: "211"
+  street: Nejdecká
+  address_type_id: "1"
+  state: 
+addresses_040: 
+  city: Ostrava
+  zip: 710 00
+  student_id: "2917"
+  orient_number: 
+  desc_number: "40"
+  id: "161"
+  street: Bohumínská
+  address_type_id: "1"
+  state: 
+addresses_121: 
+  city: "Pezinok, SK"
+  zip: "90201"
+  student_id: "3795"
+  orient_number: 
+  desc_number: "72"
+  id: "44"
+  street: Kupeckého
+  address_type_id: "1"
+  state: 
+addresses_202: 
+  city: Milín
+  zip: 262 31
+  student_id: "4563"
+  orient_number: 
+  desc_number: "298"
+  id: "116"
+  street: U Stadionu
+  address_type_id: "1"
+  state: 
+addresses_015: 
+  city: Uherský Brod
+  zip: "68801"
+  student_id: 
+  orient_number: 
+  desc_number: "1980"
+  id: "23"
+  street: Na láne
+  address_type_id: "1"
+  state: 
+addresses_041: 
+  city: Stará Lysá
+  zip: "28926"
+  student_id: "3965"
+  orient_number: 
+  desc_number: "134"
+  id: "216"
+  street: Stará Lysá
+  address_type_id: "1"
+  state: 
+addresses_122: 
+  city: "Jizerní Vtelno, Krn"
+  zip: "29431"
+  student_id: 
+  orient_number: 
+  desc_number: "24"
+  id: "70"
+  street: Jizerní Vtelno
+  address_type_id: "1"
+  state: 
+addresses_203: 
+  city: BLATNA
+  zip: "38801"
+  student_id: "3434"
+  orient_number: 
+  desc_number: "10"
+  id: "142"
+  street: Myštice
+  address_type_id: "1"
+  state: 
+addresses_230: 
+  city: Lité
+  zip: "33152"
+  student_id: "4553"
+  orient_number: 
+  desc_number: "2"
+  id: "39"
+  street: "- - - - - - - - - - -- -"
+  address_type_id: "1"
+  state: 
+addresses_016: 
+  city: Ostrava-Svinov
+  zip: "72100"
+  student_id: "3789"
+  orient_number: 
+  desc_number: "1072"
+  id: "50"
+  street: Rošického
+  address_type_id: "1"
+  state: 
+addresses_042: 
+  city: Most
+  zip: "43401"
+  student_id: "3361"
+  orient_number: 
+  desc_number: 31/6
+  id: "242"
+  street: kpt. Jaroše
+  address_type_id: "1"
+  state: 
+addresses_123: 
+  city: Lučenec
+  zip: 984 03
+  student_id: 
+  orient_number: 
+  desc_number: 2/36
+  id: "125"
+  street: Rúbanisko
+  address_type_id: "1"
+  state: 
+addresses_204: 
+  city: Praha 2
+  zip: "1200"
+  student_id: 
+  orient_number: 
+  desc_number: "1490"
+  id: "223"
+  street: Salmovská
+  address_type_id: "1"
+  state: 
+addresses_231: 
+  city: Jičín
+  zip: "50601"
+  student_id: "4568"
+  orient_number: 
+  desc_number: "30"
+  id: "227"
+  street: Podůlší
+  address_type_id: "1"
+  state: 
+addresses_017: 
+  city: Hudčice
+  zip: 262 72
+  student_id: "4547"
+  orient_number: 
+  desc_number: "85"
+  id: "105"
+  street: Hudčice
+  address_type_id: "1"
+  state: 
+addresses_043: 
+  city: Klatovy
+  zip: "33901"
+  student_id: 
+  orient_number: 
+  desc_number: "628"
+  id: "28"
+  street: Domažlické předměstí
+  address_type_id: "1"
+  state: 
+addresses_124: 
+  city: "Česká Lípa"
+  zip: "47001"
+  student_id: "4417"
+  orient_number: 
+  desc_number: "2291"
+  id: "151"
+  street: Střelnice
+  address_type_id: "1"
+  state: 
+addresses_150: 
+  city: Bogota
+  zip: "52"
+  student_id: "2688"
+  orient_number: 
+  desc_number: 50-82
+  id: "155"
+  street: cra 52 No 50-82
+  address_type_id: "1"
+  state: 
+addresses_205: 
+  city: Sedliště
+  zip: 739 36
+  student_id: "4566"
+  orient_number: 
+  desc_number: "82"
+  id: "36"
+  street: Sedliště
+  address_type_id: "1"
+  state: 
+addresses_232: 
+  city: "Tashkent, Uzbekistan"
+  zip: "700115"
+  student_id: 
+  orient_number: 
+  desc_number: 1-43-35
+  id: "173"
+  street: Chilanzar
+  address_type_id: "1"
+  state: 
+addresses_018: 
+  city: Kašperské Hory
+  zip: "34192"
+  student_id: "2915"
+  orient_number: 
+  desc_number: "301"
+  id: "131"
+  street: "Česká"
+  address_type_id: "1"
+  state: 
+addresses_044: 
+  city: Břehy
+  zip: "53501"
+  student_id: "1328"
+  orient_number: 
+  desc_number: "84"
+  id: "54"
+  street: V Zákoutí
+  address_type_id: "1"
+  state: 
+addresses_070: 
+  city: "Praha 10 - Záběhli"
+  zip: 106 00
+  student_id: 
+  orient_number: 
+  desc_number: "2696"
+  id: "84"
+  street: Jasmínová
+  address_type_id: "1"
+  state: 
+addresses_125: 
+  city: Vrchlabí
+  zip: "54303"
+  student_id: "2985"
+  orient_number: 
+  desc_number: "582"
+  id: "206"
+  street: Dělnická
+  address_type_id: "1"
+  state: 
+addresses_151: 
+  city: Vlčkovice v Podkrko
+  zip: "54444"
+  student_id: 
+  orient_number: 
+  desc_number: "13"
+  id: "181"
+  street: " -"
+  address_type_id: "1"
+  state: 
+addresses_206: 
+  city: Jihlava
+  zip: "58601"
+  student_id: "5035"
+  orient_number: 
+  desc_number: "4164"
+  id: "62"
+  street: S. K. Neumanna 4
+  address_type_id: "1"
+  state: 
+addresses_233: 
+  city: Horní Kruty
+  zip: "28146"
+  student_id: 
+  orient_number: 
+  desc_number: "86"
+  id: "147"
+  street: Horní Kruty
+  address_type_id: "1"
+  state: 
+addresses_019: 
+  city: Uhliřské Janovice
+  zip: 285 04
+  student_id: "2956"
+  orient_number: 
+  desc_number: "18"
+  id: "212"
+  street: Staňkovice
+  address_type_id: "1"
+  state: 
+addresses_045: 
+  city: Karlovy Vary
+  zip: "36001"
+  student_id: "2946"
+  orient_number: 
+  desc_number: "9"
+  id: "80"
+  street: "Škroupova"
+  address_type_id: "1"
+  state: 
+addresses_071: 
+  city: Bystřice pod Hostý
+  zip: "76861"
+  student_id: 
+  orient_number: 
+  desc_number: "1611"
+  id: "139"
+  street: Třída Legií
+  address_type_id: "1"
+  state: 
+addresses_126: 
+  city: Moravska Trebova
+  zip: "57101"
+  student_id: "4573"
+  orient_number: 
+  desc_number: "6"
+  id: "232"
+  street: Holandska
+  address_type_id: "1"
+  state: 
+addresses_152: 
+  city: Krabčice
+  zip: 411 87
+  student_id: "2959"
+  orient_number: 
+  desc_number: "139"
+  id: "236"
+  street: Krabčice
+  address_type_id: "1"
+  state: 
+addresses_207: 
+  city: Roudnice n.L.
+  zip: "41301"
+  student_id: "3053"
+  orient_number: 
+  desc_number: "988"
+  id: "117"
+  street: Masarykova
+  address_type_id: "1"
+  state: 
+addresses_234: 
+  city: Kralupy nad Vltavou
+  zip: "27801"
+  student_id: "4516"
+  orient_number: 
+  desc_number: "435"
+  id: "92"
+  street: Přemyslova
+  address_type_id: "1"
+  state: 
+addresses_046: 
+  city: Strašice
+  zip: "33845"
+  student_id: 
+  orient_number: 
+  desc_number: 379/I
+  id: "109"
+  street: "Čtvrť Dvůr"
+  address_type_id: "1"
+  state: 
+addresses_072: 
+  city: Komárov u Hořovic
+  zip: "26762"
+  student_id: 
+  orient_number: 
+  desc_number: "471"
+  id: "165"
+  street: Sokolovická
+  address_type_id: "1"
+  state: 
+addresses_127: 
+  city: Praha 4 Lhotka
+  zip: "14200"
+  student_id: "993"
+  orient_number: 
+  desc_number: 54/67
+  id: "19"
+  street: Na větrově
+  address_type_id: "0"
+  state: 
+addresses_153: 
+  city: Huštěnovice
+  zip: "68703"
+  student_id: "3800"
+  orient_number: 
+  desc_number: "319"
+  id: "49"
+  street: Huštěnovice
+  address_type_id: "1"
+  state: 
+addresses_208: 
+  city: Tršice
+  zip: "78357"
+  student_id: 
+  orient_number: 
+  desc_number: "64"
+  id: "143"
+  street: není
+  address_type_id: "1"
+  state: 
+addresses_235: 
+  city: Jilemnice
+  zip: 514 01
+  student_id: 
+  orient_number: 
+  desc_number: "67"
+  id: "66"
+  street: Kruh
+  address_type_id: "1"
+  state: 
+addresses_047: 
+  city: Bystřice pod Hostý
+  zip: "76861"
+  student_id: 
+  orient_number: 
+  desc_number: "1611"
+  id: "136"
+  street: Třída Legií
+  address_type_id: "1"
+  state: 
+addresses_073: 
+  city: Soběslav
+  zip: 392 01
+  student_id: "5079"
+  orient_number: 
+  desc_number: 708/III
+  id: "192"
+  street: Svákov
+  address_type_id: "1"
+  state: 
+addresses_128: 
+  city: Ostrov
+  zip: "36301"
+  student_id: "4593"
+  orient_number: 
+  desc_number: "1160"
+  id: "45"
+  street: Májová
+  address_type_id: "1"
+  state: 
+addresses_154: 
+  city: Pelhřimov
+  zip: 393 01
+  student_id: "3277"
+  orient_number: 
+  desc_number: "1444"
+  id: "75"
+  street: Dolnokubínská
+  address_type_id: "1"
+  state: 
+addresses_180: 
+  city: Tashkent
+  zip: "700125"
+  student_id: 
+  orient_number: 
+  desc_number: "1"
+  id: "111"
+  street: Chilanzar
+  address_type_id: "1"
+  state: 
+addresses_209: 
+  city: Praha 2
+  zip: "12000"
+  student_id: "4000"
+  orient_number: 
+  desc_number: "1490"
+  id: "224"
+  street: Salmovská
+  address_type_id: "1"
+  state: 
+addresses_236: 
+  city: Hradec Králové
+  zip: 500 06
+  student_id: 
+  orient_number: 
+  desc_number: "374"
+  id: "228"
+  street: A.Malé
+  address_type_id: "1"
+  state: 
+addresses_048: 
+  city: Jilemnice
+  zip: 514 01
+  student_id: 
+  orient_number: 
+  desc_number: "67"
+  id: "162"
+  street: Kruh
+  address_type_id: "1"
+  state: 
+addresses_074: 
+  city: Vyšší Brod
+  zip: "38273"
+  student_id: 
+  orient_number: 
+  desc_number: "283"
+  id: "247"
+  street: Na Vyhlidce
+  address_type_id: "1"
+  state: 
+addresses_129: 
+  city: "Jizerní Vtelno, Krn"
+  zip: "29431"
+  student_id: 
+  orient_number: 
+  desc_number: "24"
+  id: "71"
+  street: Jizerní Vtelno
+  address_type_id: "1"
+  state: 
+addresses_155: 
+  city: Krnov 1
+  zip: "79401"
+  student_id: 
+  orient_number: 
+  desc_number: "18"
+  id: "156"
+  street: Dolní
+  address_type_id: "1"
+  state: 
+addresses_181: 
+  city: Praha 4 Lhotka
+  zip: "14200"
+  student_id: "993"
+  orient_number: 
+  desc_number: 54/67
+  id: "5"
+  street: Na větrově 1143
+  address_type_id: "0"
+  state: 
+addresses_237: 
+  city: "Tashkent, Uzbekistan"
+  zip: "700115"
+  student_id: "4507"
+  orient_number: 
+  desc_number: 1-43-35
+  id: "174"
+  street: Chilanzar
+  address_type_id: "1"
+  state: 
+addresses_049: 
+  city: Stará Lysá
+  zip: "28926"
+  student_id: "3964"
+  orient_number: 
+  desc_number: "134"
+  id: "217"
+  street: Stará Lysá
+  address_type_id: "1"
+  state: 
+addresses_075: 
+  city: "Žamberk"
+  zip: 564 01
+  student_id: 
+  orient_number: 
+  desc_number: "136"
+  id: "59"
+  street: Helvíkovice
+  address_type_id: "1"
+  state: 
+addresses_156: 
+  city: Vlčkovice v Podkrko
+  zip: "54444"
+  student_id: "4387"
+  orient_number: 
+  desc_number: "13"
+  id: "182"
+  street: " -"
+  address_type_id: "1"
+  state: 
+addresses_182: 
+  city: Jihlava
+  zip: "58601"
+  student_id: "1703"
+  orient_number: 
+  desc_number: "2"
+  id: "31"
+  street: S.K.Neumanna
+  address_type_id: "1"
+  state: 
+addresses_238: 
+  city: Praha 7
+  zip: 170 00
+  student_id: "5029"
+  orient_number: 
+  desc_number: 1029/4
+  id: "148"
+  street: V Zákoutí
+  address_type_id: "1"
+  state: 
+addresses_076: 
+  city: Praha 10
+  zip: 106 00
+  student_id: "5256"
+  orient_number: 
+  desc_number: "2696"
+  id: "85"
+  street: Jasmínová
+  address_type_id: "1"
+  state: 
+addresses_157: 
+  city: Studenec
+  zip: "67502"
+  student_id: "3498"
+  orient_number: 
+  desc_number: "161"
+  id: "237"
+  street: Studenec
+  address_type_id: "1"
+  state: 
+addresses_183: 
+  city: Tashkent
+  zip: "700115"
+  student_id: 
+  orient_number: 
+  desc_number: 1-43-35
+  id: "112"
+  street: Chilanzar
+  address_type_id: "1"
+  state: 
+addresses_239: 
+  city: "Ústí nad Labem"
+  zip: "40001"
+  student_id: 
+  orient_number: 
+  desc_number: "4"
+  id: "93"
+  street: Ostrčilova
+  address_type_id: "1"
+  state: 
+addresses_077: 
+  city: Komárov u Hořovic
+  zip: "26762"
+  student_id: "1293"
+  orient_number: 
+  desc_number: "471"
+  id: "166"
+  street: Sokolovická
+  address_type_id: "1"
+  state: 
+addresses_158: 
+  city: Libice nad Cidlinou
+  zip: 289 07
+  student_id: 
+  orient_number: 
+  desc_number: "432"
+  id: "76"
+  street: Vojtěchova
+  address_type_id: "1"
+  state: 
+addresses_184: 
+  city: Tábor
+  zip: "39002"
+  student_id: "4570"
+  orient_number: 
+  desc_number: "627"
+  id: "6"
+  street: Havlíčkova
+  address_type_id: "0"
+  state: 
+addresses_078: 
+  city: Vyšší Brod
+  zip: "38273"
+  student_id: 
+  orient_number: 
+  desc_number: "283"
+  id: "248"
+  street: Na Vyhlidce
+  address_type_id: "1"
+  state: 
+addresses_159: 
+  city: Krnov 1
+  zip: "79401"
+  student_id: "4377"
+  orient_number: 
+  desc_number: "18"
+  id: "157"
+  street: Dolní
+  address_type_id: "1"
+  state: 
+addresses_185: 
+  city: Humpolec
+  zip: "39601"
+  student_id: "3786"
+  orient_number: 
+  desc_number: "1327"
+  id: "32"
+  street: Lužická
+  address_type_id: "1"
+  state: 
+addresses_079: 
+  city: Křivoklat
+  zip: 270 23
+  student_id: 
+  orient_number: 
+  desc_number: "147"
+  id: "86"
+  street: Na sokolí
+  address_type_id: "1"
+  state: 
+addresses_186: 
+  city: Stráž pod Ralskem
+  zip: "47127"
+  student_id: "3008"
+  orient_number: 
+  desc_number: "276"
+  id: "113"
+  street: Mimoňská
+  address_type_id: "1"
+  state: 
+addresses_187: 
+  city: Ulaanbaatar
+  zip: "-----"
+  student_id: 
+  orient_number: 
+  desc_number: 6-233
+  id: "220"
+  street: Songinohairhan dvvreg
+  address_type_id: "1"
+  state: 
+addresses_188: 
+  city: Ostrov
+  zip: "36301"
+  student_id: "4593"
+  orient_number: 
+  desc_number: "1160"
+  id: "7"
+  street: Májová
+  address_type_id: "0"
+  state: 
+addresses_189: 
+  city: "Liberec 19 - Horní"
+  zip: "46008"
+  student_id: 
+  orient_number: 
+  desc_number: "257"
+  id: "33"
+  street: Charbinská
+  address_type_id: "1"
+  state: 
+addresses_001: 
+  city: Zlín
+  zip: "76001"
+  student_id: 
+  orient_number: 
+  desc_number: "2802"
+  id: "98"
+  street: "Štefánikova"
+  address_type_id: "1"
+  state: 
+addresses_002: 
+  city: Vlčkovice v Podkrko
+  zip: "54444"
+  student_id: 
+  orient_number: 
+  desc_number: "13"
+  id: "179"
+  street: " -"
+  address_type_id: "1"
+  state: 
+addresses_003: 
+  city: Podbořany
+  zip: "44101"
+  student_id: "2902"
+  orient_number: 
+  desc_number: "774"
+  id: "99"
+  street: Sídliště Míru
+  address_type_id: "1"
+  state: 
+addresses_110: 
+  city: Pezinok
+  zip: "90201"
+  student_id: 
+  orient_number: 
+  desc_number: "72"
+  id: "42"
+  street: Kupeckého
+  address_type_id: "1"
+  state: 
+addresses_004: 
+  city: Jimramov
+  zip: "59242"
+  student_id: "3084"
+  orient_number: 
+  desc_number: "14"
+  id: "100"
+  street: Trhonice
+  address_type_id: "1"
+  state: 
+addresses_030: 
+  city: Golčův Jeníkov
+  zip: "58282"
+  student_id: 
+  orient_number: 
+  desc_number: "12"
+  id: "26"
+  street: Leškovice
+  address_type_id: "1"
+  state: 
+addresses_111: 
+  city: Rožmitál pod Třem
+  zip: "26242"
+  student_id: "2775"
+  orient_number: 
+  desc_number: "164"
+  id: "123"
+  street: Na Výsluní
+  address_type_id: "1"
+  state: 
+addresses_005: 
+  city: Ostrava-Svinov
+  zip: "72100"
+  student_id: "3789"
+  orient_number: 
+  desc_number: "1072"
+  id: "20"
+  street: Rošického
+  address_type_id: "0"
+  state: 
+addresses_031: 
+  city: Křivoklát
+  zip: "27023"
+  student_id: "3537"
+  orient_number: 
+  desc_number: "183"
+  id: "52"
+  street: Křivoklát
+  address_type_id: "1"
+  state: 
+addresses_112: 
+  city: Krabčice
+  zip: 411 87
+  student_id: 
+  orient_number: 
+  desc_number: "139"
+  id: "204"
+  street: Krabčice
+  address_type_id: "1"
+  state: 
+addresses_006: 
+  city: Pec pod Sněžkou
+  zip: "54221"
+  student_id: "4430"
+  orient_number: 
+  desc_number: "154"
+  id: "101"
+  street: Velká Úpa
+  address_type_id: "1"
+  state: 
+addresses_032: 
+  city: Načeradec
+  zip: "25708"
+  student_id: "4686"
+  orient_number: 
+  desc_number: "43"
+  id: "108"
+  street: Horní Lhota
+  address_type_id: "1"
+  state: 
+addresses_113: 
+  city: Pomezí
+  zip: "56971"
+  student_id: "4521"
+  orient_number: 
+  desc_number: "382"
+  id: "230"
+  street: POMEZÍ
+  address_type_id: "1"
+  state: 
+addresses_220: 
+  city: Dubicko
+  zip: "78972"
+  student_id: "5040"
+  orient_number: 
+  desc_number: "27"
+  id: "119"
+  street: Velká Strana
+  address_type_id: "1"
+  state: 
+addresses_007: 
+  city: Jihlava
+  zip: "58601"
+  student_id: 
+  orient_number: 
+  desc_number: "2"
+  id: "21"
+  street: S.K.Neumanna
+  address_type_id: "1"
+  state: 
+addresses_033: 
+  city: SEPEKOV
+  zip: "39851"
+  student_id: "3212"
+  orient_number: 
+  desc_number: "333"
+  id: "134"
+  street: Sepekov
+  address_type_id: "1"
+  state: 
+addresses_114: 
+  city: Klatovy
+  zip: "33901"
+  student_id: "4592"
+  orient_number: 
+  desc_number: "628"
+  id: "17"
+  street: Domažlické předměstí
+  address_type_id: "0"
+  state: 
+addresses_140: 
+  city: Tábor
+  zip: "39002"
+  student_id: "4570"
+  orient_number: 
+  desc_number: "627"
+  id: "47"
+  street: Havlíčkova
+  address_type_id: "1"
+  state: 
+addresses_221: 
+  city: Lité
+  zip: "33152"
+  student_id: 
+  orient_number: 
+  desc_number: "2"
+  id: "38"
+  street: Dolní Bělá
+  address_type_id: "1"
+  state: 
+addresses_008: 
+  city: Zlín
+  zip: "76001"
+  student_id: "2939"
+  orient_number: 
+  desc_number: "2802"
+  id: "102"
+  street: "Štefánikova"
+  address_type_id: "1"
+  state: 
+addresses_034: 
+  city: "Praha 8 - Kobylisy"
+  zip: 182 00
+  student_id: "4340"
+  orient_number: 
+  desc_number: 780/36
+  id: "160"
+  street: Služská
+  address_type_id: "1"
+  state: 
+addresses_060: 
+  city: Litvínov
+  zip: "43601"
+  student_id: "4560"
+  orient_number: 
+  desc_number: "2052"
+  id: "164"
+  street: Podkrušnohorská
+  address_type_id: "1"
+  state: 
+addresses_115: 
+  city: Pezinok
+  zip: "90201"
+  student_id: 
+  orient_number: 
+  desc_number: "72"
+  id: "43"
+  street: Kupeckého
+  address_type_id: "1"
+  state: 
+addresses_141: 
+  city: Kladno
+  zip: 272 04
+  student_id: "4548"
+  orient_number: 
+  desc_number: "649"
+  id: "73"
+  street: Jana Vaita
+  address_type_id: "1"
+  state: 
+addresses_222: 
+  city: Liberec 19
+  zip: "46008"
+  student_id: "5062"
+  orient_number: 
+  desc_number: "257"
+  id: "64"
+  street: Charbinská
+  address_type_id: "1"
+  state: 
+addresses_223: 
+  city: Merklín
+  zip: "36234"
+  student_id: "4514"
+  orient_number: 
+  desc_number: "150"
+  id: "90"
+  street: Merklín
+  address_type_id: "1"
+  state: 
+addresses_009: 
+  city: Uherský Brod
+  zip: "68801"
+  student_id: 
+  orient_number: 
+  desc_number: "1980"
+  id: "22"
+  street: Na láně
+  address_type_id: "1"
+  state: 
+addresses_035: 
+  city: Jindřichův Hradec
+  zip: 377 01
+  student_id: "3894"
+  orient_number: 
+  desc_number: 57/III
+  id: "215"
+  street: Václavská
+  address_type_id: "1"
+  state: 
+addresses_061: 
+  city: Chrast u Chrudimě
+  zip: 538 51
+  student_id: 
+  orient_number: 
+  desc_number: "632"
+  id: "190"
+  street: Chrašice
+  address_type_id: "1"
+  state: 
+addresses_116: 
+  city: Lučenec
+  zip: 984 03
+  student_id: 
+  orient_number: 
+  desc_number: 2/36
+  id: "124"
+  street: Rúbanisko
+  address_type_id: "1"
+  state: 
+addresses_142: 
+  city: Litvínov 6
+  zip: "43601"
+  student_id: 
+  orient_number: 
+  desc_number: "1431"
+  id: "128"
+  street: K Loučkám
+  address_type_id: "1"
+  state: 
+addresses_250: 
+  city: Slavičín
+  zip: "76321"
+  student_id: "2618"
+  orient_number: 
+  desc_number: "719"
+  id: "96"
+  street: Mladotická
+  address_type_id: "1"
+  state: 
+addresses_224: 
+  city: Písek
+  zip: "39701"
+  student_id: "5088"
+  orient_number: 
+  desc_number: "39701"
+  id: "226"
+  street: Jeronýmova 1976
+  address_type_id: "1"
+  state: 
+addresses_036: 
+  city: Třebíč
+  zip: "67401"
+  student_id: "3405"
+  orient_number: 
+  desc_number: 1130/94
+  id: "241"
+  street: Hartmannova
+  address_type_id: "1"
+  state: 
+addresses_062: 
+  city: Ulaanbaatar
+  zip: "00000"
+  student_id: 
+  orient_number: 
+  desc_number: 6-233
+  id: "219"
+  street: Songinohairhan dvvreg
+  address_type_id: "1"
+  state: 
+addresses_117: 
+  city: Praha 4
+  zip: 148 00
+  student_id: 
+  orient_number: 
+  desc_number: "1870"
+  id: "150"
+  street: Jarníkova
+  address_type_id: "1"
+  state: 
+addresses_143: 
+  city: Třebíč
+  zip: 674 01
+  student_id: "4509"
+  orient_number: 
+  desc_number: "939"
+  id: "154"
+  street: Zahraničního odboje
+  address_type_id: "1"
+  state: 
+addresses_251: 
+  city: Vlčkovice v Podkrko
+  zip: "54444"
+  student_id: 
+  orient_number: 
+  desc_number: "13"
+  id: "178"
+  street: " -"
+  address_type_id: "1"
+  state: 
+addresses_225: 
+  city: Dačice
+  zip: 380 01
+  student_id: "3024"
+  orient_number: 
+  desc_number: 21/V
+  id: "252"
+  street: Tř. 9. května
+  address_type_id: "1"
+  state: 
+addresses_037: 
+  city: Lhotka u Radnic
+  zip: "33824"
+  student_id: "4578"
+  orient_number: 
+  desc_number: "7"
+  id: "27"
+  street: Lhotka u Radnic
+  address_type_id: "1"
+  state: 
+addresses_063: 
+  city: Vitebsk
+  zip: "210009"
+  student_id: "4636"
+  orient_number: 
+  desc_number: 28-3-35
+  id: "245"
+  street: Tereškovoj
+  address_type_id: "1"
+  state: 
+addresses_118: 
+  city: Hodkovice nad Mohelk
+  zip: "43642"
+  student_id: "3951"
+  orient_number: 
+  desc_number: "18"
+  id: "205"
+  street: Voděrady
+  address_type_id: "1"
+  state: 
+addresses_144: 
+  city: Vlčkovice v Podkrko
+  zip: "54444"
+  student_id: 
+  orient_number: 
+  desc_number: "13"
+  id: "180"
+  street: " -"
+  address_type_id: "1"
+  state: 
+addresses_170: 
+  city: Dvůr Králové nad
+  zip: 544 01
+  student_id: 
+  orient_number: 
+  desc_number: "1779"
+  id: "186"
+  street: Polní
+  address_type_id: "1"
+  state: 
+addresses_252: 
+  city: "Žirovnice"
+  zip: "39468"
+  student_id: "3826"
+  orient_number: 
+  desc_number: "615"
+  id: "97"
+  street: Hradecká
+  address_type_id: "1"
+  state: 
+addresses_226: 
+  city: Dobruška
+  zip: "51801"
+  student_id: "4367"
+  orient_number: 
+  desc_number: "128"
+  id: "172"
+  street: Semechnice
+  address_type_id: "1"
+  state: 
+addresses_038: 
+  city: Mělník
+  zip: 276 01
+  student_id: "3804"
+  orient_number: 
+  desc_number: "2660"
+  id: "53"
+  street: Bořivoje
+  address_type_id: "1"
+  state: 
+addresses_064: 
+  city: "Žamberk"
+  zip: 564 01
+  student_id: 
+  orient_number: 
+  desc_number: "136"
+  id: "57"
+  street: Helvíkovice
+  address_type_id: "1"
+  state: 
+addresses_090: 
+  city: Uhliřské Janovice
+  zip: 285 04
+  student_id: 
+  orient_number: 
+  desc_number: "18"
+  id: "196"
+  street: Staňkovice
+  address_type_id: "1"
+  state: 
+addresses_119: 
+  city: Jetrichovice
+  zip: "40716"
+  student_id: "4632"
+  orient_number: 
+  desc_number: "25"
+  id: "231"
+  street: Rynartice
+  address_type_id: "1"
+  state: 
+addresses_145: 
+  city: Plzeň
+  zip: "31200"
+  student_id: "1333"
+  orient_number: 
+  desc_number: "76"
+  id: "209"
+  street: Pod Vrchem
+  address_type_id: "1"
+  state: 
+addresses_171: 
+  city: Dvůr Králové n/L
+  zip: 544 01
+  student_id: "5066"
+  orient_number: 
+  desc_number: "1779"
+  id: "187"
+  street: Polní
+  address_type_id: "1"
+  state: 
+addresses_227: 
+  city: Senomaty
+  zip: "27031"
+  student_id: "4518"
+  orient_number: 
+  desc_number: "12"
+  id: "146"
+  street: Hostokryje
+  address_type_id: "1"
+  state: 
+addresses_039: 
+  city: Bystřice pod Hostý
+  zip: "76861"
+  student_id: 
+  orient_number: 
+  desc_number: "1611"
+  id: "135"
+  street: Třída Legií
+  address_type_id: "1"
+  state: 
+addresses_065: 
+  city: Heřmanova Huť
+  zip: "33024"
+  student_id: "4572"
+  orient_number: 
+  desc_number: "127"
+  id: "83"
+  street: Vlkýš
+  address_type_id: "1"
+  state: 
+addresses_091: 
+  city: Kroměříž
+  zip: "76701"
+  student_id: 
+  orient_number: 
+  desc_number: "2078"
+  id: "197"
+  street: Brandlova
+  address_type_id: "1"
+  state: 
+addresses_146: 
+  city: "Čáslav"
+  zip: "28601"
+  student_id: "3505"
+  orient_number: 
+  desc_number: "16"
+  id: "235"
+  street: Zbudovice
+  address_type_id: "1"
+  state: 
+addresses_172: 
+  city: Mariánské Lázně
+  zip: 353 01
+  student_id: "2833"
+  orient_number: 
+  desc_number: 147/2
+  id: "188"
+  street: Ladova
+  address_type_id: "1"
+  state: 
+addresses_228: 
+  city: Kralupy nad Vltavou
+  zip: "27801"
+  student_id: 
+  orient_number: 
+  desc_number: "435"
+  id: "91"
+  street: Přemyslova
+  address_type_id: "1"
+  state: 
+addresses_066: 
+  city: Bystřice pod Hostý
+  zip: "76861"
+  student_id: 
+  orient_number: 
+  desc_number: "1611"
+  id: "138"
+  street: Třída Legií
+  address_type_id: "1"
+  state: 
+addresses_092: 
+  city: Kroměříž
+  zip: "76701"
+  student_id: "3887"
+  orient_number: 
+  desc_number: "2078"
+  id: "198"
+  street: Brandlova
+  address_type_id: "1"
+  state: 
+addresses_147: 
+  city: Borovany
+  zip: 398 43
+  student_id: "4585"
+  orient_number: 
+  desc_number: "87"
+  id: "48"
+  street: Borovany
+  address_type_id: "1"
+  state: 
+addresses_173: 
+  city: Lomnice nad Popelkou
+  zip: "51251"
+  student_id: "5056"
+  orient_number: 
+  desc_number: "1108"
+  id: "189"
+  street: Hoření Lomnice
+  address_type_id: "1"
+  state: 
+addresses_229: 
+  city: Koclířov
+  zip: "56911"
+  student_id: "5034"
+  orient_number: 
+  desc_number: "165"
+  id: "65"
+  street: Koclířov
+  address_type_id: "1"
+  state: 
+addresses_067: 
+  city: Chrast u Chrudimě
+  zip: 538 51
+  student_id: "3962"
+  orient_number: 
+  desc_number: "632"
+  id: "191"
+  street: Chrašice
+  address_type_id: "1"
+  state: 
+addresses_093: 
+  city: Praha 2
+  zip: 128 00
+  student_id: 
+  orient_number: 
+  desc_number: "9"
+  id: "199"
+  street: Vratislavova
+  address_type_id: "1"
+  state: 
+addresses_148: 
+  city: Chlumec nad Cidlinou
+  zip: "50351"
+  student_id: "3380"
+  orient_number: 
+  desc_number: 291/3
+  id: "74"
+  street: Palackého
+  address_type_id: "1"
+  state: 
+addresses_174: 
+  city: Brno
+  zip: "61800"
+  student_id: "3975"
+  orient_number: 
+  desc_number: "1139"
+  id: "1"
+  street: Turgeněvova 18
+  address_type_id: "0"
+  state: 
+addresses_068: 
+  city: Načešice
+  zip: 538 03
+  student_id: "2953"
+  orient_number: 
+  desc_number: "51"
+  id: "246"
+  street: Licomělice
+  address_type_id: "1"
+  state: 
+addresses_094: 
+  city: Lité
+  zip: "33152"
+  student_id: "4553"
+  orient_number: 
+  desc_number: "2"
+  id: "10"
+  street: Dolní Bělá
+  address_type_id: "0"
+  state: 
+addresses_149: 
+  city: Litvínov 6
+  zip: "43601"
+  student_id: "2918"
+  orient_number: 
+  desc_number: "1431"
+  id: "129"
+  street: K Loučkám
+  address_type_id: "1"
+  state: 
+addresses_175: 
+  city: Praha 2
+  zip: "12000"
+  student_id: "4000"
+  orient_number: 
+  desc_number: "1490"
+  id: "2"
+  street: Salmovská
+  address_type_id: "0"
+  state: 
+addresses_069: 
+  city: "Žamberk"
+  zip: 564 01
+  student_id: 
+  orient_number: 
+  desc_number: "136"
+  id: "58"
+  street: Helvíkovice
+  address_type_id: "1"
+  state: 
+addresses_095: 
+  city: Lité
+  zip: "33152"
+  student_id: "4553"
+  orient_number: 
+  desc_number: "2"
+  id: "11"
+  street: Dolní Bělá
+  address_type_id: "0"
+  state: 
+addresses_176: 
+  city: Tábor
+  zip: "39002"
+  student_id: "4570"
+  orient_number: 
+  desc_number: "627"
+  id: "3"
+  street: Havlíčkova
+  address_type_id: "0"
+  state: 
+addresses_096: 
+  city: Havířov
+  zip: "73601"
+  student_id: "4551"
+  orient_number: 
+  desc_number: "37"
+  id: "12"
+  street: Těšínská
+  address_type_id: "0"
+  state: 
+addresses_177: 
+  city: Strašice
+  zip: "33845"
+  student_id: 
+  orient_number: 
+  desc_number: 379/I
+  id: "110"
+  street: "-"
+  address_type_id: "1"
+  state: 
+addresses_097: 
+  city: Praha 2
+  zip: 128 00
+  student_id: "3925"
+  orient_number: 
+  desc_number: "60"
+  id: "200"
+  street: Vratislavova 9
+  address_type_id: "1"
+  state: 
+addresses_178: 
+  city: Klatovy
+  zip: "33901"
+  student_id: "4592"
+  orient_number: 
+  desc_number: "628"
+  id: "4"
+  street: Domažlické předměstí
+  address_type_id: "0"
+  state: 

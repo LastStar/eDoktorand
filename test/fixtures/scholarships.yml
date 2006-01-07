@@ -1,5 +1,15 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first:
-  id: 1
-another:
-  id: 2
+--- 
+scholarships_001: 
+  created_on: 2005-11-24 10:15:50
+  payed_on: 
+  commission_head: "4190"
+  updated_on: 2005-11-24 10:16:01
+  commission_body: "1311"
+  created_by_id: "1628"
+  id: "1"
+  update_by_id: 
+  amount: "2000"
+  content: 
+  commission_tail: "3120"
+  index_id: "1306"
+  label: 

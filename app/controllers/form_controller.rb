@@ -1,17 +1,20 @@
 class FormController < ApplicationController
-  layout "standard"
+  layout "employers"
+
   # page where candidate chooses desired coridor
   # or logins for edit or check older adminition
   def index
     @faculties = Faculty.find_all
     @title = _("Admittance process")
   end
+  
   # form details  
   def details
     prepare_candidate
     @action = 'save'
     @title = _("Admittance form for corridor ") + @candidate.coridor.name
   end
+
   # preview what has been inserted
   def save
     @candidate = Candidate.new(@params['candidate'])
@@ -25,6 +28,7 @@ class FormController < ApplicationController
       render_action 'details'
     end
   end
+
   # update candidate
   def update
     @candidate = Candidate.find(@params['candidate']['id'])
@@ -38,6 +42,7 @@ class FormController < ApplicationController
       render_action 'details'
     end
   end
+
   # preview information
   def preview
       if @candidate
@@ -48,6 +53,7 @@ class FormController < ApplicationController
         @title = _("Print")
       end
   end
+
   # correct details
   def correct
     @candidate = Candidate.find(@params['id'])
@@ -56,12 +62,14 @@ class FormController < ApplicationController
     @title = _("Correct admit form")
     render_action 'details'
   end
+
   # finish submition
   def finish
     @candidate = Candidate.find(@params['id'])
     @candidate.finish!
     @title = _("Admit form registered")
   end
+
   private
   # prepares candidate with some preloaded values
   def prepare_candidate
@@ -72,4 +80,5 @@ class FormController < ApplicationController
       c.faculty = c.coridor.faculty.name
     end
   end
+
 end

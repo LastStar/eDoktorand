@@ -40,7 +40,7 @@
   <%= _("Corridor") %>:&nbsp;<b class="info"><%= @candidate.coridor.name %></b> <br /> 
   <%= _("Department") %>:&nbsp;<b class="info"><%= @candidate.department.name %></b><br /> 
   <%= _("Study form") %>:&nbsp;<b class="info"><%= @candidate.study.name %></b><br /> 
-  <%= _("Exam languages") %>:&nbsp;<b class="info"><%= Language.find(@candidate.language1).name + ', ' + Language.find(@candidate.language2).name %></b><br /> 
+  <%= _("Exam languages") %>:&nbsp;<b class="info"><%= "#{@candidate.language1.label}, #{@candidate.language2.label}" %></b><br /> 
   <% unless @candidate.study_theme.empty? %>
   <%= _("Theme area") %>:&nbsp;<b class="info"><%= @candidate.study_theme %></b >
   <% end %>

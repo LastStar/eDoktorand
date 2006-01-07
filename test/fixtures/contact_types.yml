@@ -1,7 +1,7 @@
 --- 
-contact_type1: 
-  id: 1
+contact_types_001: 
+  id: "1"
   label: email
-contact_type2: 
-  id: 2
+contact_types_002: 
+  id: "2"
   label: phone

@@ -352,11 +352,7 @@ h5 {
 	background-image: url(/images/h5_bg.gif);
 	background-repeat: no-repeat;
 }
-
-
-/*
-#HeadMenu a:hover {
-	background-image: url(/images/tl.on.gif);	
+.red {
+  background-color: red;
 }
-*/
 

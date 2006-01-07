@@ -1,5 +1,23 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-first_interupt:
-  id: 1
-another_interupt:
-  id: 2
+--- 
+interupts_001: 
+  approved_on: 
+  created_on: 2005-12-05 12:55:04
+  updated_on: 2005-12-05 12:55:04
+  id: "1"
+  start_on: 2005-12-01 00:00:00
+  note: ''
+  plan_changed: "2"
+  index_id: "1449"
+  canceled_on: 
+  duration: "12"
+interupts_002: 
+  approved_on: 
+  created_on: 2005-12-23 11:59:00
+  updated_on: 2005-12-23 11:59:00
+  id: "11"
+  start_on: 2005-12-01 00:00:00
+  note: fasdfasdfasdf
+  plan_changed: "2"
+  index_id: "1784"
+  canceled_on: 
+  duration: "6"

@@ -1,6 +1,6 @@
 module StudentsHelper
   
-# prints action links on student
+  # prints action links on student
   def student_action_link(index)
     info = ''
     links = ''
@@ -56,10 +56,12 @@ module StudentsHelper
         'index_menu_#{index.id}')"), :class => 'smallerinfo').concat(info)
       links.concat('&nbsp;')
     end
-    div_tag(links, :id => "index_menu_#{index.id}", :style => 'display: none', :class => 'menu_line') + div_tag(info)
+    div_tag(links, :id => "index_menu_#{index.id}", :style => 'display: none',
+      :class => 'menu_line') + div_tag(info, :class => index.year > 3 ? 'red':\
+      '') 
   end 
 
-# prints code to switch old student link to new one
+  # prints code to switch old student link to new one
   def redraw_student(index)
     update_element_function("index_line_#{index.id}", :content => student_action_link(index))
   end
@@ -86,6 +88,7 @@ module StudentsHelper
       end
     end
   end
+ 
   # prints interupt link
   def interupt_link(index)
     if @user.has_one_of_roles?(['faculty_secretary', 'dean'])
@@ -96,7 +99,7 @@ module StudentsHelper
     end
   end
 
-# prints select for departments
+  # prints select for departments
   def department_select(options = {})
     options = if options[:user].has_role?('vicerector')
       department_options(:include_empty => options[:include_empty])
@@ -107,7 +110,7 @@ module StudentsHelper
       'name' => "filter_by_department"})
   end
 
-# prints select for coridor
+  # prints select for coridor
   def coridor_select(options = {})
     options = if options[:user].has_role?('vicerector')
       coridor_options(:include_empty => options[:include_empty])
@@ -118,25 +121,25 @@ module StudentsHelper
       'name' => "filter_by_coridor"})
   end
 
-# prints select for faculty
+  # prints select for faculty
   def faculty_select(options = {})
     content_tag('select', faculty_options(:include_empty => true), {'id' => 
       "filter_by_faculty", 'name' => "filter_by_faculty"})
   end
 
-# prints select for statuses
+  # prints select for statuses
   def status_select(options = {})
     content_tag('select', status_options, {'id' => 
       "filter_by_status", 'name' => "filter_by_status"})
   end
 
-# prints select for statuses
+  # prints select for statuses
   def study_status_select(options = {})
     content_tag('select', study_status_options, {'id' => 
       "filter_by_study_status", 'name' => "filter_by_study_status"})
   end
 
-# prints select for statuses
+  # prints select for statuses
   def form_select(options = {})
     content_tag('select', form_options, {'id' => 
       "filter_by_form", 'name' => "filter_by_form"})

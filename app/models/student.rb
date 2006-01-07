@@ -10,4 +10,16 @@ class Student < Person
   def faculty
     index.department.faculty
   end
+  def display_name
+    "#{lastname} #{firstname}"
+  end
+  def account
+    if scholarship_supervised_date
+      if account_number_prefix
+        "#{s.index.account_number_prefix}-#{s.index.account_number}/#{s.index.account_bank_number}"
+      else
+        "#{s.index.account_number}/#{s.index.account_bank_number}"
+      end
+    end
+  end
 end 

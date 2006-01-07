@@ -12,7 +12,7 @@
 <fieldset>
 <legend><%= _("language subjects") %></legend>
 <%= render(:partial => 'language', :collection => @plan_subjects, :locals => {:subjects =>
-language_subject_ids}) %>
+language_subject_options}) %>
 </fieldset>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>
