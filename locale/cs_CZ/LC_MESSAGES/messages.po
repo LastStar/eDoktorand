@@ -1286,3 +1286,33 @@ msgstr "Kontaktní údaje"
 
 msgid "supervise scholarship"
 msgstr "potvrdit žádost"
+
+msgid "Creating exam for student"
+msgstr "Vytvoření zkoušky pro studenta"
+
+msgid "Enroll student"
+msgstr "Zapsat zkoušku"
+
+msgid "In Prague the"
+msgstr "V Praze dne"
+
+msgid "Finished creating exam"
+msgstr "Protokol o vykonané zkoušce"
+
+msgid "Exam clasification"
+msgstr "Výsledek zkoušky"
+
+msgid "Creating exam from subject"
+msgstr "Zkouška z předmětu"
+
+msgid "Branch"
+msgstr "Obor"
+
+msgid "Czech university of agriculture"
+msgstr "Česká zemědělská univerzita v Praze"
+
+msgid "Faculty (institute)"
+msgstr "Fakulta (Institut)"
+
+msgid "To print the exam protocol press Ctrl+p"
+msgstr "Pro vytisknutí prosím stiskněte Ctrl+p"

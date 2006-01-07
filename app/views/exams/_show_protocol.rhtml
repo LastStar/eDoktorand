@@ -1,7 +1,7 @@
 <h5><%= _("Finished creating exam") %></h5>
 <div>
 <%= _("Czech university of agriculture") %><br />
-<%= _("Faculty (institute): ") %><%= exam.first_examinator.faculty.name if exam.first_examinator %>
+<%= _("Faculty (institute)") %>:&nbsp;<%= exam.first_examinator.faculty.name if exam.first_examinator %>
 </div>
 <br />
 <div style="text-align: right;">

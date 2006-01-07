@@ -75,6 +75,7 @@ class ExamsController < ApplicationController
     IS NOT NULL']
     students = Index.find(:all, :conditions => @conditions, :include => [:student,
     :study_plan]).map {|i| i.student}
+    students = students.select{|s| s.faculty == @user.person.faculty}
     render(:partial => "students", :locals => {:students => students}) 
   end
   

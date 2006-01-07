@@ -120,3 +120,6 @@ a {
 #printFooter {
   display: none;
 }
+#examPrintMessage {
+  display: none;
+}
