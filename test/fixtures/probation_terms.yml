@@ -1,31 +1,83 @@
 --- 
 probation_terms_018: 
-  created_on: 2005-12-12 14:28:41
-  updated_on: 2005-12-12 14:28:41
-  created_by: "45"
-  date: "2006-01-09"
-  id: "18"
-  note: Projekt dle podmínek na kit.pef.czu.cz
-  subject_id: "1383"
-  max_students: "5"
-  room: PEF 232
-  start_time: "9:00"
+  created_on: 2005-12-13 14:18:13
+  updated_on: 2005-12-13 14:18:13
+  created_by: "6"
+  date: "2005-12-13"
+  id: "19"
+  note: ''
+  subject_id: "1760"
+  max_students: "4"
+  room: "325"
+  start_time: "13:00"
   second_examinator_id: "0"
-  first_examinator_id: "45"
+  first_examinator_id: "6"
 probation_terms_007: 
-  created_on: 2005-11-21 16:09:30
-  updated_on: 2005-12-01 15:30:02
+  created_on: 2005-11-28 08:45:55
+  updated_on: 2005-11-28 08:45:55
+  created_by: "1009"
+  date: "2006-01-05"
+  id: "8"
+  note: ''
+  subject_id: "1338"
+  max_students: "3"
+  room: PEF II. 224
+  start_time: "8,00"
+  second_examinator_id: "0"
+  first_examinator_id: "22"
+probation_terms_008: 
+  created_on: 2005-12-01 11:23:09
+  updated_on: 2005-12-01 15:26:43
+  created_by: "6"
+  date: "2005-11-15"
+  id: "9"
+  note: ''
+  subject_id: "1760"
+  max_students: 
+  room: ''
+  start_time: ''
+  second_examinator_id: "0"
+  first_examinator_id: "6"
+probation_terms_010: 
+  created_on: 2005-12-01 15:31:29
+  updated_on: 2005-12-14 14:11:22
   created_by: "1410"
-  date: "2005-12-21"
-  id: "1"
-  note: poznamka 2
+  date: "2006-01-11"
+  id: "11"
+  note: ''
   subject_id: "1751"
-  max_students: "2"
+  max_students: "3"
   room: "326"
   start_time: "8:00"
   second_examinator_id: "0"
   first_examinator_id: "6"
-probation_terms_008: 
+probation_terms_009: 
+  created_on: 2005-12-01 11:57:48
+  updated_on: 2005-12-01 11:57:48
+  created_by: "98"
+  date: "2005-11-22"
+  id: "10"
+  note: ''
+  subject_id: "1760"
+  max_students: 
+  room: ''
+  start_time: ''
+  second_examinator_id: "0"
+  first_examinator_id: "196"
+probation_terms_011: 
+  created_on: 2005-12-01 15:33:26
+  updated_on: 2005-12-01 15:33:26
+  created_by: "1410"
+  date: "2006-01-20"
+  id: "12"
+  note: ''
+  subject_id: "1751"
+  max_students: "4"
+  room: "326"
+  start_time: "8:00"
+  second_examinator_id: "0"
+  first_examinator_id: "6"
+probation_terms_012: 
   created_on: 2005-12-01 15:34:44
   updated_on: 2005-12-01 15:34:44
   created_by: "1410"
@@ -38,7 +90,20 @@ probation_terms_008:
   start_time: "8:00"
   second_examinator_id: "0"
   first_examinator_id: "6"
-probation_terms_010: 
+probation_terms_001: 
+  created_on: 2005-11-21 16:09:30
+  updated_on: 2005-12-01 15:30:02
+  created_by: "1410"
+  date: "2005-12-21"
+  id: "1"
+  note: poznamka 2
+  subject_id: "1751"
+  max_students: "2"
+  room: "326"
+  start_time: "8:00"
+  second_examinator_id: "0"
+  first_examinator_id: "6"
+probation_terms_013: 
   created_on: 2005-12-01 15:35:52
   updated_on: 2005-12-01 15:35:52
   created_by: "1410"
@@ -51,7 +116,7 @@ probation_terms_010:
   start_time: "8:00"
   second_examinator_id: "0"
   first_examinator_id: "6"
-probation_terms_009: 
+probation_terms_002: 
   created_on: 2005-11-23 13:49:44
   updated_on: 2005-11-28 16:29:39
   created_by: "46"
@@ -65,7 +130,20 @@ probation_terms_009:
   start_time: "17:00"
   second_examinator_id: "0"
   first_examinator_id: "46"
-probation_terms_011: 
+probation_terms_014: 
+  created_on: 2005-12-01 15:38:39
+  updated_on: 2005-12-01 15:38:39
+  created_by: "1410"
+  date: "2006-02-03"
+  id: "15"
+  note: ''
+  subject_id: "1745"
+  max_students: "3"
+  room: "326"
+  start_time: "8:00"
+  second_examinator_id: "0"
+  first_examinator_id: "6"
+probation_terms_003: 
   created_on: 2005-11-23 15:51:26
   updated_on: 2005-11-23 15:51:26
   created_by: "45"
@@ -80,59 +158,7 @@ probation_terms_011:
   start_time: "9:00"
   second_examinator_id: "0"
   first_examinator_id: "45"
-probation_terms_012: 
-  created_on: 2005-12-01 15:38:39
-  updated_on: 2005-12-01 15:38:39
-  created_by: "1410"
-  date: "2006-02-03"
-  id: "15"
-  note: ''
-  subject_id: "1745"
-  max_students: "3"
-  room: "326"
-  start_time: "8:00"
-  second_examinator_id: "0"
-  first_examinator_id: "6"
-probation_terms_001: 
-  created_on: 2005-11-28 08:45:55
-  updated_on: 2005-11-28 08:45:55
-  created_by: "1009"
-  date: "2006-01-05"
-  id: "8"
-  note: ''
-  subject_id: "1338"
-  max_students: "3"
-  room: PEF II. 224
-  start_time: "8,00"
-  second_examinator_id: "0"
-  first_examinator_id: "22"
-probation_terms_013: 
-  created_on: 2005-11-23 15:53:57
-  updated_on: 2005-12-14 10:43:18
-  created_by: "45"
-  date: "2005-12-22"
-  id: "5"
-  note: ''
-  subject_id: "1382"
-  max_students: "12"
-  room: PEF 232
-  start_time: "9:00"
-  second_examinator_id: "0"
-  first_examinator_id: "45"
-probation_terms_002: 
-  created_on: 2005-12-13 14:18:13
-  updated_on: 2005-12-13 14:18:13
-  created_by: "6"
-  date: "2005-12-13"
-  id: "19"
-  note: ''
-  subject_id: "1760"
-  max_students: "4"
-  room: "325"
-  start_time: "13:00"
-  second_examinator_id: "0"
-  first_examinator_id: "6"
-probation_terms_014: 
+probation_terms_015: 
   created_on: 2005-12-07 14:26:43
   updated_on: 2005-12-07 14:26:43
   created_by: "1009"
@@ -145,45 +171,19 @@ probation_terms_014:
   start_time: "8,00"
   second_examinator_id: "0"
   first_examinator_id: "26"
-probation_terms_003: 
-  created_on: 2005-12-01 11:23:09
-  updated_on: 2005-12-01 15:26:43
-  created_by: "6"
-  date: "2005-11-15"
-  id: "9"
-  note: ''
-  subject_id: "1760"
-  max_students: 
-  room: ''
-  start_time: ''
-  second_examinator_id: "0"
-  first_examinator_id: "6"
-probation_terms_015: 
-  created_on: 2005-11-25 10:27:11
-  updated_on: 2005-12-07 07:54:07
-  created_by: "1009"
-  date: "2005-12-15"
-  id: "6"
-  note: ''
-  subject_id: "1338"
-  max_students: "3"
-  room: PEF II. 224
-  start_time: "8.00"
-  second_examinator_id: "0"
-  first_examinator_id: "22"
 probation_terms_004: 
-  created_on: 2005-12-01 11:57:48
-  updated_on: 2005-12-01 11:57:48
-  created_by: "98"
-  date: "2005-11-22"
-  id: "10"
+  created_on: 2005-11-23 15:53:57
+  updated_on: 2005-12-14 10:43:18
+  created_by: "45"
+  date: "2005-12-22"
+  id: "5"
   note: ''
-  subject_id: "1760"
-  max_students: 
-  room: ''
-  start_time: ''
+  subject_id: "1382"
+  max_students: "12"
+  room: PEF 232
+  start_time: "9:00"
   second_examinator_id: "0"
-  first_examinator_id: "196"
+  first_examinator_id: "45"
 probation_terms_016: 
   created_on: 2005-12-08 06:27:41
   updated_on: 2005-12-08 06:28:14
@@ -198,19 +198,32 @@ probation_terms_016:
   second_examinator_id: "0"
   first_examinator_id: "46"
 probation_terms_005: 
-  created_on: 2005-12-01 15:31:29
-  updated_on: 2005-12-14 14:11:22
-  created_by: "1410"
-  date: "2006-01-11"
-  id: "11"
+  created_on: 2005-11-25 10:27:11
+  updated_on: 2005-12-07 07:54:07
+  created_by: "1009"
+  date: "2005-12-15"
+  id: "6"
   note: ''
-  subject_id: "1751"
+  subject_id: "1338"
   max_students: "3"
-  room: "326"
-  start_time: "8:00"
+  room: PEF II. 224
+  start_time: "8.00"
   second_examinator_id: "0"
-  first_examinator_id: "6"
+  first_examinator_id: "22"
 probation_terms_017: 
+  created_on: 2005-12-12 14:28:41
+  updated_on: 2005-12-12 14:28:41
+  created_by: "45"
+  date: "2006-01-09"
+  id: "18"
+  note: Projekt dle podmínek na kit.pef.czu.cz
+  subject_id: "1383"
+  max_students: "5"
+  room: PEF 232
+  start_time: "9:00"
+  second_examinator_id: "0"
+  first_examinator_id: "45"
+probation_terms_006: 
   created_on: 2005-11-28 08:44:35
   updated_on: 2005-12-01 08:45:25
   created_by: "1009"
@@ -223,16 +236,3 @@ probation_terms_017:
   start_time: "14,00"
   second_examinator_id: "0"
   first_examinator_id: "94"
-probation_terms_006: 
-  created_on: 2005-12-01 15:33:26
-  updated_on: 2005-12-01 15:33:26
-  created_by: "1410"
-  date: "2006-01-20"
-  id: "12"
-  note: ''
-  subject_id: "1751"
-  max_students: "4"
-  room: "326"
-  start_time: "8:00"
-  second_examinator_id: "0"
-  first_examinator_id: "6"

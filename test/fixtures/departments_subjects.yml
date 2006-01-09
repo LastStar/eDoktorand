@@ -1,1084 +1,1084 @@
 --- 
 departments_subjects_348: 
-  subject_id: "7200"
-  department_id: "54"
-departments_subjects_293: 
-  subject_id: "8963"
-  department_id: "104"
-departments_subjects_267: 
-  subject_id: "7167"
-  department_id: "61"
-departments_subjects_079: 
-  subject_id: "7358"
-  department_id: "50"
-departments_subjects_186: 
-  subject_id: "8979"
-  department_id: "30"
-departments_subjects_349: 
-  subject_id: "7122"
-  department_id: "46"
-departments_subjects_294: 
-  subject_id: "7406"
-  department_id: "45"
-departments_subjects_268: 
-  subject_id: "7175"
-  department_id: "58"
-departments_subjects_187: 
-  subject_id: "6696"
-  department_id: "55"
-departments_subjects_295: 
-  subject_id: "19011"
-  department_id: "9"
-departments_subjects_269: 
-  subject_id: "7183"
-  department_id: "58"
-departments_subjects_188: 
-  subject_id: "7285"
-  department_id: "45"
-departments_subjects_296: 
-  subject_id: "1369"
-  department_id: "14"
-departments_subjects_189: 
-  subject_id: "7381"
-  department_id: "55"
-departments_subjects_297: 
-  subject_id: "6698"
-  department_id: "55"
-departments_subjects_298: 
-  subject_id: "1357"
-  department_id: "25"
-departments_subjects_001: 
-  subject_id: "7362"
-  department_id: "98"
-departments_subjects_299: 
-  subject_id: "8982"
-  department_id: "35"
-departments_subjects_002: 
-  subject_id: "7239"
-  department_id: "51"
-departments_subjects_003: 
-  subject_id: "1755"
-  department_id: "13"
-departments_subjects_110: 
-  subject_id: "7074"
-  department_id: "46"
-departments_subjects_004: 
-  subject_id: "1737"
-  department_id: "25"
-departments_subjects_030: 
-  subject_id: "1731"
-  department_id: "25"
-departments_subjects_111: 
-  subject_id: "7060"
-  department_id: "46"
-departments_subjects_300: 
-  subject_id: "7311"
-  department_id: "55"
-departments_subjects_005: 
   subject_id: "19046"
   department_id: "11"
-departments_subjects_031: 
-  subject_id: "7163"
-  department_id: "61"
-departments_subjects_112: 
-  subject_id: "8986"
-  department_id: "36"
-departments_subjects_301: 
-  subject_id: "8962"
-  department_id: "104"
-departments_subjects_220: 
-  subject_id: "8091"
-  department_id: "61"
-departments_subjects_006: 
+departments_subjects_293: 
+  subject_id: "1737"
+  department_id: "25"
+departments_subjects_267: 
+  subject_id: "1755"
+  department_id: "13"
+departments_subjects_079: 
+  subject_id: "7362"
+  department_id: "98"
+departments_subjects_186: 
+  subject_id: "7239"
+  department_id: "51"
+departments_subjects_349: 
+  subject_id: "19047"
+  department_id: "8"
+departments_subjects_294: 
+  subject_id: "1136"
+  department_id: "24"
+departments_subjects_268: 
+  subject_id: "7500"
+  department_id: "19"
+departments_subjects_187: 
   subject_id: "1332"
   department_id: "13"
+departments_subjects_295: 
+  subject_id: "1750"
+  department_id: "15"
+departments_subjects_269: 
+  subject_id: "1137"
+  department_id: "24"
+departments_subjects_188: 
+  subject_id: "7066"
+  department_id: "49"
+departments_subjects_296: 
+  subject_id: "1351"
+  department_id: "17"
+departments_subjects_189: 
+  subject_id: "7364"
+  department_id: "48"
+departments_subjects_297: 
+  subject_id: "1376"
+  department_id: "20"
+departments_subjects_298: 
+  subject_id: "1358"
+  department_id: "25"
+departments_subjects_001: 
+  subject_id: "8951"
+  department_id: "34"
+departments_subjects_299: 
+  subject_id: "1355"
+  department_id: "18"
+departments_subjects_002: 
+  subject_id: "8891"
+  department_id: "40"
+departments_subjects_003: 
+  subject_id: "7179"
+  department_id: "58"
+departments_subjects_110: 
+  subject_id: "7226"
+  department_id: "45"
+departments_subjects_004: 
+  subject_id: "7187"
+  department_id: "58"
+departments_subjects_030: 
+  subject_id: "1138"
+  department_id: "24"
+departments_subjects_111: 
+  subject_id: "1367"
+  department_id: "17"
+departments_subjects_300: 
+  subject_id: "1384"
+  department_id: "23"
+departments_subjects_005: 
+  subject_id: "8964"
+  department_id: "104"
+departments_subjects_031: 
+  subject_id: "1373"
+  department_id: "21"
+departments_subjects_112: 
+  subject_id: "5440"
+  department_id: "25"
+departments_subjects_301: 
+  subject_id: "1731"
+  department_id: "25"
+departments_subjects_220: 
+  subject_id: "7205"
+  department_id: "50"
+departments_subjects_006: 
+  subject_id: "7163"
+  department_id: "61"
 departments_subjects_032: 
   subject_id: "8876"
   department_id: "44"
 departments_subjects_113: 
-  subject_id: "7289"
-  department_id: "45"
-departments_subjects_302: 
-  subject_id: "7230"
-  department_id: "51"
-departments_subjects_221: 
-  subject_id: "8968"
-  department_id: "30"
-departments_subjects_007: 
-  subject_id: "7500"
-  department_id: "19"
-departments_subjects_033: 
   subject_id: "1379"
   department_id: "19"
-departments_subjects_114: 
-  subject_id: "1733"
-  department_id: "25"
-departments_subjects_140: 
-  subject_id: "8953"
-  department_id: "34"
-departments_subjects_303: 
-  subject_id: "19012"
-  department_id: "9"
-departments_subjects_008: 
-  subject_id: "1136"
-  department_id: "24"
-departments_subjects_034: 
-  subject_id: "6883"
-  department_id: "46"
-departments_subjects_060: 
-  subject_id: "8997"
-  department_id: "44"
-departments_subjects_115: 
-  subject_id: "1385"
-  department_id: "23"
-departments_subjects_141: 
-  subject_id: "8957"
-  department_id: "42"
-departments_subjects_222: 
-  subject_id: "1745"
-  department_id: "15"
-departments_subjects_330: 
-  subject_id: "7683"
-  department_id: "18"
-departments_subjects_304: 
-  subject_id: "19038"
-  department_id: "6"
-departments_subjects_223: 
-  subject_id: "7076"
-  department_id: "46"
-departments_subjects_009: 
-  subject_id: "19047"
-  department_id: "8"
-departments_subjects_035: 
+departments_subjects_302: 
   subject_id: "19000"
   department_id: "2"
-departments_subjects_061: 
-  subject_id: "6932"
-  department_id: "50"
-departments_subjects_116: 
-  subject_id: "19035"
-  department_id: "7"
-departments_subjects_142: 
-  subject_id: "8996"
-  department_id: "35"
-departments_subjects_331: 
-  subject_id: "19015"
-  department_id: "4"
-departments_subjects_305: 
-  subject_id: "7360"
-  department_id: "54"
-departments_subjects_250: 
-  subject_id: "8967"
-  department_id: "35"
-departments_subjects_224: 
-  subject_id: "7190"
-  department_id: "45"
-departments_subjects_036: 
+departments_subjects_221: 
+  subject_id: "6883"
+  department_id: "46"
+departments_subjects_007: 
   subject_id: "8952"
   department_id: "34"
-departments_subjects_062: 
-  subject_id: "7262"
-  department_id: "45"
-departments_subjects_117: 
-  subject_id: "8954"
-  department_id: "30"
-departments_subjects_143: 
-  subject_id: "1251"
-  department_id: "14"
-departments_subjects_332: 
-  subject_id: "19041"
-  department_id: "6"
-departments_subjects_306: 
-  subject_id: "8965"
-  department_id: "104"
-departments_subjects_251: 
-  subject_id: "1393"
-  department_id: "23"
-departments_subjects_225: 
-  subject_id: "1328"
-  department_id: "13"
-departments_subjects_037: 
+departments_subjects_033: 
   subject_id: "1365"
   department_id: "20"
-departments_subjects_063: 
-  subject_id: "19004"
-  department_id: "2"
-departments_subjects_118: 
-  subject_id: "8831"
-  department_id: "39"
-departments_subjects_144: 
-  subject_id: "1323"
-  department_id: "25"
-departments_subjects_170: 
-  subject_id: "1336"
-  department_id: "13"
-departments_subjects_333: 
-  subject_id: "7220"
-  department_id: "48"
-departments_subjects_252: 
-  subject_id: "19056"
-  department_id: "11"
-departments_subjects_226: 
-  subject_id: "1753"
-  department_id: "13"
-departments_subjects_038: 
+departments_subjects_114: 
   subject_id: "8989"
   department_id: "30"
-departments_subjects_064: 
-  subject_id: "19030"
-  department_id: "8"
-departments_subjects_090: 
-  subject_id: "19005"
-  department_id: "4"
-departments_subjects_119: 
-  subject_id: "7302"
-  department_id: "47"
-departments_subjects_145: 
-  subject_id: "1333"
-  department_id: "20"
-departments_subjects_171: 
-  subject_id: "7473"
-  department_id: "45"
-departments_subjects_360: 
-  subject_id: "1331"
-  department_id: "17"
-departments_subjects_334: 
-  subject_id: "7097"
-  department_id: "13"
-departments_subjects_307: 
-  subject_id: "8955"
-  department_id: "26"
-departments_subjects_253: 
-  subject_id: "7377"
-  department_id: "48"
-departments_subjects_227: 
-  subject_id: "1133"
-  department_id: "24"
-departments_subjects_039: 
+departments_subjects_140: 
   subject_id: "8849"
   department_id: "29"
-departments_subjects_065: 
-  subject_id: "6825"
-  department_id: "28"
-departments_subjects_091: 
-  subject_id: "19033"
-  department_id: "8"
-departments_subjects_146: 
-  subject_id: "7343"
-  department_id: "49"
-departments_subjects_172: 
-  subject_id: "7124"
-  department_id: "46"
-departments_subjects_361: 
-  subject_id: "19045"
-  department_id: "4"
-departments_subjects_335: 
-  subject_id: "1370"
-  department_id: "14"
-departments_subjects_308: 
-  subject_id: "8961"
-  department_id: "104"
-departments_subjects_280: 
-  subject_id: "19009"
-  department_id: "9"
-departments_subjects_254: 
-  subject_id: "1395"
-  department_id: "23"
-departments_subjects_228: 
-  subject_id: "1371"
-  department_id: "19"
-departments_subjects_066: 
-  subject_id: "8973"
-  department_id: "30"
-departments_subjects_092: 
-  subject_id: "19059"
-  department_id: "10"
-departments_subjects_147: 
-  subject_id: "1382"
-  department_id: "16"
-departments_subjects_173: 
-  subject_id: "7214"
-  department_id: "51"
-departments_subjects_336: 
-  subject_id: "1801"
-  department_id: "17"
-departments_subjects_309: 
-  subject_id: "7259"
-  department_id: "45"
-departments_subjects_281: 
-  subject_id: "7301"
-  department_id: "47"
-departments_subjects_255: 
-  subject_id: "19057"
-  department_id: "9"
-departments_subjects_229: 
-  subject_id: "19026"
-  department_id: "10"
-departments_subjects_067: 
-  subject_id: "1632"
-  department_id: "25"
-departments_subjects_093: 
-  subject_id: "8990"
-  department_id: "30"
-departments_subjects_148: 
-  subject_id: "5444"
-  department_id: "25"
-departments_subjects_174: 
-  subject_id: "19020"
-  department_id: "11"
-departments_subjects_337: 
-  subject_id: "1386"
-  department_id: "23"
-departments_subjects_282: 
-  subject_id: "2127"
-  department_id: "15"
-departments_subjects_256: 
-  subject_id: "7068"
-  department_id: "49"
-departments_subjects_068: 
-  subject_id: "7389"
-  department_id: "47"
-departments_subjects_094: 
-  subject_id: "7851"
-  department_id: "45"
-departments_subjects_149: 
-  subject_id: "8959"
-  department_id: "27"
-departments_subjects_175: 
-  subject_id: "8899"
-  department_id: "42"
-departments_subjects_338: 
-  subject_id: "1739"
-  department_id: "25"
-departments_subjects_283: 
-  subject_id: "8987"
-  department_id: "104"
-departments_subjects_257: 
-  subject_id: "1392"
-  department_id: "23"
-departments_subjects_069: 
-  subject_id: "7379"
-  department_id: "55"
-departments_subjects_095: 
-  subject_id: "8977"
-  department_id: "42"
-departments_subjects_176: 
-  subject_id: "7103"
-  department_id: "63"
-departments_subjects_339: 
-  subject_id: "19042"
-  department_id: "4"
-departments_subjects_284: 
-  subject_id: "5915"
-  department_id: "41"
-departments_subjects_258: 
-  subject_id: "7150"
-  department_id: "46"
-departments_subjects_096: 
-  subject_id: "7307"
-  department_id: "55"
-departments_subjects_177: 
-  subject_id: "8126"
-  department_id: "26"
-departments_subjects_285: 
-  subject_id: "7194"
-  department_id: "45"
-departments_subjects_259: 
-  subject_id: "7403"
-  department_id: "51"
-departments_subjects_097: 
-  subject_id: "6881"
-  department_id: "46"
-departments_subjects_178: 
-  subject_id: "7282"
-  department_id: "45"
-departments_subjects_286: 
-  subject_id: "7408"
-  department_id: "45"
-departments_subjects_098: 
-  subject_id: "1729"
-  department_id: "25"
-departments_subjects_179: 
-  subject_id: "1335"
-  department_id: "13"
-departments_subjects_287: 
-  subject_id: "19010"
-  department_id: "9"
-departments_subjects_099: 
-  subject_id: "1396"
-  department_id: "23"
-departments_subjects_288: 
-  subject_id: "7371"
-  department_id: "48"
-departments_subjects_289: 
-  subject_id: "1363"
-  department_id: "20"
-departments_subjects_100: 
-  subject_id: "19006"
-  department_id: "8"
-departments_subjects_020: 
-  subject_id: "7179"
-  department_id: "58"
-departments_subjects_101: 
-  subject_id: "7243"
-  department_id: "45"
-departments_subjects_021: 
-  subject_id: "7226"
-  department_id: "45"
-departments_subjects_102: 
-  subject_id: "8956"
-  department_id: "42"
-departments_subjects_022: 
-  subject_id: "7187"
-  department_id: "58"
-departments_subjects_103: 
-  subject_id: "8976"
-  department_id: "30"
-departments_subjects_210: 
-  subject_id: "19050"
-  department_id: "11"
-departments_subjects_023: 
-  subject_id: "1138"
-  department_id: "24"
-departments_subjects_104: 
-  subject_id: "6929"
-  department_id: "50"
-departments_subjects_130: 
-  subject_id: "1374"
-  department_id: "19"
-departments_subjects_211: 
-  subject_id: "7313"
-  department_id: "55"
-departments_subjects_024: 
-  subject_id: "1367"
-  department_id: "17"
-departments_subjects_050: 
-  subject_id: "1359"
-  department_id: "20"
-departments_subjects_105: 
-  subject_id: "7385"
-  department_id: "98"
-departments_subjects_131: 
-  subject_id: "1340"
-  department_id: "23"
-departments_subjects_212: 
-  subject_id: "8971"
-  department_id: "30"
-departments_subjects_320: 
-  subject_id: "8038"
-  department_id: "24"
-departments_subjects_051: 
-  subject_id: "7291"
-  department_id: "45"
-departments_subjects_106: 
-  subject_id: "1732"
-  department_id: "25"
-departments_subjects_132: 
-  subject_id: "7152"
-  department_id: "46"
-departments_subjects_213: 
-  subject_id: "7070"
-  department_id: "49"
-departments_subjects_025: 
-  subject_id: "1384"
-  department_id: "23"
-departments_subjects_321: 
-  subject_id: "19014"
-  department_id: "4"
-departments_subjects_240: 
-  subject_id: "7139"
-  department_id: "50"
-departments_subjects_052: 
-  subject_id: "8988"
-  department_id: "30"
-departments_subjects_107: 
-  subject_id: "1391"
-  department_id: "23"
-departments_subjects_133: 
-  subject_id: "7264"
-  department_id: "45"
-departments_subjects_214: 
-  subject_id: "7369"
-  department_id: "48"
-departments_subjects_026: 
-  subject_id: "8964"
-  department_id: "104"
-departments_subjects_322: 
-  subject_id: "19040"
-  department_id: "6"
-departments_subjects_241: 
-  subject_id: "1397"
-  department_id: "23"
-departments_subjects_108: 
-  subject_id: "19007"
-  department_id: "3"
-departments_subjects_134: 
-  subject_id: "2210"
-  department_id: "23"
-departments_subjects_160: 
-  subject_id: "19018"
-  department_id: "11"
-departments_subjects_215: 
-  subject_id: "7323"
-  department_id: "54"
-departments_subjects_027: 
-  subject_id: "1373"
-  department_id: "21"
-departments_subjects_053: 
-  subject_id: "1356"
-  department_id: "25"
-departments_subjects_323: 
-  subject_id: "7268"
-  department_id: "45"
-departments_subjects_242: 
-  subject_id: "19027"
-  department_id: "10"
-departments_subjects_080: 
-  subject_id: "7078"
-  department_id: "46"
-departments_subjects_135: 
-  subject_id: "8833"
-  department_id: "39"
-departments_subjects_161: 
-  subject_id: "8974"
-  department_id: "30"
-departments_subjects_216: 
-  subject_id: "6700"
-  department_id: "55"
-departments_subjects_028: 
-  subject_id: "5440"
-  department_id: "25"
-departments_subjects_054: 
-  subject_id: "7315"
-  department_id: "55"
-departments_subjects_350: 
-  subject_id: "7325"
-  department_id: "45"
-departments_subjects_324: 
-  subject_id: "7387"
-  department_id: "98"
-departments_subjects_243: 
-  subject_id: "19054"
-  department_id: "11"
-departments_subjects_109: 
-  subject_id: "19034"
-  department_id: "7"
-departments_subjects_136: 
-  subject_id: "3899"
-  department_id: "23"
-departments_subjects_162: 
-  subject_id: "7383"
-  department_id: "55"
-departments_subjects_217: 
-  subject_id: "1368"
-  department_id: "19"
-departments_subjects_029: 
-  subject_id: "7205"
-  department_id: "50"
-departments_subjects_055: 
-  subject_id: "19003"
-  department_id: "2"
-departments_subjects_081: 
-  subject_id: "19032"
-  department_id: "8"
-departments_subjects_351: 
-  subject_id: "7373"
-  department_id: "48"
-departments_subjects_325: 
-  subject_id: "1929"
-  department_id: "20"
-departments_subjects_270: 
-  subject_id: "7348"
-  department_id: "98"
-departments_subjects_244: 
-  subject_id: "7393"
-  department_id: "98"
-departments_subjects_137: 
-  subject_id: "1742"
-  department_id: "23"
-departments_subjects_163: 
-  subject_id: "7832"
-  department_id: "20"
-departments_subjects_218: 
-  subject_id: "19025"
-  department_id: "10"
-departments_subjects_056: 
-  subject_id: "19029"
-  department_id: "10"
-departments_subjects_082: 
-  subject_id: "19058"
-  department_id: "8"
-departments_subjects_352: 
-  subject_id: "1748"
-  department_id: "15"
-departments_subjects_326: 
-  subject_id: "6879"
-  department_id: "46"
-departments_subjects_271: 
-  subject_id: "1362"
-  department_id: "17"
-departments_subjects_245: 
-  subject_id: "7148"
-  department_id: "46"
-departments_subjects_138: 
-  subject_id: "1752"
-  department_id: "15"
-departments_subjects_164: 
-  subject_id: "7196"
-  department_id: "45"
-departments_subjects_190: 
-  subject_id: "19022"
-  department_id: "10"
-departments_subjects_057: 
-  subject_id: "8823"
-  department_id: "39"
-departments_subjects_083: 
-  subject_id: "8994"
-  department_id: "104"
-departments_subjects_353: 
-  subject_id: "1736"
-  department_id: "25"
-departments_subjects_327: 
-  subject_id: "5879"
-  department_id: "41"
-departments_subjects_272: 
-  subject_id: "7304"
-  department_id: "47"
-departments_subjects_246: 
-  subject_id: "8893"
-  department_id: "34"
-departments_subjects_165: 
-  subject_id: "7141"
-  department_id: "63"
-departments_subjects_191: 
-  subject_id: "19048"
-  department_id: "7"
-departments_subjects_219: 
-  subject_id: "19051"
-  department_id: "10"
-departments_subjects_058: 
-  subject_id: "7224"
-  department_id: "45"
-departments_subjects_084: 
-  subject_id: "8856"
-  department_id: "101"
-departments_subjects_139: 
-  subject_id: "1730"
-  department_id: "25"
-departments_subjects_354: 
-  subject_id: "19017"
-  department_id: "11"
-departments_subjects_328: 
-  subject_id: "8991"
-  department_id: "36"
-departments_subjects_273: 
-  subject_id: "7082"
-  department_id: "46"
-departments_subjects_247: 
-  subject_id: "1399"
-  department_id: "23"
-departments_subjects_166: 
-  subject_id: "7970"
-  department_id: "46"
-departments_subjects_192: 
-  subject_id: "1339"
-  department_id: "13"
-departments_subjects_059: 
-  subject_id: "4945"
-  department_id: "25"
-departments_subjects_085: 
-  subject_id: "7293"
-  department_id: "45"
-departments_subjects_355: 
-  subject_id: "19044"
-  department_id: "4"
-departments_subjects_274: 
-  subject_id: "19008"
-  department_id: "3"
-departments_subjects_248: 
-  subject_id: "19055"
-  department_id: "6"
-departments_subjects_193: 
-  subject_id: "8984"
-  department_id: "35"
-departments_subjects_086: 
-  subject_id: "8978"
-  department_id: "29"
-departments_subjects_167: 
-  subject_id: "19019"
-  department_id: "11"
-departments_subjects_356: 
-  subject_id: "1337"
-  department_id: "13"
-departments_subjects_329: 
-  subject_id: "1139"
-  department_id: "24"
-departments_subjects_275: 
-  subject_id: "7319"
-  department_id: "54"
-departments_subjects_249: 
-  subject_id: "7062"
-  department_id: "49"
-departments_subjects_194: 
-  subject_id: "8960"
-  department_id: "30"
-departments_subjects_087: 
-  subject_id: "7287"
-  department_id: "45"
-departments_subjects_168: 
-  subject_id: "8975"
-  department_id: "28"
-departments_subjects_357: 
-  subject_id: "7391"
-  department_id: "98"
-departments_subjects_276: 
-  subject_id: "8970"
-  department_id: "42"
-departments_subjects_088: 
-  subject_id: "6933"
-  department_id: "50"
-departments_subjects_169: 
-  subject_id: "1372"
-  department_id: "14"
-departments_subjects_195: 
-  subject_id: "8998"
-  department_id: "28"
-departments_subjects_358: 
-  subject_id: "1135"
-  department_id: "24"
-departments_subjects_277: 
-  subject_id: "7309"
-  department_id: "55"
-departments_subjects_089: 
-  subject_id: "1134"
-  department_id: "24"
-departments_subjects_196: 
-  subject_id: "7317"
-  department_id: "54"
-departments_subjects_359: 
-  subject_id: "3633"
-  department_id: "21"
-departments_subjects_278: 
-  subject_id: "7081"
-  department_id: "46"
-departments_subjects_197: 
-  subject_id: "7341"
-  department_id: "49"
-departments_subjects_279: 
-  subject_id: "7295"
-  department_id: "50"
-departments_subjects_198: 
-  subject_id: "7237"
-  department_id: "51"
-departments_subjects_199: 
-  subject_id: "1751"
-  department_id: "15"
-departments_subjects_010: 
-  subject_id: "7066"
-  department_id: "49"
-departments_subjects_011: 
-  subject_id: "1137"
-  department_id: "24"
-departments_subjects_012: 
-  subject_id: "1750"
-  department_id: "15"
-departments_subjects_200: 
-  subject_id: "19023"
-  department_id: "10"
-departments_subjects_013: 
-  subject_id: "7364"
-  department_id: "48"
-departments_subjects_120: 
-  subject_id: "1758"
-  department_id: "15"
-departments_subjects_201: 
-  subject_id: "19049"
-  department_id: "7"
-departments_subjects_014: 
-  subject_id: "1351"
-  department_id: "17"
-departments_subjects_040: 
+departments_subjects_303: 
   subject_id: "19001"
   department_id: "2"
-departments_subjects_121: 
-  subject_id: "1390"
-  department_id: "23"
-departments_subjects_202: 
-  subject_id: "8355"
-  department_id: "61"
-departments_subjects_310: 
-  subject_id: "1747"
-  department_id: "15"
-departments_subjects_015: 
-  subject_id: "1376"
-  department_id: "20"
-departments_subjects_041: 
+departments_subjects_008: 
   subject_id: "7257"
   department_id: "45"
-departments_subjects_122: 
-  subject_id: "19036"
-  department_id: "7"
-departments_subjects_203: 
-  subject_id: "8874"
-  department_id: "44"
-departments_subjects_311: 
-  subject_id: "19013"
-  department_id: "5"
-departments_subjects_230: 
-  subject_id: "19052"
-  department_id: "7"
-departments_subjects_016: 
-  subject_id: "1358"
-  department_id: "25"
-departments_subjects_042: 
+departments_subjects_034: 
   subject_id: "1381"
   department_id: "16"
-departments_subjects_123: 
-  subject_id: "8966"
-  department_id: "104"
-departments_subjects_204: 
-  subject_id: "8993"
-  department_id: "39"
-departments_subjects_312: 
-  subject_id: "19039"
-  department_id: "6"
-departments_subjects_231: 
-  subject_id: "7367"
-  department_id: "48"
-departments_subjects_017: 
-  subject_id: "8951"
-  department_id: "34"
-departments_subjects_043: 
+departments_subjects_060: 
   subject_id: "8089"
   department_id: "61"
-departments_subjects_124: 
-  subject_id: "7143"
-  department_id: "54"
-departments_subjects_150: 
-  subject_id: "7375"
-  department_id: "48"
-departments_subjects_205: 
-  subject_id: "7366"
-  department_id: "48"
-departments_subjects_313: 
-  subject_id: "7431"
-  department_id: "98"
-departments_subjects_232: 
-  subject_id: "5913"
-  department_id: "41"
-departments_subjects_018: 
-  subject_id: "1355"
-  department_id: "18"
-departments_subjects_044: 
+departments_subjects_115: 
   subject_id: "7094"
   department_id: "53"
-departments_subjects_070: 
-  subject_id: "1375"
-  department_id: "20"
-departments_subjects_125: 
-  subject_id: "1749"
-  department_id: "15"
-departments_subjects_151: 
-  subject_id: "1380"
-  department_id: "16"
-departments_subjects_206: 
-  subject_id: "6935"
-  department_id: "50"
-departments_subjects_340: 
-  subject_id: "6934"
-  department_id: "50"
-departments_subjects_314: 
-  subject_id: "7245"
-  department_id: "45"
-departments_subjects_233: 
-  subject_id: "7101"
-  department_id: "63"
-departments_subjects_019: 
-  subject_id: "8891"
-  department_id: "40"
-departments_subjects_045: 
+departments_subjects_141: 
   subject_id: "4946"
   department_id: "25"
-departments_subjects_071: 
-  subject_id: "1338"
-  department_id: "13"
-departments_subjects_126: 
-  subject_id: "1389"
-  department_id: "23"
-departments_subjects_152: 
-  subject_id: "8995"
-  department_id: "30"
-departments_subjects_207: 
-  subject_id: "7266"
-  department_id: "45"
-departments_subjects_341: 
-  subject_id: "7296"
-  department_id: "50"
-departments_subjects_315: 
-  subject_id: "1364"
-  department_id: "20"
-departments_subjects_260: 
-  subject_id: "7249"
-  department_id: "45"
-departments_subjects_234: 
-  subject_id: "7395"
-  department_id: "98"
-departments_subjects_046: 
+departments_subjects_222: 
   subject_id: "1377"
   department_id: "20"
-departments_subjects_072: 
-  subject_id: "19031"
-  department_id: "8"
-departments_subjects_127: 
-  subject_id: "19037"
-  department_id: "6"
-departments_subjects_153: 
-  subject_id: "5917"
-  department_id: "41"
-departments_subjects_342: 
-  subject_id: "1760"
-  department_id: "15"
-departments_subjects_316: 
-  subject_id: "8820"
-  department_id: "39"
-departments_subjects_261: 
-  subject_id: "7217"
-  department_id: "51"
-departments_subjects_235: 
-  subject_id: "1366"
-  department_id: "19"
-departments_subjects_047: 
-  subject_id: "19002"
-  department_id: "2"
-departments_subjects_073: 
-  subject_id: "8958"
-  department_id: "28"
-departments_subjects_128: 
-  subject_id: "5911"
-  department_id: "41"
-departments_subjects_154: 
-  subject_id: "7159"
-  department_id: "61"
-departments_subjects_180: 
-  subject_id: "7064"
-  department_id: "49"
-departments_subjects_208: 
-  subject_id: "1387"
-  department_id: "23"
-departments_subjects_343: 
-  subject_id: "7241"
-  department_id: "45"
-departments_subjects_317: 
-  subject_id: "8999"
-  department_id: "34"
-departments_subjects_262: 
-  subject_id: "7229"
-  department_id: "45"
-departments_subjects_236: 
-  subject_id: "19053"
-  department_id: "8"
-departments_subjects_048: 
+departments_subjects_330: 
   subject_id: "19028"
   department_id: "10"
-departments_subjects_074: 
-  subject_id: "8972"
-  department_id: "29"
-departments_subjects_129: 
-  subject_id: "7222"
-  department_id: "48"
-departments_subjects_155: 
-  subject_id: "7397"
-  department_id: "47"
-departments_subjects_181: 
-  subject_id: "7002"
-  department_id: "53"
-departments_subjects_209: 
-  subject_id: "19024"
-  department_id: "10"
-departments_subjects_344: 
-  subject_id: "1735"
-  department_id: "25"
-departments_subjects_263: 
-  subject_id: "7126"
-  department_id: "46"
-departments_subjects_237: 
-  subject_id: "7121"
-  department_id: "46"
-departments_subjects_049: 
+departments_subjects_304: 
+  subject_id: "19002"
+  department_id: "2"
+departments_subjects_223: 
+  subject_id: "7315"
+  department_id: "55"
+departments_subjects_009: 
   subject_id: "1383"
   department_id: "16"
-departments_subjects_075: 
+departments_subjects_035: 
+  subject_id: "1359"
+  department_id: "20"
+departments_subjects_061: 
+  subject_id: "7291"
+  department_id: "45"
+departments_subjects_116: 
+  subject_id: "8988"
+  department_id: "30"
+departments_subjects_142: 
+  subject_id: "1356"
+  department_id: "25"
+departments_subjects_331: 
+  subject_id: "19029"
+  department_id: "10"
+departments_subjects_305: 
+  subject_id: "19003"
+  department_id: "2"
+departments_subjects_250: 
+  subject_id: "7262"
+  department_id: "45"
+departments_subjects_224: 
+  subject_id: "6932"
+  department_id: "50"
+departments_subjects_036: 
+  subject_id: "8823"
+  department_id: "39"
+departments_subjects_062: 
+  subject_id: "7224"
+  department_id: "45"
+departments_subjects_117: 
+  subject_id: "4945"
+  department_id: "25"
+departments_subjects_143: 
+  subject_id: "8997"
+  department_id: "44"
+departments_subjects_332: 
+  subject_id: "19030"
+  department_id: "8"
+departments_subjects_306: 
+  subject_id: "19004"
+  department_id: "2"
+departments_subjects_251: 
+  subject_id: "1338"
+  department_id: "13"
+departments_subjects_225: 
+  subject_id: "1375"
+  department_id: "20"
+departments_subjects_037: 
+  subject_id: "6825"
+  department_id: "28"
+departments_subjects_063: 
+  subject_id: "8973"
+  department_id: "30"
+departments_subjects_118: 
+  subject_id: "1632"
+  department_id: "25"
+departments_subjects_144: 
+  subject_id: "7389"
+  department_id: "47"
+departments_subjects_170: 
+  subject_id: "7379"
+  department_id: "55"
+departments_subjects_333: 
+  subject_id: "19031"
+  department_id: "8"
+departments_subjects_252: 
+  subject_id: "7078"
+  department_id: "46"
+departments_subjects_226: 
+  subject_id: "7358"
+  department_id: "50"
+departments_subjects_038: 
+  subject_id: "8958"
+  department_id: "28"
+departments_subjects_064: 
+  subject_id: "8972"
+  department_id: "29"
+departments_subjects_090: 
   subject_id: "8980"
   department_id: "30"
-departments_subjects_156: 
-  subject_id: "8851"
-  department_id: "27"
-departments_subjects_182: 
-  subject_id: "19021"
-  department_id: "10"
-departments_subjects_345: 
-  subject_id: "2204"
-  department_id: "15"
-departments_subjects_318: 
-  subject_id: "8985"
-  department_id: "34"
-departments_subjects_290: 
-  subject_id: "7169"
-  department_id: "61"
-departments_subjects_264: 
-  subject_id: "1352"
-  department_id: "17"
-departments_subjects_238: 
-  subject_id: "8981"
-  department_id: "29"
-departments_subjects_076: 
+departments_subjects_119: 
   subject_id: "7185"
   department_id: "58"
-departments_subjects_157: 
-  subject_id: "8901"
-  department_id: "42"
-departments_subjects_183: 
-  subject_id: "8969"
-  department_id: "101"
-departments_subjects_346: 
-  subject_id: "19016"
-  department_id: "11"
-departments_subjects_319: 
-  subject_id: "7145"
-  department_id: "54"
-departments_subjects_291: 
-  subject_id: "8983"
-  department_id: "29"
-departments_subjects_265: 
-  subject_id: "7181"
-  department_id: "58"
-departments_subjects_239: 
-  subject_id: "7321"
-  department_id: "54"
-departments_subjects_077: 
+departments_subjects_145: 
   subject_id: "1159"
   department_id: "14"
-departments_subjects_158: 
-  subject_id: "7177"
-  department_id: "58"
-departments_subjects_184: 
-  subject_id: "8825"
-  department_id: "39"
-departments_subjects_347: 
-  subject_id: "19043"
-  department_id: "10"
-departments_subjects_292: 
-  subject_id: "8992"
-  department_id: "39"
-departments_subjects_266: 
-  subject_id: "1330"
-  department_id: "13"
-departments_subjects_078: 
+departments_subjects_171: 
   subject_id: "1334"
   department_id: "13"
-departments_subjects_159: 
+departments_subjects_360: 
+  subject_id: "19058"
+  department_id: "8"
+departments_subjects_334: 
+  subject_id: "19032"
+  department_id: "8"
+departments_subjects_307: 
+  subject_id: "19005"
+  department_id: "4"
+departments_subjects_253: 
+  subject_id: "1134"
+  department_id: "24"
+departments_subjects_227: 
+  subject_id: "6933"
+  department_id: "50"
+departments_subjects_039: 
+  subject_id: "8994"
+  department_id: "104"
+departments_subjects_065: 
+  subject_id: "8856"
+  department_id: "101"
+departments_subjects_091: 
+  subject_id: "7293"
+  department_id: "45"
+departments_subjects_146: 
+  subject_id: "8978"
+  department_id: "29"
+departments_subjects_172: 
+  subject_id: "7287"
+  department_id: "45"
+departments_subjects_361: 
+  subject_id: "19059"
+  department_id: "10"
+departments_subjects_335: 
+  subject_id: "19033"
+  department_id: "8"
+departments_subjects_308: 
+  subject_id: "19006"
+  department_id: "8"
+departments_subjects_280: 
+  subject_id: "1396"
+  department_id: "23"
+departments_subjects_254: 
+  subject_id: "1729"
+  department_id: "25"
+departments_subjects_228: 
+  subject_id: "6881"
+  department_id: "46"
+departments_subjects_066: 
+  subject_id: "8990"
+  department_id: "30"
+departments_subjects_092: 
+  subject_id: "7851"
+  department_id: "45"
+departments_subjects_147: 
+  subject_id: "8977"
+  department_id: "42"
+departments_subjects_173: 
+  subject_id: "7307"
+  department_id: "55"
+departments_subjects_336: 
+  subject_id: "19034"
+  department_id: "7"
+departments_subjects_309: 
+  subject_id: "19007"
+  department_id: "3"
+departments_subjects_281: 
+  subject_id: "1391"
+  department_id: "23"
+departments_subjects_255: 
+  subject_id: "1732"
+  department_id: "25"
+departments_subjects_229: 
+  subject_id: "7385"
+  department_id: "98"
+departments_subjects_067: 
+  subject_id: "7243"
+  department_id: "45"
+departments_subjects_093: 
+  subject_id: "8956"
+  department_id: "42"
+departments_subjects_148: 
+  subject_id: "8976"
+  department_id: "30"
+departments_subjects_174: 
+  subject_id: "6929"
+  department_id: "50"
+departments_subjects_337: 
+  subject_id: "19035"
+  department_id: "7"
+departments_subjects_282: 
+  subject_id: "1385"
+  department_id: "23"
+departments_subjects_256: 
+  subject_id: "1733"
+  department_id: "25"
+departments_subjects_068: 
+  subject_id: "7074"
+  department_id: "46"
+departments_subjects_094: 
+  subject_id: "7060"
+  department_id: "46"
+departments_subjects_149: 
+  subject_id: "8986"
+  department_id: "36"
+departments_subjects_175: 
+  subject_id: "7289"
+  department_id: "45"
+departments_subjects_338: 
+  subject_id: "19036"
+  department_id: "7"
+departments_subjects_283: 
+  subject_id: "1390"
+  department_id: "23"
+departments_subjects_257: 
+  subject_id: "1758"
+  department_id: "15"
+departments_subjects_069: 
+  subject_id: "8954"
+  department_id: "30"
+departments_subjects_095: 
+  subject_id: "8831"
+  department_id: "39"
+departments_subjects_176: 
+  subject_id: "7302"
+  department_id: "47"
+departments_subjects_339: 
+  subject_id: "19037"
+  department_id: "6"
+departments_subjects_284: 
+  subject_id: "1389"
+  department_id: "23"
+departments_subjects_258: 
+  subject_id: "1749"
+  department_id: "15"
+departments_subjects_096: 
+  subject_id: "8966"
+  department_id: "104"
+departments_subjects_177: 
+  subject_id: "7143"
+  department_id: "54"
+departments_subjects_285: 
+  subject_id: "1340"
+  department_id: "23"
+departments_subjects_259: 
+  subject_id: "1374"
+  department_id: "19"
+departments_subjects_097: 
+  subject_id: "5911"
+  department_id: "41"
+departments_subjects_178: 
+  subject_id: "7222"
+  department_id: "48"
+departments_subjects_286: 
+  subject_id: "2210"
+  department_id: "23"
+departments_subjects_098: 
+  subject_id: "7152"
+  department_id: "46"
+departments_subjects_179: 
+  subject_id: "7264"
+  department_id: "45"
+departments_subjects_287: 
+  subject_id: "3899"
+  department_id: "23"
+departments_subjects_099: 
+  subject_id: "8833"
+  department_id: "39"
+departments_subjects_288: 
+  subject_id: "1742"
+  department_id: "23"
+departments_subjects_289: 
+  subject_id: "1752"
+  department_id: "15"
+departments_subjects_100: 
+  subject_id: "1730"
+  department_id: "25"
+departments_subjects_020: 
+  subject_id: "8953"
+  department_id: "34"
+departments_subjects_101: 
+  subject_id: "8957"
+  department_id: "42"
+departments_subjects_021: 
+  subject_id: "8996"
+  department_id: "35"
+departments_subjects_102: 
+  subject_id: "1251"
+  department_id: "14"
+departments_subjects_022: 
+  subject_id: "1323"
+  department_id: "25"
+departments_subjects_103: 
+  subject_id: "1333"
+  department_id: "20"
+departments_subjects_210: 
+  subject_id: "7343"
+  department_id: "49"
+departments_subjects_023: 
+  subject_id: "1382"
+  department_id: "16"
+departments_subjects_104: 
+  subject_id: "5444"
+  department_id: "25"
+departments_subjects_130: 
+  subject_id: "8959"
+  department_id: "27"
+departments_subjects_211: 
+  subject_id: "7375"
+  department_id: "48"
+departments_subjects_024: 
+  subject_id: "1380"
+  department_id: "16"
+departments_subjects_050: 
+  subject_id: "8995"
+  department_id: "30"
+departments_subjects_105: 
+  subject_id: "5917"
+  department_id: "41"
+departments_subjects_131: 
+  subject_id: "7159"
+  department_id: "61"
+departments_subjects_212: 
+  subject_id: "7397"
+  department_id: "47"
+departments_subjects_320: 
+  subject_id: "19018"
+  department_id: "11"
+departments_subjects_051: 
+  subject_id: "8851"
+  department_id: "27"
+departments_subjects_106: 
+  subject_id: "8901"
+  department_id: "42"
+departments_subjects_132: 
+  subject_id: "7177"
+  department_id: "58"
+departments_subjects_213: 
   subject_id: "1728"
   department_id: "25"
-departments_subjects_185: 
+departments_subjects_025: 
+  subject_id: "8974"
+  department_id: "30"
+departments_subjects_321: 
+  subject_id: "19019"
+  department_id: "11"
+departments_subjects_240: 
+  subject_id: "7970"
+  department_id: "46"
+departments_subjects_052: 
+  subject_id: "7383"
+  department_id: "55"
+departments_subjects_107: 
+  subject_id: "7832"
+  department_id: "20"
+departments_subjects_133: 
+  subject_id: "7196"
+  department_id: "45"
+departments_subjects_214: 
+  subject_id: "7141"
+  department_id: "63"
+departments_subjects_026: 
+  subject_id: "8975"
+  department_id: "28"
+departments_subjects_322: 
+  subject_id: "19020"
+  department_id: "11"
+departments_subjects_241: 
+  subject_id: "7214"
+  department_id: "51"
+departments_subjects_108: 
+  subject_id: "1372"
+  department_id: "14"
+departments_subjects_134: 
+  subject_id: "1336"
+  department_id: "13"
+departments_subjects_160: 
+  subject_id: "7473"
+  department_id: "45"
+departments_subjects_215: 
+  subject_id: "7124"
+  department_id: "46"
+departments_subjects_027: 
+  subject_id: "8899"
+  department_id: "42"
+departments_subjects_053: 
+  subject_id: "7103"
+  department_id: "63"
+departments_subjects_323: 
+  subject_id: "19021"
+  department_id: "10"
+departments_subjects_242: 
+  subject_id: "7002"
+  department_id: "53"
+departments_subjects_080: 
+  subject_id: "8126"
+  department_id: "26"
+departments_subjects_135: 
+  subject_id: "7282"
+  department_id: "45"
+departments_subjects_161: 
+  subject_id: "1335"
+  department_id: "13"
+departments_subjects_216: 
+  subject_id: "7064"
+  department_id: "49"
+departments_subjects_028: 
+  subject_id: "8969"
+  department_id: "101"
+departments_subjects_054: 
+  subject_id: "8825"
+  department_id: "39"
+departments_subjects_350: 
+  subject_id: "19048"
+  department_id: "7"
+departments_subjects_324: 
+  subject_id: "19022"
+  department_id: "10"
+departments_subjects_243: 
+  subject_id: "7381"
+  department_id: "55"
+departments_subjects_109: 
   subject_id: "7299"
   department_id: "47"
+departments_subjects_136: 
+  subject_id: "8979"
+  department_id: "30"
+departments_subjects_162: 
+  subject_id: "6696"
+  department_id: "55"
+departments_subjects_217: 
+  subject_id: "7285"
+  department_id: "45"
+departments_subjects_029: 
+  subject_id: "1339"
+  department_id: "13"
+departments_subjects_055: 
+  subject_id: "8984"
+  department_id: "35"
+departments_subjects_081: 
+  subject_id: "8960"
+  department_id: "30"
+departments_subjects_351: 
+  subject_id: "19049"
+  department_id: "7"
+departments_subjects_325: 
+  subject_id: "19023"
+  department_id: "10"
+departments_subjects_270: 
+  subject_id: "1751"
+  department_id: "15"
+departments_subjects_244: 
+  subject_id: "7237"
+  department_id: "51"
+departments_subjects_137: 
+  subject_id: "8998"
+  department_id: "28"
+departments_subjects_163: 
+  subject_id: "7317"
+  department_id: "54"
+departments_subjects_218: 
+  subject_id: "7341"
+  department_id: "49"
+departments_subjects_056: 
+  subject_id: "8355"
+  department_id: "61"
+departments_subjects_082: 
+  subject_id: "8874"
+  department_id: "44"
+departments_subjects_352: 
+  subject_id: "19050"
+  department_id: "11"
+departments_subjects_326: 
+  subject_id: "19024"
+  department_id: "10"
+departments_subjects_271: 
+  subject_id: "1387"
+  department_id: "23"
+departments_subjects_245: 
+  subject_id: "7266"
+  department_id: "45"
+departments_subjects_138: 
+  subject_id: "8993"
+  department_id: "39"
+departments_subjects_164: 
+  subject_id: "7366"
+  department_id: "48"
+departments_subjects_190: 
+  subject_id: "6935"
+  department_id: "50"
+departments_subjects_057: 
+  subject_id: "7313"
+  department_id: "55"
+departments_subjects_083: 
+  subject_id: "8971"
+  department_id: "30"
+departments_subjects_353: 
+  subject_id: "19051"
+  department_id: "10"
+departments_subjects_327: 
+  subject_id: "19025"
+  department_id: "10"
+departments_subjects_272: 
+  subject_id: "1368"
+  department_id: "19"
+departments_subjects_246: 
+  subject_id: "6700"
+  department_id: "55"
+departments_subjects_165: 
+  subject_id: "7070"
+  department_id: "49"
+departments_subjects_191: 
+  subject_id: "7369"
+  department_id: "48"
+departments_subjects_219: 
+  subject_id: "7323"
+  department_id: "54"
+departments_subjects_058: 
+  subject_id: "8091"
+  department_id: "61"
+departments_subjects_084: 
+  subject_id: "8968"
+  department_id: "30"
+departments_subjects_139: 
+  subject_id: "1745"
+  department_id: "15"
+departments_subjects_354: 
+  subject_id: "19052"
+  department_id: "7"
+departments_subjects_328: 
+  subject_id: "19026"
+  department_id: "10"
+departments_subjects_273: 
+  subject_id: "1371"
+  department_id: "19"
+departments_subjects_247: 
+  subject_id: "1133"
+  department_id: "24"
+departments_subjects_166: 
+  subject_id: "1753"
+  department_id: "13"
+departments_subjects_192: 
+  subject_id: "1328"
+  department_id: "13"
+departments_subjects_059: 
+  subject_id: "7190"
+  department_id: "45"
+departments_subjects_085: 
+  subject_id: "7076"
+  department_id: "46"
+departments_subjects_355: 
+  subject_id: "19053"
+  department_id: "8"
+departments_subjects_274: 
+  subject_id: "1366"
+  department_id: "19"
+departments_subjects_248: 
+  subject_id: "7395"
+  department_id: "98"
+departments_subjects_193: 
+  subject_id: "7101"
+  department_id: "63"
+departments_subjects_086: 
+  subject_id: "5913"
+  department_id: "41"
+departments_subjects_167: 
+  subject_id: "7367"
+  department_id: "48"
+departments_subjects_356: 
+  subject_id: "19054"
+  department_id: "11"
+departments_subjects_329: 
+  subject_id: "19027"
+  department_id: "10"
+departments_subjects_275: 
+  subject_id: "1397"
+  department_id: "23"
+departments_subjects_249: 
+  subject_id: "7139"
+  department_id: "50"
+departments_subjects_194: 
+  subject_id: "7321"
+  department_id: "54"
+departments_subjects_087: 
+  subject_id: "8981"
+  department_id: "29"
+departments_subjects_168: 
+  subject_id: "7121"
+  department_id: "46"
+departments_subjects_357: 
+  subject_id: "19055"
+  department_id: "6"
+departments_subjects_276: 
+  subject_id: "1399"
+  department_id: "23"
+departments_subjects_088: 
+  subject_id: "8893"
+  department_id: "34"
+departments_subjects_169: 
+  subject_id: "7148"
+  department_id: "46"
+departments_subjects_195: 
+  subject_id: "7393"
+  department_id: "98"
+departments_subjects_358: 
+  subject_id: "19056"
+  department_id: "11"
+departments_subjects_277: 
+  subject_id: "1393"
+  department_id: "23"
+departments_subjects_089: 
+  subject_id: "8967"
+  department_id: "35"
+departments_subjects_196: 
+  subject_id: "7062"
+  department_id: "49"
+departments_subjects_359: 
+  subject_id: "19057"
+  department_id: "9"
+departments_subjects_278: 
+  subject_id: "1395"
+  department_id: "23"
+departments_subjects_197: 
+  subject_id: "7377"
+  department_id: "48"
+departments_subjects_279: 
+  subject_id: "1392"
+  department_id: "23"
+departments_subjects_198: 
+  subject_id: "7068"
+  department_id: "49"
+departments_subjects_199: 
+  subject_id: "7150"
+  department_id: "46"
+departments_subjects_010: 
+  subject_id: "7403"
+  department_id: "51"
+departments_subjects_011: 
+  subject_id: "7249"
+  department_id: "45"
+departments_subjects_012: 
+  subject_id: "7229"
+  department_id: "45"
+departments_subjects_200: 
+  subject_id: "7217"
+  department_id: "51"
+departments_subjects_013: 
+  subject_id: "7181"
+  department_id: "58"
+departments_subjects_120: 
+  subject_id: "1352"
+  department_id: "17"
+departments_subjects_201: 
+  subject_id: "7126"
+  department_id: "46"
+departments_subjects_014: 
+  subject_id: "7183"
+  department_id: "58"
+departments_subjects_040: 
+  subject_id: "7175"
+  department_id: "58"
+departments_subjects_121: 
+  subject_id: "7167"
+  department_id: "61"
+departments_subjects_202: 
+  subject_id: "1330"
+  department_id: "13"
+departments_subjects_310: 
+  subject_id: "19008"
+  department_id: "3"
+departments_subjects_015: 
+  subject_id: "7082"
+  department_id: "46"
+departments_subjects_041: 
+  subject_id: "7304"
+  department_id: "47"
+departments_subjects_122: 
+  subject_id: "1362"
+  department_id: "17"
+departments_subjects_203: 
+  subject_id: "7348"
+  department_id: "98"
+departments_subjects_311: 
+  subject_id: "19009"
+  department_id: "9"
+departments_subjects_230: 
+  subject_id: "7295"
+  department_id: "50"
+departments_subjects_016: 
+  subject_id: "7081"
+  department_id: "46"
+departments_subjects_042: 
+  subject_id: "7309"
+  department_id: "55"
+departments_subjects_123: 
+  subject_id: "8970"
+  department_id: "42"
+departments_subjects_204: 
+  subject_id: "7319"
+  department_id: "54"
+departments_subjects_312: 
+  subject_id: "19010"
+  department_id: "9"
+departments_subjects_231: 
+  subject_id: "7408"
+  department_id: "45"
+departments_subjects_017: 
+  subject_id: "7194"
+  department_id: "45"
+departments_subjects_043: 
+  subject_id: "5915"
+  department_id: "41"
+departments_subjects_124: 
+  subject_id: "8987"
+  department_id: "104"
+departments_subjects_150: 
+  subject_id: "2127"
+  department_id: "15"
+departments_subjects_205: 
+  subject_id: "7301"
+  department_id: "47"
+departments_subjects_313: 
+  subject_id: "19011"
+  department_id: "9"
+departments_subjects_232: 
+  subject_id: "7406"
+  department_id: "45"
+departments_subjects_018: 
+  subject_id: "8963"
+  department_id: "104"
+departments_subjects_044: 
+  subject_id: "8992"
+  department_id: "39"
+departments_subjects_070: 
+  subject_id: "8983"
+  department_id: "29"
+departments_subjects_125: 
+  subject_id: "7169"
+  department_id: "61"
+departments_subjects_151: 
+  subject_id: "1363"
+  department_id: "20"
+departments_subjects_206: 
+  subject_id: "7371"
+  department_id: "48"
+departments_subjects_340: 
+  subject_id: "19038"
+  department_id: "6"
+departments_subjects_314: 
+  subject_id: "19012"
+  department_id: "9"
+departments_subjects_233: 
+  subject_id: "7230"
+  department_id: "51"
+departments_subjects_019: 
+  subject_id: "8962"
+  department_id: "104"
+departments_subjects_045: 
+  subject_id: "7311"
+  department_id: "55"
+departments_subjects_071: 
+  subject_id: "8982"
+  department_id: "35"
+departments_subjects_126: 
+  subject_id: "1357"
+  department_id: "25"
+departments_subjects_152: 
+  subject_id: "6698"
+  department_id: "55"
+departments_subjects_207: 
+  subject_id: "1369"
+  department_id: "14"
+departments_subjects_341: 
+  subject_id: "19039"
+  department_id: "6"
+departments_subjects_315: 
+  subject_id: "19013"
+  department_id: "5"
+departments_subjects_260: 
+  subject_id: "1747"
+  department_id: "15"
+departments_subjects_234: 
+  subject_id: "7259"
+  department_id: "45"
+departments_subjects_046: 
+  subject_id: "8961"
+  department_id: "104"
+departments_subjects_072: 
+  subject_id: "8955"
+  department_id: "26"
+departments_subjects_127: 
+  subject_id: "8965"
+  department_id: "104"
+departments_subjects_153: 
+  subject_id: "7360"
+  department_id: "54"
+departments_subjects_342: 
+  subject_id: "19040"
+  department_id: "6"
+departments_subjects_316: 
+  subject_id: "19014"
+  department_id: "4"
+departments_subjects_261: 
+  subject_id: "8038"
+  department_id: "24"
+departments_subjects_235: 
+  subject_id: "7145"
+  department_id: "54"
+departments_subjects_047: 
+  subject_id: "8985"
+  department_id: "34"
+departments_subjects_073: 
+  subject_id: "8999"
+  department_id: "34"
+departments_subjects_128: 
+  subject_id: "8820"
+  department_id: "39"
+departments_subjects_154: 
+  subject_id: "1364"
+  department_id: "20"
+departments_subjects_180: 
+  subject_id: "7245"
+  department_id: "45"
+departments_subjects_208: 
+  subject_id: "7431"
+  department_id: "98"
+departments_subjects_343: 
+  subject_id: "19041"
+  department_id: "6"
+departments_subjects_317: 
+  subject_id: "19015"
+  department_id: "4"
+departments_subjects_262: 
+  subject_id: "7683"
+  department_id: "18"
+departments_subjects_236: 
+  subject_id: "1139"
+  department_id: "24"
+departments_subjects_048: 
+  subject_id: "8991"
+  department_id: "36"
+departments_subjects_074: 
+  subject_id: "5879"
+  department_id: "41"
+departments_subjects_129: 
+  subject_id: "6879"
+  department_id: "46"
+departments_subjects_155: 
+  subject_id: "1929"
+  department_id: "20"
+departments_subjects_181: 
+  subject_id: "7387"
+  department_id: "98"
+departments_subjects_209: 
+  subject_id: "7268"
+  department_id: "45"
+departments_subjects_344: 
+  subject_id: "19042"
+  department_id: "4"
+departments_subjects_263: 
+  subject_id: "1739"
+  department_id: "25"
+departments_subjects_237: 
+  subject_id: "1386"
+  department_id: "23"
+departments_subjects_049: 
+  subject_id: "1801"
+  department_id: "17"
+departments_subjects_075: 
+  subject_id: "1370"
+  department_id: "14"
+departments_subjects_156: 
+  subject_id: "7097"
+  department_id: "13"
+departments_subjects_182: 
+  subject_id: "7220"
+  department_id: "48"
+departments_subjects_345: 
+  subject_id: "19043"
+  department_id: "10"
+departments_subjects_318: 
+  subject_id: "19016"
+  department_id: "11"
+departments_subjects_290: 
+  subject_id: "2204"
+  department_id: "15"
+departments_subjects_264: 
+  subject_id: "1735"
+  department_id: "25"
+departments_subjects_238: 
+  subject_id: "7241"
+  department_id: "45"
+departments_subjects_076: 
+  subject_id: "1760"
+  department_id: "15"
+departments_subjects_157: 
+  subject_id: "7296"
+  department_id: "50"
+departments_subjects_183: 
+  subject_id: "6934"
+  department_id: "50"
+departments_subjects_346: 
+  subject_id: "19044"
+  department_id: "4"
+departments_subjects_319: 
+  subject_id: "19017"
+  department_id: "11"
+departments_subjects_291: 
+  subject_id: "1736"
+  department_id: "25"
+departments_subjects_265: 
+  subject_id: "1748"
+  department_id: "15"
+departments_subjects_239: 
+  subject_id: "7373"
+  department_id: "48"
+departments_subjects_077: 
+  subject_id: "7325"
+  department_id: "45"
+departments_subjects_158: 
+  subject_id: "7122"
+  department_id: "46"
+departments_subjects_184: 
+  subject_id: "7200"
+  department_id: "54"
+departments_subjects_347: 
+  subject_id: "19045"
+  department_id: "4"
+departments_subjects_292: 
+  subject_id: "1331"
+  department_id: "17"
+departments_subjects_266: 
+  subject_id: "3633"
+  department_id: "21"
+departments_subjects_078: 
+  subject_id: "1135"
+  department_id: "24"
+departments_subjects_159: 
+  subject_id: "7391"
+  department_id: "98"
+departments_subjects_185: 
+  subject_id: "1337"
+  department_id: "13"

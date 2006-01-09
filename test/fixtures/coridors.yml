@@ -1,253 +1,253 @@
 --- 
 coridors_033: 
-  name: Technika a mechanizace zemědělství
-  code: XTMZ
-  faculty_id: "5"
-  id: "107"
-  name_english: 
-coridors_022: 
-  name: Technika a mechanizace zemědělství
-  code: XTMZ
-  faculty_id: "1"
-  id: "136"
-  name_english: 
-coridors_011: 
-  name: Obecná a speciální produkce rostlinná
-  code: XFYTO
-  faculty_id: "1"
-  id: "127"
-  name_english: 
-coridors_034: 
-  name: Regionální a sociální rozvoj (doktorandské)
-  code: XRSR
-  faculty_id: "4"
-  id: "15"
-  name_english: 
-coridors_023: 
-  name: Obecná a speciální zootechnika
-  code: XZOO
-  faculty_id: "1"
-  id: "102"
-  name_english: 
-coridors_012: 
-  name: Jakost a spolehlivost strojů a zařízení
-  code: XJSSZ
-  faculty_id: "5"
-  id: "50"
-  name_english: 
-coridors_001: 
-  name: Informační management
-  code: XINM
-  faculty_id: "4"
-  id: "11"
-  name_english: 
-coridors_035: 
-  name: Hospodářská úprava lesa
-  code: XHUPLE
-  faculty_id: "3"
-  id: "61"
-  name_english: 
-coridors_024: 
-  name: Zpracování dat a matematické modelování (doktorandské)
-  code: XZDM
-  faculty_id: "4"
-  id: "17"
-  name_english: 
-coridors_013: 
-  name: Technika a mechanizace v lesním hospodářství
-  code: XTMELH
-  faculty_id: "3"
-  id: "66"
-  name_english: 
-coridors_002: 
-  name: Anatomie a fyziologie rostlin
-  code: XAFRO
-  faculty_id: "3"
-  id: "58"
-  name_english: 
-coridors_036: 
-  name: Ekologie
-  code: XEKOLO
-  faculty_id: "3"
-  id: "60"
-  name_english: 
-coridors_025: 
-  name: Pěstování lesa
-  code: XPESLE
-  faculty_id: "3"
-  id: "64"
-  name_english: 
-coridors_014: 
-  name: Vlastnosti a zpracování zem. materiálů a produktů
-  code: XVZZMP
-  faculty_id: "1"
-  id: "138"
-  name_english: 
-coridors_003: 
   name: Myslivost
   code: XMYSL
   faculty_id: "1"
   id: "130"
   name_english: 
-coridors_037: 
-  name: Ochrana lesa
-  code: XOCHLE
-  faculty_id: "1"
-  id: "131"
-  name_english: 
-coridors_026: 
-  name: Technika a mechanizace v lesním hospodářství
-  code: XTMELH
-  faculty_id: "1"
-  id: "135"
-  name_english: 
-coridors_015: 
-  name: Dendrologie a šlechtění lesních dřevin
-  code: XDSLD
-  faculty_id: "1"
-  id: "126"
-  name_english: 
-coridors_004: 
-  name: Automatizace a robotizace
-  code: XAAR
-  faculty_id: "5"
-  id: "105"
-  name_english: 
-coridors_038: 
-  name: Vlastnosti a zpracování zem. materiálů a produktů
-  code: XVZZMP
-  faculty_id: "5"
-  id: "108"
-  name_english: 
-coridors_027: 
-  name: Zeměděl. a les. fytopatologie a zeměděl. chemie
-  code: XSPECAF
-  faculty_id: "1"
-  id: "101"
-  name_english: 
-coridors_016: 
-  name: Technika výrobních procesů
-  code: XTVP
-  faculty_id: "5"
-  id: "23"
-  name_english: 
-coridors_005: 
-  name: Management (doktorandské)
-  code: XMNG
-  faculty_id: "4"
-  id: "12"
-  name_english: 
-coridors_040: 
-  name: Podniková a odvětvová ekonomika (doktorandské)
-  code: XPOE
-  faculty_id: "4"
-  id: "13"
-  name_english: 
-coridors_039: 
-  name: "Řízení a ekonomika podniků - PEF (doktorandské)"
-  code: XREP
-  faculty_id: "4"
-  id: "14"
-  name_english: 
-coridors_028: 
-  name: Energetika
-  code: XENER
-  faculty_id: "5"
-  id: "106"
-  name_english: 
-coridors_017: 
-  name: "Řízení a ekonomika podniků - LF"
-  code: XREPOD
+coridors_022: 
+  name: Anatomie a fyziologie rostlin
+  code: XAFRO
   faculty_id: "3"
-  id: "65"
+  id: "58"
   name_english: 
-coridors_006: 
-  name: Tropické a subtropické zemědělství ITSZ
-  code: XZTS
-  faculty_id: "2"
-  id: "110"
-  name_english: 
-coridors_041: 
-  name: Dendrologie a šlechtění lesních dřevin
-  code: XDSLD
-  faculty_id: "3"
-  id: "59"
-  name_english: 
-coridors_030: 
-  name: Ochrana lesa
-  code: XOCHLE
-  faculty_id: "3"
-  id: "62"
-  name_english: 
-coridors_029: 
-  name: Systémové inženýrství (doktorandské)
-  code: XSYI
+coridors_011: 
+  name: Informační management
+  code: XINM
   faculty_id: "4"
-  id: "16"
+  id: "11"
   name_english: 
-coridors_018: 
-  name: Technika výrobních procesů
-  code: XTVP
-  faculty_id: "1"
-  id: "137"
-  name_english: 
-coridors_007: 
+coridors_034: 
   name: Hospodářská úprava lesa
   code: XHUPLE
   faculty_id: "1"
   id: "128"
   name_english: 
-coridors_042: 
-  name: Ochrana lesů a myslivost
-  code: XOCHMY
-  faculty_id: "1"
-  id: "132"
+coridors_023: 
+  name: Tropické a subtropické zemědělství ITSZ
+  code: XZTS
+  faculty_id: "2"
+  id: "110"
   name_english: 
-coridors_031: 
-  name: Rostlinná produkce
-  code: XRP
-  faculty_id: "1"
-  id: "134"
-  name_english: 
-coridors_020: 
-  name: Marketing strojů a technických systémů
-  code: XMSTS
+coridors_012: 
+  name: Management (doktorandské)
+  code: XMNG
   faculty_id: "4"
-  id: "55"
+  id: "12"
   name_english: 
-coridors_019: 
-  name: Anatomie a fyziologie rostlin
-  code: XAFRO
-  faculty_id: "1"
-  id: "125"
-  name_english: 
-coridors_008: 
-  name: Marketing strojů a technických systémů
-  code: XMSTS
+coridors_001: 
+  name: Automatizace a robotizace
+  code: XAAR
   faculty_id: "5"
-  id: "129"
+  id: "105"
   name_english: 
-coridors_032: 
-  name: Pěstování lesa
-  code: XPESLE
+coridors_035: 
+  name: Obecná a speciální produkce rostlinná
+  code: XFYTO
   faculty_id: "1"
-  id: "133"
+  id: "127"
   name_english: 
-coridors_021: 
-  name: Ochrana půdy a meliorace
-  code: XOPMEL
-  faculty_id: "3"
-  id: "63"
-  name_english: 
-coridors_010: 
+coridors_024: 
   name: Aplikovaná a krajinná ekologie
   code: XAKREK
   faculty_id: "3"
   id: "21"
   name_english: 
-coridors_009: 
+coridors_013: 
   name: Zemědělská a lesnická hydrologie
   code: XZLHYD
   faculty_id: "3"
   id: "67"
+  name_english: 
+coridors_002: 
+  name: Marketing strojů a technických systémů
+  code: XMSTS
+  faculty_id: "5"
+  id: "129"
+  name_english: 
+coridors_036: 
+  name: Dendrologie a šlechtění lesních dřevin
+  code: XDSLD
+  faculty_id: "1"
+  id: "126"
+  name_english: 
+coridors_025: 
+  name: Vlastnosti a zpracování zem. materiálů a produktů
+  code: XVZZMP
+  faculty_id: "1"
+  id: "138"
+  name_english: 
+coridors_014: 
+  name: Technika a mechanizace v lesním hospodářství
+  code: XTMELH
+  faculty_id: "3"
+  id: "66"
+  name_english: 
+coridors_003: 
+  name: Jakost a spolehlivost strojů a zařízení
+  code: XJSSZ
+  faculty_id: "5"
+  id: "50"
+  name_english: 
+coridors_037: 
+  name: Anatomie a fyziologie rostlin
+  code: XAFRO
+  faculty_id: "1"
+  id: "125"
+  name_english: 
+coridors_026: 
+  name: Technika výrobních procesů
+  code: XTVP
+  faculty_id: "1"
+  id: "137"
+  name_english: 
+coridors_015: 
+  name: "Řízení a ekonomika podniků - LF"
+  code: XREPOD
+  faculty_id: "3"
+  id: "65"
+  name_english: 
+coridors_004: 
+  name: Technika výrobních procesů
+  code: XTVP
+  faculty_id: "5"
+  id: "23"
+  name_english: 
+coridors_038: 
+  name: Obecná a speciální zootechnika
+  code: XZOO
+  faculty_id: "1"
+  id: "102"
+  name_english: 
+coridors_027: 
+  name: Technika a mechanizace zemědělství
+  code: XTMZ
+  faculty_id: "1"
+  id: "136"
+  name_english: 
+coridors_016: 
+  name: Ochrana půdy a meliorace
+  code: XOPMEL
+  faculty_id: "3"
+  id: "63"
+  name_english: 
+coridors_005: 
+  name: Marketing strojů a technických systémů
+  code: XMSTS
+  faculty_id: "4"
+  id: "55"
+  name_english: 
+coridors_040: 
+  name: Energetika
+  code: XENER
+  faculty_id: "5"
+  id: "106"
+  name_english: 
+coridors_039: 
+  name: Zeměděl. a les. fytopatologie a zeměděl. chemie
+  code: XSPECAF
+  faculty_id: "1"
+  id: "101"
+  name_english: 
+coridors_028: 
+  name: Technika a mechanizace v lesním hospodářství
+  code: XTMELH
+  faculty_id: "1"
+  id: "135"
+  name_english: 
+coridors_017: 
+  name: Pěstování lesa
+  code: XPESLE
+  faculty_id: "3"
+  id: "64"
+  name_english: 
+coridors_006: 
+  name: Zpracování dat a matematické modelování (doktorandské)
+  code: XZDM
+  faculty_id: "4"
+  id: "17"
+  name_english: 
+coridors_041: 
+  name: Technika a mechanizace zemědělství
+  code: XTMZ
+  faculty_id: "5"
+  id: "107"
+  name_english: 
+coridors_030: 
+  name: Pěstování lesa
+  code: XPESLE
+  faculty_id: "1"
+  id: "133"
+  name_english: 
+coridors_029: 
+  name: Rostlinná produkce
+  code: XRP
+  faculty_id: "1"
+  id: "134"
+  name_english: 
+coridors_018: 
+  name: Ochrana lesa
+  code: XOCHLE
+  faculty_id: "3"
+  id: "62"
+  name_english: 
+coridors_007: 
+  name: Systémové inženýrství (doktorandské)
+  code: XSYI
+  faculty_id: "4"
+  id: "16"
+  name_english: 
+coridors_042: 
+  name: Vlastnosti a zpracování zem. materiálů a produktů
+  code: XVZZMP
+  faculty_id: "5"
+  id: "108"
+  name_english: 
+coridors_031: 
+  name: Ochrana lesa
+  code: XOCHLE
+  faculty_id: "1"
+  id: "131"
+  name_english: 
+coridors_020: 
+  name: Ekologie
+  code: XEKOLO
+  faculty_id: "3"
+  id: "60"
+  name_english: 
+coridors_019: 
+  name: Hospodářská úprava lesa
+  code: XHUPLE
+  faculty_id: "3"
+  id: "61"
+  name_english: 
+coridors_008: 
+  name: Regionální a sociální rozvoj (doktorandské)
+  code: XRSR
+  faculty_id: "4"
+  id: "15"
+  name_english: 
+coridors_032: 
+  name: Ochrana lesů a myslivost
+  code: XOCHMY
+  faculty_id: "1"
+  id: "132"
+  name_english: 
+coridors_021: 
+  name: Dendrologie a šlechtění lesních dřevin
+  code: XDSLD
+  faculty_id: "3"
+  id: "59"
+  name_english: 
+coridors_010: 
+  name: Podniková a odvětvová ekonomika (doktorandské)
+  code: XPOE
+  faculty_id: "4"
+  id: "13"
+  name_english: 
+coridors_009: 
+  name: "Řízení a ekonomika podniků - PEF (doktorandské)"
+  code: XREP
+  faculty_id: "4"
+  id: "14"
   name_english: 
