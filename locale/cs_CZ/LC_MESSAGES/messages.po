@@ -342,9 +342,6 @@ msgstr "kombinované"
 msgid "Error"
 msgstr "Chyba"
 
-msgid "finished"
-msgstr "zadán"
-
 msgid "admited"
 msgstr "přijat"
 
@@ -1317,6 +1314,9 @@ msgstr "Fakulta (Institut)"
 msgid "To print the exam protocol press Ctrl+p"
 msgstr "Pro vytisknutí prosím stiskněte Ctrl+p"
 
+msgid "form"
+msgstr "forma studia"
+
 msgid "studying"
 msgstr "studuje"
 
@@ -1331,3 +1331,9 @@ msgstr "absolvoval"
 
 msgid "continue"
 msgstr "pokračuje"
+
+msgid "SP status"
+msgstr "Studijní plán"
+
+msgid "ST status"
+msgstr "Studijní stav"
