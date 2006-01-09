@@ -1343,3 +1343,6 @@ msgstr "Studijní stav"
 
 msgid "interrupt study"
 msgstr "přerušit"
+
+msgid "add scholarship"
+msgstr "přidat stipendium"

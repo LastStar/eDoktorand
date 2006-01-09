@@ -4,12 +4,12 @@
 <fieldset id='commission'>
 <legend><%= _("commission") %></legend>
   <%= _("amount") %>&nbsp;:&nbsp;<%= text_field 'scholarship', 'amount', 'size' => 6, 'maxlength' => 6 %><br />
-  <%= _("payed on") %>&nbsp;:&nbsp;<%= date_select 'commission', 'payed_on', :start_year => 2005,
+  <%= _("payed on") %>&nbsp;:&nbsp;<%= date_select 'scholarship', 'payed_on', :start_year => 2005,
     :order => [:day, :month, :year], :use_month_numbers => true %><br />
   <%= _("commission") %>&nbsp;:&nbsp;
-  <%= text_field 'scholarship', 'commission_head', 'size' => 4, 'maxlength' => 4 %>&nbsp;/&nbsp;
-  <%= text_field 'scholarship', 'commission_body', 'size' => 6, 'maxlength' => 6 %>&nbsp;/&nbsp;
-  <%= text_field 'scholarship', 'commission_tail', 'size' => 4, 'maxlength' => 4 %><br />
+  <%= text_field 'scholarship', 'commission_head', 'size' => 5, 'maxlength' => 5 %>&nbsp;/&nbsp;
+  <%= text_field 'scholarship', 'commission_body', 'size' => 4, 'maxlength' => 4 %>&nbsp;/&nbsp;
+  <%= text_field 'scholarship', 'commission_tail', 'size' => 6, 'maxlength' => 6 %><br />
 </fieldset>
   <%= hidden_field 'index', 'id' %>
   <%= submit_tag _("commit") %>
