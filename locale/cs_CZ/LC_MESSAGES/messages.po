@@ -1316,3 +1316,18 @@ msgstr "Fakulta (Institut)"
 
 msgid "To print the exam protocol press Ctrl+p"
 msgstr "Pro vytisknutí prosím stiskněte Ctrl+p"
+
+msgid "studying"
+msgstr "studuje"
+
+msgid "finished"
+msgstr "ukončeno"
+
+msgid "interupted"
+msgstr "přerušeno"
+
+msgid "absolved"
+msgstr "absolvoval"
+
+msgid "continue"
+msgstr "pokračuje"

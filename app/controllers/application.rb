@@ -46,9 +46,7 @@ class ApplicationController < ActionController::Base
     # _('String') will get translated into the right language. (Provided
     # that we have a corresponding mo file in the right place).
     bindtextdomain('messages', "#{RAILS_ROOT}/locale", @locale, @charset)
-    suppress(ActiveRecord::StatementInvalid) do
-      ActiveRecord::Base.connection.execute 'SET NAMES UTF8'
-    end
+    ActiveRecord::Base.connection.execute('SET NAMES UTF8')
   end
   # checks if user is student. 
   # if true creates @student variable with current student
