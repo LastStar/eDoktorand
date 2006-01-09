@@ -180,11 +180,13 @@ belongs_to :coridor
 # returns status of index
   def status
     if finished?
-      _('ST finished')
+      _('finished')
     elsif interupted?
-      _('ST interupted')
+      _('interupted')
+    elsif year > 3
+      _('continue')
     else
-      _('ST running')
+      _('studying')
     end
   end
   def switch_study

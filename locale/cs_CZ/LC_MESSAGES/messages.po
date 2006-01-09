@@ -1090,10 +1090,10 @@ msgid "ST running"
 msgstr "ST běží"
 
 msgid "finish study"
-msgstr "ukonči studium"
+msgstr "ukončit"
 
 msgid "unfinish study"
-msgstr "obnov studium"
+msgstr "obnovit"
 
 msgid "create SP"
 msgstr "vytvoř SP"
@@ -1143,11 +1143,14 @@ msgstr "Jste si jist-/á, že chcete ukončit toto studium?"
 msgid "Are you sure you want to unfinish this study?"
 msgstr "Jste si jist-/á, že chcete obnovit toto studium?"
 
+msgid "Are you sure you want to interupt this study?"
+msgstr "Jste si jist-/á, že chcete přerušit toto studium?"
+
 msgid "change SP"
 msgstr "změnit SP"
 
 msgid "switch study"
-msgstr "přehodit formu"
+msgstr "změnit formu"
 
 msgid "no scholarship"
 msgstr "žádné stipendium"
@@ -1337,3 +1340,6 @@ msgstr "Studijní plán"
 
 msgid "ST status"
 msgstr "Studijní stav"
+
+msgid "interrupt study"
+msgstr "přerušit"

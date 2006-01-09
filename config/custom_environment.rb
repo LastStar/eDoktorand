@@ -18,4 +18,3 @@ ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(
 # faculty dependent configurations
 FACULTY_CFG =
 YAML::load(File.open("#{RAILS_ROOT}/config/faculty_configurations.yml"))
- 

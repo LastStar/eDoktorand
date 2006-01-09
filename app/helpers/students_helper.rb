@@ -86,16 +86,20 @@ module StudentsHelper
           _('Are you sure you want to finish this study?')), 
           {:class => 'smallinfo'})
       end
+    else
+      ''
     end
   end
  
   # prints interupt link
   def interupt_link(index)
     if @user.has_one_of_roles?(['faculty_secretary', 'dean'])
-        div_tag(link_to(_('interupt study'), {:action => 'index', 
+        div_tag(link_to(_('interrupt study'), {:action => 'index', 
           :controller => 'interupts', :id => index}, :confirm => 
           _('Are you sure you want to interupt this study?')), 
           {:class => 'smallinfo'})
+    else
+      ''
     end
   end
 

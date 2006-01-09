@@ -123,7 +123,7 @@ class StudentsController < ApplicationController
       if !@user.person.indexes.empty?
         @filters.concat([[_("my students"), 1]])
       end
-      @filters.concat([[_('waiting for my review'), 2]])
     end
+    @filters.concat([[_('waiting for my review'), 2]])
   end
 end

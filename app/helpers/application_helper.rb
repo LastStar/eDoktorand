@@ -32,7 +32,7 @@ module ApplicationHelper
   # returns all study statuses options
   def study_status_options
     options_for_select([['---', '0'], [_("studying"), 1], \
-      [_("finished"), 2], [_("interupted"), 3], [_('absolved'), 4], [_('contiune'), 5]])
+      [_("finished"), 2], [_("interupted"), 3], [_('absolved'), 4], [_('continue'), 5]])
   end
   
   # returns all form options
