@@ -120,6 +120,6 @@ a {
 #printFooter {
   display: none;
 }
-#examPrintMessage {
+div.#examPrintMessage {
   display: none;
 }
