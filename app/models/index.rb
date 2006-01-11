@@ -177,7 +177,7 @@ belongs_to :coridor
     end
       return indices
   end
-# returns status of index
+  # returns status of index
   def status
     if finished?
       _('finished')
@@ -199,6 +199,13 @@ belongs_to :coridor
   def study_plan_approved_by
     if study_plan
       study_plan.approved_by
+    end
+  end
+  def full_account_number
+    if account_number_prefix
+      "#{account_number_prefix}-#{account_number}"
+    else
+      "#{account_number}"
     end
   end
 end
