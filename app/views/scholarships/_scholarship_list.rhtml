@@ -10,7 +10,12 @@
     <%= link_to_remote_with_loading(_("detail"), :url => {:action => 'detail', :id =>
     index.id}, :update => "info#{index.id}", :complete => "showDetail(#{index.id})") %>
   </div>
-  <div class="smallinfo"><%= print_scholarship(index) %> <%= _("Kc") %></div>
+  <% if index.study_id == 1 %>
+    <div class="smallinfo"><%= print_scholarship(index) %> <%= _("Kc") %></div>
+  <% else %>
+    <div class="smallinfo">&nbsp;</div> 
+  <% end %>
+  <div class="smallinfo"><%= index.study.name %></div>
   <div class="smallinfo"><%= index.department.short_name %></div>
   <b><%= index.student.display_name %></b>
   <br />

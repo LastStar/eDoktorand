@@ -1346,3 +1346,6 @@ msgstr "přerušit"
 
 msgid "add scholarship"
 msgstr "přidat stipendium"
+
+msgid "Protocol"
+msgstr "Protokol"
