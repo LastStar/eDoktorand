@@ -1,7 +1,9 @@
 class CandidatesController < ApplicationController
   include LoginSystem
   layout 'employers'
+
   before_filter :login_required, :except => [:invitation]
+  before_filter :prepare_user
   before_filter :set_title, :change_sort
   # lists all candidates
   def index
@@ -10,9 +12,9 @@ class CandidatesController < ApplicationController
   end
   # lists all candidates
   def list
-	 @filtered_by = @params['filter'] 
-		conditions = 'finished_on IS NOT NULL'
-		conditions << case @params['filter']
+    @filtered_by = @params['filter'] 
+		conditions = "department_id in (#{@user.person.faculty.departments_for_sql})"
+		conditions.first << case @params['filter']
                   when 'unready':' AND finished_on IS NOT NULL AND ready_on IS
                     NULL'
 									when 'ready': ' AND ready_on IS NOT NULL AND invited_on IS NULL'
@@ -21,7 +23,7 @@ class CandidatesController < ApplicationController
 									when 'enrolled': ' AND enrolled_on IS NOT NULL'
 									when nil: ''
 									end
-		conditions << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
+		conditions.first << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
     @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => @params['category'], :conditions => conditions
   end
   # lists all candidates ordered by category

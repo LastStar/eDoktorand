@@ -80,16 +80,16 @@ include Log4r
     end
   end
   # loads coridors to system
-def self.load_subjects(file, options = {} )
-    Subject.destroy_all if options[:destroy]
-    @@mylog.info "Loading subjects..."
-    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      s = Subject.new('label' => row[2], 'code' => row[3])
-      s.id = row[1]
-      s.departments << Department.find(row[4])
-      s.save
+  def self.load_subjects(file, options = {} )
+      Subject.destroy_all if options[:destroy]
+      @@mylog.info "Loading subjects..."
+      CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+        s = Subject.new('label' => row[2], 'code' => row[3])
+        s.id = row[1]
+        s.departments << Department.find(row[4])
+        s.save
+      end
     end
-  end
   # loads tutors
   def self.load_tutors(files, options = {})
     if options[:destroy]
@@ -575,5 +575,28 @@ def self.load_subjects(file, options = {} )
       end
     end
 
+  end
+  # loads student's new informations to system
+  def self.load_new_students(file, options = {} )
+    count = 0
+    if options[:destroy]
+      Student.destroy_all
+      Index.destroy_all
+    end
+    @@mylog.info "Loading students..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if s = Student.find_by_uic(row[13])
+        if s.index && !row[8].empty? && row[8] =~ /(\d\d?)[.](\d\d?)[.](\d\d\d\d).*/
+          date = Date.civil($3.to_i, $2.to_i, $1.to_i)
+          s.index.update_attribute('enrolled_on', date)
+        else
+          @@mylog.info "Student with uic #{row[13]} has not index"
+        end
+      else
+        @@mylog.info "Student with uic #{row[13]} has not been found"
+        count += 1
+      end
+    end
+    @@mylog.info "Totaly #{count} student's have not been found"
   end
 end

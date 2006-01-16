@@ -1333,7 +1333,7 @@ msgid "absolved"
 msgstr "absolvoval"
 
 msgid "continue"
-msgstr "pokračuje"
+msgstr "uzavřeno"
 
 msgid "SP status"
 msgstr "Studijní plán"
@@ -1346,6 +1346,27 @@ msgstr "přerušit"
 
 msgid "add scholarship"
 msgstr "přidat stipendium"
+
+msgid "Enrolled on"
+msgstr "Začátek studia"
+
+msgid "only unready"
+msgstr "jen nepřipravení"
+
+msgid "only ready"
+msgstr "jen připravení"
+
+msgid "only invited"
+msgstr "jen pozvaní"
+
+msgid "only admited"
+msgstr "jen přijatí"
+
+msgid "only enrolled"
+msgstr "jen zapsaní"
+
+msgid "allready finished subjects"
+msgstr "již ukončené předměty"
 
 msgid "Protocol"
 msgstr "Protokol"

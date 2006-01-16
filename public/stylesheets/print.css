@@ -2,6 +2,10 @@
   float: right;
   width: 14ex;
 }
+.right_info {
+  float: right;
+  width: 44ex;
+}
 hr {
   border: none;
 }

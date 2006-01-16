@@ -355,4 +355,11 @@ h5 {
 .red {
   background-color: red;
 }
+.right_info {
+  float: right;
+  text-align: left;
+  width: 450px;
+  padding-left: 10px;
+  font-weight: bold;
+}
 

@@ -70,7 +70,6 @@ class ScholarshipsController < ApplicationController
     scholarship = @session['scholarship']
     scholarship.attributes = @params['scholarship']
     scholarship.index_id = @index.id
-    breakpoint 
     scholarship.save
     @scholarships =
     Scholarship.find_all_by_index_id(@index.id)

@@ -41,7 +41,8 @@ class StudyPlansController < ApplicationController
     if !@student
       @student = Student.find(@params['id'])
     end
-    @subjects = Subject.for_faculty_select(@student.faculty)
+    @subjects = VoluntarySubject.for_select(@student.index.coridor)
+    @subjects.concat(ObligateSubject.for_select(@student.index.coridor))
     @subjects.concat(LanguageSubject.for_select)
     @subjects.concat(RequisiteSubject.for_select(@student.index.coridor))
     @study_plan = @student.index.study_plan

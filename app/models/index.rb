@@ -50,12 +50,7 @@ belongs_to :coridor
           return interupt.approvement.prepare_statement(user)
         end
       end
-    elsif disert_theme && disert_theme.has_methodology? && !disert_theme.approved? 
-      disert_theme.approvement ||= DisertThemeApprovement.create 
-      if disert_theme.approvement.prepares_statement?(user)
-        return disert_theme.approvement.prepare_statement(user)
-      end
-    elsif disert_theme.approved? && Atestation.actual_for_faculty(student.faculty) &&
+    elsif Atestation.actual_for_faculty(student.faculty) &&
       !study_plan.atested_for?(Atestation.actual_for_faculty(student.faculty))
       study_plan.atestation ||= Atestation.create
       return study_plan.atestation.prepare_statement(user)
@@ -67,8 +62,6 @@ belongs_to :coridor
       approvement = study_plan.approvement ||= StudyPlanApprovement.create
     elsif admited_interupt?
       approvement = interupt.approvement ||= InteruptApprovement.create
-    elsif disert_theme && disert_theme.has_methodology? && !disert_theme.approved? 
-      approvement = disert_theme.approvement ||= DisertThemeApprovement.create 
     elsif study_plan && study_plan.approved? &&
       !study_plan.atested_for?(Atestation.actual_for_faculty(user.person.faculty))
       if study_plan.atestation && study_plan.atestation.prepares_statement?(user)

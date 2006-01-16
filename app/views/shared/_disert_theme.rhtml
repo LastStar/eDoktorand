@@ -1,16 +1,6 @@
 <% study_plan = disert_theme.index.study_plan %>
 <h5><%= _("Disert theme") %></h5>
-<% if disert_theme.index.study_plan %>
-<ul id=<%= "disert_theme#{disert_theme.index.study_plan.id}" %>>
-<% else %>
-<ul>
-<% end %>
-  <% if disert_theme.approved? %>
-  <li>
-  <div class='info'><%= disert_theme.approved_on.strftime('%d. %m. %Y') %></div>
-  <b><%= _("approved on") %>: </b>
-  </li>
-  <% end %>
+<ul id=<%= "disert_theme#{study_plan.id}" %>>
   <li>
   <b><%= _("theme of disert theme") %></b>
   </li>

@@ -1,55 +1,55 @@
 
-  <p>
-  <%= _("Full name") %>:&nbsp;<b class="info"><%= @candidate.display_name %></b><br /> 
-  <%= _("Birth date and place") %>:&nbsp;<b class="info"><%= @candidate.birth_on.strftime("%d. %m. %Y") + " " + @candidate.birth_at %></b><br /> 
-  <%= _("Birth number") %>:&nbsp;<b class="info"><%= @candidate.birth_number %></b><br />  
-  <%= _("State") %>:&nbsp;<b class="info"><%= @candidate.state %></b><br /> 
-  </p> 
+  <ul>
+  <li><div class="right_info"><%= @candidate.display_name %></div><%= _("Full name") %>:</li>
+  <li><div class="right_info"><%= @candidate.birth_on.strftime("%d. %m. %Y") + " " + @candidate.birth_at %></div><%= _("Birth date and place") %>:</li>
+  <li><div class="right_info"><%= @candidate.birth_number %></div><%= _("Birth number") %>:</li>
+  <li><div class="right_info"><%= @candidate.state %></div><%= _("State") %>:</li>
+  </ul> 
   <hr/>
-  <p>
-  <%= _("habitat address") %>:&nbsp;<b class="info"><%= @candidate.street + " " +  @candidate.number.to_s + ", " + @candidate.city + ", " + @candidate.zip %></b><br /> 
+  <ul>
+  <li><div class="right_info"><%= @candidate.street + " " +  @candidate.number.to_s + ", " + @candidate.city + ", " + @candidate.zip %></div><%= _("habitat address") %>:</li>
   <% unless @candidate.phone.empty? %>
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span ><%= _("email") %>:&nbsp;<b class="info"><%= @candidate.email.to_s %></b><br />
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span ><%= _("phone") %>:&nbsp;<b class="info"><%= @candidate.phone %></b><br /> 
+  <li><div class="right_info"><%= @candidate.email.to_s %></div><%= _("email") %>:</li>
+  <li><div class="right_info"><%= @candidate.phone %></div><%= _("phone") %>:</li>
   <% end %>
-  </p> 
+  </ul> 
   <hr/>
   <% unless @candidate.postal_street.empty? %>
-  <p>
-  <%= _("Postal address") %>:&nbsp;<b class="info"><%= @candidate.postal_street + " " + @candidate.postal_number.to_s + ", " + @candidate.postal_city + ", " + @candidate.postal_zip %></b><br /> 
-  </p> 
+  <ul>
+  <li><div class="right_info"><%= @candidate.postal_street + " " + @candidate.postal_number.to_s + ", " + @candidate.postal_city + ", " + @candidate.postal_zip %></div><%= _("Postal address") %>:</li>
+  </ul> 
   <hr/>
   <% end %>
-  <p>
-  <%= _("University") %>:&nbsp;<b class="info"><%= @candidate.university %></b><br />
-  <%= _("Faculty") %>:&nbsp;<b class="info"><%= @candidate.faculty %></b><br />
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span ><%= _("corridor") %>:&nbsp;<b class="info"><%= @candidate.studied_branch %></b><br />
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span ><%= _("date of study end") %>:&nbsp;<b class="info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></b><br />
-  </p> 
+  <ul>
+  <li><div class="right_info"><%= @candidate.university %></div><%= _("University") %>:</li>
+  <li><div class="right_info"><%= @candidate.faculty %></div><%= _("Faculty") %>:</li>
+  <li><div class="right_info"><%= @candidate.studied_branch %></div><span class='strut'></span ><%= _("corridor") %>:</li>
+  <li><div class="right_info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></div><span class='strut'></span ><%= _("date of study end") %>:</li>
+  </ul> 
   <hr/>
   <% unless @candidate.employer.empty? %>
-  <p>
-  <%= _("Employer") %>:&nbsp;<b class="info"><%= @candidate.employer %></b> <br /> 
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span ><%= _("address") %>:&nbsp;<b class='info'><%= @candidate.employer_address %></b> <br /> 
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span ><%= _("phone") %> <%= _("email") %>:&nbsp;<b class="info"><%= @candidate.employer_phone + ', ' + @candidate.employer_email %></b><br />  
-  <span class='strut'>&nbsp;&nbsp;&nbsp;</span ><%= _("job position") %>:&nbsp;<b class="info"><%= @candidate.position %></b> 
-  </p> 
+  <ul>
+  <li><div class="right_info"><%= @candidate.employer %></div> <%= _("Employer") %>:</li>
+  <li><div class='right_info'><%= @candidate.employer_address %></div> <span class='strut'></span ></li>
+  <li><div class="right_info"><%= @candidate.employer_phone + ', ' + @candidate.employer_email %></div><span class='strut'></span ><%= _("phone") %> <%= _("email") %>:</li>
+  <li><div class="right_info"><%= @candidate.position %></li>
+  </ul> 
   <hr/>
   <% end %>
-  <p>
-  <%= _("Corridor") %>:&nbsp;<b class="info"><%= @candidate.coridor.name %></b> <br /> 
-  <%= _("Department") %>:&nbsp;<b class="info"><%= @candidate.department.name %></b><br /> 
-  <%= _("Study form") %>:&nbsp;<b class="info"><%= @candidate.study.name %></b><br /> 
-  <%= _("Exam languages") %>:&nbsp;<b class="info"><%= "#{@candidate.language1.label}, #{@candidate.language2.label}" %></b><br /> 
+  <ul>
+  <li><div class="right_info"><%= @candidate.coridor.name %></div> <%= _("Corridor") %>:<span class='strut'></span ><%= _("job position") %>:</li>
+  <li><div class="right_info"><%= @candidate.department.name %></div><%= _("Department") %>:</li>
+  <li><div class="right_info"><%= @candidate.study.name %></div><%= _("Study form") %>:</li>
+  <li><div class="right_info"><%= "#{@candidate.language1.label}, #{@candidate.language2.label}" %></div><%= _("Exam languages") %>:</li>
   <% unless @candidate.study_theme.empty? %>
-  <%= _("Theme area") %>:&nbsp;<b class="info"><%= @candidate.study_theme %></b >
+  <div class="right_info"><%= @candidate.study_theme %></div><%= _("Theme area") %>:
   <% end %>
-  </p> 
+  </ul> 
   <hr/>
   <% unless @candidate.note.empty? %>
-  <p>
+  <ul>
     <%= _("Notice") %>: 
     <pre class="detail"><%= @candidate.note %></pre>
-  </p>
+  </ul>
   <hr /> 
   <% end %>

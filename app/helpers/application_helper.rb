@@ -268,6 +268,7 @@ module ApplicationHelper
         links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
           :action => 'scholarship'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
+        links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
       elsif @session['user'].has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) 
         links << link_to_unless_current(_("probation terms"), :controller =>
           'probation_terms'){} 
@@ -297,7 +298,7 @@ module ApplicationHelper
     if statement
       result << approve_word(statement.result)
       if statement.note && !statement.note.empty?
-        result << ", #{_('with note')}: #{truncate(statement.note, 30)}"
+        result << ", #{_('with note')}: #{statement.note}"
       end
       result = content_tag('div', statement.created_on.strftime('%d. %m. %Y'),
       :class => 'info') + result
