@@ -2,15 +2,8 @@
 <% if !@study_plan.approved? %>
 <p class='help'><%= _("Your study plan, details of it you can see here, is
 processed now. Final approvement you will get by email. ") %></p> 
-<% elsif !@study_plan.index.disert_theme.has_methodology? %>
-<p class='help'><%= _("Your study plan, details of it you can see here, is
-approved now. You should add methodics summary as soon as possible and
-methodics in three months.") %></p> 
-<% elsif !@study_plan.index.disert_theme.approved?  %>
-<p class='help'><%= _("Your methodology is processed now. Final approvement you 
-will get by email. ") %></p> 
 <% end %>
-<%= render(:partial => 'shared/study_plan', :locals => {:study_plan => @study_plan}) %>
+<%= render(:partial => 'shared/student_detail', :locals => {:study_plan => @study_plan, :index => @study_plan.index}) %>
 <% else %>
 <p class='help'><%= _("Welcome to edoktorand application.") %></p> 
 <p class='help'><%= _("This page shows informations which are stored in

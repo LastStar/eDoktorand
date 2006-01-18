@@ -1,11 +1,11 @@
 <div id='student_detail'>
 <h5><%= _("Personal and study details") %></h5>
-<%= render_partial 'student_detail', :student => index.student %>
+<%= render_partial 'shared/personal_detail', :student => index.student %>
 <% if index.student.address %>
-  <h5><%= _("Contact details") %></h5>
-  <%= render_partial 'address_detail', :student => index.student %>
+<h5><%= _("Contact details") %></h5>
+<%= render_partial 'shared/address_detail', :student => index.student %>
 <% end %>
-<%= render_partial 'study_detail', :index => index %>
+<%= render_partial 'shared/study_detail', :index => index %>
 <% if study_plan %>
 <% if study_plan.atestation  %>
 <h5><%= _("last atestation:") %></h5>
