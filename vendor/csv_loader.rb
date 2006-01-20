@@ -601,6 +601,7 @@ include Log4r
   end
   # loads interupted students to system
   def self.load_interrupted(file)
+    ActiveRecord::Base.connection.execute('SET NAMES UTF8')
     @@mylog.info "Loading students..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       s = Student.new
