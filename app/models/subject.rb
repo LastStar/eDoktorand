@@ -28,8 +28,8 @@ class Subject < ActiveRecord::Base
 # returns subjects for faculty
   def self.for_faculty_select(faculty)
     faculty = Faculty.find(faculty) unless faculty.is_a?(Faculty)
-    subs = faculty.departments.inject([]) {|arr, d| arr << d.subjects}.flatten
-    [[_("external subject"), 0]].concat(subs.map {|sub| [sub.label.to(40), sub.id]})
+    faculty.departments.inject([]) {|arr, d| arr << d.subjects}.flatten.map \
+      {|sub| [sub.label.to(40), sub.id]}
   end
 # returns options for html select
   def self.language_for_select

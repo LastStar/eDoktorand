@@ -32,11 +32,12 @@ module StudyPlansHelper
   def subject_select(subjects, plan_subject)
     select = ''
     subjects = [[_("none subject"), -1]].concat(subjects)
+    subjects = [[_("external subject"), 0]].concat(subjects)
     plan_subject.subject_id = 0 if plan_subject.subject.is_a?(ExternalSubject)
     select << content_tag('select', options_for_select(subjects, plan_subject.subject_id),
       {'id' => "plan_subject_#{plan_subject.id}_subject_id",
       'name' => "plan_subject[#{plan_subject.id}][subject_id]",
-      'onChange' => "hide_on_internal(#{plan_subject.id})"})
+      'onChange' => "hide_on_internal(#{plan_subject.id}); return(false);"})
     select << "&mdash; "
     select << content_tag('select', options_for_select(1..4,
       plan_subject.finishing_on ), { 'id' => 
@@ -49,7 +50,7 @@ module StudyPlansHelper
     tag('input', { 'type' => 'text', 'id' =>
       "external_subject_detail_#{plan_subject.id}_label", 
       'name' => "plan_subject[#{plan_subject.id}][label]", "value" =>
-       plan_subject.subject.is_a?(ExternalSubject) ? plan_subject.subject.label : ''})
+       plan_subject.subject_id == 0 ? plan_subject.subject.label : ''})
   end
   # prints external university tag
   def external_university_input(plan_subject)

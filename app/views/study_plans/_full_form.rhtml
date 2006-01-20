@@ -35,7 +35,7 @@ name="study_plan[final_areas][<%= i %>]" size="30"/><br/>
 <%= select 'disert_theme', 'finishing_to', 1..6 %><br/>
 <label for="disert_theme_methodology_summary"><%= _("methodology summary") %>:</label>
 <textarea name='disert_theme[methodology_summary]'
-id='disert_theme_methodology_summary' cols='55' rows='35'></textarea>
+  id='disert_theme_methodology_summary' cols='55' rows='35'><%= @disert_theme.methodology_summary %></textarea>
 </fieldset>
 <%= submit_tag _("commit") %>
 <%= end_form_tag %>

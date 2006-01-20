@@ -4,7 +4,7 @@
   <% if @requisite_subjects && !@requisite_subjects.empty? %>
   <%= render(:partial => "shared/subjects", :locals => {:subjects => 
       @requisite_subjects, :title => _("requisite subjects")}) %>
-  <% elsif @session['finished_subjects'] %>
+  <% elsif !@session['finished_subjects'].empty? %>
   <%= render(:partial => "shared/subjects", :locals => {:subjects => 
   @session['finished_subjects'], :title => _("allready finished subjects")}) %>
   <% end %>
@@ -15,32 +15,14 @@
 </div>
 <%= 
 javascript_tag <<-CODE
-last = []
-last[0] = -1
-last[1] = -1
-last[2] = -1
-last[3] = -1
-last[4] = -1
-last[5] = -1
-last[6] = -1
-last[7] = -1
-last[8] = -1
-last[9] = -1
-last[10] = -1
-last[11] = -1
-
 function hide_on_internal(id) {
   var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
-  if((element.value == 0 && last[id] != 0) || (element.value != 0 && last[id] == 0)) {
-    if($('external' + id).style.display == 'none') {
-    Element.show('external' + id)
-    last[id] = element.value;
+  if((element.value == 0)) {
+    Element.show('external' + id);
+    } else {
+    Element.hide('external' + id);
     }
-    else {
-    Element.hide('external' + id)
-    last[id] = element.value;
-    }
-  };
-}
+  }
+
 CODE
 %>

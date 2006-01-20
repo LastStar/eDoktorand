@@ -353,7 +353,9 @@ h5 {
 	background-repeat: no-repeat;
 }
 .red {
-  background-color: red;
+  border-bottom: 3px solid #b00;
+  border-left: 1px solid #b00;
+  padding-left: 3px
 }
 .right_info {
   float: right;

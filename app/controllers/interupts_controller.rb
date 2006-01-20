@@ -22,7 +22,11 @@ class InteruptsController < ApplicationController
   def finish
     @interupt ||= @session['interupt']
     @interupt.save
-    redirect_to(:controller => 'study_plans')
+    if @user.has_role?('student')
+      redirect_to(:controller => 'study_plans')
+    else
+      redirect_to(:controller => 'students')
+    end
   end
   def confirm_approve
     interupt = Interupt.find(@params['id'])
