@@ -599,4 +599,32 @@ include Log4r
     end
     @@mylog.info "Totaly #{count} student's have not been found"
   end
+  # loads interupted students to system
+  def self.load_interrupted(file)
+    @@mylog.info "Loading students..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      s = Student.new
+      i = Index.new
+      u = User.new
+      s.lastname = row[1]
+      s.birthname = row[2]
+      s.firstname = row[3]
+      s.birth_on = row[4]
+      s.birth_number = row[5]
+      i.study = Study.find(row[6])
+      i.coridor = Coridor.find(row[7])
+      row[8] =~ /(\d\d?)[.](\d\d?)[.](\d\d\d\d).*/
+      i.enrolled_on = Date.civil($3.to_i, $2.to_i, $1.to_i)
+      i.tutor = Tutor.find_by_uic(row[9])
+      i.department = Department.find(row[11])
+      s.uic = row[13]
+      s.id = row[14]
+      u.login = u.password = u.password_confirmation = row[15]
+      s.index = i
+      s.save
+      u.person = s
+      u.save
+      i.save
+    end
+  end
 end
