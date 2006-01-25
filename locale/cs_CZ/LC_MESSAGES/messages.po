@@ -1370,3 +1370,9 @@ msgstr "již ukončené předměty"
 
 msgid "Protocol"
 msgstr "Protokol"
+
+msgid "This study is interupted"
+msgstr "Toto studium je přerušeno"
+
+msgid "study plan has changed"
+msgstr "změněn studijní plán"

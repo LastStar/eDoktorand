@@ -1,4 +1,5 @@
 class Index < ActiveRecord::Base
+
   belongs_to :student, :foreign_key => 'student_id'
   belongs_to :tutor
   belongs_to :study
@@ -6,36 +7,50 @@ class Index < ActiveRecord::Base
   'created_on desc'
   has_one :disert_theme, :order => 'created_on desc'
   has_many :exams
-belongs_to :coridor
+  belongs_to :coridor
   belongs_to :department
   has_one :interupt, :order => 'created_on desc'
+  has_many :interupts
+
   validates_presence_of :student
   validates_presence_of :tutor
+
+  # returns year of the study
   def year
-    (Time.now - enrolled_on).div(1.year) + 1
+    time = Time.now - enrolled_on
+    if interupt
+      time -= interrupted_time
+    end
+    time.div(1.year) + 1
   end
+
   # returns leader of department for this student
   def leader
     department.leadership.leader if department.leadership
   end
+
   # returns dean of department for this student
   def dean
     department.faculty.deanship.dean
   end
+
   # returns if study plan is finished
   def finished?
     return true unless finished_on.nil?
   end
+
   # returns true if interupt just admited
   def admited_interupt?
     return true if interupt && !interupted?
   end
+
   # returns if stduy plan is interupted
   def interupted?
     if interupted_on && interupted_on < Time.now
       return true 
     end
   end
+
   # returns statement if this index waits for approvement from person
   def statement_for(user)
     if study_plan 
@@ -56,6 +71,7 @@ belongs_to :coridor
       return study_plan.atestation.prepare_statement(user)
     end
   end
+
   # returns statement if this index waits for approvement from person
   def waits_for_statement?(user)
     if study_plan && !study_plan.approved?
@@ -72,6 +88,7 @@ belongs_to :coridor
       return true
     end
   end
+
   # returns all indexes for person
   # accepts Base.find options. Include and order for now
   def self.find_for_user(user, options ={})
@@ -79,9 +96,9 @@ belongs_to :coridor
       if options[:only_tutor]
         conditions = ['indices.tutor_id = ?', user.person.id]
       elsif options[:faculty] && options[:faculty] != '0'
-       faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : \
-         Faculty.find(options[:faculty])
-         conditions = ["indices.department_id IN (#{faculty.departments_for_sql})"]
+        faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : \
+          Faculty.find(options[:faculty])
+        conditions = ["indices.department_id IN (#{faculty.departments_for_sql})"]
       else
         conditions  = ['NULL IS NULL']
       end
@@ -99,8 +116,9 @@ belongs_to :coridor
       conditions.concat(options[:conditions][1..-1])
     end
     find(:all, :conditions => conditions, :include => options[:include],
-      :order => options[:order])
+         :order => options[:order])
   end
+
   # returns all indexes which waits for approvement from persons 
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user)
@@ -109,10 +127,10 @@ belongs_to :coridor
       OR study_plans.last_atested_on IS NULL OR indices.interupted_on IS NULL OR \
       study_plans.last_atested_on < ?) AND (indices.finished_on IS NULL OR \
       indices.finished_on = '0000-00-00 00:00:00') 
-      SQL
+    SQL
     result = find_for_user(user, :conditions => [condition_sql, 
-      Atestation.actual_for_faculty(user.person.faculty)], :include => 
-      [:student, :study_plan, :disert_theme, :department, :study, :coridor,
+                           Atestation.actual_for_faculty(user.person.faculty)], :include => 
+    [:student, :study_plan, :disert_theme, :department, :study, :coridor,
       :interupt], :order => 'study_plans.created_on', :only_tutor => true)
     if user.has_one_of_roles?(['tutor', 'leader', 'dean'])
       result.select {|i| i.waits_for_statement?(user)} 
@@ -120,6 +138,7 @@ belongs_to :coridor
       result
     end
   end
+
   # search on selected criteria
   def self.find_by_criteria(options = {})
     conditions = ['']
@@ -135,8 +154,8 @@ belongs_to :coridor
       conditions << options[:form]
     end
     indices = Index.find_for_user(options[:user], :conditions => conditions, 
-      :include => [:study_plan, :student, :disert_theme, :department, :study,
-      :coridor, :interupt], :faculty => options[:faculty], :order => options[:order])
+                                  :include => [:study_plan, :student, :disert_theme, :department, :study,
+                                    :coridor, :interupt], :faculty => options[:faculty], :order => options[:order])
     if options[:year] != 0 
       if options[:year] == 4
         indices.reject! {|i| i.year < 4}
@@ -147,11 +166,11 @@ belongs_to :coridor
     if options[:study_status] && options[:study_status] != '0'
       case options[:study_status]
       when '1'
-        indices.reject! {|i| i.status != _('ST running')}
+        indices.reject! {|i| i.status != _('studying')}
       when '2'
-        indices.reject! {|i| i.status != _('ST finished')}
+        indices.reject! {|i| i.status != _('finished')}
       when '3'
-        indices.reject! {|i| i.status != _('ST interupted') }
+        indices.reject! {|i| i.status != _('interupted') }
       end
     end
     if options[:status] && options[:status] != '0'
@@ -168,8 +187,9 @@ belongs_to :coridor
         indices.reject! {|i| i.study_plan_approved_by != 'dean'}
       end
     end
-      return indices
+    return indices
   end
+
   # returns status of index
   def status
     if finished?
@@ -182,6 +202,8 @@ belongs_to :coridor
       _('studying')
     end
   end
+
+  # switches study form
   def switch_study
     if study_id == 1 
       update_attribute('study_id', 2)
@@ -189,16 +211,30 @@ belongs_to :coridor
       update_attribute('study_id', 1)
     end
   end
+
+  # returns who approved study plan
   def study_plan_approved_by
     if study_plan
       study_plan.approved_by
     end
   end
+
+  # returns full account number
   def full_account_number
     if account_number_prefix
       "#{account_number_prefix}-#{account_number}"
     else
       "#{account_number}"
     end
+  end
+
+  # returns time study was interrupted for 
+  def interrupted_time
+    interupts.inject(0) {|sum, i| sum += i.current_duration} 
+  end
+
+  # interupts study with date
+  def interupt!(start_date)
+    update_attribute('interupted_on', start_date)
   end
 end

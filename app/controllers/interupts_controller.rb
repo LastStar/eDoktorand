@@ -39,7 +39,7 @@ class InteruptsController < ApplicationController
   end
   def confirm
     index = Index.find(@params['id'])
-    index.update_attribute('interupted_on', index.interupt.start_on)
+    index.interrupt!(index.interupt.start_on)
     render(:inline => "<%= redraw_student(index) %>", :locals => {:index => index})
   end
 end
