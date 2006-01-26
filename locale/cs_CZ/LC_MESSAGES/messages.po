@@ -1376,3 +1376,9 @@ msgstr "Toto studium je přerušeno"
 
 msgid "study plan has changed"
 msgstr "změněn studijní plán"
+
+msgid "enroll students"
+msgstr "přihlásit studenta"
+
+msgid "Sign off student"
+msgstr "Odhlásit"

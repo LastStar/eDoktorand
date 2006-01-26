@@ -59,8 +59,45 @@ class ProbationTermsController < ApplicationController
   end
 
   def detail
-    render_partial('detail', :probation_term =>
-      ProbationTerm.find(@params['id']))
+    students = []
+    @probation_term = ProbationTerm.find(@params['id'])
+    @plan_subjects = PlanSubject.find(:all, :conditions => ['subject_id = ? and
+    finished_on is null', @probation_term.subject.id])
+    @plan_subjects = @plan_subjects.select {|ps| ps.study_plan.approved?}
+    students = []
+    @plan_subjects.each {|plan| students << plan.study_plan.index.student}
+    students = students.select {|stud| (!stud.index.finished?) && (!@probation_term.students.include? stud)}
+    render_partial('detail', :probation_term => @probation_term, :students => students)
+  end
+ 
+  # enroll student for probation term
+  def enroll_student_term
+    @probation_term = ProbationTerm.find(@params['probation_term'])
+    @student = Student.find(@params['student']['id'])
+    @probation_term.students << @student
+    students = []
+    @plan_subjects = PlanSubject.find(:all, :conditions => ['subject_id = ? and
+    finished_on is null', @probation_term.subject.id])
+    @plan_subjects = @plan_subjects.select {|ps| ps.study_plan.approved?}
+    students = []
+    @plan_subjects.each {|plan| students << plan.study_plan.index.student}
+    students = students.select {|stud| (!stud.index.finished?) && (!@probation_term.students.include? stud)}
+    render_partial('render_detail', :probation_term => @probation_term, :students => students)
+  end
+  
+  # sign off the desired student
+  def sign_off_student
+    @student = Student.find(@params['student_id'])
+    @probation_term = ProbationTerm.find(@params['id'])
+    @probation_term.students.delete(@student)
+    students = []
+    @plan_subjects = PlanSubject.find(:all, :conditions => ['subject_id = ? and
+    finished_on is null', @probation_term.subject.id])
+    @plan_subjects = @plan_subjects.select {|ps| ps.study_plan.approved?}
+    students = []
+    @plan_subjects.each {|plan| students << plan.study_plan.index.student}
+    students = students.select {|stud| (!stud.index.finished?) && (!@probation_term.students.include? stud)}
+    render_partial('render_detail', :probation_term => @probation_term, :students => students)
   end
   
   # created exam object and subjects for select 
@@ -168,8 +205,16 @@ class ProbationTermsController < ApplicationController
     ps.attributes = @params['plan_subject'] if exam.passed?
     ps.save
     exam.save
+    students = []
+    @probation_term = ProbationTerm.find(@params['id'])
+    @plan_subjects = PlanSubject.find(:all, :conditions => ['subject_id = ? and
+    finished_on is null', @probation_term.subject.id])
+    @plan_subjects = @plan_subjects.select {|ps| ps.study_plan.approved?}
+    students = []
+    @plan_subjects.each {|plan| students << plan.study_plan.index.student}
+    students = students.select {|stud| (!stud.index.finished?) && (!@probation_term.students.include? stud)}
     render_partial('render_detail', :probation_term =>
-      ProbationTerm.find(@params['probation_term']))
+      @probation_term, :students => students)
     #redirect_to :action => 'list'
   end
 

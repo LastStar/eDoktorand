@@ -3,6 +3,18 @@
 <%= _("1. examinator") %>:&nbsp;<%= probation_term.first_examinator.display_name %><br />  
 <%= _("2. examinator") %>:&nbsp;<%= probation_term.second_examinator.display_name if probation_term.second_examinator %><br /> 
 <%= _("Created by") %>:&nbsp;<%= probation_term.creator.display_name %><br /> 
+  <br/><br/>
+  <div>
+    <h5><%= _("enroll students") %></h5><br/>
+    <%= form_remote_with_loading(:url => {:action => 'enroll_student_term'}, :evaluate =>
+        true) %>	
+      <%= content_tag('select', options_for_select(students.map {|stud|
+      [stud.display_name, stud.id]}), {'id' => "student_id", 'name' =>
+      "student[id]"}) %>
+      <input type='hidden' name='probation_term' value='<%= probation_term.id %>' />
+      <%= submit_tag(_("enroll")) %>
+      <%= end_form_tag %>
+  </div>
 </p> 
   <% if(!probation_term.students.empty?) %>
     <h5><%= _("enrolled students") %></h5>
@@ -19,6 +31,11 @@
         <%= 
           link_to_remote_with_loading(_("Enroll student"), 
             :url => {:action => 'enroll_exam', :controller => 'probation_terms', :id =>
+           probation_term, :student_id => student.id}, :evaluate => true)
+        %>
+        <%= 
+        link_to_remote_with_loading(_("Sign off student"), 
+            :url => {:action => 'sign_off_student', :controller => 'probation_terms', :id =>
            probation_term, :student_id => student.id}, :evaluate => true)
         %>
       <% end %>
