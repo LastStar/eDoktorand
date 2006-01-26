@@ -1,253 +1,254 @@
 --- 
 coridors_033: 
+  name: "Marketing stroj? a technick˝ch systÈm?"
+  code: XMSTS
+  faculty_id: "5"
+  id: "129"
+  name_english: 
+coridors_022: 
+  name: Zem?d?l. a les. fytopatologie a zem?d?l. chemie
+  code: XSPECAF
+  faculty_id: "1"
+  id: "101"
+  name_english: 
+coridors_011: 
+  name: "Marketing stroj? a technick˝ch systÈm?"
+  code: XMSTS
+  faculty_id: "4"
+  id: "55"
+  name_english: 
+coridors_034: 
   name: Myslivost
   code: XMYSL
   faculty_id: "1"
   id: "130"
   name_english: 
-coridors_022: 
+coridors_023: 
+  name: Obecn· a speci·lnÌ zootechnika
+  code: XZOO
+  faculty_id: "1"
+  id: "102"
+  name_english: 
+coridors_012: 
   name: Anatomie a fyziologie rostlin
   code: XAFRO
   faculty_id: "3"
   id: "58"
   name_english: 
-coridors_011: 
-  name: Informaƒçn√≠ management
+coridors_001: 
+  name: Informa?nÌ management
   code: XINM
   faculty_id: "4"
   id: "11"
   name_english: 
-coridors_034: 
-  name: Hospod√°≈ôsk√° √∫prava lesa
-  code: XHUPLE
-  faculty_id: "1"
-  id: "128"
-  name_english: 
-coridors_023: 
-  name: Tropick√© a subtropick√© zemƒõdƒõlstv√≠ ITSZ
-  code: XZTS
-  faculty_id: "2"
-  id: "110"
-  name_english: 
-coridors_012: 
-  name: Management (doktorandsk√©)
-  code: XMNG
-  faculty_id: "4"
-  id: "12"
-  name_english: 
-coridors_001: 
-  name: Automatizace a robotizace
-  code: XAAR
-  faculty_id: "5"
-  id: "105"
-  name_english: 
 coridors_035: 
-  name: Obecn√° a speci√°ln√≠ produkce rostlinn√°
-  code: XFYTO
-  faculty_id: "1"
-  id: "127"
-  name_english: 
-coridors_024: 
-  name: Aplikovan√° a krajinn√° ekologie
-  code: XAKREK
-  faculty_id: "3"
-  id: "21"
-  name_english: 
-coridors_013: 
-  name: Zemƒõdƒõlsk√° a lesnick√° hydrologie
-  code: XZLHYD
-  faculty_id: "3"
-  id: "67"
-  name_english: 
-coridors_002: 
-  name: Marketing stroj≈Ø a technick√Ωch syst√©m≈Ø
-  code: XMSTS
-  faculty_id: "5"
-  id: "129"
-  name_english: 
-coridors_036: 
-  name: Dendrologie a ≈°lechtƒõn√≠ lesn√≠ch d≈ôevin
-  code: XDSLD
-  faculty_id: "1"
-  id: "126"
-  name_english: 
-coridors_025: 
-  name: Vlastnosti a zpracov√°n√≠ zem. materi√°l≈Ø a produkt≈Ø
-  code: XVZZMP
-  faculty_id: "1"
-  id: "138"
-  name_english: 
-coridors_014: 
-  name: Technika a mechanizace v lesn√≠m hospod√°≈ôstv√≠
-  code: XTMELH
-  faculty_id: "3"
-  id: "66"
-  name_english: 
-coridors_003: 
-  name: Jakost a spolehlivost stroj≈Ø a za≈ô√≠zen√≠
-  code: XJSSZ
-  faculty_id: "5"
-  id: "50"
-  name_english: 
-coridors_037: 
-  name: Anatomie a fyziologie rostlin
-  code: XAFRO
-  faculty_id: "1"
-  id: "125"
-  name_english: 
-coridors_026: 
-  name: Technika v√Ωrobn√≠ch proces≈Ø
-  code: XTVP
-  faculty_id: "1"
-  id: "137"
-  name_english: 
-coridors_015: 
-  name: "≈ò√≠zen√≠ a ekonomika podnik≈Ø - LF"
-  code: XREPOD
-  faculty_id: "3"
-  id: "65"
-  name_english: 
-coridors_004: 
-  name: Technika v√Ωrobn√≠ch proces≈Ø
-  code: XTVP
-  faculty_id: "5"
-  id: "23"
-  name_english: 
-coridors_038: 
-  name: Obecn√° a speci√°ln√≠ zootechnika
-  code: XZOO
-  faculty_id: "1"
-  id: "102"
-  name_english: 
-coridors_027: 
-  name: Technika a mechanizace zemƒõdƒõlstv√≠
-  code: XTMZ
-  faculty_id: "1"
-  id: "136"
-  name_english: 
-coridors_016: 
-  name: Ochrana p≈Ødy a meliorace
-  code: XOPMEL
-  faculty_id: "3"
-  id: "63"
-  name_english: 
-coridors_005: 
-  name: Marketing stroj≈Ø a technick√Ωch syst√©m≈Ø
-  code: XMSTS
-  faculty_id: "4"
-  id: "55"
-  name_english: 
-coridors_040: 
-  name: Energetika
-  code: XENER
-  faculty_id: "5"
-  id: "106"
-  name_english: 
-coridors_039: 
-  name: Zemƒõdƒõl. a les. fytopatologie a zemƒõdƒõl. chemie
-  code: XSPECAF
-  faculty_id: "1"
-  id: "101"
-  name_english: 
-coridors_028: 
-  name: Technika a mechanizace v lesn√≠m hospod√°≈ôstv√≠
-  code: XTMELH
-  faculty_id: "1"
-  id: "135"
-  name_english: 
-coridors_017: 
-  name: Pƒõstov√°n√≠ lesa
-  code: XPESLE
-  faculty_id: "3"
-  id: "64"
-  name_english: 
-coridors_006: 
-  name: Zpracov√°n√≠ dat a matematick√© modelov√°n√≠ (doktorandsk√©)
-  code: XZDM
-  faculty_id: "4"
-  id: "17"
-  name_english: 
-coridors_041: 
-  name: Technika a mechanizace zemƒõdƒõlstv√≠
-  code: XTMZ
-  faculty_id: "5"
-  id: "107"
-  name_english: 
-coridors_030: 
-  name: Pƒõstov√°n√≠ lesa
-  code: XPESLE
-  faculty_id: "1"
-  id: "133"
-  name_english: 
-coridors_029: 
-  name: Rostlinn√° produkce
-  code: XRP
-  faculty_id: "1"
-  id: "134"
-  name_english: 
-coridors_018: 
-  name: Ochrana lesa
-  code: XOCHLE
-  faculty_id: "3"
-  id: "62"
-  name_english: 
-coridors_007: 
-  name: Syst√©mov√© in≈æen√Ωrstv√≠ (doktorandsk√©)
-  code: XSYI
-  faculty_id: "4"
-  id: "16"
-  name_english: 
-coridors_042: 
-  name: Vlastnosti a zpracov√°n√≠ zem. materi√°l≈Ø a produkt≈Ø
-  code: XVZZMP
-  faculty_id: "5"
-  id: "108"
-  name_english: 
-coridors_031: 
   name: Ochrana lesa
   code: XOCHLE
   faculty_id: "1"
   id: "131"
   name_english: 
-coridors_020: 
+coridors_024: 
+  name: Automatizace a robotizace
+  code: XAAR
+  faculty_id: "5"
+  id: "105"
+  name_english: 
+coridors_013: 
+  name: Dendrologie a ölecht?nÌ lesnÌch d?evin
+  code: XDSLD
+  faculty_id: "3"
+  id: "59"
+  name_english: 
+coridors_002: 
+  name: Management (doktorandskÈ)
+  code: XMNG
+  faculty_id: "4"
+  id: "12"
+  name_english: 
+coridors_036: 
+  name: "Ochrana les? a myslivost"
+  code: XOCHMY
+  faculty_id: "1"
+  id: "132"
+  name_english: 
+coridors_025: 
+  name: Energetika
+  code: XENER
+  faculty_id: "5"
+  id: "106"
+  name_english: 
+coridors_014: 
   name: Ekologie
   code: XEKOLO
   faculty_id: "3"
   id: "60"
   name_english: 
-coridors_019: 
-  name: Hospod√°≈ôsk√° √∫prava lesa
-  code: XHUPLE
-  faculty_id: "3"
-  id: "61"
-  name_english: 
-coridors_008: 
-  name: Region√°ln√≠ a soci√°ln√≠ rozvoj (doktorandsk√©)
-  code: XRSR
-  faculty_id: "4"
-  id: "15"
-  name_english: 
-coridors_032: 
-  name: Ochrana les≈Ø a myslivost
-  code: XOCHMY
-  faculty_id: "1"
-  id: "132"
-  name_english: 
-coridors_021: 
-  name: Dendrologie a ≈°lechtƒõn√≠ lesn√≠ch d≈ôevin
-  code: XDSLD
-  faculty_id: "3"
-  id: "59"
-  name_english: 
-coridors_010: 
-  name: Podnikov√° a odvƒõtvov√° ekonomika (doktorandsk√©)
+coridors_003: 
+  name: Podnikov· a odv?tvov· ekonomika (doktorandskÈ)
   code: XPOE
   faculty_id: "4"
   id: "13"
   name_english: 
-coridors_009: 
-  name: "≈ò√≠zen√≠ a ekonomika podnik≈Ø - PEF (doktorandsk√©)"
+coridors_037: 
+  name: P?stov·nÌ lesa
+  code: XPESLE
+  faculty_id: "1"
+  id: "133"
+  name_english: 
+coridors_026: 
+  name: Technika a mechanizace zem?d?lstvÌ
+  code: XTMZ
+  faculty_id: "5"
+  id: "107"
+  name_english: 
+coridors_015: 
+  name: Hospod·?sk· ˙prava lesa
+  code: XHUPLE
+  faculty_id: "3"
+  id: "61"
+  name_english: 
+coridors_004: 
+  name: "?ÌzenÌ a ekonomika podnik? - PEF (doktorandskÈ)"
   code: XREP
   faculty_id: "4"
   id: "14"
+  name_english: 
+coridors_038: 
+  name: Rostlinn· produkce
+  code: XRP
+  faculty_id: "1"
+  id: "134"
+  name_english: 
+coridors_027: 
+  name: "Vlastnosti a zpracov·nÌ zem. materi·l? a produkt?"
+  code: XVZZMP
+  faculty_id: "5"
+  id: "108"
+  name_english: 
+coridors_016: 
+  name: Ochrana lesa
+  code: XOCHLE
+  faculty_id: "3"
+  id: "62"
+  name_english: 
+coridors_005: 
+  name: Region·lnÌ a soci·lnÌ rozvoj (doktorandskÈ)
+  code: XRSR
+  faculty_id: "4"
+  id: "15"
+  name_english: 
+coridors_040: 
+  name: Technika a mechanizace zem?d?lstvÌ
+  code: XTMZ
+  faculty_id: "1"
+  id: "136"
+  name_english: 
+coridors_039: 
+  name: Technika a mechanizace v lesnÌm hospod·?stvÌ
+  code: XTMELH
+  faculty_id: "1"
+  id: "135"
+  name_english: 
+coridors_028: 
+  name: TropickÈ a subtropickÈ zem?d?lstvÌ ITSZ
+  code: XZTS
+  faculty_id: "2"
+  id: "110"
+  name_english: 
+coridors_017: 
+  name: Ochrana p?dy a meliorace
+  code: XOPMEL
+  faculty_id: "3"
+  id: "63"
+  name_english: 
+coridors_006: 
+  name: SystÈmovÈ inûen˝rstvÌ (doktorandskÈ)
+  code: XSYI
+  faculty_id: "4"
+  id: "16"
+  name_english: 
+coridors_041: 
+  name: "Technika v˝robnÌch proces?"
+  code: XTVP
+  faculty_id: "1"
+  id: "137"
+  name_english: 
+coridors_030: 
+  name: Dendrologie a ölecht?nÌ lesnÌch d?evin
+  code: XDSLD
+  faculty_id: "1"
+  id: "126"
+  name_english: 
+coridors_029: 
+  name: Anatomie a fyziologie rostlin
+  code: XAFRO
+  faculty_id: "1"
+  id: "125"
+  name_english: 
+coridors_018: 
+  name: P?stov·nÌ lesa
+  code: XPESLE
+  faculty_id: "3"
+  id: "64"
+  name_english: 
+coridors_007: 
+  name: Zpracov·nÌ dat a matematickÈ modelov·nÌ (doktorandskÈ)
+  code: XZDM
+  faculty_id: "4"
+  id: "17"
+  name_english: 
+coridors_042: 
+  name: "Vlastnosti a zpracov·nÌ zem. materi·l? a produkt?"
+  code: XVZZMP
+  faculty_id: "1"
+  id: "138"
+  name_english: 
+coridors_031: 
+  name: Obecn· a speci·lnÌ produkce rostlinn·
+  code: XFYTO
+  faculty_id: "1"
+  id: "127"
+  name_english: 
+coridors_020: 
+  name: Technika a mechanizace v lesnÌm hospod·?stvÌ
+  code: XTMELH
+  faculty_id: "3"
+  id: "66"
+  name_english: 
+coridors_019: 
+  name: "?ÌzenÌ a ekonomika podnik? - LF"
+  code: XREPOD
+  faculty_id: "3"
+  id: "65"
+  name_english: 
+coridors_008: 
+  name: Aplikovan· a krajinn· ekologie
+  code: XAKREK
+  faculty_id: "3"
+  id: "21"
+  name_english: 
+coridors_032: 
+  name: Hospod·?sk· ˙prava lesa
+  code: XHUPLE
+  faculty_id: "1"
+  id: "128"
+  name_english: 
+coridors_021: 
+  name: Zem?d?lsk· a lesnick· hydrologie
+  code: XZLHYD
+  faculty_id: "3"
+  id: "67"
+  name_english: 
+coridors_010: 
+  name: "Jakost a spolehlivost stroj? a
+    za?ÌzenÌ"
+  code: XJSSZ
+  faculty_id: "5"
+  id: "50"
+  name_english: 
+coridors_009: 
+  name: "Technika v˝robnÌch proces?"
+  code: XTVP
+  faculty_id: "5"
+  id: "23"
   name_english: 

@@ -467,7 +467,7 @@ contacts_495:
 contacts_448: 
   name: bolor_altai@yahoo.co
   contact_type_id: "1"
-  id: "456"
+  id: "448"
   person_id: 
 contacts_258: 
   name: "608063969"
@@ -485,9 +485,9 @@ contacts_496:
   id: "496"
   person_id: 
 contacts_449: 
-  name: bolor_altai@yahoo.co
-  contact_type_id: "1"
-  id: "448"
+  name: "603348747"
+  contact_type_id: "2"
+  id: "449"
   person_id: 
 contacts_259: 
   name: kick2iva@yahoo.com
@@ -740,9 +740,9 @@ contacts_367:
   id: "367"
   person_id: 
 contacts_177: 
-  name: kuricova@pef.czu.cz
+  name: martinpapik@seznam.c
   contact_type_id: "1"
-  id: "178"
+  id: "177"
   person_id: 
 contacts_368: 
   name: skrybova@pef.czu.cz
@@ -750,9 +750,9 @@ contacts_368:
   id: "368"
   person_id: "4387"
 contacts_178: 
-  name: martinpapik@seznam.c
+  name: kuricova@pef.czu.cz
   contact_type_id: "1"
-  id: "177"
+  id: "178"
   person_id: 
 contacts_369: 
   name: koubam@fle.czu.cz
@@ -1315,9 +1315,9 @@ contacts_070:
   id: "70"
   person_id: "4566"
 contacts_450: 
-  name: "603348747"
-  contact_type_id: "2"
-  id: "449"
+  name: bolor_altai@yahoo.co
+  contact_type_id: "1"
+  id: "450"
   person_id: 
 contacts_403: 
   name: prusova.V@seznam.cz
@@ -1345,9 +1345,9 @@ contacts_071:
   id: "71"
   person_id: "3541"
 contacts_451: 
-  name: bolor_altai@yahoo.co
-  contact_type_id: "1"
-  id: "450"
+  name: "603348747"
+  contact_type_id: "2"
+  id: "451"
   person_id: 
 contacts_404: 
   name: 731 460 881
@@ -1375,9 +1375,9 @@ contacts_072:
   id: "72"
   person_id: "3541"
 contacts_452: 
-  name: "603348747"
-  contact_type_id: "2"
-  id: "451"
+  name: bolor_altai@yahoo.co
+  contact_type_id: "1"
+  id: "452"
   person_id: 
 contacts_405: 
   name: lukaszagata@atlas.cz
@@ -1400,9 +1400,9 @@ contacts_262:
   id: "262"
   person_id: 
 contacts_453: 
-  name: bolor_altai@yahoo.co
-  contact_type_id: "1"
-  id: "452"
+  name: "603348747"
+  contact_type_id: "2"
+  id: "453"
   person_id: 
 contacts_406: 
   name: "777569910"
@@ -1430,9 +1430,9 @@ contacts_073:
   id: "73"
   person_id: 
 contacts_454: 
-  name: "603348747"
-  contact_type_id: "2"
-  id: "453"
+  name: bolor_altai@yahoo.co
+  contact_type_id: "1"
+  id: "454"
   person_id: 
 contacts_407: 
   name: lukaszagata@atlas.cz
@@ -1460,9 +1460,9 @@ contacts_217:
   id: "217"
   person_id: 
 contacts_455: 
-  name: bolor_altai@yahoo.co
-  contact_type_id: "1"
-  id: "454"
+  name: "603348747,"
+  contact_type_id: "2"
+  id: "455"
   person_id: 
 contacts_408: 
   name: "777569910"
@@ -1490,9 +1490,9 @@ contacts_218:
   id: "218"
   person_id: "4686"
 contacts_456: 
-  name: "603348747,"
-  contact_type_id: "2"
-  id: "455"
+  name: bolor_altai@yahoo.co
+  contact_type_id: "1"
+  id: "456"
   person_id: 
 contacts_409: 
   name: tachecim@seznam.cz

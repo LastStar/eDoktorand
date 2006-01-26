@@ -25,6 +25,32 @@ probation_terms_007:
   start_time: "8,00"
   second_examinator_id: "0"
   first_examinator_id: "22"
+probation_terms_020: 
+  created_on: 2006-01-23 16:06:32
+  updated_on: 2006-01-23 16:06:32
+  created_by: "1010"
+  date: "2006-01-23"
+  id: "21"
+  note: ''
+  subject_id: "1351"
+  max_students: "1"
+  room: PEF p?. ?. 5
+  start_time: "16,00"
+  second_examinator_id: "0"
+  first_examinator_id: "1"
+probation_terms_019: 
+  created_on: 2006-01-23 14:56:41
+  updated_on: 2006-01-23 14:56:41
+  created_by: "1010"
+  date: "2006-01-24"
+  id: "20"
+  note: ''
+  subject_id: "1351"
+  max_students: "3"
+  room: "?.5"
+  start_time: "10:00"
+  second_examinator_id: "0"
+  first_examinator_id: "1"
 probation_terms_008: 
   created_on: 2005-12-01 11:23:09
   updated_on: 2005-12-01 15:26:43
@@ -122,8 +148,8 @@ probation_terms_002:
   created_by: "46"
   date: "2005-11-28"
   id: "3"
-  note: "PÅ™edloÅ¾enÃ½ projekt dle zadÃ¡nÃ­, vytvoÅ™enÃ­ prezentace k odbornÃ© Äinnosti.
-    Prezentace a projekt 1 tÃ½den pÅ™ed termÃ­nem."
+  note: "P?edloenı projekt dle zadání, vytvo?ení prezentace k odborné ?innosti. Prezentace a
+    projekt 1 tıden p?ed termínem."
   subject_id: "1380"
   max_students: "2"
   room: PEF/234
@@ -149,7 +175,7 @@ probation_terms_003:
   created_by: "45"
   date: "2005-12-15"
   id: "4"
-  note: "DokonÄenÃ­ skupinovÃ©ho projektu.\r
+  note: "Dokon?ení skupinového projektu.\r
 
     Prezentace ind. projektu."
   subject_id: "1382"
@@ -190,7 +216,7 @@ probation_terms_016:
   created_by: "46"
   date: "2005-12-12"
   id: "17"
-  note: OdevzdanÃ½ projekt 5 dnÃ­ pÅ™ed termÃ­nem
+  note: Odevzdanı projekt 5 dní p?ed termínem
   subject_id: "1380"
   max_students: "3"
   room: 234/PEF
@@ -216,7 +242,7 @@ probation_terms_017:
   created_by: "45"
   date: "2006-01-09"
   id: "18"
-  note: Projekt dle podmÃ­nek na kit.pef.czu.cz
+  note: Projekt dle podmínek na kit.pef.czu.cz
   subject_id: "1383"
   max_students: "5"
   room: PEF 232

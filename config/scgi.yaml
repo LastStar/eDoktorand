@@ -1,7 +1,7 @@
 --- 
 :logfile: log/scgi.log
 :control_url: druby://127.0.0.1:8999
-:env: development
+:env: production
 :host: 127.0.0.1
 :password: OAqnW1YmPHzPY
 :port: 9999
