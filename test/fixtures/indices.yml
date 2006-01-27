@@ -1440,7 +1440,7 @@ indices_600:
   account_number: "8606320267"
   payment_id: "1"
 indices_598: 
-  account_number_prefix: "\xC4\x8CSOB"
+  account_number_prefix: ?SOB
   created_on: 2005-12-02 13:53:16
   interupted_on: 
   student_id: "3841"
@@ -1926,7 +1926,7 @@ indices_224:
   account_number: 
   payment_id: 
 indices_034: 
-  account_number_prefix: "\xC4\x8CSOB"
+  account_number_prefix: ?SOB
   created_on: 2005-12-02 13:53:16
   interupted_on: 
   student_id: "4355"

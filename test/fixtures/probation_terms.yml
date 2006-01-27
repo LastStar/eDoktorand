@@ -8,7 +8,7 @@ probation_terms_052:
   note: ""
   subject_id: "1351"
   max_students: "3"
-  room: "pracovna prof. Havl\xC3"
+  room: pracovna prof. Havl
   start_time: "10,00"
   second_examinator_id: "0"
   first_examinator_id: "1"
@@ -31,7 +31,7 @@ probation_terms_030:
   created_by: "1009"
   date: "2006-04-10"
   id: "31"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1328"
   max_students: "2"
   room: PEF II. 224
@@ -44,7 +44,7 @@ probation_terms_029:
   created_by: "1009"
   date: "2006-03-17"
   id: "30"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1332"
   max_students: "2"
   room: PEF II. 224
@@ -109,7 +109,7 @@ probation_terms_031:
   created_by: "1009"
   date: "2006-04-10"
   id: "32"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1332"
   max_students: "2"
   room: PEF II. 224
@@ -125,7 +125,7 @@ probation_terms_020:
   note: ""
   subject_id: "1365"
   max_students: "1"
-  room: "p\xC5\x99\xC3\xADzem\xC3\xAD PEF \xC4\x8D. 6"
+  room: "p?\xEDzem\xED PEF ?. 6"
   start_time: "13,00"
   second_examinator_id: "0"
   first_examinator_id: "60"
@@ -187,7 +187,7 @@ probation_terms_032:
   created_by: "1009"
   date: "2006-05-15"
   id: "33"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1328"
   max_students: "2"
   room: PEF II. 224
@@ -265,7 +265,7 @@ probation_terms_033:
   created_by: "1009"
   date: "2006-05-15"
   id: "34"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1332"
   max_students: "2"
   room: PEF II. 224
@@ -278,7 +278,7 @@ probation_terms_022:
   created_by: "46"
   date: "2006-01-30"
   id: "23"
-  note: "Odevzd\xC3\xA1n\xC3\xAD projektu (individ\xC3\xA1ln\xC4\x9B projednan\xC3\xA9ho) nejpozd\xC4\x9Bji do 26.1.2006"
+  note: "Odevzd\xE1n\xED projektu (individ\xE1ln? projednan\xE9ho) nejpozd?ji do 26.1.2006"
   subject_id: "1380"
   max_students: "5"
   room: "234"
@@ -333,7 +333,7 @@ probation_terms_034:
   note: ""
   subject_id: "1351"
   max_students: "3"
-  room: "pracovna \xC4\x8D. 5"
+  room: pracovna ?. 5
   start_time: "10,00"
   second_examinator_id: "0"
   first_examinator_id: "1"
@@ -343,7 +343,7 @@ probation_terms_023:
   created_by: "1009"
   date: "2006-01-30"
   id: "24"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1328"
   max_students: "3"
   room: PEF II. 224
@@ -382,7 +382,7 @@ probation_terms_057:
   created_by: "1009"
   date: "2006-01-31"
   id: "58"
-  note: "zkou\xC5\xA1\xC3\xAD: Ing. Bou\xC4\x8Dkov\xC3\xA1"
+  note: "zkou\x9A\xED: Ing. Bou?kov\xE1"
   subject_id: "1755"
   max_students: "2"
   room: PEF II. 204
@@ -421,7 +421,7 @@ probation_terms_024:
   created_by: "1009"
   date: "2006-01-30"
   id: "25"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1332"
   max_students: "3"
   room: PEF II. 224
@@ -447,7 +447,7 @@ probation_terms_002:
   created_by: "46"
   date: "2005-11-28"
   id: "3"
-  note: "P\xC5\x99edlo\xC5\xBEen\xC3\xBD projekt dle zad\xC3\xA1n\xC3\xAD, vytvo\xC5\x99en\xC3\xAD prezentace k odborn\xC3\xA9 \xC4\x8Dinnosti. Prezentace a projekt 1 t\xC3\xBDden p\xC5\x99ed term\xC3\xADnem."
+  note: "P?edlo\x9Een\xFD projekt dle zad\xE1n\xED, vytvo?en\xED prezentace k odborn\xE9 ?innosti. Prezentace a projekt 1 t\xFDden p?ed term\xEDnem."
   subject_id: "1380"
   max_students: "2"
   room: PEF/234
@@ -486,7 +486,7 @@ probation_terms_025:
   created_by: "1009"
   date: "2006-02-13"
   id: "26"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1328"
   max_students: "2"
   room: PEF II. 224
@@ -512,7 +512,7 @@ probation_terms_003:
   created_by: "45"
   date: "2005-12-15"
   id: "4"
-  note: "Dokon\xC4\x8Den\xC3\xAD skupinov\xC3\xA9ho projektu.\r\n\
+  note: "Dokon?en\xED skupinov\xE9ho projektu.\r\n\
     Prezentace ind. projektu."
   subject_id: "1382"
   max_students: "12"
@@ -552,7 +552,7 @@ probation_terms_026:
   created_by: "1009"
   date: "2006-02-13"
   id: "27"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1332"
   max_students: "2"
   room: PEF II. 224
@@ -630,7 +630,7 @@ probation_terms_016:
   created_by: "46"
   date: "2005-12-12"
   id: "17"
-  note: "Odevzdan\xC3\xBD projekt 5 dn\xC3\xAD p\xC5\x99ed term\xC3\xADnem"
+  note: "Odevzdan\xFD projekt 5 dn\xED p?ed term\xEDnem"
   subject_id: "1380"
   max_students: "3"
   room: 234/PEF
@@ -682,7 +682,7 @@ probation_terms_028:
   created_by: "1009"
   date: "2006-03-17"
   id: "29"
-  note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+  note: "3. zkou\x9Aej\xEDc\xED: doc. Br?\xE1k"
   subject_id: "1328"
   max_students: "2"
   room: PEF II. 224
@@ -695,7 +695,7 @@ probation_terms_017:
   created_by: "45"
   date: "2006-01-09"
   id: "18"
-  note: "Projekt dle podm\xC3\xADnek na kit.pef.czu.cz"
+  note: "Projekt dle podm\xEDnek na kit.pef.czu.cz"
   subject_id: "1383"
   max_students: "5"
   room: PEF 232

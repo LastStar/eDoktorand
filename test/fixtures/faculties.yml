@@ -1,30 +1,30 @@
 --- 
 faculties_001: 
-  name: "Fakulta agrobiologie, potravinov\xC3\xBDch a p\xC5\x99\xC3\xADrodn\xC3\xADch zdroj\xC5\xAF"
+  name: "Fakulta agrobiologie, potravinov\xFDch a p?\xEDrodn\xEDch zdroj?"
   ldap_context: af
   id: "1"
   short_name: FAPPZ
   name_english: Faculty of Agrobiology, Food and Natural Resources
 faculties_002: 
-  name: "Institut trop\xC5\xAF a subtrop\xC5\xAF"
+  name: Institut trop? a subtrop?
   ldap_context: itsz
   id: "2"
   short_name: ITS
   name_english: Institute of Tropics and Subtorpics
 faculties_003: 
-  name: "Fakulta lesnick\xC3\xA1 a environment\xC3\xA1ln\xC3\xAD"
+  name: "Fakulta lesnick\xE1 a environment\xE1ln\xED"
   ldap_context: lf
   id: "3"
   short_name: FLE
   name_english: The Faculty of Forestry
 faculties_004: 
-  name: "Provozn\xC4\x9B ekonomick\xC3\xA1 fakulta"
+  name: "Provozn? ekonomick\xE1 fakulta"
   ldap_context: pef
   id: "4"
   short_name: PEF
   name_english: Faculty of economics and management
 faculties_005: 
-  name: "Technick\xC3\xA1 fakulta"
+  name: "Technick\xE1 fakulta"
   ldap_context: tf
   id: "5"
   short_name: TF

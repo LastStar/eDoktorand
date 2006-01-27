@@ -18,21 +18,21 @@ statements_356:
   result: "1"
   updated_on: 2005-11-22 15:44:13
   id: "362"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_488: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:35
   id: "494"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1076: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:00
   id: "1082"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_910: 
   created_on: 2003-10-30 17:00:00
@@ -74,7 +74,7 @@ statements_911:
   result: "1"
   updated_on: 2005-11-22 15:46:52
   id: "917"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_226: 
   created_on: 2005-11-01 10:42:55
@@ -116,14 +116,14 @@ statements_359:
   result: "1"
   updated_on: 2005-11-22 15:44:13
   id: "365"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1079: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:00
   id: "1085"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_490: 
   created_on: 2004-10-01 00:00:00
@@ -151,7 +151,7 @@ statements_491:
   result: "1"
   updated_on: 2005-11-22 15:46:35
   id: "497"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_229: 
   created_on: 2005-11-01 15:22:41
@@ -165,7 +165,7 @@ statements_914:
   result: "1"
   updated_on: 2005-11-22 15:46:53
   id: "920"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_360: 
   created_on: 2004-10-29 18:00:00
@@ -235,35 +235,35 @@ statements_362:
   result: "1"
   updated_on: 2005-11-22 15:44:13
   id: "368"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_494: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:35
   id: "500"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1082: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:00
   id: "1088"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_917: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:53
   id: "923"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_231: 
   created_on: 2005-11-01 15:42:17
   result: "0"
   updated_on: 2005-11-01 15:42:17
   id: "234"
-  note: "Doporu\xC4\x8Duji zm\xC4\x9Bnu t\xC3\xA9matu diserta\xC4\x8Dn\xC3\xAD pr\xC3\xA1ce"
+  note: "Doporu?uji zm?nu t\xE9matu diserta?n\xED pr\xE1ce"
   person_id: "113"
 statements_363: 
   created_on: 2003-10-01 00:00:00
@@ -347,14 +347,14 @@ statements_365:
   result: "1"
   updated_on: 2005-11-22 15:46:30
   id: "371"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_497: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:35
   id: "503"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_101: 
   created_on: 2005-10-24 13:12:38
@@ -368,7 +368,7 @@ statements_1085:
   result: "1"
   updated_on: 2005-11-22 15:47:01
   id: "1091"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_234: 
   created_on: 2005-11-01 15:47:02
@@ -410,7 +410,7 @@ statements_920:
   result: "1"
   updated_on: 2005-11-22 15:46:53
   id: "926"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_235: 
   created_on: 2005-11-01 15:47:34
@@ -466,7 +466,7 @@ statements_368:
   result: "1"
   updated_on: 2005-11-22 15:46:30
   id: "374"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_104: 
   created_on: 2005-10-24 13:23:53
@@ -480,7 +480,7 @@ statements_1088:
   result: "1"
   updated_on: 2005-11-22 15:47:01
   id: "1094"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_922: 
   created_on: 2003-10-30 17:00:00
@@ -522,7 +522,7 @@ statements_923:
   result: "1"
   updated_on: 2005-11-22 15:46:53
   id: "929"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_106: 
   created_on: 2005-10-24 13:24:36
@@ -592,7 +592,7 @@ statements_371:
   result: "1"
   updated_on: 2005-11-22 15:46:30
   id: "377"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_109: 
   created_on: 2005-10-24 13:26:14
@@ -606,14 +606,14 @@ statements_1091:
   result: "1"
   updated_on: 2005-11-22 15:47:01
   id: "1097"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_926: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:53
   id: "932"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_240: 
   created_on: 2005-11-01 15:52:59
@@ -690,21 +690,21 @@ statements_374:
   result: "1"
   updated_on: 2005-11-22 15:46:30
   id: "380"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1094: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:01
   id: "1100"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_929: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:53
   id: "935"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_111: 
   created_on: 2005-10-24 13:26:59
@@ -788,14 +788,14 @@ statements_377:
   result: "1"
   updated_on: 2005-11-22 15:46:30
   id: "383"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1097: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:01
   id: "1103"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_931: 
   created_on: 2003-10-30 17:00:00
@@ -837,14 +837,14 @@ statements_932:
   result: "1"
   updated_on: 2005-11-22 15:46:53
   id: "938"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_800: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:48
   id: "806"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_115: 
   created_on: 2005-10-24 15:24:15
@@ -935,28 +935,28 @@ statements_380:
   result: "1"
   updated_on: 2005-11-22 15:46:30
   id: "386"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_118: 
   created_on: 2005-10-25 06:45:56
   result: "1"
   updated_on: 2005-10-25 06:45:56
   id: "118"
-  note: "Pros\xC3\xADm opravit n\xC4\x9Bkter\xC3\xA9 chyby v textu (... formulace m\xC4\x9Bli..)"
+  note: "Pros\xEDm opravit n?kter\xE9 chyby v textu (... formulace m?li..)"
   person_id: "2112"
 statements_935: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:53
   id: "941"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_803: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:48
   id: "809"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_381: 
   created_on: 2004-10-29 18:00:00
@@ -1026,21 +1026,21 @@ statements_383:
   result: "1"
   updated_on: 2005-11-22 15:46:30
   id: "389"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_938: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:54
   id: "944"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1213"
 statements_806: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:48
   id: "812"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_120: 
   created_on: 2005-10-25 10:38:27
@@ -1124,7 +1124,7 @@ statements_386:
   result: "1"
   updated_on: 2005-11-22 15:46:31
   id: "392"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_940: 
   created_on: 2003-10-01 00:00:00
@@ -1138,7 +1138,7 @@ statements_809:
   result: "1"
   updated_on: 2005-11-22 15:46:48
   id: "815"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_123: 
   created_on: 2005-10-25 12:33:36
@@ -1166,7 +1166,7 @@ statements_941:
   result: "1"
   updated_on: 2005-11-22 15:46:54
   id: "947"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_124: 
   created_on: 2005-10-25 13:17:24
@@ -1222,7 +1222,7 @@ statements_389:
   result: "1"
   updated_on: 2005-11-22 15:46:31
   id: "395"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_943: 
   created_on: 2004-10-01 00:00:00
@@ -1243,7 +1243,7 @@ statements_126:
   result: "1"
   updated_on: 2005-10-25 14:40:50
   id: "126"
-  note: "\xC5\xBD\xC3\xA1dala o zm\xC4\x9Bnu stud. pl\xC3\xA1nu. Doporu\xC4\x8Dena s podm\xC3\xADnkou, \xC5\xBEe do 30.6.budou slo\xC5\xBEeny v\xC5\xA1echny zkou\xC5\xA1"
+  note: "\x8E\xE1dala o zm?nu stud. pl\xE1nu. Doporu?ena s podm\xEDnkou, \x9Ee do 30.6.budou slo\x9Eeny v\x9Aechny zkou\x9A"
   person_id: "79"
 statements_258: 
   created_on: 2005-11-03 09:36:58
@@ -1257,21 +1257,21 @@ statements_944:
   result: "1"
   updated_on: 2005-11-22 15:46:54
   id: "950"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_812: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:48
   id: "818"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_127: 
   created_on: 2005-10-25 14:43:53
   result: "1"
   updated_on: 2005-10-25 14:43:53
   id: "127"
-  note: "Z\xC3\xA1dala o zm\xC4\x9Bnu studijn\xC3\xADho pl\xC3\xA1nu. Povolena s t\xC3\xADm, \xC5\xBEe chyb\xC4\x9Bj\xC3\xADc\xC3\xAD 4 zkou\xC5\xA1ky budou slo\xC5\xBEeny do"
+  note: "Z\xE1dala o zm?nu studijn\xEDho pl\xE1nu. Povolena s t\xEDm, \x9Ee chyb?j\xEDc\xED 4 zkou\x9Aky budou slo\x9Eeny do"
   person_id: "79"
 statements_259: 
   created_on: 2005-11-03 09:36:58
@@ -1348,21 +1348,21 @@ statements_392:
   result: "1"
   updated_on: 2005-11-22 15:46:31
   id: "398"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_947: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:54
   id: "953"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_815: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:48
   id: "821"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_261: 
   created_on: 2005-11-03 16:48:09
@@ -1446,14 +1446,14 @@ statements_395:
   result: "1"
   updated_on: 2005-11-22 15:46:31
   id: "401"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_818: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:48
   id: "824"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_132: 
   created_on: 2005-10-25 15:25:01
@@ -1467,7 +1467,7 @@ statements_264:
   result: "1"
   updated_on: 2005-11-04 08:35:37
   id: "267"
-  note: "S pl\xC3\xA1nem souhlas\xC3\xADm. Vzhledem k tomu, \xC5\xBEe jde o studenta, kter\xC3\xBD nem\xC3\xA1 \xC4\x8De\xC5\xA1tinu jako mate\xC5\x99sk\xC3\xBD ja"
+  note: "S pl\xE1nem souhlas\xEDm. Vzhledem k tomu, \x9Ee jde o studenta, kter\xFD nem\xE1 ?e\x9Atinu jako mate?sk\xFD ja"
   person_id: "10"
 statements_396: 
   created_on: 2003-10-30 17:00:00
@@ -1481,7 +1481,7 @@ statements_950:
   result: "1"
   updated_on: 2005-11-22 15:46:54
   id: "956"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_819: 
   created_on: 2002-10-29 17:00:00
@@ -1509,7 +1509,7 @@ statements_265:
   result: "1"
   updated_on: 2005-11-04 08:37:03
   id: "268"
-  note: "Souhlas\xC3\xADm bez p\xC5\x99ipom\xC3\xADnek."
+  note: "Souhlas\xEDm bez p?ipom\xEDnek."
   person_id: "10"
 statements_397: 
   created_on: 2003-10-30 17:00:00
@@ -1530,7 +1530,7 @@ statements_002:
   result: "1"
   updated_on: 2005-10-13 11:45:54
   id: "2"
-  note: "Opravit - studium zah\xC3\xA1jeno 1.10.2005"
+  note: "Opravit - studium zah\xE1jeno 1.10.2005"
   person_id: "46"
 statements_134: 
   created_on: 2005-10-25 15:49:33
@@ -1544,14 +1544,14 @@ statements_266:
   result: "1"
   updated_on: 2005-11-04 08:39:09
   id: "269"
-  note: "Student pokra\xC4\x8Duje v souladu s pl\xC3\xA1nem. Je v druh\xC3\xA9m ro\xC4\x8Dn\xC3\xADku, nikoliv v prv\xC3\xA9m jak je uvedeno v sy"
+  note: "Student pokra?uje v souladu s pl\xE1nem. Je v druh\xE9m ro?n\xEDku, nikoliv v prv\xE9m jak je uvedeno v sy"
   person_id: "10"
 statements_398: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:31
   id: "404"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_952: 
   created_on: 2002-10-29 17:00:00
@@ -1600,21 +1600,21 @@ statements_953:
   result: "1"
   updated_on: 2005-11-22 15:46:54
   id: "959"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_821: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:48
   id: "827"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_004: 
   created_on: 2005-10-17 16:21:20
   result: "1"
   updated_on: 2005-10-17 16:21:20
   id: "4"
-  note: "Odevzdan\xC3\xA1 re\xC5\xA1er\xC5\xA1e 2005"
+  note: "Odevzdan\xE1 re\x9Aer\x9Ae 2005"
   person_id: "46"
 statements_136: 
   created_on: 2005-10-25 15:52:16
@@ -1649,7 +1649,7 @@ statements_005:
   result: "1"
   updated_on: 2005-10-17 16:21:58
   id: "5"
-  note: "Odevzdan\xC3\xA1 rig.pr\xC3\xA1ce 2005"
+  note: "Odevzdan\xE1 rig.pr\xE1ce 2005"
   person_id: "46"
 statements_137: 
   created_on: 2005-10-25 15:52:16
@@ -1684,7 +1684,7 @@ statements_006:
   result: "0"
   updated_on: 2005-10-18 10:10:19
   id: "6"
-  note: "opravit hypot\xC3\xA9zu"
+  note: "opravit hypot\xE9zu"
   person_id: "1960"
 statements_138: 
   created_on: 2005-10-25 15:52:54
@@ -1698,14 +1698,14 @@ statements_956:
   result: "1"
   updated_on: 2005-11-22 15:46:55
   id: "962"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_824: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:49
   id: "830"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_007: 
   created_on: 2005-10-18 11:36:35
@@ -1796,21 +1796,21 @@ statements_959:
   result: "1"
   updated_on: 2005-11-22 15:46:55
   id: "965"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_827: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:49
   id: "833"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_141: 
   created_on: 2005-10-25 15:57:55
   result: "0"
   updated_on: 2005-10-25 15:57:55
   id: "143"
-  note: "P\xC5\x99eformulovat t\xC5\x99et\xC3\xAD okruh ke SDZ."
+  note: "P?eformulovat t?et\xED okruh ke SDZ."
   person_id: "1971"
 statements_273: 
   created_on: 2005-11-04 16:13:25
@@ -1915,14 +1915,14 @@ statements_962:
   result: "1"
   updated_on: 2005-11-22 15:46:55
   id: "968"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_830: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:49
   id: "836"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_013: 
   created_on: 2005-10-18 11:43:43
@@ -2027,14 +2027,14 @@ statements_965:
   result: "1"
   updated_on: 2005-11-22 15:46:55
   id: "971"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_833: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:49
   id: "839"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_016: 
   created_on: 2005-10-19 12:02:50
@@ -2055,7 +2055,7 @@ statements_701:
   result: "1"
   updated_on: 2005-11-22 15:46:43
   id: "707"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_966: 
   created_on: 2001-10-01 00:00:00
@@ -2146,14 +2146,14 @@ statements_968:
   result: "1"
   updated_on: 2005-11-22 15:46:55
   id: "974"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_836: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:49
   id: "842"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_282: 
   created_on: 2005-11-04 16:15:13
@@ -2167,7 +2167,7 @@ statements_704:
   result: "1"
   updated_on: 2005-11-22 15:46:44
   id: "710"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_150: 
   created_on: 2005-10-26 10:43:20
@@ -2258,14 +2258,14 @@ statements_839:
   result: "1"
   updated_on: 2005-11-22 15:46:49
   id: "845"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_707: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:44
   id: "713"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_021: 
   created_on: 2005-10-19 17:29:30
@@ -2293,7 +2293,7 @@ statements_971:
   result: "1"
   updated_on: 2005-11-22 15:46:55
   id: "977"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_708: 
   created_on: 2004-10-01 00:00:00
@@ -2398,28 +2398,28 @@ statements_288:
   result: "0"
   updated_on: 2005-11-10 08:58:52
   id: "292"
-  note: "doplnit st\xC3\xA1tnicov\xC3\xA9 p\xC5\x99edm\xC4\x9Bty"
+  note: "doplnit st\xE1tnicov\xE9 p?edm?ty"
   person_id: "1627"
 statements_974: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:55
   id: "980"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_842: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:49
   id: "848"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_710: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:44
   id: "716"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_025: 
   created_on: 2005-10-20 08:30:33
@@ -2524,28 +2524,28 @@ statements_977:
   result: "1"
   updated_on: 2005-11-22 15:46:55
   id: "983"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_845: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:50
   id: "851"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_713: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:44
   id: "719"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_290: 
   created_on: 2005-11-10 09:57:27
   result: "0"
   updated_on: 2005-11-10 09:57:27
   id: "295"
-  note: "Up\xC5\x99esnit p\xC5\x99edm\xC4\x9Bty ke st\xC3\xA1tn\xC3\xAD zkou\xC5\xA1ce."
+  note: "Up?esnit p?edm?ty ke st\xE1tn\xED zkou\x9Ace."
   person_id: "1627"
 statements_028: 
   created_on: 2005-10-20 08:32:56
@@ -2587,7 +2587,7 @@ statements_291:
   result: "0"
   updated_on: 2005-11-10 09:58:05
   id: "296"
-  note: "Up\xC5\x99esnit p\xC5\x99edm\xC4\x9Bty ke st\xC3\xA1tn\xC3\xAD zkou\xC5\xA1ce."
+  note: "Up?esnit p?edm?ty ke st\xE1tn\xED zkou\x9Ace."
   person_id: "1627"
 statements_029: 
   created_on: 2005-10-20 08:33:33
@@ -2657,21 +2657,21 @@ statements_1303:
   result: "1"
   updated_on: 2005-12-16 11:11:48
   id: "1309"
-  note: "doporu\xC4\x8Duji"
+  note: doporu?uji
   person_id: "11"
 statements_848: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:50
   id: "854"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_716: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:44
   id: "722"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_030: 
   created_on: 2005-10-20 08:34:17
@@ -2706,7 +2706,7 @@ statements_980:
   result: "1"
   updated_on: 2005-11-22 15:46:56
   id: "986"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_849: 
   created_on: 2003-10-30 17:00:00
@@ -2811,7 +2811,7 @@ statements_719:
   result: "1"
   updated_on: 2005-11-22 15:46:44
   id: "725"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_033: 
   created_on: 2005-10-20 08:34:18
@@ -2846,14 +2846,14 @@ statements_983:
   result: "1"
   updated_on: 2005-11-22 15:46:56
   id: "989"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_851: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:50
   id: "857"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_034: 
   created_on: 2005-10-20 08:35:18
@@ -2874,14 +2874,14 @@ statements_298:
   result: "0"
   updated_on: 2005-11-10 10:41:35
   id: "303"
-  note: "Opravit oblasti st. zkou\xC5\xA1ky na \xC4\x8D\xC3\xA1sti p\xC5\x99edm\xC4\x9Bt\xC5\xAF , upravit c\xC3\xADl."
+  note: "Opravit oblasti st. zkou\x9Aky na ?\xE1sti p?edm?t? , upravit c\xEDl."
   person_id: "1627"
 statements_1308: 
   created_on: 2005-12-16 13:00:59
   result: "1"
   updated_on: 2005-12-16 13:00:59
   id: "1314"
-  note: "Schv\xC3\xA1leno"
+  note: "Schv\xE1leno"
   person_id: "45"
 statements_984: 
   created_on: 2002-10-29 17:00:00
@@ -2916,7 +2916,7 @@ statements_299:
   result: "0"
   updated_on: 2005-11-10 10:44:44
   id: "304"
-  note: "V anotaci upravit c\xC3\xADl"
+  note: "V anotaci upravit c\xEDl"
   person_id: "1627"
 statements_720: 
   created_on: 2003-10-30 17:00:00
@@ -2930,7 +2930,7 @@ statements_1309:
   result: "1"
   updated_on: 2005-12-16 13:00:59
   id: "1315"
-  note: "Schv\xC3\xA1leno"
+  note: "Schv\xE1leno"
   person_id: "45"
 statements_985: 
   created_on: 2002-10-29 17:00:00
@@ -2972,14 +2972,14 @@ statements_986:
   result: "1"
   updated_on: 2005-11-22 15:46:56
   id: "992"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_854: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:50
   id: "860"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_037: 
   created_on: 2005-10-20 08:35:31
@@ -3000,14 +3000,14 @@ statements_722:
   result: "1"
   updated_on: 2005-11-22 15:46:44
   id: "728"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1310: 
   created_on: 2005-12-16 13:01:12
   result: "1"
   updated_on: 2005-12-16 13:01:12
   id: "1316"
-  note: "Schv\xC3\xA1leno"
+  note: "Schv\xE1leno"
   person_id: "45"
 statements_987: 
   created_on: 2002-10-29 17:00:00
@@ -3042,7 +3042,7 @@ statements_1311:
   result: "1"
   updated_on: 2005-12-16 13:01:12
   id: "1317"
-  note: "Schv\xC3\xA1leno"
+  note: "Schv\xE1leno"
   person_id: "45"
 statements_988: 
   created_on: 2002-10-29 17:00:00
@@ -3077,21 +3077,21 @@ statements_1312:
   result: "1"
   updated_on: 2005-12-16 13:01:19
   id: "1318"
-  note: "Schv\xC3\xA1leno"
+  note: "Schv\xE1leno"
   person_id: "45"
 statements_989: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:56
   id: "995"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_857: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:50
   id: "863"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_170: 
   created_on: 2005-10-31 07:28:53
@@ -3105,14 +3105,14 @@ statements_725:
   result: "1"
   updated_on: 2005-11-22 15:46:44
   id: "731"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1313: 
   created_on: 2005-12-16 13:01:19
   result: "1"
   updated_on: 2005-12-16 13:01:19
   id: "1319"
-  note: "Schv\xC3\xA1leno"
+  note: "Schv\xE1leno"
   person_id: "45"
 statements_171: 
   created_on: 2005-10-31 08:04:32
@@ -3154,7 +3154,7 @@ statements_1314:
   result: "1"
   updated_on: 2005-12-16 13:03:00
   id: "1320"
-  note: "P\xC5\x99evzato z IS"
+  note: P?evzato z IS
   person_id: "98"
 statements_990: 
   created_on: 2001-09-01 00:00:00
@@ -3196,7 +3196,7 @@ statements_1315:
   result: "1"
   updated_on: 2005-12-16 13:03:11
   id: "1321"
-  note: "P\xC5\x99evzato z IS"
+  note: P?evzato z IS
   person_id: "98"
 statements_991: 
   created_on: 2001-09-01 00:00:00
@@ -3224,28 +3224,28 @@ statements_728:
   result: "1"
   updated_on: 2005-11-22 15:46:44
   id: "734"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1316: 
   created_on: 2005-12-16 13:03:17
   result: "1"
   updated_on: 2005-12-16 13:03:17
   id: "1322"
-  note: "P\xC5\x99evzato z IS"
+  note: P?evzato z IS
   person_id: "98"
 statements_992: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:56
   id: "998"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_860: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:50
   id: "866"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_043: 
   created_on: 2005-10-20 10:41:18
@@ -3357,14 +3357,14 @@ statements_995:
   result: "1"
   updated_on: 2005-11-22 15:46:56
   id: "1001"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_863: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:50
   id: "869"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_046: 
   created_on: 2005-10-20 10:55:28
@@ -3385,7 +3385,7 @@ statements_731:
   result: "1"
   updated_on: 2005-11-22 15:46:45
   id: "737"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_996: 
   created_on: 2004-10-29 18:00:00
@@ -3483,28 +3483,28 @@ statements_998:
   result: "1"
   updated_on: 2005-11-22 15:46:56
   id: "1004"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_866: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:50
   id: "872"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_602: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:39
   id: "608"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_734: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:45
   id: "740"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_049: 
   created_on: 2005-10-20 12:54:46
@@ -3616,21 +3616,21 @@ statements_869:
   result: "1"
   updated_on: 2005-11-22 15:46:51
   id: "875"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_605: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:39
   id: "611"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_737: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:45
   id: "743"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_051: 
   created_on: 2005-10-20 12:55:25
@@ -3742,7 +3742,7 @@ statements_608:
   result: "1"
   updated_on: 2005-11-22 15:46:39
   id: "614"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_054: 
   created_on: 2005-10-20 14:55:45
@@ -3770,14 +3770,14 @@ statements_872:
   result: "1"
   updated_on: 2005-11-22 15:46:51
   id: "878"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_740: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:45
   id: "746"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_609: 
   created_on: 2003-10-30 17:00:00
@@ -3826,7 +3826,7 @@ statements_056:
   result: "1"
   updated_on: 2005-10-20 15:47:59
   id: "56"
-  note: "Doporu\xC4\x8Duji studijn\xC3\xAD pl\xC3\xA1n a metodiku diserta\xC4\x8Dn\xC3\xAD pr\xC3\xA1ce schv\xC3\xA1lit. T\xC3\xA9ma diserta\xC4\x8Dn\xC3\xAD pr\xC3\xA1ce je v"
+  note: "Doporu?uji studijn\xED pl\xE1n a metodiku diserta?n\xED pr\xE1ce schv\xE1lit. T\xE9ma diserta?n\xED pr\xE1ce je v"
   person_id: "2026"
 statements_188: 
   created_on: 2005-10-31 11:16:25
@@ -3861,7 +3861,7 @@ statements_057:
   result: "1"
   updated_on: 2005-10-20 16:05:15
   id: "57"
-  note: "Doporu\xC4\x8Duji studijn\xC3\xAD pl\xC3\xA1n a metodiku schv\xC3\xA1lit. T\xC3\xA9ma kontaminace p\xC5\xAFdy je dlouhodob\xC4\x9B \xC5\x99e\xC5\xA1ena na"
+  note: "Doporu?uji studijn\xED pl\xE1n a metodiku schv\xE1lit. T\xE9ma kontaminace p?dy je dlouhodob? ?e\x9Aena na"
   person_id: "2026"
 statements_189: 
   created_on: 2005-10-31 11:16:25
@@ -3882,21 +3882,21 @@ statements_875:
   result: "1"
   updated_on: 2005-11-22 15:46:51
   id: "881"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_611: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:40
   id: "617"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_743: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:45
   id: "749"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_058: 
   created_on: 2005-10-21 09:07:09
@@ -3938,7 +3938,7 @@ statements_059:
   result: "1"
   updated_on: 2005-10-21 09:30:30
   id: "59"
-  note: "Nam\xC3\xADsto p\xC5\x99edm\xC4\x9Btu Kv\xC4\x9Btin\xC3\xA1\xC5\x99stv\xC3\xAD navrhuji n\xC4\x9Bkter\xC3\xBD z teoretick\xC3\xBDch p\xC5\x99edm\xC4\x9Bt\xC5\xAF (Fyziologie rost"
+  note: "Nam\xEDsto p?edm?tu Kv?tin\xE1?stv\xED navrhuji n?kter\xFD z teoretick\xFDch p?edm?t? (Fyziologie rost"
   person_id: "2112"
 statements_1332: 
   created_on: 2006-01-04 09:55:06
@@ -3980,7 +3980,7 @@ statements_190:
   result: "1"
   updated_on: 2005-10-31 12:44:36
   id: "193"
-  note: "S pl\xC3\xA1nem souhlas\xC3\xADm 31.10.2005"
+  note: "S pl\xE1nem souhlas\xEDm 31.10.2005"
   person_id: "89"
 statements_1333: 
   created_on: 2006-01-04 09:55:12
@@ -4001,21 +4001,21 @@ statements_878:
   result: "1"
   updated_on: 2005-11-22 15:46:51
   id: "884"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_614: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:40
   id: "620"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_746: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:45
   id: "752"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_191: 
   created_on: 2005-10-31 13:11:13
@@ -4036,7 +4036,7 @@ statements_1202:
   result: "1"
   updated_on: 2005-11-22 15:47:06
   id: "1208"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_879: 
   created_on: 2004-10-01 00:00:00
@@ -4064,7 +4064,7 @@ statements_060:
   result: "1"
   updated_on: 2005-10-21 09:30:30
   id: "60"
-  note: "Nam\xC3\xADsto p\xC5\x99edm\xC4\x9Btu Kv\xC4\x9Btin\xC3\xA1\xC5\x99stv\xC3\xAD navrhuji n\xC4\x9Bkter\xC3\xBD z teoretick\xC3\xBDch p\xC5\x99edm\xC4\x9Bt\xC5\xAF (Fyziologie rost"
+  note: "Nam\xEDsto p?edm?tu Kv?tin\xE1?stv\xED navrhuji n?kter\xFD z teoretick\xFDch p?edm?t? (Fyziologie rost"
   person_id: "2112"
 statements_192: 
   created_on: 2005-10-31 15:34:27
@@ -4120,7 +4120,7 @@ statements_062:
   result: "1"
   updated_on: 2005-10-21 11:30:26
   id: "62"
-  note: "Doporu\xC4\x8Duji studijn\xC3\xAD pl\xC3\xA1n i metodiku schv\xC3\xA1lit. T\xC3\xA9ma rekultivac\xC3\xAD navazuje na dlouhodob\xC3\xBD v\xC3\xBDzkum"
+  note: "Doporu?uji studijn\xED pl\xE1n i metodiku schv\xE1lit. T\xE9ma rekultivac\xED navazuje na dlouhodob\xFD v\xFDzkum"
   person_id: "2026"
 statements_194: 
   created_on: 2005-10-31 15:39:38
@@ -4155,7 +4155,7 @@ statements_749:
   result: "1"
   updated_on: 2005-11-22 15:46:45
   id: "755"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_063: 
   created_on: 2005-10-21 12:12:50
@@ -4169,15 +4169,15 @@ statements_195:
   result: "1"
   updated_on: 2005-10-31 16:16:50
   id: "198"
-  note: "Studijn\xC3\xAD pl\xC3\xA1n  Ing. Tom\xC3\xA1\xC5\xA1e Hlavsy schvaluji.\n\
-    Doc. Ing. L. Svato\xC5\xA1ov\xC3\xA1,CSc."
+  note: "Studijn\xED pl\xE1n  Ing. Tom\xE1\x9Ae Hlavsy schvaluji.\n\
+    Doc. Ing. L. Svato\x9Aov\xE1,CSc."
   person_id: "32"
 statements_617: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:40
   id: "623"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1337: 
   created_on: 2006-01-04 09:55:44
@@ -4191,14 +4191,14 @@ statements_1205:
   result: "1"
   updated_on: 2005-11-22 15:47:06
   id: "1211"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_881: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:51
   id: "887"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_064: 
   created_on: 2005-10-21 12:12:50
@@ -4317,14 +4317,14 @@ statements_1208:
   result: "1"
   updated_on: 2005-11-22 15:47:07
   id: "1214"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_884: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:51
   id: "890"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_067: 
   created_on: 2005-10-21 12:13:31
@@ -4345,14 +4345,14 @@ statements_620:
   result: "1"
   updated_on: 2005-11-22 15:46:40
   id: "626"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_752: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:46
   id: "758"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1340: 
   created_on: 2006-01-04 09:55:59
@@ -4450,21 +4450,21 @@ statements_887:
   result: "1"
   updated_on: 2005-11-22 15:46:51
   id: "893"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_623: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:40
   id: "629"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_755: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:46
   id: "761"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1343: 
   created_on: 2006-01-04 09:56:13
@@ -4478,7 +4478,7 @@ statements_1211:
   result: "1"
   updated_on: 2005-11-22 15:47:07
   id: "1217"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_888: 
   created_on: 2004-10-29 18:00:00
@@ -4562,14 +4562,14 @@ statements_626:
   result: "1"
   updated_on: 2005-11-22 15:46:40
   id: "632"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_758: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:46
   id: "764"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_071: 
   created_on: 2005-10-21 13:44:34
@@ -4590,7 +4590,7 @@ statements_1214:
   result: "1"
   updated_on: 2005-11-22 15:47:07
   id: "1220"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_072: 
   created_on: 2005-10-21 13:44:34
@@ -4604,7 +4604,7 @@ statements_890:
   result: "1"
   updated_on: 2005-11-22 15:46:51
   id: "896"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_627: 
   created_on: 2004-10-29 18:00:00
@@ -4695,7 +4695,7 @@ statements_629:
   result: "1"
   updated_on: 2005-11-22 15:46:40
   id: "635"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_075: 
   created_on: 2005-10-21 14:24:44
@@ -4716,21 +4716,21 @@ statements_1217:
   result: "1"
   updated_on: 2005-11-22 15:47:07
   id: "1223"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_893: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:52
   id: "899"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_761: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:46
   id: "767"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_076: 
   created_on: 2005-10-21 14:24:44
@@ -4828,28 +4828,28 @@ statements_896:
   result: "1"
   updated_on: 2005-11-22 15:46:52
   id: "902"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_500: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:35
   id: "506"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_632: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:41
   id: "638"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_764: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:46
   id: "770"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_079: 
   created_on: 2005-10-21 18:09:30
@@ -4870,7 +4870,7 @@ statements_1220:
   result: "1"
   updated_on: 2005-11-22 15:47:07
   id: "1226"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_897: 
   created_on: 2004-10-01 00:00:00
@@ -4947,7 +4947,7 @@ statements_1354:
   result: "1"
   updated_on: 2006-01-27 09:45:10
   id: "1360"
-  note: "Doporu\xC4\x8Duji ke schv\xC3\xA1len\xC3\xAD \xC5\xBE\xC3\xA1dost Ing. Kol\xC3\xA1\xC4\x8Dn\xC3\xA9 o p\xC5\x99eru\xC5\xA1en\xC3\xAD studia. Tuto \xC5\xBE\xC3\xA1dost podala p\xC3\xADs"
+  note: "Doporu?uji ke schv\xE1len\xED \x9E\xE1dost Ing. Kol\xE1?n\xE9 o p?eru\x9Aen\xED studia. Tuto \x9E\xE1dost podala p\xEDs"
   person_id: "6"
 statements_1222: 
   created_on: 2003-11-03 00:33:40
@@ -4961,28 +4961,28 @@ statements_899:
   result: "1"
   updated_on: 2005-11-22 15:46:52
   id: "905"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_503: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:35
   id: "509"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_635: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:41
   id: "641"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_767: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:46
   id: "773"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_080: 
   created_on: 2005-10-21 18:09:30
@@ -5003,7 +5003,7 @@ statements_1223:
   result: "1"
   updated_on: 2005-11-22 15:47:07
   id: "1229"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_504: 
   created_on: 2004-10-29 18:00:00
@@ -5101,14 +5101,14 @@ statements_506:
   result: "1"
   updated_on: 2005-11-22 15:46:35
   id: "512"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_638: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:41
   id: "644"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_084: 
   created_on: 2005-10-24 08:46:35
@@ -5157,7 +5157,7 @@ statements_770:
   result: "1"
   updated_on: 2005-11-22 15:46:46
   id: "776"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1359: 
   created_on: 2006-01-20 13:48:32
@@ -5199,14 +5199,14 @@ statements_1228:
   result: "1"
   updated_on: 2005-11-28 08:40:41
   id: "1234"
-  note: "Souhlas\xC3\xADm. D\xC3\xA1v\xC3\xA1m na zv\xC3\xA1\xC5\xBEen\xC3\xAD zkr\xC3\xA1cen\xC3\xAD n\xC3\xA1zvu na \"Outsourcing v \xC5\x99\xC3\xADzen\xC3\xAD\""
+  note: "Souhlas\xEDm. D\xE1v\xE1m na zv\xE1\x9Een\xED zkr\xE1cen\xED n\xE1zvu na \"Outsourcing v ?\xEDzen\xED\""
   person_id: "89"
 statements_509: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:35
   id: "515"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_087: 
   created_on: 2005-10-24 09:38:00
@@ -5255,14 +5255,14 @@ statements_641:
   result: "1"
   updated_on: 2005-11-22 15:46:41
   id: "647"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_773: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:46
   id: "779"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1361: 
   created_on: 2006-01-23 09:40:46
@@ -5304,7 +5304,7 @@ statements_1362:
   result: "0"
   updated_on: 2006-01-27 09:45:11
   id: "1368"
-  note: "Studium p\xC5\x99eru\xC5\xA1eno"
+  note: "Studium p?eru\x9Aeno"
   person_id: "2280"
 statements_1230: 
   created_on: 2005-11-28 09:29:58
@@ -5339,7 +5339,7 @@ statements_1363:
   result: "1"
   updated_on: 2006-01-27 09:45:11
   id: "1369"
-  note: "Pl\xC3\xA1n byl prokonzultov\xC3\xA1n se \xC5\xA1kolitelem. Souhlas"
+  note: "Pl\xE1n byl prokonzultov\xE1n se \x9Akolitelem. Souhlas"
   person_id: "81"
 statements_1231: 
   created_on: 2005-11-28 10:07:17
@@ -5353,21 +5353,21 @@ statements_512:
   result: "1"
   updated_on: 2005-11-22 15:46:36
   id: "518"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_644: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:41
   id: "650"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_776: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:47
   id: "782"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1364: 
   created_on: 2006-01-23 14:56:31
@@ -5388,7 +5388,7 @@ statements_1100:
   result: "1"
   updated_on: 2005-11-22 15:47:01
   id: "1106"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_090: 
   created_on: 2005-10-24 09:50:22
@@ -5500,21 +5500,21 @@ statements_515:
   result: "1"
   updated_on: 2005-11-22 15:46:36
   id: "521"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_647: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:41
   id: "653"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_779: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:47
   id: "785"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1367: 
   created_on: 2006-01-25 15:35:04
@@ -5535,7 +5535,7 @@ statements_1103:
   result: "1"
   updated_on: 2005-11-22 15:47:01
   id: "1109"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_093: 
   created_on: 2005-10-24 09:54:42
@@ -5647,7 +5647,7 @@ statements_518:
   result: "1"
   updated_on: 2005-11-22 15:46:36
   id: "524"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_096: 
   created_on: 2005-10-24 09:54:55
@@ -5668,21 +5668,21 @@ statements_1106:
   result: "1"
   updated_on: 2005-11-22 15:47:01
   id: "1112"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_650: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:41
   id: "656"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_782: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:47
   id: "788"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_519: 
   created_on: 2004-10-01 00:00:00
@@ -5801,28 +5801,28 @@ statements_1109:
   result: "1"
   updated_on: 2005-11-22 15:47:02
   id: "1115"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_521: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:36
   id: "527"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_653: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:41
   id: "659"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_785: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:47
   id: "791"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1373: 
   created_on: 2006-01-26 13:48:22
@@ -5927,21 +5927,21 @@ statements_788:
   result: "1"
   updated_on: 2005-11-22 15:46:47
   id: "794"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_524: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:36
   id: "530"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_656: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:41
   id: "662"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1244: 
   created_on: 2005-11-28 14:28:31
@@ -5955,7 +5955,7 @@ statements_1112:
   result: "1"
   updated_on: 2005-11-22 15:47:02
   id: "1118"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_789: 
   created_on: 2003-10-01 00:00:00
@@ -6025,14 +6025,14 @@ statements_527:
   result: "1"
   updated_on: 2005-11-22 15:46:36
   id: "533"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_659: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:42
   id: "665"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1247: 
   created_on: 2005-11-28 14:28:57
@@ -6046,7 +6046,7 @@ statements_1115:
   result: "1"
   updated_on: 2005-11-22 15:47:02
   id: "1121"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_790: 
   created_on: 2003-10-01 00:00:00
@@ -6060,7 +6060,7 @@ statements_791:
   result: "1"
   updated_on: 2005-11-22 15:46:47
   id: "797"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_528: 
   created_on: 2002-10-29 17:00:00
@@ -6137,28 +6137,28 @@ statements_1118:
   result: "1"
   updated_on: 2005-11-22 15:47:02
   id: "1124"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_794: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:47
   id: "800"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_662: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:42
   id: "668"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_530: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:36
   id: "536"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1250: 
   created_on: 2005-11-28 14:29:34
@@ -6249,28 +6249,28 @@ statements_797:
   result: "1"
   updated_on: 2005-11-22 15:46:47
   id: "803"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_401: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:31
   id: "407"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_533: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:37
   id: "539"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_665: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:42
   id: "671"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1253: 
   created_on: 2005-11-28 14:30:10
@@ -6284,7 +6284,7 @@ statements_1121:
   result: "1"
   updated_on: 2005-11-22 15:47:02
   id: "1127"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_798: 
   created_on: 2002-10-01 00:00:00
@@ -6375,21 +6375,21 @@ statements_404:
   result: "1"
   updated_on: 2005-11-22 15:46:31
   id: "410"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_536: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:37
   id: "542"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_668: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:42
   id: "674"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1256: 
   created_on: 2005-11-28 14:30:41
@@ -6403,7 +6403,7 @@ statements_1124:
   result: "1"
   updated_on: 2005-11-22 15:47:02
   id: "1130"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_405: 
   created_on: 2002-10-29 17:00:00
@@ -6480,14 +6480,14 @@ statements_407:
   result: "1"
   updated_on: 2005-11-22 15:46:32
   id: "413"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_539: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:37
   id: "545"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1259: 
   created_on: 2005-11-28 14:31:15
@@ -6501,14 +6501,14 @@ statements_1127:
   result: "1"
   updated_on: 2005-11-22 15:47:03
   id: "1133"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_671: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:42
   id: "677"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_408: 
   created_on: 2004-10-01 00:00:00
@@ -6585,21 +6585,21 @@ statements_410:
   result: "1"
   updated_on: 2005-11-22 15:46:32
   id: "416"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_542: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:37
   id: "548"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_674: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:42
   id: "680"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1262: 
   created_on: 2005-11-28 14:31:41
@@ -6613,7 +6613,7 @@ statements_1130:
   result: "1"
   updated_on: 2005-11-22 15:47:03
   id: "1136"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_411: 
   created_on: 2003-10-01 00:00:00
@@ -6697,21 +6697,21 @@ statements_413:
   result: "1"
   updated_on: 2005-11-22 15:46:32
   id: "419"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_545: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:37
   id: "551"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_677: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:42
   id: "683"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1265: 
   created_on: 2005-11-28 14:32:12
@@ -6725,14 +6725,14 @@ statements_1133:
   result: "1"
   updated_on: 2005-11-22 15:47:03
   id: "1139"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1001: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:57
   id: "1007"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_414: 
   created_on: 2003-10-01 00:00:00
@@ -6823,14 +6823,14 @@ statements_416:
   result: "1"
   updated_on: 2005-11-22 15:46:32
   id: "422"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_548: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:37
   id: "554"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1268: 
   created_on: 2005-11-28 14:32:42
@@ -6844,14 +6844,14 @@ statements_1136:
   result: "1"
   updated_on: 2005-11-22 15:47:03
   id: "1142"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1004: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:57
   id: "1010"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_417: 
   created_on: 2002-10-29 17:00:00
@@ -6893,7 +6893,7 @@ statements_680:
   result: "1"
   updated_on: 2005-11-22 15:46:43
   id: "686"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_681: 
   created_on: 2003-10-30 17:00:00
@@ -6942,7 +6942,7 @@ statements_419:
   result: "1"
   updated_on: 2005-11-22 15:46:32
   id: "425"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1270: 
   created_on: 2005-11-28 15:52:53
@@ -6956,28 +6956,28 @@ statements_1139:
   result: "1"
   updated_on: 2005-11-22 15:47:03
   id: "1145"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1007: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:57
   id: "1013"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_551: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:37
   id: "557"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_683: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:43
   id: "689"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1271: 
   created_on: 2005-11-29 08:43:15
@@ -7075,21 +7075,21 @@ statements_422:
   result: "1"
   updated_on: 2005-11-22 15:46:32
   id: "428"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_554: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:37
   id: "560"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_686: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:43
   id: "692"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1274: 
   created_on: 2005-11-30 09:06:51
@@ -7103,14 +7103,14 @@ statements_1142:
   result: "1"
   updated_on: 2005-11-22 15:47:03
   id: "1148"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1010: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:57
   id: "1016"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_423: 
   created_on: 2004-10-29 18:00:00
@@ -7201,21 +7201,21 @@ statements_425:
   result: "1"
   updated_on: 2005-11-22 15:46:32
   id: "431"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_557: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:37
   id: "563"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_689: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:43
   id: "695"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1277: 
   created_on: 2005-12-02 12:49:22
@@ -7229,14 +7229,14 @@ statements_1145:
   result: "1"
   updated_on: 2005-11-22 15:47:03
   id: "1151"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1013: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:57
   id: "1019"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_426: 
   created_on: 2003-10-30 17:00:00
@@ -7320,21 +7320,21 @@ statements_428:
   result: "1"
   updated_on: 2005-11-22 15:46:32
   id: "434"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1148: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:04
   id: "1154"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1016: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:57
   id: "1022"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_691: 
   created_on: 2004-10-01 00:00:00
@@ -7348,14 +7348,14 @@ statements_560:
   result: "1"
   updated_on: 2005-11-22 15:46:38
   id: "566"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_692: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:43
   id: "698"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_429: 
   created_on: 2003-10-01 00:00:00
@@ -7453,28 +7453,28 @@ statements_1019:
   result: "1"
   updated_on: 2005-11-22 15:46:57
   id: "1025"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_431: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:32
   id: "437"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_563: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:38
   id: "569"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_695: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:43
   id: "701"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1283: 
   created_on: 2005-12-08 09:12:29
@@ -7488,14 +7488,14 @@ statements_1151:
   result: "1"
   updated_on: 2005-11-22 15:47:04
   id: "1157"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_300: 
   created_on: 2005-11-10 10:45:53
   result: "0"
   updated_on: 2005-11-10 10:45:53
   id: "305"
-  note: "Zm\xC4\x9Bnit term\xC3\xADn st. zkou\xC5\xA1ky na 5. semestr, upravit v anotaci c\xC3\xADl"
+  note: "Zm?nit term\xEDn st. zkou\x9Aky na 5. semestr, upravit v anotaci c\xEDl"
   person_id: "1627"
 statements_432: 
   created_on: 2003-10-30 17:00:00
@@ -7544,7 +7544,7 @@ statements_301:
   result: "0"
   updated_on: 2005-11-10 10:47:08
   id: "306"
-  note: "zm\xC4\x9Bnit term\xC3\xADn st. zkou\xC5\xA1ky na 5. semestr."
+  note: "zm?nit term\xEDn st. zkou\x9Aky na 5. semestr."
   person_id: "1627"
 statements_433: 
   created_on: 2003-10-30 17:00:00
@@ -7593,28 +7593,28 @@ statements_302:
   result: "0"
   updated_on: 2005-11-10 10:48:37
   id: "307"
-  note: "Zm\xC4\x9Bnit term\xC3\xADn st. zkou\xC5\xA1ky na 5. semestr."
+  note: "Zm?nit term\xEDn st. zkou\x9Aky na 5. semestr."
   person_id: "1627"
 statements_434: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:33
   id: "440"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_566: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:38
   id: "572"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_698: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:43
   id: "704"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1286: 
   created_on: 2005-12-08 09:13:54
@@ -7628,21 +7628,21 @@ statements_1154:
   result: "1"
   updated_on: 2005-11-22 15:47:04
   id: "1160"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1022: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:58
   id: "1028"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_303: 
   created_on: 2005-11-10 10:50:01
   result: "0"
   updated_on: 2005-11-10 10:50:01
   id: "308"
-  note: "Zm\xC4\x9Bnit term\xC3\xADn st. zkou\xC5\xA1ky na 5. semestr, upravit v anotaci c\xC3\xADl."
+  note: "Zm?nit term\xEDn st. zkou\x9Aky na 5. semestr, upravit v anotaci c\xEDl."
   person_id: "1627"
 statements_435: 
   created_on: 2002-10-01 00:00:00
@@ -7740,14 +7740,14 @@ statements_437:
   result: "1"
   updated_on: 2005-11-22 15:46:33
   id: "443"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_569: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:38
   id: "575"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1289: 
   created_on: 2005-12-12 09:43:34
@@ -7761,14 +7761,14 @@ statements_1157:
   result: "1"
   updated_on: 2005-11-22 15:47:04
   id: "1163"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1025: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:58
   id: "1031"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_306: 
   created_on: 2005-11-10 11:54:58
@@ -7866,21 +7866,21 @@ statements_1028:
   result: "1"
   updated_on: 2005-11-22 15:46:58
   id: "1034"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_440: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:33
   id: "446"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_572: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:38
   id: "578"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_309: 
   created_on: 2005-11-10 12:48:36
@@ -7901,7 +7901,7 @@ statements_1160:
   result: "1"
   updated_on: 2005-11-22 15:47:04
   id: "1166"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1029: 
   created_on: 2004-10-01 00:00:00
@@ -7964,7 +7964,7 @@ statements_1294:
   result: "1"
   updated_on: 2005-12-13 11:24:12
   id: "1300"
-  note: "doporu\xC4\x8Duji"
+  note: doporu?uji
   person_id: "2304"
 statements_1162: 
   created_on: 2004-10-01 00:00:00
@@ -7992,14 +7992,14 @@ statements_443:
   result: "1"
   updated_on: 2005-11-22 15:46:33
   id: "449"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_575: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:38
   id: "581"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1295: 
   created_on: 2005-12-13 12:05:30
@@ -8013,14 +8013,14 @@ statements_1163:
   result: "1"
   updated_on: 2005-11-22 15:47:04
   id: "1169"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1031: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:58
   id: "1037"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_312: 
   created_on: 2005-11-11 07:51:19
@@ -8118,14 +8118,14 @@ statements_446:
   result: "1"
   updated_on: 2005-11-22 15:46:33
   id: "452"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_578: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:38
   id: "584"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1298: 
   created_on: 2005-12-14 10:15:18
@@ -8139,14 +8139,14 @@ statements_1166:
   result: "1"
   updated_on: 2005-11-22 15:47:04
   id: "1172"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1034: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:58
   id: "1040"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_315: 
   created_on: 2005-11-11 15:12:12
@@ -8195,7 +8195,7 @@ statements_316:
   result: "0"
   updated_on: 2005-11-14 07:47:24
   id: "321"
-  note: "zm\xC4\x9Bnit p\xC5\x99edm\xC4\x9Bty u st\xC3\xA1tn\xC3\xAD doktorsk\xC3\xA9 zkou\xC5\xA1ky."
+  note: "zm?nit p?edm?ty u st\xE1tn\xED doktorsk\xE9 zkou\x9Aky."
   person_id: "1627"
 statements_448: 
   created_on: 2004-10-01 00:00:00
@@ -8230,21 +8230,21 @@ statements_449:
   result: "1"
   updated_on: 2005-11-22 15:46:33
   id: "455"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1169: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:05
   id: "1175"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1037: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:58
   id: "1043"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_318: 
   created_on: 2005-11-14 17:36:46
@@ -8272,7 +8272,7 @@ statements_581:
   result: "1"
   updated_on: 2005-11-22 15:46:38
   id: "587"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_319: 
   created_on: 2005-11-15 14:04:34
@@ -8342,28 +8342,28 @@ statements_452:
   result: "1"
   updated_on: 2005-11-22 15:46:33
   id: "458"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_584: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:39
   id: "590"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1172: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:05
   id: "1178"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1040: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:58
   id: "1046"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_321: 
   created_on: 2005-11-15 14:46:14
@@ -8440,35 +8440,35 @@ statements_323:
   result: "1"
   updated_on: 2005-11-15 15:03:37
   id: "328"
-  note: "Pl\xC3\xA1n odpov\xC3\xADd\xC3\xA1"
+  note: "Pl\xE1n odpov\xEDd\xE1"
   person_id: "81"
 statements_455: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:33
   id: "461"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_587: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:39
   id: "593"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1175: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:05
   id: "1181"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1043: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:59
   id: "1049"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_324: 
   created_on: 2005-11-16 09:18:07
@@ -8552,21 +8552,21 @@ statements_458:
   result: "1"
   updated_on: 2005-11-22 15:46:34
   id: "464"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1178: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:05
   id: "1184"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1046: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:59
   id: "1052"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_327: 
   created_on: 2005-11-16 09:34:11
@@ -8601,7 +8601,7 @@ statements_590:
   result: "1"
   updated_on: 2005-11-22 15:46:39
   id: "596"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_328: 
   created_on: 2005-11-16 09:35:45
@@ -8636,7 +8636,7 @@ statements_1049:
   result: "1"
   updated_on: 2005-11-22 15:46:59
   id: "1055"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_460: 
   created_on: 2003-10-30 17:00:00
@@ -8664,21 +8664,21 @@ statements_461:
   result: "1"
   updated_on: 2005-11-22 15:46:34
   id: "467"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_593: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:39
   id: "599"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1181: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:05
   id: "1187"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_330: 
   created_on: 2005-11-16 09:36:47
@@ -8762,35 +8762,35 @@ statements_332:
   result: "0"
   updated_on: 2005-11-16 10:00:05
   id: "337"
-  note: "Opravit term\xC3\xADn SDZ na 5. semestr"
+  note: "Opravit term\xEDn SDZ na 5. semestr"
   person_id: "1627"
 statements_464: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:34
   id: "470"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_596: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:39
   id: "602"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1184: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:05
   id: "1190"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1052: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:59
   id: "1058"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_201: 
   created_on: 2005-10-31 17:15:12
@@ -8804,7 +8804,7 @@ statements_333:
   result: "0"
   updated_on: 2005-11-16 10:01:36
   id: "338"
-  note: "Opravit term\xC3\xADn SDZ na 5. semestr. Ve velk\xC3\xA9 metodice doplnit v\xC4\x9Bdeck\xC3\xA9 hypot\xC3\xA9zy."
+  note: "Opravit term\xEDn SDZ na 5. semestr. Ve velk\xE9 metodice doplnit v?deck\xE9 hypot\xE9zy."
   person_id: "1627"
 statements_465: 
   created_on: 2003-10-01 00:00:00
@@ -8846,7 +8846,7 @@ statements_334:
   result: "0"
   updated_on: 2005-11-16 10:03:27
   id: "339"
-  note: "Up\xC5\x99esnit n\xC3\xA1zev 2. p\xC5\x99edm\xC4\x9Btu ke st\xC3\xA1tn\xC3\xAD zkou\xC5\xA1ce."
+  note: "Up?esnit n\xE1zev 2. p?edm?tu ke st\xE1tn\xED zkou\x9Ace."
   person_id: "1627"
 statements_466: 
   created_on: 2003-10-01 00:00:00
@@ -8888,35 +8888,35 @@ statements_335:
   result: "0"
   updated_on: 2005-11-16 10:23:30
   id: "340"
-  note: "T\xC3\xA9ma pojato p\xC5\x99\xC3\xADli\xC5\xA1 obecn\xC4\x9B. Opravit anotaci z hlediska jazykov\xC3\xA9ho. SDZ d\xC3\xA1t do 5. semestru. Odb"
+  note: "T\xE9ma pojato p?\xEDli\x9A obecn?. Opravit anotaci z hlediska jazykov\xE9ho. SDZ d\xE1t do 5. semestru. Odb"
   person_id: "1627"
 statements_467: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:34
   id: "473"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_599: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:39
   id: "605"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1187: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:06
   id: "1193"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1055: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:59
   id: "1061"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_204: 
   created_on: 2005-10-31 17:15:49
@@ -8930,7 +8930,7 @@ statements_336:
   result: "0"
   updated_on: 2005-11-16 12:03:41
   id: "341"
-  note: "Pokus je rozs\xC3\xA1hl\xC3\xBD a pracn\xC3\xBD, nebude na \xC3\xBAkor kvality? Term\xC3\xADn obhajoby DP d\xC3\xA1t do 6. semestru."
+  note: "Pokus je rozs\xE1hl\xFD a pracn\xFD, nebude na \xFAkor kvality? Term\xEDn obhajoby DP d\xE1t do 6. semestru."
   person_id: "1627"
 statements_468: 
   created_on: 2003-10-01 00:00:00
@@ -8965,7 +8965,7 @@ statements_337:
   result: "0"
   updated_on: 2005-11-16 12:23:24
   id: "342"
-  note: "Upravit n\xC3\xA1zev DP (na krajinu, venkovsk\xC3\xBD prostor atd.). Zam\xC4\x9Bnit p\xC5\x99edm\xC4\x9Bt Z\xC3\xA1kladn\xC3\xAD agrotechnika"
+  note: "Upravit n\xE1zev DP (na krajinu, venkovsk\xFD prostor atd.). Zam?nit p?edm?t Z\xE1kladn\xED agrotechnika"
   person_id: "1627"
 statements_469: 
   created_on: 2003-10-01 00:00:00
@@ -9000,14 +9000,14 @@ statements_338:
   result: "0"
   updated_on: 2005-11-16 12:27:01
   id: "343"
-  note: "Doplnit odr\xC5\xAFdy."
+  note: Doplnit odr?dy.
   person_id: "1627"
 statements_1058: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:59
   id: "1064"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_207: 
   created_on: 2005-10-31 17:16:29
@@ -9021,7 +9021,7 @@ statements_339:
   result: "0"
   updated_on: 2005-11-16 13:32:36
   id: "345"
-  note: "Upravit n\xC3\xA1zev dis. pr\xC3\xA1ce (variabiln\xC3\xAD  - na r\xC5\xAFzn\xC3\xBDch p\xC4\x9Bstitelsk\xC3\xBDch syst\xC3\xA9mech, \xC4\x8Di jinak. St\xC3\xA1t"
+  note: "Upravit n\xE1zev dis. pr\xE1ce (variabiln\xED  - na r?zn\xFDch p?stitelsk\xFDch syst\xE9mech, ?i jinak. St\xE1t"
   person_id: "1627"
 statements_1059: 
   created_on: 2003-10-30 17:00:00
@@ -9035,7 +9035,7 @@ statements_470:
   result: "1"
   updated_on: 2005-11-22 15:46:34
   id: "476"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_208: 
   created_on: 2005-10-31 17:16:43
@@ -9049,7 +9049,7 @@ statements_1190:
   result: "1"
   updated_on: 2005-11-22 15:47:06
   id: "1196"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_471: 
   created_on: 2003-10-01 00:00:00
@@ -9105,7 +9105,7 @@ statements_473:
   result: "1"
   updated_on: 2005-11-22 15:46:34
   id: "479"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_341: 
   created_on: 2005-11-20 22:36:15
@@ -9119,14 +9119,14 @@ statements_1193:
   result: "1"
   updated_on: 2005-11-22 15:47:06
   id: "1199"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1061: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:59
   id: "1067"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_474: 
   created_on: 2002-10-29 17:00:00
@@ -9210,28 +9210,28 @@ statements_344:
   result: "1"
   updated_on: 2005-11-22 15:44:12
   id: "350"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_476: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:34
   id: "482"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1196: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:06
   id: "1202"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1064: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:00
   id: "1070"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_213: 
   created_on: 2005-10-31 17:17:10
@@ -9322,28 +9322,28 @@ statements_347:
   result: "1"
   updated_on: 2005-11-22 15:44:12
   id: "353"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_479: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:34
   id: "485"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_1199: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:06
   id: "1205"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1067: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:00
   id: "1073"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_901: 
   created_on: 2003-10-01 00:00:00
@@ -9399,7 +9399,7 @@ statements_902:
   result: "1"
   updated_on: 2005-11-22 15:46:52
   id: "908"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_480: 
   created_on: 2004-10-01 00:00:00
@@ -9448,28 +9448,28 @@ statements_350:
   result: "1"
   updated_on: 2005-11-22 15:44:12
   id: "356"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_482: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:34
   id: "488"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1070: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:00
   id: "1076"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_905: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:52
   id: "911"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "22"
 statements_351: 
   created_on: 2003-10-01 00:00:00
@@ -9504,7 +9504,7 @@ statements_220:
   result: "1"
   updated_on: 2005-11-01 09:01:43
   id: "223"
-  note: "se studijn\xC3\xADm pl\xC3\xA1nem souhlas\xC3\xADm"
+  note: "se studijn\xEDm pl\xE1nem souhlas\xEDm"
   person_id: "98"
 statements_352: 
   created_on: 2003-10-01 00:00:00
@@ -9539,35 +9539,35 @@ statements_221:
   result: "1"
   updated_on: 2005-11-01 09:02:34
   id: "224"
-  note: "se studijn\xC3\xADm pl\xC3\xA1nem souhlas\xC3\xADm"
+  note: "se studijn\xEDm pl\xE1nem souhlas\xEDm"
   person_id: "98"
 statements_353: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:44:13
   id: "359"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_485: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:35
   id: "491"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_1073: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:47:00
   id: "1079"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_908: 
   created_on: 2005-11-22 16:00:16
   result: "1"
   updated_on: 2005-11-22 15:46:52
   id: "914"
-  note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
+  note: "p?ejato z p?edchoz\xEDho syst\xE9mu"
   person_id: "1539"
 statements_222: 
   created_on: 2005-11-01 09:07:03

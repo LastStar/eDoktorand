@@ -3,7 +3,7 @@ external_subject_details_563:
   created_on: 2006-01-17 17:17:28
   external_subject_id: "19551"
   updated_on: 2006-01-27 09:50:19
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "563"
   person: ""
 external_subject_details_516: 
@@ -17,7 +17,7 @@ external_subject_details_373:
   created_on: 2005-11-24 08:45:46
   external_subject_id: "19361"
   updated_on: 2005-11-24 08:45:46
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "373"
   person: ""
 external_subject_details_183: 
@@ -31,14 +31,14 @@ external_subject_details_326:
   created_on: 2005-11-09 12:19:52
   external_subject_id: "19314"
   updated_on: 2005-11-09 12:19:52
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "326"
   person: ""
 external_subject_details_136: 
   created_on: 2005-10-20 16:03:48
   external_subject_id: "19124"
   updated_on: 2005-10-20 16:03:48
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "136"
   person: ""
 external_subject_details_564: 
@@ -52,14 +52,14 @@ external_subject_details_517:
   created_on: 2006-01-17 12:35:25
   external_subject_id: "19505"
   updated_on: 2006-01-27 09:50:19
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "517"
   person: ""
 external_subject_details_374: 
   created_on: 2005-11-24 08:50:53
   external_subject_id: "19362"
   updated_on: 2005-11-24 08:50:53
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "374"
   person: ""
 external_subject_details_184: 
@@ -73,35 +73,35 @@ external_subject_details_327:
   created_on: 2005-11-09 12:23:59
   external_subject_id: "19315"
   updated_on: 2005-11-09 12:23:59
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "327"
   person: ""
 external_subject_details_137: 
   created_on: 2005-10-20 16:03:48
   external_subject_id: "19125"
   updated_on: 2005-10-20 16:03:48
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "137"
   person: ""
 external_subject_details_565: 
   created_on: 2006-01-17 17:28:56
   external_subject_id: "19553"
   updated_on: 2006-01-27 09:50:19
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "565"
   person: ""
 external_subject_details_518: 
   created_on: 2006-01-17 12:37:37
   external_subject_id: "19506"
   updated_on: 2006-01-27 09:50:19
-  university: "BFJ\xC4\x8CU"
+  university: BFJ?U
   id: "518"
   person: ""
 external_subject_details_375: 
   created_on: 2005-11-24 08:50:53
   external_subject_id: "19363"
   updated_on: 2005-11-24 08:50:53
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "375"
   person: ""
 external_subject_details_185: 
@@ -122,7 +122,7 @@ external_subject_details_138:
   created_on: 2005-10-20 16:06:27
   external_subject_id: "19126"
   updated_on: 2005-10-20 16:06:27
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "138"
   person: ""
 external_subject_details_566: 
@@ -131,26 +131,26 @@ external_subject_details_566:
   updated_on: 2006-01-27 09:50:19
   university: Charles University
   id: "566"
-  person: "Mgr. Jan Da\xC5\x88helka,CSc."
+  person: Mgr. Jan Da?helka,CSc.
 external_subject_details_519: 
   created_on: 2006-01-17 12:37:37
   external_subject_id: "19507"
   updated_on: 2006-01-27 09:50:20
-  university: "P\xC5\x99FUK"
+  university: P?FUK
   id: "519"
   person: ""
 external_subject_details_376: 
   created_on: 2005-11-24 09:01:25
   external_subject_id: "19364"
   updated_on: 2005-11-24 09:01:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "376"
   person: ""
 external_subject_details_186: 
   created_on: 2005-10-21 10:18:33
   external_subject_id: "19174"
   updated_on: 2005-10-21 10:18:33
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "186"
   person: ""
 external_subject_details_329: 
@@ -159,33 +159,33 @@ external_subject_details_329:
   updated_on: 2005-11-09 14:12:05
   university: MZLU Brno
   id: "329"
-  person: "doc. Misa\xC5\x99"
+  person: doc. Misa?
 external_subject_details_139: 
   created_on: 2005-10-20 16:08:51
   external_subject_id: "19127"
   updated_on: 2005-10-20 16:08:51
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "139"
   person: ""
 external_subject_details_567: 
   created_on: 2006-01-18 09:15:37
   external_subject_id: "19555"
   updated_on: 2006-01-27 09:50:20
-  university: "\xC4\x8CZU Praha"
+  university: ?ZU Praha
   id: "567"
   person: JUDr. Jansa
 external_subject_details_377: 
   created_on: 2005-11-24 09:06:28
   external_subject_id: "19365"
   updated_on: 2005-11-24 09:06:28
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "377"
   person: ""
 external_subject_details_187: 
   created_on: 2005-10-21 10:18:33
   external_subject_id: "19175"
   updated_on: 2005-10-21 10:18:33
-  university: "P\xC5\x99fUK"
+  university: P?fUK
   id: "187"
   person: ""
 external_subject_details_568: 
@@ -194,33 +194,33 @@ external_subject_details_568:
   updated_on: 2006-01-27 09:50:20
   university: Charles University
   id: "568"
-  person: "Mgr. Jan Da\xC5\x88helka,CSc."
+  person: Mgr. Jan Da?helka,CSc.
 external_subject_details_378: 
   created_on: 2005-11-24 09:06:28
   external_subject_id: "19366"
   updated_on: 2005-11-24 09:06:28
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "378"
   person: ""
 external_subject_details_188: 
   created_on: 2005-10-21 10:29:35
   external_subject_id: "19176"
   updated_on: 2005-10-21 10:29:35
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "188"
-  person: "Ing. Josef K\xC5\x99e\xC4\x8Dek, CSc."
+  person: Ing. Josef K?e?ek, CSc.
 external_subject_details_569: 
   created_on: 2006-01-18 09:17:20
   external_subject_id: "19557"
   updated_on: 2006-01-27 09:50:20
   university: Charles University
   id: "569"
-  person: "Mgr. Jan Da\xC5\x88helka,CSc."
+  person: Mgr. Jan Da?helka,CSc.
 external_subject_details_001: 
   created_on: 2005-10-11 10:14:41
   external_subject_id: "9006"
   updated_on: 2005-10-11 10:14:41
-  university: "\xC3\x9A\xC5\xBDFG AV Praha"
+  university: "\xDA\x8EFG AV Praha"
   id: "1"
   person: prof. Marounek
 external_subject_details_379: 
@@ -234,28 +234,28 @@ external_subject_details_189:
   created_on: 2005-10-21 10:32:11
   external_subject_id: "19177"
   updated_on: 2005-10-21 10:32:11
-  university: "V\xC5\xA0CHT"
+  university: "V\x8ACHT"
   id: "189"
   person: ""
 external_subject_details_002: 
   created_on: 2005-10-14 08:58:08
   external_subject_id: "9009"
   updated_on: 2005-10-14 08:58:08
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "2"
   person: 
 external_subject_details_620: 
   created_on: 2006-01-23 11:24:38
   external_subject_id: "19608"
   updated_on: 2006-01-27 09:50:20
-  university: "Z\xC4\x8DU"
+  university: Z?U
   id: "620"
   person: ""
 external_subject_details_430: 
   created_on: 2005-12-09 11:09:46
   external_subject_id: "19418"
   updated_on: 2005-12-09 11:09:46
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "430"
   person: ""
 external_subject_details_003: 
@@ -269,28 +269,28 @@ external_subject_details_240:
   created_on: 2005-10-24 11:07:37
   external_subject_id: "19228"
   updated_on: 2005-10-24 11:07:37
-  university: "UK, P\xC5\x99F"
+  university: UK, P?F
   id: "240"
-  person: "Doc. Mgr. Milena Svobodov\xC3\xA1, Dr., "
+  person: "Doc. Mgr. Milena Svobodov\xE1, Dr., "
 external_subject_details_050: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9057"
   updated_on: 2005-10-14 08:58:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "50"
   person: 
 external_subject_details_621: 
   created_on: 2006-01-23 11:24:38
   external_subject_id: "19609"
   updated_on: 2006-01-27 09:50:20
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "621"
   person: ""
 external_subject_details_431: 
   created_on: 2005-12-09 11:14:10
   external_subject_id: "19419"
   updated_on: 2005-12-09 11:14:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "431"
   person: ""
 external_subject_details_004: 
@@ -304,14 +304,14 @@ external_subject_details_241:
   created_on: 2005-10-24 11:07:37
   external_subject_id: "19229"
   updated_on: 2005-10-24 11:07:37
-  university: "UK, P\xC5\x99F"
+  university: UK, P?F
   id: "241"
-  person: "Prof. RNDr. Petr Hor\xC3\xA1k, Ph.D."
+  person: "Prof. RNDr. Petr Hor\xE1k, Ph.D."
 external_subject_details_051: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9058"
   updated_on: 2005-10-14 08:58:10
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "51"
   person: 
 external_subject_details_622: 
@@ -325,7 +325,7 @@ external_subject_details_432:
   created_on: 2005-12-09 11:14:10
   external_subject_id: "19420"
   updated_on: 2005-12-09 11:14:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "432"
   person: ""
 external_subject_details_005: 
@@ -339,84 +339,84 @@ external_subject_details_242:
   created_on: 2005-10-24 14:16:30
   external_subject_id: "19230"
   updated_on: 2005-10-24 14:16:30
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "242"
-  person: "Tich\xC3\xA1"
+  person: "Tich\xE1"
 external_subject_details_052: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9059"
   updated_on: 2005-10-14 08:58:10
-  university: "\xC4\x8CZU-KPr"
+  university: ?ZU-KPr
   id: "52"
   person: 
 external_subject_details_623: 
   created_on: 2006-01-23 11:37:40
   external_subject_id: "19611"
   updated_on: 2006-01-27 09:50:20
-  university: "VV\xC3\x9AD v Praze"
+  university: "VV\xDAD v Praze"
   id: "623"
   person: Ing. Bohumil Hurda
 external_subject_details_480: 
   created_on: 2006-01-15 16:49:53
   external_subject_id: "19468"
   updated_on: 2006-01-27 09:50:20
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "480"
-  person: "Tich\xC3\xA1"
+  person: "Tich\xE1"
 external_subject_details_433: 
   created_on: 2005-12-09 11:14:10
   external_subject_id: "19421"
   updated_on: 2005-12-09 11:14:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "433"
   person: ""
 external_subject_details_006: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9013"
   updated_on: 2005-10-14 08:58:09
-  university: "FEL \xC4\x8CVUT"
+  university: FEL ?VUT
   id: "6"
   person: 
 external_subject_details_290: 
   created_on: 2005-10-31 14:59:07
   external_subject_id: "19278"
   updated_on: 2005-10-31 14:59:07
-  university: "P\xC5\x99. F. UK"
+  university: P?. F. UK
   id: "290"
-  person: "J. Pokorn\xC3\xBD"
+  person: "J. Pokorn\xFD"
 external_subject_details_243: 
   created_on: 2005-10-24 14:16:30
   external_subject_id: "19231"
   updated_on: 2005-10-24 14:16:30
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "243"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_053: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9060"
   updated_on: 2005-10-14 08:58:10
-  university: "\xC4\x8CZU-K\xC5\x98"
+  university: ?ZU-K?
   id: "53"
   person: 
 external_subject_details_624: 
   created_on: 2006-01-23 11:37:40
   external_subject_id: "19612"
   updated_on: 2006-01-27 09:50:20
-  university: "\xC4\x8CZU v Praze"
+  university: ?ZU v Praze
   id: "624"
-  person: "Prof. Ing. Ivan Ro\xC4\x8Dek"
+  person: Prof. Ing. Ivan Ro?ek
 external_subject_details_481: 
   created_on: 2006-01-15 16:51:56
   external_subject_id: "19469"
   updated_on: 2006-01-27 09:50:20
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "481"
-  person: "Tich\xC3\xA1"
+  person: "Tich\xE1"
 external_subject_details_434: 
   created_on: 2005-12-09 11:39:14
   external_subject_id: "19422"
   updated_on: 2005-12-09 11:39:14
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "434"
   person: ""
 external_subject_details_007: 
@@ -430,14 +430,14 @@ external_subject_details_291:
   created_on: 2005-10-31 16:49:48
   external_subject_id: "19279"
   updated_on: 2005-10-31 16:49:48
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "291"
-  person: "Prof. Ing. Ivan Van\xC3\xAD\xC4\x8Dek,DrSc."
+  person: "Prof. Ing. Ivan Van\xED?ek,DrSc."
 external_subject_details_244: 
   created_on: 2005-10-25 12:28:13
   external_subject_id: "19232"
   updated_on: 2005-10-25 12:28:13
-  university: "FA \xC4\x8CVUT"
+  university: FA ?VUT
   id: "244"
   person: ""
 external_subject_details_054: 
@@ -451,42 +451,42 @@ external_subject_details_625:
   created_on: 2006-01-23 21:33:42
   external_subject_id: "19613"
   updated_on: 2006-01-27 09:50:20
-  university: "\xC4\x8CVUT - Fakulta stavebn\xC3\xAD "
+  university: "?VUT - Fakulta stavebn\xED "
   id: "625"
   person: Doc. Milan Huml
 external_subject_details_482: 
   created_on: 2006-01-15 16:51:56
   external_subject_id: "19470"
   updated_on: 2006-01-27 09:50:20
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "482"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_435: 
   created_on: 2005-12-09 11:39:14
   external_subject_id: "19423"
   updated_on: 2005-12-09 11:39:14
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "435"
   person: ""
 external_subject_details_008: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9015"
   updated_on: 2005-10-14 08:58:09
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "8"
   person: 
 external_subject_details_292: 
   created_on: 2005-10-31 17:03:47
   external_subject_id: "19280"
   updated_on: 2005-10-31 17:03:47
-  university: "\xC4\x8CVUT - Fakulta stavebn\xC3\xAD "
+  university: "?VUT - Fakulta stavebn\xED "
   id: "292"
   person: Doc. Milan Huml
 external_subject_details_245: 
   created_on: 2005-10-25 12:28:13
   external_subject_id: "19233"
   updated_on: 2005-10-25 12:28:13
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "245"
   person: ""
 external_subject_details_055: 
@@ -500,21 +500,21 @@ external_subject_details_626:
   created_on: 2006-01-23 21:33:42
   external_subject_id: "19614"
   updated_on: 2006-01-27 09:50:20
-  university: "\xC4\x8CVUT - Fakulta stavebn\xC3\xAD "
+  university: "?VUT - Fakulta stavebn\xED "
   id: "626"
-  person: "Ing. R\xC5\xAF\xC5\xBEena Zimov\xC3\xA1"
+  person: "Ing. R?\x9Eena Zimov\xE1"
 external_subject_details_483: 
   created_on: 2006-01-15 16:53:39
   external_subject_id: "19471"
   updated_on: 2006-01-27 09:50:20
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "483"
-  person: "Tich\xC3\xA1"
+  person: "Tich\xE1"
 external_subject_details_436: 
   created_on: 2005-12-09 11:39:14
   external_subject_id: "19424"
   updated_on: 2005-12-09 11:39:14
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "436"
   person: ""
 external_subject_details_009: 
@@ -528,42 +528,42 @@ external_subject_details_293:
   created_on: 2005-10-31 17:03:47
   external_subject_id: "19281"
   updated_on: 2005-10-31 17:03:47
-  university: "\xC4\x8CVUT - Fakulta stavebn\xC3\xAD "
+  university: "?VUT - Fakulta stavebn\xED "
   id: "293"
-  person: "Ing. R\xC5\xAF\xC5\xBEna Zimov\xC3\xA1"
+  person: "Ing. R?\x9Ena Zimov\xE1"
 external_subject_details_246: 
   created_on: 2005-10-25 12:28:13
   external_subject_id: "19234"
   updated_on: 2005-10-25 12:28:13
-  university: "\xC4\x8CZU FLE"
+  university: ?ZU FLE
   id: "246"
   person: ""
 external_subject_details_056: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9063"
   updated_on: 2005-10-14 08:58:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "56"
   person: 
 external_subject_details_627: 
   created_on: 2006-01-25 13:37:38
   external_subject_id: "19615"
   updated_on: 2006-01-27 09:50:20
-  university: "MZLU v Brn\xC4\x9B"
+  university: MZLU v Brn?
   id: "627"
-  person: "Prof. Ing. Ji\xC5\x99\xC3\xAD Kulhav\xC3\xBD"
+  person: "Prof. Ing. Ji?\xED Kulhav\xFD"
 external_subject_details_484: 
   created_on: 2006-01-15 16:53:39
   external_subject_id: "19472"
   updated_on: 2006-01-27 09:50:20
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "484"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_437: 
   created_on: 2005-12-09 11:39:14
   external_subject_id: "19425"
   updated_on: 2005-12-09 11:39:14
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "437"
   person: ""
 external_subject_details_294: 
@@ -577,42 +577,42 @@ external_subject_details_247:
   created_on: 2005-10-25 17:27:06
   external_subject_id: "19235"
   updated_on: 2005-10-25 17:27:06
-  university: "V\xC5\xA0E v Praze"
+  university: "V\x8AE v Praze"
   id: "247"
-  person: "Doc.Ing. Marie M\xC3\xADkov\xC3\xA1, CSc."
+  person: "Doc.Ing. Marie M\xEDkov\xE1, CSc."
 external_subject_details_057: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9064"
   updated_on: 2005-10-14 08:58:10
-  university: "fel \xC4\x8Dvut"
+  university: fel ?vut
   id: "57"
   person: 
 external_subject_details_628: 
   created_on: 2006-01-25 13:40:19
   external_subject_id: "19616"
   updated_on: 2006-01-27 09:50:20
-  university: "MZLU v Brn\xC4\x9B"
+  university: MZLU v Brn?
   id: "628"
-  person: "Prof. Ing. Ji\xC5\x99\xC3\xAD Kulhav\xC3\xBD"
+  person: "Prof. Ing. Ji?\xED Kulhav\xFD"
 external_subject_details_485: 
   created_on: 2006-01-15 19:19:19
   external_subject_id: "19473"
   updated_on: 2006-01-27 09:50:20
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "485"
-  person: "Tich\xC3\xA1"
+  person: "Tich\xE1"
 external_subject_details_438: 
   created_on: 2005-12-09 11:39:14
   external_subject_id: "19426"
   updated_on: 2005-12-09 11:39:14
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "438"
   person: ""
 external_subject_details_295: 
   created_on: 2005-11-01 07:38:20
   external_subject_id: "19283"
   updated_on: 2005-11-01 07:38:20
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "295"
   person: prof. Veber
 external_subject_details_248: 
@@ -626,37 +626,37 @@ external_subject_details_058:
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9065"
   updated_on: 2005-10-14 08:58:10
-  university: "v\xC5\xA1e"
+  university: "v\x9Ae"
   id: "58"
   person: 
 external_subject_details_629: 
   created_on: 2006-01-25 13:41:36
   external_subject_id: "19617"
   updated_on: 2006-01-27 09:50:20
-  university: "MZLU v Brn\xC4\x9B"
+  university: MZLU v Brn?
   id: "629"
-  person: "Prof. Ing. Ji\xC5\x99\xC3\xAD Kulhav\xC3\xBD"
+  person: "Prof. Ing. Ji?\xED Kulhav\xFD"
 external_subject_details_486: 
   created_on: 2006-01-15 19:19:19
   external_subject_id: "19474"
   updated_on: 2006-01-27 09:50:20
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "486"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_439: 
   created_on: 2005-12-09 11:46:03
   external_subject_id: "19427"
   updated_on: 2005-12-09 11:46:03
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "439"
   person: ""
 external_subject_details_296: 
   created_on: 2005-11-01 17:44:53
   external_subject_id: "19284"
   updated_on: 2005-11-01 17:44:53
-  university: "\xC4\x8CZU v Praze, FLE"
+  university: ?ZU v Praze, FLE
   id: "296"
-  person: "prof. Hr\xC3\xA1dek, doc. Pech"
+  person: "prof. Hr\xE1dek, doc. Pech"
 external_subject_details_249: 
   created_on: 2005-10-25 19:25:41
   external_subject_id: "19237"
@@ -668,35 +668,35 @@ external_subject_details_059:
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9066"
   updated_on: 2005-10-14 08:58:10
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "59"
   person: 
 external_subject_details_487: 
   created_on: 2006-01-15 19:28:10
   external_subject_id: "19475"
   updated_on: 2006-01-27 09:50:20
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "487"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_297: 
   created_on: 2005-11-01 17:44:53
   external_subject_id: "19285"
   updated_on: 2005-11-01 17:44:53
-  university: "\xC4\x8CZU v Praze, FLE"
+  university: ?ZU v Praze, FLE
   id: "297"
-  person: "Ing. \xC5\xA0tibinger"
+  person: "Ing. \x8Atibinger"
 external_subject_details_488: 
   created_on: 2006-01-15 19:28:10
   external_subject_id: "19476"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "488"
-  person: "Tich\xC3\xA1"
+  person: "Tich\xE1"
 external_subject_details_300: 
   created_on: 2005-11-09 10:52:32
   external_subject_id: "19288"
   updated_on: 2005-11-09 10:52:32
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "300"
   person: ""
 external_subject_details_110: 
@@ -710,16 +710,16 @@ external_subject_details_298:
   created_on: 2005-11-01 17:44:53
   external_subject_id: "19286"
   updated_on: 2005-11-01 17:44:53
-  university: "V\xC5\xA0E v Praze"
+  university: "V\x8AE v Praze"
   id: "298"
-  person: "doc. Ing. Petr \xC5\xA0AUER, CSc."
+  person: "doc. Ing. Petr \x8AAUER, CSc."
 external_subject_details_489: 
   created_on: 2006-01-16 12:45:20
   external_subject_id: "19477"
   updated_on: 2006-01-27 09:50:21
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "489"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_301: 
   created_on: 2005-11-09 10:52:32
   external_subject_id: "19289"
@@ -738,7 +738,7 @@ external_subject_details_299:
   created_on: 2005-11-02 14:01:54
   external_subject_id: "19287"
   updated_on: 2005-11-02 14:01:54
-  university: "\xC4\x8CZU v Praze"
+  university: ?ZU v Praze
   id: "299"
   person: Judr. Viktor Jansa CSc.
 external_subject_details_302: 
@@ -752,14 +752,14 @@ external_subject_details_112:
   created_on: 2005-10-20 15:28:40
   external_subject_id: "19100"
   updated_on: 2005-10-20 15:28:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "112"
   person: ""
 external_subject_details_540: 
   created_on: 2006-01-17 14:58:09
   external_subject_id: "19528"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "540"
   person: ""
 external_subject_details_303: 
@@ -773,51 +773,51 @@ external_subject_details_113:
   created_on: 2005-10-20 15:28:40
   external_subject_id: "19101"
   updated_on: 2005-10-20 15:28:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "113"
   person: ""
 external_subject_details_350: 
   created_on: 2005-11-22 16:22:39
   external_subject_id: "19338"
   updated_on: 2005-11-22 16:22:39
-  university: "PEF \xC4\x8CZU"
+  university: PEF ?ZU
   id: "350"
-  person: "doc. Havl\xC3\xAD\xC4\x8Dek Zden\xC4\x9Bk"
+  person: "doc. Havl\xED?ek Zden?k"
 external_subject_details_160: 
   created_on: 2005-10-21 08:52:50
   external_subject_id: "19148"
   updated_on: 2005-10-21 08:52:50
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "160"
   person: ""
 external_subject_details_541: 
   created_on: 2006-01-17 15:01:26
   external_subject_id: "19529"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "541"
   person: ""
 external_subject_details_304: 
   created_on: 2005-11-09 10:55:40
   external_subject_id: "19292"
   updated_on: 2005-11-09 10:55:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "304"
   person: ""
 external_subject_details_114: 
   created_on: 2005-10-20 15:31:23
   external_subject_id: "19102"
   updated_on: 2005-10-20 15:31:23
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "114"
   person: ""
 external_subject_details_351: 
   created_on: 2005-11-22 16:22:39
   external_subject_id: "19339"
   updated_on: 2005-11-22 16:22:39
-  university: "PEF \xC4\x8CZU"
+  university: PEF ?ZU
   id: "351"
-  person: "PhDr. Ryme\xC5\xA1ov\xC3\xA1"
+  person: "PhDr. Ryme\x9Aov\xE1"
 external_subject_details_161: 
   created_on: 2005-10-21 08:55:31
   external_subject_id: "19149"
@@ -829,7 +829,7 @@ external_subject_details_542:
   created_on: 2006-01-17 15:01:26
   external_subject_id: "19530"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "542"
   person: ""
 external_subject_details_305: 
@@ -843,7 +843,7 @@ external_subject_details_115:
   created_on: 2005-10-20 15:34:20
   external_subject_id: "19103"
   updated_on: 2005-10-20 15:34:20
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "115"
   person: ""
 external_subject_details_352: 
@@ -852,26 +852,26 @@ external_subject_details_352:
   updated_on: 2005-11-22 16:22:39
   university: MZLU Brno
   id: "352"
-  person: "doc. Misa\xC5\x99"
+  person: doc. Misa?
 external_subject_details_162: 
   created_on: 2005-10-21 08:55:31
   external_subject_id: "19150"
   updated_on: 2005-10-21 08:55:31
-  university: "P\xC5\x99fUK"
+  university: P?fUK
   id: "162"
   person: ""
 external_subject_details_590: 
   created_on: 2006-01-18 10:34:06
   external_subject_id: "19578"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CV\xC3\x9AT"
+  university: "?V\xDAT"
   id: "590"
   person: ""
 external_subject_details_543: 
   created_on: 2006-01-17 15:02:43
   external_subject_id: "19531"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "543"
   person: ""
 external_subject_details_306: 
@@ -885,35 +885,35 @@ external_subject_details_116:
   created_on: 2005-10-20 15:34:20
   external_subject_id: "19104"
   updated_on: 2005-10-20 15:34:20
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "116"
   person: ""
 external_subject_details_353: 
   created_on: 2005-11-23 12:13:19
   external_subject_id: "19341"
   updated_on: 2005-11-23 12:13:19
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "353"
   person: ""
 external_subject_details_163: 
   created_on: 2005-10-21 08:55:31
   external_subject_id: "19151"
   updated_on: 2005-10-21 08:55:31
-  university: "P\xC5\x99fUK"
+  university: P?fUK
   id: "163"
   person: ""
 external_subject_details_591: 
   created_on: 2006-01-18 10:34:06
   external_subject_id: "19579"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CV\xC3\x9AT"
+  university: "?V\xDAT"
   id: "591"
   person: ""
 external_subject_details_544: 
   created_on: 2006-01-17 15:02:43
   external_subject_id: "19532"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "544"
   person: ""
 external_subject_details_307: 
@@ -927,77 +927,77 @@ external_subject_details_117:
   created_on: 2005-10-20 15:37:01
   external_subject_id: "19105"
   updated_on: 2005-10-20 15:37:01
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "117"
   person: ""
 external_subject_details_354: 
   created_on: 2005-11-23 12:13:19
   external_subject_id: "19342"
   updated_on: 2005-11-23 12:13:19
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "354"
   person: ""
 external_subject_details_164: 
   created_on: 2005-10-21 08:55:31
   external_subject_id: "19152"
   updated_on: 2005-10-21 08:55:31
-  university: "P\xC5\x99fUK"
+  university: P?fUK
   id: "164"
   person: ""
 external_subject_details_592: 
   created_on: 2006-01-18 10:36:46
   external_subject_id: "19580"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "592"
   person: ""
 external_subject_details_545: 
   created_on: 2006-01-17 15:02:43
   external_subject_id: "19533"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "545"
   person: ""
 external_subject_details_308: 
   created_on: 2005-11-09 11:20:06
   external_subject_id: "19296"
   updated_on: 2005-11-09 11:20:06
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "308"
   person: ""
 external_subject_details_118: 
   created_on: 2005-10-20 15:37:01
   external_subject_id: "19106"
   updated_on: 2005-10-20 15:37:01
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "118"
   person: ""
 external_subject_details_355: 
   created_on: 2005-11-23 12:17:58
   external_subject_id: "19343"
   updated_on: 2005-11-23 12:17:58
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "355"
   person: ""
 external_subject_details_165: 
   created_on: 2005-10-21 09:01:59
   external_subject_id: "19153"
   updated_on: 2005-10-21 09:01:59
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "165"
   person: ""
 external_subject_details_593: 
   created_on: 2006-01-18 10:56:15
   external_subject_id: "19581"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "593"
   person: ""
 external_subject_details_546: 
   created_on: 2006-01-17 15:05:40
   external_subject_id: "19534"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "546"
   person: ""
 external_subject_details_309: 
@@ -1011,21 +1011,21 @@ external_subject_details_119:
   created_on: 2005-10-20 15:37:01
   external_subject_id: "19107"
   updated_on: 2005-10-20 15:37:01
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "119"
   person: ""
 external_subject_details_356: 
   created_on: 2005-11-23 12:17:58
   external_subject_id: "19344"
   updated_on: 2005-11-23 12:17:58
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "356"
   person: ""
 external_subject_details_166: 
   created_on: 2005-10-21 09:01:59
   external_subject_id: "19154"
   updated_on: 2005-10-21 09:01:59
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "166"
   person: ""
 external_subject_details_594: 
@@ -1039,14 +1039,14 @@ external_subject_details_547:
   created_on: 2006-01-17 15:05:40
   external_subject_id: "19535"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "547"
   person: ""
 external_subject_details_357: 
   created_on: 2005-11-23 12:19:08
   external_subject_id: "19345"
   updated_on: 2005-11-23 12:19:08
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "357"
   person: ""
 external_subject_details_167: 
@@ -1060,21 +1060,21 @@ external_subject_details_595:
   created_on: 2006-01-18 10:56:15
   external_subject_id: "19583"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "595"
   person: ""
 external_subject_details_548: 
   created_on: 2006-01-17 15:05:40
   external_subject_id: "19536"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "548"
   person: ""
 external_subject_details_358: 
   created_on: 2005-11-23 12:19:08
   external_subject_id: "19346"
   updated_on: 2005-11-23 12:19:08
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "358"
   person: ""
 external_subject_details_168: 
@@ -1088,21 +1088,21 @@ external_subject_details_596:
   created_on: 2006-01-18 10:57:06
   external_subject_id: "19584"
   updated_on: 2006-01-27 09:50:21
-  university: "V\xC5\xA0CHT"
+  university: "V\x8ACHT"
   id: "596"
   person: ""
 external_subject_details_549: 
   created_on: 2006-01-17 15:25:29
   external_subject_id: "19537"
   updated_on: 2006-01-27 09:50:21
-  university: "\xC4\x8CZU v Praze"
+  university: ?ZU v Praze
   id: "549"
-  person: "Prof. Ing. Ji\xC5\x99\xC3\xAD Klabzuba, CSc."
+  person: "Prof. Ing. Ji?\xED Klabzuba, CSc."
 external_subject_details_359: 
   created_on: 2005-11-23 13:45:01
   external_subject_id: "19347"
   updated_on: 2005-11-23 13:45:01
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "359"
   person: ""
 external_subject_details_169: 
@@ -1123,9 +1123,9 @@ external_subject_details_600:
   created_on: 2006-01-18 15:35:59
   external_subject_id: "19588"
   updated_on: 2006-01-27 09:50:21
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "600"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_598: 
   created_on: 2006-01-18 10:57:06
   external_subject_id: "19586"
@@ -1137,7 +1137,7 @@ external_subject_details_410:
   created_on: 2005-12-09 08:54:53
   external_subject_id: "19398"
   updated_on: 2005-12-09 08:54:53
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "410"
   person: ""
 external_subject_details_220: 
@@ -1146,33 +1146,33 @@ external_subject_details_220:
   updated_on: 2005-10-21 15:21:40
   university: KMOP - UK
   id: "220"
-  person: "Prof. RNDr. Jan Bedn\xC3\xA1\xC5\x99, CSc."
+  person: "Prof. RNDr. Jan Bedn\xE1?, CSc."
 external_subject_details_030: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9037"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "30"
   person: 
 external_subject_details_601: 
   created_on: 2006-01-18 15:37:09
   external_subject_id: "19589"
   updated_on: 2006-01-27 09:50:21
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "601"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_599: 
   created_on: 2006-01-18 15:34:35
   external_subject_id: "19587"
   updated_on: 2006-01-27 09:50:21
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "599"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_411: 
   created_on: 2005-12-09 08:54:53
   external_subject_id: "19399"
   updated_on: 2005-12-09 08:54:53
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "411"
   person: ""
 external_subject_details_221: 
@@ -1186,79 +1186,79 @@ external_subject_details_031:
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9038"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "31"
   person: 
 external_subject_details_602: 
   created_on: 2006-01-18 15:38:34
   external_subject_id: "19590"
   updated_on: 2006-01-27 09:50:21
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "602"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_412: 
   created_on: 2005-12-09 09:01:37
   external_subject_id: "19400"
   updated_on: 2005-12-09 09:01:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "412"
   person: ""
 external_subject_details_222: 
   created_on: 2005-10-22 12:08:27
   external_subject_id: "19210"
   updated_on: 2005-10-22 12:08:27
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "222"
-  person: "doc. Ing. Ivan Hork\xC3\xBD, DrSc."
+  person: "doc. Ing. Ivan Hork\xFD, DrSc."
 external_subject_details_032: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9039"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "32"
   person: 
 external_subject_details_603: 
   created_on: 2006-01-18 15:40:58
   external_subject_id: "19591"
   updated_on: 2006-01-27 09:50:21
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "603"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_460: 
   created_on: 2005-12-14 08:44:40
   external_subject_id: "19448"
   updated_on: 2005-12-14 08:44:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "460"
   person: ""
 external_subject_details_413: 
   created_on: 2005-12-09 09:01:37
   external_subject_id: "19401"
   updated_on: 2005-12-09 09:01:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "413"
   person: ""
 external_subject_details_223: 
   created_on: 2005-10-22 12:08:27
   external_subject_id: "19211"
   updated_on: 2005-10-22 12:08:27
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "223"
-  person: "Mgr. Ji\xC5\x99\xC3\xAD \xC4\x8Ctyrok\xC3\xBD"
+  person: "Mgr. Ji?\xED ?tyrok\xFD"
 external_subject_details_033: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9040"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "33"
   person: 
 external_subject_details_270: 
   created_on: 2005-10-27 13:08:59
   external_subject_id: "19258"
   updated_on: 2005-10-27 13:08:59
-  university: "V\xC5\xA0CHT"
+  university: "V\x8ACHT"
   id: "270"
-  person: "Ing. Josef Pat\xC3\xA1k, CSc."
+  person: "Ing. Josef Pat\xE1k, CSc."
 external_subject_details_080: 
   created_on: 2005-10-19 12:37:48
   external_subject_id: "19066"
@@ -1270,21 +1270,21 @@ external_subject_details_604:
   created_on: 2006-01-18 15:48:12
   external_subject_id: "19592"
   updated_on: 2006-01-27 09:50:22
-  university: "FLE \xC4\x8CZU"
+  university: FLE ?ZU
   id: "604"
   person: prof Kobliha
 external_subject_details_461: 
   created_on: 2005-12-14 08:44:40
   external_subject_id: "19449"
   updated_on: 2005-12-14 08:44:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "461"
   person: ""
 external_subject_details_414: 
   created_on: 2005-12-09 09:01:37
   external_subject_id: "19402"
   updated_on: 2005-12-09 09:01:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "414"
   person: ""
 external_subject_details_224: 
@@ -1293,19 +1293,19 @@ external_subject_details_224:
   updated_on: 2005-10-23 13:23:24
   university: LDF MZLU Brno
   id: "224"
-  person: "prof. Kantor (prof. Tesa\xC5\x99)"
+  person: prof. Kantor (prof. Tesa?)
 external_subject_details_034: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9041"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "34"
   person: 
 external_subject_details_271: 
   created_on: 2005-10-27 14:20:12
   external_subject_id: "19259"
   updated_on: 2005-10-27 14:20:12
-  university: "\xC4\x8Dzu"
+  university: ?zu
   id: "271"
   person: ""
 external_subject_details_081: 
@@ -1319,70 +1319,70 @@ external_subject_details_605:
   created_on: 2006-01-19 11:10:32
   external_subject_id: "19593"
   updated_on: 2006-01-27 09:50:22
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "605"
   person: ""
 external_subject_details_462: 
   created_on: 2005-12-14 08:47:27
   external_subject_id: "19450"
   updated_on: 2005-12-14 08:47:27
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "462"
   person: ""
 external_subject_details_415: 
   created_on: 2005-12-09 09:01:37
   external_subject_id: "19403"
   updated_on: 2005-12-09 09:01:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "415"
   person: ""
 external_subject_details_225: 
   created_on: 2005-10-23 13:23:24
   external_subject_id: "19213"
   updated_on: 2005-10-23 13:23:24
-  university: "LDF MZLU Brno (FLE \xC4\x8CZU Praha)"
+  university: LDF MZLU Brno (FLE ?ZU Praha)
   id: "225"
   person: prof. Simanov (prof. Gross)
 external_subject_details_035: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9042"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "35"
   person: 
 external_subject_details_272: 
   created_on: 2005-10-27 17:27:31
   external_subject_id: "19260"
   updated_on: 2005-10-27 17:27:31
-  university: "VV\xC3\x9AD v Praze"
+  university: "VV\xDAD v Praze"
   id: "272"
   person: Ing. Bohumil Hurda
 external_subject_details_082: 
   created_on: 2005-10-19 14:14:11
   external_subject_id: "19068"
   updated_on: 2005-10-19 14:14:11
-  university: "UK P\xC5\x99\xC3\xADrodov\xC4\x9Bdeck\xC3\xA1 fakulta"
+  university: "UK P?\xEDrodov?deck\xE1 fakulta"
   id: "82"
   person: Doc. Vondrejs
 external_subject_details_606: 
   created_on: 2006-01-19 11:10:32
   external_subject_id: "19594"
   updated_on: 2006-01-27 09:50:22
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "606"
   person: ""
 external_subject_details_463: 
   created_on: 2005-12-14 08:47:27
   external_subject_id: "19451"
   updated_on: 2005-12-14 08:47:27
-  university: "\xC4\x8Dvut"
+  university: ?vut
   id: "463"
   person: ""
 external_subject_details_416: 
   created_on: 2005-12-09 09:06:10
   external_subject_id: "19404"
   updated_on: 2005-12-09 09:06:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "416"
   person: ""
 external_subject_details_226: 
@@ -1403,42 +1403,42 @@ external_subject_details_273:
   created_on: 2005-10-27 17:27:31
   external_subject_id: "19261"
   updated_on: 2005-10-27 17:27:31
-  university: "\xC4\x8CZU v Praze"
+  university: ?ZU v Praze
   id: "273"
-  person: "Ing. Karel Hol\xC3\xBD"
+  person: "Ing. Karel Hol\xFD"
 external_subject_details_083: 
   created_on: 2005-10-19 14:14:11
   external_subject_id: "19069"
   updated_on: 2005-10-19 14:14:11
-  university: "UK P\xC5\x99\xC3\xADrodov\xC4\x9Bdeck\xC3\xA1 fakulta"
+  university: "UK P?\xEDrodov?deck\xE1 fakulta"
   id: "83"
-  person: "RNDr. Hol\xC3\xA1"
+  person: "RNDr. Hol\xE1"
 external_subject_details_607: 
   created_on: 2006-01-19 11:10:32
   external_subject_id: "19595"
   updated_on: 2006-01-27 09:50:22
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "607"
   person: ""
 external_subject_details_464: 
   created_on: 2005-12-14 08:47:27
   external_subject_id: "19452"
   updated_on: 2005-12-14 08:47:27
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "464"
   person: ""
 external_subject_details_417: 
   created_on: 2005-12-09 09:06:10
   external_subject_id: "19405"
   updated_on: 2005-12-09 09:06:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "417"
   person: ""
 external_subject_details_227: 
   created_on: 2005-10-24 08:35:18
   external_subject_id: "19215"
   updated_on: 2005-10-24 08:35:18
-  university: "\xC4\x8CV\xC3\x9AT"
+  university: "?V\xDAT"
   id: "227"
   person: ""
 external_subject_details_037: 
@@ -1452,42 +1452,42 @@ external_subject_details_274:
   created_on: 2005-10-30 15:53:01
   external_subject_id: "19262"
   updated_on: 2005-10-30 15:53:01
-  university: "Vysok\xC3\xA1 \xC5\xA1kola chemicko-technologick\xC3\xA1 v Praze"
+  university: "Vysok\xE1 \x9Akola chemicko-technologick\xE1 v Praze"
   id: "274"
-  person: "Ing. Milan R.Pat\xC3\xA1k CSc."
+  person: "Ing. Milan R.Pat\xE1k CSc."
 external_subject_details_084: 
   created_on: 2005-10-19 16:19:55
   external_subject_id: "19070"
   updated_on: 2005-10-19 16:19:55
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "84"
   person: ""
 external_subject_details_608: 
   created_on: 2006-01-19 11:10:32
   external_subject_id: "19596"
   updated_on: 2006-01-27 09:50:22
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "608"
   person: ""
 external_subject_details_465: 
   created_on: 2005-12-14 08:47:27
   external_subject_id: "19453"
   updated_on: 2005-12-14 08:47:27
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "465"
   person: ""
 external_subject_details_418: 
   created_on: 2005-12-09 09:06:10
   external_subject_id: "19406"
   updated_on: 2005-12-09 09:06:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "418"
   person: ""
 external_subject_details_228: 
   created_on: 2005-10-24 08:35:18
   external_subject_id: "19216"
   updated_on: 2005-10-24 08:35:18
-  university: "\xC4\x8CV\xC3\x9AT"
+  university: "?V\xDAT"
   id: "228"
   person: ""
 external_subject_details_038: 
@@ -1501,35 +1501,35 @@ external_subject_details_275:
   created_on: 2005-10-30 17:56:07
   external_subject_id: "19263"
   updated_on: 2005-10-30 17:56:07
-  university: "\xC3\x9A\xC5\xBDFG"
+  university: "\xDA\x8EFG"
   id: "275"
   person: prof. Marounek
 external_subject_details_085: 
   created_on: 2005-10-19 16:19:55
   external_subject_id: "19071"
   updated_on: 2005-10-19 16:19:55
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "85"
   person: ""
 external_subject_details_609: 
   created_on: 2006-01-19 11:10:32
   external_subject_id: "19597"
   updated_on: 2006-01-27 09:50:23
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "609"
   person: ""
 external_subject_details_466: 
   created_on: 2005-12-14 08:47:27
   external_subject_id: "19454"
   updated_on: 2005-12-14 08:47:27
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "466"
   person: ""
 external_subject_details_419: 
   created_on: 2005-12-09 09:06:10
   external_subject_id: "19407"
   updated_on: 2005-12-09 09:06:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "419"
   person: ""
 external_subject_details_229: 
@@ -1550,28 +1550,28 @@ external_subject_details_276:
   created_on: 2005-10-30 23:01:34
   external_subject_id: "19264"
   updated_on: 2005-10-30 23:01:34
-  university: "V\xC5\xA0E Praha"
+  university: "V\x8AE Praha"
   id: "276"
-  person: "doc. Ing. Vlasta Svat\xC3\xA1 CSc."
+  person: "doc. Ing. Vlasta Svat\xE1 CSc."
 external_subject_details_086: 
   created_on: 2005-10-19 16:25:12
   external_subject_id: "19072"
   updated_on: 2005-10-19 16:25:12
   university: Univerzita Karlova
   id: "86"
-  person: "Illnerov\xC3\xA1"
+  person: "Illnerov\xE1"
 external_subject_details_467: 
   created_on: 2005-12-14 11:08:27
   external_subject_id: "19455"
   updated_on: 2005-12-14 11:08:27
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "467"
   person: ""
 external_subject_details_277: 
   created_on: 2005-10-31 08:44:05
   external_subject_id: "19265"
   updated_on: 2005-10-31 08:44:05
-  university: "\xC4\x8CVUT-FEL"
+  university: ?VUT-FEL
   id: "277"
   person: Ing. Martin Molhanec, CSc.
 external_subject_details_087: 
@@ -1585,51 +1585,51 @@ external_subject_details_468:
   created_on: 2005-12-14 11:08:27
   external_subject_id: "19456"
   updated_on: 2005-12-14 11:08:27
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "468"
   person: ""
 external_subject_details_278: 
   created_on: 2005-10-31 08:48:01
   external_subject_id: "19266"
   updated_on: 2005-10-31 08:48:01
-  university: "\xC4\x8CVUT Praha"
+  university: ?VUT Praha
   id: "278"
-  person: "Doc. Ing. Karel Vr\xC3\xA1na, CSc."
+  person: "Doc. Ing. Karel Vr\xE1na, CSc."
 external_subject_details_088: 
   created_on: 2005-10-19 16:52:23
   external_subject_id: "19074"
   updated_on: 2005-10-19 16:52:23
-  university: "PEF \xC4\x8CZU"
+  university: PEF ?ZU
   id: "88"
-  person: "Doc.\xC4\x8Cmejrek"
+  person: Doc.?mejrek
 external_subject_details_469: 
   created_on: 2005-12-14 11:08:27
   external_subject_id: "19457"
   updated_on: 2005-12-14 11:08:27
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "469"
   person: ""
 external_subject_details_279: 
   created_on: 2005-10-31 09:10:54
   external_subject_id: "19267"
   updated_on: 2005-10-31 09:10:54
-  university: "\xC3\x9AH \xC4\x8CSAV"
+  university: "\xDAH ?SAV"
   id: "279"
   person: Doc.Josef Buchtele, CSc
 external_subject_details_089: 
   created_on: 2005-10-19 16:52:23
   external_subject_id: "19075"
   updated_on: 2005-10-19 16:52:23
-  university: "FLE \xC4\x8CZU"
+  university: FLE ?ZU
   id: "89"
-  person: "Doc.\xC5\xA0tenclov\xC3\xA1"
+  person: "Doc.\x8Atenclov\xE1"
 external_subject_details_520: 
   created_on: 2006-01-17 12:44:01
   external_subject_id: "19508"
   updated_on: 2006-01-27 09:50:23
   university: Karlova universita
   id: "520"
-  person: "Jan Da\xC5\x88helka, CSc"
+  person: Jan Da?helka, CSc
 external_subject_details_330: 
   created_on: 2005-11-10 11:35:16
   external_subject_id: "19318"
@@ -1641,35 +1641,35 @@ external_subject_details_140:
   created_on: 2005-10-20 16:55:25
   external_subject_id: "19128"
   updated_on: 2005-10-20 16:55:25
-  university: "UK P\xC5\x99f"
+  university: UK P?f
   id: "140"
-  person: "RNDr \xC4\x8Cen\xC4\x9Bk Novotn\xC3\xBD, CSc."
+  person: "RNDr ?en?k Novotn\xFD, CSc."
 external_subject_details_521: 
   created_on: 2006-01-17 12:44:01
   external_subject_id: "19509"
   updated_on: 2006-01-27 09:50:23
-  university: "\xC3\x9AH \xC4\x8CSAV"
+  university: "\xDAH ?SAV"
   id: "521"
   person: Doc.Josef Buchtele, CSc
 external_subject_details_331: 
   created_on: 2005-11-10 11:35:16
   external_subject_id: "19319"
   updated_on: 2005-11-10 11:35:16
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "331"
-  person: "doc. Zelen\xC3\xBD"
+  person: "doc. Zelen\xFD"
 external_subject_details_141: 
   created_on: 2005-10-20 16:55:25
   external_subject_id: "19129"
   updated_on: 2005-10-20 16:55:25
-  university: "UK P\xC5\x99f"
+  university: UK P?f
   id: "141"
-  person: "RNDr. Martin Mihaljevi\xC4\x8D, CSc. "
+  person: "RNDr. Martin Mihaljevi?, CSc. "
 external_subject_details_522: 
   created_on: 2006-01-17 12:48:59
   external_subject_id: "19510"
   updated_on: 2006-01-27 09:50:23
-  university: "\xC3\x9AH \xC4\x8CSAV"
+  university: "\xDAH ?SAV"
   id: "522"
   person: Doc.Josef Buchtele, CSc
 external_subject_details_332: 
@@ -1678,19 +1678,19 @@ external_subject_details_332:
   updated_on: 2005-11-10 13:37:57
   university: MZLU
   id: "332"
-  person: "Doc. Ing.Rej\xC5\xA1ek"
+  person: "Doc. Ing.Rej\x9Aek"
 external_subject_details_142: 
   created_on: 2005-10-20 17:19:11
   external_subject_id: "19130"
   updated_on: 2005-10-20 17:19:11
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "142"
   person: ""
 external_subject_details_570: 
   created_on: 2006-01-18 09:42:11
   external_subject_id: "19558"
   updated_on: 2006-01-27 09:50:23
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "570"
   person: ""
 external_subject_details_523: 
@@ -1699,26 +1699,26 @@ external_subject_details_523:
   updated_on: 2006-01-27 09:50:23
   university: Karlova universita
   id: "523"
-  person: "Jan Da\xC5\x88helka, CSc"
+  person: Jan Da?helka, CSc
 external_subject_details_333: 
   created_on: 2005-11-21 12:19:48
   external_subject_id: "19321"
   updated_on: 2005-11-21 12:19:48
-  university: "PEF \xC4\x8CZU"
+  university: PEF ?ZU
   id: "333"
   person: ""
 external_subject_details_143: 
   created_on: 2005-10-20 17:19:11
   external_subject_id: "19131"
   updated_on: 2005-10-20 17:19:11
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "143"
   person: ""
 external_subject_details_380: 
   created_on: 2005-11-24 09:09:47
   external_subject_id: "19368"
   updated_on: 2005-11-24 09:09:47
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "380"
   person: ""
 external_subject_details_190: 
@@ -1732,7 +1732,7 @@ external_subject_details_571:
   created_on: 2006-01-18 09:42:11
   external_subject_id: "19559"
   updated_on: 2006-01-27 09:50:23
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "571"
   person: ""
 external_subject_details_524: 
@@ -1753,14 +1753,14 @@ external_subject_details_144:
   created_on: 2005-10-20 17:21:41
   external_subject_id: "19132"
   updated_on: 2005-10-20 17:21:41
-  university: "C\xC5\xBDU"
+  university: "C\x8EU"
   id: "144"
   person: ""
 external_subject_details_381: 
   created_on: 2005-11-24 09:19:57
   external_subject_id: "19369"
   updated_on: 2005-11-24 09:19:57
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "381"
   person: ""
 external_subject_details_191: 
@@ -1774,7 +1774,7 @@ external_subject_details_572:
   created_on: 2006-01-18 09:42:11
   external_subject_id: "19560"
   updated_on: 2006-01-27 09:50:23
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "572"
   person: ""
 external_subject_details_525: 
@@ -1788,28 +1788,28 @@ external_subject_details_335:
   created_on: 2005-11-21 13:56:01
   external_subject_id: "19323"
   updated_on: 2005-11-21 13:56:01
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "335"
   person: ""
 external_subject_details_145: 
   created_on: 2005-10-20 17:21:41
   external_subject_id: "19133"
   updated_on: 2005-10-20 17:21:41
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "145"
   person: ""
 external_subject_details_382: 
   created_on: 2005-11-24 09:34:45
   external_subject_id: "19370"
   updated_on: 2005-11-24 09:34:45
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "382"
   person: ""
 external_subject_details_192: 
   created_on: 2005-10-21 10:35:25
   external_subject_id: "19180"
   updated_on: 2005-10-21 10:35:25
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "192"
   person: ""
 external_subject_details_573: 
@@ -1830,7 +1830,7 @@ external_subject_details_336:
   created_on: 2005-11-21 13:56:01
   external_subject_id: "19324"
   updated_on: 2005-11-21 13:56:01
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "336"
   person: ""
 external_subject_details_146: 
@@ -1839,19 +1839,19 @@ external_subject_details_146:
   updated_on: 2005-10-20 18:51:26
   university: MZLU Brno
   id: "146"
-  person: "Doc.Ing.Pet\xC5\x99\xC3\xADkov\xC3\xA1"
+  person: "Doc.Ing.Pet?\xEDkov\xE1"
 external_subject_details_383: 
   created_on: 2005-11-24 09:40:11
   external_subject_id: "19371"
   updated_on: 2005-11-24 09:40:11
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "383"
   person: ""
 external_subject_details_193: 
   created_on: 2005-10-21 10:35:25
   external_subject_id: "19181"
   updated_on: 2005-10-21 10:35:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "193"
   person: ""
 external_subject_details_574: 
@@ -1865,14 +1865,14 @@ external_subject_details_527:
   created_on: 2006-01-17 13:32:35
   external_subject_id: "19515"
   updated_on: 2006-01-27 09:50:23
-  university: "V\xC5\xA0B"
+  university: "V\x8AB"
   id: "527"
   person: ""
 external_subject_details_337: 
   created_on: 2005-11-21 13:56:01
   external_subject_id: "19325"
   updated_on: 2005-11-21 13:56:01
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "337"
   person: ""
 external_subject_details_147: 
@@ -1881,40 +1881,40 @@ external_subject_details_147:
   updated_on: 2005-10-20 19:09:35
   university: Karlova
   id: "147"
-  person: "Prof. RNDr. Tom\xC3\xA1\xC5\xA1 Herben, CSc."
+  person: "Prof. RNDr. Tom\xE1\x9A Herben, CSc."
 external_subject_details_384: 
   created_on: 2005-11-24 09:40:11
   external_subject_id: "19372"
   updated_on: 2005-11-24 09:40:11
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "384"
   person: ""
 external_subject_details_194: 
   created_on: 2005-10-21 10:35:25
   external_subject_id: "19182"
   updated_on: 2005-10-21 10:35:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "194"
   person: ""
 external_subject_details_575: 
   created_on: 2006-01-18 09:53:00
   external_subject_id: "19563"
   updated_on: 2006-01-27 09:50:23
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "575"
   person: ""
 external_subject_details_528: 
   created_on: 2006-01-17 13:32:35
   external_subject_id: "19516"
   updated_on: 2006-01-27 09:50:23
-  university: "FA \xC4\x8CVUT"
+  university: FA ?VUT
   id: "528"
   person: ""
 external_subject_details_338: 
   created_on: 2005-11-22 09:43:17
   external_subject_id: "19326"
   updated_on: 2005-11-22 09:43:17
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "338"
   person: ""
 external_subject_details_148: 
@@ -1928,21 +1928,21 @@ external_subject_details_385:
   created_on: 2005-11-24 09:40:11
   external_subject_id: "19373"
   updated_on: 2005-11-24 09:40:11
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "385"
   person: ""
 external_subject_details_195: 
   created_on: 2005-10-21 10:39:12
   external_subject_id: "19183"
   updated_on: 2005-10-21 10:39:12
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "195"
   person: ""
 external_subject_details_576: 
   created_on: 2006-01-18 09:53:00
   external_subject_id: "19564"
   updated_on: 2006-01-27 09:50:23
-  university: "P\xC5\x99fUK"
+  university: P?fUK
   id: "576"
   person: ""
 external_subject_details_529: 
@@ -1951,103 +1951,103 @@ external_subject_details_529:
   updated_on: 2006-01-27 09:50:23
   university: MZLU
   id: "529"
-  person: "Ing. \xC3\x9Aradn\xC3\xAD\xC4\x8Dek"
+  person: "Ing. \xDAradn\xED?ek"
 external_subject_details_339: 
   created_on: 2005-11-22 09:43:17
   external_subject_id: "19327"
   updated_on: 2005-11-22 09:43:17
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "339"
   person: ""
 external_subject_details_149: 
   created_on: 2005-10-21 08:34:24
   external_subject_id: "19137"
   updated_on: 2005-10-21 08:34:24
-  university: "BFJ\xC4\x8CU"
+  university: BFJ?U
   id: "149"
   person: ""
 external_subject_details_386: 
   created_on: 2005-11-24 09:40:11
   external_subject_id: "19374"
   updated_on: 2005-11-24 09:40:11
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "386"
   person: ""
 external_subject_details_196: 
   created_on: 2005-10-21 10:39:12
   external_subject_id: "19184"
   updated_on: 2005-10-21 10:39:12
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "196"
   person: ""
 external_subject_details_577: 
   created_on: 2006-01-18 09:55:36
   external_subject_id: "19565"
   updated_on: 2006-01-27 09:50:23
-  university: "J\xC4\x8CU"
+  university: J?U
   id: "577"
   person: ""
 external_subject_details_387: 
   created_on: 2005-11-24 09:44:06
   external_subject_id: "19375"
   updated_on: 2005-11-24 09:44:06
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "387"
   person: ""
 external_subject_details_197: 
   created_on: 2005-10-21 10:39:13
   external_subject_id: "19185"
   updated_on: 2005-10-21 10:39:13
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "197"
   person: ""
 external_subject_details_578: 
   created_on: 2006-01-18 10:01:47
   external_subject_id: "19566"
   updated_on: 2006-01-27 09:50:23
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "578"
   person: ""
 external_subject_details_200: 
   created_on: 2005-10-21 10:50:21
   external_subject_id: "19188"
   updated_on: 2005-10-21 10:50:21
-  university: "V\xC5\xA0B"
+  university: "V\x8AB"
   id: "200"
   person: ""
 external_subject_details_010: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9017"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "10"
   person: 
 external_subject_details_388: 
   created_on: 2005-11-24 09:44:06
   external_subject_id: "19376"
   updated_on: 2005-11-24 09:44:06
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "388"
   person: ""
 external_subject_details_198: 
   created_on: 2005-10-21 10:47:45
   external_subject_id: "19186"
   updated_on: 2005-10-21 10:47:45
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "198"
   person: ""
 external_subject_details_579: 
   created_on: 2006-01-18 10:01:47
   external_subject_id: "19567"
   updated_on: 2006-01-27 09:50:23
-  university: "\xC4\x8CUT"
+  university: ?UT
   id: "579"
   person: ""
 external_subject_details_201: 
   created_on: 2005-10-21 10:50:21
   external_subject_id: "19189"
   updated_on: 2005-10-21 10:50:21
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "201"
   person: ""
 external_subject_details_011: 
@@ -2061,21 +2061,21 @@ external_subject_details_389:
   created_on: 2005-11-24 10:26:38
   external_subject_id: "19377"
   updated_on: 2005-11-24 10:26:38
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "389"
   person: ""
 external_subject_details_199: 
   created_on: 2005-10-21 10:47:45
   external_subject_id: "19187"
   updated_on: 2005-10-21 10:47:45
-  university: "V\xC5\xA0B"
+  university: "V\x8AB"
   id: "199"
   person: ""
 external_subject_details_202: 
   created_on: 2005-10-21 10:53:22
   external_subject_id: "19190"
   updated_on: 2005-10-21 10:53:22
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "202"
   person: ""
 external_subject_details_012: 
@@ -2089,35 +2089,35 @@ external_subject_details_630:
   created_on: 2006-01-26 07:42:42
   external_subject_id: "19618"
   updated_on: 2006-01-27 09:50:24
-  university: "MZLU v Brn\xC4\x9B"
+  university: MZLU v Brn?
   id: "630"
-  person: "Prof. Ing. Ji\xC5\x99\xC3\xAD Kulhav\xC3\xBD"
+  person: "Prof. Ing. Ji?\xED Kulhav\xFD"
 external_subject_details_440: 
   created_on: 2005-12-09 11:46:03
   external_subject_id: "19428"
   updated_on: 2005-12-09 11:46:03
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "440"
   person: ""
 external_subject_details_250: 
   created_on: 2005-10-25 21:31:19
   external_subject_id: "19238"
   updated_on: 2005-10-25 21:31:19
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "250"
   person: Prof.Ing. J.Homolka
 external_subject_details_060: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9067"
   updated_on: 2005-10-14 08:58:10
-  university: "\xC4\x8CVUT FSV"
+  university: ?VUT FSV
   id: "60"
   person: 
 external_subject_details_203: 
   created_on: 2005-10-21 11:04:31
   external_subject_id: "19191"
   updated_on: 2005-10-21 11:04:31
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "203"
   person: ""
 external_subject_details_013: 
@@ -2133,35 +2133,35 @@ external_subject_details_631:
   updated_on: 2006-01-27 09:50:24
   university: Charles University
   id: "631"
-  person: "Mgr. Jan Da\xC5\x88helka,CSc."
+  person: Mgr. Jan Da?helka,CSc.
 external_subject_details_441: 
   created_on: 2005-12-09 11:46:03
   external_subject_id: "19429"
   updated_on: 2005-12-09 11:46:03
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "441"
   person: ""
 external_subject_details_251: 
   created_on: 2005-10-25 21:31:19
   external_subject_id: "19239"
   updated_on: 2005-10-25 21:31:19
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "251"
-  person: "Doc.Svato\xC5\xA1"
+  person: "Doc.Svato\x9A"
 external_subject_details_061: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9068"
   updated_on: 2005-10-14 08:58:10
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "61"
   person: 
 external_subject_details_204: 
   created_on: 2005-10-21 11:06:37
   external_subject_id: "19192"
   updated_on: 2005-10-21 11:06:37
-  university: "UK P\xC5\x99f"
+  university: UK P?f
   id: "204"
-  person: "RNDr \xC4\x8Cen\xC4\x9Bk Novotn\xC3\xBD, CSc."
+  person: "RNDr ?en?k Novotn\xFD, CSc."
 external_subject_details_014: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9021"
@@ -2173,16 +2173,16 @@ external_subject_details_442:
   created_on: 2005-12-09 11:46:03
   external_subject_id: "19430"
   updated_on: 2005-12-09 11:46:03
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "442"
   person: ""
 external_subject_details_252: 
   created_on: 2005-10-25 21:31:19
   external_subject_id: "19240"
   updated_on: 2005-10-25 21:31:19
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "252"
-  person: "Doc.Svato\xC5\xA1"
+  person: "Doc.Svato\x9A"
 external_subject_details_062: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9069"
@@ -2194,9 +2194,9 @@ external_subject_details_205:
   created_on: 2005-10-21 11:06:37
   external_subject_id: "19193"
   updated_on: 2005-10-21 11:06:37
-  university: "UK P\xC5\x99f"
+  university: UK P?f
   id: "205"
-  person: "RNDr. Martin Mihaljevi\xC4\x8D, CSc."
+  person: RNDr. Martin Mihaljevi?, CSc.
 external_subject_details_015: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9022"
@@ -2208,21 +2208,21 @@ external_subject_details_490:
   created_on: 2006-01-16 12:47:47
   external_subject_id: "19478"
   updated_on: 2006-01-27 09:50:24
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "490"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_443: 
   created_on: 2005-12-09 11:46:03
   external_subject_id: "19431"
   updated_on: 2005-12-09 11:46:03
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "443"
   person: ""
 external_subject_details_253: 
   created_on: 2005-10-25 21:53:00
   external_subject_id: "19241"
   updated_on: 2005-10-25 21:53:00
-  university: "\xC4\x8CVUT, fakulta stavebn\xC3\xAD"
+  university: "?VUT, fakulta stavebn\xED"
   id: "253"
   person: ""
 external_subject_details_063: 
@@ -2236,35 +2236,35 @@ external_subject_details_206:
   created_on: 2005-10-21 11:36:38
   external_subject_id: "19194"
   updated_on: 2005-10-21 11:36:38
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "206"
   person: ""
 external_subject_details_016: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9023"
   updated_on: 2005-10-14 08:58:09
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "16"
   person: 
 external_subject_details_491: 
   created_on: 2006-01-16 12:51:06
   external_subject_id: "19479"
   updated_on: 2006-01-27 09:50:24
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "491"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_444: 
   created_on: 2005-12-09 12:57:04
   external_subject_id: "19432"
   updated_on: 2005-12-09 12:57:04
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "444"
   person: ""
 external_subject_details_254: 
   created_on: 2005-10-25 21:53:00
   external_subject_id: "19242"
   updated_on: 2005-10-25 21:53:00
-  university: "\xC4\x8CVUT, fakulta stavebn\xC3\xAD"
+  university: "?VUT, fakulta stavebn\xED"
   id: "254"
   person: ""
 external_subject_details_064: 
@@ -2278,28 +2278,28 @@ external_subject_details_207:
   created_on: 2005-10-21 11:36:38
   external_subject_id: "19195"
   updated_on: 2005-10-21 11:36:38
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "207"
   person: ""
 external_subject_details_017: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9024"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "17"
   person: 
 external_subject_details_492: 
   created_on: 2006-01-16 18:55:22
   external_subject_id: "19480"
   updated_on: 2006-01-27 09:50:24
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "492"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_445: 
   created_on: 2005-12-09 12:57:04
   external_subject_id: "19433"
   updated_on: 2005-12-09 12:57:04
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "445"
   person: ""
 external_subject_details_255: 
@@ -2308,7 +2308,7 @@ external_subject_details_255:
   updated_on: 2005-10-25 23:55:29
   university: MZLU
   id: "255"
-  person: "Doc.Novotn\xC3\xBD"
+  person: "Doc.Novotn\xFD"
 external_subject_details_065: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9072"
@@ -2320,7 +2320,7 @@ external_subject_details_208:
   created_on: 2005-10-21 11:36:38
   external_subject_id: "19196"
   updated_on: 2005-10-21 11:36:38
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "208"
   person: ""
 external_subject_details_018: 
@@ -2341,14 +2341,14 @@ external_subject_details_446:
   created_on: 2005-12-09 12:57:04
   external_subject_id: "19434"
   updated_on: 2005-12-09 12:57:04
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "446"
   person: ""
 external_subject_details_256: 
   created_on: 2005-10-27 09:43:57
   external_subject_id: "19244"
   updated_on: 2005-10-27 09:43:57
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "256"
   person: Prof. Brabenec
 external_subject_details_066: 
@@ -2362,42 +2362,42 @@ external_subject_details_209:
   created_on: 2005-10-21 11:39:37
   external_subject_id: "19197"
   updated_on: 2005-10-21 11:39:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "209"
   person: ""
 external_subject_details_019: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9026"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "19"
   person: 
 external_subject_details_494: 
   created_on: 2006-01-17 10:30:48
   external_subject_id: "19482"
   updated_on: 2006-01-27 09:50:24
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "494"
   person: ""
 external_subject_details_447: 
   created_on: 2005-12-09 12:57:04
   external_subject_id: "19435"
   updated_on: 2005-12-09 12:57:04
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "447"
   person: ""
 external_subject_details_257: 
   created_on: 2005-10-27 09:43:57
   external_subject_id: "19245"
   updated_on: 2005-10-27 09:43:57
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "257"
-  person: "Doc. Bechyn\xC4\x9B"
+  person: Doc. Bechyn?
 external_subject_details_067: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9074"
   updated_on: 2005-10-14 08:58:10
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "67"
   person: 
 external_subject_details_495: 
@@ -2411,14 +2411,14 @@ external_subject_details_448:
   created_on: 2005-12-09 12:59:37
   external_subject_id: "19436"
   updated_on: 2005-12-09 12:59:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "448"
   person: ""
 external_subject_details_258: 
   created_on: 2005-10-27 09:43:57
   external_subject_id: "19246"
   updated_on: 2005-10-27 09:43:57
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "258"
   person: Prof. Kohout
 external_subject_details_068: 
@@ -2439,7 +2439,7 @@ external_subject_details_449:
   created_on: 2005-12-09 12:59:37
   external_subject_id: "19437"
   updated_on: 2005-12-09 12:59:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "449"
   person: ""
 external_subject_details_069: 
@@ -2453,14 +2453,14 @@ external_subject_details_259:
   created_on: 2005-10-27 09:43:57
   external_subject_id: "19247"
   updated_on: 2005-10-27 09:43:57
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "259"
-  person: "Doc. Hejn\xC3\xA1k"
+  person: "Doc. Hejn\xE1k"
 external_subject_details_497: 
   created_on: 2006-01-17 11:28:54
   external_subject_id: "19485"
   updated_on: 2006-01-27 09:50:24
-  university: "P\xC5\x99F UK"
+  university: P?F UK
   id: "497"
   person: ""
 external_subject_details_500: 
@@ -2469,26 +2469,26 @@ external_subject_details_500:
   updated_on: 2006-01-27 09:50:24
   university: Karlova universita
   id: "500"
-  person: "Jan Da\xC5\x88helka, CSc"
+  person: Jan Da?helka, CSc
 external_subject_details_498: 
   created_on: 2006-01-17 11:28:54
   external_subject_id: "19486"
   updated_on: 2006-01-27 09:50:24
-  university: "FA \xC4\x8CVUT"
+  university: FA ?VUT
   id: "498"
   person: ""
 external_subject_details_310: 
   created_on: 2005-11-09 11:23:57
   external_subject_id: "19298"
   updated_on: 2005-11-09 11:23:57
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "310"
   person: ""
 external_subject_details_120: 
   created_on: 2005-10-20 15:39:41
   external_subject_id: "19108"
   updated_on: 2005-10-20 15:39:41
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "120"
   person: ""
 external_subject_details_501: 
@@ -2502,21 +2502,21 @@ external_subject_details_499:
   created_on: 2006-01-17 12:03:03
   external_subject_id: "19487"
   updated_on: 2006-01-27 09:50:24
-  university: "\xC3\x9AH \xC4\x8CSAV"
+  university: "\xDAH ?SAV"
   id: "499"
   person: Doc.Josef Buchtele, CSc
 external_subject_details_311: 
   created_on: 2005-11-09 11:35:16
   external_subject_id: "19299"
   updated_on: 2005-11-09 11:35:16
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "311"
   person: ""
 external_subject_details_121: 
   created_on: 2005-10-20 15:42:59
   external_subject_id: "19109"
   updated_on: 2005-10-20 15:42:59
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "121"
   person: ""
 external_subject_details_502: 
@@ -2530,14 +2530,14 @@ external_subject_details_312:
   created_on: 2005-11-09 11:35:16
   external_subject_id: "19300"
   updated_on: 2005-11-09 11:35:16
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "312"
   person: ""
 external_subject_details_122: 
   created_on: 2005-10-20 15:42:59
   external_subject_id: "19110"
   updated_on: 2005-10-20 15:42:59
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "122"
   person: ""
 external_subject_details_550: 
@@ -2546,7 +2546,7 @@ external_subject_details_550:
   updated_on: 2006-01-27 09:50:25
   university: MZLU Brno
   id: "550"
-  person: "Doc. Ing. RNDr. Eva Pal\xC3\xA1tov\xC3\xA1, CSc."
+  person: "Doc. Ing. RNDr. Eva Pal\xE1tov\xE1, CSc."
 external_subject_details_503: 
   created_on: 2006-01-17 12:10:54
   external_subject_id: "19491"
@@ -2558,7 +2558,7 @@ external_subject_details_360:
   created_on: 2005-11-23 13:45:01
   external_subject_id: "19348"
   updated_on: 2005-11-23 13:45:01
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "360"
   person: ""
 external_subject_details_170: 
@@ -2579,28 +2579,28 @@ external_subject_details_123:
   created_on: 2005-10-20 15:45:45
   external_subject_id: "19111"
   updated_on: 2005-10-20 15:45:45
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "123"
   person: ""
 external_subject_details_551: 
   created_on: 2006-01-17 16:10:42
   external_subject_id: "19539"
   updated_on: 2006-01-27 09:50:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "551"
   person: ""
 external_subject_details_504: 
   created_on: 2006-01-17 12:10:55
   external_subject_id: "19492"
   updated_on: 2006-01-27 09:50:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "504"
   person: ""
 external_subject_details_361: 
   created_on: 2005-11-23 13:58:28
   external_subject_id: "19349"
   updated_on: 2005-11-23 13:58:28
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "361"
   person: ""
 external_subject_details_171: 
@@ -2614,21 +2614,21 @@ external_subject_details_314:
   created_on: 2005-11-09 11:35:16
   external_subject_id: "19302"
   updated_on: 2005-11-09 11:35:16
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "314"
   person: ""
 external_subject_details_124: 
   created_on: 2005-10-20 15:47:54
   external_subject_id: "19112"
   updated_on: 2005-10-20 15:47:54
-  university: "\xC4\x8Dzu"
+  university: ?zu
   id: "124"
   person: ""
 external_subject_details_552: 
   created_on: 2006-01-17 16:10:42
   external_subject_id: "19540"
   updated_on: 2006-01-27 09:50:25
-  university: "P\xC5\x99fUK"
+  university: P?fUK
   id: "552"
   person: ""
 external_subject_details_505: 
@@ -2642,28 +2642,28 @@ external_subject_details_362:
   created_on: 2005-11-23 13:58:28
   external_subject_id: "19350"
   updated_on: 2005-11-23 13:58:28
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "362"
   person: ""
 external_subject_details_172: 
   created_on: 2005-10-21 09:26:43
   external_subject_id: "19160"
   updated_on: 2005-10-21 09:26:43
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "172"
   person: ""
 external_subject_details_315: 
   created_on: 2005-11-09 11:44:00
   external_subject_id: "19303"
   updated_on: 2005-11-09 11:44:00
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "315"
   person: ""
 external_subject_details_125: 
   created_on: 2005-10-20 15:47:54
   external_subject_id: "19113"
   updated_on: 2005-10-20 15:47:54
-  university: "\xC4\x8Dzu"
+  university: ?zu
   id: "125"
   person: ""
 external_subject_details_553: 
@@ -2677,14 +2677,14 @@ external_subject_details_506:
   created_on: 2006-01-17 12:14:01
   external_subject_id: "19494"
   updated_on: 2006-01-27 09:50:25
-  university: "P\xC5\x99fUK"
+  university: P?fUK
   id: "506"
   person: ""
 external_subject_details_363: 
   created_on: 2005-11-23 14:03:27
   external_subject_id: "19351"
   updated_on: 2005-11-23 14:03:27
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "363"
   person: ""
 external_subject_details_173: 
@@ -2698,7 +2698,7 @@ external_subject_details_316:
   created_on: 2005-11-09 11:44:00
   external_subject_id: "19304"
   updated_on: 2005-11-09 11:44:00
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "316"
   person: ""
 external_subject_details_126: 
@@ -2712,21 +2712,21 @@ external_subject_details_554:
   created_on: 2006-01-17 16:29:15
   external_subject_id: "19542"
   updated_on: 2006-01-27 09:50:25
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "554"
   person: ""
 external_subject_details_507: 
   created_on: 2006-01-17 12:14:01
   external_subject_id: "19495"
   updated_on: 2006-01-27 09:50:25
-  university: "P\xC5\x99fUK"
+  university: P?fUK
   id: "507"
   person: ""
 external_subject_details_364: 
   created_on: 2005-11-23 14:03:27
   external_subject_id: "19352"
   updated_on: 2005-11-23 14:03:27
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "364"
   person: ""
 external_subject_details_174: 
@@ -2740,35 +2740,35 @@ external_subject_details_317:
   created_on: 2005-11-09 11:52:26
   external_subject_id: "19305"
   updated_on: 2005-11-09 11:52:26
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "317"
   person: ""
 external_subject_details_127: 
   created_on: 2005-10-20 15:51:08
   external_subject_id: "19115"
   updated_on: 2005-10-20 15:51:08
-  university: "\xC4\x8Dzu"
+  university: ?zu
   id: "127"
   person: ""
 external_subject_details_555: 
   created_on: 2006-01-17 16:33:13
   external_subject_id: "19543"
   updated_on: 2006-01-27 09:50:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "555"
   person: ""
 external_subject_details_508: 
   created_on: 2006-01-17 12:14:01
   external_subject_id: "19496"
   updated_on: 2006-01-27 09:50:25
-  university: "P\xC5\x99fUK"
+  university: P?fUK
   id: "508"
   person: ""
 external_subject_details_365: 
   created_on: 2005-11-23 14:21:41
   external_subject_id: "19353"
   updated_on: 2005-11-23 14:21:41
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "365"
   person: ""
 external_subject_details_175: 
@@ -2782,63 +2782,63 @@ external_subject_details_318:
   created_on: 2005-11-09 11:52:26
   external_subject_id: "19306"
   updated_on: 2005-11-09 11:52:26
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "318"
   person: ""
 external_subject_details_128: 
   created_on: 2005-10-20 15:58:34
   external_subject_id: "19116"
   updated_on: 2005-10-20 15:58:34
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "128"
   person: ""
 external_subject_details_556: 
   created_on: 2006-01-17 16:39:45
   external_subject_id: "19544"
   updated_on: 2006-01-27 09:50:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "556"
   person: ""
 external_subject_details_509: 
   created_on: 2006-01-17 12:16:36
   external_subject_id: "19497"
   updated_on: 2006-01-27 09:50:25
-  university: "J\xC4\x86U\xC4\x86B"
+  university: J?U?B
   id: "509"
   person: ""
 external_subject_details_176: 
   created_on: 2005-10-21 09:36:04
   external_subject_id: "19164"
   updated_on: 2005-10-21 09:36:04
-  university: "J\xC4\x8CU \xC4\x8Cesk\xC3\xA9 Bud\xC4\x9Bjovice"
+  university: "J?U ?esk\xE9 Bud?jovice"
   id: "176"
   person: ""
 external_subject_details_319: 
   created_on: 2005-11-09 12:00:22
   external_subject_id: "19307"
   updated_on: 2005-11-09 12:00:22
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "319"
   person: ""
 external_subject_details_129: 
   created_on: 2005-10-20 15:58:34
   external_subject_id: "19117"
   updated_on: 2005-10-20 15:58:34
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "129"
   person: ""
 external_subject_details_366: 
   created_on: 2005-11-24 08:38:59
   external_subject_id: "19354"
   updated_on: 2005-11-24 08:38:59
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "366"
   person: ""
 external_subject_details_557: 
   created_on: 2006-01-17 16:39:45
   external_subject_id: "19545"
   updated_on: 2006-01-27 09:50:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "557"
   person: ""
 external_subject_details_177: 
@@ -2852,7 +2852,7 @@ external_subject_details_367:
   created_on: 2005-11-24 08:38:59
   external_subject_id: "19355"
   updated_on: 2005-11-24 08:38:59
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "367"
   person: ""
 external_subject_details_558: 
@@ -2866,14 +2866,14 @@ external_subject_details_368:
   created_on: 2005-11-24 08:38:59
   external_subject_id: "19356"
   updated_on: 2005-11-24 08:38:59
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "368"
   person: ""
 external_subject_details_178: 
   created_on: 2005-10-21 09:43:51
   external_subject_id: "19166"
   updated_on: 2005-10-21 09:43:51
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "178"
   person: ""
 external_subject_details_559: 
@@ -2887,28 +2887,28 @@ external_subject_details_369:
   created_on: 2005-11-24 08:38:59
   external_subject_id: "19357"
   updated_on: 2005-11-24 08:38:59
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "369"
   person: ""
 external_subject_details_179: 
   created_on: 2005-10-21 09:43:51
   external_subject_id: "19167"
   updated_on: 2005-10-21 09:43:51
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "179"
   person: ""
 external_subject_details_610: 
   created_on: 2006-01-19 11:10:32
   external_subject_id: "19598"
   updated_on: 2006-01-27 09:50:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "610"
   person: ""
 external_subject_details_420: 
   created_on: 2005-12-09 09:24:14
   external_subject_id: "19408"
   updated_on: 2005-12-09 09:24:14
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "420"
   person: ""
 external_subject_details_230: 
@@ -2929,21 +2929,21 @@ external_subject_details_611:
   created_on: 2006-01-19 11:10:32
   external_subject_id: "19599"
   updated_on: 2006-01-27 09:50:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "611"
   person: ""
 external_subject_details_421: 
   created_on: 2005-12-09 09:24:14
   external_subject_id: "19409"
   updated_on: 2005-12-09 09:24:14
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "421"
   person: ""
 external_subject_details_231: 
   created_on: 2005-10-24 08:42:19
   external_subject_id: "19219"
   updated_on: 2005-10-24 08:42:19
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "231"
   person: ""
 external_subject_details_041: 
@@ -2957,37 +2957,37 @@ external_subject_details_612:
   created_on: 2006-01-19 12:12:59
   external_subject_id: "19600"
   updated_on: 2006-01-27 09:50:25
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "612"
   person: ""
 external_subject_details_422: 
   created_on: 2005-12-09 09:24:14
   external_subject_id: "19410"
   updated_on: 2005-12-09 09:24:14
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "422"
   person: ""
 external_subject_details_232: 
   created_on: 2005-10-24 08:50:44
   external_subject_id: "19220"
   updated_on: 2005-10-24 08:50:44
-  university: "J\xC4\x8CU"
+  university: J?U
   id: "232"
   person: ""
 external_subject_details_042: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9049"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "42"
   person: 
 external_subject_details_613: 
   created_on: 2006-01-20 09:43:11
   external_subject_id: "19601"
   updated_on: 2006-01-27 09:50:25
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "613"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_470: 
   created_on: 2005-12-14 12:12:07
   external_subject_id: "19458"
@@ -2999,7 +2999,7 @@ external_subject_details_423:
   created_on: 2005-12-09 11:06:48
   external_subject_id: "19411"
   updated_on: 2005-12-09 11:06:48
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "423"
   person: ""
 external_subject_details_280: 
@@ -3008,47 +3008,47 @@ external_subject_details_280:
   updated_on: 2005-10-31 09:10:54
   university: Karlova universita
   id: "280"
-  person: "Jan Da\xC5\x88helka, CSc"
+  person: Jan Da?helka, CSc
 external_subject_details_090: 
   created_on: 2005-10-19 16:52:23
   external_subject_id: "19076"
   updated_on: 2005-10-19 16:52:23
-  university: "Doc.Skleni\xC4\x8Dka"
+  university: Doc.Skleni?ka
   id: "90"
-  person: "FLE \xC4\x8CZU"
+  person: FLE ?ZU
 external_subject_details_233: 
   created_on: 2005-10-24 08:56:16
   external_subject_id: "19221"
   updated_on: 2005-10-24 08:56:16
-  university: "KAB Af \xC4\x8Dzu"
+  university: KAB Af ?zu
   id: "233"
   person: ""
 external_subject_details_043: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9050"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "43"
   person: 
 external_subject_details_614: 
   created_on: 2006-01-20 09:43:41
   external_subject_id: "19602"
   updated_on: 2006-01-27 09:50:26
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "614"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_471: 
   created_on: 2005-12-15 16:03:27
   external_subject_id: "19459"
   updated_on: 2005-12-15 16:03:27
-  university: "PEF \xC4\x8CZU"
+  university: PEF ?ZU
   id: "471"
   person: prof. Brabenec
 external_subject_details_424: 
   created_on: 2005-12-09 11:06:48
   external_subject_id: "19412"
   updated_on: 2005-12-09 11:06:48
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "424"
   person: ""
 external_subject_details_281: 
@@ -3057,12 +3057,12 @@ external_subject_details_281:
   updated_on: 2005-10-31 13:01:41
   university: MZLU Brno
   id: "281"
-  person: "Doc. Ing. V\xC3\xA1clav Kup\xC4\x8D\xC3\xA1k, CSc."
+  person: "Doc. Ing. V\xE1clav Kup?\xE1k, CSc."
 external_subject_details_091: 
   created_on: 2005-10-19 17:02:59
   external_subject_id: "19077"
   updated_on: 2005-10-19 17:02:59
-  university: "PEF \xC4\x8CZU"
+  university: PEF ?ZU
   id: "91"
   person: prof. Brabenec
 external_subject_details_234: 
@@ -3076,28 +3076,28 @@ external_subject_details_044:
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9051"
   updated_on: 2005-10-14 08:58:09
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "44"
   person: 
 external_subject_details_615: 
   created_on: 2006-01-20 09:43:59
   external_subject_id: "19603"
   updated_on: 2006-01-27 09:50:26
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "615"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_472: 
   created_on: 2005-12-15 17:15:21
   external_subject_id: "19460"
   updated_on: 2005-12-15 17:15:21
-  university: "\xC4\x8CZU Praha"
+  university: ?ZU Praha
   id: "472"
   person: JUDr. Jansa
 external_subject_details_425: 
   created_on: 2005-12-09 11:06:48
   external_subject_id: "19413"
   updated_on: 2005-12-09 11:06:48
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "425"
   person: ""
 external_subject_details_282: 
@@ -3106,14 +3106,14 @@ external_subject_details_282:
   updated_on: 2005-10-31 13:06:46
   university: MZLU Brno
   id: "282"
-  person: "Doc. Ing. V\xC3\xA1clav Kup\xC4\x8D\xC3\xA1k, CSc."
+  person: "Doc. Ing. V\xE1clav Kup?\xE1k, CSc."
 external_subject_details_092: 
   created_on: 2005-10-20 09:51:25
   external_subject_id: "19078"
   updated_on: 2005-10-20 09:51:25
   university: KE-LF
   id: "92"
-  person: "\xC5\xA0\xC5\xA5astn\xC3\xBD"
+  person: "\x8A?astn\xFD"
 external_subject_details_235: 
   created_on: 2005-10-24 09:00:24
   external_subject_id: "19223"
@@ -3125,7 +3125,7 @@ external_subject_details_045:
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9052"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "45"
   person: 
 external_subject_details_616: 
@@ -3141,12 +3141,12 @@ external_subject_details_473:
   updated_on: 2005-12-15 18:41:46
   university: MZLU
   id: "473"
-  person: "Ing. \xC3\x9Aradn\xC3\xAD\xC4\x8Dek"
+  person: "Ing. \xDAradn\xED?ek"
 external_subject_details_426: 
   created_on: 2005-12-09 11:06:48
   external_subject_id: "19414"
   updated_on: 2005-12-09 11:06:48
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "426"
   person: ""
 external_subject_details_283: 
@@ -3160,9 +3160,9 @@ external_subject_details_093:
   created_on: 2005-10-20 10:07:02
   external_subject_id: "19079"
   updated_on: 2005-10-20 10:07:02
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "93"
-  person: "Tich\xC3\xA1"
+  person: "Tich\xE1"
 external_subject_details_236: 
   created_on: 2005-10-24 09:00:24
   external_subject_id: "19224"
@@ -3174,28 +3174,28 @@ external_subject_details_046:
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9053"
   updated_on: 2005-10-14 08:58:10
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "46"
   person: 
 external_subject_details_617: 
   created_on: 2006-01-23 11:23:11
   external_subject_id: "19605"
   updated_on: 2006-01-27 09:50:26
-  university: "Z\xC4\x8DU"
+  university: Z?U
   id: "617"
   person: ""
 external_subject_details_474: 
   created_on: 2005-12-16 14:54:32
   external_subject_id: "19462"
   updated_on: 2005-12-16 14:54:32
-  university: "TF \xC4\x8CZU v Praze"
+  university: TF ?ZU v Praze
   id: "474"
   person: ""
 external_subject_details_427: 
   created_on: 2005-12-09 11:06:48
   external_subject_id: "19415"
   updated_on: 2005-12-09 11:06:48
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "427"
   person: ""
 external_subject_details_284: 
@@ -3204,14 +3204,14 @@ external_subject_details_284:
   updated_on: 2005-10-31 13:31:03
   university: CZU
   id: "284"
-  person: "Prof.Kab\xC3\xA1t"
+  person: "Prof.Kab\xE1t"
 external_subject_details_094: 
   created_on: 2005-10-20 10:07:02
   external_subject_id: "19080"
   updated_on: 2005-10-20 10:07:02
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "94"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_237: 
   created_on: 2005-10-24 09:00:24
   external_subject_id: "19225"
@@ -3223,35 +3223,35 @@ external_subject_details_047:
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9054"
   updated_on: 2005-10-14 08:58:10
-  university: "\xC4\x8Dvut fel"
+  university: ?vut fel
   id: "47"
   person: 
 external_subject_details_618: 
   created_on: 2006-01-23 11:23:11
   external_subject_id: "19606"
   updated_on: 2006-01-27 09:50:26
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "618"
   person: ""
 external_subject_details_475: 
   created_on: 2005-12-16 14:54:32
   external_subject_id: "19463"
   updated_on: 2005-12-16 14:54:32
-  university: "TF \xC4\x8CZU v Praze"
+  university: TF ?ZU v Praze
   id: "475"
   person: ""
 external_subject_details_428: 
   created_on: 2005-12-09 11:09:46
   external_subject_id: "19416"
   updated_on: 2005-12-09 11:09:46
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "428"
   person: ""
 external_subject_details_095: 
   created_on: 2005-10-20 10:50:10
   external_subject_id: "19081"
   updated_on: 2005-10-20 10:50:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "95"
   person: ""
 external_subject_details_238: 
@@ -3260,12 +3260,12 @@ external_subject_details_238:
   updated_on: 2005-10-24 10:18:06
   university: Univerzita Karlova v Praze
   id: "238"
-  person: "Prof. RNDr. Tom\xC3\xA1\xC5\xA1 Herben CSc."
+  person: "Prof. RNDr. Tom\xE1\x9A Herben CSc."
 external_subject_details_048: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9055"
   updated_on: 2005-10-14 08:58:10
-  university: "v\xC5\xA1e"
+  university: "v\x9Ae"
   id: "48"
   person: 
 external_subject_details_285: 
@@ -3274,7 +3274,7 @@ external_subject_details_285:
   updated_on: 2005-10-31 13:31:03
   university: CZU
   id: "285"
-  person: "Prof.Slav\xC3\xADk"
+  person: "Prof.Slav\xEDk"
 external_subject_details_619: 
   created_on: 2006-01-23 11:23:11
   external_subject_id: "19607"
@@ -3286,14 +3286,14 @@ external_subject_details_476:
   created_on: 2005-12-19 18:56:21
   external_subject_id: "19464"
   updated_on: 2005-12-19 18:56:21
-  university: "\xC4\x8CZU v Praze"
+  university: ?ZU v Praze
   id: "476"
-  person: "Prof. Ing. Ji\xC5\x99\xC3\xAD Klabzuba, CSc."
+  person: "Prof. Ing. Ji?\xED Klabzuba, CSc."
 external_subject_details_429: 
   created_on: 2005-12-09 11:09:46
   external_subject_id: "19417"
   updated_on: 2005-12-09 11:09:46
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "429"
   person: ""
 external_subject_details_096: 
@@ -3302,19 +3302,19 @@ external_subject_details_096:
   updated_on: 2005-10-20 14:03:15
   university: Univerzita Karlova
   id: "96"
-  person: "Doc. RNDr. Vladim\xC3\xADr Han\xC3\xA1k, CSc"
+  person: "Doc. RNDr. Vladim\xEDr Han\xE1k, CSc"
 external_subject_details_239: 
   created_on: 2005-10-24 10:57:31
   external_subject_id: "19227"
   updated_on: 2005-10-24 10:57:31
-  university: "\xC4\x8CZU - Agro"
+  university: ?ZU - Agro
   id: "239"
   person: Klapzuba
 external_subject_details_049: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9056"
   updated_on: 2005-10-14 08:58:10
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "49"
   person: 
 external_subject_details_286: 
@@ -3323,21 +3323,21 @@ external_subject_details_286:
   updated_on: 2005-10-31 13:31:03
   university: CZU
   id: "286"
-  person: "Doc.Havl\xC3\xAD\xC4\x8Dek"
+  person: "Doc.Havl\xED?ek"
 external_subject_details_477: 
   created_on: 2005-12-19 19:15:12
   external_subject_id: "19465"
   updated_on: 2005-12-19 19:15:12
-  university: "\xC4\x8CZU v Praze"
+  university: ?ZU v Praze
   id: "477"
-  person: "Prof. Ing. Ji\xC5\x99\xC3\xAD Klabzuba, CSc."
+  person: "Prof. Ing. Ji?\xED Klabzuba, CSc."
 external_subject_details_287: 
   created_on: 2005-10-31 13:31:03
   external_subject_id: "19275"
   updated_on: 2005-10-31 13:31:03
   university: CZU
   id: "287"
-  person: "Prof.Jen\xC3\xAD\xC4\x8Dek"
+  person: "Prof.Jen\xED?ek"
 external_subject_details_097: 
   created_on: 2005-10-20 14:28:30
   external_subject_id: "19085"
@@ -3351,12 +3351,12 @@ external_subject_details_478:
   updated_on: 2005-12-19 19:15:12
   university: MZLU Brno
   id: "478"
-  person: "Doc. Ing. RNDr. Eva Pal\xC3\xA1tov\xC3\xA1, CSc."
+  person: "Doc. Ing. RNDr. Eva Pal\xE1tov\xE1, CSc."
 external_subject_details_100: 
   created_on: 2005-10-20 14:32:37
   external_subject_id: "19088"
   updated_on: 2005-10-20 14:32:37
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "100"
   person: ""
 external_subject_details_288: 
@@ -3370,21 +3370,21 @@ external_subject_details_098:
   created_on: 2005-10-20 14:32:37
   external_subject_id: "19086"
   updated_on: 2005-10-20 14:32:37
-  university: "UK P\xC5\x99.F."
+  university: UK P?.F.
   id: "98"
   person: ""
 external_subject_details_479: 
   created_on: 2006-01-15 16:49:53
   external_subject_id: "19467"
   updated_on: 2006-01-27 09:50:27
-  university: "1.l\xC3\xA9ka\xC5\x99sk\xC3\xA1 fakulta UK"
+  university: "1.l\xE9ka?sk\xE1 fakulta UK"
   id: "479"
-  person: "Perl\xC3\xADk"
+  person: "Perl\xEDk"
 external_subject_details_101: 
   created_on: 2005-10-20 14:37:37
   external_subject_id: "19089"
   updated_on: 2005-10-20 14:37:37
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "101"
   person: ""
 external_subject_details_289: 
@@ -3398,14 +3398,14 @@ external_subject_details_099:
   created_on: 2005-10-20 14:32:37
   external_subject_id: "19087"
   updated_on: 2005-10-20 14:32:37
-  university: "UK P\xC5\x99. f."
+  university: UK P?. f.
   id: "99"
   person: ""
 external_subject_details_102: 
   created_on: 2005-10-20 14:41:03
   external_subject_id: "19090"
   updated_on: 2005-10-20 14:41:03
-  university: "\xC4\x8CVUT FS"
+  university: ?VUT FS
   id: "102"
   person: ""
 external_subject_details_530: 
@@ -3419,7 +3419,7 @@ external_subject_details_340:
   created_on: 2005-11-22 09:47:44
   external_subject_id: "19328"
   updated_on: 2005-11-22 09:47:44
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "340"
   person: ""
 external_subject_details_150: 
@@ -3433,7 +3433,7 @@ external_subject_details_103:
   created_on: 2005-10-20 14:45:11
   external_subject_id: "19091"
   updated_on: 2005-10-20 14:45:11
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "103"
   person: ""
 external_subject_details_531: 
@@ -3447,21 +3447,21 @@ external_subject_details_341:
   created_on: 2005-11-22 09:47:44
   external_subject_id: "19329"
   updated_on: 2005-11-22 09:47:44
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "341"
   person: ""
 external_subject_details_151: 
   created_on: 2005-10-21 08:43:22
   external_subject_id: "19139"
   updated_on: 2005-10-21 08:43:22
-  university: "J\xC4\x86U\xC4\x86B"
+  university: J?U?B
   id: "151"
   person: ""
 external_subject_details_104: 
   created_on: 2005-10-20 14:45:11
   external_subject_id: "19092"
   updated_on: 2005-10-20 14:45:11
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "104"
   person: ""
 external_subject_details_532: 
@@ -3470,12 +3470,12 @@ external_subject_details_532:
   updated_on: 2006-01-27 09:50:27
   university: MZLU Brno
   id: "532"
-  person: "ing. \xC3\x9Ahradn\xC3\xAD\xC4\x8Dek"
+  person: "ing. \xDAhradn\xED?ek"
 external_subject_details_342: 
   created_on: 2005-11-22 09:47:44
   external_subject_id: "19330"
   updated_on: 2005-11-22 09:47:44
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "342"
   person: ""
 external_subject_details_152: 
@@ -3489,35 +3489,35 @@ external_subject_details_105:
   created_on: 2005-10-20 14:45:11
   external_subject_id: "19093"
   updated_on: 2005-10-20 14:45:11
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "105"
   person: ""
 external_subject_details_580: 
   created_on: 2006-01-18 10:09:08
   external_subject_id: "19568"
   updated_on: 2006-01-27 09:50:27
-  university: "V\xC5\xA0B"
+  university: "V\x8AB"
   id: "580"
   person: ""
 external_subject_details_533: 
   created_on: 2006-01-17 14:31:08
   external_subject_id: "19521"
   updated_on: 2006-01-27 09:50:27
-  university: "KAB Af \xC4\x8Dzu"
+  university: KAB Af ?zu
   id: "533"
   person: ""
 external_subject_details_390: 
   created_on: 2005-11-24 10:26:38
   external_subject_id: "19378"
   updated_on: 2005-11-24 10:26:38
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "390"
   person: ""
 external_subject_details_343: 
   created_on: 2005-11-22 09:51:36
   external_subject_id: "19331"
   updated_on: 2005-11-22 09:51:36
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "343"
   person: ""
 external_subject_details_153: 
@@ -3538,7 +3538,7 @@ external_subject_details_581:
   created_on: 2006-01-18 10:09:08
   external_subject_id: "19569"
   updated_on: 2006-01-27 09:50:27
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "581"
   person: ""
 external_subject_details_534: 
@@ -3552,14 +3552,14 @@ external_subject_details_391:
   created_on: 2005-11-24 10:45:13
   external_subject_id: "19379"
   updated_on: 2005-11-24 10:45:13
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "391"
   person: ""
 external_subject_details_344: 
   created_on: 2005-11-22 09:51:36
   external_subject_id: "19332"
   updated_on: 2005-11-22 09:51:36
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "344"
   person: ""
 external_subject_details_154: 
@@ -3580,7 +3580,7 @@ external_subject_details_582:
   created_on: 2006-01-18 10:10:44
   external_subject_id: "19570"
   updated_on: 2006-01-27 09:50:27
-  university: "V\xC5\xA0B"
+  university: "V\x8AB"
   id: "582"
   person: ""
 external_subject_details_535: 
@@ -3594,7 +3594,7 @@ external_subject_details_345:
   created_on: 2005-11-22 09:51:36
   external_subject_id: "19333"
   updated_on: 2005-11-22 09:51:36
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "345"
   person: ""
 external_subject_details_155: 
@@ -3615,28 +3615,28 @@ external_subject_details_392:
   created_on: 2005-11-24 10:45:13
   external_subject_id: "19380"
   updated_on: 2005-11-24 10:45:13
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "392"
   person: ""
 external_subject_details_583: 
   created_on: 2006-01-18 10:10:44
   external_subject_id: "19571"
   updated_on: 2006-01-27 09:50:27
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "583"
   person: ""
 external_subject_details_536: 
   created_on: 2006-01-17 14:47:57
   external_subject_id: "19524"
   updated_on: 2006-01-27 09:50:27
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "536"
   person: ""
 external_subject_details_346: 
   created_on: 2005-11-22 09:51:36
   external_subject_id: "19334"
   updated_on: 2005-11-22 09:51:36
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "346"
   person: ""
 external_subject_details_156: 
@@ -3657,7 +3657,7 @@ external_subject_details_393:
   created_on: 2005-11-24 10:45:13
   external_subject_id: "19381"
   updated_on: 2005-11-24 10:45:13
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "393"
   person: ""
 external_subject_details_584: 
@@ -3678,7 +3678,7 @@ external_subject_details_347:
   created_on: 2005-11-22 10:02:12
   external_subject_id: "19335"
   updated_on: 2005-11-22 10:02:12
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "347"
   person: ""
 external_subject_details_157: 
@@ -3692,7 +3692,7 @@ external_subject_details_394:
   created_on: 2005-11-24 10:45:13
   external_subject_id: "19382"
   updated_on: 2005-11-24 10:45:13
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "394"
   person: ""
 external_subject_details_585: 
@@ -3706,14 +3706,14 @@ external_subject_details_538:
   created_on: 2006-01-17 14:58:09
   external_subject_id: "19526"
   updated_on: 2006-01-27 09:50:27
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "538"
   person: ""
 external_subject_details_348: 
   created_on: 2005-11-22 10:02:12
   external_subject_id: "19336"
   updated_on: 2005-11-22 10:02:12
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "348"
   person: ""
 external_subject_details_158: 
@@ -3727,7 +3727,7 @@ external_subject_details_395:
   created_on: 2005-11-24 10:59:05
   external_subject_id: "19383"
   updated_on: 2005-11-24 10:59:05
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "395"
   person: ""
 external_subject_details_586: 
@@ -3741,14 +3741,14 @@ external_subject_details_539:
   created_on: 2006-01-17 14:58:09
   external_subject_id: "19527"
   updated_on: 2006-01-27 09:50:28
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "539"
   person: ""
 external_subject_details_349: 
   created_on: 2005-11-22 10:02:12
   external_subject_id: "19337"
   updated_on: 2005-11-22 10:02:12
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "349"
   person: ""
 external_subject_details_159: 
@@ -3762,42 +3762,42 @@ external_subject_details_396:
   created_on: 2005-11-24 10:59:05
   external_subject_id: "19384"
   updated_on: 2005-11-24 10:59:05
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "396"
   person: ""
 external_subject_details_587: 
   created_on: 2006-01-18 10:27:05
   external_subject_id: "19575"
   updated_on: 2006-01-27 09:50:28
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "587"
   person: ""
 external_subject_details_397: 
   created_on: 2005-11-24 11:58:20
   external_subject_id: "19385"
   updated_on: 2005-11-24 11:58:20
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "397"
   person: ""
 external_subject_details_588: 
   created_on: 2006-01-18 10:29:13
   external_subject_id: "19576"
   updated_on: 2006-01-27 09:50:28
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "588"
   person: ""
 external_subject_details_400: 
   created_on: 2005-11-24 16:55:49
   external_subject_id: "19388"
   updated_on: 2005-11-24 16:55:49
-  university: "CZU; fakulta lesnick\xC3\xA1 a environment\xC3\xA1ln\xC3\xAD"
+  university: "CZU; fakulta lesnick\xE1 a environment\xE1ln\xED"
   id: "400"
-  person: "doc. Skleni\xC4\x8Dka"
+  person: doc. Skleni?ka
 external_subject_details_210: 
   created_on: 2005-10-21 11:39:37
   external_subject_id: "19198"
   updated_on: 2005-10-21 11:39:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "210"
   person: ""
 external_subject_details_020: 
@@ -3811,28 +3811,28 @@ external_subject_details_398:
   created_on: 2005-11-24 11:58:20
   external_subject_id: "19386"
   updated_on: 2005-11-24 11:58:20
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "398"
   person: ""
 external_subject_details_589: 
   created_on: 2006-01-18 10:29:13
   external_subject_id: "19577"
   updated_on: 2006-01-27 09:50:28
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "589"
   person: ""
 external_subject_details_401: 
   created_on: 2005-11-24 16:55:49
   external_subject_id: "19389"
   updated_on: 2005-11-24 16:55:49
-  university: "Jiho\xC4\x8Desk\xC3\xA1 univerzita; fakulta zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA1"
+  university: "Jiho?esk\xE1 univerzita; fakulta zem?d?lsk\xE1"
   id: "401"
   person: ""
 external_subject_details_211: 
   created_on: 2005-10-21 11:39:37
   external_subject_id: "19199"
   updated_on: 2005-10-21 11:39:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "211"
   person: ""
 external_subject_details_021: 
@@ -3846,7 +3846,7 @@ external_subject_details_399:
   created_on: 2005-11-24 11:58:20
   external_subject_id: "19387"
   updated_on: 2005-11-24 11:58:20
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "399"
   person: ""
 external_subject_details_402: 
@@ -3855,12 +3855,12 @@ external_subject_details_402:
   updated_on: 2005-11-25 18:18:10
   university: MZLU Brno
   id: "402"
-  person: "Doc. Ing. Pet\xC5\x99\xC3\xADkov\xC3\xA1"
+  person: "Doc. Ing. Pet?\xEDkov\xE1"
 external_subject_details_212: 
   created_on: 2005-10-21 11:42:40
   external_subject_id: "19200"
   updated_on: 2005-10-21 11:42:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "212"
   person: ""
 external_subject_details_022: 
@@ -3874,21 +3874,21 @@ external_subject_details_450:
   created_on: 2005-12-09 12:59:37
   external_subject_id: "19438"
   updated_on: 2005-12-09 12:59:37
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "450"
   person: ""
 external_subject_details_403: 
   created_on: 2005-11-28 09:18:58
   external_subject_id: "19391"
   updated_on: 2005-11-28 09:18:58
-  university: "TF \xC4\x8CZU"
+  university: TF ?ZU
   id: "403"
   person: ""
 external_subject_details_260: 
   created_on: 2005-10-27 09:43:57
   external_subject_id: "19248"
   updated_on: 2005-10-27 09:43:57
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "260"
   person: Prof. Kohout
 external_subject_details_070: 
@@ -3902,7 +3902,7 @@ external_subject_details_213:
   created_on: 2005-10-21 11:42:40
   external_subject_id: "19201"
   updated_on: 2005-10-21 11:42:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "213"
   person: ""
 external_subject_details_023: 
@@ -3916,7 +3916,7 @@ external_subject_details_451:
   created_on: 2005-12-09 13:05:19
   external_subject_id: "19439"
   updated_on: 2005-12-09 13:05:19
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "451"
   person: ""
 external_subject_details_404: 
@@ -3925,14 +3925,14 @@ external_subject_details_404:
   updated_on: 2005-11-28 17:01:34
   university: MLZU Brno
   id: "404"
-  person: "Ing. K. \xC5\xA0ustov\xC3\xA1, Ph.D."
+  person: "Ing. K. \x8Austov\xE1, Ph.D."
 external_subject_details_261: 
   created_on: 2005-10-27 09:43:57
   external_subject_id: "19249"
   updated_on: 2005-10-27 09:43:57
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "261"
-  person: "Prof. Tlusto\xC5\xA1"
+  person: "Prof. Tlusto\x9A"
 external_subject_details_071: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9078"
@@ -3944,37 +3944,37 @@ external_subject_details_214:
   created_on: 2005-10-21 11:42:40
   external_subject_id: "19202"
   updated_on: 2005-10-21 11:42:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "214"
   person: ""
 external_subject_details_024: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9031"
   updated_on: 2005-10-14 08:58:09
-  university: "\xC4\x8CVUT FEL"
+  university: ?VUT FEL
   id: "24"
   person: 
 external_subject_details_452: 
   created_on: 2005-12-09 16:10:34
   external_subject_id: "19440"
   updated_on: 2005-12-09 16:10:34
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "452"
   person: prof. Ing. Arch. Karel Maier, CSc.
 external_subject_details_405: 
   created_on: 2005-12-06 14:18:50
   external_subject_id: "19393"
   updated_on: 2005-12-06 14:18:50
-  university: "PEF \xC4\x8CZU v Praze"
+  university: PEF ?ZU v Praze
   id: "405"
   person: Prof.Brabenec
 external_subject_details_262: 
   created_on: 2005-10-27 09:43:57
   external_subject_id: "19250"
   updated_on: 2005-10-27 09:43:57
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "262"
-  person: "Doc. Slav\xC3\xADk"
+  person: "Doc. Slav\xEDk"
 external_subject_details_072: 
   created_on: 2005-10-14 08:58:10
   external_subject_id: "9079"
@@ -3986,35 +3986,35 @@ external_subject_details_215:
   created_on: 2005-10-21 11:47:06
   external_subject_id: "19203"
   updated_on: 2005-10-21 11:47:06
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "215"
   person: ""
 external_subject_details_025: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9032"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E Praha"
+  university: "V\x8AE Praha"
   id: "25"
   person: 
 external_subject_details_453: 
   created_on: 2005-12-09 16:10:34
   external_subject_id: "19441"
   updated_on: 2005-12-09 16:10:34
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "453"
   person: prof. Ing. Arch. Karel Maier, CSc.
 external_subject_details_406: 
   created_on: 2005-12-06 15:13:25
   external_subject_id: "19394"
   updated_on: 2005-12-06 15:13:25
-  university: "PEF \xC4\x8CZU"
+  university: PEF ?ZU
   id: "406"
   person: prof. Brabenec
 external_subject_details_263: 
   created_on: 2005-10-27 09:48:32
   external_subject_id: "19251"
   updated_on: 2005-10-27 09:48:32
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "263"
   person: Prof. Brabenec
 external_subject_details_073: 
@@ -4035,28 +4035,28 @@ external_subject_details_026:
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9033"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "26"
   person: 
 external_subject_details_454: 
   created_on: 2005-12-14 08:44:36
   external_subject_id: "19442"
   updated_on: 2005-12-14 08:44:36
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "454"
   person: ""
 external_subject_details_407: 
   created_on: 2005-12-06 15:18:23
   external_subject_id: "19395"
   updated_on: 2005-12-06 15:18:23
-  university: "PEF \xC4\x8CZU"
+  university: PEF ?ZU
   id: "407"
   person: prof. Brabenec
 external_subject_details_264: 
   created_on: 2005-10-27 09:48:32
   external_subject_id: "19252"
   updated_on: 2005-10-27 09:48:32
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "264"
   person: Prof. Kohout
 external_subject_details_074: 
@@ -4065,54 +4065,54 @@ external_subject_details_074:
   updated_on: 2005-10-17 15:09:24
   university: MZLU Brno
   id: "74"
-  person: "ing. \xC5\xA0ustov\xC3\xA1"
+  person: "ing. \x8Austov\xE1"
 external_subject_details_217: 
   created_on: 2005-10-21 12:15:34
   external_subject_id: "19205"
   updated_on: 2005-10-21 12:15:34
   university: Univerzita Karlova
   id: "217"
-  person: "Prof. RNDr. Tom\xC3\xA1\xC5\xA1 Herben, CSc."
+  person: "Prof. RNDr. Tom\xE1\x9A Herben, CSc."
 external_subject_details_027: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9034"
   updated_on: 2005-10-14 08:58:09
-  university: "V\xC5\xA0E"
+  university: "V\x8AE"
   id: "27"
   person: 
 external_subject_details_455: 
   created_on: 2005-12-14 08:44:36
   external_subject_id: "19443"
   updated_on: 2005-12-14 08:44:36
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "455"
   person: ""
 external_subject_details_408: 
   created_on: 2005-12-08 16:38:06
   external_subject_id: "19396"
   updated_on: 2005-12-08 16:38:06
-  university: "V\xC5\xA0CHT"
+  university: "V\x8ACHT"
   id: "408"
-  person: "Ing. Josef Pat\xC3\xA1k, CSc."
+  person: "Ing. Josef Pat\xE1k, CSc."
 external_subject_details_265: 
   created_on: 2005-10-27 09:48:32
   external_subject_id: "19253"
   updated_on: 2005-10-27 09:48:32
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "265"
-  person: "Doc. Bechyn\xC4\x9B"
+  person: Doc. Bechyn?
 external_subject_details_075: 
   created_on: 2005-10-18 10:12:15
   external_subject_id: "19061"
   updated_on: 2005-10-18 10:12:15
-  university: "FEL \xC4\x8CVUT"
+  university: FEL ?VUT
   id: "75"
   person: Molhanec, Richta
 external_subject_details_218: 
   created_on: 2005-10-21 12:15:34
   external_subject_id: "19206"
   updated_on: 2005-10-21 12:15:34
-  university: "\xC4\x8Cesk\xC3\xA1 zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA1 univerzita"
+  university: "?esk\xE1 zem?d?lsk\xE1 univerzita"
   id: "218"
   person: Doc. Ing. Pavel Pech,CSc.
 external_subject_details_028: 
@@ -4126,100 +4126,100 @@ external_subject_details_456:
   created_on: 2005-12-14 08:44:36
   external_subject_id: "19444"
   updated_on: 2005-12-14 08:44:36
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "456"
   person: ""
 external_subject_details_409: 
   created_on: 2005-12-09 08:54:53
   external_subject_id: "19397"
   updated_on: 2005-12-09 08:54:53
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "409"
   person: ""
 external_subject_details_266: 
   created_on: 2005-10-27 09:48:32
   external_subject_id: "19254"
   updated_on: 2005-10-27 09:48:32
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "266"
-  person: "Prof. Tlusto\xC5\xA1"
+  person: "Prof. Tlusto\x9A"
 external_subject_details_076: 
   created_on: 2005-10-18 13:01:27
   external_subject_id: "19062"
   updated_on: 2005-10-18 13:01:27
-  university: "P\xC5\x99F UK"
+  university: P?F UK
   id: "76"
-  person: "Jele\xC4\x8Dek"
+  person: Jele?ek
 external_subject_details_219: 
   created_on: 2005-10-21 15:21:40
   external_subject_id: "19207"
   updated_on: 2005-10-21 15:21:40
   university: KMOP - UK
   id: "219"
-  person: "Doc. RNDr. Jaroslava Kalvov\xC3\xA1, CSc."
+  person: "Doc. RNDr. Jaroslava Kalvov\xE1, CSc."
 external_subject_details_029: 
   created_on: 2005-10-14 08:58:09
   external_subject_id: "9036"
   updated_on: 2005-10-14 08:58:09
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "29"
   person: 
 external_subject_details_457: 
   created_on: 2005-12-14 08:44:36
   external_subject_id: "19445"
   updated_on: 2005-12-14 08:44:36
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "457"
   person: ""
 external_subject_details_267: 
   created_on: 2005-10-27 09:48:32
   external_subject_id: "19255"
   updated_on: 2005-10-27 09:48:32
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "267"
-  person: "Doc. Bechyn\xC4\x9B"
+  person: Doc. Bechyn?
 external_subject_details_077: 
   created_on: 2005-10-18 15:16:11
   external_subject_id: "19063"
   updated_on: 2005-10-18 15:16:11
   university: PEF CZU
   id: "77"
-  person: "Svato\xC5\xA1ov\xC3\xA1"
+  person: "Svato\x9Aov\xE1"
 external_subject_details_458: 
   created_on: 2005-12-14 08:44:40
   external_subject_id: "19446"
   updated_on: 2005-12-14 08:44:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "458"
   person: ""
 external_subject_details_268: 
   created_on: 2005-10-27 09:48:32
   external_subject_id: "19256"
   updated_on: 2005-10-27 09:48:32
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "268"
-  person: "Doc. Hejn\xC3\xA1k"
+  person: "Doc. Hejn\xE1k"
 external_subject_details_078: 
   created_on: 2005-10-18 15:32:50
   external_subject_id: "19064"
   updated_on: 2005-10-18 15:32:50
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "78"
   person: ""
 external_subject_details_459: 
   created_on: 2005-12-14 08:44:40
   external_subject_id: "19447"
   updated_on: 2005-12-14 08:44:40
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "459"
   person: ""
 external_subject_details_269: 
   created_on: 2005-10-27 09:48:32
   external_subject_id: "19257"
   updated_on: 2005-10-27 09:48:32
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "269"
-  person: "Doc. Slav\xC3\xADk"
+  person: "Doc. Slav\xEDk"
 external_subject_details_079: 
   created_on: 2005-10-19 11:36:45
   external_subject_id: "19065"
@@ -4238,16 +4238,16 @@ external_subject_details_320:
   created_on: 2005-11-09 12:00:22
   external_subject_id: "19308"
   updated_on: 2005-11-09 12:00:22
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "320"
   person: ""
 external_subject_details_130: 
   created_on: 2005-10-20 15:59:10
   external_subject_id: "19118"
   updated_on: 2005-10-20 15:59:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "130"
-  person: "prof. Koz\xC3\xA1k"
+  person: "prof. Koz\xE1k"
 external_subject_details_511: 
   created_on: 2006-01-17 12:33:42
   external_subject_id: "19499"
@@ -4259,7 +4259,7 @@ external_subject_details_321:
   created_on: 2005-11-09 12:00:22
   external_subject_id: "19309"
   updated_on: 2005-11-09 12:00:22
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "321"
   person: ""
 external_subject_details_131: 
@@ -4280,7 +4280,7 @@ external_subject_details_322:
   created_on: 2005-11-09 12:11:03
   external_subject_id: "19310"
   updated_on: 2005-11-09 12:11:03
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "322"
   person: ""
 external_subject_details_132: 
@@ -4294,42 +4294,42 @@ external_subject_details_560:
   created_on: 2006-01-17 16:55:56
   external_subject_id: "19548"
   updated_on: 2006-01-27 09:50:30
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "560"
   person: ""
 external_subject_details_513: 
   created_on: 2006-01-17 12:33:42
   external_subject_id: "19501"
   updated_on: 2006-01-27 09:50:30
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "513"
   person: ""
 external_subject_details_370: 
   created_on: 2005-11-24 08:45:45
   external_subject_id: "19358"
   updated_on: 2005-11-24 08:45:45
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "370"
   person: ""
 external_subject_details_180: 
   created_on: 2005-10-21 09:56:00
   external_subject_id: "19168"
   updated_on: 2005-10-21 09:56:00
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "180"
   person: ""
 external_subject_details_323: 
   created_on: 2005-11-09 12:15:10
   external_subject_id: "19311"
   updated_on: 2005-11-09 12:15:10
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "323"
   person: ""
 external_subject_details_133: 
   created_on: 2005-10-20 16:01:28
   external_subject_id: "19121"
   updated_on: 2005-10-20 16:01:28
-  university: "\xC4\x8CVUT"
+  university: ?VUT
   id: "133"
   person: ""
 external_subject_details_561: 
@@ -4350,7 +4350,7 @@ external_subject_details_371:
   created_on: 2005-11-24 08:45:45
   external_subject_id: "19359"
   updated_on: 2005-11-24 08:45:45
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "371"
   person: ""
 external_subject_details_181: 
@@ -4364,21 +4364,21 @@ external_subject_details_324:
   created_on: 2005-11-09 12:15:10
   external_subject_id: "19312"
   updated_on: 2005-11-09 12:15:10
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "324"
   person: ""
 external_subject_details_134: 
   created_on: 2005-10-20 16:01:28
   external_subject_id: "19122"
   updated_on: 2005-10-20 16:01:28
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "134"
   person: ""
 external_subject_details_562: 
   created_on: 2006-01-17 17:17:28
   external_subject_id: "19550"
   updated_on: 2006-01-27 09:50:30
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "562"
   person: ""
 external_subject_details_515: 
@@ -4392,7 +4392,7 @@ external_subject_details_372:
   created_on: 2005-11-24 08:45:46
   external_subject_id: "19360"
   updated_on: 2005-11-24 08:45:46
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "372"
   person: ""
 external_subject_details_182: 
@@ -4406,13 +4406,13 @@ external_subject_details_325:
   created_on: 2005-11-09 12:19:52
   external_subject_id: "19313"
   updated_on: 2005-11-09 12:19:52
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "325"
   person: ""
 external_subject_details_135: 
   created_on: 2005-10-20 16:01:28
   external_subject_id: "19123"
   updated_on: 2005-10-20 16:01:28
-  university: "\xC4\x8CZU"
+  university: ?ZU
   id: "135"
   person: ""
