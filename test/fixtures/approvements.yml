@@ -1,4 +1,14 @@
 --- 
+approvements_1024: 
+  created_on: 2006-01-17 17:03:59
+  tutor_statement_id: 
+  document_id: "100751"
+  updated_on: 2006-01-27 09:43:50
+  type: 
+  leader_statement_id: 
+  id: "1025"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_473: 
   created_on: 2005-11-09 08:25:21
   tutor_statement_id: 
@@ -18,6 +28,16 @@ approvements_341:
   leader_statement_id: "221"
   id: "342"
   dean_statement_id: "1257"
+  board_statement_id: 
+approvements_1025: 
+  created_on: 2006-01-17 17:06:26
+  tutor_statement_id: 
+  document_id: "100752"
+  updated_on: 2006-01-27 09:43:50
+  type: 
+  leader_statement_id: 
+  id: "1026"
+  dean_statement_id: 
   board_statement_id: 
 approvements_474: 
   created_on: 2005-11-09 08:25:21
@@ -47,6 +67,16 @@ approvements_342:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "343"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1026: 
+  created_on: 2006-01-17 17:08:12
+  tutor_statement_id: 
+  document_id: "100706"
+  updated_on: 2006-01-27 09:43:50
+  type: 
+  leader_statement_id: 
+  id: "1027"
   dean_statement_id: 
   board_statement_id: 
 approvements_475: 
@@ -79,6 +109,16 @@ approvements_343:
   id: "344"
   dean_statement_id: 
   board_statement_id: 
+approvements_1027: 
+  created_on: 2006-01-17 17:09:49
+  tutor_statement_id: 
+  document_id: "100753"
+  updated_on: 2006-01-27 09:43:50
+  type: 
+  leader_statement_id: 
+  id: "1028"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_476: 
   created_on: 2005-11-09 08:25:21
   tutor_statement_id: 
@@ -109,6 +149,16 @@ approvements_344:
   id: "345"
   dean_statement_id: "1263"
   board_statement_id: 
+approvements_1028: 
+  created_on: 2006-01-17 17:12:56
+  tutor_statement_id: 
+  document_id: "100754"
+  updated_on: 2006-01-27 09:43:50
+  type: 
+  leader_statement_id: 
+  id: "1029"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_477: 
   created_on: 2005-11-09 08:25:21
   tutor_statement_id: 
@@ -138,6 +188,16 @@ approvements_345:
   leader_statement_id: "247"
   id: "346"
   dean_statement_id: "1269"
+  board_statement_id: 
+approvements_1029: 
+  created_on: 2006-01-17 17:18:39
+  tutor_statement_id: 
+  document_id: "100755"
+  updated_on: 2006-01-27 09:43:50
+  type: 
+  leader_statement_id: 
+  id: "1030"
+  dean_statement_id: 
   board_statement_id: 
 approvements_478: 
   created_on: 2005-11-09 08:25:21
@@ -209,6 +269,16 @@ approvements_900:
   id: "901"
   dean_statement_id: 
   board_statement_id: 
+approvements_1030: 
+  created_on: 2006-01-17 17:24:25
+  tutor_statement_id: 
+  document_id: "100756"
+  updated_on: 2006-01-27 09:43:50
+  type: 
+  leader_statement_id: 
+  id: "1031"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_901: 
   created_on: 2005-11-28 09:29:16
   tutor_statement_id: 
@@ -238,6 +308,16 @@ approvements_348:
   leader_statement_id: "1236"
   id: "349"
   dean_statement_id: "1259"
+  board_statement_id: 
+approvements_1031: 
+  created_on: 2006-01-17 17:26:00
+  tutor_statement_id: 
+  document_id: "100747"
+  updated_on: 2006-01-27 09:43:50
+  type: 
+  leader_statement_id: 
+  id: "1032"
+  dean_statement_id: 
   board_statement_id: 
 approvements_902: 
   created_on: 2005-11-28 17:01:35
@@ -279,6 +359,16 @@ approvements_349:
   id: "350"
   dean_statement_id: 
   board_statement_id: 
+approvements_1032: 
+  created_on: 2006-01-17 17:29:15
+  tutor_statement_id: 
+  document_id: "100757"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1033"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_903: 
   created_on: 2005-11-29 12:32:02
   tutor_statement_id: 
@@ -307,6 +397,16 @@ approvements_218:
   type: StudyPlanApprovement
   leader_statement_id: "181"
   id: "219"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1033: 
+  created_on: 2006-01-18 09:12:26
+  tutor_statement_id: 
+  document_id: "100758"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1034"
   dean_statement_id: 
   board_statement_id: 
 approvements_904: 
@@ -349,6 +449,16 @@ approvements_219:
   id: "220"
   dean_statement_id: 
   board_statement_id: 
+approvements_1034: 
+  created_on: 2006-01-18 09:15:34
+  tutor_statement_id: 
+  document_id: "100759"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1035"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_905: 
   created_on: 2005-11-29 12:32:04
   tutor_statement_id: 
@@ -363,11 +473,11 @@ approvements_351:
   created_on: 2005-10-29 08:51:04
   tutor_statement_id: "227"
   document_id: "100366"
-  updated_on: 2005-11-01 09:40:12
+  updated_on: 2006-01-27 09:44:10
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1376"
   id: "352"
-  dean_statement_id: 
+  dean_statement_id: "1377"
   board_statement_id: 
 approvements_483: 
   created_on: 2005-11-09 08:25:21
@@ -377,6 +487,16 @@ approvements_483:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "484"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1035: 
+  created_on: 2006-01-18 09:16:36
+  tutor_statement_id: 
+  document_id: "100761"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1036"
   dean_statement_id: 
   board_statement_id: 
 approvements_906: 
@@ -419,6 +539,16 @@ approvements_484:
   id: "485"
   dean_statement_id: 
   board_statement_id: 
+approvements_1036: 
+  created_on: 2006-01-18 09:17:21
+  tutor_statement_id: 
+  document_id: "100762"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1037"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_907: 
   created_on: 2005-11-29 12:32:04
   tutor_statement_id: 
@@ -457,6 +587,16 @@ approvements_485:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "486"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1037: 
+  created_on: 2006-01-18 11:11:02
+  tutor_statement_id: 
+  document_id: "1118"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1038"
   dean_statement_id: 
   board_statement_id: 
 approvements_908: 
@@ -499,6 +639,16 @@ approvements_486:
   id: "487"
   dean_statement_id: 
   board_statement_id: 
+approvements_1038: 
+  created_on: 2006-01-18 14:21:25
+  tutor_statement_id: 
+  document_id: "1499"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1039"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_909: 
   created_on: 2005-11-30 21:46:17
   tutor_statement_id: "1297"
@@ -537,6 +687,16 @@ approvements_487:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "488"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1039: 
+  created_on: 2006-01-18 14:21:26
+  tutor_statement_id: 
+  document_id: "971"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1040"
   dean_statement_id: 
   board_statement_id: 
 approvements_224: 
@@ -583,11 +743,11 @@ approvements_357:
   created_on: 2005-10-31 08:44:05
   tutor_statement_id: "268"
   document_id: "100371"
-  updated_on: 2005-12-16 11:11:48
+  updated_on: 2006-01-27 09:44:11
   type: StudyPlanApprovement
   leader_statement_id: "1309"
   id: "358"
-  dean_statement_id: 
+  dean_statement_id: "1324"
   board_statement_id: 
 approvements_489: 
   created_on: 2005-11-09 08:25:22
@@ -629,6 +789,16 @@ approvements_358:
   id: "359"
   dean_statement_id: 
   board_statement_id: 
+approvements_1040: 
+  created_on: 2006-01-18 14:21:27
+  tutor_statement_id: 
+  document_id: "1161"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1041"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_911: 
   created_on: 2005-12-02 09:19:50
   tutor_statement_id: 
@@ -637,6 +807,16 @@ approvements_911:
   type: DisertThemeApprovement
   leader_statement_id: 
   id: "912"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1041: 
+  created_on: 2006-01-18 14:21:27
+  tutor_statement_id: 
+  document_id: "1204"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1042"
   dean_statement_id: 
   board_statement_id: 
 approvements_912: 
@@ -679,6 +859,16 @@ approvements_359:
   id: "360"
   dean_statement_id: 
   board_statement_id: 
+approvements_1042: 
+  created_on: 2006-01-18 14:21:27
+  tutor_statement_id: 
+  document_id: "1211"
+  updated_on: 2006-01-27 09:43:51
+  type: 
+  leader_statement_id: 
+  id: "1043"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_913: 
   created_on: 2005-12-05 09:23:03
   tutor_statement_id: 
@@ -709,11 +899,21 @@ approvements_228:
   id: "229"
   dean_statement_id: 
   board_statement_id: 
+approvements_1043: 
+  created_on: 2006-01-18 15:34:35
+  tutor_statement_id: 
+  document_id: "100780"
+  updated_on: 2006-01-27 09:43:52
+  type: 
+  leader_statement_id: 
+  id: "1044"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_914: 
   created_on: 2005-12-05 12:55:04
-  tutor_statement_id: "1324"
+  tutor_statement_id: "1370"
   document_id: "1"
-  updated_on: 2006-01-23 14:10:12
+  updated_on: 2006-01-27 09:43:52
   type: InteruptApprovement
   leader_statement_id: 
   id: "915"
@@ -749,6 +949,16 @@ approvements_229:
   id: "230"
   dean_statement_id: 
   board_statement_id: 
+approvements_1044: 
+  created_on: 2006-01-18 15:36:00
+  tutor_statement_id: 
+  document_id: "100781"
+  updated_on: 2006-01-27 09:43:52
+  type: 
+  leader_statement_id: 
+  id: "1045"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_915: 
   created_on: 2005-12-06 10:59:44
   tutor_statement_id: 
@@ -779,6 +989,16 @@ approvements_493:
   id: "494"
   dean_statement_id: 
   board_statement_id: 
+approvements_1045: 
+  created_on: 2006-01-18 15:37:09
+  tutor_statement_id: 
+  document_id: "100782"
+  updated_on: 2006-01-27 09:43:52
+  type: 
+  leader_statement_id: 
+  id: "1046"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_916: 
   created_on: 2005-12-06 14:18:50
   tutor_statement_id: 
@@ -801,13 +1021,13 @@ approvements_230:
   board_statement_id: 
 approvements_362: 
   created_on: 2005-10-31 11:55:59
-  tutor_statement_id: 
+  tutor_statement_id: "1327"
   document_id: "100376"
-  updated_on: 2005-10-31 11:55:59
+  updated_on: 2006-01-27 09:44:11
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1336"
   id: "363"
-  dean_statement_id: 
+  dean_statement_id: "1349"
   board_statement_id: 
 approvements_494: 
   created_on: 2005-11-09 08:25:22
@@ -817,6 +1037,16 @@ approvements_494:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "495"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1046: 
+  created_on: 2006-01-18 15:38:35
+  tutor_statement_id: 
+  document_id: "100783"
+  updated_on: 2006-01-27 09:43:52
+  type: 
+  leader_statement_id: 
+  id: "1047"
   dean_statement_id: 
   board_statement_id: 
 approvements_917: 
@@ -857,6 +1087,16 @@ approvements_495:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "496"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1047: 
+  created_on: 2006-01-18 15:40:59
+  tutor_statement_id: 
+  document_id: "100784"
+  updated_on: 2006-01-27 09:43:52
+  type: 
+  leader_statement_id: 
+  id: "1048"
   dean_statement_id: 
   board_statement_id: 
 approvements_918: 
@@ -909,6 +1149,16 @@ approvements_496:
   id: "497"
   dean_statement_id: 
   board_statement_id: 
+approvements_1048: 
+  created_on: 2006-01-18 15:42:39
+  tutor_statement_id: 
+  document_id: "100720"
+  updated_on: 2006-01-27 09:43:52
+  type: 
+  leader_statement_id: 
+  id: "1049"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_919: 
   created_on: 2005-12-08 13:46:41
   tutor_statement_id: 
@@ -957,6 +1207,16 @@ approvements_497:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "498"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1049: 
+  created_on: 2006-01-18 15:43:18
+  tutor_statement_id: 
+  document_id: "100718"
+  updated_on: 2006-01-27 09:43:53
+  type: 
+  leader_statement_id: 
+  id: "1050"
   dean_statement_id: 
   board_statement_id: 
 approvements_102: 
@@ -1079,6 +1339,16 @@ approvements_104:
   id: "105"
   dean_statement_id: 
   board_statement_id: 
+approvements_1050: 
+  created_on: 2006-01-18 15:44:00
+  tutor_statement_id: 
+  document_id: "100713"
+  updated_on: 2006-01-27 09:43:53
+  type: 
+  leader_statement_id: 
+  id: "1051"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_921: 
   created_on: 2005-12-08 16:38:07
   tutor_statement_id: "1299"
@@ -1101,13 +1371,13 @@ approvements_237:
   board_statement_id: 
 approvements_369: 
   created_on: 2005-10-31 14:27:27
-  tutor_statement_id: 
+  tutor_statement_id: "1338"
   document_id: "100383"
-  updated_on: 2005-10-31 14:27:27
+  updated_on: 2006-01-27 09:44:11
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1337"
   id: "370"
-  dean_statement_id: 
+  dean_statement_id: "1342"
   board_statement_id: 
 approvements_105: 
   created_on: 2005-10-17 11:39:04
@@ -1119,6 +1389,16 @@ approvements_105:
   id: "106"
   dean_statement_id: 
   board_statement_id: 
+approvements_1051: 
+  created_on: 2006-01-18 15:46:06
+  tutor_statement_id: 
+  document_id: "100785"
+  updated_on: 2006-01-27 09:43:53
+  type: 
+  leader_statement_id: 
+  id: "1052"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_922: 
   created_on: 2005-12-08 22:00:07
   tutor_statement_id: 
@@ -1127,6 +1407,16 @@ approvements_922:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "923"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1052: 
+  created_on: 2006-01-18 15:48:25
+  tutor_statement_id: 
+  document_id: "100786"
+  updated_on: 2006-01-27 09:43:53
+  type: 
+  leader_statement_id: 
+  id: "1053"
   dean_statement_id: 
   board_statement_id: 
 approvements_923: 
@@ -1157,6 +1447,16 @@ approvements_106:
   type: StudyPlanApprovement
   leader_statement_id: "215"
   id: "107"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1053: 
+  created_on: 2006-01-18 15:57:13
+  tutor_statement_id: 
+  document_id: "100776"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1054"
   dean_statement_id: 
   board_statement_id: 
 approvements_924: 
@@ -1199,6 +1499,16 @@ approvements_107:
   id: "108"
   dean_statement_id: 
   board_statement_id: 
+approvements_1054: 
+  created_on: 2006-01-18 15:59:32
+  tutor_statement_id: 
+  document_id: "100766"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1055"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_925: 
   created_on: 2005-12-09 13:05:30
   tutor_statement_id: 
@@ -1213,11 +1523,11 @@ approvements_371:
   created_on: 2005-10-31 15:12:08
   tutor_statement_id: "223"
   document_id: "100385"
-  updated_on: 2005-11-01 09:01:43
+  updated_on: 2006-01-27 09:44:12
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1339"
   id: "372"
-  dean_statement_id: 
+  dean_statement_id: "1350"
   board_statement_id: 
 approvements_108: 
   created_on: 2005-10-17 11:39:05
@@ -1227,6 +1537,16 @@ approvements_108:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "109"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1055: 
+  created_on: 2006-01-18 16:00:23
+  tutor_statement_id: 
+  document_id: "100765"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1056"
   dean_statement_id: 
   board_statement_id: 
 approvements_926: 
@@ -1269,6 +1589,16 @@ approvements_109:
   id: "110"
   dean_statement_id: 
   board_statement_id: 
+approvements_1056: 
+  created_on: 2006-01-18 16:11:02
+  tutor_statement_id: 
+  document_id: "100737"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1057"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_927: 
   created_on: 2005-12-12 11:28:13
   tutor_statement_id: 
@@ -1297,6 +1627,16 @@ approvements_373:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "374"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1057: 
+  created_on: 2006-01-18 16:12:14
+  tutor_statement_id: 
+  document_id: "100770"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1058"
   dean_statement_id: 
   board_statement_id: 
 approvements_928: 
@@ -1339,6 +1679,16 @@ approvements_374:
   id: "375"
   dean_statement_id: 
   board_statement_id: 
+approvements_1058: 
+  created_on: 2006-01-18 17:23:49
+  tutor_statement_id: 
+  document_id: "100787"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1059"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_929: 
   created_on: 2005-12-13 08:31:52
   tutor_statement_id: 
@@ -1378,6 +1728,16 @@ approvements_375:
   leader_statement_id: "232"
   id: "376"
   dean_statement_id: "1245"
+  board_statement_id: 
+approvements_1059: 
+  created_on: 2006-01-19 07:17:08
+  tutor_statement_id: 
+  document_id: "1208"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1060"
+  dean_statement_id: 
   board_statement_id: 
 approvements_112: 
   created_on: 2005-10-17 11:39:05
@@ -1479,6 +1839,16 @@ approvements_378:
   id: "379"
   dean_statement_id: "1262"
   board_statement_id: 
+approvements_1060: 
+  created_on: 2006-01-19 11:10:33
+  tutor_statement_id: 
+  document_id: "100789"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1061"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_931: 
   created_on: 2005-12-13 12:06:15
   tutor_statement_id: 
@@ -1517,6 +1887,16 @@ approvements_379:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "380"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1061: 
+  created_on: 2006-01-20 09:43:11
+  tutor_statement_id: 
+  document_id: "100791"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1062"
   dean_statement_id: 
   board_statement_id: 
 approvements_932: 
@@ -1559,6 +1939,16 @@ approvements_248:
   id: "249"
   dean_statement_id: 
   board_statement_id: 
+approvements_1062: 
+  created_on: 2006-01-20 09:43:42
+  tutor_statement_id: 
+  document_id: "100792"
+  updated_on: 2006-01-27 09:43:54
+  type: 
+  leader_statement_id: 
+  id: "1063"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_933: 
   created_on: 2005-12-14 08:44:58
   tutor_statement_id: 
@@ -1578,6 +1968,16 @@ approvements_801:
   leader_statement_id: "1042"
   id: "802"
   dean_statement_id: "1043"
+  board_statement_id: 
+approvements_1063: 
+  created_on: 2006-01-20 09:44:00
+  tutor_statement_id: 
+  document_id: "100793"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: 
+  id: "1064"
+  dean_statement_id: 
   board_statement_id: 
 approvements_934: 
   created_on: 2005-12-14 11:08:27
@@ -1629,6 +2029,16 @@ approvements_249:
   id: "250"
   dean_statement_id: 
   board_statement_id: 
+approvements_1064: 
+  created_on: 2006-01-20 09:58:14
+  tutor_statement_id: 
+  document_id: "100794"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: 
+  id: "1065"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_935: 
   created_on: 2005-12-14 12:12:21
   tutor_statement_id: "1311"
@@ -1667,6 +2077,16 @@ approvements_118:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "119"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1065: 
+  created_on: 2006-01-20 09:58:45
+  tutor_statement_id: "1381"
+  document_id: "100795"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: "1380"
+  id: "1066"
   dean_statement_id: 
   board_statement_id: 
 approvements_936: 
@@ -1719,6 +2139,16 @@ approvements_119:
   id: "120"
   dean_statement_id: 
   board_statement_id: 
+approvements_1066: 
+  created_on: 2006-01-20 10:41:52
+  tutor_statement_id: 
+  document_id: "100796"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: 
+  id: "1067"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_937: 
   created_on: 2005-12-15 16:03:27
   tutor_statement_id: 
@@ -1753,11 +2183,21 @@ approvements_383:
   created_on: 2005-11-02 09:51:43
   tutor_statement_id: "328"
   document_id: "100397"
-  updated_on: 2005-11-15 15:03:37
+  updated_on: 2006-01-27 09:43:50
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1340"
   id: "384"
-  dean_statement_id: 
+  dean_statement_id: "1351"
+  board_statement_id: 
+approvements_1067: 
+  created_on: 2006-01-20 12:36:41
+  tutor_statement_id: "1365"
+  document_id: "100797"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: "1364"
+  id: "1068"
+  dean_statement_id: "1366"
   board_statement_id: 
 approvements_938: 
   created_on: 2005-12-15 17:15:22
@@ -1809,6 +2249,16 @@ approvements_384:
   id: "385"
   dean_statement_id: 
   board_statement_id: 
+approvements_1068: 
+  created_on: 2006-01-20 17:11:46
+  tutor_statement_id: 
+  document_id: "100788"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: 
+  id: "1069"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_939: 
   created_on: 2005-12-15 18:08:58
   tutor_statement_id: 
@@ -1858,6 +2308,16 @@ approvements_385:
   leader_statement_id: "264"
   id: "386"
   dean_statement_id: "297"
+  board_statement_id: 
+approvements_1069: 
+  created_on: 2006-01-20 17:11:46
+  tutor_statement_id: 
+  document_id: "100741"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: 
+  id: "1070"
+  dean_statement_id: 
   board_statement_id: 
 approvements_808: 
   created_on: 2003-10-01 00:00:00
@@ -1989,6 +2449,16 @@ approvements_388:
   id: "389"
   dean_statement_id: 
   board_statement_id: 
+approvements_1070: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100742"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: 
+  id: "1071"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_125: 
   created_on: 2005-10-17 11:39:10
   tutor_statement_id: 
@@ -2017,6 +2487,16 @@ approvements_389:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "390"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1071: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100743"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: 
+  id: "1072"
   dean_statement_id: 
   board_statement_id: 
 approvements_942: 
@@ -2059,6 +2539,16 @@ approvements_258:
   id: "259"
   dean_statement_id: 
   board_statement_id: 
+approvements_1072: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100744"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: 
+  id: "1073"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_943: 
   created_on: 2005-12-16 12:57:06
   tutor_statement_id: 
@@ -2099,6 +2589,16 @@ approvements_259:
   id: "260"
   dean_statement_id: 
   board_statement_id: 
+approvements_1073: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100710"
+  updated_on: 2006-01-27 09:43:55
+  type: 
+  leader_statement_id: 
+  id: "1074"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_944: 
   created_on: 2005-12-16 13:00:30
   tutor_statement_id: "1319"
@@ -2127,6 +2627,16 @@ approvements_390:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "391"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1074: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100708"
+  updated_on: 2006-01-27 09:43:56
+  type: 
+  leader_statement_id: 
+  id: "1075"
   dean_statement_id: 
   board_statement_id: 
 approvements_945: 
@@ -2167,6 +2677,16 @@ approvements_391:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "392"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1075: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100709"
+  updated_on: 2006-01-27 09:43:56
+  type: 
+  leader_statement_id: 
+  id: "1076"
   dean_statement_id: 
   board_statement_id: 
 approvements_946: 
@@ -2219,6 +2739,16 @@ approvements_392:
   id: "393"
   dean_statement_id: 
   board_statement_id: 
+approvements_1076: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100719"
+  updated_on: 2006-01-27 09:43:56
+  type: 
+  leader_statement_id: 
+  id: "1077"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_947: 
   created_on: 2005-12-16 13:01:49
   tutor_statement_id: 
@@ -2257,6 +2787,16 @@ approvements_393:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "394"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1077: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100721"
+  updated_on: 2006-01-27 09:43:56
+  type: 
+  leader_statement_id: 
+  id: "1078"
   dean_statement_id: 
   board_statement_id: 
 approvements_948: 
@@ -2309,6 +2849,16 @@ approvements_394:
   id: "395"
   dean_statement_id: 
   board_statement_id: 
+approvements_1078: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100724"
+  updated_on: 2006-01-27 09:43:56
+  type: 
+  leader_statement_id: 
+  id: "1079"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_949: 
   created_on: 2005-12-16 13:02:38
   tutor_statement_id: 
@@ -2357,6 +2907,16 @@ approvements_395:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "396"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1079: 
+  created_on: 2006-01-20 17:11:47
+  tutor_statement_id: 
+  document_id: "100730"
+  updated_on: 2006-01-27 09:43:56
+  type: 
+  leader_statement_id: 
+  id: "1080"
   dean_statement_id: 
   board_statement_id: 
 approvements_818: 
@@ -2509,6 +3069,16 @@ approvements_398:
   id: "399"
   dean_statement_id: 
   board_statement_id: 
+approvements_1080: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100732"
+  updated_on: 2006-01-27 09:43:56
+  type: 
+  leader_statement_id: 
+  id: "1081"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_952: 
   created_on: 2005-12-19 11:23:44
   tutor_statement_id: 
@@ -2569,6 +3139,16 @@ approvements_399:
   id: "400"
   dean_statement_id: 
   board_statement_id: 
+approvements_1081: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100734"
+  updated_on: 2006-01-27 09:43:56
+  type: 
+  leader_statement_id: 
+  id: "1082"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_004: 
   created_on: 2005-10-12 16:01:36
   tutor_statement_id: "1"
@@ -2597,6 +3177,16 @@ approvements_268:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "269"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1082: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100736"
+  updated_on: 2006-01-27 09:43:56
+  type: 
+  leader_statement_id: 
+  id: "1083"
   dean_statement_id: 
   board_statement_id: 
 approvements_953: 
@@ -2649,6 +3239,16 @@ approvements_269:
   id: "270"
   dean_statement_id: 
   board_statement_id: 
+approvements_1083: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100778"
+  updated_on: 2006-01-27 09:43:57
+  type: 
+  leader_statement_id: 
+  id: "1084"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_954: 
   created_on: 2005-12-19 11:26:35
   tutor_statement_id: 
@@ -2689,6 +3289,16 @@ approvements_138:
   id: "139"
   dean_statement_id: 
   board_statement_id: 
+approvements_1084: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100763"
+  updated_on: 2006-01-27 09:43:57
+  type: 
+  leader_statement_id: 
+  id: "1085"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_955: 
   created_on: 2005-12-19 18:56:22
   tutor_statement_id: 
@@ -2708,6 +3318,16 @@ approvements_823:
   leader_statement_id: "1108"
   id: "824"
   dean_statement_id: "1109"
+  board_statement_id: 
+approvements_1085: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100771"
+  updated_on: 2006-01-27 09:43:57
+  type: 
+  leader_statement_id: 
+  id: "1086"
+  dean_statement_id: 
   board_statement_id: 
 approvements_956: 
   created_on: 2005-12-19 19:15:12
@@ -2759,6 +3379,16 @@ approvements_139:
   id: "140"
   dean_statement_id: 
   board_statement_id: 
+approvements_1086: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100774"
+  updated_on: 2006-01-27 09:43:57
+  type: 
+  leader_statement_id: 
+  id: "1087"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_957: 
   created_on: 2005-12-20 12:21:38
   tutor_statement_id: 
@@ -2797,6 +3427,16 @@ approvements_008:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "8"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1087: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100779"
+  updated_on: 2006-01-27 09:43:57
+  type: 
+  leader_statement_id: 
+  id: "1088"
   dean_statement_id: 
   board_statement_id: 
 approvements_958: 
@@ -2849,6 +3489,16 @@ approvements_009:
   id: "9"
   dean_statement_id: 
   board_statement_id: 
+approvements_1088: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100769"
+  updated_on: 2006-01-27 09:43:57
+  type: 
+  leader_statement_id: 
+  id: "1089"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_959: 
   created_on: 2005-12-20 16:59:32
   tutor_statement_id: 
@@ -2887,6 +3537,16 @@ approvements_273:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "274"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1089: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100729"
+  updated_on: 2006-01-27 09:43:57
+  type: 
+  leader_statement_id: 
+  id: "1090"
   dean_statement_id: 
   board_statement_id: 
 approvements_828: 
@@ -3019,15 +3679,25 @@ approvements_276:
   id: "277"
   dean_statement_id: 
   board_statement_id: 
+approvements_1090: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100733"
+  updated_on: 2006-01-27 09:43:57
+  type: 
+  leader_statement_id: 
+  id: "1091"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_962: 
   created_on: 2005-12-21 19:19:05
-  tutor_statement_id: 
+  tutor_statement_id: "1328"
   document_id: "100676"
-  updated_on: 2005-12-21 19:19:06
+  updated_on: 2006-01-27 09:43:58
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1330"
   id: "963"
-  dean_statement_id: 
+  dean_statement_id: "1343"
   board_statement_id: 
 approvements_830: 
   created_on: 2003-10-30 17:00:00
@@ -3069,12 +3739,22 @@ approvements_277:
   id: "278"
   dean_statement_id: "326"
   board_statement_id: 
-approvements_963: 
-  created_on: 2006-01-12 15:23:44
+approvements_1091: 
+  created_on: 2006-01-20 17:11:48
   tutor_statement_id: 
-  document_id: "1205"
-  updated_on: 2006-01-12 15:23:44
-  type: DisertThemeApprovement
+  document_id: "100735"
+  updated_on: 2006-01-27 09:43:58
+  type: 
+  leader_statement_id: 
+  id: "1092"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_963: 
+  created_on: 2005-12-23 10:50:03
+  tutor_statement_id: 
+  document_id: "1490"
+  updated_on: 2006-01-27 09:43:58
+  type: 
   leader_statement_id: 
   id: "964"
   dean_statement_id: 
@@ -3119,6 +3799,16 @@ approvements_278:
   id: "279"
   dean_statement_id: 
   board_statement_id: 
+approvements_1092: 
+  created_on: 2006-01-20 17:11:48
+  tutor_statement_id: 
+  document_id: "100728"
+  updated_on: 2006-01-27 09:43:58
+  type: 
+  leader_statement_id: 
+  id: "1093"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_015: 
   created_on: 2005-10-13 10:52:54
   tutor_statement_id: 
@@ -3149,12 +3839,22 @@ approvements_279:
   id: "280"
   dean_statement_id: 
   board_statement_id: 
-approvements_964: 
-  created_on: 2006-01-18 16:48:36
+approvements_1093: 
+  created_on: 2006-01-20 17:11:49
   tutor_statement_id: 
-  document_id: "100678"
-  updated_on: 2006-01-18 16:48:36
-  type: StudyPlanApprovement
+  document_id: "100775"
+  updated_on: 2006-01-27 09:43:58
+  type: 
+  leader_statement_id: 
+  id: "1094"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_964: 
+  created_on: 2005-12-23 11:01:40
+  tutor_statement_id: 
+  document_id: "100677"
+  updated_on: 2006-01-27 09:43:58
+  type: 
   leader_statement_id: 
   id: "965"
   dean_statement_id: 
@@ -3199,15 +3899,25 @@ approvements_700:
   id: "701"
   dean_statement_id: "740"
   board_statement_id: 
-approvements_965: 
-  created_on: 2006-01-18 16:49:06
+approvements_1094: 
+  created_on: 2006-01-20 17:11:49
   tutor_statement_id: 
-  document_id: "100677"
-  updated_on: 2006-01-18 16:49:06
-  type: StudyPlanApprovement
+  document_id: "100777"
+  updated_on: 2006-01-27 09:43:58
+  type: 
   leader_statement_id: 
-  id: "966"
+  id: "1095"
   dean_statement_id: 
+  board_statement_id: 
+approvements_965: 
+  created_on: 2005-12-29 15:04:29
+  tutor_statement_id: "1355"
+  document_id: "100678"
+  updated_on: 2006-01-27 09:43:58
+  type: 
+  leader_statement_id: "1356"
+  id: "966"
+  dean_statement_id: "1357"
   board_statement_id: 
 approvements_833: 
   created_on: 2003-10-30 17:00:00
@@ -3249,12 +3959,22 @@ approvements_701:
   id: "702"
   dean_statement_id: "743"
   board_statement_id: 
-approvements_966: 
-  created_on: 2006-01-19 10:24:07
+approvements_1095: 
+  created_on: 2006-01-20 17:11:49
   tutor_statement_id: 
-  document_id: "100680"
-  updated_on: 2006-01-19 10:24:07
-  type: StudyPlanApprovement
+  document_id: "100768"
+  updated_on: 2006-01-27 09:43:58
+  type: 
+  leader_statement_id: 
+  id: "1096"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_966: 
+  created_on: 2005-12-29 16:12:33
+  tutor_statement_id: 
+  document_id: "100679"
+  updated_on: 2006-01-27 09:43:58
+  type: 
   leader_statement_id: 
   id: "967"
   dean_statement_id: 
@@ -3289,15 +4009,25 @@ approvements_702:
   id: "703"
   dean_statement_id: "746"
   board_statement_id: 
-approvements_967: 
-  created_on: 2006-01-20 10:39:33
+approvements_1096: 
+  created_on: 2006-01-20 17:11:49
   tutor_statement_id: 
-  document_id: "100684"
-  updated_on: 2006-01-20 10:39:33
-  type: StudyPlanApprovement
+  document_id: "100726"
+  updated_on: 2006-01-27 09:43:59
+  type: 
   leader_statement_id: 
-  id: "968"
+  id: "1097"
   dean_statement_id: 
+  board_statement_id: 
+approvements_967: 
+  created_on: 2005-12-30 11:47:05
+  tutor_statement_id: "1329"
+  document_id: "100680"
+  updated_on: 2006-01-27 09:43:59
+  type: 
+  leader_statement_id: "1332"
+  id: "968"
+  dean_statement_id: "1345"
   board_statement_id: 
 approvements_835: 
   created_on: 2003-10-30 17:00:00
@@ -3339,12 +4069,22 @@ approvements_703:
   id: "704"
   dean_statement_id: "749"
   board_statement_id: 
-approvements_968: 
-  created_on: 2006-01-20 10:56:34
+approvements_1097: 
+  created_on: 2006-01-20 17:11:49
   tutor_statement_id: 
-  document_id: "100685"
-  updated_on: 2006-01-20 10:56:34
-  type: StudyPlanApprovement
+  document_id: "100772"
+  updated_on: 2006-01-27 09:43:59
+  type: 
+  leader_statement_id: 
+  id: "1098"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_968: 
+  created_on: 2006-01-02 07:32:37
+  tutor_statement_id: 
+  document_id: "1140"
+  updated_on: 2006-01-27 09:43:59
+  type: 
   leader_statement_id: 
   id: "969"
   dean_statement_id: 
@@ -3399,12 +4139,22 @@ approvements_150:
   id: "151"
   dean_statement_id: 
   board_statement_id: 
-approvements_969: 
-  created_on: 2006-01-20 12:03:54
+approvements_1098: 
+  created_on: 2006-01-20 17:11:49
   tutor_statement_id: 
-  document_id: "100686"
-  updated_on: 2006-01-20 12:03:54
-  type: StudyPlanApprovement
+  document_id: "100714"
+  updated_on: 2006-01-27 09:43:59
+  type: 
+  leader_statement_id: 
+  id: "1099"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_969: 
+  created_on: 2006-01-02 07:32:37
+  tutor_statement_id: 
+  document_id: "1139"
+  updated_on: 2006-01-27 09:43:59
+  type: 
   leader_statement_id: 
   id: "970"
   dean_statement_id: 
@@ -3447,6 +4197,16 @@ approvements_151:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "152"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1099: 
+  created_on: 2006-01-20 17:11:49
+  tutor_statement_id: 
+  document_id: "100712"
+  updated_on: 2006-01-27 09:43:59
+  type: 
+  leader_statement_id: 
+  id: "1100"
   dean_statement_id: 
   board_statement_id: 
 approvements_838: 
@@ -3500,11 +4260,11 @@ approvements_152:
   dean_statement_id: 
   board_statement_id: 
 approvements_970: 
-  created_on: 2006-01-20 12:58:33
+  created_on: 2006-01-02 07:32:38
   tutor_statement_id: 
-  document_id: "100687"
-  updated_on: 2006-01-20 12:58:33
-  type: StudyPlanApprovement
+  document_id: "1169"
+  updated_on: 2006-01-27 09:43:59
+  type: 
   leader_statement_id: 
   id: "971"
   dean_statement_id: 
@@ -3560,11 +4320,11 @@ approvements_153:
   dean_statement_id: 
   board_statement_id: 
 approvements_971: 
-  created_on: 2006-01-20 13:03:47
+  created_on: 2006-01-02 17:54:12
   tutor_statement_id: 
-  document_id: "100688"
-  updated_on: 2006-01-20 13:03:47
-  type: StudyPlanApprovement
+  document_id: "1210"
+  updated_on: 2006-01-27 09:43:59
+  type: 
   leader_statement_id: 
   id: "972"
   dean_statement_id: 
@@ -3610,11 +4370,11 @@ approvements_154:
   dean_statement_id: 
   board_statement_id: 
 approvements_972: 
-  created_on: 2006-01-20 13:05:42
+  created_on: 2006-01-03 09:34:25
   tutor_statement_id: 
-  document_id: "100689"
-  updated_on: 2006-01-20 13:05:42
-  type: StudyPlanApprovement
+  document_id: "1181"
+  updated_on: 2006-01-27 09:43:59
+  type: 
   leader_statement_id: 
   id: "973"
   dean_statement_id: 
@@ -3670,11 +4430,11 @@ approvements_155:
   dean_statement_id: 
   board_statement_id: 
 approvements_973: 
-  created_on: 2006-01-20 13:09:35
+  created_on: 2006-01-03 09:34:25
   tutor_statement_id: 
-  document_id: "100690"
-  updated_on: 2006-01-20 13:09:35
-  type: StudyPlanApprovement
+  document_id: "1193"
+  updated_on: 2006-01-27 09:43:59
+  type: 
   leader_statement_id: 
   id: "974"
   dean_statement_id: 
@@ -3720,11 +4480,11 @@ approvements_156:
   dean_statement_id: 
   board_statement_id: 
 approvements_974: 
-  created_on: 2006-01-20 13:12:58
+  created_on: 2006-01-03 09:34:25
   tutor_statement_id: 
-  document_id: "100691"
-  updated_on: 2006-01-20 13:12:58
-  type: StudyPlanApprovement
+  document_id: "1205"
+  updated_on: 2006-01-27 09:43:59
+  type: 
   leader_statement_id: 
   id: "975"
   dean_statement_id: 
@@ -3800,11 +4560,11 @@ approvements_158:
   dean_statement_id: "308"
   board_statement_id: 
 approvements_975: 
-  created_on: 2006-01-20 13:15:05
+  created_on: 2006-01-03 09:58:41
   tutor_statement_id: 
-  document_id: "100692"
-  updated_on: 2006-01-20 13:15:05
-  type: StudyPlanApprovement
+  document_id: "100681"
+  updated_on: 2006-01-27 09:43:59
+  type: 
   leader_statement_id: 
   id: "976"
   dean_statement_id: 
@@ -3850,11 +4610,11 @@ approvements_159:
   dean_statement_id: "307"
   board_statement_id: 
 approvements_976: 
-  created_on: 2006-01-20 13:51:59
+  created_on: 2006-01-03 10:46:06
   tutor_statement_id: 
-  document_id: "100693"
-  updated_on: 2006-01-20 13:51:59
-  type: StudyPlanApprovement
+  document_id: "100682"
+  updated_on: 2006-01-27 09:44:00
+  type: 
   leader_statement_id: 
   id: "977"
   dean_statement_id: 
@@ -3900,11 +4660,11 @@ approvements_028:
   dean_statement_id: 
   board_statement_id: 
 approvements_977: 
-  created_on: 2006-01-24 09:56:39
+  created_on: 2006-01-03 15:34:20
   tutor_statement_id: 
-  document_id: "100681"
-  updated_on: 2006-01-24 09:56:39
-  type: StudyPlanApprovement
+  document_id: "100683"
+  updated_on: 2006-01-27 09:44:00
+  type: 
   leader_statement_id: 
   id: "978"
   dean_statement_id: 
@@ -3940,11 +4700,11 @@ approvements_291:
   dean_statement_id: 
   board_statement_id: 
 approvements_978: 
-  created_on: 2006-01-24 09:56:39
+  created_on: 2006-01-04 09:09:03
   tutor_statement_id: 
-  document_id: "100682"
-  updated_on: 2006-01-24 09:56:39
-  type: StudyPlanApprovement
+  document_id: "1147"
+  updated_on: 2006-01-27 09:44:00
+  type: 
   leader_statement_id: 
   id: "979"
   dean_statement_id: 
@@ -3981,13 +4741,13 @@ approvements_160:
   board_statement_id: 
 approvements_292: 
   created_on: 2005-10-23 09:07:24
-  tutor_statement_id: 
+  tutor_statement_id: "1325"
   document_id: "100308"
-  updated_on: 2005-10-23 09:07:24
+  updated_on: 2006-01-27 09:43:54
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1353"
   id: "293"
-  dean_statement_id: 
+  dean_statement_id: "1354"
   board_statement_id: 
 approvements_029: 
   created_on: 2005-10-14 19:29:15
@@ -4000,11 +4760,11 @@ approvements_029:
   dean_statement_id: "305"
   board_statement_id: 
 approvements_979: 
-  created_on: 2006-01-24 09:56:39
+  created_on: 2006-01-04 09:09:04
   tutor_statement_id: 
-  document_id: "100683"
-  updated_on: 2006-01-24 09:56:39
-  type: StudyPlanApprovement
+  document_id: "1461"
+  updated_on: 2006-01-27 09:44:00
+  type: 
   leader_statement_id: 
   id: "980"
   dean_statement_id: 
@@ -4083,11 +4843,11 @@ approvements_162:
   created_on: 2005-10-18 08:04:15
   tutor_statement_id: "7"
   document_id: "100181"
-  updated_on: 2005-10-18 11:36:35
+  updated_on: 2006-01-27 09:43:53
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1331"
   id: "163"
-  dean_statement_id: 
+  dean_statement_id: "1344"
   board_statement_id: 
 approvements_294: 
   created_on: 2005-10-24 08:35:18
@@ -4100,11 +4860,11 @@ approvements_294:
   dean_statement_id: 
   board_statement_id: 
 approvements_980: 
-  created_on: 2006-01-24 09:56:42
+  created_on: 2006-01-04 11:06:29
   tutor_statement_id: 
-  document_id: "100679"
-  updated_on: 2006-01-24 09:56:42
-  type: StudyPlanApprovement
+  document_id: "1110"
+  updated_on: 2006-01-27 09:44:00
+  type: 
   leader_statement_id: 
   id: "981"
   dean_statement_id: 
@@ -4143,11 +4903,11 @@ approvements_163:
   created_on: 2005-10-18 10:12:16
   tutor_statement_id: "267"
   document_id: "100182"
-  updated_on: 2005-12-16 11:15:27
+  updated_on: 2006-01-27 09:43:53
   type: StudyPlanApprovement
   leader_statement_id: "1312"
   id: "164"
-  dean_statement_id: 
+  dean_statement_id: "1358"
   board_statement_id: 
 approvements_295: 
   created_on: 2005-10-24 08:42:20
@@ -4160,11 +4920,11 @@ approvements_295:
   dean_statement_id: 
   board_statement_id: 
 approvements_981: 
-  created_on: 2006-01-25 15:50:03
+  created_on: 2006-01-04 11:14:14
   tutor_statement_id: 
-  document_id: "100694"
-  updated_on: 2006-01-25 15:50:03
-  type: StudyPlanApprovement
+  document_id: "1025"
+  updated_on: 2006-01-27 09:44:00
+  type: 
   leader_statement_id: 
   id: "982"
   dean_statement_id: 
@@ -4207,6 +4967,16 @@ approvements_296:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "297"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_982: 
+  created_on: 2006-01-04 15:01:53
+  tutor_statement_id: 
+  document_id: "952"
+  updated_on: 2006-01-27 09:44:00
+  type: 
+  leader_statement_id: 
+  id: "983"
   dean_statement_id: 
   board_statement_id: 
 approvements_850: 
@@ -4259,6 +5029,16 @@ approvements_297:
   id: "298"
   dean_statement_id: 
   board_statement_id: 
+approvements_983: 
+  created_on: 2006-01-04 15:18:10
+  tutor_statement_id: 
+  document_id: "998"
+  updated_on: 2006-01-27 09:44:00
+  type: 
+  leader_statement_id: 
+  id: "984"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_851: 
   created_on: 2001-10-01 00:00:00
   tutor_statement_id: "1191"
@@ -4297,6 +5077,16 @@ approvements_298:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "299"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_984: 
+  created_on: 2006-01-08 23:34:30
+  tutor_statement_id: 
+  document_id: "100684"
+  updated_on: 2006-01-27 09:44:00
+  type: 
+  leader_statement_id: 
+  id: "985"
   dean_statement_id: 
   board_statement_id: 
 approvements_852: 
@@ -4348,6 +5138,16 @@ approvements_720:
   leader_statement_id: "799"
   id: "721"
   dean_statement_id: "800"
+  board_statement_id: 
+approvements_985: 
+  created_on: 2006-01-09 12:50:58
+  tutor_statement_id: 
+  document_id: "100685"
+  updated_on: 2006-01-27 09:44:00
+  type: 
+  leader_statement_id: 
+  id: "986"
+  dean_statement_id: 
   board_statement_id: 
 approvements_853: 
   created_on: 2001-09-01 00:00:00
@@ -4409,6 +5209,16 @@ approvements_169:
   id: "170"
   dean_statement_id: "303"
   board_statement_id: 
+approvements_986: 
+  created_on: 2006-01-09 16:56:28
+  tutor_statement_id: 
+  document_id: "1126"
+  updated_on: 2006-01-27 09:44:00
+  type: 
+  leader_statement_id: 
+  id: "987"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_854: 
   created_on: 2002-10-29 17:00:00
   tutor_statement_id: "1200"
@@ -4438,6 +5248,16 @@ approvements_722:
   leader_statement_id: "805"
   id: "723"
   dean_statement_id: "806"
+  board_statement_id: 
+approvements_987: 
+  created_on: 2006-01-09 16:56:28
+  tutor_statement_id: 
+  document_id: "1151"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "988"
+  dean_statement_id: 
   board_statement_id: 
 approvements_855: 
   created_on: 2001-09-01 00:00:00
@@ -4469,6 +5289,16 @@ approvements_723:
   id: "724"
   dean_statement_id: "809"
   board_statement_id: 
+approvements_988: 
+  created_on: 2006-01-09 16:56:29
+  tutor_statement_id: 
+  document_id: "1393"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "989"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_856: 
   created_on: 2003-10-30 17:00:00
   tutor_statement_id: "1206"
@@ -4498,6 +5328,16 @@ approvements_724:
   leader_statement_id: "811"
   id: "725"
   dean_statement_id: "812"
+  board_statement_id: 
+approvements_989: 
+  created_on: 2006-01-10 14:49:07
+  tutor_statement_id: "1361"
+  document_id: "100686"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: "1362"
+  id: "990"
+  dean_statement_id: "1363"
   board_statement_id: 
 approvements_857: 
   created_on: 2003-10-30 17:00:00
@@ -4569,6 +5409,16 @@ approvements_726:
   id: "727"
   dean_statement_id: "818"
   board_statement_id: 
+approvements_990: 
+  created_on: 2006-01-10 15:39:56
+  tutor_statement_id: 
+  document_id: "1146"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "991"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_859: 
   created_on: 2002-10-01 00:00:00
   tutor_statement_id: "1215"
@@ -4609,6 +5459,16 @@ approvements_727:
   id: "728"
   dean_statement_id: "821"
   board_statement_id: 
+approvements_991: 
+  created_on: 2006-01-10 17:40:20
+  tutor_statement_id: 
+  document_id: "100687"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "992"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_042: 
   created_on: 2005-10-15 13:25:38
   tutor_statement_id: "258"
@@ -4638,6 +5498,16 @@ approvements_728:
   leader_statement_id: "823"
   id: "729"
   dean_statement_id: "824"
+  board_statement_id: 
+approvements_992: 
+  created_on: 2006-01-10 17:45:50
+  tutor_statement_id: 
+  document_id: "100688"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "993"
+  dean_statement_id: 
   board_statement_id: 
 approvements_860: 
   created_on: 2004-10-01 00:00:00
@@ -4679,6 +5549,16 @@ approvements_729:
   id: "730"
   dean_statement_id: "827"
   board_statement_id: 
+approvements_993: 
+  created_on: 2006-01-10 18:14:20
+  tutor_statement_id: 
+  document_id: "1150"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "994"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_861: 
   created_on: 2004-10-29 18:00:00
   tutor_statement_id: "1221"
@@ -4708,6 +5588,16 @@ approvements_176:
   leader_statement_id: "1277"
   id: "177"
   dean_statement_id: "1281"
+  board_statement_id: 
+approvements_994: 
+  created_on: 2006-01-11 09:16:55
+  tutor_statement_id: 
+  document_id: "1195"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "995"
+  dean_statement_id: 
   board_statement_id: 
 approvements_862: 
   created_on: 2001-09-01 00:00:00
@@ -4749,6 +5639,16 @@ approvements_730:
   id: "731"
   dean_statement_id: "830"
   board_statement_id: 
+approvements_995: 
+  created_on: 2006-01-11 09:39:35
+  tutor_statement_id: "1369"
+  document_id: "100689"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "996"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_863: 
   created_on: 2003-11-03 00:33:40
   tutor_statement_id: "1227"
@@ -4788,6 +5688,16 @@ approvements_731:
   leader_statement_id: "832"
   id: "732"
   dean_statement_id: "833"
+  board_statement_id: 
+approvements_996: 
+  created_on: 2006-01-11 13:22:46
+  tutor_statement_id: 
+  document_id: "1164"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "997"
+  dean_statement_id: 
   board_statement_id: 
 approvements_864: 
   created_on: 2005-11-22 16:22:39
@@ -4849,6 +5759,16 @@ approvements_048:
   id: "49"
   dean_statement_id: 
   board_statement_id: 
+approvements_997: 
+  created_on: 2006-01-11 14:36:37
+  tutor_statement_id: "1360"
+  document_id: "2"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "998"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_865: 
   created_on: 2005-11-23 11:33:45
   tutor_statement_id: 
@@ -4889,6 +5809,16 @@ approvements_733:
   id: "734"
   dean_statement_id: "839"
   board_statement_id: 
+approvements_998: 
+  created_on: 2006-01-11 15:12:40
+  tutor_statement_id: 
+  document_id: "1407"
+  updated_on: 2006-01-27 09:44:01
+  type: 
+  leader_statement_id: 
+  id: "999"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_866: 
   created_on: 2005-11-23 12:18:09
   tutor_statement_id: 
@@ -4927,6 +5857,16 @@ approvements_180:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "181"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_999: 
+  created_on: 2006-01-13 16:16:05
+  tutor_statement_id: 
+  document_id: "3"
+  updated_on: 2006-01-27 09:44:02
+  type: 
+  leader_statement_id: 
+  id: "1000"
   dean_statement_id: 
   board_statement_id: 
 approvements_867: 
@@ -5021,9 +5961,9 @@ approvements_182:
   board_statement_id: 
 approvements_869: 
   created_on: 2005-11-23 22:28:41
-  tutor_statement_id: 
+  tutor_statement_id: "1368"
   document_id: "100585"
-  updated_on: 2005-11-23 22:28:41
+  updated_on: 2006-01-27 09:44:02
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "870"
@@ -8059,6 +8999,16 @@ approvements_549:
   id: "550"
   dean_statement_id: 
   board_statement_id: 
+approvements_1100: 
+  created_on: 2006-01-20 17:11:50
+  tutor_statement_id: 
+  document_id: "100760"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1101"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_681: 
   created_on: 2004-10-29 18:00:00
   tutor_statement_id: "681"
@@ -8077,6 +9027,16 @@ approvements_418:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "419"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1101: 
+  created_on: 2006-01-20 17:11:50
+  tutor_statement_id: 
+  document_id: "100722"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1102"
   dean_statement_id: 
   board_statement_id: 
 approvements_550: 
@@ -8109,6 +9069,16 @@ approvements_419:
   id: "420"
   dean_statement_id: 
   board_statement_id: 
+approvements_1102: 
+  created_on: 2006-01-20 17:11:50
+  tutor_statement_id: 
+  document_id: "100738"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1103"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_551: 
   created_on: 2005-11-09 12:15:11
   tutor_statement_id: 
@@ -8128,6 +9098,16 @@ approvements_683:
   leader_statement_id: "688"
   id: "684"
   dean_statement_id: "689"
+  board_statement_id: 
+approvements_1103: 
+  created_on: 2006-01-20 17:11:50
+  tutor_statement_id: 
+  document_id: "100702"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1104"
+  dean_statement_id: 
   board_statement_id: 
 approvements_420: 
   created_on: 2005-11-08 16:23:28
@@ -8159,6 +9139,16 @@ approvements_684:
   id: "685"
   dean_statement_id: "692"
   board_statement_id: 
+approvements_1104: 
+  created_on: 2006-01-20 17:11:50
+  tutor_statement_id: 
+  document_id: "100704"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1105"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_421: 
   created_on: 2005-11-08 16:23:28
   tutor_statement_id: 
@@ -8188,6 +9178,16 @@ approvements_685:
   leader_statement_id: "694"
   id: "686"
   dean_statement_id: "695"
+  board_statement_id: 
+approvements_1105: 
+  created_on: 2006-01-20 17:11:50
+  tutor_statement_id: 
+  document_id: "100711"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1106"
+  dean_statement_id: 
   board_statement_id: 
 approvements_422: 
   created_on: 2005-11-08 16:23:28
@@ -8219,6 +9219,16 @@ approvements_686:
   id: "687"
   dean_statement_id: "698"
   board_statement_id: 
+approvements_1106: 
+  created_on: 2006-01-20 17:11:50
+  tutor_statement_id: 
+  document_id: "100725"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1107"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_423: 
   created_on: 2005-11-08 16:23:28
   tutor_statement_id: 
@@ -8248,6 +9258,16 @@ approvements_687:
   leader_statement_id: "700"
   id: "688"
   dean_statement_id: "701"
+  board_statement_id: 
+approvements_1107: 
+  created_on: 2006-01-20 17:11:50
+  tutor_statement_id: 
+  document_id: "100773"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1108"
+  dean_statement_id: 
   board_statement_id: 
 approvements_424: 
   created_on: 2005-11-08 16:23:28
@@ -8279,6 +9299,16 @@ approvements_688:
   id: "689"
   dean_statement_id: "704"
   board_statement_id: 
+approvements_1108: 
+  created_on: 2006-01-23 11:23:34
+  tutor_statement_id: 
+  document_id: "100798"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1109"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_425: 
   created_on: 2005-11-08 16:23:29
   tutor_statement_id: 
@@ -8308,6 +9338,16 @@ approvements_689:
   leader_statement_id: "706"
   id: "690"
   dean_statement_id: "707"
+  board_statement_id: 
+approvements_1109: 
+  created_on: 2006-01-23 11:24:53
+  tutor_statement_id: 
+  document_id: "100799"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1110"
+  dean_statement_id: 
   board_statement_id: 
 approvements_426: 
   created_on: 2005-11-09 07:32:00
@@ -8343,11 +9383,11 @@ approvements_559:
   created_on: 2005-11-14 13:05:35
   tutor_statement_id: "324"
   document_id: "100573"
-  updated_on: 2005-11-15 14:04:34
+  updated_on: 2006-01-27 09:43:56
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1341"
   id: "560"
-  dean_statement_id: 
+  dean_statement_id: "1352"
   board_statement_id: 
 approvements_690: 
   created_on: 2004-10-01 00:00:00
@@ -8358,6 +9398,16 @@ approvements_690:
   leader_statement_id: "709"
   id: "691"
   dean_statement_id: "710"
+  board_statement_id: 
+approvements_1110: 
+  created_on: 2006-01-23 11:37:41
+  tutor_statement_id: 
+  document_id: "100800"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1111"
+  dean_statement_id: 
   board_statement_id: 
 approvements_428: 
   created_on: 2005-11-09 08:25:18
@@ -8378,6 +9428,16 @@ approvements_691:
   leader_statement_id: "712"
   id: "692"
   dean_statement_id: "713"
+  board_statement_id: 
+approvements_1111: 
+  created_on: 2006-01-23 21:33:42
+  tutor_statement_id: 
+  document_id: "100801"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: 
+  id: "1112"
+  dean_statement_id: 
   board_statement_id: 
 approvements_429: 
   created_on: 2005-11-09 08:25:18
@@ -8409,6 +9469,16 @@ approvements_692:
   id: "693"
   dean_statement_id: "716"
   board_statement_id: 
+approvements_1112: 
+  created_on: 2006-01-25 10:56:52
+  tutor_statement_id: "1373"
+  document_id: "100802"
+  updated_on: 2006-01-27 09:44:09
+  type: 
+  leader_statement_id: "1372"
+  id: "1113"
+  dean_statement_id: "1374"
+  board_statement_id: 
 approvements_561: 
   created_on: 2005-11-16 09:47:14
   tutor_statement_id: "1288"
@@ -8428,6 +9498,16 @@ approvements_693:
   leader_statement_id: "718"
   id: "694"
   dean_statement_id: "719"
+  board_statement_id: 
+approvements_1113: 
+  created_on: 2006-01-25 13:37:42
+  tutor_statement_id: 
+  document_id: "100803"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1114"
+  dean_statement_id: 
   board_statement_id: 
 approvements_430: 
   created_on: 2005-11-09 08:25:18
@@ -8459,6 +9539,16 @@ approvements_694:
   id: "695"
   dean_statement_id: "722"
   board_statement_id: 
+approvements_1114: 
+  created_on: 2006-01-25 13:40:20
+  tutor_statement_id: 
+  document_id: "100804"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1115"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_431: 
   created_on: 2005-11-09 08:25:18
   tutor_statement_id: 
@@ -8488,6 +9578,16 @@ approvements_695:
   leader_statement_id: "724"
   id: "696"
   dean_statement_id: "725"
+  board_statement_id: 
+approvements_1115: 
+  created_on: 2006-01-25 13:41:37
+  tutor_statement_id: 
+  document_id: "100805"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1116"
+  dean_statement_id: 
   board_statement_id: 
 approvements_300: 
   created_on: 2005-10-24 09:44:40
@@ -8529,6 +9629,16 @@ approvements_696:
   id: "697"
   dean_statement_id: "728"
   board_statement_id: 
+approvements_1116: 
+  created_on: 2006-01-25 15:39:33
+  tutor_statement_id: 
+  document_id: "903"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1117"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_301: 
   created_on: 2005-10-24 10:17:01
   tutor_statement_id: "137"
@@ -8568,6 +9678,16 @@ approvements_697:
   leader_statement_id: "730"
   id: "698"
   dean_statement_id: "731"
+  board_statement_id: 
+approvements_1117: 
+  created_on: 2006-01-25 16:09:47
+  tutor_statement_id: 
+  document_id: "100806"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1118"
+  dean_statement_id: 
   board_statement_id: 
 approvements_302: 
   created_on: 2005-10-24 10:18:07
@@ -8609,6 +9729,16 @@ approvements_698:
   id: "699"
   dean_statement_id: "734"
   board_statement_id: 
+approvements_1118: 
+  created_on: 2006-01-25 16:10:18
+  tutor_statement_id: 
+  document_id: "100807"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1119"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_303: 
   created_on: 2005-10-24 10:57:31
   tutor_statement_id: "100"
@@ -8631,9 +9761,9 @@ approvements_435:
   board_statement_id: 
 approvements_567: 
   created_on: 2005-11-21 15:17:54
-  tutor_statement_id: 
+  tutor_statement_id: "1367"
   document_id: "100580"
-  updated_on: 2005-11-21 15:17:54
+  updated_on: 2006-01-27 09:43:57
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "568"
@@ -8648,6 +9778,16 @@ approvements_699:
   leader_statement_id: "736"
   id: "700"
   dean_statement_id: "737"
+  board_statement_id: 
+approvements_1119: 
+  created_on: 2006-01-25 19:07:09
+  tutor_statement_id: 
+  document_id: "100808"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1120"
+  dean_statement_id: 
   board_statement_id: 
 approvements_304: 
   created_on: 2005-10-24 11:07:38
@@ -8703,10 +9843,20 @@ approvements_569:
   created_on: 2005-11-22 13:23:50
   tutor_statement_id: "1234"
   document_id: "100587"
-  updated_on: 2005-12-12 09:43:34
+  updated_on: 2006-01-27 09:43:57
   type: StudyPlanApprovement
   leader_statement_id: "1295"
   id: "570"
+  dean_statement_id: "1359"
+  board_statement_id: 
+approvements_1120: 
+  created_on: 2006-01-25 19:09:38
+  tutor_statement_id: 
+  document_id: "100809"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1121"
   dean_statement_id: 
   board_statement_id: 
 approvements_306: 
@@ -8727,6 +9877,16 @@ approvements_438:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "439"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1121: 
+  created_on: 2006-01-25 19:11:14
+  tutor_statement_id: 
+  document_id: "100810"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1122"
   dean_statement_id: 
   board_statement_id: 
 approvements_570: 
@@ -8759,6 +9919,16 @@ approvements_439:
   id: "440"
   dean_statement_id: 
   board_statement_id: 
+approvements_1122: 
+  created_on: 2006-01-25 19:14:13
+  tutor_statement_id: 
+  document_id: "100811"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1123"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_571: 
   created_on: 2002-10-01 00:00:00
   tutor_statement_id: "351"
@@ -8777,6 +9947,16 @@ approvements_308:
   type: StudyPlanApprovement
   leader_statement_id: "329"
   id: "309"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1123: 
+  created_on: 2006-01-26 07:42:43
+  tutor_statement_id: 
+  document_id: "100812"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1124"
   dean_statement_id: 
   board_statement_id: 
 approvements_440: 
@@ -8809,6 +9989,16 @@ approvements_309:
   id: "310"
   dean_statement_id: 
   board_statement_id: 
+approvements_1124: 
+  created_on: 2006-01-26 12:45:03
+  tutor_statement_id: 
+  document_id: "100813"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: 
+  id: "1125"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_441: 
   created_on: 2005-11-09 08:25:19
   tutor_statement_id: 
@@ -8828,6 +10018,16 @@ approvements_573:
   leader_statement_id: "358"
   id: "574"
   dean_statement_id: "359"
+  board_statement_id: 
+approvements_1125: 
+  created_on: 2006-01-26 13:46:03
+  tutor_statement_id: "1379"
+  document_id: "100814"
+  updated_on: 2006-01-27 09:44:10
+  type: 
+  leader_statement_id: "1378"
+  id: "1126"
+  dean_statement_id: 
   board_statement_id: 
 approvements_310: 
   created_on: 2005-10-24 16:37:17
@@ -8858,6 +10058,16 @@ approvements_574:
   leader_statement_id: "361"
   id: "575"
   dean_statement_id: "362"
+  board_statement_id: 
+approvements_1126: 
+  created_on: 2006-01-26 14:32:34
+  tutor_statement_id: 
+  document_id: "100815"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1127"
+  dean_statement_id: 
   board_statement_id: 
 approvements_311: 
   created_on: 2005-10-24 17:03:34
@@ -9059,15 +10269,25 @@ approvements_580:
   id: "581"
   dean_statement_id: "380"
   board_statement_id: 
+approvements_1000: 
+  created_on: 2006-01-15 16:49:54
+  tutor_statement_id: 
+  document_id: "100690"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1001"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_318: 
   created_on: 2005-10-25 15:05:41
   tutor_statement_id: "133"
   document_id: "100334"
-  updated_on: 2005-10-25 15:23:11
+  updated_on: 2006-01-27 09:44:07
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1333"
   id: "319"
-  dean_statement_id: 
+  dean_statement_id: "1346"
   board_statement_id: 
 approvements_581: 
   created_on: 2003-10-30 17:00:00
@@ -9079,15 +10299,25 @@ approvements_581:
   id: "582"
   dean_statement_id: "383"
   board_statement_id: 
+approvements_1001: 
+  created_on: 2006-01-15 16:51:56
+  tutor_statement_id: 
+  document_id: "100691"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1002"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_319: 
   created_on: 2005-10-25 16:11:00
-  tutor_statement_id: 
+  tutor_statement_id: "1326"
   document_id: "100335"
-  updated_on: 2005-10-25 16:11:00
+  updated_on: 2006-01-27 09:44:07
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1334"
   id: "320"
-  dean_statement_id: 
+  dean_statement_id: "1347"
   board_statement_id: 
 approvements_450: 
   created_on: 2005-11-09 08:25:20
@@ -9109,6 +10339,16 @@ approvements_582:
   id: "583"
   dean_statement_id: "386"
   board_statement_id: 
+approvements_1002: 
+  created_on: 2006-01-15 16:53:39
+  tutor_statement_id: 
+  document_id: "100692"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1003"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_451: 
   created_on: 2005-11-09 08:25:20
   tutor_statement_id: 
@@ -9128,6 +10368,16 @@ approvements_583:
   leader_statement_id: "388"
   id: "584"
   dean_statement_id: "389"
+  board_statement_id: 
+approvements_1003: 
+  created_on: 2006-01-15 19:19:19
+  tutor_statement_id: 
+  document_id: "100693"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1004"
+  dean_statement_id: 
   board_statement_id: 
 approvements_320: 
   created_on: 2005-10-25 16:37:47
@@ -9159,6 +10409,16 @@ approvements_584:
   id: "585"
   dean_statement_id: "392"
   board_statement_id: 
+approvements_1004: 
+  created_on: 2006-01-15 19:28:10
+  tutor_statement_id: 
+  document_id: "100694"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1005"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_321: 
   created_on: 2005-10-25 17:27:07
   tutor_statement_id: "201"
@@ -9188,6 +10448,16 @@ approvements_585:
   leader_statement_id: "394"
   id: "586"
   dean_statement_id: "395"
+  board_statement_id: 
+approvements_1005: 
+  created_on: 2006-01-16 12:45:20
+  tutor_statement_id: 
+  document_id: "100695"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1006"
+  dean_statement_id: 
   board_statement_id: 
 approvements_322: 
   created_on: 2005-10-25 17:39:53
@@ -9219,6 +10489,16 @@ approvements_586:
   id: "587"
   dean_statement_id: "398"
   board_statement_id: 
+approvements_1006: 
+  created_on: 2006-01-16 12:47:47
+  tutor_statement_id: 
+  document_id: "100696"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1007"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_323: 
   created_on: 2005-10-25 18:53:17
   tutor_statement_id: "159"
@@ -9248,6 +10528,16 @@ approvements_587:
   leader_statement_id: "400"
   id: "588"
   dean_statement_id: "401"
+  board_statement_id: 
+approvements_1007: 
+  created_on: 2006-01-16 12:51:06
+  tutor_statement_id: 
+  document_id: "100697"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1008"
+  dean_statement_id: 
   board_statement_id: 
 approvements_324: 
   created_on: 2005-10-25 19:25:42
@@ -9279,6 +10569,16 @@ approvements_588:
   id: "589"
   dean_statement_id: "404"
   board_statement_id: 
+approvements_1008: 
+  created_on: 2006-01-16 18:55:22
+  tutor_statement_id: 
+  document_id: "100698"
+  updated_on: 2006-01-27 09:44:11
+  type: 
+  leader_statement_id: 
+  id: "1009"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_325: 
   created_on: 2005-10-25 20:04:26
   tutor_statement_id: "163"
@@ -9308,6 +10608,16 @@ approvements_589:
   leader_statement_id: "406"
   id: "590"
   dean_statement_id: "407"
+  board_statement_id: 
+approvements_1009: 
+  created_on: 2006-01-17 09:09:44
+  tutor_statement_id: 
+  document_id: "100699"
+  updated_on: 2006-01-27 09:44:12
+  type: 
+  leader_statement_id: 
+  id: "1010"
+  dean_statement_id: 
   board_statement_id: 
 approvements_326: 
   created_on: 2005-10-25 21:08:17
@@ -9343,11 +10653,11 @@ approvements_327:
   created_on: 2005-10-25 21:31:20
   tutor_statement_id: "188"
   document_id: "100343"
-  updated_on: 2005-10-31 08:34:53
+  updated_on: 2006-01-27 09:44:08
   type: StudyPlanApprovement
-  leader_statement_id: 
+  leader_statement_id: "1335"
   id: "328"
-  dean_statement_id: 
+  dean_statement_id: "1348"
   board_statement_id: 
 approvements_459: 
   created_on: 2005-11-09 08:25:20
@@ -9357,6 +10667,16 @@ approvements_459:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "460"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1010: 
+  created_on: 2006-01-17 09:21:46
+  tutor_statement_id: "1371"
+  document_id: "100700"
+  updated_on: 2006-01-27 09:44:12
+  type: 
+  leader_statement_id: 
+  id: "1011"
   dean_statement_id: 
   board_statement_id: 
 approvements_591: 
@@ -9378,6 +10698,16 @@ approvements_328:
   leader_statement_id: "148"
   id: "329"
   dean_statement_id: "293"
+  board_statement_id: 
+approvements_1011: 
+  created_on: 2006-01-17 11:07:07
+  tutor_statement_id: 
+  document_id: "100703"
+  updated_on: 2006-01-27 09:44:12
+  type: 
+  leader_statement_id: 
+  id: "1012"
+  dean_statement_id: 
   board_statement_id: 
 approvements_460: 
   created_on: 2005-11-09 08:25:20
@@ -9409,6 +10739,16 @@ approvements_329:
   id: "330"
   dean_statement_id: 
   board_statement_id: 
+approvements_1012: 
+  created_on: 2006-01-17 12:25:24
+  tutor_statement_id: 
+  document_id: "100707"
+  updated_on: 2006-01-27 09:44:12
+  type: 
+  leader_statement_id: 
+  id: "1013"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_461: 
   created_on: 2005-11-09 08:25:20
   tutor_statement_id: 
@@ -9428,6 +10768,16 @@ approvements_593:
   leader_statement_id: "418"
   id: "594"
   dean_statement_id: "419"
+  board_statement_id: 
+approvements_1013: 
+  created_on: 2006-01-17 12:44:04
+  tutor_statement_id: 
+  document_id: "100716"
+  updated_on: 2006-01-27 09:44:12
+  type: 
+  leader_statement_id: 
+  id: "1014"
+  dean_statement_id: 
   board_statement_id: 
 approvements_330: 
   created_on: 2005-10-25 22:01:43
@@ -9459,6 +10809,16 @@ approvements_594:
   id: "595"
   dean_statement_id: "422"
   board_statement_id: 
+approvements_1014: 
+  created_on: 2006-01-17 12:49:00
+  tutor_statement_id: 
+  document_id: "100717"
+  updated_on: 2006-01-27 09:44:12
+  type: 
+  leader_statement_id: 
+  id: "1015"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_331: 
   created_on: 2005-10-25 23:55:30
   tutor_statement_id: 
@@ -9488,6 +10848,16 @@ approvements_595:
   leader_statement_id: "424"
   id: "596"
   dean_statement_id: "425"
+  board_statement_id: 
+approvements_1015: 
+  created_on: 2006-01-17 14:44:23
+  tutor_statement_id: 
+  document_id: "100715"
+  updated_on: 2006-01-27 09:44:12
+  type: 
+  leader_statement_id: 
+  id: "1016"
+  dean_statement_id: 
   board_statement_id: 
 approvements_200: 
   created_on: 2005-10-20 14:11:48
@@ -9529,6 +10899,16 @@ approvements_596:
   id: "597"
   dean_statement_id: "428"
   board_statement_id: 
+approvements_1016: 
+  created_on: 2006-01-17 14:58:35
+  tutor_statement_id: 
+  document_id: "100727"
+  updated_on: 2006-01-27 09:44:12
+  type: 
+  leader_statement_id: 
+  id: "1017"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_201: 
   created_on: 2005-10-20 14:17:41
   tutor_statement_id: "111"
@@ -9568,6 +10948,16 @@ approvements_597:
   leader_statement_id: "430"
   id: "598"
   dean_statement_id: "431"
+  board_statement_id: 
+approvements_1017: 
+  created_on: 2006-01-17 16:11:17
+  tutor_statement_id: 
+  document_id: "100739"
+  updated_on: 2006-01-27 09:44:13
+  type: 
+  leader_statement_id: 
+  id: "1018"
+  dean_statement_id: 
   board_statement_id: 
 approvements_202: 
   created_on: 2005-10-20 14:28:30
@@ -9609,6 +10999,16 @@ approvements_598:
   id: "599"
   dean_statement_id: "434"
   board_statement_id: 
+approvements_1018: 
+  created_on: 2006-01-17 16:17:29
+  tutor_statement_id: 
+  document_id: "100740"
+  updated_on: 2006-01-27 09:44:13
+  type: 
+  leader_statement_id: 
+  id: "1019"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_203: 
   created_on: 2005-10-20 14:30:26
   tutor_statement_id: "58"
@@ -9648,6 +11048,16 @@ approvements_599:
   leader_statement_id: "436"
   id: "600"
   dean_statement_id: "437"
+  board_statement_id: 
+approvements_1019: 
+  created_on: 2006-01-17 16:52:47
+  tutor_statement_id: 
+  document_id: "100745"
+  updated_on: 2006-01-27 09:44:13
+  type: 
+  leader_statement_id: 
+  id: "1020"
+  dean_statement_id: 
   board_statement_id: 
 approvements_204: 
   created_on: 2005-10-20 14:32:37
@@ -9709,6 +11119,16 @@ approvements_469:
   id: "470"
   dean_statement_id: 
   board_statement_id: 
+approvements_1020: 
+  created_on: 2006-01-17 16:55:20
+  tutor_statement_id: 
+  document_id: "100746"
+  updated_on: 2006-01-27 09:44:13
+  type: 
+  leader_statement_id: 
+  id: "1021"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_206: 
   created_on: 2005-10-20 14:41:04
   tutor_statement_id: 
@@ -9727,6 +11147,16 @@ approvements_338:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "339"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1021: 
+  created_on: 2006-01-17 16:57:01
+  tutor_statement_id: 
+  document_id: "100748"
+  updated_on: 2006-01-27 09:44:13
+  type: 
+  leader_statement_id: 
+  id: "1022"
   dean_statement_id: 
   board_statement_id: 
 approvements_470: 
@@ -9759,6 +11189,16 @@ approvements_339:
   id: "340"
   dean_statement_id: "1255"
   board_statement_id: 
+approvements_1022: 
+  created_on: 2006-01-17 17:01:07
+  tutor_statement_id: 
+  document_id: "100749"
+  updated_on: 2006-01-27 09:44:13
+  type: 
+  leader_statement_id: 
+  id: "1023"
+  dean_statement_id: 
+  board_statement_id: 
 approvements_471: 
   created_on: 2005-11-09 08:25:21
   tutor_statement_id: 
@@ -9777,6 +11217,16 @@ approvements_208:
   type: StudyPlanApprovement
   leader_statement_id: 
   id: "209"
+  dean_statement_id: 
+  board_statement_id: 
+approvements_1023: 
+  created_on: 2006-01-17 17:02:35
+  tutor_statement_id: 
+  document_id: "100750"
+  updated_on: 2006-01-27 09:44:13
+  type: 
+  leader_statement_id: 
+  id: "1024"
   dean_statement_id: 
   board_statement_id: 
 approvements_472: 

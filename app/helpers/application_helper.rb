@@ -253,7 +253,9 @@ module ApplicationHelper
         if @student.index.study_plan.approved? 
           links << link_to_unless_current(_("probation terms"), :controller =>
             'probation_terms'){} 
-          links << link_to_unless_current(_('interupt'), :controller => 'interupts'){}
+          unless @student.index.interupted?
+            links << link_to_unless_current(_('interupt'), :controller => 'interupts'){}
+          end
         end 
         links << link_to_unless_current(_("study plan"), :controller => 'study_plans',
           :action => 'index'){} 

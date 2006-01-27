@@ -86,7 +86,7 @@ titles_010:
 titles_044: 
   prefix: "0"
   id: "45"
-  label: "DrSc., Dr. h. c."
+  label: DrSc., Dr. h. c.
 titles_033: 
   prefix: "1"
   id: "34"
@@ -182,7 +182,7 @@ titles_004:
 titles_049: 
   prefix: "1"
   id: "51"
-  label: "CSc., dr.h.c."
+  label: CSc., dr.h.c.
 titles_038: 
   prefix: "1"
   id: "39"

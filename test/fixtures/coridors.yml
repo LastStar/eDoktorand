@@ -1,18 +1,18 @@
 --- 
 coridors_033: 
-  name: "Marketing stroj? a technických systém?"
+  name: "Marketing stroj\xC5\xAF a technick\xC3\xBDch syst\xC3\xA9m\xC5\xAF"
   code: XMSTS
   faculty_id: "5"
   id: "129"
   name_english: 
 coridors_022: 
-  name: Zem?d?l. a les. fytopatologie a zem?d?l. chemie
+  name: "Zem\xC4\x9Bd\xC4\x9Bl. a les. fytopatologie a zem\xC4\x9Bd\xC4\x9Bl. chemie"
   code: XSPECAF
   faculty_id: "1"
   id: "101"
   name_english: 
 coridors_011: 
-  name: "Marketing stroj? a technických systém?"
+  name: "Marketing stroj\xC5\xAF a technick\xC3\xBDch syst\xC3\xA9m\xC5\xAF"
   code: XMSTS
   faculty_id: "4"
   id: "55"
@@ -24,7 +24,7 @@ coridors_034:
   id: "130"
   name_english: 
 coridors_023: 
-  name: Obecná a speciální zootechnika
+  name: "Obecn\xC3\xA1 a speci\xC3\xA1ln\xC3\xAD zootechnika"
   code: XZOO
   faculty_id: "1"
   id: "102"
@@ -36,7 +36,7 @@ coridors_012:
   id: "58"
   name_english: 
 coridors_001: 
-  name: Informa?ní management
+  name: "Informa\xC4\x8Dn\xC3\xAD management"
   code: XINM
   faculty_id: "4"
   id: "11"
@@ -54,19 +54,19 @@ coridors_024:
   id: "105"
   name_english: 
 coridors_013: 
-  name: Dendrologie a šlecht?ní lesních d?evin
+  name: "Dendrologie a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD lesn\xC3\xADch d\xC5\x99evin"
   code: XDSLD
   faculty_id: "3"
   id: "59"
   name_english: 
 coridors_002: 
-  name: Management (doktorandské)
+  name: "Management (doktorandsk\xC3\xA9)"
   code: XMNG
   faculty_id: "4"
   id: "12"
   name_english: 
 coridors_036: 
-  name: "Ochrana les? a myslivost"
+  name: "Ochrana les\xC5\xAF a myslivost"
   code: XOCHMY
   faculty_id: "1"
   id: "132"
@@ -84,43 +84,43 @@ coridors_014:
   id: "60"
   name_english: 
 coridors_003: 
-  name: Podniková a odv?tvová ekonomika (doktorandské)
+  name: "Podnikov\xC3\xA1 a odv\xC4\x9Btvov\xC3\xA1 ekonomika (doktorandsk\xC3\xA9)"
   code: XPOE
   faculty_id: "4"
   id: "13"
   name_english: 
 coridors_037: 
-  name: P?stování lesa
+  name: "P\xC4\x9Bstov\xC3\xA1n\xC3\xAD lesa"
   code: XPESLE
   faculty_id: "1"
   id: "133"
   name_english: 
 coridors_026: 
-  name: Technika a mechanizace zem?d?lství
+  name: "Technika a mechanizace zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
   code: XTMZ
   faculty_id: "5"
   id: "107"
   name_english: 
 coridors_015: 
-  name: Hospodá?ská úprava lesa
+  name: "Hospod\xC3\xA1\xC5\x99sk\xC3\xA1 \xC3\xBAprava lesa"
   code: XHUPLE
   faculty_id: "3"
   id: "61"
   name_english: 
 coridors_004: 
-  name: "?ízení a ekonomika podnik? - PEF (doktorandské)"
+  name: "\xC5\x98\xC3\xADzen\xC3\xAD a ekonomika podnik\xC5\xAF - PEF (doktorandsk\xC3\xA9)"
   code: XREP
   faculty_id: "4"
   id: "14"
   name_english: 
 coridors_038: 
-  name: Rostlinná produkce
+  name: "Rostlinn\xC3\xA1 produkce"
   code: XRP
   faculty_id: "1"
   id: "134"
   name_english: 
 coridors_027: 
-  name: "Vlastnosti a zpracování zem. materiál? a produkt?"
+  name: "Vlastnosti a zpracov\xC3\xA1n\xC3\xAD zem. materi\xC3\xA1l\xC5\xAF a produkt\xC5\xAF"
   code: XVZZMP
   faculty_id: "5"
   id: "108"
@@ -132,49 +132,49 @@ coridors_016:
   id: "62"
   name_english: 
 coridors_005: 
-  name: Regionální a sociální rozvoj (doktorandské)
+  name: "Region\xC3\xA1ln\xC3\xAD a soci\xC3\xA1ln\xC3\xAD rozvoj (doktorandsk\xC3\xA9)"
   code: XRSR
   faculty_id: "4"
   id: "15"
   name_english: 
 coridors_040: 
-  name: Technika a mechanizace zem?d?lství
+  name: "Technika a mechanizace zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
   code: XTMZ
   faculty_id: "1"
   id: "136"
   name_english: 
 coridors_039: 
-  name: Technika a mechanizace v lesním hospodá?ství
+  name: "Technika a mechanizace v lesn\xC3\xADm hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
   code: XTMELH
   faculty_id: "1"
   id: "135"
   name_english: 
 coridors_028: 
-  name: Tropické a subtropické zem?d?lství ITSZ
+  name: "Tropick\xC3\xA9 a subtropick\xC3\xA9 zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD ITSZ"
   code: XZTS
   faculty_id: "2"
   id: "110"
   name_english: 
 coridors_017: 
-  name: Ochrana p?dy a meliorace
+  name: "Ochrana p\xC5\xAFdy a meliorace"
   code: XOPMEL
   faculty_id: "3"
   id: "63"
   name_english: 
 coridors_006: 
-  name: Systémové inženýrství (doktorandské)
+  name: "Syst\xC3\xA9mov\xC3\xA9 in\xC5\xBEen\xC3\xBDrstv\xC3\xAD (doktorandsk\xC3\xA9)"
   code: XSYI
   faculty_id: "4"
   id: "16"
   name_english: 
 coridors_041: 
-  name: "Technika výrobních proces?"
+  name: "Technika v\xC3\xBDrobn\xC3\xADch proces\xC5\xAF"
   code: XTVP
   faculty_id: "1"
   id: "137"
   name_english: 
 coridors_030: 
-  name: Dendrologie a šlecht?ní lesních d?evin
+  name: "Dendrologie a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD lesn\xC3\xADch d\xC5\x99evin"
   code: XDSLD
   faculty_id: "1"
   id: "126"
@@ -186,68 +186,67 @@ coridors_029:
   id: "125"
   name_english: 
 coridors_018: 
-  name: P?stování lesa
+  name: "P\xC4\x9Bstov\xC3\xA1n\xC3\xAD lesa"
   code: XPESLE
   faculty_id: "3"
   id: "64"
   name_english: 
 coridors_007: 
-  name: Zpracování dat a matematické modelování (doktorandské)
+  name: "Zpracov\xC3\xA1n\xC3\xAD dat a matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD (doktorandsk\xC3\xA9)"
   code: XZDM
   faculty_id: "4"
   id: "17"
   name_english: 
 coridors_042: 
-  name: "Vlastnosti a zpracování zem. materiál? a produkt?"
+  name: "Vlastnosti a zpracov\xC3\xA1n\xC3\xAD zem. materi\xC3\xA1l\xC5\xAF a produkt\xC5\xAF"
   code: XVZZMP
   faculty_id: "1"
   id: "138"
   name_english: 
 coridors_031: 
-  name: Obecná a speciální produkce rostlinná
+  name: "Obecn\xC3\xA1 a speci\xC3\xA1ln\xC3\xAD produkce rostlinn\xC3\xA1"
   code: XFYTO
   faculty_id: "1"
   id: "127"
   name_english: 
 coridors_020: 
-  name: Technika a mechanizace v lesním hospodá?ství
+  name: "Technika a mechanizace v lesn\xC3\xADm hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
   code: XTMELH
   faculty_id: "3"
   id: "66"
   name_english: 
 coridors_019: 
-  name: "?ízení a ekonomika podnik? - LF"
+  name: "\xC5\x98\xC3\xADzen\xC3\xAD a ekonomika podnik\xC5\xAF - LF"
   code: XREPOD
   faculty_id: "3"
   id: "65"
   name_english: 
 coridors_008: 
-  name: Aplikovaná a krajinná ekologie
+  name: "Aplikovan\xC3\xA1 a krajinn\xC3\xA1 ekologie"
   code: XAKREK
   faculty_id: "3"
   id: "21"
   name_english: 
 coridors_032: 
-  name: Hospodá?ská úprava lesa
+  name: "Hospod\xC3\xA1\xC5\x99sk\xC3\xA1 \xC3\xBAprava lesa"
   code: XHUPLE
   faculty_id: "1"
   id: "128"
   name_english: 
 coridors_021: 
-  name: Zem?d?lská a lesnická hydrologie
+  name: "Zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA1 a lesnick\xC3\xA1 hydrologie"
   code: XZLHYD
   faculty_id: "3"
   id: "67"
   name_english: 
 coridors_010: 
-  name: "Jakost a spolehlivost stroj? a
-    za?ízení"
+  name: "Jakost a spolehlivost stroj\xC5\xAF a za\xC5\x99\xC3\xADzen\xC3\xAD"
   code: XJSSZ
   faculty_id: "5"
   id: "50"
   name_english: 
 coridors_009: 
-  name: "Technika výrobních proces?"
+  name: "Technika v\xC3\xBDrobn\xC3\xADch proces\xC5\xAF"
   code: XTVP
   faculty_id: "5"
   id: "23"

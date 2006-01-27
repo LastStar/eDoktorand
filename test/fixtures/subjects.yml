@@ -5,42 +5,42 @@ subjects_651:
   updated_on: 2005-10-31 09:10:54
   type: ExternalSubject
   id: "19267"
-  label: "Kalibrace a verifikace model?"
+  label: "Kalibrace a verifikace model\xC5\xAF"
 subjects_783: 
   created_on: 2005-12-09 08:54:53
   code: 
   updated_on: 2005-12-09 08:54:53
   type: ExternalSubject
   id: "19399"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_098: 
   created_on: 2005-10-03 11:41:45
   code: DEIX09Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "5444"
-  label: Metody tvorby informa?ních systém?
+  label: "Metody tvorby informa\xC4\x8Dn\xC3\xADch syst\xC3\xA9m\xC5\xAF"
 subjects_520: 
   created_on: 2005-10-20 21:02:23
   code: 
   updated_on: 2005-10-20 21:02:23
   type: ExternalSubject
   id: "19136"
-  label: lesnická pedologie
+  label: "lesnick\xC3\xA1 pedologie"
 subjects_652: 
   created_on: 2005-10-31 09:10:54
   code: 
   updated_on: 2005-10-31 09:10:54
   type: ExternalSubject
   id: "19268"
-  label: Operativní metody v hydrologii
+  label: "Operativn\xC3\xAD metody v hydrologii"
 subjects_784: 
   created_on: 2005-12-09 09:01:37
   code: 
   updated_on: 2005-12-09 09:01:37
   type: ExternalSubject
   id: "19400"
-  label: "Energ. využ. biomasy a spal. odpad?"
+  label: "Energ. vyu\xC5\xBE. biomasy a spal. odpad\xC5\xAF"
 subjects_099: 
   created_on: 2005-10-03 11:41:39
   code: DAZA01Y
@@ -54,51 +54,49 @@ subjects_521:
   updated_on: 2005-10-21 08:34:24
   type: ExternalSubject
   id: "19137"
-  label: ekologie speciální I.
+  label: "ekologie speci\xC3\xA1ln\xC3\xAD I."
 subjects_653: 
   created_on: 2005-10-31 13:01:41
   code: 
   updated_on: 2005-10-31 13:01:41
   type: ExternalSubject
   id: "19269"
-  label: "Ekonomika p?írodních zdroj? a životního
-    prost?edí"
+  label: "Ekonomika p\xC5\x99\xC3\xADrodn\xC3\xADch zdroj\xC5\xAF a \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_785: 
   created_on: 2005-12-09 09:01:37
   code: 
   updated_on: 2005-12-09 09:01:37
   type: ExternalSubject
   id: "19401"
-  label: Technol. a tech. surovin využ.zem.produkce
+  label: "Technol. a tech. surovin vyu\xC5\xBE.zem.produkce"
 subjects_522: 
   created_on: 2005-10-21 08:34:24
   code: 
   updated_on: 2005-10-21 08:34:24
   type: ExternalSubject
   id: "19138"
-  label: Vývoj globálního ekosystému II.
+  label: "V\xC3\xBDvoj glob\xC3\xA1ln\xC3\xADho ekosyst\xC3\xA9mu II."
 subjects_654: 
   created_on: 2005-10-31 13:06:46
   code: 
   updated_on: 2005-10-31 13:06:46
   type: ExternalSubject
   id: "19270"
-  label: "Ekonomika p?írodních zdroj? a životního
-    prost?edí"
+  label: "Ekonomika p\xC5\x99\xC3\xADrodn\xC3\xADch zdroj\xC5\xAF a \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_786: 
   created_on: 2005-12-09 09:01:37
   code: 
   updated_on: 2005-12-09 09:01:37
   type: ExternalSubject
   id: "19402"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_787: 
   created_on: 2005-12-09 09:01:37
   code: 
   updated_on: 2005-12-09 09:01:37
   type: ExternalSubject
   id: "19403"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_523: 
   created_on: 2005-10-21 08:43:22
   code: 
@@ -112,49 +110,49 @@ subjects_655:
   updated_on: 2005-10-31 13:31:03
   type: ExternalSubject
   id: "19271"
-  label: Projekty a plánování v zem?d?lství rozvojových zemí
+  label: "Projekty a pl\xC3\xA1nov\xC3\xA1n\xC3\xAD v zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD rozvojov\xC3\xBDch zem\xC3\xAD"
 subjects_788: 
   created_on: 2005-12-09 09:06:10
   code: 
   updated_on: 2005-12-09 09:06:10
   type: ExternalSubject
   id: "19404"
-  label: "Vybrané stat? ze skladovací techniky"
+  label: "Vybran\xC3\xA9 stat\xC4\x9B ze skladovac\xC3\xAD techniky"
 subjects_524: 
   created_on: 2005-10-21 08:46:20
   code: 
   updated_on: 2005-10-21 08:46:20
   type: ExternalSubject
   id: "19140"
-  label: "Popula?ní biologie "
+  label: "Popula\xC4\x8Dn\xC3\xAD biologie "
 subjects_656: 
   created_on: 2005-10-31 13:31:03
   code: 
   updated_on: 2005-10-31 13:31:03
   type: ExternalSubject
   id: "19272"
-  label: Management v zem?d?lství rozvojových zemí
+  label: "Management v zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD rozvojov\xC3\xBDch zem\xC3\xAD"
 subjects_789: 
   created_on: 2005-12-09 09:06:10
   code: 
   updated_on: 2005-12-09 09:06:10
   type: ExternalSubject
   id: "19405"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_525: 
   created_on: 2005-10-21 08:46:21
   code: 
   updated_on: 2005-10-21 08:46:21
   type: ExternalSubject
   id: "19141"
-  label: "Popula?ní genetika "
+  label: "Popula\xC4\x8Dn\xC3\xAD genetika "
 subjects_657: 
   created_on: 2005-10-31 13:31:03
   code: 
   updated_on: 2005-10-31 13:31:03
   type: ExternalSubject
   id: "19273"
-  label: Didaktické a prezenta?ní dovednosti
+  label: "Didaktick\xC3\xA9 a prezenta\xC4\x8Dn\xC3\xAD dovednosti"
 subjects_526: 
   created_on: 2005-10-21 08:46:21
   code: 
@@ -168,14 +166,14 @@ subjects_658:
   updated_on: 2005-10-31 13:31:03
   type: ExternalSubject
   id: "19274"
-  label: Informa?ní technologie
+  label: "Informa\xC4\x8Dn\xC3\xAD technologie"
 subjects_790: 
   created_on: 2005-12-09 09:06:10
   code: 
   updated_on: 2005-12-09 09:06:10
   type: ExternalSubject
   id: "19406"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_527: 
   created_on: 2005-10-21 08:46:21
   code: 
@@ -189,28 +187,28 @@ subjects_659:
   updated_on: 2005-10-31 13:31:03
   type: ExternalSubject
   id: "19275"
-  label: "Ekonomika zem?d?lství a p?írodních zdroj?"
+  label: "Ekonomika zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD a p\xC5\x99\xC3\xADrodn\xC3\xADch zdroj\xC5\xAF"
 subjects_791: 
   created_on: 2005-12-09 09:06:10
   code: 
   updated_on: 2005-12-09 09:06:10
   type: ExternalSubject
   id: "19407"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_528: 
   created_on: 2005-10-21 08:49:49
   code: 
   updated_on: 2005-10-21 08:49:49
   type: ExternalSubject
   id: "19144"
-  label: Vývoj p?írody
+  label: "V\xC3\xBDvoj p\xC5\x99\xC3\xADrody"
 subjects_792: 
   created_on: 2005-12-09 09:24:14
   code: 
   updated_on: 2005-12-09 09:24:14
   type: ExternalSubject
   id: "19408"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_529: 
   created_on: 2005-10-21 08:52:50
   code: 
@@ -224,28 +222,28 @@ subjects_660:
   updated_on: 2005-10-31 13:31:03
   type: ExternalSubject
   id: "19276"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_793: 
   created_on: 2005-12-09 09:24:14
   code: 
   updated_on: 2005-12-09 09:24:14
   type: ExternalSubject
   id: "19409"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_661: 
   created_on: 2005-10-31 13:31:03
   code: 
   updated_on: 2005-10-31 13:31:03
   type: ExternalSubject
   id: "19277"
-  label: Ekonomika a geografie sv?tového zem?d?lství
+  label: "Ekonomika a geografie sv\xC4\x9Btov\xC3\xA9ho zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
 subjects_794: 
   created_on: 2005-12-09 09:24:14
   code: 
   updated_on: 2005-12-09 09:24:14
   type: ExternalSubject
   id: "19410"
-  label: Elektronické m??ící systémy II
+  label: "Elektronick\xC3\xA9 m\xC4\x9B\xC5\x99\xC3\xADc\xC3\xAD syst\xC3\xA9my II"
 subjects_530: 
   created_on: 2005-10-21 08:52:50
   code: 
@@ -266,161 +264,161 @@ subjects_795:
   updated_on: 2005-12-09 11:06:48
   type: ExternalSubject
   id: "19411"
-  label: Prec.tech.syst. p?i sklizni okop.
+  label: "Prec.tech.syst. p\xC5\x99i sklizni okop."
 subjects_531: 
   created_on: 2005-10-21 08:52:50
   code: 
   updated_on: 2005-10-21 08:52:50
   type: ExternalSubject
   id: "19147"
-  label: "Ekol. obojž. a plaz?"
+  label: "Ekol. oboj\xC5\xBE. a plaz\xC5\xAF"
 subjects_663: 
   created_on: 2005-10-31 16:49:48
   code: 
   updated_on: 2005-10-31 16:49:48
   type: ExternalSubject
   id: "19279"
-  label: Odpady,hospoda?ení s odpady
+  label: "Odpady,hospoda\xC5\x99en\xC3\xAD s odpady"
 subjects_796: 
   created_on: 2005-12-09 11:06:48
   code: 
   updated_on: 2005-12-09 11:06:48
   type: ExternalSubject
   id: "19412"
-  label: Elektrické m??ící systémy I
+  label: "Elektrick\xC3\xA9 m\xC4\x9B\xC5\x99\xC3\xADc\xC3\xAD syst\xC3\xA9my I"
 subjects_400: 
   created_on: 2005-10-17 09:36:02
   code: DTGX26Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19016"
-  label: Technologie a technika v živo?išné výrob?
+  label: "Technologie a technika v\xC2\xA0\xC5\xBEivo\xC4\x8Di\xC5\xA1n\xC3\xA9 v\xC3\xBDrob\xC4\x9B"
 subjects_532: 
   created_on: 2005-10-21 08:52:50
   code: 
   updated_on: 2005-10-21 08:52:50
   type: ExternalSubject
   id: "19148"
-  label: Molekulární genetiky
+  label: "Molekul\xC3\xA1rn\xC3\xAD genetiky"
 subjects_664: 
   created_on: 2005-10-31 17:03:47
   code: 
   updated_on: 2005-10-31 17:03:47
   type: ExternalSubject
   id: "19280"
-  label: Digitální katastr
+  label: "Digit\xC3\xA1ln\xC3\xAD katastr"
 subjects_797: 
   created_on: 2005-12-09 11:06:48
   code: 
   updated_on: 2005-12-09 11:06:48
   type: ExternalSubject
   id: "19413"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_401: 
   created_on: 2005-10-17 09:36:02
   code: DTGX27Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19017"
-  label: "Technika a technologie zpracování odpad?"
+  label: "Technika a technologie zpracov\xC3\xA1n\xC3\xAD odpad\xC5\xAF"
 subjects_533: 
   created_on: 2005-10-21 08:55:31
   code: 
   updated_on: 2005-10-21 08:55:31
   type: ExternalSubject
   id: "19149"
-  label: Popula?ní ekologie
+  label: "Popula\xC4\x8Dn\xC3\xAD ekologie"
 subjects_665: 
   created_on: 2005-10-31 17:03:47
   code: 
   updated_on: 2005-10-31 17:03:47
   type: ExternalSubject
   id: "19281"
-  label: Digitální kartografie
+  label: "Digit\xC3\xA1ln\xC3\xAD kartografie"
 subjects_798: 
   created_on: 2005-12-09 11:06:48
   code: 
   updated_on: 2005-12-09 11:06:48
   type: ExternalSubject
   id: "19414"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_402: 
   created_on: 2005-10-17 09:36:02
   code: DTGT28Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19018"
-  label: Logistika technologických za?ízení staveb
+  label: "Logistika technologick\xC3\xBDch za\xC5\x99\xC3\xADzen\xC3\xAD staveb"
 subjects_534: 
   created_on: 2005-10-21 08:55:31
   code: 
   updated_on: 2005-10-21 08:55:31
   type: ExternalSubject
   id: "19150"
-  label: Praktická metodologie v?dy
+  label: "Praktick\xC3\xA1 metodologie v\xC4\x9Bdy"
 subjects_666: 
   created_on: 2005-10-31 21:13:31
   code: 
   updated_on: 2005-10-31 21:13:31
   type: ExternalSubject
   id: "19282"
-  label: Konstrukce nábytku
+  label: "Konstrukce n\xC3\xA1bytku"
 subjects_799: 
   created_on: 2005-12-09 11:06:48
   code: 
   updated_on: 2005-12-09 11:06:48
   type: ExternalSubject
   id: "19415"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_403: 
   created_on: 2005-10-17 09:36:03
   code: DTGX29Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19019"
-  label: Technika prost?edí staveb
+  label: "Technika prost\xC5\x99ed\xC3\xAD staveb"
 subjects_535: 
   created_on: 2005-10-21 08:55:31
   code: 
   updated_on: 2005-10-21 08:55:31
   type: ExternalSubject
   id: "19151"
-  label: Sociobiologie a behaviorální ekologie
+  label: "Sociobiologie a behavior\xC3\xA1ln\xC3\xAD ekologie"
 subjects_667: 
   created_on: 2005-11-01 07:38:20
   code: 
   updated_on: 2005-11-01 07:38:20
   type: ExternalSubject
   id: "19283"
-  label: Ekologický management
+  label: "Ekologick\xC3\xBD management"
 subjects_404: 
   created_on: 2005-10-17 09:36:03
   code: DTGT02Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19020"
-  label: Informa?ní technika a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD technika a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_536: 
   created_on: 2005-10-21 08:55:31
   code: 
   updated_on: 2005-10-21 08:55:31
   type: ExternalSubject
   id: "19152"
-  label: Principy a metody systematické zoologie
+  label: "Principy a metody systematick\xC3\xA9 zoologie"
 subjects_668: 
   created_on: 2005-11-01 17:44:53
   code: 
   updated_on: 2005-11-01 17:44:53
   type: ExternalSubject
   id: "19284"
-  label: "Matematické modelování hydrologických proces?"
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD hydrologick\xC3\xBDch proces\xC5\xAF"
 subjects_405: 
   created_on: 2005-10-17 09:36:03
   code: DTHX10Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19021"
-  label: Informa?ní technologie
+  label: "Informa\xC4\x8Dn\xC3\xAD technologie"
 subjects_537: 
   created_on: 2005-10-21 09:01:59
   code: 
@@ -434,14 +432,14 @@ subjects_669:
   updated_on: 2005-11-01 17:44:53
   type: ExternalSubject
   id: "19285"
-  label: Rekultivace p?dy a odpadové hospodá?ství
+  label: "Rekultivace p\xC5\xAFdy a odpadov\xC3\xA9 hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_406: 
   created_on: 2005-10-17 09:36:03
   code: DTHT30Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19022"
-  label: Elektronika v energetických obvodech a systémech
+  label: "Elektronika v\xC2\xA0energetick\xC3\xBDch obvodech a syst\xC3\xA9mech"
 subjects_538: 
   created_on: 2005-10-21 09:01:59
   code: 
@@ -455,14 +453,14 @@ subjects_670:
   updated_on: 2005-11-01 17:44:53
   type: ExternalSubject
   id: "19286"
-  label: Základy ekonomiky životního prost?edí
+  label: "Z\xC3\xA1klady ekonomiky \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_407: 
   created_on: 2005-10-17 09:36:03
   code: DTHX31Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19023"
-  label: Racionalizace spot?eby elektrické energie
+  label: "Racionalizace spot\xC5\x99eby elektrick\xC3\xA9 energie"
 subjects_539: 
   created_on: 2005-10-21 09:06:11
   code: 
@@ -476,21 +474,21 @@ subjects_671:
   updated_on: 2005-11-02 14:01:54
   type: ExternalSubject
   id: "19287"
-  label: Právní úprava podnikání
+  label: "Pr\xC3\xA1vn\xC3\xAD \xC3\xBAprava podnik\xC3\xA1n\xC3\xAD"
 subjects_408: 
   created_on: 2005-10-17 09:36:03
   code: DTHT32Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19024"
-  label: Modelování v energetice
+  label: "Modelov\xC3\xA1n\xC3\xAD v\xC2\xA0energetice"
 subjects_540: 
   created_on: 2005-10-21 09:06:11
   code: 
   updated_on: 2005-10-21 09:06:11
   type: ExternalSubject
   id: "19156"
-  label: Speciální bryologie
+  label: "Speci\xC3\xA1ln\xC3\xAD bryologie"
 subjects_672: 
   created_on: 2005-11-09 10:52:32
   code: 
@@ -511,7 +509,7 @@ subjects_541:
   updated_on: 2005-10-21 09:06:11
   type: ExternalSubject
   id: "19157"
-  label: "Biostatistika a plánování ekologických pokus?"
+  label: "Biostatistika a pl\xC3\xA1nov\xC3\xA1n\xC3\xAD ekologick\xC3\xBDch pokus\xC5\xAF"
 subjects_673: 
   created_on: 2005-11-09 10:52:32
   code: 
@@ -525,14 +523,14 @@ subjects_410:
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19026"
-  label: Moderní m??icí systémy pro v?deckovýzkumnou ?innost
+  label: "Modern\xC3\xAD m\xC4\x9B\xC5\x99ic\xC3\xAD syst\xC3\xA9my pro v\xC4\x9Bdeckov\xC3\xBDzkumnou \xC4\x8Dinnost"
 subjects_542: 
   created_on: 2005-10-21 09:26:43
   code: 
   updated_on: 2005-10-21 09:26:43
   type: ExternalSubject
   id: "19158"
-  label: D?eviny v rámci systému cévnatých rostlin
+  label: "D\xC5\x99eviny v r\xC3\xA1mci syst\xC3\xA9mu c\xC3\xA9vnat\xC3\xBDch rostlin"
 subjects_674: 
   created_on: 2005-11-09 10:52:32
   code: 
@@ -546,14 +544,14 @@ subjects_411:
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19027"
-  label: Senzorové informa?ní systémy
+  label: "Senzorov\xC3\xA9 informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my"
 subjects_543: 
   created_on: 2005-10-21 09:26:43
   code: 
   updated_on: 2005-10-21 09:26:43
   type: ExternalSubject
   id: "19159"
-  label: D?eviny v rámci systému cévnatých rostlin
+  label: "D\xC5\x99eviny v r\xC3\xA1mci syst\xC3\xA9mu c\xC3\xA9vnat\xC3\xBDch rostlin"
 subjects_675: 
   created_on: 2005-11-09 10:55:40
   code: 
@@ -567,14 +565,14 @@ subjects_412:
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19028"
-  label: Získávání dat z databází a základy neurosítí
+  label: "Z\xC3\xADsk\xC3\xA1v\xC3\xA1n\xC3\xAD dat z\xC2\xA0datab\xC3\xA1z\xC3\xAD a z\xC3\xA1klady neuros\xC3\xADt\xC3\xAD"
 subjects_544: 
   created_on: 2005-10-21 09:26:43
   code: 
   updated_on: 2005-10-21 09:26:43
   type: ExternalSubject
   id: "19160"
-  label: Zahradnická dendrologie IA a IIA
+  label: "Zahradnick\xC3\xA1 dendrologie IA a IIA"
 subjects_676: 
   created_on: 2005-11-09 10:55:40
   code: 
@@ -588,7 +586,7 @@ subjects_413:
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19029"
-  label: "Aplikace robot? ve výrob?"
+  label: "Aplikace robot\xC5\xAF ve v\xC3\xBDrob\xC4\x9B"
 subjects_545: 
   created_on: 2005-10-21 09:29:05
   code: 
@@ -602,14 +600,14 @@ subjects_677:
   updated_on: 2005-11-09 10:55:40
   type: ExternalSubject
   id: "19293"
-  label: "Fauna savc? Evropy"
+  label: "Fauna savc\xC5\xAF Evropy"
 subjects_414: 
   created_on: 2005-10-17 09:36:03
   code: DTIX09Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19030"
-  label: "?ízení provozu stroj?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD provozu stroj\xC5\xAF"
 subjects_546: 
   created_on: 2005-10-21 09:29:05
   code: 
@@ -623,14 +621,14 @@ subjects_678:
   updated_on: 2005-11-09 10:55:40
   type: ExternalSubject
   id: "19294"
-  label: Vývoj p?írody
+  label: "V\xC3\xBDvoj p\xC5\x99\xC3\xADrody"
 subjects_415: 
   created_on: 2005-10-17 09:36:03
   code: DTIX38Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19031"
-  label: Analýza a vyhodnocování dat
+  label: "Anal\xC3\xBDza a vyhodnocov\xC3\xA1n\xC3\xAD dat"
 subjects_547: 
   created_on: 2005-10-21 09:29:05
   code: 
@@ -644,21 +642,21 @@ subjects_679:
   updated_on: 2005-11-09 10:55:40
   type: ExternalSubject
   id: "19295"
-  label: Základy etologie
+  label: "Z\xC3\xA1klady etologie"
 subjects_416: 
   created_on: 2005-10-17 09:36:03
   code: DTIT39Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19032"
-  label: Automatizace stavebních technologií
+  label: "Automatizace stavebn\xC3\xADch technologi\xC3\xAD"
 subjects_548: 
   created_on: 2005-10-21 09:36:04
   code: 
   updated_on: 2005-10-21 09:36:04
   type: ExternalSubject
   id: "19164"
-  label: Stabilní izotopy v biologii
+  label: "Stabiln\xC3\xAD izotopy v biologii"
 subjects_680: 
   created_on: 2005-11-09 11:20:06
   code: 
@@ -672,14 +670,14 @@ subjects_417:
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19033"
-  label: "Využití stroj? v rostlinné produkci"
+  label: "Vyu\xC5\xBEit\xC3\xAD stroj\xC5\xAF v\xC2\xA0rostlinn\xC3\xA9 produkci"
 subjects_549: 
   created_on: 2005-10-21 09:36:04
   code: 
   updated_on: 2005-10-21 09:36:04
   type: ExternalSubject
   id: "19165"
-  label: Fyziologie d?evin
+  label: "Fyziologie d\xC5\x99evin"
 subjects_681: 
   created_on: 2005-11-09 11:20:06
   code: 
@@ -693,7 +691,7 @@ subjects_418:
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19034"
-  label: Precizní zem?d?lství
+  label: "Precizn\xC3\xAD zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
 subjects_550: 
   created_on: 2005-10-21 09:43:51
   code: 
@@ -707,28 +705,28 @@ subjects_682:
   updated_on: 2005-11-09 11:23:57
   type: ExternalSubject
   id: "19298"
-  label: Matematická statistika
+  label: "Matematick\xC3\xA1 statistika"
 subjects_419: 
   created_on: 2005-10-17 09:36:03
   code: DTFX42Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19035"
-  label: Technologie a technika pro zpracování p?dy a p?stování rostlin
+  label: "Technologie a technika pro zpracov\xC3\xA1n\xC3\xAD p\xC5\xAFdy a p\xC4\x9Bstov\xC3\xA1n\xC3\xAD rostlin"
 subjects_551: 
   created_on: 2005-10-21 09:43:51
   code: 
   updated_on: 2005-10-21 09:43:51
   type: ExternalSubject
   id: "19167"
-  label: Explantátové kultury
+  label: "Explant\xC3\xA1tov\xC3\xA9 kultury"
 subjects_683: 
   created_on: 2005-11-09 11:35:16
   code: 
   updated_on: 2005-11-09 11:35:16
   type: ExternalSubject
   id: "19299"
-  label: Krajinná architektura
+  label: "Krajinn\xC3\xA1 architektura"
 subjects_552: 
   created_on: 2005-10-21 09:56:00
   code: 
@@ -742,35 +740,35 @@ subjects_684:
   updated_on: 2005-11-09 11:35:16
   type: ExternalSubject
   id: "19300"
-  label: Zahradní architektura
+  label: "Zahradn\xC3\xAD architektura"
 subjects_420: 
   created_on: 2005-10-17 09:36:03
   code: DTFX43Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19036"
-  label: "Technologie a technika pro sklize? rostlinné produkce"
+  label: "Technologie a technika pro sklize\xC5\x88 rostlinn\xC3\xA9 produkce"
 subjects_553: 
   created_on: 2005-10-21 09:56:00
   code: 
   updated_on: 2005-10-21 09:56:00
   type: ExternalSubject
   id: "19169"
-  label: Explantátové kultury
+  label: "Explant\xC3\xA1tov\xC3\xA9 kultury"
 subjects_685: 
   created_on: 2005-11-09 11:35:16
   code: 
   updated_on: 2005-11-09 11:35:16
   type: ExternalSubject
   id: "19301"
-  label: "Sledování zm?n v krajin?"
+  label: "Sledov\xC3\xA1n\xC3\xAD zm\xC4\x9Bn v krajin\xC4\x9B"
 subjects_421: 
   created_on: 2005-10-17 09:36:03
   code: DTEX04Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19037"
-  label: "Ekologické aspekty provozu stroj?"
+  label: "Ekologick\xC3\xA9 aspekty provozu stroj\xC5\xAF"
 subjects_554: 
   created_on: 2005-10-21 10:04:32
   code: 
@@ -784,28 +782,28 @@ subjects_686:
   updated_on: 2005-11-09 11:35:16
   type: ExternalSubject
   id: "19302"
-  label: Pozemkové úpravy
+  label: "Pozemkov\xC3\xA9 \xC3\xBApravy"
 subjects_422: 
   created_on: 2005-10-17 09:36:03
   code: DTET13Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19038"
-  label: Dopravní motorová vozidla
+  label: "Dopravn\xC3\xAD motorov\xC3\xA1 vozidla"
 subjects_555: 
   created_on: 2005-10-21 10:04:32
   code: 
   updated_on: 2005-10-21 10:04:32
   type: ExternalSubject
   id: "19171"
-  label: Hospodá?ská úprava lesa
+  label: "Hospod\xC3\xA1\xC5\x99sk\xC3\xA1 \xC3\xBAprava lesa"
 subjects_687: 
   created_on: 2005-11-09 11:44:00
   code: 
   updated_on: 2005-11-09 11:44:00
   type: ExternalSubject
   id: "19303"
-  label: Krajinné inženýrství
+  label: "Krajinn\xC3\xA9 in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
 subjects_423: 
   created_on: 2005-10-17 09:36:03
   code: DTET44Y
@@ -826,70 +824,70 @@ subjects_688:
   updated_on: 2005-11-09 11:44:00
   type: ExternalSubject
   id: "19304"
-  label: Rybníky a malé vodní nádrže
+  label: "Rybn\xC3\xADky a mal\xC3\xA9 vodn\xC3\xAD n\xC3\xA1dr\xC5\xBEe"
 subjects_424: 
   created_on: 2005-10-17 09:36:03
   code: DTET45Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19040"
-  label: Dopravní inženýrství
+  label: "Dopravn\xC3\xAD in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
 subjects_557: 
   created_on: 2005-10-21 10:16:19
   code: 
   updated_on: 2005-10-21 10:16:19
   type: ExternalSubject
   id: "19173"
-  label: "Biostatistika a plán. ekologických pokus?"
+  label: "Biostatistika a pl\xC3\xA1n. ekologick\xC3\xBDch pokus\xC5\xAF"
 subjects_689: 
   created_on: 2005-11-09 11:52:26
   code: 
   updated_on: 2005-11-09 11:52:26
   type: ExternalSubject
   id: "19305"
-  label: "Dan?"
+  label: "Dan\xC4\x9B"
 subjects_425: 
   created_on: 2005-10-17 09:36:03
   code: DTET46Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19041"
-  label: Aktivní a pasivní bezpe?nost vozidel
+  label: "Aktivn\xC3\xAD a pasivn\xC3\xAD bezpe\xC4\x8Dnost vozidel"
 subjects_558: 
   created_on: 2005-10-21 10:18:33
   code: 
   updated_on: 2005-10-21 10:18:33
   type: ExternalSubject
   id: "19174"
-  label: Krajinné plánování
+  label: "Krajinn\xC3\xA9 pl\xC3\xA1nov\xC3\xA1n\xC3\xAD"
 subjects_426: 
   created_on: 2005-10-17 09:36:03
   code: DTCX11Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19042"
-  label: Energetické, ekologicky šetrné systémy
+  label: "Energetick\xC3\xA9, ekologicky \xC5\xA1etrn\xC3\xA9 syst\xC3\xA9my"
 subjects_559: 
   created_on: 2005-10-21 10:18:33
   code: 
   updated_on: 2005-10-21 10:18:33
   type: ExternalSubject
   id: "19175"
-  label: Vegetace st?ední Evropy
+  label: "Vegetace st\xC5\x99edn\xC3\xAD Evropy"
 subjects_690: 
   created_on: 2005-11-09 11:52:26
   code: 
   updated_on: 2005-11-09 11:52:26
   type: ExternalSubject
   id: "19306"
-  label: Obchod se d?evem
+  label: "Obchod se d\xC5\x99evem"
 subjects_427: 
   created_on: 2005-10-17 09:36:03
   code: DTHX12Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19043"
-  label: "?ídicí a kontrolní systémy"
+  label: "\xC5\x98\xC3\xADdic\xC3\xAD a kontroln\xC3\xAD syst\xC3\xA9my"
 subjects_691: 
   created_on: 2005-11-09 12:00:22
   code: 
@@ -903,28 +901,28 @@ subjects_428:
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19044"
-  label: Obnovitelné a druhotné zdroje energie
+  label: "Obnoviteln\xC3\xA9 a druhotn\xC3\xA9 zdroje energie"
 subjects_560: 
   created_on: 2005-10-21 10:29:35
   code: 
   updated_on: 2005-10-21 10:29:35
   type: ExternalSubject
   id: "19176"
-  label: Aplikovaná hydrologie a klimatologie
+  label: "Aplikovan\xC3\xA1 hydrologie a klimatologie"
 subjects_692: 
   created_on: 2005-11-09 12:00:22
   code: 
   updated_on: 2005-11-09 12:00:22
   type: ExternalSubject
   id: "19308"
-  label: chov koní, jezdectví a vozatajství
+  label: "chov kon\xC3\xAD, jezdectv\xC3\xAD a vozatajstv\xC3\xAD"
 subjects_429: 
   created_on: 2005-10-17 09:36:03
   code: DTCT47Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19045"
-  label: Technická termodynamika (SDZ)
+  label: "Technick\xC3\xA1 termodynamika (SDZ)"
 subjects_561: 
   created_on: 2005-10-21 10:32:11
   code: 
@@ -938,35 +936,35 @@ subjects_693:
   updated_on: 2005-11-09 12:00:22
   type: ExternalSubject
   id: "19309"
-  label: Polní a lesní cesty
+  label: "Poln\xC3\xAD a lesn\xC3\xAD cesty"
 subjects_430: 
   created_on: 2005-10-17 09:36:03
   code: DTGX48Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19046"
-  label: Technologická za?ízení staveb (SDZ)
+  label: "Technologick\xC3\xA1 za\xC5\x99\xC3\xADzen\xC3\xAD staveb (SDZ)"
 subjects_562: 
   created_on: 2005-10-21 10:32:11
   code: 
   updated_on: 2005-10-21 10:32:11
   type: ExternalSubject
   id: "19178"
-  label: Limnologie speciál
+  label: "Limnologie speci\xC3\xA1l"
 subjects_694: 
   created_on: 2005-11-09 12:11:03
   code: 
   updated_on: 2005-11-09 12:11:03
   type: ExternalSubject
   id: "19310"
-  label: Krajinná ekologie
+  label: "Krajinn\xC3\xA1 ekologie"
 subjects_431: 
   created_on: 2005-10-17 09:36:03
   code: DTIX49Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19047"
-  label: "?ízení a organizace výrobních proces? (SDZ)"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD a organizace v\xC3\xBDrobn\xC3\xADch proces\xC5\xAF (SDZ)"
 subjects_563: 
   created_on: 2005-10-21 10:32:11
   code: 
@@ -980,56 +978,56 @@ subjects_695:
   updated_on: 2005-11-09 12:15:10
   type: ExternalSubject
   id: "19311"
-  label: "Zpracování obrazových záznam? v DPZ"
+  label: "Zpracov\xC3\xA1n\xC3\xAD obrazov\xC3\xBDch z\xC3\xA1znam\xC5\xAF v DPZ"
 subjects_300: 
   created_on: 2005-10-03 11:41:40
   code: DAKA01Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8997"
-  label: Výživa a krmení HZ
+  label: "V\xC3\xBD\xC5\xBEiva a krmen\xC3\xAD HZ"
 subjects_432: 
   created_on: 2005-10-17 09:36:03
   code: DTFT50Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19048"
-  label: Stavba stacionárních za?ízení (SDZ)
+  label: "Stavba stacion\xC3\xA1rn\xC3\xADch za\xC5\x99\xC3\xADzen\xC3\xAD (SDZ)"
 subjects_564: 
   created_on: 2005-10-21 10:35:25
   code: 
   updated_on: 2005-10-21 10:35:25
   type: ExternalSubject
   id: "19180"
-  label: Zpracování pÚPD technologií GIS
+  label: "Zpracov\xC3\xA1n\xC3\xAD p\xC3\x9APD technologi\xC3\xAD GIS"
 subjects_696: 
   created_on: 2005-11-09 12:15:10
   code: 
   updated_on: 2005-11-09 12:15:10
   type: ExternalSubject
   id: "19312"
-  label: P?dní chemie
+  label: "P\xC5\xAFdn\xC3\xAD chemie"
 subjects_301: 
   created_on: 2005-10-03 11:41:40
   code: DAAA04Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8998"
-  label: Základní agrotechnika
+  label: "Z\xC3\xA1kladn\xC3\xAD agrotechnika"
 subjects_433: 
   created_on: 2005-10-17 09:36:03
   code: DTFX51Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19049"
-  label: Technika a technologie rostlinné produkce (SDZ)
+  label: "Technika a technologie rostlinn\xC3\xA9 produkce (SDZ)"
 subjects_565: 
   created_on: 2005-10-21 10:35:25
   code: 
   updated_on: 2005-10-21 10:35:25
   type: ExternalSubject
   id: "19181"
-  label: "Architektura zahrad, park? a krajiny"
+  label: "Architektura zahrad, park\xC5\xAF a krajiny"
 subjects_697: 
   created_on: 2005-11-09 12:19:52
   code: 
@@ -1050,42 +1048,42 @@ subjects_434:
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19050"
-  label: Dopravní, manipula?ní a skladovací technika (SDZ)
+  label: "Dopravn\xC3\xAD, manipula\xC4\x8Dn\xC3\xAD a skladovac\xC3\xAD technika (SDZ)"
 subjects_566: 
   created_on: 2005-10-21 10:35:25
   code: 
   updated_on: 2005-10-21 10:35:25
   type: ExternalSubject
   id: "19182"
-  label: Ochrana životního prost?edí
+  label: "Ochrana \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_698: 
   created_on: 2005-11-09 12:19:52
   code: 
   updated_on: 2005-11-09 12:19:52
   type: ExternalSubject
   id: "19314"
-  label: Choroby lovné zv??e
+  label: "Choroby lovn\xC3\xA9 zv\xC4\x9B\xC5\x99e"
 subjects_303: 
   created_on: 2005-10-03 11:48:47
-  code: ''
+  code: ""
   updated_on: 2005-10-03 11:48:47
   type: 
   id: "9000"
-  label: Odborný seminá? ZOO
+  label: "Odborn\xC3\xBD semin\xC3\xA1\xC5\x99 ZOO"
 subjects_435: 
   created_on: 2005-10-17 09:36:03
   code: DTHT53Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19051"
-  label: Roboty a manipulátory (SDZ)
+  label: "Roboty a manipul\xC3\xA1tory (SDZ)"
 subjects_567: 
   created_on: 2005-10-21 10:39:12
   code: 
   updated_on: 2005-10-21 10:39:12
   type: ExternalSubject
   id: "19183"
-  label: Ochrana d?eva
+  label: "Ochrana d\xC5\x99eva"
 subjects_699: 
   created_on: 2005-11-09 12:23:59
   code: 
@@ -1095,109 +1093,109 @@ subjects_699:
   label: Mylivost
 subjects_304: 
   created_on: 2005-10-03 11:48:55
-  code: ''
+  code: ""
   updated_on: 2005-10-03 11:48:55
   type: 
   id: "9001"
-  label: Odborný seminá? FYTO
+  label: "Odborn\xC3\xBD semin\xC3\xA1\xC5\x99 FYTO"
 subjects_436: 
   created_on: 2005-10-17 09:36:03
   code: DTFT54Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19052"
-  label: Zem?d?lské stroje a motorová vozidla (SDZ)
+  label: "Zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA9 stroje a motorov\xC3\xA1 vozidla (SDZ)"
 subjects_568: 
   created_on: 2005-10-21 10:39:12
   code: 
   updated_on: 2005-10-21 10:39:12
   type: ExternalSubject
   id: "19184"
-  label: Historické konstrukce
+  label: "Historick\xC3\xA9 konstrukce"
 subjects_305: 
   created_on: 2005-10-03 16:31:12
-  code: ''
+  code: ""
   updated_on: 2005-10-03 16:31:12
   type: 
   id: "9002"
-  label: Prezenta?ní a pedagogické dovednosti
+  label: "Prezenta\xC4\x8Dn\xC3\xAD a pedagogick\xC3\xA9 dovednosti"
 subjects_437: 
   created_on: 2005-10-17 09:36:03
   code: DTIT55Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19053"
-  label: Obchod a podnikání s technikou (SDZ)
+  label: "Obchod a podnik\xC3\xA1n\xC3\xAD s\xC2\xA0technikou (SDZ)"
 subjects_569: 
   created_on: 2005-10-21 10:39:13
   code: 
   updated_on: 2005-10-21 10:39:13
   type: ExternalSubject
   id: "19185"
-  label: D?ev?né konstrukce
+  label: "D\xC5\x99ev\xC4\x9Bn\xC3\xA9 konstrukce"
 subjects_306: 
   created_on: 2005-10-03 16:31:40
-  code: ''
+  code: ""
   updated_on: 2005-10-03 16:31:40
   type: 
   id: "9003"
-  label: Metodologie výzkumu
+  label: "Metodologie v\xC3\xBDzkumu"
 subjects_438: 
   created_on: 2005-10-17 09:36:03
   code: DTGX56Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19054"
-  label: Technologická za?ízení staveb a technologie živo?. produkce (SDZ)
+  label: "Technologick\xC3\xA1 za\xC5\x99\xC3\xADzen\xC3\xAD staveb a technologie \xC5\xBEivo\xC4\x8D. produkce (SDZ)"
 subjects_570: 
   created_on: 2005-10-21 10:47:45
   code: 
   updated_on: 2005-10-21 10:47:45
   type: ExternalSubject
   id: "19186"
-  label: Ochrana životního prost?edí
+  label: "Ochrana \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_307: 
   created_on: 2005-10-03 16:58:08
-  code: ''
+  code: ""
   updated_on: 2005-10-03 16:58:08
   type: 
   id: "9004"
-  label: Angli?tina speciální
+  label: "Angli\xC4\x8Dtina speci\xC3\xA1ln\xC3\xAD"
 subjects_439: 
   created_on: 2005-10-17 09:36:03
   code: DTET57Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19055"
-  label: Dopravní inženýrství (SDZ)
+  label: "Dopravn\xC3\xAD in\xC5\xBEen\xC3\xBDrstv\xC3\xAD (SDZ)"
 subjects_571: 
   created_on: 2005-10-21 10:47:45
   code: 
   updated_on: 2005-10-21 10:47:45
   type: ExternalSubject
   id: "19187"
-  label: Analytika ŽP
+  label: "Analytika \xC5\xBDP"
 subjects_308: 
   created_on: 2005-10-03 16:58:18
-  code: ''
+  code: ""
   updated_on: 2005-10-03 16:58:18
   type: 
   id: "9005"
-  label: Angli?tina odborná
+  label: "Angli\xC4\x8Dtina odborn\xC3\xA1"
 subjects_440: 
   created_on: 2005-10-17 09:36:03
   code: DTGX58Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19056"
-  label: Technika a technologie odpadového hospodá?ství (SDZ)
+  label: "Technika a technologie odpadov\xC3\xA9ho hospod\xC3\xA1\xC5\x99stv\xC3\xAD (SDZ)"
 subjects_572: 
   created_on: 2005-10-21 10:50:21
   code: 
   updated_on: 2005-10-21 10:50:21
   type: ExternalSubject
   id: "19188"
-  label: Chemie ŽP
+  label: "Chemie \xC5\xBDP"
 subjects_309: 
   created_on: 2005-10-11 10:14:41
   code: 
@@ -1211,161 +1209,161 @@ subjects_441:
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19057"
-  label: "Servis a obnova stroj? (SDZ)"
+  label: "Servis a obnova stroj\xC5\xAF (SDZ)"
 subjects_573: 
   created_on: 2005-10-21 10:50:21
   code: 
   updated_on: 2005-10-21 10:50:21
   type: ExternalSubject
   id: "19189"
-  label: Ochrana životního prost?edí
+  label: "Ochrana \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_310: 
   created_on: 2005-10-11 16:02:52
   code: DLTX50Y
   updated_on: 2005-10-11 16:02:52
   type: 
   id: "9007"
-  label: Lesní t?žba a dopravnictví
+  label: "Lesn\xC3\xAD t\xC4\x9B\xC5\xBEba a dopravnictv\xC3\xAD"
 subjects_442: 
   created_on: 2005-10-17 09:36:03
   code: DTIX60Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19058"
-  label: Mechanizace výroby
+  label: "Mechanizace v\xC3\xBDroby"
 subjects_574: 
   created_on: 2005-10-21 10:53:22
   code: 
   updated_on: 2005-10-21 10:53:22
   type: ExternalSubject
   id: "19190"
-  label: "Ve?ejná zele?"
+  label: "Ve\xC5\x99ejn\xC3\xA1 zele\xC5\x88"
 subjects_311: 
   created_on: 2005-10-11 16:06:13
   code: DLRX08Y
   updated_on: 2005-10-11 16:06:13
   type: 
   id: "9008"
-  label: Odv?tvová ekonomika a ?ízení podniku
+  label: "Odv\xC4\x9Btvov\xC3\xA1 ekonomika a \xC5\x99\xC3\xADzen\xC3\xAD podniku"
 subjects_443: 
   created_on: 2005-10-17 09:36:03
   code: DTHX61Y
   updated_on: 2005-10-17 09:36:03
   type: 
   id: "19059"
-  label: Automatizované ?ízení výroby (SDZ)
+  label: "Automatizovan\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD v\xC3\xBDroby (SDZ)"
 subjects_575: 
   created_on: 2005-10-21 11:04:31
   code: 
   updated_on: 2005-10-21 11:04:31
   type: ExternalSubject
   id: "19191"
-  label: "Využití a likvidace odpad?"
+  label: "Vyu\xC5\xBEit\xC3\xAD a likvidace odpad\xC5\xAF"
 subjects_312: 
   created_on: 2005-10-14 08:58:08
   code: 
   updated_on: 2005-10-14 08:58:08
   type: ExternalSubject
   id: "9009"
-  label: Um?lá inteligence
+  label: "Um\xC4\x9Bl\xC3\xA1 inteligence"
 subjects_444: 
   created_on: 2005-10-17 15:09:24
   code: 
   updated_on: 2005-10-17 15:09:24
   type: ExternalSubject
   id: "19060"
-  label: mléka?ství
+  label: "ml\xC3\xA9ka\xC5\x99stv\xC3\xAD"
 subjects_576: 
   created_on: 2005-10-21 11:06:37
   code: 
   updated_on: 2005-10-21 11:06:37
   type: ExternalSubject
   id: "19192"
-  label: Environmentální mikrobiologie
+  label: "Environment\xC3\xA1ln\xC3\xAD mikrobiologie"
 subjects_313: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9010"
-  label: Um?lá inteligence
+  label: "Um\xC4\x9Bl\xC3\xA1 inteligence"
 subjects_445: 
   created_on: 2005-10-18 10:12:15
   code: 
   updated_on: 2005-10-18 10:12:15
   type: ExternalSubject
   id: "19061"
-  label: "Objektov? orientovaná analýza a návrh IS"
+  label: "Objektov\xC4\x9B orientovan\xC3\xA1 anal\xC3\xBDza a n\xC3\xA1vrh IS"
 subjects_577: 
   created_on: 2005-10-21 11:06:37
   code: 
   updated_on: 2005-10-21 11:06:37
   type: ExternalSubject
   id: "19193"
-  label: Geochemie životního prost?edí
+  label: "Geochemie \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_314: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9011"
-  label: "Školský management"
+  label: "\xC5\xA0kolsk\xC3\xBD management"
 subjects_446: 
   created_on: 2005-10-18 13:01:27
   code: 
   updated_on: 2005-10-18 13:01:27
   type: ExternalSubject
   id: "19062"
-  label: Historická geografie ?eska
+  label: "Historick\xC3\xA1 geografie \xC4\x8Ceska"
 subjects_578: 
   created_on: 2005-10-21 11:36:38
   code: 
   updated_on: 2005-10-21 11:36:38
   type: ExternalSubject
   id: "19194"
-  label: Energetické prost?edky stal.
+  label: "Energetick\xC3\xA9 prost\xC5\x99edky stal."
 subjects_315: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9012"
-  label: "Školský management"
+  label: "\xC5\xA0kolsk\xC3\xBD management"
 subjects_447: 
   created_on: 2005-10-18 15:16:11
   code: 
   updated_on: 2005-10-18 15:16:11
   type: ExternalSubject
   id: "19063"
-  label: Statistické procedury v SAS
+  label: "Statistick\xC3\xA9 procedury v SAS"
 subjects_579: 
   created_on: 2005-10-21 11:36:38
   code: 
   updated_on: 2005-10-21 11:36:38
   type: ExternalSubject
   id: "19195"
-  label: Matematické modelování
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_316: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9013"
-  label: Distribuované systémy (P36DSY)
+  label: "Distribuovan\xC3\xA9 syst\xC3\xA9my (P36DSY)"
 subjects_448: 
   created_on: 2005-10-18 15:32:50
   code: 
   updated_on: 2005-10-18 15:32:50
   type: ExternalSubject
   id: "19064"
-  label: Management výzkumu
+  label: "Management v\xC3\xBDzkumu"
 subjects_317: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9014"
-  label: "IT904, Strategické ?ízení informa?ních systém?"
+  label: "IT904, Strategick\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD informa\xC4\x8Dn\xC3\xADch syst\xC3\xA9m\xC5\xAF"
 subjects_449: 
   created_on: 2005-10-19 11:36:45
   code: 
@@ -1379,77 +1377,77 @@ subjects_580:
   updated_on: 2005-10-21 11:36:38
   type: ExternalSubject
   id: "19196"
-  label: Technologie obráb?ní d?eva
+  label: "Technologie obr\xC3\xA1b\xC4\x9Bn\xC3\xAD d\xC5\x99eva"
 subjects_318: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9015"
-  label: "Objektov? orientované modelování"
+  label: "Objektov\xC4\x9B orientovan\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_581: 
   created_on: 2005-10-21 11:39:37
   code: 
   updated_on: 2005-10-21 11:39:37
   type: ExternalSubject
   id: "19197"
-  label: Energetické prost?edky mobilní
+  label: "Energetick\xC3\xA9 prost\xC5\x99edky mobiln\xC3\xAD"
 subjects_319: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9016"
-  label: "Objektové programování - .NET"
+  label: "Objektov\xC3\xA9 programov\xC3\xA1n\xC3\xAD - .NET"
 subjects_450: 
   created_on: 2005-10-19 12:37:48
   code: 
   updated_on: 2005-10-19 12:37:48
   type: ExternalSubject
   id: "19066"
-  label: Management výzkumu
+  label: "Management v\xC3\xBDzkumu"
 subjects_582: 
   created_on: 2005-10-21 11:39:37
   code: 
   updated_on: 2005-10-21 11:39:37
   type: ExternalSubject
   id: "19198"
-  label: Matematické modelování
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_451: 
   created_on: 2005-10-19 12:37:48
   code: 
   updated_on: 2005-10-19 12:37:48
   type: ExternalSubject
   id: "19067"
-  label: Ochrana p?írody a krajiny
+  label: "Ochrana p\xC5\x99\xC3\xADrody a krajiny"
 subjects_583: 
   created_on: 2005-10-21 11:39:37
   code: 
   updated_on: 2005-10-21 11:39:37
   type: ExternalSubject
   id: "19199"
-  label: Technologie obráb?ní d?eva
+  label: "Technologie obr\xC3\xA1b\xC4\x9Bn\xC3\xAD d\xC5\x99eva"
 subjects_320: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9017"
-  label: Finan?ní trhy a instituce
+  label: "Finan\xC4\x8Dn\xC3\xAD trhy a instituce"
 subjects_452: 
   created_on: 2005-10-19 14:14:11
   code: 
   updated_on: 2005-10-19 14:14:11
   type: ExternalSubject
   id: "19068"
-  label: Genové inženýrství
+  label: "Genov\xC3\xA9 in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
 subjects_584: 
   created_on: 2005-10-21 11:42:40
   code: 
   updated_on: 2005-10-21 11:42:40
   type: ExternalSubject
   id: "19200"
-  label: Energet. prost?. mobilní
+  label: "Energet. prost\xC5\x99. mobiln\xC3\xAD"
 subjects_321: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1463,14 +1461,14 @@ subjects_453:
   updated_on: 2005-10-19 14:14:11
   type: ExternalSubject
   id: "19069"
-  label: Kvantitativní genetika
+  label: "Kvantitativn\xC3\xAD genetika"
 subjects_585: 
   created_on: 2005-10-21 11:42:40
   code: 
   updated_on: 2005-10-21 11:42:40
   type: ExternalSubject
   id: "19201"
-  label: Matematické modelování
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_322: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1484,14 +1482,14 @@ subjects_454:
   updated_on: 2005-10-19 16:19:55
   type: ExternalSubject
   id: "19070"
-  label: Ochrana p?írody a krajiny
+  label: "Ochrana p\xC5\x99\xC3\xADrody a krajiny"
 subjects_586: 
   created_on: 2005-10-21 11:42:40
   code: 
   updated_on: 2005-10-21 11:42:40
   type: ExternalSubject
   id: "19202"
-  label: Technologie obráb?ní d?eva
+  label: "Technologie obr\xC3\xA1b\xC4\x9Bn\xC3\xAD d\xC5\x99eva"
 subjects_323: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1505,14 +1503,14 @@ subjects_455:
   updated_on: 2005-10-19 16:19:55
   type: ExternalSubject
   id: "19071"
-  label: Management výzkumu
+  label: "Management v\xC3\xBDzkumu"
 subjects_587: 
   created_on: 2005-10-21 11:47:06
   code: 
   updated_on: 2005-10-21 11:47:06
   type: ExternalSubject
   id: "19203"
-  label: Dopravnictví
+  label: "Dopravnictv\xC3\xAD"
 subjects_324: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1533,7 +1531,7 @@ subjects_588:
   updated_on: 2005-10-21 12:04:41
   type: ExternalSubject
   id: "19204"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_325: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1547,49 +1545,49 @@ subjects_457:
   updated_on: 2005-10-19 16:25:12
   type: ExternalSubject
   id: "19073"
-  label: Sociobiologie a behaviorální ekologie I. a II.
+  label: "Sociobiologie a behavior\xC3\xA1ln\xC3\xAD ekologie I. a II."
 subjects_589: 
   created_on: 2005-10-21 12:15:34
   code: 
   updated_on: 2005-10-21 12:15:34
   type: ExternalSubject
   id: "19205"
-  label: "Biostatistika a plánování ekologických pokus?"
+  label: "Biostatistika a pl\xC3\xA1nov\xC3\xA1n\xC3\xAD ekologick\xC3\xBDch pokus\xC5\xAF"
 subjects_326: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9023"
-  label: "101OBJ - Objektové programování - .NET"
+  label: "101OBJ - Objektov\xC3\xA9 programov\xC3\xA1n\xC3\xAD - .NET"
 subjects_458: 
   created_on: 2005-10-19 16:52:23
   code: 
   updated_on: 2005-10-19 16:52:23
   type: ExternalSubject
   id: "19074"
-  label: Historie zem?d?lství
+  label: "Historie zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
 subjects_590: 
   created_on: 2005-10-21 12:15:34
   code: 
   updated_on: 2005-10-21 12:15:34
   type: ExternalSubject
   id: "19206"
-  label: Transport zne?išt?ní v povodí
+  label: "Transport zne\xC4\x8Di\xC5\xA1t\xC4\x9Bn\xC3\xAD v povod\xC3\xAD"
 subjects_327: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9024"
-  label: Architektury informa?ních systém?
+  label: "Architektury informa\xC4\x8Dn\xC3\xADch syst\xC3\xA9m\xC5\xAF"
 subjects_459: 
   created_on: 2005-10-19 16:52:23
   code: 
   updated_on: 2005-10-19 16:52:23
   type: ExternalSubject
   id: "19075"
-  label: Urbanismus venkova a územní plánování
+  label: "Urbanismus venkova a \xC3\xBAzemn\xC3\xAD pl\xC3\xA1nov\xC3\xA1n\xC3\xAD"
 subjects_591: 
   created_on: 2005-10-21 15:21:40
   code: 
@@ -1603,14 +1601,14 @@ subjects_328:
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9025"
-  label: Evropská integrace
+  label: "Evropsk\xC3\xA1 integrace"
 subjects_460: 
   created_on: 2005-10-19 16:52:23
   code: 
   updated_on: 2005-10-19 16:52:23
   type: ExternalSubject
   id: "19076"
-  label: Pozemkové úpravy
+  label: "Pozemkov\xC3\xA9 \xC3\xBApravy"
 subjects_592: 
   created_on: 2005-10-21 15:21:40
   code: 
@@ -1624,14 +1622,14 @@ subjects_329:
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9026"
-  label: Metody získávání znalostí
+  label: "Metody z\xC3\xADsk\xC3\xA1v\xC3\xA1n\xC3\xAD znalost\xC3\xAD"
 subjects_461: 
   created_on: 2005-10-19 17:02:59
   code: 
   updated_on: 2005-10-19 17:02:59
   type: ExternalSubject
   id: "19077"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_593: 
   created_on: 2005-10-21 15:21:40
   code: 
@@ -1659,14 +1657,14 @@ subjects_594:
   updated_on: 2005-10-22 12:08:27
   type: ExternalSubject
   id: "19210"
-  label: "Strategie rozvoje sídel a region?"
+  label: "Strategie rozvoje s\xC3\xADdel a region\xC5\xAF"
 subjects_331: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9028"
-  label: Komunikace v rízení
+  label: "Komunikace v r\xC3\xADzen\xC3\xAD"
 subjects_463: 
   created_on: 2005-10-20 10:07:02
   code: 
@@ -1680,7 +1678,7 @@ subjects_595:
   updated_on: 2005-10-22 12:08:27
   type: ExternalSubject
   id: "19211"
-  label: Zpracování ÚPD technologií GIS
+  label: "Zpracov\xC3\xA1n\xC3\xAD \xC3\x9APD technologi\xC3\xAD GIS"
 subjects_200: 
   created_on: 2005-10-03 11:41:41
   code: DLEX24Y
@@ -1694,56 +1692,56 @@ subjects_332:
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9029"
-  label: Personální rízení
+  label: "Person\xC3\xA1ln\xC3\xAD r\xC3\xADzen\xC3\xAD"
 subjects_464: 
   created_on: 2005-10-20 10:07:02
   code: 
   updated_on: 2005-10-20 10:07:02
   type: ExternalSubject
   id: "19080"
-  label: Klinická farmakologie
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_596: 
   created_on: 2005-10-23 13:23:24
   code: 
   updated_on: 2005-10-23 13:23:24
   type: ExternalSubject
   id: "19212"
-  label: P?stování lesa
+  label: "P\xC4\x9Bstov\xC3\xA1n\xC3\xAD lesa"
 subjects_201: 
   created_on: 2005-10-03 11:41:42
   code: DLVX24Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7341"
-  label: "Matematické modelování hydrol.proces?"
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD hydrol.proces\xC5\xAF"
 subjects_333: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9030"
-  label: Psychologie rízení
+  label: "Psychologie r\xC3\xADzen\xC3\xAD"
 subjects_465: 
   created_on: 2005-10-20 10:50:10
   code: 
   updated_on: 2005-10-20 10:50:10
   type: ExternalSubject
   id: "19081"
-  label: Management výzkumu
+  label: "Management v\xC3\xBDzkumu"
 subjects_597: 
   created_on: 2005-10-23 13:23:24
   code: 
   updated_on: 2005-10-23 13:23:24
   type: ExternalSubject
   id: "19213"
-  label: Lesní t?žba speciální
+  label: "Lesn\xC3\xAD t\xC4\x9B\xC5\xBEba speci\xC3\xA1ln\xC3\xAD"
 subjects_202: 
   created_on: 2005-10-03 11:41:42
   code: DLVX23Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7343"
-  label: "Matematické modelování hydrol.proces?"
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD hydrol.proces\xC5\xAF"
 subjects_334: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1757,7 +1755,7 @@ subjects_466:
   updated_on: 2005-10-20 12:55:51
   type: 
   id: "19082"
-  label: Speciální šlechtitelské postupy
+  label: "Speci\xC3\xA1ln\xC3\xAD \xC5\xA1lechtitelsk\xC3\xA9 postupy"
 subjects_598: 
   created_on: 2005-10-24 08:35:18
   code: 
@@ -1771,14 +1769,14 @@ subjects_203:
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7348"
-  label: VYUŽITÍ BIOMASY
+  label: "VYU\xC5\xBDIT\xC3\x8D BIOMASY"
 subjects_335: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9032"
-  label: Principy regionální správy
+  label: "Principy region\xC3\xA1ln\xC3\xAD spr\xC3\xA1vy"
 subjects_467: 
   created_on: 2005-10-20 12:57:48
   code: DAOX02Y
@@ -1792,14 +1790,14 @@ subjects_599:
   updated_on: 2005-10-24 08:35:18
   type: ExternalSubject
   id: "19215"
-  label: historické stavby I
+  label: "historick\xC3\xA9 stavby I"
 subjects_204: 
   created_on: 2005-10-03 11:41:42
   code: DLBX41Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7358"
-  label: Geografické informa?ní systémy
+  label: "Geografick\xC3\xA9 informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my"
 subjects_336: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1834,14 +1832,14 @@ subjects_469:
   updated_on: 2005-10-20 14:28:30
   type: ExternalSubject
   id: "19085"
-  label: lesnická pedologie
+  label: "lesnick\xC3\xA1 pedologie"
 subjects_206: 
   created_on: 2005-10-03 11:41:41
   code: DLTX60Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7362"
-  label: ANATOMIE D?EVA
+  label: "ANATOMIE D\xC5\x98EVA"
 subjects_338: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1855,126 +1853,126 @@ subjects_207:
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7364"
-  label: Teorie a stavba stroj¨
+  label: "Teorie a stavba stroj\xC2\xA8"
 subjects_339: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9036"
-  label: Um?lá inteligence
+  label: "Um\xC4\x9Bl\xC3\xA1 inteligence"
 subjects_470: 
   created_on: 2005-10-20 14:32:37
   code: 
   updated_on: 2005-10-20 14:32:37
   type: ExternalSubject
   id: "19086"
-  label: Hydraulika podzemní vody I. III.
+  label: "Hydraulika podzemn\xC3\xAD vody I. III."
 subjects_208: 
   created_on: 2005-10-03 11:41:42
   code: DLTX51Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7366"
-  label: Mechanizace v lesním hospodá?ství
+  label: "Mechanizace v lesn\xC3\xADm hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_471: 
   created_on: 2005-10-20 14:32:37
   code: 
   updated_on: 2005-10-20 14:32:37
   type: ExternalSubject
   id: "19087"
-  label: Hydraulika podzemní vody II. IV.
+  label: "Hydraulika podzemn\xC3\xAD vody II. IV."
 subjects_209: 
   created_on: 2005-10-03 11:41:43
   code: DLTX52Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7367"
-  label: Teorie d?lení d?eva
+  label: "Teorie d\xC4\x9Blen\xC3\xAD d\xC5\x99eva"
 subjects_340: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9037"
-  label: Metody získávání znalostí
+  label: "Metody z\xC3\xADsk\xC3\xA1v\xC3\xA1n\xC3\xAD znalost\xC3\xAD"
 subjects_472: 
   created_on: 2005-10-20 14:32:37
   code: 
   updated_on: 2005-10-20 14:32:37
   type: ExternalSubject
   id: "19088"
-  label: Transportní procesy V.
+  label: "Transportn\xC3\xAD procesy V."
 subjects_341: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9038"
-  label: Metody získávání znalostí
+  label: "Metody z\xC3\xADsk\xC3\xA1v\xC3\xA1n\xC3\xAD znalost\xC3\xAD"
 subjects_473: 
   created_on: 2005-10-20 14:37:37
   code: 
   updated_on: 2005-10-20 14:37:37
   type: ExternalSubject
   id: "19089"
-  label: "Protierozní ochrana p?d IV:"
+  label: "Protierozn\xC3\xAD ochrana p\xC5\xAFd IV:"
 subjects_210: 
   created_on: 2005-10-03 11:41:43
   code: DLTX55Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7369"
-  label: Základy terramechaniky
+  label: "Z\xC3\xA1klady terramechaniky"
 subjects_342: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9039"
-  label: Mezinárodní ú?etnictví
+  label: "Mezin\xC3\xA1rodn\xC3\xAD \xC3\xBA\xC4\x8Detnictv\xC3\xAD"
 subjects_474: 
   created_on: 2005-10-20 14:41:03
   code: 
   updated_on: 2005-10-20 14:41:03
   type: ExternalSubject
   id: "19090"
-  label: Zdravotní inženýrství II
+  label: "Zdravotn\xC3\xAD in\xC5\xBEen\xC3\xBDrstv\xC3\xAD II"
 subjects_211: 
   created_on: 2005-10-03 11:41:42
   code: DLTX56Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7371"
-  label: "Lesnick- mechanizace"
+  label: Lesnick- mechanizace
 subjects_343: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9040"
-  label: Oce?ování majetku a podniku
+  label: "Oce\xC5\x88ov\xC3\xA1n\xC3\xAD majetku a podniku"
 subjects_475: 
   created_on: 2005-10-20 14:45:11
   code: 
   updated_on: 2005-10-20 14:45:11
   type: ExternalSubject
   id: "19091"
-  label: "Zpracování obrazových záznam? v dpz"
+  label: "Zpracov\xC3\xA1n\xC3\xAD obrazov\xC3\xBDch z\xC3\xA1znam\xC5\xAF v dpz"
 subjects_212: 
   created_on: 2005-10-03 11:41:42
   code: DLTX57Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7373"
-  label: Modelování lesních výrobních systém?
+  label: "Modelov\xC3\xA1n\xC3\xAD lesn\xC3\xADch v\xC3\xBDrobn\xC3\xADch syst\xC3\xA9m\xC5\xAF"
 subjects_344: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9041"
-  label: Mezinárodní ú?etnictví
+  label: "Mezin\xC3\xA1rodn\xC3\xAD \xC3\xBA\xC4\x8Detnictv\xC3\xAD"
 subjects_476: 
   created_on: 2005-10-20 14:45:11
   code: 
@@ -1988,14 +1986,14 @@ subjects_213:
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7375"
-  label: Vliv lesní techniky na ŽP
+  label: "Vliv lesn\xC3\xAD techniky na \xC5\xBDP"
 subjects_345: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9042"
-  label: Oce?ování majetku a podniku
+  label: "Oce\xC5\x88ov\xC3\xA1n\xC3\xAD majetku a podniku"
 subjects_477: 
   created_on: 2005-10-20 14:45:11
   code: 
@@ -2009,7 +2007,7 @@ subjects_214:
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7377"
-  label: Technická mechanika pro LI
+  label: "Technick\xC3\xA1 mechanika pro LI"
 subjects_346: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -2023,14 +2021,14 @@ subjects_478:
   updated_on: 2005-10-20 15:01:54
   type: ExternalSubject
   id: "19094"
-  label: Lesnická pedologie
+  label: "Lesnick\xC3\xA1 pedologie"
 subjects_215: 
   created_on: 2005-10-03 11:41:42
   code: DLRX06Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7379"
-  label: Lesnická a zem?d?lská ekonomika
+  label: "Lesnick\xC3\xA1 a zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA1 ekonomika"
 subjects_347: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -2051,7 +2049,7 @@ subjects_216:
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7381"
-  label: Lesnická ekonomika
+  label: "Lesnick\xC3\xA1 ekonomika"
 subjects_348: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -2093,7 +2091,7 @@ subjects_218:
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7385"
-  label: "NAUKA O D?EV?"
+  label: "NAUKA O D\xC5\x98EV\xC4\x9A"
 subjects_350: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -2107,14 +2105,14 @@ subjects_482:
   updated_on: 2005-10-20 15:25:54
   type: ExternalSubject
   id: "19098"
-  label: "geochemické cykly stopových prvk?"
+  label: "geochemick\xC3\xA9 cykly stopov\xC3\xBDch prvk\xC5\xAF"
 subjects_219: 
   created_on: 2005-10-03 11:41:42
   code: DLTX65Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7387"
-  label: LESNÍ P?IDRUŽENÁ VÝROBA
+  label: "LESN\xC3\x8D P\xC5\x98IDRU\xC5\xBDEN\xC3\x81 V\xC3\x9DROBA"
 subjects_351: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -2128,7 +2126,7 @@ subjects_483:
   updated_on: 2005-10-20 15:25:54
   type: ExternalSubject
   id: "19099"
-  label: geochemie ŽP
+  label: "geochemie \xC5\xBDP"
 subjects_220: 
   created_on: 2005-10-03 11:41:41
   code: DLHX04Y
@@ -2142,28 +2140,28 @@ subjects_352:
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9049"
-  label: Mezinárodní ú?etnictví
+  label: "Mezin\xC3\xA1rodn\xC3\xAD \xC3\xBA\xC4\x8Detnictv\xC3\xAD"
 subjects_484: 
   created_on: 2005-10-20 15:28:40
   code: 
   updated_on: 2005-10-20 15:28:40
   type: ExternalSubject
   id: "19100"
-  label: lesnická pedologie
+  label: "lesnick\xC3\xA1 pedologie"
 subjects_221: 
   created_on: 2005-10-03 11:41:43
   code: DLTX67Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7391"
-  label: ZP?ÍSTUPN?NÍ LESA
+  label: "ZP\xC5\x98\xC3\x8DSTUPN\xC4\x9AN\xC3\x8D LESA"
 subjects_353: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9050"
-  label: Oce?ování majetku a podniku
+  label: "Oce\xC5\x88ov\xC3\xA1n\xC3\xAD majetku a podniku"
 subjects_485: 
   created_on: 2005-10-20 15:28:40
   code: 
@@ -2177,56 +2175,56 @@ subjects_222:
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7393"
-  label: CHEMIE D?EVA
+  label: "CHEMIE D\xC5\x98EVA"
 subjects_354: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9051"
-  label: Um?lá inteligence
+  label: "Um\xC4\x9Bl\xC3\xA1 inteligence"
 subjects_486: 
   created_on: 2005-10-20 15:31:23
   code: 
   updated_on: 2005-10-20 15:31:23
   type: ExternalSubject
   id: "19102"
-  label: Aplikovaná meteorologie a klimatologie
+  label: "Aplikovan\xC3\xA1 meteorologie a klimatologie"
 subjects_223: 
   created_on: 2005-10-03 11:41:42
   code: DLTX62Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7395"
-  label: OCHRANA D?EVA
+  label: "OCHRANA D\xC5\x98EVA"
 subjects_355: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9052"
-  label: Metody získávání znalostí
+  label: "Metody z\xC3\xADsk\xC3\xA1v\xC3\xA1n\xC3\xAD znalost\xC3\xAD"
 subjects_487: 
   created_on: 2005-10-20 15:34:20
   code: 
   updated_on: 2005-10-20 15:34:20
   type: ExternalSubject
   id: "19103"
-  label: lesnická pedologie
+  label: "lesnick\xC3\xA1 pedologie"
 subjects_224: 
   created_on: 2005-10-03 11:41:42
   code: DLHX11Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7397"
-  label: Matematické modelování
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_356: 
   created_on: 2005-10-14 08:58:09
   code: 
   updated_on: 2005-10-14 08:58:09
   type: ExternalSubject
   id: "9053"
-  label: M?nová politika
+  label: "M\xC4\x9Bnov\xC3\xA1 politika"
 subjects_488: 
   created_on: 2005-10-20 15:34:20
   code: 
@@ -2240,63 +2238,63 @@ subjects_225:
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7403"
-  label: "CAD - využití po?íta??"
+  label: "CAD - vyu\xC5\xBEit\xC3\xAD po\xC4\x8D\xC3\xADta\xC4\x8D\xC5\xAF"
 subjects_357: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9054"
-  label: "polák - objektové programování"
+  label: "pol\xC3\xA1k - objektov\xC3\xA9 programov\xC3\xA1n\xC3\xAD"
 subjects_489: 
   created_on: 2005-10-20 15:37:01
   code: 
   updated_on: 2005-10-20 15:37:01
   type: ExternalSubject
   id: "19105"
-  label: "zakládání les?"
+  label: "zakl\xC3\xA1d\xC3\xA1n\xC3\xAD les\xC5\xAF"
 subjects_226: 
   created_on: 2005-10-03 11:41:43
   code: DLEX13Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7406"
-  label: "Popula?ní ekologie rostlin a živo?ich?"
+  label: "Popula\xC4\x8Dn\xC3\xAD ekologie rostlin a \xC5\xBEivo\xC4\x8Dich\xC5\xAF"
 subjects_358: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9055"
-  label: "drbal - objektová analýza a návrh"
+  label: "drbal - objektov\xC3\xA1 anal\xC3\xBDza a n\xC3\xA1vrh"
 subjects_227: 
   created_on: 2005-10-03 11:41:43
   code: DLEX18Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7408"
-  label: Sb?r a zpracování ekologických dat
+  label: "Sb\xC4\x9Br a zpracov\xC3\xA1n\xC3\xAD ekologick\xC3\xBDch dat"
 subjects_359: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9056"
-  label: "Objektové programování - .NET"
+  label: "Objektov\xC3\xA9 programov\xC3\xA1n\xC3\xAD - .NET"
 subjects_490: 
   created_on: 2005-10-20 15:37:01
   code: 
   updated_on: 2005-10-20 15:37:01
   type: ExternalSubject
   id: "19106"
-  label: aplikovaná meteorologie a klimatologie
+  label: "aplikovan\xC3\xA1 meteorologie a klimatologie"
 subjects_491: 
   created_on: 2005-10-20 15:37:01
   code: 
   updated_on: 2005-10-20 15:37:01
   type: ExternalSubject
   id: "19107"
-  label: lesnická pedologie
+  label: "lesnick\xC3\xA1 pedologie"
 subjects_228: 
   created_on: 2005-10-03 11:41:43
   code: DLTX61Y
@@ -2310,84 +2308,84 @@ subjects_360:
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9057"
-  label: "Kalkulace náklad? a cen"
+  label: "Kalkulace n\xC3\xA1klad\xC5\xAF a cen"
 subjects_492: 
   created_on: 2005-10-20 15:39:41
   code: 
   updated_on: 2005-10-20 15:39:41
   type: ExternalSubject
   id: "19108"
-  label: Aplikovaná meteorologie a klimatologie
+  label: "Aplikovan\xC3\xA1 meteorologie a klimatologie"
 subjects_229: 
   created_on: 2005-10-03 11:41:43
   code: DLE46Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7473"
-  label: Ochrana životního prost?edí
+  label: "Ochrana \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_361: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9058"
-  label: Manažerské ú?etnictví
+  label: "Mana\xC5\xBEersk\xC3\xA9 \xC3\xBA\xC4\x8Detnictv\xC3\xAD"
 subjects_493: 
   created_on: 2005-10-20 15:42:59
   code: 
   updated_on: 2005-10-20 15:42:59
   type: ExternalSubject
   id: "19109"
-  label: Lesnická pedologie
+  label: "Lesnick\xC3\xA1 pedologie"
 subjects_362: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9059"
-  label: Mezinárodní právo a právo EU
+  label: "Mezin\xC3\xA1rodn\xC3\xAD pr\xC3\xA1vo a pr\xC3\xA1vo EU"
 subjects_494: 
   created_on: 2005-10-20 15:42:59
   code: 
   updated_on: 2005-10-20 15:42:59
   type: ExternalSubject
   id: "19110"
-  label: Aplikovaná meteorologie a klimatologie
+  label: "Aplikovan\xC3\xA1 meteorologie a klimatologie"
 subjects_230: 
   created_on: 2005-10-03 11:41:45
   code: DEHE05Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "7500"
-  label: Regionální rozvoj v evropském správním prostoru DSP
+  label: "Region\xC3\xA1ln\xC3\xAD rozvoj v evropsk\xC3\xA9m spr\xC3\xA1vn\xC3\xADm prostoru DSP"
 subjects_363: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9060"
-  label: Strategický management
+  label: "Strategick\xC3\xBD management"
 subjects_495: 
   created_on: 2005-10-20 15:45:45
   code: 
   updated_on: 2005-10-20 15:45:45
   type: ExternalSubject
   id: "19111"
-  label: lesnická pedologie
+  label: "lesnick\xC3\xA1 pedologie"
 subjects_231: 
   created_on: 2005-10-03 11:41:45
   code: DEJE02Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "7683"
-  label: Právní regulace ve?ejné správy a regionálního rozvoje
+  label: "Pr\xC3\xA1vn\xC3\xAD regulace ve\xC5\x99ejn\xC3\xA9 spr\xC3\xA1vy a region\xC3\xA1ln\xC3\xADho rozvoje"
 subjects_364: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9061"
-  label: Metody získávání znalostí
+  label: "Metody z\xC3\xADsk\xC3\xA1v\xC3\xA1n\xC3\xAD znalost\xC3\xAD"
 subjects_496: 
   created_on: 2005-10-20 15:47:54
   code: 
@@ -2401,14 +2399,14 @@ subjects_100:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "5911"
-  label: Zeliná?ství
+  label: "Zelin\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_232: 
   created_on: 2005-10-03 11:41:44
   code: DKOF01Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "7832"
-  label: Finance regionální správy
+  label: "Finance region\xC3\xA1ln\xC3\xAD spr\xC3\xA1vy"
 subjects_365: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2429,7 +2427,7 @@ subjects_101:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "5913"
-  label: Ovocnictví
+  label: "Ovocnictv\xC3\xAD"
 subjects_233: 
   created_on: 2005-10-03 11:41:41
   code: DLEA51Y
@@ -2443,7 +2441,7 @@ subjects_366:
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9063"
-  label: "M?kké systémy, metodologie a aplikace"
+  label: "M\xC4\x9Bkk\xC3\xA9 syst\xC3\xA9my, metodologie a aplikace"
 subjects_498: 
   created_on: 2005-10-20 15:51:08
   code: 
@@ -2457,21 +2455,21 @@ subjects_102:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "5915"
-  label: Sadovnictví
+  label: "Sadovnictv\xC3\xAD"
 subjects_234: 
   created_on: 2005-10-03 11:41:43
   code: DLDX23y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7970"
-  label: "Ve?ejná zele?"
+  label: "Ve\xC5\x99ejn\xC3\xA1 zele\xC5\x88"
 subjects_367: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9064"
-  label: "Molhanec - Software v pr?myslovém inženýrství"
+  label: "Molhanec - Software v pr\xC5\xAFmyslov\xC3\xA9m in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
 subjects_499: 
   created_on: 2005-10-20 15:51:08
   code: 
@@ -2485,29 +2483,28 @@ subjects_103:
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "5917"
-  label: Kv?tiná?ství
+  label: "Kv\xC4\x9Btin\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_235: 
   created_on: 2005-10-03 11:41:45
   code: DELX08Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "8038"
-  label: "Portugalština - doktorské studium"
+  label: "Portugal\xC5\xA1tina - doktorsk\xC3\xA9 studium"
 subjects_368: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9065"
-  label: "drbal - objektová analýza a návrh"
+  label: "drbal - objektov\xC3\xA1 anal\xC3\xBDza a n\xC3\xA1vrh"
 subjects_104: 
   created_on: 2005-10-03 11:41:43
   code: DLRX09Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "6696"
-  label: "?ízení lesního
-    hospodá?ství"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD lesn\xC3\xADho hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_236: 
   created_on: 2005-10-03 11:41:40
   code: DIRI10Y
@@ -2521,28 +2518,28 @@ subjects_369:
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9066"
-  label: Metody získávání znalostí (IZI904)
+  label: "Metody z\xC3\xADsk\xC3\xA1v\xC3\xA1n\xC3\xAD znalost\xC3\xAD (IZI904)"
 subjects_105: 
   created_on: 2005-10-03 11:41:42
   code: DLRX12Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "6698"
-  label: "Oce?ování les?"
+  label: "Oce\xC5\x88ov\xC3\xA1n\xC3\xAD les\xC5\xAF"
 subjects_237: 
   created_on: 2005-10-03 11:41:40
   code: DIRI17Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8091"
-  label: Explantátové kultury
+  label: "Explant\xC3\xA1tov\xC3\xA9 kultury"
 subjects_106: 
   created_on: 2005-10-03 11:41:42
   code: DLRX11Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "6700"
-  label: "Oce?ování p?írodních zdroj?"
+  label: "Oce\xC5\x88ov\xC3\xA1n\xC3\xAD p\xC5\x99\xC3\xADrodn\xC3\xADch zdroj\xC5\xAF"
 subjects_238: 
   created_on: 2005-10-03 11:41:39
   code: DABX03Y
@@ -2556,14 +2553,14 @@ subjects_370:
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9067"
-  label: 128 AVK Architektury výpo?etních a komunika?ních systém?
+  label: "128 AVK Architektury v\xC3\xBDpo\xC4\x8Detn\xC3\xADch a komunika\xC4\x8Dn\xC3\xADch syst\xC3\xA9m\xC5\xAF"
 subjects_107: 
   created_on: 2005-10-03 11:41:39
   code: DAA01Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "6825"
-  label: Aplikovaná meteorologie a klimatologie
+  label: "Aplikovan\xC3\xA1 meteorologie a klimatologie"
 subjects_239: 
   created_on: 2005-10-03 11:41:40
   code: DIRI10
@@ -2577,56 +2574,56 @@ subjects_371:
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9068"
-  label: IT 903 Komunika?ní a distribuované informa?ní systémy
+  label: "IT 903 Komunika\xC4\x8Dn\xC3\xAD a distribuovan\xC3\xA9 informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my"
 subjects_108: 
   created_on: 2005-10-03 11:41:41
   code: DLDX15Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "6879"
-  label: Dendrologie lesnická
+  label: "Dendrologie lesnick\xC3\xA1"
 subjects_240: 
   created_on: 2005-10-03 11:41:39
   code: DACA04Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8820"
-  label: Chemie p?írodních látek
+  label: "Chemie p\xC5\x99\xC3\xADrodn\xC3\xADch l\xC3\xA1tek"
 subjects_372: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9069"
-  label: Sociální ekologie
+  label: "Soci\xC3\xA1ln\xC3\xAD ekologie"
 subjects_109: 
   created_on: 2005-10-03 11:41:42
   code: DLDX14Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "6881"
-  label: "Lesnick- botanika"
+  label: Lesnick- botanika
 subjects_241: 
   created_on: 2005-10-03 11:41:40
   code: DACA05Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8823"
-  label: Speciální analytická chemie
+  label: "Speci\xC3\xA1ln\xC3\xAD analytick\xC3\xA1 chemie"
 subjects_373: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9070"
-  label: Globální problémy životního prost?edí
+  label: "Glob\xC3\xA1ln\xC3\xAD probl\xC3\xA9my \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_110: 
   created_on: 2005-10-03 11:41:43
   code: DLDX23Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "6883"
-  label: "Ve-ejn- zele-"
+  label: Ve-ejn- zele-
 subjects_242: 
   created_on: 2005-10-03 11:41:39
   code: DACX01Y
@@ -2640,21 +2637,21 @@ subjects_374:
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9071"
-  label: Modelování a simulace biomedicínských systém?
+  label: "Modelov\xC3\xA1n\xC3\xAD a simulace biomedic\xC3\xADnsk\xC3\xBDch syst\xC3\xA9m\xC5\xAF"
 subjects_111: 
   created_on: 2005-10-03 11:41:43
   code: DLBX12Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "6929"
-  label: Protierozní ochrana p?dy
+  label: "Protierozn\xC3\xAD ochrana p\xC5\xAFdy"
 subjects_243: 
   created_on: 2005-10-03 11:41:40
   code: DACX02Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8831"
-  label: Speciální biochemie rostlin
+  label: "Speci\xC3\xA1ln\xC3\xAD biochemie rostlin"
 subjects_375: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2668,98 +2665,98 @@ subjects_112:
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "6932"
-  label: Malé vodní toky a nádrže
+  label: "Mal\xC3\xA9 vodn\xC3\xAD toky a n\xC3\xA1dr\xC5\xBEe"
 subjects_244: 
   created_on: 2005-10-03 11:41:40
   code: DACX03Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8833"
-  label: "Speciální biochemie živo?ich?"
+  label: "Speci\xC3\xA1ln\xC3\xAD biochemie \xC5\xBEivo\xC4\x8Dich\xC5\xAF"
 subjects_376: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9073"
-  label: Po?íta?e
+  label: "Po\xC4\x8D\xC3\xADta\xC4\x8De"
 subjects_113: 
   created_on: 2005-10-03 11:41:42
   code: DLBX22Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "6933"
-  label: Malé vodní toky a hrazení byst?in
+  label: "Mal\xC3\xA9 vodn\xC3\xAD toky a hrazen\xC3\xAD byst\xC5\x99in"
 subjects_245: 
   created_on: 2005-10-03 11:41:39
   code: DARA01Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8849"
-  label: "Hodnocení jakosti rostlinných produkt?"
+  label: "Hodnocen\xC3\xAD jakosti rostlinn\xC3\xBDch produkt\xC5\xAF"
 subjects_377: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9074"
-  label: Neur?itost v um?lé inteligenci   
+  label: "Neur\xC4\x8Ditost v um\xC4\x9Bl\xC3\xA9 inteligenci  \xC2\xA0"
 subjects_114: 
   created_on: 2005-10-03 11:41:42
   code: DLBX23Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "6934"
-  label: "Matematické modelování hydrologických proces?"
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD hydrologick\xC3\xBDch proces\xC5\xAF"
 subjects_246: 
   created_on: 2005-10-03 11:41:40
   code: DAPA02Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8851"
-  label: Speciální pedologie
+  label: "Speci\xC3\xA1ln\xC3\xAD pedologie"
 subjects_378: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9075"
-  label: "Školský management"
+  label: "\xC5\xA0kolsk\xC3\xBD management"
 subjects_115: 
   created_on: 2005-10-03 11:41:43
   code: DLBX24Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "6935"
-  label: Zásady vodního hospodá?ství a management povodí
+  label: "Z\xC3\xA1sady vodn\xC3\xADho hospod\xC3\xA1\xC5\x99stv\xC3\xAD a management povod\xC3\xAD"
 subjects_247: 
   created_on: 2005-10-03 11:41:39
   code: DADA04Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8856"
-  label: "Kvalita živo?išných produkt?"
+  label: "Kvalita \xC5\xBEivo\xC4\x8Di\xC5\xA1n\xC3\xBDch produkt\xC5\xAF"
 subjects_379: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9076"
-  label: "Školský management"
+  label: "\xC5\xA0kolsk\xC3\xBD management"
 subjects_800: 
   created_on: 2005-12-09 11:09:46
   code: 
   updated_on: 2005-12-09 11:09:46
   type: ExternalSubject
   id: "19416"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_116: 
   created_on: 2005-10-03 11:41:43
   code: DLPX02Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7002"
-  label: P?stování lesa DSP
+  label: "P\xC4\x9Bstov\xC3\xA1n\xC3\xAD lesa DSP"
 subjects_248: 
   created_on: 2005-10-03 11:41:39
   code: DAMA01Y
@@ -2773,7 +2770,7 @@ subjects_801:
   updated_on: 2005-12-09 11:09:46
   type: ExternalSubject
   id: "19417"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_117: 
   created_on: 2005-10-03 11:41:41
   code: DLDX13Y
@@ -2794,28 +2791,28 @@ subjects_802:
   updated_on: 2005-12-09 11:09:46
   type: ExternalSubject
   id: "19418"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_380: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9077"
-  label: Evropská integrace
+  label: "Evropsk\xC3\xA1 integrace"
 subjects_803: 
   created_on: 2005-12-09 11:14:10
   code: 
   updated_on: 2005-12-09 11:14:10
   type: ExternalSubject
   id: "19419"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_381: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9078"
-  label: Kombinatorická a výpo?etní geometrie
+  label: "Kombinatorick\xC3\xA1 a v\xC3\xBDpo\xC4\x8Detn\xC3\xAD geometrie"
 subjects_118: 
   created_on: 2005-10-03 11:41:42
   code: DLVX01Y
@@ -2829,14 +2826,14 @@ subjects_804:
   updated_on: 2005-12-09 11:14:10
   type: ExternalSubject
   id: "19420"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_250: 
   created_on: 2005-10-03 11:41:39
   code: DAHX01Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8891"
-  label: Agrochemie a výživa rostlin
+  label: "Agrochemie a v\xC3\xBD\xC5\xBEiva rostlin"
 subjects_382: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2850,42 +2847,42 @@ subjects_119:
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7064"
-  label: Vodní hospodá?ství
+  label: "Vodn\xC3\xAD hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_805: 
   created_on: 2005-12-09 11:14:10
   code: 
   updated_on: 2005-12-09 11:14:10
   type: ExternalSubject
   id: "19421"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_251: 
   created_on: 2005-10-03 11:41:39
   code: DAVX03Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8893"
-  label: "Fyziologie živo?ich?"
+  label: "Fyziologie \xC5\xBEivo\xC4\x8Dich\xC5\xAF"
 subjects_383: 
   created_on: 2005-10-14 08:58:10
   code: 
   updated_on: 2005-10-14 08:58:10
   type: ExternalSubject
   id: "9080"
-  label: "Úvod do matematického programování a polyedrální kombinatoriky"
+  label: "\xC3\x9Avod do matematick\xC3\xA9ho programov\xC3\xA1n\xC3\xAD a polyedr\xC3\xA1ln\xC3\xAD kombinatoriky"
 subjects_806: 
   created_on: 2005-12-09 11:39:14
   code: 
   updated_on: 2005-12-09 11:39:14
   type: ExternalSubject
   id: "19422"
-  label: Vlastnosti terénních vozidel
+  label: "Vlastnosti ter\xC3\xA9nn\xC3\xADch vozidel"
 subjects_120: 
   created_on: 2005-10-03 11:41:43
   code: DLVX19Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7066"
-  label: Zdravotní inženýrství
+  label: "Zdravotn\xC3\xAD in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
 subjects_252: 
   created_on: 2005-10-03 11:41:40
   code: DAGA04Y
@@ -2899,19 +2896,19 @@ subjects_384:
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19000"
-  label: Matematické modelování
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_807: 
   created_on: 2005-12-09 11:39:14
   code: 
   updated_on: 2005-12-09 11:39:14
   type: ExternalSubject
   id: "19423"
-  label: Traktorová technika v RV
+  label: "Traktorov\xC3\xA1 technika v RV"
 subjects_121: 
   created_on: 2005-10-03 11:41:42
   code: DLVX02Y
-  updated_on: 2006-01-20 10:35:34
-  type: ExternalSubject
+  updated_on: 2005-10-03 11:41:42
+  type: 
   id: "7068"
   label: Hydrologie a hydraulika
 subjects_253: 
@@ -2920,28 +2917,28 @@ subjects_253:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8901"
-  label: Molekularní genetika speciální
+  label: "Molekularn\xC3\xAD genetika speci\xC3\xA1ln\xC3\xAD"
 subjects_385: 
   created_on: 2005-10-17 09:36:02
   code: DTAX06Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19001"
-  label: P?íprava a vyhodnocení experimentu
+  label: "P\xC5\x99\xC3\xADprava a vyhodnocen\xC3\xAD experimentu"
 subjects_808: 
   created_on: 2005-12-09 11:39:14
   code: 
   updated_on: 2005-12-09 11:39:14
   type: ExternalSubject
   id: "19424"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_122: 
   created_on: 2005-10-03 11:41:43
   code: DLVX18Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7070"
-  label: Transport zne?išt?ní v povodí
+  label: "Transport zne\xC4\x8Di\xC5\xA1t\xC4\x9Bn\xC3\xAD v povod\xC3\xAD"
 subjects_254: 
   created_on: 2005-10-03 11:41:39
   code: DAEA01Y
@@ -2955,7 +2952,7 @@ subjects_386:
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19002"
-  label: Finan?ní matematika
+  label: "Finan\xC4\x8Dn\xC3\xAD matematika"
 subjects_809: 
   created_on: 2005-12-09 11:39:14
   code: 
@@ -2969,28 +2966,28 @@ subjects_123:
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7074"
-  label: Anatomie lesních d?evin
+  label: "Anatomie lesn\xC3\xADch d\xC5\x99evin"
 subjects_255: 
   created_on: 2005-10-03 11:41:39
   code: DAVA01Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8952"
-  label: Anatomie a fyziologie dr?beže
+  label: "Anatomie a fyziologie dr\xC5\xAFbe\xC5\xBEe"
 subjects_387: 
   created_on: 2005-10-17 09:36:02
   code: DTAT01Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19003"
-  label: Inženýrská matematika
+  label: "In\xC5\xBEen\xC3\xBDrsk\xC3\xA1 matematika"
 subjects_124: 
   created_on: 2005-10-03 11:41:41
   code: DLDX12Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7076"
-  label: Anatomie a fyziologie lesních d?evin
+  label: "Anatomie a fyziologie lesn\xC3\xADch d\xC5\x99evin"
 subjects_256: 
   created_on: 2005-10-03 11:41:39
   code: DAVX02Y
@@ -3004,35 +3001,35 @@ subjects_388:
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19004"
-  label: Inženýrská a finan?ní matematika
+  label: "In\xC5\xBEen\xC3\xBDrsk\xC3\xA1 a finan\xC4\x8Dn\xC3\xAD matematika"
 subjects_810: 
   created_on: 2005-12-09 11:39:14
   code: 
   updated_on: 2005-12-09 11:39:14
   type: ExternalSubject
   id: "19426"
-  label: "Projektování technologických proces?"
+  label: "Projektov\xC3\xA1n\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_125: 
   created_on: 2005-10-03 11:41:41
   code: DLDX18Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7078"
-  label: Fyziologie lesních d?evin
+  label: "Fyziologie lesn\xC3\xADch d\xC5\x99evin"
 subjects_257: 
   created_on: 2005-10-03 11:41:39
   code: DAOA16Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8954"
-  label: Biologická a nechemická ochrana rostlin
+  label: "Biologick\xC3\xA1 a nechemick\xC3\xA1 ochrana rostlin"
 subjects_389: 
   created_on: 2005-10-17 09:36:02
   code: DTCX07Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19005"
-  label: Transformace a využití energií
+  label: "Transformace a vyu\xC5\xBEit\xC3\xAD energi\xC3\xAD"
 subjects_126: 
   created_on: 2005-10-03 11:41:41
   code: DLDX16Y
@@ -3053,7 +3050,7 @@ subjects_811:
   updated_on: 2005-12-09 11:46:03
   type: ExternalSubject
   id: "19427"
-  label: "Dynamika rozvodných mechanism?"
+  label: "Dynamika rozvodn\xC3\xBDch mechanism\xC5\xAF"
 subjects_127: 
   created_on: 2005-10-03 11:41:42
   code: DLDX20Y
@@ -3067,14 +3064,14 @@ subjects_259:
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8956"
-  label: Genetika a šlecht?ní HZ
+  label: "Genetika a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD HZ"
 subjects_812: 
   created_on: 2005-12-09 11:46:03
   code: 
   updated_on: 2005-12-09 11:46:03
   type: ExternalSubject
   id: "19428"
-  label: Automobilové motory
+  label: "Automobilov\xC3\xA9 motory"
 subjects_128: 
   created_on: 2005-10-03 11:41:41
   code: DLPL01Y
@@ -3088,56 +3085,56 @@ subjects_390:
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19006"
-  label: "Teorie výrobních proces?"
+  label: "Teorie v\xC3\xBDrobn\xC3\xADch proces\xC5\xAF"
 subjects_813: 
   created_on: 2005-12-09 11:46:03
   code: 
   updated_on: 2005-12-09 11:46:03
   type: ExternalSubject
   id: "19429"
-  label: Info. systémy a po?íta?ové sít?
+  label: "Info. syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_391: 
   created_on: 2005-10-17 09:36:02
   code: DTBX17Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19007"
-  label: "Fyzikální a technologické vlastnosti zem?d?lských materiál? a produkt?"
+  label: "Fyzik\xC3\xA1ln\xC3\xAD a technologick\xC3\xA9 vlastnosti zem\xC4\x9Bd\xC4\x9Blsk\xC3\xBDch materi\xC3\xA1l\xC5\xAF a produkt\xC5\xAF"
 subjects_814: 
   created_on: 2005-12-09 11:46:03
   code: 
   updated_on: 2005-12-09 11:46:03
   type: ExternalSubject
   id: "19430"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_129: 
   created_on: 2005-10-03 11:41:44
   code: DEEE17Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "7097"
-  label: Evropská integrace
+  label: "Evropsk\xC3\xA1 integrace"
 subjects_260: 
   created_on: 2005-10-03 11:41:39
   code: DAGX03Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8957"
-  label: Genetika zví?at
+  label: "Genetika zv\xC3\xAD\xC5\x99at"
 subjects_392: 
   created_on: 2005-10-17 09:36:02
   code: DTBT18Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19008"
-  label: Fyzikální energetika
+  label: "Fyzik\xC3\xA1ln\xC3\xAD energetika"
 subjects_815: 
   created_on: 2005-12-09 11:46:03
   code: 
   updated_on: 2005-12-09 11:46:03
   type: ExternalSubject
   id: "19431"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_261: 
   created_on: 2005-10-03 11:41:39
   code: DAAA02Y
@@ -3151,21 +3148,21 @@ subjects_393:
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19009"
-  label: "Obnova stroj? a po?íta?ová podpora ?ízení údržby"
+  label: "Obnova stroj\xC5\xAF a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA1 podpora \xC5\x99\xC3\xADzen\xC3\xAD \xC3\xBAdr\xC5\xBEby"
 subjects_816: 
   created_on: 2005-12-09 12:57:04
   code: 
   updated_on: 2005-12-09 12:57:04
   type: ExternalSubject
   id: "19432"
-  label: "Biotechnologické zpracování organických odpad?"
+  label: "Biotechnologick\xC3\xA9 zpracov\xC3\xA1n\xC3\xAD organick\xC3\xBDch odpad\xC5\xAF"
 subjects_130: 
   created_on: 2005-10-03 11:41:42
   code: DLUX01Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7101"
-  label: "Krajinn- ekologie"
+  label: Krajinn- ekologie
 subjects_262: 
   created_on: 2005-10-03 11:41:39
   code: DAPA03Y
@@ -3186,63 +3183,63 @@ subjects_817:
   updated_on: 2005-12-09 12:57:04
   type: ExternalSubject
   id: "19433"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_131: 
   created_on: 2005-10-03 11:41:41
   code: DLUX05Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7103"
-  label: "Ekologické aplikace v krajin?"
+  label: "Ekologick\xC3\xA9 aplikace v krajin\xC4\x9B"
 subjects_263: 
   created_on: 2005-10-03 11:41:39
   code: DAOA15Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8960"
-  label: Choroby polních a zahradních plodin
+  label: "Choroby poln\xC3\xADch a zahradn\xC3\xADch plodin"
 subjects_395: 
   created_on: 2005-10-17 09:36:02
   code: DTJT21Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19011"
-  label: "Jakost, spolehlivost a servisní logistika stroj?"
+  label: "Jakost, spolehlivost a servisn\xC3\xAD logistika stroj\xC5\xAF"
 subjects_818: 
   created_on: 2005-12-09 12:57:04
   code: 
   updated_on: 2005-12-09 12:57:04
   type: ExternalSubject
   id: "19434"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_132: 
   created_on: 2005-10-03 11:41:42
   code: DLDX17Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7121"
-  label: Lesnická genetika a šlecht?ní lesních d?evin
+  label: "Lesnick\xC3\xA1 genetika a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD lesn\xC3\xADch d\xC5\x99evin"
 subjects_264: 
   created_on: 2005-10-03 11:41:39
   code: DADA01Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8961"
-  label: Chov dr?beže
+  label: "Chov dr\xC5\xAFbe\xC5\xBEe"
 subjects_396: 
   created_on: 2005-10-17 09:36:02
   code: DTJT22Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19012"
-  label: "Technologie udržování, diagnostiky a oprav stroj?"
+  label: "Technologie udr\xC5\xBEov\xC3\xA1n\xC3\xAD, diagnostiky a oprav stroj\xC5\xAF"
 subjects_819: 
   created_on: 2005-12-09 12:57:04
   code: 
   updated_on: 2005-12-09 12:57:04
   type: ExternalSubject
   id: "19435"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_001: 
   created_on: 2005-10-26 09:04:37
   code: XXXXXX
@@ -3256,84 +3253,84 @@ subjects_133:
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7122"
-  label: Moderní metody ve šlecht?ní lesních d?evin
+  label: "Modern\xC3\xAD metody ve \xC5\xA1lecht\xC4\x9Bn\xC3\xAD lesn\xC3\xADch d\xC5\x99evin"
 subjects_265: 
   created_on: 2005-10-03 11:41:39
   code: DASA06Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8962"
-  label: Chov koní
+  label: "Chov kon\xC3\xAD"
 subjects_397: 
   created_on: 2005-10-17 09:36:02
   code: DTDT23Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19013"
-  label: Konstruk?ní materiály a strojírenská technologie
+  label: "Konstruk\xC4\x8Dn\xC3\xAD materi\xC3\xA1ly a stroj\xC3\xADrensk\xC3\xA1 technologie"
 subjects_002: 
   created_on: 2005-10-03 11:41:43
   code: DELX01Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "1133"
-  label: "Angli?tina - doktorské studium"
+  label: "Angli\xC4\x8Dtina - doktorsk\xC3\xA9 studium"
 subjects_134: 
   created_on: 2005-10-03 11:41:43
   code: DLDX25Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7124"
-  label: "Šlechtitelské strategie a programy pro lesní d?eviny"
+  label: "\xC5\xA0lechtitelsk\xC3\xA9 strategie a programy pro lesn\xC3\xAD d\xC5\x99eviny"
 subjects_266: 
   created_on: 2005-10-03 11:41:39
   code: DADA02Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8963"
-  label: "Chov kožešinových zví?at a králík?"
+  label: "Chov ko\xC5\xBEe\xC5\xA1inov\xC3\xBDch zv\xC3\xAD\xC5\x99at a kr\xC3\xA1l\xC3\xADk\xC5\xAF"
 subjects_398: 
   created_on: 2005-10-17 09:36:02
   code: DTCT24Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19014"
-  label: Technická termomechanika
+  label: "Technick\xC3\xA1 termomechanika"
 subjects_820: 
   created_on: 2005-12-09 12:59:37
   code: 
   updated_on: 2005-12-09 12:59:37
   type: ExternalSubject
   id: "19436"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_003: 
   created_on: 2005-10-03 11:41:45
   code: DELX05Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1134"
-  label: "N?m?ina  - doktorské studium"
+  label: "N\xC4\x9Bm\xC4\x8Dina  - doktorsk\xC3\xA9 studium"
 subjects_135: 
   created_on: 2005-10-03 11:41:43
   code: DLDX26Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7126"
-  label: "Zachování a využívání genetických zdroj? lesních d?evin"
+  label: "Zachov\xC3\xA1n\xC3\xAD a vyu\xC5\xBE\xC3\xADv\xC3\xA1n\xC3\xAD genetick\xC3\xBDch zdroj\xC5\xAF lesn\xC3\xADch d\xC5\x99evin"
 subjects_267: 
   created_on: 2005-10-03 11:41:39
   code: DASA05Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8964"
-  label: Chov ovcí
+  label: "Chov ovc\xC3\xAD"
 subjects_399: 
   created_on: 2005-10-17 09:36:02
   code: DTCX25Y
   updated_on: 2005-10-17 09:36:02
   type: 
   id: "19015"
-  label: Alternativní zdroje energie
+  label: "Alternativn\xC3\xAD zdroje energie"
 subjects_821: 
   created_on: 2005-12-09 12:59:37
   code: 
@@ -3347,14 +3344,14 @@ subjects_004:
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1135"
-  label: "Francouzština  - doktorské studium"
+  label: "Francouz\xC5\xA1tina  - doktorsk\xC3\xA9 studium"
 subjects_136: 
   created_on: 2005-10-03 11:41:43
   code: DLBX31Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7139"
-  label: "Úprava vláhového režimu p?d"
+  label: "\xC3\x9Aprava vl\xC3\xA1hov\xC3\xA9ho re\xC5\xBEimu p\xC5\xAFd"
 subjects_268: 
   created_on: 2005-10-03 11:41:39
   code: DADA03Y
@@ -3368,15 +3365,14 @@ subjects_005:
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1136"
-  label: "Špan?lština  - doktorské studium"
+  label: "\xC5\xA0pan\xC4\x9Bl\xC5\xA1tina  - doktorsk\xC3\xA9 studium"
 subjects_137: 
   created_on: 2005-10-03 11:41:43
   code: DLUX04Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7141"
-  label: "Posuzovaní vliv? na
-    životní prost?edí"
+  label: "Posuzovan\xC3\xAD vliv\xC5\xAF na \xC5\xBEivotn\xC3\xAD prost\xC5\x99ed\xC3\xAD"
 subjects_269: 
   created_on: 2005-10-03 11:41:39
   code: dasa01y
@@ -3390,35 +3386,35 @@ subjects_822:
   updated_on: 2005-12-09 12:59:37
   type: ExternalSubject
   id: "19438"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_006: 
   created_on: 2005-10-03 11:41:45
   code: DELX06Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1137"
-  label: "Ruština  - doktorské studium"
+  label: "Ru\xC5\xA1tina  - doktorsk\xC3\xA9 studium"
 subjects_138: 
   created_on: 2005-10-03 11:41:42
   code: DLOX02Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7143"
-  label: "Ochrana les? lesnická fytopatologie"
+  label: "Ochrana les\xC5\xAF lesnick\xC3\xA1 fytopatologie"
 subjects_823: 
   created_on: 2005-12-09 13:05:19
   code: 
   updated_on: 2005-12-09 13:05:19
   type: ExternalSubject
   id: "19439"
-  label: Moderní metody ?ízení st.s.
+  label: "Modern\xC3\xAD metody \xC5\x99\xC3\xADzen\xC3\xAD st.s."
 subjects_007: 
   created_on: 2005-10-03 11:41:44
   code: DELX04Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1138"
-  label: "Italština  - doktorské studium"
+  label: "Ital\xC5\xA1tina  - doktorsk\xC3\xA9 studium"
 subjects_139: 
   created_on: 2005-10-03 11:41:42
   code: DLOX03Y
@@ -3432,57 +3428,56 @@ subjects_824:
   updated_on: 2005-12-09 16:10:34
   type: ExternalSubject
   id: "19440"
-  label: Uzemní plánování 3
+  label: "Uzemn\xC3\xAD pl\xC3\xA1nov\xC3\xA1n\xC3\xAD 3"
 subjects_270: 
   created_on: 2005-10-03 11:41:39
   code: DATA01Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8967"
-  label: Luka?ství
+  label: "Luka\xC5\x99stv\xC3\xAD"
 subjects_825: 
   created_on: 2005-12-09 16:10:34
   code: 
   updated_on: 2005-12-09 16:10:34
   type: ExternalSubject
   id: "19441"
-  label: Zpracování ÚPD technologií GIS
+  label: "Zpracov\xC3\xA1n\xC3\xAD \xC3\x9APD technologi\xC3\xAD GIS"
 subjects_271: 
   created_on: 2005-10-03 11:41:39
   code: DAOA04Y
   updated_on: 2005-10-03 11:41:39
   type: 
   id: "8968"
-  label: Metody v zem?d?lské entomologii
+  label: "Metody v\xC2\xA0zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA9 entomologii"
 subjects_008: 
   created_on: 2005-10-03 11:41:44
   code: DELX02Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1139"
-  label: "?eština  - doktorské studium"
+  label: "\xC4\x8Ce\xC5\xA1tina  - doktorsk\xC3\xA9 studium"
 subjects_826: 
   created_on: 2005-12-14 08:44:36
   code: 
   updated_on: 2005-12-14 08:44:36
   type: ExternalSubject
   id: "19442"
-  label: "Metody m??ení energet. parametr?
-    zem?d?lských operací"
+  label: "Metody m\xC4\x9B\xC5\x99en\xC3\xAD energet. parametr\xC5\xAF zem\xC4\x9Bd\xC4\x9Blsk\xC3\xBDch operac\xC3\xAD"
 subjects_140: 
   created_on: 2005-10-03 11:41:43
   code: DLDX22Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7148"
-  label: Regionální dendrologie
+  label: "Region\xC3\xA1ln\xC3\xAD dendrologie"
 subjects_272: 
   created_on: 2005-10-03 11:41:40
   code: DASA02Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8969"
-  label: Mléka?ství
+  label: "Ml\xC3\xA9ka\xC5\x99stv\xC3\xAD"
 subjects_009: 
   created_on: 2005-10-03 11:41:44
   code: DENE05Y
@@ -3496,28 +3491,28 @@ subjects_827:
   updated_on: 2005-12-14 08:44:36
   type: ExternalSubject
   id: "19443"
-  label: Info. systémy a po?íta?ové sít?
+  label: "Info. syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_141: 
   created_on: 2005-10-03 11:41:43
   code: DLDX24Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7150"
-  label: Speciální dendrologie
+  label: "Speci\xC3\xA1ln\xC3\xAD dendrologie"
 subjects_273: 
   created_on: 2005-10-03 11:41:40
   code: DAGX02Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8970"
-  label: Molekulární genetika a šlecht?ní rostlin
+  label: "Molekul\xC3\xA1rn\xC3\xAD genetika a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD rostlin"
 subjects_828: 
   created_on: 2005-12-14 08:44:36
   code: 
   updated_on: 2005-12-14 08:44:36
   type: ExternalSubject
   id: "19444"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_010: 
   created_on: 2005-10-03 11:41:45
   code: DENE04Y
@@ -3531,148 +3526,147 @@ subjects_142:
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7152"
-  label: D?eviny v rámci systému rostlin
+  label: "D\xC5\x99eviny v r\xC3\xA1mci syst\xC3\xA9mu rostlin"
 subjects_274: 
   created_on: 2005-10-03 11:41:40
   code: DAOA08Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8971"
-  label: "Monitoring a management v ochran? rostlin"
+  label: "Monitoring a management v\xC2\xA0ochran\xC4\x9B rostlin"
 subjects_829: 
   created_on: 2005-12-14 08:44:36
   code: 
   updated_on: 2005-12-14 08:44:36
   type: ExternalSubject
   id: "19445"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_011: 
   created_on: 2005-10-03 11:41:44
   code: DEIX32Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1323"
-  label: Informa?ní systémy
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my"
 subjects_143: 
   created_on: 2005-10-03 11:41:41
   code: DIRI13Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7159"
-  label: Rostlinná výroba v tropech a subtropech
+  label: "Rostlinn\xC3\xA1 v\xC3\xBDroba v tropech a subtropech"
 subjects_275: 
   created_on: 2005-10-03 11:41:40
   code: DARA05Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8972"
-  label: "Nauka o rostlinné produkci - spec. produkce rost."
+  label: "Nauka o rostlinn\xC3\xA9 produkci - spec. produkce rost."
 subjects_012: 
   created_on: 2005-10-03 11:41:44
   code: DEEE05Y
   updated_on: 2005-10-24 08:56:04
   type: 
   id: "1328"
-  label: "EKONOMIKA - doktorské studium"
+  label: "EKONOMIKA - doktorsk\xC3\xA9 studium"
 subjects_144: 
   created_on: 2005-10-03 11:41:41
   code: DIRI02Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7163"
-  label: Speciální produkce rostlinnáv tropech a subtropech
+  label: "Speci\xC3\xA1ln\xC3\xAD produkce rostlinn\xC3\xA1v tropech a subtropech"
 subjects_276: 
   created_on: 2005-10-03 11:41:40
   code: DAOA01Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8973"
-  label: Nematologie obecná a speciální
+  label: "Nematologie obecn\xC3\xA1 a speci\xC3\xA1ln\xC3\xAD"
 subjects_830: 
   created_on: 2005-12-14 08:44:40
   code: 
   updated_on: 2005-12-14 08:44:40
   type: ExternalSubject
   id: "19446"
-  label: "Metody m??ení energet. parametr?
-    zem?d?lských operací"
+  label: "Metody m\xC4\x9B\xC5\x99en\xC3\xAD energet. parametr\xC5\xAF zem\xC4\x9Bd\xC4\x9Blsk\xC3\xBDch operac\xC3\xAD"
 subjects_013: 
   created_on: 2005-10-03 11:41:44
   code: DEEE07Y
   updated_on: 2005-10-24 08:56:34
   type: 
   id: "1330"
-  label: "Ekonometrie  - Kvantitativní metody pro doktorský obor Odv?tvová a podniková ekonomika"
+  label: "Ekonometrie  - Kvantitativn\xC3\xAD metody pro doktorsk\xC3\xBD obor Odv\xC4\x9Btvov\xC3\xA1 a podnikov\xC3\xA1 ekonomika"
 subjects_145: 
   created_on: 2005-10-03 11:41:41
   code: DIRI16Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7167"
-  label: "Šlecht?ní rostlin a semená?ství v tropecha a subtropech"
+  label: "\xC5\xA0lecht\xC4\x9Bn\xC3\xAD rostlin a semen\xC3\xA1\xC5\x99stv\xC3\xAD v tropecha a subtropech"
 subjects_277: 
   created_on: 2005-10-03 11:41:40
   code: DAOA14Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8974"
-  label: Obecná fytopatologie
+  label: "Obecn\xC3\xA1 fytopatologie"
 subjects_831: 
   created_on: 2005-12-14 08:44:40
   code: 
   updated_on: 2005-12-14 08:44:40
   type: ExternalSubject
   id: "19447"
-  label: Info. systémy a po?íta?ové sít?
+  label: "Info. syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_014: 
   created_on: 2005-10-03 11:41:46
   code: DEAE01
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1331"
-  label: "Systémová metodologie (Kvantitativní metody - Matematické modelování)"
+  label: "Syst\xC3\xA9mov\xC3\xA1 metodologie (Kvantitativn\xC3\xAD metody - Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD)"
 subjects_146: 
   created_on: 2005-10-03 11:41:41
   code: DIRI01Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7169"
-  label: Obecná produkce rostlinná v TS
+  label: "Obecn\xC3\xA1 produkce rostlinn\xC3\xA1 v TS"
 subjects_278: 
   created_on: 2005-10-03 11:41:40
   code: DAAA03Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8975"
-  label: Obecná produkce rostlinná
+  label: "Obecn\xC3\xA1 produkce rostlinn\xC3\xA1"
 subjects_832: 
   created_on: 2005-12-14 08:44:40
   code: 
   updated_on: 2005-12-14 08:44:40
   type: ExternalSubject
   id: "19448"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_015: 
   created_on: 2005-10-03 11:41:44
   code: DEEE01Y
   updated_on: 2005-10-24 08:57:04
   type: 
   id: "1332"
-  label: EKONOMIE pro doktorský obor Management
+  label: "EKONOMIE pro doktorsk\xC3\xBD obor Management"
 subjects_147: 
   created_on: 2005-10-03 11:41:41
   code: DIZI04Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7175"
-  label: Chov dr?beže v TS
+  label: "Chov dr\xC5\xAFbe\xC5\xBEe v TS"
 subjects_279: 
   created_on: 2005-10-03 11:41:40
   code: DAOA12Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8976"
-  label: Obecná rostlinoléka?ská zoologie
+  label: "Obecn\xC3\xA1 rostlinol\xC3\xA9ka\xC5\x99sk\xC3\xA1 zoologie"
 subjects_700: 
   created_on: 2005-11-09 12:28:16
   code: 
@@ -3686,7 +3680,7 @@ subjects_016:
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1333"
-  label: Mezinárodní obchod
+  label: "Mezin\xC3\xA1rodn\xC3\xAD obchod"
 subjects_148: 
   created_on: 2005-10-03 11:41:41
   code: DIZI05Y
@@ -3700,70 +3694,70 @@ subjects_833:
   updated_on: 2005-12-14 08:44:40
   type: ExternalSubject
   id: "19449"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_017: 
   created_on: 2005-10-03 11:41:44
   code: DEEE04Y
   updated_on: 2005-10-24 08:57:26
   type: 
   id: "1334"
-  label: EKONOMIKA pro doktorské studium oboru Informa?ní mamagement
+  label: "EKONOMIKA pro doktorsk\xC3\xA9 studium oboru Informa\xC4\x8Dn\xC3\xAD mamagement"
 subjects_149: 
   created_on: 2005-10-03 11:41:41
   code: DIZI09Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7179"
-  label: Chov ovcí v TS
+  label: "Chov ovc\xC3\xAD v TS"
 subjects_701: 
   created_on: 2005-11-09 14:12:05
   code: 
   updated_on: 2005-11-09 14:12:05
   type: ExternalSubject
   id: "19317"
-  label: Chov koní
+  label: "Chov kon\xC3\xAD"
 subjects_834: 
   created_on: 2005-12-14 08:47:27
   code: 
   updated_on: 2005-12-14 08:47:27
   type: ExternalSubject
   id: "19450"
-  label: Moderní metody ?ízení st.s.
+  label: "Modern\xC3\xAD metody \xC5\x99\xC3\xADzen\xC3\xAD st.s."
 subjects_018: 
   created_on: 2005-10-03 11:41:44
   code: DEEE06Y
   updated_on: 2005-10-24 08:57:50
   type: 
   id: "1335"
-  label: Ekonomika výrobkových vertikál
+  label: "Ekonomika v\xC3\xBDrobkov\xC3\xBDch vertik\xC3\xA1l"
 subjects_702: 
   created_on: 2005-11-10 11:35:16
   code: 
   updated_on: 2005-11-10 11:35:16
   type: ExternalSubject
   id: "19318"
-  label: D?eviny v rámci systému rostlin
+  label: "D\xC5\x99eviny v r\xC3\xA1mci syst\xC3\xA9mu rostlin"
 subjects_280: 
   created_on: 2005-10-03 11:41:40
   code: DAGX05Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8977"
-  label: Obecná zootechnika
+  label: "Obecn\xC3\xA1 zootechnika"
 subjects_835: 
   created_on: 2005-12-14 08:47:27
   code: 
   updated_on: 2005-12-14 08:47:27
   type: ExternalSubject
   id: "19451"
-  label: Teorie m??ících systém?
+  label: "Teorie m\xC4\x9B\xC5\x99\xC3\xADc\xC3\xADch syst\xC3\xA9m\xC5\xAF"
 subjects_703: 
   created_on: 2005-11-10 11:35:16
   code: 
   updated_on: 2005-11-10 11:35:16
   type: ExternalSubject
   id: "19319"
-  label: Tropická  a subtropická dendrologie
+  label: "Tropick\xC3\xA1  a subtropick\xC3\xA1 dendrologie"
 subjects_281: 
   created_on: 2005-10-03 11:41:40
   code: DARA02Y
@@ -3777,14 +3771,14 @@ subjects_836:
   updated_on: 2005-12-14 08:47:27
   type: ExternalSubject
   id: "19452"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_019: 
   created_on: 2005-10-03 11:41:44
   code: DEEE10
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1336"
-  label: MATEMATICKÁ EKONOMIE pro doktorský obor Systémové inženýrství
+  label: "MATEMATICK\xC3\x81 EKONOMIE pro doktorsk\xC3\xBD obor Syst\xC3\xA9mov\xC3\xA9 in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
 subjects_704: 
   created_on: 2005-11-10 13:37:57
   code: 
@@ -3805,28 +3799,28 @@ subjects_282:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8979"
-  label: Ochrana okrasných rostlin
+  label: "Ochrana okrasn\xC3\xBDch rostlin"
 subjects_837: 
   created_on: 2005-12-14 08:47:27
   code: 
   updated_on: 2005-12-14 08:47:27
   type: ExternalSubject
   id: "19453"
-  label: "?ízení"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD"
 subjects_705: 
   created_on: 2005-11-21 12:19:48
   code: 
   updated_on: 2005-11-21 12:19:48
   type: ExternalSubject
   id: "19321"
-  label: Odv?tvová ekonomika a ?ízení podniku
+  label: "Odv\xC4\x9Btvov\xC3\xA1 ekonomika a \xC5\x99\xC3\xADzen\xC3\xAD podniku"
 subjects_151: 
   created_on: 2005-10-03 11:41:41
   code: DIZI01Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7183"
-  label: Speciální zootechnika v TS
+  label: "Speci\xC3\xA1ln\xC3\xAD zootechnika v TS"
 subjects_283: 
   created_on: 2005-10-03 11:41:40
   code: DAOX02Y
@@ -3840,28 +3834,28 @@ subjects_838:
   updated_on: 2005-12-14 08:47:27
   type: ExternalSubject
   id: "19454"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_706: 
   created_on: 2005-11-21 12:19:48
   code: 
   updated_on: 2005-11-21 12:19:48
   type: ExternalSubject
   id: "19322"
-  label: Mechaniza?ní pr.
+  label: "Mechaniza\xC4\x8Dn\xC3\xAD pr."
 subjects_020: 
   created_on: 2005-10-03 11:41:44
   code: DEEE09
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1337"
-  label: Ekonomika a politika životního prost?edí
+  label: "Ekonomika a politika \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_152: 
   created_on: 2005-10-03 11:41:41
   code: DIZI03Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7185"
-  label: Výživa a krmení hospodá?ských zví?at v TS
+  label: "V\xC3\xBD\xC5\xBEiva a krmen\xC3\xAD hospod\xC3\xA1\xC5\x99sk\xC3\xBDch zv\xC3\xAD\xC5\x99at v TS"
 subjects_284: 
   created_on: 2005-10-03 11:41:40
   code: DARA04Y
@@ -3875,63 +3869,63 @@ subjects_839:
   updated_on: 2005-12-14 11:08:27
   type: ExternalSubject
   id: "19455"
-  label: "Zpracování obrazových záznam? v dpz"
+  label: "Zpracov\xC3\xA1n\xC3\xAD obrazov\xC3\xBDch z\xC3\xA1znam\xC5\xAF v dpz"
 subjects_707: 
   created_on: 2005-11-21 13:56:01
   code: 
   updated_on: 2005-11-21 13:56:01
   type: ExternalSubject
   id: "19323"
-  label: Technické materiály na bázi d?eva
+  label: "Technick\xC3\xA9 materi\xC3\xA1ly na b\xC3\xA1zi d\xC5\x99eva"
 subjects_021: 
   created_on: 2005-10-03 11:41:43
   code: DEEE08
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "1338"
-  label: "Agrární politika - pro doktorské studium"
+  label: "Agr\xC3\xA1rn\xC3\xAD politika - pro doktorsk\xC3\xA9 studium"
 subjects_153: 
   created_on: 2005-10-03 11:41:41
   code: DIZI06Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7187"
-  label: Výroba krmných sm?sí v TS
+  label: "V\xC3\xBDroba krmn\xC3\xBDch sm\xC4\x9Bs\xC3\xAD v TS"
 subjects_285: 
   created_on: 2005-10-03 11:41:40
   code: DATA02Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8982"
-  label: Pastviná?ství
+  label: "Pastvin\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_708: 
   created_on: 2005-11-21 13:56:01
   code: 
   updated_on: 2005-11-21 13:56:01
   type: ExternalSubject
   id: "19324"
-  label: Lepidla a nát?rové hmoty
+  label: "Lepidla a n\xC3\xA1t\xC4\x9Brov\xC3\xA9 hmoty"
 subjects_022: 
   created_on: 2005-10-03 11:41:44
   code: DEEE03
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1339"
-  label: "INVESTICE A DLOUHODOBÉ FINANCOVÁNÍ - doktorské studium"
+  label: "INVESTICE A DLOUHODOB\xC3\x89 FINANCOV\xC3\x81N\xC3\x8D - doktorsk\xC3\xA9 studium"
 subjects_154: 
   created_on: 2005-10-03 11:41:41
   code: DLEX45Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7190"
-  label: Ekologické zát?že
+  label: "Ekologick\xC3\xA9 z\xC3\xA1t\xC4\x9B\xC5\xBEe"
 subjects_286: 
   created_on: 2005-10-03 11:41:40
   code: DARA03Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8983"
-  label: P?stování okopanin
+  label: "P\xC4\x9Bstov\xC3\xA1n\xC3\xAD okopanin"
 subjects_840: 
   created_on: 2005-12-14 11:08:27
   code: 
@@ -3945,14 +3939,14 @@ subjects_709:
   updated_on: 2005-11-21 13:56:01
   type: ExternalSubject
   id: "19325"
-  label: "?ízení jakosti"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD jakosti"
 subjects_023: 
   created_on: 2005-10-03 11:41:45
   code: DESE01Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1340"
-  label: "STATISTIKA - pro doktorské studium"
+  label: "STATISTIKA - pro doktorsk\xC3\xA9 studium"
 subjects_155: 
   created_on: 2005-10-03 11:41:41
   code: DLEX33Y
@@ -3966,7 +3960,7 @@ subjects_287:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8984"
-  label: "Pícniny na orné p?d?"
+  label: "P\xC3\xADcniny na orn\xC3\xA9 p\xC5\xAFd\xC4\x9B"
 subjects_841: 
   created_on: 2005-12-14 11:08:27
   code: 
@@ -3980,7 +3974,7 @@ subjects_024:
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1351"
-  label: Teorie systém? a aplikovaná systémová v?da
+  label: "Teorie syst\xC3\xA9m\xC5\xAF a aplikovan\xC3\xA1 syst\xC3\xA9mov\xC3\xA1 v\xC4\x9Bda"
 subjects_156: 
   created_on: 2005-10-03 11:41:41
   code: DLEX35Y
@@ -4008,14 +4002,14 @@ subjects_710:
   updated_on: 2005-11-22 09:43:17
   type: ExternalSubject
   id: "19326"
-  label: D?jiny nábytku
+  label: "D\xC4\x9Bjiny n\xC3\xA1bytku"
 subjects_025: 
   created_on: 2005-10-03 11:41:44
   code: DEAE09Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1352"
-  label: "M?kké systémy, metodologie a aplikace"
+  label: "M\xC4\x9Bkk\xC3\xA9 syst\xC3\xA9my, metodologie a aplikace"
 subjects_157: 
   created_on: 2005-10-03 11:41:42
   code: DLOX04Y
@@ -4029,63 +4023,63 @@ subjects_289:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8986"
-  label: Prevence parazitóz HZ
+  label: "Prevence parazit\xC3\xB3z HZ"
 subjects_843: 
   created_on: 2005-12-15 16:03:27
   code: 
   updated_on: 2005-12-15 16:03:27
   type: ExternalSubject
   id: "19459"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_711: 
   created_on: 2005-11-22 09:43:17
   code: 
   updated_on: 2005-11-22 09:43:17
   type: ExternalSubject
   id: "19327"
-  label: Lepidla a nát?rové hmoty
+  label: "Lepidla a n\xC3\xA1t\xC4\x9Brov\xC3\xA9 hmoty"
 subjects_026: 
   created_on: 2005-10-03 11:41:46
   code: DEJE01Y
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1355"
-  label: Vybrané kapitoly z práva
+  label: "Vybran\xC3\xA9 kapitoly z pr\xC3\xA1va"
 subjects_158: 
   created_on: 2005-10-03 11:41:43
   code: DLBX11Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7205"
-  label: PozemkovÚ ?pravy
+  label: "Pozemkov\xC3\x9A \xCB\x99pravy"
 subjects_027: 
   created_on: 2005-10-03 11:41:44
   code: DEIX31Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1356"
-  label: Informa?ní inženýrství
+  label: "Informa\xC4\x8Dn\xC3\xAD in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
 subjects_159: 
   created_on: 2005-10-03 11:41:43
   code: DLSX01Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7214"
-  label: Urbanismus venkova a územní plánování
+  label: "Urbanismus venkova a \xC3\xBAzemn\xC3\xAD pl\xC3\xA1nov\xC3\xA1n\xC3\xAD"
 subjects_844: 
   created_on: 2005-12-15 17:15:21
   code: 
   updated_on: 2005-12-15 17:15:21
   type: ExternalSubject
   id: "19460"
-  label: Právní úprava podnikání
+  label: "Pr\xC3\xA1vn\xC3\xAD \xC3\xBAprava podnik\xC3\xA1n\xC3\xAD"
 subjects_712: 
   created_on: 2005-11-22 09:47:44
   code: 
   updated_on: 2005-11-22 09:47:44
   type: ExternalSubject
   id: "19328"
-  label: Konstrukce nábytku
+  label: "Konstrukce n\xC3\xA1bytku"
 subjects_290: 
   created_on: 2005-10-03 11:41:40
   code: DASA03Y
@@ -4099,35 +4093,35 @@ subjects_028:
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1357"
-  label: "Matematická teorie program?"
+  label: "Matematick\xC3\xA1 teorie program\xC5\xAF"
 subjects_845: 
   created_on: 2005-12-15 18:41:46
   code: 
   updated_on: 2005-12-15 18:41:46
   type: ExternalSubject
   id: "19461"
-  label: Dendrologie lesnická
+  label: "Dendrologie lesnick\xC3\xA1"
 subjects_713: 
   created_on: 2005-11-22 09:47:44
   code: 
   updated_on: 2005-11-22 09:47:44
   type: ExternalSubject
   id: "19329"
-  label: Hygiena práce a ergonomie
+  label: "Hygiena pr\xC3\xA1ce a ergonomie"
 subjects_291: 
   created_on: 2005-10-03 11:41:40
   code: DAOA05Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8988"
-  label: Rostlinná virologie
+  label: "Rostlinn\xC3\xA1 virologie"
 subjects_029: 
   created_on: 2005-10-03 11:41:46
   code: DEIX14Y
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1358"
-  label: Um?lá inteligence a znalostní inženýrství
+  label: "Um\xC4\x9Bl\xC3\xA1 inteligence a znalostn\xC3\xAD in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
 subjects_846: 
   created_on: 2005-12-16 14:54:32
   code: 
@@ -4141,7 +4135,7 @@ subjects_714:
   updated_on: 2005-11-22 09:47:44
   type: ExternalSubject
   id: "19330"
-  label: Tech. mater. na bázi d?eva
+  label: "Tech. mater. na b\xC3\xA1zi d\xC5\x99eva"
 subjects_160: 
   created_on: 2005-10-03 11:41:42
   code: DLSX06Y
@@ -4155,154 +4149,154 @@ subjects_292:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8989"
-  label: Rostlinoléka?ská bakteriologie
+  label: "Rostlinol\xC3\xA9ka\xC5\x99sk\xC3\xA1 bakteriologie"
 subjects_847: 
   created_on: 2005-12-16 14:54:32
   code: 
   updated_on: 2005-12-16 14:54:32
   type: ExternalSubject
   id: "19463"
-  label: Vozidlové mechanizmy
+  label: "Vozidlov\xC3\xA9 mechanizmy"
 subjects_715: 
   created_on: 2005-11-22 09:51:36
   code: 
   updated_on: 2005-11-22 09:51:36
   type: ExternalSubject
   id: "19331"
-  label: Obráb?ní d?eva
+  label: "Obr\xC3\xA1b\xC4\x9Bn\xC3\xAD d\xC5\x99eva"
 subjects_161: 
   created_on: 2005-10-03 11:41:42
   code: DLTX63Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7220"
-  label: Lesní dopravnictví
+  label: "Lesn\xC3\xAD dopravnictv\xC3\xAD"
 subjects_293: 
   created_on: 2005-10-03 11:41:40
   code: DAOA06Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8990"
-  label: Rostlinoléka?ská mykologie
+  label: "Rostlinol\xC3\xA9ka\xC5\x99sk\xC3\xA1 mykologie"
 subjects_848: 
   created_on: 2005-12-19 18:56:21
   code: 
   updated_on: 2005-12-19 18:56:21
   type: ExternalSubject
   id: "19464"
-  label: Meteorologie a klimatologie aplikovaná
+  label: "Meteorologie a klimatologie aplikovan\xC3\xA1"
 subjects_716: 
   created_on: 2005-11-22 09:51:36
   code: 
   updated_on: 2005-11-22 09:51:36
   type: ExternalSubject
   id: "19332"
-  label: "?ízení jakosti"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD jakosti"
 subjects_030: 
   created_on: 2005-10-03 11:41:44
   code: DEUE09Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1359"
-  label: Finan?ní management
+  label: "Finan\xC4\x8Dn\xC3\xAD management"
 subjects_162: 
   created_on: 2005-10-03 11:41:42
   code: DLTX64Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7222"
-  label: Lesní t?žba
+  label: "Lesn\xC3\xAD t\xC4\x9B\xC5\xBEba"
 subjects_294: 
   created_on: 2005-10-03 11:41:40
   code: DAEA03Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8991"
-  label: Rybá?ství
+  label: "Ryb\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_849: 
   created_on: 2005-12-19 19:15:12
   code: 
   updated_on: 2005-12-19 19:15:12
   type: ExternalSubject
   id: "19465"
-  label: Meteorologie a klimatologie aplikovaná
+  label: "Meteorologie a klimatologie aplikovan\xC3\xA1"
 subjects_717: 
   created_on: 2005-11-22 09:51:36
   code: 
   updated_on: 2005-11-22 09:51:36
   type: ExternalSubject
   id: "19333"
-  label: Stavební truhlá?ství
+  label: "Stavebn\xC3\xAD truhl\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_031: 
   created_on: 2005-10-03 11:41:44
   code: DEAE01Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1362"
-  label: Matematické modelování
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_163: 
   created_on: 2005-10-03 11:41:41
   code: DLEX14Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7224"
-  label: "Ekologie stanovi-?"
+  label: "Ekologie stanovi-\xCB\x99"
 subjects_295: 
   created_on: 2005-10-03 11:41:40
   code: DACA02Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8992"
-  label: Speciální biochemie rostlin
+  label: "Speci\xC3\xA1ln\xC3\xAD biochemie rostlin"
 subjects_718: 
   created_on: 2005-11-22 09:51:36
   code: 
   updated_on: 2005-11-22 09:51:36
   type: ExternalSubject
   id: "19334"
-  label: Stavební konstrukce
+  label: "Stavebn\xC3\xAD konstrukce"
 subjects_032: 
   created_on: 2005-10-03 11:41:44
   code: DEUE01Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1363"
-  label: Finance regionální správy
+  label: "Finance region\xC3\xA1ln\xC3\xAD spr\xC3\xA1vy"
 subjects_164: 
   created_on: 2005-10-03 11:41:41
   code: DLEX16Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7226"
-  label: "Ekologie mok?ad?"
+  label: "Ekologie mok\xC5\x99ad\xC5\xAF"
 subjects_296: 
   created_on: 2005-10-03 11:41:40
   code: DACA03Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8993"
-  label: "Speciální biochemie živo?ich?"
+  label: "Speci\xC3\xA1ln\xC3\xAD biochemie \xC5\xBEivo\xC4\x8Dich\xC5\xAF"
 subjects_850: 
   created_on: 2005-12-19 19:15:12
   code: 
   updated_on: 2005-12-19 19:15:12
   type: ExternalSubject
   id: "19466"
-  label: Lesnická genetika a šlecht?ní lesních d?evin
+  label: "Lesnick\xC3\xA1 genetika a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD lesn\xC3\xADch d\xC5\x99evin"
 subjects_719: 
   created_on: 2005-11-22 10:02:12
   code: 
   updated_on: 2005-11-22 10:02:12
   type: ExternalSubject
   id: "19335"
-  label: Lepidla a nát?rové hmoty
+  label: "Lepidla a n\xC3\xA1t\xC4\x9Brov\xC3\xA9 hmoty"
 subjects_033: 
   created_on: 2005-10-03 11:41:44
   code: DEUE04Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1364"
-  label: Finance a úv?r
+  label: "Finance a \xC3\xBAv\xC4\x9Br"
 subjects_165: 
   created_on: 2005-10-03 11:41:41
   code: DLEX17Y
@@ -4316,14 +4310,7 @@ subjects_297:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8994"
-  label: Speciální zootechnika
-subjects_851: 
-  created_on: 2006-01-18 16:27:15
-  code: 
-  updated_on: 2006-01-18 16:27:15
-  type: ExternalSubject
-  id: "19467"
-  label: Urbanismus
+  label: "Speci\xC3\xA1ln\xC3\xAD zootechnika"
 subjects_034: 
   created_on: 2005-10-03 11:41:44
   code: DEUE05Y
@@ -4344,154 +4331,112 @@ subjects_298:
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8995"
-  label: "Šk?dci polních a zahradních plodin"
-subjects_852: 
-  created_on: 2006-01-18 16:27:15
-  code: 
-  updated_on: 2006-01-18 16:27:15
-  type: ExternalSubject
-  id: "19468"
-  label: Krajinná architektura
+  label: "\xC5\xA0k\xC5\xAFdci poln\xC3\xADch a zahradn\xC3\xADch plodin"
 subjects_035: 
   created_on: 2005-10-03 11:41:45
   code: DEHE01Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1366"
-  label: Sociologie venkovského prostoru  DSP
+  label: "Sociologie venkovsk\xC3\xA9ho prostoru  DSP"
 subjects_167: 
   created_on: 2005-10-03 11:41:43
   code: DLSX03Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7237"
-  label: Stavební mechanika
+  label: "Stavebn\xC3\xAD mechanika"
 subjects_299: 
   created_on: 2005-10-03 11:41:40
   code: DATA06Y
   updated_on: 2005-10-03 11:41:40
   type: 
   id: "8996"
-  label: Trávníká?ství
+  label: "Tr\xC3\xA1vn\xC3\xADk\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_720: 
   created_on: 2005-11-22 10:02:12
   code: 
   updated_on: 2005-11-22 10:02:12
   type: ExternalSubject
   id: "19336"
-  label: D?ev?né konstrukce
-subjects_853: 
-  created_on: 2006-01-18 16:27:16
-  code: 
-  updated_on: 2006-01-18 16:27:16
-  type: ExternalSubject
-  id: "19469"
-  label: Archeologie krajiny
+  label: "D\xC5\x99ev\xC4\x9Bn\xC3\xA9 konstrukce"
 subjects_036: 
   created_on: 2005-10-03 11:41:45
   code: DAE02Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1367"
-  label: Metody projektového ?ízení
+  label: "Metody projektov\xC3\xA9ho \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_168: 
   created_on: 2005-10-03 11:41:42
   code: DLSX07Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7239"
-  label: Numerické metody a programování
+  label: "Numerick\xC3\xA9 metody a programov\xC3\xA1n\xC3\xAD"
 subjects_721: 
   created_on: 2005-11-22 10:02:12
   code: 
   updated_on: 2005-11-22 10:02:12
   type: ExternalSubject
   id: "19337"
-  label: Odv?tvová ekonomika a ?ízení podniku
-subjects_854: 
-  created_on: 2006-01-18 16:48:22
-  code: 
-  updated_on: 2006-01-18 16:48:22
-  type: ExternalSubject
-  id: "19470"
-  label: Aplikovaná meteorologie a klimatologie
+  label: "Odv\xC4\x9Btvov\xC3\xA1 ekonomika a \xC5\x99\xC3\xADzen\xC3\xAD podniku"
 subjects_037: 
   created_on: 2005-10-03 11:41:45
   code: DEHE02Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1368"
-  label: "Sociální rozvoj oblastí v ?R - DSP"
+  label: "Soci\xC3\xA1ln\xC3\xAD rozvoj oblast\xC3\xAD v \xC4\x8CR - DSP"
 subjects_169: 
   created_on: 2005-10-03 11:41:42
   code: DLEX15Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7241"
-  label: Metody studia ekosystém?
+  label: "Metody studia ekosyst\xC3\xA9m\xC5\xAF"
 subjects_722: 
   created_on: 2005-11-22 16:22:39
   code: 
   updated_on: 2005-11-22 16:22:39
   type: ExternalSubject
   id: "19338"
-  label: Informa?ní technologie
+  label: "Informa\xC4\x8Dn\xC3\xAD technologie"
 subjects_038: 
   created_on: 2005-10-03 11:41:44
   code: DENE01Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1369"
-  label: D?jiny ekonomických teorií
-subjects_855: 
-  created_on: 2006-01-20 10:39:26
-  code: 
-  updated_on: 2006-01-20 10:39:26
-  type: ExternalSubject
-  id: "19471"
-  label: Hydrologie a hydraulika
+  label: "D\xC4\x9Bjiny ekonomick\xC3\xBDch teori\xC3\xAD"
 subjects_039: 
   created_on: 2005-10-03 11:41:44
   code: DENE02Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1370"
-  label: Hospodá?ské politiky
+  label: "Hospod\xC3\xA1\xC5\x99sk\xC3\xA9 politiky"
 subjects_723: 
   created_on: 2005-11-22 16:22:39
   code: 
   updated_on: 2005-11-22 16:22:39
   type: ExternalSubject
   id: "19339"
-  label: "Živé systémy"
-subjects_856: 
-  created_on: 2006-01-20 10:39:26
-  code: 
-  updated_on: 2006-01-20 10:39:26
-  type: ExternalSubject
-  id: "19472"
-  label: Aplikovaná meteorologie a klimatologie
+  label: "\xC5\xBDiv\xC3\xA9 syst\xC3\xA9my"
 subjects_170: 
   created_on: 2005-10-03 11:41:41
   code: DLEX37Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7243"
-  label: "Ekologie savc?"
+  label: "Ekologie savc\xC5\xAF"
 subjects_724: 
   created_on: 2005-11-22 16:22:39
   code: 
   updated_on: 2005-11-22 16:22:39
   type: ExternalSubject
   id: "19340"
-  label: Chov koní
-subjects_857: 
-  created_on: 2006-01-20 10:56:25
-  code: 
-  updated_on: 2006-01-20 10:56:25
-  type: ExternalSubject
-  id: "19473"
-  label: Hydrologie a hydraulika
+  label: "Chov kon\xC3\xAD"
 subjects_171: 
   created_on: 2005-10-03 11:41:43
   code: DLEX38Y
@@ -4506,62 +4451,48 @@ subjects_725:
   type: ExternalSubject
   id: "19341"
   label: Informatika
-subjects_858: 
-  created_on: 2006-01-20 10:56:25
-  code: 
-  updated_on: 2006-01-20 10:56:25
-  type: ExternalSubject
-  id: "19474"
-  label: Aplikovaná meteorologie a klimatologie
 subjects_172: 
   created_on: 2005-10-03 11:41:41
   code: DLEX21Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7249"
-  label: "Botanika obecn-"
+  label: Botanika obecn-
 subjects_726: 
   created_on: 2005-11-23 12:13:19
   code: 
   updated_on: 2005-11-23 12:13:19
   type: ExternalSubject
   id: "19342"
-  label: "Logické ?ízení údržby stroj?"
+  label: "Logick\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD \xC3\xBAdr\xC5\xBEby stroj\xC5\xAF"
 subjects_040: 
   created_on: 2005-10-03 11:41:45
   code: DEHE03Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1371"
-  label: "Sociální sít?, akté?i a instituce v regionálním rozvoji - DSP"
-subjects_859: 
-  created_on: 2006-01-20 12:03:43
-  code: 
-  updated_on: 2006-01-20 12:03:43
-  type: ExternalSubject
-  id: "19475"
-  label: Avifauna evropy
+  label: "Soci\xC3\xA1ln\xC3\xAD s\xC3\xADt\xC4\x9B, akt\xC3\xA9\xC5\x99i a instituce v region\xC3\xA1ln\xC3\xADm rozvoji - DSP"
 subjects_173: 
   created_on: 2005-10-03 11:41:41
   code: DLEX22Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7257"
-  label: Botanika speciální
+  label: "Botanika speci\xC3\xA1ln\xC3\xAD"
 subjects_727: 
   created_on: 2005-11-23 12:17:58
   code: 
   updated_on: 2005-11-23 12:17:58
   type: ExternalSubject
   id: "19343"
-  label: Kvantitativní metody a modelování
+  label: "Kvantitativn\xC3\xAD metody a modelov\xC3\xA1n\xC3\xAD"
 subjects_041: 
   created_on: 2005-10-03 11:41:45
   code: DENE03Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1372"
-  label: Mezinárodní ekonomie
+  label: "Mezin\xC3\xA1rodn\xC3\xAD ekonomie"
 subjects_174: 
   created_on: 2005-10-03 11:41:42
   code: DLEX23Y
@@ -4575,105 +4506,77 @@ subjects_728:
   updated_on: 2005-11-23 12:17:58
   type: ExternalSubject
   id: "19344"
-  label: Management a marketing (?ízení(
+  label: "Management a marketing (\xC5\x99\xC3\xADzen\xC3\xAD("
 subjects_042: 
   created_on: 2005-10-03 11:41:44
   code: DEPE03Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1373"
-  label: Komunikace mezi kulturami (Aplikace v obchodním jednání)
-subjects_860: 
-  created_on: 2006-01-20 12:57:32
-  code: 
-  updated_on: 2006-01-20 12:57:32
-  type: ExternalSubject
-  id: "19476"
-  label: Krajinné plánování
+  label: "Komunikace mezi kulturami (Aplikace v obchodn\xC3\xADm jedn\xC3\xA1n\xC3\xAD)"
 subjects_175: 
   created_on: 2005-10-03 11:41:43
   code: DLEX41Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7262"
-  label: Ochrana p?írody
+  label: "Ochrana p\xC5\x99\xC3\xADrody"
 subjects_729: 
   created_on: 2005-11-23 12:19:08
   code: 
   updated_on: 2005-11-23 12:19:08
   type: ExternalSubject
   id: "19345"
-  label: Kvantitativní metody a modelování
+  label: "Kvantitativn\xC3\xAD metody a modelov\xC3\xA1n\xC3\xAD"
 subjects_043: 
   created_on: 2005-10-03 11:41:45
   code: DEHE04Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1374"
-  label: "Politologie regionálního rozvoje - DSP"
-subjects_861: 
-  created_on: 2006-01-20 12:57:32
-  code: 
-  updated_on: 2006-01-20 12:57:32
-  type: ExternalSubject
-  id: "19477"
-  label: Vegetace st?ední Evropy
+  label: "Politologie region\xC3\xA1ln\xC3\xADho rozvoje - DSP"
 subjects_176: 
   created_on: 2005-10-03 11:41:43
   code: DLEX43Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7264"
-  label: Ochrana prost?edí
+  label: "Ochrana prost\xC5\x99ed\xC3\xAD"
 subjects_044: 
   created_on: 2005-10-03 11:41:44
   code: DEUE08Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1375"
-  label: Bankovnictví
-subjects_862: 
-  created_on: 2006-01-20 13:03:33
-  code: 
-  updated_on: 2006-01-20 13:03:33
-  type: ExternalSubject
-  id: "19478"
-  label: Pedologie
+  label: "Bankovnictv\xC3\xAD"
 subjects_177: 
   created_on: 2005-10-03 11:41:43
   code: DLEX42Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7266"
-  label: Ochrana p?írody a krajiny
+  label: "Ochrana p\xC5\x99\xC3\xADrody a krajiny"
 subjects_730: 
   created_on: 2005-11-23 12:19:08
   code: 
   updated_on: 2005-11-23 12:19:08
   type: ExternalSubject
   id: "19346"
-  label: Management a marketing (?ízení(
+  label: "Management a marketing (\xC5\x99\xC3\xADzen\xC3\xAD("
 subjects_045: 
   created_on: 2005-10-03 11:41:46
   code: DEUE02Y
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1376"
-  label: "Ú?etní systémy podnik? agrokomplexu"
-subjects_863: 
-  created_on: 2006-01-20 13:05:29
-  code: 
-  updated_on: 2006-01-20 13:05:29
-  type: ExternalSubject
-  id: "19479"
-  label: Myslivost
+  label: "\xC3\x9A\xC4\x8Detn\xC3\xAD syst\xC3\xA9my podnik\xC5\xAF agrokomplexu"
 subjects_178: 
   created_on: 2005-10-03 11:41:43
   code: DLEX44Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7268"
-  label: Vybrané problémy ochrany Život. prost?edí
+  label: "Vybran\xC3\xA9 probl\xC3\xA9my ochrany \xC5\xBDivot. prost\xC5\x99ed\xC3\xAD"
 subjects_731: 
   created_on: 2005-11-23 13:45:01
   code: 
@@ -4687,14 +4590,7 @@ subjects_046:
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1377"
-  label: Da?ová soustava
-subjects_864: 
-  created_on: 2006-01-20 13:05:29
-  code: 
-  updated_on: 2006-01-20 13:05:29
-  type: ExternalSubject
-  id: "19480"
-  label: Teorie ?ízení
+  label: "Da\xC5\x88ov\xC3\xA1 soustava"
 subjects_179: 
   created_on: 2005-10-03 11:41:41
   code: DLEX12Y
@@ -4708,28 +4604,21 @@ subjects_600:
   updated_on: 2005-10-24 08:35:18
   type: ExternalSubject
   id: "19216"
-  label: "Ozelen?ní historických jader ?eských vesnic "
+  label: "Ozelen\xC4\x9Bn\xC3\xAD historick\xC3\xBDch jader \xC4\x8Desk\xC3\xBDch vesnic "
 subjects_732: 
   created_on: 2005-11-23 13:45:01
   code: 
   updated_on: 2005-11-23 13:45:01
   type: ExternalSubject
   id: "19348"
-  label: "Logistické ?ízení údržby stroj?"
+  label: "Logistick\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD \xC3\xBAdr\xC5\xBEby stroj\xC5\xAF"
 subjects_047: 
   created_on: 2005-10-03 11:41:45
   code: DEHA06Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1379"
-  label: "Metodologie v?dy - DSP - AF"
-subjects_865: 
-  created_on: 2006-01-20 13:09:09
-  code: 
-  updated_on: 2006-01-20 13:09:09
-  type: ExternalSubject
-  id: "19481"
-  label: Ochrana d?eva
+  label: "Metodologie v\xC4\x9Bdy - DSP - AF"
 subjects_601: 
   created_on: 2005-10-24 08:42:19
   code: 
@@ -4750,21 +4639,14 @@ subjects_048:
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1380"
-  label: Informa?ní management
+  label: "Informa\xC4\x8Dn\xC3\xAD management"
 subjects_049: 
   created_on: 2005-10-03 11:41:44
   code: DETEO2Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1381"
-  label: Infrastruktura informa?ních systém?
-subjects_866: 
-  created_on: 2006-01-20 13:09:09
-  code: 
-  updated_on: 2006-01-20 13:09:09
-  type: ExternalSubject
-  id: "19482"
-  label: Historické konstrukce
+  label: "Infrastruktura informa\xC4\x8Dn\xC3\xADch syst\xC3\xA9m\xC5\xAF"
 subjects_602: 
   created_on: 2005-10-24 08:42:19
   code: 
@@ -4778,70 +4660,56 @@ subjects_734:
   updated_on: 2005-11-23 13:58:28
   type: ExternalSubject
   id: "19350"
-  label: Systémy ?ízení jakosti
+  label: "Syst\xC3\xA9my \xC5\x99\xC3\xADzen\xC3\xAD jakosti"
 subjects_180: 
   created_on: 2005-10-03 11:41:42
   code: DLEX11Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7285"
-  label: "Obecn- ekologie"
-subjects_867: 
-  created_on: 2006-01-20 13:12:41
-  code: 
-  updated_on: 2006-01-20 13:12:41
-  type: ExternalSubject
-  id: "19483"
-  label: lesnická pedologie
+  label: Obecn- ekologie
 subjects_603: 
   created_on: 2005-10-24 08:42:19
   code: 
   updated_on: 2005-10-24 08:42:19
   type: ExternalSubject
   id: "19219"
-  label: Prostorové a strategické plánování I
+  label: "Prostorov\xC3\xA9 a strategick\xC3\xA9 pl\xC3\xA1nov\xC3\xA1n\xC3\xAD I"
 subjects_735: 
   created_on: 2005-11-23 14:03:27
   code: 
   updated_on: 2005-11-23 14:03:27
   type: ExternalSubject
   id: "19351"
-  label: Technika pro školka?ství
+  label: "Technika pro \xC5\xA1kolka\xC5\x99stv\xC3\xAD"
 subjects_181: 
   created_on: 2005-10-03 11:41:43
   code: DLEX32Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7287"
-  label: "Zoologie obratlovc?"
-subjects_868: 
-  created_on: 2006-01-20 13:14:55
-  code: 
-  updated_on: 2006-01-20 13:14:55
-  type: ExternalSubject
-  id: "19484"
-  label: lesnická pedologie
+  label: "Zoologie obratlovc\xC5\xAF"
 subjects_604: 
   created_on: 2005-10-24 08:50:44
   code: 
   updated_on: 2005-10-24 08:50:44
   type: ExternalSubject
   id: "19220"
-  label: Právní aspekty ŽP
+  label: "Pr\xC3\xA1vn\xC3\xAD aspekty \xC5\xBDP"
 subjects_736: 
   created_on: 2005-11-23 14:03:27
   code: 
   updated_on: 2005-11-23 14:03:27
   type: ExternalSubject
   id: "19352"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_050: 
   created_on: 2005-10-03 11:41:44
   code: DETE01Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1382"
-  label: Informa?ní technologie
+  label: "Informa\xC4\x8Dn\xC3\xAD technologie"
 subjects_182: 
   created_on: 2005-10-03 11:41:43
   code: DLEX31Y
@@ -4855,56 +4723,56 @@ subjects_605:
   updated_on: 2005-10-24 08:56:16
   type: ExternalSubject
   id: "19221"
-  label: "Aplikovaná meteorologie a klimatologie "
+  label: "Aplikovan\xC3\xA1 meteorologie a klimatologie "
 subjects_737: 
   created_on: 2005-11-23 14:21:41
   code: 
   updated_on: 2005-11-23 14:21:41
   type: ExternalSubject
   id: "19353"
-  label: Elektrické pohony
+  label: "Elektrick\xC3\xA9 pohony"
 subjects_051: 
   created_on: 2005-10-03 11:41:44
   code: DETE03Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1383"
-  label: Informa?ní technologie a e-business
+  label: "Informa\xC4\x8Dn\xC3\xAD technologie a e-business"
 subjects_183: 
   created_on: 2005-10-03 11:41:41
   code: DLEX34Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7291"
-  label: "Ekologie živo?Lich?"
+  label: "Ekologie \xC5\xBEivo\xC4\x8DLich\xC5\xAF"
 subjects_606: 
   created_on: 2005-10-24 08:56:16
   code: 
   updated_on: 2005-10-24 08:56:16
   type: ExternalSubject
   id: "19222"
-  label: Kv?tena st?ední Evropy II
+  label: "Kv\xC4\x9Btena st\xC5\x99edn\xC3\xAD Evropy II"
 subjects_738: 
   created_on: 2005-11-24 08:38:59
   code: 
   updated_on: 2005-11-24 08:38:59
   type: ExternalSubject
   id: "19354"
-  label: "Jakost, spolehl. a serv. logist. stroj?"
+  label: "Jakost, spolehl. a serv. logist. stroj\xC5\xAF"
 subjects_052: 
   created_on: 2005-10-03 11:41:46
   code: DESE04Y
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1384"
-  label: Vybrané metody aktuárské matematiky
+  label: "Vybran\xC3\xA9 metody aktu\xC3\xA1rsk\xC3\xA9 matematiky"
 subjects_184: 
   created_on: 2005-10-03 11:41:41
   code: DLEX36Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7293"
-  label: Ekologie pták?
+  label: "Ekologie pt\xC3\xA1k\xC5\xAF"
 subjects_607: 
   created_on: 2005-10-24 09:00:24
   code: 
@@ -4918,63 +4786,63 @@ subjects_739:
   updated_on: 2005-11-24 08:38:59
   type: ExternalSubject
   id: "19355"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_053: 
   created_on: 2005-10-03 11:41:45
   code: DESE06Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1385"
-  label: Statistické techniky zpracování dotazníkových anket
+  label: "Statistick\xC3\xA9 techniky zpracov\xC3\xA1n\xC3\xAD dotazn\xC3\xADkov\xC3\xBDch anket"
 subjects_185: 
   created_on: 2005-10-03 11:41:42
   code: DLBX32Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7295"
-  label: "Lesotechnick- meliorace"
+  label: Lesotechnick- meliorace
 subjects_608: 
   created_on: 2005-10-24 09:00:24
   code: 
   updated_on: 2005-10-24 09:00:24
   type: ExternalSubject
   id: "19224"
-  label: "Atmosferický aerosol "
+  label: "Atmosferick\xC3\xBD aerosol "
 subjects_054: 
   created_on: 2005-10-03 11:41:43
   code: DESE10Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "1386"
-  label: Analýza kategorizovaných dat
+  label: "Anal\xC3\xBDza kategorizovan\xC3\xBDch dat"
 subjects_186: 
   created_on: 2005-10-03 11:41:43
   code: DLBX33Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7296"
-  label: Rekultivace p?dy a odpadové hospodá?ství
+  label: "Rekultivace p\xC5\xAFdy a odpadov\xC3\xA9 hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_740: 
   created_on: 2005-11-24 08:38:59
   code: 
   updated_on: 2005-11-24 08:38:59
   type: ExternalSubject
   id: "19356"
-  label: Management a marketing (?ízení)
+  label: "Management a marketing (\xC5\x99\xC3\xADzen\xC3\xAD)"
 subjects_609: 
   created_on: 2005-10-24 09:00:24
   code: 
   updated_on: 2005-10-24 09:00:24
   type: ExternalSubject
   id: "19225"
-  label: Metody sledování kvality ovzduší
+  label: "Metody sledov\xC3\xA1n\xC3\xAD kvality ovzdu\xC5\xA1\xC3\xAD"
 subjects_055: 
   created_on: 2005-10-03 11:41:45
   code: DESE08Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1387"
-  label: "Sociáln? hospodá?ská statistika"
+  label: "Soci\xC3\xA1ln\xC4\x9B hospod\xC3\xA1\xC5\x99sk\xC3\xA1 statistika"
 subjects_187: 
   created_on: 2005-10-03 11:41:41
   code: DLHX02Y
@@ -4988,64 +4856,63 @@ subjects_741:
   updated_on: 2005-11-24 08:38:59
   type: ExternalSubject
   id: "19357"
-  label: Kvantitativní metody a modelování
+  label: "Kvantitativn\xC3\xAD metody a modelov\xC3\xA1n\xC3\xAD"
 subjects_056: 
   created_on: 2005-10-03 11:41:45
   code: DESE05Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1389"
-  label: Statistické výpo?etní prost?edí
+  label: "Statistick\xC3\xA9 v\xC3\xBDpo\xC4\x8Detn\xC3\xAD prost\xC5\x99ed\xC3\xAD"
 subjects_188: 
   created_on: 2005-10-03 11:41:42
   code: DLHX01Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7301"
-  label: "Hospodá?ská úprava les?"
+  label: "Hospod\xC3\xA1\xC5\x99sk\xC3\xA1 \xC3\xBAprava les\xC5\xAF"
 subjects_742: 
   created_on: 2005-11-24 08:45:45
   code: 
   updated_on: 2005-11-24 08:45:45
   type: ExternalSubject
   id: "19358"
-  label: "Vybrané stat? z technologických staveb odpadového
-    hospodá?ství"
+  label: "Vybran\xC3\xA9 stat\xC4\x9B z technologick\xC3\xBDch staveb odpadov\xC3\xA9ho hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_057: 
   created_on: 2005-10-03 11:41:45
   code: DESE11Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1390"
-  label: Statistické vícerozm?rné metody
+  label: "Statistick\xC3\xA9 v\xC3\xADcerozm\xC4\x9Brn\xC3\xA9 metody"
 subjects_189: 
   created_on: 2005-10-03 11:41:43
   code: DLHX03Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7302"
-  label: "Produkce les?"
+  label: "Produkce les\xC5\xAF"
 subjects_610: 
   created_on: 2005-10-24 10:18:06
   code: 
   updated_on: 2005-10-24 10:18:06
   type: ExternalSubject
   id: "19226"
-  label: "Biostatistika a plánování ekologických pokus? "
+  label: "Biostatistika a pl\xC3\xA1nov\xC3\xA1n\xC3\xAD ekologick\xC3\xBDch pokus\xC5\xAF "
 subjects_743: 
   created_on: 2005-11-24 08:45:45
   code: 
   updated_on: 2005-11-24 08:45:45
   type: ExternalSubject
   id: "19359"
-  label: "Vybrané stat? z termochemického využití paliv"
+  label: "Vybran\xC3\xA9 stat\xC4\x9B z termochemick\xC3\xA9ho vyu\xC5\xBEit\xC3\xAD paliv"
 subjects_058: 
   created_on: 2005-10-03 11:41:45
   code: DESA14Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1391"
-  label: Statistické procedury v SAS
+  label: "Statistick\xC3\xA9 procedury v SAS"
 subjects_611: 
   created_on: 2005-10-24 10:57:31
   code: 
@@ -5059,71 +4926,70 @@ subjects_744:
   updated_on: 2005-11-24 08:45:46
   type: ExternalSubject
   id: "19360"
-  label: "Vybrané stat? z technologických staveb odpadového
-    hospodá?ství"
+  label: "Vybran\xC3\xA9 stat\xC4\x9B z technologick\xC3\xBDch staveb odpadov\xC3\xA9ho hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_059: 
   created_on: 2005-10-03 11:41:45
   code: DESE02Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1392"
-  label: Statistické metody v marketingu
+  label: "Statistick\xC3\xA9 metody v marketingu"
 subjects_612: 
   created_on: 2005-10-24 11:07:37
   code: 
   updated_on: 2005-10-24 11:07:37
   type: ExternalSubject
   id: "19228"
-  label: Základy parazitologie
+  label: "Z\xC3\xA1klady parazitologie"
 subjects_190: 
   created_on: 2005-10-03 11:41:41
   code: DLHX12Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7304"
-  label: Aplikovaná statistika
+  label: "Aplikovan\xC3\xA1 statistika"
 subjects_745: 
   created_on: 2005-11-24 08:45:46
   code: 
   updated_on: 2005-11-24 08:45:46
   type: ExternalSubject
   id: "19361"
-  label: "Vybrané stat? z termochemického využití paliv"
+  label: "Vybran\xC3\xA9 stat\xC4\x9B z termochemick\xC3\xA9ho vyu\xC5\xBEit\xC3\xAD paliv"
 subjects_191: 
   created_on: 2005-10-03 11:41:42
   code: DLRX07Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7307"
-  label: "Lesnick- politika"
+  label: Lesnick- politika
 subjects_613: 
   created_on: 2005-10-24 11:07:37
   code: 
   updated_on: 2005-10-24 11:07:37
   type: ExternalSubject
   id: "19229"
-  label: "Biologie helmint?"
+  label: "Biologie helmint\xC5\xAF"
 subjects_746: 
   created_on: 2005-11-24 08:50:53
   code: 
   updated_on: 2005-11-24 08:50:53
   type: ExternalSubject
   id: "19362"
-  label: Chmela?ství
+  label: "Chmela\xC5\x99stv\xC3\xAD"
 subjects_060: 
   created_on: 2005-10-03 11:41:45
   code: DESA15Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1393"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_192: 
   created_on: 2005-10-03 11:41:41
   code: DLRX05Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7309"
-  label: Ekonomika životního prost?edí
+  label: "Ekonomika \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_614: 
   created_on: 2005-10-24 14:16:30
   code: 
@@ -5137,42 +5003,42 @@ subjects_747:
   updated_on: 2005-11-24 08:50:53
   type: ExternalSubject
   id: "19363"
-  label: "Stroje pro sklize? chmele"
+  label: "Stroje pro sklize\xC5\x88 chmele"
 subjects_061: 
   created_on: 2005-10-03 11:41:45
   code: DESE07Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1395"
-  label: Statistické metody v managementu
+  label: "Statistick\xC3\xA9 metody v managementu"
 subjects_193: 
   created_on: 2005-10-03 11:41:41
   code: DLRX04Y
   updated_on: 2005-10-03 11:41:41
   type: 
   id: "7311"
-  label: Ekonomika lesního hospodá?ství
+  label: "Ekonomika lesn\xC3\xADho hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_615: 
   created_on: 2005-10-24 14:16:30
   code: 
   updated_on: 2005-10-24 14:16:30
   type: ExternalSubject
   id: "19231"
-  label: Klinická farmakologie
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_748: 
   created_on: 2005-11-24 09:01:25
   code: 
   updated_on: 2005-11-24 09:01:25
   type: ExternalSubject
   id: "19364"
-  label: Informa?ní technologie
+  label: "Informa\xC4\x8Dn\xC3\xAD technologie"
 subjects_062: 
   created_on: 2005-10-03 11:41:45
   code: DESE13Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1396"
-  label: Statistické modelování
+  label: "Statistick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_194: 
   created_on: 2005-10-03 11:41:41
   code: DLRX01Y
@@ -5186,98 +5052,98 @@ subjects_616:
   updated_on: 2005-10-25 12:28:13
   type: ExternalSubject
   id: "19232"
-  label: Krajinná architektura
+  label: "Krajinn\xC3\xA1 architektura"
 subjects_749: 
   created_on: 2005-11-24 09:06:28
   code: 
   updated_on: 2005-11-24 09:06:28
   type: ExternalSubject
   id: "19365"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_063: 
   created_on: 2005-10-03 11:41:45
   code: DESE03Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1397"
-  label: Statistická analýza ekonomických ?asových ?ad
+  label: "Statistick\xC3\xA1 anal\xC3\xBDza ekonomick\xC3\xBDch \xC4\x8Dasov\xC3\xBDch \xC5\x99ad"
 subjects_195: 
   created_on: 2005-10-03 11:41:42
   code: DLRX10Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7315"
-  label: Marketing lesního hospodá?ství
+  label: "Marketing lesn\xC3\xADho hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_617: 
   created_on: 2005-10-25 12:28:13
   code: 
   updated_on: 2005-10-25 12:28:13
   type: ExternalSubject
   id: "19233"
-  label: Zásady vodního hospodá?ství a managementu povodí
+  label: "Z\xC3\xA1sady vodn\xC3\xADho hospod\xC3\xA1\xC5\x99stv\xC3\xAD a managementu povod\xC3\xAD"
 subjects_064: 
   created_on: 2005-10-03 11:41:45
   code: DESE09Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1399"
-  label: Statistická prognostika
+  label: "Statistick\xC3\xA1 prognostika"
 subjects_196: 
   created_on: 2005-10-03 11:41:42
   code: DLOX06Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7317"
-  label: Obecná entomologie
+  label: "Obecn\xC3\xA1 entomologie"
 subjects_618: 
   created_on: 2005-10-25 12:28:13
   code: 
   updated_on: 2005-10-25 12:28:13
   type: ExternalSubject
   id: "19234"
-  label: Krajinné plánování
+  label: "Krajinn\xC3\xA9 pl\xC3\xA1nov\xC3\xA1n\xC3\xAD"
 subjects_065: 
   created_on: 2005-10-03 11:41:44
   code: DEIX05Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1632"
-  label: M??ení a hodnocení jakosti IS
+  label: "M\xC4\x9B\xC5\x99en\xC3\xAD a hodnocen\xC3\xAD jakosti IS"
 subjects_197: 
   created_on: 2005-10-03 11:41:43
   code: DLOX07Y
   updated_on: 2005-10-03 11:41:43
   type: 
   id: "7319"
-  label: Systematická entomologie
+  label: "Systematick\xC3\xA1 entomologie"
 subjects_750: 
   created_on: 2005-11-24 09:06:28
   code: 
   updated_on: 2005-11-24 09:06:28
   type: ExternalSubject
   id: "19366"
-  label: "Zpracování pevných odpad?"
+  label: "Zpracov\xC3\xA1n\xC3\xAD pevn\xC3\xBDch odpad\xC5\xAF"
 subjects_619: 
   created_on: 2005-10-25 17:27:06
   code: 
   updated_on: 2005-10-25 17:27:06
   type: ExternalSubject
   id: "19235"
-  label: "Ú?etnictví IAS/IFRS"
+  label: "\xC3\x9A\xC4\x8Detnictv\xC3\xAD IAS/IFRS"
 subjects_066: 
   created_on: 2005-10-03 11:41:44
   code: DEIX01Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1728"
-  label: Databázové systémy I.
+  label: "Datab\xC3\xA1zov\xC3\xA9 syst\xC3\xA9my I."
 subjects_198: 
   created_on: 2005-10-03 11:41:42
   code: DLOX05Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7321"
-  label: "Ochrana les? - hmyzí šk?dci"
+  label: "Ochrana les\xC5\xAF - hmyz\xC3\xAD \xC5\xA1k\xC5\xAFdci"
 subjects_751: 
   created_on: 2005-11-24 09:06:28
   code: 
@@ -5291,21 +5157,21 @@ subjects_067:
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1729"
-  label: Nové p?ístupy v databázových systémech
+  label: "Nov\xC3\xA9 p\xC5\x99\xC3\xADstupy v datab\xC3\xA1zov\xC3\xBDch syst\xC3\xA9mech"
 subjects_199: 
   created_on: 2005-10-03 11:41:42
   code: DLOX01Y
   updated_on: 2005-10-03 11:41:42
   type: 
   id: "7323"
-  label: "Ochrana les? - abitioti?tí škodliví ?initelé a obratlovci"
+  label: "Ochrana les\xC5\xAF - abitioti\xC4\x8Dt\xC3\xAD \xC5\xA1kodliv\xC3\xAD \xC4\x8Dinitel\xC3\xA9 a obratlovci"
 subjects_620: 
   created_on: 2005-10-25 17:39:52
   code: 
   updated_on: 2005-10-25 17:39:52
   type: ExternalSubject
   id: "19236"
-  label: Právní úprava podnikání
+  label: "Pr\xC3\xA1vn\xC3\xAD \xC3\xBAprava podnik\xC3\xA1n\xC3\xAD"
 subjects_752: 
   created_on: 2005-11-24 09:09:47
   code: 
@@ -5319,49 +5185,49 @@ subjects_068:
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1730"
-  label: Geografické IS
+  label: "Geografick\xC3\xA9 IS"
 subjects_621: 
   created_on: 2005-10-25 19:25:41
   code: 
   updated_on: 2005-10-25 19:25:41
   type: ExternalSubject
   id: "19237"
-  label: P?stování lesa
+  label: "P\xC4\x9Bstov\xC3\xA1n\xC3\xAD lesa"
 subjects_753: 
   created_on: 2005-11-24 09:19:57
   code: 
   updated_on: 2005-11-24 09:19:57
   type: ExternalSubject
   id: "19369"
-  label: Anaerobní fermentace organic.mat.
+  label: "Anaerobn\xC3\xAD fermentace organic.mat."
 subjects_069: 
   created_on: 2005-10-03 11:41:46
   code: DEIE16E
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1731"
-  label: Výpo?etní systémy II.
+  label: "V\xC3\xBDpo\xC4\x8Detn\xC3\xAD syst\xC3\xA9my II."
 subjects_622: 
   created_on: 2005-10-25 21:31:19
   code: 
   updated_on: 2005-10-25 21:31:19
   type: ExternalSubject
   id: "19238"
-  label: Ekonomika a politika životního prost?edí
+  label: "Ekonomika a politika \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_754: 
   created_on: 2005-11-24 09:34:45
   code: 
   updated_on: 2005-11-24 09:34:45
   type: ExternalSubject
   id: "19370"
-  label: Informatika (spec. software a sít?)
+  label: "Informatika (spec. software a s\xC3\xADt\xC4\x9B)"
 subjects_623: 
   created_on: 2005-10-25 21:31:19
   code: 
   updated_on: 2005-10-25 21:31:19
   type: ExternalSubject
   id: "19239"
-  label: Agrarní politika
+  label: "Agrarn\xC3\xAD politika"
 subjects_755: 
   created_on: 2005-11-24 09:40:11
   code: 
@@ -5375,112 +5241,112 @@ subjects_624:
   updated_on: 2005-10-25 21:31:19
   type: ExternalSubject
   id: "19240"
-  label: Ekonomika sv?tového zem?delství
+  label: "Ekonomika sv\xC4\x9Btov\xC3\xA9ho zem\xC4\x9Bdelstv\xC3\xAD"
 subjects_756: 
   created_on: 2005-11-24 09:40:11
   code: 
   updated_on: 2005-11-24 09:40:11
   type: ExternalSubject
   id: "19372"
-  label: Hydraulické stroje
+  label: "Hydraulick\xC3\xA9 stroje"
 subjects_070: 
   created_on: 2005-10-03 11:41:45
   code: DEIX06Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1732"
-  label: "Objektov? orientovaný p?ístup ve tvorb? softwaru"
+  label: "Objektov\xC4\x9B orientovan\xC3\xBD p\xC5\x99\xC3\xADstup ve tvorb\xC4\x9B softwaru"
 subjects_625: 
   created_on: 2005-10-25 21:53:00
   code: 
   updated_on: 2005-10-25 21:53:00
   type: ExternalSubject
   id: "19241"
-  label: Stavební mechanika
+  label: "Stavebn\xC3\xAD mechanika"
 subjects_757: 
   created_on: 2005-11-24 09:40:11
   code: 
   updated_on: 2005-11-24 09:40:11
   type: ExternalSubject
   id: "19373"
-  label: "Servomechanismy výr. stroj?"
+  label: "Servomechanismy v\xC3\xBDr. stroj\xC5\xAF"
 subjects_071: 
   created_on: 2005-10-03 11:41:45
   code: DEIX07Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1733"
-  label: Opera?ní systémy
+  label: "Opera\xC4\x8Dn\xC3\xAD syst\xC3\xA9my"
 subjects_626: 
   created_on: 2005-10-25 21:53:00
   code: 
   updated_on: 2005-10-25 21:53:00
   type: ExternalSubject
   id: "19242"
-  label: Pozemní stavby
+  label: "Pozemn\xC3\xAD stavby"
 subjects_758: 
   created_on: 2005-11-24 09:40:11
   code: 
   updated_on: 2005-11-24 09:40:11
   type: ExternalSubject
   id: "19374"
-  label: Tekutinové mechanismy
+  label: "Tekutinov\xC3\xA9 mechanismy"
 subjects_072: 
   created_on: 2005-10-03 11:41:45
   code: DEIX10Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1735"
-  label: Prost?edky DTP
+  label: "Prost\xC5\x99edky DTP"
 subjects_627: 
   created_on: 2005-10-25 23:55:29
   code: 
   updated_on: 2005-10-25 23:55:29
   type: ExternalSubject
   id: "19243"
-  label: matematické modelování
+  label: "matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_759: 
   created_on: 2005-11-24 09:44:06
   code: 
   updated_on: 2005-11-24 09:44:06
   type: ExternalSubject
   id: "19375"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_073: 
   created_on: 2005-10-03 11:41:46
   code: DEIX11Y
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1736"
-  label: Systémová integrace
+  label: "Syst\xC3\xA9mov\xC3\xA1 integrace"
 subjects_628: 
   created_on: 2005-10-27 09:43:57
   code: 
   updated_on: 2005-10-27 09:43:57
   type: ExternalSubject
   id: "19244"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_074: 
   created_on: 2005-10-03 11:41:46
   code: DEIX12Y
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1737"
-  label: Systémové inženýrství
+  label: "Syst\xC3\xA9mov\xC3\xA9 in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
 subjects_760: 
   created_on: 2005-11-24 09:44:06
   code: 
   updated_on: 2005-11-24 09:44:06
   type: ExternalSubject
   id: "19376"
-  label: "Stroje pro sklize'n pícnin "
+  label: "Stroje pro sklize'n p\xC3\xADcnin "
 subjects_629: 
   created_on: 2005-10-27 09:43:57
   code: 
   updated_on: 2005-10-27 09:43:57
   type: ExternalSubject
   id: "19245"
-  label: Rostlinná výroba v TS
+  label: "Rostlinn\xC3\xA1 v\xC3\xBDroba v TS"
 subjects_075: 
   created_on: 2005-10-03 11:41:45
   code: DEIX08Y
@@ -5494,7 +5360,7 @@ subjects_761:
   updated_on: 2005-11-24 10:26:38
   type: ExternalSubject
   id: "19377"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_076: 
   created_on: 2005-10-03 11:41:46
   code: DESE17Y
@@ -5508,21 +5374,21 @@ subjects_630:
   updated_on: 2005-10-27 09:43:57
   type: ExternalSubject
   id: "19246"
-  label: Obecná produkce rostlinná v TS
+  label: "Obecn\xC3\xA1 produkce rostlinn\xC3\xA1 v TS"
 subjects_762: 
   created_on: 2005-11-24 10:26:38
   code: 
   updated_on: 2005-11-24 10:26:38
   type: ExternalSubject
   id: "19378"
-  label: Stroje pro zpravcování p?dy
+  label: "Stroje pro zpravcov\xC3\xA1n\xC3\xAD p\xC5\xAFdy"
 subjects_077: 
   created_on: 2005-10-03 11:41:44
   code: DERE05Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1745"
-  label: Marketingové ?ízení
+  label: "Marketingov\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_631: 
   created_on: 2005-10-27 09:43:57
   code: 
@@ -5536,21 +5402,21 @@ subjects_763:
   updated_on: 2005-11-24 10:45:13
   type: ExternalSubject
   id: "19379"
-  label: "Moderní metody ?íz. stavebních stroj?"
+  label: "Modern\xC3\xAD metody \xC5\x99\xC3\xADz. stavebn\xC3\xADch stroj\xC5\xAF"
 subjects_078: 
   created_on: 2005-10-03 11:41:45
   code: DERE07Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1747"
-  label: Poradenství pro ?ízení
+  label: "Poradenstv\xC3\xAD pro \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_500: 
   created_on: 2005-10-20 15:58:34
   code: 
   updated_on: 2005-10-20 15:58:34
   type: ExternalSubject
   id: "19116"
-  label: P?stování lesa
+  label: "P\xC4\x9Bstov\xC3\xA1n\xC3\xAD lesa"
 subjects_632: 
   created_on: 2005-10-27 09:43:57
   code: 
@@ -5564,28 +5430,28 @@ subjects_764:
   updated_on: 2005-11-24 10:45:13
   type: ExternalSubject
   id: "19380"
-  label: Globální pozi?ní systémy
+  label: "Glob\xC3\xA1ln\xC3\xAD pozi\xC4\x8Dn\xC3\xAD syst\xC3\xA9my"
 subjects_079: 
   created_on: 2005-10-03 11:41:45
   code: DERE08Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1748"
-  label: Provoz a hospoda?ení podniku
+  label: "Provoz a hospoda\xC5\x99en\xC3\xAD podniku"
 subjects_501: 
   created_on: 2005-10-20 15:58:34
   code: 
   updated_on: 2005-10-20 15:58:34
   type: ExternalSubject
   id: "19117"
-  label: Protierozní ochrana
+  label: "Protierozn\xC3\xAD ochrana"
 subjects_633: 
   created_on: 2005-10-27 09:43:57
   code: 
   updated_on: 2005-10-27 09:43:57
   type: ExternalSubject
   id: "19249"
-  label: Agrochemie a výživa rostlin
+  label: "Agrochemie a v\xC3\xBD\xC5\xBEiva rostlin"
 subjects_765: 
   created_on: 2005-11-24 10:45:13
   code: 
@@ -5599,63 +5465,63 @@ subjects_502:
   updated_on: 2005-10-20 15:59:10
   type: ExternalSubject
   id: "19118"
-  label: p?dní chemie
+  label: "p\xC5\xAFdn\xC3\xAD chemie"
 subjects_634: 
   created_on: 2005-10-27 09:43:57
   code: 
   updated_on: 2005-10-27 09:43:57
   type: ExternalSubject
   id: "19250"
-  label: Didaktické a prezenta?ní dovednosti
+  label: "Didaktick\xC3\xA9 a prezenta\xC4\x8Dn\xC3\xAD dovednosti"
 subjects_766: 
   created_on: 2005-11-24 10:45:13
   code: 
   updated_on: 2005-11-24 10:45:13
   type: ExternalSubject
   id: "19382"
-  label: Teorie m??ících systém?
+  label: "Teorie m\xC4\x9B\xC5\x99\xC3\xADc\xC3\xADch syst\xC3\xA9m\xC5\xAF"
 subjects_080: 
   created_on: 2005-10-03 11:41:45
   code: DERE09Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1749"
-  label: Plánování a prognostika
+  label: "Pl\xC3\xA1nov\xC3\xA1n\xC3\xAD a prognostika"
 subjects_503: 
   created_on: 2005-10-20 15:59:10
   code: 
   updated_on: 2005-10-20 15:59:10
   type: ExternalSubject
   id: "19119"
-  label: Geochemie ŽP
+  label: "Geochemie \xC5\xBDP"
 subjects_635: 
   created_on: 2005-10-27 09:48:32
   code: 
   updated_on: 2005-10-27 09:48:32
   type: ExternalSubject
   id: "19251"
-  label: "Statistické metody "
+  label: "Statistick\xC3\xA9 metody "
 subjects_767: 
   created_on: 2005-11-24 10:59:05
   code: 
   updated_on: 2005-11-24 10:59:05
   type: ExternalSubject
   id: "19383"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_081: 
   created_on: 2005-10-03 11:41:46
   code: DERE11Y
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1750"
-  label: Teorie ?ízení
+  label: "Teorie \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_504: 
   created_on: 2005-10-20 15:59:10
   code: 
   updated_on: 2005-10-20 15:59:10
   type: ExternalSubject
   id: "19120"
-  label: "Geochemické cykly stopových prvk?"
+  label: "Geochemick\xC3\xA9 cykly stopov\xC3\xBDch prvk\xC5\xAF"
 subjects_636: 
   created_on: 2005-10-27 09:48:32
   code: 
@@ -5669,63 +5535,63 @@ subjects_768:
   updated_on: 2005-11-24 10:59:05
   type: ExternalSubject
   id: "19384"
-  label: Vybrané m??ící metody a jejich instumentace
+  label: "Vybran\xC3\xA9 m\xC4\x9B\xC5\x99\xC3\xADc\xC3\xAD metody a jejich instumentace"
 subjects_082: 
   created_on: 2005-10-03 11:41:45
   code: DERX03Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1751"
-  label: "?ízení (management a marketing)"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD (management a marketing)"
 subjects_505: 
   created_on: 2005-10-20 16:01:28
   code: 
   updated_on: 2005-10-20 16:01:28
   type: ExternalSubject
   id: "19121"
-  label: Transportní procesy v povrchových a podzemních vodách
+  label: "Transportn\xC3\xAD procesy v povrchov\xC3\xBDch a podzemn\xC3\xADch vod\xC3\xA1ch"
 subjects_637: 
   created_on: 2005-10-27 09:48:32
   code: 
   updated_on: 2005-10-27 09:48:32
   type: ExternalSubject
   id: "19253"
-  label: Rostlinná výroba v TS
+  label: "Rostlinn\xC3\xA1 v\xC3\xBDroba v TS"
 subjects_769: 
   created_on: 2005-11-24 11:58:20
   code: 
   updated_on: 2005-11-24 11:58:20
   type: ExternalSubject
   id: "19385"
-  label: "Projektování technologických proces?"
+  label: "Projektov\xC3\xA1n\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_083: 
   created_on: 2005-10-03 11:41:46
   code: DERE10Y
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "1752"
-  label: Strategické ?ízení
+  label: "Strategick\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_506: 
   created_on: 2005-10-20 16:01:28
   code: 
   updated_on: 2005-10-20 16:01:28
   type: ExternalSubject
   id: "19122"
-  label: Programování
+  label: "Programov\xC3\xA1n\xC3\xAD"
 subjects_638: 
   created_on: 2005-10-27 09:48:32
   code: 
   updated_on: 2005-10-27 09:48:32
   type: ExternalSubject
   id: "19254"
-  label: Agrochemie a výživa rostlin
+  label: "Agrochemie a v\xC3\xBD\xC5\xBEiva rostlin"
 subjects_084: 
   created_on: 2005-10-03 11:41:44
   code: DEEE02
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1753"
-  label: Ekonomika sv?tového zem?d?lství
+  label: "Ekonomika sv\xC4\x9Btov\xC3\xA9ho zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
 subjects_507: 
   created_on: 2005-10-20 16:01:28
   code: 
@@ -5739,56 +5605,56 @@ subjects_639:
   updated_on: 2005-10-27 09:48:32
   type: ExternalSubject
   id: "19255"
-  label: Speciální produkce rostlinná v TS
+  label: "Speci\xC3\xA1ln\xC3\xAD produkce rostlinn\xC3\xA1 v TS"
 subjects_085: 
   created_on: 2005-10-03 11:41:45
   code: DEEE11
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1755"
-  label: Regionální ekonomika
+  label: "Region\xC3\xA1ln\xC3\xAD ekonomika"
 subjects_770: 
   created_on: 2005-11-24 11:58:20
   code: 
   updated_on: 2005-11-24 11:58:20
   type: ExternalSubject
   id: "19386"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_508: 
   created_on: 2005-10-20 16:03:48
   code: 
   updated_on: 2005-10-20 16:03:48
   type: ExternalSubject
   id: "19124"
-  label: Protipovod?ová ochrana I
+  label: "Protipovod\xC5\x88ov\xC3\xA1 ochrana I"
 subjects_086: 
   created_on: 2005-10-03 11:41:45
   code: DERE06Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "1758"
-  label: Personální ?ízení
+  label: "Person\xC3\xA1ln\xC3\xAD \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_771: 
   created_on: 2005-11-24 11:58:20
   code: 
   updated_on: 2005-11-24 11:58:20
   type: ExternalSubject
   id: "19387"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_509: 
   created_on: 2005-10-20 16:03:48
   code: 
   updated_on: 2005-10-20 16:03:48
   type: ExternalSubject
   id: "19125"
-  label: Aplikovaná meteorologie a klimatologie
+  label: "Aplikovan\xC3\xA1 meteorologie a klimatologie"
 subjects_087: 
   created_on: 2005-10-03 11:41:44
   code: DERE04Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1760"
-  label: Komunikace v ?ízení
+  label: "Komunikace v \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_640: 
   created_on: 2005-10-27 09:48:32
   code: 
@@ -5802,21 +5668,21 @@ subjects_772:
   updated_on: 2005-11-24 16:55:49
   type: ExternalSubject
   id: "19388"
-  label: "Aplikace GIS, DLBX41Y"
+  label: Aplikace GIS, DLBX41Y
 subjects_088: 
   created_on: 2005-10-03 11:41:44
   code: DEAE03Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1801"
-  label: Kvantitativní metody a modelování
+  label: "Kvantitativn\xC3\xAD metody a modelov\xC3\xA1n\xC3\xAD"
 subjects_641: 
   created_on: 2005-10-27 09:48:32
   code: 
   updated_on: 2005-10-27 09:48:32
   type: ExternalSubject
   id: "19257"
-  label: Didaktické a prezen?ní dovednosti
+  label: "Didaktick\xC3\xA9 a prezen\xC4\x8Dn\xC3\xAD dovednosti"
 subjects_773: 
   created_on: 2005-11-24 16:55:49
   code: 
@@ -5830,7 +5696,7 @@ subjects_089:
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "1929"
-  label: Evropské standardy pro oce?ování majetku
+  label: "Evropsk\xC3\xA9 standardy pro oce\xC5\x88ov\xC3\xA1n\xC3\xAD majetku"
 subjects_510: 
   created_on: 2005-10-20 16:06:27
   code: 
@@ -5844,21 +5710,21 @@ subjects_642:
   updated_on: 2005-10-27 13:08:59
   type: ExternalSubject
   id: "19258"
-  label: Inženýrská ekonomika
+  label: "In\xC5\xBEen\xC3\xBDrsk\xC3\xA1 ekonomika"
 subjects_774: 
   created_on: 2005-11-25 18:18:10
   code: 
   updated_on: 2005-11-25 18:18:10
   type: ExternalSubject
   id: "19390"
-  label: Zeliná?ství
+  label: "Zelin\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_511: 
   created_on: 2005-10-20 16:08:51
   code: 
   updated_on: 2005-10-20 16:08:51
   type: ExternalSubject
   id: "19127"
-  label: teorie ?ízení
+  label: "teorie \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_643: 
   created_on: 2005-10-27 14:20:12
   code: 
@@ -5872,98 +5738,98 @@ subjects_775:
   updated_on: 2005-11-28 09:18:58
   type: ExternalSubject
   id: "19391"
-  label: Využití biomasy
+  label: "Vyu\xC5\xBEit\xC3\xAD biomasy"
 subjects_512: 
   created_on: 2005-10-20 16:55:25
   code: 
   updated_on: 2005-10-20 16:55:25
   type: ExternalSubject
   id: "19128"
-  label: Environmentální mikrobiologie
+  label: "Environment\xC3\xA1ln\xC3\xAD mikrobiologie"
 subjects_644: 
   created_on: 2005-10-27 17:27:31
   code: 
   updated_on: 2005-10-27 17:27:31
   type: ExternalSubject
   id: "19260"
-  label: "Nauka o d?ev?"
+  label: "Nauka o d\xC5\x99ev\xC4\x9B"
 subjects_776: 
   created_on: 2005-11-28 17:01:34
   code: 
   updated_on: 2005-11-28 17:01:34
   type: ExternalSubject
   id: "19392"
-  label: Mléka?ství
+  label: "Ml\xC3\xA9ka\xC5\x99stv\xC3\xAD"
 subjects_513: 
   created_on: 2005-10-20 16:55:25
   code: 
   updated_on: 2005-10-20 16:55:25
   type: ExternalSubject
   id: "19129"
-  label: Geochemie životního prost?edí
+  label: "Geochemie \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_645: 
   created_on: 2005-10-27 17:27:31
   code: 
   updated_on: 2005-10-27 17:27:31
   type: ExternalSubject
   id: "19261"
-  label: D?eva?ské a nábytká?ské stroje
+  label: "D\xC5\x99eva\xC5\x99sk\xC3\xA9 a n\xC3\xA1bytk\xC3\xA1\xC5\x99sk\xC3\xA9 stroje"
 subjects_777: 
   created_on: 2005-12-06 14:18:50
   code: 
   updated_on: 2005-12-06 14:18:50
   type: ExternalSubject
   id: "19393"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_090: 
   created_on: 2005-10-03 11:41:44
   code: DERE12Y
   updated_on: 2005-10-03 11:41:44
   type: 
   id: "2127"
-  label: Finan?ní ?ízení
+  label: "Finan\xC4\x8Dn\xC3\xAD \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_091: 
   created_on: 2005-10-03 11:41:46
   code: DERE13Y
   updated_on: 2005-10-03 11:41:46
   type: 
   id: "2204"
-  label: Strategický management
+  label: "Strategick\xC3\xBD management"
 subjects_514: 
   created_on: 2005-10-20 17:19:11
   code: 
   updated_on: 2005-10-20 17:19:11
   type: ExternalSubject
   id: "19130"
-  label: Politika ochrany ŽP
+  label: "Politika ochrany \xC5\xBDP"
 subjects_646: 
   created_on: 2005-10-30 15:53:01
   code: 
   updated_on: 2005-10-30 15:53:01
   type: ExternalSubject
   id: "19262"
-  label: "Financování, efektivnost investic"
+  label: "Financov\xC3\xA1n\xC3\xAD, efektivnost investic"
 subjects_778: 
   created_on: 2005-12-06 15:13:25
   code: 
   updated_on: 2005-12-06 15:13:25
   type: ExternalSubject
   id: "19394"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_092: 
   created_on: 2005-10-03 11:41:45
   code: DEST16Y
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "2210"
-  label: "Statistika - pro doktorské studium TF"
+  label: "Statistika - pro doktorsk\xC3\xA9 studium TF"
 subjects_515: 
   created_on: 2005-10-20 17:19:11
   code: 
   updated_on: 2005-10-20 17:19:11
   type: ExternalSubject
   id: "19131"
-  label: Právní úprava podnikání
+  label: "Pr\xC3\xA1vn\xC3\xAD \xC3\xBAprava podnik\xC3\xA1n\xC3\xAD"
 subjects_647: 
   created_on: 2005-10-30 17:56:07
   code: 
@@ -5977,14 +5843,14 @@ subjects_779:
   updated_on: 2005-12-06 15:18:23
   type: ExternalSubject
   id: "19395"
-  label: Statistické metody
+  label: "Statistick\xC3\xA9 metody"
 subjects_093: 
   created_on: 2005-10-03 11:41:45
   code: DEPE01
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "3633"
-  label: Psychologie v ?ízení
+  label: "Psychologie v \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_516: 
   created_on: 2005-10-20 17:21:41
   code: 
@@ -5998,7 +5864,7 @@ subjects_648:
   updated_on: 2005-10-30 23:01:34
   type: ExternalSubject
   id: "19264"
-  label: "?ízení kvality IS"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD kvality IS"
 subjects_094: 
   created_on: 2005-10-03 11:41:45
   code: DESE12Y
@@ -6012,21 +5878,21 @@ subjects_780:
   updated_on: 2005-12-08 16:38:06
   type: ExternalSubject
   id: "19396"
-  label: Inženýrská ekonomika
+  label: "In\xC5\xBEen\xC3\xBDrsk\xC3\xA1 ekonomika"
 subjects_517: 
   created_on: 2005-10-20 17:21:41
   code: 
   updated_on: 2005-10-20 17:21:41
   type: ExternalSubject
   id: "19133"
-  label: Teorie ?ízení
+  label: "Teorie \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_649: 
   created_on: 2005-10-31 08:44:05
   code: 
   updated_on: 2005-10-31 08:44:05
   type: ExternalSubject
   id: "19265"
-  label: Datová a funk?ní analýza výrobních systém?
+  label: "Datov\xC3\xA1 a funk\xC4\x8Dn\xC3\xAD anal\xC3\xBDza v\xC3\xBDrobn\xC3\xADch syst\xC3\xA9m\xC5\xAF"
 subjects_095: 
   created_on: 2005-10-03 11:41:44
   code: DEIE03Y
@@ -6040,14 +5906,14 @@ subjects_781:
   updated_on: 2005-12-09 08:54:53
   type: ExternalSubject
   id: "19397"
-  label: Informa?ní systémy a po?íta?ové sít?
+  label: "Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B"
 subjects_518: 
   created_on: 2005-10-20 18:51:26
   code: 
   updated_on: 2005-10-20 18:51:26
   type: ExternalSubject
   id: "19134"
-  label: Zeliná?ství
+  label: "Zelin\xC3\xA1\xC5\x99stv\xC3\xAD"
 subjects_096: 
   created_on: 2005-10-03 11:41:44
   code: DEIE04Y
@@ -6061,14 +5927,14 @@ subjects_650:
   updated_on: 2005-10-31 08:48:01
   type: ExternalSubject
   id: "19266"
-  label: Malé vodní toky a nádrže
+  label: "Mal\xC3\xA9 vodn\xC3\xAD toky a n\xC3\xA1dr\xC5\xBEe"
 subjects_782: 
   created_on: 2005-12-09 08:54:53
   code: 
   updated_on: 2005-12-09 08:54:53
   type: ExternalSubject
   id: "19398"
-  label: "?ízení technologických proces?"
+  label: "\xC5\x98\xC3\xADzen\xC3\xAD technologick\xC3\xBDch proces\xC5\xAF"
 subjects_519: 
   created_on: 2005-10-20 19:09:35
   code: 
@@ -6082,4 +5948,4 @@ subjects_097:
   updated_on: 2005-10-03 11:41:45
   type: 
   id: "5440"
-  label: Metody a nástroje pro podporu informa?ního managementu
+  label: "Metody a n\xC3\xA1stroje pro podporu informa\xC4\x8Dn\xC3\xADho managementu"

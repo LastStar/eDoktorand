@@ -74,5 +74,9 @@ class ApplicationController < ActionController::Base
       @conditions = ['tutor_id = ?', @session['user'].person.id]
     end
   end
+  # rescues exceptions throwed in actions
+  def rescue_action_in_public(exception)
+    redirect_to error_url
+  end
 end
 

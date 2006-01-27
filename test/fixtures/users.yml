@@ -1,11 +1,4 @@
 --- 
-users_797: 
-  created_on: 2006-01-20 10:18:50
-  updated_on: 2006-01-20 10:18:50
-  id: "1964"
-  person_id: "3961"
-  password: c7cc3f1880bf9e5757420cd5b7bddc93520bc61b
-  login: muzik
 users_401: 
   created_on: 2005-10-12 14:02:19
   updated_on: 2005-10-19 15:38:50
@@ -27,13 +20,6 @@ users_665:
   person_id: "2858"
   password: f371f101cc8a10c20b6a8850cec26f81259ea51a
   login: vazda
-users_798: 
-  created_on: 2006-01-20 10:18:50
-  updated_on: 2006-01-20 10:18:50
-  id: "1965"
-  person_id: "2446"
-  password: ce650774281deda65c151c0bab9eee43c8fef0ec
-  login: jirickoval
 users_402: 
   created_on: 2005-10-12 14:02:19
   updated_on: 2005-10-19 15:38:44
@@ -55,13 +41,6 @@ users_666:
   person_id: "3959"
   password: 1df99bd3252425ad0f3fb3d216487ef2a46c3e2e
   login: beznoska
-users_799: 
-  created_on: 2006-01-20 10:18:50
-  updated_on: 2006-01-20 10:18:50
-  id: "1966"
-  person_id: "2550"
-  password: 4777bda48ae3a968aff5f0dfb2ee2b5da7630de1
-  login: vondricka
 users_403: 
   created_on: 2005-10-12 14:02:21
   updated_on: 2005-10-19 15:38:45
@@ -2435,13 +2414,6 @@ users_379:
   person_id: "3041"
   password: esterka
   login: esterka
-users_800: 
-  created_on: 2006-01-20 10:18:55
-  updated_on: 2006-01-20 10:18:55
-  id: "1967"
-  person_id: "2815"
-  password: 16bd03ebf6f85e7d38fed50393b3e6197c5f311a
-  login: potuzakova
 users_116: 
   created_on: 2005-10-02 15:47:35
   updated_on: 2005-10-02 15:47:35
@@ -2456,20 +2428,6 @@ users_248:
   person_id: "146"
   password: 660d4f4e9c49b4516b40a64a8132d8de6a026cfc
   login: Svobodova
-users_801: 
-  created_on: 2006-01-20 10:18:55
-  updated_on: 2006-01-20 10:18:55
-  id: "1968"
-  person_id: "2737"
-  password: 203a7b9e0f3e359a77f0172b53941c99ce262045
-  login: karova
-users_802: 
-  created_on: 2006-01-20 10:18:55
-  updated_on: 2006-01-20 10:18:55
-  id: "1969"
-  person_id: "192"
-  password: 3bdd7c0c8b2acebdf6d81169521ad3982ff2f547
-  login: frydova
 users_117: 
   created_on: 2005-10-02 15:47:35
   updated_on: 2005-10-02 15:47:35
@@ -2491,13 +2449,6 @@ users_380:
   person_id: "2915"
   password: ESNEROVA
   login: ESNEROVA
-users_803: 
-  created_on: 2006-01-20 10:18:55
-  updated_on: 2006-01-20 10:18:55
-  id: "1970"
-  person_id: "1720"
-  password: bde1dd4aa17f1598bf5e087d59976739e0d8e923
-  login: tovarys
 users_118: 
   created_on: 2005-10-02 15:47:35
   updated_on: 2005-10-02 15:47:35
@@ -2512,13 +2463,6 @@ users_381:
   person_id: "2634"
   password: goubej
   login: goubej
-users_804: 
-  created_on: 2006-01-20 10:18:55
-  updated_on: 2006-01-20 10:18:55
-  id: "1971"
-  person_id: "1684"
-  password: 7142ba3e1d3fc59304a5d6976b5d06865719eb60
-  login: jarkovskap
 users_119: 
   created_on: 2005-10-02 15:47:35
   updated_on: 2005-10-02 15:47:35
@@ -2540,13 +2484,6 @@ users_382:
   person_id: "3878"
   password: guth1
   login: guth
-users_805: 
-  created_on: 2006-01-20 10:18:55
-  updated_on: 2006-01-20 10:18:55
-  id: "1972"
-  person_id: "1696"
-  password: 97e193e87c195d6b028c111532a027214438bf8c
-  login: hykova
 users_251: 
   created_on: 2005-10-02 15:47:41
   updated_on: 2005-10-02 15:47:41
@@ -2561,13 +2498,6 @@ users_383:
   person_id: "3887"
   password: hajek
   login: hajek
-users_806: 
-  created_on: 2006-01-20 10:18:55
-  updated_on: 2006-01-20 10:18:55
-  id: "1973"
-  person_id: "2741"
-  password: 58da6a2f9c21114953eccaad0e7f04b4fc0e3018
-  login: hrdlickova
 users_120: 
   created_on: 2005-10-02 15:47:35
   updated_on: 2005-10-02 15:47:35
@@ -2589,13 +2519,6 @@ users_384:
   person_id: "3869"
   password: hanus
   login: hanus
-users_807: 
-  created_on: 2006-01-20 10:18:56
-  updated_on: 2006-01-20 10:18:56
-  id: "1974"
-  person_id: "1376"
-  password: d57b63e0f9aad59fc288582bd6ae049fa07e843d
-  login: doskocil
 users_121: 
   created_on: 2005-10-02 15:47:35
   updated_on: 2005-10-02 15:47:35
@@ -2617,13 +2540,6 @@ users_385:
   person_id: "3911"
   password: hatlapatkova
   login: hatlapatkova
-users_808: 
-  created_on: 2006-01-20 10:18:56
-  updated_on: 2006-01-20 10:18:56
-  id: "1975"
-  person_id: "1719"
-  password: 461d09f86f8245ce286554db0fc76c2fdc650086
-  login: danek
 users_122: 
   created_on: 2005-10-02 15:47:35
   updated_on: 2005-10-02 15:47:35
@@ -2645,13 +2561,6 @@ users_386:
   person_id: "3858"
   password: hladikj
   login: hladikj
-users_809: 
-  created_on: 2006-01-20 10:18:56
-  updated_on: 2006-01-20 10:18:56
-  id: "1976"
-  person_id: "1969"
-  password: 3efe28a7f319d952d2a2b38fe5b1974d4f47e184
-  login: stadnikf
 users_123: 
   created_on: 2005-10-02 15:47:35
   updated_on: 2005-10-02 15:47:35
@@ -2715,13 +2624,6 @@ users_389:
   person_id: "3873"
   password: hrdina
   login: hrdina
-users_810: 
-  created_on: 2006-01-20 10:18:56
-  updated_on: 2006-01-20 10:18:56
-  id: "1977"
-  person_id: "2627"
-  password: 34e210f36c3249ced219b61efe1f6978215bebad
-  login: karasek
 users_126: 
   created_on: 2005-10-02 15:47:36
   updated_on: 2005-10-02 15:47:36
@@ -2736,13 +2638,6 @@ users_258:
   person_id: "1766"
   password: e68dc122fd096d2079e353d10e1b41a87423c847
   login: Tlustos
-users_811: 
-  created_on: 2006-01-20 10:18:56
-  updated_on: 2006-01-20 10:18:56
-  id: "1978"
-  person_id: "2751"
-  password: 873a80ef05ab8d023ce55db0eab09fe6d6a91dd7
-  login: pansky
 users_127: 
   created_on: 2005-10-02 15:47:36
   updated_on: 2005-10-02 15:47:36
@@ -2757,13 +2652,6 @@ users_259:
   person_id: "772"
   password: 4e5eb044ce2bd1e2cd83027026c2ab5e7df4892d
   login: Tumova
-users_812: 
-  created_on: 2006-01-20 10:18:56
-  updated_on: 2006-01-20 10:18:56
-  id: "1979"
-  person_id: "1694"
-  password: 2c82792605d6986cd95c6ff467be62c96ecbd10a
-  login: koptova
 users_390: 
   created_on: 2005-10-12 14:02:12
   updated_on: 2005-10-19 15:38:48
@@ -2771,13 +2659,6 @@ users_390:
   person_id: "3877"
   password: chaloupka
   login: chaloupka
-users_813: 
-  created_on: 2006-01-20 10:19:00
-  updated_on: 2006-01-20 10:19:00
-  id: "1980"
-  person_id: "3281"
-  password: a40a9c6bcd9881dc831e09d0b4ad835f6ecf47dc
-  login: ebeid
 users_391: 
   created_on: 2005-10-12 14:02:12
   updated_on: 2005-10-31 08:07:07
@@ -2792,13 +2673,6 @@ users_128:
   person_id: "4580"
   password: 95f3a33091a8514956a2aa6eb9f7212f8a518c6e
   login: slama
-users_814: 
-  created_on: 2006-01-20 10:19:00
-  updated_on: 2006-01-20 10:19:00
-  id: "1981"
-  person_id: "3791"
-  password: 90062a3b7750d90e1c9a40f532a1587612febde6
-  login: dolezalp
 users_260: 
   created_on: 2005-10-02 15:47:41
   updated_on: 2005-10-02 15:47:41
@@ -2820,13 +2694,6 @@ users_129:
   person_id: "4583"
   password: 503fae300dd8cd073e45fcbee5fa24e38692081e
   login: slavikovas
-users_815: 
-  created_on: 2006-01-20 10:19:00
-  updated_on: 2006-01-20 10:19:00
-  id: "1982"
-  person_id: "2971"
-  password: f28c78fe7930b2945377182791e8c00d2859f565
-  login: sounova
 users_261: 
   created_on: 2005-10-02 15:47:41
   updated_on: 2005-10-02 15:47:41
@@ -2841,13 +2708,6 @@ users_393:
   person_id: "3932"
   password: jurecek
   login: jurecek
-users_816: 
-  created_on: 2006-01-20 10:19:00
-  updated_on: 2006-01-20 10:19:00
-  id: "1983"
-  person_id: "5114"
-  password: 19a658dc229b36a3aafa0ca2789bd3901f7436e8
-  login: kostalova
 users_130: 
   created_on: 2005-10-02 15:47:36
   updated_on: 2005-10-02 15:47:36
@@ -2869,13 +2729,6 @@ users_394:
   person_id: "3928"
   password: kahuda
   login: kahuda
-users_817: 
-  created_on: 2006-01-20 10:19:00
-  updated_on: 2006-01-20 10:19:00
-  id: "1984"
-  person_id: "5115"
-  password: 3dc1b1df4793340199cc4bb53db4b0cb4b361bba
-  login: maruskova
 users_131: 
   created_on: 2005-10-02 15:47:36
   updated_on: 2005-10-02 15:47:36
@@ -2897,13 +2750,6 @@ users_395:
   person_id: "2268"
   password: Kasparova
   login: Kasparova
-users_818: 
-  created_on: 2006-01-20 10:19:00
-  updated_on: 2006-01-20 10:19:00
-  id: "1985"
-  person_id: "3091"
-  password: c1d4b700942cdb4a0ab65010bf695f005cc49061
-  login: otahal
 users_132: 
   created_on: 2005-10-02 15:47:36
   updated_on: 2005-10-02 15:47:36
@@ -2925,13 +2771,6 @@ users_396:
   person_id: "3892"
   password: klimaj
   login: klimaj
-users_819: 
-  created_on: 2006-01-20 10:19:00
-  updated_on: 2006-01-20 10:19:00
-  id: "1986"
-  person_id: "3400"
-  password: f78a4e9b142d9cd4e884f5efb3500d618fdf1f76
-  login: machka
 users_001: 
   created_on: 2005-10-02 15:47:23
   updated_on: 2005-10-02 15:47:23
@@ -2988,13 +2827,6 @@ users_398:
   person_id: "2260"
   password: Klouda
   login: Klouda
-users_820: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1987"
-  person_id: "5104"
-  password: 50ab8493f844c6c312a705dd8a85eadd8e672180
-  login: mackovic
 users_003: 
   created_on: 2005-10-02 15:47:23
   updated_on: 2005-10-02 15:47:23
@@ -3044,13 +2876,6 @@ users_268:
   person_id: "11"
   password: 2c3864702b36b0e962307efae185ec83fb9f77c6
   login: vrana
-users_821: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1988"
-  person_id: "5108"
-  password: d5e5ab980a7a95acce7f1562167ac3879ebf3cc9
-  login: hrdinav
 users_005: 
   created_on: 2005-10-02 15:47:24
   updated_on: 2005-10-02 15:47:24
@@ -3072,13 +2897,6 @@ users_269:
   person_id: "115"
   password: 4c94e45e6eba302897f218ce498e6bb853e28b48
   login: Wittlingerova
-users_822: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1989"
-  person_id: "3593"
-  password: 7c32177effd97195d8316feebfc1d0bad93e2da2
-  login: chytry
 users_006: 
   created_on: 2005-10-02 15:47:24
   updated_on: 2005-10-02 15:47:24
@@ -3093,20 +2911,6 @@ users_138:
   person_id: "2271"
   password: ad1ef5cfec27ca2c515e09565786eb4f9bb10d48
   login: Martis
-users_823: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1990"
-  person_id: "4824"
-  password: abb29ed44ffc1b20af7f9fe9da920d0c251dce5e
-  login: kryspin
-users_824: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1991"
-  person_id: "5109"
-  password: 102e843f0f612f54e84954ee88050aa653125e2e
-  login: knizek
 users_270: 
   created_on: 2005-10-02 15:47:41
   updated_on: 2005-10-02 15:47:41
@@ -3128,13 +2932,6 @@ users_139:
   person_id: "2208"
   password: 9c5bb4ef52e2ca7c331d822643c3af90f721cbbd
   login: Gross
-users_825: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1992"
-  person_id: "4816"
-  password: 2c8e1364d7faf551743f32e94c5aaae892e549d8
-  login: mikeska
 users_271: 
   created_on: 2005-10-02 15:47:42
   updated_on: 2005-10-02 15:47:42
@@ -3149,13 +2946,6 @@ users_008:
   person_id: "4518"
   password: df27f121d6c4b8a3794825978f7598e07468848b
   login: miler
-users_826: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1993"
-  person_id: "5110"
-  password: b74033578accbed5d5175cb65a5aacfed228dca9
-  login: zeithaml
 users_140: 
   created_on: 2005-10-02 15:47:37
   updated_on: 2005-10-02 15:47:37
@@ -3177,13 +2967,6 @@ users_009:
   person_id: "4519"
   password: bf68c4d87fe99947c8ca48b44431bf7cb9009461
   login: passian
-users_827: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1994"
-  person_id: "5105"
-  password: 149dd8b01a8ace211b36773079bcf3e6757203d3
-  login: pavlu
 users_141: 
   created_on: 2005-10-02 15:47:37
   updated_on: 2005-10-02 15:47:37
@@ -3198,13 +2981,6 @@ users_273:
   person_id: "2309"
   password: ad38ef25738ab2b4c4fa52543858cf92c5a95835
   login: Zezulak
-users_828: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1995"
-  person_id: "4480"
-  password: ab0567eee1457d0fe4a0c5e615bb8a47118332d0
-  login: vlasakm
 users_274: 
   created_on: 2005-10-02 15:47:42
   updated_on: 2005-10-02 15:47:42
@@ -3226,13 +3002,6 @@ users_142:
   person_id: "175"
   password: 11e5c755850157345f79d71b6646bf9be9d868f8
   login: majerova
-users_829: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1996"
-  person_id: "128"
-  password: 466afea7ab3a457f2b0d7a898a76485a4a475cf8
-  login: Merunkova
 users_275: 
   created_on: 2005-10-02 15:47:42
   updated_on: 2005-10-02 15:47:42
@@ -3275,13 +3044,6 @@ users_144:
   person_id: "129"
   password: 19caf2a248b692421db70650ecb60dca446c5604
   login: slaby
-users_830: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1997"
-  person_id: "4804"
-  password: 788a8a947c0843ff57b7d5f9e2c9057fc3f53725
-  login: jezekj
 users_277: 
   created_on: 2005-10-02 15:47:42
   updated_on: 2005-10-02 15:47:42
@@ -3303,13 +3065,6 @@ users_145:
   person_id: "2184"
   password: b4374f4ce7f351b597655d0d103fb16e829f8d6b
   login: Stastny
-users_831: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1998"
-  person_id: "2136"
-  password: fdb725eb4ab223de33fbcaab3e7c76706abc1a82
-  login: Karas
 users_278: 
   created_on: 2005-10-02 15:47:42
   updated_on: 2005-10-02 15:47:42
@@ -3352,13 +3107,6 @@ users_147:
   person_id: "1214"
   password: bad17925f317aad07bffe834853793840836dd0b
   login: Sisak
-users_832: 
-  created_on: 2006-01-20 10:19:12
-  updated_on: 2006-01-20 10:19:12
-  id: "1999"
-  person_id: "4679"
-  password: 95568efb8a8fef7f4ccf8b962d4b2699e7b57cd4
-  login: kucharova
 users_700: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3380,13 +3128,6 @@ users_148:
   person_id: "2088"
   password: 5568a7c82e105dd4b088756cd5917aebe8c969d3
   login: Rozinek
-users_833: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2000"
-  person_id: "5106"
-  password: cf9fd7d54e5b81f335b632d5e6bb6cb8de256548
-  login: rusnak
 users_701: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3408,13 +3149,6 @@ users_149:
   person_id: "1803"
   password: be0b77265e5b30acff470c4993b146f06bda5eca
   login: Sovjak
-users_834: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2001"
-  person_id: "3005"
-  password: 143a5181953119645379911411a44d152bfe5d3f
-  login: vrzal
 users_702: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3429,13 +3163,6 @@ users_280:
   person_id: "2341"
   password: 6543431365c3b97d8c9014391ce86e86f4eb371b
   login: babicka
-users_835: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2002"
-  person_id: "3890"
-  password: 93f7b3d091e0c55b8227df6a1713c1767aaf7d83
-  login: balin
 users_703: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3457,13 +3184,6 @@ users_018:
   person_id: "4528"
   password: b95e555d973fe45b16b9bcb35b39e8cb60501259
   login: zlinsky
-users_836: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2003"
-  person_id: "2166"
-  password: 8d1f017cd8dfc5e0716d7c14c002b7ff2908633d
-  login: JanecekV
 users_704: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3492,13 +3212,6 @@ users_019:
   person_id: "4530"
   password: 2225c684421e014ff915307326e3bafc5c4a67e6
   login: zizalova
-users_837: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2004"
-  person_id: "3045"
-  password: 1cf109f967c972e668de7cea312de21f7006b520
-  login: vejmelkova
 users_705: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3520,13 +3233,6 @@ users_283:
   person_id: "5039"
   password: f6dbbffd19b1834019ef02a5c3474da041024b72
   login: chladek
-users_838: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2005"
-  person_id: "4820"
-  password: b4917e3a6a5955f8348c60b79eb0e275c3b311d6
-  login: burda
 users_706: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3555,13 +3261,6 @@ users_284:
   person_id: "5069"
   password: d9bf9ca626da73db820c48cf5b646dc8389a72b3
   login: cehlarikova
-users_839: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2006"
-  person_id: "2982"
-  password: 249c93558c3f6d556d5ca7ad8063619545b40820
-  login: cizekm
 users_707: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3618,13 +3317,6 @@ users_286:
   person_id: "5060"
   password: 5d78a3993ccec43909f065f4707a5f781c053aba
   login: kubista
-users_840: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2007"
-  person_id: "2632"
-  password: a17300334de54251bc1a1250627e842ed6f9a2ad
-  login: capek
 users_709: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3653,13 +3345,6 @@ users_287:
   person_id: "5055"
   password: d575c4353dc3982231f3b475cdd66eb62f061742
   login: jansavaclav
-users_841: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2008"
-  person_id: "5107"
-  password: 984e38321c412e6700261167ab12c0869bc3081f
-  login: karnet
 users_024: 
   created_on: 2005-10-02 15:47:25
   updated_on: 2005-10-02 15:47:25
@@ -3681,13 +3366,6 @@ users_288:
   person_id: "5035"
   password: d6625018981e05a2915b9d859dc59d900f24b935
   login: kodet
-users_842: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2009"
-  person_id: "2198"
-  password: e4236f87ff1af1993aae27d1c8b3e8609093e1f9
-  login: Smrcka
 users_710: 
   created_on: 2005-10-25 10:39:00
   updated_on: 2005-10-25 10:39:00
@@ -3730,13 +3408,6 @@ users_158:
   person_id: "174"
   password: d222858b1b6e206af3987acf752fd1c479e90f60
   login: andrtm
-users_843: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2010"
-  person_id: "3079"
-  password: 5ad167c2caad5a763c115ecdb67ba787a72411c6
-  login: safarj
 users_027: 
   created_on: 2005-10-02 15:47:26
   updated_on: 2005-10-12 13:23:53
@@ -3758,13 +3429,6 @@ users_711:
   person_id: "2394"
   password: 0d6aae69d78769d2b04213fd9c99e0ae0460de38
   login: vondrasek
-users_844: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2011"
-  person_id: "3871"
-  password: e259fb526be98e473bc500fd1c00f892966bbbd9
-  login: snytr
 users_290: 
   created_on: 2005-10-02 17:55:56
   updated_on: 2005-10-02 17:55:56
@@ -3786,13 +3450,6 @@ users_712:
   person_id: "3949"
   password: 152a1bbcbe4c92015067199612ac0f9c0fec68b0
   login: hnilickav
-users_845: 
-  created_on: 2006-01-20 10:19:13
-  updated_on: 2006-01-20 10:19:13
-  id: "2012"
-  person_id: "3251"
-  password: e28808fc92eb850f49c00d6ae805bc65b55f9041
-  login: stehlik
 users_291: 
   created_on: 2005-10-02 17:55:57
   updated_on: 2005-10-02 17:55:57
@@ -3807,13 +3464,6 @@ users_713:
   person_id: "52"
   password: 5ccf4e0f2f05a09312ab0520060dfe7a8dfcfc78
   login: rymesova
-users_846: 
-  created_on: 2006-01-20 12:23:57
-  updated_on: 2006-01-20 12:24:10
-  id: "2013"
-  person_id: "1330"
-  password: 887a5e2f87ab1a9f0c06446d7d41f147e8eb8982
-  login: aja
 users_160: 
   created_on: 2005-10-02 15:47:38
   updated_on: 2005-10-02 15:47:38
@@ -5837,13 +5487,6 @@ users_529:
   person_id: "1619"
   password: c119f22798fbb15ce4a1fd26b57371dd91f0b3e2
   login: klucova
-users_793: 
-  created_on: 2006-01-20 10:18:50
-  updated_on: 2006-01-20 10:18:50
-  id: "1960"
-  person_id: "2379"
-  password: 6f09223f8df9ca72740b31934ae116637a25239b
-  login: lachnit
 users_661: 
   created_on: 2005-10-25 10:38:56
   updated_on: 2005-10-25 10:38:56
@@ -5851,13 +5494,6 @@ users_661:
   person_id: "2952"
   password: 50d9bd7c3c51a107929093408b035bc6f6f11441
   login: brozovad
-users_794: 
-  created_on: 2006-01-20 10:18:50
-  updated_on: 2006-01-20 10:18:50
-  id: "1961"
-  person_id: "3957"
-  password: d890ddda1432069892115a84bb7fcd2572c82d2c
-  login: "(null)"
 users_530: 
   created_on: 2005-10-14 08:57:19
   updated_on: 2005-10-14 08:57:19
@@ -5872,13 +5508,6 @@ users_662:
   person_id: "2887"
   password: 1229e20d9055bf32920311efeba6223ced95cba4
   login: grygara
-users_795: 
-  created_on: 2006-01-20 10:18:50
-  updated_on: 2006-01-20 10:18:50
-  id: "1962"
-  person_id: "5116"
-  password: 4adc589bbe80f42856e6d0b0c2b1d0d9920a4a9c
-  login: stejskal
 users_531: 
   created_on: 2005-10-14 08:57:19
   updated_on: 2005-10-14 08:57:19
@@ -5893,13 +5522,6 @@ users_663:
   person_id: "2860"
   password: d4d65c141e1309849cf7c3f605afe125956d2c3c
   login: hrabe
-users_796: 
-  created_on: 2006-01-20 10:18:50
-  updated_on: 2006-01-20 10:18:50
-  id: "1963"
-  person_id: "2955"
-  password: b0b3df65448d7660f382ad698f466c33566f888e
-  login: Juren
 users_400: 
   created_on: 2005-10-12 14:02:18
   updated_on: 2005-10-19 15:38:50

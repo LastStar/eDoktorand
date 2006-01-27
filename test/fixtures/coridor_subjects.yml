@@ -1174,7 +1174,7 @@ coridor_subjects_1820:
   coridor_id: "66"
   id: "1822"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_1757: 
   type: VoluntarySubject
   coridor_id: "101"
@@ -1204,7 +1204,7 @@ coridor_subjects_1821:
   coridor_id: "65"
   id: "1823"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_1758: 
   type: VoluntarySubject
   coridor_id: "101"
@@ -1234,7 +1234,7 @@ coridor_subjects_1822:
   coridor_id: "63"
   id: "1824"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_1759: 
   type: VoluntarySubject
   coridor_id: "101"
@@ -1264,7 +1264,7 @@ coridor_subjects_1823:
   coridor_id: "64"
   id: "1825"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_881: 
   type: SeminarSubject
   coridor_id: "132"
@@ -1288,7 +1288,7 @@ coridor_subjects_1824:
   coridor_id: "62"
   id: "1826"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_882: 
   type: SeminarSubject
   coridor_id: "130"
@@ -1312,7 +1312,7 @@ coridor_subjects_1825:
   coridor_id: "61"
   id: "1827"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_883: 
   type: SeminarSubject
   coridor_id: "128"
@@ -1336,7 +1336,7 @@ coridor_subjects_1826:
   coridor_id: "60"
   id: "1828"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_884: 
   type: SeminarSubject
   coridor_id: "127"
@@ -1360,7 +1360,7 @@ coridor_subjects_1827:
   coridor_id: "59"
   id: "1829"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_1130: 
   type: VoluntarySubject
   coridor_id: "135"
@@ -1384,7 +1384,7 @@ coridor_subjects_1828:
   coridor_id: "58"
   id: "1830"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_1131: 
   type: VoluntarySubject
   coridor_id: "135"
@@ -1414,7 +1414,7 @@ coridor_subjects_1829:
   coridor_id: "21"
   id: "1831"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_1132: 
   type: VoluntarySubject
   coridor_id: "135"
@@ -3214,7 +3214,7 @@ coridor_subjects_1819:
   coridor_id: "67"
   id: "1821"
   subject_id: "9003"
-  requisite_on: "1"
+  requisite_on: "2"
 coridor_subjects_1122: 
   type: VoluntarySubject
   coridor_id: "135"

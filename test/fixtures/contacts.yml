@@ -255,7 +255,7 @@ contacts_440:
   id: "440"
   person_id: "3964"
 contacts_250: 
-  name: "224 382 141, 7767272"
+  name: 224 382 141, 7767272
   contact_type_id: "2"
   id: "250"
   person_id: "3042"
@@ -460,7 +460,7 @@ contacts_067:
   id: "67"
   person_id: 
 contacts_495: 
-  name: "+420/224 382 385"
+  name: +420/224 382 385
   contact_type_id: "2"
   id: "495"
   person_id: "234"
@@ -555,7 +555,7 @@ contacts_170:
   id: "170"
   person_id: 
 contacts_312: 
-  name: "+420 775 106 736"
+  name: +420 775 106 736
   contact_type_id: "2"
   id: "312"
   person_id: "5029"
@@ -1180,7 +1180,7 @@ contacts_345:
   id: "345"
   person_id: 
 contacts_155: 
-  name: "linka 3051, 731 836"
+  name: linka 3051, 731 836
   contact_type_id: "2"
   id: "155"
   person_id: "3277"
@@ -1245,7 +1245,7 @@ contacts_349:
   id: "349"
   person_id: 
 contacts_159: 
-  name: "+420 607 991 343"
+  name: +420 607 991 343
   contact_type_id: "2"
   id: "159"
   person_id: "3629"
@@ -1520,7 +1520,7 @@ contacts_029:
   id: "29"
   person_id: 
 contacts_457: 
-  name: "603348747, datum nar"
+  name: 603348747, datum nar
   contact_type_id: "2"
   id: "457"
   person_id: 
@@ -1725,7 +1725,7 @@ contacts_184:
   id: "184"
   person_id: "4514"
 contacts_327: 
-  name: "magryc@seznam.cz, ry"
+  name: magryc@seznam.cz, ry
   contact_type_id: "1"
   id: "327"
   person_id: "5259"
@@ -1750,7 +1750,7 @@ contacts_185:
   id: "185"
   person_id: "4514"
 contacts_328: 
-  name: "+420 777 622 056"
+  name: +420 777 622 056
   contact_type_id: "2"
   id: "328"
   person_id: "5259"
@@ -2315,7 +2315,7 @@ contacts_410:
   id: "410"
   person_id: 
 contacts_220: 
-  name: "224 382 141, 7767272"
+  name: 224 382 141, 7767272
   contact_type_id: "2"
   id: "220"
   person_id: 
@@ -2350,7 +2350,7 @@ contacts_080:
   id: "80"
   person_id: "3382"
 contacts_222: 
-  name: "224 382 141, 7767272"
+  name: 224 382 141, 7767272
   contact_type_id: "2"
   id: "222"
   person_id: 
@@ -2400,7 +2400,7 @@ contacts_414:
   id: "414"
   person_id: "3951"
 contacts_224: 
-  name: "224 382 141, 7767272"
+  name: 224 382 141, 7767272
   contact_type_id: "2"
   id: "224"
   person_id: 
@@ -2460,7 +2460,7 @@ contacts_416:
   id: "416"
   person_id: "2985"
 contacts_226: 
-  name: "224 382 141, 7767272"
+  name: 224 382 141, 7767272
   contact_type_id: "2"
   id: "226"
   person_id: 
