@@ -1,16 +1,16 @@
 --- 
 addresses_098: 
-  city: "Zl\xEDn"
+  city: "Zl\xC3\xADn"
   zip: "76001"
   student_id: 
   orient_number: 
   desc_number: "2802"
   id: "98"
-  street: "\x8Atef\xE1nikova"
+  street: "\xC5\xA0tef\xC3\xA1nikova"
   address_type_id: "1"
   state: 
 addresses_179: 
-  city: Vl?kovice v Podkrko
+  city: "Vl\xC4\x8Dkovice v Podkrko"
   zip: "54444"
   student_id: 
   orient_number: 
@@ -20,13 +20,13 @@ addresses_179:
   address_type_id: "1"
   state: 
 addresses_099: 
-  city: Podbo?any
+  city: "Podbo\xC5\x99any"
   zip: "44101"
   student_id: "2902"
   orient_number: 
   desc_number: "774"
   id: "99"
-  street: "S\xEDdli\x9At? M\xEDru"
+  street: "S\xC3\xADdli\xC5\xA1t\xC4\x9B M\xC3\xADru"
   address_type_id: "1"
   state: 
 addresses_100: 
@@ -46,17 +46,17 @@ addresses_020:
   orient_number: 
   desc_number: "1072"
   id: "20"
-  street: "Ro\x9Aick\xE9ho"
+  street: "Ro\xC5\xA1ick\xC3\xA9ho"
   address_type_id: "0"
   state: 
 addresses_101: 
-  city: "Pec pod Sn?\x9Ekou"
+  city: "Pec pod Sn\xC4\x9B\xC5\xBEkou"
   zip: "54221"
   student_id: "4430"
   orient_number: 
   desc_number: "154"
   id: "101"
-  street: "Velk\xE1 \xDApa"
+  street: "Velk\xC3\xA1 \xC3\x9Apa"
   address_type_id: "1"
   state: 
 addresses_021: 
@@ -70,23 +70,23 @@ addresses_021:
   address_type_id: "1"
   state: 
 addresses_102: 
-  city: "Zl\xEDn"
+  city: "Zl\xC3\xADn"
   zip: "76001"
   student_id: "2939"
   orient_number: 
   desc_number: "2802"
   id: "102"
-  street: "\x8Atef\xE1nikova"
+  street: "\xC5\xA0tef\xC3\xA1nikova"
   address_type_id: "1"
   state: 
 addresses_022: 
-  city: "Uhersk\xFD Brod"
+  city: "Uhersk\xC3\xBD Brod"
   zip: "68801"
   student_id: 
   orient_number: 
   desc_number: "1980"
   id: "22"
-  street: "Na l\xE1n?"
+  street: "Na l\xC3\xA1n\xC4\x9B"
   address_type_id: "1"
   state: 
 addresses_103: 
@@ -96,7 +96,7 @@ addresses_103:
   orient_number: 
   desc_number: "1779"
   id: "103"
-  street: "Zd. \x8At?p\xE1nka"
+  street: "Zd. \xC5\xA0t\xC4\x9Bp\xC3\xA1nka"
   address_type_id: "1"
   state: 
 addresses_210: 
@@ -106,17 +106,17 @@ addresses_210:
   orient_number: 
   desc_number: 694/8
   id: "210"
-  street: "Vlna?sk\xE1"
+  street: "Vlna\xC5\x99sk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_104: 
-  city: "\x8Eamberk"
+  city: "\xC5\xBDamberk"
   zip: 564 01
   student_id: "4385"
   orient_number: 
   desc_number: "136"
   id: "104"
-  street: "Helv\xEDkovice"
+  street: "Helv\xC3\xADkovice"
   address_type_id: "1"
   state: 
 addresses_130: 
@@ -126,7 +126,7 @@ addresses_130:
   orient_number: 
   desc_number: "1980"
   id: "130"
-  street: "Hornocholupick\xE1"
+  street: "Hornocholupick\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_211: 
@@ -136,17 +136,17 @@ addresses_211:
   orient_number: 
   desc_number: "463"
   id: "211"
-  street: "Nejdeck\xE1"
+  street: "Nejdeck\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_023: 
-  city: "Uhersk\xFD Brod"
+  city: "Uhersk\xC3\xBD Brod"
   zip: "68801"
   student_id: 
   orient_number: 
   desc_number: "1980"
   id: "23"
-  street: "Na l\xE1ne"
+  street: "Na l\xC3\xA1ne"
   address_type_id: "1"
   state: 
 addresses_050: 
@@ -156,47 +156,47 @@ addresses_050:
   orient_number: 
   desc_number: "1072"
   id: "50"
-  street: "Ro\x9Aick\xE9ho"
+  street: "Ro\xC5\xA1ick\xC3\xA9ho"
   address_type_id: "1"
   state: 
 addresses_105: 
-  city: Hud?ice
+  city: "Hud\xC4\x8Dice"
   zip: 262 72
   student_id: "4547"
   orient_number: 
   desc_number: "85"
   id: "105"
-  street: Hud?ice
+  street: "Hud\xC4\x8Dice"
   address_type_id: "1"
   state: 
 addresses_131: 
-  city: "Ka\x9Apersk\xE9 Hory"
+  city: "Ka\xC5\xA1persk\xC3\xA9 Hory"
   zip: "34192"
   student_id: "2915"
   orient_number: 
   desc_number: "301"
   id: "131"
-  street: "?esk\xE1"
+  street: "\xC4\x8Cesk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_212: 
-  city: "Uhli?sk\xE9 Janovice"
+  city: "Uhli\xC5\x99sk\xC3\xA9 Janovice"
   zip: 285 04
   student_id: "2956"
   orient_number: 
   desc_number: "18"
   id: "212"
-  street: Sta?kovice
+  street: "Sta\xC5\x88kovice"
   address_type_id: "1"
   state: 
 addresses_024: 
-  city: "Uhersk\xFD Brod"
+  city: "Uhersk\xC3\xBD Brod"
   zip: "68801"
   student_id: 
   orient_number: 
   desc_number: "1980"
   id: "24"
-  street: "Na l\xE1ne"
+  street: "Na l\xC3\xA1ne"
   address_type_id: "1"
   state: 
 addresses_106: 
@@ -206,27 +206,27 @@ addresses_106:
   orient_number: 
   desc_number: "837"
   id: "106"
-  street: Barto?ova
+  street: "Barto\xC5\x88ova"
   address_type_id: "1"
   state: 
 addresses_132: 
-  city: Sob?slav
+  city: "Sob\xC4\x9Bslav"
   zip: 165 21
   student_id: 
   orient_number: 
   desc_number: 708/III
   id: "132"
-  street: "Sv\xE1kov"
+  street: "Sv\xC3\xA1kov"
   address_type_id: "1"
   state: 
 addresses_213: 
-  city: K?ovice
+  city: "K\xC5\x88ovice"
   zip: "26401"
   student_id: 
   orient_number: 
   desc_number: "5"
   id: "213"
-  street: K?ovi?ky
+  street: "K\xC5\x88ovi\xC4\x8Dky"
   address_type_id: "1"
   state: 
 addresses_025: 
@@ -240,23 +240,23 @@ addresses_025:
   address_type_id: "1"
   state: 
 addresses_051: 
-  city: He?manova Hu?
+  city: "He\xC5\x99manova Hu\xC5\xA5"
   zip: "33024"
   student_id: 
   orient_number: 
   desc_number: "127"
   id: "51"
-  street: "Vlk\xFD\x9A"
+  street: "Vlk\xC3\xBD\xC5\xA1"
   address_type_id: "1"
   state: 
 addresses_240: 
-  city: Poli?ka
+  city: "Poli\xC4\x8Dka"
   zip: "57201"
   student_id: "3023"
   orient_number: 
   desc_number: "204"
   id: "240"
-  street: "Old?i\x9A-Babka 204"
+  street: "Old\xC5\x99i\xC5\xA1-Babka 204"
   address_type_id: "1"
   state: 
 addresses_107: 
@@ -266,11 +266,11 @@ addresses_107:
   orient_number: 
   desc_number: "18"
   id: "107"
-  street: Turgen?vova
+  street: "Turgen\xC4\x9Bvova"
   address_type_id: "1"
   state: 
 addresses_133: 
-  city: "Litomy\x9Al"
+  city: "Litomy\xC5\xA1l"
   zip: "57001"
   student_id: "3770"
   orient_number: 
@@ -280,37 +280,37 @@ addresses_133:
   address_type_id: "1"
   state: 
 addresses_214: 
-  city: K?ovice
+  city: "K\xC5\x88ovice"
   zip: "26401"
   student_id: "4515"
   orient_number: 
   desc_number: "5"
   id: "214"
-  street: K?ovi?ky
+  street: "K\xC5\x88ovi\xC4\x8Dky"
   address_type_id: "1"
   state: 
 addresses_026: 
-  city: "Gol??v Jen\xEDkov"
+  city: "Gol\xC4\x8D\xC5\xAFv Jen\xC3\xADkov"
   zip: "58282"
   student_id: 
   orient_number: 
   desc_number: "12"
   id: "26"
-  street: "Le\x9Akovice"
+  street: "Le\xC5\xA1kovice"
   address_type_id: "1"
   state: 
 addresses_052: 
-  city: "K?ivokl\xE1t"
+  city: "K\xC5\x99ivokl\xC3\xA1t"
   zip: "27023"
   student_id: "3537"
   orient_number: 
   desc_number: "183"
   id: "52"
-  street: "K?ivokl\xE1t"
+  street: "K\xC5\x99ivokl\xC3\xA1t"
   address_type_id: "1"
   state: 
 addresses_241: 
-  city: "T?eb\xED?"
+  city: "T\xC5\x99eb\xC3\xAD\xC4\x8D"
   zip: "67401"
   student_id: "3405"
   orient_number: 
@@ -320,13 +320,13 @@ addresses_241:
   address_type_id: "1"
   state: 
 addresses_108: 
-  city: Na?eradec
+  city: "Na\xC4\x8Deradec"
   zip: "25708"
   student_id: "4686"
   orient_number: 
   desc_number: "43"
   id: "108"
-  street: "Horn\xED Lhota"
+  street: "Horn\xC3\xAD Lhota"
   address_type_id: "1"
   state: 
 addresses_134: 
@@ -346,17 +346,17 @@ addresses_160:
   orient_number: 
   desc_number: 780/36
   id: "160"
-  street: "Slu\x9Esk\xE1"
+  street: "Slu\xC5\xBEsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_215: 
-  city: Jind?ich?v Hradec
+  city: "Jind\xC5\x99ich\xC5\xAFv Hradec"
   zip: 377 01
   student_id: "3894"
   orient_number: 
   desc_number: 57/III
   id: "215"
-  street: "V\xE1clavsk\xE1"
+  street: "V\xC3\xA1clavsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_027: 
@@ -370,13 +370,13 @@ addresses_027:
   address_type_id: "1"
   state: 
 addresses_053: 
-  city: "M?ln\xEDk"
+  city: "M\xC4\x9Bln\xC3\xADk"
   zip: 276 01
   student_id: "3804"
   orient_number: 
   desc_number: "2660"
   id: "53"
-  street: Bo?ivoje
+  street: "Bo\xC5\x99ivoje"
   address_type_id: "1"
   state: 
 addresses_242: 
@@ -386,17 +386,17 @@ addresses_242:
   orient_number: 
   desc_number: 31/6
   id: "242"
-  street: "kpt. Jaro\x9Ae"
+  street: "kpt. Jaro\xC5\xA1e"
   address_type_id: "1"
   state: 
 addresses_135: 
-  city: "Byst?ice pod Host\xFD"
+  city: "Byst\xC5\x99ice pod Host\xC3\xBD"
   zip: "76861"
   student_id: 
   orient_number: 
   desc_number: "1611"
   id: "135"
-  street: "T?\xEDda Legi\xED"
+  street: "T\xC5\x99\xC3\xADda Legi\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_161: 
@@ -406,17 +406,17 @@ addresses_161:
   orient_number: 
   desc_number: "40"
   id: "161"
-  street: "Bohum\xEDnsk\xE1"
+  street: "Bohum\xC3\xADnsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_216: 
-  city: "Star\xE1 Lys\xE1"
+  city: "Star\xC3\xA1 Lys\xC3\xA1"
   zip: "28926"
   student_id: "3965"
   orient_number: 
   desc_number: "134"
   id: "216"
-  street: "Star\xE1 Lys\xE1"
+  street: "Star\xC3\xA1 Lys\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_028: 
@@ -426,17 +426,17 @@ addresses_028:
   orient_number: 
   desc_number: "628"
   id: "28"
-  street: "Doma\x9Elick\xE9 p?edm?st\xED"
+  street: "Doma\xC5\xBElick\xC3\xA9 p\xC5\x99edm\xC4\x9Bst\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_054: 
-  city: B?ehy
+  city: "B\xC5\x99ehy"
   zip: "53501"
   student_id: "1328"
   orient_number: 
   desc_number: "84"
   id: "54"
-  street: "V Z\xE1kout\xED"
+  street: "V Z\xC3\xA1kout\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_080: 
@@ -446,17 +446,17 @@ addresses_080:
   orient_number: 
   desc_number: "9"
   id: "80"
-  street: "\x8Akroupova"
+  street: "\xC5\xA0kroupova"
   address_type_id: "1"
   state: 
 addresses_109: 
-  city: "Stra\x9Aice"
+  city: "Stra\xC5\xA1ice"
   zip: "33845"
   student_id: 
   orient_number: 
   desc_number: 379/I
   id: "109"
-  street: ?tvr? Dv?r
+  street: "\xC4\x8Ctvr\xC5\xA5 Dv\xC5\xAFr"
   address_type_id: "1"
   state: 
 addresses_243: 
@@ -466,17 +466,17 @@ addresses_243:
   orient_number: 
   desc_number: "1072"
   id: "243"
-  street: "Kam\xFDck\xE1"
+  street: "Kam\xC3\xBDck\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_136: 
-  city: "Byst?ice pod Host\xFD"
+  city: "Byst\xC5\x99ice pod Host\xC3\xBD"
   zip: "76861"
   student_id: 
   orient_number: 
   desc_number: "1611"
   id: "136"
-  street: "T?\xEDda Legi\xED"
+  street: "T\xC5\x99\xC3\xADda Legi\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_162: 
@@ -490,13 +490,13 @@ addresses_162:
   address_type_id: "1"
   state: 
 addresses_217: 
-  city: "Star\xE1 Lys\xE1"
+  city: "Star\xC3\xA1 Lys\xC3\xA1"
   zip: "28926"
   student_id: "3964"
   orient_number: 
   desc_number: "134"
   id: "217"
-  street: "Star\xE1 Lys\xE1"
+  street: "Star\xC3\xA1 Lys\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_029: 
@@ -506,7 +506,7 @@ addresses_029:
   orient_number: 
   desc_number: "628"
   id: "29"
-  street: "Doma\x9Elick\xE9 p?edm?st\xED"
+  street: "Doma\xC5\xBElick\xC3\xA9 p\xC5\x99edm\xC4\x9Bst\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_055: 
@@ -516,17 +516,17 @@ addresses_055:
   orient_number: 
   desc_number: "2491"
   id: "55"
-  street: "Norsk\xE1"
+  street: "Norsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_081: 
-  city: "Gol??v Jen\xEDkov"
+  city: "Gol\xC4\x8D\xC5\xAFv Jen\xC3\xADkov"
   zip: "58282"
   student_id: "3088"
   orient_number: 
   desc_number: "12"
   id: "81"
-  street: "Le\x9Akovice"
+  street: "Le\xC5\xA1kovice"
   address_type_id: "1"
   state: 
 addresses_244: 
@@ -536,7 +536,7 @@ addresses_244:
   orient_number: 
   desc_number: "1072"
   id: "244"
-  street: "Kam\xFDck\xE1"
+  street: "Kam\xC3\xBDck\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_163: 
@@ -550,7 +550,7 @@ addresses_163:
   address_type_id: "1"
   state: 
 addresses_218: 
-  city: "T\xE1bor - Klokoty"
+  city: "T\xC3\xA1bor - Klokoty"
   zip: "39003"
   student_id: "3359"
   orient_number: 
@@ -560,33 +560,33 @@ addresses_218:
   address_type_id: "1"
   state: 
 addresses_056: 
-  city: "\x8Eamberk"
+  city: "\xC5\xBDamberk"
   zip: 564 01
   student_id: 
   orient_number: 
   desc_number: "136"
   id: "56"
-  street: "Helv\xEDkovice"
+  street: "Helv\xC3\xADkovice"
   address_type_id: "1"
   state: 
 addresses_082: 
-  city: "Uhersk\xFD Brod"
+  city: "Uhersk\xC3\xBD Brod"
   zip: "68801"
   student_id: "3799"
   orient_number: 
   desc_number: "1980"
   id: "82"
-  street: "Na l\xE1n?"
+  street: "Na l\xC3\xA1n\xC4\x9B"
   address_type_id: "1"
   state: 
 addresses_137: 
-  city: "Byst?ice pod Host\xFD"
+  city: "Byst\xC5\x99ice pod Host\xC3\xBD"
   zip: "76861"
   student_id: 
   orient_number: 
   desc_number: "1611"
   id: "137"
-  street: "T?\xEDda Legi\xED"
+  street: "T\xC5\x99\xC3\xADda Legi\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_245: 
@@ -596,27 +596,27 @@ addresses_245:
   orient_number: 
   desc_number: 28-3-35
   id: "245"
-  street: "Tere\x9Akovoj"
+  street: "Tere\xC5\xA1kovoj"
   address_type_id: "1"
   state: 
 addresses_164: 
-  city: "Litv\xEDnov"
+  city: "Litv\xC3\xADnov"
   zip: "43601"
   student_id: "4560"
   orient_number: 
   desc_number: "2052"
   id: "164"
-  street: "Podkru\x9Anohorsk\xE1"
+  street: "Podkru\xC5\xA1nohorsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_190: 
-  city: Chrast u Chrudim?
+  city: "Chrast u Chrudim\xC4\x9B"
   zip: 538 51
   student_id: 
   orient_number: 
   desc_number: "632"
   id: "190"
-  street: "Chra\x9Aice"
+  street: "Chra\xC5\xA1ice"
   address_type_id: "1"
   state: 
 addresses_219: 
@@ -630,97 +630,97 @@ addresses_219:
   address_type_id: "1"
   state: 
 addresses_057: 
-  city: "\x8Eamberk"
+  city: "\xC5\xBDamberk"
   zip: 564 01
   student_id: 
   orient_number: 
   desc_number: "136"
   id: "57"
-  street: "Helv\xEDkovice"
+  street: "Helv\xC3\xADkovice"
   address_type_id: "1"
   state: 
 addresses_083: 
-  city: He?manova Hu?
+  city: "He\xC5\x99manova Hu\xC5\xA5"
   zip: "33024"
   student_id: "4572"
   orient_number: 
   desc_number: "127"
   id: "83"
-  street: "Vlk\xFD\x9A"
+  street: "Vlk\xC3\xBD\xC5\xA1"
   address_type_id: "1"
   state: 
 addresses_138: 
-  city: "Byst?ice pod Host\xFD"
+  city: "Byst\xC5\x99ice pod Host\xC3\xBD"
   zip: "76861"
   student_id: 
   orient_number: 
   desc_number: "1611"
   id: "138"
-  street: "T?\xEDda Legi\xED"
+  street: "T\xC5\x99\xC3\xADda Legi\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_246: 
-  city: "Na?e\x9Aice"
+  city: "Na\xC4\x8De\xC5\xA1ice"
   zip: 538 03
   student_id: "2953"
   orient_number: 
   desc_number: "51"
   id: "246"
-  street: Licom?lice
+  street: "Licom\xC4\x9Blice"
   address_type_id: "1"
   state: 
 addresses_191: 
-  city: Chrast u Chrudim?
+  city: "Chrast u Chrudim\xC4\x9B"
   zip: 538 51
   student_id: "3962"
   orient_number: 
   desc_number: "632"
   id: "191"
-  street: "Chra\x9Aice"
+  street: "Chra\xC5\xA1ice"
   address_type_id: "1"
   state: 
 addresses_058: 
-  city: "\x8Eamberk"
+  city: "\xC5\xBDamberk"
   zip: 564 01
   student_id: 
   orient_number: 
   desc_number: "136"
   id: "58"
-  street: "Helv\xEDkovice"
+  street: "Helv\xC3\xADkovice"
   address_type_id: "1"
   state: 
 addresses_084: 
-  city: "Praha 10 - Z\xE1b?hli"
+  city: "Praha 10 - Z\xC3\xA1b\xC4\x9Bhli"
   zip: 106 00
   student_id: 
   orient_number: 
   desc_number: "2696"
   id: "84"
-  street: "Jasm\xEDnov\xE1"
+  street: "Jasm\xC3\xADnov\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_139: 
-  city: "Byst?ice pod Host\xFD"
+  city: "Byst\xC5\x99ice pod Host\xC3\xBD"
   zip: "76861"
   student_id: 
   orient_number: 
   desc_number: "1611"
   id: "139"
-  street: "T?\xEDda Legi\xED"
+  street: "T\xC5\x99\xC3\xADda Legi\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_165: 
-  city: "Kom\xE1rov u Ho?ovic"
+  city: "Kom\xC3\xA1rov u Ho\xC5\x99ovic"
   zip: "26762"
   student_id: 
   orient_number: 
   desc_number: "471"
   id: "165"
-  street: "Sokolovick\xE1"
+  street: "Sokolovick\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_247: 
-  city: "Vy\x9A\x9A\xED Brod"
+  city: "Vy\xC5\xA1\xC5\xA1\xC3\xAD Brod"
   zip: "38273"
   student_id: 
   orient_number: 
@@ -730,23 +730,23 @@ addresses_247:
   address_type_id: "1"
   state: 
 addresses_192: 
-  city: Sob?slav
+  city: "Sob\xC4\x9Bslav"
   zip: 392 01
   student_id: "5079"
   orient_number: 
   desc_number: 708/III
   id: "192"
-  street: "Sv\xE1kov"
+  street: "Sv\xC3\xA1kov"
   address_type_id: "1"
   state: 
 addresses_059: 
-  city: "\x8Eamberk"
+  city: "\xC5\xBDamberk"
   zip: 564 01
   student_id: 
   orient_number: 
   desc_number: "136"
   id: "59"
-  street: "Helv\xEDkovice"
+  street: "Helv\xC3\xADkovice"
   address_type_id: "1"
   state: 
 addresses_085: 
@@ -756,21 +756,21 @@ addresses_085:
   orient_number: 
   desc_number: "2696"
   id: "85"
-  street: "Jasm\xEDnov\xE1"
+  street: "Jasm\xC3\xADnov\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_166: 
-  city: "Kom\xE1rov u Ho?ovic"
+  city: "Kom\xC3\xA1rov u Ho\xC5\x99ovic"
   zip: "26762"
   student_id: "1293"
   orient_number: 
   desc_number: "471"
   id: "166"
-  street: "Sokolovick\xE1"
+  street: "Sokolovick\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_248: 
-  city: "Vy\x9A\x9A\xED Brod"
+  city: "Vy\xC5\xA1\xC5\xA1\xC3\xAD Brod"
   zip: "38273"
   student_id: 
   orient_number: 
@@ -780,37 +780,37 @@ addresses_248:
   address_type_id: "1"
   state: 
 addresses_086: 
-  city: K?ivoklat
+  city: "K\xC5\x99ivoklat"
   zip: 270 23
   student_id: 
   orient_number: 
   desc_number: "147"
   id: "86"
-  street: "Na sokol\xED"
+  street: "Na sokol\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_167: 
-  city: "B\xEDlina"
+  city: "B\xC3\xADlina"
   zip: "41801"
   student_id: 
   orient_number: 
   desc_number: "838"
   id: "167"
-  street: ?apkova
+  street: "\xC4\x8Capkova"
   address_type_id: "1"
   state: 
 addresses_193: 
-  city: "Horn\xED Kruty"
+  city: "Horn\xC3\xAD Kruty"
   zip: "28146"
   student_id: "3936"
   orient_number: 
   desc_number: "86"
   id: "193"
-  street: "Horn\xED Kruty"
+  street: "Horn\xC3\xAD Kruty"
   address_type_id: "1"
   state: 
 addresses_249: 
-  city: "Vy\x9A\x9A\xED Brod"
+  city: "Vy\xC5\xA1\xC5\xA1\xC3\xAD Brod"
   zip: "38273"
   student_id: "3298"
   orient_number: 
@@ -820,23 +820,23 @@ addresses_249:
   address_type_id: "1"
   state: 
 addresses_087: 
-  city: "Rychnov nad Kn?\x9Eno"
+  city: "Rychnov nad Kn\xC4\x9B\xC5\xBEno"
   zip: 516 01
   student_id: "4401"
   orient_number: 
   desc_number: "1340"
   id: "87"
-  street: "Anatola Provazn\xEDka"
+  street: "Anatola Provazn\xC3\xADka"
   address_type_id: "1"
   state: 
 addresses_168: 
-  city: "B\xEDlina"
+  city: "B\xC3\xADlina"
   zip: "41801"
   student_id: "3953"
   orient_number: 
   desc_number: "838"
   id: "168"
-  street: ?apkova
+  street: "\xC4\x8Capkova"
   address_type_id: "1"
   state: 
 addresses_194: 
@@ -846,11 +846,11 @@ addresses_194:
   orient_number: 
   desc_number: "169"
   id: "194"
-  street: "B?\xEDza"
+  street: "B\xC5\x99\xC3\xADza"
   address_type_id: "1"
   state: 
 addresses_088: 
-  city: "Star\xE1 Bystrica"
+  city: "Star\xC3\xA1 Bystrica"
   zip: "02304"
   student_id: 
   orient_number: 
@@ -860,7 +860,7 @@ addresses_088:
   address_type_id: "1"
   state: 
 addresses_169: 
-  city: Plze?
+  city: "Plze\xC5\x88"
   zip: "31200"
   student_id: 
   orient_number: 
@@ -870,17 +870,17 @@ addresses_169:
   address_type_id: "1"
   state: 
 addresses_195: 
-  city: "Uhli?sk\xE9 Janovice"
+  city: "Uhli\xC5\x99sk\xC3\xA9 Janovice"
   zip: 285 04
   student_id: 
   orient_number: 
   desc_number: "18"
   id: "195"
-  street: Sta?kovice
+  street: "Sta\xC5\x88kovice"
   address_type_id: "1"
   state: 
 addresses_089: 
-  city: "Star\xE1 Bystrica"
+  city: "Star\xC3\xA1 Bystrica"
   zip: "02304"
   student_id: "4419"
   orient_number: 
@@ -890,17 +890,17 @@ addresses_089:
   address_type_id: "1"
   state: 
 addresses_196: 
-  city: "Uhli?sk\xE9 Janovice"
+  city: "Uhli\xC5\x99sk\xC3\xA9 Janovice"
   zip: 285 04
   student_id: 
   orient_number: 
   desc_number: "18"
   id: "196"
-  street: Sta?kovice
+  street: "Sta\xC5\x88kovice"
   address_type_id: "1"
   state: 
 addresses_197: 
-  city: "Krom??\xED\x9E"
+  city: "Krom\xC4\x9B\xC5\x99\xC3\xAD\xC5\xBE"
   zip: "76701"
   student_id: 
   orient_number: 
@@ -910,7 +910,7 @@ addresses_197:
   address_type_id: "1"
   state: 
 addresses_198: 
-  city: "Krom??\xED\x9E"
+  city: "Krom\xC4\x9B\xC5\x99\xC3\xAD\xC5\xBE"
   zip: "76701"
   student_id: "3887"
   orient_number: 
@@ -930,33 +930,33 @@ addresses_199:
   address_type_id: "1"
   state: 
 addresses_010: 
-  city: "Lit\xE9"
+  city: "Lit\xC3\xA9"
   zip: "33152"
   student_id: "4553"
   orient_number: 
   desc_number: "2"
   id: "10"
-  street: "Doln\xED B?l\xE1"
+  street: "Doln\xC3\xAD B\xC4\x9Bl\xC3\xA1"
   address_type_id: "0"
   state: 
 addresses_011: 
-  city: "Lit\xE9"
+  city: "Lit\xC3\xA9"
   zip: "33152"
   student_id: "4553"
   orient_number: 
   desc_number: "2"
   id: "11"
-  street: "Doln\xED B?l\xE1"
+  street: "Doln\xC3\xAD B\xC4\x9Bl\xC3\xA1"
   address_type_id: "0"
   state: 
 addresses_012: 
-  city: "Hav\xED?ov"
+  city: "Hav\xC3\xAD\xC5\x99ov"
   zip: "73601"
   student_id: "4551"
   orient_number: 
   desc_number: "37"
   id: "12"
-  street: "T?\x9A\xEDnsk\xE1"
+  street: "T\xC4\x9B\xC5\xA1\xC3\xADnsk\xC3\xA1"
   address_type_id: "0"
   state: 
 addresses_200: 
@@ -970,23 +970,23 @@ addresses_200:
   address_type_id: "1"
   state: 
 addresses_013: 
-  city: "Hav\xED?ov"
+  city: "Hav\xC3\xAD\xC5\x99ov"
   zip: "73601"
   student_id: "4551"
   orient_number: 
   desc_number: "37"
   id: "13"
-  street: "T?\x9A\xEDnsk\xE1"
+  street: "T\xC4\x9B\xC5\xA1\xC3\xADnsk\xC3\xA1"
   address_type_id: "0"
   state: 
 addresses_120: 
-  city: "Horn\xED Slavkov"
+  city: "Horn\xC3\xAD Slavkov"
   zip: "35731"
   student_id: "1243"
   orient_number: 
   desc_number: 846/11
   id: "120"
-  street: "\x8Akoln\xED"
+  street: "\xC5\xA0koln\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_201: 
@@ -996,7 +996,7 @@ addresses_201:
   orient_number: 
   desc_number: "57"
   id: "201"
-  street: "Velk\xE1 Bu?ina"
+  street: "Velk\xC3\xA1 Bu\xC4\x8Dina"
   address_type_id: "1"
   state: 
 addresses_014: 
@@ -1006,17 +1006,17 @@ addresses_014:
   orient_number: 
   desc_number: "1160"
   id: "14"
-  street: "M\xE1jov\xE1"
+  street: "M\xC3\xA1jov\xC3\xA1"
   address_type_id: "0"
   state: 
 addresses_040: 
-  city: "Hav\xED?ov"
+  city: "Hav\xC3\xAD\xC5\x99ov"
   zip: "73601"
   student_id: "4551"
   orient_number: 
   desc_number: "37"
   id: "40"
-  street: "T?\x9A\xEDnsk\xE1"
+  street: "T\xC4\x9B\xC5\xA1\xC3\xADnsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_121: 
@@ -1026,17 +1026,17 @@ addresses_121:
   orient_number: 
   desc_number: "1886"
   id: "121"
-  street: "Z\xE1vodu m\xEDru"
+  street: "Z\xC3\xA1vodu m\xC3\xADru"
   address_type_id: "1"
   state: 
 addresses_202: 
-  city: "Velk\xE9 P?\xEDlepy"
+  city: "Velk\xC3\xA9 P\xC5\x99\xC3\xADlepy"
   zip: "25264"
   student_id: 
   orient_number: 
   desc_number: "169"
   id: "202"
-  street: "Spojovac\xED"
+  street: "Spojovac\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_015: 
@@ -1050,7 +1050,7 @@ addresses_015:
   address_type_id: "0"
   state: 
 addresses_041: 
-  city: "Nov\xE9 M?sto nad Met"
+  city: "Nov\xC3\xA9 M\xC4\x9Bsto nad Met"
   zip: 549 01
   student_id: "3382"
   orient_number: 
@@ -1060,7 +1060,7 @@ addresses_041:
   address_type_id: "1"
   state: 
 addresses_122: 
-  city: "Stra\x9Aice"
+  city: "Stra\xC5\xA1ice"
   zip: "33845"
   student_id: "3042"
   orient_number: 
@@ -1070,33 +1070,33 @@ addresses_122:
   address_type_id: "1"
   state: 
 addresses_203: 
-  city: "Velk\xE9 P?\xEDlepy"
+  city: "Velk\xC3\xA9 P\xC5\x99\xC3\xADlepy"
   zip: "25264"
   student_id: "1706"
   orient_number: 
   desc_number: "169"
   id: "203"
-  street: "Spojovac\xED"
+  street: "Spojovac\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_230: 
-  city: "Pomez\xED"
+  city: "Pomez\xC3\xAD"
   zip: "56971"
   student_id: "4521"
   orient_number: 
   desc_number: "382"
   id: "230"
-  street: "POMEZ\xCD"
+  street: "POMEZ\xC3\x8D"
   address_type_id: "1"
   state: 
 addresses_016: 
-  city: "Kocl\xED?ov"
+  city: "Kocl\xC3\xAD\xC5\x99ov"
   zip: "56911"
   student_id: "5034"
   orient_number: 
   desc_number: "165"
   id: "16"
-  street: "Kocl\xED?ov"
+  street: "Kocl\xC3\xAD\xC5\x99ov"
   address_type_id: "0"
   state: 
 addresses_042: 
@@ -1106,27 +1106,27 @@ addresses_042:
   orient_number: 
   desc_number: "72"
   id: "42"
-  street: "Kupeck\xE9ho"
+  street: "Kupeck\xC3\xA9ho"
   address_type_id: "1"
   state: 
 addresses_123: 
-  city: "Ro\x9Emit\xE1l pod T?em"
+  city: "Ro\xC5\xBEmit\xC3\xA1l pod T\xC5\x99em"
   zip: "26242"
   student_id: "2775"
   orient_number: 
   desc_number: "164"
   id: "123"
-  street: "Na V\xFDslun\xED"
+  street: "Na V\xC3\xBDslun\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_204: 
-  city: Krab?ice
+  city: "Krab\xC4\x8Dice"
   zip: 411 87
   student_id: 
   orient_number: 
   desc_number: "139"
   id: "204"
-  street: Krab?ice
+  street: "Krab\xC4\x8Dice"
   address_type_id: "1"
   state: 
 addresses_231: 
@@ -1146,7 +1146,7 @@ addresses_017:
   orient_number: 
   desc_number: "628"
   id: "17"
-  street: "Doma\x9Elick\xE9 p?edm?st\xED"
+  street: "Doma\xC5\xBElick\xC3\xA9 p\xC5\x99edm\xC4\x9Bst\xC3\xAD"
   address_type_id: "0"
   state: 
 addresses_043: 
@@ -1156,17 +1156,17 @@ addresses_043:
   orient_number: 
   desc_number: "72"
   id: "43"
-  street: "Kupeck\xE9ho"
+  street: "Kupeck\xC3\xA9ho"
   address_type_id: "1"
   state: 
 addresses_124: 
-  city: Lu?enec
+  city: "Lu\xC4\x8Denec"
   zip: 984 03
   student_id: 
   orient_number: 
   desc_number: 2/36
   id: "124"
-  street: "R\xFAbanisko"
+  street: "R\xC3\xBAbanisko"
   address_type_id: "1"
   state: 
 addresses_150: 
@@ -1176,7 +1176,7 @@ addresses_150:
   orient_number: 
   desc_number: "1870"
   id: "150"
-  street: "Jarn\xEDkova"
+  street: "Jarn\xC3\xADkova"
   address_type_id: "1"
   state: 
 addresses_205: 
@@ -1186,7 +1186,7 @@ addresses_205:
   orient_number: 
   desc_number: "18"
   id: "205"
-  street: Vod?rady
+  street: "Vod\xC4\x9Brady"
   address_type_id: "1"
   state: 
 addresses_232: 
@@ -1206,7 +1206,7 @@ addresses_018:
   orient_number: 
   desc_number: 54/67
   id: "18"
-  street: Na v?trov?
+  street: "Na v\xC4\x9Btrov\xC4\x9B"
   address_type_id: "0"
   state: 
 addresses_044: 
@@ -1216,47 +1216,47 @@ addresses_044:
   orient_number: 
   desc_number: "72"
   id: "44"
-  street: "Kupeck\xE9ho"
+  street: "Kupeck\xC3\xA9ho"
   address_type_id: "1"
   state: 
 addresses_070: 
-  city: "Jizern\xED Vtelno, Krn"
+  city: "Jizern\xC3\xAD Vtelno, Krn"
   zip: "29431"
   student_id: 
   orient_number: 
   desc_number: "24"
   id: "70"
-  street: "Jizern\xED Vtelno"
+  street: "Jizern\xC3\xAD Vtelno"
   address_type_id: "1"
   state: 
 addresses_125: 
-  city: Lu?enec
+  city: "Lu\xC4\x8Denec"
   zip: 984 03
   student_id: 
   orient_number: 
   desc_number: 2/36
   id: "125"
-  street: "R\xFAbanisko"
+  street: "R\xC3\xBAbanisko"
   address_type_id: "1"
   state: 
 addresses_151: 
-  city: "?esk\xE1 L\xEDpa"
+  city: "\xC4\x8Cesk\xC3\xA1 L\xC3\xADpa"
   zip: "47001"
   student_id: "4417"
   orient_number: 
   desc_number: "2291"
   id: "151"
-  street: St?elnice
+  street: "St\xC5\x99elnice"
   address_type_id: "1"
   state: 
 addresses_206: 
-  city: "Vrchlab\xED"
+  city: "Vrchlab\xC3\xAD"
   zip: "54303"
   student_id: "2985"
   orient_number: 
   desc_number: "582"
   id: "206"
-  street: "D?lnick\xE1"
+  street: "D\xC4\x9Blnick\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_233: 
@@ -1266,7 +1266,7 @@ addresses_233:
   orient_number: 
   desc_number: 641/46
   id: "233"
-  street: "K\xE1ransk\xE1"
+  street: "K\xC3\xA1ransk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_019: 
@@ -1276,7 +1276,7 @@ addresses_019:
   orient_number: 
   desc_number: 54/67
   id: "19"
-  street: Na v?trov?
+  street: "Na v\xC4\x9Btrov\xC4\x9B"
   address_type_id: "0"
   state: 
 addresses_045: 
@@ -1286,37 +1286,37 @@ addresses_045:
   orient_number: 
   desc_number: "1160"
   id: "45"
-  street: "M\xE1jov\xE1"
+  street: "M\xC3\xA1jov\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_071: 
-  city: "Jizern\xED Vtelno, Krn"
+  city: "Jizern\xC3\xAD Vtelno, Krn"
   zip: "29431"
   student_id: 
   orient_number: 
   desc_number: "24"
   id: "71"
-  street: "Jizern\xED Vtelno"
+  street: "Jizern\xC3\xAD Vtelno"
   address_type_id: "1"
   state: 
 addresses_126: 
-  city: Lu?enec
+  city: "Lu\xC4\x8Denec"
   zip: 984 03
   student_id: 
   orient_number: 
   desc_number: 2/36
   id: "126"
-  street: "R\xFAbanisko"
+  street: "R\xC3\xBAbanisko"
   address_type_id: "1"
   state: 
 addresses_152: 
-  city: "Bohu\x9Aovice nad Oh?"
+  city: "Bohu\xC5\xA1ovice nad Oh\xC5\x99"
   zip: "41156"
   student_id: 
   orient_number: 
   desc_number: "43"
   id: "152"
-  street: "Husovo n\xE1m?st\xED"
+  street: "Husovo n\xC3\xA1m\xC4\x9Bst\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_207: 
@@ -1326,17 +1326,17 @@ addresses_207:
   orient_number: 
   desc_number: "2155"
   id: "207"
-  street: "Ov?\xED h\xE1jek"
+  street: "Ov\xC4\x8D\xC3\xAD h\xC3\xA1jek"
   address_type_id: "1"
   state: 
 addresses_234: 
-  city: Hostivice - B?ve
+  city: "Hostivice - B\xC5\x99ve"
   zip: 253 01
   student_id: "4557"
   orient_number: 
   desc_number: "1103"
   id: "234"
-  street: "H\xE1jeck\xE1"
+  street: "H\xC3\xA1jeck\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_046: 
@@ -1346,7 +1346,7 @@ addresses_046:
   orient_number: 
   desc_number: "13"
   id: "46"
-  street: "Host\xEDm"
+  street: "Host\xC3\xADm"
   address_type_id: "1"
   state: 
 addresses_072: 
@@ -1356,31 +1356,31 @@ addresses_072:
   orient_number: 
   desc_number: "24"
   id: "72"
-  street: "Jizern\xED Vtelno"
+  street: "Jizern\xC3\xAD Vtelno"
   address_type_id: "1"
   state: 
 addresses_127: 
-  city: Lu?enec
+  city: "Lu\xC4\x8Denec"
   zip: 984 03
   student_id: "1730"
   orient_number: 
   desc_number: 2/36
   id: "127"
-  street: "R\xFAbanisko"
+  street: "R\xC3\xBAbanisko"
   address_type_id: "1"
   state: 
 addresses_153: 
-  city: "Bohu\x9Aovice n. O."
+  city: "Bohu\xC5\xA1ovice n. O."
   zip: "41156"
   student_id: "4018"
   orient_number: 
   desc_number: "43"
   id: "153"
-  street: "Husovo n\xE1m?st\xED"
+  street: "Husovo n\xC3\xA1m\xC4\x9Bst\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_208: 
-  city: Plze?
+  city: "Plze\xC5\x88"
   zip: "31200"
   student_id: 
   orient_number: 
@@ -1390,7 +1390,7 @@ addresses_208:
   address_type_id: "1"
   state: 
 addresses_235: 
-  city: "?\xE1slav"
+  city: "\xC4\x8C\xC3\xA1slav"
   zip: "28601"
   student_id: "3505"
   orient_number: 
@@ -1400,13 +1400,13 @@ addresses_235:
   address_type_id: "1"
   state: 
 addresses_047: 
-  city: "T\xE1bor"
+  city: "T\xC3\xA1bor"
   zip: "39002"
   student_id: "4570"
   orient_number: 
   desc_number: "627"
   id: "47"
-  street: "Havl\xED?kova"
+  street: "Havl\xC3\xAD\xC4\x8Dkova"
   address_type_id: "1"
   state: 
 addresses_073: 
@@ -1420,27 +1420,27 @@ addresses_073:
   address_type_id: "1"
   state: 
 addresses_128: 
-  city: "Litv\xEDnov 6"
+  city: "Litv\xC3\xADnov 6"
   zip: "43601"
   student_id: 
   orient_number: 
   desc_number: "1431"
   id: "128"
-  street: "K Lou?k\xE1m"
+  street: "K Lou\xC4\x8Dk\xC3\xA1m"
   address_type_id: "1"
   state: 
 addresses_154: 
-  city: "T?eb\xED?"
+  city: "T\xC5\x99eb\xC3\xAD\xC4\x8D"
   zip: 674 01
   student_id: "4509"
   orient_number: 
   desc_number: "939"
   id: "154"
-  street: "Zahrani?n\xEDho odboje"
+  street: "Zahrani\xC4\x8Dn\xC3\xADho odboje"
   address_type_id: "1"
   state: 
 addresses_180: 
-  city: Vl?kovice v Podkrko
+  city: "Vl\xC4\x8Dkovice v Podkrko"
   zip: "54444"
   student_id: 
   orient_number: 
@@ -1450,7 +1450,7 @@ addresses_180:
   address_type_id: "1"
   state: 
 addresses_209: 
-  city: Plze?
+  city: "Plze\xC5\x88"
   zip: "31200"
   student_id: "1333"
   orient_number: 
@@ -1460,13 +1460,13 @@ addresses_209:
   address_type_id: "1"
   state: 
 addresses_236: 
-  city: Krab?ice
+  city: "Krab\xC4\x8Dice"
   zip: 411 87
   student_id: "2959"
   orient_number: 
   desc_number: "139"
   id: "236"
-  street: Krab?ice
+  street: "Krab\xC4\x8Dice"
   address_type_id: "1"
   state: 
 addresses_048: 
@@ -1486,17 +1486,17 @@ addresses_074:
   orient_number: 
   desc_number: 291/3
   id: "74"
-  street: "Palack\xE9ho"
+  street: "Palack\xC3\xA9ho"
   address_type_id: "1"
   state: 
 addresses_129: 
-  city: "Litv\xEDnov 6"
+  city: "Litv\xC3\xADnov 6"
   zip: "43601"
   student_id: "2918"
   orient_number: 
   desc_number: "1431"
   id: "129"
-  street: "K Lou?k\xE1m"
+  street: "K Lou\xC4\x8Dk\xC3\xA1m"
   address_type_id: "1"
   state: 
 addresses_155: 
@@ -1510,7 +1510,7 @@ addresses_155:
   address_type_id: "1"
   state: 
 addresses_181: 
-  city: Vl?kovice v Podkrko
+  city: "Vl\xC4\x8Dkovice v Podkrko"
   zip: "54444"
   student_id: 
   orient_number: 
@@ -1530,23 +1530,23 @@ addresses_237:
   address_type_id: "1"
   state: 
 addresses_049: 
-  city: "Hu\x9At?novice"
+  city: "Hu\xC5\xA1t\xC4\x9Bnovice"
   zip: "68703"
   student_id: "3800"
   orient_number: 
   desc_number: "319"
   id: "49"
-  street: "Hu\x9At?novice"
+  street: "Hu\xC5\xA1t\xC4\x9Bnovice"
   address_type_id: "1"
   state: 
 addresses_075: 
-  city: Pelh?imov
+  city: "Pelh\xC5\x99imov"
   zip: 393 01
   student_id: "3277"
   orient_number: 
   desc_number: "1444"
   id: "75"
-  street: "Dolnokub\xEDnsk\xE1"
+  street: "Dolnokub\xC3\xADnsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_156: 
@@ -1556,11 +1556,11 @@ addresses_156:
   orient_number: 
   desc_number: "18"
   id: "156"
-  street: "Doln\xED"
+  street: "Doln\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_182: 
-  city: Vl?kovice v Podkrko
+  city: "Vl\xC4\x8Dkovice v Podkrko"
   zip: "54444"
   student_id: "4387"
   orient_number: 
@@ -1576,7 +1576,7 @@ addresses_238:
   orient_number: 
   desc_number: 169/2
   id: "238"
-  street: "Jan\xE1?kova"
+  street: "Jan\xC3\xA1\xC4\x8Dkova"
   address_type_id: "1"
   state: 
 addresses_076: 
@@ -1586,7 +1586,7 @@ addresses_076:
   orient_number: 
   desc_number: "432"
   id: "76"
-  street: Vojt?chova
+  street: "Vojt\xC4\x9Bchova"
   address_type_id: "1"
   state: 
 addresses_157: 
@@ -1596,7 +1596,7 @@ addresses_157:
   orient_number: 
   desc_number: "18"
   id: "157"
-  street: "Doln\xED"
+  street: "Doln\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_183: 
@@ -1616,7 +1616,7 @@ addresses_239:
   orient_number: 
   desc_number: 169/2
   id: "239"
-  street: "Jan\xE1?kova"
+  street: "Jan\xC3\xA1\xC4\x8Dkova"
   address_type_id: "1"
   state: 
 addresses_077: 
@@ -1626,7 +1626,7 @@ addresses_077:
   orient_number: 
   desc_number: "432"
   id: "77"
-  street: Vojt?chova
+  street: "Vojt\xC4\x9Bchova"
   address_type_id: "1"
   state: 
 addresses_158: 
@@ -1636,7 +1636,7 @@ addresses_158:
   orient_number: 
   desc_number: "691"
   id: "158"
-  street: "Nad Pr\xE1chovnou"
+  street: "Nad Pr\xC3\xA1chovnou"
   address_type_id: "1"
   state: 
 addresses_184: 
@@ -1650,17 +1650,17 @@ addresses_184:
   address_type_id: "1"
   state: 
 addresses_078: 
-  city: "Rakovn\xEDk"
+  city: "Rakovn\xC3\xADk"
   zip: 269 01
   student_id: "3629"
   orient_number: 
   desc_number: "1885"
   id: "78"
-  street: "Koll\xE1rova"
+  street: "Koll\xC3\xA1rova"
   address_type_id: "1"
   state: 
 addresses_159: 
-  city: "Hradec Kr\xE1lov\xE9"
+  city: "Hradec Kr\xC3\xA1lov\xC3\xA9"
   zip: 500 12
   student_id: "2916"
   orient_number: 
@@ -1670,13 +1670,13 @@ addresses_159:
   address_type_id: "1"
   state: 
 addresses_185: 
-  city: "Dv?r Kr\xE1lov\xE9 nad"
+  city: "Dv\xC5\xAFr Kr\xC3\xA1lov\xC3\xA9 nad"
   zip: "54401"
   student_id: 
   orient_number: 
   desc_number: "1779"
   id: "185"
-  street: "Poln\xED"
+  street: "Poln\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_079: 
@@ -1686,31 +1686,31 @@ addresses_079:
   orient_number: 
   desc_number: "9"
   id: "79"
-  street: "\x8Akroupova"
+  street: "\xC5\xA0kroupova"
   address_type_id: "1"
   state: 
 addresses_186: 
-  city: "Dv?r Kr\xE1lov\xE9 nad"
+  city: "Dv\xC5\xAFr Kr\xC3\xA1lov\xC3\xA9 nad"
   zip: 544 01
   student_id: 
   orient_number: 
   desc_number: "1779"
   id: "186"
-  street: "Poln\xED"
+  street: "Poln\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_187: 
-  city: "Dv?r Kr\xE1lov\xE9 n/L"
+  city: "Dv\xC5\xAFr Kr\xC3\xA1lov\xC3\xA9 n/L"
   zip: 544 01
   student_id: "5066"
   orient_number: 
   desc_number: "1779"
   id: "187"
-  street: "Poln\xED"
+  street: "Poln\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_188: 
-  city: "Mari\xE1nsk\xE9 L\xE1zn?"
+  city: "Mari\xC3\xA1nsk\xC3\xA9 L\xC3\xA1zn\xC4\x9B"
   zip: 353 01
   student_id: "2833"
   orient_number: 
@@ -1726,7 +1726,7 @@ addresses_189:
   orient_number: 
   desc_number: "1108"
   id: "189"
-  street: "Ho?en\xED Lomnice"
+  street: "Ho\xC5\x99en\xC3\xAD Lomnice"
   address_type_id: "1"
   state: 
 addresses_001: 
@@ -1736,7 +1736,7 @@ addresses_001:
   orient_number: 
   desc_number: "1139"
   id: "1"
-  street: Turgen?vova 18
+  street: "Turgen\xC4\x9Bvova 18"
   address_type_id: "0"
   state: 
 addresses_002: 
@@ -1746,21 +1746,21 @@ addresses_002:
   orient_number: 
   desc_number: "1490"
   id: "2"
-  street: "Salmovsk\xE1"
+  street: "Salmovsk\xC3\xA1"
   address_type_id: "0"
   state: 
 addresses_003: 
-  city: "T\xE1bor"
+  city: "T\xC3\xA1bor"
   zip: "39002"
   student_id: "4570"
   orient_number: 
   desc_number: "627"
   id: "3"
-  street: "Havl\xED?kova"
+  street: "Havl\xC3\xAD\xC4\x8Dkova"
   address_type_id: "0"
   state: 
 addresses_110: 
-  city: "Stra\x9Aice"
+  city: "Stra\xC5\xA1ice"
   zip: "33845"
   student_id: 
   orient_number: 
@@ -1776,11 +1776,11 @@ addresses_004:
   orient_number: 
   desc_number: "628"
   id: "4"
-  street: "Doma\x9Elick\xE9 p?edm?st\xED"
+  street: "Doma\xC5\xBElick\xC3\xA9 p\xC5\x99edm\xC4\x9Bst\xC3\xAD"
   address_type_id: "0"
   state: 
 addresses_030: 
-  city: "Nov\xE9 M?sto nad Met"
+  city: "Nov\xC3\xA9 M\xC4\x9Bsto nad Met"
   zip: 549 01
   student_id: 
   orient_number: 
@@ -1806,7 +1806,7 @@ addresses_005:
   orient_number: 
   desc_number: 54/67
   id: "5"
-  street: Na v?trov? 1143
+  street: "Na v\xC4\x9Btrov\xC4\x9B 1143"
   address_type_id: "0"
   state: 
 addresses_031: 
@@ -1830,13 +1830,13 @@ addresses_112:
   address_type_id: "1"
   state: 
 addresses_006: 
-  city: "T\xE1bor"
+  city: "T\xC3\xA1bor"
   zip: "39002"
   student_id: "4570"
   orient_number: 
   desc_number: "627"
   id: "6"
-  street: "Havl\xED?kova"
+  street: "Havl\xC3\xAD\xC4\x8Dkova"
   address_type_id: "0"
   state: 
 addresses_032: 
@@ -1846,17 +1846,17 @@ addresses_032:
   orient_number: 
   desc_number: "1327"
   id: "32"
-  street: "Lu\x9Eick\xE1"
+  street: "Lu\xC5\xBEick\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_113: 
-  city: "Str\xE1\x9E pod Ralskem"
+  city: "Str\xC3\xA1\xC5\xBE pod Ralskem"
   zip: "47127"
   student_id: "3008"
   orient_number: 
   desc_number: "276"
   id: "113"
-  street: "Mimo?sk\xE1"
+  street: "Mimo\xC5\x88sk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_220: 
@@ -1876,17 +1876,17 @@ addresses_007:
   orient_number: 
   desc_number: "1160"
   id: "7"
-  street: "M\xE1jov\xE1"
+  street: "M\xC3\xA1jov\xC3\xA1"
   address_type_id: "0"
   state: 
 addresses_033: 
-  city: "Liberec 19 - Horn\xED"
+  city: "Liberec 19 - Horn\xC3\xAD"
   zip: "46008"
   student_id: 
   orient_number: 
   desc_number: "257"
   id: "33"
-  street: "Charbinsk\xE1"
+  street: "Charbinsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_114: 
@@ -1900,13 +1900,13 @@ addresses_114:
   address_type_id: "1"
   state: 
 addresses_140: 
-  city: "Bohu\x9Aovice nad Oh?"
+  city: "Bohu\xC5\xA1ovice nad Oh\xC5\x99"
   zip: "41156"
   student_id: 
   orient_number: 
   desc_number: "43"
   id: "140"
-  street: "Husovo n\xE1m?st\xED"
+  street: "Husovo n\xC3\xA1m\xC4\x9Bst\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_221: 
@@ -1920,23 +1920,23 @@ addresses_221:
   address_type_id: "1"
   state: 
 addresses_008: 
-  city: "Lit\xE9"
+  city: "Lit\xC3\xA9"
   zip: "33152"
   student_id: "4553"
   orient_number: 
   desc_number: "2"
   id: "8"
-  street: "Doln\xED B?l\xE1"
+  street: "Doln\xC3\xAD B\xC4\x9Bl\xC3\xA1"
   address_type_id: "0"
   state: 
 addresses_034: 
-  city: "Liberec 19 - Horn\xED"
+  city: "Liberec 19 - Horn\xC3\xAD"
   zip: "46008"
   student_id: 
   orient_number: 
   desc_number: "257"
   id: "34"
-  street: "Charbinsk\xE1"
+  street: "Charbinsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_060: 
@@ -1946,27 +1946,27 @@ addresses_060:
   orient_number: 
   desc_number: 2240/5
   id: "60"
-  street: "?esk\xE1"
+  street: "\xC4\x8Cesk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_115: 
-  city: "Nov\xFD Byd\x9Eov"
+  city: "Nov\xC3\xBD Byd\xC5\xBEov"
   zip: "50401"
   student_id: "3381"
   orient_number: 
   desc_number: "1218"
   id: "115"
-  street: "T?\xEDda B. Smetany"
+  street: "T\xC5\x99\xC3\xADda B. Smetany"
   address_type_id: "1"
   state: 
 addresses_141: 
-  city: Byst?ice pod Host.
+  city: "Byst\xC5\x99ice pod Host."
   zip: "76861"
   student_id: "5071"
   orient_number: 
   desc_number: "1611"
   id: "141"
-  street: "T?\xEDda Legi\xED"
+  street: "T\xC5\x99\xC3\xADda Legi\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_222: 
@@ -1986,17 +1986,17 @@ addresses_223:
   orient_number: 
   desc_number: "1490"
   id: "223"
-  street: "Salmovsk\xE1"
+  street: "Salmovsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_009: 
-  city: "Lit\xE9"
+  city: "Lit\xC3\xA9"
   zip: "33152"
   student_id: "4553"
   orient_number: 
   desc_number: "2"
   id: "9"
-  street: "Doln\xED B?l\xE1"
+  street: "Doln\xC3\xAD B\xC4\x9Bl\xC3\xA1"
   address_type_id: "0"
   state: 
 addresses_035: 
@@ -2006,7 +2006,7 @@ addresses_035:
   orient_number: 
   desc_number: "257"
   id: "35"
-  street: "Charbinsk\xE1"
+  street: "Charbinsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_061: 
@@ -2020,7 +2020,7 @@ addresses_061:
   address_type_id: "1"
   state: 
 addresses_116: 
-  city: "Mil\xEDn"
+  city: "Mil\xC3\xADn"
   zip: 262 31
   student_id: "4563"
   orient_number: 
@@ -2036,17 +2036,17 @@ addresses_142:
   orient_number: 
   desc_number: "10"
   id: "142"
-  street: "My\x9Atice"
+  street: "My\xC5\xA1tice"
   address_type_id: "1"
   state: 
 addresses_250: 
-  city: "Kutn\xE1 Hora"
+  city: "Kutn\xC3\xA1 Hora"
   zip: 284 01
   student_id: "3144"
   orient_number: 
   desc_number: "135"
   id: "250"
-  street: Student?
+  street: "Student\xC5\xAF"
   address_type_id: "1"
   state: 
 addresses_224: 
@@ -2056,17 +2056,17 @@ addresses_224:
   orient_number: 
   desc_number: "1490"
   id: "224"
-  street: "Salmovsk\xE1"
+  street: "Salmovsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_036: 
-  city: "Sedli\x9At?"
+  city: "Sedli\xC5\xA1t\xC4\x9B"
   zip: 739 36
   student_id: "4566"
   orient_number: 
   desc_number: "82"
   id: "36"
-  street: "Sedli\x9At?"
+  street: "Sedli\xC5\xA1t\xC4\x9B"
   address_type_id: "1"
   state: 
 addresses_062: 
@@ -2090,33 +2090,33 @@ addresses_117:
   address_type_id: "1"
   state: 
 addresses_143: 
-  city: "Tr\x9Aice"
+  city: "Tr\xC5\xA1ice"
   zip: "78357"
   student_id: 
   orient_number: 
   desc_number: "64"
   id: "143"
-  street: "nen\xED"
+  street: "nen\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_251: 
-  city: Pod?brady
+  city: "Pod\xC4\x9Bbrady"
   zip: "29001"
   student_id: "3940"
   orient_number: 
   desc_number: "183"
   id: "251"
-  street: "P\xE1tek"
+  street: "P\xC3\xA1tek"
   address_type_id: "1"
   state: 
 addresses_225: 
-  city: K?ivoklat
+  city: "K\xC5\x99ivoklat"
   zip: 270 23
   student_id: "1650"
   orient_number: 
   desc_number: "147"
   id: "225"
-  street: "Na sokol\xED"
+  street: "Na sokol\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_037: 
@@ -2130,37 +2130,37 @@ addresses_037:
   address_type_id: "1"
   state: 
 addresses_063: 
-  city: Muka?ov
+  city: "Muka\xC5\x99ov"
   zip: 251 62
   student_id: "4645"
   orient_number: 
   desc_number: "150"
   id: "63"
-  street: Lou?ovice
+  street: "Lou\xC5\x88ovice"
   address_type_id: "1"
   state: 
 addresses_118: 
-  city: "?esk\xFD T?\x9A\xEDn"
+  city: "\xC4\x8Cesk\xC3\xBD T\xC4\x9B\xC5\xA1\xC3\xADn"
   zip: 737 01
   student_id: "4429"
   orient_number: 
   desc_number: "15"
   id: "118"
-  street: "Dvo?\xE1kova"
+  street: "Dvo\xC5\x99\xC3\xA1kova"
   address_type_id: "1"
   state: 
 addresses_144: 
-  city: "Tr\x9Aice"
+  city: "Tr\xC5\xA1ice"
   zip: "78357"
   student_id: "4526"
   orient_number: 
   desc_number: "64"
   id: "144"
-  street: "nen\xED"
+  street: "nen\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_170: 
-  city: "Kutn\xE1 Hora"
+  city: "Kutn\xC3\xA1 Hora"
   zip: "28401"
   student_id: 
   orient_number: 
@@ -2170,33 +2170,33 @@ addresses_170:
   address_type_id: "1"
   state: 
 addresses_252: 
-  city: Da?ice
+  city: "Da\xC4\x8Dice"
   zip: 380 01
   student_id: "3024"
   orient_number: 
   desc_number: 21/V
   id: "252"
-  street: T?. 9. kv?tna
+  street: "T\xC5\x99. 9. kv\xC4\x9Btna"
   address_type_id: "1"
   state: 
 addresses_226: 
-  city: "P\xEDsek"
+  city: "P\xC3\xADsek"
   zip: "39701"
   student_id: "5088"
   orient_number: 
   desc_number: "39701"
   id: "226"
-  street: "Jeron\xFDmova 1976"
+  street: "Jeron\xC3\xBDmova 1976"
   address_type_id: "1"
   state: 
 addresses_038: 
-  city: "Lit\xE9"
+  city: "Lit\xC3\xA9"
   zip: "33152"
   student_id: 
   orient_number: 
   desc_number: "2"
   id: "38"
-  street: "Doln\xED B?l\xE1"
+  street: "Doln\xC3\xAD B\xC4\x9Bl\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_064: 
@@ -2206,17 +2206,17 @@ addresses_064:
   orient_number: 
   desc_number: "257"
   id: "64"
-  street: "Charbinsk\xE1"
+  street: "Charbinsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_090: 
-  city: "Merkl\xEDn"
+  city: "Merkl\xC3\xADn"
   zip: "36234"
   student_id: "4514"
   orient_number: 
   desc_number: "150"
   id: "90"
-  street: "Merkl\xEDn"
+  street: "Merkl\xC3\xADn"
   address_type_id: "1"
   state: 
 addresses_119: 
@@ -2226,7 +2226,7 @@ addresses_119:
   orient_number: 
   desc_number: "27"
   id: "119"
-  street: "Velk\xE1 Strana"
+  street: "Velk\xC3\xA1 Strana"
   address_type_id: "1"
   state: 
 addresses_145: 
@@ -2240,7 +2240,7 @@ addresses_145:
   address_type_id: "1"
   state: 
 addresses_171: 
-  city: "Male\x9Aov"
+  city: "Male\xC5\xA1ov"
   zip: "28401"
   student_id: "4591"
   orient_number: 
@@ -2250,17 +2250,17 @@ addresses_171:
   address_type_id: "1"
   state: 
 addresses_227: 
-  city: "Ji?\xEDn"
+  city: "Ji\xC4\x8D\xC3\xADn"
   zip: "50601"
   student_id: "4568"
   orient_number: 
   desc_number: "30"
   id: "227"
-  street: "Pod?l\x9A\xED"
+  street: "Pod\xC5\xAFl\xC5\xA1\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_039: 
-  city: "Lit\xE9"
+  city: "Lit\xC3\xA9"
   zip: "33152"
   student_id: "4553"
   orient_number: 
@@ -2270,13 +2270,13 @@ addresses_039:
   address_type_id: "1"
   state: 
 addresses_065: 
-  city: "Kocl\xED?ov"
+  city: "Kocl\xC3\xAD\xC5\x99ov"
   zip: "56911"
   student_id: "5034"
   orient_number: 
   desc_number: "165"
   id: "65"
-  street: "Kocl\xED?ov"
+  street: "Kocl\xC3\xAD\xC5\x99ov"
   address_type_id: "1"
   state: 
 addresses_091: 
@@ -2286,7 +2286,7 @@ addresses_091:
   orient_number: 
   desc_number: "435"
   id: "91"
-  street: P?emyslova
+  street: "P\xC5\x99emyslova"
   address_type_id: "1"
   state: 
 addresses_146: 
@@ -2300,7 +2300,7 @@ addresses_146:
   address_type_id: "1"
   state: 
 addresses_172: 
-  city: "Dobru\x9Aka"
+  city: "Dobru\xC5\xA1ka"
   zip: "51801"
   student_id: "4367"
   orient_number: 
@@ -2310,13 +2310,13 @@ addresses_172:
   address_type_id: "1"
   state: 
 addresses_228: 
-  city: "Hradec Kr\xE1lov\xE9"
+  city: "Hradec Kr\xC3\xA1lov\xC3\xA9"
   zip: 500 06
   student_id: 
   orient_number: 
   desc_number: "374"
   id: "228"
-  street: "A.Mal\xE9"
+  street: "A.Mal\xC3\xA9"
   address_type_id: "1"
   state: 
 addresses_066: 
@@ -2336,17 +2336,17 @@ addresses_092:
   orient_number: 
   desc_number: "435"
   id: "92"
-  street: P?emyslova
+  street: "P\xC5\x99emyslova"
   address_type_id: "1"
   state: 
 addresses_147: 
-  city: "Horn\xED Kruty"
+  city: "Horn\xC3\xAD Kruty"
   zip: "28146"
   student_id: 
   orient_number: 
   desc_number: "86"
   id: "147"
-  street: "Horn\xED Kruty"
+  street: "Horn\xC3\xAD Kruty"
   address_type_id: "1"
   state: 
 addresses_173: 
@@ -2360,33 +2360,33 @@ addresses_173:
   address_type_id: "1"
   state: 
 addresses_229: 
-  city: "Hradec Kr\xE1lov\xE9"
+  city: "Hradec Kr\xC3\xA1lov\xC3\xA9"
   zip: 500 06
   student_id: "3328"
   orient_number: 
   desc_number: "374"
   id: "229"
-  street: "A.Mal\xE9"
+  street: "A.Mal\xC3\xA9"
   address_type_id: "1"
   state: 
 addresses_067: 
-  city: "\x8Eebr\xE1k"
+  city: "\xC5\xBDebr\xC3\xA1k"
   zip: "26753"
   student_id: "2945"
   orient_number: 
   desc_number: "329"
   id: "67"
-  street: "Lo\x9Akovsk\xE1"
+  street: "Lo\xC5\xA1kovsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_093: 
-  city: "\xDAst\xED nad Labem"
+  city: "\xC3\x9Ast\xC3\xAD nad Labem"
   zip: "40001"
   student_id: 
   orient_number: 
   desc_number: "4"
   id: "93"
-  street: Ostr?ilova
+  street: "Ostr\xC4\x8Dilova"
   address_type_id: "1"
   state: 
 addresses_148: 
@@ -2396,7 +2396,7 @@ addresses_148:
   orient_number: 
   desc_number: 1029/4
   id: "148"
-  street: "V Z\xE1kout\xED"
+  street: "V Z\xC3\xA1kout\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_174: 
@@ -2410,33 +2410,33 @@ addresses_174:
   address_type_id: "1"
   state: 
 addresses_068: 
-  city: "Doma\x9Elice"
+  city: "Doma\xC5\xBElice"
   zip: 344 01
   student_id: 
   orient_number: 
   desc_number: "168"
   id: "68"
-  street: "Kosteln\xED"
+  street: "Kosteln\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_094: 
-  city: Plze?
+  city: "Plze\xC5\x88"
   zip: "31808"
   student_id: "2908"
   orient_number: 
   desc_number: "56"
   id: "94"
-  street: "Mach\xE1?kova"
+  street: "Mach\xC3\xA1\xC4\x8Dkova"
   address_type_id: "1"
   state: 
 addresses_149: 
-  city: "Velk\xE1 Skrovnice"
+  city: "Velk\xC3\xA1 Skrovnice"
   zip: "56201"
   student_id: "2703"
   orient_number: 
   desc_number: "4"
   id: "149"
-  street: "Velk\xE1 Skrovnice"
+  street: "Velk\xC3\xA1 Skrovnice"
   address_type_id: "1"
   state: 
 addresses_175: 
@@ -2450,27 +2450,27 @@ addresses_175:
   address_type_id: "1"
   state: 
 addresses_069: 
-  city: "Doma\x9Elice"
+  city: "Doma\xC5\xBElice"
   zip: 344 01
   student_id: "3771"
   orient_number: 
   desc_number: "168"
   id: "69"
-  street: "Kosteln\xED"
+  street: "Kosteln\xC3\xAD"
   address_type_id: "1"
   state: 
 addresses_095: 
-  city: "\xDAst\xED nad Labem"
+  city: "\xC3\x9Ast\xC3\xAD nad Labem"
   zip: "40001"
   student_id: "2941"
   orient_number: 
   desc_number: "4"
   id: "95"
-  street: Ostr?ilova
+  street: "Ostr\xC4\x8Dilova"
   address_type_id: "1"
   state: 
 addresses_176: 
-  city: Vl?kovice v Podkrko
+  city: "Vl\xC4\x8Dkovice v Podkrko"
   zip: "54444"
   student_id: 
   orient_number: 
@@ -2480,37 +2480,37 @@ addresses_176:
   address_type_id: "1"
   state: 
 addresses_096: 
-  city: "Slavi?\xEDn"
+  city: "Slavi\xC4\x8D\xC3\xADn"
   zip: "76321"
   student_id: "2618"
   orient_number: 
   desc_number: "719"
   id: "96"
-  street: "Mladotick\xE1"
+  street: "Mladotick\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_177: 
-  city: "Dv?r Kr\xE1lov\xE9 nad"
+  city: "Dv\xC5\xAFr Kr\xC3\xA1lov\xC3\xA9 nad"
   zip: "54401"
   student_id: "2907"
   orient_number: 
   desc_number: "2222"
   id: "177"
-  street: "Pod H?i\x9At?m"
+  street: "Pod H\xC5\x99i\xC5\xA1t\xC4\x9Bm"
   address_type_id: "1"
   state: 
 addresses_097: 
-  city: "\x8Eirovnice"
+  city: "\xC5\xBDirovnice"
   zip: "39468"
   student_id: "3826"
   orient_number: 
   desc_number: "615"
   id: "97"
-  street: "Hradeck\xE1"
+  street: "Hradeck\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_178: 
-  city: Vl?kovice v Podkrko
+  city: "Vl\xC4\x8Dkovice v Podkrko"
   zip: "54444"
   student_id: 
   orient_number: 

@@ -1,42 +1,42 @@
 --- 
 departments_048: 
-  name: "Katedra \x9Eiv.prod.tr. a subt."
+  name: "Katedra \xC5\xBEiv.prod.tr. a subt."
   faculty_id: "2"
   id: "58"
   short_name: KZPTS
   name_english: ""
 departments_037: 
-  name: "Katedra dendr. a \x9Al. les. d?."
+  name: "Katedra dendr. a \xC5\xA1l. les. d\xC5\x99."
   faculty_id: "3"
   id: "46"
   short_name: KDSLD
   name_english: ""
 departments_026: 
-  name: "Katedra rostlinn\xE9 v\xFDroby"
+  name: "Katedra rostlinn\xC3\xA9 v\xC3\xBDroby"
   faculty_id: "1"
   id: "29"
   short_name: KRV
   name_english: Department of Crop Production
 departments_015: 
-  name: "Katedra opera?n\xED a syst\xE9mov\xE9 anal\xFDzy"
+  name: "Katedra opera\xC4\x8Dn\xC3\xAD a syst\xC3\xA9mov\xC3\xA9 anal\xC3\xBDzy"
   faculty_id: "4"
   id: "17"
   short_name: KOSA
   name_english: Department of Operational and System Analysis
 departments_004: 
-  name: "Katedra materi\xE1lu a stroj\xEDrensk\xE9 technologie"
+  name: "Katedra materi\xC3\xA1lu a stroj\xC3\xADrensk\xC3\xA9 technologie"
   faculty_id: "5"
   id: "5"
   short_name: KMST
   name_english: ""
 departments_049: 
-  name: "Katedra in\x9Een\xFDrstv\xED, ekonomiky a rozvoje venkova trop? a subtrop?"
+  name: "Katedra in\xC5\xBEen\xC3\xBDrstv\xC3\xAD, ekonomiky a rozvoje venkova trop\xC5\xAF a subtrop\xC5\xAF"
   faculty_id: "2"
   id: "59"
   short_name: KIERVTS
   name_english: ""
 departments_038: 
-  name: "Katedra hospod. \xFApravy les?"
+  name: "Katedra hospod. \xC3\xBApravy les\xC5\xAF"
   faculty_id: "3"
   id: "47"
   short_name: KHUL
@@ -48,13 +48,13 @@ departments_027:
   short_name: KOR
   name_english: Department of Crop Protection
 departments_016: 
-  name: "Katedra pr\xE1va"
+  name: "Katedra pr\xC3\xA1va"
   faculty_id: "4"
   id: "18"
   short_name: KPr
   name_english: Department of Law
 departments_005: 
-  name: "Katedra vozidel a pozemn\xED dopravy"
+  name: "Katedra vozidel a pozemn\xC3\xAD dopravy"
   faculty_id: "5"
   id: "6"
   short_name: KVPD
@@ -66,31 +66,31 @@ departments_050:
   short_name: KTSP
   name_english: ""
 departments_039: 
-  name: "Katedra lesn\xED t?\x9Eby"
+  name: "Katedra lesn\xC3\xAD t\xC4\x9B\xC5\xBEby"
   faculty_id: "3"
   id: "48"
   short_name: KLT
   name_english: ""
 departments_028: 
-  name: "Katedra veterin\xE1rn\xEDch  disciplin"
+  name: "Katedra veterin\xC3\xA1rn\xC3\xADch  disciplin"
   faculty_id: "1"
   id: "34"
   short_name: KVD
   name_english: Department of Veterinary Sciences
 departments_017: 
-  name: "Katedra humanitn\xEDch v?d"
+  name: "Katedra humanitn\xC3\xADch v\xC4\x9Bd"
   faculty_id: "4"
   id: "19"
   short_name: KHV
   name_english: Department of Humanities
 departments_006: 
-  name: Katedra zem?d?l. stroj?
+  name: "Katedra zem\xC4\x9Bd\xC4\x9Bl. stroj\xC5\xAF"
   faculty_id: "5"
   id: "7"
   short_name: KZS
   name_english: ""
 departments_051: 
-  name: "\xDAstav aplikovan\xE9 ekologie"
+  name: "\xC3\x9Astav aplikovan\xC3\xA9 ekologie"
   faculty_id: "3"
   id: "63"
   short_name: UAE
@@ -102,37 +102,37 @@ departments_040:
   short_name: KVH
   name_english: ""
 departments_029: 
-  name: "Katedra p\xEDcnin\xE1?stv\xED a tr\xE1vn\xEDk\xE1?stv\xED"
+  name: "Katedra p\xC3\xADcnin\xC3\xA1\xC5\x99stv\xC3\xAD a tr\xC3\xA1vn\xC3\xADk\xC3\xA1\xC5\x99stv\xC3\xAD"
   faculty_id: "1"
   id: "35"
   short_name: KPT
   name_english: Department of Forage Crops and Grassland Management
 departments_018: 
-  name: "Katedra obchodu a financ\xED"
+  name: "Katedra obchodu a financ\xC3\xAD"
   faculty_id: "4"
   id: "20"
   short_name: KOF
   name_english: Department of Trade and Accounting
 departments_007: 
-  name: "Katedra vyu\x9Eit. stroj?"
+  name: "Katedra vyu\xC5\xBEit. stroj\xC5\xAF"
   faculty_id: "5"
   id: "8"
   short_name: KVS
   name_english: ""
 departments_052: 
-  name: "Katedra zpracov\xE1n\xED d?eva"
+  name: "Katedra zpracov\xC3\xA1n\xC3\xAD d\xC5\x99eva"
   faculty_id: "3"
   id: "98"
   short_name: KZD
   name_english: ""
 departments_041: 
-  name: "Katedra biotechn. \xFApr. kraj."
+  name: "Katedra biotechn. \xC3\xBApr. kraj."
   faculty_id: "3"
   id: "50"
   short_name: KBUK
   name_english: ""
 departments_030: 
-  name: "Katedra zoologie a ryb\xE1?stv\xED"
+  name: "Katedra zoologie a ryb\xC3\xA1\xC5\x99stv\xC3\xAD"
   faculty_id: "1"
   id: "36"
   short_name: KZR
@@ -144,13 +144,13 @@ departments_019:
   short_name: KPs
   name_english: Department of Psychology
 departments_008: 
-  name: Katedra jakosti a spol. stroj?
+  name: "Katedra jakosti a spol. stroj\xC5\xAF"
   faculty_id: "5"
   id: "9"
   short_name: KJSS
   name_english: ""
 departments_053: 
-  name: "Katedra kvality zem?d?lsk\xFDch produkt?"
+  name: "Katedra kvality zem\xC4\x9Bd\xC4\x9Blsk\xC3\xBDch produkt\xC5\xAF"
   faculty_id: "1"
   id: "101"
   short_name: KKZP
@@ -180,31 +180,31 @@ departments_009:
   short_name: KEA
   name_english: ""
 departments_054: 
-  name: "Katedra speci\xE1ln\xED zootechniky"
+  name: "Katedra speci\xC3\xA1ln\xC3\xAD zootechniky"
   faculty_id: "1"
   id: "104"
   short_name: KSZ
   name_english: Department of
 departments_043: 
-  name: "Katedra p?stov\xE1n\xED les?"
+  name: "Katedra p\xC4\x9Bstov\xC3\xA1n\xC3\xAD les\xC5\xAF"
   faculty_id: "3"
   id: "53"
   short_name: KPL
   name_english: ""
 departments_032: 
-  name: "Katedra agrochemie a v\xFD\x9Eivy rostlin"
+  name: "Katedra agrochemie a v\xC3\xBD\xC5\xBEivy rostlin"
   faculty_id: "1"
   id: "40"
   short_name: KAVR
   name_english: Department of Agrochemistry and Plant Nutrition
 departments_021: 
-  name: Katedra jazyk?
+  name: "Katedra jazyk\xC5\xAF"
   faculty_id: "4"
   id: "24"
   short_name: KJ
   name_english: Department of Languages
 departments_010: 
-  name: Katedra tech. za?. staveb
+  name: "Katedra tech. za\xC5\x99. staveb"
   faculty_id: "5"
   id: "11"
   short_name: KTZS
@@ -216,34 +216,34 @@ departments_044:
   short_name: KOL
   name_english: ""
 departments_033: 
-  name: "Katedra zahradnictv\xED a krajin\xE1?sk\xE9 architektury"
+  name: "Katedra zahradnictv\xC3\xAD a krajin\xC3\xA1\xC5\x99sk\xC3\xA9 architektury"
   faculty_id: "1"
   id: "41"
   short_name: KZKA
   name_english: Department of Horticulture and Landscape Architecture
 departments_022: 
-  name: "Katedra informa?n\xEDho in\x9Een\xFDrstv\xED"
+  name: "Katedra informa\xC4\x8Dn\xC3\xADho in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
   faculty_id: "4"
   id: "25"
   short_name: KII
   name_english: Department of Information Engineering
 departments_011: 
-  name: "Katedra zem?d?lsk\xE9 ekonomiky"
+  name: "Katedra zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA9 ekonomiky"
   faculty_id: "4"
   id: "13"
   short_name: KZE
   name_english: Department of Agricultural Economics
 departments_045: 
-  name: "Katedra ekonom. a ?\xEDz. les. hosp."
+  name: "Katedra ekonom. a \xC5\x99\xC3\xADz. les. hosp."
   faculty_id: "3"
   id: "55"
   short_name: KERLH
   name_english: ""
 departments_034: 
-  name: "Katedra genetiky a \x9Alecht?n\xED"
+  name: "Katedra genetiky a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD"
   faculty_id: "1"
   id: "42"
-  short_name: "KG\x8A"
+  short_name: "KG\xC5\xA0"
   name_english: Department of Genetics and Breeding
 departments_023: 
   name: Katedra botaniky a fyziologie rostlin
@@ -252,7 +252,7 @@ departments_023:
   short_name: KBFR
   name_english: Department of Botany and Plant Physiology
 departments_012: 
-  name: "Katedra ekonomick\xFDch teori\xED"
+  name: "Katedra ekonomick\xC3\xBDch teori\xC3\xAD"
   faculty_id: "4"
   id: "14"
   short_name: KET
@@ -264,13 +264,13 @@ departments_001:
   short_name: KM
   name_english: ""
 departments_046: 
-  name: "Katedra t?lesn\xE9 v\xFDchovy"
+  name: "Katedra t\xC4\x9Blesn\xC3\xA9 v\xC3\xBDchovy"
   faculty_id: "6"
   id: "56"
   short_name: KTV
   name_english: ""
 departments_035: 
-  name: "Katedra mikrobiologie, v\xFD\x9Eivy a dietetiky"
+  name: "Katedra mikrobiologie, v\xC3\xBD\xC5\xBEivy a dietetiky"
   faculty_id: "1"
   id: "44"
   short_name: KMVD
@@ -282,7 +282,7 @@ departments_024:
   short_name: KPG
   name_english: Department of Soil Science and Geology
 departments_013: 
-  name: "Katedra ?\xEDzen\xED"
+  name: "Katedra \xC5\x99\xC3\xADzen\xC3\xAD"
   faculty_id: "4"
   id: "15"
   short_name: KR
@@ -300,7 +300,7 @@ departments_047:
   short_name: KPe
   name_english: Department of Education
 departments_036: 
-  name: "Katedra ekologie a \x9Eivotn\xEDho prost?ed\xED"
+  name: "Katedra ekologie a \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
   faculty_id: "3"
   id: "45"
   short_name: KEZP
@@ -314,7 +314,7 @@ departments_025:
   short_name: KAB
   name_english: Department of Agroecology and  Biometeorology
 departments_014: 
-  name: "Katedra informa?n\xEDch technologi\xED"
+  name: "Katedra informa\xC4\x8Dn\xC3\xADch technologi\xC3\xAD"
   faculty_id: "4"
   id: "16"
   short_name: KIT

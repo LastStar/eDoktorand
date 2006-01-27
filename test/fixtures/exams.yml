@@ -39,8 +39,8 @@ exams_068:
   created_on: 2003-12-17 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Datab\xE1zov\xE9 syst\xE9my. B\xE1ze dat a jejich vyu\x9E\xEDv\xE1n\xED. Datov\xE9 modely. Rela?n\xED datov\xFD model -rela?n\xED algebra. Objektov? orientovan\xFD model.\r\n\
-    2.EDI - E-obchodov\xE1n\xED . Informa?n\xED  spole?nost. St\xE1tn\xED informa?n\xED politika. Programy IST, NGI, \x85"
+  questions: "1.Datab\xC3\xA1zov\xC3\xA9 syst\xC3\xA9my. B\xC3\xA1ze dat a jejich vyu\xC5\xBE\xC3\xADv\xC3\xA1n\xC3\xAD. Datov\xC3\xA9 modely. Rela\xC4\x8Dn\xC3\xAD datov\xC3\xBD model -rela\xC4\x8Dn\xC3\xAD algebra. Objektov\xC4\x9B orientovan\xC3\xBD model.\r\n\
+    2.EDI - E-obchodov\xC3\xA1n\xC3\xAD . Informa\xC4\x8Dn\xC3\xAD  spole\xC4\x8Dnost. St\xC3\xA1tn\xC3\xAD informa\xC4\x8Dn\xC3\xAD politika. Programy IST, NGI, \xE2\x80\xA6"
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3331"
@@ -88,8 +88,8 @@ exams_069:
   created_on: 2003-12-17 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Hlavn\xED funkce opera?n\xEDch syst\xE9m?. Datov\xE9 soubory. Logick\xE1 a fyzick\xE1 \xFArove?. P?enos dat (objekt?) mezi programy.\r\n\
-    2.Informa?n\xED syst\xE9my a jejich postaven\xED v organizaci. Informa?n\xED strategie. Projektov\xE1n\xED IS."
+  questions: "1.Hlavn\xC3\xAD funkce opera\xC4\x8Dn\xC3\xADch syst\xC3\xA9m\xC5\xAF. Datov\xC3\xA9 soubory. Logick\xC3\xA1 a fyzick\xC3\xA1 \xC3\xBArove\xC5\x88. P\xC5\x99enos dat (objekt\xC5\xAF) mezi programy.\r\n\
+    2.Informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my a jejich postaven\xC3\xAD v organizaci. Informa\xC4\x8Dn\xC3\xAD strategie. Projektov\xC3\xA1n\xC3\xAD IS."
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3332"
@@ -149,9 +149,9 @@ exams_120:
   created_on: 2004-04-16 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu.\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu.\r\n\
     2. Rozbor textu.\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma."
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma."
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3539"
@@ -199,9 +199,9 @@ exams_121:
   created_on: 2004-04-20 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu.\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu.\r\n\
     2. Rozbor textu.\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma."
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma."
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3540"
@@ -237,9 +237,9 @@ exams_122:
   created_on: 2004-04-27 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu.\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu.\r\n\
     2. Rozbor textu.\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma."
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma."
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3541"
@@ -251,8 +251,8 @@ exams_170:
   created_on: 2004-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Efektivnost podnikatelsk\xFDch z\xE1m?r?\r\n\
-    2. Vzt\xE4hy faktor - faktor"
+  questions: "1. Efektivnost podnikatelsk\xC3\xBDch z\xC3\xA1m\xC4\x9Br\xC5\xAF\r\n\
+    2. Vzt\xC3\xA4hy faktor - faktor"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3683"
@@ -300,8 +300,8 @@ exams_123:
   created_on: 2004-05-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Banky a jejich m\xEDsto v tr\x9En\xED ekonomice - bankovn\xED syst\xE9my, funkce bank, druhy bank\r\n\
-    2. Finan?n\xED deriv\xE1ty - vznik a v\xFDznam, druhy finan?n\xEDch deriv\xE1t?"
+  questions: "1. Banky a jejich m\xC3\xADsto v tr\xC5\xBEn\xC3\xAD ekonomice - bankovn\xC3\xAD syst\xC3\xA9my, funkce bank, druhy bank\r\n\
+    2. Finan\xC4\x8Dn\xC3\xAD deriv\xC3\xA1ty - vznik a v\xC3\xBDznam, druhy finan\xC4\x8Dn\xC3\xADch deriv\xC3\xA1t\xC5\xAF"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3542"
@@ -361,7 +361,7 @@ exams_124:
   created_on: 2004-06-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "?\xEDzen\xED podnikov\xE9ho portfolia"
+  questions: "\xC5\x98\xC3\xADzen\xC3\xAD podnikov\xC3\xA9ho portfolia"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3544"
@@ -386,7 +386,7 @@ exams_171:
   result: "1"
   updated_by_id: 
   questions: "1. Teorie podniku\r\n\
-    2. Produk?n\xED anal\xFDza"
+    2. Produk\xC4\x8Dn\xC3\xAD anal\xC3\xBDza"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3684"
@@ -434,9 +434,9 @@ exams_125:
   created_on: 2004-05-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3547"
@@ -460,8 +460,8 @@ exams_172:
   created_on: 2005-01-21 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Fungov\xE1n\xED zem?d?lskopotravin\xE1?sk\xE9ho trhu\r\n\
-    2. Anal\xFDza efektivnosti vyu\x9E\xEDv\xE1n\xED v\xFDrobn\xEDch faktor?"
+  questions: "1. Fungov\xC3\xA1n\xC3\xAD zem\xC4\x9Bd\xC4\x9Blskopotravin\xC3\xA1\xC5\x99sk\xC3\xA9ho trhu\r\n\
+    2. Anal\xC3\xBDza efektivnosti vyu\xC5\xBE\xC3\xADv\xC3\xA1n\xC3\xAD v\xC3\xBDrobn\xC3\xADch faktor\xC5\xAF"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3685"
@@ -509,9 +509,9 @@ exams_126:
   created_on: 2004-05-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3548"
@@ -535,9 +535,9 @@ exams_173:
   created_on: 2004-11-23 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3737"
@@ -585,9 +585,9 @@ exams_127:
   created_on: 2004-05-20 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3549"
@@ -611,7 +611,7 @@ exams_174:
   created_on: 2005-01-07 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Technologie pro e-business. ?len?n\xED a p?\xEDklady. Zp?soby \xFAhrady (platby)."
+  questions: "1. Technologie pro e-business. \xC4\x8Clen\xC4\x9Bn\xC3\xAD a p\xC5\x99\xC3\xADklady. Zp\xC5\xAFsoby \xC3\xBAhrady (platby)."
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3738"
@@ -659,9 +659,9 @@ exams_128:
   created_on: 2004-05-18 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3550"
@@ -685,7 +685,7 @@ exams_175:
   created_on: 2005-01-07 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Bezpe?nost syst\xE9m? a mo\x9Enosti ochrany dat."
+  questions: "1. Bezpe\xC4\x8Dnost syst\xC3\xA9m\xC5\xAF a mo\xC5\xBEnosti ochrany dat."
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3739"
@@ -721,9 +721,9 @@ exams_129:
   created_on: 2004-05-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3551"
@@ -747,7 +747,7 @@ exams_176:
   created_on: 2005-01-07 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Nov\xE9 trendy v oblasti e-business."
+  questions: "1. Nov\xC3\xA9 trendy v oblasti e-business."
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3740"
@@ -795,7 +795,7 @@ exams_177:
   created_on: 2005-01-07 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Business model a mo6nosti jeho podpory pomoc IT. P?\xEDklady. Po\x9Eadavky na design."
+  questions: "1. Business model a mo6nosti jeho podpory pomoc IT. P\xC5\x99\xC3\xADklady. Po\xC5\xBEadavky na design."
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3741"
@@ -831,9 +831,9 @@ exams_178:
   created_on: 2005-01-07 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Zem?d?lstv\xED Severn\xED Ameriky\r\n\
-    2. Potravinov\xFD probl\xE9m\r\n\
-    3. Agr\xE1rn\xED zahrani?n\xED obchod\r\n"
+  questions: "1. Zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD Severn\xC3\xAD Ameriky\r\n\
+    2. Potravinov\xC3\xBD probl\xC3\xA9m\r\n\
+    3. Agr\xC3\xA1rn\xC3\xAD zahrani\xC4\x8Dn\xC3\xAD obchod\r\n"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3742"
@@ -869,9 +869,9 @@ exams_179:
   created_on: 2005-01-07 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Agr\xE1rn\xED politika EU a ?R\r\n\
-    2. Multifunk?n\xED zem?d?lstv\xED\r\n\
-    3. WTO a zem?d?lstv\xED\r\n"
+  questions: "1. Agr\xC3\xA1rn\xC3\xAD politika EU a \xC4\x8CR\r\n\
+    2. Multifunk\xC4\x8Dn\xC3\xAD zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD\r\n\
+    3. WTO a zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD\r\n"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3743"
@@ -883,9 +883,9 @@ exams_610:
   created_on: 2006-01-09 15:02:39
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD materi\xE1l: Motivace pracovn\xEDho chov\xE1n\xED a stimulace\r\n\
-    13. Motivace pracovn\xEDho chov\xE1n\xED, stimulace\r\n\
-    18. Efektivnost ?\xEDd\xEDc\xED pr\xE1ce \r\n\
+  questions: "P\xC3\xADsemn\xC3\xBD materi\xC3\xA1l: Motivace pracovn\xC3\xADho chov\xC3\xA1n\xC3\xAD a stimulace\r\n\
+    13. Motivace pracovn\xC3\xADho chov\xC3\xA1n\xC3\xAD, stimulace\r\n\
+    18. Efektivnost \xC5\x99\xC3\xADd\xC3\xADc\xC3\xAD pr\xC3\xA1ce \r\n\
     \r\n"
   updated_on: 2006-01-27 09:46:23
   created_by_id: "1410"
@@ -911,7 +911,7 @@ exams_230:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Dekompozice ?asov\xFDch ?ad"
+    2. Dekompozice \xC4\x8Dasov\xC3\xBDch \xC5\x99ad"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3894"
@@ -923,9 +923,9 @@ exams_040:
   created_on: 2003-06-04 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odborn\xE9 t\xE9ma"
+    3) Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3251"
@@ -937,8 +937,8 @@ exams_611:
   created_on: 2006-01-09 15:06:45
   result: "1"
   updated_by_id: 
-  questions: "19. P?ek\xE1\x9Eky a poruchy v komunikaci, p?\xED?iny, jejich p?ekon\xE1v\xE1n\xED\r\n\
-    2. Nonverb\xE1ln\xED komunikace \x96 mimika, identifikace a sekund\xE1rn\xEDch     emocion\xE1ln\xEDch mimick\xFDch v\xFDraz?\r\n\
+  questions: "19. P\xC5\x99ek\xC3\xA1\xC5\xBEky a poruchy v komunikaci, p\xC5\x99\xC3\xAD\xC4\x8Diny, jejich p\xC5\x99ekon\xC3\xA1v\xC3\xA1n\xC3\xAD\r\n\
+    2. Nonverb\xC3\xA1ln\xC3\xAD komunikace \xE2\x80\x93 mimika, identifikace a sekund\xC3\xA1rn\xC3\xADch     emocion\xC3\xA1ln\xC3\xADch mimick\xC3\xBDch v\xC3\xBDraz\xC5\xAF\r\n\
     \r\n\
     \r\n"
   updated_on: 2006-01-27 09:46:23
@@ -965,7 +965,7 @@ exams_231:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Shlukov\xE1 anal\xFDza"
+    2. Shlukov\xC3\xA1 anal\xC3\xBDza"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3895"
@@ -977,9 +977,9 @@ exams_041:
   created_on: 2003-06-04 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odborn\xE9 t\xE9ma"
+    3) Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3252"
@@ -991,7 +991,7 @@ exams_612:
   created_on: 2006-01-09 17:02:25
   result: "1"
   updated_by_id: 
-  questions: "2.\tBusiness model a mo\x9Enosti jeho podpory pomoc\xED IT. P?\xEDklady. Po\x9Eadavky na design."
+  questions: "2.\tBusiness model a mo\xC5\xBEnosti jeho podpory pomoc\xC3\xAD IT. P\xC5\x99\xC3\xADklady. Po\xC5\xBEadavky na design."
   updated_on: 2006-01-27 09:46:16
   created_by_id: "45"
   id: "5184"
@@ -1016,7 +1016,7 @@ exams_232:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Pr?zkumov\xE1 anal\xFDza dat"
+    2. Pr\xC5\xAFzkumov\xC3\xA1 anal\xC3\xBDza dat"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3896"
@@ -1028,9 +1028,9 @@ exams_042:
   created_on: 2003-06-05 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odborn\xE9 t\xE9ma"
+    3) Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3253"
@@ -1055,7 +1055,7 @@ exams_090:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Regresn\xED anal\xFDza"
+    2. Regresn\xC3\xAD anal\xC3\xBDza"
   updated_on: 2005-10-26 10:00:32
   created_by_id: "993"
   id: "3398"
@@ -1067,9 +1067,9 @@ exams_613:
   created_on: 2006-01-09 17:09:02
   result: "1"
   updated_by_id: 
-  questions: "Po?\xEDta?ov\xE1 grafika. Multimedia. Zp?soby po?\xEDzen\xED a zpracov\xE1n\xED graf?, obraz?, zvuku a videa. \r\n\
+  questions: "Po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA1 grafika. Multimedia. Zp\xC5\xAFsoby po\xC5\x99\xC3\xADzen\xC3\xAD a zpracov\xC3\xA1n\xC3\xAD graf\xC5\xAF, obraz\xC5\xAF, zvuku a videa. \r\n\
     \r\n\
-    Bezpe?nost IS. Mo\x9Enosti ochrany dat. "
+    Bezpe\xC4\x8Dnost IS. Mo\xC5\xBEnosti ochrany dat. "
   updated_on: 2006-01-27 09:46:16
   created_by_id: "45"
   id: "5185"
@@ -1105,9 +1105,9 @@ exams_233:
   created_on: 2005-06-27 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Rein\x9Een\xFDring a m?kk\xE9 metodologie\r\n\
-    2.Metoda BORM a jej\xED mo\x9Enosti v rein\x9Een\xFDringu\r\n\
-    3.CATWOE \x96 kdo je v metod? BORM Owner?\r\n"
+  questions: "1.Rein\xC5\xBEen\xC3\xBDring a m\xC4\x9Bkk\xC3\xA9 metodologie\r\n\
+    2.Metoda BORM a jej\xC3\xAD mo\xC5\xBEnosti v rein\xC5\xBEen\xC3\xBDringu\r\n\
+    3.CATWOE \xE2\x80\x93 kdo je v metod\xC4\x9B BORM Owner?\r\n"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3947"
@@ -1119,9 +1119,9 @@ exams_043:
   created_on: 2003-06-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odborn\xE9 t\xE9ma"
+    3) Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3254"
@@ -1134,7 +1134,7 @@ exams_091:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. V\xEDcen\xE1sobn\xFD regresn\xED model"
+    2. V\xC3\xADcen\xC3\xA1sobn\xC3\xBD regresn\xC3\xAD model"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3399"
@@ -1146,7 +1146,7 @@ exams_614:
   created_on: 2006-01-09 17:25:26
   result: "1"
   updated_by_id: 
-  questions: "Nov\xE9 trendy v oblasti e-business."
+  questions: "Nov\xC3\xA9 trendy v oblasti e-business."
   updated_on: 2006-01-27 09:46:16
   created_by_id: "45"
   id: "5186"
@@ -1182,9 +1182,9 @@ exams_234:
   created_on: 2005-06-27 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Znalostn\xED syst\xE9my a soci\xE1ln\xED aspekty\r\n\
-    2. CATWOE ve znalostn\xEDch syst\xE9mech\r\n\
-    3. Konceptu\xE1ln\xED model znalostn\xEDho syst\xE9mu\r\n"
+  questions: "1. Znalostn\xC3\xAD syst\xC3\xA9my a soci\xC3\xA1ln\xC3\xAD aspekty\r\n\
+    2. CATWOE ve znalostn\xC3\xADch syst\xC3\xA9mech\r\n\
+    3. Konceptu\xC3\xA1ln\xC3\xAD model znalostn\xC3\xADho syst\xC3\xA9mu\r\n"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3948"
@@ -1196,9 +1196,9 @@ exams_044:
   created_on: 2002-12-18 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odborn\xE9 t\xE9ma"
+    3) Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3255"
@@ -1223,7 +1223,7 @@ exams_092:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Logistick\xE1 regrese"
+    2. Logistick\xC3\xA1 regrese"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3400"
@@ -1235,7 +1235,7 @@ exams_615:
   created_on: 2006-01-09 18:16:39
   result: "1"
   updated_by_id: 
-  questions: "Technologie pro e-business. ?len?n\xED a p?\xEDklady. Zp?soby \xFAhrady (platby)."
+  questions: "Technologie pro e-business. \xC4\x8Clen\xC4\x9Bn\xC3\xAD a p\xC5\x99\xC3\xADklady. Zp\xC5\xAFsoby \xC3\xBAhrady (platby)."
   updated_on: 2006-01-27 09:46:16
   created_by_id: "45"
   id: "5187"
@@ -1271,9 +1271,9 @@ exams_235:
   created_on: 2005-06-28 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Simulace a simula?n\xED p?\xEDstupy\r\n\
-    2. Princip Forresterovsk\xE9 danamiky a jeho klasifikace\r\n\
-    3. Extrem\xE1ln\xED a pr?m?rov\xE9 anal\xFDzy chov\xE1n\xED syst\xE9mu"
+  questions: "1. Simulace a simula\xC4\x8Dn\xC3\xAD p\xC5\x99\xC3\xADstupy\r\n\
+    2. Princip Forresterovsk\xC3\xA9 danamiky a jeho klasifikace\r\n\
+    3. Extrem\xC3\xA1ln\xC3\xAD a pr\xC5\xAFm\xC4\x9Brov\xC3\xA9 anal\xC3\xBDzy chov\xC3\xA1n\xC3\xAD syst\xC3\xA9mu"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3949"
@@ -1285,7 +1285,7 @@ exams_045:
   created_on: 2003-06-25 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "ZO obilovin v EU a jej\xEDch jednolit\xFDch st\xE1tech. ZO obilovin v ostatn\xEDch produk?n\xEDch st\xE1tech Evropy, kter\xE9 vstupuj\xED do ZO."
+  questions: "ZO obilovin v EU a jej\xC3\xADch jednolit\xC3\xBDch st\xC3\xA1tech. ZO obilovin v ostatn\xC3\xADch produk\xC4\x8Dn\xC3\xADch st\xC3\xA1tech Evropy, kter\xC3\xA9 vstupuj\xC3\xAD do ZO."
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3256"
@@ -1309,9 +1309,9 @@ exams_093:
   created_on: 2003-12-18 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. C\xEDle a principy F?\r\n\
-    2. Finan?n\xED anal\xFDza - metody, principy, vyu\x9Eit\xED\r\n\
-    3. Finan?n\xED zdroje ve F? - obecn\xE1 charakteristika, rozd?len\xED, vyu\x9Eit\xED"
+  questions: "1. C\xC3\xADle a principy F\xC5\x98\r\n\
+    2. Finan\xC4\x8Dn\xC3\xAD anal\xC3\xBDza - metody, principy, vyu\xC5\xBEit\xC3\xAD\r\n\
+    3. Finan\xC4\x8Dn\xC3\xAD zdroje ve F\xC5\x98 - obecn\xC3\xA1 charakteristika, rozd\xC4\x9Blen\xC3\xAD, vyu\xC5\xBEit\xC3\xAD"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3401"
@@ -1323,8 +1323,8 @@ exams_616:
   created_on: 2006-01-10 11:54:37
   result: "1"
   updated_by_id: 
-  questions: "1. Ekologick\xE9 zem?d?lstv\xED - AP opat?en\xED\n\
-    2. Agr\xE1rn\xED souvislosti externalit (z\xE1porn\xFDch) zem?d?lstv\xED"
+  questions: "1. Ekologick\xC3\xA9 zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD - AP opat\xC5\x99en\xC3\xAD\n\
+    2. Agr\xC3\xA1rn\xC3\xAD souvislosti externalit (z\xC3\xA1porn\xC3\xBDch) zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
   updated_on: 2006-01-27 09:46:16
   created_by_id: "1009"
   id: "5188"
@@ -1360,9 +1360,9 @@ exams_236:
   created_on: 2005-06-28 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Syst\xE9mov\xE9 zdroje znalostn\xED b\xE1ze p?i kvantifikaci probl\xE9mov\xE9ho okruhu.\r\n\
-    2. V\xFDvoj vztah? mezi SW aHW a syst\xE9mov\xFDm faktorem ve v\xFDvoji informa?n? modelov\xFDch syst\xE9m?.\r\n\
-    3. Klasifikace vztah? mezi objektem, syst\xE9mem, protomodelem a metamodelem."
+  questions: "1. Syst\xC3\xA9mov\xC3\xA9 zdroje znalostn\xC3\xAD b\xC3\xA1ze p\xC5\x99i kvantifikaci probl\xC3\xA9mov\xC3\xA9ho okruhu.\r\n\
+    2. V\xC3\xBDvoj vztah\xC5\xAF mezi SW aHW a syst\xC3\xA9mov\xC3\xBDm faktorem ve v\xC3\xBDvoji informa\xC4\x8Dn\xC4\x9B modelov\xC3\xBDch syst\xC3\xA9m\xC5\xAF.\r\n\
+    3. Klasifikace vztah\xC5\xAF mezi objektem, syst\xC3\xA9mem, protomodelem a metamodelem."
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3950"
@@ -1374,7 +1374,7 @@ exams_046:
   created_on: 2003-06-25 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Zahrani?n\xED obchod s chmelem v ?R a ve sv?t?, ukazatele, hodnocen\xED, mo\x9Enosti rozvoje."
+  questions: "Zahrani\xC4\x8Dn\xC3\xAD obchod s chmelem v \xC4\x8CR a ve sv\xC4\x9Bt\xC4\x9B, ukazatele, hodnocen\xC3\xAD, mo\xC5\xBEnosti rozvoje."
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3257"
@@ -1398,9 +1398,9 @@ exams_617:
   created_on: 2006-01-10 11:57:58
   result: "1"
   updated_by_id: 
-  questions: "ET:  Trh pr\xE1ce a jeho utv\xE1?en\xED\n\
-    EAS: Regulace a efektivnost agr\xE1rn\xEDho \n     zahrani?n\xEDho obchodu\n\n\
-    3. zkou\x9Aej\xEDc\xED: doc. \x8Ar\xE9dl"
+  questions: "ET:  Trh pr\xC3\xA1ce a jeho utv\xC3\xA1\xC5\x99en\xC3\xAD\n\
+    EAS: Regulace a efektivnost agr\xC3\xA1rn\xC3\xADho \n     zahrani\xC4\x8Dn\xC3\xADho obchodu\n\n\
+    3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. \xC5\xA0r\xC3\xA9dl"
   updated_on: 2006-01-27 09:46:16
   created_by_id: "1009"
   id: "5189"
@@ -1436,9 +1436,9 @@ exams_237:
   created_on: 2005-06-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Aproximativn\xED p?\xEDstupy k syst\xE9mu dopravn\xEDch \xFAloh v jednotliv\xFDch typech logistick\xFDch ?et?zc?.\r\n\
-    2. Syst\xE9mov\xE9 funkce test? optimality a p?\xEDpustnosti v jednotliv\xFDch typech EMM.\r\n\
-    3. Dualitn\xED teor\xE9m a jeho interpreta?n\xED vyu\x9Eit\xED v rozborech ekonomicko matematick\xFDch model?."
+  questions: "1. Aproximativn\xC3\xAD p\xC5\x99\xC3\xADstupy k syst\xC3\xA9mu dopravn\xC3\xADch \xC3\xBAloh v jednotliv\xC3\xBDch typech logistick\xC3\xBDch \xC5\x99et\xC4\x9Bzc\xC5\xAF.\r\n\
+    2. Syst\xC3\xA9mov\xC3\xA9 funkce test\xC5\xAF optimality a p\xC5\x99\xC3\xADpustnosti v jednotliv\xC3\xBDch typech EMM.\r\n\
+    3. Dualitn\xC3\xAD teor\xC3\xA9m a jeho interpreta\xC4\x8Dn\xC3\xAD vyu\xC5\xBEit\xC3\xAD v rozborech ekonomicko matematick\xC3\xBDch model\xC5\xAF."
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3951"
@@ -1450,8 +1450,8 @@ exams_047:
   created_on: 2003-01-07 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Fungov\xE1n\xED trhu na p?\xEDkladu zem?d?lsko potravin\xE1?sk\xFDch  \r\n    v\xFDrobk?.\r\n\
-    2. Agr\xE1rn\xED politika v obdob\xED transformace ?esk\xE9ho zem?d?lstv\xED"
+  questions: "1. Fungov\xC3\xA1n\xC3\xAD trhu na p\xC5\x99\xC3\xADkladu zem\xC4\x9Bd\xC4\x9Blsko potravin\xC3\xA1\xC5\x99sk\xC3\xBDch  \r\n    v\xC3\xBDrobk\xC5\xAF.\r\n\
+    2. Agr\xC3\xA1rn\xC3\xAD politika v obdob\xC3\xAD transformace \xC4\x8Desk\xC3\xA9ho zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3258"
@@ -1475,8 +1475,8 @@ exams_094:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Ekonometrick\xE9 modely odv?tv\xED rostlinn\xE9 v\xFDroby.\r\n\
-    2. Koncipov\xE1n\xED progn\xF3z s vyu\x9Eit\xEDm ekonometrick\xFDch model?."
+  questions: "1. Ekonometrick\xC3\xA9 modely odv\xC4\x9Btv\xC3\xAD rostlinn\xC3\xA9 v\xC3\xBDroby.\r\n\
+    2. Koncipov\xC3\xA1n\xC3\xAD progn\xC3\xB3z s vyu\xC5\xBEit\xC3\xADm ekonometrick\xC3\xBDch model\xC5\xAF."
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3402"
@@ -1488,9 +1488,9 @@ exams_618:
   created_on: 2006-01-10 12:35:51
   result: "1"
   updated_by_id: 
-  questions: "ET:  N\xE1kladov\xE1 funkce firmy\n\
-    EAS: Trh s p?dou\n\n\
-    3. zkou\x9Aej\xEDc\xED: doc. \x8Ar\xE9dl"
+  questions: "ET:  N\xC3\xA1kladov\xC3\xA1 funkce firmy\n\
+    EAS: Trh s p\xC5\xAFdou\n\n\
+    3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. \xC5\xA0r\xC3\xA9dl"
   updated_on: 2006-01-27 09:46:17
   created_by_id: "1009"
   id: "5190"
@@ -1526,8 +1526,8 @@ exams_048:
   created_on: 2003-06-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "22) Komunikace se zam?stnanci - st\xED\x9Enosti, hodnocen\xED,  pracovn\xED porady\r\n\
-    9) Komplexn\xED pojet\xED nonverb\xE1ln\xED komunikace"
+  questions: "22) Komunikace se zam\xC4\x9Bstnanci - st\xC3\xAD\xC5\xBEnosti, hodnocen\xC3\xAD,  pracovn\xC3\xAD porady\r\n\
+    9) Komplexn\xC3\xAD pojet\xC3\xAD nonverb\xC3\xA1ln\xC3\xAD komunikace"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3259"
@@ -1551,7 +1551,7 @@ exams_095:
   created_on: 2004-01-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Informa?n\xED management"
+  questions: "Informa\xC4\x8Dn\xC3\xAD management"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3403"
@@ -1563,9 +1563,9 @@ exams_238:
   created_on: 2005-06-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Princip rekurence a pseudon\xE1hodn\xE9 veli?iny\r\n\
-    2. Syst\xE9m zdrojov\xE1n\xED informac\xED v n\xE1hodn\xFDch souborech ve smyslu FADN\r\n\
-    3. Fuuzzy aspekty neur?it\xFDch p?\xEDstup? k modelov\xE1n\xED kvantitativn\xEDch ekonomick\xFDch parametr? objekt?"
+  questions: "1. Princip rekurence a pseudon\xC3\xA1hodn\xC3\xA9 veli\xC4\x8Diny\r\n\
+    2. Syst\xC3\xA9m zdrojov\xC3\xA1n\xC3\xAD informac\xC3\xAD v n\xC3\xA1hodn\xC3\xBDch souborech ve smyslu FADN\r\n\
+    3. Fuuzzy aspekty neur\xC4\x8Dit\xC3\xBDch p\xC5\x99\xC3\xADstup\xC5\xAF k modelov\xC3\xA1n\xC3\xAD kvantitativn\xC3\xADch ekonomick\xC3\xBDch parametr\xC5\xAF objekt\xC5\xAF"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3952"
@@ -1577,8 +1577,8 @@ exams_619:
   created_on: 2006-01-11 12:22:38
   result: "1"
   updated_by_id: 
-  questions: "1. Vztah CAP a sektoru slu\x9Eeb\n\
-    2. Agr\xE1rn\xED souvislosti externalit \n   (kladn\xFDch) zem?d?lstv\xED"
+  questions: "1. Vztah CAP a sektoru slu\xC5\xBEeb\n\
+    2. Agr\xC3\xA1rn\xC3\xAD souvislosti externalit \n   (kladn\xC3\xBDch) zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
   updated_on: 2006-01-27 09:46:17
   created_by_id: "1009"
   id: "5191"
@@ -1614,10 +1614,10 @@ exams_049:
   created_on: 2003-06-30 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "ET: Fungov\xE1n\xED tr\x9En\xEDho mechanismu\r\n\
-    EAS: Teorie n\xE1klad?, jejich klasifikace a ekologie\r\n\
+  questions: "ET: Fungov\xC3\xA1n\xC3\xAD tr\xC5\xBEn\xC3\xADho mechanismu\r\n\
+    EAS: Teorie n\xC3\xA1klad\xC5\xAF, jejich klasifikace a ekologie\r\n\
     \r\n\
-    Pozn.: 3. zkou\x9Aej\xEDc\xED prof. Svato\x9A"
+    Pozn.: 3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD prof. Svato\xC5\xA1"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3260"
@@ -1641,8 +1641,8 @@ exams_096:
   created_on: 2004-01-12 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Efektivnost investic a posouzen\xED podnikatelsk\xFDch z\xE1m?r?\r\n\
-    2. Modelov\xE1n\xED fungov\xE1n\xED trhu"
+  questions: "1. Efektivnost investic a posouzen\xC3\xAD podnikatelsk\xC3\xBDch z\xC3\xA1m\xC4\x9Br\xC5\xAF\r\n\
+    2. Modelov\xC3\xA1n\xC3\xAD fungov\xC3\xA1n\xC3\xAD trhu"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3404"
@@ -1655,7 +1655,7 @@ exams_239:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Predik?n\xED m\xEDry"
+    2. Predik\xC4\x8Dn\xC3\xAD m\xC3\xADry"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3953"
@@ -1691,10 +1691,10 @@ exams_097:
   created_on: 2004-02-20 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "ET:  Dopady zm?n vn?j\x9A\xEDho prost?ed\xED zabran\xE9 na efektivnost  \r\n       firmy\r\n\
-    EAS: Finan?n\xED hospoda?en\xED zem?d?lsk\xFDch podnik?\r\n\
+  questions: "ET:  Dopady zm\xC4\x9Bn vn\xC4\x9Bj\xC5\xA1\xC3\xADho prost\xC5\x99ed\xC3\xAD zabran\xC3\xA9 na efektivnost  \r\n       firmy\r\n\
+    EAS: Finan\xC4\x8Dn\xC3\xAD hospoda\xC5\x99en\xC3\xAD zem\xC4\x9Bd\xC4\x9Blsk\xC3\xBDch podnik\xC5\xAF\r\n\
     \r\n\
-    Pozn\xE1mka: 3. zkou\x9Aej\xEDc\xED - doc. Kade?\xE1bkov\xE1"
+    Pozn\xC3\xA1mka: 3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD - doc. Kade\xC5\x99\xC3\xA1bkov\xC3\xA1"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3405"
@@ -1718,7 +1718,7 @@ exams_100:
   created_on: 2004-01-22 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Informa?n\xED management a IS"
+  questions: "Informa\xC4\x8Dn\xC3\xAD management a IS"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3408"
@@ -1742,10 +1742,10 @@ exams_098:
   created_on: 2004-02-20 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "ET:   Vymezen\xED nab\xEDdkov\xFDch funkc\xED a jejich konstrukce\r\n\
-    EAS: Postaven\xED odv?tv\xED zem?d?lstv\xED v ekonomice vysp?l\xFDch \r\n       zem\xED\r\n\
+  questions: "ET:   Vymezen\xC3\xAD nab\xC3\xADdkov\xC3\xBDch funkc\xC3\xAD a jejich konstrukce\r\n\
+    EAS: Postaven\xC3\xAD odv\xC4\x9Btv\xC3\xAD zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD v ekonomice vysp\xC4\x9Bl\xC3\xBDch \r\n       zem\xC3\xAD\r\n\
     \r\n\
-    Pozn\xE1mka: 3. zkou\x9Aej\xEDc\xED - doc. Kade?\xE1bkov\xE1"
+    Pozn\xC3\xA1mka: 3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD - doc. Kade\xC5\x99\xC3\xA1bkov\xC3\xA1"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3406"
@@ -1769,7 +1769,7 @@ exams_101:
   created_on: 2004-01-13 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Dynamick\xE9 modelov\xE1n\xED, n\xE1stroje pro propojen\xED model?"
+  questions: "Dynamick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD, n\xC3\xA1stroje pro propojen\xC3\xAD model\xC5\xAF"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3409"
@@ -1805,7 +1805,7 @@ exams_102:
   created_on: 2004-01-13 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "souvislost dynamick\xE9ho a objektov\xE9ho modelu"
+  questions: "souvislost dynamick\xC3\xA9ho a objektov\xC3\xA9ho modelu"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3410"
@@ -1841,9 +1841,9 @@ exams_150:
   created_on: 2004-06-25 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3622"
@@ -1855,7 +1855,7 @@ exams_103:
   created_on: 2004-01-22 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Projekt k dynamick\xE9m modelov\xE1n\xED, souvislost mezi sc\xE9n\xE1?em, dgm. sledu ud\xE1lost\xED a STD"
+  questions: "Projekt k dynamick\xC3\xA9m modelov\xC3\xA1n\xC3\xAD, souvislost mezi sc\xC3\xA9n\xC3\xA1\xC5\x99em, dgm. sledu ud\xC3\xA1lost\xC3\xAD a STD"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3411"
@@ -1891,9 +1891,9 @@ exams_151:
   created_on: 2004-06-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3623"
@@ -1905,9 +1905,9 @@ exams_104:
   created_on: 2004-04-27 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD materi\xE1l : Adaptabilita organizac\xED na zm?ny vn?j\x9A\xEDho prost?ed\xED\r\n\
-    4. Chov\xE1n\xED syst\xE9mu, podn?ty a reakce, transformace\r\n\
-    16. ?\xEDd\xEDc\xED procesy v podnikatelsk\xFDch subjektech - rozhodovac\xED procesy"
+  questions: "P\xC3\xADsemn\xC3\xBD materi\xC3\xA1l : Adaptabilita organizac\xC3\xAD na zm\xC4\x9Bny vn\xC4\x9Bj\xC5\xA1\xC3\xADho prost\xC5\x99ed\xC3\xAD\r\n\
+    4. Chov\xC3\xA1n\xC3\xAD syst\xC3\xA9mu, podn\xC4\x9Bty a reakce, transformace\r\n\
+    16. \xC5\x98\xC3\xADd\xC3\xADc\xC3\xAD procesy v podnikatelsk\xC3\xBDch subjektech - rozhodovac\xC3\xAD procesy"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3463"
@@ -1943,9 +1943,9 @@ exams_152:
   created_on: 2004-06-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3624"
@@ -1957,9 +1957,9 @@ exams_105:
   created_on: 2004-04-01 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xE1 ?\xE1st: N\xE1vrh market. v\xFDzkumu hlasov\xFDch slu\x9Eeb spole?nosti Acital , a.s. \r\n\
-    Chov\xE1n\xED spot?ebitele- spot?ebitelsk\xFD marketing\r\n\
-    Vn?j\x9A\xED prost?ed\xED (okol\xED) podniku"
+  questions: "P\xC3\xADsemn\xC3\xA1 \xC4\x8D\xC3\xA1st: N\xC3\xA1vrh market. v\xC3\xBDzkumu hlasov\xC3\xBDch slu\xC5\xBEeb spole\xC4\x8Dnosti Acital , a.s. \r\n\
+    Chov\xC3\xA1n\xC3\xAD spot\xC5\x99ebitele- spot\xC5\x99ebitelsk\xC3\xBD marketing\r\n\
+    Vn\xC4\x9Bj\xC5\xA1\xC3\xAD prost\xC5\x99ed\xC3\xAD (okol\xC3\xAD) podniku"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3464"
@@ -2019,9 +2019,9 @@ exams_153:
   created_on: 2004-12-15 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD projekt: Chov\xE1n\xED spot?ebitele na trhu s miner\xE1ln\xEDmi vodami\r\n\
-    Marketingov\xFD mix\r\n\
-    Chov\xE1n\xED z\xE1kazn\xEDka"
+  questions: "P\xC3\xADsemn\xC3\xBD projekt: Chov\xC3\xA1n\xC3\xAD spot\xC5\x99ebitele na trhu s miner\xC3\xA1ln\xC3\xADmi vodami\r\n\
+    Marketingov\xC3\xBD mix\r\n\
+    Chov\xC3\xA1n\xC3\xAD z\xC3\xA1kazn\xC3\xADka"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3665"
@@ -2033,9 +2033,9 @@ exams_106:
   created_on: 2004-04-14 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xE1 ?\xE1st : Anal\xFDza organiza?n\xED kultury ve vybran\xE9m podniku\r\n\
-    Podnikov\xE1 kultura, podnikov\xE1 etika\r\n\
-    Distribuce, distribu?n\xED cesty"
+  questions: "P\xC3\xADsemn\xC3\xA1 \xC4\x8D\xC3\xA1st : Anal\xC3\xBDza organiza\xC4\x8Dn\xC3\xAD kultury ve vybran\xC3\xA9m podniku\r\n\
+    Podnikov\xC3\xA1 kultura, podnikov\xC3\xA1 etika\r\n\
+    Distribuce, distribu\xC4\x8Dn\xC3\xAD cesty"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3465"
@@ -2083,8 +2083,8 @@ exams_154:
   created_on: 2004-11-19 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Pracovn\xED motivace a stimulace ve vazb? na komunika?n\xED procesy v podniku\r\n\
-    2. Koncepce person\xE1ln\xEDho ?\xEDzen\xED v podniku"
+  questions: "1. Pracovn\xC3\xAD motivace a stimulace ve vazb\xC4\x9B na komunika\xC4\x8Dn\xC3\xAD procesy v podniku\r\n\
+    2. Koncepce person\xC3\xA1ln\xC3\xADho \xC5\x99\xC3\xADzen\xC3\xAD v podniku"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3666"
@@ -2096,9 +2096,9 @@ exams_107:
   created_on: 2004-04-14 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xE1 ?\xE1st : Marketingov\xE1 studie vyu\x9Eit\xED obytn\xE9ho domu v Americk\xE9 ulici Praha 2\r\n\
-    Strategick\xE9 ?\xEDzen\xED, anal\xFDza prost?ed\xED podniku\r\n\
-    Marketingov\xFD v\xFDzkum"
+  questions: "P\xC3\xADsemn\xC3\xA1 \xC4\x8D\xC3\xA1st : Marketingov\xC3\xA1 studie vyu\xC5\xBEit\xC3\xAD obytn\xC3\xA9ho domu v Americk\xC3\xA9 ulici Praha 2\r\n\
+    Strategick\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD, anal\xC3\xBDza prost\xC5\x99ed\xC3\xAD podniku\r\n\
+    Marketingov\xC3\xBD v\xC3\xBDzkum"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3466"
@@ -2146,8 +2146,8 @@ exams_155:
   created_on: 2004-11-19 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Vnit?n\xED podm\xEDnky person\xE1ln\xEDho ?\xEDzen\xED v r?zn\xFDch typech podnik?\r\n\
-    2. ?\xEDzen\xED pracovn\xED kari\xE9ry"
+  questions: "1. Vnit\xC5\x99n\xC3\xAD podm\xC3\xADnky person\xC3\xA1ln\xC3\xADho \xC5\x99\xC3\xADzen\xC3\xAD v r\xC5\xAFzn\xC3\xBDch typech podnik\xC5\xAF\r\n\
+    2. \xC5\x98\xC3\xADzen\xC3\xAD pracovn\xC3\xAD kari\xC3\xA9ry"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3667"
@@ -2159,9 +2159,9 @@ exams_108:
   created_on: 2004-04-14 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xE1 ?\xE1st - Strategie firemn\xED komunikace GRAPHIC, spol. s.r.o.\r\n\
-    Organiza?n\xED a ?\xEDd\xEDc\xED struktury podnik?\r\n\
-    Marketingov\xE1 komunikace - n\xE1stroje"
+  questions: "P\xC3\xADsemn\xC3\xA1 \xC4\x8D\xC3\xA1st - Strategie firemn\xC3\xAD komunikace GRAPHIC, spol. s.r.o.\r\n\
+    Organiza\xC4\x8Dn\xC3\xAD a \xC5\x99\xC3\xADd\xC3\xADc\xC3\xAD struktury podnik\xC5\xAF\r\n\
+    Marketingov\xC3\xA1 komunikace - n\xC3\xA1stroje"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3467"
@@ -2221,8 +2221,8 @@ exams_156:
   created_on: 2004-11-19 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. P?\xEDstupy pracovn\xEDk? k rozvoji osobnostn\xEDmu i podnikatelsk\xE9mu\r\n\
-    2. Vn?j\x9A\xED podm\xEDnky person\xE1ln\xEDho ?\xEDzen\xED"
+  questions: "1. P\xC5\x99\xC3\xADstupy pracovn\xC3\xADk\xC5\xAF k rozvoji osobnostn\xC3\xADmu i podnikatelsk\xC3\xA9mu\r\n\
+    2. Vn\xC4\x9Bj\xC5\xA1\xC3\xAD podm\xC3\xADnky person\xC3\xA1ln\xC3\xADho \xC5\x99\xC3\xADzen\xC3\xAD"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3668"
@@ -2234,9 +2234,9 @@ exams_109:
   created_on: 2004-04-27 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD materi\xE1l : N\xE1vrh koncepce tvorby finan?n\xEDho portfolia roding.\r\n\
-    34. Marketingov\xE1 komunikace\r\n\
-    3. Organiza?n\xED syst\xE9m"
+  questions: "P\xC3\xADsemn\xC3\xBD materi\xC3\xA1l : N\xC3\xA1vrh koncepce tvorby finan\xC4\x8Dn\xC3\xADho portfolia roding.\r\n\
+    34. Marketingov\xC3\xA1 komunikace\r\n\
+    3. Organiza\xC4\x8Dn\xC3\xAD syst\xC3\xA9m"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3468"
@@ -2380,8 +2380,8 @@ exams_158:
   created_on: 2002-12-20 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Optimaliza?n\xED propo?ty\r\n\
-    2. Teorie ekonomick\xE9 volby\r\n"
+  questions: "1. Optimaliza\xC4\x8Dn\xC3\xAD propo\xC4\x8Dty\r\n\
+    2. Teorie ekonomick\xC3\xA9 volby\r\n"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3670"
@@ -2441,7 +2441,7 @@ exams_159:
   created_on: 2004-05-31 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Ot\xE1zky ?. 1 a 7"
+  questions: "Ot\xC3\xA1zky \xC4\x8D. 1 a 7"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3671"
@@ -2501,8 +2501,8 @@ exams_210:
   created_on: 2005-04-08 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Sm?ry reformy SZP\r\n\
-    Teorie ekonomick\xE9 integrace"
+  questions: "Sm\xC4\x9Bry reformy SZP\r\n\
+    Teorie ekonomick\xC3\xA9 integrace"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3824"
@@ -2514,7 +2514,7 @@ exams_020:
   created_on: 2003-02-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Politick\xFD potenci\xE1l vybran\xE9ho regionu z hlediska vyu\x9Eit\xED struktur\xE1ln\xED politiky EU."
+  questions: "Politick\xC3\xBD potenci\xC3\xA1l vybran\xC3\xA9ho regionu z hlediska vyu\xC5\xBEit\xC3\xAD struktur\xC3\xA1ln\xC3\xAD politiky EU."
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3179"
@@ -2562,8 +2562,8 @@ exams_211:
   created_on: 2005-04-08 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Transformace ?esk\xE9ho agr\xE1rn\xEDho sektoru a vstup do EU\r\n\
-    V\xFDvojov\xE9 tendence hlavn\xEDch makroekonomick\xFDch ukazatel?"
+  questions: "Transformace \xC4\x8Desk\xC3\xA9ho agr\xC3\xA1rn\xC3\xADho sektoru a vstup do EU\r\n\
+    V\xC3\xBDvojov\xC3\xA9 tendence hlavn\xC3\xADch makroekonomick\xC3\xBDch ukazatel\xC5\xAF"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3825"
@@ -2575,8 +2575,8 @@ exams_021:
   created_on: 2003-02-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "EU a regiony. Region\xE1ln\xED politick\xE9 programy.\r\n\
-    Regiony v programech ?esk\xFDch politick\xFDch strany, p?\xEDstupy a ?e\x9Aen\xED."
+  questions: "EU a regiony. Region\xC3\xA1ln\xC3\xAD politick\xC3\xA9 programy.\r\n\
+    Regiony v programech \xC4\x8Desk\xC3\xBDch politick\xC3\xBDch strany, p\xC5\x99\xC3\xADstupy a \xC5\x99e\xC5\xA1en\xC3\xAD."
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3180"
@@ -2600,8 +2600,8 @@ exams_070:
   created_on: 2003-12-17 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Po?\xEDta?ov\xE1 grafika. Multimedia. Zp?soby po?\xEDzen\xED a zpracov\xE1n\xED graf?, obraz?, zvuku a videa. \r\n\
-    2.Vyhled\xE1v\xE1n\xED informac\xED ve WWW. Indexace dokument?. Z\xEDsk\xE1v\xE1n\xED dokument?.  Re\x9Aer\x9An\xED vyhled\xE1v\xE1n\xED. Cita?n\xED n\xE1stroje a metody."
+  questions: "1.Po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA1 grafika. Multimedia. Zp\xC5\xAFsoby po\xC5\x99\xC3\xADzen\xC3\xAD a zpracov\xC3\xA1n\xC3\xAD graf\xC5\xAF, obraz\xC5\xAF, zvuku a videa. \r\n\
+    2.Vyhled\xC3\xA1v\xC3\xA1n\xC3\xAD informac\xC3\xAD ve WWW. Indexace dokument\xC5\xAF. Z\xC3\xADsk\xC3\xA1v\xC3\xA1n\xC3\xAD dokument\xC5\xAF.  Re\xC5\xA1er\xC5\xA1n\xC3\xAD vyhled\xC3\xA1v\xC3\xA1n\xC3\xAD. Cita\xC4\x8Dn\xC3\xAD n\xC3\xA1stroje a metody."
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3333"
@@ -2625,8 +2625,8 @@ exams_212:
   created_on: 2005-04-08 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Regulace sv?tov\xFDch hospod\xE1?sk\xFDch proces?\r\n\
-    Agr\xE1rn\xED sektor a trvale udr\x9Eiteln\xFD rozvoj"
+  questions: "Regulace sv\xC4\x9Btov\xC3\xBDch hospod\xC3\xA1\xC5\x99sk\xC3\xBDch proces\xC5\xAF\r\n\
+    Agr\xC3\xA1rn\xC3\xAD sektor a trvale udr\xC5\xBEiteln\xC3\xBD rozvoj"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3826"
@@ -2638,7 +2638,7 @@ exams_022:
   created_on: 2003-02-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Mo\x9Enosti a meze rozvoje ob?ansk\xE9 spole?nosti na komun\xE1ln\xED a region\xE1ln\xED \xFArovni."
+  questions: "Mo\xC5\xBEnosti a meze rozvoje ob\xC4\x8Dansk\xC3\xA9 spole\xC4\x8Dnosti na komun\xC3\xA1ln\xC3\xAD a region\xC3\xA1ln\xC3\xAD \xC3\xBArovni."
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3181"
@@ -2686,8 +2686,8 @@ exams_071:
   created_on: 2003-12-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Business model a mo\x9Enosti jeho podpory pomoc\xED IT. P?\xEDklady. Po\x9Eadavky na design.\r\n\
-    2.Bezpe?nost syst\xE9m? a mo\x9Enosti ochrany dat."
+  questions: "1.Business model a mo\xC5\xBEnosti jeho podpory pomoc\xC3\xAD IT. P\xC5\x99\xC3\xADklady. Po\xC5\xBEadavky na design.\r\n\
+    2.Bezpe\xC4\x8Dnost syst\xC3\xA9m\xC5\xAF a mo\xC5\xBEnosti ochrany dat."
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3334"
@@ -2699,9 +2699,9 @@ exams_213:
   created_on: 2005-03-22 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3877"
@@ -2713,7 +2713,7 @@ exams_023:
   created_on: 2002-12-05 00:00:00
   result: "1"
   updated_by_id: 
-  questions: budou dopln?ny
+  questions: "budou dopln\xC4\x9Bny"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3182"
@@ -2762,7 +2762,7 @@ exams_214:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Anal\xFDza sez\xF3nn\xEDho kol\xEDs\xE1n\xED v ?asov\xFDch ?ad\xE1ch"
+    2. Anal\xC3\xBDza sez\xC3\xB3nn\xC3\xADho kol\xC3\xADs\xC3\xA1n\xC3\xAD v \xC4\x8Dasov\xC3\xBDch \xC5\x99ad\xC3\xA1ch"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3878"
@@ -2774,7 +2774,7 @@ exams_024:
   created_on: 2002-12-12 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Chyby a p?edstavy o evropsk\xE9 zem. politice"
+  questions: "Chyby a p\xC5\x99edstavy o evropsk\xC3\xA9 zem. politice"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3183"
@@ -2822,8 +2822,8 @@ exams_072:
   created_on: 2003-12-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Definice pojm? e- business, e-commerce. A e-shop.V\xFDvojov\xE9 etapy. Program e-Europe. St\xE1tn\xED informa?n\xED politika..\r\n\
-    2.Mo\x9Enosti p?enosu dat mezi aplikacemi. (EDI, XML, \x85). Zp?soby \xFAhrady (platby)."
+  questions: "1.Definice pojm\xC5\xAF e- business, e-commerce. A e-shop.V\xC3\xBDvojov\xC3\xA9 etapy. Program e-Europe. St\xC3\xA1tn\xC3\xAD informa\xC4\x8Dn\xC3\xAD politika..\r\n\
+    2.Mo\xC5\xBEnosti p\xC5\x99enosu dat mezi aplikacemi. (EDI, XML, \xE2\x80\xA6). Zp\xC5\xAFsoby \xC3\xBAhrady (platby)."
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3335"
@@ -2836,7 +2836,7 @@ exams_215:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Neparametrick\xE9 testy"
+    2. Neparametrick\xC3\xA9 testy"
   updated_on: 2005-10-26 10:00:32
   created_by_id: "993"
   id: "3879"
@@ -2848,7 +2848,7 @@ exams_025:
   created_on: 2002-12-13 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Vliv dopravy na \x9Eivotn\xED prost?ed\xED v m?stsk\xE9 aglomeraci"
+  questions: "Vliv dopravy na \xC5\xBEivotn\xC3\xAD prost\xC5\x99ed\xC3\xAD v m\xC4\x9Bstsk\xC3\xA9 aglomeraci"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3184"
@@ -2896,8 +2896,8 @@ exams_073:
   created_on: 2003-12-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Technologie pro e-business. ?len?n\xED a p?\xEDklady.\r\n\
-    2.Nov\xE9 trendy v oblasti e-business."
+  questions: "1.Technologie pro e-business. \xC4\x8Clen\xC4\x9Bn\xC3\xAD a p\xC5\x99\xC3\xADklady.\r\n\
+    2.Nov\xC3\xA9 trendy v oblasti e-business."
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3336"
@@ -2910,7 +2910,7 @@ exams_216:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Regresn\xED modely"
+    2. Regresn\xC3\xAD modely"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3880"
@@ -2922,7 +2922,7 @@ exams_026:
   created_on: 2003-01-06 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Metodologick\xE9 ot\xE1zky studie rozd\xEDl? kultur; 2. Dimenze maskulinita-femininite; 3. Problematika p?ist?hovalectv\xED."
+  questions: "1. Metodologick\xC3\xA9 ot\xC3\xA1zky studie rozd\xC3\xADl\xC5\xAF kultur; 2. Dimenze maskulinita-femininite; 3. Problematika p\xC5\x99ist\xC4\x9Bhovalectv\xC3\xAD."
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3185"
@@ -2958,9 +2958,9 @@ exams_074:
   created_on: 2003-11-03 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Inteligentn\xED organizace\r\n\
-    2. Japonsk\xFD a americk\xFD model managementu a organiza?n\xEDho u?en\xED\r\n\
-    3. Vzd\xE1lenost moci jako kulturn\xED dimenze"
+  questions: "1. Inteligentn\xC3\xAD organizace\r\n\
+    2. Japonsk\xC3\xBD a americk\xC3\xBD model managementu a organiza\xC4\x8Dn\xC3\xADho u\xC4\x8Den\xC3\xAD\r\n\
+    3. Vzd\xC3\xA1lenost moci jako kulturn\xC3\xAD dimenze"
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3337"
@@ -2972,8 +2972,8 @@ exams_217:
   created_on: 2005-04-19 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "19. P?ek\xE1\x9Eky a poruchy v komunikaci, zp?soby jejich p?ekon\xE1v\xE1n\xED\r\n\
-    26. Role komunikace v delegov\xE1n\xED"
+  questions: "19. P\xC5\x99ek\xC3\xA1\xC5\xBEky a poruchy v komunikaci, zp\xC5\xAFsoby jejich p\xC5\x99ekon\xC3\xA1v\xC3\xA1n\xC3\xAD\r\n\
+    26. Role komunikace v delegov\xC3\xA1n\xC3\xAD"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3881"
@@ -3035,10 +3035,10 @@ exams_075:
   created_on: 2003-12-15 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Individualismus a kolektivismus jako dimenze rozd\xEDl? kultur\r\n\
-    2. Interkulturn\xED rozd\xEDly v managementu\r\n\
-    3. P?\xEDprava na slu\x9Eebn\xED v\xFDjezd do zahrani?\xED\r\n\
-    T\xE9ma pr\xE1ce: Komunikace mezi kulturami"
+  questions: "1. Individualismus a kolektivismus jako dimenze rozd\xC3\xADl\xC5\xAF kultur\r\n\
+    2. Interkulturn\xC3\xAD rozd\xC3\xADly v managementu\r\n\
+    3. P\xC5\x99\xC3\xADprava na slu\xC5\xBEebn\xC3\xAD v\xC3\xBDjezd do zahrani\xC4\x8D\xC3\xAD\r\n\
+    T\xC3\xA9ma pr\xC3\xA1ce: Komunikace mezi kulturami"
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3338"
@@ -3050,8 +3050,8 @@ exams_218:
   created_on: 2005-04-13 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Kvantifikace vlivu faktor? rizika na efekt investice\r\n\
-    Vyjad?ov\xE1n\xED cash flow a vyu\x9Eit\xED cash flow p?i ocen?n\xED akvizice"
+  questions: "Kvantifikace vlivu faktor\xC5\xAF rizika na efekt investice\r\n\
+    Vyjad\xC5\x99ov\xC3\xA1n\xC3\xAD cash flow a vyu\xC5\xBEit\xC3\xAD cash flow p\xC5\x99i ocen\xC4\x9Bn\xC3\xAD akvizice"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3882"
@@ -3063,7 +3063,7 @@ exams_028:
   created_on: 2003-02-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Eliminace finan?n\xEDch rizik (pod\xEDl st\xE1tu na eliminaci rizik zem?d?lsk\xE9 v\xFDroby)"
+  questions: "Eliminace finan\xC4\x8Dn\xC3\xADch rizik (pod\xC3\xADl st\xC3\xA1tu na eliminaci rizik zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA9 v\xC3\xBDroby)"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3187"
@@ -3111,8 +3111,8 @@ exams_219:
   created_on: 2005-04-27 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "CRM a vrcholov\xE9 ?\xEDzen\xED\r\n\
-    ICT v informa?n\xED strategii firmy"
+  questions: "CRM a vrcholov\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD\r\n\
+    ICT v informa\xC4\x8Dn\xC3\xAD strategii firmy"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3883"
@@ -3124,9 +3124,9 @@ exams_029:
   created_on: 2003-02-18 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Nov\xE1 ekonomika a zm?na produk?n\xED funkce.\r\n\
+  questions: "1. Nov\xC3\xA1 ekonomika a zm\xC4\x9Bna produk\xC4\x8Dn\xC3\xAD funkce.\r\n\
     \r\n\
-    2. Ekonomick\xE1 volba a optim\xE1ln\xED kombinace faktor?.\r\n"
+    2. Ekonomick\xC3\xA1 volba a optim\xC3\xA1ln\xC3\xAD kombinace faktor\xC5\xAF.\r\n"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3188"
@@ -3150,7 +3150,7 @@ exams_076:
   created_on: 2003-11-06 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Zdroje financov\xE1n\xED investi?n\xEDch z\xE1m?r? obce"
+  questions: "Zdroje financov\xC3\xA1n\xC3\xAD investi\xC4\x8Dn\xC3\xADch z\xC3\xA1m\xC4\x9Br\xC5\xAF obce"
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3339"
@@ -3186,9 +3186,9 @@ exams_077:
   created_on: 2003-09-08 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odborn\xE9 t\xE9ma"
+    3) Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3340"
@@ -3224,8 +3224,8 @@ exams_078:
   created_on: 2003-12-15 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Vymezen\xED podniku a jeho ekonomick\xE9 postaven\xED\r\n\
-    2. Ekonometrick\xE9 modely popt\xE1vky"
+  questions: "1. Vymezen\xC3\xAD podniku a jeho ekonomick\xC3\xA9 postaven\xC3\xAD\r\n\
+    2. Ekonometrick\xC3\xA9 modely popt\xC3\xA1vky"
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3341"
@@ -3261,9 +3261,9 @@ exams_079:
   created_on: 2003-11-25 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odb. textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odb. textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odb. t\xE9ma"
+    3) Konverzace na odb. t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3382"
@@ -3299,9 +3299,9 @@ exams_130:
   created_on: 2004-05-18 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3552"
@@ -3337,9 +3337,9 @@ exams_131:
   created_on: 2004-05-18 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3553"
@@ -3363,7 +3363,7 @@ exams_180:
   created_on: 2004-12-14 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Problematika mo\x9Enosti a \xFA?elnosti zaveden\xED ekologick\xE9 dan?"
+  questions: "Problematika mo\xC5\xBEnosti a \xC3\xBA\xC4\x8Delnosti zaveden\xC3\xAD ekologick\xC3\xA9 dan\xC4\x9B"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3744"
@@ -3387,9 +3387,9 @@ exams_132:
   created_on: 2004-05-18 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3554"
@@ -3437,7 +3437,7 @@ exams_181:
   created_on: 2004-12-17 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD projekt: Hodnocen\xED \xFArovn? prodejn\xED s\xEDt? spole?nosti Renault ?R, a.s. v kraji Praha\r\n\
+  questions: "P\xC3\xADsemn\xC3\xBD projekt: Hodnocen\xC3\xAD \xC3\xBArovn\xC4\x9B prodejn\xC3\xAD s\xC3\xADt\xC4\x9B spole\xC4\x8Dnosti Renault \xC4\x8CR, a.s. v kraji Praha\r\n\
     2.7. Komunikace\r\n\
     2.6. Maloobchod a velkoobchod"
   updated_on: 2005-10-24 21:50:34
@@ -3463,9 +3463,9 @@ exams_133:
   created_on: 2004-06-22 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3605"
@@ -3513,9 +3513,9 @@ exams_134:
   created_on: 2004-06-22 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3606"
@@ -3563,8 +3563,8 @@ exams_182:
   created_on: 2004-12-13 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Zdroje konkuren?n\xED v\xFDhody\r\n\
-    Implicitn\xED a explicitn\xED znalosti"
+  questions: "Zdroje konkuren\xC4\x8Dn\xC3\xAD v\xC3\xBDhody\r\n\
+    Implicitn\xC3\xAD a explicitn\xC3\xAD znalosti"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3746"
@@ -3648,8 +3648,8 @@ exams_136:
   created_on: 2004-06-23 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Odvozen\xED ekonometrick\xFDch model?\r\n\
-    2. Ag\xE1rn\xED politika v obdob\xED transformace ?esk\xE9ho zem?d?lstv\xED"
+  questions: "1. Odvozen\xC3\xAD ekonometrick\xC3\xBDch model\xC5\xAF\r\n\
+    2. Ag\xC3\xA1rn\xC3\xAD politika v obdob\xC3\xAD transformace \xC4\x8Desk\xC3\xA9ho zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3608"
@@ -3673,9 +3673,9 @@ exams_183:
   created_on: 2004-11-02 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3747"
@@ -3723,9 +3723,9 @@ exams_137:
   created_on: 2004-06-22 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3609"
@@ -3749,9 +3749,9 @@ exams_184:
   created_on: 2004-11-23 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3748"
@@ -3799,8 +3799,8 @@ exams_138:
   created_on: 2004-06-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Pojet\xED syst\xE9mov\xE9 v?dy a syst\xE9mov\xE9 metodologie\r\n\
-    2. Stav entropie a komplexnosti z hlediska syst\xE9mov\xE9ho p?\xEDstupu k ?e\x9Aen\xED projektu"
+  questions: "1.Pojet\xC3\xAD syst\xC3\xA9mov\xC3\xA9 v\xC4\x9Bdy a syst\xC3\xA9mov\xC3\xA9 metodologie\r\n\
+    2. Stav entropie a komplexnosti z hlediska syst\xC3\xA9mov\xC3\xA9ho p\xC5\x99\xC3\xADstupu k \xC5\x99e\xC5\xA1en\xC3\xAD projektu"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3610"
@@ -3824,9 +3824,9 @@ exams_185:
   created_on: 2004-12-09 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3749"
@@ -3874,8 +3874,8 @@ exams_139:
   created_on: 2004-06-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Pojet\xED syst\xE9mov\xE9 v?dy a syst\xE9mov\xE9 metodologie\r\n\
-    2. Stav entropie a komplexnosti z hlediska syst\xE9mov\xE9ho p?\xEDstupu k ?e\x9Aen\xED projektu"
+  questions: "1. Pojet\xC3\xAD syst\xC3\xA9mov\xC3\xA9 v\xC4\x9Bdy a syst\xC3\xA9mov\xC3\xA9 metodologie\r\n\
+    2. Stav entropie a komplexnosti z hlediska syst\xC3\xA9mov\xC3\xA9ho p\xC5\x99\xC3\xADstupu k \xC5\x99e\xC5\xA1en\xC3\xAD projektu"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3611"
@@ -3899,9 +3899,9 @@ exams_186:
   created_on: 2004-12-09 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3750"
@@ -3937,9 +3937,9 @@ exams_187:
   created_on: 2004-12-09 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3751"
@@ -3975,9 +3975,9 @@ exams_188:
   created_on: 2004-12-20 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3752"
@@ -4025,9 +4025,9 @@ exams_189:
   created_on: 2004-12-14 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3753"
@@ -4051,8 +4051,8 @@ exams_620:
   created_on: 2006-01-11 12:25:52
   result: "1"
   updated_by_id: 
-  questions: "1. Evropsk\xFD model zem?d?lstv\xED\n\
-    2. \xDAloha vodn\xEDho hospod\xE1?stv\xED ?R a EU"
+  questions: "1. Evropsk\xC3\xBD model zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD\n\
+    2. \xC3\x9Aloha vodn\xC3\xADho hospod\xC3\xA1\xC5\x99stv\xC3\xAD \xC4\x8CR a EU"
   updated_on: 2006-01-27 09:46:17
   created_by_id: "1009"
   id: "5192"
@@ -4076,8 +4076,8 @@ exams_240:
   created_on: 2005-06-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Lagrangeova technika: interpretace Lagrangeov\xFDchz multiplik\xE1tor?\r\n\
-    2. Lin\xEB\xE1rn\xED programov\xE1n\xED. Du\xE1ln\xED probl\xE9m"
+  questions: "1. Lagrangeova technika: interpretace Lagrangeov\xC3\xBDchz multiplik\xC3\xA1tor\xC5\xAF\r\n\
+    2. Lin\xC3\xAB\xC3\xA1rn\xC3\xAD programov\xC3\xA1n\xC3\xAD. Du\xC3\xA1ln\xC3\xAD probl\xC3\xA9m"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3954"
@@ -4090,7 +4090,7 @@ exams_050:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. ?asov\xE9 ?ady"
+    2. \xC4\x8Casov\xC3\xA9 \xC5\x99ady"
   updated_on: 2005-10-26 10:00:32
   created_by_id: "993"
   id: "3261"
@@ -4114,7 +4114,7 @@ exams_621:
   created_on: 2006-01-11 12:39:13
   result: "1"
   updated_by_id: 
-  questions: "Ekologicko-ekonomick\xFD p?\xEDnos vyu\x9Eit\xED komun\xE1ln\xEDho odpadu."
+  questions: "Ekologicko-ekonomick\xC3\xBD p\xC5\x99\xC3\xADnos vyu\xC5\xBEit\xC3\xAD komun\xC3\xA1ln\xC3\xADho odpadu."
   updated_on: 2006-01-27 09:46:17
   created_by_id: "1009"
   id: "5193"
@@ -4138,9 +4138,9 @@ exams_241:
   created_on: 2005-05-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3955"
@@ -4153,7 +4153,7 @@ exams_051:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Pr?zkumov\xE1 anal\xFDza"
+    2. Pr\xC5\xAFzkumov\xC3\xA1 anal\xC3\xBDza"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3262"
@@ -4177,8 +4177,8 @@ exams_622:
   created_on: 2003-12-18 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.DHTML \x96 JavaScript, CSS, DOM\r\n\
-    2.Typy diskov\xFDch pam?t\xED a jejich kapacity.Vstupn\xED a v"
+  questions: "1.DHTML \xE2\x80\x93 JavaScript, CSS, DOM\r\n\
+    2.Typy diskov\xC3\xBDch pam\xC4\x9Bt\xC3\xAD a jejich kapacity.Vstupn\xC3\xAD a v"
   updated_on: 
   created_by_id: 
   id: "5224"
@@ -4215,8 +4215,8 @@ exams_242:
   result: "1"
   updated_by_id: 
   questions: "1. Charakteristika metod OR\r\n\
-    2. Normativn\xED a deskriptivn\xED modely\r\n\
-    3. Modely projektov\xE9ho ?\xEDzen\xED"
+    2. Normativn\xC3\xAD a deskriptivn\xC3\xAD modely\r\n\
+    3. Modely projektov\xC3\xA9ho \xC5\x99\xC3\xADzen\xC3\xAD"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3956"
@@ -4229,7 +4229,7 @@ exams_052:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. ?asov\xE9 ?ady"
+    2. \xC4\x8Casov\xC3\xA9 \xC5\x99ady"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3263"
@@ -4277,9 +4277,9 @@ exams_243:
   created_on: 2005-06-30 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Deskriptivn\xED a normativn\xED modely\r\n\
-    2. Simula?n\xED modely\r\n\
-    3. Vicekriteri\xE1ln\xED anal\xFDza variant"
+  questions: "1. Deskriptivn\xC3\xAD a normativn\xC3\xAD modely\r\n\
+    2. Simula\xC4\x8Dn\xC3\xAD modely\r\n\
+    3. Vicekriteri\xC3\xA1ln\xC3\xAD anal\xC3\xBDza variant"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3957"
@@ -4292,7 +4292,7 @@ exams_053:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Anal\xFDza hlavn\xEDch komponent"
+    2. Anal\xC3\xBDza hlavn\xC3\xADch komponent"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3264"
@@ -4352,9 +4352,9 @@ exams_244:
   created_on: 2005-06-28 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3958"
@@ -4367,7 +4367,7 @@ exams_054:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Shlukov\xE1 anal\xFDza"
+    2. Shlukov\xC3\xA1 anal\xC3\xBDza"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3265"
@@ -4415,9 +4415,9 @@ exams_245:
   created_on: 2005-06-21 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3959"
@@ -4430,7 +4430,7 @@ exams_055:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Exponenci\xE1ln\xED vyrovn\xE1v\xE1n\xED"
+    2. Exponenci\xC3\xA1ln\xC3\xAD vyrovn\xC3\xA1v\xC3\xA1n\xC3\xAD"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3266"
@@ -4490,9 +4490,9 @@ exams_246:
   created_on: 2005-06-21 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3960"
@@ -4505,7 +4505,7 @@ exams_056:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Modely ?asov\xFDch ?ad"
+    2. Modely \xC4\x8Dasov\xC3\xBDch \xC5\x99ad"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3267"
@@ -4517,8 +4517,8 @@ exams_009:
   created_on: 2002-12-12 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. \xDAprava smluv obecn?\r\n\
-    2. Obchodn? pr\xE1vn\xED vztahy."
+  questions: "1. \xC3\x9Aprava smluv obecn\xC4\x9B\r\n\
+    2. Obchodn\xC4\x9B pr\xC3\xA1vn\xC3\xAD vztahy."
   updated_on: 2005-10-24 21:50:45
   created_by_id: "993"
   id: "3118"
@@ -4566,8 +4566,8 @@ exams_247:
   created_on: 2005-06-30 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Vyu\x9Eit\xED ekonometrick\xFDch mode? pro hodnocen\xED hospod\xE1?sk\xFDch politik.\r\n\
-    2. Ekonometrick\xE9 modely finan?n\xEDch trh?"
+  questions: "1. Vyu\xC5\xBEit\xC3\xAD ekonometrick\xC3\xBDch mode\xC5\xAF pro hodnocen\xC3\xAD hospod\xC3\xA1\xC5\x99sk\xC3\xBDch politik.\r\n\
+    2. Ekonometrick\xC3\xA9 modely finan\xC4\x8Dn\xC3\xADch trh\xC5\xAF"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3961"
@@ -4580,7 +4580,7 @@ exams_057:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Rezidu\xE1ln\xED anal\xFDza"
+    2. Rezidu\xC3\xA1ln\xC3\xAD anal\xC3\xBDza"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3268"
@@ -4628,9 +4628,9 @@ exams_248:
   created_on: 2005-06-28 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3962"
@@ -4642,9 +4642,9 @@ exams_058:
   created_on: 2003-06-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odborn\xE9 t\xE9ma"
+    3) Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3269"
@@ -4692,9 +4692,9 @@ exams_249:
   created_on: 2005-06-28 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3963"
@@ -4706,8 +4706,8 @@ exams_059:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Data - informace - znalosti. Informa?n\xED technologie. Hlavn\xED v\xFDvojov\xE9 etapy. V\xFDvoj dialogu ?lov?k - po?\xEDta?.\r\n\
-    2.Jazyk HTML \x96 z\xE1kladn\xED zna?ky a nejd?le\x9Eit?j\x9A\xED atributy. Mo\x9Enosti p?i vytv\xE1?en\xED Web site."
+  questions: "1.Data - informace - znalosti. Informa\xC4\x8Dn\xC3\xAD technologie. Hlavn\xC3\xAD v\xC3\xBDvojov\xC3\xA9 etapy. V\xC3\xBDvoj dialogu \xC4\x8Dlov\xC4\x9Bk - po\xC4\x8D\xC3\xADta\xC4\x8D.\r\n\
+    2.Jazyk HTML \xE2\x80\x93 z\xC3\xA1kladn\xC3\xAD zna\xC4\x8Dky a nejd\xC5\xAFle\xC5\xBEit\xC4\x9Bj\xC5\xA1\xC3\xAD atributy. Mo\xC5\xBEnosti p\xC5\x99i vytv\xC3\xA1\xC5\x99en\xC3\xAD Web site."
   updated_on: 2005-10-24 21:50:42
   created_by_id: "993"
   id: "3322"
@@ -4779,8 +4779,8 @@ exams_110:
   created_on: 2004-04-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "7. Organiza?n\xED syst\xE9m\r\n\
-    34. Marketingov\xE1 komunikace"
+  questions: "7. Organiza\xC4\x8Dn\xC3\xAD syst\xC3\xA9m\r\n\
+    34. Marketingov\xC3\xA1 komunikace"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3469"
@@ -4828,9 +4828,9 @@ exams_111:
   created_on: 2004-05-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD projekt : Strategick\xE9 ?\xEDzen\xED IS\r\n\
-    Model komunika?n\xEDho procesu\r\n\
-    Marketing, marketingov\xFD pr?zkum"
+  questions: "P\xC3\xADsemn\xC3\xBD projekt : Strategick\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD IS\r\n\
+    Model komunika\xC4\x8Dn\xC3\xADho procesu\r\n\
+    Marketing, marketingov\xC3\xBD pr\xC5\xAFzkum"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3470"
@@ -4866,9 +4866,9 @@ exams_112:
   created_on: 2004-05-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD projekt : Marketingov\xE9 ?\xEDzen\xED zvolen\xE9ho podnikatelsk\xE9ho subjektu\r\n\
-    11. Strategick\xE9 ?\xEDzen\xED\r\n\
-    31. V\xFDrobek"
+  questions: "P\xC3\xADsemn\xC3\xBD projekt : Marketingov\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD zvolen\xC3\xA9ho podnikatelsk\xC3\xA9ho subjektu\r\n\
+    11. Strategick\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD\r\n\
+    31. V\xC3\xBDrobek"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3471"
@@ -4904,7 +4904,7 @@ exams_160:
   created_on: 2004-05-31 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Ot\xE1zky ?. 3 a 7"
+  questions: "Ot\xC3\xA1zky \xC4\x8D. 3 a 7"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3672"
@@ -4928,9 +4928,9 @@ exams_113:
   created_on: 2004-05-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD materi\xE1l - Rozvoj reur\xE1ln\xED spole?nosti prost?ednictv\xEDm zalo\x9Een\xED LETS syst\xE9mu\r\n\
-    Posl\xE1n\xED podniku, podnikov\xE9 c\xEDle, z\xE1jmov\xE9 skupiny\r\n\
-    Marketingov\xE1 komunikace, n\xE1stroje"
+  questions: "P\xC3\xADsemn\xC3\xBD materi\xC3\xA1l - Rozvoj reur\xC3\xA1ln\xC3\xAD spole\xC4\x8Dnosti prost\xC5\x99ednictv\xC3\xADm zalo\xC5\xBEen\xC3\xAD LETS syst\xC3\xA9mu\r\n\
+    Posl\xC3\xA1n\xC3\xAD podniku, podnikov\xC3\xA9 c\xC3\xADle, z\xC3\xA1jmov\xC3\xA9 skupiny\r\n\
+    Marketingov\xC3\xA1 komunikace, n\xC3\xA1stroje"
   updated_on: 2005-10-24 21:50:39
   created_by_id: "993"
   id: "3472"
@@ -4966,7 +4966,7 @@ exams_161:
   created_on: 2004-05-31 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Ot\xE1zky ?. 2 a 10"
+  questions: "Ot\xC3\xA1zky \xC4\x8D. 2 a 10"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3673"
@@ -4991,7 +4991,7 @@ exams_114:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Kontingen?n\xED tabulky"
+    2. Kontingen\xC4\x8Dn\xC3\xAD tabulky"
   updated_on: 2005-10-26 10:00:32
   created_by_id: "993"
   id: "3483"
@@ -5027,7 +5027,7 @@ exams_162:
   created_on: 2004-05-31 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Ot\xE1zky ?. 4 a 6"
+  questions: "Ot\xC3\xA1zky \xC4\x8D. 4 a 6"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3674"
@@ -5051,8 +5051,8 @@ exams_115:
   created_on: 2004-04-30 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Agr\xE1rn? politick\xE9 souvislosti multifunk?n\xEDho zem?d?lstv\xED\r\n\
-    2. V\xFDdajov\xE1 str\xE1nka rozpo?tu EU s ohledem na agr\xE1rn\xED sektor"
+  questions: "1. Agr\xC3\xA1rn\xC4\x9B politick\xC3\xA9 souvislosti multifunk\xC4\x8Dn\xC3\xADho zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD\r\n\
+    2. V\xC3\xBDdajov\xC3\xA1 str\xC3\xA1nka rozpo\xC4\x8Dtu EU s ohledem na agr\xC3\xA1rn\xC3\xAD sektor"
   updated_on: 2005-10-24 21:50:38
   created_by_id: "993"
   id: "3534"
@@ -5100,7 +5100,7 @@ exams_163:
   created_on: 2004-05-31 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Ot\xE1zky ?. 3 a 9"
+  questions: "Ot\xC3\xA1zky \xC4\x8D. 3 a 9"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3675"
@@ -5124,9 +5124,9 @@ exams_116:
   created_on: 2004-04-19 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu.\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu.\r\n\
     2. Rozbor textu.\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma."
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma."
   updated_on: 2005-10-24 21:50:38
   created_by_id: "993"
   id: "3535"
@@ -5174,10 +5174,10 @@ exams_164:
   created_on: 2004-11-19 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "ET:   Organizov\xE1n\xED zahrani?n\xEDho obchodu a jeho usm?r?ov\xE1n\xED\r\n\
-    EAS: ?esk\xFD agr\xE1rn\xED sektor a integra?n\xED procesy v sv?tov\xE9m \r\n        kontextu\r\n\
+  questions: "ET:   Organizov\xC3\xA1n\xC3\xAD zahrani\xC4\x8Dn\xC3\xADho obchodu a jeho usm\xC4\x9Br\xC5\x88ov\xC3\xA1n\xC3\xAD\r\n\
+    EAS: \xC4\x8Cesk\xC3\xBD agr\xC3\xA1rn\xC3\xAD sektor a integra\xC4\x8Dn\xC3\xAD procesy v sv\xC4\x9Btov\xC3\xA9m \r\n        kontextu\r\n\
     \r\n\
-    3. zkou\x9Aej\xEDc\xED: doc. \x8Ar\xE9dl"
+    3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. \xC5\xA0r\xC3\xA9dl"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3676"
@@ -5201,9 +5201,9 @@ exams_117:
   created_on: 2004-04-19 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu.\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu.\r\n\
     2. Rozbor textu.\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma."
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma."
   updated_on: 2005-10-24 21:50:38
   created_by_id: "993"
   id: "3536"
@@ -5252,9 +5252,9 @@ exams_165:
   result: "1"
   updated_by_id: 
   questions: "ET:   Teorie firmy\r\n\
-    EAS: Ekonomick\xE1 efektivnost investic\r\n\
+    EAS: Ekonomick\xC3\xA1 efektivnost investic\r\n\
     \r\n\
-    3. zkou\x9Aej\xEDc\xED: doc. \x8Ar\xE9dl"
+    3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. \xC5\xA0r\xC3\xA9dl"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3678"
@@ -5278,9 +5278,9 @@ exams_118:
   created_on: 2004-04-07 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu.\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu.\r\n\
     2. Rozbor textu.\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma."
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma."
   updated_on: 2005-10-24 21:50:38
   created_by_id: "993"
   id: "3537"
@@ -5329,9 +5329,9 @@ exams_166:
   result: "1"
   updated_by_id: 
   questions: "ET:   Ukazatele produkce a jejich vztah ke kategorii glaho\r\n\
-    EAS: Postaven\xED zem?d?lstv\xED v r\xE1mci ekonomiky (obecn? s \r\n       konkretizac\xED na podm\xEDnky ?R)\r\n\
+    EAS: Postaven\xC3\xAD zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD v r\xC3\xA1mci ekonomiky (obecn\xC4\x9B s \r\n       konkretizac\xC3\xAD na podm\xC3\xADnky \xC4\x8CR)\r\n\
     \r\n\
-    3. zkou\x9Aej\xEDc\xED: doc. \x8Ar\xE9dl"
+    3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. \xC5\xA0r\xC3\xA9dl"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3679"
@@ -5355,9 +5355,9 @@ exams_119:
   created_on: 2004-04-07 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu.\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu.\r\n\
     2. Rozbor textu.\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma."
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma."
   updated_on: 2005-10-24 21:50:37
   created_by_id: "993"
   id: "3538"
@@ -5405,8 +5405,8 @@ exams_167:
   created_on: 2004-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Produktivita pr\xE1ce ve vztahu k e-learningu\r\n\
-    2. Ekonomick\xE1 efektivnost investic"
+  questions: "1. Produktivita pr\xC3\xA1ce ve vztahu k e-learningu\r\n\
+    2. Ekonomick\xC3\xA1 efektivnost investic"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3680"
@@ -5454,8 +5454,8 @@ exams_168:
   created_on: 2004-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Produk?n\xED anal\xFDza a nov\xE1 ekonomika\r\n\
-    2. Postaven\xED zem?d?lsk\xE9 v r\xE1mci glob\xE1ln\xEDch trend?"
+  questions: "1. Produk\xC4\x8Dn\xC3\xAD anal\xC3\xBDza a nov\xC3\xA1 ekonomika\r\n\
+    2. Postaven\xC3\xAD zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA9 v r\xC3\xA1mci glob\xC3\xA1ln\xC3\xADch trend\xC5\xAF"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3681"
@@ -5503,8 +5503,8 @@ exams_169:
   created_on: 2004-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Zem?d?lstv\xED p?ed vstupem do EU\r\n\
-    2. Postaven\xED podnik? a informa?n\xED syst\xE9my"
+  questions: "1. Zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD p\xC5\x99ed vstupem do EU\r\n\
+    2. Postaven\xC3\xAD podnik\xC5\xAF a informa\xC4\x8Dn\xC3\xAD syst\xC3\xA9my"
   updated_on: 2005-10-24 21:50:35
   created_by_id: "993"
   id: "3682"
@@ -5565,7 +5565,7 @@ exams_220:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Zpracov\xE1n\xED asocia?n\xEDch tabulek"
+    2. Zpracov\xC3\xA1n\xC3\xAD asocia\xC4\x8Dn\xC3\xADch tabulek"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3884"
@@ -5577,7 +5577,7 @@ exams_030:
   created_on: 2003-02-12 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Jak se dot\xFDk\xE1 nezam?strnanost venkovsk\xE9ho (p?\xEDp. zem?d?lsk\xE9ho obyvatelstva)? Jak\xE9 jsou sou?asn\xE9 tendence sm?ru migrace? Jak\xE9 okruhy probl\xE9m? bude mo\x9Eno ?e\x9Ait v ?R ze struktur\xE1ln\xEDch fond??"
+  questions: "Jak se dot\xC3\xBDk\xC3\xA1 nezam\xC4\x9Bstrnanost venkovsk\xC3\xA9ho (p\xC5\x99\xC3\xADp. zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA9ho obyvatelstva)? Jak\xC3\xA9 jsou sou\xC4\x8Dasn\xC3\xA9 tendence sm\xC4\x9Bru migrace? Jak\xC3\xA9 okruhy probl\xC3\xA9m\xC5\xAF bude mo\xC5\xBEno \xC5\x99e\xC5\xA1it v \xC4\x8CR ze struktur\xC3\xA1ln\xC3\xADch fond\xC5\xAF?"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3189"
@@ -5626,7 +5626,7 @@ exams_221:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Zpracov\xE1n\xED kontingen?n\xEDch tabulek"
+    2. Zpracov\xC3\xA1n\xC3\xAD kontingen\xC4\x8Dn\xC3\xADch tabulek"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3885"
@@ -5638,9 +5638,9 @@ exams_031:
   created_on: 2003-02-06 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Soci\xE1ln\xED sd\xEDlen\xED\r\n\
+  questions: "1. Soci\xC3\xA1ln\xC3\xAD sd\xC3\xADlen\xC3\xAD\r\n\
     2. Multikulturalita\r\n\
-    3. Metodologie interkulturn\xEDch v\xFDzkum?"
+    3. Metodologie interkulturn\xC3\xADch v\xC3\xBDzkum\xC5\xAF"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3190"
@@ -5676,7 +5676,7 @@ exams_080:
   created_on: 2003-12-05 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "tvorba dynamick\xE9ho modelu"
+  questions: "tvorba dynamick\xC3\xA9ho modelu"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3383"
@@ -5688,8 +5688,8 @@ exams_222:
   created_on: 2005-05-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Bezpe?nost IS\r\n\
-    Principy informa?n\xEDho managementu"
+  questions: "Bezpe\xC4\x8Dnost IS\r\n\
+    Principy informa\xC4\x8Dn\xC3\xADho managementu"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3886"
@@ -5701,8 +5701,8 @@ exams_032:
   created_on: 2003-02-26 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "9. Komplexn\xED pojet\xED neverb\xE1ln\xED komunikace\r\n\
-    24. Z\xE1sady efektivn\xED komunikace, komuni?n\xED dovednosti v krizov\xE9m stavu"
+  questions: "9. Komplexn\xC3\xAD pojet\xC3\xAD neverb\xC3\xA1ln\xC3\xAD komunikace\r\n\
+    24. Z\xC3\xA1sady efektivn\xC3\xAD komunikace, komuni\xC4\x8Dn\xC3\xAD dovednosti v krizov\xC3\xA9m stavu"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3191"
@@ -5762,8 +5762,8 @@ exams_081:
   created_on: 2003-11-26 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Ur?ov\xE1n\xED rozsahu \x9Aet?en\xED\r\n\
-    2. Konstrukce kontingen?n\xEDch tabulek"
+  questions: "1. Ur\xC4\x8Dov\xC3\xA1n\xC3\xAD rozsahu \xC5\xA1et\xC5\x99en\xC3\xAD\r\n\
+    2. Konstrukce kontingen\xC4\x8Dn\xC3\xADch tabulek"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3384"
@@ -5775,7 +5775,7 @@ exams_223:
   created_on: 2005-02-15 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Informace jako strategick\xFD faktor endogenn\xEDho rur\xE1ln\xEDho rozvoje"
+  questions: "Informace jako strategick\xC3\xBD faktor endogenn\xC3\xADho rur\xC3\xA1ln\xC3\xADho rozvoje"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3887"
@@ -5859,9 +5859,9 @@ exams_224:
   created_on: 2005-05-02 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3888"
@@ -5873,9 +5873,9 @@ exams_034:
   created_on: 2003-01-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odb. textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odb. textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odb. t\xE9ma"
+    3) Konverzace na odb. t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3193"
@@ -5887,9 +5887,9 @@ exams_605:
   created_on: 2006-01-09 14:54:29
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD materi\xE1l: Elektronick\xE1 komunikace jako sou?\xE1st vnit?n\xED komunikace podniku\r\n\
-    7. Charakteristika prvk? OS z z hlediska p?enosu a zpracov\xE1n\xED informac\xED a z hlediska chov\xE1n\xED\r\n\
-    14. Veden\xED lid\xED, styl ?\xEDzen\xED a veden\xED, proces delegov\xE1n\xED\r\n\
+  questions: "P\xC3\xADsemn\xC3\xBD materi\xC3\xA1l: Elektronick\xC3\xA1 komunikace jako sou\xC4\x8D\xC3\xA1st vnit\xC5\x99n\xC3\xAD komunikace podniku\r\n\
+    7. Charakteristika prvk\xC5\xAF OS z z hlediska p\xC5\x99enosu a zpracov\xC3\xA1n\xC3\xAD informac\xC3\xAD a z hlediska chov\xC3\xA1n\xC3\xAD\r\n\
+    14. Veden\xC3\xAD lid\xC3\xAD, styl \xC5\x99\xC3\xADzen\xC3\xAD a veden\xC3\xAD, proces delegov\xC3\xA1n\xC3\xAD\r\n\
     \r\n"
   updated_on: 2006-01-27 09:46:22
   created_by_id: "1410"
@@ -5938,9 +5938,9 @@ exams_225:
   created_on: 2005-05-02 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3889"
@@ -5952,9 +5952,9 @@ exams_035:
   created_on: 2003-02-12 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odb. textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odb. textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odb. t\xE9ma"
+    3) Konverzace na odb. t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3194"
@@ -5966,8 +5966,8 @@ exams_606:
   created_on: 2006-01-09 14:56:27
   result: "1"
   updated_by_id: 
-  questions: "Nonverb\xE1ln\xED komunikace\r\n\
-    ?e?n\xEDk a okol\xED\r\n"
+  questions: "Nonverb\xC3\xA1ln\xC3\xAD komunikace\r\n\
+    \xC5\x98e\xC4\x8Dn\xC3\xADk a okol\xC3\xAD\r\n"
   updated_on: 2006-01-27 09:46:23
   created_by_id: "1410"
   id: "5175"
@@ -6015,7 +6015,7 @@ exams_083:
   created_on: 2003-12-09 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "strukturovan\xE1 anal\xFDza IS"
+  questions: "strukturovan\xC3\xA1 anal\xC3\xBDza IS"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3386"
@@ -6027,9 +6027,9 @@ exams_226:
   created_on: 2005-05-02 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3890"
@@ -6041,9 +6041,9 @@ exams_036:
   created_on: 2003-01-13 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odb. textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odb. textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odb. t\xE9ma"
+    3) Konverzace na odb. t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3195"
@@ -6055,8 +6055,8 @@ exams_607:
   created_on: 2006-01-09 14:58:05
   result: "1"
   updated_by_id: 
-  questions: "13. Pracovn\xED mobilita uvol?ov\xE1n\xED pracovn\xEDk? \x96 vnitropodnikov\xE1 mobilita, fluktuace, ukon?en\xED pracovn\xEDho pom?ru\r\n\
-    7. Pracovn\xED prost?ed\xED\r\n"
+  questions: "13. Pracovn\xC3\xAD mobilita uvol\xC5\x88ov\xC3\xA1n\xC3\xAD pracovn\xC3\xADk\xC5\xAF \xE2\x80\x93 vnitropodnikov\xC3\xA1 mobilita, fluktuace, ukon\xC4\x8Den\xC3\xAD pracovn\xC3\xADho pom\xC4\x9Bru\r\n\
+    7. Pracovn\xC3\xAD prost\xC5\x99ed\xC3\xAD\r\n"
   updated_on: 2006-01-27 09:46:23
   created_by_id: "1410"
   id: "5176"
@@ -6104,7 +6104,7 @@ exams_084:
   created_on: 2003-12-16 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Ekonomick\xE9 probl\xE9my v\xFDroby a odbytu FARME na ?esk\xE9 a evropsk\xE9m trhu."
+  questions: "Ekonomick\xC3\xA9 probl\xC3\xA9my v\xC3\xBDroby a odbytu FARME na \xC4\x8Desk\xC3\xA9 a evropsk\xC3\xA9m trhu."
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3392"
@@ -6116,7 +6116,7 @@ exams_227:
   created_on: 2005-05-26 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Zem?d?lstv\xED a glob\xE1ln\xED probl\xE9my"
+  questions: "1. Zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD a glob\xC3\xA1ln\xC3\xAD probl\xC3\xA9my"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3891"
@@ -6128,8 +6128,8 @@ exams_037:
   created_on: 2003-05-26 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Projekt: Anal\xFDza informa?n\xEDch proces? ve spole?nosti\r\n\
-    6. Organiza?n\xED syst\xE9my\r\n\
+  questions: "Projekt: Anal\xC3\xBDza informa\xC4\x8Dn\xC3\xADch proces\xC5\xAF ve spole\xC4\x8Dnosti\r\n\
+    6. Organiza\xC4\x8Dn\xC3\xAD syst\xC3\xA9my\r\n\
     13. Motivace"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
@@ -6142,9 +6142,9 @@ exams_608:
   created_on: 2006-01-09 14:59:36
   result: "1"
   updated_by_id: 
-  questions: "P\xEDsemn\xFD projekt: \x84Mironet\x93 \x96 strategick\xE1 anal\xFDza podniku\r\n\
-    17. Interperson\xE1ln\xED komunikace, role v ?\xEDd\xEDc\xED pr\xE1ci, p?ek\xE1\x9Eky a bari\xE9ry\r\n\
-    3. Struktura syst\xE9mu, prvky a vazby, formy spojen\xED, agregace, slo\x9Eitost struktury. \r\n\
+  questions: "P\xC3\xADsemn\xC3\xBD projekt: \xE2\x80\x9EMironet\xE2\x80\x9C \xE2\x80\x93 strategick\xC3\xA1 anal\xC3\xBDza podniku\r\n\
+    17. Interperson\xC3\xA1ln\xC3\xAD komunikace, role v \xC5\x99\xC3\xADd\xC3\xADc\xC3\xAD pr\xC3\xA1ci, p\xC5\x99ek\xC3\xA1\xC5\xBEky a bari\xC3\xA9ry\r\n\
+    3. Struktura syst\xC3\xA9mu, prvky a vazby, formy spojen\xC3\xAD, agregace, slo\xC5\xBEitost struktury. \r\n\
     \r\n\
     \r\n"
   updated_on: 2006-01-27 09:46:23
@@ -6194,8 +6194,8 @@ exams_085:
   created_on: 2003-12-12 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Vztah hospod\xE1?sko-politick\xFDch a agr\xE1rnd? politick\xFDch c\xEDl?\r\n\
-    2. Koncepce a v\xFDvojov\xE9 trendy AP ?R (transforma?n\xED obdob\xED)"
+  questions: "1. Vztah hospod\xC3\xA1\xC5\x99sko-politick\xC3\xBDch a agr\xC3\xA1rnd\xC4\x9B politick\xC3\xBDch c\xC3\xADl\xC5\xAF\r\n\
+    2. Koncepce a v\xC3\xBDvojov\xC3\xA9 trendy AP \xC4\x8CR (transforma\xC4\x8Dn\xC3\xAD obdob\xC3\xAD)"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3393"
@@ -6208,7 +6208,7 @@ exams_228:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Logistick\xE1 regrese"
+    2. Logistick\xC3\xA1 regrese"
   updated_on: 2005-10-24 21:50:31
   created_by_id: "993"
   id: "3892"
@@ -6220,8 +6220,8 @@ exams_038:
   created_on: 2003-05-06 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "24. Spot?ebitelsk\xFD marketing\r\n\
-    11. Strategick\xE9 ?\xEDzen\xED"
+  questions: "24. Spot\xC5\x99ebitelsk\xC3\xBD marketing\r\n\
+    11. Strategick\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3197"
@@ -6233,8 +6233,8 @@ exams_609:
   created_on: 2006-01-09 15:01:09
   result: "1"
   updated_by_id: 
-  questions: "25. Komunikace a mana\x9Eersk\xE9 funkce\r\n\
-    11. Pravidla \xFAsp?\x9An\xE9 ?e?i t?la\r\n"
+  questions: "25. Komunikace a mana\xC5\xBEersk\xC3\xA9 funkce\r\n\
+    11. Pravidla \xC3\xBAsp\xC4\x9B\xC5\xA1n\xC3\xA9 \xC5\x99e\xC4\x8Di t\xC4\x9Bla\r\n"
   updated_on: 2006-01-27 09:46:23
   created_by_id: "1410"
   id: "5178"
@@ -6282,9 +6282,9 @@ exams_086:
   created_on: 2003-12-16 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Obecn\xFD postup p?i syst\xE9mov\xE9m modelov\xE1n\xED\r\n\
-    2. M\xEDra simplifikace p?i procesu tvorby model?\r\n\
-    3. Obecn\xFD princip metod pro ?e\x9Aen\xED okru\x9En\xEDho dopravn\xEDho probl\xE9mu"
+  questions: "1. Obecn\xC3\xBD postup p\xC5\x99i syst\xC3\xA9mov\xC3\xA9m modelov\xC3\xA1n\xC3\xAD\r\n\
+    2. M\xC3\xADra simplifikace p\xC5\x99i procesu tvorby model\xC5\xAF\r\n\
+    3. Obecn\xC3\xBD princip metod pro \xC5\x99e\xC5\xA1en\xC3\xAD okru\xC5\xBEn\xC3\xADho dopravn\xC3\xADho probl\xC3\xA9mu"
   updated_on: 2005-10-24 21:50:40
   created_by_id: "993"
   id: "3394"
@@ -6310,9 +6310,9 @@ exams_039:
   created_on: 2003-05-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odborn\xE9 t\xE9ma"
+    3) Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:43
   created_by_id: "993"
   id: "3250"
@@ -6456,8 +6456,8 @@ exams_140:
   created_on: 2004-06-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Pojet\xED syst\xE9mov\xE9 v?dy a syst\xE9mov\xE9 metodologie\r\n\
-    2. Stav entropie a komplexnosti z hlediska syst\xE9mov\xE9ho p?\xEDstupu k ?e\x9Aen\xED projektu"
+  questions: "1. Pojet\xC3\xAD syst\xC3\xA9mov\xC3\xA9 v\xC4\x9Bdy a syst\xC3\xA9mov\xC3\xA9 metodologie\r\n\
+    2. Stav entropie a komplexnosti z hlediska syst\xC3\xA9mov\xC3\xA9ho p\xC5\x99\xC3\xADstupu k \xC5\x99e\xC5\xA1en\xC3\xAD projektu"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3612"
@@ -6495,7 +6495,7 @@ exams_141:
   updated_by_id: 
   questions: "1.Homomorfismus, izomorfismus.\r\n\
     2. Invezre.\r\n\
-    3. Distribu?n\xED \xFAlohy."
+    3. Distribu\xC4\x8Dn\xC3\xAD \xC3\xBAlohy."
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3613"
@@ -6519,9 +6519,9 @@ exams_190:
   created_on: 2004-12-16 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:34
   created_by_id: "993"
   id: "3754"
@@ -6545,7 +6545,7 @@ exams_142:
   created_on: 2004-06-28 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Internetov\xE9 tr\x9Ei\x9At?"
+  questions: "Internetov\xC3\xA9 tr\xC5\xBEi\xC5\xA1t\xC4\x9B"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3614"
@@ -6693,7 +6693,7 @@ exams_144:
   created_on: 2004-05-31 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Data - informace - znalosti. Informa?n\xED technologie. Hlavn\xED v\xFDvojov\xE9 etapy. V\xFDvoj dialogu ?lov?k - po?\xEDta?."
+  questions: "1.Data - informace - znalosti. Informa\xC4\x8Dn\xC3\xAD technologie. Hlavn\xC3\xAD v\xC3\xBDvojov\xC3\xA9 etapy. V\xC3\xBDvoj dialogu \xC4\x8Dlov\xC4\x9Bk - po\xC4\x8D\xC3\xADta\xC4\x8D."
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3616"
@@ -6753,8 +6753,8 @@ exams_145:
   created_on: 2004-06-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Popt\xE1vkov\xE9 funkce a elasticita\r\n\
-    2. Tvorba a odvozen\xED izon\xE1kladov\xE9 funkce"
+  questions: "1. Popt\xC3\xA1vkov\xC3\xA9 funkce a elasticita\r\n\
+    2. Tvorba a odvozen\xC3\xAD izon\xC3\xA1kladov\xC3\xA9 funkce"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3617"
@@ -6803,7 +6803,7 @@ exams_193:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Kategori\xE1ln\xED znaky"
+    2. Kategori\xC3\xA1ln\xC3\xAD znaky"
   updated_on: 2005-10-26 10:00:32
   created_by_id: "993"
   id: "3807"
@@ -6827,8 +6827,8 @@ exams_146:
   created_on: 2004-06-24 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Statistika rodinn\xFDch \xFA?t?. Konstrukce ekonometrick\xE9ho   \r\n    modelu.\r\n\
-    2. Tvorba a odvozenn\xED izokvantov\xE9 funkce"
+  questions: "1. Statistika rodinn\xC3\xBDch \xC3\xBA\xC4\x8Dt\xC5\xAF. Konstrukce ekonometrick\xC3\xA9ho   \r\n    modelu.\r\n\
+    2. Tvorba a odvozenn\xC3\xAD izokvantov\xC3\xA9 funkce"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3618"
@@ -6900,7 +6900,7 @@ exams_147:
   created_on: 2004-06-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. V\xEDcekriteri\xE1ln\xED p?\xEDstupy v projektov\xE9m ?\xEDzen\xED\r\n\
+  questions: "1. V\xC3\xADcekriteri\xC3\xA1ln\xC3\xAD p\xC5\x99\xC3\xADstupy v projektov\xC3\xA9m \xC5\x99\xC3\xADzen\xC3\xAD\r\n\
     2. Metoda CCP\r\n\
     3. Princip metody Drumm Buffer Rope"
   updated_on: 2005-10-24 21:50:36
@@ -6951,7 +6951,7 @@ exams_195:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. V\xEDcerozm?rn\xE9 statistick\xE9 metody"
+    2. V\xC3\xADcerozm\xC4\x9Brn\xC3\xA9 statistick\xC3\xA9 metody"
   updated_on: 2005-10-24 21:50:33
   created_by_id: "993"
   id: "3809"
@@ -6975,8 +6975,8 @@ exams_148:
   created_on: 2004-06-23 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Vyu\x9Eit\xED ekonometrick\xE9ho modelu k prognostick\xFDm \xFA?el?m\r\n\
-    2. Konstrukce ekonometrick\xFDch model?"
+  questions: "1. Vyu\xC5\xBEit\xC3\xAD ekonometrick\xC3\xA9ho modelu k prognostick\xC3\xBDm \xC3\xBA\xC4\x8Del\xC5\xAFm\r\n\
+    2. Konstrukce ekonometrick\xC3\xBDch model\xC5\xAF"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3620"
@@ -7050,7 +7050,7 @@ exams_149:
   created_on: 2004-06-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Akt\xE9?i v soci\xE1ln\xEDch s\xEDt\xEDch"
+  questions: "Akt\xC3\xA9\xC5\x99i v soci\xC3\xA1ln\xC3\xADch s\xC3\xADt\xC3\xADch"
   updated_on: 2005-10-24 21:50:36
   created_by_id: "993"
   id: "3621"
@@ -7111,7 +7111,7 @@ exams_200:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Modely ?asov\xFDch ?ad"
+    2. Modely \xC4\x8Dasov\xC3\xBDch \xC5\x99ad"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3814"
@@ -7148,7 +7148,7 @@ exams_198:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Regresn\xED anal\xFDza"
+    2. Regresn\xC3\xAD anal\xC3\xBDza"
   updated_on: 2005-10-24 21:50:33
   created_by_id: "993"
   id: "3812"
@@ -7173,7 +7173,7 @@ exams_201:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Regresn\xED anal\xFDza"
+    2. Regresn\xC3\xAD anal\xC3\xBDza"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3815"
@@ -7210,7 +7210,7 @@ exams_199:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Pr?zkumov\xE1 anal\xFDza dat"
+    2. Pr\xC5\xAFzkumov\xC3\xA1 anal\xC3\xBDza dat"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3813"
@@ -7223,7 +7223,7 @@ exams_202:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Regresn\xED anal\xFDza"
+    2. Regresn\xC3\xAD anal\xC3\xBDza"
   updated_on: 2005-10-24 21:50:33
   created_by_id: "993"
   id: "3816"
@@ -7235,8 +7235,8 @@ exams_012:
   created_on: 2003-01-22 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Po?\xEDta?ov\xE1 grafika. Multimedia. Zp?soby po?\xEDzen\xED a zpracov\xE1n\xED graf?, obraz?, zvuku a videa. \r\n\
-    2.DHTML \x96 JavaScript, CSS, DOM"
+  questions: "1.Po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA1 grafika. Multimedia. Zp\xC5\xAFsoby po\xC5\x99\xC3\xADzen\xC3\xAD a zpracov\xC3\xA1n\xC3\xAD graf\xC5\xAF, obraz\xC5\xAF, zvuku a videa. \r\n\
+    2.DHTML \xE2\x80\x93 JavaScript, CSS, DOM"
   updated_on: 2005-10-24 21:50:45
   created_by_id: "993"
   id: "3121"
@@ -7248,8 +7248,8 @@ exams_060:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Z\xE1kladn\xED struktury algoritmu. Jak se zobrazuj\xED informace v po?\xEDta?i? Bit, byte, zobrazen\xED znak? a ?\xEDsel.\r\n\
-    2.Dynamick\xFD web na stran? serveru."
+  questions: "1.Z\xC3\xA1kladn\xC3\xAD struktury algoritmu. Jak se zobrazuj\xC3\xAD informace v po\xC4\x8D\xC3\xADta\xC4\x8Di? Bit, byte, zobrazen\xC3\xAD znak\xC5\xAF a \xC4\x8D\xC3\xADsel.\r\n\
+    2.Dynamick\xC3\xBD web na stran\xC4\x9B serveru."
   updated_on: 2005-10-24 21:50:42
   created_by_id: "993"
   id: "3323"
@@ -7274,7 +7274,7 @@ exams_203:
   result: "1"
   updated_by_id: 
   questions: "Data mining\r\n\
-    Informa?n\xED management a marketingov\xFD pr?zkum"
+    Informa\xC4\x8Dn\xC3\xAD management a marketingov\xC3\xBD pr\xC5\xAFzkum"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3817"
@@ -7286,8 +7286,8 @@ exams_013:
   created_on: 2002-12-09 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Environment\xE1ln\xED da?ov\xE1 reforma\r\n\
-    2. Da?ov\xE1 kv\xF3ta u environment\xE1ln\xEDch dan\xED"
+  questions: "1. Environment\xC3\xA1ln\xC3\xAD da\xC5\x88ov\xC3\xA1 reforma\r\n\
+    2. Da\xC5\x88ov\xC3\xA1 kv\xC3\xB3ta u environment\xC3\xA1ln\xC3\xADch dan\xC3\xAD"
   updated_on: 2005-10-24 21:50:45
   created_by_id: "993"
   id: "3122"
@@ -7299,9 +7299,9 @@ exams_250:
   created_on: 2005-06-23 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3964"
@@ -7326,7 +7326,7 @@ exams_204:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Regresn\xED a korela?n\xED anal\xFDza"
+    2. Regresn\xC3\xAD a korela\xC4\x8Dn\xC3\xAD anal\xC3\xBDza"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3818"
@@ -7338,8 +7338,8 @@ exams_014:
   created_on: 2002-12-16 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Bankovn\xED syst\xE9m, banky a jejich m\xEDsto v tr\x9En\xED ekonomice\r\n\
-    2. Pen?\x9En\xED trh v ?esk\xE9 republice"
+  questions: "1. Bankovn\xC3\xAD syst\xC3\xA9m, banky a jejich m\xC3\xADsto v tr\xC5\xBEn\xC3\xAD ekonomice\r\n\
+    2. Pen\xC4\x9B\xC5\xBEn\xC3\xAD trh v \xC4\x8Cesk\xC3\xA9 republice"
   updated_on: 2005-10-24 21:50:45
   created_by_id: "993"
   id: "3123"
@@ -7351,9 +7351,9 @@ exams_251:
   created_on: 2005-06-21 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3965"
@@ -7365,8 +7365,8 @@ exams_061:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Po?\xEDta?ov\xE1 grafika. Multimedia. Zp?soby po?\xEDzen\xED a zpracov\xE1n\xED graf?, obraz?, zvuku a videa. \r\n\
-    2.Po?\xEDta?ov\xE1 grafika. Multimedia. Zp?soby po?\xEDzen\xED a zpracov\xE1n\xED graf?, obraz?, zvuku a videa."
+  questions: "1.Po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA1 grafika. Multimedia. Zp\xC5\xAFsoby po\xC5\x99\xC3\xADzen\xC3\xAD a zpracov\xC3\xA1n\xC3\xAD graf\xC5\xAF, obraz\xC5\xAF, zvuku a videa. \r\n\
+    2.Po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA1 grafika. Multimedia. Zp\xC5\xAFsoby po\xC5\x99\xC3\xADzen\xC3\xAD a zpracov\xC3\xA1n\xC3\xAD graf\xC5\xAF, obraz\xC5\xAF, zvuku a videa."
   updated_on: 2005-10-24 21:50:42
   created_by_id: "993"
   id: "3324"
@@ -7391,7 +7391,7 @@ exams_205:
   result: "1"
   updated_by_id: 
   questions: "1. Obhajoba projektu\r\n\
-    2. Testy hypot\xE9z pro kontingen?n\xED tabulky"
+    2. Testy hypot\xC3\xA9z pro kontingen\xC4\x8Dn\xC3\xAD tabulky"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3819"
@@ -7403,9 +7403,9 @@ exams_015:
   created_on: 2003-01-22 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. M??ic\xED stupnice a p?\xEDpustn\xE9 transformace.\r\n\
-    2. Jakost softwaru a jeho projek?n\xED slo\x9Eitost.\r\n\
-    3. Odhady pracnosti softwaru v etap? specifikace."
+  questions: "1. M\xC4\x9B\xC5\x99ic\xC3\xAD stupnice a p\xC5\x99\xC3\xADpustn\xC3\xA9 transformace.\r\n\
+    2. Jakost softwaru a jeho projek\xC4\x8Dn\xC3\xAD slo\xC5\xBEitost.\r\n\
+    3. Odhady pracnosti softwaru v etap\xC4\x9B specifikace."
   updated_on: 2005-10-24 21:50:45
   created_by_id: "993"
   id: "3124"
@@ -7417,9 +7417,9 @@ exams_252:
   created_on: 2005-06-21 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. ?etba a p?eklad odborn\xE9ho textu\r\n\
+  questions: "1. \xC4\x8Cetba a p\xC5\x99eklad odborn\xC3\xA9ho textu\r\n\
     2. Rozbor textu\r\n\
-    3. Konverzace na odborn\xE9 t\xE9ma"
+    3. Konverzace na odborn\xC3\xA9 t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:30
   created_by_id: "993"
   id: "3966"
@@ -7431,7 +7431,7 @@ exams_062:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Po?\xEDta?ov\xE1 grafika. Multimedia. Zp?soby po?\xEDzen\xED a zpracov\xE1n\xED graf?, obraz?, zvuku a videa."
+  questions: "1.Po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA1 grafika. Multimedia. Zp\xC5\xAFsoby po\xC5\x99\xC3\xADzen\xC3\xAD a zpracov\xC3\xA1n\xC3\xAD graf\xC5\xAF, obraz\xC5\xAF, zvuku a videa."
   updated_on: 2005-10-24 21:50:42
   created_by_id: "993"
   id: "3325"
@@ -7467,10 +7467,10 @@ exams_206:
   created_on: 2005-03-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "ET:   Volba spot?ebitele\r\n\
-    EAS: Podnikatelsk\xE9 z\xE1m?ry v zem?d?lstv\xED a efektivnost \r\n       investic\r\n\
+  questions: "ET:   Volba spot\xC5\x99ebitele\r\n\
+    EAS: Podnikatelsk\xC3\xA9 z\xC3\xA1m\xC4\x9Bry v zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD a efektivnost \r\n       investic\r\n\
     \r\n\
-    3. zkou\x9Aej\xEDc\xED: doc. \x8Ar\xE9dl"
+    3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. \xC5\xA0r\xC3\xA9dl"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3820"
@@ -7482,9 +7482,9 @@ exams_016:
   created_on: 2003-01-22 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Charakteristiky jakosti a metriky. Srovn\xE1n\xED jakosti IS a jakosti Softwaru\r\n\
-    2. \xDA?innost a v\xFDpo?etn\xED spojitost.\r\n\
-    3. Dopady teorie jakosti na ?\xEDzen\xED projek?n\xEDho t\xFDmu"
+  questions: "1. Charakteristiky jakosti a metriky. Srovn\xC3\xA1n\xC3\xAD jakosti IS a jakosti Softwaru\r\n\
+    2. \xC3\x9A\xC4\x8Dinnost a v\xC3\xBDpo\xC4\x8Detn\xC3\xAD spojitost.\r\n\
+    3. Dopady teorie jakosti na \xC5\x99\xC3\xADzen\xC3\xAD projek\xC4\x8Dn\xC3\xADho t\xC3\xBDmu"
   updated_on: 2005-10-24 21:50:45
   created_by_id: "993"
   id: "3125"
@@ -7508,8 +7508,8 @@ exams_063:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Textov\xE9 editory a jejich pokro?il\xE9 funkce, nap?. styly, osnova, obsah. P\xEDsmo na po?\xEDta?\xEDch.\r\n\
-    2.Intranet, Extranet. Bezpe?nost IS. Mo\x9Enosti ochrany dat."
+  questions: "1.Textov\xC3\xA9 editory a jejich pokro\xC4\x8Dil\xC3\xA9 funkce, nap\xC5\x99. styly, osnova, obsah. P\xC3\xADsmo na po\xC4\x8D\xC3\xADta\xC4\x8D\xC3\xADch.\r\n\
+    2.Intranet, Extranet. Bezpe\xC4\x8Dnost IS. Mo\xC5\xBEnosti ochrany dat."
   updated_on: 2005-10-24 21:50:42
   created_by_id: "993"
   id: "3326"
@@ -7545,8 +7545,8 @@ exams_207:
   created_on: 2005-04-08 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "Trh pr\xE1ce\r\n\
-    Produk?n\xED faktor p?da"
+  questions: "Trh pr\xC3\xA1ce\r\n\
+    Produk\xC4\x8Dn\xC3\xAD faktor p\xC5\xAFda"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3821"
@@ -7558,9 +7558,9 @@ exams_017:
   created_on: 2003-01-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Z\xE1sobn\xEDkov\xFD automat jako model po?\xEDta?e.\r\n\
-    2. Paradigma logick\xE9ho programov\xE1n\xED.\r\n\
-    3. Dokazov\xE1n\xED spr\xE1vnosti a zkou\x9Aen\xED program?."
+  questions: "1. Z\xC3\xA1sobn\xC3\xADkov\xC3\xBD automat jako model po\xC4\x8D\xC3\xADta\xC4\x8De.\r\n\
+    2. Paradigma logick\xC3\xA9ho programov\xC3\xA1n\xC3\xAD.\r\n\
+    3. Dokazov\xC3\xA1n\xC3\xAD spr\xC3\xA1vnosti a zkou\xC5\xA1en\xC3\xAD program\xC5\xAF."
   updated_on: 2005-10-24 21:50:45
   created_by_id: "993"
   id: "3126"
@@ -7584,8 +7584,8 @@ exams_064:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Typy diskov\xFDch pam?t\xED a jejich kapacity.Vstupn\xED a v\xFDstupn\xED za?\xEDzen\xED pro osobn\xED po?\xEDta?e. V\xFDkonnost, kvalita, cena.\r\n\
-    2.DHTML \x96 JavaScript, CSS, DOM"
+  questions: "1.Typy diskov\xC3\xBDch pam\xC4\x9Bt\xC3\xAD a jejich kapacity.Vstupn\xC3\xAD a v\xC3\xBDstupn\xC3\xAD za\xC5\x99\xC3\xADzen\xC3\xAD pro osobn\xC3\xAD po\xC4\x8D\xC3\xADta\xC4\x8De. V\xC3\xBDkonnost, kvalita, cena.\r\n\
+    2.DHTML \xE2\x80\x93 JavaScript, CSS, DOM"
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3327"
@@ -7621,10 +7621,10 @@ exams_208:
   created_on: 2005-03-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "ET:   Trh pr\xE1ce\r\n\
-    EAS: Produk?n\xED faktor p?da\r\n\
+  questions: "ET:   Trh pr\xC3\xA1ce\r\n\
+    EAS: Produk\xC4\x8Dn\xC3\xAD faktor p\xC5\xAFda\r\n\
     \r\n\
-    3. zkou\x9Aej\xEDc\xED: doc. \x8Ar\xE9dl"
+    3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. \xC5\xA0r\xC3\xA9dl"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3822"
@@ -7636,9 +7636,9 @@ exams_018:
   created_on: 2003-01-29 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1. Form\xE1ln\xED gramatity a jejich hierarchie.\r\n\
-    2. ?asov\xE9 a prostorov\xE9 slo\x9Eitosti algoritm?.\r\n\
-    3. Funkcion\xE1ln\xED paradigmata."
+  questions: "1. Form\xC3\xA1ln\xC3\xAD gramatity a jejich hierarchie.\r\n\
+    2. \xC4\x8Casov\xC3\xA9 a prostorov\xC3\xA9 slo\xC5\xBEitosti algoritm\xC5\xAF.\r\n\
+    3. Funkcion\xC3\xA1ln\xC3\xAD paradigmata."
   updated_on: 2005-10-24 21:50:45
   created_by_id: "993"
   id: "3127"
@@ -7662,8 +7662,8 @@ exams_065:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Po?\xEDta?ov\xE9 s\xEDt? a jejich rozd?len\xED. P?enosov\xE9 rychlosti v datov\xFDch s\xEDt\xEDch.  Infrastruktura Internetu. Mo\x9Enosti p?ipojen\xED. Vrstvov\xE9 modely s\xEDt\xED\r\n\
-    2.Slu\x9Eby \x96 sf\xE9ry Internetu. Princip www."
+  questions: "1.Po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA9 s\xC3\xADt\xC4\x9B a jejich rozd\xC4\x9Blen\xC3\xAD. P\xC5\x99enosov\xC3\xA9 rychlosti v datov\xC3\xBDch s\xC3\xADt\xC3\xADch.  Infrastruktura Internetu. Mo\xC5\xBEnosti p\xC5\x99ipojen\xC3\xAD. Vrstvov\xC3\xA9 modely s\xC3\xADt\xC3\xAD\r\n\
+    2.Slu\xC5\xBEby \xE2\x80\x93 sf\xC3\xA9ry Internetu. Princip www."
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3328"
@@ -7699,10 +7699,10 @@ exams_209:
   created_on: 2005-03-11 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "ET:   Oligopoln\xED postaven\xED firem na zem?d?lsk\xE9m trhu\r\n\
-    EAS: Adaptace ?esk\xE9ho zem?d?lstv\xED na SZP\r\n\
+  questions: "ET:   Oligopoln\xC3\xAD postaven\xC3\xAD firem na zem\xC4\x9Bd\xC4\x9Blsk\xC3\xA9m trhu\r\n\
+    EAS: Adaptace \xC4\x8Desk\xC3\xA9ho zem\xC4\x9Bd\xC4\x9Blstv\xC3\xAD na SZP\r\n\
     \r\n\
-    3. zkou\x9Aej\xEDc\xED: doc. \x8Ar\xE9dl"
+    3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. \xC5\xA0r\xC3\xA9dl"
   updated_on: 2005-10-24 21:50:32
   created_by_id: "993"
   id: "3823"
@@ -7714,9 +7714,9 @@ exams_019:
   created_on: 2003-01-23 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1) ?etba a p?eklad odb. textu\r\n\
+  questions: "1) \xC4\x8Cetba a p\xC5\x99eklad odb. textu\r\n\
     2) Rozbor textu\r\n\
-    3) Konverzace na odb. t\xE9ma"
+    3) Konverzace na odb. t\xC3\xA9ma"
   updated_on: 2005-10-24 21:50:44
   created_by_id: "993"
   id: "3178"
@@ -7740,8 +7740,8 @@ exams_066:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Typy diskov\xFDch pam?t\xED a jejich kapacity.Vstupn\xED a v\xFDstupn\xED za?\xEDzen\xED pro osobn\xED po?\xEDta?e. V\xFDkonnost, kvalita, cena.\r\n\
-    2.DHTML \x96 JavaScript, CSS, DOM"
+  questions: "1.Typy diskov\xC3\xBDch pam\xC4\x9Bt\xC3\xAD a jejich kapacity.Vstupn\xC3\xAD a v\xC3\xBDstupn\xC3\xAD za\xC5\x99\xC3\xADzen\xC3\xAD pro osobn\xC3\xAD po\xC4\x8D\xC3\xADta\xC4\x8De. V\xC3\xBDkonnost, kvalita, cena.\r\n\
+    2.DHTML \xE2\x80\x93 JavaScript, CSS, DOM"
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3329"
@@ -7789,7 +7789,7 @@ exams_067:
   created_on: 2003-12-10 00:00:00
   result: "1"
   updated_by_id: 
-  questions: "1.Po?\xEDta?ov\xE1 grafika. Multimedia. Zp?soby po?\xEDzen\xED a zpracov\xE1n\xED graf?, obraz?, zvuku a videa."
+  questions: "1.Po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA1 grafika. Multimedia. Zp\xC5\xAFsoby po\xC5\x99\xC3\xADzen\xC3\xAD a zpracov\xC3\xA1n\xC3\xAD graf\xC5\xAF, obraz\xC5\xAF, zvuku a videa."
   updated_on: 2005-10-24 21:50:41
   created_by_id: "993"
   id: "3330"

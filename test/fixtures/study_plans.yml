@@ -51,10 +51,10 @@ study_plans_031:
   created_by_id: "740"
   id: "100325"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
-    \"1\": Obecn\xE1 fytopatologie\n\
-    \"2\": Choroby poln\xEDch plodin\n\
-    \"3\": Metody determinace rostlinn\xFDch patogen?\n\
-    \"4\": \"\x8Alecht?n\xED rostlin na rezistenci v??i patogen?m\""
+    \"1\": Obecn\xC3\xA1 fytopatologie\n\
+    \"2\": Choroby poln\xC3\xADch plodin\n\
+    \"3\": Metody determinace rostlinn\xC3\xBDch patogen\xC5\xAF\n\
+    \"4\": \"\xC5\xA0lecht\xC4\x9Bn\xC3\xAD rostlin na rezistenci v\xC5\xAF\xC4\x8Di patogen\xC5\xAFm\""
   actual: 
   index_id: "1165"
   canceled_on: 2005-11-16 09:18:07
@@ -97,10 +97,10 @@ study_plans_011:
   created_by_id: "718"
   id: "100185"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
-    \"1\": Biochemie z\xE1kladn\xEDch \x9Eivin\n\
-    \"2\": Mo\x9Enosti ovliv?ov\xE1n\xED krmn\xE9 jakosti obilnin\n\
-    \"3\": Hodnocen\xED nutri?n\xED hodnoty krmiv\n\
-    \"4\": Obiloviny ve v\xFD\x9Eiv? zv\xED?at"
+    \"1\": Biochemie z\xC3\xA1kladn\xC3\xADch \xC5\xBEivin\n\
+    \"2\": Mo\xC5\xBEnosti ovliv\xC5\x88ov\xC3\xA1n\xC3\xAD krmn\xC3\xA9 jakosti obilnin\n\
+    \"3\": Hodnocen\xC3\xAD nutri\xC4\x8Dn\xC3\xAD hodnoty krmiv\n\
+    \"4\": Obiloviny ve v\xC3\xBD\xC5\xBEiv\xC4\x9B zv\xC3\xAD\xC5\x99at"
   actual: 
   index_id: "1144"
   canceled_on: 
@@ -157,10 +157,10 @@ study_plans_012:
   created_by_id: "702"
   id: "100186"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
-    \"1\": Vodn\xED provoz rostliny\n\
-    \"2\": R?st rostlin a jeho ovlivn?n\xED fytohormony\n\
-    \"3\": Zm?ny vodn\xEDho potenci\xE1lu v rostlin? p?i vodn\xEDm stresu\n\
-    \"4\": Metody m??en\xED vodn\xEDho potenci\xE1lu"
+    \"1\": Vodn\xC3\xAD provoz rostliny\n\
+    \"2\": R\xC5\xAFst rostlin a jeho ovlivn\xC4\x9Bn\xC3\xAD fytohormony\n\
+    \"3\": Zm\xC4\x9Bny vodn\xC3\xADho potenci\xC3\xA1lu v rostlin\xC4\x9B p\xC5\x99i vodn\xC3\xADm stresu\n\
+    \"4\": Metody m\xC4\x9B\xC5\x99en\xC3\xAD vodn\xC3\xADho potenci\xC3\xA1lu"
   actual: 
   index_id: "1128"
   canceled_on: 2005-10-19 17:26:21
@@ -436,10 +436,10 @@ study_plans_016:
   created_by_id: "734"
   id: "100190"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
-    \"1\": P?\xEDjem prvk? rostlinami a jejich transport\n\
-    \"2\": \"Zdroje kontaminace, jejich kvantifikace a perzistence polutant? v prost?ed\xED\"\n\
-    \"3\": Metody fytoremediace p?d\n\
-    \"4\": Faktory ovliv?uj\xEDc\xED p?\xEDstupnost rizikov\xFDch prvk? v p?d?"
+    \"1\": P\xC5\x99\xC3\xADjem prvk\xC5\xAF rostlinami a jejich transport\n\
+    \"2\": \"Zdroje kontaminace, jejich kvantifikace a perzistence polutant\xC5\xAF v prost\xC5\x99ed\xC3\xAD\"\n\
+    \"3\": Metody fytoremediace p\xC5\xAFd\n\
+    \"4\": Faktory ovliv\xC5\x88uj\xC3\xADc\xC3\xAD p\xC5\x99\xC3\xADstupnost rizikov\xC3\xBDch prvk\xC5\xAF v p\xC5\xAFd\xC4\x9B"
   actual: 
   index_id: "1159"
   canceled_on: 
@@ -670,9 +670,9 @@ study_plans_062:
   created_by_id: "729"
   id: "100575"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
-    \"1\": V\xFDskyt cizorod\xFDch l\xE1tek v rostlin\xFDch produktech\n\
-    \"2\": V\xFDskyt cizorod\xFDch l\xE1tek v \x9Eivo?i\x9An\xFDch produktech\n\
-    \"3\": Analytick\xE9 metody stanoven\xED cizorod\xFD"
+    \"1\": V\xC3\xBDskyt cizorod\xC3\xBDch l\xC3\xA1tek v rostlin\xC3\xBDch produktech\n\
+    \"2\": V\xC3\xBDskyt cizorod\xC3\xBDch l\xC3\xA1tek v \xC5\xBEivo\xC4\x8Di\xC5\xA1n\xC3\xBDch produktech\n\
+    \"3\": Analytick\xC3\xA9 metody stanoven\xC3\xAD cizorod\xC3\xBD"
   actual: 
   index_id: 
   canceled_on: 
@@ -805,10 +805,10 @@ study_plans_064:
   created_by_id: "717"
   id: "100623"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
-    \"1\": Tvorba v\xFDnosu m\xE1ku\n\
-    \"2\": Choroby olejnin p?enosn\xE9 osivem\n\
-    \"3\": Faktory ovliv?uj\xEDc\xED semen\xE1?skou a biologickou hodnotu osiva\n\
-    \"4\": Metody \xFApravy osiva olejnin"
+    \"1\": Tvorba v\xC3\xBDnosu m\xC3\xA1ku\n\
+    \"2\": Choroby olejnin p\xC5\x99enosn\xC3\xA9 osivem\n\
+    \"3\": Faktory ovliv\xC5\x88uj\xC3\xADc\xC3\xAD semen\xC3\xA1\xC5\x99skou a biologickou hodnotu osiva\n\
+    \"4\": Metody \xC3\xBApravy osiva olejnin"
   actual: 
   index_id: "1143"
   canceled_on: 
@@ -865,10 +865,10 @@ study_plans_065:
   created_by_id: "724"
   id: "100624"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
-    \"1\": Fyziologick\xE9 aspekty produkce zelenin\n\
-    \"2\": Speci\xE1ln\xED zelin\xE1?stv\xED\n\
-    \"3\": V\xFD\x9Eiva a hnojen\xED plodov\xFDch zelenin\n\
-    \"4\": Nov\xE9 trendy v zelin\xE1?sk\xE9 produkci"
+    \"1\": Fyziologick\xC3\xA9 aspekty produkce zelenin\n\
+    \"2\": Speci\xC3\xA1ln\xC3\xAD zelin\xC3\xA1\xC5\x99stv\xC3\xAD\n\
+    \"3\": V\xC3\xBD\xC5\xBEiva a hnojen\xC3\xAD plodov\xC3\xBDch zelenin\n\
+    \"4\": Nov\xC3\xA9 trendy v zelin\xC3\xA1\xC5\x99sk\xC3\xA9 produkci"
   actual: 
   index_id: "1150"
   canceled_on: 
@@ -925,10 +925,10 @@ study_plans_066:
   created_by_id: "715"
   id: "100625"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
-    \"1\": V\xFD\x9Eiva a krmen\xED prasat\n\
-    \"2\": R?st a v\xFDvoj v postnat\xE1ln\xEDm obdob\xED\n\
-    \"3\": \"Genetika - jej\xED vliv na r?st\"\n\
-    \"4\": Vliv r?stu na utv\xE1?en\xED jate?n\xFDch t?l prasat"
+    \"1\": V\xC3\xBD\xC5\xBEiva a krmen\xC3\xAD prasat\n\
+    \"2\": R\xC5\xAFst a v\xC3\xBDvoj v postnat\xC3\xA1ln\xC3\xADm obdob\xC3\xAD\n\
+    \"3\": \"Genetika - jej\xC3\xAD vliv na r\xC5\xAFst\"\n\
+    \"4\": Vliv r\xC5\xAFstu na utv\xC3\xA1\xC5\x99en\xC3\xAD jate\xC4\x8Dn\xC3\xBDch t\xC4\x9Bl prasat"
   actual: 
   index_id: "1141"
   canceled_on: 
@@ -1042,9 +1042,9 @@ study_plans_070:
   id: "100662"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
     \"1\": Fyziologie stresu\n\
-    \"2\": \"Tvorba v\xFDnosu cukrovky \"\n\
-    \"3\": \"Technologick\xE1 jakost cukrovky \"\n\
-    \"4\": \"Stresy jako faktory redukuj\xEDc\xED produk?n\xED schopnost cukrovky \""
+    \"2\": \"Tvorba v\xC3\xBDnosu cukrovky \"\n\
+    \"3\": \"Technologick\xC3\xA1 jakost cukrovky \"\n\
+    \"4\": \"Stresy jako faktory redukuj\xC3\xADc\xC3\xAD produk\xC4\x8Dn\xC3\xAD schopnost cukrovky \""
   actual: 
   index_id: "1152"
   canceled_on: 
@@ -1157,10 +1157,10 @@ study_plans_027:
   created_by_id: "711"
   id: "100321"
   final_areas: "--- !ruby/hash:HashWithIndifferentAccess \n\
-    \"1\": Biologie helmint?\n\
-    \"2\": Parazit\xE1ln\xED onemocn?n\xED HZ\n\
-    \"3\": Epidemiologie gastrointestin\xE1ln\xEDch hl\xEDstic\n\
-    \"4\": Parazitick\xE9 hl\xEDstice p?e\x9Ev\xFDkavc?"
+    \"1\": Biologie helmint\xC5\xAF\n\
+    \"2\": Parazit\xC3\xA1ln\xC3\xAD onemocn\xC4\x9Bn\xC3\xAD HZ\n\
+    \"3\": Epidemiologie gastrointestin\xC3\xA1ln\xC3\xADch hl\xC3\xADstic\n\
+    \"4\": Parazitick\xC3\xA9 hl\xC3\xADstice p\xC5\x99e\xC5\xBEv\xC3\xBDkavc\xC5\xAF"
   actual: 
   index_id: "1137"
   canceled_on: 
