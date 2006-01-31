@@ -54,8 +54,12 @@ class AccountController < ApplicationController
       redirect_to :controller => 'students'
     end
   end
+
   # error page for system
   def error
+    unless @flash['error'] or !@exception
+      @flash['error'] = @exception.message
+    end
   end
 
   def user_roles

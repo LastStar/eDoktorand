@@ -1382,3 +1382,6 @@ msgstr "přihlásit studenta"
 
 msgid "Sign off student"
 msgstr "Odhlásit"
+
+msgid "There was an error in application:"
+msgstr "V aplikaci se vyskytla následující chyba:"

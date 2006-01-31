@@ -76,6 +76,7 @@ class ApplicationController < ActionController::Base
   end
   # rescues exceptions throwed in actions
   def rescue_action_in_public(exception)
+    @exception = exception
     redirect_to error_url
   end
 end
