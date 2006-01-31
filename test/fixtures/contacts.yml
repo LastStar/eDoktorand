@@ -109,6 +109,11 @@ contacts_193:
   contact_type_id: "1"
   id: "193"
   person_id: "2941"
+contacts_526: 
+  name: jan.bednar@centrum.c
+  contact_type_id: "1"
+  id: "526"
+  person_id: 
 contacts_336: 
   name: "+420732176552"
   contact_type_id: "2"
@@ -123,6 +128,11 @@ contacts_383:
   name: 604 483 897
   contact_type_id: "2"
   id: "383"
+  person_id: 
+contacts_527: 
+  name: +420 606 471 189
+  contact_type_id: "2"
+  id: "527"
   person_id: 
 contacts_337: 
   name: klapste@fle.czu.cz
@@ -144,6 +154,11 @@ contacts_194:
   contact_type_id: "1"
   id: "194"
   person_id: "2618"
+contacts_528: 
+  name: jan.bednar@centrum.c
+  contact_type_id: "1"
+  id: "528"
+  person_id: 
 contacts_338: 
   name: "+420732176552"
   contact_type_id: "2"
@@ -164,6 +179,11 @@ contacts_195:
   contact_type_id: "2"
   id: "195"
   person_id: "2618"
+contacts_529: 
+  name: +420 606 471 189
+  contact_type_id: "2"
+  id: "529"
+  person_id: 
 contacts_339: 
   name: kochanova@af.czu.cz
   contact_type_id: "1"
@@ -443,7 +463,7 @@ contacts_494:
   name: salkova@pef.czu.cz
   contact_type_id: "1"
   id: "494"
-  person_id: "234"
+  person_id: 
 contacts_447: 
   name: "603348747"
   contact_type_id: "2"
@@ -463,7 +483,7 @@ contacts_495:
   name: +420/224 382 385
   contact_type_id: "2"
   id: "495"
-  person_id: "234"
+  person_id: 
 contacts_448: 
   name: bolor_altai@yahoo.co
   contact_type_id: "1"
@@ -564,6 +584,11 @@ contacts_122:
   contact_type_id: "2"
   id: "122"
   person_id: "2905"
+contacts_550: 
+  name: urbanovatereza@fle.c
+  contact_type_id: "1"
+  id: "550"
+  person_id: "5015"
 contacts_503: 
   name: kudrnat@af.czu.cz
   contact_type_id: "1"
@@ -589,6 +614,11 @@ contacts_123:
   contact_type_id: "1"
   id: "123"
   person_id: "2901"
+contacts_551: 
+  name: ayenig@seznam.cz
+  contact_type_id: "1"
+  id: "551"
+  person_id: 
 contacts_504: 
   name: "721007261"
   contact_type_id: "2"
@@ -609,6 +639,11 @@ contacts_124:
   contact_type_id: "2"
   id: "124"
   person_id: "2901"
+contacts_552: 
+  name: 608 426 693
+  contact_type_id: "2"
+  id: "552"
+  person_id: 
 contacts_505: 
   name: surkova@itsz.czu.cz
   contact_type_id: "1"
@@ -634,6 +669,11 @@ contacts_125:
   contact_type_id: "1"
   id: "125"
   person_id: "5035"
+contacts_553: 
+  name: ayenig@seznam.cz
+  contact_type_id: "1"
+  id: "553"
+  person_id: "4370"
 contacts_506: 
   name: 775 692 508
   contact_type_id: "2"
@@ -659,6 +699,11 @@ contacts_126:
   contact_type_id: "2"
   id: "126"
   person_id: "5035"
+contacts_554: 
+  name: 608 426 693
+  contact_type_id: "2"
+  id: "554"
+  person_id: "4370"
 contacts_507: 
   name: surkova@itsz.czu.cz
   contact_type_id: "1"
@@ -684,6 +729,11 @@ contacts_127:
   contact_type_id: "1"
   id: "127"
   person_id: "4645"
+contacts_555: 
+  name: biskup@zf.jcu.cz
+  contact_type_id: "1"
+  id: "555"
+  person_id: "1679"
 contacts_508: 
   name: 775 692 508
   contact_type_id: "2"
@@ -709,6 +759,11 @@ contacts_128:
   contact_type_id: "2"
   id: "128"
   person_id: "4645"
+contacts_556: 
+  name: "777126454"
+  contact_type_id: "2"
+  id: "556"
+  person_id: "1679"
 contacts_509: 
   name: surkova@itsz.czu.cz
   contact_type_id: "1"
@@ -734,6 +789,11 @@ contacts_129:
   contact_type_id: "1"
   id: "129"
   person_id: 
+contacts_557: 
+  name: Petra.Silberova@sezn
+  contact_type_id: "1"
+  id: "557"
+  person_id: "4647"
 contacts_367: 
   name: skrybova@pef.czu.cz
   contact_type_id: "1"
@@ -744,16 +804,26 @@ contacts_177:
   contact_type_id: "1"
   id: "177"
   person_id: 
+contacts_558: 
+  name: "724549217"
+  contact_type_id: "2"
+  id: "558"
+  person_id: "4647"
 contacts_368: 
   name: skrybova@pef.czu.cz
   contact_type_id: "1"
   id: "368"
-  person_id: "4387"
+  person_id: 
 contacts_178: 
   name: kuricova@pef.czu.cz
   contact_type_id: "1"
   id: "178"
   person_id: 
+contacts_559: 
+  name: brdickova@af.czu.cz
+  contact_type_id: "1"
+  id: "559"
+  person_id: "3213"
 contacts_369: 
   name: koubam@fle.czu.cz
   contact_type_id: "1"
@@ -1079,6 +1149,11 @@ contacts_102:
   contact_type_id: "2"
   id: "102"
   person_id: "3789"
+contacts_530: 
+  name: jan.bednar@centrum.c
+  contact_type_id: "1"
+  id: "530"
+  person_id: "3139"
 contacts_103: 
   name: neckar@af.czu.cz
   contact_type_id: "1"
@@ -1094,6 +1169,11 @@ contacts_150:
   contact_type_id: "1"
   id: "150"
   person_id: "4548"
+contacts_531: 
+  name: +420 606 471 189
+  contact_type_id: "2"
+  id: "531"
+  person_id: "3139"
 contacts_104: 
   name: "224382787"
   contact_type_id: "2"
@@ -1109,6 +1189,11 @@ contacts_151:
   contact_type_id: "2"
   id: "151"
   person_id: "4548"
+contacts_532: 
+  name: vhruzova@yahoo.com
+  contact_type_id: "1"
+  id: "532"
+  person_id: "3467"
 contacts_105: 
   name: nadova@vurv.cz
   contact_type_id: "1"
@@ -1129,6 +1214,11 @@ contacts_152:
   contact_type_id: "1"
   id: "152"
   person_id: "3380"
+contacts_533: 
+  name: "723261201"
+  contact_type_id: "2"
+  id: "533"
+  person_id: "3467"
 contacts_106: 
   name: 603/437015
   contact_type_id: "2"
@@ -1149,6 +1239,11 @@ contacts_153:
   contact_type_id: "2"
   id: "153"
   person_id: "3380"
+contacts_534: 
+  name: martinpoul@seznam.cz
+  contact_type_id: "1"
+  id: "534"
+  person_id: "2957"
 contacts_107: 
   name: malakova@vurv.cz
   contact_type_id: "1"
@@ -1164,6 +1259,11 @@ contacts_154:
   contact_type_id: "1"
   id: "154"
   person_id: "3277"
+contacts_535: 
+  name: "+420605377747"
+  contact_type_id: "2"
+  id: "535"
+  person_id: "2957"
 contacts_108: 
   name: 737/866 035
   contact_type_id: "2"
@@ -1184,6 +1284,11 @@ contacts_155:
   contact_type_id: "2"
   id: "155"
   person_id: "3277"
+contacts_536: 
+  name: spickam@hotmail.com
+  contact_type_id: "1"
+  id: "536"
+  person_id: "3459"
 contacts_109: 
   name: moravecm@oikt.czu.cz
   contact_type_id: "1"
@@ -1204,6 +1309,11 @@ contacts_156:
   contact_type_id: "1"
   id: "156"
   person_id: 
+contacts_537: 
+  name: matsi@fle.czu.cz
+  contact_type_id: "1"
+  id: "537"
+  person_id: 
 contacts_394: 
   name: jiri.kmoch@seznam.cz
   contact_type_id: "1"
@@ -1219,6 +1329,11 @@ contacts_157:
   contact_type_id: "1"
   id: "157"
   person_id: "2940"
+contacts_538: 
+  name: "602572151"
+  contact_type_id: "2"
+  id: "538"
+  person_id: 
 contacts_395: 
   name: "737974761"
   contact_type_id: "2"
@@ -1234,6 +1349,11 @@ contacts_158:
   contact_type_id: "1"
   id: "158"
   person_id: "3629"
+contacts_539: 
+  name: matsi@fle.czu.cz
+  contact_type_id: "1"
+  id: "539"
+  person_id: "5031"
 contacts_396: 
   name: hajek@fle.czu.cz
   contact_type_id: "1"
@@ -1614,6 +1734,11 @@ contacts_180:
   contact_type_id: "1"
   id: "180"
   person_id: "2848"
+contacts_560: 
+  name: semeradova@pef.czu.c
+  contact_type_id: "1"
+  id: "560"
+  person_id: "1330"
 contacts_513: 
   name: ales.zdenek@email.cz
   contact_type_id: "1"
@@ -1639,6 +1764,11 @@ contacts_181:
   contact_type_id: "2"
   id: "181"
   person_id: "2848"
+contacts_561: 
+  name: skrybova@pef.czu.cz
+  contact_type_id: "1"
+  id: "561"
+  person_id: "4387"
 contacts_514: 
   name: 602/931128
   contact_type_id: "2"
@@ -1664,6 +1794,11 @@ contacts_324:
   contact_type_id: "2"
   id: "324"
   person_id: "2688"
+contacts_562: 
+  name: jana.melnikova@sezna
+  contact_type_id: "1"
+  id: "562"
+  person_id: "4517"
 contacts_515: 
   name: ales.zdenek@email.cz
   contact_type_id: "1"
@@ -1683,6 +1818,11 @@ contacts_325:
   name: steininger@pef.czu.c
   contact_type_id: "1"
   id: "325"
+  person_id: 
+contacts_563: 
+  name: martin.roubicek@cent
+  contact_type_id: "1"
+  id: "563"
   person_id: 
 contacts_516: 
   name: 602/931128
@@ -1709,6 +1849,11 @@ contacts_136:
   contact_type_id: "1"
   id: "136"
   person_id: 
+contacts_564: 
+  name: martin.roubicek@cent
+  contact_type_id: "1"
+  id: "564"
+  person_id: "4457"
 contacts_517: 
   name: ales.zdenek@email.cz
   contact_type_id: "1"
@@ -2144,6 +2289,11 @@ contacts_112:
   contact_type_id: "2"
   id: "112"
   person_id: "4409"
+contacts_540: 
+  name: "602572151"
+  contact_type_id: "2"
+  id: "540"
+  person_id: "5031"
 contacts_303: 
   name: peta.miler@centrum.c
   contact_type_id: "1"
@@ -2159,6 +2309,11 @@ contacts_350:
   contact_type_id: "2"
   id: "350"
   person_id: 
+contacts_541: 
+  name: cap@vulhm.cz
+  contact_type_id: "1"
+  id: "541"
+  person_id: "5058"
 contacts_161: 
   name: "605785360"
   contact_type_id: "2"
@@ -2179,6 +2334,11 @@ contacts_351:
   contact_type_id: "1"
   id: "351"
   person_id: "4591"
+contacts_542: 
+  name: 736 536 837
+  contact_type_id: "2"
+  id: "542"
+  person_id: "5058"
 contacts_305: 
   name: peta.miler@centrum.c
   contact_type_id: "1"
@@ -2199,6 +2359,11 @@ contacts_162:
   contact_type_id: "1"
   id: "162"
   person_id: "2946"
+contacts_543: 
+  name: urbanovatereza@fle.c
+  contact_type_id: "1"
+  id: "543"
+  person_id: 
 contacts_306: 
   name: "724935672"
   contact_type_id: "2"
@@ -2219,6 +2384,11 @@ contacts_163:
   contact_type_id: "2"
   id: "163"
   person_id: "2946"
+contacts_544: 
+  name: sestakjan@email.cz
+  contact_type_id: "1"
+  id: "544"
+  person_id: "5297"
 contacts_307: 
   name: kreckova@tf.czu.cz
   contact_type_id: "1"
@@ -2239,6 +2409,11 @@ contacts_164:
   contact_type_id: "1"
   id: "164"
   person_id: "3088"
+contacts_545: 
+  name: salkova@pef.czu.cz
+  contact_type_id: "1"
+  id: "545"
+  person_id: "234"
 contacts_308: 
   name: "+420604149200"
   contact_type_id: "2"
@@ -2259,6 +2434,11 @@ contacts_165:
   contact_type_id: "2"
   id: "165"
   person_id: "3088"
+contacts_546: 
+  name: +420/224 382 385
+  contact_type_id: "2"
+  id: "546"
+  person_id: "234"
 contacts_309: 
   name: kreckova@tf.czu.cz
   contact_type_id: "1"
@@ -2279,6 +2459,11 @@ contacts_166:
   contact_type_id: "1"
   id: "166"
   person_id: "3799"
+contacts_547: 
+  name: fejfar@pef.czu.cz
+  contact_type_id: "1"
+  id: "547"
+  person_id: "4506"
 contacts_357: 
   name: kadirova@pef.czu.cz
   contact_type_id: "1"
@@ -2289,6 +2474,11 @@ contacts_167:
   contact_type_id: "2"
   id: "167"
   person_id: "3799"
+contacts_548: 
+  name: "608739449"
+  contact_type_id: "2"
+  id: "548"
+  person_id: "4506"
 contacts_358: 
   name: "777128739"
   contact_type_id: "2"
@@ -2299,6 +2489,11 @@ contacts_168:
   contact_type_id: "1"
   id: "168"
   person_id: "4572"
+contacts_549: 
+  name: tlukapetr@web.de
+  contact_type_id: "1"
+  id: "549"
+  person_id: "4589"
 contacts_359: 
   name: neumanova@pef.czu.cz
   contact_type_id: "1"

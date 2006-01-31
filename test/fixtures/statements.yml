@@ -3306,7 +3306,7 @@ statements_176:
 statements_1318: 
   created_on: 2006-01-03 09:34:49
   result: "1"
-  updated_on: 2006-01-27 09:45:07
+  updated_on: 2006-01-03 09:34:49
   id: "1324"
   note: ""
   person_id: "98"
@@ -3348,7 +3348,7 @@ statements_730:
 statements_1319: 
   created_on: 2006-01-04 09:52:55
   result: "1"
-  updated_on: 2006-01-27 09:45:07
+  updated_on: 2006-01-04 09:52:55
   id: "1325"
   note: ""
   person_id: "26"
@@ -3432,7 +3432,7 @@ statements_732:
 statements_1320: 
   created_on: 2006-01-04 09:53:02
   result: "1"
-  updated_on: 2006-01-27 09:45:07
+  updated_on: 2006-01-04 09:53:02
   id: "1326"
   note: ""
   person_id: "26"
@@ -3474,7 +3474,7 @@ statements_048:
 statements_1321: 
   created_on: 2006-01-04 09:53:08
   result: "1"
-  updated_on: 2006-01-27 09:45:07
+  updated_on: 2006-01-04 09:53:08
   id: "1327"
   note: ""
   person_id: "26"
@@ -3516,7 +3516,7 @@ statements_049:
 statements_1322: 
   created_on: 2006-01-04 09:53:31
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:53:31
   id: "1328"
   note: ""
   person_id: "94"
@@ -3558,7 +3558,7 @@ statements_180:
 statements_1323: 
   created_on: 2006-01-04 09:53:42
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:53:42
   id: "1329"
   note: ""
   person_id: "94"
@@ -3593,7 +3593,7 @@ statements_181:
 statements_1324: 
   created_on: 2006-01-04 09:54:24
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:54:24
   id: "1330"
   note: ""
   person_id: "22"
@@ -3649,7 +3649,7 @@ statements_183:
 statements_1325: 
   created_on: 2006-01-04 09:54:30
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:54:30
   id: "1331"
   note: ""
   person_id: "22"
@@ -3684,7 +3684,7 @@ statements_184:
 statements_1326: 
   created_on: 2006-01-04 09:54:36
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:54:36
   id: "1332"
   note: ""
   person_id: "22"
@@ -3726,7 +3726,7 @@ statements_185:
 statements_1327: 
   created_on: 2006-01-04 09:54:41
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:54:41
   id: "1333"
   note: ""
   person_id: "22"
@@ -3761,7 +3761,7 @@ statements_186:
 statements_1328: 
   created_on: 2006-01-04 09:54:47
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:54:47
   id: "1334"
   note: ""
   person_id: "22"
@@ -3803,7 +3803,7 @@ statements_187:
 statements_1329: 
   created_on: 2006-01-04 09:54:52
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:54:52
   id: "1335"
   note: ""
   person_id: "22"
@@ -3873,7 +3873,7 @@ statements_189:
 statements_1330: 
   created_on: 2006-01-04 09:55:00
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:55:00
   id: "1336"
   note: ""
   person_id: "22"
@@ -3908,7 +3908,7 @@ statements_058:
 statements_1331: 
   created_on: 2006-01-04 09:55:06
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:55:06
   id: "1337"
   note: ""
   person_id: "22"
@@ -3943,7 +3943,7 @@ statements_059:
 statements_1332: 
   created_on: 2006-01-04 09:55:06
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:55:06
   id: "1338"
   note: ""
   person_id: "22"
@@ -3985,7 +3985,7 @@ statements_190:
 statements_1333: 
   created_on: 2006-01-04 09:55:12
   result: "1"
-  updated_on: 2006-01-27 09:45:08
+  updated_on: 2006-01-04 09:55:12
   id: "1339"
   note: ""
   person_id: "22"
@@ -4027,7 +4027,7 @@ statements_191:
 statements_1334: 
   created_on: 2006-01-04 09:55:18
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:55:18
   id: "1340"
   note: ""
   person_id: "22"
@@ -4076,7 +4076,7 @@ statements_192:
 statements_1335: 
   created_on: 2006-01-04 09:55:22
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:55:22
   id: "1341"
   note: ""
   person_id: "22"
@@ -4132,7 +4132,7 @@ statements_194:
 statements_1336: 
   created_on: 2006-01-04 09:55:34
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:55:34
   id: "1342"
   note: ""
   person_id: "22"
@@ -4182,7 +4182,7 @@ statements_617:
 statements_1337: 
   created_on: 2006-01-04 09:55:44
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:55:44
   id: "1343"
   note: ""
   person_id: "22"
@@ -4224,7 +4224,7 @@ statements_618:
 statements_1338: 
   created_on: 2006-01-04 09:55:49
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:55:49
   id: "1344"
   note: ""
   person_id: "22"
@@ -4273,7 +4273,7 @@ statements_619:
 statements_1339: 
   created_on: 2006-01-04 09:55:54
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:55:54
   id: "1345"
   note: ""
   person_id: "22"
@@ -4357,7 +4357,7 @@ statements_752:
 statements_1340: 
   created_on: 2006-01-04 09:55:59
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:55:59
   id: "1346"
   note: ""
   person_id: "22"
@@ -4399,7 +4399,7 @@ statements_753:
 statements_1341: 
   created_on: 2006-01-04 09:56:04
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:56:04
   id: "1347"
   note: ""
   person_id: "22"
@@ -4434,7 +4434,7 @@ statements_754:
 statements_1342: 
   created_on: 2006-01-04 09:56:08
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:56:08
   id: "1348"
   note: ""
   person_id: "22"
@@ -4469,7 +4469,7 @@ statements_755:
 statements_1343: 
   created_on: 2006-01-04 09:56:13
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:56:13
   id: "1349"
   note: ""
   person_id: "22"
@@ -4504,7 +4504,7 @@ statements_756:
 statements_1344: 
   created_on: 2006-01-04 09:56:17
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:56:17
   id: "1350"
   note: ""
   person_id: "22"
@@ -4546,7 +4546,7 @@ statements_070:
 statements_1345: 
   created_on: 2006-01-04 09:56:23
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:56:23
   id: "1351"
   note: ""
   person_id: "22"
@@ -4581,7 +4581,7 @@ statements_071:
 statements_1346: 
   created_on: 2006-01-04 09:56:27
   result: "1"
-  updated_on: 2006-01-27 09:45:09
+  updated_on: 2006-01-04 09:56:27
   id: "1352"
   note: ""
   person_id: "22"
@@ -4630,7 +4630,7 @@ statements_073:
 statements_1347: 
   created_on: 2006-01-04 09:59:02
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-04 09:59:02
   id: "1353"
   note: ""
   person_id: "22"
@@ -4665,7 +4665,7 @@ statements_074:
 statements_1348: 
   created_on: 2006-01-04 09:59:15
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-04 09:59:15
   id: "1354"
   note: ""
   person_id: "22"
@@ -4707,7 +4707,7 @@ statements_075:
 statements_1349: 
   created_on: 2006-01-04 10:02:52
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-04 10:02:52
   id: "1355"
   note: ""
   person_id: "98"
@@ -4777,7 +4777,7 @@ statements_077:
 statements_1350: 
   created_on: 2006-01-04 12:56:30
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-04 12:56:30
   id: "1356"
   note: ""
   person_id: "22"
@@ -4819,7 +4819,7 @@ statements_078:
 statements_1351: 
   created_on: 2006-01-04 12:56:46
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-04 12:56:46
   id: "1357"
   note: ""
   person_id: "22"
@@ -4861,7 +4861,7 @@ statements_079:
 statements_1352: 
   created_on: 2006-01-11 09:18:07
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-11 09:18:07
   id: "1358"
   note: ""
   person_id: "98"
@@ -4903,7 +4903,7 @@ statements_765:
 statements_1353: 
   created_on: 2006-01-11 13:23:00
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-11 13:23:00
   id: "1359"
   note: ""
   person_id: "98"
@@ -4945,7 +4945,7 @@ statements_766:
 statements_1354: 
   created_on: 2006-01-11 17:25:50
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-11 17:25:50
   id: "1360"
   note: "Doporu\xC4\x8Duji ke schv\xC3\xA1len\xC3\xAD \xC5\xBE\xC3\xA1dost Ing. Kol\xC3\xA1\xC4\x8Dn\xC3\xA9 o p\xC5\x99eru\xC5\xA1en\xC3\xAD studia. Tuto \xC5\xBE\xC3\xA1dost podala p\xC3\xADs"
   person_id: "6"
@@ -4994,7 +4994,7 @@ statements_080:
 statements_1355: 
   created_on: 2006-01-18 14:42:54
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-18 14:42:54
   id: "1361"
   note: ""
   person_id: "51"
@@ -5036,7 +5036,7 @@ statements_081:
 statements_1356: 
   created_on: 2006-01-18 14:43:12
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-18 14:43:12
   id: "1362"
   note: ""
   person_id: "52"
@@ -5078,7 +5078,7 @@ statements_082:
 statements_1357: 
   created_on: 2006-01-18 14:43:55
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-18 14:43:55
   id: "1363"
   note: ""
   person_id: "98"
@@ -5120,7 +5120,7 @@ statements_084:
 statements_1358: 
   created_on: 2006-01-20 13:48:32
   result: "1"
-  updated_on: 2006-01-27 09:45:10
+  updated_on: 2006-01-20 13:48:32
   id: "1364"
   note: ""
   person_id: "1"
@@ -5162,7 +5162,7 @@ statements_770:
 statements_1359: 
   created_on: 2006-01-20 13:48:32
   result: "1"
-  updated_on: 2006-01-27 09:45:11
+  updated_on: 2006-01-20 13:48:32
   id: "1365"
   note: ""
   person_id: "1"
@@ -5232,7 +5232,7 @@ statements_772:
 statements_1360: 
   created_on: 2006-01-20 13:49:13
   result: "1"
-  updated_on: 2006-01-27 09:45:11
+  updated_on: 2006-01-20 13:49:13
   id: "1366"
   note: ""
   person_id: "98"
@@ -5267,7 +5267,7 @@ statements_773:
 statements_1361: 
   created_on: 2006-01-23 09:40:46
   result: "1"
-  updated_on: 2006-01-27 09:45:11
+  updated_on: 2006-01-23 09:40:46
   id: "1367"
   note: ""
   person_id: "2280"
@@ -5302,7 +5302,7 @@ statements_774:
 statements_1362: 
   created_on: 2006-01-23 10:03:08
   result: "0"
-  updated_on: 2006-01-27 09:45:11
+  updated_on: 2006-01-23 10:03:08
   id: "1368"
   note: "Studium p\xC5\x99eru\xC5\xA1eno"
   person_id: "2280"
@@ -5337,7 +5337,7 @@ statements_775:
 statements_1363: 
   created_on: 2006-01-23 12:23:27
   result: "1"
-  updated_on: 2006-01-27 09:45:11
+  updated_on: 2006-01-23 12:23:27
   id: "1369"
   note: "Pl\xC3\xA1n byl prokonzultov\xC3\xA1n se \xC5\xA1kolitelem. Souhlas"
   person_id: "81"
@@ -5372,7 +5372,7 @@ statements_776:
 statements_1364: 
   created_on: 2006-01-23 14:56:31
   result: "1"
-  updated_on: 2006-01-27 09:45:11
+  updated_on: 2006-01-23 14:56:31
   id: "1370"
   note: ""
   person_id: "51"
@@ -5421,7 +5421,7 @@ statements_777:
 statements_1365: 
   created_on: 2006-01-23 17:36:17
   result: "1"
-  updated_on: 2006-01-27 09:45:12
+  updated_on: 2006-01-23 17:36:17
   id: "1371"
   note: ""
   person_id: "94"
@@ -5470,7 +5470,7 @@ statements_778:
 statements_1366: 
   created_on: 2006-01-25 15:35:04
   result: "1"
-  updated_on: 2006-01-27 09:45:12
+  updated_on: 2006-01-25 15:35:04
   id: "1372"
   note: ""
   person_id: "45"
@@ -5519,7 +5519,7 @@ statements_779:
 statements_1367: 
   created_on: 2006-01-25 15:35:04
   result: "1"
-  updated_on: 2006-01-27 09:45:12
+  updated_on: 2006-01-25 15:35:04
   id: "1373"
   note: ""
   person_id: "45"
@@ -5561,7 +5561,7 @@ statements_648:
 statements_1368: 
   created_on: 2006-01-25 15:40:13
   result: "1"
-  updated_on: 2006-01-27 09:45:12
+  updated_on: 2006-01-25 15:40:13
   id: "1374"
   note: ""
   person_id: "98"
@@ -5617,7 +5617,7 @@ statements_095:
 statements_1369: 
   created_on: 2006-01-26 11:51:49
   result: "1"
-  updated_on: 2006-01-27 09:45:12
+  updated_on: 2006-01-26 11:51:49
   id: "1375"
   note: 
   person_id: "22"
@@ -5701,7 +5701,7 @@ statements_097:
 statements_1370: 
   created_on: 2006-01-26 11:53:16
   result: "1"
-  updated_on: 2006-01-27 09:45:12
+  updated_on: 2006-01-26 11:53:16
   id: "1376"
   note: 
   person_id: "22"
@@ -5743,7 +5743,7 @@ statements_098:
 statements_1371: 
   created_on: 2006-01-26 11:54:41
   result: "1"
-  updated_on: 2006-01-27 09:45:12
+  updated_on: 2006-01-26 11:54:41
   id: "1377"
   note: ""
   person_id: "98"
@@ -5782,13 +5782,6 @@ statements_099:
   id: "99"
   note: ""
   person_id: "93"
-statements_1372: 
-  created_on: 2006-01-26 13:48:22
-  result: "1"
-  updated_on: 2006-01-27 09:45:12
-  id: "1378"
-  note: ""
-  person_id: "1"
 statements_1240: 
   created_on: 2005-11-28 14:27:39
   result: "1"
@@ -5824,13 +5817,6 @@ statements_785:
   id: "791"
   note: "p\xC5\x99ejato z p\xC5\x99edchoz\xC3\xADho syst\xC3\xA9mu"
   person_id: "1539"
-statements_1373: 
-  created_on: 2006-01-26 13:48:22
-  result: "1"
-  updated_on: 2006-01-27 09:45:12
-  id: "1379"
-  note: ""
-  person_id: "1"
 statements_1241: 
   created_on: 2005-11-28 14:27:52
   result: "1"
@@ -5859,13 +5845,6 @@ statements_786:
   id: "792"
   note: ""
   person_id: "45"
-statements_1374: 
-  created_on: 2006-01-26 13:48:52
-  result: "1"
-  updated_on: 2006-01-27 09:45:12
-  id: "1380"
-  note: ""
-  person_id: "1"
 statements_1242: 
   created_on: 2005-11-28 14:28:01
   result: "1"
@@ -5901,13 +5880,6 @@ statements_655:
   id: "661"
   note: ""
   person_id: "1922"
-statements_1375: 
-  created_on: 2006-01-26 13:48:52
-  result: "1"
-  updated_on: 2006-01-27 09:45:12
-  id: "1381"
-  note: ""
-  person_id: "1"
 statements_1243: 
   created_on: 2005-11-28 14:28:22
   result: "1"

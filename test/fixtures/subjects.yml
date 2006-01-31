@@ -1378,6 +1378,13 @@ subjects_580:
   type: ExternalSubject
   id: "19196"
   label: "Technologie obr\xC3\xA1b\xC4\x9Bn\xC3\xAD d\xC5\x99eva"
+subjects_1000: 
+  created_on: 2006-01-25 13:40:19
+  code: 
+  updated_on: 2006-01-25 13:40:19
+  type: ExternalSubject
+  id: "19616"
+  label: Pedologie
 subjects_318: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1392,6 +1399,13 @@ subjects_581:
   type: ExternalSubject
   id: "19197"
   label: "Energetick\xC3\xA9 prost\xC5\x99edky mobiln\xC3\xAD"
+subjects_1001: 
+  created_on: 2006-01-25 13:41:36
+  code: 
+  updated_on: 2006-01-25 13:41:36
+  type: ExternalSubject
+  id: "19617"
+  label: Pedologie
 subjects_319: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -1413,6 +1427,13 @@ subjects_582:
   type: ExternalSubject
   id: "19198"
   label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
+subjects_1002: 
+  created_on: 2006-01-26 07:42:42
+  code: 
+  updated_on: 2006-01-26 07:42:42
+  type: ExternalSubject
+  id: "19618"
+  label: Pedologie
 subjects_451: 
   created_on: 2005-10-19 12:37:48
   code: 
@@ -2043,6 +2064,13 @@ subjects_479:
   type: ExternalSubject
   id: "19095"
   label: Pedologie
+subjects_900: 
+  created_on: 2006-01-17 13:32:35
+  code: 
+  updated_on: 2006-01-17 13:32:35
+  type: ExternalSubject
+  id: "19516"
+  label: "Krajinn\xC3\xA1 architektura"
 subjects_216: 
   created_on: 2005-10-03 11:41:42
   code: DLRX03Y
@@ -2057,6 +2085,20 @@ subjects_348:
   type: ExternalSubject
   id: "9045"
   label: Ekonomika
+subjects_901: 
+  created_on: 2006-01-17 14:18:31
+  code: 
+  updated_on: 2006-01-17 14:18:31
+  type: ExternalSubject
+  id: "19517"
+  label: "Dendrologie lesnick\xC3\xA1"
+subjects_902: 
+  created_on: 2006-01-17 14:19:57
+  code: 
+  updated_on: 2006-01-17 14:19:57
+  type: ExternalSubject
+  id: "19518"
+  label: Mechanizace v LH
 subjects_480: 
   created_on: 2005-10-20 15:10:28
   code: 
@@ -2078,6 +2120,13 @@ subjects_349:
   type: ExternalSubject
   id: "9046"
   label: Informatika
+subjects_903: 
+  created_on: 2006-01-17 14:28:44
+  code: 
+  updated_on: 2006-01-17 14:28:44
+  type: ExternalSubject
+  id: "19519"
+  label: Mechanizace v LH
 subjects_481: 
   created_on: 2005-10-20 15:14:58
   code: 
@@ -2092,6 +2141,13 @@ subjects_218:
   type: 
   id: "7385"
   label: "NAUKA O D\xC5\x98EV\xC4\x9A"
+subjects_904: 
+  created_on: 2006-01-17 14:31:08
+  code: 
+  updated_on: 2006-01-17 14:31:08
+  type: ExternalSubject
+  id: "19520"
+  label: "Lesnick\xC3\xA1 dendrologie"
 subjects_350: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -2113,6 +2169,13 @@ subjects_219:
   type: 
   id: "7387"
   label: "LESN\xC3\x8D P\xC5\x98IDRU\xC5\xBDEN\xC3\x81 V\xC3\x9DROBA"
+subjects_905: 
+  created_on: 2006-01-17 14:31:08
+  code: 
+  updated_on: 2006-01-17 14:31:08
+  type: ExternalSubject
+  id: "19521"
+  label: "Aplikovan\xC3\xA1 meteorologie a klimatologie "
 subjects_351: 
   created_on: 2005-10-14 08:58:09
   code: 
@@ -2127,6 +2190,13 @@ subjects_483:
   type: ExternalSubject
   id: "19099"
   label: "geochemie \xC5\xBDP"
+subjects_906: 
+  created_on: 2006-01-17 14:31:08
+  code: 
+  updated_on: 2006-01-17 14:31:08
+  type: ExternalSubject
+  id: "19522"
+  label: "Kv\xC4\x9Btena st\xC5\x99edn\xC3\xAD Evropy II"
 subjects_220: 
   created_on: 2005-10-03 11:41:41
   code: DLHX04Y
@@ -2148,6 +2218,13 @@ subjects_484:
   type: ExternalSubject
   id: "19100"
   label: "lesnick\xC3\xA1 pedologie"
+subjects_907: 
+  created_on: 2006-01-17 14:42:07
+  code: 
+  updated_on: 2006-01-17 14:42:07
+  type: ExternalSubject
+  id: "19523"
+  label: "Lesnick\xC3\xA1 mechanizace"
 subjects_221: 
   created_on: 2005-10-03 11:41:43
   code: DLTX67Y
@@ -2169,6 +2246,13 @@ subjects_485:
   type: ExternalSubject
   id: "19101"
   label: biometrie
+subjects_908: 
+  created_on: 2006-01-17 14:47:57
+  code: 
+  updated_on: 2006-01-17 14:47:57
+  type: ExternalSubject
+  id: "19524"
+  label: "Dopravnictv\xC3\xAD"
 subjects_222: 
   created_on: 2005-10-03 11:41:42
   code: DLTX61Z
@@ -2190,6 +2274,13 @@ subjects_486:
   type: ExternalSubject
   id: "19102"
   label: "Aplikovan\xC3\xA1 meteorologie a klimatologie"
+subjects_909: 
+  created_on: 2006-01-17 14:54:59
+  code: 
+  updated_on: 2006-01-17 14:54:59
+  type: ExternalSubject
+  id: "19525"
+  label: "Lesn\xC3\xAD t\xC4\x9B\xC5\xBEba speci\xC3\xA1ln\xC3\xAD"
 subjects_223: 
   created_on: 2005-10-03 11:41:42
   code: DLTX62Y
@@ -2253,6 +2344,13 @@ subjects_489:
   type: ExternalSubject
   id: "19105"
   label: "zakl\xC3\xA1d\xC3\xA1n\xC3\xAD les\xC5\xAF"
+subjects_910: 
+  created_on: 2006-01-17 14:58:09
+  code: 
+  updated_on: 2006-01-17 14:58:09
+  type: ExternalSubject
+  id: "19526"
+  label: "Energetick\xC3\xA9 prost\xC5\x99edky mobiln\xC3\xAD"
 subjects_226: 
   created_on: 2005-10-03 11:41:43
   code: DLEX13Y
@@ -2267,6 +2365,13 @@ subjects_358:
   type: ExternalSubject
   id: "9055"
   label: "drbal - objektov\xC3\xA1 anal\xC3\xBDza a n\xC3\xA1vrh"
+subjects_911: 
+  created_on: 2006-01-17 14:58:09
+  code: 
+  updated_on: 2006-01-17 14:58:09
+  type: ExternalSubject
+  id: "19527"
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_227: 
   created_on: 2005-10-03 11:41:43
   code: DLEX18Y
@@ -2281,6 +2386,13 @@ subjects_359:
   type: ExternalSubject
   id: "9056"
   label: "Objektov\xC3\xA9 programov\xC3\xA1n\xC3\xAD - .NET"
+subjects_912: 
+  created_on: 2006-01-17 14:58:09
+  code: 
+  updated_on: 2006-01-17 14:58:09
+  type: ExternalSubject
+  id: "19528"
+  label: "Technologie obr\xC3\xA1b\xC4\x9Bn\xC3\xAD d\xC5\x99eva"
 subjects_490: 
   created_on: 2005-10-20 15:37:01
   code: 
@@ -2288,6 +2400,13 @@ subjects_490:
   type: ExternalSubject
   id: "19106"
   label: "aplikovan\xC3\xA1 meteorologie a klimatologie"
+subjects_913: 
+  created_on: 2006-01-17 15:01:26
+  code: 
+  updated_on: 2006-01-17 15:01:26
+  type: ExternalSubject
+  id: "19529"
+  label: Anatomie rostlin
 subjects_491: 
   created_on: 2005-10-20 15:37:01
   code: 
@@ -2302,6 +2421,13 @@ subjects_228:
   type: 
   id: "7431"
   label: Wood chemistry
+subjects_914: 
+  created_on: 2006-01-17 15:01:26
+  code: 
+  updated_on: 2006-01-17 15:01:26
+  type: ExternalSubject
+  id: "19530"
+  label: "Explant\xC3\xA1tov\xC3\xA9 kultury"
 subjects_360: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2323,6 +2449,13 @@ subjects_229:
   type: 
   id: "7473"
   label: "Ochrana \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
+subjects_915: 
+  created_on: 2006-01-17 15:02:43
+  code: 
+  updated_on: 2006-01-17 15:02:43
+  type: ExternalSubject
+  id: "19531"
+  label: "Energetick\xC3\xA9 prost\xC5\x99edky mobiln\xC3\xAD"
 subjects_361: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2337,6 +2470,13 @@ subjects_493:
   type: ExternalSubject
   id: "19109"
   label: "Lesnick\xC3\xA1 pedologie"
+subjects_916: 
+  created_on: 2006-01-17 15:02:43
+  code: 
+  updated_on: 2006-01-17 15:02:43
+  type: ExternalSubject
+  id: "19532"
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_362: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2358,6 +2498,13 @@ subjects_230:
   type: 
   id: "7500"
   label: "Region\xC3\xA1ln\xC3\xAD rozvoj v evropsk\xC3\xA9m spr\xC3\xA1vn\xC3\xADm prostoru DSP"
+subjects_917: 
+  created_on: 2006-01-17 15:02:43
+  code: 
+  updated_on: 2006-01-17 15:02:43
+  type: ExternalSubject
+  id: "19533"
+  label: "Technologie obr\xC3\xA1b\xC4\x9Bn\xC3\xAD d\xC5\x99eva"
 subjects_363: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2379,6 +2526,13 @@ subjects_231:
   type: 
   id: "7683"
   label: "Pr\xC3\xA1vn\xC3\xAD regulace ve\xC5\x99ejn\xC3\xA9 spr\xC3\xA1vy a region\xC3\xA1ln\xC3\xADho rozvoje"
+subjects_918: 
+  created_on: 2006-01-17 15:05:40
+  code: 
+  updated_on: 2006-01-17 15:05:40
+  type: ExternalSubject
+  id: "19534"
+  label: "Energet. prost\xC5\x99. mobiln\xC3\xAD"
 subjects_364: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2407,6 +2561,13 @@ subjects_232:
   type: 
   id: "7832"
   label: "Finance region\xC3\xA1ln\xC3\xAD spr\xC3\xA1vy"
+subjects_919: 
+  created_on: 2006-01-17 15:05:40
+  code: 
+  updated_on: 2006-01-17 15:05:40
+  type: ExternalSubject
+  id: "19535"
+  label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
 subjects_365: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2463,6 +2624,13 @@ subjects_234:
   type: 
   id: "7970"
   label: "Ve\xC5\x99ejn\xC3\xA1 zele\xC5\x88"
+subjects_920: 
+  created_on: 2006-01-17 15:05:40
+  code: 
+  updated_on: 2006-01-17 15:05:40
+  type: ExternalSubject
+  id: "19536"
+  label: "Technologie obr\xC3\xA1b\xC4\x9Bn\xC3\xAD d\xC5\x99eva"
 subjects_367: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2512,6 +2680,13 @@ subjects_236:
   type: 
   id: "8089"
   label: Ekologie v TS
+subjects_921: 
+  created_on: 2006-01-17 15:25:29
+  code: 
+  updated_on: 2006-01-17 15:25:29
+  type: ExternalSubject
+  id: "19537"
+  label: "Meteorologie a klimatologie aplikovan\xC3\xA1"
 subjects_369: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2533,6 +2708,13 @@ subjects_237:
   type: 
   id: "8091"
   label: "Explant\xC3\xA1tov\xC3\xA9 kultury"
+subjects_922: 
+  created_on: 2006-01-17 15:25:29
+  code: 
+  updated_on: 2006-01-17 15:25:29
+  type: ExternalSubject
+  id: "19538"
+  label: "Lesnick\xC3\xA1 genetika a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD lesn\xC3\xADch d\xC5\x99evin"
 subjects_106: 
   created_on: 2005-10-03 11:41:42
   code: DLRX11Y
@@ -2547,6 +2729,20 @@ subjects_238:
   type: 
   id: "8126"
   label: Fyziologie rostlin pro doktorandy
+subjects_923: 
+  created_on: 2006-01-17 16:10:42
+  code: 
+  updated_on: 2006-01-17 16:10:42
+  type: ExternalSubject
+  id: "19539"
+  label: "Krajinn\xC3\xA9 pl\xC3\xA1nov\xC3\xA1n\xC3\xAD"
+subjects_924: 
+  created_on: 2006-01-17 16:10:42
+  code: 
+  updated_on: 2006-01-17 16:10:42
+  type: ExternalSubject
+  id: "19540"
+  label: "Vegetace st\xC5\x99edn\xC3\xAD Evropy"
 subjects_370: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2568,6 +2764,13 @@ subjects_239:
   type: 
   id: "8355"
   label: Ekology in TS
+subjects_925: 
+  created_on: 2006-01-17 16:17:07
+  code: 
+  updated_on: 2006-01-17 16:17:07
+  type: ExternalSubject
+  id: "19541"
+  label: Avifauna evropy
 subjects_371: 
   created_on: 2005-10-14 08:58:10
   code: 
@@ -2582,6 +2785,13 @@ subjects_108:
   type: 
   id: "6879"
   label: "Dendrologie lesnick\xC3\xA1"
+subjects_926: 
+  created_on: 2006-01-17 16:29:15
+  code: 
+  updated_on: 2006-01-17 16:29:15
+  type: ExternalSubject
+  id: "19542"
+  label: GIS-DPZ
 subjects_240: 
   created_on: 2005-10-03 11:41:39
   code: DACA04Y
@@ -2603,6 +2813,13 @@ subjects_109:
   type: 
   id: "6881"
   label: Lesnick- botanika
+subjects_927: 
+  created_on: 2006-01-17 16:33:13
+  code: 
+  updated_on: 2006-01-17 16:33:13
+  type: ExternalSubject
+  id: "19543"
+  label: "teorie \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_241: 
   created_on: 2005-10-03 11:41:40
   code: DACA05Y
@@ -2617,6 +2834,13 @@ subjects_373:
   type: ExternalSubject
   id: "9070"
   label: "Glob\xC3\xA1ln\xC3\xAD probl\xC3\xA9my \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
+subjects_928: 
+  created_on: 2006-01-17 16:39:45
+  code: 
+  updated_on: 2006-01-17 16:39:45
+  type: ExternalSubject
+  id: "19544"
+  label: "Politika ochrany \xC5\xBDP"
 subjects_110: 
   created_on: 2005-10-03 11:41:43
   code: DLDX23Y
@@ -2638,6 +2862,13 @@ subjects_374:
   type: ExternalSubject
   id: "9071"
   label: "Modelov\xC3\xA1n\xC3\xAD a simulace biomedic\xC3\xADnsk\xC3\xBDch syst\xC3\xA9m\xC5\xAF"
+subjects_929: 
+  created_on: 2006-01-17 16:39:45
+  code: 
+  updated_on: 2006-01-17 16:39:45
+  type: ExternalSubject
+  id: "19545"
+  label: "Pr\xC3\xA1vn\xC3\xAD \xC3\xBAprava podnik\xC3\xA1n\xC3\xAD"
 subjects_111: 
   created_on: 2005-10-03 11:41:43
   code: DLBX12Y
@@ -2680,6 +2911,13 @@ subjects_376:
   type: ExternalSubject
   id: "9073"
   label: "Po\xC4\x8D\xC3\xADta\xC4\x8De"
+subjects_930: 
+  created_on: 2006-01-17 16:52:32
+  code: 
+  updated_on: 2006-01-17 16:52:32
+  type: ExternalSubject
+  id: "19546"
+  label: Avifauna evropy
 subjects_113: 
   created_on: 2005-10-03 11:41:42
   code: DLBX22Y
@@ -2701,6 +2939,13 @@ subjects_377:
   type: ExternalSubject
   id: "9074"
   label: "Neur\xC4\x8Ditost v um\xC4\x9Bl\xC3\xA9 inteligenci  \xC2\xA0"
+subjects_931: 
+  created_on: 2006-01-17 16:55:04
+  code: 
+  updated_on: 2006-01-17 16:55:04
+  type: ExternalSubject
+  id: "19547"
+  label: Avifauna evropy
 subjects_114: 
   created_on: 2005-10-03 11:41:42
   code: DLBX23Y
@@ -2743,6 +2988,13 @@ subjects_379:
   type: ExternalSubject
   id: "9076"
   label: "\xC5\xA0kolsk\xC3\xBD management"
+subjects_932: 
+  created_on: 2006-01-17 16:55:56
+  code: 
+  updated_on: 2006-01-17 16:55:56
+  type: ExternalSubject
+  id: "19548"
+  label: "Teorie \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_800: 
   created_on: 2005-12-09 11:09:46
   code: 
@@ -2764,6 +3016,13 @@ subjects_248:
   type: 
   id: "8874"
   label: Mikrobiologie FYTO
+subjects_933: 
+  created_on: 2006-01-17 16:56:49
+  code: 
+  updated_on: 2006-01-17 16:56:49
+  type: ExternalSubject
+  id: "19549"
+  label: Avifauna evropy
 subjects_801: 
   created_on: 2005-12-09 11:09:46
   code: 
@@ -2785,6 +3044,13 @@ subjects_249:
   type: 
   id: "8876"
   label: Mikrobiologie ZOO
+subjects_934: 
+  created_on: 2006-01-17 17:17:28
+  code: 
+  updated_on: 2006-01-17 17:17:28
+  type: ExternalSubject
+  id: "19550"
+  label: "Ochrana d\xC5\x99eva"
 subjects_802: 
   created_on: 2005-12-09 11:09:46
   code: 
@@ -2799,6 +3065,13 @@ subjects_380:
   type: ExternalSubject
   id: "9077"
   label: "Evropsk\xC3\xA1 integrace"
+subjects_935: 
+  created_on: 2006-01-17 17:17:28
+  code: 
+  updated_on: 2006-01-17 17:17:28
+  type: ExternalSubject
+  id: "19551"
+  label: "Historick\xC3\xA9 konstrukce"
 subjects_803: 
   created_on: 2005-12-09 11:14:10
   code: 
@@ -2820,6 +3093,13 @@ subjects_118:
   type: 
   id: "7062"
   label: Hydrologie a hydraulika
+subjects_936: 
+  created_on: 2006-01-17 17:24:01
+  code: 
+  updated_on: 2006-01-17 17:24:01
+  type: ExternalSubject
+  id: "19552"
+  label: Pedologie
 subjects_804: 
   created_on: 2005-12-09 11:14:10
   code: 
@@ -2848,6 +3128,13 @@ subjects_119:
   type: 
   id: "7064"
   label: "Vodn\xC3\xAD hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
+subjects_937: 
+  created_on: 2006-01-17 17:28:56
+  code: 
+  updated_on: 2006-01-17 17:28:56
+  type: ExternalSubject
+  id: "19553"
+  label: "Teorie \xC5\x99\xC3\xADzen\xC3\xAD"
 subjects_805: 
   created_on: 2005-12-09 11:14:10
   code: 
@@ -2869,6 +3156,13 @@ subjects_383:
   type: ExternalSubject
   id: "9080"
   label: "\xC3\x9Avod do matematick\xC3\xA9ho programov\xC3\xA1n\xC3\xAD a polyedr\xC3\xA1ln\xC3\xAD kombinatoriky"
+subjects_938: 
+  created_on: 2006-01-18 09:15:33
+  code: 
+  updated_on: 2006-01-18 09:15:33
+  type: ExternalSubject
+  id: "19554"
+  label: "Metody v operativn\xC3\xAD hydrologii-meteorologii"
 subjects_806: 
   created_on: 2005-12-09 11:39:14
   code: 
@@ -2897,6 +3191,13 @@ subjects_384:
   type: 
   id: "19000"
   label: "Matematick\xC3\xA9 modelov\xC3\xA1n\xC3\xAD"
+subjects_939: 
+  created_on: 2006-01-18 09:15:37
+  code: 
+  updated_on: 2006-01-18 09:15:37
+  type: ExternalSubject
+  id: "19555"
+  label: "Pr\xC3\xA1vn\xC3\xAD \xC3\xBAprava podnik\xC3\xA1n\xC3\xAD"
 subjects_807: 
   created_on: 2005-12-09 11:39:14
   code: 
@@ -2953,6 +3254,13 @@ subjects_386:
   type: 
   id: "19002"
   label: "Finan\xC4\x8Dn\xC3\xAD matematika"
+subjects_940: 
+  created_on: 2006-01-18 09:16:35
+  code: 
+  updated_on: 2006-01-18 09:16:35
+  type: ExternalSubject
+  id: "19556"
+  label: "Metody v operativn\xC3\xAD hydrologii-meteorologii"
 subjects_809: 
   created_on: 2005-12-09 11:39:14
   code: 
@@ -2981,6 +3289,13 @@ subjects_387:
   type: 
   id: "19003"
   label: "In\xC5\xBEen\xC3\xBDrsk\xC3\xA1 matematika"
+subjects_941: 
+  created_on: 2006-01-18 09:17:20
+  code: 
+  updated_on: 2006-01-18 09:17:20
+  type: ExternalSubject
+  id: "19557"
+  label: "Metody v operativn\xC3\xAD hydrologii-meteorologii"
 subjects_124: 
   created_on: 2005-10-03 11:41:41
   code: DLDX12Y
@@ -3002,6 +3317,13 @@ subjects_388:
   type: 
   id: "19004"
   label: "In\xC5\xBEen\xC3\xBDrsk\xC3\xA1 a finan\xC4\x8Dn\xC3\xAD matematika"
+subjects_942: 
+  created_on: 2006-01-18 09:42:11
+  code: 
+  updated_on: 2006-01-18 09:42:11
+  type: ExternalSubject
+  id: "19558"
+  label: "Zpracov\xC3\xA1n\xC3\xAD \xC3\x9APD technologi\xC3\xAD GIS"
 subjects_810: 
   created_on: 2005-12-09 11:39:14
   code: 
@@ -3044,6 +3366,13 @@ subjects_258:
   type: 
   id: "8955"
   label: Botanika
+subjects_943: 
+  created_on: 2006-01-18 09:42:11
+  code: 
+  updated_on: 2006-01-18 09:42:11
+  type: ExternalSubject
+  id: "19559"
+  label: "Architektura zahrad, park\xC5\xAF a krajiny"
 subjects_811: 
   created_on: 2005-12-09 11:46:03
   code: 
@@ -3065,6 +3394,13 @@ subjects_259:
   type: 
   id: "8956"
   label: "Genetika a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD HZ"
+subjects_944: 
+  created_on: 2006-01-18 09:42:11
+  code: 
+  updated_on: 2006-01-18 09:42:11
+  type: ExternalSubject
+  id: "19560"
+  label: "Ochrana \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_812: 
   created_on: 2005-12-09 11:46:03
   code: 
@@ -3086,6 +3422,13 @@ subjects_390:
   type: 
   id: "19006"
   label: "Teorie v\xC3\xBDrobn\xC3\xADch proces\xC5\xAF"
+subjects_945: 
+  created_on: 2006-01-18 09:46:50
+  code: 
+  updated_on: 2006-01-18 09:46:50
+  type: ExternalSubject
+  id: "19561"
+  label: Avifauna evropy
 subjects_813: 
   created_on: 2005-12-09 11:46:03
   code: 
@@ -3100,6 +3443,13 @@ subjects_391:
   type: 
   id: "19007"
   label: "Fyzik\xC3\xA1ln\xC3\xAD a technologick\xC3\xA9 vlastnosti zem\xC4\x9Bd\xC4\x9Blsk\xC3\xBDch materi\xC3\xA1l\xC5\xAF a produkt\xC5\xAF"
+subjects_946: 
+  created_on: 2006-01-18 09:46:59
+  code: 
+  updated_on: 2006-01-18 09:46:59
+  type: ExternalSubject
+  id: "19562"
+  label: Avifauna evropy
 subjects_814: 
   created_on: 2005-12-09 11:46:03
   code: 
@@ -3128,6 +3478,13 @@ subjects_392:
   type: 
   id: "19008"
   label: "Fyzik\xC3\xA1ln\xC3\xAD energetika"
+subjects_947: 
+  created_on: 2006-01-18 09:53:00
+  code: 
+  updated_on: 2006-01-18 09:53:00
+  type: ExternalSubject
+  id: "19563"
+  label: "Krajinn\xC3\xA9 pl\xC3\xA1nov\xC3\xA1n\xC3\xAD"
 subjects_815: 
   created_on: 2005-12-09 11:46:03
   code: 
@@ -3149,6 +3506,13 @@ subjects_393:
   type: 
   id: "19009"
   label: "Obnova stroj\xC5\xAF a po\xC4\x8D\xC3\xADta\xC4\x8Dov\xC3\xA1 podpora \xC5\x99\xC3\xADzen\xC3\xAD \xC3\xBAdr\xC5\xBEby"
+subjects_948: 
+  created_on: 2006-01-18 09:53:00
+  code: 
+  updated_on: 2006-01-18 09:53:00
+  type: ExternalSubject
+  id: "19564"
+  label: "Vegetace st\xC5\x99edn\xC3\xAD Evropy"
 subjects_816: 
   created_on: 2005-12-09 12:57:04
   code: 
@@ -3177,6 +3541,13 @@ subjects_394:
   type: 
   id: "19010"
   label: Tribologie
+subjects_949: 
+  created_on: 2006-01-18 09:55:36
+  code: 
+  updated_on: 2006-01-18 09:55:36
+  type: ExternalSubject
+  id: "19565"
+  label: "Pr\xC3\xA1vn\xC3\xAD aspekty \xC5\xBDP"
 subjects_817: 
   created_on: 2005-12-09 12:57:04
   code: 
@@ -3233,6 +3604,13 @@ subjects_396:
   type: 
   id: "19012"
   label: "Technologie udr\xC5\xBEov\xC3\xA1n\xC3\xAD, diagnostiky a oprav stroj\xC5\xAF"
+subjects_950: 
+  created_on: 2006-01-18 10:01:47
+  code: 
+  updated_on: 2006-01-18 10:01:47
+  type: ExternalSubject
+  id: "19566"
+  label: "Vyu\xC5\xBEit\xC3\xAD a likvidace odpad\xC5\xAF"
 subjects_819: 
   created_on: 2005-12-09 12:57:04
   code: 
@@ -3268,6 +3646,13 @@ subjects_397:
   type: 
   id: "19013"
   label: "Konstruk\xC4\x8Dn\xC3\xAD materi\xC3\xA1ly a stroj\xC3\xADrensk\xC3\xA1 technologie"
+subjects_951: 
+  created_on: 2006-01-18 10:01:47
+  code: 
+  updated_on: 2006-01-18 10:01:47
+  type: ExternalSubject
+  id: "19567"
+  label: Urbanizmus venkova
 subjects_002: 
   created_on: 2005-10-03 11:41:43
   code: DELX01Y
@@ -3296,6 +3681,13 @@ subjects_398:
   type: 
   id: "19014"
   label: "Technick\xC3\xA1 termomechanika"
+subjects_952: 
+  created_on: 2006-01-18 10:09:08
+  code: 
+  updated_on: 2006-01-18 10:09:08
+  type: ExternalSubject
+  id: "19568"
+  label: "Chemie \xC5\xBDP"
 subjects_820: 
   created_on: 2005-12-09 12:59:37
   code: 
@@ -3331,6 +3723,13 @@ subjects_399:
   type: 
   id: "19015"
   label: "Alternativn\xC3\xAD zdroje energie"
+subjects_953: 
+  created_on: 2006-01-18 10:09:08
+  code: 
+  updated_on: 2006-01-18 10:09:08
+  type: ExternalSubject
+  id: "19569"
+  label: "Ochrana \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_821: 
   created_on: 2005-12-09 12:59:37
   code: 
@@ -3380,6 +3779,13 @@ subjects_269:
   type: 
   id: "8966"
   label: Chov skotu
+subjects_954: 
+  created_on: 2006-01-18 10:10:44
+  code: 
+  updated_on: 2006-01-18 10:10:44
+  type: ExternalSubject
+  id: "19570"
+  label: "Analytika \xC5\xBDP"
 subjects_822: 
   created_on: 2005-12-09 12:59:37
   code: 
@@ -3401,6 +3807,13 @@ subjects_138:
   type: 
   id: "7143"
   label: "Ochrana les\xC5\xAF lesnick\xC3\xA1 fytopatologie"
+subjects_955: 
+  created_on: 2006-01-18 10:10:44
+  code: 
+  updated_on: 2006-01-18 10:10:44
+  type: ExternalSubject
+  id: "19571"
+  label: "Ochrana \xC5\xBEivotn\xC3\xADho prost\xC5\x99ed\xC3\xAD"
 subjects_823: 
   created_on: 2005-12-09 13:05:19
   code: 
@@ -3422,6 +3835,13 @@ subjects_139:
   type: 
   id: "7145"
   label: Mykologie
+subjects_956: 
+  created_on: 2006-01-18 10:14:23
+  code: 
+  updated_on: 2006-01-18 10:14:23
+  type: ExternalSubject
+  id: "19572"
+  label: geochemie
 subjects_824: 
   created_on: 2005-12-09 16:10:34
   code: 
@@ -3436,6 +3856,13 @@ subjects_270:
   type: 
   id: "8967"
   label: "Luka\xC5\x99stv\xC3\xAD"
+subjects_957: 
+  created_on: 2006-01-18 10:14:23
+  code: 
+  updated_on: 2006-01-18 10:14:23
+  type: ExternalSubject
+  id: "19573"
+  label: "Atmosferick\xC3\xBD aerosol "
 subjects_825: 
   created_on: 2005-12-09 16:10:34
   code: 
@@ -3457,6 +3884,13 @@ subjects_008:
   type: 
   id: "1139"
   label: "\xC4\x8Ce\xC5\xA1tina  - doktorsk\xC3\xA9 studium"
+subjects_958: 
+  created_on: 2006-01-18 10:14:23
+  code: 
+  updated_on: 2006-01-18 10:14:23
+  type: ExternalSubject
+  id: "19574"
+  label: "Metody sledov\xC3\xA1n\xC3\xAD kvality ovzdu\xC5\xA1\xC3\xAD"
 subjects_826: 
   created_on: 2005-12-14 08:44:36
   code: 
@@ -3485,6 +3919,13 @@ subjects_009:
   type: 
   id: "1159"
   label: Makroekonomie pro doktorandy
+subjects_959: 
+  created_on: 2006-01-18 10:27:05
+  code: 
+  updated_on: 2006-01-18 10:27:05
+  type: ExternalSubject
+  id: "19575"
+  label: "\xC3\x9Azemn\xC3\xAD pl\xC3\xA1nov\xC3\xA1n\xC3\xAD"
 subjects_827: 
   created_on: 2005-12-14 08:44:36
   code: 
@@ -3534,6 +3975,13 @@ subjects_274:
   type: 
   id: "8971"
   label: "Monitoring a management v\xC2\xA0ochran\xC4\x9B rostlin"
+subjects_960: 
+  created_on: 2006-01-18 10:29:13
+  code: 
+  updated_on: 2006-01-18 10:29:13
+  type: ExternalSubject
+  id: "19576"
+  label: "Ve\xC5\x99ejn\xC3\xA1 zele\xC5\x88"
 subjects_829: 
   created_on: 2005-12-14 08:44:36
   code: 
@@ -3562,6 +4010,13 @@ subjects_275:
   type: 
   id: "8972"
   label: "Nauka o rostlinn\xC3\xA9 produkci - spec. produkce rost."
+subjects_961: 
+  created_on: 2006-01-18 10:29:13
+  code: 
+  updated_on: 2006-01-18 10:29:13
+  type: ExternalSubject
+  id: "19577"
+  label: Urbanismus
 subjects_012: 
   created_on: 2005-10-03 11:41:44
   code: DEEE05Y
@@ -3583,6 +4038,13 @@ subjects_276:
   type: 
   id: "8973"
   label: "Nematologie obecn\xC3\xA1 a speci\xC3\xA1ln\xC3\xAD"
+subjects_962: 
+  created_on: 2006-01-18 10:34:06
+  code: 
+  updated_on: 2006-01-18 10:34:06
+  type: ExternalSubject
+  id: "19578"
+  label: "Ozelen\xC4\x9Bn\xC3\xAD historick\xC3\xBDch jader \xC4\x8Desk\xC3\xBDch vesnic "
 subjects_830: 
   created_on: 2005-12-14 08:44:40
   code: 
@@ -3611,6 +4073,13 @@ subjects_277:
   type: 
   id: "8974"
   label: "Obecn\xC3\xA1 fytopatologie"
+subjects_963: 
+  created_on: 2006-01-18 10:34:06
+  code: 
+  updated_on: 2006-01-18 10:34:06
+  type: ExternalSubject
+  id: "19579"
+  label: "historick\xC3\xA9 stavby I"
 subjects_831: 
   created_on: 2005-12-14 08:44:40
   code: 
@@ -3639,6 +4108,13 @@ subjects_278:
   type: 
   id: "8975"
   label: "Obecn\xC3\xA1 produkce rostlinn\xC3\xA1"
+subjects_964: 
+  created_on: 2006-01-18 10:36:46
+  code: 
+  updated_on: 2006-01-18 10:36:46
+  type: ExternalSubject
+  id: "19580"
+  label: "Historick\xC3\xA9 konstrukce"
 subjects_832: 
   created_on: 2005-12-14 08:44:40
   code: 
@@ -3688,6 +4164,13 @@ subjects_148:
   type: 
   id: "7177"
   label: Chov prasat v TS
+subjects_965: 
+  created_on: 2006-01-18 10:56:15
+  code: 
+  updated_on: 2006-01-18 10:56:15
+  type: ExternalSubject
+  id: "19581"
+  label: Urbanismus VII
 subjects_833: 
   created_on: 2005-12-14 08:44:40
   code: 
@@ -3716,6 +4199,13 @@ subjects_701:
   type: ExternalSubject
   id: "19317"
   label: "Chov kon\xC3\xAD"
+subjects_966: 
+  created_on: 2006-01-18 10:56:15
+  code: 
+  updated_on: 2006-01-18 10:56:15
+  type: ExternalSubject
+  id: "19582"
+  label: Urban Theory systems nad design
 subjects_834: 
   created_on: 2005-12-14 08:47:27
   code: 
@@ -3744,6 +4234,13 @@ subjects_280:
   type: 
   id: "8977"
   label: "Obecn\xC3\xA1 zootechnika"
+subjects_967: 
+  created_on: 2006-01-18 10:56:15
+  code: 
+  updated_on: 2006-01-18 10:56:15
+  type: ExternalSubject
+  id: "19583"
+  label: "Prostorov\xC3\xA9 a strategick\xC3\xA9 pl\xC3\xA1nov\xC3\xA1n\xC3\xAD I"
 subjects_835: 
   created_on: 2005-12-14 08:47:27
   code: 
@@ -3765,6 +4262,13 @@ subjects_281:
   type: 
   id: "8978"
   label: Obilniny
+subjects_968: 
+  created_on: 2006-01-18 10:57:06
+  code: 
+  updated_on: 2006-01-18 10:57:06
+  type: ExternalSubject
+  id: "19584"
+  label: Hydrochemie
 subjects_836: 
   created_on: 2005-12-14 08:47:27
   code: 
@@ -3800,6 +4304,13 @@ subjects_282:
   type: 
   id: "8979"
   label: "Ochrana okrasn\xC3\xBDch rostlin"
+subjects_969: 
+  created_on: 2006-01-18 10:57:06
+  code: 
+  updated_on: 2006-01-18 10:57:06
+  type: ExternalSubject
+  id: "19585"
+  label: "Limnologie speci\xC3\xA1l"
 subjects_837: 
   created_on: 2005-12-14 08:47:27
   code: 
@@ -3863,6 +4374,13 @@ subjects_284:
   type: 
   id: "8981"
   label: Olejniny
+subjects_970: 
+  created_on: 2006-01-18 10:57:06
+  code: 
+  updated_on: 2006-01-18 10:57:06
+  type: ExternalSubject
+  id: "19586"
+  label: ekofykiologie bezobrat.
 subjects_839: 
   created_on: 2005-12-14 11:08:27
   code: 
@@ -3898,6 +4416,13 @@ subjects_285:
   type: 
   id: "8982"
   label: "Pastvin\xC3\xA1\xC5\x99stv\xC3\xAD"
+subjects_971: 
+  created_on: 2006-01-18 15:34:35
+  code: 
+  updated_on: 2006-01-18 15:34:35
+  type: ExternalSubject
+  id: "19587"
+  label: "Klinick\xC3\xA1 farmakologie-odborn\xC3\xA9 semis\xC3\xA1\xC5\x99e"
 subjects_708: 
   created_on: 2005-11-21 13:56:01
   code: 
@@ -3926,6 +4451,13 @@ subjects_286:
   type: 
   id: "8983"
   label: "P\xC4\x9Bstov\xC3\xA1n\xC3\xAD okopanin"
+subjects_972: 
+  created_on: 2006-01-18 15:35:59
+  code: 
+  updated_on: 2006-01-18 15:35:59
+  type: ExternalSubject
+  id: "19588"
+  label: "Klinick\xC3\xA1 farmakologie-odborn\xC3\xA9 semis\xC3\xA1\xC5\x99e"
 subjects_840: 
   created_on: 2005-12-14 11:08:27
   code: 
@@ -3961,6 +4493,13 @@ subjects_287:
   type: 
   id: "8984"
   label: "P\xC3\xADcniny na orn\xC3\xA9 p\xC5\xAFd\xC4\x9B"
+subjects_973: 
+  created_on: 2006-01-18 15:37:09
+  code: 
+  updated_on: 2006-01-18 15:37:09
+  type: ExternalSubject
+  id: "19589"
+  label: "Klinick\xC3\xA1 farmakologie-odborn\xC3\xA9 semis\xC3\xA1\xC5\x99e"
 subjects_841: 
   created_on: 2005-12-14 11:08:27
   code: 
@@ -3989,6 +4528,13 @@ subjects_288:
   type: 
   id: "8985"
   label: Prevence chorob a poruch plodnosti
+subjects_974: 
+  created_on: 2006-01-18 15:38:34
+  code: 
+  updated_on: 2006-01-18 15:38:34
+  type: ExternalSubject
+  id: "19590"
+  label: "Klinick\xC3\xA1 farmakologie-odborn\xC3\xA9 semis\xC3\xA1\xC5\x99e"
 subjects_842: 
   created_on: 2005-12-14 12:12:07
   code: 
@@ -4024,6 +4570,13 @@ subjects_289:
   type: 
   id: "8986"
   label: "Prevence parazit\xC3\xB3z HZ"
+subjects_975: 
+  created_on: 2006-01-18 15:40:58
+  code: 
+  updated_on: 2006-01-18 15:40:58
+  type: ExternalSubject
+  id: "19591"
+  label: "Klinick\xC3\xA1 farmakologie-odborn\xC3\xA9 semin\xC3\xA1\xC5\x99e"
 subjects_843: 
   created_on: 2005-12-15 16:03:27
   code: 
@@ -4066,6 +4619,13 @@ subjects_159:
   type: 
   id: "7214"
   label: "Urbanismus venkova a \xC3\xBAzemn\xC3\xAD pl\xC3\xA1nov\xC3\xA1n\xC3\xAD"
+subjects_976: 
+  created_on: 2006-01-18 15:48:12
+  code: 
+  updated_on: 2006-01-18 15:48:12
+  type: ExternalSubject
+  id: "19592"
+  label: Fyziologie rostlin
 subjects_844: 
   created_on: 2005-12-15 17:15:21
   code: 
@@ -4094,6 +4654,13 @@ subjects_028:
   type: 
   id: "1357"
   label: "Matematick\xC3\xA1 teorie program\xC5\xAF"
+subjects_977: 
+  created_on: 2006-01-19 11:10:32
+  code: 
+  updated_on: 2006-01-19 11:10:32
+  type: ExternalSubject
+  id: "19593"
+  label: "Fyziologie \xC5\xBEivo\xC4\x8Dich\xC5\xAF"
 subjects_845: 
   created_on: 2005-12-15 18:41:46
   code: 
@@ -4122,6 +4689,13 @@ subjects_029:
   type: 
   id: "1358"
   label: "Um\xC4\x9Bl\xC3\xA1 inteligence a znalostn\xC3\xAD in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
+subjects_978: 
+  created_on: 2006-01-19 11:10:32
+  code: 
+  updated_on: 2006-01-19 11:10:32
+  type: ExternalSubject
+  id: "19594"
+  label: "Genetika a \xC5\xA1lecht\xC4\x9Bn\xC3\xAD zv\xC3\xAD\xC5\x99at"
 subjects_846: 
   created_on: 2005-12-16 14:54:32
   code: 
@@ -4150,6 +4724,13 @@ subjects_292:
   type: 
   id: "8989"
   label: "Rostlinol\xC3\xA9ka\xC5\x99sk\xC3\xA1 bakteriologie"
+subjects_979: 
+  created_on: 2006-01-19 11:10:32
+  code: 
+  updated_on: 2006-01-19 11:10:32
+  type: ExternalSubject
+  id: "19595"
+  label: "Statistick\xC3\xA9 metody"
 subjects_847: 
   created_on: 2005-12-16 14:54:32
   code: 
@@ -4213,6 +4794,13 @@ subjects_294:
   type: 
   id: "8991"
   label: "Ryb\xC3\xA1\xC5\x99stv\xC3\xAD"
+subjects_980: 
+  created_on: 2006-01-19 11:10:32
+  code: 
+  updated_on: 2006-01-19 11:10:32
+  type: ExternalSubject
+  id: "19596"
+  label: "Chov ovc\xC3\xAD v TS"
 subjects_849: 
   created_on: 2005-12-19 19:15:12
   code: 
@@ -4248,6 +4836,13 @@ subjects_295:
   type: 
   id: "8992"
   label: "Speci\xC3\xA1ln\xC3\xAD biochemie rostlin"
+subjects_981: 
+  created_on: 2006-01-19 11:10:32
+  code: 
+  updated_on: 2006-01-19 11:10:32
+  type: ExternalSubject
+  id: "19597"
+  label: "Speci\xC3\xA1ln\xC3\xAD zootechnika v TS"
 subjects_718: 
   created_on: 2005-11-22 09:51:36
   code: 
@@ -4276,6 +4871,13 @@ subjects_296:
   type: 
   id: "8993"
   label: "Speci\xC3\xA1ln\xC3\xAD biochemie \xC5\xBEivo\xC4\x8Dich\xC5\xAF"
+subjects_982: 
+  created_on: 2006-01-19 11:10:32
+  code: 
+  updated_on: 2006-01-19 11:10:32
+  type: ExternalSubject
+  id: "19598"
+  label: "V\xC3\xBD\xC5\xBEiva a krmen\xC3\xAD zv\xC3\xAD\xC5\x99at v TS"
 subjects_850: 
   created_on: 2005-12-19 19:15:12
   code: 
@@ -4311,6 +4913,20 @@ subjects_297:
   type: 
   id: "8994"
   label: "Speci\xC3\xA1ln\xC3\xAD zootechnika"
+subjects_983: 
+  created_on: 2006-01-19 11:10:32
+  code: 
+  updated_on: 2006-01-19 11:10:32
+  type: ExternalSubject
+  id: "19599"
+  label: "V\xC3\xBDroba krmn\xC3\xBDch sm\xC4\x9Bs\xC3\xAD v TS"
+subjects_851: 
+  created_on: 2006-01-15 16:49:53
+  code: 
+  updated_on: 2006-01-15 16:49:53
+  type: ExternalSubject
+  id: "19467"
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_034: 
   created_on: 2005-10-03 11:41:44
   code: DEUE05Y
@@ -4332,6 +4948,20 @@ subjects_298:
   type: 
   id: "8995"
   label: "\xC5\xA0k\xC5\xAFdci poln\xC3\xADch a zahradn\xC3\xADch plodin"
+subjects_984: 
+  created_on: 2006-01-19 12:12:59
+  code: 
+  updated_on: 2006-01-19 12:12:59
+  type: ExternalSubject
+  id: "19600"
+  label: "V\xC3\xBD\xC5\xBEiva a krmen\xC3\xAD zv\xC3\xAD\xC5\x99at v TS"
+subjects_852: 
+  created_on: 2006-01-15 16:49:53
+  code: 
+  updated_on: 2006-01-15 16:49:53
+  type: ExternalSubject
+  id: "19468"
+  label: Applied strategic management
 subjects_035: 
   created_on: 2005-10-03 11:41:45
   code: DEHE01Y
@@ -4360,6 +4990,20 @@ subjects_720:
   type: ExternalSubject
   id: "19336"
   label: "D\xC5\x99ev\xC4\x9Bn\xC3\xA9 konstrukce"
+subjects_985: 
+  created_on: 2006-01-20 09:43:11
+  code: 
+  updated_on: 2006-01-20 09:43:11
+  type: ExternalSubject
+  id: "19601"
+  label: "Klinick\xC3\xA1 farmakologie"
+subjects_853: 
+  created_on: 2006-01-15 16:51:56
+  code: 
+  updated_on: 2006-01-15 16:51:56
+  type: ExternalSubject
+  id: "19469"
+  label: Applied strategic management
 subjects_036: 
   created_on: 2005-10-03 11:41:45
   code: DAE02Y
@@ -4381,6 +5025,20 @@ subjects_721:
   type: ExternalSubject
   id: "19337"
   label: "Odv\xC4\x9Btvov\xC3\xA1 ekonomika a \xC5\x99\xC3\xADzen\xC3\xAD podniku"
+subjects_986: 
+  created_on: 2006-01-20 09:43:41
+  code: 
+  updated_on: 2006-01-20 09:43:41
+  type: ExternalSubject
+  id: "19602"
+  label: "Klinick\xC3\xA1 farmakologie"
+subjects_854: 
+  created_on: 2006-01-15 16:51:56
+  code: 
+  updated_on: 2006-01-15 16:51:56
+  type: ExternalSubject
+  id: "19470"
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_037: 
   created_on: 2005-10-03 11:41:45
   code: DEHE02Y
@@ -4409,6 +5067,20 @@ subjects_038:
   type: 
   id: "1369"
   label: "D\xC4\x9Bjiny ekonomick\xC3\xBDch teori\xC3\xAD"
+subjects_987: 
+  created_on: 2006-01-20 09:43:59
+  code: 
+  updated_on: 2006-01-20 09:43:59
+  type: ExternalSubject
+  id: "19603"
+  label: "Klinick\xC3\xA1 farmakologie"
+subjects_855: 
+  created_on: 2006-01-15 16:53:39
+  code: 
+  updated_on: 2006-01-15 16:53:39
+  type: ExternalSubject
+  id: "19471"
+  label: Applied strategic management
 subjects_039: 
   created_on: 2005-10-03 11:41:44
   code: DENE02Y
@@ -4423,6 +5095,20 @@ subjects_723:
   type: ExternalSubject
   id: "19339"
   label: "\xC5\xBDiv\xC3\xA9 syst\xC3\xA9my"
+subjects_988: 
+  created_on: 2006-01-20 10:41:52
+  code: 
+  updated_on: 2006-01-20 10:41:52
+  type: ExternalSubject
+  id: "19604"
+  label: "Po\xC5\xBE\xC3\xA1rn\xC3\xAD ochrana"
+subjects_856: 
+  created_on: 2006-01-15 16:53:39
+  code: 
+  updated_on: 2006-01-15 16:53:39
+  type: ExternalSubject
+  id: "19472"
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_170: 
   created_on: 2005-10-03 11:41:41
   code: DLEX37Y
@@ -4437,6 +5123,20 @@ subjects_724:
   type: ExternalSubject
   id: "19340"
   label: "Chov kon\xC3\xAD"
+subjects_989: 
+  created_on: 2006-01-23 11:23:11
+  code: 
+  updated_on: 2006-01-23 11:23:11
+  type: ExternalSubject
+  id: "19605"
+  label: Archeologie krajiny
+subjects_857: 
+  created_on: 2006-01-15 19:19:19
+  code: 
+  updated_on: 2006-01-15 19:19:19
+  type: ExternalSubject
+  id: "19473"
+  label: Applied strategic management
 subjects_171: 
   created_on: 2005-10-03 11:41:43
   code: DLEX38Y
@@ -4451,6 +5151,13 @@ subjects_725:
   type: ExternalSubject
   id: "19341"
   label: Informatika
+subjects_858: 
+  created_on: 2006-01-15 19:19:19
+  code: 
+  updated_on: 2006-01-15 19:19:19
+  type: ExternalSubject
+  id: "19474"
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_172: 
   created_on: 2005-10-03 11:41:41
   code: DLEX21Y
@@ -4472,6 +5179,20 @@ subjects_040:
   type: 
   id: "1371"
   label: "Soci\xC3\xA1ln\xC3\xAD s\xC3\xADt\xC4\x9B, akt\xC3\xA9\xC5\x99i a instituce v region\xC3\xA1ln\xC3\xADm rozvoji - DSP"
+subjects_990: 
+  created_on: 2006-01-23 11:23:11
+  code: 
+  updated_on: 2006-01-23 11:23:11
+  type: ExternalSubject
+  id: "19606"
+  label: Urbanismus
+subjects_859: 
+  created_on: 2006-01-15 19:28:10
+  code: 
+  updated_on: 2006-01-15 19:28:10
+  type: ExternalSubject
+  id: "19475"
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_173: 
   created_on: 2005-10-03 11:41:41
   code: DLEX22Y
@@ -4493,6 +5214,13 @@ subjects_041:
   type: 
   id: "1372"
   label: "Mezin\xC3\xA1rodn\xC3\xAD ekonomie"
+subjects_991: 
+  created_on: 2006-01-23 11:23:11
+  code: 
+  updated_on: 2006-01-23 11:23:11
+  type: ExternalSubject
+  id: "19607"
+  label: "Krajinn\xC3\xA1 architektura"
 subjects_174: 
   created_on: 2005-10-03 11:41:42
   code: DLEX23Y
@@ -4514,6 +5242,20 @@ subjects_042:
   type: 
   id: "1373"
   label: "Komunikace mezi kulturami (Aplikace v obchodn\xC3\xADm jedn\xC3\xA1n\xC3\xAD)"
+subjects_992: 
+  created_on: 2006-01-23 11:24:38
+  code: 
+  updated_on: 2006-01-23 11:24:38
+  type: ExternalSubject
+  id: "19608"
+  label: Archeologie krajiny
+subjects_860: 
+  created_on: 2006-01-15 19:28:10
+  code: 
+  updated_on: 2006-01-15 19:28:10
+  type: ExternalSubject
+  id: "19476"
+  label: Applied strategic management
 subjects_175: 
   created_on: 2005-10-03 11:41:43
   code: DLEX41Y
@@ -4535,6 +5277,20 @@ subjects_043:
   type: 
   id: "1374"
   label: "Politologie region\xC3\xA1ln\xC3\xADho rozvoje - DSP"
+subjects_993: 
+  created_on: 2006-01-23 11:24:38
+  code: 
+  updated_on: 2006-01-23 11:24:38
+  type: ExternalSubject
+  id: "19609"
+  label: Urbanismus
+subjects_861: 
+  created_on: 2006-01-16 12:45:20
+  code: 
+  updated_on: 2006-01-16 12:45:20
+  type: ExternalSubject
+  id: "19477"
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_176: 
   created_on: 2005-10-03 11:41:43
   code: DLEX43Y
@@ -4549,6 +5305,20 @@ subjects_044:
   type: 
   id: "1375"
   label: "Bankovnictv\xC3\xAD"
+subjects_994: 
+  created_on: 2006-01-23 11:24:38
+  code: 
+  updated_on: 2006-01-23 11:24:38
+  type: ExternalSubject
+  id: "19610"
+  label: "Krajinn\xC3\xA1 architektura"
+subjects_862: 
+  created_on: 2006-01-16 12:47:47
+  code: 
+  updated_on: 2006-01-16 12:47:47
+  type: ExternalSubject
+  id: "19478"
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_177: 
   created_on: 2005-10-03 11:41:43
   code: DLEX42Y
@@ -4570,6 +5340,20 @@ subjects_045:
   type: 
   id: "1376"
   label: "\xC3\x9A\xC4\x8Detn\xC3\xAD syst\xC3\xA9my podnik\xC5\xAF agrokomplexu"
+subjects_995: 
+  created_on: 2006-01-23 11:37:40
+  code: 
+  updated_on: 2006-01-23 11:37:40
+  type: ExternalSubject
+  id: "19611"
+  label: "Nauka o d\xC5\x99ev\xC4\x9B"
+subjects_863: 
+  created_on: 2006-01-16 12:51:06
+  code: 
+  updated_on: 2006-01-16 12:51:06
+  type: ExternalSubject
+  id: "19479"
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_178: 
   created_on: 2005-10-03 11:41:43
   code: DLEX44Y
@@ -4591,6 +5375,20 @@ subjects_046:
   type: 
   id: "1377"
   label: "Da\xC5\x88ov\xC3\xA1 soustava"
+subjects_996: 
+  created_on: 2006-01-23 11:37:40
+  code: 
+  updated_on: 2006-01-23 11:37:40
+  type: ExternalSubject
+  id: "19612"
+  label: "D\xC5\x99eva\xC5\x99sk\xC3\xA9 stroje"
+subjects_864: 
+  created_on: 2006-01-16 18:55:22
+  code: 
+  updated_on: 2006-01-16 18:55:22
+  type: ExternalSubject
+  id: "19480"
+  label: "Klinick\xC3\xA1 farmakologie"
 subjects_179: 
   created_on: 2005-10-03 11:41:41
   code: DLEX12Y
@@ -4619,6 +5417,20 @@ subjects_047:
   type: 
   id: "1379"
   label: "Metodologie v\xC4\x9Bdy - DSP - AF"
+subjects_997: 
+  created_on: 2006-01-23 21:33:42
+  code: 
+  updated_on: 2006-01-23 21:33:42
+  type: ExternalSubject
+  id: "19613"
+  label: "Digit\xC3\xA1ln\xC3\xAD katastr"
+subjects_865: 
+  created_on: 2006-01-17 09:09:43
+  code: 
+  updated_on: 2006-01-17 09:09:43
+  type: ExternalSubject
+  id: "19481"
+  label: "lesnick\xC3\xA1 pedologie"
 subjects_601: 
   created_on: 2005-10-24 08:42:19
   code: 
@@ -4647,6 +5459,20 @@ subjects_049:
   type: 
   id: "1381"
   label: "Infrastruktura informa\xC4\x8Dn\xC3\xADch syst\xC3\xA9m\xC5\xAF"
+subjects_998: 
+  created_on: 2006-01-23 21:33:42
+  code: 
+  updated_on: 2006-01-23 21:33:42
+  type: ExternalSubject
+  id: "19614"
+  label: "Digit\xC3\xA1ln\xC3\xAD kartografie"
+subjects_866: 
+  created_on: 2006-01-17 10:30:48
+  code: 
+  updated_on: 2006-01-17 10:30:48
+  type: ExternalSubject
+  id: "19482"
+  label: Urbanismus
 subjects_602: 
   created_on: 2005-10-24 08:42:19
   code: 
@@ -4668,6 +5494,20 @@ subjects_180:
   type: 
   id: "7285"
   label: Obecn- ekologie
+subjects_999: 
+  created_on: 2006-01-25 13:37:38
+  code: 
+  updated_on: 2006-01-25 13:37:38
+  type: ExternalSubject
+  id: "19615"
+  label: Pedologie
+subjects_867: 
+  created_on: 2006-01-17 10:30:48
+  code: 
+  updated_on: 2006-01-17 10:30:48
+  type: ExternalSubject
+  id: "19483"
+  label: "Krajinn\xC3\xA1 architektura"
 subjects_603: 
   created_on: 2005-10-24 08:42:19
   code: 
@@ -4689,6 +5529,13 @@ subjects_181:
   type: 
   id: "7287"
   label: "Zoologie obratlovc\xC5\xAF"
+subjects_868: 
+  created_on: 2006-01-17 10:30:48
+  code: 
+  updated_on: 2006-01-17 10:30:48
+  type: ExternalSubject
+  id: "19484"
+  label: Archeologie krajiny
 subjects_604: 
   created_on: 2005-10-24 08:50:44
   code: 
@@ -4717,6 +5564,13 @@ subjects_182:
   type: 
   id: "7289"
   label: Zoologie
+subjects_869: 
+  created_on: 2006-01-17 11:28:54
+  code: 
+  updated_on: 2006-01-17 11:28:54
+  type: ExternalSubject
+  id: "19485"
+  label: "Sledov\xC3\xA1n\xC3\xAD zm\xC4\x9Bn v krajin\xC4\x9B"
 subjects_605: 
   created_on: 2005-10-24 08:56:16
   code: 
@@ -4773,6 +5627,13 @@ subjects_184:
   type: 
   id: "7293"
   label: "Ekologie pt\xC3\xA1k\xC5\xAF"
+subjects_870: 
+  created_on: 2006-01-17 11:28:54
+  code: 
+  updated_on: 2006-01-17 11:28:54
+  type: ExternalSubject
+  id: "19486"
+  label: "Krajinn\xC3\xA1 architektura"
 subjects_607: 
   created_on: 2005-10-24 09:00:24
   code: 
@@ -4801,6 +5662,13 @@ subjects_185:
   type: 
   id: "7295"
   label: Lesotechnick- meliorace
+subjects_871: 
+  created_on: 2006-01-17 12:03:03
+  code: 
+  updated_on: 2006-01-17 12:03:03
+  type: ExternalSubject
+  id: "19487"
+  label: "Kalibrace a verifikace model\xC5\xAF"
 subjects_608: 
   created_on: 2005-10-24 09:00:24
   code: 
@@ -4822,6 +5690,13 @@ subjects_186:
   type: 
   id: "7296"
   label: "Rekultivace p\xC5\xAFdy a odpadov\xC3\xA9 hospod\xC3\xA1\xC5\x99stv\xC3\xAD"
+subjects_872: 
+  created_on: 2006-01-17 12:03:03
+  code: 
+  updated_on: 2006-01-17 12:03:03
+  type: ExternalSubject
+  id: "19488"
+  label: "Operativn\xC3\xAD metody v hydrologii"
 subjects_740: 
   created_on: 2005-11-24 08:38:59
   code: 
@@ -4850,6 +5725,13 @@ subjects_187:
   type: 
   id: "7299"
   label: Dendrometrie
+subjects_873: 
+  created_on: 2006-01-17 12:10:54
+  code: 
+  updated_on: 2006-01-17 12:10:54
+  type: ExternalSubject
+  id: "19489"
+  label: Biostatistika
 subjects_741: 
   created_on: 2005-11-24 08:38:59
   code: 
@@ -4871,6 +5753,13 @@ subjects_188:
   type: 
   id: "7301"
   label: "Hospod\xC3\xA1\xC5\x99sk\xC3\xA1 \xC3\xBAprava les\xC5\xAF"
+subjects_874: 
+  created_on: 2006-01-17 12:10:54
+  code: 
+  updated_on: 2006-01-17 12:10:54
+  type: ExternalSubject
+  id: "19490"
+  label: Batrachdogie a herpdologie
 subjects_742: 
   created_on: 2005-11-24 08:45:45
   code: 
@@ -4899,6 +5788,13 @@ subjects_610:
   type: ExternalSubject
   id: "19226"
   label: "Biostatistika a pl\xC3\xA1nov\xC3\xA1n\xC3\xAD ekologick\xC3\xBDch pokus\xC5\xAF "
+subjects_875: 
+  created_on: 2006-01-17 12:10:54
+  code: 
+  updated_on: 2006-01-17 12:10:54
+  type: ExternalSubject
+  id: "19491"
+  label: "Ekol. oboj\xC5\xBE. a plaz\xC5\xAF"
 subjects_743: 
   created_on: 2005-11-24 08:45:45
   code: 
@@ -4920,6 +5816,13 @@ subjects_611:
   type: ExternalSubject
   id: "19227"
   label: Meteorologie
+subjects_876: 
+  created_on: 2006-01-17 12:10:55
+  code: 
+  updated_on: 2006-01-17 12:10:55
+  type: ExternalSubject
+  id: "19492"
+  label: "Molekul\xC3\xA1rn\xC3\xAD genetiky"
 subjects_744: 
   created_on: 2005-11-24 08:45:46
   code: 
@@ -4948,6 +5851,13 @@ subjects_190:
   type: 
   id: "7304"
   label: "Aplikovan\xC3\xA1 statistika"
+subjects_877: 
+  created_on: 2006-01-17 12:14:01
+  code: 
+  updated_on: 2006-01-17 12:14:01
+  type: ExternalSubject
+  id: "19493"
+  label: "Popula\xC4\x8Dn\xC3\xAD ekologie"
 subjects_745: 
   created_on: 2005-11-24 08:45:46
   code: 
@@ -4969,6 +5879,13 @@ subjects_613:
   type: ExternalSubject
   id: "19229"
   label: "Biologie helmint\xC5\xAF"
+subjects_878: 
+  created_on: 2006-01-17 12:14:01
+  code: 
+  updated_on: 2006-01-17 12:14:01
+  type: ExternalSubject
+  id: "19494"
+  label: "Praktick\xC3\xA1 metodologie v\xC4\x9Bdy"
 subjects_746: 
   created_on: 2005-11-24 08:50:53
   code: 
@@ -4997,6 +5914,13 @@ subjects_614:
   type: ExternalSubject
   id: "19230"
   label: Applied strategic management
+subjects_879: 
+  created_on: 2006-01-17 12:14:01
+  code: 
+  updated_on: 2006-01-17 12:14:01
+  type: ExternalSubject
+  id: "19495"
+  label: "Sociobiologie a behavior\xC3\xA1ln\xC3\xAD etologie"
 subjects_747: 
   created_on: 2005-11-24 08:50:53
   code: 
@@ -5053,6 +5977,13 @@ subjects_616:
   type: ExternalSubject
   id: "19232"
   label: "Krajinn\xC3\xA1 architektura"
+subjects_880: 
+  created_on: 2006-01-17 12:14:01
+  code: 
+  updated_on: 2006-01-17 12:14:01
+  type: ExternalSubject
+  id: "19496"
+  label: "Principy a metody systematick\xC3\xA9 zoologie"
 subjects_749: 
   created_on: 2005-11-24 09:06:28
   code: 
@@ -5081,6 +6012,13 @@ subjects_617:
   type: ExternalSubject
   id: "19233"
   label: "Z\xC3\xA1sady vodn\xC3\xADho hospod\xC3\xA1\xC5\x99stv\xC3\xAD a managementu povod\xC3\xAD"
+subjects_881: 
+  created_on: 2006-01-17 12:16:36
+  code: 
+  updated_on: 2006-01-17 12:16:36
+  type: ExternalSubject
+  id: "19497"
+  label: Etologie II.
 subjects_064: 
   created_on: 2005-10-03 11:41:45
   code: DESE09Y
@@ -5102,6 +6040,13 @@ subjects_618:
   type: ExternalSubject
   id: "19234"
   label: "Krajinn\xC3\xA9 pl\xC3\xA1nov\xC3\xA1n\xC3\xAD"
+subjects_882: 
+  created_on: 2006-01-17 12:33:42
+  code: 
+  updated_on: 2006-01-17 12:33:42
+  type: ExternalSubject
+  id: "19498"
+  label: "V\xC3\xBDvoj p\xC5\x99\xC3\xADrody"
 subjects_065: 
   created_on: 2005-10-03 11:41:44
   code: DEIX05Y
@@ -5130,6 +6075,13 @@ subjects_619:
   type: ExternalSubject
   id: "19235"
   label: "\xC3\x9A\xC4\x8Detnictv\xC3\xAD IAS/IFRS"
+subjects_883: 
+  created_on: 2006-01-17 12:33:42
+  code: 
+  updated_on: 2006-01-17 12:33:42
+  type: ExternalSubject
+  id: "19499"
+  label: "Z\xC3\xA1klady etologie"
 subjects_066: 
   created_on: 2005-10-03 11:41:44
   code: DEIX01Y
@@ -5151,6 +6103,13 @@ subjects_751:
   type: ExternalSubject
   id: "19367"
   label: Odpady
+subjects_884: 
+  created_on: 2006-01-17 12:33:42
+  code: 
+  updated_on: 2006-01-17 12:33:42
+  type: ExternalSubject
+  id: "19500"
+  label: Biostatistika
 subjects_067: 
   created_on: 2005-10-03 11:41:45
   code: DEIX02Y
@@ -5179,6 +6138,13 @@ subjects_752:
   type: ExternalSubject
   id: "19368"
   label: Informatika
+subjects_885: 
+  created_on: 2006-01-17 12:33:42
+  code: 
+  updated_on: 2006-01-17 12:33:42
+  type: ExternalSubject
+  id: "19501"
+  label: Ornitologie
 subjects_068: 
   created_on: 2005-10-03 11:41:44
   code: DEIX03Y
@@ -5200,6 +6166,13 @@ subjects_753:
   type: ExternalSubject
   id: "19369"
   label: "Anaerobn\xC3\xAD fermentace organic.mat."
+subjects_886: 
+  created_on: 2006-01-17 12:33:42
+  code: 
+  updated_on: 2006-01-17 12:33:42
+  type: ExternalSubject
+  id: "19502"
+  label: "Fauna savc\xC5\xAF Evropy"
 subjects_069: 
   created_on: 2005-10-03 11:41:46
   code: DEIE16E
@@ -5221,6 +6194,13 @@ subjects_754:
   type: ExternalSubject
   id: "19370"
   label: "Informatika (spec. software a s\xC3\xADt\xC4\x9B)"
+subjects_887: 
+  created_on: 2006-01-17 12:35:25
+  code: 
+  updated_on: 2006-01-17 12:35:25
+  type: ExternalSubject
+  id: "19503"
+  label: Etologie
 subjects_623: 
   created_on: 2005-10-25 21:31:19
   code: 
@@ -5235,6 +6215,13 @@ subjects_755:
   type: ExternalSubject
   id: "19371"
   label: Proengineer 2
+subjects_888: 
+  created_on: 2006-01-17 12:35:25
+  code: 
+  updated_on: 2006-01-17 12:35:25
+  type: ExternalSubject
+  id: "19504"
+  label: Biostatistika
 subjects_624: 
   created_on: 2005-10-25 21:31:19
   code: 
@@ -5256,6 +6243,13 @@ subjects_070:
   type: 
   id: "1732"
   label: "Objektov\xC4\x9B orientovan\xC3\xBD p\xC5\x99\xC3\xADstup ve tvorb\xC4\x9B softwaru"
+subjects_889: 
+  created_on: 2006-01-17 12:35:25
+  code: 
+  updated_on: 2006-01-17 12:35:25
+  type: ExternalSubject
+  id: "19505"
+  label: Ornitologie
 subjects_625: 
   created_on: 2005-10-25 21:53:00
   code: 
@@ -5298,6 +6292,13 @@ subjects_072:
   type: 
   id: "1735"
   label: "Prost\xC5\x99edky DTP"
+subjects_890: 
+  created_on: 2006-01-17 12:37:37
+  code: 
+  updated_on: 2006-01-17 12:37:37
+  type: ExternalSubject
+  id: "19506"
+  label: "ekologie speci\xC3\xA1ln\xC3\xAD I."
 subjects_627: 
   created_on: 2005-10-25 23:55:29
   code: 
@@ -5319,6 +6320,13 @@ subjects_073:
   type: 
   id: "1736"
   label: "Syst\xC3\xA9mov\xC3\xA1 integrace"
+subjects_891: 
+  created_on: 2006-01-17 12:37:37
+  code: 
+  updated_on: 2006-01-17 12:37:37
+  type: ExternalSubject
+  id: "19507"
+  label: "V\xC3\xBDvoj glob\xC3\xA1ln\xC3\xADho ekosyst\xC3\xA9mu II."
 subjects_628: 
   created_on: 2005-10-27 09:43:57
   code: 
@@ -5333,6 +6341,13 @@ subjects_074:
   type: 
   id: "1737"
   label: "Syst\xC3\xA9mov\xC3\xA9 in\xC5\xBEen\xC3\xBDrstv\xC3\xAD"
+subjects_892: 
+  created_on: 2006-01-17 12:44:01
+  code: 
+  updated_on: 2006-01-17 12:44:01
+  type: ExternalSubject
+  id: "19508"
+  label: "Operativn\xC3\xAD metody v hydrologii"
 subjects_760: 
   created_on: 2005-11-24 09:44:06
   code: 
@@ -5354,6 +6369,13 @@ subjects_075:
   type: 
   id: "1739"
   label: Projecting of information systems
+subjects_893: 
+  created_on: 2006-01-17 12:44:01
+  code: 
+  updated_on: 2006-01-17 12:44:01
+  type: ExternalSubject
+  id: "19509"
+  label: "Kalibrace a verifikace model\xC5\xAF"
 subjects_761: 
   created_on: 2005-11-24 10:26:38
   code: 
@@ -5368,6 +6390,13 @@ subjects_076:
   type: 
   id: "1742"
   label: Statistika v informatice
+subjects_894: 
+  created_on: 2006-01-17 12:48:59
+  code: 
+  updated_on: 2006-01-17 12:48:59
+  type: ExternalSubject
+  id: "19510"
+  label: "Kalibrace a verifikace model\xC5\xAF"
 subjects_630: 
   created_on: 2005-10-27 09:43:57
   code: 
@@ -5389,6 +6418,13 @@ subjects_077:
   type: 
   id: "1745"
   label: "Marketingov\xC3\xA9 \xC5\x99\xC3\xADzen\xC3\xAD"
+subjects_895: 
+  created_on: 2006-01-17 12:48:59
+  code: 
+  updated_on: 2006-01-17 12:48:59
+  type: ExternalSubject
+  id: "19511"
+  label: "Operativn\xC3\xAD metody v hydrologii"
 subjects_631: 
   created_on: 2005-10-27 09:43:57
   code: 
@@ -5410,6 +6446,13 @@ subjects_078:
   type: 
   id: "1747"
   label: "Poradenstv\xC3\xAD pro \xC5\x99\xC3\xADzen\xC3\xAD"
+subjects_896: 
+  created_on: 2006-01-17 13:17:45
+  code: 
+  updated_on: 2006-01-17 13:17:45
+  type: ExternalSubject
+  id: "19512"
+  label: Geobiocenologie
 subjects_500: 
   created_on: 2005-10-20 15:58:34
   code: 
@@ -5438,6 +6481,13 @@ subjects_079:
   type: 
   id: "1748"
   label: "Provoz a hospoda\xC5\x99en\xC3\xAD podniku"
+subjects_897: 
+  created_on: 2006-01-17 13:17:45
+  code: 
+  updated_on: 2006-01-17 13:17:45
+  type: ExternalSubject
+  id: "19513"
+  label: Pedologie
 subjects_501: 
   created_on: 2005-10-20 15:58:34
   code: 
@@ -5459,6 +6509,13 @@ subjects_765:
   type: ExternalSubject
   id: "19381"
   label: Management a marketing
+subjects_898: 
+  created_on: 2006-01-17 13:17:45
+  code: 
+  updated_on: 2006-01-17 13:17:45
+  type: ExternalSubject
+  id: "19514"
+  label: Geobotanika
 subjects_502: 
   created_on: 2005-10-20 15:59:10
   code: 
@@ -5487,6 +6544,13 @@ subjects_080:
   type: 
   id: "1749"
   label: "Pl\xC3\xA1nov\xC3\xA1n\xC3\xAD a prognostika"
+subjects_899: 
+  created_on: 2006-01-17 13:32:35
+  code: 
+  updated_on: 2006-01-17 13:32:35
+  type: ExternalSubject
+  id: "19515"
+  label: "B\xC3\xA1\xC5\x88sk\xC3\xA9 technologie"
 subjects_503: 
   created_on: 2005-10-20 15:59:10
   code: 

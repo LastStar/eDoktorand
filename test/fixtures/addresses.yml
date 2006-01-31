@@ -529,6 +529,16 @@ addresses_081:
   street: "Le\xC5\xA1kovice"
   address_type_id: "1"
   state: 
+addresses_270: 
+  city: "Vl\xC4\x8Dkovice v Podkrko"
+  zip: "54444"
+  student_id: "4387"
+  orient_number: 
+  desc_number: "13"
+  id: "270"
+  street: " -"
+  address_type_id: "1"
+  state: 
 addresses_244: 
   city: Praha 6
   zip: 165 21
@@ -587,6 +597,16 @@ addresses_137:
   desc_number: "1611"
   id: "137"
   street: "T\xC5\x99\xC3\xADda Legi\xC3\xAD"
+  address_type_id: "1"
+  state: 
+addresses_271: 
+  city: Praha 5
+  zip: 155 00
+  student_id: "4517"
+  orient_number: 
+  desc_number: 1538/3
+  id: "271"
+  street: "Hostinsk\xC3\xA9ho"
   address_type_id: "1"
   state: 
 addresses_245: 
@@ -657,6 +677,16 @@ addresses_138:
   desc_number: "1611"
   id: "138"
   street: "T\xC5\x99\xC3\xADda Legi\xC3\xAD"
+  address_type_id: "1"
+  state: 
+addresses_272: 
+  city: Praha 15
+  zip: "10200"
+  student_id: "4457"
+  orient_number: 
+  desc_number: "15"
+  id: "272"
+  street: "Radostn\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_246: 
@@ -1329,6 +1359,16 @@ addresses_207:
   street: "Ov\xC4\x8D\xC3\xAD h\xC3\xA1jek"
   address_type_id: "1"
   state: 
+addresses_260: 
+  city: "Suchdol nad Lu\xC5\xBEnici"
+  zip: "37806"
+  student_id: "5031"
+  orient_number: 
+  desc_number: "458"
+  id: "260"
+  street: "Pra\xC5\xBEsk\xC3\xA1"
+  address_type_id: "1"
+  state: 
 addresses_234: 
   city: "Hostivice - B\xC5\x99ve"
   zip: 253 01
@@ -1387,6 +1427,16 @@ addresses_208:
   desc_number: "76"
   id: "208"
   street: Pod Vrchem
+  address_type_id: "1"
+  state: 
+addresses_261: 
+  city: "J\xC3\xADlov\xC3\xA9 u Prahy"
+  zip: 254 01
+  student_id: "5058"
+  orient_number: 
+  desc_number: "97"
+  id: "261"
+  street: "Radl\xC3\xADk"
   address_type_id: "1"
   state: 
 addresses_235: 
@@ -1459,6 +1509,16 @@ addresses_209:
   street: Pod Vrchem
   address_type_id: "1"
   state: 
+addresses_262: 
+  city: Praha 4
+  zip: 147 00
+  student_id: 
+  orient_number: 
+  desc_number: 478/24
+  id: "262"
+  street: "V\xC3\xA1pencov\xC3\xA1"
+  address_type_id: "1"
+  state: 
 addresses_236: 
   city: "Krab\xC4\x8Dice"
   zip: 411 87
@@ -1519,6 +1579,16 @@ addresses_181:
   street: " -"
   address_type_id: "1"
   state: 
+addresses_263: 
+  city: Praha 9
+  zip: "19800"
+  student_id: "234"
+  orient_number: 
+  desc_number: 1210/7
+  id: "263"
+  street: "Man\xC5\xBEel\xC5\xAF Dost\xC3\xA1lov\xC3\xBDch"
+  address_type_id: "1"
+  state: 
 addresses_237: 
   city: Studenec
   zip: "67502"
@@ -1562,11 +1632,21 @@ addresses_156:
 addresses_182: 
   city: "Vl\xC4\x8Dkovice v Podkrko"
   zip: "54444"
-  student_id: "4387"
+  student_id: 
   orient_number: 
   desc_number: "13"
   id: "182"
   street: " -"
+  address_type_id: "1"
+  state: 
+addresses_264: 
+  city: Praha 4 - Chodov
+  zip: "14800"
+  student_id: "4506"
+  orient_number: 
+  desc_number: "1870"
+  id: "264"
+  street: "Jarn\xC3\xADkova"
   address_type_id: "1"
   state: 
 addresses_238: 
@@ -1609,6 +1689,16 @@ addresses_183:
   street: U koupaliste
   address_type_id: "1"
   state: 
+addresses_265: 
+  city: Praha 4
+  zip: 147 00
+  student_id: "5015"
+  orient_number: 
+  desc_number: 478/24
+  id: "265"
+  street: "V\xC3\xA1pencov\xC3\xA1"
+  address_type_id: "1"
+  state: 
 addresses_239: 
   city: Trutnov
   zip: "54101"
@@ -1649,6 +1739,16 @@ addresses_184:
   street: U koupaliste
   address_type_id: "1"
   state: 
+addresses_266: 
+  city: Praha 6
+  zip: 162 00
+  student_id: "4370"
+  orient_number: 
+  desc_number: "33"
+  id: "266"
+  street: Na Bateriich
+  address_type_id: "1"
+  state: 
 addresses_078: 
   city: "Rakovn\xC3\xADk"
   zip: 269 01
@@ -1679,6 +1779,16 @@ addresses_185:
   street: "Poln\xC3\xAD"
   address_type_id: "1"
   state: 
+addresses_267: 
+  city: Strakonice
+  zip: "38601"
+  student_id: "1679"
+  orient_number: 
+  desc_number: "761"
+  id: "267"
+  street: "\xC5\xA0vandy Dud\xC3\xA1ka"
+  address_type_id: "1"
+  state: 
 addresses_079: 
   city: Karlovy Vary
   zip: "36001"
@@ -1699,6 +1809,16 @@ addresses_186:
   street: "Poln\xC3\xAD"
   address_type_id: "1"
   state: 
+addresses_268: 
+  city: "Rakovn\xC3\xADk"
+  zip: 269 01
+  student_id: "4647"
+  orient_number: 
+  desc_number: "1872"
+  id: "268"
+  street: "\xC4\x8Cs. legi\xC3\xAD"
+  address_type_id: "1"
+  state: 
 addresses_187: 
   city: "Dv\xC5\xAFr Kr\xC3\xA1lov\xC3\xA9 n/L"
   zip: 544 01
@@ -1707,6 +1827,16 @@ addresses_187:
   desc_number: "1779"
   id: "187"
   street: "Poln\xC3\xAD"
+  address_type_id: "1"
+  state: 
+addresses_269: 
+  city: Praha 6
+  zip: 160 00
+  student_id: "1330"
+  orient_number: 
+  desc_number: "76"
+  id: "269"
+  street: "Kladensk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_188: 
@@ -2249,6 +2379,16 @@ addresses_171:
   street: Maxovna
   address_type_id: "1"
   state: 
+addresses_253: 
+  city: Most
+  zip: "43401"
+  student_id: 
+  orient_number: 
+  desc_number: 736/972
+  id: "253"
+  street: "Franti\xC5\xA1ka Mal\xC3\xADka"
+  address_type_id: "1"
+  state: 
 addresses_227: 
   city: "Ji\xC4\x8D\xC3\xADn"
   zip: "50601"
@@ -2309,6 +2449,16 @@ addresses_172:
   street: Semechnice
   address_type_id: "1"
   state: 
+addresses_254: 
+  city: Most
+  zip: "43401"
+  student_id: 
+  orient_number: 
+  desc_number: 736/972
+  id: "254"
+  street: "Franti\xC5\xA1ka Mal\xC3\xADka"
+  address_type_id: "1"
+  state: 
 addresses_228: 
   city: "Hradec Kr\xC3\xA1lov\xC3\xA9"
   zip: 500 06
@@ -2357,6 +2507,16 @@ addresses_173:
   desc_number: 1-43-35
   id: "173"
   street: Chilanzar
+  address_type_id: "1"
+  state: 
+addresses_255: 
+  city: Most
+  zip: "43401"
+  student_id: "3139"
+  orient_number: 
+  desc_number: 736/972
+  id: "255"
+  street: "Franti\xC5\xA1ka Mal\xC3\xADka"
   address_type_id: "1"
   state: 
 addresses_229: 
@@ -2409,6 +2569,16 @@ addresses_174:
   street: Chilanzar
   address_type_id: "1"
   state: 
+addresses_256: 
+  city: Brno
+  zip: "61300"
+  student_id: "3467"
+  orient_number: 
+  desc_number: "234"
+  id: "256"
+  street: Merhautova
+  address_type_id: "1"
+  state: 
 addresses_068: 
   city: "Doma\xC5\xBElice"
   zip: 344 01
@@ -2449,6 +2619,16 @@ addresses_175:
   street: Lochenice
   address_type_id: "1"
   state: 
+addresses_257: 
+  city: "S\xC3\xA1zava"
+  zip: 592 11
+  student_id: "2957"
+  orient_number: 
+  desc_number: "17"
+  id: "257"
+  street: "\xC4\x8Cesk\xC3\xA1 Mez"
+  address_type_id: "1"
+  state: 
 addresses_069: 
   city: "Doma\xC5\xBElice"
   zip: 344 01
@@ -2479,6 +2659,16 @@ addresses_176:
   street: " -"
   address_type_id: "1"
   state: 
+addresses_258: 
+  city: Praha 2
+  zip: "12000"
+  student_id: "3459"
+  orient_number: 
+  desc_number: "17"
+  id: "258"
+  street: "Karlovo n\xC3\xA1m."
+  address_type_id: "1"
+  state: 
 addresses_096: 
   city: "Slavi\xC4\x8D\xC3\xADn"
   zip: "76321"
@@ -2497,6 +2687,16 @@ addresses_177:
   desc_number: "2222"
   id: "177"
   street: "Pod H\xC5\x99i\xC5\xA1t\xC4\x9Bm"
+  address_type_id: "1"
+  state: 
+addresses_259: 
+  city: "Suchdol nad Lu\xC5\xBEnic"
+  zip: "37806"
+  student_id: 
+  orient_number: 
+  desc_number: "458"
+  id: "259"
+  street: "Pra\xC5\xBEsk\xC3\xA1"
   address_type_id: "1"
   state: 
 addresses_097: 

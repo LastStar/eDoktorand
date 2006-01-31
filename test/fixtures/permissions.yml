@@ -677,6 +677,12 @@ permissions_023:
   updated_on: 2005-10-02 15:43:41
   info: 
   id: "23"
+permissions_138: 
+  created_on: 2006-01-10 11:37:45
+  name: probation_terms/enroll_student
+  updated_on: 2006-01-10 11:37:45
+  info: 
+  id: "145"
 permissions_080: 
   created_on: 2005-08-15 12:54:41
   name: study_plans/atestation_details
@@ -695,6 +701,12 @@ permissions_024:
   updated_on: 2005-10-02 15:43:41
   info: 
   id: "24"
+permissions_139: 
+  created_on: 2006-01-10 11:39:03
+  name: probation_terms/enroll_exam
+  updated_on: 2006-01-10 11:39:03
+  info: 
+  id: "146"
 permissions_053: 
   created_on: 2005-07-27 10:27:11
   name: disert_themes/save_methodology_summary
@@ -779,6 +791,12 @@ permissions_084:
   updated_on: 2005-10-02 15:43:41
   info: 
   id: "91"
+permissions_140: 
+  created_on: 2006-01-10 11:46:40
+  name: probation_terms/save
+  updated_on: 2006-01-10 11:46:40
+  info: 
+  id: "147"
 permissions_057: 
   created_on: 2005-07-28 14:56:36
   name: disert_themes/approve
@@ -803,6 +821,12 @@ permissions_085:
   updated_on: 2005-10-02 15:43:41
   info: 
   id: "92"
+permissions_141: 
+  created_on: 2006-01-13 09:45:21
+  name: probation_terms/save_exam
+  updated_on: 2006-01-13 09:45:21
+  info: 
+  id: "148"
 permissions_058: 
   created_on: 2005-07-28 15:26:36
   name: disert_themes/confirm_approve

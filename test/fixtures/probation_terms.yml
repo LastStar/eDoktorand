@@ -1,7 +1,7 @@
 --- 
 probation_terms_052: 
   created_on: 2006-01-23 10:48:34
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-23 10:48:34
   created_by: "1010"
   date: "2006-01-24"
   id: "53"
@@ -14,7 +14,7 @@ probation_terms_052:
   first_examinator_id: "1"
 probation_terms_041: 
   created_on: 2006-01-16 09:03:41
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-16 09:03:41
   created_by: "1009"
   date: "2006-02-14"
   id: "42"
@@ -27,7 +27,7 @@ probation_terms_041:
   first_examinator_id: "26"
 probation_terms_030: 
   created_on: 2006-01-12 10:19:26
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-12 10:19:26
   created_by: "1009"
   date: "2006-04-10"
   id: "31"
@@ -40,7 +40,7 @@ probation_terms_030:
   first_examinator_id: "26"
 probation_terms_029: 
   created_on: 2006-01-12 10:18:28
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-12 10:18:28
   created_by: "1009"
   date: "2006-03-17"
   id: "30"
@@ -66,7 +66,7 @@ probation_terms_018:
   first_examinator_id: "6"
 probation_terms_007: 
   created_on: 2005-11-28 08:45:55
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-16 11:44:01
   created_by: "1009"
   date: "2006-01-05"
   id: "8"
@@ -79,7 +79,7 @@ probation_terms_007:
   first_examinator_id: "22"
 probation_terms_053: 
   created_on: 2006-01-24 08:11:21
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-24 08:11:21
   created_by: "1008"
   date: "2006-02-14"
   id: "54"
@@ -92,7 +92,7 @@ probation_terms_053:
   first_examinator_id: "51"
 probation_terms_042: 
   created_on: 2006-01-16 09:04:31
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-16 09:04:31
   created_by: "1009"
   date: "2006-03-16"
   id: "43"
@@ -105,7 +105,7 @@ probation_terms_042:
   first_examinator_id: "26"
 probation_terms_031: 
   created_on: 2006-01-12 10:20:24
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-12 10:20:24
   created_by: "1009"
   date: "2006-04-10"
   id: "32"
@@ -118,7 +118,7 @@ probation_terms_031:
   first_examinator_id: "26"
 probation_terms_020: 
   created_on: 2006-01-09 10:47:54
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-09 10:47:54
   created_by: "60"
   date: "2006-01-18"
   id: "21"
@@ -131,7 +131,7 @@ probation_terms_020:
   first_examinator_id: "60"
 probation_terms_019: 
   created_on: 2006-01-06 12:14:59
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-06 12:14:59
   created_by: "46"
   date: "2005-12-15"
   id: "20"
@@ -157,7 +157,7 @@ probation_terms_008:
   first_examinator_id: "6"
 probation_terms_054: 
   created_on: 2006-01-24 11:43:30
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-24 11:43:30
   created_by: "1017"
   date: "2006-01-26"
   id: "55"
@@ -170,7 +170,7 @@ probation_terms_054:
   first_examinator_id: "32"
 probation_terms_043: 
   created_on: 2006-01-16 09:05:14
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-16 09:05:14
   created_by: "1009"
   date: "2006-04-11"
   id: "44"
@@ -183,7 +183,7 @@ probation_terms_043:
   first_examinator_id: "26"
 probation_terms_032: 
   created_on: 2006-01-12 10:21:55
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-12 10:21:55
   created_by: "1009"
   date: "2006-05-15"
   id: "33"
@@ -196,7 +196,7 @@ probation_terms_032:
   first_examinator_id: "26"
 probation_terms_021: 
   created_on: 2006-01-10 13:53:58
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-10 13:53:58
   created_by: "11"
   date: "2005-12-14"
   id: "22"
@@ -235,7 +235,7 @@ probation_terms_009:
   first_examinator_id: "196"
 probation_terms_055: 
   created_on: 2006-01-24 11:44:45
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-24 11:44:45
   created_by: "1017"
   date: "2006-01-27"
   id: "56"
@@ -248,7 +248,7 @@ probation_terms_055:
   first_examinator_id: "34"
 probation_terms_044: 
   created_on: 2006-01-16 09:05:59
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-16 09:05:59
   created_by: "1009"
   date: "2006-05-12"
   id: "45"
@@ -261,7 +261,7 @@ probation_terms_044:
   first_examinator_id: "26"
 probation_terms_033: 
   created_on: 2006-01-12 10:22:59
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-12 10:22:59
   created_by: "1009"
   date: "2006-05-15"
   id: "34"
@@ -274,7 +274,7 @@ probation_terms_033:
   first_examinator_id: "26"
 probation_terms_022: 
   created_on: 2006-01-10 14:43:03
-  updated_on: 2006-01-27 09:47:21
+  updated_on: 2006-01-10 14:43:03
   created_by: "46"
   date: "2006-01-30"
   id: "23"
@@ -300,7 +300,7 @@ probation_terms_011:
   first_examinator_id: "6"
 probation_terms_056: 
   created_on: 2006-01-25 11:16:54
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-25 11:16:54
   created_by: "110"
   date: "2006-01-25"
   id: "57"
@@ -313,7 +313,7 @@ probation_terms_056:
   first_examinator_id: "110"
 probation_terms_045: 
   created_on: 2006-01-16 09:07:02
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 09:07:02
   created_by: "1009"
   date: "2006-01-30"
   id: "46"
@@ -326,7 +326,7 @@ probation_terms_045:
   first_examinator_id: "22"
 probation_terms_034: 
   created_on: 2006-01-12 11:14:58
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-12 11:14:58
   created_by: "1010"
   date: "2006-01-05"
   id: "35"
@@ -339,7 +339,7 @@ probation_terms_034:
   first_examinator_id: "1"
 probation_terms_023: 
   created_on: 2006-01-12 08:47:57
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-12 08:47:57
   created_by: "1009"
   date: "2006-01-30"
   id: "24"
@@ -376,22 +376,9 @@ probation_terms_001:
   start_time: "8:00"
   second_examinator_id: "0"
   first_examinator_id: "6"
-probation_terms_057: 
-  created_on: 2006-01-26 14:40:02
-  updated_on: 2006-01-27 09:47:22
-  created_by: "1009"
-  date: "2006-01-31"
-  id: "58"
-  note: "zkou\xC5\xA1\xC3\xAD: Ing. Bou\xC4\x8Dkov\xC3\xA1"
-  subject_id: "1755"
-  max_students: "2"
-  room: PEF II. 204
-  start_time: "10,00"
-  second_examinator_id: "0"
-  first_examinator_id: "26"
 probation_terms_046: 
   created_on: 2006-01-16 09:07:47
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 09:07:47
   created_by: "1009"
   date: "2006-02-13"
   id: "47"
@@ -404,7 +391,7 @@ probation_terms_046:
   first_examinator_id: "22"
 probation_terms_035: 
   created_on: 2006-01-16 08:58:06
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 08:58:06
   created_by: "1009"
   date: "2006-01-31"
   id: "36"
@@ -417,7 +404,7 @@ probation_terms_035:
   first_examinator_id: "26"
 probation_terms_024: 
   created_on: 2006-01-12 08:49:14
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-12 08:49:14
   created_by: "1009"
   date: "2006-01-30"
   id: "25"
@@ -456,7 +443,7 @@ probation_terms_002:
   first_examinator_id: "46"
 probation_terms_047: 
   created_on: 2006-01-16 09:08:28
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 09:08:28
   created_by: "1009"
   date: "2006-03-17"
   id: "48"
@@ -469,7 +456,7 @@ probation_terms_047:
   first_examinator_id: "22"
 probation_terms_036: 
   created_on: 2006-01-16 08:58:52
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 08:58:52
   created_by: "1009"
   date: "2006-02-14"
   id: "37"
@@ -482,7 +469,7 @@ probation_terms_036:
   first_examinator_id: "26"
 probation_terms_025: 
   created_on: 2006-01-12 09:47:42
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-12 09:47:42
   created_by: "1009"
   date: "2006-02-13"
   id: "26"
@@ -522,7 +509,7 @@ probation_terms_003:
   first_examinator_id: "45"
 probation_terms_048: 
   created_on: 2006-01-16 09:09:14
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 09:09:14
   created_by: "1009"
   date: "2006-04-10"
   id: "49"
@@ -535,7 +522,7 @@ probation_terms_048:
   first_examinator_id: "22"
 probation_terms_037: 
   created_on: 2006-01-16 08:59:35
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 08:59:35
   created_by: "1009"
   date: "2006-03-16"
   id: "38"
@@ -548,7 +535,7 @@ probation_terms_037:
   first_examinator_id: "26"
 probation_terms_026: 
   created_on: 2006-01-12 09:48:39
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-12 09:48:39
   created_by: "1009"
   date: "2006-02-13"
   id: "27"
@@ -587,7 +574,7 @@ probation_terms_004:
   first_examinator_id: "45"
 probation_terms_049: 
   created_on: 2006-01-16 09:10:18
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 09:10:18
   created_by: "1009"
   date: "2006-05-15"
   id: "50"
@@ -600,7 +587,7 @@ probation_terms_049:
   first_examinator_id: "22"
 probation_terms_038: 
   created_on: 2006-01-16 09:00:53
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 09:00:53
   created_by: "1009"
   date: "2006-04-11"
   id: "39"
@@ -613,7 +600,7 @@ probation_terms_038:
   first_examinator_id: "26"
 probation_terms_027: 
   created_on: 2006-01-12 09:50:52
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-12 09:50:52
   created_by: "1117"
   date: "2006-01-12"
   id: "28"
@@ -652,7 +639,7 @@ probation_terms_005:
   first_examinator_id: "22"
 probation_terms_050: 
   created_on: 2006-01-16 11:00:31
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 11:00:31
   created_by: "1017"
   date: "2006-01-24"
   id: "51"
@@ -665,7 +652,7 @@ probation_terms_050:
   first_examinator_id: "34"
 probation_terms_039: 
   created_on: 2006-01-16 09:02:08
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 09:02:08
   created_by: "1009"
   date: "2006-05-12"
   id: "40"
@@ -678,7 +665,7 @@ probation_terms_039:
   first_examinator_id: "26"
 probation_terms_028: 
   created_on: 2006-01-12 10:17:29
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-12 10:17:29
   created_by: "1009"
   date: "2006-03-17"
   id: "29"
@@ -717,7 +704,7 @@ probation_terms_006:
   first_examinator_id: "94"
 probation_terms_051: 
   created_on: 2006-01-23 08:18:14
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-23 12:29:01
   created_by: "1009"
   date: "2006-01-25"
   id: "52"
@@ -730,7 +717,7 @@ probation_terms_051:
   first_examinator_id: "94"
 probation_terms_040: 
   created_on: 2006-01-16 09:03:01
-  updated_on: 2006-01-27 09:47:22
+  updated_on: 2006-01-16 09:03:01
   created_by: "1009"
   date: "2006-01-31"
   id: "41"
