@@ -8,7 +8,7 @@ class DatabaseMerger
       object.id = study_plans[key]['id']
       if object_class.exists?(object.id)
         obj = object_class.find(object.id)        
-        if object.updated_on > obj.updated_on
+        if object.updated_on && object.updated_on > obj.updated_on
           obj.update_attributes(object.attributes)
           changed += 1
         end

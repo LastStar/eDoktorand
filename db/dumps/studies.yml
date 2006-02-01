@@ -1,0 +1,9 @@
+--- 
+- !ruby/object:Study 
+  attributes: 
+    name: "prezen\xC4\x8Dn\xC3\xAD"
+    id: "1"
+- !ruby/object:Study 
+  attributes: 
+    name: "kombinovan\xC3\xA9"
+    id: "2"

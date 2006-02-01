@@ -1,0 +1,57 @@
+--- 
+- !ruby/object:Role 
+  attributes: 
+    created_on: 2005-10-02 13:42:28
+    name: admin
+    updated_on: 2005-10-02 15:43:42
+    info: ""
+    id: "1"
+- !ruby/object:Role 
+  attributes: 
+    created_on: 2005-10-02 13:42:29
+    name: faculty_secretary
+    updated_on: 2005-10-02 15:43:42
+    info: ""
+    id: "2"
+- !ruby/object:Role 
+  attributes: 
+    created_on: 2005-10-02 13:42:30
+    name: student
+    updated_on: 2005-10-02 15:43:42
+    info: ""
+    id: "3"
+- !ruby/object:Role 
+  attributes: 
+    created_on: 2005-10-02 13:42:31
+    name: tutor
+    updated_on: 2005-10-02 15:43:42
+    info: ""
+    id: "4"
+- !ruby/object:Role 
+  attributes: 
+    created_on: 2005-10-02 13:42:32
+    name: dean
+    updated_on: 2005-10-02 15:43:42
+    info: ""
+    id: "5"
+- !ruby/object:Role 
+  attributes: 
+    created_on: 2005-10-02 13:42:33
+    name: leader
+    updated_on: 2005-10-02 15:43:42
+    info: ""
+    id: "6"
+- !ruby/object:Role 
+  attributes: 
+    created_on: 2005-10-02 13:42:48
+    name: department_secretary
+    updated_on: 2005-10-02 15:43:42
+    info: ""
+    id: "7"
+- !ruby/object:Role 
+  attributes: 
+    created_on: 2005-10-17 11:38:23
+    name: vicerector
+    updated_on: 2005-10-17 11:38:23
+    info: 
+    id: "8"

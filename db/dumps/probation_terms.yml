@@ -1,0 +1,800 @@
+--- 
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-11-21 16:09:30
+    updated_on: 2005-12-01 15:30:02
+    created_by: "1410"
+    date: "2005-12-21"
+    id: "1"
+    note: poznamka 2
+    subject_id: "1751"
+    max_students: "2"
+    room: "326"
+    start_time: "8:00"
+    second_examinator_id: "0"
+    first_examinator_id: "6"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-11-23 13:49:44
+    updated_on: 2005-11-28 16:29:39
+    created_by: "46"
+    date: "2005-11-28"
+    id: "3"
+    note: "P\xC5\x99edlo\xC5\xBEen\xC3\xBD projekt dle zad\xC3\xA1n\xC3\xAD, vytvo\xC5\x99en\xC3\xAD prezentace k odborn\xC3\xA9 \xC4\x8Dinnosti. Prezentace a projekt 1 t\xC3\xBDden p\xC5\x99ed term\xC3\xADnem."
+    subject_id: "1380"
+    max_students: "2"
+    room: PEF/234
+    start_time: "17:00"
+    second_examinator_id: "0"
+    first_examinator_id: "46"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-11-23 15:51:26
+    updated_on: 2005-11-23 15:51:26
+    created_by: "45"
+    date: "2005-12-15"
+    id: "4"
+    note: "Dokon\xC4\x8Den\xC3\xAD skupinov\xC3\xA9ho projektu.\r\n\
+      Prezentace ind. projektu."
+    subject_id: "1382"
+    max_students: "12"
+    room: PEF 232
+    start_time: "9:00"
+    second_examinator_id: "0"
+    first_examinator_id: "45"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-11-23 15:53:57
+    updated_on: 2005-12-14 10:43:18
+    created_by: "45"
+    date: "2005-12-22"
+    id: "5"
+    note: ""
+    subject_id: "1382"
+    max_students: "12"
+    room: PEF 232
+    start_time: "9:00"
+    second_examinator_id: "0"
+    first_examinator_id: "45"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-11-25 10:27:11
+    updated_on: 2005-12-07 07:54:07
+    created_by: "1009"
+    date: "2005-12-15"
+    id: "6"
+    note: ""
+    subject_id: "1338"
+    max_students: "3"
+    room: PEF II. 224
+    start_time: "8.00"
+    second_examinator_id: "0"
+    first_examinator_id: "22"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-11-28 08:44:35
+    updated_on: 2005-12-01 08:45:25
+    created_by: "1009"
+    date: "2005-12-01"
+    id: "7"
+    note: ""
+    subject_id: "1337"
+    max_students: "4"
+    room: PEF II. 226
+    start_time: "14,00"
+    second_examinator_id: "0"
+    first_examinator_id: "94"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-11-28 08:45:55
+    updated_on: 2006-01-16 11:44:01
+    created_by: "1009"
+    date: "2006-01-05"
+    id: "8"
+    note: ""
+    subject_id: "1338"
+    max_students: "6"
+    room: PEF II. 224
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "22"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-01 11:23:09
+    updated_on: 2005-12-01 15:26:43
+    created_by: "6"
+    date: "2005-11-15"
+    id: "9"
+    note: ""
+    subject_id: "1760"
+    max_students: 
+    room: ""
+    start_time: ""
+    second_examinator_id: "0"
+    first_examinator_id: "6"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-01 11:57:48
+    updated_on: 2005-12-01 11:57:48
+    created_by: "98"
+    date: "2005-11-22"
+    id: "10"
+    note: ""
+    subject_id: "1760"
+    max_students: 
+    room: ""
+    start_time: ""
+    second_examinator_id: "0"
+    first_examinator_id: "196"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-01 15:31:29
+    updated_on: 2005-12-14 14:11:22
+    created_by: "1410"
+    date: "2006-01-11"
+    id: "11"
+    note: ""
+    subject_id: "1751"
+    max_students: "3"
+    room: "326"
+    start_time: "8:00"
+    second_examinator_id: "0"
+    first_examinator_id: "6"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-01 15:33:26
+    updated_on: 2005-12-01 15:33:26
+    created_by: "1410"
+    date: "2006-01-20"
+    id: "12"
+    note: ""
+    subject_id: "1751"
+    max_students: "4"
+    room: "326"
+    start_time: "8:00"
+    second_examinator_id: "0"
+    first_examinator_id: "6"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-01 15:34:44
+    updated_on: 2005-12-01 15:34:44
+    created_by: "1410"
+    date: "2006-02-01"
+    id: "13"
+    note: ""
+    subject_id: "1751"
+    max_students: "3"
+    room: "326"
+    start_time: "8:00"
+    second_examinator_id: "0"
+    first_examinator_id: "6"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-01 15:35:52
+    updated_on: 2005-12-01 15:35:52
+    created_by: "1410"
+    date: "2006-02-16"
+    id: "14"
+    note: ""
+    subject_id: "1751"
+    max_students: "4"
+    room: "326"
+    start_time: "8:00"
+    second_examinator_id: "0"
+    first_examinator_id: "6"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-01 15:38:39
+    updated_on: 2005-12-01 15:38:39
+    created_by: "1410"
+    date: "2006-02-03"
+    id: "15"
+    note: ""
+    subject_id: "1745"
+    max_students: "3"
+    room: "326"
+    start_time: "8:00"
+    second_examinator_id: "0"
+    first_examinator_id: "6"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-07 14:26:43
+    updated_on: 2005-12-07 14:26:43
+    created_by: "1009"
+    date: "2005-12-06"
+    id: "16"
+    note: ""
+    subject_id: "1336"
+    max_students: "3"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-08 06:27:41
+    updated_on: 2005-12-08 06:28:14
+    created_by: "46"
+    date: "2005-12-12"
+    id: "17"
+    note: "Odevzdan\xC3\xBD projekt 5 dn\xC3\xAD p\xC5\x99ed term\xC3\xADnem"
+    subject_id: "1380"
+    max_students: "3"
+    room: 234/PEF
+    start_time: "16:00"
+    second_examinator_id: "0"
+    first_examinator_id: "46"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-12 14:28:41
+    updated_on: 2005-12-12 14:28:41
+    created_by: "45"
+    date: "2006-01-09"
+    id: "18"
+    note: "Projekt dle podm\xC3\xADnek na kit.pef.czu.cz"
+    subject_id: "1383"
+    max_students: "5"
+    room: PEF 232
+    start_time: "9:00"
+    second_examinator_id: "0"
+    first_examinator_id: "45"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2005-12-13 14:18:13
+    updated_on: 2005-12-13 14:18:13
+    created_by: "6"
+    date: "2005-12-13"
+    id: "19"
+    note: ""
+    subject_id: "1760"
+    max_students: "4"
+    room: "325"
+    start_time: "13:00"
+    second_examinator_id: "0"
+    first_examinator_id: "6"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-06 12:14:59
+    updated_on: 2006-01-06 12:14:59
+    created_by: "46"
+    date: "2005-12-15"
+    id: "20"
+    note: ""
+    subject_id: "1382"
+    max_students: 
+    room: ""
+    start_time: ""
+    second_examinator_id: "0"
+    first_examinator_id: "45"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-09 10:47:54
+    updated_on: 2006-01-09 10:47:54
+    created_by: "60"
+    date: "2006-01-18"
+    id: "21"
+    note: ""
+    subject_id: "1365"
+    max_students: "1"
+    room: "p\xC5\x99\xC3\xADzem\xC3\xAD PEF \xC4\x8D. 6"
+    start_time: "13,00"
+    second_examinator_id: "0"
+    first_examinator_id: "60"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-10 13:53:58
+    updated_on: 2006-01-10 13:53:58
+    created_by: "11"
+    date: "2005-12-14"
+    id: "22"
+    note: ""
+    subject_id: "1356"
+    max_students: "2"
+    room: "11"
+    start_time: "9:00"
+    second_examinator_id: "0"
+    first_examinator_id: "11"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-10 14:43:03
+    updated_on: 2006-01-10 14:43:03
+    created_by: "46"
+    date: "2006-01-30"
+    id: "23"
+    note: "Odevzd\xC3\xA1n\xC3\xAD projektu (individ\xC3\xA1ln\xC4\x9B projednan\xC3\xA9ho) nejpozd\xC4\x9Bji do 26.1.2006"
+    subject_id: "1380"
+    max_students: "5"
+    room: "234"
+    start_time: "12:00"
+    second_examinator_id: "0"
+    first_examinator_id: "46"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 08:47:57
+    updated_on: 2006-01-12 08:47:57
+    created_by: "1009"
+    date: "2006-01-30"
+    id: "24"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1328"
+    max_students: "3"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 08:49:14
+    updated_on: 2006-01-12 08:49:14
+    created_by: "1009"
+    date: "2006-01-30"
+    id: "25"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1332"
+    max_students: "3"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 09:47:42
+    updated_on: 2006-01-12 09:47:42
+    created_by: "1009"
+    date: "2006-02-13"
+    id: "26"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1328"
+    max_students: "2"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 09:48:39
+    updated_on: 2006-01-12 09:48:39
+    created_by: "1009"
+    date: "2006-02-13"
+    id: "27"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1332"
+    max_students: "2"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 09:50:52
+    updated_on: 2006-01-12 09:50:52
+    created_by: "1117"
+    date: "2006-01-12"
+    id: "28"
+    note: ""
+    subject_id: "1357"
+    max_students: "2"
+    room: "12"
+    start_time: "8:00"
+    second_examinator_id: "0"
+    first_examinator_id: "10"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 10:17:29
+    updated_on: 2006-01-12 10:17:29
+    created_by: "1009"
+    date: "2006-03-17"
+    id: "29"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1328"
+    max_students: "2"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 10:18:28
+    updated_on: 2006-01-12 10:18:28
+    created_by: "1009"
+    date: "2006-03-17"
+    id: "30"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1332"
+    max_students: "2"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 10:19:26
+    updated_on: 2006-01-12 10:19:26
+    created_by: "1009"
+    date: "2006-04-10"
+    id: "31"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1328"
+    max_students: "2"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 10:20:24
+    updated_on: 2006-01-12 10:20:24
+    created_by: "1009"
+    date: "2006-04-10"
+    id: "32"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1332"
+    max_students: "2"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 10:21:55
+    updated_on: 2006-01-12 10:21:55
+    created_by: "1009"
+    date: "2006-05-15"
+    id: "33"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1328"
+    max_students: "2"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 10:22:59
+    updated_on: 2006-01-12 10:22:59
+    created_by: "1009"
+    date: "2006-05-15"
+    id: "34"
+    note: "3. zkou\xC5\xA1ej\xC3\xADc\xC3\xAD: doc. Br\xC4\x8D\xC3\xA1k"
+    subject_id: "1332"
+    max_students: "2"
+    room: PEF II. 224
+    start_time: "10,00"
+    second_examinator_id: "22"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-12 11:14:58
+    updated_on: 2006-01-12 11:14:58
+    created_by: "1010"
+    date: "2006-01-05"
+    id: "35"
+    note: ""
+    subject_id: "1351"
+    max_students: "3"
+    room: "pracovna \xC4\x8D. 5"
+    start_time: "10,00"
+    second_examinator_id: "0"
+    first_examinator_id: "1"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 08:58:06
+    updated_on: 2006-01-16 08:58:06
+    created_by: "1009"
+    date: "2006-01-31"
+    id: "36"
+    note: ""
+    subject_id: "1334"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 08:58:52
+    updated_on: 2006-01-16 08:58:52
+    created_by: "1009"
+    date: "2006-02-14"
+    id: "37"
+    note: ""
+    subject_id: "1334"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 08:59:35
+    updated_on: 2006-01-16 08:59:35
+    created_by: "1009"
+    date: "2006-03-16"
+    id: "38"
+    note: ""
+    subject_id: "1334"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:00:53
+    updated_on: 2006-01-16 09:00:53
+    created_by: "1009"
+    date: "2006-04-11"
+    id: "39"
+    note: ""
+    subject_id: "1334"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:02:08
+    updated_on: 2006-01-16 09:02:08
+    created_by: "1009"
+    date: "2006-05-12"
+    id: "40"
+    note: ""
+    subject_id: "1334"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:03:01
+    updated_on: 2006-01-16 09:03:01
+    created_by: "1009"
+    date: "2006-01-31"
+    id: "41"
+    note: ""
+    subject_id: "1336"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:03:41
+    updated_on: 2006-01-16 09:03:41
+    created_by: "1009"
+    date: "2006-02-14"
+    id: "42"
+    note: ""
+    subject_id: "1336"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:04:31
+    updated_on: 2006-01-16 09:04:31
+    created_by: "1009"
+    date: "2006-03-16"
+    id: "43"
+    note: ""
+    subject_id: "1336"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:05:14
+    updated_on: 2006-01-16 09:05:14
+    created_by: "1009"
+    date: "2006-04-11"
+    id: "44"
+    note: ""
+    subject_id: "1336"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:05:59
+    updated_on: 2006-01-16 09:05:59
+    created_by: "1009"
+    date: "2006-05-12"
+    id: "45"
+    note: ""
+    subject_id: "1336"
+    max_students: "2"
+    room: PEF II. 208
+    start_time: "8,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:07:02
+    updated_on: 2006-01-16 09:07:02
+    created_by: "1009"
+    date: "2006-01-30"
+    id: "46"
+    note: ""
+    subject_id: "1338"
+    max_students: "3"
+    room: PEF II. 224
+    start_time: "11,00"
+    second_examinator_id: "0"
+    first_examinator_id: "22"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:07:47
+    updated_on: 2006-01-16 09:07:47
+    created_by: "1009"
+    date: "2006-02-13"
+    id: "47"
+    note: ""
+    subject_id: "1338"
+    max_students: "3"
+    room: PEF II. 224
+    start_time: "13,00"
+    second_examinator_id: "0"
+    first_examinator_id: "22"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:08:28
+    updated_on: 2006-01-16 09:08:28
+    created_by: "1009"
+    date: "2006-03-17"
+    id: "48"
+    note: ""
+    subject_id: "1338"
+    max_students: "3"
+    room: PEF II. 224
+    start_time: "11,00"
+    second_examinator_id: "0"
+    first_examinator_id: "22"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:09:14
+    updated_on: 2006-01-16 09:09:14
+    created_by: "1009"
+    date: "2006-04-10"
+    id: "49"
+    note: ""
+    subject_id: "1338"
+    max_students: "3"
+    room: PEF II. 224
+    start_time: "13,00"
+    second_examinator_id: "0"
+    first_examinator_id: "22"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 09:10:18
+    updated_on: 2006-01-16 09:10:18
+    created_by: "1009"
+    date: "2006-05-15"
+    id: "50"
+    note: ""
+    subject_id: "1338"
+    max_students: "3"
+    room: PEF II. 224
+    start_time: "13,00"
+    second_examinator_id: "0"
+    first_examinator_id: "22"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-16 11:00:31
+    updated_on: 2006-01-16 11:00:31
+    created_by: "1017"
+    date: "2006-01-24"
+    id: "51"
+    note: ""
+    subject_id: "1340"
+    max_students: "5"
+    room: "331"
+    start_time: "10:00"
+    second_examinator_id: "32"
+    first_examinator_id: "34"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-23 08:18:14
+    updated_on: 2006-01-23 12:29:01
+    created_by: "1009"
+    date: "2006-01-25"
+    id: "52"
+    note: ""
+    subject_id: "1337"
+    max_students: "2"
+    room: PEF II. 226
+    start_time: "10,00"
+    second_examinator_id: "0"
+    first_examinator_id: "94"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-23 10:48:34
+    updated_on: 2006-01-23 10:48:34
+    created_by: "1010"
+    date: "2006-01-24"
+    id: "53"
+    note: ""
+    subject_id: "1351"
+    max_students: "3"
+    room: pracovna prof. Havl
+    start_time: "10,00"
+    second_examinator_id: "0"
+    first_examinator_id: "1"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-24 08:11:21
+    updated_on: 2006-01-24 08:11:21
+    created_by: "1008"
+    date: "2006-02-14"
+    id: "54"
+    note: ""
+    subject_id: "3633"
+    max_students: "2"
+    room: "130"
+    start_time: "14:00"
+    second_examinator_id: "55"
+    first_examinator_id: "51"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-24 11:43:30
+    updated_on: 2006-01-24 11:43:30
+    created_by: "1017"
+    date: "2006-01-26"
+    id: "55"
+    note: ""
+    subject_id: "1390"
+    max_students: "2"
+    room: "331"
+    start_time: "10.00"
+    second_examinator_id: "34"
+    first_examinator_id: "32"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-24 11:44:45
+    updated_on: 2006-01-24 11:44:45
+    created_by: "1017"
+    date: "2006-01-27"
+    id: "56"
+    note: ""
+    subject_id: "1396"
+    max_students: "3"
+    room: "331"
+    start_time: "10.00"
+    second_examinator_id: "32"
+    first_examinator_id: "34"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-25 11:16:54
+    updated_on: 2006-01-25 11:16:54
+    created_by: "110"
+    date: "2006-01-25"
+    id: "57"
+    note: zkouska
+    subject_id: "1358"
+    max_students: "1"
+    room: "234"
+    start_time: "14"
+    second_examinator_id: "0"
+    first_examinator_id: "110"
+- !ruby/object:ProbationTerm 
+  attributes: 
+    created_on: 2006-01-26 14:40:02
+    updated_on: 2006-01-26 14:40:34
+    created_by: "1009"
+    date: "2006-01-31"
+    id: "58"
+    note: "zkou\xC5\xA1\xC3\xAD: Ing. Bou\xC4\x8Dkov\xC3\xA1"
+    subject_id: "1755"
+    max_students: "2"
+    room: PEF II. 204
+    start_time: "10,00"
+    second_examinator_id: "0"
+    first_examinator_id: "26"

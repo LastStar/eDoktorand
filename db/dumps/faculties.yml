@@ -1,0 +1,36 @@
+--- 
+- !ruby/object:Faculty 
+  attributes: 
+    name: "Fakulta agrobiologie, potravinov\xC3\xBDch a p\xC5\x99\xC3\xADrodn\xC3\xADch zdroj\xC5\xAF"
+    ldap_context: af
+    id: "1"
+    short_name: FAPPZ
+    name_english: Faculty of Agrobiology, Food and Natural Resources
+- !ruby/object:Faculty 
+  attributes: 
+    name: "Institut trop\xC5\xAF a subtrop\xC5\xAF"
+    ldap_context: itsz
+    id: "2"
+    short_name: ITS
+    name_english: Institute of Tropics and Subtorpics
+- !ruby/object:Faculty 
+  attributes: 
+    name: "Fakulta lesnick\xC3\xA1 a environment\xC3\xA1ln\xC3\xAD"
+    ldap_context: lf
+    id: "3"
+    short_name: FLE
+    name_english: The Faculty of Forestry
+- !ruby/object:Faculty 
+  attributes: 
+    name: "Provozn\xC4\x9B ekonomick\xC3\xA1 fakulta"
+    ldap_context: pef
+    id: "4"
+    short_name: PEF
+    name_english: Faculty of economics and management
+- !ruby/object:Faculty 
+  attributes: 
+    name: "Technick\xC3\xA1 fakulta"
+    ldap_context: tf
+    id: "5"
+    short_name: TF
+    name_english: The Technical Faculty

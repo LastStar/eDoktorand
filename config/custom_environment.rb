@@ -1,3 +1,4 @@
+
 # mail configuration
 ActionMailer::Base.server_settings = {
   :address  => "smtp.beneta.cz",
@@ -18,3 +19,6 @@ ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(
 # faculty dependent configurations
 FACULTY_CFG =
 YAML::load(File.open("#{RAILS_ROOT}/config/faculty_configurations.yml"))
+
+
+load 'student.rb'
