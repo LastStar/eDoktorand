@@ -1,13 +1,12 @@
-desc 'Dump a database to yml files. Set environment variables DB
+desc 'Load yml files to database. Set environment variables DB
 and DB_DEST to specify the target database and destination path for the
 files.  DB defaults to development and DB_DEST defaults to RAILS_ROOT/
 db/dumps.
 
-This automaticaly dump all models (from directory app/model). See
+This automaticaly loads all models (from directory app/model). See
 plugins/ar_fixtures for some fine tuned updates.'
 
-
-task :dump_to_files => :environment do
+task :load_from_files => :environment do
   path = ENV['DEST'] || "#{RAILS_ROOT}/test/fixtures"
   db   = ENV['DB']   || 'development'
 
@@ -18,15 +17,15 @@ task :dump_to_files => :environment do
     if file =~ /[.]rb/
       model = eval(file.chomp('.rb').camelize)
       if model.superclass == ActiveRecord::Base
-        model.dump_to_file
+        model.load_from_file
       end
     end
   end
 
-  Role.dump_habtm_to_file('permissions')
-  Role.dump_habtm_to_file('users')
-  Student.dump_habtm_to_file('probation_terms')
-  Department.dump_habtm_to_file('subjects')
+  Role.load_habtm_to_file('permissions')
+  Role.load_habtm_to_file('users')
+  Student.load_habtm_to_file('probation_terms')
+  Department.load_habtm_to_file('subjects')
 
 end
 
