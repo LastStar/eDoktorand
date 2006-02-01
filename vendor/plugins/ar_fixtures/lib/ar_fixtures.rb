@@ -3,13 +3,13 @@ class ActiveRecord::Base
   
   # Delete existing data and load fresh from file 
   def self.load_from_file
-    self.find_all.each { |old_record| old_record.destroy }
+    self.destroy_all
 
     if connection.respond_to?(:reset_pk_sequence!)
      connection.reset_pk_sequence!(table_name)
     end
 
-    records = YAML::load( File.open( File.expand_path("db/#{table_name}.yml", RAILS_ROOT) ) )
+    records = YAML::load( File.open( File.expand_path("db/dumps/#{table_name}.yml", RAILS_ROOT) ) )
     records.each do |record|
       record_copy = self.new(record.attributes)
       record_copy.id = record.id
@@ -28,9 +28,29 @@ class ActiveRecord::Base
     end
   end
 
-  # Writes to db/table_name.yml
+  # Writes to db/dumps/table_name.yml
   def self.dump_to_file
-    write_file(File.expand_path("db/#{table_name}.yml", RAILS_ROOT), self.find(:all).to_yaml)
+    write_file(File.expand_path("db/dumps/#{table_name}.yml", RAILS_ROOT), self.find(:all).to_yaml)
+  end
+
+  # Writes relations array to db/dumps/table_name_ralations.yml
+  def self.dump_habtm_to_file(relations)
+    result = []
+    self.find_all.each do |record|
+      unless record.send(relations).empty?
+        result.concat( record.send(relations).inject([]) \
+                      { |arr, rel_obj| arr << [record.id, rel_obj.id] } )
+      end
+    end
+    write_file(File.expand_path("db/dumps/#{table_name}_#{relations}.yml", RAILS_ROOT), result.to_yaml)
+  end
+
+# 
+  def self.load_habtm_from_file(relations)
+    self.find_all.each {|obj| obj.send(relations).clear}
+    YAML.load(File.open("db/dumps/#{table_name}_#{relations}.yml")).each do |rel|
+      find(rel.first).send(relations) << eval("#{relations.camelize.singularize}.find(#{rel.last})")
+    end
   end
 
   # Write a file that can be loaded with fixture :some_table in tests.
