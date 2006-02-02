@@ -4,4 +4,9 @@ class InteruptApprovement < Approvement
   def index
     interupt.index
   end
+
+  # returns interrupt
+  def document
+    interupt
+  end
 end

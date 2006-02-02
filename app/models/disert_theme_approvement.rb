@@ -4,4 +4,10 @@ class DisertThemeApprovement < Approvement
   def index
     self.disert_theme.index
   end
+
+  
+  # returns disert theme
+  def document
+    disert_theme
+  end
 end

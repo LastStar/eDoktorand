@@ -5,4 +5,9 @@ class StudyPlanApprovement < Approvement
   def index
     study_plan.index
   end
+
+  # returns study plan
+  def document
+    study_plan
+  end
 end

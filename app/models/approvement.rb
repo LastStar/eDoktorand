@@ -26,12 +26,15 @@ class Approvement < ActiveRecord::Base
     end
   end
   def approved_by
+    _(last_approver.humanize)
+  end
+  def last_approver
     if dean_statement
-      _('dean')
+      Dean
     elsif leader_statement
-      _('leader')
+      Leader
     elsif tutor_statement
-      _('tutor')
+      Tutor
     end
   end
 end

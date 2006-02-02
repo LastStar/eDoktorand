@@ -15,6 +15,7 @@ task :load_from_files => :environment do
 
   Dir.open("#{RAILS_ROOT}/app/models/").each do |file|
     if file =~ /[.]rb/
+      print file
       model = eval(file.chomp('.rb').camelize)
       if model.superclass == ActiveRecord::Base
         model.load_from_file

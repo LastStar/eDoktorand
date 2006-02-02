@@ -3,8 +3,7 @@ class ActiveRecord::Base
   
   # Delete existing data and load fresh from file 
   def self.load_from_file
-    self.destroy_all
-
+    connection.delete("delete from #{table_name}")
     if connection.respond_to?(:reset_pk_sequence!)
      connection.reset_pk_sequence!(table_name)
     end
@@ -45,7 +44,7 @@ class ActiveRecord::Base
     write_file(File.expand_path("db/dumps/#{table_name}_#{relations}.yml", RAILS_ROOT), result.to_yaml)
   end
 
-# 
+  # Loads relations array to database
   def self.load_habtm_from_file(relations)
     self.find_all.each {|obj| obj.send(relations).clear}
     YAML.load(File.open("db/dumps/#{table_name}_#{relations}.yml")).each do |rel|
