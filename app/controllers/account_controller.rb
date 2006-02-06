@@ -56,8 +56,8 @@ class AccountController < ApplicationController
   end
 
   # error page for system
-  def error
-    unless @flash['error'] or !@exception
+  def error 
+    if !(@flash && @flash['error']) && @exception
       @flash['error'] = @exception.message
     end
   end
