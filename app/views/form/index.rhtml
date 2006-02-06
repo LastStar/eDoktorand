@@ -5,14 +5,14 @@
 <% unless @faculties.empty? %>
   <ul>
     <% for f in @faculties do %>
-    <% if f.coridors.empty? then next end %>
+    <% if (coridors = f.accredited_coridors).empty? then next end %>
     <li>
-    <a href='#' onClick="show(<%= f.id %>)">Fakulta: <%= f.name %></a><br /> 
+    <a href='#' onClick="Element.toggle($('<%= f.id %>'))">Fakulta: <%= f.name %></a><br /> 
       <% unless f.documents.empty? %>
       <b><%= _("documents") %>:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
       <% end %>
-      <ol class="hidden" id="<%= f.id %>">
-      <% for c in f.coridors do %>
+      <ol style="display:none" id="<%= f.id %>">
+      <% for c in coridors do %>
         <li>
         <%= link_to c.name, :action => "details", :id => c.id %>
         </li>
@@ -24,8 +24,3 @@
 <% else %>
 <h3><%= _("There is error in application. Please contact system administrator on address:") %><a href="mailto:pepe@gravastar.cz">pepe@gravastar.cz</a ></h3>
 <% end %>
-<script  type="text/javascript">
-function show(id) {
-  document.getElementById(id).style.display = 'block';
-}
-</script>

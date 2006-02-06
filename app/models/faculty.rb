@@ -15,4 +15,9 @@ class Faculty < ActiveRecord::Base
   def departments_for_sql
     self.departments.map {|dep| dep.id}.join(', ') 
   end
+
+# return
+  def accredited_coridors
+    Coridor.find(:all, :conditions => ['faculty_id = ? AND accredited = ? ', id, 1])
+  end
 end
