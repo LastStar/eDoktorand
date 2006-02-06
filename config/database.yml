@@ -14,7 +14,7 @@ test:
 
 production:
   adapter: mysql
-  database: phdstudy
+  database: phdstudy_devel
   host: localhost
   username: web
   password: w3b
