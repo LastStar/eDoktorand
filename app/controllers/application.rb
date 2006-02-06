@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
       return true
     else
       flash['error'] = _("you don't have rights to do this")
-      redirect_to :controller => 'account', :action => 'error'
+      redirect_to error_url
     end
   end
   private

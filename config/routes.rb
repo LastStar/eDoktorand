@@ -43,6 +43,8 @@ ActionController::Routing::Routes.draw do |map|
     :action => 'list_all'
   # add path for prijimacky
   map.connect 'prijimacky/:action/:id', :controller => 'form'
+  # login url
+  map.login 'account/login', :controller => 'account', :action => 'login'
   # error url
   map.error 'account/error', :controller => 'account', :action => 'error'
   # Install the default route as the lowest priority.
