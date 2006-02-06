@@ -1385,3 +1385,15 @@ msgstr "Odhlásit"
 
 msgid "There was an error in application:"
 msgstr "V aplikaci se vyskytla následující chyba:"
+
+msgid "atest like tutor"
+msgstr "atestovat jako školitel"
+
+msgid "atest like leader"
+msgstr "atestovat jako vedoucí"
+
+msgid "atest like dean"
+msgstr "atestovat jako děkan"
+
+msgid "see atestation informations"
+msgstr "informace k atestaci"
