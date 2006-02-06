@@ -168,7 +168,7 @@ module ApplicationHelper
   
   # returns approve word for statement result
   def approve_word(result)
-    [ _("canceled"), _("approved")][result]
+    [ _("canceled"), _("approved"), _('approved with earfull')][result]
   end
   
   # prints approve form

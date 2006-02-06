@@ -65,6 +65,7 @@ class Index < ActiveRecord::Base
           return interupt.approvement.prepare_statement(user)
         end
       elsif study_plan.waits_for_actual_atestation?
+        study_plan.atestation ||= Atestation.create
         return study_plan.atestation.prepare_statement(user)
       end
     end
