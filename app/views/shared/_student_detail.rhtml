@@ -44,7 +44,7 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
   study_plan, :methodology => true}) %>
 <% if index.admited_interupt? %>
   <%= approve_forms(index.interupt) %>
-<% elsif !study_plan.approved?  %>
+<% elsif !study_plan.approved? || study_plan.waits_for_actual_atestation? %>
   <%= approve_forms(study_plan) %>
 <% end %>
 <% end %>

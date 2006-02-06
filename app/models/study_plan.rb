@@ -25,24 +25,27 @@ class StudyPlan < ActiveRecord::Base
     return true unless admited_on.nil?
   end
 
-  # TODO should be redone 
   #  returns true if study plan has been atested for last atestation
   def atested_for?(date)
-    return true if last_atested_on && last_atested_on > date
+    last_atested_on && last_atested_on > date
+  end
+
+  # returns true if tudy plan waits for actuala atestation
+  def waits_for_actual_atestation?
+    !atested_for?(Atestation.actual_for_faculty(index.student.faculty)) 
   end
 
   # returns atestation detail for next atestation  
   def next_atestation_detail
     return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
-    atestation_term = ?', id,
-    Atestation.next_for_faculty(index.student.faculty)])
+      atestation_term = ?', id, Atestation.next_for_faculty(index.student.faculty)])
   end
 
   # returns atestation detail for actual atestations
   def actual_atestation_detail
     at = Atestation.actual_for_faculty(index.student.faculty)
     return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
-    atestation_term = ?', id, at])
+      atestation_term = ?', id, at])
   end
 
   # returns count of atestation for study plan
@@ -73,6 +76,20 @@ class StudyPlan < ActiveRecord::Base
     save
   end
 
+  # atests study plan with statement from parameters
+  def atest_with(params)
+    statement = \
+    eval("#{params['type']}.create(params)") 
+    eval("atestation.#{params['type'].underscore} =
+      statement")
+    if statement.cancel? && statement.is_a?(DeanStatement)
+      index.update_attribute('finished_on', Time.now)
+    elsif statement.is_a?(LeaderStatement) && !atestation.tutor_statement
+      atestation.tutor_statement =
+        TutorStatement.create(statement.attributes)
+    end
+    save
+  end
   # returns status of study plan
   def status
     if canceled?

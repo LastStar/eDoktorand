@@ -172,13 +172,9 @@ module ApplicationHelper
   end
   
   # prints approve form
-  def approve_forms(study_plan)
-    if statement = study_plan.index.statement_for(@user)
-      if study_plan.approved? && !study_plan.index.disert_theme.approved?
-        approve_form(study_plan.index.disert_theme, statement)
-      else
-        approve_form(study_plan, statement)
-      end
+  def approve_forms(document)
+    if statement = document.index.statement_for(@user)
+      approve_form(document, statement)
     end
   end
   
@@ -311,7 +307,7 @@ module ApplicationHelper
   
   # prints atestation link
   def atestation_link(study_plan)
-    element = "approve_form#{study_plan.id}"
+    element = "atestation_link#{study_plan.id}"
     link_to_remote_with_loading(_("see atestation informations"), {:controller =>
       'study_plans', :action => 'atest', :id => study_plan, :evaluate => true},
       {:id => element})
@@ -321,7 +317,8 @@ module ApplicationHelper
   def approve_form(document, statement)
     statement.class.to_s =~ /(.*)Statement/
     person = $1.downcase
-    if document.is_a?(StudyPlan) && document.approved?
+    if document.is_a?(StudyPlan) && document.approved? && 
+      document.waits_for_actual_atestation?
       action = 'confirm_atest'
       title = _("atest like #{person}")
       options = [[_("approve"), 1], [_("approve with earfull"), 2], [_("cancel"), 0]]    
@@ -332,7 +329,7 @@ module ApplicationHelper
     end
     render(:partial => 'shared/approve_form', :locals => {:document => document,
       :title => title, :options => options, :action => action, :statement => 
-      statement, :controller => document.class.to_s.underscore.pluralize})
+      statement})
   end
   
   # prints methodology link

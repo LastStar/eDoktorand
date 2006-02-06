@@ -203,8 +203,9 @@ class StudyPlansController < ApplicationController
   def confirm_approve
     study_plan = StudyPlan.find(@params['id'])
     study_plan.approve_with(@params['statement'])
-    render(:inline => "Element.hide('approve_form#{study_plan.id}'); \
-      Element.remove('index_line_#{study_plan.index.id}')")
+    render(:inline => "Element.remove('approve_form#{study_plan.id}'); \
+      Element.remove('index_line_#{study_plan.index.id}');\ 
+      Element.remove('atestation_link#{study_plan.id}');")
   end
   
   # atests study plan 
@@ -216,17 +217,9 @@ class StudyPlansController < ApplicationController
   # confirms and saves statement
   def confirm_atest
     study_plan = StudyPlan.find(@params['id'])
-    statement = \
-    eval("#{@params['statement']['type']}.create(@params['statement'])") 
-    eval("study_plan.atestation.#{@params['statement']['type'].underscore} =
-      statement")
-    if statement.cancel? && statement.is_a?(DeanStatement)
-      study_plan.index.finished_on = Time.now 
-      study_plan.index.save
-    end
-    study_plan.save
-    render(:partial => 'shared/show', :locals => {:remove =>
-      "approve_form#{study_plan.id}", :study_plan => study_plan})
+    study_plan.atest_with(@params['statement'])
+    render(:inline => "Element.hide('approve_form#{study_plan.id}'); \
+      Element.remove('index_line_#{study_plan.index.id}')")
   end
   
   # for remote adding subjects to page

@@ -64,11 +64,9 @@ class Index < ActiveRecord::Base
         if interupt.approvement.prepares_statement?(user)
           return interupt.approvement.prepare_statement(user)
         end
+      elsif study_plan.waits_for_actual_atestation?
+        return study_plan.atestation.prepare_statement(user)
       end
-    elsif Atestation.actual_for_faculty(student.faculty) &&
-      !study_plan.atested_for?(Atestation.actual_for_faculty(student.faculty))
-      study_plan.atestation ||= Atestation.create
-      return study_plan.atestation.prepare_statement(user)
     end
   end
 
@@ -79,14 +77,10 @@ class Index < ActiveRecord::Base
     elsif admited_interupt?
       approvement = interupt.approvement ||= InteruptApprovement.create
     elsif study_plan && study_plan.approved? &&
-      !study_plan.atested_for?(Atestation.actual_for_faculty(user.person.faculty))
-      if study_plan.atestation && study_plan.atestation.prepares_statement?(user)
-        return true
-      end
+      study_plan.waits_for_actual_atestation?
+      approvement = study_plan.atestation ||= Atestation.create
     end
-    if approvement && approvement.prepares_statement?(user)
-      return true
-    end
+    approvement && approvement.prepares_statement?(user)
   end
 
   # returns all indexes for person
