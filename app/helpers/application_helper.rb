@@ -180,16 +180,16 @@ module ApplicationHelper
   
   # prints atestation links
   def atestation_links(study_plan)
-    if Atestation.actual_for_faculty(@user.person.faculty)
+    if study_plan.waits_for_actual_atestation?
       atestation_link(study_plan)
     end
   end
   
   # prints statements approvement 
   def print_statements(approvement)
-    print_statement(approvement.tutor_statement, _("Tutor statement")) +
-    print_statement(approvement.leader_statement, _("Leader statement")) +
-    print_statement(approvement.dean_statement, _("Dean statement") ) 
+    print_statement(approvement.tutor_statement, _("tutor statement")) +
+    print_statement(approvement.leader_statement, _("leader statement")) +
+    print_statement(approvement.dean_statement, _("dean statement") ) 
   end
   
   # prints atestaion subject line wihch depends on finishing of the subject
@@ -197,12 +197,12 @@ module ApplicationHelper
     content = ''
     if plan_subject.finished? && (plan_subject.finished_on <= atestation_term)
       content << content_tag('div', 
-      plan_subject.finished_on.strftime('%d. %m. %Y'), :class => 'info')
+        plan_subject.finished_on.strftime('%d. %m. %Y'), :class => 'info')
       html_class = ''
     else
       content << content_tag('div', "#{plan_subject.finishing_on}.
       #{_('semester')}", :class => 'info')
-      html_class = 'unfinished'
+      html_class = 'red'
     end
     content << plan_subject.subject.label
     content_tag('li', content, :class => html_class)
@@ -307,10 +307,9 @@ module ApplicationHelper
   
   # prints atestation link
   def atestation_link(study_plan)
-    element = "atestation_link#{study_plan.id}"
-    link_to_remote_with_loading(_("see atestation informations"), {:controller =>
-      'study_plans', :action => 'atest', :id => study_plan, :evaluate => true},
-      {:id => element})
+    link_to_remote_with_loading(_("see atestation informations"), {:url => {:controller =>
+      'study_plans', :action => 'atest', :id => study_plan}, :evaluate => true},
+      {:id => "atestation_link"})
   end
   
   # prints approvement link
@@ -345,8 +344,7 @@ module ApplicationHelper
     if @student
       link_to_remote_with_loading(_("additional information for next atestation"),
         {:controller => 'study_plans', :action => 'atestation_details', :id => 
-        study_plan, :evaluate => true}, {:id => 
-        "detail_link#{study_plan.id}"})
+        study_plan, :evaluate => true}, {:id => "detail_link#{study_plan.id}"})
     else
       atestation_links(study_plan)
     end

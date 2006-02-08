@@ -1,0 +1,4 @@
+<%= "Element.hide('approve_form#{study_plan.id}'); \
+      Element.remove('index_line_#{study_plan.index.id}'); \
+      Element.remove('back_remove_link');\
+      #{update_element_function('atestation', :content => print_statements(study_plan.atestation))}" %>

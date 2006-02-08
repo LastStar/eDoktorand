@@ -15,13 +15,18 @@ class Index < ActiveRecord::Base
   validates_presence_of :student
   validates_presence_of :tutor
 
-  # returns year of the study
-  def year
+  # returns semesteer of the study
+  def semester
     time = Time.now - enrolled_on
     if interupt
       time -= interrupted_time
     end
-    time.div(1.year) + 1
+    time.div(6.month) + 1
+  end
+
+  # returns year of the study
+  def year
+    semester / 2
   end
 
   # returns leader of department for this student

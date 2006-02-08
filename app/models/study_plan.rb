@@ -56,8 +56,12 @@ class StudyPlan < ActiveRecord::Base
   # return plan subjects for atestation
   def atestation_subjects
     PlanSubject.find(:all, :conditions => ['study_plan_id = ? and finishing_on
-    >= ? and finishing_on <= ?', id, atestation_count * 2 - 2,
-    atestation_count * 2])
+    >= ? and finishing_on <= ?', id, semester - 2,
+    semester])
+  end
+  # return semester of the study from index
+  def semester
+    index.semester
   end
 
   # aproves study plan with statement from parameters 

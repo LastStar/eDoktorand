@@ -14,7 +14,11 @@
 	  	@plan_subject = PlanSubject.find(:first, :conditions => [" subject_id = ? AND study_plan_id = ? ", exam.subject_id, exam.index.study_plan.id])
 	  %>
 	  <% if @plan_subject %>
+    <% if @plan_subject.finished_on %>
 	  	;&nbsp;<%= @plan_subject.finished_on.strftime("%d. %m. %Y") %>
+    <% else %>
+	  	;&nbsp;<%= _('error in exam!!!') %>
+    <% end %>
 	  <% end %>
 	  <br /></b>
     <div class='detail' id='info<%= exam.id %>' style="display: none">

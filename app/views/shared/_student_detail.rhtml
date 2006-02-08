@@ -50,10 +50,10 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
 <% end %>
 <% if @user.non_student? %>
 <%= link_to_function(_("back"), "Element.show('people_list', 'search');
-Element.remove('student_detail')") %>
+Element.remove('student_detail')", :id => 'back_link') %>
 <%= link_to_function(_("back and remove from list"), \
 "Element.remove('index_line_#{index.id}'); \
 Element.remove('student_detail'); \
-Element.show('people_list', 'search');") %>
+Element.show('people_list', 'search');", :id => 'back_remove_link') %>
 <% end %>
 </div>

@@ -861,13 +861,13 @@ msgstr "cizí jazyky"
 msgid "obligate subjects"
 msgstr "povinné předměty"
 
-msgid "Tutor statement"
+msgid "tutor statement"
 msgstr "vyjádření školitele"
 
-msgid "Leader statement"
+msgid "leader statement"
 msgstr "vyjádření vedoucího katedry"
 
-msgid "Dean statement"
+msgid "dean statement"
 msgstr "vyjádření děkana"
 
 msgid "approve with condition"
@@ -1397,6 +1397,11 @@ msgstr "atestovat jako děkan"
 
 msgid "see atestation informations"
 msgstr "informace k atestaci"
+msgid "approve with earfull"
+msgstr "schválit s výtkou"
+
+msgid "Unfinished subjects are in red"
+msgstr "Nesplněné předměty jsou označeny červeně"
 
 msgid "external exam"
 msgstr "externí zkouška"
