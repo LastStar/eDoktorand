@@ -7,6 +7,7 @@ require_dependency 'obligate_subject'
 require_dependency 'plan_subject'
 require_dependency 'study_plan'
 require_dependency 'disert_theme'
+require_dependency 'exam'
 
 class ApplicationController < ActionController::Base
   before_filter :localize

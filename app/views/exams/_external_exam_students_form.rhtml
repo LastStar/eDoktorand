@@ -1,0 +1,14 @@
+<%= form_remote_with_loading(:url => {:action => 'save_external_exam_student'}, :evaluate =>
+  true) %>	
+<fieldset>
+<legend><%= _("Examined students") %></legend>
+<label>
+<%= _("student") %>
+</label>
+<%= content_tag('select', options_for_select(students.map {|stud|
+[stud.display_name, stud.id]}), {'id' => "student_id", 'name' =>
+"student[id]"}) %>
+<br/> 
+</fieldset>
+<%= submit_tag(_("commit")) %>
+<%= end_form_tag %>

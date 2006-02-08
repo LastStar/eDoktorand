@@ -1397,3 +1397,9 @@ msgstr "atestovat jako děkan"
 
 msgid "see atestation informations"
 msgstr "informace k atestaci"
+
+msgid "external exam"
+msgstr "externí zkouška"
+
+msgid "Creating external exam for student"
+msgstr "externí zkouška"
