@@ -628,7 +628,7 @@ include Log4r
         u.save
         i.save
       else
-        @logger.info "Student id #{row[14]} exists"
+        @mylog.info "Student id #{row[14]} exists"
       end
     end
   end
