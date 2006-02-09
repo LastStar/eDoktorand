@@ -1397,8 +1397,12 @@ msgstr "atestovat jako děkan"
 
 msgid "see atestation informations"
 msgstr "informace k atestaci"
+
 msgid "approve with earfull"
 msgstr "schválit s výtkou"
+
+msgid "approved with earfull"
+msgstr "schváleno s výtkou"
 
 msgid "Unfinished subjects are in red"
 msgstr "Nesplněné předměty jsou označeny červeně"
