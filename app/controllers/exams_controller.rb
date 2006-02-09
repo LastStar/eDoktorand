@@ -69,51 +69,45 @@ class ExamsController < ApplicationController
   
   # for creating external exams
   def external_exam
-    @plan_subjects = PlanSubject.find(:all, :conditions => ['finished_on is null']).select{|ps| ps.subject.is_a? ExternalSubject}
-    @plan_subjects = @plan_subjects.select {|ps| ps.study_plan.approved?}
+    @plan_subjects = PlanSubject.find_unfinished_external    
     students = []
-    @plan_subjects.each {|plan| students << plan.study_plan.index.student}
-    students = students.select {|stud| !stud.index.finished?}.uniq!
+    @plan_subjects.each {|ps| students << ps.study_plan.index.student \
+      if !ps.study_plan.index.finished?}
+    students.uniq!
     render(:partial => "external_exam_students", :locals => {:students => students})
   end
   
   # saving student and selecting external subjects
   def save_external_exam_student
-    exam = Exam.new('created_by_id' => @user.person.id)
-    exam.created_by = 
+    exam = Exam.new
     student = Student.find(@params['student']['id'])
     exam.index = student.index
     @session['exam'] = exam
-    subjects = []
-    student.index.study_plan.plan_subjects.each{|ps| subjects << ps.subject if (ps.subject.is_a? ExternalSubject)}
+    subjects = student.index.study_plan.external_subjects
     render(:partial => "external_exam_subjects", :locals => {:exam => exam, :subjects => subjects})
   end  
   
   # saving subject for external exam of the selected student
   def save_external_exam_subject
-    exam = @session['exam']
-    exam.subject = Subject.find(@params['subject']['id'])
-    @session['exam'] = exam
-    @plan_subjects = PlanSubject.find_all_by_subject_id(@params['subject']['id'])
-    plan_subject = PlanSubject.find(:all, :conditions => ['subject_id = ? and
-    study_plan_id = ?', @params['subject']['id'], exam.index.study_plan.id])
-    render(:partial => 'main_external_exam', :locals => {:exam => exam, :plan_subject =>
-  plan_subject})
+    @session['exam'].subject = Subject.find(@params['subject']['id'])
+    plan_subject = PlanSubject.find_by_subject_id_and_study_plan_id(\
+      @params['subject']['id'], @session['exam'].index.study_plan.id)
+    render(:partial => 'main_external_exam', :locals => {:exam => @session['exam'],\
+      :plan_subject => plan_subject})
   end
-  
+
   # saving external exam
   def save_external
     exam = @session['exam']
     exam.attributes = @params['exam']
     exam.first_examinator_id = -1
     # select the appropriate plan_subject to update the finished_on tag
-    ps = PlanSubject.find(:first, :conditions => ["subject_id = ? and
-    study_plan_id = ?", exam.subject_id, exam.index.study_plan.id])
+    ps = PlanSubject.find_by_subject_id_and_study_plan_id(\
+      exam.subject_id, exam.index.study_plan.id)
     ps.attributes = @params['plan_subject'] if exam.passed?
     ps.save
     exam.save
-    redirect_to :action => 'index'
-    #render(:partial => 'show', :locals => {:exam => exam, :plan_subject => ps})
+    redirect_to(:action => 'index', :controller => 'exams')
   end
   
   # save subject of exam to session and adds students 

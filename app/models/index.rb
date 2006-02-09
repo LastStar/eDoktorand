@@ -26,7 +26,7 @@ class Index < ActiveRecord::Base
 
   # returns year of the study
   def year
-    semester / 2
+    (semester / 2) + 1
   end
 
   # returns leader of department for this student

@@ -13,8 +13,10 @@
 
   <label for="exam_university"><%=_("University")%></label>
   <%= exam.subject.external_subject_detail.university %><br/>
+<% if exam.subject.external_subject_detail.person  %>
   <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
   <%= exam.subject.external_subject_detail.person %><br/>
+<% end %>
   
 </fieldset>
 

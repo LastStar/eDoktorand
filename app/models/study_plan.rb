@@ -94,6 +94,7 @@ class StudyPlan < ActiveRecord::Base
     end
     save
   end
+
   # returns status of study plan
   def status
     if canceled?
@@ -105,6 +106,7 @@ class StudyPlan < ActiveRecord::Base
     end
   end
 
+  # return last approving person localized string
   def approved_by
     if approved?
       _('dean')
@@ -123,5 +125,10 @@ class StudyPlan < ActiveRecord::Base
   def unfinished_subjects
    PlanSubject.find(:all, :conditions =>  [ \
                     "study_plan_id = ? and finished_on is null", id])
+  end
+
+  # returns all external subject for student
+  def external_subjects
+    PlanSubject.find_unfinished_external(:study_plan => self).map {|ps| ps.subject}
   end
 end
