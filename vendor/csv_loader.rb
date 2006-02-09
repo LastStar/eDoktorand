@@ -604,7 +604,7 @@ include Log4r
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
     @@mylog.info "Loading students..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      unless Student.exists?(row[14])
+      if !Person.exists?(row[14])
         s = Student.new
         i = Index.new
         u = User.new
@@ -627,6 +627,9 @@ include Log4r
         u.person = s
         u.save
         i.save
+      elsif p = Person.find(row[14])
+        p.update_attribute('type', 'Student')
+        @@mylog.info "Student id #{row[14]} changed to student"
       else
         @@mylog.info "Student id #{row[14]} exists"
       end
