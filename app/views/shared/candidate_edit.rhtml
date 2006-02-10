@@ -92,9 +92,9 @@
     <label for="candidate_study_id" class="required"><%= _("study form") %></label>
     <%= select 'candidate', 'study_id', study_ids %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for="candidate_language1" class="required"><%= _("language exams") %></label>
-    <%= select 'candidate', 'language1_id', LanguageSubject.for_select %><span class='required'>&nbsp;&lowast;</span ><br />
+    <%= select 'candidate', 'language1_id', LanguageSubject.for_select(:coridor => @candidate.coridor_id) %><span class='required'>&nbsp;&lowast;</span ><br />
     <label for="candidate_language2" class="required">&nbsp;</label>
-    <%= select 'candidate', 'language2_id', LanguageSubject.for_select %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <%= select 'candidate', 'language2_id', LanguageSubject.for_select(:coridor => @candidate.coridor_id) %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for="candidate_study_theme"><%= _("theme area") %></label>
     <%= text_field 'candidate', 'study_theme', 'size' => '30'  %><br /> 
   </fieldset>
