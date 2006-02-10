@@ -76,6 +76,7 @@ class FormController < ApplicationController
     @candidate = Candidate.new do |c| 
       c.coridor = Coridor.find(@params['id'])
       c.state = _("Czech republic")
+      c.address_state = _("Czech republic")
       c.university = _("Czech agriculture university")
       c.faculty = c.coridor.faculty.name
     end

@@ -366,6 +366,9 @@ msgstr "Uchazeč"
 msgid "birth number"
 msgstr "rodné číslo"
 
+msgid "birth number / passport"
+msgstr "rodné číslo / číslo pasu cizince"
+
 msgid "coridor"
 msgstr "obor"
 
@@ -724,7 +727,7 @@ msgid "University"
 msgstr "Univerzita"
 
 msgid "date of study end"
-msgstr "datum SZZ"
+msgstr "datum SZZ - skutečné nebo předpokládané"
 
 msgid "Employer"
 msgstr "Zaměstnavatel"
@@ -768,6 +771,9 @@ msgstr "titul za jménem"
 msgid "birth place"
 msgstr "místo narození"
 
+msgid "date of birth"
+msgstr "datum narození"
+
 msgid "state"
 msgstr "státní příslušnost"
 
@@ -785,6 +791,9 @@ msgstr "obec"
 
 msgid "zip"
 msgstr "psč"
+
+msgid "address state"
+msgstr "stát"
 
 msgid "don't fill if identic to habitat address"
 msgstr "nevyplňovat je li shodná s bydlištěm"
@@ -811,7 +820,7 @@ msgid "language exams"
 msgstr "jazyky příjímacích zkoušek"
 
 msgid "theme area"
-msgstr "tématický okruh"
+msgstr "téma disertační práce"
 
 msgid "postal address"
 msgstr "korespondenční adresa"
@@ -861,13 +870,13 @@ msgstr "cizí jazyky"
 msgid "obligate subjects"
 msgstr "povinné předměty"
 
-msgid "tutor statement"
+msgid "Tutor statement"
 msgstr "vyjádření školitele"
 
-msgid "leader statement"
+msgid "Leader statement"
 msgstr "vyjádření vedoucího katedry"
 
-msgid "dean statement"
+msgid "Dean statement"
 msgstr "vyjádření děkana"
 
 msgid "approve with condition"

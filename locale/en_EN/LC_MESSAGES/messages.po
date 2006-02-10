@@ -954,3 +954,13 @@ msgid ""
 "Here you can see how does look your study plan. If it's how you\n"
 "intended confirm it please."
 msgstr ""
+
+msgid "birth number / passport"
+msgstr ""
+
+msgid "address state"
+msgstr "state"
+
+msgid "date of birth"
+msgstr ""
+
