@@ -188,11 +188,10 @@ class ProbationTermsController < ApplicationController
     exam.first_examinator_id = pt.first_examinator_id
     exam.second_examinator_id = pt.second_examinator_id
     @session['exam'] = exam
-
     plan_subject = PlanSubject.find(:all, :conditions => ['subject_id = ? and
     study_plan_id = ?', exam.subject.id, exam.index.study_plan.id])
     render(:partial => 'main_exam', :locals => {:exam => exam, :plan_subject =>
-  plan_subject, :probation_term => pt})
+      plan_subject, :probation_term => pt})
   end
   
   # saves exam 
@@ -221,34 +220,5 @@ class ProbationTermsController < ApplicationController
   # sets title of the controller
   def set_title
     @title = _("Probation terms")
-  end
-
-  # searches the probation terms in the list
-  def search
-    if (!@user.person.nil?) 
-      person = @user.person
-      @subjects = Subject.for_person(person)
-      if (@params['search_field'].length > 0)
-        @subjects_new = []
-        @subjects.each do |sub| 
-            label = sub.label
-           search_field = @params['search_field']
-           if ((label.length) <= (search_field.length))
-             search_string = @params['search_field'][0..(label.length - 1)]
-           else
-             search_string = @params['search_field']
-           end
-           label_cutted = label[0..(search_string.length - 1)]
-           if (search_string.eql?(label_cutted))
-             @subjects_new << sub
-           end
-          end
-      else
-        @subjects_new = @subjects
-      end
-      @probation_terms = []
-      @subjects_new.each {|sub| @probation_terms.concat(sub.probation_terms)}
-      render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
-    end
   end
 end

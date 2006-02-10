@@ -11,16 +11,7 @@ class ExamsController < ApplicationController
   end
 
   def list
-    if @user.has_one_of_roles?(['faculty_secretary', 'dean'])
-      subjects = @user.person.faculty.departments.map {|d| d.subjects}.flatten
-      conditions = "subject_id IN (#{subjects.map {|s| s.id}.join(',')})"
-    elsif @user.has_one_of_roles?(['leader', 'department_secretary'])
-      subjects = @user.person.department.subjects
-      conditions = "subject_id IN (#{subjects.map {|s| s.id}.join(',')})"
-    elsif @user.has_role?('tutor') 
-      conditions = ['first_examinator_id = ?', @user.person.id]
-    end
-    @exams = Exam.find(:all, :conditions => conditions)
+    @exams = Exam.find_for(@user)
   end
 
   def show
@@ -48,22 +39,7 @@ class ExamsController < ApplicationController
   def exam_by_subject
     @exam = Exam.new('created_by_id' => @user.person.id)
     @session['exam'] = @exam
-    if @user.has_role?('admin')
-      subjects  = Subject.find_all()
-    elsif @user.has_one_of_roles?(['faculty_secretary', 'dean'])
-      faculty = @user.person.faculty 
-      subjects = faculty.departments.inject([]) {|arr, dep| arr.concat(dep.subjects)}
-    elsif @user.has_one_of_roles?(['department_secretary', 'leader'])
-      subjects = @user.person.department.subjects
-    end
-    # viz TODO
-    # subjects = subjects.select {|sub| !sub.plan_subjects.empty?}
-    subjects = subjects.select do |sub|
-      not_finished = sub.plan_subjects.select do 
-        |ps| !ps.finished? && ps.study_plan.approved?
-      end
-      not_finished.size > 0
-    end
+    subjects = PlanSubject.find_unfinished_for(@user, :subjects => true)
     render(:partial => "subjects", :locals => {:subjects => subjects}) 
   end
   
@@ -71,9 +47,10 @@ class ExamsController < ApplicationController
   def external_exam
     @plan_subjects = PlanSubject.find_unfinished_external    
     students = []
-    @plan_subjects.each {|ps| students << ps.study_plan.index.student \
-      if !ps.study_plan.index.finished?}
-    students.uniq!
+    @plan_subjects.each do |ps|
+      students << ps.study_plan.index.student if !ps.study_plan.index.finished?
+    end
+    students.uniq
     render(:partial => "external_exam_students", :locals => {:students => students})
   end
   

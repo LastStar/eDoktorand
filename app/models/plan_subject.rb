@@ -18,4 +18,12 @@ class PlanSubject < ActiveRecord::Base
     end
     find(:all, :conditions => sql, :include => [:subject, :study_plan])
   end
+
+  # returns all unfinished plan subjects
+  def self.find_unfinished_for(user, options = {})
+    sql = "finished_on is null and subjects.id in (?)"
+    subj_ids = Subject.find_for(user).map {|s| s.id}
+    psubs = find(:all, :conditions => [sql, subj_ids], :include => :subject)
+    options[:subjects] ? psubs.map {|ps| ps.subject}.uniq : psubs
+  end
 end
