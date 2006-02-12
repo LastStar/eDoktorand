@@ -1,0 +1,5 @@
+<%= update_element_function("done", :content => render(:partial => 
+  "external_with_student", :locals => {:exam => exam})) %>
+<%= update_element_function("form", :content => render(:partial =>
+  "external_subjects_form", :locals => {:subjects => subjects})) %>
+<%= "Element.show('form')" %>
