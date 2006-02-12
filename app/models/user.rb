@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :login, :on => :create
   validates_confirmation_of :password, :on => :create     
   
+  # authenticates user by login and password
   def self.authenticate(login, pass)
     return nil if pass.empty?
     if RAILS_ENV == 'production'
@@ -38,45 +39,56 @@ class User < ActiveRecord::Base
       find_first(["login = ? AND password = ?", login, sha1(pass)])
     end
   end
-  
-  #def self.authenticate(login, pass)
-  #  find_first(["login = ? AND password = ?", login, sha1(pass)])
-  #end  
-
+ 
+  # changes user password 
   def change_password(pass)
     update_attribute "password", self.class.sha1(pass)
   end
+
   # checks if user has permission
   def has_permission?(permission)
     permission = permission.name if permission.is_a?(Permission)
     my_permissions.include?(permission)
   end
+
   # checks if user has role
   # role should be both Role class or string
   def has_role?(role)
     role = role.name if role.is_a?(Role)
     self.my_roles.include?(role)
   end
+
   # checks if user have one of the roles from array
   def has_one_of_roles?(roles)
     !roles.select {|r| has_role?(r)}.empty?
   end
+
+  # returns true if not student
   def non_student?
-    self.has_one_of_roles?(['tutor', 'faculty_secretary', 'department_secretary', 'dean', 'leader', 'vicerector'])
+    !self.has_role?('student')
   end
+
+  # returns true if user have secretary role
+  def has_secretary_role?
+    has_one_of_roles?(['department_secretary', 'faculty_secretary'])
+  end
+
   # returns array of all permissions names of user
   def my_permissions
     @my_permissions ||= self.roles.map {|r| r.permissions.map {|p| p.name}}.flatten.freeze
   end
+
   # returns array of all role names of user
   def my_roles
     @my_roles ||= self.roles.map {|r| r.name}.flatten.freeze
   end
+
   protected
 
   def self.sha1(pass)
     Digest::SHA1.hexdigest("2426J89P--#{pass}--")
   end
+
   before_create :crypt_password
   def crypt_password
     write_attribute("password", self.class.sha1(password))

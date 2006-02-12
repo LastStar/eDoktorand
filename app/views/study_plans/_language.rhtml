@@ -1,6 +1,6 @@
 <label class='smaller'>
 <%= _("language") %>
 </label>
-<%= language_select(language, language_subject_options) %>
+<%= language_select(language, LanguageSubject.subjects_for_html_select(@student.index.coridor) %>
 <br/> 
 

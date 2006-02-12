@@ -26,16 +26,4 @@ module ExamsHelper
 	def result_word(id)
 	        [_('not pass'), _('pass')][id]
 	end
-	
-  def exam_by_subject_link()
-    content_tag('li', link_to_remote_with_loading(_("exam by subject"), 
-      :url => {:action => 'examBySubject', :controller => 'exams'}, 
-      :evaluate => true))
-  end
-  
-  def exam_by_person_link()
-    content_tag('li', link_to_remote_with_loading(_("exam by person"), 
-      :url => {:action => 'examByPerson', :controller => 'exams'},
-      :evaluate => true))
-  end
 end

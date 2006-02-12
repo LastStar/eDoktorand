@@ -1,7 +1,5 @@
-<%= update_element_function("done", 
-:content => render(:partial => "exam_with_student", 
-:locals => {:exam => exam})) %>
-<%= update_element_function("form", 
-:content => render(:partial => "main_exam_form",
-:locals => {:exam => exam, :plan_subject => plan_subject, :probation_term =>
-probation_term}))%>
+<%= update_element_function("done", :content => render(:partial => 
+  "with_student", :locals => {:exam => exam})) %>
+<%= update_element_function("form", :content => render(:partial => 
+  "main_form", :locals => {:exam => exam, :plan_subject => plan_subject,
+  :probation_term => probation_term}))%>

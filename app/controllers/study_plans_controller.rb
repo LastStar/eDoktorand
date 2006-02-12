@@ -72,8 +72,7 @@ class StudyPlansController < ApplicationController
            created_subjects})
   end
   
-  # saves seminar subjects to session
-  
+  # saves seminar subjects to session 
   # and creates voluntary subjects
   def save_seminar
     @session['study_plan'].attributes = @params['study_plan']
@@ -89,9 +88,7 @@ class StudyPlansController < ApplicationController
            @session['plan_subjects'], :form_plan_subjects => @plan_subjects})
   end
   
-  # saves voluntary subjects to session
-  
-  # and prepares disert theme
+  # saves voluntary subjects to session and prepares disert theme
   def save_voluntary
     @errors = []
     external = extract_voluntary
@@ -113,9 +110,7 @@ class StudyPlansController < ApplicationController
     end
   end
   
-  # saves language subjects to session
-  
-  # and creates voluntary subjects
+  # saves language subjects to session and creates voluntary subjects
   def save_language
     extract_language
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 2

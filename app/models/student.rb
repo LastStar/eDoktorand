@@ -10,9 +10,13 @@ class Student < Person
   def faculty
     index.department.faculty
   end
+
+  #returns display name for printing
   def display_name
     "#{lastname} #{firstname}"
   end
+
+  # retunrs account for printing
   def account
     if scholarship_supervised_date
       if account_number_prefix
@@ -21,5 +25,17 @@ class Student < Person
         "#{s.index.account_number}/#{s.index.account_bank_number}"
       end
     end
+  end
+
+  # colects students
+  # got one option :study_plans
+  def self.colect_unfinished(options)
+    if options[:study_plans]
+      students = []
+      options[:study_plans].each do |sp|
+        students << sp.index.student if !sp.index.finished?
+      end
+    end
+    students
   end
 end 

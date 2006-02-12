@@ -144,11 +144,6 @@ module ApplicationHelper
     Subject.find(:all).map {|s| [s.label, s.id]}
   end
   
-  # get language  subject ids
-  def language_subject_options
-    LanguageSubject.find_all.map {|l| [l.subject.label, l.subject.id]}
-  end
-  
   # get voluntary subjects for corridor 
   def voluntary_ids(coridor)
     arr = [[_("external subject"), 0]]

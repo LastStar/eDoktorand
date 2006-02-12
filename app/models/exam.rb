@@ -19,7 +19,7 @@ class Exam < ActiveRecord::Base
       sub_ids = Subject.find_for(user).map {|s| s.id}
       sql = ["subject_id IN (?)", sub_ids]
     end
-    find(:all, :conditions => sql, :order => 'created_on desc')
+    find(:all, :conditions => sql, :include => :subject, :order => 'subjects.label')
   end
   
 end

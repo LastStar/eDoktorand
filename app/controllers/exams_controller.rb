@@ -23,39 +23,76 @@ class ExamsController < ApplicationController
       Exam.find(@params['id']))
   end
   
-  def new
-    @exam = Exam.new
-    @exam.creator = @user.person
-  end
-
   # start of the exam creating process
   # rendering the two links
   def create
     @title = _("Creating exam")
+    @options = {}
+    unless @user.has_secretary_role?
+      @dont_render = true
+      @options[:locals] = {:subjects => by_subject}
+      @options[:partial] = 'subject_form'
+    else
+      @options[:partial] = 'choose_creation_style'
+    end
   end
 
   # created exam object and subjects for select 
   # TODO sql finder for only subjects wich actually any student has
-  def exam_by_subject
-    @exam = Exam.new('created_by_id' => @user.person.id)
+  def by_subject
+    @exam = Exam.new
     @session['exam'] = @exam
     subjects = PlanSubject.find_unfinished_for(@user, :subjects => true)
-    render(:partial => "subjects", :locals => {:subjects => subjects}) 
+    unless @dont_render
+      render(:partial => "subject_form", :locals => {:subjects => subjects}) 
+    else
+      subjects
+    end
   end
   
+  # save subject of exam to session and adds students 
+  def save_subject
+    @session['exam'].subject_id = @params['subject']['id']
+    study_plans = PlanSubject.find_unfinished_by_subject(\
+      @params['subject']['id'], :study_plans => true)
+    render(:partial => "examined_student", :locals => {:students =>\
+      Student.colect_unfinished(:study_plans => study_plans)})
+  end
+
+  # save student of exam to session
+  def save_student_subject
+    @session['exam'].index = Student.find(@params['student']['id']).index
+    plan_subject = PlanSubject.find_by_subject_id_and_study_plan_id(\
+      @session['exam'].subject.id, @session['exam'].index.study_plan.id)
+    render(:partial => 'main', :locals => {:plan_subject =>
+      plan_subject})
+  end
+  
+  # saves exam 
+  def save
+    exam = @session['exam']
+    exam.attributes = @params['exam']
+    # select the appropriate plan_subject to update the finished_on tag
+    ps = PlanSubject.find(:first, :conditions => ["subject_id = ? and
+    study_plan_id = ?", exam.subject_id, exam.index.study_plan.id])
+    ps.attributes = @params['plan_subject'] if exam.passed?
+    ps.save
+    exam.save
+    render(:partial => 'show', :locals => {:exam => exam,
+    :plan_subject => ps})
+  end
+
   # for creating external exams
-  def external_exam
+  def external
     @plan_subjects = PlanSubject.find_unfinished_external    
-    students = []
-    @plan_subjects.each do |ps|
-      students << ps.study_plan.index.student if !ps.study_plan.index.finished?
-    end
-    students.uniq
-    render(:partial => "external_exam_students", :locals => {:students => students})
+    students = @plan_subjects.select {|ps| !ps.study_plan.index.finished?}.map \
+      {|ps| ps.study_plan.index.student}.uniq
+    render(:partial => "external_students", :locals => {:students => 
+      students})
   end
   
   # saving student and selecting external subjects
-  def save_external_exam_student
+  def save_external_student
     exam = Exam.new
     student = Student.find(@params['student']['id'])
     exam.index = student.index
@@ -65,7 +102,7 @@ class ExamsController < ApplicationController
   end  
   
   # saving subject for external exam of the selected student
-  def save_external_exam_subject
+  def save_external_subject
     @session['exam'].subject = Subject.find(@params['subject']['id'])
     plan_subject = PlanSubject.find_by_subject_id_and_study_plan_id(\
       @params['subject']['id'], @session['exam'].index.study_plan.id)
@@ -87,93 +124,12 @@ class ExamsController < ApplicationController
     redirect_to(:action => 'index', :controller => 'exams')
   end
   
-  # save subject of exam to session and adds students 
-  def save_exam_subject
-    exam = @session['exam']
-    exam.subject_id = @params['subject']['id']
-    @session['exam'] = exam
-    @plan_subjects = PlanSubject.find(:all, :conditions => ['subject_id = ? and
-    finished_on is null', @params['subject']['id']])
-    @plan_subjects = @plan_subjects.select {|ps| ps.study_plan.approved?}
-    students = []
-    @plan_subjects.each {|plan| students << plan.study_plan.index.student}
-    students = students.select {|stud| !stud.index.finished?}
-    render(:partial => "examined_student", :locals => {:exam => exam, 
-      :students => students})
-  end
-  
-  # save the examined subject for the examined student
-  def save_exam_student_subject
-    exam = @session['exam']
-    exam.subject_id = @params['subject']['id']
-    @session['exam'] = exam
-    @plan_subjects = PlanSubject.find_all_by_subject_id(@params['subject']['id'])
-    plan_subject = PlanSubject.find(:all, :conditions => ['subject_id = ? and
-    study_plan_id = ?', @params['subject']['id'], exam.index.study_plan.id])
-    render(:partial => 'main_exam', :locals => {:exam => exam, :plan_subject =>
-  plan_subject})
-  end
-
-  # save the examindex student to session
-  def save_exam_student
-    exam = @session['exam']
-    index = Index.find_by_student_id(@params['student']['id'])
-    exam.index = index 
-    study_plan = StudyPlan.find_by_index_id(index.id)
-    @session['exam'] = exam
-    
-    plan_subjects = PlanSubject.find(:all, :conditions => ['study_plan_id = ? and
-    finished_on is null', study_plan.id])
-    
-    subjects = []
-    
-    if @user.has_role?(Role.find_by_name('admin'))
-      plan_subjects.each{|plan| @subjects << plan.subject}
-    elsif (@user.person.is_a? Dean) ||
-      (@user.person.is_a? FacultySecretary)
-      plan_subjects.each{|plan| subjects << plan.subject} 
-    elsif (@user.person.is_a? Leader) ||
-      (@user.person.is_a? DepartmentSecretary) ||
-      (@user.person.is_a? Tutor)
-      department = @user.person.tutorship.department
-      plan_subjects.each do |plan| 
-          subjects << plan.subject if plan.subject.departments.include? department
-      end
-    end
-
-    #@subjects = @subjects.select {|sub| !sub.plan_subjects.empty?}
-    render(:partial => "student_subjects", :locals => {:exam => exam, :subjects => subjects}) 
-  end
-  
-  # save student of exam to session
-  def save_student_subject
-    exam = @session['exam']
-    exam.index = Student.find(@params['student']['id']).index
-    @session['exam'] = exam
-    plan_subject = PlanSubject.find(:all, :conditions => ['subject_id = ? and
-    study_plan_id = ?', exam.subject.id, exam.index.study_plan.id])
-    render(:partial => 'main_exam', :locals => {:exam => exam, :plan_subject =>
-  plan_subject})
-  end
-  
-  # saves exam 
-  def save
-    exam = @session['exam']
-    exam.attributes = @params['exam']
-    # select the appropriate plan_subject to update the finished_on tag
-    ps = PlanSubject.find(:first, :conditions => ["subject_id = ? and
-    study_plan_id = ?", exam.subject_id, exam.index.study_plan.id])
-    ps.attributes = @params['plan_subject'] if exam.passed?
-    ps.save
-    exam.save
-    #redirect_to :action => 'index'
-    render(:partial => 'show', :locals => {:exam => exam,
-    :plan_subject => ps})
-  end
+  # edit exam
   def edit
     @exam = Exam.find(@params[:id])
   end
 
+  # updates exam
   def update
     @exam = Exam.find(@params[:id])
     if @exam.update_attributes(@params[:exam])
@@ -184,36 +140,10 @@ class ExamsController < ApplicationController
     end
   end
 
+  # destroys exam
   def destroy
     Exam.find(@params[:id]).destroy
     redirect_to :action => 'list'
-  end
-  # searches in exam list for students with desired lastname
-  def search
-    @conditions.first <<  ' AND lastname like ?'
-    @conditions << "#{@params['search_field']}%"
-    @indexes = Student.find(:all, :conditions => @conditions, :include =>
-      :index).map {|s| s.index}
-    @indexes = @indexes.select {|ind| !ind.exams.empty?}
-    @exams = []
-    @indexes.each {|ind| @exams.concat(ind.exams)}
-    # @exams = Student.find(:all, :conditions => @conditions, :include =>
-    #  :exam).map {|s| s.index.exams}
-    render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
-  end
-
-  # searches in exam list for subject with desired lastname
-  def search_exam
-    @conditions_exam = "null is not null"
-    @conditions_exam.first << ' label like ?'
-    @conditions_exam << "#{@params['search_exam_field']}%"
-    @subjects = Subject.find(:all, :conditions => @conditions_exam)
-    @subjects = @subjects.select {|sub| !sub.exams.empty?}
-    @exams = []
-    @subjects.each {|sub| @exams.concat(sub.exams)}
-    # @exams = Student.find(:all, :conditions => @conditions, :include =>
-    #  :exam).map {|s| s.index.exams}
-    render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list'
   end
 
   # sets title of the controller

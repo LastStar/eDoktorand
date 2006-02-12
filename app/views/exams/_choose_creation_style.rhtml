@@ -4,12 +4,10 @@
 <ul>
 <li>
 <%= link_to_remote_with_loading(_("exam by subject"), :url => {:action => 
-'exam_by_subject'}, :evaluate => true) %>
+'by_subject'}, :update => 'form') %>
 </li>
 <li>
 <%= link_to_remote_with_loading(_("external exam"), :url => {:action => 
-'external_exam'}, :evaluate => true) %>
-</li>
-<li>
+'external'}, :evaluate => true) %>
 </li>
 </ul>

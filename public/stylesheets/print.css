@@ -124,6 +124,6 @@ a {
 #printFooter {
   display: none;
 }
-div.#examPrintMessage {
+#examPrintMessage {
   display: none;
 }
