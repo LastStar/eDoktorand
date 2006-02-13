@@ -41,4 +41,14 @@ class PlanSubject < ActiveRecord::Base
       plan_subjects
     end
   end
+
+  # returns plan subject for exam
+  def self.find_for_exam(exam, options = {})
+    ps = find(:first, :conditions => ['study_plan_id = ? and subject_id = ?', 
+      exam.index.study_plan.id, exam.subject_id])
+    if options[:update_attributes]
+      ps.update_attributes(options[:update_attributes])
+    end
+    ps
+  end
 end

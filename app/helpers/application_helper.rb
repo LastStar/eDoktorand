@@ -117,7 +117,6 @@ module ApplicationHelper
   # get examinator ids
   def examinator_ids(faculty)
     
-  # bloody hack evarybody should have faculty 
     faculty = faculty.id if faculty.is_a?(Faculty)
     Tutor.find(:all).select{|t| t.faculty && t.faculty.id == faculty}.map {|p| [p.display_name, p.id]}
   end
@@ -126,12 +125,6 @@ module ApplicationHelper
   
   # allows null
   def examinator_null_ids(faculty)
-    arr = [['---', '0']]
-    faculty = faculty.id if faculty.is_a?(Faculty)
-    
-  # bloody hack evarybody should have faculty 
-    arr.concat(Tutor.find(:all).select{|t| t.faculty && t.faculty.id ==
-    faculty}.map {|p| [p.display_name, p.id]})
   end
   
   # get index ids

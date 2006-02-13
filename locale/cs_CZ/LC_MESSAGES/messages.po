@@ -840,14 +840,11 @@ msgstr "potvrdit"
 msgid "Are you sure, your plan is ready?"
 msgstr "Jste si jistý, že Váš studijní plán je v pořádku?"
 
-msgid "Unfinished subjects are in red."
-msgstr ""
-
 msgid "Student didn't have any subject for this atestation."
-msgstr ""
+msgstr "Student nemá žádný předmět pro tuto atestaci"
 
 msgid "Additional information provided by student"
-msgstr ""
+msgstr "Dodatečné informace poskytnuté studentem"
 
 msgid "semester of final exam"
 msgstr "semestr státní doktorské zkoušky"
@@ -1413,11 +1410,23 @@ msgstr "schválit s výtkou"
 msgid "approved with earfull"
 msgstr "schváleno s výtkou"
 
-msgid "Unfinished subjects are in red"
-msgstr "Nesplněné předměty jsou označeny červeně"
+msgid "Unfinished subjects are in red."
+msgstr "Nesplněné předměty jsou označeny červeně."
 
 msgid "external exam"
 msgstr "externí zkouška"
 
 msgid "Creating external exam for student"
 msgstr "externí zkouška"
+
+msgid "this year only"
+msgstr "jen za tento rok"
+
+msgid "all exams (slow)"
+msgstr "všechny zkoušky (pomalé)"
+
+msgid "print"
+msgstr "vytisknout"
+
+msgid "create another exam"
+msgstr "vytvořit další zkoušku"

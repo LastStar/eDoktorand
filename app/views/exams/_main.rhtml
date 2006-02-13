@@ -2,6 +2,6 @@
   "with_student", :locals => {:exam => @session['exam']})) %>
 <%= update_element_function("form", :content => render(:partial => 
   "main_form", :locals => {:exam => @session['exam'], :plan_subject => 
-  plan_subject}))%>
+  plan_subject, :examinators => examinators}))%>
 <%= "Element.show('form')" %>
 

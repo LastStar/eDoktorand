@@ -40,3 +40,8 @@ exam.first_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("
 <%= _("2. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature") %>:&nbsp;&nbsp;<br /><br /> 
 <% end %>
 </div>
+<div id="examPrintMessage">
+  <%= link_to_function(_('print'), 'window.print()') %>
+  <%= link_to(_('create another exam'), :action => 'create', :controller => 
+    'exams') %>
+</div>

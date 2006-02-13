@@ -1,4 +1,4 @@
-class Tutor < Person
+class Tutor < Examinator
   has_one :tutorship
   has_many :indexes
   # return faculty of tutor

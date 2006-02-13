@@ -1,6 +1,5 @@
 <%= javascript_include_tag :defaults %>
 <% @ids = [] %>
-<% @exams.sort! {|x, y| x.updated_on <=> y.updated_on} %>
 <ul>
 <% for exam in @exams  %>
   <li>
@@ -10,20 +9,10 @@
     </div>
     <b><%= exam.index.student.display_name %></b><br />
 	  <%=_("subject")%>: <%= exam.subject.label %>;&nbsp;<%=_("result")%>: <%= result_word(exam.result) %>
-	  <% 
-	  	@plan_subject = PlanSubject.find(:first, :conditions => [" subject_id = ? AND study_plan_id = ? ", exam.subject_id, exam.index.study_plan.id])
-	  %>
-	  <% if @plan_subject %>
-    <% if @plan_subject.finished_on %>
-	  	;&nbsp;<%= @plan_subject.finished_on.strftime("%d. %m. %Y") %>
-    <% else %>
-	  	;&nbsp;<%= _('error in exam!!!') %>
-    <% end %>
-	  <% end %>
+	  	;&nbsp;<%= exam.plan_subject.finished_on.strftime("%d. %m. %Y") %>
 	  <br /></b>
     <div class='detail' id='info<%= exam.id %>' style="display: none">
     </div >
   </li>
-  <% @ids << exam.id %>
 <% end %>
 </ul>

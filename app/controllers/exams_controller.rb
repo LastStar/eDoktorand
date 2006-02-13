@@ -11,7 +11,10 @@ class ExamsController < ApplicationController
   end
 
   def list
-    @exams = Exam.find_for(@user)
+    @session['this_year'] = @params['this_year'] == "0" ? false : true
+    @partial = @params['prefix'] ? @params['prefix'] + 'list' : 'list' 
+    @exams = Exam.find_for(@user, :with_plan_subjects => true, :this_year => 
+      @session['this_year'])
   end
 
   def show
@@ -28,12 +31,13 @@ class ExamsController < ApplicationController
   def create
     @title = _("Creating exam")
     @options = {}
-    unless @user.has_secretary_role?
+    if !@session['exam'] && @user.has_secretary_role?
+      @options[:partial] = 'choose_creation_style'
+      @session['exam'] = nil
+    else
       @dont_render = true
       @options[:locals] = {:subjects => by_subject}
       @options[:partial] = 'subject_form'
-    else
-      @options[:partial] = 'choose_creation_style'
     end
   end
 
@@ -62,24 +66,22 @@ class ExamsController < ApplicationController
   # save student of exam to session
   def save_student_subject
     @session['exam'].index = Student.find(@params['student']['id']).index
+    examinators = Examinator.for_html_select(@user)
     plan_subject = PlanSubject.find_by_subject_id_and_study_plan_id(\
       @session['exam'].subject.id, @session['exam'].index.study_plan.id)
     render(:partial => 'main', :locals => {:plan_subject =>
-      plan_subject})
+      plan_subject, :examinators => examinators})
   end
   
   # saves exam 
   def save
-    exam = @session['exam']
-    exam.attributes = @params['exam']
-    # select the appropriate plan_subject to update the finished_on tag
-    ps = PlanSubject.find(:first, :conditions => ["subject_id = ? and
-    study_plan_id = ?", exam.subject_id, exam.index.study_plan.id])
-    ps.attributes = @params['plan_subject'] if exam.passed?
-    ps.save
-    exam.save
-    render(:partial => 'show', :locals => {:exam => exam,
-    :plan_subject => ps})
+    @session['exam'].update_attributes(@params['exam'])
+    if @session['exam'].passed?
+      ps = PlanSubject.find_for_exam(@session['exam'], :update_attributes => 
+        @params['plan_subject'])
+    end
+    render(:partial => 'show', :locals => {:exam => @session['exam'],
+      :plan_subject => ps})
   end
 
   # for creating external exams
@@ -98,7 +100,7 @@ class ExamsController < ApplicationController
     exam.index = student.index
     @session['exam'] = exam
     subjects = student.index.study_plan.external_subjects
-    render(:partial => "external_exam_subjects", :locals => {:exam => exam, :subjects => subjects})
+    render(:partial => "external_subjects", :locals => {:exam => exam, :subjects => subjects})
   end  
   
   # saving subject for external exam of the selected student
@@ -106,7 +108,7 @@ class ExamsController < ApplicationController
     @session['exam'].subject = Subject.find(@params['subject']['id'])
     plan_subject = PlanSubject.find_by_subject_id_and_study_plan_id(\
       @params['subject']['id'], @session['exam'].index.study_plan.id)
-    render(:partial => 'main_external_exam', :locals => {:exam => @session['exam'],\
+    render(:partial => 'main_external', :locals => {:exam => @session['exam'],\
       :plan_subject => plan_subject})
   end
 
