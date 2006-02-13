@@ -127,3 +127,6 @@ a {
 #examPrintMessage {
   display: none;
 }
+.signature {
+  display:inline;
+}

@@ -49,6 +49,7 @@ h4 { padding: 4px; margin: 0px; font-size: 18px; }
 }*/
 
 li { 
+  clear: right; 
   margin: 0 0 0 0;
   padding: 2px 0 0 0.5ex;
   border-bottom: 1px solid #ddc;
