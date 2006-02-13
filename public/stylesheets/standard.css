@@ -7,7 +7,7 @@ body {
   border-left: 1px solid #ddc;
   border-bottom: 1px solid #ddc;
   width: 760px;
-  background-color: #FFFFFF;
+  background-color: #FFF;
 }
 
 body, p, ol, ul, td {
@@ -165,10 +165,12 @@ fieldset {
   width: 44em;
   margin-bottom: 5px;
   margin-left: 2.0ex;
-  padding: 1ex;
+  padding: 0.3ex;
+  padding-left: 2ex;
 }
 legend {
   padding: 1ex;
+  padding-bottom: 0;
 }
 .required {
   color: red;
@@ -364,4 +366,14 @@ h5 {
   padding-left: 10px;
   font-weight: bold;
 }
-
+.form_info {
+  font-size: 12px;
+  color: #443;
+}
+.legend_link {
+  font-size: 14px;
+  text-decoration: none;
+}
+.form {
+  font-size: 14px;
+}

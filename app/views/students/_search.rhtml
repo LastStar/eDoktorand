@@ -1,7 +1,9 @@
 <%= form_remote_with_loading(:url => {:action => 'search'}, :update =>
   'students_list') %>
 <fieldset>
-  <legend><%= _('Fast filter') %></legend>
+  <legend><%= fast_filter_link %></legend>
+  <div id='fast_info' class='form_info'><%= _('For opening filter options click the legend') %></div>
+  <div id='fast_search' style='display:none' class='form'>
   <label class='small' for="search_what"><%= _("search by lastname") %></label>
   <%= tag('input', :name => 'search_field', :id => 'search_field', 'size' => '10')
   %><br/> 
@@ -13,15 +15,18 @@
   'students_list', :loading => visual_effect(:appear, 'loading'),
   :interactive => visual_effect(:fade, "loading"), :with => 
   "'filter_by=' + escape(value)") %>
-  <% end %>
+  <% end %><br /> 
+  <%= submit_tag(_("commit")) %>
+  </div>
 </fieldset>
-<%= submit_tag(_("commit")) %>
 <%= end_form_tag %>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])  %>
 <%= form_remote_with_loading(:url => {:action => 'multiple_filter'}, :update =>
   'students_list') %>
 <fieldset>
-  <legend><%= _('Detail filter') %></legend>
+  <legend><%= detail_filter_link %></legend>
+  <div id='detail_info' class='form_info'><%= _('For opening filter options click the legend') %></div>
+  <div id='detail_search'  class='form' style='display: none'>
   <% if @user.has_role?('vicerector') %>
   <label class='small' for="filter_by_faculty"><%= _("faculty") %></label>
   <%= faculty_select(:include_empty => true, :user => @user) %><br/>
@@ -38,9 +43,10 @@
   <%= coridor_select(:include_empty => true, :user => @user) %><br/>
   <label class='small' for="filter_by"><%= _("year") %></label>
   <%= content_tag('select', year_options, 
-  {'id' => "filter_by_year", 'name' => "filter_by_year"}) %>
+  {'id' => "filter_by_year", 'name' => "filter_by_year"}) %><br /> 
+  <%= submit_tag(_("commit")) %>
+  </div>
 </fieldset>
-<%= submit_tag(_("commit")) %>
 <% end %>
 <%= end_form_tag %>
 

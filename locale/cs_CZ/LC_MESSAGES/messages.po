@@ -1430,3 +1430,6 @@ msgstr "vytisknout"
 
 msgid "create another exam"
 msgstr "vytvořit další zkoušku"
+
+msgid "For opening filter options click the legend"
+msgstr "Pro nastavení filtru klikněte na nadpis"

@@ -149,4 +149,16 @@ module StudentsHelper
     content_tag('select', form_options, {'id' => 
       "filter_by_form", 'name' => "filter_by_form"})
   end
+
+  # returns link for fast filter
+  def fast_filter_link
+    link_to_function(_('Fast filter'), "Element.toggle('fast_info',\
+      'fast_search')", :class => 'legend_link') 
+  end
+
+  # returns link for details fiter 
+  def detail_filter_link
+    link_to_function(_('Detail filter'), "Element.toggle('detail_info',\
+      'detail_search')", :class => 'legend_link') 
+  end
 end

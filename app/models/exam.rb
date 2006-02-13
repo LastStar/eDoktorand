@@ -33,5 +33,4 @@ class Exam < ActiveRecord::Base
     end
     exams
   end
-  
 end
