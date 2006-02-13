@@ -10,8 +10,8 @@
   <p class='instruction'>
   <%= _("If above informations are right <a href='javascript:window.print()'>print</a> this page and together with printed curriculum vitae, photo copy of documents about accomplishment (diploma, final exam documents), proof of the payment send it to Department of science and research. Address:") %><br /> 
   <%= _("Czech agriculture university in Prague") %><br /> 
-  <%= _("Faculty of Forestry and Environment")%>, <%= _("dep. s&r") %> <br />
-  <%= _("Kamycka 1176") %><br /> 
+  <%= @candidate.coridor.faculty.name  %>, <%= _("dep. s&r") %> <br />
+  <%= @candidate.coridor.faculty.street %><br /> 
   <%= _("165 21 Praha 6 - Suchdol.") %> 
   </p>
   <p class='instruction'>

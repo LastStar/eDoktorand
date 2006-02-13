@@ -26,9 +26,7 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :birth_number, :message => _("birth number cannot be empty")
   validates_presence_of :number, :message => _("street number cannot be empty")
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, 
-  :on => :create, :message => _("email does not have right format")
-  validates_uniqueness_of :birth_number, 
-  :message => _("birth number allready in database. Contact administrator")
+    :on => :create, :message => _("email does not have right format")
   # validates if languages are not same
   def validate
     errors.add_to_base(_("languages have to be different")) if language1_id == language2_id
@@ -39,22 +37,25 @@ class Candidate < ActiveRecord::Base
     errors.add_to_base(_("candidate must be admited before enrollment")) if
     !admited? && enrolled?
   end
+
   # hooks: create student
   def before_update
     if self.enrolled? && self.valid? && !student
       self.student = create_student
     end
-    
   end
+
   # finishes candidate
   def finish!
     self.finished_on = Time.now
     self.save
   end
+
   # checks if candidate is allready finished 
   def finished?
     return !self.finished_on.nil?
   end
+
   # returns name for displaying
   def display_name
   	 arr = self.title_before ? [self.title_before.label] : []
@@ -62,71 +63,82 @@ class Candidate < ActiveRecord::Base
     arr << self.title_after.label if self.title_after
     return arr.join(' ')
   end
+
   # returns address for displaying
   def address
     return [[self.street, self.number.to_s].join(' '), self.city, self.zip].join(', ')
   end
+
   # returns address for sending
   def sending_address
     return [[self.street, self.number.to_s].join(' '), [self.zip,
     self.city].join(' ')].join('<br/>')
   end
+
   # returns postal address for displaying
   def postal_address
     return [[self.postal_street, self.postal_number.to_s].join(' '), self.postal_city, self.postal_zip].join(', ')
   end
+
   # returns postal address for displaying
   def sending_postal_address
     return [[self.postal_street, self.postal_number.to_s].join(' '),
     [self.postal_zip, self.postal_city].join(' ')].join('<br/>')
   end
+
   # invites candidate to entrance exam
   def invite!
-    self.invited_on = Time.now
-    self.save
+    self.update_attribute('invited_on', Time.now)
   end
+
   # checks if candidate is allready invited 
   def invited?
-    return !self.invited_on.nil?
+    !self.invited_on.nil?
   end
+
   # admits candidate to study. 
   def admit!
-    self.admited_on = Time.now
-    self.save
+    self.update_attribute('admited_on', Time.now)
   end
+
   # checks if candidate is allready admited
   def admited?
-    return !self.admited_on.nil?
+    !self.admited_on.nil?
   end
+
   # enroll candidate to study and returns new student based on 
   # candidates details. 
   def enroll!
-    # update candidate
-    self.enrolled_on = Time.now
-    self.save
+    self.update_attribute('enrolled_on', Time.now)
   end
+
   # checks if candidate is allready enrolled
   def enrolled?
-    return !self.enrolled_on.nil?
+    !self.enrolled_on.nil?
   end
+
   # sets candidate ready for admition
   def ready!
-    self.ready_on = Time.now
+    self.update_attribute('ready_on', Time.now)
     self.save
   end
+
   # checks if student is ready
   def ready?
     !self.ready_on.nil?
   end
+
   # sets candidate reject for admition
   def reject!
-    self.rejected_on = Time.now
-    self.save
+    self.update_attribute('rejected_on', Time.now)
   end
+
   # checks if student is reject
   def rejected?
     !self.rejected_on.nil?
   end
+
+  # TODO redone with aggregations
   # returns email like contact object
   def contact_email
     return Contact.new do |c|
@@ -134,6 +146,7 @@ class Candidate < ActiveRecord::Base
       c.contact_type_id = 1
     end
   end
+
   # returns phone like contact object
   def contact_phone
     return Contact.new do |c|
@@ -141,6 +154,7 @@ class Candidate < ActiveRecord::Base
       c.contact_type_id = 2
     end
   end
+
   # returns new address with attributes set by self 
   def create_address(id)
     add = Address.new {|a|
@@ -153,6 +167,7 @@ class Candidate < ActiveRecord::Base
     }
     add.save
   end
+
   # returns new postal address with attributes set by self
   def create_postal_address(id)
     if self.postal_city
@@ -167,6 +182,7 @@ class Candidate < ActiveRecord::Base
       add.save
     end
   end
+
   # creates student 
   def create_student
     # convert candidate to (student+index)

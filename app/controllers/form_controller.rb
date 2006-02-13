@@ -45,13 +45,13 @@ class FormController < ApplicationController
 
   # preview information
   def preview
-      if @candidate
-        @title = _("Check submited")
-        flash.now['notice'] = _("Please check what you submited. Then folow guide on the bottom of the page") 
-      else
-        @candidate = Candidate.find(@params['id'])
-        @title = _("Print")
-      end
+    if @candidate
+      @title = _("Check submited")
+      flash.now['notice'] = _("Please check what you submited. Then folow guide on the bottom of the page") 
+    else
+      @candidate = Candidate.find(@params['id'])
+      @title = _("Print")
+    end
   end
 
   # correct details
