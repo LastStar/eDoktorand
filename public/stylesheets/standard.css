@@ -163,14 +163,14 @@ input, select  {
 } 
 fieldset {
   border: 1px solid #b00;
-  width: 44em;
+	width: 690px;
   margin-bottom: 5px;
   margin-left: 2.0ex;
   padding: 0.3ex;
   padding-left: 2ex;
 }
 legend {
-  padding: 1ex;
+  padding: 0.5ex;
   padding-bottom: 0;
 }
 .required {
