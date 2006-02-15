@@ -23,6 +23,7 @@ class Exam < ActiveRecord::Base
       sub_ids = Subject.find_for(user).map {|s| s.id}
       sql = ["subject_id IN (?)", sub_ids]
     end
+    sql.first << ' and result = 1'
     exams = find(:all, :conditions => sql, :include => [:index, :subject], 
       :order => 'subjects.label')
     if options[:with_plan_subjects]
