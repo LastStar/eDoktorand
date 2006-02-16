@@ -26,11 +26,9 @@ class Exam < ActiveRecord::Base
     sql.first << ' and result = 1'
     exams = find(:all, :conditions => sql, :include => [:index, :subject], 
       :order => 'subjects.label')
-    if options[:with_plan_subjects]
-      exams.delete_if {|e| !(e.plan_subject = PlanSubject.find_for_exam(e))}
-      if options[:this_year]
-        exams.delete_if {|e| e.plan_subject.finished_on < TermsCalculator.this_year_start}
-      end
+    exams.delete_if {|e| !(e.plan_subject = PlanSubject.find_for_exam(e))}
+    if options[:this_year]
+      exams.delete_if {|e| e.plan_subject.finished_on < TermsCalculator.this_year_start}
     end
     exams
   end

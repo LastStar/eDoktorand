@@ -6,8 +6,8 @@ class AccountController < ApplicationController
   before_filter :prepare_user, :only => [:welcome, :logout]
 
   def login
-    case @request.method
-    when :post
+    @title = _('Login to system')
+    if @request.method == :post
       if @session['user'] = User.authenticate(@params['user_login'], @params['user_password'])
         flash['notice']  = _("Login was succesful")
         redirect_back_or_default :action => "welcome"

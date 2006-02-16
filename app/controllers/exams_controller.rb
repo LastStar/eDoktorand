@@ -13,8 +13,7 @@ class ExamsController < ApplicationController
   def list
     @session['this_year'] = @params['this_year'] == "0" ? false : true
     @partial = @params['prefix'] ? @params['prefix'] + 'list' : 'list' 
-    @exams = Exam.find_for(@user, :with_plan_subjects => true, :this_year => 
-      @session['this_year'])
+    @exams = Exam.find_for(@user, :this_year => @session['this_year'])
   end
 
   def show

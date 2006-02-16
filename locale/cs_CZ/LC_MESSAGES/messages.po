@@ -1433,3 +1433,6 @@ msgstr "vytvořit další zkoušku"
 
 msgid "For opening filter options click the legend"
 msgstr "Pro nastavení filtru klikněte na nadpis"
+
+msgid "Login to system"
+msgstr "Přihlášení do systému"

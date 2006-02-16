@@ -375,6 +375,5 @@ h5 {
   font-size: 14px;
   text-decoration: none;
 }
-.form {
-  font-size: 14px;
-}
+.form { font-size: 14px; }
+.form label { width: 280px; }
