@@ -1436,3 +1436,9 @@ msgstr "Pro nastavení filtru klikněte na nadpis"
 
 msgid "Login to system"
 msgstr "Přihlášení do systému"
+
+msgid "all studying"
+msgstr "všichni studující"
+
+msgid "my studying"
+msgstr "moji studující"

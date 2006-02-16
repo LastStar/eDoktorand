@@ -91,13 +91,14 @@ class Index < ActiveRecord::Base
 
   # returns all indexes for person
   # accepts Base.find options. Include and order for now
-  def self.find_for_user(user, options ={})
+  def self.find_for(user, options ={})
     if user.has_one_of_roles?(['admin', 'vicerector'])
       if options[:only_tutor]
         conditions = ['indices.tutor_id = ?', user.person.id]
       elsif options[:faculty] && options[:faculty] != '0'
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : \
           Faculty.find(options[:faculty])
+        # TODO fix 
         conditions = ["indices.department_id IN (#{faculty.departments_for_sql})"]
       else
         conditions  = ['NULL IS NULL']
@@ -115,23 +116,34 @@ class Index < ActiveRecord::Base
       conditions.first << options[:conditions].first 
       conditions.concat(options[:conditions][1..-1])
     end
-    find(:all, :conditions => conditions, :include => options[:include],
-         :order => options[:order])
+    if options[:unfinished]
+      conditions.first << ' AND indices.finished_on IS NULL'
+    end
+    find(:all, :conditions => conditions, :include => [:study_plan, :student,
+      :disert_theme, :department, :study, :coridor], :order => options[:order])
+  end
+
+  # finds only indices tutored by user
+  def self.find_tutored_by(user, options={})
+    options[:conditions] = [' AND indices.tutor_id = ?', user.person.id]
+    options[:order] = 'people.lastname'
+    find_for(user, options)
   end
 
   # returns all indexes which waits for approvement from persons 
   # only for tutors, leader a deans
-  def self.find_waiting_for_statement(user)
-    condition_sql = <<-SQL
+  def self.find_waiting_for_statement(user, options = {})
+    sql = <<-SQL
       AND (study_plans.approved_on IS NULL OR disert_themes.approved_on IS NULL \
       OR study_plans.last_atested_on IS NULL OR indices.interupted_on IS NULL OR \
       study_plans.last_atested_on < ?) AND (indices.finished_on IS NULL OR \
       indices.finished_on = '0000-00-00 00:00:00') 
     SQL
-    result = find_for_user(user, :conditions => [condition_sql, 
-                           Atestation.actual_for_faculty(user.person.faculty)], :include => 
-    [:student, :study_plan, :disert_theme, :department, :study, :coridor,
-      :interupt], :order => 'study_plans.created_on', :only_tutor => true)
+    options[:conditions] = [sql, 
+      Atestation.actual_for_faculty(user.person.faculty)], 
+    options[:order] = 'study_plans.created_on'
+    options[:only_tutor] = true
+    result = find_for(user, options)
     if user.has_one_of_roles?(['tutor', 'leader', 'dean'])
       result.select {|i| i.waits_for_statement?(user)} 
     else
@@ -153,7 +165,7 @@ class Index < ActiveRecord::Base
       conditions.first << ' AND indices.study_id = ?'
       conditions << options[:form]
     end
-    indices = Index.find_for_user(options[:user], :conditions => conditions, 
+    indices = Index.find_for(options[:user], :conditions => conditions, 
                                   :include => [:study_plan, :student, :disert_theme, :department, :study,
                                     :coridor, :interupt], :faculty => options[:faculty], :order => options[:order])
     if options[:year] != 0 

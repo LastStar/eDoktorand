@@ -45,7 +45,7 @@ class ScholarshipsController < ApplicationController
   # scholarship list preparation
   def scholarship
     conditions = [" AND (interupted_on IS NULL OR interupted_on LIKE '0000-00-00 00:00:00') AND (finished_on IS NULL OR finished_on LIKE '0000-00-00 00:00:00')"]
-    @indices = Index.find_for_user(@user, :conditions => conditions)
+    @indices = Index.find_for(@user, :conditions => conditions)
   end
 
   # this method shows all extra scholarships for index
