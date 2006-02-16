@@ -867,13 +867,13 @@ msgstr "cizí jazyky"
 msgid "obligate subjects"
 msgstr "povinné předměty"
 
-msgid "Tutor statement"
+msgid "tutor statement"
 msgstr "vyjádření školitele"
 
-msgid "Leader statement"
+msgid "leader statement"
 msgstr "vyjádření vedoucího katedry"
 
-msgid "Dean statement"
+msgid "dean statement"
 msgstr "vyjádření děkana"
 
 msgid "approve with condition"
