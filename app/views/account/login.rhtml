@@ -11,8 +11,11 @@
     <input type="text" name="user_login" id="user_login" size="30" value=""/><br/>
 
     <label for="user_password"><%= _('Password') %></label>
-    <input type="password" name="user_password" id="user_password" size="30"/>
-    <br /> 
+    <input type="password" name="user_password" id="user_password" size="30"/> <br /> 
+
+    <label for="locale"><%= _('Language') %> </label>
+    <%= locale_link %><br /> 
+
     <label for="submit"><%= _('Login') %></label>
     <%= submit_tag(_('submit')) %>
 </div>

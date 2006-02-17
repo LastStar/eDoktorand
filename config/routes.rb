@@ -47,6 +47,9 @@ ActionController::Routing::Routes.draw do |map|
   map.login 'account/login', :controller => 'account', :action => 'login'
   # error url
   map.error 'account/error', :controller => 'account', :action => 'error'
+  # locale url
+  map.locale 'account/locale/:locale', :controller => 'account', :action =>
+    'locale'
   # Install the default route as the lowest priority.
   map.connect ':controller/:action/:id'
 end

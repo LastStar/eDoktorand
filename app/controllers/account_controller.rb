@@ -1,7 +1,7 @@
 class AccountController < ApplicationController
   include LoginSystem
   layout  'employers'
-  before_filter :login_required, :except => [:login, :logout, :error]
+  before_filter :login_required, :except => [:login, :logout, :error, :locale]
   before_filter :set_title
   before_filter :prepare_user, :only => [:welcome, :logout]
 
@@ -76,6 +76,10 @@ class AccountController < ApplicationController
     # adding and removing
     @user.roles.delete(@roles_down) if @roles_down
     @user.roles << @roles_up if @roles_up
+  end
+
+  def locale
+    redirect_to :login_url
   end
 
   private

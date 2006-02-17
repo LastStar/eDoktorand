@@ -26,21 +26,26 @@ class ApplicationController < ActionController::Base
     # the templates.
     @charset  = 'utf-8'
     @headers['Content-Type'] = "text/html; charset=#{@charset}"
-    # Here is a very simplified approach to extract the prefered language
-    # from the request. If all fails, just use 'en_EN' as the default.
-    if @request.env['HTTP_ACCEPT_LANGUAGE'].nil?
-      temp = []
+    @session['locale'] = @params['locale'] if @params['locale']
+    if @session['locale']
+      @locale = @session['locale']
+      @language, @dialect = @locale.split('_')
     else
-      temp = @request.env['HTTP_ACCEPT_LANGUAGE'].split(',').first.split('-') rescue []
+      # Here is a very simplified approach to extract the prefered language
+      # from the request. If all fails, just use 'en_EN' as the default.
+      if @request.env['HTTP_ACCEPT_LANGUAGE'].nil?
+        temp = []
+      else
+        temp = @request.env['HTTP_ACCEPT_LANGUAGE'].split(',').first.split('-') rescue []
+      end
+      language = temp.slice(0)
+      dialect  = temp.slice(1)
+      @language = language.nil? ? 'cs' : language.downcase 
+      @dialect  = dialect.nil? ? 'CZ' : dialect
+      # The complete locale string consists of
+      # language_DIALECT (en_EN, en_GB, de_DE, ...)
+      @locale = "#{@language}_#{@dialect.upcase}"
     end
-    language = temp.slice(0)
-    dialect  = temp.slice(1)
-    @language = language.nil? ? 'cs' : language.downcase # default is en
-    # If there is no dialect use the language code ('en' becomes 'en_EN').
-    @dialect  = dialect.nil? ? 'CZ' : dialect
-    # The complete locale string consists of
-    # language_DIALECT (en_EN, en_GB, de_DE, ...)
-    @locale = "#{@language}_#{@dialect.upcase}"
     @htmllang = @language == @dialect ? @language : "#{@language}-#{@dialect}"
     # Finally, bind the textdomain to the locale. From now on every used
     # _('String') will get translated into the right language. (Provided

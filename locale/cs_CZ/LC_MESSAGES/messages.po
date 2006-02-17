@@ -1442,3 +1442,13 @@ msgstr "všichni studující"
 
 msgid "my studying"
 msgstr "moji studující"
+
+msgid "czech"
+msgstr "česky"
+
+msgid "english"
+msgstr "anglicky"
+
+msgid "Language"
+msgstr "Jazyk"
+
