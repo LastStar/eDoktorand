@@ -140,7 +140,7 @@ class Index < ActiveRecord::Base
       indices.finished_on = '0000-00-00 00:00:00') 
     SQL
     options[:conditions] = [sql, 
-      Atestation.actual_for_faculty(user.person.faculty)], 
+      Atestation.actual_for_faculty(user.person.faculty)]
     options[:order] = 'study_plans.created_on'
     options[:only_tutor] = true
     result = find_for(user, options)

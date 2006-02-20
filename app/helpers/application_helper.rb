@@ -225,6 +225,13 @@ module ApplicationHelper
 		return items
 	end
 
+  # prints birth number if user has faculty secretary role 
+  def birth_number(student)
+    if @user.has_role?('faculty_secretary')
+      content_tag('li', 
+        "#{long_info_helper(student.birth_number)}#{_('Birth number')}:")
+    end
+  end
   # prints main menu
   def main_menu
     links = []
@@ -266,6 +273,8 @@ module ApplicationHelper
       _("logoff") + '?'){} 
     links.flatten.join("\n")
   end
+
+
   private 
   
   # sets options for remote tags
