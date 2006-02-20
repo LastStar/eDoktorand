@@ -1,6 +1,6 @@
 <% if @flash['errors'] && !@flash['errors'].empty? %>
 <div id='error'>
-<ul>
+<ul class='nodecor'>
 <% @flash['errors'].each do |err| %>
 <%= content_tag('li', err) %>
 <% end %>
@@ -11,8 +11,10 @@
   true) %>	
 <fieldset>
 <legend><%= _("voluntary subjects") %></legend>
+<ul>
 <%= render(:partial => 'voluntary', :collection => @plan_subjects, :locals =>
   {:subjects => voluntary_ids(@student.index.coridor.id)}) %>
+</ul>
 </fieldset>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>

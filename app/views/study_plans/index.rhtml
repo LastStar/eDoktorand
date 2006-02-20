@@ -9,8 +9,9 @@ processed now. Final approvement you will get by email. ") %></p>
 information system.") %></p> 
 <p class='help'><%= _(" If you have found any error please contact ") %>
 <a href='mailto:helpdesk@czu.cz'>help desk</a></p> 
-<p class='help'><%= _("Menu in right top corner shows actions you have acces
-to.") %></p> 
-<h5><%= _("Personal and study details") %></h5>
+<p class='help'>
+<%= _("First step propably will to create") %>
+<%= create_study_plan_link(@student) %>
+</p> 
 <% end %>
-<%= render(:partial => 'shared/student_detail', :locals => {:study_plan => @study_plan, :index => @study_plan.index}) %>
+<%= render(:partial => 'shared/student_detail', :locals => {:index => @index}) %>

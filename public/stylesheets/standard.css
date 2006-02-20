@@ -141,15 +141,13 @@ label.bigger {
   font-weight: bolder;
 }
 label {
+  font-size: 13px;
+  width: 280px;
   margin: 0px;
-  width: 14em;
   text-align: right; 
   margin: 5px 1em 5px 0;
   clear: both;
   float: left;
-}
-label.small {
-  width: 13em;
 }
 li.unfinished {
   background-color: #b00;
@@ -376,4 +374,8 @@ h5 {
   text-decoration: none;
 }
 .form { font-size: 14px; }
-.form label { width: 280px; }
+ul.nodecor li {
+  border: none;
+  clear: both;
+  vertical<F2>-align: middle;
+}

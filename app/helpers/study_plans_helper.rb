@@ -88,4 +88,16 @@ module StudyPlansHelper
       "plan_subject[#{plan_subject.id}][finishing_on]"}) +
       ". " + _("semester")  
   end
+  def study_plan_menu(student)
+    links = []
+    links << link_to(_("change study plan"), {:action => 'change', :id => student})
+    unless student.index.interupted?
+      links << link_to_unless_current(_('interupt'), :controller => 'interupts'){}
+    end
+    return links.join('&nbsp;')
+  end
+  def create_study_plan_link(student)
+    link_to(_("create study plan"), {:action => 'create', :id => student}, 
+      :confirm => _("Have you consulted your study plan with tutor. It is highly recomended")) 
+  end
  end

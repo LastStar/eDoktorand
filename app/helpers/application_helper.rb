@@ -236,24 +236,15 @@ module ApplicationHelper
   def main_menu
     links = []
     if @session['user'].person.is_a?(Student) and @student 
-      if !@student.index.study_plan 
-        links << link_to(_("create study plan"), {:action => 'create', :id => @student}, 
-          :confirm => _("Have you consulted your study plan with tutor. It is highly recomended")) 
-      else
-        links << link_to(_("change study plan"), {:action => 'change', :id => @student})
-        if @student.index.study_plan.approved? 
-          links << link_to_unless_current(_("probation terms"), :controller =>
-            'probation_terms'){} 
-          unless @student.index.interupted?
-            links << link_to_unless_current(_('interupt'), :controller => 'interupts'){}
-          end
-        end 
-        links << link_to_unless_current(_("study plan"), :controller => 'study_plans',
-          :action => 'index'){} 
-      end
-        links << link_to_unless_current(_("contacts"), :controller => 'address', :action => 'edit'){}
-        links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
-          :action => 'list'){} 
+      if @student.index.study_plan && @student.index.study_plan.approved? 
+        links << link_to_unless_current(_("probation terms"), :controller =>
+          'probation_terms'){} 
+      end 
+      links << link_to_unless_current(_("study plan"), :controller => 'study_plans',
+        :action => 'index'){} 
+      links << link_to_unless_current(_("contacts"), :controller => 'address', :action => 'edit'){}
+      links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
+        :action => 'list'){} 
     else 
       if @session['user'].has_one_of_roles?(['admin', 'faculty_secretary']) 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 

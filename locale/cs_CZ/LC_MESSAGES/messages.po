@@ -1452,3 +1452,5 @@ msgstr "anglicky"
 msgid "Language"
 msgstr "Jazyk"
 
+msgid "First step propably will to create"
+msgstr "Prvním krokem bude vytvořit"

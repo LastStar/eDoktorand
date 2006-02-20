@@ -7,7 +7,7 @@ class StudyPlansController < ApplicationController
   # page with basic informations for student 
   def index
     @title = _("Study plan")
-    @study_plan = @student.index.study_plan
+    @index = @student.index
   end
   
   # start of the study plan creating process

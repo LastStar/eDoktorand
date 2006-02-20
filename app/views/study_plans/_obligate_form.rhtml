@@ -3,7 +3,9 @@
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
 <legend><%= _("obligate subjects") %></legend>
+<ul class='nodecor'>
 <%= render(:partial => 'obligate', :collection => @plan_subjects) %>
+</ul>
 </fieldset>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>
