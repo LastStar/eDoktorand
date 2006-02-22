@@ -1,10 +1,6 @@
 <div id='people_list'>
 <h5><%= _('Students list') %></h5>
 <ul>
-<% for index in @indices  %>
-<li id="<%= "index_line_#{index.id}" %>">
-    <%= student_action_link(index) %>
-  </li>
-<% end %>
+  <%= render(:partial => 'student_line', :collection => @indices) %>
 </ul>
 </div>

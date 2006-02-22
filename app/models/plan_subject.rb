@@ -32,9 +32,13 @@ class PlanSubject < ActiveRecord::Base
   # returns all unfinished plan subjects from approved study plans
   # got option to return study_plans
   def self.find_unfinished_by_subject(subject_id, options = {})
+    sql = <<-SQL
+      plan_subjects.subject_id = ? and plan_subjects.finished_on is null \
+      and study_plans.approved_on is not null \
+      and study_plans.canceled_on is null
+    SQL
     plan_subjects = find(:all, :include => :study_plan, :conditions => 
-      ['subject_id = ? and finished_on is null and approved_on is not null',
-      subject_id])
+      [sql, subject_id])
     if options[:study_plans]
       plan_subjects.map {|ps| ps.study_plan}
     else

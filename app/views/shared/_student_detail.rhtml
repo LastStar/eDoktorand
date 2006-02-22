@@ -23,9 +23,11 @@
 <h5>
   <%= _("Study plan") %>
 </h5>
+<% if @student %>
 <div class='links'>
   <%= study_plan_menu(@student) %>
 </div>
+<% end %>
 <ul id='<%= "study_plan#{study_plan.id}" %>'>
 <% if study_plan.canceled? %>
   <li>

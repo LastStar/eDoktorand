@@ -120,7 +120,7 @@ class Index < ActiveRecord::Base
       conditions.first << ' AND indices.finished_on IS NULL'
     end
     find(:all, :conditions => conditions, :include => [:study_plan, :student,
-      :disert_theme, :department, :study, :coridor], :order => options[:order])
+      :disert_theme, :department, :study, :coridor, :interupt], :order => options[:order])
   end
 
   # finds only indices tutored by user
