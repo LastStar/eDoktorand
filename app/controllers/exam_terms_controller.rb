@@ -1,7 +1,7 @@
 class ExamTermsController < ApplicationController
   include LoginSystem
   layout 'employers'
-  before_filter :login_required
+  before_filter :login_required, :prepare_user
 
   def index
     list

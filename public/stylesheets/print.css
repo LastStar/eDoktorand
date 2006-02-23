@@ -1,7 +1,3 @@
-.info {
-  float: right;
-  width: 14ex;
-}
 .right_info {
   float: right;
   width: 44ex;
@@ -48,6 +44,8 @@ h1 {
   left: 18em;
 }
 .info {
+  float: right;
+  width: 34ex;
   padding-left: 2em;
   position: absolute;
   left: 13em;
@@ -130,3 +128,4 @@ a {
 .signature {
   display:inline;
 }
+#loading {display: none}

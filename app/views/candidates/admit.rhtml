@@ -3,13 +3,15 @@
   <%= content_tag('select', options_for_select(admit_ids), 
   {'id' => "admit_id",'name' => "admit_id"}) %><br/> 
 	<label for="candidate_coridor_id"><%= _("corridor") %></label>
-	<%= select 'candidate', 'coridor_id', coridor_ids %><br/>
+	<%= select 'candidate', 'coridor_id', Coridor.for_select(:faculty =>
+  @user.person.faculty) %><br/>
 	<label for="candidate_tutor_id"><%= _("tutor") %></label>
-	<%= select 'candidate', 'tutor_id', tutor_ids %><br/>
+	<%= select 'candidate', 'tutor_id', Tutor.for_html_select(@user) %><br/>
 	<label for="candidate_department_id"><%= _("department") %></label>
-	<%= select 'candidate', 'department_id', department_ids %><br/>
+	<%= select 'candidate', 'department_id', Department.for_select(:faculty =>
+  @user.person.faculty) %><br/>
 	<label for="candidate_study_id"><%= _("study form") %></label>
-	<%= select 'candidate', 'study_id', study_ids %><br/>
+	<%= select 'candidate', 'study_id', Study.for_select %><br/>
 	<%= submit_tag(_("submit")) %>
 <%= end_form_tag %>
 <div class='links'>

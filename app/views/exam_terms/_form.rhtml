@@ -10,10 +10,11 @@
 <%= text_field 'exam_term', 'room'  %></p>
 
 <p><label for="exam_term_chairman">Předseda komise</label>
-<%= select 'exam_term', 'chairman_id', tutor_ids()  %></p>
+<%= select 'exam_term', 'chairman_id',Tutor.for_html_select(@user) %></p>
 
 <p><label for='candidate_title_before_id'>Koridor</label>
-<%= select 'exam_term', 'coridor_id', coridor_ids %></p>
+<%= select 'exam_term', 'coridor_id', Coridor.for_select(:faculty =>
+@user.person.faculty) %></p>
 
 <p><label for="candidate_first_examinator">1. člen komise</label>
 <%= text_field 'exam_term', 'first_examinator'  %></p>

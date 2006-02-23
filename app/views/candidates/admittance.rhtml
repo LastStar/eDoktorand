@@ -1,39 +1,35 @@
 <h3 class='printHeader'>ZÁPIS O PŘIJÍMACÍ ZKOUŠCE</h3>
-<br/> 
 <p>
-	Uchazeč: <span class='info'><b><%= @candidate.display_name %></b></span><br/>
-	Obor: <span class='info'><b><%= @candidate.coridor.name %></b></span><br/>
-	Forma studia: <span class='info'><b><%= @candidate.study.name %></b></span><br/>
-	Katedra: <span class='info'><b><%= @candidate.department.name %></b></span>
+	<div class='info'><b><%= @candidate.display_name %></b></div> Uchazeč: <br/>
+	<div class='info'><b><%= @candidate.coridor.name %></b></div>Obor: <br/>
+	<div class='info'><b><%= @candidate.study.name %></b></div>Forma studia: <br/>
+	<div class='info'><b><%= @candidate.department.name %></b></div>Katedra: 
 </p>
-<hr style='border-bottom: 1px solid black'/>
 <p><b>Zhodnocení a výsledek přijímací zkoušky:</b></p>
-<p>Odborná zkouška, hodnocení:
-<span
-class='info'>...................................................................................................*</span>
+<p><div class='info'>...................................................................................................*</div>
+Odborná zkouška, hodnocení:
 </p>
-
-<p>1. jazyk: <b><%= Language.find(@candidate.language1).name %></b>
+<p><div class='info'>...................................................................................................*</div>
+1. jazyk: <b><%= truncate(Subject.find(@candidate.language1_id).label, 15) %></b>
 hodnocení:
-<span
-class='info'>...................................................................................................*</span><br/>
- 2. jazyk: <b><%= Language.find(@candidate.language2).name %></b>
-hodnocení: <span
-class='info'>...................................................................................................*</span></p>
-<p>Celkový výsledek zkoušky: <span class='info'>prospěl x neprospěl</span> </p>
-<p>Doporučení přijímací komise: <span class='info'>příjmout x
-nepříjmout</span></p>
-<p>Pořadí uchazeče: <span class='info'>............</span></p>
+<p><div class='info'>...................................................................................................*</div>
+ 2. jazyk: <b> <%= truncate(Subject.find(@candidate.language2_id).label, 15) %></b>
+hodnocení:</p>
+<p> <div class='info'>prospěl x neprospěl</div>Celkový výsledek zkoušky: </p>
+<p> <div class='info'>příjmout x nepříjmout</div>
+Doporučení přijímací kose:></p>
+<p> <div class='info'>............</div>Pořadí uchazeče:</p>
 
-<p>Doporučený školitel, katerdra: 
-<span class='info'>...................................................................................................</span>
+<p><div
+class='info'>...................................................................................................</div>
+Doporučený školitel, katerdra: 
 </p>
-<p>Poznámky, změny:
-<span class='info'>...................................................................................................</span>
-<br/>
-<br/>
-<span class='info'>...................................................................................................</span>
-<br/>
+<p>
+<div
+class='info'>...................................................................................................</div>
+<div
+class='info'>...................................................................................................</div>
+Poznámky, změny:
 </p>
 <p><b>Podpisy předsedy a členů komise:</b> <br/>
 předseda: <%= @candidate.coridor.exam_term.chairman.display_name %>
