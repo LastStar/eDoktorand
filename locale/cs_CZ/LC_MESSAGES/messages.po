@@ -1447,7 +1447,7 @@ msgid "czech"
 msgstr "česky"
 
 msgid "english"
-msgstr "anglicky"
+msgstr "english"
 
 msgid "Language"
 msgstr "Jazyk"

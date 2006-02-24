@@ -964,3 +964,6 @@ msgstr "state"
 msgid "date of birth"
 msgstr ""
 
+msgid "czech"
+msgstr "česky"
+
