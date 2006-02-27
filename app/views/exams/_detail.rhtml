@@ -1,17 +1,5 @@
-<p>
-  <%= _("Student") %>:&nbsp;&nbsp;<%= exam.index.student.display_name.strip %><br /> 
-  <%= _("Subject") %>:&nbsp;&nbsp;<%= exam.subject.label.strip%><br /> 
-  <%= _("1. examinator") %>:&nbsp;&nbsp;<%= exam.first_examinator.display_name %><br />  
-  <%= _("2. examinator") %>:&nbsp;&nbsp;<%= exam.second_examinator.display_name if exam.second_examinator%><br /> 
-  <%= _("Created by") %>:&nbsp;&nbsp;<%= exam.created_by.display_name %><br /> 
-</p> 
-<hr/>
-<p>
-  <%= _("Result") %>:&nbsp;&nbsp;<%= result_word(exam.result) %><br /> 
-</p> 
-<hr/>
-<p>
-  <%= _("Questions") %>:&nbsp;&nbsp;<pre class="detail"><%= exam.questions%></pre><br /> 
-</p> 
-<hr/>
+<%= update_element_function('exams_list', :action => :update, :position => 
+:after, :content => render(:partial => 'protocol', :locals => {:exam => exam,
+:plan_subject => plan_subject, :back_link => true})) %>
 
+<%= "Element.hide('exams_list')" %>

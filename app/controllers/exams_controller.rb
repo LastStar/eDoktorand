@@ -21,8 +21,9 @@ class ExamsController < ApplicationController
   end
 
   def detail
-    render_partial('detail', :exam =>
-      Exam.find(@params['id']))
+    exam = Exam.find(@params['id'])
+    render(:partial => 'detail', :locals => {:exam => exam, :plan_subject =>
+      PlanSubject.find_for_exam(exam)})
   end
   
   # start of the exam creating process

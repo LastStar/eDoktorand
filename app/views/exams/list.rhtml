@@ -1,22 +1,10 @@
-<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag :defaults %>
 <% unless @exams.empty? %>
-<%= list_links %>                      
 <div id="exams_list">
+  <%= list_links %>                      
   <%= render(:partial => @partial)%>
 </div>
-
-<br />           
 <% else %>
 <h5><%= _("There are no exams for you") %></h5>
 <%= list_links %>                      
 <% end %>
-<br/>
-<script type="text/javascript">
-function showExam(id) {
-  if($('info' + id).style.display == 'none') {
-    new Effect.Appear('info' + id);
-  } else {
-    new Effect.Fade('info' + id)
-  }
-}
-</script>

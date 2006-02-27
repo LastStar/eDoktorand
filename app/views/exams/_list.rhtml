@@ -4,8 +4,7 @@
 <% for exam in @exams  %>
   <li>
     <div class='right'>
-      <%= link_to_remote_with_loading(_("detail"), :url => {:action => 'detail', :id =>
-        exam.id}, :update => "info#{exam.id}", :complete => "showExam(#{exam.id})") %>
+      <%= detail_link(exam) %>
     </div>
     <b><%= exam.index.student.display_name %></b><br />
 	  <%=_("subject")%>: <%= exam.subject.label %>;&nbsp;<%=_("result")%>: <%= result_word(exam.result) %>

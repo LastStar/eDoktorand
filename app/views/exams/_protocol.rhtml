@@ -1,0 +1,52 @@
+<div id='protocol'>
+<% if back_link %>
+<div class='links'>
+<%= link_to_function(_('back'), "Element.show('exams_list'); Element.remove('protocol')") %>
+<%= print_link %>
+</div>
+<% end %>
+<div>
+<%= _("Czech university of agriculture") %><br /><br />
+<%= _("Faculty (institute)") %>:&nbsp;<%= exam.first_examinator.faculty.name if exam.first_examinator %>
+</div>
+<br /><br />
+<div style="text-align: right; padding-right: 50px;">
+  <%= _("In Prague the") %>&nbsp;&nbsp;<%= plan_subject.finished_on.strftime("%d. %m. %Y")%>
+</div>
+<br /><br />
+<div style="text-align: center">
+  <span style="font-size: 20px; font-weight: bold;"><%= _("Protocol") %></span>
+</div><br />
+<div style="text-align: left">
+  <%= _("Exam from subject") %>:&nbsp;&nbsp;<%= exam.subject.label.strip%><br /> 
+</div>
+<br /><br />
+<br /><br /><br />
+<div>
+<%= _("Student") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.student.display_name.strip %><br /><br /> 
+<%= _("Branch") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.coridor.name %><br /><br />
+<%= _("Tutor") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.tutor.display_name %><br /><br />
+<%= _("Department") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
+exam.index.department.name %>
+</div>
+<br /><br /><br />
+<br />
+<% if exam.questions && !exam.questions.empty?%>
+<div>
+<%= _("Questions") %>:&nbsp;&nbsp;&nbsp;&nbsp;<div class="detail"><%= exam.questions%></div><br /> 
+</div>
+<% end %>
+<br /><br /><br />
+<div>
+<%= _("Exam clasification") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= result_word(exam.result) %><br /><br /> 
+</div>
+<div>
+<%= _("1. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
+exam.first_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature")
+%>:&nbsp;&nbsp;<br /><br />  
+<% if exam.second_examinator %>
+<%= _("2. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature") %>:&nbsp;&nbsp;<br /><br /> 
+<% end %>
+</div>
+</div><!-- protocol end -->
+

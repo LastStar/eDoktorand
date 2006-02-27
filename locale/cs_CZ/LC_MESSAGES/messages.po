@@ -1431,8 +1431,8 @@ msgstr "vytisknout"
 msgid "create another exam"
 msgstr "vytvořit další zkoušku"
 
-msgid "For opening filter options click the legend"
-msgstr "Pro nastavení filtru klikněte na nadpis"
+msgid "For opening filter options click the legend. Currently selected fiter is:"
+msgstr "Pro nastavení filtru klikněte na nadpis. V tuto chvíli je nastaven:"
 
 msgid "Login to system"
 msgstr "Přihlášení do systému"

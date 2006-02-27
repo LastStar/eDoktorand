@@ -282,6 +282,10 @@ module ApplicationHelper
     end
   end
 
+  # prints print link
+  def print_link(text = _('print'))
+    link_to_function(text, 'window.print()')
+  end
   private 
   
   # sets options for remote tags

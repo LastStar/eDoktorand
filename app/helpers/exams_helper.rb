@@ -16,7 +16,7 @@ module ExamsHelper
       links << link_to(_('this year only'), {:this_year => 1})
     end
     links << '&nbsp;'
-    links << "<a href='javascript:window.print();'>vytisknout tento seznam</a>"
+    links << print_link(_('print this list'))
     content_tag('div', links, :class => 'links')
   end
 
@@ -25,4 +25,9 @@ module ExamsHelper
     [_('not pass'), _('pass')][id]
   end
 
+  # prints link to exam detail
+  def detail_link(exam)
+      link_to_remote_with_loading(_("detail"), :url => {:action => 'detail',
+        :id => exam.id}, :evaluate => true)
+  end
 end
