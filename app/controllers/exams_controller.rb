@@ -59,7 +59,7 @@ class ExamsController < ApplicationController
     @session['exam'].subject_id = @params['subject']['id']
     study_plans = PlanSubject.find_unfinished_by_subject(\
       @params['subject']['id'], :study_plans => true)
-    render(:partial => "examined_student", :locals => {:students =>\
+    render(:partial => "examined_student", :locals => {:students =>
       Student.colect_unfinished(:study_plans => study_plans)})
   end
 
@@ -81,7 +81,7 @@ class ExamsController < ApplicationController
         @params['plan_subject'])
     end
     render(:partial => 'show', :locals => {:exam => @session['exam'],
-      :plan_subject => ps})
+      :plan_subject => ps, :back_link => false})
   end
 
   # for creating external exams

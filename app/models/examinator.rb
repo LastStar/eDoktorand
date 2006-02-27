@@ -20,4 +20,14 @@ class Examinator < Person
     find(:all, :conditions => ["employments.unit_id IN (?)",
        dep_ids], :include => :department_employment)
   end
+
+  # returns department
+  def department
+    department_employment.department
+  end
+  # returns faculty of examinator
+  def faculty
+    department.faculty
+  end
+
 end
