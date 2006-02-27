@@ -112,7 +112,7 @@ class StudentsController < ApplicationController
     @filters = [[_("all students"), 0], [_('all studying'), 3]]
     # default filter to waiting for approvement 
     @session['filter'] ||= @user.has_one_of_roles?(['vicerector', 'leader', 'dean', 'tutor']) ? 
-    '4' : '0' 
+    '4' : '3' 
     if (@user.has_one_of_roles?(['leader', 'dean', 'vicerector']))
       if !@user.person.indexes.empty?
         @filters.concat([[_("my students"), 1], [_('my studying'), 4]])

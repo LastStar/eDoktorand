@@ -249,4 +249,8 @@ class Index < ActiveRecord::Base
   def interupt!(start_date)
     update_attribute('interupted_on', start_date)
   end
+
+  def line_class
+    finished? ? 'finished' : ''
+  end
 end

@@ -353,11 +353,16 @@ h5 {
 	background-image: url(/images/h5_bg.gif);
 	background-repeat: no-repeat;
 }
-.red {
-  border-bottom: 3px solid #b00;
-  border-left: 1px solid #b00;
-  padding-left: 3px
+.finished {
+  border-bottom: 3px solid #bbb;
+  border-left: 1px solid #bbb;
+  padding-left: 3px;
+  color: #bbb;
 }
+.finished a {
+  color: #bbb;
+}
+
 .right_info {
   float: right;
   text-align: left;
@@ -377,5 +382,5 @@ h5 {
 ul.nodecor li {
   border: none;
   clear: both;
-  vertical<F2>-align: middle;
+  vertical-align: middle;
 }

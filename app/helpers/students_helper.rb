@@ -6,21 +6,14 @@ module StudentsHelper
     links = ''
     study_plan = index.study_plan
     if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
-      info.concat(div_tag("#{index.coridor.code}", {:class => 'smallerinfo'}))
-      info.concat(div_tag("#{index.department.short_name}", {:class => 'smallerinfo'})) 
+      info.concat(smaller_info_div("#{index.coridor.code}"))
+      info.concat(smaller_info_div("#{index.department.short_name}")) 
       if study_plan && @user.has_one_of_roles?(['dean', 'faculty_secretary'])
-        links.concat(div_tag(link_to_remote_with_loading(
-          _('switch study'), :url => {:action => 'switch_study', :controller =>
-          'students', :id => index}, :evaluate => true), {:id =>
+        links.concat(div_tag(switch_link(index), {:id =>
           "link#{study_plan.id}", :class => 'smallinfo'})) 
-        links.concat(div_tag(link_to(_('change SP'), :action => 
-          'change', :controller => 'study_plans', :id =>
-          index.student), {:class => 'smallinfo'}))
+        links.concat(div_tag(change_link(index), {:class => 'smallinfo'}))
         if index.admited_interupt? && index.interupt.approved?
-          links.concat(div_tag(link_to_remote_with_loading(
-            _('interupt'), :url => {:action => 'confirm', :controller => 
-            'interupts', :id => index}, :evaluate => true, :confirm => 
-            _('Do you really want to interupt this study?')), {:class => 
+          links.concat(div_tag(interupt_link(index), {:class => 
             'smallinfo'})) 
         end
       end
@@ -34,31 +27,21 @@ module StudentsHelper
     info.concat(div_tag("#{index.study.name}", {:class => 'smallinfo'}))
     info.concat(div_tag("#{index.year}. #{_('year')}", {:class => 'smallinfo'}))
     info.concat(div_tag(index.status, {:class => 'smallinfo'}))
+    links.concat(finish_link(index))
     if study_plan
       info.concat(div_tag(study_plan.status, {:class => 'smallinfo'}))
-      links.concat(finish_link(index))
     else
-      links.concat(finish_link(index))
-      if @user.has_one_of_roles?(['admin', 'department_secretary', 
-        'faculty_secretary', 'dean']) && !index.finished?
-        links.concat(div_tag(link_to(_('create SP'), :action => 
-          'create_by_other', :controller => 'study_plans', :id =>
-          index.student), {:class => 'smallinfo'}))
-      end
+      links.concat(create_link(index))
     end
-    info.concat(content_tag('span', link_to_remote_with_loading(
-      index.student.display_name, :url => {:action => 'show', :controller => 
-      'students', :id => index}, :evaluate => true), {:id => 
+    info.concat(content_tag('span', student_link(index), {:id => 
       "link#{index.id}", :class => 'printable'}))
-    links.concat(interupt_link(index)) unless index.finished? 
     unless links.empty?
-      info = div_tag(link_to_function(_('menu'), "Element.toggle( \
-        'index_menu_#{index.id}')"), :class => 'smallerinfo').concat(info)
+      info = smaller_info_div(link_to_function(_('menu'), "Element.toggle( \
+        'index_menu_#{index.id}')")).concat(info)
       links.concat('&nbsp;')
     end
     div_tag(links, :id => "index_menu_#{index.id}", :style => 'display: none',
-      :class => 'menu_line') + div_tag(info, :class => index.year > 3 ? 'red':\
-      '') 
+      :class => 'menu_line') + div_tag(info, :class => index.line_class) 
   end 
 
   # prints code to switch old student link to new one
@@ -160,5 +143,55 @@ module StudentsHelper
   def detail_filter_link
     link_to_function(_('Detail filter'), "Element.toggle('detail_info',\
       'detail_search')", :class => 'legend_link') 
+  end
+
+  # prints div with smallerinfo class with content inside
+  def smaller_info_div(content)
+    div_tag(content, {:class => 'smallerinfo'})
+  end
+
+  # prints link to create new study plan
+  def create_link(index)
+    if @user.has_one_of_roles?(['admin', 'department_secretary', 
+      'faculty_secretary', 'dean']) && !index.finished?
+      div_tag(link_to(_('create SP'), :action => 
+        'create_by_other', :controller => 'study_plans', :id =>
+        index.student), {:class => 'smallinfo'})
+    else
+      ''
+    end
+  end
+
+  # prints link to switch study form
+  def switch_link(index)
+    link_to_remote_with_loading( _('switch study'), :url => {:action => 
+      'switch_study', :controller => 'students', :id => index}, :evaluate =>
+      true)
+  end
+
+  # prints link to change study plan
+  def change_link(index)
+    div_tag(link_to(_('change SP'), :action => 'change', :controller => 
+      'study_plans', :id => index.student))
+  end
+
+  # prints lint to interupt study
+  def interupt_link(index)
+    link_to_remote_with_loading( _('interupt'), :url => {:action => 'confirm',
+      :controller => 'interupts', :id => index}, :evaluate => true, :confirm => 
+      _('Do you really want to interupt this study?'))
+  end
+
+  def student_link(index)
+    link_to_remote_with_loading(index.student.display_name, :url => {:action =>
+      'show', :controller => 'students', :id => index}, :evaluate => true)
+  end
+
+  # returns search info line
+  def search_info(filters, filter)
+    content =  _('For opening filter options click the legend. Currently ' +
+      'selected fiter is: ')
+    content << filters.detect {|f| f.last == filter.to_i}.first
+    div_tag(content, :id => 'fast_info', :class => 'form_info')
   end
 end

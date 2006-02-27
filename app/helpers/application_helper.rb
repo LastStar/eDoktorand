@@ -232,6 +232,7 @@ module ApplicationHelper
         "#{long_info_helper(student.birth_number)}#{_('Birth number')}:")
     end
   end
+
   # prints main menu
   def main_menu
     links = []
@@ -264,7 +265,22 @@ module ApplicationHelper
       _("logoff") + '?'){} 
     links.flatten.join("\n")
   end
+  
+  # prints address for student if he has it
+  def address_line(student)
+    if student.address
+      content_tag('li',
+        "#{long_info_helper(student.address.to_line_s)}#{_('Address')}")
+    end
+  end
 
+  # prints birth place for student if he has it
+  def birth_place_line(student)
+    if student.birth_place
+      content_tag('li',
+        "#{long_info_helper(student.birth_place)}#{_('Birth place')}")
+    end
+  end
 
   private 
   
