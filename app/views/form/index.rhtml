@@ -7,7 +7,7 @@
     <% for f in @faculties do %>
     <% if (coridors = f.accredited_coridors).empty? then next end %>
     <li>
-    <a href='#' onClick="Element.toggle($('<%= f.id %>'))">Fakulta: <%= f.name %></a><br /> 
+    <a href='#' onClick="Element.toggle($('<%= f.id %>'))"><%= f.name %></a><br /> 
       <% unless f.documents.empty? %>
       <b><%= _("documents") %>:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
       <% end %>

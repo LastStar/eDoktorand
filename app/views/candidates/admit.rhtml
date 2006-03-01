@@ -1,7 +1,8 @@
 <%= start_form_tag :action => 'confirm_admit', :id => @candidate %>	
 	<label for="admit"><%= _("admit") %></label>
   <%= content_tag('select', options_for_select(admit_ids), 
-  {'id' => "admit_id",'name' => "admit_id"}) %><br/> 
+  {'id' => "admit_id", 'name' => "admit_id", 'onchange' => "hide_on_noadmit(this)"}) %><br/> 
+  <div id='admit_form'>
 	<label for="candidate_coridor_id"><%= _("corridor") %></label>
 	<%= select 'candidate', 'coridor_id', Coridor.for_select(:faculty =>
   @user.person.faculty) %><br/>
@@ -12,9 +13,20 @@
   @user.person.faculty) %><br/>
 	<label for="candidate_study_id"><%= _("study form") %></label>
 	<%= select 'candidate', 'study_id', Study.for_select %><br/>
-	<%= submit_tag(_("submit")) %>
+  </div>
+  <%= submit_tag(_("submit")) %>
 <%= end_form_tag %>
 <div class='links'>
   <%= link_to(_("back"), :action => 'list') %>
 </div >
 
+<%= javascript_tag <<-CODE
+function hide_on_noadmit(element) {
+  if(element.value == 0) {
+    Element.hide('admit_form');
+  } else {
+    Element.show('admit_form'); 
+  }
+}
+CODE
+%>

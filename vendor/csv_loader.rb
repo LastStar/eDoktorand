@@ -566,8 +566,9 @@ include Log4r
       u.save
     end
   end
+  # loads student's birth days to system
   def self.load_birthdays(file)
-    @@mylog.info "Loading department secretaries..."
+    @@mylog.info "Loading birthdays..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if s = Student.find_by_uic(row[4])
         puts s
@@ -576,7 +577,6 @@ include Log4r
         s.save
       end
     end
-
   end
   # loads student's new informations to system
   def self.load_new_students(file, options = {} )
@@ -636,5 +636,16 @@ include Log4r
         @@mylog.info "Student id #{row[14]} exists"
       end
     end
+  end
+  # loads birth places to system
+  def self.load_birth_places(file)
+    @@mylog.info "Loading birth places..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if s = Student.find_by_uic(row[4])
+        s.birth_place = row[1]
+        s.save
+      end
+    end
+    
   end
 end

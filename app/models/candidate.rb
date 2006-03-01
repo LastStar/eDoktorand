@@ -192,7 +192,7 @@ class Candidate < ActiveRecord::Base
     student.birth_on = self.birth_on
     student.birth_number = self.birth_number
     student.state = self.state
-    student.birth_at = self.birth_at
+    student.birth_place = self.birth_at
     student.title_before = self.title_before
     student.title_after = self.title_after
     student.save

@@ -1,8 +1,8 @@
 <%= start_form_tag :action => 'create' %>
   <%= render_partial "form" %>
-  <%= submit_tag "vytvoř" %>
+  <%= submit_tag _("create") %>
 <%= end_form_tag %>
 
 <div class='links'>
-	<%= link_to 'zpět', :action => 'list' %>
+	<%= link_to _('back'), :action => 'list' %>
 </div>

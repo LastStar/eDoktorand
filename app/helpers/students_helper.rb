@@ -189,9 +189,8 @@ module StudentsHelper
 
   # returns search info line
   def search_info(filters, filter)
-    content =  _('For opening filter options click the legend. Currently ' +
-      'selected fiter is: ')
-    content << filters.detect {|f| f.last == filter.to_i}.first
+    content =  _('For opening filter options click the legend. Currently selected fiter is:')
+    content << ' ' << filters.detect {|f| f.last == filter.to_i}.first
     div_tag(content, :id => 'fast_info', :class => 'form_info')
   end
 end

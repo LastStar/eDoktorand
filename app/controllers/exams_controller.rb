@@ -31,7 +31,7 @@ class ExamsController < ApplicationController
   def create
     @title = _("Creating exam")
     @options = {}
-    if !@session['exam'] && @user.has_secretary_role?
+    if !@session['exam'] && @user.has_role?('faculty_secretary')
       @options[:partial] = 'choose_creation_style'
       @session['exam'] = nil
     else

@@ -524,7 +524,8 @@ msgid "Fill another form"
 msgstr "Vyplnit další přihlášku"
 
 msgid "After clicking the name of faculty, list of corridors  will be shown"
-msgstr "Po kliknutí na fakultu se Vám zobrazí všechny obory pro ni."
+msgstr "Obory studia jsou přiřazeny k jednotlivým fakultám. Zobrazí se Vám po"
+       "rozkliknutí."
 
 msgid "documents"
 msgstr "dokumenty"
@@ -547,10 +548,10 @@ msgid ""
 "documents about accomplishment (diploma, final exam documents), proof of the "
 "payment send it to Department of science and research. Address:"
 msgstr ""
-"Jestliže tyto informace souhlasí <a href='javascript:window.print"
+"Jestliže tyto informace souhlasí, <a href='javascript:window.print"
 "()'>vytiskněte</a> si tuto stránku a spolu s vytištěným životopisem, "
 "fotokopiemi dokladů o VŠ vzdělání (diplom, osvědčení o státní zkoušce), "
-"dokladu o zaplacení poplatku je zašlete na adresu oddělení pro vědu a výkum "
+"dokladu o zaplacení poplatku je zašlete na adresu oddělení pro vědu a výzkum "
 "na adresu:"
 
 msgid "Faculty of Forestry and Environment"
@@ -566,7 +567,7 @@ msgid "165 21 Praha 6 - Suchdol."
 msgstr "165 21 Praha 6 - Suchdol."
 
 msgid "If they are not right"
-msgstr "Pokud nesouhlasí"
+msgstr "Pokud nesouhlasí,"
 
 msgid "correct"
 msgstr "opravte"
@@ -1432,7 +1433,7 @@ msgid "create another exam"
 msgstr "vytvořit další zkoušku"
 
 msgid "For opening filter options click the legend. Currently selected fiter is:"
-msgstr "Pro nastavení filtru klikněte na nadpis. V tuto chvíli je nastaven:"
+msgstr "Pro nastavení filtru klikněte na nadpis. V tuto chvíli je nastaven filtr:"
 
 msgid "Login to system"
 msgstr "Přihlášení do systému"
@@ -1454,3 +1455,22 @@ msgstr "Jazyk"
 
 msgid "First step propably will to create"
 msgstr "Prvním krokem bude vytvořit"
+
+msgid "create"
+msgstr "vytvořit"
+
+msgid "date and time"
+msgstr "datum a čas"
+
+msgid "chairman"
+msgstr "předseda komise"
+
+msgid "member"
+msgstr "člen komise"
+
+msgid "Birth date"
+msgstr "Datum narození"
+
+msgid "Birth place"
+msgstr "Místo narození"
+

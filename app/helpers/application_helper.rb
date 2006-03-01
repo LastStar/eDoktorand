@@ -226,8 +226,8 @@ module ApplicationHelper
 	end
 
   # prints birth number if user has faculty secretary role 
-  def birth_number(student)
-    if @user.has_role?('faculty_secretary')
+  def birth_number_line(student)
+    if @user.has_role?('faculty_secretary') && student.birth_number
       content_tag('li', 
         "#{long_info_helper(student.birth_number)}#{_('Birth number')}:")
     end
@@ -266,26 +266,27 @@ module ApplicationHelper
     links.flatten.join("\n")
   end
   
-  # prints address for student if he has it
-  def address_line(student)
-    if student.address
-      content_tag('li',
-        "#{long_info_helper(student.address.to_line_s)}#{_('Address')}")
-    end
-  end
-
   # prints birth place for student if he has it
   def birth_place_line(student)
     if student.birth_place
       content_tag('li',
-        "#{long_info_helper(student.birth_place)}#{_('Birth place')}")
+        "#{long_info_helper(student.birth_place)}#{_('Birth place')}:")
     end
   end
 
+  # prints birth place for student if he has it
+  def birth_date_line(student)
+    if student.birth_on
+      content_tag('li',
+        "#{long_info_helper(student.birth_on.strftime('%d.%m.%Y'))}#{_('Birth date')}:")
+    end
+
+  end
   # prints print link
   def print_link(text = _('print'))
     link_to_function(text, 'window.print()')
   end
+
   private 
   
   # sets options for remote tags
