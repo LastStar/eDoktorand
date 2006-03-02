@@ -9,7 +9,7 @@
 <% if disert_theme.index.study_plan && disert_theme.index.study_plan.approved? %>
 <%  if @student && !disert_theme.has_methodology? %>
 <li>
-<%= link_to(_("upload methodology"), :controller => "disert_themes", :action => 
+<%= link_to(_("upload methodology"), :controller => "disert_themes", :action =>
 "upload_methodology", :id => disert_theme.id) %>
 </li>
 <% elsif disert_theme.has_methodology? %>

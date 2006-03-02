@@ -1474,3 +1474,9 @@ msgstr "Datum narození"
 msgid "Birth place"
 msgstr "Místo narození"
 
+msgid "Do you really want to interupt this study"
+msgstr "Opravdu si přejete přerušit toto studium?"
+
+msgid "confirm interrupt"
+msgstr "potvrdit přerušení"
+

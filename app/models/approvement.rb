@@ -17,7 +17,9 @@ class Approvement < ActiveRecord::Base
   end
   # returns if it have statement for user
   def prepares_statement?(user)
-    if ((tutor_statement || index.tutor == user.person) &&
+    if dean_statement
+      return false
+    elsif ((tutor_statement || index.tutor == user.person) &&
       !leader_statement && index.leader == user.person) || 
       (!leader_statement && !tutor_statement && index.tutor ==
       user.person) || (leader_statement && !dean_statement &&

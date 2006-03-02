@@ -18,7 +18,7 @@ class Index < ActiveRecord::Base
   # returns semesteer of the study
   def semester
     time = Time.now - enrolled_on
-    if interupt
+    if interupt 
       time -= interrupted_time
     end
     time.div(6.month) + 1
@@ -58,16 +58,16 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def statement_for(user)
-    if study_plan 
+    if admited_interupt?
+      interupt.approvement ||= InteruptApprovement.create
+      if interupt.approvement.prepares_statement?(user)
+        return interupt.approvement.prepare_statement(user)
+      end
+    elsif study_plan 
       if !study_plan.approved?
         study_plan.approvement ||= StudyPlanApprovement.create
         if study_plan.approvement.prepares_statement?(user)
           return study_plan.approvement.prepare_statement(user)
-        end
-      elsif admited_interupt?
-        interupt.approvement ||= InteruptApprovement.create
-        if interupt.approvement.prepares_statement?(user)
-          return interupt.approvement.prepare_statement(user)
         end
       elsif study_plan.waits_for_actual_atestation?
         study_plan.atestation ||= Atestation.create
@@ -78,10 +78,10 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def waits_for_statement?(user)
-    if study_plan && !study_plan.approved?
-      approvement = study_plan.approvement ||= StudyPlanApprovement.create
-    elsif admited_interupt?
+    if admited_interupt?
       approvement = interupt.approvement ||= InteruptApprovement.create
+    elsif study_plan && !study_plan.approved?
+      approvement = study_plan.approvement ||= StudyPlanApprovement.create
     elsif study_plan && study_plan.approved? &&
       study_plan.waits_for_actual_atestation?
       approvement = study_plan.atestation ||= Atestation.create
@@ -141,7 +141,7 @@ class Index < ActiveRecord::Base
     SQL
     options[:conditions] = [sql, 
       Atestation.actual_for_faculty(user.person.faculty)]
-    options[:order] = 'study_plans.created_on'
+    options[:order] = 'students.lastname'
     options[:only_tutor] = true
     result = find_for(user, options)
     if user.has_one_of_roles?(['tutor', 'leader', 'dean'])
@@ -246,7 +246,7 @@ class Index < ActiveRecord::Base
   end
 
   # interupts study with date
-  def interupt!(start_date)
+  def interrupt!(start_date)
     update_attribute('interupted_on', start_date)
   end
 
