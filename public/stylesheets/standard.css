@@ -36,7 +36,8 @@ h1, h2, h3, h4, h5 { color: black;}
 }*/
 h2 { font-size: 24px; margin: 5px; }
 h3 { font-size: 20px; margin: 5px; }
-h4 { padding: 4px; margin: 0px; font-size: 18px; }
+h4 { padding: 4px; margin: 0px; font-size: 18px; text-align: center; }
+h6 { padding: 4px; margin: 0px; font-size: 14px; text-align: center; }
 /*h5 { 
   font-size: 16px;
   margin: 0px;
@@ -219,8 +220,8 @@ pre.detail {
 .footer { padding-top: 11em; font-size: 10pt; }
 .signature { display: none; }
 .strut { display: none; }
-.printHeader h2, h3, h4 { display: none; }
-.printHeader { display: none; }
+h2.printHeader, h3.printHeader, h4.printHeader { display: none; }
+div.printHeader { display: none; }
 .right { float: right; text-align: right; padding-right: 1em; font-size: 14px;}
 .topMenu { 
   float: right;
@@ -384,3 +385,7 @@ ul.nodecor li {
   clear: both;
   vertical-align: middle;
 }
+form.no_block {display: inline;}
+.long_info option, input {font-size: 10px}
+
+

@@ -16,4 +16,8 @@ class Interupt < ActiveRecord::Base
       Time.now - start_on
     end
   end
+  # returns true if interupt is finished
+  def finished?
+    !finished_on.nil?
+  end
 end

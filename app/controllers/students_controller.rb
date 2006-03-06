@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   include LoginSystem
-  layout 'employers'
+  layout 'employers', :except => :time_form
   before_filter :login_required, :set_title, :prepare_user
   before_filter :prepare_order, :prepare_filter, :except => [:show,
   :contact]
@@ -68,21 +68,23 @@ class StudentsController < ApplicationController
   # finishes study
   def finish
     @index = Index.find(@params['id'])
-    @index.update_attribute('finished_on', Time.now)
+    date = @params['date']
+    @index.finish!(Date.civil(date['year'].to_i, date['month'].to_i))
     render(:inline => "<%= redraw_student(@index) %>")
   end
   
   # unfinishes study
   def unfinish
     @index = Index.find(@params['id'])
-    @index.update_attribute('finished_on', nil)
+    @index.unfinish!
     render(:inline => "<%= redraw_student(@index) %>")
   end
   
   # switches study on index
   def switch_study
     @index = Index.find(@params['id'])
-    @index.switch_study
+    date = @params['date']
+    @index.switch_study!(Date.civil(date['year'].to_i, date['month'].to_i))
     render(:inline => "<%= redraw_student(@index) %>")
   end
 
@@ -94,6 +96,12 @@ class StudentsController < ApplicationController
     render(:inline => "<%= redraw_student(@index) %>")
   end
 
+  # renders time form for other actions
+  def time_form
+    @form_url = {:action => @params['form_action'], :id => @params['id']}
+    @form_url[:controller] = @params['form_controller'] || 'students'
+    @index = Index.find(@params['id'])
+  end
   private
   
   # sets title of the controller
@@ -111,8 +119,7 @@ class StudentsController < ApplicationController
   def prepare_filter 
     @filters = [[_("all students"), 0], [_('all studying'), 3]]
     # default filter to waiting for approvement 
-    @session['filter'] ||= @user.has_one_of_roles?(['vicerector', 'leader', 'dean', 'tutor']) ? 
-    '4' : '3' 
+    @session['filter'] ||= 2
     if (@user.has_one_of_roles?(['leader', 'dean', 'vicerector']))
       if !@user.person.indexes.empty?
         @filters.concat([[_("my students"), 1], [_('my studying'), 4]])

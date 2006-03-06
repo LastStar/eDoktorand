@@ -10,7 +10,7 @@
   </li>
 </ul>
 <% end %>
-<% if index.admited_interupt? || index.interupted? %>
+<% if index.interupt %>
 <% interupt = index.interupt %>
   <% if index.interupted? %>
 <h5><%= _('This study is interupted') %></h5>
@@ -23,7 +23,7 @@
   <div class='info'><%= interupt.end_on.strftime('%d. %m. %Y')%></div>
   <%= _('interupted to') %>
   </li>
-  <% else %>
+  <% elsif index.admited_interupt? %>
 <h5><%= _('This student admited interupt') %></h5>
 <ul>
   <li>
@@ -34,10 +34,18 @@
   <div class='info'><%= index.interupt.duration %></div>
   <%= _('duration') %>
   </li>
+  <% else %>
+<h5><%= _('This study last interupt') %></h5>
+<ul>
+  <li>
+  <div class='info'><%= interupt.start_on.strftime('%d. %m. %Y') %></div>
+  <%= _('interupted on') %>
+  </li>
+  <%= interupt_finish_line(index) %>
   <% end %>
   <% if index.interupt.note && !index.interupt.note.empty? %>
   <li>
-  <div class='info'><%= index.interupt.note %></div>
+  <div class='long_info'><%= index.interupt.note %></div>
   <%= _('note') %>
   </li>
   <% end %>

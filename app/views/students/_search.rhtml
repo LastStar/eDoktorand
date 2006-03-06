@@ -2,7 +2,7 @@
   'students_list') %>
 <fieldset>
   <legend><%= fast_filter_link %></legend>
-  <%= search_info(@filters, @filter) %>
+  <div id='fast_info' class='form_info'><%= _('For opening filter options click the legend') %></div>
   <div id='fast_search' style='display:none' class='form'>
   <label class='small' for="search_what"><%= _("search by lastname") %></label>
   <%= tag('input', :name => 'search_field', :id => 'search_field', 'size' => '10')

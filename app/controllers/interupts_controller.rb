@@ -7,7 +7,7 @@ class InteruptsController < ApplicationController
     unless @student
       @student = Index.find(@params['id']).student
     end
-    @interupt = @student.index.build_interupt
+    @interupt = @student.index.interupts.build
   end
   def create
     @interupt = Interupt.new(@params['interupt'])
@@ -25,6 +25,10 @@ class InteruptsController < ApplicationController
     if @user.has_role?('student')
       redirect_to(:controller => 'study_plans')
     else
+      if @user.has_role?('faculty_secretary')
+        @interupt.approve_like('dean', _('faculty secretary approve'))
+        @interupt.index.interrupt!(@interupt.start_on)
+      end
       redirect_to(:controller => 'students')
     end
   end
@@ -41,5 +45,11 @@ class InteruptsController < ApplicationController
     index = Index.find(@params['id'])
     index.interrupt!(index.interupt.start_on)
     render(:inline => "<%= redraw_student(index) %>", :locals => {:index => index})
+  end
+
+  def end
+    @index = Index.find(@params['id'])
+    @index.end_interupt!(@params['date'])
+    render(:inline => "<%= redraw_student(@index) %>")
   end
 end

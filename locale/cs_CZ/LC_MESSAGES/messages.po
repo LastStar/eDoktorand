@@ -1432,8 +1432,8 @@ msgstr "vytisknout"
 msgid "create another exam"
 msgstr "vytvořit další zkoušku"
 
-msgid "For opening filter options click the legend. Currently selected fiter is:"
-msgstr "Pro nastavení filtru klikněte na nadpis. V tuto chvíli je nastaven filtr:"
+msgid "For opening filter options click the legend"
+msgstr "Pro nastavení filtru klikněte na nadpis"
 
 msgid "Login to system"
 msgstr "Přihlášení do systému"
@@ -1479,4 +1479,22 @@ msgstr "Opravdu si přejete přerušit toto studium?"
 
 msgid "confirm interrupt"
 msgstr "potvrdit přerušení"
+
+msgid "No students found. Use filters above to change your selection."
+msgstr "Nenalezeni žadní studenti. Použijte filtry ke změně výběru."
+
+msgid "faculty secretary approve"
+msgstr "schváleno referentkou vědy a výzkumu"
+
+msgid "end"
+msgstr "ukončit"
+
+msgid "This study last interupt"
+msgstr "Poslední přerušení tohoto studia"
+
+msgid "faculty secretary approve"
+msgstr "schváleno referentkou pro VaV"
+
+msgid "end interrupt"
+msgstr "ukončit přerušení"
 

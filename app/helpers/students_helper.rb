@@ -4,45 +4,49 @@ module StudentsHelper
   def student_action_link(index)
     info = ''
     links = ''
-    study_plan = index.study_plan
+    forms = ''
+    study_plan = index.study_plan 
     if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
       info.concat(smaller_info_div("#{index.coridor.code}"))
       info.concat(smaller_info_div("#{index.department.short_name}")) 
-      if !index.interupted? && !index.admited_interupt?
+      links.concat(switch_link(index)) 
+      links.concat(finish_link(index)) 
+      if index.waits_for_scholarship_confirmation?
+        links.concat(supervise_scholarship_link(index)) 
+      end
+      if study_plan
+        links.concat(change_link(index))
+      else
+        links.concat(create_link(index))
+      end
+      if index.not_even_admited_interupt?
         links.concat(interupt_link(index))
       end
-      if index.admited_interupt? && index.interupt.approved?
+      if index.interupt_waits_for_confirmation?
         links.concat(confirm_interupt_link(index)) 
       end
-      if study_plan && @user.has_one_of_roles?(['dean', 'faculty_secretary'])
-        links.concat(switch_link(index)) 
-        links.concat(change_link(index))
-      end
-      if index.student.scholarship_claim_date && !index.student.scholarship_supervised_date
-        links.concat(div_tag(link_to_remote_with_loading(
-        _('supervise scholarship'), :url => {:action => 'supervise_scholarship_claim', :controller =>
-        'students', :id => index}, :evaluate => true), {:id =>
-        "claim_link#{index.id}", :class => 'smallinfo'})) 
+      if index.close_to_interupt_end_or_after?
+        links.concat(end_interupt_link(index))
+        status_class = 'ends_interupt'
       end
     end
     info.concat(div_tag("#{index.study.name}", {:class => 'smallinfo'}))
     info.concat(div_tag("#{index.year}. #{_('year')}", {:class => 'smallinfo'}))
-    info.concat(div_tag(index.status, {:class => 'smallinfo'}))
-    links.concat(finish_link(index))
+    info.concat(div_tag(index.status, {:class => ['smallinfo',
+      status_class].join(' ')}))
     if study_plan
       info.concat(div_tag(study_plan.status, {:class => 'smallinfo'}))
-    else
-      links.concat(create_link(index))
     end
     info.concat(content_tag('span', student_link(index), {:id => 
       "link#{index.id}", :class => 'printable'}))
     unless links.empty?
-      info = smaller_info_div(link_to_function(_('menu'), "Element.toggle( \
-        'index_menu_#{index.id}')")).concat(info)
+      info = smaller_info_div(menu_link(index)).concat(info)
       links.concat('&nbsp;')
     end
     div_tag(links, :id => "index_menu_#{index.id}", :style => 'display: none',
-      :class => 'menu_line') + div_tag(info, :class => index.line_class) 
+      :class => 'menu_line') + div_tag(info, :class => index.line_class) +
+      div_tag('', :id => "index_form_#{index.id}", :style => 'display: none',
+      :class => 'menu_line')
   end 
 
   # prints code to switch old student link to new one
@@ -56,37 +60,110 @@ module StudentsHelper
 
   # prints finish link
   def finish_link(index)
-    if @user.has_one_of_roles?(['faculty_secretary', 'dean'])
-      if index.finished? 
-        div_tag(link_to_remote_with_loading(_('unfinish study'),
-          :url => {:action => 'unfinish', :controller => 'students', :id => 
-          index}, :evaluate => true, :confirm => 
-          _('Are you sure you want to unfinish this study?')), {:class => 
-          'smallinfo'})
-      else 
-        div_tag(link_to_remote_with_loading(_('finish study'), 
-          :url => {:action => 'finish', :controller => 'students', :id =>
-          index}, :evaluate => true, :confirm =>
-          _('Are you sure you want to finish this study?')), 
-          {:class => 'smallinfo'})
-      end
+    if index.finished? 
+      small_info_div(link_to_remote_with_loading(_('unfinish study'),
+        :url => {:action => 'unfinish', :controller => 'students', 
+        :id => index}, :update => "index_form_#{index.id}"))
+    else 
+      small_info_div(link_to_remote_with_loading(_('finish study'), 
+        :url => {:action => 'time_form', :controller => 'students', 
+        :form_action => 'finish', :id => index}, :update =>
+        "index_form_#{index.id}"))
+    end
+  end
+ 
+  # prints link to switch study form
+  def switch_link(index)
+    small_info_div(link_to_remote_with_loading( _('switch study'), :url => 
+      {:action => 'time_form', :controller => 'students', :form_action => 
+      'switch_study', :id => index}, :update => "index_form_#{index.id}"))
+  end
+
+  # prints interupt link
+  def interupt_link(index)
+    small_info_div(link_to(_('interrupt study'), {:action => 'index', 
+      :controller => 'interupts', :id => index}))
+  end
+
+  # prints confirm interupt link
+  def confirm_interupt_link(index)
+    small_info_div(link_to_remote_with_loading(_('confirm interrupt'), :url =>
+      {:action => 'time_form', :controller => 'students', :form_action => 
+      'confirm', :form_controller => 'interupts', :id => index, :date =>
+      index.interupt.start_on}, :update => "index_form_#{index.id}"))
+  end
+
+  # prints end interupt link
+  def end_interupt_link(index)
+    small_info_div(link_to_remote_with_loading(_('end interrupt'), :url =>
+      {:action => 'time_form', :controller => 'students', :form_action => 
+      'end', :form_controller => 'interupts', :id => index, :date =>
+      index.interupt.end_on}, :update => "index_form_#{index.id}"))
+  end
+
+  # prints link to change study plan
+  def change_link(index)
+    div_tag(link_to(_('change SP'), {:action => 'change', :controller => 
+      'study_plans', :id => index.student}, {:class => 'smallinfo'}))
+  end
+
+  # returns link for fast filter
+  def fast_filter_link
+    link_to_function(_('Fast filter'), "Element.toggle('fast_info',\
+      'fast_search')", :class => 'legend_link') 
+  end
+
+  # returns link for details fiter 
+  def detail_filter_link
+    link_to_function(_('Detail filter'), "Element.toggle('detail_info',\
+      'detail_search')", :class => 'legend_link') 
+  end
+
+  # prints link to create new study plan
+  def create_link(index)
+    if @user.has_one_of_roles?(['admin', 'department_secretary', 
+      'faculty_secretary', 'dean']) && !index.finished?
+      div_tag(link_to(_('create SP'), :action => 
+        'create_by_other', :controller => 'study_plans', :id =>
+        index.student), {:class => 'smallinfo'})
     else
       ''
     end
   end
- 
-  # prints interupt link
-  def interupt_link(index)
-      div_tag(link_to(_('interrupt study'), {:action => 'index', 
-        :controller => 'interupts', :id => index}), {:class => 'smallinfo'})
+
+  # prints lint to interupt study
+  def confirm_interupt_link(index)
+    link_to_remote_with_loading( _('confirm interupt'), {:url => {:action => 'confirm',
+      :controller => 'interupts', :id => index}, :evaluate => true}, {:class =>
+      'smallinfo'})
   end
 
-  # prints interupt link
-  def confirm_interupt_link(index)
-      div_tag(link_to(_('confirm interrupt'), {:action => 'confirm', 
-        :controller => 'interupts', :id => index}, :confirm => 
-        _('Are you sure you want to interupt this study?')), 
-        {:class => 'smallinfo'})
+  def student_link(index)
+    link_to_remote_with_loading(index.student.display_name, :url => {:action =>
+      'show', :controller => 'students', :id => index}, :evaluate => true)
+  end
+
+  # prints link to supervise scholarship
+  def supervise_scholarship_link(index)
+    div_tag(link_to_remote_with_loading(
+      _('supervise scholarship'), :url => {:controller => 'students', 
+      :action => 'supervise_scholarship_claim',  :id => index}, :evaluate =>
+      true), {:id => "claim_link#{index.id}", :class => 'smallinfo'})
+  end
+
+  # prints menu link
+  def menu_link(index)
+    link_to_function(_('menu'), "Element.toggle('index_menu_#{index.id}', 'index_form_#{index.id}')")
+  end
+
+  # prints month year form
+  def month_year_form(options)
+    date = options[:date] ? Time.parse(options.delete(:date)) : Date.today
+    result = form_remote_with_loading(options)
+    result << select_month(date)
+    result << select_year(date, :start_year => 2000)
+    result << submit_tag(_(options[:url][:action].humanize))
+    result << end_form_tag
   end
 
   # prints select for departments
@@ -135,64 +212,13 @@ module StudentsHelper
       "filter_by_form", 'name' => "filter_by_form"})
   end
 
-  # returns link for fast filter
-  def fast_filter_link
-    link_to_function(_('Fast filter'), "Element.toggle('fast_info',\
-      'fast_search')", :class => 'legend_link') 
-  end
-
-  # returns link for details fiter 
-  def detail_filter_link
-    link_to_function(_('Detail filter'), "Element.toggle('detail_info',\
-      'detail_search')", :class => 'legend_link') 
-  end
-
-  # prints div with smallerinfo class with content inside
-  def smaller_info_div(content)
-    div_tag(content, {:class => 'smallerinfo'})
-  end
-
-  # prints link to create new study plan
-  def create_link(index)
-    if @user.has_one_of_roles?(['admin', 'department_secretary', 
-      'faculty_secretary', 'dean']) && !index.finished?
-      div_tag(link_to(_('create SP'), :action => 
-        'create_by_other', :controller => 'study_plans', :id =>
-        index.student), {:class => 'smallinfo'})
-    else
-      ''
+  # prints interupt finish line
+  def interupt_finish_line(index)
+    if index.interupt.finished_on
+      finished_on = index.interupt.finished_on.strftime('%d.%m.%Y')
+      finished_on = info_div(finished_on)
+      content_tag('li', finished_on + _('finished on'))
     end
   end
 
-  # prints link to switch study form
-  def switch_link(index)
-    div_tag(link_to_remote_with_loading( _('switch study'), :url => {:action =>
-      'switch_study', :controller => 'students', :id => index}, :evaluate =>
-      true),  {:id => "link#{index.study_plan.id}", :class => 'smallinfo'})
-  end
-
-  # prints link to change study plan
-  def change_link(index)
-    div_tag(link_to(_('change SP'), {:action => 'change', :controller => 
-      'study_plans', :id => index.student}, {:class => 'smallinfo'}))
-  end
-
-  # prints lint to interupt study
-  def confirm_interupt_link(index)
-    link_to_remote_with_loading( _('confirm interupt'), {:url => {:action => 'confirm',
-      :controller => 'interupts', :id => index}, :evaluate => true}, {:class =>
-      'smallinfo'})
-  end
-
-  def student_link(index)
-    link_to_remote_with_loading(index.student.display_name, :url => {:action =>
-      'show', :controller => 'students', :id => index}, :evaluate => true)
-  end
-
-  # returns search info line
-  def search_info(filters, filter)
-    content =  _('For opening filter options click the legend. Currently selected fiter is:')
-    content << ' ' << filters.detect {|f| f.last == filter.to_i}.first
-    div_tag(content, :id => 'fast_info', :class => 'form_info')
-  end
 end

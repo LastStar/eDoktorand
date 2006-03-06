@@ -28,9 +28,12 @@ module Approvable
 
   # approve like one level
   def approve_like(level, note = 'machine approve')
-    person_id = self.approvement.document.index.leader.id
+    unless self.approvement
+      self.approvement = eval("#{self.class.to_s}Approvement.new")
+    end
+    person_id = self.approvement.document.index.send(level).id
     statement = eval("#{level.camelize}Statement").create('person_id' => 
-      self.approvement.document.index.leader.id, 'result' => 1, 'note' => note)
+      person_id, 'result' => 1, 'note' => note)
     self.approvement.send("#{level}_statement=", statement)
     set_times(statement)
   end

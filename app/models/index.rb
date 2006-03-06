@@ -9,8 +9,7 @@ class Index < ActiveRecord::Base
   has_many :exams
   belongs_to :coridor
   belongs_to :department
-  has_one :interupt, :order => 'created_on desc'
-  has_many :interupts
+  has_many :interupts, :order => 'created_on desc'
 
   validates_presence_of :student
   validates_presence_of :tutor
@@ -18,7 +17,7 @@ class Index < ActiveRecord::Base
   # returns semesteer of the study
   def semester
     time = Time.now - enrolled_on
-    if interupt 
+    if self.interupt 
       time -= interrupted_time
     end
     time.div(6.month) + 1
@@ -46,12 +45,12 @@ class Index < ActiveRecord::Base
 
   # returns true if interupt just admited
   def admited_interupt?
-    return true if interupt && !interupted?
+    return true if interupt && !interupted? && !interupt.finished?
   end
 
   # returns if stduy plan is interupted
   def interupted?
-    if interupted_on && interupted_on < Time.now
+    if interupted_on && interupted_on < Time.now && !interupt.finished?
       return true 
     end
   end
@@ -89,6 +88,18 @@ class Index < ActiveRecord::Base
     approvement && approvement.prepares_statement?(user)
   end
 
+  # returns last interrupt
+  def interupt
+    @interupt ||= case interupts.size
+    when 0
+      nil
+    when 1
+      interupts.first
+    else
+      interupts.max {|x,y| x.created_on <=> y.created_on}
+    end
+  end
+
   # returns all indexes for person
   # accepts Base.find options. Include and order for now
   def self.find_for(user, options ={})
@@ -120,7 +131,7 @@ class Index < ActiveRecord::Base
       conditions.first << ' AND indices.finished_on IS NULL'
     end
     find(:all, :conditions => conditions, :include => [:study_plan, :student,
-      :disert_theme, :department, :study, :coridor, :interupt], :order => options[:order])
+      :disert_theme, :department, :study, :coridor, :interupts], :order => options[:order])
   end
 
   # finds only indices tutored by user
@@ -141,13 +152,18 @@ class Index < ActiveRecord::Base
     SQL
     options[:conditions] = [sql, 
       Atestation.actual_for_faculty(user.person.faculty)]
-    options[:order] = 'students.lastname'
+    options[:order] = 'people.lastname'
     options[:only_tutor] = true
     result = find_for(user, options)
-    if user.has_one_of_roles?(['tutor', 'leader', 'dean'])
+    if user.has_role?('faculty_secretary')
+      result.select do |i|
+        i.waits_for_scholarship_confirmation? ||
+        i.interupt_waits_for_confirmation? ||
+        i.not_even_admited_interupt? ||
+        i.waits_for_statement?(user) 
+      end
+    elsif user.has_one_of_roles?(['tutor', 'leader', 'dean'])
       result.select {|i| i.waits_for_statement?(user)} 
-    else
-      result
     end
   end
 
@@ -216,12 +232,23 @@ class Index < ActiveRecord::Base
   end
 
   # switches study form
-  def switch_study
+  # TODO add history and use date
+  def switch_study!(date = Date.today)
     if study_id == 1 
       update_attribute('study_id', 2)
     else
       update_attribute('study_id', 1)
     end
+  end
+
+  # finishes study
+  def finish!(date = Date.today)
+    update_attribute('finished_on', date)
+  end
+
+  # unfinishes study 
+  def unfinish!
+    update_attribute('finished_on', nil)
   end
 
   # returns who approved study plan
@@ -250,7 +277,32 @@ class Index < ActiveRecord::Base
     update_attribute('interupted_on', start_date)
   end
 
+  # interupts study with date
+  def end_interupt!(end_date)
+    update_attribute('interupted_on', nil)
+    if end_date.is_a? Hash
+      end_date = Date.civil(end_date['year'].to_i, end_date['month'].to_i)
+    end
+    interupt.update_attribute('finished_on', end_date)
+  end
+
   def line_class
     finished? ? 'finished' : ''
+  end
+
+  def not_even_admited_interupt?
+    !interupted? && !admited_interupt?
+  end
+
+  def interupt_waits_for_confirmation?
+    admited_interupt? && interupt.approved? && !interupt.finished?
+  end
+
+  def close_to_interupt_end_or_after?(months = 3)
+    interupt && !interupt.finished? && Time.today > (interupt.end_on - months.month)
+  end
+
+  def waits_for_scholarship_confirmation?
+    student.scholarship_claim_date && !student.scholarship_supervised_date
   end
 end

@@ -197,9 +197,7 @@ module ApplicationHelper
   end
   
   # prints link to remote with apearing and disapearing of the loading _
-  
   # you should say if it's evaluating response by setting options[:evaluate]
-  
   # to true, or updating by setting options[:update]
   def link_to_remote_with_loading(name, options = {}, html_options = {})
     options = set_remote_options(options)
@@ -207,11 +205,11 @@ module ApplicationHelper
   end
   
   # prints form tag with loading apearing and disapearing
-  
   # also evaluate remote response is built in
   def form_remote_with_loading(options)
     options = set_remote_options(options)
     options[:html] = {:autocomplete => "off"} 
+    options[:html][:style] = 'display: inline;' if options.delete(:inline)
     form_remote_tag(options)
   end
 	
@@ -360,6 +358,7 @@ module ApplicationHelper
   end
   
   # prints small info div 
+  # TODO redone with div on end
   def long_info_helper(content)
     content_tag('div', content, :class => 'long_info')
   end
@@ -367,6 +366,21 @@ module ApplicationHelper
   # prints div tag
   def div_tag(content, options = {})
     content_tag('div', content, options)
+  end
+
+  # prints div with smallerinfo class with content inside
+  def smaller_info_div(content)
+    div_tag(content, {:class => 'smallerinfo'})
+  end
+
+  # prints div with smallinfo class with content inside
+  def small_info_div(content)
+    div_tag(content, {:class => 'smallinfo'})
+  end
+
+  # prints div with info class
+  def info_div(content)
+    div_tag(content, {:class => 'info'})
   end
 
 end
