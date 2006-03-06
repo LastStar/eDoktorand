@@ -1492,9 +1492,6 @@ msgstr "ukončit"
 msgid "This study last interupt"
 msgstr "Poslední přerušení tohoto studia"
 
-msgid "faculty secretary approve"
-msgstr "schváleno referentkou pro VaV"
-
 msgid "end interrupt"
 msgstr "ukončit přerušení"
 
