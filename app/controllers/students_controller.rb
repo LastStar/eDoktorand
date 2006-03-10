@@ -1,14 +1,13 @@
 class StudentsController < ApplicationController
   include LoginSystem
-  layout 'employers', :except => :time_form
+  layout 'employers', :except => [:time_form, :filter]
   before_filter :login_required, :set_title, :prepare_user
   before_filter :prepare_order, :prepare_filter, :except => [:show,
   :contact]
   before_filter :prepare_conditions
-  
-  # lists all students
+
   def index
-    filter(:dont_render => true)
+    do_filter
     render(:action => 'list')
   end
   
@@ -22,24 +21,9 @@ class StudentsController < ApplicationController
   end
   
   # filters students
-  def filter(options = {})
-    @filter = @params['filter_by'] || @session['filter']
-    case @filter
-    when "4"
-      @indices = Index.find_tutored_by(@user, :unfinished => true)
-    when "3"
-      @indices = Index.find_for(@user, :order => @order, :unfinished => true)
-    when "2"
-      @indices = Index.find_waiting_for_statement(@user)
-    when "1"
-      @indices = Index.find_tutored_by(@user, :order => 'people.lastname')
-    when "0"
-      @indices = Index.find_for(@user, :order => @order)
-    end
-    @session['filter'] = @filter
-    unless options[:dont_render]
-      render(:partial => 'list')
-    end 
+  def filter
+    do_filter
+    render(:partial => 'list')
   end
   
   # multiple filtering
@@ -117,14 +101,35 @@ class StudentsController < ApplicationController
   
   # prepares filter variable
   def prepare_filter 
-    @filters = [[_("all students"), 0], [_('all studying'), 3]]
-    # default filter to waiting for approvement 
-    @session['filter'] ||= 2
+    @filters = [[_('waiting for my review'), 2], [_("all students"), 0], 
+      [_('all studying'), 3]]
     if (@user.has_one_of_roles?(['leader', 'dean', 'vicerector']))
       if !@user.person.indexes.empty?
         @filters.concat([[_("my students"), 1], [_('my studying'), 4]])
       end
     end
-    @filters.concat([[_('waiting for my review'), 2]])
+    # default filter to waiting for approvement 
+    unless @user.has_one_of_roles?(['department_secretary', 'faculty_secretary'])
+      @session['filter'] ||= 2 
+    else
+      @session['filter'] ||= -1
+    end
+  end
+
+  def do_filter
+    @filter = @params['filter_by'] || @session['filter']
+    case @filter.to_i
+    when 4
+      @indices = Index.find_tutored_by(@user, :unfinished => true)
+    when 3
+      @indices = Index.find_for(@user, :order => @order, :unfinished => true)
+    when 2
+      @indices = Index.find_waiting_for_statement(@user)
+    when 1
+      @indices = Index.find_tutored_by(@user, :order => 'people.lastname')
+    when 0
+      @indices = Index.find_for(@user, :order => @order)
+    end
+    @session['filter'] = @filter
   end
 end

@@ -50,6 +50,8 @@ ActionController::Routing::Routes.draw do |map|
   # locale url
   map.locale 'account/locale/:locale', :controller => 'account', :action =>
     'locale'
+  # students url
+  map.students 'students', :controller => 'students', :action => 'index'
   # Install the default route as the lowest priority.
   map.connect ':controller/:action/:id'
 end

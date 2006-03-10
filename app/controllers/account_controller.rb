@@ -51,7 +51,7 @@ class AccountController < ApplicationController
       redirect_to :controller => 'study_plans'
     elsif @user.has_one_of_roles?(['tutor', 'dean',
       'department_secretary', 'faculty_secretary'])
-      redirect_to :controller => 'students'
+      redirect_to  students_url
     end
   end
 

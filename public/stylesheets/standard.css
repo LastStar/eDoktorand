@@ -205,9 +205,6 @@ div.fieldWithErrors label { color: red; }
   float: right;
   width: 480px;
 }
-.menu_line {
-  z-index: 1;
-}
 .important_notice {
   color: red;
 }
@@ -355,13 +352,12 @@ h5 {
 	background-repeat: no-repeat;
 }
 .finished {
-  border-bottom: 3px solid #bbb;
-  border-left: 1px solid #bbb;
   padding-left: 3px;
   color: #bbb;
+  font-size: smaller;
 }
 .finished a {
-  color: #bbb;
+  color: #aaa;
 }
 
 .right_info {
@@ -387,5 +383,14 @@ ul.nodecor li {
 }
 form.no_block {display: inline;}
 .long_info option, input {font-size: 10px}
-
-
+div.menu {text-align: center; width: 17ex; float: right; background-color: #452;font-size: 10px; margin-left: 1px; border-left: 2px solid #ddc; border-bottom: 2px solid #ddc;}
+div.menu a {display: block;text-decoration: none;color: white;}
+div.menu a:hover {text-decoration: none; background-color: #ddc; color: black;padding-right: 4px; padding-left: 2px;}
+.menu_line {border-top: 2px solid #452;}
+.form_line {border-bottom: 2px solid #452;background-color:#ddc}
+.form_line form {padding-right: 10px; text-align: right;}
+.student_detail {margin: 1px;padding-left: .5ex}
+.student_detail a {text-decoration: none;}
+.smallerinfo a {background-color: #452; padding-right: 4px; padding-left: 2px; color: #fff;}
+#student_list li {clear: both; padding: 0px;}
+li.higher {height: 2.25em;}

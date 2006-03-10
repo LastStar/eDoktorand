@@ -154,6 +154,7 @@ class Index < ActiveRecord::Base
       Atestation.actual_for_faculty(user.person.faculty)]
     options[:order] = 'people.lastname'
     options[:only_tutor] = true
+    options[:unfinished] = true
     result = find_for(user, options)
     if user.has_role?('faculty_secretary')
       result.select do |i|

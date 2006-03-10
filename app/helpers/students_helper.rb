@@ -40,13 +40,12 @@ module StudentsHelper
     info.concat(content_tag('span', student_link(index), {:id => 
       "link#{index.id}", :class => 'printable'}))
     unless links.empty?
-      info = smaller_info_div(menu_link(index)).concat(info)
+      info = menu_link(index).concat(info)
       links.concat('&nbsp;')
     end
-    div_tag(links, :id => "index_menu_#{index.id}", :style => 'display: none',
-      :class => 'menu_line') + div_tag(info, :class => index.line_class) +
-      div_tag('', :id => "index_form_#{index.id}", :style => 'display: none',
-      :class => 'menu_line')
+    menu_line(links, "index_menu_#{index.id}") +
+      info_line(info, index.line_class, "student_detail_#{index.id}") +
+      form_line("index_form_#{index.id}")
   end 
 
   # prints code to switch old student link to new one
@@ -54,6 +53,7 @@ module StudentsHelper
     update_element_function("index_line_#{index.id}", :content => student_action_link(index))
   end
 
+  # prints students scholarship
   def print_scholarship(index)
     ScholarshipCalculator.scholarship_for(index.student)
   end
@@ -61,11 +61,11 @@ module StudentsHelper
   # prints finish link
   def finish_link(index)
     if index.finished? 
-      small_info_div(link_to_remote_with_loading(_('unfinish study'),
+      menu_div(link_to_remote_with_loading(_('unfinish study'),
         :url => {:action => 'unfinish', :controller => 'students', 
         :id => index}, :update => "index_form_#{index.id}"))
     else 
-      small_info_div(link_to_remote_with_loading(_('finish study'), 
+      menu_div(link_to_remote_with_loading(_('finish study'), 
         :url => {:action => 'time_form', :controller => 'students', 
         :form_action => 'finish', :id => index}, :update =>
         "index_form_#{index.id}"))
@@ -74,20 +74,20 @@ module StudentsHelper
  
   # prints link to switch study form
   def switch_link(index)
-    small_info_div(link_to_remote_with_loading( _('switch study'), :url => 
+    menu_div(link_to_remote_with_loading( _('switch study'), :url => 
       {:action => 'time_form', :controller => 'students', :form_action => 
       'switch_study', :id => index}, :update => "index_form_#{index.id}"))
   end
 
   # prints interupt link
   def interupt_link(index)
-    small_info_div(link_to(_('interrupt study'), {:action => 'index', 
+    menu_div(link_to(_('interrupt study'), {:action => 'index', 
       :controller => 'interupts', :id => index}))
   end
 
   # prints confirm interupt link
   def confirm_interupt_link(index)
-    small_info_div(link_to_remote_with_loading(_('confirm interrupt'), :url =>
+    menu_div(link_to_remote_with_loading(_('confirm interrupt'), :url =>
       {:action => 'time_form', :controller => 'students', :form_action => 
       'confirm', :form_controller => 'interupts', :id => index, :date =>
       index.interupt.start_on}, :update => "index_form_#{index.id}"))
@@ -95,7 +95,7 @@ module StudentsHelper
 
   # prints end interupt link
   def end_interupt_link(index)
-    small_info_div(link_to_remote_with_loading(_('end interrupt'), :url =>
+    menu_div(link_to_remote_with_loading(_('end interrupt'), :url =>
       {:action => 'time_form', :controller => 'students', :form_action => 
       'end', :form_controller => 'interupts', :id => index, :date =>
       index.interupt.end_on}, :update => "index_form_#{index.id}"))
@@ -103,8 +103,29 @@ module StudentsHelper
 
   # prints link to change study plan
   def change_link(index)
-    div_tag(link_to(_('change SP'), {:action => 'change', :controller => 
-      'study_plans', :id => index.student}, {:class => 'smallinfo'}))
+    menu_div(link_to(_('change SP'), {:action => 'change', :controller => 
+      'study_plans', :id => index.student}))
+  end
+
+  # prints link to create new study plan
+  def create_link(index)
+    menu_div(link_to(_('create SP'), :action => 
+      'create_by_other', :controller => 'study_plans', :id =>
+      index.student))
+  end
+
+  # prints lint to interupt study
+  def confirm_interupt_link(index)
+    menu_div(link_to_remote_with_loading( _('confirm interupt'), {:url =>
+      {:action => 'confirm', :controller => 'interupts', :id => index},
+      :evaluate => true}))
+  end
+
+  # prints link to supervise scholarship
+  def supervise_scholarship_link(index)
+    menu_div(link_to_remote_with_loading(_('supervise scholarship'), :url =>
+      {:controller => 'students', :action => 'supervise_scholarship_claim',
+      :id => index}, :evaluate => true))
   end
 
   # returns link for fast filter
@@ -119,51 +140,43 @@ module StudentsHelper
       'detail_search')", :class => 'legend_link') 
   end
 
-  # prints link to create new study plan
-  def create_link(index)
-    if @user.has_one_of_roles?(['admin', 'department_secretary', 
-      'faculty_secretary', 'dean']) && !index.finished?
-      div_tag(link_to(_('create SP'), :action => 
-        'create_by_other', :controller => 'study_plans', :id =>
-        index.student), {:class => 'smallinfo'})
-    else
-      ''
-    end
+  # prints menu link
+  def menu_link(index)
+    code = <<-CODE
+    Element.toggle('index_menu_#{index.id}', 'index_form_#{index.id}');
+    CODE
+    smaller_info_div(link_to_function(_('actions'), code))
   end
 
-  # prints lint to interupt study
-  def confirm_interupt_link(index)
-    link_to_remote_with_loading( _('confirm interupt'), {:url => {:action => 'confirm',
-      :controller => 'interupts', :id => index}, :evaluate => true}, {:class =>
-      'smallinfo'})
-  end
-
+  # prints link to student detail
   def student_link(index)
     link_to_remote_with_loading(index.student.display_name, :url => {:action =>
       'show', :controller => 'students', :id => index}, :evaluate => true)
   end
 
-  # prints link to supervise scholarship
-  def supervise_scholarship_link(index)
-    div_tag(link_to_remote_with_loading(
-      _('supervise scholarship'), :url => {:controller => 'students', 
-      :action => 'supervise_scholarship_claim',  :id => index}, :evaluate =>
-      true), {:id => "claim_link#{index.id}", :class => 'smallinfo'})
+  # prints line with student informations
+  def info_line(info, line_class, id)
+    div_tag(info, :class => ['student_detail', line_class].join(' '), :id => id)
   end
 
-  # prints menu link
-  def menu_link(index)
-    link_to_function(_('menu'), "Element.toggle('index_menu_#{index.id}', 'index_form_#{index.id}')")
+  # prints line with menu links
+  def menu_line(links, id)
+    div_tag(links, :id => id, :style => 'display: none', :class => 'menu_line')
   end
 
+  # prints empty form line
+  def form_line(id)
+      div_tag('', :id => id, :style => 'display: none', :class => 'form_line')
+  end
   # prints month year form
   def month_year_form(options)
     date = options[:date] ? Time.parse(options.delete(:date)) : Date.today
-    result = form_remote_with_loading(options)
+    result = [form_remote_with_loading(options)]
+    result << submit_tag(_(options[:url][:action].humanize))
     result << select_month(date)
     result << select_year(date, :start_year => 2000)
-    result << submit_tag(_(options[:url][:action].humanize))
     result << end_form_tag
+    result.join('&nbsp;')
   end
 
   # prints select for departments

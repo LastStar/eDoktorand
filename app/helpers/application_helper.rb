@@ -300,16 +300,18 @@ module ApplicationHelper
   # prints statement
   def print_statement(statement, statement_type)
     result = ''
+    options = {}
     if statement
       result << approve_word(statement.result)
       if statement.note && !statement.note.empty?
         result << ", #{_('with note')}: #{statement.note}"
+        options[:class] = 'higher'
       end
       result = content_tag('div', statement.created_on.strftime('%d. %m. %Y'),
       :class => 'info') + result
     end
-    return content_tag('li', "#{content_tag('div', result, :class => 'long_info')}
-    #{statement_type}", :class => 'second')
+    return content_tag('li', "#{div_tag(result, :class => 'long_info')}
+    #{statement_type}", options)
   end
   
   # prints atestation link
@@ -371,6 +373,11 @@ module ApplicationHelper
   # prints div with smallerinfo class with content inside
   def smaller_info_div(content)
     div_tag(content, {:class => 'smallerinfo'})
+  end
+
+  # prints div with smallerinfo class with content inside
+  def menu_div(content)
+    div_tag(content, {:class => 'menu'})
   end
 
   # prints div with smallinfo class with content inside
