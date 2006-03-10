@@ -190,7 +190,7 @@ div.fieldWithErrors label { color: red; }
 .smallinfo {
   float: right;
   width: 14ex;
-  font-size: small;
+  font-size: 9pt;
 }
 .smallerinfo {
   float: right;
@@ -383,11 +383,11 @@ ul.nodecor li {
 }
 form.no_block {display: inline;}
 .long_info option, input {font-size: 10px}
-div.menu {text-align: center; width: 17ex; float: right; background-color: #452;font-size: 10px; margin-left: 1px; border-left: 2px solid #ddc; border-bottom: 2px solid #ddc;}
+div.menu {text-align: center; width: 19ex; float: right; background-color: #452;font-size: 10px; margin-left: 1px; border-left: 2px solid #ddc; border-bottom: 2px solid #ddc;}
 div.menu a {display: block;text-decoration: none;color: white;}
-div.menu a:hover {text-decoration: none; background-color: #ddc; color: black;padding-right: 4px; padding-left: 2px;}
-.menu_line {border-top: 2px solid #452;}
-.form_line {border-bottom: 2px solid #452;background-color:#ddc}
+div.menu a:hover {text-decoration: none; background-color: #ddc; color: black;padding-right: 4px; padding-left: 2px;margin:1px}
+.menu_line {border-top: 1px solid #452;}
+.form_line {border-bottom: 1px solid #452;background-color:#ddc}
 .form_line form {padding-right: 10px; text-align: right;}
 .student_detail {margin: 1px;padding-left: .5ex}
 .student_detail a {text-decoration: none;}

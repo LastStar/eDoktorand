@@ -173,7 +173,7 @@ module StudentsHelper
     date = options[:date] ? Time.parse(options.delete(:date)) : Date.today
     result = [form_remote_with_loading(options)]
     result << submit_tag(_(options[:url][:action].humanize))
-    result << select_month(date)
+    result << select_month(date, :use_month_numbers => true)
     result << select_year(date, :start_year => 2000)
     result << end_form_tag
     result.join('&nbsp;')

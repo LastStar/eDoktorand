@@ -1495,3 +1495,12 @@ msgstr "Poslední přerušení tohoto studia"
 msgid "end interrupt"
 msgstr "ukončit přerušení"
 
+msgid "actions"
+msgstr "akce"
+
+msgid "Switch study"
+msgstr "Změnit formu k"
+
+msgid "Finish"
+msgstr "Ukončit k"
+
