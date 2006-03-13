@@ -15,4 +15,14 @@ class Person < ActiveRecord::Base
   def is_dean_of?(student)
     return false
   end
+
+  def self.for_html_select(user)
+    if user.has_role?('faculty_secretary')
+      find_for_faculty(user.person.faculty.id)
+    elsif user.has_one_of_roles?(['department_secretary', 'tutor', 'leader'])
+      find_for_department(user.person.department.id)
+    end.map {|e| [e.display_name, e.id]}
+  end
+
+
 end

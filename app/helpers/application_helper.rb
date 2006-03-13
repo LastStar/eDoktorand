@@ -102,31 +102,6 @@ module ApplicationHelper
     end 
   end
   
-  # get tutor ids
-  
-  # if options['coridor'] setted only for this coridor
-  def tutor_ids(options = {})
-    if options[:coridor]
-      ts = Tutorship.find_all_by_coridor_id(options[:coridor].id)
-    else
-      ts = Tutorship.find(:all)
-    end
-    ts.map {|ts| [ts.tutor.display_name, ts.tutor.id]}
-  end
-  
-  # get examinator ids
-  def examinator_ids(faculty)
-    
-    faculty = faculty.id if faculty.is_a?(Faculty)
-    Tutor.find(:all).select{|t| t.faculty && t.faculty.id == faculty}.map {|p| [p.display_name, p.id]}
-  end
-  
-  # get examinator ids
-  
-  # allows null
-  def examinator_null_ids(faculty)
-  end
-  
   # get index ids
   def index_ids
     Student.find(:all).map {|s| [s.display_name, s.index.id]}

@@ -12,7 +12,7 @@ class Coridor < ActiveRecord::Base
   def self.for_select(options = {})
     if options[:faculty]
       faculty = options[:faculty].is_a?(Faculty) ? options[:faculty].id : options[:faculty]
-      result = self.find_all_by_faculty_id(faculty)
+      result = self.find_all_by_faculty_id(faculty, :order => 'name')
     else
       result = self.find(:all)
     end
@@ -21,6 +21,12 @@ class Coridor < ActiveRecord::Base
       [['---', '0']].concat(result)
     else
       result
+    end
+  end
+
+  def self.for_html_select(user)
+    if user.has_role?('faculty_secretary')
+      self.for_select(:faculty => user.person.faculty)
     end
   end
 end
