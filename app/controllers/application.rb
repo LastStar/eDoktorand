@@ -64,6 +64,10 @@ class ApplicationController < ActionController::Base
   def prepare_user
     @user = ActiveRecord::Acts::Audited.current_user = @session['user']
   end
+  # prepares faculty class variable
+  def prepare_faculty
+    @faculty = @user.person.faculty
+  end
   # prepares conditions for various queries
   def prepare_conditions
     @conditions = ["null is not null"]

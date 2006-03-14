@@ -4,6 +4,6 @@ class AddInteruptEnd < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :interupts, :ended_on, :datetime
+    remove_column :interupts, :ended_on
   end
 end

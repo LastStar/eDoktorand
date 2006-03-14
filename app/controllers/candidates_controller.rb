@@ -4,6 +4,7 @@ class CandidatesController < ApplicationController
 
   before_filter :login_required, :except => [:invitation]
   before_filter :prepare_user
+  before_filter :prepare_faculty, :only => [:invitation, :invite, 'invite_now']
   before_filter :set_title, :change_sort
   # lists all candidates
   def index
@@ -123,7 +124,7 @@ class CandidatesController < ApplicationController
 	def invite_now
 		@candidate = Candidate.find(@params['id'])
     @candidate.invite!
-		Notifications::deliver_invite_candidate(@candidate)
+		Notifications::deliver_invite_candidate(@candidate, @faculty, Time.now)
 		render_text _('e-mail sent')
 	end
 	# shows invitation for candidate

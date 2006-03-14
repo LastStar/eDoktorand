@@ -4,24 +4,25 @@ DĚKANÁT – ODDĚLENÍ VĚDY A VÝZKUMU
 165 21 Praha 6 – Suchdol
 tel.č. 22438 2877
 
-V Praze dne <%= @sent_on %>
+V Praze dne <%= @sent_on.strftime("%d. %m. %Y") %>
+
 Vážený pan/paní
 <%= @display_name %>
 <%= @address %>
 
 
-Věc: pozvánka k přijímacímu řízení do DSP na FLE ČZU v Praze
+Věc: pozvánka k přijímacímu řízení do DSP na <%= @faculty.short_name %> ČZU v Praze
 
-Na základě Vaší přihlášky ke studiu v DSP na FLE ČZU v Praze a v souladu s § 50 zákona
+Na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s § 50 zákona
 č. 111/98 Sb. o vysokých školách Vám zasílám
 
-pozvánku k přijímacímu řízení do DSP pro školní rok 2005/06
+pozvánku k přijímacímu řízení do DSP pro školní rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>
 
 které proběhne 
 
 dne <%= @exam_term.date.strftime("%d. %m. %Y") %>
 
-Uchazeči se dostaví v 9,00 hod. do zasedací místnosti FLE (přízemí, č. dveří 125), kde budou podány základní informace.
+<%= Parameter.get("admittance invitation time & place", @faculty) %>
 
 Přijímací zkouška pro obor <%= @coridor %>
 proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>, předseda komise <%= @exam_term.chairman.display_name %>

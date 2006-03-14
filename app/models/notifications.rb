@@ -1,11 +1,12 @@
 class Notifications < ActionMailer::Base
-  def invite_candidate(candidate, sent_at = Time.now)
+  def invite_candidate(candidate, faculty, sent_at = Time.now)
     @subject = 'Pozvanka na prijimaci zkousky na doktorske studium'
     @body['display_name'] = candidate.display_name
     @body['address'] = candidate.address
     @body['coridor'] = candidate.coridor.name
     @body['exam_term'] = candidate.coridor.exam_term
     @body['sent_on'] = sent_at
+    @body['faculty'] = faculty
     @recipients = candidate.email
     @from       = 'pepe@pef.czu.cz'
     @sent_on    = sent_at

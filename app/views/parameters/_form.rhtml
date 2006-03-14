@@ -1,0 +1,13 @@
+<%= error_messages_for 'parameter' %>
+
+<!--[form:parameter]-->
+<p><label for="parameter_name">Fakulta</label><br/>
+<%= select 'parameter', 'faculty_id', Faculty.for_select  %></p>
+
+<p><label for="parameter_name">Name</label><br/>
+<%= text_field 'parameter', 'name'  %></p>
+
+<p><label for="parameter_value">Value</label><br/>
+<%= text_area 'parameter', 'value'  %></p>
+<!--[eoform:parameter]-->
+

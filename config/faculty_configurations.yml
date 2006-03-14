@@ -8,15 +8,6 @@
   subjects_count: 7 
   atestation_month: 11
   atestation_day: 30
-1:
-  final_areas_on: create   
-  subjects_count: 7  
-  atestation_month: 9
-  atestation_day: 15
-2:
-  subjects_count: 7 
-  atestation_month: 11
-  atestation_day: 30
 3:
   subjects_count: 7 
   atestation_month: 9

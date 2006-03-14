@@ -15,7 +15,12 @@ class Faculty < ActiveRecord::Base
 
   # returns string for sql IN statement
   def departments_for_sql
-    self.departments.map {|dep| dep.id}.join(', ') 
+    self.departments.map {|dep| dep.id}.join(', ')
+  end
+
+  # returns array of corridor ids
+  def coridors_ids
+    self.coridors.map {|c| c.id}
   end
 
   # return

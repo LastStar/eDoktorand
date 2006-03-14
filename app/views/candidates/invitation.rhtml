@@ -11,20 +11,20 @@
 <% else %>
 <%= @candidate.sending_address %></p>
 <% end %>
-<br/> 
-<br/> 
-<p><b>Věc: pozvánka k přijímacímu řízení do DSP na FLE ČZU v Praze</b></p>
+<br/>
+<br/>
+<p><b>Věc: pozvánka k přijímacímu řízení do DSP na <%= @faculty.short_name %> ČZU v Praze</b></p>
 
-<p>Na základě Vaší přihlášky ke studiu v DSP na FLE ČZU v Praze a v souladu s § 50 zákona č. 111/98 Sb. o vysokých školách Vám zasílám</p>
+<p>Na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s § 50 zákona č. 111/98 Sb. o vysokých školách Vám zasílám</p>
 <div class='centerAlign'>
-<h3>pozvánku k přijímacímu řízení do DSP pro školní rok 2005/06</h3>
+<h3>pozvánku k přijímacímu řízení do DSP pro školní rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%></h3>
 
 <h3>které proběhne</h3>
 
 <h3>dne <%= @candidate.coridor.exam_term.date.strftime("%d. %m. %Y") %></h3>
 </div>
 
-<p>Uchazeči se dostaví v 9,00 hod. do zasedací místnosti FLE (přízemí, č. dveří 125), kde budou podány základní informace.</p>
+<%= Parameter.get("admittance invitation time & place", @faculty) %>
 
 <p>Přijímací zkouška pro obor <%= @candidate.coridor.name %> proběhne od 
 <%= @candidate.coridor.exam_term.start_time %> v místnosti č. <%=
@@ -39,8 +39,8 @@
 </p>
 <br/>
 <p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
-<p class='rightAlignLefter'>Ing. Petr Zasadil, Ph.D.<br/>
-proděkan pro VaV</p>
+<p class='rightAlignLefter'><%= @faculty.dean.display_name %><br/>
+děkan <%= @faculty.short_name %> ČZU</p>
 
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
