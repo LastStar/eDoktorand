@@ -9,6 +9,12 @@ h5 {
   display: none;
 	font-size: 14pt;
 }
+h1 {
+  display: none;
+}
+p {
+  text-align: justify;
+}
 .instruction {
   display: none;
 }
@@ -18,8 +24,8 @@ h5 {
 #notice {
   display: none;
 }
-h1 {
-  display: none;
+p.subject {
+  margin-bottom: 80px;
 }
 .printHeader {
   display: block;

@@ -17,37 +17,34 @@
 
 <p>na základě úspěšně vykonané přijímací zkoušky, jste byl/a
 <% unless @conditional %><strong> s účinností od 
-1. října 2005 přijat/a</strong><% end %> ve smyslu § 47, zákona č. 111/98 Sb. o vysokých školách,
+1. října <%=Time.now.strftime("%Y")%> přijat/a</strong><% end %> ve&nbsp;smyslu § 47, zákona č. 111/98 Sb. o vysokých školách,
 <% if @conditional %><b>podmínečně přijat/a</b><% end %> 
-do <%= @candidate.study.name %> formy doktorského studia na fakultě lesnické a 
-environmentální České zemědělské univerzity v Praze</p>
+do <%= @candidate.study.name %> formy doktorského studia na&nbsp;<%= @faculty.short_name%> ČZU v Praze</p>
 
-<h5 class='centerAlign'>studijní obor: <%= @candidate.coridor.name %></h5>
-
+<h3 class='centerAlign'>studijní obor: <%= @candidate.coridor.name %></h5>
+<br/>
 <p>Vaším školitelem byl/a ustanoven/a <%= @candidate.tutor.display_name %>, 
-katedra <%= @candidate.department.name %> FLE.</p>
+katedra <%= @candidate.department.name %> <%= @faculty.short_name%>.</p>
 <% unless @conditional %>
-<h5 class='centerAlign'>Zápis do studia se uskuteční dne 20. 9. 2005 od 9:00 v zasedací
-  místnosti FLE.</h5>
+<h3 class='centerAlign'>Zápis do studia se uskuteční dne <%=Parameter.get("enroll_invitation_time_and_place", @faculty)%>.</h5>
 <% else %>
 <p>Do studia budete zapsán po předložení dokladů o ukončení magisterského stupně vzdělání.</p>
 <% end %>
 <% if @candidate.study_id == 1 %>
 <p>Zároveň Vám přiznávám stipendium ve výši 4 600,- Kč měsíčně, které Vám bude 
-vypláceno <% if @conditional %>ode dne nástupu do studia,<% else %>od 1. října 2005,<% end %>
+vypláceno <% if @conditional %>ode dne nástupu do studia,<% else %>od&nbsp;1.&nbsp;října 2005,<% end %>
 vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <% end %>
-Upozorňuji Vás, že je Vaší povinností do 1 měsíce od nástupu 
+<p>Upozorňuji Vás, že je Vaší povinností do 1 měsíce od nástupu 
 do studia vypracovat a předložit studijní plán a do 3 měsíců od nástupu metodiku disertační práce.</p>
 
-<p>Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana fakulty lesnické a environmentální
+<p>Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana <%= @faculty.short_name%>
 ČZU v Praze do 30&nbsp;dnů ode dne doručení.</p>
-
+</p>
+<br/>
 <p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
-<br/>
-<br/>
-<p class='rightAlignLefter'>Prof. Ing. Vilém Podrázský, CSc.<br/>
-	 </p>
+<p class='rightAlignLefter'><%= @faculty.dean.display_name %><br/>
+děkan <%= @faculty.short_name %> ČZU</p>
 
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>

@@ -66,6 +66,9 @@ li.third {
   padding-left: 4em;
   background-color: #ddc;
 }
+li.letter { 
+  border: none;
+}
 ul {
   margin-top: 0px;
   padding-left: 13px;

@@ -22,10 +22,10 @@ které proběhne
 
 dne <%= @exam_term.date.strftime("%d. %m. %Y") %>
 
-<%= Parameter.get("admittance invitation time & place", @faculty) %>
+<%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
 
 Přijímací zkouška pro obor <%= @coridor %>
-proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>, předseda komise <%= @exam_term.chairman.display_name %>
+proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>, předsedou komise je <%= @exam_term.chairman.display_name %>
 
 K přijímacímu řízení si přineste:
 průkaz totožnosti

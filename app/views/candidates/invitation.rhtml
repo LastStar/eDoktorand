@@ -13,9 +13,10 @@
 <% end %>
 <br/>
 <br/>
-<p><b>Věc: pozvánka k přijímacímu řízení do DSP na <%= @faculty.short_name %> ČZU v Praze</b></p>
+<p class='subject'><b>Věc: pozvánka k přijímacímu řízení do DSP na <%= @faculty.short_name %> ČZU v Praze</b></p>
 
-<p>Na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s § 50 zákona č. 111/98 Sb. o vysokých školách Vám zasílám</p>
+<p>Na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s&nbsp;§&nbsp;50&nbsp;zákona č.&nbsp;111/98&nbsp;Sb. o vysokých školách Vám zasílám</p>
+
 <div class='centerAlign'>
 <h3>pozvánku k přijímacímu řízení do DSP pro školní rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%></h3>
 
@@ -24,17 +25,18 @@
 <h3>dne <%= @candidate.coridor.exam_term.date.strftime("%d. %m. %Y") %></h3>
 </div>
 
-<%= Parameter.get("admittance invitation time & place", @faculty) %>
+<br/>
+<%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
 
 <p>Přijímací zkouška pro obor <%= @candidate.coridor.name %> proběhne od 
 <%= @candidate.coridor.exam_term.start_time %> v místnosti č. <%=
-@candidate.coridor.exam_term.room %>, předseda komise <%=
+@candidate.coridor.exam_term.room %>, předsedou komise je <%=
 @candidate.coridor.exam_term.chairman.display_name %></p>
 
 <p>K přijímacímu řízení si přineste:
 <ul>
-	<li>průkaz totožnosti</>
-	<li>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou</li>
+	<li class='letter'>průkaz totožnosti</>
+	<li class='letter'>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou</li>
 </ul>
 </p>
 <br/>
