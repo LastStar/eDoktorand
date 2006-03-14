@@ -4,7 +4,7 @@ class CandidatesController < ApplicationController
 
   before_filter :login_required, :except => [:invitation]
   before_filter :prepare_user
-  before_filter :prepare_faculty, :only => [:invitation, :invite, 'invite_now']
+  before_filter :prepare_faculty
   before_filter :set_title, :change_sort
   # lists all candidates
   def index
@@ -14,26 +14,14 @@ class CandidatesController < ApplicationController
   # lists all candidates
   def list
     @filtered_by = @params['filter'] 
-		conditions = "department_id in (#{@user.person.faculty.departments_for_sql})"
-		conditions.first << case @params['filter']
-                  when 'unready':' AND finished_on IS NOT NULL AND ready_on IS
-                    NULL'
-									when 'ready': ' AND ready_on IS NOT NULL AND invited_on IS NULL'
-									when 'invited': ' AND invited_on IS NOT NULL AND admited_on IS NULL'
-									when 'admited': ' AND admited_on IS NOT NULL AND enrolled_on IS NULL'
-									when 'enrolled': ' AND enrolled_on IS NOT NULL'
-									when nil: ''
-									end
-		conditions.first << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
-    @pages, @candidates = paginate :candidates, :per_page => 7, :order_by => @params['category'], :conditions => conditions
+		conditions = Candidate.prepare_conditions(@params, @faculty)
+    @pages, @candidates = paginate :candidates, :per_page => 7, :order_by =>
+      @params['category'], :conditions => conditions
   end
   # lists all candidates ordered by category
   def list_all
-    conditions = 'finished_on IS NOT NULL'
-    conditions << " AND coridor_id = #{@params['coridor']}" if @params['coridor']
-	  @candidates = Candidate.find(:all, :order => @params['category'],
-	  :conditions => conditions)
-	  render_action 'list'
+    @candidates = Candidate.find_all_finished(@params, @faculty)
+    render_action 'list'
   end
   # shows candidate details
   def show

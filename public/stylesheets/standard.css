@@ -191,11 +191,13 @@ div.fieldWithErrors label { color: red; }
   float: right;
   width: 14ex;
   font-size: 9pt;
+  text-align: center;
 }
 .smallerinfo {
   float: right;
   width: 8ex;
-  font-size: small;
+  font-size: 9pt;
+  text-align: center;
 }
 .info {
   float: right;
@@ -386,6 +388,7 @@ form.no_block {display: inline;}
 div.menu {text-align: center; width: 19ex; float: right; background-color: #452;font-size: 10px; margin-left: 1px; border-left: 2px solid #ddc; border-bottom: 2px solid #ddc;}
 div.menu a {display: block;text-decoration: none;color: white;}
 div.menu a:hover {text-decoration: none; background-color: #ddc; color: black;padding-right: 4px; padding-left: 2px;margin:1px}
+div.menu a:active {text-decoration: none;color: white;}
 .menu_line {border-top: 1px solid #452;}
 .form_line {border-bottom: 1px solid #452;background-color:#ddc}
 .form_line form {padding-right: 10px; text-align: right;}

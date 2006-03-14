@@ -13,6 +13,7 @@ class Faculty < ActiveRecord::Base
     end
   end
 
+  # TODO refactor to use department ids
   # returns string for sql IN statement
   def departments_for_sql
     self.departments.map {|dep| dep.id}.join(', ')
@@ -23,11 +24,18 @@ class Faculty < ActiveRecord::Base
     self.coridors.map {|c| c.id}
   end
 
-  # return
-  def accredited_coridors
-    Coridor.find(:all, :conditions => ['faculty_id = ? AND accredited = ? ', id, 1])
+  # returns array of department ids
+  def departments_ids
+    self.departments.map {|d| d.id}
   end
 
+  # return acredited corridors
+  def accredited_coridors
+    Coridor.find(:all, :conditions => ['faculty_id = ? AND accredited = ? ',
+      id, 1])
+  end
+
+  # retuns dean of the faculty
   def dean
     deanship.dean
   end
