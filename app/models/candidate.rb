@@ -213,7 +213,6 @@ class Candidate < ActiveRecord::Base
   # prepares conditions for paginate functions
   def self.prepare_conditions(options, faculty)
     conditions = ["department_id in (?)", faculty.departments_ids]
-    conditions.first << ' AND finished_on IS NOT NULL'
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
        conditions.first << " AND coridor_id = #{options['coridor']}"
@@ -224,7 +223,6 @@ class Candidate < ActiveRecord::Base
   # returns all candidates by filter
   def self.find_all_finished(options, faculty)
     conditions = ["department_id in (?)", faculty.departments_ids]
-    conditions.first << ' AND finished_on IS NOT NULL'
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
       conditions << " AND coridor_id = #{options['coridor']}" 
@@ -235,8 +233,7 @@ class Candidate < ActiveRecord::Base
 
   def self.filter_conditions(filter)
     case filter
-    when 'unready':' AND finished_on IS NOT NULL AND
-      ready_on IS NULL'
+    when 'unready':' AND ready_on IS NULL'
     when 'ready': ' AND ready_on IS NOT NULL AND 
       invited_on IS NULL'
     when 'invited': ' AND invited_on IS NOT NULL AND
