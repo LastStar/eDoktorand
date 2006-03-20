@@ -16,7 +16,7 @@ Věc: pozvánka k přijímacímu řízení do DSP na <%= @faculty.short_name %>
 Na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s § 50 zákona
 č. 111/98 Sb. o vysokých školách Vám zasílám
 
-pozvánku k přijímacímu řízení do DSP pro školní rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>
+pozvánku k přijímacímu řízení do DSP pro akademický rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>,
 
 které proběhne 
 
@@ -28,6 +28,6 @@ Přijímací zkouška pro obor <%= @coridor %>
 proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>, předsedou komise je <%= @exam_term.chairman.display_name %>
 
 K přijímacímu řízení si přineste:
-průkaz totožnosti
-doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou
-doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou
+průkaz totožnosti,
+doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou,
+doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou.
