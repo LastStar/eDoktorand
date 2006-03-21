@@ -1,7 +1,7 @@
 <%= update_element_function("done", :content => render(:partial => 
-  "with_student", :locals => {:exam => @session['exam']})) %>
+  "exams/with_student", :locals => {:exam => exam})) %>
 <%= update_element_function("form", :content => render(:partial => 
-  "main_form", :locals => {:exam => @session['exam'], :plan_subject => 
-  plan_subject, :examinators => examinators}))%>
+  "exams/main_form", :locals => {:exam => exam, :plan_subject => 
+  plan_subject, :action => action, :container => container}))%>
 <%= "Element.show('form')" %>
 

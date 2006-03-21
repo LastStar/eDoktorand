@@ -1,4 +1,4 @@
-<%= form_remote_with_loading(:url => {:action => 'save'}, :update => 'container' ) %>	
+<%= form_remote_with_loading(:url => {:action => action}, :update => container) %>	
 <% @exam ||= exam %>
 <fieldset id='date'>
 <legend><%= _("Exam date") %></legend>
@@ -13,11 +13,12 @@
 <legend><%= _("Exam agenda") %></legend>
 
   <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
-  <%= select('exam', 'first_examinator_id', examinators) %><br /> 
+     
+  <%= select('exam', 'first_examinator_id', Examinator.for_html_select(@user)) %><br /> 
 
 
   <label for="exam_second_examinator"><%=_("2. Examinator")%></label>
-  <%= select('exam', 'second_examinator_id', [['---', 0]].concat(examinators)) %>
+  <%= select('exam', 'second_examinator_id', Examinator.for_html_select(@user, :include_null => true)) %>
 
 </fieldset>
 

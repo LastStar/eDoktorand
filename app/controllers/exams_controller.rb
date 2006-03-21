@@ -66,11 +66,11 @@ class ExamsController < ApplicationController
   # save student of exam to session
   def save_student_subject
     @session['exam'].index = Student.find(@params['student']['id']).index
-    examinators = Examinator.for_html_select(@user)
     plan_subject = PlanSubject.find_by_subject_id_and_study_plan_id(\
       @session['exam'].subject.id, @session['exam'].index.study_plan.id)
-    render(:partial => 'main', :locals => {:plan_subject =>
-      plan_subject, :examinators => examinators})
+    render(:partial => 'main', :locals => {:plan_subject => plan_subject,
+          :action => 'save', :exam => @session['exam'], 
+          :container => 'container'})
   end
   
   # saves exam 
