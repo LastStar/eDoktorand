@@ -437,11 +437,13 @@ include Log4r
     @@mylog.info "Loading examinators..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       unless p = Examinator.find_by_uic(row[0])
-        p = Examinator.new('firstname' => row[1], 'lastname' => row[2])
+        p = Examinator.new('firstname' => row[2], 'lastname' => row[1])
+        p.uic = row[0]
         p.title_before = Title.find(row[3]) unless row[3].empty?
         p.title_after = Title.find(row[4]) unless row[4].empty?
       end
       p.department_employment = DepartmentEmployment.create('unit_id' => row[5])
+      @@mylog.info "Saving #{p.type} #{p.lastname}"
       p.save
     end
   end
