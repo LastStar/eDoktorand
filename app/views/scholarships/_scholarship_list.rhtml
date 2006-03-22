@@ -1,25 +1,29 @@
 <ul class='peopleList'>
-  <div class="smallinfo"><%= _("Extra") %></div>
-  <div class="smallinfo"><%= _("Regular") %></div>
-  <div class="smallinfo"><%= _("Department") %></div>
-  <%= _("Full name") %>
-  <br /><br />
-  <% @indices.sort! {|x, y| x.student.lastname <=> y.student.lastname} %>
+<li>
+<div class="smallinfo"><%= _("Extra") %></div>
+<div class="smallinfo"><%= _("Regular") %></div>
+<div class="smallinfo"><%= _("Department") %></div>
+<%= _("Full name") %>
+</li>
 <% for index in @indices  %>
+<li style='clear: both; height: 1.5em;'>
   <div class="smallinfo">
-    <%= link_to_remote_with_loading(_("detail"), :url => {:action => 'detail', :id =>
-    index.id}, :update => "info#{index.id}", :complete => "showDetail(#{index.id})") %>
+    <% if index.current_scholarship %>
+      <%= index.current_scholarship.amount %>
+    <% end %>
+    <%= detail_link(index) %>
   </div>
   <% if index.study_id == 1 %>
-    <div class="smallinfo"><%= print_scholarship(index) %> <%= _("Kc") %></div>
+  <div class="smallinfo">
+    <input type='text' value='<%= print_scholarship(index) %>' size='4' /> <%= _("Kc") %></div>
   <% else %>
     <div class="smallinfo">&nbsp;</div> 
   <% end %>
   <div class="smallinfo"><%= index.study.name %></div>
   <div class="smallinfo"><%= index.department.short_name %></div>
   <b><%= index.student.display_name %></b>
-  <br />
   <div class='detail' id='info<%= index.id %>' style="display: none">
   </div >
+  </li>
 <% end %>
 </ul>

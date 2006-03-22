@@ -168,6 +168,7 @@ module StudentsHelper
   def form_line(id)
       div_tag('', :id => id, :style => 'display: none', :class => 'form_line')
   end
+
   # prints month year form
   def month_year_form(options)
     date = options[:date] ? Time.parse(options.delete(:date)) : Date.today

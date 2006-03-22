@@ -122,7 +122,7 @@ class StudentsController < ApplicationController
     when 4
       @indices = Index.find_tutored_by(@user, :unfinished => true)
     when 3
-      @indices = Index.find_for(@user, :order => @order, :unfinished => true)
+      @indices = Index.find_studying_for(@user)
     when 2
       @indices = Index.find_waiting_for_statement(@user)
     when 1

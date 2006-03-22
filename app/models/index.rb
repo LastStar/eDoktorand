@@ -10,6 +10,7 @@ class Index < ActiveRecord::Base
   belongs_to :coridor
   belongs_to :department
   has_many :interupts, :order => 'created_on desc'
+  has_many :scholarships, :order => 'created_on desc'
 
   validates_presence_of :student
   validates_presence_of :tutor
@@ -130,8 +131,12 @@ class Index < ActiveRecord::Base
     if options[:unfinished]
       conditions.first << ' AND indices.finished_on IS NULL'
     end
-    find(:all, :conditions => conditions, :include => [:study_plan, :student,
-      :disert_theme, :department, :study, :coridor, :interupts], :order => options[:order])
+    if options[:not_interupted]
+      conditions.first << ' AND indices.interupted_on IS NULL'
+    end
+    find(:all, :conditions => conditions, 
+         :include => [:study_plan, :student, :disert_theme, :department,
+         :study, :coridor, :interupts, :scholarships], :order => options[:order])
   end
 
   # finds only indices tutored by user
@@ -171,35 +176,38 @@ class Index < ActiveRecord::Base
   # search on selected criteria
   def self.find_by_criteria(options = {})
     conditions = ['']
-    if options[:department] != 0
+    if options[:department] && options[:department] != 0
       conditions.first << ' AND indices.department_id = ?'
       conditions << options[:department]
-    elsif options[:coridor] != 0
+    elsif options[:coridor] && options[:coridor] != 0
       conditions.first << ' AND indices.coridor_id = ?'
       conditions << options[:coridor]
     end
-    if options[:form] != 0
+    if options[:form] && options[:form] != 0
       conditions.first << ' AND indices.study_id = ?'
       conditions << options[:form]
     end
+    if options[:study_status] && options[:study_status] != '0'
+      case options[:study_status].to_i
+      when 1
+        conditions.first << ' AND indices.finished_on IS NULL' +
+                            ' AND indices.interupted_on IS NULL'
+      when 2
+        conditions.first << ' AND indices.finished_on IS NOT NULL' 
+      when 3
+        conditions.first << ' AND indices.interupted_on IS NOT NULL' 
+      when 4
+        conditions.first << ' AND NULL IS NOT NULL'
+      end
+    end
     indices = Index.find_for(options[:user], :conditions => conditions, 
-                                  :include => [:study_plan, :student, :disert_theme, :department, :study,
-                                    :coridor, :interupt], :faculty => options[:faculty], :order => options[:order])
+                            :faculty => options[:faculty], 
+                            :order => options[:order])
     if options[:year] != 0 
       if options[:year] == 4
         indices.reject! {|i| i.year < 4}
       else
         indices.reject! {|i| i.year != options[:year]}
-      end
-    end
-    if options[:study_status] && options[:study_status] != '0'
-      case options[:study_status]
-      when '1'
-        indices.reject! {|i| i.status != _('studying')}
-      when '2'
-        indices.reject! {|i| i.status != _('finished')}
-      when '3'
-        indices.reject! {|i| i.status != _('interupted') }
       end
     end
     if options[:status] && options[:status] != '0'
@@ -217,6 +225,11 @@ class Index < ActiveRecord::Base
       end
     end
     return indices
+  end
+
+  def self.find_studying_for(user)
+    find_for(user, :unfinished => true, :not_interupted => true, 
+            :order => 'people.lastname')
   end
 
   # returns status of index
@@ -305,5 +318,16 @@ class Index < ActiveRecord::Base
 
   def waits_for_scholarship_confirmation?
     student.scholarship_claim_date && !student.scholarship_supervised_date
+  end
+
+  # TODO stub method
+  def current_scholarship
+    unless @current_scholarship || scholarships.empty?
+      if scholarships.first.payed_on.month == Date.today.month
+        @current_scholarship = scholarships.first
+      end
+    else
+      @current_scholarship
+    end
   end
 end
