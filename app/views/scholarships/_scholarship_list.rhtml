@@ -1,7 +1,8 @@
 <ul class='peopleList'>
-<li>
+<li style='color: gray'>
 <div class="smallinfo"><%= _("Extra") %></div>
 <div class="smallinfo"><%= _("Regular") %></div>
+<div class="smallinfo"><%= _("Study form") %></div>
 <div class="smallinfo"><%= _("Department") %></div>
 <%= _("Full name") %>
 </li>
@@ -15,7 +16,11 @@
   </div>
   <% if index.study_id == 1 %>
   <div class="smallinfo">
-    <input type='text' value='<%= print_scholarship(index) %>' size='4' /> <%= _("Kc") %></div>
+    <% scholarship = print_scholarship(index) %>
+    <input type='text' value='<%= scholarship %>' size='4' />
+    <%= scholarship %>
+    <%= _("Kc") %>
+  </div>
   <% else %>
     <div class="smallinfo">&nbsp;</div> 
   <% end %>
