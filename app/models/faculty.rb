@@ -3,6 +3,7 @@ class Faculty < ActiveRecord::Base
   has_many :departments
   has_many :documents
   has_one :deanship
+
   # returns array for html select
   def self.for_select(options = {})
     result = self.find(:all).map {|f| [f.name, f.id]}
@@ -31,8 +32,8 @@ class Faculty < ActiveRecord::Base
 
   # return acredited corridors
   def accredited_coridors
-    Coridor.find(:all, :conditions => ['faculty_id = ? AND accredited = ? ',
-      id, 1])
+    Coridor.find(:all, 
+                :conditions => ['faculty_id = ? AND accredited = ? ', id, 1])
   end
 
   # retuns dean of the faculty

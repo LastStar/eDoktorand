@@ -1,8 +1,5 @@
 <%= javascript_include_tag "prototype" %>
 <% unless @probation_terms.empty? %>
-<div id='search'>
-<%= render_partial "search" %>
-</div>
 <div id="probation_terms_list">
 <%= render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list' %>
 </div>

@@ -25,7 +25,7 @@ module StudentsHelper
       if index.interupt_waits_for_confirmation?
         links.concat(confirm_interupt_link(index)) 
       end
-      if index.close_to_interupt_end_or_after?
+      if index.interupted?
         links.concat(end_interupt_link(index))
         status_class = 'ends_interupt'
       end
@@ -34,7 +34,9 @@ module StudentsHelper
     info.concat(div_tag("#{index.year}. #{_('year')}", {:class => 'smallinfo'}))
     info.concat(div_tag(index.status, {:class => ['smallinfo',
       status_class].join(' ')}))
-    if study_plan
+    if index.interupted?
+      info.concat(interupt_to_info(index))
+    elsif study_plan 
       info.concat(div_tag(study_plan.status, {:class => 'smallinfo'}))
     end
     info.concat(content_tag('span', student_link(index), {:id => 
@@ -150,8 +152,12 @@ module StudentsHelper
 
   # prints link to student detail
   def student_link(index)
-    link_to_remote_with_loading(index.student.display_name, :url => {:action =>
+    link = link_to_remote_with_loading(index.student.display_name, :url => {:action =>
       'show', :controller => 'students', :id => index}, :evaluate => true)
+    if index.close_to_interupt_end_or_after?
+      link = span_tag('!', :class => 'red').concat(link)
+    end
+    link
   end
 
   # prints line with student informations
@@ -193,13 +199,13 @@ module StudentsHelper
 
   # prints select for coridor
   def coridor_select(options = {})
-    options = if options[:user].has_role?('vicerector')
-      coridor_options(:include_empty => options[:include_empty])
-    else
-      coridor_options(:faculty => options[:user].person.faculty, :include_empty => options[:include_empty])
+    opts = {:include_empty => options[:include_empty], :accredited => true}
+    unless options[:user].has_role?('vicerector')
+      opts[:faculty] = options[:user].person.faculty
     end
-    content_tag('select', options, {'id' => "filter_by_coridor", 
-      'name' => "filter_by_coridor"})
+    select_options = coridor_options(opts)
+    content_tag('select', select_options, {'id' => "filter_by_coridor", 
+                                    'name' => "filter_by_coridor"})
   end
 
   # prints select for faculty
@@ -235,4 +241,8 @@ module StudentsHelper
     end
   end
 
+  def interupt_to_info(index)
+  div_tag("#{_('to')} #{index.interupt.end_on.strftime('%d.%m.%Y')}",
+         {:class => 'smallinfo'})
+  end
 end

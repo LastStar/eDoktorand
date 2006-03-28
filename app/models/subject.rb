@@ -29,4 +29,7 @@ class Subject < ActiveRecord::Base
     self.find(:all).map {|sub| [sub.label, sub.id]}
   end
 
+  def select_label
+    "#{code} - #{label}"
+  end
 end

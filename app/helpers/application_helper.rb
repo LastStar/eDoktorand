@@ -345,6 +345,11 @@ module ApplicationHelper
     content_tag('div', content, options)
   end
 
+  # prints span tag
+  def span_tag(content, options = {})
+    content_tag('span', content, options)
+  end
+
   # prints div with smallerinfo class with content inside
   def smaller_info_div(content)
     div_tag(content, {:class => 'smallerinfo'})

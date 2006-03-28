@@ -71,6 +71,7 @@ class ProbationTermsController < ApplicationController
     @students = []
     @plan_subjects.each {|plan| @students << plan.study_plan.index.student}
     @students = @students.select {|stud| (!stud.index.finished?) && (!@probation_term.students.include? stud)}
+    @students.sort {|x, y| x.lastname <=> y.lastname}
     render_partial('detail', :probation_term => @probation_term, :students => @students)
   end
  

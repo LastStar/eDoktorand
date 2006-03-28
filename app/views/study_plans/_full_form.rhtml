@@ -23,7 +23,7 @@
 <% i = index + 1 %>
 <label class='smaller' for="final_area_<%= i %>"><%= "#{i}. " + _("final area") %></label>
 <input type='text' id="study_plan_final_areas_<%= i %>"
-name="study_plan[final_areas][<%= i %>]" size="30"/><br/>   
+name="study_plan[final_areas][<%= i %>]" size="30" value="<%= @study_plan.final_areas[i.to_s] %>"/><br/>   
 <% end %>
 <% end %>
 </fieldset>

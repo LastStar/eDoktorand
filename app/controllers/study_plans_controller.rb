@@ -26,10 +26,10 @@ class StudyPlansController < ApplicationController
     @title = _("Creating study plan")
     @requisite_subjects = prepare_requisite(@student)
     @subjects = Subject.for_faculty_select(@student.faculty)
-    @subjects.concat(LanguageSubject.for_select)
+    @subjects.concat(LanguageSubject.for_select(:coridor => @student.index.coridor))
     @study_plan = @student.index.build_study_plan
     @plan_subjects = []
-    10.times do |i|
+    FACULTY_CFG['subjects_count'].times do |i|
       (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
       @plan_subjects << plan_subject
     end
@@ -41,12 +41,14 @@ class StudyPlansController < ApplicationController
     if !@student
       @student = Student.find(@params['id'])
     end
-    @subjects = VoluntarySubject.for_select(@student.index.coridor)
-    @subjects.concat(ObligateSubject.for_select(@student.index.coridor))
-    @subjects.concat(LanguageSubject.for_select)
-    @subjects.concat(RequisiteSubject.for_select(@student.index.coridor))
+    coridor_id = @student.index.coridor_id
+    @subjects = CoridorSubject.for_select(:coridor => coridor_id)
     if @study_plan = @student.index.study_plan
       @plan_subjects = @student.index.study_plan.unfinished_subjects
+      (FACULTY_CFG[@student.faculty.id]['subjects_count'] - @plan_subjects.size).times do |i|
+        (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
+        @plan_subjects << plan_subject
+      end
       @session['finished_subjects'] = @student.index.study_plan.finished_subjects
       @disert_theme = @student.index.disert_theme
     else

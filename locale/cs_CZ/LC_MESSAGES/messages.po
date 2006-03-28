@@ -1486,7 +1486,7 @@ msgstr "Nenalezeni žadní studenti. Použijte filtry ke změně výběru."
 msgid "faculty secretary approve"
 msgstr "schváleno referentkou vědy a výzkumu"
 
-msgid "end"
+msgid "End"
 msgstr "ukončit"
 
 msgid "This study last interupt"
@@ -1503,4 +1503,7 @@ msgstr "Změnit formu k"
 
 msgid "Finish"
 msgstr "Ukončit k"
+
+msgid "to"
+msgstr "do"
 

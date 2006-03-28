@@ -1,5 +1,12 @@
+require 'log4r'
 class MassProcessor
-# approve all indexes 
+  include Log4r
+
+  @@mylog = Logger.new 'Importer'
+  @@mylog.outputters = Outputter.stdout
+  @@mylog.level = 1
+
+  # approve all indexes 
   def self.mass_approve(indexes)
     indexes.each do |i|
       app = i.study_plan.approvement = StudyPlanApprovement.new
@@ -13,6 +20,31 @@ class MassProcessor
         'result' => 1, 'note' => 'approved by machine', 'created_on' => created)
       app.save
       i.save
+    end
+  end
+
+  def self.clean_coridor_subjects
+    @count = 0
+    Faculty.find(:all).each do |f|
+      f.coridors.each do |c|
+        @last = nil
+        c.obligate_subjects.each {|cs| change_last_or_delete(cs)}
+        c.voluntary_subjects.each {|cs| change_last_or_delete(cs)}
+        c.language_subjects.each {|cs| change_last_or_delete(cs)}
+        c.requisite_subjects.each {|cs| change_last_or_delete(cs)}
+        c.seminar_subjects.each {|cs| change_last_or_delete(cs)}
+      end
+    end
+    @@mylog.debug "count" + @count.to_s
+  end
+
+  def self.change_last_or_delete(vs)
+    if @last == vs.subject_id
+      @@mylog.debug "To delete #{vs.type} id: " + vs.id.to_s
+      vs.destroy
+      @count += 1
+    else
+      @last = vs.subject_id
     end
   end
 end

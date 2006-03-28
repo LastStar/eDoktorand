@@ -295,7 +295,8 @@ class Index < ActiveRecord::Base
   def end_interupt!(end_date)
     update_attribute('interupted_on', nil)
     if end_date.is_a? Hash
-      end_date = Date.civil(end_date['year'].to_i, end_date['month'].to_i)
+      end_date = Time.local(end_date['year'].to_i,
+                           end_date['month'].to_i).end_of_month
     end
     interupt.update_attribute('finished_on', end_date)
   end
@@ -309,7 +310,8 @@ class Index < ActiveRecord::Base
   end
 
   def interupt_waits_for_confirmation?
-    admited_interupt? && interupt.approved? && !interupt.finished?
+    admited_interupt? && interupt.approved? && !interupt.finished? &&
+      !interupted_on 
   end
 
   def close_to_interupt_end_or_after?(months = 3)
