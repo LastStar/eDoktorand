@@ -4,6 +4,7 @@
   <li><div class="right_info"><%= @candidate.display_name %></div><%= _("Full name") %>:</li>
   <li><div class="right_info"><%= @candidate.birth_on.strftime("%d.%m.%Y") + ", " + @candidate.birth_at %></div><%= _("Birth date and place") %>:</li>
   <li><div class="right_info"><%= @candidate.birth_number %></div><%= _("Birth number") %>:</li>
+  <li><div class="right_info"><%= @candidate.print_sex %></div><%= _("Sex") %>:</li>
   <li><div class="right_info"><%= @candidate.state %></div><%= _("State") %>:</li>
   </ul>
   <h5><%= _("Contact") %></h5> 

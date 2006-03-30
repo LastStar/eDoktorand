@@ -40,7 +40,11 @@ module ApplicationHelper
     options_for_select([['---', '0'], [_("present"), 1], \
       [_("combined"), 2]])
   end
-  
+
+  def sex_select(model, method)
+    select model, method, [[_("male"), 'M'],[_("female"), 'F']]
+  end
+
   # returns yes or no options
   def yes_no_options
     [[_('yes'), 1], [_('no'), 2]]

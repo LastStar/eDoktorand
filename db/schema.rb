@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(:version => 39) do
     t.column "tutor_id", :integer
     t.column "address_state", :string, :limit => 240
     t.column "postal_state", :string, :limit => 240
+    t.column "language", :string
+    t.column "sex", :string
   end
 
   create_table "contact_types", :force => true do |t|
@@ -272,10 +274,19 @@ ActiveRecord::Schema.define(:version => 39) do
     t.column "updated_on", :datetime
     t.column "uic", :integer
     t.column "birthname", :string, :limit => 100
+<<<<<<< .mine
     t.column "citizenship", :string
     t.column "scholarship_claim_date", :datetime
     t.column "scholarship_supervised_date", :datetime
     t.column "birth_place", :string
+    t.column "language", :string
+    t.column "sex", :string
+=======
+    t.column "citizenship", :string
+    t.column "scholarship_claim_date", :datetime
+    t.column "scholarship_supervised_date", :datetime
+    t.column "birth_place", :string
+>>>>>>> .r533
   end
 
   add_index "people", ["lastname"], :name => "people_lastname_index"

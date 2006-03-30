@@ -1,4 +1,7 @@
+require 'genderize'
+
 class Candidate < ActiveRecord::Base
+  include Genderize
   belongs_to :coridor
   belongs_to :department
   belongs_to :study

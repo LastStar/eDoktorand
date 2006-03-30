@@ -1,4 +1,7 @@
+require 'genderize'
+
 class Person < ActiveRecord::Base
+  include Genderize
   validates_presence_of :lastname
   validates_presence_of :firstname
   belongs_to :title_before, :class_name => 'Title', :foreign_key => 

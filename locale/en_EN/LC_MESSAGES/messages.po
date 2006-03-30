@@ -967,3 +967,12 @@ msgstr ""
 msgid "czech"
 msgstr "česky"
 
+
+msgid "sex"
+msgstr "sex"
+
+msgid "male"
+msgstr "male"
+
+msgid "female"
+msgstr "female"

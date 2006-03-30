@@ -17,7 +17,9 @@
     <%= date_select 'candidate', 'birth_on', :start_year => Date.today.year-21, :end_year => 1950,
     :order => [:day, :month, :year], :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_birth_at' class='required'><%= _("birth place") %></label>
-    <%= text_field 'candidate', 'birth_at', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <%= text_field 'candidate', 'birth_at', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br />
+    <label for="candidate_department_id"><%= _("sex") %></label>
+    <%= sex_select 'candidate', 'sex' %><br /> 
     <label for='candidate_state' class='required'><%= _("state") %></label>
     <%= text_field 'candidate', 'state', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_birth_number' class='required'><%= _("birth number / passport") %></label>
