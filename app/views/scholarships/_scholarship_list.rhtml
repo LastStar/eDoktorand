@@ -17,7 +17,7 @@
   <% if index.study_id == 1 %>
   <div class="smallinfo">
     <% scholarship = print_scholarship(index) %>
-    <input type='text' value='<%= scholarship %>' size='4' />
+    <%= scholarship_field(index, scholarship) %>
     <%= scholarship %>
     <%= _("Kc") %>
   </div>

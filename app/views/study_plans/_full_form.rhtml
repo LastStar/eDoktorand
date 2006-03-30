@@ -19,12 +19,7 @@
 <%= select 'study_plan', 'finishing_to', 1..6 %>
 <%= "." + _("semester") %><br/> 
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
-<% 4.times do |index| %>
-<% i = index + 1 %>
-<label class='smaller' for="final_area_<%= i %>"><%= "#{i}. " + _("final area") %></label>
-<input type='text' id="study_plan_final_areas_<%= i %>"
-name="study_plan[final_areas][<%= i %>]" size="30" value="<%= @study_plan.final_areas[i.to_s] %>"/><br/>   
-<% end %>
+<%= render(:partial => 'final_areas_fields', :locals => {:study_plan => @study_plan})  %>
 <% end %>
 </fieldset>
 <fieldset>

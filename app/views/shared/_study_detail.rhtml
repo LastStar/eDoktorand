@@ -41,7 +41,9 @@
   <div class='info'><%= interupt.start_on.strftime('%d. %m. %Y') %></div>
   <%= _('interupted on') %>
   </li>
-  <%= interupt_finish_line(index) %>
+    <% if index.interupt.finished_on %>
+      <%= interupt_finish_line(index) %>
+    <% end %>
   <% end %>
   <% if index.interupt.note && !index.interupt.note.empty? %>
   <li>

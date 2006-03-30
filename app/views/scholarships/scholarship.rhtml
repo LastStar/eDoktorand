@@ -1,7 +1,10 @@
 <div id='students_list'>
 <h5><%= _("Scholarship for students") %></h5>
 <% if @indices && !@indices.empty? %>
-  <%= render(:partial => 'scholarship_list') %>
+  <%= form_tag :action => 'save' %>
+  <%= render :partial => 'scholarship_list' %>
+  <%= submit_tag(_('submit')) %>
+  <%= end_form_tag %>
 <% else %>
   <%= _("no scholarships") %>
 <% end %>

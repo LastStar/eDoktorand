@@ -239,6 +239,9 @@ class StudyPlansController < ApplicationController
     @student.index.study_plan})
   end
 
+  def final_application
+    @study_plan = @student.index.study_plan
+  end
   private 
 
   include StudyPlanCreator

@@ -2,6 +2,11 @@
   <% if !@index.study_plan.approved? %>
 <p class='help'><%= _("Your study plan, details of it you can see here, is
 processed now. Final approvement you will get by email. ") %></p> 
+  <% elsif @index.study_plan.all_subjects_finished? %>
+<p class='help'>
+      <%= _('You have all subjects finished. Proceed to final exam application') %>
+</p>
+      <%= final_exam_link(@index) %>
   <% end %>
 <% else %>
 <p class='help'><%= _("Welcome to edoktorand application.") %></p> 

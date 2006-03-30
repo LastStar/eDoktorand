@@ -18,7 +18,7 @@ class ScholarshipsController < ApplicationController
     Scholarship.find_all_by_index_id(@index.id)
   end
 
-# claim for accommodation scholarship
+  # claim for accommodation scholarship
   def claim
     @student = @user.person
     @student.scholarship_claim_date = Time.now
@@ -79,5 +79,10 @@ class ScholarshipsController < ApplicationController
   # sets title of the controller
   def set_title
     @title = _('Exams')
+  end
+
+  def save
+    breakpoint 
+    
   end
 end

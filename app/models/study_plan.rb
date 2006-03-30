@@ -131,4 +131,8 @@ class StudyPlan < ActiveRecord::Base
   def external_subjects
     PlanSubject.find_unfinished_external(:study_plan => self).map {|ps| ps.subject}
   end
+
+  def all_subjects_finished?
+    unfinished_subjects.empty?
+  end
 end

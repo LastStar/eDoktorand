@@ -370,4 +370,10 @@ module ApplicationHelper
     div_tag(content, {:class => 'info'})
   end
 
+  # prints interupt finish line
+  def interupt_finish_line(index)
+    finished_on = info_div(index.interupt.finished_on.strftime('%d.%m.%Y'))
+    content_tag('li', finished_on + _('finished on'))
+  end
+
 end

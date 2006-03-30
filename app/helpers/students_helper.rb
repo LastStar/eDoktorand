@@ -232,15 +232,6 @@ module StudentsHelper
       "filter_by_form", 'name' => "filter_by_form"})
   end
 
-  # prints interupt finish line
-  def interupt_finish_line(index)
-    if index.interupt.finished_on
-      finished_on = index.interupt.finished_on.strftime('%d.%m.%Y')
-      finished_on = info_div(finished_on)
-      content_tag('li', finished_on + _('finished on'))
-    end
-  end
-
   def interupt_to_info(index)
   div_tag("#{_('to')} #{index.interupt.end_on.strftime('%d.%m.%Y')}",
          {:class => 'smallinfo'})

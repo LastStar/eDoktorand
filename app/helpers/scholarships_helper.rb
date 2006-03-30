@@ -12,4 +12,8 @@ module ScholarshipsHelper
                                :url => {:action => 'detail', :id => index.id})
   end
 
+  def scholarship_field(index, scholarship)
+    tag('input', :type => 'text', :value => scholarship, :size => 4, 
+        :name => "scholarship[#{index.id}]", :id => "scholarship_#{index.id}")
+  end
 end
