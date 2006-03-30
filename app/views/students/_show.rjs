@@ -1,0 +1,5 @@
+page.insert_html :before, "people_list", render(:partial => 'shared/student_detail',
+  :locals => {:index => index, :study_plan => index.study_plan, :disert_theme =>
+  index.disert_theme})
+
+page.hide 'search', 'people_list'

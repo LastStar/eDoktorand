@@ -1,4 +1,4 @@
-	<% if @session['user'].person.is_a?(Student) and @student %>
+	<% if @user.person.is_a?(Student) and @student %>
     <% if !@student.index.study_plan %>
     <%= link_to(_("create study plan"), {:action => 'create', :id => @student}, 
     :confirm => _("Have you consulted your study plan with tutor. It is highly recomended")) %>
@@ -13,13 +13,13 @@
     <%= link_to_unless_current(_("contacts"), :controller => 'addresses',
     :action => 'edit'){} %>
   <% else %>
-  <% if @session['user'].has_one_of_roles?(['admin', 'faculty_secretary']) %>
+  <% if @user.has_one_of_roles?(['admin', 'faculty_secretary']) %>
     <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>
     <%= link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} %>
     <%= link_to_unless_current(_("scholarship"), :controller => 'scholarships',
     :action => 'scholarship'){} %>
     <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
-  <% elsif @session['user'].has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) %>
+  <% elsif @user.has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) %>
     <%= link_to_unless_current(_("probation terms"), :controller =>
     'probation_terms'){} %>
     <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>

@@ -209,7 +209,7 @@ module ApplicationHelper
   # prints main menu
   def main_menu
     links = []
-    if @session['user'].person.is_a?(Student) and @student 
+    if @user.person.is_a?(Student) and @student 
       if @student.index.study_plan && @student.index.study_plan.approved? 
         links << link_to_unless_current(_("probation terms"), :controller =>
           'probation_terms'){} 
@@ -220,14 +220,14 @@ module ApplicationHelper
       links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
         :action => 'list'){} 
     else 
-      if @session['user'].has_one_of_roles?(['admin', 'faculty_secretary']) 
+      if @user.has_one_of_roles?(['admin', 'faculty_secretary']) 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
         links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
         links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
           :action => 'scholarship'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
-      elsif @session['user'].has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) 
+      elsif @user.has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) 
         links << link_to_unless_current(_("probation terms"), :controller =>
           'probation_terms'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){} 

@@ -3,7 +3,7 @@ module ProbationTermsHelper
   # prints list links
 	def probation_term_list_links
 	  links = ''
-    if (!@session['user'].person.is_a?(Student))
+    if (!@user.person.is_a?(Student))
 	    links << link_to(_("new term"), {:action => 'create'})
 	    links << '&nbsp;'
     end

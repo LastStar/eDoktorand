@@ -3,17 +3,17 @@
 <ul>
 <%  
   has_enrolled_subjects = []
-  if (@session['user'].person.is_a?(Student))
+  if (@user.person.is_a?(Student))
     @probation_terms.each{|prob| has_enrolled_subjects << prob.subject if
-      ((!prob.students.empty?) && (prob.students.include?(@session['user'].person)))}
+      ((!prob.students.empty?) && (prob.students.include?(@user.person)))}
   end
 %>
 <% for probation_term in @probation_terms  %>
   <li>
     <div class='right'>
-      <% if (@session['user'].person.is_a?(Student)) %>
+      <% if (@user.person.is_a?(Student)) %>
         <% if ((has_enrolled_subjects) && (has_enrolled_subjects.include? (probation_term.subject))) %>
-          <% if(probation_term.students.include?(@session['user'].person)) %>
+          <% if(probation_term.students.include?(@user.person)) %>
             <%= _("You are already enrolled for this term") %>
           <% else %>
             <%= _("You are already enrolled for an exam from this subject") %>

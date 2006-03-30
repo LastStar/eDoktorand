@@ -8,9 +8,9 @@ class AccountController < ApplicationController
   def login
     @title = _('Login to system')
     if @request.method == :post
-      if @session['user'] = User.authenticate(@params['user_login'], @params['user_password'])
-        flash['notice']  = _("Login was succesful")
-        redirect_back_or_default :action => "welcome"
+      if @session['user'] = User.authenticate(@params['user_login'], 
+        @params['user_password'])
+        redirect_back_or_default welcome_url
       else
         @login    = @params['user_login']
         @message  = _('Login was unsuccesful')
@@ -24,7 +24,8 @@ class AccountController < ApplicationController
       when :post
         @user = User.new(@params['user'])
         if @user.save      
-          @session['user'] = User.authenticate(@user.login, @params['user']['password'])
+          @session['user'] = User.authenticate(@user.login, 
+            @params['user']['password'])
           flash['notice']  = "Signup successful"
           redirect_back_or_default :action => "welcome"          
         end
@@ -43,7 +44,7 @@ class AccountController < ApplicationController
     
   def logout
     reset_session
-    redirect_to :action => 'login'
+    redirect_to login_url
   end
     
   def welcome

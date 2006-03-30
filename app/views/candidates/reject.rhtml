@@ -31,7 +31,7 @@ ke studiu přijat.</p>
 
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
-	<% if @session['user'] %>
+	<% if @user %>
 	<%= link_to 'zpět', :action => 'list'%>
 	<% unless @candidate.admited? %>
 	<span id='mailLink'><%= link_to_remote 'odešli mail s dekretem o

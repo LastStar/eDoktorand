@@ -20,5 +20,3 @@ ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(
 FACULTY_CFG =
 YAML::load(File.open("#{RAILS_ROOT}/config/faculty_configurations.yml"))
 
-
-load 'student.rb'

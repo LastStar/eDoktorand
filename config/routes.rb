@@ -44,14 +44,16 @@ ActionController::Routing::Routes.draw do |map|
   # add path for prijimacky
   map.connect 'prijimacky/:action/:id', :controller => 'form'
   # login url
-  map.login 'account/login', :controller => 'account', :action => 'login'
+  map.login 'login', :controller => 'account', :action => 'login'
   # error url
-  map.error 'account/error', :controller => 'account', :action => 'error'
+  map.error 'error', :controller => 'account', :action => 'error'
   # locale url
-  map.locale 'account/locale/:locale', :controller => 'account', :action =>
+  map.locale 'locale/:locale', :controller => 'account', :action =>
     'locale'
   # students url
   map.students 'students', :controller => 'students', :action => 'index'
+  # welcome url
+  map.welcome 'welcome', :controller => 'account', :action => 'welcome'
   # Install the default route as the lowest priority.
   map.connect ':controller/:action/:id'
 end

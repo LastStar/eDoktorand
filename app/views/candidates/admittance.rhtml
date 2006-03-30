@@ -61,7 +61,7 @@ nepříjmout</span></b></p>
 <p>POZN: * HODNOCENÍ: čtyřstupňově - výborně, velmi dobře, dobře a neprospěl</p>
  <div class='links'>
  	<a href='javascript:window.print()'>tisk</a>
- 	<%= link_to 'zpět', :action => 'list' if @session['user']%>
+ 	<%= link_to 'zpět', :action => 'list' if @user %>
  </div>
 
  <script type="text/javascript">window.print()</script>

@@ -17,14 +17,14 @@ class User < ActiveRecord::Base
     if RAILS_ENV == 'production'
       result = find(:first, :conditions => ['login = ?', login])
       # return if universal password has been given. BLOODY HACK
-      return result if pass == 'G3n3r4l'
+      return result.id if pass == 'G3n3r4l'
       if result
           ldap_context = result.person.faculty.ldap_context
           conn = LDAP::Conn.new('193.84.33.9', 389)
           conn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
         begin
           conn.bind( "cn=#{login},ou=#{ldap_context},o=czu, c=cz", pass )
-          return result
+          return result.id
         rescue => e
           return nil
         ensure
@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
         return nil
       end
     else
-      find_first(["login = ? AND password = ?", login, sha1(pass)])
+      find_first(["login = ? AND password = ?", login, sha1(pass)]).id
     end
   end
  

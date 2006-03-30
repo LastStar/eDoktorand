@@ -1,9 +1,9 @@
 class StudentsController < ApplicationController
   include LoginSystem
   layout 'employers', :except => [:time_form, :filter]
-  before_filter :login_required, :set_title, :prepare_user
+  before_filter :prepare_user, :set_title, :login_required
   before_filter :prepare_order, :prepare_filter, :except => [:show,
-  :contact]
+    :contact]
   before_filter :prepare_conditions
 
   def index
@@ -40,7 +40,7 @@ class StudentsController < ApplicationController
   # renders student details
   def show
     index = Index.find(@params['id'])
-    render(:partial => 'shared/show', :locals => {:index => index})
+    render(:partial => 'show', :locals => {:index => index})
   end
   
   # renders contact for student

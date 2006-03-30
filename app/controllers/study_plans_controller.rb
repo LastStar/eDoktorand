@@ -2,7 +2,7 @@ require 'study_plan_creator'
 class StudyPlansController < ApplicationController
   include LoginSystem
   layout 'employers'
-  before_filter :login_required, :prepare_student, :prepare_user
+  before_filter :login_required, :prepare_user, :prepare_student
   
   # page with basic informations for student 
   def index

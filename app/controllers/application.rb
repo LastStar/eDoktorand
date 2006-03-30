@@ -1,13 +1,5 @@
-# The filters added to this controller will be run for all controllers in the application.
-# Likewise will all the methods added be available for all controllers.
-require_dependency 'dean'
-require_dependency 'obligate_subject'
-require_dependency 'plan_subject'
-require_dependency 'study_plan'
-require_dependency 'disert_theme'
-require_dependency 'exam'
-
 class ApplicationController < ActionController::Base
+  model :dean # solving deep STI 
   before_filter :localize
   include LoginSystem
   # TODO redo with model methods
@@ -56,13 +48,14 @@ class ApplicationController < ActionController::Base
   # checks if user is student. 
   # if true creates @student variable with current student
   def prepare_student
-    if @session['user'].person.kind_of?(Student)
-      @student = @session['user'].person 
+    prepare_user
+    if @user.person.kind_of?(Student)
+      @student = @user.person 
     end
   end
   # prepares user class variable
   def prepare_user
-    @user = ActiveRecord::Acts::Audited.current_user = @session['user']
+    @user = ActiveRecord::Acts::Audited.current_user = User.find(@session['user'])
   end
   # prepares faculty class variable
   def prepare_faculty
@@ -71,16 +64,16 @@ class ApplicationController < ActionController::Base
   # prepares conditions for various queries
   def prepare_conditions
     @conditions = ["null is not null"]
-    if @session['user'].has_one_of_roles?(['admin', 'vicerector'])
+    if @user.has_one_of_roles?(['admin', 'vicerector'])
       @conditions  = ['null is null']
-    elsif @session['user'].has_one_of_roles?(['dean', 'faculty_secretary'])
-      @conditions = ["department_id IN (" +  @session['user'].person.faculty.departments.map {|dep|
+    elsif @user.has_one_of_roles?(['dean', 'faculty_secretary'])
+      @conditions = ["department_id IN (" +  @user.person.faculty.departments.map {|dep|
         dep.id}.join(', ') + ")"]
-    elsif @session['user'].has_one_of_roles?(['leader', 'department_secretary'])
-      department_id = @session['user'].person.department.id
+    elsif @user.has_one_of_roles?(['leader', 'department_secretary'])
+      department_id = @user.person.department.id
       @conditions = ['department_id = ?', department_id]
-    elsif @session['user'].has_role?('tutor')
-      @conditions = ['tutor_id = ?', @session['user'].person.id]
+    elsif @user.has_role?('tutor')
+      @conditions = ['tutor_id = ?', @user.person.id]
     end
   end
   # rescues exceptions throwed in actions
