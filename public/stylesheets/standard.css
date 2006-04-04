@@ -80,10 +80,8 @@ ul.peopleList {
 }
 
 .hidden { display: none; }
-.detail {  padding: 10px; width: 30em; margin-bottom: 10px;}
+.detail {  font-size: 9pt; color: #666;padding: 0px 4px 4px 0px; margin: 0px;border-bottom: 1px solid #452;}
 pre { background-color: #eee; padding: 10px; font-size: 11px; }
-
-
 p {
   padding-left: 20px;
 }
@@ -194,7 +192,7 @@ div.fieldWithErrors label { color: red; }
   float: right;
   width: 14ex;
   font-size: 9pt;
-  text-align: center;
+  text-align: left;
 }
 .smallerinfo {
   float: right;
@@ -401,3 +399,13 @@ div.menu a:active {text-decoration: none;color: white;}
 #student_list li {clear: both; padding: 0px;}
 li.higher {height: 2.25em;}
 .red {color: red}
+li.tiny {clear: both;}
+a img {border: none}
+.smallinfo input, a, img {vertical-align: middle; padding: 0px; margin: 0px}
+.smallinfo input {border: 1px dashed #ccc;}
+ul.tiny {padding: 0px;margin: 0px;}
+ul.tiny form {padding: 0px;margin: 0px;font-size: 10pt}
+ul.tiny li {border: none; background-color: #eee;font-size: 10pt; width: 30em;}
+.tiny form {padding: 0px;}
+.detail input {border: 1px dashed #ccc;vertical-align: middle; padding: 0px; margin: 0px;}
+div.small { float: right; font-size: 9pt; text-align: left;}

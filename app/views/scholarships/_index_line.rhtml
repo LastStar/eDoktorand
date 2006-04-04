@@ -1,0 +1,21 @@
+<div class="smallinfo" id='scholarship_<%= index.id %>'>
+<% if index.current_extra_scholarship %>
+  <%= detail_link(index) %>
+  <%= index.current_extra_scholarship_sum %> <%= _('Kc') %>
+<% else %>
+  <%= add_link(index) %>
+<% end %>
+</div>
+<% if index.present_study? %>
+<div class="smallinfo" id='regular_scholarship_<%= index.id %>'>
+  <%= render(:partial => 'regular', :locals => {:index => index}) %>
+</div>
+<% else %>
+  <div class="smallinfo">&nbsp;</div> 
+<% end %>
+<div class="smallinfo"><%= index.study.name %></div>
+<div class="smallinfo"><%= index.department.short_name %></div>
+<%= index.student.display_name %>
+<div class='detail' id='scholarship_form_<%= index.id %>' style="display: none">
+</div >
+

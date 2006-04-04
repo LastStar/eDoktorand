@@ -9,7 +9,7 @@ class Student < Person
 
   # returns faculty on which student is
   def faculty
-    index.department.faculty
+    index.faculty
   end
 
   #returns display name for printing
@@ -19,7 +19,7 @@ class Student < Person
 
   # retunrs account for printing
   def account
-    if scholarship_supervised_date
+    if scholarship_supervised_at
       if account_number_prefix
         "#{s.index.account_number_prefix}-#{s.index.account_number}/#{s.index.account_bank_number}"
       else

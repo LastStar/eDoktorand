@@ -1,0 +1,1 @@
+page.update "scholarship_#{@index.id}", render(:partial => 'extra_form')

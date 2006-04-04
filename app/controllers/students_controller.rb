@@ -76,7 +76,7 @@ class StudentsController < ApplicationController
   def supervise_scholarship_claim
     @index = Index.find(@params['id'])
     @student = @index.student
-    @student.update_attribute('scholarship_supervised_date', Time.now)
+    @student.update_attribute('scholarship_supervised_at', Time.now)
     render(:inline => "<%= redraw_student(@index) %>")
   end
 

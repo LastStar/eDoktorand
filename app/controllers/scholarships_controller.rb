@@ -1,10 +1,8 @@
 class ScholarshipsController < ApplicationController
   include LoginSystem
-  layout "employers"
-  before_filter :set_title
-  before_filter :login_required
-  before_filter :prepare_student
-  before_filter :prepare_user
+  layout "employers", :except => [:save, :change, :add, :edit]
+  before_filter :set_title, :login_required, :prepare_student,
+                :prepare_user
 
   def index
     list
@@ -12,16 +10,12 @@ class ScholarshipsController < ApplicationController
   end
 
   def list
-    @scholarships = []
-    @index = @user.person.index
-    @scholarships =
-    Scholarship.find_all_by_index_id(@index.id)
+    @scholarships = Scholarship.find_all_by_index_id(@student.index.id)
   end
 
   # claim for accommodation scholarship
   def claim
-    @student = @user.person
-    @student.scholarship_claim_date = Time.now
+    @student.scholarship_claimed_at = Time.now
     @student.save
   end
   
@@ -34,35 +28,72 @@ class ScholarshipsController < ApplicationController
   # this method saves the account to dbase
   def save_account
     index = Index.find(@params['index']['id'])
-    index.account_number_prefix = @params['index']['account_number_prefix']
-    index.account_number = @params['index']['account_number']
-    index.account_bank_number = @params['index']['account_bank_number']
-    index.save
+    index.update_attributes(@params['index'])
     list
     render :action => 'list'
   end
 
   # scholarship list preparation
-  def scholarship
-    @indices = Index.find_studying_for(@user)
+  def prepare
+    @indices = Index.find_studying_for(@user, 
+                                       :order => 'studies.id, people.lastname')
+  end
+
+  def change
+    @scholarship = RegularScholarship.prepare_for_this_month(@params['id'])
   end
 
   # this method shows all extra scholarships for index
   def detail
-    @index = Index.find(@params['id'])
-    @scholarships =
-    Scholarship.find_all_by_index_id(@index.id)
-    render_partial('detail', :index => @index, :scholarships => @scholarships)
+    index = Index.find(@params['id'])
+    scholarships = ExtraScholarship.find_all_unpayed_by_index(index.id)
+    render_partial('detail', :index => index, :scholarships => scholarships)
   end
  
   # adding scholarships for faculty secretaries
-  def add_scholarship
-   scholarship = Scholarship.new
-   index = Index.find(@params['id'])
-   @session['scholarship'] = scholarship
-   render(:partial => 'add_scholarship', :locals => {:scholarship => scholarship, :index => index})
+  def add
+   @index = Index.find(@params['id'])
+   @scholarship = @index.extra_scholarships.build
   end
   
+  def edit
+    @scholarship = ExtraScholarship.find(@params['id'])
+    render(:action => 'add')
+  end
+
+  def save
+    if @params['scholarship']['id'] && !@params['scholarship']['id'].empty?
+      @scholarship = Scholarship.find(@params['scholarship']['id'])
+      @scholarship.attributes = @params['scholarship']
+    else
+      @scholarship = 
+        eval("#{@params['scholarship']['type']}.new(@params['scholarship'])")
+    end
+    @scholarship.save
+    if @scholarship.is_a?(RegularScholarship)
+      render(:partial => 'regular', :locals => {:index => @scholarship.index})
+    else
+      render(:partial => 'index_line', :locals => {:index => @scholarship.index})
+    end
+  end
+
+  def destroy
+    scholarship = ExtraScholarship.find(@params['id'])
+    @index = scholarship.index
+    @old_id = scholarship.id
+    scholarship.destroy
+  end
+
+  def pay
+    @indices = Index.find_studying_for(@user, 
+                                       :order => 'studies.id, people.lastname')
+    @indices.each do |i|
+      ExtraScholarship.pay_for(i) if i.current_extra_scholarship
+      RegularScholarship.pay_for(i)
+    end
+    redirect_to :action => 'prepare'
+  end
+
   # saves scholarship to dbase
   def save_scholarship
     @index = Index.find(@params['index']['id'])
@@ -75,14 +106,10 @@ class ScholarshipsController < ApplicationController
     render_partial('render_detail', :scholarships =>
       @scholarships, :index => @index)
   end
-  
+
   # sets title of the controller
   def set_title
     @title = _('Exams')
   end
 
-  def save
-    breakpoint 
-    
-  end
 end

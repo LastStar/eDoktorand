@@ -227,8 +227,7 @@ module ApplicationHelper
       if @user.has_one_of_roles?(['admin', 'faculty_secretary']) 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
         links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
-        links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
-          :action => 'scholarship'){} 
+        links << prepare_scholarship_link
         links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
       elsif @user.has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) 
@@ -380,4 +379,8 @@ module ApplicationHelper
     content_tag('li', finished_on + _('finished on'))
   end
 
+  def prepare_scholarship_link
+    link_to_unless_current(_("scholarship"), :controller => 'scholarships',
+                          :action => 'prepare'){} 
+  end
 end

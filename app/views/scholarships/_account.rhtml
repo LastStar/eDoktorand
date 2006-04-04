@@ -2,10 +2,10 @@
 <ul>
   <li>
     <%= _("Account") %>:&nbsp;
-    <% if @index.account_number_prefix %>
-      <%= @index.account_number_prefix %>-
+    <% if @student.index.account_number_prefix %>
+      <%= @student.index.account_number_prefix %>-
     <% end %>
-    <%= @index.account_number %>/<%= @index.account_bank_number %>
+    <%= @student.index.account_number %>/<%= @student.index.account_bank_number %>
     <br />
   </li>
   <br />

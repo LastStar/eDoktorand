@@ -10,7 +10,8 @@ class Index < ActiveRecord::Base
   belongs_to :coridor
   belongs_to :department
   has_many :interupts, :order => 'created_on desc'
-  has_many :scholarships, :order => 'created_on desc'
+  has_many :extra_scholarships, :order => 'created_on desc'
+  has_many :regular_scholarships, :order => 'created_on desc'
 
   validates_presence_of :student
   validates_presence_of :tutor
@@ -136,7 +137,9 @@ class Index < ActiveRecord::Base
     end
     find(:all, :conditions => conditions, 
          :include => [:study_plan, :student, :disert_theme, :department,
-         :study, :coridor, :interupts, :scholarships], :order => options[:order])
+                      :study, :coridor, :interupts, :extra_scholarships, 
+                      :regular_scholarships],
+         :order => options[:order])
   end
 
   # finds only indices tutored by user
@@ -227,9 +230,10 @@ class Index < ActiveRecord::Base
     return indices
   end
 
-  def self.find_studying_for(user)
-    find_for(user, :unfinished => true, :not_interupted => true, 
-            :order => 'people.lastname')
+  def self.find_studying_for(user, options = {})
+    opts = {:unfinished => true, :not_interupted => true} 
+    opts[:order] = options[:order] || 'people.lastname'
+    find_for(user, opts)
   end
 
   # returns status of index
@@ -319,17 +323,40 @@ class Index < ActiveRecord::Base
   end
 
   def waits_for_scholarship_confirmation?
-    student.scholarship_claim_date && !student.scholarship_supervised_date
+    student.scholarship_claimed_at && !student.scholarship_supervised_at
   end
 
   # TODO stub method
-  def current_scholarship
-    unless @current_scholarship || scholarships.empty?
-      if scholarships.first.payed_on.month == Date.today.month
-        @current_scholarship = scholarships.first
-      end
+  def current_extra_scholarship
+    unless @current_extra_scholarship || extra_scholarships.empty?
+        @current_extra_scholarship = extra_scholarships.first
     else
-      @current_scholarship
+      @current_extra_scholarship
     end
+  end
+
+  def current_extra_scholarship_sum
+    ExtraScholarship.find_all_unpayed_by_index(self.id).inject(0) do |sum, s|
+      sum += s.amount
+    end
+  end
+
+  # TODO stub method
+  def current_regular_scholarship
+    unless @current_regular_scholarship || regular_scholarships.empty?
+        @current_regular_scholarship = regular_scholarships.first
+    else
+      @current_regular_scholarship = 
+        regular_scholarships.build('amount' => ScholarshipCalculator.for(self),
+                                   'index_id' => self.id)
+    end
+  end
+
+  def faculty
+    department.faculty
+  end
+
+  def present_study?
+    study.id == 1
   end
 end

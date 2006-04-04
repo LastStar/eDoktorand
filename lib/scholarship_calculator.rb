@@ -14,12 +14,13 @@ class ScholarshipCalculator
           
 
   # calculates scholarship for student 
-  def self.scholarship_for(student)
-    case student.faculty.id
-      when 1, 3, 4
-        by_exams(student.index)
-      when 5
-        by_year(student.index)
+  def self.for(index)
+    index = Index.find(index) unless index.is_a?(Index)
+    case index.faculty.id
+    when 1, 3, 4
+      by_exams(index)
+    when 5
+      by_year(index)
     end
   end
 
@@ -30,14 +31,10 @@ class ScholarshipCalculator
     if index.study_plan
       conditions = ["study_plan_id = ? AND finished_on IS NOT NULL", index.study_plan.id]
       ps = PlanSubject.find(:all, :conditions => conditions)
-# Ugly hack. God bless us. FLE - credit
+      # Ugly hack. God bless us. FLE - credit
       if index.student.faculty.id == 3 && ps.find {|s| s.subject_id == 9003}
         ps.delete_if {|s| s.subject_id == 9003}
         amount = 100
-      end
-# Another one. FAPPZ seminars
-      if index.student.faculty.id == 1
-        ps.delete_if {|s| s.subject_id == 9000 || s.subject_id == 9001}
       end
       amount += AMOUNTS[index.student.faculty.id][ps.size]
     else
