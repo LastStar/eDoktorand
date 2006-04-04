@@ -1519,3 +1519,13 @@ msgstr "muž"
 msgid "female"
 msgstr "žena"
 
+msgid "pay"
+msgstr "vyplatit"
+
+msgid "adding_extra_scholarship"
+msgstr "přidání mimořádného stipendia"
+
+msgid "are_you_sure_to_pay"
+msgstr "Opravdu si přejete vyplatit stipendia tak jak je vidíte na této stránce?"
+" Tato operace je nevratná."
+
