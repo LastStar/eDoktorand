@@ -1,6 +1,6 @@
 class Scholarship < ActiveRecord::Base
   belongs_to :index
-  validates_presence_of :index
+  validates_presence_of :index, :amount
   acts_as_audited
 
   def self.find_unpayed_by_index(index_id)

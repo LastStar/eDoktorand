@@ -63,11 +63,9 @@ class ScholarshipsController < ApplicationController
 
   def save
     if @params['scholarship']['id'] && !@params['scholarship']['id'].empty?
-      @scholarship = Scholarship.find(@params['scholarship']['id'])
-      @scholarship.attributes = @params['scholarship']
+      update
     else
-      @scholarship = 
-        eval("#{@params['scholarship']['type']}.new(@params['scholarship'])")
+      create
     end
     @scholarship.save
     if @scholarship.is_a?(RegularScholarship)
@@ -75,6 +73,18 @@ class ScholarshipsController < ApplicationController
     else
       render(:partial => 'index_line', :locals => {:index => @scholarship.index})
     end
+  end
+
+  def update
+    @scholarship = Scholarship.find(@params['scholarship']['id'])
+    @scholarship.attributes = @params['scholarship']
+    @scholarship.amount = 0 if !@scholarship.amount 
+  end
+
+  def create
+    @scholarship =
+      eval("#{@params['scholarship']['type']}.new(@params['scholarship'])")
+    @scholarship.amount = 0 if !@scholarship.amount
   end
 
   def destroy

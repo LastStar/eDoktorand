@@ -343,7 +343,7 @@ class Index < ActiveRecord::Base
 
   # TODO stub method
   def current_regular_scholarship
-    unless @current_regular_scholarship || regular_scholarships.empty?
+    if !@current_regular_scholarship && !regular_scholarships.empty?
         @current_regular_scholarship = regular_scholarships.first
     else
       @current_regular_scholarship = 
