@@ -29,7 +29,7 @@ class StudyPlansController < ApplicationController
     @subjects.concat(LanguageSubject.for_select(:coridor => @student.index.coridor))
     @study_plan = @student.index.build_study_plan
     @plan_subjects = []
-    FACULTY_CFG['subjects_count'].times do |i|
+    FACULTY_CFG[@student.faculty.id]['subjects_count'].times do |i|
       (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
       @plan_subjects << plan_subject
     end
