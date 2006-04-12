@@ -236,6 +236,11 @@ class Index < ActiveRecord::Base
     find_for(user, opts)
   end
 
+  def self.find_studying_on_department(department)
+    find(:all, :conditions => ['department_id = ? and finished_on is null',
+                              department.id])
+
+  end
   # returns status of index
   def status
     if finished?

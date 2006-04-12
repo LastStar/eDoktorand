@@ -119,7 +119,7 @@ class ScholarshipsController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = _('Exams')
+    @title = _('Scholarships')
   end
 
 end
