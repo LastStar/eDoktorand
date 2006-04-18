@@ -23,9 +23,13 @@ class PlanSubject < ActiveRecord::Base
   # returns all unfinished plan subjects
   # got option :subjects for returning just subjects
   def self.find_unfinished_for(user, options = {})
-    sql = "finished_on is null and subjects.id in (?)"
+    sql = "plan_subjects.finished_on is null and subjects.id in (?)\
+           and study_plans.approved_on is not null \
+           and study_plans.canceled_on is null"
     subj_ids = Subject.find_for(user).map {|s| s.id}
-    psubs = find(:all, :conditions => [sql, subj_ids], :include => :subject)
+    psubs = find(:all, :conditions => [sql, subj_ids], 
+                 :include => [:subject, {:study_plan => :index}])
+    psubs.delete_if {|ps| ps.study_plan.index.finished?}
     options[:subjects] ? psubs.map {|ps| ps.subject}.uniq : psubs
   end
 
@@ -37,10 +41,10 @@ class PlanSubject < ActiveRecord::Base
       and study_plans.approved_on is not null \
       and study_plans.canceled_on is null
     SQL
-    plan_subjects = find(:all, :include => :study_plan, :conditions => 
-      [sql, subject_id])
-    if options[:study_plans]
-      plan_subjects.map {|ps| ps.study_plan}
+    plan_subjects = find(:all, :include => [{:study_plan => :index}],
+                         :conditions => [sql, subject_id])
+    if options[:students]
+      plan_subjects.map {|ps| ps.study_plan.index.student}
     else
       plan_subjects
     end

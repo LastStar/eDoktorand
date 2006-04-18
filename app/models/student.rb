@@ -28,15 +28,4 @@ class Student < Person
     end
   end
 
-  # colects students
-  # got one option :study_plans
-  def self.colect_unfinished(options)
-    if options[:study_plans]
-      students = []
-      options[:study_plans].each do |sp|
-        students << sp.index.student if !sp.index.finished?
-      end
-    end
-    students
-  end
 end 

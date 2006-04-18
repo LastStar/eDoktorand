@@ -14,11 +14,11 @@
 
   <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
      
-  <%= select('exam', 'first_examinator_id', Examinator.for_html_select(@user)) %><br /> 
-
+  <% examinators = Examinator.for_html_select(@user) %>
+  <%= select('exam', 'first_examinator_id', examinators) %><br /> 
 
   <label for="exam_second_examinator"><%=_("2. Examinator")%></label>
-  <%= select('exam', 'second_examinator_id', Examinator.for_html_select(@user, :include_null => true)) %>
+  <%= select('exam', 'second_examinator_id', examinators, { :include_blank => true }) %>
 
 </fieldset>
 

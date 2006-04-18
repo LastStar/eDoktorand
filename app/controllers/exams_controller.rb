@@ -30,15 +30,7 @@ class ExamsController < ApplicationController
   # rendering the two links
   def create
     @title = _("Creating exam")
-    @options = {}
-    if !@session['exam'] && @user.has_role?('faculty_secretary')
-      @options[:partial] = 'choose_creation_style'
-      @session['exam'] = nil
-    else
-      @dont_render = true
-      @options[:locals] = {:subjects => by_subject}
-      @options[:partial] = 'subject_form'
-    end
+    @session['exam'] = nil
   end
 
   # created exam object and subjects for select 
@@ -47,20 +39,14 @@ class ExamsController < ApplicationController
     @exam = Exam.new
     @session['exam'] = @exam
     subjects = PlanSubject.find_unfinished_for(@user, :subjects => true)
-    unless @dont_render
-      render(:partial => "subject_form", :locals => {:subjects => subjects}) 
-    else
-      subjects
-    end
+    render(:partial => "subject_form", :locals => {:subjects => subjects}) 
   end
   
   # save subject of exam to session and adds students 
   def save_subject
     @session['exam'].subject_id = @params['subject']['id']
-    study_plans = PlanSubject.find_unfinished_by_subject(\
-      @params['subject']['id'], :study_plans => true)
-    render(:partial => "examined_student", :locals => {:students =>
-      Student.colect_unfinished(:study_plans => study_plans)})
+    @students = PlanSubject.find_unfinished_by_subject(\
+      @params['subject']['id'], :students => true)
   end
 
   # save student of exam to session

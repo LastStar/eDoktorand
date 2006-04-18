@@ -5,6 +5,7 @@ class Subject < ActiveRecord::Base
   has_many :probation_terms
   has_and_belongs_to_many :departments
   validates_presence_of :label
+  has_and_belongs_to_many :departments
 
   # returns all subjects for user
   def self.find_for(user)
