@@ -1,4 +1,3 @@
-<%= javascript_include_tag "prototype" %>
   <% if @student.index.account_number %>
     <div class="right">
       <%= link_to_remote_with_loading(_("change"), :url => {:action => 'account_change', :id =>
@@ -11,7 +10,7 @@
     </div>
   <% else %>
     <div class="right">
-      <%= link_to_remote_with_loading(_("create account"), :url => {:action => 'account_change', :id =>
+      <%= link_to_remote(_("create account"), :url => {:action => 'account_change', :id =>
       @student.index.id}, :update => "account_change", :complete => "accountChange()") %>
       <%= link_to_unless_current(_("claim"), :controller => 'scholarships', :action => 'claim'){} %>
     </div>
