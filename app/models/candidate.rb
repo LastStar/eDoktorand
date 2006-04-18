@@ -213,6 +213,9 @@ class Candidate < ActiveRecord::Base
     return student
   end
 
+  def admitting_faculty
+    coridor.faculty
+  end
   # prepares conditions for paginate functions
   def self.prepare_conditions(options, faculty)
     conditions = ["department_id in (?)", faculty.departments_ids]

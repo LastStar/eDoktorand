@@ -19,7 +19,8 @@ class Coridor < ActiveRecord::Base
                  end
     if options[:faculty]
       faculty = options[:faculty].is_a?(Faculty) ? options[:faculty].id : options[:faculty]
-      conditions.first << ' AND faculty_id = ?'
+      conditions.first << ' AND' if !conditions.first.empty?
+      conditions.first << ' faculty_id = ?'
       conditions << faculty
     end
     result = find(:all, :conditions => conditions, 
@@ -33,7 +34,7 @@ class Coridor < ActiveRecord::Base
 
   def self.for_html_select(user)
     if user.has_role?('faculty_secretary')
-      self.for_select(:faculty => user.person.faculty)
+      self.for_select(:faculty => user.person.faculty, :accredited => true)
     end
   end
 end

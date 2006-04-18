@@ -79,6 +79,7 @@ class FormController < ApplicationController
       c.address_state = _("Czech republic")
       c.university = _("Czech agriculture university")
       c.faculty = c.coridor.faculty.name
+      language1_id = 1133 if c.admitting_faculty == 3
     end
   end
 
