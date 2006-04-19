@@ -1529,3 +1529,11 @@ msgid "are_you_sure_to_pay"
 msgstr "Opravdu si přejete vyplatit stipendia tak jak je vidíte na této stránce?"
 " Tato operace je nevratná."
 
+msgid "confirm interupt"
+msgstr "potvrdit přerušení"
+
+msgid "final exam application"
+msgstr "státní závěrečná zkouška"
+
+msgid "You have all subjects finished. Proceed to final exam application"
+msgstr "Máte splněny všechny předměty, pokračujte vyplněním přihlášky k státní zavěrečné zkoušce"
