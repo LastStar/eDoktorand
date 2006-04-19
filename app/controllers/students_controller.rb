@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   include LoginSystem
-  layout 'employers', :except => [:time_form, :filter]
+  layout 'employers', :except => [:time_form, :filter, :list_xls]
   before_filter :prepare_user, :set_title, :login_required
   before_filter :prepare_order, :prepare_filter, :except => [:show,
     :contact]
@@ -11,6 +11,12 @@ class StudentsController < ApplicationController
     render(:action => 'list')
   end
   
+  def list_xls
+    do_filter
+    headers['Content-Type'] = "application/vnd.ms-excel" 
+    headers['Content-Disposition'] = 'attachment; filename="excel-export.xls"'
+    headers['Cache-Control'] = ''
+  end
   # searches in students lastname
   def search
     conditions = [' AND people.lastname like ?']

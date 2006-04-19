@@ -121,8 +121,15 @@ a {
 .printable a {
   display: inline;
   text-decoration: none;
-  color: black;
+  color: black;  
 }
+.smallerinfo {
+  float: right;
+  width: 8ex;
+  font-size: 9pt;
+  text-align: center;
+}
+#people_list li {list-style: none; border-bottom: 1px solid black}
 #Head {
   display: none;
 }

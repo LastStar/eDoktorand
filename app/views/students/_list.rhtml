@@ -1,7 +1,10 @@
 <div id='people_list'>
 <% if @indices && !@indices.empty? %>
 <h5><%= "#{_('Students list')} (#{@indices.size})" %></h5>
-<ul>
+ <div class='links'>
+ <%= list_links %>
+ </div>
+ <ul>
   <% for index in @indices %>
   <%= content_tag('li', student_action_link(index), :id => "index_line_#{index.id}") %>
   <% end %>

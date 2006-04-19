@@ -1,0 +1,77 @@
+xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8" 
+xml.Workbook({
+  'xmlns'      => "urn:schemas-microsoft-com:office:spreadsheet", 
+  'xmlns:o'    => "urn:schemas-microsoft-com:office:office",
+  'xmlns:x'    => "urn:schemas-microsoft-com:office:excel",    
+  'xmlns:html' => "http://www.w3.org/TR/REC-html40",
+  'xmlns:ss'   => "urn:schemas-microsoft-com:office:spreadsheet" 
+  }) do
+
+  xml.Styles do
+   xml.Style 'ss:ID' => 'Default', 'ss:Name' => 'Normal' do
+     xml.Alignment 'ss:Vertical' => 'Bottom'
+     xml.Borders
+     xml.Font 'ss:FontName' => 'Verdana'
+     xml.Interior
+     xml.NumberFormat
+     xml.Protection
+   end
+   xml.Style 'ss:ID' => 's22' do
+     xml.NumberFormat 'ss:Format' => 'General Date'
+   end
+  end
+
+  xml.Worksheet 'ss:Name' => 'Students' do
+    xml.Table do
+
+      # Header
+      xml.Row do
+        
+          xml.Cell do
+            xml.Data _('diplay_name'), 'ss:Type' => 'String'
+          end
+	  xml.Cell do
+	    xml.Data _('index_coridor_code'), 'ss:Type' => 'String'
+	  end
+	  xml.Cell do
+	    xml.Data _('index_department_short_name'), 'ss:Type' => 'String'
+          end
+	  xml.Cell do
+	    xml.Data _('index_study_name'), 'ss:Type' => 'String'
+          end
+	  xml.Cell do
+	    xml.Data _('index_year'), 'ss:Type' => 'String'
+          end
+	  xml.Cell do
+	    xml.Data _('index_status'), 'ss:Type' => 'String'
+	  end
+      end
+
+      # Rows
+      for indice in @indices
+        xml.Row do
+            xml.Cell do
+              xml.Data indice.student.display_name, 'ss:Type' => 'String'
+            end
+	    xml.Cell do
+	      xml.Data indice.coridor.code, 'ss:Type' => 'String'
+            end
+	    xml.Cell do
+	      xml.Data indice.department.short_name, 'ss:Type' => 'String'
+            end
+	    xml.Cell do
+	      xml.Data indice.study.name, 'ss:Type' => 'String'
+            end
+	    xml.Cell do
+	      xml.Data indice.year, 'ss:Type' => 'String'
+            end
+	    xml.Cell do
+	      xml.Data indice.status, 'ss:Type' => 'String'
+            end
+        end
+      end
+
+    end
+  end
+
+end

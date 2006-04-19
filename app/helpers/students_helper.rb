@@ -1,5 +1,4 @@
 module StudentsHelper
-  
   # prints action links on student
   def student_action_link(index)
     info = ''
@@ -236,4 +235,12 @@ module StudentsHelper
   div_tag("#{_('to')} #{index.interupt.end_on.strftime('%d.%m.%Y')}",
          {:class => 'smallinfo'})
   end
+  
+  def list_links
+  links = ''
+  links << print_link(_('print this list'))
+  links << '&nbsp;'
+  links << link_to(_('export_xls'), {:action => 'list_xls'})
+  end
+  
 end
