@@ -28,7 +28,7 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :studied_branch, :message => _("corridor cannot be empty")
   validates_presence_of :birth_number, :message => _("birth number cannot be empty")
   validates_presence_of :number, :message => _("street number cannot be empty")
-  validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/, 
+  validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
     :on => :create, :message => _("email does not have right format")
   # validates if languages are not same
   def validate
