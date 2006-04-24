@@ -6,8 +6,8 @@
 <%= date_select 'exam_term', 'date', :order => [:day, :month, :year], :use_month_numbers => true %>
 &mdash;<%= select 'exam_term', 'start_time', str_time_select %></p>
 
-<p><label for="exam_term_room"><%= _('room') %></label>
-<%= text_field 'exam_term', 'room'  %></p>
+<p><label for="exam_term_room" class='required'><%= _('room') %></label>
+<%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
 
 <p><label for="exam_term_chairman">Předseda komise</label>
 <%= select 'exam_term', 'chairman_id', Tutor.for_html_select(@user)  %></p>
@@ -15,11 +15,11 @@
 <p><label for='candidate_title_before_id'>Koridor</label>
 <%= select 'exam_term', 'coridor_id', Coridor.for_html_select(@user) %></p>
 
-<p><label for="exam_term_first_examinator">1. <%= _('member') %></label>
-<%= text_field 'exam_term', 'first_examinator'  %></p>
+<p><label for="exam_term_first_examinator" class='required'>1. <%= _('member') %></label>
+<%= text_field 'exam_term', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span ></p>
 
-<p><label for="exam_term_second_examinator">2. <%= _('member') %></label>
-<%= text_field 'exam_term', 'second_examinator'  %></p>
+<p><label for="exam_term_second_examinator" class='required'>2. <%= _('member') %></label>
+<%= text_field 'exam_term', 'second_examinator'  %><span class='required'>&nbsp;&lowast;</span ></p>
 
 <p><label for="exam_term_third_examinator">3. <%= _('member') %></label>
 <%= text_field 'exam_term', 'third_examinator'  %></p>
