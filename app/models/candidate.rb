@@ -231,7 +231,8 @@ class Candidate < ActiveRecord::Base
     conditions = ["department_id in (?)", faculty.departments_ids]
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
-      conditions << " AND coridor_id = #{options['coridor']}" 
+      conditions.first << " AND coridor_id = ?"
+      conditions << options['coridor'] 
     end
 	  Candidate.find(:all, :order => options['category'],
       :conditions => conditions)
