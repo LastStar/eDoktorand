@@ -12,10 +12,9 @@ class ProbationTermsController < ApplicationController
   end
   
   def list
-     []
     if (@user.person.is_a?(Student) &&
       !@user.person.index.study_plan.nil?)
-      @plan_subjects = @user.person.index.study_plan.plan_subjects
+      @plan_subjects = @user.person.index.study_plan.unfinished_subjects
       @subjects = @plan_subjects.inject([]) {|subjects, plan| subjects << plan.subject}
     elsif (@user.person.is_a? Dean) ||
       (@user.person.is_a? FacultySecretary)
@@ -38,7 +37,7 @@ class ProbationTermsController < ApplicationController
     end
     #@subjects.select {|sub| !sub.probation_terms.empty?}
     @probation_terms = []
-    @subjects.each {|sub| !sub.probation_terms.empty? && @probation_terms.concat(sub.probation_terms)}
+    @subjects.each {|sub| @probation_terms.concat(sub.future_probation_terms) unless sub.probation_terms.empty? }
   end
   
   # enrolls student for a probation term

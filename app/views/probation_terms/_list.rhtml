@@ -20,7 +20,7 @@
           <% end %>
         <% else %>
           <%= link_to(_("enroll"), {:action => 'enroll', :id =>
-          probation_term.id}) %>
+          probation_term.id}, :confirm => _("Really enroll to this term?")) %>
         <% end %>
       <% else %>
         <%= link_to_remote_with_loading(_("detail"), :url => {:action => 'detail', :id =>

@@ -3,6 +3,7 @@ class Subject < ActiveRecord::Base
   has_many :plan_subjects
   has_many :exams
   has_many :probation_terms
+  has_many :future_probation_terms, :class_name => "ProbationTerm", :conditions => ["date > ?", Date.today]
   has_and_belongs_to_many :departments
   validates_presence_of :label
   has_and_belongs_to_many :departments
@@ -33,4 +34,5 @@ class Subject < ActiveRecord::Base
   def select_label
     "#{code} - #{label}"
   end
+
 end
