@@ -25,7 +25,7 @@ class ExamsController < ApplicationController
     render(:partial => 'detail', :locals => {:exam => exam, :plan_subject =>
       PlanSubject.find_for_exam(exam)})
   end
-  
+
   # start of the exam creating process
   # rendering the two links
   def create
@@ -41,7 +41,7 @@ class ExamsController < ApplicationController
     subjects = PlanSubject.find_unfinished_for(@user, :subjects => true)
     render(:partial => "subject_form", :locals => {:subjects => subjects}) 
   end
-  
+
   # save subject of exam to session and adds students 
   def save_subject
     @session['exam'].subject_id = @params['subject']['id']
@@ -58,14 +58,12 @@ class ExamsController < ApplicationController
           :action => 'save', :exam => @session['exam'], 
           :container => 'container'})
   end
-  
+
   # saves exam 
   def save
     @session['exam'].update_attributes(@params['exam'])
-    if @session['exam'].passed?
-      ps = PlanSubject.find_for_exam(@session['exam'], :update_attributes => 
+    ps = PlanSubject.find_for_exam(@session['exam'], :update_attributes => 
         @params['plan_subject'])
-    end
     render(:partial => 'show', :locals => {:exam => @session['exam'],
       :plan_subject => ps, :back_link => false})
   end
@@ -78,7 +76,7 @@ class ExamsController < ApplicationController
     render(:partial => "external_students", :locals => {:students => 
       students})
   end
-  
+
   # saving student and selecting external subjects
   def save_external_student
     exam = Exam.new
