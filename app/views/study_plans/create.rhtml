@@ -3,8 +3,8 @@
 should be consulted with your tutor.") %>
 </p>
 <div id="done">
+ <%= content_tag('h5', _("Study plan")) %>
 <ul id='studyPlan'>
-  <%= content_tag('h5', _("Study plan")) %>
   <% unless @session['plan_subjects'].empty? %>
   <%= render(:partial => "shared/subjects", 
   :locals => {:subjects => @session['plan_subjects'], :title => _("requisite subjects")}) %>
