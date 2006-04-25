@@ -525,7 +525,7 @@ msgstr "Vyplnit další přihlášku"
 
 msgid "After clicking the name of faculty, list of corridors  will be shown"
 msgstr "Obory studia jsou přiřazeny k jednotlivým fakultám. Zobrazí se Vám po"
-       "rozkliknutí."
+       " rozkliknutí."
 
 msgid "documents"
 msgstr "dokumenty"
@@ -1537,3 +1537,30 @@ msgstr "státní závěrečná zkouška"
 
 msgid "You have all subjects finished. Proceed to final exam application"
 msgstr "Máte splněny všechny předměty, pokračujte vyplněním přihlášky k státní zavěrečné zkoušce"
+
+msgid "additional information for next atestation"
+msgstr "další informace pro následující atestaci"
+
+msgid "Really enroll to this term?"
+msgstr "Opravdu se chcete zapsat na tento termín?"
+
+msgid "Term must has assigned corridor"
+msgstr "Termín musí mít přidělený obor"
+
+msgid "Term must has assigned room"
+msgstr "Termín musí mít přidělenou místnost"
+
+msgid "Term must has assigned chairman"
+msgstr "Termín musí mít přiděleného předsedu"
+
+msgid "Term must has assigned time of begining"
+msgstr "Termín musí mít přidělený čas začátku"
+
+msgid "Term must has assigned date of begining"
+msgstr "Termín musí mít přidělený datum začátku"
+
+msgid "Term must has assigned first examiner"
+msgstr "Termín musí mít přiděleného prvního zkoušejícího"
+
+msgid "Term must has assigned second examiner"
+msgstr "Termín musí mít přiděleného druhého zkoušejícího"
