@@ -358,6 +358,14 @@ module ApplicationHelper
     div_tag(content, {:class => 'smallerinfo'})
   end
 
+  def longer_info_div(content)
+    div_tag(content, {:class => 'longerinfo'})
+  end
+
+  def date_info_div(content)
+    div_tag(content, {:class => 'dateinfo'})
+  end
+
   # prints div with smallerinfo class with content inside
   def menu_div(content)
     div_tag(content, {:class => 'menu'})
