@@ -28,6 +28,9 @@ module StudentsHelper
         links.concat(end_interupt_link(index))
         status_class = 'ends_interupt'
       end
+      if index.claimed_for_final_exam?
+        links.concat(final_exam_link(index))
+      end
     end
     info.concat(div_tag("#{index.study.name}", {:class => 'smallinfo'}))
     info.concat(div_tag("#{index.year}. #{_('year')}", {:class => 'smallinfo'}))
@@ -113,6 +116,12 @@ module StudentsHelper
     menu_div(link_to(_('create SP'), :action => 
       'create_by_other', :controller => 'study_plans', :id =>
       index.student))
+  end
+
+  # prints link to create final exam term
+  def final_exam_link(index)
+    menu_div(link_to_remote_with_loading(_('final exam term'), :url => {:action =>
+      'new', :controller => 'final_exam_terms', :id => index}, :evaluate => true))
   end
 
   # prints lint to interupt study

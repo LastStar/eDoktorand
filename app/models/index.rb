@@ -6,6 +6,7 @@ class Index < ActiveRecord::Base
   has_one :study_plan, :conditions => 'admited_on IS NOT NULL', :order =>
   'created_on desc'
   has_one :disert_theme, :order => 'created_on desc'
+  has_one :final_exam_term
   has_many :exams
   belongs_to :coridor
   belongs_to :department
@@ -42,19 +43,22 @@ class Index < ActiveRecord::Base
 
   # returns if study plan is finished
   def finished?
-    return true unless finished_on.nil?
+    !finished_on.nil?
   end
 
   # returns true if interupt just admited
   def admited_interupt?
-    return true if interupt && !interupted? && !interupt.finished?
+    interupt && !interupted? && !interupt.finished?
   end
 
   # returns if stduy plan is interupted
   def interupted?
-    if interupted_on && interupted_on < Time.now && !interupt.finished?
-      return true 
-    end
+    interupted_on && interupted_on < Time.now && !interupt.finished?
+  end
+
+  # returns true if studen claimed for final exam
+  def claimed_for_final_exam?
+    true #TODO put correct condition!
   end
 
   # returns statement if this index waits for approvement from person

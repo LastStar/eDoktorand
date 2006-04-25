@@ -1,0 +1,31 @@
+
+<%= errors_for(@exam_term) %>
+
+<!--[form:exam_term]-->
+<%= hidden_field 'exam_term', 'index_id' %></p>
+
+<p><label for="exam_term_start_time"><%= _('date and time') %></label>
+<%= date_select 'exam_term', 'date', :order => [:day, :month, :year], :use_month_numbers => true %>
+&mdash;<%= select 'exam_term', 'start_time', str_time_select %></p>
+
+<p><label for="exam_term_room" class='required'><%= _('room') %></label>
+<%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
+
+<p><label for="exam_term_chairman">Předseda komise</label>
+<%= select 'exam_term', 'chairman_id', Tutor.for_html_select(@user)  %></p>
+
+<p><label for="exam_term_first_examinator" class='required'>1. <%= _('member') %></label>
+<%= text_field 'exam_term', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span ></p>
+
+<p><label for="exam_term_second_examinator" class='required'>2. <%= _('member') %></label>
+<%= text_field 'exam_term', 'second_examinator'  %><span class='required'>&nbsp;&lowast;</span ></p>
+
+<p><label for="exam_term_third_examinator">3. <%= _('member') %></label>
+<%= text_field 'exam_term', 'third_examinator'  %></p>
+
+<p><label for="exam_term_fourth_examinator">4. <%= _('member') %></label>
+<%= text_field 'exam_term', 'fourth_examinator'  %></p>
+
+
+<!--[eoform:exam_term]-->
+

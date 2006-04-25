@@ -1,0 +1,3 @@
+page.insert_html :before, "people_list", :partial => 'new'
+
+page.hide 'search', 'people_list'
