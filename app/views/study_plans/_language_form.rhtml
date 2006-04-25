@@ -7,13 +7,15 @@
 </ul>
 </div>
 <% end %>
-<%= form_remote_with_loading(:url => {:action => 'save_language'}, :evaluate =>
-  true)%>	
+<%= form_remote_with_loading(:url => {:action => 'save_language'}, 
+                             :evaluate => true) %>	
 <fieldset>
 <legend><%= _("language subjects") %></legend>
-<%= render(:partial => 'language', :collection => @plan_subjects, :locals => {:subjects =>
-language_subject_options}) %>
+<ul>
+<%= render(:partial => 'language', :collection => @plan_subjects, 
+:locals => {:subjects => LanguageSubject.for_select(:coridor => @student.coridor)}) %>
 </fieldset>
+</ul>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>
 

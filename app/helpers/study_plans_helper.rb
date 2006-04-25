@@ -9,6 +9,7 @@ module StudyPlansHelper
       "plan_subject_#{plan_subject.id}_subject_id", 'name' =>
       "plan_subject[#{plan_subject.id}][subject_id]"})
   end
+
   # prints select tags for voluntary subject
   # returns style for external div 
   def voluntary_select(subjects, plan_subject)
@@ -27,6 +28,7 @@ module StudyPlansHelper
       "plan_subject[#{plan_subject.id}][finishing_on]"})
     return select
   end
+
   # prints select tags for voluntary subject
   # returns style for external div 
   def subject_select(subjects, plan_subject)
@@ -45,6 +47,7 @@ module StudyPlansHelper
       "plan_subject[#{plan_subject.id}][finishing_on]"})
     return select
   end
+
   # print external subject tag
   def external_subject_input(plan_subject)
     tag('input', { 'type' => 'text', 'id' =>
@@ -52,6 +55,7 @@ module StudyPlansHelper
       'name' => "plan_subject[#{plan_subject.id}][label]", "value" =>
        plan_subject.subject_id == 0 ? plan_subject.subject.label : ''})
   end
+
   # prints external university tag
   def external_university_input(plan_subject)
     tag('input', { 'type' => 'text', 'id' =>
@@ -60,14 +64,17 @@ module StudyPlansHelper
       plan_subject.subject.is_a?(ExternalSubject) ?
       plan_subject.subject.external_subject_detail.university : ''})
   end
+  
   # prints external person tag
   def external_person_input(plan_subject)
-    tag('input', { 'type' => 'text', 'id' =>
-      "external_subject_detail_#{plan_subject.id}_person", 
-      'name' => "external_subject_detail[#{plan_subject.id}][person]", 'value' =>
-      plan_subject.subject.is_a?(ExternalSubject) ?
-      plan_subject.subject.external_subject_detail.person : ''})  
+    tag('input', 
+       {:type => 'text', 
+        :id => "external_subject_detail_#{plan_subject.id}_person", 
+        :name => "external_subject_detail[#{plan_subject.id}][person]",
+        :value => plan_subject.subject.is_a?(ExternalSubject) ?
+          plan_subject.subject.external_subject_detail.person : ''})  
   end
+
   # return style for hiding external div
   def hide_style(plan_subject)
     if plan_subject.id == 0 || plan_subject.subject_id == -1 || \
@@ -76,6 +83,7 @@ module StudyPlansHelper
       'display: none'  
     end
   end
+
   # prints select tags for language subject
   def language_select(plan_subject, subjects)
     content_tag('select', options_for_select(subjects,

@@ -1,0 +1,5 @@
+page.insert_html :bottom, 'studyPlan', :partial => 'shared/subjects', 
+                                       :locals => {:subjects => @plan_subjects,
+                                       :title => _("language subjects")}
+page.replace_html 'form', :partial => "disert_form" 
+

@@ -1,11 +1,8 @@
-<li>
-<label class='smaller'>
-<%= _("subject") %>
-</label>
+<li class='subject_select'>
 <%= voluntary_select(subjects, voluntary) %>
 <%= "." + _("semester") %>
 <br/> 
-<div id="external<%= voluntary.id %>" style='<%= hide_style(voluntary) %>' >
+<div id="external<%= voluntary.id %>" style='<%= voluntary.hide_style %>' >
 <label><%= _("subject") %></label>
 <%= external_subject_input(voluntary) %>
 <br/> 

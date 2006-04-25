@@ -1,4 +1,3 @@
-<% @disert_theme = disert_theme # is this necessary? %>
 <%= form_remote_with_loading(:url => {:action => 'save_disert'}, :evaluate =>
   true)%>	
 <fieldset>
@@ -23,7 +22,7 @@ name="study_plan[final_areas][<%= i %>]" size="30"/><br/>
 <label class='smaller' for="disert_theme_methodology_summary"><%= _("methodology summary") %>:</label>
 <textarea name='disert_theme[methodology_summary]'
 id='disert_theme_methodology_summary' cols='55' rows='35'><%= 
-disert_theme.methodology_summary %></textarea>
+@disert_theme.methodology_summary %></textarea>
 </fieldset>
 <%= submit_tag _("commit") %>
 <%= end_form_tag %>

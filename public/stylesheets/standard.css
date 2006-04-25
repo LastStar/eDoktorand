@@ -409,3 +409,4 @@ ul.tiny li {border: none; background-color: #eee;font-size: 10pt; width: 30em;}
 .tiny form {padding: 0px;}
 .detail input {border: 1px dashed #ccc;vertical-align: middle; padding: 0px; margin: 0px;}
 div.small { float: right; font-size: 9pt; text-align: left;}
+li.subject_select {border: none; padding-left: 100px; clear: both;}

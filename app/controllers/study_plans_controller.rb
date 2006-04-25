@@ -60,18 +60,16 @@ class StudyPlansController < ApplicationController
   # saves obligate subjects to session
   # and creates voluntary subjects
   def save_obligate
-    created_subjects = []
+    @created_subjects = []
     @session['study_plan'].attributes = @params['study_plan']
     @params['plan_subject'].each do |id, ps|
       plan_subject = PlanSubject.new(ps)
       last_semester(ps['finishing_on'])
-      created_subjects << plan_subject
+      @created_subjects << plan_subject
     end
-    @session['plan_subjects'].concat(created_subjects)
+    @session['plan_subjects'].concat(@created_subjects)
     create_voluntary
     @type = 'obligate'
-    render(:partial => 'voluntarys', :locals => {:plan_subjects =>
-           created_subjects})
   end
   
   # saves seminar subjects to session 
@@ -100,10 +98,8 @@ class StudyPlansController < ApplicationController
       @errors.empty?
       @plan_subjects.each {|ps| last_semester(ps.finishing_on)}
       @session['plan_subjects'] << @plan_subjects
-      voluntary_subjects = @plan_subjects
+      @created_subjects = @plan_subjects
       create_language
-      render(:partial => 'languages', :locals => {:plan_subjects =>
-             voluntary_subjects, :study_plan => @session['study_plan']})  
     else
       extract_voluntary(true)
       @errors << _("subjects have to be different") unless @plan_subjects.map {|ps| ps.subject_id}.uniq.size < (count - external)
@@ -117,9 +113,7 @@ class StudyPlansController < ApplicationController
     extract_language
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 2
       @session['plan_subjects'] << @plan_subjects
-      disert_theme = @student.index.build_disert_theme
-      render(:partial => 'valid_languages', :locals => {:plan_subjects =>
-             @plan_subjects, :disert_theme => disert_theme})
+      @disert_theme = @student.index.build_disert_theme
     else
       extract_language(true)
       flash.now['error'] = _("languages have to be different")
@@ -136,8 +130,7 @@ class StudyPlansController < ApplicationController
              @disert_theme})
     else
       @session['disert_theme'] = @disert_theme
-      render(:partial => 'valid_disert', :locals => {:disert_theme =>
-             @disert_theme, :study_plan => @session['study_plan']}) 
+      @study_plan = @session['study_plan']
     end
   end
   

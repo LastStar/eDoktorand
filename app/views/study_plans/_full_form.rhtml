@@ -11,8 +11,10 @@
 <fieldset>
 <%= hidden_field('student', 'id') %>
 <legend><%= _("subjects") %></legend>
+<ul>
 <%= render(:partial => 'general', :collection => @plan_subjects, :locals => 
   {:subjects => subjects}) %>
+</ul>
 </fieldset>
 <fieldset>
 <label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>

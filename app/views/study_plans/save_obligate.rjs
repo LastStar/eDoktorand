@@ -1,0 +1,4 @@
+page.replace_html 'studyPlan', :partial => 'shared/subjects', 
+                                     :locals => {:subjects => @created_subjects,
+                                     :title => _("#{@type} subjects")}
+page.replace_html 'form', render(:partial => "voluntary_form") 

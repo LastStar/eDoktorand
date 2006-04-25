@@ -28,4 +28,7 @@ class Student < Person
     end
   end
 
+  def coridor
+    index.coridor
+  end
 end 

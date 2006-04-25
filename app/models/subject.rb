@@ -5,8 +5,8 @@ class Subject < ActiveRecord::Base
   has_many :probation_terms
   has_many :future_probation_terms, :class_name => "ProbationTerm", :conditions => ["date > ?", Date.today]
   has_and_belongs_to_many :departments
+
   validates_presence_of :label
-  has_and_belongs_to_many :departments
 
   # returns all subjects for user
   def self.find_for(user)
@@ -32,7 +32,9 @@ class Subject < ActiveRecord::Base
   end
 
   def select_label
-    "#{code} - #{label}"
+    chars = label.split(//)
+    trunc = chars.length > 40 ? chars[0...37].join + '...' : label
+    "#{code} - #{trunc}"
   end
 
 end

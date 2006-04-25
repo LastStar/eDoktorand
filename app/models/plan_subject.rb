@@ -1,6 +1,7 @@
 class PlanSubject < ActiveRecord::Base
   belongs_to :study_plan
   belongs_to :subject
+
   # returns true if plan subject has exam
   def finished?
     return true unless self.finished_on.nil?
@@ -58,5 +59,12 @@ class PlanSubject < ActiveRecord::Base
       ps.update_attributes(options[:update_attributes])
     end
     ps
+  end
+
+  def hide_style
+    if id == 0 || (subject_id && (subject_id == -1 || 
+         (subject_id > 0 && !subject.is_a?(ExternalSubject))))
+      'display: none'  
+    end
   end
 end

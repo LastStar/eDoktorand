@@ -9,7 +9,7 @@ ActionMailer::Base.server_settings = {
 
 # localization
 require 'gettext_extension'
-$KCODE = 'u'
+$KCODE = 'UTF8'
 require 'jcode'
 
 ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(

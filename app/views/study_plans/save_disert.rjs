@@ -1,0 +1,8 @@
+page.replace_html 'guide', _("Now you can see your plan how you have created
+in previous steps. You have to confirm it otherwise it will be lost.")
+page.insert_html :bottom, 'studyPlan', :partial => 'shared/final_exam', 
+                 :locals => {:study_plan => @study_plan}
+page.insert_html :bottom, 'studyPlan', :partial => 'shared/disert_theme', 
+                 :locals => {:disert_theme => @disert_theme, 
+                             :study_plan => @study_plan}
+page.replace_html 'form', :partial => 'accept'

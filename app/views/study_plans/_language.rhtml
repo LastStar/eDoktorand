@@ -1,6 +1,5 @@
-<label class='smaller'>
-<%= _("language") %>
-</label>
-<%= language_select(language, LanguageSubject.subjects_for_html_select(@student.index.coridor) %>
+<li class='subject_select'>
+<%= language_select(language, LanguageSubject.for_select(:coridor => @student.index.coridor)) %>
 <br/> 
+</li>
 
