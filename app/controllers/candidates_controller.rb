@@ -28,6 +28,12 @@ class CandidatesController < ApplicationController
     render_action 'list'
   end
 
+  # lists all candidates ordered by category
+  def list_admission_ready
+    @candidates = Coridor.find(@params['coridor']).approved_candidates
+    render_action 'list'
+  end
+
   # shows candidate details
   def show
     @candidate = Candidate.find(@params['id'])

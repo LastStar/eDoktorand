@@ -40,4 +40,11 @@ class Faculty < ActiveRecord::Base
   def dean
     deanship.dean
   end
+
+  # retuns dean of the faculty
+  def dean_label
+    return _('director') if id==2
+    _('dean')
+  end
+
 end

@@ -44,7 +44,7 @@
 <br/>
 <p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
 <p class='rightAlignLefter'><%= @faculty.dean.display_name %><br/>
-děkan <%= @faculty.short_name %> ČZU</p>
+<%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</p>
 
 <br/>
 <p class='rightAlignLefter'>

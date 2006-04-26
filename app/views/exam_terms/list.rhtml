@@ -4,8 +4,8 @@
   <li>
     <div class='right'>
       <%= link_to 'oprava', :action => 'edit', :id => exam_term %>
-      <%= link_to "uchazeči(#{exam_term.coridor.candidates.size})",
-      :controller => 'candidates', :action => 'list_all', :coridor => exam_term.coridor.id %>
+      <%= link_to "uchazeči(#{exam_term.coridor.approved_candidates.size})",
+      :controller => 'candidates', :action => 'list_admission_ready', :coridor => exam_term.coridor %>
       <%= link_to 'smazání', {:action => 'destroy', :id => exam_term}, :confirm => 'Opravdu si přejete smazat tuto komisi?' %>
     </div>
     <b><%= exam_term.coridor.name %><br/></b>

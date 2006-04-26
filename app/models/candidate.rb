@@ -232,16 +232,16 @@ class Candidate < ActiveRecord::Base
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
       conditions.first << " AND coridor_id = ?"
-      conditions << options['coridor'] 
+      conditions << options['coridor']
     end
-	  Candidate.find(:all, :order => options['category'],
+    Candidate.find(:all, :order => options['category'],
       :conditions => conditions)
   end
 
   def self.filter_conditions(filter)
     case filter
     when 'unready':' AND ready_on IS NULL'
-    when 'ready': ' AND ready_on IS NOT NULL AND 
+    when 'ready': ' AND ready_on IS NOT NULL AND
       invited_on IS NULL'
     when 'invited': ' AND invited_on IS NOT NULL AND
       admited_on IS NULL'
