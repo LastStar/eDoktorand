@@ -154,9 +154,11 @@ module ApplicationHelper
   
   # prints statements approvement 
   def print_statements(approvement)
-    print_statement(approvement.tutor_statement, _("tutor statement")) +
-    print_statement(approvement.leader_statement, _("leader statement")) +
-    print_statement(approvement.dean_statement, _("dean statement") ) 
+    unless approvement.nil?
+      print_statement(approvement.tutor_statement, _("tutor statement")) +
+      print_statement(approvement.leader_statement, _("leader statement")) +
+      print_statement(approvement.dean_statement, _("dean statement") ) 
+    end
   end
   
   # prints atestaion subject line wihch depends on finishing of the subject
