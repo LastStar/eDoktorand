@@ -1,6 +1,6 @@
 class Notifications < ActionMailer::Base
   def invite_candidate(candidate, faculty, sent_at = Time.now)
-    @subject = 'Pozvanka na prijimaci zkousky na doktorske studium'
+    @subject = _("Invitation to admition tests to postgradual study")
     @body['display_name'] = candidate.display_name
     @body['address'] = candidate.address
     @body['coridor'] = candidate.coridor.name
@@ -13,7 +13,7 @@ class Notifications < ActionMailer::Base
   end
   #sends admit mail to candidate
   def admit_candidate(candidate, sent_at = Time.now)
-    @subject = 'Vyrozumeni o prijimacim rizeni na doktorske studium'
+    @subject = _("Notification about admition procedure to postgradula study")
     @body['study'] = candidate.study.name
     @body['display_name'] = candidate.display_name
     @body['address'] = candidate.address
@@ -28,7 +28,7 @@ class Notifications < ActionMailer::Base
   end
   #sends reject mail to candidate
   def reject_candidate(candidate, sent_at = Time.now)
-    @subject = 'Vyrozumeni o prijimacim rizeni na doktorske studium'
+    @subject = _("Notification about admition procedure to postgradula study")
     @body['study'] = candidate.study.name
     @body['display_name'] = candidate.display_name
     @body['address'] = candidate.address
