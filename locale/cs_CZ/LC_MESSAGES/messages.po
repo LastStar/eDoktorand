@@ -1573,3 +1573,9 @@ msgstr "Pozvánka na přijímací zkoušky na doktorské studium"
 
 msgid "Notification about admition procedure to postgradula study"
 msgstr "Vyrozumění o přijímacím řízení na doktorské studium"
+
+msgid "This student claimed for final exam."
+msgstr "Tento student požádal o připuštění k závěrečné zkoušce."
+
+msgid "Wait till your application will be approved and your final exam term will be created."
+msgstr "Počkejte než bude Vaše žádost potvrzena a termín závěrečné zkoušky vytvořen."
