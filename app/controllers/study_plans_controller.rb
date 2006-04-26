@@ -235,6 +235,14 @@ class StudyPlansController < ApplicationController
   def final_application
     @study_plan = @student.index.study_plan
   end
+
+  def save_final_application
+    @study_plan = @student.index.study_plan
+    @study_plan.update_attributes(params['study_plan'])
+    @study_plan.index.claim_final_application!
+    redirect_to :action => :index
+  end
+
   private 
 
   include StudyPlanCreator
