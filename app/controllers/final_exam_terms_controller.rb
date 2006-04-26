@@ -7,11 +7,12 @@ class FinalExamTermsController < ApplicationController
     index = Index.find(@params['id']) if @params['id']
     if index.final_exam_term
       @exam_term = index.final_exam_term
-    else 
+      render_action :new
+    else
       @exam_term = FinalExamTerm.new
       @exam_term.index = index
-    end 
-    render_action :new
+      render_action :new
+    end
   end
 
   def create
@@ -23,10 +24,18 @@ class FinalExamTermsController < ApplicationController
     end 
     if @exam_term.save
       flash['notice'] = 'Komise byla úspěšně vytvořena.'
-      render_action :remote
+      render_action :show
     else
       render_action :new
     end
+  end
+
+  def show
+    @exam_term = FinalExamTerm.find(@params[:id])
+  end
+
+  def edit
+    @exam_term = FinalExamTerm.find(@params[:id])
   end
 
   def destroy

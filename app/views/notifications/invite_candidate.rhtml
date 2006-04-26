@@ -11,23 +11,25 @@ Vážený pan/paní
 <%= @address %>
 
 
-Věc: pozvánka k přijímacímu řízení do DSP na <%= @faculty.short_name %> ČZU v Praze
+Věc: pozvánka k přijímací zkoušce do DSP na <%= @faculty.short_name %> ČZU v Praze
 
 Na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s § 50 zákona
 č. 111/98 Sb. o vysokých školách Vám zasílám
 
-pozvánku k přijímacímu řízení do DSP pro akademický rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>,
+pozvánku k přijímací zkoušce do DSP pro akademický rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>,
 
 které proběhne 
 
 dne <%= @exam_term.date.strftime("%d. %m. %Y") %>
 
-<%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
-
 Přijímací zkouška pro obor <%= @coridor %>
 proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>, předsedou komise je <%= @exam_term.chairman.display_name %>
 
-K přijímacímu řízení si přineste:
+<%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
+
+K přijímací zkoušce si přineste:
 průkaz totožnosti,
 doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou,
+<% if @study_id == 1 %>
 doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou.
+<% end %>

@@ -7,6 +7,7 @@ class Notifications < ActionMailer::Base
     @body['exam_term'] = candidate.coridor.exam_term
     @body['sent_on'] = sent_at
     @body['faculty'] = faculty
+    @body['study_id'] = candidate.study_id
     @recipients = candidate.email
     @from       = 'pepe@pef.czu.cz'
     @sent_on    = sent_at

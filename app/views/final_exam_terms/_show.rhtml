@@ -1,4 +1,6 @@
-<div id='final_exam'>
+<p>
+  <b><%= _('Full name') %>:</b> <%= @exam_term.index.student.display_name %>
+</p>
 
 <% for column in ExamTerm.content_columns %>
 <p>
@@ -7,6 +9,7 @@
 <% end %>
 
 <div class='links'>
+<%= link_to_remote_with_loading(_("edit"), :url => {:action => 'edit', :id => @exam_term}, :complete => evaluate_remote_response) %>
 <%= link_to_function(_("back"), "Element.show('people_list', 'search');
 Element.remove('final_exam')", :id => 'back_link') %>
 <%= link_to_function(_("back and remove from list"), \
@@ -14,5 +17,3 @@ Element.remove('final_exam')", :id => 'back_link') %>
 Element.remove('final_exam'); \
 Element.show('people_list', 'search');", :id => 'back_remove_link') %>
 </div> <!-- end links -->
-
-</div>
