@@ -1,4 +1,5 @@
 class Index < ActiveRecord::Base
+  include Approvable
 
   belongs_to :student, :foreign_key => 'student_id'
   belongs_to :tutor
@@ -13,6 +14,8 @@ class Index < ActiveRecord::Base
   has_many :interupts, :order => 'created_on desc'
   has_many :extra_scholarships, :order => 'created_on desc'
   has_many :regular_scholarships, :order => 'created_on desc'
+  has_one :approvement, :class_name => 'FinalExamApprovement',
+    :foreign_key => 'document_id'
 
   validates_presence_of :student
   validates_presence_of :tutor
@@ -63,7 +66,12 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def statement_for(user)
-    if admited_interupt?
+    if claimed_final_application?
+      self.approvement ||= FinalExamApprovement.create
+      if approvement.prepares_statement?(user)
+        return approvement.prepare_statement(user)
+      end
+    elsif admited_interupt?
       interupt.approvement ||= InteruptApprovement.create
       if interupt.approvement.prepares_statement?(user)
         return interupt.approvement.prepare_statement(user)
@@ -83,15 +91,17 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def waits_for_statement?(user)
-    if admited_interupt?
-      approvement = interupt.approvement ||= InteruptApprovement.create
+    if claimed_final_application?
+      temp_approvement = self.approvement ||= FinalExamApprovement.create
+    elsif admited_interupt?
+      temp_approvement = interupt.approvement ||= InteruptApprovement.create
     elsif study_plan && !study_plan.approved?
-      approvement = study_plan.approvement ||= StudyPlanApprovement.create
+      temp_approvement = study_plan.approvement ||= StudyPlanApprovement.create
     elsif study_plan && study_plan.approved? &&
       study_plan.waits_for_actual_atestation?
-      approvement = study_plan.atestation ||= Atestation.create
+      temp_approvement = study_plan.atestation ||= Atestation.create
     end
-    approvement && approvement.prepares_statement?(user)
+    temp_approvement && temp_approvement.prepares_statement?(user)
   end
 
   # returns last interrupt
@@ -367,5 +377,18 @@ class Index < ActiveRecord::Base
 
   def present_study?
     study.id == 1
+  end
+
+  def claim_final_application!
+    update_attribute(:final_application_claimed_at, Time.now)
+  end
+
+  def claimed_final_application?
+    !final_application_claimed_at.nil?
+  end
+
+  # for approvement purposes
+  def index
+    self
   end
 end

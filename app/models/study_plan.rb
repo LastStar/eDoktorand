@@ -3,8 +3,8 @@ class StudyPlan < ActiveRecord::Base
   include Approvable
   belongs_to :index
   has_many :plan_subjects
-  has_one :approvement, :class_name => 'StudyPlanApprovement', :foreign_key =>
-    'document_id'
+  has_one :approvement, :class_name => 'StudyPlanApprovement',
+    :foreign_key => 'document_id'
   has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
   acts_as_audited
   validates_presence_of :index
@@ -12,7 +12,7 @@ class StudyPlan < ActiveRecord::Base
 
   # returns true if study plan is approved
   def approved?
-    return true if approved_on
+    !approved_on.nil?
   end
 
   # returns if study plan is canceled 
@@ -59,6 +59,7 @@ class StudyPlan < ActiveRecord::Base
     >= ? and finishing_on <= ?', id, semester - 2,
     semester])
   end
+
   # return semester of the study from index
   def semester
     index.semester
@@ -135,4 +136,5 @@ class StudyPlan < ActiveRecord::Base
   def all_subjects_finished?
     unfinished_subjects.empty?
   end
+
 end

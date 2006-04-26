@@ -92,6 +92,13 @@ class StudentsController < ApplicationController
     @form_url[:controller] = @params['form_controller'] || 'students'
     @index = Index.find(@params['id'])
   end
+
+  def confirm_approve
+    index = Index.find(params[:id])
+    index.approve_with(params[:statement])
+    render(:inline => "Element.hide('approve_form#{index.id}'); \
+      Element.remove('index_line_#{index.id}')")
+  end
   private
   
   # sets title of the controller

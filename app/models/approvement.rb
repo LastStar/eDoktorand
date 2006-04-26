@@ -4,6 +4,7 @@ class Approvement < ActiveRecord::Base
   belongs_to :dean_statement
   belongs_to :board_statement
   acts_as_audited
+
   # prepares approvement for object if it doesn't exists
   # returns statement for user
   def prepare_statement(user)
@@ -15,6 +16,7 @@ class Approvement < ActiveRecord::Base
       return build_dean_statement('person_id' => user.person.id)
     end
   end
+
   # returns if it have statement for user
   def prepares_statement?(user)
     if dean_statement
@@ -27,9 +29,11 @@ class Approvement < ActiveRecord::Base
       return true
     end
   end
+
   def approved_by
     _(last_approver.to_s.humanize)
   end
+
   def last_approver
     if dean_statement
       Dean

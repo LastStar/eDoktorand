@@ -1,3 +1,7 @@
+<% if study_plan.index.claimed_final_application? %>
+  <li><b><%= _('This student claimed for final exam.') %></b></li>
+  <%= print_statements(study_plan.index.approvement) %>
+<% end %>
 <li>
 <div class='info'><%= "#{study_plan.finishing_to}. #{_('semester')}" %></div>
   <b><%= "#{_('final exam')}" %></b>

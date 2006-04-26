@@ -14,7 +14,7 @@ module Approvable
 
   # returns true if is approved
   def approved?
-    return true unless self.approved_on.nil?
+    !self.approved_on.nil?
   end
 
   # returns class of last approver
