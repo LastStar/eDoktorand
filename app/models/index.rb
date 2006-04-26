@@ -61,7 +61,7 @@ class Index < ActiveRecord::Base
 
   # returns true if studen claimed for final exam
   def claimed_for_final_exam?
-    true #TODO put correct condition!
+    claimed_final_application? && approved?
   end
 
   # returns statement if this index waits for approvement from person

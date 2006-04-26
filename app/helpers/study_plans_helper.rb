@@ -53,7 +53,8 @@ module StudyPlansHelper
     tag('input', { 'type' => 'text', 'id' =>
       "external_subject_detail_#{plan_subject.id}_label", 
       'name' => "plan_subject[#{plan_subject.id}][label]", "value" =>
-       plan_subject.subject_id == 0 ? plan_subject.subject.label : ''})
+       plan_subject.subject.is_a?(ExternalSubject) ?
+       plan_subject.subject.label : plan_subject.subject_id == 0 ? plan_subject.subject.label : ''})
   end
 
   # prints external university tag
