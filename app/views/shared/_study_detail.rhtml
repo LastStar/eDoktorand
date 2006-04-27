@@ -46,7 +46,7 @@
     <% end %>
   <% end %>
   <% if index.interupt.note && !index.interupt.note.empty? %>
-  <li>
+  <li class='<%="higher" if !index.interupt.note.empty?%>'>
   <div class='long_info'><%= index.interupt.note %></div>
   <%= _('note') %>
   </li>

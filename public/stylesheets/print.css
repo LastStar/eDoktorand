@@ -18,6 +18,14 @@ p {
 .instruction {
   display: none;
 }
+li { 
+  clear: right; 
+  margin: 0 0 0 0;
+  padding: 2px 0 0 0.5ex;
+  border-bottom: 1px solid #ddc;
+  border-left: 3px solid #ddc;
+  list-style: none; 
+}
 #error {
   display: none;
 }
@@ -56,6 +64,10 @@ p.subject {
   padding-left: 2em;
   position: absolute;
   left: 13em;
+}
+.long_info {
+  float: right;
+  width: 480px;
 }
 .detail {
   display: block;
@@ -129,7 +141,10 @@ a {
   font-size: 9pt;
   text-align: center;
 }
+li.higher {height: 2.25em;}
 #people_list li {list-style: none; border-bottom: 1px solid black}
+#students_list li {list-style: none; border-bottom: 1px solid black}
+#student_detail .info {float: right; width: 14ex; position: static}
 #Head {
   display: none;
 }

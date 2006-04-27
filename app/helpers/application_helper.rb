@@ -291,7 +291,7 @@ module ApplicationHelper
         options[:class] = 'higher'
       end
       result = content_tag('div', statement.created_on.strftime('%d. %m. %Y'),
-      :class => 'info') + result
+      :class => 'info') + div_tag(result)
     end
     return content_tag('li', "#{div_tag(result, :class => 'long_info')}
     #{statement_type}", options)
