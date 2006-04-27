@@ -660,4 +660,27 @@ include Log4r
       end
     end
   end
+
+  def self.load_titles(prefixes, suffixes)
+    @@mylog.info "Loading name fix..."
+    CSV::Reader.parse(File.open(prefixes, 'rb'), ';') do |row|
+      @@mylog.debug row[0]
+      if Title.exists?(@@prefixes[row[0].to_i])
+        @@mylog.debug "updating #{row[1]}"
+        Title.find(@@prefixes[row[0].to_i]).update_attribute('label', row[1])
+      else
+        @@mylog.debug "creating #{row[1]}"
+        Title.create(:label => row[1], :prefix => 1)
+      end
+    end
+    CSV::Reader.parse(File.open(suffixes, 'rb'), ';') do |row|
+      if Title.exists?(@@suffixes[row[0].to_i])
+        @@mylog.debug "updating #{row[1]}"
+        Title.find(@@suffixes[row[0].to_i]).update_attribute('label', row[1])
+      else
+        @@mylog.debug "creating #{row[1]}"
+        Title.create(:label => row[1], :prefix => 1)
+      end
+    end
+  end
 end
