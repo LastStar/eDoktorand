@@ -6,6 +6,12 @@
 <%= birth_number_line(student) %>
 <%= birth_place_line(student) %>
 <li>
+<%= "#{student.email ? long_info_helper(student.email.name):''}#{_('Email')}: " %>
+</li>
+<li>
+<%= "#{student.phone ? long_info_helper(student.phone.name):''}#{_('Phone')}: " %>
+</li>
+<li>
 <%= "#{long_info_helper(student.index.coridor.name)}#{_('Corridor')}: " %>
 </li>
 <li>

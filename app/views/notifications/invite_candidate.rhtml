@@ -1,35 +1,21 @@
-ČESKÁ ZEMĚDĚLSKÁ UNIVERZITA V PRAZE
-FAKULTA LESNICKÁ A ENVIRONMENTÁLNÍ
-DĚKANÁT – ODDĚLENÍ VĚDY A VÝZKUMU
-165 21 Praha 6 – Suchdol
-tel.č. 22438 2877
-
-V Praze dne <%= @sent_on.strftime("%d. %m. %Y") %>
-
-Vážený pan/paní
+Adresát:
 <%= @display_name %>
 <%= @address %>
 
+<%= @salutation %>,
+na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s § 50 zákona č. 111/98 Sb. o vysokých školách Vám zasílám pozvánku k přijímací zkoušce do DSP pro akademický rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>, které proběhne dne <%= @exam_term.date.strftime("%d. %m. %Y") %>
 
-Věc: pozvánka k přijímací zkoušce do DSP na <%= @faculty.short_name %> ČZU v Praze
-
-Na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s § 50 zákona
-č. 111/98 Sb. o vysokých školách Vám zasílám
-
-pozvánku k přijímací zkoušce do DSP pro akademický rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>,
-
-které proběhne 
-
-dne <%= @exam_term.date.strftime("%d. %m. %Y") %>
-
-Přijímací zkouška pro obor <%= @coridor %>
-proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>, předsedou komise je <%= @exam_term.chairman.display_name %>
+Přijímací zkouška pro obor <%= @coridor %> proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>. Předsedou komise je <%= @exam_term.chairman.display_name %>
 
 <%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
 
 K přijímací zkoušce si přineste:
-průkaz totožnosti,
-doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou,
-<% if @study_id == 1 %>
-doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou.
-<% end %>
+ - průkaz totožnosti,
+<% if @study_id == 1 %> - doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou,<% end %>
+ - doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou.
+
+Vyřizuje:
+<%= @faculty.secretary.display_name %>,
+oddělení VaV <%= @faculty.short_name %> ČZU v Praze
+<!--tel: 224382325<br/>
+e-mail: husakova@pef.czu.cz-->

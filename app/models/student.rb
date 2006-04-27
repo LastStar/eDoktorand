@@ -2,8 +2,6 @@ class Student < Person
   has_one :index
   has_one :address, :conditions => 'address_type_id = 1'
   has_one :postal_address, :class_name => 'Address', :conditions => 'address_type_id = 2'
-  has_one :email, :class_name => 'Contact', :foreign_key => 'person_id', :conditions => 'contact_type_id = 1'
-  has_one :phone, :class_name => 'Contact', :foreign_key => 'person_id', :conditions => 'contact_type_id = 2'
   has_one :candidate
   has_and_belongs_to_many :probation_terms
 

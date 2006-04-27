@@ -35,10 +35,10 @@
 <p>K přijímací zkoušce si přineste:
 <ul>
   <li class='letter'>průkaz totožnosti,</>
-  <li class='letter'>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou,</li>
   <% if @candidate.study_id == 1 %>
   <li class='letter'>doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr  potvrzený fakultou.</li>
   <% end %>
+  <li class='letter'>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou,</li>
 </ul>
 </p>
 <br/>
@@ -49,7 +49,7 @@
 <br/>
 <p class='rightAlignLefter'>
 Vyřizuje:<br/>
-Zuzana Husáková,<br/>
+<%= @faculty.secretary.display_name %>,<br/>
 oddělení VaV <%= @faculty.short_name %> ČZU v Praze<br/>
 <!--tel: 224382325<br/>
 e-mail: husakova@pef.czu.cz-->

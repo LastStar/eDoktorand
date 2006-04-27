@@ -2,6 +2,9 @@ class Faculty < ActiveRecord::Base
   has_many :coridors
   has_many :departments
   has_many :documents
+  has_many :faculty_employments, :foreign_key => 'unit_id'
+  has_one :secretary_employment, :class_name => 'FacultyEmployment',
+      :foreign_key => 'unit_id', :order => :id
   has_one :deanship
 
   # returns array for html select
@@ -41,6 +44,10 @@ class Faculty < ActiveRecord::Base
     deanship.dean
   end
 
+  def secretary
+    FacultySecretary.find(:first, :include => 'faculty_employment',
+        :conditions => ["unit_id = ?", id])
+  end
   # retuns dean of the faculty
   def dean_label
     return _('director') if id==2

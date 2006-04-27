@@ -1,6 +1,7 @@
 class Notifications < ActionMailer::Base
   def invite_candidate(candidate, faculty, sent_at = Time.now)
-    @subject = _("Invitation to admition tests to postgradual study")
+#    @subject = _("Invitation to admition tests to postgradual study")
+    @subject = "pozvánka k přijímací zkoušce do DSP na #{faculty.short_name} ČZU v Praze"
     @body['display_name'] = candidate.display_name
     @body['address'] = candidate.address
     @body['coridor'] = candidate.coridor.name
@@ -8,6 +9,7 @@ class Notifications < ActionMailer::Base
     @body['sent_on'] = sent_at
     @body['faculty'] = faculty
     @body['study_id'] = candidate.study_id
+    @body['salutation'] = @candidate.genderize("Vážený pan/paní","Vážený pan","Vážená paní")
     @recipients = candidate.email
     @from       = 'pepe@pef.czu.cz'
     @sent_on    = sent_at
