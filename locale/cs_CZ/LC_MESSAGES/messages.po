@@ -1568,9 +1568,6 @@ msgstr "Termín musí mít přiděleného druhého zkoušejícího"
 msgid "Final exam term have to belong to student"
 msgstr "Konečný zkouškový termín musí náležet studentovi"
 
-msgid "Invitation to admition tests to postgradual study"
-msgstr "Pozvánka na přijímací zkoušky na doktorské studium"
-
 msgid "Notification about admition procedure to postgradula study"
 msgstr "Vyrozumění o přijímacím řízení na doktorské studium"
 
@@ -1579,3 +1576,31 @@ msgstr "Tento student požádal o připuštění k závěrečné zkoušce."
 
 msgid "Wait till your application will be approved and your final exam term will be created."
 msgstr "Počkejte než bude Vaše žádost potvrzena a termín závěrečné zkoušky vytvořen."
+
+msgid "Invitation to admition tests to postgradual study"
+msgstr "pozvánka k přijímací zkoušce do DSP na ČZU v Praze"
+
+msgid "Dear  Mr./Mrs."
+msgstr "Vážený pan/paní"
+
+msgid "Dear Mr."
+msgstr "Vážený pan"
+
+msgid "Dear Mrs."
+msgstr "Vážená paní"
+
+msgid "final_exam_term"
+msgstr "komise SZZ"
+
+msgid "dean"
+msgstr "děkan"
+
+msgid "director"
+msgstr "ředitel"
+
+msgid "notification of study plan"
+msgstr "Vyrozumnění o studijním plánu"
+
+msgid "with birth number "
+msgstr "s rodným číslem "
+

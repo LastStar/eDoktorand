@@ -1,7 +1,11 @@
 # TODO move all ids methods to corresponding models
 module ApplicationHelper
   
-  # prints department options
+  def print_copyright 
+    "designed by GravaStar &nbsp;"
+  end
+
+# prints department options
   def department_options(options = {})
     options_for_select(Department.for_select(options))
   end

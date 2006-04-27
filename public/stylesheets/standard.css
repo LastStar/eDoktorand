@@ -231,6 +231,7 @@ pre.detail {
   background-color: #ffffff; padding: 10px; padding-left: 30px; font-size: 11px;
 }
 .footer { padding-top: 11em; font-size: 10pt; }
+.footerLeft {float: left}
 .signature { display: none; }
 .strut { display: none; }
 h2.printHeader, h3.printHeader, h4.printHeader { display: none; }

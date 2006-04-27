@@ -184,6 +184,7 @@ class StudyPlansController < ApplicationController
     disert_theme = @session['disert_theme']
     disert_theme.index = @study_plan.index 
     disert_theme.save
+    Notifications::deliver_study_plan_create(@study_plan)
     @study_plan.save
     prepare_plan_session
     redirect_to :action => 'index'

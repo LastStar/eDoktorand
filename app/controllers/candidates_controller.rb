@@ -90,11 +90,11 @@ class CandidatesController < ApplicationController
 
   # amits candidate form
   def admit
-		@candidate = Candidate.find(@params['id'])
+   @candidate = Candidate.find(@params['id'])
   end
 
 	# confirms admittance of candidate and sends email
-	def confirm_admit
+  def confirm_admit
     if(@params['admit_id'] == '0')
       redirect_to(:action => 'reject', :id => @params['id'])
     else
@@ -102,20 +102,20 @@ class CandidatesController < ApplicationController
       @candidate = Candidate.find(@params['id'])
       @candidate.update_attributes(@params['candidate'])
     end
-	end
+  end
 
 	# action for remote link that invite candidate
-	def admit_now
+  def admit_now
 		@candidate = Candidate.find(@params['id'])
 		Notifications::deliver_admit_candidate(@candidate)
 		@candidate.admit!
 		render_text _('e-mail sent')
-	end
+  end
 
-	# finishes admittance
-	def admittance
-		@candidate = Candidate.find(@params['id'])
-	end
+   # finishes admittance
+  def admittance
+   @candidate = Candidate.find(@params['id'])
+  end
 
   # set candidate ready for invitation
   def ready
@@ -132,30 +132,30 @@ class CandidatesController < ApplicationController
   end
 
 	# action for remote link that invite candidate
-	def invite_now
-		@candidate = Candidate.find(@params['id'])
+  def invite_now
+    @candidate = Candidate.find(@params['id'])
     @candidate.invite!
-		Notifications::deliver_invite_candidate(@candidate, @faculty, Time.now)
-		render_text _('e-mail sent')
-	end
+    Notifications::deliver_invite_candidate(@candidate, @faculty, Time.now)
+    render_text _('e-mail sent')
+  end
 
-	# shows invitation for candidate
-	def invitation
-		@candidate = Candidate.find(@params['id'])
-	end
+  # shows invitation for candidate
+  def invitation
+   @candidate = Candidate.find(@params['id'])
+  end
 
   # rejects candidate from study
   def reject
     @candidate = Candidate.find(@params['id'])
   end
 
-	# action for remote link that reject candidate
-	def reject_now
-		@candidate = Candidate.find(@params['id'])
+  # action for remote link that reject candidate
+  def reject_now
+    @candidate = Candidate.find(@params['id'])
     @candidate.reject!
 		Notifications::deliver_reject_candidate(@candidate)
 		render_text _('e-mail sent')
-	end
+  end
 
   # summary method for candidates
   def summary
@@ -175,17 +175,17 @@ class CandidatesController < ApplicationController
 
   # changes sorting
   def change_sort
-		@params['page'] = '1' unless @params['page'] # cause nil page means first :-)
-		if @session['page'] == @params['page']
-	    if @params['category'] == @session['category']
-        @session['order'] = @session['order'] == ' desc' ? '' : ' desc'
+	@params['page'] = '1' unless @params['page'] # cause nil page means first :-)
+	if @session['page'] == @params['page']
+        if @params['category'] == @session['category']
+         @session['order'] = @session['order'] == ' desc' ? '' : ' desc'
 	    else
 	      @session['order'] = ''
-	    end
+	   end
 	    @session['category'] = @params['category']
 	    @params['category'] << @session['order'] if @params['category'] 
-		else
-			@session['page'] = @params['page']
-		end
+	    else
+             @session['page'] = @params['page']
+	   end
   end
 end
