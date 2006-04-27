@@ -1,11 +1,6 @@
 
 # mail configuration
-ActionMailer::Base.server_settings = {
-  :address  => "smtp.beneta.cz",
-  :port  => 25, 
-	:domain  => "smtp.beneta.cz",
-  :authentication  => :plain
-  } 
+ActionMailer::Base.delivery_method = :sendmail
 
 # localization
 require 'gettext_extension'
