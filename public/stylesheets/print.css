@@ -18,7 +18,7 @@ p {
 .instruction {
   display: none;
 }
-li { 
+#student_detail li { 
   clear: right; 
   margin: 0 0 0 0;
   padding: 2px 0 0 0.5ex;

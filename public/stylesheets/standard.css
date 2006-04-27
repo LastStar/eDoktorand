@@ -151,6 +151,15 @@ label {
   clear: both;
   float: left;
 }
+.subject {
+  font-size: 13px;
+  width: 280px;
+  margin: 0px;
+  text-align: right; 
+  margin: 5px 1em 5px 0;
+  clear: both;
+}
+
 li.unfinished {
   background-color: #b00;
   color: white;

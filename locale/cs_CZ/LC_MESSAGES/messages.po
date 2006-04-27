@@ -1589,7 +1589,7 @@ msgstr "Vážený pan"
 msgid "Dear Mrs."
 msgstr "Vážená paní"
 
-msgid "final_exam_term"
+msgid "final exam term"
 msgstr "komise SZZ"
 
 msgid "dean"
@@ -1603,4 +1603,7 @@ msgstr "Vyrozumnění o studijním plánu"
 
 msgid "with birth number "
 msgstr "s rodným číslem "
+
+msgid "opponent"
+msgstr "oponent"
 
