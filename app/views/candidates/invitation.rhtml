@@ -51,8 +51,8 @@
 Vyřizuje:<br/>
 <%= @faculty.secretary.display_name %>,<br/>
 oddělení VaV <%= @faculty.short_name %> ČZU v Praze<br/>
-<!--tel: 224382325<br/>
-e-mail: husakova@pef.czu.cz-->
+tel: <%= @faculty.secretary.phone.name %><br/>
+e-mail: <%= @faculty.secretary.email.name %>
 </p>
 
 <div class='links'>

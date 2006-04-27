@@ -17,5 +17,5 @@ K přijímací zkoušce si přineste:
 Vyřizuje:
 <%= @faculty.secretary.display_name %>,
 oddělení VaV <%= @faculty.short_name %> ČZU v Praze
-<!--tel: 224382325<br/>
-e-mail: husakova@pef.czu.cz-->
+tel: <%= @faculty.secretary.phone.name %>
+e-mail: <%= @faculty.secretary.email.name %>
