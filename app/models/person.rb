@@ -32,5 +32,20 @@ class Person < ActiveRecord::Base
     end.map {|e| [e.display_name, e.id]}
   end
 
+  def email=(value)
+    if email
+      email.update_attribute(:name, value)
+    else
+      Contact.create(:name => value, :contact_type_id => 1, :person_id => id)
+    end
+  end
+
+  def phone=(value)
+    if phone
+      phone.update_attribute(:name, value)
+    else
+      Contact.create(:name => value, :contact_type_id => 2, :person_id => id)
+    end
+  end
 
 end
