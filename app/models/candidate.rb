@@ -218,7 +218,7 @@ class Candidate < ActiveRecord::Base
   end
   # prepares conditions for paginate functions
   def self.prepare_conditions(options, faculty)
-    conditions = ["department_id in (?)", faculty.departments_ids]
+    conditions = ["department_id in (?) AND finished_on IS NOT NULL", faculty.departments_ids]
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
        conditions.first << " AND coridor_id = #{options['coridor']}"

@@ -16,7 +16,7 @@ class CandidatesController < ApplicationController
 
   # lists all candidates
   def list
-    @filtered_by = @params['filter'] 
+    @filtered_by = @params['filter']
 		conditions = Candidate.prepare_conditions(@params, @faculty)
     @pages, @candidates = paginate :candidates, :per_page => 7, :order_by =>
       @params['category'], :conditions => conditions
