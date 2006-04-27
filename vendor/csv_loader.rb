@@ -648,6 +648,16 @@ include Log4r
         s.save
       end
     end
-    
+  end
+
+  def self.load_name_fix(file)
+    @@mylog.info "Loading name fix..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if s = Student.find_by_uic(row[3])
+        s.lastname = row[1]
+        s.firstname = row[2]
+        s.save
+      end
+    end
   end
 end
