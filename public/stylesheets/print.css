@@ -69,6 +69,16 @@ p.subject {
   float: right;
   width: 480px;
 }
+.longinfo {
+  float: right;
+  width: 15em;
+  font-size: 9pt;
+  text-align: left;
+}
+.not_print {
+  float: left;
+  display: none;
+}
 .detail {
   display: block;
 }
