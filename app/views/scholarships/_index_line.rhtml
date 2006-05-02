@@ -1,3 +1,11 @@
+<div class="longinfo">
+<% if index.student.account==nil%>
+  <%="&nbsp;&nbsp;"%>
+<% else %>
+   <%= index.student.account%>
+<% end %>
+</div>
+
 <div class="smallinfo" id='scholarship_<%= index.id %>'>
 <% if index.current_extra_scholarship %>
   <%= detail_link(index) %>

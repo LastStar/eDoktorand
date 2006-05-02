@@ -18,10 +18,10 @@ class Student < Person
   # retunrs account for printing
   def account
     if scholarship_supervised_at
-      if account_number_prefix
-        "#{s.index.account_number_prefix}-#{s.index.account_number}/#{s.index.account_bank_number}"
+      if index.account_number_prefix!=""
+        "#{index.account_number_prefix}-#{index.account_number}/#{index.account_bank_number}"
       else
-        "#{s.index.account_number}/#{s.index.account_bank_number}"
+        "#{index.account_number}/#{index.account_bank_number}"
       end
     end
   end

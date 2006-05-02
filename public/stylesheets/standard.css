@@ -215,6 +215,14 @@ div.fieldWithErrors label { color: red; }
   font-size: 9pt;
   text-align: left;
 }
+.longinfo {
+  float: right;
+  width: 15em;
+  font-size: 9pt;
+  text-align: left;
+}
+
+
 .dateinfo {
   float: right;
   width: 15ex;
