@@ -98,7 +98,7 @@
     <% if @candidate.admitting_faculty.id != 3 %>
     <%= select 'candidate', 'language1_id', LanguageSubject.for_select(:coridor => @candidate.coridor_id) %><span class='required'>&nbsp;&lowast;</span ><br />
     <% else %>
-    <%= hidden_field 'candidate', 'language1_id' %>
+    <%= hidden_field 'candidate', 'language1_id', :value => 1133 %>
     <%= Subject.find(1133).label %>
     <% end %>
     <label for="candidate_language2" class="required">&nbsp;</label>

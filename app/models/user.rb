@@ -36,7 +36,9 @@ class User < ActiveRecord::Base
         return nil
       end
     else
-      find_first(["login = ? AND password = ?", login, sha1(pass)]).id
+      if p = find(:first, :conditions => ["login = ? AND password = ?", login, sha1(pass)])
+        p.id
+      end
     end
   end
  
