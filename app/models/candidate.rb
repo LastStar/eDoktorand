@@ -238,6 +238,12 @@ class Candidate < ActiveRecord::Base
       :conditions => conditions)
   end
 
+  # delete candidate, fill finished_on to nil
+  def delete_candidate
+    self.finished_on = nil
+    self.save
+  end
+  
   def self.filter_conditions(filter)
     case filter
     when 'unready':' AND ready_on IS NULL'

@@ -61,6 +61,12 @@ class CandidatesController < ApplicationController
     Candidate.find(@params['id']).destroy
     redirect_to :action => 'list'
   end
+  
+  # delete candidate
+  def delete
+    Candidate.find(@params['id']).delete_candidate
+    redirect_to :action => 'list'
+  end
 
   # enroll candidate form
   def enroll

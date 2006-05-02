@@ -12,6 +12,7 @@
 			&nbsp;
       <%= link_to 'detail', :action => 'show', :id => candidate %>
       <%= link_to 'opravit', :action => 'edit', :id => candidate %>
+      <%= link_to 'smazat', :action => 'delete', :id => candidate %>
       <a href="#" onclick="toggle_detail('contact', 'link_contact', '<%=
       candidate.id %>'); return true" id="link_contact<%= candidate.id %>"><%=
      _("contact") %></a>
