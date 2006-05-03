@@ -10,8 +10,8 @@ class Notifications < ActionMailer::Base
     @body['study_id'] = candidate.study_id
     @body['salutation'] = candidate.genderize(_("Dear  Mr./Mrs."),_("Dear Mr."),_("Dear Mrs."))
     @recipients = candidate.email
-    @bcc        = faculty.secretary.email
-    @from       = faculty.secretary.email
+    @bcc        = faculty.secretary.email.name
+    @from       = faculty.secretary.email.name
     @sent_on    = sent_at
   end
   #sends admit mail to candidate
