@@ -4,12 +4,11 @@
 <ul>
 <% for scholarship in @scholarships  %>
   <li>
-    <b><%= scholarship.amount %></b>&nbsp;&nbsp;&nbsp;&nbsp;
-        <%= _("Payed on")  %>:&nbsp;<%= scholarship.payed_on.strftime("%d. %m. %Y") %>&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= _("Commission") %>:&nbsp;&nbsp;
-    <%= scholarship.commission_head %>/<%= scholarship.commission_body %>/<%=
-    scholarship.commission_tail %> 
-    <br />
+    <%= small_info_div(scholarship.print_commission) %> 
+  <% if scholarship.payed_on %>
+    <%= long_info_helper(scholarship.payed_on.strftime("%d. %m. %Y")) %>
+  <% end %>
+    <b><%= scholarship.amount %></b>
   </li>
   <% @ids << scholarship.id %>
 <% end %>

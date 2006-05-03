@@ -9,4 +9,8 @@ class ExtraScholarship < Scholarship
       es.pay!
     end
   end
+
+  def print_commission
+    [commission_head, commission_body, commission_tail].join('/')
+  end
 end

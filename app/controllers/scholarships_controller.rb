@@ -10,7 +10,7 @@ class ScholarshipsController < ApplicationController
   end
 
   def list
-    @scholarships = Scholarship.find_all_by_index_id(@student.index.id)
+    @scholarships = @student.index.extra_scholarships
   end
 
   # claim for accommodation scholarship

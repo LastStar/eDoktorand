@@ -4,8 +4,7 @@
       @student.index.id}, :update => "account_change", :complete => "accountChange()") %>
     </div>
     <div id="account_specification">
-      <%= render_partial @params['prefix'] ? @params['prefix'] + 'account' :
-      'account' %>
+      <%= render_partial 'account' %>
       <%= link_to_unless_current(_("claim"), :controller => 'scholarships', :action => 'claim'){} %>
     </div>
   <% else %>
