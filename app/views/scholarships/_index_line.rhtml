@@ -16,7 +16,7 @@
 <div class="smallinfo"><%= index.study.name %></div>
 <div class="smallinfo"><%= index.department.short_name %></div>
 <div class="longinfo">
-<% if index.student.account==nil%>
+<% if index.account_number==nil%>
   <%="&nbsp;&nbsp;"%>
 <% else %>
    <%= index.student.account%>

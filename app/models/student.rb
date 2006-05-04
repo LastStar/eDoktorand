@@ -17,13 +17,11 @@ class Student < Person
 
   # retunrs account for printing
   def account
-    if scholarship_supervised_at
-      if index.account_number_prefix!=""
-        "#{index.account_number_prefix}-#{index.account_number}/#{index.account_bank_number}"
+      if self.index.account_number_prefix!=""
+        "#{self.index.account_number_prefix}-#{self.index.account_number}/#{self.index.account_bank_number}"
       else
-        "#{index.account_number}/#{index.account_bank_number}"
+        "#{self.index.account_number}/#{self.index.account_bank_number}"
       end
-    end
   end
 
   def coridor
