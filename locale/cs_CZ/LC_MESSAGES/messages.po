@@ -1604,6 +1604,12 @@ msgstr "Vyrozumnění o studijním plánu"
 msgid "with birth number "
 msgstr "s rodným číslem "
 
-msgid "opponent"
-msgstr "oponent"
+msgid "Account"
+msgstr "Konto"
+
+msgid "change"
+msgstr "změna"
+
+msgid "There are no scholarships"
+msgstr "Nemáte žádné stipendia"
 
