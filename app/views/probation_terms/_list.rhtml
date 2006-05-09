@@ -5,7 +5,7 @@
   has_enrolled_subjects = []
   if (@user.person.is_a?(Student))
     @probation_terms.each{|prob| has_enrolled_subjects << prob.subject if
-      ((!prob.students.empty?) && (prob.students.include?(@user.person)))}
+      ((!prob.students.empty?) && (prob.students.include?(@user.person)) && prob.date > Date.today)}
   end
 %>
 <% for probation_term in @probation_terms  %>
