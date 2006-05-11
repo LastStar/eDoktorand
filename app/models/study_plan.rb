@@ -2,7 +2,7 @@ require 'approvable'
 class StudyPlan < ActiveRecord::Base
   include Approvable
   belongs_to :index
-  has_many :plan_subjects
+  has_many :plan_subjects, :order => 'finishing_on'
   has_one :approvement, :class_name => 'StudyPlanApprovement',
     :foreign_key => 'document_id'
   has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'

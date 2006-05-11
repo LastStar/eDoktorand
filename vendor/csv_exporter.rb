@@ -1,16 +1,18 @@
 class CSVExporter
-  def self.export_stipendia(file = 'stipendia.csv', faculty = nil)
+  def self.export_stipendia(user, file = 'stipendia.csv')
     outfile = File.open(file, 'wb')
-    students = Student.find(:all, :conditions => 'scholarship_claim_date is not null')
-    students.delete_if {|s| s.faculty.id != faculty} if faculty 
+    @indices = Index.find_studying_for(user, 
+                                       :order => 'studies.id, people.lastname')
     CSV::Writer.generate(outfile, ';') do |csv|
-      students.each do |s|
+      @indices.each do |index|
         row = []
-        row << s.uic
-        row << s.scholarship_claim_date.strftime('%d.%m.%Y')
-        row << s.scholarship_supervised_date.strftime('%d.%m.%Y')
-        row << s.index.account_bank_number
-        row << s.index.full_account_number
+        row << index.student.display_name
+        row << index.account_bank_number
+        row << index.full_account_number
+        row << index.current_regular_scholarship.amount
+        if index.current_extra_scholarship 
+          row << index.current_extra_scholarship_sum 
+        end
         csv << row
       end
     end
