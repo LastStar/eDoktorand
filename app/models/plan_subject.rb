@@ -7,6 +7,10 @@ class PlanSubject < ActiveRecord::Base
     return true unless self.finished_on.nil?
   end
 
+  def finish!
+    update_attribute('finished_on', Time.now) unless finished?
+  end
+
   # returns all unfinished plan subjects with external subjects 
   # got one option :study_plan to find only for study plan
   def self.find_unfinished_external(options = {})

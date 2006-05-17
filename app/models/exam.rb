@@ -5,9 +5,14 @@ class Exam < ActiveRecord::Base
   belongs_to :created_by, :class_name => "Person", :foreign_key => "created_by_id"
   belongs_to :first_examinator, :class_name => "Person", :foreign_key => "first_examinator_id"
   belongs_to :second_examinator, :class_name => "Person", :foreign_key => "second_examinator_id"
+
   validates_presence_of :index
   validates_presence_of :subject
+
+  after_create :finish_plan_subject
+
   attr_accessor :plan_subject
+
   # returns true if result is pass
   def passed?
    return true if result == 1
@@ -31,5 +36,10 @@ class Exam < ActiveRecord::Base
       exams.delete_if {|e| e.plan_subject.finished_on < TermsCalculator.this_year_start}
     end
     exams
+  end
+
+  private
+  def finish_plan_subject
+    PlanSubject.find_for_exam(self).finish!
   end
 end

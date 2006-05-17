@@ -2,6 +2,7 @@
 <% if index.current_extra_scholarship %>
   <%= detail_link(index) %>
   <%= index.current_extra_scholarship_sum %> <%= _('Kc') %>
+<% @summary_extra += index.current_extra_scholarship_sum %>
 <% else %>
   <%= add_link(index) %>&nbsp;
 <% end %>

@@ -447,6 +447,7 @@ include Log4r
       p.save
     end
   end
+
   # loads exams
   def self.load_exams(file)
     @@mylog.info "Loading exams..."
@@ -466,6 +467,33 @@ include Log4r
       end
     end
   end
+
+  # loads exams
+  def self.load_exams_kj(file)
+    @@mylog.info "Loading exams..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      @@mylog.debug row
+      if Student.exists?(row[0]) && Subject.exists?(row[2])
+        st = Student.find(row[0])
+        if st.index && st.index.study_plan
+          sub = Subject.find(row[2])
+          e = Exam.new
+          e.subject = sub
+          e.result = 1 
+          e.index = st.index
+          e.created_on = Time.now
+          e.first_examinator = Examinator.find(row[3])
+          ps = PlanSubject.find_for_exam(e)
+          e.save
+        else
+          @@mylog.warning "Student #{st.display_name}[#{row[0]}] doesn't have index or study plan"
+        end
+      else
+        @@mylog.warning "Student #{row[4]} or subject #{row[1]} not found"
+      end
+    end
+  end
+
   # loads exams
   def self.load_exams_faapz(file)
     @@mylog.info "Loading exams..."
@@ -496,6 +524,7 @@ include Log4r
       end
     end
   end
+
   def self.load_study_starts(file)
     @@mylog.info "Loading study starts..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|

@@ -1,2 +1,3 @@
   <%= change_link(index) %>
-  <%= index.current_regular_scholarship.amount %> <%= _("Kc") %>
+  <%= index.current_regular_scholarship.amount.to_f %> <%= _("Kc") %>
+  <% @summary_regular += index.current_regular_scholarship.amount.to_f %>
