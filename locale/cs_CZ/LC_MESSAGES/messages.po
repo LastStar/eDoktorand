@@ -1581,10 +1581,10 @@ msgid "Invitation to admition tests to postgradual study"
 msgstr "pozvánka k přijímací zkoušce do DSP na ČZU v Praze"
 
 msgid "Dear  Mr./Mrs."
-msgstr "Vážený pan/paní"
+msgstr "Vážená paní, vážený pane"
 
 msgid "Dear Mr."
-msgstr "Vážený pan"
+msgstr "Vážený pane"
 
 msgid "Dear Mrs."
 msgstr "Vážená paní"
