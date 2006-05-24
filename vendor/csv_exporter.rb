@@ -1,4 +1,10 @@
 class CSVExporter
+  include Log4r
+
+  @@mylog = Logger.new 'exporter'
+  @@mylog.outputters = Outputter.stdout
+  @@mylog.level = 1
+
   def self.export_stipendia(user, file = 'stipendia.csv')
     outfile = File.open(file, 'wb')
     @indices = Index.find_studying_for(user, 
@@ -39,6 +45,25 @@ class CSVExporter
           csv << row
         end
       end
+      outfile.close
     end
+  end
+
+  def self.export_students_without_user
+    file = "no_user.csv"
+    outfile = File.open(file, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      ss = Student.find(:all).delete_if {|s| s.user}
+      @@mylog.info "There are #{ss.size} students without user"
+      ss.each do |student|
+        row = []
+        row << student.id
+        row << student.uic
+        row << student.display_name
+        @@mylog.debug "Adding #{row}"
+        csv << row
+      end
+    end
+    outfile.close
   end
 end

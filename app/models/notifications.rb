@@ -58,8 +58,8 @@ class Notifications < ActionMailer::Base
   end
   @body['coridor'] = study_plan.index.coridor.name
   @body['sent_on'] = sent_at
-  @recipients = studyplan.index.tutor.email
-  @from = 'pepe@gravastar.cz'
+  @recipients = study_plan.index.tutor.email
+  @from = study_plan.index.faculty.secretary.email.name
   @sent_on = sent_at
   end
 end

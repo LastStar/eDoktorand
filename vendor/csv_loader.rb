@@ -4,7 +4,7 @@ require 'log4r'
 
 # class for loading objects to database from csv
 class CSVLoader
-include Log4r
+  include Log4r
 
   # create a logger named 'mylog' that logs to stdout
   @@mylog = Logger.new 'Importer'
@@ -537,6 +537,7 @@ include Log4r
       end
     end
   end
+
   # loads logins and study
   def self.load_logins(file)
     @@mylog.info "Loading logins..."
@@ -710,6 +711,18 @@ include Log4r
         @@mylog.debug "creating #{row[1]}"
         Title.create(:label => row[1], :prefix => 1)
       end
+    end
+  end
+
+  def self.load_no_user(file)
+    @@mylog.info "Loading user fix..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      @@mylog.info "Processing user #{row[3]}"
+      u = User.new
+      u.login = u.password = u.password_confirmation = row[3]
+      u.roles << Role.find(3)
+      u.person = Student.find(row[0])
+      u.save
     end
   end
 end

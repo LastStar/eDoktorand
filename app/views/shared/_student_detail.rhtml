@@ -1,19 +1,11 @@
 <div id='student_detail'>
 <h5><%= _("Personal and study details") %></h5>
+<%= detail_links(@user, index) %>
 <%= render_partial 'shared/personal_detail', :student => index.student %>
 <% if index.student.address %>
 <h5><%= _("Contact details") %></h5>
 <%= render_partial 'shared/address_detail', :student => index.student %>
 <% end %>
 <%= render_partial 'shared/study_detail', :index => index %>
-<div class='links'>
-<% if @user.non_student? %>
-<%= link_to_function(_("back"), "Element.show('people_list', 'search');
-Element.remove('student_detail')", :id => 'back_link') %>
-<%= link_to_function(_("back and remove from list"), \
-"Element.remove('index_line_#{index.id}'); \
-Element.remove('student_detail'); \
-Element.show('people_list', 'search');", :id => 'back_remove_link') %>
-<% end %>
-</div> <!-- end links -->
+<%= detail_links(@user, index) %>
 </div>

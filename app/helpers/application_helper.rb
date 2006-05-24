@@ -259,10 +259,31 @@ module ApplicationHelper
   def birth_date_line(student)
     if student.birth_on
       content_tag('li',
-        "#{long_info_helper(student.birth_on.strftime('%d.%m.%Y'))}#{_('Birth date')}:")
+        %{
+          #{long_info_helper(student.birth_on.strftime('%d.%m.%Y'))}
+          #{_('Birth date')}:
+        })
     end
-
   end
+
+  def email_line(student)
+    if student.phone
+      content_tag('li', "#{long_info_helper(student.email.name)} #{_('Email')}")
+    end
+  end
+
+  def phone_line(student)
+    if student.phone
+      content_tag('li', "#{long_info_helper(student.phone.name)} #{_('Phone')}")
+    end
+  end
+
+  def citizenship_line(student)
+    if student.citizenship
+      content_tag('li', "#{long_info_helper(student.citizenship.name)} #{_('Citizenship')}")
+    end
+  end
+
   # prints print link
   def print_link(text = _('print'))
     link_to_function(text, 'window.print()')

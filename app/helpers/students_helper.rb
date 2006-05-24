@@ -252,4 +252,26 @@ module StudentsHelper
   links << link_to(_('export_xls'), {:action => 'list_xls'})
   end
   
+  def detail_links(user, index)
+    if user.non_student?
+      content = []
+      content << link_to_function(_("back"), back_to_list, :id => 'back_link')
+      content << link_to_function(_("back and remove from list"), 
+                                  back_and_remove_from_list(index),
+                                  :id => 'back_remove_link')
+      div_tag(content.join(' '), :class => 'links')
+    end
+  end
+
+  def back_to_list
+    "Element.show('people_list', 'search'); Element.remove('student_detail')"
+  end
+
+  def back_and_remove_from_list(index)
+    %{
+      Element.remove('index_line_#{index.id}');
+      Element.remove('student_detail');
+      Element.show('people_list', 'search');
+    }
+  end
 end

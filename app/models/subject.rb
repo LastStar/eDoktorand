@@ -3,14 +3,15 @@ class Subject < ActiveRecord::Base
   has_many :plan_subjects
   has_many :exams
   has_many :probation_terms
-  has_many :future_probation_terms, :class_name => "ProbationTerm", :conditions => ["date > ?", Date.today]
+  has_many :future_probation_terms, :class_name => "ProbationTerm",
+           :conditions => ["date > ?", Date.today]
   has_and_belongs_to_many :departments
 
   validates_presence_of :label
 
   # returns all subjects for user
   def self.find_for(user)
-    if user.has_one_of_roles?(['leader', 'department_secretary'])
+    if user.has_one_of_roles?(['tutor', 'leader', 'department_secretary'])
       user.person.department.subjects
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary']) 
       user.person.faculty.departments.map {|dep| dep.subjects}.flatten

@@ -5,12 +5,8 @@
 <%= birth_date_line(student) %>
 <%= birth_number_line(student) %>
 <%= birth_place_line(student) %>
-<li>
-<%= "#{student.email ? long_info_helper(student.email.name):''}#{_('Email')}: " %>
-</li>
-<li>
-<%= "#{student.phone ? long_info_helper(student.phone.name):''}#{_('Phone')}: " %>
-</li>
+<%= email_line(student) %>
+<%= phone_line(student) %>
 <li>
 <%= "#{long_info_helper(student.index.coridor.name)}#{_('Corridor')}: " %>
 </li>
@@ -26,9 +22,5 @@
 <li>
 <%= "#{long_info_helper(student.index.enrolled_on.strftime('%d. %m. %Y'))}#{_('Enrolled on')}: " %> 
 </li>
-<% if student.citizenship %>
-<li>
-<%= "#{long_info_helper(student.citizenship)}#{_('Citizenship rights')}: " %> 
-</li>
-<% end %>
+<%= citizenship_line(student) %>
 </ul>
