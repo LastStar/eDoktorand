@@ -363,6 +363,17 @@ module ApplicationHelper
     end
   end
   
+  def detail_links(user, index)
+    if user.non_student?
+      content = []
+      content << link_to_function(_("back"), back_to_list, :id => 'back_link')
+      content << link_to_function(_("back and remove from list"), 
+                                  back_and_remove_from_list(index),
+                                  :id => 'back_remove_link')
+      div_tag(content.join(' '), :class => 'links')
+    end
+  end
+  
   # prints small info div 
   # TODO redone with div on end
   def long_info_helper(content)
