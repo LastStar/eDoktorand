@@ -1,3 +1,4 @@
+require 'log4r'
 class CSVExporter
   include Log4r
 

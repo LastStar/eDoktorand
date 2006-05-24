@@ -280,7 +280,7 @@ module ApplicationHelper
 
   def citizenship_line(student)
     if student.citizenship
-      content_tag('li', "#{long_info_helper(student.citizenship.name)} #{_('Citizenship')}")
+      content_tag('li', "#{long_info_helper(student.citizenship)} #{_('Citizenship')}")
     end
   end
 
