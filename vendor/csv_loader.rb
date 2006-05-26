@@ -719,7 +719,13 @@ class CSVLoader
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       @@mylog.info "Processing user #{row[3]}"
       u = User.new
-      u.login = u.password = u.password_confirmation = row[3]
+      u.login = row[3]
+      pass = row[3]
+      if row[3].size < 5
+        pass << 'ik'
+        @@mylog.debug "Users pass #{row[3]} is too short. Using #{pass}."
+      end
+      u.password = u.password_confirmation = pass
       u.roles << Role.find(3)
       u.person = Student.find(row[0])
       u.save
