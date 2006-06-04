@@ -731,4 +731,22 @@ class CSVLoader
       u.save
     end
   end
+
+  def self.load_no_user_tutors(file)
+    @@mylog.info "Loading user fix..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      @@mylog.info "Processing user #{row[3]}"
+      u = User.new
+      u.login = row[3]
+      pass = row[3]
+      if row[3].size < 5
+        pass << 'ik'
+        @@mylog.debug "Users pass #{row[3]} is too short. Using #{pass}."
+      end
+      u.password = u.password_confirmation = pass
+      u.roles << Role.find(4)
+      u.person = Tutor.find(row[0])
+      u.save
+    end
+  end
 end
