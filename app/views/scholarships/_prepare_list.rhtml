@@ -8,19 +8,11 @@
 
 <%= _("Full name") %>
 </li>
-<% @summary_regular = @summary_extra = 0 %>
 <% for index in @indices %>
 <li class='tiny' id='index_<%= index.id %>'>
 <%= render(:partial => 'index_line', :locals => {:index => index}) %>
 </li>
 <% end %>
 <li class='tiny' id='index_<%= index.id %>'>
-</li>
-<li class='tiny'>
-  <div class="smallinfo"><%= @summary_extra %><%= _("Kc") %></div> 
-  <div class="smallinfo"><%= @summary_regular %><%= _("Kc") %></div> 
-  <div class="smallinfo">&nbsp;</div> 
-  <div class="smallinfo">&nbsp;</div> 
-  <%= _("SUMMARY")%> 
 </li>
 </ul>
