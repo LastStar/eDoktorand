@@ -1,7 +1,7 @@
 <% @statement = statement %>
-<div id='approve_form<%= document.id %>'>
+<div id='approve_form_<%= document.id %>'>
 <%= form_remote_with_loading(:url => {:controller => document.class.to_s.underscore.pluralize, :action => action, :id => document},
-  :evaluate => true, :html => {:id => "approve_form#{document.id}"}) %>	
+  :evaluate => true) %>	
 <fieldset>
   <legend><%= title %></legend>
   <label for="statement_note"><%= _("note") %>:</label>

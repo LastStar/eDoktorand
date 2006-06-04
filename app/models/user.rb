@@ -4,7 +4,9 @@ require 'ldap'
 # this model expects a certain database layout and its based on the name/login pattern. 
 class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
+
   belongs_to :person
+
   validates_length_of :login, :within => 3..40
   validates_length_of :password, :within => 5..40
   validates_presence_of :login, :password, :password_confirmation

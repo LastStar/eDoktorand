@@ -23,4 +23,8 @@ class Department < ActiveRecord::Base
       result
     end
   end
+
+  def leader
+    leadership.leader
+  end
 end

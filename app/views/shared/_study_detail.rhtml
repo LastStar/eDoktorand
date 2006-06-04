@@ -25,7 +25,7 @@
   </li>
   <% elsif index.admited_interupt? %>
 <h5><%= _('This student admited interupt') %></h5>
-<ul>
+<ul id='admited_interrupt'>
   <li>
   <div class='info'><%= index.interupt.start_on.strftime('%m/%Y') %></div>
   <%= _('start') %>
@@ -36,7 +36,7 @@
   </li>
   <% else %>
 <h5><%= _('This study last interupt') %></h5>
-<ul>
+<ul id='last_interrupt'>
   <li>
   <div class='info'><%= interupt.start_on.strftime('%d. %m. %Y') %></div>
   <%= _('interupted on') %>
@@ -66,7 +66,7 @@
 <% if study_plan ||= index.study_plan %>
 <% if study_plan.atestation  %>
 <h5><%= _("last atestation:") %></h5>
-<ul id='atestation'>
+<ul id='approvement'>
   <%= print_statements(study_plan.atestation) %>
   <%= atestation_detail(study_plan) %>
 </ul>

@@ -192,9 +192,9 @@ class StudyPlansController < ApplicationController
   
   # confirms and saves statement
   def confirm_approve
-    study_plan = StudyPlan.find(@params['id'])
-    study_plan.approve_with(@params['statement'])
-    render(:partial => 'after_confirm', :locals => {:study_plan => study_plan})
+    @document = StudyPlan.find(@params['id'])
+    @document.approve_with(@params['statement'])
+    render(:partial => 'shared/confirm_approve')
   end
   
   # atests study plan 

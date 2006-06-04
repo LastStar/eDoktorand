@@ -94,10 +94,9 @@ class StudentsController < ApplicationController
   end
 
   def confirm_approve
-    index = Index.find(params[:id])
-    index.approve_with(params[:statement])
-    render(:inline => "Element.hide('approve_form#{index.id}'); \
-      Element.remove('index_line_#{index.id}')")
+    @document = Index.find(params[:id])
+    @document.approve_with(params[:statement])
+    render(:partial => 'shared/confirm_approve')
   end
   private
   

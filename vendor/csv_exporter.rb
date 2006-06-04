@@ -67,4 +67,22 @@ class CSVExporter
     end
     outfile.close
   end
+
+  def self.export_tutors_without_user
+    file = "no_user.csv"
+    outfile = File.open(file, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      ss = Tutor.find(:all).delete_if {|s| s.user}
+      @@mylog.info "There are #{ss.size} tutors without user"
+      ss.each do |tutor|
+        row = []
+        row << tutor.id
+        row << tutor.uic
+        row << tutor.display_name
+        @@mylog.debug "Adding #{row}"
+        csv << row
+      end
+    end
+    outfile.close
+  end
 end

@@ -36,12 +36,12 @@ class Index < ActiveRecord::Base
 
   # returns leader of department for this student
   def leader
-    department.leadership.leader if department.leadership
+    department.leader
   end
 
   # returns dean of department for this student
   def dean
-    department.faculty.deanship.dean
+    department.faculty.dean
   end
 
   # returns if study plan is finished
@@ -232,7 +232,9 @@ class Index < ActiveRecord::Base
       when '1'
         indices.reject! {|i| i.study_plan && i.study_plan.admited?}
       when '2'
-        indices.reject! {|i| !i.study_plan || !i.study_plan.admited? || i.study_plan.approvement.tutor_statement}
+        indices.reject! {|i| !i.study_plan || !i.study_plan.admited? || 
+                            i.study_plan.approvement ||
+                            i.study_plan.approvement.tutor_statement}
       when '3'
         indices.reject! {|i| i.study_plan_approved_by != 'tutor'}
       when '4'
