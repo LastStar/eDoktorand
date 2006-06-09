@@ -19,7 +19,7 @@
 <div class='centerAlign'>
 <h3>pozvánku k přijímací zkoušce do DSP pro akademický rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>,</h3>
 
-<h3>které proběhne</h3>
+<h3>která proběhne</h3>
 
 <h3>dne <%= @candidate.coridor.exam_term.date.strftime("%d. %m. %Y") %></h3>
 </div>
@@ -34,11 +34,11 @@
 
 <p>K přijímací zkoušce si přineste:
 <ul>
-  <li class='letter'>průkaz totožnosti,</>
+  <li class='letter'>průkaz totožnosti</>
   <% if @candidate.study_id == 1 %>
-  <li class='letter'>doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr  potvrzený fakultou.</li>
+  <li class='letter'>doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr  potvrzený fakultou</li>
   <% end %>
-  <li class='letter'>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou,</li>
+  <li class='letter'>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou</li>
 </ul>
 </p>
 <br/>

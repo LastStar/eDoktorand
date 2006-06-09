@@ -222,8 +222,8 @@ class Candidate < ActiveRecord::Base
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
        conditions.first << " AND coridor_id = #{options['coridor']}"
-     end
-     return conditions
+    end
+    return conditions
   end
 
   # returns all candidates by filter
@@ -239,6 +239,7 @@ class Candidate < ActiveRecord::Base
   end
 
   # delete candidate, fill finished_on to nil
+  # TODO Fix this with acts_as_paranoid
   def delete_candidate
     self.finished_on = nil
     self.save
@@ -257,4 +258,5 @@ class Candidate < ActiveRecord::Base
     when nil: ''
     end
   end
+
 end

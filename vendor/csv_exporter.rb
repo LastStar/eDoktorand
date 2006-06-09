@@ -85,4 +85,23 @@ class CSVExporter
     end
     outfile.close
   end
+
+  def self.export_candidates_for_kj
+    file = "candidate_languages.csv"
+    outfile = File.open(file, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      cs = Candidate.find(:all, :conditions => ['invited_on is not null and department_id in (?)', Faculty.find(4).departments_ids])
+      @@mylog.info "There are #{cs.size} candidates"
+      cs.each do |candidate|
+        row = []
+        row << candidate.display_name
+        row << candidate.language1.label
+        row << candidate.language2.label
+        @@mylog.debug "Adding #{row}"
+        csv << row
+      end
+    end
+    outfile.close
+
+  end
 end
