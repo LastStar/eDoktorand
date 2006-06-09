@@ -43,17 +43,16 @@
 </p>
 <br/>
 <p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
-<p class='rightAlignLefter'><%= @faculty.dean.display_name %><br/>
-<%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</p>
+<div style='float: right'><%= @faculty.dean.display_name %><br/>
+<%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</div>
 
-<br/>
-<p class='rightAlignLefter'>
+<div>
 Vyřizuje:<br/>
 <%= @faculty.secretary.display_name %>,<br/>
 oddělení VaV <%= @faculty.short_name %> ČZU v Praze<br/>
 tel: <%= @faculty.secretary.phone.name %><br/>
 e-mail: <%= @faculty.secretary.email.name %>
-</p>
+</div>
 
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
