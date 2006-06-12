@@ -3,28 +3,33 @@ Vážený/á pan/í
 <%= @display_name %>
 <%= @address %>
 
-Vážený pane inženýre/paní inženýrko,
+Vážený pane/paní,
 
-na základě úspěšně vykonané přijímací zkoušky, jste byl/a s účinností od 
-1. října 2005 přijat/a ve smyslu § 47, zákona č. 111/98 Sb., o vysokých školách,
-do <%= @study %> formy doktorského studia na fakultě lesnické a environmentální 
-České zemědělské univerzity v Praze
+na základě úspěšně vykonané přijímací zkoušky, jste byl/a
+<% unless @conditional %> s účinností od 1. října <%=Time.now.strftime("%Y")%> přijat/a
+<% end %> ve&nbsp;smyslu § 47, zákona č. 111/98 Sb. o vysokých školách,
+<% if @conditional %>podmínečně přijat/a<% end %> 
+do <%= @candidate.study.name %> formy doktorského studia na&nbsp;<%= @faculty.short_name%> ČZU v Praze.
 
-studijní obor: <%= @coridor %>
+Vaším školitelem byl/a ustanoven/a <%= @candidate.tutor.display_name %>, 
+katedra <%= @candidate.department.name %> <%= @faculty.short_name%>.
+<% unless @conditional %>
+Zápis do studia se uskuteční dne <%=Parameter.get("enroll_invitation_time_and_place", @faculty)%>.
+<% else %>
+Do studia budete zapsán po předložení dokladů o ukončení magisterského stupně vzdělání.
+<% end %>
+<% if @candidate.study_id == 1 %>
+Zároveň Vám přiznávám stipendium ve výši 
+<%= Parameter.get("start_stipendia", @faculty) %>,- Kč měsíčně, které Vám bude 
+vypláceno <% if @conditional %>ode dne nástupu do studia,<% else %>od&nbsp;1.&nbsp;října <%=Time.now.strftime("%Y")%>,<% end %>
+vždy zpětně 15. následujícího měsíce na Váš peněžní účet.
+<% end %>
+Upozorňuji Vás, že je Vaší povinností do 1 měsíce od nástupu 
+do studia vypracovat a předložit studijní plán a do 3 měsíců od nástupu metodiku disertační práce.
 
-Vaším školitelem byl/a ustanoven/a <%= @tutor %>, katedra <%= @department %> FLE.
+Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana <%= @faculty.short_name%>
+ČZU v Praze do 30&nbsp;dnů ode dne doručení.
+V Praze dne <%= Time.now.strftime("%d. %m. %Y") %>
+<%= @faculty.dean.display_name %>
+děkan <%= @faculty.short_name %> ČZU</p>
 
-Zápis do studia se uskuteční dne 21. 9. 2005 od 9:00 v zasedací místnosti FLE. 
-Zároveň Vám přiznávám stipendium ve výši 4 600,- Kč měsíčně, které Vám bude 
-vypláceno s účinností od 1. října 2005, vždy zpětně 15. následujícího měsíce na 
-Váš peněžní účet. Upozorňuji Vás, že je Vaší povinností do 1 měsíce od nástupu 
-do studia vypracovat a předložit studijní plán a do 3 měsíců od nástupu pak 
-metodiku disertační práce.
-
-Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana fakulty lesnické
-a environmentální ČZU v Praze do 30 dnů ode dne doručení.
-
-
-
-Prof. Ing. Vilém Podrázský, CSc.
-děkan FLE

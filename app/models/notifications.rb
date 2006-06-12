@@ -10,25 +10,23 @@ class Notifications < ActionMailer::Base
     @body['study_id'] = candidate.study_id
     @body['salutation'] = candidate.genderize(_("Dear  Mr./Mrs."),_("Dear Mr."),_("Dear Mrs."))
     @recipients = candidate.email
-    @bcc        = faculty.secretary.email.name
+    @cc        = faculty.secretary.email.name
     @from       = faculty.secretary.email.name
     @sent_on    = sent_at
   end
+  
   #sends admit mail to candidate
   def admit_candidate(candidate, sent_at = Time.now)
     @subject = _("Notification about admition procedure to postgradula study")
-    @body['study'] = candidate.study.name
-    @body['display_name'] = candidate.display_name
-    @body['address'] = candidate.address
-    @body['coridor'] = candidate.coridor.name
-    @body['exam_term'] = candidate.coridor.exam_term
-    @body['tutor'] = candidate.tutor.display_name
-    @body['department'] = candidate.department.name
+    @candidate = candidate
+    @faculty = candidate.department.faculty
     @body['sent_on'] = sent_at
     @recipients = candidate.email
-    @from = 'pepe@gravastar.cz'
+    @cc        = faculty.secretary.email.name
+    @from       = faculty.secretary.email.name
     @sent_on = sent_at
   end
+  
   #sends reject mail to candidate
   def reject_candidate(candidate, sent_at = Time.now)
     @subject = _("Notification about admition procedure to postgradula study")

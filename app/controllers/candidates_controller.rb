@@ -99,7 +99,7 @@ class CandidatesController < ApplicationController
    @candidate = Candidate.find(@params['id'])
   end
 
-	# confirms admittance of candidate and sends email
+  # confirms admittance of candidate and sends email
   def confirm_admit
     if(@params['admit_id'] == '0')
       redirect_to(:action => 'reject', :id => @params['id'])
@@ -110,15 +110,15 @@ class CandidatesController < ApplicationController
     end
   end
 
-	# action for remote link that invite candidate
+  # action for remote link that invite candidate
   def admit_now
-		@candidate = Candidate.find(@params['id'])
-		Notifications::deliver_admit_candidate(@candidate)
-		@candidate.admit!
-		render_text _('e-mail sent')
+    @candidate = Candidate.find(@params['id'])
+    Notifications::deliver_admit_candidate(@candidate)
+    @candidate.admit!
+    render_text _('e-mail sent')
   end
 
-   # finishes admittance
+  # finishes admittance
   def admittance
    @candidate = Candidate.find(@params['id'])
   end

@@ -30,7 +30,8 @@ katedra <%= @candidate.department.name %> <%= @faculty.short_name%>.</p>
 <p>Do studia budete zapsán po předložení dokladů o ukončení magisterského stupně vzdělání.</p>
 <% end %>
 <% if @candidate.study_id == 1 %>
-<p>Zároveň Vám přiznávám stipendium ve výši 4 600,- Kč měsíčně, které Vám bude 
+<p>Zároveň Vám přiznávám stipendium ve výši 
+<%= Parameter.get("start_stipendia", @faculty) %>,- Kč měsíčně, které Vám bude 
 vypláceno <% if @conditional %>ode dne nástupu do studia,<% else %>od&nbsp;1.&nbsp;října 2005,<% end %>
 vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <% end %>
