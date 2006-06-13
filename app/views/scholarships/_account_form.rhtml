@@ -1,0 +1,10 @@
+<%= form_remote_tag(:url => {:action => 'save_account', :id => @index}, :complete => evaluate_remote_response) %>	
+      <%= text_field 'index', 'account_number_prefix', 'size' => 5, 'maxlength' => 5 %>
+      &nbsp;-&nbsp;
+      <%= text_field 'index', 'account_number', 'size' => 10, 'maxlength' => 10 %>
+      &nbsp;/&nbsp;
+      <%= text_field 'index', 'account_bank_number', 'size' => 4, 'maxlength' => 4 %>
+        <%= hidden_field 'index', 'id' %>
+        <%= submit_tag _("commit") %>
+<%= end_form_tag %>
+

@@ -1,0 +1,1 @@
+page.replace_html "email", render(:partial => 'edit_email')

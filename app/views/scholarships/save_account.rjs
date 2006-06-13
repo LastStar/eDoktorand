@@ -1,0 +1,1 @@
+page.replace_html "account", render(:partial => 'account_view', :locals => {:index => @index})

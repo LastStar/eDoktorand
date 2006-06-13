@@ -22,15 +22,48 @@ class ScholarshipsController < ApplicationController
   # form for changing account number
   def account_change
     @index = Index.find(@params['id'])
-    render_partial('account_change')
+  end
+
+  def edit_phone
+    @index = Index.find(@params['id'])
+    @phone = @student.phone || Contact.create(:contact_type_id => 2)
+  end
+
+  def edit_email
+    @index = Index.find(@params['id'])
+    @email = @student.email || Contact.create(:contact_type_id => 1)
+  end
+
+  def edit_citizenship
+    @index = Index.find(@params['id'])
+  end
+
+  def save_email
+    @index = Index.find(@params['index']['id'])
+    @email = @index.student.email
+    @email.update_attributes(@params['email'])
+    
+    
+  end
+  
+  def save_phone
+    @index = Index.find(@params['index']['id'])
+    @phone = @index.student.phone
+    @phone.update_attributes(@params['phone'])
+
+  end
+  
+  def save_citizenship
+    @index = Index.find(@params['index']['id'])
+    @student = @index.student
+    @student.update_attributes(@params['student'])
+
   end
 
   # this method saves the account to dbase
   def save_account
-    index = Index.find(@params['index']['id'])
-    index.update_attributes(@params['index'])
-    list
-    render :action => 'list'
+    @index = Index.find(@params['index']['id'])
+    @index.update_attributes(@params['index'])
   end
 
   # scholarship list preparation

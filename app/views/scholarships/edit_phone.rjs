@@ -1,0 +1,1 @@
+page.replace_html "phone", render(:partial => 'edit_phone')

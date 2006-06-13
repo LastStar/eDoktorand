@@ -1613,3 +1613,8 @@ msgstr "změna"
 msgid "There are no scholarships"
 msgstr "Nemáte žádné stipendia"
 
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "citizenship"
+msgstr "Občanství"

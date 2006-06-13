@@ -1,0 +1,6 @@
+<%= form_remote_tag(:url => {:action => 'save_phone', :id => @index}, :complete => evaluate_remote_response) %>
+    <%= text_field 'phone', 'name', 'size' => '30' %>  
+    <%= hidden_field 'index', 'id' %>
+    <%= hidden_field 'phone', 'contact_type_id' %>
+    <%= submit_tag _("commit") %>
+<%= end_form_tag %>

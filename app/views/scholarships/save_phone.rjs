@@ -1,0 +1,1 @@
+page.replace_html "phone", render(:partial => 'phone_view', :locals => {:index => @index})

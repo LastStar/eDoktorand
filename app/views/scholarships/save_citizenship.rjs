@@ -1,0 +1,2 @@
+page.replace_html "citizenship", render(:partial => 'citizenship_view', :locals => {:index => @index})
+

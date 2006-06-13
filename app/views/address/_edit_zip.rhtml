@@ -1,0 +1,5 @@
+<%= form_remote_tag(:url => {:action => 'save_zip', :id => @index}, :complete => evaluate_remote_response) %>
+    <%= text_field 'address', 'zip', 'size' => '30' %>  
+    <%= hidden_field 'index', 'id' %>
+    <%= submit_tag _("commit") %>
+<%= end_form_tag %>

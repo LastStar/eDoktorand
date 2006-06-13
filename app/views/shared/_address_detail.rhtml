@@ -1,14 +1,18 @@
 <ul>
 <li>
-<%= "#{long_info_helper(student.address.street)}#{_('Street')}: " %>
+<%#= "#{long_info_helper(student.address.street)}#{_('Street')}: " %>
+<%=render(:partial => 'address/street_view', :locals => {:index => student.index})%><%=_ 'Street' %>:
 </li>
 <li>
-<%= "#{long_info_helper(student.address.desc_number)}#{_('Description number')}: " %>
+<%#= "#{long_info_helper(student.address.desc_number)}#{_('Description number')}: " %>
+<%=render(:partial => 'address/desc_number_view', :locals => {:index => student.index})%><%=_ 'street number' %>:
 </li>
 <li>
-<%= "#{long_info_helper(student.address.city)}#{_('City')}: " %>
+<%#= "#{long_info_helper(student.address.city)}#{_('City')}: " %>
+<%= render(:partial => 'address/city_view', :locals => {:index => student.index})%><%=_ 'City' %>:
 </li>
 <li>
-<%= "#{long_info_helper(student.address.zip)}#{_('Zip')}: " %> 
+<%#= "#{long_info_helper(student.address.zip)}#{_('Zip')}: " %> 
+<%=render(:partial => 'address/zip_view', :locals => {:index => student.index})%><%=_ 'zip' %>:
 </li>
 </ul>

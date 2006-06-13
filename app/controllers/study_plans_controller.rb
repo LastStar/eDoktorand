@@ -8,6 +8,10 @@ class StudyPlansController < ApplicationController
   def index
     @title = _("Study plan")
     @index = @student.index
+    @student.address ? @student.address : Address.create('address_type_id' => '1', 'student_id' => @student.id, 'city' => '&nbsp;', 'street' => '&nbsp;', 'desc_number' => '&nbsp;', 'zip' => '&nbsp;')
+    @student.email ? @student.email : Contact.create('contact_type_id' =>
+      '1', 'person_id' => @student.id, 'name' => '&nbsp;')
+    @student.phone ? @student.phone : Contact.create('contact_type_id' => '2', 'person_id' => @student.id, 'name' => '&nbsp;')
   end
   
   # start of the study plan creating process

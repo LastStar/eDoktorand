@@ -5,8 +5,9 @@
 <%= birth_date_line(student) %>
 <%= birth_number_line(student) %>
 <%= birth_place_line(student) %>
-<%= email_line(student) %>
-<%= phone_line(student) %>
+<li><%= email_line(student) %><%=_('Email')%>:</li>
+<li><%= phone_line(student) %><%=_('Phone')%>:</li>
+
 <li>
 <%= "#{long_info_helper(student.index.coridor.name)}#{_('Corridor')}: " %>
 </li>
@@ -22,5 +23,10 @@
 <li>
 <%= "#{long_info_helper(student.index.enrolled_on.strftime('%d. %m. %Y'))}#{_('Enrolled on')}: " %> 
 </li>
-<%= citizenship_line(student) %>
+<li>
+<%=render(:partial => 'scholarships/account_view', :locals => {:index => student.index})%><%=_ 'Account' %>:
+</li>
+
+<li><%= citizenship_line(student) %><%=_('citizenship')%>:</li>
 </ul>
+

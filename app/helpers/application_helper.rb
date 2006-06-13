@@ -226,7 +226,7 @@ module ApplicationHelper
       end 
       links << link_to_unless_current(_("study plan"), :controller => 'study_plans',
         :action => 'index'){} 
-      links << link_to_unless_current(_("contacts"), :controller => 'address', :action => 'edit'){}
+      #links << link_to_unless_current(_("contacts"), :controller => 'address', :action => 'edit'){}
       links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
         :action => 'list'){} 
     else 
@@ -267,21 +267,28 @@ module ApplicationHelper
   end
 
   def email_line(student)
-    if student.phone
-      content_tag('li', "#{long_info_helper(student.email.name)} #{_('Email')}")
+    if student.email
+#      content_tag('li', "#{long_info_helper(student.email.name)} #{_('Email')}")
+      render(:partial => 'scholarships/email_view', :locals => {:index => student.index})
     end
   end
 
   def phone_line(student)
     if student.phone
-      content_tag('li', "#{long_info_helper(student.phone.name)} #{_('Phone')}")
+#      content_tag('li', "#{long_info_helper(student.phone.name)} #{_('Phone')}")
+      render(:partial => 'scholarships/phone_view', :locals => {:index => student.index})
     end
   end
 
   def citizenship_line(student)
+    if !student.citizenship?
+      student.citizenship = '&nbsp;'
+      student.save
+    end  
     if student.citizenship
       content_tag('li', "#{long_info_helper(student.citizenship)} #{_('Citizenship')}")
     end
+   render(:partial => 'scholarships/citizenship_view', :locals => {:index => student.index})
   end
 
   # prints print link
@@ -377,8 +384,9 @@ module ApplicationHelper
   
   # prints small info div 
   # TODO redone with div on end
-  def long_info_helper(content)
-    content_tag('div', content, :class => 'long_info')
+  def long_info_helper(content, options={})
+     options[:class]='long_info'
+     content_tag('div', content, options)
   end
   
   # prints div tag
@@ -429,4 +437,104 @@ module ApplicationHelper
     link_to_unless_current(_("scholarship"), :controller => 'scholarships',
                           :action => 'prepare'){} 
   end
+
+  def account_link(index)
+    link_to_remote(image_tag('change.png'), 
+                   :update => "account_form_#{index.id}",
+                   :complete => evaluate_remote_response,
+       		   :url => {:controller => 'scholarships', :action => 'account_change', :id => index.id})
+  end
+
+  def contact_link(index)
+    link_to_remote(image_tag('change.png'), 
+                   :update => "contacts_form_#{index.id}",
+                   :complete => evaluate_remote_response,
+       		   :url => {:controller => 'address', :action => 'edit', :id => index.id})
+  end
+
+  def street_link(index)
+    link_to_remote(image_tag('change.png'), 
+                   :update => "address_street_field_form_#{index.id}",
+                   :complete => evaluate_remote_response,
+       		   :url => {:controller => 'address', :action => 'edit_street', :id => index.id } )
+  end
+
+  def desc_number_link(index)
+    link_to_remote(image_tag('change.png'), 
+                   :update => "address_desc_number_field_form_#{index.id}",
+                   :complete => evaluate_remote_response,
+       		   :url => {:controller => 'address', :action => 'edit_desc_number', :id => index.id})
+  end
+
+  def city_link(index)
+    link_to_remote(image_tag('change.png'), 
+                   :update => "address_city_field_form_#{index.id}",
+                   :complete => evaluate_remote_response,
+       		   :url => {:controller => 'address', :action => 'edit_city', :id => index.id})
+  end
+
+  def zip_link(index)
+    link_to_remote(image_tag('change.png'), 
+                   :update => "address_zip_field_form_#{index.id}",
+                   :complete => evaluate_remote_response,
+       		   :url => {:controller => 'address', :action => 'edit_zip', :id => index.id})
+  end
+
+  def email_link(index)
+    link_to_remote(image_tag('change.png'), 
+                   :update => "email_form_#{index.id}",
+                   :complete => evaluate_remote_response,
+       		   :url => {:controller => 'scholarships', :action => 'edit_email', :id => index.id})
+  end
+
+  def phone_link(index)
+    link_to_remote(image_tag('change.png'), 
+                   :update => "phone_form_#{index.id}",
+                   :complete => evaluate_remote_response,
+       		   :url => {:controller => 'scholarships', :action => 'edit_phone', :id => index.id})
+  end
+
+  def citizenship_link(index)
+    link_to_remote(image_tag('change.png'), 
+                   :update => "citizenship_form_#{index.id}",
+                   :complete => evaluate_remote_response,
+       		   :url => {:controller => 'scholarships', :action => 'edit_citizenship', :id => index.id})
+  end
+
+  def show_account_form(index)
+    "Element.show('account_form_#{index.id}')"
+  end
+  
+  def show_email_form(index)
+    "Element.show('email_form_#{index.id}')"
+  end
+  
+  def show_phone_form(index)
+    "Element.show('phone_form_#{index.id}')"
+  end
+  
+  def show_citizenship_form(index)
+    "Element.show('citizenship_form_#{index.id}')"
+  end
+  
+  def show_contacts_form(index)
+    "Element.show('contacts_form_#{index.id}')"
+  end
+
+  def show_address_street_field_form(index)
+    "Element.show('address_street_field_form_#{index.id}')"
+  end
+
+  def show_address_desc_number_field_form(index)
+    "Element.show('address_desc_number_field_form_#{index.id}')"
+  end
+
+  def show_address_city_field_form(index)
+    "Element.show('address_city_field_form_#{index.id}')"
+  end
+  
+  def show_address_zip_field_form(index)
+    "Element.show('address_zip_field_form_#{index.id}')"
+  end
+
 end
