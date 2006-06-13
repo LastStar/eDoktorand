@@ -1,6 +1,9 @@
 class ProbationTermsController < ApplicationController
   include LoginSystem
   layout "employers"
+
+  model :probation_term
+
   before_filter :set_title
   before_filter :login_required
   before_filter :prepare_student
@@ -108,32 +111,7 @@ class ProbationTermsController < ApplicationController
   def create
     @probation_term = ProbationTerm.new('created_by' => @user.person.id)
     @session['probation_term'] = @probation_term
-    if @user.has_role?(Role.find_by_name('admin'))
-      subjects  = Subject.find_all()
-    elsif (@user.person.is_a? Dean) ||
-      (@user.person.is_a? FacultySecretary)
-      faculty = @user.person.faculty 
-      subjects = faculty.departments.inject([]) {|subjs, dep|
-        subjs.concat(dep.subjects)}
-    elsif (@user.person.is_a? Leader) ||
-      (@user.person.is_a? DepartmentSecretary) ||
-      (@user.person.is_a? Tutor)
-      if(@user.person.is_a? Leader)
-        department = @user.person.leadership.department
-      elsif (@user.person.is_a? Tutor)
-        department = @user.person.tutorship.department
-      else
-        department = @user.person.department
-      end
-      subjects = department.subjects
-    end
-    subjects = subjects.select do |sub|
-      not_finished = sub.plan_subjects.select do |ps|
-        ps.study_plan.approved? && !ps.finished?  
-      end
-      not_finished.size > 0
-    end
-    @subjects = subjects
+    @subjects = Subject.find_for(@user, :not_finished)
   end
 
   # saves the subject of probation term to session and adds students 

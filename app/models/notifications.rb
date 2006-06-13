@@ -16,15 +16,15 @@ class Notifications < ActionMailer::Base
   end
   
   #sends admit mail to candidate
-  def admit_candidate(candidate, sent_at = Time.now)
+  def admit_candidate(candidate, conditional, sent_at = Time.now)
     @subject = _("Notification about admition procedure to postgradula study")
-    @candidate = candidate
-    @faculty = candidate.department.faculty
-    @body['sent_on'] = sent_at
+    @body[:candidate] = candidate
+    @body[:faculty] = faculty = candidate.department.faculty
+    @body[:sent_on] = sent_at
+    @body[:conditional] = conditional
     @recipients = candidate.email
     @cc        = faculty.secretary.email.name
     @from       = faculty.secretary.email.name
-    @sent_on = sent_at
   end
   
   #sends reject mail to candidate

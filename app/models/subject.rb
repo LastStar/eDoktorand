@@ -10,13 +10,22 @@ class Subject < ActiveRecord::Base
   validates_presence_of :label
 
   # returns all subjects for user
-  def self.find_for(user)
+  def self.find_for(user, option = nil)
     if user.has_one_of_roles?(['tutor', 'leader', 'department_secretary'])
-      user.person.department.subjects
+      subjects = user.person.department.subjects
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary']) 
-      user.person.faculty.departments.map {|dep| dep.subjects}.flatten
+      subjects = user.person.faculty.departments.map {|dep| dep.subjects}.flatten
     elsif user.has_role?('student')
-      user.person.index.study_plan.plan_subjects.map {|ps| ps.subject}
+      subjects = user.person.index.study_plan.plan_subjects.map {|ps| ps.subject}
+    end
+    if option && option == :not_finished
+      subjects.select do |sub|
+        sub.plan_subjects.detect do |ps|
+          ps.study_plan.approved? && !ps.finished?  
+        end
+      end
+    else
+      subjects
     end
   end
 

@@ -104,16 +104,16 @@ class CandidatesController < ApplicationController
     if(@params['admit_id'] == '0')
       redirect_to(:action => 'reject', :id => @params['id'])
     else
-      @conditional = true if @params['admit_id'] == '2'
+      session[:conditional] = @conditional = true if @params['admit_id'] == '2'
       @candidate = Candidate.find(@params['id'])
       @candidate.update_attributes(@params['candidate'])
     end
   end
 
-  # action for remote link that invite candidate
+  # action for remote link that admit candidate
   def admit_now
     @candidate = Candidate.find(@params['id'])
-    Notifications::deliver_admit_candidate(@candidate)
+    Notifications::deliver_admit_candidate(@candidate, session[:conditional])
     @candidate.admit!
     render_text _('e-mail sent')
   end
