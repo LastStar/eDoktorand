@@ -1,1 +1,1 @@
-page.replace_html "address_city_field", render(:partial => 'city_view', :locals => {:index => @index})
+page.replace_html "address_city_field", city_line(@index.student)

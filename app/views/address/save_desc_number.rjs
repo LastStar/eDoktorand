@@ -1,1 +1,1 @@
-page.replace_html "address_desc_number_field", render(:partial => 'desc_number_view', :locals => {:index => @index})
+page.replace_html "address_desc_number_field", desc_number_line(@index.student)

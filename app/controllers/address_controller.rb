@@ -9,7 +9,7 @@ class AddressController < ApplicationController
   def edit_street
     student = @user.person
     @index = Index.find(@params['id'])
-    @address = student.address ? student.address : Address.new('address_type_id' => '1', 'student_id' => student.id)
+    @address = student.address || Address.new('address_type_id' => '1', 'student_id' => student.id)
    # @action = 'save_street'
   end
 
@@ -45,7 +45,7 @@ class AddressController < ApplicationController
     #render :action => 'edit'
   end
   
-  # this method saves the contacts to dbase
+  # saves the contacts to dbase
   def save
     @student = Student.find(@params['address']['student_id'])
     #first the email
@@ -66,31 +66,35 @@ class AddressController < ApplicationController
     #redirect_to :controller => 'study_plans'
   end
 
-# this method saves the street of address to db 
+  # saves the street of address to db 
   def save_street
     @index = Index.find(@params['id'])
-    @address = @index.student.address
+    @address = @index.student.address || 
+      Address.create(:student_id => @index.student.id)
     @address.update_attributes(@params['address'])
   end
   
-# this method saves the city of address to db
+  # saves the city of address to db
   def save_city
     @index = Index.find(@params['id'])
-    @address = @index.student.address
+    @address = @index.student.address || 
+      Address.create(:student_id => @index.student.id)
     @address.update_attributes(@params['address'])
   end
   
-# this method saves the zip of address to db
+  # saves the zip of address to db
   def save_zip
     @index = Index.find(@params['id'])
-    @address = @index.student.address
+    @address = @index.student.address || 
+      Address.create(:student_id => @index.student.id)
     @address.update_attributes(@params['address'])
   end
 
-# this method saves the description number of address to db
+  # saves the description number of address to db
   def save_desc_number
     @index = Index.find(@params['id'])
-    @address = @index.student.address
+    @address = @index.student.address || 
+      Address.create(:student_id => @index.student.id)
     @address.update_attributes(@params['address'])
   end
 

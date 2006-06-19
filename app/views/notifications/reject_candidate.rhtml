@@ -7,11 +7,11 @@ po projednání Vaší přihlášky ke studiu v doktorském oboru <%= @coridor %
 na fakultě lesnické a environmentální ČZU v Praze Vám sděluji, že jste nebyl
 ke studiu přijat.
 
-Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana fakulty lesnické a environmentální
+Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana <%= @faculty.short_name%>
 ČZU v Praze do 30&nbsp;dnů ode dne doručení.
 
+V Praze dne <%= Time.now.strftime("%d. %m. %Y") %>
+<%= @faculty.dean.display_name %>
+děkan <%= @faculty.short_name %> ČZU</p>
 
-
-Prof. Ing. Vilém Podrázský, CSc.
-děkan FLE
 

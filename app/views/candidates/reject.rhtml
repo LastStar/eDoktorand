@@ -21,12 +21,10 @@ ke studiu přijat.</p>
 
 <p>Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana fakulty lesnické a environmentální
 ČZU v Praze do 30&nbsp;dnů ode dne doručení.</p>
-
-<p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
-<br/> 
 <br/>
-<p class='rightAlignLefter'>Prof. Ing. Vilém Podrázský, CSc.<br/>
-	 </p>
+<p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
+<p class='rightAlignLefter'><%= @faculty.dean.display_name %><br/>
+děkan <%= @faculty.short_name %> ČZU</p>
 
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
