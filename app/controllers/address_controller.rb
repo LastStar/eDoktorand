@@ -70,7 +70,7 @@ class AddressController < ApplicationController
   def save_street
     @index = Index.find(@params['id'])
     @address = @index.student.address || 
-      Address.create(:student_id => @index.student.id)
+      Address.create_habitat_for(@index.student)
     @address.update_attributes(@params['address'])
   end
   
@@ -78,7 +78,7 @@ class AddressController < ApplicationController
   def save_city
     @index = Index.find(@params['id'])
     @address = @index.student.address || 
-      Address.create(:student_id => @index.student.id)
+      Address.create_habitat_for(@index.student)
     @address.update_attributes(@params['address'])
   end
   
@@ -86,7 +86,7 @@ class AddressController < ApplicationController
   def save_zip
     @index = Index.find(@params['id'])
     @address = @index.student.address || 
-      Address.create(:student_id => @index.student.id)
+      Address.create_habitat_for(@index.student)
     @address.update_attributes(@params['address'])
   end
 
@@ -94,7 +94,7 @@ class AddressController < ApplicationController
   def save_desc_number
     @index = Index.find(@params['id'])
     @address = @index.student.address || 
-      Address.create(:student_id => @index.student.id)
+      Address.create_habitat_for(@index.student)
     @address.update_attributes(@params['address'])
   end
 

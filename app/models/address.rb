@@ -7,4 +7,9 @@ class Address < ActiveRecord::Base
   def to_line_s
     return [[self.street, self.desc_number].join(' '), self.city, self.zip].join(', ')
   end
+
+  def self.create_habitat_for(student)
+    student = student.id if student.is_a? Student
+    create(:student_id => student, :address_type_id => 1)
+  end
 end
