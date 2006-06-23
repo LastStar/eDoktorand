@@ -17,7 +17,7 @@ class Student < Person
 
   # retunrs account for printing
   def account
-      if self.index.account_number_prefix!=""
+      if self.index.account_number_prefix != ""
         "#{self.index.account_number_prefix}-#{self.index.account_number}/#{self.index.account_bank_number}"
       else
         "#{self.index.account_number}/#{self.index.account_bank_number}"

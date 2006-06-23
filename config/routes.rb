@@ -72,6 +72,7 @@ ActionController::Routing::Routes.draw do |map|
   map.welcome 'welcome', :controller => 'account', :action => 'welcome'
 
   # for approvement purposes
+  map.connect 'students/:action/:id', :controller => 'students'
   map.connect 'indices/:action/:id', :controller => 'students'
 
   # Install the default route as the lowest priority.

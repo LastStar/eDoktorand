@@ -443,3 +443,10 @@ ul.tiny li {border: none; background-color: #eee;font-size: 10pt; width: 30em;}
 div.small { float: right; font-size: 9pt; text-align: left;}
 li.subject_select {border: none; padding-left: 100px; clear: both;}
 .left {float: left; padding-left: 1ex;}
+.details form, input {margin: 0px; padding: 0px;}
+.details input { border: 1px dashed #999;}
+#image_submit {border: 0px}
+a.change_field {border: 1px solid white;text-decoration: none; color: black}
+a:hover.change_field {border: 1px dashed #ccc; color: black}
+.noborder input {border: none}
+

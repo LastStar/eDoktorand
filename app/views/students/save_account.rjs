@@ -1,0 +1,2 @@
+page.replace_html "account", attribute_line(@student, :account)
+

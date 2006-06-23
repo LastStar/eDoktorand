@@ -1,0 +1,1 @@
+page.replace_html "citizenship", attribute_line(@student, :citizenship)

@@ -32,6 +32,5 @@ class AddAddressEditSaveItemsPermisison < ActiveRecord::Migration
     Role.find(3).permissions.delete(Permission.find_by_name('scholarships/edit_phone').destroy)
     Role.find(3).permissions.delete(Permission.find_by_name('scholarships/save_citizenship').destroy)
     Role.find(3).permissions.delete(Permission.find_by_name('scholarships/edit_citizenship').destroy)
-
   end
 end

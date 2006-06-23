@@ -121,13 +121,6 @@ module ApplicationHelper
   end
   
   # get voluntary subjects for corridor 
-  def voluntary_ids(coridor)
-    arr = [[_("external subject"), 0]]
-    arr.concat(Coridor.find(coridor).voluntary_subjects.map {|s|
-      [truncate(s.subject.label, 40), s.subject_id]})
-  end
-  
-  # get voluntary subjects for corridor 
   def seminar_ids(coridor)
     if coridor.is_a? Coridor
       coridor = coridor.id
@@ -266,29 +259,25 @@ module ApplicationHelper
     end
   end
 
-  def email_line(student)
-    if student.email
-#      content_tag('li', "#{long_info_helper(student.email.name)} #{_('Email')}")
-      render(:partial => 'scholarships/email_view', :locals => {:index => student.index})
+  def attribute_line(student, name, meth = nil)
+    if @user.has_one_of_roles?(['faculty_secretary', 'student'])
+      long_info_helper(edit_link(student, name, meth), :id => name)
+    else
+      label = student.send(name)
+      label = label.send(meth) if meth
+      long_info_helper(label)
     end
   end
 
-  def phone_line(student)
-    if student.phone
-#      content_tag('li', "#{long_info_helper(student.phone.name)} #{_('Phone')}")
-      render(:partial => 'scholarships/phone_view', :locals => {:index => student.index})
-    end
+  def save_form(name)
+    form_remote_tag(:url => {:action => "save_#{name}"},
+                        :complete => evaluate_remote_response,
+                        :after => loader_image("#{name}_submit"))
   end
 
-  def citizenship_line(student)
-    if !student.citizenship?
-      student.citizenship = '&nbsp;'
-      student.save
-    end  
-    if student.citizenship
-      content_tag('li', "#{long_info_helper(student.citizenship)} #{_('Citizenship')}")
-    end
-   render(:partial => 'scholarships/citizenship_view', :locals => {:index => student.index})
+  def ok_submit(name)
+    content_tag(:span, image_submit_tag('ok'), :id => "#{name}_submit", 
+                :class => 'noborder') 
   end
 
   # prints print link
@@ -438,18 +427,26 @@ module ApplicationHelper
                           :action => 'prepare'){} 
   end
 
-  def account_link(index)
-    link_to_remote(image_tag('change.png'), 
-                   :update => "account_form_#{index.id}",
-                   :complete => evaluate_remote_response,
-       		   :url => {:controller => 'scholarships', :action => 'account_change', :id => index.id})
+  def edit_link(object, name, meth = nil)
+    label = object.send(name)
+    label = label.send(meth) if meth
+    cntr = object.class.to_s.underscore.pluralize
+    link_to_remote("#{changer_image(name)}#{label}",
+                   {:update => name,
+                   :after => loader_image("#{name}_changer"),
+                   :url => {:controller => cntr, 
+                           :action => "edit_#{name}", :id => object.id}},
+                   :id => "#{name}_link",
+                   :class => 'change_field')
   end
 
   def contact_link(index)
     link_to_remote(image_tag('change.png'), 
-                   :update => "contacts_form_#{index.id}",
+                  {:update => "contacts_form_#{index.id}",
+                   :after => loader_image('contact_link'),
                    :complete => evaluate_remote_response,
-       		   :url => {:controller => 'address', :action => 'edit', :id => index.id})
+                   :url => {:controller => 'address', :action => 'edit', 
+                           :id => index.id}}, :id => 'contact_link')
   end
 
   def street_link(index)
@@ -483,63 +480,6 @@ module ApplicationHelper
                            :action => 'edit_zip', :id => index.id})
   end
 
-  def email_link(index)
-    link_to_remote(image_tag('change.png'), 
-                   :update => "email_form_#{index.id}",
-                   :complete => evaluate_remote_response,
-       		   :url => {:controller => 'scholarships', :action => 'edit_email', :id => index.id})
-  end
-
-  def phone_link(index)
-    link_to_remote(image_tag('change.png'), 
-                   :update => "phone_form_#{index.id}",
-                   :complete => evaluate_remote_response,
-       		   :url => {:controller => 'scholarships', :action => 'edit_phone', :id => index.id})
-  end
-
-  def citizenship_link(index)
-    link_to_remote(image_tag('change.png'), 
-                   :update => "citizenship_form_#{index.id}",
-                   :complete => evaluate_remote_response,
-       		   :url => {:controller => 'scholarships', :action => 'edit_citizenship', :id => index.id})
-  end
-
-  def show_account_form(index)
-    "Element.show('account_form_#{index.id}')"
-  end
-  
-  def show_email_form(index)
-    "Element.show('email_form_#{index.id}')"
-  end
-  
-  def show_phone_form(index)
-    "Element.show('phone_form_#{index.id}')"
-  end
-  
-  def show_citizenship_form(index)
-    "Element.show('citizenship_form_#{index.id}')"
-  end
-  
-  def show_contacts_form(index)
-    "Element.show('contacts_form_#{index.id}')"
-  end
-
-  def show_address_street_field_form(index)
-    "Element.show('address_street_field_form_#{index.id}')"
-  end
-
-  def show_address_desc_number_field_form(index)
-    "Element.show('address_desc_number_field_form_#{index.id}')"
-  end
-
-  def show_address_city_field_form(index)
-    "Element.show('address_city_field_form_#{index.id}')"
-  end
-  
-  def show_address_zip_field_form(index)
-    "Element.show('address_zip_field_form_#{index.id}')"
-  end
-
   def street_line(student)
     street = student.address ? student.address.street : ''
     long_info_helper("#{street_link(student.index)} #{street}", 
@@ -563,4 +503,16 @@ module ApplicationHelper
     long_info_helper("#{zip_link(student.index)} #{zip}", 
                      :id => 'address_zip_field')
   end
+
+  private 
+  
+  def loader_image(field)
+    "Element.replace('#{field}', '#{image_tag('loader.gif', :size => '12x12')}')"
+  end
+
+  def changer_image(name)
+    image_tag('change.png', :id => "#{name}_changer")
+  end
 end
+
+

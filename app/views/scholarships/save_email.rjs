@@ -1,1 +1,0 @@
-page.replace_html "email", render(:partial => 'email_view', :locals => {:index => @index})

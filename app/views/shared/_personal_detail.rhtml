@@ -1,12 +1,12 @@
-<ul>
+<ul class='details'>
 <li>
 <%= "#{long_info_helper(student.display_name)}#{_('Full name')}: " %>
 </li>
 <%= birth_date_line(student) %>
 <%= birth_number_line(student) %>
 <%= birth_place_line(student) %>
-<li><%= email_line(student) %><%=_('Email')%>:</li>
-<li><%= phone_line(student) %><%=_('Phone')%>:</li>
+<li><%= attribute_line(student, :email, :name) %><%=_ 'Email' %>:</li>
+<li><%= attribute_line(student, :phone, :name) %><%=_ 'Phone' %>:</li>
 
 <li>
 <%= "#{long_info_helper(student.index.coridor.name)}#{_('Corridor')}: " %>
@@ -24,9 +24,9 @@
 <%= "#{long_info_helper(student.index.enrolled_on.strftime('%d. %m. %Y'))}#{_('Enrolled on')}: " %> 
 </li>
 <li>
-<%=render(:partial => 'scholarships/account_view', :locals => {:index => student.index})%><%=_ 'Account' %>:
+<%= attribute_line(student, :account) %><%=_ 'Account' %>:
 </li>
 
-<li><%= citizenship_line(student) %><%=_('citizenship')%>:</li>
+<li><%= attribute_line(student, :citizenship) %><%=_('citizenship')%>:</li>
 </ul>
 

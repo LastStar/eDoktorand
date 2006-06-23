@@ -5,17 +5,25 @@
       <div id="message"><%= @message %></div>
     <% end %>
 
+    <div style='clear: both'>
     <label for="user_login"><%= _('Login name') %></label>
-    <input type="text" name="user_login" id="user_login" size="30" value=""/><br/>
+    <input type="text" name="user_login" id="user_login" size="30" value=""/>
+    </div>
 
+    <div style='clear: both'>
     <label for="user_password"><%= _('Password') %></label>
-    <input type="password" name="user_password" id="user_password" size="30"/> <br /> 
+    <input type="password" name="user_password" id="user_password" size="30"/>
+    </div>
 
+    <div style='clear: both'>
     <label for="locale"><%= _('Language') %> </label>
-    <%= locale_link %><br /> 
+    <%= locale_link %>
+    </div>
 
+    <div style='clear: both'>
     <label for="submit"><%= _('Login') %></label>
     <%= submit_tag(_('submit')) %>
+    </div>
 </div>
 
 <%= end_form_tag %>

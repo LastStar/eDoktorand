@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   include LoginSystem
-  layout 'employers', :except => [:time_form, :filter, :list_xls]
+  layout 'employers', :except => [:edit_citizenship, :edit_phone, :edit_email,
+                                  :time_form, :filter, :list_xls, :edit_account]
   before_filter :prepare_user, :set_title, :login_required
   before_filter :prepare_order, :prepare_filter, :except => [:show,
     :contact]
@@ -98,6 +99,55 @@ class StudentsController < ApplicationController
     @document.approve_with(params[:statement])
     render(:partial => 'shared/confirm_approve')
   end
+
+  def edit_email
+    @student = Student.find(params[:id], :include => :index)
+    @index = @student.index
+    @email = @index.student.email_or_new
+  end
+
+  def save_email
+    @student = Student.find(params[:student][:id], :include => :index)
+    @index = @student.index
+    @email = @index.student.email_or_new
+    @email.update_attribute(:name, params[:email][:name])
+  end
+
+  def edit_phone
+    @student = Student.find(params[:id], :include => :index)
+    @index = @student.index
+    @phone = @index.student.phone_or_new
+  end
+  
+  def save_phone
+    @student = Student.find(params[:student][:id], :include => :index)
+    @index = @student.index
+    @phone = @index.student.phone_or_new
+    @phone.update_attribute(:name, params[:phone][:name])
+  end
+
+  def edit_citizenship
+    @student = Student.find(params[:id], :include => :index)
+    @index = @student.index
+  end
+  
+  def save_citizenship
+    @student = Student.find(params[:id], :include => :index)
+    @index = @student.index
+    @student.update_attribute(:citizenship, params[:student][:citizenship])
+  end
+
+  def edit_account
+    @student = Student.find(params[:id], :include => :index)
+    @index = @student.index
+  end
+  
+  def save_account
+    @student = Student.find(params[:student][:id], :include => :index)
+    @index = @student.index
+    @index.update_attributes(params[:index])
+  end
+
   private
   
   # sets title of the controller
