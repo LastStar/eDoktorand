@@ -7,10 +7,8 @@ class AddressController < ApplicationController
   before_filter :prepare_user
 
   def edit_street
-    student = @user.person
-    @index = Index.find(@params['id'])
-    @address = student.address || Address.new('address_type_id' => '1', 'student_id' => student.id)
-   # @action = 'save_street'
+    @student ||= Student.find(params[:id])
+    @address = @student.address_or_new
   end
 
   def edit_city

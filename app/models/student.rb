@@ -10,6 +10,7 @@ class Student < Person
     index.faculty
   end
 
+
   #returns display name for printing
   def display_name
     "#{lastname} #{firstname}"
@@ -17,14 +18,22 @@ class Student < Person
 
   # retunrs account for printing
   def account
-      if self.index.account_number_prefix != ""
-        "#{self.index.account_number_prefix}-#{self.index.account_number}/#{self.index.account_bank_number}"
-      else
-        "#{self.index.account_number}/#{self.index.account_bank_number}"
-      end
+    i = self.index
+    if i.account_number_prefix && i.account_number_prefix != ""
+      "#{self.index.account_number_prefix}-#{self.index.account_number}/#{self.index.account_bank_number}"
+    elsif i.account_number && i.account_number != ""
+      "#{self.index.account_number}/#{self.index.account_bank_number}"
+    else
+      ''
+    end
   end
 
   def coridor
     index.coridor
+  end
+
+  def address_or_new
+    return address if address
+    Address.new_habitat_for(id)
   end
 end 

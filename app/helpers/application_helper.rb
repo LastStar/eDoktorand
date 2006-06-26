@@ -480,7 +480,7 @@ module ApplicationHelper
                            :action => 'edit_zip', :id => index.id})
   end
 
-  def street_line(addres)
+  def street_line(student)
     street = student.address ? student.address.street : ''
     long_info_helper("#{edit_link(add)} #{street}", 
                      :id => 'street')

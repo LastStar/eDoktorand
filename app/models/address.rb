@@ -12,4 +12,9 @@ class Address < ActiveRecord::Base
     student = student.id if student.is_a? Student
     create(:student_id => student, :address_type_id => 1)
   end
+
+  def self.new_habitat_for(student)
+    student = student.id if student.is_a? Student
+    new(:student_id => student, :address_type_id => 1)
+  end
 end
