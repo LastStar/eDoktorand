@@ -259,12 +259,12 @@ module ApplicationHelper
     end
   end
 
-  def attribute_line(student, name, meth = nil)
+  def attribute_line(object, name, meth = nil)
     if @user.has_one_of_roles?(['faculty_secretary', 'student'])
-      long_info_helper(edit_link(student, name, meth), :id => name)
+      long_info_helper(edit_link(object, name, meth), :id => name)
     else
-      label = student.send(name)
-      label = label.send(meth) if meth
+      label = object.send(name)
+      label = label.send(meth) if label && meth
       long_info_helper(label)
     end
   end
@@ -429,7 +429,7 @@ module ApplicationHelper
 
   def edit_link(object, name, meth = nil)
     label = object.send(name)
-    label = label.send(meth) if meth
+    label = label.send(meth) if label && meth
     cntr = object.class.to_s.underscore.pluralize
     link_to_remote("#{changer_image(name)}#{label}",
                    {:update => name,
@@ -480,10 +480,10 @@ module ApplicationHelper
                            :action => 'edit_zip', :id => index.id})
   end
 
-  def street_line(student)
+  def street_line(addres)
     street = student.address ? student.address.street : ''
-    long_info_helper("#{street_link(student.index)} #{street}", 
-                     :id => 'address_street_field')
+    long_info_helper("#{edit_link(add)} #{street}", 
+                     :id => 'street')
   end
 
   def desc_number_line(student)
