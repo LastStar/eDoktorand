@@ -23,7 +23,7 @@ do <%= @candidate.study.name %> formy doktorského studia na&nbsp;<%= @faculty.s
 <h3 class='centerAlign'>studijní obor: <%= @candidate.coridor.name %></h5>
 <br/>
 <p>Vaším školitelem byl/a ustanoven/a <%= @candidate.tutor.display_name %>, 
-katedra <%= @candidate.department.name %> <%= @faculty.short_name%>.</p>
+ <%= @candidate.department.name %> <%= @faculty.short_name%>.</p>
 <% unless @conditional %>
 <h3 class='centerAlign'>Zápis do studia se uskuteční dne <%=Parameter.get("enroll_invitation_time_and_place", @faculty)%>.</h5>
 <% else %>
