@@ -1,17 +1,14 @@
-V Praze dne <%= @sent_on %>
+V Praze dne <%= @sent_on.strftime("%d. %m. %Y") %>
 
-Vážený pane inženýre/paní inženýrko,
-
+<%= @candidate.genderize("Vážený pane/Vážená paní","Vážený pane","Vážená paní") %>,
 
 po projednání Vaší přihlášky ke studiu v doktorském oboru <%= @coridor %>
-na fakultě lesnické a environmentální ČZU v Praze Vám sděluji, že jste nebyl
-ke studiu přijat.
+na fakultě lesnické a environmentální ČZU v Praze Vám sděluji, že jste <%= @candidate.genderize("nebyl/a","nebyl","nebyla") %>
+ke studiu <%= @candidate.genderize("přijat/a","přijat","přijata") %>.
 
-Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana <%= @faculty.short_name%>
-ČZU v Praze do 30&nbsp;dnů ode dne doručení.
+Proti tomuto rozhodnutí je možno podat odvolání k rukám <% @faculty.id==2 ? "ředitele" : "děkana" %> <%= @faculty.short_name%>
+ČZU v Praze do 30 dnů ode dne doručení.
 
 V Praze dne <%= Time.now.strftime("%d. %m. %Y") %>
 <%= @faculty.dean.display_name %>
-děkan <%= @faculty.short_name %> ČZU</p>
-
-
+<%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</p>

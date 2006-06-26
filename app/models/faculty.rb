@@ -48,6 +48,7 @@ class Faculty < ActiveRecord::Base
     FacultySecretary.find(:first, :include => 'faculty_employment',
         :conditions => ["unit_id = ?", id])
   end
+
   # retuns dean of the faculty
   def dean_label
     return _('director') if id==2

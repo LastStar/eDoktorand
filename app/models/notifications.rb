@@ -22,6 +22,7 @@ class Notifications < ActionMailer::Base
     @body[:faculty] = faculty = candidate.department.faculty
     @body[:sent_on] = sent_at
     @body[:conditional] = conditional
+    @candidate = candidate
     @recipients = candidate.email
     @cc        = faculty.secretary.email.name
     @from       = faculty.secretary.email.name
@@ -36,6 +37,8 @@ class Notifications < ActionMailer::Base
     @body['coridor'] = candidate.coridor.name
     @body['exam_term'] = candidate.coridor.exam_term
     @body['sent_on'] = sent_at
+    @body['candidate'] = candidate
+    @body[:faculty] = faculty = candidate.department.faculty
     @recipients = candidate.email
     @from = 'pepe@gravastar.cz'
     @sent_on = sent_at

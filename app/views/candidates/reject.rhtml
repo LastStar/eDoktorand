@@ -2,7 +2,7 @@
 <br />
 <br />
 <br />
-<p class='rightAlign'>Vážený pan/paní<br/>
+<p class='rightAlign'><%= @candidate.genderize("Vážený pan/paní","Vážený pan","Vážená paní") %><br/>
 <%= @candidate.display_name %><br/>
 <% unless @candidate.postal_city.empty? %>
 <%= @candidate.sending_postal_address %></p>
@@ -12,19 +12,24 @@
 <br/> 
 <br/>
 
-<p>Vážený pane/paní,</p>
+<p><%= @candidate.genderize("Vážený pane/Vážená paní","Vážený pane","Vážená paní") %>,</p>
 
 <p>po projednání Vaší přihlášky ke studiu v doktorském oboru <%= @candidate.coridor.name %>
-na fakultě lesnické a environmentální ČZU v Praze Vám sděluji, že jste
-<strong>nebyl</strong>
-ke studiu přijat.</p>
+na <%= @faculty.short_name %> ČZU v Praze Vám sděluji, že jste
+<strong><%= @candidate.genderize("nebyl/a","nebyl","nebyla") %></strong>
+ke studiu <%= @candidate.genderize("přijat/a","přijat","přijata") %>.</p>
 
-<p>Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana fakulty lesnické a environmentální
-ČZU v Praze do 30&nbsp;dnů ode dne doručení.</p>
+<p>
+Proti tomuto rozhodnutí je možno podat odvolání k rukám <%= @faculty.id==2 ? "ředitele" : "děkana" %> <%= @faculty.short_name%>
+ČZU v Praze do 30&nbsp;dnů ode dne doručení.
 <br/>
 <p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
-<p class='rightAlignLefter'><%= @faculty.dean.display_name %><br/>
-děkan <%= @faculty.short_name %> ČZU</p>
+<div style='float: right'><%= @faculty.dean.display_name %><br/>
+<%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</div>
+</p>
+<br/>
+<br/>
+<br/>
 
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
