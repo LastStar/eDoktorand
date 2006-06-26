@@ -482,8 +482,8 @@ module ApplicationHelper
 
   def street_line(student)
     street = student.address ? student.address.street : ''
-    long_info_helper("#{edit_link(add)} #{street}", 
-                     :id => 'street')
+    long_info_helper("#{street_link(student.index)} #{street}", 
+                     :id => 'address_street_field')
   end
 
   def desc_number_line(student)
