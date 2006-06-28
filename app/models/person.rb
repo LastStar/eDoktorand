@@ -22,6 +22,7 @@ class Person < ActiveRecord::Base
     arr << self.title_after.label if self.title_after
     return arr.join(' ')
   end
+
   def is_dean_of?(student)
     return false
   end

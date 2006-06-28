@@ -504,6 +504,19 @@ module ApplicationHelper
                      :id => 'address_zip_field')
   end
 
+  def first_upper(string)
+    f = string[0, 1]
+    l = string[1..-1]
+    f.upcase + l
+  end
+
+  def first_lower(string)
+    f = string[0, 1]
+    l = string[1..-1]
+    f.downcase + l
+  end
+
+
   private 
   
   def loader_image(field)
