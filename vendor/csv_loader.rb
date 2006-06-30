@@ -749,4 +749,42 @@ class CSVLoader
       u.save
     end
   end
+
+  def  self.load_sident(file)
+    @@mylog.info "Loading students sident ..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if s = Student.find_by_uic(row[0])
+        s.update_attribute(:sident, row[2])
+        @@mylog.info "Student with uic #{row[0]} is updated"
+      else
+        @@mylog.debug "Student with uic #{row[0]}: #{row[1]} has not been found"
+      end
+    end
+  end
+
+  def self.load_tutors_its(file)
+    @@mylog.info "Loading its tutors..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      t = Tutor.new
+      t.firstname = row[0]
+      t.lastname = row[1]
+      if row[5] && !row[5].empty?
+        t.title_before = Title.find(@@prefixes[row[5].to_i])
+      end
+      if row[6] && !row[6].empty?
+        t.title_after = Title.find(@@suffixes[row[6].to_i])
+      end
+      t.uic = row[3]
+      t.id = row[2]
+      @@mylog.debug "Tutor: #{t.id} " if t.save
+      if row[4] && !row[4].empty?
+        ts = Tutorship.new  
+        t.tutorship = ts
+        ts.department = Department.find(row[4])
+        ts.coridor = Coridor.find(110)
+        t.tutorship = ts
+        ts.save
+      end
+    end
+  end
 end
