@@ -10,8 +10,8 @@ Přijímací zkouška pro obor <%= @coridor %> proběhne od <%= @exam_term.start
 <%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
 
 K přijímací zkoušce si přineste:
- - průkaz totožnosti,
-<% if @study_id == 1 %> - doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou,<% end %>
+ - průkaz totožnosti,<% if @study_id == 1 %>
+ - doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou,<% end %>
  - doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou.
 
 Vyřizuje:
