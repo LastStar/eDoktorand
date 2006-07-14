@@ -1577,6 +1577,9 @@ msgstr "Tento student požádal o připuštění k závěrečné zkoušce."
 msgid "Wait till your application will be approved and your final exam term will be created."
 msgstr "Počkejte než bude Vaše žádost potvrzena a termín závěrečné zkoušky vytvořen."
 
+msgid "final exam term"
+msgstr "termín SZZ"
+
 msgid "Invitation to admition tests to postgradual study"
 msgstr "pozvánka k přijímací zkoušce do DSP na ČZU v Praze"
 
@@ -1588,9 +1591,6 @@ msgstr "Vážený pane"
 
 msgid "Dear Mrs."
 msgstr "Vážená paní"
-
-msgid "final exam term"
-msgstr "komise SZZ"
 
 msgid "dean"
 msgstr "děkan"
