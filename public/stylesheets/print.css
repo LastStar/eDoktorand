@@ -12,6 +12,9 @@ h5 {
 h1 {
   display: none;
 }
+h2{
+ text-align: center
+}
 p {
   text-align: justify;
 }

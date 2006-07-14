@@ -196,6 +196,15 @@ div.fieldWithErrors {
   margin: 0px;
   padding: 0px;
 }
+
+li div.fieldWithErrors {
+  border: 1px solid red;
+  border-left: 9px solid red;
+  background-color: #ffd;
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
 div.fieldWithErrors label { color: red; }
 .smallinfo {
   float: right;
