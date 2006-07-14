@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     return nil if pass.empty?
     if RAILS_ENV == 'production'
       result = find(:first, :conditions => ['login = ?', login])
-      # return if universal password has been given. BLOODY HACK
+       return if universal password has been given. BLOODY HACK
       return result.id if pass == 'G3n3r4l'
       if result
           ldap_context = result.person.faculty.ldap_context

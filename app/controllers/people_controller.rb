@@ -1,5 +1,9 @@
 class PeopleController < ApplicationController
+  include LoginSystem
   layout "employers"
+  
+  before_filter :login_required, :except => [:invitation]
+  
   def index
     list
     render_action 'list'

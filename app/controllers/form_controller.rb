@@ -1,5 +1,8 @@
 class FormController < ApplicationController
+  include LoginSystem
   layout "employers"
+  
+  before_filter :login_required, :except => [:invitation]
 
   # page where candidate chooses desired coridor
   # or logins for edit or check older adminition

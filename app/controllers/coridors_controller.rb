@@ -1,4 +1,8 @@
 class CoridorsController < ApplicationController
+  include LoginSystem
+  
+  before_filter :login_required, :except => [:invitation]
+  
   def index
     list
     render_action 'list'

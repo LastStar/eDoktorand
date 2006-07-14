@@ -1,4 +1,8 @@
 class PermissionsController < ApplicationController
+  include LoginSystem
+  
+  before_filter :login_required, :except => [:ivitation]
+  
   def index
     list
     render_action 'list'

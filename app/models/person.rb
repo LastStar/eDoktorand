@@ -42,7 +42,7 @@ class Person < ActiveRecord::Base
   def phone=(value)
     phone_or_new.update_attribute(:name, value)
   end
-
+ 
   def email_or_new
     return email if email
     Contact.new_email_for(id)

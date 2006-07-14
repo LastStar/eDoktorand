@@ -132,7 +132,7 @@ class StudentsController < ApplicationController
   end
   
   def save_citizenship
-    @student = Student.find(params[:id], :include => :index)
+    @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
     @student.update_attribute(:citizenship, params[:student][:citizenship])
   end
@@ -145,7 +145,9 @@ class StudentsController < ApplicationController
   def save_account
     @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
-    @index.update_attributes(params[:index])
+    unless @index.update_attributes(params[:index])
+      render_partial 'notsave_account'
+    end  
   end
 
   private
