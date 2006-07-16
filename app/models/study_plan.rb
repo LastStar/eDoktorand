@@ -123,9 +123,15 @@ class StudyPlan < ActiveRecord::Base
   end
 
   # returns subjects which are not finished
-  def unfinished_subjects
-   PlanSubject.find(:all, :conditions =>  [ \
-                    "study_plan_id = ? and finished_on is null", id])
+  def unfinished_subjects(param = nil)
+    options = {:conditions => ["study_plan_id = ? and finished_on is null", id]}
+    options[:include] = :subject if param == :subjects
+    ps = PlanSubject.find(:all, options)
+    if param == :subjects 
+     ps.map {|p| p.subject}
+    else
+     ps
+    end
   end
 
   # returns all external subject for student

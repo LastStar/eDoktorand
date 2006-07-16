@@ -12,8 +12,9 @@ class Index < ActiveRecord::Base
   belongs_to :coridor
   belongs_to :department
   has_many :interupts, :order => 'created_on desc'
-  has_many :extra_scholarships, :order => 'created_on desc'
-  has_many :regular_scholarships, :order => 'created_on desc'
+  has_many :extra_scholarships, :conditions => "scholarships.payed_on IS NULL"
+  has_one :regular_scholarship, :conditions => "scholarships.payed_on IS NULL"
+  has_many :scholarships
   has_one :approvement, :class_name => 'FinalExamApprovement',
     :foreign_key => 'document_id'
 
@@ -155,10 +156,11 @@ class Index < ActiveRecord::Base
     if options[:not_interupted]
       conditions.first << ' AND indices.interupted_on IS NULL'
     end
+    conditions.first << 'AND study_id = 1' if options[:present]
     find(:all, :conditions => conditions, 
          :include => [:study_plan, :student, :disert_theme, :department,
                       :study, :coridor, :interupts, :extra_scholarships, 
-                      :regular_scholarships],
+                      :regular_scholarship],
          :order => options[:order])
   end
 
@@ -239,8 +241,8 @@ class Index < ActiveRecord::Base
         indices.reject! {|i| i.study_plan && i.study_plan.admited?}
       when '2'
         indices.reject! {|i| !i.study_plan || !i.study_plan.admited? || 
-                            i.study_plan.approvement ||
-                            i.study_plan.approvement.tutor_statement}
+                            (i.study_plan.approvement &&
+                            i.study_plan.approvement.tutor_statement)}
       when '3'
         indices.reject! {|i| i.study_plan_approved_by != 'tutor'}
       when '4'
@@ -263,6 +265,7 @@ class Index < ActiveRecord::Base
                               department.id])
 
   end
+
   # returns status of index
   def status
     if finished?
@@ -354,28 +357,9 @@ class Index < ActiveRecord::Base
   end
 
   # TODO stub method
-  def current_extra_scholarship
-    unless @current_extra_scholarship || extra_scholarships.empty?
-        @current_extra_scholarship = extra_scholarships.first
-    else
-      @current_extra_scholarship
-    end
-  end
-
-  def current_extra_scholarship_sum
-    ExtraScholarship.find_all_unpayed_by_index(self.id).inject(0) do |sum, s|
+  def extra_scholarship_sum
+    extra_scholarships.inject(0) do |sum, s|
       sum += s.amount
-    end
-  end
-
-  # TODO stub method
-  def current_regular_scholarship
-    if !@current_regular_scholarship && !regular_scholarships.empty?
-        @current_regular_scholarship = regular_scholarships.first
-    else
-      @current_regular_scholarship = 
-        regular_scholarships.build('amount' => ScholarshipCalculator.for(self),
-                                   'index_id' => self.id)
     end
   end
 
@@ -385,6 +369,26 @@ class Index < ActiveRecord::Base
 
   def present_study?
     study.id == 1
+  end
+
+  def self_payer?
+    payment_id == 2
+  end
+  
+  def foreigner?
+    payment_id == 3
+  end
+
+  def has_regular_scholarship?
+    present_study? && !self_payer?
+  end
+
+  def has_extra_scholarship?
+    extra_scholarships && !extra_scholarships.empty?
+  end
+
+  def regular_scholarship_or_create
+    regular_scholarship || RegularScholarship.create_for(self)
   end
 
   def claim_final_application!

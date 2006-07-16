@@ -75,6 +75,9 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'students/:action/:id', :controller => 'students'
   map.connect 'indices/:action/:id', :controller => 'students'
 
+  # time filtering for probation terms
+  map.connect 'probation_terms/in/:period', :controller => 'probation_terms'
+
   # Install the default route as the lowest priority.
   map.connect ':controller/:action/:id'
 end

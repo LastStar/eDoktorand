@@ -1,45 +1,25 @@
-<%= javascript_include_tag :defaults %>
-<% @ids = [] %>
-<ul>
-<%  
-  has_enrolled_subjects = []
-  if (@user.person.is_a?(Student))
-    @probation_terms.each{|prob| has_enrolled_subjects << prob.subject if
-      ((!prob.students.empty?) && (prob.students.include?(@user.person)) && prob.date > Date.today)}
-  end
-%>
 <% for probation_term in @probation_terms  %>
-  <li>
-    <div class='right'>
-      <% if (@user.person.is_a?(Student)) %>
-        <% if ((has_enrolled_subjects) && (has_enrolled_subjects.include? (probation_term.subject))) %>
-          <% if(probation_term.students.include?(@user.person)) %>
-            <%= _("You are already enrolled for this term") %>
-          <% else %>
-            <%= _("You are already enrolled for an exam from this subject") %>
-          <% end %>
-        <% else %>
-          <%= link_to(_("enroll"), {:action => 'enroll', :id =>
-          probation_term.id}, :confirm => _("Really enroll to this term?")) %>
-        <% end %>
-      <% else %>
-        <%= link_to_remote_with_loading(_("detail"), :url => {:action => 'detail', :id =>
-          probation_term.id}, :update => "info#{probation_term.id}", 
-          :complete => "showProbationTerm(#{probation_term.id})") %>
-        <%= link_to(_("edit"), {:action => 'edit', :id => probation_term.id}) %>
-      <% end %>
-    </div>
-    <b><%= probation_term.subject.label %></b><br />
-    <%= _("maximum/enrolled") %>&nbsp;:&nbsp;
-    <%= probation_term.max_students %>&nbsp;/&nbsp;
-    <%= probation_term.students.size %>
-    <br />
-    <%=_("date")%>: <%= probation_term.date.strftime("%d. %m. %Y") %><br />
-	  <%=_("room")%>: <%= probation_term.room %>;&nbsp;<%=_("starting time")%>:
-    <%= probation_term.start_time %><br />
-    <div class='detail' id='info<%= probation_term.id %>' style="display: none">
-    </div >
-  </li>
-  <% @ids << probation_term.id %>
+<h5><%= probation_term.subject.label %></h5>
+<div class='links'>
+  <%= link(@user, probation_term)  %>
+</div>
+<ul>
+  <li><div class='longinfo'> <%= _("maximum/enrolled") %>&nbsp;:&nbsp;
+      <%= probation_term.max_students %>&nbsp;/&nbsp;
+      <%= probation_term.students.size %></div>
+  <div class='longinfo'><%=_("room")%>: <%= probation_term.room %></div>
+  <div class='longinfo'><%=_("starting time")%>: <%= probation_term.start_time %></div>
+  <%=_("date")%>: <%= probation_term.date.strftime("%d. %m. %Y") %></li>
+  <li><%= _("1. examinator") %>:
+  &nbsp;<%= probation_term.first_examinator.display_name %></li>
+<% if probation_term.second_examinator %>
+  <li><%= _("2. examinator") %>:
+  &nbsp;<%= probation_term.second_examinator %></li>
 <% end %>
+<% unless probation_term.empty_note? %>
+  <li><%= _("note") %>:&nbsp;<%= probation_term.note %></li>
+<% end %>
+  <li class='detail' id='info_<%= probation_term.id %>' style="display: none">
+  </li>
 </ul>
+<% end %>

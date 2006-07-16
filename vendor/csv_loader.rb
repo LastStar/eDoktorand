@@ -750,7 +750,7 @@ class CSVLoader
     end
   end
 
-  def  self.load_sident(file)
+  def self.load_sident(file)
     @@mylog.info "Loading students sident ..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if s = Student.find_by_uic(row[0])

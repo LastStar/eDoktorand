@@ -199,8 +199,7 @@ class StudyPlansController < ApplicationController
   
   # atests study plan 
   def atest
-    study_plan = StudyPlan.find(@params['id'])
-    render(:partial => 'show_atestation', :locals => {:study_plan => study_plan})
+    @study_plan = StudyPlan.find(@params['id'])
   end
   
   # confirms and saves statement

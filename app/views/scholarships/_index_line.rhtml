@@ -1,12 +1,12 @@
 <div class="smallinfo" id='scholarship_<%= index.id %>'>
-<% if index.current_extra_scholarship %>
+<% if index.has_extra_scholarships? %>
   <%= detail_link(index) %>
-  <%= index.current_extra_scholarship_sum %> <%= _('Kc') %>
+  <%= index.extra_scholarship_sum %> <%= _('Kc') %>
 <% else %>
   <%= add_link(index) %>&nbsp;
 <% end %>
 </div>
-<% if index.present_study? %>
+<% if index.has_regular_scholarship?%>
 <div class="smallinfo" id='regular_scholarship_<%= index.id %>'>
   <%= render(:partial => 'regular', :locals => {:index => index}) %>
 </div>

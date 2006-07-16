@@ -81,13 +81,8 @@ class ScholarshipsController < ApplicationController
   end
 
   def pay
-    @indices = Index.find_studying_for(@user, 
-                                       :order => 'studies.id, people.lastname')
-    @indices.each do |i|
-      ExtraScholarship.pay_for(i) if i.current_extra_scholarship
-      RegularScholarship.pay_for(i)
-    end
-    redirect_to :action => 'prepare'
+    csv_headers('stipendia.csv')
+    render(:text => Scholarship.pay_and_generate_for(@user))
   end
 
   # saves scholarship to dbase

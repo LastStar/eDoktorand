@@ -36,4 +36,32 @@ class Student < Person
     return address if address
     Address.new_habitat_for(id)
   end
+
+  def has_study_plan?
+    !index.study_plan.nil?
+  end
+
+  def study_plan
+    index.study_plan
+  end
+
+  def has_enrolled?(subject)
+    subject = subject.id if subject.is_a? Subject
+    !ProbationTerm.find(:all, 
+                       :conditions => ['subject_id = ? and date > ?',
+                                        subject, Date.today]).detect do |pt|
+      pt.students.include? self
+    end.nil?
+  end
+
+  def self.find_to_enroll(probation_term, option)
+    students = PlanSubject.find_unfinished_by_subject(probation_term.subject.id,
+                                            :students => true)
+    students.reject! do |student|
+      student.has_enrolled?(probation_term.subject)
+    end
+    if option == :sort
+      students.sort! {|x, y| x.lastname <=> y.lastname}
+    end
+  end
 end 

@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   model :dean # solving deep STI 
   before_filter :localize
+
   include LoginSystem
+
   # TODO redo with model methods
   # authorizes user
   def authorize?(user)
@@ -12,6 +14,13 @@ class ApplicationController < ActionController::Base
       redirect_to error_url
     end
   end
+
+  def csv_headers(file = 'atachment.csv')
+    headers['Content-Type'] = "application/vnd.ms-excel" 
+    headers['Content-Disposition'] = 'attachment; filename="' + file + '"'
+    headers['Cache-Control'] = ''
+  end
+
   private
   def localize
     # We will use instance vars for the locale so we can make use of them in
@@ -45,6 +54,7 @@ class ApplicationController < ActionController::Base
     bindtextdomain('messages', "#{RAILS_ROOT}/locale", @locale, @charset)
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
   end
+
   # checks if user is student. 
   # if true creates @student variable with current student
   def prepare_student
@@ -53,14 +63,17 @@ class ApplicationController < ActionController::Base
       @student = @user.person 
     end
   end
+
   # prepares user class variable
   def prepare_user
     @user = ActiveRecord::Acts::Audited.current_user = User.find(@session['user'])
   end
+
   # prepares faculty class variable
   def prepare_faculty
     @faculty = @user.person.faculty
   end
+
   # prepares conditions for various queries
   def prepare_conditions
     @conditions = ["null is not null"]
@@ -76,10 +89,12 @@ class ApplicationController < ActionController::Base
       @conditions = ['tutor_id = ?', @user.person.id]
     end
   end
+ 
   # rescues exceptions throwed in actions
   def rescue_action_in_public(exception)
     @exception = exception
     redirect_to error_url
   end
+
 end
 

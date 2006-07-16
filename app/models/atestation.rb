@@ -1,5 +1,6 @@
 class Atestation < StudyPlanApprovement
   has_one :atestation_detail
+
   # returns date of actual atestation on faculty
   def self.next_for_faculty(faculty)
     faculty = faculty.id if faculty.is_a? Faculty
@@ -12,6 +13,7 @@ class Atestation < StudyPlanApprovement
     end
     return date.to_time
   end
+
   # returns date of actual atestation on faculty
   def self.actual_for_faculty(faculty)
     faculty = faculty.id if faculty.is_a? Faculty

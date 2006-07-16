@@ -8,6 +8,26 @@ class RegularScholarship < Scholarship
   end
 
   def self.pay_for(index)
-    index.current_regular_scholarship.pay!
+    return index.regular_scholarship.pay!
+  end
+
+  def code
+    if index.payment_id == 3
+      "#{index.faculty.stipendia_code}DCIR"
+    else
+      "#{index.faculty.stipendia_code}DTUR"
+    end
+  end
+
+  def disponent
+    if index.payment_id == 3
+      "1301#{index.faculty.stipendia_code}9001131"
+    else
+      "1201#{index.faculty.stipendia_code}9001121"
+    end
+  end
+
+  def self.create_for(index)
+    create(:amount => ScholarshipCalculator.for(index), :index_id => index.id)
   end
 end

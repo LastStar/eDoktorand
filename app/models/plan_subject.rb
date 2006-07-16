@@ -39,12 +39,14 @@ class PlanSubject < ActiveRecord::Base
   end
 
   # returns all unfinished plan subjects from approved study plans
-  # got option to return study_plans
+  # got option to return students
   def self.find_unfinished_by_subject(subject_id, options = {})
     sql = <<-SQL
-      plan_subjects.subject_id = ? and plan_subjects.finished_on is null \
+      plan_subjects.subject_id = ? and
+      plan_subjects.finished_on is null \
       and study_plans.approved_on is not null \
-      and study_plans.canceled_on is null
+      and study_plans.canceled_on is null \
+      and indices.finished_on is null
     SQL
     plan_subjects = find(:all, :include => [{:study_plan => :index}],
                          :conditions => [sql, subject_id])
@@ -57,8 +59,9 @@ class PlanSubject < ActiveRecord::Base
 
   # returns plan subject for exam
   def self.find_for_exam(exam, options = {})
+    return nil unless exam
     ps = find(:first, :conditions => ['study_plan_id = ? and subject_id = ?', 
-      exam.index.study_plan.id, exam.subject_id])
+                                      exam.index.study_plan.id, exam.subject_id])
     if options[:update_attributes]
       ps.update_attributes(options[:update_attributes])
     end

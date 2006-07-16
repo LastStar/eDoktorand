@@ -18,7 +18,7 @@ class Subject < ActiveRecord::Base
     elsif user.has_role?('student')
       subjects = user.person.index.study_plan.plan_subjects.map {|ps| ps.subject}
     end
-    if option && option == :not_finished
+    if option == :not_finished
       subjects.select do |sub|
         sub.plan_subjects.detect do |ps|
           ps.study_plan.approved? && !ps.finished?  

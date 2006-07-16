@@ -1,0 +1,9 @@
+page.replace_html "done", render(:partial => "exams/with_student",
+                                       :locals => {:exam => @exam})
+page.replace_html "form", render(:partial => "exams/main_form", 
+                                       :locals => {:exam => @exam,
+                                       :plan_subject => @plan_subject,
+                                       :action => "save_exam",
+                                       :container => @container})
+page.hide "students_#{@probation_term.id}"
+

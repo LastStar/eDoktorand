@@ -5,7 +5,7 @@ module ApplicationHelper
     "designed by GravaStar &nbsp;"
   end
 
-# prints department options
+  # prints department options
   def department_options(options = {})
     options_for_select(Department.for_select(options))
   end
@@ -214,14 +214,12 @@ module ApplicationHelper
     links = []
     if @user.person.is_a?(Student) and @student 
       if @student.index.study_plan && @student.index.study_plan.approved? 
-        links << link_to_unless_current(_("probation terms"), :controller =>
-          'probation_terms'){} 
+        links << link_to_unless_current(_("probation terms"), 
+                                        :controller => 'probation_terms'){} 
       end 
-      links << link_to_unless_current(_("study plan"), :controller => 'study_plans',
-        :action => 'index'){} 
-      #links << link_to_unless_current(_("contacts"), :controller => 'address', :action => 'edit'){}
-      links << link_to_unless_current(_("scholarship"), :controller => 'scholarships',
-        :action => 'list'){} 
+      links << link_to_unless_current(_("study plan"),
+                                      :controller => 'study_plans',
+                                      :action => 'index'){} 
     else 
       if @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
@@ -233,10 +231,14 @@ module ApplicationHelper
           'probation_terms'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
       end 
-      links << link_to_unless_current(_("students"), :controller => 'students'){} 
+      links << link_to_unless_current(_("students"), 
+                                      :controller => 'students'){} 
     end 
-    links << link_to_unless_current(_("logoff"), {:controller => 'account', :action => 'logout'}, :confirm =>  _("do you really want to") + ' ' +
-      _("logoff") + '?'){} 
+    links << link_to_unless_current(_("logoff"), 
+                                    {:controller => 'account', 
+                                     :action => 'logout'}, 
+                                     :confirm =>  _("do you really want to") + 
+    ' ' + _("logoff") + '?'){} 
     links.flatten.join("\n")
   end
   
@@ -516,6 +518,9 @@ module ApplicationHelper
     f.downcase + l
   end
 
+  def display_name_options(people)
+    options_for_select(people.map {|p| [p.display_name, p.id]})
+  end
 
   private 
   

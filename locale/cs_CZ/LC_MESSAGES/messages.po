@@ -1618,3 +1618,9 @@ msgstr "Telefon"
 
 msgid "citizenship"
 msgstr "Občanství"
+
+msgid "future_terms"
+msgstr "budoucí termíny"
+
+msgid "history_terms"
+msgstr "minulé termíny"

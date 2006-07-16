@@ -4,13 +4,19 @@ class ExtraScholarship < Scholarship
     find(:all, :conditions => ['index_id = ? and payed_on is null', index_id])
   end
 
-  def self.pay_for(index)
-    find_all_unpayed_by_index(index).each do |es|
-      es.pay!
+  def print_commission
+    [commission_head, commission_body, commission_tail].join('/')
+  end
+
+  def code
+    if index.payment_id == 3
+      "#{index.faculty.stipendia_code}DCIM"
+    else
+      "#{index.faculty.stipendia_code}DTUM"
     end
   end
 
-  def print_commission
-    [commission_head, commission_body, commission_tail].join('/')
+  def disponent
+    "#{commission_tail}#{commission_head}#{commission_body}"
   end
 end

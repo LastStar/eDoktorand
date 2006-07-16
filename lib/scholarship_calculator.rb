@@ -15,6 +15,7 @@ class ScholarshipCalculator
 
   # calculates scholarship for student 
   def self.for(index)
+    return 7500 if index.foreigner?
     index = Index.find(index) unless index.is_a?(Index)
     case index.faculty.id
     when 1, 3, 4

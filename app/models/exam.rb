@@ -38,6 +38,15 @@ class Exam < ActiveRecord::Base
     exams
   end
 
+  def self.from_probation_term(probation_term, student = nil)
+    exam = new
+    exam.index = student.index if student
+    exam.subject_id = probation_term.subject.id
+    exam.first_examinator_id = probation_term.first_examinator_id
+    exam.second_examinator_id = probation_term.second_examinator_id
+    return exam
+  end
+
   private
   def finish_plan_subject
     PlanSubject.find_for_exam(self).finish!

@@ -12,13 +12,16 @@ class CSVExporter
                                        :order => 'studies.id, people.lastname')
     CSV::Writer.generate(outfile, ';') do |csv|
       @indices.each do |index|
+        @@mylog.info "Exporting stipendia for #{index.student.display_name}"
         row = []
         row << index.student.display_name
         row << index.account_bank_number
         row << index.full_account_number
-        row << index.current_regular_scholarship.amount
-        if index.current_extra_scholarship 
-          row << index.current_extra_scholarship_sum 
+        if index.has_regular_scholarship?
+          row << index.regular_scholarship.amount
+        end
+        unless index.extra_scholarships.empty?
+          row << index.extra_scholarship_sum 
         end
         csv << row
       end
@@ -115,6 +118,24 @@ class CSVExporter
         row = []
         row << index.student.uic
         row << index.student.display_name
+        @@mylog.debug "Adding #{row}"
+        csv << row
+      end
+    end
+    outfile.close
+  end
+
+  def self.export_students_uic_sident
+    file = "students_uic_sident.csv"
+    outfile = File.open(file, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      is = Index.find(:all, :conditions => 'finished_on is null')
+      @@mylog.info "There are #{is.size} students"
+      is.each do |index|
+        row = []
+        row << index.student.uic
+        row << index.student.sident
+        row << index.student.account
         @@mylog.debug "Adding #{row}"
         csv << row
       end

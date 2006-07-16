@@ -1,73 +1,25 @@
-<p>
-<%= _("note") %>:&nbsp;<%= probation_term.note %><br /> 
-<%= _("1. examinator") %>:&nbsp;<%= probation_term.first_examinator.display_name %><br />  
-<%= _("2. examinator") %>:&nbsp;<%= probation_term.second_examinator.display_name if probation_term.second_examinator %><br /> 
-<%= _("Created by") %>:&nbsp;<%= probation_term.creator.display_name %><br /> 
-  <br/><br/>
-<% if @students && !@students.empty? %>
-  <div>
-    <h5><%= _("enroll students") %></h5><br/>
-    <%= form_remote_with_loading(:url => {:action => 'enroll_student_term'}, :evaluate =>
-        true) %>	
-      <%= content_tag('select', options_for_select(students.map {|stud|
-      [stud.display_name, stud.id]}), {'id' => "student_id", 'name' =>
-      "student[id]"}) %>
-      <input type='hidden' name='probation_term' value='<%= probation_term.id %>' />
-      <%= submit_tag(_("enroll")) %>
-      <%= end_form_tag %>
-  </div>
+<div id='students_<%= probation_term.id %>'>
+<% if(!probation_term.students.empty?) %>
+  <ul id="enrolled_<%= probation_term.id %>">
+    <%= render(:partial => "enrolled_students", 
+               :locals => {:probation_term => probation_term}) %>
+  </ul>
 <% end %>
-</p> 
-  <% if(!probation_term.students.empty?) %>
-    <h5><%= _("enrolled students") %></h5>
-    <p>
-      <% for student in probation_term.students  %>
-      <%= student.display_name %>&nbsp;&nbsp;
-      <% ps = PlanSubject.find(:first, :conditions => [" subject_id = ? AND
-      study_plan_id = ?", probation_term.subject.id, student.index.study_plan.id])
-         exam = Exam.find(:first, :conditions => ["subject_id = ? AND index_id =
-         ?", probation_term.subject.id, student.index.id]) %>
-      <% if ps.finished_on && exam.result == 1 %>
-        <%= [_('not pass'), _('pass')][exam.result] %>&nbsp;<%= ps.finished_on.strftime("%d. %m. %Y") %>
-      <% else %>
-        <%= 
-          link_to_remote_with_loading(_("Enroll student"), 
-            :url => {:action => 'enroll_exam', :controller => 'probation_terms', :id =>
-           probation_term, :student_id => student.id}, :evaluate => true)
-        %>
-        <%= 
-        link_to_remote_with_loading(_("Sign off student"), 
-            :url => {:action => 'sign_off_student', :controller => 'probation_terms', :id =>
-           probation_term, :student_id => student.id}, :evaluate => true)
-        %>
-      <% end %>
-        <br />
-      <% end %>
-    </p>
-  <% end %>
+
+<% if @students && !@students.empty? %>
+<div>
+  <label><%= _("enroll students") %></label>
+  <%= form_remote_with_loading(:url => {:action => 'enroll_student'},
+      :update => "info_#{probation_term.id}") %>	
+    <%= content_tag('select', display_name_options(students), 
+                    {:id => "student_id", :name => "student[id]"}) %>
+    <%= hidden_field(:probation_term, :id) %>
+    <%= submit_tag(_("enroll")) %>
+    <%= end_form_tag %>
+</div>
+<% end %>
+</div>
 <div id="done">
 </div>
 <div id="form">
 </div>
-<hr/>
-<%= 
-javascript_tag <<-CODE
-last = []
-last[1] = 0
-last[2] = 0
-last[3] = 0
-function hide_on_internal(id) {
-  var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
-  if((element.value == 0 && last[id] != 0) || (element.value != 0 && last[id] == 0)) {
-    if($('external' + id).style.display == 'none') {
-    Element.show('external' + id)
-    last[id] = element.value;
-    }
-    else {
-    Element.hide('external' + id)
-    last[id] = element.value;
-    }
-  };
-}
-CODE
-%>
