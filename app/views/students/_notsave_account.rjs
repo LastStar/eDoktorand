@@ -1,0 +1,2 @@
+page.replace_html "account", render(:partial => 'account_form')
+

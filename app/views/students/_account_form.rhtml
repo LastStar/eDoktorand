@@ -1,0 +1,8 @@
+<%= save_form(:account) %>
+  <%= text_field 'index', 'account_number_prefix', 'size' => 6 %>
+  <%= text_field 'index', 'account_number', 'size' => 10 %>
+  <%= text_field 'index', 'account_bank_number', 'size' => 4 %>
+  <%= hidden_field 'student', 'id' %>
+  <%= ok_submit(:account) %>
+<%= end_form_tag %>
+<%= javascript_tag "$('index_account_number').select()" %>
