@@ -19,14 +19,15 @@ class ProbationTerm < ActiveRecord::Base
 
   def self.find_by(subjects, option = nil)
     s_ids = subjects.map &:id
-    options = {:conditions => ["subject_id in (?)", s_ids], 
-               :order => :date}
+    options = {:conditions => ["subject_id in (?)", s_ids]}
     if option 
       if option == :history
         options[:conditions].first << ' and date <= ?'
         options[:limit] = 30
+        options[:order] = 'date desc'
       else
         options[:conditions].first << ' and date >= ?'
+        options[:order] = :date
       end
       options[:conditions] << Time.now
     end
@@ -39,5 +40,9 @@ class ProbationTerm < ActiveRecord::Base
 
   def empty_note?
     !note || note.empty?
+  end
+
+  def enrolled_ratio
+    "#{max_students}&nbsp;/&nbsp;#{students.size}"
   end
 end

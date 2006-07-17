@@ -4,9 +4,8 @@
   <%= link(@user, probation_term)  %>
 </div>
 <ul>
-  <li><div class='longinfo'> <%= _("maximum/enrolled") %>&nbsp;:&nbsp;
-      <%= probation_term.max_students %>&nbsp;/&nbsp;
-      <%= probation_term.students.size %></div>
+  <li><div class='longinfo'> <%= _("maximum/enrolled") %>:&nbsp;
+    <%= probation_term.enrolled_ratio %></div>
   <div class='longinfo'><%=_("room")%>: <%= probation_term.room %></div>
   <div class='longinfo'><%=_("starting time")%>: <%= probation_term.start_time %></div>
   <%=_("date")%>: <%= probation_term.date.strftime("%d. %m. %Y") %></li>
