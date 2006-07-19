@@ -1,0 +1,6 @@
+<%= save_form(:zip) %>
+  <%= text_field 'address', 'zip', 'size' => 30 %>
+  <%= hidden_field 'address', 'id' %>
+  <%= ok_submit(:zip) %>
+<%= end_form_tag %>
+<%= javascript_tag "$('address_zip').select()" %>

@@ -1,0 +1,6 @@
+<%= save_form(:city) %>
+  <%= text_field 'address', 'city', 'size' => 30 %>
+  <%= hidden_field 'address', 'id' %>
+  <%= ok_submit(:city) %>
+<%= end_form_tag %>
+<%= javascript_tag "$('address_city').select()" %>

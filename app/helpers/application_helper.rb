@@ -432,7 +432,11 @@ module ApplicationHelper
   def edit_link(object, name, meth = nil)
     label = object.send(name)
     label = label.send(meth) if label && meth
+    if object.class.to_s.underscore == 'address'
+    cntr = 'address'
+    else
     cntr = object.class.to_s.underscore.pluralize
+    end
     link_to_remote("#{changer_image(name)}#{label}",
                    {:update => name,
                    :after => loader_image("#{name}_changer"),

@@ -1,1 +1,0 @@
-page.replace_html "address_city_field", render(:partial => 'edit_city')

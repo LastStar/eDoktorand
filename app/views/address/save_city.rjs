@@ -1,1 +1,1 @@
-page.replace_html "address_city_field", city_line(@index.student)
+page.replace_html "city", attribute_line(@address, :city)

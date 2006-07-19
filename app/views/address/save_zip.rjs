@@ -1,1 +1,1 @@
-page.replace_html "address_zip_field", zip_line(@index.student)
+page.replace_html "zip", attribute_line(@address, :zip)

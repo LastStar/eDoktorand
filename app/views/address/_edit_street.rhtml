@@ -1,7 +1,0 @@
-<%= form_remote_tag(:url => {:action => 'save_street', :id => @index}, :complete => evaluate_remote_response) %>
-    <%= text_field 'address', 'street', 'size' => '30' %>  
-    <%= hidden_field 'index', 'id' %>
-    <%= hidden_field 'address', 'address_type_id' %>
-    <%= submit_tag _("commit") %>
-<%= end_form_tag %>
-

@@ -1,1 +1,0 @@
-page.replace_html "address_zip_field", render(:partial => 'edit_zip')

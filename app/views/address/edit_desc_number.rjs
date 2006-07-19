@@ -1,1 +1,0 @@
-page.replace_html "address_desc_number_field", render(:partial => 'edit_desc_number')

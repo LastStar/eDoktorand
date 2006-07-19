@@ -1,18 +1,18 @@
 <ul>
 <li>
-<%= street_line(student) %>
+<%= attribute_line(student.address, :street) %>
 <%=_ 'Street' %>:
 </li>
 <li>
-<%= desc_number_line(student) %>
+<%= attribute_line(student.address, :desc_number) %>
 <%=_ 'street number' %>:
 </li>
 <li>
-<%= city_line(student) %>
+<%= attribute_line(student.address, :city) %>
 <%=_ 'City' %>:
 </li>
 <li>
-<%= zip_line(student) %>
+<%= attribute_line(student.address, :zip) %>
 <%=_ 'zip' %>:
 </li>
 </ul>
