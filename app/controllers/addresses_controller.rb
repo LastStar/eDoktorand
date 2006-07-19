@@ -1,4 +1,4 @@
-class AddressController < ApplicationController
+class AddressesController < ApplicationController
   include LoginSystem
   layout "employers", :except => [:save, :save_street, :save_city, :save_zip, :save_desc_number, :edit_street, :edit_zip, :edit_city, :edit_desc_number]
   before_filter :set_title

@@ -432,11 +432,7 @@ module ApplicationHelper
   def edit_link(object, name, meth = nil)
     label = object.send(name)
     label = label.send(meth) if label && meth
-    if object.class.to_s.underscore == 'address'
-    cntr = 'address'
-    else
     cntr = object.class.to_s.underscore.pluralize
-    end
     link_to_remote("#{changer_image(name)}#{label}",
                    {:update => name,
                    :after => loader_image("#{name}_changer"),
@@ -453,61 +449,6 @@ module ApplicationHelper
                    :complete => evaluate_remote_response,
                    :url => {:controller => 'address', :action => 'edit', 
                            :id => index.id}}, :id => 'contact_link')
-  end
-
-  def street_link(index)
-    link_to_remote(image_tag('change.png'), 
-                   :update => "address_street_field_form_#{index.id}",
-                   :complete => evaluate_remote_response,
-                   :url => {:controller => 'address', 
-                           :action => 'edit_street', :id => index.id } )
-  end
-
-  def desc_number_link(index)
-    link_to_remote(image_tag('change.png'), 
-                   :update => "address_desc_number_field_form_#{index.id}",
-                   :complete => evaluate_remote_response,
-                   :url => {:controller => 'address', 
-                           :action => 'edit_desc_number', :id => index.id})
-  end
-
-  def city_link(index)
-    link_to_remote(image_tag('change.png'), 
-                   :update => "address_city_field_form_#{index.id}",
-                   :complete => evaluate_remote_response,
-       		   :url => {:controller => 'address', :action => 'edit_city', :id => index.id})
-  end
-
-  def zip_link(index)
-    link_to_remote(image_tag('change.png'), 
-                   :update => "address_zip_field_form_#{index.id}",
-                   :complete => evaluate_remote_response,
-                   :url => {:controller => 'address', 
-                           :action => 'edit_zip', :id => index.id})
-  end
-
-  def street_line(student)
-    street = student.address ? student.address.street : ''
-    long_info_helper("#{street_link(student.index)} #{street}", 
-                     :id => 'address_street_field')
-  end
-
-  def desc_number_line(student)
-    desc_number = student.address ? student.address.desc_number : ''
-    long_info_helper("#{desc_number_link(student.index)} #{desc_number}", 
-                     :id => 'address_desc_number_field')
-  end
-
-  def city_line(student)
-    city = student.address ? student.address.city : ''
-    long_info_helper("#{city_link(student.index)} #{city}", 
-                     :id => 'address_city_field')
-  end
-
-  def zip_line(student)
-    zip = student.address ? student.address.zip : ''
-    long_info_helper("#{zip_link(student.index)} #{zip}", 
-                     :id => 'address_zip_field')
   end
 
   def first_upper(string)
