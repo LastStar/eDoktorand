@@ -56,25 +56,41 @@ class AddressesController < ApplicationController
 
   # saves the street of address to db 
   def save_street
-    @address = Address.find(@student.address.id)
-    @address.update_attributes(@params['address'])
+    if @student
+      @address = Address.find(@student.address.id) 
+    else
+      @address = Address.find(params[:address][:id])
+    end
+    @address.update_attributes(@params[:address])
   end
   
   # saves the city of address to db
   def save_city
-    @address = Address.find(@student.address.id)
+    if @student
+      @address = Address.find(@student.address.id) 
+    else
+      @address = Address.find(params[:address][:id])
+    end
     @address.update_attributes(@params['address'])
   end
   
   # saves the zip of address to db
   def save_zip
-    @address = Address.find(@student.address.id)
+    if @student
+      @address = Address.find(@student.address.id) 
+    else
+      @address = Address.find(params[:address][:id])
+    end
     @address.update_attributes(@params['address'])
   end
 
   # saves the description number of address to db
   def save_desc_number
-    @address = Address.find(@student.address.id)
+    if @student
+      @address = Address.find(@student.address.id) 
+    else
+      @address = Address.find(params[:address][:id])
+    end
     @address.update_attributes(@params['address'])
   end
 

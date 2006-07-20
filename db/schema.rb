@@ -2,11 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-<<<<<<< .mine
-ActiveRecord::Schema.define(:version => 75) do
-=======
-ActiveRecord::Schema.define(:version => 72) do
->>>>>>> .r671
+ActiveRecord::Schema.define(:version => 77) do
 
   create_table "actualities", :force => true do |t|
     t.column "label", :string
