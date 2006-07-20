@@ -130,7 +130,8 @@ class ProbationTermsController < ApplicationController
   # saves exam 
   def save_exam
     exam = session[:exam]
-    exam.update_attributes(params[:exam])
+    exam.attributes = params[:exam]
+    exam.save
     @probation_term = session[:probation_term]
     session[:exam] = session[:probation_term] = nil
     @students = Student.find_to_enroll(@probation_term, :sort)

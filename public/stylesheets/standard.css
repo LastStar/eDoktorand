@@ -80,7 +80,7 @@ ul.peopleList {
 }
 
 .hidden { display: none; }
-.detail {  font-size: 9pt; color: #666;padding: 0px 4px 4px 0px; margin: 0px;border-bottom: 1px solid #452;}
+.detail {  font-size: 9pt; color: #666;padding: 0px 4px 4px 0px; margin: 0px;}
 pre { background-color: #eee; padding: 10px; font-size: 11px; }
 p {
   padding-left: 20px;

@@ -1,6 +1,9 @@
 class Index < ActiveRecord::Base
   include Approvable
 
+  PREFIX_WEIGHTS = [1, 2, 4, 8, 5, 10]
+  ACCOUNT_WEIGHTS = [1, 2, 4, 8, 5, 10, 9, 7, 3, 6]
+
   belongs_to :student, :foreign_key => 'student_id'
   belongs_to :tutor
   belongs_to :study
@@ -18,15 +21,31 @@ class Index < ActiveRecord::Base
   has_one :approvement, :class_name => 'FinalExamApprovement',
     :foreign_key => 'document_id'
 
-  validates_size_of :account_number_prefix, :is => 6,
-    :message => _("Account number prefix must be on six places")
-  validates_size_of :account_number, :is => 10,
-    :message => _("Account number must be on ten places")
+  validates_size_of :account_number_prefix, :maximum => 6,
+    :message => _("Account number prefix must be max on six places")
+  validates_size_of :account_number, :in => 5..10,
+    :message => _("Account number must be between 5 and 10 places")
   validates_size_of :account_bank_number, :is => 4, 
     :message => _("Account bank number must be on four places")
   validates_presence_of :student
   validates_presence_of :tutor
 
+  def validate
+    pre_sum = 0
+    account_number_prefix.split('').reverse.each_with_index do |c, j|
+      pre_sum += c.to_i * PREFIX_WEIGHTS[j]
+    end
+    unless (pre_sum % 11) == 0
+      errors.add(:account_number_prefix, _('accoun prefix in wrong format'))
+    end
+    acc_sum = 0
+    account_number.split('').reverse.each_with_index do |c, j|
+      acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
+    end
+    unless (acc_sum % 11) == 0
+      errors.add(:account_number, _('accoun number in wrong format'))
+    end
+  end
   # returns semesteer of the study
   def semester
     time = Time.now - enrolled_on
@@ -190,8 +209,8 @@ class Index < ActiveRecord::Base
       result.select do |i|
         i.waits_for_scholarship_confirmation? ||
         i.interupt_waits_for_confirmation? ||
-        i.not_even_admited_interupt? ||
-        i.waits_for_statement?(user) 
+        i.waits_for_statement?(user) ||
+        i.claimed_final_application?
       end
     elsif user.has_one_of_roles?(['tutor', 'leader', 'dean'])
       result.select {|i| i.waits_for_statement?(user)} 
@@ -268,7 +287,9 @@ class Index < ActiveRecord::Base
 
   # returns status of index
   def status
-    if finished?
+    if claimed_final_application?
+      _('final application')
+    elsif finished?
       _('finished')
     elsif interupted?
       _('interupted')
@@ -399,8 +420,21 @@ class Index < ActiveRecord::Base
     !final_application_claimed_at.nil?
   end
 
+  def final_term_created?
+    !final_exam_term.nil?
+  end
+
   # for approvement purposes
   def index
     self
+  end
+
+  def send_final_exam_invitation!
+    Notifications::deliver_invite_to_final_exam(self)
+    update_attribute(:final_exam_invitation_sent_at, Time.now)
+  end
+
+  def final_exam_invitation_sent?
+    !final_exam_invitation_sent_at.nil?
   end
 end

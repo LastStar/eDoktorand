@@ -1,6 +1,6 @@
 <%=
 update_element_function("disert_theme#{disert_theme.index.study_plan.id}",
-:position => :after, :content => approve_forms(disert_theme)) %>
+:position => :after, :content => approve_forms(@user, disert_theme)) %>
 <%= update_element_function("methodology_link#{disert_theme.id}", :action =>
 :remove) %>
 

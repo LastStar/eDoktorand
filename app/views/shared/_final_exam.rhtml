@@ -1,6 +1,12 @@
-<% if study_plan.index.claimed_final_application? %>
+<% index = study_plan.index %>
+<% if index.final_exam_invitation_sent? %>
+  <li><b><%= _('This student was invited for final exam.') %></b></li>
+<% elsif index.claimed_final_application? %>
   <li><b><%= _('This student claimed for final exam.') %></b></li>
-  <%= print_statements(study_plan.index.approvement) %>
+  <%= print_statements(index.approvement) %>
+<% end %>
+<% if index.approved? %>
+<%= final_exam_term_link(@user, index) %>
 <% end %>
 <li>
 <div class='info'><%= "#{study_plan.finishing_to}. #{_('semester')}" %></div>

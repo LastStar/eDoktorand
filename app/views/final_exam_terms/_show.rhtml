@@ -7,13 +7,7 @@
   <b><%= column.human_name %>:</b> <%=h @exam_term.send(column.name) %>
 </p>
 <% end %>
-
 <div class='links'>
-<%= link_to_remote_with_loading(_("edit"), :url => {:action => 'edit', :id => @exam_term}, :complete => evaluate_remote_response) %>
-<%= link_to_function(_("back"), "Element.show('people_list', 'search');
-Element.remove('final_exam')", :id => 'back_link') %>
-<%= link_to_function(_("back and remove from list"), \
-"Element.remove('index_line_#{@exam_term.index.id}'); \
-Element.remove('final_exam'); \
-Element.show('people_list', 'search');", :id => 'back_remove_link') %>
-</div> <!-- end links -->
+<%= hide_link('final_exam') %>
+<span id='mail_link'><%= send_invitation_link(@user, @exam_term.index) %></span>
+</div>

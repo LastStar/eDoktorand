@@ -105,11 +105,11 @@ study_plan.plan_subjects, :title => _("subjects")}) %>
   :locals => {:disert_theme => index.disert_theme, :study_plan =>
   study_plan, :methodology => true}) %>
 <% if index.claimed_final_application? %>
-  <%= approve_forms(index) %>
+  <%= approve_forms(@user, index) %>
 <% elsif index.admited_interupt? %>
-  <%= approve_forms(index.interupt) %>
+  <%= approve_forms(@user, index.interupt) %>
 <% elsif !study_plan.approved? || study_plan.waits_for_actual_atestation? %>
-  <%= approve_forms(study_plan) %>
+  <%= approve_forms(@user, study_plan) %>
 <% end %>
 <% else %>
 <div class='links'>

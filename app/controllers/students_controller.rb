@@ -1,7 +1,9 @@
 class StudentsController < ApplicationController
   include LoginSystem
+
   layout 'employers', :except => [:edit_citizenship, :edit_phone, :edit_email,
                                   :time_form, :filter, :list_xls, :edit_account]
+
   before_filter :prepare_user, :set_title, :login_required
   before_filter :prepare_order, :prepare_filter, :except => [:show,
     :contact]
@@ -18,6 +20,7 @@ class StudentsController < ApplicationController
     headers['Content-Disposition'] = 'attachment; filename="excel-export.xls"'
     headers['Cache-Control'] = ''
   end
+
   # searches in students lastname
   def search
     conditions = [' AND people.lastname like ?']
@@ -100,6 +103,7 @@ class StudentsController < ApplicationController
     render(:partial => 'shared/confirm_approve')
   end
 
+  # methods for editing personal details
   def edit_email
     @student = Student.find(params[:id], :include => :index)
     @index = @student.index
@@ -149,6 +153,7 @@ class StudentsController < ApplicationController
       render_partial 'notsave_account'
     end  
   end
+  # end of methods for editing personal details
 
   private
   
@@ -173,11 +178,7 @@ class StudentsController < ApplicationController
       end
     end
     # default filter to waiting for approvement 
-    unless @user.has_one_of_roles?(['department_secretary', 'faculty_secretary'])
-      @session['filter'] ||= 2 
-    else
-      @session['filter'] ||= -1
-    end
+    @session['filter'] ||= 2 
   end
 
   def do_filter

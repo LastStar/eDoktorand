@@ -142,4 +142,28 @@ class CSVExporter
     end
     outfile.close
   end
+
+  def self.export_students_with_bad_account
+    file = "students_uic_sident.csv"
+    outfile = File.open(file, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      is = Index.find(:all, 
+                      :conditions => "account_number is not 
+                                      null and account_number <> ''",
+                     :order => 'department_id')
+      is.reject! {|i| i.valid?}
+      @@mylog.info "There are #{is.size} students"
+      is.each do |index|
+        row = []
+        row << index.student.uic
+        row << index.student.faculty
+        row << index.student.display_name
+        row << index.student.errors.full_messages
+        @@mylog.debug "Adding #{row}"
+        csv << row
+      end
+    end
+
+    outfile.close
+  end
 end

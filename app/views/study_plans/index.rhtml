@@ -3,7 +3,9 @@
 <p class='help'><%= _("Your study plan, details of it you can see here, is
 processed now. Final approvement you will get by email. ") %></p> 
   <% elsif @index.claimed_final_application? %>
+    <% unless @index.final_term_created? %>
 <p class='help'><%= _("Wait till your application will be approved and your final exam term will be created.") %></p> 
+    <% end %>
   <% elsif @index.study_plan.all_subjects_finished? %>
 <p class='help'>
       <%= _('You have all subjects finished. Proceed to final exam application') %>

@@ -136,8 +136,8 @@ module ApplicationHelper
   end
   
   # prints approve form
-  def approve_forms(document)
-    if statement = document.index.statement_for(@user)
+  def approve_forms(user, document)
+    if statement = document.index.statement_for(user)
       approve_form(document, statement)
     end
   end
@@ -466,6 +466,24 @@ module ApplicationHelper
   def display_name_options(people)
     options_for_select(people.map {|p| [p.display_name, p.id]})
   end
+
+  def final_exam_term_link(user, index)
+    if user.has_role? 'faculty_secretary' && !index.final_exam_invitation_sent?
+      opts = {:url => {:controller => 'final_exam_terms', :action => 'new', 
+                      :id => index},
+              :evaluate_remote_response => true}
+    else
+      opts = {:url => {:controller => 'final_exam_terms', :action => 'show', 
+                       :id => index.final_exam_term.id},
+              :evaluate => true}
+    end
+    content_tag('li', link_to_remote(_('final exam term'), opts), :id => 'final_exam')
+  end
+
+  def hide_link(element, text = _('hide'))
+    link_to_function(text, "Element.hide('#{element}')")
+  end
+
 
   private 
   
