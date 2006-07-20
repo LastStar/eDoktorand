@@ -177,8 +177,13 @@ class StudentsController < ApplicationController
         @filters.concat([[_("my students"), 1], [_('my studying'), 4]])
       end
     end
-    # default filter to waiting for approvement 
-    @session['filter'] ||= 2 
+    unless @user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
+      # default filter to waiting for approvement 
+      @session['filter'] ||= 2 
+    else
+      @session['filter'] ||= -1 
+    end
+
   end
 
   def do_filter
