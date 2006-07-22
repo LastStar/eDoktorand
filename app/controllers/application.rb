@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :localize
 
   include LoginSystem
+  include ExceptionNotifiable
 
   # TODO redo with model methods
   # authorizes user
