@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
   model :dean # solving deep STI 
   before_filter :localize
-  after_filter :redirect_to_error_page, :only => :rescue_action_in_public
 
   # TODO redo with model methods
   # authorizes user
@@ -92,10 +91,5 @@ class ApplicationController < ActionController::Base
     end
   end
  
-  private
-  def redirect_to_error_page
-    redirect_to error_url
-  end
-
 end
 
