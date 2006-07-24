@@ -32,9 +32,9 @@ class Student < Person
     index.coridor
   end
 
-  def address_or_new
+  def address_or_create
     return address if address
-    Address.new_habitat_for(id)
+    Address.create_habitat_for(id)
   end
 
   def has_study_plan?
