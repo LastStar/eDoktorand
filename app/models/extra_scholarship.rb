@@ -21,7 +21,8 @@ class ExtraScholarship < Scholarship
   end
 
   def self.sum_for(user)
-    ids = Index.find_for_scholarship(User.find_by_login('husakova')).map &:id
+    ids = Index.find_for_scholarship(User.find_by_login('husakova'),
+                                     :include => []).map &:id
     code = "#{user.person.faculty.stipendia_code}900"
     sum(:amount, :conditions => ["index_id in (?) and commission_body = 1121" +
                                  " and commission_tail = 1201" + 

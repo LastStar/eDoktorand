@@ -281,7 +281,7 @@ class Index < ActiveRecord::Base
   end
 
   def self.find_for_scholarship(user, opts = {})
-    opts.update({:unfinished => true, :not_interupted => true, :include => []})
+    opts.update({:unfinished => true, :not_interupted => true})
     find_for(user, opts)
   end
 
