@@ -30,4 +30,9 @@ class RegularScholarship < Scholarship
   def self.create_for(index)
     create(:amount => ScholarshipCalculator.for(index), :index_id => index.id)
   end
+
+  def self.sum_for(user)
+    ids = Index.find_for_scholarship(User.find_by_login('husakova')).map &:id
+    sum(:amount, :conditions => ["index_id in (?) and payed_on is null", ids]) 
+  end
 end

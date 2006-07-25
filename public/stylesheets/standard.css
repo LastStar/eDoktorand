@@ -458,4 +458,5 @@ li.subject_select {border: none; padding-left: 100px; clear: both;}
 a.change_field {border: 1px solid white;text-decoration: none; color: black}
 a:hover.change_field {border: 1px dashed #ccc; color: black}
 .noborder input {border: none}
-
+#sum ul {padding: 0px; margin: 0px; background: #ddc; border-bottom: 1px solid white;}
+#sum ul li {border-top: 1px solid white; color: black;}

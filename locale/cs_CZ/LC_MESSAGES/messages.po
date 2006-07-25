@@ -1630,3 +1630,15 @@ msgstr "SZZ"
 
 msgid "This student was invited for final exam."
 msgstr "Tento student byl pozván k statní závěrečné zkoušce."
+
+msgid "hide"
+msgstr "skrýt"
+
+msgid "sum"
+msgstr "součet"
+
+msgid "regular scholarship sum"
+msgstr "součet řádných stipendií"
+
+msgid "extra scholarship sum"
+msgstr "součet mimořádných stipendií z fakultních zdrojů"

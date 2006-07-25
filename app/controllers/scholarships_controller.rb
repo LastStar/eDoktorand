@@ -1,6 +1,6 @@
 class ScholarshipsController < ApplicationController
   include LoginSystem
-  layout "employers", :except => [:save, :change, :add, :edit]
+  layout "employers", :except => [:save, :change, :add, :edit, :sum]
   before_filter :set_title, :login_required, :prepare_student,
                 :prepare_user
 
@@ -21,8 +21,8 @@ class ScholarshipsController < ApplicationController
 
   # scholarship list preparation
   def prepare
-    @indices = Index.find_studying_for(@user, 
-                                       :order => 'studies.id, people.lastname')
+    @indices = Index.find_for_scholarship(@user, :include => [:student, :study],
+                                         :order => 'studies.id, people.lastname')
   end
 
   def change
@@ -78,6 +78,11 @@ class ScholarshipsController < ApplicationController
     @index = scholarship.index
     @old_id = scholarship.id
     scholarship.destroy
+  end
+
+  def sum
+    @regular_sum = RegularScholarship.sum_for(@user)
+    @extra_sum = ExtraScholarship.sum_for(@user)
   end
 
   def pay

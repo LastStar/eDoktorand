@@ -15,8 +15,8 @@ class Index < ActiveRecord::Base
   belongs_to :coridor
   belongs_to :department
   has_many :interupts, :order => 'created_on desc'
-  has_many :extra_scholarships, :conditions => "scholarships.payed_on IS NULL"
-  has_one :regular_scholarship, :conditions => "scholarships.payed_on IS NULL"
+  has_many :extra_scholarships, :conditions => "payed_on IS NULL"
+  has_one :regular_scholarship, :conditions => "payed_on IS NULL"
   has_many :scholarships
   has_one :approvement, :class_name => 'FinalExamApprovement',
     :foreign_key => 'document_id'
@@ -175,12 +175,13 @@ class Index < ActiveRecord::Base
     if options[:not_interupted]
       conditions.first << ' AND indices.interupted_on IS NULL'
     end
+    unless options[:include]
+      options[:include] = [:study_plan, :student, :disert_theme, :department, :study,
+              :coridor, :interupts]
+    end
     conditions.first << 'AND study_id = 1' if options[:present]
-    find(:all, :conditions => conditions, 
-         :include => [:study_plan, :student, :disert_theme, :department,
-                      :study, :coridor, :interupts, :extra_scholarships, 
-                      :regular_scholarship],
-         :order => options[:order])
+    find(:all, :conditions => conditions, :order => options[:order],
+        :include => options[:include])
   end
 
   # finds only indices tutored by user
@@ -276,6 +277,11 @@ class Index < ActiveRecord::Base
   def self.find_studying_for(user, options = {})
     opts = {:unfinished => true, :not_interupted => true} 
     opts[:order] = options[:order] || 'people.lastname'
+    find_for(user, opts)
+  end
+
+  def self.find_for_scholarship(user, opts = {})
+    opts.update({:unfinished => true, :not_interupted => true, :include => []})
     find_for(user, opts)
   end
 

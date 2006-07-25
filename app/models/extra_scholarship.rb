@@ -19,4 +19,14 @@ class ExtraScholarship < Scholarship
   def disponent
     "#{commission_tail}#{commission_head}#{commission_body}"
   end
+
+  def self.sum_for(user)
+    ids = Index.find_for_scholarship(User.find_by_login('husakova')).map &:id
+    code = "#{user.person.faculty.stipendia_code}900"
+    sum(:amount, :conditions => ["index_id in (?) and commission_body = 1121" +
+                                 " and commission_tail = 1201" + 
+                                 " and commission_head = ?" +
+                                 " and payed_on is null",
+                                  ids, code]) 
+  end
 end
