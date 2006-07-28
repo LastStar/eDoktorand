@@ -1,8 +1,8 @@
 class RegularScholarship < Scholarship
-  def self.prepare_for_this_month(index_id)
-    unless rs = find_unpayed_by_index(index_id)
-      rs = create('index_id' => index_id,
-                  'amount' => ScholarshipCalculator.for(index_id))
+  def self.prepare_for_this_month(index)
+    unless rs = find_unpayed_by_index(index)
+      rs = create('index_id' => index.id,
+                  'amount' => ScholarshipCalculator.for(index))
     end
     return rs
   end

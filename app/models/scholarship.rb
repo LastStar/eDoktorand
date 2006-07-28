@@ -3,8 +3,9 @@ class Scholarship < ActiveRecord::Base
   validates_presence_of :index, :amount
   acts_as_audited
 
-  def self.find_unpayed_by_index(index_id)
-    find(:first, :conditions => ['index_id = ? and payed_on is null', index_id])
+  def self.find_unpayed_by_index(index)
+    index = index.id if index.is_a? Index
+    find(:first, :conditions => ['index_id = ? and payed_on is null', index])
   end
 
   def pay!

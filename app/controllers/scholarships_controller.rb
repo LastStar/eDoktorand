@@ -26,7 +26,8 @@ class ScholarshipsController < ApplicationController
   end
 
   def change
-    @scholarship = RegularScholarship.prepare_for_this_month(@params['id'])
+    index = Index.find(@params['id'])
+    @scholarship = RegularScholarship.prepare_for_this_month(index)
   end
 
   # this method shows all extra scholarships for index
