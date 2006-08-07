@@ -5,7 +5,7 @@ require 'exam_terms_controller'
 class ExamTermsController; def rescue_action(e) raise e end; end
 
 class ExamTermsControllerTest < Test::Unit::TestCase
-  fixtures :exam_terms
+  fixtures :exam_terms,:users
 
   def setup
     @controller = ExamTermsController.new
@@ -15,6 +15,7 @@ class ExamTermsControllerTest < Test::Unit::TestCase
 
   def test_index
     get :index
+    assert_redirected_to 'login'
     assert_rendered_file 'list'
   end
 

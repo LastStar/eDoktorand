@@ -5,7 +5,7 @@ require 'candidates_controller'
 class CandidatesController; def rescue_action(e) raise e end; end
 
 class CandidatesControllerTest < Test::Unit::TestCase
-  fixtures :candidates
+  fixtures :candidates,:users
 
   def setup
     @controller = CandidatesController.new
@@ -14,6 +14,16 @@ class CandidatesControllerTest < Test::Unit::TestCase
   end
 
   def test_index
+    process :index
+    assert_response :redirect
+    assert_redirected_to 'login'
+    session[:user] = User.find_by_id(1187)
+    #breakpoint
+    #post :controller => "account", :action => "login",
+    #:user_login => "komarkovav", :user_password => "komarkovav"
+    assert_session_has :user
+    assert_equal @komarkovav, @response.session["user"]
+    #breakpoint
     process :index
     assert_rendered_file 'list'
   end
@@ -68,4 +78,5 @@ class CandidatesControllerTest < Test::Unit::TestCase
       candidate = Candidate.find(1)
     }
   end
+  
 end

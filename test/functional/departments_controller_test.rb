@@ -25,7 +25,7 @@ class DepartmentsControllerTest < Test::Unit::TestCase
   end
 
   def test_show
-    process :show, 'id' => 1
+    process :show, 'id' => 58
     assert_rendered_file 'show'
     assert_template_has 'department'
     assert_valid_record 'department'
@@ -47,25 +47,25 @@ class DepartmentsControllerTest < Test::Unit::TestCase
   end
 
   def test_edit
-    process :edit, 'id' => 1
+    process :edit, 'id' => 58
     assert_rendered_file 'edit'
     assert_template_has 'department'
     assert_valid_record 'department'
   end
 
   def test_update
-    process :update, 'department' => { 'id' => 1 }
-    assert_redirected_to :action => 'show', :id => 1
+    process :update, 'department' => { 'id' => 58 }
+    assert_redirected_to :action => 'show', :id => 58
   end
 
   def test_destroy
-    assert_not_nil Department.find(1)
+    assert_not_nil Department.find(58)
 
-    process :destroy, 'id' => 1
+    process :destroy, 'id' => 58
     assert_redirected_to :action => 'list'
 
     assert_raise(ActiveRecord::RecordNotFound) {
-      department = Department.find(1)
+      department = Department.find(58)
     }
   end
 end
