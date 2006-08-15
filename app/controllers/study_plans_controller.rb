@@ -26,7 +26,7 @@ class StudyPlansController < ApplicationController
     @title = _("Creating study plan")
     @requisite_subjects = prepare_requisite(@student)
     @subjects = Subject.for_faculty_select(@student.faculty)
-    @subjects.concat(LanguageSubject.for_select(:coridor => @student.index.coridor))
+    @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
     @study_plan = @student.index.build_study_plan
     @plan_subjects = []
     FACULTY_CFG[@student.faculty.id]['subjects_count'].times do |i|

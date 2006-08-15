@@ -1642,3 +1642,9 @@ msgstr "součet řádných stipendií"
 
 msgid "extra scholarship sum"
 msgstr "součet mimořádných stipendií z fakultních zdrojů"
+
+msgid "Surname"
+msgstr "Rodné příjmení"
+
+msgid "Consultant"
+msgstr "Konzultant"
