@@ -166,4 +166,29 @@ class CSVExporter
 
     outfile.close
   end
+
+  def self.export_candidates_for(faculty)
+    faculty = Faculty.find(faculty) unless faculty.is_a? Faculty
+    file = "candidate_#{faculty.short_name}.csv"
+    outfile = File.open(file, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      sql = 'invited_on is not null and admited_on is not null' + 
+        ' and department_id in (?)'
+      cs = Candidate.find(:all, :conditions => [sql, faculty.departments_ids])
+      @@mylog.info "There are #{cs.size} candidates"
+      cs.each do |c|
+        row = []
+        row << c.id
+        row << c.firstname
+        row << c.lastname
+        row << c.title_before.label if c.title_before
+        row << c.department.short_name
+        row << c.study.name
+        @@mylog.debug "Adding #{row}"
+        csv << row
+      end
+    end
+    outfile.close
+  end
+
 end
