@@ -2,7 +2,7 @@
 <li>
 <%= "#{long_info_helper(student.display_name)}#{_('Full name')}: " %>
 </li>
-<li><%= attribute_line(student, :surname) %><%=_ 'Surname' %>:</li>
+<li><%= attribute_line(student, :birthname) %><%=_ 'Surname' %>:</li>
 
 <%= birth_date_line(student) %>
 <%= birth_number_line(student) %>
@@ -20,7 +20,6 @@
 <%= "#{long_info_helper(student.index.tutor.display_name)}#{_('Tutor')}: " %> 
 </li>
 <li>
-<%#= "#{long_info_helper(student.index.consultant)}#{_('Consultant')}: " %> 
 <%= attribute_line(student.index, :consultant) %><%=_ 'Consultant' %>:
 </li>
 <li>

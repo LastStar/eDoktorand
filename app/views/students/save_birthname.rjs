@@ -1,0 +1,1 @@
+page.replace_html "birthname", attribute_line(@student, :birthname)
