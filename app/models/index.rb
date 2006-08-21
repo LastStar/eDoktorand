@@ -31,21 +31,24 @@ class Index < ActiveRecord::Base
   validates_presence_of :tutor
 
   def validate
-    pre_sum = 0
-    account_number_prefix.split('').reverse.each_with_index do |c, j|
-      pre_sum += c.to_i * PREFIX_WEIGHTS[j]
-    end
-    unless (pre_sum % 11) == 0
-      errors.add(:account_number_prefix, _('accoun prefix in wrong format'))
-    end
-    acc_sum = 0
-    account_number.split('').reverse.each_with_index do |c, j|
-      acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
-    end
-    unless (acc_sum % 11) == 0
-      errors.add(:account_number, _('accoun number in wrong format'))
+    if account_number
+      pre_sum = 0
+      account_number_prefix.split('').reverse.each_with_index do |c, j|
+        pre_sum += c.to_i * PREFIX_WEIGHTS[j]
+      end
+      unless (pre_sum % 11) == 0
+        errors.add(:account_number_prefix, _('accoun prefix in wrong format'))
+      end
+      acc_sum = 0
+      account_number.split('').reverse.each_with_index do |c, j|
+        acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
+      end
+      unless (acc_sum % 11) == 0
+        errors.add(:account_number, _('accoun number in wrong format'))
+      end
     end
   end
+
   # returns semesteer of the study
   def semester
     time = Time.now - enrolled_on
@@ -82,7 +85,7 @@ class Index < ActiveRecord::Base
 
   # returns if stduy plan is interupted
   def interupted?
-    interupted_on && interupted_on < Time.now && !interupt.finished?
+    interupted_on && interupted_on < Time.now && interupt && !interupt.finished?
   end
 
   # returns true if studen claimed for final exam

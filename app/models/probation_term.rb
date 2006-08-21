@@ -14,7 +14,11 @@ class ProbationTerm < ActiveRecord::Base
     else
       subjects = Subject.find_for(user)
     end
-    find_by(subjects, option.to_sym)
+    if subjects.empty?
+      []
+    else
+      find_by(subjects, option.to_sym)
+    end
   end
 
   def self.find_by(subjects, option = nil)

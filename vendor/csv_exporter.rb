@@ -181,7 +181,11 @@ class CSVExporter
         row << c.id
         row << c.firstname
         row << c.lastname
-        row << c.title_before.label if c.title_before
+        if c.title_before
+          row << c.title_before.label 
+        else
+          row << ''
+        end
         row << c.department.short_name
         row << c.study.name
         @@mylog.debug "Adding #{row}"

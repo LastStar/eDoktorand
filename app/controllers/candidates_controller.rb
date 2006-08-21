@@ -96,7 +96,7 @@ class CandidatesController < ApplicationController
 
   # amits candidate form
   def admit
-   @candidate = Candidate.find(@params['id'])
+    @candidate = Candidate.find(@params['id'])
   end
 
   # confirms admittance of candidate and sends email

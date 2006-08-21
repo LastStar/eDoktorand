@@ -13,8 +13,8 @@
 <% else %>
   <div class="smallinfo">&nbsp;</div> 
 <% end %>
-<div class="smallinfo"><%= index.study.name %></div>
-<div class="smallerinfo"><%= index.department.short_name %></div>
+<div class="smallinfo nonprintable"><%= index.study.name %></div>
+<div class="smallerinfo nonprintable"><%= index.department.short_name %></div>
 <div class="longinfo">
 <% if index.account_number==nil%>
   <%="&nbsp;&nbsp;"%>

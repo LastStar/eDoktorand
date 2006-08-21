@@ -3,7 +3,7 @@
 PDF format.") %>
 </p>
 <%= form_tag({:action => 'save_methodology'}, {:multipart => true}) %>	
-<%= hidden_field disert_theme, id %>
+<%= hidden_field "disert_theme", "id" %>
 <fieldset>
 <label for="disert_theme_methodology_file"><%= _("file") %>:</label>
 <input type="file" name="disert_theme[methodology_file]"
