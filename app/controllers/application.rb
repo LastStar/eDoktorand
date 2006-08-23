@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   include LoginSystem
   include ExceptionNotifiable
 
+  filter_parameter_logging "password"
+
   model :dean # solving deep STI 
   before_filter :localize
 

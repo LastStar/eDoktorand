@@ -15,9 +15,17 @@ class StudyPlan < ActiveRecord::Base
     !approved_on.nil?
   end
 
+  def approve!(time = Time.now)
+    update_attribute(:approved_on, time)
+  end
+
   # returns if study plan is canceled 
   def canceled?
     return true if canceled_on
+  end
+
+  def cancel!(time = Time.now)
+    update_attribute(:canceled_on, time)
   end
 
   # returns true if study plan is admited
@@ -73,11 +81,10 @@ class StudyPlan < ActiveRecord::Base
     statement")
     if statement.is_a?(LeaderStatement) && !approvement.tutor_statement
       approvement.tutor_statement =
-      TutorStatement.create(statement.attributes)
+        TutorStatement.create(statement.attributes)
     end
-    canceled_on = statement.cancel? ? Time.now : nil
-    approved_on = Time.now if statement.is_a?(DeanStatement) &&
-      !statement.cancel?
+    cancel! if statement.cancel?
+    approve! if statement.is_a?(DeanStatement) && !statement.cancel?
     save
   end
 
@@ -111,8 +118,14 @@ class StudyPlan < ActiveRecord::Base
   def approved_by
     if approved?
       _('dean')
-    elsif
+    elsif approvement
       approvement.approved_by
+    end
+  end
+
+  def last_approver
+    if approvement
+      approvement.last_approver
     end
   end
 

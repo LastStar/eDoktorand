@@ -263,15 +263,13 @@ class Index < ActiveRecord::Base
       when '1'
         indices.reject! {|i| i.study_plan && i.study_plan.admited?}
       when '2'
-        indices.reject! {|i| !i.study_plan || !i.study_plan.admited? || 
-                            (i.study_plan.approvement &&
-                            i.study_plan.approvement.tutor_statement)}
+        indices.reject! {|i| !i.study_plan || !i.study_plan.admited? }
       when '3'
-        indices.reject! {|i| i.study_plan_approved_by != 'tutor'}
+        indices.reject! {|i| i.study_plan_last_approver != Tutor}
       when '4'
-        indices.reject! {|i| i.study_plan_approved_by != 'leader'}
+        indices.reject! {|i| i.study_plan_last_approver != Leader}
       when '5'
-        indices.reject! {|i| i.study_plan_approved_by != 'dean'}
+        indices.reject! {|i| i.study_plan_last_approver != Dean}
       end
     end
     return indices
@@ -330,9 +328,9 @@ class Index < ActiveRecord::Base
   end
 
   # returns who approved study plan
-  def study_plan_approved_by
+  def study_plan_last_approver
     if study_plan
-      study_plan.approved_by
+      study_plan.last_approver
     end
   end
 

@@ -7,19 +7,25 @@ class MassProcessor
   @@mylog.level = 1
 
   # approve all indexes 
-  def self.mass_approve(indexes)
-    indexes.each do |i|
-      app = i.study_plan.approvement = StudyPlanApprovement.new
-      created = app.created_on = i.study_plan.approved_on = \
-        i.enrolled_on + 1.month
-      app.tutor_statement = TutorStatement.create('person_id' => i.tutor_id, 
-        'result' => 1, 'note' => '', 'created_on' => created)
-      app.leader_statement = LeaderStatement.create('person_id' => i.leader.id, 
-        'result' => 1, 'note' => '', 'created_on' => created)
-      app.dean_statement = DeanStatement.create('person_id' => i.dean.id, 
-        'result' => 1, 'note' => 'approved by machine', 'created_on' => created)
-      app.save
-      i.save
+  def self.mass_approve(indices)
+    @@mylog.info "There are #{indices.size} indices"
+    indices.each do |i|
+      if i.study_plan
+        app = i.study_plan.approvement || StudyPlanApprovement.new
+        created = app.created_on = i.study_plan.approved_on = \
+          i.enrolled_on + 1.month
+        app.tutor_statement ||= TutorStatement.create('person_id' => i.tutor_id, 
+          'result' => 1, 'note' => '', 'created_on' => created)
+        app.leader_statement ||= LeaderStatement.create('person_id' => i.leader.id, 
+          'result' => 1, 'note' => '', 'created_on' => created)
+        app.dean_statement ||= DeanStatement.create('person_id' => i.dean.id, 
+          'result' => 1, 'note' => 'approved by machine', 'created_on' => created)
+        i.study_plan.approve!
+        app.save
+        i.save
+      else
+        @@mylog.debug "Index #{i.id} does not have study plan"
+      end
     end
   end
 
