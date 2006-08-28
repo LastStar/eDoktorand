@@ -21,12 +21,6 @@ class Index < ActiveRecord::Base
   has_one :approvement, :class_name => 'FinalExamApprovement',
     :foreign_key => 'document_id'
 
-  validates_size_of :account_number_prefix, :maximum => 6,
-    :message => _("Account number prefix must be max on six places")
-  validates_size_of :account_number, :in => 5..10,
-    :message => _("Account number must be between 5 and 10 places")
-  validates_size_of :account_bank_number, :is => 4, 
-    :message => _("Account bank number must be on four places")
   validates_presence_of :student
   validates_presence_of :tutor
 

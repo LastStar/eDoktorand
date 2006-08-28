@@ -328,17 +328,20 @@ class CSVLoader
       end
     end
   end
+
   # sets voluntary subjects for agro
-  def self.set_faapz_subjects_coridors
-    return false
-    Faculty.find(1).coridors.each do |c|
-      Subject.find(:all).each do |s| 
+  def self.set_subjects_coridors(faculty_id)
+    faculty = Faculty.find(faculty_id)
+    faculty.accredited_coridors.each do |c|
+      faculty.subjects.each do |s| 
         cs = VoluntarySubject.new
         cs.subject = s
         cs.coridor = c
+        cs.save
       end
     end
   end
+
   # loads student to system
   def self.load_enrolled_students(file)
     @@mylog.info "Loading enrolled students..."
@@ -363,6 +366,7 @@ class CSVLoader
       i.save
     end
   end
+
   # loads student to system
   def self.load_enrolled_students_fle(file)
     @@mylog.info "Loading enrolled students..."
@@ -388,6 +392,7 @@ class CSVLoader
       i.save
     end
   end
+
   # loads student to system
   def self.load_enrolled_students_its(file)
     @@mylog.info "Loading enrolled students..."
@@ -414,6 +419,7 @@ class CSVLoader
       i.save
     end
   end
+
   # loads external subjects
   def self.load_external_subjects(file)
     @@mylog.info "Loading external subjects..."
@@ -431,20 +437,22 @@ class CSVLoader
     @@mylog.debug arr
     File.open('conv_table.yml', 'w') {|out| YAML.dump(arr, out)}
   end
+
   # loads examinators
   def self.load_examinators(file)
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
     @@mylog.info "Loading examinators..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      unless p = Examinator.find_by_uic(row[0])
-        p = Examinator.new('firstname' => row[2], 'lastname' => row[1])
-        p.uic = row[0]
-        p.title_before = Title.find(row[3]) unless row[3].empty?
-        p.title_after = Title.find(row[4]) unless row[4].empty?
+      unless Person.exists?(row[6])
+        p = Examinator.new(:firstname => row[2], :lastname => row[1],
+                           :uic => row[0])
+        p.title_before = Title.find(@@prefixes[row[3].to_i]) if row[3] && !row[3].empty?
+        p.title_after = Title.find(@@suffixes[row[4].to_i]) if row[4] && !row[4].empty?
+        p.id = row[6]
+        p.department_employment = DepartmentEmployment.create('unit_id' => row[5])
+        @@mylog.info "Saving #{p.type} #{p.lastname}"
+        p.save
       end
-      p.department_employment = DepartmentEmployment.create('unit_id' => row[5])
-      @@mylog.info "Saving #{p.type} #{p.lastname}"
-      p.save
     end
   end
 
@@ -552,6 +560,7 @@ class CSVLoader
       end
     end   
   end
+
   # loads fle logins and study
   def self.load_logins_tf(file)
     @@mylog.info "Loading tf logins..."
@@ -567,6 +576,7 @@ class CSVLoader
       end
     end   
   end
+
   # loads tutors
   def self.load_secretaries(file, options = {})
     if options[:destroy]
@@ -598,6 +608,7 @@ class CSVLoader
       u.save
     end
   end
+
   # loads student's birth days to system
   def self.load_birthdays(file)
     @@mylog.info "Loading birthdays..."
@@ -787,4 +798,20 @@ class CSVLoader
       end
     end
   end
+
+  def self.load_accounts_for_candidates(file, enrolled_on)
+    @@mylog.info "Loading candidate account"
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      @@mylog.info row
+      c = Candidate.find(row[0])
+      s = c.new_student(row[1], enrolled_on)
+      u = User.new(:login => row[2], :password => row[2])
+      u.password_confirmation = row[2]
+      u.person = s
+      u.roles << Role.find(3)
+      s.save
+      u.save
+    end
+  end
+
 end

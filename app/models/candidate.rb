@@ -187,7 +187,7 @@ class Candidate < ActiveRecord::Base
   end
 
   # creates student 
-  def create_student
+  def new_student(new_id, enrolled_on)
     # convert candidate to (student+index)
     student = Student.new
     student.firstname = self.firstname
@@ -198,14 +198,16 @@ class Candidate < ActiveRecord::Base
     student.birth_place = self.birth_at
     student.title_before = self.title_before
     student.title_after = self.title_after
-    student.save
+    student.id = new_id
     index = Index.new
-    index.student = student
     index.department = self.department
     index.coridor = self.coridor
     index.tutor = self.tutor
     index.study = self.study
+    index.student = student
+    index.enrolled_on = enrolled_on
     index.save
+    student.save
     create_address(student.id)
     create_postal_address(student.id) if self.postal_city
     student.email = self.contact_email

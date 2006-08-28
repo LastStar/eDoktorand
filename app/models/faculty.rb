@@ -55,4 +55,7 @@ class Faculty < ActiveRecord::Base
     _('dean')
   end
 
+  def subjects
+    departments.map {|d| d.subjects}.flatten
+  end
 end

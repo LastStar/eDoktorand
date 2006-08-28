@@ -27,6 +27,7 @@ class MassProcessor
         @@mylog.debug "Index #{i.id} does not have study plan"
       end
     end
+    nil
   end
 
   def self.clean_coridor_subjects
