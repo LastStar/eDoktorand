@@ -10,7 +10,7 @@ class Person < ActiveRecord::Base
     'title_before_id'
   belongs_to :title_after, :class_name => 'Title', :foreign_key =>
     'title_after_id'
-  has_one :user
+  has_one :user, :dependent => :destroy
 
   validates_presence_of :lastname
   validates_presence_of :firstname

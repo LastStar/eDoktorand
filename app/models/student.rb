@@ -1,7 +1,9 @@
 class Student < Person
-  has_one :index
-  has_one :address, :conditions => 'address_type_id = 1'
-  has_one :postal_address, :class_name => 'Address', :conditions => 'address_type_id = 2'
+  has_one :index, :dependent => :destroy
+  has_one :address, :conditions => 'address_type_id = 1', 
+          :dependent => :destroy
+  has_one :postal_address, :class_name => 'Address', 
+          :conditions => 'address_type_id = 2', :dependent => :destroy
   has_one :candidate
   has_and_belongs_to_many :probation_terms
 
