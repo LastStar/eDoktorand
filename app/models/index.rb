@@ -170,7 +170,9 @@ class Index < ActiveRecord::Base
       conditions.first << ' AND indices.finished_on IS NULL'
     end
     if options[:not_interupted]
-      conditions.first << ' AND indices.interupted_on IS NULL'
+      conditions.first << ' AND (indices.interupted_on IS NULL OR' + 
+                          ' indices.interupted_on > ?)'
+      conditions << Time.now
     end
     unless options[:include]
       options[:include] = [:study_plan, :student, :disert_theme, :department, :study,

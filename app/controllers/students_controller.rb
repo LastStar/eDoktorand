@@ -24,6 +24,7 @@ class StudentsController < ApplicationController
 
   # searches in students lastname
   def search
+    # TODO redone with class method
     conditions = [' AND people.lastname like ?']
     conditions << "#{@params['search_field']}%"
     @indices = Index.find_for(@user, :conditions => conditions, :order => 
