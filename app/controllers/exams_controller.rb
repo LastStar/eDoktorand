@@ -34,7 +34,6 @@ class ExamsController < ApplicationController
   end
 
   # created exam object and subjects for select 
-  # TODO sql finder for only subjects wich actually any student has
   def by_subject
     @exam = Exam.new
     @session['exam'] = @exam

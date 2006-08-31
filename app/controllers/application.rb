@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   model :dean # solving deep STI 
   before_filter :localize
 
-  # TODO redo with model methods
   # authorizes user
   def authorize?(user)
     if user.has_permission?("%s/%s" % [@params["controller"], @params["action"]])

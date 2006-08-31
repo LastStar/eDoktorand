@@ -1,18 +1,43 @@
 <%= form_remote_with_loading(:url => {:action => 'save_disert'}, :evaluate =>
   true)%>	
 <fieldset>
+<ul class='finalAreas'>
+<li>
 <label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
 <%= select 'study_plan', 'finishing_to', @session['last_semester']..6 %>
-<%= "." + _("semester") %><br/> 
+<%= "." + _("semester") %> 
+</li>
+</ul>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
+  <ul class='finalAreas'>
+    <% 4.times do |index| %>
+      <% i = index + 1 %>
+      <li>
+        <div class='long_info'>
+          <input type='text' id="study_plan_final_areas_<%= i %>"
+          name="study_plan[final_areas][cz][<%= i %>]" size="30"/>
+        </div>
+       <%= "#{i}. " + _("final area") %>
+      </li>
+      <li>
+        <div class='long_info'>
+          <input type='text' id="study_plan_final_areas_en_<%= i %>"
+          name="study_plan[final_areas][en][<%= i %>]" size="30"/>   
+        </div>
+       <%= "&nbsp" %>
+      </li>
+   <% end %>
+  </ul>
+<% end %>
+</fieldset>
+<!--<fieldset>
 <% 4.times do |index| %>
 <% i = index + 1 %>
 <label class='smaller' for="final_area_<%= i %>"><%= "#{i}. " + _("final area") %></label>
 <input type='text' id="study_plan_final_areas_<%= i %>"
-name="study_plan[final_areas][<%= i %>]" size="30"/><br/>   
+name="study_plan[final_areas][en][<%= i %>]" size="30"/><br/>   
 <% end %>
-<% end %>
-</fieldset>
+</fieldset>-->
 <fieldset>
 <%= hidden_field 'disert_theme', 'index_id' %>
 <label for="disert_theme_title"><%= _("theme of disert theme") %>:</label>

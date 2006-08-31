@@ -197,6 +197,10 @@ div.fieldWithErrors {
   padding: 0px;
 }
 
+ul.rightList {
+ float: right;
+}
+
 li div.fieldWithErrors {
   border: 1px solid red;
   border-left: 9px solid red;
@@ -460,3 +464,8 @@ a:hover.change_field {border: 1px dashed #ccc; color: black}
 .noborder input {border: none}
 #sum ul {padding: 0px; margin: 0px; background: #ddc; border-bottom: 1px solid white;}
 #sum ul li {border-top: 1px solid white; color: black;}
+
+ul.finalAreas li{
+  border: none;
+  font-size: 13px;
+}

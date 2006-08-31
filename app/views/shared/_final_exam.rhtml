@@ -13,10 +13,26 @@
   <b><%= "#{_('final exam')}" %></b>
 </li>
 <% if study_plan.final_areas %>
-<% study_plan.final_areas.each do |fa| %>
-<li>
-<div class='long_info'><%= "#{fa.last}" %></div>
-<b><%= "#{fa.first.to_i}. " + _("final area") %></b>
-</li>
-<% end %>
+  <% if @student.faculty.id == 1%>
+    <% 4.times do |i|%>
+      <%i=i+1%>
+      <%fa=study_plan.final_areas['cz']%>
+        <li>
+          <div class='long_info'><%= fa[i.to_s]%></div>
+          <b><%= "#{i}. " + _("final area") %></b> 
+        </li>
+      <%fa=study_plan.final_areas['en']%>
+        <li>
+          <div class='long_info'><%=  fa[i.to_s] %></div>
+          <b><%= "&nbsp" %></b> 
+        </li>
+    <% end %>
+  <% else %>
+     <% study_plan.final_areas.each do |fa| %>
+        <li>
+          <div class='long_info'><%= "#{fa.last}"%></div>
+          <b><%= "#{fa.first.to_i}. " + _("final area") %></b> 
+        </li>
+     <% end %>
+  <% end %>
 <% end %>
