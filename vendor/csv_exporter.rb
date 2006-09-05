@@ -179,13 +179,19 @@ class CSVExporter
       cs.each do |c|
         row = []
         row << c.id
-        row << c.firstname
-        row << c.lastname
         if c.title_before
           row << c.title_before.label 
         else
           row << ''
         end
+        row << c.firstname
+        row << c.lastname
+        if c.title_after
+          row << c.title_after.label 
+        else
+          row << ''
+        end
+        row << c.email
         row << c.department.short_name
         row << c.study.name
         @@mylog.debug "Adding #{row}"
