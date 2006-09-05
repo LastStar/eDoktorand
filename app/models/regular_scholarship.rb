@@ -35,4 +35,9 @@ class RegularScholarship < Scholarship
     ids = Index.find_for_scholarship(user, :include => []).map &:id
     sum(:amount, :conditions => ["index_id in (?) and payed_on is null", ids]) 
   end
+
+  def pay!
+    clone.save
+    super
+  end
 end
