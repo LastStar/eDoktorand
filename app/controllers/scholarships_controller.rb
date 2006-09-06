@@ -88,7 +88,13 @@ class ScholarshipsController < ApplicationController
 
   def pay
     csv_headers('stipendia.csv')
-    render(:text => Scholarship.pay_and_generate_for(@user))
+    stipendias = Scholarship.pay_and_generate_for(@user)
+    date = (Time.now - 1.month).strftime('%Y%m')
+    faculty = @user.person.faculty.short_name
+    file = "public/csv/#{faculty}#{date}.csv"
+    File.open(file, 'w') {|file| file.write(stipendias)}
+    # TODO send mail to machyk
+    render(:text => stipendias)
   end
 
   # saves scholarship to dbase

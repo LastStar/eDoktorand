@@ -2,6 +2,7 @@ require 'genderize'
 
 class Candidate < ActiveRecord::Base
   include Genderize
+
   belongs_to :coridor
   belongs_to :department
   belongs_to :study
@@ -30,6 +31,7 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :number, :message => _("street number cannot be empty")
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
     :on => :create, :message => _("email does not have right format")
+
   # validates if languages are not same
   def validate
     errors.add_to_base(_("languages have to be different")) if language1_id == language2_id
@@ -39,13 +41,6 @@ class Candidate < ActiveRecord::Base
     !invited? && admited?
     errors.add_to_base(_("candidate must be admited before enrollment")) if
     !admited? && enrolled?
-  end
-
-  # hooks: create student
-  def before_update
-    if self.enrolled? && self.valid? && !student
-      self.student = create_student
-    end
   end
 
   # finishes candidate
@@ -218,6 +213,7 @@ class Candidate < ActiveRecord::Base
   def admitting_faculty
     coridor.faculty
   end
+
   # prepares conditions for paginate functions
   def self.prepare_conditions(options, faculty)
     conditions = ["department_id in (?) AND finished_on IS NOT NULL", faculty.departments_ids]

@@ -12,7 +12,6 @@ class Student < Person
     index.faculty
   end
 
-
   #returns display name for printing
   def display_name
     "#{lastname} #{firstname}"
