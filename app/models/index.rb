@@ -172,7 +172,11 @@ class Index < ActiveRecord::Base
     if options[:not_interupted]
       conditions.first << ' AND (indices.interupted_on IS NULL OR' + 
                           ' indices.interupted_on > ?)'
-      conditions << Time.now
+      if options[:not_interupted].is_a? Time
+        conditions << options[:not_interupted]
+      else
+        conditions << Time.now
+      end
     end
     unless options[:include]
       options[:include] = [:study_plan, :student, :disert_theme, :department, :study,
@@ -278,7 +282,7 @@ class Index < ActiveRecord::Base
   end
 
   def self.find_for_scholarship(user, opts = {})
-    opts.update({:unfinished => true, :not_interupted => true})
+    opts.update({:unfinished => true, :not_interupted => Time.now - 1.week})
     find_for(user, opts)
   end
 

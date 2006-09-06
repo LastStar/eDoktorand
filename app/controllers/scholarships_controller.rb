@@ -21,8 +21,9 @@ class ScholarshipsController < ApplicationController
 
   # scholarship list preparation
   def prepare
-    @indices = Index.find_for_scholarship(@user, :include => [:student, :study],
-                                         :order => 'studies.id, people.lastname')
+    @indices = Index.find_for_scholarship(@user, 
+                                         :order => 'studies.id, people.lastname',
+                                         :include => [:student, :study])
   end
 
   def change
