@@ -92,7 +92,7 @@ class ScholarshipsController < ApplicationController
     stipendias = Scholarship.pay_and_generate_for(@user)
     date = (Time.now - 1.month).strftime('%Y%m')
     faculty = @user.person.faculty.short_name
-    file = "public/csv/#{faculty}#{date}.csv"
+    file = "#{RAILS_ROOT}/public/csv/#{faculty}#{date}.csv"
     File.open(file, 'w') {|file| file.write(stipendias)}
     # TODO send mail to machyk
     render(:text => stipendias)

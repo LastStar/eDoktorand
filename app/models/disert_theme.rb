@@ -4,7 +4,7 @@ class DisertTheme < ActiveRecord::Base
   validates_presence_of :finishing_to
   acts_as_audited
   def self.save(disert_theme)
-    File.open("public/pdf/methodology#{disert_theme['id']}.pdf", "w") do |f|
+    File.open("#{RAILS_ROOT}/public/pdf/methodology#{disert_theme['id']}.pdf", "w") do |f|
       f.write(disert_theme['methodology_file'].read) 
     end
   end
