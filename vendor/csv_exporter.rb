@@ -167,6 +167,27 @@ class CSVExporter
     outfile.close
   end
 
+  def self.export_sident_with_account
+    file = "sident_account.csv"
+    outfile = File.open(file, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      is = Index.find(:all, 
+                      :conditions => "account_number is not 
+                                      null and account_number <> ''",
+                      :order => 'department_id')
+      @@mylog.info "There are #{is.size} students"
+      is.each do |i|
+        row = []
+        row << i.student.sident
+        row << i.full_account_number
+        row << i.account_bank_number
+        @@mylog.debug "Adding #{row}"
+        csv << row
+      end
+    end
+    outfile.close
+  end
+
   def self.export_candidates_for(faculty)
     faculty = Faculty.find(faculty) unless faculty.is_a? Faculty
     file = "candidate_#{faculty.short_name}.csv"
