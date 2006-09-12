@@ -3,6 +3,7 @@ class Tutor < Examinator
   has_many :indexes
   # return faculty of tutor
   def faculty
+  # TODO fix this with data validation
   # blood hack
     if tutorship
       tutorship.department.faculty

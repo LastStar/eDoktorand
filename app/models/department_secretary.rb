@@ -4,6 +4,7 @@ class DepartmentSecretary < Secretary
   def faculty
     department_employment.department.faculty
   end
+
   def department
     department_employment.department
   end
