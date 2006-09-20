@@ -79,7 +79,7 @@ class AccountController < ApplicationController
     @user.roles << @roles_up if @roles_up
   end
 
-  def locale
+  def set_locale
     redirect_to :login_url
   end
 
