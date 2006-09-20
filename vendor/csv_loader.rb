@@ -90,6 +90,7 @@ class CSVLoader
         s.save
       end
     end
+
   # loads tutors
   def self.load_tutors(files, options = {})
     if options[:destroy]
@@ -126,6 +127,7 @@ class CSVLoader
       end
     end
   end
+
   # loads leaders
   def self.load_leaders(files, options = {})
     if options[:destroy]
@@ -814,4 +816,21 @@ class CSVLoader
     end
   end
 
+  def self.repair_subjects(file)
+    @@mylog.info "Repairing subjects"
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      @@mylog.debug row[3]
+      if s = Subject.find_by_code(row[3])
+        s.update_attributes(:label => row[2], :code => row[3])
+        s.departments = [Department.find(row[4])]
+        s.id = row[1]
+        s.save
+      else
+        s = Subject.new('label' => row[2], 'code' => row[3])
+        s.id = row[1]
+        s.departments = [Department.find(row[4])]
+        s.save
+      end
+    end
+  end
 end
