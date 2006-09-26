@@ -25,7 +25,6 @@ class StudyPlansController < ApplicationController
     @student = Student.find(@params['id'])
     @title = _("Creating study plan")
     @requisite_subjects = prepare_requisite(@student)
-    @subjects = Subject.for_faculty_select(@student.faculty)
     @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
     @study_plan = @student.index.build_study_plan
     @plan_subjects = []

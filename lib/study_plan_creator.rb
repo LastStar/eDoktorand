@@ -7,6 +7,7 @@ module StudyPlanCreator
       sub.subject.id, 'finishing_on' => sub.requisite_on)
     end
   end
+
   # prepares obligate subjects
   def create_obligate
     @type = 'obligate'
@@ -19,6 +20,7 @@ module StudyPlanCreator
     end
     create_seminar if @plan_subjects.empty?
   end
+
   # prepares seminar subjects
   def create_seminar
     @type = 'seminar'
@@ -29,6 +31,7 @@ module StudyPlanCreator
     end
     create_voluntary if @plan_subjects.empty?
   end
+
   # prepares language  subject
   def create_language
     @type = 'language'
@@ -39,6 +42,7 @@ module StudyPlanCreator
       @plan_subjects << ps
     end
   end
+
   # prepares voluntary subject 
   def create_voluntary
     @type = 'voluntary'
@@ -56,6 +60,7 @@ module StudyPlanCreator
       create_language
     end
   end
+
   # extracts voluntary subjects from request
   def extract_voluntary(remap_id = false)
     external = 0

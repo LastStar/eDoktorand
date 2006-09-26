@@ -167,7 +167,13 @@ class Index < ActiveRecord::Base
       conditions.concat(options[:conditions][1..-1])
     end
     if options[:unfinished]
-      conditions.first << ' AND indices.finished_on IS NULL'
+      conditions.first << ' AND (indices.finished_on IS NULL OR' +
+                          ' indices.finished_on < ?)'
+      if options[:finished_on].is_a? Time
+        conditions << options[:finished_on]
+      else
+        conditions << Time.now
+      end
     end
     if options[:not_interupted]
       conditions.first << ' AND (indices.interupted_on IS NULL OR' + 
@@ -282,7 +288,8 @@ class Index < ActiveRecord::Base
   end
 
   def self.find_for_scholarship(user, opts = {})
-    opts.update({:unfinished => true, :not_interupted => Time.now - 1.week})
+    paying_date =  Time.now - 1.week
+    opts.update({:unfinished => paying_date, :not_interupted => paying_date})
     find_for(user, opts)
   end
 

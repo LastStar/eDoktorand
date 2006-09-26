@@ -5,7 +5,7 @@ class VoluntarySubject < CoridorSubject
   validates_presence_of :coridor
 
   def self.for_select(options = {})
-    if options[:with_external]
+    if options.delete :with_external 
       arr = [[_("external subject"), 0]]
     else
       arr = []
