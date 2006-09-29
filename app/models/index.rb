@@ -168,7 +168,7 @@ class Index < ActiveRecord::Base
     end
     if options[:unfinished]
       conditions.first << ' AND (indices.finished_on IS NULL OR' +
-                          ' indices.finished_on < ?)'
+                          ' indices.finished_on > ?)'
       if options[:finished_on].is_a? Time
         conditions << options[:finished_on]
       else
