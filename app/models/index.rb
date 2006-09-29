@@ -184,9 +184,17 @@ class Index < ActiveRecord::Base
         conditions << Time.now
       end
     end
+    if options[:enrolled]
+      conditions.first << ' AND indices.enrolled_on < ?'
+      if options[:enrolled_on].is_a? Time
+        conditions << options[:enrolled_on]
+      else
+        conditions << Time.now
+      end
+    end
     unless options[:include]
-      options[:include] = [:study_plan, :student, :disert_theme, :department, :study,
-              :coridor, :interupts]
+      options[:include] = [:study_plan, :student, :disert_theme, :department,
+                           :study, :coridor, :interupts]
     end
     conditions.first << 'AND study_id = 1' if options[:present]
     find(:all, :conditions => conditions, :order => options[:order],
@@ -289,7 +297,8 @@ class Index < ActiveRecord::Base
 
   def self.find_for_scholarship(user, opts = {})
     paying_date =  Time.now - 1.week
-    opts.update({:unfinished => paying_date, :not_interupted => paying_date})
+    opts.update({:unfinished => paying_date, :not_interupted => paying_date,
+                 :enrolled => paying_date})
     find_for(user, opts)
   end
 
