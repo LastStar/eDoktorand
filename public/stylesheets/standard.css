@@ -147,7 +147,8 @@ label {
   width: 280px;
   margin: 0px;
   text-align: right; 
-  margin: 5px 1em 5px 0;
+  padding-right: 1em;
+  padding-top: 5px;
   clear: both;
   float: left;
 }
@@ -168,8 +169,8 @@ li.unfinished {
 input, select  {
   margin-top: 0px;
   border: 1px solid black;
-  margin: 5px 0 5px 0;
 } 
+
 fieldset {
   border: 1px solid #b00;
 	width: 690px;
@@ -429,7 +430,7 @@ ul.nodecor li {
   vertical-align: middle;
 }
 form.no_block {display: inline;}
-.long_info option, input {font-size: 10px}
+.long_info option, input {font-size: 13px}
 div.menu {text-align: center; width: 19ex; float: right; background-color: #452;font-size: 10px; margin-left: 1px; border-left: 2px solid #ddc; border-bottom: 2px solid #ddc;}
 div.menu a {display: block;text-decoration: none;color: white;}
 div.menu a:hover {text-decoration: none; background-color: #ddc; color: black;padding-right: 4px; padding-left: 2px;margin:1px}
@@ -465,7 +466,4 @@ a:hover.change_field {border: 1px dashed #ccc; color: black}
 #sum ul {padding: 0px; margin: 0px; background: #ddc; border-bottom: 1px solid white;}
 #sum ul li {border-top: 1px solid white; color: black;}
 
-ul.finalAreas li{
-  border: none;
-  font-size: 13px;
-}
+.nodecor textarea {margin-left:10%} 

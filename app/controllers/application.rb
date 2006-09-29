@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     # the templates.
     @charset  = 'utf-8'
     @headers['Content-Type'] = "text/html; charset=#{@charset}"
-    @session['locale'] = @params['new_locale'] if @params['new_locale']
+    @session['locale'] = @params['locale'] if @params['locale']
     if @session['locale']
       @locale = @session['locale']
       @language, @dialect = @locale.split('_')

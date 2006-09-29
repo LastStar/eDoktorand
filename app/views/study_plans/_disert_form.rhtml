@@ -1,53 +1,52 @@
 <%= form_remote_with_loading(:url => {:action => 'save_disert'}, :evaluate =>
   true)%>	
 <fieldset>
-<ul class='finalAreas'>
+<ul class='nodecor'>
 <li>
-<label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
-<%= select 'study_plan', 'finishing_to', @session['last_semester']..6 %>
-<%= "." + _("semester") %> 
+  <label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
+  <%= select 'study_plan', 'finishing_to', @session['last_semester']..6 %>
+  <%= "." + _("semester") %> 
 </li>
-</ul>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
-  <ul class='finalAreas'>
     <% 4.times do |index| %>
       <% i = index + 1 %>
-      <li>
-        <div class='long_info'>
-          <input type='text' id="study_plan_final_areas_<%= i %>"
-          name="study_plan[final_areas][cz][<%= i %>]" size="30"/>
-        </div>
-       <%= "#{i}. " + _("final area") %>
-      </li>
-      <li>
-        <div class='long_info'>
-          <input type='text' id="study_plan_final_areas_en_<%= i %>"
-          name="study_plan[final_areas][en][<%= i %>]" size="30"/>   
-        </div>
-       <%= "&nbsp" %>
-      </li>
+<li>
+  <label><%= "#{i}. " + _("final area") %></label>
+  <input type='text' id="study_plan_final_areas_<%= i %>"
+    name="study_plan[final_areas][cz][<%= i %>]" size="30"/>
+</li>
+<li>
+  <label><%= "#{i}. " + _("final area") %> (en) </label>
+  <input type='text' id="study_plan_final_areas_en_<%= i %>"
+    name="study_plan[final_areas][en][<%= i %>]" size="30"/>
+</li>
    <% end %>
-  </ul>
 <% end %>
+</ul>
 </fieldset>
-<!--<fieldset>
-<% 4.times do |index| %>
-<% i = index + 1 %>
-<label class='smaller' for="final_area_<%= i %>"><%= "#{i}. " + _("final area") %></label>
-<input type='text' id="study_plan_final_areas_<%= i %>"
-name="study_plan[final_areas][en][<%= i %>]" size="30"/><br/>   
-<% end %>
-</fieldset>-->
 <fieldset>
 <%= hidden_field 'disert_theme', 'index_id' %>
-<label for="disert_theme_title"><%= _("theme of disert theme") %>:</label>
-<%= text_field 'disert_theme', 'title', 'size' => 35 %><br/>
-<label for="candidate_study_id"><%= _("term of disert theme defense") %></label>
-<%= select 'disert_theme', 'finishing_to', @session['last_semester']..6 %><br/>
-<label class='smaller' for="disert_theme_methodology_summary"><%= _("methodology summary") %>:</label>
-<textarea name='disert_theme[methodology_summary]'
-id='disert_theme_methodology_summary' cols='55' rows='35'><%= 
-@disert_theme.methodology_summary %></textarea>
+<ul class='nodecor'>
+<li>
+  <label for="disert_theme_title"><%= _("theme of disert theme") %>:</label>
+  <%= text_field 'disert_theme', 'title', 'size' => 35 %>
+</li>
+<% if FACULTY_CFG[@student.faculty.id]['english_disert'] %>
+<li>
+  <label for="disert_theme_title_en"><%= _("theme of disert theme") %> (en):</label>
+  <%= text_field 'disert_theme', 'title_en', 'size' => 35 %>
+</li>
+<% end %>
+<li>
+  <label for="candidate_study_id"><%= _("term of disert theme defense") %></label>
+  <%= select 'disert_theme', 'finishing_to', @session['last_semester']..6 %><br/>
+</li>
+<li>
+  <label for="disert_theme_methodology_summary"><%= _("methodology summary") %>:</label>
+  <textarea name='disert_theme[methodology_summary]'
+    id='disert_theme_methodology_summary' cols='60' rows='35'>
+  <%= @disert_theme.methodology_summary %></textarea>
+</li>
 </fieldset>
 <%= submit_tag _("commit") %>
 <%= end_form_tag %>

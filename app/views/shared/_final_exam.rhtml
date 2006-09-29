@@ -17,19 +17,19 @@
     <% 4.times do |i|%>
       <%i=i+1%>
       <%fa=study_plan.final_areas['cz']%>
-        <li>
+        <li class='second'>
           <div class='long_info'><%= fa[i.to_s]%></div>
-          <b><%= "#{i}. " + _("final area") %></b> 
+          <%= "#{i}. " + _("final area") %>
         </li>
       <%fa=study_plan.final_areas['en']%>
-        <li>
+        <li class='second'>
           <div class='long_info'><%=  fa[i.to_s] %></div>
-          <b><%= "&nbsp" %></b> 
+          <%= "#{i}. " + _("final area") %> (en)
         </li>
     <% end %>
   <% else %>
      <% study_plan.final_areas.each do |fa| %>
-        <li>
+        <li class='second'>
           <div class='long_info'><%= "#{fa.last}"%></div>
           <b><%= "#{fa.first.to_i}. " + _("final area") %></b> 
         </li>

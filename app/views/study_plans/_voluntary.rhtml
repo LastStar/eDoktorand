@@ -1,15 +1,20 @@
 <li class='subject_select'>
 <%= voluntary_select(subjects, voluntary) %>
-<%= "." + _("semester") %>
-<br/> 
-<div id="external<%= voluntary.id %>" style='<%= voluntary.hide_style %>' >
-<label><%= _("subject") %></label>
-<%= external_subject_input(voluntary) %>
-<br/> 
-<label><%= _("university") %></label>
-<%= external_university_input(voluntary) %>
-<br/> 
-<label><%= _("examinator") %></label>
-<%= external_person_input(voluntary) %>
-</div>
+.<%=  _("semester") %>
+<% if voluntary.id > 0 %>
+<ul class='nodecor' id="external<%= voluntary.id %>" style='<%= voluntary.hide_style %>' >
+<li>
+  <label><%= _("subject") %></label>
+  <%= external_subject_input(voluntary) %>
+</li>
+<li>
+  <label><%= _("university") %></label>
+  <%= external_university_input(voluntary) %>
+</li>
+<li>
+  <label><%= _("examinator") %></label>
+  <%= external_person_input(voluntary) %>
+</li>
+</ul>
+<% end %>
 </li>

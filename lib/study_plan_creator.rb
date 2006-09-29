@@ -54,8 +54,10 @@ module StudyPlanCreator
       @plan_subjects << ps
     end
     unless @plan_subjects.empty? 
-      (ps = PlanSubject.new).id = 0
-      @plan_subjects << ps
+      (-3..-1).each do |i|
+        (ps = PlanSubject.new).id = i
+        @plan_subjects << ps
+      end
     else
       create_language
     end

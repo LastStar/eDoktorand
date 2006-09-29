@@ -3,24 +3,29 @@
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
 <legend><%= _("seminar subjects") %></legend>
-<label>
-<%= _("seminar subject") %>
-</label>
-<% subjects = seminar_ids(@session['study_plan'].index.coridor) %>
-<%= content_tag('select', options_for_select(subjects),
-  { 'id' => "plan_subject", 'name' => "plan_subject"}) %><br/>  
+<ul class='nodecor'>
+<li>
+  <label>
+  <%= _("seminar subject") %>
+  </label>
+  <% subjects = seminar_ids(@session['study_plan'].index.coridor) %>
+  <%= content_tag('select', options_for_select(subjects),
+    { 'id' => "plan_subject", 'name' => "plan_subject"}) %><br/>  
+</li>
 <% 2.times do |i| %>
-<label>
-  <%= _("#{'I' * (i+1)}. part") %>
-</label>
+<li>
+  <label>
+    <%= _("#{'I' * (i+1)}. part") %>
+  </label>
 
-<%= content_tag('select', options_for_select(1..5),
-  { 'id' => "plan_subject_finishing_on[#{i}]",
-  'name' => "plan_subject_finishing_on[#{i}]"})
-%>
-<%= "." + _("semester") %>
-<br/> 
+  <%= content_tag('select', options_for_select(1..5),
+    { 'id' => "plan_subject_finishing_on[#{i}]",
+    'name' => "plan_subject_finishing_on[#{i}]"})
+  %>
+  <%= "." + _("semester") %>
+</li>
 <% end %>
+</ul>
 </fieldset>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>
