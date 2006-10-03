@@ -460,4 +460,12 @@ class Index < ActiveRecord::Base
   def final_exam_invitation_sent?
     !final_exam_invitation_sent_at.nil?
   end
+
+  def study_name
+    study.name
+  end
+
+  def student_name
+    student.display_name
+  end
 end
