@@ -19,7 +19,7 @@ class Scholarship < ActiveRecord::Base
   end
 
   def self.pay_and_generate_for(user)
-    indices = Index.find_studying_for(user)
+    indices = Index.find_for_scholarship(user, :include => [])
     outfile = ''
     CSV::Writer.generate(outfile, ';') do |csv|
       indices.each do |i|

@@ -7,8 +7,8 @@ class Index < ActiveRecord::Base
   belongs_to :student, :foreign_key => 'student_id'
   belongs_to :tutor
   belongs_to :study
-  has_one :study_plan, :conditions => 'admited_on IS NOT NULL', :order =>
-  'created_on desc'
+  has_one :study_plan, :conditions => 'admited_on IS NOT NULL', 
+    :order => 'created_on desc'
   has_one :disert_theme, :order => 'created_on desc'
   has_one :final_exam_term
   has_many :exams
@@ -16,7 +16,8 @@ class Index < ActiveRecord::Base
   belongs_to :department
   has_many :interupts, :order => 'created_on desc'
   has_many :extra_scholarships, :conditions => "payed_on IS NULL"
-  has_one :regular_scholarship, :conditions => "payed_on IS NULL"
+  has_one :regular_scholarship, :conditions => "payed_on IS NULL", 
+    :order => 'updated_on desc'
   has_many :scholarships
   has_one :approvement, :class_name => 'FinalExamApprovement',
     :foreign_key => 'document_id'
@@ -169,8 +170,8 @@ class Index < ActiveRecord::Base
     if options[:unfinished]
       conditions.first << ' AND (indices.finished_on IS NULL OR' +
                           ' indices.finished_on > ?)'
-      if options[:finished_on].is_a? Time
-        conditions << options[:finished_on]
+      if options[:unfinished].is_a? Time
+        conditions << options[:unfinished]
       else
         conditions << Time.now
       end
@@ -186,8 +187,8 @@ class Index < ActiveRecord::Base
     end
     if options[:enrolled]
       conditions.first << ' AND indices.enrolled_on < ?'
-      if options[:enrolled_on].is_a? Time
-        conditions << options[:enrolled_on]
+      if options[:enrolled].is_a? Time
+        conditions << options[:enrolled]
       else
         conditions << Time.now
       end
@@ -296,7 +297,7 @@ class Index < ActiveRecord::Base
   end
 
   def self.find_for_scholarship(user, opts = {})
-    paying_date =  Time.now - 1.week
+    paying_date =  (Time.now - 1.week)
     opts.update({:unfinished => paying_date, :not_interupted => paying_date,
                  :enrolled => paying_date})
     find_for(user, opts)
