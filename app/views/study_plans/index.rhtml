@@ -22,5 +22,11 @@ information system.") %></p>
 <%= _("First step propably will to create") %>
 <%= create_study_plan_link(@student) %>
 </p> 
+<div class='links'><%= voluntary_link %></div>
+<ul style='display:none' id='voluntarys'>
+  <% @voluntary_subjects.each do |vs| %>
+  <li><%= vs.subject.label %></li>
+  <% end %>
+</ul>
 <% end %>
 <%= render(:partial => 'shared/student_detail', :locals => {:index => @index}) %>

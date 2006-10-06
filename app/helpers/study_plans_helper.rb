@@ -121,4 +121,8 @@ module StudyPlansHelper
            :locals => {:subjects => @session['plan_subjects'],
            :title => _("requisite subjects")})
   end
+
+  def voluntary_link
+    link_to_function(_('voluntary subjects'), "$('voluntarys').toggle()")
+  end
  end

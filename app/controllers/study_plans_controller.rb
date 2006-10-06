@@ -8,6 +8,9 @@ class StudyPlansController < ApplicationController
   def index
     @title = _("Study plan")
     @index = @student.index
+    unless @index.study_plan
+      @voluntary_subjects = @index.coridor.voluntary_subjects 
+    end
   end
   
   # start of the study plan creating process
