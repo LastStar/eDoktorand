@@ -51,7 +51,9 @@ class PlanSubject < ActiveRecord::Base
     plan_subjects = find(:all, :include => [{:study_plan => :index}],
                          :conditions => [sql, subject_id])
     if options[:students]
-      plan_subjects.map {|ps| ps.study_plan.index.student}
+      plan_subjects.map {|ps| ps.study_plan.index.student}.sort do |x,y|
+        x.display_name <=> y.display_name
+      end
     else
       plan_subjects
     end
