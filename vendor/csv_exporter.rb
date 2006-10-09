@@ -140,7 +140,7 @@ class CSVExporter
   end
 
   def self.export_students_with_bad_account
-    file = "students_uic_sident.csv"
+    file = "bad_account.csv"
     outfile = File.open(file, 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
       is = Index.find(:all, 
