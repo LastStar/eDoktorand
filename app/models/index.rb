@@ -42,6 +42,9 @@ class Index < ActiveRecord::Base
         errors.add(:account_number, _('accoun number in wrong format'))
       end
     end
+    if final_exam_passed_on && !study_plan.all_subjects_finished?
+      errors.add(:final_exam_passed_on, _('not_all_subject_finished'))
+    end
   end
 
   # returns semesteer of the study
@@ -140,7 +143,7 @@ class Index < ActiveRecord::Base
     end
   end
 
-  # returns all indexes for person
+  # returns all indices for person
   # accepts Base.find options. Include and order for now
   def self.find_for(user, options ={})
     if user.has_one_of_roles?(['admin', 'vicerector'])
@@ -169,7 +172,8 @@ class Index < ActiveRecord::Base
     end
     if options[:unfinished]
       conditions.first << ' AND (indices.finished_on IS NULL OR' +
-                          ' indices.finished_on > ?)'
+                          ' indices.finished_on > ?)'+
+                          ' AND disert_themes.defense_passed_on IS NULL'
       if options[:unfinished].is_a? Time
         conditions << options[:unfinished]
       else
@@ -209,7 +213,7 @@ class Index < ActiveRecord::Base
     find_for(user, options)
   end
 
-  # returns all indexes which waits for approvement from persons 
+  # returns all indices which waits for approvement from persons 
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user, options = {})
     sql = <<-SQL
@@ -260,7 +264,7 @@ class Index < ActiveRecord::Base
       when 3
         conditions.first << ' AND indices.interupted_on IS NOT NULL' 
       when 4
-        conditions.first << ' AND NULL IS NOT NULL'
+        conditions.first << ' AND disert_themes.defense_passed_on IS NOT NULL'
       end
     end
     indices = Index.find_for(options[:user], :conditions => conditions, 
@@ -311,7 +315,9 @@ class Index < ActiveRecord::Base
 
   # returns status of index
   def status
-    if claimed_final_application?
+    if disert_theme && disert_theme.defense_passed?
+      _('absolved')
+    elsif claimed_final_application?
       _('final application')
     elsif finished?
       _('finished')
@@ -468,5 +474,13 @@ class Index < ActiveRecord::Base
 
   def student_name
     student.display_name
+  end
+
+  def final_exam_passed?
+    !final_exam_passed_on.nil?
+  end
+
+  def final_exam_passed!(date = Date.today)
+    update_attribute(:final_exam_passed_on, date)
   end
 end

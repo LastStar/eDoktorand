@@ -8,28 +8,38 @@ module StudentsHelper
     if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
       info.concat(smaller_info_div("#{index.coridor.code}"))
       info.concat(smaller_info_div("#{index.department.short_name}")) 
-      links.concat(switch_link(index)) 
-      links.concat(finish_link(index)) 
-      if index.waits_for_scholarship_confirmation?
-        links.concat(supervise_scholarship_link(index)) 
-      end
-      if study_plan
-        links.concat(change_link(index))
-      else
-        links.concat(create_link(index))
-      end
-      if index.not_even_admited_interupt?
-        links.concat(interupt_link(index))
-      end
-      if index.interupt_waits_for_confirmation?
-        links.concat(confirm_interupt_link(index)) 
-      end
-      if index.interupted?
-        links.concat(end_interupt_link(index))
-        status_class = 'ends_interupt'
-      end
-      if index.claimed_for_final_exam?
-        links.concat(final_exam_link(index))
+      unless index.status == _('absolved')
+        links.concat(switch_link(index)) 
+        links.concat(finish_link(index)) 
+        if index.waits_for_scholarship_confirmation?
+          links.concat(supervise_scholarship_link(index)) 
+        end
+        if study_plan
+          if study_plan.all_subjects_finished?
+            if index.final_exam_passed?
+              links.concat(pass_link(:defense, index))
+            else
+              links.concat(pass_link(:final_exam, index))
+            end
+          else
+            links.concat(change_link(index))
+          end
+        else
+          links.concat(create_link(index))
+        end
+        if index.not_even_admited_interupt?
+          links.concat(interupt_link(index))
+        end
+        if index.interupt_waits_for_confirmation?
+          links.concat(confirm_interupt_link(index)) 
+        end
+        if index.interupted?
+          links.concat(end_interupt_link(index))
+          status_class = 'ends_interupt'
+        end
+        if index.claimed_for_final_exam?
+          links.concat(final_exam_link(index))
+        end
       end
     end
     info.concat(div_tag("#{index.study.name}", {:class => 'smallinfo'}))
@@ -46,6 +56,8 @@ module StudentsHelper
     unless links.empty?
       info = menu_link(index).concat(info)
       links.concat('&nbsp;')
+    else
+      info = smaller_info_div('&nbsp;').concat(info)
     end
     menu_line(links, "index_menu_#{index.id}") +
       info_line(info, index.line_class, "student_detail_#{index.id}") +
@@ -183,11 +195,20 @@ module StudentsHelper
       div_tag('', :id => id, :style => 'display: none', :class => 'form_line')
   end
 
+  def pass_link(what, index)
+    action = 'pass_' + what.to_s
+    url = {:action => 'time_form', :controller => 'students',
+           :form_action => action, :id => index, :day => true}
+    menu_div(link_to_remote_with_loading(_(action),
+             :update => "index_form_#{index.id}", :url => url))
+  end
+
   # prints month year form
-  def month_year_form(options)
+  def date_form(options)
     date = options[:date] ? Time.parse(options.delete(:date)) : Date.today
     result = [form_remote_with_loading(options)]
     result << submit_tag(_(options[:url][:action].humanize))
+    result << select_day(date) if options[:day]
     result << select_month(date, :use_month_numbers => true)
     result << select_year(date, :start_year => 2000)
     result << end_form_tag

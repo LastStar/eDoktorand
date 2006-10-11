@@ -105,7 +105,13 @@ class StudyPlan < ActiveRecord::Base
 
   # returns status of study plan
   def status
-    if canceled?
+    if index.disert_theme.defense_passed?
+      ''
+    elsif all_subjects_finished?
+      _('all_finished')
+    elsif index.final_exam_passed?
+      _('FE_passed')
+    elsif canceled?
       _('SP canceled')
     elsif approved?
       _('SP approved')

@@ -78,9 +78,9 @@ class StudentsController < ApplicationController
   
   # switches study on index
   def switch_study
-    @index = Index.find(@params['id'])
-    date = @params['date']
-    @index.switch_study!(Date.civil(date['year'].to_i, date['month'].to_i))
+    @index = Index.find(params['id'])
+    date = create_date(params['date'])
+    @index.switch_study!(date)
     render(:inline => "<%= redraw_student(@index) %>")
   end
 
@@ -94,9 +94,9 @@ class StudentsController < ApplicationController
 
   # renders time form for other actions
   def time_form
-    @form_url = {:action => @params['form_action'], :id => @params['id']}
-    @form_url[:controller] = @params['form_controller'] || 'students'
     @index = Index.find(@params['id'])
+    @form_url = {:action => params['form_action'], :id => params['id']}
+    @form_url[:controller] = params['form_controller'] || 'students'
   end
 
   def confirm_approve
@@ -177,9 +177,33 @@ class StudentsController < ApplicationController
     end  
   end
   # end of methods for editing personal details
+ 
+  def pass
+    @index = Index.find(params[:id])
+    date = create_date(params[:date])
+    if params[:what].to_sym == :final_exam
+      @index.final_exam_passed!(date)
+    else
+      @index.disert_theme.defense_passed!(date)
+    end
+    render(:inline => "<%= redraw_student(@index) %>")
+  end
+
+  def method_missing(method_id, *arguments)
+    if match = /pass_(.*)/.match(method_id.to_s)
+      params[:what] = match[1]
+      pass
+    else
+      super
+    end
+  end
 
   private
   
+  def create_date(date)
+    Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
+  end
+
   # sets title of the controller
   def set_title
     @title = _("Students")
@@ -196,7 +220,7 @@ class StudentsController < ApplicationController
     @filters = [[_('waiting for my review'), 2], [_("all students"), 0], 
       [_('all studying'), 3]]
     if (@user.has_one_of_roles?(['leader', 'dean', 'vicerector']))
-      if !@user.person.indexes.empty?
+      if !@user.person.indices.empty?
         @filters.concat([[_("my students"), 1], [_('my studying'), 4]])
       end
     end

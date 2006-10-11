@@ -1,6 +1,6 @@
 class Tutor < Examinator
   has_one :tutorship, :foreign_key => 'tutor_id'
-  has_many :indexes
+  has_many :indices
   # return faculty of tutor
   def faculty
   # TODO fix this with data validation
@@ -13,6 +13,7 @@ class Tutor < Examinator
   def department
     tutorship.department
   end
+
   def self.find_for_department(department)
     department = department.id if department.is_a? Department
     find(:all, :conditions => ["tutorships.department_id = ?",
