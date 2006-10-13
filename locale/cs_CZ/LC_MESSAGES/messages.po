@@ -1653,17 +1653,17 @@ msgid "all_finished"
 msgstr "SP splněn"
 
 msgid "pass_final_exam"
-msgid "složil SDZ"
+msgstr "složil SDZ"
 
 msgid "Pass final exam"
-msgid "složil SDZ"
+msgstr "složil SDZ"
 
 msgid "FE_passed"
-msgid "složena SDZ"
+msgstr "složena SDZ"
 
 msgid "pass_defense"
-msgid "obhájil DP"
+msgstr "obhájil DP"
 
 msgid "Pass defense"
-msgid "Obhajil DP"
+msgstr "Obhajil DP"
 
