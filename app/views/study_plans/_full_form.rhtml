@@ -17,22 +17,54 @@
 </ul>
 </fieldset>
 <fieldset>
+<ul class='nodecor'>
+<li>
 <label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
 <%= select 'study_plan', 'finishing_to', 1..6 %>
-<%= "." + _("semester") %><br/> 
+<%= "." + _("semester") %>
+</li>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
-<%= render(:partial => 'final_areas_fields', :locals => {:study_plan => @study_plan})  %>
+    <% 4.times do |index| %>
+      <% i = index + 1 %>
+<li>
+  <label><%= "#{i}. " + _("final area") %></label>
+  <input type='text' id="study_plan_final_areas_<%= i %>"
+  name="study_plan[final_areas][cz][<%= i %>]" size="30"
+  value="<%= @study_plan.final_areas['cz'][i.to_s] %>"/>
+</li>
+<li>
+  <label><%= "#{i}. " + _("final area") %> (en) </label>
+  <input type='text' id="study_plan_final_areas_en_<%= i %>"
+  name="study_plan[final_areas][en][<%= i %>]" size="30"
+  value="<%= @study_plan.final_areas['cz'][i.to_s] %>"/>
+</li>
+   <% end %>
 <% end %>
+</ul>
 </fieldset>
 <fieldset>
 <%= hidden_field 'disert_theme', 'index_id' %>
+<ul class='nodecor'>
+<li>
 <label for="disert_theme_title"><%= _("theme of disert theme") %>:</label>
-<%= text_field 'disert_theme', 'title', 'size' => 35 %><br/>
+<%= text_field 'disert_theme', 'title', 'size' => 65 %><br/>
+</li>
+<% if FACULTY_CFG[@student.faculty.id]['english_disert'] %>
+<li>
+  <label for="disert_theme_title_en"><%= _("theme of disert theme") %> (en):</label>
+  <%= text_field 'disert_theme', 'title_en', 'size' => 65 %>
+</li>
+<% end %>
+<li>
 <label for="candidate_study_id"><%= _("term of disert theme defense") %></label>
-<%= select 'disert_theme', 'finishing_to', 1..6 %><br/>
+<%= select 'disert_theme', 'finishing_to', 1..6 %>
+</li>
+<li>
 <label for="disert_theme_methodology_summary"><%= _("methodology summary") %>:</label>
 <textarea name='disert_theme[methodology_summary]'
   id='disert_theme_methodology_summary' cols='55' rows='35'><%= @disert_theme.methodology_summary %></textarea>
+</li>
+</ul>
 </fieldset>
 <%= submit_tag _("commit") %>
 <%= end_form_tag %>

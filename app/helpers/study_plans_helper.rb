@@ -100,7 +100,9 @@ module StudyPlansHelper
 
   def study_plan_menu(student)
     links = []
-    links << link_to(_("change study plan"), {:action => 'change', :id => student})
+    if student.study_plan.approved?
+      links << link_to(_("change study plan"), {:action => 'change', :id => student})
+    end
     unless student.index.interupted?
       links << link_to_unless_current(_('interupt'), :controller => 'interupts'){}
     end

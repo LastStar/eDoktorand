@@ -29,12 +29,12 @@
 <ul class='nodecor'>
 <li>
   <label for="disert_theme_title"><%= _("theme of disert theme") %>:</label>
-  <%= text_field 'disert_theme', 'title', 'size' => 35 %>
+  <%= text_field 'disert_theme', 'title', 'size' => 65 %>
 </li>
 <% if FACULTY_CFG[@student.faculty.id]['english_disert'] %>
 <li>
   <label for="disert_theme_title_en"><%= _("theme of disert theme") %> (en):</label>
-  <%= text_field 'disert_theme', 'title_en', 'size' => 35 %>
+  <%= text_field 'disert_theme', 'title_en', 'size' => 65 %>
 </li>
 <% end %>
 <li>
