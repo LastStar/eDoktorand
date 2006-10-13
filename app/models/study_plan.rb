@@ -107,10 +107,10 @@ class StudyPlan < ActiveRecord::Base
   def status
     if index.disert_theme.defense_passed?
       ''
-    elsif all_subjects_finished?
-      _('all_finished')
     elsif index.final_exam_passed?
       _('FE_passed')
+    elsif all_subjects_finished?
+      _('all_finished')
     elsif canceled?
       _('SP canceled')
     elsif approved?

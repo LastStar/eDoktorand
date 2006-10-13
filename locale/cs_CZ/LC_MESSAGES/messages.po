@@ -1648,3 +1648,22 @@ msgstr "Rodné příjmení"
 
 msgid "Consultant"
 msgstr "Konzultant"
+
+msgid "all_finished"
+msgstr "SP splněn"
+
+msgid "pass_final_exam"
+msgid "složil SDZ"
+
+msgid "Pass final exam"
+msgid "složil SDZ"
+
+msgid "FE_passed"
+msgid "složena SDZ"
+
+msgid "pass_defense"
+msgid "obhájil DP"
+
+msgid "Pass defense"
+msgid "Obhajil DP"
+
