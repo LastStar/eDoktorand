@@ -79,7 +79,7 @@ class CSVLoader
       f.save
     end
   end
-  # loads coridors to system
+  # loads subjects to system
   def self.load_subjects(file, options = {} )
       Subject.destroy_all if options[:destroy]
       @@mylog.info "Loading subjects..."
@@ -162,6 +162,7 @@ class CSVLoader
       l.save
     end
   end
+
   # loads tutors to system
   def self.load_deans(files, options = {})
     if options[:destroy]
@@ -196,6 +197,7 @@ class CSVLoader
       d.save
     end
   end
+
   # loads tutors logins
   def self.load_tutor_logins(file)
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
@@ -210,6 +212,7 @@ class CSVLoader
       end
     end
   end
+
   # loads student to system
   def self.load_students(file, options = {} )
     if options[:destroy]
@@ -239,6 +242,7 @@ class CSVLoader
       i.save
     end
   end
+
   # loads study plans to system
   def self.load_study_plans(file, options = {} )
     if options[:destroy]
@@ -276,6 +280,7 @@ class CSVLoader
       end
     end
   end
+
   # loads plans subjects
   def self.load_plan_subjects(file, options = {} )
     PlanSubject.destroy_all if options[:destroy]
@@ -300,6 +305,7 @@ class CSVLoader
       end
     end
   end
+
   # loads fle subjects coridors 
   def self.load_fle_subjects_coridors(file)
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
@@ -315,6 +321,7 @@ class CSVLoader
       cs.save
     end
   end
+
   # loads pef subject coridors
   def self.load_pef_subject_coridors(file)
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
@@ -623,6 +630,7 @@ class CSVLoader
       end
     end
   end
+
   # loads student's new informations to system
   def self.load_new_students(file, options = {} )
     count = 0
@@ -646,6 +654,7 @@ class CSVLoader
     end
     @@mylog.info "Totaly #{count} student's have not been found"
   end
+
   # loads interupted students to system
   def self.load_interrupted(file)
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
@@ -682,6 +691,7 @@ class CSVLoader
       end
     end
   end
+
   # loads birth places to system
   def self.load_birth_places(file)
     @@mylog.info "Loading birth places..."
@@ -831,6 +841,23 @@ class CSVLoader
         s.departments = [Department.find(row[4])]
         s.save
       end
+    end
+  end
+
+  def self.load_or_repair_subjects(file)
+    @@mylog.info "Loading subjects..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if Subject.exists?(row[0])
+        s = Subject.find(row[0])
+        @@mylog.info "Repairing subject with code #{row[1]}"
+        s.update_attribute(:label, row[2])
+      else
+        @@mylog.info "Creating subject with code #{row[1]}"
+        s = Subject.new('label' => row[2], 'code' => row[1])
+        s.id = row[0]
+      end
+      s.departments = [Department.find(row[4])]
+      s.save
     end
   end
 end
