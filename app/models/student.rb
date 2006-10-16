@@ -1,5 +1,5 @@
 class Student < Person
-  has_one :index, :dependent => :destroy, :order => 'created_at desc'
+  has_one :index, :dependent => :destroy, :order => 'created_on desc'
   has_one :address, :conditions => 'address_type_id = 1', 
           :dependent => :destroy
   has_one :postal_address, :class_name => 'Address', 
