@@ -201,7 +201,11 @@ class StudentsController < ApplicationController
   private
   
   def create_date(date)
-    Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
+    if date['day']
+      Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
+    else
+      Date.civil(date['year'].to_i, date['month'].to_i)
+    end
   end
 
   # sets title of the controller
