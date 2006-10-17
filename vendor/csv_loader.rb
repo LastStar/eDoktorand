@@ -40,7 +40,6 @@ class CSVLoader
     CoridorSubject.destroy_all
     self.load_fle_subjects_coridors('dumps/csv/Corridors_Subjects_FLE.csv')
     self.load_pef_subject_coridors('dumps/csv/subjects_corridors.csv')
-    self.set_agro_subjects_coridors
     Student.destroy_all
     Index.destroy_all
     self.load_enrolled_students("dumps/csv/enrolled.csv")
@@ -343,10 +342,12 @@ class CSVLoader
     faculty = Faculty.find(faculty_id)
     faculty.accredited_coridors.each do |c|
       faculty.subjects.each do |s| 
-        cs = VoluntarySubject.new
-        cs.subject = s
-        cs.coridor = c
-        cs.save
+        unless  VoluntarySubject.find_by_subject_id_and_coridor_id(s.id, c.id)
+          @@mylog.debug "Voluntary subject created"
+          VoluntarySubject.create(:subject_id => s.id, :coridor => c.id)
+        else
+          @@mylog.debug "Voluntary subject found"
+        end
       end
     end
   end
