@@ -13,7 +13,7 @@
    &mdash; <%= study_plan.index.disert_theme.finishing_to %>. <%= _("semester") %>
    <% if study_plan.index.disert_theme.has_methodology? %>
    <br/> 
-   <a href="/pdf/methodology<%= study_plan.index.disert_theme.id %>.pdf"><%=
+   <a href="/pdf/methodology/<%= study_plan.index.disert_theme.id %>.pdf"><%=
    _("methodology file") %></a>
    <% end %>
   </li>
