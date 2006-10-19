@@ -822,8 +822,13 @@ class CSVLoader
       u.password_confirmation = row[2]
       u.person = s
       u.roles << Role.find(3)
-      s.save
-      u.save
+      unless s.save 
+        @@mylog.debug s.errors
+      end
+      unless u.save
+        @@mylog.debug u.errors
+      end
+
     end
   end
 
