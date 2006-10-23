@@ -101,7 +101,7 @@ module StudyPlansHelper
   def study_plan_menu(student)
     links = []
     if student.study_plan.approved?
-      links << link_to(_("change study plan"), {:action => 'change', :id => student})
+      links << change_link(student)
     end
     unless student.index.interupted?
       links << link_to_unless_current(_('interupt'), :controller => 'interupts'){}
@@ -126,5 +126,9 @@ module StudyPlansHelper
 
   def voluntary_link
     link_to_function(_('voluntary subjects'), "$('voluntarys').toggle()")
+  end
+
+  def change_link(student)
+    link_to(_("change study plan"), {:action => 'change', :id => student})
   end
  end

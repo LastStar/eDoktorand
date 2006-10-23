@@ -1667,3 +1667,15 @@ msgstr "obhájil DP"
 msgid "Pass defense"
 msgstr "Obhajil DP"
 
+msgid "scholarship_directive"
+msgstr "Stipendijní řád"
+
+msgid "study_directive"
+msgstr "Studijní a zkouškový řád"
+
+msgid "accomodation_scholarship_directive"
+msgstr "Ubytovací stipendia"
+
+msgid "study_plan_canceled_message"
+msgstr "Váš studijní plán nebyl schválen."
+
