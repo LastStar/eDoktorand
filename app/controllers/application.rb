@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
     # We will use instance vars for the locale so we can make use of them in
     # the templates.
     @charset  = 'utf-8'
+    @headers['Content-Type'] = "text/html; charset=#{@charset}"
     @session['locale'] = @params['locale'] if @params['locale']
     if @session['locale']
       @locale = @session['locale']
