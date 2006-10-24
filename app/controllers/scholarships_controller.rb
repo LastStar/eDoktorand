@@ -23,7 +23,8 @@ class ScholarshipsController < ApplicationController
   def prepare
     @indices = Index.find_for_scholarship(@user, 
                                          :order => 'studies.id, people.lastname',
-                                         :include => [:student, :study])
+                                         :include => [:student, :study, 
+                                                      :disert_theme])
   end
 
   def change

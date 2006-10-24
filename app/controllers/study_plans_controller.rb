@@ -29,7 +29,7 @@ class StudyPlansController < ApplicationController
     @title = _("Creating study plan")
     @requisite_subjects = prepare_requisite(@student)
     @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
-    @study_plan = @student.index.build_study_plan
+    @study_plan = @student.index.prepare_study_plan
     @plan_subjects = []
     FACULTY_CFG[@student.faculty.id]['subjects_count'].times do |i|
       (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
