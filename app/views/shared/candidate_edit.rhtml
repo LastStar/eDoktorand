@@ -15,7 +15,7 @@
     <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
     <label class='required'><%= _("date of birth") %></label>
     <%= date_select 'candidate', 'birth_on', :start_year => Date.today.year - 21,
-       :end_year => Date.today.year - 80, :order => [:day, :month, :year],
+       :end_year => Date.today.year - 90, :order => [:day, :month, :year],
        :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br />
     <label for='candidate_birth_at' class='required'><%= _("birth place") %></label>
     <%= text_field 'candidate', 'birth_at', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br />
