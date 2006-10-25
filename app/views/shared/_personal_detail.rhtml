@@ -19,9 +19,11 @@
 <li>
 <%= "#{long_info_helper(student.index.tutor.display_name)}#{_('Tutor')}: " %> 
 </li>
+<% if FACULTY_CFG[student.faculty.id]['consultant'] %>
 <li>
 <%= attribute_line(student.index, :consultant) %><%=_ 'Consultant' %>:
 </li>
+<% end %>
 <li>
 <%= "#{long_info_helper(student.index.year.to_s.concat('.'))}#{_('Year')}: " %> 
 </li>
