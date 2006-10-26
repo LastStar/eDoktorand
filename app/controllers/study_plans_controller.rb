@@ -168,7 +168,7 @@ class StudyPlansController < ApplicationController
           redirect_to(:controller => 'study_plans')
         end
       else
-        redirect_to(:action => 'list', :controller => 'students')
+        redirect_to(:controller => 'students')
       end
     else
       @subjects = Subject.for_faculty_select(@student.faculty)
