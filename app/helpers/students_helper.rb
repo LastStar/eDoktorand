@@ -22,6 +22,8 @@ module StudentsHelper
               links.concat(change_link(index))
               links.concat(pass_link(:final_exam, index))
             end
+          else
+            links.concat(change_link(index))
           end
         else
           links.concat(create_link(index))
