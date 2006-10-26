@@ -32,7 +32,7 @@ class RegularScholarship < Scholarship
   end
 
   def self.sum_for(user)
-    ids = Index.find_for_scholarship(user, :include => []).map &:id
+    ids = Index.find_for_scholarship(user, {:include => :disert_theme}).map &:id
     sum(:amount, :conditions => ["index_id in (?) and payed_on is null", ids]) 
   end
 
