@@ -17,7 +17,7 @@ class Student < Person
     "#{lastname} #{firstname}"
   end
 
-  # retunrs account for printing
+  # returns account for printing
   def account
     i = self.index
     if i.account_number_prefix && i.account_number_prefix != ""
@@ -64,5 +64,25 @@ class Student < Person
     if option == :sort
       students.sort! {|x, y| x.lastname <=> y.lastname}
     end
+  end
+
+  def claim_accommodation_scholarship!
+    update_attribute(:scholarship_claimed_at, Time.now)
+  end
+
+  def has_account?
+    !index.account_number.nil?
+  end
+
+  def has_address?
+    !address.nil?
+  end
+
+  def prepared_for_claim?
+    has_account? && has_address? && !scholarship_claimed?
+  end
+
+  def scholarship_claimed?
+    !scholarship_claimed_at.nil?
   end
 end 

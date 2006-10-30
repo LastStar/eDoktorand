@@ -217,6 +217,9 @@ module ApplicationHelper
         links << link_to_unless_current(_("probation terms"), 
                                         :controller => 'probation_terms'){} 
       end 
+      if @student.prepared_for_claim?
+        links << claim_link
+      end
       links << link_to_unless_current(_("study plan"),
                                       :controller => 'study_plans',
                                       :action => 'index'){} 
@@ -484,6 +487,10 @@ module ApplicationHelper
     link_to_function(text, "Element.hide('#{element}')")
   end
 
+  def claim_link
+    link_to(_('claim_accomodation_scholarship'), 
+            :controller => 'scholarships', :action => 'claim')
+  end
 
   private 
   

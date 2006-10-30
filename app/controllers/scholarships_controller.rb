@@ -15,8 +15,9 @@ class ScholarshipsController < ApplicationController
 
   # claim for accommodation scholarship
   def claim
-    @student.scholarship_claimed_at = Time.now
-    @student.save
+    unless @student.claim_accommodation_scholarship!
+      render(:partial => "not_claimed")
+    end
   end
 
   # scholarship list preparation

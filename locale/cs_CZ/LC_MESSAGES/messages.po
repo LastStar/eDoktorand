@@ -1679,3 +1679,5 @@ msgstr "Ubytovací stipendia"
 msgid "study_plan_canceled_message"
 msgstr "Váš studijní plán nebyl schválen."
 
+msgid "claim_accomodation_scholarship"
+msgstr "ubytovací stipendium"
