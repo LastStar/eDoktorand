@@ -79,7 +79,7 @@ class Student < Person
   end
 
   def prepared_for_claim?
-    has_account? && has_address? && !scholarship_claimed?
+    has_account? && has_address? 
   end
 
   def scholarship_claimed?

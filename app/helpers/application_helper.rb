@@ -488,8 +488,8 @@ module ApplicationHelper
   end
 
   def claim_link
-    link_to(_('claim_accomodation_scholarship'), 
-            :controller => 'scholarships', :action => 'claim')
+    link_to_unless_current(_('claim_accomodation_scholarship'), 
+            :controller => 'scholarships', :action => 'claim') {}
   end
 
   private 
