@@ -1,3 +1,4 @@
+require 'terms_calculator'
 class ScholarshipsController < ApplicationController
   include LoginSystem
   layout "employers", :except => [:save, :change, :add, :edit, :sum]
@@ -15,9 +16,7 @@ class ScholarshipsController < ApplicationController
 
   # claim for accommodation scholarship
   def claim
-    unless @student.claim_accommodation_scholarship!
-      render(:partial => "not_claimed")
-    end
+    @school_year = TermsCalculator.current_school_year
   end
 
   # scholarship list preparation

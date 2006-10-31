@@ -1231,8 +1231,8 @@ msgstr "přerušeno do"
 msgid "contacts"
 msgstr "kontakty"
 
-msgid "Claim for accomodation scholarship for academic year 2005/2006"
-msgstr "Žádost o ubytovací stipendium na ČZU pro akademický rok 2005/2006"
+msgid "Claim for accomodation scholarship for academic year"
+msgstr "Žádost o ubytovací stipendium na ČZU pro akademický rok"
 
 msgid "First name (names)"
 msgstr "Jméno (jména)"

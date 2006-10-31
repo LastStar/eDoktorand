@@ -7,4 +7,13 @@ class TermsCalculator
       Date.civil(today.year, 9, 30).to_time
     end
   end
+
+  def self.current_school_year
+    today = Date.today
+    if today.month < 10
+      "#{today.year - 1}/#{today.year}"
+    else
+      "#{today.year}/#{today.year + 1}"
+    end
+  end
 end
