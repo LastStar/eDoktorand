@@ -16,6 +16,7 @@ class ScholarshipsController < ApplicationController
 
   # claim for accommodation scholarship
   def claim
+    @student.claim_accommodation_scholarship!
     @school_year = TermsCalculator.current_school_year
   end
 
