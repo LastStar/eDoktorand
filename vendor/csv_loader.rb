@@ -344,7 +344,7 @@ class CSVLoader
       faculty.subjects.each do |s| 
         unless  VoluntarySubject.find_by_subject_id_and_coridor_id(s.id, c.id)
           @@mylog.debug "Voluntary subject created"
-          VoluntarySubject.create(:subject_id => s.id, :coridor => c.id)
+          VoluntarySubject.create(:subject => s, :coridor => c)
         else
           @@mylog.debug "Voluntary subject found"
         end
