@@ -34,12 +34,16 @@ class Index < ActiveRecord::Base
       unless (pre_sum % 11) == 0
         errors.add(:account_number_prefix, _('accoun prefix in wrong format'))
       end
-      acc_sum = 0
-      account_number.split('').reverse.each_with_index do |c, j|
-        acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
-      end
-      unless (acc_sum % 11) == 0
+      if account_number.size > 10 && account_number =~ /[0-9]/
         errors.add(:account_number, _('accoun number in wrong format'))
+      else
+        acc_sum = 0
+        account_number.split('').reverse.each_with_index do |c, j|
+          acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
+        end
+        unless (acc_sum % 11) == 0
+          errors.add(:account_number, _('accoun number in wrong format'))
+        end
       end
     end
     if final_exam_passed_on && !study_plan.all_subjects_finished?
