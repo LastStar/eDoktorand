@@ -777,11 +777,11 @@ class CSVLoader
   def self.load_sident(file)
     @@mylog.info "Loading students sident ..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      if s = Student.find_by_uic(row[0])
-        s.update_attribute(:sident, row[2])
-        @@mylog.info "Student with uic #{row[0]} is updated"
+      if Student.exists?(row[0])
+        Student.find(row[0]).update_attribute(:sident, row[1])
+        @@mylog.info "Student with id #{row[0]} is updated"
       else
-        @@mylog.debug "Student with uic #{row[0]}: #{row[1]} has not been found"
+        @@mylog.debug "Student with id  #{row[1]} has not been found"
       end
     end
   end
