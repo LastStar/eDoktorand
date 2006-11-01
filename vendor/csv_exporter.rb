@@ -234,6 +234,7 @@ class CSVExporter
         row << s.index.coridor_id
         csv << row
       end
+      outfile.close
     end
   end
 
