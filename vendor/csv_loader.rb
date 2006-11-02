@@ -340,7 +340,7 @@ class CSVLoader
   # sets voluntary subjects for agro
   def self.set_subjects_coridors(faculty_id)
     faculty = Faculty.find(faculty_id)
-    faculty.accredited_coridors.each do |c|
+    faculty.coridors.each do |c|
       faculty.subjects.each do |s| 
         unless  VoluntarySubject.find_by_subject_id_and_coridor_id(s.id, c.id)
           @@mylog.debug "Voluntary subject created"
