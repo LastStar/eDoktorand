@@ -837,11 +837,13 @@ class CSVLoader
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       @@mylog.debug row[3]
       if s = Subject.find_by_code(row[3])
+        @@mylog.info "repairing"
         s.update_attributes(:label => row[2], :code => row[3])
         s.departments = [Department.find(row[4])]
         s.id = row[1]
         s.save
       else
+        @@mylog.info "creating"
         s = Subject.new('label' => row[2], 'code' => row[3])
         s.id = row[1]
         s.departments = [Department.find(row[4])]
