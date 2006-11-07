@@ -1,4 +1,5 @@
 class Notifications < ActionMailer::Base
+  untranslate_all
   def invite_candidate(candidate, faculty, sent_at = Time.now)
     @subject = _("Invitation to admition tests to postgradual study")
     @body['display_name'] = candidate.display_name

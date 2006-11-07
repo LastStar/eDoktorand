@@ -1,4 +1,5 @@
 class Examinator < Person
+  untranslate_all
   has_one :department_employment, :foreign_key => 'person_id'
 
   def self.for_html_select(user, options = {})

@@ -1,5 +1,6 @@
 require 'terms_calculator'
 class Exam < ActiveRecord::Base
+  untranslate_all
   belongs_to :index
   belongs_to :subject
   belongs_to :created_by, :class_name => "Person", :foreign_key => "created_by_id"

@@ -1,4 +1,5 @@
 class DisertTheme < ActiveRecord::Base
+  untranslate_all
   belongs_to :index
   validates_presence_of :title
   validates_presence_of :finishing_to

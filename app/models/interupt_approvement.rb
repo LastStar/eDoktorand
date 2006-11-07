@@ -1,4 +1,5 @@
 class InteruptApprovement < Approvement
+  untranslate_all
   belongs_to :interupt, :foreign_key => 'document_id'
   # returns index of interupt
   def index

@@ -2,7 +2,7 @@ require 'genderize'
 
 class Candidate < ActiveRecord::Base
   include Genderize
-
+  untranslate_all
   belongs_to :coridor
   belongs_to :department
   belongs_to :study
@@ -32,7 +32,13 @@ class Candidate < ActiveRecord::Base
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
     :on => :create, :message => _("email does not have right format")
 
-  # validates if languages are not same
+   N_('only unready')
+   N_('only ready')
+   N_('only invited')
+   N_('only admited')
+   N_('only enrolled')
+
+    # validates if languages are not same
   def validate
     errors.add_to_base(_("languages have to be different")) if language1_id == language2_id
     errors.add_to_base(_("candidate must be finished before invitation")) if

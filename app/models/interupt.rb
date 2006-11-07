@@ -1,6 +1,7 @@
 require 'approvable'
 class Interupt < ActiveRecord::Base
   include Approvable
+  untranslate_all
   belongs_to :index
   has_one :approvement, :class_name => 'InteruptApprovement', :foreign_key =>
     'document_id'

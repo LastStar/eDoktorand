@@ -1,4 +1,5 @@
 class ObligateSubject < CoridorSubject
+  untranslate_all
   validates_presence_of :coridor
 
   # returns requisite subject for coridor

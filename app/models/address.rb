@@ -1,4 +1,5 @@
 class Address < ActiveRecord::Base
+untranslate_all
   belongs_to :student, :order =>
   'created_on desc'
   belongs_to :type, :class_name => 'AddressType'

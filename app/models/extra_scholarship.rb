@@ -1,5 +1,6 @@
 class ExtraScholarship < Scholarship
-
+  untranslate_all
+  
   def self.find_all_unpayed_by_index(index_id)
     find(:all, :conditions => ['index_id = ? and payed_on is null', index_id])
   end

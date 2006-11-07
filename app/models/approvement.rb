@@ -1,4 +1,5 @@
 class Approvement < ActiveRecord::Base
+  untranslate_all
   belongs_to :tutor_statement
   belongs_to :leader_statement
   belongs_to :dean_statement

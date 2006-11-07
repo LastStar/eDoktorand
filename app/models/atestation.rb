@@ -1,4 +1,5 @@
 class Atestation < StudyPlanApprovement
+  untranslate_all
   has_one :atestation_detail
 
   # returns date of actual atestation on faculty

@@ -1,6 +1,9 @@
 class Tutor < Examinator
+  untranslate_all
   has_one :tutorship, :foreign_key => 'tutor_id'
   has_many :indices
+  N_("Leader")
+  N_("approve like tutor")
   # return faculty of tutor
   def faculty
   # TODO fix this with data validation

@@ -1,4 +1,5 @@
 class RequisiteSubject < CoridorSubject
+  untranslate_all
   # returns true if has requisite subject
   def self.has_for_coridor?(coridor)
     coridor = coridor.id if coridor.is_a?(Coridor)

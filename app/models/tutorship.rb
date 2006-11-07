@@ -1,4 +1,5 @@
 class Tutorship < ActiveRecord::Base
+  untranslate_all
   belongs_to :tutor
   belongs_to :department
   belongs_to :coridor

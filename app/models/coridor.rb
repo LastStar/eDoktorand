@@ -1,4 +1,5 @@
 class Coridor < ActiveRecord::Base
+  untranslate_all
   belongs_to :faculty
   has_many :candidates, :conditions => "finished_on IS NOT NULL"
   has_many :approved_candidates, :class_name => 'Candidate',

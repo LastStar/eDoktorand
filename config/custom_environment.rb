@@ -3,8 +3,7 @@
 ActionMailer::Base.delivery_method = :sendmail
 
 # localization
-require 'gettext_extension'
-$KCODE = 'UTF8'
+$KCODE = 'u'
 require 'jcode'
 
 ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(
@@ -20,3 +19,4 @@ require 'first_char_changer'
 ExceptionNotifier.exception_recipients = %w(pepe@gravastar.cz dvorakv@oikt.czu.cz)
 ExceptionNotifier.sender_address = 
   %("Edoktorand Exception Notifier" <exception.notifier@edoktorand.czu.cz>)
+require 'gettext/rails'

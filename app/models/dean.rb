@@ -1,6 +1,8 @@
 class Dean < Leader
+  untranslate_all
   has_one :deanship
   # return faculty of the dean
+  N_("Dean")
   def faculty
     deanship.faculty
   end

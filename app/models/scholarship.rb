@@ -1,4 +1,5 @@
 class Scholarship < ActiveRecord::Base
+  untranslate_all
   belongs_to :index
   validates_presence_of :index, :amount
   acts_as_audited

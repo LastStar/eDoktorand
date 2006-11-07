@@ -3,6 +3,7 @@ require 'ldap'
 
 # this model expects a certain database layout and its based on the name/login pattern. 
 class User < ActiveRecord::Base
+  untranslate_all
   has_and_belongs_to_many :roles
 
   belongs_to :person

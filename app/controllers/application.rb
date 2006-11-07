@@ -1,11 +1,27 @@
+
 class ApplicationController < ActionController::Base
   include LoginSystem
   include ExceptionNotifiable
 
+  init_gettext "phdstudy", "UTF-8", "text/html"
+
+  before_filter :utf8_locale
+
+  # sets utf8 for db and locale to cs_CZ
+  def utf8_locale
+    if @params['lang'] == "en"
+      setlocale('en_EN')
+    else
+      setlocale('cs_CZ') # TODO hard coded locale
+    end
+    @charset = 'utf-8'
+    @headers['Content-Type'] = "text/html; charset=#{@charset}"
+    ActiveRecord::Base.connection.execute('SET NAMES UTF8')
+  end
+
   filter_parameter_logging "password"
 
   model :dean # solving deep STI 
-  before_filter :localize
 
   # authorizes user
   def authorize?(user)
@@ -24,39 +40,6 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  def localize
-    # We will use instance vars for the locale so we can make use of them in
-    # the templates.
-    @charset  = 'utf-8'
-    @headers['Content-Type'] = "text/html; charset=#{@charset}"
-    @session['locale'] = @params['locale'] if @params['locale']
-    if @session['locale']
-      @locale = @session['locale']
-      @language, @dialect = @locale.split('_')
-    else
-      # Here is a very simplified approach to extract the prefered language
-      # from the request. If all fails, just use 'en_EN' as the default.
-      if @request.env['HTTP_ACCEPT_LANGUAGE'].nil?
-        temp = []
-      else
-        temp = @request.env['HTTP_ACCEPT_LANGUAGE'].split(',').first.split('-') rescue []
-      end
-      language = temp.slice(0)
-      dialect  = temp.slice(1)
-      @language = language.nil? ? 'cs' : language.downcase 
-      @dialect  = dialect.nil? ? 'CZ' : dialect
-      # The complete locale string consists of
-      # language_DIALECT (en_EN, en_GB, de_DE, ...)
-      @locale = "#{@language}_#{@dialect.upcase}"
-    end
-    @htmllang = @language == @dialect ? @language : "#{@language}-#{@dialect}"
-    # Finally, bind the textdomain to the locale. From now on every used
-    # _('String') will get translated into the right language. (Provided
-    # that we have a corresponding mo file in the right place).
-    bindtextdomain('messages', "#{RAILS_ROOT}/locale", @locale, @charset)
-    ActiveRecord::Base.connection.execute('SET NAMES UTF8')
-  end
-
   # checks if user is student. 
   # if true creates @student variable with current student
   def prepare_student

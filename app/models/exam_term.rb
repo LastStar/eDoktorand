@@ -1,5 +1,6 @@
 class ExamTerm < ActiveRecord::Base
-	belongs_to :chairman, :class_name => 'Tutor', :foreign_key => 'chairman_id'
+        untranslate_all
+        belongs_to :chairman, :class_name => 'Tutor', :foreign_key => 'chairman_id'
 
 	validates_presence_of :room, :message => _("Term must has assigned room")
 	validates_presence_of :chairman_id, :message => _("Term must has assigned chairman")

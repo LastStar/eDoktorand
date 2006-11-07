@@ -1,6 +1,7 @@
 require 'approvable'
 class StudyPlan < ActiveRecord::Base
   include Approvable
+  untranslate_all
   belongs_to :index
   has_many :plan_subjects, :order => 'finishing_on'
   has_one :approvement, :class_name => 'StudyPlanApprovement',

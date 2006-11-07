@@ -81,10 +81,6 @@ class AccountController < ApplicationController
     @user.roles << @roles_up if @roles_up
   end
 
-  def set_locale
-    redirect_to :login_url
-  end
-
   private
   # sets title of the controller
   def set_title

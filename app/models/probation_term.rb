@@ -1,4 +1,5 @@
 class ProbationTerm < ActiveRecord::Base
+  untranslate_all
   belongs_to :subject
   belongs_to :creator, :class_name => "Person", :foreign_key => "created_by"
   belongs_to :first_examinator, :class_name => "Person", :foreign_key => "first_examinator_id"

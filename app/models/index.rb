@@ -1,6 +1,8 @@
 class Index < ActiveRecord::Base
   include Approvable
 
+  untranslate_all
+  
   PREFIX_WEIGHTS = [1, 2, 4, 8, 5, 10]
   ACCOUNT_WEIGHTS = [1, 2, 4, 8, 5, 10, 9, 7, 3, 6]
 
@@ -25,6 +27,9 @@ class Index < ActiveRecord::Base
   validates_presence_of :student
   validates_presence_of :tutor
 
+  N_('with study change')
+  N_('End')
+  
   def validate
     if account_number
       pre_sum = 0

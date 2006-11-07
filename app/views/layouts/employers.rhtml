@@ -16,7 +16,7 @@
   <% if @user %>
     <div id="HeadMenuContent">
     <%= main_menu %>
-    <h1 id="title"><%= "#{_(@user.person.type.to_s)}: #{@user.person.display_name}" %></h1>
+    <h1 id="title"><%= _(@user.person.type.to_s) + ": #{@user.person.display_name}" %></h1>
     </div>
   <% end %>
   </div>

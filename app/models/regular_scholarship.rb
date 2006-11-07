@@ -1,4 +1,5 @@
 class RegularScholarship < Scholarship
+  untranslate_all
   def self.prepare_for_this_month(index)
     unless rs = find_unpayed_by_index(index)
       rs = create('index_id' => index.id,

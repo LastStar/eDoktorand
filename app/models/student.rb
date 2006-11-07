@@ -1,4 +1,5 @@
 class Student < Person
+  untranslate_all
   has_one :index, :dependent => :destroy, :order => 'created_on desc'
   has_one :address, :conditions => 'address_type_id = 1', 
           :dependent => :destroy
@@ -7,6 +8,16 @@ class Student < Person
   has_one :candidate
   has_and_belongs_to_many :probation_terms
 
+  N_('to')
+  N_('Birth date')
+  N_('Year')
+  N_('Enrolled on')
+  N_('with note')
+  N_('date finished')
+  N_('pass_final_exam')
+  N_('Pass final exam')
+  N_('Switch study')
+  
   # returns faculty on which student is
   def faculty
     index.faculty
