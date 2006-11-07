@@ -6,12 +6,13 @@ class ScholarshipsController < ApplicationController
                 :prepare_user
 
   def index
-    list
-    render :action => 'list'
+    redirect_to :action => next_action_for(@user)
   end
 
   def list
-    @scholarships = @student.index.extra_scholarships
+    @indices = Index.find_for_scholarship(@user, 
+                                         :order => 'studies.id, people.lastname',
+                                         :include => [:student, :study, :disert_theme])
   end
 
   # claim for accommodation scholarship
@@ -29,20 +30,20 @@ class ScholarshipsController < ApplicationController
   end
 
   def change
-    index = Index.find(@params['id'])
+    index = Index.find(params['id'])
     @scholarship = RegularScholarship.prepare_for_this_month(index)
   end
 
   # this method shows all extra scholarships for index
   def detail
-    index = Index.find(@params['id'])
+    index = Index.find(params['id'])
     scholarships = ExtraScholarship.find_all_unpayed_by_index(index.id)
     render_partial('detail', :index => index, :scholarships => scholarships)
   end
  
   # adding scholarships for faculty secretaries
   def add
-   @index = Index.find(@params['id'])
+   @index = Index.find(params['id'])
    @scholarship = @index.extra_scholarships.build
   end
   
@@ -63,6 +64,12 @@ class ScholarshipsController < ApplicationController
     else
       render(:partial => 'index_line', :locals => {:index => @scholarship.index})
     end
+  end
+
+  def recalculate
+    index = Index.find(params['id'])
+    index.regular_scholarship.update_attribute('amount', ScholarshipCalculator.for(index))
+    render(:partial => 'regular', :locals => {:index => index})
   end
 
   def update
@@ -93,13 +100,17 @@ class ScholarshipsController < ApplicationController
     csv_headers('stipendia.csv')
     stipendias = Scholarship.pay_and_generate_for(@user)
     date = (Time.now - 1.month).strftime('%Y%m')
-    faculty = @user.person.faculty.short_name
-    file = "#{RAILS_ROOT}/public/csv/#{faculty}#{date}.csv"
+    file = "#{RAILS_ROOT}/public/csv/#{date}.csv"
     File.open(file, 'w') {|file| file.write(stipendias)}
     # TODO send mail to machyk
     render(:text => stipendias)
   end
-
+  
+  def approve
+    @indices = Scholarship.approve_for(@user)
+    render(:action => 'list')
+  end
+  
   # saves scholarship to dbase
   def save_scholarship
     @index = Index.find(@params['index']['id'])
@@ -116,5 +127,20 @@ class ScholarshipsController < ApplicationController
   # sets title of the controller
   def set_title
     @title = _('Scholarships')
+  end
+
+  def next_action_for(user)
+    if user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
+      if prepare_time? && !ScholarshipApprovement.approved_for?(user.person.faculty)
+        :prepare
+      else
+        :list
+      end
+    end
+  end
+  
+  def prepare_time?
+    day = Time.now.day
+    ((day < 5) || (day > 20))
   end
 end

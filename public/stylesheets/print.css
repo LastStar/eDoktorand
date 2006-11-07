@@ -96,6 +96,13 @@ p.subject {
 	text-align: center;
 	display: block;
 }
+table.scholarship {
+  border-collapse: collapse;
+  border : 0px
+}
+table.scholarship td,th {
+   border: 1px solid #ddc
+}
 table.list {
   margin: 10px;
   border-collapse: collapse;

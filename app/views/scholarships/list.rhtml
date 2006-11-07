@@ -1,17 +1,32 @@
-<% unless @scholarships && @scholarships.empty? %>
-  <div id="scholarship_list">
-    <%= render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list' %>
-  </div>
-<% else %>
-  <h5><%= _("There are no scholarships") %></h5>
+<div id='students_list'>
+<h5><%= _("Scholarships for") %> <%= (Time.now - 1.month).strftime('%m/%Y') %></h5>
+<div class='links'>
+<% if @user.has_role?('supervisor') && ((Time.now.day > 5) && (Time.now.day < 20)) %>
+  <%= pay_link %>
 <% end %>
-<br/>
-<script type="text/javascript">
-  function accountChange() {
-  if($('account_change').style.display == 'none') {
-    new Effect.Appear('account_change');
-  } else {
-    new Effect.Fade('account_change')
-  }
-}
-</script>
+</div>
+<% disponents = {} %>
+<% disponents.default = 0 %>
+<% codes = {} %>
+<% codes.default = 0%>
+<table class = "scholarship" cellspacing = "0" cellpading = "0">
+<tr><th><%= _("Birth number")%></th><th><%= _("Last name")%></th><th><%= _("First name")%></th><th><%= _("Coridor") %></th>
+<th><%= _("Type of scholarship")%></th><th><%= _("Disponent")%></th><th><%= _("Amount (Kč)")%></th></tr>
+<% for index in @indices %>
+  <%= render(:partial => 'approved_line', :locals => {:index => index, :disponents => disponents, :codes => codes}) %>
+<% end %>
+</table>
+<br><br>
+<table class = "scholarship" cellspacing = "0" cellpading = "0" style ="float :right" >
+<tr><th><%= _("Type of scholarship")%></th><th><%= _("Total amount")%></th></tr>
+<% codes.each_pair do |code,sum| %>
+ <tr><td><%= code %></td><td><%= sum %></td></tr>
+<% end %>
+</table>
+<table class = "scholarship" cellspacing = "0" cellpading = "0" >
+<tr><th><%= _("Disponent")%></th><th><%= _("Total amount")%></th></tr>
+<% disponents.each_pair do |disponent,sum| %>
+  <tr><td><%= disponent %></td><td><%= sum %></td></tr>
+<% end %>
+</table>
+</div>

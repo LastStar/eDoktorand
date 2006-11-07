@@ -1,0 +1,25 @@
+<% if (index.has_extra_scholarship? && index.extra_scholarship_sum > 0) ||
+index.has_regular_scholarship? && index.regular_scholarship_or_create.amount > 0 %>
+  <tr>
+  <% i = 0 %>
+  <td><%= index.student.birth_number %></td>
+  <td><%= index.student.lastname %></td>
+  <td><%= index.student.firstname %></td>
+  <td><%= index.coridor.name %></td>
+  <% if index.has_regular_scholarship? && index.regular_scholarship_or_create.amount > 0 %>
+    <%= render(:partial => 'detail_scholarship', :locals => {:scholarship => index.regular_scholarship,:disponents => disponents, :codes => codes}) %>
+  <% else %>
+    <%= render(:partial => 'detail_scholarship', :locals => {:scholarship => index.extra_scholarships.first,:disponents => disponents, :codes => codes}) %>
+    <% i = 1 %>
+  <% end %>
+  <% if (ess = index.extra_scholarships.size) > i %>
+    </tr>
+    <% index.extra_scholarships[i..ess].each do |s| %>
+      <tr>
+      <td colspan='4'>&nbsp;</td>
+      <%= render(:partial => 'detail_scholarship', :locals => {:scholarship => s,:disponents => disponents, :codes => codes}) %>
+    <% end %>
+  <% end %>
+  </tr>
+<% end %>
+

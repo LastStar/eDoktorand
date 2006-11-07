@@ -1,14 +1,18 @@
 <div class="smallinfo" id='scholarship_<%= index.id %>'>
 <% if index.has_extra_scholarships? %>
-  <%= detail_link(index) %>
-  <%= index.extra_scholarship_sum %> <%= _('Kc') %>
+    <%= detail_link(index) %>
+    <%= index.extra_scholarship_sum %> <%= _('Kc') %>
 <% else %>
   <%= add_link(index) %>&nbsp;
 <% end %>
 </div>
 <% if index.has_regular_scholarship?%>
 <div class="smallinfo" id='regular_scholarship_<%= index.id %>'>
+  <% if @user.has_role?('department_secretary') %>
+    <%= index.regular_scholarship_or_create.amount %> <%= _("Kc") %>
+  <% else %>
   <%= render(:partial => 'regular', :locals => {:index => index}) %>
+  <% end %>
 </div>
 <% else %>
   <div class="smallinfo">&nbsp;</div> 
@@ -16,7 +20,7 @@
 <div class="smallinfo nonprintable"><%= index.study.name %></div>
 <div class="smallerinfo nonprintable"><%= index.department.short_name %></div>
 <div class="longinfo">
-<% if index.account_number==nil%>
+<% if index.account_number == nil%>
   <%="&nbsp;&nbsp;"%>
 <% else %>
    <%= index.student.account%>

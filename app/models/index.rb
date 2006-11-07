@@ -150,7 +150,7 @@ class Index < ActiveRecord::Base
   # returns all indices for person
   # accepts Base.find options. Include and order for now
   def self.find_for(user, options ={})
-    if user.has_one_of_roles?(['admin', 'vicerector'])
+    if user.has_one_of_roles?(['admin', 'vicerector','supervisor'])
       if options[:only_tutor]
         conditions = ['indices.tutor_id = ?', user.person.id]
       elsif options[:faculty] && options[:faculty] != '0'
@@ -439,7 +439,7 @@ class Index < ActiveRecord::Base
   end
 
   def has_extra_scholarship?
-    extra_scholarships && !extra_scholarships.empty?
+    extra_scholarships && !extra_scholarships.empty? && extra_scholarship_sum > 0
   end
 
   def regular_scholarship_or_create

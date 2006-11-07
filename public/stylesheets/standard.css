@@ -20,6 +20,22 @@ a {
 } 
 a:hover { color: red }
 
+table.scholarship { 
+  border-collapse: collapse; 
+  border : 0px 
+}
+
+table.scholarship th,td { 
+  border: 1px 
+  solid #ddc 
+}
+
+table.scholarship_disponent{
+  border-collapse: collapse; 
+  border : 0px 
+  float: right
+}
+
 hr {
   color: black;
   border-top: 1px solid black;

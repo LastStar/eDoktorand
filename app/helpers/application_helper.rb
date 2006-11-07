@@ -232,7 +232,8 @@ module ApplicationHelper
       elsif @user.has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) 
         links << link_to_unless_current(_("probation terms"), :controller =>
           'probation_terms'){} 
-        links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
+        links << link_to_unless_current(_("exams"), :controller => 'exams'){}
+        links << prepare_scholarship_link
       end 
       links << link_to_unless_current(_("students"), 
                                       :controller => 'students'){} 
@@ -429,7 +430,7 @@ module ApplicationHelper
 
   def prepare_scholarship_link
     link_to_unless_current(_("scholarship"), :controller => 'scholarships',
-                          :action => 'prepare'){} 
+                          :action => 'index'){} 
   end
 
   def edit_link(object, name, meth = nil)

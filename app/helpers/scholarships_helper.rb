@@ -28,6 +28,12 @@ module ScholarshipsHelper
                    :url => {:action => 'add', :id => index.id})
   end
 
+  def recalculate_link(index)
+    link_to_remote(image_tag('arrow_refresh_small.png'),
+                   :update => "regular_scholarship_#{index.id}",
+                   :url => {:action => 'recalculate', :id => index})
+  end
+
   def remove_link(scholarship)
     link_to_remote(image_tag('minus.png'), 
                    :complete => evaluate_remote_response,
@@ -46,6 +52,10 @@ module ScholarshipsHelper
     link_to_remote(_('sum'), :url => {:action => 'sum'}, 
                    :evaluate_remote_response => true, :update => 'sum',
                    :complete => "$('sum').show()")
+  end
+
+  def approve_link
+    link_to(_('approve'), {:action => 'approve'}, :confrim => _('are_you_sure_to_approve'))
   end
 
   def scholarship_field

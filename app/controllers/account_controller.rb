@@ -53,7 +53,9 @@ class AccountController < ApplicationController
     elsif @user.has_one_of_roles?(['tutor', 'dean',
       'department_secretary', 'faculty_secretary'])
       redirect_to  students_url
-    end
+    elsif @user.has_role?('supervisor')
+      redirect_to :controller => 'scholarships', :action => 'list'
+    end  
   end
 
   # error page for system

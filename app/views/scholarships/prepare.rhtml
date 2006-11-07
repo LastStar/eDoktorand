@@ -2,7 +2,10 @@
 <h5><%= _("Scholarship for students") %></h5>
 <div class='links'>
 <%= sum_link %>
-<%= pay_link %>
+<% if @user.has_role?('faculty_secretary') %>
+  <%= approve_link %>
+<% end %>
+
 </div>
   <%= render :partial => 'prepare_list' %>
 </div>

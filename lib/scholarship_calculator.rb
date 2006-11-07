@@ -9,7 +9,7 @@ class ScholarshipCalculator
     4 => {0 => 4250, 1 => 4250, 2 => 5250, 3 => 5250, 4 => 5750,
           5 => 5750, 6 => 6250, 7 => 6250, 8 => 6250, 9 => 6250,
           10 => 6250, 11 => 6250, 12 => 6250, 13 => 6250, 'final_exam' => 7250},
-    5 => {1 => 5800, 2 => 6500, 3 => 7000, 'final_exam' => 7500}       
+    5 => {1 => 5800, 2 => 6500, 3 => 7000, 4 => 7000, 'final_exam' => 7500}       
   }          
           
 
@@ -20,6 +20,8 @@ class ScholarshipCalculator
     case index.faculty.id
     when 1, 3, 4
       by_exams(index)
+    when 2
+      amount = 0
     when 5
       by_year(index)
     end

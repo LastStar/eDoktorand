@@ -19,7 +19,7 @@ class Scholarship < ActiveRecord::Base
   end
 
   def self.pay_and_generate_for(user)
-    indices = Index.find_for_scholarship(user, :include => [])
+    indices = Index.find_for_scholarship(user, :include => [:disert_theme])
     outfile = ''
     CSV::Writer.generate(outfile, ';') do |csv|
       indices.each do |i|
@@ -35,4 +35,28 @@ class Scholarship < ActiveRecord::Base
     end
     outfile
   end
+  
+  def self.approve_for(user)
+    indices = Index.find_for_scholarship(user, :include => [:disert_theme])
+    ScholarshipApprovement.create(:faculty => user.person.faculty)
+    indices.select do |i|
+      approved = false
+      if i.has_extra_scholarships?
+        i.extra_scholarships.each {|es| es.approve!}
+        approved = true
+      end
+      if i.has_regular_scholarship? 
+        if i.regular_scholarship.amount > 0
+          i.regular_scholarship.approve!
+          approved = true
+        end
+      end
+      approved
+    end
+  end
+  
+  def approve!
+    update_attribute('approved_on',Time.now)
+  end
+  
 end
