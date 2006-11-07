@@ -5,7 +5,7 @@ index.has_regular_scholarship? && index.regular_scholarship_or_create.amount > 0
   <td><%= index.student.birth_number %></td>
   <td><%= index.student.lastname %></td>
   <td><%= index.student.firstname %></td>
-  <td><%= index.coridor.name %></td>
+  <td><%= index.coridor.code %></td>
   <% if index.has_regular_scholarship? && index.regular_scholarship_or_create.amount > 0 %>
     <%= render(:partial => 'detail_scholarship', :locals => {:scholarship => index.regular_scholarship,:disponents => disponents, :codes => codes}) %>
   <% else %>
