@@ -32,8 +32,8 @@ table.scholarship th,td {
 
 table.scholarship_disponent{
   border-collapse: collapse; 
-  border : 0px 
-  float: right
+  border : none;
+  float: right;
 }
 
 hr {

@@ -41,13 +41,13 @@ class StudyPlansController < ApplicationController
   # renders change page for study plan
   def change
     if !@student
-      @student = Student.find(@params['id'])
+      @student = Student.find(params[:id])
     end
-    coridor_id = @student.index.coridor_id
-    @subjects = CoridorSubject.for_select(:coridor => coridor_id)
+    coridor = @student.index.coridor
+    @subjects = CoridorSubject.for_select(:coridor => coridor)
     if @study_plan = @student.index.study_plan
-      @plan_subjects = @student.index.study_plan.unfinished_subjects
-      (FACULTY_CFG[@student.faculty.id]['subjects_count'] - @plan_subjects.size).times do |i|
+      @plan_subjects = @study_plan.unfinished_subjects
+      (FACULTY_CFG[@student.faculty.id]['subjects_count'] - @plan_subjects.size + 4).times do |i|
         (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
         @plan_subjects << plan_subject
       end
