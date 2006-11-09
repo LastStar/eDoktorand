@@ -706,13 +706,12 @@ msgid "Term must has assigned second examiner"
 msgstr "Termín musí mít přiděleného druhého zkoušejícího"
 
 #: app/models/study_plan.rb:112
-#, fuzzy
 msgid "FE_passed"
-msgstr "prospěl"
+msgstr "složil SDZ"
 
 #: app/models/study_plan.rb:114
 msgid "all_finished"
-msgstr "ukončeno"
+msgstr "SP splněn"
 
 #: app/models/study_plan.rb:116
 msgid "SP canceled"
