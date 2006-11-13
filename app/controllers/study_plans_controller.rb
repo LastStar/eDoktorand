@@ -171,8 +171,7 @@ class StudyPlansController < ApplicationController
         redirect_to(:controller => 'students')
       end
     else
-      @subjects = Subject.for_faculty_select(@student.faculty)
-      extract_voluntary
+      @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
       render(:action => 'create_by_other')
     end
   end

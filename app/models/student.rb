@@ -16,6 +16,8 @@ class Student < Person
   N_('date finished')
   N_('pass_final_exam')
   N_('Pass final exam')
+  N_('pass_defense')
+  N_('Pass defense')
   N_('Switch study')
   
   # returns faculty on which student is

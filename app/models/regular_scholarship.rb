@@ -22,9 +22,9 @@ class RegularScholarship < Scholarship
 
   def disponent
     if index.payment_id == 3
-      "1301#{index.faculty.stipendia_code}9001131"
+      "1301#{index.faculty.stipendia_code}1131"
     else
-      "1201#{index.faculty.stipendia_code}9001121"
+      "1201#{index.faculty.stipendia_code}1121"
     end
   end
 
