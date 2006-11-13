@@ -14,7 +14,9 @@ class CoridorSubject < ActiveRecord::Base
       sql = ["coridor_id = ?", options[:coridor]]
     end
     self.find(:all, :conditions => sql, :order => 'subjects.label', 
-             :include => :subject).map do |sub|
+             :include => :subject).sort do |x, y|
+                                    x.subject.label <=> y.subject.label
+                                   end.map do |sub|
       [sub.subject.select_label, sub.subject.id]
     end
   end

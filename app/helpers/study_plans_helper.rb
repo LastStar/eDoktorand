@@ -41,7 +41,7 @@ module StudyPlansHelper
       'name' => "plan_subject[#{plan_subject.id}][subject_id]",
       'onChange' => "hide_on_internal(#{plan_subject.id}); return(false);"})
     select << "&mdash; "
-    select << content_tag('select', options_for_select(1..4,
+    select << content_tag('select', options_for_select(1..5,
       plan_subject.finishing_on ), { 'id' => 
       "plan_subject_#{plan_subject.id}_finishing_on", 'name' => 
       "plan_subject[#{plan_subject.id}][finishing_on]"})

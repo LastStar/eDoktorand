@@ -6,8 +6,11 @@ hr {
   border: none;
 }
 h5 {
-  display: none;
-	font-size: 14pt;
+	font-size: 9pt;
+  color: gray;
+  padding: 0;
+  margin: 0;
+  border-top: 1px dashed gray;
 }
 h1 {
   display: none;
@@ -22,8 +25,7 @@ p {
   clear: right; 
   margin: 0 0 0 0;
   padding: 2px 0 0 0.5ex;
-  border-bottom: 1px solid #ddc;
-  border-left: 3px solid #ddc;
+  border: none;
   list-style: none; 
 }
 #error {
@@ -67,7 +69,8 @@ p.subject {
 }
 .long_info {
   float: right;
-  width: 480px;
+  width: 350px;
+  font-weight: bolder;
 }
 .longinfo {
   float: right;
@@ -163,7 +166,7 @@ a {
 }
 li.higher {height: 2.25em;}
 #people_list li {list-style: none; border-bottom: 1px solid black}
-#students_list li {list-style: none; border-bottom: 1px solid black}
+#students_list li {list-style: none; border-bottom: none;}
 #student_detail .info {float: right; width: 14ex; position: static}
 #Head {
   display: none;

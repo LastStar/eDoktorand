@@ -205,7 +205,8 @@ module ApplicationHelper
   def birth_number_line(student)
     if @user.has_role?('faculty_secretary') && student.birth_number
       content_tag('li', 
-        "#{long_info_helper(student.birth_number)}#{_('Birth number')}:")
+              "#{long_info_helper(student.birth_number)}#{_('Birth number')}:",
+                 :class => 'nonprintable')
     end
   end
 

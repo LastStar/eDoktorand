@@ -1968,7 +1968,7 @@ msgstr "poslední atestace"
 
 #: app/views/shared/_study_detail.rhtml:74
 msgid "study plan approvement process"
-msgstr "schvalovací proces studijního plánu"
+msgstr "Schvalovací proces studijního plánu"
 
 #: app/views/shared/_study_detail.rhtml:91
 msgid "canceled on"
@@ -1982,7 +1982,7 @@ msgstr "schválen dne"
 #: app/views/study_plans/_full_form.rhtml:13
 #: app/views/study_plans/_plan_subjects.rhtml:4
 msgid "subjects"
-msgstr "předměty"
+msgstr "Předměty"
 
 #: app/views/shared/candidate_detail.rhtml:2
 #: app/views/shared/candidate_edit.rhtml:6
