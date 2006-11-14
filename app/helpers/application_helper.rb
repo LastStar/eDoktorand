@@ -203,16 +203,26 @@ module ApplicationHelper
 
   # prints birth number if user has faculty secretary role 
   def birth_number_line(student)
-    if @user.has_role?('faculty_secretary') && student.birth_number
+    if @user.has_one_of_roles?(['faculty_secretary', 'student']) && student.birth_number
       content_tag('li', 
-              "#{long_info_helper(student.birth_number)}#{_('Birth number')}:",
+              long_info_helper(student.birth_number) + _('Birth number') + ' :',
+                 :class => 'nonprintable')
+    end
+  end
+
+  # prints birth number if user has faculty secretary role 
+  def birth_on_line(student)
+    if @user.has_one_of_roles?(['faculty_secretary', 'student']) && student.birth_on
+      content_tag('li', 
+              long_info_helper(student.birth_on) + _('Birth on') + ':',
                  :class => 'nonprintable')
     end
   end
 
   # prints main menu
   def main_menu
-    links = []
+    links = [print_link(image_tag('printer', :alt => _('print'), 
+                                  :size => '12x12' ))]
     if @user.person.is_a?(Student) and @student 
       if @student.index.study_plan && @student.index.study_plan.approved? 
         links << link_to_unless_current(_("probation terms"), 
@@ -243,7 +253,7 @@ module ApplicationHelper
                                     {:controller => 'account', 
                                      :action => 'logout'}, 
                                      :confirm =>  _("do you really want to") + 
-    ' ' + _("logoff") + '?'){} 
+                                     ' ' + _("logoff") + '?'){} 
     links.flatten.join("\n")
   end
   
@@ -251,7 +261,7 @@ module ApplicationHelper
   def birth_place_line(student)
     if student.birth_place
       content_tag('li',
-        "#{long_info_helper(student.birth_place)}#{_('Birth place')}:")
+        long_info_helper(student.birth_place) + _('Birth place') + ':')
     end
   end
 

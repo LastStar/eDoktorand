@@ -280,103 +280,116 @@ msgstr ""
 msgid "dean statement"
 msgstr ""
 
-#: app/helpers/application_helper.rb:217 app/helpers/application_helper.rb:233
+#: app/helpers/application_helper.rb:208 app/views/scholarships/list.rhtml:13
+#: app/views/shared/candidate_detail.rhtml:6
+msgid "Birth number"
+msgstr ""
+
+#: app/helpers/application_helper.rb:217
+msgid "Birth on"
+msgstr ""
+
+#: app/helpers/application_helper.rb:227 app/helpers/application_helper.rb:243
 #: app/views/shared/_main_menu.rhtml:6 app/views/shared/_main_menu.rhtml:23
 msgid "probation terms"
 msgstr ""
 
-#: app/helpers/application_helper.rb:223 app/views/shared/_main_menu.rhtml:9
+#: app/helpers/application_helper.rb:233 app/views/shared/_main_menu.rhtml:9
 #: app/views/study_plans/_study_plan_header.rhtml:1
 msgid "study plan"
 msgstr ""
 
-#: app/helpers/application_helper.rb:228 app/views/shared/_main_menu.rhtml:17
+#: app/helpers/application_helper.rb:238 app/views/shared/_main_menu.rhtml:17
 msgid "candidates"
 msgstr ""
 
-#: app/helpers/application_helper.rb:229 app/views/shared/_main_menu.rhtml:18
+#: app/helpers/application_helper.rb:239 app/views/shared/_main_menu.rhtml:18
 msgid "exam_terms"
 msgstr ""
 
-#: app/helpers/application_helper.rb:231 app/helpers/application_helper.rb:235
+#: app/helpers/application_helper.rb:241 app/helpers/application_helper.rb:245
 #: app/views/shared/_main_menu.rhtml:21 app/views/shared/_main_menu.rhtml:25
 msgid "exams"
 msgstr ""
 
-#: app/helpers/application_helper.rb:238
+#: app/helpers/application_helper.rb:248
 #: app/helpers/probation_terms_helper.rb:41
 #: app/views/shared/_main_menu.rhtml:27
 msgid "students"
 msgstr ""
 
-#: app/helpers/application_helper.rb:241 app/helpers/application_helper.rb:245
+#: app/helpers/application_helper.rb:251 app/helpers/application_helper.rb:255
 #: app/views/shared/_main_menu.rhtml:29 app/views/shared/_main_menu.rhtml:30
 msgid "logoff"
 msgstr ""
 
-#: app/helpers/application_helper.rb:244 app/views/shared/_main_menu.rhtml:29
+#: app/helpers/application_helper.rb:254 app/views/shared/_main_menu.rhtml:29
 msgid "do you really want to"
 msgstr ""
 
-#: app/helpers/application_helper.rb:290
+#: app/helpers/application_helper.rb:263
+msgid "Birth place"
+msgstr ""
+
+#: app/helpers/application_helper.rb:300
 #: app/views/exams/_show_protocol.rhtml:44
 msgid "print"
 msgstr ""
 
-#: app/helpers/application_helper.rb:325
+#: app/helpers/application_helper.rb:335
 msgid "see atestation informations"
 msgstr ""
 
-#: app/helpers/application_helper.rb:338 app/helpers/application_helper.rb:342
+#: app/helpers/application_helper.rb:348 app/helpers/application_helper.rb:352
 #: app/helpers/scholarships_helper.rb:58
 msgid "approve"
 msgstr ""
 
-#: app/helpers/application_helper.rb:338
+#: app/helpers/application_helper.rb:348
 msgid "approve with earfull"
 msgstr ""
 
-#: app/helpers/application_helper.rb:338 app/helpers/application_helper.rb:342
+#: app/helpers/application_helper.rb:348 app/helpers/application_helper.rb:352
 msgid "cancel"
 msgstr ""
 
-#: app/helpers/application_helper.rb:352
+#: app/helpers/application_helper.rb:362
 msgid "methodology file (opens new window)"
 msgstr ""
 
-#: app/helpers/application_helper.rb:360
+#: app/helpers/application_helper.rb:370
 msgid "additional information for next atestation"
 msgstr ""
 
-#: app/helpers/application_helper.rb:371 app/views/candidates/admit.rhtml:20
+#: app/helpers/application_helper.rb:381 app/views/candidates/admit.rhtml:20
 #: app/views/candidates/enroll.rhtml:15 app/views/exam_terms/new.rhtml:7
 #: app/views/exams/_protocol.rhtml:4
 msgid "back"
 msgstr ""
 
-#: app/helpers/application_helper.rb:373
+#: app/helpers/application_helper.rb:383
 msgid "back and remove from list"
 msgstr ""
 
-#: app/helpers/application_helper.rb:428
+#: app/helpers/application_helper.rb:438
 #: app/views/shared/_study_detail.rhtml:9
 msgid "finished on"
 msgstr ""
 
-#: app/helpers/application_helper.rb:432 app/views/shared/_main_menu.rhtml:11
+#: app/helpers/application_helper.rb:442 app/views/shared/_main_menu.rhtml:11
 #: app/views/shared/_main_menu.rhtml:19
 msgid "scholarship"
 msgstr ""
 
-#: app/helpers/application_helper.rb:484 app/helpers/students_helper.rb:136
+#: app/helpers/application_helper.rb:494 app/helpers/students_helper.rb:136
 msgid "final exam term"
 msgstr ""
 
-#: app/helpers/application_helper.rb:487
+#: app/helpers/application_helper.rb:497
 msgid "hide"
 msgstr ""
 
-#: app/helpers/application_helper.rb:492
+#: app/helpers/application_helper.rb:502
 msgid "claim_accomodation_scholarship"
 msgstr ""
 
@@ -1755,11 +1768,6 @@ msgstr ""
 
 #: app/views/scholarships/list.rhtml:2
 msgid "Scholarships for"
-msgstr ""
-
-#: app/views/scholarships/list.rhtml:13
-#: app/views/shared/candidate_detail.rhtml:6
-msgid "Birth number"
 msgstr ""
 
 #: app/views/scholarships/list.rhtml:13

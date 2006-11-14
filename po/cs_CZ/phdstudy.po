@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2006-11-13 11:58+0100\n"
+"POT-Creation-Date: 2006-11-13 16:08+0100\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -303,103 +303,116 @@ msgstr "vyjádření vedoucího katedry"
 msgid "dean statement"
 msgstr "vyjádření děkana"
 
-#: app/helpers/application_helper.rb:217 app/helpers/application_helper.rb:233
+#: app/helpers/application_helper.rb:208 app/views/scholarships/list.rhtml:13
+#: app/views/shared/candidate_detail.rhtml:6
+msgid "Birth number"
+msgstr "Rodné číslo"
+
+#: app/helpers/application_helper.rb:217
+msgid "Birth on"
+msgstr "Narozen dne"
+
+#: app/helpers/application_helper.rb:227 app/helpers/application_helper.rb:243
 #: app/views/shared/_main_menu.rhtml:6 app/views/shared/_main_menu.rhtml:23
 msgid "probation terms"
 msgstr "termíny zkoušek"
 
-#: app/helpers/application_helper.rb:223 app/views/shared/_main_menu.rhtml:9
+#: app/helpers/application_helper.rb:233 app/views/shared/_main_menu.rhtml:9
 #: app/views/study_plans/_study_plan_header.rhtml:1
 msgid "study plan"
 msgstr "studijní plán"
 
-#: app/helpers/application_helper.rb:228 app/views/shared/_main_menu.rhtml:17
+#: app/helpers/application_helper.rb:238 app/views/shared/_main_menu.rhtml:17
 msgid "candidates"
 msgstr "uchazeči"
 
-#: app/helpers/application_helper.rb:229 app/views/shared/_main_menu.rhtml:18
+#: app/helpers/application_helper.rb:239 app/views/shared/_main_menu.rhtml:18
 msgid "exam_terms"
 msgstr "komise"
 
-#: app/helpers/application_helper.rb:231 app/helpers/application_helper.rb:235
+#: app/helpers/application_helper.rb:241 app/helpers/application_helper.rb:245
 #: app/views/shared/_main_menu.rhtml:21 app/views/shared/_main_menu.rhtml:25
 msgid "exams"
 msgstr "zkoušky"
 
-#: app/helpers/application_helper.rb:238
+#: app/helpers/application_helper.rb:248
 #: app/helpers/probation_terms_helper.rb:41
 #: app/views/shared/_main_menu.rhtml:27
 msgid "students"
 msgstr "studenti"
 
-#: app/helpers/application_helper.rb:241 app/helpers/application_helper.rb:245
+#: app/helpers/application_helper.rb:251 app/helpers/application_helper.rb:255
 #: app/views/shared/_main_menu.rhtml:29 app/views/shared/_main_menu.rhtml:30
 msgid "logoff"
 msgstr "odhlásit"
 
-#: app/helpers/application_helper.rb:244 app/views/shared/_main_menu.rhtml:29
+#: app/helpers/application_helper.rb:254 app/views/shared/_main_menu.rhtml:29
 msgid "do you really want to"
 msgstr "opravdu se chcete"
 
-#: app/helpers/application_helper.rb:290
+#: app/helpers/application_helper.rb:263
+msgid "Birth place"
+msgstr "Místo narození"
+
+#: app/helpers/application_helper.rb:300
 #: app/views/exams/_show_protocol.rhtml:44
 msgid "print"
 msgstr "vytisknout"
 
-#: app/helpers/application_helper.rb:325
+#: app/helpers/application_helper.rb:335
 msgid "see atestation informations"
 msgstr "informace k atestaci"
 
-#: app/helpers/application_helper.rb:338 app/helpers/application_helper.rb:342
+#: app/helpers/application_helper.rb:348 app/helpers/application_helper.rb:352
 #: app/helpers/scholarships_helper.rb:58
 msgid "approve"
 msgstr "schválit"
 
-#: app/helpers/application_helper.rb:338
+#: app/helpers/application_helper.rb:348
 msgid "approve with earfull"
 msgstr "schválit s výtkou"
 
-#: app/helpers/application_helper.rb:338 app/helpers/application_helper.rb:342
+#: app/helpers/application_helper.rb:348 app/helpers/application_helper.rb:352
 msgid "cancel"
 msgstr "neschválit"
 
-#: app/helpers/application_helper.rb:352
+#: app/helpers/application_helper.rb:362
 msgid "methodology file (opens new window)"
 msgstr "soubor s metodikou (otevře nové okno)"
 
-#: app/helpers/application_helper.rb:360
+#: app/helpers/application_helper.rb:370
 msgid "additional information for next atestation"
 msgstr "další informace pro následující atestaci"
 
-#: app/helpers/application_helper.rb:371 app/views/candidates/admit.rhtml:20
+#: app/helpers/application_helper.rb:381 app/views/candidates/admit.rhtml:20
 #: app/views/candidates/enroll.rhtml:15 app/views/exam_terms/new.rhtml:7
 #: app/views/exams/_protocol.rhtml:4
 msgid "back"
 msgstr "zpět"
 
-#: app/helpers/application_helper.rb:373
+#: app/helpers/application_helper.rb:383
 msgid "back and remove from list"
 msgstr "zpět a vyřadit ze seznamu"
 
-#: app/helpers/application_helper.rb:428
+#: app/helpers/application_helper.rb:438
 #: app/views/shared/_study_detail.rhtml:9
 msgid "finished on"
 msgstr "ukončen dne"
 
-#: app/helpers/application_helper.rb:432 app/views/shared/_main_menu.rhtml:11
+#: app/helpers/application_helper.rb:442 app/views/shared/_main_menu.rhtml:11
 #: app/views/shared/_main_menu.rhtml:19
 msgid "scholarship"
 msgstr "stipendia"
 
-#: app/helpers/application_helper.rb:484 app/helpers/students_helper.rb:136
+#: app/helpers/application_helper.rb:494 app/helpers/students_helper.rb:136
 msgid "final exam term"
 msgstr "termín SDZ"
 
-#: app/helpers/application_helper.rb:487
+#: app/helpers/application_helper.rb:497
 msgid "hide"
 msgstr "skrýt"
 
-#: app/helpers/application_helper.rb:492
+#: app/helpers/application_helper.rb:502
 msgid "claim_accomodation_scholarship"
 msgstr "ubytovací stipendium"
 
@@ -1804,11 +1817,6 @@ msgstr "ŽADATEL"
 #: app/views/scholarships/list.rhtml:2
 msgid "Scholarships for"
 msgstr "stipendia"
-
-#: app/views/scholarships/list.rhtml:13
-#: app/views/shared/candidate_detail.rhtml:6
-msgid "Birth number"
-msgstr "Rodné číslo"
 
 #: app/views/scholarships/list.rhtml:13
 msgid "First name"
