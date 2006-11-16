@@ -1,9 +1,12 @@
 <ul class='details'>
-<li>
-<%= "#{long_info_helper(student.display_name)}#{_('Full name')}: " %>
-</li>
+<%if @user.roles.find_by_name('faculty_secretary') != nil%>
+  <li>
+  <%= attribute_line(student, :display_name)%> <%=_ 'Full name' %>
+  </li>
+<%else%>
+  <li><%= "#{long_info_helper(student.display_name)}#{_('Full name')}: " %></li>
+<%end%>
 <li><%= attribute_line(student, :birthname) %><%=_ 'Surname' %>:</li>
-
 <%= birth_date_line(student) %>
 <%= birth_number_line(student) %>
 

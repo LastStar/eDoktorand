@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   include LoginSystem
 
-  layout 'employers', :except => [:edit_citizenship, :edit_phone, :edit_email, 
+  layout 'employers', :except => [:edit_citizenship, :edit_display_name, :edit_phone, :edit_email, 
                                   :edit_birthname, :edit_consultant,
                                   :time_form, :filter, :list_xls, :edit_account]
 
@@ -117,6 +117,21 @@ class StudentsController < ApplicationController
     @index = @student.index
     @email = @index.student.email_or_new
     @email.update_attribute(:name, params[:email][:name])
+  end
+
+  def edit_display_name
+    @student = Student.find(params[:id], :include => :index)
+    @index = @student.index
+    @display_name = @index.student.display_name
+    @firstname = @index.student.firstname
+    @lastname = @index.student.lastname
+  end
+
+  def save_display_name
+    @student = Student.find(params[:student][:id], :include => :index)
+    @index = @student.index
+    @student.update_attribute(:firstname, params[:student][:firstname])
+    @student.update_attribute(:lastname, params[:student][:lastname])
   end
 
   def edit_phone

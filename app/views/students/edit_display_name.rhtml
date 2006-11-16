@@ -1,0 +1,7 @@
+<%= save_form(:display_name) %>
+  <%= text_field 'student', 'firstname', 'size' => 10 %>
+  <%= text_field 'student', 'lastname', 'size' => 20 %>
+  <%= hidden_field 'student', 'id' %>
+  <%= ok_submit(:display_name) %>
+<%= end_form_tag %>
+<%= javascript_tag "$('student_display_name').select()" %>
