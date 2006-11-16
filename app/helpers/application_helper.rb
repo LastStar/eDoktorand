@@ -503,8 +503,30 @@ module ApplicationHelper
     link_to_unless_current(_('claim_accomodation_scholarship'), 
             :controller => 'scholarships', :action => 'claim') {}
   end
+  
+  def add_en_link(id,i)
+    link_to_remote(image_tag('plus.png'),
+                   :url => {:controller => 'study_plans', :action => 'add_en', :id => id, :final_area_id => i},
+                   :update => 'final_area_en'+i.to_s)
+  end
 
-  private 
+  def add_disert_theme_en_link(disert_theme)
+    link_to_remote(image_tag('plus.png'),
+                   :url => {:controller => 'disert_themes',:action => 'add_en', :disert_theme => disert_theme},
+                   :update => "disert_theme_title_en")
+  end
+  
+  def save_disert_theme_form(disert_theme)
+    form_remote_tag(:url => {:controller => 'disert_themes', :action => 'save_en', :disert_theme => disert_theme},
+                    :update => "disert_theme_title_en")
+  end
+
+  def save_form(id,final_area_id)
+    form_remote_tag(:url => {:controller => 'study_plans', :action => 'save_en', :id => id, :final_area_id => final_area_id},
+                    :update => 'final_area_en'+final_area_id.to_s)
+  end
+
+private
   
   def loader_image(field)
     "Element.replace('#{field}', '#{image_tag('loader.gif', :size => '12x12')}')"

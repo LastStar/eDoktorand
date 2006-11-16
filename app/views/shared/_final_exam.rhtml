@@ -23,10 +23,14 @@
         </li>
       <%fa=study_plan.final_areas['en']%>
         <li class='second'>
-          <div class='long_info'><%=  fa[i.to_s] %></div>
+          <div class='long_info' id='final_area_en<%= i %>'>
+          <% if fa[i.to_s] == nil || fa[i.to_s] == ""%>
+            <%= add_en_link(index,i) %>
+          <% end %>
+          <%=  fa[i.to_s] %></div>
           <%= "#{i}. " + _("final area") %> (en)
         </li>
-    <% end %>
+  <% end %>
   <% else %>
      <% study_plan.final_areas.each do |fa| %>
         <li class='second'>

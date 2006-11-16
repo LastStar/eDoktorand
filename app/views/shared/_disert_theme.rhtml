@@ -8,7 +8,15 @@
   </li>
 <% if FACULTY_CFG[disert_theme.index.faculty.id]['english_disert'] %>
   <li class="second">
-    <%= "#{disert_theme.title_en}" %>
+    <% if disert_theme.title_en == nil || disert_theme.title_en == "" %>
+    <span id="disert_theme_title_en">
+    (en) <%= add_disert_theme_en_link(disert_theme) %>
+    </span>
+   <% else %>
+    <span id="disert_theme_title_en">
+      <%= "#{disert_theme.title_en}" %>
+    </span>
+    <% end %>
   </li>
 <% end %>
   <li>

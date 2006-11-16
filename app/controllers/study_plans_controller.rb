@@ -1,7 +1,7 @@
 require 'study_plan_creator'
 class StudyPlansController < ApplicationController
   include LoginSystem
-  layout 'employers'
+  layout 'employers', :except => [:add_en, :save_en]
   before_filter :login_required, :prepare_user, :prepare_student
   
   # page with basic informations for student 
@@ -243,8 +243,23 @@ class StudyPlansController < ApplicationController
     @study_plan.index.claim_final_application!
     redirect_to :action => :index
   end
-
-  private 
+  
+  #adding only final_areas en (fixing bug)
+  def add_en
+    @id = Index.find(params[:id])
+    @final_area_id = params[:final_area_id]
+  end
+  
+  #saving only final_areas en (fixing bug)
+  def save_en
+    @id = Index.find(params[:id])
+    @study_plan = @id.study_plan
+    @final_area_id = params[:final_area_id]
+    @study_plan.final_areas['en'][params[:final_area_id]] = params[:en_title]
+    @study_plan.save
+  end
+  
+private
 
   include StudyPlanCreator
   # returns requisite subject like plansubjects for student
