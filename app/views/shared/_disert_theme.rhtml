@@ -7,15 +7,9 @@
     <%= "#{disert_theme.title}" %>
   </li>
   <li class="second">
-    <% if disert_theme.title_en == nil || disert_theme.title_en == "" %>
     <span id="disert_theme_title_en">
-    (en) <%= add_disert_theme_en_link(disert_theme) %>
+    <%= disert_theme_line(disert_theme) %>
     </span>
-   <% else %>
-    <span id="disert_theme_title_en">
-      <%= "#{disert_theme.title_en}" %>
-    </span>
-    <% end %>
   </li>
   <li>
   <div class='info'><%= "#{disert_theme.finishing_to}. #{_('semester')}" %></div>

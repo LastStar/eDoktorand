@@ -36,8 +36,7 @@ include LoginSystem
   #saving only disert_themes en (fixing bug)
   def save_en
     @disert_theme = DisertTheme.find(params[:disert_theme])
-    @disert_theme.title_en = params[:en_title]
-    @disert_theme.save
+    @disert_theme.update_attribute(:title_en, params[:en_title])
   end
   
 end

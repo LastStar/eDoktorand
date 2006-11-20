@@ -527,6 +527,14 @@ module ApplicationHelper
                     :update => 'final_area_en'+final_area_id.to_s)
   end
 
+  def disert_theme_line(disert_theme)
+    "(en) " + if disert_theme.title_en == nil || disert_theme.title_en == "" 
+      add_disert_theme_en_link(disert_theme) 
+    else 
+      "#{disert_theme.title_en}" 
+    end 
+  end
+
 private
   
   def loader_image(field)
