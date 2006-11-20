@@ -406,8 +406,9 @@ module ApplicationHelper
   end
 
   # prints div with smallerinfo class with content inside
-  def smaller_info_div(content)
-    div_tag(content, {:class => 'smallerinfo'})
+  def smaller_info_div(content, html_class = '')
+    html_class.concat(' smallerinfo')
+    div_tag(content, {:class => html_class})
   end
 
   def longer_info_div(content)

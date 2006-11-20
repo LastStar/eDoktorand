@@ -5,6 +5,7 @@ class Department < ActiveRecord::Base
   has_many :indices
   has_many :indices
   has_one :leadership
+  has_one :department_employment, :foreign_key => 'unit_id'
   belongs_to :faculty
   has_and_belongs_to_many :subjects
 
@@ -27,5 +28,9 @@ class Department < ActiveRecord::Base
 
   def leader
     leadership.leader
+  end
+
+  def department_secretary
+    department_employment.person
   end
 end

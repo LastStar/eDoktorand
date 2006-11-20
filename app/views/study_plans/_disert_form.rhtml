@@ -31,14 +31,12 @@
   <label for="disert_theme_title"><%= _("theme of disert theme") %>:</label>
   <%= text_field 'disert_theme', 'title', 'size' => 65 %>
 </li>
-<% if FACULTY_CFG[@student.faculty.id]['english_disert'] %>
 <li>
   <label for="disert_theme_title_en"><%= _("theme of disert theme") %> (en):</label>
   <%= text_field 'disert_theme', 'title_en', 'size' => 65 %>
 </li>
-<% end %>
 <li>
-  <label for="candidate_study_id"><%= _("term of disert theme defense") %></label>
+  <label for="disert_theme_finishing_to"><%= _("term of disert theme defense") %></label>
   <%= select 'disert_theme', 'finishing_to', @session['last_semester']..6 %><br/>
 </li>
 <li>

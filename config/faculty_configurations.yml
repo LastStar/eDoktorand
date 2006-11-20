@@ -1,7 +1,6 @@
 # this file stores configuration values for each faculty
 1:
   final_areas_on: create   
-  english_disert: true
   subjects_count: 7
   atestation_month: 9
   atestation_day: 15

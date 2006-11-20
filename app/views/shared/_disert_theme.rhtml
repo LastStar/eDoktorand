@@ -6,7 +6,6 @@
   <li class="second">
     <%= "#{disert_theme.title}" %>
   </li>
-<% if FACULTY_CFG[disert_theme.index.faculty.id]['english_disert'] %>
   <li class="second">
     <% if disert_theme.title_en == nil || disert_theme.title_en == "" %>
     <span id="disert_theme_title_en">
@@ -18,7 +17,6 @@
     </span>
     <% end %>
   </li>
-<% end %>
   <li>
   <div class='info'><%= "#{disert_theme.finishing_to}. #{_('semester')}" %></div>
   <b><%= "#{_("term of disert theme defense")}" %></b>

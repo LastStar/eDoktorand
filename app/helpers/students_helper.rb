@@ -58,7 +58,7 @@ module StudentsHelper
       info = menu_link(index).concat(info)
       links.concat('&nbsp;')
     else
-      info = smaller_info_div('&nbsp;').concat(info)
+      info = smaller_info_div('&nbsp;', 'nonprintable').concat(info)
     end
     menu_line(links, "index_menu_#{index.id}") +
       info_line(info, index.line_class, "student_detail_#{index.id}") +

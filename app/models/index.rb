@@ -495,12 +495,10 @@ class Index < ActiveRecord::Base
 
   def prepare_study_plan
     sp = build_study_plan
-    if FACULTY_CFG[faculty.id]['english_disert']
-      sp.final_areas = {'cz' => 
-                        {'1' => '', '2' => '', '3' => '', '4' => '', '5' => ''},
-                        'en' => 
-                        {'1' => '', '2' => '', '3' => '', '4' => '', '5' => ''}}
-    end
+    sp.final_areas = {'cz' => 
+                      {'1' => '', '2' => '', '3' => '', '4' => '', '5' => ''},
+                      'en' => 
+                      {'1' => '', '2' => '', '3' => '', '4' => '', '5' => ''}}
     return sp
   end
 end

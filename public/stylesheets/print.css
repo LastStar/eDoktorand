@@ -147,8 +147,8 @@ a {
 }
 .smallinfo {
   float: right;
-  width: 14ex;
-  font-size: small;
+  width: 10ex;
+  font-size: smaller;
 }
 .printable a {
   display: inline;
@@ -181,3 +181,4 @@ li.higher {height: 2.25em;}
   display:inline;
 }
 #loading {display: none}
+.student_detail li {padding-top: 2px; padding-bottom: 2px;font-size: 12px}
