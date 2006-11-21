@@ -818,8 +818,9 @@ class CSVLoader
       @@mylog.info row
       c = Candidate.find(row[0])
       s = c.new_student(row[1], enrolled_on)
-      u = User.new(:login => row[2], :password => row[2])
-      u.password_confirmation = row[2]
+      u = User.new(:login => row[2])
+      row[2] = row[2] + 'ik' if row[2].size < 5
+      u.password = u.password_confirmation = row[2]
       u.person = s
       u.roles << Role.find(3)
       unless s.save 
