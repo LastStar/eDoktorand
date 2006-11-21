@@ -522,7 +522,7 @@ module ApplicationHelper
                     :update => "disert_theme_title_en")
   end
 
-  def save_form(id,final_area_id)
+  def save_final_area_form(id,final_area_id)
     form_remote_tag(:url => {:controller => 'study_plans', :action => 'save_en', :id => id, :final_area_id => final_area_id},
                     :update => 'final_area_en'+final_area_id.to_s)
   end
