@@ -545,5 +545,3 @@ private
     image_tag('change.png', :id => "#{name}_changer")
   end
 end
-
-

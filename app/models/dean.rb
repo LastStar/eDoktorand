@@ -3,6 +3,8 @@ class Dean < Leader
   has_one :deanship
   # return faculty of the dean
   N_("Dean")
+  N_("approve like dean")
+  N_('atest like dean')
   def faculty
     deanship.faculty
   end
