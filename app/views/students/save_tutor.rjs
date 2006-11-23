@@ -1,0 +1,1 @@
+page.replace_html "tutor", attribute_line(@index, :tutor, :display_name)

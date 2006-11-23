@@ -3,7 +3,8 @@ class Department < ActiveRecord::Base
   untranslate_all
   has_many :candidates
   has_many :indices
-  has_many :indices
+  has_many :tutorships
+  has_many :tutors, :through => :tutorships
   has_one :leadership
   has_one :department_employment, :foreign_key => 'unit_id'
   belongs_to :faculty

@@ -548,6 +548,15 @@ module ApplicationHelper
     end
   end
 
+  def student_tutor_line(student)
+    if @user.has_role?('faculty_secretary')
+      attribute_line(student.index, :tutor, :display_name) + _('Tutor') + ':'
+    else
+      long_info_helper(student.index.tutor.display_name, :class => 'printable') + 
+        _('Tutor') + ':'
+    end
+  end
+
 private
   
   def loader_image(field)

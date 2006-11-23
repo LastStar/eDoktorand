@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   include LoginSystem
 
   layout 'employers', :except => [:edit_citizenship, :edit_display_name, :edit_phone, :edit_email, 
-                                  :edit_birthname, :edit_consultant,
+                                  :edit_birthname, :edit_consultant, :edit_tutor,
                                   :time_form, :filter, :list_xls, :edit_account]
 
   before_filter :prepare_user, :set_title, :login_required
@@ -156,6 +156,16 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
     @student.update_attribute(:citizenship, params[:student][:citizenship])
+  end
+
+  def edit_tutor
+    @index = Index.find(params[:id])
+    @tutors = Tutor.find(@index.tutor_id).department.tutors
+  end
+
+  def save_tutor
+    @index = Index.find(params[:index][:id])
+    @index.update_attribute(:tutor_id, params[:index][:tutor_id])
   end
 
   def edit_birthname

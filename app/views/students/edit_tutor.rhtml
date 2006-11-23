@@ -1,0 +1,10 @@
+<%= save_form(:tutor) %>
+<select name='index[tutor_id]'>
+<%= options_from_collection_for_select(@tutors, "id", "display_name")%>
+</select>
+  <%#= text_field 'phone', 'name', 'size' => '30' %>  
+  <%#= hidden_field 'phone', 'contact_type_id' %>
+  <%= hidden_field 'index', 'id' %>
+  <%= ok_submit(:tutor) %>
+<%= end_form_tag %>
+<%= javascript_tag "$('tutor_display_name').select()" %>
