@@ -1,5 +1,5 @@
 <ul class='details'>
-  <li>
+  <li class='printable'>
   <%= student_name_line(student) %>
   </li>
 <li><%= attribute_line(student, :birthname) %><%=_ 'Surname' %>:</li>
@@ -30,7 +30,7 @@
 <li>
 <%= "#{long_info_helper(student.index.enrolled_on.strftime('%d. %m. %Y'))}#{_('Enrolled on')}: " %> 
 </li>
-<li>
+<li class='nonprintable'>
 <%= attribute_line(student, :account) %><%=_ 'Account' %>:
 </li>
 
