@@ -26,6 +26,9 @@ class Index < ActiveRecord::Base
 
   validates_presence_of :student
   validates_presence_of :tutor
+  validates_presence_of :coridor
+  validates_presence_of :study
+  validates_presence_of :department
 
   N_('with study change')
   N_('End')

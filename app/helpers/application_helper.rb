@@ -278,7 +278,8 @@ module ApplicationHelper
 
   def attribute_line(object, name, meth = nil)
     if @user.has_one_of_roles?(['faculty_secretary', 'student'])
-      long_info_helper(edit_link(object, name, meth), :id => name)
+      long_info_helper(edit_link(object, name, meth), :id => name,
+                       :class => 'printable')
     else
       label = object.send(name)
       label = label.send(meth) if label && meth
@@ -391,8 +392,12 @@ module ApplicationHelper
   # prints small info div 
   # TODO redone with div on end
   def long_info_helper(content, options={})
-     options[:class]='long_info'
-     content_tag('div', content, options)
+    if options[:class]
+      options[:class].concat(' long_info')
+    else
+      options[:class] = 'long_info'
+    end
+    content_tag('div', content, options)
   end
   
   # prints div tag
@@ -533,6 +538,15 @@ module ApplicationHelper
     else 
       "#{disert_theme.title_en}" 
     end 
+  end
+
+  def student_name_line(student)
+    if @user.has_role?('faculty_secretary')
+      attribute_line(student, :display_name) + _('Full name') + ':'
+    else
+      long_info_helper(student.display_name, :class => 'printable') + 
+        _('Full name') + ':'
+    end
   end
 
 private
