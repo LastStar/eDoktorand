@@ -869,4 +869,20 @@ class CSVLoader
       s.save
     end
   end
+
+  def self.repair_ids(file)
+    @@mylog.info "Loading fixes..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if Student.exists?(row[0])
+        s = Student.find(row[0], :include => [:index, :user, :probation_terms])
+        s.id = row[1]
+        s.index.update_attribute(:student_id, row[1])
+        s.address.update_attribute(:student_id, row[1])
+        s.postal_address.update_attribute(:student_id, row[1])
+        s.user.update_attribute(:person_id, row[1])
+        s.phone.update_attribute(:person_id, row[1])
+        s.email.update_attribute(:person_id, row[1])
+      end
+    end
+  end
 end

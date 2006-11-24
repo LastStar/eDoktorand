@@ -160,7 +160,7 @@ class StudentsController < ApplicationController
 
   def edit_tutor
     @index = Index.find(params[:id])
-    @tutors = Tutor.find(@index.tutor_id).department.tutors
+    @tutors = @index.department.tutors.map {|t| [t.display_name, t.id]}
   end
 
   def save_tutor
