@@ -833,11 +833,16 @@ class CSVLoader
     end
   end
 
-  def self.repair_subjects(file)
+  def self.repair_subjects(file, by_code = true)
     @@mylog.info "Repairing subjects"
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       @@mylog.debug row[3]
-      if s = Subject.find_by_code(row[3])
+      if by_code
+        s = Subject.find_by_code(row[3])
+      elsif Subject.exists?(row[1])
+        s = Subject.find(row[1])
+      end
+      if s
         @@mylog.info "repairing"
         s.update_attributes(:label => row[2], :code => row[3])
         s.departments = [Department.find(row[4])]
