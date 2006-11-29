@@ -16,10 +16,10 @@
 <li>
 <%= "#{long_info_helper(student.index.study.name)}#{_('Study form')}: " %>
 </li>
-<li><%=student_tutor_line(student)%><%#= attribute_line(student.index, :tutor, :display_name) %><%#=_('Tutor')%></li>
+<li class='printable'><%= student_tutor_line(student) %></li>
 
 <% if FACULTY_CFG[student.faculty.id]['consultant'] %>
-<li>
+<li class='printable'>
 <%= attribute_line(student.index, :consultant) %><%=_ 'Consultant' %>:
 </li>
 <% end %>
