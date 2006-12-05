@@ -48,12 +48,6 @@ module ScholarshipsHelper
     link_to(_('pay'), {:action => 'pay'}, :confirm => _('are_you_sure_to_pay'))
   end
 
-  def sum_link
-    link_to_remote(_('sum'), :url => {:action => 'sum'}, 
-                   :evaluate_remote_response => true, :update => 'sum',
-                   :complete => "$('sum').show()")
-  end
-
   def approve_link
     link_to(_('approve'), {:action => 'approve'}, :confrim => _('are_you_sure_to_approve'))
   end

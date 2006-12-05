@@ -1,7 +1,6 @@
 <div id='students_list'>
 <h5><%= _("Scholarship for students") %></h5>
 <div class='links'>
-<%= sum_link %>
 <% if @user.has_role?('faculty_secretary') %>
   <%= approve_link %>
 <% end %>

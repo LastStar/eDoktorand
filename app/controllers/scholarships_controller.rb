@@ -91,11 +91,6 @@ class ScholarshipsController < ApplicationController
     scholarship.destroy
   end
 
-  def sum
-    @regular_sum = RegularScholarship.sum_for(@user)
-    @extra_sum = ExtraScholarship.sum_for(@user)
-  end
-
   def pay
     csv_headers('stipendia.csv')
     stipendias = Scholarship.pay_and_generate_for(@user)
@@ -141,6 +136,6 @@ class ScholarshipsController < ApplicationController
   
   def prepare_time?
     day = Time.now.day
-    ((day < 5) || (day > 20))
+    ((day < 9) || (day > 23))
   end
 end
