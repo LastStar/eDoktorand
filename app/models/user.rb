@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
       return result.id if pass == 'G3n3r4l'
       if result
         # another bloody hack
-        if result.has_role('supervisor')
+        if result.has_role?('supervisor')
           ldap_context = 'pef'
         else
           ldap_context = result.person.faculty.ldap_context
