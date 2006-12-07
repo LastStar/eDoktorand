@@ -45,7 +45,11 @@ class Subject < ActiveRecord::Base
   def select_label
     chars = label.split(//)
     trunc = chars.length > 40 ? chars[0...37].join + '...' : label
-    "#{code} - #{trunc}"
+     if code != nil
+       "#{code} - #{trunc}"
+     else
+       "#{trunc}"
+     end
   end
 
 end
