@@ -11,6 +11,8 @@ class Coridor < ActiveRecord::Base
   has_many :requisite_subjects, :order => 'subjects.label', :include => :subject 
   has_one :exam_term
   has_many :indices
+  has_many :tutorships
+  has_many :tutors, :through => :tutorships
   validates_presence_of :faculty
 
   # returns array structured for html select
