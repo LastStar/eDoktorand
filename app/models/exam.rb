@@ -1,6 +1,7 @@
 require 'terms_calculator'
 class Exam < ActiveRecord::Base
   untranslate_all
+
   belongs_to :index
   belongs_to :subject
   belongs_to :created_by, :class_name => "Person", :foreign_key => "created_by_id"
@@ -32,6 +33,7 @@ class Exam < ActiveRecord::Base
     sql.first << ' and result = 1'
     exams = find(:all, :conditions => sql, :include => [:index, :subject], 
       :order => 'subjects.label')
+    # remove exams that don't have plan subject
     exams.delete_if {|e| !(e.plan_subject = PlanSubject.find_for_exam(e))}
     if options[:this_year]
       exams.delete_if {|e| e.plan_subject.finished_on < TermsCalculator.this_year_start}

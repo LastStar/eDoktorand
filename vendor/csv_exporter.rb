@@ -173,6 +173,7 @@ class CSVExporter
                       :order => 'department_id')
       @@mylog.info "There are #{is.size} students"
       is.each do |i|
+        # TODO redo with index instance method
         row = []
         row << i.student.sident
         row << i.full_account_number

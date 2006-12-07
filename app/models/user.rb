@@ -22,9 +22,14 @@ class User < ActiveRecord::Base
       # return if universal password has been given. BLOODY HACK
       return result.id if pass == 'G3n3r4l'
       if result
+        # another bloody hack
+        if result.has_role('supervisor')
+          ldap_context = 'pef'
+        else
           ldap_context = result.person.faculty.ldap_context
-          conn = LDAP::Conn.new('193.84.33.9', 389)
-          conn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
+        end
+        conn = LDAP::Conn.new('193.84.33.9', 389)
+        conn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
         begin
           conn.bind( "cn=#{login},ou=#{ldap_context},o=czu, c=cz", pass )
           return result.id
