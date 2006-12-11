@@ -60,4 +60,7 @@ class Scholarship < ActiveRecord::Base
     update_attribute('approved_on',Time.now)
   end
   
+  def self.prepare_time?
+    !(9..23).include? Date.today.day
+  end
 end

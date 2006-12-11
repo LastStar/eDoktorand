@@ -126,7 +126,7 @@ class ScholarshipsController < ApplicationController
 
   def next_action_for(user)
     if user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
-      if prepare_time? && !ScholarshipApprovement.approved_for?(user.person.faculty)
+      if Scholarship.prepare_time? && !ScholarshipApprovement.approved_for?(user.person.faculty)
         :prepare
       else
         :list
@@ -134,8 +134,4 @@ class ScholarshipsController < ApplicationController
     end
   end
   
-  def prepare_time?
-    day = Time.now.day
-    ((day < 9) || (day > 23))
-  end
 end

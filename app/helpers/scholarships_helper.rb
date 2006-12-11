@@ -45,7 +45,10 @@ module ScholarshipsHelper
   end
 
   def pay_link
-    link_to(_('pay'), {:action => 'pay'}, :confirm => _('are_you_sure_to_pay'))
+    if @user.has_role?('supervisor') && 
+      (ScholarshipApprovement.all_approved? || !Scholarship.prepare_time?)
+      link_to(_('pay'), {:action => 'pay'}, :confirm => _('are_you_sure_to_pay'))
+    end
   end
 
   def approve_link

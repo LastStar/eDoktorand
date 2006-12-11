@@ -1,9 +1,7 @@
 <div id='students_list'>
 <h5><%= _("Scholarships for") %> <%= (Time.now - 1.month).strftime('%m/%Y') %></h5>
 <div class='links'>
-<% if @user.has_role?('supervisor') && ((Time.now.day > 5) && (Time.now.day < 20)) %>
-  <%= pay_link %>
-<% end %>
+<%= pay_link %>
 </div>
 <% disponents = {} %>
 <% disponents.default = 0 %>
