@@ -21,7 +21,7 @@
 <li>
 <label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
 <%= select 'study_plan', 'finishing_to', 1..6 %>
-<%= "." + _("semester") %>
+<%= "" + _("semester") %>
 </li>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
     <% 4.times do |index| %>

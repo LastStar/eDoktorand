@@ -17,18 +17,19 @@ class ScholarshipCalculator
   def self.for(index)
     index = Index.find(index) unless index.is_a?(Index)
     if index.year > 3
-      amount = 0
-    else  
+      0
+    elsif index.payment_id == 3
+      7500
+    else
       case index.faculty.id
         when 1, 3, 4
           by_exams(index)
         when 2
-          amount = 0
+          0
         when 5
           by_year(index)
       end
     end
-    return 7500 if index.foreigner?
   end
 
   private
