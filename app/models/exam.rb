@@ -52,6 +52,6 @@ class Exam < ActiveRecord::Base
 
   private
   def finish_plan_subject
-    PlanSubject.find_for_exam(self).finish!
+    PlanSubject.find_for_exam(self).finish! if self.passed?
   end
 end
