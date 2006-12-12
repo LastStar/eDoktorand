@@ -1,6 +1,7 @@
 class InteruptsController < ApplicationController
   include LoginSystem
   helper :students
+  helper :study_plans
   layout 'employers'
   before_filter :login_required, :prepare_student, :prepare_user
   def index
@@ -38,9 +39,15 @@ class InteruptsController < ApplicationController
     unless interupt.index.study_plan.approved?
       interupt.index.study_plan.approve_with(@params['statement'])
     end
-    render(:inline => "Element.hide('approve_form#{interupt.id}'); \
-      Element.remove('index_line_#{interupt.index.id}')")
+    if @user.has_role?('faculty_secretary')
+      interupt.index.interrupt!(interupt.start_on)
+    end
+    
+    render(:partial => 'shared/confirm_approve', 
+           :locals => {:replace => 'interupt_approvement',
+                       :document => interupt})
   end
+
   def confirm
     index = Index.find(@params['id'])
     index.interrupt!(index.interupt.start_on)

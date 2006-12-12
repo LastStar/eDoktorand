@@ -1,2 +1,6 @@
-page.hide "approve_form_#{@document.id}"
-page.replace_html 'approvement', print_statements(@document.approvement)
+page.hide "approve_form_#{document.id}"
+replace ||= 'approvement'
+approvement ||= document.approvement
+page.replace_html "index_line_#{document.index.id}",
+  student_action_link(document.index)
+page.replace_html replace, print_statements(approvement)

@@ -1,6 +1,7 @@
 require 'study_plan_creator'
 class StudyPlansController < ApplicationController
   include LoginSystem
+  helper :students
   layout 'employers', :except => [:add_en, :save_en]
   before_filter :login_required, :prepare_user, :prepare_student
   
@@ -193,9 +194,10 @@ class StudyPlansController < ApplicationController
   
   # confirms and saves statement
   def confirm_approve
-    @document = StudyPlan.find(@params['id'])
-    @document.approve_with(@params['statement'])
-    render(:partial => 'shared/confirm_approve')
+    study_plan = StudyPlan.find(@params['id'])
+    study_plan.approve_with(@params['statement'])
+    render(:partial => 'shared/confirm_approve',
+           :locals => {:document => study_plan})
   end
   
   # atests study plan 
@@ -207,7 +209,10 @@ class StudyPlansController < ApplicationController
   def confirm_atest
     study_plan = StudyPlan.find(@params['id'])
     study_plan.atest_with(@params['statement'])
-    render(:partial => 'after_confirm', :locals => {:study_plan => study_plan})
+    
+    render(:partial => 'shared/confirm_approve', 
+           :locals => {:replace => 'atestation', :document => study_plan,
+                       :approvement => study_plan.atestation})
   end
   
   # for remote adding subjects to page

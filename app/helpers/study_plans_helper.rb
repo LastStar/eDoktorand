@@ -129,6 +129,8 @@ module StudyPlansHelper
   end
 
   def change_link(student)
-    link_to(_("change study plan"), {:action => 'change', :id => student})
+    link_to(_("change study plan"), {:action => 'change', 
+                                     :controller => 'study_plan',
+                                     :id => student})
   end
  end

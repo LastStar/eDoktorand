@@ -9,6 +9,9 @@ class Approvement < ActiveRecord::Base
   # prepares approvement for object if it doesn't exists
   # returns statement for user
   def prepare_statement(user)
+    if user.has_role?('faculty_secretary') && (index.faculty == user.person.faculty)
+      return build_dean_statement('person_id' => user.person.id)
+    end
     if (tutor_statement || index.tutor == user.person) && !leader_statement && index.leader == user.person
       return build_leader_statement('person_id' => user.person.id)
     elsif !leader_statement && !tutor_statement && index.tutor == user.person 
@@ -21,13 +24,15 @@ class Approvement < ActiveRecord::Base
   # returns if it have statement for user
   def prepares_statement?(user)
     if dean_statement
-      return false
+      false
+    elsif user.has_role? 'faculty_secretary'
+      true
     elsif ((tutor_statement || index.tutor == user.person) &&
       !leader_statement && index.leader == user.person) || 
       (!leader_statement && !tutor_statement && index.tutor ==
       user.person) || (leader_statement && !dean_statement &&
       user.person.is_dean_of?(index.student))
-      return true
+      true
     end
   end
 

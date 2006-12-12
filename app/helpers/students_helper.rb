@@ -19,11 +19,11 @@ module StudentsHelper
             if index.final_exam_passed?
               links.concat(pass_link(:defense, index))
             else
-              links.concat(change_link(index))
+              links.concat(change_link(index.student))
               links.concat(pass_link(:final_exam, index))
             end
           else
-            links.concat(change_link(index))
+            links.concat(change_link(index.student))
           end
         else
           links.concat(create_link(index))
@@ -116,12 +116,6 @@ module StudentsHelper
       {:action => 'time_form', :controller => 'students', :form_action => 
       'end', :form_controller => 'interupts', :id => index, :date =>
       index.interupt.end_on}, :update => "index_form_#{index.id}"))
-  end
-
-  # prints link to change study plan
-  def change_link(index)
-    menu_div(link_to(_('change SP'), {:action => 'change', :controller => 
-      'study_plans', :id => index.student}))
   end
 
   # prints link to create new study plan
