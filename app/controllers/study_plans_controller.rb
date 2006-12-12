@@ -7,11 +7,13 @@ class StudyPlansController < ApplicationController
   
   # page with basic informations for student 
   def index
+    @view_link=1
     @title = _("Study plan")
     @index = @student.index
     unless @index.study_plan
       @voluntary_subjects = @index.coridor.voluntary_subjects 
     end
+  
   end
   
   # start of the study plan creating process

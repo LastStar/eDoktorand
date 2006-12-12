@@ -64,6 +64,13 @@ class Notifications < ActionMailer::Base
     @sent_on = sent_at
   end
 
+  def end_study(student, subject_end_study)
+   @body['name'] = student.display_name
+   @body['coridor'] = student.coridor.name
+   @body['year'] = student.index.year
+   @body['subject_end_study'] = subject_end_study
+  end
+
   def invite_to_final_exam(index, sent_at = Time.now)
     faculty = index.faculty
     @subject = _("Invitation to final exam")

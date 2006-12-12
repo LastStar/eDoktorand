@@ -15,6 +15,7 @@ class Exam < ActiveRecord::Base
 
   attr_accessor :plan_subject
 
+  N_('Creating external exam for student')
   # returns true if result is pass
   def passed?
    return true if result == 1

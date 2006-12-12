@@ -1,6 +1,7 @@
 class DepartmentSecretary < Secretary
   untranslate_all
   has_one :department_employment, :foreign_key => 'person_id'
+  N_("DepartmentSecretary")
   # return faculty of the faculty secretary
   def faculty
     department_employment.department.faculty

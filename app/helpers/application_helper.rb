@@ -234,6 +234,14 @@ module ApplicationHelper
       links << link_to_unless_current(_("study plan"),
                                       :controller => 'study_plans',
                                       :action => 'index'){} 
+
+      links << link_to_unless(@view_link!=1, _("end study"), 
+                                    {:controller => 'students', 
+                                     :action => 'end_study', 
+                                     :id => @student.id},
+                                     :confirm =>  _("Are you sure to") + 
+                                     ' ' + _("end study") + '?'){} 
+
     else 
       if @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
@@ -254,6 +262,7 @@ module ApplicationHelper
                                      :action => 'logout'}, 
                                      :confirm =>  _("do you really want to") + 
                                      ' ' + _("logoff") + '?'){} 
+				     
     links.flatten.join("\n")
   end
   

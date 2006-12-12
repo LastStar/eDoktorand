@@ -1,0 +1,21 @@
+<div id='student_detail'>
+<ul class='details'>
+  <li>
+     <div class='long_info'><%=@student.display_name%></div> <%=_ 'Student' %>:
+  </li>
+  <li>
+     <div class='long_info'><%=@student.index.year%></div> <%=_ 'Year' %>:
+  </li>
+  <li>
+    <div class='long_info'><%=@student.coridor.name%></div>  <%=_ 'Corridor' %>:
+  </li>
+  <li>
+   <div class='long_info'><%=@student.index.tutor.display_name%></div> <%=_ 'Tutor' %>:
+  </li>
+  <li>
+   <%=_ 'Subject of end study' %>:
+  </li>
+  <li class='second'>
+   <%=@subject_end_study%>
+  </li>
+</div>
