@@ -1,3 +1,7 @@
+#: app/helpers/final_exam_terms_helper.rb:4
+msgid "send email"
+msgstr ""
+
 #: app/helpers/scholarships_helper.rb:50
 msgid "pay"
 msgstr ""
@@ -6,8 +10,8 @@ msgstr ""
 msgid "are_you_sure_to_pay"
 msgstr ""
 
-#: app/helpers/scholarships_helper.rb:55 app/helpers/application_helper.rb:358
-#: app/helpers/application_helper.rb:362
+#: app/helpers/scholarships_helper.rb:55 app/helpers/application_helper.rb:360
+#: app/helpers/application_helper.rb:364
 msgid "approve"
 msgstr ""
 
@@ -15,8 +19,8 @@ msgstr ""
 msgid "are_you_sure_to_approve"
 msgstr ""
 
-#: app/helpers/final_exam_terms_helper.rb:4
-msgid "send email"
+#: app/helpers/scholarships_helper.rb:59
+msgid "claim_accomodation_scholarship"
 msgstr ""
 
 #: app/helpers/exams_helper.rb:5
@@ -203,25 +207,25 @@ msgstr ""
 msgid "SP approved by dean"
 msgstr ""
 
-#: app/helpers/application_helper.rb:38 app/models/index.rb:341
+#: app/helpers/application_helper.rb:38 app/models/index.rb:343
 msgid "studying"
 msgstr ""
 
-#: app/helpers/application_helper.rb:39 app/models/index.rb:335
+#: app/helpers/application_helper.rb:39 app/models/index.rb:337
 #: app/views/candidates/_history.rhtml:2
 msgid "finished"
 msgstr ""
 
-#: app/helpers/application_helper.rb:39 app/models/index.rb:337
+#: app/helpers/application_helper.rb:39 app/models/index.rb:339
 msgid "interupted"
 msgstr ""
 
 #: app/helpers/application_helper.rb:39 app/helpers/students_helper.rb:11
-#: app/models/index.rb:331
+#: app/models/index.rb:333
 msgid "absolved"
 msgstr ""
 
-#: app/helpers/application_helper.rb:39 app/models/index.rb:339
+#: app/helpers/application_helper.rb:39 app/models/index.rb:341
 msgid "continue"
 msgstr ""
 
@@ -281,7 +285,7 @@ msgstr ""
 msgid "dean statement"
 msgstr ""
 
-#: app/helpers/application_helper.rb:208 app/views/scholarships/list.rhtml:11
+#: app/helpers/application_helper.rb:208 app/views/scholarships/list.rhtml:12
 #: app/views/shared/candidate_detail.rhtml:6
 msgid "Birth number"
 msgstr ""
@@ -290,115 +294,111 @@ msgstr ""
 msgid "Birth on"
 msgstr ""
 
-#: app/helpers/application_helper.rb:224 app/helpers/application_helper.rb:310
+#: app/helpers/application_helper.rb:224 app/helpers/application_helper.rb:312
 #: app/views/exams/_show_protocol.rhtml:44
 msgid "print"
 msgstr ""
 
-#: app/helpers/application_helper.rb:228 app/helpers/application_helper.rb:252
-#: app/views/shared/_main_menu.rhtml:6 app/views/shared/_main_menu.rhtml:23
-msgid "probation terms"
-msgstr ""
-
-#: app/helpers/application_helper.rb:234
-#: app/views/study_plans/_study_plan_header.rhtml:1
-#: app/views/shared/_main_menu.rhtml:9
-msgid "study plan"
-msgstr ""
-
-#: app/helpers/application_helper.rb:238 app/helpers/application_helper.rb:243
-msgid "end study"
-msgstr ""
-
-#: app/helpers/application_helper.rb:242
-msgid "Are you sure to"
-msgstr ""
-
-#: app/helpers/application_helper.rb:247 app/views/shared/_main_menu.rhtml:17
+#: app/helpers/application_helper.rb:230 app/views/shared/_main_menu.rhtml:17
 msgid "candidates"
 msgstr ""
 
-#: app/helpers/application_helper.rb:248 app/views/shared/_main_menu.rhtml:18
+#: app/helpers/application_helper.rb:231 app/views/shared/_main_menu.rhtml:18
 msgid "exam_terms"
 msgstr ""
 
-#: app/helpers/application_helper.rb:250 app/helpers/application_helper.rb:254
+#: app/helpers/application_helper.rb:232 app/helpers/application_helper.rb:237
 #: app/views/shared/_main_menu.rhtml:21 app/views/shared/_main_menu.rhtml:25
 msgid "exams"
 msgstr ""
 
-#: app/helpers/application_helper.rb:257
+#: app/helpers/application_helper.rb:235 app/helpers/application_helper.rb:254
+#: app/views/shared/_main_menu.rhtml:6 app/views/shared/_main_menu.rhtml:23
+msgid "probation terms"
+msgstr ""
+
+#: app/helpers/application_helper.rb:240
 #: app/helpers/probation_terms_helper.rb:41
 #: app/views/shared/_main_menu.rhtml:27
 msgid "students"
 msgstr ""
 
-#: app/helpers/application_helper.rb:260 app/helpers/application_helper.rb:264
+#: app/helpers/application_helper.rb:243 app/helpers/application_helper.rb:247
 #: app/views/shared/_main_menu.rhtml:29 app/views/shared/_main_menu.rhtml:30
 msgid "logoff"
 msgstr ""
 
-#: app/helpers/application_helper.rb:263 app/views/shared/_main_menu.rhtml:29
+#: app/helpers/application_helper.rb:246 app/views/shared/_main_menu.rhtml:29
 msgid "do you really want to"
 msgstr ""
 
-#: app/helpers/application_helper.rb:273
+#: app/helpers/application_helper.rb:257
+#: app/views/study_plans/_study_plan_header.rhtml:1
+#: app/views/shared/_main_menu.rhtml:9
+msgid "study plan"
+msgstr ""
+
+#: app/helpers/application_helper.rb:260 app/helpers/application_helper.rb:459
+#: app/views/shared/_main_menu.rhtml:11 app/views/shared/_main_menu.rhtml:19
+msgid "scholarship"
+msgstr ""
+
+#: app/helpers/application_helper.rb:263 app/helpers/application_helper.rb:267
+msgid "end study"
+msgstr ""
+
+#: app/helpers/application_helper.rb:266
+msgid "Are you sure to"
+msgstr ""
+
+#: app/helpers/application_helper.rb:275
 msgid "Birth place"
 msgstr ""
 
-#: app/helpers/application_helper.rb:345
+#: app/helpers/application_helper.rb:347
 msgid "see atestation informations"
 msgstr ""
 
-#: app/helpers/application_helper.rb:358
+#: app/helpers/application_helper.rb:360
 msgid "approve with earfull"
 msgstr ""
 
-#: app/helpers/application_helper.rb:358 app/helpers/application_helper.rb:362
+#: app/helpers/application_helper.rb:360 app/helpers/application_helper.rb:364
 msgid "cancel"
 msgstr ""
 
-#: app/helpers/application_helper.rb:372
+#: app/helpers/application_helper.rb:374
 msgid "methodology file (opens new window)"
 msgstr ""
 
-#: app/helpers/application_helper.rb:380
+#: app/helpers/application_helper.rb:382
 msgid "additional information for next atestation"
 msgstr ""
 
-#: app/helpers/application_helper.rb:391 app/views/candidates/enroll.rhtml:15
+#: app/helpers/application_helper.rb:393 app/views/candidates/enroll.rhtml:15
 #: app/views/candidates/admit.rhtml:20 app/views/exam_terms/new.rhtml:7
 #: app/views/exams/_protocol.rhtml:4
 msgid "back"
 msgstr ""
 
-#: app/helpers/application_helper.rb:393
+#: app/helpers/application_helper.rb:395
 msgid "back and remove from list"
 msgstr ""
 
-#: app/helpers/application_helper.rb:453
+#: app/helpers/application_helper.rb:455
 #: app/views/shared/_study_detail.rhtml:9
 msgid "finished on"
 msgstr ""
 
-#: app/helpers/application_helper.rb:457 app/views/shared/_main_menu.rhtml:11
-#: app/views/shared/_main_menu.rhtml:19
-msgid "scholarship"
-msgstr ""
-
-#: app/helpers/application_helper.rb:509 app/helpers/students_helper.rb:130
+#: app/helpers/application_helper.rb:511 app/helpers/students_helper.rb:130
 msgid "final exam term"
 msgstr ""
 
-#: app/helpers/application_helper.rb:512
+#: app/helpers/application_helper.rb:514
 msgid "hide"
 msgstr ""
 
-#: app/helpers/application_helper.rb:517
-msgid "claim_accomodation_scholarship"
-msgstr ""
-
-#: app/helpers/application_helper.rb:553 app/helpers/application_helper.rb:556
+#: app/helpers/application_helper.rb:550 app/helpers/application_helper.rb:553
 #: app/views/scholarships/approve.rhtml:8
 #: app/views/scholarships/_prepare_list.rhtml:10
 #: app/views/shared/candidate_detail.rhtml:4
@@ -407,8 +407,8 @@ msgstr ""
 msgid "Full name"
 msgstr ""
 
-#: app/helpers/application_helper.rb:562 app/helpers/application_helper.rb:565
-#: app/models/tutor.rb:5 app/views/students/end_study.rhtml:13
+#: app/helpers/application_helper.rb:559 app/helpers/application_helper.rb:562
+#: app/models/tutor.rb:5 app/views/students/end_study.rhtml:12
 #: app/views/students/end_study_confirm.rhtml:13
 #: app/views/exams/_show_protocol.rhtml:22 app/views/exams/_protocol.rhtml:28
 msgid "Tutor"
@@ -642,7 +642,7 @@ msgstr ""
 msgid "Birth date"
 msgstr ""
 
-#: app/models/student.rb:13 app/views/students/end_study.rhtml:7
+#: app/models/student.rb:13 app/views/students/end_study.rhtml:6
 #: app/views/students/end_study_confirm.rhtml:7
 msgid "Year"
 msgstr ""
@@ -683,27 +683,27 @@ msgstr ""
 msgid "director"
 msgstr ""
 
-#: app/models/index.rb:33
+#: app/models/index.rb:35
 msgid "with study change"
 msgstr ""
 
-#: app/models/index.rb:34
+#: app/models/index.rb:36
 msgid "End"
 msgstr ""
 
-#: app/models/index.rb:43
+#: app/models/index.rb:45
 msgid "accoun prefix in wrong format"
 msgstr ""
 
-#: app/models/index.rb:46 app/models/index.rb:53
+#: app/models/index.rb:48 app/models/index.rb:55
 msgid "accoun number in wrong format"
 msgstr ""
 
-#: app/models/index.rb:58
+#: app/models/index.rb:60
 msgid "not_all_subject_finished"
 msgstr ""
 
-#: app/models/index.rb:333
+#: app/models/index.rb:335
 msgid "final application"
 msgstr ""
 
@@ -868,15 +868,14 @@ msgstr ""
 
 #: app/controllers/exams_controller.rb:32
 #: app/views/exams/_with_subject.rhtml:1 app/views/exams/_with_student.rhtml:1
-#: app/views/exams/_external_with_student.rhtml:1
 msgid "Creating exam"
 msgstr ""
 
-#: app/controllers/exams_controller.rb:121
+#: app/controllers/exams_controller.rb:109
 msgid "Exam was successfully updated."
 msgstr ""
 
-#: app/controllers/exams_controller.rb:136
+#: app/controllers/exams_controller.rb:124
 msgid "Exams"
 msgstr ""
 
@@ -920,7 +919,7 @@ msgstr ""
 msgid "Probation terms"
 msgstr ""
 
-#: app/controllers/scholarships_controller.rb:124
+#: app/controllers/scholarships_controller.rb:128
 msgid "Scholarships"
 msgstr ""
 
@@ -1038,7 +1037,7 @@ msgstr ""
 #: app/views/account/login.rhtml:25 app/views/interupts/index.rhtml:16
 #: app/views/candidates/admit.rhtml:17
 #: app/views/study_plans/final_application.rhtml:3
-#: app/views/students/end_study.rhtml:22
+#: app/views/students/end_study.rhtml:20
 msgid "submit"
 msgstr ""
 
@@ -1062,23 +1061,6 @@ msgstr ""
 msgid "months"
 msgstr ""
 
-#: app/views/disert_themes/methodology.rhtml:2
-#: app/views/disert_themes/upload_methodology.rhtml:2
-msgid ""
-"On this page you can add your methodology file. File should be only in\n"
-"PDF format."
-msgstr ""
-
-#: app/views/disert_themes/methodology.rhtml:8
-#: app/views/disert_themes/upload_methodology.rhtml:8
-msgid "file"
-msgstr ""
-
-#: app/views/disert_themes/methodology.rhtml:10
-#: app/views/disert_themes/upload_methodology.rhtml:12
-msgid "upload"
-msgstr ""
-
 #: app/views/candidates/enroll.rhtml:4
 msgid "Desired login"
 msgstr ""
@@ -1093,6 +1075,10 @@ msgstr ""
 
 #: app/views/candidates/enroll.rhtml:10
 msgid "Enroll"
+msgstr ""
+
+#: app/views/candidates/_history.rhtml:12
+msgid "admited"
 msgstr ""
 
 #: app/views/candidates/admit.rhtml:6 app/views/candidates/_list.rhtml:26
@@ -1116,10 +1102,6 @@ msgstr ""
 #: app/views/candidates/_table_list.rhtml:17
 #: app/views/shared/candidate_edit.rhtml:95
 msgid "study form"
-msgstr ""
-
-#: app/views/candidates/_history.rhtml:12
-msgid "admited"
 msgstr ""
 
 #: app/views/candidates/_list.rhtml:18
@@ -1192,6 +1174,23 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
+#: app/views/disert_themes/methodology.rhtml:2
+#: app/views/disert_themes/upload_methodology.rhtml:2
+msgid ""
+"On this page you can add your methodology file. File should be only in\n"
+"PDF format."
+msgstr ""
+
+#: app/views/disert_themes/methodology.rhtml:8
+#: app/views/disert_themes/upload_methodology.rhtml:8
+msgid "file"
+msgstr ""
+
+#: app/views/disert_themes/methodology.rhtml:10
+#: app/views/disert_themes/upload_methodology.rhtml:12
+msgid "upload"
+msgstr ""
+
 #: app/views/layouts/employers.rhtml:24
 msgid "loading ..."
 msgstr ""
@@ -1212,13 +1211,18 @@ msgid "Scholarship for students"
 msgstr ""
 
 #: app/views/scholarships/_regular.rhtml:4
-#: app/views/scholarships/_detail.rhtml:11
 #: app/views/scholarships/_extra_form.rhtml:3
+#: app/views/scholarships/_detail.rhtml:11
 #: app/views/scholarships/_index_line.rhtml:4
 #: app/views/scholarships/_index_line.rhtml:12
 #: app/views/scholarships/change.rhtml:5 app/views/scholarships/add.rhtml:3
 #: app/views/students/_scholarship_list.rhtml:14
 msgid "Kc"
+msgstr ""
+
+#: app/views/scholarships/_extra_form.rhtml:22
+#: app/views/scholarships/add.rhtml:23
+msgid "adding_extra_scholarship"
 msgstr ""
 
 #: app/views/scholarships/sum.rhtml:2
@@ -1229,9 +1233,43 @@ msgstr ""
 msgid "extra scholarship sum"
 msgstr ""
 
-#: app/views/scholarships/_extra_form.rhtml:22
-#: app/views/scholarships/add.rhtml:23
-msgid "adding_extra_scholarship"
+#: app/views/scholarships/list.rhtml:2
+msgid "Scholarships for"
+msgstr ""
+
+#: app/views/scholarships/list.rhtml:12 app/views/scholarships/claim.rhtml:18
+msgid "Last name"
+msgstr ""
+
+#: app/views/scholarships/list.rhtml:12
+msgid "First name"
+msgstr ""
+
+#: app/views/scholarships/list.rhtml:12
+msgid "Coridor"
+msgstr ""
+
+#: app/views/scholarships/list.rhtml:13 app/views/scholarships/list.rhtml:20
+#: app/views/scholarships/student_list.rhtml:12
+msgid "Type of scholarship"
+msgstr ""
+
+#: app/views/scholarships/list.rhtml:13 app/views/scholarships/list.rhtml:28
+#: app/views/scholarships/student_list.rhtml:12
+msgid "Disponent"
+msgstr ""
+
+#: app/views/scholarships/list.rhtml:13
+#: app/views/scholarships/student_list.rhtml:12
+msgid "Amount (CZK)"
+msgstr ""
+
+#: app/views/scholarships/list.rhtml:20 app/views/scholarships/list.rhtml:28
+msgid "Total amount"
+msgstr ""
+
+#: app/views/scholarships/list.rhtml:25
+msgid "Final sum"
 msgstr ""
 
 #: app/views/scholarships/_add_scholarship_form.rhtml:5
@@ -1272,54 +1310,6 @@ msgstr ""
 #: app/views/exams/_examined_student_form.rhtml:13
 #: app/views/addresses/_edit.rhtml:32
 msgid "commit"
-msgstr ""
-
-#: app/views/scholarships/list.rhtml:2
-msgid "Scholarships for"
-msgstr ""
-
-#: app/views/scholarships/list.rhtml:11 app/views/scholarships/claim.rhtml:18
-msgid "Last name"
-msgstr ""
-
-#: app/views/scholarships/list.rhtml:11
-msgid "First name"
-msgstr ""
-
-#: app/views/scholarships/list.rhtml:11
-msgid "Coridor"
-msgstr ""
-
-#: app/views/scholarships/list.rhtml:12 app/views/scholarships/list.rhtml:19
-msgid "Type of scholarship"
-msgstr ""
-
-#: app/views/scholarships/list.rhtml:12 app/views/scholarships/list.rhtml:25
-msgid "Disponent"
-msgstr ""
-
-#: app/views/scholarships/list.rhtml:12
-msgid "Amount (CZK)"
-msgstr ""
-
-#: app/views/scholarships/list.rhtml:19 app/views/scholarships/list.rhtml:25
-msgid "Total amount"
-msgstr ""
-
-#: app/views/scholarships/approve.rhtml:1
-msgid "Approved scholarship for students"
-msgstr ""
-
-#: app/views/scholarships/approve.rhtml:5
-#: app/views/scholarships/_prepare_list.rhtml:4
-#: app/views/students/_scholarship_list.rhtml:7
-msgid "Extra"
-msgstr ""
-
-#: app/views/scholarships/approve.rhtml:6
-#: app/views/scholarships/_prepare_list.rhtml:5
-#: app/views/students/_scholarship_list.rhtml:6
-msgid "Regular"
 msgstr ""
 
 #: app/views/scholarships/claim.rhtml:2
@@ -1397,6 +1387,22 @@ msgstr ""
 msgid "dep. s&r"
 msgstr ""
 
+#: app/views/scholarships/approve.rhtml:1
+msgid "Approved scholarship for students"
+msgstr ""
+
+#: app/views/scholarships/approve.rhtml:5
+#: app/views/scholarships/_prepare_list.rhtml:4
+#: app/views/students/_scholarship_list.rhtml:7
+msgid "Extra"
+msgstr ""
+
+#: app/views/scholarships/approve.rhtml:6
+#: app/views/scholarships/_prepare_list.rhtml:5
+#: app/views/students/_scholarship_list.rhtml:6
+msgid "Regular"
+msgstr ""
+
 #: app/views/scholarships/_prepare_list.rhtml:6
 #: app/views/shared/candidate_detail.rhtml:42
 msgid "Study form"
@@ -1407,6 +1413,18 @@ msgstr ""
 #: app/views/students/_scholarship_list.rhtml:5
 #: app/views/exams/_show_protocol.rhtml:23 app/views/exams/_protocol.rhtml:29
 msgid "Department"
+msgstr ""
+
+#: app/views/scholarships/student_list.rhtml:2
+msgid "Payed scholarship"
+msgstr ""
+
+#: app/views/scholarships/student_list.rhtml:9
+msgid "You have not any scholarshis."
+msgstr ""
+
+#: app/views/scholarships/student_list.rhtml:12
+msgid "Payed on"
 msgstr ""
 
 #: app/views/form/finish.rhtml:2
@@ -1586,6 +1604,12 @@ msgstr ""
 msgid "seminar subjects"
 msgstr ""
 
+#: app/views/study_plans/preview.rhtml:1
+msgid ""
+"Here you can see how does look your study plan. If it's how you\n"
+"intended confirm it please."
+msgstr ""
+
 #: app/views/study_plans/_study_plan.rhtml:2
 msgid "Canceled on"
 msgstr ""
@@ -1609,12 +1633,6 @@ msgstr ""
 
 #: app/views/study_plans/_study_plan.rhtml:28
 msgid "Subjects"
-msgstr ""
-
-#: app/views/study_plans/preview.rhtml:1
-msgid ""
-"Here you can see how does look your study plan. If it's how you\n"
-"intended confirm it please."
 msgstr ""
 
 #: app/views/study_plans/_full_form.rhtml:13
@@ -1662,10 +1680,6 @@ msgstr ""
 #: app/views/study_plans/_valid_voluntarys.rhtml:3
 #: app/views/study_plans/_valid_languages.rhtml:3
 msgid "languages"
-msgstr ""
-
-#: app/views/study_plans/_obligate_form.rhtml:5
-msgid "obligate subjects"
 msgstr ""
 
 #: app/views/study_plans/index.rhtml:4
@@ -1718,10 +1732,18 @@ msgstr ""
 msgid "First step propably will to create"
 msgstr ""
 
+#: app/views/study_plans/_obligate_form.rhtml:5
+msgid "obligate subjects"
+msgstr ""
+
 #: app/views/study_plans/_valid_disert.rhtml:2
 msgid ""
 "Now you can see your plan how you have created\n"
 "in previous steps. You have to confirm it otherwise it will be lost."
+msgstr ""
+
+#: app/views/study_plans/_detail_form.rhtml:4
+msgid "additional information"
 msgstr ""
 
 #: app/views/study_plans/_atest_information.rhtml:9
@@ -1736,10 +1758,6 @@ msgstr ""
 msgid "Additional information provided by student"
 msgstr ""
 
-#: app/views/study_plans/_detail_form.rhtml:4
-msgid "additional information"
-msgstr ""
-
 #: app/views/shared/_approve_form.rhtml:7
 #: app/views/shared/candidate_edit.rhtml:110
 #: app/views/shared/_study_detail.rhtml:51
@@ -1749,26 +1767,6 @@ msgstr ""
 
 #: app/views/shared/_approve_form.rhtml:9
 msgid "result"
-msgstr ""
-
-#: app/views/shared/_personal_detail.rhtml:5
-msgid "Surname"
-msgstr ""
-
-#: app/views/shared/_personal_detail.rhtml:10
-msgid "Email"
-msgstr ""
-
-#: app/views/shared/_personal_detail.rhtml:11
-msgid "Phone"
-msgstr ""
-
-#: app/views/shared/_personal_detail.rhtml:23
-msgid "Consultant"
-msgstr ""
-
-#: app/views/shared/_personal_detail.rhtml:36
-msgid "citizenship"
 msgstr ""
 
 #: app/views/shared/candidate_detail.rhtml:2
@@ -1827,7 +1825,7 @@ msgid "Accomplishments"
 msgstr ""
 
 #: app/views/shared/candidate_detail.rhtml:23
-#: app/views/exams/_main_external_form.rhtml:14
+#: app/views/exams/_main_external_form.rhtml:13
 msgid "University"
 msgstr ""
 
@@ -1853,7 +1851,7 @@ msgid "Study registration"
 msgstr ""
 
 #: app/views/shared/candidate_detail.rhtml:40
-#: app/views/students/end_study.rhtml:10
+#: app/views/students/end_study.rhtml:9
 #: app/views/students/end_study_confirm.rhtml:10
 msgid "Corridor"
 msgstr ""
@@ -1876,6 +1874,26 @@ msgstr ""
 
 #: app/views/shared/_final_exam.rhtml:5
 msgid "This student claimed for final exam."
+msgstr ""
+
+#: app/views/shared/_personal_detail.rhtml:5
+msgid "Surname"
+msgstr ""
+
+#: app/views/shared/_personal_detail.rhtml:10
+msgid "Email"
+msgstr ""
+
+#: app/views/shared/_personal_detail.rhtml:11
+msgid "Phone"
+msgstr ""
+
+#: app/views/shared/_personal_detail.rhtml:23
+msgid "Consultant"
+msgstr ""
+
+#: app/views/shared/_personal_detail.rhtml:36
+msgid "citizenship"
 msgstr ""
 
 #: app/views/shared/_address_detail.rhtml:9
@@ -1990,7 +2008,7 @@ msgstr ""
 msgid "reset"
 msgstr ""
 
-#: app/views/shared/_methodology.rhtml:12
+#: app/views/shared/_methodology.rhtml:14
 msgid "upload methodology"
 msgstr ""
 
@@ -2077,7 +2095,7 @@ msgstr ""
 #: app/views/probation_terms/_list.rhtml:11
 #: app/views/probation_terms/_probation_term_details_form.rhtml:14
 #: app/views/probation_terms/_edit.rhtml:14 app/views/exams/_main_form.rhtml:6
-#: app/views/exams/_main_external_form.rhtml:6
+#: app/views/exams/_main_external_form.rhtml:5
 msgid "date"
 msgstr ""
 
@@ -2101,7 +2119,7 @@ msgstr ""
 
 #: app/views/probation_terms/_examinators_form.rhtml:6
 #: app/views/exams/_main_form.rhtml:15 app/views/exams/_form.rhtml:26
-#: app/views/exams/_main_external_form.rhtml:17
+#: app/views/exams/_main_external_form.rhtml:16
 msgid "1. Examinator"
 msgstr ""
 
@@ -2161,20 +2179,20 @@ msgstr ""
 msgid "No students found. Use filters above to change your selection."
 msgstr ""
 
-#: app/views/students/end_study.rhtml:4
+#: app/views/students/end_study.rhtml:3
 #: app/views/students/end_study_confirm.rhtml:4 app/views/exams/_form.rhtml:23
 #: app/views/exams/_show_protocol.rhtml:20 app/views/exams/_protocol.rhtml:26
 #: app/views/exams/_table_list.rhtml:5
 msgid "Student"
 msgstr ""
 
-#: app/views/students/end_study.rhtml:17
+#: app/views/students/end_study.rhtml:16
 #: app/views/students/end_study_confirm.rhtml:16
 msgid "Subject of end study"
 msgstr ""
 
 #: app/views/exams/_main_form.rhtml:4
-#: app/views/exams/_main_external_form.rhtml:4
+#: app/views/exams/_main_external_form.rhtml:3
 msgid "Exam date"
 msgstr ""
 

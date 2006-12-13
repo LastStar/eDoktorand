@@ -71,7 +71,11 @@ class ScholarshipsController < ApplicationController
     index.regular_scholarship.update_attribute('amount', ScholarshipCalculator.for(index))
     render(:partial => 'regular', :locals => {:index => index})
   end
-
+  
+  def student_list
+    @index = @student.index
+  end
+    
   def update
     @scholarship = Scholarship.find(@params['scholarship']['id'])
     @scholarship.attributes = @params['scholarship']

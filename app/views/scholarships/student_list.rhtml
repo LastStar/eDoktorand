@@ -1,0 +1,19 @@
+<div id='students_list'>
+<h5><%= _("Payed scholarship") %></h5>
+<% if @student.prepared_for_claim? %>
+  <div class = 'links'>
+    <%= claim_accomodation_scholarship_link %>
+  </div>
+<% end %>
+<% if @index.payed_scholarships == [] %>
+  <%= _("You have not any scholarshis.") %>
+<% else %>
+  <table class = "scholarship" cellspacing = "0" cellpading = "0" align = "center">
+  <tr><th><%= _("Payed on") %></th><th><%= _("Type of scholarship") %></th><th><%= _("Disponent")%></th><th><%= _("Amount (CZK)") %></th></tr>
+  <% for scholarship in @index.payed_scholarships %> 
+    <%= render(:partial => 'student_list_line', :locals => {:scholarship => scholarship}) %>
+  <% end %>
+  </table>
+<% end %>
+<br>
+</div>

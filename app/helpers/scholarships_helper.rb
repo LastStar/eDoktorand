@@ -55,6 +55,10 @@ module ScholarshipsHelper
     link_to(_('approve'), {:action => 'approve'}, :confrim => _('are_you_sure_to_approve'))
   end
 
+  def claim_accomodation_scholarship_link
+    link_to(_('claim_accomodation_scholarship'), {:action => 'claim'})
+  end
+
   def scholarship_field
     text_field('scholarship', 'amount', :size => 5)
   end

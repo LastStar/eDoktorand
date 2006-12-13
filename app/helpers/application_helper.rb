@@ -253,13 +253,13 @@ module ApplicationHelper
     if @student.index.study_plan && @student.index.study_plan.approved? 
       result << link_to_unless_current(_("probation terms"), 
                                       :controller => 'probation_terms'){} 
-    end 
-    if @student.prepared_for_claim?
-      result << claim_link
     end
     result << link_to_unless_current(_("study plan"),
                                      :controller => 'study_plans',
-                                     :action => 'index'){} 
+                                     :action => 'index'){}
+    result << link_to_unless_current(_("scholarship"),
+                                      :controller => 'scholarships',
+                                      :action => 'student_list'){}
     result << link_to_unless_current(_("end study"), 
                                      {:controller => 'students', 
                                       :action => 'end_study'},
@@ -515,11 +515,6 @@ module ApplicationHelper
     link_to_function(text, "Element.hide('#{element}')")
   end
 
-  def claim_link
-    link_to_unless_current(_('claim_accomodation_scholarship'), 
-            :controller => 'scholarships', :action => 'claim') {}
-  end
-  
   def add_en_link(id,i)
     link_to_remote(image_tag('plus.png'),
                    :url => {:controller => 'study_plans', :action => 'add_en', :id => id, :final_area_id => i},

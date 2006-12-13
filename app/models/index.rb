@@ -20,6 +20,8 @@ class Index < ActiveRecord::Base
   has_many :extra_scholarships, :conditions => "payed_on IS NULL"
   has_one :regular_scholarship, :conditions => "payed_on IS NULL", 
     :order => 'updated_on desc'
+  has_many :payed_scholarships, :class_name => 'Scholarship',
+    :conditions => 'payed_on IS NOT NULL'
   has_many :scholarships
   has_one :approvement, :class_name => 'FinalExamApprovement',
     :foreign_key => 'document_id'

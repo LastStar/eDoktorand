@@ -22,7 +22,7 @@ a:hover { color: red }
 
 table.scholarship { 
   border-collapse: collapse; 
-  border : 0px 
+  border : 0px; 
 }
 
 table.scholarship th,td { 
@@ -30,11 +30,17 @@ table.scholarship th,td {
   solid #ddc 
 }
 
+table.scholarship td.number {
+  text-align: right;
+}
+
 table.scholarship_disponent{
   border-collapse: collapse; 
   border : none;
   float: right;
 }
+
+tar { text-align: right }
 
 hr {
   color: black;
