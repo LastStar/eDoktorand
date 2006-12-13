@@ -3,9 +3,13 @@
 # then regenerate this schema definition.
 
 <<<<<<< .mine
+ActiveRecord::Schema.define(:version => 103) do
+=======
+<<<<<<< .mine
 ActiveRecord::Schema.define(:version => 100) do
 =======
 ActiveRecord::Schema.define(:version => 102) do
+>>>>>>> .r913
 >>>>>>> .r912
 
   create_table "actualities", :force => true do |t|
@@ -374,7 +378,7 @@ ActiveRecord::Schema.define(:version => 102) do
     t.column "created_on", :datetime
     t.column "updated_on", :datetime
     t.column "created_by_id", :integer
-    t.column "update_by_id", :integer
+    t.column "updated_by_id", :integer
     t.column "type", :string
     t.column "approved_on", :datetime
   end
