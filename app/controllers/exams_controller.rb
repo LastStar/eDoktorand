@@ -69,44 +69,32 @@ class ExamsController < ApplicationController
 
   # for creating external exams
   def external
-    @plan_subjects = PlanSubject.find_unfinished_external    
-    students = @plan_subjects.select {|ps| !ps.study_plan.index.finished?}.map \
-      {|ps| ps.study_plan.index.student}.uniq
-    render(:partial => "external_students", :locals => {:students => 
-      students})
+    @plan_subjects = PlanSubject.find_unfinished_external_for(@user)
+    @students = @plan_subjects.map {|ps| ps.study_plan.index.student}.uniq
   end
 
   # saving student and selecting external subjects
   def save_external_student
+    @index = Index.find(params[:index][:id])
     exam = Exam.new
-    student = Student.find(@params['student']['id'])
-    exam.index = student.index
+    exam.index = @index
     @session['exam'] = exam
-    subjects = student.index.study_plan.external_subjects
-    render(:partial => "external_subjects", :locals => {:exam => exam, :subjects => subjects})
+    @subjects = @index.study_plan.unfinished_external_subjects
   end  
   
   # saving subject for external exam of the selected student
   def save_external_subject
-    @session['exam'].subject = Subject.find(@params['subject']['id'])
-    plan_subject = PlanSubject.find_by_subject_id_and_study_plan_id(\
-      @params['subject']['id'], @session['exam'].index.study_plan.id)
-    render(:partial => 'main_external', :locals => {:exam => @session['exam'],\
-      :plan_subject => plan_subject})
+    session['exam'].subject = @subject = Subject.find(params['subject']['id'])
+    @exam = session['exam']
+    @plan_subject = PlanSubject.find_for_exam(@exam)
   end
 
   # saving external exam
   def save_external
-    exam = @session['exam']
-    exam.attributes = @params['exam']
-    exam.first_examinator_id = -1
-    # select the appropriate plan_subject to update the finished_on tag
-    ps = PlanSubject.find_by_subject_id_and_study_plan_id(\
-      exam.subject_id, exam.index.study_plan.id)
-    ps.attributes = @params['plan_subject'] if exam.passed?
-    ps.save
-    exam.save
-    redirect_to(:action => 'index', :controller => 'exams')
+    exam = session['exam']
+    exam.update_attributes(params['exam'])
+    session['exam'] = nil
+    redirect_to(:action => 'create', :controller => 'exams')
   end
   
   # edit exam

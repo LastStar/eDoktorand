@@ -6,8 +6,8 @@
 <%= _("student") %>
 </label>
 <%= content_tag('select', options_for_select(students.map {|stud|
-[stud.display_name, stud.id]}), {'id' => "student_id", 'name' =>
-"student[id]"}) %>
+[stud.display_name, stud.index.id]}), {'id' => "index_id", 'name' =>
+"index[id]"}) %>
 <br/> 
 </fieldset>
 <%= submit_tag(_("commit")) %>

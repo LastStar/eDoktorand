@@ -8,7 +8,8 @@ class StudentsController < ApplicationController
   before_filter :prepare_user, :set_title, :login_required
   before_filter :prepare_order, :prepare_filter, :except => [:show,
     :contact]
-  before_filter :prepare_conditions
+  before_filter :prepare_conditions, :prepare_student
+
 
   def index
     do_filter
@@ -224,7 +225,6 @@ class StudentsController < ApplicationController
   end
 
   def end_study
-    @student = Student.find(params[:id], :include => :index)
   end
 
   def end_study_confirm

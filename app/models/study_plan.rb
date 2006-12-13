@@ -3,7 +3,7 @@ class StudyPlan < ActiveRecord::Base
   include Approvable
   untranslate_all
   belongs_to :index
-  has_many :plan_subjects, :order => 'finishing_on'
+  has_many :plan_subjects, :order => 'finishing_on', :dependent => :delete_all
   has_one :approvement, :class_name => 'StudyPlanApprovement',
     :foreign_key => 'document_id'
   has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
@@ -155,8 +155,8 @@ class StudyPlan < ActiveRecord::Base
   end
 
   # returns all external subject for student
-  def external_subjects
-    PlanSubject.find_unfinished_external(:study_plan => self).map {|ps| ps.subject}
+  def unfinished_external_subjects
+    PlanSubject.find_unfinished_external(self).map {|ps| ps.subject}
   end
 
   def all_subjects_finished?

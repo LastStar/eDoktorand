@@ -98,4 +98,8 @@ class Student < Person
   def scholarship_claimed?
     !scholarship_claimed_at.nil?
   end
+
+  def <=>(other)
+    display_name <=> other.display_name
+  end
 end 

@@ -59,4 +59,11 @@ class Faculty < ActiveRecord::Base
   def subjects
     departments.map {|d| d.subjects}.flatten
   end
+
+  def study_plans
+    StudyPlan.find(:all, :include => [:index => :department], 
+                   :conditions => ["departments.faculty_id = ? \
+                                   and indices.finished_on is null 
+                                   and study_plans.canceled_on is null", self.id])
+  end
 end

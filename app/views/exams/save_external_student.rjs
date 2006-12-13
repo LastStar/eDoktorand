@@ -1,0 +1,5 @@
+page.insert_html :bottom, 'done', 
+                 "<li>#{_('Exam for student')}: #{@index.student.display_name}"
+page.replace_html 'form', render(:partial => "external_subject_form", 
+                  :locals => {:subjects => @subjects})
+

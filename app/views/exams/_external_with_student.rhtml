@@ -1,9 +1,0 @@
-<h5><%= _("Creating exam") %></h5>
-  <li>
-    <%= "#{_('Exam for student')}: #{exam.index.student.display_name}" %>
-  </li>
-  <% if !exam.subject.nil? %>
-    <li>
-      <%= "#{_('Exam from subject')}: #{exam.subject.label}" %>
-    </li>
-  <% end %>

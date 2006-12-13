@@ -224,46 +224,48 @@ module ApplicationHelper
     links = [print_link(image_tag('printer', :alt => _('print'), 
                                   :size => '12x12' ))]
     if @user.person.is_a?(Student) and @student 
-      if @student.index.study_plan && @student.index.study_plan.approved? 
-        links << link_to_unless_current(_("probation terms"), 
-                                        :controller => 'probation_terms'){} 
-      end 
-      if @student.prepared_for_claim?
-        links << claim_link
-      end
-      links << link_to_unless_current(_("study plan"),
-                                      :controller => 'study_plans',
-                                      :action => 'index'){} 
-
-      links << link_to_unless(@view_link!=1, _("end study"), 
-                                    {:controller => 'students', 
-                                     :action => 'end_study', 
-                                     :id => @student.id},
-                                     :confirm =>  _("Are you sure to") + 
-                                     ' ' + _("end study") + '?'){} 
-
+      links << student_menu
     else 
       if @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
         links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
-        links << prepare_scholarship_link
         links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
-      elsif @user.has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) 
-        links << link_to_unless_current(_("probation terms"), :controller =>
-          'probation_terms'){} 
+        links << prepare_scholarship_link
+      elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
+        links << link_to_unless_current(_("probation terms"), 
+                                        :controller => 'probation_terms'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){}
         links << prepare_scholarship_link
       end 
       links << link_to_unless_current(_("students"), 
-                                      :controller => 'students'){} 
+                                      :controller => 'students'){}
     end 
     links << link_to_unless_current(_("logoff"), 
                                     {:controller => 'account', 
                                      :action => 'logout'}, 
                                      :confirm =>  _("do you really want to") + 
                                      ' ' + _("logoff") + '?'){} 
-				     
     links.flatten.join("\n")
+  end
+
+  def student_menu
+    result = []
+    if @student.index.study_plan && @student.index.study_plan.approved? 
+      result << link_to_unless_current(_("probation terms"), 
+                                      :controller => 'probation_terms'){} 
+    end 
+    if @student.prepared_for_claim?
+      result << claim_link
+    end
+    result << link_to_unless_current(_("study plan"),
+                                     :controller => 'study_plans',
+                                     :action => 'index'){} 
+    result << link_to_unless_current(_("end study"), 
+                                     {:controller => 'students', 
+                                      :action => 'end_study'},
+                                      :confirm =>  _("Are you sure to") + 
+                                      ' ' + _("end study") + '?'){} 
+    result
   end
   
   # prints birth place for student if he has it

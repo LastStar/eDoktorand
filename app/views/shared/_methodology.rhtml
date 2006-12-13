@@ -2,17 +2,19 @@
 <li>
 <b><%= _("methodology summary") %></b>
 </li>
+  <% if disert_theme.methodology_summary %>
 <li class="second">
-<%= disert_theme.methodology_summary.gsub(/\n/, '<br>') %>
+  <%= disert_theme.methodology_summary.gsub(/\n/, '<br>') %>
 </li>
+  <% end %>
 <% end %>
 <% if disert_theme.index.study_plan && disert_theme.index.study_plan.approved? %>
-<%  if @student && !disert_theme.has_methodology? %>
+  <% if @student && !disert_theme.has_methodology? %>
 <li>
 <%= link_to(_("upload methodology"), :controller => "disert_themes", :action =>
 "upload_methodology", :id => disert_theme.id) %>
 </li>
-<% elsif disert_theme.has_methodology? %>
+  <% elsif disert_theme.has_methodology? %>
 <%= methodology_link(disert_theme) %>
-<% end %>
+  <% end %>
 <% end %>

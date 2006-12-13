@@ -1,21 +1,21 @@
 <%= form_tag(:action => 'save_external') %>	
-      <% @exam = exam %>
 <fieldset id='date'>
 <legend><%= _("Exam date") %></legend>
 <label>
   <%= _("date") %>
 </label>
-  <%= date_select 'plan_subject', 'finished_on', :start_year => 2002,
-    :order => [:day, :month, :year], :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br />
+  <%= date_select 'exam', 'passed_on', :start_year => 2002,
+                  :order => [:day, :month, :year], :use_month_numbers => true %>
+  <span class='required'>&nbsp;&lowast;</span ><br />
 </fieldset>
 <fieldset id='agenda'>
 <legend><%= _("Exam agenda") %></legend>
-
   <label for="exam_university"><%=_("University")%></label>
-  <%= exam.subject.external_subject_detail.university %><br/>
-<% if exam.subject.external_subject_detail.person  %>
+  <%= @exam.subject.external_subject_detail.university %><br/>
+<% if @exam.subject.external_subject_detail.person  %>
   <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
-  <%= exam.subject.external_subject_detail.person %><br/>
+  <%= @exam.subject.external_subject_detail.person %><br/>
+  <%= hidden_field 'exam', 'first_examinator_id', :value => -1 %>
 <% end %>
   
 </fieldset>

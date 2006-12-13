@@ -5,16 +5,16 @@ class PlanSubject < ActiveRecord::Base
 
   # returns true if plan subject has exam
   def finished?
-    return true unless self.finished_on.nil?
+    true unless self.finished_on.nil?
   end
 
-  def finish!
-    update_attribute('finished_on', Time.now) unless finished?
+  def finish!(time = Time.now)
+    update_attribute('finished_on', time) unless finished?
   end
 
   # returns all unfinished plan subjects with external subjects 
   # got one option :study_plan to find only for study plan
-  def self.find_unfinished_external(options = {})
+  def self.find_unfinished_external_for(user, options = {})
     sql = <<-SQL
     plan_subjects.finished_on is null and subjects.type = 'ExternalSubject' 
     and study_plans.approved_on is not null
@@ -22,8 +22,24 @@ class PlanSubject < ActiveRecord::Base
     if options[:study_plan]
       sql << "and study_plans.id = ?"
       sql = [sql, options[:study_plan].id]
+    else
+      sql << "and study_plans.id in (?)"
+      sql = [sql, user.person.faculty.study_plans.map(&:id)]
     end
-    find(:all, :conditions => sql, :include => [:subject, :study_plan])
+    find(:all, :conditions => sql, 
+         :include => [:subject, [:study_plan => [:index => :student]]],
+         :order => 'people.lastname')
+  end
+
+  # returns unfinished external subjects for study_plan
+  def self.find_unfinished_external(study_plan)
+    study_plan = study_plan.id if study_plan.is_a? StudyPlan
+    sql = <<-SQL
+    plan_subjects.finished_on is null and subjects.type = 'ExternalSubject' 
+    and study_plans.approved_on is not null and study_plans.id = ?
+    SQL
+    find(:all, :conditions => [sql, study_plan], 
+         :include => [:subject, :study_plan])
   end
 
   # returns all unfinished plan subjects

@@ -11,14 +11,14 @@
 </div>
 <br /><br />
 <div style="text-align: right; padding-right: 50px;">
-  <%= _("In Prague the") %>&nbsp;&nbsp;<%#= plan_subject.finished_on.strftime("%d. %m. %Y")%>
+  <%= _("In Prague the") %>&nbsp;&nbsp;<%= exam.passed_on.strftime("%d. %m. %Y")%>
 </div>
 <br /><br />
 <div style="text-align: center">
   <span style="font-size: 20px; font-weight: bold;"><%= _("Protocol") %></span>
 </div><br />
 <div style="text-align: left">
-  <%= _("Exam from subject") %>:&nbsp;&nbsp;<%= exam.subject.label.strip%><br /> 
+  <%= _("Exam from subject") %>:&nbsp;&nbsp;<%= exam.subject.label %><br /> 
 </div>
 <br /><br />
 <br /><br /><br />
