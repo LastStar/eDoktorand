@@ -19,11 +19,11 @@ module StudentsHelper
             if index.final_exam_passed?
               links.concat(pass_link(:defense, index))
             else
-              links.concat(change_link(index.student))
+              links.concat(menu_div(change_link(index.student)))
               links.concat(pass_link(:final_exam, index))
             end
           else
-            links.concat(change_link(index.student))
+            links.concat(menu_div(change_link(index.student)))
           end
         else
           links.concat(create_link(index))
