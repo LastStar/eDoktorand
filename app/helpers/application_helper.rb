@@ -260,11 +260,6 @@ module ApplicationHelper
     result << link_to_unless_current(_("scholarship"),
                                       :controller => 'scholarships',
                                       :action => 'student_list'){}
-    result << link_to_unless_current(_("end study"), 
-                                     {:controller => 'students', 
-                                      :action => 'end_study'},
-                                      :confirm =>  _("Are you sure to") + 
-                                      ' ' + _("end study") + '?'){} 
     result
   end
   

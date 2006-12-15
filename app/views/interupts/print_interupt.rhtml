@@ -1,0 +1,67 @@
+<div id='student_detail'>
+<ul class='details'>
+  <li>
+     <div class='long_info'><%=@interupt.index.student.display_name%></div> <%=_ 'Student' %>:
+  </li>
+  <li>
+     <div class='long_info'><%=@interupt.index.student.index.year%></div> <%=_ 'Year' %>:
+  </li>
+  <li>
+    <div class='long_info'><%=@interupt.index.student.coridor.name%></div>  <%=_ 'Corridor' %>:
+  </li>
+  <li>
+   <div class='long_info'><%=@interupt.index.student.index.tutor.display_name%></div> <%=_ 'Tutor' %>:
+  </li>
+</ul>
+  <% if @interupt.index.interupted? %>
+<h5><%= _('This study is interupted') %></h5>
+<ul>
+  <li>
+  <div class='info'><%= @interupt.index.interupted_on.strftime('%d. %m. %Y') %></div>
+  <%= _('interupted on') %>
+  </li>
+  <li>
+  <div class='info'><%= @interupt.end_on.strftime('%d. %m. %Y')%></div>
+  <%= _('interupted to') %>
+  </li>
+  <% elsif @interupt.index.admited_interupt? %>
+<h5><%= _('This student admited interupt') %></h5>
+<ul id='admited_interrupt'>
+  <li>
+  <div class='info'><%= @interupt.index.interupt.start_on.strftime('%m/%Y') %></div>
+  <%= _('start') %>
+  </li>
+  <li>
+  <div class='info'><%= @interupt.index.interupt.duration %></div>
+  <%= _('duration') %>
+  </li>
+  <% else %>
+<h5><%= _('This study last interupt') %></h5>
+<ul id='last_interrupt'>
+  <li>
+  <div class='info'><%= @interupt.start_on.strftime('%d. %m. %Y') %></div>
+  <%= _('interupted on') %>
+  </li>
+    <% if index.interupt.finished_on %>
+      <%= interupt_finish_line(@interupt.index) %>
+    <% end %>
+  <% end %>
+</ul>
+
+<% if study_plan ||= @interupt.index.study_plan %>
+<% if study_plan.atestation  %>
+<h5><%= _("last atestation:") %></h5>
+<ul id='approvement'>
+  <%= print_statements(study_plan.atestation) %>
+  <%= atestation_detail(study_plan) %>
+</ul>
+<% elsif study_plan.approvement %>
+<h5><%= _("study plan approvement process") %></h5>
+<ul id='approvement'>
+  <%= print_statements(study_plan.approvement) %>
+</ul>
+<% end %>
+<% end %>
+
+</div>
+

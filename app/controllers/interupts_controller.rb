@@ -24,7 +24,8 @@ class InteruptsController < ApplicationController
     @interupt ||= @session['interupt']
     @interupt.save
     if @user.has_role?('student')
-      redirect_to(:controller => 'study_plans')
+      redirect_to(:controller => 'interupts', :action => 'print_interupt' ,:id => 
+        @interupt.id)
     else
       if @user.has_role?('faculty_secretary')
         @interupt.approve_like('dean', _('faculty secretary approve'))
@@ -59,4 +60,10 @@ class InteruptsController < ApplicationController
     @index.end_interupt!(@params['date'])
     render(:inline => "<%= redraw_student(@index) %>")
   end
+
+  def print_interupt
+     @interupt = Interupt.find(@params['id'])
+    #@interrupt = @params['interupt']
+    
+  end  
 end

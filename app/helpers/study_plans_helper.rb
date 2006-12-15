@@ -100,6 +100,12 @@ module StudyPlansHelper
 
   def study_plan_menu(student)
     links = []
+    links << link_to_unless_current(_("end study"), 
+                                     {:controller => 'students', 
+                                      :action => 'end_study'},
+                                      :confirm =>  _("Are you sure to") + 
+                                      ' ' + _("end study") + '?'){} 
+
     if student.study_plan.approved?
       links << change_link(student)
     end
