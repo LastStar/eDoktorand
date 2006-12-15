@@ -228,7 +228,6 @@ class StudentsController < ApplicationController
   end
 
   def end_study_confirm
-  @student = Student.find(params[:student][:id], :include => :index)
   @subject_end_study = params[:student][:subject_end_study]
   Notifications::deliver_end_study(@student,@subject_end_study)
   end
