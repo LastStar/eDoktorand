@@ -58,11 +58,15 @@ class ScholarshipsController < ApplicationController
     else
       create
     end
-    @scholarship.save
     if @scholarship.is_a?(RegularScholarship)
+      @scholarship.save
       render(:partial => 'regular', :locals => {:index => @scholarship.index})
     else
-      render(:partial => 'index_line', :locals => {:index => @scholarship.index})
+      if @scholarship.save
+        render(:partial => 'index_line', :locals => {:index => @scholarship.index})
+      else
+        render(:action => 'add')
+      end
     end
   end
 
@@ -78,13 +82,17 @@ class ScholarshipsController < ApplicationController
     
   def update
     @scholarship = Scholarship.find(@params['scholarship']['id'])
-    @scholarship.attributes = @params['scholarship']
+    unless @scholarship.attributes = @params['scholarship']
+      render(:action => 'add')
+    end  
     @scholarship.amount = 0 if !@scholarship.amount 
   end
 
   def create
-    @scholarship =
+    unless @scholarship =
       eval("#{@params['scholarship']['type']}.new(@params['scholarship'])")
+      render(:action => 'add')
+    end
     @scholarship.amount = 0 if !@scholarship.amount
   end
 
