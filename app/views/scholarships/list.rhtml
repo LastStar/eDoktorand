@@ -8,6 +8,11 @@
 <% disponents.default = 0 %>
 <% codes = {} %>
 <% codes.default = 0%>
+<% if @show_table_message == 1%>
+  <br>
+  <div class='t1'><%= _("This is a only control table!")%></div>
+  <br>
+<% end %>
 <table class = "scholarship" cellspacing = "0" cellpading = "0" align = "center">
 <tr><th><%= _("Birth number")%></th><th><%= _("Last name")%></th><th><%= _("First name")%></th><th><%= _("Coridor") %></th>
 <th><%= _("Type of scholarship")%></th><th><%= _("Disponent")%></th><th><%= _("Amount (CZK)")%></th></tr>
@@ -30,5 +35,9 @@
   <tr><td><%= disponent %></td><td class ="number"><%= sum %></td></tr>
 <% end %>
 </table>
-<br><br>
+<br>
+<% if @show_table_message == 1%>
+  <div class='t1'><%= _("This is a only control table!")%></div>
+<% end %>
+<br>
 </div>

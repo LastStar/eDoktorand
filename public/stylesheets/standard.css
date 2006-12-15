@@ -20,6 +20,10 @@ a {
 } 
 a:hover { color: red }
 
+.t1 {
+  text-align: center;
+}
+
 table.scholarship { 
   border-collapse: collapse; 
   border : 0px; 

@@ -20,6 +20,10 @@ msgid "are_you_sure_to_approve"
 msgstr ""
 
 #: app/helpers/scholarships_helper.rb:59
+msgid "control table"
+msgstr ""
+
+#: app/helpers/scholarships_helper.rb:63
 msgid "claim_accomodation_scholarship"
 msgstr ""
 
@@ -285,7 +289,7 @@ msgstr ""
 msgid "dean statement"
 msgstr ""
 
-#: app/helpers/application_helper.rb:208 app/views/scholarships/list.rhtml:12
+#: app/helpers/application_helper.rb:208 app/views/scholarships/list.rhtml:15
 #: app/views/shared/candidate_detail.rhtml:6
 msgid "Birth number"
 msgstr ""
@@ -919,7 +923,7 @@ msgstr ""
 msgid "Probation terms"
 msgstr ""
 
-#: app/controllers/scholarships_controller.rb:128
+#: app/controllers/scholarships_controller.rb:144
 msgid "Scholarships"
 msgstr ""
 
@@ -990,27 +994,27 @@ msgstr ""
 msgid "subjects have to be different"
 msgstr ""
 
-#: app/controllers/students_controller.rb:248
+#: app/controllers/students_controller.rb:247
 msgid "Students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:259
+#: app/controllers/students_controller.rb:258
 msgid "waiting for my review"
 msgstr ""
 
-#: app/controllers/students_controller.rb:259
+#: app/controllers/students_controller.rb:258
 msgid "all students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:260
+#: app/controllers/students_controller.rb:259
 msgid "all studying"
 msgstr ""
 
-#: app/controllers/students_controller.rb:263
+#: app/controllers/students_controller.rb:262
 msgid "my students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:263
+#: app/controllers/students_controller.rb:262
 msgid "my studying"
 msgstr ""
 
@@ -1237,38 +1241,42 @@ msgstr ""
 msgid "Scholarships for"
 msgstr ""
 
-#: app/views/scholarships/list.rhtml:12 app/views/scholarships/claim.rhtml:18
+#: app/views/scholarships/list.rhtml:12 app/views/scholarships/list.rhtml:38
+msgid "This is a only control table!"
+msgstr ""
+
+#: app/views/scholarships/list.rhtml:15 app/views/scholarships/claim.rhtml:18
 msgid "Last name"
 msgstr ""
 
-#: app/views/scholarships/list.rhtml:12
+#: app/views/scholarships/list.rhtml:15
 msgid "First name"
 msgstr ""
 
-#: app/views/scholarships/list.rhtml:12
+#: app/views/scholarships/list.rhtml:15
 msgid "Coridor"
 msgstr ""
 
-#: app/views/scholarships/list.rhtml:13 app/views/scholarships/list.rhtml:20
+#: app/views/scholarships/list.rhtml:16 app/views/scholarships/list.rhtml:23
 #: app/views/scholarships/student_list.rhtml:12
 msgid "Type of scholarship"
 msgstr ""
 
-#: app/views/scholarships/list.rhtml:13 app/views/scholarships/list.rhtml:28
+#: app/views/scholarships/list.rhtml:16 app/views/scholarships/list.rhtml:31
 #: app/views/scholarships/student_list.rhtml:12
 msgid "Disponent"
 msgstr ""
 
-#: app/views/scholarships/list.rhtml:13
+#: app/views/scholarships/list.rhtml:16
 #: app/views/scholarships/student_list.rhtml:12
 msgid "Amount (CZK)"
 msgstr ""
 
-#: app/views/scholarships/list.rhtml:20 app/views/scholarships/list.rhtml:28
+#: app/views/scholarships/list.rhtml:23 app/views/scholarships/list.rhtml:31
 msgid "Total amount"
 msgstr ""
 
-#: app/views/scholarships/list.rhtml:25
+#: app/views/scholarships/list.rhtml:28
 msgid "Final sum"
 msgstr ""
 

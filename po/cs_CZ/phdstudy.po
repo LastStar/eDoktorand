@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2006-12-13 12:33+0100\n"
+"POT-Creation-Date: 2008-02-28 15:15+0100\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -44,6 +44,10 @@ msgstr ""
 "Tato operace je nevratná."
 
 #: app/helpers/scholarships_helper.rb:59
+msgid "control table"
+msgstr "kontrolní tabulka"
+
+#: app/helpers/scholarships_helper.rb:63
 msgid "claim_accomodation_scholarship"
 msgstr "ubytovací stipendium"
 
@@ -309,7 +313,7 @@ msgstr "vyjádření vedoucího katedry"
 msgid "dean statement"
 msgstr "vyjádření děkana"
 
-#: app/helpers/application_helper.rb:208 app/views/scholarships/list.rhtml:12
+#: app/helpers/application_helper.rb:208 app/views/scholarships/list.rhtml:15
 #: app/views/shared/candidate_detail.rhtml:6
 msgid "Birth number"
 msgstr "Rodné číslo"
@@ -423,7 +427,7 @@ msgid "hide"
 msgstr "skrýt"
 
 #: app/helpers/application_helper.rb:550 app/helpers/application_helper.rb:553
-#: app/views/s/approve.rhtml:8
+#: app/views/scholarships/approve.rhtml:8
 #: app/views/scholarships/_prepare_list.rhtml:10
 #: app/views/shared/candidate_detail.rhtml:4
 #: app/views/students/_scholarship_list.rhtml:4
@@ -946,7 +950,7 @@ msgstr "na požadovanou akci nemáte práva"
 msgid "Probation terms"
 msgstr ""
 
-#: app/controllers/scholarships_controller.rb:128
+#: app/controllers/scholarships_controller.rb:144
 #, fuzzy
 msgid "Scholarships"
 msgstr "stipendia"
@@ -1020,27 +1024,27 @@ msgstr "Vytváření nového studijního plánu"
 msgid "subjects have to be different"
 msgstr "předměty musí být rozdílné"
 
-#: app/controllers/students_controller.rb:248
+#: app/controllers/students_controller.rb:247
 msgid "Students"
 msgstr "Studenti"
 
-#: app/controllers/students_controller.rb:259
+#: app/controllers/students_controller.rb:258
 msgid "waiting for my review"
 msgstr "čekající na mé schválení"
 
-#: app/controllers/students_controller.rb:259
+#: app/controllers/students_controller.rb:258
 msgid "all students"
 msgstr "všichni studenti"
 
-#: app/controllers/students_controller.rb:260
+#: app/controllers/students_controller.rb:259
 msgid "all studying"
 msgstr "všichni studující"
 
-#: app/controllers/students_controller.rb:263
+#: app/controllers/students_controller.rb:262
 msgid "my students"
 msgstr "moji studenti"
 
-#: app/controllers/students_controller.rb:263
+#: app/controllers/students_controller.rb:262
 msgid "my studying"
 msgstr "moji studující"
 
@@ -1270,38 +1274,42 @@ msgstr "součet mimořádných stipendií z fakultních zdrojů"
 msgid "Scholarships for"
 msgstr "stipendia"
 
-#: app/views/scholarships/list.rhtml:12 app/views/scholarships/claim.rhtml:18
+#: app/views/scholarships/list.rhtml:12 app/views/scholarships/list.rhtml:38
+msgid "This is a only control table!"
+msgstr "Toto je pouze kontrolní tabulka!"
+
+#: app/views/scholarships/list.rhtml:15 app/views/scholarships/claim.rhtml:18
 msgid "Last name"
 msgstr "Příjmení"
 
-#: app/views/scholarships/list.rhtml:12
+#: app/views/scholarships/list.rhtml:15
 msgid "First name"
 msgstr "jméno"
 
-#: app/views/scholarships/list.rhtml:12
+#: app/views/scholarships/list.rhtml:15
 msgid "Coridor"
 msgstr "Obor"
 
-#: app/views/scholarships/list.rhtml:13 app/views/scholarships/list.rhtml:20
+#: app/views/scholarships/list.rhtml:16 app/views/scholarships/list.rhtml:23
 #: app/views/scholarships/student_list.rhtml:12
 msgid "Type of scholarship"
 msgstr "Typ Stipendia"
 
-#: app/views/scholarships/list.rhtml:13 app/views/scholarships/list.rhtml:28
+#: app/views/scholarships/list.rhtml:16 app/views/scholarships/list.rhtml:31
 #: app/views/scholarships/student_list.rhtml:12
 msgid "Disponent"
 msgstr "Disponent"
 
-#: app/views/scholarships/list.rhtml:13
+#: app/views/scholarships/list.rhtml:16
 #: app/views/scholarships/student_list.rhtml:12
 msgid "Amount (CZK)"
 msgstr "Částka Kč"
 
-#: app/views/scholarships/list.rhtml:20 app/views/scholarships/list.rhtml:28
+#: app/views/scholarships/list.rhtml:23 app/views/scholarships/list.rhtml:31
 msgid "Total amount"
 msgstr "Celková částka"
 
-#: app/views/scholarships/list.rhtml:25
+#: app/views/scholarships/list.rhtml:28
 msgid "Final sum"
 msgstr "Konečná částka"
 

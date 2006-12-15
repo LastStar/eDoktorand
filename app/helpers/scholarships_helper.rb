@@ -55,6 +55,10 @@ module ScholarshipsHelper
     link_to(_('approve'), {:action => 'approve'}, :confrim => _('are_you_sure_to_approve'))
   end
 
+  def control_table_link
+    link_to(_('control table'), {:action => 'control_table'})
+  end
+
   def claim_accomodation_scholarship_link
     link_to(_('claim_accomodation_scholarship'), {:action => 'claim'})
   end

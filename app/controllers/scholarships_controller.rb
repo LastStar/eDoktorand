@@ -118,6 +118,14 @@ class ScholarshipsController < ApplicationController
     render(:action => 'list')
   end
   
+  def control_table
+    @indices = Index.find_for_scholarship(@user, 
+                                         :order => 'studies.id, people.lastname',
+                                         :include => [:student, :study, :disert_theme])
+    @show_table_message = 1
+    render(:action => 'list')
+  end
+  
   # saves scholarship to dbase
   def save_scholarship
     @index = Index.find(@params['index']['id'])
