@@ -3,7 +3,7 @@ class AddPermissionControlTable < ActiveRecord::Migration
     Role.find(2).permissions <<
       Permission.create(:name => 'scholarships/control_table')
     Role.find(7).permissions <<
-      Permission.(:name => 'scholarships/control_table')
+      Permission.find_by_name('scholarships/control_table')
   end
 
   def self.down

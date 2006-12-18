@@ -363,9 +363,9 @@ ActiveRecord::Schema.define(:version => 105) do
     t.column "content", :text
     t.column "index_id", :integer
     t.column "amount", :float
-    t.column "commission_head", :integer
-    t.column "commission_body", :integer
-    t.column "commission_tail", :integer
+    t.column "commission_head", :string
+    t.column "commission_body", :string
+    t.column "commission_tail", :string
     t.column "payed_on", :datetime
     t.column "created_on", :datetime
     t.column "updated_on", :datetime
