@@ -223,7 +223,7 @@ module StudentsHelper
 
   # prints select for coridor
   def coridor_select(options = {})
-    opts = {:include_empty => options[:include_empty], :accredited => true}
+    opts = {:include_empty => options[:include_empty]}
     unless options[:user].has_role?('vicerector')
       opts[:faculty] = options[:user].person.faculty
     end

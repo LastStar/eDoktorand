@@ -15,9 +15,9 @@ class Department < ActiveRecord::Base
     if options[:faculty]
       faculty = options[:faculty].is_a?(Faculty) ? options[:faculty].id :
                                                    options[:faculty]
-      result = Department.find_all_by_faculty_id(faculty)
+      result = find_all_by_faculty_id(faculty)
     else
-      result = Department.find(:all)
+      result = find(:all)
     end
     result = result.map {|d| [d.name, d.id]}
     if options[:include_empty]
