@@ -11,7 +11,7 @@
   <% if @user.has_role?('department_secretary') %>
     <%= index.regular_scholarship_or_create.amount %> <%= _("Kc") %>
   <% else %>
-  <%= render(:partial => 'regular', :locals => {:index => index}) %>
+    <%= render(:partial => 'regular', :locals => {:index => index}) %>
   <% end %>
 </div>
 <% else %>

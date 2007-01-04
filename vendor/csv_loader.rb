@@ -14,6 +14,7 @@ class CSVLoader
     17, 21, 18, 22, nil, 23, 19, nil, 24, nil, 27, 26, 28, 43, 29, 30, 31, 32,
     33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 52]
   @@suffixes = [nil, 44, 45, 46, 47, 48, 49, 51]
+  @@prefixes[53] = 59
   # loads all to database
   def self.load_all
     self.load_faculties('dumps/csv/faculties.csv', :destroy => true)
@@ -449,19 +450,30 @@ class CSVLoader
   end
 
   # loads examinators
-  def self.load_examinators(file)
+  def self.load_examinators(file, department_id = nil)
+    p = nil
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
     @@mylog.info "Loading examinators..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      unless Person.exists?(row[6])
-        p = Examinator.new(:firstname => row[2], :lastname => row[1],
-                           :uic => row[0])
-        p.title_before = Title.find(@@prefixes[row[3].to_i]) if row[3] && !row[3].empty?
+      @@mylog.debug row
+      unless Person.exists?(row[0])
+        p = Examinator.new(:firstname => row[2], :lastname => row[3],
+                           :uic => row[5])
+        p.title_before = Title.find(@@prefixes[row[1].to_i]) if row[1] && !row[1].empty?
         p.title_after = Title.find(@@suffixes[row[4].to_i]) if row[4] && !row[4].empty?
-        p.id = row[6]
-        p.department_employment = DepartmentEmployment.create('unit_id' => row[5])
+        p.id = row[0]
+        p.department_employment = DepartmentEmployment.create('unit_id' => (department_id || row[6]))
         @@mylog.info "Saving #{p.type} #{p.lastname}"
         p.save
+      else
+        @@mylog.info "person found"
+      end
+      unless User.find_by_login(row[6])
+        u = User.new(:login => row[6], :password => row[6], :person_id => row[0])
+        u.password_confirmation = u.password
+        @@mylog.info "Saving user #{u.login}"
+      else
+        @@mylog.info "user found"
       end
     end
   end

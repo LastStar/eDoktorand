@@ -239,4 +239,14 @@ class CSVExporter
     end
   end
 
+  def self.export_tutors_per_coridor
+    outfile = File.open('tutors_per_coridor.csv', 'wb')
+      CSV::Writer.generate(outfile, ';') do |csv|
+      csv << ['coridor id', 'coridor name', 'amount']
+      Coridor.find(:all).each do |c|
+        csv << [c.id, c.name, c.tutors.size]
+      end
+    end
+    outfile.close
+  end
 end
