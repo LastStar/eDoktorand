@@ -471,6 +471,7 @@ class CSVLoader
       unless User.find_by_login(row[6])
         u = User.new(:login => row[6], :password => row[6], :person_id => row[0])
         u.password_confirmation = u.password
+        u.save
         @@mylog.info "Saving user #{u.login}"
       else
         @@mylog.info "user found"
