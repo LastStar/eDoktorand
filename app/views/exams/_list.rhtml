@@ -7,7 +7,7 @@
     <div id='student_detail' class='student_detail'>
     <%= smaller_info_div(detail_link(exam))%>
     <%= smaller_info_div(result_word(exam.result))%>
-    <%= date_info_div(exam.plan_subject.finished_on.strftime("%d. %m. %Y"))%>
+    <%= date_info_div(exam.passed_on.strftime("%d. %m. %Y"))%>
     <%= longer_info_div(truncate(exam.subject.label,40)) %>
     <%= exam.index.student.display_name %>
     </div>	  

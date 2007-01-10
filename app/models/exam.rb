@@ -17,6 +17,7 @@ class Exam < ActiveRecord::Base
 
   N_('Creating external exam for student')
   N_('Exam for student')
+ 
   # returns true if result is pass
   def passed?
    return true if result == 1
@@ -38,7 +39,7 @@ class Exam < ActiveRecord::Base
     # remove exams that don't have plan subject
     exams.delete_if {|e| !(e.plan_subject = PlanSubject.find_for_exam(e))}
     if options[:this_year]
-      exams.delete_if {|e| e.plan_subject.finished_on < TermsCalculator.this_year_start}
+      exams.delete_if {|e| !e.passed_on || e.passed_on < TermsCalculator.this_year_start}
     end
     exams
   end
