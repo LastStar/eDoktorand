@@ -492,7 +492,7 @@ msgstr "volitelné předměty"
 
 #: app/helpers/study_plans_helper.rb:132
 msgid "change study plan"
-msgstr "změna studijního plánu"
+msgstr "změna SP"
 
 #: app/helpers/probation_terms_helper.rb:7
 msgid "new term"
