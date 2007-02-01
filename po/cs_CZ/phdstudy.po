@@ -1129,7 +1129,7 @@ msgstr "telefon"
 #: app/views/shared/candidate_detail.rhtml:12
 #: app/views/shared/candidate_edit.rhtml:37
 msgid "habitat address"
-msgstr "adresa"
+msgstr "Adresa"
 
 #: app/views/addresses/_edit.rhtml:19 app/views/shared/candidate_edit.rhtml:38
 #: app/views/shared/candidate_edit.rhtml:51
@@ -2155,7 +2155,6 @@ msgid "date of birth"
 msgstr "datum narození"
 
 #: app/views/shared/candidate_edit.rhtml:20
-#, fuzzy
 msgid "birth place"
 msgstr "místo narození"
 
