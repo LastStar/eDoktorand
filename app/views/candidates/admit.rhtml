@@ -1,4 +1,4 @@
-<%= start_form_tag :action => 'confirm_admit', :id => @candidate %>	
+<% form_tag :action => 'confirm_admit', :id => @candidate do %>	
 	<label for="admit"><%= _("admit") %></label>
   <%= content_tag('select', options_for_select(admit_ids), 
   {'id' => "admit_id", 'name' => "admit_id", 'onchange' => "hide_on_noadmit(this)"}) %><br/> 
@@ -15,7 +15,7 @@
 	<%= select 'candidate', 'study_id', Study.for_select %><br/>
   </div>
   <%= submit_tag(_("submit")) %>
-<%= end_form_tag %>
+<% end %>
 <div class='links'>
   <%= link_to(_("back"), :action => 'list') %>
 </div >

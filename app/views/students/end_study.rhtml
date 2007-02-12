@@ -11,6 +11,9 @@
   <li>
    <div class='long_info'><%= @student.index.tutor.display_name %></div> <%=_ 'Tutor' %>:
   </li>
+  <li>
+   <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%=_ 'Date' %>:
+  </li>
 <%= form_tag ({ :action => "end_study_confirm"}, {:id => @student.id})%>
   <li>
    <%=_ 'Subject of end study'%>:<br>

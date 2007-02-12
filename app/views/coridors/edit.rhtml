@@ -2,11 +2,11 @@
 
 <%= error_messages_for 'coridor' %>
 <!--[form:coridor]-->
-<%= start_form_tag :action => 'update' %>
+<% form_tag :action => 'update' do %>
 <%= hidden_field 'coridor', 'id' %>
 <p><label for="coridor_name">Name</label><br /><%= text_field 'coridor', 'name'  %></p>
 <input type="submit" value="Update" />
-<%= end_form_tag %>
+<% end %>
 <!--[eoform:coridor]-->
 
 

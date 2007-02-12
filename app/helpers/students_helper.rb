@@ -1,4 +1,5 @@
 module StudentsHelper
+
   # prints action links on student
   def student_action_link(index)
     info = ''
@@ -77,16 +78,16 @@ module StudentsHelper
 
   # prints finish link
   def finish_link(index)
-    if index.finished? 
-      menu_div(link_to_remote_with_loading(_('unfinish study'),
-        :url => {:action => 'unfinish', :controller => 'students', 
-        :id => index}, :update => "index_form_#{index.id}"))
+    menu_div(if index.finished? 
+      link_to_remote(_('unfinish study'),
+                    :url => {:action => 'unfinish', :controller => 'students',
+                    :id => index}, :complete => evaluate_remote_response)
     else 
-      menu_div(link_to_remote_with_loading(_('finish study'), 
-        :url => {:action => 'time_form', :controller => 'students', 
-        :form_action => 'finish', :id => index}, :update =>
-        "index_form_#{index.id}"))
-    end
+      link_to_remote(_('finish study'), 
+                    :url => {:action => 'time_form', :controller => 'students',
+                    :form_action => 'finish', :id => index}, 
+                    :update => "index_form_#{index.id}")
+    end)
   end
  
   # prints link to switch study form
@@ -167,8 +168,10 @@ module StudentsHelper
 
   # prints link to student detail
   def student_link(index)
-    link = link_to_remote_with_loading(index.student.display_name, :url => {:action =>
-      'show', :controller => 'students', :id => index}, :evaluate => true)
+    link = link_to_remote(index.student.display_name, :url => {:action =>
+      'show', :controller => 'students', :id => index}, 
+      :loading => visual_effect(:pulsate, "student_detail_#{index.id}"),
+      :complete => evaluate_remote_response)
     if index.close_to_interupt_end_or_after?
       link = span_tag('!', :class => 'red').concat(link)
     end
@@ -202,7 +205,7 @@ module StudentsHelper
   def date_form(options)
     date = options[:date] ? Time.parse(options.delete(:date)) : Date.today
     result = [form_remote_with_loading(options)]
-    result << submit_tag(_(options[:url][:action].humanize))
+    result << submit_tag(_(options[:url][:action] + "_to"))
     result << select_day(date) if options[:day]
     result << select_month(date, :use_month_numbers => true)
     result << select_year(date, :start_year => 2000)
@@ -269,14 +272,14 @@ module StudentsHelper
   end
 
   def back_to_list
-    "Element.show('people_list', 'search'); Element.remove('student_detail')"
+    "Element.show('students_list', 'search'); Element.remove('student_detail')"
   end
 
   def back_and_remove_from_list(index)
     %{
       Element.remove('index_line_#{index.id}');
       Element.remove('student_detail');
-      Element.show('people_list', 'search');
+      Element.show('students_list', 'search');
     }
   end
 end

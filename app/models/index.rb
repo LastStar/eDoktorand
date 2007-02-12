@@ -87,7 +87,7 @@ class Index < ActiveRecord::Base
 
   # returns if study plan is finished
   def finished?
-    !finished_on.nil?
+    !finished_on.nil? && finished_on.to_date < Date.today
   end
 
   # returns true if interupt just admited

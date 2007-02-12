@@ -2,10 +2,10 @@
 <%= _("On this page you can add your methodology file. File should be only in
 PDF format.") %>
 </p>
-<%= start_form_tag({:action => 'save_methodology'}, :enctype =>
-"multipart/form-data") %>	
-<%= hidden_field 'disert_theme', 'id' %>
-<label for="disert_theme_methodology_file"><%= _("file") %>:</label>
-<input type="file" name="disert_theme[methodology_file]" />
-<%= submit_tag _("upload") %>
-<%= end_form_tag %>
+<% form_tag({:action => 'save_methodology'}, 
+             :enctype => "multipart/form-data") do %>	
+  <%= hidden_field 'disert_theme', 'id' %>
+  <label for="disert_theme_methodology_file"><%= _("file") %>:</label>
+  <input type="file" name="disert_theme[methodology_file]" />
+  <%= submit_tag _("upload") %>
+<% end %>

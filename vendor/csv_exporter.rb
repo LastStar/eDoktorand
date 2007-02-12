@@ -1,10 +1,43 @@
 require 'log4r'
+require 'terms_calculator'
 class CSVExporter
   include Log4r
 
   @@mylog = Logger.new 'exporter'
   @@mylog.outputters = Outputter.stdout
   @@mylog.level = 1
+
+  def self.export_social_stipendia(file = 'stipendia.csv', faculty = nil)
+    outfile = File.open(file, 'wb')
+    students = Student.find(:all, 
+                            :conditions => ['scholarship_claimed_at > ?',
+                                            TermsCalculator.this_year_start])
+    students.delete_if {|s| s.faculty.id != faculty} if faculty 
+    CSV::Writer.generate(outfile, ';') do |csv|
+      csv << ['uic', 'sident', 'claimed_at', 'supervised_at', 
+              'bank_number', 'account_number']
+      students.each do |s|
+        row = []
+        if s.uic
+          row << s.uic
+        else
+          row << ''
+        end
+        row << s.sident
+        row << s.scholarship_claimed_at.strftime('%d.%m.%Y')
+        if s.scholarship_supervised_at && 
+          s.scholarship_supervised_at > TermsCalculator.this_year_start
+          row << s.scholarship_supervised_at.strftime('%d.%m.%Y') 
+        else
+          row << ''
+        end
+        row << s.index.account_bank_number
+        row << s.index.full_account_number
+        csv << row
+      end
+    end
+    outfile.close
+  end
 
   def self.export_stipendia(user, file = 'stipendia.csv')
     outfile = File.open(file, 'wb')

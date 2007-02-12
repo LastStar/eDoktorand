@@ -19,6 +19,7 @@ class Student < Person
   N_('pass_defense')
   N_('Pass defense')
   N_('Switch study')
+  N_('finish_to')
   
   # returns faculty on which student is
   def faculty

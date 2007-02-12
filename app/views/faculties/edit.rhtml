@@ -2,11 +2,11 @@
 
 <%= error_messages_for 'faculty' %>
 <!--[form:faculty]-->
-<%= start_form_tag :action => 'update' %>
+<% form_tag :action => 'update' do %>
 <%= hidden_field 'faculty', 'id' %>
 <p><label for="faculty_name">Name</label><br /><%= text_field 'faculty', 'name'  %></p>
 <input type="submit" value="Update" />
-<%= end_form_tag %>
+<% end %>
 <!--[eoform:faculty]-->
 
 

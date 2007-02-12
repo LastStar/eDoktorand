@@ -1,12 +1,12 @@
 
-<% if index.finished? %>
+<% if index.finished_on? %>
 <h5><%= _("This study has been finished") %></h5>
 <ul>
   <li>
   <div class='info'>
     <%= index.finished_on.strftime('%d. %m. %Y') %>
   </div>
-  <b><%= _("finished on") %>: </b>
+  <b><%= _("finished_to") %>: </b>
   </li>
 </ul>
 <% end %>

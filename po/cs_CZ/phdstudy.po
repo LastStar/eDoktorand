@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2007-01-12 13:19+0100\n"
+"POT-Creation-Date: 2007-02-12 11:16+0100\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -59,6 +59,10 @@ msgstr "Uchazeči o studium"
 #: app/controllers/disert_themes_controller.rb:13
 msgid "Upload methodology"
 msgstr "nahrání metodiky"
+
+#: app/controllers/exam_terms_controller.rb:13
+msgid "List of admittance terms"
+msgstr "Výpis komisí příjímacích komisí"
 
 #: app/controllers/exams_controller.rb:32
 #: app/views/exams/_with_student.rhtml:1 app/views/exams/_with_subject.rhtml:1
@@ -237,7 +241,7 @@ msgstr "ukončeno"
 msgid "interupted"
 msgstr "přerušeno"
 
-#: app/helpers/application_helper.rb:39 app/helpers/students_helper.rb:11
+#: app/helpers/application_helper.rb:39 app/helpers/students_helper.rb:12
 #: app/models/index.rb:333
 msgid "absolved"
 msgstr "absolvoval"
@@ -402,7 +406,7 @@ msgstr "zpět a vyřadit ze seznamu"
 msgid "finished on"
 msgstr "ukončen dne"
 
-#: app/helpers/application_helper.rb:506 app/helpers/students_helper.rb:130
+#: app/helpers/application_helper.rb:506 app/helpers/students_helper.rb:131
 msgid "final exam term"
 msgstr "termín SDZ"
 
@@ -468,7 +472,7 @@ msgid "list"
 msgstr "seznam"
 
 #: app/helpers/candidates_helper.rb:78 app/helpers/exams_helper.rb:19
-#: app/helpers/probation_terms_helper.rb:16 app/helpers/students_helper.rb:268
+#: app/helpers/probation_terms_helper.rb:16 app/helpers/students_helper.rb:269
 msgid "print this list"
 msgstr "vytisknout tento seznam"
 
@@ -642,55 +646,55 @@ msgstr "kontrolní tabulka"
 msgid "claim_accomodation_scholarship"
 msgstr "ubytovací stipendium"
 
-#: app/helpers/students_helper.rb:81
+#: app/helpers/students_helper.rb:82
 msgid "unfinish study"
 msgstr "obnovit"
 
-#: app/helpers/students_helper.rb:85
+#: app/helpers/students_helper.rb:86
 msgid "finish study"
 msgstr "ukončit"
 
-#: app/helpers/students_helper.rb:94
+#: app/helpers/students_helper.rb:95
 msgid "switch study"
 msgstr "změnit formu"
 
-#: app/helpers/students_helper.rb:101
+#: app/helpers/students_helper.rb:102
 msgid "interrupt study"
 msgstr "přerušit"
 
-#: app/helpers/students_helper.rb:107
+#: app/helpers/students_helper.rb:108
 msgid "confirm interrupt"
 msgstr "potvrdit přerušení"
 
-#: app/helpers/students_helper.rb:115
+#: app/helpers/students_helper.rb:116
 msgid "end interrupt"
 msgstr "ukončit přerušení"
 
-#: app/helpers/students_helper.rb:123
+#: app/helpers/students_helper.rb:124
 msgid "create SP"
 msgstr "vytvoř SP"
 
-#: app/helpers/students_helper.rb:136
+#: app/helpers/students_helper.rb:137
 msgid "confirm interupt"
 msgstr "potvrdit přerušení"
 
-#: app/helpers/students_helper.rb:143
+#: app/helpers/students_helper.rb:144
 msgid "supervise scholarship"
 msgstr "potvrdit žádost"
 
-#: app/helpers/students_helper.rb:150
+#: app/helpers/students_helper.rb:151
 msgid "Fast filter"
 msgstr "Rychlý filtr"
 
-#: app/helpers/students_helper.rb:156
+#: app/helpers/students_helper.rb:157
 msgid "Detail filter"
 msgstr "Detailní filtr"
 
-#: app/helpers/students_helper.rb:165
+#: app/helpers/students_helper.rb:166
 msgid "actions"
 msgstr "akce"
 
-#: app/helpers/students_helper.rb:270
+#: app/helpers/students_helper.rb:271
 msgid "export_xls"
 msgstr ""
 
@@ -1083,7 +1087,7 @@ msgid "Login"
 msgstr "Přihlásit"
 
 #: app/views/account/login.rhtml:25 app/views/candidates/admit.rhtml:17
-#: app/views/interupts/index.rhtml:16 app/views/students/end_study.rhtml:20
+#: app/views/interupts/index.rhtml:16 app/views/students/end_study.rhtml:23
 #: app/views/study_plans/final_application.rhtml:3
 msgid "submit"
 msgstr "odeslat"
@@ -1327,7 +1331,7 @@ msgstr ""
 msgid "file"
 msgstr "soubor"
 
-#: app/views/disert_themes/methodology.rhtml:10
+#: app/views/disert_themes/methodology.rhtml:11
 #: app/views/disert_themes/upload_methodology.rhtml:12
 msgid "upload"
 msgstr "nahrát"
@@ -1600,6 +1604,7 @@ msgstr "Přihláška ke studiu v doktorském studijním programu"
 
 #: app/views/form/preview.rhtml:11 app/views/scholarships/claim.rhtml:109
 #: app/views/scholarships/claim.rhtml:121
+#: app/views/students/end_study.rhtml:15
 msgid "Date"
 msgstr "Datum"
 
@@ -2238,7 +2243,7 @@ msgstr "forma studia"
 msgid "year"
 msgstr "ročník"
 
-#: app/views/students/end_study.rhtml:16
+#: app/views/students/end_study.rhtml:19
 #: app/views/students/end_study_confirm.rhtml:16
 msgid "Subject of end study"
 msgstr "Předmět ukončení studia"

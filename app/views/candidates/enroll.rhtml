@@ -1,4 +1,4 @@
-<%= start_form_tag :action => 'confirm_enroll', :id => @candidate %>	
+<% form_tag :action => 'confirm_enroll', :id => @candidate do %>	
 
 
   <label for="user_login"><%=_("Desired login")%>:</label><br/>
@@ -9,7 +9,7 @@
   <%= password_field "user", "password_confirmation", :size => 30 %><br/>
   <%= submit_tag _("Enroll") %>
 
-<%= end_form_tag %>
+<% end %>
 
 <div class='links'>
   <%= link_to _('back'), :action => 'list' %>

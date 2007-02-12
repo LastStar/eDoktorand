@@ -3,7 +3,7 @@ class Coridor < ActiveRecord::Base
   belongs_to :faculty
   has_many :candidates, :conditions => "finished_on IS NOT NULL"
   has_many :approved_candidates, :class_name => 'Candidate',
-      :conditions => "finished_on IS NOT NULL and ready_on IS NOT NULL"
+           :conditions => "finished_on IS NOT NULL and ready_on IS NOT NULL"
   has_many :obligate_subjects, :order => 'subjects.label', :include => :subject
   has_many :voluntary_subjects, :order => 'subjects.label', :include => :subject
   has_many :seminar_subjects, :order => 'subjects.label', :include => :subject

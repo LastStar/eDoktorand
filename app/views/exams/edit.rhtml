@@ -1,5 +1,5 @@
-<%= start_form_tag :action => 'update', :id => @exam %>
+<% form_tag :action => 'update', :id => @exam do %>
   <%= render_partial "form" %>
-<%= end_form_tag %>
+<% end %>
 
 <%= render_partial 'back' %>

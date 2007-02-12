@@ -10,7 +10,7 @@ class ExamTermsController < ApplicationController
   end
 
   def list
-    @title = 'Výpis komisí příjimacích zkoušek'
+    @title = _('List of admittance terms')
     @exam_term_pages, @exam_terms = paginate :admission_term, :per_page => 10,
       :conditions => ["coridor_id IN (?)", @faculty.coridors_ids]
   end

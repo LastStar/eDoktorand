@@ -1,4 +1,4 @@
-<%= start_form_tag :action=> "login" %>
+<% form_tag :action=> "login" do %>
 
 <div title="<%= _('Login form') %>" id="loginform" class="form">
     <% if @message %>
@@ -26,7 +26,7 @@
     </div>
 </div>
 
-<%= end_form_tag %>
+<% end %>
 
 <% unless @actualities.empty? %>
 <h5><%= _('Actualities') %></h5>
