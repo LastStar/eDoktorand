@@ -62,4 +62,8 @@ class Person < ActiveRecord::Base
       email.name
     end
   end
+
+  def <=>(other)
+    lastname <=> other.lastname
+  end
 end

@@ -42,4 +42,12 @@ class Coridor < ActiveRecord::Base
       self.for_select(:faculty => user.person.faculty, :accredited => true)
     end
   end
+
+  def tutors_for_select
+    tutors.sort.map {|t| [t.display_name, t.id]}
+  end
+
+  def english_with_code
+    code + ' ' + name_english.to_s
+  end
 end

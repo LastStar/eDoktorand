@@ -1,0 +1,13 @@
+body {font-size: 16px}
+#header h2, h1, h3 {text-align: center;}
+#logo {text-align: center; padding-bottom: 1em;}
+#supplement li {border: none}
+#supplement table {margin-top: .2ex; margin-bottom: 1ex; margin-left: auto; margin-right: auto; border-collapse: collapse; width: 40em}
+#supplement th, td {padding: .5em; border: 1px solid black}
+th.short {width: 5em}
+#supplement li {list-style: none}
+#supplement p {font-size: smaller; margin: .3em 0 0 0;}
+#supplement .sub_list {padding-bottom: 1em}
+.informations  li {font-size: smaller}
+
+

@@ -1,5 +1,6 @@
 require 'log4r'
 require 'terms_calculator'
+require 'csv'
 class CSVExporter
   include Log4r
 
@@ -196,16 +197,16 @@ class CSVExporter
     outfile.close
   end
 
-  def self.export_sident_with_account
+  def self.export_sident_with_account(indices = nil)
     file = "sident_account.csv"
     outfile = File.open(file, 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
-      is = Index.find(:all, 
+      indices ||= Index.find(:all, 
                       :conditions => "account_number is not 
                                       null and account_number <> ''",
                       :order => 'department_id')
-      @@mylog.info "There are #{is.size} students"
-      is.each do |i|
+      @@mylog.info "There are #{indices.size} students"
+      indices.each do |i|
         # TODO redo with index instance method
         row = []
         row << i.student.sident

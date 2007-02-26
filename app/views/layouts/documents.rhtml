@@ -1,11 +1,38 @@
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= @htmllang %>" lang="<%= @htmllang %>">
 <head>
-  <title>Documents: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="pragma" content="nocache"/>
+  <meta http-equiv="expires" content="<%= Time.now %>"/>
+  <title><%= @title %></title>
+  <link href="/stylesheets/standard.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/documents.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css"/>
+  <link href="/stylesheets/print_documents.css" media="print" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-
-<%= @content_for_layout %>
-
+<body onload='Element.hide("loading")'>
+  <%= javascript_include_tag :defaults %>
+    <img id="Head" src="/images/header.jpg" width="760" height="77"
+    alt="logo"/><div id="HeadMenu">
+  <% if @user %>
+    <div id="HeadMenuContent">
+    <%= main_menu %>
+    <h1 id="title"><%= _(@user.person.type.to_s) + ": #{@user.person.display_name}" %></h1>
+    </div>
+  <% end %>
+  </div>
+  <div id="main">
+    <div id='loading'><%= _("loading ...") %></div>
+    <%= @content_for_layout %>
+  </div>
+  <div id="footer" class="footer">
+   <div class="footerLeft"> 
+    <%= print_copyright %>
+   </div> 
+      
+     <%=mail_to ('helpdesk@czu.cz','HELPDESK')%>, +420 224384444
+    
+  </div>
 </body>
 </html>

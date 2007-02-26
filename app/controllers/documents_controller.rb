@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+
   def index
     list
     render_action 'list'
@@ -43,5 +44,10 @@ class DocumentsController < ApplicationController
   def destroy
     Document.find(@params[:id]).destroy
     redirect_to :action => 'list'
+  end
+
+  def diploma_supplement
+    @index = Index.find params[:id]
+    @student = @index.student
   end
 end
