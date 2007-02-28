@@ -24,6 +24,7 @@ class InteruptsController < ApplicationController
     @interupt ||= @session['interupt']
     @interupt.save
     if @user.has_role?('student')
+      Notifications::deliver_interupt_alert(@interupt.index.study_plan,@interupt)
       redirect_to(:controller => 'interupts', :action => 'print_interupt' ,:id => 
         @interupt.id)
     else

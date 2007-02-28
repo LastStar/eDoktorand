@@ -43,6 +43,35 @@ class Notifications < ActionMailer::Base
     @from = 'pepe@gravastar.cz'
     @sent_on = sent_at
   end
+
+  def interupt_alert(study_plan, interupt, sent_at = Time.now)
+  @subject = 'Vyrozumnění o přerušení studijního plánu'
+    #@body['department_name'] = study_plan.index.department.name
+    @body['first_name'] = study_plan.index.student.firstname
+    @body['last_name'] = study_plan.index.student.lastname
+    if study_plan.index.student.birth_number == nil
+     @body['birth_number'] = ''
+      else
+       @body['birth_number'] = 's rodným číslem'  + study_plan.index.student.birth_number
+    end
+    @body['year'] = study_plan.index.year
+    if interupt.index.interupted?
+      @body['interupted_on'] = interupt.index.interupted_on.strftime('%d. %m. %Y')
+    elsif interupt.index.admited_interupt?
+      @body['admited_interrupt_start'] = interupt.index.interupt.start_on.strftime('%m/%Y')
+      @body['admited_interrupt_duration'] = interupt.index.interupt.duration
+    else
+      @body['last_interrupt'] = interupt.start_on.strftime('%d. %m. %Y')
+    end
+    @body['tutor'] = study_plan.index.tutor.display_name
+    @body['coridor'] = study_plan.index.coridor.name
+    @body['sent_on'] = sent_at
+    @body['note'] = interupt.note
+    @recipients = study_plan.index.faculty.secretary.email
+    @from = 'edoktorand@edoktorand.czu.cz'
+    @sent_on = sent_at
+  end
+
   
   #send study plan of student
   def study_plan_create(study_plan, sent_at = Time.now)
