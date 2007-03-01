@@ -1,6 +1,6 @@
 <%= save_form(@scholarship) %>
 <div class='small'>
-  <%= text_field 'scholarship', 'amount', 'size' => 6, 'maxlength' => 6 %> <%= _('Kc') %> &nbsp;
+  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'value' => _('amount') %> <%= _('Kc') %> &nbsp;
   <%= image_submit_tag('ok.png') %>
   <%= close_link("scholarship_form_#{@scholarship.index.id}") %>
 </div>
@@ -8,9 +8,9 @@
   &nbsp;&nbsp;&nbsp;
 </div>
 <div class='small'>
-  <%= text_field 'scholarship', 'commission_head', 'size' => 5, 'maxlength' => 5 %> / 
-  <%= text_field 'scholarship', 'commission_body', 'size' => 4, 'maxlength' => 4 %> / 
-  <%= text_field 'scholarship', 'commission_tail', 'size' => 6, 'maxlength' => 6 %>
+  <%= text_field 'scholarship', 'commission_head', 'size' => 10, 'value' => _('workplace')%> / 
+  <%= text_field 'scholarship', 'commission_body', 'size' => 10, 'value' => _('commission') %> / 
+  <%= text_field 'scholarship', 'commission_tail', 'size' => 10, 'value' => _('activity') %>
 </div>
 <div class='small'>
   &nbsp;&nbsp;&nbsp;

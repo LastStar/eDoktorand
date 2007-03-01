@@ -2,7 +2,7 @@ class ExtraScholarship < Scholarship
   untranslate_all
   validates_length_of :commission_head, :is => 5
   validates_length_of :commission_body, :is => 4
-  validates_length_of :commission_tail, :is => 6
+  validates_length_of :commission_tail, :is => 4
   
   def self.find_all_unpayed_by_index(index_id)
     find(:all, :conditions => ['index_id = ? and payed_on is null', index_id])
