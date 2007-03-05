@@ -23,10 +23,15 @@ class Coridor < ActiveRecord::Base
                    ['']
                  end
     if options[:faculty]
-      faculty = options[:faculty].is_a?(Faculty) ? options[:faculty].id : options[:faculty]
-      conditions.first << ' AND' if !conditions.first.empty?
-      conditions.first << ' faculty_id = ?'
-      conditions << faculty
+      if options[:faculty] == :all
+        conditions.first << ' AND' if !conditions.first.empty?
+        conditions = '1=1' 
+      else
+        faculty = options[:faculty].is_a?(Faculty) ? options[:faculty].id : options[:faculty]
+        conditions.first << ' AND' if !conditions.first.empty?
+        conditions.first << ' faculty_id = ?'
+        conditions << faculty
+      end
     end
     result = find(:all, :conditions => conditions, 
                   :order => 'name').map {|d| [d.name, d.id]}

@@ -229,6 +229,8 @@ module StudentsHelper
     opts = {:include_empty => options[:include_empty]}
     unless options[:user].has_role?('vicerector')
       opts[:faculty] = options[:user].person.faculty
+    else
+      opts[:faculty] = :all
     end
     select_options = coridor_options(opts)
     content_tag('select', select_options, {'id' => "filter_by_coridor", 
