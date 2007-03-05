@@ -61,6 +61,6 @@ class Scholarship < ActiveRecord::Base
   end
   
   def self.prepare_time?
-    !(9..23).include? Date.today.day
+    !(6..19).include? Date.today.day
   end
 end
