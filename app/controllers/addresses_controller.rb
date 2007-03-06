@@ -35,21 +35,21 @@ class AddressesController < ApplicationController
   
   # saves the contacts to dbase
   def save
-    @student = Student.find(@params['address']['student_id'])
+    @student = Student.find(params[:address][:student_id])
     #first the email
-    @student.email = Contact.create(@params['email'])
-    @student.phone = Contact.create(@params['phone'])
+    @student.email = Contact.create(params[:email])
+    @student.phone = Contact.create(params[:phone])
 
     # and address
     if @student.address
-      @student.address = Address.create(@params['address'])
+      @student.address = Address.create(params[:address])
       @student.address.save
     else
-      address = Address.new(@params['address'])
+      address = Address.new(params[:address])
       address.student = @student
       address.save
     end
-    @student.citizenship = @params['student']['citizenship']
+    @student.citizenship = params[:student][:citizenship]
     @student.save
     #redirect_to :controller => 'study_plans'
   end
@@ -61,7 +61,7 @@ class AddressesController < ApplicationController
     else
       @address = Address.find(params[:address][:id])
     end
-    @address.update_attributes(@params[:address])
+    @address.update_attributes(params[:address])
   end
   
   # saves the city of address to db
@@ -71,7 +71,7 @@ class AddressesController < ApplicationController
     else
       @address = Address.find(params[:address][:id])
     end
-    @address.update_attributes(@params['address'])
+    @address.update_attributes(params[:address])
   end
   
   # saves the zip of address to db
@@ -81,7 +81,7 @@ class AddressesController < ApplicationController
     else
       @address = Address.find(params[:address][:id])
     end
-    @address.update_attributes(@params['address'])
+    @address.update_attributes(params[:address])
   end
 
   # saves the description number of address to db
@@ -91,7 +91,7 @@ class AddressesController < ApplicationController
     else
       @address = Address.find(params[:address][:id])
     end
-    @address.update_attributes(@params['address'])
+    @address.update_attributes(params[:address])
   end
 
   # sets title of the controller

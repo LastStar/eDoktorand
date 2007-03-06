@@ -5,7 +5,7 @@ should be consulted with your tutor.") %>
 <div id="done">
  <%= content_tag('h5', _("Study plan")) %>
 <ul id='studyPlan'>
-  <% unless @session['plan_subjects'].empty? %>
+  <% unless session[:plan_subjects].empty? %>
   <%= render_requisite %>
   <% end %>
 </ul>

@@ -126,7 +126,7 @@ module StudyPlansHelper
 
   def render_requisite
     render(:partial => "shared/subjects", 
-           :locals => {:subjects => @session['plan_subjects'],
+           :locals => {:subjects => session[:plan_subjects],
            :title => _("requisite subjects")})
   end
 

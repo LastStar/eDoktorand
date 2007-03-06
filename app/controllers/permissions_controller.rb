@@ -13,7 +13,7 @@ class PermissionsController < ApplicationController
   end
 
   def show
-    @permission = Permission.find(@params[:id])
+    @permission = Permission.find(params[:id])
   end
 
   def new
@@ -21,7 +21,7 @@ class PermissionsController < ApplicationController
   end
 
   def create
-    @permission = Permission.new(@params[:permission])
+    @permission = Permission.new(params[:permission])
     if @permission.save
       flash['notice'] = 'Permission was successfully created.'
       redirect_to :action => 'list'
@@ -31,12 +31,12 @@ class PermissionsController < ApplicationController
   end
 
   def edit
-    @permission = Permission.find(@params[:id])
+    @permission = Permission.find(params[:id])
   end
 
   def update
-    @permission = Permission.find(@params[:id])
-    if @permission.update_attributes(@params[:permission])
+    @permission = Permission.find(params[:id])
+    if @permission.update_attributes(params[:permission])
       flash['notice'] = 'Permission was successfully updated.'
       redirect_to :action => 'show', :id => @permission
     else
@@ -45,7 +45,7 @@ class PermissionsController < ApplicationController
   end
 
   def destroy
-    Permission.find(@params[:id]).destroy
+    Permission.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
 end

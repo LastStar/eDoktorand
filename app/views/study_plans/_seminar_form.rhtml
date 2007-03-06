@@ -8,7 +8,7 @@
   <label>
   <%= _("seminar subject") %>
   </label>
-  <% subjects = seminar_ids(@session['study_plan'].index.coridor) %>
+  <% subjects = seminar_ids(session[:study_plan].index.coridor) %>
   <%= content_tag('select', options_for_select(subjects),
     { 'id' => "plan_subject", 'name' => "plan_subject"}) %><br/>  
 </li>

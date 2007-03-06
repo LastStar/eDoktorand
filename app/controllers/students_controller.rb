@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
   def search
     # TODO redone with class method
     conditions = [' AND people.lastname like ?']
-    conditions << "#{@params['search_field']}%"
+    conditions << "#{params[:search_field]}%"
     @indices = Index.find_for(@user, :conditions => conditions, :order => 
       'people.lastname, study_plans.created_on')
     render(:partial => 'list')
@@ -41,38 +41,38 @@ class StudentsController < ApplicationController
   
   # multiple filtering
   def multiple_filter
-    @indices = Index.find_by_criteria(:faculty => @params['filter_by_faculty'],
-      :year => @params['filter_by_year'].to_i, :department => 
-      @params['filter_by_department'].to_i, :coridor => 
-      @params['filter_by_coridor'].to_i, :status => @params['filter_by_status'],
-      :study_status => @params['filter_by_study_status'], :form => 
-      @params['filter_by_form'].to_i, :user => @user, :order => 'people.lastname')
+    @indices = Index.find_by_criteria(:faculty => params[:filter_by_faculty],
+      :year => params[:filter_by_year].to_i, :department => 
+      params[:filter_by_department].to_i, :coridor => 
+      params[:filter_by_coridor].to_i, :status => params[:filter_by_status],
+      :study_status => params[:filter_by_study_status], :form => 
+      params[:filter_by_form].to_i, :user => @user, :order => 'people.lastname')
     render(:partial => 'list')
   end
   
   # renders student details
   def show
-    index = Index.find(@params['id'])
+    index = Index.find(params[:id])
     render(:partial => 'show', :locals => {:index => index})
   end
   
   # renders contact for student
   def contact
     render_partial('contact', :student =>
-      Student.find(@params['id']))
+      Student.find(params[:id]))
   end
   
   # finishes study
   def finish
-    @index = Index.find(@params['id'])
-    date = @params['date']
+    @index = Index.find(params[:id])
+    date = params[:date]
     @index.finish!(Date.civil(date['year'].to_i, date['month'].to_i))
     render(:inline => "<%= redraw_student(@index) %>")
   end
   
   # unfinishes study
   def unfinish
-    @index = Index.find(@params['id'])
+    @index = Index.find(params[:id])
     @index.unfinish!
     render(:inline => "<%= redraw_student(@index) %>")
   end
@@ -87,7 +87,7 @@ class StudentsController < ApplicationController
 
   # supervise scholarship by faculty_secretary
   def supervise_scholarship_claim
-    @index = Index.find(@params['id'])
+    @index = Index.find(params[:id])
     @student = @index.student
     @student.update_attribute('scholarship_supervised_at', Time.now)
     render(:inline => "<%= redraw_student(@index) %>")
@@ -95,7 +95,7 @@ class StudentsController < ApplicationController
 
   # renders time form for other actions
   def time_form
-    @index = Index.find(@params['id'])
+    @index = Index.find(params[:id])
     @form_url = {:action => params['form_action'], :id => params['id']}
     @form_url[:controller] = params['form_controller'] || 'students'
   end
@@ -264,15 +264,15 @@ class StudentsController < ApplicationController
     end
     unless @user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
       # default filter to waiting for approvement 
-      @session['filter'] ||= 2 
+      session[:filter] ||= 2 
     else
-      @session['filter'] ||= -1 
+      session[:filter] ||= -1 
     end
 
   end
 
   def do_filter
-    @filter = @params['filter_by'] || @session['filter']
+    @filter = params[:filter_by] || session[:filter]
     case @filter.to_i
     when 4
       @indices = Index.find_tutored_by(@user, :unfinished => true)
@@ -285,6 +285,6 @@ class StudentsController < ApplicationController
     when 0
       @indices = Index.find_for(@user, :order => @order)
     end
-    @session['filter'] = @filter
+    session[:filter] = @filter
   end
 end

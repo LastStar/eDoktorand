@@ -13,7 +13,7 @@ class CoridorsController < ApplicationController
   end
 
   def show
-    @coridor = Coridor.find(@params['id'])
+    @coridor = Coridor.find(params[:id])
   end
 
   def new
@@ -21,7 +21,7 @@ class CoridorsController < ApplicationController
   end
 
   def create
-    @coridor = Coridor.new(@params['coridor'])
+    @coridor = Coridor.new(params[:coridor])
     if @coridor.save
       flash['notice'] = 'Coridor was successfully created.'
       redirect_to :action => 'list'
@@ -31,12 +31,12 @@ class CoridorsController < ApplicationController
   end
 
   def edit
-    @coridor = Coridor.find(@params['id'])
+    @coridor = Coridor.find(params[:id])
   end
 
   def update
-    @coridor = Coridor.find(@params['coridor']['id'])
-    if @coridor.update_attributes(@params['coridor'])
+    @coridor = Coridor.find(params[:coridor][:id])
+    if @coridor.update_attributes(params[:coridor])
       flash['notice'] = 'Coridor was successfully updated.'
       redirect_to :action => 'show', :id => @coridor.id
     else
@@ -45,7 +45,7 @@ class CoridorsController < ApplicationController
   end
 
   def destroy
-    Coridor.find(@params['id']).destroy
+    Coridor.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
 end

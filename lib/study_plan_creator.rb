@@ -3,7 +3,7 @@ module StudyPlanCreator
   # adds requisite subjects to study plan
   def create_requisite
     @student.index.coridor.requisite_subjects.each do |sub|
-      @session['plan_subjects'] << PlanSubject.new('subject_id' => 
+      session[:plan_subjects] << PlanSubject.new('subject_id' => 
       sub.subject.id, 'finishing_on' => sub.requisite_on)
     end
   end
@@ -12,7 +12,7 @@ module StudyPlanCreator
   def create_obligate
     @type = 'obligate'
     @plan_subjects = []
-    @session['study_plan'].index.coridor.obligate_subjects.each do |sub|
+    session[:study_plan].index.coridor.obligate_subjects.each do |sub|
       ps = PlanSubject.new
       ps.id = sub.subject.id
       ps.subject = sub.subject
@@ -25,7 +25,7 @@ module StudyPlanCreator
   def create_seminar
     @type = 'seminar'
     @plan_subjects = []
-    @session['study_plan'].index.coridor.seminar_subjects.each do |sub|
+    session[:study_plan].index.coridor.seminar_subjects.each do |sub|
       (ps = PlanSubject.new('subject_id' => sub.subject.id)).id = sub.subject.id
       @plan_subjects << ps
     end
@@ -48,7 +48,7 @@ module StudyPlanCreator
     @type = 'voluntary'
     @plan_subjects = []
     count = FACULTY_CFG[@student.faculty.id]['subjects_count'] -
-      @session['plan_subjects'].size
+      session[:plan_subjects].size
     count.times do |index|
       (ps = PlanSubject.new).id = index + 1
       @plan_subjects << ps
@@ -67,7 +67,7 @@ module StudyPlanCreator
   def extract_voluntary(remap_id = false)
     external = 0
     @plan_subjects = []
-    @params['plan_subject'].each do |id, ps|
+    params[:plan_subject].each do |id, ps|
       next if ps['subject_id'] == '-1'
       if ps['subject_id'] == '0' 
         external += 1
@@ -76,7 +76,7 @@ module StudyPlanCreator
         unless subject.valid?
           @errors << _("title for external subject cannot be empty")
         end
-        esd = subject.build_external_subject_detail(@params['external_subject_detail'][id])
+        esd = subject.build_external_subject_detail(params[:external_subject_detail][id])
         unless esd.valid?
           @errors << _("university for external subject cannot be empty")
         else
@@ -101,7 +101,7 @@ module StudyPlanCreator
   # extracts language subjects from request
   def extract_language(remap_id = false)
     @plan_subjects = []
-    @params['plan_subject'].each do |id, ps|
+    params[:plan_subject].each do |id, ps|
       plan_subject = PlanSubject.new(ps)
       plan_subject.id = id if remap_id
       last_semester(ps['finishing_on'])
@@ -110,16 +110,16 @@ module StudyPlanCreator
   end
   # controls last semester
   def last_semester(semester)
-    @session['last_semester'] ||= 0
-    if @session['last_semester'] < semester.to_i
-      @session['last_semester'] = semester.to_i   
+    session[:last_semester] ||= 0
+    if session[:last_semester] < semester.to_i
+      session[:last_semester] = semester.to_i   
     end
   end
   # resets variables used in creation form
   def prepare_plan_session
-    @session['study_plan'] = @study_plan = @student.index.build_study_plan
-    @session['plan_subjects'] = []
-    @session['disert_theme'] = nil
-    @session['last_semester'] = nil
+    session[:study_plan] = @study_plan = @student.index.build_study_plan
+    session[:plan_subjects] = []
+    session[:disert_theme] = nil
+    session[:last_semester] = nil
   end
 end

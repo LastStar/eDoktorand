@@ -4,7 +4,7 @@
 <ul class='nodecor'>
 <li>
   <label for="study_plan_finishing_to"><%= _("semester of final exam") %>:</label>
-  <%= select 'study_plan', 'finishing_to', @session['last_semester']..6 %>
+  <%= select 'study_plan', 'finishing_to', session[:last_semester]..6 %>
   <%= "." + _("semester") %> 
 </li>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
@@ -37,7 +37,7 @@
 </li>
 <li>
   <label for="disert_theme_finishing_to"><%= _("term of disert theme defense") %></label>
-  <%= select 'disert_theme', 'finishing_to', @session['last_semester']..6 %><br/>
+  <%= select 'disert_theme', 'finishing_to', session[:last_semester]..6 %><br/>
 </li>
 <li>
   <label for="disert_theme_methodology_summary"><%= _("methodology summary") %>:</label>

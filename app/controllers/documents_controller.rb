@@ -10,7 +10,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @document = Document.find(@params[:id])
+    @document = Document.find(params[:id])
   end
 
   def new
@@ -18,7 +18,7 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.new(@params[:document])
+    @document = Document.new(params[:document])
     if @document.save
       flash['notice'] = 'Document was successfully created.'
       redirect_to :action => 'list'
@@ -28,12 +28,12 @@ class DocumentsController < ApplicationController
   end
 
   def edit
-    @document = Document.find(@params[:id])
+    @document = Document.find(params[:id])
   end
 
   def update
-    @document = Document.find(@params[:id])
-    if @document.update_attributes(@params[:document])
+    @document = Document.find(params[:id])
+    if @document.update_attributes(params[:document])
       flash['notice'] = 'Document was successfully updated.'
       redirect_to :action => 'show', :id => @document
     else
@@ -42,7 +42,7 @@ class DocumentsController < ApplicationController
   end
 
   def destroy
-    Document.find(@params[:id]).destroy
+    Document.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
 

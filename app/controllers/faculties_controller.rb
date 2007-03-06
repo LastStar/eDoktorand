@@ -13,7 +13,7 @@ class FacultiesController < ApplicationController
   end
 
   def show
-    @faculty = Faculty.find(@params['id'])
+    @faculty = Faculty.find(params[:id])
   end
 
   def new
@@ -21,7 +21,7 @@ class FacultiesController < ApplicationController
   end
 
   def create
-    @faculty = Faculty.new(@params['faculty'])
+    @faculty = Faculty.new(params[:faculty])
     if @faculty.save
       flash['notice'] = 'Faculty was successfully created.'
       redirect_to :action => 'list'
@@ -31,12 +31,12 @@ class FacultiesController < ApplicationController
   end
 
   def edit
-    @faculty = Faculty.find(@params['id'])
+    @faculty = Faculty.find(params[:id])
   end
 
   def update
-    @faculty = Faculty.find(@params['faculty']['id'])
-    if @faculty.update_attributes(@params['faculty'])
+    @faculty = Faculty.find(params[:faculty][:id])
+    if @faculty.update_attributes(params[:faculty])
       flash['notice'] = 'Faculty was successfully updated.'
       redirect_to :action => 'show', :id => @faculty.id
     else
@@ -45,7 +45,7 @@ class FacultiesController < ApplicationController
   end
 
   def destroy
-    Faculty.find(@params['id']).destroy
+    Faculty.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
 end

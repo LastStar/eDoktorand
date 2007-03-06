@@ -35,13 +35,13 @@ module CandidatesHelper
     links = ''
     for arg in args
       links << '&nbsp;'
-      if @session['category'] == arg.first 
-        link = arg.last + (@session['order'] != ' desc' ? ' &darr;' : ' &uarr;')
+      if session[:category] == arg.first 
+        link = arg.last + (session[:order] != ' desc' ? ' &darr;' : ' &uarr;')
       else
         link = arg.last + ' &uarr;'
       end
       links << link_to(link, :action => action, :category => arg.first, 
-      :prefix => @params['prefix'])
+      :prefix => params[:prefix])
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
@@ -50,13 +50,13 @@ module CandidatesHelper
     links = ''
     for arg in args
       links << '&nbsp;'
-      if @session['category'] == arg.first 
-        link = arg.last + (@session['order'] != ' desc' ? ' &darr;' : ' &uarr;')
+      if session[:category] == arg.first 
+        link = arg.last + (session[:order] != ' desc' ? ' &darr;' : ' &uarr;')
       else
         link = arg.last + ' &uarr;'
       end
       links << link_to(link, :action => action, :filter => filtered_by, 
-        :category => arg.first, :prefix => @params['prefix'])
+        :category => arg.first, :prefix => params[:prefix])
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
@@ -72,7 +72,7 @@ module CandidatesHelper
   # prints list links
   def list_links
     links = ''
-    if @params['prefix']
+    if params[:prefix]
       links << link_to(_("list"), {:prefix => nil})
       links << '&nbsp;'
       links << link_to_function(_('print this list'), 'window.print();')
@@ -88,8 +88,8 @@ module CandidatesHelper
       'close_all_histories()')
       links << '&nbsp;'
       links << link_to(_("table"), {:prefix => 'table_', :coridor =>
-      @params['coridor'], :filter => @params['filter'], :category =>
-      @params['category']})
+      params[:coridor], :filter => params[:filter], :category =>
+      params[:category]})
       links << '&nbsp;'
       links << link_to(_("summary"), {:action => 'summary', :id => "department"})
       links << '&nbsp;'
@@ -111,9 +111,9 @@ module CandidatesHelper
   # print summary department/coridor switcher
   def summary_links
     links = ''
-    links << link_to(_(@params["id"] == "department" ||  !@params["id"] ?
+    links << link_to(_(params[:id] == "department" ||  !params[:id] ?
     "By corridors" : "By departments"), {:action => 'summary', 
-      :id => @params["id"] == "department" ||  !@params["id"] ? 'corridor' : 'department'})
+      :id => params[:id] == "department" ||  !params[:id] ? 'corridor' : 'department'})
     content_tag('div', links, :class => 'links')
   end
   

@@ -14,7 +14,7 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @person = Person.find(@params[:id])
+    @person = Person.find(params[:id])
   end
 
   def new
@@ -22,7 +22,7 @@ class PeopleController < ApplicationController
   end
 
   def create
-    @person = Person.new(@params[:person])
+    @person = Person.new(params[:person])
     if @person.save
       flash['notice'] = 'Person was successfully created.'
       redirect_to :action => 'list'
@@ -32,12 +32,12 @@ class PeopleController < ApplicationController
   end
 
   def edit
-    @person = Person.find(@params[:id])
+    @person = Person.find(params[:id])
   end
 
   def update
-    @person = Person.find(@params[:id])
-    if @person.update_attributes(@params[:person])
+    @person = Person.find(params[:id])
+    if @person.update_attributes(params[:person])
       flash['notice'] = 'Person was successfully updated.'
       redirect_to :action => 'show', :id => @person
     else
@@ -46,20 +46,20 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    Person.find(@params[:id]).destroy
+    Person.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
 
   def tutorship
-    @person = Person.find(@params[:id])
+    @person = Person.find(params[:id])
     @person.update_attribute('type', 'Tutor')
-    @person = Person.find(@params[:id])
+    @person = Person.find(params[:id])
     @tutorship = Tutorship.new
     @tutorship.tutor = @person
   end
 
   def create_tutorship
-    @tutorship = Tutorship.new(@params[:tutorship])
+    @tutorship = Tutorship.new(params[:tutorship])
     if @tutorship.save
       flash['notice'] = 'tutorship was successfully created.'
       redirect_to :action => 'list'

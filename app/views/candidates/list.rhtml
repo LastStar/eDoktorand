@@ -6,7 +6,7 @@ _("by lastname")], ['updated_on', _("by modification")]] %>
 <%= filtered_sort_tags(:list, sort_array, @filtered_by, :message => _("order")) %>
 <%= sort_tags(:list_all, sort_array, :message => _("order all")) %>
 <% unless @candidates.empty? %>
-<%= render_partial @params['prefix'] ? @params['prefix'] + 'list' : 'list' %>
+<%= render_partial params[:prefix] ? params[:prefix] + 'list' : 'list' %>
 
 <%= list_links %>                      
 <%= render_partial 'list_script'%>

@@ -1,7 +1,7 @@
 <% unless @candidate.errors.empty? %>
 <div id='error'>
-<%= _("Error") %>:¨
-<%= @flash['error'] %>
+<%= _("Error") %>:
+<%= flash[:error] %>
 <% if @candidate && !@candidate.errors.empty? %>
 <ul>
 <% @candidate.errors.each do |attr, message| %>

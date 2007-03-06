@@ -48,12 +48,12 @@ class ScholarshipsController < ApplicationController
   end
   
   def edit
-    @scholarship = ExtraScholarship.find(@params['id'])
+    @scholarship = ExtraScholarship.find(params[:id])
     render(:action => 'add')
   end
 
   def save
-    if @params['scholarship']['id'] && !@params['scholarship']['id'].empty?
+    if params[:scholarship][:id] && !params[:scholarship][:id].empty?
       update
     else
       create
@@ -81,8 +81,8 @@ class ScholarshipsController < ApplicationController
   end
     
   def update
-    @scholarship = Scholarship.find(@params['scholarship']['id'])
-    unless @scholarship.attributes = @params['scholarship']
+    @scholarship = Scholarship.find(params[:scholarship][:id])
+    unless @scholarship.attributes = params[:scholarship]
       render(:action => 'add')
     end  
     @scholarship.amount = 0 if !@scholarship.amount 
@@ -90,14 +90,14 @@ class ScholarshipsController < ApplicationController
 
   def create
     unless @scholarship =
-      eval("#{@params['scholarship']['type']}.new(@params['scholarship'])")
+      eval("#{params[:scholarship][:type]}.new(params[:scholarship])")
       render(:action => 'add')
     end
     @scholarship.amount = 0 if !@scholarship.amount
   end
 
   def destroy
-    scholarship = ExtraScholarship.find(@params['id'])
+    scholarship = ExtraScholarship.find(params[:id])
     @index = scholarship.index
     @old_id = scholarship.id
     scholarship.destroy
@@ -128,9 +128,9 @@ class ScholarshipsController < ApplicationController
   
   # saves scholarship to dbase
   def save_scholarship
-    @index = Index.find(@params['index']['id'])
-    scholarship = @session['scholarship']
-    scholarship.attributes = @params['scholarship']
+    @index = Index.find(params[:index][:id])
+    scholarship = session[:scholarship]
+    scholarship.attributes = params[:scholarship]
     scholarship.index_id = @index.id
     scholarship.save
     @scholarships =

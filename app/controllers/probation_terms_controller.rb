@@ -98,7 +98,7 @@ class ProbationTermsController < ApplicationController
   
   def edit
     @probation_term = ProbationTerm.find(params[:id])
-    @session["probation_term"] = @probation_term
+    session[:probation_term] = @probation_term
   end
 
   def update

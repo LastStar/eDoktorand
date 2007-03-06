@@ -1,4 +1,4 @@
 page.replace_html 'done', render(:partial => "with_subject",
-                           :locals => {:exam => @session['exam']})
+                           :locals => {:exam => session[:exam]})
 page.replace_html 'form', render(:partial => "examined_student_form",
                            :locals => {:students => @students})

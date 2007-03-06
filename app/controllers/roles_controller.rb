@@ -13,7 +13,7 @@ class RolesController < ApplicationController
   end
 
   def show
-    @role = Role.find(@params[:id])
+    @role = Role.find(params[:id])
   end
 
   def new
@@ -21,7 +21,7 @@ class RolesController < ApplicationController
   end
 
   def create
-    @role = Role.new(@params[:role])
+    @role = Role.new(params[:role])
     if @role.save
       flash['notice'] = 'Role was successfully created.'
       redirect_to :action => 'list'
@@ -31,12 +31,12 @@ class RolesController < ApplicationController
   end
 
   def edit
-    @role = Role.find(@params[:id])
+    @role = Role.find(params[:id])
   end
 
   def update
-    @role = Role.find(@params[:id])
-    if @role.update_attributes(@params[:role])
+    @role = Role.find(params[:id])
+    if @role.update_attributes(params[:role])
       flash['notice'] = 'Role was successfully updated.'
       redirect_to :action => 'show', :id => @role
     else
@@ -45,7 +45,7 @@ class RolesController < ApplicationController
   end
 
   def destroy
-    Role.find(@params[:id]).destroy
+    Role.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
 end

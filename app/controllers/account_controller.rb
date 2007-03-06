@@ -8,11 +8,11 @@ class AccountController < ApplicationController
   def login
     @title = _('Login to system')
     if @request.method == :post
-      if @session['user'] = User.authenticate(@params['user_login'], 
-                                              @params['user_password'])
+      if session[:user] = User.authenticate(params[:user_login], 
+                                              params[:user_password])
         redirect_back_or_default welcome_url
       else
-        @login    = @params['user_login']
+        @login    = params[:user_login]
         @message  = _('Login was unsuccesful')
       end
     end
@@ -22,10 +22,10 @@ class AccountController < ApplicationController
   def signup
     case @request.method
       when :post
-        @user = User.new(@params['user'])
+        @user = User.new(params[:user])
         if @user.save      
-          @session['user'] = User.authenticate(@user.login, 
-            @params['user']['password'])
+          session[:user] = User.authenticate(@user.login, 
+            params[:user]['password'])
           flash['notice']  = "Signup successful"
           redirect_back_or_default :action => "welcome"          
         end
@@ -35,8 +35,8 @@ class AccountController < ApplicationController
   end  
   
   def delete
-    if @params['id']
-      @user = User.find(@params['id'])
+    if params[:id]
+      @user = User.find(params[:id])
       @user.destroy
     end
     redirect_back_or_default :action => "welcome"
@@ -60,21 +60,21 @@ class AccountController < ApplicationController
 
   # error page for system
   def error 
-    if !(@flash && @flash['error']) && @exception
-      @flash['error'] = @exception.message
+    if !(flash && flash[:error]) && @exception
+      flash[:error] = @exception.message
     end
   end
 
   def user_roles
-    @user = User.find(@params['id'])
+    @user = User.find(params[:id])
     @unassigned_roles = Role.find(:all) - @user.roles
     @user_roles = @user.roles
   end
 
   def user_roles_update
-    @user = User.find(@params['id'])
-    @roles_up   = Role.find(@params['addedRight'].split(',')) unless @params['addedRight'].empty?
-    @roles_down = Role.find(@params['addedLeft'].split(',')) unless @params['addedLeft'].empty?
+    @user = User.find(params[:id])
+    @roles_up   = Role.find(params[:addedRight].split(',')) unless params[:addedRight].empty?
+    @roles_down = Role.find(params[:addedLeft].split(',')) unless params[:addedLeft].empty?
 
     # adding and removing
     @user.roles.delete(@roles_down) if @roles_down

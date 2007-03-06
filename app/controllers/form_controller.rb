@@ -18,7 +18,7 @@ class FormController < ApplicationController
 
   # preview what has been inserted
   def save
-    @candidate = Candidate.new(@params['candidate'])
+    @candidate = Candidate.new(params[:candidate])
     if @candidate.save
       preview
       render_action 'preview'
@@ -32,8 +32,8 @@ class FormController < ApplicationController
 
   # update candidate
   def update
-    @candidate = Candidate.find(@params['candidate']['id'])
-    if @candidate.update_attributes(@params['candidate'])
+    @candidate = Candidate.find(params[:candidate][:id])
+    if @candidate.update_attributes(params[:candidate])
       preview
       render_action 'preview'
     else
@@ -50,14 +50,14 @@ class FormController < ApplicationController
       @title = _("Check submited")
       flash.now['notice'] = _("Please check what you submited. Then folow guide on the bottom of the page") 
     else
-      @candidate = Candidate.find(@params['id'])
+      @candidate = Candidate.find(params[:id])
       @title = _("Print")
     end
   end
 
   # correct details
   def correct
-    @candidate = Candidate.find(@params['id'])
+    @candidate = Candidate.find(params[:id])
     flash.now['notice'] = _("Fields in red are required")
     @action = 'update'
     @title = _("Correct admit form")
@@ -66,7 +66,7 @@ class FormController < ApplicationController
 
   # finish submition
   def finish
-    @candidate = Candidate.find(@params['id'])
+    @candidate = Candidate.find(params[:id])
     @candidate.finish!
     @title = _("Admit form registered")
   end
@@ -75,7 +75,7 @@ class FormController < ApplicationController
   # prepares candidate with some preloaded values
   def prepare_candidate
     @candidate = Candidate.new do |c| 
-      c.coridor = Coridor.find(@params['id'])
+      c.coridor = Coridor.find(params[:id])
       c.state = _("Czech republic")
       c.address_state = _("Czech republic")
       c.university = _("Czech agriculture university")

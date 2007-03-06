@@ -1,7 +1,7 @@
-<% if @flash[:errors] and !@flash[:errors].empty? %>
+<% if flash[:errors] and !flash[:errors].empty? %>
 <div id='error'>
 <ul>
-<% for error in @flash[:errors] %>
+<% for error in flash[:errors] %>
   <li>
   <%= error %>
   </li>

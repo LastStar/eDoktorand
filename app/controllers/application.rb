@@ -9,13 +9,13 @@ class ApplicationController < ActionController::Base
 
   # sets utf8 for db and locale to cs_CZ
   def utf8_locale
-    if @params['lang'] == "en"
+    if params[:lang] == "en"
       setlocale('en_EN')
     else
       setlocale('cs_CZ') # TODO hard coded locale
     end
     @charset = 'utf-8'
-    @headers['Content-Type'] = "text/html; charset=#{@charset}"
+    headers['Content-Type'] = "text/html; charset=#{@charset}"
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
   end
 
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
 
   # authorizes user
   def authorize?(user)
-    if user.has_permission?("%s/%s" % [@params["controller"], @params["action"]])
+    if user.has_permission?("%s/%s" % [params[:controller], params[:action]])
       return true
     else
       flash['error'] = _("you don't have rights to do this")
@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
 
   # prepares user class variable
   def prepare_user
-    @user = ActiveRecord::Acts::Audited.current_user = User.find(@session['user'])
+    @user = ActiveRecord::Acts::Audited.current_user = User.find(session[:user])
   end
 
   # prepares faculty class variable
