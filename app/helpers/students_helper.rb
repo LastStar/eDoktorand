@@ -9,7 +9,8 @@ module StudentsHelper
     if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
       info.concat(smaller_info_div("#{index.coridor.code}"))
       info.concat(smaller_info_div("#{index.department.short_name}")) 
-      unless index.status == _('absolved')
+      if @user.has_one_of_roles?(['dean', 'faculty_secretary']) &&
+                                     index.status != _('absolved')
         links.concat(switch_link(index)) 
         links.concat(finish_link(index)) 
         if index.waits_for_scholarship_confirmation?

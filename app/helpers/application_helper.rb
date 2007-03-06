@@ -235,7 +235,9 @@ module ApplicationHelper
         links << link_to_unless_current(_("probation terms"), 
                                         :controller => 'probation_terms'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){}
-        links << prepare_scholarship_link
+        unless @user.has_role?('vicerector')
+          links << prepare_scholarship_link
+        end
       end 
       links << link_to_unless_current(_("students"), 
                                       :controller => 'students'){}
