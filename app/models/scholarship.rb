@@ -1,3 +1,4 @@
+require 'csv'
 class Scholarship < ActiveRecord::Base
   untranslate_all
   belongs_to :index
