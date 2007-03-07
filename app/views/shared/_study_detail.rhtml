@@ -46,9 +46,11 @@
     <% end %>
   <% end %>
   <% if index.interupt.note && !index.interupt.note.empty? %>
-  <li class='<%="higher" if !index.interupt.note.empty?%>'>
-  <div class='long_info'><%= index.interupt.note %></div>
-  <%= _('note') %>
+    <li>
+      <%= _('note') %>
+    </li>
+  <li class='<%="second" if !index.interupt.note.empty?%>'>
+  <%= index.interupt.note %>
   </li>
   <% end %>
   <% if index.interupt.plan_changed == 1 %>
