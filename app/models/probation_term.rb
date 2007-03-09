@@ -8,6 +8,17 @@ class ProbationTerm < ActiveRecord::Base
 
   validates_presence_of :subject
   validates_presence_of :creator
+  validates_format_of :start_time, :with => /^[0-9]{1,2}[:][0-9]{1,2}$/, :on => :create, :message => _("Wrong format of time - hh:mm")
+  validates_inclusion_of :max_students, :in=>1..500, :message => _("You must have 1 or more students for maximum")
+  
+  def validate
+   buffer = start_time
+    hours = (buffer.at(0) + buffer.at(1)).to_i
+    minutes = (buffer.at(3) + buffer.at(4)).to_i
+    if hours > 23 || minutes > 59
+      errors.add(:start_time, _("Wrong format of time - hh:mm"))
+    end
+  end
 
   def self.find_for(user, option = nil)
     if user.has_role?('student') && user.person.has_study_plan?

@@ -1,4 +1,4 @@
-<%= form_remote_with_loading(:url => {:action => 'save_details'}, :evaluate =>
+<%#= form_remote_with_loading(:url => {:action => 'save_details'}, :evaluate =>
   true) %>	
 <fieldset id="details">
 <legend><%= _("Probation term details") %></legend>
@@ -25,5 +25,4 @@
   <%= text_area 'probation_term', 'note', :cols => 40, :rows => 6 %><br />
 <br/> 
 </fieldset>
-<%= submit_tag(_("commit")) %>
-<%= end_form_tag %>
+

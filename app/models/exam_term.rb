@@ -8,4 +8,5 @@ class ExamTerm < ActiveRecord::Base
 	validates_presence_of :date, :message => _("Term must has assigned date of begining")
 	validates_presence_of :first_examinator, :message => _("Term must has assigned first examiner")
 	validates_presence_of :second_examinator, :message => _("Term must has assigned second examiner")
+
 end

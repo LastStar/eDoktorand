@@ -2,7 +2,11 @@
   <h5><%= _("Please select the subject of the probation term.") %></h5>
 </div>
 <div id="form">
+<%= form_tag(:action => 'save') %>
   <%= render(:partial => 'subject_form', :locals => {:subjects => @subjects}) %>
+  <%= render(:partial => 'probation_term_details_form') %>
+  <%= render(:partial => 'examinators_form')%>
+<%= end_form_tag %>
 </div>
 <%= 
 javascript_tag <<-CODE
