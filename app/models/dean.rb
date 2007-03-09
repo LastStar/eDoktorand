@@ -9,7 +9,7 @@ class Dean < Leader
     deanship.faculty
   end
 
-  def is_dean_of?(student)
-    self.deanship.faculty == student.faculty
+  def is_dean_of?(index)
+    self.deanship.faculty == index.faculty
   end
 end

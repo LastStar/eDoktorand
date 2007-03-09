@@ -25,7 +25,11 @@ class Person < ActiveRecord::Base
     return arr.join(' ')
   end
 
-  def is_dean_of?(student)
+  def is_leader_of?(index)
+    return false
+  end
+
+  def is_dean_of?(index)
     return false
   end
 

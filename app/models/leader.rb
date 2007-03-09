@@ -14,4 +14,8 @@ class Leader < Tutor
   def department
     leadership.department
   end
+
+  def is_leader_of?(index)
+    index.department == department
+  end
 end

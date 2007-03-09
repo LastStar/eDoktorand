@@ -77,8 +77,8 @@ class StudyPlan < ActiveRecord::Base
   # aproves study plan with statement from parameters 
   def approve_with(params)
     statement = \
-    eval("#{params['type']}.create(params)") 
-    eval("approvement.#{params['type'].underscore} =
+    eval("#{params[:type]}.create(params)") 
+    eval("approvement.#{params[:type].underscore} =
     statement")
     if statement.is_a?(LeaderStatement) && !approvement.tutor_statement
       approvement.tutor_statement =
@@ -92,9 +92,8 @@ class StudyPlan < ActiveRecord::Base
   # atests study plan with statement from parameters
   def atest_with(params)
     statement = \
-    eval("#{params['type']}.create(params)") 
-    eval("atestation.#{params['type'].underscore} =
-      statement")
+    eval("#{params[:type]}.create(params)") 
+    atestation.update_attribute("#{params[:type].underscore}_id", statement.id)
     if statement.cancel? && statement.is_a?(DeanStatement)
       index.update_attribute('finished_on', Time.now)
     elsif statement.is_a?(LeaderStatement) && !atestation.tutor_statement

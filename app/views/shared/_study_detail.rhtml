@@ -69,7 +69,7 @@
 <% if study_plan ||= index.study_plan %>
 <% if study_plan.atestation  %>
 <h5><%= _("last atestation:") %></h5>
-<ul id='approvement'>
+<ul id='atestation'>
   <%= print_statements(study_plan.atestation) %>
   <%= atestation_detail(study_plan) %>
 </ul>

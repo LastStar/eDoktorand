@@ -12,11 +12,12 @@ class Approvement < ActiveRecord::Base
     if user.has_role?('faculty_secretary') && (index.faculty == user.person.faculty)
       return build_dean_statement('person_id' => user.person.id)
     end
-    if (tutor_statement || index.tutor == user.person) && !leader_statement && index.leader == user.person
+    if (tutor_statement || index.tutor == user.person) && !leader_statement &&
+      user.person.is_leader_of?(index)
       return build_leader_statement('person_id' => user.person.id)
     elsif !leader_statement && !tutor_statement && index.tutor == user.person 
       return build_tutor_statement('person_id' => user.person.id)
-    elsif leader_statement && !dean_statement && user.person.is_dean_of?(index.student)
+    elsif leader_statement && !dean_statement && user.person.is_dean_of?(index)
       return build_dean_statement('person_id' => user.person.id)
     end
   end
@@ -31,7 +32,7 @@ class Approvement < ActiveRecord::Base
       !leader_statement && index.leader == user.person) || 
       (!leader_statement && !tutor_statement && index.tutor ==
       user.person) || (leader_statement && !dean_statement &&
-      user.person.is_dean_of?(index.student))
+      user.person.is_dean_of?(index))
       true
     end
   end

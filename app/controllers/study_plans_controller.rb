@@ -211,7 +211,6 @@ class StudyPlansController < ApplicationController
   def confirm_atest
     study_plan = StudyPlan.find(params[:id])
     study_plan.atest_with(params[:statement])
-    
     render(:partial => 'shared/confirm_approve', 
            :locals => {:replace => 'atestation', :document => study_plan,
                        :approvement => study_plan.atestation})
