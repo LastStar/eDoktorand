@@ -32,12 +32,14 @@ module ProbationTermsHelper
                                 :confirm => _("Really enroll to this term?")) 
          end 
        else 
-         detail_link(probation_term) + '&nbsp;' +
-         link_to(_("edit"), {:action => 'edit', :id => probation_term.id}) 
+         link = ''
+         link << detail_link(probation_term) + '&nbsp;' +
+         link_to(_("edit"), {:action => 'edit', :id => probation_term.id})
          if probation_term.students.size == 0
-           link_to(_("delete"), {:action => 'destroy', :id => probation_term.id}) 	 
+           link << '&nbsp;' + link_to(_("delete"), {:action => 'destroy', :id => probation_term.id}) 	 
 	 end
-       end 
+	 link
+      end 
   end
 
   def detail_link(pt)
