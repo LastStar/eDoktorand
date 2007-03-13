@@ -22,7 +22,9 @@ module ProbationTermsHelper
          student = @user.person
          if ((student.has_enrolled?(probation_term.subject))) 
            if(probation_term.has_enrolled?(student)) 
-             _("You are already enrolled for this term") 
+             _("You are already enrolled for this term") + '&nbsp;' + 
+	     link_to(_("Sign off student"), {:action => 'sign_off_student', :id => probation_term,
+                                         :student_id => student.id})
            else 
              _("You are already enrolled for an exam from this subject") 
            end 

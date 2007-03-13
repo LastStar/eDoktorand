@@ -59,8 +59,12 @@ class ProbationTermsController < ApplicationController
     @student = Student.find(params[:student_id])
     @probation_term.students.delete(@student)
     @students = Student.find_to_enroll(@probation_term, :sort)
-    render(:partial => "detail", :locals => {:probation_term => @probation_term,
+    if @user.has_role?('student')
+      redirect_to :action => 'list'
+    else
+      render(:partial => "detail", :locals => {:probation_term => @probation_term,
            :students => @students})
+    end
   end
   
   # created exam object and subjects for select 
