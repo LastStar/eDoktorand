@@ -34,6 +34,9 @@ module ProbationTermsHelper
        else 
          detail_link(probation_term) + '&nbsp;' +
          link_to(_("edit"), {:action => 'edit', :id => probation_term.id}) 
+         if probation_term.students.size == 0
+           link_to(_("delete"), {:action => 'destroy', :id => probation_term.id}) 	 
+	 end
        end 
   end
 
