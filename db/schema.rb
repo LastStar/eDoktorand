@@ -370,7 +370,7 @@ ActiveRecord::Schema.define(:version => 112) do
     t.column "label",           :string
     t.column "content",         :text
     t.column "index_id",        :integer
-    t.column "amount",          :float
+    t.column "amount",          :float,    :default => 0.0
     t.column "commission_head", :string
     t.column "commission_body", :string
     t.column "commission_tail", :string

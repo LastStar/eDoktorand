@@ -78,14 +78,16 @@ class StudyPlan < ActiveRecord::Base
   def approve_with(params)
     statement = \
     eval("#{params[:type]}.create(params)") 
-    eval("approvement.#{params[:type].underscore} =
-    statement")
+    approvement.update_attribute("#{params[:type].underscore}_id", statement.id)
     if statement.is_a?(LeaderStatement) && !approvement.tutor_statement
       approvement.tutor_statement =
         TutorStatement.create(statement.attributes)
     end
-    cancel! if statement.cancel?
-    approve! if statement.is_a?(DeanStatement) && !statement.cancel?
+    if statement.cancel?
+      cancel! 
+    elsif statement.is_a?(DeanStatement)
+      approve! 
+    end
     save
   end
 
