@@ -84,8 +84,6 @@ class ExamsController < ApplicationController
   
   # saving subject for external exam of the selected student
   def save_external_subject
-#    session['exam'].subject = @subject = Subject.find(params['subject']['id'])
-#    @exam = session['exam']
     session[:exam].subject = @subject = Subject.find(params['subject']['id'])
     @exam = session[:exam]
     @plan_subject = PlanSubject.find_for_exam(@exam)
@@ -94,7 +92,7 @@ class ExamsController < ApplicationController
   # saving external exam
   def save_external
     exam = session[:exam]
-    exam.update_attributes(params['exam'])
+    exam.update_attributes(params[:exam])
     session[:exam] = nil
     redirect_to(:action => 'create', :controller => 'exams')
   end
