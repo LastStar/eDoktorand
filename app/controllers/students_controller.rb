@@ -227,9 +227,17 @@ class StudentsController < ApplicationController
   def end_study
   end
 
+  def change_tutor
+  end
+
   def end_study_confirm
-  @subject_end_study = params[:student][:subject_end_study]
-  Notifications::deliver_end_study(@student,@subject_end_study)
+    @subject_end_study = params[:student][:subject_end_study]
+    Notifications::deliver_end_study(@student,@subject_end_study)
+  end
+
+  def change_tutor_confirm
+    @subject_change_tutor = params[:student][:subject_change_tutor]
+    Notifications::deliver_change_tutor(@student,@subject_change_tutor)
   end
 
   private

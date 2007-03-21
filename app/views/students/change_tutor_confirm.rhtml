@@ -1,5 +1,5 @@
 <div id='student_detail'>
-<h5><%=_ 'Request for end study'%></h5>
+<h5><%=_ 'Request for change tutor'%></h5>
 <ul class='details'>
   <li>
      <div class='long_info'><%=@student.display_name%></div> <%=_ 'Student' %>:
@@ -14,9 +14,9 @@
    <div class='long_info'><%=@student.index.tutor.display_name%></div> <%=_ 'Tutor' %>:
   </li>
   <li>
-   <%=_ 'Subject of end study' %>:
+   <%=_ 'Reason for change tutor' %>:
   </li>
   <li class='second'>
-   <%=@subject_end_study%>
+   <%=@subject_change_tutor%>
   </li>
 </div>

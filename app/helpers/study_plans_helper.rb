@@ -106,6 +106,11 @@ module StudyPlansHelper
                                       :confirm =>  _("Are you sure to") + 
                                       ' ' + _("end study") + '?'){} 
 
+    links << link_to_unless_current(_("change tutor"),
+                                     {:controller => 'students',
+                                      :action => 'change_tutor'},
+                                      :confirm => _("Are you sure to") + 
+                                      ' ' + _("change tutor") + '?'){}
     if student.study_plan.approved?
       links << change_link(student)
     end

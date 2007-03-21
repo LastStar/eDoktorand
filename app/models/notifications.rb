@@ -94,10 +94,17 @@ class Notifications < ActionMailer::Base
   end
 
   def end_study(student, subject_end_study)
-   @body['name'] = student.display_name
-   @body['coridor'] = student.coridor.name
-   @body['year'] = student.index.year
-   @body['subject_end_study'] = subject_end_study
+    @body['name'] = student.display_name
+    @body['coridor'] = student.coridor.name
+    @body['year'] = student.index.year
+    @body['subject_end_study'] = subject_end_study
+  end
+
+  def change_tutor(student, subject_change_tutor)
+    @body['name'] = student.display_name
+    @body['coridor'] = student.coridor.name
+    @body['year'] = student.index.year
+    @body['subject_change_tutor'] = subject_change_tutor
   end
 
   def invite_to_final_exam(index, sent_at = Time.now)
