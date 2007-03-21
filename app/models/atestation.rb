@@ -30,6 +30,6 @@ class Atestation < StudyPlanApprovement
   end
 
   def is_actual?
-    created_on > Atestation.actual_for_faculty(study_plan.index.faculty)
+    created_on.to_date > Atestation.actual_for_faculty(study_plan.index.faculty)
   end
 end
