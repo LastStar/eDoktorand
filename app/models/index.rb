@@ -142,7 +142,11 @@ class Index < ActiveRecord::Base
       temp_approvement = study_plan.approvement ||= StudyPlanApprovement.create
     elsif study_plan && study_plan.approved? &&
       study_plan.waits_for_actual_atestation?
-      temp_approvement = study_plan.atestation ||= Atestation.create
+      if !study_plan.atestation || !study_plan.atestation.is_actual?
+        temp_approvement = study_plan.atestation = Atestation.create
+      else
+        temp_approvement = study_plan.atestation 
+      end
     end
     temp_approvement && temp_approvement.prepares_statement?(user)
   end
