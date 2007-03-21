@@ -781,7 +781,7 @@ msgstr ""
 msgid "Notification about admition procedure to postgradula study"
 msgstr ""
 
-#: app/models/notifications.rb:105
+#: app/models/notifications.rb:112
 msgid "Invitation to final exam"
 msgstr ""
 
@@ -921,27 +921,27 @@ msgstr ""
 msgid "Exams"
 msgstr ""
 
-#: app/controllers/students_controller.rb:253
+#: app/controllers/students_controller.rb:255
 msgid "Students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:264
+#: app/controllers/students_controller.rb:266
 msgid "waiting for my review"
 msgstr ""
 
-#: app/controllers/students_controller.rb:264
+#: app/controllers/students_controller.rb:266
 msgid "all students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:265
+#: app/controllers/students_controller.rb:267
 msgid "all studying"
 msgstr ""
 
-#: app/controllers/students_controller.rb:268
+#: app/controllers/students_controller.rb:270
 msgid "my students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:268
+#: app/controllers/students_controller.rb:270
 msgid "my studying"
 msgstr ""
 
@@ -1495,6 +1495,8 @@ msgstr ""
 #: app/views/scholarships/claim.rhtml:109
 #: app/views/scholarships/claim.rhtml:121 app/views/form/preview.rhtml:11
 #: app/views/students/end_study.rhtml:16
+#: app/views/students/end_study_confirm.rhtml:17
+#: app/views/students/change_tutor_confirm.rhtml:17
 #: app/views/students/change_tutor.rhtml:16
 msgid "Date"
 msgstr ""
@@ -2274,7 +2276,7 @@ msgid "Request for end study"
 msgstr ""
 
 #: app/views/students/end_study.rhtml:20
-#: app/views/students/end_study_confirm.rhtml:17
+#: app/views/students/end_study_confirm.rhtml:20
 msgid "Subject of end study"
 msgstr ""
 
@@ -2283,7 +2285,7 @@ msgstr ""
 msgid "Request for change tutor"
 msgstr ""
 
-#: app/views/students/change_tutor_confirm.rhtml:17
+#: app/views/students/change_tutor_confirm.rhtml:20
 #: app/views/students/change_tutor.rhtml:20
 msgid "Reason for change tutor"
 msgstr ""
