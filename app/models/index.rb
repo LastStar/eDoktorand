@@ -124,7 +124,9 @@ class Index < ActiveRecord::Base
           return study_plan.approvement.prepare_statement(user)
         end
       elsif study_plan.waits_for_actual_atestation?
-        study_plan.atestation ||= Atestation.create
+        if !study_plan.atestation || !study_plan.atestation.is_actual?
+          study_plan.atestation = Atestation.create
+        end
         return study_plan.atestation.prepare_statement(user)
       end
     end

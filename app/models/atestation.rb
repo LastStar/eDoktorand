@@ -1,6 +1,7 @@
 class Atestation < StudyPlanApprovement
   untranslate_all
   has_one :atestation_detail
+  belongs_to :study_plan, :foreign_key => 'document_id'
 
   # returns date of actual atestation on faculty
   def self.next_for_faculty(faculty)
@@ -26,5 +27,9 @@ class Atestation < StudyPlanApprovement
       FACULTY_CFG[faculty]['atestation_day'])
     end
     return date.to_time
+  end
+
+  def is_actual?
+    created_on > Atestation.actual_for_faculty(study_plan.index.faculty)
   end
 end
