@@ -13,7 +13,7 @@ class Atestation < StudyPlanApprovement
       return Date.civil(year, FACULTY_CFG[faculty]['atestation_month'], 
       FACULTY_CFG[faculty]['atestation_day'])
     end
-    return date.to_time
+    return date
   end
 
   # returns date of actual atestation on faculty
@@ -26,7 +26,7 @@ class Atestation < StudyPlanApprovement
       return Date.civil(year, FACULTY_CFG[faculty]['atestation_month'], 
       FACULTY_CFG[faculty]['atestation_day'])
     end
-    return date.to_time
+    return date
   end
 
   def is_actual?
