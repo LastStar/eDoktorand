@@ -231,7 +231,8 @@ module ApplicationHelper
         links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
         links << prepare_scholarship_link
-      elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
+        links << link_to_unless_current(_("insertion_tutor"), :controller => 'tutors'){} 
+	elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
         links << link_to_unless_current(_("probation terms"), 
                                         :controller => 'probation_terms'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){}

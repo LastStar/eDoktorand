@@ -1,0 +1,8 @@
+         <div class='longerinfo'>          
+            <%if @tutor.tutorship != nil && @tutor.tutorship.coridor != nil%>
+	     <%= @tutor.tutorship.coridor.name%>
+            <%else%>
+              <%='&nbsp;'%>
+	    <%end%>
+	   </div>          
+        <%=name_coridor_link(@tutor)%>

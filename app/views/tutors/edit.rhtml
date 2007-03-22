@@ -1,0 +1,13 @@
+<%= save_form(:coridor) %>
+  <%=show_displayname(@tutor)%>
+<%if @tutor.tutorship != nil && @tutor.tutorship.coridor != nil%>
+<select name='coridor[coridor_id]'>
+<%= options_for_select(@coridors_name, @tutor.tutorship.coridor_id)%>
+</select>
+<%else%>
+<%=select("coridor", "coridor_id", @coridors_name, { :include_blank => true })%>
+<%end%>
+  <%= hidden_field 'tutor', 'id' %>
+  <%= ok_submit(:coridor) %>
+<%= end_form_tag %>
+<%= javascript_tag "$('student_coridor').select()" %>

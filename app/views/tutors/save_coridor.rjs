@@ -1,0 +1,1 @@
+page.replace_html "tutor_form_"+ @tutor.id.to_s,  :partial => 'view', :object => @tutor
