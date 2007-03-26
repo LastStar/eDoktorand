@@ -223,13 +223,16 @@ module ApplicationHelper
   def main_menu
     links = [print_link(image_tag('printer', :alt => _('print'), 
                                   :size => '12x12' ))]
+    if @user.has_role?('examinator')
+      links << link_to_unless_current(_("exams"), :controller => 'exams'){}
+    else
     if @user.person.is_a?(Student) and @student 
       links << student_menu
     else 
       if @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
         links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
-        links << link_to_unless_current(_("exams"), :controller => 'exams'){} 
+        links << link_to_unless_current(_("exams"), :controller => 'exams'){}
         links << prepare_scholarship_link
         links << link_to_unless_current(_("insertion_tutor"), :controller => 'tutors'){} 
 	elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
@@ -243,6 +246,7 @@ module ApplicationHelper
       links << link_to_unless_current(_("students"), 
                                       :controller => 'students'){}
     end 
+    end
     links << link_to_unless_current(_("logoff"), 
                                     {:controller => 'account', 
                                      :action => 'logout'}, 

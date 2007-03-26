@@ -12,7 +12,7 @@ class Subject < ActiveRecord::Base
 
   # returns all subjects for user
   def self.find_for(user, option = nil)
-    if user.has_one_of_roles?(['tutor', 'leader', 'department_secretary'])
+    if user.has_one_of_roles?(['tutor', 'leader', 'department_secretary', 'examinator'])
       subjects = user.person.department.subjects
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary']) 
       subjects = user.person.faculty.departments.map {|dep| dep.subjects}.flatten

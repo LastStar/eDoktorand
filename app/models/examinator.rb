@@ -5,7 +5,7 @@ class Examinator < Person
   def self.for_html_select(user, options = {})
     result = if user.has_role?('faculty_secretary')
       find_for_faculty(user.person.faculty.id)
-    elsif user.has_one_of_roles?(['department_secretary', 'tutor', 'leader'])
+    elsif user.has_one_of_roles?(['department_secretary', 'tutor', 'leader', 'examinator'])
       find_for_department(user.person.department.id)
     end.map {|e| [e.display_name, e.id]}
     if options[:include_null]

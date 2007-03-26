@@ -27,7 +27,7 @@ class Exam < ActiveRecord::Base
   # got option :with_plan_subject if needed
   # then you can add :this_year to filter only this year exams 
   def self.find_for(user, options = {})
-    if user.has_role?('tutor') 
+    if user.has_one_of_roles?(['tutor','examinator']) 
       sql = ['first_examinator_id = ?', user.person.id]
     else
       sub_ids = Subject.find_for(user).map {|s| s.id}
