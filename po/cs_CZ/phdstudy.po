@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2007-03-26 11:43+0200\n"
+"POT-Creation-Date: 2007-04-02 13:27+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -1534,7 +1534,7 @@ msgid "Claimer"
 msgstr "ŽADATEL"
 
 #: app/views/scholarships/claim.rhtml:105
-#: app/views/scholarships/claim.rhtml:117 app/views/form/preview.rhtml:15
+#: app/views/scholarships/claim.rhtml:117 app/views/form/preview.rhtml:11
 #: app/views/exams/_show_protocol.rhtml:37
 #: app/views/exams/_show_protocol.rhtml:40 app/views/exams/_protocol.rhtml:46
 #: app/views/exams/_protocol.rhtml:49
@@ -1542,7 +1542,7 @@ msgid "Signature"
 msgstr "Podpis"
 
 #: app/views/scholarships/claim.rhtml:109
-#: app/views/scholarships/claim.rhtml:121 app/views/form/preview.rhtml:11
+#: app/views/scholarships/claim.rhtml:121
 #: app/views/students/end_study.rhtml:16
 #: app/views/students/end_study_confirm.rhtml:17
 #: app/views/students/change_tutor_confirm.rhtml:17
@@ -1550,7 +1550,7 @@ msgstr "Podpis"
 msgid "Date"
 msgstr "Datum"
 
-#: app/views/scholarships/claim.rhtml:114 app/views/form/preview.rhtml:20
+#: app/views/scholarships/claim.rhtml:114 app/views/form/finish.rhtml:6
 msgid "dep. s&r"
 msgstr "odd. VaV"
 
@@ -1604,10 +1604,53 @@ msgid "Payed on"
 msgstr "Vyplaceno dne"
 
 #: app/views/form/finish.rhtml:2
-msgid "Your application form have been registered"
-msgstr "Vaše přihláška byla zaregistrována."
+msgid "Your on-line application has been registered successfuly."
+msgstr "Vaše přihláška byla úspěšně elektronicky zaregistrována."
+
+#: app/views/form/finish.rhtml:3
+msgid "What to do next?"
+msgstr "Jak postupovat dál?"
+
+#: app/views/form/finish.rhtml:4
+msgid ""
+"Mail the application form, your curriculum vitae, copies of documents "
+"confirming your highest-achieved university degree (diploma, diploma "
+"supplement) and the ´Fee Paid´ slip of the admission procedure payment at "
+"the following address:"
+msgstr ""
+"Vytištěnou přihlášku zašlete společně s životopisem, fotokopiemi dokladů o "
+"VŠ vzdělání (diplom, osvědčení o státní zkoušce) a dokladem o zaplacení "
+"poplatku za přijímací řízení na adresu:"
 
 #: app/views/form/finish.rhtml:5
+msgid "Česká zemědělská univerzita v Praze"
+msgstr ""
+
+#: app/views/form/finish.rhtml:7
+msgid "165 21 Praha 6 - Suchdol."
+msgstr "165 21 Praha 6 - Suchdol."
+
+#: app/views/form/finish.rhtml:8
+msgid "We will send you the confirming information either by email or by post."
+msgstr "Další informace Vám budou sdělovány poštou či elektronicky. "
+
+#: app/views/form/finish.rhtml:9
+msgid "Thank you for your interest."
+msgstr "Děkujeme Vám za Váš zájem"
+
+#: app/views/form/finish.rhtml:10
+msgid "Best regards,"
+msgstr "S přáním všeho nejlepšího"
+
+#: app/views/form/finish.rhtml:11
+msgid "Office for Science and Research,"
+msgstr "Oddělení pro Vědu a Výzkum"
+
+#: app/views/form/finish.rhtml:13
+msgid "CULS Prague"
+msgstr "CULS Praha"
+
+#: app/views/form/finish.rhtml:16
 msgid "Fill another form"
 msgstr "Vyplnit další přihlášku"
 
@@ -1624,56 +1667,74 @@ msgstr "Přihláška ke studiu v doktorském studijním programu"
 msgid "action"
 msgstr "akce"
 
-#: app/views/form/preview.rhtml:18
+#: app/views/form/preview.rhtml:14
+msgid "ATTENTION:"
+msgstr "POZOR:"
+
+#: app/views/form/preview.rhtml:14
+msgid "it is necessary to"
+msgstr "pro úspěšnou registraci je třeba"
+
+#: app/views/form/preview.rhtml:14
+msgid "check the filled data correctness,"
+msgstr "zkontrolovat správnost zadaných údajů,"
+
+#: app/views/form/preview.rhtml:14
+msgid "print out the application form, register the application form on-line"
+msgstr "vytisknout přihlášku, zaregistrovat elektronickou přihlášku"
+
+#: app/views/form/preview.rhtml:14
+msgid "and"
+msgstr "a"
+
+#: app/views/form/preview.rhtml:14
+msgid "mail the requiered documents"
+msgstr "zaslatat poštou všechny požadované dokumenty"
+
+#: app/views/form/preview.rhtml:14
 msgid ""
-"If above informations are right <a href='javascript:window.print()'>print</"
-"a> this page and together with printed curriculum vitae, photo copy of "
-"documents about accomplishment (diploma, final exam documents), proof of the "
-"payment send it to Department of science and research. Address:"
+"to Office for Science and Research for a successful application – you should "
+"take all these steps, otherwise we cannot guarantee your successful "
+"application."
 msgstr ""
-"Jestliže tyto informace souhlasí, <a href='javascript:window.print"
-"()'>vytiskněte</a> si tuto stránku a spolu s vytištěným životopisem, "
-"fotokopiemi dokladů o VŠ vzdělání (diplom, osvědčení o státní zkoušce), "
-"dokladu o zaplacení poplatku je zašlete na adresu oddělení pro vědu a výzkum "
-"na adresu:"
+"na oddělení Vědy a Výzkumu - v případě, že tyto kroky nepodstoupíte, nelze "
+"zaručit úspěšnou registraci uchazeče."
 
-#: app/views/form/preview.rhtml:19 app/views/form/_preview_header.rhtml:2
-msgid "Czech agriculture university in Prague"
-msgstr "Česká zemědělská univerzita v Praze"
+#: app/views/form/preview.rhtml:15
+msgid "Check the filled data"
+msgstr "Kontrola zadaných údajů"
 
-#: app/views/form/preview.rhtml:22
-msgid "165 21 Praha 6 - Suchdol."
-msgstr "165 21 Praha 6 - Suchdol."
+#: app/views/form/preview.rhtml:15
+msgid "check your correct application data"
+msgstr "prosím zkontrolujte, zda Vámi zadané údaje jsou správné"
 
-#: app/views/form/preview.rhtml:25
-msgid "If they are not right"
-msgstr "Pokud nesouhlasí,"
+#: app/views/form/preview.rhtml:16
+msgid "Data correction"
+msgstr "Oprava údajů"
 
-#: app/views/form/preview.rhtml:25
-msgid "correct"
-msgstr "opravte"
+#: app/views/form/preview.rhtml:16
+msgid "click here for incorrect data correction, please"
+msgstr "prosím klikněte zde pro opravu chybně zadaného údaje"
 
-#: app/views/form/preview.rhtml:25
-msgid "them, please."
-msgstr "je prosím."
+#: app/views/form/preview.rhtml:17
+msgid "<a href='javascript:window.print()'>Print</a> out the application form"
+msgstr "<a href='javascript:window.print()'>Tisk</a> přihlášky"
 
-#: app/views/form/preview.rhtml:28
-msgid "If you"
-msgstr "Pokud"
+#: app/views/form/preview.rhtml:17
+msgid "click here for printing out your application form, please"
+msgstr "prosím klikněte zde pro vytištění přihlášky"
 
-#: app/views/form/preview.rhtml:28
-msgid "finish"
-msgstr "ukončíte"
+#: app/views/form/preview.rhtml:18
+msgid "Register"
+msgstr "Registrace"
 
-#: app/views/form/preview.rhtml:28
-msgid "you will be registered and noticed about all events"
-msgstr ""
-"práci s aplikací, budete zaregistrován/-a. V tomto případě Vás budeme "
-"informovat o všech důležitých událostech."
+#: app/views/form/preview.rhtml:18
+msgid "the application form on-line"
+msgstr "elektronické přihlášky"
 
-#: app/views/form/preview.rhtml:31
-msgid "Thank you for spent time and wish good luck"
-msgstr "Děkujeme Vám za strávený čas a přejeme hodně štěstí."
+#: app/views/form/preview.rhtml:18
+msgid "click here for registering your application  on-line, please"
+msgstr "prosím klikněte zde pro elektronickou registraci Vaší přihlášky"
 
 #: app/views/form/index.rhtml:2
 msgid "After clicking the name of faculty, list of corridors  will be shown"
@@ -1691,6 +1752,10 @@ msgid ""
 "address:"
 msgstr ""
 "V aplikaci se vyskytla chyba, prosím uvědomte správce systému na adrese: "
+
+#: app/views/form/_preview_header.rhtml:2
+msgid "Czech agriculture university in Prague"
+msgstr "Česká zemědělská univerzita v Praze"
 
 #: app/views/form/_preview_header.rhtml:3
 #: app/views/shared/candidate_detail.rhtml:24
@@ -2512,6 +2577,39 @@ msgstr "jméno externího předmětu nesmí být prázdné"
 #: lib/study_plan_creator.rb:81
 msgid "university for external subject cannot be empty"
 msgstr "univerzita pro externí předmět nesmí být prazdná"
+
+#~ msgid ""
+#~ "If above informations are right <a href='javascript:window.print"
+#~ "()'>print</a> this page and together with printed curriculum vitae, photo "
+#~ "copy of documents about accomplishment (diploma, final exam documents), "
+#~ "proof of the payment send it to Department of science and research. "
+#~ "Address:"
+#~ msgstr ""
+#~ "Jestliže tyto informace souhlasí, <a href='javascript:window.print"
+#~ "()'>vytiskněte</a> si tuto stránku a spolu s vytištěným životopisem, "
+#~ "fotokopiemi dokladů o VŠ vzdělání (diplom, osvědčení o státní zkoušce), "
+#~ "dokladu o zaplacení poplatku je zašlete na adresu oddělení pro vědu a "
+#~ "výzkum na adresu:"
+
+#~ msgid "If they are not right"
+#~ msgstr "Pokud nesouhlasí,"
+
+#~ msgid "them, please."
+#~ msgstr "je prosím."
+
+#~ msgid "If you"
+#~ msgstr "Pokud"
+
+#~ msgid "finish"
+#~ msgstr "ukončíte"
+
+#~ msgid "you will be registered and noticed about all events"
+#~ msgstr ""
+#~ "práci s aplikací, budete zaregistrován/-a. V tomto případě Vás budeme "
+#~ "informovat o všech důležitých událostech."
+
+#~ msgid "Thank you for spent time and wish good luck"
+#~ msgstr "Děkujeme Vám za strávený čas a přejeme hodně štěstí."
 
 #~ msgid "request for end study"
 #~ msgstr "Žádost o ukončení studia"

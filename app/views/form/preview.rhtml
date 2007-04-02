@@ -8,25 +8,12 @@
   <h5><%= _("action") %></h5> 
   <br/>
   <ul>
-  <div class="right_info"><%= Date.today.strftime("%d. %m. %Y") %></div><%= _("Date") %>:
-  </ul>
-
-  <ul>
   <div class='signature'><%= _("Signature") %>:</div>
   </ul>
   <p class='instruction'>
-  <%= _("If above informations are right <a href='javascript:window.print()'>print</a> this page and together with printed curriculum vitae, photo copy of documents about accomplishment (diploma, final exam documents), proof of the payment send it to Department of science and research. Address:") %><br /> 
-  <%= _("Czech agriculture university in Prague") %><br /> 
-  <%= @candidate.coridor.faculty.name  %>, <%= _("dep. s&r") %> <br />
-  <%= @candidate.coridor.faculty.street %><br /> 
-  <%= _("165 21 Praha 6 - Suchdol.") %> 
-  </p>
-  <p class='instruction'>
-  <%= _("If they are not right") %> <%= link_to _("correct"), :action => 'correct', :id => @candidate.id  %> <%= _("them, please.") %>
-  </p>
-  <p class='instruction'>
-  <%= _("If you") %> <%= link_to _("finish"), :action => 'finish', :id => @candidate.id   %> <%= _("you will be registered and noticed about all events") %>
-  </p>
-  <p class="instruction">
-  <%= _("Thank you for spent time and wish good luck") %>
+  <o class='red'><b><%= _("ATTENTION:") %> </b></o><%= _("it is necessary to") %> <o class='red'><%= _("check the filled data correctness,") %> <%= _("print out the application form, register the application form on-line") %> </o><%= _("and") %> <o class='red'><%=_("mail the requiered documents") %> </o><%= _("to Office for Science and Research for a successful application – you should take all these steps, otherwise we cannot guarantee your successful application.") %><br /><br />
+  1. <b><%= _("Check the filled data") %></b> - <%= _("check your correct application data") %><br />
+  2. <b><%= link_to _("Data correction"), :action => 'correct', :id => @candidate.id  %></b> - <%= _("click here for incorrect data correction, please") %><br />
+  3. <b><%= _("<a href='javascript:window.print()'>Print</a> out the application form") %></b> - <%= _("click here for printing out your application form, please") %><br />
+  4. <b><%= link_to _("Register"), :action => 'finish', :id => @candidate.id   %> <%= _("the application form on-line") %></b> - <%= _("click here for registering your application  on-line, please") %>
   </p>

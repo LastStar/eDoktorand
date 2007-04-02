@@ -15,6 +15,10 @@ body, p, ol, ul, td {
     font-size:   16px;
 }
 
+.red {
+  color: red
+}
+
 a {
   color: #003366; 
 } 

@@ -1498,7 +1498,7 @@ msgid "Claimer"
 msgstr ""
 
 #: app/views/scholarships/claim.rhtml:105
-#: app/views/scholarships/claim.rhtml:117 app/views/form/preview.rhtml:15
+#: app/views/scholarships/claim.rhtml:117 app/views/form/preview.rhtml:11
 #: app/views/exams/_show_protocol.rhtml:37
 #: app/views/exams/_show_protocol.rhtml:40 app/views/exams/_protocol.rhtml:46
 #: app/views/exams/_protocol.rhtml:49
@@ -1506,7 +1506,7 @@ msgid "Signature"
 msgstr ""
 
 #: app/views/scholarships/claim.rhtml:109
-#: app/views/scholarships/claim.rhtml:121 app/views/form/preview.rhtml:11
+#: app/views/scholarships/claim.rhtml:121
 #: app/views/students/end_study.rhtml:16
 #: app/views/students/end_study_confirm.rhtml:17
 #: app/views/students/change_tutor_confirm.rhtml:17
@@ -1514,7 +1514,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: app/views/scholarships/claim.rhtml:114 app/views/form/preview.rhtml:20
+#: app/views/scholarships/claim.rhtml:114 app/views/form/finish.rhtml:6
 msgid "dep. s&r"
 msgstr ""
 
@@ -1567,10 +1567,50 @@ msgid "Payed on"
 msgstr ""
 
 #: app/views/form/finish.rhtml:2
-msgid "Your application form have been registered"
+msgid "Your on-line application has been registered successfuly."
+msgstr ""
+
+#: app/views/form/finish.rhtml:3
+msgid "What to do next?"
+msgstr ""
+
+#: app/views/form/finish.rhtml:4
+msgid ""
+"Mail the application form, your curriculum vitae, copies of documents "
+"confirming your highest-achieved university degree (diploma, diploma "
+"supplement) and the Fee Paid slip of the admission procedure payment at the "
+"following address:"
 msgstr ""
 
 #: app/views/form/finish.rhtml:5
+msgid "esk zemdlsk univerzita v Praze"
+msgstr ""
+
+#: app/views/form/finish.rhtml:7
+msgid "165 21 Praha 6 - Suchdol."
+msgstr ""
+
+#: app/views/form/finish.rhtml:8
+msgid "We will send you the confirming information either by email or by post."
+msgstr ""
+
+#: app/views/form/finish.rhtml:9
+msgid "Thank you for your interest."
+msgstr ""
+
+#: app/views/form/finish.rhtml:10
+msgid "Best regards,"
+msgstr ""
+
+#: app/views/form/finish.rhtml:11
+msgid "Office for Science and Research,"
+msgstr ""
+
+#: app/views/form/finish.rhtml:13
+msgid "CULS Prague"
+msgstr ""
+
+#: app/views/form/finish.rhtml:16
 msgid "Fill another form"
 msgstr ""
 
@@ -1587,48 +1627,71 @@ msgstr ""
 msgid "action"
 msgstr ""
 
-#: app/views/form/preview.rhtml:18
+#: app/views/form/preview.rhtml:14
+msgid "ATTENTION:"
+msgstr ""
+
+#: app/views/form/preview.rhtml:14
+msgid "it is necessary to"
+msgstr ""
+
+#: app/views/form/preview.rhtml:14
+msgid "check the filled data correctness,"
+msgstr ""
+
+#: app/views/form/preview.rhtml:14
+msgid "print out the application form, register the application form on-line"
+msgstr ""
+
+#: app/views/form/preview.rhtml:14
+msgid "and"
+msgstr ""
+
+#: app/views/form/preview.rhtml:14
+msgid "mail the requiered documents"
+msgstr ""
+
+#: app/views/form/preview.rhtml:14
 msgid ""
-"If above informations are right <a href='javascript:window.print()'>print</"
-"a> this page and together with printed curriculum vitae, photo copy of "
-"documents about accomplishment (diploma, final exam documents), proof of the "
-"payment send it to Department of science and research. Address:"
+"to Office for Science and Research for a successful application  you should "
+"take all these steps, otherwise we cannot guarantee your successful "
+"application."
 msgstr ""
 
-#: app/views/form/preview.rhtml:19 app/views/form/_preview_header.rhtml:2
-msgid "Czech agriculture university in Prague"
+#: app/views/form/preview.rhtml:15
+msgid "Check the filled data"
 msgstr ""
 
-#: app/views/form/preview.rhtml:22
-msgid "165 21 Praha 6 - Suchdol."
+#: app/views/form/preview.rhtml:15
+msgid "check your correct application data"
 msgstr ""
 
-#: app/views/form/preview.rhtml:25
-msgid "If they are not right"
+#: app/views/form/preview.rhtml:16
+msgid "Data correction"
 msgstr ""
 
-#: app/views/form/preview.rhtml:25
-msgid "correct"
+#: app/views/form/preview.rhtml:16
+msgid "click here for incorrect data correction, please"
 msgstr ""
 
-#: app/views/form/preview.rhtml:25
-msgid "them, please."
+#: app/views/form/preview.rhtml:17
+msgid "<a href='javascript:window.print()'>Print</a> out the application form"
 msgstr ""
 
-#: app/views/form/preview.rhtml:28
-msgid "If you"
+#: app/views/form/preview.rhtml:17
+msgid "click here for printing out your application form, please"
 msgstr ""
 
-#: app/views/form/preview.rhtml:28
-msgid "finish"
+#: app/views/form/preview.rhtml:18
+msgid "Register"
 msgstr ""
 
-#: app/views/form/preview.rhtml:28
-msgid "you will be registered and noticed about all events"
+#: app/views/form/preview.rhtml:18
+msgid "the application form on-line"
 msgstr ""
 
-#: app/views/form/preview.rhtml:31
-msgid "Thank you for spent time and wish good luck"
+#: app/views/form/preview.rhtml:18
+msgid "click here for registering your application  on-line, please"
 msgstr ""
 
 #: app/views/form/index.rhtml:2
@@ -1643,6 +1706,10 @@ msgstr ""
 msgid ""
 "There is error in application. Please contact system administrator on "
 "address:"
+msgstr ""
+
+#: app/views/form/_preview_header.rhtml:2
+msgid "Czech agriculture university in Prague"
 msgstr ""
 
 #: app/views/form/_preview_header.rhtml:3
