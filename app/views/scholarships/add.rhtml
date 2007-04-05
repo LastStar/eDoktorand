@@ -1,6 +1,11 @@
 <%= save_form(@scholarship) %>
 <div class='small'>
-  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'value' => _('amount') %> <%= _('Kc') %> &nbsp;
+<%if params[:scholarship]%>
+  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount'%>
+<%else%>
+  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount', 'value' => _('amount') %>
+<%end%>
+ <%= _('Kc') %> &nbsp;
   <%= image_submit_tag('ok.png') %>
   <%= close_link("scholarship_form_#{@scholarship.index.id}") %>
 </div>
@@ -8,9 +13,16 @@
   &nbsp;&nbsp;&nbsp;
 </div>
 <div class='small'>
-  <%= text_field 'scholarship', 'commission_head', 'size' => 10, 'value' => _('workplace')%> / 
-  <%= text_field 'scholarship', 'commission_body', 'size' => 10, 'value' => _('commission') %> / 
+<%#breakpoint%>
+<%if params[:scholarship]%>
+  <%= text_field 'scholarship', 'commission_head', 'size' => 10%> / 
+  <%= text_field 'scholarship', 'commission_body', 'size' => 10%> / 
+  <%= text_field 'scholarship', 'commission_tail', 'size' => 10%>
+<%else%>
+  <%= text_field 'scholarship', 'commission_head', 'size' => 10, 'value' => _('commission')%> / 
+  <%= text_field 'scholarship', 'commission_body', 'size' => 10, 'value' => _('workplace') %> / 
   <%= text_field 'scholarship', 'commission_tail', 'size' => 10, 'value' => _('activity') %>
+<%end%>
 </div>
 <div class='small'>
   &nbsp;&nbsp;&nbsp;
@@ -22,3 +34,4 @@
 </div>
  <%= _('adding_extra_scholarship') %>
 <%= end_form_tag %>
+<%= javascript_tag "document.forms[0].amount.focus()" %>
