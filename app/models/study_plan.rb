@@ -96,8 +96,12 @@ class StudyPlan < ActiveRecord::Base
     statement = \
     eval("#{params[:type]}.create(params)") 
     atestation.update_attribute("#{params[:type].underscore}_id", statement.id)
-    if statement.cancel? && statement.is_a?(DeanStatement)
-      index.update_attribute('finished_on', Time.now)
+    if statement.is_a?(DeanStatement)
+      if statement.cancel?
+        index.update_attribute('finished_on', Time.now)
+      else
+        update_attribute('last_atested_on', Time.now)
+      end
     elsif statement.is_a?(LeaderStatement) && !atestation.tutor_statement
       atestation.tutor_statement =
         TutorStatement.create(statement.attributes)
