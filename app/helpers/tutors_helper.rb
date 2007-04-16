@@ -15,7 +15,7 @@ def show_displayname(tutor)
 end
 
 def link_edit(tutor)
-   link_to_remote(image_tag('plus.png'),
+   link_to_remote(image_tag('change.png'),
                    :url => {:controller => 'tutors',:action => 'edit', :id => tutor.id},
                    :update => 'tutor_form_' + tutor.id.to_s)
    end

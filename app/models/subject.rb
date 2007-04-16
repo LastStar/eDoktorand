@@ -1,6 +1,6 @@
 class Subject < ActiveRecord::Base
   untranslate_all
-  has_many :coridors_subjects
+  has_many :coridor_subjects
   has_many :plan_subjects
   has_many :exams
   has_many :probation_terms

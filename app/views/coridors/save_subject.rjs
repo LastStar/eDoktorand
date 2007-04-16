@@ -1,0 +1,1 @@
+page.replace_html "add_"+ @type,  :partial => 'view', :object => @subject

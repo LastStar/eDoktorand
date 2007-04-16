@@ -1,0 +1,7 @@
+<li class='second'>
+<%= save_form(:subject) %>
+  <%=select("subject", "id", @subjects, { :include_blank => true })%>
+  <%=hidden_field("subject", "type", "value" => @type)%>
+  <%= ok_submit(:subject) %>
+<%= end_form_tag %>
+</li>

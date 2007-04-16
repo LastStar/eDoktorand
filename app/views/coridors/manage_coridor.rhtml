@@ -1,0 +1,20 @@
+<div id='main'>
+<% if @coridors && !@coridors.empty? %>
+<h5><%= _('Coridors list') + "(#{@coridors.size})" %></h5>
+<div id='coridors_list'>
+<ul>
+  <% for coridor in @coridors %>
+    <li>
+       <div id='<%='coridor_form_' + coridor.id.to_s%>'>
+                
+        <%=coridor_link(coridor)%>
+       </div>
+    </li>
+  <% end %>
+</ul>
+<% else %>
+<h4><%= _('No coridors found.') %></h4>
+<% end %>
+</div>
+</div>
+
