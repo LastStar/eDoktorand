@@ -12,12 +12,12 @@ class TutorsController < ApplicationController
   end
   
   def list
-    @tutors = Tutor.find(:all, :order => "lastname")
+    @tutors = Tutor.find_for(@user)
   end
   
   def edit
     @tutor = Tutor.find(@params[:id])
-    @coridors_name = Coridor.find_all_by_faculty_id(@tutor.faculty.id).collect {|p| [ p.name, p.id ] }   
+    @coridors_name = Coridor.for_select(:accredited => true, :faculty => @user.person.faculty)   
   end
 
   def save_coridor

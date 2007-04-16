@@ -103,4 +103,8 @@ class Student < Person
   def <=>(other)
     display_name <=> other.display_name
   end
+
+  def department
+    index.department
+  end
 end 

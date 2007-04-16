@@ -1,3 +1,3 @@
 class Program < ActiveRecord::Base
-has_many :coridors
+  has_many :coridors
 end

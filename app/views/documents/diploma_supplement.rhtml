@@ -36,21 +36,21 @@ give the reason why.</p>
       <li>2.1. Name of qualification / title conferred (in original language):&nbsp<strong>doktor / Ph.D.</strong></li>
       <li>2.2. Main field(s) of study for the qualification:
         <ul class='sub_sub_list'>
-          <li>Study programme:&nbsp;<strong><%= @index.coridor.english_with_code %></strong></li>
-          <li>Specialization:&nbsp;<strong>!!!DOPLNIT!!!</strong></li>
+          <li>Study programme:&nbsp;<strong><%= @index.coridor.program.label_en %></strong></li>
+          <li>Specialization:&nbsp;<strong><%= @index.coridor.english_with_code %></strong></li>
         </ul>
       </li>
       <li>2.3. Name of status of awarding institution in original language:&nbsp;
       <strong><%= @index.faculty.name %></strong></li>
       <li>2.4. Name and status of institution (if different from 2.3.) administering studies (in original language):</li>
-      <li>2.5. Language(s) of instruction/examination:&nbsp;<strong>Czech</strong></li>
+      <li>2.5. Language(s) of instruction/examination:&nbsp;<strong> Czech</strong></li>
     </ul>
   </li>
   <li>
   3. INFORMATION ON THE LEVEL OF THE QUALIFICATION
     <ul class='sub_list'>
-      <li>3.1. Level of qualification:&nbsp;<strong>Doctoral Study Programme</strong></li>
-      <li>3.2. Official length of programme:&nbsp;<strong>3 years</strong></li>
+      <li>3.1. Level of qualification:&nbsp;<strong> Doctoral Study Programme</strong></li>
+      <li>3.2. Official length of programme:&nbsp;<strong> 3 years</strong></li>
       <li>3.3. Access requirements:&nbsp;
       <strong>Secondary school-leaving certificate; 
       further details:&nbsp;http://www.czu.cz</strong></li>
@@ -59,7 +59,7 @@ give the reason why.</p>
   <li>
   4. INFORMATION ON THE CONTENTS AND RESULTS GAINED
     <ul class='sub_list'>
-      <li>4.1. Mode of study:&nbsp;<strong>Ful time or Combined</strong></li>
+      <li>4.1. Mode of study:&nbsp;<strong> <%= @index.study.name_en %></strong></li>
       <li>4.2. Programme requirements:&nbsp;<strong>Student must satisfy programme
       requirements as prescribed in the documents: the Approved Course
       Schedule and the Study and Examination Rules. 
