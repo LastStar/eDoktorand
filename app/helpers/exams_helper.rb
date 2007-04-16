@@ -16,7 +16,6 @@ module ExamsHelper
       links << link_to(_('this year only'), {:this_year => 1})
     end
     links << '&nbsp;'
-    links << print_link(_('print this list'))
     content_tag('div', links, :class => 'links')
   end
 

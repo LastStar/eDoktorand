@@ -13,7 +13,6 @@ module ProbationTermsHelper
       links << link_to(_('history_terms'), {:period => :history})
     end
     links << '&nbsp;'
-	  links << print_link(_('print this list'))
 	  content_tag('div', links, :class => 'links')
 	end
 

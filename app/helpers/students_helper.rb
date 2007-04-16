@@ -269,8 +269,6 @@ module StudentsHelper
   
   def list_links
   links = ''
-  links << print_link(_('print this list'))
-  links << '&nbsp;'
   links << link_to(_('export_xls'), {:action => 'list_xls'})
   end
 
