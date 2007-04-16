@@ -1,10 +1,12 @@
 <%= print_notice %>
-<% sort_array = [['coridor_id', _("by corridor")], ['lastname',
-_("by lastname")], ['updated_on', _("by modification")]] %>
-<%= filter_tags(:list, ['unready', 'ready', 'invited', 'admited', 'enrolled'],
-:message => _("filter"))  %>
-<%= filtered_sort_tags(:list, sort_array, @filtered_by, :message => _("order")) %>
-<%= sort_tags(:list_all, sort_array, :message => _("order all")) %>
+<% unless @user.has_role?('board_chairman') %>
+  <% sort_array = [['coridor_id', _("by corridor")], ['lastname',
+  _("by lastname")], ['updated_on', _("by modification")]] %>
+  <%= filter_tags(:list, ['unready', 'ready', 'invited', 'admited', 'enrolled'],
+                  :message => _("filter"))  %>
+  <%= filtered_sort_tags(:list, sort_array, @filtered_by, :message => _("order")) %>
+  <%= sort_tags(:list_all, sort_array, :message => _("order all")) %>
+<% end %>
 <% unless @candidates.empty? %>
 <%= render_partial params[:prefix] ? params[:prefix] + 'list' : 'list' %>
 

@@ -1,4 +1,7 @@
 <div class="links">
-  <%= link_to 'zpět na výpis', :action => 'list' %>
-  <a href='javascript:window.print()'>vytisknout tuto stránku</a>
+  <% if @user.has_role?('board_chairman') %>
+    <%= link_to 'zpět na výpis', :action => 'index' %>
+  <% else %>
+    <%= link_to 'zpět na výpis', :action => 'list' %>
+  <% end %>
 </div>

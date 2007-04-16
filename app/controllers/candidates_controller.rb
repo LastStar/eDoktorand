@@ -10,16 +10,20 @@ class CandidatesController < ApplicationController
 
   # lists all candidates
   def index
-    list
-    render_action 'list'
+    if @user.has_role?('board_chairman')
+      redirect_to :action => 'list_admission_ready', :coridor => @user.person.tutorship.coridor_id
+    else
+      list
+      render_action 'list'
+    end
   end
 
   # lists all candidates
   def list
-    @filtered_by = params[:filter]
-		conditions = Candidate.prepare_conditions(params, @faculty)
-    @pages, @candidates = paginate :candidates, :per_page => 7, :order_by =>
-      params[:category], :conditions => conditions
+      @filtered_by = params[:filter]
+      conditions = Candidate.prepare_conditions(params, @faculty)
+      @pages, @candidates = paginate :candidates, :per_page => 7, :order_by =>
+        params[:category], :conditions => conditions
   end
 
   # lists all candidates ordered by category

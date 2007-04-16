@@ -73,27 +73,34 @@ module CandidatesHelper
   def list_links
     links = ''
     if params[:prefix]
-      links << link_to(_("list"), {:prefix => nil})
-      links << '&nbsp;'
-      links << link_to_function(_('print this list'), 'window.print();')
+      if @user.has_role?('board_chairman')
+        links << link_to(_("list"), {:action => 'index',:prefix => nil})
+        links << '&nbsp;'
+      else
+        links << link_to(_("list"), {:prefix => nil})
+        links << '&nbsp;'
+      end
     else
       links << link_to_function(_("show all contacts"), 'open_all_contacts()')
       links << '&nbsp;'
       links << link_to_function(_("hide all contacts"), 'close_all_contacts()')
       links << '&nbsp;'
-      links << link_to_function(_("show all histories"),
-      'open_all_histories()')
-      links << '&nbsp;'
-      links << link_to_function(_("hide all histories"),
-      'close_all_histories()')
-      links << '&nbsp;'
+      unless @user.has_role?('board_chairman')
+        links << link_to_function(_("show all histories"),
+                                  'open_all_histories()')
+        links << '&nbsp;'
+        links << link_to_function(_("hide all histories"),
+                                  'close_all_histories()')
+        links << '&nbsp;'
+      end
       links << link_to(_("table"), {:prefix => 'table_', :coridor =>
       params[:coridor], :filter => params[:filter], :category =>
       params[:category]})
       links << '&nbsp;'
-      links << link_to(_("summary"), {:action => 'summary', :id => "department"})
-      links << '&nbsp;'
-      links << link_to_function(_("print this page"), 'print_details()')
+      unless @user.has_role?('board_chairman')
+        links << link_to(_("summary"), {:action => 'summary', :id => "department"})
+        links << '&nbsp;'
+      end
     end
     if @pages and pagination_links(@pages)
       links << '&nbsp;'                           
