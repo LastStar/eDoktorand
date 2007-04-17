@@ -12,7 +12,11 @@ class Leader < Tutor
   end
 
   def department
-    leadership.department
+    if leadership
+      leadership.department
+    else
+      super
+    end
   end
 
   def is_leader_of?(index)
