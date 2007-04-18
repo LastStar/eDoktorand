@@ -20,6 +20,8 @@ class Leader < Tutor
   end
 
   def is_leader_of?(index)
-    index.department == department
+    if leadership
+      index.department == department
+    end
   end
 end
