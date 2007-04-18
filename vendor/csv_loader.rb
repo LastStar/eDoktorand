@@ -903,4 +903,19 @@ class CSVLoader
       end
     end
   end
+
+  def self.add_english_labels(file)
+    @@mylog.info "Adding eng labels..."
+    not_found = []
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      if sub = Subject.find_by_code(row[1])
+        @@mylog.debug "adding label to #{row[1]}"
+        sub.update_attribute(:label_en, row[2])
+      else
+        @@mylog.debug "#{row[1]} has not been found"
+        not_found << row[1]
+      end
+    end
+    puts not_found
+  end
 end
