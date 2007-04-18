@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2007-04-16 14:59+0200\n"
+"POT-Creation-Date: 2007-04-18 16:40+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -26,8 +26,8 @@ msgstr ""
 "Opravdu si přejete vyplatit stipendia tak jak je vidíte na této stránce? "
 "Tato operace je nevratná."
 
-#: app/helpers/scholarships_helper.rb:55 app/helpers/application_helper.rb:363
-#: app/helpers/application_helper.rb:367
+#: app/helpers/scholarships_helper.rb:55 app/helpers/application_helper.rb:366
+#: app/helpers/application_helper.rb:370
 msgid "approve"
 msgstr "schválit"
 
@@ -55,11 +55,12 @@ msgstr "email"
 msgid "new exam"
 msgstr "nová zkouška"
 
-#: app/helpers/exams_helper.rb:8 app/helpers/candidates_helper.rb:76
+#: app/helpers/exams_helper.rb:8 app/helpers/candidates_helper.rb:77
+#: app/helpers/candidates_helper.rb:80
 msgid "list"
 msgstr "seznam"
 
-#: app/helpers/exams_helper.rb:10 app/helpers/candidates_helper.rb:90
+#: app/helpers/exams_helper.rb:10 app/helpers/candidates_helper.rb:96
 msgid "table"
 msgstr "tabulka"
 
@@ -71,21 +72,21 @@ msgstr "všechny zkoušky (pomalé)"
 msgid "this year only"
 msgstr "jen za tento rok"
 
-#: app/helpers/exams_helper.rb:19 app/helpers/candidates_helper.rb:78
-#: app/helpers/probation_terms_helper.rb:16 app/helpers/students_helper.rb:272
+#: app/helpers/exams_helper.rb:19 app/helpers/probation_terms_helper.rb:16
+#: app/helpers/students_helper.rb:272
 msgid "print this list"
 msgstr "vytisknout tento seznam"
 
-#: app/helpers/exams_helper.rb:25 app/helpers/candidates_helper.rb:140
-#: app/helpers/candidates_helper.rb:144
+#: app/helpers/exams_helper.rb:25 app/helpers/candidates_helper.rb:147
+#: app/helpers/candidates_helper.rb:151
 #: app/views/probation_terms/_enrolled_students.rhtml:7
 #: app/views/exams/_main_form.rhtml:30 app/views/exams/_form.rhtml:43
 #: app/views/exams/_main_external_form.rhtml:28
 msgid "not pass"
 msgstr "neprospěl"
 
-#: app/helpers/exams_helper.rb:25 app/helpers/candidates_helper.rb:140
-#: app/helpers/candidates_helper.rb:144
+#: app/helpers/exams_helper.rb:25 app/helpers/candidates_helper.rb:147
+#: app/helpers/candidates_helper.rb:151
 #: app/views/probation_terms/_enrolled_students.rhtml:7
 #: app/views/exams/_main_form.rhtml:30 app/views/exams/_form.rhtml:43
 #: app/views/exams/_main_external_form.rhtml:28
@@ -108,8 +109,8 @@ msgstr "odsouhlasit"
 msgid "protocol"
 msgstr "protokol"
 
-#: app/helpers/candidates_helper.rb:13 app/helpers/candidates_helper.rb:136
-#: app/helpers/candidates_helper.rb:148 app/views/candidates/admit.rhtml:2
+#: app/helpers/candidates_helper.rb:13 app/helpers/candidates_helper.rb:143
+#: app/helpers/candidates_helper.rb:155 app/views/candidates/admit.rhtml:2
 msgid "admit"
 msgstr "přijmout"
 
@@ -135,67 +136,71 @@ msgstr "všichni"
 msgid "only "
 msgstr "jen "
 
-#: app/helpers/candidates_helper.rb:80
+#: app/helpers/candidates_helper.rb:84
 msgid "show all contacts"
 msgstr "ukázat kontakty"
 
-#: app/helpers/candidates_helper.rb:82
+#: app/helpers/candidates_helper.rb:86
 msgid "hide all contacts"
 msgstr "skrýt kontakty"
 
-#: app/helpers/candidates_helper.rb:84
+#: app/helpers/candidates_helper.rb:89
 msgid "show all histories"
 msgstr "ukázat historii"
 
-#: app/helpers/candidates_helper.rb:87
+#: app/helpers/candidates_helper.rb:92
 msgid "hide all histories"
 msgstr "skrýt historii"
 
-#: app/helpers/candidates_helper.rb:94
+#: app/helpers/candidates_helper.rb:101
 msgid "summary"
 msgstr "sumarizace"
 
-#: app/helpers/candidates_helper.rb:96
-msgid "print this page"
-msgstr "vytisknout tuto stránku"
-
-#: app/helpers/candidates_helper.rb:100
+#: app/helpers/candidates_helper.rb:107
 msgid "previous page"
 msgstr "předchozí stránka"
 
-#: app/helpers/candidates_helper.rb:105
+#: app/helpers/candidates_helper.rb:112
 msgid "next page"
 msgstr "další stránka"
 
-#: app/helpers/candidates_helper.rb:123
+#: app/helpers/candidates_helper.rb:122
+msgid "By corridors"
+msgstr "podle oborů"
+
+#: app/helpers/candidates_helper.rb:122
+msgid "By departments"
+msgstr "podle kateder"
+
+#: app/helpers/candidates_helper.rb:130
 msgid "enrolled"
 msgstr "zapsán"
 
-#: app/helpers/candidates_helper.rb:125
+#: app/helpers/candidates_helper.rb:132
 msgid "not admitted"
 msgstr "nepřijutí"
 
-#: app/helpers/candidates_helper.rb:127
+#: app/helpers/candidates_helper.rb:134
 msgid "admitted"
 msgstr "přijat"
 
-#: app/helpers/candidates_helper.rb:129 app/views/candidates/_history.rhtml:8
+#: app/helpers/candidates_helper.rb:136 app/views/candidates/_history.rhtml:8
 msgid "invited"
 msgstr "pozván"
 
-#: app/helpers/candidates_helper.rb:131 app/views/candidates/_history.rhtml:5
+#: app/helpers/candidates_helper.rb:138 app/views/candidates/_history.rhtml:5
 msgid "ready"
 msgstr "odsouhlasen"
 
-#: app/helpers/candidates_helper.rb:136
+#: app/helpers/candidates_helper.rb:143
 msgid "conditional admit"
 msgstr "podmínečně přijmout"
 
-#: app/helpers/candidates_helper.rb:136
+#: app/helpers/candidates_helper.rb:143
 msgid "not admit"
 msgstr "nepřijmout"
 
-#: app/helpers/candidates_helper.rb:148
+#: app/helpers/candidates_helper.rb:155
 msgid "reject"
 msgstr "neschválit"
 
@@ -322,18 +327,19 @@ msgstr "Rodné číslo"
 msgid "Birth on"
 msgstr "Narozen dne"
 
-#: app/helpers/application_helper.rb:224 app/helpers/application_helper.rb:315
+#: app/helpers/application_helper.rb:224 app/helpers/application_helper.rb:318
 #: app/views/exams/_show_protocol.rhtml:44
 msgid "print"
 msgstr "vytisknout"
 
 #: app/helpers/application_helper.rb:227 app/helpers/application_helper.rb:235
-#: app/helpers/application_helper.rb:242 app/views/shared/_main_menu.rhtml:21
+#: app/helpers/application_helper.rb:245 app/views/shared/_main_menu.rhtml:21
 #: app/views/shared/_main_menu.rhtml:25
 msgid "exams"
 msgstr "zkoušky"
 
-#: app/helpers/application_helper.rb:233 app/views/shared/_main_menu.rhtml:17
+#: app/helpers/application_helper.rb:233 app/helpers/application_helper.rb:241
+#: app/views/shared/_main_menu.rhtml:17
 msgid "candidates"
 msgstr "uchazeči"
 
@@ -349,85 +355,85 @@ msgstr "vložení školitele"
 msgid "manage_coridor"
 msgstr "správa koridorů"
 
-#: app/helpers/application_helper.rb:240 app/helpers/application_helper.rb:262
+#: app/helpers/application_helper.rb:243 app/helpers/application_helper.rb:265
 #: app/views/shared/_main_menu.rhtml:6 app/views/shared/_main_menu.rhtml:23
 msgid "probation terms"
 msgstr "termíny zkoušek"
 
-#: app/helpers/application_helper.rb:247
+#: app/helpers/application_helper.rb:250
 #: app/helpers/probation_terms_helper.rb:48
 #: app/views/shared/_main_menu.rhtml:27
 msgid "students"
 msgstr "studenti"
 
-#: app/helpers/application_helper.rb:251 app/helpers/application_helper.rb:255
+#: app/helpers/application_helper.rb:254 app/helpers/application_helper.rb:258
 #: app/views/shared/_main_menu.rhtml:29 app/views/shared/_main_menu.rhtml:30
 msgid "logoff"
 msgstr "odhlásit"
 
-#: app/helpers/application_helper.rb:254 app/views/shared/_main_menu.rhtml:29
+#: app/helpers/application_helper.rb:257 app/views/shared/_main_menu.rhtml:29
 msgid "do you really want to"
 msgstr "opravdu se chcete"
 
-#: app/helpers/application_helper.rb:265
+#: app/helpers/application_helper.rb:268
 #: app/views/study_plans/_study_plan_header.rhtml:1
 #: app/views/shared/_main_menu.rhtml:9
 msgid "study plan"
 msgstr "studijní plán"
 
-#: app/helpers/application_helper.rb:268 app/helpers/application_helper.rb:462
+#: app/helpers/application_helper.rb:271 app/helpers/application_helper.rb:465
 #: app/views/shared/_main_menu.rhtml:11 app/views/shared/_main_menu.rhtml:19
 msgid "scholarship"
 msgstr "stipendia"
 
-#: app/helpers/application_helper.rb:278
+#: app/helpers/application_helper.rb:281
 msgid "Birth place"
 msgstr "Místo narození"
 
-#: app/helpers/application_helper.rb:350
+#: app/helpers/application_helper.rb:353
 msgid "see atestation informations"
 msgstr "informace k atestaci"
 
-#: app/helpers/application_helper.rb:363
+#: app/helpers/application_helper.rb:366
 msgid "approve with earfull"
 msgstr "schválit s výtkou"
 
-#: app/helpers/application_helper.rb:363 app/helpers/application_helper.rb:367
+#: app/helpers/application_helper.rb:366 app/helpers/application_helper.rb:370
 msgid "cancel"
 msgstr "neschválit"
 
-#: app/helpers/application_helper.rb:377
+#: app/helpers/application_helper.rb:380
 msgid "methodology file (opens new window)"
 msgstr "soubor s metodikou (otevře nové okno)"
 
-#: app/helpers/application_helper.rb:385
+#: app/helpers/application_helper.rb:388
 msgid "additional information for next atestation"
 msgstr "další informace pro následující atestaci"
 
-#: app/helpers/application_helper.rb:396
+#: app/helpers/application_helper.rb:399
 #: app/views/coridors/manage_edit.rhtml:3 app/views/candidates/enroll.rhtml:15
 #: app/views/candidates/admit.rhtml:20 app/views/exam_terms/new.rhtml:7
 #: app/views/exams/_protocol.rhtml:4
 msgid "back"
 msgstr "zpět"
 
-#: app/helpers/application_helper.rb:398
+#: app/helpers/application_helper.rb:401
 msgid "back and remove from list"
 msgstr "zpět a vyřadit ze seznamu"
 
-#: app/helpers/application_helper.rb:458
+#: app/helpers/application_helper.rb:461
 msgid "finished on"
 msgstr "ukončen dne"
 
-#: app/helpers/application_helper.rb:514 app/helpers/students_helper.rb:132
+#: app/helpers/application_helper.rb:517 app/helpers/students_helper.rb:132
 msgid "final exam term"
 msgstr "termín SDZ"
 
-#: app/helpers/application_helper.rb:517
+#: app/helpers/application_helper.rb:520
 msgid "hide"
 msgstr "skrýt"
 
-#: app/helpers/application_helper.rb:553 app/helpers/application_helper.rb:556
+#: app/helpers/application_helper.rb:556 app/helpers/application_helper.rb:559
 #: app/views/scholarships/approve.rhtml:8
 #: app/views/scholarships/_prepare_list.rhtml:10
 #: app/views/shared/candidate_detail.rhtml:4
@@ -436,7 +442,7 @@ msgstr "skrýt"
 msgid "Full name"
 msgstr "Jméno a příjmení"
 
-#: app/helpers/application_helper.rb:562 app/helpers/application_helper.rb:565
+#: app/helpers/application_helper.rb:565 app/helpers/application_helper.rb:568
 #: app/models/tutor.rb:5 app/views/interupts/print_interupt.rhtml:13
 #: app/views/students/change_tutor_confirm.rhtml:14
 #: app/views/students/end_study.rhtml:13
@@ -740,6 +746,10 @@ msgstr "Změnit formu k"
 msgid "finish_to"
 msgstr "ukončit k"
 
+#: app/models/student.rb:23
+msgid "switch_study_to"
+msgstr "změnit formu k"
+
 #: app/models/faculty.rb:55
 msgid "director"
 msgstr "ředitel"
@@ -939,9 +949,9 @@ msgid "Creating final exam term"
 msgstr "termín SDZ"
 
 #: app/controllers/final_exam_terms_controller.rb:49
-#: app/controllers/candidates_controller.rb:118
-#: app/controllers/candidates_controller.rb:145
-#: app/controllers/candidates_controller.rb:163
+#: app/controllers/candidates_controller.rb:122
+#: app/controllers/candidates_controller.rb:149
+#: app/controllers/candidates_controller.rb:167
 msgid "e-mail sent"
 msgstr "e-mail odeslán"
 
@@ -979,19 +989,19 @@ msgstr "Přihlášení do systému"
 msgid "Login was unsuccesful"
 msgstr "Přihlášení se nepodařilo"
 
-#: app/controllers/candidates_controller.rb:52
+#: app/controllers/candidates_controller.rb:56
 msgid "Candidate was changed"
 msgstr "Uchazeč byl opraven"
 
-#: app/controllers/candidates_controller.rb:130
+#: app/controllers/candidates_controller.rb:134
 msgid "Candidate "
 msgstr "Uchazeč "
 
-#: app/controllers/candidates_controller.rb:130
+#: app/controllers/candidates_controller.rb:134
 msgid " is ready for application form"
 msgstr " je připraven na příjimací zkoušky"
 
-#: app/controllers/candidates_controller.rb:179
+#: app/controllers/candidates_controller.rb:183
 msgid "Candidates"
 msgstr "Uchazeči o studium"
 
@@ -1067,7 +1077,7 @@ msgstr "Výpis komisí příjímacích komisí"
 #: app/controllers/study_plans_controller.rb:11
 #: app/views/study_plans/create_by_other.rhtml:3
 #: app/views/study_plans/create.rhtml:6
-#: app/views/shared/_study_detail.rhtml:83
+#: app/views/shared/_study_detail.rhtml:84
 msgid "Study plan"
 msgstr "Studijní plán"
 
@@ -1077,7 +1087,7 @@ msgid "Creating study plan"
 msgstr "Vytváření nového studijního plánu"
 
 #: app/controllers/study_plans_controller.rb:110
-#: app/controllers/study_plans_controller.rb:153
+#: app/controllers/study_plans_controller.rb:154
 msgid "subjects have to be different"
 msgstr "předměty musí být rozdílné"
 
@@ -1244,7 +1254,7 @@ msgid "last atestation:"
 msgstr "poslední atestace"
 
 #: app/views/interupts/print_interupt.rhtml:59
-#: app/views/shared/_study_detail.rhtml:77
+#: app/views/shared/_study_detail.rhtml:78
 msgid "study plan approvement process"
 msgstr "Schvalovací proces studijního plánu"
 
@@ -1284,7 +1294,7 @@ msgstr ""
 msgid "Enroll"
 msgstr "zapsat"
 
-#: app/views/candidates/admit.rhtml:6 app/views/candidates/_list.rhtml:26
+#: app/views/candidates/admit.rhtml:6 app/views/candidates/_list.rhtml:32
 #: app/views/shared/candidate_detail.rhtml:25
 #: app/views/shared/candidate_edit.rhtml:68
 #: app/views/students/_search.rhtml:42
@@ -1301,7 +1311,7 @@ msgstr "školitel"
 msgid "department"
 msgstr "katedra"
 
-#: app/views/candidates/admit.rhtml:14 app/views/candidates/_list.rhtml:27
+#: app/views/candidates/admit.rhtml:14 app/views/candidates/_list.rhtml:33
 #: app/views/candidates/_table_list.rhtml:17
 #: app/views/shared/candidate_edit.rhtml:95
 msgid "study form"
@@ -1311,43 +1321,43 @@ msgstr "forma studia"
 msgid "admited"
 msgstr "přijat"
 
-#: app/views/candidates/_list.rhtml:18
+#: app/views/candidates/_list.rhtml:22
 msgid "contact"
 msgstr "kontakt"
 
-#: app/views/candidates/_list.rhtml:21
+#: app/views/candidates/_list.rhtml:26
 msgid "history"
 msgstr "historie"
 
-#: app/views/candidates/_list.rhtml:24
+#: app/views/candidates/_list.rhtml:30
 msgid "b.n."
 msgstr "r.č."
 
-#: app/views/candidates/list.rhtml:2
+#: app/views/candidates/list.rhtml:3
 msgid "by corridor"
 msgstr "podle oboru"
 
-#: app/views/candidates/list.rhtml:3
+#: app/views/candidates/list.rhtml:4
 msgid "by lastname"
 msgstr "podle příjmení"
 
-#: app/views/candidates/list.rhtml:3
+#: app/views/candidates/list.rhtml:4
 msgid "by modification"
 msgstr "podle data změny"
 
-#: app/views/candidates/list.rhtml:5 app/views/students/_search.rhtml:11
+#: app/views/candidates/list.rhtml:6 app/views/students/_search.rhtml:11
 msgid "filter"
 msgstr "filtrovat"
 
-#: app/views/candidates/list.rhtml:6
+#: app/views/candidates/list.rhtml:7
 msgid "order"
 msgstr "seřaď"
 
-#: app/views/candidates/list.rhtml:7
+#: app/views/candidates/list.rhtml:8
 msgid "order all"
 msgstr "seřaď všechny"
 
-#: app/views/candidates/list.rhtml:15
+#: app/views/candidates/list.rhtml:17
 msgid "There are no candidates in your selection"
 msgstr "Není žádný uchazeč podle Vašeho výběru"
 
@@ -1859,8 +1869,8 @@ msgstr "semestr státní doktorské zkoušky"
 #: app/views/study_plans/_full_form.rhtml:30
 #: app/views/study_plans/_full_form.rhtml:36
 #: app/views/study_plans/_final_areas_fields.rhtml:3
-#: app/views/shared/_final_exam.rhtml:22 app/views/shared/_final_exam.rhtml:31
-#: app/views/shared/_final_exam.rhtml:38
+#: app/views/shared/_final_exam.rhtml:23 app/views/shared/_final_exam.rhtml:32
+#: app/views/shared/_final_exam.rhtml:39
 msgid "final area"
 msgstr "oblast předmětů"
 
@@ -1923,7 +1933,7 @@ msgstr ""
 
 #: app/views/study_plans/_full_form.rhtml:13
 #: app/views/study_plans/_plan_subjects.rhtml:4
-#: app/views/shared/_study_detail.rhtml:105
+#: app/views/shared/_study_detail.rhtml:106
 msgid "subjects"
 msgstr "Předměty"
 
@@ -2205,11 +2215,11 @@ msgstr "ukončeno k"
 msgid "study plan has changed"
 msgstr "změněn studijní plán"
 
-#: app/views/shared/_study_detail.rhtml:94
+#: app/views/shared/_study_detail.rhtml:95
 msgid "canceled on"
 msgstr "neschváleno dne"
 
-#: app/views/shared/_study_detail.rhtml:100
+#: app/views/shared/_study_detail.rhtml:101
 msgid "approved on"
 msgstr "schválen dne"
 
@@ -2607,6 +2617,9 @@ msgstr "jméno externího předmětu nesmí být prázdné"
 #: lib/study_plan_creator.rb:81
 msgid "university for external subject cannot be empty"
 msgstr "univerzita pro externí předmět nesmí být prazdná"
+
+#~ msgid "print this page"
+#~ msgstr "vytisknout tuto stránku"
 
 #, fuzzy
 #~ msgid "Requisite_subject"

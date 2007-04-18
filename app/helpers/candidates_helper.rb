@@ -119,7 +119,7 @@ module CandidatesHelper
   def summary_links
     links = ''
     links << link_to(_(params[:id] == "department" ||  !params[:id] ?
-    "By corridors" : "By departments"), {:action => 'summary', 
+    _("By corridors") : _("By departments")), {:action => 'summary', 
       :id => params[:id] == "department" ||  !params[:id] ? 'corridor' : 'department'})
     content_tag('div', links, :class => 'links')
   end
