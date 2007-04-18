@@ -119,7 +119,7 @@ class Index < ActiveRecord::Base
       end
     elsif study_plan 
       if !study_plan.approved?
-        study_plan.approvement ||= StudyPlanApprovement.create
+        study_plan.approvement ||= StudyPlanApprovement.create(:document_id => study_plan.id)
         if study_plan.approvement.prepares_statement?(user)
           return study_plan.approvement.prepare_statement(user)
         end

@@ -36,7 +36,7 @@ class StudyPlan < ActiveRecord::Base
 
   #  returns true if study plan has been atested for last atestation
   def atested_for?(date)
-    last_atested_on && last_atested_on > date
+    last_atested_on && last_atested_on.to_date > date
   end
 
   # returns true if tudy plan waits for actuala atestation

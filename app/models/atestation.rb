@@ -1,4 +1,4 @@
-class Atestation < StudyPlanApprovement
+class Atestation < Approvement
   untranslate_all
   has_one :atestation_detail
   belongs_to :study_plan, :foreign_key => 'document_id'
@@ -32,4 +32,14 @@ class Atestation < StudyPlanApprovement
   def is_actual?
     created_on.to_date > Atestation.actual_for_faculty(study_plan.index.faculty)
   end
+    # returns index
+  def index
+    study_plan.index
+  end
+
+  # returns study plan
+  def document
+    study_plan
+  end
+  
 end
