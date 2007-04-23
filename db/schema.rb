@@ -224,6 +224,7 @@ ActiveRecord::Schema.define(:version => 120) do
     t.column "ldap_context",   :text
     t.column "street",         :string
     t.column "stipendia_code", :integer
+    t.column "www",            :string,  :limit => 100
   end
 
   create_table "indices", :force => true do |t|
