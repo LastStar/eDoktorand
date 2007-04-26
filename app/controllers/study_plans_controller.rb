@@ -144,7 +144,7 @@ class StudyPlansController < ApplicationController
     @errors = []
     extract_voluntary
     @student = Student.find(params[:student][:id])
-    @atestation = @student.study_plan.atestation.clone
+    @atestation = @student.study_plan.atestation.clone if @student.study_plan.atestation
     if session[:finished_subjects]
       session[:finished_subjects].each do |sub|
        @plan_subjects << sub.clone 
@@ -158,11 +158,11 @@ class StudyPlansController < ApplicationController
     @disert_theme.index = @student.index
     @study_plan.admited_on = Time.now
     @study_plan.index = @student.index
-    @study_plan.atestation = @atestation
+    @study_plan.atestation = @atestation if @atestation
     if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
       @study_plan.save
       @disert_theme.save
-      @atestation.save
+      @atestation.save if @atestation
       @plan_subjects.each do |ps|
         ps.study_plan = @study_plan
         ps.save
