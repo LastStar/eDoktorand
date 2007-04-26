@@ -10,6 +10,7 @@
 <%= form_tag(:controller => 'study_plans', :action => 'save_full') %>	
 <fieldset>
 <%= hidden_field('student', 'id') %>
+<%= hidden_field('study_plan', 'last_atested_on') %>
 <legend><%= _("subjects") %></legend>
 <ul>
 <%= render(:partial => 'general', :collection => @plan_subjects, :locals => 

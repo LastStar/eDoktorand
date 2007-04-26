@@ -125,7 +125,7 @@ class Index < ActiveRecord::Base
         end
       elsif study_plan.waits_for_actual_atestation?
         if !study_plan.atestation || !study_plan.atestation.is_actual?
-          study_plan.atestation = Atestation.create
+          study_plan.atestation = Atestation.create(:document_id => study_plan.id)
         end
         return study_plan.atestation.prepare_statement(user)
       end
@@ -143,7 +143,7 @@ class Index < ActiveRecord::Base
     elsif study_plan && study_plan.approved? &&
       study_plan.waits_for_actual_atestation?
       if !study_plan.atestation || !study_plan.atestation.is_actual?
-        temp_approvement = study_plan.atestation = Atestation.create
+        temp_approvement = study_plan.atestation = Atestation.create(:document_id => study_plan.id)
       else
         temp_approvement = study_plan.atestation 
       end

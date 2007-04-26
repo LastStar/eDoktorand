@@ -7,6 +7,7 @@ class StudyPlan < ActiveRecord::Base
   has_one :approvement, :class_name => 'StudyPlanApprovement',
     :foreign_key => 'document_id'
   has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
+  has_many :approvements
   acts_as_audited
   validates_presence_of :index
   serialize :final_areas, Hash
