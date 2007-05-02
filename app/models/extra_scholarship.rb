@@ -21,7 +21,7 @@ class ExtraScholarship < Scholarship
   end
 
   def disponent
-    "#{commission_tail}#{commission_head}#{commission_body}"
+    "#{commission_head}#{commission_body}#{commission_tail}"
   end
 
   def self.sum_for(user)
