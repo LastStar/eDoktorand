@@ -225,32 +225,27 @@ module ApplicationHelper
                                   :size => '12x12' ))]
     if @user.has_role?('examinator')
       links << link_to_unless_current(_("exams"), :controller => 'exams'){}
-    else
-    if @user.person.is_a?(Student) and @student 
+    elsif @user.person.is_a?(Student) and @student 
       links << student_menu
-    else 
-      if @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
+    elsif @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
         links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){}
         links << prepare_scholarship_link
-      #  links << link_to_unless_current(_("insertion_tutor"), :controller => 'tutors'){} 
-      #  links << link_to_unless_current(_("manage_coridor"), :controller => 'coridors', :action => 'manage_coridor'){} 
-	elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
-        if @user.has_role?('board_chairman')
-          links << link_to_unless_current(_("candidates"), :controller => 'candidates'){}
-        end
-        links << link_to_unless_current(_("probation terms"), 
-                                        :controller => 'probation_terms'){} 
-        links << link_to_unless_current(_("exams"), :controller => 'exams'){}
-        unless @user.has_role?('vicerector')
-          links << prepare_scholarship_link
-        end
-      end 
-      links << link_to_unless_current(_("students"), 
-                                      :controller => 'students'){}
+        links << link_to_unless_current(_('diploma supplements'), :controller => 'diploma_supplements') {}
+    elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
+      if @user.has_role?('board_chairman')
+        links << link_to_unless_current(_("candidates"), :controller => 'candidates'){}
+      end
+      links << link_to_unless_current(_("probation terms"), 
+                                      :controller => 'probation_terms'){} 
+      links << link_to_unless_current(_("exams"), :controller => 'exams'){}
+      unless @user.has_role?('vicerector')
+        links << prepare_scholarship_link
+      end
     end 
-    end
+    links << link_to_unless_current(_("students"), 
+                                    :controller => 'students'){}
     links << link_to_unless_current(_("logoff"), 
                                     {:controller => 'account', 
                                      :action => 'logout'}, 

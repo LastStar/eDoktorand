@@ -1,19 +1,24 @@
+require 'gettext/rails'
 
 class ApplicationController < ActionController::Base
   include LoginSystem
   include ExceptionNotifiable
 
-  init_gettext "phdstudy", "UTF-8", "text/html"
+  init_gettext "phdstudy"
 
   before_filter :utf8_locale
 
   # sets utf8 for db and locale to cs_CZ
+  # TODO redone for native sql and locale
   def utf8_locale
-    if params[:lang] == "en"
-      setlocale('en_EN')
+    if params[:lang]
+      cookies[:lang] = params[:lang]
+    elsif cookies[:lang] 
+      params[:lang] = cookies[:lang]
     else
-      setlocale('cs_CZ') # TODO hard coded locale
+      params[:lang] = cookies[:lang] = 'cs_CZ'
     end
+    setlocale params[:lang]
     @charset = 'utf-8'
     headers['Content-Type'] = "text/html; charset=#{@charset}"
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')

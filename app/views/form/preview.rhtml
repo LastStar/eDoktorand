@@ -11,9 +11,15 @@
   <div class='signature'><%= _("Signature") %>:</div>
   </ul>
   <p class='instruction'>
-  <o class='red'><b><%= _("ATTENTION:") %> </b></o><%= _("it is necessary to") %> <o class='red'><%= _("check the filled data correctness,") %> <%= _("print out the application form, register the application form on-line") %> </o><%= _("and") %> <o class='red'><%=_("mail the requiered documents") %> </o><%= _("to Office for Science and Research for a successful application – you should take all these steps, otherwise we cannot guarantee your successful application.") %><br /><br />
+  <o class='red'><b><%= _("ATTENTION:") %> </b></o>
+  <%= _("it is necessary to") %> <o class='red'><%= _("check the filled data correctness,") %> <%= _("print out the application form, register the application form on-line") %> </o>
+  <%= _("and") %> <o class='red'><%=_("mail the requiered documents") %> </o>
+  <%= _("to Office for Science and Research for a successful application you should take all these steps, otherwise we cannot guarantee your successful application.") %><br /><br />
   1. <b><%= _("Check the filled data") %></b> - <%= _("check your correct application data") %><br />
-  2. <b><%= link_to _("Data correction"), :action => 'correct', :id => @candidate.id  %></b> - <%= _("click here for incorrect data correction, please") %><br />
-  3. <b><%= _("<a href='javascript:window.print()'>Print</a> out the application form") %></b> - <%= _("click here for printing out your application form, please") %><br />
-  4. <b><%= link_to _("Register"), :action => 'finish', :id => @candidate.id   %> <%= _("the application form on-line") %></b> - <%= _("click here for registering your application  on-line, please") %>
+  2. <b><%= link_to _("Data correction"), :action => 'correct', :id => @candidate.id  %></b>
+  - <%= _("click here for incorrect data correction, please") %><br />
+  3. <b><%= _("<a href='javascript:window.print()'>Print</a> out the application form") %></b>
+  - <%= _("click here for printing out your application form, please") %><br />
+  4. <b><%= link_to _("Register"), :action => 'finish', :id => @candidate.id   %>
+    <%= _("the application form on-line") %></b> - <%= _("click here for registering your application  on-line, please") %>
   </p>
