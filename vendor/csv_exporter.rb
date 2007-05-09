@@ -275,7 +275,7 @@ class CSVExporter
 
   def self.export_tutors_per_coridor
     outfile = File.open('tutors_per_coridor.csv', 'wb')
-      CSV::Writer.generate(outfile, ';') do |csv|
+    CSV::Writer.generate(outfile, ';') do |csv|
       csv << ['coridor id', 'coridor name', 'amount']
       Coridor.find(:all).each do |c|
         csv << [c.id, c.name, c.tutors.size]
@@ -283,4 +283,22 @@ class CSVExporter
     end
     outfile.close
   end
+
+  def self.export_students_with_disert_themes(user)
+    outfile = File.open('students_with_disert_theme.csv', 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      Index.find_for(user, :studying => true).each do |i|
+        row = [i.student.lastname, i.student.firstname, i.coridor.name, 
+                i.year]
+        if i.disert_theme
+          row << [i.disert_theme.title, i.disert_theme.title_en]
+        else
+          row << ['----', '----']
+        end
+        csv << row
+      end
+    end
+    outfile.close
+  end
+    
 end
