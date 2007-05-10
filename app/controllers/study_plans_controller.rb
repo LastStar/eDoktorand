@@ -160,7 +160,7 @@ class StudyPlansController < ApplicationController
     @study_plan.index = @student.index
     if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
       @study_plan.save
-      @atestation.update_attribute(:document_id, @study_plan.id)
+      @atestation.update_attribute(:document_id, @study_plan.id) if @atestation
       @disert_theme.save
       @plan_subjects.each do |ps|
         ps.study_plan = @study_plan
