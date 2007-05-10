@@ -144,7 +144,8 @@ class StudyPlansController < ApplicationController
     @errors = []
     extract_voluntary
     @student = Student.find(params[:student][:id])
-    @atestation = @student.study_plan.atestation if @student.study_plan.atestation
+    if @student.study_plan && @student.study_plan.atestation
+      @atestation = @student.study_plan.atestation 
     if session[:finished_subjects]
       session[:finished_subjects].each do |sub|
        @plan_subjects << sub.clone 
