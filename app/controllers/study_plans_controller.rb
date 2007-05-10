@@ -146,6 +146,7 @@ class StudyPlansController < ApplicationController
     @student = Student.find(params[:student][:id])
     if @student.study_plan && @student.study_plan.atestation
       @atestation = @student.study_plan.atestation 
+    end
     if session[:finished_subjects]
       session[:finished_subjects].each do |sub|
        @plan_subjects << sub.clone 
