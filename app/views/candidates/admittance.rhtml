@@ -1,12 +1,20 @@
 <h3 class='printHeader'>ZÁPIS O PŘIJÍMACÍ ZKOUŠCE</h3>
-<p>
-	<div class='info'><b><%= @candidate.display_name %></b></div> Uchazeč: <br/>
-	<div class='info'><b><%= @candidate.study.name %></b></div>Forma studia: <br/>
-  <div class='info'><b><%= @candidate.department.name %></b></div>Katedra: <br /> 
-	<div class='info'><b><%= @candidate.coridor.name %></b></div>Obor: <br/>
-</p>
-<br /> 
-<br /> 
+<div style='text-align: right'>
+<table class='letter_header'>
+<tr>  
+  <th>Uchazeč:</th><td><b><%= @candidate.display_name %></b></td>
+</tr>
+<tr>
+  <th>Forma studia:</th><td><b><%= @candidate.study.name %></b></td>
+</tr>
+<tr>
+  <th>Katedra:</th><td><b><%= @candidate.department.name %></b></td> 
+</tr>
+<tr>
+  <th>Obor:</th><td><b><%= @candidate.coridor.name %></b></td>
+</tr>
+</table>
+</div>
 <p><b>Zhodnocení a výsledek přijímací zkoušky:</b></p>
 <p><div class='info'>........................................*</div>
 Odborná zkouška:
