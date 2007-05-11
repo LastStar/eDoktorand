@@ -68,7 +68,7 @@ class CandidatesController < ApplicationController
   
   # delete candidate
   def delete
-    Candidate.find(params[:id]).delete_candidate
+    Candidate.find(params[:id]).unfinish!
     redirect_to :action => 'list'
   end
 

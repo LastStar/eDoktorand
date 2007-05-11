@@ -51,8 +51,7 @@ class Candidate < ActiveRecord::Base
 
   # finishes candidate
   def finish!
-    self.finished_on = Time.now
-    self.save
+    self.update_attribute(:finished_on, Time.now)
   end
 
   # checks if candidate is allready finished 
@@ -222,7 +221,8 @@ class Candidate < ActiveRecord::Base
 
   # prepares conditions for paginate functions
   def self.prepare_conditions(options, faculty)
-    conditions = ["department_id in (?) AND finished_on IS NOT NULL", faculty.departments_ids]
+    conditions = ["department_id in (?) AND finished_on IS NOT NULL",
+                  faculty.departments]
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
        conditions.first << " AND coridor_id = #{options['coridor']}"
@@ -232,7 +232,8 @@ class Candidate < ActiveRecord::Base
 
   # returns all candidates by filter
   def self.find_all_finished(options, faculty)
-    conditions = ["department_id in (?)", faculty.departments_ids]
+    conditions = ["department_id in (?) AND finished_on IS NOT NULL", 
+                  faculty.departments]
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
       conditions.first << " AND coridor_id = ?"
@@ -243,10 +244,8 @@ class Candidate < ActiveRecord::Base
   end
 
   # delete candidate, fill finished_on to nil
-  # TODO Fix this with acts_as_paranoid
-  def delete_candidate
-    self.finished_on = nil
-    self.save
+  def unfinish!
+    self.update_attribute(:finished_on, nil)
   end
   
   def self.filter_conditions(filter)
