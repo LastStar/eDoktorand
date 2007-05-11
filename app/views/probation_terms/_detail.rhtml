@@ -1,5 +1,5 @@
 <div id='students_<%= probation_term.id %>'>
-<% if(!probation_term.students.empty?) %>
+<% unless probation_term.students.empty? %>
   <ul id="enrolled_<%= probation_term.id %>">
     <%= render(:partial => "enrolled_students", 
                :locals => {:probation_term => probation_term}) %>
@@ -9,7 +9,7 @@
 <% if @students && !@students.empty? %>
 <div>
   <label><%= _("enroll students") %></label>
-  <%= form_remote_with_loading(:url => {:action => 'enroll_student'},
+  <%= form_remote_tag(:url => {:action => 'enroll_student'},
       :update => "info_#{probation_term.id}") %>	
     <%= content_tag('select', display_name_options(students), 
                     {:id => "student_id", :name => "student[id]"}) %>

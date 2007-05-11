@@ -37,7 +37,7 @@ class ProbationTermsController < ApplicationController
 
   #TODO render only message when students empty
   def detail
-    @probation_term = session[:probation_term] || ProbationTerm.find(params[:id])
+    @probation_term = ProbationTerm.find(params[:id])
     @students = Student.find_to_enroll(@probation_term, :sort)
     render_partial('detail', :probation_term => @probation_term, :students => @students)
   end
@@ -69,8 +69,7 @@ class ProbationTermsController < ApplicationController
   
   # created exam object and subjects for select 
   def create
-    @probation_term = ProbationTerm.new('created_by' => @user.person.id)
-    session[:probation_term] = @probation_term
+    @probation_term = ProbationTerm.new
     @subjects = Subject.find_for(@user, :not_finished)
   end
 
@@ -94,23 +93,29 @@ class ProbationTermsController < ApplicationController
   
   # saves probation term 
   def save
-    probation_term = session[:probation_term]
-    probation_term.attributes = params[:probation_term]
-    probation_term.save
-    redirect_to :action => 'index'
+    params[:probation_term][:created_by] = @user.person.id
+    @probation_term = ProbationTerm.create(params[:probation_term])
+    if @probation_term.save
+      flash[:notice] = _('Probation term saved')
+      redirect_to :action => 'index'
+    else
+      @subjects = Subject.find_for(@user, :not_finished)
+      render :action => 'create'
+    end
   end
   
   def edit
     @probation_term = ProbationTerm.find(params[:id])
-    session[:probation_term] = @probation_term
+    @subjects = Subject.find_for(@user, :not_finished)
   end
 
   def update
-    @probation_term = ProbationTerm.find(params[:id])
+    @probation_term = ProbationTerm.find(params[:probation_term][:id])
     if @probation_term.update_attributes(params[:probation_term])
-      flash[:notice] = 'ProbationTerm was successfully updated.'
-      redirect_to :action => 'show', :id => @probation_term
+      flash[:notice] = _('Probation term saved')
+      redirect_to :action => 'index'
     else
+      @subjects = Subject.find_for(@user, :not_finished)
       render :action => 'edit'
     end
   end

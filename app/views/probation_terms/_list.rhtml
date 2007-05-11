@@ -13,7 +13,7 @@
   &nbsp;<%= probation_term.first_examinator.display_name %></li>
 <% if probation_term.second_examinator %>
   <li><%= _("2. examinator") %>:
-  &nbsp;<%= probation_term.second_examinator %></li>
+  &nbsp;<%= probation_term.second_examinator.display_name %></li>
 <% end %>
 <% unless probation_term.empty_note? %>
   <li><%= _("note") %>:&nbsp;<%= probation_term.note %></li>

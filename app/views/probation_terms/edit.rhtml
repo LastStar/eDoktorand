@@ -1,34 +1,9 @@
-<div id="done">
-  <%= render(:partial => 'probation_term_with_subject', :locals =>
-  {:probation_term => @probation_term}) %>
-</div>
+<h5><%= _("Editing probation term.") %></h5>
 <div id="form">
-  <%= render(:partial => 'probation_term_details_form', :locals =>
-  {:probation_term => @probation_term}) %>
+<% form_tag :action => 'update' do -%>
+  <%= hidden_field :probation_term, :id %>
+  <%= render(:partial => 'subject_form', :locals => {:subjects => @subjects}) %>
+  <%= render(:partial => 'probation_term_details_form') %>
+  <%= render(:partial => 'examinators_form')%>
+<% end -%>
 </div>
-<%= 
-javascript_tag <<-CODE
-last = []
-last[1] = 0
-last[2] = 0
-last[3] = 0
-function hide_on_internal(id) {
-  var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
-  if((element.value == 0 && last[id] != 0) || (element.value != 0 && last[id] == 0)) {
-    if($('external' + id).style.display == 'none') {
-    Element.show('external' + id)
-    last[id] = element.value;
-    }
-    else {
-    Element.hide('external' + id)
-    last[id] = element.value;
-    }
-  };
-}
-CODE
-    
-  
-
-
-%>
-
