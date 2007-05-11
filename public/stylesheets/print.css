@@ -190,6 +190,7 @@ table.letter_header th {
   font-weight: normal;
 }
 table.letter_header td {
+  text-align: left;
   border: none;
 }
 table.letter_header {
