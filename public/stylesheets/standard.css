@@ -497,3 +497,15 @@ a:hover.change_field {border: 1px dashed #ccc; color: black}
 #sum ul li {border-top: 1px solid white; color: black;}
 
 .nodecor textarea {margin-left:10%} 
+table.letter_header th {
+  border: none;
+  text-align: left;
+  padding-right: 1em;
+  font-weight: normal;
+}
+table.letter_header td {
+  border: none;
+}
+table.letter_header {
+  margin: 1em 0 1em 0;
+}

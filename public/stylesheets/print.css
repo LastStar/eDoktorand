@@ -182,3 +182,16 @@ li.higher {height: 2.25em;}
 }
 #loading {display: none}
 .student_detail li {padding-top: 2px; padding-bottom: 2px;font-size: 12px}
+
+table.letter_header th {
+  border: none;
+  text-align: left;
+  padding-right: 1em;
+  font-weight: normal;
+}
+table.letter_header td {
+  border: none;
+}
+table.letter_header {
+  margin-bottom: 1em 0 1em 0;
+}
