@@ -1,0 +1,33 @@
+<% unless @diploma_supplements.empty? %>
+<h5><%= _('Listing diploma_supplements') %></h5>
+
+<table class='list' width='90%'>
+  <tr>
+    <th><%= _('diploma no.') %></th>
+    <th><%= _('family name') %></th>
+    <th><%= _('given name') %></th>
+    <th><%= _('specialization') %></th>
+    <th colspan='3'><%= _('actions') %></th>
+  </tr>
+  
+<% for diploma_supplement in @diploma_supplements %>
+  <tr>
+  <% for column in ['diploma_no', 'family_name', 'given_name', 'study_specialization'] %>
+    <td><%=h diploma_supplement.send(column) %></td>
+  <% end %>
+    <td><%= link_to _('show'), :controller => :documents, :action => 'diploma_supplement', :id => diploma_supplement %></td>
+    <td><%= link_to _('edit'), :action => 'edit', :id => diploma_supplement %></td>
+    <td><%= link_to _('destroy'), { :action => 'destroy', :id => diploma_supplement }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to _('Previous page'), { :page => @diploma_supplement_pages.current.previous } if @diploma_supplement_pages.current.previous %>
+<%= link_to _('Next page'), { :page => @diploma_supplement_pages.current.next } if @diploma_supplement_pages.current.next %> 
+
+<% else %>
+<h4><%= _('no diploma supplements found') %></h4>
+<% end %>
+<br />
+
+<%= link_to _('New diploma supplement'), :action => 'new' %>

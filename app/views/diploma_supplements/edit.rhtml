@@ -1,0 +1,8 @@
+<h5><%= _('Editing diploma_supplement') %></h5>
+
+<% form_tag :action => 'update', :id => @diploma_supplement do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag _('edit') %>
+<% end %>
+<%= link_to _('show'), :controller => :documents, :action => 'diploma_supplement', :id => @diploma_supplement %>
+<%= link_to _('back'), :action => 'index' %>

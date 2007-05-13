@@ -3,8 +3,9 @@
 <h2>Czech Republic</h2>
 <div id='logo'><%= image_tag 'czu_logo' %></div>
 <h3>Czech University of Life Sciences Prague</h3>
-<h3><%= @index.student.faculty.name_english %></h3>
+<h3><%= @diploma_supplement.faculty_name_en %></h3>
 <h1>Diploma Supplement</h1>
+<h3>Diploma No.: <%= @diploma_supplement.diploma_no %></h3>
 </div>
 
 
@@ -24,10 +25,10 @@ give the reason why.</p>
   <li>
     1. INFORMATION IDENTIFYING THE HOLDER OF THE QUALIFICATION
     <ul class='sub_list'>
-      <li>1.1. Family name:&nbsp;<strong><%= @student.lastname %></strong></li>
-      <li>1.2. Given name:&nbsp;<strong><%= @student.firstname %></strong></li>
-      <li>1.3. Date of birth:&nbsp;<strong><%= @student.birth_on %></strong></li>
-      <li>1.4. Student identification number:&nbsp;<strong><%= @student.sident %></strong></li>
+      <li>1.1. Family name:&nbsp;<strong><%= @diploma_supplement.family_name %></strong></li>
+      <li>1.2. Given name:&nbsp;<strong><%= @diploma_supplement.given_name %></strong></li>
+      <li>1.3. Date of birth:&nbsp;<strong><%= @diploma_supplement.date_of_birth %></strong></li>
+      <li>1.4. Student identification number:&nbsp;<strong><%= @diploma_supplement.diploma_no %></strong></li>
     </ul>
   </li>
   <li>
@@ -36,12 +37,12 @@ give the reason why.</p>
       <li>2.1. Name of qualification / title conferred (in original language):&nbsp<strong>doktor / Ph.D.</strong></li>
       <li>2.2. Main field(s) of study for the qualification:
         <ul class='sub_sub_list'>
-          <li>Study programme:&nbsp;<strong><%= @index.coridor.program.label_en %></strong></li>
-          <li>Specialization:&nbsp;<strong><%= @index.coridor.english_with_code %></strong></li>
+          <li>Study programme:&nbsp;<strong><%= @diploma_supplement.study_programme %></strong></li>
+          <li>Specialization:&nbsp;<strong><%= @diploma_supplement.study_specialization %></strong></li>
         </ul>
       </li>
       <li>2.3. Name of status of awarding institution in original language:&nbsp;
-      <strong><%= @index.faculty.name %></strong></li>
+      <strong><%= @diploma_supplement.faculty_name %></strong></li>
       <li>2.4. Name and status of institution (if different from 2.3.) administering studies (in original language):</li>
       <li>2.5. Language(s) of instruction/examination:&nbsp;<strong> Czech</strong></li>
     </ul>
@@ -52,14 +53,14 @@ give the reason why.</p>
       <li>3.1. Level of qualification:&nbsp;<strong> Doctoral Study Programme</strong></li>
       <li>3.2. Official length of programme:&nbsp;<strong> 3 years</strong></li>
       <li>3.3. Access requirements:&nbsp;
-      <strong>Secondary school-leaving certificate; 
+      <strong>MSc. level degree; 
       further details:&nbsp;http://www.czu.cz</strong></li>
     </ul>
   </li>
   <li>
   4. INFORMATION ON THE CONTENTS AND RESULTS GAINED
     <ul class='sub_list'>
-      <li>4.1. Mode of study:&nbsp;<strong> <%= @index.study.name_en %></strong></li>
+      <li>4.1. Mode of study:&nbsp;<strong> <%= @diploma_supplement.study_mode %></strong></li>
       <li>4.2. Programme requirements:&nbsp;<strong>Student must satisfy programme
       requirements as prescribed in the documents: the Approved Course
       Schedule and the Study and Examination Rules. 
@@ -68,14 +69,12 @@ give the reason why.</p>
       and the individual grades/marks/credits obtained:
       <table>
       <tr>
-        <th class='short'>CODE</th>
         <th>SUBJECT</th>
         <th class='short'>GRADE</th>
       </tr>
-      <% @index.study_plan.plan_subjects.each do |ps| %>
+      <% @diploma_supplement.plan_subjects.split(';').each do |ps| %>
       <tr>
-        <td><%= ps.subject.code %></td>
-        <td><%= ps.subject.label %></td>
+        <td><%= ps %></td>
         <td>PASSED</td>
       </tr>
       <% end %>
@@ -86,29 +85,26 @@ give the reason why.</p>
         <th class='short'>GRADE</th>
       </tr>
       <tr>
-        <td><%= @index.disert_theme.title %></td>
+        <td><%= @diploma_supplement.disert_theme_title %></td>
         <td>PASSED</td>
       </tr>
       </table>
-      <p>Date of doctoral thesis defense: <%= @index.disert_theme.defense_passed_on.strftime('%B %d, %Y') %></p>
+      <p>Date of doctoral thesis defense: <%= @diploma_supplement.defense_passed_on %></p>
       <table>
       <tr>
         <th>FINAL STATE EXAMINATION</th>
         <th class='short'>GRADE</th>
       </tr>
-    <% fa = @index.study_plan.final_areas['en'] %>
-    <% 4.times do |i|%>
-      <% i=i+1 %>
+    <% @diploma_supplement.final_areas.split(';').each do |fa|%>
       <tr>
         <td>
-          <div class='long_info' id='final_area_en<%= i %>'>
-          <%=  fa[i.to_s] %></div>
+          <%= fa %></div>
         </td>
         <td>PASSED</td>
       </tr>
       <% end %>
       </table>
-      <p>Date of final state examination: <%=  %><p>
+      <p>Date of final state examination: <%= @diploma_supplement.final_exam_passed_on %><p>
       </li>
       <li>4.4. Grading scheme:
       <table>
@@ -138,16 +134,16 @@ give the reason why.</p>
   <li>
   6. ADDITIONAL INFORMATION
   <ul class='sub_list'>
-    <li>6.1. Additional information:&nbsp;http://www.pef.czu.cz</li>
-    <li>6.2. Further information sources:&nbsp;http://www.czu.cz</li>
+    <li>6.1. Additional information:&nbsp;<%= @diploma_supplement.faculty_www %></li>
+    <li>6.2. Further information sources:&nbsp;http://www.czu.cz/</li>
   </ul>
   </li>
   <li>
   7. CERTIFICATION OF THE SUPPLEMENT
   <ul class='sub_list'>
-    <li>7.1. Date:&nbsp;<%= @index.disert_theme.defense_passed_on %></li>
-    <li>7.2. Signature:&nbsp;<%= @index.faculty.dean.display_name %></li>
-    <li>7.3. Capacity:&nbsp;<%= @index.faculty.dean_label %></li>
+    <li>7.1. Date:&nbsp;<%= @diploma_supplement.printed_on %></li>
+    <li>7.2. Signature:&nbsp;<%= @diploma_supplement.dean_display_name %></li>
+    <li>7.3. Capacity:&nbsp;<%= @diploma_supplement.dean_title %></li>
     <li>7.4. Official stamp: </li>
   </ul>
   </li>
@@ -293,3 +289,4 @@ give the reason why.</p>
   </li>
 </ul>
 </div>
+<%= link_to _('back'), :controller => 'diploma_supplements', :action => 'index' %>

@@ -1,0 +1,8 @@
+<h5><%= _('New diploma_supplement') %></h5>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag _('create') %>
+<% end %>
+
+<%= link_to _('back'), :action => 'index' %>
