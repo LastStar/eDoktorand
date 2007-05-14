@@ -42,7 +42,8 @@ class DiplomaSupplementsController < ApplicationController
     @diploma_supplement = DiplomaSupplement.find(params[:id])
     if @diploma_supplement.update_attributes(params[:diploma_supplement])
       flash[:notice] = 'DiplomaSupplement was successfully updated.'
-      redirect_to :action => 'show', :id => @diploma_supplement
+      redirect_to :controller => :documents, :action => :diploma_supplement,
+                  :id => @diploma_supplement
     else
       render :action => 'edit'
     end
