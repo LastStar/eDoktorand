@@ -47,7 +47,7 @@ class DocumentsController < ApplicationController
   end
 
   def diploma_supplement
-    @index = Index.find params[:id]
-    @student = @index.student
+    @diploma_supplement = DiplomaSupplement.find(params[:id])
   end
+
 end
