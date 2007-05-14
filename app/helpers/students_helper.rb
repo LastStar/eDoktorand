@@ -43,6 +43,8 @@ module StudentsHelper
         if index.claimed_for_final_exam?
           links.concat(final_exam_link(index))
         end
+      else
+        links.concat(diploma_supplement_link(index))
       end
     end
     info.concat(div_tag("#{index.study.name}", {:class => 'smallinfo'}))
@@ -282,5 +284,10 @@ module StudentsHelper
       Element.remove('student_detail');
       Element.show('students_list', 'search');
     }
+  end
+
+  def diploma_supplement_link(index)
+    menu_div(link_to(_('diploma supplement'), :controller => :diploma_supplements, 
+            :action => :new, :id => index))
   end
 end
