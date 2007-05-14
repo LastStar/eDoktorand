@@ -22,9 +22,6 @@
 <% end %>
 </table>
 
-<%= link_to _('Previous page'), { :page => @diploma_supplement_pages.current.previous } if @diploma_supplement_pages.current.previous %>
-<%= link_to _('Next page'), { :page => @diploma_supplement_pages.current.next } if @diploma_supplement_pages.current.next %> 
-
 <% else %>
 <h4><%= _('no diploma supplements found') %></h4>
 <% end %>
