@@ -56,6 +56,13 @@ class Faculty < ActiveRecord::Base
     _('dean')
   end
 
+  # retuns dean of the faculty
+  # TODO redone with faculty configuration
+  def dean_label_en
+    return 'director' if id == 2
+    'dean'
+  end
+
   def subjects
     departments.map {|d| d.subjects}.flatten
   end
