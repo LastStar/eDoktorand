@@ -26,7 +26,7 @@ class DiplomaSupplement < ActiveRecord::Base
     new.family_name = index.student.lastname
     new.given_name = index.student.firstname
     new.date_of_birth = index.student.birth_on
-    new.study_programme = index.coridor.program.label_en
+    new.study_programme = index.coridor.program.label_en if index.coridor.program
     new.study_specialization = index.coridor.name_english
     new.faculty_name_en = index.faculty.name_english
     new.faculty_name = index.faculty.name
