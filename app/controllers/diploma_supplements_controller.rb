@@ -13,7 +13,7 @@ class DiplomaSupplementsController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @diploma_supplement_pages, @diploma_supplements = paginate :diploma_supplements, :per_page => 10
+    @diploma_supplements = DiplomaSupplement.find_for(@user)
   end
 
   def new

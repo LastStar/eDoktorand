@@ -50,4 +50,8 @@ class DiplomaSupplement < ActiveRecord::Base
         :dean_display_name => faculty.dean.display_name,
         :dean_title => faculty.dean_label_en)
   end
+
+  def self.find_for(user)
+    find(:all, :conditions => ["faculty_name = ?", user.person.faculty.name])
+  end
 end
