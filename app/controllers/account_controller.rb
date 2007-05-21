@@ -7,7 +7,7 @@ class AccountController < ApplicationController
 
   def login
     @title = _('Login to system')
-    if @request.method == :post
+    if request.method == :post
       if session[:user] = User.authenticate(params[:user_login], 
                                               params[:user_password])
         redirect_back_or_default welcome_url
