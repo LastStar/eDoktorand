@@ -35,8 +35,7 @@ do <%= @candidate.study.name %> formy doktorského studia na&nbsp;<%= @faculty.s
 vypláceno <% if @conditional %>ode dne nástupu do studia,<% else %>od&nbsp;1.&nbsp;října 2005,<% end %>
 vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <% end %>
-<p>Upozorňuji Vás, že je Vaší povinností do 1 měsíce od nástupu 
-do studia vypracovat a předložit studijní plán a do 3 měsíců od nástupu metodiku disertační práce.</p>
+<p>Upozorňuji Vás, že je Vaší povinností do <%= Parameter.get('methodics_term', @faculty) %> vypracovat a předložit studijní plán a do 3 měsíců od nástupu metodiku disertační práce.</p>
 
 <p>Proti tomuto rozhodnutí je možno podat odvolání k rukám <%= @faculty.id==2 ? "ředitele" : "děkana" %> <%= @faculty.short_name%>
 ČZU v Praze do 30&nbsp;dnů ode dne doručení.</p>
