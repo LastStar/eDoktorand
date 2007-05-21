@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2007-05-11 12:24+0200\n"
+"POT-Creation-Date: 2007-05-21 14:46+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -25,9 +25,8 @@ msgid "Login was unsuccesful"
 msgstr "Přihlášení se nepodařilo"
 
 #: app/controllers/addresses_controller.rb:99
-#, fuzzy
 msgid "Contacts"
-msgstr "Kontakt"
+msgstr "Kontakty"
 
 #: app/controllers/application.rb:36
 msgid "you don't have rights to do this"
@@ -138,13 +137,13 @@ msgstr "Česká zemědělská univerzita v Praze"
 msgid "faculty secretary approve"
 msgstr "schváleno referentkou vědy a výzkumu"
 
-#: app/controllers/probation_terms_controller.rb:99
-#: app/controllers/probation_terms_controller.rb:115
+#: app/controllers/probation_terms_controller.rb:100
+#: app/controllers/probation_terms_controller.rb:116
 #, fuzzy
 msgid "Probation term saved"
 msgstr "Termíny zkoušek"
 
-#: app/controllers/probation_terms_controller.rb:153
+#: app/controllers/probation_terms_controller.rb:154
 msgid "Probation terms"
 msgstr ""
 
@@ -321,18 +320,18 @@ msgstr "Rodné číslo"
 msgid "Birth on"
 msgstr "Narozen dne"
 
-#: app/helpers/application_helper.rb:224 app/helpers/application_helper.rb:313
+#: app/helpers/application_helper.rb:224 app/helpers/application_helper.rb:314
 #: app/views/exams/_show_protocol.rhtml:44
 msgid "print"
 msgstr "vytisknout"
 
 #: app/helpers/application_helper.rb:227 app/helpers/application_helper.rb:233
-#: app/helpers/application_helper.rb:242 app/views/shared/_main_menu.rhtml:21
+#: app/helpers/application_helper.rb:243 app/views/shared/_main_menu.rhtml:21
 #: app/views/shared/_main_menu.rhtml:25
 msgid "exams"
 msgstr "zkoušky"
 
-#: app/helpers/application_helper.rb:231 app/helpers/application_helper.rb:238
+#: app/helpers/application_helper.rb:231 app/helpers/application_helper.rb:239
 #: app/views/shared/_main_menu.rhtml:17
 msgid "candidates"
 msgstr "uchazeči"
@@ -342,94 +341,98 @@ msgid "exam_terms"
 msgstr "komise"
 
 #: app/helpers/application_helper.rb:235
-msgid "diploma supplements"
-msgstr ""
+msgid "diplomas"
+msgstr "diplomy"
 
-#: app/helpers/application_helper.rb:240 app/helpers/application_helper.rb:260
+#: app/helpers/application_helper.rb:236
+msgid "tutors"
+msgstr "školitelé"
+
+#: app/helpers/application_helper.rb:241 app/helpers/application_helper.rb:261
 #: app/views/shared/_main_menu.rhtml:6 app/views/shared/_main_menu.rhtml:23
 msgid "probation terms"
 msgstr "termíny zkoušek"
 
-#: app/helpers/application_helper.rb:247
+#: app/helpers/application_helper.rb:248
 #: app/helpers/probation_terms_helper.rb:49
 #: app/views/shared/_main_menu.rhtml:27
 msgid "students"
 msgstr "studenti"
 
-#: app/helpers/application_helper.rb:249 app/helpers/application_helper.rb:253
+#: app/helpers/application_helper.rb:250 app/helpers/application_helper.rb:254
 #: app/views/shared/_main_menu.rhtml:29 app/views/shared/_main_menu.rhtml:30
 msgid "logoff"
 msgstr "odhlásit"
 
-#: app/helpers/application_helper.rb:252 app/views/shared/_main_menu.rhtml:29
+#: app/helpers/application_helper.rb:253 app/views/shared/_main_menu.rhtml:29
 msgid "do you really want to"
 msgstr "opravdu se chcete"
 
-#: app/helpers/application_helper.rb:263 app/views/shared/_main_menu.rhtml:9
+#: app/helpers/application_helper.rb:264 app/views/shared/_main_menu.rhtml:9
 #: app/views/study_plans/_study_plan_header.rhtml:1
 msgid "study plan"
 msgstr "studijní plán"
 
-#: app/helpers/application_helper.rb:266 app/helpers/application_helper.rb:460
+#: app/helpers/application_helper.rb:267 app/helpers/application_helper.rb:461
 #: app/views/shared/_main_menu.rhtml:11 app/views/shared/_main_menu.rhtml:19
 msgid "scholarship"
 msgstr "stipendia"
 
-#: app/helpers/application_helper.rb:276
+#: app/helpers/application_helper.rb:277
 msgid "Birth place"
 msgstr "Místo narození"
 
-#: app/helpers/application_helper.rb:348
+#: app/helpers/application_helper.rb:349
 msgid "see atestation informations"
 msgstr "informace k atestaci"
 
-#: app/helpers/application_helper.rb:361 app/helpers/application_helper.rb:365
+#: app/helpers/application_helper.rb:362 app/helpers/application_helper.rb:366
 #: app/helpers/scholarships_helper.rb:55
 msgid "approve"
 msgstr "schválit"
 
-#: app/helpers/application_helper.rb:361
+#: app/helpers/application_helper.rb:362
 msgid "approve with earfull"
 msgstr "schválit s výtkou"
 
-#: app/helpers/application_helper.rb:361 app/helpers/application_helper.rb:365
+#: app/helpers/application_helper.rb:362 app/helpers/application_helper.rb:366
 msgid "cancel"
 msgstr "neschválit"
 
-#: app/helpers/application_helper.rb:375
+#: app/helpers/application_helper.rb:376
 msgid "methodology file (opens new window)"
 msgstr "soubor s metodikou (otevře nové okno)"
 
-#: app/helpers/application_helper.rb:383
+#: app/helpers/application_helper.rb:384
 msgid "additional information for next atestation"
 msgstr "další informace pro následující atestaci"
 
-#: app/helpers/application_helper.rb:394 app/views/candidates/admit.rhtml:20
+#: app/helpers/application_helper.rb:395 app/views/candidates/admit.rhtml:20
 #: app/views/candidates/enroll.rhtml:15 app/views/coridors/manage_edit.rhtml:3
 #: app/views/diploma_supplements/edit.rhtml:8
 #: app/views/diploma_supplements/new.rhtml:8
-#: app/views/documents/diploma_supplement.rhtml:292
+#: app/views/documents/diploma_supplement.rhtml:293
 #: app/views/exam_terms/new.rhtml:7 app/views/exams/_protocol.rhtml:4
 msgid "back"
 msgstr "zpět"
 
-#: app/helpers/application_helper.rb:396
+#: app/helpers/application_helper.rb:397
 msgid "back and remove from list"
 msgstr "zpět a vyřadit ze seznamu"
 
-#: app/helpers/application_helper.rb:456
+#: app/helpers/application_helper.rb:457
 msgid "finished on"
 msgstr "ukončen dne"
 
-#: app/helpers/application_helper.rb:512 app/helpers/students_helper.rb:134
+#: app/helpers/application_helper.rb:513 app/helpers/students_helper.rb:134
 msgid "final exam term"
 msgstr "termín SDZ"
 
-#: app/helpers/application_helper.rb:515
+#: app/helpers/application_helper.rb:516
 msgid "hide"
 msgstr "skrýt"
 
-#: app/helpers/application_helper.rb:551 app/helpers/application_helper.rb:554
+#: app/helpers/application_helper.rb:552 app/helpers/application_helper.rb:555
 #: app/views/final_exam_terms/_show.rhtml:2
 #: app/views/scholarships/_prepare_list.rhtml:10
 #: app/views/scholarships/approve.rhtml:8
@@ -438,7 +441,7 @@ msgstr "skrýt"
 msgid "Full name"
 msgstr "Jméno a příjmení"
 
-#: app/helpers/application_helper.rb:560 app/helpers/application_helper.rb:563
+#: app/helpers/application_helper.rb:561 app/helpers/application_helper.rb:564
 #: app/models/tutor.rb:5 app/views/exams/_protocol.rhtml:27
 #: app/views/exams/_show_protocol.rhtml:22
 #: app/views/interupts/print_interupt.rhtml:13
@@ -619,7 +622,7 @@ msgid "You are already enrolled for this term"
 msgstr "Na tento termín jste již přihlášen"
 
 #: app/helpers/probation_terms_helper.rb:25
-#: app/helpers/probation_terms_helper.rb:65
+#: app/helpers/probation_terms_helper.rb:66
 msgid "Sign off student"
 msgstr "Odhlásit"
 
@@ -645,7 +648,7 @@ msgstr "smazat"
 msgid "Sure to delete?"
 msgstr "Opravdu smazat?"
 
-#: app/helpers/probation_terms_helper.rb:57
+#: app/helpers/probation_terms_helper.rb:58
 msgid "Enroll student"
 msgstr "Zapsat zkoušku"
 
@@ -1595,19 +1598,11 @@ msgstr "specializace"
 msgid "destroy"
 msgstr "smazat"
 
-#: app/views/diploma_supplements/list.rhtml:25
-msgid "Previous page"
-msgstr "předchozí stránka"
-
 #: app/views/diploma_supplements/list.rhtml:26
-msgid "Next page"
-msgstr "další stránka"
-
-#: app/views/diploma_supplements/list.rhtml:29
 msgid "no diploma supplements found"
 msgstr "nenalezen žádný diploma supplement"
 
-#: app/views/diploma_supplements/list.rhtml:33
+#: app/views/diploma_supplements/list.rhtml:30
 msgid "New diploma supplement"
 msgstr "nový diploma supplement"
 
@@ -2376,8 +2371,8 @@ msgstr "Tento student byl pozván k statní závěrečné zkoušce."
 msgid "This student claimed for final exam."
 msgstr "Tento student požádal o připuštění k závěrečné zkoušce."
 
-#: app/views/shared/_final_exam.rhtml:23 app/views/shared/_final_exam.rhtml:32
-#: app/views/shared/_final_exam.rhtml:39
+#: app/views/shared/_final_exam.rhtml:22 app/views/shared/_final_exam.rhtml:31
+#: app/views/shared/_final_exam.rhtml:38
 #: app/views/study_plans/_disert_form.rhtml:14
 #: app/views/study_plans/_disert_form.rhtml:19
 #: app/views/study_plans/_final_areas_fields.rhtml:3
@@ -2790,11 +2785,11 @@ msgstr ""
 "Máte splněny všechny předměty, pokračujte vyplněním přihlášky k státní "
 "zavěrečné zkoušce"
 
-#: app/views/study_plans/index.rhtml:26
+#: app/views/study_plans/index.rhtml:25
 msgid "Welcome to edoktorand application."
 msgstr "Vítejte v aplikaci e-doktorand"
 
-#: app/views/study_plans/index.rhtml:27
+#: app/views/study_plans/index.rhtml:26
 msgid ""
 "This page shows informations which are stored in\n"
 "information system."
@@ -2802,11 +2797,11 @@ msgstr ""
 "Tato stránka zobrazuje informace, které jsou o Vás uloženy v informačním "
 "systému"
 
-#: app/views/study_plans/index.rhtml:29
+#: app/views/study_plans/index.rhtml:28
 msgid " If you have found any error please contact "
 msgstr "Pokud jste našel/-la jakoukoliv nesrovnalost, prosím kontaktujte "
 
-#: app/views/study_plans/index.rhtml:32
+#: app/views/study_plans/index.rhtml:31
 msgid "First step propably will to create"
 msgstr "Prvním krokem bude vytvořit"
 
@@ -2818,13 +2813,9 @@ msgstr ""
 "Na této stránce vidíte Váš sestavený studijní plán.Pokud je tak jste to "
 "zamýšleli potvrďte ho prosím"
 
-#: app/views/tutors/list.rhtml:2
+#: app/views/tutors/list.rhtml:1
 msgid "Tutors list"
 msgstr "Seznam školitelů"
-
-#: app/views/tutors/list.rhtml:21
-msgid "No tutors found."
-msgstr ""
 
 #: lib/study_plan_creator.rb:77
 msgid "title for external subject cannot be empty"
@@ -2833,6 +2824,12 @@ msgstr "jméno externího předmětu nesmí být prázdné"
 #: lib/study_plan_creator.rb:81
 msgid "university for external subject cannot be empty"
 msgstr "univerzita pro externí předmět nesmí být prazdná"
+
+#~ msgid "Previous page"
+#~ msgstr "předchozí stránka"
+
+#~ msgid "Next page"
+#~ msgstr "další stránka"
 
 #~ msgid "Please select the subject of the probation term."
 #~ msgstr "Prosím vyberte předmět pro termín"

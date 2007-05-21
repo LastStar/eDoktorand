@@ -1,23 +1,12 @@
-<% if @tutors && !@tutors.empty? %>
 <h5><%= _('Tutors list') + "(#{@tutors.size})" %></h5>
-<div id='tutors_list'>
-<ul>
+<ul id='tutors_list'>
   <% for tutor in @tutors %>
     <li>
-       <div id='<%='tutor_form_' + tutor.id.to_s%>'>
-          <div class='longerinfo'>          
-            <%if tutor.tutorship != nil && tutor.tutorship.coridor != nil%>
-	     <%= tutor.tutorship.coridor.name%>
-            <%else%>
-              <%='&nbsp;'%>
-	    <%end%>
-	   </div>          
-        <%=name_coridor_link(tutor)%>
-       </div>
+      <div class='x-longinfo' id='coridor_<%= tutor.tutorship.id %>'>          
+        <%= render :partial => 'coridor', 
+                   :locals => {:tutorship => tutor.tutorship} %>
+      </div>
+      <%= tutor.display_name %>
     </li>
   <% end %>
 </ul>
-<% else %>
-<h4><%= _('No tutors found.') %></h4>
-<% end %>
-</div>

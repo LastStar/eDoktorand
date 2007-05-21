@@ -6,31 +6,13 @@ class Tutor < Examinator
   N_("approve like tutor")
   N_('atest like tutor')
 
-  # return faculty of tutor
-  def faculty
-  # TODO fix this with data validation
-  # blood hack
-    if tutorship
-      tutorship.department.faculty
-    end
-  end
-  
-  def department
-    tutorship.department
-  end
-
-  def self.find_for_department(department)
-    department = department.id if department.is_a? Department
-    find(:all, :conditions => ["tutorships.department_id = ?",
-      department], :include => :tutorship, :order => 'lastname')
+  def self.find_for_coridors(coridors)
+    find(:all, :conditions => ["tutorships.coridor_id in (?)",
+      coridors], :include => :tutorship, :order => 'lastname')
   end
 
   def self.find_for_faculty(faculty)
-    faculty = faculty.id if faculty.is_a? Faculty
-    dep_ids = ActiveRecord::Base.connection.select_values(
-      "select id from departments where faculty_id = #{faculty}")
-    find(:all, :conditions => ["tutorships.department_id IN (?)",
-       dep_ids], :include => :tutorship, :order => 'lastname')
+    find_for_coridors(faculty.coridors)
   end
 
   def self.find_for(user)
@@ -41,5 +23,11 @@ class Tutor < Examinator
     elsif user.has_one_of_roles? ['tutor', 'department_secretary']
       find_for_department(user.person.department)
     end
+  end
+
+  # returns coridor from tutorship
+  # TODO redo with delegation
+  def coridor
+    tutorship.coridor
   end
 end

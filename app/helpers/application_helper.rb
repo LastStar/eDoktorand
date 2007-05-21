@@ -232,7 +232,8 @@ module ApplicationHelper
         links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){}
         links << prepare_scholarship_link
-        links << link_to_unless_current(_('diploma supplements'), :controller => 'diploma_supplements') {}
+        links << link_to_unless_current(_('diplomas'), :controller => 'diploma_supplements') {}
+        links << link_to_unless_current(_('tutors'), :controller => 'tutors') {}
     elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
       if @user.has_role?('board_chairman')
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){}
