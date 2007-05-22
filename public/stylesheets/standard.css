@@ -253,6 +253,12 @@ div.fieldWithErrors label { color: red; }
   font-size: 9pt;
   text-align: center;
 }
+.x-longinfo {
+  float: right;
+  width: 37em;
+  font-size: 9pt;
+  text-align: left;
+}
 .longerinfo {
   float: right;
   width: 27em;

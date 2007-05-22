@@ -1,4 +1,4 @@
-body {font-size: 18px; margin-top: 0pt;padding: 0pt;}
+body {font-size: 18px; margin: 0pt;padding: 0pt;}
 #header h2, h1, h3 {text-align: center;letter-spacing: 0.1em; font-variant: small-caps;}
 #logo {text-align: center; padding-bottom: 1em;}
 #supplement li {border: none}
@@ -7,11 +7,9 @@ body {font-size: 18px; margin-top: 0pt;padding: 0pt;}
 th.short {width: 5em}
 #supplement li {list-style: none}
 #supplement p {font-size: smaller; margin: .3em 0 0 0;}
-#supplement .sub_list {padding-bottom: 1em}
 .informations  li {font-size: smaller}
 #supplement #logo {text-align: center; padding-bottom: 1em}
 #supplement #logo img {display: inline}
 #supplement h1 {font-size: 32px; display: block;}
 #header h2 {margin: 0pt;}
-.break {page-break-before: always; margin-top: 1em;}
-div.logo {width: 170px; height: 90px;}
+.break {page-break-before: always; margin-top: 5em;}
