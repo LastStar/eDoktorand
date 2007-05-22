@@ -1,5 +1,3 @@
-<li class='second'>
-<%=del_link(@subject)+ @subject.subject.label%>         
-</li>
-<div id='add_<%=@type%>'>
-</div>
+<li class='second' id='coridor_subject_<%= coridor_subject.id %>'>
+    <%= del_link(coridor_subject) + coridor_subject.subject.label %>
+  </li>

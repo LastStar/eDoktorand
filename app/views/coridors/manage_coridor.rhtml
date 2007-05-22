@@ -6,8 +6,7 @@
   <% for coridor in @coridors %>
     <li>
        <div id='<%='coridor_form_' + coridor.id.to_s%>'>
-                
-        <%=coridor_link(coridor)%>
+         <%= coridor_link(coridor) %>
        </div>
     </li>
   <% end %>

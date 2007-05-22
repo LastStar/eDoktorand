@@ -12,7 +12,6 @@
 <div class='info'><%= "#{study_plan.finishing_to}. #{_('semester')}" %></div>
   <b><%= "#{_('final exam')}" %></b>
 </li>
-<%#breakpoint%>
 <% if study_plan.final_areas? %>
   <% if index.faculty.id == 1%>
     <% 4.times do |i|%>
@@ -32,7 +31,7 @@
           <%= "#{i}. " + _("final area") %> (en)
         </li>
   <% end %>
-  <% else %>
+<% else %>
      <% study_plan.final_areas.each do |fa| %>
         <li class='second'>
           <div class='long_info'><%= "#{fa.last}"%></div>
@@ -41,3 +40,4 @@
      <% end %>
   <% end %>
 <% end %>
+<li id='final_exam'></li>

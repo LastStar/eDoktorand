@@ -6,58 +6,32 @@
   <li>
     <b><%=@coridor.name%></b>
   </li>
-  <%#if @requisite_subjects != []%>
-    <li>
-      <b><%=_('requisite_subjects')%>:</b>
-    </li>
-  <%#end%>
-  <%for r_subject in @requisite_subjects%>
-    <li class='second'>
-      <%=del_link(r_subject)+r_subject.subject.label%>
-    </li>
-  <%end%>
-  <%#if @requisite_subjects != []%>
-    <div id='add_requisite'>
-    </div>
-    <li class='second'>
-      <%=add_subject(@coridor,'requisite')%>
-    </li>
-  <%#end%>  
-
-  <%#if @obligate_subjects != []%>
     <li>
       <b><%=_('obligate_subjects')%>:</b>
     </li>
-  <%#end%>
   <%for r_subject in @obligate_subjects%>
     <li class='second'>
       <%=del_link(r_subject)+r_subject.subject.label%>
     </li>
   <%end%>
-  <%#if @obligate_subjects != []%>
     <div id='add_obligate'>
     </div>
     <li class='second'>
       <%=add_subject(@coridor,'obligate')%>
     </li>
-  <%#end%>  
 
-  <%#if @voluntary_subjects != []%>
     <li>
       <b><%=_('voluntary_subjects')%>:</b>
     </li>
-  <%#end%>
   <%for r_subject in @voluntary_subjects%>
     <li class='second'>
       <%=del_link(r_subject)+r_subject.subject.label%>
     </li>
   <%end%>
-  <%#if @voluntary_subjects != []%>
     <div id='add_voluntary'>
     </div>
     <li class='second'>
       <%=add_subject(@coridor,'voluntary')%>
     </li>
-  <%#end%>  
 
 </ul>

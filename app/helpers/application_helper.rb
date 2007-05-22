@@ -234,6 +234,7 @@ module ApplicationHelper
         links << prepare_scholarship_link
         links << link_to_unless_current(_('diplomas'), :controller => 'diploma_supplements') {}
         links << link_to_unless_current(_('tutors'), :controller => 'tutors') {}
+        links << link_to_unless_current(_('coridors'), :controller => 'coridors') {}
     elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
       if @user.has_role?('board_chairman')
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){}

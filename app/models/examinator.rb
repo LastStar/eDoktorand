@@ -16,9 +16,8 @@ class Examinator < Person
   end
 
   def self.find_for_department(department)
-    department = department.id if department.is_a? Department
-    find(:all, :conditions => ["employments.unit_id = ?",
-      department], :include => :department_employment, :order => 'lastname')
+    find(:all, :conditions => ["employments.unit_id = ?", department],
+         :include => :department_employment, :order => 'lastname')
   end
 
   def self.find_for_faculty(faculty)

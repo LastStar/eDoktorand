@@ -1,7 +1,7 @@
-<li class='second'>
+<li id='coridor_subject_form' class='second'>
 <%= save_form(:subject) %>
-  <%=select("subject", "id", @subjects, { :include_blank => true })%>
-  <%=hidden_field("subject", "type", "value" => @type)%>
+  <%= collection_select(:coridor_subject, :subject_id, @subjects, :id, :label) %>
+  <%= hidden_field(:coridor_subject, :type)%>
   <%= ok_submit(:subject) %>
 <%= end_form_tag %>
 </li>

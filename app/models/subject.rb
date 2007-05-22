@@ -52,4 +52,17 @@ class Subject < ActiveRecord::Base
      end
   end
 
+  def self.find_for_coridor(coridor, options = {})
+    # TODO pure sql
+    taken = CoridorSubject.find(:all, 
+                                :conditions => ['coridor_id = ?', coridor])
+    taken.map!(&:subject_id)
+
+    if options[:not_taken]
+      Subject.find(:all, :conditions => ['id not in(?)', taken])
+    else
+      Subject.find(taken)
+    end
+
+  end
 end

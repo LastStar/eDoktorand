@@ -1,15 +1,19 @@
 module CoridorsHelper
 
-  def del_link(subject)
-    link = link_to_remote(image_tag('minus.png'), :url => {:controller => 'coridors', :action => 'del_subject', :id => subject.id, :type => subject.type}, :update => 'main') 
+  def del_link(coridor_subject)
+    link_to_remote(image_tag('minus.png'), 
+                  :url => {:action => 'del_subject', :id => coridor_subject.id},
+                  :complete => evaluate_remote_response,
+                  :confirm => _('Are you sure to delete?')) 
   end
 
-  def coridor_link(coridor)
-    link = link_to_remote(image_tag('change.png'), :url => {:controller => 'coridors', :action => 'manage_edit', :id => coridor.id}, :update => 'main')+ coridor.name
-  end
-
-  def add_subject(coridor,subject)
-    link = link_to_remote(image_tag('plus.png'), :url => {:controller => 'coridors', :action => 'add_subject', :id => coridor.id, :subject => subject}, :update => 'add_' + subject) + _('Add subject')   
+  def add_link(coridor, type)
+    link = link_to_remote("%s&nbsp;%s" % [image_tag('plus.png'), 
+                                          _('Add subject')],
+                          :url => {:action => 'add_subject', :type => type},
+                          :update => type.underscore.pluralize,
+                          :position => :bottom)
+       
   end
 
 end
