@@ -1,5 +1,4 @@
 class Coridor < ActiveRecord::Base
-  untranslate_all
   belongs_to :faculty
   belongs_to :program
   has_many :candidates, :conditions => "finished_on IS NOT NULL"
@@ -55,5 +54,9 @@ class Coridor < ActiveRecord::Base
 
   def english_with_code
     code + ' ' + name_english.to_s
+  end
+
+  def self.accredited_for(user)
+    find_all_by_faculty_id_and_accredited(user.person.faculty.id, 1)
   end
 end
