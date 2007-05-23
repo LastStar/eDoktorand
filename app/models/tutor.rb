@@ -7,8 +7,9 @@ class Tutor < Examinator
   N_('atest like tutor')
 
   def self.find_for_coridors(coridors)
-    find(:all, :conditions => ["tutorships.coridor_id in (?)",
-      coridors], :include => :tutorship, :order => 'lastname')
+    find(:all, :conditions => ["tutorships.coridor_id in (?)", coridors],
+         :include => [:tutorship, :title_before, :title_after],
+         :order => 'lastname')
   end
 
   def self.find_for_faculty(faculty)

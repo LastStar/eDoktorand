@@ -4,7 +4,8 @@ class Examinator < Person
 
   def self.find_for_department(department)
     find(:all, :conditions => ["employments.unit_id = ?", department],
-         :include => :department_employment, :order => 'lastname')
+         :include => [:department_employment, :title_before, :title_after],
+         :order => 'lastname')
   end
 
   def self.find_for_faculty(faculty)
