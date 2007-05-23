@@ -107,7 +107,7 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def statement_for(user)
-    unless status == _('absolved')
+    unless status == _('absolved') || status == _('interupted')
       if claimed_final_application?
         self.approvement ||= FinalExamApprovement.create
         if approvement.prepares_statement?(user)
@@ -136,7 +136,7 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def waits_for_statement?(user)
-    unless status == _('absolved')
+    unless status == _('absolved') || status == _('interupted')
       if claimed_final_application?
         temp_approvement = self.approvement ||= FinalExamApprovement.create
       elsif admited_interupt?
