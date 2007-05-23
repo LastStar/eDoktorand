@@ -59,9 +59,11 @@ class Subject < ActiveRecord::Base
     taken.map!(&:subject_id)
 
     if options[:not_taken]
-      Subject.find(:all, :conditions => ['id not in(?)', taken])
+      Subject.find(:all, :conditions => ['id not in(?) and type is null',
+                                         taken],
+                   :order => 'label')
     else
-      Subject.find(taken)
+      Subject.find(taken, :order => 'label')
     end
 
   end

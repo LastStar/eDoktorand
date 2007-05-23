@@ -1545,7 +1545,6 @@ msgid "diploma no"
 msgstr "číslo diplomu"
 
 #: app/views/diploma_supplements/_form.rhtml:8
-#, fuzzy
 msgid "faculty name english"
 msgstr "jméno fakulty anglicky"
 
@@ -1574,7 +1573,7 @@ msgstr "specializace"
 
 #: app/views/diploma_supplements/_form.rhtml:26
 msgid "faculty name"
-msgstr "jméno fakulty"
+msgstr "nazev fakulty"
 
 #: app/views/diploma_supplements/_form.rhtml:29
 msgid "study mode"
@@ -1594,7 +1593,7 @@ msgstr "obhajoba vykonána dne"
 
 #: app/views/diploma_supplements/_form.rhtml:41
 msgid "Final areas divided by semicolon"
-msgstr "obory SZZ oddělené středníkem"
+msgstr "obory SDZ oddělené středníkem"
 
 #: app/views/diploma_supplements/_form.rhtml:44
 msgid "final exam passed on"
@@ -1636,7 +1635,7 @@ msgstr "číslo diplomu"
 #: app/views/diploma_supplements/list.rhtml:9
 #: app/views/shared/candidate_edit.rhtml:70
 msgid "specialization"
-msgstr "specializace"
+msgstr "obor"
 
 #: app/views/diploma_supplements/list.rhtml:20
 msgid "destroy"

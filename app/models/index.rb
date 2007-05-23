@@ -107,48 +107,52 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def statement_for(user)
-    if claimed_final_application?
-      self.approvement ||= FinalExamApprovement.create
-      if approvement.prepares_statement?(user)
-        return approvement.prepare_statement(user)
-      end
-    elsif admited_interupt?
-      interupt.approvement ||= InteruptApprovement.create
-      if interupt.approvement.prepares_statement?(user)
-        return interupt.approvement.prepare_statement(user)
-      end
-    elsif study_plan 
-      if !study_plan.approved?
-        study_plan.approvement ||= StudyPlanApprovement.create(:document_id => study_plan.id)
-        if study_plan.approvement.prepares_statement?(user)
-          return study_plan.approvement.prepare_statement(user)
+    unless status == _('absolved')
+      if claimed_final_application?
+        self.approvement ||= FinalExamApprovement.create
+        if approvement.prepares_statement?(user)
+          return approvement.prepare_statement(user)
         end
-      elsif study_plan.waits_for_actual_atestation?
-        if !study_plan.atestation || !study_plan.atestation.is_actual?
-          study_plan.atestation = Atestation.create(:document_id => study_plan.id)
+      elsif admited_interupt?
+        interupt.approvement ||= InteruptApprovement.create
+        if interupt.approvement.prepares_statement?(user)
+          return interupt.approvement.prepare_statement(user)
         end
-        return study_plan.atestation.prepare_statement(user)
+      elsif study_plan 
+        if !study_plan.approved?
+          study_plan.approvement ||= StudyPlanApprovement.create(:document_id => study_plan.id)
+          if study_plan.approvement.prepares_statement?(user)
+            return study_plan.approvement.prepare_statement(user)
+          end
+        elsif study_plan.waits_for_actual_atestation?
+          if !study_plan.atestation || !study_plan.atestation.is_actual?
+            study_plan.atestation = Atestation.create(:document_id => study_plan.id)
+          end
+          return study_plan.atestation.prepare_statement(user)
+        end
       end
     end
   end
 
   # returns statement if this index waits for approvement from person
   def waits_for_statement?(user)
-    if claimed_final_application?
-      temp_approvement = self.approvement ||= FinalExamApprovement.create
-    elsif admited_interupt?
-      temp_approvement = interupt.approvement ||= InteruptApprovement.create
-    elsif study_plan && !study_plan.approved?
-      temp_approvement = study_plan.approvement ||= StudyPlanApprovement.create
-    elsif study_plan && study_plan.approved? &&
-      study_plan.waits_for_actual_atestation?
-      if !study_plan.atestation || !study_plan.atestation.is_actual?
-        temp_approvement = study_plan.atestation = Atestation.create(:document_id => study_plan.id)
-      else
-        temp_approvement = study_plan.atestation 
+    unless status == _('absolved')
+      if claimed_final_application?
+        temp_approvement = self.approvement ||= FinalExamApprovement.create
+      elsif admited_interupt?
+        temp_approvement = interupt.approvement ||= InteruptApprovement.create
+      elsif study_plan && !study_plan.approved?
+        temp_approvement = study_plan.approvement ||= StudyPlanApprovement.create
+      elsif study_plan && study_plan.approved? &&
+        study_plan.waits_for_actual_atestation?
+        if !study_plan.atestation || !study_plan.atestation.is_actual?
+          temp_approvement = study_plan.atestation = Atestation.create(:document_id => study_plan.id)
+        else
+          temp_approvement = study_plan.atestation 
+        end
       end
+      temp_approvement && temp_approvement.prepares_statement?(user)
     end
-    temp_approvement && temp_approvement.prepares_statement?(user)
   end
 
   # returns last interrupt

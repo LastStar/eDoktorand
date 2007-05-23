@@ -119,11 +119,11 @@ class CSVExporter
     outfile.close
   end
 
-  def self.export_candidates_for_kj
+  def self.export_candidates_for_kj(faculty)
     file = "candidate_languages.csv"
     outfile = File.open(file, 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
-      cs = Candidate.find(:all, :conditions => ['invited_on is not null and department_id in (?)', Faculty.find(4).departments_ids])
+      cs = Candidate.find(:all, :conditions => ['invited_on is not null and department_id in (?)', faculty.departments])
       @@mylog.info "There are #{cs.size} candidates"
       cs.each do |candidate|
         row = []
