@@ -33,14 +33,6 @@ class Person < ActiveRecord::Base
     return false
   end
 
-  def self.for_html_select(user)
-    if user.has_role?('faculty_secretary')
-      find_for_faculty(user.person.faculty.id)
-    elsif user.has_one_of_roles?(['department_secretary', 'tutor', 'leader'])
-      find_for_department(user.person.department.id)
-    end.map {|e| [e.display_name, e.id]}
-  end
-
   def email=(value)
     email_or_new.update_attribute(:name, value)
   end
@@ -70,4 +62,15 @@ class Person < ActiveRecord::Base
   def <=>(other)
     lastname <=> other.lastname
   end
+
+  def self.find_for(user)
+    if user.has_role? 'vicerector'
+      find(:all, :order => 'lastname')
+    elsif user.has_one_of_roles? ['faculty_secretary', 'dean']
+      find_for_faculty(user.person.faculty)
+    elsif user.has_one_of_roles? ['tutor', 'department_secretary']
+      find_for_department(user.person.department)
+    end
+  end
+
 end

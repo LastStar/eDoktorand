@@ -12,7 +12,7 @@
 <%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
 
 <p><label for="exam_term_chairman">Předseda komise</label>
-<%= select 'exam_term', 'chairman_id', Tutor.for_html_select(@user)  %></p>
+<%= collection_select :exam_term, :chairman_id, Tutor.find_for(@user), :id, :display_name %></p>
 
 <p><label for="exam_term_first_examinator" class='required'>1. <%= _('member') %></label>
 <%= text_field 'exam_term', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span >

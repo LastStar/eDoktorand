@@ -48,6 +48,10 @@ class Coridor < ActiveRecord::Base
     end
   end
 
+  def self.find_for(user)
+    user.person.faculty.coridors
+  end
+
   def tutors_for_select
     tutors.sort.map {|t| [t.display_name, t.id]}
   end

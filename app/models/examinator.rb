@@ -2,19 +2,6 @@ class Examinator < Person
   untranslate_all
   has_one :department_employment, :foreign_key => 'person_id'
 
-  def self.for_html_select(user, options = {})
-    result = if user.has_role?('faculty_secretary')
-      find_for_faculty(user.person.faculty.id)
-    elsif user.has_one_of_roles?(['student', 'department_secretary', 'tutor', 'leader', 'examinator'])
-      find_for_department(user.person.department.id)
-    end.map {|e| [e.display_name, e.id]}
-    if options[:include_null]
-      [['---', 0]].concat(result)
-    else
-      result
-    end
-  end
-
   def self.find_for_department(department)
     find(:all, :conditions => ["employments.unit_id = ?", department],
          :include => :department_employment, :order => 'lastname')

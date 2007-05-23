@@ -2,10 +2,10 @@
 <legend><%= _("Probation term agenda") %></legend>
 
   <label for="probation_term_first_examinator"><%=_("1. Examinator")%></label>
-  <%= select 'probation_term', 'first_examinator_id', Examinator.for_html_select(@user)%><br />
+  <%= collection_select :probation_term, :first_examinator_id, Examinator.find_for(@user), :id, :display_name %><br />
 
   <label for="probation_term_second_examinator"><%=_("2. Examinator")%></label>
-  <%= select 'probation_term', 'second_examinator_id', Examinator.for_html_select(@user, :include_null => true)%><br />
+  <%= collection_select :probation_term, :second_examinator_id, Examinator.find_for(@user), :id, :display_name, {:include_blank => true} %><br />
 
 </fieldset>
 

@@ -7,7 +7,7 @@
 	<%= select 'candidate', 'coridor_id', Coridor.for_select(:faculty =>
   @user.person.faculty) %><br/>
 	<label for="candidate_tutor_id"><%= _("tutor") %></label>
-	<%= select 'candidate', 'tutor_id', Tutor.for_html_select(@user) %><br/>
+  <%= collection_select :candidate, :tutor_id, Tutor.find_for(@user), :id, :display_name %></p>
 	<label for="candidate_department_id"><%= _("department") %></label>
 	<%= select 'candidate', 'department_id', Department.for_select(:faculty =>
   @user.person.faculty) %><br/>

@@ -14,11 +14,11 @@
 
   <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
      
-  <% examinators = Examinator.for_html_select(@user) %>
-  <%= select('exam', 'first_examinator_id', examinators) %><br /> 
+  <% examinators = Examinator.find_for(@user) %>
+  <%= collection_select(:exam, :first_examinator_id, examinators, :id, :display_name) %><br /> 
 
   <label for="exam_second_examinator"><%=_("2. Examinator")%></label>
-  <%= select('exam', 'second_examinator_id', examinators, { :include_blank => true }) %>
+  <%= collection_select(:exam, :second_examinator_id, examinators, :id, :display_name, {:include_blank => true}) %>
 
 </fieldset>
 
