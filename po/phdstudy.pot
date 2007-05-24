@@ -108,8 +108,10 @@ msgstr ""
 msgid "Czech republic"
 msgstr ""
 
-#: app/controllers/form_controller.rb:81 app/views/form/finish.rhtml:5
-msgid "Czech agriculture university"
+#: app/controllers/form_controller.rb:81 app/views/exams/_protocol.rhtml:8
+#: app/views/exams/_show_protocol.rhtml:3
+#: app/views/form/_preview_header.rhtml:2 app/views/form/finish.rhtml:5
+msgid "Czech University of Life Sciences"
 msgstr ""
 
 #: app/controllers/interupts_controller.rb:32
@@ -210,25 +212,26 @@ msgstr ""
 msgid "SP approved by dean"
 msgstr ""
 
-#: app/helpers/application_helper.rb:38 app/models/index.rb:349
+#: app/helpers/application_helper.rb:38 app/models/index.rb:353
 msgid "studying"
 msgstr ""
 
-#: app/helpers/application_helper.rb:39 app/models/index.rb:343
+#: app/helpers/application_helper.rb:39 app/models/index.rb:347
 #: app/views/candidates/_history.rhtml:2
 msgid "finished"
 msgstr ""
 
-#: app/helpers/application_helper.rb:39 app/models/index.rb:345
+#: app/helpers/application_helper.rb:39 app/models/index.rb:110
+#: app/models/index.rb:139 app/models/index.rb:349
 msgid "interupted"
 msgstr ""
 
 #: app/helpers/application_helper.rb:39 app/helpers/students_helper.rb:13
-#: app/models/index.rb:339
+#: app/models/index.rb:110 app/models/index.rb:139 app/models/index.rb:343
 msgid "absolved"
 msgstr ""
 
-#: app/helpers/application_helper.rb:39 app/models/index.rb:347
+#: app/helpers/application_helper.rb:39 app/models/index.rb:351
 msgid "continue"
 msgstr ""
 
@@ -566,7 +569,7 @@ msgstr ""
 msgid "Are you sure to delete?"
 msgstr ""
 
-#: app/helpers/coridors_helper.rb:11
+#: app/helpers/coridors_helper.rb:12
 msgid "Add subject"
 msgstr ""
 
@@ -1035,11 +1038,11 @@ msgstr ""
 msgid "Term must has assigned second examiner"
 msgstr ""
 
-#: app/models/faculty.rb:55
+#: app/models/faculty.rb:45
 msgid "director"
 msgstr ""
 
-#: app/models/faculty.rb:56 app/models/study_plan.rb:133
+#: app/models/faculty.rb:46 app/models/study_plan.rb:133
 msgid "dean"
 msgstr ""
 
@@ -1071,7 +1074,7 @@ msgstr ""
 msgid "not_all_subject_finished"
 msgstr ""
 
-#: app/models/index.rb:341
+#: app/models/index.rb:345
 msgid "final application"
 msgstr ""
 
@@ -1776,10 +1779,6 @@ msgstr ""
 msgid "University"
 msgstr ""
 
-#: app/views/exams/_protocol.rhtml:8 app/views/exams/_show_protocol.rhtml:3
-msgid "Czech university of agriculture"
-msgstr ""
-
 #: app/views/exams/_protocol.rhtml:9 app/views/exams/_show_protocol.rhtml:4
 msgid "Faculty (institute)"
 msgstr ""
@@ -1859,10 +1858,6 @@ msgstr ""
 
 #: app/views/final_exam_terms/_form.rhtml:53
 msgid "opponent"
-msgstr ""
-
-#: app/views/form/_preview_header.rhtml:2
-msgid "Czech agriculture university in Prague"
 msgstr ""
 
 #: app/views/form/_preview_header.rhtml:3

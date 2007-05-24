@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2007-05-22 10:45+0200\n"
+"POT-Creation-Date: 2007-05-24 10:46+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -129,8 +129,10 @@ msgstr "Přihláška zaregistrována"
 msgid "Czech republic"
 msgstr "Česká republika"
 
-#: app/controllers/form_controller.rb:81 app/views/form/finish.rhtml:5
-msgid "Czech agriculture university"
+#: app/controllers/form_controller.rb:81 app/views/exams/_protocol.rhtml:8
+#: app/views/exams/_show_protocol.rhtml:3
+#: app/views/form/_preview_header.rhtml:2 app/views/form/finish.rhtml:5
+msgid "Czech University of Life Sciences"
 msgstr "Česká zemědělská univerzita v Praze"
 
 #: app/controllers/interupts_controller.rb:32
@@ -139,9 +141,8 @@ msgstr "schváleno referentkou vědy a výzkumu"
 
 #: app/controllers/probation_terms_controller.rb:100
 #: app/controllers/probation_terms_controller.rb:116
-#, fuzzy
 msgid "Probation term saved"
-msgstr "Termíny zkoušek"
+msgstr "Termíny zkoušky byl uložen"
 
 #: app/controllers/probation_terms_controller.rb:154
 msgid "Probation terms"
@@ -233,25 +234,26 @@ msgstr "SP schválen vedoucím"
 msgid "SP approved by dean"
 msgstr "SP schválen děkanem"
 
-#: app/helpers/application_helper.rb:38 app/models/index.rb:349
+#: app/helpers/application_helper.rb:38 app/models/index.rb:353
 msgid "studying"
 msgstr "studuje"
 
-#: app/helpers/application_helper.rb:39 app/models/index.rb:343
+#: app/helpers/application_helper.rb:39 app/models/index.rb:347
 #: app/views/candidates/_history.rhtml:2
 msgid "finished"
 msgstr "ukončeno"
 
-#: app/helpers/application_helper.rb:39 app/models/index.rb:345
+#: app/helpers/application_helper.rb:39 app/models/index.rb:110
+#: app/models/index.rb:139 app/models/index.rb:349
 msgid "interupted"
 msgstr "přerušeno"
 
 #: app/helpers/application_helper.rb:39 app/helpers/students_helper.rb:13
-#: app/models/index.rb:339
+#: app/models/index.rb:110 app/models/index.rb:139 app/models/index.rb:343
 msgid "absolved"
 msgstr "absolvoval"
 
-#: app/helpers/application_helper.rb:39 app/models/index.rb:347
+#: app/helpers/application_helper.rb:39 app/models/index.rb:351
 msgid "continue"
 msgstr "uzavřeno"
 
@@ -589,7 +591,7 @@ msgstr "neschválit"
 msgid "Are you sure to delete?"
 msgstr "Opravdu smazat?"
 
-#: app/helpers/coridors_helper.rb:11
+#: app/helpers/coridors_helper.rb:12
 msgid "Add subject"
 msgstr "Přidat předmět"
 
@@ -1070,11 +1072,11 @@ msgstr "Termín musí mít přiděleného prvního zkoušejícího"
 msgid "Term must has assigned second examiner"
 msgstr "Termín musí mít přiděleného druhého zkoušejícího"
 
-#: app/models/faculty.rb:55
+#: app/models/faculty.rb:45
 msgid "director"
 msgstr "ředitel"
 
-#: app/models/faculty.rb:56 app/models/study_plan.rb:133
+#: app/models/faculty.rb:46 app/models/study_plan.rb:133
 msgid "dean"
 msgstr "děkan"
 
@@ -1106,7 +1108,7 @@ msgstr ""
 msgid "not_all_subject_finished"
 msgstr ""
 
-#: app/models/index.rb:341
+#: app/models/index.rb:345
 msgid "final application"
 msgstr "SDZ"
 
@@ -1815,10 +1817,6 @@ msgstr "datum"
 msgid "University"
 msgstr "Univerzita"
 
-#: app/views/exams/_protocol.rhtml:8 app/views/exams/_show_protocol.rhtml:3
-msgid "Czech university of agriculture"
-msgstr "Česká zemědělská univerzita v Praze"
-
 #: app/views/exams/_protocol.rhtml:9 app/views/exams/_show_protocol.rhtml:4
 msgid "Faculty (institute)"
 msgstr "Fakulta (Institut)"
@@ -1901,10 +1899,6 @@ msgstr "státní příslušnost"
 #, fuzzy
 msgid "opponent"
 msgstr "schválení"
-
-#: app/views/form/_preview_header.rhtml:2
-msgid "Czech agriculture university in Prague"
-msgstr "Česká zemědělská univerzita v Praze"
 
 #: app/views/form/_preview_header.rhtml:3
 #: app/views/shared/candidate_detail.rhtml:24

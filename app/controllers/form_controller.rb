@@ -78,7 +78,7 @@ class FormController < ApplicationController
       c.coridor = Coridor.find(params[:id])
       c.state = _("Czech republic")
       c.address_state = _("Czech republic")
-      c.university = _("Czech agriculture university")
+      c.university = _("Czech University of Life Sciences")
       c.faculty = c.coridor.faculty.name
       language1_id = 1133 if c.admitting_faculty == 3
     end
