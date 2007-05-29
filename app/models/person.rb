@@ -68,7 +68,7 @@ class Person < ActiveRecord::Base
       find(:all, :order => 'lastname', :include => [:title_before, :title_after])
     elsif user.has_one_of_roles? ['faculty_secretary', 'dean']
       find_for_faculty(user.person.faculty)
-    elsif user.has_one_of_roles? ['tutor', 'department_secretary']
+    elsif user.has_one_of_roles? ['examinator', 'tutor', 'department_secretary']
       find_for_department(user.person.department)
     end
   end
