@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 123) do
+ActiveRecord::Schema.define(:version => 124) do
 
   create_table "actualities", :force => true do |t|
     t.column "label",   :string
@@ -195,28 +195,29 @@ ActiveRecord::Schema.define(:version => 123) do
   end
 
   create_table "exam_terms", :force => true do |t|
-    t.column "coridor_id",        :integer
-    t.column "date",              :date
-    t.column "start_time",        :string,   :limit => 5
-    t.column "room",              :string
-    t.column "chairman_id",       :integer
-    t.column "first_examinator",  :string,   :limit => 100
-    t.column "second_examinator", :string,   :limit => 100
-    t.column "third_examinator",  :string,   :limit => 100
-    t.column "fourth_examinator", :string,   :limit => 100
-    t.column "created_on",        :datetime
-    t.column "updated_on",        :datetime
-    t.column "type",              :string
-    t.column "index_id",          :integer
-    t.column "fifth_examinator",  :string
-    t.column "sixth_examinator",  :string
-    t.column "opponent",          :string
-    t.column "first_subject",     :string
-    t.column "second_subject",    :string
-    t.column "third_subject",     :string
-    t.column "fourth_subject",    :string
-    t.column "fifth_subject",     :string
-    t.column "sixth_subject",     :string
+    t.column "coridor_id",         :integer
+    t.column "date",               :date
+    t.column "start_time",         :string,   :limit => 5
+    t.column "room",               :string
+    t.column "chairman_id",        :integer
+    t.column "first_examinator",   :string,   :limit => 100
+    t.column "second_examinator",  :string,   :limit => 100
+    t.column "third_examinator",   :string,   :limit => 100
+    t.column "fourth_examinator",  :string,   :limit => 100
+    t.column "created_on",         :datetime
+    t.column "updated_on",         :datetime
+    t.column "type",               :string
+    t.column "index_id",           :integer
+    t.column "opponent",           :string
+    t.column "first_subject",      :string
+    t.column "second_subject",     :string
+    t.column "third_subject",      :string
+    t.column "fourth_subject",     :string
+    t.column "fifth_subject",      :string
+    t.column "sixth_subject",      :string
+    t.column "fifth_examinator",   :string
+    t.column "sixth_examinator",   :string
+    t.column "seventh_examinator", :string
   end
 
   create_table "exams", :force => true do |t|
@@ -463,10 +464,11 @@ ActiveRecord::Schema.define(:version => 123) do
   end
 
   create_table "tutorships", :force => true do |t|
-    t.column "tutor_id",   :integer
-    t.column "coridor_id", :integer
-    t.column "created_on", :datetime
-    t.column "updated_on", :datetime
+    t.column "tutor_id",      :integer
+    t.column "coridor_id",    :integer
+    t.column "created_on",    :datetime
+    t.column "updated_on",    :datetime
+    t.column "department_id", :integer
   end
 
   create_table "users", :force => true do |t|

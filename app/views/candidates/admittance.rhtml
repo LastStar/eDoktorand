@@ -53,6 +53,18 @@ předseda: <%= @candidate.coridor.exam_term.chairman.display_name %>
 <% end %>
 <% unless @candidate.coridor.exam_term.fourth_examinator.empty? %>
 <%= @candidate.coridor.exam_term.fourth_examinator %>
+<span class='dots'>........................................</span><br/><br/>
+<% end %>
+<% unless @candidate.coridor.exam_term.fifth_examinator.empty? %>
+<%= @candidate.coridor.exam_term.fifth_examinator %>
+<span class='dots'>........................................</span><br/><br/>
+<% end %>
+<% unless @candidate.coridor.exam_term.sixth_examinator.empty? %>
+<%= @candidate.coridor.exam_term.sixth_examinator %>
+<span class='dots'>........................................</span><br/><br/>
+<% end %>
+<% unless @candidate.coridor.exam_term.seventh_examinator.empty? %>
+<%= @candidate.coridor.exam_term.seventh_examinator %>
 <span class='dots'>........................................</span><br/>
 <% end %>
 </p>
