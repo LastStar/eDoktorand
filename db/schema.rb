@@ -152,10 +152,10 @@ ActiveRecord::Schema.define(:version => 124) do
     t.column "study_specialization", :string
     t.column "faculty_name",         :string
     t.column "study_mode",           :string
-    t.column "plan_subjects",        :string
-    t.column "disert_theme_title",   :string
+    t.column "plan_subjects",        :text
+    t.column "disert_theme_title",   :string,   :limit => 512
     t.column "defense_passed_on",    :string
-    t.column "final_areas",          :string
+    t.column "final_areas",          :text
     t.column "final_exam_passed_on", :string
     t.column "faculty_www",          :string
     t.column "printed_on",           :string
@@ -208,6 +208,8 @@ ActiveRecord::Schema.define(:version => 124) do
     t.column "updated_on",         :datetime
     t.column "type",               :string
     t.column "index_id",           :integer
+    t.column "fifth_examinator",   :string
+    t.column "sixth_examinator",   :string
     t.column "opponent",           :string
     t.column "first_subject",      :string
     t.column "second_subject",     :string
@@ -215,8 +217,6 @@ ActiveRecord::Schema.define(:version => 124) do
     t.column "fourth_subject",     :string
     t.column "fifth_subject",      :string
     t.column "sixth_subject",      :string
-    t.column "fifth_examinator",   :string
-    t.column "sixth_examinator",   :string
     t.column "seventh_examinator", :string
   end
 
@@ -464,11 +464,10 @@ ActiveRecord::Schema.define(:version => 124) do
   end
 
   create_table "tutorships", :force => true do |t|
-    t.column "tutor_id",      :integer
-    t.column "coridor_id",    :integer
-    t.column "created_on",    :datetime
-    t.column "updated_on",    :datetime
-    t.column "department_id", :integer
+    t.column "tutor_id",   :integer
+    t.column "coridor_id", :integer
+    t.column "created_on", :datetime
+    t.column "updated_on", :datetime
   end
 
   create_table "users", :force => true do |t|
