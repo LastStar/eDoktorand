@@ -14,9 +14,9 @@ class RegularScholarship < Scholarship
 
   def code
     if index.payment_id == 3
-      "#{index.faculty.stipendia_code}DCIR"
+      "#{index.faculty.stipendia_code.to_s[0,2]}DCIR"
     else
-      "#{index.faculty.stipendia_code}DTUR"
+      "#{index.faculty.stipendia_code.to_s[0,2]}DTUR"
     end
   end
 
