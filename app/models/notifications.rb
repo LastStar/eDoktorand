@@ -40,7 +40,8 @@ class Notifications < ActionMailer::Base
     @body['candidate'] = candidate
     @body[:faculty] = faculty = candidate.department.faculty
     @recipients = candidate.email
-    @from = 'pepe@gravastar.cz'
+    @cc        = faculty.secretary.email.name
+    @from       = faculty.secretary.email.name
     @sent_on = sent_at
   end
 
