@@ -3,7 +3,7 @@ V Praze dne <%= @sent_on.strftime("%d. %m. %Y") %>
 <%= @candidate.genderize("Vážený pane/Vážená paní","Vážený pane","Vážená paní") %>,
 
 po projednání Vaší přihlášky ke studiu v doktorském oboru <%= @coridor %>
-na fakultě lesnické a environmentální ČZU v Praze Vám sděluji, že jste <%= @candidate.genderize("nebyl/a","nebyl","nebyla") %>
+na <%= @faculty.short_name %> ČZU v Praze Vám sděluji, že jste <%= @candidate.genderize("nebyl/a","nebyl","nebyla") %>
 ke studiu <%= @candidate.genderize("přijat/a","přijat","přijata") %>.
 
 Proti tomuto rozhodnutí je možno podat odvolání k rukám <% @faculty.id==2 ? "ředitele" : "děkana" %> <%= @faculty.short_name%>
