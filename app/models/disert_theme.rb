@@ -5,6 +5,8 @@ class DisertTheme < ActiveRecord::Base
   validates_presence_of :finishing_to
   acts_as_audited
 
+  before_create :set_actual
+
   def validate
     if defense_passed_on && !index.final_exam_passed?
       errors.add(:defense_passed_on, _('not_passed_final_exam'))
@@ -36,10 +38,18 @@ class DisertTheme < ActiveRecord::Base
   end
 
   def defense_passed?
-    !defense_passed_on.nil?
+    defense_passed_on
   end
 
   def defense_passed!(date = Date.today)
     update_attribute(:defense_passed_on, date)
+  end
+
+  private
+  def set_actual
+    if old_actual = DisertTheme.find_by_index_id_and_actual(self.index.id, 1)
+      old_actual.update_attribute(:actual, 0)
+    end
+    self.actual = 1
   end
 end
