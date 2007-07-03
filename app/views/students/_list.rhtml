@@ -1,13 +1,10 @@
 <div id='students_list'>
 <% if @indices && !@indices.empty? %>
 <h5><%= _('Students list') + "(#{@indices.size})" %></h5>
- <div class='links'>
- <%= list_links %>
- </div>
- <ul>
-  <% for index in @indices %>
+<ul>
+<% for index in @indices %>
   <%= content_tag('li', student_action_link(index), :id => "index_line_#{index.id}") %>
-  <% end %>
+<% end %>
 </ul>
 <% else %>
 <h4><%= _('No students found. Use filters above to change your selection.') %></h4>

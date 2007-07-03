@@ -14,9 +14,9 @@ class ExtraScholarship < Scholarship
 
   def code
     if index.payment_id == 3
-      "#{index.faculty.stipendia_code}DCIM"
+      "#{short_code}DCIM"
     else
-      "#{index.faculty.stipendia_code}DTUM"
+      "#{short_code}DTUM"
     end
   end
 

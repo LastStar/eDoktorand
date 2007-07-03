@@ -64,4 +64,8 @@ class Scholarship < ActiveRecord::Base
   def self.prepare_time?
     !(6..19).include? Date.today.day
   end
+
+  def short_code
+    index.faculty.stipendia_code.to_s[0,2]
+  end
 end

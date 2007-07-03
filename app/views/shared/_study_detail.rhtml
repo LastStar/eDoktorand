@@ -10,8 +10,7 @@
   </li>
 </ul>
 <% end %>
-<% if index.interupt %>
-<% interupt = index.interupt %>
+<% if interupt = index.interupt %>
   <% if index.interupted? %>
 <h5><%= _('This study is interupted') %></h5>
 <ul>
@@ -49,18 +48,18 @@
     <li>
       <%= _('note') %>
     </li>
-  <li class='<%="second" if !index.interupt.note.empty?%>'>
-  <%= index.interupt.note %>
+  <li class='second'>
+    <%= index.interupt.note %>
   </li>
   <% end %>
   <% if index.interupt.plan_changed == 1 %>
-  <li>
-  <%= _('study plan has changed') %>
-  </li>
+    <li>
+    <%= _('study plan has changed') %>
+    </li>
   <% end %>
   <div id='interupt_approvement'>
   <% if index.interupt.approvement %>
-  <%= print_statements(index.interupt.approvement) %>
+    <%= print_statements(index.interupt.approvement) %>
   <% end %>
   </div>
 </ul>

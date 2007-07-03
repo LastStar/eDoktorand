@@ -11,7 +11,7 @@ class Index < ActiveRecord::Base
   belongs_to :study
   has_one :study_plan, :conditions => 'admited_on IS NOT NULL', 
     :order => 'created_on desc'
-  has_one :disert_theme, :order => 'created_on desc'
+  has_one :disert_theme, :conditions => 'disert_themes.actual = 1'
   has_one :final_exam_term
   has_many :exams
   belongs_to :coridor
@@ -190,6 +190,10 @@ class Index < ActiveRecord::Base
     else
       conditions = ["NULL IS NOT NULL"]
     end
+    unless options[:include]
+      options[:include] = [:study_plan, :student, :disert_theme, :department,
+                           :study, :coridor, :interupts]
+    end
     if options[:conditions]
       conditions.first << options[:conditions].first 
       conditions.concat(options[:conditions][1..-1])
@@ -221,9 +225,10 @@ class Index < ActiveRecord::Base
         conditions << Time.now
       end
     end
-    unless options[:include]
-      options[:include] = [:study_plan, :student, :disert_theme, :department,
-                           :study, :coridor, :interupts]
+    if options[:not_absolved]
+      conditions.first << ' AND (disert_themes.defense_passed_on IS NULL' +
+                          ' OR disert_themes.defense_passed_on > ?)'
+      conditions << options[:not_absolved]
     end
     conditions.first << 'AND study_id = 1' if options[:present]
     find(:all, :conditions => conditions, :order => options[:order],
@@ -280,9 +285,10 @@ class Index < ActiveRecord::Base
     end
     if options[:study_status] && options[:study_status] != '0'
       case options[:study_status].to_i
-      when 1
+      when 1, 5
         conditions.first << ' AND indices.finished_on IS NULL' +
-                            ' AND indices.interupted_on IS NULL'
+                            ' AND indices.interupted_on IS NULL' +
+                            ' AND disert_themes.defense_passed_on IS NULL'
       when 2
         conditions.first << ' AND indices.finished_on IS NOT NULL' 
       when 3
@@ -294,6 +300,9 @@ class Index < ActiveRecord::Base
     indices = Index.find_for(options[:user], :conditions => conditions, 
                             :faculty => options[:faculty], 
                             :order => options[:order])
+    if options[:study_status].to_i == 5
+      options[:year] = 4
+    end
     if options[:year] != 0 
       if options[:year] == 4
         indices.reject! {|i| i.year < 4}
@@ -327,7 +336,7 @@ class Index < ActiveRecord::Base
   def self.find_for_scholarship(user, opts = {})
     paying_date =  (Time.now - 2.week)
     opts.update({:unfinished => paying_date, :not_interupted => paying_date,
-                 :enrolled => paying_date})
+                 :enrolled => paying_date, :not_absolved => paying_date})
     find_for(user, opts)
   end
 
@@ -347,11 +356,15 @@ class Index < ActiveRecord::Base
       _('finished')
     elsif interupted?
       _('interupted')
-    elsif year > 3
+    elsif continues?
       _('continue')
     else
       _('studying')
     end
+  end
+
+  def continues?
+    year > 3
   end
 
   # switches study form

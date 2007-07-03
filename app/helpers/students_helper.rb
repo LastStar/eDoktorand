@@ -269,11 +269,6 @@ module StudentsHelper
          {:class => 'smallinfo'})
   end
   
-  def list_links
-  links = ''
-  links << link_to(_('export_xls'), {:action => 'list_xls'})
-  end
-
   def back_to_list
     "Element.show('students_list', 'search'); Element.remove('student_detail')"
   end

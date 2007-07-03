@@ -1,10 +1,6 @@
 # TODO move all ids methods to corresponding models
 module ApplicationHelper
   
-  def print_copyright 
-    "designed by GravaStar &nbsp;"
-  end
-
   # prints department options
   def department_options(options = {})
     options_for_select(Department.for_select(options))
@@ -221,7 +217,7 @@ module ApplicationHelper
 
   # prints main menu
   def main_menu
-    links = [print_link(image_tag('printer', :alt => _('print'), 
+    links = [print_link(image_tag('printer.png', :alt => _('print'), 
                                   :size => '12x12' ))]
     if @user.has_role?('examinator')
       links << link_to_unless_current(_("exams"), :controller => 'exams'){}
