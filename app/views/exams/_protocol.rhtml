@@ -47,6 +47,13 @@ exam.first_examinator.display_name if exam.first_examinator%>&nbsp;&nbsp;&nbsp;&
 <% if exam.second_examinator %>
 <%= _("2. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature") %>:&nbsp;&nbsp;<br /><br /> 
 <% end %>
+<% if exam.third_examinator %>
+<%= _("3. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.third_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature") %>:&nbsp;&nbsp;<br /><br /> 
+<% end %>
+<% if exam.fourth_examinator %>
+<%= _("4. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.fourth_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature") %>:&nbsp;&nbsp;<br /><br /> 
+<% end %>
+
 </div>
 </div><!-- protocol end -->
 

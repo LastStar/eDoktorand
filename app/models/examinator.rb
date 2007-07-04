@@ -13,7 +13,7 @@ class Examinator < Person
     dep_ids = ActiveRecord::Base.connection.select_values(
       "select id from departments where faculty_id = #{faculty}")
     find(:all, :conditions => ["employments.unit_id IN (?)",
-       dep_ids], :include => :department_employment, :order => 'lastname')
+    dep_ids], :include => [:department_employment, :title_before, :title_after], :order => 'lastname')
   end
 
   # returns department

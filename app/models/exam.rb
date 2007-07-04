@@ -7,6 +7,8 @@ class Exam < ActiveRecord::Base
   belongs_to :created_by, :class_name => "Person", :foreign_key => "created_by_id"
   belongs_to :first_examinator, :class_name => "Person", :foreign_key => "first_examinator_id"
   belongs_to :second_examinator, :class_name => "Person", :foreign_key => "second_examinator_id"
+  belongs_to :third_examinator, :class_name => "Person", :foreign_key => "third_examinator_id"
+  belongs_to :fourth_examinator, :class_name => "Person", :foreign_key => "fourth_examinator_id"
 
   validates_presence_of :index
   validates_presence_of :subject
