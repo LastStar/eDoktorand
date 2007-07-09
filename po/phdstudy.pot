@@ -739,6 +739,10 @@ msgstr ""
 msgid "switch_study_to"
 msgstr ""
 
+#: app/models/student.rb:24
+msgid "pass_final_exam_to"
+msgstr ""
+
 #: app/models/faculty.rb:45
 msgid "director"
 msgstr ""
@@ -1193,27 +1197,27 @@ msgstr ""
 msgid "subjects have to be different"
 msgstr ""
 
-#: app/controllers/students_controller.rb:255
+#: app/controllers/students_controller.rb:256
 msgid "Students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:266
+#: app/controllers/students_controller.rb:267
 msgid "waiting for my review"
 msgstr ""
 
-#: app/controllers/students_controller.rb:266
+#: app/controllers/students_controller.rb:267
 msgid "all students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:267
+#: app/controllers/students_controller.rb:268
 msgid "all studying"
 msgstr ""
 
-#: app/controllers/students_controller.rb:270
+#: app/controllers/students_controller.rb:271
 msgid "my students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:270
+#: app/controllers/students_controller.rb:271
 msgid "my studying"
 msgstr ""
 

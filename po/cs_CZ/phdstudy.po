@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2007-07-09 11:43+0200\n"
+"POT-Creation-Date: 2007-07-09 13:35+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -763,6 +763,10 @@ msgstr "ukončit k"
 msgid "switch_study_to"
 msgstr "změnit formu k"
 
+#: app/models/student.rb:24
+msgid "pass_final_exam_to"
+msgstr "vykonal k"
+
 #: app/models/faculty.rb:45
 msgid "director"
 msgstr "ředitel"
@@ -1228,27 +1232,27 @@ msgstr "Vytváření nového studijního plánu"
 msgid "subjects have to be different"
 msgstr "předměty musí být rozdílné"
 
-#: app/controllers/students_controller.rb:255
+#: app/controllers/students_controller.rb:256
 msgid "Students"
 msgstr "Studenti"
 
-#: app/controllers/students_controller.rb:266
+#: app/controllers/students_controller.rb:267
 msgid "waiting for my review"
 msgstr "čekající na mé schválení"
 
-#: app/controllers/students_controller.rb:266
+#: app/controllers/students_controller.rb:267
 msgid "all students"
 msgstr "všichni studenti"
 
-#: app/controllers/students_controller.rb:267
+#: app/controllers/students_controller.rb:268
 msgid "all studying"
 msgstr "všichni studující"
 
-#: app/controllers/students_controller.rb:270
+#: app/controllers/students_controller.rb:271
 msgid "my students"
 msgstr "moji studenti"
 
-#: app/controllers/students_controller.rb:270
+#: app/controllers/students_controller.rb:271
 msgid "my studying"
 msgstr "moji studující"
 

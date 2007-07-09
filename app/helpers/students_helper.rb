@@ -84,11 +84,11 @@ module StudentsHelper
     menu_div(if index.finished? 
       link_to_remote(_('unfinish study'),
                     :url => {:action => 'unfinish', :controller => 'students',
-                    :id => index}, :complete => evaluate_remote_response)
+                    :id => index, :day => true}, :complete => evaluate_remote_response)
     else 
       link_to_remote(_('finish study'), 
                     :url => {:action => 'time_form', :controller => 'students',
-                    :form_action => 'finish', :id => index}, 
+                    :form_action => 'finish', :id => index, :day => true}, 
                     :update => "index_form_#{index.id}")
     end)
   end

@@ -21,6 +21,8 @@ class Student < Person
   N_('Switch study')
   N_('finish_to')
   N_('switch_study_to')
+  N_('pass_final_exam_to')
+  
   
   # returns faculty on which student is
   def faculty

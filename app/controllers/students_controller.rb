@@ -66,7 +66,7 @@ class StudentsController < ApplicationController
   def finish
     @index = Index.find(params[:id])
     date = params[:date]
-    @index.finish!(Date.civil(date['year'].to_i, date['month'].to_i))
+    @index.finish!(Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i))
     render(:inline => "<%= redraw_student(@index) %>")
   end
   
