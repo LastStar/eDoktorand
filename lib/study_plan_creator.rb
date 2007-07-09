@@ -73,6 +73,7 @@ module StudyPlanCreator
         external += 1
         subject = ExternalSubject.new
         subject.label = ps['label']
+	subject.label_en = ps['label_en']
         unless subject.valid?
           @errors << _("title for external subject cannot be empty")
         end

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2007-07-04 14:26+0200\n"
+"POT-Creation-Date: 2007-07-09 11:43+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -459,7 +459,7 @@ msgstr "Jméno a příjmení"
 msgid "Tutor"
 msgstr "Školitel"
 
-#: app/helpers/study_plans_helper.rb:7 app/helpers/study_plans_helper.rb:98
+#: app/helpers/study_plans_helper.rb:7 app/helpers/study_plans_helper.rb:105
 #: app/views/study_plans/_seminar.rhtml:13
 #: app/views/study_plans/_disert_form.rhtml:8
 #: app/views/study_plans/_seminar_form.rhtml:25
@@ -480,46 +480,46 @@ msgstr "žádný předmět"
 msgid "external subject"
 msgstr "externí předmět"
 
-#: app/helpers/study_plans_helper.rb:103 app/helpers/study_plans_helper.rb:107
+#: app/helpers/study_plans_helper.rb:110 app/helpers/study_plans_helper.rb:114
 msgid "end study"
 msgstr "ukončit studium"
 
-#: app/helpers/study_plans_helper.rb:106 app/helpers/study_plans_helper.rb:112
+#: app/helpers/study_plans_helper.rb:113 app/helpers/study_plans_helper.rb:119
 msgid "Are you sure to"
 msgstr "Jste si jistý, že chcete"
 
-#: app/helpers/study_plans_helper.rb:109 app/helpers/study_plans_helper.rb:113
+#: app/helpers/study_plans_helper.rb:116 app/helpers/study_plans_helper.rb:120
 msgid "change tutor"
 msgstr "změnit školitele"
 
-#: app/helpers/study_plans_helper.rb:118
+#: app/helpers/study_plans_helper.rb:125
 msgid "interupt"
 msgstr "přerušení"
 
-#: app/helpers/study_plans_helper.rb:124 app/views/shared/_main_menu.rhtml:3
+#: app/helpers/study_plans_helper.rb:131 app/views/shared/_main_menu.rhtml:3
 msgid "create study plan"
 msgstr "nový studijní plán"
 
-#: app/helpers/study_plans_helper.rb:125 app/views/shared/_main_menu.rhtml:4
+#: app/helpers/study_plans_helper.rb:132 app/views/shared/_main_menu.rhtml:4
 msgid "Have you consulted your study plan with tutor. It is highly recomended"
 msgstr "Konzultovali jste Váš studijní plán se školitelem?"
 
-#: app/helpers/study_plans_helper.rb:129
+#: app/helpers/study_plans_helper.rb:136
 msgid "final exam application"
 msgstr "státní závěrečná zkouška"
 
-#: app/helpers/study_plans_helper.rb:135
+#: app/helpers/study_plans_helper.rb:142
 #: app/views/study_plans/create_by_other.rhtml:6
 msgid "requisite subjects"
 msgstr "předepsané předměty"
 
-#: app/helpers/study_plans_helper.rb:139
+#: app/helpers/study_plans_helper.rb:146
 #: app/views/study_plans/_voluntary_form.rhtml:13
 #: app/views/study_plans/_languages.rhtml:6
 msgid "voluntary subjects"
 msgstr "volitelné předměty"
 
-#: app/helpers/study_plans_helper.rb:143
+#: app/helpers/study_plans_helper.rb:150
 msgid "change study plan"
 msgstr "změnit SP"
 
@@ -2088,13 +2088,13 @@ msgid "subject"
 msgstr "předmět"
 
 #: app/views/study_plans/_voluntary.rhtml:11
-#: app/views/study_plans/_general.rhtml:9
+#: app/views/study_plans/_general.rhtml:12
 #: app/views/shared/candidate_edit.rhtml:64
 msgid "university"
 msgstr "univerzita"
 
 #: app/views/study_plans/_voluntary.rhtml:15
-#: app/views/study_plans/_general.rhtml:12
+#: app/views/study_plans/_general.rhtml:15
 msgid "examinator"
 msgstr "zkoušející"
 
@@ -2184,6 +2184,10 @@ msgstr ""
 "krocích. Kliknutím na odkaz potvrdit jej odešlete ke schválení svému "
 "školiteli.Pokud se pouze odhlásíte, aniž byste studijní plán potvrdili data "
 "se neuloží. Můžete však studijní plán sestavit znovu"
+
+#: app/views/study_plans/_general.rhtml:9
+msgid "subject en"
+msgstr "předmět en"
 
 #: app/views/study_plans/_atest_information.rhtml:9
 msgid "Student didn't have any subject for this atestation."
@@ -2625,11 +2629,11 @@ msgstr "Datum zkoušky"
 msgid "Exam agenda"
 msgstr "Zkoušející"
 
-#: app/views/exams/_main_form.rhtml:24
+#: app/views/exams/_main_form.rhtml:24 app/views/exams/_protocol.rhtml:51
 msgid "3. examinator"
 msgstr "3. zkoušející"
 
-#: app/views/exams/_main_form.rhtml:29
+#: app/views/exams/_main_form.rhtml:29 app/views/exams/_protocol.rhtml:54
 msgid "4. examinator"
 msgstr "4. zkoušející"
 
@@ -2728,16 +2732,6 @@ msgstr "Vytváření zkoušky podle předmětu"
 #: app/views/exams/_students_form.rhtml:4
 msgid "exam students"
 msgstr "studenti k vyzkoušení"
-
-#: app/views/exams/_protocol.rhtml:51
-#, fuzzy
-msgid "3. examinator"
-msgstr "1. zkoušející"
-
-#: app/views/exams/_protocol.rhtml:54
-#, fuzzy
-msgid "4. examinator"
-msgstr "1. zkoušející"
 
 #: app/views/exams/_choose_creation_style.rhtml:2
 msgid "The first step is to choose the creation type of an exam."
@@ -2868,11 +2862,11 @@ msgstr "Oprava diploma supplement"
 msgid "New diploma_supplement"
 msgstr "Nový diploma supplement"
 
-#: lib/study_plan_creator.rb:77
+#: lib/study_plan_creator.rb:78
 msgid "title for external subject cannot be empty"
 msgstr "jméno externího předmětu nesmí být prázdné"
 
-#: lib/study_plan_creator.rb:81
+#: lib/study_plan_creator.rb:82
 msgid "university for external subject cannot be empty"
 msgstr "univerzita pro externí předmět nesmí být prazdná"
 

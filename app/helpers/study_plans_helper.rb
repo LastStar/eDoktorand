@@ -66,6 +66,13 @@ module StudyPlansHelper
       plan_subject.subject.external_subject_detail.university : ''})
   end
   
+  def external_subject_en_input(plan_subject)
+    tag('input', { 'type' => 'text', 'id' =>
+      "external_subject_detail_#{plan_subject.id}_label_en", 
+      'name' => "plan_subject[#{plan_subject.id}][label_en]", "value" =>
+       plan_subject.subject.is_a?(ExternalSubject) ?
+       plan_subject.subject.label_en : plan_subject.subject_id == 0 ? plan_subject.subject.label_en : ''})
+  end
   # prints external person tag
   def external_person_input(plan_subject)
     tag('input', 

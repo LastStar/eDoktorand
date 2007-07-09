@@ -435,7 +435,7 @@ msgstr ""
 msgid "Tutor"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:7 app/helpers/study_plans_helper.rb:98
+#: app/helpers/study_plans_helper.rb:7 app/helpers/study_plans_helper.rb:105
 #: app/views/study_plans/_seminar.rhtml:13
 #: app/views/study_plans/_disert_form.rhtml:8
 #: app/views/study_plans/_seminar_form.rhtml:25
@@ -456,46 +456,46 @@ msgstr ""
 msgid "external subject"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:103 app/helpers/study_plans_helper.rb:107
+#: app/helpers/study_plans_helper.rb:110 app/helpers/study_plans_helper.rb:114
 msgid "end study"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:106 app/helpers/study_plans_helper.rb:112
+#: app/helpers/study_plans_helper.rb:113 app/helpers/study_plans_helper.rb:119
 msgid "Are you sure to"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:109 app/helpers/study_plans_helper.rb:113
+#: app/helpers/study_plans_helper.rb:116 app/helpers/study_plans_helper.rb:120
 msgid "change tutor"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:118
+#: app/helpers/study_plans_helper.rb:125
 msgid "interupt"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:124 app/views/shared/_main_menu.rhtml:3
+#: app/helpers/study_plans_helper.rb:131 app/views/shared/_main_menu.rhtml:3
 msgid "create study plan"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:125 app/views/shared/_main_menu.rhtml:4
+#: app/helpers/study_plans_helper.rb:132 app/views/shared/_main_menu.rhtml:4
 msgid "Have you consulted your study plan with tutor. It is highly recomended"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:129
+#: app/helpers/study_plans_helper.rb:136
 msgid "final exam application"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:135
+#: app/helpers/study_plans_helper.rb:142
 #: app/views/study_plans/create_by_other.rhtml:6
 msgid "requisite subjects"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:139
+#: app/helpers/study_plans_helper.rb:146
 #: app/views/study_plans/_voluntary_form.rhtml:13
 #: app/views/study_plans/_languages.rhtml:6
 msgid "voluntary subjects"
 msgstr ""
 
-#: app/helpers/study_plans_helper.rb:143
+#: app/helpers/study_plans_helper.rb:150
 msgid "change study plan"
 msgstr ""
 
@@ -2033,13 +2033,13 @@ msgid "subject"
 msgstr ""
 
 #: app/views/study_plans/_voluntary.rhtml:11
-#: app/views/study_plans/_general.rhtml:9
+#: app/views/study_plans/_general.rhtml:12
 #: app/views/shared/candidate_edit.rhtml:64
 msgid "university"
 msgstr ""
 
 #: app/views/study_plans/_voluntary.rhtml:15
-#: app/views/study_plans/_general.rhtml:12
+#: app/views/study_plans/_general.rhtml:15
 msgid "examinator"
 msgstr ""
 
@@ -2112,6 +2112,10 @@ msgstr ""
 msgid ""
 "Now you can see your plan how you have created\n"
 "in previous steps. You have to confirm it otherwise it will be lost."
+msgstr ""
+
+#: app/views/study_plans/_general.rhtml:9
+msgid "subject en"
 msgstr ""
 
 #: app/views/study_plans/_atest_information.rhtml:9
@@ -2553,12 +2557,12 @@ msgstr ""
 msgid "Exam agenda"
 msgstr ""
 
-#: app/views/exams/_main_form.rhtml:24
-msgid "3. Examinator"
+#: app/views/exams/_main_form.rhtml:24 app/views/exams/_protocol.rhtml:51
+msgid "3. examinator"
 msgstr ""
 
-#: app/views/exams/_main_form.rhtml:29
-msgid "4. Examinator"
+#: app/views/exams/_main_form.rhtml:29 app/views/exams/_protocol.rhtml:54
+msgid "4. examinator"
 msgstr ""
 
 #: app/views/exams/_main_form.rhtml:37 app/views/exams/_form.rhtml:40
@@ -2655,14 +2659,6 @@ msgstr ""
 
 #: app/views/exams/_students_form.rhtml:4
 msgid "exam students"
-msgstr ""
-
-#: app/views/exams/_protocol.rhtml:51
-msgid "3. examinator"
-msgstr ""
-
-#: app/views/exams/_protocol.rhtml:54
-msgid "4. examinator"
 msgstr ""
 
 #: app/views/exams/_choose_creation_style.rhtml:2
@@ -2792,10 +2788,10 @@ msgstr ""
 msgid "New diploma_supplement"
 msgstr ""
 
-#: lib/study_plan_creator.rb:77
+#: lib/study_plan_creator.rb:78
 msgid "title for external subject cannot be empty"
 msgstr ""
 
-#: lib/study_plan_creator.rb:81
+#: lib/study_plan_creator.rb:82
 msgid "university for external subject cannot be empty"
 msgstr ""
