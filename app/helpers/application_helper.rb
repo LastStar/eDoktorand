@@ -553,6 +553,10 @@ module ApplicationHelper
     end
   end
 
+  def remove_line
+  link_to_function(image_tag('close.png'), "$('coridor_subject_form').remove()")
+  end
+  
   def student_tutor_line(student)
     if @user.has_role?('faculty_secretary')
       attribute_line(student.index, :tutor, :display_name) + _('Tutor') + ':'
