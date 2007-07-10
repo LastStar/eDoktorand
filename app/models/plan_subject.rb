@@ -16,8 +16,9 @@ class PlanSubject < ActiveRecord::Base
   # got one option :study_plan to find only for study plan
   def self.find_unfinished_external_for(user, options = {})
     sql = <<-SQL
-    plan_subjects.finished_on is null and subjects.type = 'ExternalSubject' 
-    and study_plans.approved_on is not null
+    plan_subjects.finished_on is null and subjects.type = 'ExternalSubject' \
+    and study_plans.approved_on is not null \
+    and study_plans.actual = 1
     SQL
     if options[:study_plan]
       sql << "and study_plans.id = ?"
@@ -35,8 +36,9 @@ class PlanSubject < ActiveRecord::Base
   def self.find_unfinished_external(study_plan)
     study_plan = study_plan.id if study_plan.is_a? StudyPlan
     sql = <<-SQL
-    plan_subjects.finished_on is null and subjects.type = 'ExternalSubject' 
-    and study_plans.approved_on is not null and study_plans.id = ?
+    plan_subjects.finished_on is null and subjects.type = 'ExternalSubject' \
+    and study_plans.approved_on is not null and study_plans.id = ? \
+    and study_plans.actual = 1
     SQL
     find(:all, :conditions => [sql, study_plan], 
          :include => [:subject, :study_plan])
@@ -45,9 +47,12 @@ class PlanSubject < ActiveRecord::Base
   # returns all unfinished plan subjects
   # got option :subjects for returning just subjects
   def self.find_unfinished_for(user, options = {})
-    sql = "plan_subjects.finished_on is null and subjects.id in (?)\
-           and study_plans.approved_on is not null \
-           and study_plans.canceled_on is null"
+    sql = <<-SQL
+    plan_subjects.finished_on is null and subjects.id in (?)\
+    and study_plans.approved_on is not null \
+    and study_plans.canceled_on is null \
+    and study_plans.actual = 1
+    SQL
     subj_ids = Subject.find_for(user).map {|s| s.id}
     psubs = find(:all, :conditions => [sql, subj_ids], 
                  :include => [:subject, {:study_plan => :index}])
@@ -59,11 +64,12 @@ class PlanSubject < ActiveRecord::Base
   # got option to return students
   def self.find_unfinished_by_subject(subject_id, options = {})
     sql = <<-SQL
-      plan_subjects.subject_id = ? and
-      plan_subjects.finished_on is null \
-      and study_plans.approved_on is not null \
-      and study_plans.canceled_on is null \
-      and indices.finished_on is null
+    plan_subjects.subject_id = ? and \
+    plan_subjects.finished_on is null \
+    and study_plans.approved_on is not null \
+    and study_plans.canceled_on is null \
+    and indices.finished_on is null \
+    and study_plans.actual = 1
     SQL
     plan_subjects = find(:all, :include => [{:study_plan => :index}],
                          :conditions => [sql, subject_id])

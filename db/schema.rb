@@ -449,6 +449,7 @@ ActiveRecord::Schema.define(:version => 126) do
   add_index "study_plans", ["admited_on"], :name => "admited_on"
   add_index "study_plans", ["canceled_on"], :name => "canceled_on"
   add_index "study_plans", ["approved_on"], :name => "approved_on"
+  add_index "study_plans", ["actual"], :name => "actual_idx"
 
   create_table "subjects", :force => true do |t|
     t.column "label",      :text

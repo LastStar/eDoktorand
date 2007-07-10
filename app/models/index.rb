@@ -9,8 +9,8 @@ class Index < ActiveRecord::Base
   belongs_to :student, :foreign_key => 'student_id'
   belongs_to :tutor
   belongs_to :study
-  has_one :study_plan, :conditions => 'admited_on IS NOT NULL', 
-    :order => 'created_on desc'
+  has_one :study_plan, :order => 'created_on desc',
+   :conditions => 'admited_on IS NOT NULL AND study_plans.actual = 1'
   has_one :disert_theme, :conditions => 'disert_themes.actual = 1'
   has_one :final_exam_term
   has_many :exams
