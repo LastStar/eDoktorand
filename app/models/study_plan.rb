@@ -12,6 +12,8 @@ class StudyPlan < ActiveRecord::Base
   validates_presence_of :index
   serialize :final_areas, Hash
 
+  before_create :set_actual
+
   # returns true if study plan is approved
   def approved?
     !approved_on.nil?
@@ -169,4 +171,11 @@ class StudyPlan < ActiveRecord::Base
     unfinished_subjects.empty?
   end
 
+  private
+  def set_actual
+    if old_actual = StudyPlan.find_by_index_id_and_actual(self.index.id, 1)
+      old_actual.update_attribute(:actual, 0)
+    end
+    self.actual = 1
+  end
 end
