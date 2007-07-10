@@ -169,10 +169,11 @@ class CandidatesController < ApplicationController
 
   # summary method for candidates
   def summary
+    faculty = Faculty.find(@user.person.faculty.id)
     if params[:id] == "department" || params[:id].empty?
-      @departments = Department.find(:all)
-    else
-      @corridors = Coridor.find(:all)
+       @departments = faculty.departments
+     else
+       @corridors = faculty.coridors
     end
   end
   
