@@ -237,6 +237,10 @@ module ApplicationHelper
       if @user.has_role?('board_chairman')
         links << link_to_unless_current(_("candidates"), :controller => 'candidates'){}
       end
+      if @user.has_role?('department_secretary')
+        links << link_to_unless_current(_("candidates"), :controller => 'candidates', :action => 'list'){} 
+      end
+
       links << link_to_unless_current(_("probation terms"), 
                                       :controller => 'probation_terms'){} 
       links << link_to_unless_current(_("exams"), :controller => 'exams'){}

@@ -545,7 +545,7 @@ msgstr "zapsán"
 
 #: app/helpers/candidates_helper.rb:132
 msgid "not admitted"
-msgstr "nepřijutí"
+msgstr "nepřijmutí"
 
 #: app/helpers/candidates_helper.rb:134
 msgid "admitted"

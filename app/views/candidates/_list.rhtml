@@ -4,7 +4,7 @@
   <li>
     <div class='right'>
 			<b>
-      <% unless @user.has_role?('board_chairman') %>
+      <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
 			  <%= ready_link(candidate) %>     
         <%= invite_link(candidate) %>
         <%= admit_link(candidate) %>
@@ -13,7 +13,7 @@
 			</b>
 			&nbsp;
       <%= link_to 'detail', :action => 'show', :id => candidate %>
-      <% unless @user.has_role?('board_chairman') %>
+      <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
         <%= link_to 'opravit', :action => 'edit', :id => candidate %>
         <%= link_to 'smazat', :action => 'delete', :id => candidate %>
       <% end %>
