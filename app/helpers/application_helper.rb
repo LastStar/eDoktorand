@@ -53,14 +53,16 @@ module ApplicationHelper
   # prints errors for object
   def errors_for(object)
     unless object.errors.empty?
-      tb = _("There were errors in your input")
-      tb << content_tag('ul',
-      object.errors.to_a.map {|attr, message| content_tag('li',
-      _(message))}.join(' '))
-      content_tag('div', tb)
+      tbc = ""
+      tbc << "#{_("There were errors in your input")}"
+      tbc << content_tag('ul',
+      object.errors.to_a.map do |attr, message|
+        content_tag('li', _(message))
+      end.join(' '))
+      content_tag('div',tbc)
     end
   end
-  
+
   # get language ids
   def language_options
     LanguageSubject.find_all.map {|l| [l.name, l.id]}

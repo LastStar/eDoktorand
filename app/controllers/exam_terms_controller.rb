@@ -31,7 +31,7 @@ class ExamTermsController < ApplicationController
       flash['notice'] = 'Komise byla úspěšně vytvořena.'
       redirect_to :action => 'list'
     else
-      render_action 'new'
+      render(:action => 'new')
     end
   end
 
