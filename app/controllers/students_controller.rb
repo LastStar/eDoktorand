@@ -6,8 +6,7 @@ class StudentsController < ApplicationController
                                   :time_form, :filter, :list_xls, :edit_account]
 
   before_filter :prepare_user, :set_title, :login_required
-  before_filter :prepare_order, :prepare_filter, :except => [:show,
-    :contact]
+  before_filter :prepare_order, :prepare_filter, :except => [:show, :contact]
   before_filter :prepare_conditions, :prepare_student
 
 
@@ -52,7 +51,7 @@ class StudentsController < ApplicationController
   
   # renders student details
   def show
-    index = Index.find(params[:id])
+    index = Index.find_with_all_included(params[:id])
     render(:partial => 'show', :locals => {:index => index})
   end
   

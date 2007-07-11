@@ -17,6 +17,7 @@ class Index < ActiveRecord::Base
   belongs_to :coridor
   belongs_to :department
   has_many :interupts, :order => 'created_on desc'
+  has_one :interupt, :order => 'created_on desc'
   has_many :extra_scholarships, :conditions => "payed_on IS NULL"
   has_one :regular_scholarship, :conditions => "payed_on IS NULL", 
     :order => 'updated_on desc'
@@ -152,18 +153,6 @@ class Index < ActiveRecord::Base
         end
       end
       temp_approvement && temp_approvement.prepares_statement?(user)
-    end
-  end
-
-  # returns last interrupt
-  def interupt
-    @interupt ||= case interupts.size
-    when 0
-      nil
-    when 1
-      interupts.first
-    else
-      interupts.max {|x,y| x.created_on <=> y.created_on}
     end
   end
 
@@ -343,7 +332,13 @@ class Index < ActiveRecord::Base
   def self.find_studying_on_department(department)
     find(:all, :conditions => ['department_id = ? and finished_on is null',
                               department.id])
+  end
 
+  # find with all relation included
+  def self.find_with_all_included(idx)
+    inc = [:study_plan, :disert_theme, :interupts, :coridor, :study, :student,
+          :tutor, :department, :approvement]
+    self.find(idx, :include => inc, :order => 'interupts.created_on desc')
   end
 
   # returns status of index

@@ -449,8 +449,8 @@ module ApplicationHelper
   end
 
   # prints interupt finish line
-  def interupt_finish_line(index)
-    finished_on = info_div(index.interupt.finished_on.strftime('%d.%m.%Y'))
+  def interupt_finish_line(interupt)
+    finished_on = info_div(interupt.finished_on.strftime('%d.%m.%Y'))
     content_tag('li', finished_on + _('finished on'))
   end
 
@@ -557,11 +557,11 @@ module ApplicationHelper
   link_to_function(image_tag('close.png'), "$('coridor_subject_form').remove()")
   end
   
-  def student_tutor_line(student)
+  def student_tutor_line(index)
     if @user.has_role?('faculty_secretary')
-      attribute_line(student.index, :tutor, :display_name) + _('Tutor') + ':'
+      attribute_line(index, :tutor, :display_name) + _('Tutor') + ':'
     else
-      long_info_helper(student.index.tutor.display_name, :class => 'printable') + 
+      long_info_helper(index.tutor.display_name, :class => 'printable') + 
         _('Tutor') + ':'
     end
   end

@@ -1,38 +1,44 @@
 <ul class='details'>
   <li class='printable'>
-  <%= student_name_line(student) %>
+    <%= student_name_line(index.student) %>
   </li>
-<li><%= attribute_line(student, :birthname) %><%=_ 'Surname' %>:</li>
-<%= birth_date_line(student) %>
-<%= birth_number_line(student) %>
-
-<%= birth_place_line(student) %>
-<li><%= attribute_line(student, :email, :name) %><%=_ 'Email' %>:</li>
-<li><%= attribute_line(student, :phone, :name) %><%=_ 'Phone' %>:</li>
-
-<li>
-<%= "#{long_info_helper(student.index.coridor.name)}#{_('Corridor')}: " %>
-</li>
-<li>
-<%= "#{long_info_helper(student.index.study.name)}#{_('Study form')}: " %>
-</li>
-<li class='printable'><%= student_tutor_line(student) %></li>
-
-<% if FACULTY_CFG[student.faculty.id]['consultant'] %>
-<li class='printable'>
-<%= attribute_line(student.index, :consultant) %><%=_ 'Consultant' %>:
-</li>
-<% end %>
-<li>
-<%= "#{long_info_helper(student.index.year.to_s.concat('.'))}#{_('Year')}: " %> 
-</li>
-<li>
-<%= "#{long_info_helper(student.index.enrolled_on.strftime('%d. %m. %Y'))}#{_('Enrolled on')}: " %> 
-</li>
-<li class='nonprintable'>
-<%= attribute_line(student, :account) %><%=_ 'Account' %>:
-</li>
-
-<li><%= attribute_line(student, :citizenship) %><%=_('citizenship')%>:</li>
+  <li>
+    <%= attribute_line(index.student, :birthname) %><%=_ 'Surname' %>:
+  </li>
+  <%= birth_date_line(index.student) %>
+  <%= birth_number_line(index.student) %>
+  <%= birth_place_line(index.student) %>
+  <li>
+    <%= attribute_line(index.student, :email, :name) %><%=_ 'Email' %>:
+  </li>
+  <li>
+    <%= attribute_line(index.student, :phone, :name) %><%=_ 'Phone' %>:
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.coridor.name)}#{_('Corridor')}: " %>
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.study.name)}#{_('Study form')}: " %>
+  </li>
+  <li class='printable'>
+    <%= student_tutor_line(index) %>
+  </li>
+  <% if FACULTY_CFG[index.faculty.id]['consultant'] %>
+    <li class='printable'>
+    <%= attribute_line(index, :consultant) %><%=_ 'Consultant' %>:
+    </li>
+  <% end %>
+  <li>
+    <%= "#{long_info_helper(index.year.to_s.concat('.'))}#{_('Year')}: " %> 
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.enrolled_on.strftime('%d. %m. %Y'))}#{_('Enrolled on')}: " %> 
+  </li>
+  <li class='nonprintable'>
+    <%= attribute_line(index.student, :account) %><%=_ 'Account' %>:
+  </li>
+  <li>
+    <%= attribute_line(index.student, :citizenship) %><%=_('citizenship')%>:
+  </li>
 </ul>
 

@@ -1,0 +1,7 @@
+<li>
+  <div class='info'><%= interupt.start_on.strftime('%d. %m. %Y') %></div>
+  <%= _('interupted on') %>
+</li>
+<% if interupt.finished_on %>
+  <%= interupt_finish_line(interupt) %>
+<% end %>
