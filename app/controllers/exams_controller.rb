@@ -41,30 +41,27 @@ class ExamsController < ApplicationController
     render(:partial => "subject_form", :locals => {:subjects => subjects}) 
   end
 
-  # save subject of exam to session and adds students 
+  # save subject of exam to session, add student, exam indications
   def save_subject
-    session[:exam].subject_id = params[:subject][:id]
+    @exam = session[:exam]
+    if session[:exam].subject_id == nil
+      session[:exam].subject_id = params[:subject][:id]
+    end
     @students = PlanSubject.find_unfinished_by_subject(\
-      params[:subject][:id], :students => true)
+      session[:exam].subject_id, :students => true)
   end
 
-  # save student of exam to session
+  # save student of exam to session and view protocol
   def save_student_subject
     session[:exam].index = Student.find(params[:student][:id]).index
-    plan_subject = PlanSubject.find_by_subject_id_and_study_plan_id(\
-      session[:exam].subject.id, session[:exam].index.study_plan.id)
-    render(:partial => 'main', :locals => {:plan_subject => plan_subject,
-          :action => 'save', :exam => session[:exam], 
-          :container => 'container'})
+    session[:exam].attributes = params[:exam]
+    @exam = session[:exam]
   end
 
-  # saves exam 
+  # saves exam to DB
   def save
-    session[:exam].update_attributes(params[:exam])
-    ps = PlanSubject.find_for_exam(session[:exam], :update_attributes => 
-        params[:plan_subject])
-    render(:partial => 'show', :locals => {:exam => session[:exam],
-      :plan_subject => ps, :back_link => false})
+    session[:exam].save
+    redirect_to :action => 'create'
   end
 
   # for creating external exams

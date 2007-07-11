@@ -1,6 +1,7 @@
 <% subjects.sort! {|x, y| x.label <=> y.label} %>
 <%= form_remote_with_loading(:url => {:action => 'save_subject'},
   :evaluate => true) %>	
+<H5> <%= _('exam by subject')%></H5>
 <fieldset>
 <legend><%= _("exam subjects") %></legend>
 <label>

@@ -1,4 +1,18 @@
-<%= form_remote_with_loading(:url => {:action => action}, :update => container) %>	
+<%#= form_remote_with_loading(:url => {:action => action}, :update => container) %>	
+<%= form_remote_with_loading(:url => {:action => 'save_student_subject'}, :evaluate =>
+  true) %>
+<fieldset>
+<legend><%= _("Examined students") %></legend>
+<label>
+<%= _("student") %>
+</label>
+<%= content_tag('select', options_for_select(students.map {|stud|
+[stud.display_name, stud.id]}), {'id' => "student_id", 'name' =>
+"student[id]"}) %>
+<br/> 
+</fieldset>
+
+
 <% @exam ||= exam %>
 <fieldset id='date'>
 <legend><%= _("Exam date") %></legend>

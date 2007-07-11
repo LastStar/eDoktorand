@@ -56,4 +56,7 @@ exam.first_examinator.display_name if exam.first_examinator%>&nbsp;&nbsp;&nbsp;&
 
 </div>
 </div><!-- protocol end -->
-
+<div class='links'>
+<%= link_to (_('save'), {:action => 'save'})%>
+<%= link_to_remote (_('cancel'), :url => {:action => 'save_subject'}, :complete => evaluate_remote_response)%>
+</div>

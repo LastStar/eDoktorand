@@ -1,8 +1,9 @@
+<div id='form'>
 <h5><%= _("Finished creating exam") %></h5>
 <div class='links'>
   <%= print_link %>
   <%= link_to(_('create another exam'), :action => 'create', :controller => 
     'exams') %>
 </div>
-<%= render(:partial => 'protocol', :locals => {:exam => exam, :plan_subject =>\
-  plan_subject, :back_link => back_link}) %>
+<%= render(:partial => 'protocol', :locals => {:exam => exam, :back_link => back_link}) %>
+</div>
