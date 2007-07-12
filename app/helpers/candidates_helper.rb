@@ -97,7 +97,7 @@ module CandidatesHelper
       params[:coridor], :filter => params[:filter], :category =>
       params[:category]})
       links << '&nbsp;'
-      unless @user.has_role?('board_chairman')
+      unless @user.has_one_of_roles?(['board_chairman','department_secretary'])
         links << link_to(_("summary"), {:action => 'summary', :id => "department"})
         links << '&nbsp;'
       end

@@ -12,7 +12,9 @@
       <% end %>
 			</b>
 			&nbsp;
-      <%= link_to 'detail', :action => 'show', :id => candidate %>
+      <% unless @user.has_role?('department_secretary') %>
+        <%= link_to 'detail', :action => 'show', :id => candidate %>
+      <%end%>
       <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
         <%= link_to 'opravit', :action => 'edit', :id => candidate %>
         <%= link_to 'smazat', :action => 'delete', :id => candidate %>
