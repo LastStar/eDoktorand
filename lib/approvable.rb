@@ -3,12 +3,13 @@ module Approvable
   def approve_with(params)
     statement = \
       eval("#{params['type']}.create(params)") 
-    eval("approvement.#{params['type'].underscore} =
+    eval("self.approvement.#{params['type'].underscore} =
       statement")
-    if statement.is_a?(LeaderStatement) && !approvement.tutor_statement
-      approvement.tutor_statement =
+    if statement.is_a?(LeaderStatement) && !self.approvement.tutor_statement
+      self.approvement.tutor_statement =
         TutorStatement.create(statement.attributes)
     end
+    self.approvement.save
     set_times(statement)
   end
 
