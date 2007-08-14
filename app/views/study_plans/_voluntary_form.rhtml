@@ -8,15 +8,25 @@
 </div>
 <% end %>
 <%= form_remote_with_loading(:url => {:action => 'save_voluntary'}, 
-                             :evaluate => true) %>	
+                             :evaluate => true, :complete => evaluate_remote_response) %>	
 <fieldset>
 <legend><%= _("voluntary subjects") %></legend>
 <ul>
   <% voluntary_buff =  VoluntarySubject.for_select(:coridor => @student.coridor,
                                                    :with_external => true)%>
+<%if session[:voluntary_subjects] == []%>
   <%= render(:partial => 'voluntary', :collection => @plan_subjects, 
   :locals => {:subjects => voluntary_buff}) %>
+<%else%>
+  <%@id =0%>
+  <% if @plan_subjects == nil %>
+    <% @plan_subjects = session[:voluntary_subjects] %>
+  <% end %>
+  <%= render(:partial => 'voluntary_edit', :collection => @plan_subjects, 
+    :locals => {:subjects => voluntary_buff}) %>
+<%end%>
 </ul>
 </fieldset>
 <%= submit_tag(_("commit")) %>
+<%= link_to_remote (_('back'), {:url => {:action => 'edit_create'}, :complete => evaluate_remote_response}, {:class => 'details_link'})%>
 <%= end_form_tag %>

@@ -1,0 +1,11 @@
+page.replace_html 'studyPlan', :partial => 'shared/subjects', 
+                                       :locals => {:subjects => session[:obligate_subjects],
+                                       :title => _("obligate subjects")}
+                                       
+page.insert_html :bottom, 'studyPlan', :partial => 'shared/subjects', 
+                                       :locals => {:subjects => session[:voluntary_subjects],
+                                       :title => _("voluntary subjects")}
+page.insert_html :bottom, 'studyPlan', :partial => 'shared/subjects', 
+                                       :locals => {:subjects => session[:language_subjects],
+                                       :title => _("language subjects")}
+page.replace_html 'form', :partial => "disert_form", :locals => {:@disert_theme => session[:disert_theme]} 

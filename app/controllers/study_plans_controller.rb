@@ -18,6 +18,13 @@ class StudyPlansController < ApplicationController
   
   # start of the study plan creating process
   def create
+    session[:edit_create] = 0
+    session[:plan_subjects] = []
+    session[:voluntary_subjects] = []
+    session[:obligate_subjects] = []
+    session[:language_subjects] = []
+    session[:disert_theme] = []
+    
     prepare_plan_session
     @title = _("Creating study plan")
     if RequisiteSubject.has_for_coridor?(@student.index.coridor)
@@ -26,6 +33,19 @@ class StudyPlansController < ApplicationController
     create_obligate
   end
   
+  def edit_create
+    @title = _("Creating study plan")
+  end
+  
+  def edit_create_voluntary
+  end
+
+  def edit_create_language
+  end
+
+  def edit_create_disert
+  end
+
   # create study plan like no-student 
   def create_by_other
     @student = Student.find(params[:id])
@@ -66,15 +86,32 @@ class StudyPlansController < ApplicationController
   # and creates voluntary subjects
   def save_obligate
     @created_subjects = []
-    session[:study_plan].attributes = params[:study_plan]
-    params[:plan_subject].each do |id, ps|
-      plan_subject = PlanSubject.new(ps)
-      last_semester(ps['finishing_on'])
-      @created_subjects << plan_subject
+    session[:plan_subjects] = []
+    if params[:study_plan]
+      session[:study_plan].attributes = params[:study_plan]
     end
-    session[:plan_subjects].concat(@created_subjects)
-    create_voluntary
-    @type = 'obligate'
+    plan_subjects = params[:plan_subject]
+    if session[:obligate_subjects] == []
+      plan_subjects.each do |id, ps|
+        plan_subject = PlanSubject.new(ps)
+        last_semester(ps['finishing_on'])
+        @created_subjects << plan_subject
+      end
+      session[:plan_subjects].concat(@created_subjects)
+      session[:obligate_subjects]=@created_subjects
+      create_voluntary
+      @type = 'obligate'
+    else
+      plan_subjects.each do |ps|
+        plan_subject = PlanSubject.new(ps)
+        last_semester(ps['finishing_on'])
+        @created_subjects << plan_subject
+      end
+      session[:plan_subjects].concat(@created_subjects)
+      session[:obligate_subjects]=@created_subjects
+      create_voluntary
+      @type = 'obligate'
+    end
   end
   
   # saves seminar subjects to session 
@@ -104,6 +141,7 @@ class StudyPlansController < ApplicationController
       @plan_subjects.each {|ps| last_semester(ps.finishing_on)}
       session[:plan_subjects] << @plan_subjects
       @created_subjects = @plan_subjects
+      session[:voluntary_subjects]=@created_subjects
       create_language
     else
       extract_voluntary(true)
@@ -118,6 +156,7 @@ class StudyPlansController < ApplicationController
     extract_language
     if @plan_subjects.map {|ps| ps.subject_id}.uniq.size == 2
       session[:plan_subjects] << @plan_subjects
+      session[:language_subjects] = @plan_subjects
       @disert_theme = @student.index.build_disert_theme
     else
       extract_language(true)

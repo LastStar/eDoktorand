@@ -1,6 +1,6 @@
-<li class='subject_select'>
+<li class='subject_select'>  
 <%= voluntary_select(subjects, voluntary) %>
-.<%=  _("semester") %>
+<%=  _("semester") %>
 <% if voluntary.id > 0 %>
 <ul class='nodecor' id="external<%= voluntary.id %>" style='<%= voluntary.hide_style %>' >
 <li>

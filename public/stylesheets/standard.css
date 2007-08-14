@@ -495,6 +495,9 @@ li.subject_select {border: none; padding-left: 100px; clear: both;}
 .left {float: left; padding-left: 1ex;}
 .details form, input {margin: 0px; padding: 0px;}
 .details input { border: 1px dashed #999;}
+a.details_link {font-family:"Calibri","lucida",sans-serif; color: black; border: 1px solid black;margin-top: 0px;margin: 0px;
+                padding-top: 1px; padding-left: 4px; padding-right: 4px; padding-bottom: 1px; font-size:13px; background-color:#ddc; font-style:normal; text-decoration:none;}
+
 #image_submit {border: 0px}
 a.change_field {border: 1px solid white;text-decoration: none; color: black}
 a:hover.change_field {border: 1px dashed #ccc; color: black}

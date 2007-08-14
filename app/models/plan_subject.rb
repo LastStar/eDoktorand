@@ -99,4 +99,11 @@ class PlanSubject < ActiveRecord::Base
       'display: none'  
     end
   end
+
+  def hide_style_edit(id)
+    if !subject.is_a?(ExternalSubject)
+      'display: none'  
+    end
+  end
+
 end

@@ -12,10 +12,17 @@
 <fieldset>
 <legend><%= _("language subjects") %></legend>
 <ul>
-<%= render(:partial => 'language', :collection => @plan_subjects, 
-:locals => {:subjects => LanguageSubject.for_select(:coridor => @student.coridor)}) %>
+<%if session[:language_subjects] == []%>
+  <%= render(:partial => 'language', :collection => @plan_subjects, 
+  :locals => {:subjects => LanguageSubject.for_select(:coridor => @student.coridor)}) %>
+<%else%>
+  <%@id = 0%>
+  <%= render(:partial => 'language_edit', :collection => session[:language_subjects], 
+  :locals => {:subjects => LanguageSubject.for_select(:coridor => @student.coridor)}) %>
+<%end%>
 </fieldset>
 </ul>
 <%= submit_tag(_("commit")) %>
+<%= link_to_remote (_('back'), {:url => {:action => 'edit_create_voluntary', :study_plan => session[:study_plan]}, :complete => evaluate_remote_response}, {:class => 'details_link'})%>
 <%= end_form_tag %>
 

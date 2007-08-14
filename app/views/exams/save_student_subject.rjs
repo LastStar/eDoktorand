@@ -1,3 +1,4 @@
+page.replace_html 'done' , ""
 page.replace_html 'form', render(:partial => "show",
                            :locals => {:exam => @exam,
                            :back_link => false})

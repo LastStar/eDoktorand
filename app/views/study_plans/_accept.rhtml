@@ -1,2 +1,5 @@
 <h4><%= link_to(_("confirm"), {:action => 'confirm'}, :confirm =>
   _("Are you sure, your plan is ready?")) %></h4>
+<br>
+  <%= link_to_remote (_('back'), {:url => {:action => 'edit_create_disert', :study_plan => session[:study_plan]}, :complete => evaluate_remote_response}, {:class => 'details_link'})%>
+

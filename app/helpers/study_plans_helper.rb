@@ -14,7 +14,7 @@ module StudyPlansHelper
   # returns style for external div 
   def voluntary_select(subjects, plan_subject)
     select = ''
-    if plan_subject.id < 0   
+    if plan_subject.id < 0 && session[:voluntary_subjects] == []  
       subjects[0] = [_("none subject"), -1]
     end
     select << content_tag('select', options_for_select(subjects, plan_subject.subject_id),
@@ -28,6 +28,25 @@ module StudyPlansHelper
       "plan_subject[#{plan_subject.id}][finishing_on]"})
     return select
   end
+
+  def voluntary_select_edit(subjects, plan_subject)
+    select = ''
+    if plan_subject.id < 0 && session[:voluntary_subjects] == []  
+      subjects[0] = [_("none subject"), -1]
+    end
+    select << content_tag('select', options_for_select(subjects, plan_subject.subject_id),
+      {'id' => "plan_subject_#{plan_subject.id}_subject_id",
+      'name' => "plan_subject[#{plan_subject.id}][subject_id]",
+      'onChange' => "hide_show(#{plan_subject.id})"})
+    select << "&mdash; "
+    select << content_tag('select', options_for_select(1..4,
+      plan_subject.finishing_on ), { 'id' => 
+      "plan_subject_#{plan_subject.id}_finishing_on", 'name' => 
+      "plan_subject[#{plan_subject.id}][finishing_on]"})
+    return select
+  end
+
+
 
   # prints select tags for voluntary subject
   # returns style for external div 

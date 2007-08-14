@@ -1,5 +1,8 @@
 <%= form_remote_with_loading(:url => {:action => 'save_disert'}, :evaluate =>
   true)%>	
+<%if @disert_theme == nil%>
+  <% @disert_theme = session[:disert_theme]%>
+<%end%>
 <fieldset>
 <ul class='nodecor'>
 <li>
@@ -47,5 +50,7 @@
 </li>
 </fieldset>
 <%= submit_tag _("commit") %>
+<%= link_to_remote (_('back'), {:url => {:action => 'edit_create_language'}, :complete => evaluate_remote_response},{:class => 'details_link'})%>
+
 <%= end_form_tag %>
 

@@ -34,5 +34,15 @@ function hide_on_internal(id) {
     }
   };
 }
+
+function hide_show(id) {
+var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
+    if($('external' + id).style.display == 'none' && element.value == 0) {
+    Element.show('external' + id);
+    }
+    else {
+    Element.hide('external' + id);
+    }
+}
 CODE
 %>

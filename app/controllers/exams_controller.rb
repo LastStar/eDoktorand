@@ -22,6 +22,7 @@ class ExamsController < ApplicationController
 
   def detail
     exam = Exam.find(params[:id])
+    @detail = 1
     render(:partial => 'detail', :locals => {:exam => exam, :plan_subject =>
       PlanSubject.find_for_exam(exam)})
   end
