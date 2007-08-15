@@ -27,7 +27,7 @@ module ProbationTermsHelper
         else 
           _("You are already enrolled for an exam from this subject") 
         end 
-      else 
+      elsif probation_term.date >= Date.today 
        link_to(_("enroll"), {:action => 'enroll', 
                              :id => probation_term.id}, 
                              :confirm => _("Really enroll to this term?")) 

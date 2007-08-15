@@ -10,6 +10,7 @@ class InteruptsController < ApplicationController
     end
     @interupt = @student.index.interupts.build
   end
+
   def create
     @interupt = Interupt.new(params[:interupt])
     if @interupt.plan_changed.to_i == 1
@@ -20,6 +21,7 @@ class InteruptsController < ApplicationController
       finish
     end
   end
+
   def finish
     @interupt ||= session[:interupt]
     @interupt.save
@@ -35,6 +37,7 @@ class InteruptsController < ApplicationController
       redirect_to(:controller => 'students')
     end
   end
+
   def confirm_approve
     interupt = Interupt.find(params[:id])
     interupt.approve_with(params[:statement])

@@ -1,9 +1,8 @@
 page.replace_html "done", render(:partial => "exams/with_student",
                                        :locals => {:exam => @exam})
-page.replace_html "form", render(:partial => "exams/main_form", 
+page.replace_html "form", render(:partial => "exams/detail_form", 
                                        :locals => {:exam => @exam,
                                        :plan_subject => @plan_subject,
-                                       :action => "save_exam",
-                                       :container => @container})
+                                       :form => form_remote_tag(:url => {:action => "save_exam"}, :update => "info_#{session[:probation_term].id}")})
 page.hide "students_#{@probation_term.id}"
 

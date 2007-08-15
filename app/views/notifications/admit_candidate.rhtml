@@ -17,7 +17,7 @@ Zápis do studia se uskuteční dne <%=Parameter.get("enroll_invitation_time_and
 <% else %>
 Do studia budete zapsán po předložení dokladů o ukončení magisterského stupně vzdělání.
 <% end %>
-<% if @candidate.study_id == 1 %>
+<% if @candidate.full_time? %>
 Zároveň Vám přiznávám stipendium ve výši <%= Parameter.get("start_stipendia", @faculty) %>,- Kč měsíčně, které Vám bude  vypláceno <% if @conditional %>ode dne nástupu do studia,<% else %>od&nbsp;1.&nbsp;října <%=Time.now.strftime("%Y")%>,<% end %> vždy zpětně 15. následujícího měsíce na Váš peněžní účet.
 <% end %>
 Upozorňuji Vás, že je Vaší povinností do 1 měsíce od nástupu 

@@ -10,8 +10,8 @@ class Scholarship < ActiveRecord::Base
     find(:first, :conditions => ['index_id = ? and payed_on is null', index])
   end
 
-  def pay!
-    update_attribute('payed_on', Time.now)
+  def pay!(time = Time.now)
+    update_attribute('payed_on', time)
     return csv_row
   end
 

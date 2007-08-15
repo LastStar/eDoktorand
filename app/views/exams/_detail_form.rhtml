@@ -1,4 +1,5 @@
-<%= form_tag(:action => 'save_external') %>	
+<%= form %>
+<% @exam ||= exam %>
 <fieldset id='date'>
 <legend><%= _("Exam date") %></legend>
 <label>
@@ -10,14 +11,26 @@
 </fieldset>
 <fieldset id='agenda'>
 <legend><%= _("Exam agenda") %></legend>
-  <label for="exam_university"><%=_("University")%></label>
-  <%= @exam.subject.external_subject_detail.university %><br/>
-<% if @exam.subject.external_subject_detail.person  %>
+
   <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
-  <%= @exam.subject.external_subject_detail.person %><br/>
-  <%= hidden_field 'exam', 'first_examinator_id', :value => -1 %>
-<% end %>
-  
+     
+  <% examinators = Examinator.find_for(@user) %>
+  <%= collection_select(:exam, :first_examinator_id, examinators, :id, :display_name) %><br /> 
+
+  <label for="exam_second_examinator"><%=_("2. Examinator")%></label>
+  <%= collection_select(:exam, :second_examinator_id, examinators, :id, :display_name, {:include_blank => true}) %>
+
+
+  <label for="exam_first_examinator"><%=_("3. examinator")%></label>
+     
+  <% examinators = Examinator.find_for(@user) %>
+  <%= collection_select(:exam, :third_examinator_id, examinators, :id, :display_name, {:include_blank => true})%><br /> 
+
+  <label for="exam_second_examinator"><%=_("4. examinator")%></label>
+  <%= collection_select(:exam, :fourth_examinator_id, examinators, :id, :display_name, {:include_blank => true}) %>
+
+
+
 </fieldset>
 
 <fieldset id='result'>
@@ -33,3 +46,6 @@
   <input type='submit' value='<%= _("commit") %>' />&nbsp;
   <input type='reset' value='<%= _("reset") %>' />
 </fieldset>
+</form>
+
+

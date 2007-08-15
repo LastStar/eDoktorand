@@ -1,15 +1,22 @@
+<% if params[:action] == 'create' %>
+<div id='done'></div>
+<div id='form'>
+<% end %>
+<H5> <%= _('exam by subject')%></H5>
 <%= form_remote_with_loading(:url => {:action => 'save_subject'},
   :evaluate => true) %>	
-<H5> <%= _('exam by subject')%></H5>
 <fieldset>
 <legend><%= _("exam subjects") %></legend>
 <label>
 <%= _("subject") %>
 </label>
-<%= content_tag('select', options_for_select(subjects.map{|sub| [sub.label,
+<%= content_tag('select', options_for_select(@subjects.map{|sub| [sub.label,
 sub.id]}), {'id' => "subject_id",'name' => "subject[id]"}) %>
 <br/> 
 </fieldset>
 <%= submit_tag(_("commit")) %>
 <%= end_form_tag %>
+<% if params[:action] == 'create' %>
+</div>
+<% end %>
 

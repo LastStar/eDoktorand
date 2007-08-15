@@ -1,3 +1,0 @@
-page.replace_html 'done', "<h5>#{_('Creating external exam for student')}</h5>" 
-page.replace_html 'form', render(:partial => "external_students_form",
-                                 :locals => {:students => @students}) 

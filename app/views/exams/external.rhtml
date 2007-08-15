@@ -1,0 +1,14 @@
+<h5> <%= _('external exam')%></h5>
+<%= form_remote_tag(:url => {:action => 'save_external_student'}, :update => 'form') %>	
+<fieldset>
+<legend><%= _("Examined students") %></legend>
+<label>
+<%= _("student") %>
+</label>
+<%= content_tag('select', options_for_select(@students.map {|stud|
+[stud.display_name, stud.index.id]}), {'id' => "index_id", 'name' =>
+"index[id]"}) %>
+<br/> 
+</fieldset>
+<%= submit_tag(_("commit")) %>
+<%= end_form_tag %>

@@ -1,0 +1,2 @@
+page.insert_html :after, 'exams_list', render(:partial => 'protocol', :locals => {:exam => @exam, :plan_subject => @plan_subject, :back_link => true})
+page.hide 'exams_list'

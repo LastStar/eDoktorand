@@ -2,10 +2,12 @@ class ScholarshipApprovement < Approvement
   belongs_to :faculty, :foreign_key => 'document_id'
   
   def self.approved_for?(faculty)
-    faculty = faculty.id if faculty.is_a? Faculty
+    faculty = Faculty.find(faculty) unless faculty.is_a? Faculty
+    # faculty without stipendia code does not have to be approved
+    return true unless faculty.stipendia_code
     from = Time.now - 16.days
     find(:first, 
-         :conditions => ['document_id = ? and created_on > ?', faculty, from])
+         :conditions => ['document_id = ? and created_on > ?', faculty.id, from])
   end
 
   def self.all_approved?

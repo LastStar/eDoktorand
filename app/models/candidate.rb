@@ -12,10 +12,10 @@ class Candidate < ActiveRecord::Base
   belongs_to :exam_term
   belongs_to :tutor
   has_one :admittance
-  belongs_to :language1, :class_name => 'Subject', :foreign_key => 
-    'language1_id'
-  belongs_to :language2, :class_name => 'Subject', :foreign_key => 
-    'language2_id' 
+  belongs_to :language1, :class_name => 'Subject',
+    :foreign_key => 'language1_id'
+  belongs_to :language2, :class_name => 'Subject',
+    :foreign_key => 'language2_id' 
   validates_presence_of :firstname, :message => _("firstname can not be empty")
   validates_presence_of :lastname, :message => _("lastname can not be empty")
   validates_presence_of :birth_at, :message => _("birth place cannot be empty")
@@ -260,6 +260,10 @@ class Candidate < ActiveRecord::Base
     when 'enrolled': ' AND enrolled_on IS NOT NULL'
     when nil: ''
     end
+  end
+
+  def full_time?
+    study_id == 1
   end
 
 end

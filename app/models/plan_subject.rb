@@ -51,12 +51,13 @@ class PlanSubject < ActiveRecord::Base
     plan_subjects.finished_on is null and subjects.id in (?)\
     and study_plans.approved_on is not null \
     and study_plans.canceled_on is null \
-    and study_plans.actual = 1
+    and study_plans.actual = 1 \
+    and indices.finished_on is null
     SQL
     subj_ids = Subject.find_for(user).map {|s| s.id}
     psubs = find(:all, :conditions => [sql, subj_ids], 
-                 :include => [:subject, {:study_plan => :index}])
-    psubs.delete_if {|ps| ps.study_plan.index.finished?}
+                 :include => [:subject, {:study_plan => :index}], 
+                 :order => "subjects.label")
     options[:subjects] ? psubs.map {|ps| ps.subject}.uniq : psubs
   end
 

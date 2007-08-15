@@ -281,7 +281,8 @@ class Index < ActiveRecord::Base
       when 2
         conditions.first << ' AND indices.finished_on IS NOT NULL' 
       when 3
-        conditions.first << ' AND indices.interupted_on IS NOT NULL' 
+        conditions.first << ' AND indices.interupted_on IS NOT NULL 
+                              AND indices.finished_on IS NULL' 
       when 4
         conditions.first << ' AND disert_themes.defense_passed_on IS NOT NULL'
       end

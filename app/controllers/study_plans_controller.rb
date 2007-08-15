@@ -63,6 +63,7 @@ class StudyPlansController < ApplicationController
   
   # renders change page for study plan
   def change
+    @title = _('Change of study plan')
     if !@student
       @student = Student.find(params[:id])
     end

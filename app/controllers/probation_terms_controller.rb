@@ -129,12 +129,13 @@ class ProbationTermsController < ApplicationController
   # enroll exam for student from probation term
   def enroll_exam
     @probation_term = ProbationTerm.find(params[:id])
-    student = Student.find(params[:student_id])
-    @exam = Exam.from_probation_term(@probation_term, student)
+    @student = Student.find(params[:student_id])
+    @exam = Exam.from_probation_term(@probation_term, @student)
     session[:probation_term] = @probation_term
     session[:exam] = @exam
-    @container = "info_#{session[:probation_term].id}"
     @plan_subject = PlanSubject.find_for_exam(@exam)
+    @students = PlanSubject.find_unfinished_by_subject(\
+      session[:exam].subject_id, :students => true)
   end
   
   # saves exam 

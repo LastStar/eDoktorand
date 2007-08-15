@@ -221,35 +221,37 @@ module ApplicationHelper
   def main_menu
     links = [print_link(image_tag('printer.png', :alt => _('print'), 
                                   :size => '12x12' ))]
-    if @user.has_role?('examinator')
-      links << link_to_unless_current(_("exams"), :controller => 'exams'){}
-    elsif @user.person.is_a?(Student) and @student 
+    if @user.person.is_a?(Student) and @student 
       links << student_menu
-    elsif @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
-        links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
-        links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
+    else
+      if @user.has_role?('examinator')
         links << link_to_unless_current(_("exams"), :controller => 'exams'){}
-        links << prepare_scholarship_link
-        links << link_to_unless_current(_('diplomas'), :controller => 'diploma_supplements') {}
-        links << link_to_unless_current(_('tutors'), :controller => 'tutors') {}
-        links << link_to_unless_current(_('coridors'), :controller => 'coridors') {}
-    elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
-      if @user.has_role?('board_chairman')
-        links << link_to_unless_current(_("candidates"), :controller => 'candidates'){}
-      end
-      if @user.has_role?('department_secretary')
-        links << link_to_unless_current(_("candidates"), :controller => 'candidates', :action => 'list'){} 
-      end
+      elsif @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
+          links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
+          links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
+          links << link_to_unless_current(_("exams"), :controller => 'exams'){}
+          links << prepare_scholarship_link
+          links << link_to_unless_current(_('diplomas'), :controller => 'diploma_supplements') {}
+          links << link_to_unless_current(_('tutors'), :controller => 'tutors') {}
+          links << link_to_unless_current(_('coridors'), :controller => 'coridors') {}
+      elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
+        if @user.has_role?('board_chairman')
+          links << link_to_unless_current(_("candidates"), :controller => 'candidates'){}
+        end
+        if @user.has_role?('department_secretary')
+          links << link_to_unless_current(_("candidates"), :controller => 'candidates', :action => 'list'){} 
+        end
 
-      links << link_to_unless_current(_("probation terms"), 
-                                      :controller => 'probation_terms'){} 
-      links << link_to_unless_current(_("exams"), :controller => 'exams'){}
-      unless @user.has_role?('vicerector')
-        links << prepare_scholarship_link
-      end
-    end 
-    links << link_to_unless_current(_("students"), 
-                                    :controller => 'students'){}
+        links << link_to_unless_current(_("probation terms"), 
+                                        :controller => 'probation_terms'){} 
+        links << link_to_unless_current(_("exams"), :controller => 'exams'){}
+        unless @user.has_role?('vicerector')
+          links << prepare_scholarship_link
+        end
+      end 
+      links << link_to_unless_current(_("students"), 
+                                      :controller => 'students'){}
+    end
     links << link_to_unless_current(_("logoff"), 
                                     {:controller => 'account', 
                                      :action => 'logout'}, 

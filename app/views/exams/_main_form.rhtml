@@ -1,4 +1,3 @@
-<%#= form_remote_with_loading(:url => {:action => action}, :update => container) %>	
 <%= form_remote_with_loading(:url => {:action => 'save_student_subject'}, :evaluate =>
   true) %>
 <fieldset>
@@ -12,52 +11,5 @@
 <br/> 
 </fieldset>
 
-
-<% @exam ||= exam %>
-<fieldset id='date'>
-<legend><%= _("Exam date") %></legend>
-<label>
-  <%= _("date") %>
-</label>
-  <%= date_select 'exam', 'passed_on', :start_year => 2002,
-                  :order => [:day, :month, :year], :use_month_numbers => true %>
-  <span class='required'>&nbsp;&lowast;</span ><br />
-</fieldset>
-<fieldset id='agenda'>
-<legend><%= _("Exam agenda") %></legend>
-
-  <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
-     
-  <% examinators = Examinator.find_for(@user) %>
-  <%= collection_select(:exam, :first_examinator_id, examinators, :id, :display_name) %><br /> 
-
-  <label for="exam_second_examinator"><%=_("2. Examinator")%></label>
-  <%= collection_select(:exam, :second_examinator_id, examinators, :id, :display_name, {:include_blank => true}) %>
-
-
-  <label for="exam_first_examinator"><%=_("3. examinator")%></label>
-     
-  <% examinators = Examinator.find_for(@user) %>
-  <%= collection_select(:exam, :third_examinator_id, examinators, :id, :display_name, {:include_blank => true})%><br /> 
-
-  <label for="exam_second_examinator"><%=_("4. examinator")%></label>
-  <%= collection_select(:exam, :fourth_examinator_id, examinators, :id, :display_name, {:include_blank => true}) %>
-
-
-
-</fieldset>
-
-<fieldset id='result'>
-<legend><%= _("Exam result") %></legend>
-  <label for="exam_questions"><%=_("Questions")%></label>
-  <%= text_area 'exam', 'questions'  %><br />
-  <label for="exam_result"><%=_("Result")%></label>
-  <%= select 'exam', 'result', [[_("pass"), 1], [_("not pass"), 0]]%><br />
-</fieldset>
-
-<fieldset id='action'>
-  <legend><%= _("action") %></legend>
-  <input type='submit' value='<%= _("commit") %>' />&nbsp;
-  <input type='reset' value='<%= _("reset") %>' />
-</fieldset>
-
+<%= render(:partial => "detail_form", :locals => {:form => nil}) %>
+</form>

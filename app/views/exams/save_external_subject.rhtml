@@ -1,0 +1,40 @@
+<h5> <%= _('external exam')%></h5>
+<ul>
+  <li><%= _('Student') %>: <%= @exam.index.student.display_name %></li>
+  <li><%= _('Subject') %>: <%= @exam.subject.label %></li>
+</ul>
+<%= form_tag(:action => 'save_external') %>	
+<fieldset id='date'>
+<legend><%= _("Exam date") %></legend>
+<label>
+  <%= _("date") %>
+</label>
+  <%= date_select 'exam', 'passed_on', :start_year => 2002,
+                  :order => [:day, :month, :year], :use_month_numbers => true %>
+  <span class='required'>&nbsp;&lowast;</span ><br />
+</fieldset>
+<fieldset id='agenda'>
+<legend><%= _("Exam agenda") %></legend>
+  <label for="exam_university"><%=_("University")%></label>
+  <%= @exam.subject.external_subject_detail.university %><br/>
+<% if @exam.subject.external_subject_detail.person  %>
+  <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
+  <%= @exam.subject.external_subject_detail.person %><br/>
+  <%= hidden_field 'exam', 'first_examinator_id', :value => -1 %>
+<% end %>
+  
+</fieldset>
+
+<fieldset id='result'>
+<legend><%= _("Exam result") %></legend>
+  <label for="exam_questions"><%=_("Questions")%></label>
+  <%= text_area 'exam', 'questions'  %><br />
+  <label for="exam_result"><%=_("Result")%></label>
+  <%= select 'exam', 'result', [[_("pass"), 1], [_("not pass"), 0]]%><br />
+</fieldset>
+
+<fieldset id='action'>
+  <legend><%= _("action") %></legend>
+  <input type='submit' value='<%= _("commit") %>' />&nbsp;
+  <input type='reset' value='<%= _("reset") %>' />
+</fieldset>

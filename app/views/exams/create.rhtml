@@ -2,6 +2,19 @@
   <div id="done">
   </div>
   <div id="form">
-    <%= render(:partial => 'choose_creation_style') %>
-  </div> <!-- form end -->
-</div><!-- container end -->
+    <h5>
+      <%= _("The first step is to choose the creation type of an exam.") %>
+    </h5>
+    <ul>
+      <li id='by_exam_line'>
+      <%= link_to_remote(_("exam by subject"),
+        :url => {:action => 'by_subject'}, :update => 'form',
+        :loading => visual_effect(:pulsate, "by_exam_line")) %>
+      </li>
+      <li id='external_line'>
+      <%= link_to_remote(_("external exam"), :url => {:action => 
+      'external'}, :update => 'form', :loading => visual_effect(:pulsate, "external_line")) %>
+      </li>
+</ul>
+  </div>
+</div>

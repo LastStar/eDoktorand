@@ -37,8 +37,8 @@ class RegularScholarship < Scholarship
     sum(:amount, :conditions => ["index_id in (?) and payed_on is null", ids]) 
   end
 
-  def pay!
+  def pay!(time = Time.now)
     clone.save
-    super
+    super time
   end
 end

@@ -2,8 +2,6 @@
 <h5><%= _("Finished creating exam") %></h5>
 <div class='links'>
   <%= print_link %>
-  <%= link_to(_('create another exam'), :action => 'create', :controller => 
-    'exams') %>
 </div>
 <%= render(:partial => 'protocol', :locals => {:exam => exam, :back_link => back_link}) %>
 </div>

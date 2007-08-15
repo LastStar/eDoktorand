@@ -1,6 +1,7 @@
 class ExamsController < ApplicationController
   include LoginSystem
-  layout "employers"
+  layout "employers", :except => ['external', 'by_subject',
+    'save_external_student', 'save_external_subject']
   before_filter :set_title
   before_filter :login_required
   before_filter :prepare_user
@@ -21,25 +22,27 @@ class ExamsController < ApplicationController
   end
 
   def detail
-    exam = Exam.find(params[:id])
-    @detail = 1
-    render(:partial => 'detail', :locals => {:exam => exam, :plan_subject =>
-      PlanSubject.find_for_exam(exam)})
+    @exam = Exam.find(params[:id])
+    @plan_subject = PlanSubject.find_for_exam(@exam)
   end
 
   # start of the exam creating process
   # rendering the two links
   def create
     @title = _("Creating exam")
-    session[:exam] = nil
+    unless @user.has_role? 'faculty_secretary'
+      by_subject
+      render :action => :by_subject
+    else
+      session[:exam] = nil
+    end
   end
 
   # created exam object and subjects for select 
   def by_subject
     @exam = Exam.new
     session[:exam] = @exam
-    subjects = PlanSubject.find_unfinished_for(@user, :subjects => true)
-    render(:partial => "subject_form", :locals => {:subjects => subjects}) 
+    @subjects = PlanSubject.find_unfinished_for(@user, :subjects => true)
   end
 
   # save subject of exam to session, add student, exam indications
@@ -95,11 +98,6 @@ class ExamsController < ApplicationController
     redirect_to(:action => 'create', :controller => 'exams')
   end
   
-  # edit exam
-  def edit
-    @exam = Exam.find(params[:id])
-  end
-
   # updates exam
   def update
     @exam = Exam.find(params[:id])
