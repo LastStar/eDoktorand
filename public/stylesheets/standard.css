@@ -338,6 +338,12 @@ div.printHeader { display: none; }
   font-size: x-small;
   color: gray;
 }
+a.revocation {
+  font-size: small;
+  color: red;
+  padding-left: 3em;
+  text-decoration: none;
+  }
 .statusInfo {
   font-size: small;
   color: red;

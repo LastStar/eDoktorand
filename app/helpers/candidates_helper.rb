@@ -10,7 +10,7 @@ module CandidatesHelper
     links = ''
     if !candidate.admited? && !candidate.rejected? && candidate.invited? && candidate.ready?
       links << link_to(_('protocol'), :action => 'admittance', :id => candidate) + "&nbsp;" +
-      link_to(_("admit"), :action => 'admit', :id => candidate)  
+      link_to(_("gain"), :action => 'admit', :id => candidate)  
     end
   end
   # invite link
@@ -124,6 +124,12 @@ module CandidatesHelper
     content_tag('div', links, :class => 'links')
   end
   
+  def admit_for_revocation_tag(candidate)
+    if candidate.rejected?
+      link_to _("admit_for_revocation"), {:action => 'admit_for_revocation', :id => candidate.id}, {:class => 'revocation'}
+    end
+  end
+
   # prints status of the candidate
   def status_tag(candidate)
     if candidate.enrolled?

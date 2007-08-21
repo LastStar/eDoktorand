@@ -24,6 +24,7 @@ class CandidatesController < ApplicationController
       conditions = Candidate.prepare_conditions(params, @faculty)
       @pages, @candidates = paginate :candidates, :per_page => 7, :order_by =>
         params[:category], :conditions => conditions
+      session[:current_page_admit] = @pages.current.number
   end
 
   # lists all candidates ordered by category
@@ -72,6 +73,12 @@ class CandidatesController < ApplicationController
     redirect_to :action => 'list'
   end
 
+  def admit_for_revocation
+    candidate = Candidate.find(params[:id])
+    candidate.delete_reject!
+    candidate.admit!
+    redirect_to :action => 'list', :page => session[:current_page_admit]
+  end
   # enroll candidate form
   def enroll
 		@candidate = Candidate.find(params[:id])

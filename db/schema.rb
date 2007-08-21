@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 129) do
+ActiveRecord::Schema.define(:version => 131) do
 
   create_table "actualities", :force => true do |t|
     t.column "label",   :string
@@ -180,6 +180,8 @@ ActiveRecord::Schema.define(:version => 129) do
     t.column "actual",               :integer
   end
 
+  add_index "disert_themes", ["index_id"], :name => "index_disert_themes_on_index_id"
+
   create_table "documents", :force => true do |t|
     t.column "name",       :string,   :limit => 100
     t.column "path",       :string,   :limit => 100
@@ -301,6 +303,8 @@ ActiveRecord::Schema.define(:version => 129) do
     t.column "finished_on",  :datetime
   end
 
+  add_index "interupts", ["index_id"], :name => "index_interupts_on_index_id"
+
   create_table "leaderships", :force => true do |t|
     t.column "department_id", :integer
     t.column "leader_id",     :integer
@@ -358,6 +362,8 @@ ActiveRecord::Schema.define(:version => 129) do
     t.column "updated_on",    :datetime
     t.column "finished_on",   :datetime
   end
+
+  add_index "plan_subjects", ["study_plan_id"], :name => "index_plan_subjects_on_study_plan_id"
 
   create_table "probation_terms", :force => true do |t|
     t.column "subject_id",           :integer
@@ -450,6 +456,7 @@ ActiveRecord::Schema.define(:version => 129) do
   add_index "study_plans", ["canceled_on"], :name => "canceled_on"
   add_index "study_plans", ["approved_on"], :name => "approved_on"
   add_index "study_plans", ["actual"], :name => "actual_idx"
+  add_index "study_plans", ["index_id"], :name => "index_study_plans_on_index_id"
 
   create_table "subjects", :force => true do |t|
     t.column "label",      :text

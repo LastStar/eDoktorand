@@ -136,6 +136,13 @@ class Candidate < ActiveRecord::Base
     self.update_attribute('rejected_on', Time.now)
   end
 
+  def delete_reject!
+    if !self.rejected_on.nil?
+      self.update_attribute('rejected_on', nil)
+    end
+  end
+
+
   # checks if student is reject
   def rejected?
     !self.rejected_on.nil?
