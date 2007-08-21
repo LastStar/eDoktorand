@@ -10,4 +10,12 @@ th.short {width: 5em}
 #supplement .sub_list {padding-bottom: 1em}
 .informations  li {font-size: smaller}
 
+.static {margin: 15pt}
+.static ul { margin: -10pt 0 0 3em; }
+.static li { border: none; list-style: disc; }
+.static h1 {text-align: left; margin: 0 0 0 5pt;}
+.static h2 {text-align: left; margin: 25pt 0 3pt 5pt;}
+.static h3 {text-align: left; margin: 0 0 1pt 5pt;}
+.static p.note {font-size: smaller}
+.static p {margin:0 0 1em 0}
 
