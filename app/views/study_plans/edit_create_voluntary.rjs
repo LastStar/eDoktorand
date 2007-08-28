@@ -1,5 +1,0 @@
-page.replace_html 'studyPlan', :partial => 'shared/subjects', 
-                                       :locals => {:subjects => session[:obligate_subjects],
-                                       :title => _("obligate subjects")}
-
-page.replace_html 'form', render(:partial => "voluntary_form", :locals => {:@plan_subjects => session[:voluntary_subjects]})

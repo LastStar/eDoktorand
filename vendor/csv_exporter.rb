@@ -249,6 +249,7 @@ class CSVExporter
         end
         row << c.email
         row << c.department.short_name
+        row << c.coridor.code
         row << c.study.name
         @@mylog.debug "Adding #{row}"
         csv << row
@@ -300,5 +301,5 @@ class CSVExporter
     end
     outfile.close
   end
-    
+  
 end

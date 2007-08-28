@@ -1,5 +1,6 @@
 page.insert_html :bottom, 'studyPlan', :partial => 'shared/subjects', 
-                                       :locals => {:subjects => @created_subjects,
+                                       :locals => {:subjects =>
+                                         session[:voluntary_subjects],
                                        :title => _("voluntary subjects")}
 page.replace_html 'form', render(:partial => "language_form") 
 

@@ -111,8 +111,9 @@ class Candidate < ActiveRecord::Base
 
   # enroll candidate to study and returns new student based on 
   # candidates details. 
-  def enroll!
-    self.update_attribute('enrolled_on', Time.now)
+  def enroll!(student_id, loginname, time = Time.now)
+    self.update_attribute('enrolled_on', time)
+    return new_student(student_id, loginname, time)
   end
 
   # checks if candidate is allready enrolled
@@ -151,18 +152,12 @@ class Candidate < ActiveRecord::Base
   # TODO redone with aggregations
   # returns email like contact object
   def contact_email
-    return Contact.new do |c|
-      c.name = self.email
-      c.contact_type_id = 1
-    end
+    return Contact.create(:name => self.email, :contact_type_id => 1)
   end
 
   # returns phone like contact object
   def contact_phone
-    return Contact.new do |c|
-      c.name = self.phone
-      c.contact_type_id = 2
-    end
+    return Contact.create(:name => self.phone, :contact_type_id => 2)
   end
 
   # returns new address with attributes set by self 
@@ -194,7 +189,7 @@ class Candidate < ActiveRecord::Base
   end
 
   # creates student 
-  def new_student(new_id, enrolled_on)
+  def new_student(new_id, username, enrolled_on)
     # convert candidate to (student+index)
     student = Student.new
     student.firstname = self.firstname
@@ -214,11 +209,14 @@ class Candidate < ActiveRecord::Base
     index.student = student
     index.enrolled_on = enrolled_on
     index.save
-    student.save
     create_address(student.id)
     create_postal_address(student.id) if self.postal_city
-    student.email = self.contact_email
-    student.phone = self.contact_phone if self.phone 		
+    student.email = self.email
+    student.phone = self.phone if self.phone
+    student.save
+    user = User.create(:login => username, :password => username,
+                       :password_confirmation => username, :person_id => new_id)
+    user.roles << Role.find_by_name('student')
     return student
   end
 
@@ -269,7 +267,7 @@ class Candidate < ActiveRecord::Base
     end
   end
 
-  def full_time?
+  def present_study?
     study_id == 1
   end
 

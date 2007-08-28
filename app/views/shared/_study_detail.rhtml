@@ -36,7 +36,7 @@
   <% else %>
     <h5><%= _('This study last interupt') %></h5>
     <ul id='last_interrupt'>
-      <%= render(:partial => 'interupt', :locals => {:interupt => interupt}) %>
+      <%= render(:partial => 'shared/interupt', :locals => {:interupt => interupt}) %>
   <% end %>
   <% if index.interupt.note && !index.interupt.note.empty? %>
     <li>

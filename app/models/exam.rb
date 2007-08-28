@@ -36,14 +36,14 @@ class Exam < ActiveRecord::Base
       sql = ["subject_id IN (?)", sub_ids]
     end
     sql.first << ' and result = 1'
-    exams = find(:all, :conditions => sql, :include => [:index, :subject], 
+    if options[:this_year]
+      sql.first << ' and passed_on > ?'
+      sql << TermsCalculator.this_year_start
+    end
+    find(:all, :conditions => sql, :include => [{:index => :student}, :subject], 
       :order => 'subjects.label')
     # remove exams that don't have plan subject
-    exams.delete_if {|e| !(e.plan_subject = PlanSubject.find_for_exam(e))}
-    if options[:this_year]
-      exams.delete_if {|e| !e.passed_on || e.passed_on < TermsCalculator.this_year_start}
-    end
-    exams
+    # exams.delete_if {|e| !(e.plan_subject = PlanSubject.find_for_exam(e))}
   end
 
   def self.from_probation_term(probation_term, student = nil)

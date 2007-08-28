@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 131) do
+ActiveRecord::Schema.define(:version => 134) do
 
   create_table "actualities", :force => true do |t|
     t.column "label",   :string
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(:version => 131) do
     t.column "created_on",          :datetime
     t.column "updated_on",          :datetime
   end
+
+  add_index "approvements", ["document_id"], :name => "document_id_idx"
+  add_index "approvements", ["document_id"], :name => "index_approvements_on_document_id"
 
   create_table "atestation_details", :force => true do |t|
     t.column "detail",          :text
@@ -364,6 +367,8 @@ ActiveRecord::Schema.define(:version => 131) do
   end
 
   add_index "plan_subjects", ["study_plan_id"], :name => "index_plan_subjects_on_study_plan_id"
+  add_index "plan_subjects", ["subject_id"], :name => "subject_id_idx"
+  add_index "plan_subjects", ["subject_id"], :name => "index_plan_subjects_on_subject_id"
 
   create_table "probation_terms", :force => true do |t|
     t.column "subject_id",           :integer
@@ -417,6 +422,8 @@ ActiveRecord::Schema.define(:version => 131) do
     t.column "type",            :string
     t.column "approved_on",     :datetime
   end
+
+  add_index "scholarships", ["index_id"], :name => "index_scholarships_on_index_id"
 
   create_table "sessions", :force => true do |t|
     t.column "sessid", :text

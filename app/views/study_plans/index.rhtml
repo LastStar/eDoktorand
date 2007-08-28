@@ -1,5 +1,10 @@
 <p class='help'>
-<div class='links'><%= link_to_function(_('documents'), "$('documents').toggle()") %></div>
+<div class='links'><%= voluntary_link %> <%= link_to_function(_('documents'), "$('documents').toggle()") %></div>
+<ul style='display:none' id='voluntarys'>
+  <% @voluntary_subjects.each do |vs| %>
+  <li><%= vs.subject.label %></li>
+  <% end %>
+</ul>
 <ul id='documents' style='display: none'>
 <li><a href="/pdf/StudijniZkusebniRadDSP2006.pdf"><%= _('study_directive') %></a></li>
 <li><a href="/pdf/StipendijniRadDSP2006.pdf"><%= _('scholarship_directive') %></a></li>
@@ -31,11 +36,5 @@ information system.") %></p>
 <%= _("First step propably will to create") %>
 <%= create_study_plan_link(@student) %>
 </p> 
-<div class='links'><%= voluntary_link %></div>
-<ul style='display:none' id='voluntarys'>
-  <% @voluntary_subjects.each do |vs| %>
-  <li><%= vs.subject.label %></li>
-  <% end %>
-</ul>
 <% end %>
 <%= render(:partial => 'shared/student_detail', :locals => {:index => @index}) %>

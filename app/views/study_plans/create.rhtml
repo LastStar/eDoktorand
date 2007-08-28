@@ -3,46 +3,22 @@
 should be consulted with your tutor.") %>
 </p>
 <div id="done">
- <%= content_tag('h5', _("Study plan")) %>
-<ul id='studyPlan'>
-  <% unless session[:plan_subjects].empty? %>
-  <%= render_requisite %>
-  <% end %>
-</ul>
+  <%= render(:partial => 'create_head') %>
 </div>
 <div id="form">
   <%= render :partial => "#{@type}_form" %>
 </div>
 <%= 
 javascript_tag <<-CODE
-last = []
-last[1] = 0
-last[2] = 0
-last[3] = 0
-last[4] = 0
-last[5] = 0
 function hide_on_internal(id) {
   var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
-  if((element.value == 0 && last[id] != 0) || (element.value != 0 && last[id] == 0)) {
-    if($('external' + id).style.display == 'none') {
-    Element.show('external' + id);
-    last[id] = element.value;
-    }
-    else {
+  if(element.value != 0) {
     Element.hide('external' + id);
-    last[id] = element.value;
-    }
-  };
+  }
+  else {
+    Element.show('external' + id);
+  }
 }
 
-function hide_show(id) {
-var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");
-    if($('external' + id).style.display == 'none' && element.value == 0) {
-    Element.show('external' + id);
-    }
-    else {
-    Element.hide('external' + id);
-    }
-}
 CODE
 %>

@@ -1,6 +1,6 @@
 <%= content_tag('h5', _("Study plan")) %>
 <ul id='studyPlan'>
-  <% unless session[:plan_subjects].empty? %>
-  <%= render_requisite %>
+  <% if session[:requisite_subjects] %>
+    <%= render_requisite %>
   <% end %>
 </ul>

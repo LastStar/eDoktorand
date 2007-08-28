@@ -1,0 +1,11 @@
+page.replace_html "done", :partial => "create_head"
+page.replace_html "studyPlan", :partial => 'shared/subjects', 
+                                     :locals => {:subjects =>
+                                       session[:seminar_subjects],
+                                     :title => _("seminar subjects")}
+page.insert_html :bottom, "studyPlan", :partial => 'shared/subjects', 
+                                     :locals => {:subjects =>
+                                       session[:voluntary_subjects],
+                                     :title => _("voluntary subjects")}
+page.replace_html "form", :partial => "language_form"
+

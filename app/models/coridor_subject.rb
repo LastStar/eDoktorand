@@ -33,4 +33,16 @@ class CoridorSubject < ActiveRecord::Base
     find(:all, :conditions => sql, :include => :subject).map {|cs| 
       [cs.subject.label, cs.subject.id]}
   end
+
+  # finds all coridor subjects for coridor
+  def self.for_coridor(coridor)
+    coridor = coridor.id if coridor.is_a?(Coridor)
+    self.find_all_by_coridor_id(coridor)
+  end
+
+  # returns true if has requisite subject
+  def self.has_for_coridor?(coridor)
+    coridor = coridor.id if coridor.is_a?(Coridor)
+    self.count(:conditions => ["coridor_id = ?", coridor]) > 0
+  end
 end

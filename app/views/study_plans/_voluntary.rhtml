@@ -1,11 +1,15 @@
 <li class='subject_select'>  
 <%= voluntary_select(subjects, voluntary) %>
 <%=  _("semester") %>
-<% if voluntary.id > 0 %>
+<% if voluntary.id >= 0 %>
 <ul class='nodecor' id="external<%= voluntary.id %>" style='<%= voluntary.hide_style %>' >
 <li>
   <label><%= _("subject") %></label>
   <%= external_subject_input(voluntary) %>
+</li>
+<li>
+  <label><%= _("subject en") %></label>
+  <%= external_subject_en_input(voluntary) %>
 </li>
 <li>
   <label><%= _("university") %></label>

@@ -2,31 +2,23 @@
 <div id='error'>
 <ul class='nodecor'>
 <% flash[:errors].each do |err| %>
-<%= content_tag('li', err) %>
+<li><%= err %></li>
 <% end %>
 </ul>
 </div>
 <% end %>
-<%= form_remote_with_loading(:url => {:action => 'save_voluntary'}, 
-                             :evaluate => true, :complete => evaluate_remote_response) %>	
+<% form_remote_tag(:url => {:action => 'save_voluntary'}, 
+  :complete => evaluate_remote_response) do -%>	
 <fieldset>
 <legend><%= _("voluntary subjects") %></legend>
 <ul>
   <% voluntary_buff =  VoluntarySubject.for_select(:coridor => @student.coridor,
-                                                   :with_external => true)%>
-<%if session[:voluntary_subjects] == []%>
-  <%= render(:partial => 'voluntary', :collection => @plan_subjects, 
-  :locals => {:subjects => voluntary_buff}) %>
-<%else%>
-  <%@id =0%>
-  <% if @plan_subjects == nil %>
-    <% @plan_subjects = session[:voluntary_subjects] %>
-  <% end %>
-  <%= render(:partial => 'voluntary_edit', :collection => @plan_subjects, 
-    :locals => {:subjects => voluntary_buff}) %>
-<%end%>
+                                                   :with_external => true) %>
+  <%= render(:partial => 'voluntary', :collection => session[:voluntary_subjects], 
+             :locals => {:subjects => voluntary_buff}) %>
+  <input type='hidden' name='return' id='return-value' value='0'/>
 </ul>
 </fieldset>
-<%= submit_tag(_("commit")) %>
-<%= link_to_remote (_('back'), {:url => {:action => 'edit_create'}, :complete => evaluate_remote_response}, {:class => 'details_link'})%>
-<%= end_form_tag %>
+<%= submit_tag("<<< " + _("seminar subjects"), :id => 'return_button', :onclick => "$('return-value').value = 1; $('return_button').value = '" + _('working...') + "'") %>
+<%= submit_tag(_("language subjects") + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % _('working...')) %>
+<% end %>

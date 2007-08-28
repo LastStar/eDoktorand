@@ -2,6 +2,7 @@ class PlanSubject < ActiveRecord::Base
   untranslate_all
   belongs_to :study_plan
   belongs_to :subject
+  EMPTY_SUBJECT_COUNT = 3
 
   # returns true if plan subject has exam
   def finished?
@@ -107,4 +108,37 @@ class PlanSubject < ActiveRecord::Base
     end
   end
 
+  def self.create_for(student, type)
+    case type
+    when :requisite
+      RequisiteSubject.for_coridor(student.coridor).map do |coridor_subject|
+        PlanSubject.new(:subject_id => coridor_subject.subject.id, 
+                        :finishing_on => coridor_subject.requisite_on)
+      end
+    when :obligate
+      i = 0
+      ObligateSubject.for_coridor(student.coridor).map do |coridor_subject|
+        (ps = PlanSubject.new(:subject_id => coridor_subject.subject.id)).id = i
+        i += 1
+        ps
+      end
+    when :seminar, :language
+      subjects = []
+      2.times do |i|
+        (ps = PlanSubject.new).id = i + 1
+        subjects << ps
+      end
+      subjects
+    when :voluntary
+      subjects = []
+      FACULTY_CFG[student.faculty.id]['subjects_count'].times do |i|
+        (ps = PlanSubject.new).id = i + 1
+        subjects << ps
+      end
+      subjects.concat((-EMPTY_SUBJECT_COUNT..-1).map do |i|
+        (ps = PlanSubject.new).id = i
+        ps
+      end)
+    end
+  end
 end

@@ -1,0 +1,7 @@
+page.replace_html "done", :partial => "create_head"
+page.replace_html "studyPlan", :partial => 'shared/subjects', 
+                                     :locals => {:subjects =>
+                                       session[:seminar_subjects],
+                                     :title => _("seminar subjects")}
+page.replace_html "form", :partial => "voluntary_form"
+

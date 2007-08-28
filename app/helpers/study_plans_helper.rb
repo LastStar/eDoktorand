@@ -10,11 +10,25 @@ module StudyPlansHelper
       "plan_subject[#{plan_subject.id}][subject_id]"})
   end
 
+  def seminar_select(subjects, plan_subject)
+    result = ''
+    result << content_tag('select', 
+      options_for_select(subjects, plan_subject.subject_id),
+      {'id' => "plan_subject_#{plan_subject.id}_subject_id",
+      'name' => "plan_subject[#{plan_subject.id}][subject_id]"})
+    result << "&mdash; "
+    result << content_tag('select', options_for_select(1..4,
+      plan_subject.finishing_on ), { 'id' => 
+      "plan_subject_#{plan_subject.id}_finishing_on", 'name' => 
+      "plan_subject[#{plan_subject.id}][finishing_on]"})
+    return result
+  end
+
   # prints select tags for voluntary subject
   # returns style for external div 
   def voluntary_select(subjects, plan_subject)
     select = ''
-    if plan_subject.id < 0 && session[:voluntary_subjects] == []  
+    if plan_subject.id && plan_subject.id < 0
       subjects[0] = [_("none subject"), -1]
     end
     select << content_tag('select', options_for_select(subjects, plan_subject.subject_id),
@@ -28,25 +42,6 @@ module StudyPlansHelper
       "plan_subject[#{plan_subject.id}][finishing_on]"})
     return select
   end
-
-  def voluntary_select_edit(subjects, plan_subject)
-    select = ''
-    if plan_subject.id < 0 && session[:voluntary_subjects] == []  
-      subjects[0] = [_("none subject"), -1]
-    end
-    select << content_tag('select', options_for_select(subjects, plan_subject.subject_id),
-      {'id' => "plan_subject_#{plan_subject.id}_subject_id",
-      'name' => "plan_subject[#{plan_subject.id}][subject_id]",
-      'onChange' => "hide_show(#{plan_subject.id})"})
-    select << "&mdash; "
-    select << content_tag('select', options_for_select(1..4,
-      plan_subject.finishing_on ), { 'id' => 
-      "plan_subject_#{plan_subject.id}_finishing_on", 'name' => 
-      "plan_subject[#{plan_subject.id}][finishing_on]"})
-    return select
-  end
-
-
 
   # prints select tags for voluntary subject
   # returns style for external div 
@@ -170,4 +165,11 @@ module StudyPlansHelper
                                      :controller => 'study_plans',
                                      :id => student})
   end
- end
+
+  def return_to_link
+    link_to_remote ("<<< " + _("%s subjects" % @return_to), 
+                    {:url => {:action => "edit_create", :type => @return_to}, 
+                    :complete => evaluate_remote_response}, 
+                    {:class => 'details_link'})
+  end
+end

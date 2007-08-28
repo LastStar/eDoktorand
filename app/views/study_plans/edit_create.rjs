@@ -1,2 +1,0 @@
-page.replace_html 'done', :partial => 'create_done', :locals => {:@plan_subjects => session[:obligate_subjects]}
-page.replace_html 'form', render(:partial => "obligate_form")

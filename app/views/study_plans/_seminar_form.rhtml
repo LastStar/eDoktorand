@@ -1,33 +1,22 @@
-<%= form_remote_with_loading(:url => {:action => 'save_seminar'}, :evaluate =>
-  true)%>	
+<% if flash[:error] %>
+<div id='error'>
+<ul class='nodecor'>
+  <li>
+<%= flash[:error] %>
+  </li>
+</ul>
+</div>
+<% end %>
+<% form_remote_tag(:url => {:action => 'save_seminar'}, 
+  :complete => evaluate_remote_response, 
+  :loading => "$('submit_button').value = '%s'" % _('working...')) do -%>	
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
 <legend><%= _("seminar subjects") %></legend>
-<ul class='nodecor'>
-<li>
-  <label>
-  <%= _("seminar subject") %>
-  </label>
-  <% subjects = seminar_ids(session[:study_plan].index.coridor) %>
-  <%= content_tag('select', options_for_select(subjects),
-    { 'id' => "plan_subject", 'name' => "plan_subject"}) %><br/>  
-</li>
-<% 2.times do |i| %>
-<li>
-  <label>
-    <%= _("#{'I' * (i+1)}. part") %>
-  </label>
-
-  <%= content_tag('select', options_for_select(1..5),
-    { 'id' => "plan_subject_finishing_on[#{i}]",
-    'name' => "plan_subject_finishing_on[#{i}]"})
-  %>
-  <%= "." + _("semester") %>
-</li>
-<% end %>
-</ul>
+  <% voluntary_buff =  SeminarSubject.for_select(:coridor => @student.coridor) %>
+  <%= render(:partial => 'seminar', :collection => session[:seminar_subjects], 
+             :locals => {:subjects => voluntary_buff}) %>
 </fieldset>
-<%= submit_tag(_("commit")) %>
-<%= end_form_tag %>
-
+<%= submit_tag(_("voluntary subjects") + " >>>", :id => 'submit_button') %>
+<% end %>
 

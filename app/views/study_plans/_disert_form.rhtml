@@ -1,8 +1,13 @@
-<%= form_remote_with_loading(:url => {:action => 'save_disert'}, :evaluate =>
-  true)%>	
-<%if @disert_theme == nil%>
-  <% @disert_theme = session[:disert_theme]%>
-<%end%>
+<div id='error'>
+<ul class='nodecor'>
+<% session[:disert_theme].errors.each do |attr, err| %>
+<li><%= err %></li>
+<% end %>
+</ul>
+</div>
+<% form_remote_tag(:url => {:action => 'save_disert'}, 
+  :complete => evaluate_remote_response) do -%>	
+<% @disert_theme = session[:disert_theme]%>
 <fieldset>
 <ul class='nodecor'>
 <li>
@@ -47,10 +52,11 @@
   <textarea name='disert_theme[methodology_summary]'
     id='disert_theme_methodology_summary' cols='60' rows='35'>
   <%= @disert_theme.methodology_summary %></textarea>
+  <input type='hidden' name='return' id='return-value' value='0'/>
 </li>
 </fieldset>
-<%= submit_tag _("commit") %>
-<%= link_to_remote (_('back'), {:url => {:action => 'edit_create_language'}, :complete => evaluate_remote_response},{:class => 'details_link'})%>
+<%= submit_tag("<<< " + _('language subjects'), :id => 'return_button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + _('working...') + "'") %>
+<%= submit_tag(_("finish study plan creating (no steps back)") + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % _('working...')) %>
 
-<%= end_form_tag %>
+<% end %>
 

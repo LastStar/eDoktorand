@@ -110,4 +110,34 @@ class Student < Person
   def department
     index.department
   end
+
+  def to_wsdl_hash
+    struct =  {
+      'uic' => self.uic,
+      'student_id' => self.id,
+      'firstname' => self.firstname,
+      'lastname' => self.lastname,
+      'birthname' => self.birthname,
+      'birth-on' => self.birth_on,
+      'citizenship' => self.citizenship,
+      'birth-number' => self.birth_number,
+      'birth-place' => self.birth_place,
+      'sex' => self.sex,
+      'created-on' => self.created_on,
+      'update-on' => self.updated_on,
+      'adress' => {
+        'street' => self.address.street,
+        'desc-number' => self.address.desc_number,
+        'orient-number' => self.address.orient_number,
+        'city' => self.address.city,
+        'zip' => self.address.zip,
+        'state' => self.address.state
+      }
+    }
+    struct['title-before'] = self.title_before ? self.title_before.name : ''
+    struct['title-after'] = self.title_after ? self.title_after.name : ''
+    struct['email'] = self.email ? self.email.name : ''
+    struct['phone'] = self.phone ? self.phone.name : ''
+    return struct
+  end
 end 

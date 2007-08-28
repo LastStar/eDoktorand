@@ -525,4 +525,17 @@ class Index < ActiveRecord::Base
                       {'1' => '', '2' => '', '3' => '', '4' => '', '5' => ''}}
     return sp
   end
+
+  def to_wsdl_hash
+    return {
+      'index-id' => self.id,
+      'student-uic' => self.student.uic,
+      'faculty-id' => self.faculty.id,
+      'department-id' => self.department.id,
+# TODO change 
+      'study-status' => 'S',
+      'status-from' => self.index.updated_on,
+      'status-to' => ''
+    }
+  end
 end

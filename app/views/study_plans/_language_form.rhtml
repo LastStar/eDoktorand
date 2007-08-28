@@ -1,28 +1,24 @@
 <% if flash[:error] %>
 <div id='error'>
-<ul>
+<ul class='nodecor'>
   <li>
 <%= flash[:error] %>
   </li>
 </ul>
 </div>
 <% end %>
-<%= form_remote_with_loading(:url => {:action => 'save_language'}, 
-                             :evaluate => true) %>	
+<% form_remote_tag(:url => {:action => 'save_language'}, 
+  :complete => evaluate_remote_response) do -%>	
 <fieldset>
 <legend><%= _("language subjects") %></legend>
 <ul>
-<%if session[:language_subjects] == []%>
-  <%= render(:partial => 'language', :collection => @plan_subjects, 
-  :locals => {:subjects => LanguageSubject.for_select(:coridor => @student.coridor)}) %>
-<%else%>
-  <%@id = 0%>
-  <%= render(:partial => 'language_edit', :collection => session[:language_subjects], 
-  :locals => {:subjects => LanguageSubject.for_select(:coridor => @student.coridor)}) %>
-<%end%>
+  <% language_buff = LanguageSubject.for_select(:coridor => @student.coridor) %>
+  <%= render(:partial => 'language', :collection => session[:language_subjects], 
+    :locals => {:subjects => language_buff}) %>
+  <input type='hidden' name='return' id='return-value' value='0'/>
 </fieldset>
 </ul>
-<%= submit_tag(_("commit")) %>
-<%= link_to_remote (_('back'), {:url => {:action => 'edit_create_voluntary', :study_plan => session[:study_plan]}, :complete => evaluate_remote_response}, {:class => 'details_link'})%>
-<%= end_form_tag %>
+<%= submit_tag("<<< " + _('voluntary subjects'), :id => 'return_button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + _('working...') + "'") %>
+<%= submit_tag(_("disert theme and final exam") + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % _('working...')) %>
+<% end %>
 

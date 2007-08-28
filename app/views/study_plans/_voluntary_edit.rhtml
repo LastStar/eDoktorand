@@ -1,13 +1,7 @@
 <li class='subject_select'> 
-<%@id = @id +1%>
-<%if !voluntary_edit.subject.is_a?(ExternalSubject)%>
-  <%voluntary_edit.id = @id%>
-<%else%>
-  <%voluntary_edit.id = 100 + @id %>
-<%end%>
 <%= voluntary_select_edit(subjects, voluntary_edit) %>
 .<%=  _("semester") %>
-<%# if voluntary_edit.id > 0 %>
+<% if voluntary_edit.id => 0 %>
 <ul class='nodecor' id="external<%= voluntary_edit.id %>" style='<%= voluntary_edit.hide_style %>' >
 <li>
   <label><%= _("subject") %></label>
@@ -22,5 +16,5 @@
   <%= external_person_input(voluntary_edit) %>
 </li>
 </ul>
-<%# end %>
+<% end %>
 </li>
