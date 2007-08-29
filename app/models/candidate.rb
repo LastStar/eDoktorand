@@ -214,8 +214,9 @@ class Candidate < ActiveRecord::Base
     student.email = self.email
     student.phone = self.phone if self.phone
     student.save
-    user = User.create(:login => username, :password => username,
-                       :password_confirmation => username, :person_id => new_id)
+    password = username.size > 5 ? username : username + 'ik'
+    user = User.create(:login => username, :password => password,
+                       :password_confirmation => password, :person_id => new_id)
     user.roles << Role.find_by_name('student')
     return student
   end

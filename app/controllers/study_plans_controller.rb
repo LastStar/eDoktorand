@@ -112,7 +112,7 @@ class StudyPlansController < ApplicationController
     else
       @errors = []
       external = extract_voluntary
-      if session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size == session[:voluntary_subjects].size &&
+      if session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size == session[:voluntary_subjects].size - external &&
         @errors.empty?
         session[:voluntary_subjects].each {|ps| last_semester(ps.finishing_on)}
       else
@@ -325,11 +325,11 @@ private
         subject = ExternalSubject.new
         subject.label = ps['label']
         subject.label_en = ps['label_en']
-        unless subject.valid?
+        unless subject.save
           @errors << _("title for external subject cannot be empty")
         end
         esd = subject.build_external_subject_detail(params[:external_subject_detail][id])
-        unless esd.valid?
+        unless esd.save
           @errors << _("university for external subject cannot be empty")
         else
           subject.external_subject_detail = esd
@@ -372,7 +372,9 @@ private
   end
 
   def concat_plan_subjects
-    plan_subjects = session[:voluntary_subjects].concat(session[:language_subjects])
+    plan_subjects = []
+    plan_subjects.concat(session[:voluntary_subjects])
+    plan_subjects.concat(session[:language_subjects])
     if session[:requisite_subjects]
       plan_subjects.concat(session[:requisite_subjects]) 
     end

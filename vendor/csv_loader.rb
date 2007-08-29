@@ -830,19 +830,7 @@ class CSVLoader
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       @@mylog.info row
       c = Candidate.find(row[0])
-      s = c.new_student(row[1], enrolled_on)
-      u = User.new(:login => row[2])
-      row[2] = row[2] + 'ik' if row[2].size < 5
-      u.password = u.password_confirmation = row[2]
-      u.person = s
-      u.roles << Role.find(3)
-      unless s.save 
-        @@mylog.debug s.errors
-      end
-      unless u.save
-        @@mylog.debug u.errors
-      end
-
+      s = c.enroll!(row[1], row[2])
     end
   end
 
