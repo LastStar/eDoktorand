@@ -831,6 +831,7 @@ class CSVLoader
       @@mylog.info row
       c = Candidate.find(row[0])
       s = c.enroll!(row[1], row[2])
+      s.update_attribute(:uic, row[3]) if row[3]
     end
   end
 
