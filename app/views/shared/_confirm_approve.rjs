@@ -1,3 +1,4 @@
+document ||= @document
 page.hide "approve_form_#{document.id}"
 replace ||= 'approvement'
 approvement ||= document.approvement
