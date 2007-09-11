@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 134) do
+ActiveRecord::Schema.define(:version => 135) do
 
   create_table "actualities", :force => true do |t|
     t.column "label",   :string
@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(:version => 134) do
     t.column "street",          :string,  :limit => 100
     t.column "desc_number",     :string,  :limit => 20
     t.column "orient_number",   :string,  :limit => 20
-    t.column "city",            :string,  :limit => 20
+    t.column "city",            :string,  :limit => 100
     t.column "zip",             :string,  :limit => 20
-    t.column "state",           :string,  :limit => 20
+    t.column "state",           :string,  :limit => 100
     t.column "address_type_id", :integer
     t.column "student_id",      :integer
   end
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(:version => 134) do
     t.column "updated_on",          :datetime
   end
 
-  add_index "approvements", ["document_id"], :name => "document_id_idx"
   add_index "approvements", ["document_id"], :name => "index_approvements_on_document_id"
 
   create_table "atestation_details", :force => true do |t|
@@ -367,7 +366,6 @@ ActiveRecord::Schema.define(:version => 134) do
   end
 
   add_index "plan_subjects", ["study_plan_id"], :name => "index_plan_subjects_on_study_plan_id"
-  add_index "plan_subjects", ["subject_id"], :name => "subject_id_idx"
   add_index "plan_subjects", ["subject_id"], :name => "index_plan_subjects_on_subject_id"
 
   create_table "probation_terms", :force => true do |t|
