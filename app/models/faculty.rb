@@ -42,14 +42,13 @@ class Faculty < ActiveRecord::Base
 
   # retuns dean of the faculty
   def dean_label
-    return _('director') if id==2
-    _('dean')
+    _(dean_label_en)
   end
 
   # retuns dean of the faculty
   # TODO redone with faculty configuration
   def dean_label_en
-    return 'director' if id == 2
+    return FACULTY_CFG[self.id]['atestation_title'] if FACULTY_CFG[self.id]['atestation_title']
     'dean'
   end
 
