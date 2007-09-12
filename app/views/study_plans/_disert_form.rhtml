@@ -7,7 +7,8 @@
 </div>
 <% form_remote_tag(:url => {:action => 'save_disert'}, 
   :complete => evaluate_remote_response) do -%>	
-<% @disert_theme = session[:disert_theme]%>
+<% @study_plan ||= session[:study_plan] %>
+<% @disert_theme ||= session[:disert_theme]%>
 <fieldset>
 <ul class='nodecor'>
 <li>
@@ -21,12 +22,18 @@
 <li>
   <label><%= "#{i}. " + _("final area") %></label>
   <input type='text' id="study_plan_final_areas_<%= i %>"
-    name="study_plan[final_areas][cz][<%= i %>]" size="30"/>
+  name="study_plan[final_areas][cz][<%= i %>]" size="30"
+  <% if @study_plan.final_areas && !@study_plan.final_areas.empty? %>
+    value="<%= @study_plan.final_areas['cz'][i.to_s] %>"
+  <% end %>/>
 </li>
 <li>
   <label><%= "#{i}. " + _("final area") %> (en) </label>
   <input type='text' id="study_plan_final_areas_en_<%= i %>"
-    name="study_plan[final_areas][en][<%= i %>]" size="30"/>
+  name="study_plan[final_areas][en][<%= i %>]" size="30"
+  <% if @study_plan.final_areas && !@study_plan.final_areas.empty? %>
+    value="<%= @study_plan.final_areas['en'][i.to_s] %>"
+  <% end %>/>
 </li>
    <% end %>
 <% end %>

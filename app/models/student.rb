@@ -14,7 +14,7 @@ class Student < Person
   N_('Enrolled on')
   N_('with note')
   N_('date finished')
-  N_('pass_final_exam')
+  N_('pass final exam')
   N_('Pass final exam')
   N_('pass_defense')
   N_('Pass defense')

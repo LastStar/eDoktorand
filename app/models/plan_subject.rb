@@ -141,4 +141,9 @@ class PlanSubject < ActiveRecord::Base
       end)
     end
   end
+
+  def is_external_and_invalid?
+    subject && subject.is_a?(ExternalSubject) &&
+      (!subject.valid? || !subject.external_subject_detail.valid?)
+  end
 end

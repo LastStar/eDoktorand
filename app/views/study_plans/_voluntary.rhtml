@@ -1,3 +1,19 @@
+<% if voluntary.is_external_and_invalid? %>
+<div id='error'>
+<ul class='nodecor'>
+  <% unless voluntary.subject.valid? %>
+    <% voluntary.subject.errors.each do |attr, err| -%>
+    <li><%=  _(err) %></li>
+    <% end %>
+  <% end %>
+  <% unless voluntary.subject.external_subject_detail.valid? %>
+    <% voluntary.subject.external_subject_detail.errors.each do |attr, err| -%>
+    <li><%= _(err) %></li>
+    <% end %>
+  <% end %>
+</ul>
+</div>
+<% end %>
 <li class='subject_select'>  
 <%= voluntary_select(subjects, voluntary) %>
 <%=  _("semester") %>

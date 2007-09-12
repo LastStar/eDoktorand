@@ -7,6 +7,7 @@ class Faculty < ActiveRecord::Base
   has_one :secretary_employment, :class_name => 'FacultyEmployment',
       :foreign_key => 'unit_id', :order => :id
   has_one :deanship
+  has_many :candidates, :through => :coridors
 
   # returns array for html select
   def self.for_select(options = {})

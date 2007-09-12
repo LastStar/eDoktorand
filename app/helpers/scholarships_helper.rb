@@ -28,12 +28,6 @@ module ScholarshipsHelper
                    :url => {:action => 'add', :id => index.id})
   end
 
-  def recalculate_link(index)
-    link_to_remote(image_tag('arrow_refresh_small.png'),
-                   :update => "regular_scholarship_#{index.id}",
-                   :url => {:action => 'recalculate', :id => index})
-  end
-
   def remove_link(scholarship)
     link_to_remote(image_tag('minus.png'), 
                    :complete => evaluate_remote_response,
@@ -79,5 +73,10 @@ module ScholarshipsHelper
 
   def show_scholarship_form(index)
     "Element.show('scholarship_form_#{index.id}')"
+  end
+
+  def recalculate_link
+    link_to(_('recalculate'), {:action => :recalculate}, 
+            :confirm => _('Are you sure to recalculate amounts?'))
   end
 end

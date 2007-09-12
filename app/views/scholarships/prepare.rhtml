@@ -2,6 +2,7 @@
 <h5><%= _("Scholarship for students") %></h5>
 <div class='links'>
 <% if @user.has_role?('faculty_secretary') %>
+  <%= recalculate_link %>
   <%= approve_link %>
   <%= control_table_link %>
 <% end %>

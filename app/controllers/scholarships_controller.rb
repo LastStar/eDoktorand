@@ -71,9 +71,12 @@ class ScholarshipsController < ApplicationController
   end
 
   def recalculate
-    index = Index.find(params['id'])
-    index.regular_scholarship.update_attribute('amount', ScholarshipCalculator.for(index))
-    render(:partial => 'regular', :locals => {:index => index})
+    @indices = Index.find_for_scholarship(@user, 
+                                         :order => 'studies.id, people.lastname',
+                                         :include => [:student, :study, 
+                                                      :disert_theme])
+    RegularScholarship.recalculate_amount(@indices)
+    render(:action => :prepare)
   end
   
   def student_list

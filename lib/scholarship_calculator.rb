@@ -36,17 +36,19 @@ class ScholarshipCalculator
   # calculates stipendia by exams
   def self.by_exams(index)
     amount = 0
-    if index.study_plan
+    if index.final_exam_passed?
+      amount = AMOUNTS[index.faculty.id]['final_exam']
+    elsif index.index.study_plan
       conditions = ["study_plan_id = ? AND finished_on IS NOT NULL", index.study_plan.id]
       ps = PlanSubject.find(:all, :conditions => conditions)
       # Ugly hack. God bless us. FLE - credit
-      if index.student.faculty.id == 3 && ps.find {|s| s.subject_id == 9003}
+      if index.faculty.id == 3 && ps.find {|s| s.subject_id == 9003}
         ps.delete_if {|s| s.subject_id == 9003}
         amount = 100
       end
-      amount += AMOUNTS[index.student.faculty.id][ps.size]
+      amount += AMOUNTS[index.faculty.id][ps.size]
     else
-      amount = AMOUNTS[index.student.faculty.id][0]
+      amount = AMOUNTS[index.faculty.id][0]
     end
   end
 

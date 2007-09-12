@@ -29,7 +29,7 @@ class RegularScholarship < Scholarship
   end
 
   def self.create_for(index)
-    create(:amount => ScholarshipCalculator.for(index), :index_id => index.id)
+    index.regular_scholarship = create(:amount => ScholarshipCalculator.for(index))
   end
 
   def self.sum_for(user)
@@ -40,5 +40,18 @@ class RegularScholarship < Scholarship
   def pay!(time = Time.now)
     clone.save
     super time
+  end
+
+  def self.recalculate_amount(indices)
+    indices.each do |i|
+      if i.has_regular_scholarship?
+        rs = i.regular_scholarship_or_create
+        unless (new_amount = ScholarshipCalculator.for(i)) == rs.amount
+          logger.debug "DEBUG: New amount for student #{i.student.display_name}
+                        from #{rs.amount} to #{new_amount}"
+          i.regular_scholarship.update_attribute(:amount, new_amount)
+        end
+      end
+    end
   end
 end

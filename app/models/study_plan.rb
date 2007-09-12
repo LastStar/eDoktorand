@@ -118,7 +118,7 @@ class StudyPlan < ActiveRecord::Base
     if index.disert_theme.defense_passed?
       ''
     elsif index.final_exam_passed?
-      _('FE_passed')
+      _('FE passed')
     elsif all_subjects_finished?
       _('all_finished')
     elsif canceled?

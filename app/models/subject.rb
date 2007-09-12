@@ -1,5 +1,4 @@
 class Subject < ActiveRecord::Base
-  untranslate_all
   has_many :coridor_subjects
   has_many :plan_subjects
   has_many :exams
@@ -8,7 +7,7 @@ class Subject < ActiveRecord::Base
            :conditions => ["date > ?", Date.today]
   has_and_belongs_to_many :departments
 
-  validates_presence_of :label
+  validates_presence_of :label, :message => N_("label can't be empty")
 
   # returns all subjects for user
   def self.find_for(user, option = nil)

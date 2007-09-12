@@ -4,14 +4,14 @@ class StudyPlansController < ApplicationController
   helper :students
   layout 'employers', :except => [:add_en, :save_en]
   before_filter :login_required, :prepare_user, :prepare_student
-  
+
   # page with basic informations for student 
   def index
     @title = _("Study plan")
     @index = @student.index
     @voluntary_subjects = @index.coridor.voluntary_subjects 
   end
-  
+
   # start of the study plan creating process
   def create
     prepare_plan_session
@@ -39,7 +39,7 @@ class StudyPlansController < ApplicationController
     end
     @disert_theme = @student.index.build_disert_theme
   end
-  
+
   # renders change page for study plan
   def change
     @title = _('Change of study plan')
@@ -61,7 +61,7 @@ class StudyPlansController < ApplicationController
     end
     render(:action => 'create_by_other')
   end
-  
+
   # saves obligate subjects to session
   # and creates voluntary subjects
   def save_obligate
@@ -89,12 +89,12 @@ class StudyPlansController < ApplicationController
     create_voluntary
     @type = 'obligate'
   end
-  
+
   # saves seminar subjects to session 
   # and creates voluntary subjects
   def save_seminar
-    extract_seminar
-    if session[:seminar_subjects].map {|ps| ps.subject_id}.uniq.size < session[:seminar_subjects].size
+    
+    if extract_seminar
       flash[:error] = _('subjects have to be different')
       render(:partial => 'not_valid_seminar')
     else
@@ -104,57 +104,40 @@ class StudyPlansController < ApplicationController
       render(:action => :save_obligate)
     end
   end
-  
+
   # saves voluntary subjects to session and prepares disert theme
   def save_voluntary
-    if params[:return] == '1'
-      render(:partial => 'not_valid_seminar')
-    else
-      @errors = []
-      external = extract_voluntary
-      if session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size == session[:voluntary_subjects].size - external &&
-        @errors.empty?
-        session[:voluntary_subjects].each {|ps| last_semester(ps.finishing_on)}
-      else
-        extract_voluntary
-        @errors << _("subjects have to be different") if session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size < session[:voluntary_subjects].size
-        flash[:errors] = @errors.uniq
-        @return_to = 'seminar'
-        render(:partial => 'not_valid_voluntarys')
-      end
+    @errors = []
+    if !extract_voluntary || !@errors.empty?
+      flash[:errors] = @errors.uniq
+      @return_to = 'seminar'
+      render(:partial => 'not_valid_voluntarys')
+    elsif params[:return] == '1'
+      render(:partial => 'not_valid_seminar') 
     end
   end
-  
+
   # saves language subjects to session and creates voluntary subjects
   def save_language
-    if params[:return] == '1'
-      render(:partial => 'not_valid_voluntarys')
+    if extract_language
+      render(:partial => 'not_valid_voluntarys') if params[:return] == '1'
     else
-      extract_language
-      if session[:language_subjects].map {|ps| ps.subject_id}.uniq.size == 2
-        session[:disert_theme] = @student.index.build_disert_theme
-      else
-        flash.now[:error] = _("languages have to be different")
-        render(:partial => 'not_valid_languages')  
-      end
+      render(:partial => 'not_valid_languages')  
     end
   end
-  
+
   # saves disert theme to session
   def save_disert
-    if params[:return] == '1'
+    session[:study_plan].attributes = params[:study_plan]
+    session[:study_plan].index = @student.index
+    session[:disert_theme].attributes = params[:disert_theme]
+    if !session[:disert_theme].valid?
+      render(:partial => 'not_valid_disert') 
+    elsif params[:return] == '1'
       render(:partial => 'not_valid_languages')
-    else
-      session[:study_plan].attributes = params[:study_plan]
-      session[:study_plan].index = @student.index
-      session[:disert_theme] = DisertTheme.new(params[:disert_theme])
-      unless session[:disert_theme].valid?
-        render(:partial => 'not_valid_disert', 
-               :locals => {:disert_theme => session[:disert_theme]})
-      end
     end
   end
-  
+
   # saves full form
   def save_full
     @errors = []
@@ -170,7 +153,7 @@ class StudyPlansController < ApplicationController
     @study_plan.plan_subjects = reindex_plan_subjects(session[:voluntary_subjects])
     if session[:finished_subjects]
       session[:finished_subjects].each do |sub|
-       @study_plan.plan_subjects << sub.clone 
+        @study_plan.plan_subjects << sub.clone 
       end 
     end
     @disert_theme = DisertTheme.new(params[:disert_theme])
@@ -195,7 +178,7 @@ class StudyPlansController < ApplicationController
       render(:action => 'create_by_other')
     end
   end
-  
+
   # confirms study plan 
   def confirm
     @study_plan = session[:study_plan]
@@ -210,7 +193,7 @@ class StudyPlansController < ApplicationController
     reset_plan_session
     redirect_to :action => 'index'
   end
-  
+
   # confirms and saves statement
   def confirm_approve
     study_plan = StudyPlan.find(params[:id])
@@ -218,42 +201,42 @@ class StudyPlansController < ApplicationController
     render(:partial => 'shared/confirm_approve',
            :locals => {:document => study_plan})
   end
-  
+
   # atests study plan 
   def atest
     @study_plan = StudyPlan.find(params[:id])
   end
-  
+
   # confirms and saves statement
   def confirm_atest
     study_plan = StudyPlan.find(params[:id])
     study_plan.atest_with(params[:statement])
     render(:partial => 'shared/confirm_approve', 
            :locals => {:replace => 'atestation', :document => study_plan,
-                       :approvement => study_plan.atestation})
+             :approvement => study_plan.atestation})
   end
-  
+
   # for remote adding subjects to page
   def subjects
     render(:partial => 'plan_subjects', :locals => {:subjects =>
-    PlanSubject.find(:all, :conditions => ['study_plan_id = ?', params[:id]],
-    :include => [:subject]), :study_plan => StudyPlan.find(params[:id])})
+           PlanSubject.find(:all, :conditions => ['study_plan_id = ?', params[:id]],
+                            :include => [:subject]), :study_plan => StudyPlan.find(params[:id])})
   end
-  
+
   # prepares form for atestation details
   def atestation_details
     @atestation_detail = @student.index.study_plan.next_atestation_detail ||
-    AtestationDetail.new('study_plan_id' => @student.index.study_plan.id,
-    'atestation_term' => Atestation.next_for_faculty(@student.faculty)) 
+      AtestationDetail.new('study_plan_id' => @student.index.study_plan.id,
+                           'atestation_term' => Atestation.next_for_faculty(@student.faculty)) 
     render(:partial => 'show_detail_form', :locals => {:study_plan =>
-    @student.index.study_plan})
+           @student.index.study_plan})
   end
-  
+
   # saves atestation detail 
   def save_atestation_detail
     atestation_detail = AtestationDetail.create(params[:atestation_detail])  
     render(:partial => 'after_save_detail', :locals => {:study_plan => 
-    @student.index.study_plan})
+           @student.index.study_plan})
   end
 
   def final_application
@@ -266,13 +249,13 @@ class StudyPlansController < ApplicationController
     @study_plan.index.claim_final_application!
     redirect_to :action => :index
   end
-  
+
   #adding only final_areas en (fixing bug)
   def add_en
     @id = Index.find(params[:id])
     @final_area_id = params[:final_area_id]
   end
-  
+
   #saving only final_areas en (fixing bug)
   def save_en
     @id = Index.find(params[:id])
@@ -281,8 +264,8 @@ class StudyPlansController < ApplicationController
     @study_plan.final_areas['en'][params[:final_area_id]] = params[:en_title]
     @study_plan.save
   end
-  
-private
+
+  private
   def reset_plan_session
     session[:study_plan] = nil
     session[:disert_theme] = nil
@@ -292,8 +275,8 @@ private
   # prepare variables used in creation form
   def prepare_plan_session
     session[:study_plan] = @study_plan = @student.index.build_study_plan
-    session[:disert_theme] = nil
-    session[:last_semester] = nil
+    session[:disert_theme] = @student.index.build_disert_theme
+    session[:last_semester] = 0
     if RequisiteSubject.has_for_coridor?(@student.coridor)
       session[:requisite_subjects] = PlanSubject.create_for(@student, :requisite)
     end
@@ -309,7 +292,6 @@ private
 
   # controls last semester
   def last_semester(semester)
-    session[:last_semester] ||= 0
     if session[:last_semester] < semester.to_i
       session[:last_semester] = semester.to_i   
     end
@@ -325,14 +307,10 @@ private
         subject = ExternalSubject.new
         subject.label = ps['label']
         subject.label_en = ps['label_en']
-        unless subject.save
-          @errors << _("title for external subject cannot be empty")
-        end
         esd = subject.build_external_subject_detail(params[:external_subject_detail][id])
-        unless esd.save
-          @errors << _("university for external subject cannot be empty")
-        else
-          subject.external_subject_detail = esd
+        subject.external_subject_detail = esd
+        if !subject.valid? || !subject.external_subject_detail.valid?
+          @errors << _('some external subject is invalid')
         end
       else
         subject = Subject.find(ps['subject_id'])
@@ -343,11 +321,12 @@ private
       plan_subject.id = id
       session[:voluntary_subjects] << plan_subject
     end
-    # BLOODY HACK
-    unless external == 0
-      return external - 1
+    uniq = session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size 
+    external = external == 0 ? 0 : external - 1
+    if uniq != session[:voluntary_subjects].size - external 
+      @errors << _("subjects have to be different")
     else
-      return 0
+      session[:voluntary_subjects].each {|ps| last_semester(ps.finishing_on)}
     end
   end
 
@@ -359,6 +338,12 @@ private
       last_semester(ps['finishing_on'])
       session[:language_subjects] << plan_subject
     end
+    if session[:language_subjects].map {|ps| ps.subject_id}.uniq.size != 2
+      flash.now[:error] = _("languages have to be different")
+      false
+    else
+      true
+    end
   end
 
   def extract_seminar
@@ -368,6 +353,9 @@ private
       plan_subject.id = id
       last_semester(ps['finishing_on'])
       session[:seminar_subjects] << plan_subject
+    end
+    if session[:seminar_subjects].map {|ps| ps.subject_id}.uniq.size != 2
+      flash.now[:error] = _('seminar subjects have to be different')
     end
   end
 
