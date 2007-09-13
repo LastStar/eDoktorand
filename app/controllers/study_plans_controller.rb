@@ -275,6 +275,7 @@ class StudyPlansController < ApplicationController
 
   # controls last semester
   def last_semester(semester)
+    session[:last_semester] ||= 0
     if session[:last_semester] < semester.to_i
       session[:last_semester] = semester.to_i   
     end
