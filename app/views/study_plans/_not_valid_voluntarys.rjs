@@ -11,5 +11,11 @@ if session[:obligate_subjects]
                                          session[:obligate_subjects],
                                        :title => _("obligate subjects")}
 end
+if session[:requisite_subjects]
+  page.insert_html :top, 'studyPlan', :partial => 'shared/subjects', 
+                                 :locals => {:subjects =>
+                                   session[:requisite_subjects],
+                                 :title => _("requisite subjects")}
+end
 page.replace_html "form", :partial => "voluntary_form"
 

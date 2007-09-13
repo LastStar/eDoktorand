@@ -1272,7 +1272,6 @@ msgid "pass_final_exam_to"
 msgstr "vykonal k"
 
 #: app/models/study_plan.rb:121
-#, fuzzy
 msgid "FE passed"
 msgstr "složil SDZ"
 

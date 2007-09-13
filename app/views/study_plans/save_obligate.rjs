@@ -1,4 +1,10 @@
 page.replace_html 'studyPlan', :partial => 'shared/subjects', 
                                      :locals => {:subjects => @created_subjects,
                                      :title => _("#{session[:return_to]} subjects")}
+if session[:requisite_subjects]
+  page.insert_html :top, 'studyPlan', :partial => 'shared/subjects', 
+                                 :locals => {:subjects =>
+                                   session[:requisite_subjects],
+                                 :title => _("requisite subjects")}
+end
 page.replace_html 'form', render(:partial => "voluntary_form") 
