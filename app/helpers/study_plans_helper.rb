@@ -100,7 +100,7 @@ module StudyPlansHelper
   # return style for hiding external div
   def hide_style(plan_subject)
     if plan_subject.id == 0 || plan_subject.subject_id == -1 || \
-      (plan_subject.subject_id.id > 0 && \
+      (plan_subject.subject_id > 0 && \
        !plan_subject.subject.is_a?(ExternalSubject))
       'display: none'  
     end

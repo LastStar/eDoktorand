@@ -49,7 +49,12 @@ class StudyPlansController < ApplicationController
     coridor = @student.index.coridor
     @subjects = CoridorSubject.for_select(:coridor => coridor)
     if @study_plan = @student.index.study_plan
+    if session[:change_back] && session[:change_back] == 1
+      @plan_subjects = session[:voluntary_subjects]
+      session[:change_back] = 0
+    else
       @plan_subjects = @study_plan.unfinished_subjects
+    end
       (FACULTY_CFG[@student.faculty.id]['subjects_count'] - @plan_subjects.size + 4).times do |i|
         (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
         @plan_subjects << plan_subject
@@ -125,40 +130,47 @@ class StudyPlansController < ApplicationController
   def save_full
     @errors = []
     extract_voluntary
-    @student = Student.find(params[:student][:id])
-    if @student.study_plan && @student.study_plan.atestation
-      @atestation = @student.study_plan.atestation 
-    end
-    unless session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size <= session[:voluntary_subjects].size
-      @errors << _("subjects have to be different")     
-    end
-    @study_plan = StudyPlan.new(params[:study_plan])
-    @study_plan.plan_subjects = reindex_plan_subjects(session[:voluntary_subjects])
-    if session[:finished_subjects]
-      session[:finished_subjects].each do |sub|
-        @study_plan.plan_subjects << sub.clone 
-      end 
-    end
-    @disert_theme = DisertTheme.new(params[:disert_theme])
-    @disert_theme.index = @student.index
-    @study_plan.admited_on = Time.now
-    @study_plan.index = @student.index
-    if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
-      @study_plan.save
-      @atestation.update_attribute(:document_id, @study_plan.id) if @atestation
-      @disert_theme.save
-      if @user.person.is_a?(Student)
-        if session[:interupt]
-          redirect_to(:controller => 'interupts', :action => 'finish')
+    unless @errors.empty?
+      flash[:errors] = @errors.uniq
+      session[:change_back] = 1
+      redirect_to(:action => 'change', :id => params[:student][:id])
+    else
+      @student = Student.find(params[:student][:id])
+      if @student.study_plan && @student.study_plan.atestation
+        @atestation = @student.study_plan.atestation 
+      end
+      unless session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size <= session[:voluntary_subjects].size
+        @errors << _("subjects have to be different")     
+      end
+      @study_plan = StudyPlan.new(params[:study_plan])
+      @study_plan.plan_subjects = reindex_plan_subjects(session[:voluntary_subjects])
+      if session[:finished_subjects]
+        session[:finished_subjects].each do |sub|
+          @study_plan.plan_subjects << sub.clone 
+        end 
+      end
+      @disert_theme = DisertTheme.new(params[:disert_theme])
+      @disert_theme.index = @student.index
+      @study_plan.admited_on = Time.now
+      @study_plan.index = @student.index
+      if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
+        @study_plan.save
+
+        @atestation.update_attribute(:document_id, @study_plan.id) if @atestation
+        @disert_theme.save
+        if @user.person.is_a?(Student)
+          if session[:interupt]
+            redirect_to(:controller => 'interupts', :action => 'finish')
+          else
+            redirect_to(:controller => 'study_plans')
+          end
         else
-          redirect_to(:controller => 'study_plans')
+          redirect_to(:controller => 'students')
         end
       else
-        redirect_to(:controller => 'students')
+        @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
+        render(:action => 'create_by_other')
       end
-    else
-      @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
-      render(:action => 'create_by_other')
     end
   end
 
@@ -319,7 +331,7 @@ class StudyPlansController < ApplicationController
     end
     uniq = session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size 
     external = external == 0 ? 0 : external - 1
-    if uniq != session[:voluntary_subjects].size - external 
+    if uniq <= session[:voluntary_subjects].size - external 
       @errors << _("subjects have to be different")
     else
       session[:voluntary_subjects].each {|ps| last_semester(ps.finishing_on)}
@@ -355,7 +367,7 @@ class StudyPlansController < ApplicationController
     end
   end
 
-  def concat_plan_subjects
+  def concat_plan_subjects(reindex = true)
     plan_subjects = []
     plan_subjects.concat(session[:voluntary_subjects])
     plan_subjects.concat(session[:language_subjects])
@@ -368,7 +380,11 @@ class StudyPlansController < ApplicationController
     if session[:obligate_subjects]
       plan_subjects.concat(session[:obligate_subjects]) 
     end
-    reindex_plan_subjects(plan_subjects)
+    if reindex
+      reindex_plan_subjects(plan_subjects)
+    else
+      plan_subjects
+    end
   end
 
   def reindex_plan_subjects(plan_subjects)

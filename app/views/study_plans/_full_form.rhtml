@@ -1,12 +1,3 @@
-<% if flash[:errors] && !flash[:errors].empty? %>
-<div id='error'>
-<ul>
-<% flash[:errors].each do |err| %>
-<%= content_tag('li', err) %>
-<% end %>
-</ul>
-</div>
-<% end %>
 <%= form_tag(:controller => 'study_plans', :action => 'save_full') %>	
 <fieldset>
 <%= hidden_field('student', 'id') %>

@@ -1,4 +1,13 @@
-﻿<div id="done">
+﻿<% if flash[:errors] && !flash[:errors].empty? %>
+<div id='error'>
+<ul class='nodecor'>
+<% flash[:errors].each do |err| %>
+<li><%= err %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+<div id="done">
 <ul id='studyPlan'>
   <%= content_tag('h5', _("Study plan")) %>
   <% if @requisite_subjects && !@requisite_subjects.empty? %>

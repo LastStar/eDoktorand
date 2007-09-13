@@ -1,3 +1,19 @@
+<% if general.is_external_and_invalid? %>
+<div id='error'>
+<ul class='nodecor'>
+  <% unless general.subject.valid? %>
+    <% general.subject.errors.each do |attr, err| -%>
+    <li><%=  _(err) %></li>
+    <% end %>
+  <% end %>
+  <% unless general.subject.external_subject_detail.valid? %>
+    <% general.subject.external_subject_detail.errors.each do |attr, err| -%>
+    <li><%= _(err) %></li>
+    <% end %>
+  <% end %>
+</ul>
+</div>
+<% end %>
 <li class='subject_select'>
 <%= subject_select(subjects, general) %>
 <%= "." + _("semester") %>
