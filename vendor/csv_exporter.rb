@@ -15,15 +15,9 @@ class CSVExporter
                                             TermsCalculator.this_year_start])
     students.delete_if {|s| s.faculty.id != faculty} if faculty 
     CSV::Writer.generate(outfile, ';') do |csv|
-      csv << ['uic', 'sident', 'claimed_at', 'supervised_at', 
-              'bank_number', 'account_number']
+      csv << ['sident', 'claimed_at', 'supervised_at'] 
       students.each do |s|
         row = []
-        if s.uic
-          row << s.uic
-        else
-          row << ''
-        end
         row << s.sident
         row << s.scholarship_claimed_at.strftime('%d.%m.%Y')
         if s.scholarship_supervised_at && 
@@ -32,8 +26,6 @@ class CSVExporter
         else
           row << ''
         end
-        row << s.index.account_bank_number
-        row << s.index.full_account_number
         csv << row
       end
     end

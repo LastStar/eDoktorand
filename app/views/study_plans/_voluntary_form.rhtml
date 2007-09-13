@@ -19,6 +19,6 @@
   <input type='hidden' name='return' id='return-value' value='0'/>
 </ul>
 </fieldset>
-<%= submit_tag("<<< " + _("seminar subjects"), :id => 'return_button', :onclick => "$('return-value').value = 1; $('return_button').value = '" + _('working...') + "'") %>
+<%= submit_tag("<<< " + _("%s subjects") % session[:return_to], :id => 'return_button', :onclick => "$('return-value').value = 1; $('return_button').value = '" + _('working...') + "'") %>
 <%= submit_tag(_("language subjects") + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % _('working...')) %>
 <% end %>

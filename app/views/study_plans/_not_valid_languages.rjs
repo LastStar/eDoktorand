@@ -1,8 +1,16 @@
 page.replace_html "done", :partial => "create_head"
-page.replace_html "studyPlan", :partial => 'shared/subjects', 
-                                     :locals => {:subjects =>
-                                       session[:seminar_subjects],
-                                     :title => _("seminar subjects")}
+if session[:seminar_subjects]
+  page.replace_html "studyPlan", :partial => 'shared/subjects', 
+                                       :locals => {:subjects =>
+                                         session[:seminar_subjects],
+                                       :title => _("seminar subjects")}
+end
+if session[:obligate_subjects]
+  page.replace_html "studyPlan", :partial => 'shared/subjects', 
+                                       :locals => {:subjects =>
+                                         session[:obligate_subjects],
+                                       :title => _("obligate subjects")}
+end
 page.insert_html :bottom, "studyPlan", :partial => 'shared/subjects', 
                                      :locals => {:subjects =>
                                        session[:voluntary_subjects],

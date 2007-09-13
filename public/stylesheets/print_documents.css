@@ -1,15 +1,18 @@
-body {font-size: 18px; margin: 0pt;padding: 0pt;}
+body {font-size: 24px; margin-top: 0pt;padding: 0pt;}
 #header h2, h1, h3 {text-align: center;letter-spacing: 0.1em; font-variant: small-caps;}
 #logo {text-align: center; padding-bottom: 1em;}
+#supplement .sub_list {padding-bottom: 1em}
 #supplement li {border: none}
 #supplement table {margin-top: 2ex; margin-left: auto; margin-right: auto; border-collapse: collapse; width: 35em}
 #supplement th, td {padding: .5em; border: 1px solid black}
 th.short {width: 5em}
 #supplement li {list-style: none}
 #supplement p {font-size: smaller; margin: .3em 0 0 0;}
-.informations  li {font-size: smaller}
+.informations  li {font-size: 22px}
 #supplement #logo {text-align: center; padding-bottom: 1em}
 #supplement #logo img {display: inline}
 #supplement h1 {font-size: 32px; display: block;}
 #header h2 {margin: 0pt;}
 .break {page-break-before: always; margin-top: 5em;}
+#header h3 {margin-top: 4em}
+div.logo {width: 170px; height: 90px;margin-bottom: 2em;}

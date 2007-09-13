@@ -66,41 +66,25 @@ class StudyPlansController < ApplicationController
   # and creates voluntary subjects
   def save_obligate
     @created_subjects = []
-    session[:plan_subjects] = []
     if params[:study_plan]
       session[:study_plan].attributes = params[:study_plan]
     end
-    plan_subjects = params[:plan_subject]
-    if session[:obligate_subjects].empty?
-      plan_subjects.each do |id, ps|
-        plan_subject = PlanSubject.new(ps)
-        last_semester(ps['finishing_on'])
-        @created_subjects << plan_subject
-      end
-    else
-      plan_subjects.each do |ps|
-        plan_subject = PlanSubject.new(ps)
-        last_semester(ps['finishing_on'])
-        @created_subjects << plan_subject
-      end
-    end
-    session[:plan_subjects].concat(@created_subjects)
-    session[:obligate_subjects] = @created_subjects
-    create_voluntary
-    @type = 'obligate'
+    extract_obligate
+    @created_subjects = session[:obligate_subjects]
+    @type = 'voluntary'
+    session[:return_to] = 'obligate'
   end
 
   # saves seminar subjects to session 
   # and creates voluntary subjects
   def save_seminar
-    
     if extract_seminar
       flash[:error] = _('subjects have to be different')
       render(:partial => 'not_valid_seminar')
     else
       @created_subjects = session[:seminar_subjects]
       @type = 'voluntary'
-      @return_to = 'seminar'
+      session[:return_to] = 'seminar'
       render(:action => :save_obligate)
     end
   end
@@ -110,10 +94,9 @@ class StudyPlansController < ApplicationController
     @errors = []
     if !extract_voluntary || !@errors.empty?
       flash[:errors] = @errors.uniq
-      @return_to = 'seminar'
       render(:partial => 'not_valid_voluntarys')
     elsif params[:return] == '1'
-      render(:partial => 'not_valid_seminar') 
+      render(:partial => "not_valid_%s" % session[:return_to]) 
     end
   end
 
@@ -297,6 +280,16 @@ class StudyPlansController < ApplicationController
     end
   end
 
+  def extract_obligate
+    session[:obligate_subjects] = []
+    params[:plan_subject].each do |id, ps|
+      plan_subject = PlanSubject.new(ps)
+      plan_subject.id = id
+      last_semester(ps['finishing_on'])
+      session[:obligate_subjects] << plan_subject
+    end
+  end
+
   def extract_voluntary
     external = 0
     session[:voluntary_subjects] = []
@@ -304,13 +297,15 @@ class StudyPlansController < ApplicationController
       next if ps['subject_id'] == '-1'
       if ps['subject_id'] == '0' 
         external += 1
-        subject = ExternalSubject.new
-        subject.label = ps['label']
-        subject.label_en = ps['label_en']
+        subject = ExternalSubject.new(:label => ps['label'],
+                                      :label_en => ps['label_en'])
         esd = subject.build_external_subject_detail(params[:external_subject_detail][id])
         subject.external_subject_detail = esd
         if !subject.valid? || !subject.external_subject_detail.valid?
           @errors << _('some external subject is invalid')
+        else
+          subject.save
+          esd.save
         end
       else
         subject = Subject.find(ps['subject_id'])

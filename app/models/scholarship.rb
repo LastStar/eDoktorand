@@ -62,7 +62,7 @@ class Scholarship < ActiveRecord::Base
   end
   
   def self.prepare_time?
-    !(6..19).include? Date.today.day
+    !(7..15).include? Date.today.day
   end
 
   def short_code
