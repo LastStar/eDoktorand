@@ -331,7 +331,7 @@ class StudyPlansController < ApplicationController
     end
     uniq = session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size 
     external = external == 0 ? 0 : external - 1
-    if uniq <= session[:voluntary_subjects].size - external 
+    if uniq < session[:voluntary_subjects].size - external 
       @errors << _("subjects have to be different")
     else
       session[:voluntary_subjects].each {|ps| last_semester(ps.finishing_on)}
