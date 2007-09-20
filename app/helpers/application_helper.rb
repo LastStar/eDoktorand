@@ -159,6 +159,9 @@ module ApplicationHelper
   # prints atestaion subject line wihch depends on finishing of the subject
   def atestation_subject_line(plan_subject, atestation_term)
     content = ''
+    @ps = plan_subject
+    @at = atestation_term
+    breakpoint 
     if plan_subject.finished? && 
       (plan_subject.finished_on.to_date <= atestation_term.to_date)
       content << content_tag('div', 
