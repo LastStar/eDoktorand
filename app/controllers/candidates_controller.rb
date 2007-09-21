@@ -24,7 +24,7 @@ class CandidatesController < ApplicationController
       conditions = Candidate.prepare_conditions(params, @faculty)
       @pages, @candidates = paginate :candidates, :per_page => 7, :order_by =>
         params[:category], :conditions => conditions
-      session[:current_page_admit] = @pages.current.number
+      session[:current_page_backward] = @pages.current.number
   end
 
   # lists all candidates ordered by category
@@ -64,20 +64,20 @@ class CandidatesController < ApplicationController
   # destroys candidate
   def destroy
     Candidate.find(params[:id]).destroy
-    redirect_to :action => 'list'
+    redirect_to :action => 'list', :page => session[:current_page_backward]
   end
   
   # delete candidate
   def delete
     Candidate.find(params[:id]).unfinish!
-    redirect_to :action => 'list'
+    redirect_to :action => 'list', :page => session[:current_page_backward]
   end
 
   def admit_for_revocation
     candidate = Candidate.find(params[:id])
     candidate.delete_reject!
     candidate.admit!
-    redirect_to :action => 'list', :page => session[:current_page_admit]
+    redirect_to :action => 'list', :page => session[:current_page_backward]
   end
   # enroll candidate form
   def enroll
@@ -139,7 +139,7 @@ class CandidatesController < ApplicationController
     candidate = Candidate.find(params[:id])
     candidate.ready!
     flash['notice'] = _("Candidate ") + candidate.display_name + _(" is ready for application form")
-    redirect_to :action => 'list'
+    redirect_to :action => 'list', :page => session[:current_page_backward]
   end
 
   # set candidate ready for admition

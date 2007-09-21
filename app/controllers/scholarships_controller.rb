@@ -148,7 +148,7 @@ class ScholarshipsController < ApplicationController
   end
 
   def next_action_for(user)
-    if user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
+    if user.has_one_of_roles?(['faculty_secretary', 'department_secretary', 'leader'])
       if Scholarship.prepare_time? && !ScholarshipApprovement.approved_for?(user.person.faculty)
         :prepare
       else

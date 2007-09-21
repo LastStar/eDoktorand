@@ -57,7 +57,7 @@ e-mail: <%= @faculty.secretary.email.name %>
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
 	<% if @user %>
-	<%= link_to 'zpět', :action => 'list'%>
+	<%= link_to 'zpět', :page => session[:current_page_backward] ,:action => 'list'%>
 	<% unless @candidate.invited? %>
 	<span id='mailLink'><%= link_to_remote 'odešli mail s pozvánkou', :update => 'mailLink', :url => {:action => 'invite_now', :id => @candidate.id} %></span>
 	<% end %>

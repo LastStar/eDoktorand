@@ -480,7 +480,7 @@ msgstr "protokol"
 
 #: app/helpers/candidates_helper.rb:13
 msgid "gain"
-msgstr "přihlásit"
+msgstr "přijmout"
 
 #: app/helpers/candidates_helper.rb:20
 msgid "create commission"

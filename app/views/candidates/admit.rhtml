@@ -1,3 +1,4 @@
+<H3><%=@candidate.display_name%></H3>
 <% form_tag :action => 'confirm_admit', :id => @candidate do %>	
 	<label for="admit"><%= _("admit") %></label>
   <%= content_tag('select', options_for_select(admit_ids), 
@@ -17,7 +18,7 @@
   <%= submit_tag(_("submit")) %>
 <% end %>
 <div class='links'>
-  <%= link_to(_("back"), :action => 'list') %>
+  <%= link_to(_("back"), :page => session[:current_page_backward], :action => 'list') %>
 </div >
 
 <%= javascript_tag <<-CODE

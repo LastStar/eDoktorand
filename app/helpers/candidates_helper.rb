@@ -9,8 +9,13 @@ module CandidatesHelper
   def admit_link(candidate)
     links = ''
     if !candidate.admited? && !candidate.rejected? && candidate.invited? && candidate.ready?
-      links << link_to(_('protocol'), :action => 'admittance', :id => candidate) + "&nbsp;" +
-      link_to(_("gain"), :action => 'admit', :id => candidate)  
+      unless candidate.coridor.exam_term
+        links << link_to(_("create commission"), :controller => 'exam_terms', 
+        :action => 'new', :id => candidate.coridor.id )
+      else
+        links << link_to(_('protocol'), :action => 'admittance', :id => candidate) + "&nbsp;" +
+        link_to(_("gain"), :action => 'admit', :id => candidate)  
+      end
     end
   end
   # invite link
