@@ -64,11 +64,14 @@ module StudyPlansHelper
 
   # print external subject tag
   def external_subject_input(plan_subject)
+     value = if plan_subject.subject.is_a?(ExternalSubject) || plan_subject.subject_id == 0 
+               plan_subject.subject.label 
+             else 
+               ''
+             end
     tag('input', { 'type' => 'text', 'id' =>
       "external_subject_detail_#{plan_subject.id}_label", 
-      'name' => "plan_subject[#{plan_subject.id}][label]", "value" =>
-       plan_subject.subject.is_a?(ExternalSubject) ?
-       plan_subject.subject.label : plan_subject.subject_id == 0 ? plan_subject.subject.label : ''})
+      'name' => "plan_subject[#{plan_subject.id}][label]", "value" => value})
   end
 
   # prints external university tag

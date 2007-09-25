@@ -10,8 +10,8 @@
 <% end %>
 <p><%= _("Unfinished subjects are in red.") %></p>
 <% if study_plan.actual_atestation_detail  %>
-<p> <%= _("Additional information provided by student") %></p>
+<h6> <%= _("Additional information provided by student") %></h6>
 <p>
-<%= study_plan.actual_atestation_detail.detail %>
+  <%= study_plan.actual_atestation_detail.detail %>
 </p>
 <% end %>

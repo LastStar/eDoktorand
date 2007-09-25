@@ -220,18 +220,20 @@ class StudyPlansController < ApplicationController
 
   # prepares form for atestation details
   def atestation_details
-    @atestation_detail = @student.index.study_plan.next_atestation_detail ||
-      AtestationDetail.new('study_plan_id' => @student.index.study_plan.id,
-                           'atestation_term' => Atestation.next_for_faculty(@student.faculty)) 
-    render(:partial => 'show_detail_form', :locals => {:study_plan =>
-           @student.index.study_plan})
+    @study_plan = @student.study_plan
+    @atestation_detail = @study_plan.next_atestation_detail_or_new
   end
 
   # saves atestation detail 
   def save_atestation_detail
-    atestation_detail = AtestationDetail.create(params[:atestation_detail])  
-    render(:partial => 'after_save_detail', :locals => {:study_plan => 
-           @student.index.study_plan})
+    if params[:atestation_detail][:id] == ''
+      @atestation_detail = \
+        AtestationDetail.create(params[:atestation_detail])
+    else
+      @atestation_detail = \
+        AtestationDetail.find(params[:atestation_detail][:id])
+      @atestation_detail.update_attributes(params[:atestation_detail])
+    end
   end
 
   def final_application

@@ -159,9 +159,6 @@ module ApplicationHelper
   # prints atestaion subject line wihch depends on finishing of the subject
   def atestation_subject_line(plan_subject, atestation_term)
     content = ''
-    @ps = plan_subject
-    @at = atestation_term
-    breakpoint 
     if plan_subject.finished? && 
       (plan_subject.finished_on.to_date <= atestation_term.to_date)
       content << content_tag('div', 
@@ -390,9 +387,12 @@ module ApplicationHelper
   # prints atestation detail link
   def atestation_detail(study_plan)
     if @student
-      link_to_remote_with_loading(_("additional information for next atestation"),
-        {:controller => 'study_plans', :action => 'atestation_details', :id => 
-        study_plan, :evaluate => true}, {:id => "detail_link#{study_plan.id}"})
+      link_to_remote(_("additional information for next atestation"),
+                    {:url => {:controller => 'study_plans', 
+                      :action => 'atestation_details',
+                      :id => study_plan, :evaluate => true},
+                    :complete => evaluate_remote_response},
+                    {:id => "detail_link#{study_plan.id}"})
     else
       atestation_links(study_plan)
     end

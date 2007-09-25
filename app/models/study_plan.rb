@@ -49,15 +49,17 @@ class StudyPlan < ActiveRecord::Base
 
   # returns atestation detail for next atestation  
   def next_atestation_detail
-    return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
-      atestation_term = ?', id, Atestation.next_for_faculty(index.student.faculty)])
+    AtestationDetail.find_by_study_plan_id_and_atestation_term(id, 
+      Atestation.next_for_faculty(index.student.faculty))
   end
 
+  def next_atestation_detail_or_new
+    next_atestation_detail || AtestationDetail.new_for(index.student)
+  end
   # returns atestation detail for actual atestations
   def actual_atestation_detail
-    at = Atestation.actual_for_faculty(index.student.faculty)
-    return AtestationDetail.find(:first, :conditions => ['study_plan_id = ? and
-      atestation_term = ?', id, at])
+    AtestationDetail.find_by_study_plan_id_and_atestation_term(id, 
+      Atestation.actual_for_faculty(index.student.faculty))
   end
 
   # returns count of atestation for study plan

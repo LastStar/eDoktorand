@@ -1,0 +1,2 @@
+page.insert_html :bottom, 'atestation', :partial => 'atestation_detail'
+page.remove 'form'

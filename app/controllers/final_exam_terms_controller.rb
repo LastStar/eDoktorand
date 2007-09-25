@@ -3,6 +3,9 @@ class FinalExamTermsController < ApplicationController
 
   before_filter :login_required, :prepare_user
 
+  def claim
+  end
+
   def new
     @title = _('Creating final exam term')
     index = Index.find(params[:id]) 
