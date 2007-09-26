@@ -65,7 +65,7 @@ module StudyPlansHelper
   # print external subject tag
   def external_subject_input(plan_subject)
      value = if plan_subject.subject.is_a?(ExternalSubject) || plan_subject.subject_id == 0 
-               plan_subject.subject.label 
+               plan_subject.subject[:label]
              else 
                ''
              end
