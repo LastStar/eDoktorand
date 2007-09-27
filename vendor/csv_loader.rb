@@ -617,17 +617,18 @@ class CSVLoader
       if row[4] && !row[4].empty? && row[4].to_i !=0
         ds.title_after = Title.find(@@suffixes[row[4].to_i])
       end
-      ds.uic = row[6]
-      ds.id = row[0]
+      ds.uic = row[0]
+      ds.id = row[6]
       @@mylog.debug "Secretary: #{ds.id} " if ds.save
       de = DepartmentEmployment.new  
       de.person = ds
-      de.department = Department.find(row[7])
+      de.department = Department.find(row[5])
       @@mylog.debug "department #{de.department.name}"
       de.save(false)
       u = User.new
-      u.login = u.password = u.password_confirmation = row[9]
+      u.login = u.password = u.password_confirmation = row[7]
       u.person = ds
+      u.roles << Role.find(7)
       u.save
     end
   end
