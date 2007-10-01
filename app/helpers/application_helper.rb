@@ -352,8 +352,12 @@ module ApplicationHelper
   
   # prints atestation link
   def atestation_link(study_plan)
-    link_to_remote_with_loading(_("see atestation informations"), {:url => {:controller =>
-      'study_plans', :action => 'atest', :id => study_plan}, :evaluate => true},
+    link_to_remote(_("see atestation informations"), 
+                   {:url => {:controller => 'study_plans', :action => 'atest',
+                             :id => study_plan},
+                   :loading => 
+                    "$('atestation_link').innerHTML = '%s'" % _('working...'),
+                   :complete => evaluate_remote_response},
       {:id => "atestation_link"})
   end
   
@@ -378,10 +382,11 @@ module ApplicationHelper
   
   # prints methodology link
   def methodology_link(disert_theme)
-    content_tag('li', link_to_remote_with_loading(
-      _("methodology file (opens new window)"), {:url => {:controller => 
-      'disert_themes', :action => 'file_clicked', :id => disert_theme},
-      :evaluate => true}), {:id => "methodology_link#{disert_theme.id}"})
+    link_to_remote(_("methodology file (opens new window)"),
+                  {:url => {:controller => 'disert_themes', 
+                           :action => 'file_clicked', :id => disert_theme},
+                    :complete => evaluate_remote_response},
+                  {:id => "methodology_link#{disert_theme.id}"})
   end
   
   # prints atestation detail link

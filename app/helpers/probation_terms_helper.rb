@@ -55,10 +55,14 @@ module ProbationTermsHelper
   end
 
   def enroll_link(probation_term, student)
-    link_to_remote_with_loading(_("Enroll student"), :evaluate => true,
-                                :url => {:action => 'enroll_exam', 
-                                         :id => probation_term,
-                                         :student_id => student.id})
+    link_to_remote(_("Enroll student"), 
+                  {:url => {:action => 'enroll_exam', 
+                           :id => probation_term,
+                           :student_id => student.id},
+                  :complete => evaluate_remote_response,
+                  :loading => "$('enroll_link').innerHTML = '%s'" % \
+                                                      _('working...')},
+                  :id => 'enroll_link')
 
   end
 

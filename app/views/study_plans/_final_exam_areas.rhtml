@@ -1,0 +1,20 @@
+<% 4.times do |index| %>
+  <% i = index + 1 %>
+<li>
+  <label><%= "#{i}. " + _("final area") %></label>
+  <input type='text' id="study_plan_final_areas_<%= i %>"
+    name="study_plan[final_areas][cz][<%= i %>]" size="30"
+    <% if areas && !areas.empty? %>
+      value="<%= @study_plan.final_areas['cz'][i.to_s] %>"
+    <% end %>/>
+</li>
+<li>
+  <label><%= "#{i}. " + _("final area") %> (en) </label>
+  <input type='text' id="study_plan_final_areas_en_<%= i %>"
+  name="study_plan[final_areas][en][<%= i %>]" size="30"
+  <% if areas && !areas.empty? %>
+    value="<%= areas['en'][i.to_s] %>"
+  <% end %>/>
+</li>
+<% end %>
+

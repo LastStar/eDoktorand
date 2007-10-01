@@ -457,12 +457,12 @@ class CSVLoader
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       @@mylog.debug row
       unless Person.exists?(row[0])
-        p = Examinator.new(:firstname => row[2], :lastname => row[3],
-                           :uic => row[5])
-        p.title_before = Title.find(@@prefixes[row[1].to_i]) if row[1] && !row[1].empty?
+        p = Examinator.new(:firstname => row[1], :lastname => row[2],
+                           :uic => row[0])
+        p.title_before = Title.find(@@prefixes[row[3].to_i]) if row[1] && !row[1].empty?
         p.title_after = Title.find(@@suffixes[row[4].to_i]) if row[4] && !row[4].empty?
-        p.id = row[0]
-        p.department_employment = DepartmentEmployment.create('unit_id' => (department_id || row[6]))
+        p.id = row[6]
+        p.department_employment = DepartmentEmployment.create('unit_id' => (department_id || row[5]))
         @@mylog.info "Saving #{p.type} #{p.lastname}"
         p.save
       else
