@@ -324,7 +324,7 @@ class Index < ActiveRecord::Base
   end
 
   def self.find_for_scholarship(user, opts = {})
-    paying_date =  (Time.now - 2.week)
+    paying_date =  (Time.now - 3.week)
     opts.update({:unfinished => paying_date, :not_interupted => paying_date,
                  :enrolled => paying_date, :not_absolved => paying_date})
     find_for(user, opts)
