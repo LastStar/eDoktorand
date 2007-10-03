@@ -117,4 +117,11 @@ class Notifications < ActionMailer::Base
     @cc        = faculty.secretary.email.name
     @from       = faculty.secretary.email.name
   end
+
+  def created_account(student, sent_at = Time.now)
+    @subject = _("Created account")
+    @body[:student] = student
+    @from = "edoktorand@edoktorand.czu.cz"
+    @recipients = student.email.name
+  end
 end
