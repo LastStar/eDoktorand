@@ -29,7 +29,15 @@ class ExamTermsController < ApplicationController
     @exam_term = AdmissionTerm.new(params[:exam_term])
     if @exam_term.save
       flash['notice'] = 'Komise byla úspěšně vytvořena.'
-      redirect_to :action => 'list'
+      if params[:from] && params[:from] == 'candidate'
+        if params[:backward] != 'true'
+          redirect_to :action => 'list', :controller => 'candidates', :page => session[:current_page_backward]
+        else
+          redirect_to :action => 'list_all', :controller => 'candidates', :category => session[:current_page_backward_all]
+        end
+      else
+        redirect_to :action => 'list'
+      end
     else
       render(:action => 'new')
     end

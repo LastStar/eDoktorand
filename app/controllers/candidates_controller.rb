@@ -20,6 +20,7 @@ class CandidatesController < ApplicationController
 
   # lists all candidates
   def list
+      @backward = false
       @filtered_by = params[:filter]
       conditions = Candidate.prepare_conditions(params, @faculty)
       @pages, @candidates = paginate :candidates, :per_page => 7, :order_by =>
@@ -29,7 +30,9 @@ class CandidatesController < ApplicationController
 
   # lists all candidates ordered by category
   def list_all
+    @backward = true
     @candidates = Candidate.find_all_finished(params, @faculty)
+    session[:current_page_backward_all] = params[:category]
     render_action 'list'
   end
 

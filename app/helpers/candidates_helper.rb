@@ -11,7 +11,7 @@ module CandidatesHelper
     if !candidate.admited? && !candidate.rejected? && candidate.invited? && candidate.ready?
       unless candidate.coridor.exam_term
         links << link_to(_("create commission"), :controller => 'exam_terms', 
-        :action => 'new', :id => candidate.coridor.id )
+        :action => 'new', :id => candidate.coridor.id ,:from => 'candidate', :backward => @backward )
       else
         links << link_to(_('protocol'), :action => 'admittance', :id => candidate) + "&nbsp;" +
         link_to(_("gain"), :action => 'admit', :id => candidate)  
@@ -23,7 +23,7 @@ module CandidatesHelper
     if !candidate.invited? and candidate.ready? 
       unless candidate.coridor.exam_term  
         link_to(_("create commission"), :controller => 'exam_terms', 
-        :action => 'new', :id => candidate.coridor.id )
+        :action => 'new', :id => candidate.coridor.id,:from => 'candidate',:backward => @backward)
       else
         link_to(_("invite"), :action => 'invite', :id => candidate.id)
       end
