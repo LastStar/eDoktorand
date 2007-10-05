@@ -191,12 +191,13 @@ class CSVExporter
 
   def self.export_sident_with_account(indices = nil)
     file = "sident_account.csv"
+    sql = "account_number is not null and account_number <> '' \
+            and people.sident is not null"
     outfile = File.open(file, 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
       indices ||= Index.find(:all, 
-                      :conditions => "account_number is not 
-                                      null and account_number <> ''",
-                      :order => 'department_id')
+                            :conditions => sql, :order => 'department_id',
+                            :include => :student)
       @@mylog.info "There are #{indices.size} students"
       indices.each do |i|
         # TODO redo with index instance method
