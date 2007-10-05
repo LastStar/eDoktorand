@@ -147,17 +147,22 @@ class CSVExporter
     outfile.close
   end
 
-  def self.export_students_uic_sident
+  def self.export_students_uic_sident(indices = nil)
     file = "students_uic_sident.csv"
     outfile = File.open(file, 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
-      is = Index.find(:all, :conditions => 'finished_on is null')
-      @@mylog.info "There are #{is.size} students"
-      is.each do |index|
+      csv << ['id clovek', 'uic', 'sident', 'display name', 'department',
+              'faculty']
+      indices ||= Index.find(:all, :conditions => 'finished_on is null')
+      @@mylog.info "There are #{indices.size} students"
+      indices.each do |index|
         row = []
+        row << index.student.id
         row << index.student.uic
         row << index.student.sident
-        row << index.student.account
+        row << index.student.display_name
+        row << index.department.name
+        row << index.faculty.name
         @@mylog.debug "Adding #{row}"
         csv << row
       end
