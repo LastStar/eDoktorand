@@ -32,18 +32,22 @@ class Index < ActiveRecord::Base
   validates_presence_of :coridor
   validates_presence_of :study
   validates_presence_of :department
+  validates_numericality_of :account_number, :only_integer => true
+  validates_numericality_of :account_bank_number, :only_integer => true
 
   N_('with study change')
   N_('End')
   
   def validate
     if account_number
-      pre_sum = 0
-      account_number_prefix.split('').reverse.each_with_index do |c, j|
-        pre_sum += c.to_i * PREFIX_WEIGHTS[j]
-      end
-      unless (pre_sum % 11) == 0
-        errors.add(:account_number_prefix, _('accoun prefix in wrong format'))
+      if account_number_prefix
+        pre_sum = 0
+        account_number_prefix.split('').reverse.each_with_index do |c, j|
+          pre_sum += c.to_i * PREFIX_WEIGHTS[j]
+        end
+        unless (pre_sum % 11) == 0
+          errors.add(:account_number_prefix, _('accoun prefix in wrong format'))
+        end
       end
       if account_number.size > 10 && account_number =~ /[0-9]/
         errors.add(:account_number, _('accoun number in wrong format'))
