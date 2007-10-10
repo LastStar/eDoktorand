@@ -208,7 +208,7 @@ class Candidate < ActiveRecord::Base
     index.study = self.study
     index.student = student
     index.enrolled_on = enrolled_on
-    index.save
+    index.save_with_validation(false)
     create_address(student.id)
     create_postal_address(student.id) if self.postal_city
     student.email = self.email
