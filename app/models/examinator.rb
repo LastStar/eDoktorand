@@ -1,6 +1,5 @@
-class Examinator < Person
+class Examinator < DepartmentSecretary
   untranslate_all
-  has_one :department_employment, :foreign_key => 'person_id'
 
   def self.find_for_department(department)
     find(:all, :conditions => ["employments.unit_id = ?", department],
@@ -14,16 +13,6 @@ class Examinator < Person
       "select id from departments where faculty_id = #{faculty}")
     find(:all, :conditions => ["employments.unit_id IN (?)",
     dep_ids], :include => [:department_employment, :title_before, :title_after], :order => 'lastname')
-  end
-
-  # returns department
-  def department
-    department_employment.department
-  end
-
-  # returns faculty of examinator
-  def faculty
-    department.faculty
   end
 
 end
