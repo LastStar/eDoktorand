@@ -249,6 +249,18 @@ class Candidate < ActiveRecord::Base
       :conditions => conditions)
   end
 
+  def self.find_all_finished_by_session_category(options, faculty, category)
+    conditions = ["coridor_id in (?) AND finished_on IS NOT NULL", 
+                  faculty.coridors]
+    conditions.first << filter_conditions(options['filter'])
+    if options['coridor']
+      conditions.first << " AND coridor_id = ?"
+      conditions << options['coridor']
+    end
+    Candidate.find(:all, :order => category,
+      :conditions => conditions)
+  end
+
   # delete candidate, fill finished_on to nil
   def unfinish!
     self.update_attribute(:finished_on, nil)

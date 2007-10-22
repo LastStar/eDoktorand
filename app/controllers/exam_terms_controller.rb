@@ -30,10 +30,10 @@ class ExamTermsController < ApplicationController
     if @exam_term.save
       flash['notice'] = 'Komise byla úspěšně vytvořena.'
       if params[:from] && params[:from] == 'candidate'
-        if params[:backward] != 'true'
-          redirect_to :action => 'list', :controller => 'candidates', :page => session[:current_page_backward]
+        if session[:back_page] == 'list'
+          redirect_to :action => 'list', :page => session[:current_page_backward] , :controller => 'candidates'
         else
-          redirect_to :action => 'list_all', :controller => 'candidates', :category => session[:current_page_backward_all]
+          redirect_to :action => 'list_all', :controller => 'candidates'
         end
       else
         redirect_to :action => 'list'

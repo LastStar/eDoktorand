@@ -50,7 +50,12 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
 	<% if @user %>
-	<%= link_to 'zpět', :page => session[:current_page_backward], :action => 'list'%>
+	<%#= link_to 'zpět', :page => session[:current_page_backward], :action => 'list'%>
+    <% if session[:back_page] == 'list' %>
+      <%= link_to 'zpět na výpis', :action => 'list',:page => session[:current_page_backward] %>
+    <% else %>
+      <%= link_to 'zpět na výpis', :action => 'list_all'%>    
+    <% end %>
 	<% unless @candidate.admited? %>
 	<span id='mailLink'><%= link_to_remote 'odešli mail s dekretem o přijetí', :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id} %></span>
 	<% end %>

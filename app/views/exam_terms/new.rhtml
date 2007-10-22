@@ -2,23 +2,19 @@
 <% if params[:from]%>
   <input type=hidden name='from' value='<%=params[:from]%>'>
 <%end%>
-<% if params[:backward]%>
-  <input type=hidden name='backward' value='<%=params[:backward]%>'>
-<%end%>
 
   <%= render (:partial => "form") %>
   <%= submit_tag _("create") %>
 <% end %>
 
 <div class='links'>
-  <% if  params[:backward] == 'true' && session[:current_page_backward_all] != nil && params[:from] && params[:from] == 'candidate'%>
-    <%= link_to 'zpět na výpis',:controller => 'candidates' ,:action => 'list_all', :category => session[:current_page_backward_all]%>
-    <% session[:current_page_backward_all] = nil%>
-  <%else%>
-    <% if params[:from] && params[:from] == 'candidate' %>
-      <%= link_to 'zpět na výpis',:controller => 'candidates' ,:action => 'list', :page => session[:current_page_backward] %>
-    <%else%>
+  <% if  params[:from] == 'candidate'%>
+    <% if session[:back_page] == 'list' %>
+      <%= link_to 'zpět na výpis', :action => 'list', :controller => 'candidates', :page => session[:current_page_backward] %>
+    <% else %>
+      <%= link_to 'zpět na výpis', :action => 'list_all', :controller => 'candidates'%>    
+    <% end %>
+  <% else %>
 	<%= link_to _('back'), :action => 'list' %>
-    <%end%>
   <%end%>
 </div>

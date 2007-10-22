@@ -1,7 +1,11 @@
 <div class="links">
   <% if @user.has_role?('board_chairman') %>
-    <%= link_to 'zpět na výpis', :action => 'index' %>
+      <%= link_to 'zpět na výpis', :action => 'index' %>
   <% else %>
-    <%= link_to 'zpět na výpis', :action => 'list', :page => session[:current_page_backward] %>
+    <% if session[:back_page] == 'list' %>
+      <%= link_to 'zpět na výpis', :action => 'list',:page => session[:current_page_backward] %>
+    <% else %>
+      <%= link_to 'zpět na výpis', :action => 'list_all'%>    
+    <% end %>
   <% end %>
 </div>

@@ -5,7 +5,8 @@ class CandidatesController < ApplicationController
   before_filter :login_required, :except => [:invitation]
   before_filter :prepare_user
   before_filter :prepare_faculty
-  before_filter :set_title, :change_sort
+  before_filter :set_title
+  before_filter :prepare_sort, :only => [:list, :list_all]
 
 
   # lists all candidates
@@ -22,17 +23,19 @@ class CandidatesController < ApplicationController
   def list
       @backward = false
       @filtered_by = params[:filter]
+      session[:back_page] = 'list'
       conditions = Candidate.prepare_conditions(params, @faculty)
       @pages, @candidates = paginate :candidates, :per_page => 7, :order_by =>
-        params[:category], :conditions => conditions
+        session[:category], :conditions => conditions
       session[:current_page_backward] = @pages.current.number
   end
 
   # lists all candidates ordered by category
   def list_all
     @backward = true
-    @candidates = Candidate.find_all_finished(params, @faculty)
-    session[:current_page_backward_all] = params[:category]
+    session[:back_page] = 'list_all'
+    @candidates = Candidate.find_all_finished_by_session_category(params, @faculty, session[:category])
+    session[:current_page_backward_all] = session[:category]
     render_action 'list'
   end
 
@@ -67,20 +70,33 @@ class CandidatesController < ApplicationController
   # destroys candidate
   def destroy
     Candidate.find(params[:id]).destroy
-    redirect_to :action => 'list', :page => session[:current_page_backward]
+      if session[:back_page] == 'list'
+        redirect_to :action => 'list', :page => session[:current_page_backward]
+      else
+        redirect_to :action => 'list_all'
+      end
+
   end
   
   # delete candidate
   def delete
     Candidate.find(params[:id]).unfinish!
-    redirect_to :action => 'list', :page => session[:current_page_backward]
+      if session[:back_page] == 'list'
+        redirect_to :action => 'list', :page => session[:current_page_backward]
+      else
+        redirect_to :action => 'list_all'
+      end
   end
 
   def admit_for_revocation
     candidate = Candidate.find(params[:id])
     candidate.delete_reject!
     candidate.admit!
-    redirect_to :action => 'list', :page => session[:current_page_backward]
+      if session[:back_page] == 'list'
+        redirect_to :action => 'list', :page => session[:current_page_backward]
+      else
+        redirect_to :action => 'list_all'
+      end
   end
   # enroll candidate form
   def enroll
@@ -142,7 +158,11 @@ class CandidatesController < ApplicationController
     candidate = Candidate.find(params[:id])
     candidate.ready!
     flash['notice'] = _("Candidate ") + candidate.display_name + _(" is ready for application form")
-    redirect_to :action => 'list', :page => session[:current_page_backward]
+    if session[:back_page] == 'list'
+      redirect_to :action => 'list', :page => session[:current_page_backward]
+    else
+      redirect_to :action => 'list_all'
+    end
   end
 
   # set candidate ready for admition
@@ -194,19 +214,15 @@ class CandidatesController < ApplicationController
     @title = _('Candidates')
   end
 
-  # changes sorting
-  def change_sort
-	params[:page] = '1' unless params[:page] # cause nil page means first :-)
-	if session[:page] == params[:page]
+  def prepare_sort
+      if params[:category] && params[:page] == nil
+        session[:category] = params[:category]
         if params[:category] == session[:category]
-         session[:order] = session[:order] == ' desc' ? '' : ' desc'
-	    else
-	      session[:order] = ''
-	   end
-	    session[:category] = params[:category]
-	    params[:category] << session[:order] if params[:category] 
-	    else
-             session[:page] = params[:page]
-	   end
+            session[:order] = session[:order] == ' desc' ? '' : ' desc'
+        else
+	  session[:order] = ''
+	end
+        session[:category] << session[:order]
+      end
   end
 end

@@ -18,7 +18,12 @@
   <%= submit_tag(_("submit")) %>
 <% end %>
 <div class='links'>
-  <%= link_to(_("back"), :page => session[:current_page_backward], :action => 'list') %>
+    <% if session[:back_page] == 'list' %>
+      <%= link_to 'zpět na výpis', :action => 'list',:page => session[:current_page_backward] %>
+    <% else %>
+      <%= link_to 'zpět na výpis', :action => 'list_all'%>    
+    <% end %>
+
 </div >
 
 <%= javascript_tag <<-CODE
