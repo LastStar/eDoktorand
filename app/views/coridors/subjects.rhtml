@@ -9,24 +9,24 @@
   <li>
     <b><%= _('obligate_subjects') %>:</b>
   </li>
+  <li class='second'>
+    <%= add_link(@coridor, 'ObligateSubject') %>
+  </li>
   <% for coridor_subject in @obligate_subjects %>
     <%= render :partial => 'coridor_subject', :locals => {:coridor_subject => coridor_subject} %> 
   <% end %>
-    <li class='second'>
-      <%= add_link(@coridor, 'ObligateSubject') %>
-    </li>
   </ul>
 
   <ul id='voluntary_subjects'>
     <li>
       <b><%=_('voluntary_subjects')%>:</b>
     </li>
+    <li class='second'>
+      <%= add_link(@coridor, 'VoluntarySubject') %>
+    </li>
   <% for coridor_subject in @voluntary_subjects %>
     <%= render :partial => 'coridor_subject', :locals => {:coridor_subject => coridor_subject} %> 
   <%end%>
     <div id='add_voluntary'>
     </div>
-    <li class='second'>
-      <%= add_link(@coridor, 'VoluntarySubject') %>
-    </li>
 </ul>

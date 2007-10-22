@@ -3,6 +3,7 @@
   <%= collection_select(:coridor_subject, :subject_id, @subjects, :id, :label) %>
   <%= hidden_field(:coridor_subject, :type)%>
   <%= ok_submit(:subject) %>
+  <%= javascript_tag "window.document.forms[0].coridor_subject_subject_id.focus()" %>
   <%= remove_line%>
 <%= end_form_tag %>
 </li>
