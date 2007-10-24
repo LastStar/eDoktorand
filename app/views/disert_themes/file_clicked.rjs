@@ -1,0 +1,1 @@
+page << "window.open('pdf/methodology/%i.pdf', '_blank')" % @disert_theme.id

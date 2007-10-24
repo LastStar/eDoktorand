@@ -23,9 +23,7 @@ include LoginSystem
   end
   
   def file_clicked
-    disert_theme = DisertTheme.find(params[:id])
-    render(:partial => 'file_clicked', :locals => {:disert_theme =>
-      disert_theme})
+    @disert_theme = DisertTheme.find(params[:id])
   end
 
   #adding only disaer_themes en (fixing bug)
