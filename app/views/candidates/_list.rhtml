@@ -10,6 +10,9 @@
         <%= admit_link(candidate) %>
         <%= enroll_link(candidate) %>
       <% end %>
+      <% if @user.has_role?('faculty_secretary') %>
+        <%= admit_for_revocation_tag(candidate)%>
+      <%end%>
 			</b>
 			&nbsp;
       <% unless @user.has_role?('department_secretary') %>
@@ -31,9 +34,6 @@
     <b><%= candidate.display_name %>
 	  <%= _("b.n.") %>&nbsp;<%= candidate.birth_number %>
     <%= status_tag(candidate) %>
-    <% if @user.has_role?('faculty_secretary') %>
-      <%= admit_for_revocation_tag(candidate)%>
-    <%end%>
     <br /></b>
 	  <%= _("corridor") %>: <%= candidate.coridor.name %><br />
 	  <%= _("study form") %>: <%= candidate.study.name %><br />

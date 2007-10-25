@@ -131,7 +131,7 @@ module CandidatesHelper
   
   def admit_for_revocation_tag(candidate)
     if candidate.rejected?
-      link_to _("admit_for_revocation"), {:action => 'admit_for_revocation', :id => candidate.id}, {:class => 'revocation'}
+      link_to _("admit_for_revocation"), {:action => 'admit_for_revocation', :id => candidate.id}
     end
   end
 

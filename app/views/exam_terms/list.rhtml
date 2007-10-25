@@ -3,19 +3,19 @@
 <% for exam_term in @exam_terms  %>
   <li>
     <div class='right'>
-      <%= link_to 'oprava', :action => 'edit', :id => exam_term %>
-      <%= link_to "uchazeči(#{exam_term.coridor.approved_candidates.size})",
+      <%= link_to _('edit'), :action => 'edit', :id => exam_term %>
+      <%= link_to _('candidates') + "(#{exam_term.coridor.approved_candidates.size})",
       :controller => 'candidates', :action => 'list_admission_ready', :coridor => exam_term.coridor %>
-      <%= link_to 'smazání', {:action => 'destroy', :id => exam_term}, :confirm => 'Opravdu si přejete smazat tuto komisi?' %>
+      <%= link_to _('delete'), {:action => 'destroy', :id => exam_term}, :confirm => _('Are you sure to delete commission?') %>
     </div>
     <b><%= exam_term.coridor.name %><br/></b>
-	  datum a čas: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %><br/>
-	  místnost: <%= exam_term.room %><br />
-	  předseda: <%= exam_term.chairman.display_name %>
+	  <%=_('date and time')%>: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %><br/>
+	  <%=_('room')%>: <%= exam_term.room %><br />
+	  <%=_('chairman')%>: <%= exam_term.chairman.display_name %>
   </li>
 <% end %>
 </ul>
 <% else %>
-<h4>V systému nejsou žádné komise pro příjimací zkoušky</h4>
+<h4><%=_('There are no commissions for entrance examiantions in the system')%></h4>
 <% end %>
-<div class='links'><%= link_to 'nový termín', :action => 'new' %></div>
+<div class='links'><%= link_to _('new term'), :action => 'new' %></div>

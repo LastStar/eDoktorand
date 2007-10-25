@@ -8,10 +8,10 @@
 <p><label for="exam_term_room" class='required'><%= _('room') %></label>
 <%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
 
-<p><label for="exam_term_chairman">Předseda komise</label>
+<p><label for="exam_term_chairman"><%=_('Chairman of commission')%></label>
 <%= collection_select :exam_term, :chairman_id, Tutor.find_for(@user), :id, :display_name %></p>
 
-<p><label for='candidate_title_before_id'>Koridor</label>
+<p><label for='candidate_title_before_id'><%=_('coridor')%></label>
 <%= collection_select :exam_term, :coridor_id, Coridor.accredited_for(@user), :id, :name %></p>
 
 <p><label for="exam_term_first_examinator" class='required'>1. <%= _('member') %></label>

@@ -68,6 +68,8 @@ h2 { font-size: 24px; margin: 5px; }
 h3 { font-size: 20px; margin: 5px; }
 h4 { padding: 4px; margin: 0px; font-size: 18px; text-align: center; }
 h6 { padding: 4px; margin: 0px; font-size: 14px; }
+h4.displayname { padding: 4px; margin: 0px; font-size: 14px; text-align: left;}
+
 /*h5 { 
   font-size: 16px;
   margin: 0px;

@@ -1,8 +1,8 @@
 
 <% form_tag :action => 'update', :id => @exam_term do %>
   <%= render_partial "form" %>
-  <%= submit_tag "ulož" %>
+  <%= submit_tag _('save') %>
 <% end %>
 <div class='links'>
-	<%= link_to 'zpět', :action => 'list' %>
+	<%= link_to _('back'), :action => 'list' %>
 </div>
