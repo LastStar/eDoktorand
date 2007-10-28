@@ -131,7 +131,7 @@ class PlanSubject < ActiveRecord::Base
       subjects
     when :voluntary
       subjects = []
-      FACULTY_CFG[student.faculty.id]['subjects_count'].times do |i|
+      student.coridor.voluntary_amount.times do |i|
         (ps = PlanSubject.new).id = i + 1
         subjects << ps
       end
