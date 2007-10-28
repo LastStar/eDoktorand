@@ -33,7 +33,7 @@ class StudyPlansController < ApplicationController
     @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
     @study_plan = @student.index.prepare_study_plan
     @plan_subjects = []
-    (FACULTY_CFG[@student.faculty.id]['subjects_count'] + 3).times do |i|
+    (@student.coridor.voluntary_amount + 3).times do |i|
       (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
       @plan_subjects << plan_subject
     end
@@ -55,7 +55,7 @@ class StudyPlansController < ApplicationController
     else
       @plan_subjects = @study_plan.unfinished_subjects
     end
-      (FACULTY_CFG[@student.faculty.id]['subjects_count'] - @plan_subjects.size + 4).times do |i|
+      (@student.coridor.voluntary_amount - @plan_subjects.size + 4).times do |i|
         (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
         @plan_subjects << plan_subject
       end
