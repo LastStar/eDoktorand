@@ -283,7 +283,7 @@ class StudyPlansController < ApplicationController
     if SeminarSubject.has_for_coridor?(@student.coridor)
       session[:seminar_subjects] = PlanSubject.create_for(@student, :seminar)
     end
-    session[:voluntary_subjects] = PlanSubject.create_for(@student.index.coridor, :voluntary)
+    session[:voluntary_subjects] = PlanSubject.create_for(@student.index, :voluntary)
     session[:language_subjects] = PlanSubject.create_for(@student.index.coridor, :language)
   end
 
