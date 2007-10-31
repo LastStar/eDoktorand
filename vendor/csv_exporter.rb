@@ -302,7 +302,7 @@ class CSVExporter
   
   def self.export_students_without_sident
     outfile = File.open('students.csv', 'wb')
-    students = Student.find(:all, :conditions => "sident is null and indices.finished_on is null", :include => :index)
+    students = Student.find(:all, :conditions => "sident is null and indices.finished_on is null and indices.study_id = 1", :include => :index)
     CSV::Writer.generate(outfile, ';') do |csv|
       csv << ['id', 'display name']
       students.each do |s|
