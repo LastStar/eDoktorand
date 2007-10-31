@@ -22,7 +22,7 @@ class ScholarshipCalculator
       7500
     else
       case index.faculty.id
-        when 1, 3, 4
+        when 1, 4, 14, 15 
           by_exams(index)
         when 2
           0
