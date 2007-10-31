@@ -159,7 +159,7 @@ class CSVExporter
         row = []
         row << index.student.id
         row << index.student.uic
-        row << index.student.sident
+        row << index.student.sident if index.student.sident
         row << index.student.display_name
         row << index.department.name
         row << index.faculty.name
@@ -298,6 +298,21 @@ class CSVExporter
       end
     end
     outfile.close
+  end
+  
+  def self.export_students_without_sident
+    outfile = File.open('students.csv', 'wb')
+    students = Student.find(:all, :conditions => "sident is null")
+    CSV::Writer.generate(outfile, ';') do |csv|
+      csv << ['id', 'display name']
+      students.each do |s|
+        row = []
+        row << s.id
+        row << s.display_name
+        csv << row
+      end
+      outfile.close
+    end
   end
   
 end
