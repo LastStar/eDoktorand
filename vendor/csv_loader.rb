@@ -792,7 +792,8 @@ class CSVLoader
     @@mylog.info "Loading students sident ..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if Student.exists?(row[0])
-        Student.find(row[0]).update_attribute(:sident, row[1])
+        Student.find(row[0]).update_attribute(:sident, row[2])
+        Student.find(row[0]).update_attribute(:uic, row[3])
         @@mylog.info "Student with id #{row[0]} is updated"
       else
         @@mylog.debug "Student with id  #{row[1]} has not been found"
