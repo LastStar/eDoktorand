@@ -534,7 +534,7 @@ msgstr "Konzultovali jste Váš studijní plán se školitelem?"
 
 #: app/helpers/study_plans_helper.rb:153
 msgid "final exam application"
-msgstr "státní závěrečná zkouška"
+msgstr "státní doktorská zkouška"
 
 #: app/helpers/study_plans_helper.rb:159
 #: app/views/study_plans/create_by_other.rhtml:15
@@ -688,7 +688,7 @@ msgstr "Vedoucí katedry"
 
 #: app/models/leader.rb:5
 msgid "final exam"
-msgstr "Státní závěrečná zkouška"
+msgstr "Státní doktorská zkouška"
 
 #: app/models/leader.rb:6
 msgid "approve like leader"
@@ -1463,7 +1463,7 @@ msgstr "obory SDZ oddělené středníkem"
 
 #: app/views/diploma_supplements/_form.rhtml:44
 msgid "final exam passed on"
-msgstr "státní závěrečná zkouška vykonána dne"
+msgstr "státní doktorská zkouška vykonána dne"
 
 #: app/views/diploma_supplements/_form.rhtml:47
 msgid "faculty www"
@@ -2322,7 +2322,7 @@ msgstr "soubor s metodikou"
 
 #: app/views/study_plans/_study_plan.rhtml:23
 msgid "Final exam"
-msgstr "Státní závěrečná zkouška"
+msgstr "Státní doktorská zkouška"
 
 #: app/views/study_plans/preview.rhtml:1
 msgid ""
