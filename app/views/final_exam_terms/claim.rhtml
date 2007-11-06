@@ -1,0 +1,21 @@
+<h5><%= _(@title) %></h5>
+<% form_tag({:action => :confirm_claim}, {:multipart => true}) do %>
+<fieldset>
+  <ul class='nodecor'>
+    <%= render(:partial => 'study_plans/final_exam_areas',
+              :locals => {:areas => @study_plan.final_areas})  %>
+    <li>
+    <label for='disert_themes_literature_review'>
+      <%= _('literature review title') %>
+    </label>
+    <%= text_field :disert_theme, :literature_review,
+      :value => @study_plan.index.disert_theme.title %>
+    </li>
+    <li>
+      <label for="file"><%= _("literature review file") %></label>
+      <%= file_field_tag :literature_review_file %>
+    </li>
+  </ul>
+</fieldset>
+  <%= submit_tag(_('commit')) %>
+<% end %>

@@ -1,4 +1,5 @@
 
+<% final_areas = @exam_term.index.study_plan.final_areas %>
 <%= errors_for(@exam_term) %>
 
 <!--[form:exam_term]-->
@@ -11,43 +12,37 @@
 <p><label for="exam_term_room" class='required'><%= _('room') %></label>
 <%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
 
-<p><label for="exam_term_chairman">Předseda komise</label>
+<p><label for="exam_term_chairman"><%= _('chairman') %></label>
 <%= collection_select :exam_term, :chairman_id, Tutor.find_for(@user), :id, :display_name %></p>
 
 <p><label for="exam_term_first_examinator" class='required'>1. <%= _('member') %></label>
 <%= text_field 'exam_term', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span >
 
-<span class='subject'><%= _('subject') %></span>
-<%= text_field 'exam_term', 'first_subject'  %></p>
+<%= text_field 'exam_term', 'first_subject', :value => final_areas['cz']['1'] %></p>
 
 <p><label for="exam_term_second_examinator" class='required'>2. <%= _('member') %></label>
 <%= text_field 'exam_term', 'second_examinator'  %><span class='required'>&nbsp;&lowast;</span >
 
-<span class='subject'><%= _('subject') %></span>
-<%= text_field 'exam_term', 'second_subject'  %></p>
+<%= text_field 'exam_term', 'second_subject', :value => final_areas['cz']['2'] %></p>
 
 <p><label for="exam_term_third_examinator">3. <%= _('member') %></label>
 <%= text_field 'exam_term', 'third_examinator'  %>
 
-<span class='subject'>&nbsp;&nbsp;&nbsp;<%= _('subject') %></span>
-<%= text_field 'exam_term', 'third_subject'  %></p>
+<%= text_field 'exam_term', 'third_subject', :value => final_areas['cz']['3'] %></p>
 
 <p><label for="exam_term_fourth_examinator">4. <%= _('member') %></label>
 <%= text_field 'exam_term', 'fourth_examinator'  %>
 
-<span class='subject'>&nbsp;&nbsp;&nbsp;<%= _('subject') %></span>
-<%= text_field 'exam_term', 'fourth_subject'  %></p>
+<%= text_field 'exam_term', 'fourth_subject', :value => final_areas['cz']['4'] %></p>
 
 <p><label for="exam_term_fifth_examinator">5. <%= _('member') %></label>
 <%= text_field 'exam_term', 'fifth_examinator'  %>
 
-<span class='subject'>&nbsp;&nbsp;&nbsp;<%= _('subject') %></span>
 <%= text_field 'exam_term', 'fifth_subject'  %></p>
 
 <p><label for="exam_term_sixth_examinator">6. <%= _('member') %></label>
 <%= text_field 'exam_term', 'sixth_examinator'  %>
 
-<span class='subject'>&nbsp;&nbsp;&nbsp;<%= _('subject') %></span>
 <%= text_field 'exam_term', 'sixth_subject'  %></p>
 
 <p><label for="exam_term_opponent"><%= _('opponent') %></label>

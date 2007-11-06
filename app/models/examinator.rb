@@ -1,5 +1,6 @@
 class Examinator < DepartmentSecretary
   untranslate_all
+  N_("Examinator")
 
   def self.find_for_department(department)
     find(:all, :conditions => ["employments.unit_id = ?", department],

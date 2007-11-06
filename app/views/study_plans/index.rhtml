@@ -24,7 +24,8 @@ processed now. Final approvement you will get by email. ") %></p>
     <% end %>
   <% elsif sp.all_subjects_finished? %>
 <p class='help'>
-      <%= _('You have all subjects finished. Proceed to final exam application') %>
+<%= _('You have all subjects finished. Proceed to final exam application') %>. <br /> 
+<%= link_to(_('Final exam application'), :action => :claim, :controller => :final_exam_terms) %>
 </p>
   <% end %>
 <% else %>

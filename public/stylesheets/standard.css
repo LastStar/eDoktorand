@@ -33,7 +33,12 @@ table.scholarship {
   border : 0px; 
 }
 
-table.scholarship th,td { 
+table.scholarship th { 
+  border: 1px 
+  solid #ddc 
+}
+
+table.scholarship td { 
   border: 1px 
   solid #ddc 
 }
@@ -528,4 +533,32 @@ table.letter_header {
 }
 li p {
   margin: 0px 0 16px 0px
+}
+.final_exam_term {
+  border-top: 1px solid black;
+}
+table.three_columns {
+  margin-left: 2em;
+  width: 100%;
+}
+table.three_columns th {
+  text-align: left;
+}
+table.three_columns td {
+  padding-top: .8ex;
+}
+table.two_columns {
+  width: 80%;
+  margin-left: 2em;
+}
+table.two_columns th {
+  text-align: left;
+  width: 50%;
+}
+table.two_columns td {
+  padding-top: .5ex;
+}
+.right_date {
+  float: right;
+  text-align: right;
 }

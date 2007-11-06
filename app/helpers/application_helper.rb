@@ -515,16 +515,16 @@ module ApplicationHelper
   end
 
   def final_exam_term_link(user, index)
-    if user.has_role? 'faculty_secretary' && !index.final_exam_invitation_sent?
+    if user.has_role?('faculty_secretary') && !index.final_exam_invitation_sent?
       opts = {:url => {:controller => 'final_exam_terms', :action => 'new', 
                       :id => index},
-              :evaluate_remote_response => true}
-    else
+              :complete => evaluate_remote_response}
+    elsif index.final_exam_term
       opts = {:url => {:controller => 'final_exam_terms', :action => 'show', 
                        :id => index.final_exam_term.id},
-              :evaluate => true}
+              :complete => evaluate_remote_response}
     end
-    content_tag('li', link_to_remote(_('final exam term'), opts), :id => 'final_exam')
+    link_to_remote(_('final exam term'), opts, :id => 'final_exam_link') if opts
   end
 
   def hide_link(element, text = _('hide'))
@@ -583,6 +583,10 @@ module ApplicationHelper
     end
   end
 
+  def literature_review_link(disert_theme)
+    link_to _('literature review file'), 
+      "/pdf/literature_review/%i.pdf" % disert_theme.id, :popup => true
+  end
 private
   
   def loader_image(field)

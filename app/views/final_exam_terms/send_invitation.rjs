@@ -1,0 +1,2 @@
+page.replace_html 'invitation_link', _('e-mail sent')
+page.replace 'final_exam_link', final_exam_term_link(@user, @index)

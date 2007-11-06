@@ -1,13 +1,8 @@
-<p>
-  <b><%= _('Full name') %>:</b> <%= @exam_term.index.student.display_name %>
-</p>
-
-<% for column in ExamTerm.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @exam_term.send(column.name) %>
-</p>
-<% end %>
 <div class='links'>
-<%= hide_link('final_exam') %>
-<span id='mail_link'><%= send_invitation_link(@user, @exam_term.index) %></span>
+  <%= hide_link('final_exam') %>
+  <span id='invitation_link'>
+    <%= send_invitation_link(@user, @exam_term.index) %>
+  </span>
 </div>
+<%= render(:partial => 'detail', 
+  :locals => {:exam_term => @exam_term, :many => false}) %>

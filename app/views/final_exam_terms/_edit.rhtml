@@ -1,3 +1,5 @@
+<div class='links'><%= hide_link('final_exam') %></div>
+ 
 <%= form_remote_tag :url => {:action => 'create'}, :complete => evaluate_remote_response %>
   <%= render_partial "form" %>
   <%= submit_tag _("save") %>

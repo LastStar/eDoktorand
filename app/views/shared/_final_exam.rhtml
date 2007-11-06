@@ -3,41 +3,35 @@
   <li><b><%= _('This student was invited for final exam.') %></b></li>
 <% elsif index.claimed_final_application? %>
   <li><b><%= _('This student claimed for final exam.') %></b></li>
+  <li><%= literature_review_link(index.disert_theme) %> <%= index.disert_theme.literature_review %></li>
   <%= print_statements(index.approvement) %>
 <% end %>
 <% if index.approved? %>
-<%= final_exam_term_link(@user, index) %>
+  <li>
+  <%= final_exam_term_link(@user, index) %>
+  </li>
+  <li id='final_exam' style="display:none"></li>
 <% end %>
-<li>
-<div class='info'><%= "#{study_plan.finishing_to}. #{_('semester')}" %></div>
-  <b><%= "#{_('final exam')}" %></b>
-</li>
+  <li>
+  <div class='info'><%= "#{study_plan.finishing_to}. #{_('semester')}" %></div>
+    <b><%= "#{_('final exam')}" %></b>
+  </li>
 <% if study_plan.final_areas? %>
-  <% if index.faculty.id == 1%>
-    <% 4.times do |i|%>
-      <%i=i+1%>
-      <%fa=study_plan.final_areas['cz']%>
-        <li class='second'>
-          <div class='long_info'><%= fa[i.to_s]%></div>
-          <%= "#{i}. " + _("final area") %>
-        </li>
-      <%fa=study_plan.final_areas['en']%>
-        <li class='second'>
-          <div class='long_info' id='final_area_en<%= i %>'>
-          <% if fa[i.to_s] == nil || fa[i.to_s] == ""%>
-            <%= add_en_link(index,i) %>
-          <% end %>
-          <%=  fa[i.to_s] %></div>
-          <%= "#{i}. " + _("final area") %> (en)
-        </li>
-  <% end %>
-<% else %>
-     <% study_plan.final_areas.each do |fa| %>
-        <li class='second'>
-          <div class='long_info'><%= "#{fa.last}"%></div>
-          <b><%= "#{fa.first.to_i}. " + _("final area") %></b> 
-        </li>
-     <% end %>
+  <% 4.times do |i|%>
+    <% i=i+1 %>
+    <% fa = study_plan.final_areas['cz'] %>
+      <li class='second'>
+        <div class='long_info'><%= fa[i.to_s]%></div>
+        <%= "#{i}. " + _("final area") %>
+      </li>
+    <% fa = study_plan.final_areas['en'] %>
+      <li class='second'>
+        <div class='long_info' id='final_area_en<%= i %>'>
+        <% if fa[i.to_s] == nil || fa[i.to_s] == ""%>
+          <%= add_en_link(index,i) %>
+        <% end %>
+        <%=  fa[i.to_s] %></div>
+        <%= "#{i}. " + _("final area") %> (en)
+      </li>
   <% end %>
 <% end %>
-<li id='final_exam' style="display:none"></li>

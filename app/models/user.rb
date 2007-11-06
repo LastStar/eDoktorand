@@ -1,5 +1,5 @@
 require 'digest/sha1'
-require 'ldap'
+require 'net/ldap'
 
 # this model expects a certain database layout and its based on the name/login pattern. 
 class User < ActiveRecord::Base
@@ -28,18 +28,13 @@ class User < ActiveRecord::Base
         else
           ldap_context = result.person.faculty.ldap_context
         end
-        conn = LDAP::Conn.new('193.84.33.9', 389)
-        conn.set_option( LDAP::LDAP_OPT_PROTOCOL_VERSION, 3 )
-        begin
-          conn.bind( "cn=#{login},ou=#{ldap_context},o=czu, c=cz", pass )
+        conn = Net::LDAP.new :host => '193.84.33.9'
+        conn.auth "cn=#{login},ou=#{ldap_context},o=czu, c=cz", pass
+        if conn.bind
           return result.id
-        rescue => e
+        else
           return nil
-        ensure
-          conn.unbind unless conn == nil
-          conn = nil
         end
-        return nil
       else
         return nil
       end

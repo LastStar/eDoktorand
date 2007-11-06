@@ -1,9 +1,32 @@
 class FinalExamTermsController < ApplicationController
+  layout 'employers'
   include LoginSystem
+  helper :exam_terms
 
   before_filter :login_required, :prepare_user
 
+  def list
+    @title = _('Final exam terms')
+    @final_exam_terms = FinalExamTerm.find_for(@user, :future => true)
+  end
+
+  def prepare_print
+    @final_exam_terms = FinalExamTerm.find(params[:terms])
+  end
+
   def claim
+    @title = 'Final exam application'
+    @study_plan = @user.person.index.study_plan
+  end
+
+  def confirm_claim
+    index = @user.person.index
+    index.claim_final_exam!(params[:study_plan][:final_areas])
+    if params[:literature_review_file]
+      index.disert_theme.save_literature_review(params[:literature_review_file])
+    end
+    index.disert_theme.update_attributes(params[:disert_theme])
+    redirect_to :controller => :study_plans, :action => :index
   end
 
   def new
@@ -46,10 +69,12 @@ class FinalExamTermsController < ApplicationController
   end
 
   def send_invitation
-    # add mail sending and setting that mail was sent
     @index = Index.find(params[:id])
     @index.send_final_exam_invitation!
-    render(:text => _('e-mail sent'))
+    Notifications::deliver_invite_to_final_exam(@index)
   end
 
+  def protocol
+    @term = FinalExamTerm.find(params[:id])
+  end
 end

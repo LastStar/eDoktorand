@@ -32,8 +32,8 @@ class Index < ActiveRecord::Base
   validates_presence_of :coridor
   validates_presence_of :study
   validates_presence_of :department
-  validates_numericality_of :account_number, :only_integer => true
-  validates_numericality_of :account_bank_number, :only_integer => true
+  validates_numericality_of :account_number, :only_integer => true, :allow_nil => true
+  validates_numericality_of :account_bank_number, :only_integer => true, :allow_nil => true
 
   N_('with study change')
   N_('End')
@@ -479,12 +479,20 @@ class Index < ActiveRecord::Base
     regular_scholarship || RegularScholarship.create_for(self)
   end
 
-  def claim_final_application!
+  def claim_final_exam!(final_areas = nil)
+    if final_areas
+      study_plan.final_areas = final_areas
+      study_plan.save
+    end
     update_attribute(:final_application_claimed_at, Time.now)
   end
 
   def claimed_final_application?
     !final_application_claimed_at.nil?
+  end
+
+  def claim_final_application!
+    update_attribute(:final_application_claimed_at, Time.now)
   end
 
   def final_term_created?
@@ -497,7 +505,6 @@ class Index < ActiveRecord::Base
   end
 
   def send_final_exam_invitation!
-    Notifications::deliver_invite_to_final_exam(self)
     update_attribute(:final_exam_invitation_sent_at, Time.now)
   end
 

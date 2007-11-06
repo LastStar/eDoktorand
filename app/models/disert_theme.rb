@@ -45,9 +45,16 @@ class DisertTheme < ActiveRecord::Base
     update_attribute(:defense_passed_on, date)
   end
 
+  def save_literature_review(file)
+    File.open("#{RAILS_ROOT}/public/pdf/literature_review/#{self.id}.pdf", "w") do |f|
+      f.write(file.read)
+    end
+  end
+
   private
   def set_actual
     if old_actual = DisertTheme.find_by_index_id_and_actual(self.index.id, 1)
+      # TODO rename pdf
       old_actual.update_attribute(:actual, 0)
     end
     self.actual = 1

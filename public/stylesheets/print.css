@@ -2,6 +2,11 @@
   float: right;
   width: 44ex;
 }
+.right_date {
+  float: right;
+  text-align: right;
+}
+
 hr {
   border: none;
 }
@@ -195,4 +200,27 @@ table.letter_header td {
 }
 table.letter_header {
   margin-bottom: 1em 0 1em 0;
+}
+.final_exam_term {
+  border-top: 1px solid black;
+}
+table.three_columns {
+  padding: 2em;
+  width: 100%;
+}
+table.three_columns th {
+  text-align: left;
+  border: none;
+}
+table.two_columns {
+  padding: 2em;
+  width: 100%;
+}
+table.two_columns th {
+  text-align: left;
+  width: 50%;
+  border: none;
+}
+table.two_columns td {
+  padding-top: .5ex;
 }

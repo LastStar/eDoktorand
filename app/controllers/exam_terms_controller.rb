@@ -11,8 +11,7 @@ class ExamTermsController < ApplicationController
 
   def list
     @title = _('List of admittance terms')
-    @exam_term_pages, @exam_terms = paginate :admission_term, :per_page => 10,
-      :conditions => ["coridor_id IN (?)", @faculty.coridors]
+    @exam_terms = AdmissionTerm.find_for(@user)
   end
 
   def show

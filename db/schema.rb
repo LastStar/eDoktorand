@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 135) do
+ActiveRecord::Schema.define(:version => 140) do
 
   create_table "actualities", :force => true do |t|
     t.column "label",   :string
@@ -117,12 +117,13 @@ ActiveRecord::Schema.define(:version => 135) do
   end
 
   create_table "coridors", :force => true do |t|
-    t.column "name",         :text
-    t.column "name_english", :text
-    t.column "code",         :string,  :limit => 16
-    t.column "faculty_id",   :integer
-    t.column "accredited",   :integer, :limit => 1
-    t.column "program_id",   :integer
+    t.column "name",             :text
+    t.column "name_english",     :text
+    t.column "code",             :string,  :limit => 16
+    t.column "faculty_id",       :integer
+    t.column "accredited",       :integer, :limit => 1
+    t.column "program_id",       :integer
+    t.column "voluntary_amount", :integer
   end
 
   create_table "deanships", :force => true do |t|
@@ -180,6 +181,7 @@ ActiveRecord::Schema.define(:version => 135) do
     t.column "title_en",             :string,   :limit => 1023
     t.column "defense_passed_on",    :date
     t.column "actual",               :integer
+    t.column "literature_review",    :string,   :limit => 1023
   end
 
   add_index "disert_themes", ["index_id"], :name => "index_disert_themes_on_index_id"
@@ -343,6 +345,7 @@ ActiveRecord::Schema.define(:version => 135) do
   end
 
   add_index "people", ["lastname"], :name => "people_lastname_index"
+  add_index "people", ["type"], :name => "type_idx"
 
   create_table "permissions", :force => true do |t|
     t.column "name",       :string,   :limit => 100
@@ -485,6 +488,9 @@ ActiveRecord::Schema.define(:version => 135) do
     t.column "created_on", :datetime
     t.column "updated_on", :datetime
   end
+
+  add_index "tutorships", ["coridor_id"], :name => "coridor_idx"
+  add_index "tutorships", ["tutor_id"], :name => "tutor_idx"
 
   create_table "users", :force => true do |t|
     t.column "login",      :string,   :limit => 80
