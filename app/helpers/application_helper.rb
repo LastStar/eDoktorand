@@ -1,46 +1,12 @@
 # TODO move all ids methods to corresponding models
 module ApplicationHelper
   
+  # TODO remove from form controller
   # prints department options
   def department_options(options = {})
     options_for_select(Department.for_select(options))
   end
   
-  # prints corridor options 
-  def coridor_options(options = {})
-    options_for_select(Coridor.for_select(options))
-  end
-  
-  # prints faculty options
-  def faculty_options(options = {})
-    options_for_select(Faculty.for_select(options))
-  end
-  
-  # returns all years options
-  def year_options
-    options_for_select([['---', '0'], [_("1. year"), 1], [_("2. year"), 2], \
-      [_("3. year"), 3], [_('x'), 4]])
-  end
-  
-  # returns all statuses options
-  def status_options
-    options_for_select([['---', '0'], [_("SP not admited"), 1], \
-      [_("SP admited"), 2], [_("SP approved by tutor"), 3], \
-      [_("SP approved by leader"), 4], [_('SP approved by dean'), 5]])
-  end
-  
-  # returns all study statuses options
-  def study_status_options
-    options_for_select([['---', '0'], [_("studying"), 1], \
-      [_("finished"), 2], [_("interupted"), 3], [_('absolved'), 4], [_('continue'), 5]])
-  end
-  
-  # returns all form options
-  def form_options
-    options_for_select([['---', '0'], [_("present"), 1], \
-      [_("combined"), 2]])
-  end
-
   def sex_select(model, method)
     select model, method, [[_("male"), 'M'],[_("female"), 'F']]
   end
@@ -587,6 +553,11 @@ module ApplicationHelper
     link_to _('literature review file'), 
       "/pdf/literature_review/%i.pdf" % disert_theme.id, :popup => true
   end
+
+  def spinner_image(js_id = 'spinner')
+    image_tag('loader.gif', :id => js_id, :style => 'display: none')
+  end
+
 private
   
   def loader_image(field)

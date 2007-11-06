@@ -34,4 +34,17 @@ class Department < ActiveRecord::Base
   def department_secretary
     department_employment.person
   end
+
+  def self.find(*args)
+    if args.first.is_a?(Hash) && user = args.first[:user]
+      if user.has_role?('vicerector')
+        return super(:all)
+      else
+        return user.person.faculty.departments
+      end
+    else
+      super
+    end
+
+  end
 end

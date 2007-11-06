@@ -175,7 +175,7 @@ class Index < ActiveRecord::Base
         conditions  = ['NULL IS NULL']
       end
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary'])
-      conditions = ["indices.department_id IN (#{user.person.faculty.departments_for_sql})"]
+      conditions = ["indices.department_id IN (?)", user.person.faculty.departments]
     elsif user.has_one_of_roles?(['leader', 'department_secretary'])
       conditions = ['indices.department_id = ?', user.person.department.id]
     elsif user.has_role?('tutor')
@@ -222,6 +222,10 @@ class Index < ActiveRecord::Base
       conditions.first << ' AND (disert_themes.defense_passed_on IS NULL' +
                           ' OR disert_themes.defense_passed_on > ?)'
       conditions << options[:not_absolved]
+    end
+    if options[:search]
+      conditions.first << ' AND people.lastname like ?'
+      conditions << "%s%%" % options[:search]
     end
     conditions.first << 'AND study_id = 1' if options[:present]
     find(:all, :conditions => conditions, :order => options[:order],

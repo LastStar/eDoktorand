@@ -1,52 +1,40 @@
-<%= form_remote_with_loading(:url => {:action => 'search'}, :update =>
-  'students_list') %>
-<fieldset>
-  <legend><%= fast_filter_link %></legend>
-  <div id='fast_info' class='form_info'><%= _('For opening filter options click the legend') %></div>
-  <div id='fast_search' style='display:none' class='form'>
-  <label class='small' for="search_what"><%= _("search by lastname") %></label>
-  <%= tag('input', :name => 'search_field', :id => 'search_field', 'size' => '10')
-  %><br/> 
-  <% if @filters %>
-  <label class='small' for="filter_by"><%= _("filter") %></label>
-  <%= content_tag('select', options_for_select(@filters, @filter.to_i), {'id' => "filter_by",
-  'name' => "filter_by", "size" => @filters.size}) %><br/>
-  <%= observe_field('filter_by', :url => {:action => 'filter'}, :update => 
-  'students_list', :loading => visual_effect(:appear, 'loading'),
-  :interactive => visual_effect(:fade, "loading"), :with => 
-  "'filter_by=' + escape(value)") %>
-  <% end %><br /> 
-  <%= submit_tag(_("commit")) %>
+<% form_remote_tag(:url => {:action => 'search'},
+:loading => "$('search_submit').value = '%s'" % _('working...'),
+:complete => evaluate_remote_response) do -%>
+  <div id='name_search'>
+    <label for="search"><%= _("search by lastname") %></label>
+    <%= tag('input', :name => 'search', :id => 'search_field', 'size' => '20') %>
+    <%= submit_tag(_("commit"), :id => 'search_submit') %>
   </div>
-</fieldset>
-<%= end_form_tag %>
+<% end %>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])  %>
-<%= form_remote_with_loading(:url => {:action => 'multiple_filter'}, :update =>
-  'students_list') %>
+<% form_remote_tag(:url => {:action => 'multiple_filter'},
+                  :loading => "$('spinner').show()",
+                  :complete => "$('spinner').hide()",
+                  :update => 'students_list') do -%>
 <fieldset>
-  <legend><%= detail_filter_link %></legend>
+  <legend><%= detail_filter_link %>&nbsp;<%= spinner_image %></legend>
   <div id='detail_info' class='form_info'><%= _('For opening filter options click the legend') %></div>
   <div id='detail_search'  class='form' style='display: none'>
-  <% if @user.has_role?('vicerector') %>
-  <label class='small' for="filter_by_faculty"><%= _("faculty") %></label>
-  <%= faculty_select(:include_empty => true, :user => @user) %><br/>
-  <% end %>
-  <label class='small' for="filter_by_status"><%= _("SP status") %></label>
-  <%= status_select(:include_empty => true, :user => @user) %><br/>
-  <label class='small' for="filter_by_study_status"><%= _("ST status") %></label>
-  <%= study_status_select(:include_empty => true, :user => @user) %><br/>
-  <label class='small' for="filter_by_form"><%= _("form") %></label>
-  <%= form_select(:include_empty => true, :user => @user) %><br/>
-  <label class='small' for="filter_by_department"><%= _("department") %></label>
-  <%= department_select(:include_empty => true, :user => @user) %><br/>
-  <label class='small' for="filter_by_coridor"><%= _("corridor") %></label>
-  <%= coridor_select(:include_empty => true, :user => @user) %><br/>
-  <label class='small' for="filter_by"><%= _("year") %></label>
-  <%= content_tag('select', year_options, 
-  {'id' => "filter_by_year", 'name' => "filter_by_year"}) %><br /> 
-  <%= submit_tag(_("commit")) %>
+<% if @user.has_role?('vicerector') %>
+    <label class='small' for="faculty"><%= _("faculty") %></label>
+    <%= faculty_select %><br/>
+<% end %>
+    <label class='small' for="status"><%= _("SP status") %></label>
+    <%= status_select %><br/>
+    <label class='small' for="study_status"><%= _("ST status") %></label>
+    <%= study_status_select %><br/>
+    <label class='small' for="form"><%= _("form") %></label>
+    <%= form_select %><br/>
+    <label class='small' for="department"><%= _("department") %></label>
+    <%= department_select %><br/>
+    <label class='small' for="coridor"><%= _("corridor") %></label>
+    <%= coridor_select %><br/>
+    <label class='small' for="year"><%= _("year") %></label>
+    <%= year_select %><br /> 
+    <%= submit_tag(_("commit")) %>
   </div>
 </fieldset>
 <% end %>
-<%= end_form_tag %>
+<% end%>
 

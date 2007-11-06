@@ -9,16 +9,6 @@ class Faculty < ActiveRecord::Base
   has_one :deanship
   has_many :candidates, :through => :coridors
 
-  # returns array for html select
-  def self.for_select(options = {})
-    result = self.find(:all).map {|f| [f.name, f.id]}
-    if options[:include_empty]
-      [['---', '0']].concat(result)
-    else
-      result
-    end
-  end
-
   # TODO refactor to use department ids
   # returns string for sql IN statement
   def departments_for_sql

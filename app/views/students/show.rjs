@@ -4,3 +4,4 @@ page.insert_html :before, "students_list",
                     :disert_theme => @index.disert_theme})
 page.hide 'search'
 page.hide 'students_list'
+page['search_submit'].value = _('commit')

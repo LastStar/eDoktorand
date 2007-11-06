@@ -562,3 +562,8 @@ table.two_columns td {
   float: right;
   text-align: right;
 }
+div#name_search { padding-bottom: 1ex;}
+div#name_search label, input {font-size: large;}
+div#name_search label {padding-top: 0}
+div#fast_filters {padding-bottom: 2ex;}
+div#fast_filters ul li {list-style: none; float: left; border: none;  width: 15ex; text-align: center;padding-right: 1ex;}

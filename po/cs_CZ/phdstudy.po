@@ -163,7 +163,7 @@ msgstr "Studenti"
 
 #: app/controllers/students_controller.rb:265
 msgid "waiting for my review"
-msgstr "čekající na mé schválení"
+msgstr "ke schválení"
 
 #: app/controllers/students_controller.rb:265
 msgid "all students"

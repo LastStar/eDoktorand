@@ -2,7 +2,7 @@
 
 <!--[form:parameter]-->
 <p><label for="parameter_name">Fakulta</label><br/>
-<%= select 'parameter', 'faculty_id', Faculty.for_select  %></p>
+<%= select 'parameter', 'faculty_id', Faculty.find(:all).map {|f| [f.name, f.id]} %></p>
 
 <p><label for="parameter_name">Name</label><br/>
 <%= text_field 'parameter', 'name'  %></p>

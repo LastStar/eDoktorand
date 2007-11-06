@@ -24,12 +24,12 @@ class StudentsController < ApplicationController
 
   # searches in students lastname
   def search
-    # TODO redone with class method
-    conditions = [' AND people.lastname like ?']
-    conditions << "#{params[:search_field]}%"
-    @indices = Index.find_for(@user, :conditions => conditions, :order => 
-      'people.lastname, study_plans.created_on')
-    render(:partial => 'list')
+    @indices = Index.find_for(@user, :search => params[:search], :order => 'people.lastname')
+    session[:filter] = 3
+    if @indices.size == 1
+      @index = @indices.first
+      render(:action => 'show')
+    end
   end
   
   # filters students
@@ -51,8 +51,7 @@ class StudentsController < ApplicationController
   
   # renders student details
   def show
-    index = Index.find_with_all_included(params[:id])
-    render(:partial => 'show', :locals => {:index => index})
+    @index = Index.find_with_all_included(params[:id])
   end
   
   # renders contact for student
@@ -273,13 +272,13 @@ class StudentsController < ApplicationController
       # default filter to waiting for approvement 
       session[:filter] ||= 2 
     else
-      session[:filter] ||= -1 
+      session[:filter] ||= 3
     end
 
   end
 
   def do_filter
-    @filter = params[:filter_by] || session[:filter]
+    @filter = params[:id] || session[:filter]
     case @filter.to_i
     when 4
       @indices = Index.find_tutored_by(@user, :unfinished => true)

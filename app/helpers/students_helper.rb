@@ -217,51 +217,59 @@ module StudentsHelper
   end
 
   # prints select for departments
-  def department_select(options = {})
-    options = if options[:user].has_role?('vicerector')
-      department_options(:include_empty => options[:include_empty])
-    else
-      department_options(:faculty => options[:user].person.faculty, :include_empty => options[:include_empty])
-    end
-    content_tag('select', options, {'id' => "filter_by_department", 
-      'name' => "filter_by_department"})
+  def department_select(options = {:include_empty => true})
+    ops = Department.find(:user => @user).map {|d| [d.name, d.id]}
+    ops = [['---', '0']].concat(ops) if options[:include_empty]
+    content_tag('select', options_for_select(ops),
+                {:id => "department-srch", :name => "department"})
   end
 
   # prints select for coridor
   def coridor_select(options = {})
-    opts = {:include_empty => options[:include_empty]}
-    unless options[:user].has_role?('vicerector')
-      opts[:faculty] = options[:user].person.faculty
-    else
-      opts[:faculty] = :all
-    end
-    select_options = coridor_options(opts)
-    content_tag('select', select_options, {'id' => "filter_by_coridor", 
-                                    'name' => "filter_by_coridor"})
+    ops = Coridor.find(:user => @user).map {|c| [c.name, c.id]}
+    ops = [['---', '0']].concat(ops) if options[:include_empty]
+    content_tag('select', options_for_select(ops),
+                {:id => "coridor-srch", :name => "coridor"})
   end
 
   # prints select for faculty
-  def faculty_select(options = {})
-    content_tag('select', faculty_options(:include_empty => true), {'id' => 
-      "filter_by_faculty", 'name' => "filter_by_faculty"})
+  def faculty_select(options = {:include_empty => true})
+    ops = Faculty.find(:all).map {|f| [f.name, f.id]}
+    ops = [['---', '0']].concat(ops) if options[:include_empty]
+    content_tag('select', options_for_select(ops),
+                {'id' => "faculty-srch", 'name' => "faculty"})
   end
 
   # prints select for statuses
   def status_select(options = {})
-    content_tag('select', status_options, {'id' => 
-      "filter_by_status", 'name' => "filter_by_status"})
+    ops = [['---', '0'], [_("SP not admited"), 1],\
+        [_("SP admited"), 2], [_("SP approved by tutor"), 3],\
+        [_("SP approved by leader"), 4], [_('SP approved by dean'), 5]]
+    content_tag('select', options_for_select(ops), 
+                {:id => "status-srch", :name => "status"})
   end
 
   # prints select for statuses
   def study_status_select(options = {})
-    content_tag('select', study_status_options, {'id' => 
-      "filter_by_study_status", 'name' => "filter_by_study_status"})
+    ops = [['---', '0'], [_("studying"), 1], [_("finished"), 2],
+            [_("interupted"), 3], [_('absolved'), 4], [_('continue'), 5]]
+    content_tag('select', options_for_select(ops), 
+                {:id => "study_status-srch", :name => "study_status"})
   end
 
   # prints select for statuses
   def form_select(options = {})
-    content_tag('select', form_options, {'id' => 
-      "filter_by_form", 'name' => "filter_by_form"})
+    ops = [['---', '0'], [_("present"), 1], [_("combined"), 2]]
+    content_tag('select', options_for_select(ops), 
+                {'id' => "filter_by_form", 'name' => "filter_by_form"})
+  end
+
+  # prints select for years
+  def year_select
+    ops = [['---', '0'], [_("1. year"), 1], [_("2. year"), 2], 
+            [_("3. year"), 3], [_('x'), 4]]
+    content_tag('select', options_for_select(ops), 
+      {'id' => "filter_by_year", 'name' => "filter_by_year"})
   end
 
   def interupt_to_info(index)

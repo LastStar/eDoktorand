@@ -1,0 +1,3 @@
+page.replace_html 'students_list', :partial => 'list'
+page.visual_effect :highlight, 'students_list'
+page['search_submit'].value = _('commit')

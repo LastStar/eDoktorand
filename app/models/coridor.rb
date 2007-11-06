@@ -52,6 +52,18 @@ class Coridor < ActiveRecord::Base
     user.person.faculty.coridors
   end
 
+  def self.find(*args)
+    if args.first.is_a?(Hash) && user = args.first[:user]
+      if user.has_role?('vicerector')
+        return super(:all)
+      else
+        user.person.faculty.coridors
+      end
+    else
+      super
+    end
+  end
+
   def tutors_for_select
     tutors.sort.map {|t| [t.display_name, t.id]}
   end

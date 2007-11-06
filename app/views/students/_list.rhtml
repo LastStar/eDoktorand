@@ -1,12 +1,15 @@
-<div id='students_list'>
 <% if @indices && !@indices.empty? %>
-<h5><%= _('Students list') + "(#{@indices.size})" %></h5>
-<ul>
-<% for index in @indices %>
-  <%= content_tag('li', student_action_link(index), :id => "index_line_#{index.id}") %>
-<% end %>
-</ul>
+  <h5><%= _('Students list') + "(#{@indices.size})" %></h5>
+  <div class='links'>
+    <% for filter in @filters %>
+    <%= link_to_remote filter.first, :url => {:action => :filter, :id => filter.last}, :update => 'students_list' %>
+    <% end %>
+  </div>
+  <ul>
+  <% for index in @indices %>
+    <%= content_tag('li', student_action_link(index), :id => "index_line_#{index.id}") %>
+  <% end %>
+  </ul>
 <% else %>
-<h4><%= _('No students found. Use filters above to change your selection.') %></h4>
+  <h4><%= _('No students found. Use filters above to change your selection.') %></h4>
 <% end %>
-</div>
