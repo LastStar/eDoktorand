@@ -549,4 +549,8 @@ class Index < ActiveRecord::Base
       'status-to' => ''
     }
   end
+
+  def has_study_plan_and_actual_atestation?
+    study_plan && index.study_plan.atested_actual? && study_plan.atestation.dean_statement
+  end
 end

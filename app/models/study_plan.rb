@@ -42,6 +42,11 @@ class StudyPlan < ActiveRecord::Base
     last_atested_on && last_atested_on.to_date > date
   end
 
+  def atested_actual?
+    date = Atestation.actual_for_faculty(self.index.faculty)
+    self.atested_for?(date)
+  end
+
   # returns true if tudy plan waits for actuala atestation
   def waits_for_actual_atestation?
     !atested_for?(Atestation.actual_for_faculty(index.student.faculty)) 
@@ -70,7 +75,15 @@ class StudyPlan < ActiveRecord::Base
   # return plan subjects for atestation
   def atestation_subjects
     sql = 'study_plan_id = ? and finishing_on >= ? and finishing_on <= ?'
-    PlanSubject.find(:all, :conditions => [sql, id, semester - 2, semester])
+    PlanSubject.find(:all, :conditions => [sql, id, semester - 3, semester - 1])
+  end
+
+  def finished_atestation_subjects
+    atestation_subjects.select(&:finished?)
+  end
+ 
+  def atestation_subjects_ratio
+    "#{atestation_subjects.size} / #{finished_atestation_subjects.size}"
   end
 
   # return semester of the study from index

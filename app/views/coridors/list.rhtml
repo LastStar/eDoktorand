@@ -8,6 +8,7 @@
     <th><%= _('Coridor|Program') %></th>
     <th><%= _('Coridor|Accredited') %></th>
     <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </tr>
   
 <% for coridor in @coridors %>
@@ -21,6 +22,7 @@
 	 <%else%>
 	     <%= _('no')%>
 	 <%end%></td>
+<td><%= link_to _('Atestation'), :action => :attestation, :id => coridor.id %></td>
     <td><%= link_to _('Subjects'), :action => :subjects, :id => coridor %></td>
   </tr>
 <% end %>

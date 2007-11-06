@@ -1,6 +1,7 @@
 class CoridorsController < ApplicationController
   include LoginSystem
   
+  before_filter :login_required
   before_filter :prepare_user
   layout 'employers', :except => [:new, :create, :edit, :update, :destroy,
                                   :add_subject, :save_subject]
@@ -12,6 +13,13 @@ class CoridorsController < ApplicationController
 
   def list
     @coridors = Coridor.accredited_for(@user)
+  end
+
+  def attestation
+    @indices = Index.find_for(@user, :unfinished => true, :not_interupted => true,
+                              :conditions => [" AND coridor_id = ?", params[:id]],
+                              :order => "people.lastname")
+
   end
 
   def subjects

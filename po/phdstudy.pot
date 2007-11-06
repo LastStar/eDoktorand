@@ -215,7 +215,7 @@ msgstr ""
 msgid "SP not admited"
 msgstr ""
 
-#: app/helpers/application_helper.rb:28 app/models/study_plan.rb:130
+#: app/helpers/application_helper.rb:28 app/models/study_plan.rb:143
 msgid "SP admited"
 msgstr ""
 
@@ -274,23 +274,25 @@ msgstr ""
 msgid "female"
 msgstr ""
 
-#: app/helpers/application_helper.rb:50 app/views/coridors/list.rhtml:20
+#: app/helpers/application_helper.rb:50
+#: app/views/coridors/attestation.rhtml:35 app/views/coridors/list.rhtml:21
 msgid "yes"
 msgstr ""
 
-#: app/helpers/application_helper.rb:50 app/views/coridors/list.rhtml:22
+#: app/helpers/application_helper.rb:50
+#: app/views/coridors/attestation.rhtml:37 app/views/coridors/list.rhtml:23
 msgid "no"
 msgstr ""
 
-#: app/helpers/application_helper.rb:133
+#: app/helpers/application_helper.rb:133 app/helpers/coridors_helper.rb:20
 msgid "canceled"
 msgstr ""
 
-#: app/helpers/application_helper.rb:133
+#: app/helpers/application_helper.rb:133 app/helpers/coridors_helper.rb:22
 msgid "approved"
 msgstr ""
 
-#: app/helpers/application_helper.rb:133
+#: app/helpers/application_helper.rb:133 app/helpers/coridors_helper.rb:25
 msgid "approved with earfull"
 msgstr ""
 
@@ -422,6 +424,7 @@ msgid "additional information for next atestation"
 msgstr ""
 
 #: app/helpers/application_helper.rb:409 app/views/candidates/enroll.rhtml:15
+#: app/views/coridors/attestation.rhtml:3
 #: app/views/coridors/manage_edit.rhtml:3 app/views/coridors/subjects.rhtml:3
 #: app/views/diploma_supplements/edit.rhtml:8
 #: app/views/diploma_supplements/new.rhtml:8
@@ -458,8 +461,8 @@ msgid "Full name"
 msgstr ""
 
 #: app/helpers/application_helper.rb:579 app/helpers/application_helper.rb:582
-#: app/models/tutor.rb:5 app/views/exams/_protocol.rhtml:27
-#: app/views/exams/_show_protocol.rhtml:22
+#: app/models/tutor.rb:5 app/views/coridors/attestation.rhtml:11
+#: app/views/exams/_protocol.rhtml:27 app/views/exams/_show_protocol.rhtml:22
 #: app/views/final_exam_terms/_detail.rhtml:8
 #: app/views/final_exam_terms/protocol.rhtml:22
 #: app/views/interupts/print_interupt.rhtml:13
@@ -1239,7 +1242,8 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
-#: app/models/student.rb:14 app/views/final_exam_terms/protocol.rhtml:30
+#: app/models/student.rb:14 app/views/coridors/attestation.rhtml:14
+#: app/views/final_exam_terms/protocol.rhtml:30
 msgid "Enrolled on"
 msgstr ""
 
@@ -1283,23 +1287,23 @@ msgstr ""
 msgid "pass_final_exam_to"
 msgstr ""
 
-#: app/models/study_plan.rb:122
+#: app/models/study_plan.rb:135
 msgid "FE passed"
 msgstr ""
 
-#: app/models/study_plan.rb:124
+#: app/models/study_plan.rb:137
 msgid "all_finished"
 msgstr ""
 
-#: app/models/study_plan.rb:126
+#: app/models/study_plan.rb:139
 msgid "SP canceled"
 msgstr ""
 
-#: app/models/study_plan.rb:128
+#: app/models/study_plan.rb:141
 msgid "SP approved"
 msgstr ""
 
-#: app/models/study_plan.rb:137
+#: app/models/study_plan.rb:150
 msgid "dean"
 msgstr ""
 
@@ -1600,11 +1604,54 @@ msgstr ""
 msgid "There are no candidates in your selection"
 msgstr ""
 
+#: app/views/coridors/attestation.rhtml:1
+msgid "Listing attestations"
+msgstr ""
+
+#: app/views/coridors/attestation.rhtml:8
+msgid "Firstname"
+msgstr ""
+
+#: app/views/coridors/attestation.rhtml:9
+msgid "Lastname"
+msgstr ""
+
+#: app/views/coridors/attestation.rhtml:10
+msgid "Y."
+msgstr ""
+
+#: app/views/coridors/attestation.rhtml:12
+msgid "Form of study"
+msgstr ""
+
+#: app/views/coridors/attestation.rhtml:13
+msgid "P/F"
+msgstr ""
+
+#: app/views/coridors/attestation.rhtml:15
+#: app/views/exams/_detail_form.rhtml:40 app/views/exams/_table_list.rhtml:11
+#: app/views/exams/save_external_subject.rhtml:32
+#: app/views/final_exam_terms/protocol.rhtml:37
+msgid "Result"
+msgstr ""
+
+#: app/views/coridors/attestation.rhtml:16
+msgid "At."
+msgstr ""
+
+#: app/views/coridors/attestation.rhtml:45
+msgid "In these coridor are no students for atestation"
+msgstr ""
+
 #: app/views/coridors/list.rhtml:1
 msgid "Listing coridors"
 msgstr ""
 
-#: app/views/coridors/list.rhtml:24 app/views/study_plans/_study_plan.rhtml:28
+#: app/views/coridors/list.rhtml:25
+msgid "Atestation"
+msgstr ""
+
+#: app/views/coridors/list.rhtml:26 app/views/study_plans/_study_plan.rhtml:28
 msgid "Subjects"
 msgstr ""
 
@@ -1864,12 +1911,6 @@ msgstr ""
 #: app/views/exams/_show_protocol.rhtml:29
 #: app/views/exams/save_external_subject.rhtml:30
 msgid "Questions"
-msgstr ""
-
-#: app/views/exams/_detail_form.rhtml:40 app/views/exams/_table_list.rhtml:11
-#: app/views/exams/save_external_subject.rhtml:32
-#: app/views/final_exam_terms/protocol.rhtml:37
-msgid "Result"
 msgstr ""
 
 #: app/views/exams/_examined_student_form.rhtml:4

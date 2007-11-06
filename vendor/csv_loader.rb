@@ -203,7 +203,7 @@ class CSVLoader
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if t = Tutor.find_by_uic(row[0])
         u = User.new
-        u.login = u.password_confirmation = u.password = row[1]
+        u.login = row[1]
         u.person = t
         u.roles << Role.find(4)
         u.save
@@ -269,7 +269,7 @@ class CSVLoader
             sp.id = row[11]
             sp.save
             u = User.new
-            u.login = u.password = u.password_confirmation = row[13]
+            u.login = row[13]
             u.person = s
             u.save
             s.save
@@ -366,7 +366,7 @@ class CSVLoader
       i.coridor = Coridor.find(row[4])
       i.study = Study.find(row[5])
       i.tutor = Tutor.find_by_uic(row[6])
-      u.password = u.password_confirmation = u.login = row[7]
+      u.login = row[7]
       s.index = i
       s.id = row[0]
       @@mylog.debug "Student #{s.display_name}" if s.save
@@ -392,7 +392,7 @@ class CSVLoader
       i.coridor = Coridor.find(row[4])
       i.study = Study.find(row[5])
       i.tutor = Tutor.find(row[6])
-      u.password = u.password_confirmation = u.login = row[7]
+      u.login = row[7]
       s.index = i
       s.id = row[0]
       @@mylog.debug "Student #{s.display_name}" if s.save
@@ -419,7 +419,7 @@ class CSVLoader
       i.study = Study.find(row[5])
       i.tutor = Tutor.find_by_uic(row[6])
       i.payment_id = row[10]
-      u.password = u.password_confirmation = u.login = row[7]
+      u.login = row[7]
       s.index = i
       s.id = row[0]
       @@mylog.debug "Student #{s.display_name}" if s.save
@@ -470,7 +470,7 @@ class CSVLoader
       end
       unless User.find_by_login(row[6])
         u = User.new(:login => row[6], :password => row[6], :person_id => row[0])
-        u.password_confirmation = u.password
+        
         u.save
         @@mylog.info "Saving user #{u.login}"
       else
@@ -575,7 +575,7 @@ class CSVLoader
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if Student.exists?(row[0])
         u = Student.find(row[0]).user
-        u.login = u.password = u.password_confirmation = row[1] if u
+        u.login = row[1] if u
         u.save if u
         i = Student.find(row[0]).index 
         i.study = Study.find(row[2]) if i
@@ -590,7 +590,7 @@ class CSVLoader
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if Student.exists?(row[0])
         u = User.new
-        u.login = u.password = u.password_confirmation = row[1] if u
+        u.login = row[1] if u
         u.person = Student.find(row[0])
         u.save if u
         i = Student.find(row[0]).index 
@@ -626,7 +626,7 @@ class CSVLoader
       @@mylog.debug "department #{de.department.name}"
       de.save(false)
       u = User.new
-      u.login = u.password = u.password_confirmation = row[7]
+      u.login = row[7]
       u.person = ds
       u.roles << Role.find(7)
       u.save
@@ -692,7 +692,7 @@ class CSVLoader
         i.department = Department.find(row[11])
         s.uic = row[13]
         s.id = row[14]
-        u.login = u.password = u.password_confirmation = row[15]
+        u.login = row[15]
         s.index = i
         s.save
         u.person = s
@@ -763,7 +763,7 @@ class CSVLoader
         pass << 'ik'
         @@mylog.debug "Users pass #{row[3]} is too short. Using #{pass}."
       end
-      u.password = u.password_confirmation = pass
+      u.password = pass
       u.roles << Role.find(3)
       u.person = Student.find(row[0])
       u.save
@@ -781,7 +781,7 @@ class CSVLoader
         pass << 'ik'
         @@mylog.debug "Users pass #{row[3]} is too short. Using #{pass}."
       end
-      u.password = u.password_confirmation = pass
+      u.password = pass
       u.roles << Role.find(4)
       u.person = Tutor.find(row[0])
       u.save

@@ -1,0 +1,46 @@
+<h5><%= _('Listing attestations') %></h5>
+<div class='links'>
+  <%= link_to(_("back"), {:controller => 'coridors'}) %>
+</div>
+  <%if @indices != []%>
+<table>
+  <tr>
+    <th><%= _('Firstname') %></th>
+    <th><%= _('Lastname') %></th>
+    <th><%= _('Y.') %></th>
+    <th><%= _('Tutor')%></th>
+    <th><%= _('Form of study') %></th>
+    <th><%= _('P/F')%></th>
+    <th><%= _('Enrolled on')%></th>
+    <th><%= _('Result')%></th>
+    <th><%= _('At.')%></th>
+  </tr>
+  
+<% for index in @indices %>
+  <%if index.student && index.study_plan%>
+    <tr>
+      <td><%= index.student.firstname %></td>
+      <td><%= index.student.lastname %></td>
+      <td><%= index.year %></td>
+      <td><%= index.tutor.display_name %> </td>
+      <td><%= index.study.name %></td>
+      <td><%= index.study_plan.atestation_subjects_ratio %></td>
+      <td><%= index.enrolled_on.strftime('%d. %m. %Y') %></td>
+      <td>
+        <% if index.has_study_plan_and_actual_atestation? %>
+          <%= show_result(index.study_plan.atestation.dean_statement.result) %></td>
+        <% end %>
+      <td>
+        <% if index.study_plan.atested_actual? == true %>
+          <%=_('yes')%>
+        <% else %>
+          <%= _('no')%>
+        <% end %>
+      </td>
+  <% end %>
+  </tr>
+<%end%>
+</table>
+  <% else %>
+    <%=_('In these coridor are no students for atestation')%>
+  <% end%>

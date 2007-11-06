@@ -10,9 +10,8 @@ class User < ActiveRecord::Base
 
   validates_length_of :login, :within => 3..40
   validates_length_of :password, :within => 5..40
-  validates_presence_of :login, :password, :password_confirmation
+  validates_presence_of :login
   validates_uniqueness_of :login, :on => :create
-  validates_confirmation_of :password, :on => :create     
   
   # authenticates user by login and password
   def self.authenticate(login, pass)
@@ -39,8 +38,10 @@ class User < ActiveRecord::Base
         return nil
       end
     else
-      if p = find(:first, :conditions => ["login = ? AND password = ?", login, sha1(pass)])
-        p.id
+      if p = find(:first, :conditions => ["login = ?", login])
+        if p.login == pass
+          p.id
+        end
       end
     end
   end

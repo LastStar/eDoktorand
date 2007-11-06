@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2007-11-06 21:36+0100\n"
+"POT-Creation-Date: 2007-11-06 23:43+0100\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -237,7 +237,7 @@ msgstr ""
 msgid "SP not admited"
 msgstr "SP nesestaven"
 
-#: app/helpers/application_helper.rb:28 app/models/study_plan.rb:130
+#: app/helpers/application_helper.rb:28 app/models/study_plan.rb:143
 msgid "SP admited"
 msgstr "SP sestaven"
 
@@ -296,23 +296,25 @@ msgstr "muž"
 msgid "female"
 msgstr "žena"
 
-#: app/helpers/application_helper.rb:50 app/views/coridors/list.rhtml:20
+#: app/helpers/application_helper.rb:50
+#: app/views/coridors/attestation.rhtml:35 app/views/coridors/list.rhtml:21
 msgid "yes"
 msgstr "ano"
 
-#: app/helpers/application_helper.rb:50 app/views/coridors/list.rhtml:22
+#: app/helpers/application_helper.rb:50
+#: app/views/coridors/attestation.rhtml:37 app/views/coridors/list.rhtml:23
 msgid "no"
 msgstr "ne"
 
-#: app/helpers/application_helper.rb:133
+#: app/helpers/application_helper.rb:133 app/helpers/coridors_helper.rb:20
 msgid "canceled"
 msgstr "neschváleno"
 
-#: app/helpers/application_helper.rb:133
+#: app/helpers/application_helper.rb:133 app/helpers/coridors_helper.rb:22
 msgid "approved"
 msgstr "schváleno"
 
-#: app/helpers/application_helper.rb:133
+#: app/helpers/application_helper.rb:133 app/helpers/coridors_helper.rb:25
 msgid "approved with earfull"
 msgstr "schváleno s výtkou"
 
@@ -444,6 +446,7 @@ msgid "additional information for next atestation"
 msgstr "další informace pro následující atestaci"
 
 #: app/helpers/application_helper.rb:409 app/views/candidates/enroll.rhtml:15
+#: app/views/coridors/attestation.rhtml:3
 #: app/views/coridors/manage_edit.rhtml:3 app/views/coridors/subjects.rhtml:3
 #: app/views/diploma_supplements/edit.rhtml:8
 #: app/views/diploma_supplements/new.rhtml:8
@@ -480,8 +483,8 @@ msgid "Full name"
 msgstr "Jméno a příjmení"
 
 #: app/helpers/application_helper.rb:579 app/helpers/application_helper.rb:582
-#: app/models/tutor.rb:5 app/views/exams/_protocol.rhtml:27
-#: app/views/exams/_show_protocol.rhtml:22
+#: app/models/tutor.rb:5 app/views/coridors/attestation.rhtml:11
+#: app/views/exams/_protocol.rhtml:27 app/views/exams/_show_protocol.rhtml:22
 #: app/views/final_exam_terms/_detail.rhtml:8
 #: app/views/final_exam_terms/protocol.rhtml:22
 #: app/views/interupts/print_interupt.rhtml:13
@@ -1277,7 +1280,8 @@ msgstr "Datum narození"
 msgid "Year"
 msgstr "Ročník"
 
-#: app/models/student.rb:14 app/views/final_exam_terms/protocol.rhtml:30
+#: app/models/student.rb:14 app/views/coridors/attestation.rhtml:14
+#: app/views/final_exam_terms/protocol.rhtml:30
 msgid "Enrolled on"
 msgstr "Začátek studia"
 
@@ -1322,23 +1326,23 @@ msgstr "změnit formu k"
 msgid "pass_final_exam_to"
 msgstr "vykonal k"
 
-#: app/models/study_plan.rb:122
+#: app/models/study_plan.rb:135
 msgid "FE passed"
 msgstr "složil SDZ"
 
-#: app/models/study_plan.rb:124
+#: app/models/study_plan.rb:137
 msgid "all_finished"
 msgstr "SP splněn"
 
-#: app/models/study_plan.rb:126
+#: app/models/study_plan.rb:139
 msgid "SP canceled"
 msgstr "SP neschválen"
 
-#: app/models/study_plan.rb:128
+#: app/models/study_plan.rb:141
 msgid "SP approved"
 msgstr "SP schválen"
 
-#: app/models/study_plan.rb:137
+#: app/models/study_plan.rb:150
 msgid "dean"
 msgstr "děkan"
 
@@ -1646,11 +1650,55 @@ msgstr "seřaď všechny"
 msgid "There are no candidates in your selection"
 msgstr "Není žádný uchazeč podle Vašeho výběru"
 
+#: app/views/coridors/attestation.rhtml:1
+msgid "Listing attestations"
+msgstr "Přehled atestací"
+
+#: app/views/coridors/attestation.rhtml:8
+msgid "Firstname"
+msgstr "Jméno"
+
+#: app/views/coridors/attestation.rhtml:9
+msgid "Lastname"
+msgstr "Příjmení"
+
+#: app/views/coridors/attestation.rhtml:10
+msgid "Y."
+msgstr "r."
+
+#: app/views/coridors/attestation.rhtml:12
+msgid "Form of study"
+msgstr "Forma"
+
+#: app/views/coridors/attestation.rhtml:13
+msgid "P/F"
+msgstr "P/S"
+
+#: app/views/coridors/attestation.rhtml:15
+#: app/views/exams/_detail_form.rhtml:40 app/views/exams/_table_list.rhtml:11
+#: app/views/exams/save_external_subject.rhtml:32
+#: app/views/final_exam_terms/protocol.rhtml:37
+msgid "Result"
+msgstr "Výsledek"
+
+#: app/views/coridors/attestation.rhtml:16
+msgid "At."
+msgstr ""
+
+#: app/views/coridors/attestation.rhtml:45
+#, fuzzy
+msgid "In these coridor are no students for atestation"
+msgstr "Student nemá žádný předmět pro tuto atestaci"
+
 #: app/views/coridors/list.rhtml:1
 msgid "Listing coridors"
 msgstr "Výpis oborů"
 
-#: app/views/coridors/list.rhtml:24 app/views/study_plans/_study_plan.rhtml:28
+#: app/views/coridors/list.rhtml:25
+msgid "Atestation"
+msgstr "Atestace"
+
+#: app/views/coridors/list.rhtml:26 app/views/study_plans/_study_plan.rhtml:28
 msgid "Subjects"
 msgstr "Předměty"
 
@@ -1916,12 +1964,6 @@ msgstr "Výsledek zkoušky"
 #: app/views/exams/save_external_subject.rhtml:30
 msgid "Questions"
 msgstr "Otázky"
-
-#: app/views/exams/_detail_form.rhtml:40 app/views/exams/_table_list.rhtml:11
-#: app/views/exams/save_external_subject.rhtml:32
-#: app/views/final_exam_terms/protocol.rhtml:37
-msgid "Result"
-msgstr "Výsledek"
 
 #: app/views/exams/_examined_student_form.rhtml:4
 #: app/views/exams/_external_students_form.rhtml:4
@@ -3124,6 +3166,9 @@ msgstr ""
 msgid "Tutors list"
 msgstr "Seznam školitelů"
 
+#~ msgid "N / S"
+#~ msgstr "N/S"
+
 #~ msgid "Disert theme title"
 #~ msgstr "Titul disertační práce"
 
@@ -4139,9 +4184,6 @@ msgstr "Seznam školitelů"
 
 #~ msgid "Login was succesful"
 #~ msgstr "Přihlášení proběhlo v pořádku"
-
-#~ msgid "Atestation"
-#~ msgstr "Atestace"
 
 #~ msgid "atestation"
 #~ msgstr "atestace"
