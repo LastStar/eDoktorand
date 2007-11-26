@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="pragma" content="nocache"/>
+  <meta http-equiv="expires" content="Tue Oct 25 16:45:58 CEST 2005"/>
+  <title>Edoktorand</title>
+  <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
+  <link href="/stylesheets/standard.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <img id="Head" src="/images/header.jpg" width="760" height="77" alt="logo"/>
+  <div id="main">
+    <h4>Právě probíhá udržba systému, vraťte se prosim později.</h4>
+    <h4>There is undergoing maintenance, please come back later.</h4>
+  </div>
+</body>
+</html>
+
