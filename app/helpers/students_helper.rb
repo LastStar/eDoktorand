@@ -261,7 +261,7 @@ module StudentsHelper
   def form_select(options = {})
     ops = [['---', '0'], [_("present"), 1], [_("combined"), 2]]
     content_tag('select', options_for_select(ops), 
-                {'id' => "filter_by_form", 'name' => "filter_by_form"})
+                {'id' => "form", 'name' => "form"})
   end
 
   # prints select for years
@@ -269,7 +269,7 @@ module StudentsHelper
     ops = [['---', '0'], [_("1. year"), 1], [_("2. year"), 2], 
             [_("3. year"), 3], [_('x'), 4]]
     content_tag('select', options_for_select(ops), 
-      {'id' => "filter_by_year", 'name' => "filter_by_year"})
+      {'id' => "year", 'name' => "year"})
   end
 
   def interupt_to_info(index)

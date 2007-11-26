@@ -40,12 +40,10 @@ class StudentsController < ApplicationController
   
   # multiple filtering
   def multiple_filter
-    @indices = Index.find_by_criteria(:faculty => params[:filter_by_faculty],
-      :year => params[:filter_by_year].to_i, :department => 
-      params[:filter_by_department].to_i, :coridor => 
-      params[:filter_by_coridor].to_i, :status => params[:filter_by_status],
-      :study_status => params[:filter_by_study_status], :form => 
-      params[:filter_by_form].to_i, :user => @user, :order => 'people.lastname')
+    options = params.to_hash
+    options[:user] = @user
+    options[:order] = 'people.lastname'
+    @indices = Index.find_by_criteria(options)
     render(:partial => 'list')
   end
   

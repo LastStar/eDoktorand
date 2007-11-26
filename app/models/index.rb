@@ -169,8 +169,7 @@ class Index < ActiveRecord::Base
       elsif options[:faculty] && options[:faculty] != '0'
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : \
           Faculty.find(options[:faculty])
-        # TODO fix 
-        conditions = ["indices.department_id IN (#{faculty.departments_for_sql})"]
+        conditions = ["indices.department_id IN (?)", faculty.departments]
       else
         conditions  = ['NULL IS NULL']
       end
@@ -269,18 +268,18 @@ class Index < ActiveRecord::Base
   # search on selected criteria
   def self.find_by_criteria(options = {})
     conditions = ['']
-    if options[:department] && options[:department] != 0
+    if options[:department] && options[:department].to_i != 0
       conditions.first << ' AND indices.department_id = ?'
       conditions << options[:department]
-    elsif options[:coridor] && options[:coridor] != 0
+    elsif options[:coridor] && options[:coridor].to_i != 0
       conditions.first << ' AND indices.coridor_id = ?'
       conditions << options[:coridor]
     end
-    if options[:form] && options[:form] != 0
+    if options[:form] && options[:form].to_i != 0
       conditions.first << ' AND indices.study_id = ?'
       conditions << options[:form]
     end
-    if options[:study_status] && options[:study_status] != '0'
+    if options[:study_status] && options[:study_status].to_i != '0'
       case options[:study_status].to_i
       when 1, 5
         conditions.first << ' AND indices.finished_on IS NULL' +
@@ -298,18 +297,19 @@ class Index < ActiveRecord::Base
     indices = Index.find_for(options[:user], :conditions => conditions, 
                             :faculty => options[:faculty], 
                             :order => options[:order])
+    year = options[:year].to_i
     if options[:study_status].to_i == 5
-      options[:year] = 4
+      year = 4
     end
-    if options[:year] != 0 
-      if options[:year] == 4
+    if year != 0 
+      if year == 4
         indices.reject! {|i| i.year < 4}
       else
-        indices.reject! {|i| i.year != options[:year]}
+        indices.reject! {|i| i.year != year}
       end
     end
-    if options[:status] && options[:status] != '0'
-      case options[:status]
+    if options[:status] && options[:status].to_i != '0'
+      case options[:status].to_i
       when '1'
         indices.reject! {|i| i.study_plan && i.study_plan.admited?}
       when '2'
