@@ -74,7 +74,13 @@
       <%= atestation_detail(study_plan) %>
     </ul>
   <% end %>
-  <% if study_plan.approvement %>
+
+  <% if index.claimed_final_application? %>
+    <h5><%= _("final exam approvement process") %></h5>
+    <ul id='approvement'>
+      <%= print_statements(index.approvement) %>
+    </ul>
+  <% elsif study_plan.approvement %>
     <h5><%= _("study plan approvement process") %></h5>
     <ul id='approvement'>
       <%= print_statements(study_plan.approvement) %>

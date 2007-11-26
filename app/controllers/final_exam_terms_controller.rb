@@ -22,7 +22,8 @@ class FinalExamTermsController < ApplicationController
   def confirm_claim
     index = @user.person.index
     index.claim_final_exam!(params[:study_plan][:final_areas])
-    if params[:literature_review_file]
+    if params[:literature_review_file] &&
+      params[:literature_review_file].is_a?(Tempfile)
       index.disert_theme.save_literature_review(params[:literature_review_file])
     end
     index.disert_theme.update_attributes(params[:disert_theme])

@@ -1,13 +1,20 @@
+<% index = exam_term.index %>
 <table class='two_columns'>
 <% if many %>
 <tr>
   <th><%= _('Full name') %>: </th>
-  <td><%= exam_term.index.student.display_name %></td>
+  <td><%= index.student.display_name %></td>
 </tr>
 <tr>
   <th><%= _('Tutor') %>: </th>
-  <td><%= exam_term.index.tutor.display_name %></td>
+  <td><%= index.tutor.display_name %></td>
 </tr>
+<% if index.consultant  %>
+<tr>
+  <th><%= _('Consultant') %>: </th>
+  <td><%= index.consultant %></td>
+</tr>
+<% end %>
 <tr>
   <th><%= _('Start time') %>: </th>
   <td><%= exam_term.start_time %></td>
@@ -23,9 +30,19 @@
 </tr>
 <% end %>
 <tr>
+  <th><%= _('Literature review') %>:</th>
+  <td><%= index.disert_theme.literature_review %></td>
+</tr>
+<tr>
   <th><%= _('Chairman') %>: </th>
   <td><%= exam_term.chairman.display_name %></td>
 </tr>
+<% unless exam_term.opponent.empty? %>
+<tr>
+  <th><%= _('Opponent') %>:</th>
+  <td><%= exam_term.opponent %> </td> 
+</tr>
+<% end %>
 </table>
 <table class='three_columns'>
 <tr>

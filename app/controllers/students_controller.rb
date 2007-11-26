@@ -179,7 +179,6 @@ class StudentsController < ApplicationController
   end
 
   def edit_consultant
-    #@student = Student.find(params[:id], :include => :index)
     @index = Index.find(params[:id])
   end
 

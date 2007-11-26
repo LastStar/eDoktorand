@@ -225,7 +225,7 @@ module StudentsHelper
   end
 
   # prints select for coridor
-  def coridor_select(options = {})
+  def coridor_select(options = {:include_empty => true})
     ops = Coridor.find(:user => @user).map {|c| [c.name, c.id]}
     ops = [['---', '0']].concat(ops) if options[:include_empty]
     content_tag('select', options_for_select(ops),

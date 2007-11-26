@@ -87,7 +87,7 @@ class Index < ActiveRecord::Base
 
   # returns dean of department for this student
   def dean
-    department.faculty.dean
+    faculty.dean
   end
 
   # returns if study plan is finished

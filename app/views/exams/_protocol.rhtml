@@ -41,7 +41,7 @@ exam.index.department.name %>
 </div>
 <div>
 <%= _("1. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
-exam.first_examinator.display_name if exam.first_examinator%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+exam.first_examinator.display_name_with_title if exam.first_examinator%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <% unless exam.first_examinator %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<% end %><%= _("Signature")
 %>:&nbsp;&nbsp;<br /><br />  
 <% if exam.second_examinator %>

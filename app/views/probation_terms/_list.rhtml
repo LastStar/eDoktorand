@@ -10,10 +10,10 @@
   <div class='longinfo'><%=_("starting time")%>: <%= probation_term.start_time %></div>
   <%=_("date")%>: <%= probation_term.date.strftime("%d. %m. %Y") %></li>
   <li><%= _("1. examinator") %>:
-  &nbsp;<%= probation_term.first_examinator.display_name %></li>
+  &nbsp;<%= probation_term.first_examinator.display_name_with_title %></li>
 <% if probation_term.second_examinator %>
   <li><%= _("2. examinator") %>:
-  &nbsp;<%= probation_term.second_examinator.display_name %></li>
+  &nbsp;<%= probation_term.second_examinator.display_name_with_title %></li>
 <% end %>
 <% unless probation_term.empty_note? %>
   <li><%= _("note") %>:&nbsp;<%= probation_term.note %></li>

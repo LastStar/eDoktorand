@@ -34,10 +34,10 @@ exam.index.department.name %>
 </div>
 <div>
 <%= _("1. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
-exam.first_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature")
+exam.first_examinator.display_name_with_title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature")
 %>:&nbsp;&nbsp;<br /><br />  
 <% if exam.second_examinator %>
-<%= _("2. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature") %>:&nbsp;&nbsp;<br /><br /> 
+<%= _("2. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name_with_title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature") %>:&nbsp;&nbsp;<br /><br /> 
 <% end %>
 </div>
 <div id="examPrintMessage">

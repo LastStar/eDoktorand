@@ -539,7 +539,7 @@ li p {
 }
 table.three_columns {
   margin-left: 2em;
-  width: 100%;
+  width: 90%;
 }
 table.three_columns th {
   text-align: left;
@@ -548,7 +548,7 @@ table.three_columns td {
   padding-top: .8ex;
 }
 table.two_columns {
-  width: 80%;
+  width: 90%;
   margin-left: 2em;
 }
 table.two_columns th {
@@ -556,6 +556,7 @@ table.two_columns th {
   width: 50%;
 }
 table.two_columns td {
+  border: none;
   padding-top: .5ex;
 }
 .right_date {
@@ -563,7 +564,7 @@ table.two_columns td {
   text-align: right;
 }
 div#name_search { padding-bottom: 1ex;}
-div#name_search label, input {font-size: large;}
 div#name_search label {padding-top: 0}
 div#fast_filters {padding-bottom: 2ex;}
 div#fast_filters ul li {list-style: none; float: left; border: none;  width: 15ex; text-align: center;padding-right: 1ex;}
+#name_search input {font-size: large}

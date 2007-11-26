@@ -61,7 +61,7 @@ msgstr ""
 msgid "Final exam terms"
 msgstr ""
 
-#: app/controllers/final_exam_terms_controller.rb:33
+#: app/controllers/final_exam_terms_controller.rb:34
 msgid "Creating final exam term"
 msgstr ""
 
@@ -136,32 +136,32 @@ msgstr ""
 msgid "Scholarships"
 msgstr ""
 
-#: app/controllers/students_controller.rb:254
+#: app/controllers/students_controller.rb:252
 msgid "Students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:265
+#: app/controllers/students_controller.rb:263
 msgid "waiting for my review"
 msgstr ""
 
-#: app/controllers/students_controller.rb:265
+#: app/controllers/students_controller.rb:263
 msgid "all students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:266
+#: app/controllers/students_controller.rb:264
 msgid "all studying"
 msgstr ""
 
-#: app/controllers/students_controller.rb:269
+#: app/controllers/students_controller.rb:267
 msgid "my students"
 msgstr ""
 
-#: app/controllers/students_controller.rb:269
+#: app/controllers/students_controller.rb:267
 msgid "my studying"
 msgstr ""
 
 #: app/controllers/study_plans_controller.rb:10
-#: app/views/shared/_study_detail.rhtml:84
+#: app/views/shared/_study_detail.rhtml:90
 #: app/views/study_plans/_create_done.rhtml:1
 #: app/views/study_plans/_create_head.rhtml:1
 #: app/views/study_plans/create_by_other.rhtml:12
@@ -195,201 +195,130 @@ msgstr ""
 msgid "seminar subjects have to be different"
 msgstr ""
 
-#: app/helpers/application_helper.rb:21
-msgid "1. year"
-msgstr ""
-
-#: app/helpers/application_helper.rb:21
-msgid "2. year"
-msgstr ""
-
-#: app/helpers/application_helper.rb:22
-msgid "3. year"
-msgstr ""
-
-#: app/helpers/application_helper.rb:22
-msgid "x"
-msgstr ""
-
-#: app/helpers/application_helper.rb:27
-msgid "SP not admited"
-msgstr ""
-
-#: app/helpers/application_helper.rb:28 app/models/study_plan.rb:143
-msgid "SP admited"
-msgstr ""
-
-#: app/helpers/application_helper.rb:28
-msgid "SP approved by tutor"
-msgstr ""
-
-#: app/helpers/application_helper.rb:29
-msgid "SP approved by leader"
-msgstr ""
-
-#: app/helpers/application_helper.rb:29
-msgid "SP approved by dean"
-msgstr ""
-
-#: app/helpers/application_helper.rb:34 app/models/index.rb:362
-msgid "studying"
-msgstr ""
-
-#: app/helpers/application_helper.rb:35 app/models/index.rb:356
-#: app/views/candidates/_history.rhtml:2
-msgid "finished"
-msgstr ""
-
-#: app/helpers/application_helper.rb:35 app/models/index.rb:115
-#: app/models/index.rb:144 app/models/index.rb:358
-msgid "interupted"
-msgstr ""
-
-#: app/helpers/application_helper.rb:35 app/helpers/students_helper.rb:13
-#: app/models/index.rb:115 app/models/index.rb:144 app/models/index.rb:352
-msgid "absolved"
-msgstr ""
-
-#: app/helpers/application_helper.rb:35 app/models/index.rb:360
-msgid "continue"
-msgstr ""
-
-#: app/helpers/application_helper.rb:40
-#: app/views/candidates/_corridor_summary.rhtml:7
-#: app/views/candidates/_department_summary.rhtml:7
-msgid "present"
-msgstr ""
-
-#: app/helpers/application_helper.rb:41
-#: app/views/candidates/_corridor_summary.rhtml:9
-#: app/views/candidates/_department_summary.rhtml:9
-msgid "combined"
-msgstr ""
-
-#: app/helpers/application_helper.rb:45 lib/genderize.rb:13
+#: app/helpers/application_helper.rb:11 lib/genderize.rb:13
 msgid "male"
 msgstr ""
 
-#: app/helpers/application_helper.rb:45 lib/genderize.rb:14
+#: app/helpers/application_helper.rb:11 lib/genderize.rb:14
 msgid "female"
 msgstr ""
 
-#: app/helpers/application_helper.rb:50
+#: app/helpers/application_helper.rb:16
 #: app/views/coridors/attestation.rhtml:35 app/views/coridors/list.rhtml:21
 msgid "yes"
 msgstr ""
 
-#: app/helpers/application_helper.rb:50
+#: app/helpers/application_helper.rb:16
 #: app/views/coridors/attestation.rhtml:37 app/views/coridors/list.rhtml:23
 msgid "no"
 msgstr ""
 
-#: app/helpers/application_helper.rb:133 app/helpers/coridors_helper.rb:20
+#: app/helpers/application_helper.rb:99 app/helpers/coridors_helper.rb:20
 msgid "canceled"
 msgstr ""
 
-#: app/helpers/application_helper.rb:133 app/helpers/coridors_helper.rb:22
+#: app/helpers/application_helper.rb:99 app/helpers/coridors_helper.rb:22
 msgid "approved"
 msgstr ""
 
-#: app/helpers/application_helper.rb:133 app/helpers/coridors_helper.rb:25
+#: app/helpers/application_helper.rb:99 app/helpers/coridors_helper.rb:25
 msgid "approved with earfull"
 msgstr ""
 
-#: app/helpers/application_helper.rb:153
+#: app/helpers/application_helper.rb:119
 msgid "tutor statement"
 msgstr ""
 
-#: app/helpers/application_helper.rb:154
+#: app/helpers/application_helper.rb:120
 msgid "leader statement"
 msgstr ""
 
-#: app/helpers/application_helper.rb:155
+#: app/helpers/application_helper.rb:121
 msgid "dean statement"
 msgstr ""
 
-#: app/helpers/application_helper.rb:207 app/views/scholarships/list.rhtml:17
+#: app/helpers/application_helper.rb:173 app/views/scholarships/list.rhtml:17
 #: app/views/shared/candidate_detail.rhtml:6
 msgid "Birth number"
 msgstr ""
 
-#: app/helpers/application_helper.rb:216
+#: app/helpers/application_helper.rb:182
 msgid "Birth on"
 msgstr ""
 
-#: app/helpers/application_helper.rb:223 app/helpers/application_helper.rb:320
+#: app/helpers/application_helper.rb:189 app/helpers/application_helper.rb:286
 #: app/views/exams/_show_protocol.rhtml:44
 msgid "print"
 msgstr ""
 
-#: app/helpers/application_helper.rb:229 app/helpers/application_helper.rb:233
-#: app/helpers/application_helper.rb:248 app/views/shared/_main_menu.rhtml:21
+#: app/helpers/application_helper.rb:195 app/helpers/application_helper.rb:199
+#: app/helpers/application_helper.rb:214 app/views/shared/_main_menu.rhtml:21
 #: app/views/shared/_main_menu.rhtml:25
 msgid "exams"
 msgstr ""
 
-#: app/helpers/application_helper.rb:231 app/helpers/application_helper.rb:240
-#: app/helpers/application_helper.rb:243 app/views/exam_terms/list.rhtml:9
+#: app/helpers/application_helper.rb:197 app/helpers/application_helper.rb:206
+#: app/helpers/application_helper.rb:209 app/views/exam_terms/list.rhtml:9
 #: app/views/shared/_main_menu.rhtml:17
 msgid "candidates"
 msgstr ""
 
-#: app/helpers/application_helper.rb:232 app/views/shared/_main_menu.rhtml:18
+#: app/helpers/application_helper.rb:198 app/views/shared/_main_menu.rhtml:18
 msgid "exam_terms"
 msgstr ""
 
-#: app/helpers/application_helper.rb:235
+#: app/helpers/application_helper.rb:201
 msgid "diplomas"
 msgstr ""
 
-#: app/helpers/application_helper.rb:236
+#: app/helpers/application_helper.rb:202
 msgid "tutors"
 msgstr ""
 
-#: app/helpers/application_helper.rb:237
+#: app/helpers/application_helper.rb:203
 msgid "coridors"
 msgstr ""
 
-#: app/helpers/application_helper.rb:246 app/helpers/application_helper.rb:267
+#: app/helpers/application_helper.rb:212 app/helpers/application_helper.rb:233
 #: app/views/shared/_main_menu.rhtml:6 app/views/shared/_main_menu.rhtml:23
 msgid "probation terms"
 msgstr ""
 
-#: app/helpers/application_helper.rb:253
+#: app/helpers/application_helper.rb:219
 #: app/helpers/probation_terms_helper.rb:49
 #: app/views/shared/_main_menu.rhtml:27
 msgid "students"
 msgstr ""
 
-#: app/helpers/application_helper.rb:256 app/helpers/application_helper.rb:260
+#: app/helpers/application_helper.rb:222 app/helpers/application_helper.rb:226
 #: app/views/shared/_main_menu.rhtml:29 app/views/shared/_main_menu.rhtml:30
 msgid "logoff"
 msgstr ""
 
-#: app/helpers/application_helper.rb:259 app/views/shared/_main_menu.rhtml:29
+#: app/helpers/application_helper.rb:225 app/views/shared/_main_menu.rhtml:29
 msgid "do you really want to"
 msgstr ""
 
-#: app/helpers/application_helper.rb:270 app/views/shared/_main_menu.rhtml:9
+#: app/helpers/application_helper.rb:236 app/views/shared/_main_menu.rhtml:9
 #: app/views/study_plans/_study_plan_header.rhtml:1
 msgid "study plan"
 msgstr ""
 
-#: app/helpers/application_helper.rb:273 app/helpers/application_helper.rb:475
+#: app/helpers/application_helper.rb:239 app/helpers/application_helper.rb:441
 #: app/views/shared/_main_menu.rhtml:11 app/views/shared/_main_menu.rhtml:19
 msgid "scholarship"
 msgstr ""
 
-#: app/helpers/application_helper.rb:283
+#: app/helpers/application_helper.rb:249
 msgid "Birth place"
 msgstr ""
 
-#: app/helpers/application_helper.rb:355
+#: app/helpers/application_helper.rb:321
 msgid "see atestation informations"
 msgstr ""
 
-#: app/helpers/application_helper.rb:359
-#: app/helpers/probation_terms_helper.rb:63
+#: app/helpers/application_helper.rb:325
+#: app/helpers/probation_terms_helper.rb:63 app/views/students/_search.rhtml:2
 #: app/views/study_plans/_detail_form.rhtml:3
 #: app/views/study_plans/_disert_form.rhtml:47
 #: app/views/study_plans/_disert_form.rhtml:48
@@ -402,28 +331,28 @@ msgstr ""
 msgid "working..."
 msgstr ""
 
-#: app/helpers/application_helper.rb:372 app/helpers/application_helper.rb:376
-#: app/helpers/scholarships_helper.rb:49
+#: app/helpers/application_helper.rb:338 app/helpers/application_helper.rb:342
+#: app/helpers/scholarships_helper.rb:53
 msgid "approve"
 msgstr ""
 
-#: app/helpers/application_helper.rb:372
+#: app/helpers/application_helper.rb:338
 msgid "approve with earfull"
 msgstr ""
 
-#: app/helpers/application_helper.rb:372 app/helpers/application_helper.rb:376
+#: app/helpers/application_helper.rb:338 app/helpers/application_helper.rb:342
 msgid "cancel"
 msgstr ""
 
-#: app/helpers/application_helper.rb:385
+#: app/helpers/application_helper.rb:351
 msgid "methodology file (opens new window)"
 msgstr ""
 
-#: app/helpers/application_helper.rb:395
+#: app/helpers/application_helper.rb:361
 msgid "additional information for next atestation"
 msgstr ""
 
-#: app/helpers/application_helper.rb:409 app/views/candidates/enroll.rhtml:15
+#: app/helpers/application_helper.rb:375 app/views/candidates/enroll.rhtml:15
 #: app/views/coridors/attestation.rhtml:3
 #: app/views/coridors/manage_edit.rhtml:3 app/views/coridors/subjects.rhtml:3
 #: app/views/diploma_supplements/edit.rhtml:8
@@ -435,24 +364,24 @@ msgstr ""
 msgid "back"
 msgstr ""
 
-#: app/helpers/application_helper.rb:411
+#: app/helpers/application_helper.rb:377
 msgid "back and remove from list"
 msgstr ""
 
-#: app/helpers/application_helper.rb:471
+#: app/helpers/application_helper.rb:437
 msgid "finished on"
 msgstr ""
 
-#: app/helpers/application_helper.rb:527 app/helpers/students_helper.rb:134
+#: app/helpers/application_helper.rb:493 app/helpers/students_helper.rb:134
 msgid "final exam term"
 msgstr ""
 
-#: app/helpers/application_helper.rb:530
+#: app/helpers/application_helper.rb:496
 msgid "hide"
 msgstr ""
 
-#: app/helpers/application_helper.rb:566 app/helpers/application_helper.rb:569
-#: app/views/final_exam_terms/_detail.rhtml:4
+#: app/helpers/application_helper.rb:532 app/helpers/application_helper.rb:535
+#: app/views/final_exam_terms/_detail.rhtml:5
 #: app/views/scholarships/_prepare_list.rhtml:10
 #: app/views/scholarships/approve.rhtml:8
 #: app/views/shared/candidate_detail.rhtml:4
@@ -460,10 +389,10 @@ msgstr ""
 msgid "Full name"
 msgstr ""
 
-#: app/helpers/application_helper.rb:579 app/helpers/application_helper.rb:582
+#: app/helpers/application_helper.rb:545 app/helpers/application_helper.rb:548
 #: app/models/tutor.rb:5 app/views/coridors/attestation.rhtml:11
 #: app/views/exams/_protocol.rhtml:27 app/views/exams/_show_protocol.rhtml:22
-#: app/views/final_exam_terms/_detail.rhtml:8
+#: app/views/final_exam_terms/_detail.rhtml:9
 #: app/views/final_exam_terms/protocol.rhtml:22
 #: app/views/interupts/print_interupt.rhtml:13
 #: app/views/students/change_tutor.rhtml:13
@@ -473,7 +402,7 @@ msgstr ""
 msgid "Tutor"
 msgstr ""
 
-#: app/helpers/application_helper.rb:587
+#: app/helpers/application_helper.rb:555
 #: app/views/final_exam_terms/claim.rhtml:15
 msgid "literature review file"
 msgstr ""
@@ -699,32 +628,38 @@ msgstr ""
 msgid "Enroll student"
 msgstr ""
 
-#: app/helpers/scholarships_helper.rb:44
+#: app/helpers/scholarships_helper.rb:43
+msgid "Are you shure to pay all scholarships. Operation is irreversible"
+msgstr ""
+
+#: app/helpers/scholarships_helper.rb:46
 msgid "pay"
 msgstr ""
 
-#: app/helpers/scholarships_helper.rb:44
-msgid "are_you_sure_to_pay"
+#: app/helpers/scholarships_helper.rb:51
+msgid ""
+"Are you sure to approve scholarships like this. Operation is irreversible."
 msgstr ""
 
-#: app/helpers/scholarships_helper.rb:49
-msgid "are_you_sure_to_approve"
-msgstr ""
-
-#: app/helpers/scholarships_helper.rb:53
+#: app/helpers/scholarships_helper.rb:58
 msgid "control table"
 msgstr ""
 
-#: app/helpers/scholarships_helper.rb:57
+#: app/helpers/scholarships_helper.rb:62
 msgid "claim_accomodation_scholarship"
 msgstr ""
 
-#: app/helpers/scholarships_helper.rb:79
+#: app/helpers/scholarships_helper.rb:84
 msgid "recalculate"
 msgstr ""
 
-#: app/helpers/scholarships_helper.rb:80
+#: app/helpers/scholarships_helper.rb:85
 msgid "Are you sure to recalculate amounts?"
+msgstr ""
+
+#: app/helpers/students_helper.rb:13 app/helpers/students_helper.rb:255
+#: app/models/index.rb:115 app/models/index.rb:144 app/models/index.rb:356
+msgid "absolved"
 msgstr ""
 
 #: app/helpers/students_helper.rb:85
@@ -776,7 +711,73 @@ msgstr ""
 msgid "actions"
 msgstr ""
 
-#: app/helpers/students_helper.rb:285 app/models/diploma_supplement.rb:-
+#: app/helpers/students_helper.rb:245
+msgid "SP not admited"
+msgstr ""
+
+#: app/helpers/students_helper.rb:246 app/models/study_plan.rb:143
+msgid "SP admited"
+msgstr ""
+
+#: app/helpers/students_helper.rb:246
+msgid "SP approved by tutor"
+msgstr ""
+
+#: app/helpers/students_helper.rb:247
+msgid "SP approved by leader"
+msgstr ""
+
+#: app/helpers/students_helper.rb:247
+msgid "SP approved by dean"
+msgstr ""
+
+#: app/helpers/students_helper.rb:254 app/models/index.rb:366
+msgid "studying"
+msgstr ""
+
+#: app/helpers/students_helper.rb:254 app/models/index.rb:360
+#: app/views/candidates/_history.rhtml:2
+msgid "finished"
+msgstr ""
+
+#: app/helpers/students_helper.rb:255 app/models/index.rb:115
+#: app/models/index.rb:144 app/models/index.rb:362
+msgid "interupted"
+msgstr ""
+
+#: app/helpers/students_helper.rb:255 app/models/index.rb:364
+msgid "continue"
+msgstr ""
+
+#: app/helpers/students_helper.rb:262
+#: app/views/candidates/_corridor_summary.rhtml:7
+#: app/views/candidates/_department_summary.rhtml:7
+msgid "present"
+msgstr ""
+
+#: app/helpers/students_helper.rb:262
+#: app/views/candidates/_corridor_summary.rhtml:9
+#: app/views/candidates/_department_summary.rhtml:9
+msgid "combined"
+msgstr ""
+
+#: app/helpers/students_helper.rb:269
+msgid "1. year"
+msgstr ""
+
+#: app/helpers/students_helper.rb:269
+msgid "2. year"
+msgstr ""
+
+#: app/helpers/students_helper.rb:270
+msgid "3. year"
+msgstr ""
+
+#: app/helpers/students_helper.rb:270
+msgid "x"
+msgstr ""
+
+#: app/helpers/students_helper.rb:293 app/models/diploma_supplement.rb:-
 msgid "diploma supplement"
 msgstr ""
 
@@ -1154,7 +1155,7 @@ msgstr ""
 msgid "not_all_subject_finished"
 msgstr ""
 
-#: app/models/index.rb:354
+#: app/models/index.rb:358
 msgid "final application"
 msgstr ""
 
@@ -1358,6 +1359,10 @@ msgstr ""
 msgid "There was an error in application:"
 msgstr ""
 
+#: app/views/account/login.rhtml:1
+msgid "logging in..."
+msgstr ""
+
 #: app/views/account/login.rhtml:3
 msgid "Login form"
 msgstr ""
@@ -1477,7 +1482,7 @@ msgstr ""
 #: app/views/shared/_account_fields.rhtml:16
 #: app/views/shared/_approve_form.rhtml:14
 #: app/views/shared/candidate_edit.rhtml:115
-#: app/views/students/_search.rhtml:19 app/views/students/_search.rhtml:47
+#: app/views/students/_search.rhtml:7 app/views/students/_search.rhtml:35
 #: app/views/study_plans/_detail_form.rhtml:12
 #: app/views/study_plans/_full_form.rhtml:59
 msgid "commit"
@@ -1517,7 +1522,7 @@ msgstr ""
 #: app/views/candidates/_list.rhtml:38 app/views/candidates/admit.rhtml:7
 #: app/views/shared/candidate_detail.rhtml:25
 #: app/views/shared/candidate_edit.rhtml:68
-#: app/views/students/_search.rhtml:42
+#: app/views/students/_search.rhtml:31
 msgid "corridor"
 msgstr ""
 
@@ -1556,7 +1561,7 @@ msgstr ""
 
 #: app/views/candidates/admit.rhtml:12
 #: app/views/shared/candidate_edit.rhtml:92
-#: app/views/students/_search.rhtml:40
+#: app/views/students/_search.rhtml:29
 msgid "department"
 msgstr ""
 
@@ -1588,7 +1593,7 @@ msgstr ""
 msgid "by modification"
 msgstr ""
 
-#: app/views/candidates/list.rhtml:6 app/views/students/_search.rhtml:11
+#: app/views/candidates/list.rhtml:6
 msgid "filter"
 msgstr ""
 
@@ -1631,7 +1636,6 @@ msgstr ""
 #: app/views/coridors/attestation.rhtml:15
 #: app/views/exams/_detail_form.rhtml:40 app/views/exams/_table_list.rhtml:11
 #: app/views/exams/save_external_subject.rhtml:32
-#: app/views/final_exam_terms/protocol.rhtml:37
 msgid "Result"
 msgstr ""
 
@@ -1862,7 +1866,7 @@ msgid "chairman"
 msgstr ""
 
 #: app/views/exam_terms/list.rhtml:21
-msgid "There are no commissions for entrance examiantions in the system"
+msgid "There are no commissions for application exams in the system"
 msgstr ""
 
 #: app/views/exams/_detail_form.rhtml:4
@@ -1986,7 +1990,7 @@ msgstr ""
 #: app/views/exams/_protocol.rhtml:51 app/views/exams/_protocol.rhtml:54
 #: app/views/exams/_show_protocol.rhtml:37
 #: app/views/exams/_show_protocol.rhtml:40
-#: app/views/final_exam_terms/protocol.rhtml:42
+#: app/views/final_exam_terms/protocol.rhtml:39
 #: app/views/form/preview.rhtml:11 app/views/scholarships/claim.rhtml:105
 #: app/views/scholarships/claim.rhtml:117
 msgid "Signature"
@@ -1997,7 +2001,7 @@ msgstr ""
 msgid "2. examinator"
 msgstr ""
 
-#: app/views/exams/_search.rhtml:3 app/views/students/_search.rhtml:7
+#: app/views/exams/_search.rhtml:3 app/views/students/_search.rhtml:5
 msgid "search by lastname"
 msgstr ""
 
@@ -2046,25 +2050,40 @@ msgstr ""
 msgid "University"
 msgstr ""
 
-#: app/views/final_exam_terms/_detail.rhtml:12
+#: app/views/final_exam_terms/_detail.rhtml:14
+#: app/views/shared/_personal_detail.rhtml:28
+msgid "Consultant"
+msgstr ""
+
+#: app/views/final_exam_terms/_detail.rhtml:19
 msgid "Start time"
 msgstr ""
 
-#: app/views/final_exam_terms/_detail.rhtml:17
+#: app/views/final_exam_terms/_detail.rhtml:24
 msgid "Date and time"
 msgstr ""
 
-#: app/views/final_exam_terms/_detail.rhtml:21
+#: app/views/final_exam_terms/_detail.rhtml:28
 msgid "Room"
 msgstr ""
 
-#: app/views/final_exam_terms/_detail.rhtml:26
-#: app/views/final_exam_terms/protocol.rhtml:72
+#: app/views/final_exam_terms/_detail.rhtml:33
+#: app/views/final_exam_terms/protocol.rhtml:66
+msgid "Literature review"
+msgstr ""
+
+#: app/views/final_exam_terms/_detail.rhtml:37
+#: app/views/final_exam_terms/protocol.rhtml:73
 msgid "Chairman"
 msgstr ""
 
-#: app/views/final_exam_terms/_detail.rhtml:32
-#: app/views/final_exam_terms/protocol.rhtml:76
+#: app/views/final_exam_terms/_detail.rhtml:42
+#: app/views/final_exam_terms/protocol.rhtml:94
+msgid "Opponent"
+msgstr ""
+
+#: app/views/final_exam_terms/_detail.rhtml:49
+#: app/views/final_exam_terms/protocol.rhtml:77
 msgid "Members"
 msgstr ""
 
@@ -2104,27 +2123,19 @@ msgstr ""
 msgid "Display name"
 msgstr ""
 
-#: app/views/final_exam_terms/protocol.rhtml:40
+#: app/views/final_exam_terms/protocol.rhtml:37
 msgid "Final exam area"
 msgstr ""
 
-#: app/views/final_exam_terms/protocol.rhtml:41
+#: app/views/final_exam_terms/protocol.rhtml:38
 msgid "Mark"
 msgstr ""
 
-#: app/views/final_exam_terms/protocol.rhtml:92
-msgid "Literature review"
-msgstr ""
-
-#: app/views/final_exam_terms/protocol.rhtml:97
-msgid "Opponent"
-msgstr ""
-
-#: app/views/final_exam_terms/protocol.rhtml:102
+#: app/views/final_exam_terms/protocol.rhtml:99
 msgid "Classification of final exam"
 msgstr ""
 
-#: app/views/final_exam_terms/protocol.rhtml:106
+#: app/views/final_exam_terms/protocol.rhtml:103
 msgid "Chairman signature"
 msgstr ""
 
@@ -2326,7 +2337,7 @@ msgid "last atestation:"
 msgstr ""
 
 #: app/views/interupts/print_interupt.rhtml:59
-#: app/views/shared/_study_detail.rhtml:78
+#: app/views/shared/_study_detail.rhtml:84
 msgid "study plan approvement process"
 msgstr ""
 
@@ -2624,7 +2635,7 @@ msgstr ""
 msgid "This student was invited for final exam."
 msgstr ""
 
-#: app/views/shared/_final_exam.rhtml:5
+#: app/views/shared/_final_exam.rhtml:6
 msgid "This student claimed for final exam."
 msgstr ""
 
@@ -2663,10 +2674,6 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: app/views/shared/_personal_detail.rhtml:28
-msgid "Consultant"
-msgstr ""
-
 #: app/views/shared/_personal_detail.rhtml:41
 msgid "citizenship"
 msgstr ""
@@ -2699,15 +2706,19 @@ msgstr ""
 msgid "Other interupts"
 msgstr ""
 
-#: app/views/shared/_study_detail.rhtml:95
-msgid "canceled on"
+#: app/views/shared/_study_detail.rhtml:79
+msgid "final exam approvement process"
 msgstr ""
 
 #: app/views/shared/_study_detail.rhtml:101
+msgid "canceled on"
+msgstr ""
+
+#: app/views/shared/_study_detail.rhtml:107
 msgid "approved on"
 msgstr ""
 
-#: app/views/shared/_study_detail.rhtml:106
+#: app/views/shared/_study_detail.rhtml:112
 #: app/views/study_plans/_full_form.rhtml:5
 #: app/views/study_plans/_plan_subjects.rhtml:4
 msgid "subjects"
@@ -2818,7 +2829,7 @@ msgid "university"
 msgstr ""
 
 #: app/views/shared/candidate_edit.rhtml:66
-#: app/views/students/_search.rhtml:31
+#: app/views/students/_search.rhtml:20
 msgid "faculty"
 msgstr ""
 
@@ -2850,31 +2861,31 @@ msgstr ""
 msgid "bank"
 msgstr ""
 
-#: app/views/students/_list.rhtml:3
+#: app/views/students/_list.rhtml:2
 msgid "Students list"
 msgstr ""
 
-#: app/views/students/_list.rhtml:10
+#: app/views/students/_list.rhtml:14
 msgid "No students found. Use filters above to change your selection."
 msgstr ""
 
-#: app/views/students/_search.rhtml:5 app/views/students/_search.rhtml:28
+#: app/views/students/_search.rhtml:17
 msgid "For opening filter options click the legend"
 msgstr ""
 
-#: app/views/students/_search.rhtml:34
+#: app/views/students/_search.rhtml:23
 msgid "SP status"
 msgstr ""
 
-#: app/views/students/_search.rhtml:36
+#: app/views/students/_search.rhtml:25
 msgid "ST status"
 msgstr ""
 
-#: app/views/students/_search.rhtml:38
+#: app/views/students/_search.rhtml:27
 msgid "form"
 msgstr ""
 
-#: app/views/students/_search.rhtml:44
+#: app/views/students/_search.rhtml:33
 msgid "year"
 msgstr ""
 

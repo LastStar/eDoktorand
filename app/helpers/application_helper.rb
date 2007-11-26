@@ -550,8 +550,10 @@ module ApplicationHelper
   end
 
   def literature_review_link(disert_theme)
-    link_to _('literature review file'), 
-      "/pdf/literature_review/%i.pdf" % disert_theme.id, :popup => true
+    path = "/pdf/literature_review/%i.pdf" % disert_theme.id
+    if File.exists?("#{RAILS_ROOT}/public/" + path)
+      link_to _('literature review file'), path, :popup => true
+    end
   end
 
   def spinner_image(js_id = 'spinner')

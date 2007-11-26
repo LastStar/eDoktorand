@@ -19,6 +19,10 @@ class Person < ActiveRecord::Base
 
   # returns display name for person
   def display_name
+    display_name_with_title
+  end
+
+  def display_name_with_title
     arr = self.title_before ? [self.title_before.label] : []
     arr << [ self.firstname, self.lastname + (self.title_after ? ',' : '')]
     arr << self.title_after.label if self.title_after

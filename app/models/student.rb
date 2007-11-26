@@ -1,4 +1,4 @@
-class Student < Person
+class Student < Examinator
   untranslate_all
   has_one :index, :dependent => :destroy, :order => 'created_on desc'
   has_one :address, :conditions => 'address_type_id = 1', 

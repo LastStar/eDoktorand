@@ -40,13 +40,18 @@ module ScholarshipsHelper
 
   def pay_link
     if @user.has_role?('supervisor') && 
+      confirm = _('Are you shure to pay all scholarships. ' +
+                  'Operation is irreversible')
       (ScholarshipApprovement.all_approved? || !Scholarship.prepare_time?)
-      link_to(_('pay'), {:action => 'pay'}, :confirm => _('are_you_sure_to_pay'))
+      link_to(_('pay'), {:action => 'pay'}, :confirm => confirm)
     end
   end
 
   def approve_link
-    link_to(_('approve'), {:action => 'approve'}, :confrim => _('are_you_sure_to_approve'))
+    confirm = _('Are you sure to approve scholarships like this. ' +
+                'Operation is irreversible.')
+    link_to(_('approve'), {:action => :approve}, 
+            :confirm => confirm)
   end
 
   def control_table_link
