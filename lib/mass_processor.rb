@@ -54,4 +54,34 @@ class MassProcessor
       @last = vs.subject_id
     end
   end
+
+  def self.fix_bad_birt_numbers(students = nil)
+    ActiveRecord::Base.connection.execute('SET NAMES UTF8')
+    notfound = []
+    students ||= Student.find(:all)
+    @@mylog.info "There are %i students" % students.size
+    students.each do |student|
+      if c = Candidate.find(:all, :conditions => ["birth_number like ?",
+                                                  "%s_" % student.birth_number])
+        if c.size > 0
+          if c.size > 1
+            @@mylog.info "More than one candidate for student %i. Getting first." % student.id 
+          end
+          c = c.first
+          @@mylog.info "Found one candidate for student %i" % student.id
+          if c.birth_number =~ /\d{6}\//
+            bn = c.birth_number.gsub(/\//, '')
+            @@mylog.info "Got slash in birth number. Fixin student %i with %s" % [student.id, bn]
+            student.update_attribute(:birth_number, bn)
+          else
+            @@mylog.info "No slash in birth number for %i" % student.id
+          end
+        else
+          @@mylog.info "Candidate has't been found"
+          notfound << student.id
+        end
+      end
+    end
+    return notfound
+  end
 end
