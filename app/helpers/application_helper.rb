@@ -207,14 +207,11 @@ module ApplicationHelper
         end
         if @user.has_role?('department_secretary')
           links << link_to_unless_current(_("candidates"), :controller => 'candidates', :action => 'list'){} 
+          links << prepare_scholarship_link
         end
-
         links << link_to_unless_current(_("probation terms"), 
                                         :controller => 'probation_terms'){} 
         links << link_to_unless_current(_("exams"), :controller => 'exams'){}
-        unless @user.has_role?('vicerector')
-          links << prepare_scholarship_link
-        end
       end 
       links << link_to_unless_current(_("students"), 
                                       :controller => 'students'){}
