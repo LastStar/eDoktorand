@@ -279,6 +279,9 @@ class Index < ActiveRecord::Base
       conditions.first << ' AND indices.study_id = ?'
       conditions << options[:form]
     end
+    if options[:status].to_i != 0 && options[:study_status].to_i == 0
+      options[:study_status] = 1
+    end
     if options[:study_status] && options[:study_status].to_i != '0'
       case options[:study_status].to_i
       when 1, 5

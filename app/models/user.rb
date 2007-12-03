@@ -9,8 +9,7 @@ class User < ActiveRecord::Base
   belongs_to :person
 
   validates_length_of :login, :within => 3..40
-  validates_length_of :password, :within => 5..40
-  validates_presence_of :login
+  validates_presence_of :login, :person
   validates_uniqueness_of :login, :on => :create
   
   # authenticates user by login and password
@@ -46,11 +45,6 @@ class User < ActiveRecord::Base
     end
   end
  
-  # changes user password 
-  def change_password(pass)
-    update_attribute "password", self.class.sha1(pass)
-  end
-
   # checks if user has permission
   def has_permission?(permission)
     permission = permission.name if permission.is_a?(Permission)
@@ -89,14 +83,4 @@ class User < ActiveRecord::Base
     @my_roles ||= self.roles.map {|r| r.name}.flatten.freeze
   end
 
-  protected
-
-  def self.sha1(pass)
-    Digest::SHA1.hexdigest("2426J89P--#{pass}--")
-  end
-
-  before_create :crypt_password
-  def crypt_password
-    write_attribute("password", self.class.sha1(password))
-  end
 end
