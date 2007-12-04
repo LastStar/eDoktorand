@@ -63,14 +63,14 @@ class StudentsController < ApplicationController
     @index = Index.find(params[:id])
     date = params[:date]
     @index.finish!(Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i))
-    render(:inline => "<%= redraw_student(@index) %>")
+    render(:partial => 'redraw_student')
   end
   
   # unfinishes study
   def unfinish
     @index = Index.find(params[:id])
     @index.unfinish!
-    render(:inline => "<%= redraw_student(@index) %>")
+    render(:partial => 'redraw_student')
   end
   
   # switches study on index
@@ -78,7 +78,7 @@ class StudentsController < ApplicationController
     @index = Index.find(params['id'])
     date = create_date(params['date'])
     @index.switch_study!(date)
-    render(:inline => "<%= redraw_student(@index) %>")
+    render(:partial => 'redraw_student')
   end
 
   # supervise scholarship by faculty_secretary
@@ -86,7 +86,7 @@ class StudentsController < ApplicationController
     @index = Index.find(params[:id])
     @student = @index.student
     @student.update_attribute('scholarship_supervised_at', Time.now)
-    render(:inline => "<%= redraw_student(@index) %>")
+    render(:partial => 'redraw_student')
   end
 
   # renders time form for other actions
@@ -207,7 +207,7 @@ class StudentsController < ApplicationController
     else
       @index.disert_theme.defense_passed!(date)
     end
-    render(:inline => "<%= redraw_student(@index) %>")
+    render(:partial => 'redraw_student')
   end
 
   def method_missing(method_id, *arguments)

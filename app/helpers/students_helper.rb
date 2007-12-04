@@ -6,9 +6,23 @@ module StudentsHelper
     links = ''
     forms = ''
     study_plan = index.study_plan 
+    info.concat("<td class='student_exception'>#{student_exception(index)}</td>")
+    info.concat("<td class='printable'>#{student_link(index)}</td>")
+    if index.interupted?
+      info.concat("<td>#{interupt_to_info(index)}</td>")
+    elsif study_plan 
+      info.concat("<td>#{study_plan.status}</td>")
+    else
+      info.concat("<td>&nbsp;</td>")
+    end
+    info.concat("<td>#{index.status}</td>")
+    info.concat(("<td>#{index.year}.#{_('year')}</td>"))
+
+    info.concat(("<td>#{index.study.name}</td>"))
+
     if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
-      info.concat(smaller_info_div("#{index.coridor.code}"))
-      info.concat(smaller_info_div("#{index.department.short_name}")) 
+      info.concat(("<td>#{index.department.short_name}</td>")) 
+      info.concat(("<td>#{index.coridor.code}</td>"))
       if @user.has_one_of_roles?(['dean', 'faculty_secretary']) &&
                                      index.status != _('absolved')
         links.concat(switch_link(index)) 
@@ -47,31 +61,104 @@ module StudentsHelper
         links.concat(diploma_supplement_link(index))
       end
     end
-    info.concat(div_tag("#{index.study.name}", {:class => 'smallinfo'}))
-    info.concat(div_tag("#{index.year}. #{_('year')}", {:class => 'smallinfo'}))
-    info.concat(div_tag(index.status, {:class => ['smallinfo',
-      status_class].join(' ')}))
-    if index.interupted?
-      info.concat(interupt_to_info(index))
-    elsif study_plan 
-      info.concat(div_tag(study_plan.status, {:class => 'smallinfo'}))
-    end
-    info.concat(content_tag('span', student_link(index), {:id => 
-      "link#{index.id}", :class => 'printable'}))
+    
+
     unless links.empty?
-      info = menu_link(index).concat(info)
+      info.concat(menu_link(index))
       links.concat('&nbsp;')
     else
-      info = smaller_info_div('&nbsp;', 'nonprintable').concat(info)
+      #info = ('&nbsp;').concat(info)
     end
-    menu_line(links, "index_menu_#{index.id}") +
-      info_line(info, index.line_class, "student_detail_#{index.id}") +
+      
+      menu_line(links, "index_menu_#{index.id}")+
+      "<tr class='student_detail' id='index_line_#{index.id}'>#{info_line(info)}</tr>"+
       form_line("index_form_#{index.id}")
   end 
 
+  def student_menu_redraw(index)
+    links = ''
+    study_plan = index.study_plan 
+    session[:menu_links] = ''
+    if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
+      if @user.has_one_of_roles?(['dean', 'faculty_secretary']) &&
+                                     index.status != _('absolved')
+        links.concat(switch_link(index)) 
+        links.concat(finish_link(index)) 
+        if index.waits_for_scholarship_confirmation?
+          links.concat(supervise_scholarship_link(index)) 
+        end
+        if study_plan
+          if study_plan.all_subjects_finished?
+            if index.final_exam_passed?
+              links.concat(pass_link(:defense, index))
+            else
+              links.concat(menu_div(change_link(index.student)))
+              links.concat(pass_link(:final_exam, index))
+            end
+          else
+            links.concat(menu_div(change_link(index.student)))
+          end
+        else
+          links.concat(create_link(index))
+        end
+        if index.not_even_admited_interupt?
+          links.concat(interupt_link(index))
+        end
+        if index.interupt_waits_for_confirmation?
+          links.concat(confirm_interupt_link(index)) 
+        end
+        if index.interupted?
+          links.concat(end_interupt_link(index))
+          status_class = 'ends_interupt'
+        end
+        if index.claimed_for_final_exam?
+          links.concat(final_exam_link(index))
+        end
+      else
+        links.concat(diploma_supplement_link(index))
+      end
+    end
+    unless links.empty?
+      links.concat('&nbsp;')
+    end
+    session[:menu_links] = links
+    "<div id='index_menu_#{index.id}' style='display: none'>#{links}</div>"
+  end
+
+  def student_link_redraw(index)
+    info = ''
+        study_plan = index.study_plan 
+    info.concat("<td class='student_exception'>#{student_exception(index)}</td>")
+    info.concat("<td class='printable'>#{student_link(index)}</td>")
+    if index.interupted?
+      info.concat("<td>#{interupt_to_info(index)}</td>")
+    elsif study_plan 
+      info.concat("<td>#{study_plan.status}</td>")
+    else
+      info.concat("<td>&nbsp;</td>")
+    end
+    info.concat("<td>#{index.status}</td>")
+    info.concat(("<td>#{index.year}.#{_('year')}</td>"))
+
+    info.concat(("<td>#{index.study.name}</td>"))
+      if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
+        info.concat(("<td>#{index.department.short_name}</td>")) 
+        info.concat(("<td>#{index.coridor.code}</td>"))
+      end
+
+    unless session[:menu_links].empty?
+      info.concat(menu_link(index))
+    else
+      info = ('&nbsp;').concat(info)
+    end
+    info_line(info)
+  end
+
   # prints code to switch old student link to new one
   def redraw_student(index)
-    update_element_function("index_line_#{index.id}", :content => student_action_link(index))
+    update_element_function("index_menu_#{index.id}_td", :content => student_menu_redraw(index))+
+    update_element_function("index_line_#{index.id}", :content => student_link_redraw(index))+
+    update_element_function("index_form_#{index.id}_td", :content => "<div style='display: none' id ='index_form_#{index.id}' class='form_line'></div>")
   end
 
   # prints students scholarship
@@ -166,34 +253,42 @@ module StudentsHelper
     code = <<-CODE
     Element.toggle('index_menu_#{index.id}', 'index_form_#{index.id}');
     CODE
-    smaller_info_div(link_to_function(_('actions'), code))
+    "<td class='smallerinfo'>#{(link_to_function(_('actions'), code))}</td>"
+  end
+
+  def student_exception(index)
+    link = ''
+    if index.close_to_interupt_end_or_after?
+      link = span_tag('!').concat(link)
+    end
+    if index.student.scholarship_claimed_at != nil && index.student.scholarship_claimed_at > TermsCalculator.this_year_start
+      link = span_tag('S').concat(link)
+    end
+    link
   end
 
   # prints link to student detail
   def student_link(index)
     link = link_to_remote(index.student.display_name, :url => {:action =>
       'show', :controller => 'students', :id => index}, 
-      :loading => visual_effect(:pulsate, "student_detail_#{index.id}"),
+      :loading => visual_effect(:pulsate, "index_line_#{index.id}"),
       :complete => evaluate_remote_response)
-    if index.close_to_interupt_end_or_after?
-      link = span_tag('!', :class => 'red').concat(link)
-    end
     link
   end
 
   # prints line with student informations
-  def info_line(info, line_class, id)
-    div_tag(info, :class => ['student_detail', line_class].join(' '), :id => id)
+  def info_line(info)
+    info
   end
 
   # prints line with menu links
   def menu_line(links, id)
-    div_tag(links, :id => id, :style => 'display: none', :class => 'menu_line')
+    "<tr id='#{id}_tr'><td colspan='8' id='#{id}_td'><div id='#{id}' style='display: none'>#{links}</div></td></tr>"
   end
 
   # prints empty form line
   def form_line(id)
-      div_tag('', :id => id, :style => 'display: none', :class => 'form_line')
+      "<tr id ='#{id}_tr'><td colspan='8' id ='#{id}_td'><div style='display: none' id ='#{id}' class='form_line'></div></td></tr>"
   end
 
   def pass_link(what, index)
@@ -273,8 +368,7 @@ module StudentsHelper
   end
 
   def interupt_to_info(index)
-  div_tag("#{_('to')} #{index.interupt.end_on.strftime('%d.%m.%Y')}",
-         {:class => 'smallinfo'})
+    "#{_('to')} #{index.interupt.end_on.strftime('%d.%m.%Y')}"
   end
   
   def back_to_list
@@ -284,6 +378,8 @@ module StudentsHelper
   def back_and_remove_from_list(index)
     %{
       Element.remove('index_line_#{index.id}');
+      Element.remove('index_menu_#{index.id}_tr');
+      Element.remove('index_form_#{index.id}_tr');
       Element.remove('student_detail');
       Element.show('students_list', 'search');
     }

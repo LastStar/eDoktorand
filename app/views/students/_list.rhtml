@@ -5,11 +5,13 @@
     <%= link_to_remote filter.first, :url => {:action => :filter, :id => filter.last}, :update => 'students_list' %>
     <% end %>
   </div>
-  <ul>
-  <% for index in @indices %>
-    <%= content_tag('li', student_action_link(index), :id => "index_line_#{index.id}") %>
-  <% end %>
-  </ul>
+  <table cellpading="1" cellspacing="7" class='student'>
+    <tbody>
+      <% for index in @indices %>
+      <%=student_action_link(index)%>
+      <% end %>
+    </tbody>
+</table>
 <% else %>
   <h4><%= _('No students found. Use filters above to change your selection.') %></h4>
 <% end %>

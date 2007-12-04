@@ -28,6 +28,11 @@ a:hover { color: red }
   text-align: center;
 }
 
+tr.student {
+  border-bottom: 1px solid #ddc;
+  border-left: 3px solid #ddc;
+  }
+
 table.scholarship { 
   border-collapse: collapse; 
   border : 0px; 
@@ -487,8 +492,12 @@ div.menu a:active {text-decoration: none;color: white;}
 .menu_line {border-top: 1px solid #452;}
 .form_line {border-bottom: 1px solid #452;background-color:#ddc}
 .form_line form {padding-right: 10px; text-align: right;}
-.student_detail {margin: 1px;padding-left: .5ex}
+.student_detail {margin: 1px;padding-left: .5ex;}
 .student_detail a {text-decoration: none;}
+table.student {border-collapse: collapse;table-layout: auto;width: 100%;}
+table.student td{padding-left: .5ex;}
+table.student td.student_exception{padding-left: .5ex;color: red; font-size:smaller; font-style:italic}
+tr.student_detail {margin: 1px;border-bottom: 1px solid #ddc;}
 .smallerinfo a {background-color: #452; padding-right: 4px; padding-left: 2px; color: #fff;}
 .exam_detail {margin: 1px;padding-left: .5ex}
 #student_list li {clear: both; padding: 0px;}

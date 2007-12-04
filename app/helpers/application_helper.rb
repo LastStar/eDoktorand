@@ -418,6 +418,11 @@ module ApplicationHelper
     div_tag(content, {:class => 'menu'})
   end
 
+  # prints div with smallerinfo class with content inside
+  def menu_tr(content)
+    content_tag('tr', content,{:class => 'menu'})
+  end
+
   # prints div with smallinfo class with content inside
   def small_info_div(content)
     div_tag(content, {:class => 'smallinfo'})

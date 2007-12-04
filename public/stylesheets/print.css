@@ -26,6 +26,12 @@ p {
 .instruction {
   display: none;
 }
+
+table.student {border-collapse: collapse;table-layout: auto;width: 100%;}
+table.student td{padding-left: .5ex;}
+tr.student_detail {margin: 1px;border-bottom: 1px solid black;}
+table.student td.student_exception{padding-left: .5ex;color: black; font-size:smaller; font-style:italic}
+
 #student_detail li { 
   clear: right; 
   margin: 0 0 0 0;
