@@ -134,7 +134,7 @@ class StudyPlan < ActiveRecord::Base
     elsif index.final_exam_passed?
       _('FE passed')
     elsif all_subjects_finished?
-      _('all_finished')
+      _('all finished')
     elsif canceled?
       _('SP canceled')
     elsif approved?
