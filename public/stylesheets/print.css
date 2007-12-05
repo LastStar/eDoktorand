@@ -27,10 +27,11 @@ p {
   display: none;
 }
 
-table.student {border-collapse: collapse;table-layout: auto;width: 100%;}
-table.student td{padding-left: .5ex;}
-tr.student_detail {margin: 1px;border-bottom: 1px solid black;}
-table.student td.student_exception{padding-left: .5ex;color: black; font-size:smaller; font-style:italic}
+table#students_table {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#students_table td{padding-left: .5ex;font-size: 9pt}
+table#students_table tr.student_detail {margin: 1px;border-bottom: 1px solid black;}
+table#students_table td.student_exception{padding-left: .5ex;color: black; font-size:smaller; font-style:italic}
+table#students_table th {text-align: left; border: none}
 
 #student_detail li { 
   clear: right; 

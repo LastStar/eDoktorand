@@ -7,7 +7,7 @@ module StudentsHelper
     forms = ''
     study_plan = index.study_plan 
     info.concat("<td class='student_exception'>#{student_exception(index)}</td>")
-    info.concat("<td class='printable'>#{student_link(index)}</td>")
+    info.concat("<th class='printable'>#{student_link(index)}</th>")
     if index.interupted?
       info.concat("<td>#{interupt_to_info(index)}</td>")
     elsif study_plan 
@@ -122,14 +122,14 @@ module StudentsHelper
       links.concat('&nbsp;')
     end
     session[:menu_links] = links
-    "<div id='index_menu_#{index.id}' style='display: none'>#{links}</div>"
+    "<div id='index_menu_#{index.id}' class='menu_style' style='display: none'>#{links}</div>"
   end
 
   def student_link_redraw(index)
     info = ''
         study_plan = index.study_plan 
     info.concat("<td class='student_exception'>#{student_exception(index)}</td>")
-    info.concat("<td class='printable'>#{student_link(index)}</td>")
+    info.concat("<th class='printable'>#{student_link(index)}</th>")
     if index.interupted?
       info.concat("<td>#{interupt_to_info(index)}</td>")
     elsif study_plan 
@@ -283,12 +283,12 @@ module StudentsHelper
 
   # prints line with menu links
   def menu_line(links, id)
-    "<tr id='#{id}_tr'><td colspan='8' id='#{id}_td'><div id='#{id}' style='display: none'>#{links}</div></td></tr>"
+    "<tr id='#{id}_tr'><td colspan='8' id='#{id}_td'><div id='#{id}' class='menu_style' style='display: none'>#{links}</div></td><td></td></tr>"
   end
 
   # prints empty form line
   def form_line(id)
-      "<tr id ='#{id}_tr'><td colspan='8' id ='#{id}_td'><div style='display: none' id ='#{id}' class='form_line'></div></td></tr>"
+      "<tr id ='#{id}_tr'><td colspan='8' id ='#{id}_td'><div style='display: none' id ='#{id}' class='form_line'></div></td><td></td></tr>"
   end
 
   def pass_link(what, index)

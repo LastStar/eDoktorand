@@ -5,7 +5,7 @@
     <%= link_to_remote filter.first, :url => {:action => :filter, :id => filter.last}, :update => 'students_list' %>
     <% end %>
   </div>
-  <table cellpading="1" cellspacing="7" class='student'>
+  <table cellpading="1" cellspacing="7" id='students_table'>
     <tbody>
       <% for index in @indices %>
       <%=student_action_link(index)%>
