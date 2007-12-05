@@ -2,6 +2,7 @@
 index.has_regular_scholarship? && index.regular_scholarship_or_create.amount > 0 %>
   <tr>
   <% i = 0 %>
+  <td><%= index.student.sident %></td>
   <td><%= index.student.birth_number %></td>
   <td><%= index.student.lastname %></td>
   <td><%= index.student.firstname %></td>

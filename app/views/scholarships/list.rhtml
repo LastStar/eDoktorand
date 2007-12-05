@@ -14,7 +14,9 @@
   <br>
 <% end %>
 <table class = "scholarship" cellspacing = "0" cellpading = "0" align = "center">
-<tr><th><%= _("Birth number")%></th><th><%= _("Last name")%></th><th><%= _("First name")%></th><th><%= _("Coridor") %></th>
+<tr>
+  <th><%= _("SIDENT")%></th>
+  <th><%= _("Birth number")%></th><th><%= _("Last name")%></th><th><%= _("First name")%></th><th><%= _("Coridor") %></th>
 <th><%= _("Type of scholarship")%></th><th><%= _("Disponent")%></th><th><%= _("Amount (CZK)")%></th></tr>
 <% for index in @indices %>
   <%= render(:partial => 'approved_line', :locals => {:index => index, :disponents => disponents, :codes => codes}) %>
