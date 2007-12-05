@@ -1,4 +1,6 @@
 <li>
   <h6><%= _('Additional information provided by student') %></h6>
-  <p><%= @atestation_detail.detail %></p>
+<div>
+  <%= @atestation_detail.detail.gsub(/\n/, '<br>').gsub(' ', '&nbsp;') %>
+</div>
 </li>
