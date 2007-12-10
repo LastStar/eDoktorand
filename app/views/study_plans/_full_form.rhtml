@@ -16,7 +16,7 @@
 <%= "" + _("semester") %>
 </li>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
-    <% 4.times do |index| %>
+    <% FACULTY_CFG[@student.faculty.id]['final_areas_count'].times do |index| %>
       <% i = index + 1 %>
 <li>
   <label><%= "#{i}. " + _("final area") %></label>

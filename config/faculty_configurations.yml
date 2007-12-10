@@ -1,26 +1,33 @@
 # this file stores configuration values for each faculty
 1:
   final_areas_on: create   
+  final_areas_count: 4
   atestation_month: 9
   atestation_day: 15
   consultant: true
 2:
+  final_areas_count: 4
   atestation_month: 11
   atestation_day: 30
   atestation_title: director
 4:
+  final_areas_count: 4
   atestation_month: 4
   atestation_day: 30
 5:
+  final_areas_count: 4
   atestation_month: 1
   atestation_day: 31
 6:
+  final_areas_count: 4
   atestation_month: 1
   atestation_day: 31
 14:
+  final_areas_count: 5
   atestation_month: 10
   atestation_day: 8
 15:
+  final_areas_count: 5
   atestation_month: 1
   atestation_day: 30
     

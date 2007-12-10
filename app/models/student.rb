@@ -14,14 +14,14 @@ class Student < Examinator
   N_('Enrolled on')
   N_('with note')
   N_('date finished')
-  N_('pass final exam')
   N_('Pass final exam')
-  N_('pass_defense')
   N_('Pass defense')
   N_('Switch study')
-  N_('finish_to')
-  N_('switch_study_to')
-  N_('pass_final_exam_to')
+  N_('finish to')
+  N_('switch study to')
+  N_('pass final exam to')
+  N_('pass final exam')
+  N_('pass defense')
   
   
   # returns faculty on which student is

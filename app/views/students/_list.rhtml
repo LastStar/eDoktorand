@@ -1,15 +1,13 @@
+  <h5><%= _('Students list') + "(#{@indices.size})" %></h5>
   <div class='links'>
     <% for filter in @filters %>
     <%= link_to_remote filter.first, :url => {:action => :filter, :id => filter.last}, :update => 'students_list' %>
     <% end %>
   </div>
 <% if @indices && !@indices.empty? %>
-  <h5><%= _('Students list') + "(#{@indices.size})" %></h5>
-  <table cellpading="1" cellspacing="7" id='students_table'>
+  <table id='students_table'>
     <tbody>
-      <% for index in @indices %>
-      <%=student_action_link(index)%>
-      <% end %>
+      <%= render :partial => 'index_line', :collection => @indices %>
     </tbody>
 </table>
 <% else %>

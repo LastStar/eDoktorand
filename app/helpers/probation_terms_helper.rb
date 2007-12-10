@@ -67,9 +67,10 @@ module ProbationTermsHelper
   end
 
   def signoff_link(probation_term, student)
-    link_to_remote_with_loading(_("Sign off student"), :update => "info_#{probation_term.id}",
-                                :url => {:action => 'sign_off_student', 
-                                         :id => probation_term,
-                                         :student_id => student.id})
+    link_to_remote(_("Sign off student"),
+                  :update => "info_#{probation_term.id}",
+                  :url => {:action => 'sign_off_student', 
+                           :id => probation_term,
+                           :student_id => student.id})
   end
 end

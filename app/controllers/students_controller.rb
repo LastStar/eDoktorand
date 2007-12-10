@@ -94,6 +94,8 @@ class StudentsController < ApplicationController
     @index = Index.find(params[:id])
     @form_url = {:action => params['form_action'], :id => params['id']}
     @form_url[:controller] = params['form_controller'] || 'students'
+    @date = params[:date] ? Time.parse(params[:date]) : Date.today
+    @day = params[:day]
   end
 
   def confirm_approve

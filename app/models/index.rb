@@ -32,6 +32,7 @@ class Index < ActiveRecord::Base
   validates_presence_of :coridor
   validates_presence_of :study
   validates_presence_of :department
+  validates_presence_of :enrolled_on
   validates_numericality_of :account_number, :only_integer => true, :allow_nil => true
   validates_numericality_of :account_bank_number, :only_integer => true, :allow_nil => true
 
@@ -102,7 +103,7 @@ class Index < ActiveRecord::Base
 
   # returns if stduy plan is interupted
   def interupted?
-    interupted_on && interupted_on < Time.now && interupt && !interupt.finished?
+    interupted_on && interupted_on < Time.now #&& interupt && !interupt.finished?
   end
 
   # returns true if studen claimed for final exam
@@ -183,8 +184,8 @@ class Index < ActiveRecord::Base
       conditions = ["NULL IS NOT NULL"]
     end
     unless options[:include]
-      options[:include] = [:study_plan, :student, :disert_theme, :department,
-                           :study, :coridor, :interupts]
+      options[:include] = [:student, :disert_theme, :department,
+                           :study, :coridor, :interupt]
     end
     if options[:conditions]
       conditions.first << options[:conditions].first 
@@ -285,14 +286,20 @@ class Index < ActiveRecord::Base
     if options[:study_status] && options[:study_status].to_i != '0'
       case options[:study_status].to_i
       when 1, 5
-        conditions.first << ' AND indices.finished_on IS NULL' +
+        conditions.first << ' AND (indices.finished_on IS NULL' + 
+                            ' OR indices.finished_on >= ?)' +
                             ' AND indices.interupted_on IS NULL' +
                             ' AND disert_themes.defense_passed_on IS NULL'
+        conditions << Date.today
       when 2
-        conditions.first << ' AND indices.finished_on IS NOT NULL' 
+        conditions.first << ' AND indices.finished_on IS NOT NULL' +
+                            ' AND indices.finished_on < ?'
+        conditions << Date.today
       when 3
-        conditions.first << ' AND indices.interupted_on IS NOT NULL 
-                              AND indices.finished_on IS NULL' 
+        conditions.first << ' AND indices.interupted_on IS NOT NULL' +
+                            ' AND (indices.finished_on IS NULL' +
+                            ' OR indices.finished_on >= ?)'
+        conditions << Date.today
       when 4
         conditions.first << ' AND disert_themes.defense_passed_on IS NOT NULL'
       end
@@ -313,15 +320,15 @@ class Index < ActiveRecord::Base
     end
     if options[:status] && options[:status].to_i != '0'
       case options[:status].to_i
-      when '1'
+      when 1
         indices.reject! {|i| i.study_plan && i.study_plan.admited?}
-      when '2'
+      when 2
         indices.reject! {|i| !i.study_plan || !i.study_plan.admited? }
-      when '3'
+      when 3
         indices.reject! {|i| i.study_plan_last_approver != Tutor}
-      when '4'
+      when 4
         indices.reject! {|i| i.study_plan_last_approver != Leader}
-      when '5'
+      when 5
         indices.reject! {|i| i.study_plan_last_approver != Dean}
       end
     end
@@ -357,8 +364,8 @@ class Index < ActiveRecord::Base
   def status
     if disert_theme && disert_theme.defense_passed?
       _('absolved')
-    elsif claimed_final_application?
-      _('final application')
+    elsif final_exam_passed?
+      _('FE passed')
     elsif finished?
       _('finished')
     elsif interupted?
@@ -420,6 +427,7 @@ class Index < ActiveRecord::Base
     update_attribute('interupted_on', start_date)
   end
 
+  # TODO add transactions
   # interupts study with date
   def end_interupt!(end_date)
     update_attribute('interupted_on', nil)
@@ -430,7 +438,7 @@ class Index < ActiveRecord::Base
     interupt.update_attribute('finished_on', end_date)
   end
 
-  def line_class
+  def status_class
     finished? ? 'finished' : ''
   end
 
@@ -448,7 +456,9 @@ class Index < ActiveRecord::Base
   end
 
   def waits_for_scholarship_confirmation?
-    student.scholarship_claimed_at && !student.scholarship_supervised_at
+    claim_date = student.scholarship_claimed_at
+    claim_date && claim_date < TermsCalculator.this_year_start &&
+      !student.scholarship_supervised_at
   end
 
   # TODO stub method

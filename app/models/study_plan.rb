@@ -49,7 +49,8 @@ class StudyPlan < ActiveRecord::Base
 
   # returns true if tudy plan waits for actuala atestation
   def waits_for_actual_atestation?
-    !atested_for?(Atestation.actual_for_faculty(index.student.faculty)) 
+    index.semester > 1 && !index.final_exam_passed? && 
+      atested_for?(Atestation.actual_for_faculty(index.student.faculty)) 
   end
 
   # returns atestation detail for next atestation  
@@ -129,10 +130,8 @@ class StudyPlan < ActiveRecord::Base
 
   # returns status of study plan
   def status
-    if index.disert_theme.defense_passed?
+    if index.disert_theme.defense_passed? || index.final_exam_passed?
       ''
-    elsif index.final_exam_passed?
-      _('FE passed')
     elsif all_subjects_finished?
       _('all finished')
     elsif canceled?

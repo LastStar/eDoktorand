@@ -26,8 +26,6 @@ class ApplicationController < ActionController::Base
 
   filter_parameter_logging "password"
 
-  model :dean # solving deep STI 
-
   # authorizes user
   def authorize?(user)
     if user.has_permission?("%s/%s" % [params[:controller], params[:action]])

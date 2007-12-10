@@ -7,7 +7,7 @@ class FinalExamTermsController < ApplicationController
 
   def list
     @title = _('Final exam terms')
-    @final_exam_terms = FinalExamTerm.find_for(@user, :future => true)
+    @final_exam_terms = FinalExamTerm.find_for(@user, :future => params[:future])
   end
 
   def prepare_print

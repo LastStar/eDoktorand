@@ -1,3 +1,5 @@
-page.replace_html "index_menu_#{@index.id}_td", :inline => student_menu_redraw(@index)
-page.replace "index_line_#{@index.id}", :inline => "<tr id='index_line_#{@index.id}' class='student_detail'>" + student_link_redraw(@index) + "</tr>"
-page.replace_html "index_form_#{@index.id}_td", :inline => "<div style='display: none' id ='index_form_#{@index.id}' class='form_line'></div>"
+@links = student_action_links(@index)
+page.replace_html "index_menu_#{@index.id}_td", :inline => @links
+page.replace "index_line_#{@index.id}", :partial => 'index', :object => @index
+page.hide "index_form_#{@index.id}_td"
+page.hide "index_menu_#{@index.id}_tr"

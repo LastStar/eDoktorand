@@ -19,17 +19,23 @@
     <td><%= @term.index.coridor.name %></td>
   </tr>
   <tr>
-    <th><%= _('Tutor') %>:</th>
-    <td><%= @term.index.tutor.display_name %></td>
-  </tr>
-  <tr>
     <th><%= _('Department') %>:</th>
     <td><%= @term.index.department.name %></td>
+  </tr>
+  <tr>
+    <th><%= _('Tutor') %>:</th>
+    <td><%= @term.index.tutor.display_name %></td>
   </tr>
   <tr>
     <th><%= _('Enrolled on') %>:</th>
     <td><%= @term.index.enrolled_on.strftime("%d. %m. %y") %></td>
   </tr>
+<% if @term.index.consultant %>
+  <tr>
+    <th><%= _('Consultant') %>:</th>
+    <td><%= @term.index.jconsultant %></td>
+  </tr>
+<% end %>
 </table>
 
 <table class='three_columns'>

@@ -1,4 +1,5 @@
 class Subject < ActiveRecord::Base
+  untranslate_all
   has_many :coridor_subjects
   has_many :plan_subjects
   has_many :exams

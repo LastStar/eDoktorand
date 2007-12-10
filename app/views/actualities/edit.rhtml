@@ -1,9 +1,9 @@
 <h1>Editing actuality</h1>
 
-<%= form_tag :action => 'update', :id => @actuality %>
+<% form_tag :action => 'update', :id => @actuality do -%>
   <%= render :partial => 'form' %>
   <%= submit_tag 'Edit' %>
-<%= end_form_tag %>
+<% end %>
 
 <%= link_to 'Show', :action => 'show', :id => @actuality %> |
 <%= link_to 'Back', :action => 'list' %>

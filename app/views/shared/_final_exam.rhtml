@@ -21,7 +21,7 @@
   <li>
   <div class='info'>
 <% if index.final_exam_passed? %>
-    <%= index.final_exam_passed_on.strftime('%m. %d. %Y') %>
+    <%= index.final_exam_passed_on.strftime('%d. %m. %Y') %>
 <% else %>
     <%= "%i. %s" % [study_plan.finishing_to, _('semester')] %>
 <% end %>
@@ -29,7 +29,7 @@
   <b><%= "#{_('final exam')}" %></b>
   </li>
 <% if study_plan.final_areas? %>
-  <% 4.times do |i|%>
+  <% FACULTY_CFG[study_plan.index.faculty.id]['final_areas_count'].times do |i|%>
     <% i=i+1 %>
     <% fa = study_plan.final_areas['cz'] %>
       <li class='second'>

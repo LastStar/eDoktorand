@@ -1,164 +1,52 @@
 module StudentsHelper
 
   # prints action links on student
-  def student_action_link(index)
-    info = ''
-    links = ''
-    forms = ''
+  def student_action_links(index)
+    links = []
     study_plan = index.study_plan 
-    info.concat("<td class='student_exception'>#{student_exception(index)}</td>")
-    info.concat("<th class='printable'>#{student_link(index)}</th>")
-    if index.interupted?
-      info.concat("<td>#{interupt_to_info(index)}</td>")
-    elsif study_plan 
-      info.concat("<td>#{study_plan.status}</td>")
-    else
-      info.concat("<td>&nbsp;</td>")
-    end
-    info.concat("<td>#{index.status}</td>")
-    info.concat(("<td>#{index.year}.#{_('year')}</td>"))
-
-    info.concat(("<td>#{index.study.name}</td>"))
-
-    if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
-      info.concat(("<td>#{index.department.short_name}</td>")) 
-      info.concat(("<td>#{index.coridor.code}</td>"))
-      if @user.has_one_of_roles?(['dean', 'faculty_secretary']) &&
-                                     index.status != _('absolved')
-        links.concat(switch_link(index)) 
-        links.concat(finish_link(index)) 
-        if index.waits_for_scholarship_confirmation?
-          links.concat(supervise_scholarship_link(index)) 
-        end
-        if study_plan
-          if study_plan.all_subjects_finished?
-            if index.final_exam_passed?
-              links.concat(pass_link(:defense, index))
-            else
-              links.concat(menu_div(change_link(index.student)))
-              links.concat(pass_link(:final_exam, index))
-            end
+    if @user.has_one_of_roles?(['dean', 'faculty_secretary']) &&
+                               index.status != _('absolved')
+      links << switch_link(index)
+      links << finish_link(index)
+      if index.waits_for_scholarship_confirmation?
+        links << supervise_scholarship_link(index)
+      end
+      if study_plan
+        if study_plan.all_subjects_finished?
+          if index.final_exam_passed?
+            links << pass_link(:defense, index)
           else
-            links.concat(menu_div(change_link(index.student)))
+            links << change_link(index.student)
+            links << pass_link(:final_exam, index)
           end
         else
-          links.concat(create_link(index))
-        end
-        if index.not_even_admited_interupt?
-          links.concat(interupt_link(index))
-        end
-        if index.interupt_waits_for_confirmation?
-          links.concat(confirm_interupt_link(index)) 
-        end
-        if index.interupted?
-          links.concat(end_interupt_link(index))
-          status_class = 'ends_interupt'
-        end
-        if index.claimed_for_final_exam?
-          links.concat(final_exam_link(index))
+          links << change_link(index.student)
         end
       else
-        links.concat(diploma_supplement_link(index))
+        links << create_link(index)
       end
-    end
-    
-
-    unless links.empty?
-      info.concat(menu_link(index))
-      links.concat('&nbsp;')
+      if index.not_even_admited_interupt?
+        links << interupt_link(index)
+      end
+      if index.interupt_waits_for_confirmation?
+        links << confirm_interupt_link(index) 
+      end
+      if index.interupted?
+        links << end_interupt_link(index)
+      end
+      if index.claimed_for_final_exam?
+        links << final_exam_link(index)
+      end
     else
-      #info = ('&nbsp;').concat(info)
+      links << diploma_supplement_link(index)
     end
+    return "<div class='menu'>%s</div>" % links.join("</div><div class='menu'>")
+  end
       
-      menu_line(links, "index_menu_#{index.id}")+
-      "<tr class='student_detail' id='index_line_#{index.id}'>#{info_line(info)}</tr>"+
-      form_line("index_form_#{index.id}")
-  end 
-
-  def student_menu_redraw(index)
-    links = ''
-    study_plan = index.study_plan 
-    session[:menu_links] = ''
-    if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
-      if @user.has_one_of_roles?(['dean', 'faculty_secretary']) &&
-                                     index.status != _('absolved')
-        links.concat(switch_link(index)) 
-        links.concat(finish_link(index)) 
-        if index.waits_for_scholarship_confirmation?
-          links.concat(supervise_scholarship_link(index)) 
-        end
-        if study_plan
-          if study_plan.all_subjects_finished?
-            if index.final_exam_passed?
-              links.concat(pass_link(:defense, index))
-            else
-              links.concat(menu_div(change_link(index.student)))
-              links.concat(pass_link(:final_exam, index))
-            end
-          else
-            links.concat(menu_div(change_link(index.student)))
-          end
-        else
-          links.concat(create_link(index))
-        end
-        if index.not_even_admited_interupt?
-          links.concat(interupt_link(index))
-        end
-        if index.interupt_waits_for_confirmation?
-          links.concat(confirm_interupt_link(index)) 
-        end
-        if index.interupted?
-          links.concat(end_interupt_link(index))
-          status_class = 'ends_interupt'
-        end
-        if index.claimed_for_final_exam?
-          links.concat(final_exam_link(index))
-        end
-      else
-        links.concat(diploma_supplement_link(index))
-      end
-    end
-    unless links.empty?
-      links.concat('&nbsp;')
-    end
-    session[:menu_links] = links
-    "<div id='index_menu_#{index.id}' class='menu_style' style='display: none'>#{links}</div>"
-  end
-
-  def student_link_redraw(index)
-    info = ''
-        study_plan = index.study_plan 
-    info.concat("<td class='student_exception'>#{student_exception(index)}</td>")
-    info.concat("<th class='printable'>#{student_link(index)}</th>")
-    if index.interupted?
-      info.concat("<td>#{interupt_to_info(index)}</td>")
-    elsif study_plan 
-      info.concat("<td>#{study_plan.status}</td>")
-    else
-      info.concat("<td>&nbsp;</td>")
-    end
-    info.concat("<td>#{index.status}</td>")
-    info.concat(("<td>#{index.year}.#{_('year')}</td>"))
-
-    info.concat(("<td>#{index.study.name}</td>"))
-      if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])
-        info.concat(("<td>#{index.department.short_name}</td>")) 
-        info.concat(("<td>#{index.coridor.code}</td>"))
-      end
-
-    unless session[:menu_links].empty?
-      info.concat(menu_link(index))
-    else
-      info = ('&nbsp;').concat(info)
-    end
-    info_line(info)
-  end
-
-  # prints code to switch old student link to new one
-  def redraw_student(index)
-    update_element_function("index_menu_#{index.id}_td", :content => student_menu_redraw(index))+
-    update_element_function("index_line_#{index.id}", :content => student_link_redraw(index))+
-    update_element_function("index_form_#{index.id}_td", :content => "<div style='display: none' id ='index_form_#{index.id}' class='form_line'></div>")
+  #prints link to function witch toggle student line menu
+  def link_to_actions(index)
+    link_to_function(_('actions'), "Element.toggle('index_menu_#{index.id}_tr',
+                                    'index_form_#{index.id}_tr');")
   end
 
   # prints students scholarship
@@ -168,7 +56,7 @@ module StudentsHelper
 
   # prints finish link
   def finish_link(index)
-    menu_div(if index.finished? 
+    if index.finished? 
       link_to_remote(_('unfinish study'),
                     :url => {:action => 'unfinish', :controller => 'students',
                     :id => index, :day => true}, :complete => evaluate_remote_response)
@@ -177,138 +65,130 @@ module StudentsHelper
                     :url => {:action => 'time_form', :controller => 'students',
                     :form_action => 'finish', :id => index, :day => true}, 
                     :update => "index_form_#{index.id}")
-    end)
+    end
   end
  
   # prints link to switch study form
   def switch_link(index)
-    menu_div(link_to_remote_with_loading( _('switch study'), :url => 
-      {:action => 'time_form', :controller => 'students', :form_action => 
-      'switch_study', :id => index}, :update => "index_form_#{index.id}"))
+    link_to_remote(_('switch study'),
+                  :url => {:action => 'time_form',
+                          :controller => 'students',
+                          :form_action => 'switch_study',
+                          :id => index},
+                  :update => "index_form_#{index.id}")
   end
 
   # prints interupt link
   def interupt_link(index)
-    menu_div(link_to(_('interrupt study'), {:action => 'index', 
-      :controller => 'interupts', :id => index}))
+    link_to(_('interrupt study'),
+            {:action => 'index', 
+            :controller => 'interupts',
+            :id => index})
   end
 
   # prints confirm interupt link
   def confirm_interupt_link(index)
-    menu_div(link_to_remote_with_loading(_('confirm interrupt'), :url =>
-      {:action => 'time_form', :controller => 'students', :form_action => 
-      'confirm', :form_controller => 'interupts', :id => index, :date =>
-      index.interupt.start_on}, :update => "index_form_#{index.id}"))
+    link_to_remote(_('confirm interrupt'),
+                   :url => {:action => 'time_form',
+                           :controller => 'students',
+                           :form_action => 'confirm',
+                           :form_controller => 'interupts',
+                           :id => index,
+                           :date => index.interupt.start_on},
+                   :update => "index_form_#{index.id}")
   end
 
   # prints end interupt link
   def end_interupt_link(index)
-    menu_div(link_to_remote_with_loading(_('end interrupt'), :url =>
-      {:action => 'time_form', :controller => 'students', :form_action => 
-      'end', :form_controller => 'interupts', :id => index, :date =>
-      index.interupt.end_on}, :update => "index_form_#{index.id}"))
+    link_to_remote(_('end interrupt'),
+                   :url => {:action => 'time_form',
+                           :controller => 'students',
+                           :form_action => 'end',
+                           :form_controller => 'interupts',
+                           :id => index,
+                           :date => index.interupt.end_on},
+                   :update => "index_form_#{index.id}")
   end
 
   # prints link to create new study plan
   def create_link(index)
-    menu_div(link_to(_('create SP'), :action => 
-      'create_by_other', :controller => 'study_plans', :id =>
-      index.student))
+    link_to(_('create SP'),
+            :action => 'create_by_other',
+            :controller => 'study_plans',
+            :id => index.student)
   end
 
   # prints link to create final exam term
   def final_exam_link(index)
-    menu_div(link_to_remote_with_loading(_('final exam term'), :url => {:action =>
-      'new', :controller => 'final_exam_terms', :id => index}, :evaluate => true))
+    link_to_remote(_('final exam term'),
+                   :url => {:action => 'new',
+                           :controller => 'final_exam_terms',
+                           :id => index},
+                   :complete => evaluate_remote_response)
   end
 
   # prints lint to interupt study
   def confirm_interupt_link(index)
-    menu_div(link_to_remote_with_loading( _('confirm interupt'), {:url =>
-      {:action => 'confirm', :controller => 'interupts', :id => index},
-      :evaluate => true}))
+    link_to_remote(_('confirm interupt'),
+                   {:url => {:action => 'confirm',
+                             :controller => 'interupts',
+                             :id => index},
+                    :complete => evaluate_remote_response})
   end
 
   # prints link to supervise scholarship
   def supervise_scholarship_link(index)
-    menu_div(link_to_remote_with_loading(_('supervise scholarship'), :url =>
-      {:controller => 'students', :action => 'supervise_scholarship_claim',
-      :id => index}, :evaluate => true))
-  end
-
-  # returns link for fast filter
-  def fast_filter_link
-    link_to_function(_('Fast filter'), "Element.toggle('fast_info',\
-      'fast_search')", :class => 'legend_link') 
+    link_to_remote(_('supervise scholarship'),
+                  :url => {:controller => 'students',
+                          :action => 'supervise_scholarship_claim',
+                          :id => index},
+                  :complete => evaluate_remote_response)
   end
 
   # returns link for details fiter 
   def detail_filter_link
-    link_to_function(_('Detail filter'), "Element.toggle('detail_info',\
-      'detail_search')", :class => 'legend_link') 
-  end
-
-  # prints menu link
-  def menu_link(index)
-    code = <<-CODE
-    Element.toggle('index_menu_#{index.id}', 'index_form_#{index.id}');
-    CODE
-    "<td class='smallerinfo'>#{(link_to_function(_('actions'), code))}</td>"
+    link_to_function(_('Detail filter'),
+                     "Element.toggle('detail_info', 'detail_search')",
+                     :class => 'legend_link') 
   end
 
   def student_exception(index)
-    link = ''
+    tags = []
     if index.close_to_interupt_end_or_after?
-      link = span_tag('!').concat(link)
+      tags << '!'
     end
-    if index.student.scholarship_claimed_at != nil && index.student.scholarship_claimed_at > TermsCalculator.this_year_start
-      link = span_tag('S').concat(link)
+    if index.waits_for_scholarship_confirmation?
+      tags << 'us'
     end
-    link
+    unless index.status == _('final application')
+      if index.claimed_for_final_exam?
+        tags << 'sz'
+      elsif index.claimed_final_application?
+        tags << 'pz'
+      end
+    end
+    if tags.size > 1
+      tags.join('&nbsp;') 
+    else
+      tags.first
+    end
   end
 
   # prints link to student detail
   def student_link(index)
-    link = link_to_remote(index.student.display_name, :url => {:action =>
+    link_to_remote(index.student.display_name, :url => {:action =>
       'show', :controller => 'students', :id => index}, 
       :loading => visual_effect(:pulsate, "index_line_#{index.id}"),
       :complete => evaluate_remote_response)
-    link
-  end
-
-  # prints line with student informations
-  def info_line(info)
-    info
-  end
-
-  # prints line with menu links
-  def menu_line(links, id)
-    "<tr id='#{id}_tr'><td colspan='8' id='#{id}_td'><div id='#{id}' class='menu_style' style='display: none'>#{links}</div></td><td></td></tr>"
-  end
-
-  # prints empty form line
-  def form_line(id)
-      "<tr id ='#{id}_tr'><td colspan='8' id ='#{id}_td'><div style='display: none' id ='#{id}' class='form_line'></div></td><td></td></tr>"
   end
 
   def pass_link(what, index)
     action = 'pass_' + what.to_s
     url = {:action => 'time_form', :controller => 'students',
            :form_action => action, :id => index, :day => true}
-    menu_div(link_to_remote_with_loading(_(action),
-             :update => "index_form_#{index.id}", :url => url))
-  end
-
-  # prints month year form
-  def date_form(options)
-    date = options[:date] ? Time.parse(options.delete(:date)) : Date.today
-    result = [form_remote_with_loading(options)]
-    result << submit_tag(_(options[:url][:action] + "_to"))
-    result << select_day(date) if options[:day]
-    result << select_month(date, :use_month_numbers => true)
-    result << select_year(date, :start_year => 2000)
-    result << end_form_tag
-    result.join('&nbsp;')
+    link_to_remote(_(action.gsub('_', ' ')),
+                   :update => "index_form_#{index.id}",
+                   :url => url)
   end
 
   # prints select for departments
@@ -386,7 +266,9 @@ module StudentsHelper
   end
 
   def diploma_supplement_link(index)
-    menu_div(link_to(_('diploma supplement'), :controller => :diploma_supplements, 
-            :action => :new, :id => index))
+    link_to(_('diploma supplement'),
+            :controller => :diploma_supplements, 
+            :action => :new,
+            :id => index)
   end
 end

@@ -3,7 +3,7 @@
 <h2><%= @user.person.faculty.name %></h2>
 <h3><%= _('Czech University of Life Sciences') %></h3>
 </div>
-<p><%= _('Invitation for final exam commission.') %></p>
+<p><%= _('Announcement for final exam commission.') %></p>
 <p><%= _("Comissions will sit on %s in room %s.") % 
   [@final_exam_terms.first.date.strftime("%d. %m. %Y"), @final_exam_terms.first.room] %>
 <% for exam_term in @final_exam_terms %>
