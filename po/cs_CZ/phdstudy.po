@@ -153,9 +153,8 @@ msgid "Probation terms"
 msgstr ""
 
 #: app/controllers/scholarships_controller.rb:147
-#, fuzzy
 msgid "Scholarships"
-msgstr "stipendia"
+msgstr "Stipendia"
 
 #: app/controllers/students_controller.rb:252
 msgid "Students"
@@ -195,9 +194,8 @@ msgid "Creating study plan"
 msgstr "Vytváření nového studijního plánu"
 
 #: app/controllers/study_plans_controller.rb:45
-#, fuzzy
 msgid "Change of study plan"
-msgstr "změnit SP"
+msgstr "Změna studijního plánu"
 
 #: app/controllers/study_plans_controller.rb:87
 #: app/controllers/study_plans_controller.rb:143
@@ -873,9 +871,8 @@ msgstr "změnit SP"
 
 #: app/helpers/study_plans_helper.rb:173
 #: app/views/study_plans/_voluntary_form.rhtml:22
-#, fuzzy
 msgid "%s subjects"
-msgstr "Předměty"
+msgstr "%s předměty"
 
 #: app/models/admission_term.rb:4
 msgid "Term must has assigned corridor"
@@ -999,9 +996,8 @@ msgid "Coridor|Program"
 msgstr "Program"
 
 #: app/models/coridor.rb:-
-#, fuzzy
 msgid "Coridor|Voluntary amount"
-msgstr "Program"
+msgstr "Počet volitelných"
 
 #: app/models/dean.rb:5
 msgid "Dean"
@@ -1024,9 +1020,8 @@ msgid "DiplomaSupplement|Diploma no"
 msgstr ""
 
 #: app/models/diploma_supplement.rb:-
-#, fuzzy
 msgid "DiplomaSupplement|Faculty name en"
-msgstr "Fakulta"
+msgstr "Anglický název fakulty"
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Family name"
@@ -1045,14 +1040,12 @@ msgid "DiplomaSupplement|Study programme"
 msgstr ""
 
 #: app/models/diploma_supplement.rb:-
-#, fuzzy
 msgid "DiplomaSupplement|Study specialization"
-msgstr "specializace"
+msgstr "Specializace"
 
 #: app/models/diploma_supplement.rb:-
-#, fuzzy
 msgid "DiplomaSupplement|Faculty name"
-msgstr "Fakulta"
+msgstr "Název fakulty"
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Study mode"
@@ -1067,23 +1060,21 @@ msgid "DiplomaSupplement|Disert theme title"
 msgstr ""
 
 #: app/models/diploma_supplement.rb:-
-#, fuzzy
 msgid "DiplomaSupplement|Defense passed on"
-msgstr "Schválen dne"
+msgstr "Obhájoba dne"
+
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Final areas"
-msgstr ""
+msgstr "Okruhy SDZ"
 
 #: app/models/diploma_supplement.rb:-
-#, fuzzy
 msgid "DiplomaSupplement|Final exam passed on"
-msgstr "ukončen dne"
+msgstr "SZZ vykonána dne"
 
 #: app/models/diploma_supplement.rb:-
-#, fuzzy
 msgid "DiplomaSupplement|Faculty www"
-msgstr "Fakulta"
+msgstr "Fakultní www"
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Printed on"
@@ -1150,9 +1141,8 @@ msgid "Term must has assigned second examiner"
 msgstr "Termín musí mít přiděleného druhého zkoušejícího"
 
 #: app/models/examinator.rb:3
-#, fuzzy
 msgid "Examinator"
-msgstr "zkoušející"
+msgstr "Zkoušející"
 
 #: app/models/external_subject_detail.rb:4
 msgid "university can't be blank"
@@ -1227,14 +1217,12 @@ msgid "Notification about admition procedure to postgradula study"
 msgstr "Vyrozumění o přijímacím řízení na doktorské studium"
 
 #: app/models/notifications.rb:113
-#, fuzzy
 msgid "Invitation to final exam"
-msgstr "semestr státní doktorské zkoušky"
+msgstr "Pozvánka k státní doktorské zkoušce"
 
 #: app/models/notifications.rb:122
-#, fuzzy
 msgid "Created account"
-msgstr "vytvořit účet"
+msgstr "Vytvořen účet"
 
 #: app/models/person.rb:6
 msgid "Person"
