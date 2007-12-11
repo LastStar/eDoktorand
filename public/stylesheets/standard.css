@@ -501,6 +501,8 @@ table#students_table td.student_exception{padding-left: .5ex;color: red; font-si
 table#students_table tr.student_detail {margin: 1px;border-bottom: 1px solid #ddc;}
 table#students_table td.smallerinfo {font-size: 9pt;text-align: center;}
 table#students_table th {text-align: left;}
+div#diploma_supplement {border: solid red;}
+div#diploma_supplement li{border: none}
 
 .smallerinfo a {background-color: #452; padding-right: 4px; padding-left: 2px; color: #fff;}
 .exam_detail {margin: 1px;padding-left: .5ex}
