@@ -91,9 +91,14 @@ class Index < ActiveRecord::Base
     faculty.dean
   end
 
-  # returns if study plan is finished
+  # returns if study is finished
   def finished?
     !finished_on.nil? && finished_on.to_date < Date.today
+  end
+
+  # returns if study is absolved
+  def absolved?
+    disert_theme && disert_theme.defense_passed?
   end
 
   # returns true if interupt just admited
@@ -184,7 +189,7 @@ class Index < ActiveRecord::Base
       conditions = ["NULL IS NOT NULL"]
     end
     unless options[:include]
-      options[:include] = [:student, :disert_theme, :department,
+      options[:include] = [:study_plan, :student, :disert_theme, :department,
                            :study, :coridor, :interupt]
     end
     if options[:conditions]
@@ -302,6 +307,8 @@ class Index < ActiveRecord::Base
         conditions << Date.today
       when 4
         conditions.first << ' AND disert_themes.defense_passed_on IS NOT NULL'
+      when 6
+        conditions.first << ' AND indices.final_exam_passed_on IS NOT NULL'
       end
     end
     indices = Index.find_for(options[:user], :conditions => conditions, 
@@ -439,7 +446,13 @@ class Index < ActiveRecord::Base
   end
 
   def status_class
-    finished? ? 'finished' : ''
+    if finished? 
+      'finished' 
+    elsif absolved?
+      'absolved'
+    else
+      ''
+    end
   end
 
   def not_even_admited_interupt?

@@ -123,12 +123,12 @@ msgstr ""
 msgid "faculty secretary approve"
 msgstr ""
 
-#: app/controllers/probation_terms_controller.rb:100
-#: app/controllers/probation_terms_controller.rb:116
+#: app/controllers/probation_terms_controller.rb:98
+#: app/controllers/probation_terms_controller.rb:114
 msgid "Probation term saved"
 msgstr ""
 
-#: app/controllers/probation_terms_controller.rb:155
+#: app/controllers/probation_terms_controller.rb:153
 msgid "Probation terms"
 msgstr ""
 
@@ -658,7 +658,7 @@ msgid "Are you sure to recalculate amounts?"
 msgstr ""
 
 #: app/helpers/students_helper.rb:8 app/helpers/students_helper.rb:230
-#: app/models/index.rb:116 app/models/index.rb:145 app/models/index.rb:366
+#: app/models/index.rb:121 app/models/index.rb:150 app/models/index.rb:373
 msgid "absolved"
 msgstr ""
 
@@ -731,22 +731,26 @@ msgstr ""
 msgid "SP approved by dean"
 msgstr ""
 
-#: app/helpers/students_helper.rb:229 app/models/index.rb:376
+#: app/helpers/students_helper.rb:229 app/models/index.rb:383
 msgid "studying"
 msgstr ""
 
-#: app/helpers/students_helper.rb:229 app/models/index.rb:370
+#: app/helpers/students_helper.rb:229 app/models/index.rb:377
 #: app/views/candidates/_history.rhtml:2
 msgid "finished"
 msgstr ""
 
-#: app/helpers/students_helper.rb:230 app/models/index.rb:116
-#: app/models/index.rb:145 app/models/index.rb:372
+#: app/helpers/students_helper.rb:230 app/models/index.rb:121
+#: app/models/index.rb:150 app/models/index.rb:379
 msgid "interupted"
 msgstr ""
 
-#: app/helpers/students_helper.rb:230 app/models/index.rb:374
+#: app/helpers/students_helper.rb:230 app/models/index.rb:381
 msgid "continue"
+msgstr ""
+
+#: app/helpers/students_helper.rb:230 app/models/index.rb:375
+msgid "FE passed"
 msgstr ""
 
 #: app/helpers/students_helper.rb:237
@@ -1155,8 +1159,8 @@ msgstr ""
 msgid "not_all_subject_finished"
 msgstr ""
 
-#: app/models/index.rb:368
-msgid "FE passed"
+#: app/models/interupt.rb:7
+msgid "end to"
 msgstr ""
 
 #: app/models/leader.rb:4
@@ -1286,6 +1290,10 @@ msgstr ""
 
 #: app/models/student.rb:24
 msgid "pass defense"
+msgstr ""
+
+#: app/models/student.rb:25
+msgid "pass defense to"
 msgstr ""
 
 #: app/models/study_plan.rb:136

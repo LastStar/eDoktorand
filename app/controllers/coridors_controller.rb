@@ -40,7 +40,7 @@ class CoridorsController < ApplicationController
     @subjects = Subject.find_for_coridor(session[:coridor_id], :not_taken => true)
   end
 
-  def save_subject
+  def save_coridor_subject
     @coridor_subject = eval("%s.new(params[:coridor_subject])" % params[:coridor_subject][:type])
     @coridor_subject.coridor_id = session[:coridor_id]
     @coridor_subject.save

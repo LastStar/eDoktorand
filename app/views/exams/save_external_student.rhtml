@@ -2,15 +2,15 @@
 <ul>
   <li><%= _('Student') %>: <%= @index.student.display_name %></li>
 </ul>
-<%= form_remote_tag(:url => {:action => 'save_external_subject'}, :update => 'form') %>	
+<% external_subject_form do -%>	
 <fieldset>
 <legend><%= _("exam subjects") %></legend>
 <label>
 <%= _("subject") %>
 </label>
-<%= content_tag('select', options_for_select(@subjects.map{|sub| [sub.label,
-sub.id]}), {'id' => "subject_id",'name' => "subject[id]"}) %>
+<select id="subject_id" name="subject[id]">
+  <%= label_options(@subjects) %>
 <br/> 
 </fieldset>
-<%= submit_tag(_("commit")) %>
-<%= end_form_tag %>
+<%= submit_tag(_("commit"), :id => 'submit-button') %>
+<% end %>

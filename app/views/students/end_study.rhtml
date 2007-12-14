@@ -15,12 +15,12 @@
   <li>
    <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%=_ 'Date' %>:
   </li>
-<%= form_tag ({ :action => "end_study_confirm"}, {:id => @student.id})%>
+<% end_study_form do -%>
   <li>
    <%=_ 'Subject of end study'%>:<br>
-   <textarea name='student[subject_end_study]'
-    id='end_study_subject' cols='60' rows='20'></textarea>
+   <textarea name='end_study_subject' id='end_study_subject' cols='60' rows='20'>
+   </textarea>
   </li>
-<%= submit_tag(_('submit')) %>
-<%=end_form_tag%>
+  <%= submit_tag(_('submit'), :id => 'submit-button') %>
+<% end %>
 </ul>

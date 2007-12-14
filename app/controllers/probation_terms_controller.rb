@@ -2,8 +2,6 @@ class ProbationTermsController < ApplicationController
   include LoginSystem
   layout "employers", :except => [:enroll_student]
 
-  model :probation_term
-
   before_filter :set_title
   before_filter :login_required
   before_filter :prepare_student

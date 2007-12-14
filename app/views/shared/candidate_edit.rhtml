@@ -1,7 +1,7 @@
 <%= render_partial "error" %>
 <%= render_partial "notice" %>
 
-<%= form_tag :action => @action %>
+<% form_tag :action => @action do -%>
   <fieldset id='personal'>
     <legend><%= _("Personal informations") %></legend>
     <%= hidden_field 'candidate', 'id' %>
@@ -115,7 +115,7 @@
     <input type='submit' value='<%= _("commit") %>' />&nbsp;
     <input type='reset' value='<%= _("reset") %>' />
   </fieldset>
-  <%= end_form_tag %>
+  <% end %>
   <script  type="text/javascript">
     Field.activate('candidate_firstname')
   </script>

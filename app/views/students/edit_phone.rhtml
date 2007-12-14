@@ -1,7 +1,7 @@
-<%= save_form(:phone) %>
+<% save_form(:phone) do -%>
   <%= text_field 'phone', 'name', 'size' => '30' %>  
   <%= hidden_field 'phone', 'contact_type_id' %>
   <%= hidden_field 'student', 'id' %>
   <%= ok_submit(:phone) %>
-<%= end_form_tag %>
+<% end %>
 <%= javascript_tag "$('phone_name').select()" %>

@@ -71,9 +71,10 @@ module ScholarshipsHelper
                     :update => "regular_scholarship_#{scholarship.index.id}")
   end
 
-  def save_form(scholarship)
+  def save_form(scholarship, &proc)
     form_remote_tag(:url => {:action => 'save', :id => scholarship}, 
-                    :update => "index_#{scholarship.index.id}")
+                    :update => "index_#{scholarship.index.id}",
+                    &proc)
   end
 
   def show_scholarship_form(index)

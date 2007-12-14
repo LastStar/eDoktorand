@@ -39,30 +39,41 @@ class InteruptsController < ApplicationController
   end
 
   def confirm_approve
-    interupt = Interupt.find(params[:id])
-    interupt.approve_with(params[:statement])
-    unless interupt.index.study_plan.approved?
-      interupt.index.study_plan.approve_with(params[:statement])
+    @document = Interupt.find(params[:id])
+    @document.approve_with(params[:statement])
+    unless @document.index.study_plan.approved?
+      @document.index.study_plan.approve_with(params[:statement])
     end
     if @user.has_role?('faculty_secretary')
-      interupt.index.interrupt!(interupt.start_on)
+      @document.index.interrupt!(document.start_on)
     end
     
-    render(:partial => 'shared/confirm_approve', 
-           :locals => {:replace => 'interupt_approvement',
-                       :document => interupt})
+    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      render(:partial => 'shared/confirm_approve', 
+             :locals => {:replace => 'interupt_approvement'})
+    else
+      render(:partial => 'students/redraw_list')
+    end
   end
 
   def confirm
-    index = Index.find(params[:id])
-    index.interrupt!(index.interupt.start_on)
-    render(:inline => "<%= redraw_student(index) %>", :locals => {:index => index})
+    @index = Index.find(params[:id])
+    @index.interrupt!(@index.interupt.start_on)
+    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      render(:partial => 'students/redraw_student')
+    else
+      render(:partial => 'students/redraw_list')
+    end
   end
 
   def end
     @index = Index.find(params[:id])
     @index.end_interupt!(params[:date])
-    render(:partial => 'students/redraw_student')
+    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      render(:partial => 'students/redraw_student')
+    else
+      render(:partial => 'students/redraw_list')
+    end
   end
 
   def print_interupt

@@ -1,4 +1,3 @@
-# require 'study_plan_creator'
 class StudyPlansController < ApplicationController
   include LoginSystem
   helper :students
@@ -191,10 +190,13 @@ class StudyPlansController < ApplicationController
 
   # confirms and saves statement
   def confirm_approve
-    study_plan = StudyPlan.find(params[:id])
-    study_plan.approve_with(params[:statement])
-    render(:partial => 'shared/confirm_approve',
-           :locals => {:document => study_plan})
+    @document = StudyPlan.find(params[:id])
+    @document.approve_with(params[:statement])
+    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      render(:partial => 'shared/confirm_approve')
+    else
+      render(:partial => 'students/redraw_list')
+    end
   end
 
   # atests study plan 
@@ -204,11 +206,16 @@ class StudyPlansController < ApplicationController
 
   # confirms and saves statement
   def confirm_atest
-    study_plan = StudyPlan.find(params[:id])
-    study_plan.atest_with(params[:statement])
-    render(:partial => 'shared/confirm_approve', 
-           :locals => {:replace => 'atestation', :document => study_plan,
-             :approvement => study_plan.atestation})
+    @document = StudyPlan.find(params[:id])
+    @document.atest_with(params[:statement])
+    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      render(:partial => 'shared/confirm_approve', 
+             :locals => {:replace => 'atestation', 
+               :approvement => study_plan.atestation})
+    else
+      do_filter
+      render(:partial => 'redraw_list')
+    end
   end
 
   # for remote adding subjects to page
@@ -234,17 +241,6 @@ class StudyPlansController < ApplicationController
         AtestationDetail.find(params[:atestation_detail][:id])
       @atestation_detail.update_attributes(params[:atestation_detail])
     end
-  end
-
-  def final_application
-    @study_plan = @student.index.study_plan
-  end
-
-  def save_final_application
-    @study_plan = @student.index.study_plan
-    @study_plan.update_attributes(params['study_plan'])
-    @study_plan.index.claim_final_application!
-    redirect_to :action => :index
   end
 
   #adding only final_areas en (fixing bug)

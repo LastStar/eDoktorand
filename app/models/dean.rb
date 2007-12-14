@@ -1,10 +1,12 @@
 class Dean < Leader
   untranslate_all
   has_one :deanship
-  # return faculty of the dean
+
   N_("Dean")
   N_("approve like dean")
   N_('atest like dean')
+ 
+  # return faculty of the dean
   def faculty
     deanship.faculty
   end

@@ -1,7 +1,7 @@
-<%= save_form(:email) %>
+<% save_form(:email) do -%>
   <%= text_field :email, :name, :size => 50 %>
   <%= hidden_field :email, :contact_type_id %>  
   <%= hidden_field :student, :id %>
   <%= ok_submit(:email) %>
-<%= end_form_tag %>
+<% end %>
 <%= javascript_tag "$('email_name').select()" %>

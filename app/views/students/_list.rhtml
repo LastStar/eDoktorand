@@ -6,7 +6,7 @@
   </div>
 <% if @indices && !@indices.empty? %>
   <table id='students_table'>
-    <tbody>
+    <tbody id='students_table_body'>
       <%= render :partial => 'index_line', :collection => @indices %>
     </tbody>
 </table>

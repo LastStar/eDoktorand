@@ -43,7 +43,7 @@
 
 <fieldset id='action'>
   <legend><%= _("action") %></legend>
-  <input type='submit' value='<%= _("commit") %>' />&nbsp;
+  <%= submit_tag(_("commit"), :id => 'submit-button') %>
 </fieldset>
 </form>
 

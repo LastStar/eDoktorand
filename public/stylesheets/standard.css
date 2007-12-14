@@ -458,6 +458,11 @@ h5 {
   color: #bbb;
   font-size: smaller;
 }
+.absolved {
+  padding-left: 3px;
+  color: #666;
+  font-size: smaller;
+}
 .finished a {
   color: #aaa;
 }

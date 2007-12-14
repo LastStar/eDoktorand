@@ -1,9 +1,9 @@
 <li id='coridor_subject_form' class='second'>
-<%= save_form(:subject) %>
+<% save_form(:coridor_subject) do -%>
   <%= collection_select(:coridor_subject, :subject_id, @subjects, :id, :label) %>
-  <%= hidden_field(:coridor_subject, :type)%>
-  <%= ok_submit(:subject) %>
-  <%= javascript_tag "window.document.forms[0].coridor_subject_subject_id.focus()" %>
-  <%= remove_line%>
-<%= end_form_tag %>
+  <%= hidden_field(:coridor_subject, :type) %>
+  <%= ok_submit(:coridor_subject) %>
+  <%= javascript_tag "$('coridor_subject_subject_id').focus()" %>
+  <%= remove_line %>
+<% end %>
 </li>

@@ -1,25 +1,25 @@
 <div id='student_detail'>
-<h5><%=_ 'Request for end study'%></h5>
+<h5><%=_ 'Request for end study' %></h5>
 <ul class='details'>
   <li>
-     <div class='long_info'><%=@student.display_name%></div> <%=_ 'Student' %>:
+    <div class='long_info'><%=@student.display_name%></div> <%=_ 'Student' %>:
   </li>
   <li>
-     <div class='long_info'><%=@student.index.year%></div> <%=_ 'Year' %>:
+    <div class='long_info'><%=@student.index.year%></div> <%=_ 'Year' %>:
   </li>
   <li>
     <div class='long_info'><%=@student.coridor.name%></div>  <%=_ 'Corridor' %>:
   </li>
   <li>
-   <div class='long_info'><%=@student.index.tutor.display_name%></div> <%=_ 'Tutor' %>:
+    <div class='long_info'><%=@student.index.tutor.display_name%></div> <%=_ 'Tutor' %>:
   </li>
   <li>
     <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%=_ 'Date' %>:
   </li>
   <li>
-   <%=_ 'Subject of end study' %>:
+    <%=_ 'Subject of end study' %>:
   </li>
   <li class='second'>
-   <%=@subject_end_study%>
+  <%=h @end_study_subject %>
   </li>
 </div>

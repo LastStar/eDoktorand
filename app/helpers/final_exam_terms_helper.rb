@@ -11,4 +11,12 @@ module FinalExamTermsHelper
   def protocol_link(term)
     link_to _('protocol'), :action => :protocol, :id => term
   end
+
+  def create_form(&proc)
+    form_remote_tag(:url => {:action => 'create'},
+                    :complete => evaluate_remote_response,
+                    :loading => "$('submit-button').value = '%s'" % _('working...'),
+                    &proc)
+
+  end
 end

@@ -1,9 +1,9 @@
-<%= save_form(@scholarship) %>
+<% save_form(@scholarship) do -%>
 <div class='small'>
 <%if params[:scholarship]%>
-  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount'%>
+  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6 %>
 <%else%>
-  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount', 'value' => _('amount') %>
+  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'value' => _('amount') %>
 <%end%>
  <%= _('Kc') %> &nbsp;
   <%= image_submit_tag('ok.png') %>
@@ -31,6 +31,6 @@
   <%= hidden_field 'scholarship', 'index_id' %>
   <%= hidden_field 'scholarship', 'id' %>
 </div>
- <%= _('adding_extra_scholarship') %>
-<%= end_form_tag %>
-<%= javascript_tag "document.forms[0].amount.focus()" %>
+<%= _('adding_extra_scholarship') %>
+<% end %>
+<%= javascript_tag "$('scholarship_amount').select()" %>

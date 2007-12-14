@@ -1,8 +1,8 @@
-<%= change_form(@scholarship) %>
-<%= hidden_field 'scholarship', 'type' %>
-<%= hidden_field 'scholarship', 'index_id' %>
-<%= hidden_field 'scholarship', 'id' %>
-<%= scholarship_field %> <%= _('Kc') %>
-<%= image_submit_tag('ok.png') %>
-<%= end_form_tag %>
+<% change_form(@scholarship) do -%>
+  <%= hidden_field 'scholarship', 'type' %>
+  <%= hidden_field 'scholarship', 'index_id' %>
+  <%= hidden_field 'scholarship', 'id' %>
+  <%= scholarship_field %> <%= _('Kc') %>
+  <%= image_submit_tag('ok.png', :id => 'submit-button') %>
+<% end %>
 

@@ -1,7 +1,7 @@
-<%= save_form(:citizenship) %>
+<% save_form(:citizenship) do -%>
   <%= text_field 'student', 'citizenship', 'size' => 4 %>
   <%= hidden_field 'student', 'id' %>
   <%= ok_submit(:citizenship) %>
-<%= end_form_tag %>
+<% end %>
 <%= javascript_tag "$('student_citizenship').select()" %>
 

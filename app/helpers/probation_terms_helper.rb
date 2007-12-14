@@ -73,4 +73,27 @@ module ProbationTermsHelper
                            :id => probation_term,
                            :student_id => student.id})
   end
+
+  def enroll_form(probation_term, &proc)
+    form_remote_tag(:url => {:action => 'enroll_student'},
+                    :update => "info_#{probation_term.id}",
+                    :loading => "$('submit-button').value = '%s'" % _('working...'),
+                    &proc)
+
+  end
+
+  def save_details_form(&proc)
+    form_remote_tag(:url => {:action => 'save_probation_term_details'},
+                    :loading => "$('submit-button').value = '%s'" % _('working...'),
+                    :complete => evaluate_remote_response,
+                    &proc)
+
+  end
+
+  def term_date_select
+    date_select :probation_term, :date,
+                :start_year => 2005,
+                :order => [:day, :month, :year],
+                :use_month_numbers => true
+  end
 end

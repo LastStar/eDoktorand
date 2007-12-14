@@ -2,7 +2,7 @@ class Contact < ActiveRecord::Base
   untranslate_all
   validates_presence_of :name
   validates_presence_of :type
-  belongs_to :type, :class_name => 'ContactType'
+  belongs_to :type, :foreign_key => :contact_type_id
   belongs_to :person
 
   def self.new_email_for(person)

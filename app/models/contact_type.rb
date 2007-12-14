@@ -1,3 +1,3 @@
 class ContactType < ActiveRecord::Base
-untranslate_all
+  untranslate_all
 end

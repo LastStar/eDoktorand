@@ -1,7 +1,7 @@
-<%= save_form(:consultant) %>
+<% save_form(:consultant) do -%>
   <%= text_field 'index', 'consultant', 'size' => 20 %>
   <%= hidden_field 'index', 'id' %>
   <%= ok_submit(:consultant) %>
-<%= end_form_tag %>
+<% end %>
 <%= javascript_tag "$('index_consultant').select()" %>
 

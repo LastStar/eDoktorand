@@ -30,4 +30,38 @@ module ExamsHelper
         :id => exam.id}, :complete => evaluate_remote_response,
                     :loading => visual_effect(:pulsate, "detail_link_%i" % exam.id))
   end
+
+  #prints form for saving external exam student
+  def external_student_form(&proc)
+    form_remote_tag(:url => {:action => 'save_external_student'},
+                    :update => 'form',
+                    :loading => "$('submit-button').value = '%s'" % _('working...'),
+                    &proc)
+  end
+
+  #prints form for saving external exam subject
+  def external_subject_form(&proc)
+    form_remote_tag(:url => {:action => 'save_external_subject'},
+                    :update => 'form',
+                    :loading => "$('submit-button').value = '%s'" % _('working...'),
+                    &proc)
+
+  end
+
+  def subject_form(&proc)
+    form_remote_tag(:url => {:action => 'save_subject'}, 
+                    :complete => evaluate_remote_response,
+                    :loading => "$('submit-button').value = '%s'" % _('working...'),
+                    &proc)
+
+  end
+
+  def student_subject_form(&proc)
+    form_remote_tag(:url => {:action => 'save_student_subject'},
+                    :complete => evaluate_remote_response,
+                    :loading => "$('submit-button').value = '%s'" % _('working...'),
+                    &proc)
+
+
+  end
 end

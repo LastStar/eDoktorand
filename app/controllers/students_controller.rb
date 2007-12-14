@@ -59,18 +59,16 @@ class StudentsController < ApplicationController
   end
   
   # finishes study
-  def finish
-    @index = Index.find(params[:id])
-    date = params[:date]
-    @index.finish!(Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i))
-    render(:partial => 'redraw_student')
-  end
   
   # unfinishes study
   def unfinish
     @index = Index.find(params[:id])
     @index.unfinish!
-    render(:partial => 'redraw_student')
+    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      render(:partial => 'redraw_student')
+    else
+      render(:partial => 'students/redraw_list')
+    end
   end
   
   # switches study on index
@@ -78,7 +76,11 @@ class StudentsController < ApplicationController
     @index = Index.find(params['id'])
     date = create_date(params['date'])
     @index.switch_study!(date)
-    render(:partial => 'redraw_student')
+    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      render(:partial => 'redraw_student')
+    else
+      render(:partial => 'students/redraw_list')
+    end
   end
 
   # supervise scholarship by faculty_secretary
@@ -86,7 +88,11 @@ class StudentsController < ApplicationController
     @index = Index.find(params[:id])
     @student = @index.student
     @student.update_attribute('scholarship_supervised_at', Time.now)
-    render(:partial => 'redraw_student')
+    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      render(:partial => 'redraw_student')
+    else
+      render(:partial => 'students/redraw_list')
+    end
   end
 
   # renders time form for other actions
@@ -101,7 +107,11 @@ class StudentsController < ApplicationController
   def confirm_approve
     @document = Index.find(params[:id])
     @document.approve_with(params[:statement])
-    render(:partial => 'shared/confirm_approve')
+    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+      render(:partial => 'shared/confirm_approve')
+    else
+      render(:partial => 'redraw_list')
+    end
   end
 
   # methods for editing personal details
@@ -228,13 +238,13 @@ class StudentsController < ApplicationController
   end
 
   def end_study_confirm
-    @subject_end_study = params[:student][:subject_end_study]
-    Notifications::deliver_end_study(@student,@subject_end_study)
+    @end_study_subject = params[:end_study_subject]
+    Notifications::deliver_end_study(@student, @end_study_subject)
   end
 
   def change_tutor_confirm
-    @subject_change_tutor = params[:student][:subject_change_tutor]
-    Notifications::deliver_change_tutor(@student,@subject_change_tutor)
+    @subject_change = params[:subject_change]
+    Notifications::deliver_change_tutor(@student, @subject_change)
   end
 
   private

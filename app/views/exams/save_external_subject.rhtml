@@ -3,7 +3,7 @@
   <li><%= _('Student') %>: <%= @exam.index.student.display_name %></li>
   <li><%= _('Subject') %>: <%= @exam.subject.label %></li>
 </ul>
-<%= form_tag(:action => 'save_external') %>	
+<% form_tag(:action => 'save_external') do -%>	
 <fieldset id='date'>
 <legend><%= _("Exam date") %></legend>
 <label>
@@ -35,6 +35,6 @@
 
 <fieldset id='action'>
   <legend><%= _("action") %></legend>
-  <input type='submit' value='<%= _("commit") %>' />&nbsp;
-  <input type='reset' value='<%= _("reset") %>' />
+  <input type='submit' value='<%= _("commit") %>' />
 </fieldset>
+<% end %>

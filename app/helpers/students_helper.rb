@@ -227,7 +227,7 @@ module StudentsHelper
   # prints select for statuses
   def study_status_select(options = {})
     ops = [['---', '0'], [_("studying"), 1], [_("finished"), 2],
-            [_("interupted"), 3], [_('absolved'), 4], [_('continue'), 5]]
+            [_("interupted"), 3], [_('absolved'), 4], [_('continue'), 5], [_('FE passed'), 6]]
     content_tag('select', options_for_select(ops), 
                 {:id => "study_status-srch", :name => "study_status"})
   end
@@ -270,5 +270,15 @@ module StudentsHelper
             :controller => :diploma_supplements, 
             :action => :new,
             :id => index)
+  end
+
+  # returns form for changing tutor
+  def change_tutor_form(&proc)
+    form_tag({:action => "change_tutor_confirm"}, &proc)
+  end
+
+  # returns form for ending study
+  def end_study_form(&proc)
+    form_tag({:action => "end_study_confirm"}, &proc)
   end
 end

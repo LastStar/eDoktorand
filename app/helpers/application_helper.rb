@@ -268,14 +268,16 @@ module ApplicationHelper
     end
   end
 
-  def save_form(name)
+  def save_form(name, &proc)
     form_remote_tag(:url => {:action => "save_#{name}"},
-                        :complete => evaluate_remote_response,
-                        :after => loader_image("#{name}_submit"))
+                    :complete => evaluate_remote_response,
+                    :after => loader_image("#{name}_submit"),
+                    &proc)
   end
 
   def ok_submit(name)
-    content_tag(:span, image_submit_tag('ok'), :id => "#{name}_submit", 
+    content_tag(:span, image_submit_tag('ok.png'),
+                :id => "#{name}_submit", 
                 :class => 'noborder') 
   end
 
@@ -399,16 +401,6 @@ module ApplicationHelper
     content_tag('span', content, options)
   end
 
-  # prints div with smallerinfo class with content inside
-  def smaller_info_div(content, html_class = '')
-    html_class.concat(' smallerinfo')
-    div_tag(content, {:class => html_class})
-  end
-
-  def longer_info_div(content)
-    div_tag(content, {:class => 'longerinfo'})
-  end
-
   def date_info_div(content)
     div_tag(content, {:class => 'dateinfo'})
   end
@@ -499,26 +491,37 @@ module ApplicationHelper
     link_to_function(text, "Element.hide('#{element}')")
   end
 
-  def add_en_link(id,i)
+  def add_en_link(id, i)
     link_to_remote(image_tag('plus.png'),
-                   :url => {:controller => 'study_plans', :action => 'add_en', :id => id, :final_area_id => i},
+                   :url => {:controller => 'study_plans',
+                           :action => 'add_en',
+                           :id => id,
+                           :final_area_id => i},
                    :update => 'final_area_en'+i.to_s)
   end
 
   def add_disert_theme_en_link(disert_theme)
     link_to_remote(image_tag('plus.png'),
-                   :url => {:controller => 'disert_themes',:action => 'add_en', :disert_theme => disert_theme},
+                   :url => {:controller => 'disert_themes',
+                           :action => 'add_en',
+                           :disert_theme => disert_theme},
                    :update => "disert_theme_title_en")
   end
   
-  def save_disert_theme_form(disert_theme)
-    form_remote_tag(:url => {:controller => 'disert_themes', :action => 'save_en', :disert_theme => disert_theme},
-                    :update => "disert_theme_title_en")
+  def save_disert_theme_form(disert_theme, &proc)
+    form_remote_tag(:url => {:controller => 'disert_themes',
+                            :action => 'save_en',
+                            :disert_theme => disert_theme},
+                    :update => "disert_theme_title_en", &proc)
   end
 
-  def save_final_area_form(id,final_area_id)
-    form_remote_tag(:url => {:controller => 'study_plans', :action => 'save_en', :id => id, :final_area_id => final_area_id},
-                    :update => 'final_area_en'+final_area_id.to_s)
+  def save_final_area_form(id, final_area_id, &proc)
+    form_remote_tag(:url => {:controller => 'study_plans',
+                            :action => 'save_en',
+                            :id => id,
+                            :final_area_id => final_area_id},
+                    :update => 'final_area_en' + final_area_id.to_s,
+                    &proc)
   end
 
   def disert_theme_line(disert_theme)
@@ -539,7 +542,7 @@ module ApplicationHelper
   end
 
   def remove_line
-  link_to_function(image_tag('close.png'), "$('coridor_subject_form').remove()")
+    link_to_function(image_tag('close.png'), "$('coridor_subject_form').remove()")
   end
   
   def student_tutor_line(index)
@@ -562,6 +565,23 @@ module ApplicationHelper
     image_tag('loader.gif', :id => js_id, :style => 'display: none')
   end
 
+  # TODO use on more places
+  # returns select options for any labeled objects
+  def label_options(objects)
+    options_for_select(objects.map{|o| [o.label, o.id]})
+  end
+
+  # returns form for approving
+  def approve_document_form(document, action, &proc)
+    controller = document.class.to_s.underscore.pluralize
+    form_remote_tag(:url => {:controller => controller,
+                            :action => action,
+                            :id => document},
+                    :loading => "$('submit-button').value = '%s'" % _('working...'),
+                    :complete => evaluate_remote_response,
+                    &proc)
+
+  end
 private
   
   def loader_image(field)

@@ -1,8 +1,8 @@
-<%= save_form(:tutor) %>
-<select name='index[tutor_id]'>
-<%= options_for_select(@tutors, @index.tutor_id)%>
-</select>
+<% save_form(:tutor) do -%>
+  <select name='index[tutor_id]'>
+  <%= options_for_select(@tutors, @index.tutor_id)%>
+  </select>
   <%= hidden_field 'index', 'id' %>
   <%= ok_submit(:tutor) %>
-<%= end_form_tag %>
+<% end %>
 <%= javascript_tag "$('tutor_display_name').select()" %>

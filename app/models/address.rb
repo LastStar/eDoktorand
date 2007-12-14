@@ -1,9 +1,10 @@
 class Address < ActiveRecord::Base
-untranslate_all
-  belongs_to :student, :order =>
-  'created_on desc'
-  belongs_to :type, :class_name => 'AddressType'
+  untranslate_all
+
+  belongs_to :student, :order => 'created_on desc'
+  belongs_to :type, :foreign_key => :address_type_id
   validates_presence_of :student
+
   # return address formated in one line
   def to_line_s
     return [[self.street, self.desc_number].join(' '), self.city, self.zip].join(', ')

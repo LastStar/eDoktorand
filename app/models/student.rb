@@ -22,6 +22,7 @@ class Student < Examinator
   N_('pass final exam to')
   N_('pass final exam')
   N_('pass defense')
+  N_('pass defense to')
   
   
   # returns faculty on which student is

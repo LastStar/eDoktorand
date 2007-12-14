@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2007-12-10 12:25+0100\n"
+"POT-Creation-Date: 2007-12-10 15:53+0100\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -143,12 +143,12 @@ msgstr "Česká zemědělská univerzita v Praze"
 msgid "faculty secretary approve"
 msgstr "schváleno referentkou vědy a výzkumu"
 
-#: app/controllers/probation_terms_controller.rb:100
-#: app/controllers/probation_terms_controller.rb:116
+#: app/controllers/probation_terms_controller.rb:98
+#: app/controllers/probation_terms_controller.rb:114
 msgid "Probation term saved"
 msgstr "Termíny zkoušky byl uložen"
 
-#: app/controllers/probation_terms_controller.rb:155
+#: app/controllers/probation_terms_controller.rb:153
 msgid "Probation terms"
 msgstr ""
 
@@ -678,7 +678,7 @@ msgid "Are you sure to recalculate amounts?"
 msgstr "Chcete opravdu přepočítat velikost stipendii?"
 
 #: app/helpers/students_helper.rb:8 app/helpers/students_helper.rb:230
-#: app/models/index.rb:116 app/models/index.rb:145 app/models/index.rb:366
+#: app/models/index.rb:121 app/models/index.rb:150 app/models/index.rb:373
 msgid "absolved"
 msgstr "absolvoval"
 
@@ -751,23 +751,27 @@ msgstr "SP schválen vedoucím"
 msgid "SP approved by dean"
 msgstr "SP schválen děkanem"
 
-#: app/helpers/students_helper.rb:229 app/models/index.rb:376
+#: app/helpers/students_helper.rb:229 app/models/index.rb:383
 msgid "studying"
 msgstr "studuje"
 
-#: app/helpers/students_helper.rb:229 app/models/index.rb:370
+#: app/helpers/students_helper.rb:229 app/models/index.rb:377
 #: app/views/candidates/_history.rhtml:2
 msgid "finished"
 msgstr "ukončeno"
 
-#: app/helpers/students_helper.rb:230 app/models/index.rb:116
-#: app/models/index.rb:145 app/models/index.rb:372
+#: app/helpers/students_helper.rb:230 app/models/index.rb:121
+#: app/models/index.rb:150 app/models/index.rb:379
 msgid "interupted"
 msgstr "přerušeno"
 
-#: app/helpers/students_helper.rb:230 app/models/index.rb:374
+#: app/helpers/students_helper.rb:230 app/models/index.rb:381
 msgid "continue"
 msgstr "uzavřeno"
+
+#: app/helpers/students_helper.rb:230 app/models/index.rb:375
+msgid "FE passed"
+msgstr "složil SDZ"
 
 #: app/helpers/students_helper.rb:237
 #: app/views/candidates/_corridor_summary.rhtml:7
@@ -1063,7 +1067,6 @@ msgstr ""
 msgid "DiplomaSupplement|Defense passed on"
 msgstr "Obhájoba dne"
 
-
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Final areas"
 msgstr "Okruhy SDZ"
@@ -1176,9 +1179,9 @@ msgstr ""
 msgid "not_all_subject_finished"
 msgstr ""
 
-#: app/models/index.rb:368
-msgid "FE passed"
-msgstr "složil SDZ"
+#: app/models/interupt.rb:7
+msgid "end to"
+msgstr "ukončit k"
 
 #: app/models/leader.rb:4
 msgid "Leader"
@@ -1308,6 +1311,10 @@ msgstr "složil SDZ"
 #: app/models/student.rb:24
 msgid "pass defense"
 msgstr "obhájil disertační práci"
+
+#: app/models/student.rb:25
+msgid "pass defense to"
+msgstr "obhájil dne"
 
 #: app/models/study_plan.rb:136
 msgid "all finished"
@@ -1784,7 +1791,7 @@ msgid ""
 "On this page you can add your methodology file. File should be only in\n"
 "PDF format."
 msgstr ""
-"Na této stránce můžete přidat svůj soubor metodikou. Soubor musí býtve "
+"Na této stránce můžete přidat svůj soubor metodikou. Soubor musí být ve "
 "formátu PDF."
 
 #: app/views/disert_themes/methodology.rhtml:8

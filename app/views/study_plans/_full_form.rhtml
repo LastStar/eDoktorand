@@ -1,4 +1,4 @@
-<%= form_tag(:controller => 'study_plans', :action => 'save_full') %>	
+<% form_tag(:controller => 'study_plans', :action => 'save_full') do -%>	
 <fieldset>
 <%= hidden_field('student', 'id') %>
 <%= hidden_field('study_plan', 'last_atested_on') %>
@@ -57,5 +57,5 @@
 </ul>
 </fieldset>
 <%= submit_tag _("commit") %>
-<%= end_form_tag %>
+<% end %>
 

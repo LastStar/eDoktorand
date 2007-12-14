@@ -15,12 +15,12 @@
   <li>
    <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%=_ 'Date' %>:
   </li>
-<%= form_tag ({ :action => "change_tutor_confirm"}, {:id => @student.id})%>
+<% change_tutor_form do -%>
   <li>
-   <%=_ 'Reason for change tutor'%>:<br>
-   <textarea name='student[subject_change_tutor]'
-    id='change_tutor_subject' cols='60' rows='20'></textarea>
+  <%=_ 'Reason for change tutor' %>:<br>
+  <textarea name='subject_change' id='subject_change' cols='60' rows='20'>
+  </textarea>
   </li>
-<%= submit_tag(_('submit')) %>
-<%=end_form_tag%>
+  <%= submit_tag(_('submit')) %>
+<% end %>
 </ul>
