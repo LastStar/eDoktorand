@@ -15,7 +15,7 @@ class CandidatesController < ApplicationController
       redirect_to :action => 'list_admission_ready', :coridor => @user.person.tutorship.coridor_id
     else
       list
-      render_action 'list'
+      render(:action => 'list')
     end
   end
 
@@ -36,7 +36,7 @@ class CandidatesController < ApplicationController
     session[:back_page] = 'list_all'
     @candidates = Candidate.find_all_finished_by_session_category(params, @faculty, session[:category])
     session[:current_page_backward_all] = session[:category]
-    render_action 'list'
+    render(:action => 'list')
   end
 
   # lists all candidates ordered by category

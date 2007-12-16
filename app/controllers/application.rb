@@ -9,10 +9,11 @@ class ApplicationController < ActionController::Base
   before_filter :utf8_locale
 
   # hack to solve deep STI
-  require_dependencies(:model, [:dean])
+  # require_dependencies(:model, [:dean])
 
   # sets utf8 for db and locale to cs_CZ
   # TODO redone for native sql and locale
+  # TODO remove blood with Dean
   def utf8_locale
     if params[:lang]
       cookies[:lang] = params[:lang]
@@ -21,6 +22,7 @@ class ApplicationController < ActionController::Base
     else
       params[:lang] = cookies[:lang] = 'cs_CZ'
     end
+    Dean.columns
     setlocale params[:lang]
     @charset = 'utf-8'
     headers['Content-Type'] = "text/html; charset=#{@charset}"

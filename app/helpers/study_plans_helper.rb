@@ -170,7 +170,7 @@ module StudyPlansHelper
   end
 
   def return_to_link
-    link_to_remote ("<<< " + _("%s subjects" % @return_to), 
+    link_to_remote("<<< " + _("%s subjects" % @return_to), 
                     {:url => {:action => "edit_create", :type => @return_to}, 
                     :complete => evaluate_remote_response}, 
                     {:class => 'details_link'})

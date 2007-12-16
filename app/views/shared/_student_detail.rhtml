@@ -4,8 +4,8 @@
 <%= render(:partial => 'shared/personal_detail', :locals => {:index => index}) %>
 <% if index.student.address || @user.has_role?('student')%>
 <h5><%= _("Contact details") %></h5>
-<%= render_partial 'shared/address_detail', :student => index.student %>
+<%= render :partial => 'shared/address_detail', :locals => {:student => index.student} %>
 <% end %>
-<%= render_partial 'shared/study_detail', :index => index %>
+<%= render :partial => 'shared/study_detail', :locals => {:index => index} %>
 <%= detail_links(@user, index) %>
 </div>
