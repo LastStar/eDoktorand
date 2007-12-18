@@ -327,8 +327,8 @@ div.printHeader { display: none; }
 }
 
 .topMenu a { 
- color: #b00;
- padding: 2px;
+  color: #b00;
+  padding: 2px;
   text-decoration: none;
 }
 .topMenu a:hover { 
@@ -490,22 +490,15 @@ ul.nodecor li {
 }
 form.no_block {display: inline;}
 .long_info option, input {font-size: 13px}
-div.menu {text-align: center; width: 21ex; float: right; background-color: #452;font-size: 10px; margin-left: 1px; border-left: 2px solid #ddc; border-bottom: 2px solid #ddc;}
-div.menu a {display: block;text-decoration: none;color: white;}
-div.menu a:hover {text-decoration: none; background-color: #ddc; color: black;padding-right: 4px; padding-left: 2px;margin:1px}
-div.menu a:active {text-decoration: none;color: white;}
+div.menu {text-align: center; width: 15ex; float: right; background-color: #ddc; border-right: 1px solid white;}
+div.menu a { font-size: small;}
 table#students_table.menu_line {border-top: 1px solid #452;}
-table#students_table div.form_line {background-color: #ddc;text-align:right;}
 table#students_table div.menu_style {background-color: #ddc;}
-table#students_table.form_line form {padding-right: 10px; text-align: right;}
-.student_detail {margin: 1px;padding-left: .5ex;}
-.student_detail a {text-decoration: none;}
 table#students_table {border-collapse: collapse;table-layout: auto;width: 100%;}
-table#students_table td {padding-left: .5ex; font-size: 9pt}
+table#students_table td {padding-left: .5ex; font-size: smaller}
 table#students_table td.student_exception{padding-left: .5ex;color: red; font-size:smaller; font-style:italic}
-table#students_table tr.student_detail {margin: 1px;border-bottom: 1px solid #ddc;}
-table#students_table td.smallerinfo {font-size: 9pt;text-align: center;}
 table#students_table th {text-align: left;}
+table#students_table a {text-decoration: none}
 div#diploma_supplement {border: solid red;}
 div#diploma_supplement li{border: none}
 
@@ -588,3 +581,9 @@ div#name_search label {padding-top: 0}
 div#fast_filters {padding-bottom: 2ex;}
 div#fast_filters ul li {list-style: none; float: left; border: none;  width: 15ex; text-align: center;padding-right: 1ex;}
 #name_search input {font-size: large}
+.action-link a {background: #ddc; padding: 0 3px; font-size: small;}
+.form-line {background: #ddc;text-align: right;}
+.student-line {font-size: medium;border-bottom: 1px solid #ddc;}
+.selected {font-size: large; background: #fee; border-top: 3px solid #dcc;}
+.once-selected {border-left: 3px solid #dcc;}
+.filter-line {margin-bottom: 1ex}

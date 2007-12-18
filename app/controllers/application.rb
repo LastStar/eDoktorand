@@ -82,6 +82,11 @@ class ApplicationController < ActionController::Base
       @conditions = ['tutor_id = ?', @user.person.id]
     end
   end
+
+  # choses what to do on browsers
+  def good_browser?(agent = /Firefox/)
+    request.env['HTTP_USER_AGENT'] =~ agent
+  end
  
 end
 

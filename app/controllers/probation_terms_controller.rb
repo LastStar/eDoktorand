@@ -72,24 +72,6 @@ class ProbationTermsController < ApplicationController
     @subjects = Subject.find_for(@user, :not_finished)
   end
 
-  # saves the subject of probation term to session and adds students 
-  def save_subject
-    probation_term = session[:probation_term]
-    probation_term.subject_id = params[:subject][:id]
-    session[:probation_term] = probation_term
-    render(:partial => "probation_term_details", :locals => {:probation_term => probation_term})
-  end
-  
-  # saves the details of the probation term and prepares the examinators
-  # selection
-  def save_details
-    probation_term = session[:probation_term]
-    probation_term.attributes = params[:probation_term]
-    session[:probation_term] = probation_term
-    render(:partial => 'examinators', :locals => {:probation_term =>
-    probation_term})
-  end
-  
   # saves probation term 
   def save
     params[:probation_term][:created_by] = @user.person.id

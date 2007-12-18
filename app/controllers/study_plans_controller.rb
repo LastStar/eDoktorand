@@ -192,7 +192,7 @@ class StudyPlansController < ApplicationController
   def confirm_approve
     @document = StudyPlan.find(params[:id])
     @document.approve_with(params[:statement])
-    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+    if good_browser?
       render(:partial => 'shared/confirm_approve')
     else
       render(:partial => 'students/redraw_list')
@@ -208,21 +208,13 @@ class StudyPlansController < ApplicationController
   def confirm_atest
     @document = StudyPlan.find(params[:id])
     @document.atest_with(params[:statement])
-    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+    if good_browser?
       render(:partial => 'shared/confirm_approve', 
-             :locals => {:replace => 'atestation', 
-               :approvement => study_plan.atestation})
+            :locals => {:replace => 'atestation',
+                        :approvement => study_plan.atestation})
     else
-      do_filter
-      render(:partial => 'redraw_list')
+      render(:partial => 'students/redraw_list')
     end
-  end
-
-  # for remote adding subjects to page
-  def subjects
-    render(:partial => 'plan_subjects', :locals => {:subjects =>
-           PlanSubject.find(:all, :conditions => ['study_plan_id = ?', params[:id]],
-                            :include => [:subject]), :study_plan => StudyPlan.find(params[:id])})
   end
 
   # prepares form for atestation details

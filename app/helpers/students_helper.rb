@@ -40,13 +40,34 @@ module StudentsHelper
     else
       links << diploma_supplement_link(index)
     end
-    return "<div class='menu'>%s</div>" % links.join("</div><div class='menu'>")
+    return  links
   end
       
-  #prints link to function witch toggle student line menu
-  def link_to_actions(index)
-    link_to_function(_('actions'), "Element.toggle('index_menu_#{index.id}_tr',
-                                    'index_form_#{index.id}_tr');")
+  #prints link to function witch show student line menu
+  def link_to_show_actions(index)
+    link_to_function('&uarr;' + _('actions'),
+      update_page do |page|
+        page.show "index_menu_#{index.id}_tr"
+        page.show "index_form_#{index.id}_tr"
+        page.show "hide_action_#{index.id}"
+        page.hide "show_action_#{index.id}"
+        page["index_line_#{index.id}"].addClassName('selected')
+        page["index_line_#{index.id}"].addClassName('once-selected')
+      end, :id => "show_action_#{index.id}")
+  end
+      
+  #prints link to function witch hide student line menu
+  def link_to_hide_actions(index)
+    link_to_function('&darr;' + _('actions'),
+      update_page do |page|
+        page.hide "index_menu_#{index.id}_tr"
+        page.hide "index_form_#{index.id}_tr"
+        page.hide "hide_action_#{index.id}"
+        page.show "show_action_#{index.id}"
+        page["index_line_#{index.id}"].removeClassName('selected')
+      end,
+      :id => "hide_action_#{index.id}",
+      :style => 'display: none')
   end
 
   # prints students scholarship
@@ -148,7 +169,7 @@ module StudentsHelper
   # returns link for details fiter 
   def detail_filter_link
     link_to_function(_('Detail filter'),
-                     "Element.toggle('detail_info', 'detail_search')",
+                     "$('detail_info').toggle(); $('detail_search').toggle()",
                      :class => 'legend_link') 
   end
 
@@ -194,7 +215,7 @@ module StudentsHelper
   # prints select for departments
   def department_select(options = {:include_empty => true})
     ops = Department.find(:user => @user).map {|d| [d.name, d.id]}
-    ops = [['---', '0']].concat(ops) if options[:include_empty]
+    ops = [['-- ' + _('department') + ' --', '0']].concat(ops) if options[:include_empty]
     content_tag('select', options_for_select(ops),
                 {:id => "department-srch", :name => "department"})
   end
@@ -202,7 +223,7 @@ module StudentsHelper
   # prints select for coridor
   def coridor_select(options = {:include_empty => true})
     ops = Coridor.find(:user => @user).map {|c| [c.name, c.id]}
-    ops = [['---', '0']].concat(ops) if options[:include_empty]
+    ops = [['-- ' + _('coridor') + ' --', '0']].concat(ops) if options[:include_empty]
     content_tag('select', options_for_select(ops),
                 {:id => "coridor-srch", :name => "coridor"})
   end
@@ -217,7 +238,7 @@ module StudentsHelper
 
   # prints select for statuses
   def status_select(options = {})
-    ops = [['---', '0'], [_("SP not admited"), 1],\
+    ops = [['-- ' + _('study plan') + ' --', '0'], [_("SP not admited"), 1],\
         [_("SP admited"), 2], [_("SP approved by tutor"), 3],\
         [_("SP approved by leader"), 4], [_('SP approved by dean'), 5]]
     content_tag('select', options_for_select(ops), 
@@ -226,7 +247,7 @@ module StudentsHelper
 
   # prints select for statuses
   def study_status_select(options = {})
-    ops = [['---', '0'], [_("studying"), 1], [_("finished"), 2],
+    ops = [['-- ' + _('study') + ' --', '0'], [_("studying"), 1], [_("finished"), 2],
             [_("interupted"), 3], [_('absolved'), 4], [_('continue'), 5], [_('FE passed'), 6]]
     content_tag('select', options_for_select(ops), 
                 {:id => "study_status-srch", :name => "study_status"})
@@ -234,14 +255,14 @@ module StudentsHelper
 
   # prints select for statuses
   def form_select(options = {})
-    ops = [['---', '0'], [_("present"), 1], [_("combined"), 2]]
+    ops = [['-- ' + _('study form') + ' --', '0'], [_("present"), 1], [_("combined"), 2]]
     content_tag('select', options_for_select(ops), 
                 {'id' => "form", 'name' => "form"})
   end
 
   # prints select for years
   def year_select
-    ops = [['---', '0'], [_("1. year"), 1], [_("2. year"), 2], 
+    ops = [['-- ' + _('year') + ' --', '0'], [_("1. year"), 1], [_("2. year"), 2], 
             [_("3. year"), 3], [_('x'), 4]]
     content_tag('select', options_for_select(ops), 
       {'id' => "year", 'name' => "year"})
@@ -280,5 +301,20 @@ module StudentsHelper
   # returns form for ending study
   def end_study_form(&proc)
     form_tag({:action => "end_study_confirm"}, &proc)
+  end
+
+  def name_search_form(&proc)
+    form_remote_tag(:url => {:action => 'search'},
+                    :loading => "$('search_submit').value = '%s'" % _('working...'),
+                    :complete => evaluate_remote_response,
+                    &proc)
+  end
+
+  def detail_filter_form(&proc)
+    form_remote_tag(:url => {:action => 'multiple_filter'},
+                    :loading => "$('spinner').show()",
+                    :complete => "$('spinner').hide()",
+                    :update => 'students_list',
+                    &proc)
   end
 end

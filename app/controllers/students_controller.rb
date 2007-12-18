@@ -1,9 +1,10 @@
 class StudentsController < ApplicationController
   include LoginSystem
   helper :study_plans
-  layout 'employers', :except => [:edit_citizenship, :edit_display_name, :edit_phone, :edit_email, 
-                                  :edit_birthname, :edit_consultant, :edit_tutor,
-                                  :time_form, :filter, :list_xls, :edit_account]
+  layout 'employers',
+        :except => [:edit_citizenship, :edit_display_name, :edit_phone,
+                    :edit_email, :edit_birthname, :edit_consultant, :edit_tutor,
+                    :time_form, :filter, :list_xls, :edit_account]
 
   before_filter :prepare_user, :set_title, :login_required
   before_filter :prepare_order, :prepare_filter, :except => [:show, :contact]
@@ -40,7 +41,7 @@ class StudentsController < ApplicationController
   
   # multiple filtering
   def multiple_filter
-    options = params.to_hash
+    options = params.to_hash.symbolize_keys
     options[:user] = @user
     options[:order] = 'people.lastname'
     @indices = Index.find_by_criteria(options)
@@ -64,10 +65,10 @@ class StudentsController < ApplicationController
   def unfinish
     @index = Index.find(params[:id])
     @index.unfinish!
-    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+    if good_browser?
       render(:partial => 'redraw_student')
     else
-      render(:partial => 'students/redraw_list')
+      render(:partial => 'redraw_list')
     end
   end
   
@@ -76,10 +77,10 @@ class StudentsController < ApplicationController
     @index = Index.find(params['id'])
     date = create_date(params['date'])
     @index.switch_study!(date)
-    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+    if good_browser?
       render(:partial => 'redraw_student')
     else
-      render(:partial => 'students/redraw_list')
+      render(:partial => 'redraw_list')
     end
   end
 
@@ -88,10 +89,10 @@ class StudentsController < ApplicationController
     @index = Index.find(params[:id])
     @student = @index.student
     @student.update_attribute('scholarship_supervised_at', Time.now)
-    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+    if good_browser?
       render(:partial => 'redraw_student')
     else
-      render(:partial => 'students/redraw_list')
+      render(:partial => 'redraw_list')
     end
   end
 
@@ -107,7 +108,7 @@ class StudentsController < ApplicationController
   def confirm_approve
     @document = Index.find(params[:id])
     @document.approve_with(params[:statement])
-    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+    if good_browser?
       render(:partial => 'shared/confirm_approve')
     else
       render(:partial => 'redraw_list')

@@ -1310,7 +1310,7 @@ msgstr "složil SDZ"
 
 #: app/models/student.rb:24
 msgid "pass defense"
-msgstr "obhájil disertační práci"
+msgstr "obhájil DP"
 
 #: app/models/student.rb:25
 msgid "pass defense to"

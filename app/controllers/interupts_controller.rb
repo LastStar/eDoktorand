@@ -48,18 +48,18 @@ class InteruptsController < ApplicationController
       @document.index.interrupt!(document.start_on)
     end
     
-    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+    if good_browser?
       render(:partial => 'shared/confirm_approve', 
-             :locals => {:replace => 'interupt_approvement'})
+             :locals => {:replace => 'interupt_approvement'}),
     else
-      render(:partial => 'students/redraw_list')
+      render(:partial => 'students/redraw_list'))
     end
   end
 
   def confirm
     @index = Index.find(params[:id])
     @index.interrupt!(@index.interupt.start_on)
-    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+    if good_browser?
       render(:partial => 'students/redraw_student')
     else
       render(:partial => 'students/redraw_list')
@@ -69,10 +69,11 @@ class InteruptsController < ApplicationController
   def end
     @index = Index.find(params[:id])
     @index.end_interupt!(params[:date])
-    if request.env['HTTP_USER_AGENT'] =~ /Firefox/
+    if good_browser?
       render(:partial => 'students/redraw_student')
     else
       render(:partial => 'students/redraw_list')
+    end
     end
   end
 

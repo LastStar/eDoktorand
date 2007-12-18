@@ -189,7 +189,7 @@ class Index < ActiveRecord::Base
       conditions = ["NULL IS NOT NULL"]
     end
     unless options[:include]
-      options[:include] = [:study_plan, :student, :disert_theme, :department,
+      options[:include] = [{:study_plan => :plan_subjects}, :student, :disert_theme, :department,
                            :study, :coridor, :interupt]
     end
     if options[:conditions]

@@ -1,6 +1,0 @@
-<% if remove  %>
-<%= update_element_function(remove, :action => :remove) %> 
-<% end %>
-<%= update_element_function("study_plans#{@study_plan.id}", :content => render(:partial => 
-'shared/study_plan', :locals => {:study_plan => @study_plan}))  %>
-<%= visual_effect(:appear,  "study_plans#{@study_plan.id}") %>
