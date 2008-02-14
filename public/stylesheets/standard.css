@@ -613,3 +613,12 @@ table.condensed {
 table.wide {
   width: 95%;
 }
+table.wide th {
+  width: 65%;
+}
+.bigger a {
+  font-size: large;
+}
+#opened {
+  font-size: smaller;
+}

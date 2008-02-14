@@ -6,6 +6,7 @@ class DisertTheme < ActiveRecord::Base
   acts_as_audited
 
   before_create :set_actual
+  after_create :copy_methodology
 
   def validate
     if defense_passed_on && !index.final_exam_passed?
@@ -60,9 +61,21 @@ class DisertTheme < ActiveRecord::Base
   private
   def set_actual
     if old_actual = DisertTheme.find_by_index_id_and_actual(self.index.id, 1)
-      # TODO rename pdf
+      if has_methodology?
+        FileUtils.cp("#{RAILS_ROOT}/public/pdf/methodology/#{old_actual}.pdf",
+                     "#{RAILS_ROOT}/public/pdf/methodology/temp_#{index.id}.pdf")
+      end
       old_actual.update_attribute(:actual, 0)
     end
     self.actual = 1
+  end
+
+  def copy_methodology
+    if has_methodology?
+      FileUtils.mv("#{RAILS_ROOT}/public/pdf/methodology/temp_#{index.id}.pdf",
+                   "#{RAILS_ROOT}/public/pdf/methodology/#{sell.id}.pdf")
+
+    end
+
   end
 end

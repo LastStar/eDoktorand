@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-02-14 21:44+0100\n"
+"POT-Creation-Date: 2008-02-14 22:42+0100\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -3035,6 +3035,10 @@ msgstr "Žádost o ukončení studia"
 #: app/views/students/end_study_confirm.rhtml:20
 msgid "Subject of end study"
 msgstr "Předmět ukončení studia"
+
+#: app/views/students/list.rhtml:6
+msgid "loading"
+msgstr "nahrávám"
 
 #: app/views/study_plans/_accept.rhtml:1
 msgid "confirm"

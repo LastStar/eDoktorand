@@ -12,6 +12,7 @@ module StudentsHelper
         links << supervise_scholarship_link(index)
       end
       if study_plan
+        links << study_plan_link(index)
         if study_plan.all_subjects_finished?
           if index.final_exam_passed?
             links << pass_link(:defense, index)
@@ -329,5 +330,13 @@ module StudentsHelper
                     :complete => "$('spinner').hide()",
                     :update => 'students_list',
                     &proc)
+  end
+
+  def study_plan_link(index)
+    link_to_remote(_('study plan'),
+                   :url => {:action => :show,
+                           :controller => :study_plans,
+                           :id => index},
+                   :update => "index_detail_#{index.id}_tr")
   end
 end

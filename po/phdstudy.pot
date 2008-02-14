@@ -3004,6 +3004,10 @@ msgstr ""
 msgid "Subject of end study"
 msgstr ""
 
+#: app/views/students/list.rhtml:6
+msgid "loading"
+msgstr ""
+
 #: app/views/study_plans/_accept.rhtml:1
 msgid "confirm"
 msgstr ""

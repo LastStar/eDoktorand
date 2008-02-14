@@ -1,7 +1,7 @@
 class StudyPlansController < ApplicationController
   include LoginSystem
   helper :students
-  layout 'employers', :except => [:add_en, :save_en]
+  layout 'employers', :except => [:add_en, :save_en, :show]
   before_filter :login_required, :prepare_user, :prepare_student
 
   # page with basic informations for student 
@@ -9,6 +9,11 @@ class StudyPlansController < ApplicationController
     @title = _("Study plan")
     @index = @student.index
     @voluntary_subjects = @index.coridor.voluntary_subjects 
+  end
+
+  # renders partial with study plan
+  def show
+    @index = Index.find(params[:id])
   end
 
   # start of the study plan creating process
