@@ -26,48 +26,47 @@ xml.Workbook({
 
       # Header
       xml.Row do
-        
-          xml.Cell do
-            xml.Data _('diplay_name'), 'ss:Type' => 'String'
-          end
-	  xml.Cell do
-	    xml.Data _('index_coridor_code'), 'ss:Type' => 'String'
-	  end
-	  xml.Cell do
-	    xml.Data _('index_department_short_name'), 'ss:Type' => 'String'
-          end
-	  xml.Cell do
-	    xml.Data _('index_study_name'), 'ss:Type' => 'String'
-          end
-	  xml.Cell do
-	    xml.Data _('index_year'), 'ss:Type' => 'String'
-          end
-	  xml.Cell do
-	    xml.Data _('index_status'), 'ss:Type' => 'String'
-	  end
+        xml.Cell do
+          xml.Data _('diplay_name'), 'ss:Type' => 'String'
+        end
+        xml.Cell do
+          xml.Data _('index_coridor_code'), 'ss:Type' => 'String'
+        end
+        xml.Cell do
+          xml.Data _('index_department_short_name'), 'ss:Type' => 'String'
+              end
+        xml.Cell do
+          xml.Data _('index_study_name'), 'ss:Type' => 'String'
+              end
+        xml.Cell do
+          xml.Data _('index_year'), 'ss:Type' => 'String'
+              end
+        xml.Cell do
+          xml.Data _('index_status'), 'ss:Type' => 'String'
+        end
       end
 
       # Rows
       for indice in @indices
         xml.Row do
-            xml.Cell do
-              xml.Data indice.student.display_name, 'ss:Type' => 'String'
-            end
-	    xml.Cell do
-	      xml.Data indice.coridor.code, 'ss:Type' => 'String'
-            end
-	    xml.Cell do
-	      xml.Data indice.department.short_name, 'ss:Type' => 'String'
-            end
-	    xml.Cell do
-	      xml.Data indice.study.name, 'ss:Type' => 'String'
-            end
-	    xml.Cell do
-	      xml.Data indice.year, 'ss:Type' => 'String'
-            end
-	    xml.Cell do
-	      xml.Data indice.status, 'ss:Type' => 'String'
-            end
+          xml.Cell do
+            xml.Data indice.student.display_name, 'ss:Type' => 'String'
+          end
+          xml.Cell do
+            xml.Data indice.coridor.code, 'ss:Type' => 'String'
+                end
+          xml.Cell do
+            xml.Data indice.department.short_name, 'ss:Type' => 'String'
+                end
+          xml.Cell do
+            xml.Data indice.study.name, 'ss:Type' => 'String'
+                end
+          xml.Cell do
+            xml.Data indice.year, 'ss:Type' => 'String'
+                end
+          xml.Cell do
+            xml.Data indice.status, 'ss:Type' => 'String'
+                end
         end
       end
 

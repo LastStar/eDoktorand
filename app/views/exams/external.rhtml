@@ -2,9 +2,6 @@
 <% external_student_form do -%>	
 <fieldset>
   <legend><%= _("Examined students") %></legend>
-  <label>
-  <%= _("student") %>
-  </label>
   <select id='index_id' name='index[id]'>
     <%= display_name_options(@students) %>
   </select>

@@ -76,7 +76,7 @@ class ExamsController < ApplicationController
 
   # saving student and selecting external subjects
   def save_external_student
-    @index = Index.find(params[:index][:id])
+    @index = Student.find(params[:index][:id]).index
     exam = Exam.new
     exam.index = @index
     session[:exam] = exam
@@ -105,7 +105,7 @@ class ExamsController < ApplicationController
       flash['notice'] = _("Exam was successfully updated.")
       redirect_to :action => 'list'
     else
-      render_action 'edit'
+      render(:action => :edit)
     end
   end
 

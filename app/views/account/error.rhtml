@@ -1,6 +1,7 @@
-<p class='memo'>
+<h3 class='memo'>
   <%= _('There was an error in application:') %>
-</p>
+</h3>
 <p class='error'>
   <%= flash[:error] %>
 </p>
+<p><%= link_to_function _('back'), 'history.back()' %></p>

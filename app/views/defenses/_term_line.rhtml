@@ -1,0 +1,9 @@
+<li id='term_<%= term_line.id %>'>
+  <div class='right'>
+    <%= protocol_link term_line %>
+    <%= announcement_link term_line %>
+  </div>
+  <b><%= term_line.index.student.display_name %></b><br /> 
+  <%= "%s %s %s" % [term_line.date_time, _('in'), term_line.room] %>
+</li>
+

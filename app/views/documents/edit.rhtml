@@ -1,7 +1,7 @@
 <h1>Editing document</h1>
 
 <% form_tag :action => 'update', :id => @document do %>
-  <%= render_partial "form" %>
+  <%= render(:partial => "form") %>
   <%= submit_tag "Edit" %>
 <% end %>
 

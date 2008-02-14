@@ -50,9 +50,9 @@ class InteruptsController < ApplicationController
     
     if good_browser?
       render(:partial => 'shared/confirm_approve', 
-             :locals => {:replace => 'interupt_approvement'}),
+             :locals => {:replace => 'interupt_approvement'})
     else
-      render(:partial => 'students/redraw_list'))
+      render(:partial => 'students/redraw_list')
     end
   end
 
@@ -73,7 +73,6 @@ class InteruptsController < ApplicationController
       render(:partial => 'students/redraw_student')
     else
       render(:partial => 'students/redraw_list')
-    end
     end
   end
 

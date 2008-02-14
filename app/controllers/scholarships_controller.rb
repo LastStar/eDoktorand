@@ -36,9 +36,8 @@ class ScholarshipsController < ApplicationController
 
   # this method shows all extra scholarships for index
   def detail
-    index = Index.find(params['id'])
-    scholarships = ExtraScholarship.find_all_unpayed_by_index(index.id)
-    render_partial('detail', :index => index, :scholarships => scholarships)
+    @index = Index.find(params['id'])
+    @scholarships = ExtraScholarship.find_all_unpayed_by_index(@index.id)
   end
  
   # adding scholarships for faculty secretaries
@@ -121,6 +120,7 @@ class ScholarshipsController < ApplicationController
     render(:action => 'list')
   end
   
+  # renders control table of scholarships
   def control_table
     @indices = Index.find_for_scholarship(@user, 
                                          :order => 'studies.id, people.lastname',
@@ -129,19 +129,6 @@ class ScholarshipsController < ApplicationController
     render(:action => 'list')
   end
   
-  # saves scholarship to dbase
-  def save_scholarship
-    @index = Index.find(params[:index][:id])
-    scholarship = session[:scholarship]
-    scholarship.attributes = params[:scholarship]
-    scholarship.index_id = @index.id
-    scholarship.save
-    @scholarships =
-    Scholarship.find_all_by_index_id(@index.id)
-    render_partial('render_detail', :scholarships =>
-      @scholarships, :index => @index)
-  end
-
   # sets title of the controller
   def set_title
     @title = _('Scholarships')

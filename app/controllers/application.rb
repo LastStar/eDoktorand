@@ -36,8 +36,7 @@ class ApplicationController < ActionController::Base
     if user.has_permission?("%s/%s" % [params[:controller], params[:action]])
       return true
     else
-      flash['error'] = _("you don't have rights to do this")
-      redirect_to error_url
+      redirect_to :action => :no_permission, :controller => :account
     end
   end
 

@@ -48,6 +48,7 @@ module ExamsHelper
 
   end
 
+  #prints form for choosinf subject
   def subject_form(&proc)
     form_remote_tag(:url => {:action => 'save_subject'}, 
                     :complete => evaluate_remote_response,
@@ -63,5 +64,20 @@ module ExamsHelper
                     &proc)
 
 
+  end
+
+  # prints link for creating exam by subject
+  def subject_exam_link
+    link_to_remote(_("exam by subject"),
+                  :url => {:action => 'by_subject'},
+                  :update => 'form',
+                  :loading => visual_effect(:pulsate, "by_exam_line"))
+  end
+
+  def external_exam_link
+    link_to_remote(_("external exam"),
+                  :url => {:action => 'external'},
+                  :update => 'form',
+                  :loading => visual_effect(:pulsate, "external_line"))
   end
 end

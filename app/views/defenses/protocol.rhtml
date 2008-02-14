@@ -1,0 +1,126 @@
+<div class='links'>
+  <%= link_to _('back'), :action => :list %>
+</div>
+<p class='right_date'><%= _("In Prague on %s") % @term.date.strftime("%d. %m. %y") %></p>
+<p>
+  <%= _('Czech University of Life Sciences') %><br />
+  <%= @term.index.faculty.name %>
+</p>
+
+<h2><%= _('Final exam protocol') %></h2>
+
+<table class='two_columns'>
+  <tr>
+    <th style='width: 50%'><%= _('Display name') %>:</th>
+    <td><strong><%= @term.index.student.display_name %></strong></td>
+  </tr>
+  <tr>
+    <th><%= _('Coridor') %>:</th>
+    <td><%= @term.index.coridor.name %></td>
+  </tr>
+  <tr>
+    <th><%= _('Department') %>:</th>
+    <td><%= @term.index.department.name %></td>
+  </tr>
+  <tr>
+    <th><%= _('Tutor') %>:</th>
+    <td><%= @term.index.tutor.display_name %></td>
+  </tr>
+  <tr>
+    <th><%= _('Enrolled on') %>:</th>
+    <td><%= @term.index.enrolled_on.strftime("%d. %m. %y") %></td>
+  </tr>
+<% if @term.index.consultant %>
+  <tr>
+    <th><%= _('Consultant') %>:</th>
+    <td><%= @term.index.jconsultant %></td>
+  </tr>
+<% end %>
+</table>
+
+<table class='three_columns'>
+  <tr>
+    <th><%= _('Final exam area') %></th>
+    <th><%= _('Signature') %></th>
+  </tr>
+  <tr>
+    <td><%= @term.first_examinator %></td>
+    <td>......................................</td>
+  </tr>
+  <tr>
+    <td><%= @term.second_examinator %></td>
+    <td>......................................</td>
+  </tr>
+  <tr>
+    <td><%= @term.third_examinator %></td>
+    <td>......................................</td>
+  </tr>
+  <tr>
+    <td><%= @term.fourth_examinator %></td>
+    <td>......................................</td>
+  </tr>
+  <tr>
+    <td><%= @term.fifth_examinator %></td>
+    <td>......................................</td>
+  </tr>
+  <tr>
+    <td><%= @term.sixth_examinator %></td>
+    <td>......................................</td>
+  </tr>
+  <tr>
+    <td><%= @term.seventh_examinator %></td>
+    <td>......................................</td>
+  </tr>
+  <tr>
+    <td><%= @term.eighth_examinator %></td>
+    <td>......................................</td>
+  </tr>
+  <tr>
+    <td><%= @term.nineth_examinator %></td>
+    <td>......................................</td>
+  </tr>
+
+  <tr>
+    <th><%= _('Literature review') %>:</th>
+    <td colspan='2'><%= @term.index.disert_theme.literature_review %></td>
+  </tr>
+</table>
+
+<table class='two_columns'>
+  <tr>
+    <th><%= _('Chairman') %>:</th>
+    <td><%= @term.chairman.display_name %>
+  </tr>
+  <tr>
+    <th><%= _('Members') %>:</th>
+    <td><%= @term.first_examinator %></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><%= @term.second_examinator %></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><%= @term.third_examinator %></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><%= @term.third_examinator %></td>
+  </tr>
+<% if @term.opponent && !@term.opponent.empty?%>
+  <tr>
+    <th><%= _('Opponent') %>:</th>
+    <td><%= @term.opponent %></td>
+  </tr>
+<% end %>
+  <tr>
+    <th><%= _('Classification of final exam') %>:</th>
+    <td>......................................</td>
+  </tr>
+  <tr>
+    <th><%= _('Chairman signature') %>:</th>
+    <td>......................................</td>
+  </tr>
+</table>
+
+

@@ -1,8 +1,0 @@
-<% for column in Faculty.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%= @faculty.send(column.name) %>
-</p>
-<% end %>
-
-<%= link_to 'Edit', :action => 'edit', :id => @faculty.id %> |
-<%= link_to 'Back', :action => 'list' %>

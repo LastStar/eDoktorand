@@ -1,0 +1,8 @@
+<div class='links'>
+  <%= hide_link('defense') %>
+  <span id='invitation_link'>
+    <%= send_invitation_link(@user, @defense.index) %>
+  </span>
+</div>
+<%= render(:partial => 'detail') %>
+

@@ -8,12 +8,14 @@
   <%= sort_tags(:list_all, sort_array, :message => _("order all")) %>
 <% end %>
 <% unless @candidates.empty? %>
-<%= render_partial params[:prefix] ? params[:prefix] + 'list' : 'list' %>
+  <%= render(:partial => params[:prefix] ? params[:prefix] + 'list' : 'list') %>
 
-<%= list_links %>                      
-<%= render_partial 'list_script'%>
-<br />           
+  <div class='links'>
+  <%= list_links %>                      
+  </div>
+  <% unless session[:back_page] == 'list_all' %>
+    <%= will_paginate %>
+  <% end %>
 <% else %>
-<h4><%= _("There are no candidates in your selection") %></h4>
+  <h4><%= _("There are no candidates in your selection") %></h4>
 <% end %>
-<br/>

@@ -37,8 +37,8 @@ class DisertTheme < ActiveRecord::Base
     self.save
   end
 
-  def defense_passed?
-    true if defense_passed_on && defense_passed_on > Date.today
+  def defense_passed?(date = Date.today)
+    true if defense_passed_on && defense_passed_on < date
   end
 
   def defense_passed!(date = Date.today)
@@ -47,6 +47,12 @@ class DisertTheme < ActiveRecord::Base
 
   def save_literature_review(file)
     File.open("#{RAILS_ROOT}/public/pdf/literature_review/#{self.id}.pdf", "w") do |f|
+      f.write(file.read)
+    end
+  end
+
+  def save_self_report_file(file)
+    File.open("#{RAILS_ROOT}/public/pdf/self_report/#{self.id}.pdf", "w") do |f|
       f.write(file.read)
     end
   end

@@ -2,11 +2,11 @@ class DocumentsController < ApplicationController
 
   def index
     list
-    render_action 'list'
+    render(:action => :list)
   end
 
   def list
-    @documents = Document.find_all
+    @documents = Document.find(:all)
   end
 
   def show
@@ -23,7 +23,7 @@ class DocumentsController < ApplicationController
       flash['notice'] = 'Document was successfully created.'
       redirect_to :action => 'list'
     else
-      render_action 'new'
+      render(:action => :new)
     end
   end
 
@@ -37,7 +37,7 @@ class DocumentsController < ApplicationController
       flash['notice'] = 'Document was successfully updated.'
       redirect_to :action => 'show', :id => @document
     else
-      render_action 'edit'
+      render(:action => :edit)
     end
   end
 

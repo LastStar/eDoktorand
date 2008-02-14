@@ -1,4 +1,6 @@
+<% if @indices && !@indices.empty? %>
   <h5><%= _('Students list') + "(#{@indices.size})" %></h5>
+<% end %>
   <div class='links'>
     <% for filter in @filters %>
     <%= link_to_remote filter.first, :url => {:action => :filter, :id => filter.last}, :update => 'students_list' %>

@@ -1,0 +1,3 @@
+page.show 'defense'
+page.replace_html 'defense', :partial => 'show'
+

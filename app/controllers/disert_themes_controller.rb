@@ -16,10 +16,16 @@ include LoginSystem
   
   # saves methogology file
   def save_methodology
-    DisertTheme.save(params[:disert_theme])
-    dt = DisertTheme.find(params[:disert_theme][:id])
-    dt.update_attribute('methodology_added_on', Time.now)
-    redirect_to(:action => 'index', :controller => 'study_plans')
+    @disert_theme = DisertTheme.find(params[:disert_theme][:id])
+    unless params[:disert_theme][:methodology_file].empty?
+      DisertTheme.save(params[:disert_theme])
+      @disert_theme.update_attribute('methodology_added_on', Time.now)
+      redirect_to(:action => 'index', :controller => 'study_plans')
+    else
+      @title = _("Upload methodology") 
+      flash.now[:error] = _('Methodology file must be choosed')
+      render :action => :upload_methodology
+    end
   end
   
   def file_clicked

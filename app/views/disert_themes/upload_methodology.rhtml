@@ -2,6 +2,11 @@
 <%= _("On this page you can add your methodology file. File should be only in
 PDF format.") %>
 </h3>
+<% if flash[:error] %>
+<div id='error' class='error'>
+  <%= flash[:error] %>
+</div>
+<% end %>
 <% form_tag({:action => 'save_methodology'}, {:multipart => true}) do -%>	
   <%= hidden_field "disert_theme", "id" %>
   <fieldset>

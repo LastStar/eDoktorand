@@ -11,6 +11,7 @@ class StudentsController < ApplicationController
   before_filter :prepare_conditions, :prepare_student
 
 
+  # main page with students for employers
   def index
     do_filter
     render(:action => 'list')
@@ -26,7 +27,6 @@ class StudentsController < ApplicationController
   # searches in students lastname
   def search
     @indices = Index.find_for(@user, :search => params[:search], :order => 'people.lastname')
-    session[:filter] = 3
     if @indices.size == 1
       @index = @indices.first
       render(:action => 'show')
@@ -53,13 +53,14 @@ class StudentsController < ApplicationController
     @index = Index.find_with_all_included(params[:id])
   end
   
-  # renders contact for student
-  def contact
-    render_partial('contact', :student =>
-      Student.find(params[:id]))
-  end
-  
   # finishes study
+  def finish
+    @index = Index.find(params[:id])
+    date = params[:date]
+    @index.finish!(Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i))
+    render(:partial => 'redraw_student')
+  end
+
   
   # unfinishes study
   def unfinish
@@ -207,7 +208,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
     unless @index.update_attributes(params[:index])
-      render_partial 'notsave_account'
+      render(:partial => 'notsave_account')
     end  
   end
   # end of methods for editing personal details
@@ -287,6 +288,7 @@ class StudentsController < ApplicationController
 
   end
 
+  # filtering students by user and filter
   def do_filter
     @filter = params[:id] || session[:filter]
     case @filter.to_i

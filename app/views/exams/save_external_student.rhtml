@@ -1,16 +1,13 @@
 <h5> <%= _('external exam')%></h5>
 <ul>
-  <li><%= _('Student') %>: <%= @index.student.display_name %></li>
+  <li><%= @index.student.display_name %></li>
 </ul>
 <% external_subject_form do -%>	
 <fieldset>
 <legend><%= _("exam subjects") %></legend>
-<label>
-<%= _("subject") %>
-</label>
 <select id="subject_id" name="subject[id]">
   <%= label_options(@subjects) %>
-<br/> 
+</select>
 </fieldset>
 <%= submit_tag(_("commit"), :id => 'submit-button') %>
 <% end %>

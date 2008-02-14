@@ -1,0 +1,22 @@
+<h5><%= _(@title) %></h5>
+<div id='error'>
+<% if flash[:error] %>
+  <%= flash[:error] %>
+<% end %>
+</div>
+<% form_tag({:action => :confirm_claim}, {:multipart => true}) do %>
+<fieldset>
+  <ul class='nodecor'>
+    <li>
+      <label for="self_report_file"><%= _("self report file") %></label>
+      <%= file_field_tag :self_report_file %>
+    </li>
+    <li>
+      <label for="disert_theme_file"><%= _("disert theme file") %></label>
+      <%= file_field_tag :disert_theme_file %>
+    </li>
+  </ul>
+</fieldset>
+  <%= submit_tag(_('commit')) %>
+<% end %>
+

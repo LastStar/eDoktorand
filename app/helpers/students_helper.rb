@@ -34,11 +34,9 @@ module StudentsHelper
       if index.interupted?
         links << end_interupt_link(index)
       end
-      if index.claimed_for_final_exam?
-        links << final_exam_link(index)
+      if index.absolved?
+        links << diploma_supplement_link(index)
       end
-    else
-      links << diploma_supplement_link(index)
     end
     return  links
   end
@@ -134,7 +132,7 @@ module StudentsHelper
   # prints link to create new study plan
   def create_link(index)
     link_to(_('create SP'),
-            :action => 'create_by_other',
+            :action => 'create',
             :controller => 'study_plans',
             :id => index.student)
   end
@@ -175,17 +173,22 @@ module StudentsHelper
 
   def student_exception(index)
     tags = []
-    if index.close_to_interupt_end_or_after?
-      tags << '!'
-    end
-    if index.waits_for_scholarship_confirmation?
-      tags << 'us'
-    end
-    unless index.status == _('final application')
-      if index.claimed_for_final_exam?
-        tags << 'sz'
-      elsif index.claimed_final_application?
-        tags << 'pz'
+    unless index.status == _('absolved') || index.status == _('finished')
+      if index.close_to_interupt_end_or_after?
+        tags << '!'
+      end
+      if index.waits_for_scholarship_confirmation?
+        tags << 'us'
+      end
+      unless index.status == _('final application')
+        if index.claimed_for_final_exam? && !index.final_exam_passed?
+          tags << 'sz'
+        elsif index.claimed_final_application? && !index.claimed_for_final_exam?
+          tags << 'pz'
+        end
+      end
+      if index.defense_claimed?
+        tags << 'po'
       end
     end
     if tags.size > 1
@@ -197,10 +200,12 @@ module StudentsHelper
 
   # prints link to student detail
   def student_link(index)
-    link_to_remote(index.student.display_name, :url => {:action =>
-      'show', :controller => 'students', :id => index}, 
-      :loading => visual_effect(:pulsate, "index_line_#{index.id}"),
-      :complete => evaluate_remote_response)
+    link_to_remote(index.student.display_name,
+                    :url => {:action => 'show',
+                            :controller => 'students',
+                            :id => index}, 
+                    :loading => visual_effect(:pulsate, "index_line_#{index.id}"),
+                    :complete => evaluate_remote_response)
   end
 
   def pass_link(what, index)
@@ -273,17 +278,25 @@ module StudentsHelper
   end
   
   def back_to_list
-    "Element.show('students_list', 'search'); Element.remove('student_detail')"
+    link_to_function(_("back"),
+                    update_page do |page|
+                      page.show 'students_list', 'search'
+                      page.remove 'student_detail'
+                    end,
+                    :id => 'back_link')
+
   end
 
   def back_and_remove_from_list(index)
-    %{
-      Element.remove('index_line_#{index.id}');
-      Element.remove('index_menu_#{index.id}_tr');
-      Element.remove('index_form_#{index.id}_tr');
-      Element.remove('student_detail');
-      Element.show('students_list', 'search');
-    }
+    link_to_function(_("back and remove from list"), 
+                    update_page do |page|
+                      page.remove "index_line_#{index.id}",
+                                  "index_menu_#{index.id}_tr",
+                                  "index_form_#{index.id}_tr",
+                                  'student_detail'
+                      page.show 'students_list', 'search'
+                    end,
+                    :id => 'back_remove_link')
   end
 
   def diploma_supplement_link(index)

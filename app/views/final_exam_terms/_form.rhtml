@@ -3,7 +3,7 @@
 <%= errors_for(@exam_term) %>
 
 <!--[form:exam_term]-->
-<%= hidden_field 'exam_term', 'index_id' %></p>
+<%= hidden_field 'exam_term', 'index_id' %>
 
 <p><label for="exam_term_start_time"><%= _('date and time') %></label>
 <%= date_select 'exam_term', 'date', :order => [:day, :month, :year], :use_month_numbers => true %>

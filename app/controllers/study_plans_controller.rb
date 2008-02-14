@@ -24,48 +24,6 @@ class StudyPlansController < ApplicationController
     end
   end
 
-  # create study plan like no-student 
-  def create_by_other
-    @student = Student.find(params[:id])
-    @title = _("Creating study plan")
-    @requisite_subjects = PlanSubject.create_for(@student, :requisite)
-    @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
-    @study_plan = @student.index.prepare_study_plan
-    @plan_subjects = []
-    (@student.coridor.voluntary_amount + 3).times do |i|
-      (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
-      @plan_subjects << plan_subject
-    end
-    @disert_theme = @student.index.build_disert_theme
-  end
-
-  # renders change page for study plan
-  def change
-    @title = _('Change of study plan')
-    if !@student
-      @student = Student.find(params[:id])
-    end
-    coridor = @student.index.coridor
-    @subjects = CoridorSubject.for_select(:coridor => coridor)
-    if @study_plan = @student.index.study_plan
-    if session[:change_back] && session[:change_back] == 1
-      @plan_subjects = session[:voluntary_subjects]
-      session[:change_back] = 0
-    else
-      @plan_subjects = @study_plan.unfinished_subjects
-    end
-      (@student.coridor.voluntary_amount - @plan_subjects.size + 4).times do |i|
-        (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
-        @plan_subjects << plan_subject
-      end
-      session[:finished_subjects] = @student.index.study_plan.finished_subjects
-      @disert_theme = @student.index.disert_theme
-    else
-      create_by_other
-    end
-    render(:action => 'create_by_other')
-  end
-
   # saves obligate subjects to session
   # and creates voluntary subjects
   def save_obligate
@@ -125,11 +83,68 @@ class StudyPlansController < ApplicationController
     end
   end
 
+  # confirms study plan 
+  def confirm
+    @study_plan = session[:study_plan]
+    @study_plan.admited_on = Time.now
+    @study_plan.plan_subjects = concat_plan_subjects
+    @study_plan.index_id = @student.index.id
+    disert_theme = session[:disert_theme]
+    disert_theme.index = @study_plan.index 
+    disert_theme.save
+    Notifications::deliver_study_plan_create(@study_plan)
+    @study_plan.save
+    reset_plan_session
+    redirect_to :action => 'index'
+  end
+
+  # create study plan like no-student 
+  def create_by_other
+    @student = Student.find(params[:id])
+    @title = _("Creating study plan")
+    @requisite_subjects = PlanSubject.create_for(@student, :requisite)
+    @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
+    @study_plan = @student.index.prepare_study_plan
+    @plan_subjects = []
+    (@student.coridor.voluntary_amount + 8).times do |i|
+      (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i + 1)
+      @plan_subjects << plan_subject
+    end
+    @disert_theme = @student.index.build_disert_theme
+  end
+
+  # renders change page for study plan
+  def change
+    @title = _('Change of study plan')
+    if !@student
+      @student = Student.find(params[:id])
+    end
+    coridor = @student.index.coridor
+    @subjects = CoridorSubject.for_select(:coridor => coridor)
+    if @study_plan = @student.index.study_plan
+      if session[:change_back] && session[:change_back] == 1
+        @plan_subjects = session[:voluntary_subjects]
+        session[:change_back] = 0
+      else
+        @plan_subjects = @study_plan.unfinished_subjects
+      end
+      (@student.coridor.voluntary_amount - @plan_subjects.size + 4).times do |i|
+        (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
+        @plan_subjects << plan_subject
+      end
+      session[:finished_subjects] = @student.index.study_plan.finished_subjects
+      @disert_theme = @student.index.disert_theme
+    else
+      create_by_other
+    end
+    render(:action => 'create_by_other')
+  end
+
   # saves full form
   def save_full
     @errors = []
     extract_voluntary
-    unless @errors.empty?
+    if !extract_voluntary || !@errors.empty?
       flash[:errors] = @errors.uniq
       session[:change_back] = 1
       redirect_to(:action => 'change', :id => params[:student][:id])
@@ -154,38 +169,21 @@ class StudyPlansController < ApplicationController
       @study_plan.index = @student.index
       if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
         @study_plan.save
-
         @atestation.update_attribute(:document_id, @study_plan.id) if @atestation
         @disert_theme.save
         if @user.person.is_a?(Student)
           if session[:interupt]
-            redirect_to(:controller => 'interupts', :action => 'finish')
+            redirect_to :controller => 'interupts', :action => 'finish'
           else
-            redirect_to(:controller => 'study_plans')
+            redirect_to :controller => 'study_plans'
           end
         else
-          redirect_to(:controller => 'students')
+          redirect_to :controller => 'students'
         end
       else
-        @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
-        render(:action => 'create_by_other')
+        redirect_to :action => 'create_by_other', :id => params[:student][:id]
       end
     end
-  end
-
-  # confirms study plan 
-  def confirm
-    @study_plan = session[:study_plan]
-    @study_plan.admited_on = Time.now
-    @study_plan.plan_subjects = concat_plan_subjects
-    @study_plan.index_id = @student.index.id
-    disert_theme = session[:disert_theme]
-    disert_theme.index = @study_plan.index 
-    disert_theme.save
-    Notifications::deliver_study_plan_create(@study_plan)
-    @study_plan.save
-    reset_plan_session
-    redirect_to :action => 'index'
   end
 
   # confirms and saves statement

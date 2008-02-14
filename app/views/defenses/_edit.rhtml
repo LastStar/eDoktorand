@@ -1,0 +1,8 @@
+<div class='links'><%= hide_link('final_exam') %></div>
+ 
+<% create_form do -%>
+  <%= render(:partial => "form") %>
+  <%= submit_tag _("save"), :id => 'submit-button' %>
+<% end %>
+
+

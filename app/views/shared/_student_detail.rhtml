@@ -1,11 +1,20 @@
 <div id='student_detail'>
 <h5><%= _("Personal and study details") %></h5>
-<%= detail_links(@user, index) %>
+<% unless @user.has_role?('student') %>
+<div class='links'>
+  <div class='left'><%= back_to_list %></div>
+  <div><%= back_and_remove_from_list(index) %></div>
+</div>
+<% end %>
+
 <%= render(:partial => 'shared/personal_detail', :locals => {:index => index}) %>
 <% if index.student.address || @user.has_role?('student')%>
 <h5><%= _("Contact details") %></h5>
 <%= render :partial => 'shared/address_detail', :locals => {:student => index.student} %>
 <% end %>
 <%= render :partial => 'shared/study_detail', :locals => {:index => index} %>
-<%= detail_links(@user, index) %>
+<div class='links'>
+  <div class='left'><%= back_to_list %></div>
+  <div><%= back_and_remove_from_list(index) %></div>
+</div>
 </div>

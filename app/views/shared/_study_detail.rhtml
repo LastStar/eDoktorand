@@ -10,6 +10,7 @@
   </li>
 </ul>
 <% end %>
+
 <% if interupt = index.interupt %>
   <% if index.interupted? %>
     <h5><%= _('This study is interupted') %></h5>
@@ -75,7 +76,12 @@
     </ul>
   <% end %>
 
-  <% if index.claimed_final_application? %>
+  <% if index.defense_claimed? %>
+    <h5><%= _("defense approvement process") %></h5>
+    <ul id='approvement'>
+      <%= print_statements(index.approvement) %>
+    </ul>
+  <% elsif index.claimed_final_application? %>
     <h5><%= _("final exam approvement process") %></h5>
     <ul id='approvement'>
       <%= print_statements(index.approvement) %>

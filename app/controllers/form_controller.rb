@@ -3,9 +3,9 @@ class FormController < ApplicationController
   layout "employers"
   
   # page where candidate chooses desired coridor
-  # or logins for edit or check older adminition
+  # TODO logins for edit or check older adminition
   def index
-    @faculties = Faculty.find_all
+    @faculties = Faculty.find(:all)
     @title = _("Admittance process")
   end
   
@@ -21,12 +21,12 @@ class FormController < ApplicationController
     @candidate = Candidate.new(params[:candidate])
     if @candidate.save
       preview
-      render_action 'preview'
+      render(:action => :preview)
     else
       @title = _("Admittance form - errors")
       flash.now['error'] = _("Provided informations contains errors")
       @action = 'save'
-      render_action 'details'
+      render(:action => :details)
     end
   end
 
@@ -35,12 +35,12 @@ class FormController < ApplicationController
     @candidate = Candidate.find(params[:candidate][:id])
     if @candidate.update_attributes(params[:candidate])
       preview
-      render_action 'preview'
+      render(:action => :preview)
     else
       @title = _("Admittance form - errors")
       flash.now['error'] = _("Provided informations contains errors")
       @action = 'update'
-      render_action 'details'
+      render(:action => :details)
     end
   end
 
@@ -61,7 +61,7 @@ class FormController < ApplicationController
     flash.now['notice'] = _("Fields in red are required")
     @action = 'update'
     @title = _("Correct admit form")
-    render_action 'details'
+    render(:action => :details)
   end
 
   # finish submition

@@ -13,6 +13,7 @@ class Index < ActiveRecord::Base
    :conditions => 'admited_on IS NOT NULL AND study_plans.actual = 1'
   has_one :disert_theme, :conditions => 'disert_themes.actual = 1'
   has_one :final_exam_term
+  has_one :defense
   has_many :exams
   belongs_to :coridor
   belongs_to :department
@@ -38,7 +39,7 @@ class Index < ActiveRecord::Base
 
   N_('with study change')
   N_('End')
-  
+
   def validate
     if account_number
       if account_number_prefix
@@ -97,8 +98,8 @@ class Index < ActiveRecord::Base
   end
 
   # returns if study is absolved
-  def absolved?
-    disert_theme && disert_theme.defense_passed?
+  def absolved?(date = Date.today)
+    disert_theme && disert_theme.defense_passed?(date)
   end
 
   # returns true if interupt just admited
@@ -517,6 +518,14 @@ class Index < ActiveRecord::Base
     update_attribute(:final_application_claimed_at, Time.now)
   end
 
+  def claim_defense!
+    update_attribute(:defense_claimed_at, Time.now)
+  end
+
+  def defense_claimed?
+    !defense_claimed_at.nil?
+  end
+
   def claimed_final_application?
     !final_application_claimed_at.nil?
   end
@@ -527,6 +536,10 @@ class Index < ActiveRecord::Base
 
   def final_term_created?
     !final_exam_term.nil?
+  end
+
+  def defense_created?
+    !defense.nil?
   end
 
   # for approvement purposes
@@ -540,6 +553,14 @@ class Index < ActiveRecord::Base
 
   def final_exam_invitation_sent?
     !final_exam_invitation_sent_at.nil?
+  end
+
+  def send_defense_invitation!
+    update_attribute(:defense_invitation_sent_at, Time.now)
+  end
+
+  def defense_invitation_sent?
+    !defense_invitation_sent_at.nil?
   end
 
   def study_name

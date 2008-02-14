@@ -1,7 +1,7 @@
 class AccountController < ApplicationController
   include LoginSystem
   layout  'employers'
-  before_filter :login_required, :except => [:login, :logout, :error, :set_locale]
+  before_filter :login_required, :except => [:login, :logout, :error, :set_locale, :no_permission]
   before_filter :set_title
   before_filter :prepare_user, :only => [:welcome, :logout]
 
@@ -50,22 +50,6 @@ class AccountController < ApplicationController
     if !(flash && flash[:error]) && @exception
       flash[:error] = @exception.message
     end
-  end
-
-  def user_roles
-    @user = User.find(params[:id])
-    @unassigned_roles = Role.find(:all) - @user.roles
-    @user_roles = @user.roles
-  end
-
-  def user_roles_update
-    @user = User.find(params[:id])
-    @roles_up   = Role.find(params[:addedRight].split(',')) unless params[:addedRight].empty?
-    @roles_down = Role.find(params[:addedLeft].split(',')) unless params[:addedLeft].empty?
-
-    # adding and removing
-    @user.roles.delete(@roles_down) if @roles_down
-    @user.roles << @roles_up if @roles_up
   end
 
   private

@@ -9,12 +9,6 @@ class Faculty < ActiveRecord::Base
   has_one :deanship
   has_many :candidates, :through => :coridors
 
-  # TODO refactor to use department ids
-  # returns string for sql IN statement
-  def departments_for_sql
-    self.departments.map {|dep| dep.id}.join(', ')
-  end
-
   # return acredited corridors
   def accredited_coridors
     Coridor.find(:all, 
@@ -27,8 +21,8 @@ class Faculty < ActiveRecord::Base
   end
 
   def secretary
-    FacultySecretary.find(:first, :include => 'faculty_employment',
-        :conditions => ["unit_id = ?", id])
+    FacultySecretary.find(:first, :include => :faculty_employment,
+                          :conditions => ["employments.unit_id = ?", id])
   end
 
   # retuns dean of the faculty

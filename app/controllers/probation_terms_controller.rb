@@ -37,8 +37,6 @@ class ProbationTermsController < ApplicationController
   def detail
     @probation_term = ProbationTerm.find(params[:id])
     @students = Student.find_to_enroll(@probation_term, :sort)
-#TODO redone with rjs
-    render_partial('detail', :probation_term => @probation_term, :students => @students)
   end
  
   # enroll student for probation term

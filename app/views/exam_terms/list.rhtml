@@ -1,5 +1,8 @@
 <h5><%= @title %></h5>
-<div class='links'><%= final_exam_terms_link %></div>
+<div class='links'>
+  <%= final_exam_terms_link %>
+  <%= defense_terms_link %>
+</div>
 <% unless @exam_terms.empty? %>
 <ul>
 <% for exam_term in @exam_terms  %>

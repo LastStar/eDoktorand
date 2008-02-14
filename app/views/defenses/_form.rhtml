@@ -1,0 +1,49 @@
+<%= hidden_field 'defense', 'index_id' %>
+
+<p><label for="defense_start_time"><%= _('date and time') %></label>
+<%= date_select 'defense', 'date', :order => [:day, :month, :year], :use_month_numbers => true %>
+&mdash;<%= select 'defense', 'start_time', str_time_select %></p>
+
+<p><label for="defense_room" class='required'><%= _('room') %></label>
+<%= text_field 'defense', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
+
+<p><label for="defense_chairman"><%= _('chairman') %></label>
+<%= collection_select :defense, :chairman_id, Tutor.find_for(@user), :id, :display_name %></p>
+
+<p><label for="defense_first_examinator" class='required'>1. <%= _('member') %></label>
+<%= text_field 'defense', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span >
+
+<p><label for="defense_second_examinator" class='required'>2. <%= _('member') %></label>
+<%= text_field 'defense', 'second_examinator'  %><span class='required'>&nbsp;&lowast;</span >
+
+<p><label for="defense_third_examinator">3. <%= _('member') %></label>
+<%= text_field 'defense', 'third_examinator'  %>
+
+<p><label for="defense_fourth_examinator">4. <%= _('member') %></label>
+<%= text_field 'defense', 'fourth_examinator'  %>
+
+<p><label for="defense_fifth_examinator">5. <%= _('member') %></label>
+<%= text_field 'defense', 'fifth_examinator'  %>
+
+<p><label for="defense_sixth_examinator">6. <%= _('member') %></label>
+<%= text_field 'defense', 'sixth_examinator'  %>
+
+<p><label for="defense_seventh_examinator">7. <%= _('member') %></label>
+<%= text_field 'defense', 'seventh_examinator'  %>
+
+<p><label for="defense_eighth_examinator">8. <%= _('member') %></label>
+<%= text_field 'defense', 'eighth_examinator'  %>
+
+<p><label for="defense_nineth_examinator">9. <%= _('member') %></label>
+<%= text_field 'defense', 'nineth_examinator'  %>
+
+<p><label for="defense_opponent"><%= _('opponent') %></label>
+<%= text_field 'defense', 'opponent'  %></p>
+
+<p><label for="defense_second_opponent"><%= _('second opponent') %></label>
+<%= text_field 'defense', 'second_opponent'  %></p>
+
+<p><label for="defense__third_opponent"><%= _('third opponent') %></label>
+<%= text_field 'defense', 'third_opponent'  %></p>
+
+

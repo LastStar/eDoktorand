@@ -1,33 +1,57 @@
 <% index = study_plan.index %>
-<% if index.final_exam_invitation_sent? %>
-  <li><b><%= _('This student was invited for final exam.') %></b></li>
   <li>
-  <%= literature_review_link(index.disert_theme) %>
-  <%= index.disert_theme.literature_review %>
-  </li>
-<% elsif index.claimed_final_application? %>
-  <li><b><%= _('This student claimed for final exam.') %></b></li>
-  <li>
-  <%= literature_review_link(index.disert_theme) %>
-  <%= index.disert_theme.literature_review %>
-  </li>
-<% end %>
-<% if index.approved? %>
-  <li>
-  <%= final_exam_term_link(@user, index) %>
-  </li>
-  <li id='final_exam' style="display:none"></li>
-<% end %>
-  <li>
-  <div class='info'>
+    <div class='info'>
 <% if index.final_exam_passed? %>
-    <%= index.final_exam_passed_on.strftime('%d. %m. %Y') %>
+      <%= index.final_exam_passed_on.strftime('%d. %m. %Y') %>
 <% else %>
-    <%= "%i. %s" % [study_plan.finishing_to, _('semester')] %>
+      <%= "%i. %s" % [study_plan.finishing_to, _('semester')] %>
 <% end %>
-  </div>
-  <b><%= "#{_('final exam')}" %></b>
+    </div>
+    <b><%= "#{_('final exam')}" %></b>
   </li>
+
+<% if index.final_exam_passed? %>
+  <% if index.defense_invitation_sent? %>
+    <li><b><%= _('This student was invited for defense.') %></b></li>
+    <li>
+    <%= self_report_link(index.disert_theme) %>
+    </li>
+    <li>
+    <%= defense_term_link(@user, index) %>
+    </li>
+  <% elsif index.defense_claimed? %>
+    <li><b><%= _('This student claimed for defense.') %></b></li>
+    <li>
+    <%= self_report_link(index.disert_theme) %>
+    </li>
+    <li>
+    <%= disert_theme_link(index.disert_theme) %>
+    </li>
+    <li>
+    <%= defense_term_link(@user, index) %>
+    </li>
+  <% end %>
+  <li id='defense' style="display:none"></li>
+<% else %>
+  <% if index.final_exam_invitation_sent? %>
+    <li><b><%= _('This student was invited for final exam.') %></b></li>
+    <li>
+    <%= literature_review_link(index.disert_theme) %>
+    <%= index.disert_theme.literature_review %>
+    </li>
+  <% elsif index.claimed_final_application? %>
+    <li><b><%= _('This student claimed for final exam.') %></b></li>
+    <li>
+    <%= literature_review_link(index.disert_theme) %>
+    <%= index.disert_theme.literature_review %>
+    </li>
+  <% end %>
+  <% if index.approved? %>
+    <li>
+    <%= final_exam_term_link(@user, index) %>
+    </li>
+    <li id='final_exam' style="display:none"></li>
+  <% end %>
 <% if study_plan.final_areas? %>
   <% FACULTY_CFG[study_plan.index.faculty.id]['final_areas_count'].times do |i|%>
     <% i=i+1 %>
@@ -46,4 +70,5 @@
         <%= "#{i}. " + _("final area") %> (en)
       </li>
   <% end %>
+<% end %>
 <% end %>

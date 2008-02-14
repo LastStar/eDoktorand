@@ -149,9 +149,9 @@ module StudyPlansHelper
       :confirm => _("Have you consulted your study plan with tutor. It is highly recomended")) 
   end
 
-  def final_exam_link(index)
-    link_to(_('final exam application'), :action => 'final_application')
-  end
+#  def final_exam_link(index)
+#    link_to(_('final exam application'), :action => 'final_application')
+#  end
 
   def render_requisite
     render(:partial => "shared/subjects", 

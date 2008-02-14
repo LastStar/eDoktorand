@@ -1,12 +1,12 @@
 <div class="smallinfo" id='scholarship_<%= index.id %>'>
-<% if index.has_extra_scholarships? %>
+<% if index.has_extra_scholarship? %>
     <%= detail_link(index) %>
     <%= index.extra_scholarship_sum %> <%= _('Kc') %>
 <% else %>
   <%= add_link(index) %>&nbsp;
 <% end %>
 </div>
-<% if index.has_regular_scholarship?%>
+<% if index.has_regular_scholarship? %>
 <div class="smallinfo" id='regular_scholarship_<%= index.id %>'>
   <% if @user.has_role?('department_secretary') %>
     <%= index.regular_scholarship_or_create.amount %> <%= _("Kc") %>

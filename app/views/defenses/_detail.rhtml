@@ -1,0 +1,82 @@
+<table class='two_columns'>
+<tr>
+  <th><%= _('Date and time') %>: </th>
+  <td><%= @defense.date_time %></td>
+</tr>
+<tr>
+  <th><%= _('Room') %>: </th>
+  <td><%= @defense.room %></td>
+</tr>
+<tr>
+  <th><%= _('Chairman') %>: </th>
+  <td><%= @defense.chairman.display_name %></td>
+</tr>
+<% unless @defense.opponent.empty? %>
+<tr>
+  <th><%= _('Opponent') %>:</th>
+  <td><%= @defense.opponent %> </td> 
+</tr>
+<% end %>
+<% unless @defense.second_opponent.empty? %>
+<tr>
+  <th><%= _('Second opponent') %>:</th>
+  <td><%= @defense.second_opponent %> </td> 
+</tr>
+<% end %>
+<% unless @defense.third_opponent.empty? %>
+<tr>
+  <th><%= _('Third opponent') %>:</th>
+  <td><%= @defense.third_opponent %> </td> 
+</tr>
+<% end %>
+<tr>
+  <th><%= _('Members') %>: </th>
+  <td><%= @defense.first_examinator %></td>
+</tr>
+<tr>
+  <th></th>
+  <td><%= @defense.second_examinator %> </td> 
+</tr>
+<% unless @defense.third_examinator.empty? %>
+<tr>
+  <th></th>
+  <td><%= @defense.third_examinator %> </td> 
+</tr>
+<% end %>
+<% unless @defense.fourth_examinator.empty? %>
+<tr>
+  <th></th>
+  <td><%= @defense.fourth_examinator %> </td> 
+</tr>
+<% end %>
+<% unless @defense.fifth_examinator.empty? %>
+<tr>
+  <th></th>
+  <td><%= @defense.fifth_examinator %> </td> 
+</tr>
+<% end %>
+<% unless @defense.sixth_examinator.empty? %>
+<tr>
+  <th></th>
+  <td><%= @defense.sixth_examinator %> </td> 
+</tr>
+<% end %>
+<% unless @defense.seventh_examinator.empty? %>
+<tr>
+  <th></th>
+  <td><%= @defense.seventh_examinator %> </td> 
+</tr>
+<% end %>
+<% unless @defense.eighth_examinator.empty? %>
+<tr>
+  <th></th>
+  <td><%= @defense.eighth_examinator %> </td> 
+</tr>
+<% end %>
+<% unless @defense.nineth_examinator.empty? %>
+<tr>
+  <th></th>
+  <td><%= @defense.nineth_examinator %> </td> 
+</tr>
+<% end %>
+</table>

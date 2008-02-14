@@ -4,33 +4,6 @@ module LoginSystem
   
   protected
   
-  # overwrite this if you want to restrict access to only a few actions
-  # or if you want to check if the user has the correct rights  
-  # example:
-  #
-  #  # only allow nonbobs
-  #  def authorize?(user)
-  #    user.login != "bob"
-  #  end
-  def authorize?(user)
-    true
-  end
-  
-  # overwrite this method if you only want to protect certain actions of the controller
-  # example:
-  # 
-  #  # don't protect the login and the about method
-  #  def protect?(action)
-  #    if ['action', 'about'].include?(action)
-  #       return false
-  #    else
-  #       return true
-  #    end
-  #  end
-  def protect?(action)
-    true
-  end
-   
   # login_required filter. add 
   #
   #   before_filter :login_required
@@ -42,10 +15,6 @@ module LoginSystem
   # 
   def login_required
     
-    if not protect?(action_name)
-      return true  
-    end
-
     if session[:user] and authorize?(User.find(session[:user]))
       return true
     end

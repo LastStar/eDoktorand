@@ -21,13 +21,15 @@ class CandidatesController < ApplicationController
 
   # lists all candidates
   def list
-      @backward = false
-      @filtered_by = params[:filter]
-      session[:back_page] = 'list'
-      conditions = Candidate.prepare_conditions(params, @faculty)
-      @pages, @candidates = paginate :candidates, :per_page => 7, :order_by =>
-        session[:category], :conditions => conditions
-      session[:current_page_backward] = @pages.current.number
+    @backward = false
+    @filtered_by = params[:filter]
+    session[:back_page] = 'list'
+    conditions = Candidate.prepare_conditions(params, @faculty)
+    @candidates = Candidate.paginate :page => params[:page],
+                                     :per_page => 7,
+                                     :order => session[:category],
+                                     :conditions => conditions
+    session[:current_page_backward] = params[:page]
   end
 
   # lists all candidates ordered by category
@@ -42,7 +44,7 @@ class CandidatesController < ApplicationController
   # lists all candidates ordered by category
   def list_admission_ready
     @candidates = Coridor.find(params[:coridor]).approved_candidates
-    render_action 'list'
+    render(:action => :list)
   end
 
   # shows candidate details
@@ -63,7 +65,7 @@ class CandidatesController < ApplicationController
       flash[:notice] = _('Candidate was changed')
       redirect_to :action => 'show', :id => @candidate.id
     else
-      render_action 'edit'
+      render(:action => :edit)
     end
   end
 
@@ -117,7 +119,7 @@ class CandidatesController < ApplicationController
       'department_id' => @candidate.department_id, 'study_id' => @candidate.study_id,
       'coridor_id' => @candidate.coridor_id)
       if !@user.save
-        render_action 'enroll'
+        render(:action => :enroll)
       else
         redirect_to :action => 'list'
       end  
@@ -168,7 +170,7 @@ class CandidatesController < ApplicationController
   # set candidate ready for admition
   def invite
     @candidate = Candidate.find(params[:id])
-    render_action 'invitation'
+    render(:action => :invitation)
   end
 
 	# action for remote link that invite candidate
@@ -212,6 +214,8 @@ class CandidatesController < ApplicationController
   # sets title of the controller
   def set_title
     @title = _('Candidates')
+    WillPaginate::ViewHelpers.pagination_options[:prev_label] = "&laquo; %s" % _('previous')
+    WillPaginate::ViewHelpers.pagination_options[:next_label] = "%s &raquo;" % _('next')
   end
 
   def prepare_sort

@@ -31,12 +31,12 @@ module ApplicationHelper
 
   # get language ids
   def language_options
-    LanguageSubject.find_all.map {|l| [l.name, l.id]}
+    LanguageSubject.find(:all).map {|l| [l.name, l.id]}
   end
   
   # get study ids
   def study_ids
-    Study.find_all.map {|s| [s.name, s.id]}
+    Study.find(:all).map {|s| [s.name, s.id]}
   end
   
   # get coridor ids
@@ -51,14 +51,14 @@ module ApplicationHelper
   # get title_before ids
   def title_before_ids
     arr = [['---', '0']]
-    arr.concat(Title.find_all(['prefix = ?', 1]).map {|s| [s.label, s.id]})
+    arr.concat(Title.find(:all, :conditions => {:prefix => 1}).map {|s| [s.label, s.id]})
     return arr
   end
   
   # get title_before ids
   def title_after_ids
     arr = [['---', '0']]
-    arr.concat(Title.find_all(['prefix = ?', 0]).map {|s| [s.label, s.id]})
+    arr.concat(Title.find(:all, :conditions => {:prefix => 0}).map {|s| [s.label, s.id]})
     return arr
   end
   
@@ -139,23 +139,6 @@ module ApplicationHelper
     content_tag('li', content, :class => html_class)
   end
   
-  # prints link to remote with apearing and disapearing of the loading _
-  # you should say if it's evaluating response by setting options[:evaluate]
-  # to true, or updating by setting options[:update]
-  def link_to_remote_with_loading(name, options = {}, html_options = {})
-    options = set_remote_options(options)
-    link_to_remote(name, options, html_options)
-  end
-  
-  # prints form tag with loading apearing and disapearing
-  # also evaluate remote response is built in
-  def form_remote_with_loading(options)
-    options = set_remote_options(options)
-    options[:html] = {:autocomplete => "off"} 
-    options[:html][:style] = 'display: inline;' if options.delete(:inline)
-    form_remote_tag(options)
-  end
-	
   # returns array of the time by quarter from start time to end time
 	def str_time_select(start_time = 8, stop_time = 16)
 		items = []
@@ -371,12 +354,13 @@ module ApplicationHelper
   def detail_links(user, index)
     if user.non_student?
       content = []
-      content << div_tag(link_to_function(_("back"), back_to_list,
-                                          :id => 'back_link'), :class => 'left')
+      content << link_to_function(_("back"),
+                                  back_to_list,
+                                  :id => 'back_link')
       content << link_to_function(_("back and remove from list"), 
                                   back_and_remove_from_list(index),
                                   :id => 'back_remove_link')
-      div_tag(content.join(' '), :class => 'links')
+      content.join(' ')
     end
   end
   
@@ -487,6 +471,19 @@ module ApplicationHelper
     link_to_remote(_('final exam term'), opts, :id => 'final_exam_link') if opts
   end
 
+  def defense_term_link(user, index)
+    if user.has_role?('faculty_secretary') && !index.defense_invitation_sent?
+      opts = {:url => {:controller => 'defenses', :action => 'new', 
+                      :id => index},
+              :complete => evaluate_remote_response}
+    elsif index.defense
+      opts = {:url => {:controller => 'defenses', :action => 'show', 
+                       :id => index.defense.id},
+              :complete => evaluate_remote_response}
+    end
+    link_to_remote(_('defense'), opts, :id => 'defense_link') if opts
+  end
+
   def hide_link(element, text = _('hide'))
     link_to_function(text, "Element.hide('#{element}')")
   end
@@ -559,6 +556,21 @@ module ApplicationHelper
     if File.exists?("#{RAILS_ROOT}/public/" + path)
       link_to _('literature review file'), path, :popup => true
     end
+  end
+
+  def self_report_link(disert_theme)
+    path = "/pdf/self_report/%i.pdf" % disert_theme.id
+    if File.exists?("#{RAILS_ROOT}/public/" + path)
+      link_to _('self report file'), path, :popup => true
+    end
+  end
+
+  def disert_theme_link(disert_theme)
+    path = "/pdf/disert_theme/%i.pdf" % disert_theme.id
+    # TODO remove after fixing upload
+    # if File.exists?("#{RAILS_ROOT}/public/" + path)
+      link_to _('disert theme file'), path, :popup => true
+    #end
   end
 
   def spinner_image(js_id = 'spinner')

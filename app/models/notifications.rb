@@ -118,6 +118,16 @@ class Notifications < ActionMailer::Base
     @from       = faculty.secretary.email.name
   end
 
+  def invite_to_defense(index, sent_at = Time.now)
+    faculty = index.faculty
+    @subject = _("Invitation to defense")
+    @body[:student] = index.student
+    @body[:sent_on] = sent_at
+    @recipients = index.student.email
+    @cc        = faculty.secretary.email.name
+    @from       = faculty.secretary.email.name
+  end
+
   def created_account(student, sent_at = Time.now)
     @subject = _("Created account")
     @body[:student] = student

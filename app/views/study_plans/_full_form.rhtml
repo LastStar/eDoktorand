@@ -4,8 +4,9 @@
 <%= hidden_field('study_plan', 'last_atested_on') %>
 <legend><%= _("subjects") %></legend>
 <ul>
-<%= render(:partial => 'general', :collection => @plan_subjects, :locals => 
-  {:subjects => subjects}) %>
+  <%= render(:partial => 'general',
+            :collection => @plan_subjects,
+            :locals => {:subjects => subjects}) %>
 </ul>
 </fieldset>
 <fieldset>

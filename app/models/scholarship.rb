@@ -25,7 +25,7 @@ class Scholarship < ActiveRecord::Base
     outfile = ''
     CSV::Writer.generate(outfile, ';') do |csv|
       indices.each do |i|
-        if i.has_extra_scholarships?
+        if i.has_extra_scholarship?
           i.extra_scholarships.each {|es| csv << es.pay!}
         end
         if i.has_regular_scholarship? 
@@ -43,7 +43,7 @@ class Scholarship < ActiveRecord::Base
     ScholarshipApprovement.create(:faculty => user.person.faculty)
     indices.select do |i|
       approved = false
-      if i.has_extra_scholarships?
+      if i.has_extra_scholarship?
         i.extra_scholarships.each {|es| es.approve!}
         approved = true
       end

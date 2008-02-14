@@ -107,17 +107,6 @@ module CandidatesHelper
         links << '&nbsp;'
       end
     end
-    if @pages and pagination_links(@pages)
-      links << '&nbsp;'                           
-      links << link_to(_("previous page"), 
-      {:page => @pages.current.previous}) if @pages.current.previous           
-      links << '&nbsp;'
-      links << pagination_links(@pages)
-      links << '&nbsp;'
-      links << link_to(_("next page"), 
-      { :page => @pages.current.next }) if @pages.current.next 
-    end
-    content_tag('div', links, :class => 'links')
   end
 
   # print summary department/coridor switcher

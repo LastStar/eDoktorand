@@ -6,7 +6,7 @@ class ExamTermsController < ApplicationController
 
   def index
     list
-    render_action 'list'
+    render(:action => :list)
   end
 
   def list
@@ -52,7 +52,7 @@ class ExamTermsController < ApplicationController
       flash['notice'] = 'Komise byla úspěšně opravena'
       redirect_to :action => 'list'
     else
-      render_action 'edit'
+      render(:action => :edit)
     end
   end
 
