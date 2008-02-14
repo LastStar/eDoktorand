@@ -1,0 +1,10 @@
+--- 
+cwd: /usr/www/edok.czu.cz/
+user: www
+group: www
+port: "5000"
+environment: production
+address: 127.0.0.1
+servers: 3
+log_file: log/mongrel.log
+pid_file: tmp/pids/mongrel.pid

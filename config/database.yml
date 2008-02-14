@@ -1,20 +1,23 @@
 development:
   adapter: mysql
-  database: phdstudy_devel
-  host: localhost
+  database: phdstudy_production
+  host: 10.70.1.75
+  port: 3306
   username: web
-  password: w3b
+  password: w3bw3b
 
 test:
   adapter: mysql
   database: phdstudy_test
-  host: localhost
+  host: 10.70.1.75
+  port: 3306
   username: web
-  password: w3b
+  password: w3bw3b
 
 production:
   adapter: mysql
-  database: phdstudy_devel
-  host: localhost
+  database: phdstudy_production
+  host: 10.70.1.75
+  port: 3306
   username: web
-  password: w3b
+  password: w3bw3b
