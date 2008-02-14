@@ -2,6 +2,10 @@
   <%= render(:partial => 'search') %>
 </div>
 <div id='students_list'>
-  <%= render(:partial => 'list') %>
+  <%= javascript_tag "Event.observe(window, 'load', " + remote_function(:update => 'students_list', :url => {:action => :filter}) + ')' %>
+  <h5><%= _('Students list') + "(#{_('loading')})" %></h5>
+  <div class='centered'>
+    <%= image_tag 'big_loader.gif' %>
+  </div>
 </div>
 

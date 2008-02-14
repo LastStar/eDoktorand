@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
   <link href="/stylesheets/standard.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
-<body onload='Element.hide("loading")'>
+<body>
   <%= javascript_include_tag :defaults %>
     <img id="Head" src="/images/header.jpg" width="760" height="77"
     alt="logo"/><div id="HeadMenu">
@@ -21,7 +21,6 @@
   <% end %>
   </div>
   <div id="main">
-    <div id='loading'><%= _("loading ...") %></div>
     <%= @content_for_layout %>
   </div>
   <div id="footer" class="footer">

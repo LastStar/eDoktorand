@@ -387,20 +387,6 @@ table.list td {
   margin: 0px;
   border:1px solid;
 }
-div#loading {
-  position: absolute; 
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background-color: red;
-  color: darkgray;
-  font-size: 30pt;
-  padding-top: 20%;
-  text-align: center;
-  border-top: 1px solid #ddc;
-  border-bottom: 1px solid #ddc;
-}
 #HeadMenu {
 	margin-left: auto;
 	margin-right: auto;
@@ -533,48 +519,50 @@ a:hover.change_field {border: 1px dashed #ccc; color: black}
 
 .nodecor textarea {margin-left:10%} 
 table.letter_header th {
-  border: none;
-  text-align: left;
-  padding-right: 1em;
-  font-weight: normal;
+border: none;
+text-align: left;
+padding-right: 1em;
+font-weight: normal;
 }
 table.letter_header td {
-  border: none;
+border: none;
 }
 table.letter_header {
-  margin: 1em 0 1em 0;
+margin: 1em 0 1em 0;
 }
 li p {
-  margin: 0px 0 16px 0px
+margin: 0px 0 16px 0px
 }
 .final_exam_term {
-  border-top: 1px solid black;
+border-top: 1px solid black;
 }
-table.three_columns {
-  margin-left: 2em;
-  width: 90%;
+table.three-columns {
+margin-left: 2em;
 }
-table.three_columns th {
-  text-align: left;
+table.three-columns th {
+text-align: left;
 }
-table.three_columns td {
-  padding-top: .8ex;
+table.three-columns td {
+padding-top: .8ex;
 }
-table.two_columns {
-  width: 90%;
-  margin-left: 2em;
+table.two-columns {
+margin-left: 2em;
 }
-table.two_columns th {
-  text-align: left;
-  width: 50%;
+table.two-columns table.two-columns {
+padding: 0;
+margin: 0;
 }
-table.two_columns td {
-  border: none;
-  padding-top: .5ex;
+table.two-columns th {
+text-align: left;
+width: 50%;
+}
+table.two-columns td {
+border: none;
+padding-top: .5ex;
 }
 .right_date {
-  float: right;
-  text-align: right;
+float: right;
+text-align: right;
 }
 div#name_search { padding-bottom: 1ex;}
 div#name_search label {padding-top: 0}
@@ -587,33 +575,41 @@ div#fast_filters ul li {list-style: none; float: left; border: none;  width: 15e
 .selected {font-size: large; background: #fee; border-top: 3px solid #dcc;}
 .once-selected {border-left: 3px solid #dcc;}
 .filter-line {margin-bottom: 1ex}
-  .pagination {
-    padding: 3px;
-    margin: 3px;
-  }
-  .pagination a {
-    padding: 2px 5px 2px 5px;
-    margin: 2px;
-    border: 1px solid #aaaadd;
-    text-decoration: none;
-    color: #000099;
-  }
-  .pagination a:hover, .pagination a:active {
-    border: 1px solid #000099;
-    color: #000;
-  }
-  .pagination span.current {
-    padding: 2px 5px 2px 5px;
-    margin: 2px;
-    border: 1px solid #000099;
-    font-weight: bold;
-    background-color: #000099;
-    color: #FFF;
-  }
-  .pagination span.disabled {
-    padding: 2px 5px 2px 5px;
-    margin: 2px;
-    border: 1px solid #eee;
-    color: #ddd;
-  }
-
+.pagination {
+  padding: 3px;
+  margin: 3px;
+}
+.pagination a {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #aaaadd;
+  text-decoration: none;
+  color: #000099;
+}
+.pagination a:hover, .pagination a:active {
+  border: 1px solid #000099;
+  color: #000;
+}
+.pagination span.current {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #000099;
+  font-weight: bold;
+  background-color: #000099;
+  color: #FFF;
+}
+.pagination span.disabled {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #eee;
+  color: #ddd;
+}
+table.bigger td {
+  font-size: x-large;
+}
+table.condensed {
+  width: 70%;
+}
+table.wide {
+  width: 95%;
+}

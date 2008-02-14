@@ -211,23 +211,37 @@ table.letter_header {
 .final_exam_term {
   border-top: 1px solid black;
 }
-table.three_columns {
-  padding: 2em;
+table.three-columns {
+  padding: 1em;
   width: 100%;
 }
-table.three_columns th {
+table.three-columns th {
   text-align: left;
   border: none;
 }
-table.two_columns {
-  padding: 2em;
-  width: 100%;
+table.two-columns {
+  padding: 0.5em;
 }
-table.two_columns th {
+table.two-columns th {
   text-align: left;
   width: 50%;
   border: none;
 }
-table.two_columns td {
+table.two-columns td {
   padding-top: .5ex;
+}
+table.bigger td {
+  font-size: x-large;
+}
+.centered, .smaller {
+  text-align: center;
+}
+table.condensed {
+  width: 70%;
+}
+table.wide {
+  width: 95%;
+}
+table.wide th {
+  width: 65%;
 }

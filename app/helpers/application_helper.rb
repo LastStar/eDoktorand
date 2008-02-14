@@ -271,16 +271,6 @@ module ApplicationHelper
 
   private 
   
-  # sets options for remote tags
-  def set_remote_options(options)
-    options[:loading] = visual_effect(:appear, 'loading', :to => 0.6, 
-      :duration => 0.1)
-    options[:interactive] = visual_effect(:fade, "loading", :from => 0.6,
-      :duration => 0.1) 
-    options[:complete] = evaluate_remote_response if options[:evaluate] 
-    return options
-  end
-  
   # prints statement
   def print_statement(statement, statement_type)
     result = ''

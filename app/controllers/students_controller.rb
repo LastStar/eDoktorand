@@ -13,10 +13,10 @@ class StudentsController < ApplicationController
 
   # main page with students for employers
   def index
-    do_filter
     render(:action => 'list')
   end
   
+  # renders xls file with curent filter
   def list_xls
     do_filter
     headers['Content-Type'] = "application/vnd.ms-excel" 

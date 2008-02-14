@@ -53,15 +53,15 @@ msgstr ""
 msgid "defense term was succesfully created"
 msgstr ""
 
-#: app/controllers/defenses_controller.rb:65
+#: app/controllers/defenses_controller.rb:66
 msgid "Defense terms"
 msgstr ""
 
-#: app/controllers/defenses_controller.rb:71
+#: app/controllers/defenses_controller.rb:72
 msgid "Announcement of disert theme defense"
 msgstr ""
 
-#: app/controllers/defenses_controller.rb:77
+#: app/controllers/defenses_controller.rb:78
 msgid "Protocol for disert theme defense"
 msgstr ""
 
@@ -281,88 +281,88 @@ msgstr ""
 msgid "dean statement"
 msgstr ""
 
-#: app/helpers/application_helper.rb:173 app/views/scholarships/list.rhtml:19
+#: app/helpers/application_helper.rb:156 app/views/scholarships/list.rhtml:19
 #: app/views/shared/candidate_detail.rhtml:6
 msgid "Birth number"
 msgstr ""
 
-#: app/helpers/application_helper.rb:182
+#: app/helpers/application_helper.rb:165
 msgid "Birth on"
 msgstr ""
 
-#: app/helpers/application_helper.rb:189 app/helpers/application_helper.rb:285
+#: app/helpers/application_helper.rb:172 app/helpers/application_helper.rb:268
 #: app/views/exams/_show_protocol.rhtml:44
 msgid "print"
 msgstr ""
 
-#: app/helpers/application_helper.rb:195 app/helpers/application_helper.rb:199
-#: app/helpers/application_helper.rb:214 app/views/shared/_main_menu.rhtml:21
+#: app/helpers/application_helper.rb:178 app/helpers/application_helper.rb:182
+#: app/helpers/application_helper.rb:197 app/views/shared/_main_menu.rhtml:21
 #: app/views/shared/_main_menu.rhtml:25
 msgid "exams"
 msgstr ""
 
-#: app/helpers/application_helper.rb:197 app/helpers/application_helper.rb:206
-#: app/helpers/application_helper.rb:209 app/views/exam_terms/list.rhtml:12
+#: app/helpers/application_helper.rb:180 app/helpers/application_helper.rb:189
+#: app/helpers/application_helper.rb:192 app/views/exam_terms/list.rhtml:12
 #: app/views/shared/_main_menu.rhtml:17
 msgid "candidates"
 msgstr ""
 
-#: app/helpers/application_helper.rb:198 app/views/shared/_main_menu.rhtml:18
+#: app/helpers/application_helper.rb:181 app/views/shared/_main_menu.rhtml:18
 msgid "exam_terms"
 msgstr ""
 
-#: app/helpers/application_helper.rb:201
+#: app/helpers/application_helper.rb:184
 msgid "diplomas"
 msgstr ""
 
-#: app/helpers/application_helper.rb:202
+#: app/helpers/application_helper.rb:185
 msgid "tutors"
 msgstr ""
 
-#: app/helpers/application_helper.rb:203
+#: app/helpers/application_helper.rb:186
 msgid "coridors"
 msgstr ""
 
-#: app/helpers/application_helper.rb:212 app/helpers/application_helper.rb:230
+#: app/helpers/application_helper.rb:195 app/helpers/application_helper.rb:213
 #: app/views/shared/_main_menu.rhtml:6 app/views/shared/_main_menu.rhtml:23
 msgid "probation terms"
 msgstr ""
 
-#: app/helpers/application_helper.rb:216
+#: app/helpers/application_helper.rb:199
 #: app/helpers/probation_terms_helper.rb:49
 #: app/views/shared/_main_menu.rhtml:27
 msgid "students"
 msgstr ""
 
-#: app/helpers/application_helper.rb:219 app/helpers/application_helper.rb:223
+#: app/helpers/application_helper.rb:202 app/helpers/application_helper.rb:206
 #: app/views/shared/_main_menu.rhtml:29 app/views/shared/_main_menu.rhtml:30
 msgid "logoff"
 msgstr ""
 
-#: app/helpers/application_helper.rb:222 app/views/shared/_main_menu.rhtml:29
+#: app/helpers/application_helper.rb:205 app/views/shared/_main_menu.rhtml:29
 msgid "do you really want to"
 msgstr ""
 
-#: app/helpers/application_helper.rb:233 app/helpers/students_helper.rb:246
+#: app/helpers/application_helper.rb:216 app/helpers/students_helper.rb:246
 #: app/views/shared/_main_menu.rhtml:9
 #: app/views/study_plans/_study_plan_header.rhtml:1
 msgid "study plan"
 msgstr ""
 
-#: app/helpers/application_helper.rb:236 app/helpers/application_helper.rb:436
+#: app/helpers/application_helper.rb:219 app/helpers/application_helper.rb:409
 #: app/views/shared/_main_menu.rhtml:11 app/views/shared/_main_menu.rhtml:19
 msgid "scholarship"
 msgstr ""
 
-#: app/helpers/application_helper.rb:246
+#: app/helpers/application_helper.rb:229
 msgid "Birth place"
 msgstr ""
 
-#: app/helpers/application_helper.rb:320
+#: app/helpers/application_helper.rb:293
 msgid "see atestation informations"
 msgstr ""
 
-#: app/helpers/application_helper.rb:324 app/helpers/application_helper.rb:609
+#: app/helpers/application_helper.rb:297 app/helpers/application_helper.rb:582
 #: app/helpers/defenses_helper.rb:5 app/helpers/exams_helper.rb:38
 #: app/helpers/exams_helper.rb:46 app/helpers/exams_helper.rb:55
 #: app/helpers/exams_helper.rb:63 app/helpers/final_exam_terms_helper.rb:18
@@ -381,28 +381,28 @@ msgstr ""
 msgid "working..."
 msgstr ""
 
-#: app/helpers/application_helper.rb:337 app/helpers/application_helper.rb:341
+#: app/helpers/application_helper.rb:310 app/helpers/application_helper.rb:314
 #: app/helpers/scholarships_helper.rb:53
 msgid "approve"
 msgstr ""
 
-#: app/helpers/application_helper.rb:337
+#: app/helpers/application_helper.rb:310
 msgid "approve with earfull"
 msgstr ""
 
-#: app/helpers/application_helper.rb:337 app/helpers/application_helper.rb:341
+#: app/helpers/application_helper.rb:310 app/helpers/application_helper.rb:314
 msgid "cancel"
 msgstr ""
 
-#: app/helpers/application_helper.rb:350
+#: app/helpers/application_helper.rb:323
 msgid "methodology file (opens new window)"
 msgstr ""
 
-#: app/helpers/application_helper.rb:360
+#: app/helpers/application_helper.rb:333
 msgid "additional information for next atestation"
 msgstr ""
 
-#: app/helpers/application_helper.rb:374 app/helpers/students_helper.rb:281
+#: app/helpers/application_helper.rb:347 app/helpers/students_helper.rb:281
 #: app/views/account/error.rhtml:7 app/views/account/no_permission.rhtml:2
 #: app/views/candidates/enroll.rhtml:8 app/views/coridors/attestation.rhtml:3
 #: app/views/coridors/manage_edit.rhtml:3 app/views/coridors/subjects.rhtml:3
@@ -416,27 +416,27 @@ msgstr ""
 msgid "back"
 msgstr ""
 
-#: app/helpers/application_helper.rb:377 app/helpers/students_helper.rb:291
+#: app/helpers/application_helper.rb:350 app/helpers/students_helper.rb:291
 msgid "back and remove from list"
 msgstr ""
 
-#: app/helpers/application_helper.rb:432
+#: app/helpers/application_helper.rb:405
 msgid "finished on"
 msgstr ""
 
-#: app/helpers/application_helper.rb:488 app/helpers/students_helper.rb:142
+#: app/helpers/application_helper.rb:461 app/helpers/students_helper.rb:142
 msgid "final exam term"
 msgstr ""
 
-#: app/helpers/application_helper.rb:501
+#: app/helpers/application_helper.rb:474
 msgid "defense"
 msgstr ""
 
-#: app/helpers/application_helper.rb:504
+#: app/helpers/application_helper.rb:477
 msgid "hide"
 msgstr ""
 
-#: app/helpers/application_helper.rb:551 app/helpers/application_helper.rb:554
+#: app/helpers/application_helper.rb:524 app/helpers/application_helper.rb:527
 #: app/views/defenses/announcement.rhtml:15
 #: app/views/final_exam_terms/_detail.rhtml:5
 #: app/views/scholarships/_prepare_list.rhtml:10
@@ -446,10 +446,10 @@ msgstr ""
 msgid "Full name"
 msgstr ""
 
-#: app/helpers/application_helper.rb:564 app/helpers/application_helper.rb:567
+#: app/helpers/application_helper.rb:537 app/helpers/application_helper.rb:540
 #: app/models/tutor.rb:5 app/views/coridors/attestation.rhtml:11
 #: app/views/defenses/announcement.rhtml:19
-#: app/views/defenses/protocol.rhtml:26 app/views/exams/_protocol.rhtml:27
+#: app/views/defenses/protocol.rhtml:100 app/views/exams/_protocol.rhtml:27
 #: app/views/exams/_show_protocol.rhtml:22
 #: app/views/final_exam_terms/_detail.rhtml:9
 #: app/views/final_exam_terms/protocol.rhtml:26
@@ -461,16 +461,16 @@ msgstr ""
 msgid "Tutor"
 msgstr ""
 
-#: app/helpers/application_helper.rb:574
+#: app/helpers/application_helper.rb:547
 #: app/views/final_exam_terms/claim.rhtml:15
 msgid "literature review file"
 msgstr ""
 
-#: app/helpers/application_helper.rb:581 app/views/defenses/claim.rhtml:11
+#: app/helpers/application_helper.rb:554 app/views/defenses/claim.rhtml:11
 msgid "self report file"
 msgstr ""
 
-#: app/helpers/application_helper.rb:589 app/views/defenses/claim.rhtml:15
+#: app/helpers/application_helper.rb:562 app/views/defenses/claim.rhtml:15
 msgid "disert theme file"
 msgstr ""
 
@@ -1344,7 +1344,7 @@ msgid "Year"
 msgstr ""
 
 #: app/models/student.rb:14 app/views/coridors/attestation.rhtml:14
-#: app/views/defenses/protocol.rhtml:30
+#: app/views/defenses/protocol.rhtml:26
 #: app/views/final_exam_terms/protocol.rhtml:30
 msgid "Enrolled on"
 msgstr ""
@@ -1733,7 +1733,7 @@ msgstr ""
 
 #: app/views/defenses/_detail.rhtml:11
 #: app/views/defenses/announcement.rhtml:45
-#: app/views/defenses/protocol.rhtml:91
+#: app/views/defenses/protocol.rhtml:39
 #: app/views/final_exam_terms/_detail.rhtml:37
 #: app/views/final_exam_terms/protocol.rhtml:79
 msgid "Chairman"
@@ -1741,7 +1741,6 @@ msgstr ""
 
 #: app/views/defenses/_detail.rhtml:16
 #: app/views/defenses/announcement.rhtml:50
-#: app/views/defenses/protocol.rhtml:112
 #: app/views/final_exam_terms/_detail.rhtml:42
 #: app/views/final_exam_terms/protocol.rhtml:100
 msgid "Opponent"
@@ -1759,7 +1758,7 @@ msgstr ""
 
 #: app/views/defenses/_detail.rhtml:33
 #: app/views/defenses/announcement.rhtml:67
-#: app/views/defenses/protocol.rhtml:95
+#: app/views/defenses/protocol.rhtml:46
 #: app/views/final_exam_terms/_detail.rhtml:49
 #: app/views/final_exam_terms/protocol.rhtml:83
 msgid "Members"
@@ -1779,7 +1778,7 @@ msgstr ""
 #: app/views/exam_terms/list.rhtml:18
 #: app/views/final_exam_terms/_form.rhtml:12
 #: app/views/probation_terms/_list.rhtml:9
-#: app/views/probation_terms/_probation_term_details_form.rhtml:5
+#: app/views/probation_terms/_probation_term_details_form.rhtml:4
 msgid "room"
 msgstr ""
 
@@ -1831,7 +1830,7 @@ msgid "Comission will sit on %s in room %s."
 msgstr ""
 
 #: app/views/defenses/announcement.rhtml:24
-#: app/views/defenses/protocol.rhtml:35
+#: app/views/defenses/protocol.rhtml:31
 #: app/views/final_exam_terms/_detail.rhtml:14
 #: app/views/final_exam_terms/protocol.rhtml:35
 #: app/views/shared/_personal_detail.rhtml:28
@@ -1847,18 +1846,13 @@ msgstr ""
 msgid "Disert theme title"
 msgstr ""
 
-#: app/views/defenses/list.rhtml:10 app/views/final_exam_terms/list.rhtml:10
-msgid "print invitation letter"
-msgstr ""
-
 #: app/views/defenses/protocol.rhtml:4
 #: app/views/final_exam_terms/protocol.rhtml:4
 msgid "In Prague on %s"
 msgstr ""
 
 #: app/views/defenses/protocol.rhtml:10
-#: app/views/final_exam_terms/protocol.rhtml:10
-msgid "Final exam protocol"
+msgid "Defense protocol"
 msgstr ""
 
 #: app/views/defenses/protocol.rhtml:14
@@ -1875,35 +1869,44 @@ msgstr ""
 msgid "Department"
 msgstr ""
 
-#: app/views/defenses/protocol.rhtml:43
-#: app/views/final_exam_terms/protocol.rhtml:43
-msgid "Final exam area"
+#: app/views/defenses/protocol.rhtml:85
+msgid "Opponents"
 msgstr ""
 
-#: app/views/defenses/protocol.rhtml:44 app/views/exams/_protocol.rhtml:45
-#: app/views/exams/_protocol.rhtml:48 app/views/exams/_protocol.rhtml:51
-#: app/views/exams/_protocol.rhtml:54 app/views/exams/_show_protocol.rhtml:37
-#: app/views/exams/_show_protocol.rhtml:40
-#: app/views/final_exam_terms/protocol.rhtml:45
-#: app/views/form/preview.rhtml:11 app/views/scholarships/claim.rhtml:105
-#: app/views/scholarships/claim.rhtml:117
-msgid "Signature"
+#: app/views/defenses/protocol.rhtml:110
+msgid "Result of vote"
 msgstr ""
 
-#: app/views/defenses/protocol.rhtml:84
-#: app/views/final_exam_terms/_detail.rhtml:33
-#: app/views/final_exam_terms/protocol.rhtml:72
-msgid "Literature review"
+#: app/views/defenses/protocol.rhtml:116
+msgid "Members count"
 msgstr ""
 
-#: app/views/defenses/protocol.rhtml:117
-#: app/views/final_exam_terms/protocol.rhtml:105
-msgid "Classification of final exam"
+#: app/views/defenses/protocol.rhtml:120
+msgid "Members present"
 msgstr ""
 
-#: app/views/defenses/protocol.rhtml:121
-#: app/views/final_exam_terms/protocol.rhtml:109
-msgid "Chairman signature"
+#: app/views/defenses/protocol.rhtml:128
+msgid "Positive"
+msgstr ""
+
+#: app/views/defenses/protocol.rhtml:132
+msgid "Negative"
+msgstr ""
+
+#: app/views/defenses/protocol.rhtml:136
+msgid "Not right"
+msgstr ""
+
+#: app/views/defenses/protocol.rhtml:144
+msgid "Result of the defense"
+msgstr ""
+
+#: app/views/defenses/protocol.rhtml:147
+msgid "defended"
+msgstr ""
+
+#: app/views/defenses/protocol.rhtml:148
+msgid "failed"
 msgstr ""
 
 #: app/views/diploma_supplements/_form.rhtml:7
@@ -2064,7 +2067,7 @@ msgstr ""
 #: app/views/exams/_detail_form.rhtml:6
 #: app/views/exams/save_external_subject.rhtml:10
 #: app/views/probation_terms/_list.rhtml:11
-#: app/views/probation_terms/_probation_term_details_form.rhtml:13
+#: app/views/probation_terms/_probation_term_details_form.rhtml:12
 msgid "date"
 msgstr ""
 
@@ -2151,6 +2154,16 @@ msgstr ""
 msgid "1. examinator"
 msgstr ""
 
+#: app/views/exams/_protocol.rhtml:45 app/views/exams/_protocol.rhtml:48
+#: app/views/exams/_protocol.rhtml:51 app/views/exams/_protocol.rhtml:54
+#: app/views/exams/_show_protocol.rhtml:37
+#: app/views/exams/_show_protocol.rhtml:40
+#: app/views/final_exam_terms/protocol.rhtml:45
+#: app/views/form/preview.rhtml:11 app/views/scholarships/claim.rhtml:105
+#: app/views/scholarships/claim.rhtml:117
+msgid "Signature"
+msgstr ""
+
 #: app/views/exams/_protocol.rhtml:48 app/views/exams/_show_protocol.rhtml:40
 #: app/views/probation_terms/_list.rhtml:15
 msgid "2. examinator"
@@ -2199,8 +2212,17 @@ msgstr ""
 msgid "University"
 msgstr ""
 
+#: app/views/final_exam_terms/_detail.rhtml:33
+#: app/views/final_exam_terms/protocol.rhtml:72
+msgid "Literature review"
+msgstr ""
+
 #: app/views/final_exam_terms/claim.rhtml:9
 msgid "literature review title"
+msgstr ""
+
+#: app/views/final_exam_terms/list.rhtml:10
+msgid "print invitation letter"
 msgstr ""
 
 #: app/views/final_exam_terms/prepare_print.rhtml:6
@@ -2211,8 +2233,24 @@ msgstr ""
 msgid "Comissions will sit on %s in room %s."
 msgstr ""
 
+#: app/views/final_exam_terms/protocol.rhtml:10
+msgid "Final exam protocol"
+msgstr ""
+
+#: app/views/final_exam_terms/protocol.rhtml:43
+msgid "Final exam area"
+msgstr ""
+
 #: app/views/final_exam_terms/protocol.rhtml:44
 msgid "Mark"
+msgstr ""
+
+#: app/views/final_exam_terms/protocol.rhtml:105
+msgid "Classification of final exam"
+msgstr ""
+
+#: app/views/final_exam_terms/protocol.rhtml:109
+msgid "Chairman signature"
 msgstr ""
 
 #: app/views/form/_preview_header.rhtml:3
@@ -2417,11 +2455,11 @@ msgstr ""
 msgid "study plan approvement process"
 msgstr ""
 
-#: app/views/layouts/documents.rhtml:26 app/views/layouts/employers.rhtml:24
+#: app/views/layouts/documents.rhtml:26
 msgid "loading ..."
 msgstr ""
 
-#: app/views/layouts/documents.rhtml:31 app/views/layouts/employers.rhtml:29
+#: app/views/layouts/documents.rhtml:31 app/views/layouts/employers.rhtml:28
 msgid "Developed by"
 msgstr ""
 
@@ -2434,7 +2472,7 @@ msgid "maximum/enrolled"
 msgstr ""
 
 #: app/views/probation_terms/_list.rhtml:10
-#: app/views/probation_terms/_probation_term_details_form.rhtml:9
+#: app/views/probation_terms/_probation_term_details_form.rhtml:8
 msgid "starting time"
 msgstr ""
 
@@ -2445,15 +2483,15 @@ msgstr ""
 msgid "note"
 msgstr ""
 
-#: app/views/probation_terms/_probation_term_details_form.rhtml:3
+#: app/views/probation_terms/_probation_term_details_form.rhtml:2
 msgid "Probation term details"
 msgstr ""
 
-#: app/views/probation_terms/_probation_term_details_form.rhtml:18
+#: app/views/probation_terms/_probation_term_details_form.rhtml:17
 msgid "maximum of students"
 msgstr ""
 
-#: app/views/probation_terms/_probation_term_details_form.rhtml:22
+#: app/views/probation_terms/_probation_term_details_form.rhtml:21
 msgid "note for students"
 msgstr ""
 
@@ -2753,7 +2791,7 @@ msgstr ""
 msgid "Personal and study details"
 msgstr ""
 
-#: app/views/shared/_student_detail.rhtml:10
+#: app/views/shared/_student_detail.rhtml:12
 msgid "Contact details"
 msgstr ""
 
@@ -2930,7 +2968,7 @@ msgstr ""
 msgid "bank"
 msgstr ""
 
-#: app/views/students/_list.rhtml:2
+#: app/views/students/_list.rhtml:2 app/views/students/list.rhtml:6
 msgid "Students list"
 msgstr ""
 

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-01-31 15:02+0100\n"
+"POT-Creation-Date: 2008-02-14 21:44+0100\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -51,12 +51,10 @@ msgid "Candidates"
 msgstr "Uchazeči o studium"
 
 #: app/controllers/candidates_controller.rb:217
-#, fuzzy
 msgid "previous"
 msgstr "předchozí stránka"
 
 #: app/controllers/candidates_controller.rb:218
-#, fuzzy
 msgid "next"
 msgstr "další stránka"
 
@@ -73,15 +71,15 @@ msgstr "Musíte přidat autoreferát"
 msgid "defense term was succesfully created"
 msgstr "termín obhajoby byl úspěšně vytvořen"
 
-#: app/controllers/defenses_controller.rb:65
+#: app/controllers/defenses_controller.rb:66
 msgid "Defense terms"
 msgstr "Termíny obhajoby"
 
-#: app/controllers/defenses_controller.rb:71
+#: app/controllers/defenses_controller.rb:72
 msgid "Announcement of disert theme defense"
 msgstr "Oznámení obhajoby disertační práce"
 
-#: app/controllers/defenses_controller.rb:77
+#: app/controllers/defenses_controller.rb:78
 msgid "Protocol for disert theme defense"
 msgstr "Protokol obhajoby disertační práce"
 
@@ -91,9 +89,8 @@ msgid "Upload methodology"
 msgstr "nahrání metodiky"
 
 #: app/controllers/disert_themes_controller.rb:26
-#, fuzzy
 msgid "Methodology file must be choosed"
-msgstr "soubor s metodikou (otevře nové okno)"
+msgstr "Soubor s metodikou musí být vybrán"
 
 #: app/controllers/exam_terms_controller.rb:13
 msgid "List of admittance terms"
@@ -304,88 +301,88 @@ msgstr "vyjádření vedoucího katedry"
 msgid "dean statement"
 msgstr "vyjádření děkana"
 
-#: app/helpers/application_helper.rb:173 app/views/scholarships/list.rhtml:19
+#: app/helpers/application_helper.rb:156 app/views/scholarships/list.rhtml:19
 #: app/views/shared/candidate_detail.rhtml:6
 msgid "Birth number"
 msgstr "Rodné číslo"
 
-#: app/helpers/application_helper.rb:182
+#: app/helpers/application_helper.rb:165
 msgid "Birth on"
 msgstr "Narozen dne"
 
-#: app/helpers/application_helper.rb:189 app/helpers/application_helper.rb:285
+#: app/helpers/application_helper.rb:172 app/helpers/application_helper.rb:268
 #: app/views/exams/_show_protocol.rhtml:44
 msgid "print"
 msgstr "vytisknout"
 
-#: app/helpers/application_helper.rb:195 app/helpers/application_helper.rb:199
-#: app/helpers/application_helper.rb:214 app/views/shared/_main_menu.rhtml:21
+#: app/helpers/application_helper.rb:178 app/helpers/application_helper.rb:182
+#: app/helpers/application_helper.rb:197 app/views/shared/_main_menu.rhtml:21
 #: app/views/shared/_main_menu.rhtml:25
 msgid "exams"
 msgstr "zkoušky"
 
-#: app/helpers/application_helper.rb:197 app/helpers/application_helper.rb:206
-#: app/helpers/application_helper.rb:209 app/views/exam_terms/list.rhtml:12
+#: app/helpers/application_helper.rb:180 app/helpers/application_helper.rb:189
+#: app/helpers/application_helper.rb:192 app/views/exam_terms/list.rhtml:12
 #: app/views/shared/_main_menu.rhtml:17
 msgid "candidates"
 msgstr "uchazeči"
 
-#: app/helpers/application_helper.rb:198 app/views/shared/_main_menu.rhtml:18
+#: app/helpers/application_helper.rb:181 app/views/shared/_main_menu.rhtml:18
 msgid "exam_terms"
 msgstr "komise"
 
-#: app/helpers/application_helper.rb:201
+#: app/helpers/application_helper.rb:184
 msgid "diplomas"
 msgstr "diplomy"
 
-#: app/helpers/application_helper.rb:202
+#: app/helpers/application_helper.rb:185
 msgid "tutors"
 msgstr "školitelé"
 
-#: app/helpers/application_helper.rb:203
+#: app/helpers/application_helper.rb:186
 msgid "coridors"
 msgstr "obory"
 
-#: app/helpers/application_helper.rb:212 app/helpers/application_helper.rb:230
+#: app/helpers/application_helper.rb:195 app/helpers/application_helper.rb:213
 #: app/views/shared/_main_menu.rhtml:6 app/views/shared/_main_menu.rhtml:23
 msgid "probation terms"
 msgstr "termíny zkoušek"
 
-#: app/helpers/application_helper.rb:216
+#: app/helpers/application_helper.rb:199
 #: app/helpers/probation_terms_helper.rb:49
 #: app/views/shared/_main_menu.rhtml:27
 msgid "students"
 msgstr "studenti"
 
-#: app/helpers/application_helper.rb:219 app/helpers/application_helper.rb:223
+#: app/helpers/application_helper.rb:202 app/helpers/application_helper.rb:206
 #: app/views/shared/_main_menu.rhtml:29 app/views/shared/_main_menu.rhtml:30
 msgid "logoff"
 msgstr "odhlásit"
 
-#: app/helpers/application_helper.rb:222 app/views/shared/_main_menu.rhtml:29
+#: app/helpers/application_helper.rb:205 app/views/shared/_main_menu.rhtml:29
 msgid "do you really want to"
 msgstr "opravdu se chcete"
 
-#: app/helpers/application_helper.rb:233 app/helpers/students_helper.rb:246
+#: app/helpers/application_helper.rb:216 app/helpers/students_helper.rb:246
 #: app/views/shared/_main_menu.rhtml:9
 #: app/views/study_plans/_study_plan_header.rhtml:1
 msgid "study plan"
 msgstr "studijní plán"
 
-#: app/helpers/application_helper.rb:236 app/helpers/application_helper.rb:436
+#: app/helpers/application_helper.rb:219 app/helpers/application_helper.rb:409
 #: app/views/shared/_main_menu.rhtml:11 app/views/shared/_main_menu.rhtml:19
 msgid "scholarship"
 msgstr "stipendia"
 
-#: app/helpers/application_helper.rb:246
+#: app/helpers/application_helper.rb:229
 msgid "Birth place"
 msgstr "Místo narození"
 
-#: app/helpers/application_helper.rb:320
+#: app/helpers/application_helper.rb:293
 msgid "see atestation informations"
 msgstr "informace k atestaci"
 
-#: app/helpers/application_helper.rb:324 app/helpers/application_helper.rb:609
+#: app/helpers/application_helper.rb:297 app/helpers/application_helper.rb:582
 #: app/helpers/defenses_helper.rb:5 app/helpers/exams_helper.rb:38
 #: app/helpers/exams_helper.rb:46 app/helpers/exams_helper.rb:55
 #: app/helpers/exams_helper.rb:63 app/helpers/final_exam_terms_helper.rb:18
@@ -404,28 +401,28 @@ msgstr "informace k atestaci"
 msgid "working..."
 msgstr "pracuji..."
 
-#: app/helpers/application_helper.rb:337 app/helpers/application_helper.rb:341
+#: app/helpers/application_helper.rb:310 app/helpers/application_helper.rb:314
 #: app/helpers/scholarships_helper.rb:53
 msgid "approve"
 msgstr "schválit"
 
-#: app/helpers/application_helper.rb:337
+#: app/helpers/application_helper.rb:310
 msgid "approve with earfull"
 msgstr "schválit s výtkou"
 
-#: app/helpers/application_helper.rb:337 app/helpers/application_helper.rb:341
+#: app/helpers/application_helper.rb:310 app/helpers/application_helper.rb:314
 msgid "cancel"
 msgstr "neschválit"
 
-#: app/helpers/application_helper.rb:350
+#: app/helpers/application_helper.rb:323
 msgid "methodology file (opens new window)"
 msgstr "soubor s metodikou (otevře nové okno)"
 
-#: app/helpers/application_helper.rb:360
+#: app/helpers/application_helper.rb:333
 msgid "additional information for next atestation"
 msgstr "další informace pro následující atestaci"
 
-#: app/helpers/application_helper.rb:374 app/helpers/students_helper.rb:281
+#: app/helpers/application_helper.rb:347 app/helpers/students_helper.rb:281
 #: app/views/account/error.rhtml:7 app/views/account/no_permission.rhtml:2
 #: app/views/candidates/enroll.rhtml:8 app/views/coridors/attestation.rhtml:3
 #: app/views/coridors/manage_edit.rhtml:3 app/views/coridors/subjects.rhtml:3
@@ -439,27 +436,27 @@ msgstr "další informace pro následující atestaci"
 msgid "back"
 msgstr "zpět"
 
-#: app/helpers/application_helper.rb:377 app/helpers/students_helper.rb:291
+#: app/helpers/application_helper.rb:350 app/helpers/students_helper.rb:291
 msgid "back and remove from list"
 msgstr "zpět a vyřadit ze seznamu"
 
-#: app/helpers/application_helper.rb:432
+#: app/helpers/application_helper.rb:405
 msgid "finished on"
 msgstr "ukončen dne"
 
-#: app/helpers/application_helper.rb:488 app/helpers/students_helper.rb:142
+#: app/helpers/application_helper.rb:461 app/helpers/students_helper.rb:142
 msgid "final exam term"
 msgstr "termín SDZ"
 
-#: app/helpers/application_helper.rb:501
+#: app/helpers/application_helper.rb:474
 msgid "defense"
 msgstr "obhajoba"
 
-#: app/helpers/application_helper.rb:504
+#: app/helpers/application_helper.rb:477
 msgid "hide"
 msgstr "skrýt"
 
-#: app/helpers/application_helper.rb:551 app/helpers/application_helper.rb:554
+#: app/helpers/application_helper.rb:524 app/helpers/application_helper.rb:527
 #: app/views/defenses/announcement.rhtml:15
 #: app/views/final_exam_terms/_detail.rhtml:5
 #: app/views/scholarships/_prepare_list.rhtml:10
@@ -469,10 +466,10 @@ msgstr "skrýt"
 msgid "Full name"
 msgstr "Jméno a příjmení"
 
-#: app/helpers/application_helper.rb:564 app/helpers/application_helper.rb:567
+#: app/helpers/application_helper.rb:537 app/helpers/application_helper.rb:540
 #: app/models/tutor.rb:5 app/views/coridors/attestation.rhtml:11
 #: app/views/defenses/announcement.rhtml:19
-#: app/views/defenses/protocol.rhtml:26 app/views/exams/_protocol.rhtml:27
+#: app/views/defenses/protocol.rhtml:100 app/views/exams/_protocol.rhtml:27
 #: app/views/exams/_show_protocol.rhtml:22
 #: app/views/final_exam_terms/_detail.rhtml:9
 #: app/views/final_exam_terms/protocol.rhtml:26
@@ -484,16 +481,16 @@ msgstr "Jméno a příjmení"
 msgid "Tutor"
 msgstr "Školitel"
 
-#: app/helpers/application_helper.rb:574
+#: app/helpers/application_helper.rb:547
 #: app/views/final_exam_terms/claim.rhtml:15
 msgid "literature review file"
 msgstr "soubor s tezí disertační práce"
 
-#: app/helpers/application_helper.rb:581 app/views/defenses/claim.rhtml:11
+#: app/helpers/application_helper.rb:554 app/views/defenses/claim.rhtml:11
 msgid "self report file"
 msgstr "soubor s autoreferátem"
 
-#: app/helpers/application_helper.rb:589 app/views/defenses/claim.rhtml:15
+#: app/helpers/application_helper.rb:562 app/views/defenses/claim.rhtml:15
 msgid "disert theme file"
 msgstr "soubor s disertační prácí"
 
@@ -1319,9 +1316,8 @@ msgid "Invitation to final exam"
 msgstr "Pozvánka k státní doktorské zkoušce"
 
 #: app/models/notifications.rb:123
-#, fuzzy
 msgid "Invitation to defense"
-msgstr "Pozvánka k státní doktorské zkoušce"
+msgstr "Pozvánka k obhajobě"
 
 #: app/models/notifications.rb:132
 msgid "Created account"
@@ -1333,7 +1329,7 @@ msgstr "Uživatel"
 
 #: app/models/probation_term.rb:11 app/models/probation_term.rb:19
 msgid "Wrong format of time - hh:mm"
-msgstr ""
+msgstr "Špatný formát času - hh:mm"
 
 #: app/models/probation_term.rb:12
 msgid "You must have 1 or more students for maximum"
@@ -1368,7 +1364,7 @@ msgid "Year"
 msgstr "Ročník"
 
 #: app/models/student.rb:14 app/views/coridors/attestation.rhtml:14
-#: app/views/defenses/protocol.rhtml:30
+#: app/views/defenses/protocol.rhtml:26
 #: app/views/final_exam_terms/protocol.rhtml:30
 msgid "Enrolled on"
 msgstr "Začátek studia"
@@ -1757,7 +1753,7 @@ msgstr "Místnost"
 
 #: app/views/defenses/_detail.rhtml:11
 #: app/views/defenses/announcement.rhtml:45
-#: app/views/defenses/protocol.rhtml:91
+#: app/views/defenses/protocol.rhtml:39
 #: app/views/final_exam_terms/_detail.rhtml:37
 #: app/views/final_exam_terms/protocol.rhtml:79
 msgid "Chairman"
@@ -1765,7 +1761,6 @@ msgstr "Předseda komise"
 
 #: app/views/defenses/_detail.rhtml:16
 #: app/views/defenses/announcement.rhtml:50
-#: app/views/defenses/protocol.rhtml:112
 #: app/views/final_exam_terms/_detail.rhtml:42
 #: app/views/final_exam_terms/protocol.rhtml:100
 msgid "Opponent"
@@ -1783,7 +1778,7 @@ msgstr "Třetí oponent"
 
 #: app/views/defenses/_detail.rhtml:33
 #: app/views/defenses/announcement.rhtml:67
-#: app/views/defenses/protocol.rhtml:95
+#: app/views/defenses/protocol.rhtml:46
 #: app/views/final_exam_terms/_detail.rhtml:49
 #: app/views/final_exam_terms/protocol.rhtml:83
 msgid "Members"
@@ -1803,7 +1798,7 @@ msgstr "datum a čas"
 #: app/views/exam_terms/list.rhtml:18
 #: app/views/final_exam_terms/_form.rhtml:12
 #: app/views/probation_terms/_list.rhtml:9
-#: app/views/probation_terms/_probation_term_details_form.rhtml:5
+#: app/views/probation_terms/_probation_term_details_form.rhtml:4
 msgid "room"
 msgstr "místnost"
 
@@ -1855,7 +1850,7 @@ msgid "Comission will sit on %s in room %s."
 msgstr "Komise bude zasedat dne %s v místnosti %s"
 
 #: app/views/defenses/announcement.rhtml:24
-#: app/views/defenses/protocol.rhtml:35
+#: app/views/defenses/protocol.rhtml:31
 #: app/views/final_exam_terms/_detail.rhtml:14
 #: app/views/final_exam_terms/protocol.rhtml:35
 #: app/views/shared/_personal_detail.rhtml:28
@@ -1871,19 +1866,14 @@ msgstr "Začátek"
 msgid "Disert theme title"
 msgstr "Dázev disertační práce"
 
-#: app/views/defenses/list.rhtml:10 app/views/final_exam_terms/list.rhtml:10
-msgid "print invitation letter"
-msgstr "Vytisknout oznámení"
-
 #: app/views/defenses/protocol.rhtml:4
 #: app/views/final_exam_terms/protocol.rhtml:4
 msgid "In Prague on %s"
 msgstr "V Praze dne %s"
 
 #: app/views/defenses/protocol.rhtml:10
-#: app/views/final_exam_terms/protocol.rhtml:10
-msgid "Final exam protocol"
-msgstr "Státní doktorská zkouška"
+msgid "Defense protocol"
+msgstr "Protokol o obhajobě disertační práce"
 
 #: app/views/defenses/protocol.rhtml:14
 #: app/views/final_exam_terms/protocol.rhtml:14
@@ -1899,36 +1889,45 @@ msgstr "Příjmení a jméno"
 msgid "Department"
 msgstr "Katedra"
 
-#: app/views/defenses/protocol.rhtml:43
-#: app/views/final_exam_terms/protocol.rhtml:43
-msgid "Final exam area"
-msgstr "Předmět státní doktorské zkoušky"
+#: app/views/defenses/protocol.rhtml:85
+msgid "Opponents"
+msgstr "Oponenti"
 
-#: app/views/defenses/protocol.rhtml:44 app/views/exams/_protocol.rhtml:45
-#: app/views/exams/_protocol.rhtml:48 app/views/exams/_protocol.rhtml:51
-#: app/views/exams/_protocol.rhtml:54 app/views/exams/_show_protocol.rhtml:37
-#: app/views/exams/_show_protocol.rhtml:40
-#: app/views/final_exam_terms/protocol.rhtml:45
-#: app/views/form/preview.rhtml:11 app/views/scholarships/claim.rhtml:105
-#: app/views/scholarships/claim.rhtml:117
-msgid "Signature"
-msgstr "Podpis"
+#: app/views/defenses/protocol.rhtml:110
+msgid "Result of vote"
+msgstr "Výsledek hlasování"
 
-#: app/views/defenses/protocol.rhtml:84
-#: app/views/final_exam_terms/_detail.rhtml:33
-#: app/views/final_exam_terms/protocol.rhtml:72
-msgid "Literature review"
-msgstr "Teze disertační práce"
+#: app/views/defenses/protocol.rhtml:116
+msgid "Members count"
+msgstr "Počet členů komise"
 
-#: app/views/defenses/protocol.rhtml:117
-#: app/views/final_exam_terms/protocol.rhtml:105
-msgid "Classification of final exam"
-msgstr "Klasifikace státní doktorské zkoušky"
+#: app/views/defenses/protocol.rhtml:120
+msgid "Members present"
+msgstr "Přítomných členů komise"
 
-#: app/views/defenses/protocol.rhtml:121
-#: app/views/final_exam_terms/protocol.rhtml:109
-msgid "Chairman signature"
-msgstr "Podpis předsedy"
+#: app/views/defenses/protocol.rhtml:128
+msgid "Positive"
+msgstr "Kladných"
+
+#: app/views/defenses/protocol.rhtml:132
+msgid "Negative"
+msgstr "Záporných"
+
+#: app/views/defenses/protocol.rhtml:136
+msgid "Not right"
+msgstr "Neplatných"
+
+#: app/views/defenses/protocol.rhtml:144
+msgid "Result of the defense"
+msgstr "Výsledek obhajoby disertační práce"
+
+#: app/views/defenses/protocol.rhtml:147
+msgid "defended"
+msgstr "obhájil"
+
+#: app/views/defenses/protocol.rhtml:148
+msgid "failed"
+msgstr "neobhájil"
 
 #: app/views/diploma_supplements/_form.rhtml:7
 msgid "All informations are required"
@@ -2090,7 +2089,7 @@ msgstr "Datum zkoušky"
 #: app/views/exams/_detail_form.rhtml:6
 #: app/views/exams/save_external_subject.rhtml:10
 #: app/views/probation_terms/_list.rhtml:11
-#: app/views/probation_terms/_probation_term_details_form.rhtml:13
+#: app/views/probation_terms/_probation_term_details_form.rhtml:12
 msgid "date"
 msgstr "datum"
 
@@ -2177,6 +2176,16 @@ msgstr "Výsledek zkoušky"
 msgid "1. examinator"
 msgstr "1. zkoušející"
 
+#: app/views/exams/_protocol.rhtml:45 app/views/exams/_protocol.rhtml:48
+#: app/views/exams/_protocol.rhtml:51 app/views/exams/_protocol.rhtml:54
+#: app/views/exams/_show_protocol.rhtml:37
+#: app/views/exams/_show_protocol.rhtml:40
+#: app/views/final_exam_terms/protocol.rhtml:45
+#: app/views/form/preview.rhtml:11 app/views/scholarships/claim.rhtml:105
+#: app/views/scholarships/claim.rhtml:117
+msgid "Signature"
+msgstr "Podpis"
+
 #: app/views/exams/_protocol.rhtml:48 app/views/exams/_show_protocol.rhtml:40
 #: app/views/probation_terms/_list.rhtml:15
 msgid "2. examinator"
@@ -2225,9 +2234,18 @@ msgstr "V systému pro Vás nejsou zkoušky"
 msgid "University"
 msgstr "Univerzita"
 
+#: app/views/final_exam_terms/_detail.rhtml:33
+#: app/views/final_exam_terms/protocol.rhtml:72
+msgid "Literature review"
+msgstr "Teze disertační práce"
+
 #: app/views/final_exam_terms/claim.rhtml:9
 msgid "literature review title"
 msgstr "název teze disertační práce"
+
+#: app/views/final_exam_terms/list.rhtml:10
+msgid "print invitation letter"
+msgstr "Vytisknout oznámení"
 
 #: app/views/final_exam_terms/prepare_print.rhtml:6
 msgid "Announcement for final exam commission."
@@ -2237,9 +2255,25 @@ msgstr "Oznámení zasedání komise pro státní doktorské zkoušky."
 msgid "Comissions will sit on %s in room %s."
 msgstr "Komise budou zasedat dne %s v místnosti %s"
 
+#: app/views/final_exam_terms/protocol.rhtml:10
+msgid "Final exam protocol"
+msgstr "Státní doktorská zkouška"
+
+#: app/views/final_exam_terms/protocol.rhtml:43
+msgid "Final exam area"
+msgstr "Předmět státní doktorské zkoušky"
+
 #: app/views/final_exam_terms/protocol.rhtml:44
 msgid "Mark"
 msgstr "Hodnocení"
+
+#: app/views/final_exam_terms/protocol.rhtml:105
+msgid "Classification of final exam"
+msgstr "Klasifikace státní doktorské zkoušky"
+
+#: app/views/final_exam_terms/protocol.rhtml:109
+msgid "Chairman signature"
+msgstr "Podpis předsedy"
 
 #: app/views/form/_preview_header.rhtml:3
 #: app/views/shared/candidate_detail.rhtml:24
@@ -2451,11 +2485,11 @@ msgstr "poslední atestace"
 msgid "study plan approvement process"
 msgstr "Schvalovací proces studijního plánu"
 
-#: app/views/layouts/documents.rhtml:26 app/views/layouts/employers.rhtml:24
+#: app/views/layouts/documents.rhtml:26
 msgid "loading ..."
 msgstr "nahrávám ..."
 
-#: app/views/layouts/documents.rhtml:31 app/views/layouts/employers.rhtml:29
+#: app/views/layouts/documents.rhtml:31 app/views/layouts/employers.rhtml:28
 msgid "Developed by"
 msgstr ""
 
@@ -2468,7 +2502,7 @@ msgid "maximum/enrolled"
 msgstr "maximum/zapsáno"
 
 #: app/views/probation_terms/_list.rhtml:10
-#: app/views/probation_terms/_probation_term_details_form.rhtml:9
+#: app/views/probation_terms/_probation_term_details_form.rhtml:8
 msgid "starting time"
 msgstr "začátek"
 
@@ -2479,15 +2513,15 @@ msgstr "začátek"
 msgid "note"
 msgstr "poznámka"
 
-#: app/views/probation_terms/_probation_term_details_form.rhtml:3
+#: app/views/probation_terms/_probation_term_details_form.rhtml:2
 msgid "Probation term details"
 msgstr "Detail termínu zkoušky"
 
-#: app/views/probation_terms/_probation_term_details_form.rhtml:18
+#: app/views/probation_terms/_probation_term_details_form.rhtml:17
 msgid "maximum of students"
 msgstr "maximální počet studentů"
 
-#: app/views/probation_terms/_probation_term_details_form.rhtml:22
+#: app/views/probation_terms/_probation_term_details_form.rhtml:21
 msgid "note for students"
 msgstr "poznámka pro studenty"
 
@@ -2789,7 +2823,7 @@ msgstr "korespondenční adresa"
 msgid "Personal and study details"
 msgstr "Osobní a studijní údaje"
 
-#: app/views/shared/_student_detail.rhtml:10
+#: app/views/shared/_student_detail.rhtml:12
 msgid "Contact details"
 msgstr "Kontaktní údaje"
 
@@ -2810,9 +2844,8 @@ msgid "Other interupts"
 msgstr "Předchozí přerušení"
 
 #: app/views/shared/_study_detail.rhtml:80
-#, fuzzy
 msgid "defense approvement process"
-msgstr "Schvalovací proces SDZ"
+msgstr "Schvalovací proces obhajoby"
 
 #: app/views/shared/_study_detail.rhtml:85
 msgid "final exam approvement process"
@@ -2967,7 +3000,7 @@ msgstr "konto"
 msgid "bank"
 msgstr "kód banky"
 
-#: app/views/students/_list.rhtml:2
+#: app/views/students/_list.rhtml:2 app/views/students/list.rhtml:6
 msgid "Students list"
 msgstr "Výpis studentů"
 
@@ -3083,6 +3116,8 @@ msgid ""
 "Your defense term has been created and emailed to you. You can also find it "
 "in the study plan detail."
 msgstr ""
+"Termín Vaší obhajoby byl vytvořen a poslan emalem na Vaši adresu. Také je "
+"součástí detailu studijního plánu."
 
 #: app/views/study_plans/_help.rhtml:15
 msgid "You have passed final exam. Proceed to defense application"
