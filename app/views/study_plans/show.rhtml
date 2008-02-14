@@ -1,0 +1,9 @@
+<td colspan='9' id='opened'>
+  <div class='bigger'>
+    <%= link_to_function _('hide'), "$('opened').hide()" %>
+  </div>
+  <%= render(:partial => 'shared/study_detail', :locals => {:index => @index}) %>
+  <div class='bigger'>
+    <%= link_to_function _('hide'), "$('opened').hide()" %>
+  </div>
+</td>
