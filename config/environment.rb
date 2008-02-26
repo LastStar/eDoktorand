@@ -5,7 +5,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.0.1' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -38,13 +38,13 @@ Rails::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_trunk-phd_session',
-    :secret      => '3a71608865a9f3c08f524040d6962de54885d7c7270e926e4a23f6e4ad0527d811e5af744c5c341a4a0e7d0f1a4395347829d24beae1923a4847fbd8ec99e767'
+    :secret      => 'cc83199cb8e613e3335ebcf8378726b4fbd5c7f0e52b289dd8dfa7ddab8ed59ef66525da81eee1da9e88b28b904a0aeeb7ff1e92ce00e564bd7b0fbd9fac11eb'
   }
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with 'rake db:sessions:create')
-  config.action_controller.session_store = :active_record_store
+  # config.action_controller.session_store = :active_record_store
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,

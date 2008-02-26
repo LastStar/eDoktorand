@@ -30,7 +30,7 @@ class Atestation < Approvement
   end
 
   def is_actual?
-    updated_on.to_date > Atestation.actual_for_faculty(study_plan.index.faculty)
+    updated_on > Atestation.actual_for_faculty(study_plan.index.faculty).to_time
   end
 
   # returns index
