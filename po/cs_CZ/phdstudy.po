@@ -194,7 +194,7 @@ msgstr "Termíny zkoušky byl uložen"
 
 #: app/controllers/probation_terms_controller.rb:133
 msgid "Probation terms"
-msgstr ""
+msgstr "Termíny zkoušek"
 
 #: app/controllers/scholarships_controller.rb:134
 msgid "Scholarships"
@@ -249,7 +249,7 @@ msgstr "Změna studijního plánu"
 
 #: app/controllers/study_plans_controller.rb:306
 msgid "some external subject is invalid"
-msgstr "některý externí předmět neni správný"
+msgstr "některý externí předmět není správný"
 
 #: app/controllers/study_plans_controller.rb:338 app/models/candidate.rb:43
 msgid "languages have to be different"
@@ -1201,7 +1201,7 @@ msgstr "téma disertační práce nesmí být prázdné"
 
 #: app/models/disert_theme.rb:12
 msgid "not_passed_final_exam"
-msgstr ""
+msgstr "neuspěl u závěrečné zkoušky"
 
 #: app/models/exam.rb:20
 msgid "Creating external exam for student"
@@ -1261,15 +1261,15 @@ msgstr "ukončit"
 
 #: app/models/index.rb:51
 msgid "accoun prefix in wrong format"
-msgstr ""
+msgstr "předvolba účtu je ve špatném formátu"
 
 #: app/models/index.rb:55 app/models/index.rb:62
 msgid "accoun number in wrong format"
-msgstr ""
+msgstr "číslo účtu je ve špatném formátu"
 
 #: app/models/index.rb:67
 msgid "not_all_subject_finished"
-msgstr ""
+msgstr "nejsou splněny všechny předměty"
 
 #: app/models/interupt.rb:7
 msgid "end to"
@@ -1337,7 +1337,7 @@ msgstr ""
 
 #: app/models/program.rb:-
 msgid "program"
-msgstr ""
+msgstr "program"
 
 #: app/models/program.rb:-
 msgid "Program|Label"
@@ -1718,11 +1718,11 @@ msgstr "Předměty"
 
 #: app/views/coridors/manage_coridor.rhtml:3
 msgid "Coridors list"
-msgstr "Seznam Koridorů"
+msgstr "Seznam Oborů"
 
 #: app/views/coridors/manage_coridor.rhtml:15
 msgid "No coridors found."
-msgstr ""
+msgstr "Obory nenalezeny"
 
 #: app/views/coridors/manage_edit.rhtml:1 app/views/coridors/subjects.rhtml:1
 #: app/views/defenses/protocol.rhtml:18
@@ -1864,7 +1864,7 @@ msgstr "Začátek"
 
 #: app/views/defenses/announcement.rhtml:41
 msgid "Disert theme title"
-msgstr "Dázev disertační práce"
+msgstr "Název disertační práce"
 
 #: app/views/defenses/protocol.rhtml:4
 #: app/views/final_exam_terms/protocol.rhtml:4
@@ -1962,11 +1962,11 @@ msgstr "studijní program"
 
 #: app/views/diploma_supplements/_form.rhtml:27
 msgid "study specialization"
-msgstr "obor"
+msgstr "specializace"
 
 #: app/views/diploma_supplements/_form.rhtml:30
 msgid "faculty name"
-msgstr "nazev fakulty"
+msgstr "název fakulty"
 
 #: app/views/diploma_supplements/_form.rhtml:33
 msgid "study mode"
@@ -2040,7 +2040,7 @@ msgstr "nenalezen žádný diploma supplement"
 
 #: app/views/diploma_supplements/list.rhtml:30
 msgid "New diploma supplement"
-msgstr "nový diploma supplement"
+msgstr "Nový diploma supplement"
 
 #: app/views/diploma_supplements/new.rhtml:1
 msgid "New diploma_supplement"
@@ -2056,7 +2056,7 @@ msgid ""
 "On this page you can add your methodology file. File should be only in\n"
 "PDF format."
 msgstr ""
-"Na této stránce můžete přidat svůj soubor metodikou. Soubor musí být ve "
+"Na této stránce můžete přidat svůj soubor s metodikou. Soubor musí být ve "
 "formátu PDF."
 
 #: app/views/disert_themes/methodology.rhtml:8
@@ -2075,7 +2075,7 @@ msgstr "Předseda komise"
 
 #: app/views/exam_terms/list.rhtml:14
 msgid "Are you sure to delete commission?"
-msgstr "Opravdu smazat komisi?"
+msgstr "Opravdu chcete smazat komisi?"
 
 #: app/views/exam_terms/list.rhtml:24
 msgid "There are no commissions for application exams in the system"
@@ -2362,7 +2362,7 @@ msgstr "pro úspěšnou registraci je třeba"
 
 #: app/views/form/preview.rhtml:15
 msgid "check the filled data correctness,"
-msgstr "zkontrolovat správnost zadaných údajů,"
+msgstr "zkontrolujte správnost zadaných údajů,"
 
 #: app/views/form/preview.rhtml:15
 msgid "print out the application form, register the application form on-line"
@@ -2485,9 +2485,7 @@ msgstr "poslední atestace"
 msgid "study plan approvement process"
 msgstr "Schvalovací proces studijního plánu"
 
-#: app/views/layouts/documents.rhtml:26
-msgid "loading ..."
-msgstr "nahrávám ..."
+
 
 #: app/views/layouts/documents.rhtml:31 app/views/layouts/employers.rhtml:28
 msgid "Developed by"
@@ -2959,7 +2957,7 @@ msgstr "stát"
 
 #: app/views/shared/candidate_edit.rhtml:50
 msgid "don't fill if identic to habitat address"
-msgstr "nevyplňovat je li shodná s bydlištěm"
+msgstr "nevyplňovat je-li shodná s bydlištěm"
 
 #: app/views/shared/candidate_edit.rhtml:64
 #: app/views/study_plans/_general.rhtml:28
@@ -3120,7 +3118,7 @@ msgid ""
 "Your defense term has been created and emailed to you. You can also find it "
 "in the study plan detail."
 msgstr ""
-"Termín Vaší obhajoby byl vytvořen a poslan emalem na Vaši adresu. Také je "
+"Termín Vaší obhajoby byl vytvořen a poslán emailem na Vaši adresu. Také je "
 "součástí detailu studijního plánu."
 
 #: app/views/study_plans/_help.rhtml:15
@@ -3140,7 +3138,7 @@ msgstr ""
 msgid ""
 "Your final exam term has been created and emailed to you. You can also find "
 "it in the study plan detail."
-msgstr ""
+msgstr "Termín závěrečné zkoušky byl vytvořen a odeslán na Váš email. Termín lze ověřit i ve studijním plánu"
 
 #: app/views/study_plans/_help.rhtml:24
 msgid "You have all subjects finished. Proceed to final exam application"
