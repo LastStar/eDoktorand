@@ -339,4 +339,15 @@ module StudentsHelper
                            :id => index},
                    :update => "index_detail_#{index.id}_tr")
   end
+
+  def filter_links(filters) 
+    loader = content_tag('div', image_tag('big_loader.gif'), :class => 'centered')
+    filters.map do |filter|
+      link_to_remote(filter.first,
+                    :url => {:action => :filter,
+                            :id => filter.last},
+                    :update => 'students_list',
+                    :loading => "$('students_list').innerHTML = '%s'" % loader)
+    end.join('&nbsp;')
+  end
 end

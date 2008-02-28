@@ -9,7 +9,7 @@ class ProbationTerm < ActiveRecord::Base
   validates_presence_of :subject
   validates_presence_of :creator
   validates_format_of :start_time, :with => /^[0-9]{1,2}[:][0-9]{1,2}$/, :on => :create, :message => _("Wrong format of time - hh:mm")
-  validates_inclusion_of :max_students, :in=>1..500, :message => _("You must have 1 or more students for maximum")
+  validates_inclusion_of :max_students, :in => 1..500, :message => _("There must be at least one student")
   
   def validate
    buffer = start_time

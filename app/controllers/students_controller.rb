@@ -279,13 +279,7 @@ class StudentsController < ApplicationController
         @filters.concat([[_("my students"), 1], [_('my studying'), 4]])
       end
     end
-    unless @user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
-      # default filter to waiting for approvement 
-      session[:filter] ||= 2 
-    else
-      session[:filter] ||= 3
-    end
-
+    session[:filter] ||= 2 
   end
 
   # filtering students by user and filter
