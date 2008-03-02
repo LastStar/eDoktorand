@@ -230,8 +230,8 @@ class Index < ActiveRecord::Base
       conditions << options[:not_absolved]
     end
     if options[:search]
-      conditions.first << ' AND people.lastname like ?'
-      conditions << "%s%%" % options[:search]
+      conditions.first << ' AND people.lastname REGEXP ?'
+      conditions << options[:search]
     end
     conditions.first << 'AND study_id = 1' if options[:present]
     find(:all, :conditions => conditions, :order => options[:order],
