@@ -6,37 +6,36 @@ module StudentsHelper
     study_plan = index.study_plan 
     if @user.has_one_of_roles?(['dean', 'faculty_secretary']) &&
                                index.status != _('absolved')
-      links << switch_link(index)
       links << finish_link(index)
-      if index.waits_for_scholarship_confirmation?
-        links << supervise_scholarship_link(index)
-      end
-      if study_plan
-        links << study_plan_link(index)
-        if study_plan.all_subjects_finished?
-          if index.final_exam_passed?
-            links << pass_link(:defense, index)
+      unless index.finished?
+        links << switch_link(index)
+        if index.waits_for_scholarship_confirmation?
+          links << supervise_scholarship_link(index)
+        end
+        if study_plan
+          links << study_plan_link(index)
+          if study_plan.all_subjects_finished?
+            if index.absolved?
+              links << diploma_supplement_link(index)
+            elsif index.final_exam_passed?
+              links << pass_link(:defense, index)
+            else
+              links << change_link(index.student)
+              links << pass_link(:final_exam, index)
+            end
           else
             links << change_link(index.student)
-            links << pass_link(:final_exam, index)
           end
         else
-          links << change_link(index.student)
+          links << create_link(index)
         end
-      else
-        links << create_link(index)
-      end
-      if index.not_even_admited_interupt?
-        links << interupt_link(index)
-      end
-      if index.interupt_waits_for_confirmation?
-        links << confirm_interupt_link(index) 
-      end
-      if index.interupted?
-        links << end_interupt_link(index)
-      end
-      if index.absolved?
-        links << diploma_supplement_link(index)
+        if index.not_even_admited_interupt?
+          links << interupt_link(index)
+        elsif index.interupt_waits_for_confirmation?
+          links << confirm_interupt_link(index) 
+        elsif index.interupted?
+          links << end_interupt_link(index)
+        end
       end
     end
     return  links
@@ -278,11 +277,12 @@ module StudentsHelper
     "#{_('to')} #{index.interupt.end_on.strftime('%d.%m.%Y')}"
   end
   
-  def back_to_list
+  def back_to_list(index)
     link_to_function(_("back"),
                     update_page do |page|
                       page.show 'students_list', 'search'
                       page.remove 'student_detail'
+                      page["index_line_%i" % index.id].scrollTo.highlight :duration => 5
                     end,
                     :id => 'back_link')
 

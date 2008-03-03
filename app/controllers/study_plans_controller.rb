@@ -4,19 +4,19 @@ class StudyPlansController < ApplicationController
   layout 'employers', :except => [:add_en, :save_en, :show]
   before_filter :login_required, :prepare_user, :prepare_student
 
-  # page with basic informations for student 
+  # shows student basic information
   def index
     @title = _("Study plan")
     @index = @student.index
     @voluntary_subjects = @index.coridor.voluntary_subjects 
   end
 
-  # renders partial with study plan
+  # shows student detail
   def show
     @index = Index.find(params[:id])
   end
 
-  # start of the study plan creating process
+  # starts the study plan creating process
   def create
     prepare_plan_session
     @title = _("Creating study plan")

@@ -14,9 +14,12 @@ class DefensesController < ApplicationController
   # on error return to claim page
   def confirm_claim
     index = @user.person.index
-    if (self_report = params[:self_report_file]) && self_report.is_a?(Tempfile)
-      index.claim_defense!
+    disert_theme = index.disert_theme
+    if (self_report = params[:self_report_file]) && self_report.is_a?(Tempfile) &&
+      (theme = params[:disert_theme_file]) && theme.is_a?(Tempfile)
       index.disert_theme.save_self_report_file(self_report)
+      index.disert_theme.save_theme_file(theme)
+      index.claim_defense!
       redirect_to :controller => :study_plans, :action => :index
     else
       flash[:error] = _('You have to supply self report file')

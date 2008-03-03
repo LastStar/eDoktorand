@@ -11,31 +11,23 @@
 <%= collection_select :defense, :chairman_id, Tutor.find_for(@user), :id, :display_name %></p>
 
 <p><label for="defense_first_examinator" class='required'>1. <%= _('member') %></label>
-<%= text_field 'defense', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span >
+<%= text_field 'defense', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span ></p>
 
 <p><label for="defense_second_examinator" class='required'>2. <%= _('member') %></label>
-<%= text_field 'defense', 'second_examinator'  %><span class='required'>&nbsp;&lowast;</span >
+<%= text_field 'defense', 'second_examinator'  %>
+<span class='required'>&nbsp;&lowast;</span ></p>
 
 <p><label for="defense_third_examinator">3. <%= _('member') %></label>
-<%= text_field 'defense', 'third_examinator'  %>
+<%= text_field 'defense', 'third_examinator'  %></p>
 
 <p><label for="defense_fourth_examinator">4. <%= _('member') %></label>
-<%= text_field 'defense', 'fourth_examinator'  %>
+<%= text_field 'defense', 'fourth_examinator'  %></p>
 
 <p><label for="defense_fifth_examinator">5. <%= _('member') %></label>
-<%= text_field 'defense', 'fifth_examinator'  %>
+<%= text_field 'defense', 'fifth_examinator'  %></p>
 
 <p><label for="defense_sixth_examinator">6. <%= _('member') %></label>
-<%= text_field 'defense', 'sixth_examinator'  %>
-
-<p><label for="defense_seventh_examinator">7. <%= _('member') %></label>
-<%= text_field 'defense', 'seventh_examinator'  %>
-
-<p><label for="defense_eighth_examinator">8. <%= _('member') %></label>
-<%= text_field 'defense', 'eighth_examinator'  %>
-
-<p><label for="defense_nineth_examinator">9. <%= _('member') %></label>
-<%= text_field 'defense', 'nineth_examinator'  %>
+<%= text_field 'defense', 'sixth_examinator'  %></p>
 
 <p><label for="defense_opponent"><%= _('opponent') %></label>
 <%= text_field 'defense', 'opponent'  %></p>

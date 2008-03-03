@@ -6,7 +6,8 @@ class StudentsController < ApplicationController
                     :edit_email, :edit_birthname, :edit_consultant, :edit_tutor,
                     :time_form, :filter, :list_xls, :edit_account]
 
-  before_filter :prepare_user, :set_title, :login_required
+  before_filter :login_required
+  before_filter :set_title
   before_filter :prepare_order, :prepare_filter, :except => [:show, :contact]
   before_filter :prepare_conditions, :prepare_student
 

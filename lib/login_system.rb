@@ -8,14 +8,9 @@ module LoginSystem
   #
   #   before_filter :login_required
   #
-  # if the controller should be under any rights management. 
-  # for finer access control you can overwrite
-  #   
-  #   def authorize?(user)
-  # 
   def login_required
     
-    if session[:user] and authorize?(User.find(session[:user]))
+    if session[:user] and authorize?(@user = User.find(session[:user], :include => :person))
       return true
     end
 

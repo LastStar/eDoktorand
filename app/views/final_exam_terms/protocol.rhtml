@@ -1,7 +1,7 @@
 <div class='links'>
   <%= link_to _('back'), :action => :list %>
 </div>
-<p class='right_date'><%= _("In Prague on %s") % @term.date.strftime("%d. %m. %y") %></p>
+<p class='right_date'><%= _("In Prague on %s") % @term.date.strftime("%d. %m. %Y") %></p>
 <p>
   <%= _('Czech University of Life Sciences') %><br />
   <%= @term.index.faculty.name %>
@@ -28,7 +28,7 @@
   </tr>
   <tr>
     <th><%= _('Enrolled on') %>:</th>
-    <td><%= @term.index.enrolled_on.strftime("%d. %m. %y") %></td>
+    <td><%= @term.index.enrolled_on.strftime("%d. %m. %Y") %></td>
   </tr>
 <% if @term.index.consultant %>
   <tr>

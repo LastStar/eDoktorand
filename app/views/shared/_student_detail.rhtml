@@ -2,8 +2,8 @@
 <h5><%= _("Personal and study details") %></h5>
 <% unless @user.has_role?('student') %>
 <div class='links'>
-  <div class='left'><%= back_to_list %></div>
-  <div><%= back_and_remove_from_list(index) %></div>
+  <div class='left'><%= back_to_list index %></div>
+  <div><%= back_and_remove_from_list index %></div>
 </div>
 <% end %>
 
@@ -14,7 +14,7 @@
 <% end %>
 <%= render :partial => 'shared/study_detail', :locals => {:index => index} %>
 <div class='links'>
-  <div class='left'><%= back_to_list %></div>
-  <div><%= back_and_remove_from_list(index) %></div>
+  <div class='left'><%= back_to_list index %></div>
+  <div><%= back_and_remove_from_list index %></div>
 </div>
 </div>

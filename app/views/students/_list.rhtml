@@ -3,6 +3,20 @@
 <% end %>
   <div class='links'>
     <%= filter_links(@filters) %>
+    <input type='checkbox' id='selected_only'/>
+    <span><%= _('selected only') %></span>
+    <script type="text/javascript">
+      $('selected_only').observe('change', function(event){
+        if ($('selected_only').checked) {
+          $$('.student-line').each(function(e) {
+            if(!e.classNames().include('once-selected')) {
+              e.hide();
+            }});
+        } else {
+          $$('.student-line').each(function(e) {e.show();});
+        }});
+
+    </script>
   </div>
 <% if @indices && !@indices.empty? %>
   <table id='students_table'>

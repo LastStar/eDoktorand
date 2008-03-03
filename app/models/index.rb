@@ -94,7 +94,7 @@ class Index < ActiveRecord::Base
 
   # returns if study is finished
   def finished?
-    !finished_on.nil? && finished_on < Date.today.to_time
+    !finished_on.nil? && finished_on.to_time < Date.today.to_time
   end
 
   # returns if study is absolved
@@ -229,9 +229,14 @@ class Index < ActiveRecord::Base
                           ' OR disert_themes.defense_passed_on > ?)'
       conditions << options[:not_absolved]
     end
-    if options[:search]
-      conditions.first << ' AND people.lastname REGEXP ?'
-      conditions << options[:search]
+    if search = options.delete(:search)
+      if search =~ /^[a-zA-Z]*$/
+        search = "%s%%" % search
+        conditions.first << ' AND people.lastname like ?'
+      else
+        conditions.first << ' AND people.lastname REGEXP ?'
+      end
+      conditions << search
     end
     conditions.first << 'AND study_id = 1' if options[:present]
     find(:all, :conditions => conditions, :order => options[:order],

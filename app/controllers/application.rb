@@ -50,7 +50,6 @@ class ApplicationController < ActionController::Base
   # checks if user is student. 
   # if true creates @student variable with current student
   def prepare_student
-    prepare_user
     if @user.person.kind_of?(Student)
       @student = @user.person 
     end

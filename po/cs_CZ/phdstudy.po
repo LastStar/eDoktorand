@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-02-14 22:42+0100\n"
+"POT-Creation-Date: 2008-03-03 14:07+0100\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -63,23 +63,23 @@ msgstr "další stránka"
 msgid "Defense application"
 msgstr "Přihláška k obhajobě"
 
-#: app/controllers/defenses_controller.rb:22
+#: app/controllers/defenses_controller.rb:25
 msgid "You have to supply self report file"
 msgstr "Musíte přidat autoreferát"
 
-#: app/controllers/defenses_controller.rb:44
+#: app/controllers/defenses_controller.rb:47
 msgid "defense term was succesfully created"
 msgstr "termín obhajoby byl úspěšně vytvořen"
 
-#: app/controllers/defenses_controller.rb:66
+#: app/controllers/defenses_controller.rb:69
 msgid "Defense terms"
 msgstr "Termíny obhajoby"
 
-#: app/controllers/defenses_controller.rb:72
+#: app/controllers/defenses_controller.rb:75
 msgid "Announcement of disert theme defense"
 msgstr "Oznámení obhajoby disertační práce"
 
-#: app/controllers/defenses_controller.rb:78
+#: app/controllers/defenses_controller.rb:81
 msgid "Protocol for disert theme defense"
 msgstr "Protokol obhajoby disertační práce"
 
@@ -175,7 +175,7 @@ msgid "Czech republic"
 msgstr "Česká republika"
 
 #: app/controllers/form_controller.rb:81
-#: app/views/defenses/announcement.rhtml:7 app/views/defenses/protocol.rhtml:6
+#: app/views/defenses/announcement.rhtml:7 app/views/defenses/protocol.rhtml:7
 #: app/views/exams/_protocol.rhtml:8 app/views/exams/_show_protocol.rhtml:3
 #: app/views/final_exam_terms/prepare_print.rhtml:4
 #: app/views/final_exam_terms/protocol.rhtml:6
@@ -200,27 +200,27 @@ msgstr "Termíny zkoušek"
 msgid "Scholarships"
 msgstr "Stipendia"
 
-#: app/controllers/students_controller.rb:264
+#: app/controllers/students_controller.rb:265
 msgid "Students"
 msgstr "Studenti"
 
-#: app/controllers/students_controller.rb:275
+#: app/controllers/students_controller.rb:276
 msgid "waiting for my review"
 msgstr "ke schválení"
 
-#: app/controllers/students_controller.rb:275
+#: app/controllers/students_controller.rb:276
 msgid "all students"
 msgstr "všichni studenti"
 
-#: app/controllers/students_controller.rb:276
+#: app/controllers/students_controller.rb:277
 msgid "all studying"
 msgstr "všichni studující"
 
-#: app/controllers/students_controller.rb:279
+#: app/controllers/students_controller.rb:280
 msgid "my students"
 msgstr "moji studenti"
 
-#: app/controllers/students_controller.rb:279
+#: app/controllers/students_controller.rb:280
 msgid "my studying"
 msgstr "moji studující"
 
@@ -232,30 +232,30 @@ msgstr "moji studující"
 msgid "Study plan"
 msgstr "Studijní plán"
 
-#: app/controllers/study_plans_controller.rb:17
-#: app/controllers/study_plans_controller.rb:104
+#: app/controllers/study_plans_controller.rb:22
+#: app/controllers/study_plans_controller.rb:109
 msgid "Creating study plan"
 msgstr "Vytváření nového studijního plánu"
 
-#: app/controllers/study_plans_controller.rb:44
-#: app/controllers/study_plans_controller.rb:157
-#: app/controllers/study_plans_controller.rb:323
+#: app/controllers/study_plans_controller.rb:49
+#: app/controllers/study_plans_controller.rb:162
+#: app/controllers/study_plans_controller.rb:328
 msgid "subjects have to be different"
 msgstr "předměty musí být rozdílné"
 
-#: app/controllers/study_plans_controller.rb:118
+#: app/controllers/study_plans_controller.rb:123
 msgid "Change of study plan"
 msgstr "Změna studijního plánu"
 
-#: app/controllers/study_plans_controller.rb:306
+#: app/controllers/study_plans_controller.rb:311
 msgid "some external subject is invalid"
 msgstr "některý externí předmět není správný"
 
-#: app/controllers/study_plans_controller.rb:338 app/models/candidate.rb:43
+#: app/controllers/study_plans_controller.rb:343 app/models/candidate.rb:43
 msgid "languages have to be different"
 msgstr "jazyky musí být rozdílné"
 
-#: app/controllers/study_plans_controller.rb:354
+#: app/controllers/study_plans_controller.rb:359
 msgid "seminar subjects have to be different"
 msgstr "předměty musí být rozdílné"
 
@@ -364,7 +364,7 @@ msgid "do you really want to"
 msgstr "opravdu se chcete"
 
 #: app/helpers/application_helper.rb:216 app/helpers/students_helper.rb:246
-#: app/views/shared/_main_menu.rhtml:9
+#: app/helpers/students_helper.rb:336 app/views/shared/_main_menu.rhtml:9
 #: app/views/study_plans/_study_plan_header.rhtml:1
 msgid "study plan"
 msgstr "studijní plán"
@@ -388,7 +388,7 @@ msgstr "informace k atestaci"
 #: app/helpers/exams_helper.rb:63 app/helpers/final_exam_terms_helper.rb:18
 #: app/helpers/probation_terms_helper.rb:63
 #: app/helpers/probation_terms_helper.rb:80
-#: app/helpers/probation_terms_helper.rb:87 app/helpers/students_helper.rb:321
+#: app/helpers/probation_terms_helper.rb:87 app/helpers/students_helper.rb:322
 #: app/views/study_plans/_detail_form.rhtml:3
 #: app/views/study_plans/_disert_form.rhtml:47
 #: app/views/study_plans/_disert_form.rhtml:48
@@ -426,7 +426,7 @@ msgstr "další informace pro následující atestaci"
 #: app/views/account/error.rhtml:7 app/views/account/no_permission.rhtml:2
 #: app/views/candidates/enroll.rhtml:8 app/views/coridors/attestation.rhtml:3
 #: app/views/coridors/manage_edit.rhtml:3 app/views/coridors/subjects.rhtml:3
-#: app/views/defenses/protocol.rhtml:2
+#: app/views/defenses/protocol.rhtml:3
 #: app/views/diploma_supplements/edit.rhtml:8
 #: app/views/diploma_supplements/new.rhtml:8
 #: app/views/documents/diploma_supplement.rhtml:295
@@ -436,7 +436,7 @@ msgstr "další informace pro následující atestaci"
 msgid "back"
 msgstr "zpět"
 
-#: app/helpers/application_helper.rb:350 app/helpers/students_helper.rb:291
+#: app/helpers/application_helper.rb:350 app/helpers/students_helper.rb:292
 msgid "back and remove from list"
 msgstr "zpět a vyřadit ze seznamu"
 
@@ -452,7 +452,8 @@ msgstr "termín SDZ"
 msgid "defense"
 msgstr "obhajoba"
 
-#: app/helpers/application_helper.rb:477
+#: app/helpers/application_helper.rb:477 app/views/study_plans/show.rhtml:3
+#: app/views/study_plans/show.rhtml:7
 msgid "hide"
 msgstr "skrýt"
 
@@ -469,7 +470,7 @@ msgstr "Jméno a příjmení"
 #: app/helpers/application_helper.rb:537 app/helpers/application_helper.rb:540
 #: app/models/tutor.rb:5 app/views/coridors/attestation.rhtml:11
 #: app/views/defenses/announcement.rhtml:19
-#: app/views/defenses/protocol.rhtml:100 app/views/exams/_protocol.rhtml:27
+#: app/views/defenses/protocol.rhtml:93 app/views/exams/_protocol.rhtml:27
 #: app/views/exams/_show_protocol.rhtml:22
 #: app/views/final_exam_terms/_detail.rhtml:9
 #: app/views/final_exam_terms/protocol.rhtml:26
@@ -756,7 +757,7 @@ msgstr "Chcete opravdu přepočítat velikost stipendii?"
 
 #: app/helpers/students_helper.rb:8 app/helpers/students_helper.rb:176
 #: app/helpers/students_helper.rb:256 app/models/index.rb:122
-#: app/models/index.rb:151 app/models/index.rb:374
+#: app/models/index.rb:151 app/models/index.rb:379
 msgid "absolved"
 msgstr "absolvoval"
 
@@ -806,7 +807,7 @@ msgid "Detail filter"
 msgstr "Detailní filtr"
 
 #: app/helpers/students_helper.rb:176 app/helpers/students_helper.rb:255
-#: app/models/index.rb:378 app/views/candidates/_history.rhtml:2
+#: app/models/index.rb:383 app/views/candidates/_history.rhtml:2
 msgid "finished"
 msgstr "ukončeno"
 
@@ -849,20 +850,20 @@ msgstr "SP schválen děkanem"
 msgid "study"
 msgstr "forma studia"
 
-#: app/helpers/students_helper.rb:255 app/models/index.rb:384
+#: app/helpers/students_helper.rb:255 app/models/index.rb:389
 msgid "studying"
 msgstr "studuje"
 
 #: app/helpers/students_helper.rb:256 app/models/index.rb:122
-#: app/models/index.rb:151 app/models/index.rb:380
+#: app/models/index.rb:151 app/models/index.rb:385
 msgid "interupted"
 msgstr "přerušeno"
 
-#: app/helpers/students_helper.rb:256 app/models/index.rb:382
+#: app/helpers/students_helper.rb:256 app/models/index.rb:387
 msgid "continue"
 msgstr "uzavřeno"
 
-#: app/helpers/students_helper.rb:256 app/models/index.rb:376
+#: app/helpers/students_helper.rb:256 app/models/index.rb:381
 msgid "FE passed"
 msgstr "složil SDZ"
 
@@ -906,7 +907,7 @@ msgstr "3. ročník"
 msgid "x"
 msgstr ""
 
-#: app/helpers/students_helper.rb:303 app/models/diploma_supplement.rb:-
+#: app/helpers/students_helper.rb:304 app/models/diploma_supplement.rb:-
 msgid "diploma supplement"
 msgstr ""
 
@@ -1199,7 +1200,7 @@ msgstr ""
 msgid "title must not be empty"
 msgstr "téma disertační práce nesmí být prázdné"
 
-#: app/models/disert_theme.rb:12
+#: app/models/disert_theme.rb:13
 msgid "not_passed_final_exam"
 msgstr "neuspěl u závěrečné zkoušky"
 
@@ -1332,7 +1333,7 @@ msgid "Wrong format of time - hh:mm"
 msgstr "Špatný formát času - hh:mm"
 
 #: app/models/probation_term.rb:12
-msgid "You must have 1 or more students for maximum"
+msgid "There must be at least one student"
 msgstr ""
 
 #: app/models/program.rb:-
@@ -1364,7 +1365,7 @@ msgid "Year"
 msgstr "Ročník"
 
 #: app/models/student.rb:14 app/views/coridors/attestation.rhtml:14
-#: app/views/defenses/protocol.rhtml:26
+#: app/views/defenses/protocol.rhtml:31
 #: app/views/final_exam_terms/protocol.rhtml:30
 msgid "Enrolled on"
 msgstr "Začátek studia"
@@ -1725,7 +1726,7 @@ msgid "No coridors found."
 msgstr "Obory nenalezeny"
 
 #: app/views/coridors/manage_edit.rhtml:1 app/views/coridors/subjects.rhtml:1
-#: app/views/defenses/protocol.rhtml:18
+#: app/views/defenses/protocol.rhtml:19
 #: app/views/final_exam_terms/protocol.rhtml:18
 #: app/views/scholarships/list.rhtml:19
 msgid "Coridor"
@@ -1753,7 +1754,7 @@ msgstr "Místnost"
 
 #: app/views/defenses/_detail.rhtml:11
 #: app/views/defenses/announcement.rhtml:45
-#: app/views/defenses/protocol.rhtml:39
+#: app/views/defenses/protocol.rhtml:44
 #: app/views/final_exam_terms/_detail.rhtml:37
 #: app/views/final_exam_terms/protocol.rhtml:79
 msgid "Chairman"
@@ -1761,24 +1762,24 @@ msgstr "Předseda komise"
 
 #: app/views/defenses/_detail.rhtml:16
 #: app/views/defenses/announcement.rhtml:50
+#: app/views/defenses/announcement.rhtml:56
+#: app/views/defenses/announcement.rhtml:62
 #: app/views/final_exam_terms/_detail.rhtml:42
 #: app/views/final_exam_terms/protocol.rhtml:100
 msgid "Opponent"
 msgstr "Oponent"
 
 #: app/views/defenses/_detail.rhtml:22
-#: app/views/defenses/announcement.rhtml:56
 msgid "Second opponent"
 msgstr "Druhý oponent"
 
 #: app/views/defenses/_detail.rhtml:28
-#: app/views/defenses/announcement.rhtml:62
 msgid "Third opponent"
 msgstr "Třetí oponent"
 
 #: app/views/defenses/_detail.rhtml:33
 #: app/views/defenses/announcement.rhtml:67
-#: app/views/defenses/protocol.rhtml:46
+#: app/views/defenses/protocol.rhtml:51
 #: app/views/final_exam_terms/_detail.rhtml:49
 #: app/views/final_exam_terms/protocol.rhtml:83
 msgid "Members"
@@ -1808,13 +1809,12 @@ msgid "chairman"
 msgstr "předseda komise"
 
 #: app/views/defenses/_form.rhtml:13 app/views/defenses/_form.rhtml:16
-#: app/views/defenses/_form.rhtml:19 app/views/defenses/_form.rhtml:22
-#: app/views/defenses/_form.rhtml:25 app/views/defenses/_form.rhtml:28
-#: app/views/defenses/_form.rhtml:31 app/views/defenses/_form.rhtml:34
-#: app/views/defenses/_form.rhtml:37 app/views/exam_terms/_form.rhtml:17
-#: app/views/exam_terms/_form.rhtml:20 app/views/exam_terms/_form.rhtml:23
-#: app/views/exam_terms/_form.rhtml:26 app/views/exam_terms/_form.rhtml:29
-#: app/views/exam_terms/_form.rhtml:32 app/views/exam_terms/_form.rhtml:35
+#: app/views/defenses/_form.rhtml:20 app/views/defenses/_form.rhtml:23
+#: app/views/defenses/_form.rhtml:26 app/views/defenses/_form.rhtml:29
+#: app/views/exam_terms/_form.rhtml:17 app/views/exam_terms/_form.rhtml:20
+#: app/views/exam_terms/_form.rhtml:23 app/views/exam_terms/_form.rhtml:26
+#: app/views/exam_terms/_form.rhtml:29 app/views/exam_terms/_form.rhtml:32
+#: app/views/exam_terms/_form.rhtml:35
 #: app/views/final_exam_terms/_form.rhtml:18
 #: app/views/final_exam_terms/_form.rhtml:23
 #: app/views/final_exam_terms/_form.rhtml:28
@@ -1824,15 +1824,15 @@ msgstr "předseda komise"
 msgid "member"
 msgstr "člen komise"
 
-#: app/views/defenses/_form.rhtml:40 app/views/final_exam_terms/_form.rhtml:48
+#: app/views/defenses/_form.rhtml:32 app/views/final_exam_terms/_form.rhtml:48
 msgid "opponent"
 msgstr "oponent"
 
-#: app/views/defenses/_form.rhtml:43
+#: app/views/defenses/_form.rhtml:35
 msgid "second opponent"
 msgstr "druhý oponent"
 
-#: app/views/defenses/_form.rhtml:46
+#: app/views/defenses/_form.rhtml:38
 msgid "third opponent"
 msgstr "třetí oponent"
 
@@ -1850,7 +1850,7 @@ msgid "Comission will sit on %s in room %s."
 msgstr "Komise bude zasedat dne %s v místnosti %s"
 
 #: app/views/defenses/announcement.rhtml:24
-#: app/views/defenses/protocol.rhtml:31
+#: app/views/defenses/protocol.rhtml:36
 #: app/views/final_exam_terms/_detail.rhtml:14
 #: app/views/final_exam_terms/protocol.rhtml:35
 #: app/views/shared/_personal_detail.rhtml:28
@@ -1863,24 +1863,25 @@ msgid "Start time"
 msgstr "Začátek"
 
 #: app/views/defenses/announcement.rhtml:41
+#: app/views/defenses/protocol.rhtml:27
 msgid "Disert theme title"
 msgstr "Název disertační práce"
 
-#: app/views/defenses/protocol.rhtml:4
+#: app/views/defenses/protocol.rhtml:5
 #: app/views/final_exam_terms/protocol.rhtml:4
 msgid "In Prague on %s"
 msgstr "V Praze dne %s"
 
-#: app/views/defenses/protocol.rhtml:10
+#: app/views/defenses/protocol.rhtml:11
 msgid "Defense protocol"
 msgstr "Protokol o obhajobě disertační práce"
 
-#: app/views/defenses/protocol.rhtml:14
+#: app/views/defenses/protocol.rhtml:15
 #: app/views/final_exam_terms/protocol.rhtml:14
 msgid "Display name"
 msgstr "Příjmení a jméno"
 
-#: app/views/defenses/protocol.rhtml:22 app/views/exams/_protocol.rhtml:28
+#: app/views/defenses/protocol.rhtml:23 app/views/exams/_protocol.rhtml:28
 #: app/views/exams/_show_protocol.rhtml:23
 #: app/views/final_exam_terms/protocol.rhtml:22
 #: app/views/scholarships/_prepare_list.rhtml:7
@@ -1889,43 +1890,43 @@ msgstr "Příjmení a jméno"
 msgid "Department"
 msgstr "Katedra"
 
-#: app/views/defenses/protocol.rhtml:85
+#: app/views/defenses/protocol.rhtml:78
 msgid "Opponents"
 msgstr "Oponenti"
 
-#: app/views/defenses/protocol.rhtml:110
+#: app/views/defenses/protocol.rhtml:103
 msgid "Result of vote"
 msgstr "Výsledek hlasování"
 
-#: app/views/defenses/protocol.rhtml:116
+#: app/views/defenses/protocol.rhtml:109
 msgid "Members count"
 msgstr "Počet členů komise"
 
-#: app/views/defenses/protocol.rhtml:120
+#: app/views/defenses/protocol.rhtml:113
 msgid "Members present"
 msgstr "Přítomných členů komise"
 
-#: app/views/defenses/protocol.rhtml:128
+#: app/views/defenses/protocol.rhtml:121
 msgid "Positive"
 msgstr "Kladných"
 
-#: app/views/defenses/protocol.rhtml:132
+#: app/views/defenses/protocol.rhtml:125
 msgid "Negative"
 msgstr "Záporných"
 
-#: app/views/defenses/protocol.rhtml:136
+#: app/views/defenses/protocol.rhtml:129
 msgid "Not right"
 msgstr "Neplatných"
 
-#: app/views/defenses/protocol.rhtml:144
+#: app/views/defenses/protocol.rhtml:137
 msgid "Result of the defense"
 msgstr "Výsledek obhajoby disertační práce"
 
-#: app/views/defenses/protocol.rhtml:147
+#: app/views/defenses/protocol.rhtml:140
 msgid "defended"
 msgstr "obhájil"
 
-#: app/views/defenses/protocol.rhtml:148
+#: app/views/defenses/protocol.rhtml:141
 msgid "failed"
 msgstr "neobhájil"
 
@@ -2014,6 +2015,7 @@ msgstr "Oprava diploma supplement"
 
 #: app/views/diploma_supplements/edit.rhtml:7
 #: app/views/diploma_supplements/list.rhtml:18
+#: app/views/shared/_methodology.rhtml:4
 msgid "show"
 msgstr "ukázat"
 
@@ -2793,7 +2795,7 @@ msgstr "kontakty"
 msgid "methodology summary"
 msgstr "anotace metodiky"
 
-#: app/views/shared/_methodology.rhtml:14
+#: app/views/shared/_methodology.rhtml:15
 msgid "upload methodology"
 msgstr "nahrát metodiku"
 
@@ -3002,7 +3004,11 @@ msgstr "kód banky"
 msgid "Students list"
 msgstr "Výpis studentů"
 
-#: app/views/students/_list.rhtml:16
+#: app/views/students/_list.rhtml:7
+msgid "selected only"
+msgstr "jen vybrané"
+
+#: app/views/students/_list.rhtml:28
 msgid "No students found. Use filters above to change your selection."
 msgstr "Nenalezeni žádní studenti. Použijte filtry ke změně výběru."
 
@@ -3222,61 +3228,3 @@ msgstr "how to"
 msgid "Tutors list"
 msgstr "Seznam školitelů"
 
-#~ msgid "final exam application"
-#~ msgstr "státní doktorská zkouška"
-
-#, fuzzy
-#~ msgid "You have not rights to do this"
-#~ msgstr "na požadovanou akci nemáte práva"
-
-#~ msgid "exam students"
-#~ msgstr "studenti k vyzkoušení"
-
-#~ msgid "search by subject"
-#~ msgstr "hledat podle předmětu"
-
-#~ msgid "payed on"
-#~ msgstr "vyplaceno dne"
-
-#~ msgid "add scholarship"
-#~ msgstr "přidat stipendium"
-
-#~ msgid "SP status"
-#~ msgstr "Studijní plán"
-
-#~ msgid "ST status"
-#~ msgstr "Studijní stav"
-
-#~ msgid "form"
-#~ msgstr "forma studia"
-
-#~ msgid "Canceled on"
-#~ msgstr "Neschválen dne"
-
-#~ msgid "Approved on"
-#~ msgstr "Schválen dne"
-
-#~ msgid "methodology file"
-#~ msgstr "soubor s metodikou"
-
-#~ msgid "Final exam"
-#~ msgstr "Státní doktorská zkouška"
-
-#~ msgid ""
-#~ "Now you can see your plan how you have created\n"
-#~ "in previous steps. You have to confirm it otherwise it will be lost."
-#~ msgstr ""
-#~ "V této chvíli vidíte studijní plán tak, jak jste ho sestavili v "
-#~ "předchozích krocích. Kliknutím na odkaz potvrdit jej odešlete ke "
-#~ "schválení svému školiteli.Pokud se pouze odhlásíte, aniž byste studijní "
-#~ "plán potvrdili data se neuloží. Můžete však studijní plán sestavit znovu"
-
-#~ msgid "languages"
-#~ msgstr "cizí jazyky"
-
-#~ msgid ""
-#~ "Here you can see how does look your study plan. If it's how you\n"
-#~ "intended confirm it please."
-#~ msgstr ""
-#~ "Na této stránce vidíte Váš sestavený studijní plán.Pokud je tak jste to "
-#~ "zamýšleli potvrďte ho prosím"

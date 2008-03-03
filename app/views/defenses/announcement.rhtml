@@ -53,13 +53,13 @@
 <% end %>
 <% unless @defense.second_opponent.empty? %>
 <tr>
-  <th><%= _('Second opponent') %>:</th>
+  <th><%= _('Opponent') %>:</th>
   <td><%= @defense.second_opponent %> </td> 
 </tr>
 <% end %>
 <% unless @defense.third_opponent.empty? %>
 <tr>
-  <th><%= _('Third opponent') %>:</th>
+  <th><%= _('Opponent') %>:</th>
   <td><%= @defense.third_opponent %> </td> 
 </tr>
 <% end %>
@@ -93,24 +93,6 @@
 <tr>
   <th></th>
   <td><%= @defense.sixth_examinator %> </td> 
-</tr>
-<% end %>
-<% unless @defense.seventh_examinator.empty? %>
-<tr>
-  <th></th>
-  <td><%= @defense.seventh_examinator %> </td> 
-</tr>
-<% end %>
-<% unless @defense.eighth_examinator.empty? %>
-<tr>
-  <th></th>
-  <td><%= @defense.eighth_examinator %> </td> 
-</tr>
-<% end %>
-<% unless @defense.nineth_examinator.empty? %>
-<tr>
-  <th></th>
-  <td><%= @defense.nineth_examinator %> </td> 
 </tr>
 <% end %>
 </table>

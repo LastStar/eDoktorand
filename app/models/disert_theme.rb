@@ -58,6 +58,12 @@ class DisertTheme < ActiveRecord::Base
     end
   end
 
+  def save_theme_file(file)
+    File.open("#{RAILS_ROOT}/public/pdf/disert_theme/#{self.id}.pdf", "w") do |f|
+      f.write(file.read)
+    end
+  end
+
   private
   def set_actual
     if old_actual = DisertTheme.find_by_index_id_and_actual(self.index.id, 1)
