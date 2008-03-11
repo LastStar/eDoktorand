@@ -3,6 +3,7 @@
 <% end %>
   <div class='links'>
     <%= filter_links(@filters) %>
+    <% if @user.has_one_of_roles?(['faculty_secretary', 'dean']) %>
     <input type='checkbox' id='selected_only'/>
     <span><%= _('selected only') %></span>
     <script type="text/javascript">
@@ -17,6 +18,7 @@
         }});
 
     </script>
+    <% end %>
   </div>
 <% if @indices && !@indices.empty? %>
   <table id='students_table'>
