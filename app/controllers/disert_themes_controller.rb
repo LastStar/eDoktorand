@@ -19,7 +19,6 @@ include LoginSystem
     @disert_theme = DisertTheme.find(params[:disert_theme][:id])
     unless (file = params[:disert_theme][:methodology_file]).is_a? File
       DisertTheme.save_methodology(@disert_theme, file)
-      @disert_theme.update_attribute('methodology_added_on', Time.now)
       redirect_to(:action => 'index', :controller => 'study_plans')
     else
       @title = _("Upload methodology") 
