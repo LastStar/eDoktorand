@@ -17,8 +17,8 @@ include LoginSystem
   # saves methogology file
   def save_methodology
     @disert_theme = DisertTheme.find(params[:disert_theme][:id])
-    unless params[:disert_theme][:methodology_file].empty?
-      DisertTheme.save(params[:disert_theme])
+    unless (file = params[:disert_theme][:methodology_file]).is_a? File
+      DisertTheme.save_methodology(@disert_theme, file)
       @disert_theme.update_attribute('methodology_added_on', Time.now)
       redirect_to(:action => 'index', :controller => 'study_plans')
     else

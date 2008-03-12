@@ -14,10 +14,11 @@ class DisertTheme < ActiveRecord::Base
     end
   end
 
-  def self.save(disert_theme)
-    File.open("#{RAILS_ROOT}/public/pdf/methodology/#{disert_theme['id']}.pdf", "w") do |f|
-      f.write(disert_theme['methodology_file'].read) 
+  def self.save_methodology(disert_theme, file)
+    File.open("#{RAILS_ROOT}/public/pdf/methodology/#{disert_theme.id}.pdf", "w") do |f|
+      f.write(file.read) 
     end
+    disert_theme.update_attribute('methodology_added_on', Time.now)
   end
 
   # return true if methodology added
@@ -79,8 +80,7 @@ class DisertTheme < ActiveRecord::Base
   def copy_methodology
     if has_methodology?
       FileUtils.mv("#{RAILS_ROOT}/public/pdf/methodology/temp_#{index.id}.pdf",
-                   "#{RAILS_ROOT}/public/pdf/methodology/#{sell.id}.pdf")
-
+                   "#{RAILS_ROOT}/public/pdf/methodology/#{self.id}.pdf")
     end
 
   end
