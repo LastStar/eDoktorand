@@ -48,18 +48,18 @@ class Index < ActiveRecord::Base
           pre_sum += c.to_i * PREFIX_WEIGHTS[j]
         end
         unless (pre_sum % 11) == 0
-          errors.add(:account_number_prefix, _('accoun prefix in wrong format'))
+          errors.add(:account_number_prefix, _('account prefix in wrong format'))
         end
       end
       if account_number.size > 10 && account_number =~ /[0-9]/
-        errors.add(:account_number, _('accoun number in wrong format'))
+        errors.add(:account_number, _('account number in wrong format'))
       else
         acc_sum = 0
         account_number.split('').reverse.each_with_index do |c, j|
           acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
         end
         unless (acc_sum % 11) == 0
-          errors.add(:account_number, _('accoun number in wrong format'))
+          errors.add(:account_number, _('account number in wrong format'))
         end
       end
     end

@@ -848,7 +848,7 @@ msgstr "SP schválen děkanem"
 
 #: app/helpers/students_helper.rb:255
 msgid "study"
-msgstr "forma studia"
+msgstr "stav studia"
 
 #: app/helpers/students_helper.rb:255 app/models/index.rb:389
 msgid "studying"
@@ -1113,28 +1113,8 @@ msgid "DepartmentSecretary"
 msgstr "Sekretářka"
 
 #: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Diploma no"
-msgstr ""
-
-#: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Faculty name en"
 msgstr "Anglický název fakulty"
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Family name"
-msgstr ""
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Given name"
-msgstr ""
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Date of birth"
-msgstr ""
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Study programme"
-msgstr ""
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Study specialization"
@@ -1169,32 +1149,13 @@ msgid "DiplomaSupplement|Final exam passed on"
 msgstr "SZZ vykonána dne"
 
 #: app/models/diploma_supplement.rb:-
+msgid "DiplomaSupplement|Printed on"
+msgstr "Datum"
+
+
+#: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Faculty www"
 msgstr "Fakultní www"
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Printed on"
-msgstr ""
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Dean display name"
-msgstr ""
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Dean title"
-msgstr ""
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Printed at"
-msgstr ""
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Created at"
-msgstr ""
-
-#: app/models/diploma_supplement.rb:-
-msgid "DiplomaSupplement|Updated at"
-msgstr ""
 
 #: app/models/disert_theme.rb:4
 msgid "title must not be empty"
@@ -1261,11 +1222,11 @@ msgid "End"
 msgstr "ukončit"
 
 #: app/models/index.rb:51
-msgid "accoun prefix in wrong format"
+msgid "account prefix in wrong format"
 msgstr "předvolba účtu je ve špatném formátu"
 
 #: app/models/index.rb:55 app/models/index.rb:62
-msgid "accoun number in wrong format"
+msgid "account number in wrong format"
 msgstr "číslo účtu je ve špatném formátu"
 
 #: app/models/index.rb:67
@@ -1339,14 +1300,6 @@ msgstr ""
 #: app/models/program.rb:-
 msgid "program"
 msgstr "program"
-
-#: app/models/program.rb:-
-msgid "Program|Label"
-msgstr ""
-
-#: app/models/program.rb:-
-msgid "Program|Label en"
-msgstr ""
 
 #: app/models/student.rb:11
 msgid "to"
@@ -2729,7 +2682,7 @@ msgid "Payed scholarship"
 msgstr "Vyplacená stipendia"
 
 #: app/views/scholarships/student_list.rhtml:9
-msgid "You have not any scholarshis."
+msgid "You have not any scholarships."
 msgstr "Nebylo Vám přiznáno žádné stipendium."
 
 #: app/views/scholarships/student_list.rhtml:12
