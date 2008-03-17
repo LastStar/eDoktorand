@@ -47,26 +47,26 @@
   <tr>
     <td><%= @term.index.study_plan.final_areas['cz']['1'] %><br /> 
     <%= @term.index.study_plan.final_areas['en']['1'] %></td>
-    <td>......................................</td>
-    <td>......................................</td>
+    <td>.......................</td>
+    <td>.......................</td>
   </tr>
   <tr>
     <td><%= @term.index.study_plan.final_areas['cz']['2'] %><br /> 
     <%= @term.index.study_plan.final_areas['en']['2'] %></td>
-    <td>......................................</td>
-    <td>......................................</td>
+    <td>.......................</td>
+    <td>.......................</td>
   </tr>
   <tr>
     <td><%= @term.index.study_plan.final_areas['cz']['3'] %><br /> 
     <%= @term.index.study_plan.final_areas['en']['3'] %></td>
-    <td>......................................</td>
-    <td>......................................</td>
+    <td>.......................</td>
+    <td>.......................</td>
   </tr>
   <tr>
     <td><%= @term.index.study_plan.final_areas['cz']['4'] %><br /> 
     <%= @term.index.study_plan.final_areas['en']['4'] %></td>
-    <td>......................................</td>
-    <td>......................................</td>
+    <td>.......................</td>
+    <td>.......................</td>
   </tr>
   <tr>
     <th><%= _('Literature review') %>:</th>
@@ -93,8 +93,22 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td><%= @term.third_examinator %></td>
+    <td><%= @term.fourth_examinator %></td>
   </tr>
+  <% unless @term.fifth_examinator.empty? %>
+  <tr>
+    <th></th>
+    <td><%= @term.fifth_examinator %> </td> 
+    <td><%= @term.fifth_subject %></td>
+  </tr>
+  <% end %>
+  <% unless @term.sixth_examinator.empty? %>
+  <tr>
+    <th></th>
+    <td><%= @term.sixth_examinator %> </td> 
+    <td><%= @term.sixth_subject %></td>
+  </tr>
+  <% end %>
 <% if @term.opponent && !@term.opponent.empty?%>
   <tr>
     <th><%= _('Opponent') %>:</th>

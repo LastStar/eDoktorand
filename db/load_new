@@ -1,0 +1,15 @@
+#! /bin/sh
+
+if [ $# -eq 1 ]
+then
+  filename=$1
+else
+  echo "usage: load_new <dump_file.sql>"
+  exit
+fi
+
+echo "# purgin db"
+mysql -uweb -pw3b phdstudy_devel < db/purge_db.sql
+
+echo "# loading db"
+cat db/set_utf8.sql $filename | mysql -uweb -pw3b phdstudy_devel
