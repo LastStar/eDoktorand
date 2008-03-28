@@ -180,8 +180,8 @@ module StudentsHelper
       if index.waits_for_scholarship_confirmation?
         tags << 'us'
       end
-      unless index.status == _('final application')
-        if index.claimed_for_final_exam? && !index.final_exam_passed?
+      unless index.status == _('final application') || index.final_exam_passed?
+        if index.claimed_for_final_exam? 
           tags << 'sz'
         elsif index.claimed_final_application? && !index.claimed_for_final_exam?
           tags << 'pz'

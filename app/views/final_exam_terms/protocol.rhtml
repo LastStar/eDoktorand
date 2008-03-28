@@ -12,7 +12,7 @@
 <table class='two-columns'>
   <tr>
     <th style='width: 50%'><%= _('Display name') %>:</th>
-    <td><strong><%= @term.index.student.display_name %></strong></td>
+    <td><strong><%= @term.index.student.display_name_with_title %></strong></td>
   </tr>
   <tr>
     <th><%= _('Coridor') %>:</th>
@@ -115,10 +115,16 @@
     <td><%= @term.opponent %></td>
   </tr>
 <% end %>
+</table>
+<br />
+<table>
   <tr>
     <th><%= _('Classification of final exam') %>:</th>
     <td>......................................</td>
   </tr>
+</table>
+<br />
+<table>
   <tr>
     <th><%= _('Chairman signature') %>:</th>
     <td>......................................</td>
