@@ -111,7 +111,7 @@ msgstr "Zkoušky"
 
 #: app/controllers/final_exam_terms_controller.rb:10
 msgid "Final exam terms"
-msgstr "termíny SDZ"
+msgstr "termíny SZZ"
 
 #: app/controllers/final_exam_terms_controller.rb:23
 #: app/views/study_plans/_help.rhtml:25
@@ -120,11 +120,11 @@ msgstr "Přihláška ke státní doktorské zkoušce"
 
 #: app/controllers/final_exam_terms_controller.rb:39
 msgid "Creating final exam term"
-msgstr "Vytváření termín SDZ"
+msgstr "Vytváření termín SZZ"
 
 #: app/controllers/final_exam_terms_controller.rb:56
 msgid "final exam term was succesfully created"
-msgstr "termín SDZ byl úspěšně vytvořen"
+msgstr "termín SZZ byl úspěšně vytvořen"
 
 #: app/controllers/form_controller.rb:9
 msgid "Admittance process"
@@ -446,7 +446,7 @@ msgstr "ukončen dne"
 
 #: app/helpers/application_helper.rb:461 app/helpers/students_helper.rb:142
 msgid "final exam term"
-msgstr "termín SDZ"
+msgstr "termín SZZ"
 
 #: app/helpers/application_helper.rb:474
 msgid "defense"
@@ -641,7 +641,7 @@ msgstr "oznámení"
 
 #: app/helpers/exam_terms_helper.rb:3
 msgid "final exam terms"
-msgstr "termíny SDZ"
+msgstr "termíny SZZ"
 
 #: app/helpers/exam_terms_helper.rb:8
 msgid "defense terms"
@@ -813,7 +813,7 @@ msgstr "ukončeno"
 
 #: app/helpers/students_helper.rb:183
 msgid "final application"
-msgstr "SDZ"
+msgstr "SZZ"
 
 #: app/helpers/students_helper.rb:223 app/views/candidates/admit.rhtml:12
 #: app/views/shared/candidate_edit.rhtml:92
@@ -865,7 +865,7 @@ msgstr "uzavřeno"
 
 #: app/helpers/students_helper.rb:256 app/models/index.rb:381
 msgid "FE passed"
-msgstr "složil SDZ"
+msgstr "složil SZZ"
 
 #: app/helpers/students_helper.rb:263 app/views/candidates/_list.rhtml:35
 #: app/views/candidates/_table_list.rhtml:17
@@ -1142,7 +1142,7 @@ msgstr "Obhájoba dne"
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Final areas"
-msgstr "Okruhy SDZ"
+msgstr "Okruhy SZZ"
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Final exam passed on"
@@ -1333,7 +1333,7 @@ msgstr "prospěl"
 
 #: app/models/student.rb:17
 msgid "Pass final exam"
-msgstr "Složil SDZ"
+msgstr "Složil SZZ"
 
 #: app/models/student.rb:18
 msgid "Pass defense"
@@ -1353,11 +1353,11 @@ msgstr "změnit formu k"
 
 #: app/models/student.rb:22
 msgid "pass final exam to"
-msgstr "složil SDZ k"
+msgstr "složil SZZ k"
 
 #: app/models/student.rb:23
 msgid "pass final exam"
-msgstr "složil SDZ"
+msgstr "složil SZZ"
 
 #: app/models/student.rb:24
 msgid "pass defense"
@@ -1940,7 +1940,7 @@ msgstr "obhajoba vykonána dne"
 
 #: app/views/diploma_supplements/_form.rhtml:45
 msgid "Final areas divided by semicolon"
-msgstr "předměty SDZ oddělené středníkem"
+msgstr "předměty SZZ oddělené středníkem"
 
 #: app/views/diploma_supplements/_form.rhtml:48
 msgid "final exam passed on"
@@ -2802,7 +2802,7 @@ msgstr "Schvalovací proces obhajoby"
 
 #: app/views/shared/_study_detail.rhtml:85
 msgid "final exam approvement process"
-msgstr "Schvalovací proces SDZ"
+msgstr "Schvalovací proces SZZ"
 
 #: app/views/shared/_study_detail.rhtml:107
 msgid "canceled on"
@@ -2847,7 +2847,7 @@ msgstr "Vzdělání"
 #: app/views/shared/candidate_detail.rhtml:26
 #: app/views/shared/candidate_edit.rhtml:72
 msgid "date of study end"
-msgstr "datum SDZ - skutečné nebo předpokládané"
+msgstr "datum SZZ - skutečné nebo předpokládané"
 
 #: app/views/shared/candidate_detail.rhtml:29
 #: app/views/shared/candidate_detail.rhtml:31
@@ -3125,7 +3125,7 @@ msgstr "Prvním krokem bude vytvořit"
 
 #: app/views/study_plans/_language_form.rhtml:22
 msgid "disert theme and final exam"
-msgstr "SDZ a disertační práce"
+msgstr "SZZ a disertační práce"
 
 #: app/views/study_plans/_obligate_form.rhtml:4
 msgid "obligate subjects"

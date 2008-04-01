@@ -55,8 +55,7 @@ class DefensesController < ApplicationController
   def send_invitation
     @index = Index.find(params[:id])
     @index.send_defense_invitation!
-    # TODO remove when production
-    # Notifications::deliver_invite_to_defense(@index)
+    Notifications::deliver_invite_to_defense(@index)
   end
 
   #shows defense term in study plan
