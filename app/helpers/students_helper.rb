@@ -173,28 +173,34 @@ module StudentsHelper
 
   def student_exception(index)
     tags = []
+    if index.status == _('FE passed')
+      if index.final_exam_invitation_sent_at?
+          tags << "<span title='" + _('approved form of defence') + "'>so</span>"
+      end
+    else
     unless index.status == _('absolved') || index.status == _('finished')
       if index.close_to_interupt_end_or_after?
-        tags << '!'
+        tags << "<span title='" + _('comming end of interrupt') + "'>!</span>"
       end
       if index.waits_for_scholarship_confirmation?
-        tags << 'us'
+        tags << "<span title='" + _('accommodation scholarship') + "'>us</span>"
       end
       unless index.status == _('final application') || index.final_exam_passed?
         if index.claimed_for_final_exam? 
-          tags << 'sz'
+          tags << "<span title='" + _('approved form of FE') + "'>sz</span>"
         elsif index.claimed_final_application? && !index.claimed_for_final_exam?
-          tags << 'pz'
+          tags << "<span title='" + _('presented form of FE') + "'>pz</span>"
         end
       end
       if index.defense_claimed?
-        tags << 'po'
+        tags << "<span title=" + _('presented form of defence') + "> po </span>"
       end
     end
     if tags.size > 1
       tags.join('&nbsp;') 
     else
       tags.first
+    end
     end
   end
 

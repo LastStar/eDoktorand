@@ -1,23 +1,23 @@
 class DiplomaSupplement < ActiveRecord::Base
 
-  validates_presence_of :diploma_no, :message => _("Diploma Number can't be blank")
-  validates_presence_of :family_name, :message => _("Family name can't be blank")
-  validates_presence_of :given_name, :message => _("Given name can't be blank")
-  validates_presence_of :date_of_birth, :message => _(" Date of birth can't be blank")
-  validates_presence_of :study_programme, :message => _("Study programme can't be blank")
-  validates_presence_of :study_specialization, :message => _("Study specialization can't be blank")
-  validates_presence_of :faculty_name_en, :message => _("English faculty name can't be blank")
-  validates_presence_of :faculty_name, :message => _("Faculty name can't be blank")
-  validates_presence_of :study_mode, :message => _("Study mode can't be blank")
-  validates_presence_of :disert_theme_title, :message => _(" Title of disert theme can't be blank")
-  validates_presence_of :defense_passed_on, :message => _("Defence passed on can't be blank")
-  validates_presence_of :final_areas, :message => _("Final areas can't be blank")
-  validates_presence_of :final_exam_passed_on, :message => _("Final exam passed on can't be blank")
-  validates_presence_of :plan_subjects, :message => _("Plan subjects can't be blank")
-  validates_presence_of :faculty_www, :message => _("Faculty www can't be blank")
-  validates_presence_of :printed_on, :message => _("Printed on can't be blank")
-  validates_presence_of :dean_display_name, :message => _("Display name can't be blank")
-  validates_presence_of :dean_title, :message => _("Dean title can't be blank")
+  validates_presence_of :diploma_no
+  validates_presence_of :family_name
+  validates_presence_of :given_name
+  validates_presence_of :date_of_birth
+  validates_presence_of :study_programme
+  validates_presence_of :study_specialization
+  validates_presence_of :faculty_name_en
+  validates_presence_of :faculty_name
+  validates_presence_of :study_mode
+  validates_presence_of :disert_theme_title
+  validates_presence_of :defense_passed_on
+  validates_presence_of :final_areas
+  validates_presence_of :final_exam_passed_on
+  validates_presence_of :plan_subjects
+  validates_presence_of :faculty_www
+  validates_presence_of :printed_on
+  validates_presence_of :dean_display_name
+  validates_presence_of :dean_title
 
   def self.new_from_index(index)
     index =  Index.find(index) unless index.is_a? Index
