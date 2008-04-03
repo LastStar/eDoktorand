@@ -43,7 +43,7 @@ class CandidatesController < ApplicationController
 
   # lists all candidates ordered by category
   def list_admission_ready
-    @candidates = Coridor.find(params[:coridor]).approved_candidates
+    @candidates = Coridor.find(params[:coridor]).approved_candidates.paginate :page => params[:page], :per_page => 7, :order => 'lastname'
     render(:action => :list)
   end
 
