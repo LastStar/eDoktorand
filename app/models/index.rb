@@ -70,11 +70,15 @@ class Index < ActiveRecord::Base
 
   # returns semesteer of the study
   def semester
-    time = Time.now - enrolled_on
-    if self.interupt 
-      time -= interrupted_time
+    if @semester
+      return @semester
+    else
+      time = Time.now - enrolled_on
+      if self.interupt 
+        time -= interrupted_time
+      end
+      return @semester = time.div(6.month) + 1
     end
-    time.div(6.month) + 1
   end
 
   # returns year of the study
@@ -375,7 +379,7 @@ class Index < ActiveRecord::Base
 
   # returns status of index
   def status
-    if disert_theme && disert_theme.defense_passed?
+    @status ||= if disert_theme && disert_theme.defense_passed?
       _('absolved')
     elsif final_exam_passed?
       _('FE passed')

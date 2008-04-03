@@ -130,7 +130,7 @@ class StudyPlan < ActiveRecord::Base
 
   # returns status of study plan
   def status
-    if index.disert_theme.defense_passed? || index.final_exam_passed?
+    @status ||= if index.disert_theme.defense_passed? || index.final_exam_passed?
       ''
     elsif all_subjects_finished?
       _('all finished')
@@ -160,19 +160,17 @@ class StudyPlan < ActiveRecord::Base
 
   # returns subjects which are finished
   def finished_subjects
-   PlanSubject.find(:all, :conditions =>  [ \
-                    "study_plan_id = ? and finished_on is not null", id])
+   return @finished_subjects ||= plan_subjects.reject {|ps| ps.finished?}
   end
 
   # returns subjects which are not finished
   def unfinished_subjects(param = nil)
-    options = {:conditions => ["study_plan_id = ? and finished_on is null", id]}
-    options[:include] = :subject if param == :subjects
-    ps = PlanSubject.find(:all, options)
+    @unfinished_subjects ||= plan_subjects - self.finished_subjects
+
     if param == :subjects 
-     ps.map {|p| p.subject}
+     return @unfinished_subjects.map {|p| p.subject}
     else
-     ps
+     return @unfinished_subjects
     end
   end
 
