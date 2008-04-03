@@ -170,7 +170,7 @@ msgstr "schváleno referentkou vědy a výzkumu"
 
 #: app/controllers/final_exam_terms_controller.rb:10
 msgid "Final exam terms"
-msgstr "termíny SZZ"
+msgstr "termíny SDZ"
 
 #: app/controllers/final_exam_terms_controller.rb:23
 #: app/views/study_plans/_help.rhtml:25
@@ -179,11 +179,11 @@ msgstr "Přihláška ke státní doktorské zkoušce"
 
 #: app/controllers/final_exam_terms_controller.rb:39
 msgid "Creating final exam term"
-msgstr "Vytváření termín SZZ"
+msgstr "Vytváření termín SDZ"
 
 #: app/controllers/final_exam_terms_controller.rb:56
 msgid "final exam term was succesfully created"
-msgstr "termín SZZ byl úspěšně vytvořen"
+msgstr "termín SDZ byl úspěšně vytvořen"
 
 #: app/controllers/form_controller.rb:9
 msgid "Admittance process"
@@ -295,7 +295,7 @@ msgstr "oznámení"
 
 #: app/helpers/exam_terms_helper.rb:3
 msgid "final exam terms"
-msgstr "termíny SZZ"
+msgstr "termíny SDZ"
 
 #: app/helpers/exam_terms_helper.rb:8
 msgid "defense terms"
@@ -550,7 +550,7 @@ msgstr "vytvoř SP"
 
 #: app/helpers/students_helper.rb:142 app/helpers/application_helper.rb:461
 msgid "final exam term"
-msgstr "termín SZZ"
+msgstr "termín SDZ"
 
 #: app/helpers/students_helper.rb:151
 msgid "confirm interupt"
@@ -567,7 +567,7 @@ msgstr "Detailní filtr"
 #: app/helpers/students_helper.rb:176 app/helpers/students_helper.rb:262
 #: app/models/index.rb:381
 msgid "FE passed"
-msgstr "složil SZZ"
+msgstr "složil SDZ"
 
 #: app/helpers/students_helper.rb:178
 msgid "approved form of defence"
@@ -588,15 +588,15 @@ msgstr "ubytovací stipendium"
 
 #: app/helpers/students_helper.rb:188
 msgid "final application"
-msgstr "SZZ"
+msgstr "SDZ"
 
 #: app/helpers/students_helper.rb:190
 msgid "approved form of FE"
-msgstr "schválena žádost o SZZ"
+msgstr "schválena žádost o SDZ"
 
 #: app/helpers/students_helper.rb:192
 msgid "presented form of FE"
-msgstr "podaná žádost o SZZ"
+msgstr "podaná žádost o SDZ"
 
 #: app/helpers/students_helper.rb:196
 msgid "presented form of defence"
@@ -1161,7 +1161,7 @@ msgstr "prospěl"
 
 #: app/models/student.rb:17
 msgid "Pass final exam"
-msgstr "Složil SZZ"
+msgstr "Složil SDZ"
 
 #: app/models/student.rb:18
 msgid "Pass defense"
@@ -1181,11 +1181,11 @@ msgstr "změnit formu k"
 
 #: app/models/student.rb:22
 msgid "pass final exam to"
-msgstr "složil SZZ k"
+msgstr "složil SDZ k"
 
 #: app/models/student.rb:23
 msgid "pass final exam"
-msgstr "složil SZZ"
+msgstr "složil SDZ"
 
 #: app/models/student.rb:24
 msgid "pass defense"
@@ -1265,11 +1265,11 @@ msgstr "Obhájoba dne"
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Final areas"
-msgstr "Okruhy SZZ"
+msgstr "Okruhy SDZ"
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Final exam passed on"
-msgstr "SZZ vykonána dne"
+msgstr "SDZ vykonána dne"
 
 #: app/models/diploma_supplement.rb:-
 msgid "DiplomaSupplement|Faculty www"
@@ -2242,7 +2242,7 @@ msgstr "Schvalovací proces obhajoby"
 
 #: app/views/shared/_study_detail.rhtml:85
 msgid "final exam approvement process"
-msgstr "Schvalovací proces SZZ"
+msgstr "Schvalovací proces SDZ"
 
 #: app/views/shared/_study_detail.rhtml:107
 msgid "canceled on"
@@ -3050,7 +3050,7 @@ msgstr "obhajoba vykonána dne"
 
 #: app/views/diploma_supplements/_form.rhtml:45
 msgid "Final areas divided by semicolon"
-msgstr "předměty SZZ oddělené středníkem"
+msgstr "předměty SDZ oddělené středníkem"
 
 #: app/views/diploma_supplements/_form.rhtml:48
 msgid "final exam passed on"
@@ -3162,7 +3162,7 @@ msgstr "ukončit vytváření studijního plánu (nebude možný krok zpět)"
 
 #: app/views/study_plans/_language_form.rhtml:22
 msgid "disert theme and final exam"
-msgstr "SZZ a disertační práce"
+msgstr "SDZ a disertační práce"
 
 #: app/views/study_plans/create.rhtml:2
 msgid ""
