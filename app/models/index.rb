@@ -374,7 +374,7 @@ class Index < ActiveRecord::Base
   def self.find_with_all_included(idx)
     inc = [:study_plan, :disert_theme, :interupts, :coridor, :study, :student,
           :tutor, :department, :approvement]
-    self.find(idx, :include => inc, :order => 'interupts.created_on desc')
+    return self.find(idx, :include => inc, :order => 'interupts.created_on desc')
   end
 
   # returns status of index
@@ -392,6 +392,7 @@ class Index < ActiveRecord::Base
     else
       _('studying')
     end
+    return @status
   end
 
   def continues?

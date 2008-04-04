@@ -160,7 +160,7 @@ class StudyPlan < ActiveRecord::Base
 
   # returns subjects which are finished
   def finished_subjects
-   return @finished_subjects ||= plan_subjects.reject {|ps| ps.finished?}
+   return @finished_subjects ||= plan_subjects.select {|ps| ps.finished?}
   end
 
   # returns subjects which are not finished
