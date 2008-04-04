@@ -7,7 +7,7 @@ class CSVLoader
   include Log4r
 
   # create a logger named 'mylog' that logs to stdout
-  @@mylog = Logger.new 'Importer'
+  @@mylog = Logger.new 'CSVLoader'
   @@mylog.outputters = Outputter.stdout
   @@mylog.level = 1
   @@prefixes = [nil, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 20,
@@ -908,5 +908,18 @@ class CSVLoader
       end
     end
     puts not_found
+  end
+
+  def self.repair_sidents(file)
+    @@mylog.info "Repairing sidents ..."
+    CSV::Reader.parse(File.open(file, 'rb'), ',') do |row|
+      @@mylog.debug "Old sident %i changing to %i" % row
+      student = Student.find_by_sident(row[0])
+      if student && student.update_attribute(:sident, row[1])
+        @@mylog.info 'succesfully'
+      else
+        @@mylog.info "something went wrong with %i" % row[0]
+      end
+    end
   end
 end
