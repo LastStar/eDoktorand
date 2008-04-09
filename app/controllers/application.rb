@@ -8,9 +8,6 @@ class ApplicationController < ActionController::Base
 
   before_filter :utf8_locale
 
-  # hack to solve deep STI
-  # require_dependencies(:model, [:dean])
-
   # sets utf8 for db and locale to cs_CZ
   # TODO redone for native sql and locale
   # TODO remove blood with Dean

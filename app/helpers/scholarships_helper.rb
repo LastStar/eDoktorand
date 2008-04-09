@@ -9,6 +9,13 @@ module ScholarshipsHelper
                    :url => {:action => 'detail', :id => index.id})
   end
 
+  def detail_links(index)
+    link_to_function(image_tag('open.png')) do |page|
+      page.insert_html :after, "index_#{index.id}",
+      render(:partial => 'detail', :locals=>{:scholarships => scholarships = ExtraScholarship.find_all_unpayed_by_index(index.id), :index => index})
+    end
+  end
+
   def change_link(object)
     if object.is_a?(Index)
       link_to_remote(image_tag('change.png'), 
@@ -19,6 +26,12 @@ module ScholarshipsHelper
                      :update => "scholarship_form_#{object.index.id}",
                      :url => {:action => 'edit', :id => object.id})
     end
+  end
+  
+  def change_extra_link(object,id)
+      link_to_remote(image_tag('change.png'), 
+                     :update => id,
+                     :url => {:action => 'edit', :id => object.id, :scholarship_id => id, :scholarship => '1'})
   end
 
   def add_link(index)
@@ -34,16 +47,20 @@ module ScholarshipsHelper
                    :url => {:action => 'destroy', :id => scholarship.id})
   end
 
+  def close_class_link(element, id)
+    link_to_function(image_tag('close.png'), "$$('.extra_scholarships_#{id}').each(function(value) { value.hide(); });")
+  end
+
+
   def close_link(element)
     link_to_function(image_tag('close.png'), "Element.hide('#{element}')")
   end
 
   def pay_link
     if @user.has_role?('supervisor') && 
-      confirm = _('Are you shure to pay all scholarships. ' +
-                  'Operation is irreversible')
       (ScholarshipApprovement.all_approved? || !Scholarship.prepare_time?)
-      link_to(_('pay'), {:action => 'pay'}, :confirm => confirm)
+      link_to(_('pay'), {:action => 'pay'}, 
+        :confirm => _('Are you sure to pay all scholarships. Operation is irreversible'))
     end
   end
 

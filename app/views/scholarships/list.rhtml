@@ -19,7 +19,9 @@
   <th><%= _("Birth number")%></th><th><%= _("Last name")%></th><th><%= _("First name")%></th><th><%= _("Coridor") %></th>
 <th><%= _("Type of scholarship")%></th><th><%= _("Disponent")%></th><th><%= _("Amount (CZK)")%></th></tr>
 <% for index in @indices %>
-  <%= render(:partial => 'approved_line', :locals => {:index => index, :disponents => disponents, :codes => codes}) %>
+  <% if index.has_any_scholarship? %>
+    <%= render(:partial => 'approved_line', :locals => {:index => index, :disponents => disponents, :codes => codes}) %>
+  <% end %>
 <% end %>
 </table>
 <br><br>

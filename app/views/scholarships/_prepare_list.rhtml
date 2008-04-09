@@ -1,19 +1,24 @@
 <div id='sum'></div>
-<ul class='peopleList'>
-<li style='color: gray'>
-<div class="smallinfo"><%= _("Extra") %></div>
-<div class="smallinfo"><%= _("Regular") %></div>
-<div class="smallinfo nonprintable"><%= _("Study form") %></div>
-<div class="smallerinfo nonprintable"><%= _("Department") %></div>
-<div class="longinfo"><%= _("Account") %></div>
+<table id='scholarship_table' class='peopleList'>
+  <tbody>
+<tr style='color: gray'>
 
-<%= _("Full name") %>
-</li>
+<th><%= _("Full name") %></th>
+<th><%= _("Account") %></th>
+<th><%= _("Department") %></th>
+<th><%= _("Study form") %></th>
+<th><%= _("Regular") %></th>
+<th><%= _("Extra") %></th>
+
+</tr>
 <% for index in @indices %>
-<li class='tiny' id='index_<%= index.id %>'>
+
 <%= render(:partial => 'index_line', :locals => {:index => index}) %>
-</li>
+
+<tr id='scholarship_form_<%= index.id %>'>
+</tr >
 <% end %>
-<li class='tiny' id='index_<%= index.id %>'>
-</li>
-</ul>
+<tr class='tiny' id='index_<%= index.id %>'>
+</tr>
+  </tbody>
+</table>

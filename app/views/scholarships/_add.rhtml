@@ -1,17 +1,19 @@
 <td colspan=6>
-<% save_form(@scholarship) do -%>
+<%= save_form(scholarship) %>
 <div class='small'>
-<%if params[:scholarship]%>
-  <%= hidden_field 'scholarship_edit', 'edit', 'value' => params[:scholarship_id] %>
-  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount'%>
-<%else%>
-  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount', 'value' => _('amount') %>
-<%end%>
-<%= _('Kc') %> &nbsp;
-<%= image_submit_tag('ok.png') %>
-<%if !params[:scholarship]%>
-  <%= close_link("scholarship_form_#{@scholarship.index.id}") %>
-<%end%>
+  <%if params[:scholarship]%>
+    <%if @edit == 1%>
+      <%= hidden_field 'scholarship_edit', 'edit', 'value' => scholarship_id %>
+    <%end%>
+    <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount'%>
+  <%else%>
+    <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount', 'value' => _('amount') %>
+  <%end%>
+  <%= _('Kc') %> &nbsp;
+  <%= image_submit_tag('ok.png') %>
+  <%if !params[:scholarship]%>
+    <%= close_link("scholarship_form_#{@scholarship.index.id}") %>
+  <%end%>
 </div>
 <div class='small'>
   &nbsp;&nbsp;&nbsp;
@@ -38,6 +40,6 @@
 <div>
  <%= _('adding_extra_scholarship') %>
 </div>
-<% end # form end%>
+<%= end_form_tag %>
 <%= javascript_tag "document.forms[0].amount.focus()" %>
 </td>

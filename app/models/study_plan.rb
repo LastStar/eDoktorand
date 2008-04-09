@@ -75,8 +75,11 @@ class StudyPlan < ActiveRecord::Base
 
   # return plan subjects for atestation
   def atestation_subjects
-    sql = 'study_plan_id = ? and finishing_on >= ? and finishing_on <= ?'
-    PlanSubject.find(:all, :conditions => [sql, id, semester - 3, semester - 1])
+    beg_sem = semester - 3
+    end_sem = semester - 1
+    return @atestation_subjects ||= plan_subjects.select do |ps|
+      (beg_sem..end_sem).include? ps.finishing_on
+    end
   end
 
   def finished_atestation_subjects

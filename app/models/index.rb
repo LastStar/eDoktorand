@@ -19,8 +19,8 @@ class Index < ActiveRecord::Base
   belongs_to :department
   has_many :interupts, :order => 'created_on desc'
   has_one :interupt, :order => 'created_on desc'
-  has_many :extra_scholarships, :conditions => "payed_on IS NULL"
-  has_one :regular_scholarship, :conditions => "payed_on IS NULL", 
+  has_many :extra_scholarships, :conditions => "scholarships.payed_on IS NULL"
+  has_one :regular_scholarship, :conditions => "scholarships.payed_on IS NULL", 
     :order => 'updated_on desc'
   has_many :payed_scholarships, :class_name => 'Scholarship',
     :conditions => 'payed_on IS NOT NULL'
@@ -193,10 +193,9 @@ class Index < ActiveRecord::Base
     else
       conditions = ["NULL IS NOT NULL"]
     end
-    unless options[:include]
-      options[:include] = [:study_plan, :student, :disert_theme, :department,
+    options[:include] ||= []
+    options[:include] << [:study_plan, :student, :disert_theme, :department,
                            :study, :coridor, :interupt]
-    end
     if options[:conditions]
       conditions.first << options[:conditions].first 
       conditions.concat(options[:conditions][1..-1])
@@ -355,18 +354,18 @@ class Index < ActiveRecord::Base
   def self.find_studying_for(user, options = {})
     opts = {:unfinished => true, :not_interupted => true} 
     opts[:order] = options[:order] || 'people.lastname'
-    find_for(user, opts)
+    return find_for(user, opts)
   end
 
   def self.find_for_scholarship(user, opts = {})
     paying_date =  (Time.now - 3.week)
     opts.update({:unfinished => paying_date, :not_interupted => paying_date,
-                 :enrolled => paying_date, :not_absolved => paying_date})
-    find_for(user, opts)
+                 :enrolled => paying_date, :not_absolved => paying_date, :include => [:extra_scholarships]})
+    return find_for(user, opts)
   end
 
   def self.find_studying_on_department(department)
-    find(:all, :conditions => ['department_id = ? and finished_on is null',
+    return find(:all, :conditions => ['department_id = ? and finished_on is null',
                               department.id])
   end
 
@@ -613,5 +612,9 @@ class Index < ActiveRecord::Base
 
   def has_study_plan_and_actual_atestation?
     study_plan && index.study_plan.atested_actual? && study_plan.atestation.dean_statement
+  end
+
+  def has_any_scholarship?
+    return ((has_regular_scholarship? && regular_scholarship_or_create.amount > 0) || (has_extra_scholarship? && extra_scholarship_sum > 0))
   end
 end

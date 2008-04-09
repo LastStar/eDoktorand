@@ -16,10 +16,12 @@ class TutorsController < ApplicationController
   def edit
     @tutorship = Tutorship.find(params[:id])
     @coridors = Coridor.accredited_for(@user)
+    render :partial => 'edit'
   end
 
   def update
     @tutorship = Tutorship.find(params[:tutorship][:id])
     @tutorship.update_attributes(params[:tutorship])
+    @tutor = @tutorship.tutor
   end  
 end

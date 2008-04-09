@@ -476,7 +476,7 @@ msgid "external exam"
 msgstr "externí zkouška"
 
 #: app/helpers/scholarships_helper.rb:43
-msgid "Are you shure to pay all scholarships. Operation is irreversible"
+msgid "Are you sure to pay all scholarships. Operation is irreversible"
 msgstr "Opravdu vyplatit stipendia tak jak je vidíte? Operace je nevratná."
 
 #: app/helpers/scholarships_helper.rb:46

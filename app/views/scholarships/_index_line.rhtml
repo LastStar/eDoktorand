@@ -1,32 +1,36 @@
-<div class="smallinfo" id='scholarship_<%= index.id %>'>
-<% if index.has_extra_scholarship? %>
-    <%= detail_link(index) %>
-    <%= index.extra_scholarship_sum %> <%= _('Kc') %>
-<% else %>
-  <%= add_link(index) %>&nbsp;
-<% end %>
-</div>
-<% if index.has_regular_scholarship? %>
-<div class="smallinfo" id='regular_scholarship_<%= index.id %>'>
-  <% if @user.has_role?('department_secretary') %>
-    <%= index.regular_scholarship_or_create.amount %> <%= _("Kc") %>
-  <% else %>
-    <%= render(:partial => 'regular', :locals => {:index => index}) %>
-  <% end %>
-</div>
-<% else %>
-  <div class="smallinfo">&nbsp;</div> 
-<% end %>
-<div class="smallinfo nonprintable"><%= index.study.name %></div>
-<div class="smallerinfo nonprintable"><%= index.department.short_name %></div>
-<div class="longinfo">
+<tr class='tiny' id='index_<%= index.id %>'>
+<td><%= index.student.display_name %></td>
+
+<td>
 <% if index.account_number == nil%>
   <%="&nbsp;&nbsp;"%>
 <% else %>
    <%= index.student.account%>
 <% end %>
-</div>
-<%= index.student.display_name %>
-<div class='detail' id='scholarship_form_<%= index.id %>' style="display: none">
-</div >
+</td>
 
+<td><%= index.department.short_name %></td>
+
+<td><%= index.study.name %></td>
+
+<% if index.has_regular_scholarship? %>
+<td id='regular_scholarship_<%= index.id %>'>
+  <% if @user.has_role?('department_secretary') %>
+    <%= index.regular_scholarship_or_create.amount %> <%= _("Kc") %>
+  <% else %>
+    <%= render(:partial => 'regular', :locals => {:index => index}) %>
+  <% end %>
+</td>
+<% else %>
+  <td>&nbsp;</td> 
+<% end %>
+
+<td id='scholarship_<%= index.id %>'>
+<% if index.has_extra_scholarships? %>
+    <%= detail_links(index) %>
+    <%= index.extra_scholarship_sum %> <%= _('Kc') %>
+<% else %>
+  <%= add_link(index) %>&nbsp;
+<% end %>
+</td>
+</tr>

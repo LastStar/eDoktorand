@@ -1,12 +1,10 @@
 <h5><%= _('Tutors list') + "(#{@tutors.size})" %></h5>
-<ul id='tutors_list'>
+<table id='tutors_table'>
   <% for tutor in @tutors %>
-    <li>
-      <div class='x-longinfo' id='coridor_<%= tutor.tutorship.id %>'>          
+    <tr class='line' id='coridor_<%= tutor.tutorship.id %>'>
+        <%@tutor = tutor%>
         <%= render :partial => 'coridor', 
-                   :locals => {:tutorship => tutor.tutorship} %>
-      </div>
-      <%= tutor.display_name %>
-    </li>
+                   :locals => {:tutorship => tutor.tutorship, :tutor => tutor} %>
+    </tr>
   <% end %>
-</ul>
+</table>

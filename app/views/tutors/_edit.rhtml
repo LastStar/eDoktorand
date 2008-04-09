@@ -1,4 +1,7 @@
-
+<td>
+  <%= @tutorship.tutor.display_name %>
+</td>
+<td>
 <% form_remote_tag(:url => {:action => "update"}, 
                             :complete => evaluate_remote_response,
                             :after => loader_image("coridor_submit")) do %>
@@ -6,3 +9,4 @@
   <%= hidden_field :tutorship, :id %>
   <%= ok_submit(:coridor) %>
 <% end %>
+</td>

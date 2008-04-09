@@ -240,6 +240,16 @@ div.fieldWithErrors {
   padding: 0px;
 }
 
+div.small div.fieldWithErrors {
+  border: 1px solid red;
+  border-left: 9px solid red;
+  background-color: #ffd;
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+
+
 ul.rightList {
  float: right;
 }
@@ -487,6 +497,42 @@ table#students_table th {text-align: left;}
 table#students_table a {text-decoration: none}
 div#diploma_supplement {border: solid red;}
 div#diploma_supplement li{border: none}
+table#exams_list {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#exams_list td {padding-left: .5ex; font-size: 9pt}
+table#exams_list tr.student_detail {margin: 1px;border-bottom: 1px solid #ddc;}
+table#exams_list th {text-align: left; padding-left: 15px;}
+table#exams_list td.smallerinfo {font-size: 9pt;text-align: center;}
+table#comission_list {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#comission_list td {padding-left: 15px; }
+table#comission_list tr.line { margin: 1px;border-bottom: 1px solid #ddc;}
+table#candidates_list {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#candidates_list tr.line {margin: 1px;border-bottom: 1px solid #ddc;}
+table#candidates_list td {padding-left: 15px; }
+table#atestation_table {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#atestation_table td {padding-left: 15px; font-size: 9pt;}
+table#atestation_table th {text-align: left; padding-left: 15px; font-size: 9pt;}
+table#atestation_table tr {margin: 1px;border-bottom: 1px solid #ddc;}
+table#tutors_table {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#tutors_table td {padding-left: .5ex; font-size: 9pt}
+table#tutors_table tr.line {margin: 1px;border-bottom: 1px solid #ddc;}
+table#diploma_table {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#diploma_table th {text-align: left; padding-left: .5ex; font-size: 9pt}
+table#diploma_table td {padding-left: .5ex; font-size: 9pt}
+table#diploma_table tr {margin: 1px;border-bottom: 1px solid #ddc;}
+table#coridors_table {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#coridors_table th {text-align: left; padding-left: .5ex; font-size: 9pt}
+table#coridors_table td {padding-left: .5ex; font-size: 9pt}
+table#coridors_table tr {margin: 1px;border-bottom: 1px solid #ddc;}
+table.subjects_table {border-collapse: collapse;table-layout: auto;width: 100%;}
+table.subjects_table th {text-align: left; padding-left: .5ex; font-size: 9pt}
+table.subjects_table td {padding-left: .5ex; font-size: 9pt}
+table.subjects_table tr {margin: 1px;border-bottom: 1px solid #ddc;}
+table#scholarship_table {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#scholarship_table th {text-align: left; padding-left: .5ex; font-size: 9pt}
+table#scholarship_table td {padding-left: .5ex; font-size: 9pt}
+table#scholarship_table tr {margin: 1px;border-bottom: 1px solid #ddc;}
+table#scholarship_table tr.extra_scholarships {margin: 1px;border-bottom: 1px solid #ddc; background-color: #EEEEEE}
+
 
 .smallerinfo a {background-color: #452; padding-right: 4px; padding-left: 2px; color: #fff;}
 .exam_detail {margin: 1px;padding-left: .5ex}

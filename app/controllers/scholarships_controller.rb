@@ -52,8 +52,10 @@ class ScholarshipsController < ApplicationController
   end
 
   def save
+    @edit = 0
     if params[:scholarship][:id] && !params[:scholarship][:id].empty?
       update
+      @edit = 1
     else
       create
     end
@@ -62,9 +64,9 @@ class ScholarshipsController < ApplicationController
       render(:partial => 'regular', :locals => {:index => @scholarship.index})
     else
       if @scholarship.save
-        render(:partial => 'index_line', :locals => {:index => @scholarship.index})
+         
       else
-        render(:action => 'add')
+        render(:action => 'unsaved', :locals => {:scholarship => @scholarship})
       end
     end
   end

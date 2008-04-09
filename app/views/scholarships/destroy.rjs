@@ -1,3 +1,3 @@
 page.replace_html("scholarship_#{@index.id}", 
-          "#{detail_link(@index)} #{@index.extra_scholarship_sum}")
-page.hide("extra_scholarship_#{@old_id}")
+          "#{detail_links(@index)} #{@index.extra_scholarship_sum}")
+page.remove("extra_scholarship_#{@old_id}")

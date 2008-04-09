@@ -1,0 +1,9 @@
+if @edit != 1
+#new scholarship
+        page.replace_html "scholarship_form_#{@scholarship.index.id}", render(:partial => 'add', :locals=>{:scholarship => @scholarship})
+        page.visual_effect :highlight, "scholarship_form_#{@scholarship.index.id}", :duration => 3
+else
+#edit scholarship
+        page.replace_html "extra_scholarship_#{@scholarship.id}", render(:partial => 'add', :locals=>{:scholarship => @scholarship, :scholarship_id => params[:scholarship_edit][:edit]})
+        page.visual_effect :highlight, "extra_scholarship_#{@scholarship.id}", :duration => 3
+end

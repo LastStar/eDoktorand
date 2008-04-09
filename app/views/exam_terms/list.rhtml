@@ -4,22 +4,40 @@
   <%= defense_terms_link %>
 </div>
 <% unless @exam_terms.empty? %>
-<ul>
+<table id='comission_list'>
+  <tbody>
 <% for exam_term in @exam_terms  %>
-  <li>
+<tr>
+    <td>
+    <b><%= exam_term.coridor.name %></b>
+    </td>
+<td rowspan = 4>
     <div class='right'>
       <%= link_to _('edit'), :action => 'edit', :id => exam_term %>
       <%= link_to _('candidates') + "(#{exam_term.coridor.approved_candidates.size})",
       :controller => 'candidates', :action => 'list_admission_ready', :coridor => exam_term.coridor ,:page => 1%>
       <%= link_to _('delete'), {:action => 'destroy', :id => exam_term}, :confirm => _('Are you sure to delete commission?') %>
     </div>
-    <b><%= exam_term.coridor.name %><br/></b>
-	  <%=_('date and time')%>: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %><br/>
-	  <%=_('room')%>: <%= exam_term.room %><br />
+</td>
+</tr>
+<tr>
+    <td>
+	  <%=_('date and time')%>: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %>
+    </td>
+</tr>
+<tr>
+    <td>
+	  <%=_('room')%>: <%= exam_term.room %>
+    </td>
+</tr>
+<tr class='line'>
+    <td>
 	  <%=_('chairman')%>: <%= exam_term.chairman.display_name %>
-  </li>
+    </td>
+</tr>
 <% end %>
-</ul>
+  </tbody>
+</table>
 <% else %>
 <h4><%=_('There are no commissions for application exams in the system')%></h4>
 <% end %>

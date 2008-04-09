@@ -1,14 +1,9 @@
-<% for scholarship in @scholarships  %>
-<tr id="extra_scholarship_<%= scholarship.id %>" style="background-color: #EEEEEE;" class="extra_scholarships_<%=index.id%>">
+<tr id='extra_scholarship_<%=scholarship.id %>' style="background-color: #EEEEEE;" class="extra_scholarships_<%=scholarship.index.id%>">
   <td/>
   <td/>
   <td/>
-
   <td>
-    <%= close_class_link("extra_scholarships",index.id) %>
-    <%if scholarship == index.extra_scholarships.last%>
-      <%= add_link(index) %>
-    <% end %>
+    <%= close_class_link("extra_scholarships",scholarship.index.id) %>
     <% if @user.has_role?('faculty_secretary') %>
       <%= remove_link(scholarship) %>
       <%= change_extra_link(scholarship,"extra_scholarship_#{scholarship.id}") %>
@@ -21,4 +16,3 @@
     <%= scholarship.amount %> <%= _('Kc') %>
   </td>
 </tr>
-<% end %>

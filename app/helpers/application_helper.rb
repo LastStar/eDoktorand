@@ -125,14 +125,11 @@ module ApplicationHelper
   # prints atestaion subject line wihch depends on finishing of the subject
   def atestation_subject_line(plan_subject, atestation_term)
     content = ''
-    if plan_subject.finished? && 
-      (plan_subject.finished_on <= atestation_term.to_time)
-      content << content_tag('div', 
-        plan_subject.finished_on.strftime('%d. %m. %Y'), :class => 'info')
+    if plan_subject.finished?
+      content << content_tag('div', plan_subject.finished_on.strftime('%d. %m. %Y'), :class => 'info')
       html_class = ''
     else
-      content << content_tag('div', "#{plan_subject.finishing_on}.
-      #{_('semester')}", :class => 'info')
+      content << content_tag('div', "#{plan_subject.finishing_on}. #{_('semester')}", :class => 'info')
       html_class = 'red'
     end
     content << plan_subject.subject.label

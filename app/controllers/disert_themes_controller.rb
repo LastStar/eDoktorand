@@ -27,6 +27,7 @@ include LoginSystem
     end
   end
   
+  # open file methodology in new window
   def file_clicked
     @disert_theme = DisertTheme.find(params[:id])
   end

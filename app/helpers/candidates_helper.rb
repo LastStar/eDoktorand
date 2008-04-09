@@ -5,6 +5,7 @@ module CandidatesHelper
       link_to(_("make ready"), :action => 'ready', :id => candidate)
     end
   end
+
   # admit link
   def admit_link(candidate)
     links = ''
@@ -18,6 +19,7 @@ module CandidatesHelper
       end
     end
   end
+
   # invite link
   def invite_link(candidate)
     if !candidate.invited? and candidate.ready? 
@@ -29,12 +31,14 @@ module CandidatesHelper
       end
     end
   end
+
   # enroll link
   def enroll_link(candidate)
     if !candidate.enrolled? and candidate.admited?
       link_to(_("enroll"), :action => 'enroll', :id => candidate) 
     end
   end
+
   # prints sorting tags
   def sort_tags(action, args, options = {})
     links = ''
@@ -50,6 +54,7 @@ module CandidatesHelper
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
+
   # prints ordered sorting tags
   def filtered_sort_tags(action, args, filtered_by, options = {})
     links = ''
@@ -65,6 +70,7 @@ module CandidatesHelper
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
+
   # prints sorting tags
   def filter_tags(action, args, options)
     links = '&nbsp;' + link_to(_("all"), :action => '')
@@ -74,6 +80,7 @@ module CandidatesHelper
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
+
   # prints list links
   def list_links
     links = ''
@@ -98,9 +105,6 @@ module CandidatesHelper
                                   'close_all_histories()')
         links << '&nbsp;'
       end
-      links << link_to(_("table"), {:prefix => 'table_', :coridor =>
-      params[:coridor], :filter => params[:filter], :category =>
-      params[:category]})
       links << '&nbsp;'
       unless @user.has_one_of_roles?(['board_chairman','department_secretary'])
         links << link_to(_("summary"), {:action => 'summary', :id => "department"})
@@ -123,6 +127,17 @@ module CandidatesHelper
       link_to _("admit_for_revocation"), {:action => 'admit_for_revocation', :id => candidate.id}
     end
   end
+
+  def contact_toggle_link(candidate)
+        link_to_function(_("contact"),
+                     "Element.toggle('contact#{candidate.id}')") 
+  end
+
+  def history_toggle_link(candidate)
+        link_to_function(_("history"),
+                     "Element.toggle('history#{candidate.id}')") 
+  end
+
 
   # prints status of the candidate
   def status_tag(candidate)
