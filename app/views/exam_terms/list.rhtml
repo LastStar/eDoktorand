@@ -15,7 +15,7 @@
     <div class='right'>
       <%= link_to _('edit'), :action => 'edit', :id => exam_term %>
       <%= link_to _('candidates') + "(#{exam_term.coridor.approved_candidates.size})",
-      :controller => 'candidates', :action => 'list_admission_ready', :coridor => exam_term.coridor ,:page => 1%>
+      :controller => 'candidates', :action => 'list_admission_ready', :coridor => exam_term.coridor ,:page => 1, :category => 'lastname'%>
       <%= link_to _('delete'), {:action => 'destroy', :id => exam_term}, :confirm => _('Are you sure to delete commission?') %>
     </div>
 </td>

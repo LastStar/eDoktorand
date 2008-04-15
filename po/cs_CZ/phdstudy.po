@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-04-02 12:21+0200\n"
+"POT-Creation-Date: 2008-04-10 15:17+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -134,33 +134,33 @@ msgstr "moji studující"
 msgid "Contacts"
 msgstr "Kontakty"
 
-#: app/controllers/candidates_controller.rb:65
+#: app/controllers/candidates_controller.rb:72
 msgid "Candidate was changed"
 msgstr "Uchazeč byl opraven"
 
-#: app/controllers/candidates_controller.rb:150
-#: app/controllers/candidates_controller.rb:181
-#: app/controllers/candidates_controller.rb:199
+#: app/controllers/candidates_controller.rb:157
+#: app/controllers/candidates_controller.rb:188
+#: app/controllers/candidates_controller.rb:206
 msgid "e-mail sent"
 msgstr "e-mail odeslán"
 
-#: app/controllers/candidates_controller.rb:162
+#: app/controllers/candidates_controller.rb:169
 msgid "Candidate "
 msgstr "Uchazeč "
 
-#: app/controllers/candidates_controller.rb:162
+#: app/controllers/candidates_controller.rb:169
 msgid " is ready for application form"
 msgstr " je připraven na příjimací zkoušky"
 
-#: app/controllers/candidates_controller.rb:216
+#: app/controllers/candidates_controller.rb:223
 msgid "Candidates"
 msgstr "Uchazeči o studium"
 
-#: app/controllers/candidates_controller.rb:217
+#: app/controllers/candidates_controller.rb:224
 msgid "previous"
 msgstr "předchozí stránka"
 
-#: app/controllers/candidates_controller.rb:218
+#: app/controllers/candidates_controller.rb:225
 msgid "next"
 msgstr "další stránka"
 
@@ -347,89 +347,130 @@ msgstr "pozvat"
 msgid "enroll"
 msgstr "zapsat"
 
+#: app/helpers/candidates_helper.rb:55
+#, fuzzy
+msgid "not set"
+msgstr "Filtr není nastaven"
+
+#: app/helpers/candidates_helper.rb:58
+msgid "by lastname up"
+msgstr "podle příjmení vzestupně"
+
+#: app/helpers/candidates_helper.rb:61
+msgid "by lastname down"
+msgstr "podle příjmení sestupně"
+
+#: app/helpers/candidates_helper.rb:64
+msgid "by coridor up"
+msgstr "podle oboru vzestupně"
+
+#: app/helpers/candidates_helper.rb:67
+msgid "by coridor down"
+msgstr "podle oboru sestupně"
+
 #: app/helpers/candidates_helper.rb:70
+msgid "by updated on up"
+msgstr "podle data změny vzestupně"
+
+#: app/helpers/candidates_helper.rb:73
+msgid "by updated on down"
+msgstr "podle data změny sestupně"
+
+#: app/helpers/candidates_helper.rb:76
+msgid "view paginated"
+msgstr "stránkování zapnuto"
+
+#: app/helpers/candidates_helper.rb:79
+msgid "view all"
+msgstr "stránkování vypnuto"
+
+#: app/helpers/candidates_helper.rb:83
+msgid "Filter is set to:"
+msgstr "Filtr je nastaven:"
+
+#: app/helpers/candidates_helper.rb:120
 msgid "all"
 msgstr "všichni"
 
-#: app/helpers/candidates_helper.rb:73
+#: app/helpers/candidates_helper.rb:123
 msgid "only "
 msgstr "jen "
 
-#: app/helpers/candidates_helper.rb:82 app/helpers/candidates_helper.rb:85
+#: app/helpers/candidates_helper.rb:132 app/helpers/candidates_helper.rb:135
 #: app/helpers/exams_helper.rb:8
 msgid "list"
 msgstr "seznam"
 
-#: app/helpers/candidates_helper.rb:89
+#: app/helpers/candidates_helper.rb:139
 msgid "show all contacts"
 msgstr "ukázat kontakty"
 
-#: app/helpers/candidates_helper.rb:91
+#: app/helpers/candidates_helper.rb:141
 msgid "hide all contacts"
 msgstr "skrýt kontakty"
 
-#: app/helpers/candidates_helper.rb:94
+#: app/helpers/candidates_helper.rb:144
 msgid "show all histories"
 msgstr "ukázat historii"
 
-#: app/helpers/candidates_helper.rb:97
+#: app/helpers/candidates_helper.rb:147
 msgid "hide all histories"
 msgstr "skrýt historii"
 
-#: app/helpers/candidates_helper.rb:101 app/helpers/exams_helper.rb:10
+#: app/helpers/candidates_helper.rb:151 app/helpers/exams_helper.rb:10
 msgid "table"
 msgstr "tabulka"
 
-#: app/helpers/candidates_helper.rb:106
+#: app/helpers/candidates_helper.rb:156
 msgid "summary"
 msgstr "sumarizace"
 
-#: app/helpers/candidates_helper.rb:116
+#: app/helpers/candidates_helper.rb:166
 msgid "By corridors"
 msgstr "podle oborů"
 
-#: app/helpers/candidates_helper.rb:116
+#: app/helpers/candidates_helper.rb:166
 msgid "By departments"
 msgstr "podle kateder"
 
-#: app/helpers/candidates_helper.rb:123
+#: app/helpers/candidates_helper.rb:173
 msgid "admit_for_revocation"
 msgstr "přijmout na odvolání"
 
-#: app/helpers/candidates_helper.rb:130
+#: app/helpers/candidates_helper.rb:180
 msgid "enrolled"
 msgstr "zapsán"
 
-#: app/helpers/candidates_helper.rb:132
+#: app/helpers/candidates_helper.rb:182
 msgid "not admitted"
 msgstr "nepřijmutí"
 
-#: app/helpers/candidates_helper.rb:134
+#: app/helpers/candidates_helper.rb:184
 msgid "admitted"
 msgstr "přijat"
 
-#: app/helpers/candidates_helper.rb:136 app/views/candidates/_history.rhtml:8
+#: app/helpers/candidates_helper.rb:186 app/views/candidates/_history.rhtml:8
 msgid "invited"
 msgstr "pozván"
 
-#: app/helpers/candidates_helper.rb:138 app/views/candidates/_history.rhtml:5
+#: app/helpers/candidates_helper.rb:188 app/views/candidates/_history.rhtml:5
 msgid "ready"
 msgstr "odsouhlasen"
 
-#: app/helpers/candidates_helper.rb:143 app/helpers/candidates_helper.rb:155
+#: app/helpers/candidates_helper.rb:193 app/helpers/candidates_helper.rb:205
 #: app/views/candidates/admit.rhtml:3
 msgid "admit"
 msgstr "přijmout"
 
-#: app/helpers/candidates_helper.rb:143
+#: app/helpers/candidates_helper.rb:193
 msgid "conditional admit"
 msgstr "podmínečně přijmout"
 
-#: app/helpers/candidates_helper.rb:143
+#: app/helpers/candidates_helper.rb:193
 msgid "not admit"
 msgstr "nepřijmout"
 
-#: app/helpers/candidates_helper.rb:147 app/helpers/candidates_helper.rb:151
+#: app/helpers/candidates_helper.rb:197 app/helpers/candidates_helper.rb:201
 #: app/helpers/exams_helper.rb:24
 #: app/views/probation_terms/_enrolled_students.rhtml:7
 #: app/views/exams/_detail_form.rhtml:41
@@ -437,7 +478,7 @@ msgstr "nepřijmout"
 msgid "not pass"
 msgstr "neprospěl"
 
-#: app/helpers/candidates_helper.rb:147 app/helpers/candidates_helper.rb:151
+#: app/helpers/candidates_helper.rb:197 app/helpers/candidates_helper.rb:201
 #: app/helpers/exams_helper.rb:24
 #: app/views/probation_terms/_enrolled_students.rhtml:7
 #: app/views/exams/_detail_form.rhtml:41
@@ -445,7 +486,7 @@ msgstr "neprospěl"
 msgid "pass"
 msgstr "prospěl"
 
-#: app/helpers/candidates_helper.rb:155
+#: app/helpers/candidates_helper.rb:205
 msgid "reject"
 msgstr "neschválit"
 
@@ -1763,31 +1804,39 @@ msgstr "r.č."
 msgid "corridor"
 msgstr "obor"
 
-#: app/views/candidates/list.rhtml:3
+#: app/views/candidates/list.rhtml:5
 msgid "by corridor"
 msgstr "podle oboru"
 
-#: app/views/candidates/list.rhtml:4
+#: app/views/candidates/list.rhtml:6
 msgid "by lastname"
 msgstr "podle příjmení"
 
-#: app/views/candidates/list.rhtml:4
+#: app/views/candidates/list.rhtml:6
 msgid "by modification"
 msgstr "podle data změny"
 
-#: app/views/candidates/list.rhtml:6
+#: app/views/candidates/list.rhtml:9
 msgid "filter"
 msgstr "filtrovat"
 
-#: app/views/candidates/list.rhtml:7
+#: app/views/candidates/list.rhtml:12 app/views/candidates/list.rhtml:15
+msgid "switch to all"
+msgstr "vypnout stránkování"
+
+#: app/views/candidates/list.rhtml:19 app/views/candidates/list.rhtml:21
 msgid "order"
 msgstr "seřaď"
 
-#: app/views/candidates/list.rhtml:8
+#: app/views/candidates/list.rhtml:26 app/views/candidates/list.rhtml:29
+msgid "switch to paginated"
+msgstr "zapnout stránkování"
+
+#: app/views/candidates/list.rhtml:32
 msgid "order all"
 msgstr "seřaď všechny"
 
-#: app/views/candidates/list.rhtml:20
+#: app/views/candidates/list.rhtml:47
 msgid "There are no candidates in your selection"
 msgstr "Není žádný uchazeč podle Vašeho výběru"
 

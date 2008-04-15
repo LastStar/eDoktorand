@@ -6,7 +6,7 @@ class CandidatesController < ApplicationController
   before_filter :prepare_user
   before_filter :prepare_faculty
   before_filter :set_title
-  before_filter :prepare_sort, :only => [:list, :list_all]
+  before_filter :prepare_sort, :only => [:list, :list_all, :list_admission_ready , :index]
 
 
   # lists all candidates
@@ -21,6 +21,7 @@ class CandidatesController < ApplicationController
 
   # lists all candidates
   def list
+    session[:list_mode] = 'list'
     @backward = false
     @filtered_by = params[:filter]
     session[:back_page] = 'list'
@@ -34,6 +35,7 @@ class CandidatesController < ApplicationController
 
   # lists all candidates ordered by category
   def list_all
+    session[:list_mode] = 'list_all'
     @backward = true
     session[:back_page] = 'list_all'
     @candidates = Candidate.find_all_finished_by_session_category(params, @faculty, session[:category])
@@ -43,7 +45,12 @@ class CandidatesController < ApplicationController
 
   # lists all candidates ordered by category
   def list_admission_ready
-    @candidates = Coridor.find(params[:coridor]).approved_candidates.paginate :page => params[:page], :per_page => 7, :order => 'lastname'
+     if params[:coridor]
+       session[:list_admission_ready] = params[:coridor]
+     end
+    session[:list_mode] = 'list'
+    @filtered_by = params[:category]
+    @candidates = Coridor.find(session[:list_admission_ready]).approved_candidates.paginate :page => params[:page], :per_page => 7, :order => session[:category]
     render(:action => :list)
   end
 
@@ -219,14 +226,18 @@ class CandidatesController < ApplicationController
   end
 
   def prepare_sort
-      if params[:category] && params[:page] == nil
+      if params[:category]
+        if params[:category] != session[:category]
+          session[:order] = ''
+        else if params[:page] == nil
+             session[:order] = session[:order] == ' desc' ? '' : ' desc'
+            end
+        end
         session[:category] = params[:category]
-        if params[:category] == session[:category]
-            session[:order] = session[:order] == ' desc' ? '' : ' desc'
-        else
-	  session[:order] = ''
-	end
-        session[:category] << session[:order]
+        if params[:page] == nil
+          session[:category] << session[:order]
+        end
       end
   end
+
 end

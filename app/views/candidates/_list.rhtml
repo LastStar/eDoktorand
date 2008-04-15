@@ -13,7 +13,7 @@
       <td>
         <b>
         <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
-            <%= ready_link(candidate) %>     
+            <%= ready_link(candidate) %>
             <%= invite_link(candidate) %>
             <%= admit_link(candidate) %>
             <%= enroll_link(candidate) %>
@@ -50,12 +50,12 @@
     </tr>
     <tr>
       <td class='detail' id='contact<%= candidate.id %>' style='display: none;'>
-        <%= render(:partial => "contact", :candidate => candidate) %>
+        <%= render(:partial => "contact", :locals => {:candidate => candidate}) %>
       </td>
     </tr>
     <tr>
       <td class='detail' id='history<%= candidate.id %>' style='display: none;'>
-        <%= render(:partial => "history", :candidate => candidate) %>
+        <%= render(:partial => "history", :locals => {:candidate => candidate}) %>
       </td>
     </tr>
     <tr class='line'></tr>

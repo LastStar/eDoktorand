@@ -2,10 +2,35 @@
 <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
   <% sort_array = [['coridor_id', _("by corridor")], ['lastname',
   _("by lastname")], ['updated_on', _("by modification")]] %>
-  <%= filter_tags(:list, ['unready', 'ready', 'invited', 'admited', 'enrolled'],
-                  :message => _("filter"))  %>
-  <%= filtered_sort_tags(:list, sort_array, @filtered_by, :message => _("order")) %>
-  <%= sort_tags(:list_all, sort_array, :message => _("order all")) %>
+  <% if params[:action] != 'list_admission_ready'%>
+    <%= filter_tags(:list, ['unready', 'ready', 'invited', 'admited', 'enrolled'],
+                      :message => _("filter"))  %>
+  <% end %>  
+  <% if session[:list_mode] == 'list' %>
+    <%message = _('switch to all')%>
+     <div id='list'>
+  <% else %>
+    <%message = _('switch to all')%>
+    <div id='list' style='display: none'>   
+  <%end%>
+  <% if params[:action] == 'list_admission_ready'%>
+    <%= filtered_sort_tags(:list_admission_ready, sort_array, @filtered_by, :message => _("order")) %>    
+  <% else %>
+    <%= filtered_sort_tags(:list, sort_array, @filtered_by, :message => switch_button_all(message) +" "+ _("order") + "" ) %>
+  <%end%>
+  </div>
+  <% if params[:action] != 'list_admission_ready'%>
+    <% if session[:list_mode] == 'list' %>
+      <%message = _('switch to paginated')%>
+      <div id='list_all' style='display: none'>
+    <% else %>
+      <%message = _('switch to paginated')%>
+      <div id='list_all'>
+    <%end%>   
+      <%= sort_tags(:list_all, sort_array, :message => switch_button(message) +" "+_("order all")) %>
+    </div>
+  <% end %>
+  <%= view_filter_settings('filter_view') %>
 <% end %>
 <% unless @candidates.empty? %>
   <%= render(:partial => 'list') %>

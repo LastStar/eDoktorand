@@ -39,6 +39,49 @@ module CandidatesHelper
     end
   end
 
+  def switch_button_all(message)
+    link_to_function(message, "Element.show('list_all'); Element.hide('list')")
+  end
+
+  def switch_button(message)
+    link_to_function(message, "Element.show('list'); Element.hide('list_all')")
+  end
+
+  def view_filter_settings(div_id)
+    
+      filter_set = _('not set')
+      category = ''
+      if session[:category] == 'lastname'
+        category = _('by lastname up')
+      end
+      if session[:category] == 'lastname desc'
+        category = _('by lastname down')
+      end
+      if session[:category] == 'coridor_id'
+        category = _('by coridor up')
+      end
+      if session[:category] == 'coridor_id desc'
+        category = _('by coridor down')
+      end
+      if session[:category] == 'updated_on'
+        category = _('by updated on up')
+      end
+      if session[:category] == 'updated_on desc'
+        category = _('by updated on down')
+      end
+    if session[:list_mode] == 'list'
+      filter_set = _('view paginated') + ', ' + category
+    end
+    if session[:list_mode] == 'list_all'
+      filter_set = _('view all') + ', ' + category
+    end
+    
+    '<div id ="' + div_id + '" class="links">' +
+     _('Filter is set to:') + ' ' + filter_set +
+    '</div>'
+    
+  end
+
   # prints sorting tags
   def sort_tags(action, args, options = {})
     links = ''
@@ -52,7 +95,7 @@ module CandidatesHelper
       links << link_to(link, :action => action, :category => arg.first, 
       :prefix => params[:prefix])
     end
-    content_tag('div', options[:message] + links, :class => :links)
+    content_tag('div', options[:message] + links, :class => :links, :id=> 'list_all_links')
   end
 
   # prints ordered sorting tags
@@ -68,7 +111,7 @@ module CandidatesHelper
       links << link_to(link, :action => action, :filter => filtered_by, 
         :category => arg.first, :prefix => params[:prefix])
     end
-    content_tag('div', options[:message] + links, :class => :links)
+    content_tag('div', options[:message] + links, :class => :links, :id=> 'list_links')
   end
 
   # prints sorting tags

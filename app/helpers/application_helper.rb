@@ -174,7 +174,7 @@ module ApplicationHelper
       if @user.has_role?('examinator')
         links << link_to_unless_current(_("exams"), :controller => 'exams'){}
       elsif @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
-          links << link_to_unless_current(_("candidates"), :controller => 'candidates'){} 
+          links << link_to_unless_current(_("candidates"), :controller => 'candidates', :category => 'lastname'){} 
           links << link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} 
           links << link_to_unless_current(_("exams"), :controller => 'exams'){}
           links << prepare_scholarship_link
@@ -183,10 +183,10 @@ module ApplicationHelper
           links << link_to_unless_current(_('coridors'), :controller => 'coridors') {}
       elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
         if @user.has_role?('board_chairman')
-          links << link_to_unless_current(_("candidates"), :controller => 'candidates'){}
+          links << link_to_unless_current(_("candidates"), :controller => 'candidates', :category => 'lastname'){}
         end
         if @user.has_role?('department_secretary')
-          links << link_to_unless_current(_("candidates"), :controller => 'candidates', :action => 'list'){} 
+          links << link_to_unless_current(_("candidates"), :controller => 'candidates', :action => 'list', :category => 'lastname'){} 
           links << prepare_scholarship_link
         end
         links << link_to_unless_current(_("probation terms"), 
