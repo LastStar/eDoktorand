@@ -26,7 +26,7 @@
 <% end %>
 
 <td id='scholarship_<%= index.id %>'>
-<% if index.has_extra_scholarships? %>
+<% if index.has_extra_scholarship? %>
     <%= detail_links(index) %>
     <%= index.extra_scholarship_sum %> <%= _('Kc') %>
 <% else %>
