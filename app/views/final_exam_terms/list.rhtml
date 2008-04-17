@@ -7,7 +7,7 @@
 <ul>
   <%= render(:partial => 'term_line', :collection => @final_exam_terms) %>
 </ul>
-<% if @final_exam_terms != nil%>
+<% if @final_exam_terms != []%>
   <%= submit_tag _('print invitation letter') %>
 <% end %>
 <% end %>
