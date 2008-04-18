@@ -316,8 +316,9 @@ class CSVExporter
   end
 
   def self.export_for_board(coridor)
-    outfile = File.open('students.csv', 'wb')
     coridor = coridor.id if coridor.is_a? Coridor
+    filename = "students_%i.csv" % coridor
+    outfile = File.open(filename, 'wb')
     indices = Index.find(:all, :conditions => ['finished_on is null and coridor_id = ?', coridor])
     indices.sort {|x,y| x.year <=> y.year}
     CSV::Writer.generate(outfile) do |csv|
