@@ -14,14 +14,14 @@ class ProbationTerm < ActiveRecord::Base
   
   def validate
 
-    unless (buffer = start_time).empty?
+    if !(buffer = start_time).empty? && buffer =~ /[0-9]{1,2}:[0-9]{1,2}/
       hours = (buffer.at(0) + buffer.at(1)).to_i
       minutes = (buffer.at(3) + buffer.at(4)).to_i
       if hours > 23 || minutes > 59
         errors.add(:start_time, _("Wrong format of time - hh:mm"))
       end
     else
-      errors.add(:start_time, _("Start time must be there"))
+      errors.add(:start_time, _("Wrong format of time - hh:mm"))
     end
   end
 
