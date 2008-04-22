@@ -3,32 +3,41 @@
   <% sort_array = [['coridor_id', _("by corridor")], ['lastname',
   _("by lastname")], ['updated_on', _("by modification")]] %>
   <% if params[:action] != 'list_admission_ready'%>
-    <%= filter_tags(:list, ['unready', 'ready', 'invited', 'admited', 'enrolled'],
+    <% titles = [_('paginated list of unready candidates is displayed after click'),_('paginated list of ready candidates is displayed after click'),_('paginated list of invited candidates is displayed after click'),_('paginated list of admited candidates is displayed after click'),_('paginated list of enrolled candidates is displayed after click')]%>
+    <%= filter_tags(:list, ['unready', 'ready', 'invited', 'admited', 'enrolled'], titles,
                       :message => _("filter"))  %>
   <% end %>  
   <% if session[:list_mode] == 'list' %>
-    <%message = _('switch to all')%>
+    <%message = image_tag("pages.png")%>
      <div id='list'>
   <% else %>
-    <%message = _('switch to all')%>
+    <%message = image_tag("pages.png")%>
     <div id='list' style='display: none'>   
   <%end%>
+  <%titles = [_('paginated list sorted by coridor is displayed after click'),_('paginated list sorted by lastname is displayed after click'),
+              _('paginated list sorted by updated on is displayed after click')]%>
   <% if params[:action] == 'list_admission_ready'%>
-    <%= filtered_sort_tags(:list_admission_ready, sort_array, @filtered_by, :message => _("order")) %>    
+    <%= filtered_sort_tags(:list_admission_ready, sort_array, @filtered_by, titles, :message => _("order")) %>    
   <% else %>
-    <%= filtered_sort_tags(:list, sort_array, @filtered_by, :message => switch_button_all(message) +" "+ _("order") + "" ) %>
+    <%= filtered_sort_tags(:list, sort_array, @filtered_by, titles,
+                           :message => _("order") + " <span title='"+ _('switch off paginating after click on one way of sorting') + "'>" +
+                           switch_button_all(message) +"</span> ") %>
   <%end%>
-  </div>
+    </div>
+  <%titles = [_('list on 1 page sorted by coridor is displayed after click'),_('list on 1 page sorted by lastname is displayed after click'),
+              _('list on 1 page sorted by updated on is displayed after click')]%>
   <% if params[:action] != 'list_admission_ready'%>
     <% if session[:list_mode] == 'list' %>
-      <%message = _('switch to paginated')%>
+      <%message = image_tag("page.png")%>
       <div id='list_all' style='display: none'>
     <% else %>
-      <%message = _('switch to paginated')%>
+      <%message = image_tag("page.png")%>
       <div id='list_all'>
     <%end%>   
-      <%= sort_tags(:list_all, sort_array, :message => switch_button(message) +" "+_("order all")) %>
-    </div>
+        <%= sort_tags(:list_all, sort_array, titles, :message => _("order all") + " <span title='"+
+                      _('switch on paginating after click on one way of sorting') +
+                      "'>"  + switch_button(message) +"</span> ") %>
+      </div>
   <% end %>
   <%= view_filter_settings('filter_view') %>
 <% end %>

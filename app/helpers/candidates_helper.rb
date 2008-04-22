@@ -83,15 +83,17 @@ module CandidatesHelper
   end
 
   # prints sorting tags
-  def sort_tags(action, args, options = {})
+  def sort_tags(action, args, titles, options = {})
     links = ''
+    i = 0
     for arg in args
       links << '&nbsp;'
       if session[:category] == arg.first 
-        link = arg.last + (session[:order] != ' desc' ? ' &darr;' : ' &uarr;')
+        link = "<span title='"+titles[i] +"'>" + arg.last + (session[:order] != " desc" ? " &darr;" : " &uarr;") + "</span>"
       else
-        link = arg.last + ' &uarr;'
+        link = "<span title='"+titles[i] +"'>" + arg.last + " &uarr;" + "</span>"
       end
+      i = i + 1
       links << link_to(link, :action => action, :category => arg.first, 
       :prefix => params[:prefix])
     end
@@ -99,15 +101,17 @@ module CandidatesHelper
   end
 
   # prints ordered sorting tags
-  def filtered_sort_tags(action, args, filtered_by, options = {})
+  def filtered_sort_tags(action, args, filtered_by, titles, options = {})
     links = ''
+    i = 0
     for arg in args
       links << '&nbsp;'
       if session[:category] == arg.first 
-        link = arg.last + (session[:order] != ' desc' ? ' &darr;' : ' &uarr;')
+        link = "<span title='"+titles[i] +"'>" + arg.last + (session[:order] != " desc" ? " &darr;" : " &uarr;") + "</span>"
       else
-        link = arg.last + ' &uarr;'
+        link = "<span title='"+titles[i] +"'>" +arg.last + " &uarr;" + "</span>"
       end
+      i = i + 1
       links << link_to(link, :action => action, :filter => filtered_by, 
         :category => arg.first, :prefix => params[:prefix])
     end
@@ -115,11 +119,13 @@ module CandidatesHelper
   end
 
   # prints sorting tags
-  def filter_tags(action, args, options)
-    links = '&nbsp;' + link_to(_("all"), :action => '')
+  def filter_tags(action, args, titles, options)
+    links = '&nbsp;' + link_to("<span title='"+_('paginated list of all candidates is displayed after click')+"'>"+_("all")+"</span>", :action => '')
+    i = 0
     for arg in args
       links << '&nbsp;'
-      links << link_to(_("only " + arg), :action => action, :filter => arg)
+      links << link_to("<span title='"+ titles[i] +"'>" + _("only " + arg) + "</span>", :action => action, :filter => arg)
+      i = i+1;
     end
     content_tag('div', options[:message] + links, :class => :links)
   end
