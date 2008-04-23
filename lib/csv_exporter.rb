@@ -8,11 +8,10 @@ class CSVExporter
   @@mylog.outputters = Outputter.stdout
   @@mylog.level = 1
 
-  def self.export_social_stipendia(file = 'stipendia.csv', faculty = nil)
+  def self.export_social_stipendia(start = TermsCalculator.this_year_start,  file = 'stipendia.csv', faculty = nil)
     outfile = File.open(file, 'wb')
     students = Student.find(:all, 
-                            :conditions => ['scholarship_claimed_at > ?',
-                                            TermsCalculator.this_year_start])
+                            :conditions => ['scholarship_claimed_at > ?', start])
     students.delete_if {|s| s.faculty.id != faculty} if faculty 
     CSV::Writer.generate(outfile, ';') do |csv|
       csv << ['sident', 'claimed_at', 'supervised_at'] 

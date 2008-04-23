@@ -17,15 +17,14 @@ module CoridorsHelper
   end
 
   def show_result(result)
-    value = _('canceled')
-    if result == 1
-      value = _('approved')
-    else
-      if result == 3
-        value = _('approved with earfull')
-      end
+    case result
+    when 0
+      return _('canceled')
+    when 1
+      return _('approved')
+    when 2
+      return _('approved with earfull')
     end
-    value
   end
 
 end
