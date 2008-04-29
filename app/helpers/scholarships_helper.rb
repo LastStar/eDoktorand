@@ -10,9 +10,10 @@ module ScholarshipsHelper
   end
 
   def detail_links(index)
+    scholarships = ExtraScholarship.find_all_unpayed_by_index(index.id)
     link_to_function(image_tag('open.png')) do |page|
       page.insert_html :after, "index_#{index.id}",
-      render(:partial => 'detail', :locals=>{:scholarships => scholarships = ExtraScholarship.find_all_unpayed_by_index(index.id), :index => index})
+        render(:partial => 'detail', :locals => {:scholarships => scholarships, :index => index})
     end
   end
 
