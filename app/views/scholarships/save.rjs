@@ -1,7 +1,7 @@
-        page.hide "scholarship_form_#{@scholarship.index.id}"
-    page.replace "index_#{@scholarship.index.id}", render(:partial => 'index_line', :locals=>{:index => @scholarship.index})
-    if params[:scholarship_edit]
-      page.replace "#{params[:scholarship_edit][:edit]}", render(:partial => 'scholarship_line', :locals=>{:scholarship => @scholarship})
-    else
-      page.insert_html :after, "index_#{@scholarship.index.id}", render(:partial => 'scholarship_line', :locals=>{:scholarship => @scholarship}) 
-    end
+page.hide "scholarship_form_#{@scholarship.index.id}"
+page.replace "index_#{@scholarship.index.id}", render(:partial => 'index_line', :locals=>{:index => @scholarship.index})
+if params[:scholarship_edit]
+  page.replace "#{params[:scholarship_edit][:edit]}", render(:partial => 'scholarship_line', :locals=>{:scholarship => @scholarship})
+else
+  page.insert_html :after, "index_#{@scholarship.index.id}", render(:partial => 'scholarship_line', :locals=>{:scholarship => @scholarship}) 
+end

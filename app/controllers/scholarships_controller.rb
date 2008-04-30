@@ -63,9 +63,7 @@ class ScholarshipsController < ApplicationController
       @scholarship.save
       render(:partial => 'regular', :locals => {:index => @scholarship.index})
     else
-      if @scholarship.save
-         
-      else
+      unless @scholarship.save
         render(:action => 'unsaved', :locals => {:scholarship => @scholarship})
       end
     end
