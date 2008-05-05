@@ -59,7 +59,7 @@ module ScholarshipsHelper
 
   def pay_link
     if @user.has_role?('supervisor') && 
-      (ScholarshipApprovement.all_approved? || !Scholarship.prepare_time?)
+      (ScholarshipApprovement.all_approved?)
       link_to(_('pay'), {:action => 'pay'}, 
         :confirm => _('Are you sure to pay all scholarships. Operation is irreversible'))
     end

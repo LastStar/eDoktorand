@@ -61,10 +61,6 @@ class Scholarship < ActiveRecord::Base
     update_attribute('approved_on',Time.now)
   end
   
-  def self.prepare_time?
-    !(5..11).include? Date.today.day
-  end
-
   def short_code
     index.faculty.stipendia_code.to_s[0,2]
   end
