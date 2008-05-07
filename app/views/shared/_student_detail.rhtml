@@ -13,8 +13,10 @@
 <%= render :partial => 'shared/address_detail', :locals => {:student => index.student} %>
 <% end %>
 <%= render :partial => 'shared/study_detail', :locals => {:index => index} %>
+<% unless @user.has_role?('student') %>
 <div class='links'>
   <div class='left'><%= back_to_list index %></div>
   <div><%= back_and_remove_from_list index %></div>
 </div>
+<% end %>
 </div>

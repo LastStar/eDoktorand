@@ -508,6 +508,8 @@ table#comission_list tr.line { margin: 1px;border-bottom: 1px solid #ddc;}
 table#candidates_list {border-collapse: collapse;table-layout: auto;width: 100%;}
 table#candidates_list tr.line {margin: 1px;border-bottom: 1px solid #ddc;}
 table#candidates_list td {padding-left: 15px; }
+table#candidates_list td.contact {color:#666666; font-size:9pt; margin:0px;}
+table#candidates_list td.history {color:#666666; font-size:9pt; margin:0px;}
 table#atestation_table {border-collapse: collapse;table-layout: auto;width: 100%;}
 table#atestation_table td {padding-left: 15px; font-size: 9pt;}
 table#atestation_table th {text-align: left; padding-left: 15px; font-size: 9pt;}
