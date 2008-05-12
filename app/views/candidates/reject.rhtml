@@ -11,21 +11,35 @@
 <% end %>
 <br/> 
 <br/>
+<p class='rightAlign'>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
 
-<p><%= @candidate.genderize("Vážený pane/Vážená paní","Vážený pane","Vážená paní") %>,</p>
+<h2>Rozhodnutí o výsledku přijímacího řízení</h2>
+<p>Podle § 50, odst. 2, zákona č. 111/98 Sb. o vysokých školách Vás</p>
 
-<p>po projednání Vaší přihlášky ke studiu v doktorském oboru <%= @candidate.coridor.name %>
-na <%= @faculty.short_name %> ČZU v Praze Vám sděluji, že jste
-<strong><%= @candidate.genderize("nebyl/a","nebyl","nebyla") %></strong>
-ke studiu <%= @candidate.genderize("přijat/a","přijat","přijata") %>.</p>
-
+<h2>nepřijímám</h2>
 <p>
-Proti tomuto rozhodnutí je možno podat odvolání k rukám <%= @faculty.id==2 ? "ředitele" : "děkana" %> <%= @faculty.short_name%>
-ČZU v Praze do 30&nbsp;dnů ode dne doručení.
-<br/>
-<p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
-<div style='float: right'><%= @faculty.dean.display_name %><br/>
-<%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</div>
+od akademického roku <%= TermsCalculator.this_year %> ke studiu v doktorském
+studijním programu na&nbsp;<%= @faculty.short_name %> ČZU v Praze.
+</p>
+
+<h2>Odůvodnění:</h2>
+<p>
+Po posouzení výsledků přijímacího řízení a zhodnocení Vašich předpokladů
+pro studium v DSP přijímací komise doporučila dát přednost uchazečům
+s lepšími výsledky. 
+</p>
+
+<h2>Poučení:</h2>
+<p>
+Žádost o přezkoumání tohoto rozhodnutí podle § 50, odst. 7,
+zákona č. 111/98 Sb. můžete podat písemně k děkanovi PEF
+prostřednictvím odd. pro vědeckou a výzkumnou činnost,
+a to do 30 dnů ode dne doručení.
+</p>
+
+<p class='rightAlign'>
+<%= @faculty.dean.display_name %><br/>
+<%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU
 </p>
 <br/>
 <br/>
@@ -34,11 +48,12 @@ Proti tomuto rozhodnutí je možno podat odvolání k rukám <%= @faculty.id==2 
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
 	<% if @user %>
-	<%= link_to 'zpět', :action => 'list'%>
-	<% unless @candidate.admited? %>
-	<span id='mailLink'><%= link_to_remote 'odešli mail s dekretem o
-    nepřijetí', :update => 'mailLink', :url => {:action => 'reject_now', :id => @candidate.id} %></span>
-	<% end %>
+    <%= link_to _('back'), :action => 'list'%>
+    <% unless @candidate.admited? %>
+    <span id='mailLink'>
+      <%= link_to_remote 'odešli mail s dekretem o nepřijetí', :update => 'mailLink', :url => {:action => 'reject_now', :id => @candidate.id} %>
+    </span>
+    <% end %>
 	<% end %>
 </div>
 <script type="text/javascript">window.print()</script>
