@@ -176,8 +176,10 @@ module StudentsHelper
   def student_exception(index)
     tags = []
     if index.status == _('FE passed')
-      if index.defense_invitation_sent?
-          tags << "<span title='" + _('approved form of defence') + "'>so</span>"
+      if index.defense_claimed?
+        tags <<  "<span title='" + _('claimed for defence') + "'>po</span>"
+      elsif index.defense_invitation_sent?
+        tags << "<span title='" + _('approved form of defence') + "'>so</span>"
       end
     else
       unless index.status == _('absolved') || index.status == _('finished')
