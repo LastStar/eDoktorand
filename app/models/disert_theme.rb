@@ -69,8 +69,8 @@ class DisertTheme < ActiveRecord::Base
   def set_actual
     if old_actual = DisertTheme.find_by_index_id_and_actual(self.index.id, 1)
       if has_methodology?
-        FileUtils.cp("#{RAILS_ROOT}/public/pdf/methodology/#{old_actual}.pdf",
-                     "#{RAILS_ROOT}/public/pdf/methodology/temp_#{index.id}.pdf")
+        FileUtils.cp("#{RAILS_ROOT}/public/pdf/methodology/#{old_actual.id}.pdf",
+                     "#{RAILS_ROOT}/public/pdf/methodology/temp_#{self.index.id}.pdf")
       end
       old_actual.update_attribute(:actual, 0)
     end
@@ -79,7 +79,7 @@ class DisertTheme < ActiveRecord::Base
 
   def copy_methodology
     if has_methodology?
-      FileUtils.mv("#{RAILS_ROOT}/public/pdf/methodology/temp_#{index.id}.pdf",
+      FileUtils.mv("#{RAILS_ROOT}/public/pdf/methodology/temp_#{self.index.id}.pdf",
                    "#{RAILS_ROOT}/public/pdf/methodology/#{self.id}.pdf")
     end
 

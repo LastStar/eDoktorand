@@ -50,6 +50,11 @@
 <label for="candidate_study_id"><%= _("term of disert theme defense") %></label>
 <%= select 'disert_theme', 'finishing_to', 1..6 %>
 </li>
+<% if @disert_theme.has_methodology?%>
+<li>
+  <label for="methodology_added_on"> <%=_('Methodology added on:')%> <%=text_field 'disert_theme', 'methodology_added_on', 'size' => 65, 'readonly' => 'readonly' %> </label>
+</li>
+<% end %>
 <li>
 <label for="disert_theme_methodology_summary"><%= _("methodology summary") %>:</label>
 <textarea name='disert_theme[methodology_summary]'
