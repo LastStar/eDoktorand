@@ -66,7 +66,10 @@
     <%= render(:partial => 'shared/interupt', :collection => ints) %>
   </ul>
 <% end %>
- 
+
+<%# this is hot fix for fill approvement if someone approve changed studyplan%>
+<%index.waits_for_statement?(@user)%> 
+
 <% if study_plan ||= index.study_plan %>
   <% if study_plan.atestation  %>
     <h5><%= _("last atestation:") %></h5>
@@ -75,6 +78,8 @@
       <%= atestation_detail(study_plan) %>
     </ul>
   <% end %>
+  
+ 
 
   <% if index.defense_claimed? %>
     <h5><%= _("defense approvement process") %></h5>
