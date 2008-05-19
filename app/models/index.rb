@@ -73,7 +73,11 @@ class Index < ActiveRecord::Base
     if @semester
       return @semester
     else
-      time = Time.now - enrolled_on
+      if finished?
+        time = finished_on - enrolled_on
+      else
+        time = Time.now - enrolled_on
+      end
       if self.interupt 
         time -= interrupted_time
       end

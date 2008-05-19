@@ -65,7 +65,17 @@ class CSVExporter
         indices.each do |ind|
           row = []
           format.each do |meth|
-            row << ind.send(meth)
+            if ind.respond_to? meth
+              row << ind.send(meth)
+            elsif ind.student.respond_to? meth
+              row << ind.student.send(meth)
+            else
+              if ind.student.user
+                row << ind.student.user.send(meth)
+              else
+                row << 'no user'
+              end
+            end
           end
           csv << row
         end

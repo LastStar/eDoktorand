@@ -6,7 +6,7 @@ class ParametersController < ApplicationController
   end
 
   def list
-    @parameter_pages, @parameters = paginate :parameters, :per_page => 10
+    @parameters = Parameter.find(:all)
   end
 
   def show
