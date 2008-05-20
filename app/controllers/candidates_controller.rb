@@ -154,7 +154,7 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.find(params[:id])
     Notifications::deliver_admit_candidate(@candidate, session[:conditional])
     @candidate.admit!
-    render_text _('e-mail sent')
+    render(:text => _('e-mail sent'))
   end
 
   # finishes admittance
@@ -185,7 +185,7 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.find(params[:id])
     @candidate.invite!
     Notifications::deliver_invite_candidate(@candidate, @faculty, Time.now)
-    render_text _('e-mail sent')
+    render(:text => _('e-mail sent'))
   end
 
   # shows invitation for candidate
@@ -203,7 +203,7 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.find(params[:id])
     @candidate.reject!
 		Notifications::deliver_reject_candidate(@candidate)
-		render_text _('e-mail sent')
+    render(:text => _('e-mail sent'))
   end
 
   # summary method for candidates
