@@ -6,7 +6,22 @@
   <div><%= back_and_remove_from_list index %></div>
 </div>
 <% end %>
-
+<%@links = student_action_links(index)%>
+<% unless @user.has_role?('student')%>
+  <% if @links != [] %>
+    <div class='links'>
+      <div class="left">
+        <%=_('Action')%>:
+      </div>
+      <%= @links.join("&nbsp;&nbsp;") %>
+    </div>
+    <div  style="padding-left: 13px">
+      <li>
+        <div id='index_form_<%=index.id%>'>&nbsp;</div>
+      </li>
+    </div>
+  <%end%>
+<%end%>
 <%= render(:partial => 'shared/personal_detail', :locals => {:index => index}) %>
 <% if index.student.address || @user.has_role?('student')%>
 <h5><%= _("Contact details") %></h5>

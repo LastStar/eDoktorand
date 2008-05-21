@@ -343,11 +343,15 @@ module StudentsHelper
   end
 
   def study_plan_link(index)
-    link_to_remote(_('study plan'),
-                   :url => {:action => :show,
-                           :controller => :study_plans,
-                           :id => index},
-                   :update => "index_detail_#{index.id}_tr")
+    if params[:controller] == 'students' && params[:action] == 'show'
+    " <a href='#shortcut_study_plan'>" + _('study plan') + "</a>"
+    else
+      link_to_remote(_('study plan'),
+                     :url => {:action => :show,
+                             :controller => :study_plans,
+                             :id => index},
+                     :update => "index_detail_#{index.id}_tr")
+    end
   end
 
   def filter_links(filters) 

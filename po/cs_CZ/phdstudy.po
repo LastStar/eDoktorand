@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-05-14 11:01+0200\n"
+"POT-Creation-Date: 2008-05-19 16:41+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -25,7 +25,7 @@ msgid "List of admittance terms"
 msgstr "Výpis komisí příjímacích komisí"
 
 #: app/controllers/study_plans_controller.rb:9
-#: app/views/shared/_study_detail.rhtml:100
+#: app/views/shared/_study_detail.rhtml:101
 #: app/views/study_plans/_create_done.rhtml:1
 #: app/views/study_plans/create_by_other.rhtml:12
 #: app/views/study_plans/_create_head.rhtml:1
@@ -1786,12 +1786,12 @@ msgid "This study last interupt"
 msgstr "Poslední přerušení tohoto studia"
 
 #: app/views/interupts/print_interupt.rhtml:53
-#: app/views/shared/_study_detail.rhtml:74
+#: app/views/shared/_study_detail.rhtml:75
 msgid "last atestation:"
 msgstr "poslední atestace"
 
 #: app/views/interupts/print_interupt.rhtml:59
-#: app/views/shared/_study_detail.rhtml:94
+#: app/views/shared/_study_detail.rhtml:95
 msgid "study plan approvement process"
 msgstr "Schvalovací proces studijního plánu"
 
@@ -2370,23 +2370,23 @@ msgstr "změněn studijní plán"
 msgid "Other interupts"
 msgstr "Předchozí přerušení"
 
-#: app/views/shared/_study_detail.rhtml:84
+#: app/views/shared/_study_detail.rhtml:85
 msgid "defense approvement process"
 msgstr "Schvalovací proces obhajoby"
 
-#: app/views/shared/_study_detail.rhtml:89
+#: app/views/shared/_study_detail.rhtml:90
 msgid "final exam approvement process"
 msgstr "Schvalovací proces SDZ"
 
-#: app/views/shared/_study_detail.rhtml:111
+#: app/views/shared/_study_detail.rhtml:112
 msgid "canceled on"
 msgstr "neschváleno dne"
 
-#: app/views/shared/_study_detail.rhtml:117
+#: app/views/shared/_study_detail.rhtml:118
 msgid "approved on"
 msgstr "schválen dne"
 
-#: app/views/shared/_study_detail.rhtml:122
+#: app/views/shared/_study_detail.rhtml:123
 #: app/views/study_plans/_full_form.rhtml:5
 msgid "subjects"
 msgstr "Předměty"
@@ -2459,6 +2459,10 @@ msgid "Personal and study details"
 msgstr "Osobní a studijní údaje"
 
 #: app/views/shared/_student_detail.rhtml:12
+msgid "Action"
+msgstr "Akce"
+
+#: app/views/shared/_student_detail.rhtml:23
 msgid "Contact details"
 msgstr "Kontaktní údaje"
 
