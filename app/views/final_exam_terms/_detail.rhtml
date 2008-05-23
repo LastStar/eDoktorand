@@ -30,8 +30,8 @@
 </tr>
 <% end %>
 <tr>
-  <th><%= _('Literature review') %>:</th>
-  <td><%= index.disert_theme.literature_review %></td>
+  <th style='width: 25ex;'><%= _('Literature review') %>:</th>
+  <td style='width: 45ex;'><%= index.disert_theme.literature_review %></td>
 </tr>
 <tr>
   <th><%= _('Chairman') %>: </th>
@@ -44,41 +44,38 @@
 </tr>
 <% end %>
 </table>
-<table class='three-columns'>
+<table class='two-columns'>
 <tr>
-  <th><%= _('Members') %>: </th>
+  <th colspan='2'><%= _('Members') %>: </th>
+</tr>
+<tr>
   <td><%= exam_term.first_examinator %></td>
   <td><%= exam_term.first_subject %></td>
 </tr>
 <tr>
-  <th></th>
   <td><%= exam_term.second_examinator %> </td> 
   <td><%= exam_term.second_subject %></td>
 </tr>
 <% unless exam_term.third_examinator.empty? %>
 <tr>
-  <th></th>
   <td><%= exam_term.third_examinator %> </td> 
   <td><%= exam_term.third_subject %></td>
 </tr>
 <% end %>
 <% unless exam_term.fourth_examinator.empty? %>
 <tr>
-  <th></th>
   <td><%= exam_term.fourth_examinator %> </td> 
   <td><%= exam_term.fourth_subject %></td>
 </tr>
 <% end %>
 <% unless exam_term.fifth_examinator.empty? %>
 <tr>
-  <th></th>
   <td><%= exam_term.fifth_examinator %> </td> 
   <td><%= exam_term.fifth_subject %></td>
 </tr>
 <% end %>
 <% unless exam_term.sixth_examinator.empty? %>
 <tr>
-  <th></th>
   <td><%= exam_term.sixth_examinator %> </td> 
   <td><%= exam_term.sixth_subject %></td>
 </tr>

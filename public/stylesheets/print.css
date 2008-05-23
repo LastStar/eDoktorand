@@ -262,12 +262,15 @@ table.three-columns th {
   text-align: left;
   border: none;
 }
+table.three-columns td.dotted {
+  border: none;
+  width: 20%;
+}
 table.two-columns {
   padding: 0.5em;
 }
 table.two-columns th {
   text-align: left;
-  width: 50%;
   border: none;
 }
 table.two-columns td {
