@@ -9,7 +9,7 @@ else
 fi
 
 echo "# purgin db"
-mysql -uweb -pw3b phdstudy_devel < db/purge_db.sql
+mysql -uweb -pw3b phdstudy_development < db/purge_db.sql
 
 echo "# loading db"
-cat db/set_utf8.sql $filename | mysql -uweb -pw3b phdstudy_devel
+cat db/set_utf8.sql $filename | mysql -uweb -pw3b phdstudy_development
