@@ -4,7 +4,7 @@ module LoginSystem
   
   protected
   
-  # login_required filter. add 
+  # login_required filter
   #
   #   before_filter :login_required
   #
