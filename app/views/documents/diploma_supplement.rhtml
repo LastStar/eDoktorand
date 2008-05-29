@@ -78,7 +78,7 @@ give the reason why.
       <% @diploma_supplement.plan_subjects.split(';').each do |ps| %>
       <tr>
         <td><%= ps %></td>
-        <td>PASSED</td>
+        <td>Passed</td>
       </tr>
       <% end %>
       </table>
@@ -89,10 +89,10 @@ give the reason why.
       </tr>
       <tr>
         <td><%= @diploma_supplement.disert_theme_title %></td>
-        <td>PASSED</td>
+        <td>Passed</td>
       </tr>
       </table>
-      <p>Date of doctoral thesis defense: <%= @diploma_supplement.defense_passed_on %></p>
+      <p class='bigger'>Date of doctoral thesis defense: <strong><%= @diploma_supplement.defense_passed_on %></strong></p>
       <table>
       <tr>
         <th>FINAL STATE EXAMINATION</th>
@@ -103,11 +103,11 @@ give the reason why.
         <td>
           <%= fa %></div>
         </td>
-        <td>PASSED</td>
+        <td>Passed</td>
       </tr>
       <% end %>
       </table>
-      <p>Date of final state examination: <%= @diploma_supplement.final_exam_passed_on %><p>
+      <p class='bigger'>Date of final state examination: <strong><%= @diploma_supplement.final_exam_passed_on %></strong></p>
       </li>
       <li>4.4. Grading scheme:
       <table>
@@ -115,12 +115,12 @@ give the reason why.
         <th colspan='2'>OVERALL CLASSIFICATION SCHEME</th>
       </tr>
       <tr>
-        <td>prospěl</td>
-        <td>passed</td>
+        <td>Prospěl</td>
+        <td>Passed</td>
       </tr>
       <tr>
-        <td>neprospěl</td>
-        <td>failed</td>
+        <td>Neprospěl</td>
+        <td>Failed</td>
       </tr>
       </table>
       </li>
@@ -137,16 +137,16 @@ give the reason why.
   <li>
   6. ADDITIONAL INFORMATION
   <ul class='sub_list'>
-    <li>6.1. Additional information:&nbsp;<%= @diploma_supplement.faculty_www %></li>
-    <li>6.2. Further information sources:&nbsp;http://www.czu.cz/</li>
+    <li>6.1. Additional information:&nbsp;<strong><%= @diploma_supplement.faculty_www %></strong></li>
+    <li>6.2. Further information sources:&nbsp;<strong>http://www.czu.cz/</strong></li>
   </ul>
   </li>
   <li>
   7. CERTIFICATION OF THE SUPPLEMENT
   <ul class='sub_list'>
-    <li>7.1. Date:&nbsp;<%= @diploma_supplement.printed_on %></li>
-    <li>7.2. Signature:&nbsp;<%= @diploma_supplement.dean_display_name %></li>
-    <li>7.3. Capacity:&nbsp;<%= @diploma_supplement.dean_title %></li>
+    <li>7.1. Date:&nbsp;<strong><%= @diploma_supplement.printed_on %></strong></li>
+    <li>7.2. Signature:&nbsp;<strong><%= @diploma_supplement.dean_display_name %></strong></li>
+    <li>7.3. Capacity:&nbsp;<strong><%= @diploma_supplement.dean_title %></strong></li>
     <li>7.4. Official stamp: </li>
   </ul>
   </li>
