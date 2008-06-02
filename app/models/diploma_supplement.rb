@@ -1,5 +1,6 @@
 class DiplomaSupplement < ActiveRecord::Base
 
+  validates_presence_of :sident
   validates_presence_of :diploma_no
   validates_presence_of :family_name
   validates_presence_of :given_name
@@ -22,7 +23,7 @@ class DiplomaSupplement < ActiveRecord::Base
   def self.new_from_index(index)
     index =  Index.find(index) unless index.is_a? Index
     new = self.new
-    new.diploma_no = index.student.sident
+    new.sident = index.student.sident
     new.family_name = index.student.lastname
     new.given_name = index.student.firstname
     new.date_of_birth = index.student.birth_on

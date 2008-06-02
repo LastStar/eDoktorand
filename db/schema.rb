@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 144) do
+ActiveRecord::Schema.define(:version => 145) do
 
   create_table "actualities", :force => true do |t|
     t.string "label"
@@ -174,6 +174,7 @@ ActiveRecord::Schema.define(:version => 144) do
     t.datetime "printed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sident"
   end
 
   create_table "disert_themes", :force => true do |t|

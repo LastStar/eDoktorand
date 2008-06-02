@@ -4,7 +4,6 @@ class DiplomaSupplementsController < ApplicationController
   before_filter :prepare_user
 
   def index
-    #session[:order] = ''
     list
     render :action => 'list'
   end
