@@ -84,10 +84,6 @@ class Student < Examinator
     end
   end
 
-  def claim_accommodation_scholarship!
-    update_attribute(:scholarship_claimed_at, Time.now)
-  end
-
   def has_account?
     !index.account_number.nil?
   end
@@ -98,10 +94,6 @@ class Student < Examinator
 
   def prepared_for_claim?
     has_account? && has_address? 
-  end
-
-  def scholarship_claimed?
-    !scholarship_claimed_at.nil?
   end
 
   def <=>(other)

@@ -10,7 +10,8 @@ module StudentsHelper
       unless index.finished?
         links << switch_link(index)
         if index.waits_for_scholarship_confirmation?
-          links << supervise_scholarship_link(index)
+          links << approve_scholarship_link(index)
+          links << cancel_scholarship_link(index)
         end
         if study_plan
           links << study_plan_link(index)
@@ -155,11 +156,20 @@ module StudentsHelper
                     :complete => evaluate_remote_response})
   end
 
-  # prints link to supervise scholarship
-  def supervise_scholarship_link(index)
-    link_to_remote(_('supervise scholarship'),
+  # prints link to approve scholarship
+  def approve_scholarship_link(index)
+    link_to_remote(_('approve scholarship'),
                   :url => {:controller => 'students',
-                          :action => 'supervise_scholarship_claim',
+                          :action => 'approve_scholarship_claim',
+                          :id => index},
+                  :complete => evaluate_remote_response)
+  end
+
+  # prints link to cancel scholarship
+  def cancel_scholarship_link(index)
+    link_to_remote(_('cancel scholarship'),
+                  :url => {:controller => 'students',
+                          :action => 'cancel_scholarship_claim',
                           :id => index},
                   :complete => evaluate_remote_response)
   end

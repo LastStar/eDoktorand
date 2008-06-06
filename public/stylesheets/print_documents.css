@@ -8,7 +8,7 @@ body {font-size: 14px; margin-top: 0pt;padding: 0pt;}
 th.short {width: 5em}
 #supplement li {list-style: none}
 #supplement p {font-size: smaller; margin: .3em 0 0 0;}
-#supplement p.bigger {font-size: large; margin: 0 0 0 1.5em;}
+#supplement p.bigger {font-size: large; padding: 0.5em 0 0.5em 1.5em;}
 .informations  li {font-size: 12px}
 #supplement #logo {text-align: center; padding-bottom: 1em}
 #supplement #logo img {display: inline}

@@ -86,11 +86,23 @@ class StudentsController < ApplicationController
     end
   end
 
-  # supervise scholarship by faculty_secretary
-  def supervise_scholarship_claim
+  # approve scholarship by faculty_secretary
+  def approve_scholarship_claim
     @index = Index.find(params[:id])
     @student = @index.student
-    @student.update_attribute('scholarship_supervised_at', Time.now)
+    @index.approve_accommodation_scholarship!
+    if good_browser?
+      render(:partial => 'redraw_student')
+    else
+      render(:partial => 'redraw_list')
+    end
+  end
+
+  # cancel scholarship by faculty_secretary
+  def cancel_scholarship_claim
+    @index = Index.find(params[:id])
+    @student = @index.student
+    @index.cancel_accommodation_scholarship!
     if good_browser?
       render(:partial => 'redraw_student')
     else

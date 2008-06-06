@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 145) do
+ActiveRecord::Schema.define(:version => 146) do
 
   create_table "actualities", :force => true do |t|
     t.string "label"
@@ -298,6 +298,9 @@ ActiveRecord::Schema.define(:version => 145) do
     t.date     "final_exam_passed_on"
     t.datetime "defense_claimed_at"
     t.datetime "defense_invitation_sent_at"
+    t.datetime "scholarship_claimed_at"
+    t.datetime "scholarship_approved_at"
+    t.datetime "scholarship_canceled_at"
   end
 
   add_index "indices", ["student_id"], :name => "indices_student_id_index"
@@ -337,21 +340,19 @@ ActiveRecord::Schema.define(:version => 145) do
   end
 
   create_table "people", :force => true do |t|
-    t.string   "firstname",                 :limit => 101
-    t.string   "lastname",                  :limit => 100
+    t.string   "firstname",       :limit => 101
+    t.string   "lastname",        :limit => 100
     t.date     "birth_on"
-    t.string   "birth_number",              :limit => 10
-    t.string   "state",                     :limit => 100
-    t.string   "type",                      :limit => 20
+    t.string   "birth_number",    :limit => 10
+    t.string   "state",           :limit => 100
+    t.string   "type",            :limit => 20
     t.integer  "title_before_id"
     t.integer  "title_after_id"
     t.datetime "created_on"
     t.datetime "updated_on"
     t.integer  "uic"
-    t.string   "birthname",                 :limit => 100
+    t.string   "birthname",       :limit => 100
     t.string   "citizenship"
-    t.datetime "scholarship_claimed_at"
-    t.datetime "scholarship_supervised_at"
     t.string   "birth_place"
     t.string   "language"
     t.string   "sex"

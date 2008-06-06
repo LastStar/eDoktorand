@@ -483,9 +483,33 @@ class Index < ActiveRecord::Base
   end
 
   def waits_for_scholarship_confirmation?
-    claim_date = student.scholarship_claimed_at
+    claim_date = scholarship_claimed_at
     claim_date && claim_date < TermsCalculator.this_year_start &&
-      !student.scholarship_supervised_at
+      !scholarship_approved? && !scholarship_canceled?
+  end
+
+  def scholarship_claimed?
+    scholarship_claimed_at.nil?
+  end
+
+  def scholarship_approved?
+    scholarship_approved_at?
+  end
+
+  def scholarship_canceled?
+    scholarship_canceled_at?
+  end
+
+  def claim_accommodation_scholarship!
+    update_attribute(:scholarship_claimed_at, Time.now)
+  end
+
+  def approve_accommodation_scholarship!
+    update_attribute(:scholarship_approved_at, Time.now)
+  end
+
+  def cancel_accommodation_scholarship!
+    update_attribute(:scholarship_canceled_at, Time.now)
   end
 
   # TODO stub method
