@@ -8,7 +8,7 @@ else
 fi
 
 echo "# downloading db"
-scp -P2222 edoktorand.czu.cz:dumps/$filename .
+scp -P2222 edoktorand.czu.cz:/dumps/$filename .
 
 echo "# purgin db"
 mysql -uweb -pw3b phdstudy_development < db/purge_db.sql
@@ -16,6 +16,8 @@ mysql -uweb -pw3b phdstudy_development < db/purge_db.sql
 echo "# loading db"
 cat db/set_utf8.sql $filename | mysql -uweb -pw3b phdstudy_development
 
+echo "# migrating"
+rake db:migrate
 
 echo "# cleaning"
 rm $filename

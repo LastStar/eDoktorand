@@ -25,7 +25,7 @@ class StudyPlan < ActiveRecord::Base
 
   # returns if study plan is canceled 
   def canceled?
-    return true if canceled_on
+    return true if canceled_on && canceled_on > approved_on
   end
 
   def cancel!(time = Time.now)
