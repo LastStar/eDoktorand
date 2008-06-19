@@ -1,6 +1,6 @@
 class ProbationTermsController < ApplicationController
   include LoginSystem
-  layout "employers", :except => [:enroll_student]
+  layout "employers", :except => [:enroll_student, :detail]
 
   before_filter :set_title
   before_filter :login_required
@@ -34,6 +34,7 @@ class ProbationTermsController < ApplicationController
   end
 
   #TODO render only message when students empty
+  #TODO change name to students 
   def detail
     @probation_term = ProbationTerm.find(params[:id])
     @students = Student.find_to_enroll(@probation_term, :sort)
