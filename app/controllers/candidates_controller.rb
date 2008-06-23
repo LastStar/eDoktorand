@@ -140,6 +140,7 @@ class CandidatesController < ApplicationController
 
   # confirms admittance of candidate and sends email
   def confirm_admit
+    session[:conditional] = nil
     if(params[:admit_id] == '0')
       redirect_to(:action => 'reject', :id => params[:id])
     else
