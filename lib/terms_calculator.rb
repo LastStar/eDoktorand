@@ -16,4 +16,13 @@ class TermsCalculator
       "#{today.year}/#{today.year + 1}"
     end
   end
+
+  def self.next_school_year
+    today = Date.today.next_year
+    if today.month < 10
+      "#{today.year - 1}/#{today.year}"
+    else
+      "#{today.year}/#{today.year + 1}"
+    end
+  end
 end

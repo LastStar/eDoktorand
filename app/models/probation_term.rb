@@ -50,7 +50,7 @@ class ProbationTerm < ActiveRecord::Base
         options[:conditions].first << ' and date >= ?'
         options[:order] = :date
       end
-      options[:conditions] << Time.now
+      options[:conditions] << Time.now.beginning_of_day
     end
     find(:all, options)
   end
