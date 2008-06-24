@@ -1,7 +1,7 @@
 class ExamTerm < ActiveRecord::Base
   untranslate_all
   belongs_to :chairman, :class_name => 'Tutor', :foreign_key => 'chairman_id'
-
+        N_('There were errors in your input')
 	validates_presence_of :room, :message => _("Term must has assigned room")
 	validates_presence_of :chairman_id, :message => _("Term must has assigned chairman")
 	validates_presence_of :start_time, :message => _("Term must has assigned time of begining")
