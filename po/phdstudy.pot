@@ -502,6 +502,22 @@ msgstr ""
 msgid "external exam"
 msgstr ""
 
+#: app/helpers/scholarships_helper.rb:33
+msgid "change"
+msgstr ""
+
+#: app/helpers/scholarships_helper.rb:39
+msgid "add"
+msgstr ""
+
+#: app/helpers/scholarships_helper.rb:46
+msgid "remove"
+msgstr ""
+
+#: app/helpers/scholarships_helper.rb:52
+msgid "close"
+msgstr ""
+
 #: app/helpers/scholarships_helper.rb:63
 msgid "pay"
 msgstr ""

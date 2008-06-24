@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-06-24 11:21+0200\n"
+"POT-Creation-Date: 2008-06-24 12:46+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -521,6 +521,22 @@ msgstr "zkouška z předmětu"
 #: app/views/exams/save_external_subject.rhtml:1
 msgid "external exam"
 msgstr "externí zkouška"
+
+#: app/helpers/scholarships_helper.rb:33
+msgid "change"
+msgstr "změnit"
+
+#: app/helpers/scholarships_helper.rb:39
+msgid "add"
+msgstr "přidat"
+
+#: app/helpers/scholarships_helper.rb:46
+msgid "remove"
+msgstr "odstranit"
+
+#: app/helpers/scholarships_helper.rb:52
+msgid "close"
+msgstr "zavřít"
 
 #: app/helpers/scholarships_helper.rb:63
 msgid "pay"
