@@ -46,6 +46,7 @@ class CSVLoader
     self.load_enrolled_students("dumps/csv/enrolled.csv")
     self.load_tutor_logins("dumps/csv/tutors_login.csv")
   end
+
   # loads faculties to system
   def self.load_faculties(file, options = {} )
     Faculty.destroy_all if options[:destroy]
@@ -57,6 +58,7 @@ class CSVLoader
       f.save
     end
   end
+
   # loads departments to system
   def self.load_departments(file, options = {} )
     Department.destroy_all if options[:destroy]
@@ -68,6 +70,7 @@ class CSVLoader
       f.save
     end
   end
+
   # loads coridors to system
   def self.load_coridors(file, options = {} )
     Coridor.destroy_all if options[:destroy]
@@ -79,17 +82,18 @@ class CSVLoader
       f.save
     end
   end
+
   # loads subjects to system
   def self.load_subjects(file, options = {} )
-      Subject.destroy_all if options[:destroy]
-      @@mylog.info "Loading subjects..."
-      CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-        s = Subject.new('label' => row[2], 'code' => row[3])
-        s.id = row[1]
-        s.departments << Department.find(row[4])
-        s.save
-      end
+    Subject.destroy_all if options[:destroy]
+    @@mylog.info "Loading subjects..."
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      s = Subject.new('label' => row[2], 'code' => row[3])
+      s.id = row[1]
+      s.departments << Department.find(row[4])
+      s.save
     end
+  end
 
   # loads tutors
   def self.load_tutors(files, options = {})
@@ -863,15 +867,17 @@ class CSVLoader
   end
 
   def self.load_or_repair_subjects(file)
+    ActiveRecord::Base.connection.execute('SET NAMES UTF8')
     @@mylog.info "Loading subjects..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       if Subject.exists?(row[0])
         s = Subject.find(row[0])
         @@mylog.info "Repairing subject with code #{row[1]}"
-        s.update_attribute(:label, row[2])
+        @@mylog.debug "used to be #{s.inspect} will be #{row.inspect}"
+        s.update_attributes(:label => row[2], :label_en => row[3], :code => row[1])
       else
         @@mylog.info "Creating subject with code #{row[1]}"
-        s = Subject.new('label' => row[2], 'code' => row[1])
+        s = Subject.new(:code => row[1], :label => row[2], :label_en => row[3] )
         s.id = row[0]
       end
       s.departments = [Department.find(row[4])]
