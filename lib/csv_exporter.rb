@@ -228,8 +228,7 @@ class CSVExporter
 
   def self.export_candidates_for(options = {})
     unless cs = options[:candidates]
-      options[:faculty]
-      faculty = Faculty.find(options[:faculty]) unless faculty.is_a? Faculty
+      faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : Faculty.find(options[:faculty])
       cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' + 
         ' and coridor_id in (?)', faculty.coridors])
       file = "candidate_#{faculty.short_name}.csv"
