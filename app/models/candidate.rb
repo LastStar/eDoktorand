@@ -162,28 +162,28 @@ class Candidate < ActiveRecord::Base
 
   # returns new address with attributes set by self 
   def create_address(id)
-    add = Address.new {|a|
+    add = Address.new do |a|
       a.student_id = id
       a.street = self.street
       a.desc_number = self.number
       a.city = self.city
       a.zip = self.zip
-      a.type = AddressType.find(1)
-    }
+      a.address_type = AddressType.find(1)
+    end
     add.save
   end
 
   # returns new postal address with attributes set by self
   def create_postal_address(id)
     if self.postal_city
-      add = Address.new {|a|
+      add = Address.new do |a|
         a.student_id = id
         a.street = self.postal_street
         a.desc_number = self.postal_number
         a.city = self.postal_city
         a.zip = self.postal_zip
-        a.type = AddressType.find(2)
-      }
+        a.address_type = AddressType.find(2)
+      end
       add.save
     end
   end
