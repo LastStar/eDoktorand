@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-06-24 12:46+0200\n"
+"POT-Creation-Date: 2008-07-03 14:55+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -94,15 +94,15 @@ msgstr "Musíte přidat autoreferát"
 msgid "defense term was succesfully created"
 msgstr "termín obhajoby byl úspěšně vytvořen"
 
-#: app/controllers/defenses_controller.rb:68
+#: app/controllers/defenses_controller.rb:70
 msgid "Defense terms"
 msgstr "Termíny obhajoby"
 
-#: app/controllers/defenses_controller.rb:74
+#: app/controllers/defenses_controller.rb:76
 msgid "Announcement of disert theme defense"
 msgstr "Oznámení obhajoby disertační práce"
 
-#: app/controllers/defenses_controller.rb:80
+#: app/controllers/defenses_controller.rb:82
 msgid "Protocol for disert theme defense"
 msgstr "Protokol obhajoby disertační práce"
 
@@ -138,29 +138,33 @@ msgstr "Kontakty"
 msgid "Candidate was changed"
 msgstr "Uchazeč byl opraven"
 
-#: app/controllers/candidates_controller.rb:158
-#: app/controllers/candidates_controller.rb:189
-#: app/controllers/candidates_controller.rb:207
+#: app/controllers/candidates_controller.rb:161
+#: app/controllers/candidates_controller.rb:195
+#: app/controllers/candidates_controller.rb:213
 msgid "e-mail sent"
 msgstr "e-mail odeslán"
 
-#: app/controllers/candidates_controller.rb:170
+#: app/controllers/candidates_controller.rb:163
+msgid "saved"
+msgstr "uloženo"
+
+#: app/controllers/candidates_controller.rb:176
 msgid "Candidate "
 msgstr "Uchazeč "
 
-#: app/controllers/candidates_controller.rb:170
+#: app/controllers/candidates_controller.rb:176
 msgid " is ready for application form"
 msgstr " je připraven na příjimací zkoušky"
 
-#: app/controllers/candidates_controller.rb:224
+#: app/controllers/candidates_controller.rb:230
 msgid "Candidates"
 msgstr "Uchazeči o studium"
 
-#: app/controllers/candidates_controller.rb:225
+#: app/controllers/candidates_controller.rb:231
 msgid "previous"
 msgstr "předchozí stránka"
 
-#: app/controllers/candidates_controller.rb:226
+#: app/controllers/candidates_controller.rb:232
 msgid "next"
 msgstr "další stránka"
 
@@ -259,7 +263,7 @@ msgstr "Přihlášení do systému"
 msgid "Login was unsuccesful"
 msgstr "Přihlášení se nepodařilo"
 
-#: app/helpers/defenses_helper.rb:5 app/helpers/final_exam_terms_helper.rb:18
+#: app/helpers/defenses_helper.rb:5 app/helpers/final_exam_terms_helper.rb:26
 #: app/helpers/exams_helper.rb:32 app/helpers/exams_helper.rb:40
 #: app/helpers/exams_helper.rb:49 app/helpers/exams_helper.rb:57
 #: app/helpers/students_helper.rb:342 app/helpers/application_helper.rb:294
@@ -279,17 +283,21 @@ msgstr "Přihlášení se nepodařilo"
 msgid "working..."
 msgstr "pracuji..."
 
-#: app/helpers/defenses_helper.rb:12 app/helpers/final_exam_terms_helper.rb:4
+#: app/helpers/defenses_helper.rb:13 app/helpers/final_exam_terms_helper.rb:5
 msgid "send email"
 msgstr "poslat email"
 
-#: app/helpers/defenses_helper.rb:20 app/helpers/candidates_helper.rb:17
-#: app/helpers/final_exam_terms_helper.rb:12
+#: app/helpers/defenses_helper.rb:18 app/helpers/final_exam_terms_helper.rb:10
+msgid "accept without mail"
+msgstr "potvrdit bez odeslání mailu"
+
+#: app/helpers/defenses_helper.rb:27 app/helpers/candidates_helper.rb:17
+#: app/helpers/final_exam_terms_helper.rb:20
 #: app/views/candidates/_history.rhtml:13
 msgid "protocol"
 msgstr "protokol"
 
-#: app/helpers/defenses_helper.rb:24
+#: app/helpers/defenses_helper.rb:31
 msgid "announcement"
 msgstr "oznámení"
 
@@ -522,7 +530,7 @@ msgstr "zkouška z předmětu"
 msgid "external exam"
 msgstr "externí zkouška"
 
-#: app/helpers/scholarships_helper.rb:33
+#: app/helpers/scholarships_helper.rb:22 app/helpers/scholarships_helper.rb:33
 msgid "change"
 msgstr "změnit"
 
@@ -620,14 +628,12 @@ msgid "confirm interupt"
 msgstr "potvrdit přerušení"
 
 #: app/helpers/students_helper.rb:161
-#, fuzzy
 msgid "approve scholarship"
-msgstr "potvrdit žádost"
+msgstr "schválit US"
 
 #: app/helpers/students_helper.rb:170
-#, fuzzy
 msgid "cancel scholarship"
-msgstr "Vyplacená stipendia"
+msgstr "neschválit US"
 
 #: app/helpers/students_helper.rb:179
 msgid "Detail filter"
@@ -1452,6 +1458,10 @@ msgstr "nejsou splněny všechny předměty"
 #: app/models/final_exam_term.rb:4
 msgid "Final exam term have to belong to student"
 msgstr "Konečný zkouškový termín musí náležet studentovi"
+
+#: app/models/final_exam_term.rb:5
+msgid "accepted"
+msgstr "přijmuto"
 
 #: app/models/faculty_secretary.rb:5
 msgid "FacultySecretary"

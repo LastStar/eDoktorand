@@ -153,9 +153,15 @@ class CandidatesController < ApplicationController
   # action for remote link that admit candidate
   def admit_now
     @candidate = Candidate.find(params[:id])
-    Notifications::deliver_admit_candidate(@candidate, session[:conditional])
+    if params[:mail] != 'no mail'
+      Notifications::deliver_admit_candidate(@candidate, session[:conditional])
+    end
     @candidate.admit!
-    render(:text => _('e-mail sent'))
+    if params[:mail] != 'no mail'
+      render(:text => _('e-mail sent'))
+    else
+      render(:text => _('saved'))
+    end
   end
 
   # finishes admittance

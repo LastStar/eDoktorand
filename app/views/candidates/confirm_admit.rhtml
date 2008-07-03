@@ -57,7 +57,10 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
       <%= link_to 'zpět na výpis', :action => 'list_all'%>    
     <% end %>
 	<% unless @candidate.admited? %>
-	<span id='mailLink'><%= link_to_remote 'odešli mail s dekretem o přijetí', :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id} %></span>
+        <div id='mailLink'>
+	  <span id='mailLink1'><%= link_to_remote 'odešli mail s dekretem o přijetí', :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'mail'} %></span>
+	  <span id='mailLink2'><%= link_to_remote 'přijmout bez odeslání mailem', :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'no mail'} %></span>
+        </div>
 	<% end %>
 	<% end %>
 </div>

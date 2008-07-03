@@ -1,7 +1,10 @@
 <div class='links'>
   <%= hide_link('final_exam') %>
   <span id='invitation_link'>
-    <%= send_invitation_link(@user, @exam_term.index) %>
+    <%= send_invitation_link(@user, @exam_term.index, 'mail') %>
+  </span>
+  <span id='invitation_link_no_mail'>
+    <%= send_invitation_link(@user, @exam_term.index, 'no mail') %>
   </span>
 </div>
 <%= render(:partial => 'detail', 

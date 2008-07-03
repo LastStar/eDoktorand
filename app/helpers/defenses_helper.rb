@@ -7,12 +7,19 @@ module DefensesHelper
 
   end
 
-  def send_invitation_link(user, index)
+  def send_invitation_link(user, index, mail)
     if user.has_role?('faculty_secretary') && !index.defense_invitation_sent?
+      if mail == 'mail'
       link_to_remote(_('send email'), 
                      :complete => evaluate_remote_response,
                      :url => {:action => 'send_invitation', 
-                              :id => index})
+                              :id => index, :mail => 'mail'})
+      else
+      link_to_remote(_('accept without mail'), 
+                     :complete => evaluate_remote_response,
+                     :url => {:action => 'send_invitation', 
+                              :id => index, :mail => 'no mail'})
+      end
     end
   end
 

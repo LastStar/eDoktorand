@@ -1,3 +1,10 @@
-page.replace_html 'invitation_link', _('e-mail sent')
-page.replace 'defense_link', defense_term_link(@user, @index)
 
+if params[:mail] == 'mail'
+  page.replace_html 'invitation_link', _('e-mail sent')
+  page.hide 'invitation_link_no_mail'
+  page.replace 'defense_link', defense_term_link(@user, @index)
+else
+  page.hide 'invitation_link'
+  page.replace_html 'invitation_link_no_mail', _('accepted')
+  page.replace 'defense_link', defense_term_link(@user, @index)
+end

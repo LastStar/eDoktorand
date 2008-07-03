@@ -76,15 +76,15 @@ msgstr ""
 msgid "defense term was succesfully created"
 msgstr ""
 
-#: app/controllers/defenses_controller.rb:68
+#: app/controllers/defenses_controller.rb:70
 msgid "Defense terms"
 msgstr ""
 
-#: app/controllers/defenses_controller.rb:74
+#: app/controllers/defenses_controller.rb:76
 msgid "Announcement of disert theme defense"
 msgstr ""
 
-#: app/controllers/defenses_controller.rb:80
+#: app/controllers/defenses_controller.rb:82
 msgid "Protocol for disert theme defense"
 msgstr ""
 
@@ -120,29 +120,33 @@ msgstr ""
 msgid "Candidate was changed"
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:158
-#: app/controllers/candidates_controller.rb:189
-#: app/controllers/candidates_controller.rb:207
+#: app/controllers/candidates_controller.rb:161
+#: app/controllers/candidates_controller.rb:195
+#: app/controllers/candidates_controller.rb:213
 msgid "e-mail sent"
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:170
+#: app/controllers/candidates_controller.rb:163
+msgid "saved"
+msgstr ""
+
+#: app/controllers/candidates_controller.rb:176
 msgid "Candidate "
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:170
+#: app/controllers/candidates_controller.rb:176
 msgid " is ready for application form"
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:224
+#: app/controllers/candidates_controller.rb:230
 msgid "Candidates"
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:225
+#: app/controllers/candidates_controller.rb:231
 msgid "previous"
 msgstr ""
 
-#: app/controllers/candidates_controller.rb:226
+#: app/controllers/candidates_controller.rb:232
 msgid "next"
 msgstr ""
 
@@ -239,7 +243,7 @@ msgstr ""
 msgid "Login was unsuccesful"
 msgstr ""
 
-#: app/helpers/defenses_helper.rb:5 app/helpers/final_exam_terms_helper.rb:18
+#: app/helpers/defenses_helper.rb:5 app/helpers/final_exam_terms_helper.rb:26
 #: app/helpers/exams_helper.rb:32 app/helpers/exams_helper.rb:40
 #: app/helpers/exams_helper.rb:49 app/helpers/exams_helper.rb:57
 #: app/helpers/students_helper.rb:342 app/helpers/application_helper.rb:294
@@ -259,17 +263,21 @@ msgstr ""
 msgid "working..."
 msgstr ""
 
-#: app/helpers/defenses_helper.rb:12 app/helpers/final_exam_terms_helper.rb:4
+#: app/helpers/defenses_helper.rb:13 app/helpers/final_exam_terms_helper.rb:5
 msgid "send email"
 msgstr ""
 
-#: app/helpers/defenses_helper.rb:20 app/helpers/candidates_helper.rb:17
-#: app/helpers/final_exam_terms_helper.rb:12
+#: app/helpers/defenses_helper.rb:18 app/helpers/final_exam_terms_helper.rb:10
+msgid "accept without mail"
+msgstr ""
+
+#: app/helpers/defenses_helper.rb:27 app/helpers/candidates_helper.rb:17
+#: app/helpers/final_exam_terms_helper.rb:20
 #: app/views/candidates/_history.rhtml:13
 msgid "protocol"
 msgstr ""
 
-#: app/helpers/defenses_helper.rb:24
+#: app/helpers/defenses_helper.rb:31
 msgid "announcement"
 msgstr ""
 
@@ -502,7 +510,7 @@ msgstr ""
 msgid "external exam"
 msgstr ""
 
-#: app/helpers/scholarships_helper.rb:33
+#: app/helpers/scholarships_helper.rb:22 app/helpers/scholarships_helper.rb:33
 msgid "change"
 msgstr ""
 
@@ -1422,6 +1430,10 @@ msgstr ""
 
 #: app/models/final_exam_term.rb:4
 msgid "Final exam term have to belong to student"
+msgstr ""
+
+#: app/models/final_exam_term.rb:5
+msgid "accepted"
 msgstr ""
 
 #: app/models/faculty_secretary.rb:5

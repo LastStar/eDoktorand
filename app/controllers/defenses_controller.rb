@@ -55,7 +55,9 @@ class DefensesController < ApplicationController
   def send_invitation
     @index = Index.find(params[:id])
     @index.send_defense_invitation!
-    Notifications::deliver_invite_to_defense(@index)
+    if params[:mail] != 'no mail'
+      Notifications::deliver_invite_to_defense(@index)
+    end
   end
 
   #shows defense term in study plan

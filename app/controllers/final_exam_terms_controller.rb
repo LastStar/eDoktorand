@@ -77,7 +77,9 @@ class FinalExamTermsController < ApplicationController
   def send_invitation
     @index = Index.find(params[:id])
     @index.send_final_exam_invitation!
-    Notifications::deliver_invite_to_final_exam(@index)
+    if params[:mail] != 'no mail' 
+      Notifications::deliver_invite_to_final_exam(@index)
+    end
   end
 
   # prints protocol for final exam term
