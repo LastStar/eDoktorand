@@ -113,7 +113,11 @@ class Notifications < ActionMailer::Base
     @subject = _("Invitation to final exam")
     @body[:student] = index.student
     @body[:sent_on] = sent_at
-    @recipients = index.student.email
+    if index.final_exam_term.chairman.email != nil
+      @recipients = index.student.email.name, index.final_exam_term.chairman.email.name
+    else
+      @recipients = index.student.email.name
+    end
     @cc        = faculty.secretary.email.name
     @from       = faculty.secretary.email.name
   end
@@ -123,7 +127,11 @@ class Notifications < ActionMailer::Base
     @subject = _("Invitation to defense")
     @body[:student] = index.student
     @body[:sent_on] = sent_at
-    @recipients = index.student.email
+    if index.defense.chairman.email != nil
+      @recipients = index.student.email.name, index.defense.chairman.email.name
+    else
+      @recipients = index.student.email.name
+    end
     @cc        = faculty.secretary.email.name
     @from       = faculty.secretary.email.name
   end
