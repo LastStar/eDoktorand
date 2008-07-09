@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-07-03 14:55+0200\n"
+"POT-Creation-Date: 2008-07-09 11:59+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -1423,11 +1423,11 @@ msgstr "Vyrozumění o přijímacím řízení na doktorské studium"
 msgid "Invitation to final exam"
 msgstr "Pozvánka k státní doktorské zkoušce"
 
-#: app/models/notifications.rb:123
+#: app/models/notifications.rb:127
 msgid "Invitation to defense"
 msgstr "Pozvánka k obhajobě"
 
-#: app/models/notifications.rb:132
+#: app/models/notifications.rb:140
 msgid "Created account"
 msgstr "Vytvořen účet"
 
@@ -3168,6 +3168,10 @@ msgstr "jméno"
 #: app/views/diploma_supplements/list.rhtml:20
 msgid "destroy"
 msgstr "smazat"
+
+#: app/views/diploma_supplements/list.rhtml:20
+msgid "Are you sure?"
+msgstr "Jste si jistý?"
 
 #: app/views/diploma_supplements/list.rhtml:26
 msgid "no diploma supplements found"

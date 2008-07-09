@@ -17,7 +17,7 @@
   <% end %>
     <td><%= link_to _('show'), :controller => :documents, :action => 'diploma_supplement', :id => diploma_supplement %></td>
     <td><%= link_to _('edit'), :action => 'edit', :id => diploma_supplement %></td>
-    <td><%= link_to _('destroy'), { :action => 'destroy', :id => diploma_supplement }, :confirm => 'Are you sure?', :method => :post %></td>
+    <td><%= link_to _('destroy'), { :action => 'destroy', :id => diploma_supplement }, :confirm => _('Are you sure?'), :method => :post %></td>
   </tr>
 <% end %>
 </table>

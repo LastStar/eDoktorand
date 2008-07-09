@@ -1396,11 +1396,11 @@ msgstr ""
 msgid "Invitation to final exam"
 msgstr ""
 
-#: app/models/notifications.rb:123
+#: app/models/notifications.rb:127
 msgid "Invitation to defense"
 msgstr ""
 
-#: app/models/notifications.rb:132
+#: app/models/notifications.rb:140
 msgid "Created account"
 msgstr ""
 
@@ -3122,6 +3122,10 @@ msgstr ""
 
 #: app/views/diploma_supplements/list.rhtml:20
 msgid "destroy"
+msgstr ""
+
+#: app/views/diploma_supplements/list.rhtml:20
+msgid "Are you sure?"
 msgstr ""
 
 #: app/views/diploma_supplements/list.rhtml:26

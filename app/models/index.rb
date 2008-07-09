@@ -74,7 +74,7 @@ class Index < ActiveRecord::Base
       return @semester
     else
       if finished?
-        time = finished_on - enrolled_on
+        time = finished_on.to_time - enrolled_on.to_time
       else
         time = Time.now - enrolled_on
       end
