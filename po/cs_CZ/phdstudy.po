@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-07-09 11:59+0200\n"
+"POT-Creation-Date: 2008-07-09 15:00+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -2000,6 +2000,19 @@ msgstr ""
 #: app/views/candidates/enroll.rhtml:4
 msgid "Enroll"
 msgstr "zapsat"
+
+#: app/views/candidates/confirm_admit.rhtml:55
+#: app/views/candidates/confirm_admit.rhtml:57
+msgid "back to list"
+msgstr "zpět na výpis"
+
+#: app/views/candidates/confirm_admit.rhtml:61
+msgid "send mail of admission"
+msgstr "odešli mail s dekretem o přijetí"
+
+#: app/views/candidates/confirm_admit.rhtml:62
+msgid "admit without sending mail"
+msgstr "přijmout bez odeslání mailem"
 
 #: app/views/addresses/_edit.rhtml:3 app/views/scholarships/claim.rhtml:37
 msgid "Citizenship rights"

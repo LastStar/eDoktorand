@@ -1972,6 +1972,19 @@ msgstr ""
 msgid "Enroll"
 msgstr ""
 
+#: app/views/candidates/confirm_admit.rhtml:55
+#: app/views/candidates/confirm_admit.rhtml:57
+msgid "back to list"
+msgstr ""
+
+#: app/views/candidates/confirm_admit.rhtml:61
+msgid "send mail of admission"
+msgstr ""
+
+#: app/views/candidates/confirm_admit.rhtml:62
+msgid "admit without sending mail"
+msgstr ""
+
 #: app/views/addresses/_edit.rhtml:3 app/views/scholarships/claim.rhtml:37
 msgid "Citizenship rights"
 msgstr ""

@@ -52,14 +52,14 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 	<% if @user %>
 	<%#= link_to 'zpět', :page => session[:current_page_backward], :action => 'list'%>
     <% if session[:back_page] == 'list' %>
-      <%= link_to 'zpět na výpis', :action => 'list',:page => session[:current_page_backward] %>
+      <%= link_to _('back to list'), :action => 'list',:page => session[:current_page_backward] %>
     <% else %>
-      <%= link_to 'zpět na výpis', :action => 'list_all'%>    
+      <%= link_to _('back to list'), :action => 'list_all'%>    
     <% end %>
 	<% unless @candidate.admited? %>
         <div id='mailLink'>
-	  <span id='mailLink1'><%= link_to_remote 'odešli mail s dekretem o přijetí', :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'mail'} %></span>
-	  <span id='mailLink2'><%= link_to_remote 'přijmout bez odeslání mailem', :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'no mail'} %></span>
+	  <span id='mailLink1'><%= link_to_remote _('send mail of admission'), :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'mail'} %></span>
+	  <span id='mailLink2'><%= link_to_remote _('admit without sending mail'), :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'no mail'} %></span>
         </div>
 	<% end %>
 	<% end %>
