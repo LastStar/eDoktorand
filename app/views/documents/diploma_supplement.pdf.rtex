@@ -1,0 +1,264 @@
+\documentclass[pdftex,12pt,a4paper]{report}
+\linespread{1.05}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+%\usepackage[urw-garamond]{mathdesign}
+
+
+\setlength\topmargin{-2cm}
+\setlength\headheight{0cm}
+\setlength\headsep{0cm}
+\setlength\headheight{0cm}
+\setlength\textwidth{17.2cm}
+\setlength\textheight{27.5cm}
+\setlength\oddsidemargin{-0.7cm}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\LARGE{Czech Republic}\\[3cm]
+\Large{Czech University of Life Sciences Prague}
+\end{center}
+
+\begin{small}
+This Diploma Supplement model was developed by the European Commission, 
+Council of Europe and UNESCO/CEPES. The purpose of the supplement is to
+provide sufficient independent data to improve the international transparency
+and fair academic and professional recognition of qualifications. It is
+designed to provide a description of the nature, level, context, content
+and status of the studies that were pursued and successfully completed by
+the individual named on the original qualification to which this supplement
+is appended. This document is free from any value judgements, equivalence
+statements or suggestions about recognition. Information in all eight sections
+should be provided. Where information is not provided, an explanation should
+give the reason why.
+\end{small}
+
+\renewcommand{\labelenumii}{\labelenumi\arabic{enumii}}
+\begin{enumerate}
+\item{\textsc{Information identifying the holder of the qualification}}
+\begin{enumerate}
+\item{Family name: \textbf{<%= @diploma_supplement.family_name %>}}
+\item{Given name: \textbf{<%= @diploma_supplement.given_name %>}}
+\item{Date of birth: \textbf{<%= @diploma_supplement.date_of_birth %>}}
+\item{Student identification number: \textbf{<%= @diploma_supplement.sident %>}}
+\end{enumerate}
+
+\item{\textsc{Information identifying the qualification}}
+\begin{enumerate}
+\item{Name of qualification/title conferred (in original language): \textbf{doktor/Ph.D.}}
+\item{Main field(s) of study for the qualification:\newline
+Study programme: \textbf{<%= @diploma_supplement.study_programme %>}\newline
+Specialization: \textbf{<%= @diploma_supplement.study_specialization %>}}
+\item{Name of status of awarding institution in original
+language:} \textbf{<%= @diploma_supplement.faculty_name %>}}
+\item{Name and status of institution administering studies in original language (if different from 2.3.):}
+\item{Language(s) of instruction/examination: \textbf{Czech}}
+\end{enumerate}
+\item{\textsc{Information on the level of the qualification}}
+\begin{enumerate}
+\item{Level of qualification: \textbf{Doctoral Study Programme}}
+\item{Official length of programme: \textbf{3 years}}
+\item{Access requirements: \textbf{MSc. level degree; further
+details:~http://www.czu.cz}}
+\end{enumerate}
+\item{\textsc{Information on the contents and results gained}}
+\begin{enumerate}{}{\setlength{\rightmargin}{\leftmargin}}
+\item{Mode of study: \textbf{<%= @diploma_supplement.study_mode %>}}
+\item{Programme requirements:
+\textbf{Student must satisfy programme requirements as prescribed in the
+documents: the Approved Course Schedule and the Study and Examination
+Rules. Further details on http://www.czu.cz.}
+
+\newpage
+~\vspace{2cm}\fill
+\item{Programme details (e.g. modules or units studied), 
+      and the individual grades/marks/credits obtained:}
+\begin{center}
+\begin{tabular}{ | p{369pt} | l |}
+\hline
+\textbf{Subject} & \textbf{Grade} \\
+\hline
+<% @diploma_supplement.plan_subjects.split(';').each do |ps| %>
+<%= ps %> & Passed \\
+\hline
+<% end %>
+\end{tabular}
+\end{center}
+\newline
+
+\begin{center}
+\begin{tabular}{| p{369pt} | l |}
+\hline
+\textbf{Final state examination} & \textbf{Grade} \\
+\hline
+<% @diploma_supplement.final_areas.split(';').each do |fa|%>
+<%= fa %> & Passed \\
+\hline
+<% end %>
+\end{tabular}
+\end{center}
+Date of final state examination: \textbf{<%= @diploma_supplement.final_exam_passed_on %>}
+
+\begin{center}
+\begin{tabular}{| p{369pt} | l |}
+\hline
+\textbf{Doctoral thesis} & \textbf{Grade} \\
+\hline
+<%= @diploma_supplement.disert_theme_title %> & Passed \\
+\hline
+\end{tabular}
+\end{center}
+Date of doctoral thesis defense: \textbf{<%= @diploma_supplement.defense_passed_on %>}
+
+\item{Grading scheme:} 
+\begin{center}
+\begin{tabular}{| p{80} | p{80} |}
+\hline
+\multicolumn{2}{|c|}{\taxtbf{Overall classification scheme}} \\
+\hline
+Prospěl & Passed \\
+\hline
+Nerospěl & Failed \\
+\hline
+\end{tabular}
+\end{center}
+\item{Overall classification of the qualification (in original language):
+\textbf{Prospěl}}
+\end{enumerate}
+
+\newpage
+~\vspace{2cm}\fill
+\item{\textsc{Information on the function of the qualification}}
+\begin{enumerate}
+\item{Access to further study: \textbf{Not applicable}}
+\item{Professional status (if applicable): \textbf{Doctor}}
+\end{enumerate}
+\item{\textsc{Additional information}}
+\begin{enumerate}
+\item{Additional information: \textbf{<%= @diploma_supplement.faculty_www %>}}
+\item{Further information sources: \textbf{http://www.czu.cz/}
+\end{enumerate}
+\item{\textsc{Certification of the supplement}}
+\begin{enumerate}
+\item{Date: \textbf{<%= @diploma_supplement.printed_on %>}}
+\item{Signature: \textbf{<%= @diploma_supplement.dean_display_name %>}}
+\item{Capacity: \textbf{<%= @diploma_supplement.dean_title %>}}
+\item{Official stamp:}
+\end{enumerate}
+
+\newpage
+~\vspace{2cm}\fill
+\item{\textsc{Information on the national higher education system}}
+\end{enumerate}
+\begin{scriptsize}
+Higher education institutions form the highest level of Czech education. They
+offer accredited study programmes at three levels --- bachelor, master, and 
+doctoral, as well as lifelong learning. Higher education institutions are
+either university-type or non university-type.
+
+
+University-type higher education institutions may offer all types of study
+programmes (bachelor, master and doctoral) and carry out associated scholarly, 
+research, developmental, artistic or other creative activities. Non 
+university-type higher education institutions offer mainly bachelor study 
+programmes, but may also provide master study programmes and carry out 
+associated scholarly, research, developmental, artistic or other creative
+activities.
+
+
+There are public, private state and private higher education institutions. 
+The list is available at:
+\begin{itemize}
+\item http://www.msmt.cz/files/htmlVswwwserl.htm 
+\item http://www.csvs.cz
+\end{itemize}
+
+
+Higher education is realised within the framework of accredited study 
+programmes in accordance with their curriculum and given form of studies. 
+The form of study can be fulltime, part-time (distance) or a combination 
+of both. Access to a bachelor study programme is conditional on completing 
+a full secondary general or vocational education with a “maturita” 
+examination and “maturita” leaving certificate (maturitní vysvědčení). 
+Access to master studies is conditional on graduating from a bachelor 
+study programme, while access to a doctoral study programme is conditional
+on graduating from a master study programme.
+
+
+The qualification structure recognises bachelor, master and doctoral levels.
+
+
+A bachelor study programme (bakalářský studijní program) aims at qualifying
+to enter a profession or a master study programme. It takes from 3 to 4 years
+(180 -- 240 ECTS credits). Graduates receive the academic degree bakalář (Bc.).
+The study programme must be completed in due form with a final state 
+examination, which usually includes the presentation and defence of a bachelor
+thesis.
+
+
+A master study programme (magisterský studijní program) follows a bachelor
+study programme. The length is 1 --  3 years (60 -- 180 ECTS credits). 
+In selected fields, where the nature of the study programme so requires,
+a master study programme need not follow on from a bachelor programme. 
+In this case, the programme lasts 4 -- 6 years (240 -- 360 ECTS credits). 
+Admission to these study programmes is conditional on passing the “maturita”
+examination (see access to bachelor studies). Graduates in a master study
+programme have to take a final state examination and publicly present and
+defend a master thesis. The studies in a master programme lead to the 
+academic degree:
+\begin{itemize}
+\item magistr (Mgr.) --- Master in humanities, sciences, law, teacher education,
+pharmacy and theology;
+\item magistr umění (MgA.) --- Master of Arts in the field of art;
+\item inženýr (Ing.) --- Engineer in the field of economics, technical sciences and
+technologies, agriculture, forestry and in~military fields of study;
+\item inženýr architekt (Ing.arch.) --- Engineer Architect in the field of
+architecture;
+\item doktor medicíny (MUDr.) --- Doctor of Medicine in the field of medicine;
+\item zubní lékař (MDDr.) --- Doctor of Dental Medicine in the field of dental
+medicine;
+\item doktor veterinární mediciny (MVDr.) --- Doctor of Veterinary Medicine in the
+field of veterinary medicine and hygiene
+\end{itemize}
+
+Courses in human medicine and veterinary medicine last 6 years. They are run
+by the university medical faculties and faculties of veterinary medicine.
+
+Holders of the academic degree “magistr” can pass a rigorous state examination
+in the same field and present and defend a rigorous thesis. If completed 
+successfully the following academic degrees are awarded:
+
+\begin{itemize}
+\item{doktor práv (JUDr.) in the field of law;}
+\item{doktor filozofie (PhDr.) in the field of humanities, teacher education and
+social sciences;}
+\item{doktor přírodních věd (RNDr.) in the field of natural sciences;}
+\item{doktor farmacie (PharmDr.) in the field of pharmacy;}
+\item{licenciát teologie (ThLic.) in the field of Catholic theology;}
+\item{licenciát teologie (ThLic.) or “doktor teologie” (ThDr.) in the field of 
+theology except Catholic theology.}
+\end{itemize}
+All above mentioned academic titles are at master level and are written in 
+front of the name.
+
+The standard length of a doctoral study programme (doktorský studijní program)
+is 3 years. Doctoral studies are completed by the state doctoral examination
+and the public presentation and defence of a doctoral thesis (dissertation),
+based on original results, which must be published. Graduates of a doctoral
+study programme are awarded the academic degree of: “doctor” (Ph.D.); “doktor
+teologie” (Th.D.) in the field of theology. These academic titles are written
+behind the name.
+
+The academic year starts on September 1 and ends on August 31 of the following
+year. It comprises a winter semester and a summer semester. The organization
+of academic years is regulated by statute.
+
+A credit system (ECTS or a comparable system) is used at most of the higher
+education institutions.
+\end{scriptsize}
+
+\end{document}
+

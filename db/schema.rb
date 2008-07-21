@@ -1,5 +1,5 @@
 # This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of ActiveRecord to incrementally modify your database, and
+# please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your database schema. If you need
@@ -27,17 +27,17 @@ ActiveRecord::Schema.define(:version => 146) do
     t.string  "city",            :limit => 100
     t.string  "zip",             :limit => 20
     t.string  "state",           :limit => 100
-    t.integer "address_type_id"
-    t.integer "student_id"
+    t.integer "address_type_id", :limit => 11
+    t.integer "student_id",      :limit => 11
   end
 
   create_table "approvements", :force => true do |t|
     t.string   "type",                :limit => 30
-    t.integer  "document_id"
-    t.integer  "tutor_statement_id"
-    t.integer  "leader_statement_id"
-    t.integer  "dean_statement_id"
-    t.integer  "board_statement_id"
+    t.integer  "document_id",         :limit => 11
+    t.integer  "tutor_statement_id",  :limit => 11
+    t.integer  "leader_statement_id", :limit => 11
+    t.integer  "dean_statement_id",   :limit => 11
+    t.integer  "board_statement_id",  :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
   end
@@ -48,16 +48,16 @@ ActiveRecord::Schema.define(:version => 146) do
     t.text     "detail"
     t.datetime "created_on"
     t.datetime "updated_on"
-    t.integer  "study_plan_id"
+    t.integer  "study_plan_id",   :limit => 11
     t.datetime "atestation_term"
   end
 
   create_table "candidates", :force => true do |t|
     t.string   "firstname",              :limit => 50
     t.string   "lastname",               :limit => 50
-    t.integer  "title_before_id"
-    t.integer  "title_after_id"
-    t.integer  "coridor_id"
+    t.integer  "title_before_id",        :limit => 11
+    t.integer  "title_after_id",         :limit => 11
+    t.integer  "coridor_id",             :limit => 11
     t.date     "study_end"
     t.string   "university",             :limit => 100
     t.date     "birth_on"
@@ -65,11 +65,11 @@ ActiveRecord::Schema.define(:version => 146) do
     t.string   "birth_at",               :limit => 100
     t.string   "email",                  :limit => 100
     t.string   "street",                 :limit => 100
-    t.integer  "number"
+    t.integer  "number",                 :limit => 11
     t.string   "city",                   :limit => 100
     t.string   "zip",                    :limit => 10
     t.string   "postal_street",          :limit => 100
-    t.integer  "postal_number"
+    t.integer  "postal_number",          :limit => 11
     t.string   "postal_city",            :limit => 100
     t.string   "postal_zip",             :limit => 10
     t.string   "phone",                  :limit => 50
@@ -80,10 +80,10 @@ ActiveRecord::Schema.define(:version => 146) do
     t.string   "employer_email",         :limit => 50
     t.string   "employer_phone",         :limit => 50
     t.string   "position",               :limit => 50
-    t.integer  "department_id"
-    t.integer  "language1_id"
-    t.integer  "language2_id"
-    t.integer  "study_id"
+    t.integer  "department_id",          :limit => 11
+    t.integer  "language1_id",           :limit => 11
+    t.integer  "language2_id",           :limit => 11
+    t.integer  "study_id",               :limit => 11
     t.string   "faculty",                :limit => 100
     t.string   "studied_specialization", :limit => 100
     t.string   "study_theme",            :limit => 1000
@@ -96,8 +96,8 @@ ActiveRecord::Schema.define(:version => 146) do
     t.datetime "invited_on"
     t.datetime "rejected_on"
     t.datetime "enrolled_on"
-    t.integer  "student_id"
-    t.integer  "tutor_id"
+    t.integer  "student_id",             :limit => 11
+    t.integer  "tutor_id",               :limit => 11
     t.string   "address_state",          :limit => 240
     t.string   "postal_state",           :limit => 240
     t.string   "language"
@@ -110,32 +110,32 @@ ActiveRecord::Schema.define(:version => 146) do
 
   create_table "contacts", :force => true do |t|
     t.string   "name",            :limit => 50
-    t.integer  "contact_type_id"
-    t.integer  "person_id"
+    t.integer  "contact_type_id", :limit => 11
+    t.integer  "person_id",       :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "coridor_subjects", :force => true do |t|
-    t.integer "coridor_id"
-    t.integer "subject_id"
+    t.integer "coridor_id",   :limit => 11
+    t.integer "subject_id",   :limit => 11
     t.string  "type",         :limit => 32
-    t.integer "requisite_on"
+    t.integer "requisite_on", :limit => 11
   end
 
   create_table "coridors", :force => true do |t|
     t.text    "name"
     t.text    "name_english"
     t.string  "code",             :limit => 16
-    t.integer "faculty_id"
+    t.integer "faculty_id",       :limit => 11
     t.integer "accredited",       :limit => 1
-    t.integer "program_id"
-    t.integer "voluntary_amount"
+    t.integer "program_id",       :limit => 11
+    t.integer "voluntary_amount", :limit => 11
   end
 
   create_table "deanships", :force => true do |t|
-    t.integer  "faculty_id"
-    t.integer  "dean_id"
+    t.integer  "faculty_id", :limit => 11
+    t.integer  "dean_id",    :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
   end
@@ -144,16 +144,16 @@ ActiveRecord::Schema.define(:version => 146) do
     t.text    "name"
     t.text    "name_english"
     t.string  "short_name",   :limit => 8
-    t.integer "faculty_id"
+    t.integer "faculty_id",   :limit => 11
   end
 
   create_table "departments_subjects", :id => false, :force => true do |t|
-    t.integer "department_id"
-    t.integer "subject_id"
+    t.integer "department_id", :limit => 11
+    t.integer "subject_id",    :limit => 11
   end
 
   create_table "diploma_supplements", :force => true do |t|
-    t.integer  "diploma_no"
+    t.integer  "diploma_no",           :limit => 11
     t.string   "faculty_name_en"
     t.string   "family_name"
     t.string   "given_name"
@@ -174,21 +174,21 @@ ActiveRecord::Schema.define(:version => 146) do
     t.datetime "printed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "sident"
+    t.integer  "sident",               :limit => 11
   end
 
   create_table "disert_themes", :force => true do |t|
     t.string   "title",                :limit => 1023
-    t.integer  "index_id"
+    t.integer  "index_id",             :limit => 11
     t.datetime "methodology_added_on"
-    t.integer  "finishing_to"
+    t.integer  "finishing_to",         :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
     t.text     "methodology_summary"
     t.datetime "approved_on"
     t.string   "title_en",             :limit => 1023
     t.date     "defense_passed_on"
-    t.integer  "actual"
+    t.integer  "actual",               :limit => 11
     t.string   "literature_review",    :limit => 1023
   end
 
@@ -197,24 +197,24 @@ ActiveRecord::Schema.define(:version => 146) do
   create_table "documents", :force => true do |t|
     t.string   "name",       :limit => 100
     t.string   "path",       :limit => 100
-    t.integer  "faculty_id"
+    t.integer  "faculty_id", :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
   end
 
   create_table "employments", :force => true do |t|
-    t.integer  "unit_id"
-    t.integer  "person_id"
+    t.integer  "unit_id",    :limit => 11
+    t.integer  "person_id",  :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
   end
 
   create_table "exam_terms", :force => true do |t|
-    t.integer  "coridor_id"
+    t.integer  "coridor_id",         :limit => 11
     t.date     "date"
     t.string   "start_time",         :limit => 5
     t.string   "room"
-    t.integer  "chairman_id"
+    t.integer  "chairman_id",        :limit => 11
     t.string   "first_examinator",   :limit => 100
     t.string   "second_examinator",  :limit => 100
     t.string   "third_examinator",   :limit => 100
@@ -222,7 +222,7 @@ ActiveRecord::Schema.define(:version => 146) do
     t.datetime "created_on"
     t.datetime "updated_on"
     t.string   "type"
-    t.integer  "index_id"
+    t.integer  "index_id",           :limit => 11
     t.string   "fifth_examinator"
     t.string   "sixth_examinator"
     t.string   "opponent"
@@ -240,23 +240,23 @@ ActiveRecord::Schema.define(:version => 146) do
   end
 
   create_table "exams", :force => true do |t|
-    t.integer  "index_id"
-    t.integer  "first_examinator_id"
-    t.integer  "second_examinator_id"
-    t.integer  "result"
+    t.integer  "index_id",             :limit => 11
+    t.integer  "first_examinator_id",  :limit => 11
+    t.integer  "second_examinator_id", :limit => 11
+    t.integer  "result",               :limit => 11
     t.text     "questions"
-    t.integer  "subject_id"
+    t.integer  "subject_id",           :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
-    t.integer  "created_by_id"
-    t.integer  "updated_by_id"
+    t.integer  "created_by_id",        :limit => 11
+    t.integer  "updated_by_id",        :limit => 11
     t.datetime "passed_on"
-    t.integer  "third_examinator_id"
-    t.integer  "fourth_examinator_id"
+    t.integer  "third_examinator_id",  :limit => 11
+    t.integer  "fourth_examinator_id", :limit => 11
   end
 
   create_table "external_subject_details", :force => true do |t|
-    t.integer  "external_subject_id"
+    t.integer  "external_subject_id", :limit => 11
     t.text     "university"
     t.text     "person"
     t.datetime "created_on"
@@ -269,22 +269,22 @@ ActiveRecord::Schema.define(:version => 146) do
     t.string  "short_name",     :limit => 8
     t.text    "ldap_context"
     t.string  "street"
-    t.integer "stipendia_code"
+    t.integer "stipendia_code", :limit => 11
     t.string  "www",            :limit => 100
   end
 
   create_table "indices", :force => true do |t|
-    t.integer  "student_id"
-    t.integer  "department_id"
-    t.integer  "coridor_id"
-    t.integer  "tutor_id"
-    t.integer  "study_id"
+    t.integer  "student_id",                    :limit => 11
+    t.integer  "department_id",                 :limit => 11
+    t.integer  "coridor_id",                    :limit => 11
+    t.integer  "tutor_id",                      :limit => 11
+    t.integer  "study_id",                      :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
     t.datetime "finished_on"
-    t.integer  "created_by_id"
-    t.integer  "update_by_id"
-    t.integer  "payment_id"
+    t.integer  "created_by_id",                 :limit => 11
+    t.integer  "update_by_id",                  :limit => 11
+    t.integer  "payment_id",                    :limit => 11
     t.datetime "enrolled_on"
     t.datetime "interupted_on"
     t.string   "account_number_prefix"
@@ -311,7 +311,7 @@ ActiveRecord::Schema.define(:version => 146) do
   add_index "indices", ["enrolled_on"], :name => "indices_enrolled_on_index"
 
   create_table "interupts", :force => true do |t|
-    t.integer  "index_id"
+    t.integer  "index_id",     :limit => 11
     t.string   "note",         :limit => 512
     t.datetime "created_on"
     t.datetime "updated_on"
@@ -327,14 +327,14 @@ ActiveRecord::Schema.define(:version => 146) do
   add_index "interupts", ["index_id"], :name => "index_interupts_on_index_id"
 
   create_table "leaderships", :force => true do |t|
-    t.integer  "department_id"
-    t.integer  "leader_id"
+    t.integer  "department_id", :limit => 11
+    t.integer  "leader_id",     :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
   end
 
   create_table "parameters", :force => true do |t|
-    t.integer "faculty_id"
+    t.integer "faculty_id", :limit => 11
     t.string  "name",       :limit => 240
     t.text    "value"
   end
@@ -346,17 +346,17 @@ ActiveRecord::Schema.define(:version => 146) do
     t.string   "birth_number",    :limit => 10
     t.string   "state",           :limit => 100
     t.string   "type",            :limit => 20
-    t.integer  "title_before_id"
-    t.integer  "title_after_id"
+    t.integer  "title_before_id", :limit => 11
+    t.integer  "title_after_id",  :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
-    t.integer  "uic"
+    t.integer  "uic",             :limit => 11
     t.string   "birthname",       :limit => 100
     t.string   "citizenship"
     t.string   "birth_place"
     t.string   "language"
     t.string   "sex"
-    t.integer  "sident"
+    t.integer  "sident",          :limit => 11
   end
 
   add_index "people", ["lastname"], :name => "people_lastname_index"
@@ -370,14 +370,14 @@ ActiveRecord::Schema.define(:version => 146) do
   end
 
   create_table "permissions_roles", :id => false, :force => true do |t|
-    t.integer "role_id"
-    t.integer "permission_id"
+    t.integer "role_id",       :limit => 11
+    t.integer "permission_id", :limit => 11
   end
 
   create_table "plan_subjects", :force => true do |t|
-    t.integer  "study_plan_id"
-    t.integer  "subject_id"
-    t.integer  "finishing_on"
+    t.integer  "study_plan_id", :limit => 11
+    t.integer  "subject_id",    :limit => 11
+    t.integer  "finishing_on",  :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
     t.datetime "finished_on"
@@ -387,22 +387,22 @@ ActiveRecord::Schema.define(:version => 146) do
   add_index "plan_subjects", ["subject_id"], :name => "index_plan_subjects_on_subject_id"
 
   create_table "probation_terms", :force => true do |t|
-    t.integer  "subject_id"
-    t.integer  "first_examinator_id"
-    t.integer  "second_examinator_id"
+    t.integer  "subject_id",           :limit => 11
+    t.integer  "first_examinator_id",  :limit => 11
+    t.integer  "second_examinator_id", :limit => 11
     t.date     "date"
     t.string   "start_time",           :limit => 5
     t.string   "room",                 :limit => 20
-    t.integer  "max_students"
+    t.integer  "max_students",         :limit => 11
     t.text     "note"
-    t.integer  "created_by"
+    t.integer  "created_by",           :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
   end
 
   create_table "probation_terms_students", :id => false, :force => true do |t|
-    t.integer "probation_term_id"
-    t.integer "student_id"
+    t.integer "probation_term_id", :limit => 11
+    t.integer "student_id",        :limit => 11
   end
 
   create_table "programs", :force => true do |t|
@@ -418,23 +418,27 @@ ActiveRecord::Schema.define(:version => 146) do
   end
 
   create_table "roles_users", :id => false, :force => true do |t|
-    t.integer "user_id"
-    t.integer "role_id"
+    t.integer "user_id", :limit => 11
+    t.integer "role_id", :limit => 11
+  end
+
+  create_table "schema_info", :id => false, :force => true do |t|
+    t.integer "version", :limit => 11
   end
 
   create_table "scholarships", :force => true do |t|
     t.string   "label"
     t.text     "content"
-    t.integer  "index_id"
-    t.float    "amount",          :default => 0.0
+    t.integer  "index_id",        :limit => 11
+    t.float    "amount",                        :default => 0.0
     t.string   "commission_head"
     t.string   "commission_body"
     t.string   "commission_tail"
     t.datetime "payed_on"
     t.datetime "created_on"
     t.datetime "updated_on"
-    t.integer  "created_by_id"
-    t.integer  "updated_by_id"
+    t.integer  "created_by_id",   :limit => 11
+    t.integer  "updated_by_id",   :limit => 11
     t.string   "type"
     t.datetime "approved_on"
   end
@@ -448,8 +452,8 @@ ActiveRecord::Schema.define(:version => 146) do
 
   create_table "statements", :force => true do |t|
     t.string   "note",       :limit => 1023
-    t.integer  "result"
-    t.integer  "person_id"
+    t.integer  "result",     :limit => 11
+    t.integer  "person_id",  :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
   end
@@ -460,17 +464,17 @@ ActiveRecord::Schema.define(:version => 146) do
   end
 
   create_table "study_plans", :force => true do |t|
-    t.integer  "index_id"
-    t.integer  "actual"
-    t.integer  "finishing_to"
+    t.integer  "index_id",              :limit => 11
+    t.integer  "actual",                :limit => 11
+    t.integer  "finishing_to",          :limit => 11
     t.datetime "admited_on"
     t.datetime "canceled_on"
     t.datetime "approved_on"
     t.datetime "created_on"
     t.datetime "updated_on"
     t.datetime "last_atested_on"
-    t.integer  "created_by_id"
-    t.integer  "updated_by_id"
+    t.integer  "created_by_id",         :limit => 11
+    t.integer  "updated_by_id",         :limit => 11
     t.text     "final_areas"
     t.datetime "final_exam_admited_at"
   end
@@ -494,12 +498,12 @@ ActiveRecord::Schema.define(:version => 146) do
 
   create_table "titles", :force => true do |t|
     t.string  "label",  :limit => 100
-    t.integer "prefix"
+    t.integer "prefix", :limit => 11
   end
 
   create_table "tutorships", :force => true do |t|
-    t.integer  "tutor_id"
-    t.integer  "coridor_id"
+    t.integer  "tutor_id",   :limit => 11
+    t.integer  "coridor_id", :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
   end
@@ -509,7 +513,7 @@ ActiveRecord::Schema.define(:version => 146) do
 
   create_table "users", :force => true do |t|
     t.string   "login",      :limit => 80
-    t.integer  "person_id"
+    t.integer  "person_id",  :limit => 11
     t.datetime "created_on"
     t.datetime "updated_on"
   end

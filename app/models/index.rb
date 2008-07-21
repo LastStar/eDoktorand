@@ -1,3 +1,12 @@
+class String
+  def and(chunk)
+    if self.empty?
+      chunk
+    elsif !chunk.strip.empty?
+      self << ' and ' << chunk
+    end
+  end
+end
 class Index < ActiveRecord::Base
   include Approvable
 
@@ -5,12 +14,37 @@ class Index < ActiveRecord::Base
   
   PREFIX_WEIGHTS = [1, 2, 4, 8, 5, 10]
   ACCOUNT_WEIGHTS = [1, 2, 4, 8, 5, 10, 9, 7, 3, 6]
+  NOT_FINISHED_COND = <<-SQL
+    (indices.finished_on is null or indices.finished_on > ?)\
+    and disert_themes.defense_passed_on is null
+  SQL
+  DEPARTMENTS_COND = "indices.department_id in (?)"
+  TUTOR_COND = "indices.tutor_id = ?"
+  NOT_INTERUPTED_COND = <<-SQL
+    (indices.interupted_on is null or indices.interupted_on > ?)
+  SQL
+  ENROLLED_COND = "indices.enrolled_on < ?"
+  NOT_ABSOLVED_COND = <<-SQL
+    (disert_themes.defense_passed_on is null\
+    or disert_themes.defense_passed_on > ?)
+  SQL
+  LASTNAME_COND = "people.lastname like ?"
+  PRESENT_COND = "study_id = 1"
+  FINISHED_COND = <<-SQL
+    indices.finished_on is not null and indices.finished_on < ?
+  SQL
+  INTERUPTED_COND = "indices.interupted_on is not null"
+  ABSOLVED_COND = "disert_themes.defense_passed_on is not null"
+  PASSED_FINAL_COND = "indices.final_exam_passed_on is not null"
+  CORRIDOR_COND = "indices.coridor_id = ?"
+  STUDY_COND = " indices.study_id = ?"
+
 
   belongs_to :student, :foreign_key => 'student_id'
   belongs_to :tutor
   belongs_to :study
   has_one :study_plan, :order => 'created_on desc',
-   :conditions => 'admited_on IS NOT NULL AND study_plans.actual = 1'
+   :conditions => 'admited_on is not null and study_plans.actual = 1'
   has_one :disert_theme, :conditions => 'disert_themes.actual = 1'
   has_one :final_exam_term
   has_one :defense
@@ -180,79 +214,61 @@ class Index < ActiveRecord::Base
   def self.find_for(user, options ={})
     if user.has_one_of_roles?(['admin', 'vicerector','supervisor'])
       if options[:only_tutor]
-        conditions = ['indices.tutor_id = ?', user.person.id]
+        conditions = [TUTOR_COND, user.person.id]
       elsif options[:faculty] && options[:faculty] != '0'
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : \
           Faculty.find(options[:faculty])
-        conditions = ["indices.department_id IN (?)", faculty.departments]
+        conditions = [DEPARTMENTS_COND, faculty.departments]
       else
+        #TODO must be there?
         conditions  = ['NULL IS NULL']
       end
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary'])
-      conditions = ["indices.department_id IN (?)", user.person.faculty.departments]
+      conditions = [DEPARTMENTS_COND, user.person.faculty.departments]
     elsif user.has_one_of_roles?(['leader', 'department_secretary'])
-      conditions = ['indices.department_id = ?', user.person.department.id]
+      conditions = [DEPARTMENTS_COND, user.person.department.id]
     elsif user.has_role?('tutor')
-      conditions = ['indices.tutor_id = ?', user.person.id]
+      conditions = [TUTOR_COND, user.person.id]
     else
+      #TODO must be there?
       conditions = ["NULL IS NOT NULL"]
     end
     options[:include] ||= []
     options[:include] << [:study_plan, :student, :disert_theme, :department,
                            :study, :coridor, :interupt]
     if options[:conditions]
-      conditions.first << options[:conditions].first 
+      conditions.first.and(options[:conditions].first)
       conditions.concat(options[:conditions][1..-1])
     end
     if options[:unfinished]
-      conditions.first << ' AND (indices.finished_on IS NULL OR' +
-                          ' indices.finished_on > ?)'+
-                          ' AND disert_themes.defense_passed_on IS NULL'
-      if options[:unfinished].is_a? Time
-        conditions << options[:unfinished]
-      else
-        conditions << Time.now
-      end
+      conditions.first.and(NOT_FINISHED_COND)
+      conditions << get_time_condition(options[:unfinished])
     end
     if options[:not_interupted]
-      conditions.first << ' AND (indices.interupted_on IS NULL OR' + 
-                          ' indices.interupted_on > ?)'
-      if options[:not_interupted].is_a? Time
-        conditions << options[:not_interupted]
-      else
-        conditions << Time.now
-      end
+      conditions.first.and(NOT_INTERUPTED_COND)
+      conditions << get_time_condition(options[:not_interupted])
     end
     if options[:enrolled]
-      conditions.first << ' AND indices.enrolled_on < ?'
-      if options[:enrolled].is_a? Time
-        conditions << options[:enrolled]
-      else
-        conditions << Time.now
-      end
+      conditions.first.and(ENROLLED_COND)
+      conditions << get_time_condition(options[:enrolled])
     end
     if options[:not_absolved]
-      conditions.first << ' AND (disert_themes.defense_passed_on IS NULL' +
-                          ' OR disert_themes.defense_passed_on > ?)'
+      conditions.first.and(NOT_ABSOLVED_COND)
       conditions << options[:not_absolved]
     end
     if search = options.delete(:search)
-      if search =~ /^[a-zA-Z]*$/
-        search = "%s%%" % search
-        conditions.first << ' AND people.lastname like ?'
-      else
-        conditions.first << ' AND people.lastname REGEXP ?'
-      end
+      search = "%s%%" % search
+      conditions.first.and(LASTNAME_COND)
       conditions << search
     end
-    conditions.first << 'AND study_id = 1' if options[:present]
+    conditions.first.and(PRESENT_COND) if options[:present]
     find(:all, :conditions => conditions, :order => options[:order],
         :include => options[:include])
   end
 
   # finds only indices tutored by user
   def self.find_tutored_by(user, options={})
-    options[:conditions] = [' AND indices.tutor_id = ?', user.person.id]
+    options[:conditions] = [TUTOR_COND, user.person.id]
     options[:order] = 'people.lastname'
     find_for(user, options)
   end
@@ -261,9 +277,9 @@ class Index < ActiveRecord::Base
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user, options = {})
     sql = <<-SQL
-      AND (study_plans.approved_on IS NULL OR disert_themes.approved_on IS NULL \
-      OR study_plans.last_atested_on IS NULL OR indices.interupted_on IS NULL OR \
-      study_plans.last_atested_on < ?) AND (indices.finished_on IS NULL OR \
+      (study_plans.approved_on is null or disert_themes.approved_on is null \
+      or study_plans.last_atested_on is null or indices.interupted_on is null or \
+      study_plans.last_atested_on < ?) and (indices.finished_on is null or \
       indices.finished_on = '0000-00-00 00:00:00') 
     SQL
     options[:conditions] = [sql, 
@@ -287,41 +303,36 @@ class Index < ActiveRecord::Base
   # search on selected criteria
   def self.find_by_criteria(options = {})
     conditions = ['']
+    today = Date.today
     if options[:department] && options[:department].to_i != 0
-      conditions.first << ' AND indices.department_id = ?'
+      conditions.first.and(DEPARTMENTS_COND)
       conditions << options[:department]
     elsif options[:coridor] && options[:coridor].to_i != 0
-      conditions.first << ' AND indices.coridor_id = ?'
+      conditions.first.and(CORRIDOR_COND)
       conditions << options[:coridor]
     end
     if options[:form] && options[:form].to_i != 0
-      conditions.first << ' AND indices.study_id = ?'
+      conditions.first.and(STUDY_COND)
       conditions << options[:form]
     end
     if options[:status].to_i != 0 && options[:study_status].to_i == 0
       options[:study_status] = 1
     end
-    if options[:study_status] && options[:study_status].to_i != '0'
+    if options[:study_status] && options[:study_status].to_i != 0
       case options[:study_status].to_i
       when 1, 5
-        conditions.first << ' AND (indices.finished_on IS NULL' + 
-                            ' OR indices.finished_on >= ?)' +
-                            ' AND indices.interupted_on IS NULL' +
-                            ' AND disert_themes.defense_passed_on IS NULL'
-        conditions << Date.today
+        conditions.first.and(NOT_FINISHED_COND.and(NOT_INTERUPTED_COND))
+        conditions << [today] * 2
       when 2
-        conditions.first << ' AND indices.finished_on IS NOT NULL' +
-                            ' AND indices.finished_on < ?'
-        conditions << Date.today
+        conditions.first.and(FINISHED_COND)
+        conditions << today
       when 3
-        conditions.first << ' AND indices.interupted_on IS NOT NULL' +
-                            ' AND (indices.finished_on IS NULL' +
-                            ' OR indices.finished_on >= ?)'
-        conditions << Date.today
+        conditions.first.and(INTERUPTED_COND.and(FINISHED_COND))
+        conditions << [today] * 2
       when 4
-        conditions.first << ' AND disert_themes.defense_passed_on IS NOT NULL'
+        conditions.first.and(ABSOLVED_COND)
       when 6
-        conditions.first << ' AND indices.final_exam_passed_on IS NOT NULL'
+        conditions.first.and(PASSED_FINAL_COND)
       end
     end
     indices = Index.find_for(options[:user], :conditions => conditions, 
@@ -368,11 +379,6 @@ class Index < ActiveRecord::Base
     return find_for(user, opts)
   end
 
-  def self.find_studying_on_department(department)
-    return find(:all, :conditions => ['department_id = ? and finished_on is null',
-                              department.id])
-  end
-
   # find with all relation included
   def self.find_with_all_included(idx)
     inc = [:study_plan, :disert_theme, :interupts, :coridor, :study, :student,
@@ -398,6 +404,7 @@ class Index < ActiveRecord::Base
     return @status
   end
 
+  # returns true if index have year more than 3
   def continues?
     year > 3
   end
@@ -512,17 +519,19 @@ class Index < ActiveRecord::Base
     update_attribute(:scholarship_canceled_at, Time.now)
   end
 
-  # TODO stub method
+  # returns sum of extra scholarships
   def extra_scholarship_sum
     extra_scholarships.inject(0) do |sum, s|
       sum += s.amount
     end
   end
 
+  # return faculty 
   def faculty
     department.faculty
   end
 
+  # returns true if study is present
   def present_study?
     study.id == 1
   end
@@ -644,5 +653,14 @@ class Index < ActiveRecord::Base
 
   def has_any_scholarship?
     return ((has_regular_scholarship? && regular_scholarship_or_create.amount > 0) || (has_extra_scholarship? && extra_scholarship_sum > 0))
+  end
+
+  private
+  def self.get_time_condition(time)
+    if time.is_a? Time
+      time
+    else
+      Time.now
+    end
   end
 end

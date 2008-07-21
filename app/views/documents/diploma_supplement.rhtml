@@ -84,17 +84,6 @@ give the reason why.
       </table>
       <table>
       <tr>
-        <th>DOCTORAL THESIS</th>
-        <th class='short'>GRADE</th>
-      </tr>
-      <tr>
-        <td><%= @diploma_supplement.disert_theme_title %></td>
-        <td>Passed</td>
-      </tr>
-      </table>
-      <p class='bigger'>Date of doctoral thesis defense: <strong><%= @diploma_supplement.defense_passed_on %></strong></p>
-      <table>
-      <tr>
         <th>FINAL STATE EXAMINATION</th>
         <th class='short'>GRADE</th>
       </tr>
@@ -108,9 +97,20 @@ give the reason why.
       <% end %>
       </table>
       <p class='bigger'>Date of final state examination: <strong><%= @diploma_supplement.final_exam_passed_on %></strong></p>
-      </li>
+      <table>
+      <tr>
+        <th>DOCTORAL THESIS</th>
+        <th class='short'>GRADE</th>
+      </tr>
+      <tr>
+        <td><%= @diploma_supplement.disert_theme_title %></td>
+        <td>Passed</td>
+      </tr>
+      </table>
+      <p class='bigger'>Date of doctoral thesis defense: <strong><%= @diploma_supplement.defense_passed_on %></strong></p>
       <li>4.4. Grading scheme:
       <table>
+      </li>
       <tr>
         <th colspan='2'>OVERALL CLASSIFICATION SCHEME</th>
       </tr>
@@ -135,19 +135,6 @@ give the reason why.
   </ul>
   </li>
   <li>
-  6. ADDITIONAL INFORMATION
-  <ul class='sub_list'>
-    <li>6.1. Additional information:&nbsp;<strong><%= @diploma_supplement.faculty_www %></strong></li>
-    <li>6.2. Further information sources:&nbsp;<strong>http://www.czu.cz/</strong></li>
-  </ul>
-  </li>
-  <li>
-  7. CERTIFICATION OF THE SUPPLEMENT
-  <ul class='sub_list'>
-    <li>7.1. Date:&nbsp;<strong><%= @diploma_supplement.printed_on %></strong></li>
-    <li>7.2. Signature:&nbsp;<strong><%= @diploma_supplement.dean_display_name %></strong></li>
-    <li>7.3. Capacity:&nbsp;<strong><%= @diploma_supplement.dean_title %></strong></li>
-    <li>7.4. Official stamp: </li>
   </ul>
   </li>
   <li  class='break'>

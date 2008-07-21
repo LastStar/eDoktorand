@@ -164,9 +164,11 @@ module StudyPlansHelper
   end
 
   def change_link(student)
-    link_to(_("change study plan"), {:action => 'change', 
-                                     :controller => 'study_plans',
-                                     :id => student})
+    unless student.index.claimed_for_final_exam?
+      link_to(_("change study plan"), {:action => 'change', 
+                                       :controller => 'study_plans',
+                                       :id => student})
+    end
   end
 
   def return_to_link

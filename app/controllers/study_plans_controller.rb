@@ -265,6 +265,7 @@ class StudyPlansController < ApplicationController
     session[:study_plan] = @study_plan = @student.index.build_study_plan
     session[:disert_theme] = @student.index.build_disert_theme
     session[:last_semester] = 0
+    # TODO do all in one step trhrough model method
     if RequisiteSubject.has_for_coridor?(@student.coridor)
       session[:requisite_subjects] = PlanSubject.create_for(@student, :requisite)
     end

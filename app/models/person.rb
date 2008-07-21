@@ -77,4 +77,9 @@ class Person < ActiveRecord::Base
     end
   end
 
+  def staff_email
+    if self.user
+      "%s@%s.czu.cz" % [self.user.login, self.faculty.ldap_context]
+    end
+  end
 end

@@ -38,6 +38,7 @@ class InteruptsController < ApplicationController
     end
   end
 
+  # confirms interupt
   def confirm_approve
     @document = Interupt.find(params[:id])
     @document.approve_with(params[:statement])
@@ -45,7 +46,7 @@ class InteruptsController < ApplicationController
       @document.index.study_plan.approve_with(params[:statement])
     end
     if @user.has_role?('faculty_secretary')
-      @document.index.interrupt!(document.start_on)
+      @document.index.interrupt!(@document.start_on)
     end
     
     if good_browser?
