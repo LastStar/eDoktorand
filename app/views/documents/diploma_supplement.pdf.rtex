@@ -10,13 +10,13 @@
 \setlength\headheight{0cm}
 \setlength\textwidth{16.7cm}
 \setlength\textheight{27.5cm}
-\setlength\oddsidemargin{0cm}
+\setlength\oddsidemargin{-0.5cm}
 \pagestyle{empty}
 
 \begin{document}
 
 \begin{center}
-\LARGE{Czech Republic}\\[2.8cm]
+\LARGE{Czech Republic}\\[2.5cm]
 
 \Large{{\sc Czech University of Life Sciences Prague}}
 
@@ -76,6 +76,7 @@ details:~http://www.czu.cz}}
 \begin{enumerate}{}{\setlength{\rightmargin}{\leftmargin}}
 \item{Mode of study: {\bf <%= @diploma_supplement.study_mode %>}}
 \item{Programme requirements:
+
 {\bf Student must satisfy programme requirements as prescribed in the
 documents: the Approved Course Schedule and the Study and Examination
 Rules. Further details on http://www.czu.cz.}
