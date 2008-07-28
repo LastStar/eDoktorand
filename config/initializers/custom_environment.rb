@@ -1,4 +1,3 @@
-
 # mail configuration
 ActionMailer::Base.delivery_method = :sendmail
 
@@ -20,3 +19,4 @@ ExceptionNotifier.exception_recipients = %w(pepe@gravastar.cz dvorakv@oikt.czu.c
 ExceptionNotifier.sender_address = 
   %("Edoktorand Exception Notifier" <exception.notifier@edoktorand.czu.cz>)
 require 'gettext/rails'
+

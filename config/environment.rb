@@ -29,7 +29,7 @@ Rails::Initializer.run do |config|
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
-  config.plugins = [ :exception_notification, :rtex, :all ]
+  # config.plugins = [ :exception_notification, :rtex, :all ]
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
@@ -67,4 +67,11 @@ Rails::Initializer.run do |config|
 
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
+  config.plugins = [ :exception_notification, :rtex, :all ]
+  config.gem "gettext", :version => '1.90.0'
+  config.gem "log4r"
+  config.gem "mongrel"
+  config.gem "andand"
+  config.gem "ruby-net-ldap", :lib => "net/ldap"
+
 end
