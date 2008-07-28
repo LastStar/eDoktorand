@@ -1,3 +1,4 @@
+# FIXME move to its own class with metaclass
 class String
   def and(chunk)
     if self.empty?
@@ -31,7 +32,7 @@ class Index < ActiveRecord::Base
     or disert_themes.defense_passed_on > ?)
   SQL
   LASTNAME_COND = "people.lastname like ?"
-  PRESENT_COND = "study_id = 1"
+  PRESENT_COND = "indices.study_id = 1"
   FINISHED_COND = <<-SQL
     indices.finished_on is not null and indices.finished_on < ?
   SQL
@@ -306,7 +307,6 @@ class Index < ActiveRecord::Base
   def self.find_by_criteria(options = {})
     conditions = ['']
     today = Date.today
-    debugger
     if options[:department] && options[:department].to_i != 0
       conditions.first.and(DEPARTMENTS_COND)
       conditions << options[:department]
@@ -325,20 +325,20 @@ class Index < ActiveRecord::Base
       case options[:study_status].to_i
       when 1, 5
         conditions.first.and(NOT_FINISHED_COND.and(NOT_INTERUPTED_COND))
-        conditions << [today] * 2
+        conditions << ([today] * 2)
       when 2
         conditions.first.and(FINISHED_COND)
         conditions << today
       when 3
         conditions.first.and(INTERUPTED_COND.and(FINISHED_COND))
-        conditions << [today] * 2
+        conditions << [today]
       when 4
         conditions.first.and(ABSOLVED_COND)
       when 6
         conditions.first.and(PASSED_FINAL_COND)
       end
     end
-    indices = Index.find_for(options[:user], :conditions => conditions, 
+    indices = Index.find_for(options[:user], :conditions => conditions.flatten, 
                             :faculty => options[:faculty], 
                             :order => options[:order])
     year = options[:year].to_i
