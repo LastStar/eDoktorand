@@ -1,12 +1,14 @@
 class String
   def and(chunk)
     if self.empty?
-      chunk
+      self << chunk
     elsif !chunk.strip.empty?
-      self << ' and ' << chunk
+      return self << ' and ' << chunk
     end
+    return self
   end
 end
+
 class Index < ActiveRecord::Base
   include Approvable
 
@@ -304,6 +306,7 @@ class Index < ActiveRecord::Base
   def self.find_by_criteria(options = {})
     conditions = ['']
     today = Date.today
+    debugger
     if options[:department] && options[:department].to_i != 0
       conditions.first.and(DEPARTMENTS_COND)
       conditions << options[:department]
