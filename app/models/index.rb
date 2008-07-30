@@ -6,7 +6,6 @@ class String
     elsif !chunk.strip.empty?
       self << ' and ' << chunk
     end
-    return self
   end
 end
 
@@ -215,24 +214,23 @@ class Index < ActiveRecord::Base
   # returns all indices for person
   # accepts Base.find options. Include and order for now
   def self.find_for(user, options ={})
-    conditions = Array.new
     if user.has_one_of_roles?(['admin', 'vicerector','supervisor'])
       if options[:only_tutor]
-        conditions = [TUTOR_COND, user.person.id]
+        conditions = [TUTOR_COND.clone, user.person.id]
       elsif options[:faculty] && options[:faculty] != '0'
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : \
           Faculty.find(options[:faculty])
-        conditions = [DEPARTMENTS_COND, faculty.departments]
+        conditions = [DEPARTMENTS_COND.clone, faculty.departments]
       else
         #TODO must be there?
         conditions  = ['NULL IS NULL']
       end
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary'])
-      conditions = [DEPARTMENTS_COND, user.person.faculty.departments]
+      conditions = [DEPARTMENTS_COND.clone, user.person.faculty.departments]
     elsif user.has_one_of_roles?(['leader', 'department_secretary'])
-      conditions = [DEPARTMENTS_COND, user.person.department.id]
+      conditions = [DEPARTMENTS_COND.clone, user.person.department.id]
     elsif user.has_role?('tutor')
-      conditions = [TUTOR_COND, user.person.id]
+      conditions = [TUTOR_COND.clone, user.person.id]
     else
       #TODO must be there?
       conditions = ["NULL IS NOT NULL"]
@@ -272,7 +270,7 @@ class Index < ActiveRecord::Base
 
   # finds only indices tutored by user
   def self.find_tutored_by(user, options={})
-    options[:conditions] = [TUTOR_COND, user.person.id]
+    options[:conditions] = [TUTOR_COND.clone, user.person.id]
     options[:order] = 'people.lastname'
     find_for(user, options)
   end
@@ -306,8 +304,7 @@ class Index < ActiveRecord::Base
 
   # search on selected criteria
   def self.find_by_criteria(options = {})
-    conditions = Array.new
-    conditions << ''
+    conditions = ['']
     today = Date.today
     if options[:department] && options[:department].to_i != 0
       conditions.first.sql_and(DEPARTMENTS_COND)
@@ -337,7 +334,7 @@ class Index < ActiveRecord::Base
       when 4
         conditions.first.sql_and(ABSOLVED_COND)
       when 6
-        conditions.first.sql_and(PASSED_FINAL_COND)
+        conditions.first.and(PASSED_FINAL_COND)
       end
     end
     indices = Index.find_for(options[:user], :conditions => conditions.flatten, 
