@@ -17,7 +17,7 @@ class CoridorsController < ApplicationController
 
   def attestation
     @indices = Index.find_for(@user, :unfinished => true, :not_interupted => true,
-                              :conditions => [" AND coridor_id = ?", params[:id]],
+                              :conditions => ["coridor_id = ?", params[:id]],
                               :order => "people.lastname")
 
   end

@@ -1,12 +1,11 @@
 # FIXME move to its own class with metaclass
 class String
-  def and(chunk)
+  def sql_and(chunk)
     if self.empty?
-      self << chunk
+      return chunk
     elsif !chunk.strip.empty?
-      return self << ' and ' << chunk
+      return self + ' and ' + chunk
     end
-    return self
   end
 end
 
@@ -240,31 +239,31 @@ class Index < ActiveRecord::Base
     options[:include] << [:study_plan, :student, :disert_theme, :department,
                            :study, :coridor, :interupt]
     if options[:conditions]
-      conditions.first.and(options[:conditions].first)
+      conditions.first.sql_and(options[:conditions].first)
       conditions.concat(options[:conditions][1..-1])
     end
     if options[:unfinished]
-      conditions.first.and(NOT_FINISHED_COND)
+      conditions.first.sql_and(NOT_FINISHED_COND)
       conditions << get_time_condition(options[:unfinished])
     end
     if options[:not_interupted]
-      conditions.first.and(NOT_INTERUPTED_COND)
+      conditions.first.sql_and(NOT_INTERUPTED_COND)
       conditions << get_time_condition(options[:not_interupted])
     end
     if options[:enrolled]
-      conditions.first.and(ENROLLED_COND)
+      conditions.first.sql_and(ENROLLED_COND)
       conditions << get_time_condition(options[:enrolled])
     end
     if options[:not_absolved]
-      conditions.first.and(NOT_ABSOLVED_COND)
+      conditions.first.sql_and(NOT_ABSOLVED_COND)
       conditions << options[:not_absolved]
     end
     if search = options.delete(:search)
       search = "%s%%" % search
-      conditions.first.and(LASTNAME_COND)
+      conditions.first.sql_and(LASTNAME_COND)
       conditions << search
     end
-    conditions.first.and(PRESENT_COND) if options[:present]
+    conditions.first.sql_and(PRESENT_COND) if options[:present]
     find(:all, :conditions => conditions, :order => options[:order],
         :include => options[:include])
   end
@@ -308,14 +307,14 @@ class Index < ActiveRecord::Base
     conditions = ['']
     today = Date.today
     if options[:department] && options[:department].to_i != 0
-      conditions.first.and(DEPARTMENTS_COND)
+      conditions.first.sql_and(DEPARTMENTS_COND)
       conditions << options[:department]
     elsif options[:coridor] && options[:coridor].to_i != 0
-      conditions.first.and(CORRIDOR_COND)
+      conditions.first.sql_and(CORRIDOR_COND)
       conditions << options[:coridor]
     end
     if options[:form] && options[:form].to_i != 0
-      conditions.first.and(STUDY_COND)
+      conditions.first.sql_and(STUDY_COND)
       conditions << options[:form]
     end
     if options[:status].to_i != 0 && options[:study_status].to_i == 0
@@ -324,18 +323,18 @@ class Index < ActiveRecord::Base
     if options[:study_status] && options[:study_status].to_i != 0
       case options[:study_status].to_i
       when 1, 5
-        conditions.first.and(NOT_FINISHED_COND.and(NOT_INTERUPTED_COND))
+        conditions.first.sql_and(NOT_FINISHED_COND.sql_and(NOT_INTERUPTED_COND))
         conditions << ([today] * 2)
       when 2
-        conditions.first.and(FINISHED_COND)
+        conditions.first.sql_and(FINISHED_COND)
         conditions << today
       when 3
-        conditions.first.and(INTERUPTED_COND.and(FINISHED_COND))
+        conditions.first.sql_and(INTERUPTED_COND.sql_and(FINISHED_COND))
         conditions << [today]
       when 4
-        conditions.first.and(ABSOLVED_COND)
+        conditions.first.sql_and(ABSOLVED_COND)
       when 6
-        conditions.first.and(PASSED_FINAL_COND)
+        conditions.first.sql_and(PASSED_FINAL_COND)
       end
     end
     indices = Index.find_for(options[:user], :conditions => conditions.flatten, 
