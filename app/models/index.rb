@@ -2,10 +2,11 @@
 class String
   def sql_and(chunk)
     if self.empty?
-      return chunk
+      self << chunk
     elsif !chunk.strip.empty?
-      return self + ' and ' + chunk
+      self << ' and ' << chunk
     end
+    return self
   end
 end
 
@@ -214,6 +215,7 @@ class Index < ActiveRecord::Base
   # returns all indices for person
   # accepts Base.find options. Include and order for now
   def self.find_for(user, options ={})
+    conditions = Array.new
     if user.has_one_of_roles?(['admin', 'vicerector','supervisor'])
       if options[:only_tutor]
         conditions = [TUTOR_COND, user.person.id]
@@ -304,7 +306,8 @@ class Index < ActiveRecord::Base
 
   # search on selected criteria
   def self.find_by_criteria(options = {})
-    conditions = ['']
+    conditions = Array.new
+    conditions << ''
     today = Date.today
     if options[:department] && options[:department].to_i != 0
       conditions.first.sql_and(DEPARTMENTS_COND)
