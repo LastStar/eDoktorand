@@ -9,6 +9,9 @@ ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(
  :database_manager => CGI::Session::ActiveRecordStore
 )
 
+# Set authenticate method of user login
+AUTH_SYSTEM = 'no_ldap'
+
 # faculty dependent configurations
 FACULTY_CFG =
 YAML::load(File.open("#{RAILS_ROOT}/config/initializers/faculty_configurations.yml"))

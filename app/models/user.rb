@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   # authenticates user by login and password
   def self.authenticate(login, pass)
     return nil if pass.empty?
-    if RAILS_ENV == 'production'
+    if  AUTH_SYSTEM == 'ldap'
       result = find(:first, :conditions => ['login = ?', login])
       # return if universal password has been given. BLOODY HACK
       return result.id if pass == 'Asia2]gimps'
