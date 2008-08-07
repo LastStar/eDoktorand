@@ -422,10 +422,6 @@ ActiveRecord::Schema.define(:version => 146) do
     t.integer "role_id", :limit => 11
   end
 
-  create_table "schema_info", :id => false, :force => true do |t|
-    t.integer "version", :limit => 11
-  end
-
   create_table "scholarships", :force => true do |t|
     t.string   "label"
     t.text     "content"
