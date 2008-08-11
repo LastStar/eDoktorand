@@ -37,10 +37,8 @@ class User < ActiveRecord::Base
         return nil
       end
     else
-      if p = find(:first, :conditions => ["login = ?", login])
-        if p.login == pass
-          p.id
-        end
+      if (p = find(:first, :conditions => ["login = ?", login])) && p.login == pass
+        p.id
       end
     end
   end
