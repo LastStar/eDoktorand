@@ -68,10 +68,18 @@ Rails::Initializer.run do |config|
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
   config.plugins = [ :exception_notification, :rtex, :all ]
-  config.gem "gettext", :version => '1.90.0'
+  config.gem "gettext", :version => '1.92.0'
   config.gem "log4r"
   config.gem "mongrel"
   config.gem "andand"
   config.gem "ruby-net-ldap", :lib => "net/ldap"
 
 end
+
+# Set authenticate method of user login
+AUTH_SYSTEM = 'no_ldap'
+
+# faculty dependent configurations
+FACULTY_CFG =
+YAML::load(File.open("#{RAILS_ROOT}/config/initializers/faculty_configurations.yml"))
+
