@@ -267,13 +267,16 @@ class CSVExporter
   def self.export_basic(students)
     outfile = File.open('students.csv', 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
-      csv << ['id', 'display name', 'birth number', 'coridor id']
+      csv << ['id', 'first name', 'last name', 'birth number', 'coridor id', 'faculty id', 'email']
       students.each do |s|
         row = []
         row << s.id
-        row << s.display_name
+        row << s.firstname
+        row << s.lastname
         row << s.birth_number
-        row << s.index.coridor_id
+        row << s.index.coridor.name
+        row << s.index.faculty.name
+        row << s.email.andand.name
         csv << row
       end
       outfile.close

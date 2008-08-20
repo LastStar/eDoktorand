@@ -245,6 +245,9 @@ class Index < ActiveRecord::Base
     if options[:unfinished]
       conditions.first.sql_and(NOT_FINISHED_COND)
       conditions << get_time_condition(options[:unfinished])
+    elsif finished_time = options.delete(:finished)
+      conditions.first.sql_and(FINISHED_COND)
+      conditions << get_time_condition(finished_time)
     end
     if options[:not_interupted]
       conditions.first.sql_and(NOT_INTERUPTED_COND)
