@@ -11,7 +11,7 @@ class UicGetter
 
   # constants definition
   SERVICES = {:uic => "http://193.84.34.35:8081/axis2/rest/GetUicService/getUicByBirthNum?rc=%s"}
-  UIC_REGEX = /<uic>(-?[0-9]{3,5})<\/uic>/
+  UIC_REGEX = /<uic>(-?[0-9]{3,6})<\/uic>/
   MESSAGE_REGEXP = /<message>(.*)<\/message>/
 
   # initialize with type of service
