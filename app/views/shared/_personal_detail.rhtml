@@ -18,6 +18,9 @@
     <%= "#{long_info_helper(index.coridor.name)}#{_('Corridor')}: " %>
   </li>
   <li>
+    <%= "#{long_info_helper(index.student.department.short_name)}#{_('Department')}: " %> 
+  </li>  
+  <li>
     <%= "#{long_info_helper(index.study.name)}#{_('Study form')}: " %>
   </li>
   <li class='printable'>
@@ -40,5 +43,6 @@
   <li>
     <%= attribute_line(index.student, :citizenship) %><%=_('citizenship')%>:
   </li>
+
 </ul>
 
