@@ -47,8 +47,7 @@ class ProbationTermsController < ApplicationController
     @probation_term.students << @student
     @probation_term.save
     @students = Student.find_to_enroll(@probation_term, :sort)
-    render(:partial => "detail", :locals => {:probation_term => @probation_term,
-           :students => @students})
+    render(:action => "detail")
   end
   
   # sign off the desired student
@@ -60,8 +59,7 @@ class ProbationTermsController < ApplicationController
     if @user.has_role?('student')
       redirect_to :action => 'list'
     else
-      render(:partial => "detail", :locals => {:probation_term => @probation_term,
-           :students => @students})
+      render(:action => "detail")
     end
   end
   
@@ -125,8 +123,7 @@ class ProbationTermsController < ApplicationController
     @probation_term = session[:probation_term]
     session[:exam] = session[:probation_term] = nil
     @students = Student.find_to_enroll(@probation_term, :sort)
-    render(:partial => 'detail', :locals => {:students => @students,
-                                 :probation_term => @probation_term})
+    render(:action => "detail")
   end
 
   # sets title of the controller

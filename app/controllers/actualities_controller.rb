@@ -5,7 +5,7 @@ class ActualitiesController < ApplicationController
   end
 
   def list
-    @actuality_pages, @actualities = paginate :actualities, :per_page => 10
+    @actualities = Actuality.paginate :page => params[:page]
   end
 
   def show

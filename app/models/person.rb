@@ -64,7 +64,7 @@ class Person < ActiveRecord::Base
   end
 
   def <=>(other)
-    lastname <=> other.lastname
+    self.lastname <=> other.lastname
   end
 
   def self.find_for(user)

@@ -12,7 +12,7 @@ class Coridor < ActiveRecord::Base
   has_one :exam_term
   has_many :indices
   has_many :tutorships
-  has_many :tutors, :through => :tutorships
+  has_many :tutors, :through => :tutorships, :order => 'people.lastname'
   validates_presence_of :faculty
 
   # returns array structured for html select
@@ -65,7 +65,7 @@ class Coridor < ActiveRecord::Base
   end
 
   def tutors_for_select
-    tutors.sort.map {|t| [t.display_name, t.id]}
+    tutors.map {|t| [t.display_name, t.id]}
   end
 
   def english_with_code

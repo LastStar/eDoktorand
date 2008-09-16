@@ -12,14 +12,19 @@ class FinalExamTerm < ExamTerm
   # finds final exam terms for given user
   def self.find_for(user, options = {})
     # TODO redo with only ids of indices
-    options[:conditions] = ['index_id in (?)', Index.find_for(user)]
+    indices = Index.find_for(user)
+    if options.delete :not_passed
+      indices.reject! {|i| i.status == _('FE passed')}
+    end
+    options[:conditions] = ['index_id in (?)', indices]
     if options.delete :future
       options[:conditions].first << ' and date >= ? and indices.final_exam_invitation_sent_at is not null'
       options[:conditions] << Date.today
     end
     options[:include] = :index
-    options[:order] = 'date'
-    find(:all, options)
+    options[:order] = 'date desc'
+    final_exams = find(:all, options)
+    return final_exams
   end
 end
 

@@ -8,7 +8,9 @@ class FinalExamTermsController < ApplicationController
   # shows list of all defenses in system for user
   def list
     @title = _('Final exam terms')
-    @final_exam_terms = FinalExamTerm.find_for(@user, :future => params[:future])
+    @final_exam_terms = FinalExamTerm.find_for(@user,
+                                               :future => params[:future],
+                                               :not_passed => true)
   end
 
   def prepare_print
