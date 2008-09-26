@@ -326,13 +326,13 @@ class Index < ActiveRecord::Base
     if options[:study_status] && options[:study_status].to_i != 0
       case options[:study_status].to_i
       when 1, 5
-        conditions.first.sql_and(NOT_FINISHED_COND.sql_and(NOT_INTERUPTED_COND))
+        conditions.first.sql_and(NOT_FINISHED_COND).sql_and(NOT_INTERUPTED_COND)
         conditions << ([today] * 2)
       when 2
         conditions.first.sql_and(FINISHED_COND)
         conditions << today
       when 3
-        conditions.first.sql_and(INTERUPTED_COND.sql_and(FINISHED_COND))
+        conditions.first.sql_and(INTERUPTED_COND).sql_and(FINISHED_COND)
         conditions << [today]
       when 4
         conditions.first.sql_and(ABSOLVED_COND)
