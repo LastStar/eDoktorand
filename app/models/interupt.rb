@@ -13,7 +13,7 @@ class Interupt < ActiveRecord::Base
   validates_presence_of :index
 
   def end_on
-    (start_on + duration.month).end_of_month
+    (start_on + (duration - 1).month).end_of_month
   end
 
   # returns current duration of interrupt in months
