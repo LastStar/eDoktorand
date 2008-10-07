@@ -49,6 +49,12 @@ class Candidate < ActiveRecord::Base
     !admited? && enrolled?
   end
 
+  def validate_on_create
+    if birth_number.to_i.remainder(11) != 0
+      errors.add(:birth_number, _('your birth number has wrong format'))
+    end
+  end
+
   # finishes candidate
   def finish!
     self.update_attribute(:finished_on, Time.now)

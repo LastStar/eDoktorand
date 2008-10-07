@@ -496,7 +496,7 @@ class Index < ActiveRecord::Base
 
   def waits_for_scholarship_confirmation?
     claim_date = scholarship_claimed_at
-    claim_date && claim_date < TermsCalculator.this_year_start &&
+    claim_date && claim_date > TermsCalculator.this_year_start &&
       !scholarship_approved? && !scholarship_canceled?
   end
 
