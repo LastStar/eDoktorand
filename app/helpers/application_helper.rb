@@ -533,8 +533,13 @@ module ApplicationHelper
     if @user.has_role?('faculty_secretary')
       attribute_line(index, :tutor, :display_name) + _('Tutor') + ':'
     else
-      long_info_helper(index.tutor.display_name, :class => 'printable') + 
-        _('Tutor') + ':'
+      if index.tutor == nil
+        long_info_helper(_("YOU DON'T HAVE TUTOR! CONTACT HELPDESK NOW!"), :class => 'printable') + 
+          _('Tutor') + ':'        
+      else
+        long_info_helper(index.tutor.display_name, :class => 'printable') + 
+          _('Tutor') + ':'
+      end
     end
   end
 
