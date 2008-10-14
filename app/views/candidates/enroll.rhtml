@@ -1,9 +1,12 @@
+<% if $enroll != 'disable' %>
 <% form_tag :action => 'confirm_enroll', :id => @candidate do %>	
   <label for="user_login"><%=_("Desired login")%>:</label><br/>
-  <%= text_field "user", "login", :size => 30 %><br/>
+  <%= text_field "user", "login", :size => 30, :value => ''%><br/>
   <%= submit_tag _("Enroll") %>
 <% end %>
-
+<% else %>
+  <%= _('Enroll candidates is disabled. Please contact HELPDESK.') %>
+<% end %>
 <div class='links'>
   <%= link_to _('back'), :action => 'list' %>
 </div >

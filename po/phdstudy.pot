@@ -759,7 +759,7 @@ msgstr ""
 
 #: app/helpers/students_helper.rb:301 app/helpers/application_helper.rb:344
 #: app/views/final_exam_terms/protocol.rhtml:2
-#: app/views/candidates/reject.rhtml:51 app/views/candidates/enroll.rhtml:8
+#: app/views/candidates/reject.rhtml:51 app/views/candidates/enroll.rhtml:11
 #: app/views/defenses/protocol.rhtml:3 app/views/exam_terms/new.rhtml:18
 #: app/views/exam_terms/edit.rhtml:7 app/views/account/no_permission.rhtml:2
 #: app/views/account/error.rhtml:7 app/views/coridors/manage_edit.rhtml:3
@@ -1973,12 +1973,16 @@ msgstr ""
 msgid "tutor"
 msgstr ""
 
-#: app/views/candidates/enroll.rhtml:2
+#: app/views/candidates/enroll.rhtml:3
 msgid "Desired login"
 msgstr ""
 
-#: app/views/candidates/enroll.rhtml:4
+#: app/views/candidates/enroll.rhtml:5
 msgid "Enroll"
+msgstr ""
+
+#: app/views/candidates/enroll.rhtml:8
+msgid "Enroll candidates is disabled. Please contact HELPDESK."
 msgstr ""
 
 #: app/views/candidates/confirm_admit.rhtml:55

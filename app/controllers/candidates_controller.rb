@@ -110,7 +110,7 @@ class CandidatesController < ApplicationController
   # enroll candidate form
   def enroll
 		@candidate = Candidate.find(params[:id])
-		@user = User.new
+		@new_user = User.new
   end
 
 	# confirms enrollment of candidate and sends email

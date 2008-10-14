@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-10-13 15:03+0200\n"
+"POT-Creation-Date: 2008-10-14 10:41+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -780,7 +780,7 @@ msgstr ""
 
 #: app/helpers/students_helper.rb:301 app/helpers/application_helper.rb:344
 #: app/views/final_exam_terms/protocol.rhtml:2
-#: app/views/candidates/reject.rhtml:51 app/views/candidates/enroll.rhtml:8
+#: app/views/candidates/reject.rhtml:51 app/views/candidates/enroll.rhtml:11
 #: app/views/defenses/protocol.rhtml:3 app/views/exam_terms/new.rhtml:18
 #: app/views/exam_terms/edit.rhtml:7 app/views/account/no_permission.rhtml:2
 #: app/views/account/error.rhtml:7 app/views/coridors/manage_edit.rhtml:3
@@ -2003,13 +2003,17 @@ msgstr "přijat"
 msgid "tutor"
 msgstr "školitel"
 
-#: app/views/candidates/enroll.rhtml:2
+#: app/views/candidates/enroll.rhtml:3
 msgid "Desired login"
 msgstr ""
 
-#: app/views/candidates/enroll.rhtml:4
+#: app/views/candidates/enroll.rhtml:5
 msgid "Enroll"
 msgstr "zapsat"
+
+#: app/views/candidates/enroll.rhtml:8
+msgid "Enroll candidates is disabled. Please contact HELPDESK."
+msgstr "Zapsání uchazečů do sytému je zakázáno. Obraťte se na HELPDESK."
 
 #: app/views/candidates/confirm_admit.rhtml:55
 #: app/views/candidates/confirm_admit.rhtml:57

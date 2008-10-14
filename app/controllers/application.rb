@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
   init_gettext "phdstudy"
 
   before_filter :utf8_locale
-
+  # enable or disable enroll candidates in application
+  $enroll = 'disable'
   # sets utf8 for db and locale to cs_CZ
   # TODO redone for native sql and locale
   # TODO remove blood with Dean
