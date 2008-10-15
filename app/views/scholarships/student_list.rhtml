@@ -4,6 +4,11 @@
   <div class = 'links'>
     <%= claim_accomodation_scholarship_link %>
   </div>
+<% else %>
+    <div class = 'links'>
+    <%= _("Please fill in address and account number to enable accomodation scholarship.") %>
+  </div>
+  
 <% end %>
 <% if @index.payed_scholarships == [] %>
   <%= _("You have not any scholarships.") %>

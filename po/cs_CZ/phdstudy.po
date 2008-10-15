@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-10-14 10:41+0200\n"
+"POT-Creation-Date: 2008-10-15 15:06+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -704,7 +704,7 @@ msgstr "studijní plán"
 msgid "SP not admited"
 msgstr "SP nesestaven"
 
-#: app/helpers/students_helper.rb:267 app/models/study_plan.rb:145
+#: app/helpers/students_helper.rb:267 app/models/study_plan.rb:150
 msgid "SP admited"
 msgstr "SP sestaven"
 
@@ -1287,19 +1287,19 @@ msgstr "obhájil DP"
 msgid "pass defense to"
 msgstr "obhájil dne"
 
-#: app/models/study_plan.rb:139
+#: app/models/study_plan.rb:144
 msgid "all finished"
 msgstr "SP splněn"
 
-#: app/models/study_plan.rb:141
+#: app/models/study_plan.rb:146
 msgid "SP canceled"
 msgstr "SP neschválen"
 
-#: app/models/study_plan.rb:143
+#: app/models/study_plan.rb:148
 msgid "SP approved"
 msgstr "SP schválen"
 
-#: app/models/study_plan.rb:152
+#: app/models/study_plan.rb:157
 msgid "dean"
 msgstr "děkan"
 
@@ -3086,17 +3086,17 @@ msgid "First name"
 msgstr "jméno"
 
 #: app/views/scholarships/list.rhtml:20 app/views/scholarships/list.rhtml:29
-#: app/views/scholarships/student_list.rhtml:12
+#: app/views/scholarships/student_list.rhtml:17
 msgid "Type of scholarship"
 msgstr "Typ Stipendia"
 
 #: app/views/scholarships/list.rhtml:20 app/views/scholarships/list.rhtml:37
-#: app/views/scholarships/student_list.rhtml:12
+#: app/views/scholarships/student_list.rhtml:17
 msgid "Disponent"
 msgstr "Disponent"
 
 #: app/views/scholarships/list.rhtml:20
-#: app/views/scholarships/student_list.rhtml:12
+#: app/views/scholarships/student_list.rhtml:17
 msgid "Amount (CZK)"
 msgstr "Částka Kč"
 
@@ -3113,10 +3113,14 @@ msgid "Payed scholarship"
 msgstr "Vyplacená stipendia"
 
 #: app/views/scholarships/student_list.rhtml:9
+msgid "Please fill in address and account number to enable accomodation scholarship."
+msgstr "Vyplňte adresu a číslo účtu pro povolení žádosti o ubytovací stipendium."
+
+#: app/views/scholarships/student_list.rhtml:14
 msgid "You have not any scholarships."
 msgstr "Nebylo Vám přiznáno žádné stipendium."
 
-#: app/views/scholarships/student_list.rhtml:12
+#: app/views/scholarships/student_list.rhtml:17
 msgid "Payed on"
 msgstr "Vyplaceno dne"
 
