@@ -135,7 +135,7 @@ module StudyPlansHelper
                                       :action => 'change_tutor'},
                                       :confirm => _("Are you sure to") + 
                                       ' ' + _("change tutor") + '?'){}
-    if student.study_plan.approved?
+    if student.study_plan.approved? || student.study_plan.canceled?
       links << change_link(student)
     end
     unless student.index.interupted?
