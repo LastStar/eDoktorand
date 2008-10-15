@@ -16,8 +16,9 @@ test:
 
 production:
   adapter: mysql
-  database: phdstudy_development
+  database: phdstudy_production
   host: localhost
   port: 3306
-  username: web
-  password: w3b
+  username: w3b
+  password: w3b3000
+

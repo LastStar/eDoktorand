@@ -26,8 +26,8 @@ class User < ActiveRecord::Base
         else
           ldap_context = result.person.faculty.ldap_context
         end
-        conn = Net::LDAP.new :host => '193.84.33.9'
-        conn.auth "cn=#{login},ou=#{ldap_context}o=czu, c=cz", pass
+        conn = Net::LDAP.new :host => 'ldap.czu.cz'
+        conn.auth "cn=#{login},ou=#{ldap_context},o=czu,c=cz", pass
         if conn.bind
           return result.id
         else
