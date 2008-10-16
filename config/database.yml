@@ -17,7 +17,7 @@ test:
 production:
   adapter: mysql
   database: phdstudy_production
-  host: localhost
+  host: edoktorand.czu.cz
   port: 3306
   username: w3b
   password: w3b3000

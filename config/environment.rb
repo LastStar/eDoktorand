@@ -78,7 +78,7 @@ Rails::Initializer.run do |config|
 end
 
 # Set authenticate method of user login
-AUTH_SYSTEM = 'no_ldap'
+AUTH_SYSTEM = 'ldap'
 
 # faculty dependent configurations
 FACULTY_CFG =
