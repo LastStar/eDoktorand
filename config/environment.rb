@@ -84,3 +84,5 @@ AUTH_SYSTEM = 'ldap'
 FACULTY_CFG =
 YAML::load(File.open("#{RAILS_ROOT}/config/initializers/faculty_configurations.yml"))
 
+# mailing
+ActionMailer::Base.delivery_method = :sendmail
