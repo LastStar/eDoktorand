@@ -1159,7 +1159,7 @@ msgstr ""
 msgid "candidate must be admited before enrollment"
 msgstr ""
 
-#: app/models/candidate.rb:54
+#: app/models/candidate.rb:55 app/models/candidate.rb:63
 msgid "your birth number has wrong format"
 msgstr ""
 

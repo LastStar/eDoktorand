@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-10-15 15:06+0200\n"
+"POT-Creation-Date: 2008-10-21 13:03+0200\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -1180,10 +1180,9 @@ msgstr "uchazeč musí být pozván před příjetím"
 msgid "candidate must be admited before enrollment"
 msgstr "uchazeč musí být přijat před zápisem"
 
-#: app/models/candidate.rb:54
-#, fuzzy
+#: app/models/candidate.rb:55 app/models/candidate.rb:63
 msgid "your birth number has wrong format"
-msgstr "číslo účtu je ve špatném formátu"
+msgstr "rodné číslo je ve špatném formátu"
 
 #: app/models/interupt.rb:7
 msgid "end to"
@@ -3113,8 +3112,10 @@ msgid "Payed scholarship"
 msgstr "Vyplacená stipendia"
 
 #: app/views/scholarships/student_list.rhtml:9
-msgid "Please fill in address and account number to enable accomodation scholarship."
-msgstr "Vyplňte adresu a číslo účtu pro povolení žádosti o ubytovací stipendium."
+msgid ""
+"Please fill in address and account number to enable accomodation scholarship."
+msgstr ""
+"Vyplňte adresu a číslo účtu pro povolení žádosti o ubytovací stipendium."
 
 #: app/views/scholarships/student_list.rhtml:14
 msgid "You have not any scholarships."

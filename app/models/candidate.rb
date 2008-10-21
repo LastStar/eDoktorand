@@ -50,10 +50,21 @@ class Candidate < ActiveRecord::Base
   end
 
   def validate_on_create
-    if birth_number.to_i.remainder(11) != 0
-      errors.add(:birth_number, _('your birth number has wrong format'))
+    if state == "Česká republika"
+      if birth_number.to_i.remainder(11) != 0
+        errors.add(:birth_number, _('your birth number has wrong format'))
+      end
     end
   end
+
+  def validate_on_update
+    if state == "Česká republika"
+      if birth_number.to_i.remainder(11) != 0
+        errors.add(:birth_number, _('your birth number has wrong format'))
+      end
+    end
+  end
+
 
   # finishes candidate
   def finish!
