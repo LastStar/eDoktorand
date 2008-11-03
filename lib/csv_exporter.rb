@@ -341,7 +341,8 @@ class CSVExporter
       end
       outfile.close
     end
-
+  end
+  
   def self.export_for_board(department)
     department = department.id if department.is_a? Department
     filename = "students_%i.csv" % department
