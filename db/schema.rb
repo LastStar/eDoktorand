@@ -147,6 +147,8 @@ ActiveRecord::Schema.define(:version => 20080730191834) do
     t.integer "faculty_id",   :limit => 11
   end
 
+  add_index "departments", ["faculty_id"], :name => "index_departments_on_faculty_id"
+
   create_table "departments_subjects", :id => false, :force => true do |t|
     t.integer "department_id", :limit => 11
     t.integer "subject_id",    :limit => 11
@@ -208,6 +210,8 @@ ActiveRecord::Schema.define(:version => 20080730191834) do
     t.datetime "created_on"
     t.datetime "updated_on"
   end
+
+  add_index "employments", ["person_id"], :name => "index_employments_on_person_id"
 
   create_table "exam_terms", :force => true do |t|
     t.integer  "coridor_id",         :limit => 11
@@ -374,6 +378,8 @@ ActiveRecord::Schema.define(:version => 20080730191834) do
     t.integer "permission_id", :limit => 11
   end
 
+  add_index "permissions_roles", ["role_id"], :name => "index_permissions_roles_on_role_id"
+
   create_table "plan_subjects", :force => true do |t|
     t.integer  "study_plan_id", :limit => 11
     t.integer  "subject_id",    :limit => 11
@@ -422,9 +428,7 @@ ActiveRecord::Schema.define(:version => 20080730191834) do
     t.integer "role_id", :limit => 11
   end
 
-  create_table "schema_info", :id => false, :force => true do |t|
-    t.integer "version", :limit => 11
-  end
+  add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
 
   create_table "scholarships", :force => true do |t|
     t.string   "label"
