@@ -337,7 +337,7 @@ class Index < ActiveRecord::Base
       when 4
         conditions.first.sql_and(ABSOLVED_COND)
       when 6
-        conditions.first.and(PASSED_FINAL_COND)
+        conditions.first.sql_and(PASSED_FINAL_COND)
       end
     end
     indices = Index.find_for(options[:user], :conditions => conditions.flatten, 
