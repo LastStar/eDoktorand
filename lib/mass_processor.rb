@@ -2,7 +2,7 @@ require 'log4r'
 class MassProcessor
   include Log4r
 
-  @@mylog = Logger.new 'Importer'
+  @@mylog = Logger.new 'MassProcessor'
   @@mylog.outputters = Outputter.stdout
   @@mylog.level = 1
 
@@ -55,7 +55,7 @@ class MassProcessor
     end
   end
 
-  def self.fix_bad_birt_numbers(students = nil)
+  def self.fix_bad_birth_numbers(students = nil)
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
     notfound = []
     students ||= Student.find(:all)
@@ -83,5 +83,37 @@ class MassProcessor
       end
     end
     return notfound
+  end
+  
+  # reads sident from webservice and change it for students
+  def self.repair_sident(students)
+    @@mylog.info "There are %i students" % students.size
+    @client = SOAP::NetHttpClient.new
+    service = "http://193.84.34.34:8081/axis2/rest/GetSidentService/getSidentByBirthNum?rc=%s"
+    students.each do |student|
+      @@mylog.info "Procesing student #%i" % student.id
+
+      service_url = service % student.birth_number
+      @@mylog.debug "Service url is: %s" % service_url
+
+      begin
+        sident = @client.get_content(service_url)
+      rescue URI::InvalidURIError
+        @@mylog.error "Bad service url %s" % service_url
+        next
+      end
+
+      if sident =~ /<SIDENT>(.*)<\/SIDENT>/
+        sident = $1
+        @@mylog.info "Got sident %i" % sident
+
+        if sident != -1
+          student.update_attribute(:sident, sident)
+          @@mylog.info "Updated sident"
+        else
+          @@mylog.error "Service returned bad code for student #%i" % student.id
+        end
+      end
+    end
   end
 end
