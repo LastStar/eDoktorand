@@ -1,0 +1,32 @@
+\documentclass[pdftex,12pt,a4paper]{report}
+\linespread{1.05}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+
+
+\begin{document}
+
+\begin{center}
+
+\Large{{\sc Česká zemědělská univerzita v Praze}}
+
+\Large{<%= @faculty.name %>}\bigskip
+\end{center}
+
+\begin{enumerate}
+<% for coridor in @coridors %>
+\begin{item}
+{\bf <%= coridor.name %>}
+
+<% for tutor in coridor.tutors %>
+
+<%= tutor.display_name %>
+
+<% end %>
+\end{item}
+
+<% end %>
+\end{document}
+
+

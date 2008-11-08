@@ -41,13 +41,14 @@ class DocumentsController < ApplicationController
     end
   end
 
-  def destroy
-    Document.find(params[:id]).destroy
-    redirect_to :action => 'list'
-  end
-
+  # prints diploma supplement to pdf
   def diploma_supplement
     @diploma_supplement = DiplomaSupplement.find(params[:id])
   end
 
+  # prints list of tutors by coridors to pdf
+  def tutors_by_coridors
+    @faculty = Faculty.find_by_short_name(params[:id])
+    @coridors = @faculty.coridors
+  end
 end
