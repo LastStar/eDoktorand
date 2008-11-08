@@ -19,14 +19,6 @@ class AccountController < ApplicationController
     @actualities = Actuality.find(:all)
   end
   
-  def delete
-    if params[:id]
-      @user = User.find(params[:id])
-      @user.destroy
-    end
-    redirect_back_or_default :action => "welcome"
-  end  
-    
   def logout
     reset_session
     redirect_to login_url

@@ -79,11 +79,11 @@ class CandidatesController < ApplicationController
   # destroys candidate
   def destroy
     Candidate.find(params[:id]).destroy
-      if session[:back_page] == 'list'
-        redirect_to :action => 'list', :page => session[:current_page_backward]
-      else
-        redirect_to :action => 'list_all'
-      end
+    if session[:back_page] == 'list'
+      redirect_to :action => 'list', :page => session[:current_page_backward]
+    else
+      redirect_to :action => 'list_all'
+    end
 
   end
   

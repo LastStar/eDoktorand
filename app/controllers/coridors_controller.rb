@@ -46,8 +46,4 @@ class CoridorsController < ApplicationController
     @coridor_subject.save
   end
   
-  def destroy
-    Coridor.find(params[:id]).destroy
-    redirect_to :action => 'list'
-  end
 end
