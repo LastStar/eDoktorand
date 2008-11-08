@@ -121,9 +121,7 @@ class StudyPlansController < ApplicationController
   # renders change page for study plan
   def change
     @title = _('Change of study plan')
-    if !@student
-      @student = Student.find(params[:id])
-    end
+    @student ||= Student.find(params[:id])
     coridor = @student.index.coridor
     @subjects = CoridorSubject.for_select(:coridor => coridor)
     if @study_plan = @student.index.study_plan

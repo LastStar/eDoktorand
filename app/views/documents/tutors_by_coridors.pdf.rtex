@@ -16,6 +16,7 @@
 
 \begin{enumerate}
 <% for coridor in @coridors %>
+<% unless coridor.tutors.empty? %>
 \begin{item}
 {\bf <%= coridor.name %>}
 
@@ -25,6 +26,7 @@
 
 <% end %>
 \end{item}
+<% end %>
 
 <% end %>
 \end{document}

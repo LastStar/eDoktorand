@@ -55,6 +55,7 @@ class MassProcessor
     end
   end
 
+  # fixes birth number badly transfered from candidates
   def self.fix_bad_birth_numbers(students = nil)
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
     notfound = []
