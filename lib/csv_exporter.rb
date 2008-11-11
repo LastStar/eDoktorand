@@ -183,7 +183,7 @@ class CSVExporter
     file = "students_edir_uic.csv"
     outfile = File.open(file, 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
-      csv << ['id clovek','login', 'uic', 'sident', 'display name', 'department',
+      csv << ['id clovek','login', 'uic', 'sident','title before', 'display name', 'title after', 'department',
               'faculty']
       indices ||= Index.find(:all, :conditions => 'finished_on is null')
       @@mylog.info "There are #{indices.size} students"
@@ -197,7 +197,17 @@ class CSVExporter
         end
         row << index.student.uic
         row << index.student.sident if index.student.sident
+        if index.student.title_before
+          row << index.student.title_before.label
+        else
+          row << " "          
+        end        
         row << index.student.display_name
+        if index.student.title_after
+          row << index.student.title_after.label
+        else
+          row << " "          
+        end        
         row << index.department.name
         row << index.faculty.name
         @@mylog.debug "Adding #{row}"

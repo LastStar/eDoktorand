@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: phdstudy 1.0\n"
-"POT-Creation-Date: 2008-10-21 13:03+0200\n"
+"POT-Creation-Date: 2008-11-11 12:12+0100\n"
 "PO-Revision-Date: Fri May 27 17:54:57 CEST 2005\n"
 "Last-Translator: Josef Pospíšil <pepe@gravastar.cz>\n"
 "Language-Team: czech <cz@gravastar.cz>\n"
@@ -704,7 +704,7 @@ msgstr "studijní plán"
 msgid "SP not admited"
 msgstr "SP nesestaven"
 
-#: app/helpers/students_helper.rb:267 app/models/study_plan.rb:150
+#: app/helpers/students_helper.rb:267 app/models/study_plan.rb:153
 msgid "SP admited"
 msgstr "SP sestaven"
 
@@ -1286,19 +1286,23 @@ msgstr "obhájil DP"
 msgid "pass defense to"
 msgstr "obhájil dne"
 
-#: app/models/study_plan.rb:144
+#: app/models/study_plan.rb:147
 msgid "all finished"
 msgstr "SP splněn"
 
-#: app/models/study_plan.rb:146
+#: app/models/study_plan.rb:149
 msgid "SP canceled"
 msgstr "SP neschválen"
 
-#: app/models/study_plan.rb:148
+#: app/models/study_plan.rb:151
 msgid "SP approved"
 msgstr "SP schválen"
 
-#: app/models/study_plan.rb:157
+#: app/models/study_plan.rb:156
+msgid "no disert theme"
+msgstr "chybí téma DP"
+
+#: app/models/study_plan.rb:163
 msgid "dean"
 msgstr "děkan"
 
@@ -3474,10 +3478,6 @@ msgstr "Pokud jste našel/-la jakoukoliv nesrovnalost, prosím kontaktujte "
 #: app/views/study_plans/_help.rhtml:38
 msgid "First step propably will to create"
 msgstr "Prvním krokem bude vytvořit"
-
-#: app/views/layouts/employers.rhtml:28 app/views/layouts/documents.rhtml:31
-msgid "Developed by"
-msgstr ""
 
 #: app/views/layouts/documents.rhtml:26
 msgid "loading ..."
