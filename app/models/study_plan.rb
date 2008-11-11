@@ -7,6 +7,8 @@ class StudyPlan < ActiveRecord::Base
   has_one :approvement, :class_name => 'StudyPlanApprovement',
     :foreign_key => 'document_id'
   has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
+  #Have to be tested:
+  #has_one :atestation_detail, :foreign_key => 'study_plan_id', :order => 'created_on'
   has_many :approvements
   acts_as_audited
   validates_presence_of :index
@@ -138,16 +140,20 @@ class StudyPlan < ActiveRecord::Base
 
   # returns status of study plan
   def status
-    @status ||= if index.disert_theme.defense_passed? || index.final_exam_passed?
-      ''
-    elsif all_subjects_finished?
-      _('all finished')
-    elsif canceled?
-      _('SP canceled')
-    elsif approved?
-      _('SP approved')
-    elsif admited?
-      _('SP admited')
+    if index.disert_theme
+      @status ||= if index.disert_theme.defense_passed? || index.final_exam_passed?
+        ''
+      elsif all_subjects_finished?
+        _('all finished')
+      elsif canceled?
+        _('SP canceled')
+      elsif approved?
+        _('SP approved')
+      elsif admited?
+        _('SP admited')
+      end
+    else
+      _('no disert theme')
     end
   end
 
