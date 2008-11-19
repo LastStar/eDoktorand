@@ -7,7 +7,7 @@
 
 <p><label for="exam_term_start_time"><%= _('date and time') %></label>
 <%= date_select 'exam_term', 'date', :order => [:day, :month, :year], :use_month_numbers => true %>
-&mdash;<%= select 'exam_term', 'start_time', str_time_select %></p>
+&mdash;<%= select 'exam_term', 'start_time', str_time_select(7, 20) %></p>
 
 <p><label for="exam_term_room" class='required'><%= _('room') %></label>
 <%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
