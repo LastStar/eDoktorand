@@ -62,6 +62,36 @@ module StudyPlansHelper
     return select
   end
 
+  def empty_subject_select(subjects)
+    select = ''
+    subjects = [[_("none subject"), -1]].concat(subjects)
+    subjects = [[_("external subject"), 0]].concat(subjects)
+    #plan_subject.subject_id = 0 if plan_subject.subject.is_a?(ExternalSubject)
+    select << content_tag('select', options_for_select(subjects, -1),
+      {'id' => "plan_subject_new_subject_id",
+      'name' => "plan_subject[-1][subject_id]",
+      'onChange' => "hide_new_internal(); return(false);"})
+    select << "&mdash; "
+    select << content_tag('select', options_for_select(1..5,
+      1), { 'id' => 
+      "plan_subject_new_finishing_on", 'name' => 
+      "plan_subject[-1][finishing_on]"})
+    return select
+  end
+  
+  def input_external_empty(value)
+    tag('input', { 'type' => 'text', 'id' =>
+      "external_subject_detail_-1_"+value, 
+      'name' => "plan_subject[-1]["+value+"]"})
+  end
+  
+  def input_external_empty_detail(value)
+        tag('input', { 'type' => 'text', 'id' =>
+      "external_subject_detail_-1_"+value, 
+      'name' => "external_subject_detail[-1]["+value+"]"
+        })
+  end
+
   # print external subject tag
   def external_subject_input(plan_subject)
      value = if plan_subject.subject.is_a?(ExternalSubject) || plan_subject.subject_id == 0 

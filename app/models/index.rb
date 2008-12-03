@@ -273,9 +273,15 @@ class Index < ActiveRecord::Base
 
   # finds only indices tutored by user
   def self.find_tutored_by(user, options={})
-    options[:conditions] = [TUTOR_COND.clone, user.person.id]
+    #commented is old style of searching:
+    #options[:conditions] = [TUTOR_COND.clone, user.person.id]
     options[:order] = 'people.lastname'
-    find_for(user, options)
+    options[:include] ||= []
+    options[:include] << [:student]
+    #find_for(user, options) 
+    conditions = [TUTOR_COND.clone, user.person.id]
+    find(:all, :conditions => conditions, :order => options[:order],
+        :include => options[:include])
   end
 
   # returns all indices which waits for approvement from persons 
