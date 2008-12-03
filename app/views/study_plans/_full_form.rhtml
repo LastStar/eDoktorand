@@ -7,6 +7,27 @@
   <%= render(:partial => 'general',
             :collection => @plan_subjects,
             :locals => {:subjects => subjects}) %>
+  <li id='subject_button' class='subject_select'>
+  <input type="button" value="<%=_("Add subject")%>" onclick="javascript:Element.show('new_subject');Element.hide('subject_button');" >
+  </li>
+  <li class='subject_select' id='new_subject' style='display: none'>
+    <%= empty_subject_select(subjects) %>
+    <%= "." + _("semester") %>
+  <br/>
+  <div id="externalnew" style='display: none' >
+    <label><%= _("subject") %></label>
+    <%= input_external_empty("label") %>
+    <br/> 
+    <label><%= _("subject en") %></label>
+    <%= input_external_empty("label_en") %>
+    <br/> 
+    <label><%= _("university") %></label>
+    <%= input_external_empty_detail("university") %>
+    <br/> 
+    <label><%= _("examinator") %></label>
+    <%= input_external_empty_detail("person") %>
+  </div>
+  </li>
 </ul>
 </fieldset>
 <fieldset>

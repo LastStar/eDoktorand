@@ -3,6 +3,7 @@
 <ul class='nodecor'>
 <% flash[:errors].each do |err| %>
 <li><%= err %></li>
+
 <% end %>
 </ul>
 </div>
@@ -33,5 +34,20 @@ function hide_on_internal(id) {
     }
   }
 
+function hide_new_internal() {
+  var element = eval("document.forms[0].plan_subject_new_subject_id");
+  if (element.value == 0) { Element.show('externalnew') } else {Element.hide('externalnew') }
+  }
+
+
 CODE
 %>
+
+<% if flash[:errors] && !flash[:errors].empty? %>
+<script language="JavaScript">
+  function hide_add_button() {
+    Element.hide('subject_button')
+  }
+  hide_add_button();
+</script>
+<% end %>

@@ -247,7 +247,13 @@ class StudyPlansController < ApplicationController
     @id = Index.find(params[:id])
     @study_plan = @id.study_plan
     @final_area_id = params[:final_area_id]
-    @study_plan.final_areas['en'][params[:final_area_id]] = params[:en_title]
+    cz_array_areas = @study_plan.final_areas['cz']
+    en_array_areas = @study_plan.final_areas['en']
+    #MUST BE THERE for update column in DB - features or bug in rails 2.1?
+    @study_plan.final_areas_will_change!
+    en_array_areas.update("#{params[:final_area_id]}" => params[:en_title])
+    full_array_areas = {"cz" => cz_array_areas, "en" => en_array_areas}
+    @study_plan.final_areas = full_array_areas
     @study_plan.save
   end
 
