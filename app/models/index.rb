@@ -449,7 +449,7 @@ class Index < ActiveRecord::Base
 
   # returns full account number
   def full_account_number
-    if account_number_prefix
+    if account_number_prefix && !account_number_prefix.empty? && account_number_prefix != '000000'
       "#{account_number_prefix}-#{account_number}"
     else
       "#{account_number}"
