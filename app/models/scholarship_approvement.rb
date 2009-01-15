@@ -8,11 +8,11 @@ class ScholarshipApprovement < Approvement
     # faculty without stipendia code does not have to be approved
     return true unless faculty.stipendia_code
     from = Time.now - HALF_MONTH
-    find(:first, 
+    return find(:first, 
          :conditions => ['document_id = ? and created_on > ?', faculty.id, from])
   end
 
   def self.all_approved?
-    Faculty.find(:all).reject {|f| approved_for?(f)}.empty?
+    return Faculty.find(:all).reject {|f| approved_for?(f)}.empty?
   end
 end
