@@ -1,2 +1,11 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+About
+-------
+Phdstudy is system for administering phd study on universities. It's main
+deployment is on CUA in Prague.
+
+Requirements
+--------------
+- rails 2.1.0
+- gettext 0.17
+- assorted gems
+
