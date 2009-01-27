@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/rtex"]
+	path = vendor/plugins/rtex
+	url = git://github.com/bruce/rtex.git
