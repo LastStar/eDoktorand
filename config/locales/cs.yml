@@ -99,6 +99,8 @@ cs:
 
       faculty: 
         message_0: 
+      faculty_secretary:
+        message_0: Referentka VaV
       secretary: {}
 
       statement: {}
@@ -160,7 +162,8 @@ cs:
 
       detail: 
         message_0: univerzita nesmí být prazdná
-      user: {}
+      user: {
+      }
 
       interupt: 
         message_0: ukončit k
@@ -280,7 +283,7 @@ cs:
         message_5: změnit formu
         message_48: 3. ročník
         message_37: ukončeno
-        message_26: 
+        message_26: obhájil DP
         message_15: složil SDZ
         message_6: přerušit
         message_49: x
@@ -1009,6 +1012,10 @@ cs:
       students: 
         _index_line: 
           rhtml: {}
+        show:
+          rjs:
+            message_0: odeslat
+      
 
         list: 
           rhtml: 

@@ -5,4 +5,4 @@ page.insert_html :before, "students_list",
 page.hide 'search'
 page.hide 'students_list'
 page['student_detail'].scrollTo
-page['search_submit'].value = _('commit')
+page['search_submit'].value = I18n.t(:message_0, :scope => [:txt, :view, :students, :show, :rjs])

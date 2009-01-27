@@ -16,6 +16,7 @@ class Index < ActiveRecord::Base
   
   PREFIX_WEIGHTS = [1, 2, 4, 8, 5, 10]
   ACCOUNT_WEIGHTS = [1, 2, 4, 8, 5, 10, 9, 7, 3, 6]
+  #TODO freeze them all
   NOT_FINISHED_COND = <<-SQL
     (indices.finished_on is null or indices.finished_on > ?)\
     and disert_themes.defense_passed_on is null
@@ -40,7 +41,6 @@ class Index < ActiveRecord::Base
   PASSED_FINAL_COND = "indices.final_exam_passed_on is not null"
   CORRIDOR_COND = "indices.coridor_id = ?"
   STUDY_COND = " indices.study_id = ?"
-
 
   belongs_to :student, :foreign_key => 'student_id'
   belongs_to :tutor
@@ -73,9 +73,6 @@ class Index < ActiveRecord::Base
   validates_numericality_of :account_number, :only_integer => true, :allow_nil => true
   validates_numericality_of :account_bank_number, :only_integer => true, :allow_nil => true
 
-  I18n::t(:message_0, :scope => [:txt, :model, :index])
-  I18n::t(:message_1, :scope => [:txt, :model, :index])
-
   def validate
     if account_number
       if account_number_prefix
@@ -84,23 +81,23 @@ class Index < ActiveRecord::Base
           pre_sum += c.to_i * PREFIX_WEIGHTS[j]
         end
         unless (pre_sum % 11) == 0
-          errors.add(:account_number_prefix, t(:message_2, :scope => [:txt, :model, :index]))
+          errors.add(:account_number_prefix, I18n::t(:message_2, :scope => [:txt, :model, :index]))
         end
       end
       if account_number.size > 10 && account_number =~ /[0-9]/
-        errors.add(:account_number, t(:message_3, :scope => [:txt, :model, :index]))
+        errors.add(:account_number, I18n.t(:message_3, :scope => [:txt, :model, :index]))
       else
         acc_sum = 0
         account_number.split('').reverse.each_with_index do |c, j|
           acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
         end
         unless (acc_sum % 11) == 0
-          errors.add(:account_number, t(:message_4, :scope => [:txt, :model, :index]))
+          errors.add(:account_number, I18n.t(:message_4, :scope => [:txt, :model, :index]))
         end
       end
     end
     if final_exam_passed_on && !study_plan.all_subjects_finished?
-      errors.add(:final_exam_passed_on, t(:message_5, :scope => [:txt, :model, :index]))
+      errors.add(:final_exam_passed_on, I18n.t(:message_5, :scope => [:txt, :model, :index]))
     end
   end
 
@@ -163,7 +160,7 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def statement_for(user)
-    unless status == t(:message_6, :scope => [:txt, :model, :index]) || status == t(:message_7, :scope => [:txt, :model, :index])
+    unless status == I18n.t(:message_6, :scope => [:txt, :model, :index]) || status == I18n.t(:message_7, :scope => [:txt, :model, :index])
       if claimed_final_application?
         self.approvement ||= FinalExamApprovement.create
         if approvement.prepares_statement?(user)
@@ -192,7 +189,7 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def waits_for_statement?(user)
-    unless status == t(:message_8, :scope => [:txt, :model, :index]) || status == t(:message_9, :scope => [:txt, :model, :index])
+    unless status == I18n.t(:message_8, :scope => [:txt, :model, :index]) || status == I18n.t(:message_9, :scope => [:txt, :model, :index])
       if claimed_final_application?
         temp_approvement = self.approvement ||= FinalExamApprovement.create
       elsif admited_interupt?

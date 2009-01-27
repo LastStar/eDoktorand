@@ -38,7 +38,7 @@ class Approvement < ActiveRecord::Base
   end
 
   def approved_by
-    t(:message_0, :scope => [:txt, :model, :approvement])
+    t(:message_0, :scope => [:txt, :model, last_approver.to_s.underscore])
   end
 
   def last_approver

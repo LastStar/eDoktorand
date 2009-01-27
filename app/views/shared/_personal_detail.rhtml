@@ -3,16 +3,16 @@
     <%= student_name_line(index.student) %>
   </li>
   <li>
-    <%= attribute_line(index.student, :birthname) %><%=_ 'Surname' %>:
+    <%= attribute_line(index.student, :birthname) %><%= t(:message_new, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <%= birth_date_line(index.student) %>
   <%= birth_number_line(index.student) %>
   <%= birth_place_line(index.student) %>
   <li>
-    <%= attribute_line(index.student, :email, :name) %><%=_ 'Email' %>:
+    <%= attribute_line(index.student, :email, :name) %><%=t(:message_new, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
-    <%= attribute_line(index.student, :phone, :name) %><%=_ 'Phone' %>:
+    <%= attribute_line(index.student, :phone, :name) %><%=t(:message_new, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
     <%= "#{long_info_helper(index.coridor.name)}#{t(:message_0, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>
@@ -38,7 +38,7 @@
     <%= "#{long_info_helper(index.enrolled_on.strftime('%d. %m. %Y'))}#{t(:message_4, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %> 
   </li>
   <li class='nonprintable'>
-    <%= attribute_line(index.student, :account) %><%=_ 'Account' %>:
+    <%= attribute_line(index.student, :account) %><%=t(:message_4, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
     <%= attribute_line(index.student, :citizenship) %><%=t(:message_5, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])%>:

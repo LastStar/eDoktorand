@@ -17,6 +17,10 @@ class Person < ActiveRecord::Base
   validates_presence_of :lastname
   validates_presence_of :firstname
 
+  # displays person type localized
+  def display_type
+    I18n::t(:message_0, :scope => [:txt, :model, self.class.to_s.underscore])
+  end
   # returns display name for person
   def display_name
     display_name_with_title
