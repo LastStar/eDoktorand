@@ -1,9 +1,9 @@
 <% save_form(:account) do %>
-  <%= _('prefix') %>:
+  <%= t(:message_0, :scope => [:txt, :view, :students, :_account_form, :rhtml]) %>:
   <%= text_field 'index', 'account_number_prefix', 'size' => 6 %>
-  <%= _('account') %>:
+  <%= t(:message_1, :scope => [:txt, :view, :students, :_account_form, :rhtml]) %>:
   <%= text_field 'index', 'account_number', 'size' => 10 %>
-  <%= _('bank') %>:
+  <%= t(:message_2, :scope => [:txt, :view, :students, :_account_form, :rhtml]) %>:
   <%= text_field 'index', 'account_bank_number', 'size' => 4 %>
   <%= hidden_field 'student', 'id' %>
   <%= ok_submit(:account) %>

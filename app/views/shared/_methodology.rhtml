@@ -1,7 +1,7 @@
 <% if disert_theme.has_methodology_summary? %>
 <li>
-<b><%= _("methodology summary") %></b>
-<%= link_to_function(_('show'), "$('methodology_summary').show()") %>
+<b><%= t(:message_0, :scope => [:txt, :view, :shared, :_methodology, :rhtml]) %></b>
+<%= link_to_function(t(:message_1, :scope => [:txt, :view, :shared, :_methodology, :rhtml]), "$('methodology_summary').show()") %>
 </li>
   <% if disert_theme.methodology_summary %>
 <li class="second" id="methodology_summary" style='display: none'>
@@ -12,7 +12,7 @@
 <% if disert_theme.index.study_plan && disert_theme.index.study_plan.approved? %>
   <% if @student && !disert_theme.has_methodology? %>
 <li>
-<%= link_to(_("upload methodology"), :controller => "disert_themes", :action =>
+<%= link_to(t(:message_2, :scope => [:txt, :view, :shared, :_methodology, :rhtml]), :controller => "disert_themes", :action =>
 "upload_methodology", :id => disert_theme.id) %>
 </li>
   <% elsif disert_theme.has_methodology? %>

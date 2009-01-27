@@ -38,7 +38,7 @@ class Approvement < ActiveRecord::Base
   end
 
   def approved_by
-    _(last_approver.to_s.humanize)
+    t(:message_0, :scope => [:txt, :model, :approvement])
   end
 
   def last_approver

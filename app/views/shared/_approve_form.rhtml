@@ -3,14 +3,14 @@
 <% approve_document_form(document, action) do -%>	
 <fieldset>
   <legend><%= title %></legend>
-  <label for="statement_note"><%= _("note") %>:</label>
+  <label for="statement_note"><%= t(:message_0, :scope => [:txt, :view, :shared, :_approve_form, :rhtml]) %>:</label>
   <%= text_area 'statement', 'note', :cols => '30', :rows => '2' %><br/>
-  <label for="statement_result"><%= _("result") %></label>
+  <label for="statement_result"><%= t(:message_1, :scope => [:txt, :view, :shared, :_approve_form, :rhtml]) %></label>
   <%= select 'statement', 'result', options %><br/>
   <%= hidden_field 'statement', 'person_id' %>
   <%= hidden_field 'statement', 'type' %>
 </fieldset>
-  <%= submit_tag _("commit"), :id => 'submit-button' %>
+  <%= submit_tag t(:message_2, :scope => [:txt, :view, :shared, :_approve_form, :rhtml]), :id => 'submit-button' %>
 <% end %>
 </div>
 

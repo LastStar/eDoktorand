@@ -2,5 +2,5 @@
   <div class='right'><%= protocol_link term_line %></div>
   <%= check_box_tag "terms[]", term_line.id  %>
   <b><%= term_line.index.student.display_name %></b><br /> 
-  <%= "%s %s %s" % [term_line.date_time, _('in'), term_line.room] %>
+  <%= "%s %s %s" % [term_line.date_time, t(:message_0, :scope => [:txt, :view, :final_exam_terms, :_term_line, :rhtml]), term_line.room] %>
 </li>

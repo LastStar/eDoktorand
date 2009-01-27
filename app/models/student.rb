@@ -8,21 +8,21 @@ class Student < Examinator
   has_one :candidate
   has_and_belongs_to_many :probation_terms
 
-  N_('to')
-  N_('Birth date')
-  N_('Year')
-  N_('Enrolled on')
-  N_('with note')
-  N_('date finished')
-  N_('Pass final exam')
-  N_('Pass defense')
-  N_('Switch study')
-  N_('finish to')
-  N_('switch study to')
-  N_('pass final exam to')
-  N_('pass final exam')
-  N_('pass defense')
-  N_('pass defense to')
+  Nt(:message_0, :scope => [:txt, :model, :student])
+  Nt(:message_1, :scope => [:txt, :model, :student])
+  Nt(:message_2, :scope => [:txt, :model, :student])
+  Nt(:message_3, :scope => [:txt, :model, :student])
+  Nt(:message_4, :scope => [:txt, :model, :student])
+  Nt(:message_5, :scope => [:txt, :model, :student])
+  Nt(:message_6, :scope => [:txt, :model, :student])
+  Nt(:message_7, :scope => [:txt, :model, :student])
+  Nt(:message_8, :scope => [:txt, :model, :student])
+  Nt(:message_9, :scope => [:txt, :model, :student])
+  Nt(:message_10, :scope => [:txt, :model, :student])
+  Nt(:message_11, :scope => [:txt, :model, :student])
+  Nt(:message_12, :scope => [:txt, :model, :student])
+  Nt(:message_13, :scope => [:txt, :model, :student])
+  Nt(:message_14, :scope => [:txt, :model, :student])
   
   
   # returns faculty on which student is

@@ -1,7 +1,7 @@
 <% FACULTY_CFG[@study_plan.index.faculty.id]['final_areas_count'].times do |index| %>
   <% i = index + 1 %>
 <li>
-  <label><%= "#{i}. " + _("final area") %></label>
+  <label><%= "#{i}. " + t(:message_0, :scope => [:txt, :view, :study_plans, :_final_exam_areas, :rhtml]) %></label>
   <input type='text' id="study_plan_final_areas_<%= i %>"
     name="study_plan[final_areas][cz][<%= i %>]" size="30"
     <% if areas && !areas.empty? %>
@@ -9,7 +9,7 @@
     <% end %>/>
 </li>
 <li>
-  <label><%= "#{i}. " + _("final area") %> (en) </label>
+  <label><%= "#{i}. " + t(:message_1, :scope => [:txt, :view, :study_plans, :_final_exam_areas, :rhtml]) %> (en) </label>
   <input type='text' id="study_plan_final_areas_en_<%= i %>"
   name="study_plan[final_areas][en][<%= i %>]" size="30"
   <% if areas && !areas.empty? %>

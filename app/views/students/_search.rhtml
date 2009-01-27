@@ -1,15 +1,15 @@
 <% name_search_form do -%>
   <div id='name_search'>
-    <label for="search"><%= _("search by lastname") %></label>
+    <label for="search"><%= t(:message_0, :scope => [:txt, :view, :students, :_search, :rhtml]) %></label>
     <%= tag('input', :name => 'search', :id => 'search_field', 'size' => '20') %>
-    <%= submit_tag(_("commit"), :id => 'search_submit') %>
+    <%= submit_tag(t(:message_1, :scope => [:txt, :view, :students, :_search, :rhtml]), :id => 'search_submit') %>
   </div>
 <% end %>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])  %>
 <% detail_filter_form do -%>
 <fieldset>
   <legend><%= detail_filter_link %>&nbsp;<%= spinner_image %></legend>
-  <div id='detail_info' class='form_info'><%= _('For opening filter options click the legend') %></div>
+  <div id='detail_info' class='form_info'><%= t(:message_2, :scope => [:txt, :view, :students, :_search, :rhtml]) %></div>
   <div id='detail_search'  class='form' style='display: none'>
     <div class='filter-line'>
 <% if @user.has_role?('vicerector') %>
@@ -26,7 +26,7 @@
     <%= department_select %>&nbsp;
     <%= coridor_select %>
     </div>
-    <%= submit_tag(_("commit")) %>
+    <%= submit_tag(t(:message_3, :scope => [:txt, :view, :students, :_search, :rhtml])) %>
   </div>
 </fieldset>
 <% end %>

@@ -1,35 +1,35 @@
-<% form_tag({:action=> "login"}, {:onSubmit => "$('login-button').value = '%s'" % _('logging in...')}) do %>
+<% form_tag({:action=> "login"}, {:onSubmit => "$('login-button').value = '%s'" % t(:message_0, :scope => [:txt, :view, :account, :login, :rhtml])}) do %>
 
-<div title="<%= _('Login form') %>" id="loginform" class="form">
+<div title="<%= t(:message_1, :scope => [:txt, :view, :account, :login, :rhtml]) %>" id="loginform" class="form">
     <% if @message %>
       <div id="message"><%= @message %></div>
     <% end %>
 
     <div style='clear: both'>
-    <label for="user_login"><%= _('Login name') %></label>
+    <label for="user_login"><%= t(:message_2, :scope => [:txt, :view, :account, :login, :rhtml]) %></label>
     <input type="text" name="user_login" id="user_login" size="30" value=""/>
     </div>
 
     <div style='clear: both'>
-    <label for="user_password"><%= _('Password') %></label>
+    <label for="user_password"><%= t(:message_3, :scope => [:txt, :view, :account, :login, :rhtml]) %></label>
     <input type="password" name="user_password" id="user_password" size="30"/>
     </div>
 
     <div style='clear: both'>
-    <label for="locale"><%= _('Language') %> </label>
+    <label for="locale"><%= t(:message_4, :scope => [:txt, :view, :account, :login, :rhtml]) %> </label>
     <%= locale_link %>
     </div>
 
     <div style='clear: both'>
-      <label for="submit"><%= _('Login') %></label>
-      <%= submit_tag(_('submit'), :id => 'login-button') %>
+      <label for="submit"><%= t(:message_5, :scope => [:txt, :view, :account, :login, :rhtml]) %></label>
+      <%= submit_tag(t(:message_6, :scope => [:txt, :view, :account, :login, :rhtml]), :id => 'login-button') %>
     </div>
 </div>
 
 <% end %>
 
 <% unless @actualities.empty? %>
-<h5><%= _('Actualities') %></h5>
+<h5><%= t(:message_7, :scope => [:txt, :view, :account, :login, :rhtml]) %></h5>
 <ul id='actuallities'>
   <%= render(:partial => 'actuality', :collection => @actualities) %>
 </ul>

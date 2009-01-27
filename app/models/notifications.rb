@@ -1,6 +1,6 @@
 class Notifications < ActionMailer::Base
   def invite_candidate(candidate, faculty, sent_at = Time.now)
-    @subject = _("Invitation to admition tests to postgradual study")
+    @subject = t(:message_0, :scope => [:txt, :model, :notifications])
     @body['display_name'] = candidate.display_name
     @body['address'] = candidate.address
     @body['coridor'] = candidate.coridor.name
@@ -8,7 +8,7 @@ class Notifications < ActionMailer::Base
     @body['sent_on'] = sent_at
     @body['faculty'] = faculty
     @body['study_id'] = candidate.study_id
-    @body['salutation'] = candidate.genderize(_("Dear  Mr./Mrs."),_("Dear Mr."),_("Dear Mrs."))
+    @body['salutation'] = candidate.genderize(t(:message_1, :scope => [:txt, :model, :notifications]),t(:message_2, :scope => [:txt, :model, :notifications]),t(:message_3, :scope => [:txt, :model, :notifications]))
     @recipients = candidate.email
     @cc        = faculty.secretary.email.name
     @from       = faculty.secretary.email.name
@@ -17,7 +17,7 @@ class Notifications < ActionMailer::Base
   
   #sends admit mail to candidate
   def admit_candidate(candidate, conditional, sent_at = Time.now)
-    @subject = _("Notification about admition procedure to postgradula study")
+    @subject = t(:message_4, :scope => [:txt, :model, :notifications])
     @body[:candidate] = candidate
     @body[:faculty] = faculty = candidate.department.faculty
     @body[:sent_on] = sent_at
@@ -30,7 +30,7 @@ class Notifications < ActionMailer::Base
   
   #sends reject mail to candidate
   def reject_candidate(candidate, sent_at = Time.now)
-    @subject = _("Notification about admition procedure to postgradula study")
+    @subject = t(:message_5, :scope => [:txt, :model, :notifications])
     @body['study'] = candidate.study.name
     @body['display_name'] = candidate.display_name
     @body['address'] = candidate.address
@@ -76,7 +76,7 @@ class Notifications < ActionMailer::Base
   
   #send study plan of student
   def study_plan_create(study_plan, sent_at = Time.now)
-    #@subject = _("notification of study plan")
+    #@subject = t(:message_6, :scope => [:txt, :model, :notifications])
     @subject = 'Vyrozumnění o studijním plánu'
     @body['department_name'] = study_plan.index.department.name
     @body['first_name'] = study_plan.index.student.firstname
@@ -84,7 +84,7 @@ class Notifications < ActionMailer::Base
     if study_plan.index.student.birth_number == nil
      @body['birth_number'] = ''
       else
-       # @body['birth_number'] = _("with birth number ") + study_plan.index.student.birth_number
+       # @body['birth_number'] = t(:message_7, :scope => [:txt, :model, :notifications]) + study_plan.index.student.birth_number
        @body['birth_number'] = 's rodným číslem'  + study_plan.index.student.birth_number
     end
     @body['coridor'] = study_plan.index.coridor.name
@@ -110,7 +110,7 @@ class Notifications < ActionMailer::Base
 
   def invite_to_final_exam(index, sent_at = Time.now)
     faculty = index.faculty
-    @subject = _("Invitation to final exam")
+    @subject = t(:message_8, :scope => [:txt, :model, :notifications])
     @body[:student] = index.student
     @body[:sent_on] = sent_at
     if index.final_exam_term.chairman.email != nil
@@ -124,7 +124,7 @@ class Notifications < ActionMailer::Base
 
   def invite_to_defense(index, sent_at = Time.now)
     faculty = index.faculty
-    @subject = _("Invitation to defense")
+    @subject = t(:message_9, :scope => [:txt, :model, :notifications])
     @body[:student] = index.student
     @body[:sent_on] = sent_at
     if index.defense.chairman.email != nil
@@ -137,7 +137,7 @@ class Notifications < ActionMailer::Base
   end
 
   def created_account(student, sent_at = Time.now)
-    @subject = _("Created account")
+    @subject = t(:message_10, :scope => [:txt, :model, :notifications])
     @body[:student] = student
     @from = "edoktorand@edoktorand.czu.cz"
     @recipients = student.email.name

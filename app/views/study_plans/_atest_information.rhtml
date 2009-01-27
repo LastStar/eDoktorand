@@ -6,11 +6,11 @@
   <% end %>
 </ul>
 <% else %>
-<p><%= _("Student didn't have any subject for this atestation.") %></p>
+<p><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_atest_information, :rhtml]) %></p>
 <% end %>
-<p><%= _("Unfinished subjects are in red.") %></p>
+<p><%= t(:message_1, :scope => [:txt, :view, :study_plans, :_atest_information, :rhtml]) %></p>
 <% if study_plan.actual_atestation_detail  %>
-<h6> <%= _("Additional information provided by student") %></h6>
+<h6> <%= t(:message_2, :scope => [:txt, :view, :study_plans, :_atest_information, :rhtml]) %></h6>
 
 <p>
   <%= study_plan.actual_atestation_detail.detail %>

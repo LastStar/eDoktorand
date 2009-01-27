@@ -10,7 +10,7 @@
 <% form_remote_tag(:url => {:action => 'save_language'}, 
   :complete => evaluate_remote_response) do -%>	
 <fieldset>
-<legend><%= _("language subjects") %></legend>
+<legend><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]) %></legend>
 <ul>
   <% language_buff = LanguageSubject.for_select(:coridor => @student.coridor) %>
   <%= render(:partial => 'language', :collection => session[:language_subjects], 
@@ -18,7 +18,7 @@
   <input type='hidden' name='return' id='return-value' value='0'/>
 </fieldset>
 </ul>
-<%= submit_tag("<<< " + _('voluntary subjects'), :id => 'return_button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + _('working...') + "'") %>
-<%= submit_tag(_("disert theme and final exam") + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % _('working...')) %>
+<%= submit_tag("<<< " + t(:message_1, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]), :id => 'return_button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + t(:message_2, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]) + "'") %>
+<%= submit_tag(t(:message_3, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]) + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % t(:message_4, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml])) %>
 <% end %>
 

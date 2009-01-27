@@ -1,6 +1,6 @@
 <li>
   <div class='info'><%= interupt.start_on.strftime('%d. %m. %Y') %></div>
-  <%= _('interupted on') %>
+  <%= t(:message_0, :scope => [:txt, :view, :shared, :_interupt, :rhtml]) %>
 </li>
 <% if interupt.finished_on %>
   <%= interupt_finish_line(interupt) %>

@@ -29,7 +29,7 @@ class ExamsController < ApplicationController
   # start of the exam creating process
   # rendering the two links
   def create
-    @title = _("Creating exam")
+    @title = t(:message_0, :scope => [:txt, :controller, :exams])
     unless @user.has_role? 'faculty_secretary'
       by_subject
       render :action => :by_subject
@@ -102,7 +102,7 @@ class ExamsController < ApplicationController
   def update
     @exam = Exam.find(params[:id])
     if @exam.update_attributes(params[:exam])
-      flash['notice'] = _("Exam was successfully updated.")
+      flash['notice'] = t(:message_1, :scope => [:txt, :controller, :exams])
       redirect_to :action => 'list'
     else
       render(:action => :edit)
@@ -117,7 +117,7 @@ class ExamsController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = _('Exams')
+    @title = t(:message_2, :scope => [:txt, :controller, :exams])
   end
 
 end

@@ -1,5 +1,5 @@
 <div id='student_detail'>
-<h5><%= _("Personal and study details") %></h5>
+<h5><%= t(:message_0, :scope => [:txt, :view, :shared, :_student_detail, :rhtml]) %></h5>
 <% unless @user.has_role?('student') %>
 <div class='links'>
   <div class='left'><%= back_to_list index %></div>
@@ -11,7 +11,7 @@
   <% if @links != [] %>
     <div class='links'>
       <div class="left">
-        <%=_('Action')%>:
+        <%=t(:message_1, :scope => [:txt, :view, :shared, :_student_detail, :rhtml])%>:
       </div>
       <%= @links.join("&nbsp;&nbsp;") %>
     </div>
@@ -24,7 +24,7 @@
 <%end%>
 <%= render(:partial => 'shared/personal_detail', :locals => {:index => index}) %>
 <% if index.student.address || @user.has_role?('student')%>
-<h5><%= _("Contact details") %></h5>
+<h5><%= t(:message_2, :scope => [:txt, :view, :shared, :_student_detail, :rhtml]) %></h5>
 <%= render :partial => 'shared/address_detail', :locals => {:student => index.student} %>
 <% end %>
 <%= render :partial => 'shared/study_detail', :locals => {:index => index} %>

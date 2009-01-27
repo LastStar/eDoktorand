@@ -15,13 +15,13 @@
     <%= attribute_line(index.student, :phone, :name) %><%=_ 'Phone' %>:
   </li>
   <li>
-    <%= "#{long_info_helper(index.coridor.name)}#{_('Corridor')}: " %>
+    <%= "#{long_info_helper(index.coridor.name)}#{t(:message_0, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>
   </li>
   <li>
-    <%= "#{long_info_helper(index.student.department.short_name)}#{_('Department')}: " %> 
+    <%= "#{long_info_helper(index.student.department.short_name)}#{t(:message_1, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %> 
   </li>  
   <li>
-    <%= "#{long_info_helper(index.study.name)}#{_('Study form')}: " %>
+    <%= "#{long_info_helper(index.study.name)}#{t(:message_2, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>
   </li>
   <li class='printable'>
     <%= student_tutor_line(index) %>
@@ -32,16 +32,16 @@
     </li>
   <% end %>
   <li>
-    <%= "#{long_info_helper(index.year.to_s.concat('.'))}#{_('Year')}: " %> 
+    <%= "#{long_info_helper(index.year.to_s.concat('.'))}#{t(:message_3, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %> 
   </li>
   <li>
-    <%= "#{long_info_helper(index.enrolled_on.strftime('%d. %m. %Y'))}#{_('Enrolled on')}: " %> 
+    <%= "#{long_info_helper(index.enrolled_on.strftime('%d. %m. %Y'))}#{t(:message_4, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %> 
   </li>
   <li class='nonprintable'>
     <%= attribute_line(index.student, :account) %><%=_ 'Account' %>:
   </li>
   <li>
-    <%= attribute_line(index.student, :citizenship) %><%=_('citizenship')%>:
+    <%= attribute_line(index.student, :citizenship) %><%=t(:message_5, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])%>:
   </li>
 
 </ul>

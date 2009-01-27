@@ -16,7 +16,7 @@
   <td>&nbsp;</td>
 <% end %>
   <td><%= index.status %></td>
-  <td><%= index.year %>.<%= _('year') %></td>
+  <td><%= index.year %>.<%= t(:message_0, :scope => [:txt, :view, :students, :_index, :rhtml]) %></td>
   <td><%= index.study.name %></td>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector']) %>
   <td><%= index.department.short_name %></td>

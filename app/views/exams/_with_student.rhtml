@@ -1,9 +1,9 @@
-<h5><%= _("Creating exam") %></h5>
+<h5><%= t(:message_0, :scope => [:txt, :view, :exams, :_with_student, :rhtml]) %></h5>
 <ul>
   <li>
-    <%= "#{_('Exam for student')}: #{exam.index.student.display_name}" %>
+    <%= "#{t(:message_1, :scope => [:txt, :view, :exams, :_with_student, :rhtml])}: #{exam.index.student.display_name}" %>
   </li>
   <li>
-    <%= "#{_('Exam from subject')}: #{exam.subject.label}" %>
+    <%= "#{t(:message_2, :scope => [:txt, :view, :exams, :_with_student, :rhtml])}: #{exam.subject.label}" %>
   </li>
 </ul>

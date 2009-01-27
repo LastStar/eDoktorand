@@ -10,7 +10,7 @@
 <% form_remote_tag(:url => {:action => 'save_voluntary'}, 
   :complete => evaluate_remote_response) do -%>	
 <fieldset>
-<legend><%= _("voluntary subjects") %></legend>
+<legend><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]) %></legend>
 <ul>
   <% voluntary_buff =  VoluntarySubject.for_select(:coridor => @student.coridor,
                                                    :with_external => true) %>
@@ -19,6 +19,6 @@
   <input type='hidden' name='return' id='return-value' value='0'/>
 </ul>
 </fieldset>
-<%= submit_tag("<<< " + _("%s subjects" % session[:return_to]), :id => 'return_button', :onclick => "$('return-value').value = 1; $('return_button').value = '" + _('working...') + "'") if session[:return_to] %>
-<%= submit_tag(_("language subjects") + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % _('working...')) %>
+<%= submit_tag("<<< " + t(:message_1, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]), :id => 'return_button', :onclick => "$('return-value').value = 1; $('return_button').value = '" + t(:message_2, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]) + "'") if session[:return_to] %>
+<%= submit_tag(t(:message_3, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]) + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % t(:message_4, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml])) %>
 <% end %>

@@ -1,9 +1,9 @@
-<h5><%= _("Creating exam") %></h5>
+<h5><%= t(:message_0, :scope => [:txt, :view, :exams, :_with_subject, :rhtml]) %></h5>
 <ul id='exam'>
   <li>
-    <%= _("Creating exam by subject") %>
+    <%= t(:message_1, :scope => [:txt, :view, :exams, :_with_subject, :rhtml]) %>
   </li>
   <li>
-  <%= "#{_("Exam from subject")}: #{exam.subject.label}" %>
+  <%= "#{t(:message_2, :scope => [:txt, :view, :exams, :_with_subject, :rhtml])}: #{exam.subject.label}" %>
   </li>
 </ul>

@@ -2,6 +2,6 @@
  
 <% create_form do -%>
   <%= render(:partial => "form") %>
-  <%= submit_tag _("save"), :id => 'submit-button' %>
+  <%= submit_tag t(:message_0, :scope => [:txt, :view, :final_exam_terms, :_edit, :rhtml]), :id => 'submit-button' %>
 <% end %>
 

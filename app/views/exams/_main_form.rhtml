@@ -1,8 +1,8 @@
 <% student_subject_form do -%>
 <fieldset>
-<legend><%= _("Examined students") %></legend>
+<legend><%= t(:message_0, :scope => [:txt, :view, :exams, :_main_form, :rhtml]) %></legend>
 <label>
-<%= _("student") %>
+<%= t(:message_1, :scope => [:txt, :view, :exams, :_main_form, :rhtml]) %>
 </label>
 <%= content_tag('select', options_for_select(students.map {|stud|
 [stud.display_name, stud.id]}), {'id' => "student_id", 'name' =>

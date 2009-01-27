@@ -1,16 +1,16 @@
 <% if candidate.finished_on %>
-  <%= candidate.finished_on.strftime("%d. %m. %Y") %> <%= _("finished") %><br />
+  <%= candidate.finished_on.strftime("%d. %m. %Y") %> <%= t(:message_0, :scope => [:txt, :view, :candidates, :_history, :rhtml]) %><br />
 <% end %>
 <% if candidate.ready_on %>
-  <%= candidate.ready_on.strftime("%d. %m. %Y") %> <%= _("ready") %><br />
+  <%= candidate.ready_on.strftime("%d. %m. %Y") %> <%= t(:message_1, :scope => [:txt, :view, :candidates, :_history, :rhtml]) %><br />
 <% end %>
 <% if candidate.invited_on %>
-  <%= candidate.invited_on.strftime("%d. %m. %Y") %> <%= link_to(_("invited"),
+  <%= candidate.invited_on.strftime("%d. %m. %Y") %> <%= link_to(t(:message_2, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
   :action => 'invitation', :id => candidate) %><br />
 <% end %>
 <% if candidate.admited_on %>
-  <%= candidate.admited_on.strftime("%d. %m. %Y") %> <%= link_to(_("admited"),
-  :action => 'confirm_admit', :id => candidate) %>&nbsp;<%= link_to(_("protocol"),
+  <%= candidate.admited_on.strftime("%d. %m. %Y") %> <%= link_to(t(:message_3, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
+  :action => 'confirm_admit', :id => candidate) %>&nbsp;<%= link_to(t(:message_4, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
   :action => 'admittance', :id => candidate) %><br />
 <% end %>
 <% if candidate.enrolled_on %>

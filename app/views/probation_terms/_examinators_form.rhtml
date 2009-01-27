@@ -1,16 +1,16 @@
 <fieldset id='agenda'>
-<legend><%= _("Probation term agenda") %></legend>
+<legend><%= t(:message_0, :scope => [:txt, :view, :probation_terms, :_examinators_form, :rhtml]) %></legend>
 
-  <label for="probation_term_first_examinator"><%=_("1. Examinator")%></label>
+  <label for="probation_term_first_examinator"><%=t(:message_1, :scope => [:txt, :view, :probation_terms, :_examinators_form, :rhtml])%></label>
   <%= collection_select :probation_term, :first_examinator_id, Examinator.find_for(@user), :id, :display_name_with_title %><br />
 
-  <label for="probation_term_second_examinator"><%=_("2. Examinator")%></label>
+  <label for="probation_term_second_examinator"><%=t(:message_2, :scope => [:txt, :view, :probation_terms, :_examinators_form, :rhtml])%></label>
   <%= collection_select :probation_term, :second_examinator_id, Examinator.find_for(@user), :id, :display_name_with_title, {:include_blank => true} %><br />
 
 </fieldset>
 
 <fieldset id='action'>
-  <legend><%= _("action") %></legend>
-  <input type='submit' value='<%= _("commit") %>' />&nbsp;
-  <input type='reset' value='<%= _("reset") %>' />
+  <legend><%= t(:message_3, :scope => [:txt, :view, :probation_terms, :_examinators_form, :rhtml]) %></legend>
+  <input type='submit' value='<%= t(:message_4, :scope => [:txt, :view, :probation_terms, :_examinators_form, :rhtml]) %>' />&nbsp;
+  <input type='reset' value='<%= t(:message_5, :scope => [:txt, :view, :probation_terms, :_examinators_form, :rhtml]) %>' />
 </fieldset>

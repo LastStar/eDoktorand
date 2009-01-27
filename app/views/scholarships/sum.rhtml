@@ -1,7 +1,7 @@
 <ul>
-  <li><div class='smallinfo'><%= @regular_sum %></div><%= _('regular scholarship sum') %></li>
+  <li><div class='smallinfo'><%= @regular_sum %></div><%= t(:message_0, :scope => [:txt, :view, :scholarships, :sum, :rhtml]) %></li>
 <% if @extra_sum %>
-  <li><div class='smallinfo'><%= @extra_sum %></div><%= _('extra scholarship sum') %></li>
+  <li><div class='smallinfo'><%= @extra_sum %></div><%= t(:message_1, :scope => [:txt, :view, :scholarships, :sum, :rhtml]) %></li>
 <% end %>
 </ul>
 <div class='links'><%= hide_link('sum') %></div>

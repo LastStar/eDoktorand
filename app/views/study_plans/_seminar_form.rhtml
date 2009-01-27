@@ -9,14 +9,14 @@
 <% end %>
 <% form_remote_tag(:url => {:action => 'save_seminar'}, 
   :complete => evaluate_remote_response, 
-  :loading => "$('submit_button').value = '%s'" % _('working...')) do -%>	
+  :loading => "$('submit_button').value = '%s'" % t(:message_0, :scope => [:txt, :view, :study_plans, :_seminar_form, :rhtml])) do -%>	
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
-<legend><%= _("seminar subjects") %></legend>
+<legend><%= t(:message_1, :scope => [:txt, :view, :study_plans, :_seminar_form, :rhtml]) %></legend>
   <% voluntary_buff =  SeminarSubject.for_select(:coridor => @student.coridor) %>
   <%= render(:partial => 'seminar', :collection => session[:seminar_subjects], 
              :locals => {:subjects => voluntary_buff}) %>
 </fieldset>
-<%= submit_tag(_("voluntary subjects") + " >>>", :id => 'submit_button') %>
+<%= submit_tag(t(:message_2, :scope => [:txt, :view, :study_plans, :_seminar_form, :rhtml]) + " >>>", :id => 'submit_button') %>
 <% end %>
 

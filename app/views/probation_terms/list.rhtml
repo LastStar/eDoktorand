@@ -6,7 +6,7 @@
 </div>
 
 <% else %>
-<h4><%= _("There are no probation terms by your selection") %></h4>
+<h4><%= t(:message_0, :scope => [:txt, :view, :probation_terms, :list, :rhtml]) %></h4>
 <% end %>
 <%= list_links(@user) %>                      
 

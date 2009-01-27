@@ -7,7 +7,7 @@ class DefensesController < ApplicationController
 
   # page for student defense claim
   def claim
-    @title = _('Defense application')
+    @title = t(:message_0, :scope => [:txt, :controller, :defenses])
   end
 
   # confirm defense claim and redirect to study plan
@@ -22,7 +22,7 @@ class DefensesController < ApplicationController
       index.claim_defense!
       redirect_to :controller => :study_plans, :action => :index
     else
-      flash[:error] = _('You have to supply self report file')
+      flash[:error] = t(:message_1, :scope => [:txt, :controller, :defenses])
       redirect_to :action => :claim
     end
   end
@@ -44,7 +44,7 @@ class DefensesController < ApplicationController
       @defense = Defense.new(params[:defense])
     end
     if @defense.save
-      flash['notice'] = _('defense term was succesfully created')
+      flash['notice'] = t(:message_2, :scope => [:txt, :controller, :defenses])
       render(:action => :show)
     else
       render(:action => :new)
@@ -67,19 +67,19 @@ class DefensesController < ApplicationController
 
   # shows list of all defenses in system for user
   def list
-    @title = _('Defense terms')
+    @title = t(:message_3, :scope => [:txt, :controller, :defenses])
     @defenses = Defense.find_for(@user)
   end
 
   # prints of announcement of defense
   def announcement
-    @title = _('Announcement of disert theme defense')
+    @title = t(:message_4, :scope => [:txt, :controller, :defenses])
     @defense = Defense.find(params[:id])
   end
 
   # prints protocol for defense
   def protocol
-    @title = _('Protocol for disert theme defense')
+    @title = t(:message_5, :scope => [:txt, :controller, :defenses])
     @defense = Defense.find(params[:id])
   end
 end

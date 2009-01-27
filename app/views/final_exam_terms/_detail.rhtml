@@ -2,51 +2,51 @@
 <table class='two-columns'>
 <% if many %>
 <tr>
-  <th><%= _('Full name') %>: </th>
+  <th><%= t(:message_0, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
   <td><%= index.student.display_name %></td>
 </tr>
 <tr>
-  <th><%= _('Tutor') %>: </th>
+  <th><%= t(:message_1, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
   <td><%= index.tutor.display_name %></td>
 </tr>
   <% if index.consultant  %>
 <tr>
-  <th><%= _('Consultant') %>: </th>
+  <th><%= t(:message_2, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
   <td><%= index.consultant %></td>
 </tr>
   <% end %>
 <tr>
-  <th><%= _('Start time') %>: </th>
+  <th><%= t(:message_3, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
   <td><%= exam_term.start_time %></td>
 </tr>
 <% else %>
 <tr>
-  <th><%= _('Date and time') %>: </th>
+  <th><%= t(:message_4, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
   <td><%= exam_term.date_time %></td>
 </tr>
 <tr>
-  <th><%= _('Room') %>: </th>
+  <th><%= t(:message_5, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
   <td><%= exam_term.room %></td>
 </tr>
 <% end %>
 <tr>
-  <th style='width: 25ex;'><%= _('Literature review') %>:</th>
+  <th style='width: 25ex;'><%= t(:message_6, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>:</th>
   <td style='width: 45ex;'><%= index.disert_theme.literature_review %></td>
 </tr>
 <tr>
-  <th><%= _('Chairman') %>: </th>
+  <th><%= t(:message_7, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
   <td><%= exam_term.chairman.display_name %></td>
 </tr>
 <% unless exam_term.opponent.empty? %>
 <tr>
-  <th><%= _('Opponent') %>:</th>
+  <th><%= t(:message_8, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>:</th>
   <td><%= exam_term.opponent %> </td> 
 </tr>
 <% end %>
 </table>
 <table class='two-columns'>
 <tr>
-  <th colspan='2'><%= _('Members') %>: </th>
+  <th colspan='2'><%= t(:message_9, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
 </tr>
 <tr>
   <td><%= exam_term.first_examinator %></td>

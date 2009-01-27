@@ -1,12 +1,12 @@
-<h5><%= _('Listing coridors') %></h5>
+<h5><%= t(:message_0, :scope => [:txt, :view, :coridors, :list, :rhtml]) %></h5>
 
 <table id='coridors_table'>
   <tr>
-    <th><%= _('Coridor|Name') %></th>
-    <th><%= _('Coridor|Name english') %></th>
-    <th><%= _('Coridor|Code') %></th>
-    <th><%= _('Coridor|Program') %></th>
-    <th><%= _('Coridor|Accredited') %></th>
+    <th><%= t(:message_1, :scope => [:txt, :view, :coridors, :list, :rhtml]) %></th>
+    <th><%= t(:message_2, :scope => [:txt, :view, :coridors, :list, :rhtml]) %></th>
+    <th><%= t(:message_3, :scope => [:txt, :view, :coridors, :list, :rhtml]) %></th>
+    <th><%= t(:message_4, :scope => [:txt, :view, :coridors, :list, :rhtml]) %></th>
+    <th><%= t(:message_5, :scope => [:txt, :view, :coridors, :list, :rhtml]) %></th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
   </tr>
@@ -18,12 +18,12 @@
     <td><%=h coridor.code %></td>
     <td><%=h coridor.program.label %></td>
     <td> <%if coridor.accredited == 1 %>
-             <%= _('yes')%>
+             <%= t(:message_6, :scope => [:txt, :view, :coridors, :list, :rhtml])%>
 	 <%else%>
-	     <%= _('no')%>
+	     <%= t(:message_7, :scope => [:txt, :view, :coridors, :list, :rhtml])%>
 	 <%end%></td>
-<td><%= link_to _('Atestation'), :action => :attestation, :id => coridor.id %></td>
-    <td><%= link_to _('Subjects'), :action => :subjects, :id => coridor %></td>
+<td><%= link_to t(:message_8, :scope => [:txt, :view, :coridors, :list, :rhtml]), :action => :attestation, :id => coridor.id %></td>
+    <td><%= link_to t(:message_9, :scope => [:txt, :view, :coridors, :list, :rhtml]), :action => :subjects, :id => coridor %></td>
   </tr>
 <% end %>
 </table>

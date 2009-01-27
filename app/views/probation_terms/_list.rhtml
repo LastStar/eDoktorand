@@ -4,19 +4,19 @@
   <%= link(@user, probation_term)  %>
 </div>
 <ul>
-  <li><div class='longinfo'> <%= _("maximum/enrolled") %>:&nbsp;
+  <li><div class='longinfo'> <%= t(:message_0, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:&nbsp;
     <%= probation_term.enrolled_ratio %></div>
-  <div class='longinfo'><%=_("room")%>: <%= probation_term.room %></div>
-  <div class='longinfo'><%=_("starting time")%>: <%= probation_term.start_time %></div>
-  <%=_("date")%>: <%= probation_term.date.strftime("%d. %m. %Y") %></li>
-  <li><%= _("1. examinator") %>:
+  <div class='longinfo'><%=t(:message_1, :scope => [:txt, :view, :probation_terms, :_list, :rhtml])%>: <%= probation_term.room %></div>
+  <div class='longinfo'><%=t(:message_2, :scope => [:txt, :view, :probation_terms, :_list, :rhtml])%>: <%= probation_term.start_time %></div>
+  <%=t(:message_3, :scope => [:txt, :view, :probation_terms, :_list, :rhtml])%>: <%= probation_term.date.strftime("%d. %m. %Y") %></li>
+  <li><%= t(:message_4, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:
   &nbsp;<%= probation_term.first_examinator.display_name_with_title %></li>
 <% if probation_term.second_examinator %>
-  <li><%= _("2. examinator") %>:
+  <li><%= t(:message_5, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:
   &nbsp;<%= probation_term.second_examinator.display_name_with_title %></li>
 <% end %>
 <% unless probation_term.empty_note? %>
-  <li><%= _("note") %>:&nbsp;<%= probation_term.note %></li>
+  <li><%= t(:message_6, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:&nbsp;<%= probation_term.note %></li>
 <% end %>
   <li class='detail' id='info_<%= probation_term.id %>' style="display: none">
   </li>

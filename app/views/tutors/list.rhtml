@@ -1,4 +1,4 @@
-<h5><%= _('Tutors list') + "(#{@tutors.size})" %></h5>
+<h5><%= t(:message_0, :scope => [:txt, :view, :tutors, :list, :rhtml]) + "(#{@tutors.size})" %></h5>
 <table id='tutors_table'>
   <% for tutor in @tutors %>
     <tr class='line' id='coridor_<%= tutor.tutorship.id %>'>

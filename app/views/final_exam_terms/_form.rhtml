@@ -5,47 +5,47 @@
 <!--[form:exam_term]-->
 <%= hidden_field 'exam_term', 'index_id' %>
 
-<p><label for="exam_term_start_time"><%= _('date and time') %></label>
+<p><label for="exam_term_start_time"><%= t(:message_0, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= date_select 'exam_term', 'date', :order => [:day, :month, :year], :use_month_numbers => true %>
 &mdash;<%= select 'exam_term', 'start_time', str_time_select(7, 20) %></p>
 
-<p><label for="exam_term_room" class='required'><%= _('room') %></label>
+<p><label for="exam_term_room" class='required'><%= t(:message_1, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
 
-<p><label for="exam_term_chairman"><%= _('chairman') %></label>
+<p><label for="exam_term_chairman"><%= t(:message_2, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= collection_select :exam_term, :chairman_id, Tutor.find_for(@user), :id, :display_name %></p>
 
-<p><label for="exam_term_first_examinator" class='required'>1. <%= _('member') %></label>
+<p><label for="exam_term_first_examinator" class='required'>1. <%= t(:message_3, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span >
 
 <%= text_field 'exam_term', 'first_subject', :value => final_areas['cz']['1'] %></p>
 
-<p><label for="exam_term_second_examinator" class='required'>2. <%= _('member') %></label>
+<p><label for="exam_term_second_examinator" class='required'>2. <%= t(:message_4, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'second_examinator'  %><span class='required'>&nbsp;&lowast;</span >
 
 <%= text_field 'exam_term', 'second_subject', :value => final_areas['cz']['2'] %></p>
 
-<p><label for="exam_term_third_examinator">3. <%= _('member') %></label>
+<p><label for="exam_term_third_examinator">3. <%= t(:message_5, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'third_examinator'  %>
 
 <%= text_field 'exam_term', 'third_subject', :value => final_areas['cz']['3'] %></p>
 
-<p><label for="exam_term_fourth_examinator">4. <%= _('member') %></label>
+<p><label for="exam_term_fourth_examinator">4. <%= t(:message_6, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'fourth_examinator'  %>
 
 <%= text_field 'exam_term', 'fourth_subject', :value => final_areas['cz']['4'] %></p>
 
-<p><label for="exam_term_fifth_examinator">5. <%= _('member') %></label>
+<p><label for="exam_term_fifth_examinator">5. <%= t(:message_7, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'fifth_examinator'  %>
 
 <%= text_field 'exam_term', 'fifth_subject'  %></p>
 
-<p><label for="exam_term_sixth_examinator">6. <%= _('member') %></label>
+<p><label for="exam_term_sixth_examinator">6. <%= t(:message_8, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'sixth_examinator'  %>
 
 <%= text_field 'exam_term', 'sixth_subject'  %></p>
 
-<p><label for="exam_term_opponent"><%= _('opponent') %></label>
+<p><label for="exam_term_opponent"><%= t(:message_9, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'opponent'  %></p>
 
 <!--[eoform:exam_term]-->

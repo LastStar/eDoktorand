@@ -16,43 +16,43 @@ class Candidate < ActiveRecord::Base
     :foreign_key => 'language1_id'
   belongs_to :language2, :class_name => 'Subject',
     :foreign_key => 'language2_id' 
-  validates_presence_of :firstname, :message => _("firstname can not be empty")
-  validates_presence_of :lastname, :message => _("lastname can not be empty")
-  validates_presence_of :birth_at, :message => _("birth place cannot be empty")
-  validates_presence_of :email, :message => _("email cannot be empty")
-  validates_presence_of :street, :message => _("street cannot be empty")
-  validates_presence_of :city, :message => _("city cannot be empty")
-  validates_presence_of :zip, :message => _("zip cannot be empty")
-  validates_presence_of :state, :message => _("state cannot be empty")
-  validates_presence_of :university, :message => _("university cannot be empty")
-  validates_presence_of :faculty, :message => _("faculty cannot be empty")
-  validates_presence_of :studied_branch, :message => _("corridor cannot be empty")
-  validates_presence_of :birth_number, :message => _("birth number cannot be empty")
-  validates_presence_of :number, :message => _("street number cannot be empty")
+  validates_presence_of :firstname, :message => t(:message_0, :scope => [:txt, :model, :candidate])
+  validates_presence_of :lastname, :message => t(:message_1, :scope => [:txt, :model, :candidate])
+  validates_presence_of :birth_at, :message => t(:message_2, :scope => [:txt, :model, :candidate])
+  validates_presence_of :email, :message => t(:message_3, :scope => [:txt, :model, :candidate])
+  validates_presence_of :street, :message => t(:message_4, :scope => [:txt, :model, :candidate])
+  validates_presence_of :city, :message => t(:message_5, :scope => [:txt, :model, :candidate])
+  validates_presence_of :zip, :message => t(:message_6, :scope => [:txt, :model, :candidate])
+  validates_presence_of :state, :message => t(:message_7, :scope => [:txt, :model, :candidate])
+  validates_presence_of :university, :message => t(:message_8, :scope => [:txt, :model, :candidate])
+  validates_presence_of :faculty, :message => t(:message_9, :scope => [:txt, :model, :candidate])
+  validates_presence_of :studied_branch, :message => t(:message_10, :scope => [:txt, :model, :candidate])
+  validates_presence_of :birth_number, :message => t(:message_11, :scope => [:txt, :model, :candidate])
+  validates_presence_of :number, :message => t(:message_12, :scope => [:txt, :model, :candidate])
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
-    :on => :create, :message => _("email does not have right format")
+    :on => :create, :message => t(:message_13, :scope => [:txt, :model, :candidate])
 
-   N_('only unready')
-   N_('only ready')
-   N_('only invited')
-   N_('only admited')
-   N_('only enrolled')
+   Nt(:message_14, :scope => [:txt, :model, :candidate])
+   Nt(:message_15, :scope => [:txt, :model, :candidate])
+   Nt(:message_16, :scope => [:txt, :model, :candidate])
+   Nt(:message_17, :scope => [:txt, :model, :candidate])
+   Nt(:message_18, :scope => [:txt, :model, :candidate])
 
     # validates if languages are not same
   def validate
-    errors.add_to_base(_("languages have to be different")) if language1_id == language2_id
-    errors.add_to_base(_("candidate must be finished before invitation")) if
+    errors.add_to_base(t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
+    errors.add_to_base(t(:message_20, :scope => [:txt, :model, :candidate])) if
     !finished? && invited?
-    errors.add_to_base(_("candidate must be invited before admittance")) if
+    errors.add_to_base(t(:message_21, :scope => [:txt, :model, :candidate])) if
     !invited? && admited?
-    errors.add_to_base(_("candidate must be admited before enrollment")) if
+    errors.add_to_base(t(:message_22, :scope => [:txt, :model, :candidate])) if
     !admited? && enrolled?
   end
 
   def validate_on_create
     if state == "Česká republika"
       if birth_number.to_i.remainder(11) != 0
-        errors.add(:birth_number, _('your birth number has wrong format'))
+        errors.add(:birth_number, t(:message_23, :scope => [:txt, :model, :candidate]))
       end
     end
   end
@@ -60,7 +60,7 @@ class Candidate < ActiveRecord::Base
   def validate_on_update
     if state == "Česká republika"
       if birth_number.to_i.remainder(11) != 0
-        errors.add(:birth_number, _('your birth number has wrong format'))
+        errors.add(:birth_number, t(:message_24, :scope => [:txt, :model, :candidate]))
       end
     end
   end

@@ -1,11 +1,11 @@
 <%= print_notice %>
 <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
-  <% sort_array = [['coridor_id', _("by corridor")], ['lastname',
-  _("by lastname")], ['updated_on', _("by modification")]] %>
+  <% sort_array = [['coridor_id', t(:message_0, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['lastname',
+  t(:message_1, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['updated_on', t(:message_2, :scope => [:txt, :view, :candidates, :list, :rhtml])]] %>
   <% if params[:action] != 'list_admission_ready'%>
-    <% titles = [_('paginated list of unready candidates is displayed after click'),_('paginated list of ready candidates is displayed after click'),_('paginated list of invited candidates is displayed after click'),_('paginated list of admited candidates is displayed after click'),_('paginated list of enrolled candidates is displayed after click')]%>
+    <% titles = [t(:message_3, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_4, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_5, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_6, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_7, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
     <%= filter_tags(:list, ['unready', 'ready', 'invited', 'admited', 'enrolled'], titles,
-                      :message => _("filter"))  %>
+                      :message => t(:message_8, :scope => [:txt, :view, :candidates, :list, :rhtml]))  %>
   <% end %>  
   <% if session[:list_mode] == 'list' %>
     <%message = image_tag("pages.png")%>
@@ -14,18 +14,18 @@
     <%message = image_tag("pages.png")%>
     <div id='list' style='display: none'>   
   <%end%>
-  <%titles = [_('paginated list sorted by coridor is displayed after click'),_('paginated list sorted by lastname is displayed after click'),
-              _('paginated list sorted by updated on is displayed after click')]%>
+  <%titles = [t(:message_9, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_10, :scope => [:txt, :view, :candidates, :list, :rhtml]),
+              t(:message_11, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
   <% if params[:action] == 'list_admission_ready'%>
-    <%= filtered_sort_tags(:list_admission_ready, sort_array, @filtered_by, titles, :message => _("order")) %>    
+    <%= filtered_sort_tags(:list_admission_ready, sort_array, @filtered_by, titles, :message => t(:message_12, :scope => [:txt, :view, :candidates, :list, :rhtml])) %>    
   <% else %>
     <%= filtered_sort_tags(:list, sort_array, @filtered_by, titles,
-                           :message => _("order") + " <span title='"+ _('switch off paginating after click on one way of sorting') + "'>" +
+                           :message => t(:message_13, :scope => [:txt, :view, :candidates, :list, :rhtml]) + " <span title='"+ t(:message_14, :scope => [:txt, :view, :candidates, :list, :rhtml]) + "'>" +
                            switch_button_all(message) +"</span> ") %>
   <%end%>
     </div>
-  <%titles = [_('list on 1 page sorted by coridor is displayed after click'),_('list on 1 page sorted by lastname is displayed after click'),
-              _('list on 1 page sorted by updated on is displayed after click')]%>
+  <%titles = [t(:message_15, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_16, :scope => [:txt, :view, :candidates, :list, :rhtml]),
+              t(:message_17, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
   <% if params[:action] != 'list_admission_ready'%>
     <% if session[:list_mode] == 'list' %>
       <%message = image_tag("page.png")%>
@@ -34,8 +34,8 @@
       <%message = image_tag("page.png")%>
       <div id='list_all'>
     <%end%>   
-        <%= sort_tags(:list_all, sort_array, titles, :message => _("order all") + " <span title='"+
-                      _('switch on paginating after click on one way of sorting') +
+        <%= sort_tags(:list_all, sort_array, titles, :message => t(:message_18, :scope => [:txt, :view, :candidates, :list, :rhtml]) + " <span title='"+
+                      t(:message_19, :scope => [:txt, :view, :candidates, :list, :rhtml]) +
                       "'>"  + switch_button(message) +"</span> ") %>
       </div>
   <% end %>
@@ -51,5 +51,5 @@
     <%= will_paginate %>
   <% end %>
 <% else %>
-  <h4><%= _("There are no candidates in your selection") %></h4>
+  <h4><%= t(:message_20, :scope => [:txt, :view, :candidates, :list, :rhtml]) %></h4>
 <% end %>

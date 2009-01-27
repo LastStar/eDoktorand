@@ -8,6 +8,6 @@
   <%= render(:partial => 'term_line', :collection => @final_exam_terms) %>
 </ul>
 <% if @final_exam_terms != []%>
-  <%= submit_tag _('print invitation letter') %>
+  <%= submit_tag t(:message_0, :scope => [:txt, :view, :final_exam_terms, :list, :rhtml]) %>
 <% end %>
 <% end %>

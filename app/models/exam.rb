@@ -17,8 +17,8 @@ class Exam < ActiveRecord::Base
 
   attr_accessor :plan_subject
 
-  N_('Creating external exam for student')
-  N_('Exam for student')
+  Nt(:message_0, :scope => [:txt, :model, :exam])
+  Nt(:message_1, :scope => [:txt, :model, :exam])
  
   # returns true if result is pass
   def passed?

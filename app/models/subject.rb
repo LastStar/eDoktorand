@@ -8,7 +8,7 @@ class Subject < ActiveRecord::Base
            :conditions => ["date > ?", Date.today]
   has_and_belongs_to_many :departments
 
-  validates_presence_of :label, :message => N_("label can't be empty")
+  validates_presence_of :label, :message => Nt(:message_0, :scope => [:txt, :model, :subject])
 
   # returns all subjects for user
   def self.find_for(user, option = nil)

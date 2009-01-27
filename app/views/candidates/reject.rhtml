@@ -48,7 +48,7 @@ a to do 30 dnů ode dne doručení.
 <div class='links'>
 	<a href='javascript:window.print()'>tisk</a>
 	<% if @user %>
-    <%= link_to _('back'), :action => 'list'%>
+    <%= link_to t(:message_0, :scope => [:txt, :view, :candidates, :reject, :rhtml]), :action => 'list'%>
     <% unless @candidate.admited? %>
     <span id='mailLink'>
       <%= link_to_remote 'odešli mail s dekretem o nepřijetí', :update => 'mailLink', :url => {:action => 'reject_now', :id => @candidate.id} %>

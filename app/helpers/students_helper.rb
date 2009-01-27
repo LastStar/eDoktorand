@@ -5,7 +5,7 @@ module StudentsHelper
     links = []
     study_plan = index.study_plan 
     if @user.has_one_of_roles?(['dean', 'faculty_secretary']) &&
-                               index.status != _('absolved')
+                               index.status != t(:message_0, :scope => [:txt, :helper, :students])
       links << finish_link(index)
       unless index.finished?
         links << switch_link(index)
@@ -44,7 +44,7 @@ module StudentsHelper
       
   #prints link to function witch show student line menu
   def link_to_show_actions(index)
-    link_to_function('&uarr;' + _('actions'),
+    link_to_function('&uarr;' + t(:message_1, :scope => [:txt, :helper, :students]),
       update_page do |page|
         page.show "index_menu_#{index.id}_tr"
         page.show "index_form_#{index.id}_tr"
@@ -57,7 +57,7 @@ module StudentsHelper
       
   #prints link to function witch hide student line menu
   def link_to_hide_actions(index)
-    link_to_function('&darr;' + _('actions'),
+    link_to_function('&darr;' + t(:message_2, :scope => [:txt, :helper, :students]),
       update_page do |page|
         page.hide "index_menu_#{index.id}_tr"
         page.hide "index_form_#{index.id}_tr"
@@ -77,11 +77,11 @@ module StudentsHelper
   # prints finish link
   def finish_link(index)
     if index.finished? 
-      link_to_remote(_('unfinish study'),
+      link_to_remote(t(:message_3, :scope => [:txt, :helper, :students]),
                     :url => {:action => 'unfinish', :controller => 'students',
                     :id => index, :day => true}, :complete => evaluate_remote_response)
     else 
-      link_to_remote(_('finish study'), 
+      link_to_remote(t(:message_4, :scope => [:txt, :helper, :students]), 
                     :url => {:action => 'time_form', :controller => 'students',
                     :form_action => 'finish', :id => index, :day => true}, 
                     :update => "index_form_#{index.id}")
@@ -90,7 +90,7 @@ module StudentsHelper
  
   # prints link to switch study form
   def switch_link(index)
-    link_to_remote(_('switch study'),
+    link_to_remote(t(:message_5, :scope => [:txt, :helper, :students]),
                   :url => {:action => 'time_form',
                           :controller => 'students',
                           :form_action => 'switch_study',
@@ -100,7 +100,7 @@ module StudentsHelper
 
   # prints interupt link
   def interupt_link(index)
-    link_to(_('interrupt study'),
+    link_to(t(:message_6, :scope => [:txt, :helper, :students]),
             {:action => 'index', 
             :controller => 'interupts',
             :id => index})
@@ -108,7 +108,7 @@ module StudentsHelper
 
   # prints confirm interupt link
   def confirm_interupt_link(index)
-    link_to_remote(_('confirm interrupt'),
+    link_to_remote(t(:message_7, :scope => [:txt, :helper, :students]),
                    :url => {:action => 'time_form',
                            :controller => 'students',
                            :form_action => 'confirm',
@@ -120,7 +120,7 @@ module StudentsHelper
 
   # prints end interupt link
   def end_interupt_link(index)
-    link_to_remote(_('end interrupt'),
+    link_to_remote(t(:message_8, :scope => [:txt, :helper, :students]),
                    :url => {:action => 'time_form',
                            :controller => 'students',
                            :form_action => 'end',
@@ -132,7 +132,7 @@ module StudentsHelper
 
   # prints link to create new study plan
   def create_link(index)
-    link_to(_('create SP'),
+    link_to(t(:message_9, :scope => [:txt, :helper, :students]),
             :action => 'create',
             :controller => 'study_plans',
             :id => index.student)
@@ -140,7 +140,7 @@ module StudentsHelper
 
   # prints link to create final exam term
   def final_exam_link(index)
-    link_to_remote(_('final exam term'),
+    link_to_remote(t(:message_10, :scope => [:txt, :helper, :students]),
                    :url => {:action => 'new',
                            :controller => 'final_exam_terms',
                            :id => index},
@@ -149,7 +149,7 @@ module StudentsHelper
 
   # prints lint to interupt study
   def confirm_interupt_link(index)
-    link_to_remote(_('confirm interupt'),
+    link_to_remote(t(:message_11, :scope => [:txt, :helper, :students]),
                    {:url => {:action => 'confirm',
                              :controller => 'interupts',
                              :id => index},
@@ -158,7 +158,7 @@ module StudentsHelper
 
   # prints link to approve scholarship
   def approve_scholarship_link(index)
-    link_to_remote(_('approve scholarship'),
+    link_to_remote(t(:message_12, :scope => [:txt, :helper, :students]),
                   :url => {:controller => 'students',
                           :action => 'approve_scholarship_claim',
                           :id => index},
@@ -167,7 +167,7 @@ module StudentsHelper
 
   # prints link to cancel scholarship
   def cancel_scholarship_link(index)
-    link_to_remote(_('cancel scholarship'),
+    link_to_remote(t(:message_13, :scope => [:txt, :helper, :students]),
                   :url => {:controller => 'students',
                           :action => 'cancel_scholarship_claim',
                           :id => index},
@@ -176,7 +176,7 @@ module StudentsHelper
 
   # returns link for details fiter 
   def detail_filter_link
-    link_to_function(_('Detail filter'),
+    link_to_function(t(:message_14, :scope => [:txt, :helper, :students]),
                      "$('detail_info').toggle(); $('detail_search').toggle()",
                      :class => 'legend_link') 
   end
@@ -185,29 +185,29 @@ module StudentsHelper
   # TODO rename to index_tags
   def student_exception(index)
     tags = []
-    if index.status == _('FE passed')
+    if index.status == t(:message_15, :scope => [:txt, :helper, :students])
       if index.defense_claimed?
-        tags <<  "<span title='" + _('claimed for defence') + "'>po</span>"
+        tags <<  "<span title='" + t(:message_16, :scope => [:txt, :helper, :students]) + "'>po</span>"
       elsif index.defense_invitation_sent?
-        tags << "<span title='" + _('approved form of defence') + "'>so</span>"
+        tags << "<span title='" + t(:message_17, :scope => [:txt, :helper, :students]) + "'>so</span>"
       end
     else
-      unless index.status == _('absolved') || index.status == _('finished')
+      unless index.status == t(:message_18, :scope => [:txt, :helper, :students]) || index.status == t(:message_19, :scope => [:txt, :helper, :students])
         if index.close_to_interupt_end_or_after?
-          tags << "<span title='" + _('comming end of interrupt') + "'>!</span>"
+          tags << "<span title='" + t(:message_20, :scope => [:txt, :helper, :students]) + "'>!</span>"
         end
         if index.waits_for_scholarship_confirmation?
-          tags << "<span title='" + _('accommodation scholarship') + "'>us</span>"
+          tags << "<span title='" + t(:message_21, :scope => [:txt, :helper, :students]) + "'>us</span>"
         end
-        unless index.status == _('final application') || index.final_exam_passed?
+        unless index.status == t(:message_22, :scope => [:txt, :helper, :students]) || index.final_exam_passed?
           if index.claimed_for_final_exam? 
-            tags << "<span title='" + _('approved form of FE') + "'>sz</span>"
+            tags << "<span title='" + t(:message_23, :scope => [:txt, :helper, :students]) + "'>sz</span>"
           elsif index.claimed_final_application? && !index.claimed_for_final_exam?
-            tags << "<span title='" + _('presented form of FE') + "'>pz</span>"
+            tags << "<span title='" + t(:message_24, :scope => [:txt, :helper, :students]) + "'>pz</span>"
           end
         end
         if index.defense_claimed?
-          tags << "<span title=" + _('presented form of defence') + "> po </span>"
+          tags << "<span title=" + t(:message_25, :scope => [:txt, :helper, :students]) + "> po </span>"
         end
       end
       if tags.size > 1
@@ -232,7 +232,7 @@ module StudentsHelper
     action = 'pass_' + what.to_s
     url = {:action => 'time_form', :controller => 'students',
            :form_action => action, :id => index, :day => true}
-    link_to_remote(_(action.gsub('_', ' ')),
+    link_to_remote(t(:message_26, :scope => [:txt, :helper, :students]),
                    :update => "index_form_#{index.id}",
                    :url => url)
   end
@@ -240,7 +240,7 @@ module StudentsHelper
   # prints select for departments
   def department_select(options = {:include_empty => true})
     ops = Department.find(:user => @user).map {|d| [d.name, d.id]}
-    ops = [['-- ' + _('department') + ' --', '0']].concat(ops) if options[:include_empty]
+    ops = [['-- ' + t(:message_27, :scope => [:txt, :helper, :students]) + ' --', '0']].concat(ops) if options[:include_empty]
     content_tag('select', options_for_select(ops),
                 {:id => "department-srch", :name => "department"})
   end
@@ -248,7 +248,7 @@ module StudentsHelper
   # prints select for coridor
   def coridor_select(options = {:include_empty => true})
     ops = Coridor.find(:user => @user).map {|c| [c.name, c.id]}
-    ops = [['-- ' + _('coridor') + ' --', '0']].concat(ops) if options[:include_empty]
+    ops = [['-- ' + t(:message_28, :scope => [:txt, :helper, :students]) + ' --', '0']].concat(ops) if options[:include_empty]
     content_tag('select', options_for_select(ops),
                 {:id => "coridor-srch", :name => "coridor"})
   end
@@ -263,42 +263,42 @@ module StudentsHelper
 
   # prints select for statuses
   def status_select(options = {})
-    ops = [['-- ' + _('study plan') + ' --', '0'], [_("SP not admited"), 1],\
-        [_("SP admited"), 2], [_("SP approved by tutor"), 3],\
-        [_("SP approved by leader"), 4], [_('SP approved by dean'), 5]]
+    ops = [['-- ' + t(:message_29, :scope => [:txt, :helper, :students]) + ' --', '0'], [t(:message_30, :scope => [:txt, :helper, :students]), 1],\
+        [t(:message_31, :scope => [:txt, :helper, :students]), 2], [t(:message_32, :scope => [:txt, :helper, :students]), 3],\
+        [t(:message_33, :scope => [:txt, :helper, :students]), 4], [t(:message_34, :scope => [:txt, :helper, :students]), 5]]
     content_tag('select', options_for_select(ops), 
                 {:id => "status-srch", :name => "status"})
   end
 
   # prints select for statuses
   def study_status_select(options = {})
-    ops = [['-- ' + _('study') + ' --', '0'], [_("studying"), 1], [_("finished"), 2],
-            [_("interupted"), 3], [_('absolved'), 4], [_('continue'), 5], [_('FE passed'), 6]]
+    ops = [['-- ' + t(:message_35, :scope => [:txt, :helper, :students]) + ' --', '0'], [t(:message_36, :scope => [:txt, :helper, :students]), 1], [t(:message_37, :scope => [:txt, :helper, :students]), 2],
+            [t(:message_38, :scope => [:txt, :helper, :students]), 3], [t(:message_39, :scope => [:txt, :helper, :students]), 4], [t(:message_40, :scope => [:txt, :helper, :students]), 5], [t(:message_41, :scope => [:txt, :helper, :students]), 6]]
     content_tag('select', options_for_select(ops), 
                 {:id => "study_status-srch", :name => "study_status"})
   end
 
   # prints select for statuses
   def form_select(options = {})
-    ops = [['-- ' + _('study form') + ' --', '0'], [_("present"), 1], [_("combined"), 2]]
+    ops = [['-- ' + t(:message_42, :scope => [:txt, :helper, :students]) + ' --', '0'], [t(:message_43, :scope => [:txt, :helper, :students]), 1], [t(:message_44, :scope => [:txt, :helper, :students]), 2]]
     content_tag('select', options_for_select(ops), 
                 {'id' => "form", 'name' => "form"})
   end
 
   # prints select for years
   def year_select
-    ops = [['-- ' + _('year') + ' --', '0'], [_("1. year"), 1], [_("2. year"), 2], 
-            [_("3. year"), 3], [_('x'), 4]]
+    ops = [['-- ' + t(:message_45, :scope => [:txt, :helper, :students]) + ' --', '0'], [t(:message_46, :scope => [:txt, :helper, :students]), 1], [t(:message_47, :scope => [:txt, :helper, :students]), 2], 
+            [t(:message_48, :scope => [:txt, :helper, :students]), 3], [t(:message_49, :scope => [:txt, :helper, :students]), 4]]
     content_tag('select', options_for_select(ops), 
       {'id' => "year", 'name' => "year"})
   end
 
   def interupt_to_info(index)
-    "#{_('to')} #{index.interupt.end_on.strftime('%d.%m.%Y')}"
+    "#{t(:message_50, :scope => [:txt, :helper, :students])} #{index.interupt.end_on.strftime('%d.%m.%Y')}"
   end
   
   def back_to_list(index)
-    link_to_function(_("back"),
+    link_to_function(t(:message_51, :scope => [:txt, :helper, :students]),
                     update_page do |page|
                       page.show 'students_list', 'search'
                       page.remove 'student_detail'
@@ -309,7 +309,7 @@ module StudentsHelper
   end
 
   def back_and_remove_from_list(index)
-    link_to_function(_("back and remove from list"), 
+    link_to_function(t(:message_52, :scope => [:txt, :helper, :students]), 
                     update_page do |page|
                       page.remove "index_line_#{index.id}",
                                   "index_menu_#{index.id}_tr",
@@ -321,7 +321,7 @@ module StudentsHelper
   end
 
   def diploma_supplement_link(index)
-    link_to(_('diploma supplement'),
+    link_to(t(:message_53, :scope => [:txt, :helper, :students]),
             :controller => :diploma_supplements, 
             :action => :new,
             :id => index)
@@ -339,7 +339,7 @@ module StudentsHelper
 
   def name_search_form(&proc)
     form_remote_tag(:url => {:action => 'search'},
-                    :loading => "$('search_submit').value = '%s'" % _('working...'),
+                    :loading => "$('search_submit').value = '%s'" % t(:message_54, :scope => [:txt, :helper, :students]),
                     :complete => evaluate_remote_response,
                     &proc)
   end
@@ -354,9 +354,9 @@ module StudentsHelper
 
   def study_plan_link(index)
     if params[:controller] == 'students' && params[:action] == 'show'
-    " <a href='#shortcut_study_plan'>" + _('study plan') + "</a>"
+    " <a href='#shortcut_study_plan'>" + t(:message_55, :scope => [:txt, :helper, :students]) + "</a>"
     else
-      link_to_remote(_('study plan'),
+      link_to_remote(t(:message_56, :scope => [:txt, :helper, :students]),
                      :url => {:action => :show,
                              :controller => :study_plans,
                              :id => index},

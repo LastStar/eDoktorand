@@ -144,23 +144,23 @@ class StudyPlan < ActiveRecord::Base
       @status ||= if index.disert_theme.defense_passed? || index.final_exam_passed?
         ''
       elsif all_subjects_finished?
-        _('all finished')
+        t(:message_0, :scope => [:txt, :model, :plan])
       elsif canceled?
-        _('SP canceled')
+        t(:message_1, :scope => [:txt, :model, :plan])
       elsif approved?
-        _('SP approved')
+        t(:message_2, :scope => [:txt, :model, :plan])
       elsif admited?
-        _('SP admited')
+        t(:message_3, :scope => [:txt, :model, :plan])
       end
     else
-      _('no disert theme')
+      t(:message_4, :scope => [:txt, :model, :plan])
     end
   end
 
   # return last approving person localized string
   def approved_by
     if approved?
-      _('dean')
+      t(:message_5, :scope => [:txt, :model, :plan])
     elsif approvement
       approvement.approved_by
     end

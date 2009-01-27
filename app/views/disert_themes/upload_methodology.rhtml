@@ -1,6 +1,5 @@
 <h3>
-<%= _("On this page you can add your methodology file. File should be only in
-PDF format.") %>
+<%= t(:message_0, :scope => [:txt, :view, :disert_themes, :upload_methodology, :rhtml]) %>
 </h3>
 <% if flash[:error] %>
 <div id='error' class='error'>
@@ -10,9 +9,9 @@ PDF format.") %>
 <% form_tag({:action => 'save_methodology'}, {:multipart => true}) do -%>	
   <%= hidden_field "disert_theme", "id" %>
   <fieldset>
-  <label for="disert_theme_methodology_file"><%= _("file") %>:</label>
+  <label for="disert_theme_methodology_file"><%= t(:message_1, :scope => [:txt, :view, :disert_themes, :upload_methodology, :rhtml]) %>:</label>
   <input type="file" name="disert_theme[methodology_file]" id="disert_theme_methodology_file"/>
   </fieldset>
-  <%= submit_tag _("upload") %>
+  <%= submit_tag t(:message_2, :scope => [:txt, :view, :disert_themes, :upload_methodology, :rhtml]) %>
 <% end %>
 

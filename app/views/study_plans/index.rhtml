@@ -1,15 +1,15 @@
 <p class='help'>
-<div class='links'><%= voluntary_link %> <%= link_to_function(_('documents'), "$('documents').toggle()") %></div>
+<div class='links'><%= voluntary_link %> <%= link_to_function(t(:message_0, :scope => [:txt, :view, :study_plans, :index, :rhtml]), "$('documents').toggle()") %></div>
 <ul style='display:none' id='voluntarys'>
   <% @voluntary_subjects.each do |vs| %>
   <li><%= vs.subject.label %></li>
   <% end %>
 </ul>
 <ul id='documents' style='display: none'>
-<li><a href="/pdf/StudijniZkusebniRadDSP2006.pdf"><%= _('study_directive') %></a></li>
-<li><a href="/pdf/StipendijniRadDSP2006.pdf"><%= _('scholarship_directive') %></a></li>
-<li> <a href="/pdf/UbytovaciStipendia2006-07.pdf"><%= _('accomodation_scholarship_directive') %></a></li>
-<li><a href="/documents/how_to"><%= _('how to') %></a></li>
+<li><a href="/pdf/StudijniZkusebniRadDSP2006.pdf"><%= t(:message_1, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<li><a href="/pdf/StipendijniRadDSP2006.pdf"><%= t(:message_2, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<li> <a href="/pdf/UbytovaciStipendia2006-07.pdf"><%= t(:message_3, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<li><a href="/documents/how_to"><%= t(:message_4, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
 </ul>
 <%= render :partial => 'help' %>
 <%= render(:partial => 'shared/student_detail', :locals => {:index => @index}) %>

@@ -69,7 +69,7 @@ class CandidatesController < ApplicationController
   def update
     @candidate = Candidate.find(params[:candidate][:id])
     if @candidate.update_attributes(params[:candidate])
-      flash[:notice] = _('Candidate was changed')
+      flash[:notice] = t(:message_0, :scope => [:txt, :controller, :candidates])
       redirect_to :action => 'show', :id => @candidate.id
     else
       render(:action => :edit)
@@ -158,9 +158,9 @@ class CandidatesController < ApplicationController
     end
     @candidate.admit!
     if params[:mail] != 'no mail'
-      render(:text => _('e-mail sent'))
+      render(:text => t(:message_1, :scope => [:txt, :controller, :candidates]))
     else
-      render(:text => _('saved'))
+      render(:text => t(:message_2, :scope => [:txt, :controller, :candidates]))
     end
   end
 
@@ -173,7 +173,7 @@ class CandidatesController < ApplicationController
   def ready
     candidate = Candidate.find(params[:id])
     candidate.ready!
-    flash['notice'] = _("Candidate ") + candidate.display_name + _(" is ready for application form")
+    flash['notice'] = t(:message_3, :scope => [:txt, :controller, :candidates]) + candidate.display_name + t(:message_4, :scope => [:txt, :controller, :candidates])
     if session[:back_page] == 'list'
       redirect_to :action => 'list', :page => session[:current_page_backward]
     else
@@ -192,7 +192,7 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.find(params[:id])
     @candidate.invite!
     Notifications::deliver_invite_candidate(@candidate, @faculty, Time.now)
-    render(:text => _('e-mail sent'))
+    render(:text => t(:message_5, :scope => [:txt, :controller, :candidates]))
   end
 
   # shows invitation for candidate
@@ -210,7 +210,7 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.find(params[:id])
     @candidate.reject!
 		Notifications::deliver_reject_candidate(@candidate)
-    render(:text => _('e-mail sent'))
+    render(:text => t(:message_6, :scope => [:txt, :controller, :candidates]))
   end
 
   # summary method for candidates
@@ -227,9 +227,9 @@ class CandidatesController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = _('Candidates')
-    WillPaginate::ViewHelpers.pagination_options[:prev_label] = "&laquo; %s" % _('previous')
-    WillPaginate::ViewHelpers.pagination_options[:next_label] = "%s &raquo;" % _('next')
+    @title = t(:message_7, :scope => [:txt, :controller, :candidates])
+    WillPaginate::ViewHelpers.pagination_options[:prev_label] = "&laquo; %s" % t(:message_8, :scope => [:txt, :controller, :candidates])
+    WillPaginate::ViewHelpers.pagination_options[:next_label] = "%s &raquo;" % t(:message_9, :scope => [:txt, :controller, :candidates])
   end
 
   def prepare_sort

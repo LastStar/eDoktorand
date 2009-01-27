@@ -1,47 +1,47 @@
-<h5><%= _("Finished creating exam") %></h5>
+<h5><%= t(:message_0, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %></h5>
 <div>
-<%= _("Czech University of Life Sciences") %><br /><br />
-<%= _("Faculty (institute)") %>:&nbsp;<%= exam.first_examinator.faculty.name if exam.first_examinator %>
+<%= t(:message_1, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %><br /><br />
+<%= t(:message_2, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;<%= exam.first_examinator.faculty.name if exam.first_examinator %>
 </div>
 <br /><br />
 <div style="text-align: right; padding-right: 50px;">
-  <%= _("In Prague the") %>&nbsp;&nbsp;<%= plan_subject.finished_on.strftime("%d. %m. %Y")%>
+  <%= t(:message_3, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>&nbsp;&nbsp;<%= plan_subject.finished_on.strftime("%d. %m. %Y")%>
 </div>
 <br /><br />
 <div style="text-align: center">
-  <span style="font-size: 20px; font-weight: bold;"><%= _("Protocol") %></span>
+  <span style="font-size: 20px; font-weight: bold;"><%= t(:message_4, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %></span>
 </div><br />
 <div style="text-align: left">
-  <%= _("Exam from subject") %>:&nbsp;&nbsp;<%= exam.subject.label.strip%><br /> 
+  <%= t(:message_5, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;<%= exam.subject.label.strip%><br /> 
 </div>
 <br /><br />
 <br /><br /><br />
 <div>
-<%= _("Student") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.student.display_name.strip %><br /><br /> 
-<%= _("Branch") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.coridor.name %><br /><br />
-<%= _("Tutor") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.tutor.display_name %><br /><br />
-<%= _("Department") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
+<%= t(:message_6, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.student.display_name.strip %><br /><br /> 
+<%= t(:message_7, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.coridor.name %><br /><br />
+<%= t(:message_8, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.tutor.display_name %><br /><br />
+<%= t(:message_9, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
 exam.index.department.name %>
 </div>
 <br /><br /><br />
 <br />
 <div>
-<%= _("Questions") %>:&nbsp;&nbsp;&nbsp;&nbsp;<pre class="detail"><%= exam.questions%></pre><br /> 
+<%= t(:message_10, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<pre class="detail"><%= exam.questions%></pre><br /> 
 </div>
 <br /><br /><br />
 <div>
-<%= _("Exam clasification") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= result_word(exam.result) %><br /><br /> 
+<%= t(:message_11, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= result_word(exam.result) %><br /><br /> 
 </div>
 <div>
-<%= _("1. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
-exam.first_examinator.display_name_with_title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature")
+<%= t(:message_12, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
+exam.first_examinator.display_name_with_title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t(:message_13, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml])
 %>:&nbsp;&nbsp;<br /><br />  
 <% if exam.second_examinator %>
-<%= _("2. examinator") %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name_with_title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= _("Signature") %>:&nbsp;&nbsp;<br /><br /> 
+<%= t(:message_14, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name_with_title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t(:message_15, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]) %>:&nbsp;&nbsp;<br /><br /> 
 <% end %>
 </div>
 <div id="examPrintMessage">
-  <%= link_to_function(_('print'), 'window.print()') %>
-  <%= link_to(_('create another exam'), :action => 'create', :controller => 
+  <%= link_to_function(t(:message_16, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]), 'window.print()') %>
+  <%= link_to(t(:message_17, :scope => [:txt, :view, :exams, :_show_protocol, :rhtml]), :action => 'create', :controller => 
     'exams') %>
 </div>

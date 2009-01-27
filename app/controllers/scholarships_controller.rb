@@ -131,7 +131,7 @@ class ScholarshipsController < ApplicationController
   
   # sets title of the controller
   def set_title
-    @title = _('Scholarships')
+    @title = t(:message_0, :scope => [:txt, :controller, :scholarships])
   end
 
   def next_action_for(user)

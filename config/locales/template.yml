@@ -1,0 +1,2113 @@
+--- 
+some-LAN: 
+  txt: 
+    model: 
+      plan: 
+        message_0: all finished
+        message_1: SP canceled
+        message_2: SP approved
+        message_3: SP admited
+        message_4: no disert theme
+        message_5: dean
+      parameter: {}
+
+      exam: 
+        message_0: Creating external exam for student
+        message_1: Exam for student
+      defense: {}
+
+      address: {}
+
+      person: 
+        message_0: Person
+      tutor: 
+        message_0: Tutor
+        message_1: approve like tutor
+        message_2: atest like tutor
+      title: {}
+
+      study: {}
+
+      leader: 
+        message_0: Leader
+        message_1: final exam
+        message_2: approve like leader
+        message_3: atest like leader
+      scholarship: {}
+
+      theme: 
+        message_0: title must not be empty
+        message_1: not_passed_final_exam
+      approvement: {}
+
+      employment: {}
+
+      deanship: {}
+
+      term: 
+        message_0: Wrong format of time - hh:mm
+        message_1: There must be at least one student
+        message_2: Wrong format of time - hh:mm
+        message_3: Wrong format of time - hh:mm
+      role: {}
+
+      examinator: 
+        message_0: Examinator
+      contact: {}
+
+      atestation: {}
+
+      actuality: {}
+
+      document: {}
+
+      supplement: {}
+
+      dean: 
+        message_0: Dean
+        message_1: approve like dean
+        message_2: atest like dean
+      subject: 
+        message_0: external subject
+      candidate: 
+        message_18: only enrolled
+        message_8: university cannot be empty
+        message_9: faculty cannot be empty
+        message_20: candidate must be finished before invitation
+        message_19: languages have to be different
+        message_0: firstname can not be empty
+        message_21: candidate must be invited before admittance
+        message_10: corridor cannot be empty
+        message_1: lastname can not be empty
+        message_22: candidate must be admited before enrollment
+        message_11: birth number cannot be empty
+        message_2: birth place cannot be empty
+        message_23: your birth number has wrong format
+        message_12: street number cannot be empty
+        message_3: email cannot be empty
+        message_24: your birth number has wrong format
+        message_13: email does not have right format
+        message_4: street cannot be empty
+        message_14: only unready
+        message_5: city cannot be empty
+        message_15: only ready
+        message_6: zip cannot be empty
+        message_16: only invited
+        message_7: state cannot be empty
+        message_17: only admited
+      permission: {}
+
+      faculty: 
+        message_0: 
+      secretary: {}
+
+      statement: {}
+
+      type: {}
+
+      tutorship: {}
+
+      student: 
+        message_8: Switch study
+        message_9: finish to
+        message_0: to
+        message_10: switch study to
+        message_1: Birth date
+        message_11: pass final exam to
+        message_2: Year
+        message_12: pass final exam
+        message_3: Enrolled on
+        message_13: pass defense
+        message_4: with note
+        message_14: pass defense to
+        message_5: date finished
+        message_6: Pass final exam
+        message_7: Pass defense
+      leadership: {}
+
+      index: 
+        message_8: absolved
+        message_9: interupted
+        message_0: with study change
+        message_10: absolved
+        message_1: End
+        message_11: FE passed
+        message_2: account prefix in wrong format
+        message_12: finished
+        message_3: account number in wrong format
+        message_13: interupted
+        message_4: account number in wrong format
+        message_14: continue
+        message_5: not_all_subject_finished
+        message_15: studying
+        message_6: absolved
+        message_7: interupted
+      program: {}
+
+      notifications: 
+        message_8: Invitation to final exam
+        message_9: Invitation to defense
+        message_0: Invitation to admition tests to postgradual study
+        message_10: Created account
+        message_1: Dear  Mr./Mrs.
+        message_2: Dear Mr.
+        message_3: Dear Mrs.
+        message_4: Notification about admition procedure to postgradula study
+        message_5: Notification about admition procedure to postgradula study
+        message_6: notification of study plan
+        message_7: "with birth number "
+      coridor: {}
+
+      detail: 
+        message_0: university can't be blank
+      user: {}
+
+      interupt: 
+        message_0: end to
+      department: {}
+
+    lib: 
+      getter: {}
+
+      system: {}
+
+      merger: {}
+
+      exporter: {}
+
+      calculator: {}
+
+      changer: {}
+
+      approvable: {}
+
+      processor: {}
+
+      approver: {}
+
+      genderize: 
+        message_0: male
+        message_1: female
+      loader: {}
+
+    helper: 
+      interupts: {}
+
+      plans: 
+        message_18: voluntary subjects
+        message_8: Are you sure to
+        message_9: end study
+        message_20: 
+        message_19: change study plan
+        message_0: semester
+        message_10: change tutor
+        message_1: none subject
+        message_11: Are you sure to
+        message_2: none subject
+        message_12: change tutor
+        message_3: external subject
+        message_13: interupt
+        message_4: none subject
+        message_14: create study plan
+        message_5: external subject
+        message_15: Have you consulted your study plan with tutor. It is highly recomended
+        message_6: semester
+        message_16: final exam application
+        message_7: end study
+        message_17: requisite subjects
+      departments: {}
+
+      exams: 
+        message_8: working...
+        message_9: working...
+        message_0: new exam
+        message_10: exam by subject
+        message_1: all exams (slow)
+        message_11: external exam
+        message_2: this year only
+        message_3: not pass
+        message_4: pass
+        message_5: detail
+        message_6: working...
+        message_7: working...
+      addresses: {}
+
+      parameters: {}
+
+      students: 
+        message_51: back
+        message_40: continue
+        message_29: study plan
+        message_18: absolved
+        message_8: end interrupt
+        message_52: back and remove from list
+        message_41: FE passed
+        message_30: SP not admited
+        message_9: create SP
+        message_53: diploma supplement
+        message_42: study form
+        message_31: SP admited
+        message_20: comming end of interrupt
+        message_19: finished
+        message_0: absolved
+        message_54: working...
+        message_43: present
+        message_32: SP approved by tutor
+        message_21: accommodation scholarship
+        message_10: final exam term
+        message_1: actions
+        message_55: study plan
+        message_44: combined
+        message_33: SP approved by leader
+        message_22: final application
+        message_11: confirm interupt
+        message_2: actions
+        message_56: study plan
+        message_45: year
+        message_34: SP approved by dean
+        message_23: approved form of FE
+        message_12: approve scholarship
+        message_3: unfinish study
+        message_46: 1. year
+        message_35: study
+        message_24: presented form of FE
+        message_13: cancel scholarship
+        message_4: finish study
+        message_47: 2. year
+        message_36: studying
+        message_25: presented form of defence
+        message_14: Detail filter
+        message_5: switch study
+        message_48: 3. year
+        message_37: finished
+        message_26: 
+        message_15: FE passed
+        message_6: interrupt study
+        message_49: x
+        message_38: interupted
+        message_27: department
+        message_16: claimed for defence
+        message_7: confirm interrupt
+        message_50: to
+        message_39: absolved
+        message_28: coridor
+        message_17: approved form of defence
+      documents: {}
+
+      coridors: 
+        message_0: Are you sure to delete?
+        message_1: Add subject
+        message_2: canceled
+        message_3: approved
+        message_4: approved with earfull
+      account: {}
+
+      titles: {}
+
+      application: 
+        message_62: literature review file
+        message_51: finished on
+        message_40: "atest like #{person}"
+        message_29: do you really want to
+        message_18: exam_terms
+        message_8: approved with earfull
+        message_63: self report file
+        message_52: scholarship
+        message_41: approve
+        message_30: logoff
+        message_9: tutor statement
+        message_64: disert theme file
+        message_53: final exam term
+        message_42: approve with earfull
+        message_31: probation terms
+        message_20: diplomas
+        message_19: exams
+        message_0: male
+        message_65: working...
+        message_54: defense
+        message_43: cancel
+        message_32: study plan
+        message_21: tutors
+        message_10: leader statement
+        message_1: female
+        message_55: hide
+        message_44: "approve like #{person}"
+        message_33: scholarship
+        message_22: coridors
+        message_11: dean statement
+        message_2: "yes"
+        message_56: Full name
+        message_45: approve
+        message_34: Birth place
+        message_23: candidates
+        message_12: semester
+        message_3: "no"
+        message_57: Full name
+        message_46: cancel
+        message_35: Birth date
+        message_24: candidates
+        message_13: Birth number
+        message_4: There were errors in your input
+        message_58: Tutor
+        message_47: methodology file (opens new window)
+        message_36: print
+        message_25: probation terms
+        message_14: Birth on
+        message_5: 
+        message_59: YOU DON'T HAVE TUTOR! CONTACT HELPDESK NOW!
+        message_48: additional information for next atestation
+        message_37: with note
+        message_26: exams
+        message_15: print
+        message_6: canceled
+        message_60: Tutor
+        message_49: back
+        message_38: see atestation informations
+        message_27: students
+        message_16: exams
+        message_7: approved
+        message_61: Tutor
+        message_50: back and remove from list
+        message_39: working...
+        message_28: logoff
+        message_17: candidates
+      form: {}
+
+      faculties: {}
+
+      supplements: {}
+
+      languages: {}
+
+      types: {}
+
+      scholarships: 
+        message_8: approve
+        message_9: control table
+        message_0: change
+        message_10: claim_accomodation_scholarship
+        message_1: change
+        message_11: recalculate
+        message_2: add
+        message_12: Are you sure to recalculate amounts?
+        message_3: remove
+        message_4: close
+        message_5: pay
+        message_6: Are you sure to pay all scholarships. Operation is irreversible
+        message_7: |-
+          Are you sure to approve scholarships like this. ' +
+                          'Operation is irreversible.
+      permissions: {}
+
+      people: {}
+
+      defenses: 
+        message_0: working...
+        message_1: send email
+        message_2: accept without mail
+        message_3: protocol
+        message_4: announcement
+      admitances: {}
+
+      controller: {}
+
+      tutors: {}
+
+      subjects: {}
+
+      studies: {}
+
+      roles: {}
+
+      login: {}
+
+      candidates: 
+        message_40: pass
+        message_29: contact
+        message_18: all
+        message_8: by lastname up
+        message_41: not pass
+        message_30: history
+        message_9: by lastname down
+        message_42: pass
+        message_31: enrolled
+        message_20: list
+        message_19: 
+        message_0: make ready
+        message_43: reject
+        message_32: not admitted
+        message_21: list
+        message_10: by coridor up
+        message_1: create commission
+        message_44: admit
+        message_33: admitted
+        message_22: show all contacts
+        message_11: by coridor down
+        message_2: protocol
+        message_34: invited
+        message_23: hide all contacts
+        message_12: by updated on up
+        message_3: gain
+        message_35: ready
+        message_24: show all histories
+        message_13: by updated on down
+        message_4: create commission
+        message_36: admit
+        message_25: hide all histories
+        message_14: view paginated
+        message_5: invite
+        message_37: conditional admit
+        message_26: summary
+        message_15: view all
+        message_6: enroll
+        message_38: not admit
+        message_27: "By corridors\") : _(\"By departments"
+        message_16: "Filter is set to:"
+        message_7: not set
+        message_39: not pass
+        message_28: admit_for_revocation
+        message_17: paginated list of all candidates is displayed after click
+      terms: 
+        message_8: edit
+        message_9: delete
+        message_0: new term
+        message_10: Sure to delete?
+        message_1: future_terms
+        message_11: students
+        message_2: history_terms
+        message_12: Enroll student
+        message_3: You are already enrolled for this term
+        message_13: working...
+        message_4: Sign off student
+        message_14: Sign off student
+        message_5: You are already enrolled for an exam from this subject
+        message_15: working...
+        message_6: enroll
+        message_16: working...
+        message_7: Really enroll to this term?
+      admittances: {}
+
+      themes: {}
+
+      actualities: {}
+
+    view: 
+      study_plans: 
+        _obligate_form: 
+          rhtml: 
+            message_0: obligate subjects
+            message_1: voluntary subjects
+            message_2: working...
+        _disert_form: 
+          rhtml: 
+            message_8: finish study plan creating (no steps back)
+            message_9: working...
+            message_0: semester of final exam
+            message_1: semester
+            message_2: theme of disert theme
+            message_3: theme of disert theme
+            message_4: term of disert theme defense
+            message_5: methodology summary
+            message_6: language subjects
+            message_7: working...
+        _print_statements: 
+          rhtml: 
+            message_0: Tutor statement
+            message_1: Leader statement
+            message_2: Dean statement
+        save_en: 
+          rhtml: {}
+
+        create_by_other: 
+          rhtml: 
+            message_0: Study plan
+            message_1: requisite subjects
+            message_2: allready finished subjects
+        _help: 
+          rhtml: 
+            message_8: You have all subjects finished. Proceed to final exam application
+            message_9: Final exam application
+            message_0: Your study plan has been canceled.
+            message_10: Welcome to edoktorand application.
+            message_1: "Your study plan, details of it you can see here, is processed now. Final approvement you will get by email. "
+            message_11: This page shows informations which are stored in information system.
+            message_2: Wait till your application will be approved and your defense term will be created.
+            message_12: " If you have found any error please contact "
+            message_3: Your defense term has been created and emailed to you. You can also find it in the study plan detail.
+            message_13: First step propably will to create
+            message_4: You have passed final exam. Proceed to defense application
+            message_5: Defense application
+            message_6: Wait till your application will be approved and your final exam term will be created.
+            message_7: Your final exam term has been created and emailed to you. You can also find it in the study plan detail.
+        _language_form: 
+          rhtml: 
+            message_0: language subjects
+            message_1: voluntary subjects
+            message_2: working...
+            message_3: disert theme and final exam
+            message_4: working...
+        _language: 
+          rhtml: {}
+
+        _final_exam_areas: 
+          rhtml: 
+            message_0: final area
+            message_1: final area
+        _detail_form: 
+          rhtml: 
+            message_0: working...
+            message_1: additional information
+            message_2: commit
+        _voluntary_form: 
+          rhtml: 
+            message_0: voluntary subjects
+            message_1: 
+            message_2: working...
+            message_3: language subjects
+            message_4: working...
+        _plan_error: 
+          rhtml: {}
+
+        _obligate: 
+          rhtml: {}
+
+        _atestation_detail: 
+          rhtml: 
+            message_0: Additional information provided by student
+        _voluntary: 
+          rhtml: 
+            message_0: 
+            message_1: 
+            message_2: semester
+            message_3: subject
+            message_4: subject en
+            message_5: university
+            message_6: examinator
+        _obligates: 
+          rhtml: {}
+
+        _atest_information: 
+          rhtml: 
+            message_0: Student didn't have any subject for this atestation.
+            message_1: Unfinished subjects are in red.
+            message_2: Additional information provided by student
+        _create_head: 
+          rhtml: 
+            message_0: Study plan
+        show: 
+          rhtml: 
+            message_0: hide
+            message_1: hide
+        index: 
+          rhtml: 
+            message_0: documents
+            message_1: study_directive
+            message_2: scholarship_directive
+            message_3: accomodation_scholarship_directive
+            message_4: how to
+        _study_plan_header: 
+          rhtml: 
+            message_0: study plan
+        _language_edit: 
+          rhtml: {}
+
+        create: 
+          rhtml: 
+            message_0: |-
+              On this page you are starting to create your study plan. Study plan
+              should be consulted with your tutor.
+        _voluntary_edit: 
+          rhtml: 
+            message_0: semester
+            message_1: subject
+            message_2: university
+            message_3: examinator
+        _seminar_form: 
+          rhtml: 
+            message_0: working...
+            message_1: seminar subjects
+            message_2: voluntary subjects
+        _final_areas_fields: 
+          rhtml: 
+            message_0: final area
+        add_en: 
+          rhtml: {}
+
+        _seminar: 
+          rhtml: 
+            message_0: semester
+        _general: 
+          rhtml: 
+            message_0: 
+            message_1: 
+            message_2: semester
+            message_3: subject
+            message_4: subject en
+            message_5: university
+            message_6: examinator
+        _accept: 
+          rhtml: 
+            message_0: confirm
+            message_1: Are you sure, your plan is ready?
+        _full_form: 
+          rhtml: 
+            message_8: semester
+            message_9: final area
+            message_0: subjects
+            message_10: final area
+            message_1: Add subject
+            message_11: theme of disert theme
+            message_2: semester
+            message_12: theme of disert theme
+            message_3: subject
+            message_13: term of disert theme defense
+            message_4: subject en
+            message_14: "Methodology added on:"
+            message_5: university
+            message_15: methodology summary
+            message_6: examinator
+            message_16: commit
+            message_7: semester of final exam
+        _create_done: 
+          rhtml: 
+            message_0: Study plan
+      layouts: 
+        diploma_supplements: 
+          rhtml: {}
+
+        departments: 
+          rhtml: {}
+
+        atestation_terms: 
+          rhtml: {}
+
+        scaffold: 
+          rhtml: {}
+
+        exams: 
+          rhtml: {}
+
+        _error: 
+          rhtml: {}
+
+        parameters: 
+          rhtml: {}
+
+        _notice: 
+          rhtml: {}
+
+        employers: 
+          rhtml: 
+            message_0: 
+        documents: 
+          rhtml: 
+            message_0: 
+            message_1: loading ...
+        coridors: 
+          rhtml: {}
+
+        titles: 
+          rhtml: {}
+
+        address_types: 
+          rhtml: {}
+
+        faculties: 
+          rhtml: {}
+
+        contact_types: 
+          rhtml: {}
+
+        languages: 
+          rhtml: {}
+
+        probation_terms: 
+          rhtml: {}
+
+        permissions: 
+          rhtml: {}
+
+        people: 
+          rhtml: {}
+
+        admitances: 
+          rhtml: {}
+
+        subjects: 
+          rhtml: {}
+
+        studies: 
+          rhtml: {}
+
+        standard: 
+          rhtml: {}
+
+        roles: 
+          rhtml: {}
+
+        exam_terms: 
+          rhtml: {}
+
+        candidates: 
+          rhtml: {}
+
+        admittances: 
+          rhtml: {}
+
+        actualities: 
+          rhtml: {}
+
+      interupts: 
+        print_interupt: 
+          rhtml: 
+            message_8: "last atestation:"
+            message_9: study plan approvement process
+            message_0: This study is interupted
+            message_1: interupted on
+            message_2: interupted to
+            message_3: This student admited interupt
+            message_4: start
+            message_5: duration
+            message_6: This study last interupt
+            message_7: interupted on
+        index: 
+          rhtml: 
+            message_0: Interupting study plan
+            message_1: start
+            message_2: duration
+            message_3: months
+            message_4: note
+            message_5: with study change
+            message_6: submit
+      diploma_supplements: 
+        new: 
+          rhtml: 
+            message_0: New diploma_supplement
+            message_1: create
+            message_2: back
+        list: 
+          rhtml: 
+            message_8: destroy
+            message_9: Are you sure?
+            message_0: Listing diploma_supplements
+            message_10: no diploma supplements found
+            message_1: diploma no.
+            message_11: New diploma supplement
+            message_2: family name
+            message_3: given name
+            message_4: specialization
+            message_5: actions
+            message_6: show
+            message_7: edit
+        edit: 
+          rhtml: 
+            message_0: Editing diploma_supplement
+            message_1: edit
+            message_2: show
+            message_3: back
+        _form: 
+          rhtml: 
+            message_18: dean display name
+            message_8: study specialization
+            message_9: faculty name
+            message_19: dean title
+            message_0: All informations are required
+            message_10: study mode
+            message_1: sident
+            message_11: Plan subjects divided by semicolon
+            message_2: diploma no
+            message_12: disert theme title
+            message_3: faculty name english
+            message_13: defense passed on
+            message_4: family name
+            message_14: Final areas divided by semicolon
+            message_5: given name
+            message_15: final exam passed on
+            message_6: date of birth
+            message_16: faculty www
+            message_7: study programme
+            message_17: printed on
+      exams: 
+        new: 
+          rhtml: {}
+
+        list: 
+          rhtml: 
+            message_0: There are no exams for you
+        _with_subject: 
+          rhtml: 
+            message_0: Creating exam
+            message_1: Creating exam by subject
+            message_2: Exam from subject
+        _with_student: 
+          rhtml: 
+            message_0: Creating exam
+            message_1: Exam for student
+            message_2: Exam from subject
+        _detail_form: 
+          rhtml: 
+            message_8: Questions
+            message_9: Result
+            message_0: Exam date
+            message_10: pass
+            message_1: date
+            message_11: not pass
+            message_2: Exam agenda
+            message_12: action
+            message_3: 1. Examinator
+            message_13: commit
+            message_4: 2. Examinator
+            message_5: 3. examinator
+            message_6: 4. examinator
+            message_7: Exam result
+        save_external_subject: 
+          rhtml: 
+            message_8: Exam result
+            message_9: Questions
+            message_0: external exam
+            message_10: Result
+            message_1: Student
+            message_11: pass
+            message_2: Subject
+            message_12: not pass
+            message_3: Exam date
+            message_13: action
+            message_4: date
+            message_14: commit
+            message_5: Exam agenda
+            message_6: University
+            message_7: 1. Examinator
+        _main_form: 
+          rhtml: 
+            message_0: Examined students
+            message_1: student
+        _protocol: 
+          rhtml: 
+            message_18: 4. examinator
+            message_8: Tutor
+            message_9: Department
+            message_20: save
+            message_19: Signature
+            message_0: back
+            message_21: edit
+            message_10: Questions
+            message_1: Czech University of Life Sciences
+            message_11: Exam clasification
+            message_2: Faculty (institute)
+            message_12: 1. examinator
+            message_3: In Prague the
+            message_13: Signature
+            message_4: Protocol
+            message_14: 2. examinator
+            message_5: Exam from subject
+            message_15: Signature
+            message_6: Student
+            message_16: 3. examinator
+            message_7: Branch
+            message_17: Signature
+        external: 
+          rhtml: 
+            message_0: external exam
+            message_1: Examined students
+            message_2: commit
+        show: 
+          rhtml: 
+            message_0: Exam result
+        _table_list: 
+          rhtml: 
+            message_0: Student
+            message_1: Subject
+            message_2: Result
+            message_3: Note
+        _show_protocol: 
+          rhtml: 
+            message_8: Tutor
+            message_9: Department
+            message_0: Finished creating exam
+            message_10: Questions
+            message_1: Czech University of Life Sciences
+            message_11: Exam clasification
+            message_2: Faculty (institute)
+            message_12: 1. examinator
+            message_3: In Prague the
+            message_13: Signature
+            message_4: Protocol
+            message_14: 2. examinator
+            message_5: Exam from subject
+            message_15: Signature
+            message_6: Student
+            message_16: print
+            message_7: Branch
+            message_17: create another exam
+        _list: 
+          rhtml: {}
+
+        create: 
+          rhtml: 
+            message_0: The first step is to choose the creation type of an exam.
+        by_subject: 
+          rhtml: 
+            message_0: exam by subject
+            message_1: exam subjects
+            message_2: subject
+            message_3: commit
+        _show: 
+          rhtml: 
+            message_0: Finished creating exam
+        save_external_student: 
+          rhtml: 
+            message_0: external exam
+            message_1: exam subjects
+            message_2: commit
+      addresses: 
+        _edit: 
+          rhtml: 
+            message_8: city
+            message_9: zip
+            message_0: Citizenship rights
+            message_10: action
+            message_1: citizenship rights
+            message_11: commit
+            message_2: Contact
+            message_12: reset
+            message_3: email
+            message_4: phone
+            message_5: habitat address
+            message_6: street
+            message_7: street number
+        edit_city: 
+          rhtml: {}
+
+        edit_zip: 
+          rhtml: {}
+
+        edit_street: 
+          rhtml: {}
+
+        edit_desc_number: 
+          rhtml: {}
+
+        _save: 
+          rhtml: {}
+
+      parameters: 
+        new: 
+          rhtml: {}
+
+        list: 
+          rhtml: {}
+
+        edit: 
+          rhtml: {}
+
+        show: 
+          rhtml: {}
+
+        _form: 
+          rhtml: {}
+
+      students: 
+        _index_line: 
+          rhtml: {}
+
+        list: 
+          rhtml: 
+            message_0: Students list
+            message_1: loading
+        edit_birthname: 
+          rhtml: {}
+
+        time_form: 
+          rhtml: 
+            message_0: 
+        scholarship: 
+          rhtml: 
+            message_0: Scholarship for students
+        _student_detail: 
+          rhtml: 
+            message_0: year
+        _scholarship_list: 
+          rhtml: 
+            message_0: Full name
+            message_1: Department
+            message_2: Regular
+            message_3: Extra
+            message_4: Kc
+        edit_account: 
+          rhtml: {}
+
+        _student_menu: 
+          rhtml: {}
+
+        end_study: 
+          rhtml: 
+            message_0: submit
+        edit_tutor: 
+          rhtml: {}
+
+        edit_phone: 
+          rhtml: {}
+
+        _search: 
+          rhtml: 
+            message_0: search by lastname
+            message_1: commit
+            message_2: For opening filter options click the legend
+            message_3: commit
+        _list: 
+          rhtml: 
+            message_0: Students list
+            message_1: selected only
+            message_2: No students found. Use filters above to change your selection.
+        edit_citizenship: 
+          rhtml: {}
+
+        edit_email: 
+          rhtml: {}
+
+        edit_display_name: 
+          rhtml: {}
+
+        edit_consultant: 
+          rhtml: {}
+
+        change_tutor: 
+          rhtml: 
+            message_0: submit
+        end_study_confirm: 
+          rhtml: {}
+
+        change_tutor_confirm: 
+          rhtml: {}
+
+        _index: 
+          rhtml: 
+            message_0: year
+        _account_form: 
+          rhtml: 
+            message_0: prefix
+            message_1: account
+            message_2: bank
+      documents: 
+        new: 
+          rhtml: {}
+
+        list: 
+          rhtml: {}
+
+        how_to: 
+          rhtml: {}
+
+        edit: 
+          rhtml: {}
+
+        diploma_supplement: 
+          rhtml: 
+            message_0: back
+        show: 
+          rhtml: {}
+
+        _form: 
+          rhtml: {}
+
+      coridors: 
+        new: 
+          rhtml: {}
+
+        attestation: 
+          rhtml: 
+            message_8: Enrolled on
+            message_9: Result
+            message_0: Listing attestations
+            message_10: At.
+            message_1: back
+            message_11: "yes"
+            message_2: Firstname
+            message_12: "no"
+            message_3: Lastname
+            message_13: In these coridor are no students for atestation
+            message_4: Y.
+            message_5: Tutor
+            message_6: Form of study
+            message_7: P/F
+        list: 
+          rhtml: 
+            message_8: Atestation
+            message_9: Subjects
+            message_0: Listing coridors
+            message_1: Coridor|Name
+            message_2: Coridor|Name english
+            message_3: Coridor|Code
+            message_4: Coridor|Program
+            message_5: Coridor|Accredited
+            message_6: "yes"
+            message_7: "no"
+        edit: 
+          rhtml: {}
+
+        manage_coridor: 
+          rhtml: 
+            message_0: Coridors list
+            message_1: No coridors found.
+        manage_edit: 
+          rhtml: 
+            message_0: Coridor
+            message_1: back
+            message_2: obligate_subjects
+            message_3: voluntary_subjects
+        show: 
+          rhtml: {}
+
+        add_subject: 
+          rhtml: {}
+
+        _coridor_subject: 
+          rhtml: {}
+
+        _view: 
+          rhtml: {}
+
+        subjects: 
+          rhtml: 
+            message_0: Coridor
+            message_1: back
+            message_2: obligate_subjects
+            message_3: voluntary_subjects
+      account: 
+        user_roles: 
+          rhtml: {}
+
+        logout: 
+          rhtml: {}
+
+        welcome: 
+          rhtml: {}
+
+        user_roles_update: 
+          rhtml: {}
+
+        no_permission: 
+          rhtml: 
+            message_0: You don't have rights to do this
+            message_1: back
+        _actuality: 
+          rhtml: {}
+
+        login: 
+          rhtml: 
+            message_0: logging in...
+            message_1: Login form
+            message_2: Login name
+            message_3: Password
+            message_4: Language
+            message_5: Login
+            message_6: submit
+            message_7: Actualities
+        error: 
+          rhtml: 
+            message_0: "There was an error in application:"
+            message_1: back
+      form: 
+        finish: 
+          rhtml: 
+            message_8: Best regards,
+            message_9: Office for Science and Research,
+            message_0: Your on-line application has been registered successfuly.
+            message_10: CULS Prague
+            message_1: What to do next?
+            message_11: Fill another form
+            message_2: "Mail the application form, your curriculum vitae, copies of documents confirming your highest-achieved university degree (diploma, diploma supplement) and the 'Fee Paid' slip of the admission procedure payment at the following address:"
+            message_3: Czech University of Life Sciences
+            message_4: dep. s&r
+            message_5: 165 21 Praha 6 - Suchdol.
+            message_6: We will send you the confirming information either by email or by post.
+            message_7: Thank you for your interest.
+        details: 
+          rhtml: {}
+
+        _error: 
+          rhtml: 
+            message_0: Error
+            message_1: Fields in red are required
+        _notice: 
+          rhtml: 
+            message_0: Notice
+        _preview_header: 
+          rhtml: 
+            message_0: Czech University of Life Sciences
+            message_1: Faculty
+        index: 
+          rhtml: 
+            message_0: After clicking the name of faculty, list of corridors  will be shown
+            message_1: documents
+            message_2: "There is error in application. Please contact system administrator on address:"
+        preview: 
+          rhtml: 
+            message_18: click here for registering your application  on-line, please
+            message_8: mail the requiered documents
+            message_9: to Office for Science and Research for a successful application you should take all these steps, otherwise we cannot guarantee your successful application.
+            message_0: Appllication form for doctoral study
+            message_10: Check the filled data
+            message_1: action
+            message_11: check your correct application data
+            message_2: Signature
+            message_12: Data correction
+            message_3: "ATTENTION:"
+            message_13: click here for incorrect data correction, please
+            message_4: it is necessary to
+            message_14: <a href='javascript:window.print()'>Print</a> out the application form
+            message_5: check the filled data correctness,
+            message_15: click here for printing out your application form, please
+            message_6: print out the application form, register the application form on-line
+            message_16: Register
+            message_7: and
+            message_17: the application form on-line
+      shared: 
+        _approve_form: 
+          rhtml: 
+            message_0: note
+            message_1: result
+            message_2: commit
+        _student_detail: 
+          rhtml: 
+            message_0: Personal and study details
+            message_1: Action
+            message_2: Contact details
+        candidate_detail: 
+          rhtml: 
+            message_18: phone
+            message_8: email
+            message_9: phone
+            message_20: job position
+            message_19: email
+            message_0: Personal informations
+            message_21: Study registration
+            message_10: Postal address
+            message_1: Full name
+            message_22: Corridor
+            message_11: Accomplishments
+            message_2: Birth date and place
+            message_23: Department
+            message_12: University
+            message_3: Birth number
+            message_24: Study form
+            message_13: Faculty
+            message_4: Sex
+            message_25: Exam languages
+            message_14: corridor
+            message_5: State
+            message_26: Theme area
+            message_15: date of study end
+            message_6: Contact
+            message_27: Notice
+            message_16: Employer
+            message_7: habitat address
+            message_17: Employer
+        _methodology: 
+          rhtml: 
+            message_0: methodology summary
+            message_1: show
+            message_2: upload methodology
+        candidate_edit: 
+          rhtml: 
+            message_40: study form
+            message_29: corridor
+            message_18: address state
+            message_8: state
+            message_41: language exams
+            message_30: specialization
+            message_9: birth number / passport
+            message_42: theme area
+            message_31: date of study end
+            message_20: don't fill if identic to habitat address
+            message_19: Postal address
+            message_0: Personal informations
+            message_43: note
+            message_32: Employer
+            message_21: street
+            message_10: Contact
+            message_1: firstname
+            message_44: action
+            message_33: employer
+            message_22: street number
+            message_11: email
+            message_2: lastname
+            message_45: commit
+            message_34: address
+            message_23: city
+            message_12: phone
+            message_3: prefix title
+            message_46: reset
+            message_35: email
+            message_24: zip
+            message_13: habitat address
+            message_4: suffix title
+            message_36: phone
+            message_25: address state
+            message_14: street
+            message_5: date of birth
+            message_37: job position
+            message_26: Accomplishments
+            message_15: street number
+            message_6: birth place
+            message_38: Study registration
+            message_27: university
+            message_16: city
+            message_7: sex
+            message_39: department
+            message_28: faculty
+            message_17: zip
+        _study_detail: 
+          rhtml: 
+            message_18: approved on
+            message_8: This study last interupt
+            message_9: note
+            message_19: subjects
+            message_0: This study has been finished
+            message_10: study plan has changed
+            message_1: finished_to
+            message_11: Other interupts
+            message_2: This study is interupted
+            message_12: "last atestation:"
+            message_3: interupted on
+            message_13: defense approvement process
+            message_4: interupted to
+            message_14: final exam approvement process
+            message_5: This student admited interupt
+            message_15: study plan approvement process
+            message_6: start
+            message_16: Study plan
+            message_7: duration
+            message_17: canceled on
+        _main_menu: 
+          rhtml: 
+            message_8: scholarship
+            message_9: exams
+            message_0: create study plan
+            message_10: probation terms
+            message_1: Have you consulted your study plan with tutor. It is highly recomended
+            message_11: exams
+            message_2: probation terms
+            message_12: students
+            message_3: study plan
+            message_13: logoff
+            message_4: scholarship
+            message_14: do you really want to
+            message_5: contacts
+            message_15: logoff
+            message_6: candidates
+            message_7: exam_terms
+        _interupt: 
+          rhtml: 
+            message_0: interupted on
+        _disert_theme: 
+          rhtml: 
+            message_0: Disert theme
+            message_1: theme of disert theme
+            message_2: semester
+            message_3: term of disert theme defense
+        _system_menu: 
+          rhtml: {}
+
+        _student_contact: 
+          rhtml: 
+            message_0: Contact
+            message_1: email
+            message_2: phone
+            message_3: habitat address
+            message_4: postal address
+        _address_detail: 
+          rhtml: {}
+
+        _subjects: 
+          rhtml: 
+            message_0: semester
+            message_1: date finished
+        _personal_detail: 
+          rhtml: 
+            message_0: Corridor
+            message_1: Department
+            message_2: Study form
+            message_3: Year
+            message_4: Enrolled on
+            message_5: citizenship
+        _final_exam: 
+          rhtml: 
+            message_0: semester
+            message_1: final exam
+            message_2: This student was invited for defense.
+            message_3: This student claimed for defense.
+            message_4: This student was invited for final exam.
+            message_5: This student claimed for final exam.
+            message_6: final area
+            message_7: final area
+      final_exam_terms: 
+        _edit: 
+          rhtml: 
+            message_0: save
+        prepare_print: 
+          rhtml: 
+            message_0: Czech University of Life Sciences
+            message_1: Announcement for final exam commission.
+            message_2: Comissions will sit on %s in room %s.
+        list: 
+          rhtml: 
+            message_0: print invitation letter
+        protocol: 
+          rhtml: 
+            message_18: Chairman signature
+            message_8: Enrolled on
+            message_9: Consultant
+            message_0: back
+            message_10: Final exam area
+            message_1: In Prague on %s
+            message_11: Mark
+            message_2: Czech University of Life Sciences
+            message_12: Signature
+            message_3: Final exam protocol
+            message_13: Literature review
+            message_4: Display name
+            message_14: Chairman
+            message_5: Coridor
+            message_15: Members
+            message_6: Department
+            message_16: Opponent
+            message_7: Tutor
+            message_17: Classification of final exam
+        _detail: 
+          rhtml: 
+            message_8: Opponent
+            message_9: Members
+            message_0: Full name
+            message_1: Tutor
+            message_2: Consultant
+            message_3: Start time
+            message_4: Date and time
+            message_5: Room
+            message_6: Literature review
+            message_7: Chairman
+        claim: 
+          rhtml: 
+            message_0: 
+            message_1: literature review title
+            message_2: literature review file
+            message_3: commit
+        _form: 
+          rhtml: 
+            message_8: member
+            message_9: opponent
+            message_0: date and time
+            message_1: room
+            message_2: chairman
+            message_3: member
+            message_4: member
+            message_5: member
+            message_6: member
+            message_7: member
+        _show: 
+          rhtml: {}
+
+        _term_line: 
+          rhtml: 
+            message_0: in
+      scholarships: 
+        sum: 
+          rhtml: 
+            message_0: regular scholarship sum
+            message_1: extra scholarship sum
+        prepare: 
+          rhtml: 
+            message_0: Scholarship for students
+        _index_line: 
+          rhtml: 
+            message_0: Kc
+            message_1: Kc
+        list: 
+          rhtml: 
+            message_8: Disponent
+            message_9: Amount (CZK)
+            message_0: Scholarships for
+            message_10: Type of scholarship
+            message_1: This is a only control table!
+            message_11: Total amount
+            message_2: SIDENT
+            message_12: Final sum
+            message_3: Birth number
+            message_13: Disponent
+            message_4: Last name
+            message_14: Total amount
+            message_5: First name
+            message_15: This is a only control table!
+            message_6: Coridor
+            message_7: Type of scholarship
+        add: 
+          rhtml: 
+            message_0: amount
+            message_1: Kc
+            message_2: commission
+            message_3: workplace
+            message_4: activity
+            message_5: adding_extra_scholarship
+        _prepare_list: 
+          rhtml: 
+            message_0: Full name
+            message_1: Account
+            message_2: Department
+            message_3: Study form
+            message_4: Regular
+            message_5: Extra
+        scholarship: 
+          rhtml: {}
+
+        _scholarship_line: 
+          rhtml: 
+            message_0: Kc
+        student_list: 
+          rhtml: 
+            message_0: Payed scholarship
+            message_1: Please fill in address and account number to enable accomodation scholarship.
+            message_2: You have not any scholarships.
+            message_3: Payed on
+            message_4: Type of scholarship
+            message_5: Disponent
+            message_6: Amount (CZK)
+        _add: 
+          rhtml: 
+            message_0: amount
+            message_1: Kc
+            message_2: commission
+            message_3: workplace
+            message_4: activity
+            message_5: adding_extra_scholarship
+        change: 
+          rhtml: 
+            message_0: Kc
+        _detail: 
+          rhtml: 
+            message_0: Kc
+        claim: 
+          rhtml: 
+            message_18: Signature
+            message_8: Street
+            message_9: Description number
+            message_19: Date
+            message_0: Claim for accomodation scholarship for academic year
+            message_10: City
+            message_1: UIC
+            message_11: Zip
+            message_2: First name (names)
+            message_12: No address
+            message_3: Last name
+            message_13: Claiming sequence
+            message_4: Birth name
+            message_14: Claimer
+            message_5: Citizenship rights
+            message_15: Signature
+            message_6: Date of birth
+            message_16: Date
+            message_7: Habitat address
+            message_17: dep. s&r
+        _detail_scholarship: 
+          rhtml: {}
+
+        _list: 
+          rhtml: {}
+
+        _account: 
+          rhtml: 
+            message_0: Account
+        detail: 
+          rhtml: 
+            message_0: Kc
+        approve: 
+          rhtml: 
+            message_0: Approved scholarship for students
+            message_1: Extra
+            message_2: Regular
+            message_3: Full name
+        _student_list_line: 
+          rhtml: {}
+
+        _regular: 
+          rhtml: 
+            message_0: Kc
+        _approved_line: 
+          rhtml: {}
+
+      probation_terms: 
+        new: 
+          rhtml: {}
+
+        _subject_form: 
+          rhtml: 
+            message_0: probation term subjects
+            message_1: subject
+        _probation_term_details_form: 
+          rhtml: 
+            message_0: Probation term details
+            message_1: room
+            message_2: starting time
+            message_3: date
+            message_4: maximum of students
+            message_5: note for students
+        list: 
+          rhtml: 
+            message_0: There are no probation terms by your selection
+        edit: 
+          rhtml: 
+            message_0: Editing probation term.
+        _probation_term_with_details: 
+          rhtml: 
+            message_0: Creating probation term
+            message_1: Probation term from subject
+            message_2: date
+            message_3: room
+            message_4: starting time
+            message_5: maximum of students
+            message_6: note for students
+        _examinators_form: 
+          rhtml: 
+            message_0: Probation term agenda
+            message_1: 1. Examinator
+            message_2: 2. Examinator
+            message_3: action
+            message_4: commit
+            message_5: reset
+        show: 
+          rhtml: {}
+
+        _list: 
+          rhtml: 
+            message_0: maximum/enrolled
+            message_1: room
+            message_2: starting time
+            message_3: date
+            message_4: 1. examinator
+            message_5: 2. examinator
+            message_6: note
+        _form: 
+          rhtml: {}
+
+        detail: 
+          rhtml: 
+            message_0: enroll students
+            message_1: enroll
+        create: 
+          rhtml: 
+            message_0: Creating probation term.
+        _enrolled_students: 
+          rhtml: 
+            message_0: not pass
+            message_1: pass
+        _probation_term_with_subject: 
+          rhtml: 
+            message_0: Creating probation term
+            message_1: Probation term from subject
+      notifications: 
+        invite_to_defense: 
+          rhtml: 
+            message_0: Greetings
+            message_1: your defense term was created. Please login to your account to see details.
+            message_2: With best regards.
+        invite_to_final_exam: 
+          rhtml: 
+            message_0: Greetings
+            message_1: your final exam term was created. Please login to your account to see details.
+            message_2: With best regards.
+        invite_candidate: 
+          rhtml: {}
+
+        created_account: 
+          rhtml: {}
+
+        change_tutor_en: 
+          rhtml: {}
+
+        reject_candidate: 
+          rhtml: {}
+
+        end_study: 
+          rhtml: {}
+
+        admit_candidate: 
+          rhtml: {}
+
+        study_plan_create: 
+          rhtml: {}
+
+        interupt_alert: 
+          rhtml: {}
+
+        change_tutor_cs: 
+          rhtml: {}
+
+      defenses: 
+        _edit: 
+          rhtml: 
+            message_0: save
+        list: 
+          rhtml: {}
+
+        protocol: 
+          rhtml: 
+            message_18: Negative
+            message_8: Enrolled on
+            message_9: Consultant
+            message_20: Result of the defense
+            message_19: Not right
+            message_0: back
+            message_21: defended
+            message_10: Chairman
+            message_1: In Prague on %s
+            message_22: failed
+            message_11: Members
+            message_2: Czech University of Life Sciences
+            message_12: Opponents
+            message_3: Defense protocol
+            message_13: Tutor
+            message_4: Display name
+            message_14: Result of vote
+            message_5: Coridor
+            message_15: Members count
+            message_6: Department
+            message_16: Members present
+            message_7: Disert theme title
+            message_17: Positive
+        _detail: 
+          rhtml: 
+            message_0: Date and time
+            message_1: Room
+            message_2: Chairman
+            message_3: Opponent
+            message_4: Second opponent
+            message_5: Third opponent
+            message_6: Members
+        claim: 
+          rhtml: 
+            message_0: 
+            message_1: self report file
+            message_2: disert theme file
+            message_3: commit
+        _form: 
+          rhtml: 
+            message_8: member
+            message_9: opponent
+            message_0: date and time
+            message_10: second opponent
+            message_1: room
+            message_11: third opponent
+            message_2: chairman
+            message_3: member
+            message_4: member
+            message_5: member
+            message_6: member
+            message_7: member
+        _show: 
+          rhtml: {}
+
+        announcement: 
+          rhtml: 
+            message_8: Room
+            message_9: Disert theme title
+            message_0: Czech University of Life Sciences
+            message_10: Chairman
+            message_1: Announcement of disert theme defense.
+            message_11: Opponent
+            message_2: Comission will sit on %s in room %s.
+            message_12: Opponent
+            message_3: Full name
+            message_13: Opponent
+            message_4: Tutor
+            message_14: Members
+            message_5: Consultant
+            message_6: Start time
+            message_7: Date and time
+        _term_line: 
+          rhtml: 
+            message_0: in
+      tutors: 
+        _edit: 
+          rhtml: {}
+
+        list: 
+          rhtml: 
+            message_0: Tutors list
+        edit: 
+          rhtml: {}
+
+        _coridor: 
+          rhtml: {}
+
+      exam_terms: 
+        new: 
+          rhtml: 
+            message_0: create
+            message_1: back
+        list: 
+          rhtml: 
+            message_8: new term
+            message_0: edit
+            message_1: candidates
+            message_2: delete
+            message_3: Are you sure to delete commission?
+            message_4: date and time
+            message_5: room
+            message_6: chairman
+            message_7: There are no commissions for application exams in the system
+        edit: 
+          rhtml: 
+            message_0: save
+            message_1: back
+        show: 
+          rhtml: {}
+
+        _form: 
+          rhtml: 
+            message_8: member
+            message_9: member
+            message_0: date and time
+            message_10: member
+            message_1: room
+            message_2: Chairman of commission
+            message_3: coridor
+            message_4: member
+            message_5: member
+            message_6: member
+            message_7: member
+      disert_themes: 
+        upload_methodology: 
+          rhtml: 
+            message_0: |-
+              On this page you can add your methodology file. File should be only in
+              PDF format.
+            message_1: file
+            message_2: upload
+        save_en: 
+          rhtml: {}
+
+        methodology: 
+          rhtml: 
+            message_0: |-
+              On this page you can add your methodology file. File should be only in
+              PDF format.
+            message_1: file
+            message_2: upload
+        add_en: 
+          rhtml: {}
+
+      candidates: 
+        new: 
+          rhtml: {}
+
+        list: 
+          rhtml: 
+            message_18: order all
+            message_8: filter
+            message_9: paginated list sorted by coridor is displayed after click
+            message_20: There are no candidates in your selection
+            message_19: switch on paginating after click on one way of sorting
+            message_0: by corridor
+            message_10: paginated list sorted by lastname is displayed after click
+            message_1: by lastname
+            message_11: paginated list sorted by updated on is displayed after click
+            message_2: by modification
+            message_12: order
+            message_3: paginated list of unready candidates is displayed after click
+            message_13: order
+            message_4: paginated list of ready candidates is displayed after click
+            message_14: switch off paginating after click on one way of sorting
+            message_5: paginated list of invited candidates is displayed after click
+            message_15: list on 1 page sorted by coridor is displayed after click
+            message_6: paginated list of admited candidates is displayed after click
+            message_16: list on 1 page sorted by lastname is displayed after click
+            message_7: paginated list of enrolled candidates is displayed after click
+            message_17: list on 1 page sorted by updated on is displayed after click
+        edit: 
+          rhtml: {}
+
+        _history: 
+          rhtml: 
+            message_0: finished
+            message_1: ready
+            message_2: invited
+            message_3: admited
+            message_4: protocol
+        confirm_admit: 
+          rhtml: 
+            message_0: back to list
+            message_1: back to list
+            message_2: send mail of admission
+            message_3: admit without sending mail
+        _error: 
+          rhtml: 
+            message_0: Error
+            message_1: Fields in red are required
+        _notice: 
+          rhtml: 
+            message_0: Notice
+        _contact: 
+          rhtml: 
+            message_0: email
+            message_1: phone
+            message_2: address
+            message_3: correspondence address
+        _department_summary: 
+          rhtml: 
+            message_0: present
+            message_1: combined
+        invitation: 
+          rhtml: {}
+
+        admittance: 
+          rhtml: {}
+
+        _back: 
+          rhtml: {}
+
+        show: 
+          rhtml: {}
+
+        _table_list: 
+          rhtml: 
+            message_0: Candidate
+            message_1: birth number
+            message_2: coridor
+            message_3: status
+            message_4: study form
+            message_5: Note
+        _list: 
+          rhtml: 
+            message_0: b.n.
+            message_1: correct_it
+            message_2: delete
+            message_3: corridor
+            message_4: study form
+        _corridor_summary: 
+          rhtml: 
+            message_0: present
+            message_1: combined
+        summary: 
+          rhtml: {}
+
+        reject: 
+          rhtml: 
+            message_0: back
+        enroll: 
+          rhtml: 
+            message_0: Desired login
+            message_1: Enroll
+            message_2: Enroll candidates is disabled. Please contact HELPDESK.
+            message_3: back
+        admit: 
+          rhtml: 
+            message_0: admit
+            message_1: corridor
+            message_2: tutor
+            message_3: department
+            message_4: study form
+            message_5: submit
+      actualities: 
+        new: 
+          rhtml: {}
+
+        list: 
+          rhtml: {}
+
+        edit: 
+          rhtml: {}
+
+        show: 
+          rhtml: {}
+
+        _form: 
+          rhtml: {}
+
+    controller: 
+      interupts: 
+        message_0: faculty secretary approve
+      plans: 
+        message_8: languages have to be different
+        message_9: seminar subjects have to be different
+        message_0: Study plan
+        message_1: Creating study plan
+        message_2: subjects have to be different
+        message_3: Creating study plan
+        message_4: Change of study plan
+        message_5: subjects have to be different
+        message_6: some external subject is invalid
+        message_7: subjects have to be different
+      exams: 
+        message_0: Creating exam
+        message_1: Exam was successfully updated.
+        message_2: Exams
+      addresses: 
+        message_0: Contacts
+      parameters: {}
+
+      students: 
+        message_0: 
+        message_1: Students
+        message_2: waiting for my review
+        message_3: all students
+        message_4: all studying
+        message_5: my students
+        message_6: my studying
+      documents: {}
+
+      coridors: {}
+
+      account: 
+        message_0: Login to system
+        message_1: Login was unsuccesful
+      application: {}
+
+      form: 
+        message_8: Print
+        message_9: Fields in red are required
+        message_0: Admittance process
+        message_10: Correct admit form
+        message_1: "Admittance form for corridor "
+        message_11: Admit form registered
+        message_2: Admittance form - errors
+        message_12: Czech republic
+        message_3: Provided informations contains errors
+        message_13: Czech republic
+        message_4: Admittance form - errors
+        message_14: Czech University of Life Sciences
+        message_5: Provided informations contains errors
+        message_6: Check submited
+        message_7: Please check what you submited. Then folow guide on the bottom of the page
+      supplements: {}
+
+      scholarships: 
+        message_0: Scholarships
+      defenses: 
+        message_0: Defense application
+        message_1: You have to supply self report file
+        message_2: defense term was succesfully created
+        message_3: Defense terms
+        message_4: Announcement of disert theme defense
+        message_5: Protocol for disert theme defense
+      tutors: {}
+
+      terms: 
+        message_0: Probation term saved
+        message_1: Probation term saved
+        message_2: Probation terms
+      candidates: 
+        message_8: previous
+        message_9: next
+        message_0: Candidate was changed
+        message_1: e-mail sent
+        message_2: saved
+        message_3: "Candidate "
+        message_4: " is ready for application form"
+        message_5: e-mail sent
+        message_6: e-mail sent
+        message_7: Candidates
+      themes: 
+        message_0: Upload methodology
+        message_1: Upload methodology
+        message_2: Methodology file must be choosed
+      actualities: {}
+

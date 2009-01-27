@@ -31,7 +31,7 @@ class InteruptsController < ApplicationController
                   :id => @interupt.id)
     else
       if @user.has_role?('faculty_secretary')
-        @interupt.approve_like('dean', _('faculty secretary approve'))
+        @interupt.approve_like('dean', t(:message_0, :scope => [:txt, :controller, :interupts]))
         @interupt.index.interrupt!(@interupt.start_on)
       end
       redirect_to(:controller => 'students')

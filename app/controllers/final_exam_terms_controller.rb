@@ -7,7 +7,7 @@ class FinalExamTermsController < ApplicationController
 
   # shows list of all defenses in system for user
   def list
-    @title = _('Final exam terms')
+    @title = t(:message_0, :scope => [:txt, :controller, :terms])
     @final_exam_terms = FinalExamTerm.find_for(@user,
                                                :future => params[:future],
                                                :not_passed => true)
@@ -22,7 +22,7 @@ class FinalExamTermsController < ApplicationController
   end
 
   def claim
-    @title = _('Final exam application')
+    @title = t(:message_1, :scope => [:txt, :controller, :terms])
     @study_plan = @user.person.index.study_plan
   end
 
@@ -38,7 +38,7 @@ class FinalExamTermsController < ApplicationController
   end
 
   def new
-    @title = _('Creating final exam term')
+    @title = t(:message_2, :scope => [:txt, :controller, :terms])
     index = Index.find(params[:id]) 
     if index.final_exam_term
       @exam_term = index.final_exam_term
@@ -55,7 +55,7 @@ class FinalExamTermsController < ApplicationController
       @exam_term = FinalExamTerm.new(params[:exam_term])
     end 
     if @exam_term.save
-      flash['notice'] = _('final exam term was succesfully created')
+      flash['notice'] = t(:message_3, :scope => [:txt, :controller, :terms])
       render(:action => :show)
     else
       render(:action => :new)

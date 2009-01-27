@@ -2,9 +2,9 @@ class Dean < Leader
   untranslate_all
   has_one :deanship
 
-  N_("Dean")
-  N_("approve like dean")
-  N_('atest like dean')
+  Nt(:message_0, :scope => [:txt, :model, :dean])
+  Nt(:message_1, :scope => [:txt, :model, :dean])
+  Nt(:message_2, :scope => [:txt, :model, :dean])
  
   # return faculty of the dean
   def faculty

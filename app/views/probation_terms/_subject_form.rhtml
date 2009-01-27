@@ -1,7 +1,7 @@
 <fieldset>
-<legend><%= _("probation term subjects") %></legend>
+<legend><%= t(:message_0, :scope => [:txt, :view, :probation_terms, :_subject_form, :rhtml]) %></legend>
 <label>
-<%= _("subject") %>
+<%= t(:message_1, :scope => [:txt, :view, :probation_terms, :_subject_form, :rhtml]) %>
 </label>
 <% subjects = @subjects %>
 <%= content_tag('select', options_for_select(subjects.map{|sub| [sub.label,

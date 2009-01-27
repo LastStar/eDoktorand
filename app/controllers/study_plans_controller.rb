@@ -6,7 +6,7 @@ class StudyPlansController < ApplicationController
 
   # shows student basic information
   def index
-    @title = _("Study plan")
+    @title = t(:message_0, :scope => [:txt, :controller, :plans])
     @index = @student.index
     @voluntary_subjects = @index.coridor.voluntary_subjects 
   end
@@ -19,7 +19,7 @@ class StudyPlansController < ApplicationController
   # starts the study plan creating process
   def create
     prepare_plan_session
-    @title = _("Creating study plan")
+    @title = t(:message_1, :scope => [:txt, :controller, :plans])
     if ObligateSubject.has_for_coridor?(@student.coridor)
       @type = 'obligate'
     elsif SeminarSubject.has_for_coridor?(@student.coridor)
@@ -46,7 +46,7 @@ class StudyPlansController < ApplicationController
   # and creates voluntary subjects
   def save_seminar
     if extract_seminar
-      flash[:error] = _('subjects have to be different')
+      flash[:error] = t(:message_2, :scope => [:txt, :controller, :plans])
       render(:partial => 'not_valid_seminar')
     else
       @created_subjects = session[:seminar_subjects]
@@ -106,7 +106,7 @@ class StudyPlansController < ApplicationController
   # create study plan like no-student 
   def create_by_other
     @student = Student.find(params[:id])
-    @title = _("Creating study plan")
+    @title = t(:message_3, :scope => [:txt, :controller, :plans])
     @requisite_subjects = PlanSubject.create_for(@student, :requisite)
     @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
     @study_plan = @student.index.prepare_study_plan
@@ -120,7 +120,7 @@ class StudyPlansController < ApplicationController
 
   # renders change page for study plan
   def change
-    @title = _('Change of study plan')
+    @title = t(:message_4, :scope => [:txt, :controller, :plans])
     @student ||= Student.find(params[:id])
     coridor = @student.index.coridor
     @subjects = CoridorSubject.for_select(:coridor => coridor)
@@ -157,7 +157,7 @@ class StudyPlansController < ApplicationController
         @atestation = @student.study_plan.atestation 
       end
       unless session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size <= session[:voluntary_subjects].size
-        @errors << _("subjects have to be different")     
+        @errors << t(:message_5, :scope => [:txt, :controller, :plans])     
       end
       @study_plan = StudyPlan.new(params[:study_plan])
       @study_plan.plan_subjects = reindex_plan_subjects(session[:voluntary_subjects])
@@ -313,7 +313,7 @@ class StudyPlansController < ApplicationController
         esd = subject.build_external_subject_detail(params[:external_subject_detail][id])
         subject.external_subject_detail = esd
         if !subject.valid? || !subject.external_subject_detail.valid?
-          @errors << _('some external subject is invalid')
+          @errors << t(:message_6, :scope => [:txt, :controller, :plans])
         else
           subject.save
           esd.save
@@ -330,7 +330,7 @@ class StudyPlansController < ApplicationController
     uniq = session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size 
     external = external == 0 ? 0 : external - 1
     if uniq < session[:voluntary_subjects].size - external 
-      @errors << _("subjects have to be different")
+      @errors << t(:message_7, :scope => [:txt, :controller, :plans])
     else
       session[:voluntary_subjects].each {|ps| last_semester(ps.finishing_on)}
     end
@@ -345,7 +345,7 @@ class StudyPlansController < ApplicationController
       session[:language_subjects] << plan_subject
     end
     if session[:language_subjects].map {|ps| ps.subject_id}.uniq.size != 2
-      flash.now[:error] = _("languages have to be different")
+      flash.now[:error] = t(:message_8, :scope => [:txt, :controller, :plans])
       false
     else
       true
@@ -361,7 +361,7 @@ class StudyPlansController < ApplicationController
       session[:seminar_subjects] << plan_subject
     end
     if session[:seminar_subjects].map {|ps| ps.subject_id}.uniq.size != 2
-      flash.now[:error] = _('seminar subjects have to be different')
+      flash.now[:error] = t(:message_9, :scope => [:txt, :controller, :plans])
     end
   end
 

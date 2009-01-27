@@ -10,8 +10,8 @@ module Genderize
 
   def print_sex
     if sex
-      return _('male') if 'M' == sex
-      return _('female') if 'F' == sex
+      return t(:message_0, :scope => [:txt, :lib, :genderize]) if 'M' == sex
+      return t(:message_1, :scope => [:txt, :lib, :genderize]) if 'F' == sex
     end
     return nil
   end

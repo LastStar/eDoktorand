@@ -1,24 +1,24 @@
-<h5> <%= _('external exam')%></h5>
+<h5> <%= t(:message_0, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></h5>
 <ul>
-  <li><%= _('Student') %>: <%= @exam.index.student.display_name %></li>
-  <li><%= _('Subject') %>: <%= @exam.subject.label %></li>
+  <li><%= t(:message_1, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>: <%= @exam.index.student.display_name %></li>
+  <li><%= t(:message_2, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>: <%= @exam.subject.label %></li>
 </ul>
 <% form_tag(:action => 'save_external') do -%>	
 <fieldset id='date'>
-<legend><%= _("Exam date") %></legend>
+<legend><%= t(:message_3, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
 <label>
-  <%= _("date") %>
+  <%= t(:message_4, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>
 </label>
   <%= date_select 'exam', 'passed_on', :start_year => 2002,
                   :order => [:day, :month, :year], :use_month_numbers => true %>
   <span class='required'>&nbsp;&lowast;</span ><br />
 </fieldset>
 <fieldset id='agenda'>
-<legend><%= _("Exam agenda") %></legend>
-  <label for="exam_university"><%=_("University")%></label>
+<legend><%= t(:message_5, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
+  <label for="exam_university"><%=t(:message_6, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></label>
   <%= @exam.subject.external_subject_detail.university %><br/>
 <% if @exam.subject.external_subject_detail.person  %>
-  <label for="exam_first_examinator"><%=_("1. Examinator")%></label>
+  <label for="exam_first_examinator"><%=t(:message_7, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></label>
   <%= @exam.subject.external_subject_detail.person %><br/>
   <%= hidden_field 'exam', 'first_examinator_id', :value => -1 %>
 <% end %>
@@ -26,15 +26,15 @@
 </fieldset>
 
 <fieldset id='result'>
-<legend><%= _("Exam result") %></legend>
-  <label for="exam_questions"><%=_("Questions")%></label>
+<legend><%= t(:message_8, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
+  <label for="exam_questions"><%=t(:message_9, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></label>
   <%= text_area 'exam', 'questions'  %><br />
-  <label for="exam_result"><%=_("Result")%></label>
-  <%= select 'exam', 'result', [[_("pass"), 1], [_("not pass"), 0]]%><br />
+  <label for="exam_result"><%=t(:message_10, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></label>
+  <%= select 'exam', 'result', [[t(:message_11, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]), 1], [t(:message_12, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]), 0]]%><br />
 </fieldset>
 
 <fieldset id='action'>
-  <legend><%= _("action") %></legend>
-  <input type='submit' value='<%= _("commit") %>' />
+  <legend><%= t(:message_13, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
+  <input type='submit' value='<%= t(:message_14, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>' />
 </fieldset>
 <% end %>

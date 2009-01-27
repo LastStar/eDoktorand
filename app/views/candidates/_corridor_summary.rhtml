@@ -4,9 +4,9 @@
     <li>
      <%= corridor.name %>
      <ul>
-       <%= _("present") %>: <%= corridor.candidates.select {|c| c.study.id ==
+       <%= t(:message_0, :scope => [:txt, :view, :candidates, :_corridor_summary, :rhtml]) %>: <%= corridor.candidates.select {|c| c.study.id ==
        1}.size %><br/> 
-       <%= _("combined") %>: <%= corridor.candidates.select {|c| c.study.id ==
+       <%= t(:message_1, :scope => [:txt, :view, :candidates, :_corridor_summary, :rhtml]) %>: <%= corridor.candidates.select {|c| c.study.id ==
        2}.size %>
      </ul> 
     </li>

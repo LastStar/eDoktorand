@@ -1,30 +1,30 @@
 	<% if @user.person.is_a?(Student) and @student %>
     <% if !@student.index.study_plan %>
-    <%= link_to(_("create study plan"), {:action => 'create', :id => @student}, 
-    :confirm => _("Have you consulted your study plan with tutor. It is highly recomended")) %>
+    <%= link_to(t(:message_0, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), {:action => 'create', :id => @student}, 
+    :confirm => t(:message_1, :scope => [:txt, :view, :shared, :_main_menu, :rhtml])) %>
     <% elsif @student.index.study_plan.approved? %>
-      <%= link_to_unless_current(_("probation terms"), :controller =>
+      <%= link_to_unless_current(t(:message_2, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller =>
       'probation_terms'){} %>
     <% end %>
-    <%= link_to_unless_current(_("study plan"), :controller => 'study_plans',
+    <%= link_to_unless_current(t(:message_3, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller => 'study_plans',
     :action => 'index'){} %>
-    <%= link_to_unless_current(_("scholarship"), :controller => 'scholarships',
+    <%= link_to_unless_current(t(:message_4, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller => 'scholarships',
     :action => 'list'){} %>
-    <%= link_to_unless_current(_("contacts"), :controller => 'addresses',
+    <%= link_to_unless_current(t(:message_5, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller => 'addresses',
     :action => 'edit'){} %>
   <% else %>
   <% if @user.has_one_of_roles?(['admin', 'faculty_secretary']) %>
-    <%= link_to_unless_current(_("candidates"), :controller => 'candidates'){} %>
-    <%= link_to_unless_current(_("exam_terms"), :controller => 'exam_terms'){} %>
-    <%= link_to_unless_current(_("scholarship"), :controller => 'scholarships',
+    <%= link_to_unless_current(t(:message_6, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller => 'candidates'){} %>
+    <%= link_to_unless_current(t(:message_7, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller => 'exam_terms'){} %>
+    <%= link_to_unless_current(t(:message_8, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller => 'scholarships',
     :action => 'scholarship'){} %>
-    <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
+    <%= link_to_unless_current(t(:message_9, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller => 'exams'){} %>
   <% elsif @user.has_one_of_roles?(['faculty_secretary', 'tutor', 'department_secretary']) %>
-    <%= link_to_unless_current(_("probation terms"), :controller =>
+    <%= link_to_unless_current(t(:message_10, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller =>
     'probation_terms'){} %>
-    <%= link_to_unless_current(_("exams"), :controller => 'exams'){} %>
+    <%= link_to_unless_current(t(:message_11, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller => 'exams'){} %>
   <% end %>
-  <%= link_to_unless_current(_("students"), :controller => 'students'){} %>
+  <%= link_to_unless_current(t(:message_12, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), :controller => 'students'){} %>
   <% end %>
-  <%= link_to_unless_current(_("logoff"), {:controller => 'account', :action => 'logout'}, :confirm =>  _("do you really want to") + ' ' +
-    _("logoff") + '?'){} %>
+  <%= link_to_unless_current(t(:message_13, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]), {:controller => 'account', :action => 'logout'}, :confirm =>  t(:message_14, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]) + ' ' +
+    t(:message_15, :scope => [:txt, :view, :shared, :_main_menu, :rhtml]) + '?'){} %>

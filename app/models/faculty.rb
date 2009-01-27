@@ -27,7 +27,7 @@ class Faculty < ActiveRecord::Base
 
   # retuns dean of the faculty
   def dean_label
-    _(dean_label_en)
+    t(:message_0, :scope => [:txt, :model, :faculty])
   end
 
   # retuns dean of the faculty

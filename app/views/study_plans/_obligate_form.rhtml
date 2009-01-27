@@ -1,10 +1,10 @@
 <% form_remote_tag(:url => {:action => 'save_obligate'}, :complete => evaluate_remote_response) do -%>	
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
-<legend><%= _("obligate subjects") %></legend>
+<legend><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_obligate_form, :rhtml]) %></legend>
 <ul class='nodecor'>
 <%= render(:partial => 'obligate', :collection => session[:obligate_subjects]) %>
 </ul>
 </fieldset>
-<%= submit_tag(_("voluntary subjects") + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % _('working...')) %>
+<%= submit_tag(t(:message_1, :scope => [:txt, :view, :study_plans, :_obligate_form, :rhtml]) + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % t(:message_2, :scope => [:txt, :view, :study_plans, :_obligate_form, :rhtml])) %>
 <% end %>

@@ -1,6 +1,6 @@
-<h5><%= _('Coridor')%></h5>
+<h5><%= t(:message_0, :scope => [:txt, :view, :coridors, :subjects, :rhtml])%></h5>
 <div class='links'>
-  <%= link_to(_("back"), {:action => 'index'}) %>
+  <%= link_to(t(:message_1, :scope => [:txt, :view, :coridors, :subjects, :rhtml]), {:action => 'index'}) %>
 </div>
 <table class='subjects_table' id='obligate_subjects_table'>
   <tbody id='obligate_subjects'>
@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td>
-      &nbsp;&nbsp;&nbsp;&nbsp;<b><%= _('obligate_subjects') %>:</b>
+      &nbsp;&nbsp;&nbsp;&nbsp;<b><%= t(:message_2, :scope => [:txt, :view, :coridors, :subjects, :rhtml]) %>:</b>
     </td>
   </tr>
   <tr class='second'>
@@ -30,7 +30,7 @@
     <tr>
       <td>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <b><%=_('voluntary_subjects')%>:</b>
+        <b><%=t(:message_3, :scope => [:txt, :view, :coridors, :subjects, :rhtml])%>:</b>
       </td>
     </tr>
     <tr class='second'>

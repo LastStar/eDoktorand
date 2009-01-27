@@ -3,7 +3,7 @@ require 'genderize'
 class Person < ActiveRecord::Base
   include Genderize
   untranslate_all
-  N_('Person')
+  Nt(:message_0, :scope => [:txt, :model, :person])
   has_one :email, :class_name => 'Contact', :foreign_key => 'person_id',
       :conditions => 'contact_type_id = 1'
   has_one :phone, :class_name => 'Contact', :foreign_key => 'person_id',

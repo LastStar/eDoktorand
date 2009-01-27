@@ -4,7 +4,7 @@ class Interupt < ActiveRecord::Base
   include Approvable
 
   untranslate_all
-  N_('end to')
+  Nt(:message_0, :scope => [:txt, :model, :interupt])
 
   belongs_to :index
   has_one :approvement, :class_name => 'InteruptApprovement',

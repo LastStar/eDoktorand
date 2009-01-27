@@ -1,5 +1,5 @@
 <li>
-  <h6><%= _('Additional information provided by student') %></h6>
+  <h6><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_atestation_detail, :rhtml]) %></h6>
 <div>
   <%= @atestation_detail.detail.gsub(/\n/, '<br>').gsub(' ', '&nbsp;') %>
 </div>

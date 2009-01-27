@@ -1,7 +1,7 @@
 <h3 class='memo'>
-  <%= _('There was an error in application:') %>
+  <%= t(:message_0, :scope => [:txt, :view, :account, :error, :rhtml]) %>
 </h3>
 <p class='error'>
   <%= flash[:error] %>
 </p>
-<p><%= link_to_function _('back'), 'history.back()' %></p>
+<p><%= link_to_function t(:message_1, :scope => [:txt, :view, :account, :error, :rhtml]), 'history.back()' %></p>

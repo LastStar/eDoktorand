@@ -1,9 +1,9 @@
 <td colspan='9' id='opened'>
   <div class='bigger'>
-    <%= link_to_function _('hide'), "$('opened').hide()" %>
+    <%= link_to_function t(:message_0, :scope => [:txt, :view, :study_plans, :show, :rhtml]), "$('opened').hide()" %>
   </div>
   <%= render(:partial => 'shared/study_detail', :locals => {:index => @index}) %>
   <div class='bigger'>
-    <%= link_to_function _('hide'), "$('opened').hide()" %>
+    <%= link_to_function t(:message_1, :scope => [:txt, :view, :study_plans, :show, :rhtml]), "$('opened').hide()" %>
   </div>
 </td>

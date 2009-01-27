@@ -1,5 +1,5 @@
 <% form_remote_tag(:url => @form_url, :complete => evaluate_remote_response) do -%>
-<%= submit_tag(_((@form_url[:action] + "_to").gsub('_', ' '))) %>
+<%= submit_tag(t(:message_0, :scope => [:txt, :view, :students, :time_form, :rhtml])) %>
 <%= select_day(@date) if @day %>
 <%= select_month(@date, :use_month_numbers => true) %>
 <%= select_year(@date, :start_year => 2000) %>

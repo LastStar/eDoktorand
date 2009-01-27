@@ -73,8 +73,8 @@ class Index < ActiveRecord::Base
   validates_numericality_of :account_number, :only_integer => true, :allow_nil => true
   validates_numericality_of :account_bank_number, :only_integer => true, :allow_nil => true
 
-  N_('with study change')
-  N_('End')
+  Nt(:message_0, :scope => [:txt, :model, :index])
+  Nt(:message_1, :scope => [:txt, :model, :index])
 
   def validate
     if account_number
@@ -84,23 +84,23 @@ class Index < ActiveRecord::Base
           pre_sum += c.to_i * PREFIX_WEIGHTS[j]
         end
         unless (pre_sum % 11) == 0
-          errors.add(:account_number_prefix, _('account prefix in wrong format'))
+          errors.add(:account_number_prefix, t(:message_2, :scope => [:txt, :model, :index]))
         end
       end
       if account_number.size > 10 && account_number =~ /[0-9]/
-        errors.add(:account_number, _('account number in wrong format'))
+        errors.add(:account_number, t(:message_3, :scope => [:txt, :model, :index]))
       else
         acc_sum = 0
         account_number.split('').reverse.each_with_index do |c, j|
           acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
         end
         unless (acc_sum % 11) == 0
-          errors.add(:account_number, _('account number in wrong format'))
+          errors.add(:account_number, t(:message_4, :scope => [:txt, :model, :index]))
         end
       end
     end
     if final_exam_passed_on && !study_plan.all_subjects_finished?
-      errors.add(:final_exam_passed_on, _('not_all_subject_finished'))
+      errors.add(:final_exam_passed_on, t(:message_5, :scope => [:txt, :model, :index]))
     end
   end
 
@@ -163,7 +163,7 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def statement_for(user)
-    unless status == _('absolved') || status == _('interupted')
+    unless status == t(:message_6, :scope => [:txt, :model, :index]) || status == t(:message_7, :scope => [:txt, :model, :index])
       if claimed_final_application?
         self.approvement ||= FinalExamApprovement.create
         if approvement.prepares_statement?(user)
@@ -192,7 +192,7 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approvement from person
   def waits_for_statement?(user)
-    unless status == _('absolved') || status == _('interupted')
+    unless status == t(:message_8, :scope => [:txt, :model, :index]) || status == t(:message_9, :scope => [:txt, :model, :index])
       if claimed_final_application?
         temp_approvement = self.approvement ||= FinalExamApprovement.create
       elsif admited_interupt?
@@ -400,17 +400,17 @@ class Index < ActiveRecord::Base
   # returns status of index
   def status
     @status ||= if disert_theme && disert_theme.defense_passed?
-      _('absolved')
+      t(:message_10, :scope => [:txt, :model, :index])
     elsif final_exam_passed?
-      _('FE passed')
+      t(:message_11, :scope => [:txt, :model, :index])
     elsif finished?
-      _('finished')
+      t(:message_12, :scope => [:txt, :model, :index])
     elsif interupted?
-      _('interupted')
+      t(:message_13, :scope => [:txt, :model, :index])
     elsif continues?
-      _('continue')
+      t(:message_14, :scope => [:txt, :model, :index])
     else
-      _('studying')
+      t(:message_15, :scope => [:txt, :model, :index])
     end
     return @status
   end

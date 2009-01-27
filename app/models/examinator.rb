@@ -1,6 +1,6 @@
 class Examinator < DepartmentSecretary
   untranslate_all
-  N_("Examinator")
+  Nt(:message_0, :scope => [:txt, :model, :examinator])
 
   def self.find_for_department(department)
     find(:all, :conditions => ["employments.unit_id = ?", department],

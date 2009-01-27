@@ -3,12 +3,12 @@
 <ul class='nodecor'>
   <% unless general.subject.valid? %>
     <% general.subject.errors.each do |attr, err| -%>
-    <li><%=  _(err) %></li>
+    <li><%=  t(:message_0, :scope => [:txt, :view, :study_plans, :_general, :rhtml]) %></li>
     <% end %>
   <% end %>
   <% unless general.subject.external_subject_detail.valid? %>
     <% general.subject.external_subject_detail.errors.each do |attr, err| -%>
-    <li><%= _(err) %></li>
+    <li><%= t(:message_1, :scope => [:txt, :view, :study_plans, :_general, :rhtml]) %></li>
     <% end %>
   <% end %>
 </ul>
@@ -16,19 +16,19 @@
 <% end %>
 <li class='subject_select'>
 <%= subject_select(subjects, general) %>
-<%= "." + _("semester") %>
+<%= "." + t(:message_2, :scope => [:txt, :view, :study_plans, :_general, :rhtml]) %>
 <br/> 
 <div id="external<%= general.id %>" style='<%= hide_style(general) %>' >
-<label><%= _("subject") %></label>
+<label><%= t(:message_3, :scope => [:txt, :view, :study_plans, :_general, :rhtml]) %></label>
 <%= external_subject_input(general) %>
 <br/> 
-<label><%= _("subject en") %></label>
+<label><%= t(:message_4, :scope => [:txt, :view, :study_plans, :_general, :rhtml]) %></label>
 <%= external_subject_en_input(general) %>
 <br/> 
-<label><%= _("university") %></label>
+<label><%= t(:message_5, :scope => [:txt, :view, :study_plans, :_general, :rhtml]) %></label>
 <%= external_university_input(general) %>
 <br/> 
-<label><%= _("examinator") %></label>
+<label><%= t(:message_6, :scope => [:txt, :view, :study_plans, :_general, :rhtml]) %></label>
 <%= external_person_input(general) %>
 </div>
 </li>

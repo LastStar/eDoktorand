@@ -5,9 +5,9 @@
   <%= hidden_field 'scholarship_edit', 'edit', 'value' => params[:scholarship_id] %>
   <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount'%>
 <%else%>
-  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount', 'value' => _('amount') %>
+  <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount', 'value' => t(:message_0, :scope => [:txt, :view, :scholarships, :add, :rhtml]) %>
 <%end%>
-<%= _('Kc') %> &nbsp;
+<%= t(:message_1, :scope => [:txt, :view, :scholarships, :add, :rhtml]) %> &nbsp;
 <%= image_submit_tag('ok.png') %>
 <%if !params[:scholarship]%>
   <%= close_link("scholarship_form_#{@scholarship.index.id}") %>
@@ -22,9 +22,9 @@
     <%= text_field 'scholarship', 'commission_body', 'size' => 10%> / 
     <%= text_field 'scholarship', 'commission_tail', 'size' => 10%>
   <%else%>
-    <%= text_field 'scholarship', 'commission_head', 'size' => 10, 'value' => _('commission')%> / 
-    <%= text_field 'scholarship', 'commission_body', 'size' => 10, 'value' => _('workplace') %> / 
-    <%= text_field 'scholarship', 'commission_tail', 'size' => 10, 'value' => _('activity') %>
+    <%= text_field 'scholarship', 'commission_head', 'size' => 10, 'value' => t(:message_2, :scope => [:txt, :view, :scholarships, :add, :rhtml])%> / 
+    <%= text_field 'scholarship', 'commission_body', 'size' => 10, 'value' => t(:message_3, :scope => [:txt, :view, :scholarships, :add, :rhtml]) %> / 
+    <%= text_field 'scholarship', 'commission_tail', 'size' => 10, 'value' => t(:message_4, :scope => [:txt, :view, :scholarships, :add, :rhtml]) %>
   <%end%>
 </div>
 <div class='small'>
@@ -36,7 +36,7 @@
   <%= hidden_field 'scholarship', 'id' %>
 </div>
 <div>
- <%= _('adding_extra_scholarship') %>
+ <%= t(:message_5, :scope => [:txt, :view, :scholarships, :add, :rhtml]) %>
 </div>
 <% end # form end%>
 <%= javascript_tag "document.forms[0].amount.focus()" %>

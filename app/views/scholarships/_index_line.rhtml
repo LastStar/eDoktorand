@@ -16,7 +16,7 @@
 <% if index.has_regular_scholarship? %>
 <td id='regular_scholarship_<%= index.id %>'>
   <% if @user.has_role?('department_secretary') %>
-    <%= index.regular_scholarship_or_create.amount %> <%= _("Kc") %>
+    <%= index.regular_scholarship_or_create.amount %> <%= t(:message_0, :scope => [:txt, :view, :scholarships, :_index_line, :rhtml]) %>
   <% else %>
     <%= render(:partial => 'regular', :locals => {:index => index}) %>
   <% end %>
@@ -28,7 +28,7 @@
 <td id='scholarship_<%= index.id %>'>
 <% if index.has_extra_scholarship? %>
     <%= detail_links(index) %>
-    <%= index.extra_scholarship_sum %> <%= _('Kc') %>
+    <%= index.extra_scholarship_sum %> <%= t(:message_1, :scope => [:txt, :view, :scholarships, :_index_line, :rhtml]) %>
 <% else %>
   <%= add_link(index) %>&nbsp;
 <% end %>

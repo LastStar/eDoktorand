@@ -1,5 +1,5 @@
 <div id='students_list'>
-<h5><%= _("Scholarship for students") %></h5>
+<h5><%= t(:message_0, :scope => [:txt, :view, :students, :scholarship, :rhtml]) %></h5>
 <% if @indices && !@indices.empty? %>
   <%= render(:partial => 'scholarship_list') %>
 <% end %>

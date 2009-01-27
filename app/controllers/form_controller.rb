@@ -6,14 +6,14 @@ class FormController < ApplicationController
   # TODO logins for edit or check older adminition
   def index
     @faculties = Faculty.find(:all)
-    @title = _("Admittance process")
+    @title = t(:message_0, :scope => [:txt, :controller, :form])
   end
   
   # form details  
   def details
     prepare_candidate
     @action = 'save'
-    @title = _("Admittance form for corridor ") + @candidate.coridor.name
+    @title = t(:message_1, :scope => [:txt, :controller, :form]) + @candidate.coridor.name
   end
 
   # preview what has been inserted
@@ -23,8 +23,8 @@ class FormController < ApplicationController
       preview
       render(:action => :preview)
     else
-      @title = _("Admittance form - errors")
-      flash.now['error'] = _("Provided informations contains errors")
+      @title = t(:message_2, :scope => [:txt, :controller, :form])
+      flash.now['error'] = t(:message_3, :scope => [:txt, :controller, :form])
       @action = 'save'
       render(:action => :details)
     end
@@ -37,8 +37,8 @@ class FormController < ApplicationController
       preview
       render(:action => :preview)
     else
-      @title = _("Admittance form - errors")
-      flash.now['error'] = _("Provided informations contains errors")
+      @title = t(:message_4, :scope => [:txt, :controller, :form])
+      flash.now['error'] = t(:message_5, :scope => [:txt, :controller, :form])
       @action = 'update'
       render(:action => :details)
     end
@@ -47,20 +47,20 @@ class FormController < ApplicationController
   # preview information
   def preview
     if @candidate
-      @title = _("Check submited")
-      flash.now['notice'] = _("Please check what you submited. Then folow guide on the bottom of the page") 
+      @title = t(:message_6, :scope => [:txt, :controller, :form])
+      flash.now['notice'] = t(:message_7, :scope => [:txt, :controller, :form]) 
     else
       @candidate = Candidate.find(params[:id])
-      @title = _("Print")
+      @title = t(:message_8, :scope => [:txt, :controller, :form])
     end
   end
 
   # correct details
   def correct
     @candidate = Candidate.find(params[:id])
-    flash.now['notice'] = _("Fields in red are required")
+    flash.now['notice'] = t(:message_9, :scope => [:txt, :controller, :form])
     @action = 'update'
-    @title = _("Correct admit form")
+    @title = t(:message_10, :scope => [:txt, :controller, :form])
     render(:action => :details)
   end
 
@@ -68,7 +68,7 @@ class FormController < ApplicationController
   def finish
     @candidate = Candidate.find(params[:id])
     @candidate.finish!
-    @title = _("Admit form registered")
+    @title = t(:message_11, :scope => [:txt, :controller, :form])
   end
 
   private
@@ -76,9 +76,9 @@ class FormController < ApplicationController
   def prepare_candidate
     @candidate = Candidate.new do |c| 
       c.coridor = Coridor.find(params[:id])
-      c.state = _("Czech republic")
-      c.address_state = _("Czech republic")
-      c.university = _("Czech University of Life Sciences")
+      c.state = t(:message_12, :scope => [:txt, :controller, :form])
+      c.address_state = t(:message_13, :scope => [:txt, :controller, :form])
+      c.university = t(:message_14, :scope => [:txt, :controller, :form])
       c.faculty = c.coridor.faculty.name
       language1_id = 1133 if c.admitting_faculty == 3
     end

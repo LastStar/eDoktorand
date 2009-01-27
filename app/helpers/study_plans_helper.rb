@@ -4,7 +4,7 @@ module StudyPlansHelper
     content_tag('select', options_for_select((1..4), plan_subject.finishing_on), { 'id' => 
       "plan_subject_#{plan_subject.id}",'name' =>
       "plan_subject[#{plan_subject.id}][finishing_on]"}) + 
-    ". " + _("semester") + 
+    ". " + t(:message_0, :scope => [:txt, :helper, :plans]) + 
     tag('input', {'type' => 'hidden', 'value' => plan_subject.subject_id, 'id' => 
       "plan_subject_#{plan_subject.id}_subject_id", 'name' =>
       "plan_subject[#{plan_subject.id}][subject_id]"})
@@ -29,7 +29,7 @@ module StudyPlansHelper
   def voluntary_select(subjects, plan_subject)
     select = ''
     if plan_subject.id && plan_subject.id < 0
-      subjects[0] = [_("none subject"), -1]
+      subjects[0] = [t(:message_1, :scope => [:txt, :helper, :plans]), -1]
     end
     select << content_tag('select', options_for_select(subjects, plan_subject.subject_id),
       {'id' => "plan_subject_#{plan_subject.id}_subject_id",
@@ -47,8 +47,8 @@ module StudyPlansHelper
   # returns style for external div 
   def subject_select(subjects, plan_subject)
     select = ''
-    subjects = [[_("none subject"), -1]].concat(subjects)
-    subjects = [[_("external subject"), 0]].concat(subjects)
+    subjects = [[t(:message_2, :scope => [:txt, :helper, :plans]), -1]].concat(subjects)
+    subjects = [[t(:message_3, :scope => [:txt, :helper, :plans]), 0]].concat(subjects)
     plan_subject.subject_id = 0 if plan_subject.subject.is_a?(ExternalSubject)
     select << content_tag('select', options_for_select(subjects, plan_subject.subject_id),
       {'id' => "plan_subject_#{plan_subject.id}_subject_id",
@@ -64,8 +64,8 @@ module StudyPlansHelper
 
   def empty_subject_select(subjects)
     select = ''
-    subjects = [[_("none subject"), -1]].concat(subjects)
-    subjects = [[_("external subject"), 0]].concat(subjects)
+    subjects = [[t(:message_4, :scope => [:txt, :helper, :plans]), -1]].concat(subjects)
+    subjects = [[t(:message_5, :scope => [:txt, :helper, :plans]), 0]].concat(subjects)
     #plan_subject.subject_id = 0 if plan_subject.subject.is_a?(ExternalSubject)
     select << content_tag('select', options_for_select(subjects, -1),
       {'id' => "plan_subject_new_subject_id",
@@ -149,60 +149,60 @@ module StudyPlansHelper
       plan_subject.finishing_on), {'id' => 
       "plan_subject_#{plan_subject.id}_finishing_on",'name' =>
       "plan_subject[#{plan_subject.id}][finishing_on]"}) +
-      ". " + _("semester")  
+      ". " + t(:message_6, :scope => [:txt, :helper, :plans])  
   end
 
   def study_plan_menu(student)
     links = []
-    links << link_to_unless_current(_("end study"), 
+    links << link_to_unless_current(t(:message_7, :scope => [:txt, :helper, :plans]), 
                                      {:controller => 'students', 
                                       :action => 'end_study'},
-                                      :confirm =>  _("Are you sure to") + 
-                                      ' ' + _("end study") + '?'){} 
+                                      :confirm =>  t(:message_8, :scope => [:txt, :helper, :plans]) + 
+                                      ' ' + t(:message_9, :scope => [:txt, :helper, :plans]) + '?'){} 
 
-    links << link_to_unless_current(_("change tutor"),
+    links << link_to_unless_current(t(:message_10, :scope => [:txt, :helper, :plans]),
                                      {:controller => 'students',
                                       :action => 'change_tutor'},
-                                      :confirm => _("Are you sure to") + 
-                                      ' ' + _("change tutor") + '?'){}
+                                      :confirm => t(:message_11, :scope => [:txt, :helper, :plans]) + 
+                                      ' ' + t(:message_12, :scope => [:txt, :helper, :plans]) + '?'){}
     if student.study_plan.approved? || student.study_plan.canceled?
       links << change_link(student)
     end
     unless student.index.interupted?
-      links << link_to_unless_current(_('interupt'), :controller => 'interupts'){}
+      links << link_to_unless_current(t(:message_13, :scope => [:txt, :helper, :plans]), :controller => 'interupts'){}
     end
     return links.join('&nbsp;')
   end
 
   def create_study_plan_link(student)
-    link_to(_("create study plan"), {:action => 'create', :id => student}, 
-      :confirm => _("Have you consulted your study plan with tutor. It is highly recomended")) 
+    link_to(t(:message_14, :scope => [:txt, :helper, :plans]), {:action => 'create', :id => student}, 
+      :confirm => t(:message_15, :scope => [:txt, :helper, :plans])) 
   end
 
 #  def final_exam_link(index)
-#    link_to(_('final exam application'), :action => 'final_application')
+#    link_to(t(:message_16, :scope => [:txt, :helper, :plans]), :action => 'final_application')
 #  end
 
   def render_requisite
     render(:partial => "shared/subjects", 
            :locals => {:subjects => session[:requisite_subjects],
-           :title => _("requisite subjects")})
+           :title => t(:message_17, :scope => [:txt, :helper, :plans])})
   end
 
   def voluntary_link
-    link_to_function(_('voluntary subjects'), "$('voluntarys').toggle()")
+    link_to_function(t(:message_18, :scope => [:txt, :helper, :plans]), "$('voluntarys').toggle()")
   end
 
   def change_link(student)
     unless student.index.claimed_for_final_exam?
-      link_to(_("change study plan"), {:action => 'change', 
+      link_to(t(:message_19, :scope => [:txt, :helper, :plans]), {:action => 'change', 
                                        :controller => 'study_plans',
                                        :id => student})
     end
   end
 
   def return_to_link
-    link_to_remote("<<< " + _("%s subjects" % @return_to), 
+    link_to_remote("<<< " + t(:message_20, :scope => [:txt, :helper, :plans]), 
                     {:url => {:action => "edit_create", :type => @return_to}, 
                     :complete => evaluate_remote_response}, 
                     {:class => 'details_link'})

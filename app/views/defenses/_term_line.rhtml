@@ -4,6 +4,6 @@
     <%= announcement_link term_line %>
   </div>
   <b><%= term_line.index.student.display_name %></b><br /> 
-  <%= "%s %s %s" % [term_line.date_time, _('in'), term_line.room] %>
+  <%= "%s %s %s" % [term_line.date_time, t(:message_0, :scope => [:txt, :view, :defenses, :_term_line, :rhtml]), term_line.room] %>
 </li>
 

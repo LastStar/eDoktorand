@@ -1,4 +1,4 @@
-<%= content_tag('h5', _("Study plan")) %>
+<%= content_tag('h5', t(:message_0, :scope => [:txt, :view, :study_plans, :_create_done, :rhtml])) %>
 <ul id='studyPlan'>
   <% unless session[:plan_subjects].empty? %>
   <%= render_requisite %>

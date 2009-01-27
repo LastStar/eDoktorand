@@ -1,7 +1,7 @@
 class DisertTheme < ActiveRecord::Base
   untranslate_all
   belongs_to :index
-  validates_presence_of :title, :message => _('title must not be empty')
+  validates_presence_of :title, :message => t(:message_0, :scope => [:txt, :model, :theme])
   validates_presence_of :finishing_to
   acts_as_audited
 
@@ -10,7 +10,7 @@ class DisertTheme < ActiveRecord::Base
 
   def validate
     if defense_passed_on && !index.final_exam_passed?
-      errors.add(:defense_passed_on, _('not_passed_final_exam'))
+      errors.add(:defense_passed_on, t(:message_1, :scope => [:txt, :model, :theme]))
     end
   end
 

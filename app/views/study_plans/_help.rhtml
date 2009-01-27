@@ -1,41 +1,41 @@
 <% if sp = @index.study_plan %>
 <p class='help'>
   <% if sp.canceled? %>
-    <%= _('Your study plan has been canceled.') %>
+    <%= t(:message_0, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
     <%= change_link(@index.student) %>
   <% elsif !sp.approved? %>
-    <%= _("Your study plan, details of it you can see here, is processed now. Final approvement you will get by email. ") %>
+    <%= t(:message_1, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
   <% elsif @index.defense_claimed? %>
     <% unless @index.defense_created? %>
-      <%= _("Wait till your application will be approved and your defense term will be created.") %>
+      <%= t(:message_2, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
     <% else %>
-      <%= _('Your defense term has been created and emailed to you. You can also find it in the study plan detail.') %>
+      <%= t(:message_3, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
     <% end %>
   <% elsif @index.final_exam_passed? %>
-    <%= _("You have passed final exam. Proceed to defense application") %>. <br />
-    <%= link_to(_('Defense application'), :action => :claim, :controller => :defenses) %>
+    <%= t(:message_4, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>. <br />
+    <%= link_to(t(:message_5, :scope => [:txt, :view, :study_plans, :_help, :rhtml]), :action => :claim, :controller => :defenses) %>
   <% elsif @index.claimed_final_application? %>
     <% unless @index.final_term_created? %>
-      <%= _("Wait till your application will be approved and your final exam term will be created.") %>
+      <%= t(:message_6, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
     <% else %>
-      <%= _('Your final exam term has been created and emailed to you. You can also find it in the study plan detail.') %>
+      <%= t(:message_7, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
     <% end %>
   <% elsif sp.all_subjects_finished? %>
-    <%= _('You have all subjects finished. Proceed to final exam application') %>. <br /> 
-    <%= link_to(_('Final exam application'), :action => :claim, :controller => :final_exam_terms) %>
+    <%= t(:message_8, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>. <br /> 
+    <%= link_to(t(:message_9, :scope => [:txt, :view, :study_plans, :_help, :rhtml]), :action => :claim, :controller => :final_exam_terms) %>
   <% end %>
 </p>
 <% else %>
-<h6><%= _("Welcome to edoktorand application.") %></h6>
+<h6><%= t(:message_10, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %></h6>
 <p class='help'>
-  <%= _("This page shows informations which are stored in information system.") %>
+  <%= t(:message_11, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
 </p> 
 <p class='help'>
-  <%= _(" If you have found any error please contact ") %>
+  <%= t(:message_12, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
   <a href='mailto:helpdesk@czu.cz'>helpdesk</a>
 </p> 
 <p class='help'>
-  <%= _("First step propably will to create") %>
+  <%= t(:message_13, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
   <%= create_study_plan_link(@student) %>
 </p> 
 <% end %>

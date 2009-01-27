@@ -10,7 +10,7 @@ include LoginSystem
   
   # upload methodology form
   def upload_methodology
-    @title = _("Upload methodology") 
+    @title = t(:message_0, :scope => [:txt, :controller, :themes]) 
     @disert_theme = DisertTheme.find(params[:id])
   end
   
@@ -21,8 +21,8 @@ include LoginSystem
       DisertTheme.save_methodology(@disert_theme, file)
       redirect_to(:action => 'index', :controller => 'study_plans')
     else
-      @title = _("Upload methodology") 
-      flash.now[:error] = _('Methodology file must be choosed')
+      @title = t(:message_1, :scope => [:txt, :controller, :themes]) 
+      flash.now[:error] = t(:message_2, :scope => [:txt, :controller, :themes])
       render :action => :upload_methodology
     end
   end

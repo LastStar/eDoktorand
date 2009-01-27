@@ -10,7 +10,7 @@ class ExamTermsController < ApplicationController
   end
 
   def list
-    @title = _('List of admittance terms')
+    @title = t(:message_0, :scope => [:txt, :controller, :terms])
     @exam_terms = AdmissionTerm.find_for(@user)
   end
 

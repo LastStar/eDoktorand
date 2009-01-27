@@ -1,10 +1,10 @@
 <div class='links'><%= final_exam_terms_link %> </div>
 <div id='header'>
 <h2><%= @user.person.faculty.name %></h2>
-<h3><%= _('Czech University of Life Sciences') %></h3>
+<h3><%= t(:message_0, :scope => [:txt, :view, :final_exam_terms, :prepare_print, :rhtml]) %></h3>
 </div>
-<p><%= _('Announcement for final exam commission.') %></p>
-<p><%= _("Comissions will sit on %s in room %s.") % 
+<p><%= t(:message_1, :scope => [:txt, :view, :final_exam_terms, :prepare_print, :rhtml]) %></p>
+<p><%= t(:message_2, :scope => [:txt, :view, :final_exam_terms, :prepare_print, :rhtml]) % 
   [@final_exam_terms.first.date.strftime("%d. %m. %Y"), @final_exam_terms.first.room] %>
 <% for exam_term in @final_exam_terms %>
 <div class='final_exam_term'>

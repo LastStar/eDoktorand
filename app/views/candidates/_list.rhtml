@@ -6,7 +6,7 @@
       <td>
         <b>
           <%= candidate.display_name %>
-          <%= _("b.n.") %>&nbsp;<%= candidate.birth_number %>
+          <%= t(:message_0, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>&nbsp;<%= candidate.birth_number %>
           <%= status_tag(candidate) %>
         </b>
       </td>
@@ -29,8 +29,8 @@
           <%= link_to 'detail', :action => 'show', :id => candidate%>
         <%end%>
         <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
-          <%= link_to _('correct_it'), :action => 'edit', :id => candidate %>
-          <%= link_to _('delete'), :action => 'delete', :id => candidate %>
+          <%= link_to t(:message_1, :scope => [:txt, :view, :candidates, :_list, :rhtml]), :action => 'edit', :id => candidate %>
+          <%= link_to t(:message_2, :scope => [:txt, :view, :candidates, :_list, :rhtml]), :action => 'delete', :id => candidate %>
         <% end %>
         <%=contact_toggle_link(candidate)%>
        <% unless @user.has_role?('board_chairman') %>
@@ -40,12 +40,12 @@
     </tr>
     <tr>
       <td>
-        <%= _("corridor") %>: <%= candidate.coridor.name %><br />
+        <%= t(:message_3, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>: <%= candidate.coridor.name %><br />
       </td>
     </tr>
     <tr>
       <td>
-        <%= _("study form") %>: <%= candidate.study.name %><br />
+        <%= t(:message_4, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>: <%= candidate.study.name %><br />
       </td>
     </tr>
     <tr>

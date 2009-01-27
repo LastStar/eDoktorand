@@ -1,38 +1,38 @@
 <div class='links'>
-  <%= link_to _('back'), :action => :list %>
+  <%= link_to t(:message_0, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]), :action => :list %>
 </div>
-<p class='right_date'><%= _("In Prague on %s") % @term.date.strftime("%d. %m. %Y") %></p>
+<p class='right_date'><%= t(:message_1, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) % @term.date.strftime("%d. %m. %Y") %></p>
 <p>
-  <%= _('Czech University of Life Sciences') %><br />
+  <%= t(:message_2, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %><br />
   <%= @term.index.faculty.name %>
 </p>
 
-<h2><%= _('Final exam protocol') %></h2>
+<h2><%= t(:message_3, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %></h2>
 
 <table class='two-columns'>
   <tr>
-    <th style='width: 50%'><%= _('Display name') %>:</th>
+    <th style='width: 50%'><%= t(:message_4, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><strong><%= @term.index.student.display_name_with_title %></strong></td>
   </tr>
   <tr>
-    <th><%= _('Coridor') %>:</th>
+    <th><%= t(:message_5, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><%= @term.index.coridor.name %></td>
   </tr>
   <tr>
-    <th><%= _('Department') %>:</th>
+    <th><%= t(:message_6, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><%= @term.index.department.name %></td>
   </tr>
   <tr>
-    <th><%= _('Tutor') %>:</th>
+    <th><%= t(:message_7, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><%= @term.index.tutor.display_name %></td>
   </tr>
   <tr>
-    <th><%= _('Enrolled on') %>:</th>
+    <th><%= t(:message_8, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><%= @term.index.enrolled_on.strftime("%d. %m. %Y") %></td>
   </tr>
 <% if @term.index.consultant %>
   <tr>
-    <th><%= _('Consultant') %>:</th>
+    <th><%= t(:message_9, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><%= @term.index.consultant %></td>
   </tr>
 <% end %>
@@ -40,9 +40,9 @@
 
 <table class='three-columns'>
   <tr>
-    <th><%= _('Final exam area') %></th>
-    <th><%= _('Mark') %></th>
-    <th><%= _('Signature') %></th>
+    <th><%= t(:message_10, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %></th>
+    <th><%= t(:message_11, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %></th>
+    <th><%= t(:message_12, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %></th>
   </tr>
   <tr>
     <td><%= @term.index.study_plan.final_areas['cz']['1'] %><br /> 
@@ -70,18 +70,18 @@
   </tr>
 <table>
   <tr>
-    <th style='border: none'><%= _('Literature review') %>:</th>
+    <th style='border: none'><%= t(:message_13, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><%= @term.index.disert_theme.literature_review %></td>
   </tr>
 </table>
 
 <table class='two-columns'>
   <tr>
-    <th><%= _('Chairman') %>:</th>
+    <th><%= t(:message_14, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><%= @term.chairman.display_name %>
   </tr>
   <tr>
-    <th><%= _('Members') %>:</th>
+    <th><%= t(:message_15, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><%= @term.first_examinator %></td>
   </tr>
   <tr>
@@ -112,7 +112,7 @@
   <% end %>
 <% if @term.opponent && !@term.opponent.empty?%>
   <tr>
-    <th><%= _('Opponent') %>:</th>
+    <th><%= t(:message_16, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td><%= @term.opponent %></td>
   </tr>
 <% end %>
@@ -121,14 +121,14 @@
 <br />
 <table class='two-columns'>
   <tr>
-    <th><%= _('Classification of final exam') %>:</th>
+    <th><%= t(:message_17, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td>......................................</td>
   </tr>
   <tr colspan='2'>
     <td>&nbsp;<td>
   </tr>
   <tr>
-    <th><%= _('Chairman signature') %>:</th>
+    <th><%= t(:message_18, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
     <td>......................................</td>
   </tr>
 </table>

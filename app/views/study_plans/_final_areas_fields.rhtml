@@ -1,7 +1,7 @@
 <% FACULTY_CFG[study_plan.index.faculty.id]['final_areas_count'].times do |index| %>
 <% i = index + 1 %>
 <div>
-<label class='smaller' for="final_area_<%= i %>"><%= "#{i}. " + _("final area") %></label>
+<label class='smaller' for="final_area_<%= i %>"><%= "#{i}. " + t(:message_0, :scope => [:txt, :view, :study_plans, :_final_areas_fields, :rhtml]) %></label>
 <input type='text' id="study_plan_final_areas_<%= i %>"
 name="study_plan[final_areas][<%= i %>]" size="30"
 <% if study_plan.final_areas %>

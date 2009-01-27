@@ -18,12 +18,12 @@
   <% if @user %>
     <div id="HeadMenuContent">
     <%= main_menu %>
-    <h1 id="title"><%= _(@user.person.type.to_s) + ": #{@user.person.display_name}" %></h1>
+    <h1 id="title"><%= t(:message_0, :scope => [:txt, :view, :layouts, :documents, :rhtml]) + ": #{@user.person.display_name}" %></h1>
     </div>
   <% end %>
   </div>
   <div id="main">
-    <div id='loading'><%= _("loading ...") %></div>
+    <div id='loading'><%= t(:message_1, :scope => [:txt, :view, :layouts, :documents, :rhtml]) %></div>
     <%= @content_for_layout %>
   </div>
   <div id="footer" class="footer">

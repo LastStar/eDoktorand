@@ -1,6 +1,6 @@
-<h5><%= _("Creating probation term") %></h5>
+<h5><%= t(:message_0, :scope => [:txt, :view, :probation_terms, :_probation_term_with_subject, :rhtml]) %></h5>
 <ul id='probation_term'>
   <li>
-  <%= _("Probation term from subject")+": #{probation_term.subject.label}" %>
+  <%= t(:message_1, :scope => [:txt, :view, :probation_terms, :_probation_term_with_subject, :rhtml])+": #{probation_term.subject.label}" %>
   </li>
 </ul>

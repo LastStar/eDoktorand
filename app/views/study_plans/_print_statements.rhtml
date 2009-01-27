@@ -1,17 +1,17 @@
 <ul>
     <% if approvement.tutor_statement %>
   <li>
-    <%= print_statement(_("Tutor statement"), approvement.tutor_statement) %>
+    <%= print_statement(t(:message_0, :scope => [:txt, :view, :study_plans, :_print_statements, :rhtml]), approvement.tutor_statement) %>
   </li>
     <% end %>
     <% if approvement.leader_statement %>
   <li>
-    <%= print_statement(_("Leader statement"), approvement.leader_statement) %>
+    <%= print_statement(t(:message_1, :scope => [:txt, :view, :study_plans, :_print_statements, :rhtml]), approvement.leader_statement) %>
   </li>
     <% end %>
     <% if approvement.dean_statement %>
   <li>
-    <%= print_statement(_("Dean statement"), approvement.dean_statement) %>
+    <%= print_statement(t(:message_2, :scope => [:txt, :view, :study_plans, :_print_statements, :rhtml]), approvement.dean_statement) %>
   </li>
     <% end %>
  

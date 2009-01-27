@@ -4,15 +4,15 @@
 <% if index.final_exam_passed? %>
       <%= index.final_exam_passed_on.strftime('%d. %m. %Y') %>
 <% else %>
-      <%= "%i. %s" % [study_plan.finishing_to, _('semester')] %>
+      <%= "%i. %s" % [study_plan.finishing_to, t(:message_0, :scope => [:txt, :view, :shared, :_final_exam, :rhtml])] %>
 <% end %>
     </div>
-    <b><%= "#{_('final exam')}" %></b>
+    <b><%= "#{t(:message_1, :scope => [:txt, :view, :shared, :_final_exam, :rhtml])}" %></b>
   </li>
 
 <% if index.final_exam_passed? %>
   <% if index.defense_invitation_sent? %>
-    <li><b><%= _('This student was invited for defense.') %></b></li>
+    <li><b><%= t(:message_2, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %></b></li>
     <li>
     <%= self_report_link(index.disert_theme) %>
     </li>
@@ -20,7 +20,7 @@
     <%= defense_term_link(@user, index) %>
     </li>
   <% elsif index.defense_claimed? %>
-    <li><b><%= _('This student claimed for defense.') %></b></li>
+    <li><b><%= t(:message_3, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %></b></li>
     <li>
     <%= self_report_link(index.disert_theme) %>
     </li>
@@ -34,13 +34,13 @@
   <li id='defense' style="display:none"></li>
 <% else %>
   <% if index.final_exam_invitation_sent? %>
-    <li><b><%= _('This student was invited for final exam.') %></b></li>
+    <li><b><%= t(:message_4, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %></b></li>
     <li>
     <%= literature_review_link(index.disert_theme) %>
     <%= index.disert_theme.literature_review %>
     </li>
   <% elsif index.claimed_final_application? %>
-    <li><b><%= _('This student claimed for final exam.') %></b></li>
+    <li><b><%= t(:message_5, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %></b></li>
     <li>
     <%= literature_review_link(index.disert_theme) %>
     <%= index.disert_theme.literature_review %>
@@ -58,7 +58,7 @@
     <% fa = study_plan.final_areas['cz'] %>
       <li class='second'>
         <div class='long_info'><%= fa[i.to_s]%></div>
-        <%= "#{i}. " + _("final area") %>
+        <%= "#{i}. " + t(:message_6, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %>
       </li>
     <% fa = study_plan.final_areas['en'] %>
       <li class='second'>
@@ -67,7 +67,7 @@
           <%= add_en_link(index,i) %>
         <% end %>
         <%=  fa[i.to_s] %></div>
-        <%= "#{i}. " + _("final area") %> (en)
+        <%= "#{i}. " + t(:message_7, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %> (en)
       </li>
   <% end %>
 <% end %>

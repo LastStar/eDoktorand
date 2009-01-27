@@ -1,6 +1,6 @@
 ﻿<div style='clear: both'>
 <div class='notice'>
-    <%= _("After clicking the name of faculty, list of corridors  will be shown") %>
+    <%= t(:message_0, :scope => [:txt, :view, :form, :index, :rhtml]) %>
 </div>
 <%= print_notice %>
 <% unless @faculties.empty? %>
@@ -10,7 +10,7 @@
     <li>
     <a href='#' onClick="Element.toggle($('<%= f.id %>'))"><%= f.name %></a><br /> 
       <% unless f.documents.empty? %>
-      <b><%= _("documents") %>:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
+      <b><%= t(:message_1, :scope => [:txt, :view, :form, :index, :rhtml]) %>:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
       <% end %>
       <ol style="display:none" id="<%= f.id %>">
       <% for c in coridors do %>
@@ -23,5 +23,5 @@
     <% end %>
   </ul>
 <% else %>
-<h3><%= _("There is error in application. Please contact system administrator on address:") %><a href="mailto:pepe@gravastar.cz">pepe@gravastar.cz</a ></h3>
+<h3><%= t(:message_2, :scope => [:txt, :view, :form, :index, :rhtml]) %><a href="mailto:pepe@gravastar.cz">pepe@gravastar.cz</a ></h3>
 <% end %>

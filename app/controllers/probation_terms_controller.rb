@@ -74,7 +74,7 @@ class ProbationTermsController < ApplicationController
     params[:probation_term][:created_by] = @user.person.id
     @probation_term = ProbationTerm.create(params[:probation_term])
     if @probation_term.save
-      flash[:notice] = _('Probation term saved')
+      flash[:notice] = t(:message_0, :scope => [:txt, :controller, :terms])
       redirect_to :action => 'index'
     else
       @subjects = Subject.find_for(@user, :not_finished)
@@ -90,7 +90,7 @@ class ProbationTermsController < ApplicationController
   def update
     @probation_term = ProbationTerm.find(params[:probation_term][:id])
     if @probation_term.update_attributes(params[:probation_term])
-      flash[:notice] = _('Probation term saved')
+      flash[:notice] = t(:message_1, :scope => [:txt, :controller, :terms])
       redirect_to :action => 'index'
     else
       @subjects = Subject.find_for(@user, :not_finished)
@@ -128,6 +128,6 @@ class ProbationTermsController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = _("Probation terms")
+    @title = t(:message_2, :scope => [:txt, :controller, :terms])
   end
 end
