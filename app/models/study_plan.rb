@@ -1,7 +1,7 @@
 require 'approvable'
 class StudyPlan < ActiveRecord::Base
   include Approvable
-  untranslate_all
+  
   belongs_to :index
   has_many :plan_subjects, :order => 'finishing_on', :dependent => :delete_all
   has_one :approvement, :class_name => 'StudyPlanApprovement',
@@ -144,23 +144,23 @@ class StudyPlan < ActiveRecord::Base
       @status ||= if index.disert_theme.defense_passed? || index.final_exam_passed?
         ''
       elsif all_subjects_finished?
-        t(:message_0, :scope => [:txt, :model, :plan])
+        I18n::t(:message_0, :scope => [:txt, :model, :plan])
       elsif canceled?
-        t(:message_1, :scope => [:txt, :model, :plan])
+        I18n::t(:message_1, :scope => [:txt, :model, :plan])
       elsif approved?
-        t(:message_2, :scope => [:txt, :model, :plan])
+        I18n::t(:message_2, :scope => [:txt, :model, :plan])
       elsif admited?
-        t(:message_3, :scope => [:txt, :model, :plan])
+        I18n::t(:message_3, :scope => [:txt, :model, :plan])
       end
     else
-      t(:message_4, :scope => [:txt, :model, :plan])
+      I18n::t(:message_4, :scope => [:txt, :model, :plan])
     end
   end
 
   # return last approving person localized string
   def approved_by
     if approved?
-      t(:message_5, :scope => [:txt, :model, :plan])
+      I18n::t(:message_5, :scope => [:txt, :model, :plan])
     elsif approvement
       approvement.approved_by
     end

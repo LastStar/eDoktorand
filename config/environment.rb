@@ -67,7 +67,7 @@ Rails::Initializer.run do |config|
 
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
-  config.plugins = [ :exception_notification, :rtex, :all ]
+  config.plugins = [ :acts_as_audited, :exception_notification ]
 
   config.gem "log4r"
   config.gem "mongrel"

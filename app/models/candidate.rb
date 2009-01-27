@@ -2,7 +2,7 @@ require 'genderize'
 
 class Candidate < ActiveRecord::Base
   include Genderize
-  untranslate_all
+  
   belongs_to :coridor
   belongs_to :department
   belongs_to :study
@@ -16,43 +16,43 @@ class Candidate < ActiveRecord::Base
     :foreign_key => 'language1_id'
   belongs_to :language2, :class_name => 'Subject',
     :foreign_key => 'language2_id' 
-  validates_presence_of :firstname, :message => t(:message_0, :scope => [:txt, :model, :candidate])
-  validates_presence_of :lastname, :message => t(:message_1, :scope => [:txt, :model, :candidate])
-  validates_presence_of :birth_at, :message => t(:message_2, :scope => [:txt, :model, :candidate])
-  validates_presence_of :email, :message => t(:message_3, :scope => [:txt, :model, :candidate])
-  validates_presence_of :street, :message => t(:message_4, :scope => [:txt, :model, :candidate])
-  validates_presence_of :city, :message => t(:message_5, :scope => [:txt, :model, :candidate])
-  validates_presence_of :zip, :message => t(:message_6, :scope => [:txt, :model, :candidate])
-  validates_presence_of :state, :message => t(:message_7, :scope => [:txt, :model, :candidate])
-  validates_presence_of :university, :message => t(:message_8, :scope => [:txt, :model, :candidate])
-  validates_presence_of :faculty, :message => t(:message_9, :scope => [:txt, :model, :candidate])
-  validates_presence_of :studied_branch, :message => t(:message_10, :scope => [:txt, :model, :candidate])
-  validates_presence_of :birth_number, :message => t(:message_11, :scope => [:txt, :model, :candidate])
-  validates_presence_of :number, :message => t(:message_12, :scope => [:txt, :model, :candidate])
+  validates_presence_of :firstname, :message => I18n::t(:message_0, :scope => [:txt, :model, :candidate])
+  validates_presence_of :lastname, :message => I18n::t(:message_1, :scope => [:txt, :model, :candidate])
+  validates_presence_of :birth_at, :message => I18n::t(:message_2, :scope => [:txt, :model, :candidate])
+  validates_presence_of :email, :message => I18n::t(:message_3, :scope => [:txt, :model, :candidate])
+  validates_presence_of :street, :message => I18n::t(:message_4, :scope => [:txt, :model, :candidate])
+  validates_presence_of :city, :message => I18n::t(:message_5, :scope => [:txt, :model, :candidate])
+  validates_presence_of :zip, :message => I18n::t(:message_6, :scope => [:txt, :model, :candidate])
+  validates_presence_of :state, :message => I18n::t(:message_7, :scope => [:txt, :model, :candidate])
+  validates_presence_of :university, :message => I18n::t(:message_8, :scope => [:txt, :model, :candidate])
+  validates_presence_of :faculty, :message => I18n::t(:message_9, :scope => [:txt, :model, :candidate])
+  validates_presence_of :studied_branch, :message => I18n::t(:message_10, :scope => [:txt, :model, :candidate])
+  validates_presence_of :birth_number, :message => I18n::t(:message_11, :scope => [:txt, :model, :candidate])
+  validates_presence_of :number, :message => I18n::t(:message_12, :scope => [:txt, :model, :candidate])
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
-    :on => :create, :message => t(:message_13, :scope => [:txt, :model, :candidate])
+    :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
 
-   Nt(:message_14, :scope => [:txt, :model, :candidate])
-   Nt(:message_15, :scope => [:txt, :model, :candidate])
-   Nt(:message_16, :scope => [:txt, :model, :candidate])
-   Nt(:message_17, :scope => [:txt, :model, :candidate])
-   Nt(:message_18, :scope => [:txt, :model, :candidate])
+   I18n::t(:message_14, :scope => [:txt, :model, :candidate])
+   I18n::t(:message_15, :scope => [:txt, :model, :candidate])
+   I18n::t(:message_16, :scope => [:txt, :model, :candidate])
+   I18n::t(:message_17, :scope => [:txt, :model, :candidate])
+   I18n::t(:message_18, :scope => [:txt, :model, :candidate])
 
     # validates if languages are not same
   def validate
-    errors.add_to_base(t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
-    errors.add_to_base(t(:message_20, :scope => [:txt, :model, :candidate])) if
+    errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
+    errors.add_to_base(I18n::t(:message_20, :scope => [:txt, :model, :candidate])) if
     !finished? && invited?
-    errors.add_to_base(t(:message_21, :scope => [:txt, :model, :candidate])) if
+    errors.add_to_base(I18n::t(:message_21, :scope => [:txt, :model, :candidate])) if
     !invited? && admited?
-    errors.add_to_base(t(:message_22, :scope => [:txt, :model, :candidate])) if
+    errors.add_to_base(I18n::t(:message_22, :scope => [:txt, :model, :candidate])) if
     !admited? && enrolled?
   end
 
   def validate_on_create
     if state == "Česká republika"
       if birth_number.to_i.remainder(11) != 0
-        errors.add(:birth_number, t(:message_23, :scope => [:txt, :model, :candidate]))
+        errors.add(:birth_number, I18n::t(:message_23, :scope => [:txt, :model, :candidate]))
       end
     end
   end
@@ -60,7 +60,7 @@ class Candidate < ActiveRecord::Base
   def validate_on_update
     if state == "Česká republika"
       if birth_number.to_i.remainder(11) != 0
-        errors.add(:birth_number, t(:message_24, :scope => [:txt, :model, :candidate]))
+        errors.add(:birth_number, I18n::t(:message_24, :scope => [:txt, :model, :candidate]))
       end
     end
   end

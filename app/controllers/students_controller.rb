@@ -14,7 +14,6 @@ class StudentsController < ApplicationController
 
   # main page with students for employers
   def index
-    render(:action => 'list')
   end
   
   # renders xls file with curent filter

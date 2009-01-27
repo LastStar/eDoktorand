@@ -1,10 +1,10 @@
 class Leader < Tutor
-  untranslate_all
+  
   has_one :leadership
-  Nt(:message_0, :scope => [:txt, :model, :leader])
-  Nt(:message_1, :scope => [:txt, :model, :leader])
-  Nt(:message_2, :scope => [:txt, :model, :leader])
-  Nt(:message_3, :scope => [:txt, :model, :leader])
+  I18n::t(:message_0, :scope => [:txt, :model, :leader])
+  I18n::t(:message_1, :scope => [:txt, :model, :leader])
+  I18n::t(:message_2, :scope => [:txt, :model, :leader])
+  I18n::t(:message_3, :scope => [:txt, :model, :leader])
   
   # return faculty of the leader
   def faculty

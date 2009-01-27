@@ -1,5 +1,5 @@
 class Address < ActiveRecord::Base
-  untranslate_all
+  
 
   belongs_to :student
   belongs_to :address_type

@@ -1,5 +1,5 @@
 class PlanSubject < ActiveRecord::Base
-  untranslate_all
+  
   belongs_to :study_plan
   belongs_to :subject
   EMPTY_SUBJECT_COUNT = 3

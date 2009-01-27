@@ -1,5 +1,5 @@
 class VoluntarySubject < CoridorSubject 
-  untranslate_all
+  
   belongs_to :coridor
   belongs_to :subject
 

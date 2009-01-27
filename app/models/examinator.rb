@@ -1,6 +1,6 @@
 class Examinator < DepartmentSecretary
-  untranslate_all
-  Nt(:message_0, :scope => [:txt, :model, :examinator])
+  
+  I18n::t(:message_0, :scope => [:txt, :model, :examinator])
 
   def self.find_for_department(department)
     find(:all, :conditions => ["employments.unit_id = ?", department],

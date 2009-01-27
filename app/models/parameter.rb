@@ -1,5 +1,5 @@
 class Parameter < ActiveRecord::Base
-  untranslate_all
+  
   belongs_to :faculty
 
   validates_presence_of :name

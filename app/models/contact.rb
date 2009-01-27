@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
-  untranslate_all
+  
   validates_presence_of :name
   validates_presence_of :type
   belongs_to :contact_type, :foreign_key => :contact_type_id

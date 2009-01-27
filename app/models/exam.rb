@@ -1,6 +1,6 @@
 require 'terms_calculator'
 class Exam < ActiveRecord::Base
-  untranslate_all
+  
 
   belongs_to :index
   belongs_to :subject
@@ -17,8 +17,8 @@ class Exam < ActiveRecord::Base
 
   attr_accessor :plan_subject
 
-  Nt(:message_0, :scope => [:txt, :model, :exam])
-  Nt(:message_1, :scope => [:txt, :model, :exam])
+  I18n::t(:message_0, :scope => [:txt, :model, :exam])
+  I18n::t(:message_1, :scope => [:txt, :model, :exam])
  
   # returns true if result is pass
   def passed?

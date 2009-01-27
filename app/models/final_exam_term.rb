@@ -1,8 +1,8 @@
 class FinalExamTerm < ExamTerm
-  untranslate_all
+  
   belongs_to :index
-  validates_presence_of :index_id, :message => t(:message_0, :scope => [:txt, :model, :term])
-  Nt(:message_1, :scope => [:txt, :model, :term])
+  validates_presence_of :index_id, :message => I18n::t(:message_0, :scope => [:txt, :model, :term])
+  I18n::t(:message_1, :scope => [:txt, :model, :term])
 
   # returns formated date time
   def date_time

@@ -1,5 +1,5 @@
 class Faculty < ActiveRecord::Base
-  untranslate_all
+  
   has_many :coridors
   has_many :departments
   has_many :documents

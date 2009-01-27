@@ -1,5 +1,5 @@
 class ProbationTerm < ActiveRecord::Base
-  untranslate_all
+  
   belongs_to :subject
   belongs_to :creator, :class_name => "Person", :foreign_key => "created_by"
   belongs_to :first_examinator, :class_name => "Person", :foreign_key => "first_examinator_id"
@@ -9,8 +9,8 @@ class ProbationTerm < ActiveRecord::Base
   validates_presence_of :subject
   validates_presence_of :creator
   validates_presence_of :room
-  validates_format_of :start_time, :with => /^[0-9]{1,2}[:][0-9]{1,2}$/, :on => :create, :message => t(:message_0, :scope => [:txt, :model, :term])
-  validates_inclusion_of :max_students, :in => 1..500, :message => t(:message_1, :scope => [:txt, :model, :term])
+  validates_format_of :start_time, :with => /^[0-9]{1,2}[:][0-9]{1,2}$/, :on => :create, :message => I18n::t(:message_0, :scope => [:txt, :model, :term])
+  validates_inclusion_of :max_students, :in => 1..500, :message => I18n::t(:message_1, :scope => [:txt, :model, :term])
   
   def validate
 

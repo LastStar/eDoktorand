@@ -1,5 +1,5 @@
 class DisertThemeApprovement < Approvement
-  untranslate_all
+  
   belongs_to :disert_theme, :foreign_key => 'document_id'
   # returns index
   def index

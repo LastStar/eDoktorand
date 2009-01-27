@@ -1,5 +1,5 @@
 --- 
-some-LAN: 
+cs: 
   txt: 
     model: 
       plan: 
@@ -1135,11 +1135,11 @@ some-LAN:
             message_8: Atestace
             message_9: Předměty
             message_0: Výpis oborů
-            message_1: Akreditován|: Název
-            message_2: Akreditován|: Anglický název
-            message_3: Akreditován|: Kód
-            message_4: Akreditován|: Program
-            message_5: Akreditován|: Akreditován
+            message_1: Název
+            message_2: Anglický název
+            message_3: Kód
+            message_4: Program
+            message_5: Akreditován
             message_6: "yes"
             message_7: "no"
         edit: 
@@ -1603,9 +1603,9 @@ some-LAN:
             message_14: ŽADATEL
             message_5: Státní občanství
             message_15: Podpis
-            message_6: : Datum narození
+            message_6: Datum narození
             message_16: Datum
-            message_7: Adresa místa trvalého pobytu:
+            message_7: Adresa místa trvalého pobytu
             message_17: odd. VaV
         _detail_scholarship: 
           rhtml: {}

@@ -1,5 +1,5 @@
 class Student < Examinator
-  untranslate_all
+  
   has_one :index, :dependent => :destroy, :order => 'created_on desc'
   has_one :address, :conditions => 'address_type_id = 1', 
           :dependent => :destroy
@@ -8,21 +8,21 @@ class Student < Examinator
   has_one :candidate
   has_and_belongs_to_many :probation_terms
 
-  Nt(:message_0, :scope => [:txt, :model, :student])
-  Nt(:message_1, :scope => [:txt, :model, :student])
-  Nt(:message_2, :scope => [:txt, :model, :student])
-  Nt(:message_3, :scope => [:txt, :model, :student])
-  Nt(:message_4, :scope => [:txt, :model, :student])
-  Nt(:message_5, :scope => [:txt, :model, :student])
-  Nt(:message_6, :scope => [:txt, :model, :student])
-  Nt(:message_7, :scope => [:txt, :model, :student])
-  Nt(:message_8, :scope => [:txt, :model, :student])
-  Nt(:message_9, :scope => [:txt, :model, :student])
-  Nt(:message_10, :scope => [:txt, :model, :student])
-  Nt(:message_11, :scope => [:txt, :model, :student])
-  Nt(:message_12, :scope => [:txt, :model, :student])
-  Nt(:message_13, :scope => [:txt, :model, :student])
-  Nt(:message_14, :scope => [:txt, :model, :student])
+  I18n::t(:message_0, :scope => [:txt, :model, :student])
+  I18n::t(:message_1, :scope => [:txt, :model, :student])
+  I18n::t(:message_2, :scope => [:txt, :model, :student])
+  I18n::t(:message_3, :scope => [:txt, :model, :student])
+  I18n::t(:message_4, :scope => [:txt, :model, :student])
+  I18n::t(:message_5, :scope => [:txt, :model, :student])
+  I18n::t(:message_6, :scope => [:txt, :model, :student])
+  I18n::t(:message_7, :scope => [:txt, :model, :student])
+  I18n::t(:message_8, :scope => [:txt, :model, :student])
+  I18n::t(:message_9, :scope => [:txt, :model, :student])
+  I18n::t(:message_10, :scope => [:txt, :model, :student])
+  I18n::t(:message_11, :scope => [:txt, :model, :student])
+  I18n::t(:message_12, :scope => [:txt, :model, :student])
+  I18n::t(:message_13, :scope => [:txt, :model, :student])
+  I18n::t(:message_14, :scope => [:txt, :model, :student])
   
   
   # returns faculty on which student is

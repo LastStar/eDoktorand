@@ -12,7 +12,7 @@ end
 class Index < ActiveRecord::Base
   include Approvable
 
-  untranslate_all
+  
   
   PREFIX_WEIGHTS = [1, 2, 4, 8, 5, 10]
   ACCOUNT_WEIGHTS = [1, 2, 4, 8, 5, 10, 9, 7, 3, 6]
@@ -73,8 +73,8 @@ class Index < ActiveRecord::Base
   validates_numericality_of :account_number, :only_integer => true, :allow_nil => true
   validates_numericality_of :account_bank_number, :only_integer => true, :allow_nil => true
 
-  Nt(:message_0, :scope => [:txt, :model, :index])
-  Nt(:message_1, :scope => [:txt, :model, :index])
+  I18n::t(:message_0, :scope => [:txt, :model, :index])
+  I18n::t(:message_1, :scope => [:txt, :model, :index])
 
   def validate
     if account_number
@@ -400,17 +400,17 @@ class Index < ActiveRecord::Base
   # returns status of index
   def status
     @status ||= if disert_theme && disert_theme.defense_passed?
-      t(:message_10, :scope => [:txt, :model, :index])
+      I18n::t(:message_10, :scope => [:txt, :model, :index])
     elsif final_exam_passed?
-      t(:message_11, :scope => [:txt, :model, :index])
+      I18n::t(:message_11, :scope => [:txt, :model, :index])
     elsif finished?
-      t(:message_12, :scope => [:txt, :model, :index])
+      I18n::t(:message_12, :scope => [:txt, :model, :index])
     elsif interupted?
-      t(:message_13, :scope => [:txt, :model, :index])
+      I18n::t(:message_13, :scope => [:txt, :model, :index])
     elsif continues?
-      t(:message_14, :scope => [:txt, :model, :index])
+      I18n::t(:message_14, :scope => [:txt, :model, :index])
     else
-      t(:message_15, :scope => [:txt, :model, :index])
+      I18n::t(:message_15, :scope => [:txt, :model, :index])
     end
     return @status
   end

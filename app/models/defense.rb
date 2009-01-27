@@ -1,5 +1,5 @@
 class Defense < ExamTerm
-  untranslate_all
+  
   belongs_to :index
 
   # returns formated date time

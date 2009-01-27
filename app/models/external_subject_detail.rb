@@ -1,5 +1,5 @@
 class ExternalSubjectDetail < ActiveRecord::Base
-  untranslate_all
+  
   belongs_to :external_subject
-  validates_presence_of :university, :message => Nt(:message_0, :scope => [:txt, :model, :detail])
+  validates_presence_of :university, :message => I18n::t(:message_0, :scope => [:txt, :model, :detail])
 end

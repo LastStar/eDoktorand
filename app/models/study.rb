@@ -1,5 +1,5 @@
 class Study < ActiveRecord::Base
-  untranslate_all
+  
   has_many :canditats
 
   # returns array structured for html select

@@ -3,8 +3,8 @@ class Interupt < ActiveRecord::Base
 
   include Approvable
 
-  untranslate_all
-  Nt(:message_0, :scope => [:txt, :model, :interupt])
+  
+  I18n::t(:message_0, :scope => [:txt, :model, :interupt])
 
   belongs_to :index
   has_one :approvement, :class_name => 'InteruptApprovement',

@@ -1,7 +1,7 @@
 class DisertTheme < ActiveRecord::Base
-  untranslate_all
+  
   belongs_to :index
-  validates_presence_of :title, :message => t(:message_0, :scope => [:txt, :model, :theme])
+  validates_presence_of :title, :message => I18n::t(:message_0, :scope => [:txt, :model, :theme])
   validates_presence_of :finishing_to
   acts_as_audited
 

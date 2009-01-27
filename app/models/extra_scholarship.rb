@@ -1,5 +1,5 @@
 class ExtraScholarship < Scholarship
-  untranslate_all
+  
   validates_length_of :commission_head, :is => 4
   validates_length_of :commission_body, :is => 5
   validates_length_of :commission_tail, :is => 4
