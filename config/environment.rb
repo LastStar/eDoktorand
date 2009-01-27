@@ -73,7 +73,7 @@ Rails::Initializer.run do |config|
   config.gem "mongrel"
   config.gem "andand"
   config.gem "ruby-net-ldap", :lib => "net/ldap"
-  config.gem "mislav-will_paginate"
+  config.gem "mislav-will_paginate", :lib => 'will_paginate'
 
 end
 
