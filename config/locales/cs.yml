@@ -1017,7 +1017,7 @@ cs:
             message_0: odeslat
       
 
-        list: 
+        index: 
           rhtml: 
             message_0: Výpis studentů
             message_1: nahrávám
