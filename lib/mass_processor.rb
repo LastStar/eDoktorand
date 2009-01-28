@@ -90,6 +90,7 @@ class MassProcessor
   def self.repair_sident(students)
     @@mylog.info "There are %i students" % students.size
     @client = SOAP::NetHttpClient.new
+    #TODO change URL to params in config
     service = "http://193.84.34.34:8081/axis2/rest/GetSidentService/getSidentByBirthNum?rc=%s"
     students.each do |student|
       @@mylog.info "Procesing student #%i" % student.id
