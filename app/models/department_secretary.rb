@@ -1,12 +1,13 @@
 class DepartmentSecretary < Secretary
   
   has_one :department_employment, :foreign_key => 'person_id'
-  I18n::t(:message_0, :scope => [:txt, :model, :secretary])
-  # return faculty of the faculty secretary
+
+  # return faculty 
   def faculty
-    department_employment.department.faculty
+    department.faculty
   end
 
+  # returns department 
   def department
     department_employment.department
   end

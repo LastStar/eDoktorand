@@ -8,23 +8,6 @@ class Student < Examinator
   has_one :candidate
   has_and_belongs_to_many :probation_terms
 
-  I18n::t(:message_0, :scope => [:txt, :model, :student])
-  I18n::t(:message_1, :scope => [:txt, :model, :student])
-  I18n::t(:message_2, :scope => [:txt, :model, :student])
-  I18n::t(:message_3, :scope => [:txt, :model, :student])
-  I18n::t(:message_4, :scope => [:txt, :model, :student])
-  I18n::t(:message_5, :scope => [:txt, :model, :student])
-  I18n::t(:message_6, :scope => [:txt, :model, :student])
-  I18n::t(:message_7, :scope => [:txt, :model, :student])
-  I18n::t(:message_8, :scope => [:txt, :model, :student])
-  I18n::t(:message_9, :scope => [:txt, :model, :student])
-  I18n::t(:message_10, :scope => [:txt, :model, :student])
-  I18n::t(:message_11, :scope => [:txt, :model, :student])
-  I18n::t(:message_12, :scope => [:txt, :model, :student])
-  I18n::t(:message_13, :scope => [:txt, :model, :student])
-  I18n::t(:message_14, :scope => [:txt, :model, :student])
-  
-  
   # returns faculty on which student is
   def faculty
     index.faculty

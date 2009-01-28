@@ -32,13 +32,7 @@ class Candidate < ActiveRecord::Base
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
     :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
 
-   I18n::t(:message_14, :scope => [:txt, :model, :candidate])
-   I18n::t(:message_15, :scope => [:txt, :model, :candidate])
-   I18n::t(:message_16, :scope => [:txt, :model, :candidate])
-   I18n::t(:message_17, :scope => [:txt, :model, :candidate])
-   I18n::t(:message_18, :scope => [:txt, :model, :candidate])
-
-    # validates if languages are not same
+  # validates if languages are not same
   def validate
     errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
     errors.add_to_base(I18n::t(:message_20, :scope => [:txt, :model, :candidate])) if

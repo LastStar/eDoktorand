@@ -1,14 +1,10 @@
 class Leader < Tutor
   
   has_one :leadership
-  I18n::t(:message_0, :scope => [:txt, :model, :leader])
-  I18n::t(:message_1, :scope => [:txt, :model, :leader])
-  I18n::t(:message_2, :scope => [:txt, :model, :leader])
-  I18n::t(:message_3, :scope => [:txt, :model, :leader])
   
   # return faculty of the leader
   def faculty
-    leadership.department.faculty
+    department.faculty
   end
 
   def department

@@ -3,9 +3,6 @@ class Interupt < ActiveRecord::Base
 
   include Approvable
 
-  
-  I18n::t(:message_0, :scope => [:txt, :model, :interupt])
-
   belongs_to :index
   has_one :approvement, :class_name => 'InteruptApprovement',
           :foreign_key => 'document_id'

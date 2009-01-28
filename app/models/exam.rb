@@ -17,9 +17,6 @@ class Exam < ActiveRecord::Base
 
   attr_accessor :plan_subject
 
-  I18n::t(:message_0, :scope => [:txt, :model, :exam])
-  I18n::t(:message_1, :scope => [:txt, :model, :exam])
- 
   # returns true if result is pass
   def passed?
    return true if result == 1

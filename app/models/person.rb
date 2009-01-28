@@ -3,7 +3,6 @@ require 'genderize'
 class Person < ActiveRecord::Base
   include Genderize
   
-  I18n::t(:message_0, :scope => [:txt, :model, :person])
   has_one :email, :class_name => 'Contact', :foreign_key => 'person_id',
       :conditions => 'contact_type_id = 1'
   has_one :phone, :class_name => 'Contact', :foreign_key => 'person_id',
@@ -21,6 +20,7 @@ class Person < ActiveRecord::Base
   def display_type
     I18n::t(:message_0, :scope => [:txt, :model, self.class.to_s.underscore])
   end
+
   # returns display name for person
   def display_name
     display_name_with_title
