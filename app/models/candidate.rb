@@ -59,6 +59,11 @@ class Candidate < ActiveRecord::Base
     end
   end
 
+  # returns candidate's hash
+  def hash
+    str = "%s%i%s" % [self.lastname.first, self.id, self.firstname.first]
+    return '#' + str.hash.abs.to_s
+  end
 
   # finishes candidate
   def finish!
