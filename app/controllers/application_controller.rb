@@ -1,8 +1,12 @@
 
-
 class ApplicationController < ActionController::Base
   include LoginSystem
   include ExceptionNotifiable
+
+  helper :all 
+
+  filter_parameter_logging :password
+  protect_from_forgery 
 
   before_filter :utf8_locale
   # enable or disable enroll candidates in application
@@ -25,8 +29,6 @@ class ApplicationController < ActionController::Base
     headers['Content-Type'] = "text/html; charset=#{@charset}"
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
   end
-
-  filter_parameter_logging "password"
 
   # authorizes user
   def authorize?(user)
@@ -84,4 +86,3 @@ class ApplicationController < ActionController::Base
   end
  
 end
-
