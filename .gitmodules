@@ -1,6 +1,3 @@
 [submodule "vendor/plugins/rtex"]
 	path = vendor/plugins/rtex
 	url = git://github.com/bruce/rtex.git
-[submodule "vendor/rails"]
-	path = vendor/rails
-	url = git://github.com/rails/rails.git
