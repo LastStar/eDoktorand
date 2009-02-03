@@ -25,6 +25,6 @@ Rails::Initializer.run do |config|
   config.gem "andand"
   config.gem "ruby-net-ldap", :lib => "net/ldap"
   config.gem "mislav-will_paginate", :lib => 'will_paginate'
-# config.gem "datanoise-actionwebservice", :lib => 'actionwebservice'
+  config.gem "actionwebservice", :lib => 'actionwebservice'
 
 end
