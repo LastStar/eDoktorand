@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   include LoginSystem
   include ExceptionNotifiable
 
-#  helper :all 
-
   filter_parameter_logging :password
   protect_from_forgery 
 
@@ -13,8 +11,6 @@ class ApplicationController < ActionController::Base
   $enroll = 'disable'
 
   # sets utf8 for db and locale to cs_CZ
-  # TODO redone for native sql and locale
-  # TODO remove blood with Dean
   def utf8_locale
     if params[:lang]
       cookies[:lang] = params[:lang]
@@ -22,6 +18,8 @@ class ApplicationController < ActionController::Base
       params[:lang] = cookies[:lang]
     end
     I18n.locale = params[:lang]
+    # TODO remove blood with Dean
+    Dean.columns
   end
 
   # authorizes user
