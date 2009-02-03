@@ -20,14 +20,8 @@ class ApplicationController < ActionController::Base
       cookies[:lang] = params[:lang]
     elsif cookies[:lang] 
       params[:lang] = cookies[:lang]
-    else
-      params[:lang] = cookies[:lang] = 'cs'
     end
-    Dean.columns
     I18n.locale = params[:lang]
-    @charset = 'utf-8'
-    headers['Content-Type'] = "text/html; charset=#{@charset}"
-    ActiveRecord::Base.connection.execute('SET NAMES UTF8')
   end
 
   # authorizes user

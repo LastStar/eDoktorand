@@ -3,6 +3,7 @@ development:
   database: phdstudy_development
   host: localhost
   port: 3306
+  encoding: utf8
   username: web
   password: w3b
 
@@ -11,6 +12,7 @@ test:
   database: phdstudy_test
   host: localhost
   port: 3306
+  encoding: utf8
   username: web
   password: w3b
 
@@ -19,6 +21,7 @@ production:
   database: phdstudy_production
   host: edoktorand.czu.cz
   port: 3306
+  encoding: utf8
   username: w3b
   password: w3b3000
 
