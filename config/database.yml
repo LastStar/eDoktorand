@@ -1,7 +1,7 @@
 development:
   adapter: mysql
   database: phdstudy_development
-  host: localhost
+  host: edoktorand.czu.cz
   port: 3306
   encoding: utf8
   username: web
