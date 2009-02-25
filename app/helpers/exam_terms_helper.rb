@@ -1,7 +1,7 @@
 module ExamTermsHelper
   def final_exam_terms_link
     link_to t(:message_0, :scope => [:txt, :helper, :terms]), :action => :list, 
-      :controller => :final_exam_terms
+      :controller => :final_exam_terms, :future => 1
   end
 
   def defense_terms_link
