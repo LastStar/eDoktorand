@@ -87,33 +87,27 @@ class Student < Examinator
     index.department
   end
 
-  def to_wsdl_hash
-    struct =  {
-      'uic' => self.uic,
-      'student_id' => self.id,
-      'firstname' => self.firstname,
-      'lastname' => self.lastname,
-      'birthname' => self.birthname,
-      'birth-on' => self.birth_on,
-      'citizenship' => self.citizenship,
-      'birth-number' => self.birth_number,
-      'birth-place' => self.birth_place,
-      'sex' => self.sex,
-      'created-on' => self.created_on,
-      'update-on' => self.updated_on,
-      'adress' => {
-        'street' => self.address.street,
-        'desc-number' => self.address.desc_number,
-        'orient-number' => self.address.orient_number,
-        'city' => self.address.city,
-        'zip' => self.address.zip,
-        'state' => self.address.state
-      }
-    }
-    struct['title-before'] = self.title_before ? self.title_before.name : ''
-    struct['title-after'] = self.title_after ? self.title_after.name : ''
-    struct['email'] = self.email ? self.email.name : ''
-    struct['phone'] = self.phone ? self.phone.name : ''
-    return struct
+  # returns struct for web services
+  def to_service_struct
+    wsdl_struct = StudentHash.new
+
+    wsdl_struct.uic = self.uic
+    wsdl_struct.student_id = self.id
+    wsdl_struct.firstname = self.firstname
+    wsdl_struct.lastname = self.lastname
+    wsdl_struct.birthname = self.birthname
+    wsdl_struct.birth_on = self.birth_on
+    wsdl_struct.citizenship = self.citizenship
+    wsdl_struct.birth_number = self.birth_number
+    wsdl_struct.birth_place = self.birth_place
+    wsdl_struct.sex = self.sex
+    wsdl_struct.created_on = self.created_on
+    wsdl_struct.updated_on = self.updated_on
+    wsdl_struct.title_before = self.title_before ? self.title_before.name : ''
+    wsdl_struct.title_after = self.title_after ? self.title_after.name : ''
+    wsdl_struct.email = self.email ? self.email.name : ''
+    wsdl_struct.phone = self.phone ? self.phone.name : ''
+
+    return wsdl_struct
   end
 end 

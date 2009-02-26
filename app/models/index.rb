@@ -642,17 +642,21 @@ class Index < ActiveRecord::Base
     return sp
   end
 
-  def to_wsdl_hash
-    return {
-      'index-id' => self.id,
-      'student-uic' => self.student.uic,
-      'faculty-id' => self.faculty.id,
-      'department-id' => self.department.id,
-# TODO change 
-      'study-status' => 'S',
-      'status-from' => self.index.updated_on,
-      'status-to' => ''
-    }
+  # returns service struct for index
+  def to_service_struct
+    service_struct = IndexHash.new
+
+    service_struct.index_id = self.id
+    service_struct.student_uic = self.student.uic
+    service_struct.faculty_id = self.faculty.id
+    service_struct.faculty_name = self.faculty.name
+    service_struct.department_id = self.department.id
+    service_struct.department_name = self.department.name
+    service_struct.study_status = self.status
+    service_struct.status_from = self.index.updated_on
+    service_struct.status_to = ''
+
+    return service_struct
   end
 
   def has_study_plan_and_actual_atestation?
