@@ -42,18 +42,24 @@ class StudentApi < ActionWebService::API::Base
   api_method :find_student_by_uic,
              :expects => [:int],
              :returns => [StudentHash]
+
   api_method :find_index_for_student_uic,
              :expects => [:int],
-             :returns => [StudentHash]
+             :returns => [IndexHash]
+
   api_method :update_student_with_uic,
              :expects => [StudentHash],
              :returns => [:string]
+
   api_method :update_index_with_student_uic,
              :expects => [IndexHash],
              :returns => [:string]
+
+  # do not implemented here
   api_method :get_uic_by_birth_num,
              :expects => [:string],
              :returns => [:int]
+
   api_method :get_sident_by_birth_num,
              :expects => [:string],
              :returns => [:int]
