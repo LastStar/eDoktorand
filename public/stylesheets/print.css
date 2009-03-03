@@ -107,6 +107,9 @@ p.subject {
 .links {
   display: none;
 }
+.candidate_login {
+  display: none;
+}
 .right {
   display: none;
 }

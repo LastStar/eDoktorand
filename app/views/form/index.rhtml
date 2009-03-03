@@ -21,7 +21,20 @@
       </ol>
     </li>
     <% end %>
+    
+    <li>
+     <a href='#' onClick="Element.toggle($('candidate_login'))"><%=t(:message_3, :scope => [:txt, :view, :form, :index, :rhtml])%></a><br />
+      <ol style="display:none" id="candidate_login">
+          <% form_remote_tag(:url => {:action => "login"}) do %>          
+            <li><div class="right_info"> <input id="candidate_id" name="candidate[id]" size="30" type="text" /> </div>Id:</li>
+            <li><div class="right_info"> <input id="candidate_hash" name="candidate[hash]" size="30" type="text" />
+                <input id="edit_candidate" name="edit[candidate]" type="hidden" value="yes" /></div><%= t(:message_4, :scope => [:txt, :view, :form, :index, :rhtml]) %>:</li>
+            <li><div class="right_info"> <%= submit_tag('login') %></div> &nbsp; <div id='last'></div></li>
+          <% end %>
+      </ol>
+    </li>
   </ul>
 <% else %>
 <h3><%= t(:message_2, :scope => [:txt, :view, :form, :index, :rhtml]) %><a href="mailto:pepe@gravastar.cz">pepe@gravastar.cz</a ></h3>
 <% end %>
+
