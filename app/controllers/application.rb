@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include ExceptionNotifiable
 
   filter_parameter_logging :password
-  protect_from_forgery 
+  # protect_from_forgery 
 
   before_filter :utf8_locale
   # enable or disable enroll candidates in application
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  # checks if user is student
+  # checks if user is student. 
   # if true creates @student variable with current student
   def prepare_student
     if @user.person.kind_of?(Student)

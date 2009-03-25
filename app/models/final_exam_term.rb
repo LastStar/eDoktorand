@@ -13,7 +13,7 @@ class FinalExamTerm < ExamTerm
     # TODO redo with only ids of indices
     indices = Index.find_for(user)
     if options.delete :not_passed
-      indices.reject! {|i| i.status == t(:message_2, :scope => [:txt, :model, :term])}
+      indices.reject! {|i| i.status == I18n::t(:message_2, :scope => [:txt, :model, :term])}
     end
     options[:conditions] = ['index_id in (?)', indices]
     if options.delete :future
