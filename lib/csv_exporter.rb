@@ -382,6 +382,27 @@ class CSVExporter
     end
   end
   
+  def self.export_year_exams(exam_date)
+    @@mylog.info 'Exporting exams list from %s' %exam_date
+    Faculty.find(:all).each do |faculty|
+      outfile = File.open("exams_list_%s.csv" % faculty.short_name, 'wb')
+      CSV::Writer.generate(outfile, ';') do |csv|
+        faculty.departments.each do |department|
+          @@mylog.debug department.name
+          subjs = department.subjects.map(&:id)
+          @@mylog.debug subjs          
+          subjs.each do |subject_id|
+            subject_name = Subject.find(subject_id).label
+            exams = Exam.count(:conditions => ["subject_id = ? and passed_on > ?", subject_id, exam_date])  
+          csv << [department.name, subject_name, exams]
+          end
+        end
+      end
+      outfile.close
+    end
+  end
+
+
   def self.export_for_board(department)
     department = department.id if department.is_a? Department
     filename = "students_%i.csv" % department
