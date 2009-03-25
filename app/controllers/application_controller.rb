@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include ExceptionNotifiable
 
   filter_parameter_logging :password
-  protect_from_forgery 
+  # protect_from_forgery 
 
   before_filter :utf8_locale
   # enable or disable enroll candidates in application
