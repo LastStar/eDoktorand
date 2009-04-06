@@ -1,5 +1,5 @@
 --- 
-cs: 
+cs_CZ: 
   txt: 
     model: 
       plan: 
@@ -1248,6 +1248,8 @@ cs:
             message_0: Obory studia jsou přiřazeny k jednotlivým fakultám. Zobrazí se Vám po rozkliknutí.
             message_1: dokumenty
             message_2: "There is error in application. Please contact system administrator on address:"
+            message_3: "Přihlásit se pro opravu přihlášky"
+            message_4: "Heslo"
         preview: 
           rhtml: 
             message_18: prosím klikněte zde pro elektronickou registraci Vaší přihlášky
@@ -1269,6 +1271,8 @@ cs:
             message_16: Registrace
             message_7: a
             message_17: elektronické přihlášky
+            message_19: Login na přihlášku
+            message_20: Heslo
       shared: 
         _approve_form: 
           rhtml: 
@@ -1315,7 +1319,7 @@ cs:
             message_0: anotace metodiky
             message_1: ukázat
             message_2: nahrát metodiku
-        candidate_edit: 
+        _candidate_edit: 
           rhtml: 
             message_40: forma studia
             message_29: obor
@@ -2084,6 +2088,7 @@ cs:
         message_5: Ve Vámi zadaných informacích jsou následující chyby
         message_6: Kontrola zadaného
         message_7: Prohlédněte si pozorně Vámi zadané informace. Poté postupujte podle návodu ve spodní části stránky.
+        message_15: Špatné Id nebo heslo
       supplements: {}
 
       scholarships: 

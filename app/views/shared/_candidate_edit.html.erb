@@ -1,0 +1,120 @@
+<%= render :partial => "error" %>
+<%= render :partial => "notice" %>
+<% form_tag :action => @action do -%>
+  <fieldset id='personal'>
+    <legend><%= t(:message_0, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
+    <%= hidden_field 'candidate', 'id' %>
+    <label for='candidate_firstname' class='required'><%= t(:message_1, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'firstname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_lastname' class='required'><%= t(:message_2, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'lastname', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_title_before_id'><%= t(:message_3, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= select 'candidate', 'title_before_id', title_before_ids %><br /> 
+    <label for='candidate_title_after_id'><%= t(:message_4, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= select 'candidate', 'title_after_id', title_after_ids %><br /> 
+    <label class='required'><%= t(:message_5, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= date_select 'candidate', 'birth_on', :start_year => Date.today.year - 21,
+       :end_year => Date.today.year - 90, :order => [:day, :month, :year],
+       :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br />
+    <label for='candidate_birth_at' class='required'><%= t(:message_6, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'birth_at', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br />
+    <label for="candidate_department_id"><%= t(:message_7, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= sex_select 'candidate', 'sex' %><br /> 
+    <label for='candidate_state' class='required'><%= t(:message_8, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'state', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_birth_number' class='required'><%= t(:message_9, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'birth_number', 'size' => '11' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+  </fieldset>
+  <fieldset id='contact'>
+    <legend><%= t(:message_10, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
+    <label for='candidate_email' class='required'><%= t(:message_11, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'email', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_phone'><%= t(:message_12, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'phone', 'size' => '30' %><br /> 
+  </fieldset>
+  <fieldset id='address'>
+    <legend><%= t(:message_13, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
+    <label for='candidate_street' class='required'><%= t(:message_14, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'street', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br />  
+    <label for='candidate_street' class='required'><%= t(:message_15, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'number', 'size' => '6' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_city' class='required'><%= t(:message_16, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'city', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_zip' class='required'><%= t(:message_17, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'zip', 'size' => '10' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for='candidate_zip' class='required'><%= t(:message_18, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'address_state', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+  </fieldset>
+  <fieldset id='postal_address'>
+    <legend><%= t(:message_19, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %> - <%= t(:message_20, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
+    <label for='candidate_postal_street' > <%= t(:message_21, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'postal_street', 'size' => '30' %><br /> 
+    <label for='candidate_postal_number' ><%= t(:message_22, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'postal_number', 'size' => '6' %><br /> 
+    <label for='candidate_postal_city' ><%= t(:message_23, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'postal_city', 'size' => '30' %><br /> 
+    <label for='candidate_postal_zip'><%= t(:message_24, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'postal_zip', 'size' => '10' %><br /> 
+    <label for='candidate_postal_state'><%= t(:message_25, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'postal_state', 'size' => '30' %><br /> 
+  </fieldset>
+  <fieldset id='sholarship'>
+    <legend><%= t(:message_26, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
+    <label for="candidate_university" class='required'><%= t(:message_27, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'university', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for="candidate_faculty" class='required'><%= t(:message_28, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'faculty', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for="candidate_studied_branch" class='required'><%= t(:message_29, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'studied_branch', 'size' => '30'  %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for="candidate_studied_specializatio"><%= t(:message_30, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'studied_specialization', 'size' => '30'  %><br /> 
+    <label class='required'><%= t(:message_31, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= date_select 'candidate', 'study_end', :start_year => Date.today.year,  :end_year => Date.today.year - 60,
+    :order => [:day, :month, :year], :use_month_numbers => true %><span class='required'>&nbsp;&lowast;</span ><br /> 
+  </fieldset>
+  <fieldset id='practice'>
+    <legend><%= t(:message_32, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
+    <label for="candidate_employer"><%= t(:message_33, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'employer', 'size' => '30'  %><br /> 
+    <label for="candidate_employer_address"><%= t(:message_34, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'employer_address', 'size' => '30'  %><br /> 
+    <label for="candidate_employer_email"><%= t(:message_35, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'employer_email', 'size' => '30'  %><br /> 
+    <label for="candidate_employer_phone"><%= t(:message_36, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'employer_phone', 'size' => '30'  %><br /> 
+    <label for="candidate_position"><%= t(:message_37, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_field 'candidate', 'position', 'size' => '30'  %><br /> 
+  </fieldset>
+  <fieldset id='study'>
+    <legend><%= t(:message_38, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
+    <%= hidden_field 'candidate', 'coridor_id' %>
+    <label for="candidate_department_id"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= select 'candidate', 'department_id', Department.for_select(:faculty =>
+      @candidate.coridor.faculty.id) %><br /> 
+    <label for="candidate_study_id" class="required"><%= t(:message_40, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= select 'candidate', 'study_id', study_ids %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for="candidate_language1" class="required"><%= t(:message_41, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <% if @candidate.admitting_faculty.id != 3 %>
+    <%= select 'candidate', 'language1_id', LanguageSubject.for_select(:coridor => @candidate.coridor_id) %><span class='required'>&nbsp;&lowast;</span ><br />
+    <% else %>
+    <%= hidden_field 'candidate', 'language1_id', :value => 1133 %>
+    <%= Subject.find(1133).label %>
+    <% end %>
+    <label for="candidate_language2" class="required">&nbsp;</label>
+    <%= select 'candidate', 'language2_id', LanguageSubject.for_select(:coridor => @candidate.coridor_id) %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <label for="candidate_study_theme"><%= t(:message_42, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_area 'candidate', 'study_theme', :cols => 40, :rows => 2 %><br /> 
+  </fieldset>
+  <fieldset id='note'>
+    <label for="candidate_note"><%= t(:message_43, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+    <%= text_area 'candidate', 'note', :cols => 40, :rows => 6 %>
+  </fieldset>
+  <fieldset id='action'>
+    <legend><%= t(:message_44, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
+    <input type='submit' value='<%= t(:message_45, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %>' />&nbsp;
+    <input type='reset' value='<%= t(:message_46, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %>' />
+  </fieldset>
+  <% end %>
+  <script  type="text/javascript">
+    Field.activate('candidate_firstname')
+  </script>

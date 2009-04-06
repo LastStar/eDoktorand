@@ -9,6 +9,26 @@ class FormController < ApplicationController
     @title = t(:message_0, :scope => [:txt, :controller, :form])
   end
   
+  #login for edit candidate detail by candidate
+  def login
+     @candidate = nil
+     @candidate = Candidate.find(:first, :conditions => ["id = ?", params[:candidate][:id]])
+     @edit = {}
+      if @candidate && @candidate.finished_on == nil
+        if (params[:candidate][:id].to_i == @candidate.id) && (@candidate.hash == params[:candidate][:hash])
+          @action = 'update'
+          render :update do |page|
+            page.replace_html  'main', :partial => 'shared/candidate_edit', :locals => {:edit => 1}
+          end  
+        end
+      else
+        render :update do |page|
+          page.replace_html  'last', :inline => "<div id='error'>" + t(:message_15, :scope => [:txt, :controller, :form]) + "</div>"
+          page.visual_effect :highlight, 'candidate_login'
+        end    
+      end    
+  end
+  
   # form details  
   def details
     prepare_candidate
@@ -17,17 +37,17 @@ class FormController < ApplicationController
   end
 
   # preview what has been inserted
-  def save
-    @candidate = Candidate.new(params[:candidate])
-    if @candidate.save
-      preview
-      render(:action => :preview)
-    else
-      @title = t(:message_2, :scope => [:txt, :controller, :form])
-      flash.now['error'] = t(:message_3, :scope => [:txt, :controller, :form])
-      @action = 'save'
-      render(:action => :details)
-    end
+  def save()
+      @candidate = Candidate.new(params[:candidate])
+        if @candidate.save
+          preview
+          render(:action => :preview)
+        else
+          @title = t(:message_2, :scope => [:txt, :controller, :form])
+          flash.now['error'] = t(:message_3, :scope => [:txt, :controller, :form])
+          @action = 'save'
+          render(:action => :details)
+        end
   end
 
   # update candidate
