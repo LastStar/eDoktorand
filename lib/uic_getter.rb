@@ -10,7 +10,7 @@ class UicGetter
   @@logger.level = 1
 
   # constants definition
-  SERVICES = {:uic => "http://193.84.34.35:8081/axis2/rest/GetUicService/getUicByBirthNum?rc=%s"}
+  SERVICES = {:uic => "http://193.84.34.6/axis2/services/GetUicService/getUicByBirthNum?rc=%s",:pokus => "http://193.84.34.6/axis2/services/GetUicService/getUicByBirthNum?rc=8111191638"}
   UIC_REGEX = /<uic>(-?[0-9]{3,6})<\/uic>/
   MESSAGE_REGEXP = /<message>(.*)<\/message>/
 
@@ -66,6 +66,7 @@ class UicGetter
 
   # extracts uic from response
   def extract_uic(resp)
+    @@logger.debug resp
     uic = resp.match(UIC_REGEX)[1].to_i
     case uic
     when 0

@@ -156,6 +156,31 @@ class CSVExporter
     outfile.close
   end
 
+  def self.export_students_uic_login_faculty_department
+    file = "students_uic_big.csv"
+    outfile = File.open(file, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      is = Index.find(:all, :conditions => 'finished_on is null')
+      @@mylog.info "There are #{is.size} students"
+      is.each do |index|
+        row = []
+        row << index.student.display_name
+        row << index.student.uic
+        if index.student.user
+          row << index.student.user.login
+        else
+          row << ""
+        end
+        row << index.student.faculty.short_name
+        row << index.student.department.short_name        
+        @@mylog.debug "Adding #{row}"
+        csv << row
+      end
+    end
+    outfile.close
+  end
+
+
   def self.export_students_uic_sident(indices = nil)
     file = "students_uic_sident.csv"
     outfile = File.open(file, 'wb')
