@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  # checks if user is student
+  # checks if user is student. 
   # if true creates @student variable with current student
   def prepare_student
     if @user.person.kind_of?(Student)

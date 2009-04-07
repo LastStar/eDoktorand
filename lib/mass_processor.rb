@@ -6,6 +6,92 @@ class MassProcessor
   @@mylog.outputters = Outputter.stdout
   @@mylog.level = 1
 
+  #update or create subject from web service
+  def self.update_subjects
+    @@mylog.info "Starting connect to remote web service..."
+    soap_client = ActionWebService::Client::Soap.new(SubjectApi, "http://193.84.34.6/axis2/services/GetSubjectService/getSubjects")
+    @@mylog.info "Downloading content - PLEASE WAIT A MINUTE"
+    s = soap_client.get_subjects
+    @@mylog.info "Download is finished"
+    department_exist = false
+    department_count = -1
+    created_subjects = 0
+    updated_subjects = 0
+    missing_departments = 0
+    updated = false
+    count = -1
+    # subject means Array of subjects => s.subject is Array of subjects
+    remote_subjects = s.subject
+    @@mylog.info "There are %i subjects to check" % remote_subjects.size
+    #while is better because Array with SOAP::MAPPING with 'each cycle' is peace of hell!
+    while count < (remote_subjects.size - 1) do
+      count = count + 1
+      #UPDATING SUBJECT
+      if ls = Subject.find_by_code(remote_subjects[count].code)
+        #every time we need to check for String object because SOAP::MAPPING nil is not defined
+        if ls.label != remote_subjects[count].label && remote_subjects[count].label.is_a?(String)
+          ls.update_attribute(:label,remote_subjects[count].label)
+          @@mylog.debug "Label of subject %s  is updated" % ls.code
+          updated = true
+        end
+        if ls.label_en != remote_subjects[count].labelEn && remote_subjects[count].labelEn.is_a?(String)
+          ls.update_attribute(:label_en,remote_subjects[count].labelEn.to_s)          
+          @@mylog.debug "Label EN of subject %s  is updated" % ls.code
+          updated = true
+        end
+#         Future implementation of Person's subject
+#        if ls.person_id != remote_subjects[count].idPerson
+#          ls.update_attribute(:person_id,remote_subjects[count].idPerson)
+#          updated = true
+#        end
+        if remote_subjects[count].idDepartment.is_a?(String)
+          ls.departments.each do |department|
+              department_count = department_count + 1
+            if department.id == remote_subjects[count].idDepartment.to_i
+              department_exist = true
+            end
+          end
+          if department_exist != true && Department.find(:first, :conditions => ["id = ?", remote_subjects[count].idDepartment])
+            ls.departments << Department.find(remote_subjects[count].idDepartment.to_i)
+               @@mylog.debug "Department is added to subject %s" % ls.code
+               updated = true
+          elsif department_exist != true
+            @@mylog.debug "Department IS MISSING in our database! for subject %s" % ls.code
+            missing_departments = missing_departments + 1
+          end
+        else
+            @@mylog.debug "Department IS MISSING in remote source! for subject %s" % ls.code
+            missing_departments = missing_departments + 1          
+        end
+        department_count = -1
+        department_exist = false
+        if updated == true
+          updated_subjects = updated_subjects + 1
+          updated = false
+        end
+      else
+        #CREATING NEW SUBJECT
+        #every time we need to check for String object because SOAP::MAPPING nil is not defined
+        (remote_subjects[count].label.is_a?(String))? label = remote_subjects[count].label : label = ""
+        (remote_subjects[count].labelEn.is_a?(String))? label_en = remote_subjects[count].labelEn : label_en = ""
+        (remote_subjects[count].code.is_a?(String))? code = remote_subjects[count].code : label = ""
+        #(remote_subjects[count].idDepartment.is_a?(String))? department_id = remote_subjects[count].idDepartment : department_id =  ""        
+        subject = Subject.create(:label => label, :label_en => label_en, :code => code)
+        if Department.find(:first, :conditions => ["id = ?", remote_subjects[count].idDepartment])
+          subject.departments << Department.find(remote_subjects[count].idDepartment.to_i)
+        else
+          @@mylog.debug "Department IS MISSING in our database! for subject %s" % subject.code
+          missing_departments = missing_departments + 1          
+        end
+        @@mylog.debug "Subject %s is created" % remote_subjects[count].code
+        created_subjects = created_subjects + 1
+      end
+    end
+    @@mylog.info "%i subjects are created" % created_subjects
+    @@mylog.info "%i subjects are updated" % updated_subjects
+    @@mylog.info "ERROR - %i departments ARE MISSING in our database. See log above." % missing_departments    
+  end
+
   # approve all indexes 
   def self.mass_approve(indices)
     @@mylog.info "There are #{indices.size} indices"

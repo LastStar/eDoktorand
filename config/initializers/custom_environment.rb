@@ -20,3 +20,5 @@ FACULTY_CFG =
 ActionMailer::Base.delivery_method = :sendmail
 
 
+# webservices stuff
+Dir['app/apis/*.rb'].each {|file| require file}
