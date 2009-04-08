@@ -26,6 +26,8 @@
       </td>
       <td>
         <% unless @user.has_role?('department_secretary') %>
+	  <span id='foreign<%=candidate.id%>'><%= (candidate.foreign_pay != true)? link_to_remote(t(:message_5, :scope => [:txt, :view, :candidates, :_list, :rhtml]), :url => { :action => 'set_foreign_payer', :id => candidate.id}, :method => :get, :update => "foreign#{candidate.id}") : t(:message_6, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>
+          </span>
           <%= link_to 'detail', :action => 'show', :id => candidate%>
         <%end%>
         <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>

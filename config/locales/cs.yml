@@ -1993,6 +1993,8 @@ cs_CZ:
             message_2: smazat
             message_3: obor
             message_4: forma studia
+            message_5: nastav C.P.
+            message_6: cizí plátce
         _corridor_summary: 
           rhtml: 
             message_0: prezenční
@@ -2117,6 +2119,7 @@ cs_CZ:
         message_5: e-mail odeslán
         message_6: e-mail odeslán
         message_7: Uchazeči o studium
+        message_10: cizí plátce
       themes: 
         message_0: nahrání metodiky
         message_1: nahrání metodiky
