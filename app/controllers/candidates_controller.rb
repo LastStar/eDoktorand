@@ -43,6 +43,20 @@ class CandidatesController < ApplicationController
     render(:action => 'list')
   end
 
+  def set_foreign_payer
+    candidate = Candidate.find(params[:id])
+    candidate.update_attribute(:foreign_pay,true)
+    render :inline => "<%= t(:message_10, :scope => [:txt, :controller, :candidates])%>"
+
+  end
+
+  def set_no_foreign_payer
+    candidate = Candidate.find(params[:id])
+    candidate.update_attribute(:foreign_pay,false)
+    #render :inline => "<%= link_to_remote('set foreign payer', :url => { :action => 'set_foreign_payer', :id => candidate.id}, :method => :get, :update => 'foreign#{candidate.id}')"
+  end
+
+
   # lists all candidates ordered by category
   def list_admission_ready
      if params[:coridor]
