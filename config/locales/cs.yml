@@ -435,7 +435,7 @@ cs_CZ:
         message_42: prospěl
         message_31: zapsán
         message_20: seznam
-        message_19: 
+        message_19: jen nepřipravení
         message_0: odsouhlasit
         message_43: neschválit
         message_32: nepřijmutí
@@ -465,7 +465,7 @@ cs_CZ:
         message_6: zapsat
         message_38: nepřijmout
         message_27: "By corridors\") : _(\"By departments"
-        message_16: "Filter is set to:"
+        message_16: "Filtr je nastaven:"
         message_7: Filtr není nastaven
         message_39: neprospěl
         message_28: přijmout na odvolání
