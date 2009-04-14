@@ -7,10 +7,9 @@ class TranslateController < ActionController::Base
   
   def index
     initialize_keys
-    remove_hash_keys
     filter_by_key_pattern
     filter_by_text_pattern
-    filter_by_translated
+    filter_by_translated_or_changed
     sort_keys
     paginate_keys
     @total_entries = @keys.size
@@ -19,33 +18,33 @@ class TranslateController < ActionController::Base
   def translate
     I18n.backend.store_translations(@to_locale, Translate::Keys.to_deep_hash(params[:key]))
     Translate::Storage.new(@to_locale).write_to_file
+    Translate::Log.new(@from_locale, @to_locale, params[:key].keys).write_to_file
     force_init_translations # Force reload from YAML file
     flash[:notice] = "Translations stored"
     redirect_to params.slice(:filter, :sort_by, :key_type, :key_pattern, :text_type, :text_pattern).merge({:action => :index})
   end
+
+  def reload
+    Translate::Keys.files = nil
+    redirect_to :action => 'index'
+  end
   
   private
   def initialize_keys
-    translate_keys = Translate::Keys.new
-    @files = translate_keys.files
-    @keys = (@files.keys.map(&:to_s) +
-      [:en, default_locale].uniq.map { |locale| translate_keys.i18n_keys(locale) }.flatten).uniq    
-  end
-
-  def remove_hash_keys
+    @files = Translate::Keys.files
+    @keys = (@files.keys.map(&:to_s) + Translate::Keys.new.i18n_keys(@from_locale)).uniq    
     @keys.reject! do |key|
-      [@from_locale, @to_locale].any? do |locale|
-        lookup(:en, key).present? && lookup(:en, key).class != String
-      end
+      from_text = lookup(@from_locale, key)
+      (@from_locale != @to_locale && !from_text.present?) || !from_text.is_a?(String)
     end
   end
-  
+
   def lookup(locale, key)
     I18n.backend.send(:lookup, locale, key)
   end
   helper_method :lookup
   
-  def filter_by_translated
+  def filter_by_translated_or_changed
     params[:filter] ||= 'all'
     return if params[:filter] == 'all'
     @keys.reject! do |key|
@@ -54,6 +53,8 @@ class TranslateController < ActionController::Base
         lookup(@to_locale, key).present?
       when 'translated'
         lookup(@to_locale, key).blank?
+      when 'changed'
+        old_from_text(key).blank? || lookup(@from_locale, key) == old_from_text(key)
       else
         raise "Unknown filter '#{params[:filter]}'"
       end
@@ -141,5 +142,19 @@ class TranslateController < ActionController::Base
     session[:to_locale] = params[:to_locale] if params[:to_locale].present?
     @from_locale = session[:from_locale].to_sym
     @to_locale = session[:to_locale].to_sym
+  end
+  
+  def old_from_text(key)
+    return @old_from_text[key] if @old_from_text && @old_from_text[key]
+    @old_from_text = {}
+    text = key.split(".").inject(log_hash) do |hash, k|
+      hash ? hash[k] : nil
+    end
+    @old_from_text[key] = text
+  end
+  helper_method :old_from_text
+  
+  def log_hash
+    @log_hash ||= Translate::Log.new(@from_locale, @to_locale, {}).read
   end
 end
