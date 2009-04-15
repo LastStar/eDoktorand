@@ -6,10 +6,10 @@
   <% end %>
 </ul>
 <ul id='documents' style='display: none'>
-<li><a href="/pdf/StudijniZkusebniRadDSP2006.pdf"><%= t(:message_1, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
-<li><a href="/pdf/StipendijniRadDSP2006.pdf"><%= t(:message_2, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
-<li> <a href="/pdf/UbytovaciStipendia2006-07.pdf"><%= t(:message_3, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
-<li><a href="/documents/how_to"><%= t(:message_4, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<li><a href="/pdf/StudijniZkusebniRadDSP2006.pdf" target="_blank"><%= t(:message_1, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<li><a href="/pdf/StipendijniRadDSP2006.pdf" target="_blank"><%= t(:message_2, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<li> <a href="/pdf/UbytovaciStipendia2006-07.pdf" target="_blank"><%= t(:message_3, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<li><a href="/documents/how_to" target="_blank"><%= t(:message_4, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
 </ul>
 <%= render :partial => 'help' %>
 <%= render(:partial => 'shared/student_detail', :locals => {:index => @index}) %>
