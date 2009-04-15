@@ -40,12 +40,15 @@
       </div>
   <% end %>
   <%= view_filter_settings('filter_view') %>
+  <div id='candidates_delete' class='links'>
+    <%=link_to_remote(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :url => { :action => 'delete_all_candidates'}, :method => :get, :update => "candidates_delete")%>
+  </div>
 <% end %>
 <% unless @candidates.empty? %>
   <%= render(:partial => 'list') %>
 
   <div class='links'>
-    <%= list_links %>                      
+    <%= list_links %>                     
   </div>
   <% unless session[:back_page] == 'list_all' %>
     <%= will_paginate %>

@@ -56,6 +56,17 @@ class CandidatesController < ApplicationController
     #render :inline => "<%= link_to_remote('set foreign payer', :url => { :action => 'set_foreign_payer', :id => candidate.id}, :method => :get, :update => 'foreign#{candidate.id}')"
   end
 
+  def delete_all_candidates
+    render :partial => "delete_all_candidates"
+  end
+
+  def destroy_all_candidates
+    date = params["candidate"]["created_on(1i)"] +"-"+ params["candidate"]["created_on(2i)"] +"-"+ params["candidate"]["created_on(3i)"]
+    candidates = Candidate.find(:all, :conditions => ["created_on < ?",date])
+    @size = candidates.size
+    candidates.each {|c| c.destroy}
+    render :inline => "<%= t(:message_11, :scope => [:txt, :controller, :candidates]) %> <%= @size.to_s %> <%= t(:message_12, :scope => [:txt, :controller, :candidates]) %>"
+  end
 
   # lists all candidates ordered by category
   def list_admission_ready

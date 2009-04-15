@@ -1933,6 +1933,12 @@ cs_CZ:
             message_16: po kliknutí seřadí uchazeče podle příjmení na 1 stránce
             message_7: po kliknutí zobrazí se stránkováním zapsané uchazeče
             message_17: po kliknutí seřadí uchazeče podle data změny na 1 stránce
+            message_21: smazat všechny uchazeče
+            
+        _delete_all_candidates:
+          rhtml:
+            message_1: k datu
+
         edit: 
           rhtml: {}
 
@@ -2120,6 +2126,8 @@ cs_CZ:
         message_6: e-mail odeslán
         message_7: Uchazeči o studium
         message_10: cizí plátce
+        message_11: Smazáno
+        message_12: uchazečů
       themes: 
         message_0: nahrání metodiky
         message_1: nahrání metodiky
