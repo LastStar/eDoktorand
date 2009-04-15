@@ -15,7 +15,9 @@ class Student < Examinator
 
   #returns display name for printing
   def display_name
-    "#{lastname} #{firstname}"
+    disp_name = "#{lastname} #{firstname}"
+    disp_name << (title_before ? ", %s" % title_before.label : '')
+    return disp_name
   end
 
   # returns account for printing
