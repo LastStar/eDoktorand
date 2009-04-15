@@ -1,0 +1,5 @@
+<% form_remote_tag( :url => {:action => "destroy_all_candidates"}, :update => "candidates_delete") do %>
+  <%= t(:message_1, :scope => [:txt, :view, :candidates, :_delete_all_candidates, :rhtml])%> :
+  <%= del_date_select%>
+  <%= submit_tag("ok") %>
+<% end %>

@@ -218,3 +218,8 @@ module CandidatesHelper
     [t(:message_43, :scope => [:txt, :helper, :candidates]), t(:message_44, :scope => [:txt, :helper, :candidates])][id]
   end
 end
+
+  def del_date_select
+    date_select 'candidate', 'created_on', :start_year => Date.today.year,  :end_year => Date.today.year - 60,
+    :order => [:day, :month, :year], :use_month_numbers => true
+  end
