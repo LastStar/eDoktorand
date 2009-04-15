@@ -4,3 +4,4 @@ locale/*
 db/moje
 db/moje~
 tmp/*
+db/schema.rb
