@@ -1,0 +1,18 @@
+---
+title: Development Roadmap
+extension: html
+filter:
+  - erb
+  - textile
+---
+
+Here are some basic guidelines on the list of features and target releases.
+
+| *Feature* | *Target Release* |
+| Loading of custom filters by @rtex@ executable | 2.1 |
+| Access to LaTeX filters from plugins | 2.1 |
+| "Merb":http://merbivore.com plugin support | 2.2 |
+| "Sinatra":http://sinatrarb.com plugin support | 2.2 |
+| Built-in Queuing/Offload for asynchronous processing | TBD |
+
+Have more ideas?  "Contact":/contact us.

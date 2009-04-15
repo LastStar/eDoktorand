@@ -1,0 +1,66 @@
+---
+extension: html
+filter:    erb
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title><%= @page.title %></title>
+   <meta name="author" content="<%= @page.author %>" />
+
+   <!--- Blueprint CSS Framework -->
+   <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" />
+
+   <!-- CodeRay syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/uv/<%= UV_THEME %>.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen, projection" />
+</head>
+<body>
+  
+<div id='legacy'>
+  <p><strong>RTeX has been updated for Rails 2.</strong> The v1 branch (supporting Rails 1) is available <a href='http://rubyforge.org/scm/?group_id=2471'>from Subversion at Rubyforge</a>.
+</div>
+
+<div class="container">
+
+   <div class="column span-20 prepend-2 append-2 first last" id="header">
+     <a href='/'><img src='/images/logo.png' alt='RTeX'/></a>
+   </div>
+
+   <div class="column span-15 prepend-2 first">
+     <dl id='release'>
+       <dt>Current Version:</dt>
+       <dd>
+         <a href='/download'><%= stable_version %></a>
+       </dd>
+     </dl>
+     <% if !@page.homepage && @page.title %>
+       <%= breadcrumbs(@page) %>
+       <h1><%= @page.title %></h1>
+     <% end %>
+      <div id='content'><%= @content %></div>
+   </div>
+
+   <ul id='menu' class="column span-5 append-2 last">
+     <li class='faq'><a href='/faq'>FAQ</a></li>
+     <li class='download'><a href='/download'>Download</a></li>
+     <li class='manual'><a href='/manual'>Manual</a></li>
+     <li class='roadmap'><a href='/roadmap'>Development Roadmap</a></li>
+     <li class='api'><a href='/api'>API Docs</a></li>
+     <li class='contribute'><a href='/contribute'>Contribute!</a></li>
+     <li class='contact'><a href='/contact'>Contact</a></li>
+   </ul>
+
+   <div class="column span-20 prepend-2 append-2 first last" id="footer">
+     <p>RTeX is &copy; 2006-2008 <a href='/contact'>Bruce Williams, Wiebe Cazemier</a>, released under the MIT License.<br/>This website was created with <a href="http://webby.rubyforge.org">Webby</a>, with icons from <a href='http://www.pinvoke.com/'>pinvoke</a>.</p>
+   </div>
+
+</div>
+</body>
+</html>

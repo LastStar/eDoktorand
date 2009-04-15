@@ -1,0 +1,10 @@
+---
+title: Contact Us
+extension: html
+filter:
+- textile
+---
+
+| *Branch* | *Details* | *Maintainer* | *Contact* |
+| v2 | Supports Rails 2 | "Bruce Williams":http://codefluency.com | GitHub: "bruce":http://github.com/bruce, E-Mail: _bruce at codefluency dot com_ |
+| v1 | Supports Rails 1 | "Wiebe Cazemier":http://www.halfgaar.net | E-Mail: _wiebe at halfgaar dot net_ |

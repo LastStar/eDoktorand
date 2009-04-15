@@ -44,6 +44,11 @@ class DocumentsController < ApplicationController
   # prints diploma supplement to pdf
   def diploma_supplement
     @diploma_supplement = DiplomaSupplement.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf
+    end
+
   end
 
   # prints list of tutors by coridors to pdf

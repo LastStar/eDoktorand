@@ -80,6 +80,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'exams/year/:this_year', :controller => 'exams', :action => 'index'
 
   # Install the default route as the lowest priority.
-  map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  map.connect ':controller/:action/:id'
 end

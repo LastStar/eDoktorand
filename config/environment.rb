@@ -18,7 +18,7 @@ Rails::Initializer.run do |config|
 
   config.action_controller.session_store = :active_record_store
 
-  config.plugins = [ :translate, :exception_notification, :ar_fixtures, :acts_as_audited ]
+  config.plugins = [ :translate, :exception_notification, :ar_fixtures, :acts_as_audited, :rtex ]
 
   config.gem "log4r"
   config.gem "mongrel"
