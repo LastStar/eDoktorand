@@ -322,6 +322,34 @@ class CSVExporter
     end
   end
 
+  def self.export_address(students)
+    outfile = File.open('students_address.csv', 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      csv << ['id', 'first name', 'last name', 'birth number', 'coridor id', 'faculty id', 'email', 'street', 'desc_number', 'orient_number', 'city', 'zip', 'state']
+      students.each do |s|
+        row = []
+        row << s.id
+        row << s.firstname
+        row << s.lastname
+        row << s.birth_number
+        row << s.index.coridor.name
+        row << s.index.faculty.name
+        row << s.email.andand.name
+        if s.address
+          row << s.address.street
+          row << s.address.desc_number
+          row << s.address.orient_number
+          row << s.address.city
+          row << s.address.zip
+          row << s.address.state      
+        end
+        csv << row
+      end
+      outfile.close
+    end
+  end
+
+
   def self.export_tutors_per_coridor
     outfile = File.open('tutors_per_coridor.csv', 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
