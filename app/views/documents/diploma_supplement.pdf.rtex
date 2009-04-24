@@ -125,7 +125,7 @@ Date of doctoral thesis defense: {\bf <%= @diploma_supplement.defense_passed_on 
 \multicolumn{2}{c}{{\bf Overall classification scheme}} \\
 \hline
 Prospěl & Passed \\
-Nerospěl & Failed \\
+Neprospěl & Failed \\
 \end{tabular}
 \end{center}
 
