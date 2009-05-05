@@ -494,7 +494,7 @@ class Index < ActiveRecord::Base
   end
 
   def close_to_interupt_end_or_after?(months = 3)
-    interupt && !interupt.finished? && Time.today > (interupt.end_on - months.month)
+    interupt && !interupt.finished? && Time.now > (interupt.end_on - months.month)
   end
 
   def waits_for_scholarship_confirmation?
