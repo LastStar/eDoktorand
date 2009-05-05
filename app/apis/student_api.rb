@@ -55,14 +55,6 @@ class StudentApi < ActionWebService::API::Base
              :expects => [IndexHash],
              :returns => [:string]
 
-  api_method :create_student,
-             :expects => [StudentHash],
-             :returns => [:string]
-
-  api_method :create_index,
-             :expects => [IndexHash],
-             :returns => [:string]
-
   # do not implement here
   api_method :get_uic_by_birth_num,
              :expects => [:string],
