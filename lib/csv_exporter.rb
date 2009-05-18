@@ -455,6 +455,23 @@ class CSVExporter
     end
   end
 
+  def self.export_year_exams_by_tutors(exam_date_from,exam_date_to)
+    @@mylog.info 'Exporting exams list by tutor from %s' %exam_date_from
+    outfile = File.open("exams_list_by_tutor_%s.csv" % exam_date_to, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      Tutor.find(:all, :include => :tutorship, :order => 'tutorships.coridor_id, lastname').each do |tutor|
+            @@mylog.debug tutor.id.to_s + " " + tutor.display_name
+            exams = Exam.count(:conditions => ["passed_on > ? and passed_on < ? and (first_examinator_id = ? or second_examinator_id = ? or third_examinator_id = ? or fourth_examinator_id = ? )",
+                                               exam_date_from, exam_date_to, tutor.id, tutor.id, tutor.id, tutor.id])          
+            @@mylog.debug exams
+            csv << [tutor.coridor.name, tutor.display_name, exams] if tutor.tutorship && exams > 0
+      end
+      outfile.close
+    end
+  end
+
+
+
 
   def self.export_for_board(department)
     department = department.id if department.is_a? Department
