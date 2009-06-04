@@ -4,6 +4,19 @@ web_service_api StudentApi
 web_service_dispatching_mode :direct
 web_service_scaffold :invoke
 
+  #update or create user
+  def update_user_with_uic(login_hash)
+    if student = Student.find_by_uic(login_hash.uic)
+      if student.user
+        student.user.update_with_hash(login_hash)
+      else
+        User.create_with_hash(login_hash, student.id)
+      end
+    else
+    return "Failed! No student"
+    end
+  end
+
   # service which returns student detail by uic
   def find_student_by_uic(uic)
     return Student.find_by_uic(uic).to_service_struct

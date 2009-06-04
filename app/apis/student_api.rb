@@ -38,7 +38,16 @@ class IndexHash < ActionWebService::Struct
   member :status_to, :string
 end
 
+class LoginHash < ActionWebService::Struct
+  member :uic, :int
+  member :loginname, :string
+end
+
 class StudentApi < ActionWebService::API::Base
+  api_method :update_user_with_uic,
+             :expects => [LoginHash],
+             :returns => [:string]
+
   api_method :find_student_by_uic,
              :expects => [:int],
              :returns => [StudentHash]

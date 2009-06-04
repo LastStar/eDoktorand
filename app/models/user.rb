@@ -43,6 +43,27 @@ class User < ActiveRecord::Base
     end
   end
  
+  ## updates itself from LoginHash
+  def update_with_hash(login_hash)
+    raise 'loginname needed' unless login_hash.loginname
+    self.login = login_hash.loginname
+    if self.save
+      return 'success'
+    else
+      return 'error'
+    end
+  end
+
+  def User.create_with_hash(login_hash,student_id)
+    raise 'loginname needed' unless login_hash.loginname
+    if User.create(:person_id => student_id, :login => login_hash.loginname)
+      return("success")
+    else
+      return("error")
+    end
+  end
+
+
   # checks if user has permission
   def has_permission?(permission)
     permission = permission.name if permission.is_a?(Permission)
