@@ -73,10 +73,13 @@ class StudentApi < ActionWebService::API::Base
              :expects => [:int],
              :returns => [:string]
 
+<<<<<<< HEAD:app/apis/student_api.rb
   api_method :get_account_uic_array,
              :returns => [[UicAccount]]
 
 
+=======
+>>>>>>> merged services to master:app/apis/student_api.rb
   # do not implement here
   api_method :get_uic_by_birth_num,
              :expects => [:string],
