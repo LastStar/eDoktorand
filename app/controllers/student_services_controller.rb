@@ -4,6 +4,30 @@ web_service_api StudentApi
 web_service_dispatching_mode :direct
 web_service_scaffold :invoke
 
+  #update or create user
+  def update_user_with_uic(login_hash)
+    if student = Student.find_by_uic(login_hash.uic)
+      if student.user
+        student.user.update_with_hash(login_hash)
+      else
+        User.create_with_hash(login_hash, student.id)
+      end
+    else
+    return "Failed! No student"
+    end
+  end
+
+  def get_account_by_uic(uic)
+    student = Student.find_by_uic(uic)
+    account = ""
+    account << student.index.full_account_number + "/" if student.index.account_number
+    account << student.index.account_bank_number if student.index.account_bank_number
+    if account == ""
+      account = "Nil account number"
+    end
+    return account
+  end
+
   # service which returns student detail by uic
   def find_student_by_uic(uic)
     return Student.find_by_uic(uic).to_service_struct
