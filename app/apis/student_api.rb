@@ -74,10 +74,13 @@ class StudentApi < ActionWebService::API::Base
              :returns => [:string]
 
 <<<<<<< HEAD:app/apis/student_api.rb
+<<<<<<< HEAD:app/apis/student_api.rb
   api_method :get_account_uic_array,
              :returns => [[UicAccount]]
 
 
+=======
+>>>>>>> merged services to master:app/apis/student_api.rb
 =======
 >>>>>>> merged services to master:app/apis/student_api.rb
   # do not implement here
