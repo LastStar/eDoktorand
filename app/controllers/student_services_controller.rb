@@ -17,6 +17,17 @@ web_service_scaffold :invoke
     end
   end
 
+  def get_account_by_uic(uic)
+    student = Student.find_by_uic(uic)
+    account = ""
+    account << student.index.full_account_number + "/" if student.index.account_number
+    account << student.index.account_bank_number if student.index.account_bank_number
+    if account == ""
+      account = "Nil account number"
+    end
+    return account
+  end
+
   # service which returns student detail by uic
   def find_student_by_uic(uic)
     return Student.find_by_uic(uic).to_service_struct
