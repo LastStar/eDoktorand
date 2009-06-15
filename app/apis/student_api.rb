@@ -43,6 +43,11 @@ class LoginHash < ActionWebService::Struct
   member :loginname, :string
 end
 
+class UicAccount < ActionWebService::Struct
+  member :uic, :int
+  member :account, :string
+end
+
 class StudentApi < ActionWebService::API::Base
   api_method :update_user_with_uic,
              :expects => [LoginHash],
@@ -67,6 +72,10 @@ class StudentApi < ActionWebService::API::Base
   api_method :get_account_by_uic,
              :expects => [:int],
              :returns => [:string]
+
+  api_method :get_account_uic_array,
+             :returns => [[UicAccount]]
+
 
   # do not implement here
   api_method :get_uic_by_birth_num,
