@@ -28,6 +28,23 @@ web_service_scaffold :invoke
     return account
   end
 
+  #return array of uic and bank account
+  def get_account_uic_array
+    uic_accounts = []
+    sql = "account_number is not null and account_number <> '' \
+      and people.sident is not null"
+    indices ||= Index.find(:all, 
+                           :conditions => sql, :order => 'department_id',
+                           :include => :student)
+    indices.each do |i|
+      service_struct = UicAccount.new
+      service_struct.uic = i.student.uic
+      service_struct.account = i.full_account_number + "/" +i.account_bank_number
+      uic_accounts << (service_struct)
+    end
+    return uic_accounts
+  end
+
   # service which returns student detail by uic
   def find_student_by_uic(uic)
     return Student.find_by_uic(uic).to_service_struct
