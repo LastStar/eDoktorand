@@ -58,6 +58,11 @@ table.scholarship_disponent{
   float: right;
 }
 
+a.facebook { background-image: url(/images/ico_facebook.gif);
+  background-position:left center;
+  background-repeat:no-repeat;
+  padding-left:15px;}
+
 tar { text-align: right }
 
 hr {
