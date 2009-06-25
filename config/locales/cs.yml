@@ -385,6 +385,9 @@ cs:
       types: {}
 
       scholarships: 
+        message_13: Špatné nebo chybějící číslo bankovního účtu.
+        message_14: Špatné nebo chybějící číslo banky u b.ú.
+        message_15: Chybí UIC.
         message_8: schválit
         message_9: kontrolní tabulka
         message_0: změnit
@@ -1553,6 +1556,9 @@ cs:
             message_15: Toto je pouze kontrolní tabulka!
             message_6: Akreditován
             message_7: Typ Stipendia
+            message_16: Studenti se špatnými nebo chybějícími údaji
+            message_17: Příjmení
+            message_18: Chybí v systému
         add: 
           rhtml: 
             message_0: částka

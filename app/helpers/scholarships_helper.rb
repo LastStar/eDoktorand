@@ -2,6 +2,16 @@ require 'scholarship_calculator'
 
 module ScholarshipsHelper
 
+  def describe_error(index)
+    if index.account_number == nil
+              return t(:message_13, :scope => [:txt, :helper, :scholarships])
+    elsif index.account_bank_number == nil
+              return t(:message_14, :scope => [:txt, :helper, :scholarships])
+    elsif index.student.uic == nil
+          return t(:message_15, :scope => [:txt, :helper, :scholarships])
+    end
+  end
+
   def detail_link(index)
     link_to_remote(image_tag('open.png'), 
                    :update => "scholarship_form_#{index.id}",

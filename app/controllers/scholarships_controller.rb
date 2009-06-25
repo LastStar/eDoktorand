@@ -126,6 +126,15 @@ class ScholarshipsController < ApplicationController
                                          :order => 'studies.id, people.lastname',
                                          :include => [:student, :study, :disert_theme])
     @show_table_message = 1
+    @bad_indices = []
+    for index in @indices
+      if index.account_number == nil || index.account_bank_number == nil ||
+      index.student.uic == nil
+        if index.has_any_scholarship?
+          @bad_indices << index
+        end
+      end
+    end
     render(:action => 'list')
   end
   
