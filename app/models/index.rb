@@ -650,8 +650,10 @@ class Index < ActiveRecord::Base
     service_struct.student_uic = self.student.uic
     service_struct.faculty_id = self.faculty.id
     service_struct.faculty_name = self.faculty.name
+    service_struct.faculty_code = self.faculty.short_name
     service_struct.department_id = self.department.id
     service_struct.department_name = self.department.name
+    service_struct.department_code = self.department.short_name
     service_struct.study_status = self.status
     service_struct.status_from = self.index.updated_on
     service_struct.status_to = ''

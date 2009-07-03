@@ -31,8 +31,10 @@ class IndexHash < ActionWebService::Struct
   member :student_uic, :int
   member :faculty_id, :int
   member :faculty_name, :string
+  member :faculty_code, :string
   member :department_id, :int
   member :department_name, :string
+  member :department_code, :string
   member :study_status, :string
   member :status_from, :string
   member :status_to, :string
