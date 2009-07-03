@@ -10,9 +10,29 @@
 <% codes.default = 0%>
 <% if @show_table_message == 1%>
   <br>
+  <div class='t1'> <%=t(:message_16, :scope => [:txt, :view, :scholarships, :list, :rhtml])%>:</div>
+  <br>
+  <table class="scholarship" align = "center">
+  <tr>
+    <th>ID</th>
+    <th>SIDENT</th>
+    <th><%=t(:message_17, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th>
+    <th><%=t(:message_18, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th>
+  </tr>
+  <%for bad_index in @bad_indices %>
+    <tr>
+      <td><%= bad_index.student.id %></td>
+      <td><%= bad_index.student.sident %></td>
+      <td><%= bad_index.student.lastname %></td>
+      <td><%= describe_error(bad_index)%></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+  <br>
   <div class='t1'><%= t(:message_1, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></div>
   <br>
-<% end %>
+  
 <table class = "scholarship" cellspacing = "0" cellpading = "0" align = "center">
 <tr>
   <th><%= t(:message_2, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th>
