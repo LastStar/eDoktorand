@@ -15,11 +15,13 @@
 
 <% if index.has_regular_scholarship? %>
 <td id='regular_scholarship_<%= index.id %>'>
+<div id='regular_<%= index.id %>'>
   <% if @user.has_role?('department_secretary') %>
     <%= index.regular_scholarship_or_create.amount %> <%= t(:message_0, :scope => [:txt, :view, :scholarships, :_index_line, :rhtml]) %>
   <% else %>
     <%= render(:partial => 'regular', :locals => {:index => index}) %>
   <% end %>
+</div>  
 </td>
 <% else %>
   <td>&nbsp;</td> 
@@ -32,5 +34,8 @@
 <% else %>
   <%= add_link(index) %>&nbsp;
 <% end %>
+</td>
+<td id='scholarship_creator_1<%= index.id%>'>
+  <div id='scholarship_creator_<%= index.id%>'><%=index.regular_scholarship.creator_of_scholarship if index.regular_scholarship%></div>
 </td>
 </tr>

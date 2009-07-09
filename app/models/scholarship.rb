@@ -5,6 +5,22 @@ class Scholarship < ActiveRecord::Base
   validates_presence_of :index, :amount
   acts_as_audited
 
+  def creator_of_scholarship
+    if self.updated_by_id != nil
+      if User.exists?(self.updated_by_id)
+        return User.find(self.updated_by_id).person.display_name
+      else
+        return ""
+      end
+    else
+      if User.exists?(self.created_by_id)
+        return User.find(self.created_by_id).person.display_name
+      else
+        return ""
+      end
+    end
+  end
+
   def self.find_unpayed_by_index(index)
     index = index.id if index.is_a? Index
     find(:first, :conditions => ['index_id = ? and payed_on is null', index])
