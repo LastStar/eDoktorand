@@ -224,8 +224,7 @@ module StudentsHelper
                     :url => {:action => 'show',
                             :controller => 'students',
                             :id => index}, 
-                    :loading => visual_effect(:pulsate, "index_line_#{index.id}"),
-                    :complete => evaluate_remote_response)
+                    :loading => visual_effect(:pulsate, "index_line_#{index.id}"))
   end
 
   def pass_link(what, index)
