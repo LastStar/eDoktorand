@@ -242,6 +242,58 @@ class CSVExporter
     outfile.close
   end
 
+  def self.export_candidates_evident_card(options = {})
+    unless cs = options[:candidates]
+      faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : Faculty.find(options[:faculty])
+      cs = Candidate.find(:all, :conditions => ['invited_on is not null' + 
+      #cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' + 
+        ' and coridor_id in (?)', faculty.coridors])
+      file = "candidate_evident_#{faculty.short_name}.csv"
+    else
+      file = 'candidates_evident.csv'
+    end
+    outfile = File.open(file, 'wb')
+    CSV::Writer.generate(outfile, ';') do |csv|
+      @@mylog.info "There are #{cs.size} candidates"
+      cs.each do |c|
+        row = []
+        row << c.id
+        if c.title_before
+          row << c.title_before.label 
+        else
+          row << ''
+        end
+        row << c.firstname
+        row << c.lastname
+        if c.title_after
+          row << c.title_after.label 
+        else
+          row << ''
+        end
+        row << c.email
+        row << c.birth_number
+        row << c.birth_on
+        row << c.birth_at
+        row << c.department.short_name
+        row << c.coridor.code
+        row << c.study.name
+        row << c.street
+        row << c.number
+        row << c.city
+        row << c.zip
+        if c.phone
+          row << c.phone
+        else
+          row << ''
+        end
+        
+        @@mylog.debug "Adding #{row}"
+        csv << row
+      end
+    end
+    outfile.close
+  end
+
 
   def self.export_students_with_bad_account
     file = "bad_account.csv"

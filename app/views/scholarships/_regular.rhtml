@@ -1,2 +1,8 @@
   <%= change_link(index) %>
   <%= index.regular_scholarship_or_create.amount %> <%= t(:message_0, :scope => [:txt, :view, :scholarships, :_regular, :rhtml]) %>
+  <%if @edit == 1 %>
+    <script>
+      Element.replace("scholarship_creator_<%=index.id%>","<%=index.regular_scholarship.creator_of_scholarship%>")
+    </script>
+  <% end %>
+  

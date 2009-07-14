@@ -1575,6 +1575,7 @@ cs:
             message_3: Forma studia
             message_4: Řádné
             message_5: Mimořádné
+            message_6: Vytvořil
         scholarship: 
           rhtml: {}
 
