@@ -16,7 +16,7 @@ class Index < ActiveRecord::Base
   
   PREFIX_WEIGHTS = [1, 2, 4, 8, 5, 10]
   ACCOUNT_WEIGHTS = [1, 2, 4, 8, 5, 10, 9, 7, 3, 6]
-  #TODO freeze them all
+  #TODO name scope them all
   NOT_FINISHED_COND = <<-SQL
     (indices.finished_on is null or indices.finished_on > ?)\
     and disert_themes.defense_passed_on is null

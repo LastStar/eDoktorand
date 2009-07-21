@@ -8,6 +8,7 @@ class Student < Examinator
   has_one :candidate
   has_and_belongs_to_many :probation_terms
 
+  #TODO delegate
   # returns faculty on which student is
   def faculty
     index.faculty
@@ -20,6 +21,7 @@ class Student < Examinator
     return disp_name
   end
 
+  #TODO delegate
   # returns account for printing
   def account
     i = self.index
@@ -32,6 +34,7 @@ class Student < Examinator
     end
   end
 
+  #TODO delegate
   def coridor
     index.coridor
   end
@@ -41,10 +44,12 @@ class Student < Examinator
     Address.create_habitat_for(id)
   end
 
+  #TODO delegate
   def has_study_plan?
     !index.study_plan.nil?
   end
 
+  #TODO delegate
   def study_plan
     index.study_plan
   end
@@ -85,6 +90,7 @@ class Student < Examinator
     display_name <=> other.display_name
   end
 
+  #TODO delegate
   def department
     index.department
   end
