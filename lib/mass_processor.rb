@@ -6,6 +6,8 @@ class MassProcessor
   @@mylog.outputters = Outputter.stdout
   @@mylog.level = 1
 
+  SERVICE_URL = "http://193.84.33.16/axis2"
+  SERVICE_PATH = "/rest/GetSidentService/getSidentByBirthNum?rc=%s"
   #update or create subject from web service
   def self.update_subjects
     @@mylog.info "Starting connect to remote web service..."
@@ -176,8 +178,7 @@ class MassProcessor
   def self.repair_sident(students)
     @@mylog.info "There are %i students" % students.size
     @client = SOAP::NetHttpClient.new
-    #TODO change URL to params in config
-    service = "http://193.84.34.34:8081/axis2/rest/GetSidentService/getSidentByBirthNum?rc=%s"
+    service = SERVICE_URL + SERVICE_PATH
     students.each do |student|
       @@mylog.info "Procesing student #%i" % student.id
 

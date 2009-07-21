@@ -93,8 +93,8 @@ class Student < Examinator
   def to_service_struct
     service_struct = StudentHash.new
 
-    service_struct.uic = self.uic
     service_struct.student_id = self.id
+    service_struct.uic = self.uic
     service_struct.firstname = self.firstname
     service_struct.lastname = self.lastname
     service_struct.birthname = self.birthname
@@ -105,8 +105,8 @@ class Student < Examinator
     service_struct.sex = self.sex
     service_struct.created_on = self.created_on
     service_struct.updated_on = self.updated_on
-    service_struct.title_before = self.title_before ? self.title_before.name : ''
-    service_struct.title_after = self.title_after ? self.title_after.name : ''
+    service_struct.title_before = self.title_before ? self.title_before.label : ''
+    service_struct.title_after = self.title_after ? self.title_after.label : ''
     service_struct.email = self.email ? self.email.name : ''
     service_struct.phone = self.phone ? self.phone.name : ''
 
