@@ -116,6 +116,7 @@ class StudentsController < ApplicationController
     @form_url[:controller] = params['form_controller'] || 'students'
     @date = params[:date] ? Time.parse(params[:date]) : Date.today
     @day = params[:day]
+    @form_action = params[:form_action]
   end
 
   def confirm_approve
@@ -247,9 +248,9 @@ class StudentsController < ApplicationController
 
   def end_study
   end
-
-  def change_tutor
-  end
+  #propably not used, should be removed
+  #def change_tutor
+  #end
 
   def end_study_confirm
     @end_study_subject = params[:end_study_subject]

@@ -1031,7 +1031,8 @@ cs:
 
         time_form: 
           rhtml: 
-            message_0: 
+            message_0: Ukončit k
+            message_1: Změnit formu k
         scholarship: 
           rhtml: 
             message_0: Stipendia pro studenty
