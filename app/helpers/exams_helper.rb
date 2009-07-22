@@ -21,7 +21,7 @@ module ExamsHelper
   # prints link to exam detail
   def detail_link(exam)
       link_to_remote(t(:message_5, :scope => [:txt, :helper, :exams]), :url => {:action => 'detail',
-        :id => exam.id}, :complete => evaluate_remote_response,
+        :id => exam.id}, 
                     :loading => visual_effect(:pulsate, "detail_link_%i" % exam.id))
   end
 

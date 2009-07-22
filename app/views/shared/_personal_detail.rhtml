@@ -3,16 +3,16 @@
     <%= student_name_line(index.student) %>
   </li>
   <li>
-    <%= attribute_line(index.student, :birthname) %><%= t(:message_new, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+    <%= attribute_line(index.student, :birthname) %><%= t(:message_6, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <%= birth_date_line(index.student) %>
   <%= birth_number_line(index.student) %>
   <%= birth_place_line(index.student) %>
   <li>
-    <%= attribute_line(index.student, :email, :name) %><%=t(:message_new, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+    <%= attribute_line(index.student, :email, :name) %><%=t(:message_7, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
-    <%= attribute_line(index.student, :phone, :name) %><%=t(:message_new, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+    <%= attribute_line(index.student, :phone, :name) %><%=t(:message_8, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
     <%= "#{long_info_helper(index.coridor.name)}#{t(:message_0, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>

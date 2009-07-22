@@ -1447,6 +1447,14 @@ cs:
             message_3: Ročník
             message_4: Začátek studia
             message_5: Občanství
+            message_6: Rodné příjmení
+            message_7: Email
+            message_8: Telefon
+            message_9: Ulice
+            message_10: Číslo popisné
+            message_11: Obec
+            message_12: Psč
+            
         _final_exam: 
           rhtml: 
             message_0: semestr
