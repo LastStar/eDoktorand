@@ -1,8 +1,8 @@
 <% form_remote_tag(:url => @form_url, :complete => evaluate_remote_response) do -%>
-<% if @form_action == 'finish' %>
-  <%= submit_tag(t(:message_0, :scope => [:txt, :view, :students, :time_form, :rhtml])) %>
-<% elsif @form_action == 'switch_study' %>
+<% if @form_action == 'switch_study' %>
    <%= submit_tag(t(:message_1, :scope => [:txt, :view, :students, :time_form, :rhtml])) %>
+<% else %>
+  <%= submit_tag(t(:message_0, :scope => [:txt, :view, :students, :time_form, :rhtml])) %>
 <% end %>
 <%= select_day(@date) if @day %>
 <%= select_month(@date, :use_month_numbers => true) %>

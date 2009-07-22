@@ -9,7 +9,7 @@
   <label><%= "#{t(:message_4, :scope => [:txt, :view, :interupts, :index, :rhtml])}:" %></label> 
   <%= text_area('interupt', 'note') %><br /> 
   <label><%= "#{t(:message_5, :scope => [:txt, :view, :interupts, :index, :rhtml])}:" %></label>
-  <%= select('interupt', 'plan_changed', yes_no_options) %><br /> 
+  <%= select('interupt', 'plan_changed', yes_no_options) %><br />
   <%= hidden_field('interupt', 'index_id') %>
 </fieldset>
 <%= submit_tag(t(:message_6, :scope => [:txt, :view, :interupts, :index, :rhtml])) %>

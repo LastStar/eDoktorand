@@ -338,13 +338,13 @@ cs:
         message_33: stipendia
         message_22: obory
         message_11: vyjádření děkana
-        message_2: "yes"
+        message_2: "Ano"
         message_56: Jméno a příjmení
         message_45: schválit
         message_34: Místo narození
         message_23: uchazeči
         message_12: semestr
-        message_3: "no"
+        message_3: "Ne"
         message_57: Jméno a příjmení
         message_46: neschválit
         message_35: Datum narození
