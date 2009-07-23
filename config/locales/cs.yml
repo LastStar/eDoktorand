@@ -1017,6 +1017,9 @@ cs:
       students: 
         _index_line: 
           rhtml: {}
+        mail_list:
+          rhtml:
+            message_0: Seznam e-mailů
         show:
           rjs:
             message_0: odeslat
