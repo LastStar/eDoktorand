@@ -1612,6 +1612,7 @@ cs:
             message_4: Typ Stipendia
             message_5: Disponent
             message_6: Amount (CZK)
+            message_7: Vyplacení stipendia trvá týden
         _add: 
           rhtml: 
             message_0: částka
