@@ -477,6 +477,7 @@ cs:
         message_46: jen pozvaní
         message_47: jen přijatí
         message_48: jen zapsaní
+        
       terms: 
         message_8: opravit
         message_9: smazat
@@ -2029,6 +2030,7 @@ cs:
             message_4: forma studia
             message_5: nastav C.P.
             message_6: cizí plátce
+            message_7: Jste si jistý?
         _corridor_summary: 
           rhtml: 
             message_0: prezenční
