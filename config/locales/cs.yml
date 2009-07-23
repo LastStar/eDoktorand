@@ -388,6 +388,8 @@ cs:
         message_13: Špatné nebo chybějící číslo bankovního účtu.
         message_14: Špatné nebo chybějící číslo banky u b.ú.
         message_15: Chybí UIC.
+        message_16: Chybí SIDENT (-666).
+        message_17: Chybí SIDENT.
         message_8: schválit
         message_9: kontrolní tabulka
         message_0: změnit

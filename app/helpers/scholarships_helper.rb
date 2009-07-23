@@ -3,13 +3,23 @@ require 'scholarship_calculator'
 module ScholarshipsHelper
 
   def describe_error(index)
+    message = ""
     if index.account_number == nil
-              return t(:message_13, :scope => [:txt, :helper, :scholarships])
-    elsif index.account_bank_number == nil
-              return t(:message_14, :scope => [:txt, :helper, :scholarships])
-    elsif index.student.uic == nil
-          return t(:message_15, :scope => [:txt, :helper, :scholarships])
+              message = message + t(:message_13, :scope => [:txt, :helper, :scholarships]) + " "
     end
+    if index.account_bank_number == nil
+              message = message + t(:message_14, :scope => [:txt, :helper, :scholarships]) + " "
+    end
+    if index.student.uic == nil
+          message = message + t(:message_15, :scope => [:txt, :helper, :scholarships]) + " "
+    end
+    if index.student.sident == -666
+          message = message + t(:message_16, :scope => [:txt, :helper, :scholarships]) + " "
+    end
+    if index.student.sident == nil
+          message = message + t(:message_17, :scope => [:txt, :helper, :scholarships]) + " "    
+    end
+    return message
   end
 
   def detail_link(index)

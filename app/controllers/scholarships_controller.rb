@@ -127,9 +127,10 @@ class ScholarshipsController < ApplicationController
                                          :include => [:student, :study, :disert_theme])
     @show_table_message = 1
     @bad_indices = []
+    #TO DO rewrite to identify bad index by itself - method in index model
     for index in @indices
       if index.account_number == nil || index.account_bank_number == nil ||
-      index.student.uic == nil
+      index.student.uic == nil || index.student.sident == -666 || index.student.sident == nil
         if index.has_any_scholarship?
           @bad_indices << index
         end
