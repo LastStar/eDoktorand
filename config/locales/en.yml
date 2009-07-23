@@ -698,11 +698,12 @@ en:
 
         employers: 
           rhtml: 
-            message_0: 
+            message_0: Use firefox !! 
         documents: 
           rhtml: 
             message_0: 
             message_1: loading ...
+            message_2: Use firefox !! 
         coridors: 
           rhtml: {}
 

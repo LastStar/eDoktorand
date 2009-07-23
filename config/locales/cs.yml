@@ -706,11 +706,12 @@ cs:
 
         employers: 
           rhtml: 
-            message_0: 
+            message_0: Používejte firefox !!
         documents: 
           rhtml: 
             message_0: 
             message_1: nahrávám
+            message_2: Používejte firefox !!
         coridors: 
           rhtml: {}
 
