@@ -473,6 +473,10 @@ cs:
         message_39: neprospěl
         message_28: přijmout na odvolání
         message_17: po kliknutí zobrazí se stránkováním všechny uchazeče
+        message_45: jen připravení
+        message_46: jen pozvaní
+        message_47: jen přijatí
+        message_48: jen zapsaní
       terms: 
         message_8: opravit
         message_9: smazat
@@ -1957,6 +1961,7 @@ cs:
             message_7: po kliknutí zobrazí se stránkováním zapsané uchazeče
             message_17: po kliknutí seřadí uchazeče podle data změny na 1 stránce
             message_21: smazat všechny uchazeče
+            
             
         _delete_all_candidates:
           rhtml:
