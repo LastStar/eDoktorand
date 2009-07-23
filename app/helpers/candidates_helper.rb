@@ -120,11 +120,28 @@ module CandidatesHelper
 
   # prints sorting tags
   def filter_tags(action, args, titles, options)
+    breakpoint
     links = '&nbsp;' + link_to("<span title='"+t(:message_17, :scope => [:txt, :helper, :candidates])+"'>"+t(:message_18, :scope => [:txt, :helper, :candidates])+"</span>", :action => '')
+    
     i = 0
     for arg in args
       links << '&nbsp;'
-      links << link_to("<span title='"+ titles[i] +"'>" + t(:message_19, :scope => [:txt, :helper, :candidates]) + "</span>", :action => action, :filter => arg)
+      if arg == "unready"
+        message = t(:message_19, :scope => [:txt, :helper, :candidates])
+      end
+      if arg == "ready"
+        message = t(:message_45, :scope => [:txt, :helper, :candidates])
+      end
+      if arg == "invited"
+        message = t(:message_46, :scope => [:txt, :helper, :candidates])
+      end
+      if arg == "admited"
+        message = t(:message_47, :scope => [:txt, :helper, :candidates])
+      end
+      if arg == "enrolled"
+        message = t(:message_48, :scope => [:txt, :helper, :candidates])
+      end
+      links << link_to("<span title='"+ titles[i] +"'>" + message + "</span>", :action => action, :filter => arg)
       i = i+1;
     end
     content_tag('div', options[:message] + links, :class => :links)

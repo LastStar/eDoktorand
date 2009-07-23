@@ -475,6 +475,11 @@ cs:
         message_39: neprospěl
         message_28: přijmout na odvolání
         message_17: po kliknutí zobrazí se stránkováním všechny uchazeče
+        message_45: jen připravení
+        message_46: jen pozvaní
+        message_47: jen přijatí
+        message_48: jen zapsaní
+        
       terms: 
         message_8: opravit
         message_9: smazat
@@ -1960,6 +1965,7 @@ cs:
             message_17: po kliknutí seřadí uchazeče podle data změny na 1 stránce
             message_21: smazat všechny uchazeče
             
+            
         _delete_all_candidates:
           rhtml:
             message_1: k datu
@@ -2026,6 +2032,7 @@ cs:
             message_4: forma studia
             message_5: nastav C.P.
             message_6: cizí plátce
+            message_7: Jste si jistý?
         _corridor_summary: 
           rhtml: 
             message_0: prezenční
