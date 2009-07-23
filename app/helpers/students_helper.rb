@@ -1,5 +1,11 @@
 module StudentsHelper
 
+  def admin_edit_mail_link(index)
+    link_to_remote(image_tag('change.png'),
+                   :url => {:action => 'admin_edit_mail', :id => index.id},
+                   :update => "index_%i" % index.id)
+  end
+
   # prints action links on student
   def student_action_links(index)
     links = []

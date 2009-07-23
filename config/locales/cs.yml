@@ -1076,6 +1076,7 @@ cs:
             message_0: Výpis studentů
             message_1: jen vybrané
             message_2: Nenalezeni žádní studenti. Použijte filtry ke změně výběru.
+            message_3: e-maily
         edit_citizenship: 
           rhtml: {}
 

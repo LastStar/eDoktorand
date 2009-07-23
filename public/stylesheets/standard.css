@@ -522,6 +522,9 @@ table#atestation_table tr {margin: 1px;border-bottom: 1px solid #ddc;}
 table#tutors_table {border-collapse: collapse;table-layout: auto;width: 100%;}
 table#tutors_table td {padding-left: .5ex; font-size: 9pt}
 table#tutors_table tr.line {margin: 1px;border-bottom: 1px solid #ddc;}
+table#emails_table {border-collapse: collapse;table-layout: auto;width: 100%;}
+table#emails_table td {padding-left: .5ex; font-size: 9pt}
+table#emails_table tr.line {margin: 1px;border-bottom: 1px solid #ddc;}
 table#diploma_table {border-collapse: collapse;table-layout: auto;width: 100%;}
 table#diploma_table th {text-align: left; padding-left: .5ex; font-size: 9pt}
 table#diploma_table td {padding-left: .5ex; font-size: 9pt}

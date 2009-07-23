@@ -12,6 +12,27 @@ class StudentsController < ApplicationController
   before_filter :prepare_conditions, :prepare_student
 
 
+  def mail_list
+    @indices = Index.find_for(@user, :order => 'people.lastname')
+  end
+  
+  def admin_edit_mail
+    @index = Index.find(params[:id])
+    if @index.student.email != nil
+      render :partial => "admin_edit_mail"
+    else
+      render :partial => "admin_create_mail"
+    end
+  end
+  
+  def admin_update_mail
+    @index = Index.find(params[:index][:id])
+    email = @index.student.email_or_new
+    email.update_attribute(:name, params[:student][:email])
+    @index = Index.find(params[:index][:id])
+    render :partial => "admin_show_mail"
+  end
+
   # main page with students for employers
   def index
   end

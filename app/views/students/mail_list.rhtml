@@ -1,0 +1,16 @@
+<h5><%= t(:message_0, :scope => [:txt, :view, :students, :mail_list, :rhtml]) + "(#{@indices.size})" %></h5>
+<table id="emails_table">
+  <tbody>
+  <% for index in @indices %>
+    <tr id='index_<%=index.id%>' class='line'>
+      <td><%=index.student.display_name%></td>
+      <td>
+        <%= admin_edit_mail_link(index) %>
+          <% if index.student.email %>
+            <%=index.student.email.name%>      
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+ </tbody>
+</table>

@@ -1,0 +1,7 @@
+<td><%=@index.student.display_name%></td>
+<td>
+  <%= admin_edit_mail_link(@index) %>
+   <% if @index.student.email %>
+      <%=@index.student.email.name%>      
+   <% end %>
+</td>

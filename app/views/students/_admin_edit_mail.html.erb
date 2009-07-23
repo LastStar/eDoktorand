@@ -1,0 +1,8 @@
+<td><%=@index.student.display_name%></td>
+<td><% form_remote_tag(:url => {:action => "admin_update_mail"}, 
+                            :update => "index_"+@index.id.to_s,
+                            :complete => evaluate_remote_response) do %>
+  <%= text_field(:student,:email, :value => @index.student.email.name)%>
+  <%= hidden_field :index, :id %>
+  <%= ok_submit(:index) %>
+<% end %></td>
