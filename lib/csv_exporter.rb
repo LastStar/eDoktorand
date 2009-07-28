@@ -193,7 +193,7 @@ class CSVExporter
         row = []
         row << student.id
         row << student.uic
-        row << student.user ? student.user.login : 'NO LOGIN!!!'
+        row << (student.user ? student.user.login : 'NO LOGIN!!!')
         row << student.sident if index.student.sident
         row << student.display_name
         row << index.department.name
