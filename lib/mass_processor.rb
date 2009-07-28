@@ -7,7 +7,8 @@ class MassProcessor
   @@mylog.level = 1
 
   SERVICE_URL = "http://193.84.33.16/axis2"
-  SERVICE_PATH = "/rest/GetSidentService/getSidentByBirthNum?rc=%s"
+  SERVICE_PATH = "/services/GetSidentService/getSidentByBirthNum?rc=%s"
+
   #update or create subject from web service
   def self.update_subjects
     @@mylog.info "Starting connect to remote web service..."
@@ -184,14 +185,12 @@ class MassProcessor
 
       service_url = service % student.birth_number
       @@mylog.debug "Service url is: %s" % service_url
-
       begin
         sident = @client.get_content(service_url)
       rescue URI::InvalidURIError
         @@mylog.error "Bad service url %s" % service_url
         next
       end
-
       if sident =~ /<SIDENT>(.*)<\/SIDENT>/
         sident = $1
         @@mylog.info "Got sident %i" % sident
