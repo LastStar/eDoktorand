@@ -10,7 +10,7 @@ class UicGetter
   @@logger.level = 1
 
   # constants definition
-  SERVICES = {:uic => "http://193.84.34.6/axis2/services/GetUicService/getUicByBirthNum?rc=%s",:pokus => "http://193.84.34.6/axis2/services/GetUicService/getUicByBirthNum?rc=8111191638"}
+  SERVICES = {:uic => "http://193.84.33.16/axis2/rest/GetSidentService/getUicByBirthNum?rc=%s",:pokus => "http://193.84.34.6/axis2/services/GetUicService/getUicByBirthNum?rc=8111191638"}
   UIC_REGEX = /<uic>(-?[0-9]{3,6})<\/uic>/
   MESSAGE_REGEXP = /<message>(.*)<\/message>/
 
@@ -47,9 +47,9 @@ class UicGetter
       end
     end
     @@logger.debug "All students done"
-    students
   end
 
+  private
   # prepares service path string
   def prepare_service(parameter)
     return @service_path % parameter
