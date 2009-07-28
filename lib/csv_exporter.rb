@@ -180,21 +180,22 @@ class CSVExporter
     outfile.close
   end
 
-
   def self.export_students_uic_sident(indices = nil)
     file = "students_uic_sident.csv"
     outfile = File.open(file, 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
-      csv << ['id clovek', 'uic', 'sident', 'display name', 'department',
+      csv << ['id clovek', 'uic', 'sident', 'login', 'display name', 'department',
               'faculty']
       indices ||= Index.find(:all, :conditions => 'finished_on is null')
       @@mylog.info "There are #{indices.size} students"
       indices.each do |index|
+        student = index.student
         row = []
-        row << index.student.id
-        row << index.student.uic
-        row << index.student.sident if index.student.sident
-        row << index.student.display_name
+        row << student.id
+        row << student.uic
+        row << student.user ? student.user.login : 'NO LOGIN!!!'
+        row << student.sident if index.student.sident
+        row << student.display_name
         row << index.department.name
         row << index.faculty.name
         @@mylog.debug "Adding #{row}"
@@ -293,7 +294,6 @@ class CSVExporter
     end
     outfile.close
   end
-
 
   def self.export_students_with_bad_account
     file = "bad_account.csv"
@@ -427,7 +427,6 @@ class CSVExporter
     end
   end
 
-
   def self.export_tutors_per_coridor
     outfile = File.open('tutors_per_coridor.csv', 'wb')
     CSV::Writer.generate(outfile, ';') do |csv|
@@ -523,9 +522,6 @@ class CSVExporter
     end
   end
 
-
-
-
   def self.export_for_board(department)
     department = department.id if department.is_a? Department
     filename = "students_%i.csv" % department
@@ -550,5 +546,4 @@ class CSVExporter
     end
     outfile.close
   end
-  
 end
