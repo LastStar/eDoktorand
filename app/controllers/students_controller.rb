@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
 
 
   def mail_list
-    @indices = Index.find_for(@user, :order => 'people.lastname')
+    @indices = Index.find_for(@user, :order => 'people.lastname', :conditions => ['indices.finished_on is null'])
   end
   
   def admin_edit_mail
