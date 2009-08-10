@@ -1,7 +1,7 @@
 class StudyPlansController < ApplicationController
   include LoginSystem
   helper :students
-  layout 'employers', :except => [:add_en, :save_en, :show]
+  layout 'employers', :except => [:add_en, :save_en, :show, :add_cz, :save_cz]
   before_filter :login_required, :prepare_user, :prepare_student
 
   # shows student basic information
@@ -240,7 +240,17 @@ class StudyPlansController < ApplicationController
   def add_en
     @id = Index.find(params[:id])
     @final_area_id = params[:final_area_id]
+    @value = ""
+    @value = params[:final_area_value] if params[:final_area_value]
   end
+
+  def add_cz
+    @id = Index.find(params[:id])
+    @final_area_id = params[:final_area_id]
+    @value = ""
+    @value = params[:final_area_value] if params[:final_area_value]
+  end
+
 
   #saving only final_areas en (fixing bug)
   def save_en
@@ -256,6 +266,22 @@ class StudyPlansController < ApplicationController
     @study_plan.final_areas = full_array_areas
     @study_plan.save
   end
+
+  #saving only final_areas cz (fixing bug)
+  def save_cz
+    @id = Index.find(params[:id])
+    @study_plan = @id.study_plan
+    @final_area_id = params[:final_area_id]
+    cz_array_areas = @study_plan.final_areas['cz']
+    en_array_areas = @study_plan.final_areas['en']
+    #MUST BE THERE for update column in DB - features or bug in rails 2.1?
+    @study_plan.final_areas_will_change!
+    cz_array_areas.update("#{params[:final_area_id]}" => params[:cz_title])
+    full_array_areas = {"cz" => cz_array_areas, "en" => en_array_areas}
+    @study_plan.final_areas = full_array_areas
+    @study_plan.save
+  end
+
 
   private
   def reset_plan_session

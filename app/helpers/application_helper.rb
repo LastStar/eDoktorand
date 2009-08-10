@@ -484,6 +484,30 @@ module ApplicationHelper
                    :update => 'final_area_en'+i.to_s)
   end
 
+  def edit_cz_link(id, i, value)
+    if @user.has_role?("faculty_secretary")
+      link_to_remote(image_tag('change.png'),
+                     :url => {:controller => 'study_plans',
+                             :action => 'add_cz',
+                             :id => id,
+                             :final_area_id => i,
+                             :final_area_value => value},
+                     :update => 'final_area_cz'+i.to_s)
+    end
+  end
+
+  def edit_en_link(id, i, value)
+    if @user.has_role?("faculty_secretary")
+      link_to_remote(image_tag('change.png'),
+                     :url => {:controller => 'study_plans',
+                             :action => 'add_en',
+                             :id => id,
+                             :final_area_id => i,
+                             :final_area_value => value},
+                     :update => 'final_area_en'+i.to_s)
+    end
+  end
+
   def add_disert_theme_en_link(disert_theme)
     link_to_remote(image_tag('plus.png'),
                    :url => {:controller => 'disert_themes',
@@ -499,12 +523,12 @@ module ApplicationHelper
                     :update => "disert_theme_title_en", &proc)
   end
 
-  def save_final_area_form(id, final_area_id, &proc)
+  def save_final_area_form(id, final_area_id,language, &proc)
     form_remote_tag(:url => {:controller => 'study_plans',
-                            :action => 'save_en',
+                            :action => 'save_'+language,
                             :id => id,
                             :final_area_id => final_area_id},
-                    :update => 'final_area_en' + final_area_id.to_s,
+                    :update => 'final_area_'+ language + final_area_id.to_s,
                     &proc)
   end
 
