@@ -2060,19 +2060,41 @@ cs:
             message_5: odeslat
       actualities: 
         new: 
-          rhtml: {}
+          rhtml:
+            message_0: Nová aktualita
+            message_1: Vytvořit
+            message_2: Zpět
 
         list: 
-          rhtml: {}
+          rhtml:
+            message_0: Aktuality
+            message_1: Přidat aktualitu
 
         edit: 
-          rhtml: {}
+          rhtml:
+            message_0: Editace Aktuality
+            message_1: Uložit
+            message_2: Zobrazit
+            message_3: Zpět
+            
 
         show: 
-          rhtml: {}
+          rhtml:
+            message_0: Aktuality
+            message_1: Upravit
+            message_2: Zpět
 
         _form: 
-          rhtml: {}
+          rhtml:
+            message_0: Nadpis
+            message_1: Zpráva
+
+        _actuality: 
+          rhtml:
+            message_0: Zobrazit
+            message_1: Upravit
+            message_2: Smazat
+            message_3: Opravdu vymazat?
 
     controller: 
       interupts: 

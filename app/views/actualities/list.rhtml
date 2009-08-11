@@ -1,26 +1,14 @@
-<h1>Listing actualities</h1>
-
-<table>
-  <tr>
-  <% for column in Actuality.content_columns %>
-    <th><%= column.human_name %></th>
-  <% end %>
-  </tr>
-  
-<% for actuality in @actualities %>
-  <tr>
-  <% for column in Actuality.content_columns %>
-    <td><%=h actuality.send(column.name) %></td>
-  <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => actuality %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => actuality %></td>
-    <td><%= link_to 'Destroy', { :action => 'destroy', :id => actuality }, :confirm => 'Are you sure?' %></td>
-  </tr>
+<% unless @actualities.empty? %>
+<h5><%= t(:message_0, :scope => [:txt, :view, :actualities, :list, :rhtml]) %></h5>
+<ul id='actuallities'>
+    <%= render(:partial => 'actuality', :collection => @actualities) %>
+</ul>
 <% end %>
-</table>
 
 <%= will_paginate %>
 
 <br />
 
-<%= link_to 'New actuality', :action => 'new' %>
+<div class="links">
+  <%= link_to(t(:message_1, :scope => [:txt, :view, :actualities, :list, :rhtml]), :action => 'new') %>
+</div>

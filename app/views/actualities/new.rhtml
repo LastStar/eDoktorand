@@ -1,8 +1,11 @@
-<h1>New actuality</h1>
+<h5><%= t(:message_0, :scope => [:txt, :view, :actualities, :new, :rhtml]) %></h5>
 
 <% form_tag :action => 'create' do %>
   <%= render :partial => 'form' %>
-  <%= submit_tag "Create" %>
+  <%= submit_tag(t(:message_1, :scope => [:txt, :view, :actualities, :new, :rhtml]) ,:class => "actuality_submit")%>
 <% end %>
-
-<%= link_to 'Back', :action => 'list' %>
+<p>
+  <div class="links">
+    <%= link_to(t(:message_2, :scope => [:txt, :view, :actualities, :new, :rhtml]), :action => 'list')%>
+  </div>
+</p>

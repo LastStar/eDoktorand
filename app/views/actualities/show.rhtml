@@ -1,8 +1,18 @@
-<% for column in Actuality.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @actuality.send(column.name) %>
-</p>
-<% end %>
+<h5><%= t(:message_0, :scope => [:txt, :view, :actualities, :show, :rhtml]) %></h5>
+<ul id="actualities">
+ <li>
+    <div class="actuality">
+      <h6> <%= @actuality.label %></h6>
+        <p>
+          <%= @actuality.content %>
+        </p>
+    </div>
+ </li>      
+</ul>
 
-<%= link_to 'Edit', :action => 'edit', :id => @actuality %> |
-<%= link_to 'Back', :action => 'list' %>
+<p>
+  <div class="links">
+    <%= link_to(t(:message_1, :scope => [:txt, :view, :actualities, :show, :rhtml]), :action => 'edit', :id => @actuality) %> |
+    <%= link_to(t(:message_2, :scope => [:txt, :view, :actualities, :show, :rhtml]), :action => 'list') %>
+  </div>
+<p>

@@ -1,4 +1,9 @@
 class ActualitiesController < ApplicationController
+  include LoginSystem
+  layout  'employers'
+  uses_tiny_mce :options => {:theme => 'advanced', :theme_advanced_resizing => 'true', :width => 600, :height => 400, :language => 'cs' }
+  before_filter :login_required
+  
   def index
     list
     render :action => 'list'

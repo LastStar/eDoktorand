@@ -1,10 +1,13 @@
 <%= error_messages_for 'actuality' %>
 
 <!--[form:actuality]-->
-<p><label for="actuality_label">Label</label><br/>
-<%= text_field 'actuality', 'label'  %></p>
-
-<p><label for="actuality_content">Content</label><br/>
-<%= text_area 'actuality', 'content'  %></p>
+<p>
+  <label for="actuality_label", class="actuality"><%=t(:message_0, :scope => [:txt, :view, :actualities, :_form, :rhtml])%></label>
+  <%= text_field 'actuality', 'label'  %>
+</p>
+<p>
+  <label for="actuality_content", class="actuality"><%=t(:message_1, :scope => [:txt, :view, :actualities, :_form, :rhtml])%></label>
+  <%= text_area 'actuality', 'content',  :class => "mceEditor"  %>
+</p>
 <!--[eoform:actuality]-->
 

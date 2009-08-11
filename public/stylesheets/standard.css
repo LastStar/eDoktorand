@@ -189,6 +189,36 @@ form {
 label.bigger {
   font-weight: bolder;
 }
+label.actuality {
+  font-size: 13px;
+  width: 40px;
+  margin: 0px;
+  text-align: right; 
+  padding-right: 1em;
+  padding-top: 2px;
+  clear: both;
+  float: left;
+}
+
+div.actuality ol li {
+  list-style-type: decimal;
+  border-bottom: none;
+  border-left: none;
+  
+}
+
+div.actuality ul li {
+  list-style-type: disc; 
+  border-bottom: none;
+  border-left: none;
+  
+}
+
+
+input.actuality_submit {
+  margin-left: 73px;
+}
+
 label {
   font-size: 13px;
   width: 280px;
