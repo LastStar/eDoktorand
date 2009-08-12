@@ -1,5 +1,5 @@
 class StudentServicesController < ApplicationController
-  IDENTITY_URL = "http://10.70.1.11/"
+  IDENTITY_URL = "http://10.70.1.11:18888/"
  
   web_service_api StudentApi
   web_service_dispatching_mode :direct
@@ -9,7 +9,7 @@ class StudentServicesController < ApplicationController
   def update_index_identity(uic)
     @student = Student.find_by_uic(uic)
     @client = ActionWebService::Client::Soap.new(StudentApi, IDENTITY_URL)
-    @client.update_index_with_uic(@student.index.to_service_struct)
+    @client.update_index_with_student_uic(@student.index.to_service_struct)
     return 'Success'
   end
 
