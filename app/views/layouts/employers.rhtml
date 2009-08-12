@@ -8,6 +8,7 @@
   <title><%= @title %></title>
   <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
   <link href="/stylesheets/standard.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/ico" href="/images/ed.ico"/>
   <%= include_tiny_mce_if_needed %>
 </head>
 <body>
@@ -16,8 +17,8 @@
     alt="logo"/><div id="HeadMenu">
   <% if @user %>
     <div id="HeadMenuContent">
-    <%= main_menu %>
-    <h1 id="title"><%= @user.person.display_type + ": #{@user.person.display_name}" %></h1>
+      <div id="HeadMenuLinks"><%= main_menu %></div>
+      <div id="HeadMenuUser"><h1 id="title"><%= @user.person.display_type + ": #{@user.person.display_name}" %></h1></div>
     </div>
   <% end %>
   </div>

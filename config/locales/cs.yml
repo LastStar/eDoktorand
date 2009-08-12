@@ -101,6 +101,8 @@ cs:
         message_0: 
       faculty_secretary:
         message_0: Referentka VaV
+      department_secretary:
+        message_0: Sekretářka
       secretary: {}
 
       statement: {}
@@ -307,7 +309,8 @@ cs:
 
       titles: {}
 
-      application: 
+      application:
+        message_66: aktuality
         message_62: soubor s tezí disertační práce
         message_51: ukončen dne
         message_40: "atest like #{person}"

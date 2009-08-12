@@ -120,7 +120,6 @@ module CandidatesHelper
 
   # prints sorting tags
   def filter_tags(action, args, titles, options)
-    breakpoint
     links = '&nbsp;' + link_to("<span title='"+t(:message_17, :scope => [:txt, :helper, :candidates])+"'>"+t(:message_18, :scope => [:txt, :helper, :candidates])+"</span>", :action => '')
     
     i = 0

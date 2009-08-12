@@ -10,6 +10,8 @@
   <link href="/stylesheets/documents.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css"/>
   <link href="/stylesheets/print_documents.css" media="print" rel="stylesheet" type="text/css"/>
+  <link rel="icon" type="image/ico" href="/images/ed.ico"/>
+
 </head>
 <body onload='Element.hide("loading")'>
   <%= javascript_include_tag :defaults %>
@@ -17,8 +19,8 @@
     alt="logo"/><div id="HeadMenu">
   <% if @user %>
     <div id="HeadMenuContent">
-    <%= main_menu %>
-    <h1 id="title"><%= t(:message_0, :scope => [:txt, :view, :layouts, :documents, :rhtml]) + ": #{@user.person.display_name}" %></h1>
+      <div id="HeadMenuLinks"><%= main_menu %></div>
+      <div id="HeadMenuUser"><h1 id="title"><%= @user.person.display_type + ": #{@user.person.display_name}" %></h1></div>
     </div>
   <% end %>
   </div>

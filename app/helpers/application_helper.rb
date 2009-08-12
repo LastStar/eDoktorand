@@ -174,10 +174,13 @@ module ApplicationHelper
       if @user.has_role?('examinator')
         links << link_to_unless_current(t(:message_16, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
       elsif @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
+          links << link_to_unless_current(t(:message_66, :scope => [:txt, :helper, :application]), :controller => 'actualities'){} 
           links << link_to_unless_current(t(:message_17, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname'){} 
           links << link_to_unless_current(t(:message_18, :scope => [:txt, :helper, :application]), :controller => 'exam_terms'){} 
           links << link_to_unless_current(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
           links << prepare_scholarship_link
+          links << "<br/>"
+          links << div_tag("&nbsp;&nbsp;&nbsp;",:id => "space_div", :size => '12x12')
           links << link_to_unless_current(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements') {}
           links << link_to_unless_current(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors') {}
           links << link_to_unless_current(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'coridors') {}
