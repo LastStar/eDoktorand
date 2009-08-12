@@ -1,10 +1,27 @@
 class StudentServicesController < ApplicationController
+  IDENTITY_URL = "http://10.70.1.11/"
  
-web_service_api StudentApi
-web_service_dispatching_mode :direct
-web_service_scaffold :invoke
+  web_service_api StudentApi
+  web_service_dispatching_mode :direct
+  web_service_scaffold :invoke
 
-  #update or create user
+  # force system to update in identity management
+  def update_index_identity(uic)
+    @student = Student.find_by_uic(uic)
+    @client = ActionWebService::Client::Soap.new(StudentApi, IDENTITY_URL)
+    @client.update_index_with_uic(@student.index.to_service_struct)
+    return 'Success'
+  end
+
+  # force system to update in identity management
+  def update_student_identity(uic)
+    @student = Student.find_by_uic(uic)
+    @client = ActionWebService::Client::Soap.new(StudentApi, IDENTITY_URL)
+    @client.update_student_with_uic(@student.to_service_struct)
+    return 'Success'
+  end
+
+  # update or create user
   def update_user_with_uic(login_hash)
     if student = Student.find_by_uic(login_hash.uic)
       if student.user
@@ -13,7 +30,7 @@ web_service_scaffold :invoke
         User.create_with_hash(login_hash, student.id)
       end
     else
-    return "Failed! No student"
+      return "Failed! No student"
     end
   end
 
@@ -28,7 +45,7 @@ web_service_scaffold :invoke
     return account
   end
 
-  #return array of uic and bank account
+  # return array of uic and bank account
   def get_account_uic_array
     uic_accounts = []
     sql = "account_number is not null and account_number <> '' \
@@ -72,7 +89,7 @@ web_service_scaffold :invoke
     return 'success'
   end
 
-  #return array of uic and bank account
+  # return array of uic and bank account
   def get_account_uic_array
     uic_accounts = []
     sql = "account_number is not null and account_number <> '' \

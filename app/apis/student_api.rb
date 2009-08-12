@@ -51,6 +51,14 @@ class UicAccount < ActionWebService::Struct
 end
 
 class StudentApi < ActionWebService::API::Base
+  api_method :update_index_identity,
+             :expects => [:int],
+             :returns => [:string]
+
+  api_method :update_student_identity,
+             :expects => [:int],
+             :returns => [:string]
+
   api_method :update_user_with_uic,
              :expects => [LoginHash],
              :returns => [:string]
