@@ -17,8 +17,8 @@
     alt="logo"/><div id="HeadMenu">
   <% if @user %>
     <div id="HeadMenuContent">
-    <%= main_menu %>
-    <h1 id="title"><%= t(:message_0, :scope => [:txt, :view, :layouts, :documents, :rhtml]) + ": #{@user.person.display_name}" %></h1>
+      <div id="HeadMenuLinks"><%= main_menu %></div>
+      <div id="HeadMenuUser"><h1 id="title"><%= @user.person.display_type + ": #{@user.person.display_name}" %></h1></div>
     </div>
   <% end %>
   </div>
