@@ -1,0 +1,12 @@
+<td>
+  <%= @examinator.display_name %>
+</td>
+<td>
+<% form_remote_tag(:url => {:action => "update"}, 
+                            :complete => evaluate_remote_response,
+                            :after => loader_image("coridor_submit")) do %>
+  <%= collection_select :department_employment, :unit_id,  @departments, :id, :name %>
+  <%= hidden_field :examinator,:id, :value => @examinator.id %>
+  <%= ok_submit(:coridor) %>
+<% end %>
+</td>

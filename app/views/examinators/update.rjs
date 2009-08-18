@@ -1,0 +1,1 @@
+page.replace_html "examinator_%i" % @examinator.id, :partial => 'coridor', :locals => {:examinator => @examinator}

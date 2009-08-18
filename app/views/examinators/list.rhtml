@@ -1,0 +1,12 @@
+<h5><%= t(:message_0, :scope => [:txt, :view, :examinators, :list, :rhtml]) + "(#{@examinators.size})" %></h5>
+<table id='tutors_table'>
+  <% for examinator in @examinators %>
+    <tr  class='line' id='examinator_<%= examinator.id %>'>
+      <td><%= examinator.display_name %></td>
+      <td><%= edit_link(examinator) %>
+      <% if examinator.department %>
+        <%= examinator.department.name %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
