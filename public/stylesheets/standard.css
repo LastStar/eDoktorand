@@ -721,3 +721,9 @@ table.wide th {
 #opened {
   font-size: smaller;
 }
+.pdf_link {
+  background-image: url(/images/pdf_icon.png);
+  background-position:left center;
+  background-repeat:no-repeat;
+  padding-left:20px;
+}

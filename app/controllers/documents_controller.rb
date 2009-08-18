@@ -45,8 +45,8 @@ class DocumentsController < ApplicationController
   def diploma_supplement
     @diploma_supplement = DiplomaSupplement.find(params[:id])
     respond_to do |format|
-      format.html
-      format.pdf
+     format.html
+     format.pdf
     end
 
   end
