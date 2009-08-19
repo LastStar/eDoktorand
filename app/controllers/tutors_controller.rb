@@ -2,6 +2,7 @@ class TutorsController < ApplicationController
 
   include LoginSystem
   layout "employers", :except => [:edit]
+  before_filter :login_required
   before_filter :prepare_user
   
 
