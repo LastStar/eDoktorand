@@ -33,6 +33,7 @@ DROP TABLE IF EXISTS `programs`;
 DROP TABLE IF EXISTS `roles`;
 DROP TABLE IF EXISTS `roles_users`;
 DROP TABLE IF EXISTS `schema_info`;
+DROP TABLE IF EXISTS `schema_migrations`;
 DROP TABLE IF EXISTS `scholarships`;
 DROP TABLE IF EXISTS `sessions`;
 DROP TABLE IF EXISTS `statements`;
