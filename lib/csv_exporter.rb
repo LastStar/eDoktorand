@@ -546,4 +546,26 @@ class CSVExporter
     end
     outfile.close
   end
+
+  # exports index details
+  def self.export_study_basics(indices = nil)
+    unless indices
+      indices = Index.find(:all)
+    end
+    outfile = File.open('indices_details.csv', 'wb')
+    CSV::Writer.generate(outfile) do |csv|
+      csv << ['index id', 'student_uic', 'faculty_id', 'department_id', 'study_status']
+      indices.each do |index| 
+        @@mylog.debug index.id
+        row = []
+        row << index.id
+        row << index.student.uic
+        row << index.faculty.id
+        row << index.department_id
+        row << index.status
+        csv << row
+      end
+    end
+    outfile.close
+  end
 end
