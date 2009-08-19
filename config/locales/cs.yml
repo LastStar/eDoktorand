@@ -310,6 +310,7 @@ cs:
       titles: {}
 
       application:
+        message_67: zkoušející
         message_66: aktuality
         message_62: soubor s tezí disertační práce
         message_51: ukončen dne
@@ -323,7 +324,7 @@ cs:
         message_30: odhlásit
         message_9: vyjádření školitele
         message_64: soubor s disertační prácí
-        message_53: termín SDZ
+        message_53: termín SDZ        
         message_42: schválit s výtkou
         message_31: termíny zkoušek
         message_20: diplomy
@@ -507,7 +508,12 @@ cs:
 
       actualities: {}
 
-    view: 
+    view:
+      examinators:
+        list:
+          rhtml:
+            message_0: Seznam zkoušejících
+      
       study_plans: 
         _obligate_form: 
           rhtml: 
@@ -1470,6 +1476,8 @@ cs:
             message_10: Číslo popisné
             message_11: Obec
             message_12: Psč
+            message_13: UIC
+            message_14: SIDENT
             
         _final_exam: 
           rhtml: 

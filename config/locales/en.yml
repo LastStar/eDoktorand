@@ -304,7 +304,8 @@ en:
 
       titles: {}
 
-      application: 
+      application:
+        message_67: examinators
         message_62: literature review file
         message_51: finished on
         message_40: "atest like #{person}"
