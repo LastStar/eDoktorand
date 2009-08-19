@@ -1,10 +1,14 @@
 <div class="links">
-  <%= link_to "PDF", {:action => :diploma_supplement, :format => 'pdf'}, :class => "pdf_link" %>
+  <%= link_employer %>
 </div>  
 <div id='supplement'>
 <div id='header'>
 <h2>Czech Republic</h2>
+<% if @employer %>
+<div id='logo'><%= image_tag 'this_is_copy.gif' %></div>
+<% else %>
 <div id='logo'><%= image_tag 'empty_logo.gif' %></div>
+<% end %>
 <h3>Czech University of Life Sciences Prague<br /> 
 <%= @diploma_supplement.faculty_name_en %></h3>
 <h1>Diploma Supplement</h1>
@@ -282,4 +286,7 @@ give the reason why.
   </li>
 </ul>
 </div>
+<% if @employer %>
+<div id='logo'><%= image_tag 'this_is_copy.gif' %></div>
+<% end %>
 <%= link_to t(:message_0, :scope => [:txt, :view, :documents, :diploma_supplement, :rhtml]), :controller => 'diploma_supplements', :action => 'index' %>

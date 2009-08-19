@@ -40,6 +40,17 @@ class DocumentsController < ApplicationController
       render(:action => :edit)
     end
   end
+  
+  # prints diploma supplement to pdf
+  def diploma_supplement_for_employer
+    @employer = true
+    @diploma_supplement = DiplomaSupplement.find(params[:id])
+    respond_to do |format|
+     format.html {render 'diploma_supplement.rhtml'}
+     format.pdf
+    end
+
+  end
 
   # prints diploma supplement to pdf
   def diploma_supplement

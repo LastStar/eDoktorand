@@ -1138,6 +1138,8 @@ cs:
         diploma_supplement: 
           rhtml: 
             message_0: zpět
+            message_1: tisk pro zaměstnavatele
+            message_2: diploma supplement
         show: 
           rhtml: {}
 
