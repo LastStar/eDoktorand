@@ -208,7 +208,7 @@ class MassProcessor
 
     # removes , Ing from names
     def remove_ings_from_lastname
-      students = Student.find(:all, :conditions => "firstname like '%, Ing.'")
+      students = Student.find(:all, :conditions => "firstname like '%, Mgr.' or firstname like '%, Ing.'")
       @@mylog.info "There are %i students" % students.size
       students.each do |student|
         new_first = student.firstname[0..-7]
