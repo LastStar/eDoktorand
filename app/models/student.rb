@@ -98,7 +98,6 @@ class Student < Examinator
   # returns struct for web services
   def to_service_struct
     service_struct = StudentHash.new
-
     service_struct.student_id = self.id
     service_struct.uic = self.uic
     service_struct.firstname = self.firstname
