@@ -222,7 +222,8 @@ cs:
         message_17: předepsané předměty
       departments: {}
 
-      exams: 
+      exams:
+        message_12: edit
         message_8: pracuji...
         message_9: pracuji...
         message_0: nová zkouška
@@ -906,6 +907,7 @@ cs:
           rhtml: 
             message_0: Vyzkoušení studenti
             message_1: studenti
+            message_2: student
         _protocol: 
           rhtml: 
             message_18: 4. zkoušející

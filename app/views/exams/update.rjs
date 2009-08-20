@@ -1,0 +1,5 @@
+page.show 'exams_list'
+page.show 'exam_title'
+page.hide 'form'
+page.replace_html "student_detail_#{@exam.id}", :partial => 'exam_line', :locals => {:exam => @exam}
+

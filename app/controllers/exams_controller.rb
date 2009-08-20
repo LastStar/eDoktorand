@@ -102,11 +102,17 @@ class ExamsController < ApplicationController
   def update
     @exam = Exam.find(params[:id])
     if @exam.update_attributes(params[:exam])
-      flash['notice'] = t(:message_1, :scope => [:txt, :controller, :exams])
-      redirect_to :action => 'list'
+      #flash['notice'] = t(:message_1, :scope => [:txt, :controller, :exams])
+      
     else
       render(:action => :edit)
     end
+  end
+  
+  # edits exam
+  def edit
+     @exam = Exam.find(params[:id])
+     @subjects = PlanSubject.find_unfinished_for(@user, :subjects => true)
   end
 
   # destroys exam
@@ -119,6 +125,8 @@ class ExamsController < ApplicationController
   def set_title
     @title = t(:message_2, :scope => [:txt, :controller, :exams])
   end
+
+    
 
 end
 

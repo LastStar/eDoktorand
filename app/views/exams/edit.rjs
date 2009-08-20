@@ -1,0 +1,3 @@
+page.insert_html :after, 'exams_list', render(:partial => 'edit', :locals => {:exam => @exam, :plan_subject => @plan_subject, :subject_id => @exam.subject_id,:back_link => true})
+page.hide 'exams_list'
+page.hide 'exam_title'

@@ -1,18 +1,6 @@
-<%= javascript_include_tag :defaults %>
-<% @ids = [] %>
-<table id='exams_list'>
-<tbody>
-<% for exam in @exams  %>
-  <tr id='student_detail_<%= exam.id %>' class='student_detail'>
     <th><%= exam.index.student.display_name %></th>
     <td><%= truncate(exam.subject.label,40) %></td>
     <td><%= exam.passed_on.strftime("%d. %m. %Y") %></td>
     <td><%= result_word(exam.result) %></td>
     <td class='smallerinfo' id='detail_link_<%= exam.id %>'><%= detail_link(exam) %></td>
     <td class='smallerinfo' id='edit_link_<%= exam.id %>'><%= edit_link(exam) %></td>
-  </tr>
-    <tr class='detail' id='info<%= exam.id %>' style="display: none">
-    </tr >
-<% end %>
-</tbody>
-</table>

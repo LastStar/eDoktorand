@@ -24,6 +24,13 @@ module ExamsHelper
         :id => exam.id}, 
                     :loading => visual_effect(:pulsate, "detail_link_%i" % exam.id))
   end
+  
+  # prints link to exam edit
+  def edit_link(exam)
+      link_to_remote(t(:message_12, :scope => [:txt, :helper, :exams]), :url => {:action => 'edit',
+        :id => exam.id}, 
+                    :loading => visual_effect(:pulsate, "edit_link_%i" % exam.id)) 
+  end
 
   #prints form for saving external exam student
   def external_student_form(&proc)
@@ -50,6 +57,16 @@ module ExamsHelper
                     &proc)
 
   end
+  
+    #prints form for choosinf subject
+  def subject_form_edit(&proc)
+    form_remote_tag(:url => {:action => 'update', :id => @exam.id}, 
+                    :complete => evaluate_remote_response,
+                    :loading => "$('submit-button').value = '%s'" % t(:message_8, :scope => [:txt, :helper, :exams]),
+                    &proc)
+
+  end
+  
 
   def student_subject_form(&proc)
     form_remote_tag(:url => {:action => 'save_student_subject'},
