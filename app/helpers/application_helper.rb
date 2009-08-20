@@ -254,7 +254,6 @@ module ApplicationHelper
 
   def save_form(name, &proc)
     form_remote_tag(:url => {:action => "save_#{name}"},
-                    :complete => evaluate_remote_response,
                     :after => loader_image("#{name}_submit"),
                     &proc)
   end
@@ -601,10 +600,6 @@ module ApplicationHelper
   # returns select options for any labeled objects
   def label_options(objects)
     options_for_select(objects.map{|o| [o.label, o.id]})
-  end
-  
-  def label_options_edit(subjects,exam)
-    options_from_collection_for_select(subjects, :id, :label, exam.subject_id)
   end
 
   # returns form for approving

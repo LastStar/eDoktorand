@@ -112,7 +112,6 @@ module ScholarshipsHelper
   def save_form(scholarship, &proc)
     form_remote_tag(:url => {:action => 'save', :id => scholarship}, 
                     #:update => "index_#{scholarship.index.id}",
-                    :complete => evaluate_remote_response,
                     &proc)
   end
 

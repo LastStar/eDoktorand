@@ -1,6 +1,7 @@
 <h5><%= t(:message_0, :scope => [:txt, :view, :coridors, :list, :rhtml]) %></h5>
 
-<table id='coridors_table'>
+<table id='coridors_table_new'>
+  <tbody id='coridors_table'>
   <tr>
     <th><%= t(:message_1, :scope => [:txt, :view, :coridors, :list, :rhtml]) %></th>
     <th><%= t(:message_2, :scope => [:txt, :view, :coridors, :list, :rhtml]) %></th>
@@ -26,6 +27,7 @@
     <td><%= link_to t(:message_9, :scope => [:txt, :view, :coridors, :list, :rhtml]), :action => :subjects, :id => coridor %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

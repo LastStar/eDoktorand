@@ -3,7 +3,6 @@ module CoridorsHelper
   def del_link(coridor_subject)
     link_to_remote(image_tag('minus.png'), 
                   :url => {:action => 'del_subject', :id => coridor_subject.id},
-                  :complete => evaluate_remote_response,
                   :confirm => t(:message_0, :scope => [:txt, :helper, :coridors])) 
   end
 

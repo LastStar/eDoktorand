@@ -1,1 +1,1 @@
-page.remove "coridor_subject_%i" % @coridor_subject_id
+page.remove "coridor_subject_"+@coridor_subject_id
