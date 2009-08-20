@@ -46,8 +46,8 @@ class DocumentsController < ApplicationController
     @employer = true
     @diploma_supplement = DiplomaSupplement.find(params[:id])
     respond_to do |format|
-     format.html {render 'diploma_supplement.rhtml'}
-     format.pdf
+     format.html {render :action => 'diploma_supplement'}
+     format.pdf {render :action =>'diploma_supplement', :layout => false}
     end
 
   end

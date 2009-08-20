@@ -3,6 +3,7 @@
 \usepackage[czech]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{fourier}
+\usepackage{graphicx}
 
 \setlength\topmargin{-2.5cm}
 \setlength\headheight{0cm}
@@ -16,7 +17,14 @@
 \begin{document}
 
 \begin{center}
+
+<% if @employer %>
+
+\LARGE{Czech Republic}\\[0.5cm]
+\Huge{THIS IS COPY}
+<% else %>
 \LARGE{Czech Republic}\\[2.5cm]
+<% end %>
 
 \Large{{\sc Czech University of Life Sciences Prague}}
 
@@ -262,6 +270,12 @@ of academic years is regulated by statute.
 A credit system (ECTS or a comparable system) is used at most of the higher
 education institutions.
 \end{footnotesize}
+
+<% if @employer %>
+\begin{center}
+\large{THIS IS COPY}
+\end{center}
+<% end %>
 
 \end{document}
 
