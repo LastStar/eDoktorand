@@ -117,8 +117,11 @@ class ExamsController < ApplicationController
 
   # destroys exam
   def destroy
-    Exam.find(params[:id]).destroy
-    redirect_to :action => 'list'
+    @exam = Exam.find(params[:id])
+    study_plan = @exam.index.study_plan
+    plan_subject = study_plan.plan_subjects.detect { |x| x.subject.id == @exam.subject_id }
+    plan_subject.update_attribute(:finished_on,nil)
+    @exam.destroy
   end
 
   # sets title of the controller

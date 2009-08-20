@@ -31,6 +31,14 @@ module ExamsHelper
         :id => exam.id}, 
                     :loading => visual_effect(:pulsate, "edit_link_%i" % exam.id)) 
   end
+  
+    
+  # prints link to abandon exam 
+  def destroy_link(exam)
+      link_to_remote(t(:message_13, :scope => [:txt, :helper, :exams]), :url => {:action => 'destroy',
+        :id => exam.id}, 
+                    :loading => visual_effect(:pulsate, "destroy_link_%i" % exam.id)) 
+  end
 
   #prints form for saving external exam student
   def external_student_form(&proc)

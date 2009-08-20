@@ -223,6 +223,7 @@ cs:
       departments: {}
 
       exams:
+        message_13: zrušit
         message_12: edit
         message_8: pracuji...
         message_9: pracuji...
