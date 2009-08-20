@@ -195,7 +195,9 @@ cs:
         message_1: žena
       loader: {}
 
-    helper: 
+    helper:
+      
+      
       interupts: {}
 
       plans: 
@@ -312,6 +314,7 @@ cs:
       titles: {}
 
       application:
+        message_68: SDZ
         message_67: zkoušející
         message_66: aktuality
         message_62: soubor s tezí disertační práce
@@ -486,14 +489,15 @@ cs:
         message_47: jen přijatí
         message_48: jen zapsaní
         
-      terms: 
+      terms:
+        message_17: protokol
         message_8: opravit
         message_9: smazat
-        message_0: nový termín
+        message_0: budoucí termín SDZ
         message_10: Sure to delete?
-        message_1: budoucí termíny
+        message_1: termíny obhajoby
         message_11: studenti
-        message_2: minulé termíny
+        message_2: termíny přijímacích zkoušek
         message_12: Zapsat zkoušku
         message_3: Na tento termín jste již přihlášen
         message_13: pracuji...
@@ -2182,7 +2186,7 @@ cs:
       tutors: {}
 
       terms: 
-        message_0: Termíny zkoušky byl uložen
+        message_0: Termíny SDZ
         message_1: Termíny zkoušky byl uložen
         message_2: Termíny zkoušek
       candidates: 

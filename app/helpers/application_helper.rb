@@ -178,6 +178,7 @@ module ApplicationHelper
           links << link_to_unless_current(t(:message_17, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname'){} 
           links << link_to_unless_current(t(:message_18, :scope => [:txt, :helper, :application]), :controller => 'exam_terms'){} 
           links << link_to_unless_current(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
+          links << link_to_unless_current(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list'){}
           links << prepare_scholarship_link
           links << "<br/>"
           links << span_tag("&nbsp;&nbsp;&nbsp;",:id => "space_span")

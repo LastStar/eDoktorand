@@ -1,4 +1,10 @@
 module FinalExamTermsHelper
+  # renders final exam terms link
+    def final_exam_terms_link
+    link_to t(:message_0, :scope => [:txt, :helper, :terms]), :action => :list, 
+      :controller => :final_exam_terms, :future => 1
+  end
+  
   def send_invitation_link(user, index, mail)
     if user.has_role?('faculty_secretary') && !index.final_exam_invitation_sent?
       if mail =='mail'
@@ -17,7 +23,7 @@ module FinalExamTermsHelper
   end
 
   def protocol_link(term)
-    link_to t(:message_2, :scope => [:txt, :helper, :terms]), :action => :protocol, :id => term
+    link_to t(:message_17, :scope => [:txt, :helper, :terms]), :action => :protocol, :id => term
   end
 
   def create_form(&proc)

@@ -1,6 +1,8 @@
 <h5><%= @title %></h5>
 <div class='links'>
+   <%= final_exam_terms_link %>
   <%= admission_exam_terms_link %>
+ 
   <%= defense_terms_link %>
 </div>
 <% form_tag :action => 'prepare_print' do -%>
