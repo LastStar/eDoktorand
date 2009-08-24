@@ -1,8 +1,18 @@
-<% for column in Parameter.content_columns %>
-<p>
-  <b><%= column.human_name %>:</b> <%=h @parameter.send(column.name) %>
-</p>
-<% end %>
+<h5><%= t(:message_0, :scope => [:txt, :view, :parameters, :show, :rhtml]) %></h5>
 
-<%= link_to 'Edit', :action => 'edit', :id => @parameter %> |
-<%= link_to 'Back', :action => 'list' %>
+<p>
+  <b><%= t(:message_1, :scope => [:txt, :view, :parameters, :show, :rhtml]) %>:</b> <%=h @parameter.name %>
+</p>
+<p>
+    <b><%= t(:message_3, :scope => [:txt, :view, :parameters, :show, :rhtml]) %>:</b> <%=h Faculty.find_by_id(@parameter.faculty_id).short_name %>
+</p>
+<p>
+    <b><%= t(:message_2, :scope => [:txt, :view, :parameters, :show, :rhtml]) %>:</b> <%=h @parameter.value %>
+</p>
+
+
+
+<div class="links">
+  <%= link_to t(:message_5, :scope => [:txt, :view, :parameters, :show, :rhtml]), :action => 'edit', :id => @parameter %> |
+  <%= link_to t(:message_4, :scope => [:txt, :view, :parameters, :show, :rhtml]), :action => 'list' %>
+</div>

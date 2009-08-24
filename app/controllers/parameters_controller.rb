@@ -1,4 +1,8 @@
 class ParametersController < ApplicationController
+  include LoginSystem
+  layout  'employers'
+  before_filter :login_required
+  
   
   def index
     list

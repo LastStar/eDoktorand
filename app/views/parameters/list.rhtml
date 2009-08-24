@@ -1,23 +1,26 @@
-<h1>Listing parameters</h1>
-
-<table>
-  <tr>
-  <% for column in Parameter.content_columns %>
-    <th><%= column.human_name %></th>
-  <% end %>
-  </tr>
-
+<h5><%= t(:message_3, :scope => [:txt, :view, :parameters, :list, :rhtml]) %></h5>
+<div class="links">
+  <%= link_to t(:message_7, :scope => [:txt, :view, :parameters, :list, :rhtml]), :action => 'new' %>
+</div> 
+<table id="parameters_list">
+<tbody>
+    <th><%= t(:message_0, :scope => [:txt, :view, :parameters, :list, :rhtml]) %></th>
+    <th><%= t(:message_1, :scope => [:txt, :view, :parameters, :list, :rhtml]) %></th>
+    <th><%= t(:message_2, :scope => [:txt, :view, :parameters, :list, :rhtml]) %></th>
 <% for parameter in @parameters %>
   <tr>
-  <% for column in Parameter.content_columns %>
+    <% for column in Parameter.content_columns %>
     <td><%=h parameter.send(column.name) %></td>
-  <% end %>
+    <% end %>
+  
     <td><%= h Faculty.find_by_id(parameter.faculty_id).short_name %></td>
-    <td><%= link_to 'Show', :action => 'show', :id => parameter %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => parameter %></td>
-    <td><%= link_to 'Destroy', { :action => 'destroy', :id => parameter }, :confirm => 'Are you sure?' %></td>
+    <td>
+      <%= link_to t(:message_4, :scope => [:txt, :view, :parameters, :list, :rhtml]), :action => 'show', :id => parameter %>
+      <%= link_to t(:message_5, :scope => [:txt, :view, :parameters, :list, :rhtml]), :action => 'edit', :id => parameter %>
+      <%= link_to t(:message_6, :scope => [:txt, :view, :parameters, :list, :rhtml]), { :action => 'destroy', :id => parameter }, :confirm => 'Are you sure?' %>
+    </td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
-<%= link_to 'New parameter', :action => 'new' %>

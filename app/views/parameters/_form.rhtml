@@ -1,13 +1,14 @@
 <%= error_messages_for 'parameter' %>
 
 <!--[form:parameter]-->
-<p><label for="parameter_name">Fakulta</label><br/>
+<p><label for="parameter_name" class="parameter"><%= t(:message_3, :scope => [:txt, :view, :parameters, :new, :rhtml]) %></label>
 <%= select 'parameter', 'faculty_id', Faculty.find(:all).map {|f| [f.name, f.id]} %></p>
 
-<p><label for="parameter_name">Name</label><br/>
+<p><label for="parameter_name" class="parameter"><%= t(:message_1, :scope => [:txt, :view, :parameters, :new, :rhtml]) %></label>
 <%= text_field 'parameter', 'name'  %></p>
 
-<p><label for="parameter_value">Value</label><br/>
-<%= text_area 'parameter', 'value'  %></p>
+<p><label for="parameter_value" class="parameter"><%= t(:message_2, :scope => [:txt, :view, :parameters, :new, :rhtml]) %></label>
+<%= text_area 'parameter', 'value',  :class => "mceEditor" %>
+</p>
 <!--[eoform:parameter]-->
 

@@ -1024,16 +1024,39 @@ cs:
 
       parameters: 
         new: 
-          rhtml: {}
+          rhtml:
+            message_0: Nový parametr
+            message_1: Název
+            message_2: Hodnota
+            message_3: Fakulta
+            message_4: Zpět
+            message_5: Vytvořit
 
         list: 
-          rhtml: {}
-
+          rhtml:
+            message_0: Název
+            message_1: Hodnota
+            message_2: Fakulta
+            message_3: Parametry
+            message_4: Zobrazit
+            message_5: Upravit
+            message_6: Smazat
+            message_7: Nový parametr
         edit: 
-          rhtml: {}
+          rhtml:
+            message_0: Úprava parametru
+            message_1: Zpět
+            message_2: Zobrazit
+            message_3: Uložit
 
         show: 
-          rhtml: {}
+          rhtml:
+            message_0: Parametr
+            message_1: Název
+            message_2: Hodnota
+            message_3: Fakulta
+            message_4: Zpět
+            message_5: Upravit
 
         _form: 
           rhtml: {}

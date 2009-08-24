@@ -1,9 +1,10 @@
-<h1>Editing parameter</h1>
+<h5><%= t(:message_0, :scope => [:txt, :view, :parameters, :edit, :rhtml]) %></h5>
 
 <% form_tag :action => 'update', :id => @parameter do %>
   <%= render :partial => 'form' %>
-  <%= submit_tag 'Edit' %>
+  <p><%= submit_tag t(:message_3, :scope => [:txt, :view, :parameters, :edit, :rhtml]), :class => "parameter_edit_submit" %></p>
 <% end %>
-
-<%= link_to 'Show', :action => 'show', :id => @parameter %> |
-<%= link_to 'Back', :action => 'list' %>
+<div class="links">
+  <%= link_to t(:message_2, :scope => [:txt, :view, :parameters, :edit, :rhtml]), :action => 'show', :id => @parameter %> |
+  <%= link_to t(:message_1, :scope => [:txt, :view, :parameters, :edit, :rhtml]), :action => 'list' %>
+</div>
