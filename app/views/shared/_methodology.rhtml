@@ -10,12 +10,13 @@
   <% end %>
 <% end %>
 <% if disert_theme.index.study_plan && disert_theme.index.study_plan.approved? %>
-  <% if @student && !disert_theme.has_methodology? %>
+  <% if (@student && !disert_theme.has_methodology?) || @user.has_role?('faculty_secretary') %>
 <li>
 <%= link_to(t(:message_2, :scope => [:txt, :view, :shared, :_methodology, :rhtml]), :controller => "disert_themes", :action =>
 "upload_methodology", :id => disert_theme.id) %>
 </li>
-  <% elsif disert_theme.has_methodology? %>
+  <% end %>
+  <% if disert_theme.has_methodology? %>
 <li>
     <%= methodology_link(disert_theme) %>
 </li>
