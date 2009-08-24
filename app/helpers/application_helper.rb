@@ -307,7 +307,7 @@ module ApplicationHelper
     if document.is_a?(StudyPlan) && document.approved? && 
       document.waits_for_actual_atestation?
       action = 'confirm_atest'
-      title = t(:message_40, :scope => [:txt, :helper, :application])
+      title = t(:message_40, :scope => [:txt, :helper, :application]) + " " + t(person, :scope => [:txt, :helper, :application])
       options = [[t(:message_41, :scope => [:txt, :helper, :application]), 1], [t(:message_42, :scope => [:txt, :helper, :application]), 2], [t(:message_43, :scope => [:txt, :helper, :application]), 0]]    
     else
       action = 'confirm_approve'

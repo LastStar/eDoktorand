@@ -314,12 +314,15 @@ cs:
       titles: {}
 
       application:
+        dean: děkan
+        tutor: školitel
+        leader: vedoucí katedry
         message_68: SDZ
         message_67: zkoušející
         message_66: aktuality
         message_62: soubor s tezí disertační práce
         message_51: ukončen dne
-        message_40: "atest like #{person}"
+        message_40: atestovat jako
         message_29: opravdu se chcete
         message_18: komise
         message_8: schváleno s výtkou
