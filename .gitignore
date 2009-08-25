@@ -5,3 +5,4 @@ db/moje~
 tmp/*
 db/schema.rb
 *.kpf
+public/pdf/methodology
