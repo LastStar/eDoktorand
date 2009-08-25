@@ -645,7 +645,6 @@ class Index < ActiveRecord::Base
   # returns service struct for index
   def to_service_struct
     service_struct = IndexHash.new
-
     service_struct.index_id = self.id
     service_struct.student_uic = self.student.uic
     service_struct.faculty_id = self.faculty.id
@@ -655,8 +654,9 @@ class Index < ActiveRecord::Base
     service_struct.department_name = self.department.name
     service_struct.department_code = self.department.short_name
     service_struct.study_status = self.status
-    service_struct.status_from = self.index.updated_on
+    service_struct.status_from = self.updated_on
     service_struct.status_to = ''
+    service_struct.year = self.year
 
     return service_struct
   end

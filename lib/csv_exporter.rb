@@ -554,7 +554,7 @@ class CSVExporter
     end
     outfile = File.open('indices_details.csv', 'wb')
     CSV::Writer.generate(outfile) do |csv|
-      csv << ['index id', 'student_uic', 'faculty_id', 'department_id', 'study_status']
+      csv << ['index id', 'student_uic', 'faculty_id', 'department_id', 'study_status', 'year']
       indices.each do |index| 
         @@mylog.debug index.id
         row = []
@@ -563,6 +563,7 @@ class CSVExporter
         row << index.faculty.id
         row << index.department_id
         row << index.status
+        row << index.year
         csv << row
       end
     end
