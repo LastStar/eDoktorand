@@ -38,6 +38,7 @@ class IndexHash < ActionWebService::Struct
   member :study_status, :string
   member :status_from, :string
   member :status_to, :string
+  member :year, :int
 end
 
 class LoginHash < ActionWebService::Struct

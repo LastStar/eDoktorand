@@ -29,6 +29,7 @@ class StudentServicesController < ApplicationController
       else
         User.create_with_hash(login_hash, student.id)
       end
+      return 'Success'
     else
       return "Failed! No student"
     end
