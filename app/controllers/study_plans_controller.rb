@@ -177,7 +177,7 @@ class StudyPlansController < ApplicationController
       @study_plan.index = @student.index
       if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
         @study_plan.save
-       if (params[:url][:action] == "change") && new_approvement && @user.has_one_of_roles?['faculty_secretary','vicerector']
+        if params[:url][:action] == "change" && new_approvement && @user.has_one_of_roles?(['faculty_secretary','vicerector'])
           new_approvement.document_id = @study_plan.id
           @study_plan.update_attribute(:approved_on,Time.now)
           new_approvement.save
