@@ -130,40 +130,31 @@ class Student < Examinator
     self.birth_number = student_hash.birth_number if student_hash.birth_number
     self.birth_place = student_hash.birth_place if student_hash.birth_place
     self.sex = student_hash.sex if student_hash.sex
-    
     if student_hash.title_before &&
       title = Title.find_by_label_and_prefix(student_hash.title_before, 1)
       self.title_before = title
     end
-
     if student_hash.title_after &&
       title = Title.find_by_label_and_prefix(student_hash.title_after, 0)
       self.title_after = title
     end
-
     if student_hash.email 
-      unless self.email
+      if self.email
         self.email.update_attribute(:name, student_hash.email) 
       else
         self.email = Contact.new(:name => student_hash.email,
                                  :contact_type_id => 1)
       end
     end
-
     if student_hash.phone
-      unless self.phone
+      if self.phone
         self.phone.update_attribute(:name, student_hash.phone) 
       else
         self.phone = Contact.new(:name => student_hash.email,
                                  :contact_type_id => 2)
       end
     end
-
-    if self.save
-      return 'success'
-    else
-      return 'error'
-    end
+    self.save
   end
 
 end 

@@ -76,13 +76,16 @@ class StudentServicesController < ApplicationController
   # updates student with student hash content
   def update_student_with_uic(student_hash)
     student = Student.find_by_uic(student_hash.uic)
-    return student.update_with_hash(student_hash)
+    if student.update_with_hash(student_hash)
+      return 'Success'
+    else
+      return 'Error'
+    end
   end
 
   # updates index with index hash content
-  def update_index_with_uic(index_hash)
-    index = Student.find_by_uic(index_hash.uic).index
-    return index.update_with_hash(index_hash)
+  def update_index_with_student_uic(index_hash)
+    return 'Not implemented here! But success!'
   end
 
   # creates student from student hash content

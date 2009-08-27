@@ -381,7 +381,7 @@ class Index < ActiveRecord::Base
   end
 
   def self.find_for_scholarship(user, opts = {})
-    paying_date =  (Time.now - 3.week)
+    paying_date = (Time.now - 3.week)
     opts.update({:unfinished => paying_date, :not_interupted => paying_date,
                  :enrolled => paying_date, :not_absolved => paying_date, :include => [:extra_scholarships]})
     return find_for(user, opts)
@@ -667,6 +667,11 @@ class Index < ActiveRecord::Base
 
   def has_any_scholarship?
     return ((has_regular_scholarship? && regular_scholarship_or_create.amount > 0) || (has_extra_scholarship? && extra_scholarship_sum > 0))
+  end
+
+  # updates index from StudentHash
+  def update_with_hash(index_hash)
+    return true
   end
 
   private
