@@ -2,13 +2,16 @@
 
 <!--[form:parameter]-->
 <p><label for="parameter_name" class="parameter"><%= t(:message_3, :scope => [:txt, :view, :parameters, :new, :rhtml]) %></label>
-<%= select 'parameter', 'faculty_id', Faculty.find(:all).map {|f| [f.name, f.id]} %></p>
+<%= text_field 'parameter', 'faculty_id', :disabled => 'true'  %></p>
 
 <p><label for="parameter_name" class="parameter"><%= t(:message_1, :scope => [:txt, :view, :parameters, :new, :rhtml]) %></label>
-<%= text_field 'parameter', 'name'  %></p>
+<%= text_field 'parameter', 'name', :disabled => 'true'  %></p>
 
 <p><label for="parameter_value" class="parameter"><%= t(:message_2, :scope => [:txt, :view, :parameters, :new, :rhtml]) %></label>
 <%= text_area 'parameter', 'value',  :class => "mceEditor" %>
 </p>
-<!--[eoform:parameter]-->
+<p><label for="parameter_value" class="parameter">link</label>
+<%= text_field 'parameter', 'link', :disabled => 'true' %>
+</p>
 
+<!--[eoform:parameter]-->

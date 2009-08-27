@@ -10,7 +10,7 @@ class ParametersController < ApplicationController
   end
 
   def list
-    @parameters = Parameter.find(:all)
+    @parameters = Parameter.find(:all, :conditions => "faculty_id = #{@user.person.faculty.id}", :order => 'link desc')
   end
 
   def show
@@ -48,5 +48,15 @@ class ParametersController < ApplicationController
   def destroy
     Parameter.find(params[:id]).destroy
     redirect_to :action => 'list'
+  end
+
+# 
+  def sample_page
+    @faculty = @user.person.faculty
+    @parameter = Parameter.find(params[:id])
+
+     if !@parameter.link.nil? 
+       render @parameter.link
+     end
   end
 end

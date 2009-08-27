@@ -15,6 +15,8 @@ class AddPermissionsFacultySecretaryVicerectorParameters < ActiveRecord::Migrati
     Permission.create('name' => 'parameters/show')
     Role.find(2).permissions <<
     Permission.create('name' => 'parameters/update')
+    Role.find(2).permissions <<
+    Permission.create('name' => 'parameters/sample_page')
       
     Role.find(8).permissions <<
     Permission.create('name' => 'parameters/list')
@@ -30,9 +32,11 @@ class AddPermissionsFacultySecretaryVicerectorParameters < ActiveRecord::Migrati
     Permission.create('name' => 'parameters/show')
     Role.find(8).permissions <<
     Permission.create('name' => 'parameters/update')
+    Role.find(8).permissions <<
+    Permission.create('name' => 'parameters/sample_page')
   end
 
-  def self.down
+  def self.down 
     
     permission = Permission.find_by_name('parameters/list')
     Role.find(2).permissions.delete(permission)
@@ -55,7 +59,10 @@ class AddPermissionsFacultySecretaryVicerectorParameters < ActiveRecord::Migrati
     permission = Permission.find_by_name('parameters/update')
     Role.find(2).permissions.delete(permission)
     permission.destroy
- 
+    permission = Permission.find_by_name('parameters/sample_page')
+    Role.find(2).permissions.delete(permission)
+    permission.destroy
+
       
     permission = Permission.find_by_name('parameters/list')
     Role.find(8).permissions.delete(permission)
@@ -77,7 +84,10 @@ class AddPermissionsFacultySecretaryVicerectorParameters < ActiveRecord::Migrati
     permission.destroy
     permission = Permission.find_by_name('parameters/update')
     Role.find(8).permissions.delete(permission)
-    permission.destroy    
+    permission.destroy 
+    permission = Permission.find_by_name('parameters/sample_page')
+    Role.find(8).permissions.delete(permission)
+    permission.destroy
         
   end
 end

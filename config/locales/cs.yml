@@ -98,7 +98,7 @@ cs:
       permission: {}
 
       faculty: 
-        message_0: 
+        message_0: děkan
       faculty_secretary:
         message_0: Referentka VaV
       department_secretary:
@@ -1026,6 +1026,10 @@ cs:
           rhtml: {}
 
       parameters: 
+        sample_page:
+          rhtml:
+            message_0: Tento parametr nemá náhled
+        
         new: 
           rhtml:
             message_0: Nový parametr
