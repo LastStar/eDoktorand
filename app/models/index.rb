@@ -73,6 +73,39 @@ class Index < ActiveRecord::Base
   validates_numericality_of :account_number, :only_integer => true, :allow_nil => true
   validates_numericality_of :account_bank_number, :only_integer => true, :allow_nil => true
 
+  # returns desrcibe_error for bad index
+  def describe_error
+     message = ""
+    if self.account_number == nil
+              message = message + I18n.t(:message_18, :scope => [:txt, :model, :index]) + " "
+    end
+    if self.account_bank_number == nil
+              message = message + I18n.t(:message_17, :scope => [:txt, :model, :index]) + " "
+    end
+    if self.student.uic == nil
+          message = message + I18n.t(:message_15, :scope => [:txt, :model, :index]) + " "
+    end
+    if self.student.sident == -666
+          message = message + I18n.t(:message_16, :scope => [:txt, :model, :index]) + " "
+    end
+    if self.student.sident == nil
+          message = message + I18n.t(:message_17, :scope => [:txt, :model, :index]) + " "    
+    end
+    return message
+
+  end
+
+  # returns if index is bad
+  def bad_index?
+     if self.account_number == nil || self.account_bank_number == nil ||
+      self.student.uic == nil || self.student.sident == -666 || self.student.sident == nil
+        if self.has_any_scholarship?
+          return true
+        end
+     end  
+    return false
+  end
+
   def validate
     if account_number
       if account_number_prefix

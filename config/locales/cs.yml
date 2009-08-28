@@ -130,6 +130,12 @@ cs:
       leadership: {}
 
       index: 
+        message_18: Špatné nebo chybějící číslo bankovního účtu.
+        message_17: Špatné nebo chybějící číslo banky u b.ú.
+        message_15: Chybí UIC.
+        message_16: Chybí SIDENT (-666).
+        message_17: Chybí SIDENT.
+
         message_8: absolvoval
         message_9: přerušeno
         message_0: se změnou studijního plánu
