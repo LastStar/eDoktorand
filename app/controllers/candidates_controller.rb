@@ -253,7 +253,7 @@ class CandidatesController < ApplicationController
   # sets title of the controller
   def set_title
     @title = t(:message_7, :scope => [:txt, :controller, :candidates])
-    WillPaginate::ViewHelpers.pagination_options[:prev_label] = "&laquo; %s" % t(:message_8, :scope => [:txt, :controller, :candidates])
+    WillPaginate::ViewHelpers.pagination_options[:previous_label] = "&laquo; %s" % t(:message_8, :scope => [:txt, :controller, :candidates])
     WillPaginate::ViewHelpers.pagination_options[:next_label] = "%s &raquo;" % t(:message_9, :scope => [:txt, :controller, :candidates])
   end
 
