@@ -311,7 +311,7 @@ cs:
       documents: {}
 
       coridors: 
-        message_0: Are you sure to delete?
+        message_0: Opravdu chcete předmět odebrat?
         message_1: Přidat předmět
         message_2: neschváleno
         message_3: schváleno
@@ -371,7 +371,7 @@ cs:
         message_13: Rodné číslo
         message_4: Nalezeny tyto chyby
         message_58: Školitel
-        message_47: methodology file (opens new window)
+        message_47: soubor s metodologií (otevře nové okno)
         message_36: vytisknout
         message_25: termíny zkoušek
         message_14: Narozen dne
@@ -416,14 +416,12 @@ cs:
         message_1: změnit
         message_11: přepočítat
         message_2: přidat
-        message_12: Are you sure to recalculate amounts?
+        message_12: Opravdu chcete přepočítat částky stipendií?
         message_3: odstranit
         message_4: zavřít
         message_5: vyplatit
         message_6: Opravdu vyplatit stipendia tak jak je vidíte? Operace je nevratná.
-        message_7: |-
-          Are you sure to approve scholarships like this. ' +
-                          'Operation is irreversible.
+        message_7: Jste si opravdu jist, že chcete schválit stipendia, tak jak jsou? Tato operace je nevratná!
       permissions: {}
 
       people: {}
