@@ -352,7 +352,7 @@ cs:
         message_10: vyjádření vedoucího katedry
         message_1: žena
         message_55: skrýt
-        message_44: "approve like #{person}"
+        message_44: schválit jako 
         message_33: stipendia
         message_22: obory
         message_11: vyjádření děkana

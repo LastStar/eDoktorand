@@ -311,7 +311,7 @@ module ApplicationHelper
       options = [[t(:message_41, :scope => [:txt, :helper, :application]), 1], [t(:message_42, :scope => [:txt, :helper, :application]), 2], [t(:message_43, :scope => [:txt, :helper, :application]), 0]]    
     else
       action = 'confirm_approve'
-      title = t(:message_44, :scope => [:txt, :helper, :application])
+      title = t(:message_44, :scope => [:txt, :helper, :application]) + " " + t(person, :scope => [:txt, :helper, :application])
       options = [[t(:message_45, :scope => [:txt, :helper, :application]), 1], [t(:message_46, :scope => [:txt, :helper, :application]), 0]]
     end
     render(:partial => 'shared/approve_form', :locals => {:document => document,
