@@ -49,7 +49,11 @@ class Coridor < ActiveRecord::Base
   end
 
   def self.find_for(user)
-    user.person.faculty.coridors
+    if user.has_role?('vicerector')
+      find(:all)
+    else
+      user.person.faculty.coridors
+    end
   end
 
   def self.find(*args)
@@ -73,6 +77,10 @@ class Coridor < ActiveRecord::Base
   end
 
   def self.accredited_for(user)
-    find_all_by_faculty_id_and_accredited(user.person.faculty.id, 1)
+    if user.has_role?('vicerector')
+      find_all_by_accredited(1)
+    else
+      find_all_by_faculty_id_and_accredited(user.person.faculty.id, 1)
+    end
   end
 end

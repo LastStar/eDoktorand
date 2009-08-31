@@ -3,9 +3,12 @@
   <% for examinator in @examinators %>
     <tr  class='line' id='examinator_<%= examinator.id %>'>
       <td><%= examinator.display_name %></td>
-      <td><%= edit_link(examinator) %>
-      <% if examinator.department %>
-        <%= examinator.department.name %></td>
+      <td>
+        <% if examinator.department_employment %>
+          <%= edit_link(examinator)%>
+        <% end %>
+      <% if examinator.department_employment && examinator.department_employment.department%>
+        <%= examinator.department_employment.department.name %></td>
       <% end %>
     </tr>
   <% end %>

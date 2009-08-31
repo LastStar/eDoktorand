@@ -5,11 +5,14 @@ module ExamsHelper
     links << link_to(t(:message_0, :scope => [:txt, :helper, :exams]), {:action => 'create'})
     links << '&nbsp;'
     if session[:this_year]
-      links << link_to(t(:message_1, :scope => [:txt, :helper, :exams]), {:this_year => 0})
+      links << link_to(t(:message_1, :scope => [:txt, :helper, :exams]),:action => 'list', :this_year => 0)
     else
       links << link_to(t(:message_2, :scope => [:txt, :helper, :exams]), {:this_year => 1})
     end
     links << '&nbsp;'
+    if @user.has_role?('vicerector')
+      links << link_to(t(:message_14, :scope => [:txt, :helper, :exams]), :action => 'list_for_vicerector', :vicerector => 1)
+    end
     content_tag('div', links, :class => 'links')
   end
 

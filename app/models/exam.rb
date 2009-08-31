@@ -42,6 +42,18 @@ class Exam < ActiveRecord::Base
     # remove exams that don't have plan subject
     # exams.delete_if {|e| !(e.plan_subject = PlanSubject.find_for_exam(e))}
   end
+  
+  def self.find_for_univerzity(user,options = {})
+    sub_ids = Subject.find_for(user).map {|s| s.id}
+    sql = ["subject_id IN (?)", sub_ids]
+    sql.first << ' and result = 1'
+    if options[:this_year]
+      sql.first << ' and passed_on > ?'
+      sql << TermsCalculator.this_year_start
+    end
+    find(:all, :conditions => sql, :include => [{:index => :student}, :subject], 
+      :order => 'subjects.label')
+  end
 
   def self.from_probation_term(probation_term, student = nil)
     exam = new

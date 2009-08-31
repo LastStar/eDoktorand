@@ -232,7 +232,7 @@ cs:
 
       exams:
         message_13: zrušit
-        message_12: edit
+        message_12: editace
         message_8: pracuji...
         message_9: pracuji...
         message_0: nová zkouška
@@ -245,6 +245,7 @@ cs:
         message_5: detail
         message_6: pracuji...
         message_7: pracuji...
+        message_14: zkoušky na ČZU
       addresses: {}
 
       parameters: {}
@@ -783,9 +784,6 @@ cs:
           rhtml: {}
 
         roles: 
-          rhtml: {}
-
-        exam_terms: 
           rhtml: {}
 
         candidates: 
@@ -1936,6 +1934,10 @@ cs:
 
         _coridor: 
           rhtml: {}
+        
+        _bad_tutor:
+          rhtml:
+            message_0: Školitel není nikam zařazen, kontaktujte HELPDESK
 
       exam_terms: 
         new: 
@@ -2226,6 +2228,8 @@ cs:
         message_0: Termíny SDZ
         message_1: Termíny zkoušky byl uložen
         message_2: Termíny zkoušek
+        message_3: "Výpis komisí příjímacích komisí"
+
       candidates: 
         message_8: předchozí stránka
         message_9: další stránka

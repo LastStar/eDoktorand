@@ -1,10 +1,17 @@
 <h5><%= t(:message_0, :scope => [:txt, :view, :tutors, :list, :rhtml]) + "(#{@tutors.size})" %></h5>
 <table id='tutors_table'>
   <% for tutor in @tutors %>
-    <tr class='line' id='coridor_<%= tutor.tutorship.id %>'>
+    <% if tutor.tutorship %>
+    <tr class='line' id='coridor_<%= tutor.tutorship.id if tutor.tutorship%>'>
         <%@tutor = tutor%>
         <%= render :partial => 'coridor', 
                    :locals => {:tutorship => tutor.tutorship, :tutor => tutor} %>
     </tr>
+    <% else %>
+    <tr class='line' id='tutor_<%= tutor.id%>'>      
+        <%= render :partial => 'bad_tutor', 
+                   :locals => {:tutor => tutor} %>      
+    </tr>
+    <% end %>
   <% end %>
 </table>

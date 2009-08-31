@@ -240,9 +240,14 @@ class Candidate < ActiveRecord::Base
   end
 
   # prepares conditions for paginate functions
-  def self.prepare_conditions(options, faculty)
-    conditions = ["coridor_id in (?) AND finished_on IS NOT NULL",
-                  faculty.coridors]
+  def self.prepare_conditions(options, faculty, user)
+    if user.has_role?('vicerector')
+      conditions = ["coridor_id in (?) AND finished_on IS NOT NULL",
+                    Coridor.find(:all)]
+    else
+      conditions = ["coridor_id in (?) AND finished_on IS NOT NULL",
+                    faculty.coridors]
+    end
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
        conditions.first << " AND coridor_id = #{options['coridor']}"
@@ -263,9 +268,14 @@ class Candidate < ActiveRecord::Base
       :conditions => conditions)
   end
 
-  def self.find_all_finished_by_session_category(options, faculty, category)
-    conditions = ["coridor_id in (?) AND finished_on IS NOT NULL", 
-                  faculty.coridors]
+  def self.find_all_finished_by_session_category(options, faculty, category, user)
+    if user.has_role?('vicerector')
+      conditions = ["coridor_id in (?) AND finished_on IS NOT NULL",
+                    Coridor.find(:all)]      
+    else
+      conditions = ["coridor_id in (?) AND finished_on IS NOT NULL", 
+                    faculty.coridors]
+    end
     conditions.first << filter_conditions(options['filter'])
     if options['coridor']
       conditions.first << " AND coridor_id = ?"

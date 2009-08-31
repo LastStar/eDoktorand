@@ -173,7 +173,7 @@ module ApplicationHelper
     else
       if @user.has_role?('examinator')
         links << link_to_unless_current(t(:message_16, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
-      elsif @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean']) 
+      elsif @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean', 'vicerector']) 
           links << link_to_unless_current(t(:message_66, :scope => [:txt, :helper, :application]), :controller => 'actualities'){} 
           links << link_to_unless_current(t(:message_17, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname'){} 
           links << link_to_unless_current(t(:message_18, :scope => [:txt, :helper, :application]), :controller => 'exam_terms'){} 

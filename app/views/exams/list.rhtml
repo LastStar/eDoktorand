@@ -3,7 +3,7 @@
 <h5 id="exam_title"><%= @title + " (%s)" % @exams.size %></h5>
 <div id="exams_list">
   <%= list_links %>
-  <%= render(:partial => @partial)%>
+  <%= render(:partial => 'list', :exams => @exams)%>
 </div>
 <div id='done'>
 </div>

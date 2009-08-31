@@ -53,6 +53,10 @@ class DiplomaSupplement < ActiveRecord::Base
   end
 
   def self.find_for(user)
-    find(:all, :conditions => ["faculty_name = ?", user.person.faculty.name])
+    if user.has_role?('vicerector')
+      find(:all)
+    else
+      find(:all, :conditions => ["faculty_name = ?", user.person.faculty.name])
+    end
   end
 end

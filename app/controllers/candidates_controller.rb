@@ -25,7 +25,7 @@ class CandidatesController < ApplicationController
     @backward = false
     @filtered_by = params[:filter]
     session[:back_page] = 'list'
-    conditions = Candidate.prepare_conditions(params, @faculty)
+    conditions = Candidate.prepare_conditions(params, @faculty, @user)
     @candidates = Candidate.paginate :page => params[:page],
                                      :per_page => 7,
                                      :order => session[:category],
@@ -38,7 +38,7 @@ class CandidatesController < ApplicationController
     session[:list_mode] = 'list_all'
     @backward = true
     session[:back_page] = 'list_all'
-    @candidates = Candidate.find_all_finished_by_session_category(params, @faculty, session[:category])
+    @candidates = Candidate.find_all_finished_by_session_category(params, @faculty, session[:category], @user)
     session[:current_page_backward_all] = session[:category]
     render(:action => 'list')
   end

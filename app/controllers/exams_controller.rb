@@ -10,12 +10,20 @@ class ExamsController < ApplicationController
     list
     render(:action => 'list')
   end
+  
+  def list_for_vicerector
+  if @user.has_role?('vicerector') && params[:vicerector] == "1"
+    @exams = Exam.find_for_univerzity(@user,:this_year => 1)
+  end
+    render(:action => 'list')
+  end
 
   def list
     session[:this_year] = params[:this_year] == "0" ? false : true
     @partial = params[:prefix] ? params[:prefix] + 'list' : 'list' 
     @exams = Exam.find_for(@user, :this_year => session[:this_year])
   end
+    
 
   def show
     @exam = Exam.find(params[:id])
