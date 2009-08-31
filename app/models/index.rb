@@ -80,10 +80,10 @@ class Index < ActiveRecord::Base
               message = message + I18n.t(:message_18, :scope => [:txt, :model, :index]) + " "
     end
     if self.account_bank_number == nil
-              message = message + I18n.t(:message_17, :scope => [:txt, :model, :index]) + " "
+              message = message + I18n.t(:message_19, :scope => [:txt, :model, :index]) + " "
     end
     if self.student.uic == nil
-          message = message + I18n.t(:message_15, :scope => [:txt, :model, :index]) + " "
+          message = message + I18n.t(:message_20, :scope => [:txt, :model, :index]) + " "
     end
     if self.student.sident == -666
           message = message + I18n.t(:message_16, :scope => [:txt, :model, :index]) + " "

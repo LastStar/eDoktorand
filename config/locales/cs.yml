@@ -131,8 +131,8 @@ cs:
 
       index: 
         message_18: Špatné nebo chybějící číslo bankovního účtu.
-        message_17: Špatné nebo chybějící číslo banky u b.ú.
-        message_15: Chybí UIC.
+        message_19: Špatné nebo chybějící číslo banky u b.ú.
+        message_20: Chybí UIC.
         message_16: Chybí SIDENT (-666).
         message_17: Chybí SIDENT.
 
