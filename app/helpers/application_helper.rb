@@ -462,6 +462,10 @@ module ApplicationHelper
     link_to_remote(t(:message_53, :scope => [:txt, :helper, :application]), opts, :id => 'final_exam_link') if opts
   end
 
+  def final_exam_terms_link
+    link_to t(:message_0, :scope => [:txt, :helper, :terms]), :action => :list, :controller => :final_exam_terms, :future => 1
+  end
+
   def defense_term_link(user, index)
     if user.has_role?('faculty_secretary') && !index.defense_invitation_sent?
       opts = {:url => {:controller => 'defenses', :action => 'new', 
