@@ -21,7 +21,7 @@ class AddPermissionsToVicerector < ActiveRecord::Migration
     Role.find(8).permissions <<
     Permission.find_by_name('coridors/index')
     Role.find(8).permissions <<
-    Permission.find_by_name('coridors/list')
+    Permission.create(:name => 'coridors/list')
     Role.find(8).permissions <<
     Permission.find_by_name('coridors/attestation')
     Role.find(8).permissions <<
@@ -75,9 +75,9 @@ class AddPermissionsToVicerector < ActiveRecord::Migration
     Permission.find_by_name('examinators/update')
     #Exams
     Role.find(8).permissions <<
-    Permission.find_by_name('exams/list_for_vicerector')
+    Permission.create(:name => 'exams/list_for_vicerector')
     Role.find(8).permissions <<
-    Permission.find_by_name('exams/list')
+    Permission.create(:name => 'exams/list')
     Role.find(8).permissions <<
     Permission.find_by_name('exams/index')
     #Scholarships
@@ -142,6 +142,7 @@ class AddPermissionsToVicerector < ActiveRecord::Migration
     Role.find(8).permissions.delete(permission)
     permission = Permission.find_by_name('coridors/list')
     Role.find(8).permissions.delete(permission)
+    permission.destroy
     permission = Permission.find_by_name('coridors/attestation')
     Role.find(8).permissions.delete(permission)
     permission = Permission.find_by_name('coridors/subjects')
@@ -190,8 +191,10 @@ class AddPermissionsToVicerector < ActiveRecord::Migration
     Role.find(8).permissions.delete(permission)
     permission = Permission.find_by_name('exams/list_for_vicerector')
     Role.find(8).permissions.delete(permission)
+    permission.destroy
     permission = Permission.find_by_name('exams/list')
     Role.find(8).permissions.delete(permission)
+    permission.destroy
     permission = Permission.find_by_name('exams/index')
     Role.find(8).permissions.delete(permission)
     permission = Permission.find_by_name('scholarships/list')
