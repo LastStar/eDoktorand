@@ -2,7 +2,7 @@
 <div class='links'>
   <%= link_to t(:message_0, :scope => [:txt, :view, :defenses, :protocol, :rhtml]), :action => :list %>
 </div>
-<p class='right_date'><%= t(:message_1, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) % @defense.date.strftime("%d. %m. %Y") %></p>
+<p class='right_date'><%= t(:message_1, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) + " " + @defense.date.strftime("%d. %m. %Y") %></p>
 <p>
   <%= t(:message_2, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %><br />
   <%= index.faculty.name %>

@@ -7,8 +7,7 @@
   <h3><%= t(:message_0, :scope => [:txt, :view, :defenses, :announcement, :rhtml]) %></h3>
 </div>
 <p><%= t(:message_1, :scope => [:txt, :view, :defenses, :announcement, :rhtml]) %></p>
-<p><%= t(:message_2, :scope => [:txt, :view, :defenses, :announcement, :rhtml]) % 
-  [@defense.date.strftime("%d. %m. %Y"), @defense.room] %>
+<p><%= t(:message_2, :scope => [:txt, :view, :defenses, :announcement, :rhtml]) + " " + @defense.date.strftime("%d. %m. %Y") + " " + t(:message_15, :scope => [:txt, :view, :defenses, :announcement, :rhtml]) + " " +  @defense.room %>
 <div class='defense'>
 <table class='two-columns'>
 <tr>

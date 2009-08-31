@@ -1553,7 +1553,7 @@ cs:
             message_9: Konzultant
             message_0: zpět
             message_10: Předmět státní doktorské zkoušky
-            message_1: V Praze dne %s
+            message_1: V Praze dne
             message_11: Hodnocení
             message_2: Česká zemědělská univerzita v Praze
             message_12: Podpis
@@ -1856,7 +1856,7 @@ cs:
             message_0: zpět
             message_21: obhájil
             message_10: Předseda komise
-            message_1: V Praze dne %s
+            message_1: V Praze dne
             message_22: neobhájil
             message_11: Členové komise
             message_2: Česká zemědělská univerzita v Praze
@@ -1911,7 +1911,8 @@ cs:
             message_10: Předseda komise
             message_1: Oznámení obhajoby disertační práce
             message_11: Oponent
-            message_2: Komise bude zasedat dne %s v místnosti %s
+            message_2: Komise bude zasedat dne
+            message_15: v místnosti
             message_12: Oponent
             message_3: Jméno a příjmení
             message_13: Oponent
