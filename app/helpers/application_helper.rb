@@ -607,6 +607,11 @@ module ApplicationHelper
     options_for_select(objects.map{|o| [o.label, o.id]})
   end
 
+  # returns select options for edit exam
+  def label_options_edit(subjects,exam)
+    options_from_collection_for_select(subjects, :id, :label, exam.subject_id)
+  end
+
   # returns form for approving
   def approve_document_form(document, action, &proc)
     controller = document.class.to_s.underscore.pluralize
