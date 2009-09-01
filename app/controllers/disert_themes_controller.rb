@@ -19,7 +19,11 @@ include LoginSystem
     @disert_theme = DisertTheme.find(params[:disert_theme][:id])
     unless (file = params[:disert_theme][:methodology_file]).is_a? File
       DisertTheme.save_methodology(@disert_theme, file)
-      redirect_to(:action => 'index', :controller => 'study_plans')
+      if @user.has_one_of_roles?(['faculty_secretary','vicerector'])
+        redirect_to(:action => 'index', :controller => 'students')
+      else
+        redirect_to(:action => 'index', :controller => 'study_plans')
+      end
     else
       @title = t(:message_1, :scope => [:txt, :controller, :themes]) 
       flash.now[:error] = t(:message_2, :scope => [:txt, :controller, :themes])
