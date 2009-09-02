@@ -49,6 +49,7 @@ cs:
         message_1: There must be at least one student
         message_2: Špatný formát času - hh:mm
         message_3: Špatný formát času - hh:mm
+        message_7: Jméno předsedy komise nesmí být prázdné
       role: {}
 
       examinator: 
@@ -1962,6 +1963,8 @@ cs:
 
         _form: 
           rhtml: 
+            message_12: zadat ručně
+            message_11: vybrat ze seznamu
             message_8: člen komise
             message_9: člen komise
             message_0: datum a čas

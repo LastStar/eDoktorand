@@ -20,12 +20,14 @@ class ExamTermsController < ApplicationController
 
   def new
     @title = 'Vytváření komise příjimacích zkoušek'
+    @tutors = Tutor.find_for(@user)
     @exam_term = AdmissionTerm.new
     @exam_term.coridor_id = params[:id] if params[:id]
   end
 
-  def create
-    @exam_term = AdmissionTerm.new(params[:exam_term])
+   def create
+      @exam_term = AdmissionTerm.new(params[:exam_term])
+      @exam_term.detect_external_chairman(params[:external_chairman])  
     if @exam_term.save
       flash['notice'] = 'Komise byla úspěšně vytvořena.'
       if params[:from] && params[:from] == 'candidate'
@@ -43,12 +45,17 @@ class ExamTermsController < ApplicationController
   end
 
   def edit
+    @tutors = Tutor.find_for(@user)
+    @tutors << Tutor.external_chairman
     @exam_term = AdmissionTerm.find(params[:id])
   end
 
   def update
     @exam_term = AdmissionTerm.find(params[:id])
+     
     if @exam_term.update_attributes(params[:exam_term])
+      @exam_term.detect_external_chairman(params[:external_chairman])
+      @exam_term.save
       flash['notice'] = 'Komise byla úspěšně opravena'
       redirect_to :action => 'list'
     else

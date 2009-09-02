@@ -18,4 +18,10 @@ class Tutor < Examinator
   def coridor
     tutorship.coridor
   end
+
+ # returns external chairman
+  def self.external_chairman
+    return Tutor.find_by_firstname_and_lastname("externi","predseda")
+  end
+
 end
