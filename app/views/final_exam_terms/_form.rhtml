@@ -12,8 +12,49 @@
 <p><label for="exam_term_room" class='required'><%= t(:message_1, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
 
-<p><label for="exam_term_chairman"><%= t(:message_2, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
-<%= collection_select :exam_term, :chairman_id, Tutor.find_for(@user), :id, :display_name %></p>
+
+
+
+
+<% if !@exam_term.chairman_id.nil? %>
+<% if @exam_term.chairman_name == nil || @exam_term.chairman_name == Tutor.find(@exam_term.chairman_id).display_name %><p id="chairman_select" ><% else %><p id="chairman_select" style="display: none;" ><% end %><label for="exam_term_chairman"><%=t(:message_2, :scope => [:txt, :view, :exam_terms, :_form, :rhtml])%></label>
+<%= collection_select :exam_term, :chairman_id, @tutors , :id, :display_name %>
+<%=  button_to_function(t(:message_12, :scope => [:txt, :view, :exam_terms, :_form, :rhtml]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
+</p>
+
+<% if @exam_term.chairman_name == "" || @exam_term.chairman_name == Tutor.find(@exam_term.chairman_id).display_name %><p id="chairman_text" style="display: none;"><% else %><p id="chairman_text"><% end %><label><%=t(:message_2, :scope => [:txt, :view, :exam_terms, :_form, :rhtml])%></label><%= text_field 'exam_term', 'chairman_name' %>
+<%=  button_to_function(t(:message_11, :scope => [:txt, :view, :exam_terms, :_form, :rhtml]), "Element.show('chairman_select'), Element.hide('chairman_text'), document.getElementById('external_chairman').value=false") %>
+</p>
+<% else %>
+
+<p id="chairman_select" ><label for="exam_term_chairman"><%=t(:message_2, :scope => [:txt, :view, :exam_terms, :_form, :rhtml])%></label>
+<%= collection_select :exam_term, :chairman_id, @tutors , :id, :display_name %>
+<%=  button_to_function(t(:message_12, :scope => [:txt, :view, :exam_terms, :_form, :rhtml]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
+</p>
+
+<p id="chairman_text" style="display: none;"><label><%=t(:message_2, :scope => [:txt, :view, :exam_terms, :_form, :rhtml])%></label><%= text_field 'exam_term', 'chairman_name' %>
+<%=  button_to_function(t(:message_11, :scope => [:txt, :view, :exam_terms, :_form, :rhtml]), "Element.show('chairman_select'), Element.hide('chairman_text'), document.getElementById('external_chairman').value=false") %>
+</p>
+
+<% end %>
+
+<% if !@exam_term.chairman_id.nil? %>
+
+<% if @exam_term.chairman_id == Tutor.external_chairman.id %>
+<input type="hidden" id="external_chairman" name="external_chairman" value="true"><% else %><input type="hidden" id="external_chairman" name="external_chairman" value="false">
+<% end %>
+<% else %>
+<input type="hidden" id="external_chairman" name="external_chairman" value="false">
+<% end %>
+
+
+
+
+
+
+
+
+
 
 <p><label for="exam_term_first_examinator" class='required'>1. <%= t(:message_3, :scope => [:txt, :view, :final_exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span >

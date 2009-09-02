@@ -37,11 +37,13 @@ class FinalExamTermsController < ApplicationController
     redirect_to :controller => :study_plans, :action => :index
   end
 
-  def new
+   def new
     @title = t(:message_2, :scope => [:txt, :controller, :terms])
+    @tutors = Tutor.find_for(@user)
     index = Index.find(params[:id]) 
     if index.final_exam_term
       @exam_term = index.final_exam_term
+      @tutors << Tutor.external_chairman
     else
       @exam_term = FinalExamTerm.new
       @exam_term.index = index
@@ -51,8 +53,10 @@ class FinalExamTermsController < ApplicationController
   def create
     if @exam_term = FinalExamTerm.find_by_index_id(params[:exam_term][:index_id])
       @exam_term.update_attributes(params[:exam_term])
+      @exam_term.detect_external_chairman(params[:external_chairman])  
     else
       @exam_term = FinalExamTerm.new(params[:exam_term])
+      @exam_term.detect_external_chairman(params[:external_chairman])  
     end 
     if @exam_term.save
       flash['notice'] = t(:message_3, :scope => [:txt, :controller, :terms])
@@ -67,7 +71,10 @@ class FinalExamTermsController < ApplicationController
   end
 
   def edit
+    @tutors = Tutor.find_for(@user)
+    @tutors << Tutor.external_chairman
     @exam_term = FinalExamTerm.find(params[:id])
+
   end
 
   def destroy
