@@ -5,11 +5,11 @@ class AddLinkParameter < ActiveRecord::Migration
     for parameter in parameters do
       case parameter.name
       when "enroll_invitation_time_and_place"
-        parameter.update_attribute(:link,"confirm_admit_prewiev.rhtml")
+        parameter.update_attribute(:link,"confirm_admit_preview.rhtml")
       when "start_stipendia"
-        parameter.update_attribute(:link,"confirm_admit_prewiev.rhtml")
+        parameter.update_attribute(:link,"confirm_admit_preview.rhtml")
       when "methodics_term"
-        parameter.update_attribute(:link,"confirm_admit_prewiev.rhtml")
+        parameter.update_attribute(:link,"confirm_admit_preview.rhtml")
 
         
       end
