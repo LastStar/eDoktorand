@@ -653,8 +653,7 @@ cs:
         create: 
           rhtml: 
             message_0: |-
-              On this page you are starting to create your study plan. Study plan
-              should be consulted with your tutor.
+              Na této stránce začínáte vytvářet Váš studijní plán. Než ho začnete vytvářet, měl/a byste ho mít konzultován se školitelem.
         _voluntary_edit: 
           rhtml: 
             message_0: semestr
@@ -1281,7 +1280,7 @@ cs:
             message_7: Aktuality
         error: 
           rhtml: 
-            message_0: "There was an error in application:"
+            message_0: "V aplikaci se vyskytla chyba:"
             message_1: zpět
       form: 
         finish: 
@@ -1980,8 +1979,7 @@ cs:
         upload_methodology: 
           rhtml: 
             message_0: |-
-              On this page you can add your methodology file. File should be only in
-              PDF format.
+              Na této stránce můžete nahrát Váš soubor s metodologií. Soubor musí být pouze ve formátu PDF.
             message_1: soubor
             message_2: nahrát
         save_en: 
@@ -1990,8 +1988,7 @@ cs:
         methodology: 
           rhtml: 
             message_0: |-
-              On this page you can add your methodology file. File should be only in
-              PDF format.
+             Na této stránce můžete nahrát Váš soubor s metodologií. Soubor musí být pouze ve formátu PDF.              PDF format.
             message_1: soubor
             message_2: nahrát
         add_en: 
