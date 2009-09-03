@@ -1,4 +1,4 @@
-
+<h5><%= t(:message_2, :scope => [:txt, :view, :exam_terms, :edit, :rhtml])  %></h5>
 <% form_tag :action => 'update', :id => @exam_term do %>
   <%= render(:partial => "form") %>
   <%= submit_tag t(:message_0, :scope => [:txt, :view, :exam_terms, :edit, :rhtml]) %>

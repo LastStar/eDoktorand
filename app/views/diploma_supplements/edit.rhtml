@@ -4,5 +4,7 @@
   <%= render :partial => 'form' %>
   <%= submit_tag t(:message_1, :scope => [:txt, :view, :diploma_supplements, :edit, :rhtml]) %>
 <% end %>
+<div class="links">
 <%= link_to t(:message_2, :scope => [:txt, :view, :diploma_supplements, :edit, :rhtml]), :controller => :documents, :action => 'diploma_supplement', :id => @diploma_supplement %>
 <%= link_to t(:message_3, :scope => [:txt, :view, :diploma_supplements, :edit, :rhtml]), :action => 'index' %>
+</div>

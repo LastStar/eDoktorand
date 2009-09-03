@@ -29,9 +29,11 @@
   <% end %>
   </table>
 <% end %>
-  <br>
+<br>
+<% if @show_table_message == 1 %>
   <div class='t1'><%= t(:message_1, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></div>
   <br>
+  <% end %>  
   
 <table class = "scholarship" cellspacing = "0" cellpading = "0" align = "center">
 <tr>

@@ -4,6 +4,7 @@
   <%= render(:partial => "form") %>
   <%= submit_tag "Edit" %>
 <% end %>
-
+<div class="links">
 <%= link_to 'Show', :action => 'show', :id => @document %> |
 <%= link_to 'Back', :action => 'list' %>
+</div>

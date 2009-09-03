@@ -1,10 +1,14 @@
 <div id='container'>
   <div id="done">
   </div>
+  
   <div id="form">
     <h5>
       <%= t(:message_0, :scope => [:txt, :view, :exams, :create, :rhtml]) %>
     </h5>
+    <div class="links">
+    <%= link_to t(:message_1, :scope => [:txt, :view, :exams, :create, :rhtml]), :action => :list %>
+  </div>
     <ul>
       <li id='by_exam_line'>
       <%= subject_exam_link  %>

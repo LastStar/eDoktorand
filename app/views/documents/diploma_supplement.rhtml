@@ -289,4 +289,6 @@ give the reason why.
 <% if @employer %>
 <div id='logo'><%= image_tag 'this_is_copy.gif' %></div>
 <% end %>
-<%= link_to t(:message_0, :scope => [:txt, :view, :documents, :diploma_supplement, :rhtml]), :controller => 'diploma_supplements', :action => 'index' %>
+<div class="links">
+  <%= link_to t(:message_0, :scope => [:txt, :view, :documents, :diploma_supplement, :rhtml]), :controller => 'diploma_supplements', :action => 'index' %>
+</div>

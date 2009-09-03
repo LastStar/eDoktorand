@@ -796,7 +796,7 @@ cs:
       interupts: 
         print_interupt: 
           rhtml: 
-            message_8: "last atestation:"
+            message_8: Poslední atestace
             message_9: Schvalovací proces studijního plánu
             message_0: Toto studium je přerušeno
             message_1: přerušeno od
@@ -835,6 +835,7 @@ cs:
             message_5: akce
             message_6: ukázat
             message_7: opravit
+            
         edit: 
           rhtml: 
             message_0: Oprava diploma supplement
@@ -982,6 +983,7 @@ cs:
         create: 
           rhtml: 
             message_0: Vyberte si prosím způsob vytváření zkoušky
+            message_1: Zpět na výpis
         by_subject: 
           rhtml: 
             message_0: zkouška z předmětu
@@ -1447,7 +1449,7 @@ cs:
             message_1: ukončeno k
             message_11: Předchozí přerušení
             message_2: Toto studium je přerušeno
-            message_12: "last atestation:"
+            message_12: Poslední atestace
             message_3: přerušeno od
             message_13: Schvalovací proces obhajoby
             message_4: přerušeno do
@@ -1957,6 +1959,7 @@ cs:
           rhtml: 
             message_0: Uložit
             message_1: zpět
+            message_2: Přijímací komise
         show: 
           rhtml: {}
 
@@ -2022,7 +2025,7 @@ cs:
             message_7: po kliknutí zobrazí se stránkováním zapsané uchazeče
             message_17: po kliknutí seřadí uchazeče podle data změny na 1 stránce
             message_21: smazat všechny uchazeče
-            
+            message_22: Uchazeči 
             
         _delete_all_candidates:
           rhtml:

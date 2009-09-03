@@ -295,8 +295,7 @@ module ApplicationHelper
                    {:url => {:controller => 'study_plans', :action => 'atest',
                              :id => study_plan},
                    :loading => 
-                    "$('atestation_link').innerHTML = '%s'" % t(:message_39, :scope => [:txt, :helper, :application]),
-                   :complete => evaluate_remote_response},
+                    "$('atestation_link').innerHTML = '%s'" % t(:message_39, :scope => [:txt, :helper, :application])},
       {:id => "atestation_link"})
   end
   

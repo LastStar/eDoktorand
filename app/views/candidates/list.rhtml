@@ -1,3 +1,4 @@
+<h5><%=  t(:message_22, :scope => [:txt, :view, :candidates, :list, :rhtml]) %> </h5>
 <%= print_notice %>
 <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
   <% sort_array = [['coridor_id', t(:message_0, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['lastname',

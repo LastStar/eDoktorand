@@ -4,6 +4,9 @@
 <div id='form'>
 
 <H5> <%= t(:message_0, :scope => [:txt, :view, :exams, :by_subject, :rhtml])%></H5>
+<div class="links">
+  <%=  link_to_function(t(:message_0, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), "Element.show('exam_title'), Element.show('exams_list'), Element.hide('form')") %> 
+</div>  
 <% subject_form_edit do -%>
 <fieldset>
 <legend><%= t(:message_0, :scope => [:txt, :view, :exams, :_main_form, :rhtml]) %></legend>
