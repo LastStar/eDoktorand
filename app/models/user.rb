@@ -45,8 +45,9 @@ class User < ActiveRecord::Base
  
   ## updates itself from LoginHash
   def update_with_hash(login_hash)
-    raise 'loginname needed' unless login_hash.loginname
-    self.login = login_hash.loginname
+    raise 'login name needed' unless login_hash.login_name
+    self.login = login_hash.login_name
+    self.init_password = login_hash.init_pwd
     if self.save
       return 'success'
     else
@@ -54,15 +55,16 @@ class User < ActiveRecord::Base
     end
   end
 
-  def User.create_with_hash(login_hash,student_id)
-    raise 'loginname needed' unless login_hash.loginname
-    if User.create(:person_id => student_id, :login => login_hash.loginname)
+  # creates new user from service hash
+  def User.create_with_hash(login_hash, student_id)
+    raise 'login name needed' unless login_hash.login_name
+    if User.create(:person_id => student_id, :login => login_hash.login_name,
+                  :init_password => login_hash.init_pwd)
       return("success")
     else
       return("error")
     end
   end
-
 
   # checks if user has permission
   def has_permission?(permission)

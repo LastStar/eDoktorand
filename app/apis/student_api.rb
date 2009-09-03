@@ -43,7 +43,8 @@ end
 
 class LoginHash < ActionWebService::Struct
   member :uic, :int
-  member :loginname, :string
+  member :login_name, :string
+  member :init_pwd, :string
 end
 
 class UicAccount < ActionWebService::Struct
