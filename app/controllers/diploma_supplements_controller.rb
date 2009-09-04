@@ -49,4 +49,9 @@ class DiplomaSupplementsController < ApplicationController
     end
   end
 
+  # 
+  def destroy
+    DiplomaSupplement.find(params[:id]).destroy
+    redirect_to :action => :list
+  end  
 end
