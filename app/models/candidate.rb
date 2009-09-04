@@ -129,7 +129,7 @@ class Candidate < ActiveRecord::Base
   # candidates details. 
   def enroll!(time)
     self.update_attribute('enrolled_on', Time.now)
-    return new_student(student_id, login_name, time)
+    return new_student(time)
   end
 
   # checks if candidate is allready enrolled
