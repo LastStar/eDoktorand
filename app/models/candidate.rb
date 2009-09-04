@@ -127,7 +127,7 @@ class Candidate < ActiveRecord::Base
 
   # enroll candidate to study and returns new student based on 
   # candidates details. 
-  def enroll!(student_id, login_name, time)
+  def enroll!(time)
     self.update_attribute('enrolled_on', Time.now)
     return new_student(student_id, login_name, time)
   end

@@ -8,7 +8,7 @@ class CandidateEnroller
   end
 
   # enrolls candidates, get uic for them and update identity in tresor
-  def enroll(candidates)
+  def enroll(candidates, from_on)
     # returns array of students created from candidates
     @mylog.info "Enrolling candidates"
     students = candidates.map do |candidate|
