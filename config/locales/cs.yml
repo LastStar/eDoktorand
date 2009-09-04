@@ -686,7 +686,7 @@ cs:
         _accept: 
           rhtml: 
             message_0: potvrdit
-            message_1: Are you sure, your plan is ready?
+            message_1: Jste si jitý/á, že Váš plán je připraven?
         _full_form: 
           rhtml: 
             message_8: semestr
@@ -824,7 +824,7 @@ cs:
         list: 
           rhtml: 
             message_8: smazat
-            message_9: Are you sure?
+            message_9: Opravdu chcete vymazat diplom?
             message_0: Výpis diploma supplements
             message_10: nenalezen žádný diploma supplement
             message_1: číslo diplomu
@@ -1950,7 +1950,7 @@ cs:
             message_0: opravit
             message_1: uchazeči
             message_2: smazat
-            message_3: Are you sure to delete commission?
+            message_3: Opravdu chcete vymazat komisi?
             message_4: datum a čas
             message_5: místnost
             message_6: předseda komise
