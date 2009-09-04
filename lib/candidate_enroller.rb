@@ -12,7 +12,7 @@ class CandidateEnroller
     # returns array of students created from candidates
     @mylog.info "Enrolling candidates"
     students = candidates.map do |candidate|
-      candidate.enroll!
+      candidate.enroll!(from_on)
     end
     indices = students.map(&:index)
     @mylog.info "Getting uic"
