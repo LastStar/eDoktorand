@@ -127,9 +127,9 @@ class Candidate < ActiveRecord::Base
 
   # enroll candidate to study and returns new student based on 
   # candidates details. 
-  def enroll!(student_id, loginname, time)
+  def enroll!(student_id, login_name, time)
     self.update_attribute('enrolled_on', Time.now)
-    return new_student(student_id, loginname, time)
+    return new_student(student_id, login_name, time)
   end
 
   # checks if candidate is allready enrolled
@@ -204,9 +204,8 @@ class Candidate < ActiveRecord::Base
     end
   end
 
-  # creates student 
-  def new_student(new_id, username, enrolled_on)
-    # convert candidate to (student+index)
+  # creates student and index from self
+  def new_student(enrolled_on)
     student = Student.new
     student.firstname = self.firstname
     student.lastname = self.lastname
@@ -216,7 +215,6 @@ class Candidate < ActiveRecord::Base
     student.birth_place = self.birth_at
     student.title_before = self.title_before
     student.title_after = self.title_after
-    student.id = new_id
     index = Index.new
     index.department = self.department
     index.coridor = self.coridor
@@ -230,8 +228,6 @@ class Candidate < ActiveRecord::Base
     student.email = self.email
     student.phone = self.phone if self.phone
     student.save
-    user = User.create(:login => username, :person_id => new_id)
-    user.roles << Role.find_by_name('student')
     return student
   end
 
