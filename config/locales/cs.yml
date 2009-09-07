@@ -104,6 +104,8 @@ cs:
         message_0: Referentka VaV
       department_secretary:
         message_0: Sekretářka
+      student:
+        message_0: Student
       secretary: {}
 
       statement: {}
@@ -487,7 +489,7 @@ cs:
         message_15: stránkování vypnuto
         message_6: zapsat
         message_38: nepřijmout
-        message_27: "By corridors\") : _(\"By departments"
+        message_27: podle oborů
         message_16: "Filtr je nastaven:"
         message_7: Filtr není nastaven
         message_39: neprospěl
@@ -497,6 +499,7 @@ cs:
         message_46: jen pozvaní
         message_47: jen přijatí
         message_48: jen zapsaní
+        message_49: podle kateder
         
       terms:
         message_17: protokol
@@ -1579,7 +1582,7 @@ cs:
             message_7: Předseda komise
         claim: 
           rhtml: 
-            message_0: 
+            message_0: Přihláška ke státní doktorské zkoušce
             message_1: název teze disertační práce
             message_2: soubor s tezí disertační práce
             message_3: odeslat

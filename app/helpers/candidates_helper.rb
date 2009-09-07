@@ -181,7 +181,8 @@ module CandidatesHelper
   # print summary department/coridor switcher
   def summary_links
     links = ''
-    links << link_to(t(:message_27, :scope => [:txt, :helper, :candidates]), {:action => 'summary', 
+    link_name = params[:id]=="department" ? t(:message_27, :scope => [:txt, :helper, :candidates]) : t(:message_49, :scope => [:txt, :helper, :candidates])
+    links << link_to( link_name, {:action => 'summary', 
       :id => params[:id] == "department" ||  !params[:id] ? 'corridor' : 'department'})
     content_tag('div', links, :class => 'links')
   end
