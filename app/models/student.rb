@@ -114,7 +114,12 @@ class Student < Examinator
     service_struct.title_after = self.title_after ? self.title_after.label : ''
     service_struct.email = self.email ? self.email.name : ''
     service_struct.phone = self.phone ? self.phone.name : ''
-
+    service_struct.street = self.address.street ? self.address.street : ''
+    service_struct.desc_number = self.address.desc_number ? self.address.desc_number : ''
+    service_struct.orient_number = self.address.orient_number ? self.address.orient_number : ''
+    service_struct.city = self.address.city ? self.address.city : ''
+    service_struct.zip = self.address.zip ? self.address.zip : ''
+    service_struct.state = self.address.state ? self.address.state : ''
     return service_struct
   end
 

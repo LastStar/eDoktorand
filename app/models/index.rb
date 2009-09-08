@@ -690,7 +690,9 @@ class Index < ActiveRecord::Base
     service_struct.status_from = self.updated_on
     service_struct.status_to = ''
     service_struct.year = self.year
-
+    service_struct.study_form = self.study_name
+    service_struct.atestation = self.study_plan ? self.study_plan.last_atested_on : ''
+    service_struct.coridor = self.coridor.code
     return service_struct
   end
 

@@ -15,6 +15,12 @@ class StudentHash < ActionWebService::Struct
   member :title_after, :string
   member :email, :string
   member :phone, :string
+  member :street, :string
+  member :desc_number, :string
+  member :orient_number, :string
+  member :city, :string
+  member :zip, :string
+  member :state, :string  
 end
 
 class AddressHash < ActionWebService::Struct
@@ -39,6 +45,10 @@ class IndexHash < ActionWebService::Struct
   member :status_from, :string
   member :status_to, :string
   member :year, :int
+  member :study_form, :string
+  member :atestation, :string
+  member :coridor, :string
+  
 end
 
 class LoginHash < ActionWebService::Struct
