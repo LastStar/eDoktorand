@@ -7,7 +7,7 @@ development:
   username: web
   password: w3b
 
-test:
+test: &TEST
   adapter: mysql
   database: phdstudy_test
   host: localhost
@@ -25,3 +25,6 @@ production:
   username: w3b
   password: w3b3000
 
+
+cucumber:
+  <<: *TEST
