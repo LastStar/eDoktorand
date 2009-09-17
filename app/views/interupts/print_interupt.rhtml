@@ -1,16 +1,16 @@
 <div id='student_detail'>
 <ul class='details'>
   <li>
-     <div class='long_info'><%=@interupt.index.student.display_name%></div> <%=_ 'Student' %>:
+     <div class='long_info'><%=@interupt.index.student.display_name%></div> <%= t(:message_10, :scope => [:txt, :view, :interupts, :print_interupt, :rhtml]) %>:
   </li>
   <li>
-     <div class='long_info'><%=@interupt.index.student.index.year%></div> <%=_ 'Year' %>:
+     <div class='long_info'><%=@interupt.index.student.index.year%></div> <%= t(:message_11, :scope => [:txt, :view, :interupts, :print_interupt, :rhtml]) %>:
   </li>
   <li>
-    <div class='long_info'><%=@interupt.index.student.coridor.name%></div>  <%=_ 'Corridor' %>:
+    <div class='long_info'><%=@interupt.index.student.coridor.name%></div>  <%= t(:message_12, :scope => [:txt, :view, :interupts, :print_interupt, :rhtml]) %>:
   </li>
   <li>
-   <div class='long_info'><%=@interupt.index.student.index.tutor.display_name%></div> <%=_ 'Tutor' %>:
+   <div class='long_info'><%=@interupt.index.student.index.tutor.display_name%></div> <%= t(:message_13, :scope => [:txt, :view, :interupts, :print_interupt, :rhtml]) %>:
   </li>
 </ul>
   <% if @interupt.index.interupted? %>

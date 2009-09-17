@@ -1,23 +1,23 @@
 <div id='student_detail'>
-<h5><%=_ 'Request for change tutor'%></h5>
+<h5><%= t(:message_1, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %></h5>
 <ul class='details'>
   <li>
-     <div class='long_info'><%=@student.display_name%></div> <%=_ 'Student' %>:
+     <div class='long_info'><%=@student.display_name%></div> <%= t(:message_2, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
   </li>
   <li>
-     <div class='long_info'><%=@student.index.year%></div> <%=_ 'Year' %>:
+     <div class='long_info'><%=@student.index.year%></div> <%= t(:message_3, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
   </li>
   <li>
-    <div class='long_info'><%=@student.coridor.name%></div>  <%=_ 'Corridor' %>:
+    <div class='long_info'><%=@student.coridor.name%></div>  <%= t(:message_4, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
   </li>
   <li>
-   <div class='long_info'><%=@student.index.tutor.display_name%></div> <%=_ 'Tutor' %>:
+   <div class='long_info'><%=@student.index.tutor.display_name%></div> <%= t(:message_5, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
   </li>
   <li>
-    <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%=_ 'Date' %>:
+    <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%= t(:message_6, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
   </li>
   <li>
-   <%=_ 'Reason for change tutor' %>:
+   <%= t(:message_7, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
   </li>
   <li class='second'>
    <%= @subject_change %>

@@ -101,7 +101,14 @@ class Notifications < ActionMailer::Base
     @body['subject_end_study'] = subject_end_study
   end
 
-  def change_tutor(student, subject_change_tutor)
+  def change_tutor_en(student, subject_change_tutor)
+    @body['name'] = student.display_name
+    @body['coridor'] = student.coridor.name
+    @body['year'] = student.index.year
+    @body['subject_change_tutor'] = subject_change_tutor
+  end
+  
+  def change_tutor_cs(student, subject_change_tutor)
     @body['name'] = student.display_name
     @body['coridor'] = student.coridor.name
     @body['year'] = student.index.year

@@ -799,6 +799,10 @@ cs:
       interupts: 
         print_interupt: 
           rhtml: 
+            message_10: Student
+            message_11: Rok
+            message_12: Obor
+            message_13: Školitel
             message_8: Poslední atestace
             message_9: Schvalovací proces studijního plánu
             message_0: Toto studium je přerušeno
@@ -1119,6 +1123,24 @@ cs:
         end_study: 
           rhtml: 
             message_0: odeslat
+            message_1: Žádost o ukončení studia
+            message_2: Student
+            message_3: Ročník
+            message_4: Obor
+            message_5: Školitel
+            message_6: Datum
+            message_7: Důvod ukončení studia
+
+        end_study_confirm: 
+          rhtml: 
+            message_0: odeslat
+            message_1: Žádost o ukončení studia
+            message_2: Student
+            message_3: Ročník
+            message_4: Obor
+            message_5: Školitel
+            message_6: Datum
+            message_7: Důvod ukončení studia
         edit_tutor: 
           rhtml: {}
 
@@ -1152,12 +1174,25 @@ cs:
         change_tutor: 
           rhtml: 
             message_0: odeslat
-        end_study_confirm: 
-          rhtml: {}
+            message_1: Žádost na změnu školitele
+            message_2: Student
+            message_3: Ročník
+            message_4: Obor
+            message_5: Školitel
+            message_6: Datum
+            message_7: Důvod změny školitele
 
         change_tutor_confirm: 
-          rhtml: {}
-
+          rhtml:
+            message_0: nic
+            message_1: Žádost na změnu školitele
+            message_2: Student
+            message_3: Ročník
+            message_4: Obor
+            message_5: Školitel
+            message_6: Datum
+            message_7: Důvod změny školitele
+           
         _index: 
           rhtml: 
             message_0: ročník

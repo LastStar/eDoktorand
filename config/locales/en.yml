@@ -762,6 +762,10 @@ en:
       interupts: 
         print_interupt: 
           rhtml: 
+            message_10: Student
+            message_11: Year
+            message_12: Corridor
+            message_13: Tutor
             message_8: "last atestation:"
             message_9: study plan approvement process
             message_0: This study is interupted
@@ -1044,6 +1048,24 @@ en:
         end_study: 
           rhtml: 
             message_0: submit
+            message_1: Request for end study
+            message_2: Student
+            message_3: Year
+            message_4: Corridor
+            message_5: Tutor
+            message_6: Date
+            message_7: Subject of end study
+        
+        end_study_confirm: 
+          rhtml: 
+            message_0: submit
+            message_1: Request for end study
+            message_2: Student
+            message_3: Year
+            message_4: Corridor
+            message_5: Tutor
+            message_6: Date
+            message_7: Subject of end study
         edit_tutor: 
           rhtml: {}
 
@@ -1076,11 +1098,25 @@ en:
         change_tutor: 
           rhtml: 
             message_0: submit
-        end_study_confirm: 
-          rhtml: {}
+            message_1: Request for change tutor
+            message_2: Student
+            message_3: Year
+            message_4: Corridor
+            message_5: Tutor
+            message_6: Date
+            message_7: Reason for change tutor
 
         change_tutor_confirm: 
-          rhtml: {}
+          rhtml:
+            message_0: nothing
+            message_1: Request for change tutor
+            message_2: Student
+            message_3: Year
+            message_4: Corridor
+            message_5: Tutor
+            message_6: Date
+            message_7: Reason for change tutor
+          
 
         _index: 
           rhtml: 

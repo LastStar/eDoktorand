@@ -333,8 +333,7 @@ module ApplicationHelper
       link_to_remote(t(:message_48, :scope => [:txt, :helper, :application]),
                     {:url => {:controller => 'study_plans', 
                       :action => 'atestation_details',
-                      :id => study_plan, :evaluate => true},
-                    :complete => evaluate_remote_response},
+                      :id => study_plan, :evaluate => true}},
                     {:id => "detail_link#{study_plan.id}"})
     else
       atestation_links(study_plan)

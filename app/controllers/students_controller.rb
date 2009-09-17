@@ -270,8 +270,8 @@ class StudentsController < ApplicationController
   def end_study
   end
   #propably not used, should be removed
-  #def change_tutor
-  #end
+  def change_tutor
+  end
 
   def end_study_confirm
     @end_study_subject = params[:end_study_subject]
@@ -280,7 +280,12 @@ class StudentsController < ApplicationController
 
   def change_tutor_confirm
     @subject_change = params[:subject_change]
-    Notifications::deliver_change_tutor(@student, @subject_change)
+    if I18n.locale.to_s == "cs"
+      Notifications::deliver_change_tutor_cs(@student, @subject_change)
+    else
+      Notifications::deliver_change_tutor_en(@student, @subject_change)
+  
+    end
   end
 
   private
