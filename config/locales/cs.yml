@@ -1201,9 +1201,9 @@ cs:
             message_0: Přehled atestací
             message_10: At.
             message_1: zpět
-            message_11: "yes"
+            message_11: ano
             message_2: Jméno
-            message_12: "no"
+            message_12: ne
             message_3: Příjmení
             message_13: V tomto oboru nejsou žádní studenti k atestaci
             message_4: r.
@@ -1220,8 +1220,8 @@ cs:
             message_3: Kód
             message_4: Program
             message_5: Akreditován
-            message_6: "yes"
-            message_7: "no"
+            message_6: ano
+            message_7: ne
         edit: 
           rhtml: {}
 
