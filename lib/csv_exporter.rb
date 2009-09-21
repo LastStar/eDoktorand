@@ -412,7 +412,7 @@ class CSVExporter
           row << s.birth_number
           row << s.index.coridor.name
           row << s.index.faculty.name
-          row << s.email.(:name)
+          row << s.email.try(:name)
           if s.address
             row << s.address.street
             row << s.address.desc_number
