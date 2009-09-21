@@ -32,6 +32,7 @@ class Candidate < ActiveRecord::Base
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
     :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
 
+  named_scope :admited, :conditions => 'admited_on is not null'
   # validates if languages are not same
   def validate
     errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
@@ -158,7 +159,6 @@ class Candidate < ActiveRecord::Base
       self.update_attribute('rejected_on', nil)
     end
   end
-
 
   # checks if student is reject
   def rejected?
