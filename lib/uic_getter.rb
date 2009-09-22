@@ -11,7 +11,7 @@ class UicGetter
 
   # constants definition
   SERVICES = {:uic => "http://193.84.33.16/axis2/services/GetUicService/getUicByBirthNum?rc=%s",
-              :pokus => "http://193.84.34.6/axis2/services/GetUicService/getUicByBirthNum?rc=8111191638"}
+    :pokus => "http://193.84.34.6/axis2/services/GetUicService/getUicByBirthNum?rc=8111191638"}
   UIC_REGEX = /<uic>(-?[0-9]{3,6})<\/uic>/
   MESSAGE_REGEXP = /<message>(.*)<\/message>/
 
@@ -28,8 +28,8 @@ class UicGetter
       @@logger.debug "Trying service for student id #{student.id} and bn #{student.birth_number}"
       begin
         service_response = query_service(
-          :uic => "http://193.84.33.16/axis2/services/GetUicForeignerService/getUicByBirthNum?rc=%s" %
-            student.birth_on.strftime("%y%m%d41A9"))
+                                         "http://193.84.33.16/axis2/services/GetUicForeignerService/getUicByBirthNum?rc=%s" %
+                                         student.birth_on.strftime("%y%m%d41A9"))
       rescue Exception => e
         @@logger.error 'Something gone wrong with service ' + e
         next
@@ -44,7 +44,6 @@ class UicGetter
       end
     end
     @@logger.debug "All students done"
-    end
   end
 
   # update uic from central database
