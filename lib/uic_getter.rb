@@ -23,6 +23,31 @@ class UicGetter
   end
 
   # update uic from central database
+  def update_foreign_uic(students)
+    students.each do |student|
+      @@logger.debug "Trying service for student id #{student.id} and bn #{student.birth_number}"
+      begin
+        service_response = query_service(
+          :uic => "http://193.84.33.16/axis2/services/GetUicForeignerService/getUicByBirthNum?rc=%s" %
+            student.birth_on.strftime("%y%m%d41A9"))
+      rescue Exception => e
+        @@logger.error 'Something gone wrong with service ' + e
+        next
+      end
+      begin
+        uic = extract_uic(service_response)
+        @@logger.debug "Service and parsing successful. Updating student"
+        student.update_attribute(:uic, uic)
+      rescue Exception => e
+        @@logger.error "Error parsing response: " + e
+        next
+      end
+    end
+    @@logger.debug "All students done"
+    end
+  end
+
+  # update uic from central database
   def update_uic(students)
     students.each do |student|
       if student.uic
@@ -83,3 +108,4 @@ class UicGetter
   end
 
 end
+
