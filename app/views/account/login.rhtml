@@ -1,3 +1,7 @@
+
+
+
+
 <% form_tag({:action=> "login"}, {:onSubmit => "$('login-button').value = '%s'" % t(:message_0, :scope => [:txt, :view, :account, :login, :rhtml])}) do %>
 
 <div title="<%= t(:message_1, :scope => [:txt, :view, :account, :login, :rhtml]) %>" id="loginform" class="form">
@@ -34,3 +38,7 @@
   <%= render(:partial => 'actuality', :collection => @actualities) %>
 </ul>
 <% end %>
+
+<script type="text/javascript">
+ document.getElementById("user_login").focus();
+</script>
