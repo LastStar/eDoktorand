@@ -928,4 +928,32 @@ class CSVLoader
       end
     end
   end
+
+  # imports obligate subjects from csv
+  def self.import_obligate_coridor_subjects(file)
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      c = Coridor.find(row[3])
+      s = Subject.find_by_code(row[2])
+      unless s
+        @@mylog.info 'creating %s' % row[0]
+        s = Subject.create(:label => row[0], :label_en => row[1], :code => row[2])
+      end
+      @@mylog.info 'creating obligate subject %s for %s' % [s.label, c.name]
+      c.obligate_subjects << ObligateSubject.new(:coridor => c, :subject => s)
+    end
+  end
+
+  # imports voluntary subjects from csv
+  def self.import_voluntary_coridor_subjects(file)
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      c = Coridor.find(row[3])
+      s = Subject.find_by_code(row[2])
+      unless s
+        @@mylog.info 'creating %s' % row[0]
+        s = Subject.create(:label => row[0], :label_en => row[1], :code => row[2])
+      end
+      @@mylog.info 'creating voluntary subject %s for %s' % [s.label, c.name]
+      c.voluntary_subjects << VoluntarySubject.new(:coridor => c, :subject => s)
+    end
+  end
 end
