@@ -2,6 +2,11 @@
 module ApplicationHelper
   
   # TODO remove from form controller
+  #translates country code 
+  def translate_country(code)
+    I18n.translate(:countries)[code.to_sym]
+  end
+  
   # prints department options
   def department_options(options = {})
     options_for_select(Department.for_select(options))

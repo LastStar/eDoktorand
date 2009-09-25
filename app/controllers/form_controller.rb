@@ -96,8 +96,8 @@ class FormController < ApplicationController
   def prepare_candidate
     @candidate = Candidate.new do |c| 
       c.coridor = Coridor.find(params[:id])
-      c.state = t(:message_12, :scope => [:txt, :controller, :form])
-      c.address_state = t(:message_13, :scope => [:txt, :controller, :form])
+      c.state = 'CZ'
+      c.address_state = 'CZ'
       c.university = t(:message_14, :scope => [:txt, :controller, :form])
       c.faculty = c.coridor.faculty.name
       language1_id = 1133 if c.admitting_faculty == 3

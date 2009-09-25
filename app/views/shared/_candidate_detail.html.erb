@@ -5,7 +5,7 @@
   <li><div class="right_info"><%= @candidate.birth_on.strftime("%d.%m.%Y") + ", " + @candidate.birth_at %></div><%= t(:message_2, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
   <li><div class="right_info"><%= @candidate.birth_number %></div><%= t(:message_3, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
   <li><div class="right_info"><%= @candidate.print_sex %></div><%= t(:message_4, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.state %></div><%= t(:message_5, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
+  <li><div class="right_info"><%= translate_country(@candidate.state) %></div><%= t(:message_5, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
   </ul>
   <h5><%= t(:message_6, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %></h5> 
   <ul>

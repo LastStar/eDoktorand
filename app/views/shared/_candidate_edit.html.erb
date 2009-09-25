@@ -21,7 +21,8 @@
     <label for="candidate_department_id"><%= t(:message_7, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <%= sex_select 'candidate', 'sex' %><br /> 
     <label for='candidate_state' class='required'><%= t(:message_8, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
-    <%= text_field 'candidate', 'state', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <%= localized_country_select 'candidate', 'state', []  %>
+    <span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_birth_number' class='required'><%= t(:message_9, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <%= text_field 'candidate', 'birth_number', 'size' => '11' %><span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
@@ -43,7 +44,8 @@
     <label for='candidate_zip' class='required'><%= t(:message_17, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <%= text_field 'candidate', 'zip', 'size' => '10' %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for='candidate_zip' class='required'><%= t(:message_18, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
-    <%= text_field 'candidate', 'address_state', 'size' => '30' %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <%= localized_country_select 'candidate', 'address_state', []  %>
+    <span class='required'>&nbsp;&lowast;</span ><br /> 
   </fieldset>
   <fieldset id='postal_address'>
     <legend><%= t(:message_19, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %> - <%= t(:message_20, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>

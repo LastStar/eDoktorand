@@ -45,7 +45,7 @@ class Candidate < ActiveRecord::Base
   end
 
   def validate_on_create
-    if state == "Česká republika"
+    if state == "CZ" || state == "SK"
       if birth_number.to_i.remainder(11) != 0
         errors.add(:birth_number, I18n::t(:message_23, :scope => [:txt, :model, :candidate]))
       end
