@@ -1318,6 +1318,8 @@ cs:
             message_5: Přihlásit
             message_6: odeslat
             message_7: Aktuality
+            message_8: Použijte Firefox 3
+            message_9: Nyní používáte
         error: 
           rhtml: 
             message_0: "V aplikaci se vyskytla chyba:"
