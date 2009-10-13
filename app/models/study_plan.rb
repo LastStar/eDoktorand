@@ -123,7 +123,7 @@ class StudyPlan < ActiveRecord::Base
   # atests study plan with statement from parameters
   def atest_with(params)
     statement = \
-    eval("#{params[:type]}.create(params)") 
+    eval("#{params[:type]}.create(params)")
     atestation.update_attribute("#{params[:type].underscore}_id", statement.id)
     if statement.is_a?(DeanStatement)
       if statement.cancel?

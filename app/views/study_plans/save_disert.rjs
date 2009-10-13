@@ -1,4 +1,4 @@
-page.replace_html 'guide', _("Now you can see your plan how you have created
+page.replace_html 'guide', I18n::t("Now you can see your plan how you have created
 in previous steps. You have to confirm it otherwise it will be lost.")
 page.insert_html :bottom, 'studyPlan', :partial => 'shared/final_exam', 
                  :locals => {:study_plan => session[:study_plan]}

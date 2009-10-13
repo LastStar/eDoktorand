@@ -540,7 +540,7 @@ cs:
             message_2: pracuji...
         _disert_form: 
           rhtml: 
-            message_8: finish study plan creating (no steps back)
+            message_8: ukončit vytváření studijního plánu (nebude možný krok zpět)
             message_9: pracuji...
             message_0: semestr státní doktorské zkoušky
             message_1: semestr
@@ -601,7 +601,7 @@ cs:
         _voluntary_form: 
           rhtml: 
             message_0: volitelné předměty
-            message_1: 
+            message_1: povinné předměty
             message_2: pracuji...
             message_3: cizí jazyky
             message_4: pracuji...

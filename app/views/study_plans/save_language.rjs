@@ -1,6 +1,6 @@
 page.insert_html :bottom, 'studyPlan', :partial => 'shared/subjects', 
                                        :locals => {:subjects =>
                                          session[:language_subjects],
-                                       :title => _("language subjects")}
+                                       :title => I18n::t("language subjects")}
 page.replace_html 'form', :partial => "disert_form" 
 

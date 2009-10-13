@@ -7,7 +7,7 @@ class VoluntarySubject < CoridorSubject
 
   def self.for_select(options = {})
     if options.delete :with_external 
-      arr = [[t(:message_0, :scope => [:txt, :model, :subject]), 0]]
+      arr = [[I18n::t(:message_0, :scope => [:txt, :model, :subject]), 0]]
     else
       arr = []
     end

@@ -13,7 +13,7 @@
 <ul class='nodecor'>
 <li>
   <label for="study_plan_finishing_to"><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %>:</label>
-  <%= select 'study_plan', 'finishing_to', session[:last_semester]..6 %>
+  <%= select 'study_plan', 'finishing_to', session[:last_semester]..8 %>
   <%= "." + t(:message_1, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %> 
 </li>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
@@ -34,7 +34,7 @@
 </li>
 <li>
   <label for="disert_theme_finishing_to"><%= t(:message_4, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %></label>
-  <%= select 'disert_theme', 'finishing_to', session[:last_semester]..6 %><br/>
+  <%= select 'disert_theme', 'finishing_to', session[:last_semester]..8 %><br/>
 </li>
 <li>
   <label for="disert_theme_methodology_summary"><%= t(:message_5, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %>:</label>
