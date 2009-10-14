@@ -32,7 +32,7 @@
   <li class='printable'>
     <%= student_tutor_line(index) %>
   </li>
-  <% if FACULTY_CFG[index.faculty.id]['consultant'] %>
+  <% if FACULTY_CFG[index.faculty.id] && FACULTY_CFG[index.faculty.id]['consultant'] %>
     <li class='printable'>
     <%= attribute_line(index, :consultant) %><%=t 'Consultant' %>:
     </li>

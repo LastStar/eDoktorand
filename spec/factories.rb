@@ -3,6 +3,14 @@ Factory.define :user do |user|
   user.association :person, :factory => :person
 end
 
+Factory.define :role do |role|
+  role.name 'role'
+end
+
+Factory.define :permission do |permission|
+  permission.name 'permission'
+end
+
 Factory.define :person do |p|
   p.firstname 'Pepe'
   p.lastname 'Calvera'
@@ -20,7 +28,6 @@ end
 
 Factory.define :index do |index|
   index.enrolled_on TermsCalculator.this_year_start
-  index.association :student
   index.association :study
   index.association :tutor
   index.association :coridor
