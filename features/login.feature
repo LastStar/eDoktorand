@@ -3,7 +3,16 @@ Feature: Login page
   CZU
   wants login page
 
-  Scenario:
+  Background:
+    Given I have user named 'pepe'
+
+
+  Scenario: Login page
     Given I am on the login page
-    Then I should see "Přihlášení do systému"
-    Then I should see "Aktuality"
+    Then I should see "Login to system"
+
+  Scenario: Logging in system with user without rights
+    Given I am on the login page
+    Then I fill my credentials
+    Then I press "Submit"
+    Then I should see "You don't have rights to do this"

@@ -1,5 +1,11 @@
 Factory.define :user do |u|
   u.login 'anonymous'
+  u.association :person, :factory => :person
+end
+
+Factory.define :person do |p|
+  p.firstname 'Pepe'
+  p.lastname 'Calvera'
 end
 
 Factory.define :coridor do |c|
