@@ -83,4 +83,9 @@ class Coridor < ActiveRecord::Base
       find_all_by_faculty_id_and_accredited(user.person.faculty.id, 1)
     end
   end
+
+  # returns set study length or 3 years
+  def study_length
+    read_attribute(:study_length) || 3
+  end
 end

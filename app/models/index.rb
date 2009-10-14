@@ -447,7 +447,7 @@ class Index < ActiveRecord::Base
 
   # returns true if index have year more than 3
   def continues?
-    year > 3
+    year > coridor.study_length
   end
 
   # switches study form

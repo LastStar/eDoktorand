@@ -25,5 +25,6 @@ Rails::Initializer.run do |config|
   config.gem "ruby-net-ldap", :lib => "net/ldap"
   config.gem "mislav-will_paginate", :lib => 'will_paginate'
   config.gem "actionwebservice", :lib => 'actionwebservice', :version => '2.3.2'
+  config.gem "thoughtbot-factory_girl", :lib => 'factory_girl', :version => '1.2.2'
 
 end
