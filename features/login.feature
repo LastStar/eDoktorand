@@ -6,7 +6,6 @@ Feature: Login page
   Background:
     Given I have user named 'pepe'
 
-
   Scenario: Login page
     Given I am on the login page
     Then I should see "Login to system"
