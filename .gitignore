@@ -2,7 +2,9 @@ log/*
 locale/*
 db/moje
 db/moje~
+db/test.sqlite3
 tmp/*
 db/schema.rb
 *.kpf
 public/pdf/methodology
+
