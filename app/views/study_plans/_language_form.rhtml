@@ -7,8 +7,7 @@
 </ul>
 </div>
 <% end %>
-<% form_remote_tag(:url => {:action => 'save_language'}, 
-  :complete => evaluate_remote_response) do -%>	
+<% form_remote_tag(:url => {:action => 'save_language'}) do -%>	
 <fieldset>
 <legend><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]) %></legend>
 <ul>

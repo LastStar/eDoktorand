@@ -7,8 +7,7 @@
 </ul>
 </div>
 <% end %>
-<% form_remote_tag(:url => {:action => 'save_voluntary'}, 
-  :complete => evaluate_remote_response) do -%>	
+<% form_remote_tag(:url => {:action => 'save_voluntary'}) do -%>	
 <fieldset>
 <legend><%= I18n::t(:message_0, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]) %></legend>
 <ul>

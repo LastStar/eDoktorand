@@ -3,23 +3,23 @@ if session[:seminar_subjects]
   page.replace_html "studyPlan", :partial => 'shared/subjects', 
                                        :locals => {:subjects =>
                                          session[:seminar_subjects],
-                                       :title => _("seminar subjects")}
+                                       :title => I18n::t(:message_3, :scope => [:txt, :view, :study_plans, :_not_valid_languages, :rhtml])}
 end
 if session[:obligate_subjects]
   page.replace_html "studyPlan", :partial => 'shared/subjects', 
                                        :locals => {:subjects =>
                                          session[:obligate_subjects],
-                                       :title => _("obligate subjects")}
+                                       :title => I18n::t(:message_0, :scope => [:txt, :view, :study_plans, :_not_valid_languages, :rhtml])}
 end
 if session[:requisite_subjects]
   page.insert_html :top, 'studyPlan', :partial => 'shared/subjects', 
                                  :locals => {:subjects =>
                                    session[:requisite_subjects],
-                                 :title => _("requisite subjects")}
+                                 :title => I18n::t(:message_2, :scope => [:txt, :view, :study_plans, :_not_valid_languages, :rhtml])}
 end
 page.insert_html :bottom, "studyPlan", :partial => 'shared/subjects', 
                                      :locals => {:subjects =>
                                        session[:voluntary_subjects],
-                                     :title => _("voluntary subjects")}
+                                     :title => I18n::t(:message_1, :scope => [:txt, :view, :study_plans, :_not_valid_languages, :rhtml])}
 page.replace_html "form", :partial => "language_form"
 

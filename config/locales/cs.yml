@@ -117,7 +117,7 @@ cs:
       student: 
         message_8: Změnit formu k
         message_9: ukončit k
-        message_0: do
+        message_0: Student
         message_10: změnit formu k
         message_1: Datum narození
         message_11: složil SDZ k
@@ -532,7 +532,43 @@ cs:
           rhtml:
             message_0: Seznam zkoušejících
       
-      study_plans: 
+      study_plans:
+        save_disert:
+          rhtml:
+            message_0: V tuto chvíli můžete vidět studijní plán tak jak jste si ho v předchozích krocích sestavil/-a. Pokud ho nepotvrdíte, všechny změny budou ztraceny.
+
+        _not_valid_disert:
+          rhtml:
+            message_0: povinné přeměty
+            message_1: volitelné přeměty
+            message_2: cizí jazyky
+            message_3: odborné semináře
+            message_4: předepsané předměty
+        
+        save_language:
+          rhtml:
+            message_0: cizí jazyky
+        save_voluntary:
+          rhtml:
+            message_0: volitelné předměty
+        _save_obligate:
+          rhtml:
+            seminar_subjects: odborné semináře
+            obligate_subjects: povinné přeměty
+            requisite_subjects: předepsané předměty
+        _not_valid_voluntarys:
+          rhtml:
+            message_0: povinné přeměty
+            message_1: volitelné přeměty
+            message_2: předepsané přeměty
+            message_3: odborné semináře
+        _not_valid_languages:
+          rhtml:
+            message_0: povinné přeměty
+            message_1: volitelné přeměty
+            message_2: předepsané přeměty
+            message_3: odborné semináře
+            
         _obligate_form: 
           rhtml: 
             message_0: povinné předměty
@@ -572,7 +608,7 @@ cs:
             message_1: Detail  Vašeho studijního plánu byl zaslán ke schválení. Schválení obdržíte emailem.
             message_11: Tato stránka zobrazuje informace, které jsou o Vás uloženy v informačním systému
             message_2: Počkejte než bude Vaše žádost schválena a termín obhajoby zkoušky vytvořen.
-            message_12: " If you have found any error please contact "
+            message_12: " Pokud jste nalezl/a nějakou chybu, prosíme kontaktujte "
             message_3: Termín Vaší obhajoby byl vytvořen a je součástí detailu studijního plánu.
             message_13: Prvním krokem bude vytvořit
             message_4: Splnil jste státní doktorskou zkoušku. Pokračujte s přihláškou k obhajobě
@@ -616,8 +652,8 @@ cs:
             message_0: Dodatečné informace poskytnuté studentem
         _voluntary: 
           rhtml: 
-            message_0: 
-            message_1: 
+            message_0: předměty musí být rozdílné
+            message_1: univerzita nesmí být prazdná 
             message_2: semestr
             message_3: předmět
             message_4: předmět en
@@ -1561,6 +1597,7 @@ cs:
             message_12: Psč
             message_13: UIC
             message_14: SIDENT
+            message_15: Konzultant
             
         _final_exam: 
           rhtml: 

@@ -3,19 +3,19 @@ if session[:seminar_subjects]
   page.replace_html "studyPlan", :partial => 'shared/subjects', 
                                        :locals => {:subjects =>
                                          session[:seminar_subjects],
-                                       :title => I18n::t("seminar subjects")}
+                                       :title => I18n::t(:message_3, :scope => [:txt, :view, :study_plans, :_not_valid_voluntarys, :rhtml])}
 end
 if session[:obligate_subjects]
   page.replace_html "studyPlan", :partial => 'shared/subjects', 
                                        :locals => {:subjects =>
                                          session[:obligate_subjects],
-                                       :title => I18n::t("obligate subjects")}
+                                       :title => I18n::t(:message_0, :scope => [:txt, :view, :study_plans, :_not_valid_voluntarys, :rhtml])}
 end
 if session[:requisite_subjects]
   page.insert_html :top, 'studyPlan', :partial => 'shared/subjects', 
                                  :locals => {:subjects =>
                                    session[:requisite_subjects],
-                                 :title => I18n::t("requisite subjects")}
+                                 :title => I18n::t(:message_2, :scope => [:txt, :view, :study_plans, :_not_valid_voluntarys, :rhtml])}
 end
 page.replace_html "form", :partial => "voluntary_form"
 

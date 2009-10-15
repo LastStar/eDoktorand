@@ -34,7 +34,7 @@
   </li>
   <% if FACULTY_CFG[index.faculty.id] && FACULTY_CFG[index.faculty.id]['consultant'] %>
     <li class='printable'>
-    <%= attribute_line(index, :consultant) %><%=t 'Consultant' %>:
+    <%= attribute_line(index, :consultant) %><%= t(:message_15, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
     </li>
   <% end %>
   <li>

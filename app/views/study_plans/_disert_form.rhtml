@@ -5,8 +5,7 @@
 <% end %>
 </ul>
 </div>
-<% form_remote_tag(:url => {:action => 'save_disert'}, 
-  :complete => evaluate_remote_response) do -%>	
+<% form_remote_tag(:url => {:action => 'save_disert'}) do -%>	
 <% @study_plan ||= session[:study_plan] %>
 <% @disert_theme ||= session[:disert_theme]%>
 <fieldset>

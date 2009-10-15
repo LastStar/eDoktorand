@@ -1,5 +1,5 @@
-page.replace_html 'guide', I18n::t("Now you can see your plan how you have created
-in previous steps. You have to confirm it otherwise it will be lost.")
+page.replace_html 'guide', I18n::t(:message_0, :scope => [:txt, :view, :study_plans, :save_disert, :rhtml])
+
 page.insert_html :bottom, 'studyPlan', :partial => 'shared/final_exam', 
                  :locals => {:study_plan => session[:study_plan]}
 page.insert_html :bottom, 'studyPlan', :partial => 'shared/disert_theme', 
