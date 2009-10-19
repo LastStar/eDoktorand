@@ -13,6 +13,10 @@
 <li><a href="/pdf/StipendijniRadDSP2006.pdf" target="_blank"><%= t(:message_2, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
 <li> <a href="/pdf/UbytovaciStipendia2006-07.pdf" target="_blank"><%= t(:message_3, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
 <li><a href="/documents/how_to" target="_blank"><%= t(:message_4, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<% if @user.person.faculty.id == 4%>
+  <li><a href="/pdf/zadost_o_SDZ.pdf" target="_blank"><%= t(:message_7, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+  <li><a href="/pdf/zadost_a_podklady_k_obhajobe_DP.pdf" target="_blank"><%= t(:message_8, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<% end %>
 </ul>
 <%= render :partial => 'help' %>
 <%= render(:partial => 'shared/student_detail', :locals => {:index => @index}) %>
