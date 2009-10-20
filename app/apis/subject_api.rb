@@ -1,4 +1,3 @@
-class SubjectApi < ActionWebService::API::Base
 class SubjectHash < ActionWebService::Struct
   member :subject_id, :int
   member :code, :string
@@ -8,6 +7,7 @@ class SubjectHash < ActionWebService::Struct
   member :idDepartment, :int
 end
 
+class SubjectApi < ActionWebService::API::Base
   api_method :get_subjects,
-             :returns => [[SOAP::Mapping]]
+             :returns => [[SubjectHash]]
 end
