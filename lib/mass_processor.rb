@@ -67,7 +67,7 @@ class MassProcessor
           label_en = remote_subject.labelEn.is_a?(String) ? remote_subject.labelEn : ""
           code = remote_subject.code.is_a?(String) ? remote_subject.code : ""
           subject = Subject.create(:label => label, :label_en => label_en, :code => code)
-          if Department.find(remote_subject.idDepartment)
+          if Department.exists?(remote_subject.idDepartment)
             subject.departments << Department.find(remote_subject.idDepartment.to_i)
           else
             @@mylog.debug "Department IS MISSING in our database! for subject %s" % subject.code
