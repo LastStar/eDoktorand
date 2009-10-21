@@ -147,7 +147,7 @@ class Index < ActiveRecord::Base
       if self.interupt 
         time -= interrupted_time
       end
-      return @semester = time.div(1.year/2) + 1
+      return @semester = time.div(1.year / 2) + 1
     end
   end
 

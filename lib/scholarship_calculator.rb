@@ -18,7 +18,6 @@ class ScholarshipCalculator
           10 => 6700, 'final_exam' => 8000}      
   }          
           
-
   # calculates scholarship for student 
   def self.for(index)
     index = Index.find(index) unless index.is_a?(Index)
