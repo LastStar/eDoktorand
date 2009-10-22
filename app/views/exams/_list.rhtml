@@ -5,7 +5,7 @@
 <% for exam in @exams  %>
   <tr id='student_detail_<%= exam.id %>' class='student_detail'>
     <th><%= exam.index.student.display_name %></th>
-    <td><%= truncate(exam.subject.label, {:lenght => 40}) %></td>
+    <td><%= truncate(exam.subject.label, :length => 30) %></td>
     <td><%= exam.passed_on.strftime("%d. %m. %Y") %></td>
     <td><%= result_word(exam.result) %></td>
     <td class='smallerinfo' id='edit_link_<%= exam.id %>'><%= edit_link(exam) %></td>

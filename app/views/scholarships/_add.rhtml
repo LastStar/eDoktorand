@@ -1,5 +1,5 @@
 <td colspan=6>
-<%= save_form(scholarship) %>
+<% save_form(scholarship) do %>
 <div class='small'>
   <%if params[:scholarship]%>
     <%if @edit == 1%>
@@ -40,6 +40,6 @@
 <div>
  <%= t(:message_5, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %>
 </div>
-<%= end_form_tag %>
+<% end %>
 <%= javascript_tag "document.forms[0].amount.focus()" %>
 </td>
