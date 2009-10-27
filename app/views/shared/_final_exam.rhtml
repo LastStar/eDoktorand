@@ -63,7 +63,7 @@
     <% fa = study_plan.final_areas['en'] %>
       <li class='second'>
         <div class='long_info' id='final_area_en<%= i %>'>
-        <% if fa[i.to_s] == nil || fa[i.to_s] == ""%>
+        <% if (fa[i.to_s] == nil || fa[i.to_s] == "") && params[:action] != 'save_disert' %>
           <%= add_en_link(index,i) %>
         <% else %>
           <%= edit_en_link(index,i,fa[i.to_s]) %>        

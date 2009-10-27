@@ -264,8 +264,8 @@ class StudyPlansController < ApplicationController
 
   #saving only final_areas en (fixing bug)
   def save_en
-    @id = Index.find(params[:id])
-    @study_plan = @id.study_plan
+    @index = Index.find(params[:id])
+    @study_plan = @index.study_plan
     @final_area_id = params[:final_area_id]
     cz_array_areas = @study_plan.final_areas['cz']
     en_array_areas = @study_plan.final_areas['en']
