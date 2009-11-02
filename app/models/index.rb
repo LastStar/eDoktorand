@@ -11,9 +11,6 @@ end
 
 class Index < ActiveRecord::Base
   include Approvable
-
-  
-  
   PREFIX_WEIGHTS = [1, 2, 4, 8, 5, 10]
   ACCOUNT_WEIGHTS = [1, 2, 4, 8, 5, 10, 9, 7, 3, 6]
   #TODO name scope them all
@@ -140,10 +137,11 @@ class Index < ActiveRecord::Base
       return @semester
     else
       if finished?
-        time = finished_on.to_time - enrolled_on.to_time
+        end_date = finished_on.to_time
       else
-        time = Time.now - enrolled_on
+        end_date = Time.now
       end
+      time = end_date - enrolled_on.to_time
       if self.interupt 
         time -= interrupted_time
       end
@@ -414,7 +412,7 @@ class Index < ActiveRecord::Base
   end
 
   def self.find_for_scholarship(user, opts = {})
-    paying_date = (Time.now - 3.week)
+    paying_date = Time.now.last_month.end_of_month
     opts.update({:unfinished => paying_date, :not_interupted => paying_date,
                  :enrolled => paying_date, :not_absolved => paying_date, :include => [:extra_scholarships]})
     return find_for(user, opts)
@@ -527,7 +525,7 @@ class Index < ActiveRecord::Base
   end
 
   def close_to_interupt_end_or_after?(months = 3)
-    interupt && !interupt.finished? && Time.now > (interupt.end_on - months.month)
+    interupt && !interupt.finished? && Time.now > interupt.end_on.months_ago(months)
   end
 
   def waits_for_scholarship_confirmation?

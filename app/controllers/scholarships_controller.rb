@@ -108,7 +108,7 @@ class ScholarshipsController < ApplicationController
   def pay
     csv_headers('stipendia.csv')
     stipendias = Scholarship.pay_and_generate_for(@user)
-    date = (Time.now - 1.month).strftime('%Y%m')
+    date = Time.now.last_month.strftime('%Y%m')
     file = "#{RAILS_ROOT}/public/csv/#{date}.csv"
     File.open(file, 'w') {|file| file.write(stipendias)}
     # TODO send mail to machyk
