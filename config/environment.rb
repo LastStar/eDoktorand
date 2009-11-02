@@ -21,7 +21,6 @@ Rails::Initializer.run do |config|
   config.plugins = [ :localized_country_select, :translate, :exception_notification, :ar_fixtures, :acts_as_audited, :rtex, :tiny_mce ]
 
   config.gem "log4r"
-  config.gem "mongrel"
   config.gem "ruby-net-ldap", :lib => "net/ldap"
   config.gem "mislav-will_paginate", :lib => 'will_paginate'
   config.gem "actionwebservice", :lib => 'actionwebservice', :version => '2.3.4'
