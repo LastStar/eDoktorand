@@ -12,7 +12,7 @@ ExceptionNotifier.sender_address =
   %("Edoktorand Exception Notifier" <exception.notifier@edoktorand.czu.cz>)
 
 # Set authenticate method of user login
-AUTH_SYSTEM = 'noldap'
+AUTH_SYSTEM = 'ldap'
 
 # faculty dependent configurations
 FACULTY_CFG =
