@@ -368,7 +368,7 @@ class Index < ActiveRecord::Base
         conditions.first.sql_and(FINISHED_COND)
         conditions << today
       when 3
-        conditions.first.sql_and(INTERUPTED_COND).sql_and(FINISHED_COND)
+        conditions.first.sql_and(INTERUPTED_COND).sql_and(NOT_FINISHED_COND)
         conditions << [today]
       when 4
         conditions.first.sql_and(ABSOLVED_COND)
