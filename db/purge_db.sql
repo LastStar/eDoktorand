@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS `faculties`;
 DROP TABLE IF EXISTS `indices`;
 DROP TABLE IF EXISTS `interupts`;
 DROP TABLE IF EXISTS `leaderships`;
+DROP TABLE IF EXISTS `migration_schema`;
 DROP TABLE IF EXISTS `parameters`;
 DROP TABLE IF EXISTS `people`;
 DROP TABLE IF EXISTS `permissions`;
