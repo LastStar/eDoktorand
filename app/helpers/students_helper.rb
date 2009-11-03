@@ -345,7 +345,6 @@ module StudentsHelper
   def name_search_form(&proc)
     form_remote_tag(:url => {:action => 'search'},
                     :loading => "$('search_submit').value = '%s'" % t(:message_54, :scope => [:txt, :helper, :students]),
-                    :complete => evaluate_remote_response,
                     &proc)
   end
 
