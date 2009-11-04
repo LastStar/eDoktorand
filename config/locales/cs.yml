@@ -1600,6 +1600,7 @@ cs:
             message_13: UIC
             message_14: SIDENT
             message_15: Konzultant
+            message_16: Konto
             
         _final_exam: 
           rhtml: 
