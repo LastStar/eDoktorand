@@ -1600,6 +1600,7 @@ cs:
             message_13: UIC
             message_14: SIDENT
             message_15: Konzultant
+            message_16: Konto
             
         _final_exam: 
           rhtml: 
@@ -1619,7 +1620,8 @@ cs:
           rhtml: 
             message_0: Česká zemědělská univerzita v Praze
             message_1: Oznámení zasedání komise pro státní doktorské zkoušky.
-            message_2: Komise budou zasedat dne %s v místnosti %s
+            message_2: Komise budou zasedat dne
+            message_3: v místnosti
         list: 
           rhtml: 
             message_0: Vytisknout oznámení
