@@ -237,7 +237,15 @@ module StudentsHelper
     action = 'pass_' + what.to_s
     url = {:action => 'time_form', :controller => 'students',
            :form_action => action, :id => index, :day => true}
-    link_to_remote(t(:message_26, :scope => [:txt, :helper, :students]),
+    sentence = ""
+    if what.to_s == "final_exam"
+      sentence = t(:message_15, :scope => [:txt, :helper, :students])
+    elsif what.to_s == "defense"
+      sentence = t(:message_26, :scope => [:txt, :helper, :students])
+    else
+      sentence = what.to_s
+    end
+    link_to_remote(sentence,
                    :update => "index_form_#{index.id}",
                    :url => url)
   end
