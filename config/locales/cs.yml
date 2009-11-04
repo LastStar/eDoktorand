@@ -1620,7 +1620,8 @@ cs:
           rhtml: 
             message_0: Česká zemědělská univerzita v Praze
             message_1: Oznámení zasedání komise pro státní doktorské zkoušky.
-            message_2: Komise budou zasedat dne %s v místnosti %s
+            message_2: Komise budou zasedat dne
+            message_3: v místnosti
         list: 
           rhtml: 
             message_0: Vytisknout oznámení
