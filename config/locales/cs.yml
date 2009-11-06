@@ -1139,6 +1139,8 @@ cs:
           rhtml: 
             message_0: Ukončit k
             message_1: Změnit formu k
+            message_2: Složil SDZ k
+            message_3: Obhajil DP k            
         scholarship: 
           rhtml: 
             message_0: Stipendia pro studenty
