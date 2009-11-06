@@ -247,15 +247,31 @@ class StudentsController < ApplicationController
   end
   # end of methods for editing personal details
  
+  #TO DO: THIS METHOD MAYBE UNUSED NOW - NEED TO CHECK!
   def pass
     @index = Index.find(params[:id])
     date = create_date(params[:date])
     if params[:what].to_sym == :final_exam
+    #if params[:what] == "pass_final_exam"
       @index.final_exam_passed!(date)
     else
       @index.disert_theme.defense_passed!(date)
     end
     render(:partial => 'redraw_student')
+  end
+
+  def pass_final_exam
+    @index = Index.find(params[:id])
+    date = create_date(params[:date])
+    @index.final_exam_passed!(date)    
+    render(:partial => 'redraw_student')
+  end
+
+  def pass_defense
+    @index = Index.find(params[:id])
+    date = create_date(params[:date])
+    @index.disert_theme.defense_passed!(date)
+    render(:partial => 'redraw_student')   
   end
 
   def method_missing(method_id, *arguments)
