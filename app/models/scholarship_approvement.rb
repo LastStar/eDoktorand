@@ -1,7 +1,7 @@
 class ScholarshipApprovement < Approvement
   belongs_to :faculty, :foreign_key => 'document_id'
   
-  HALF_MONTH = 5.days
+  HALF_MONTH = 1.month / 2
 
   def self.approved_for?(faculty)
     faculty = Faculty.find(faculty) unless faculty.is_a? Faculty
