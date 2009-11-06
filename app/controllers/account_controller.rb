@@ -5,7 +5,7 @@ class AccountController < ApplicationController
   before_filter :set_title
   before_filter :prepare_user, :only => [:welcome, :logout]
 
-  caches_page :login
+  # caches_page :login
 
   def login
     @title = t(:message_0, :scope => [:txt, :controller, :account])
