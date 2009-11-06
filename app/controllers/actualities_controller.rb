@@ -25,6 +25,7 @@ class ActualitiesController < ApplicationController
     @actuality = Actuality.new(params[:actuality])
     if @actuality.save
       flash[:notice] = 'Actuality was successfully created.'
+      expire_page '/login'
       redirect_to :action => 'list'
     else
       render :action => 'new'
@@ -39,6 +40,7 @@ class ActualitiesController < ApplicationController
     @actuality = Actuality.find(params[:id])
     if @actuality.update_attributes(params[:actuality])
       flash[:notice] = 'Actuality was successfully updated.'
+      expire_page '/login'
       redirect_to :action => 'show', :id => @actuality
     else
       render :action => 'edit'
@@ -47,6 +49,7 @@ class ActualitiesController < ApplicationController
 
   def destroy
     Actuality.find(params[:id]).destroy
+    expire_page '/login'
     redirect_to :action => 'list'
   end
 end
