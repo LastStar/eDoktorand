@@ -631,6 +631,7 @@ table#scholarship_table tr.extra_scholarships {margin: 1px;border-bottom: 1px so
 .smallerinfo a {background-color: #452; padding-right: 4px; padding-left: 2px; color: #fff;}
 .exam_detail {margin: 1px;padding-left: .5ex}
 #student_list li {clear: both; padding: 0px;}
+#display_name select {width: 70px;}
 li.higher {height: 2.25em;}
 .red {color: red}
 li.tiny {clear: both;}

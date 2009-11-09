@@ -1,6 +1,8 @@
 <% save_form(:display_name) do -%>
+  <%= select ('student', 'title_before_id', @titles, {:include_blank => true } )%>
   <%= text_field 'student', 'firstname', 'size' => 10 %>
   <%= text_field 'student', 'lastname', 'size' => 20 %>
+  <%= select ('student', 'title_after_id', @titles, {:include_blank => true } )%>
   <%= hidden_field 'student', 'id' %>
   <%= ok_submit(:display_name) %>
 <% end %>
