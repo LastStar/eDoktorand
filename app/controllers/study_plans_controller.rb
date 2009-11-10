@@ -3,6 +3,17 @@ class StudyPlansController < ApplicationController
   helper :students
   layout 'employers', :except => [:add_en, :save_en, :show, :add_cz, :save_cz]
   before_filter :login_required, :prepare_user, :prepare_student
+  CARD_SERVICE = 'http://193.84.33.16:80/axis2/services/GetCardStateService/getCardStateByUIC?uic=%i'
+
+  # shows result of student requests
+  def requests
+    client = SOAP::NetHttpClient.new
+    begin
+      @card_request = Hash.from_xml(client.get_content(CARD_SERVICE % @student.uic))['getCardStateByUICResponse']['cardState']['NAZEV']
+    rescue
+      @card_request = t(:message_10, :scope => [:txt, :controller, :plans])
+    end
+  end
 
   # shows student basic information
   def index
@@ -261,7 +272,6 @@ class StudyPlansController < ApplicationController
     @value = params[:final_area_value] if params[:final_area_value]
   end
 
-
   #saving only final_areas en (fixing bug)
   def save_en
     @index = Index.find(params[:id])
@@ -291,7 +301,6 @@ class StudyPlansController < ApplicationController
     @study_plan.final_areas = full_array_areas
     @study_plan.save
   end
-
 
   private
   def reset_plan_session

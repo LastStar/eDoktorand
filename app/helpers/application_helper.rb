@@ -220,6 +220,9 @@ module ApplicationHelper
       result << link_to_unless_current(t(:message_31, :scope => [:txt, :helper, :application]), 
                                       :controller => 'probation_terms'){} 
     end
+    result << link_to_unless_current(t(:message_69, :scope => [:txt, :helper, :application]),
+                                     :controller => 'study_plans',
+                                     :action => 'requests'){}
     result << link_to_unless_current(t(:message_32, :scope => [:txt, :helper, :application]),
                                      :controller => 'study_plans',
                                      :action => 'index'){}
