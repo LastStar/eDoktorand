@@ -18,7 +18,7 @@ class AccountController < ApplicationController
         @message  = t(:message_1, :scope => [:txt, :controller, :account])
       end
     end
-    @actualities = Actuality.find(:all)
+    @actualities = Actuality.find(:all, :order => 'id desc')
   end
   
   def logout
