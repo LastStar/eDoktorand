@@ -327,6 +327,7 @@ cs:
         dean: děkan
         tutor: školitel
         leader: vedoucí katedry
+        message_69: žádosti
         message_68: SDZ
         message_67: zkoušející
         message_66: aktuality
@@ -536,6 +537,9 @@ cs:
         save_disert:
           rhtml:
             message_0: V tuto chvíli můžete vidět studijní plán tak jak jste si ho v předchozích krocích sestavil/-a. Pokud ho nepotvrdíte, všechny změny budou ztraceny.
+        requests:
+          message_0: Stav karty
+          message_1: Nenalezeny žádné žádosti
 
         _not_valid_disert:
           rhtml:
@@ -2253,6 +2257,7 @@ cs:
         message_5: předměty musí být rozdílné
         message_6: některý externí předmět není správný
         message_7: předměty musí být rozdílné
+        message_10: Nepodařilo se kontaktovat službu OIKT
       exams: 
         message_0: Vytváření protokolu o zkoušce
         message_1: Zkouška byla úspěšně vytvořena

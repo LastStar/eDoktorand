@@ -166,10 +166,14 @@ class StudentsController < ApplicationController
 
   def edit_display_name
     @student = Student.find(params[:id], :include => :index)
+    @titles = Title.find(:all, :order => "label").collect {|p| [ p.label, p.id ] }
     @index = @student.index
     @display_name = @index.student.display_name
     @firstname = @index.student.firstname
     @lastname = @index.student.lastname
+    @title_before_id = @index.student.title_before_id
+    @title_after_id = @index.student.title_after_id
+    
   end
 
   def save_display_name
@@ -177,6 +181,8 @@ class StudentsController < ApplicationController
     @index = @student.index
     @student.update_attribute(:firstname, params[:student][:firstname])
     @student.update_attribute(:lastname, params[:student][:lastname])
+    @student.update_attribute(:title_before_id, params[:student][:title_before_id])
+    @student.update_attribute(:title_after_id, params[:student][:title_after_id])
   end
 
   def edit_phone

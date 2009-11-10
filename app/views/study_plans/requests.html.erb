@@ -1,0 +1,6 @@
+<% if @card_request %>
+  <h5><%= t(:message_0, :scope => [:txt, :view, :study_plans, :requests]) %></h5>
+  <p><%= @card_request %></p>
+<% else %>
+  <p><%= t(:message_1, :scope => [:txt, :view, :study_plans, :requests]) %></p>
+<% end %>

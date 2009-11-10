@@ -48,7 +48,6 @@ class IndexHash < ActionWebService::Struct
   member :study_form, :string
   member :atestation, :string
   member :coridor, :string
-  
 end
 
 class LoginHash < ActionWebService::Struct
@@ -106,4 +105,8 @@ class StudentApi < ActionWebService::API::Base
   api_method :get_sident_by_birth_num,
              :expects => [:string],
              :returns => [:int]
+
+  api_method :get_card_state_by_uic,
+             :expects => [:int],
+             :returns => [:string]
 end
