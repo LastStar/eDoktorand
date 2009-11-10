@@ -139,7 +139,7 @@ module StudentsHelper
   # prints link to create new study plan
   def create_link(index)
     link_to(t(:message_9, :scope => [:txt, :helper, :students]),
-            :action => 'create',
+            :action => 'create_by_other',
             :controller => 'study_plans',
             :id => index.student)
   end
