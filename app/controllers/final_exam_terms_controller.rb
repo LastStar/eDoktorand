@@ -62,6 +62,7 @@ class FinalExamTermsController < ApplicationController
       flash['notice'] = t(:message_3, :scope => [:txt, :controller, :terms])
       render(:action => :show)
     else
+      @tutors = Tutor.find_for(@user)
       render(:action => :new)
     end
   end

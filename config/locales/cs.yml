@@ -46,10 +46,13 @@ cs:
 
       term: 
         message_0: Špatný formát času - hh:mm
-        message_1: There must be at least one student
+        message_1: Musí být vyplněna místnost
         message_2: Špatný formát času - hh:mm
         message_3: Špatný formát času - hh:mm
+        message_5: Musí být vyplněn 1. člen komise
+        message_6: Musí být vyplněn 2. člen komise
         message_7: Jméno předsedy komise nesmí být prázdné
+
       role: {}
 
       examinator: 
