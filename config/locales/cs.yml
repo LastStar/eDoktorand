@@ -1,7 +1,10 @@
 --- 
 cs: 
   txt: 
-    model: 
+    model:
+      study_plan:
+        message_0: Oblasti předmětů musí být vyplněny
+
       plan: 
         message_0: SP splněn
         message_1: SP neschválen

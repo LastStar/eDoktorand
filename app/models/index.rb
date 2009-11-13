@@ -595,11 +595,7 @@ class Index < ActiveRecord::Base
     regular_scholarship || RegularScholarship.create_for(self)
   end
 
-  def claim_final_exam!(final_areas = nil)
-    if final_areas
-      study_plan.final_areas = final_areas
-      study_plan.save
-    end
+  def claim_final_exam!
     update_attribute(:final_application_claimed_at, Time.now)
   end
 
