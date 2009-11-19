@@ -21,7 +21,7 @@ class ProbationTerm < ActiveRecord::Base
         errors.add(:start_time, t(:message_2, :scope => [:txt, :model, :term]))
       end
     else
-      errors.add(:start_time, t(:message_3, :scope => [:txt, :model, :term]))
+      errors.add(:start_time, I18n.t(:message_3, :scope => [:txt, :model, :term]))
     end
   end
 
