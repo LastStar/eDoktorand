@@ -40,6 +40,7 @@ class ExamTermsController < ApplicationController
         redirect_to :action => 'list'
       end
     else
+      @tutors = Tutor.find_for(@user)
       render(:action => 'new')
     end
   end

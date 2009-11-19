@@ -1,4 +1,6 @@
 <h5><%= t(:message_0, :scope => [:txt, :view, :final_exam_terms, :claim, :rhtml]) %></h5>
+
+<%= errors_for(@study_plan) %>
 <% form_tag({:action => :confirm_claim}, {:multipart => true}) do %>
 <fieldset>
   <ul class='nodecor'>

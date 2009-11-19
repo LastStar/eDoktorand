@@ -28,13 +28,19 @@ class FinalExamTermsController < ApplicationController
 
   def confirm_claim
     index = @user.person.index
-    index.claim_final_exam!(params[:study_plan][:final_areas])
-    if (literature_review = params[:literature_review_file]) &&
-      literature_review.is_a?(Tempfile)
-      index.disert_theme.save_literature_review(literature_review)
+    @study_plan = index.study_plan
+    if @study_plan.update_attributes(params[:study_plan])
+      index.claim_final_exam!
+      if (literature_review = params[:literature_review_file]) &&
+        literature_review.is_a?(Tempfile)
+        index.disert_theme.save_literature_review(literature_review)
+      end
+      index.disert_theme.update_attributes(params[:disert_theme])
+      redirect_to :controller => :study_plans, :action => :index
+    else
+      @title = t(:message_1, :scope => [:txt, :controller, :terms])
+      render :action => 'claim'
     end
-    index.disert_theme.update_attributes(params[:disert_theme])
-    redirect_to :controller => :study_plans, :action => :index
   end
 
    def new
@@ -62,6 +68,7 @@ class FinalExamTermsController < ApplicationController
       flash['notice'] = t(:message_3, :scope => [:txt, :controller, :terms])
       render(:action => :show)
     else
+      @tutors = Tutor.find_for(@user)
       render(:action => :new)
     end
   end

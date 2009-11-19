@@ -29,7 +29,7 @@ module FinalExamTermsHelper
   def create_form(&proc)
     form_remote_tag(:url => {:action => 'create'},
                     :complete => evaluate_remote_response,
-                    :loading => "$('submit-button').value = '%s'" % t(:message_3, :scope => [:txt, :helper, :terms]),
+                    :loading => "$('submit-button').value = '%s'" % t(:message_13, :scope => [:txt, :helper, :terms]),
                     &proc)
 
   end

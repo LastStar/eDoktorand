@@ -1,7 +1,7 @@
 module StudyPlansHelper
   # prints select tags for obligate subject 
   def obligate_select(plan_subject)
-    content_tag('select', options_for_select((1..4), plan_subject.finishing_on), { 'id' => 
+    content_tag('select', options_for_select((1..(@student.coridor.study_length*2-2)), plan_subject.finishing_on), { 'id' => 
       "plan_subject_#{plan_subject.id}",'name' =>
       "plan_subject[#{plan_subject.id}][finishing_on]"}) + 
     ". " + t(:message_0, :scope => [:txt, :helper, :plans]) + 
@@ -17,7 +17,7 @@ module StudyPlansHelper
       {'id' => "plan_subject_#{plan_subject.id}_subject_id",
       'name' => "plan_subject[#{plan_subject.id}][subject_id]"})
     result << "&mdash; "
-    result << content_tag('select', options_for_select(1..4,
+    result << content_tag('select', options_for_select(1..(@student.coridor.study_length*2-2),
       plan_subject.finishing_on ), { 'id' => 
       "plan_subject_#{plan_subject.id}_finishing_on", 'name' => 
       "plan_subject[#{plan_subject.id}][finishing_on]"})
@@ -36,7 +36,7 @@ module StudyPlansHelper
       'name' => "plan_subject[#{plan_subject.id}][subject_id]",
       'onChange' => "hide_on_internal(#{plan_subject.id})"})
     select << "&mdash; "
-    select << content_tag('select', options_for_select(1..4,
+    select << content_tag('select', options_for_select(1..(@student.coridor.study_length*2-2),
       plan_subject.finishing_on ), { 'id' => 
       "plan_subject_#{plan_subject.id}_finishing_on", 'name' => 
       "plan_subject[#{plan_subject.id}][finishing_on]"})
@@ -145,7 +145,7 @@ module StudyPlansHelper
       plan_subject.subject_id), {'id' => 
       "plan_subject_#{plan_subject.id}_subject_id",'name' =>
       "plan_subject[#{plan_subject.id}][subject_id]"}) + 
-    "&mdash;" + content_tag('select', options_for_select(1..4, 
+    "&mdash;" + content_tag('select', options_for_select(1..(@student.coridor.study_length*2-2), 
       plan_subject.finishing_on), {'id' => 
       "plan_subject_#{plan_subject.id}_finishing_on",'name' =>
       "plan_subject[#{plan_subject.id}][finishing_on]"}) +

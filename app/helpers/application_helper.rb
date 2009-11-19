@@ -28,7 +28,7 @@ module ApplicationHelper
       tbc << "#{t(:message_4, :scope => [:txt, :helper, :application])}"
       tbc << content_tag('ul',
       object.errors.to_a.map do |attr, message|
-        content_tag('li', t(:message_5, :scope => [:txt, :helper, :application]))
+        content_tag('li', message)
       end.join(' '))
       content_tag('div',tbc)
     end
