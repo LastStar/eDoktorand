@@ -18,9 +18,11 @@ class StudyPlan < ActiveRecord::Base
 
   # validates final areas non emptyness
   def validate_on_update
-    if final_areas['cz'].values.join('').strip == '' ||
-      final_areas['en'].values.join('').strip == ''
-      errors.add('final_areas', I18n.t(:message_0, :scope => [:txt, :model, :study_plan]))
+    if final_areas
+      if final_areas['cz'].values.join('').strip == '' ||
+        final_areas['en'].values.join('').strip == ''
+        errors.add('final_areas', I18n.t(:message_0, :scope => [:txt, :model, :study_plan]))
+      end
     end
   end
   # returns true if study plan is approved
