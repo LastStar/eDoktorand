@@ -2059,7 +2059,7 @@ cs:
         _form: 
           rhtml: 
             message_12: zadat ručně
-            message_11: vybrat ze seznamu
+            message_11: zpět na seznam
             message_8: člen komise
             message_9: člen komise
             message_0: datum a čas
