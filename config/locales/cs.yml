@@ -1381,9 +1381,9 @@ cs:
             message_9: Oddělení pro Vědu a Výzkum
             message_0: Vaše přihláška byla úspěšně elektronicky zaregistrována.
             message_10: CULS Praha
-            message_1: What to do next?
+            message_1: A co dál?
             message_11: Vyplnit další přihlášku
-            message_2: "Mail the application form, your curriculum vitae, copies of documents confirming your highest-achieved university degree (diploma, diploma supplement) and the 'Fee Paid' slip of the admission procedure payment at the following address:"
+            message_2: "Pošlete vaši přihlášku, životopis, kopie dokumentů potvrzujících vaše vysokoškolsé vzdělání a doklad o zaplacení poplatků na adresu:"
             message_3: Česká zemědělská univerzita v Praze
             message_4: odd. VaV
             message_5: 165 21 Praha 6 - Suchdol.
@@ -1421,10 +1421,10 @@ cs:
             message_11: prosím zkontrolujte, zda Vámi zadané údaje jsou správné
             message_2: Podpis
             message_12: Oprava údajů
-            message_3: "ATTENTION:"
+            message_3: "POZOR:"
             message_13: prosím klikněte zde pro opravu chybně zadaného údaje
             message_4: pro úspěšnou registraci je třeba
-            message_14: <a href='javascript:window.print()'>Print</a> out the application form
+            message_14: <a href='javascript:window.print()'>Vytiskni</a> přihlášku
             message_5: zkontrolujte správnost zadaných údajů,
             message_15: prosím klikněte zde pro vytištění přihlášky
             message_6: vytisknout přihlášku, zaregistrovat elektronickou přihlášku
