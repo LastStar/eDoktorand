@@ -1,3 +1,9 @@
+<% if flash[:errors] %>
+<center>
+  <h2><span class='red'><%= flash[:errors] %>.</span></h2>
+</center>
+<% end %>
+
 <% for probation_term in @probation_terms  %>
 <h5><%= probation_term.subject.label %></h5>
 <div class='links'>

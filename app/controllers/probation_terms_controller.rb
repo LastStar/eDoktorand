@@ -19,7 +19,12 @@ class ProbationTermsController < ApplicationController
   # enrolls student for a probation term
   def enroll
     if (@user.person.is_a?(Student))
-      @user.person.probation_terms << ProbationTerm.find(params[:id])
+      term = ProbationTerm.find(params[:id])
+      if term.students.size < term.max_students
+        @user.person.probation_terms << term
+      else
+        flash[:errors] = t(:message_0, :scope => [:txt, :controller, :probation_terms])
+      end      
     end
     redirect_to :action => 'index'
   end

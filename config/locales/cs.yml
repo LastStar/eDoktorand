@@ -2325,6 +2325,9 @@ cs:
         message_2: Termíny zkoušek
         message_3: "Výpis komisí příjímacích komisí"
 
+      probation_terms:
+        message_0: Počet volných míst byl vyčerpán
+
       candidates: 
         message_8: předchozí stránka
         message_9: další stránka
