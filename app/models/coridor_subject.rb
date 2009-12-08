@@ -15,7 +15,7 @@ class CoridorSubject < ActiveRecord::Base
     end
     self.find(:all, :conditions => sql, :order => 'subjects.label', 
              :include => :subject).sort do |x, y|
-                                    x.subject.label <=> y.subject.label
+                                     x.subject.label <=> y.subject.label
                                    end.map do |sub|
       [sub.subject.select_label, sub.subject.id]
     end

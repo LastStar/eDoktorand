@@ -227,7 +227,6 @@ class Candidate < ActiveRecord::Base
     create_postal_address(student.id) if self.postal_city
     student.email = self.email
     student.phone = self.phone if self.phone
-    
     self.update_attribute(:student_id, student.id) if student.save
     return student
   end

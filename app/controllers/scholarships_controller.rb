@@ -51,6 +51,7 @@ class ScholarshipsController < ApplicationController
     render(:action => 'add')
   end
 
+  # FIXME what the fuck is edit for?
   def save
     @edit = 0
     if params[:scholarship][:id] && !params[:scholarship][:id].empty?
