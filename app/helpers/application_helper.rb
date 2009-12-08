@@ -171,8 +171,7 @@ module ApplicationHelper
 
   # prints main menu
   def main_menu
-    links = [print_link(image_tag('printer.png', :alt => t(:message_15, :scope => [:txt, :helper, :application]), 
-                                  :size => '12x12' ))]
+    links = Array.new
     if @user.person.is_a?(Student) and @student 
       links << student_menu
     else
@@ -185,7 +184,6 @@ module ApplicationHelper
           links << link_to_unless_current(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
           links << link_to_unless_current(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list'){}
           links << prepare_scholarship_link
-          links << "<br/>"
           links << span_tag("&nbsp;&nbsp;&nbsp;",:id => "space_span")
           links << link_to_unless_current(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators') {}
           links << link_to_unless_current(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements') {}
@@ -206,11 +204,6 @@ module ApplicationHelper
       links << link_to_unless_current(t(:message_27, :scope => [:txt, :helper, :application]), 
                                       :controller => 'students'){}
     end
-    links << link_to_unless_current(t(:message_28, :scope => [:txt, :helper, :application]), 
-                                    {:controller => 'account', 
-                                     :action => 'logout'}, 
-                                     :confirm =>  t(:message_29, :scope => [:txt, :helper, :application]) + 
-                                     ' ' + t(:message_30, :scope => [:txt, :helper, :application]) + '?'){} 
     links.flatten.join("\n")
   end
 
