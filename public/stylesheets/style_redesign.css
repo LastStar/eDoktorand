@@ -198,6 +198,13 @@ body {
 	filter:alpha(opacity=80);
 }
 
+.right_info
+{
+  width: 600px;
+  float: right;
+  text-align: left;
+}
+
 .required
 {
 	color: red;
@@ -302,6 +309,19 @@ h4 a:hover {color: #555555;}
 h5{
 	font-size: 100%;
 	margin-top: 0px;
+	margin-bottom: 5px;
+	background-image: url(../images/btn_bg_07.gif);
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	color: #fff;
+	padding-top: 5px;
+	padding-left: 20px;
+	height: 23px;
+	text-shadow: -1px -1px 0 #666;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	-webkit-border-radius: 8px;
+	letter-spacing: 1px;
 }
 
 h6 {
@@ -352,6 +372,14 @@ ul.nodecor, ul.nodecor li, ul.nodecor li li
 
 li.bordered
 {
+  border-bottom: 1px solid #ccc;
+}
+
+ul.bordered li
+{
+  margin-left: 0px;
+  margin-right: 10px;
+  list-style: none;
   border-bottom: 1px solid #ccc;
 }
 
