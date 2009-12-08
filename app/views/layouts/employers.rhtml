@@ -7,27 +7,44 @@
   <meta http-equiv="expires" content="<%= Time.now %>"/>
   <title><%= @title %></title>
   <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
-  <link href="/stylesheets/standard.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/style_redesign.css" media="screen" rel="stylesheet" type="text/css" />
   <link rel="icon" type="image/ico" href="/images/ed.ico"/>
   <%= include_tiny_mce_if_needed %>
 </head>
 <body>
   <%= javascript_include_tag :defaults %>
-  <img id="Head" src="/images/header.jpg" width="760" height="77" alt="logo"/>
-  <div id="HeadMenu">
-  <% if @user %>
-    <div id="HeadMenuContent">
-      <div id="HeadMenuLinks"><%= main_menu %></div>
-      <div id="HeadMenuUser"><h1 id="title"><%= @user.person.display_type + ": #{@user.person.display_name}" %></h1></div>
+	<div id="content">
+		<div id="head">
+  		<div id="logged-user">
+        <% if @user %>
+          <%= @user.person.display_type + ":<strong> #{@user.person.display_name}" %></strong>
+      		<%= link_to_unless_current(image_tag('icons/door_in.png'), 
+                                          {:controller => 'account', 
+                                           :action => 'logout'}, 
+                                           :confirm =>  t(:message_29, :scope => [:txt, :helper, :application]) + 
+                                           ' ' + t(:message_30, :scope => [:txt, :helper, :application]) + '?')
+      		%>
+      	<% end %>
+      	<%= print_link(image_tag('printer.png', :alt => t(:message_36, :scope => [:txt, :helper, :application])))%>
+      </div>
+  		<a href="/" class="home-btn"></a>
+		</div>
+		<% if @user %>
+		  <div id="main-menu">
+			<%= main_menu %>
+		  </div>
+		<% end %>
+		<%= image_tag "text_content_top.gif", :alt => "", :style => "margin-top: 10px; display:block; clear: both" %>
+		<div id="text-content">
+      <%= @content_for_layout %>
     </div>
-  <% end %>
-  </div>
-  <div id="main">
-    <%= @content_for_layout %>
-  </div>
-  <div id="footer" class="footer">
-    <%= image_tag "ff3.gif", :alt => t(:message_0, :scope => [:txt, :view, :layouts, :employers, :rhtml]), :align => "left" %>
-    <%= mail_to('helpdesk@czu.cz','HELPDESK')%>, +420 224384444
+
+    		<%= image_tag "text_content_bottom.gif", :alt => ""%>
+
+    	</div>
+    	<div id="foot">
+    	  <%= image_tag "ff3.gif", :alt => t(:message_0, :scope => [:txt, :view, :layouts, :employers, :rhtml]), :align => "left" %>
+    	  <span class="right"><%=mail_to ('helpdesk@czu.cz','HELPDESK')%>, +420 224384444</span>&nbsp;<a href='http://www.gravastar.cz'>GravaStar, s.r.o.</a></div>
   </div>
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -39,5 +56,5 @@
       pageTracker._trackPageview();
     } catch(err) {}
   </script>
-</body>
+  </body>
 </html>
