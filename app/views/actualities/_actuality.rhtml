@@ -1,14 +1,10 @@
-<li>
-<div class="actuality">  
-<h6><%= actuality.label %></h6>
-<p><%= actuality.content %></p>
-<p>
-  <div class="links">
+<li class="actuality">
+<h3><%= actuality.label %></h3>
+<div class="links">
   <%= link_to(t(:message_0, :scope => [:txt, :view, :actualities, :_actuality, :rhtml]), :action => 'show', :id => actuality) %>
   <%= link_to(t(:message_1, :scope => [:txt, :view, :actualities, :_actuality, :rhtml]), :action => 'edit', :id => actuality) %>
   <%= link_to(t(:message_2, :scope => [:txt, :view, :actualities, :_actuality, :rhtml]), { :action => 'destroy', :id => actuality }, :confirm => t(:message_3, :scope => [:txt, :view, :actualities, :_actuality, :rhtml])) %>
-  </div>
-</p>
 </div>
+<p><%= actuality.content %></p>
 </li>
 
