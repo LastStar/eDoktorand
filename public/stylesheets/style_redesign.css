@@ -413,6 +413,10 @@ table.embossed tr th
 	background-repeat: repeat-x;
 	border-bottom: 1px solid #efefef;	
 	border-right: 1px solid #efefef;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	-webkit-border-radius: 4px;
+	
 }
 table.embossed tr td
 {

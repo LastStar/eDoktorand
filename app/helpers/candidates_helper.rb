@@ -76,7 +76,7 @@ module CandidatesHelper
       filter_set = t(:message_15, :scope => [:txt, :helper, :candidates]) + ', ' + category
     end
     
-    '<div id ="' + div_id + '" class="links">' +
+    '<div id ="' + div_id + '">' +
      t(:message_16, :scope => [:txt, :helper, :candidates]) + ' ' + filter_set +
     '</div>'
     
