@@ -8,7 +8,7 @@ class Notifications < ActionMailer::Base
     @body['sent_on'] = sent_at
     @body['faculty'] = faculty
     @body['study_id'] = candidate.study_id
-    @body['salutation'] = candidate.genderize(t(:message_1, :scope => [:txt, :model, :notifications]),t(:message_2, :scope => [:txt, :model, :notifications]),t(:message_3, :scope => [:txt, :model, :notifications]))
+    @body['salutation'] = candidate.genderize(I18n::t(:message_1, :scope => [:txt, :model, :notifications]), I18n::t(:message_2, :scope => [:txt, :model, :notifications]), I18n::t(:message_3, :scope => [:txt, :model, :notifications]))
     @recipients = candidate.email
     @cc        = faculty.secretary.email.name
     @from       = faculty.secretary.email.name
@@ -84,7 +84,7 @@ class Notifications < ActionMailer::Base
     if study_plan.index.student.birth_number == nil
      @body['birth_number'] = ''
       else
-       # @body['birth_number'] = t(:message_7, :scope => [:txt, :model, :notifications]) + study_plan.index.student.birth_number
+       # @body['birth_number'] = I18n::t(:message_7, :scope => [:txt, :model, :notifications]) + study_plan.index.student.birth_number
        @body['birth_number'] = 's rodným číslem'  + study_plan.index.student.birth_number
     end
     @body['coridor'] = study_plan.index.coridor.name
