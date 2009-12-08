@@ -403,7 +403,7 @@ class CSVExporter
     def export_basic_by_index(indices)
       outfile = File.open('indices.csv', 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
-        csv << ['id', 'first name', 'last name', 'coridor name', 'faculty name', 'year','study']
+        csv << ['id', 'first name', 'last name', 'coridor name', 'faculty name', 'year','study','status']
         indices.each do |i|
           row = []
           row << i.student.id
@@ -413,6 +413,7 @@ class CSVExporter
           row << i.faculty.name
           row << i.year
           row << i.study.name
+          row << i.status
           csv << row
         end
         outfile.close
