@@ -177,20 +177,23 @@ body {
 {
 	margin-left: 0px;
 	padding: 2px 5px 3px 5px;
-	font-weight: bold;
+	font-weight: normal;
 	color: white;
 	text-decoration: none;
 	background-image: url(../images/btn_bg_07.gif);
 	background-position: left bottom;
 	background-repeat: repeat-x;
+	text-shadow: -1px -1px 0 #666;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
+	letter-spacing: .5px;
 	
 	
 }
 
 .links a:hover
 {
+	text-shadow: -1px -1px 0 #000;
 	opacity:0.8; _filter:alpha(opacity=80);
 	filter:alpha(opacity=80);
 }
@@ -347,7 +350,7 @@ ul.nodecor, ul.nodecor li, ul.nodecor li li
 	list-style: none;
 }
 
-li.actuality
+li.bordered
 {
   border-bottom: 1px solid #ccc;
 }
@@ -541,7 +544,7 @@ label
 	margin-right: 20px;
 	float:left;
 	text-align:right;
-	width:300px;
+	width:200px;
 }
 th label
 {
@@ -589,9 +592,14 @@ input.button{
 	font-size: 125%;
 	font-weight: bold;
 	padding: 1px 8px 1px 8px;
+	text-shadow: -1px -1px 0 #666;
 	background-image: url(../images/btn_bg_07.gif);
 	background-position: left bottom;
 	background-repeat: repeat-x;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	letter-spacing: .5px;
+	
 }
 
 input.noformat
