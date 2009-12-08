@@ -662,5 +662,22 @@ class CSVExporter
         end
       end
     end
+
+    def students_by_corridor_year
+      is = Index.find_for(User.find_by_login('ticha'), :unfinished => true, :not_interupted => true)
+      isd = is.sort {|i,j| i.year <=> j.year}.group_by(&:faculty)
+      isd.each {|f|
+        File.open("po_rocnicich_%s.csv" % f.first.short_name, 'wb') {|outfile|
+          CSV::Writer.generate(outfile, ';') {|csv|
+            f.last.group_by(&:coridor).each {|c|
+              csv << [c.first.code, c.first.name]
+              c.last.group_by(&:year).map {|cyi|
+                csv << [cyi.first, cyi.last.select(&:present_study?).size, cyi.last.reject(&:present_study?).size]
+              }
+            }
+          }
+        }
+      }
+    end
   end
 end
