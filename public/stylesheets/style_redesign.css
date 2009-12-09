@@ -466,7 +466,7 @@ table.embossed tr td
 
 table.embossed td a {
   margin-left: 0px;
-	padding: 0px 5px 1px 5px;
+	padding: 1px 5px 2px 5px;
 	font-weight: normal;
 	color: white;
 	text-decoration: none;
