@@ -420,6 +420,12 @@ td.center, th.center
 	width:auto;
 }
 
+td.right
+{
+  text-align:right;
+  float:none;
+}
+
 td p{ margin-bottom:0px;}
 
 
@@ -435,7 +441,7 @@ table.embossed tr
 
 table.embossed tr th
 {
-	padding: 2px 2px 2px 5px;
+	padding: 5px 2px 5px 10px;
 	background-image: url(../images/btn_bg_07.gif);
 	background-position: left top;
 	background-repeat: repeat-x;
@@ -444,6 +450,8 @@ table.embossed tr th
 	-moz-border-radius-topleft: 8px;
 	-moz-border-radius-topright: 8px;
 	-webkit-border-radius: 4px;
+	text-shadow: 1px 1px 0 #d2dcbf;
+	color: #000;
 	
 }
 table.embossed tr td
@@ -455,6 +463,28 @@ table.embossed tr td
 	border-bottom: 1px solid #EFEFEF;
 	border-right: 1px solid #efefef;
 }
+
+table.embossed td a {
+  margin-left: 0px;
+	padding: 0px 5px 1px 5px;
+	font-weight: normal;
+	color: white;
+	text-decoration: none;
+	background-image: url(../images/students_line_actions_bg.gif);
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	text-shadow: -1px -1px 0 #666;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	letter-spacing: .5px;
+}
+table.embossed a:hover
+{
+	text-shadow: -1px -1px 0 #000;
+	opacity:0.8; _filter:alpha(opacity=80);
+	filter:alpha(opacity=80);
+}
+
 
 table.students-list
 {	
@@ -468,7 +498,6 @@ table.students-list tr
 }
 table.students-list tr th
 {
-	padding: 2px 2px 2px 5px;
 	background-image: url(../images/btn_bg_07.gif);
 	background-position: left top;
 	background-repeat: repeat-x;
