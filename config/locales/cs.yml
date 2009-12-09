@@ -2323,7 +2323,7 @@ cs:
         message_0: Termíny SDZ
         message_1: Termíny zkoušky byl uložen
         message_2: Termíny zkoušek
-        message_3: "Výpis komisí příjímacích komisí"
+        message_3: "Výpis komisí příjímacích řízení"
 
       candidates: 
         message_8: předchozí stránka
