@@ -13,7 +13,7 @@ class RegularScholarship < Scholarship
   end
 
   def code
-    if index.payment_id == 3
+    if index.foreigner?
       "#{short_code}DCIR"
     else
       "#{short_code}DTUR"
@@ -21,7 +21,7 @@ class RegularScholarship < Scholarship
   end
 
   def disponent
-    if index.payment_id == 3
+    if index.foreigner?
       "1301#{index.faculty.stipendia_code}1131"
     else
       "1201#{index.faculty.stipendia_code}1121"
