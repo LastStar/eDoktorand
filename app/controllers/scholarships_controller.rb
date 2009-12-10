@@ -13,6 +13,9 @@ class ScholarshipsController < ApplicationController
     @indices = Index.find_for_scholarship(@user, 
                                          :order => 'studies.id, people.lastname',
                                          :include => [:student, :study, :disert_theme])
+    if @user.has_role?('supervisor')
+      @approvals = ScholarshipApprovement.last_weeks
+    end
   end
 
   # claim for accommodation scholarship
