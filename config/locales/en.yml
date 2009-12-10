@@ -1578,6 +1578,8 @@ en:
             message_15: This is a only control table!
             message_6: Coridor
             message_7: Type of scholarship
+            message_20:  Are you sure to approve scholarships like this. Operation is irreversible.
+            message_19: Unapprove
         add: 
           rhtml: 
             message_0: amount

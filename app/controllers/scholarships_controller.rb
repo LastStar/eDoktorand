@@ -154,5 +154,11 @@ class ScholarshipsController < ApplicationController
       end
     end
   end
+
+  def unapprove
+    @approval = ScholarshipApprovement.find(params[:id])
+    @approval.destroy
+    redirect_to :action => :list
+  end
   
 end

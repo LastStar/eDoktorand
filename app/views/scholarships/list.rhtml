@@ -3,6 +3,7 @@
     <% for approval in @approvals %>
     <td><%= approval.faculty.name %></td>
     <td><%= approval.created_on.strftime("%d. %m. %Y") %></td>
+    <td><%= link_to(t(:message_19, :scope =>[:txt, :view, :scholarships, :list, :rhtml]), {:action => 'unapprove', :id => approval.id}, :confirm => t(:message_20, :scope =>[:txt, :view, :scholarships, :list, :rhtml])) %></td>
     <% end %>
   </tr>
   <% end %>
