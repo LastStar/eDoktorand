@@ -5,6 +5,8 @@ class ScholarshipApprovement < Approvement
 
   named_scope :last_weeks, :conditions => ['created_on > ?', 7.days.ago], :order => 'created_on desc'
 
+  belongs_to :dean_statement
+
   def self.approved_for?(faculty)
     faculty = Faculty.find(faculty) unless faculty.is_a? Faculty
     # faculty without stipendia code does not have to be approved
