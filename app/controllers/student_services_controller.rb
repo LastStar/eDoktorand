@@ -27,7 +27,8 @@ class StudentServicesController < ApplicationController
       if student.user
         student.user.update_with_hash(login_hash)
       else
-        User.create_with_hash(login_hash, student.id)
+        user = User.create_with_hash(login_hash, student.id)
+        user.roles << Role.find_by_name("student")
       end
       return 'Success'
     else

@@ -13,6 +13,9 @@ class ScholarshipsController < ApplicationController
     @indices = Index.find_for_scholarship(@user, 
                                          :order => 'studies.id, people.lastname',
                                          :include => [:student, :study, :disert_theme])
+    if @user.has_role?('supervisor')
+      @approvals = ScholarshipApprovement.last_weeks
+    end
   end
 
   # claim for accommodation scholarship
@@ -51,6 +54,7 @@ class ScholarshipsController < ApplicationController
     render(:action => 'add')
   end
 
+  # FIXME what the fuck is edit for?
   def save
     @edit = 0
     if params[:scholarship][:id] && !params[:scholarship][:id].empty?
@@ -149,6 +153,12 @@ class ScholarshipsController < ApplicationController
         :list
       end
     end
+  end
+
+  def unapprove
+    @approval = ScholarshipApprovement.find(params[:id])
+    @approval.destroy
+    redirect_to :action => :list
   end
   
 end

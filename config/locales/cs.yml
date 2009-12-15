@@ -79,7 +79,7 @@ cs:
       candidate: 
         message_18: jen zapsaní
         message_8: univerzita nesmí být prazdná
-        message_9: fakulta nesmí být prazdná
+        message_9: fakultr nesmí být prazdná
         message_20: uchazeč musí být zaregistrován před pozváním
         message_19: jazyky musí být rozdílné
         message_0: jméno nesmí být prazdné
@@ -1727,6 +1727,8 @@ cs:
             message_16: Studenti se špatnými nebo chybějícími údaji
             message_17: Příjmení
             message_18: Chybí v systému
+            message_19: Zrušit schválení
+            message_20: Jste si opravdu jist, že chcete zrušit schválení stipendií? Tato operace je nevratná!
         add: 
           rhtml: 
             message_0: částka
