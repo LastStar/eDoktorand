@@ -203,5 +203,22 @@ class MassProcessor
         @@mylog.info "New first name #{student.firstname}"
       end
     end
+
+    # creates copy of coridors with S on end of code
+    def copy_old_corridors(coridors)
+      coridors.map {|c|
+        cn = c.clone
+        cn.code = "%sS" % c.code
+        cn.save
+        cn
+      }
+    end
+
+    # adds corridor subjects from type and subjects ids
+    def add_corridor_subjects(coridor_id, type, *ids)
+      ids.each {|i|
+        type.create(:subject_id => i, :coridor_id => coridor_id)
+      }
+    end
   end
 end
