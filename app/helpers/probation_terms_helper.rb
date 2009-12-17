@@ -4,13 +4,13 @@ module ProbationTermsHelper
   def list_links(user)
     links = ''
     if (!user.person.is_a?(Student))
-      links << link_to(t(:message_0, :scope => [:txt, :helper, :terms]), {:action => 'create'})
+      links << link_to(t(:message_19, :scope => [:txt, :helper, :terms]), {:action => 'create'})
       links << '&nbsp;'
     end
     if params[:period] == "history"
       links << link_to(t(:message_1, :scope => [:txt, :helper, :terms]), {:period => :future})
     else
-      links << link_to(t(:message_2, :scope => [:txt, :helper, :terms]), {:period => :history})
+      links << link_to(t(:message_18, :scope => [:txt, :helper, :terms]), {:period => :history})
     end
     links << '&nbsp;'
     content_tag('div', links, :class => 'links')
