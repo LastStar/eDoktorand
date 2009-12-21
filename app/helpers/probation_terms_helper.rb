@@ -8,7 +8,7 @@ module ProbationTermsHelper
       links << '&nbsp;'
     end
     if params[:period] == "history"
-      links << link_to(t(:message_1, :scope => [:txt, :helper, :terms]), {:period => :future})
+      links << link_to(t(:message_20, :scope => [:txt, :helper, :terms]), {:period => :future})
     else
       links << link_to(t(:message_18, :scope => [:txt, :helper, :terms]), {:period => :history})
     end
