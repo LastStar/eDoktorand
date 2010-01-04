@@ -24,7 +24,7 @@ class ScholarshipCalculator
     if index.year > 3
       0
     elsif index.payment_id == 3
-      7500
+      9500
     else
       case index.faculty.id
         when 1, 4, 14, 15 
