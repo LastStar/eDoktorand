@@ -1697,6 +1697,10 @@ cs:
         _term_line: 
           rhtml: 
             message_0: v místnosti
+        send_invitation:
+          rjs:
+            message_0: email odeslán
+            message_1: potvrzeno
       scholarships: 
         sum: 
           rhtml: 
