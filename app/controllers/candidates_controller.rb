@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
   include LoginSystem
-  layout 'employers'
+  layout 'employers', :except => [:delete_all, :destroy_all]
 
   before_filter :login_required, :except => [:invitation]
   before_filter :prepare_user
@@ -56,16 +56,11 @@ class CandidatesController < ApplicationController
     #render :inline => "<%= link_to_remote('set foreign payer', :url => { :action => 'set_foreign_payer', :id => candidate.id}, :method => :get, :update => 'foreign#{candidate.id}')"
   end
 
-  def delete_all_candidates
-    render :partial => "delete_all_candidates"
-  end
-
-  def destroy_all_candidates
-    date = params["candidate"]["created_on(1i)"] +"-"+ params["candidate"]["created_on(2i)"] +"-"+ params["candidate"]["created_on(3i)"]
-    candidates = Candidate.find(:all, :conditions => ["created_on < ?",date])
-    @size = candidates.size
+  def destroy_all
+    candidates = Candidate.finished_before(parse_date(params[:date])).from_faculty(@user.person.faculty)
     candidates.each {|c| c.destroy}
-    render :inline => "<%= t(:message_11, :scope => [:txt, :controller, :candidates]) %> <%= @size.to_s %> <%= t(:message_12, :scope => [:txt, :controller, :candidates]) %>"
+    flash[:notice] = t(:message_11, :scope => [:txt, :controller, :candidates]) % candidates.size
+    redirect_to :action => :list
   end
 
   # lists all candidates ordered by category
@@ -272,4 +267,8 @@ class CandidatesController < ApplicationController
       end
   end
 
+  # parses date from select_date helper
+  def parse_date(date)
+    return Date.new(date['year'].to_i, date['month'].to_i, date['day'].to_i)  
+  end
 end

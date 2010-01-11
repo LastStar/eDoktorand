@@ -33,6 +33,13 @@ class Candidate < ActiveRecord::Base
     :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
 
   named_scope :admited, :conditions => 'admited_on is not null'
+  named_scope :finished, :conditions => 'finished_on is not null'
+  named_scope :finished_before, lambda{|date|
+    {:conditions => ['finished_on < ?', date]}
+  }
+  named_scope :from_faculty, lambda {|faculty|
+    {:conditions => ['coridor_id in (?)', faculty.coridors]}
+  }
   # validates if languages are not same
   def validate
     errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
@@ -303,5 +310,4 @@ class Candidate < ActiveRecord::Base
   def present_study?
     study_id == 1
   end
-
 end
