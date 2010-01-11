@@ -2349,8 +2349,7 @@ cs:
         message_6: e-mail odeslán
         message_7: Uchazeči o studium
         message_10: cizí plátce
-        message_11: Smazáno
-        message_12: uchazečů
+        message_11: Smazáno %i uchazečů
       themes: 
         message_0: nahrání metodiky
         message_1: nahrání metodiky

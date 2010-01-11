@@ -203,7 +203,6 @@ module CandidatesHelper
                      "Element.toggle('history#{candidate.id}')") 
   end
 
-
   # prints status of the candidate
   def status_tag(candidate)
     if candidate.enrolled?
@@ -218,25 +217,32 @@ module CandidatesHelper
       content_tag('span', t(:message_35, :scope => [:txt, :helper, :candidates]), :class => 'statusInfo')
     end
   end			
+
   # returns admit ids array
   def admit_ids
     [[t(:message_36, :scope => [:txt, :helper, :candidates]), 1], [t(:message_37, :scope => [:txt, :helper, :candidates]), 2], [t(:message_38, :scope => [:txt, :helper, :candidates]), 0]]
   end
+
   # return pass ids array  
   def pass_ids
     [[t(:message_39, :scope => [:txt, :helper, :candidates]), 0], [t(:message_40, :scope => [:txt, :helper, :candidates]), 1]]
   end
+
   # returns pass word
   def pass_word(id)
     [t(:message_41, :scope => [:txt, :helper, :candidates]), t(:message_42, :scope => [:txt, :helper, :candidates])][id]
   end
+
   # returns admit word
   def admit_word(id)      
     [t(:message_43, :scope => [:txt, :helper, :candidates]), t(:message_44, :scope => [:txt, :helper, :candidates])][id]
   end
+
+  # returns date select defaulting to start of this school year
+  def start_date_select
+    select_date TermsCalculator.this_year_start,
+      :order => [:day, :month, :year],
+      :use_month_numbers => true
+  end
 end
 
-  def del_date_select
-    date_select 'candidate', 'created_on', :start_year => Date.today.year,  :end_year => Date.today.year - 60,
-    :order => [:day, :month, :year], :use_month_numbers => true
-  end
