@@ -381,7 +381,7 @@ cs:
         message_13: Rodné číslo
         message_4: Nalezeny tyto chyby
         message_58: Školitel
-        message_47: soubor s metodologií (otevře nové okno)
+        message_47: soubor s metodikou (otevře nové okno)
         message_36: vytisknout
         message_25: termíny zkoušek
         message_14: Narozen dne
@@ -2084,7 +2084,7 @@ cs:
         upload_methodology: 
           rhtml: 
             message_0: |-
-              Na této stránce můžete nahrát Váš soubor s metodologií. Soubor musí být pouze ve formátu PDF.
+              Na této stránce můžete nahrát Váš soubor s metodikou. Soubor musí být pouze ve formátu PDF.
             message_1: soubor
             message_2: nahrát
         save_en: 
@@ -2093,7 +2093,7 @@ cs:
         methodology: 
           rhtml: 
             message_0: |-
-             Na této stránce můžete nahrát Váš soubor s metodologií. Soubor musí být pouze ve formátu PDF.              PDF format.
+             Na této stránce můžete nahrát Váš soubor s metodikou. Soubor musí být pouze ve formátu PDF.
             message_1: soubor
             message_2: nahrát
         add_en: 

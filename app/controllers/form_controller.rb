@@ -3,30 +3,29 @@ class FormController < ApplicationController
   layout "employers"
   
   # page where candidate chooses desired coridor
-  # TODO logins for edit or check older adminition
   def index
     @faculties = Faculty.find(:all)
     @title = t(:message_0, :scope => [:txt, :controller, :form])
   end
   
-  #login for edit candidate detail by candidate
+  # login for edit or check candidate detail
   def login
-     @candidate = nil
-     @candidate = Candidate.find(:first, :conditions => ["id = ?", params[:candidate][:id]])
-     @edit = {}
-      if @candidate && @candidate.finished_on == nil
-        if (params[:candidate][:id].to_i == @candidate.id) && (@candidate.hash == params[:candidate][:hash])
-          @action = 'update'
-          render :update do |page|
-            page.replace_html  'main', :partial => 'shared/candidate_edit', :locals => {:edit => 1}
-          end  
+    @candidate = Candidate.find(:first, :conditions => ["id = ?", params[:candidate][:id]])
+    if @candidate && @candidate.hash == params[:candidate][:hash]
+      @action = 'update'
+      render :update do |page|
+        if !@candidate.finished?
+          page.replace_html  'main', :partial => 'shared/candidate_edit'
+        else
+          page.replace_html  'main', :partial => 'shared/candidate_detail'
         end
-      else
-        render :update do |page|
-          page.replace_html  'last', :inline => "<div id='error'>" + t(:message_15, :scope => [:txt, :controller, :form]) + "</div>"
-          page.visual_effect :highlight, 'candidate_login'
-        end    
+      end
+    else
+      render :update do |page|
+        page.replace_html  'last', :inline => "<div id='error'>" + t(:message_15, :scope => [:txt, :controller, :form]) + "</div>"
+        page.visual_effect :highlight, 'candidate_login'
       end    
+    end    
   end
   
   # form details  
