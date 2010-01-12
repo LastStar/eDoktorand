@@ -17,7 +17,7 @@ include LoginSystem
   # saves methogology file
   def save_methodology
     @disert_theme = DisertTheme.find(params[:disert_theme][:id])
-    unless (file = params[:disert_theme][:methodology_file]).is_a? File
+    if (file = params[:disert_theme][:methodology_file]).is_a? Tempfile
       DisertTheme.save_methodology(@disert_theme, file)   
       if @user.has_one_of_roles?(['faculty_secretary','vicerector'])
         redirect_to(:action => 'index', :controller => 'students')
