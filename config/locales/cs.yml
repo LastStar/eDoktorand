@@ -2303,7 +2303,7 @@ cs:
         message_9: Vyplňte prosím všechny údaje, jejichž popiska je červená
         message_0: Přijímací řízení k doktorskému studiu
         message_10: Oprava přihlášky
-        message_1: "Admittance form for corridor "
+        message_1: Přijímací řízení pro obor %s 
         message_11: Přihláška zaregistrována
         message_2: Formulář přihlášky - nedostatky
         message_12: Česká republika
