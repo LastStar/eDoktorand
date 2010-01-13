@@ -32,7 +32,7 @@ class FormController < ApplicationController
   def details
     prepare_candidate
     @action = 'save'
-    @title = t(:message_1, :scope => [:txt, :controller, :form]) + @candidate.coridor.name
+    @title = t(:message_1, :scope => [:txt, :controller, :form]) % @candidate.coridor.name
   end
 
   # preview what has been inserted
