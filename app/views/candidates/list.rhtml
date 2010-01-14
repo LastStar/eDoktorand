@@ -1,5 +1,3 @@
-<h5><%=  t(:message_22, :scope => [:txt, :view, :candidates, :list, :rhtml]) %> </h5>
-<%= print_notice %>
 <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
   <% sort_array = [['coridor_id', t(:message_0, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['lastname',
   t(:message_1, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['updated_on', t(:message_2, :scope => [:txt, :view, :candidates, :list, :rhtml])]] %>
@@ -40,11 +38,16 @@
                       "'>"  + switch_button(message) +"</span> ") %>
       </div>
   <% end %>
-  <%= view_filter_settings('filter_view') %>
-  <div id='candidates_delete' class='links'>
+  <div id='candidates_delete' class='links' style="clear:right">
     <%=link_to_remote(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :url => { :action => 'delete_all_candidates'}, :method => :get, :update => "candidates_delete")%>
   </div>
 <% end %>
+
+<h1><%=  t(:message_22, :scope => [:txt, :view, :candidates, :list, :rhtml]) %> </h1>
+<p><%= view_filter_settings('filter_view') %></p>
+<br class="clear-all" />
+<%= print_notice %>
+<br class="clear-all" />
 <% unless @candidates.empty? %>
   <%= render(:partial => 'list') %>
 
