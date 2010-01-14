@@ -541,6 +541,8 @@ cs:
         list:
           rhtml:
             message_0: Seznam zkoušejících
+            message_1: Zkoušející
+            message_2: Katedra
       
       study_plans:
         save_disert:
