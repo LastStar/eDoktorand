@@ -1,11 +1,11 @@
-<h5><%= @title %></h5>
 <div class='links'>
   <%= admission_exam_terms_link %>
   <%= final_exam_terms_link %>
 </div>
+<h1><%= @title %></h1>
 <% form_tag :action => 'prepare_print' do -%>
-<ul>
+<table class="embossed students-list">
   <%= render(:partial => 'term_line', :collection => @defenses) %>
-</ul>
+</table>
 <% end %>
 

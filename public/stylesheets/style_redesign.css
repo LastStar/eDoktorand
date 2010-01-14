@@ -681,6 +681,10 @@ img{
 	border: 0px;
 }
 
+img.text-content-top-image {
+  margin-top: 10px; display:block; clear: both
+}
+
 .clear-all{
 	clear: both;
 }
