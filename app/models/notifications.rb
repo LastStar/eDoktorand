@@ -72,7 +72,6 @@ class Notifications < ActionMailer::Base
     @from = 'edoktorand@edoktorand.czu.cz'
     @sent_on = sent_at
   end
-
   
   #send study plan of student
   def study_plan_create(study_plan, sent_at = Time.now)

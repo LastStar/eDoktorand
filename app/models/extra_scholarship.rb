@@ -13,7 +13,7 @@ class ExtraScholarship < Scholarship
   end
 
   def code
-    if index.payment_id == 3
+    if index.foreigner?
       "#{short_code}DCIM"
     else
       "#{short_code}DTUM"

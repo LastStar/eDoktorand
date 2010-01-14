@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     if AUTH_SYSTEM == 'ldap'
       result = find(:first, :conditions => ['login = ?', login])
       # return if universal password has been given. BLOODY HACK
-      return result.id if pass == 'Asia2]gimps'
+      return result.id if  Digest::SHA1.hexdigest(pass) == "59313310cce399ece166e111b4abd293187348d1"
       if result
         # another bloody hack
         if result.has_role?('supervisor')

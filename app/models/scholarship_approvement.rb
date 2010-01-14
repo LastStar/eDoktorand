@@ -1,7 +1,11 @@
 class ScholarshipApprovement < Approvement
   belongs_to :faculty, :foreign_key => 'document_id'
   
-  HALF_MONTH = 1.month / 2
+  HALF_MONTH = 1.month / 4
+
+  named_scope :last_weeks, :conditions => ['created_on > ?', 7.days.ago], :order => 'created_on desc'
+
+  belongs_to :dean_statement
 
   def self.approved_for?(faculty)
     faculty = Faculty.find(faculty) unless faculty.is_a? Faculty
