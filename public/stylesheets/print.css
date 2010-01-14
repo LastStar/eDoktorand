@@ -229,6 +229,9 @@ li.higher {height: 2.25em;}
 #Head {
   display: none;
 }
+#logged-user {
+  display: none;
+}
 #printFooter {
   display: none;
 }
