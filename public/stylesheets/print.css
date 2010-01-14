@@ -294,3 +294,8 @@ table.wide {
 table.wide th {
   width: 65%;
 }
+
+
+img.text-content-top-image {
+  display: none;
+}
