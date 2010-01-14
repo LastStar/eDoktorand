@@ -452,8 +452,14 @@ table.embossed tr th
 	-webkit-border-radius: 4px;
 	text-shadow: 1px 1px 0 #d2dcbf;
 	color: #000;
-	
 }
+table.embossed tr th.no-rounded
+{
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;  
+}
+
+
 table.embossed tr td
 {
 	padding: 5px 2px 4px 4px;	
