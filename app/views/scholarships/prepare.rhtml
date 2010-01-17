@@ -1,13 +1,14 @@
 <div id='students_list'>
-<h5><%= t(:message_0, :scope => [:txt, :view, :scholarships, :prepare, :rhtml]) %></h5>
-<div class='links'>
-<% if @user.has_one_of_roles?(['faculty_secretary','vicerector']) %>
-  <%= recalculate_link %>
-  <%= approve_link %>
-  <%= control_table_link %>
-<% end %>
+  <div class='links'>
+  <% if @user.has_one_of_roles?(['faculty_secretary','vicerector']) %>
+    <%= recalculate_link %>
+    <%= approve_link %>
+    <%= control_table_link %>
+  <% end %>
 
-</div>
+  </div>
+  <h1><%= t(:message_0, :scope => [:txt, :view, :scholarships, :prepare, :rhtml]) %></h1>
+
   <%= render :partial => 'prepare_list' %>
 </div>
 

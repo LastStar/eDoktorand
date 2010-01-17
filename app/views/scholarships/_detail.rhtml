@@ -1,11 +1,11 @@
 <% scholarships ||= @scholarships %>
 <% for scholarship in scholarships  %>
 <tr id="extra_scholarship_<%= scholarship.id %>" style="background-color: #EEEEEE;" class="extra_scholarships_<%=index.id%>">
-  <td/>
-  <td/>
-  <td/>
+  <td class="nobg"/>
+  <td class="nobg"/>
+  <td class="nobg"/>
 
-  <td>
+  <td class="nobg">
     <%= close_class_link("extra_scholarships",index.id) %>
     <%if scholarship == index.extra_scholarships.last%>
       <%= add_link(index) %>
@@ -15,7 +15,7 @@
       <%= change_extra_link(scholarship,"extra_scholarship_#{scholarship.id}") %>
     <% end %>
   </td>
-  <td colspan=2>
+  <td colspan="2" class="nobg">
     <%= scholarship.commission_head %> / 
     <%= scholarship.commission_body %> / 
     <%= scholarship.commission_tail %> &nbsp;
