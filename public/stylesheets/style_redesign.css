@@ -469,6 +469,9 @@ table.embossed tr td
 	border-bottom: 1px solid #EFEFEF;
 	border-right: 1px solid #efefef;
 }
+table.embossed tr td.nobg {
+  background: transparent;
+}
 
 table.embossed td a {
   margin-left: 0px;
@@ -484,6 +487,11 @@ table.embossed td a {
 	-webkit-border-radius: 4px;
 	letter-spacing: .5px;
 }
+
+table.embossed td a.nobg {
+  background: transparent;
+}
+
 table.embossed a:hover
 {
 	text-shadow: -1px -1px 0 #000;
