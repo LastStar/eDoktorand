@@ -1,8 +1,11 @@
-<h5> <%= t(:message_0, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></h5>
+<h1> <%= t(:message_0, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></h1>
+<fieldset>
+<legend><%= t(:message_15, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></legend>
 <ul>
   <li><%= t(:message_1, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>: <%= @exam.index.student.display_name %></li>
   <li><%= t(:message_2, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>: <%= @exam.subject.label %></li>
 </ul>
+</fieldset>
 <% form_tag(:action => 'save_external') do -%>	
 <fieldset id='date'>
 <legend><%= t(:message_3, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
@@ -35,6 +38,6 @@
 
 <fieldset id='action'>
   <legend><%= t(:message_13, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
-  <input type='submit' value='<%= t(:message_14, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>' />
+  <input type='submit' value='<%= t(:message_14, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>' class='button' />
 </fieldset>
 <% end %>

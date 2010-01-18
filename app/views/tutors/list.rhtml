@@ -1,5 +1,9 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :tutors, :list, :rhtml]) + "(#{@tutors.size})" %></h5>
-<table id='tutors_table'>
+<h1><%= t(:message_0, :scope => [:txt, :view, :tutors, :list, :rhtml]) + "(#{@tutors.size})" %></h1>
+<table id='tutors_table' class="embossed">
+  <tr>
+    <th class='no-rounded'> <%= t(:message_1, :scope => [:txt, :view, :tutors, :list, :rhtml])%></th>
+    <th class='no-rounded'> <%= t(:message_2, :scope => [:txt, :view, :tutors, :list, :rhtml])%></th>
+  </tr>
   <% for tutor in @tutors %>
     <% if tutor.tutorship %>
     <tr class='line' id='coridor_<%= tutor.tutorship.id if tutor.tutorship%>'>

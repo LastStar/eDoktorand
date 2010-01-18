@@ -936,6 +936,7 @@ cs:
             message_0: Vytváření protokolu o zkoušce
             message_1: Vytváření zkoušky podle předmětu
             message_2: Zkouška z předmětu
+            message_3: Vybrali jste
         _with_student: 
           rhtml: 
             message_0: Vytváření protokolu o zkoušce
@@ -974,6 +975,7 @@ cs:
             message_5: Zkoušející
             message_6: Univerzita
             message_7: 1. zkoušející
+            message_15: Vybrali jste
         _main_form: 
           rhtml: 
             message_0: Vyzkoušení studenti
@@ -1058,6 +1060,7 @@ cs:
             message_0: externí zkouška
             message_1: zkouškové předměty
             message_2: odeslat
+            message_3: student
       addresses: 
         _edit: 
           rhtml: 
@@ -2034,6 +2037,8 @@ cs:
         list: 
           rhtml: 
             message_0: Seznam školitelů
+            message_1: Školitel
+            message_2: Obor
         edit: 
           rhtml: {}
 

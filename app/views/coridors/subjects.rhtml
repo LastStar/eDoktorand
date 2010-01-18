@@ -1,18 +1,15 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :coridors, :subjects, :rhtml])%></h5>
 <div class='links'>
   <%= link_to(t(:message_1, :scope => [:txt, :view, :coridors, :subjects, :rhtml]), {:action => 'index'}) %>
 </div>
-<table class='subjects_table' id='obligate_subjects_table'>
+<h1><%= t(:message_0, :scope => [:txt, :view, :coridors, :subjects, :rhtml])%></h1>
+      <h2><%= @coridor.name %></h2>
+
+<table id='obligate_subjects_table' class='embossed'>
   <tbody id='obligate_subjects'>
   <tr>
-    <td>
-      <h6><%= @coridor.name %></h6>
-    </td>
-  </tr>
-  <tr>
-    <td>
+    <th>
       &nbsp;&nbsp;&nbsp;&nbsp;<b><%= t(:message_2, :scope => [:txt, :view, :coridors, :subjects, :rhtml]) %>:</b>
-    </td>
+    </th>
   </tr>
   <tr class='second'>
     <td>
@@ -25,13 +22,13 @@
   </tbody>
   </table>
 
-<table class='subjects_table' id='voluntary_subjects_table'>
+<table class='embossed' id='voluntary_subjects_table'>
   <tbody id='voluntary_subjects'>
     <tr>
-      <td>
+      <th>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <b><%=t(:message_3, :scope => [:txt, :view, :coridors, :subjects, :rhtml])%>:</b>
-      </td>
+      </th>
     </tr>
     <tr class='second'>
       <td>
@@ -46,3 +43,7 @@
     </div>
   </tbody>
 </table>
+<div class='links'>
+  <%= link_to(t(:message_1, :scope => [:txt, :view, :coridors, :subjects, :rhtml]), {:action => 'index'}) %>
+</div>
+&nbsp;
