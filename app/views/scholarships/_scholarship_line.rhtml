@@ -1,15 +1,12 @@
-<tr id='extra_scholarship_<%=scholarship.id %>' style="background-color: #EEEEEE;" class="extra_scholarships_<%=scholarship.index.id%>">
-  <td class="nobg"/>
-  <td class="nobg"/>
-  <td class="nobg"/>
-  <td class="nobg">
+<tr id='extra_scholarship_<%=scholarship.id %>' class="extra_scholarships_<%=scholarship.index.id%>">
+  <td class="orange right" colspan="4">
     <%= close_class_link("extra_scholarships",scholarship.index.id) %>
     <% if @user.has_role?('faculty_secretary') %>
       <%= remove_link(scholarship) %>
       <%= change_extra_link(scholarship,"extra_scholarship_#{scholarship.id}") %>
     <% end %>
   </td>
-  <td colspan="2" class="nobg">
+  <td colspan="2" class="orange">
     <%= scholarship.commission_head %> / 
     <%= scholarship.commission_body %> / 
     <%= scholarship.commission_tail %> &nbsp;
