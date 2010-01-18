@@ -473,6 +473,14 @@ table.embossed tr td.nobg {
   background: transparent;
 }
 
+table.embossed tr td.orange {
+  border: 0px;
+  background-image: none;
+  background-color: #efe8c0;
+}
+
+
+
 table.embossed td a {
   margin-left: 0px;
 	padding: 1px 5px 2px 5px;
