@@ -1,17 +1,18 @@
 module CoridorsHelper
 
   def del_link(coridor_subject)
-    link_to_remote(image_tag('minus.png'), 
+    link_to_remote(image_tag('minus.png'),{ 
                   :url => {:action => 'del_subject', :id => coridor_subject.id},
-                  :confirm => t(:message_0, :scope => [:txt, :helper, :coridors])) 
+                  :confirm => t(:message_0, :scope => [:txt, :helper, :coridors])},
+                   {:class => 'nobg'}) 
   end
 
   def add_link(coridor, type)
     link = link_to_remote("%s&nbsp;%s" % [image_tag('plus.png'), 
                                           t(:message_1, :scope => [:txt, :helper, :coridors])],
-                          :url => {:action => 'add_subject', :type => type},
+                          {:url => {:action => 'add_subject', :type => type},
                           :update => type.underscore.pluralize,
-                          :position => :bottom)
+                          :position => :bottom})
        
   end
 
