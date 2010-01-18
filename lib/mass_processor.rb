@@ -207,10 +207,19 @@ class MassProcessor
     # creates copy of coridors with S on end of code
     def copy_old_corridors(coridors)
       coridors.map {|c|
-        cn = c.clone
-        cn.code = "%sS" % c.code
-        cn.save
-        cn
+        c.clone.save
+        c.code = "%sS" % c.code
+        c.accredited = false
+        c.save
+        c
+      }
+    end
+
+    # copies corridor subject from one to another corridor
+    def copy_corridor_subject(from_coridor, to_coridor)
+      CoridorSubject.find_all_by_coridor_id(from_coridor).each {|cs|
+        csn = cs.clone
+        csn.update_attribute(:coridor_id, to_coridor)
       }
     end
 
