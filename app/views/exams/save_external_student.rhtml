@@ -1,7 +1,10 @@
-<h5> <%= t(:message_0, :scope => [:txt, :view, :exams, :save_external_student, :rhtml])%></h5>
+<h1> <%= t(:message_0, :scope => [:txt, :view, :exams, :save_external_student, :rhtml])%></h1>
+<fieldset>
+<legend><%= t(:message_3, :scope => [:txt, :view, :exams, :save_external_student, :rhtml])%></legend>
 <ul>
   <li><%= @index.student.display_name %></li>
 </ul>
+</fieldset>
 <% external_subject_form do -%>	
 <fieldset>
 <legend><%= t(:message_1, :scope => [:txt, :view, :exams, :save_external_student, :rhtml]) %></legend>
@@ -9,5 +12,6 @@
   <%= label_options(@subjects) %>
 </select>
 </fieldset>
-<%= submit_tag(t(:message_2, :scope => [:txt, :view, :exams, :save_external_student, :rhtml]), :id => 'submit-button') %>
+<br/>
+<%= submit_tag(t(:message_2, :scope => [:txt, :view, :exams, :save_external_student, :rhtml]), :id => 'submit-button', :class => 'button') %>
 <% end %>

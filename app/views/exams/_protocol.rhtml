@@ -55,8 +55,16 @@ exam.first_examinator.display_name_with_title if exam.first_examinator%>&nbsp;&n
 <% end %>
 
 </div>
+<% if back_link %>
+  &nbsp;
+  <div class='links'>
+    <%= link_to_function(t(:message_0, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), "Element.show('exams_list'); Element.remove('protocol')") %>
+  </div>
+<% end %>
 </div><!-- protocol end -->
+
 <% unless back_link %>
+&nbsp;
   <div class='links'>
   <%= link_to (t(:message_20, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), {:action => 'save'})%>
   <%= link_to_remote (t(:message_21, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), :url => {:action => 'save_subject'}, :complete => evaluate_remote_response)%>

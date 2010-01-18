@@ -1,4 +1,6 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :exams, :_with_subject, :rhtml]) %></h5>
+<h1><%= t(:message_0, :scope => [:txt, :view, :exams, :_with_subject, :rhtml]) %></h1>
+<fieldset id='exam_info'>
+  <legend><%= t(:message_3, :scope => [:txt, :view, :exams, :_with_subject, :rhtml]) %></legend>
 <ul id='exam'>
   <li>
     <%= t(:message_1, :scope => [:txt, :view, :exams, :_with_subject, :rhtml]) %>
@@ -7,3 +9,4 @@
   <%= "#{t(:message_2, :scope => [:txt, :view, :exams, :_with_subject, :rhtml])}: #{exam.subject.label}" %>
   </li>
 </ul>
+</fieldset>

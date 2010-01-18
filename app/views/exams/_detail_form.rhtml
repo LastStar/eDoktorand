@@ -18,8 +18,8 @@
   <%= collection_select(:exam, :first_examinator_id, examinators, :id, :display_name_with_title) %><br /> 
 
   <label for="exam_second_examinator"><%=t(:message_4, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
-  <%= collection_select(:exam, :second_examinator_id, examinators, :id, :display_name_with_title, {:include_blank => true}) %>
-
+  
+  <%= collection_select(:exam, :second_examinator_id, examinators, :id, :display_name_with_title, {:include_blank => true}) %><br />
 
   <label for="exam_first_examinator"><%=t(:message_5, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
      
@@ -43,7 +43,7 @@
 
 <fieldset id='action'>
   <legend><%= t(:message_12, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]) %></legend>
-  <%= submit_tag(t(:message_13, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]), :id => 'submit-button') %>
+  <%= submit_tag(t(:message_13, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]), :id => 'submit-button', :class => 'button') %>
 </fieldset>
 </form>
 
