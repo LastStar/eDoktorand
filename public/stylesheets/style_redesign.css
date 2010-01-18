@@ -326,6 +326,7 @@ h5{
 
 h6 {
   font-size: 100%;
+  margin-bottom: 10px;
 }
 
 ul, ol ul{
@@ -459,6 +460,11 @@ table.embossed tr th.no-rounded
 	-webkit-border-radius: 0px;  
 }
 
+table.students-list tr.form-line td,table.embossed tr.form-line td {
+  padding: 0;
+}
+table.students-list tr.form-line td div,table.embossed tr.form-line td div {
+}
 
 table.embossed tr td
 {

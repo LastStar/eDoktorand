@@ -1,12 +1,12 @@
 <% @links = student_action_links(index_line) %>
 <tr id='index_menu_<%= index_line.id %>_tr' style='display: none'>
-  <td colspan='9' id='index_menu_<%= index_line.id %>_td'>
+  <td colspan='9' id='index_menu_<%= index_line.id %>_td' class="orange right">
     <%= render :partial => 'student_menu' %>
   </td>
 </tr>
 <%= render(:partial => 'index', :object => index_line) %>
 <tr id ='index_form_<%= index_line.id %>_tr' class='form-line' style='display: none'>
-  <td colspan='9' id ='index_form_<%= index_line.id %>_td'>
+  <td colspan='9' id ='index_form_<%= index_line.id %>_td' class="right orange">
     <div id ='index_form_<%= index_line.id %>'></div>
   </td>
 </tr>

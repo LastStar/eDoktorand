@@ -22,11 +22,11 @@
     <label for="locale"><%= t(:message_4, :scope => [:txt, :view, :account, :login, :rhtml]) %> </label>
     <%= locale_link %>
     </div>
-
     <div style='clear: both'>
       <label for="submit"><%= t(:message_5, :scope => [:txt, :view, :account, :login, :rhtml]) %></label>
-      <%= submit_tag(t(:message_6, :scope => [:txt, :view, :account, :login, :rhtml]), :id => 'login-button') %>
+      <%= submit_tag(t(:message_6, :scope => [:txt, :view, :account, :login, :rhtml]), :id => 'login-button', :class => 'button') %>
     </div>
+    <br />
 </div>
 
 <% end %>
