@@ -557,7 +557,7 @@ module ApplicationHelper
   end
 
   def remove_line
-    link_to_function(image_tag('close.png'), "$('coridor_subject_form').remove()", :class => 'nobg')
+    link_to_function(image_tag('close.png'), "$('coridor_subject_form').remove()")
   end
   
   def student_tutor_line(index)

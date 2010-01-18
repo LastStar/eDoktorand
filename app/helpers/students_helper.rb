@@ -50,7 +50,7 @@ module StudentsHelper
       
   #prints link to function witch show student line menu
   def link_to_show_actions(index)
-    link_to_function('&uarr;' + t(:message_1, :scope => [:txt, :helper, :students]),
+    link_to_function('&uarr; ' + t(:message_1, :scope => [:txt, :helper, :students]),
       update_page do |page|
         page.show "index_menu_#{index.id}_tr"
         page.show "index_form_#{index.id}_tr"
@@ -63,7 +63,7 @@ module StudentsHelper
       
   #prints link to function witch hide student line menu
   def link_to_hide_actions(index)
-    link_to_function('&darr;' + t(:message_2, :scope => [:txt, :helper, :students]),
+    link_to_function('&darr; ' + t(:message_2, :scope => [:txt, :helper, :students]),
       update_page do |page|
         page.hide "index_menu_#{index.id}_tr"
         page.hide "index_form_#{index.id}_tr"
