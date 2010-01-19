@@ -176,33 +176,33 @@ module ApplicationHelper
       links << student_menu
     else
       if @user.has_role?('examinator')
-        links << link_to_unless_current(t(:message_16, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
+        links << link_to(t(:message_16, :scope => [:txt, :helper, :application]), :controller => 'exams')
       elsif @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean', 'vicerector']) 
-          links << link_to_unless_current(t(:message_66, :scope => [:txt, :helper, :application]), :controller => 'actualities'){} 
-          links << link_to_unless_current(t(:message_17, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname'){} 
-          links << link_to_unless_current(t(:message_18, :scope => [:txt, :helper, :application]), :controller => 'exam_terms'){} 
-          links << link_to_unless_current(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
-          links << link_to_unless_current(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list'){}
+          links << link_to(t(:message_66, :scope => [:txt, :helper, :application]), :controller => 'actualities') 
+          links << link_to(t(:message_17, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname') 
+          links << link_to(t(:message_18, :scope => [:txt, :helper, :application]), :controller => 'exam_terms') 
+          links << link_to(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams')
+          links << link_to(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list')
           links << prepare_scholarship_link
           links << span_tag("&nbsp;&nbsp;&nbsp;",:id => "space_span")
-          links << link_to_unless_current(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators') {}
-          links << link_to_unless_current(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements') {}
-          links << link_to_unless_current(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors') {}
-          links << link_to_unless_current(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'coridors') {}
+          links << link_to(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators')
+          links << link_to(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements')
+          links << link_to(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors')
+          links << link_to(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'coridors')
       elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
         if @user.has_role?('board_chairman')
-          links << link_to_unless_current(t(:message_23, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname'){}
+          links << link_to(t(:message_23, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname')
         end
         if @user.has_role?('department_secretary')
-          links << link_to_unless_current(t(:message_24, :scope => [:txt, :helper, :application]), :controller => 'candidates', :action => 'list', :category => 'lastname'){} 
+          links << link_to(t(:message_24, :scope => [:txt, :helper, :application]), :controller => 'candidates', :action => 'list', :category => 'lastname') 
           links << prepare_scholarship_link
         end
-        links << link_to_unless_current(t(:message_25, :scope => [:txt, :helper, :application]), 
-                                        :controller => 'probation_terms'){} 
-        links << link_to_unless_current(t(:message_26, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
+        links << link_to(t(:message_25, :scope => [:txt, :helper, :application]), 
+                                        :controller => 'probation_terms') 
+        links << link_to(t(:message_26, :scope => [:txt, :helper, :application]), :controller => 'exams')
       end 
-      links << link_to_unless_current(t(:message_27, :scope => [:txt, :helper, :application]), 
-                                      :controller => 'students'){}
+      links << link_to(t(:message_27, :scope => [:txt, :helper, :application]), 
+                                      :controller => 'students')
     end
     links.flatten.join("\n")
   end
@@ -210,18 +210,18 @@ module ApplicationHelper
   def student_menu
     result = []
     if @student.index.study_plan && @student.index.study_plan.approved? 
-      result << link_to_unless_current(t(:message_31, :scope => [:txt, :helper, :application]), 
-                                      :controller => 'probation_terms'){} 
+      result << link_to(t(:message_31, :scope => [:txt, :helper, :application]), 
+                                      :controller => 'probation_terms') 
     end
-    result << link_to_unless_current(t(:message_69, :scope => [:txt, :helper, :application]),
+    result << link_to(t(:message_69, :scope => [:txt, :helper, :application]),
                                      :controller => 'study_plans',
-                                     :action => 'requests'){}
-    result << link_to_unless_current(t(:message_32, :scope => [:txt, :helper, :application]),
+                                     :action => 'requests')
+    result << link_to(t(:message_32, :scope => [:txt, :helper, :application]),
                                      :controller => 'study_plans',
-                                     :action => 'index'){}
-    result << link_to_unless_current(t(:message_33, :scope => [:txt, :helper, :application]),
+                                     :action => 'index')
+    result << link_to(t(:message_33, :scope => [:txt, :helper, :application]),
                                       :controller => 'scholarships',
-                                      :action => 'student_list'){}
+                                      :action => 'student_list')
     result
   end
   
