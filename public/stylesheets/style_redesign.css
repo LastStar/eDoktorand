@@ -173,6 +173,11 @@ body {
 	padding-top: 6px;
 }
 
+
+.half {
+  width: 48%;
+}
+
 .links a, .links a:link, .links a:visited, .links a:active, .links a:hover
 {
 	margin-left: 0px;
@@ -380,6 +385,9 @@ li.bordered
   float: right;
   width: 480px;
 }
+ul.half .long_info {
+  width: 240px;
+}
 
 .long_info a:link {
   text-decoration: none;
@@ -413,6 +421,7 @@ ul.bordered li
   margin-right: 10px;
   list-style: none;
   border-bottom: 1px solid #ccc;
+  clear:right;
 }
 
 ul.bordered li.noborder {

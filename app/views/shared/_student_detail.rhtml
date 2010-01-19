@@ -1,10 +1,11 @@
 <div id='student_detail'>
 <% unless @user.has_role?('student') %>
 <div class='links'>
-  <div class='left'><%= back_to_list index %></div>
-  <div><%= back_and_remove_from_list index %></div>
+  <%= back_to_list index %>
+  <%= back_and_remove_from_list index %>
 </div>
 <% end %>
+<h1><%= t(:message_0, :scope => [:txt, :view, :shared, :_student_detail, :rhtml]) %></h1>
 <%@links = student_action_links(index)%>
 <% unless @user.has_role?('student')%>
   <% if @links != [] %>
@@ -21,18 +22,17 @@
     <!--</div>-->
   <%end%>
 <%end%>
-
-<h1><%= t(:message_0, :scope => [:txt, :view, :shared, :_student_detail, :rhtml]) %></h1>
+<br class="clear-all" /><br />
 <%= render(:partial => 'shared/personal_detail', :locals => {:index => index}) %>
 <% if index.student.address || @user.has_role?('student')%>
-<h5><%= t(:message_2, :scope => [:txt, :view, :shared, :_student_detail, :rhtml]) %></h5>
 <%= render :partial => 'shared/address_detail', :locals => {:student => index.student} %>
 <% end %>
 <%= render :partial => 'shared/study_detail', :locals => {:index => index} %>
 <% unless @user.has_role?('student') %>
 <div class='links'>
-  <div class='left'><%= back_to_list index %></div>
-  <div><%= back_and_remove_from_list index %></div>
+  <%= back_to_list index %>
+  <%= back_and_remove_from_list index %>
 </div>
 <% end %>
+<br class="clear-all" />
 </div>
