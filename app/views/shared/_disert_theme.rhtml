@@ -1,18 +1,17 @@
 <h5><%= t(:message_0, :scope => [:txt, :view, :shared, :_disert_theme, :rhtml]) %></h5>
-<ul id=<%= "disert_theme#{study_plan.id}" %>>
+<ul id=<%= "disert_theme#{study_plan.id}" %> class="bordered">
   <li>
-  <b><%= t(:message_1, :scope => [:txt, :view, :shared, :_disert_theme, :rhtml]) %></b>
+  <div class='long_info'><%= "#{disert_theme.title}" %></div> <b><%= t(:message_1, :scope => [:txt, :view, :shared, :_disert_theme, :rhtml]) %></b>
   </li>
-  <li class="second">
-    <%= "#{disert_theme.title}" %>
-  </li>
-  <li class="second">
+  <li>
+    <div class='long_info'>
     <span id="disert_theme_title_en">
     <%= disert_theme_line(disert_theme) %>
     </span>
+    </div>&nbsp;
   </li>
   <li>
-  <div class='info'><%= "#{disert_theme.finishing_to}. #{t(:message_2, :scope => [:txt, :view, :shared, :_disert_theme, :rhtml])}" %></div>
+  <div class='long_info'><%= "#{disert_theme.finishing_to}. #{t(:message_2, :scope => [:txt, :view, :shared, :_disert_theme, :rhtml])}" %></div>
   <b><%= "#{t(:message_3, :scope => [:txt, :view, :shared, :_disert_theme, :rhtml])}" %></b>
   </li>
     <%= render(:partial => 'shared/methodology', :locals => {:disert_theme => disert_theme}) %>

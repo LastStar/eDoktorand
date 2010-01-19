@@ -376,12 +376,47 @@ li.bordered
   border-bottom: 1px solid #ccc;
 }
 
+.long_info {
+  float: right;
+  width: 480px;
+}
+
+.long_info a:link {
+  text-decoration: none;
+}
+
+.long_info input {
+  width: auto;
+  height: 12px;
+  font-size: 10px;
+}
+
+.long_info select {
+  width: auto;
+  height: 15px;
+  font-size: 10px;
+}
+
+.info {
+  float: right;
+  width: 14ex;
+}
+
+ul.bordered li.third { 
+  padding-left: 4em;
+  background-color: #ddc;
+}
+
 ul.bordered li
 {
   margin-left: 0px;
   margin-right: 10px;
   list-style: none;
   border-bottom: 1px solid #ccc;
+}
+
+ul.bordered li.noborder {
+  border: none;
 }
 
 ol{
