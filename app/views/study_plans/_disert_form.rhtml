@@ -43,8 +43,9 @@
   <input type='hidden' name='return' id='return-value' value='0'/>
 </li>
 </fieldset>
-<%= submit_tag("<<< " + t(:message_6, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]), :id => 'return_button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + t(:message_7, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + "'") %>
-<%= submit_tag(t(:message_8, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % t(:message_9, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml])) %>
+<br/>
+<%= submit_tag("<<< " + t(:message_6, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]), :id => 'return_button',:class => 'button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + t(:message_7, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + "'") %>
+<%= submit_tag(t(:message_8, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + " >>>", :id => 'submit_button',:class => 'button', :onclick =>"$('submit_button').value = '%s'" % t(:message_9, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml])) %>
 
 <% end %>
 

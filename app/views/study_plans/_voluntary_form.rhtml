@@ -18,6 +18,7 @@
   <input type='hidden' name='return' id='return-value' value='0'/>
 </ul>
 </fieldset>
-<%= submit_tag("<<< " + I18n::t(:message_1, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]), :id => 'return_button', :onclick => "$('return-value').value = 1; $('return_button').value = '" + t(:message_2, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]) + "'") if session[:return_to] %>
-<%= submit_tag(I18n::t(:message_3, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]) + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % t(:message_4, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml])) %>
+<br/>
+<%= submit_tag("<<< " + I18n::t(:message_1, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]),:class=>'button', :id => 'return_button', :onclick => "$('return-value').value = 1; $('return_button').value = '" + t(:message_2, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]) + "'") if session[:return_to] %>
+<%= submit_tag(I18n::t(:message_3, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]) + " >>>", :class => 'button', :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % t(:message_4, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml])) %>
 <% end %>

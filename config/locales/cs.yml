@@ -700,6 +700,8 @@ cs:
             message_6: Máte námět na nové funkce do e-Doktoranda nebo chcete odebírat aktuality? Staňte se fanouškem na Facebooku.
             message_7: žádost o SDZ
             message_8: žádost o podklady k obhajobě DP
+            message_9: Volitelné předměty
+            message_10: Dokumenty
         _study_plan_header: 
           rhtml: 
             message_0: studijní plán

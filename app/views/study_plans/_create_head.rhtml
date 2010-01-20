@@ -1,5 +1,5 @@
-<%= content_tag('h5', t(:message_0, :scope => [:txt, :view, :study_plans, :_create_head, :rhtml])) %>
-<ul id='studyPlan'>
+<%= content_tag('h1', t(:message_0, :scope => [:txt, :view, :study_plans, :_create_head, :rhtml])) %>
+<ul id='studyPlan' class='bordered'>
   <% if session[:requisite_subjects] %>
     <%= render_requisite %>
   <% end %>
