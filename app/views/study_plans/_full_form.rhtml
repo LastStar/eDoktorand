@@ -9,7 +9,7 @@
             :collection => @plan_subjects,
             :locals => {:subjects => subjects}) %>
   <li id='subject_button' class='subject_select'>
-  <input type="button" value="<%=t(:message_1, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml])%>" onclick="javascript:Element.show('new_subject');Element.hide('subject_button');" >
+  <input type="button" value="<%=t(:message_1, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml])%>" class='button' onclick="javascript:Element.show('new_subject');Element.hide('subject_button');" >
   </li>
   <li class='subject_select' id='new_subject' style='display: none'>
     <%= empty_subject_select(subjects) %>
@@ -74,7 +74,7 @@
 </li>
 <% if @disert_theme.has_methodology?%>
 <li>
-  <label for="methodology_added_on"> <%=t(:message_14, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml])%> <%=text_field 'disert_theme', 'methodology_added_on', 'size' => 65, 'readonly' => 'readonly' %> </label>
+  <label for="methodology_added_on"> <%=t(:message_14, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml])%></label> <%=text_field 'disert_theme', 'methodology_added_on', 'size' => 65, 'readonly' => 'readonly' %>
 </li>
 <% end %>
 <li>
@@ -84,6 +84,7 @@
 </li>
 </ul>
 </fieldset>
-<%= submit_tag t(:message_16, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>
+<br/>
+<%= submit_tag( t(:message_16, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]), :class => 'button') %>
 <% end %>
 
