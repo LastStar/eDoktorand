@@ -97,15 +97,15 @@
     </ul>
   <% end %>
   <br class="clear-all" />
-  <h5 id='shortcut_study_plan'>
-    <%= t(:message_16, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
-  </h5>
   <% if @student %>
     <div class='links'>
       <%= study_plan_menu(@student) %>
     </div>
   <% end %>
   <ul id='<%= "study_plan#{study_plan.id}" %>' class='bordered'>
+    <li class="noborder"><h5 id='shortcut_study_plan'>
+      <%= t(:message_16, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
+    </h5></li>
   <% if study_plan.canceled? %>
     <li>
     <div class='info'><%= study_plan.canceled_on.strftime('%d. %m. %Y') %></div>
