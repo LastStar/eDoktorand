@@ -12,19 +12,16 @@ class FormController < ApplicationController
   def login
     @candidate = Candidate.find(:first, :conditions => ["id = ?", params[:candidate][:id]])
     if @candidate && @candidate.hash == params[:candidate][:hash]
-      @action = 'update'
-      render :update do |page|
-        if !@candidate.finished?
-          page.replace_html  'main', :partial => 'shared/candidate_edit'
-        else
-          page.replace_html  'main', :partial => 'shared/candidate_detail'
-        end
+      if !@candidate.finished?
+        @action = 'update'
+        @title = t(:message_16, :scope => [:txt, :controller, :form])
+        render :action => :details
+      else
+        render :action => :preview
       end
     else
-      render :update do |page|
-        page.replace_html  'last', :inline => "<div id='error'>" + t(:message_15, :scope => [:txt, :controller, :form]) + "</div>"
-        page.visual_effect :highlight, 'candidate_login'
-      end    
+      flash[:notice] = t(:message_15, :scope => [:txt, :controller, :form])
+      redirect_to :action => :index
     end    
   end
   
@@ -36,17 +33,17 @@ class FormController < ApplicationController
   end
 
   # preview what has been inserted
-  def save()
-      @candidate = Candidate.new(params[:candidate])
-        if @candidate.save
-          preview
-          render(:action => :preview)
-        else
-          @title = t(:message_2, :scope => [:txt, :controller, :form])
-          flash.now['error'] = t(:message_3, :scope => [:txt, :controller, :form])
-          @action = 'save'
-          render(:action => :details)
-        end
+  def save
+    @candidate = Candidate.new(params[:candidate])
+    if @candidate.save
+      preview
+      render(:action => :preview)
+    else
+      @title = t(:message_2, :scope => [:txt, :controller, :form])
+      flash.now['error'] = t(:message_3, :scope => [:txt, :controller, :form])
+      @action = 'save'
+      render(:action => :details)
+    end
   end
 
   # update candidate
@@ -54,7 +51,7 @@ class FormController < ApplicationController
     @candidate = Candidate.find(params[:candidate][:id])
     if @candidate.update_attributes(params[:candidate])
       preview
-      render(:action => :preview)
+      render :action => :preview
     else
       @title = t(:message_4, :scope => [:txt, :controller, :form])
       flash.now['error'] = t(:message_5, :scope => [:txt, :controller, :form])

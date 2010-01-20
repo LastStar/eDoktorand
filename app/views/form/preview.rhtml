@@ -3,19 +3,21 @@
 <div class="printHeader">
   <h4><%= t(:message_0, :scope => [:txt, :view, :form, :preview, :rhtml]) %></h4>
 </div>
-  <%= render :partial=> 'shared/candidate_detail' %>
+<%= render :partial=> 'shared/candidate_detail' %>
+  
+  <% unless @candidate.finished? %>
   <div class="candidate_login">
   <h5><%= t(:message_19, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</h5> 
   <ul>
-  <li><div class="right_info"><%= @candidate.id %></div>Id:</li>
-  <li><div class="right_info"><%= @candidate.hash %></div><%= t(:message_20, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</li>
+    <li><div class="right_info"><%= @candidate.id %></div>Id:</li>
+    <li><div class="right_info"><%= @candidate.hash %></div><%= t(:message_20, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</li>
+    <li><%= t(:message_21, :scope => [:txt, :view, :form, :preview, :rhtml]) %></li>
   </ul>
   </div>
-  
   <h5><%= t(:message_1, :scope => [:txt, :view, :form, :preview, :rhtml]) %></h5> 
   <br/>
   <ul>
-  <div class='signature'><%= t(:message_2, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</div>
+    <div class='signature'><%= t(:message_2, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</div>
   </ul>
 
   <p class='instruction'>
@@ -31,3 +33,4 @@
   4. <b><%= link_to t(:message_16, :scope => [:txt, :view, :form, :preview, :rhtml]), :action => 'finish', :id => @candidate.id   %>
     <%= t(:message_17, :scope => [:txt, :view, :form, :preview, :rhtml]) %></b> - <%= t(:message_18, :scope => [:txt, :view, :form, :preview, :rhtml]) %>
   </p>
+  <% end %>

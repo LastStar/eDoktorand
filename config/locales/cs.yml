@@ -1410,14 +1410,14 @@ cs:
           rhtml: 
             message_0: Obory studia jsou přiřazeny k jednotlivým fakultám. Zobrazí se Vám po rozkliknutí.
             message_1: dokumenty
-            message_2: "There is error in application. Please contact system administrator on address:"
-            message_3: "Přihlásit se pro opravu přihlášky"
-            message_4: "Heslo"
+            message_2: "Přihlásit se pro opravu přihlášky"
+            message_3: "Heslo"
+            message_4: "Přihlásit"
         preview: 
           rhtml: 
             message_18: prosím klikněte zde pro elektronickou registraci Vaší přihlášky
-            message_8: zaslatat poštou všechny požadované dokumenty
-            message_9: na oddělení Vědy a Výzkumu - v případě, že tyto kroky nepodstoupíte, nelze zaručit úspěšnou registraci uchazeče.
+            message_8: zaslat poštou všechny požadované dokumenty
+            message_9: na oddělení Vědy a Výzkumu. V případě, že tyto kroky neučiníte, nelze zaručit Vaši úspěšnou registraci.
             message_0: Přihláška ke studiu v doktorském studijním programu
             message_10: Kontrola zadaných údajů
             message_1: akce
@@ -1428,14 +1428,15 @@ cs:
             message_13: prosím klikněte zde pro opravu chybně zadaného údaje
             message_4: pro úspěšnou registraci je třeba
             message_14: <a href='javascript:window.print()'>Vytiskni</a> přihlášku
-            message_5: zkontrolujte správnost zadaných údajů,
+            message_5: zkontrolovat správnost zadaných údajů,
             message_15: prosím klikněte zde pro vytištění přihlášky
             message_6: vytisknout přihlášku, zaregistrovat elektronickou přihlášku
             message_16: Registrace
             message_7: a
             message_17: elektronické přihlášky
-            message_19: Login na přihlášku
+            message_19: Přihlášení na přihlášku
             message_20: Heslo
+            message_21: Tyto údaje slouží pro pozdější editaci rozepsané přihlášky (dosud neregistrované) či pro prohlížení již zaregistrované přihlášky.
       shared: 
         _approve_form: 
           rhtml: 
@@ -2303,7 +2304,7 @@ cs:
         message_9: Vyplňte prosím všechny údaje, jejichž popiska je červená
         message_0: Přijímací řízení k doktorskému studiu
         message_10: Oprava přihlášky
-        message_1: Přijímací řízení pro obor %s 
+        message_1: "Přijímací řízení pro obor %s"
         message_11: Přihláška zaregistrována
         message_2: Formulář přihlášky - nedostatky
         message_12: Česká republika
@@ -2315,6 +2316,7 @@ cs:
         message_6: Kontrola zadaného
         message_7: Prohlédněte si pozorně Vámi zadané informace. Poté postupujte podle návodu ve spodní části stránky.
         message_15: Špatné Id nebo heslo
+        message_16: Oprava neregistrované přihlášky
       supplements: {}
 
       scholarships: 
