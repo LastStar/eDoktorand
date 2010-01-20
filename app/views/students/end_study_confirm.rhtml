@@ -1,6 +1,6 @@
+<h1><%= t(:message_1, :scope => [:txt, :view, :students, :end_study_confirm, :rhtml]) %></h1>
 <div id='student_detail'>
-<h5><%= t(:message_1, :scope => [:txt, :view, :students, :end_study_confirm, :rhtml]) %></h5>
-<ul class='details'>
+<ul class='details bordered'>
   <li>
     <div class='long_info'><%=@student.display_name%></div> <%= t(:message_2, :scope => [:txt, :view, :students, :end_study_confirm, :rhtml]) %>:
   </li>
@@ -22,4 +22,5 @@
   <li class='second'>
   <%=h @end_study_subject %>
   </li>
+</ul>
 </div>

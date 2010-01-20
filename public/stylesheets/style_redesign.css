@@ -566,6 +566,10 @@ table.embossed td a.nobg {
   background: transparent;
 }
 
+table.embossed td img {
+  vertical-align:middle;
+}
+
 table.embossed a:hover
 {
 	text-shadow: -1px -1px 0 #000;

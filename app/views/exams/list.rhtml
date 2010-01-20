@@ -1,8 +1,8 @@
 <%= javascript_include_tag :defaults %>
 <% unless @exams.empty? %>
+<%= list_links %>
 <h1 id="exam_title"><%= @title + " (%s)" % @exams.size %></h1>
 <div id="exams_list">
-  <%= list_links %>
   <br class="clear-all" />
   <%= render(:partial => 'list', :exams => @exams)%>
 </div>
