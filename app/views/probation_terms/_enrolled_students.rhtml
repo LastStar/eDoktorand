@@ -1,15 +1,21 @@
+    <li><table class="embossed">
     <% for student in probation_term.students  %>
-    <li>
-    <%= student.display_name %>&nbsp;&nbsp;
-    <% exam = Exam.find_by_subject_id_and_index_id(probation_term.subject.id, student.index.id) %>
-    <% ps = PlanSubject.find_for_exam(exam) %>
-    <% if exam %>
-      <%= [t(:message_0, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml]), t(:message_1, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml])][exam.result] %>&nbsp;
-      <%= exam.created_on.strftime("%d. %m. %Y") %>
-    <% else %>
-      <%= enroll_link(probation_term, student) %>
-      <%= signoff_link(probation_term, student) %>
+    <tr>
+      <th class="no-rounded">
+        <%= student.display_name %>&nbsp;&nbsp;
+      </th>
+      <td>
+        <% exam = Exam.find_by_subject_id_and_index_id(probation_term.subject.id, student.index.id) %>
+        <% ps = PlanSubject.find_for_exam(exam) %>
+        <% if exam %>
+          <%= [t(:message_0, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml]), t(:message_1, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml])][exam.result] %>&nbsp;
+          <%= exam.created_on.strftime("%d. %m. %Y") %>
+        <% else %>
+          <%= enroll_link(probation_term, student) %>
+          <%= signoff_link(probation_term, student) %>
+        <% end %>
+      </td>
+    </tr>
     <% end %>
-    </li>
-    <% end %>
+    </li></table>
 

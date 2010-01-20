@@ -5,11 +5,11 @@
 <% end %>
 
 <% for probation_term in @probation_terms  %>
-<h5><%= probation_term.subject.label %></h5>
 <div class='links'>
   <%= link(@user, probation_term)  %>
 </div>
-<ul>
+<h5><%= probation_term.subject.label %></h5>
+<ul class="bordered">
   <li><div class='longinfo'> <%= t(:message_0, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:&nbsp;
     <%= probation_term.enrolled_ratio %></div>
   <div class='longinfo'><%=t(:message_1, :scope => [:txt, :view, :probation_terms, :_list, :rhtml])%>: <%= probation_term.room %></div>

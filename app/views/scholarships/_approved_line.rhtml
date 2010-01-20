@@ -15,7 +15,7 @@
     </tr>
     <% index.extra_scholarships[i..ess].each do |s| %>
       <tr>
-      <td colspan='4'>&nbsp;</td>
+      <td colspan='5'>&nbsp;</td>
       <%= render(:partial => 'detail_scholarship', :locals => {:scholarship => s,:disponents => disponents, :codes => codes}) %>
     <% end %>
   <% end %>

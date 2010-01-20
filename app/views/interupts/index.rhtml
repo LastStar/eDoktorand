@@ -1,4 +1,4 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :interupts, :index, :rhtml]) %></h5>
+<h1><%= t(:message_0, :scope => [:txt, :view, :interupts, :index, :rhtml]) %></h1>
 <h6><%= @student.display_name %></h6>
 <% form_tag(:action => 'create') do -%>
 <fieldset>
@@ -12,5 +12,5 @@
   <%= select('interupt', 'plan_changed', yes_no_options) %><br />
   <%= hidden_field('interupt', 'index_id') %>
 </fieldset>
-<%= submit_tag(t(:message_6, :scope => [:txt, :view, :interupts, :index, :rhtml])) %>
+<%= submit_tag(t(:message_6, :scope => [:txt, :view, :interupts, :index, :rhtml]), :class=>'button') %>
 <% end %>
