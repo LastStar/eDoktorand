@@ -11,9 +11,12 @@ class FinalExamTerm < ExamTerm
   # finds final exam terms for given user
   def self.find_for(user, options = {})
     # TODO redo with only ids of indices
-    indices = Index.find_for(user)
+    indices = Index.find_for(user, :not_absolved => true)
     if options.delete :not_passed
-      indices.reject! {|i| i.status == I18n::t(:message_2, :scope => [:txt, :model, :term])}
+      indices.reject! {|i|
+        i.status == I18n::t(:message_11, :scope => [:txt, :model, :index]) ||
+        i.status == I18n::t(:message_8, :scope => [:txt, :model, :index])
+      }
     end
     options[:conditions] = ['index_id in (?)', indices]
     if options.delete :future
@@ -26,4 +29,3 @@ class FinalExamTerm < ExamTerm
     return final_exams
   end
 end
-
