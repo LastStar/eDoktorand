@@ -1852,6 +1852,7 @@ cs:
         list: 
           rhtml: 
             message_0: V systému nejsou žádné zkouškové termíny podle Vašeho výběru
+            message_1: Termíny zkoušek
         edit: 
           rhtml: 
             message_0: Oprava termínu zkoušky

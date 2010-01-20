@@ -178,6 +178,11 @@ body {
   width: 48%;
 }
 
+.bigger {
+  text-align: right;
+  margin: 10px;
+}
+
 .links a, .links a:link, .links a:visited, .links a:active, .links a:hover
 {
 	margin-left: 0px;
@@ -428,6 +433,11 @@ ul.bordered li.noborder {
   border: none;
 }
 
+ul.bordered li img {
+  margin-right: 5px;
+  margin-left: -21px;
+}
+
 ol{
 	margin-left: 0px;
 	padding-left: 0px;
@@ -473,7 +483,13 @@ td.right
 
 td p{ margin-bottom:0px;}
 
-
+td#opened ul.right,td#opened ul.bordered{
+  float:none;
+  width: auto;
+}
+td#opened ul.half .long_info{
+  width: 480px;
+}
 table.embossed
 {
 	border-collapse: collapse;
