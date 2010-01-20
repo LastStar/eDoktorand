@@ -184,7 +184,7 @@ module ApplicationHelper
           links << link_to(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams')
           links << link_to(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list')
           links << prepare_scholarship_link
-          links << span_tag("&nbsp;&nbsp;&nbsp;",:id => "space_span")
+          #links << span_tag("&nbsp;&nbsp;&nbsp;",:id => "space_span")
           links << link_to(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators')
           links << link_to(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements')
           links << link_to(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors')
