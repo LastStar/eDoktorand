@@ -389,9 +389,11 @@ li.bordered
 .long_info {
   float: right;
   width: 480px;
+  overflow: visible;
 }
 ul.half .long_info {
   width: 240px;
+  padding-left:21px;
 }
 
 .long_info a:link {
@@ -415,6 +417,11 @@ ul.half .long_info {
   width: 14ex;
 }
 
+ul.bordered {
+  list-style: none;
+}
+
+
 ul.bordered li.third { 
   padding-left: 4em;
   background-color: #ddc;
@@ -422,6 +429,7 @@ ul.bordered li.third {
 
 ul.bordered li
 {
+  list-style-image: none;
   margin-left: 0px;
   margin-right: 10px;
   list-style: none;
@@ -433,7 +441,7 @@ ul.bordered li.noborder {
   border: none;
 }
 
-ul.bordered li img {
+ul.half li img {
   margin-right: 5px;
   margin-left: -21px;
 }
