@@ -607,8 +607,8 @@ module ApplicationHelper
 
   # TODO use on more places
   # returns select options for any labeled objects
-  def label_options(objects)
-    options_for_select(objects.map{|o| [o.label, o.id]})
+  def label_options(objects, label_method = :label)
+    options_for_select(objects.map{|o| [o.send(label_method), o.id]})
   end
 
   # returns select options for edit exam
