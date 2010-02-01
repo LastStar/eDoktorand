@@ -328,11 +328,9 @@ module ApplicationHelper
   
   # prints methodology link
   def methodology_link(disert_theme)
-    link_to_remote(t(:message_47, :scope => [:txt, :helper, :application]),
-                  {:url => {:controller => 'disert_themes', 
-                           :action => 'file_clicked', :id => disert_theme},
-                    :complete => evaluate_remote_response},
-                  {:id => "methodology_link#{disert_theme.id}"})
+    link_to(t(:message_47, :scope => [:txt, :helper, :application]),
+            "pdf/methodology/%i.pdf" % disert_theme.id,
+            {:id => "methodology_link#{disert_theme.id}"})
   end
   
   # prints atestation detail link
@@ -609,8 +607,8 @@ module ApplicationHelper
 
   # TODO use on more places
   # returns select options for any labeled objects
-  def label_options(objects)
-    options_for_select(objects.map{|o| [o.label, o.id]})
+  def label_options(objects, label_method = :label)
+    options_for_select(objects.map{|o| [o.send(label_method), o.id]})
   end
 
   # returns select options for edit exam

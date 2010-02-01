@@ -10,7 +10,7 @@
 <%= t(:message_2, :scope => [:txt, :view, :exams, :by_subject, :rhtml]) %>
 </label>
 <select id="subject_id", name="subject[id]">
-  <%= label_options(@subjects) %>
+  <%= label_options(@subjects, :select_label) %>
 </select>
 </fieldset>
 <%= submit_tag(t(:message_3, :scope => [:txt, :view, :exams, :by_subject, :rhtml]), :id => 'submit-button') %>

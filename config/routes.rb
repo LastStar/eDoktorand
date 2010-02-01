@@ -48,7 +48,7 @@ ActionController::Routing::Routes.draw do |map|
     :action => 'list_all'
 
   # add path for prijimacky
-  # map.connect 'prijimacky/:action/:id', :controller => 'form', :lang => 'cs'
+  map.connect 'prijimacky/:action/:id', :controller => 'form', :lang => 'cs'
 
   # add path for admittance
   map.connect 'application_form/:action/:id', :controller => 'form', :lang => 'en'
