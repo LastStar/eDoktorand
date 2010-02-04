@@ -50,8 +50,7 @@ class Index < ActiveRecord::Base
   has_many :exams
   belongs_to :coridor
   belongs_to :department
-  has_many :interupts, :order => 'created_on desc'
-  has_one :interupt, :order => 'created_on desc'
+  has_many :interupts, :order => 'created_on'
   has_many :extra_scholarships, :conditions => "scholarships.payed_on IS NULL"
   has_one :regular_scholarship, :conditions => "scholarships.payed_on IS NULL", 
     :order => 'updated_on desc'
@@ -70,7 +69,12 @@ class Index < ActiveRecord::Base
   validates_numericality_of :account_number, :only_integer => true, :allow_nil => true
   validates_numericality_of :account_bank_number, :only_integer => true, :allow_nil => true
 
+  # return last interrupt
+  def interupt
+    interupts.last
+  end
   # returns desrcibe_error for bad index
+  # TODO this mess must go
   def describe_error
      message = ""
     if self.account_number == nil
@@ -265,7 +269,7 @@ class Index < ActiveRecord::Base
     end
     options[:include] ||= []
     options[:include] << [:study_plan, :student, :disert_theme, :department,
-                           :study, :coridor, :interupt]
+                           :study, :coridor, :interupts]
     if options[:conditions]
       conditions.first.sql_and(options[:conditions].first)
       conditions.concat(options[:conditions][1..-1])
