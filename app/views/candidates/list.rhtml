@@ -45,7 +45,7 @@
     <%= link_to_remote(t(:message_21,
       :scope => [:txt, :view, :candidates, :list, :rhtml]),
       :url => {:action => 'delete_all'},
-      :update => "candidates_delete")%>
+      :update => "candidates_delete") %>
   </div>
 <% end %>
 <% unless @candidates.empty? %>

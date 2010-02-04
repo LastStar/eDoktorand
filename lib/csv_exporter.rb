@@ -12,7 +12,8 @@ class CSVExporter
     def export_social_stipendia(start = TermsCalculator.this_year_start,  file = 'stipendia.csv', faculty = nil)
       outfile = File.open(file, 'wb')
       students = Student.find(:all, 
-                              :conditions => ['indices.scholarship_claimed_at > ?', start], :include => :index)
+                              :conditions => ['indices.scholarship_claimed_at > ?', start],
+                              :include => :index)
       students.delete_if {|s| s.faculty.id != faculty} if faculty 
       CSV::Writer.generate(outfile, ';') do |csv|
         csv << ['sident', 'claimed_at', 'supervised_at'] 
