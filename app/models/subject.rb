@@ -11,13 +11,14 @@ class Subject < ActiveRecord::Base
   validates_presence_of :label, :message => I18n::t(:message_0, :scope => [:txt, :model, :subject])
 
   # returns all subjects for user
+  # mus be redone in some lighter fashion
   def self.find_for(user, option = nil)
-  if user.has_role?('vicerector')
-    faculties = Faculty.find(:all)
-    subjects = []
-    for faculty in faculties
-      subjects.concat(faculty.departments.map {|dep| dep.subjects}.flatten)       
-    end
+    if user.has_role?('vicerector')
+      faculties = Faculty.find(:all)
+      subjects = []
+      for faculty in faculties
+        subjects.concat(faculty.departments.map {|dep| dep.subjects}.flatten)       
+      end
     elsif user.has_one_of_roles?(['tutor', 'leader', 'department_secretary', 'examinator'])
       subjects = user.person.department.subjects
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary']) 
@@ -51,7 +52,7 @@ class Subject < ActiveRecord::Base
   def select_label
     chars = label.split(//)
     trunc = chars.length > 40 ? chars[0...37].join + '...' : label
-     if code != nil
+     unless code == nil or code == ''
        "#{code} - #{trunc}"
      else
        "#{trunc}"
