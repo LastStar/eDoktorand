@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   # TODO remove from form controller
-  #translates country code 
+  # translates country code 
   def translate_country(code)
     I18n.translate(:countries)[code.to_sym]
   end
@@ -260,7 +260,7 @@ module ApplicationHelper
 
   # prints print link
   def print_link(text = t(:message_36, :scope => [:txt, :helper, :application]))
-    link_to_function(text, 'window.print()')
+    link_to(text, '', :onclick => 'window.print()')
   end
 
   private 
@@ -576,22 +576,20 @@ module ApplicationHelper
 
   def literature_review_link(disert_theme)
     path = "/pdf/literature_review/%i.pdf" % disert_theme.id
-    if File.exists?("#{RAILS_ROOT}/public/" + path)
+    if File.exists?("#{Rail.root}/public/" + path)
       link_to t(:message_62, :scope => [:txt, :helper, :application]), path, :popup => true
     end
   end
 
   def self_report_link(disert_theme)
     path = "/pdf/self_report/%i.pdf" % disert_theme.id
-    if File.exists?("#{RAILS_ROOT}/public/" + path)
+    if File.exists?("#{Rails.root}/public/" + path)
       link_to t(:message_63, :scope => [:txt, :helper, :application]), path, :popup => true
     end
   end
 
   def disert_theme_link(disert_theme)
     path = "/pdf/disert_theme/%i.pdf" % disert_theme.id
-    # TODO remove after fixing upload
-    # if File.exists?("#{RAILS_ROOT}/public/" + path)
       link_to t(:message_64, :scope => [:txt, :helper, :application]), path, :popup => true
     #end
   end

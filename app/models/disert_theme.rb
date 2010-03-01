@@ -14,7 +14,7 @@ class DisertTheme < ActiveRecord::Base
   end
 
   def self.save_methodology(disert_theme, file)
-    File.open("#{RAILS_ROOT}/public/pdf/methodology/#{disert_theme.id}.pdf", "w") do |f|
+    File.open("#{Rail.root}/public/pdf/methodology/#{disert_theme.id}.pdf", "w") do |f|
       f.write(file.read) 
     end
     disert_theme.update_attribute('methodology_added_on', Time.now)
@@ -47,19 +47,19 @@ class DisertTheme < ActiveRecord::Base
   end
 
   def save_literature_review(file)
-    File.open("#{RAILS_ROOT}/public/pdf/literature_review/#{self.id}.pdf", "w") do |f|
+    File.open("#{Rail.root}/public/pdf/literature_review/#{self.id}.pdf", "w") do |f|
       f.write(file.read)
     end
   end
 
   def save_self_report_file(file)
-    File.open("#{RAILS_ROOT}/public/pdf/self_report/#{self.id}.pdf", "w") do |f|
+    File.open("#{Rail.root}/public/pdf/self_report/#{self.id}.pdf", "w") do |f|
       f.write(file.read)
     end
   end
 
   def save_theme_file(file)
-    File.open("#{RAILS_ROOT}/public/pdf/disert_theme/#{self.id}.pdf", "w") do |f|
+    File.open("#{Rail.root}/public/pdf/disert_theme/#{self.id}.pdf", "w") do |f|
       f.write(file.read)
     end
   end
@@ -68,8 +68,8 @@ class DisertTheme < ActiveRecord::Base
   def set_actual
     if old_actual = DisertTheme.find_by_index_id_and_actual(self.index.id, 1)
       if has_methodology?
-        FileUtils.cp("#{RAILS_ROOT}/public/pdf/methodology/#{old_actual.id}.pdf",
-                     "#{RAILS_ROOT}/public/pdf/methodology/temp_#{self.index.id}.pdf")
+        FileUtils.cp("#{Rail.root}/public/pdf/methodology/#{old_actual.id}.pdf",
+                     "#{Rail.root}/public/pdf/methodology/temp_#{self.index.id}.pdf")
       end
       old_actual.update_attribute(:actual, 0)
     end
@@ -78,8 +78,8 @@ class DisertTheme < ActiveRecord::Base
 
   def copy_methodology
     if has_methodology?
-      FileUtils.mv("#{RAILS_ROOT}/public/pdf/methodology/temp_#{self.index.id}.pdf",
-                   "#{RAILS_ROOT}/public/pdf/methodology/#{self.id}.pdf")
+      FileUtils.mv("#{Rail.root}/public/pdf/methodology/temp_#{self.index.id}.pdf",
+                   "#{Rail.root}/public/pdf/methodology/#{self.id}.pdf")
     end
 
   end

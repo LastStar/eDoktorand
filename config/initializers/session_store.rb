@@ -5,8 +5,8 @@
 # Make sure the secret is at least 30 characters and all random, 
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
-  :key         => '_phd.git_session',
-  :secret      => '751bf0f38eb4088c8e40fce06a0b5d6eb7464dae662ba7a5282b644c390ce7ff4619265789f16c1a41f9171603a891fc76e2d2dabfa75fb452a5c8eda923a044'
+  :key    => '_phdstudy_session',
+  :secret => '1347e0a81fb02f95a17448eec9bd61ddff0f7c3f30f0ba0260045c961d862fcba6ce00ee91812f0d4596e4f83e56b41934cd6d161610aa7cd9b837483418a6da'
 }
 
 # Use the database for sessions instead of the cookie-based default,

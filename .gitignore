@@ -1,12 +1,11 @@
 log/*
 locale/*
-db/moje
-db/moje~
-db/test.sqlite3
-tmp/*
 db/schema.rb
-*.kpf
 public/pdf/methodology
 .DS_Store
 *.csv
 *.sql
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*

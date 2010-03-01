@@ -581,7 +581,7 @@ table#students_table.menu_line {border-top: 1px solid #452;}
 table#students_table div.menu_style {background-color: #ddc;}
 table#students_table {border-collapse: collapse;table-layout: auto;width: 100%;}
 table#students_table td {padding-left: .5ex; font-size: smaller}
-table#students_table td.student_exception{padding-left: .5ex;color: red; font-size:smaller; font-style:italic}
+table#students_table td.index_tags{padding-left: .5ex;color: red; font-size:smaller; font-style:italic}
 table#students_table th {text-align: left;}
 table#students_table a {text-decoration: none}
 div#diploma_supplement {border: solid red;}

@@ -22,16 +22,17 @@
   		<a href="/" class="home-btn"></a>
 		</div>
   <% if @user %>
-    <div id="main-menu">
-      <%= main_menu %>
+    <div id="HeadMenuContent">
+      <div id="HeadMenuLinks"><%= raw main_menu %></div>
+      <div id="HeadMenuUser"><h1 id="title"><%= @user.person.display_type + ": #{@user.person.display_name}" %></h1></div>
     </div>
   <% end %>
   <%= image_tag "text_content_top.gif", :alt => "", :class => 'text-content-top-image' %>
   <div id="text-content">
     <%= yield %>
   </div>
-    <%= image_tag "text_content_bottom.gif", :alt => ""%>
-    <br class="clear-all">
+  <%= image_tag "text_content_bottom.gif", :alt => ""%>
+  <br class="clear-all">
   </div>
     <div id="foot">
       <span class="right">

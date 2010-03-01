@@ -1,9 +1,10 @@
 module StudentsHelper
 
   def admin_edit_mail_link(index)
-    link_to_remote(image_tag('change.png'),
-                   :url => {:action => 'admin_edit_mail', :id => index.id},
-                   :update => "index_%i" % index.id)
+    link_to(image_tag('change.png'),
+           :url => {:action => 'admin_edit_mail', :id => index.id},
+           :update => "index_%i" % index.id,
+           :remote => true)
   end
 
   # prints action links on student
@@ -50,29 +51,31 @@ module StudentsHelper
 
   #prints link to function witch show student line menu
   def link_to_show_actions(index)
-    link_to_function('&uarr; ' + t(:message_1, :scope => [:txt, :helper, :students]),
-      update_page do |page|
-        page.show "index_menu_#{index.id}_tr"
-        page.show "index_form_#{index.id}_tr"
-        page.show "hide_action_#{index.id}"
-        page.hide "show_action_#{index.id}"
-        page["index_line_#{index.id}"].addClassName('selected')
-        page["index_line_#{index.id}"].addClassName('once-selected')
-      end, :id => "show_action_#{index.id}")
+    link_to('&uarr;' + t(:message_1, :scope => [:txt, :helper, :students]),
+            '#',
+      :onclick => update_page do |page|
+                    page.show "index_menu_#{index.id}_tr"
+                    page.show "index_form_#{index.id}_tr"
+                    page.show "hide_action_#{index.id}"
+                    page.hide "show_action_#{index.id}"
+                    page["index_line_#{index.id}"].addClassName('selected')
+                    page["index_line_#{index.id}"].addClassName('once-selected')
+                  end, :id => "show_action_#{index.id}")
   end
 
   #prints link to function witch hide student line menu
   def link_to_hide_actions(index)
-    link_to_function('&darr; ' + t(:message_2, :scope => [:txt, :helper, :students]),
-      update_page do |page|
-        page.hide "index_menu_#{index.id}_tr"
-        page.hide "index_form_#{index.id}_tr"
-        page.hide "hide_action_#{index.id}"
-        page.show "show_action_#{index.id}"
-        page["index_line_#{index.id}"].removeClassName('selected')
-      end,
-      :id => "hide_action_#{index.id}",
-      :style => 'display: none')
+    link_to('&darr;' + t(:message_2, :scope => [:txt, :helper, :students]),
+            nil,
+            :onclick => update_page do |page|
+              page.hide "index_menu_#{index.id}_tr"
+              page.hide "index_form_#{index.id}_tr"
+              page.hide "hide_action_#{index.id}"
+              page.show "show_action_#{index.id}"
+              page["index_line_#{index.id}"].removeClassName('selected')
+            end,
+            :id => "hide_action_#{index.id}",
+            :style => 'display: none')
   end
 
   # prints students scholarship
@@ -83,25 +86,28 @@ module StudentsHelper
   # prints finish link
   def finish_link(index)
     if index.finished?
-      link_to_remote(t(:message_3, :scope => [:txt, :helper, :students]),
-                    :url => {:action => 'unfinish', :controller => 'students',
-                    :id => index, :day => true}, :complete => evaluate_remote_response)
+      link_to(t(:message_3, :scope => [:txt, :helper, :students]),
+              :url => {:action => 'unfinish', :controller => 'students',
+              :id => index, :day => true}, :complete => evaluate_remote_response,
+              :remote => true)
     else
-      link_to_remote(t(:message_4, :scope => [:txt, :helper, :students]),
-                    :url => {:action => 'time_form', :controller => 'students',
-                    :form_action => 'finish', :id => index, :day => true},
-                    :update => "index_form_#{index.id}")
+      link_to(t(:message_4, :scope => [:txt, :helper, :students]),
+              :url => {:action => 'time_form', :controller => 'students',
+              :form_action => 'finish', :id => index, :day => true},
+              :update => "index_form_#{index.id}",
+              :remote => true)
     end
   end
 
   # prints link to switch study form
   def switch_link(index)
-    link_to_remote(t(:message_5, :scope => [:txt, :helper, :students]),
-                  :url => {:action => 'time_form',
-                          :controller => 'students',
-                          :form_action => 'switch_study',
-                          :id => index},
-                  :update => "index_form_#{index.id}")
+    link_to(t(:message_5, :scope => [:txt, :helper, :students]),
+            :url => {:action => 'time_form',
+                    :controller => 'students',
+                    :form_action => 'switch_study',
+                    :id => index},
+            :update => "index_form_#{index.id}",
+            :remote => true)
   end
 
   # prints interrupt link
@@ -146,50 +152,52 @@ module StudentsHelper
 
   # prints link to create final exam term
   def final_exam_link(index)
-    link_to_remote(t(:message_10, :scope => [:txt, :helper, :students]),
-                   :url => {:action => 'new',
-                           :controller => 'final_exam_terms',
-                           :id => index},
-                   :complete => evaluate_remote_response)
+    link_to(t(:message_10, :scope => [:txt, :helper, :students]),
+           :url => {:action => 'new',
+                   :controller => 'final_exam_terms',
+                   :id => index},
+           :complete => evaluate_remote_response,
+           :remote => true)
   end
 
   # prints lint to interrupt study
-  def confirm_interupt_link(index)
+  def confirm_interrupt_link(index)
     link_to_remote(t(:message_11, :scope => [:txt, :helper, :students]),
                    {:url => {:action => 'confirm',
                              :controller => 'study_interrupts',
                              :id => index},
-                   :complete => evaluate_remote_response})
+                    :complete => evaluate_remote_response})
   end
 
   # prints link to approve scholarship
   def approve_scholarship_link(index)
-    link_to_remote(t(:message_12, :scope => [:txt, :helper, :students]),
-                  :url => {:controller => 'students',
-                          :action => 'approve_scholarship_claim',
-                          :id => index},
-                  :complete => evaluate_remote_response)
+    link_to(t(:message_12, :scope => [:txt, :helper, :students]),
+            :url => {:controller => 'students',
+                    :action => 'approve_scholarship_claim',
+                    :id => index},
+            :remote => true)
   end
 
   # prints link to cancel scholarship
   def cancel_scholarship_link(index)
-    link_to_remote(t(:message_13, :scope => [:txt, :helper, :students]),
-                  :url => {:controller => 'students',
-                          :action => 'cancel_scholarship_claim',
-                          :id => index},
-                  :complete => evaluate_remote_response)
+    link_to(t(:message_13, :scope => [:txt, :helper, :students]),
+            :url => {:controller => 'students',
+                    :action => 'cancel_scholarship_claim',
+                    :id => index},
+            :remote => true)
   end
 
   # returns link for details fiter
   def detail_filter_link
-    link_to_function(t(:message_14, :scope => [:txt, :helper, :students]),
-                     "$('detail_info').toggle(); $('detail_search').toggle()",
-                     :class => 'legend_link')
+    link_to(t(:message_14, :scope => [:txt, :helper, :students]),
+            nil,
+            :onclick => "$('detail_info').toggle(); $('detail_search').toggle()",
+            :class => 'legend_link')
   end
 
   # TODO move logic to model. Here only printing
   # TODO rename to index_tags
-  def student_exception(index)
+  def index_tags(index)
     tags = []
     if index.waits_for_scholarship_confirmation?
       tags << "<span title='" + t(:sholarship_claimed, :scope => [:txt, :helper, :students]) + "'>us</span>"
@@ -231,11 +239,12 @@ module StudentsHelper
 
   # prints link to student detail
   def student_link(index)
-    link_to_remote(index.student.display_name,
-                    :url => {:action => 'show',
-                            :controller => 'students',
-                            :id => index},
-                    :loading => visual_effect(:pulsate, "index_line_#{index.id}"))
+    link_to(index.student.display_name,
+            :url => {:action => 'show',
+                    :controller => 'students',
+                    :id => index},
+            :loading => visual_effect(:pulsate, "index_line_#{index.id}"),
+            :remote => true)
   end
 
   def pass_link(what, index)
@@ -250,9 +259,10 @@ module StudentsHelper
     else
       sentence = what.to_s
     end
-    link_to_remote(sentence,
-                   :update => "index_form_#{index.id}",
-                   :url => url)
+    link_to(sentence,
+           :update => "index_form_#{index.id}",
+           :url => url,
+           :remote => true)
   end
 
   # prints select for departments
@@ -356,39 +366,43 @@ module StudentsHelper
   end
 
   def name_search_form(&proc)
-    form_remote_tag(:url => {:action => 'search'},
-                    :loading => "$('search_submit').value = '%s'" % t(:message_54, :scope => [:txt, :helper, :students]),
-                    &proc)
+    form_tag(:url => {:action => 'search'},
+              :loading => "$('search_submit').value = '%s'" % t(:message_54, :scope => [:txt, :helper, :students]),
+              :remote => true,
+              &proc)
   end
 
   def detail_filter_form(&proc)
-    form_remote_tag(:url => {:action => 'multiple_filter'},
-                    :loading => "$('spinner').show()",
-                    :complete => "$('spinner').hide()",
-                    :update => 'students_list',
-                    &proc)
+    form_tag("students#multiple_filter",
+              :loading => "$('spinner').show()",
+              :complete => "$('spinner').hide()",
+              :update => 'students_list',
+              :remote => true,
+              &proc)
   end
 
   def study_plan_link(index)
     if params[:controller] == 'students' && params[:action] == 'show'
     " <a href='#shortcut_study_plan'>" + t(:message_55, :scope => [:txt, :helper, :students]) + "</a>"
     else
-      link_to_remote(t(:message_56, :scope => [:txt, :helper, :students]),
-                     :url => {:action => :show,
-                             :controller => :study_plans,
-                             :id => index},
-                     :update => "index_detail_#{index.id}_tr")
+      link_to(t(:message_56, :scope => [:txt, :helper, :students]),
+             :url => {:action => :show,
+                     :controller => :study_plans,
+                     :id => index},
+             :update => "index_detail_#{index.id}_tr",
+             :remote => true)
     end
   end
 
   def filter_links(filters)
     loader = content_tag('div', image_tag('big_loader.gif'), :id => 'filter-loader')
     filters.map do |filter|
-      link_to_remote(filter.first,
-                    :url => {:action => :filter,
-                            :id => filter.last},
-                    :update => 'students_list',
-                    :loading => "$('students_list').innerHTML = '%s'" % loader)
+      link_to(filter.first,
+             :url => {:action => :filter,
+                     :id => filter.last},
+             :update => 'students_list',
+             :loading => "$('students_list').innerHTML = '%s'" % loader,
+             :remote => true)
     end.join('&nbsp;')
   end
 end
