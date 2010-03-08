@@ -84,13 +84,16 @@ class Index < ActiveRecord::Base
     build_im_index unless im_index
   end
 
+  scope :passed_final_exam, where("final_exam_passed_on is not null")
+  scope :absolved, includes(:disert_theme).where("disert_themes.defense_passed_on is not null")
+
   # return last interrupt
   def interrupt
     @interrupt ||= interrupts.sort{|x, y| x.created_on <=> y.created_on}.last
   end
 
-  # returns describe_error for bad index
   # TODO this mess must go
+  # returns desrcibe_error for bad index
   def describe_error
      message = ""
     if self.account_number == nil
@@ -109,9 +112,9 @@ class Index < ActiveRecord::Base
           message = message + I18n.t(:message_17, :scope => [:txt, :model, :index]) + " "
     end
     return message
-
   end
 
+  # TODO this mess must go
   # returns if index is bad
   def bad_index?
      if self.account_number == nil || self.account_bank_number == nil ||
@@ -324,17 +327,9 @@ class Index < ActiveRecord::Base
   end
 
   # finds only indices tutored by user
-  def self.find_tutored_by(user, options={})
-    #commented is old style of searching:
-    #options[:conditions] = [TUTOR_COND.clone, user.person.id]
-    options[:order] = 'indices.study_id, people.lastname'
-    options[:include] ||= []
-    options[:include] << [:student]
-    #find_for(user, options)
-    conditions = [TUTOR_COND.clone, user.person.id]
-    find(:all, :conditions => conditions, :order => options[:order],
-        :include => options[:include])
-  end
+  scope :tutored_by, lambda {|user|
+    where("indices.tutor_id = ?", user.person.id)
+  }
 
   # returns all indices which waits for approval from persons
   # only for tutors, leader a deans
