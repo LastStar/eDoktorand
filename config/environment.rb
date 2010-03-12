@@ -9,7 +9,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
   config.i18n.default_locale = :cs
 
-  config.time_zone = 'UTC'
+  config.time_zone = 'Prague'
 
   config.action_controller.session = {
     :session_key => '_trunk-phd_session',
@@ -25,5 +25,6 @@ Rails::Initializer.run do |config|
   config.gem "mislav-will_paginate", :lib => 'will_paginate'
   config.gem "actionwebservice", :lib => 'actionwebservice', :version => '2.3.4'
   config.gem "thoughtbot-factory_girl", :lib => 'factory_girl', :version => '1.2.2'
+  config.gem "timecop"
 
 end
