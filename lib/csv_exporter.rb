@@ -421,7 +421,6 @@ class CSVExporter
       end
     end
 
-
     def export_address(students)
       outfile = File.open('students_address.csv', 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
@@ -679,6 +678,34 @@ class CSVExporter
           }
         }
       }
+    end
+
+    # exports all students for vice dean
+    def students_for_dean(dean_user)
+      indices = Index.find_for(dean_user)
+      @@mylog.info("There is %i students" % indices.size)
+      File.open("students.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          indices.each do |index|
+            row = []
+            row << index.student.display_name
+            row << index.enrolled_on.strftime('%d. %m. %Y')
+            if index.finished?
+              row << index.finished_on.strftime('%d. %m. %Y')
+            elsif index.absolved?
+              row << index.disert_theme.defense_passed_on.strftime('%d. %m. %Y')
+            else
+              row << ''
+            end
+            row << index.study.name
+            row << index.status
+            row << index.department.name
+            row << index.coridor.name
+            row << index.tutor.try(:display_name)
+            csv << row
+          end
+        end
+      end
     end
   end
 end
