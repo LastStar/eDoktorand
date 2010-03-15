@@ -1,9 +1,10 @@
 class InteruptsController < ApplicationController
   include LoginSystem
+  layout 'employers'
   helper :students
   helper :study_plans
-  layout 'employers'
   before_filter :login_required, :prepare_student, :prepare_user
+
   def index
     unless @student
       @student = Index.find(params[:id]).student
