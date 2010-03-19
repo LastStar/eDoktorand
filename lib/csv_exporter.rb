@@ -707,5 +707,21 @@ class CSVExporter
         end
       end
     end
+
+    # exports absolved students by faculties with study times
+    def absolved_students_with_years
+      is = Index.find_for(User.find_by_login('ticha'))
+      is = is.select {|i| i.absolved?}.sort {|i, j| i.year <=> j.year}
+      isd = is.group_by(&:faculty)
+      isd.each do |faculty|
+        File.open("absolved_%s.csv" % faculty.first.short_name, 'wb') do |outfile|
+          CSV::Writer.generate(outfile, ';') do |csv|
+            faculty.last.each do |index|
+              csv << [index.student.display_name, index.year]
+            end
+          end
+        end
+      end
+    end
   end
 end
