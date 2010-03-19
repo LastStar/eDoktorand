@@ -143,6 +143,8 @@ class Index < ActiveRecord::Base
     else
       if finished?
         end_date = finished_on.to_time
+      elsif absolved?
+        end_date = disert_theme.defense_passed_on.to_time
       else
         end_date = Time.now
       end

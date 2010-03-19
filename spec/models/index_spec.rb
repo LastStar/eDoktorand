@@ -67,6 +67,16 @@ describe Index do
         @index.year.should == 1
       end
     end
+
+    describe 'absolved' do
+      it "should compute semester and year only until absolved date" do
+        @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
+        @index.save
+        Timecop.freeze(Time.zone.local(2016, 1, 2))
+        @index.disert_theme.defense_passed!('2013-01-02')
+        @index.semester.should == 7
+      end
+    end
   end
 
   describe "interupting" do
