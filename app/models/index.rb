@@ -1,4 +1,4 @@
-# FIXME move to its own class with metaclass
+# FIXME with arel in rails 3
 class String
   def sql_and(chunk)
     if self.empty?
@@ -73,7 +73,8 @@ class Index < ActiveRecord::Base
   def interupt
     interupts.last
   end
-  # returns desrcibe_error for bad index
+
+  # returns describe_error for bad index
   # TODO this mess must go
   def describe_error
      message = ""
@@ -142,6 +143,8 @@ class Index < ActiveRecord::Base
     else
       if finished?
         end_date = finished_on.to_time
+      elsif absolved?
+        end_date = disert_theme.defense_passed_on.to_time
       else
         end_date = Time.now
       end
