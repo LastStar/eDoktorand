@@ -208,7 +208,7 @@ class StudentsController < ApplicationController
 
   def edit_tutor
     @index = Index.find(params[:id])
-    @tutors = @index.coridor.tutors_for_select
+    @tutors = @index.specialization.tutors_for_select
   end
 
   def save_tutor

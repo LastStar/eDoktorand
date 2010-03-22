@@ -19,7 +19,7 @@ class StudyPlansController < ApplicationController
   def index
     @title = t(:message_0, :scope => [:txt, :controller, :plans])
     @index = @student.index
-    @voluntary_subjects = @index.coridor.voluntary_subjects 
+    @voluntary_subjects = @index.specialization.voluntary_subjects 
   end
 
   # shows student detail
@@ -31,9 +31,9 @@ class StudyPlansController < ApplicationController
   def create
     prepare_plan_session
     @title = t(:message_1, :scope => [:txt, :controller, :plans])
-    if ObligateSubject.has_for_coridor?(@student.coridor)
+    if ObligateSubject.has_for_specialization?(@student.specialization)
       @type = 'obligate'
-    elsif SeminarSubject.has_for_coridor?(@student.coridor)
+    elsif SeminarSubject.has_for_specialization?(@student.specialization)
       @type = 'seminar'
     else
       @type = 'voluntary'
@@ -119,10 +119,10 @@ class StudyPlansController < ApplicationController
     @student = Student.find(params[:id])
     @title = t(:message_3, :scope => [:txt, :controller, :plans])
     @requisite_subjects = PlanSubject.create_for(@student, :requisite)
-    @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
+    @subjects = SpecializationSubject.for_select(:specialization => @student.index.specialization)
     @study_plan = @student.index.prepare_study_plan
     @plan_subjects = []
-    (@student.coridor.voluntary_amount + 8).times do |i|
+    (@student.specialization.voluntary_amount + 8).times do |i|
       (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i + 1)
       @plan_subjects << plan_subject
     end
@@ -133,8 +133,8 @@ class StudyPlansController < ApplicationController
   def change
     @title = t(:message_4, :scope => [:txt, :controller, :plans])
     @student ||= Student.find(params[:id])
-    coridor = @student.index.coridor
-    @subjects = CoridorSubject.for_select(:coridor => coridor)
+    specialization = @student.index.specialization
+    @subjects = SpecializationSubject.for_select(:specialization => specialization)
     if @study_plan = @student.index.study_plan
       if session[:change_back] && session[:change_back] == 1
         @plan_subjects = session[:voluntary_subjects]
@@ -142,7 +142,7 @@ class StudyPlansController < ApplicationController
       else
         @plan_subjects = @study_plan.unfinished_subjects
       end
-      (@student.coridor.voluntary_amount - @plan_subjects.size + 4).times do |i|
+      (@student.specialization.voluntary_amount - @plan_subjects.size + 4).times do |i|
         (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
         @plan_subjects << plan_subject
       end
@@ -314,18 +314,18 @@ class StudyPlansController < ApplicationController
     session[:study_plan] = @study_plan = @student.index.build_study_plan
     session[:disert_theme] = @student.index.build_disert_theme
     session[:last_semester] = 0
-    # TODO do all in one step trhrough model method
-    if RequisiteSubject.has_for_coridor?(@student.coridor)
+    # TODO do all in one step through model method
+    if RequisiteSubject.has_for_specialization?(@student.specialization)
       session[:requisite_subjects] = PlanSubject.create_for(@student, :requisite)
     end
-    if ObligateSubject.has_for_coridor?(@student.coridor)
+    if ObligateSubject.has_for_specialization?(@student.specialization)
       session[:obligate_subjects] = PlanSubject.create_for(@student, :obligate)
     end
-    if SeminarSubject.has_for_coridor?(@student.coridor)
+    if SeminarSubject.has_for_specialization?(@student.specialization)
       session[:seminar_subjects] = PlanSubject.create_for(@student, :seminar)
     end
     session[:voluntary_subjects] = PlanSubject.create_for(@student.index, :voluntary)
-    session[:language_subjects] = PlanSubject.create_for(@student.index.coridor, :language)
+    session[:language_subjects] = PlanSubject.create_for(@student.index.specialization, :language)
   end
 
   # controls last semester
