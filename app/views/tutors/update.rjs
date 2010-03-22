@@ -1,1 +1,1 @@
-page.replace_html "coridor_%i" % @tutorship.id, :partial => 'coridor', :locals => {:tutorship => @tutorship}
+page.replace_html "specialization_%i" % @tutorship.id, :partial => 'specialization', :locals => {:tutorship => @tutorship}

@@ -1,0 +1,19 @@
+<div id='main'>
+<% if @specializations && !@specializations.empty? %>
+<h5><%= t(:message_0, :scope => [:txt, :view, :specializations, :manage_specialization, :rhtml]) + "(#{@specializations.size})" %></h5>
+<div id='specializations_list'>
+<ul>
+  <% for specialization in @specializations %>
+    <li>
+       <div id='<%='specialization_form_' + specialization.id.to_s%>'>
+         <%= specialization_link(specialization) %>
+       </div>
+    </li>
+  <% end %>
+</ul>
+<% else %>
+<h4><%= t(:message_1, :scope => [:txt, :view, :specializations, :manage_specialization, :rhtml]) %></h4>
+<% end %>
+</div>
+</div>
+

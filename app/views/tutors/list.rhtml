@@ -6,9 +6,9 @@
   </tr>
   <% for tutor in @tutors %>
     <% if tutor.tutorship %>
-    <tr class='line' id='coridor_<%= tutor.tutorship.id if tutor.tutorship%>'>
+    <tr class='line' id='specialization_<%= tutor.tutorship.id if tutor.tutorship%>'>
         <%@tutor = tutor%>
-        <%= render :partial => 'coridor', 
+        <%= render :partial => 'specialization', 
                    :locals => {:tutorship => tutor.tutorship, :tutor => tutor} %>
     </tr>
     <% else %>

@@ -1,1 +1,0 @@
-page.replace 'coridor_subject_form', :partial => 'coridor_subject', :locals => {:coridor_subject => @coridor_subject}

@@ -4,8 +4,8 @@
   <%= content_tag('select', options_for_select(admit_ids), 
   {'id' => "admit_id", 'name' => "admit_id", 'onchange' => "hide_on_noadmit(this)"}) %><br/> 
   <div id='admit_form'>
-	<label for="candidate_coridor_id"><%= t(:message_1, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
-	<%= select 'candidate', 'coridor_id', Coridor.for_select(:faculty =>
+	<label for="candidate_specialization_id"><%= t(:message_1, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
+	<%= select 'candidate', 'specialization_id', Specialization.for_select(:faculty =>
   @user.person.faculty) %><br/>
 	<label for="candidate_tutor_id"><%= t(:message_2, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
   <%= collection_select :candidate, :tutor_id, Tutor.find_for(@user), :id, :display_name %></p>

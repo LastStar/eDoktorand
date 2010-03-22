@@ -11,7 +11,7 @@
 <fieldset>
 <legend><%= I18n::t(:message_0, :scope => [:txt, :view, :study_plans, :_voluntary_form, :rhtml]) %></legend>
 <ul>
-  <% voluntary_buff =  VoluntarySubject.for_select(:coridor => @student.coridor,
+  <% voluntary_buff =  VoluntarySubject.for_select(:specialization => @student.specialization,
                                                    :with_external => true) %>
   <%= render(:partial => 'voluntary', :collection => session[:voluntary_subjects], 
              :locals => {:subjects => voluntary_buff}) %>

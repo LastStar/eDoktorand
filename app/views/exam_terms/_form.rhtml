@@ -43,7 +43,7 @@
 
 
 <p><label for='candidate_title_before_id'><%=t(:message_3, :scope => [:txt, :view, :exam_terms, :_form, :rhtml])%></label>
-<%= collection_select :exam_term, :coridor_id, Coridor.accredited_for(@user), :id, :name %></p>
+<%= collection_select :exam_term, :specialization_id, Coridor.accredited_for(@user), :id, :name %></p>
 
 <p><label for="exam_term_first_examinator" class='required'>1. <%= t(:message_4, :scope => [:txt, :view, :exam_terms, :_form, :rhtml]) %></label>
 <%= text_field 'exam_term', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span ></p>

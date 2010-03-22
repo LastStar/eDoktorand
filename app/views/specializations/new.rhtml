@@ -1,0 +1,13 @@
+<h1>New specialization</h1>
+
+<%= error_messages_for 'specialization' %>
+<!--[form:specialization]-->
+<% form_tag :action => 'create' do %>
+<%= hidden_field 'specialization', 'id' %>
+<p><label for="specialization_name">Name</label><br /><%= text_field 'specialization', 'name'  %></p>
+<input type="submit" value="Create" />
+<% end %>
+<!--[eoform:specialization]-->
+
+
+<%= link_to 'Back', :action => 'list' %>

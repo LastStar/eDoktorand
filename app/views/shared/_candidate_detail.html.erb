@@ -36,8 +36,8 @@
   </ul> 
   <% end %>
   <h5><%= t(:message_21, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %></h5> 
-  <ul  class="bordered">
-  <li><div class="right_info"><%= @candidate.coridor.name %></div> <%= t(:message_22, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
+  <ul>
+  <li><div class="right_info"><%= @candidate.specialization.name %></div> <%= t(:message_22, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
   <li><div class="right_info"><%= @candidate.department.name %></div><%= t(:message_23, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
   <li><div class="right_info"><%= @candidate.study.name %></div><%= t(:message_24, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
   <li><div class="right_info"><%= @candidate.language1.label %><br/><%= @candidate.language2.label %></div><%= t(:message_25, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:<br/>&nbsp;</li>

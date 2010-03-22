@@ -23,7 +23,11 @@
     </tr>
     <tr>
       <td>
-        <%= t(:message_3, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>: <%= candidate.coridor.name %><br />
+        <%= t(:message_3, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>: <%= candidate.specialization.name %><br />
+      </td>
+    </tr>
+    <tr>
+      <td>
         <%= t(:message_4, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>: <%= candidate.study.name %><br />
       </td>
       <td class="right">

@@ -21,25 +21,25 @@
 
 <h3>která proběhne</h3>
 
-<h3>dne <%= @candidate.coridor.exam_term.date.strftime("%d. %m. %Y") %></h3>
+<h3>dne <%= @candidate.specialization.exam_term.date.strftime("%d. %m. %Y") %></h3>
 </div>
 
 <br/>
 <%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
 
-<p>Přijímací zkouška pro obor <%= @candidate.coridor.name %> proběhne od 
-<%= @candidate.coridor.exam_term.start_time %> v místnosti č. <%=
-@candidate.coridor.exam_term.room %>, předsedou komise je <%=
-@candidate.coridor.exam_term.chairman.display_name %></p>
+<p>Přijímací zkouška pro obor <%= @candidate.specialization.name %> proběhne od 
+<%= @candidate.specialization.exam_term.start_time %> v místnosti č. <%=
+@candidate.specialization.exam_term.room %>, předsedou komise je <%=
+@candidate.specialization.exam_term.chairman.display_name %></p>
 
 <p>K přijímací zkoušce si přineste:
 <ul>
   <li class='letter'>průkaz totožnosti</>
-  <% if @candidate.study_id == 1 && @candidate.coridor.faculty.id != 14 %>
+  <% if @candidate.study_id == 1 && @candidate.specialization.faculty.id != 14 %>
   <li class='letter'>doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr  potvrzený fakultou (týká se studujících mimo ČZU)</li>
   <% end %>
   <li class='letter'>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou</li>
-  <% if @candidate.coridor.faculty.id == 14 %> 
+  <% if @candidate.specialization.faculty.id == 14 %> 
   <li class='letter'>další doklady k přijímacímu řízení, pokud nebyly dodány s přihláškou</li>
   <% end %>
 </ul>

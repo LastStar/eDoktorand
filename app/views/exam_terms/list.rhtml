@@ -5,9 +5,22 @@
   <tbody>
 <% for exam_term in @exam_terms  %>
 <tr>
-    <th colspan="2">
-    <b><%= exam_term.coridor.name %></b>
-    </th>
+    <td>
+    <b><%= exam_term.specialization.name %></b>
+    </td>
+  <td rowspan = 4>
+    <div class='right'>
+      <%= link_to t(:message_0, :scope => [:txt, :view, :exam_terms, :list, :rhtml]), :action => 'edit', :id => exam_term %>
+      <%= link_to t(:message_1, :scope => [:txt, :view, :exam_terms, :list, :rhtml]) + "(#{exam_term.specialization.approved_candidates.size})",
+      :controller => 'candidates', :action => 'list_admission_ready', :specialization => exam_term.specialization ,:page => 1, :category => 'lastname'%>
+      <%= link_to t(:message_2, :scope => [:txt, :view, :exam_terms, :list, :rhtml]), {:action => 'destroy', :id => exam_term}, :confirm => t(:message_3, :scope => [:txt, :view, :exam_terms, :list, :rhtml]) %>
+    </div>
+  </td>
+</tr>
+<tr>
+    <td>
+	  <%=t(:message_4, :scope => [:txt, :view, :exam_terms, :list, :rhtml])%>: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %>
+    </td>
 </tr>
 <tr>
     <td>

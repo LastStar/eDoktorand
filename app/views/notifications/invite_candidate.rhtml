@@ -5,7 +5,7 @@ Adresát:
 <%= @salutation %>,
 na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s § 50 zákona č. 111/98 Sb. o vysokých školách Vám zasílám pozvánku k přijímací zkoušce do DSP pro akademický rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>, která proběhne dne <%= @exam_term.date.strftime("%d. %m. %Y") %>.
 
-Přijímací zkouška pro obor <%= @coridor %> proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>. Předsedou komise je <%= @exam_term.chairman.display_name %>
+Přijímací zkouška pro obor <%= @specialization %> proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>. Předsedou komise je <%= @exam_term.chairman.display_name %>
 
 <%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
 

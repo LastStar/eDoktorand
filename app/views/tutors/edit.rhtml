@@ -1,8 +1,8 @@
 
 <% form_remote_tag(:url => {:action => "update"}, 
                             :complete => evaluate_remote_response,
-                            :after => loader_image("coridor_submit")) do %>
-  <%= collection_select :tutorship, :coridor_id, @coridors, :id, :name %>
+                            :after => loader_image("specialization_submit")) do %>
+  <%= collection_select :tutorship, :specialization_id, @specializations, :id, :name %>
   <%= hidden_field :tutorship, :id %>
-  <%= ok_submit(:coridor) %>
+  <%= ok_submit(:specialization) %>
 <% end %>
