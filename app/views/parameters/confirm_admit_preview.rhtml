@@ -19,9 +19,9 @@ Zahradni 5<br/>
 <% if @conditional %><b>podmínečně přijat/a</b><% end %> 
 do prezenční formy doktorského studia na ČZU v Praze</p>
 
-<h3 class='centerAlign'>studijní obor: <%= Coridor.find_by_faculty_id(@faculty.id).name %></h3>
+<h3 class='centerAlign'>studijní obor: <%= Specialization.find_by_faculty_id(@faculty.id).name %></h3>
 <br/>
-<p>Vaším školitelem byl/a ustanoven/a <%= Coridor.find_by_faculty_id(@faculty.id).tutors.first.display_name %>.</p>
+<p>Vaším školitelem byl/a ustanoven/a <%= Specialization.find_by_faculty_id(@faculty.id).tutors.first.display_name %>.</p>
 
 <h3 class='centerAlign'><% if @parameter.value == Parameter.get('enroll_invitation_time_and_place', @faculty) %><span class="yellow"><%= Parameter.get('enroll_invitation_time_and_place', @faculty) %></span><% else %><%= Parameter.get('enroll_invitation_time_and_place', @faculty) %><% end %></h3>
 .

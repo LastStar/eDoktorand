@@ -175,7 +175,7 @@ cs:
         message_5: Vyrozumění o přijímacím řízení na doktorské studium
         message_6: notification of study plan
         message_7: "with birth number "
-      coridor: {}
+      specialization: {}
 
       detail: 
         message_0: univerzita nesmí být prazdná
@@ -319,7 +319,7 @@ cs:
         message_17: schválená žádost o obhajobu
       documents: {}
 
-      coridors: 
+      specializations: 
         message_0: Opravdu chcete předmět odebrat?
         message_1: Přidat předmět
         message_2: neschváleno
@@ -800,7 +800,7 @@ cs:
             message_0: 
             message_1: nahrávám
             message_2: Používejte firefox !!
-        coridors: 
+        specializations: 
           rhtml: {}
 
         titles: 
@@ -1285,7 +1285,7 @@ cs:
         _form: 
           rhtml: {}
 
-      coridors: 
+      specializations: 
         new: 
           rhtml: {}
 
@@ -1320,7 +1320,7 @@ cs:
         edit: 
           rhtml: {}
 
-        manage_coridor: 
+        manage_specialization: 
           rhtml: 
             message_0: Akreditováns list
             message_1: Obory nenalezeny
@@ -1336,7 +1336,7 @@ cs:
         add_subject: 
           rhtml: {}
 
-        _coridor_subject: 
+        _specialization_subject: 
           rhtml: {}
 
         _view: 
@@ -2046,7 +2046,7 @@ cs:
         edit: 
           rhtml: {}
 
-        _coridor: 
+        _specialization: 
           rhtml: {}
         
         _bad_tutor:
@@ -2303,7 +2303,7 @@ cs:
         message_6: moji studující
       documents: {}
 
-      coridors: {}
+      specializations: {}
 
       account: 
         message_0: Přihlášení do systému

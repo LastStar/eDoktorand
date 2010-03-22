@@ -1,4 +1,4 @@
-<% for column in Coridor.content_columns %>
+<% for column in Specialization.content_columns %>
 <p>
   <b><%= column.human_name %>:</b> <%= @specialization.send(column.name) %></b>
 </p>
