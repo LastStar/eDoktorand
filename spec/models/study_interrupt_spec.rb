@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe "Interupt" do
+describe "Study Interrupt" do
   before :all do
     @index = Factory.build(:index)
     @index.student = Factory(:student)
@@ -9,7 +9,7 @@ describe "Interupt" do
 
   before :each do
     Timecop.freeze(Time.zone.local(2010, 1, 2))
-    @interrupt = Interupt.create(:index => @index,
+    @interrupt = StudyInterrupt.create(:index => @index,
                                  :start_on => Time.current,
                                  :duration => 6)
   end

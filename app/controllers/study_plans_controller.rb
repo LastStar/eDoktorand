@@ -196,8 +196,8 @@ class StudyPlansController < ApplicationController
         @atestation.update_attribute(:document_id, @study_plan.id) if @atestation
         @disert_theme.save
         if @user.person.is_a?(Student)
-          if session[:interupt]
-            redirect_to :controller => 'interupts', :action => 'finish'
+          if session[:interrupt]
+            redirect_to :controller => 'interrupts', :action => 'finish'
           else
             redirect_to :controller => 'study_plans'
           end

@@ -52,10 +52,10 @@ describe Index do
       end
     end
 
-    describe "with interupts" do
+    describe "with interrupts" do
       before :each do
-        @index.interupts << Interupt.create(:start_on => Time.current,
-                                            :duration => 8)
+        @index.interrupts << StudyInterrupt.create(:start_on => Time.current,
+                                                  :duration => 8)
         Timecop.freeze(Time.zone.local(2011, 1, 2))
       end
 
@@ -79,7 +79,7 @@ describe Index do
     end
   end
 
-  describe "interupting" do
+  describe "interrupting" do
     before :all do
       @student = Factory(:student)
     end

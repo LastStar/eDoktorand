@@ -675,7 +675,7 @@ class CSVExporter
     end
 
     def students_by_corridor_year
-      is = Index.find_for(User.find_by_login('ticha'), :unfinished => true, :not_interupted => true)
+      is = Index.find_for(User.find_by_login('ticha'), :unfinished => true, :not_interrupted => true)
       isd = is.sort {|i,j| i.year <=> j.year}.group_by(&:faculty)
       isd.each {|f|
         File.open("po_rocnicich_%s.csv" % f.first.short_name, 'wb') {|outfile|

@@ -182,7 +182,7 @@ cs:
       user: {
       }
 
-      interupt: 
+      interrupt: 
         message_0: ukončit k
       department: {}
 
@@ -213,7 +213,7 @@ cs:
     helper:
       
       
-      interupts: {}
+      interrupts: {}
 
       plans: 
         message_18: volitelné předměty
@@ -851,8 +851,8 @@ cs:
         actualities: 
           rhtml: {}
 
-      interupts: 
-        print_interupt: 
+      interrupts: 
+        print_interrupt: 
           rhtml: 
             message_10: Student
             message_11: Rok
@@ -1579,7 +1579,7 @@ cs:
             message_15: odhlásit
             message_6: uchazeči
             message_7: komise
-        _interupt: 
+        _interrupt: 
           rhtml: 
             message_0: přerušeno od
         _disert_theme: 
@@ -1943,7 +1943,7 @@ cs:
         study_plan_create: 
           rhtml: {}
 
-        interupt_alert: 
+        interrupt_alert: 
           rhtml: {}
 
         change_tutor_cs: 
@@ -2271,7 +2271,7 @@ cs:
             message_3: Opravdu vymazat?
 
     controller: 
-      interupts: 
+      interrupts: 
         message_0: schváleno referentkou vědy a výzkumu
       plans: 
         message_8: jazyky musí být rozdílné

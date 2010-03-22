@@ -16,7 +16,7 @@ class SpecializationsController < ApplicationController
   end
 
   def attestation
-    @indices = Index.find_for(@user, :unfinished => true, :not_interupted => true,
+    @indices = Index.find_for(@user, :unfinished => true, :not_interrupted => true,
                               :conditions => ["specialization_id = ?", params[:id]],
                               :order => "people.lastname")
 

@@ -406,9 +406,9 @@ module ApplicationHelper
     div_tag(content, {:class => 'info'})
   end
 
-  # prints interupt finish line
-  def interupt_finish_line(interupt)
-    finished_on = info_div(interupt.finished_on.strftime('%d.%m.%Y'))
+  # prints interrupt finish line
+  def interrupt_finish_line(interrupt)
+    finished_on = info_div(interrupt.finished_on.strftime('%d.%m.%Y'))
     content_tag('li', finished_on + t(:message_51, :scope => [:txt, :helper, :application]))
   end
 

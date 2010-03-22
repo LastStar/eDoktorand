@@ -1,4 +1,4 @@
-class InteruptsController < ApplicationController
+class StudyInterruptsController < ApplicationController
   include LoginSystem
   layout 'employers'
   helper :students
@@ -9,39 +9,39 @@ class InteruptsController < ApplicationController
     unless @student
       @student = Index.find(params[:id]).student
     end
-    @interupt = @student.index.interupts.build
+    @interrupt = @student.index.interrupts.build
   end
 
   def create
-    @interupt = Interupt.new(params[:interupt])
-    if @interupt.plan_changed.to_i == 1
-      session[:interupt] = @interupt
+    @interrupt = Interrupt.new(params[:interrupt])
+    if @interrupt.plan_changed.to_i == 1
+      session[:interrupt] = @interrupt
       redirect_to(:action => 'change', :controller => 'study_plans',
-                  :id => @interupt.index.student)
+                  :id => @interrupt.index.student)
     else
       finish
     end
   end
 
   def finish
-    @interupt ||= session[:interupt]
-    @interupt.save
+    @interrupt ||= session[:interrupt]
+    @interrupt.save
     if @user.has_role?('student')
-      Notifications::deliver_interupt_alert(@interupt.index.study_plan,@interupt)
-      redirect_to(:controller => 'interupts', :action => 'print_interupt',
-                  :id => @interupt.id)
+      Notifications::deliver_interrupt_alert(@interrupt.index.study_plan,@interrupt)
+      redirect_to(:controller => 'interrupts', :action => 'print_interrupt',
+                  :id => @interrupt.id)
     else
       if @user.has_role?('faculty_secretary')
-        @interupt.approve_like('dean', t(:message_0, :scope => [:txt, :controller, :interupts]))
-        @interupt.index.interrupt!(@interupt.start_on)
+        @interrupt.approve_like('dean', t(:message_0, :scope => [:txt, :controller, :interrupts]))
+        @interrupt.index.interrupt!(@interrupt.start_on)
       end
       redirect_to(:controller => 'students')
     end
   end
 
-  # confirms interupt
+  # confirms interrupt
   def confirm_approve
-    @document = Interupt.find(params[:id])
+    @document = Interrupt.find(params[:id])
     @document.approve_with(params[:statement])
     unless @document.index.study_plan.approved?
       @document.index.study_plan.approve_with(params[:statement])
@@ -52,7 +52,7 @@ class InteruptsController < ApplicationController
     
     if good_browser?
       render(:partial => 'shared/confirm_approve', 
-             :locals => {:replace => 'interupt_approval'})
+             :locals => {:replace => 'interrupt_approval'})
     else
       render(:partial => 'students/redraw_list')
     end
@@ -60,7 +60,7 @@ class InteruptsController < ApplicationController
 
   def confirm
     @index = Index.find(params[:id])
-    @index.interrupt!(@index.interupt.start_on)
+    @index.interrupt!(@index.interrupt.start_on)
     if good_browser?
       render(:partial => 'students/redraw_student')
     else
@@ -70,7 +70,7 @@ class InteruptsController < ApplicationController
 
   def end
     @index = Index.find(params[:id])
-    @index.end_interupt!(params[:date])
+    @index.end_interrupt!(params[:date])
     if good_browser?
       render(:partial => 'students/redraw_student')
     else
@@ -78,7 +78,7 @@ class InteruptsController < ApplicationController
     end
   end
 
-  def print_interupt
-     @interupt = Interupt.find(params[:id])
+  def print_interrupt
+    @interrupt = Interrupt.find(params[:id])
   end  
 end

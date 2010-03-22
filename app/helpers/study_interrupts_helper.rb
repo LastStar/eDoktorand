@@ -1,10 +1,10 @@
-module InteruptsHelper
+module StudyInterruptsHelper
 
   # TODO remove all magic numbers 
-  # prints select for interupt start date
+  # prints select for interrupt start date
   def start_date_select
     
-    date_select(:interupt, :start_on,
+    date_select(:interrupt, :start_on,
                 :start_year => Date.today.year - 4,
                 :end_year => Date.today.year + 1,
                 :use_month_numbers => true,

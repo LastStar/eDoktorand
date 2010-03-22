@@ -1,14 +1,14 @@
-class InteruptApproval < Approval
+class InterruptApproval < Approval
   
-  belongs_to :interupt, :foreign_key => 'document_id'
-  # returns index of interupt
+  belongs_to :interrupt, :foreign_key => 'document_id', :class_name => 'StudyInterrupt'
+  # returns index of interrupt
   def index
-    interupt.index
+    interrupt.index
   end
 
   # returns interrupt
   def document
-    interupt
+    interrupt
   end
 
   # creates chance for faculty secretary to approve like dean

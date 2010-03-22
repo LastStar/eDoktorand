@@ -127,7 +127,7 @@ en:
 
       index: 
         message_8: absolved
-        message_9: interupted
+        message_9: interrupted
         message_0: with study change
         message_10: absolved
         message_1: End
@@ -135,13 +135,13 @@ en:
         message_2: account prefix in wrong format
         message_12: finished
         message_3: account number in wrong format
-        message_13: interupted
+        message_13: interrupted
         message_4: account number in wrong format
         message_14: continue
         message_5: not_all_subject_finished
         message_15: studying
         message_6: absolved
-        message_7: interupted
+        message_7: interrupted
       program: {}
 
       notifications: 
@@ -162,7 +162,7 @@ en:
         message_0: university can't be blank
       user: {}
 
-      interupt: 
+      interrupt: 
         message_0: end to
       department: {}
 
@@ -191,7 +191,7 @@ en:
       loader: {}
 
     helper: 
-      interupts: {}
+      interrupts: {}
 
       plans: 
         message_18: voluntary subjects
@@ -206,7 +206,7 @@ en:
         message_2: none subject
         message_12: change tutor
         message_3: external subject
-        message_13: interupt
+        message_13: interrupt
         message_4: none subject
         message_14: create study plan
         message_5: external subject
@@ -260,7 +260,7 @@ en:
         message_44: combined
         message_33: SP approved by leader
         message_22: final application
-        message_11: confirm interupt
+        message_11: confirm interrupt
         message_2: actions
         message_56: study plan
         message_45: year
@@ -284,7 +284,7 @@ en:
         message_15: FE passed
         message_6: interrupt study
         message_49: x
-        message_38: interupted
+        message_38: interrupted
         message_27: department
         message_16: claimed for defence
         message_7: confirm interrupt
@@ -759,8 +759,8 @@ en:
         actualities: 
           rhtml: {}
 
-      interupts: 
-        print_interupt: 
+      interrupts: 
+        print_interrupt: 
           rhtml: 
             message_10: Student
             message_11: Year
@@ -768,17 +768,17 @@ en:
             message_13: Tutor
             message_8: "last atestation:"
             message_9: study plan approval process
-            message_0: This study is interupted
-            message_1: interupted on
-            message_2: interupted to
-            message_3: This student admited interupt
+            message_0: This study is interrupted
+            message_1: interrupted on
+            message_2: interrupted to
+            message_3: This student admited interrupt
             message_4: start
             message_5: duration
-            message_6: This study last interupt
-            message_7: interupted on
+            message_6: This study last interrupt
+            message_7: interrupted on
         index: 
           rhtml: 
-            message_0: Interupting study plan
+            message_0: interrupting study plan
             message_1: start
             message_2: duration
             message_3: months
@@ -1398,20 +1398,20 @@ en:
         _study_detail: 
           rhtml: 
             message_18: approved on
-            message_8: This study last interupt
+            message_8: This study last interrupt
             message_9: note
             message_19: subjects
             message_0: This study has been finished
             message_10: study plan has changed
             message_1: finished_to
-            message_11: Other interupts
-            message_2: This study is interupted
+            message_11: Other interrupts
+            message_2: This study is interrupted
             message_12: "last atestation:"
-            message_3: interupted on
+            message_3: interrupted on
             message_13: defense approval process
-            message_4: interupted to
+            message_4: interrupted to
             message_14: final exam approval process
-            message_5: This student admited interupt
+            message_5: This student admited interrupt
             message_15: study plan approval process
             message_6: start
             message_16: Study plan
@@ -1435,9 +1435,9 @@ en:
             message_15: logoff
             message_6: candidates
             message_7: exam_terms
-        _interupt: 
+        _interrupt: 
           rhtml: 
-            message_0: interupted on
+            message_0: interrupted on
         _disert_theme: 
           rhtml: 
             message_0: Disert theme
@@ -1775,7 +1775,7 @@ en:
         study_plan_create: 
           rhtml: {}
 
-        interupt_alert: 
+        interrupt_alert: 
           rhtml: {}
 
         change_tutor_cs: 
@@ -2063,7 +2063,7 @@ en:
           rhtml: {}
 
     controller: 
-      interupts: 
+      interrupts: 
         message_0: faculty secretary approve
       plans: 
         message_8: languages have to be different

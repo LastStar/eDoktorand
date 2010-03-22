@@ -5,8 +5,8 @@
   <th class='printable'>
     <%= student_link(index_line) %>
   </th>
-<% if index_line.interupted? %>
-  <td><%= interupt_to_info(index_line) %></td>
+<% if index_line.interrupted? %>
+  <td><%= interrupt_to_info(index_line) %></td>
 <% elsif study_plan  %>
   <td><%= study_plan.status  %></td>
 <% else %>

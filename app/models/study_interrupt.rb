@@ -1,11 +1,11 @@
 require 'approvable'
-class Interupt < ActiveRecord::Base
+class StudyInterrupt < ActiveRecord::Base
 
   include Approvable
 
   belongs_to :index
   has_one :approval,
-          :class_name => 'InteruptApproval',
+          :class_name => 'InterruptApproval',
           :foreign_key => 'document_id'
 
   validates_presence_of :index

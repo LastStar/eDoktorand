@@ -45,7 +45,7 @@ class Notifications < ActionMailer::Base
     @sent_on = sent_at
   end
 
-  def interupt_alert(study_plan, interupt, sent_at = Time.now)
+  def interrupt_alert(study_plan, interrupt, sent_at = Time.now)
   @subject = 'Vyrozumnění o přerušení studijního plánu'
     #@body['department_name'] = study_plan.index.department.name
     @body['first_name'] = study_plan.index.student.firstname
@@ -56,18 +56,18 @@ class Notifications < ActionMailer::Base
        @body['birth_number'] = 's rodným číslem'  + study_plan.index.student.birth_number
     end
     @body['year'] = study_plan.index.year
-    if interupt.index.interupted?
-      @body['interupted_on'] = interupt.index.interupted_on.strftime('%d. %m. %Y')
-    elsif interupt.index.admited_interupt?
-      @body['admited_interrupt_start'] = interupt.index.interupt.start_on.strftime('%m/%Y')
-      @body['admited_interrupt_duration'] = interupt.index.interupt.duration
+    if interrupt.index.interrupted?
+      @body['interrupted_on'] = interrupt.index.interrupted_on.strftime('%d. %m. %Y')
+    elsif interrupt.index.admited_interrupt?
+      @body['admited_interrupt_start'] = interrupt.index.interrupt.start_on.strftime('%m/%Y')
+      @body['admited_interrupt_duration'] = interrupt.index.interrupt.duration
     else
-      @body['last_interrupt'] = interupt.start_on.strftime('%d. %m. %Y')
+      @body['last_interrupt'] = interrupt.start_on.strftime('%d. %m. %Y')
     end
     @body['tutor'] = study_plan.index.tutor.display_name
     @body['specialization'] = study_plan.index.specialization.name
     @body['sent_on'] = sent_at
-    @body['note'] = interupt.note
+    @body['note'] = interrupt.note
     @recipients = study_plan.index.faculty.secretary.email
     @from = 'edoktorand@edoktorand.czu.cz'
     @sent_on = sent_at

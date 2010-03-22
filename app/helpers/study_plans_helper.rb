@@ -168,8 +168,8 @@ module StudyPlansHelper
     if student.study_plan.approved? || student.study_plan.canceled?
       links << change_link(student)
     end
-    unless student.index.interupted?
-      links << link_to_unless_current(t(:message_13, :scope => [:txt, :helper, :plans]), :controller => 'interupts'){}
+    unless student.index.interrupted?
+      links << link_to_unless_current(t(:message_13, :scope => [:txt, :helper, :plans]), :controller => 'interrupts'){}
     end
     return links.join('&nbsp;')
   end

@@ -674,7 +674,7 @@ class CSVLoader
     @@mylog.info "Totaly #{count} student's have not been found"
   end
 
-  # loads interupted students to system
+  # loads interrupted students to system
   def self.load_interrupted(file)
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
     @@mylog.info "Loading students..."

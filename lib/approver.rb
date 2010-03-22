@@ -1,9 +1,9 @@
 class Approver
-  def self.approve_interupts
-    Interupt.find(:all).each do |int|
+  def self.approve_interrupts
+    Interrupt.find(:all).each do |int|
       unless int.approved?
         index = int.index
-        int.approvement = InteruptApprovement.new unless int.approvement
+        int.approvement = InterruptApproval.new unless int.approvement
         case int.last_approver
         when nil
           int.approve_like('tutor')

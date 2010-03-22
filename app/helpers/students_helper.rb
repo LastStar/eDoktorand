@@ -35,12 +35,12 @@ module StudentsHelper
         else
           links << create_link(index)
         end
-        if index.not_even_admited_interupt?
-          links << interupt_link(index)
-        elsif index.interupt_waits_for_confirmation?
-          links << confirm_interupt_link(index) 
-        elsif index.interupted?
-          links << end_interupt_link(index)
+        if index.not_even_admited_interrupt?
+          links << interrupt_link(index)
+        elsif index.interrupt_waits_for_confirmation?
+          links << confirm_interrupt_link(index) 
+        elsif index.interrupted?
+          links << end_interrupt_link(index)
         end
       end
     end
@@ -103,35 +103,35 @@ module StudentsHelper
                   :update => "index_form_#{index.id}")
   end
 
-  # prints interupt link
-  def interupt_link(index)
+  # prints interrupt link
+  def interrupt_link(index)
     link_to(t(:message_6, :scope => [:txt, :helper, :students]),
             {:action => 'index', 
-            :controller => 'interupts',
+            :controller => 'interrupts',
             :id => index})
   end
 
-  # prints confirm interupt link
-  def confirm_interupt_link(index)
+  # prints confirm interrupt link
+  def confirm_interrupt_link(index)
     link_to_remote(t(:message_7, :scope => [:txt, :helper, :students]),
                    :url => {:action => 'time_form',
                            :controller => 'students',
                            :form_action => 'confirm',
-                           :form_controller => 'interupts',
+                           :form_controller => 'interrupts',
                            :id => index,
-                           :date => index.interupt.start_on},
+                           :date => index.interrupt.start_on},
                    :update => "index_form_#{index.id}")
   end
 
-  # prints end interupt link
-  def end_interupt_link(index)
+  # prints end interrupt link
+  def end_interrupt_link(index)
     link_to_remote(t(:message_8, :scope => [:txt, :helper, :students]),
                    :url => {:action => 'time_form',
                            :controller => 'students',
                            :form_action => 'end',
-                           :form_controller => 'interupts',
+                           :form_controller => 'interrupts',
                            :id => index,
-                           :date => index.interupt.end_on},
+                           :date => index.interrupt.end_on},
                    :update => "index_form_#{index.id}")
   end
 
@@ -152,11 +152,11 @@ module StudentsHelper
                    :complete => evaluate_remote_response)
   end
 
-  # prints lint to interupt study
-  def confirm_interupt_link(index)
+  # prints lint to interrupt study
+  def confirm_interrupt_link(index)
     link_to_remote(t(:message_11, :scope => [:txt, :helper, :students]),
                    {:url => {:action => 'confirm',
-                             :controller => 'interupts',
+                             :controller => 'interrupts',
                              :id => index},
                     :complete => evaluate_remote_response})
   end
@@ -198,7 +198,7 @@ module StudentsHelper
       end
     else
       unless index.status == t(:message_18, :scope => [:txt, :helper, :students]) || index.status == t(:message_19, :scope => [:txt, :helper, :students])
-        if index.close_to_interupt_end_or_after?
+        if index.close_to_interrupt_end_or_after?
           tags << "<span title='" + t(:message_20, :scope => [:txt, :helper, :students]) + "'>!</span>"
         end
         if index.waits_for_scholarship_confirmation?
@@ -305,8 +305,8 @@ module StudentsHelper
       {'id' => "year", 'name' => "year"})
   end
 
-  def interupt_to_info(index)
-    "#{t(:message_50, :scope => [:txt, :helper, :students])} #{index.interupt.end_on.strftime('%d.%m.%Y')}"
+  def interrupt_to_info(index)
+    "#{t(:message_50, :scope => [:txt, :helper, :students])} #{index.interrupt.end_on.strftime('%d.%m.%Y')}"
   end
   
   def back_to_list(index)
