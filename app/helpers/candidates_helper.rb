@@ -10,9 +10,9 @@ module CandidatesHelper
   def admit_link(candidate)
     links = ''
     if !candidate.admited? && !candidate.rejected? && candidate.invited? && candidate.ready?
-      unless candidate.coridor.exam_term
+      unless candidate.specialization.exam_term
         links << link_to(t(:message_1, :scope => [:txt, :helper, :candidates]), :controller => 'exam_terms', 
-        :action => 'new', :id => candidate.coridor.id ,:from => 'candidate', :backward => @backward )
+        :action => 'new', :id => candidate.specialization.id ,:from => 'candidate', :backward => @backward )
       else
         links << link_to(t(:message_2, :scope => [:txt, :helper, :candidates]), :action => 'admittance', :id => candidate) + "&nbsp;" +
         link_to(t(:message_3, :scope => [:txt, :helper, :candidates]), :action => 'admit', :id => candidate)  
@@ -23,9 +23,9 @@ module CandidatesHelper
   # invite link
   def invite_link(candidate)
     if !candidate.invited? and candidate.ready? 
-      unless candidate.coridor.exam_term  
+      unless candidate.specialization.exam_term  
         link_to(t(:message_4, :scope => [:txt, :helper, :candidates]), :controller => 'exam_terms', 
-        :action => 'new', :id => candidate.coridor.id,:from => 'candidate',:backward => @backward)
+        :action => 'new', :id => candidate.specialization.id,:from => 'candidate',:backward => @backward)
       else
         link_to(t(:message_5, :scope => [:txt, :helper, :candidates]), :action => 'invite', :id => candidate.id)
       end
@@ -57,10 +57,10 @@ module CandidatesHelper
       if session[:category] == 'lastname desc'
         category = t(:message_9, :scope => [:txt, :helper, :candidates])
       end
-      if session[:category] == 'coridor_id'
+      if session[:category] == 'specialization_id'
         category = t(:message_10, :scope => [:txt, :helper, :candidates])
       end
-      if session[:category] == 'coridor_id desc'
+      if session[:category] == 'specialization_id desc'
         category = t(:message_11, :scope => [:txt, :helper, :candidates])
       end
       if session[:category] == 'updated_on'
@@ -179,7 +179,7 @@ module CandidatesHelper
     end
   end
 
-  # print summary department/coridor switcher
+  # print summary department/specialization switcher
   def summary_links
     links = ''
     link_name = params[:id]=="department" ? t(:message_27, :scope => [:txt, :helper, :candidates]) : t(:message_49, :scope => [:txt, :helper, :candidates])

@@ -53,12 +53,12 @@ module ApplicationHelper
     Study.find(:all).map {|s| [s.name, s.id]}
   end
   
-  # get coridor ids
-  def coridor_ids(faculty)
+  # get specialization ids
+  def specialization_ids(faculty)
     if faculty.is_a?(Faculty)
       faculty = faculty.id
     end
-    [['---', '0']].concat(Coridor.find_all_by_faculty_id(faculty).map {|s|
+    [['---', '0']].concat(Specialization.find_all_by_faculty_id(faculty).map {|s|
       [truncate(s.name, 40), s.id]})
   end
   
@@ -99,12 +99,12 @@ module ApplicationHelper
   end
   
   # get voluntary subjects for corridor 
-  def seminar_ids(coridor)
-    if coridor.is_a? Coridor
-      coridor = coridor.id
+  def seminar_ids(specialization)
+    if specialization.is_a? Specialization
+      specialization = specialization.id
     end
     arr = []
-    arr.concat(Coridor.find(coridor).seminar_subjects.map {|s|
+    arr.concat(Specialization.find(specialization).seminar_subjects.map {|s|
       [truncate(s.subject.label, 40), s.subject_id]})
   end
   
@@ -193,11 +193,10 @@ module ApplicationHelper
           links << link_to(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams')
           links << link_to(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list')
           links << prepare_scholarship_link
-          #links << span_tag("&nbsp;&nbsp;&nbsp;",:id => "space_span")
-          links << link_to(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators')
-          links << link_to(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements')
-          links << link_to(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors')
-          links << link_to(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'coridors')
+          links << link_to(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators') {}
+          links << link_to(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements') {}
+          links << link_to(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors') {}
+          links << link_to(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'specializations') {}
       elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
         if @user.has_role?('board_chairman')
           links << link_to(t(:message_23, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname')
@@ -565,7 +564,7 @@ module ApplicationHelper
   end
 
   def remove_line
-    link_to_function(image_tag('close.png'), "$('coridor_subject_form').remove()")
+    link_to_function(image_tag('close.png'), "$('specialization_subject_form').remove()")
   end
   
   def student_tutor_line(index)
