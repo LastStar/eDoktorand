@@ -11,11 +11,11 @@ describe Index do
     end
 
     it "should compute date of next atestation" do
-      Atestation.next_for_faculty(@faculty).should == Date.civil(2010, 3, 15)
+      Attestation.next_for_faculty(@faculty).should == Date.civil(2010, 3, 15)
     end
 
     it "should compute date of actual atestation" do
-      Atestation.actual_for_faculty(@faculty).should == Date.civil(2009, 3, 15)     
+      Attestation.actual_for_faculty(@faculty).should == Date.civil(2009, 3, 15)     
     end
   end
 end
