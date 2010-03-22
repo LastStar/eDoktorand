@@ -1,9 +1,9 @@
-class VoluntarySubject < CoridorSubject 
+class VoluntarySubject < SpecializationSubject 
   
-  belongs_to :coridor
+  belongs_to :specialization
   belongs_to :subject
 
-  validates_presence_of :coridor
+  validates_presence_of :specialization
 
   def self.for_select(options = {})
     if options.delete :with_external 

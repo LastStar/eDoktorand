@@ -1,4 +1,4 @@
-class RequisiteSubject < CoridorSubject
+class RequisiteSubject < SpecializationSubject
   
 
 end

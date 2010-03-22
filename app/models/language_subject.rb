@@ -1,3 +1,3 @@
-class LanguageSubject < CoridorSubject 
+class LanguageSubject < SpecializationSubject 
   
 end

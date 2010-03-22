@@ -30,7 +30,7 @@ Factory.define :index do |index|
   index.enrolled_on TermsCalculator.this_year_start
   index.association :study
   index.association :tutor
-  index.association :coridor
+  index.association :specialization
   index.association :department
 end
 
@@ -39,11 +39,11 @@ Factory.define :study do |study|
   study.name_en 'full time'
 end
 
-Factory.define :coridor do |c|
-  c.name 'coridor'
-  c.name_english 'en coridor'
-  c.code 'COR'
-  c.association :faculty, :factory => :faculty
+Factory.define :specialization do |specialization|
+  specialization.name 'specialization'
+  specialization.name_english 'en specialization'
+  specialization.code 'COR'
+  specialization.association :faculty, :factory => :faculty
 end
 
 Factory.define :faculty do |f|

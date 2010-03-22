@@ -3,19 +3,19 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Index do
   describe "states" do
-    it "should return continues based on coridor study length" do
-      i = Index.new
-      i.enrolled_on = 3.years.ago
-      c = Factory(:coridor, :study_length => 4)
-      i.coridor = c
-      i.continues?.should be_false
-      i.status.should == I18n::t(:message_15, :scope => [:txt, :model, :index])
-      i = Index.new
-      i.enrolled_on = 3.years.ago
-      c = Factory(:coridor, :study_length => 3)
-      i.coridor = c
-      i.continues?.should be_true
-      i.status.should == I18n::t(:message_14, :scope => [:txt, :model, :index])
+    it "should return continues based on specialization study length" do
+      index = Index.new
+      index.enrolled_on = 3.years.ago
+      specialization = Factory(:specialization, :study_length => 4)
+      index.specialization = specialization
+      index.continues?.should be_false
+      index.status.should == I18n::t(:message_15, :scope => [:txt, :model, :index])
+      index = Index.new
+      index.enrolled_on = 3.years.ago
+      specialization = Factory(:specialization, :study_length => 3)
+      index.specialization = specialization
+      index.continues?.should be_true
+      index.status.should == I18n::t(:message_14, :scope => [:txt, :model, :index])
     end
   end
 

@@ -36,7 +36,7 @@ class Index < ActiveRecord::Base
   INTERUPTED_COND = "indices.interupted_on is not null"
   ABSOLVED_COND = "disert_themes.defense_passed_on is not null"
   PASSED_FINAL_COND = "indices.final_exam_passed_on is not null"
-  CORRIDOR_COND = "indices.coridor_id = ?"
+  CORRIDOR_COND = "indices.specialization_id = ?"
   STUDY_COND = " indices.study_id = ?"
 
   belongs_to :student, :foreign_key => 'student_id'
@@ -48,7 +48,7 @@ class Index < ActiveRecord::Base
   has_one :final_exam_term
   has_one :defense
   has_many :exams
-  belongs_to :coridor
+  belongs_to :specialization
   belongs_to :department
   has_many :interupts, :order => 'created_on'
   has_many :extra_scholarships, :conditions => "scholarships.payed_on IS NULL"
@@ -62,7 +62,7 @@ class Index < ActiveRecord::Base
 
   validates_presence_of :student
   validates_presence_of :tutor
-  validates_presence_of :coridor
+  validates_presence_of :specialization
   validates_presence_of :study
   validates_presence_of :department
   validates_presence_of :enrolled_on
@@ -272,7 +272,7 @@ class Index < ActiveRecord::Base
     end
     options[:include] ||= []
     options[:include] << [:study_plan, :student, :disert_theme, :department,
-                           :study, :coridor, :interupts]
+                           :study, :specialization, :interupts]
     if options[:conditions]
       conditions.first.sql_and(options[:conditions].first)
       conditions.concat(options[:conditions][1..-1])
@@ -353,9 +353,9 @@ class Index < ActiveRecord::Base
     if options[:department] && options[:department].to_i != 0
       conditions.first.sql_and(DEPARTMENTS_COND)
       conditions << options[:department]
-    elsif options[:coridor] && options[:coridor].to_i != 0
+    elsif options[:specialization] && options[:specialization].to_i != 0
       conditions.first.sql_and(CORRIDOR_COND)
-      conditions << options[:coridor]
+      conditions << options[:specialization]
     end
     if options[:form] && options[:form].to_i != 0
       conditions.first.sql_and(STUDY_COND)
@@ -427,7 +427,7 @@ class Index < ActiveRecord::Base
 
   # find with all relation included
   def self.find_with_all_included(idx)
-    inc = [:study_plan, :disert_theme, :interupts, :coridor, :study, :student,
+    inc = [:study_plan, :disert_theme, :interupts, :specialization, :study, :student,
           :tutor, :department, :approvement]
     return self.find(idx, :include => inc, :order => 'interupts.created_on desc')
   end
@@ -452,7 +452,7 @@ class Index < ActiveRecord::Base
 
   # returns true if index have year more than 3
   def continues?
-    year > coridor.study_length
+    year > specialization.study_length
   end
 
   # switches study form
@@ -693,7 +693,7 @@ class Index < ActiveRecord::Base
     service_struct.year = self.year
     service_struct.study_form = self.study_name
     service_struct.atestation = self.study_plan ? self.study_plan.last_atested_on : ''
-    service_struct.coridor = self.coridor.code
+    service_struct.specialization = self.specialization.code
     return service_struct
   end
 

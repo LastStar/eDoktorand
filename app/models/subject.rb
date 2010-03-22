@@ -1,6 +1,6 @@
 class Subject < ActiveRecord::Base
   
-  has_many :coridor_subjects
+  has_many :specialization_subjects
   has_many :plan_subjects
   has_many :exams
   has_many :probation_terms
@@ -59,10 +59,10 @@ class Subject < ActiveRecord::Base
      end
   end
 
-  def self.find_for_coridor(coridor, options = {})
+  def self.find_for_specialization(specialization, options = {})
     # TODO pure sql
-    taken = CoridorSubject.find(:all, 
-                                :conditions => ['coridor_id = ?', coridor])
+    taken = SpecializationSubject.find(:all, 
+                                :conditions => ['specialization_id = ?', specialization])
     taken.map!(&:subject_id)
 
     if options[:not_taken]

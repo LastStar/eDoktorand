@@ -36,8 +36,8 @@ class Student < Examinator
   end
 
   #TODO delegate
-  def coridor
-    index.coridor
+  def specialization
+    index.specialization
   end
 
   def address_or_create

@@ -3,8 +3,8 @@ class Notifications < ActionMailer::Base
     @subject = I18n::t(:message_0, :scope => [:txt, :model, :notifications])
     @body['display_name'] = candidate.display_name
     @body['address'] = candidate.address
-    @body['coridor'] = candidate.coridor.name
-    @body['exam_term'] = candidate.coridor.exam_term
+    @body['specialization'] = candidate.specialization.name
+    @body['exam_term'] = candidate.specialization.exam_term
     @body['sent_on'] = sent_at
     @body['faculty'] = faculty
     @body['study_id'] = candidate.study_id
@@ -34,8 +34,8 @@ class Notifications < ActionMailer::Base
     @body['study'] = candidate.study.name
     @body['display_name'] = candidate.display_name
     @body['address'] = candidate.address
-    @body['coridor'] = candidate.coridor.name
-    @body['exam_term'] = candidate.coridor.exam_term
+    @body['specialization'] = candidate.specialization.name
+    @body['exam_term'] = candidate.specialization.exam_term
     @body['sent_on'] = sent_at
     @body['candidate'] = candidate
     @body[:faculty] = faculty = candidate.department.faculty
@@ -65,7 +65,7 @@ class Notifications < ActionMailer::Base
       @body['last_interrupt'] = interupt.start_on.strftime('%d. %m. %Y')
     end
     @body['tutor'] = study_plan.index.tutor.display_name
-    @body['coridor'] = study_plan.index.coridor.name
+    @body['specialization'] = study_plan.index.specialization.name
     @body['sent_on'] = sent_at
     @body['note'] = interupt.note
     @recipients = study_plan.index.faculty.secretary.email
@@ -86,7 +86,7 @@ class Notifications < ActionMailer::Base
        # @body['birth_number'] = I18n::t(:message_7, :scope => [:txt, :model, :notifications]) + study_plan.index.student.birth_number
        @body['birth_number'] = 's rodným číslem'  + study_plan.index.student.birth_number
     end
-    @body['coridor'] = study_plan.index.coridor.name
+    @body['specialization'] = study_plan.index.specialization.name
     @body['sent_on'] = sent_at
     @recipients = study_plan.index.tutor.email
     @from = study_plan.index.faculty.secretary.email.name
@@ -95,21 +95,21 @@ class Notifications < ActionMailer::Base
 
   def end_study(student, subject_end_study)
     @body['name'] = student.display_name
-    @body['coridor'] = student.coridor.name
+    @body['specialization'] = student.specialization.name
     @body['year'] = student.index.year
     @body['subject_end_study'] = subject_end_study
   end
 
   def change_tutor_en(student, subject_change_tutor)
     @body['name'] = student.display_name
-    @body['coridor'] = student.coridor.name
+    @body['specialization'] = student.specialization.name
     @body['year'] = student.index.year
     @body['subject_change_tutor'] = subject_change_tutor
   end
   
   def change_tutor_cs(student, subject_change_tutor)
     @body['name'] = student.display_name
-    @body['coridor'] = student.coridor.name
+    @body['specialization'] = student.specialization.name
     @body['year'] = student.index.year
     @body['subject_change_tutor'] = subject_change_tutor
   end

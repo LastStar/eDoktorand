@@ -1,4 +1,4 @@
-class Coridor < ActiveRecord::Base
+class Specialization < ActiveRecord::Base
   belongs_to :faculty
   belongs_to :program
   has_many :candidates, :conditions => "finished_on IS NOT NULL"
@@ -47,7 +47,7 @@ class Coridor < ActiveRecord::Base
     if user.has_role?('vicerector')
       find(:all)
     else
-      user.person.faculty.coridors
+      user.person.faculty.specializations
     end
   end
 
@@ -56,7 +56,7 @@ class Coridor < ActiveRecord::Base
       if user.has_role?('vicerector')
         return super(:all)
       else
-        user.person.faculty.coridors
+        user.person.faculty.specializations
       end
     else
       super
