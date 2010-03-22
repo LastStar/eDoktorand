@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
 
   # prepares user class variable
   def prepare_user
-    @user = ActiveRecord::Acts::Audited.current_user = User.find(session[:user])
+    @user = User.find(session[:user])
   end
 
   # prepares faculty class variable

@@ -3,9 +3,7 @@ class AccountController < ApplicationController
   layout  'employers'
   before_filter :login_required, :except => [:login, :logout, :error, :set_locale, :no_permission]
   before_filter :set_title
-  before_filter :prepare_user, :only => [:welcome, :logout]
-
-  # caches_page :login
+  before_filter :prepare_user, :only => :welcome
 
   def login
     @title = t(:message_0, :scope => [:txt, :controller, :account])
