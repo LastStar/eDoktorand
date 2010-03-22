@@ -38,7 +38,7 @@ some-LAN:
       theme: 
         message_0: title must not be empty
         message_1: not_passed_final_exam
-      approvement: {}
+      approval: {}
 
       employment: {}
 
@@ -529,7 +529,7 @@ some-LAN:
             message_9: Final exam application
             message_0: Your study plan has been canceled.
             message_10: Welcome to edoktorand application.
-            message_1: "Your study plan, details of it you can see here, is processed now. Final approvement you will get by email. "
+            message_1: "Your study plan, details of it you can see here, is processed now. Final approval you will get by email. "
             message_11: This page shows informations which are stored in information system.
             message_2: Wait till your application will be approved and your defense term will be created.
             message_12: " If you have found any error please contact "
@@ -761,7 +761,7 @@ some-LAN:
         print_interupt: 
           rhtml: 
             message_8: "last atestation:"
-            message_9: study plan approvement process
+            message_9: study plan approval process
             message_0: This study is interupted
             message_1: interupted on
             message_2: interupted to
@@ -1370,11 +1370,11 @@ some-LAN:
             message_2: This study is interupted
             message_12: "last atestation:"
             message_3: interupted on
-            message_13: defense approvement process
+            message_13: defense approval process
             message_4: interupted to
-            message_14: final exam approvement process
+            message_14: final exam approval process
             message_5: This student admited interupt
-            message_15: study plan approvement process
+            message_15: study plan approval process
             message_6: start
             message_16: Study plan
             message_7: duration

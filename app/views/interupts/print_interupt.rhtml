@@ -55,10 +55,10 @@
   <%= print_statements(study_plan.atestation) %>
   <%= atestation_detail(study_plan) %>
 </ul>
-<% elsif study_plan.approvement %>
+<% elsif study_plan.approval %>
 <h5><%= t(:message_9, :scope => [:txt, :view, :interupts, :print_interupt, :rhtml]) %></h5>
-<ul id='approvement'>
-  <%= print_statements(study_plan.approvement) %>
+<ul id='approval'>
+  <%= print_statements(study_plan.approval) %>
 </ul>
 <% end %>
 <% end %>

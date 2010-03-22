@@ -41,7 +41,7 @@ cs:
       theme: 
         message_0: téma disertační práce nesmí být prázdné
         message_1: neuspěl u závěrečné zkoušky
-      approvement: {}
+      approval: {}
 
       employment: {}
 

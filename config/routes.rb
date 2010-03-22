@@ -69,7 +69,7 @@ ActionController::Routing::Routes.draw do |map|
   # welcome url
   map.welcome 'welcome', :controller => 'account', :action => 'welcome'
 
-  # for approvement purposes
+  # for approval purposes
   map.connect 'students/:action/:id', :controller => 'students'
   map.connect 'indices/:action/:id', :controller => 'students'
 

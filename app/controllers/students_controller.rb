@@ -338,7 +338,7 @@ class StudentsController < ApplicationController
       end
     end
     unless @user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
-      # default filter to waiting for approvement 
+      # default filter to waiting for approval 
       session[:filter] ||= 2 
     else
       session[:filter] ||= 3

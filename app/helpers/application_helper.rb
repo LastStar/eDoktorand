@@ -127,12 +127,12 @@ module ApplicationHelper
     end
   end
   
-  # prints statements approvement 
-  def print_statements(approvement)
-    unless approvement.nil?
-      print_statement(approvement.tutor_statement, t(:message_9, :scope => [:txt, :helper, :application])) +
-      print_statement(approvement.leader_statement, t(:message_10, :scope => [:txt, :helper, :application])) +
-      print_statement(approvement.dean_statement, t(:message_11, :scope => [:txt, :helper, :application]) ) 
+  # prints statements approval 
+  def print_statements(approval)
+    unless approval.nil?
+      print_statement(approval.tutor_statement, t(:message_9, :scope => [:txt, :helper, :application])) +
+      print_statement(approval.leader_statement, t(:message_10, :scope => [:txt, :helper, :application])) +
+      print_statement(approval.dean_statement, t(:message_11, :scope => [:txt, :helper, :application]) ) 
     end
   end
   
@@ -309,7 +309,7 @@ module ApplicationHelper
       {:id => "atestation_link"})
   end
   
-  # prints approvement link
+  # prints approval link
   def approve_form(document, statement)
     statement.class.to_s =~ /(.*)Statement/
     person = $1.downcase

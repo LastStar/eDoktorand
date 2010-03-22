@@ -67,7 +67,7 @@ module ScholarshipsHelper
 
   def pay_link
     if @user.has_role?('supervisor') && 
-      (ScholarshipApprovement.all_approved?)
+      (ScholarshipApproval.all_approved?)
       link_to(t(:message_5, :scope => [:txt, :helper, :scholarships]), {:action => 'pay'}, 
         :confirm => t(:message_6, :scope => [:txt, :helper, :scholarships]))
     end

@@ -87,7 +87,7 @@ class MassProcessor
       @@mylog.info "There are #{indices.size} indices"
       indices.each do |i|
         if i.study_plan
-          app = i.study_plan.approvement || StudyPlanApprovement.new
+          app = i.study_plan.approval || StudyPlanApproval.new
           created = app.created_on = i.study_plan.approved_on = \
             i.enrolled_on + 1.month
           app.tutor_statement ||= TutorStatement.create('person_id' => i.tutor_id, 

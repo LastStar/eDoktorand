@@ -51,9 +51,9 @@
     <%= t(:message_10, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
     </li>
   <% end %>
-  <div id='interupt_approvement'>
-  <% if index.interupt.approvement %>
-    <%= print_statements(index.interupt.approvement) %>
+  <div id='interupt_approval'>
+  <% if index.interupt.approval %>
+    <%= print_statements(index.interupt.approval) %>
   <% end %>
   </div>
   </ul>
@@ -66,7 +66,7 @@
   </ul>
 <% end %>
 
-<%# this is hot fix for fill approvement if someone approve changed studyplan%>
+<%# this is hot fix for fill approval if someone approve changed studyplan%>
 <%index.waits_for_statement?(@user)%> 
 
 <% if study_plan ||= index.study_plan %>
@@ -81,19 +81,19 @@
  
 
   <% if index.defense_claimed? %>
-    <ul id='approvement' class='bordered half right'>
+    <ul id='approval' class='bordered half right'>
       <li class="noborder"><h5><%= t(:message_13, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
-      <%= print_statements(index.approvement) %>
+      <%= print_statements(index.approval) %>
     </ul>
   <% elsif index.claimed_final_application? %>
-    <ul id='approvement' class='bordered half right'>
+    <ul id='approval' class='bordered half right'>
        <li class="noborder"><h5><%= t(:message_14, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
-      <%= print_statements(index.approvement) %>
+      <%= print_statements(index.approval) %>
     </ul>
-  <% elsif study_plan.approvement %>
-    <ul id='approvement' class='bordered half right'>
+  <% elsif study_plan.approval %>
+    <ul id='approval' class='bordered half right'>
       <li class="noborder"><h5><%= t(:message_15, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
-      <%= print_statements(study_plan.approvement) %>
+      <%= print_statements(study_plan.approval) %>
     </ul>
   <% end %>
   <br class="clear-all" />

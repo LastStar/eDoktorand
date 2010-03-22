@@ -158,7 +158,7 @@ class StudyPlansController < ApplicationController
   def save_full
     @errors = []
     extract_voluntary
-    new_approvement = nil
+    new_approval = nil
     if !extract_voluntary || !@errors.empty?
       flash[:errors] = @errors.uniq
       session[:change_back] = 1
@@ -167,7 +167,7 @@ class StudyPlansController < ApplicationController
       @student = Student.find(params[:student][:id])
       if @student.study_plan && @student.study_plan.atestation
         @atestation = @student.study_plan.atestation 
-        @approvement = @student.study_plan.approvement
+        @approval = @student.study_plan.approval
       end
       unless session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size <= session[:voluntary_subjects].size
         @errors << t(:message_5, :scope => [:txt, :controller, :plans])     
@@ -179,8 +179,8 @@ class StudyPlansController < ApplicationController
           @study_plan.plan_subjects << sub.clone 
         end 
       end
-      if (params[:url][:action] == "change") && @approvement
-        new_approvement = @approvement.clone
+      if (params[:url][:action] == "change") && @approval
+        new_approval = @approval.clone
       end
       @disert_theme = DisertTheme.new(params[:disert_theme])
       @disert_theme.index = @student.index
@@ -188,10 +188,10 @@ class StudyPlansController < ApplicationController
       @study_plan.index = @student.index
       if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
         @study_plan.save
-        if params[:url][:action] == "change" && new_approvement && @user.has_one_of_roles?(['faculty_secretary','vicerector'])
-          new_approvement.document_id = @study_plan.id
+        if params[:url][:action] == "change" && new_approval && @user.has_one_of_roles?(['faculty_secretary','vicerector'])
+          new_approval.document_id = @study_plan.id
           @study_plan.update_attribute(:approved_on,Time.now)
-          new_approvement.save
+          new_approval.save
         end
         @atestation.update_attribute(:document_id, @study_plan.id) if @atestation
         @disert_theme.save
@@ -233,7 +233,7 @@ class StudyPlansController < ApplicationController
     if good_browser?
       render(:partial => 'shared/confirm_approve', 
             :locals => {:replace => 'atestation',
-                        :approvement => @document.atestation})
+                        :approval => @document.atestation})
     else
       render(:partial => 'students/redraw_list')
     end
