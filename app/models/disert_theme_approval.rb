@@ -1,4 +1,4 @@
-class DisertThemeApprovement < Approvement
+class DisertThemeApproval < Approval
   
   belongs_to :disert_theme, :foreign_key => 'document_id'
   # returns index

@@ -1,4 +1,3 @@
 class DeanStatement < Statement
-  
-  has_one :approvement
+  has_one :approval
 end

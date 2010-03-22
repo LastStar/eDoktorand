@@ -56,7 +56,7 @@ class Scholarship < ActiveRecord::Base
   
   def self.approve_for(user)
     indices = Index.find_for_scholarship(user, :include => [:disert_theme])
-    sa = ScholarshipApprovement.new(:faculty => user.person.faculty)
+    sa = ScholarshipApproval.new(:faculty => user.person.faculty)
     sa.create_dean_statement(:person => user.person)
     sa.save
     indices.select do |i|

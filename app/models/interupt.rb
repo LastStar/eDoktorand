@@ -4,8 +4,8 @@ class Interupt < ActiveRecord::Base
   include Approvable
 
   belongs_to :index
-  has_one :approvement,
-          :class_name => 'InteruptApprovement',
+  has_one :approval,
+          :class_name => 'InteruptApproval',
           :foreign_key => 'document_id'
 
   validates_presence_of :index

@@ -1,4 +1,4 @@
-class Approvement < ActiveRecord::Base
+class Approval < ActiveRecord::Base
   
   belongs_to :tutor_statement
   belongs_to :leader_statement
@@ -6,7 +6,7 @@ class Approvement < ActiveRecord::Base
   belongs_to :board_statement
   acts_as_audited
 
-  # prepares approvement for object if it doesn't exists
+  # prepares approval for object if it doesn't exists
   # returns statement for user
   def prepare_statement(user)
     if user.has_role?('faculty_secretary') && (index.faculty == user.person.faculty)

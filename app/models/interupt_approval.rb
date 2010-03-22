@@ -1,4 +1,4 @@
-class InteruptApprovement < Approvement
+class InteruptApproval < Approval
   
   belongs_to :interupt, :foreign_key => 'document_id'
   # returns index of interupt

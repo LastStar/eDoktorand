@@ -1,4 +1,4 @@
-class ScholarshipApprovement < Approvement
+class ScholarshipApproval < Approval
   belongs_to :faculty, :foreign_key => 'document_id'
   
   HALF_MONTH = 1.month / 4

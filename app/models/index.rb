@@ -57,7 +57,7 @@ class Index < ActiveRecord::Base
   has_many :payed_scholarships, :class_name => 'Scholarship',
     :conditions => 'payed_on IS NOT NULL'
   has_many :scholarships
-  has_one :approvement, :class_name => 'FinalExamApprovement',
+  has_one :approval, :class_name => 'FinalExamApproval',
     :foreign_key => 'document_id'
 
   validates_presence_of :student
@@ -196,24 +196,24 @@ class Index < ActiveRecord::Base
     claimed_final_application? && approved?
   end
 
-  # returns statement if this index waits for approvement from person
+  # returns statement if this index waits for approval from person
   def statement_for(user)
     unless status == I18n.t(:message_6, :scope => [:txt, :model, :index]) || status == I18n.t(:message_7, :scope => [:txt, :model, :index])
       if claimed_final_application?
-        self.approvement ||= FinalExamApprovement.create
-        if approvement.prepares_statement?(user)
-          return approvement.prepare_statement(user)
+        self.approval ||= FinalExamApproval.create
+        if approval.prepares_statement?(user)
+          return approval.prepare_statement(user)
         end
       elsif admited_interupt?
-        interupt.approvement ||= InteruptApprovement.create
-        if interupt.approvement.prepares_statement?(user)
-          return interupt.approvement.prepare_statement(user)
+        interupt.approval ||= InteruptApproval.create
+        if interupt.approval.prepares_statement?(user)
+          return interupt.approval.prepare_statement(user)
         end
       elsif study_plan 
         if !study_plan.approved?
-          study_plan.approvement ||= StudyPlanApprovement.create(:document_id => study_plan.id)
-          if study_plan.approvement.prepares_statement?(user)
-            return study_plan.approvement.prepare_statement(user)
+          study_plan.approval ||= StudyPlanApproval.create(:document_id => study_plan.id)
+          if study_plan.approval.prepares_statement?(user)
+            return study_plan.approval.prepare_statement(user)
           end
         elsif study_plan.waits_for_actual_atestation?
           if !study_plan.atestation || !study_plan.atestation.is_actual?
@@ -225,24 +225,24 @@ class Index < ActiveRecord::Base
     end
   end
 
-  # returns statement if this index waits for approvement from person
+  # returns statement if this index waits for approval from person
   def waits_for_statement?(user)
     unless status == I18n.t(:message_8, :scope => [:txt, :model, :index]) || status == I18n.t(:message_9, :scope => [:txt, :model, :index])
       if claimed_final_application?
-        temp_approvement = self.approvement ||= FinalExamApprovement.create
+        temp_approval = self.approval ||= FinalExamApproval.create
       elsif admited_interupt?
-        temp_approvement = interupt.approvement ||= InteruptApprovement.create
+        temp_approval = interupt.approval ||= InteruptApproval.create
       elsif study_plan && !study_plan.approved?
-        temp_approvement = study_plan.approvement ||= StudyPlanApprovement.create
+        temp_approval = study_plan.approval ||= StudyPlanApproval.create
       elsif study_plan && study_plan.approved? &&
         study_plan.waits_for_actual_atestation?
         if !study_plan.atestation || !study_plan.atestation.is_actual?
-          temp_approvement = study_plan.atestation = Atestation.create(:document_id => study_plan.id)
+          temp_approval = study_plan.atestation = Atestation.create(:document_id => study_plan.id)
         else
-          temp_approvement = study_plan.atestation 
+          temp_approval = study_plan.atestation 
         end
       end
-      temp_approvement && temp_approvement.prepares_statement?(user)
+      temp_approval && temp_approval.prepares_statement?(user)
     end
   end
 
@@ -319,7 +319,7 @@ class Index < ActiveRecord::Base
         :include => options[:include])
   end
 
-  # returns all indices which waits for approvement from persons 
+  # returns all indices which waits for approval from persons 
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user, options = {})
     sql = <<-SQL
@@ -428,7 +428,7 @@ class Index < ActiveRecord::Base
   # find with all relation included
   def self.find_with_all_included(idx)
     inc = [:study_plan, :disert_theme, :interupts, :specialization, :study, :student,
-          :tutor, :department, :approvement]
+          :tutor, :department, :approval]
     return self.find(idx, :include => inc, :order => 'interupts.created_on desc')
   end
 
@@ -630,7 +630,7 @@ class Index < ActiveRecord::Base
     !defense.nil?
   end
 
-  # for approvement purposes
+  # for approval purposes
   def index
     self
   end

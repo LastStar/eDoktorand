@@ -4,12 +4,12 @@ class StudyPlan < ActiveRecord::Base
   
   belongs_to :index
   has_many :plan_subjects, :order => 'finishing_on', :dependent => :delete_all
-  has_one :approvement, :class_name => 'StudyPlanApprovement',
+  has_one :approval, :class_name => 'StudyPlanApproval',
     :foreign_key => 'document_id'
   has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
   #Have to be tested:
   #has_one :atestation_detail, :foreign_key => 'study_plan_id', :order => 'created_on'
-  has_many :approvements
+  has_many :approvals
   acts_as_audited
   validates_presence_of :index
   serialize :final_areas, Hash
@@ -115,10 +115,10 @@ class StudyPlan < ActiveRecord::Base
   def approve_with(params)
     statement = \
     eval("#{params[:type]}.create(params)") 
-    self.approvement ||= StudyPlanApprovement.create
-    self.approvement.update_attribute("#{params[:type].underscore}_id", statement.id)
-    if statement.is_a?(LeaderStatement) && !approvement.tutor_statement
-      approvement.tutor_statement =
+    self.approval ||= StudyPlanApproval.create
+    self.approval.update_attribute("#{params[:type].underscore}_id", statement.id)
+    if statement.is_a?(LeaderStatement) && !approval.tutor_statement
+      approval.tutor_statement =
         TutorStatement.create(statement.attributes)
     end
     if statement.cancel?
@@ -170,14 +170,14 @@ class StudyPlan < ActiveRecord::Base
   def approved_by
     if approved?
       I18n::t(:message_5, :scope => [:txt, :model, :plan])
-    elsif approvement
-      approvement.approved_by
+    elsif approval
+      approval.approved_by
     end
   end
 
   def last_approver
-    if approvement
-      approvement.last_approver
+    if approval
+      approval.last_approver
     end
   end
 

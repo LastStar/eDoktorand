@@ -1,4 +1,4 @@
-class Atestation < Approvement
+class Atestation < Approval
   
   has_one :atestation_detail
   belongs_to :study_plan, :foreign_key => 'document_id'
