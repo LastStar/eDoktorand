@@ -165,8 +165,8 @@ class StudyPlansController < ApplicationController
       redirect_to(:action => 'change', :id => params[:student][:id])
     else
       @student = Student.find(params[:student][:id])
-      if @student.study_plan && @student.study_plan.atestation
-        @atestation = @student.study_plan.atestation 
+      if @student.study_plan && @student.study_plan.attestation
+        @attestation = @student.study_plan.attestation 
         @approval = @student.study_plan.approval
       end
       unless session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size <= session[:voluntary_subjects].size
@@ -193,7 +193,7 @@ class StudyPlansController < ApplicationController
           @study_plan.update_attribute(:approved_on,Time.now)
           new_approval.save
         end
-        @atestation.update_attribute(:document_id, @study_plan.id) if @atestation
+        @attestation.update_attribute(:document_id, @study_plan.id) if @attestation
         @disert_theme.save
         if @user.person.is_a?(Student)
           if session[:interrupt]
@@ -221,39 +221,39 @@ class StudyPlansController < ApplicationController
     end
   end
 
-  # atests study plan 
-  def atest
+  # attests study plan 
+  def attest
     @study_plan = StudyPlan.find(params[:id])
   end
 
   # confirms and saves statement
-  def confirm_atest
+  def confirm_attest
     @document = StudyPlan.find(params[:id])
-    @document.atest_with(params[:statement])
+    @document.attest_with(params[:statement])
     if good_browser?
       render(:partial => 'shared/confirm_approve', 
-            :locals => {:replace => 'atestation',
-                        :approval => @document.atestation})
+            :locals => {:replace => 'attestation',
+                        :approval => @document.attestation})
     else
       render(:partial => 'students/redraw_list')
     end
   end
 
-  # prepares form for atestation details
-  def atestation_details
+  # prepares form for attestation details
+  def attestation_details
     @study_plan = @student.study_plan
-    @atestation_detail = @study_plan.next_atestation_detail_or_new
+    @attestation_detail = @study_plan.next_attestation_detail_or_new
   end
 
-  # saves atestation detail 
-  def save_atestation_detail
-    if params[:atestation_detail][:id] == ''
-      @atestation_detail = \
-        AtestationDetail.create(params[:atestation_detail])
+  # saves attestation detail 
+  def save_attestation_detail
+    if params[:attestation_detail][:id] == ''
+      @attestation_detail = \
+        AttestationDetail.create(params[:attestation_detail])
     else
-      @atestation_detail = \
-        AtestationDetail.find(params[:atestation_detail][:id])
-      @atestation_detail.update_attributes(params[:atestation_detail])
+      @attestation_detail = \
+        AttestationDetail.find(params[:attestation_detail][:id])
+      @attestation_detail.update_attributes(params[:attestation_detail])
     end
   end
 

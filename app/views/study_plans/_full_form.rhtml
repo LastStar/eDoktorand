@@ -2,7 +2,7 @@
 <fieldset>
   <%= hidden_field('student', 'id') %>
   <%= hidden_field('url','action',:value => params[:action]) %>
-<%= hidden_field('study_plan', 'last_atested_on') %>
+<%= hidden_field('study_plan', 'last_attested_on') %>
 <legend><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></legend>
 <ul>
   <%= render(:partial => 'general',

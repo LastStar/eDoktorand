@@ -1,4 +1,4 @@
-class AtestationDetail < ActiveRecord::Base
+class AttestationDetail < ActiveRecord::Base
   
   belongs_to :study_plan
   validates_associated :study_plan
@@ -7,7 +7,7 @@ class AtestationDetail < ActiveRecord::Base
     #FIXME shitty fix with time translation to string. Maybe time zones in
     #account
     return new(:study_plan_id => student.study_plan.id,
-               :atestation_term => Atestation.next_for_faculty(student.faculty).to_s)
+               :attestation_term => Attestation.next_for_faculty(student.faculty).to_s)
 
   end
 end

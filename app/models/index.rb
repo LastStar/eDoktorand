@@ -215,11 +215,11 @@ class Index < ActiveRecord::Base
           if study_plan.approval.prepares_statement?(user)
             return study_plan.approval.prepare_statement(user)
           end
-        elsif study_plan.waits_for_actual_atestation?
-          if !study_plan.atestation || !study_plan.atestation.is_actual?
-            study_plan.atestation = Atestation.create(:document_id => study_plan.id)
+        elsif study_plan.waits_for_actual_attestation?
+          if !study_plan.attestation || !study_plan.attestation.is_actual?
+            study_plan.attestation = Attestation.create(:document_id => study_plan.id)
           end
-          return study_plan.atestation.prepare_statement(user)
+          return study_plan.attestation.prepare_statement(user)
         end
       end
     end
@@ -235,11 +235,11 @@ class Index < ActiveRecord::Base
       elsif study_plan && !study_plan.approved?
         temp_approval = study_plan.approval ||= StudyPlanApproval.create
       elsif study_plan && study_plan.approved? &&
-        study_plan.waits_for_actual_atestation?
-        if !study_plan.atestation || !study_plan.atestation.is_actual?
-          temp_approval = study_plan.atestation = Atestation.create(:document_id => study_plan.id)
+        study_plan.waits_for_actual_attestation?
+        if !study_plan.attestation || !study_plan.attestation.is_actual?
+          temp_approval = study_plan.attestation = Attestation.create(:document_id => study_plan.id)
         else
-          temp_approval = study_plan.atestation 
+          temp_approval = study_plan.attestation 
         end
       end
       temp_approval && temp_approval.prepares_statement?(user)
@@ -324,12 +324,12 @@ class Index < ActiveRecord::Base
   def self.find_waiting_for_statement(user, options = {})
     sql = <<-SQL
       (study_plans.approved_on is null or disert_themes.approved_on is null \
-      or study_plans.last_atested_on is null or indices.interrupted_on is null or \
-      study_plans.last_atested_on < ?) and (indices.finished_on is null or \
+      or study_plans.last_attested_on is null or indices.interrupted_on is null or \
+      study_plans.last_attested_on < ?) and (indices.finished_on is null or \
       indices.finished_on = '0000-00-00 00:00:00') 
     SQL
     options[:conditions] = [sql, 
-      Atestation.actual_for_faculty(user.person.faculty)]
+      Attestation.actual_for_faculty(user.person.faculty)]
     options[:order] = 'people.lastname'
     options[:only_tutor] = true
     options[:unfinished] = true
@@ -692,13 +692,13 @@ class Index < ActiveRecord::Base
     service_struct.status_to = ''
     service_struct.year = self.year
     service_struct.study_form = self.study_name
-    service_struct.atestation = self.study_plan ? self.study_plan.last_atested_on : ''
+    service_struct.attestation = self.study_plan ? self.study_plan.last_attested_on : ''
     service_struct.specialization = self.specialization.code
     return service_struct
   end
 
-  def has_study_plan_and_actual_atestation?
-    study_plan && index.study_plan.atested_actual? && study_plan.atestation.dean_statement
+  def has_study_plan_and_actual_attestation?
+    study_plan && index.study_plan.attested_actual? && study_plan.attestation.dean_statement
   end
 
   def has_any_scholarship?

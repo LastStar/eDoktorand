@@ -23,7 +23,7 @@ en:
       tutor: 
         message_0: Tutor
         message_1: approve like tutor
-        message_2: atest like tutor
+        message_2: attest like tutor
       title: {}
 
       study: {}
@@ -32,7 +32,7 @@ en:
         message_0: Leader
         message_1: final exam
         message_2: approve like leader
-        message_3: atest like leader
+        message_3: attest like leader
       scholarship: {}
 
       theme: 
@@ -55,7 +55,7 @@ en:
         message_0: Examinator
       contact: {}
 
-      atestation: {}
+      attestation: {}
 
       actuality: {}
 
@@ -66,7 +66,7 @@ en:
       dean: 
         message_0: Dean
         message_1: approve like dean
-        message_2: atest like dean
+        message_2: attest like dean
       subject: 
         message_0: external subject
       candidate: 
@@ -308,7 +308,7 @@ en:
         message_67: examinators
         message_62: literature review file
         message_51: finished on
-        message_40: "atest like #{person}"
+        message_40: "attest like #{person}"
         message_29: do you really want to
         message_18: exam_terms
         message_8: approved with earfull
@@ -356,14 +356,14 @@ en:
         message_14: Birth on
         message_5: 
         message_59: YOU DON'T HAVE TUTOR! CONTACT HELPDESK NOW!
-        message_48: additional information for next atestation
+        message_48: additional information for next attestation
         message_37: with note
         message_26: exams
         message_15: print
         message_6: canceled
         message_60: Tutor
         message_49: back
-        message_38: see atestation informations
+        message_38: see attestation informations
         message_27: students
         message_16: exams
         message_7: approved
@@ -572,7 +572,7 @@ en:
         _obligate: 
           rhtml: {}
 
-        _atestation_detail: 
+        _attestation_detail: 
           rhtml: 
             message_0: Additional information provided by student
         _voluntary: 
@@ -587,9 +587,9 @@ en:
         _obligates: 
           rhtml: {}
 
-        _atest_information: 
+        _attest_information: 
           rhtml: 
-            message_0: Student didn't have any subject for this atestation.
+            message_0: Student didn't have any subject for this attestation.
             message_1: Unfinished subjects are in red.
             message_2: Additional information provided by student
         _create_head: 
@@ -679,7 +679,7 @@ en:
         departments: 
           rhtml: {}
 
-        atestation_terms: 
+        attestation_terms: 
           rhtml: {}
 
         scaffold: 
@@ -766,7 +766,7 @@ en:
             message_11: Year
             message_12: Corridor
             message_13: Tutor
-            message_8: "last atestation:"
+            message_8: "last attestation:"
             message_9: study plan approval process
             message_0: This study is interrupted
             message_1: interrupted on
@@ -1163,14 +1163,14 @@ en:
             message_2: Firstname
             message_12: "no"
             message_3: Lastname
-            message_13: In these specialization are no students for atestation
+            message_13: In these specialization are no students for attestation
             message_4: Y.
             message_5: Tutor
             message_6: Form of study
             message_7: P/F
         list: 
           rhtml: 
-            message_8: Atestation
+            message_8: attestation
             message_9: Subjects
             message_0: Listing specializations
             message_1: Coridor|Name
@@ -1406,7 +1406,7 @@ en:
             message_1: finished_to
             message_11: Other interrupts
             message_2: This study is interrupted
-            message_12: "last atestation:"
+            message_12: "last attestation:"
             message_3: interrupted on
             message_13: defense approval process
             message_4: interrupted to

@@ -70,11 +70,11 @@
 <%index.waits_for_statement?(@user)%> 
 
 <% if study_plan ||= index.study_plan %>
-  <% if study_plan.atestation  %>
+  <% if study_plan.attestation  %>
     <ul id='atestation' class='bordered half right'>
       <li class="noborder"><h5><%= t(:message_12, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
-      <%= print_statements(study_plan.atestation) %>
-      <%= atestation_detail(study_plan) %>
+      <%= print_statements(study_plan.attestation) %>
+      <%= attestation_detail(study_plan) %>
     </ul>
   <% end %>
   
@@ -129,7 +129,7 @@
     <%= approve_forms(@user, index) %>
   <% elsif index.admited_interrupt? %>
     <%= approve_forms(@user, index.interrupt) %>
-  <% elsif !study_plan.approved? || study_plan.waits_for_actual_atestation? %>
+  <% elsif !study_plan.approved? || study_plan.waits_for_actual_attestation? %>
     <%= approve_forms(@user, study_plan) %>
   <% end %>
 <% else %>

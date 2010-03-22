@@ -120,10 +120,10 @@ module ApplicationHelper
     end
   end
   
-  # prints atestation links
-  def atestation_links(study_plan)
-    if study_plan.waits_for_actual_atestation?
-      atestation_link(study_plan)
+  # prints attestation links
+  def attestation_links(study_plan)
+    if study_plan.waits_for_actual_attestation?
+      attestation_link(study_plan)
     end
   end
   
@@ -136,8 +136,8 @@ module ApplicationHelper
     end
   end
   
-  # prints atestaion subject line wihch depends on finishing of the subject
-  def atestation_subject_line(plan_subject, atestation_term)
+  # prints attestaion subject line wihch depends on finishing of the subject
+  def attestation_subject_line(plan_subject, attestation_term)
     content = ''
     if plan_subject.finished?
       content << content_tag('div', plan_subject.finished_on.strftime('%d. %m. %Y'), :class => 'info')
@@ -299,14 +299,14 @@ module ApplicationHelper
     #{statement_type}", options)
   end
   
-  # prints atestation link
-  def atestation_link(study_plan)
+  # prints attestation link
+  def attestation_link(study_plan)
     link_to_remote(t(:message_38, :scope => [:txt, :helper, :application]), 
-                   {:url => {:controller => 'study_plans', :action => 'atest',
+                   {:url => {:controller => 'study_plans', :action => 'attest',
                              :id => study_plan},
                    :loading => 
-                    "$('atestation_link').innerHTML = '%s'" % t(:message_39, :scope => [:txt, :helper, :application])},
-      {:id => "atestation_link"})
+                    "$('attestation_link').innerHTML = '%s'" % t(:message_39, :scope => [:txt, :helper, :application])},
+      {:id => "attestation_link"})
   end
   
   # prints approval link
@@ -314,8 +314,8 @@ module ApplicationHelper
     statement.class.to_s =~ /(.*)Statement/
     person = $1.downcase
     if document.is_a?(StudyPlan) && document.approved? && 
-      document.waits_for_actual_atestation?
-      action = 'confirm_atest'
+      document.waits_for_actual_attestation?
+      action = 'confirm_attest'
       title = t(:message_40, :scope => [:txt, :helper, :application]) + " " + t(person, :scope => [:txt, :helper, :application])
       options = [[t(:message_41, :scope => [:txt, :helper, :application]), 1], [t(:message_42, :scope => [:txt, :helper, :application]), 2], [t(:message_43, :scope => [:txt, :helper, :application]), 0]]    
     else
@@ -335,16 +335,16 @@ module ApplicationHelper
             {:id => "methodology_link#{disert_theme.id}"})
   end
   
-  # prints atestation detail link
-  def atestation_detail(study_plan)
+  # prints attestation detail link
+  def attestation_detail(study_plan)
     if @student
       link_to_remote(t(:message_48, :scope => [:txt, :helper, :application]),
                     {:url => {:controller => 'study_plans', 
-                      :action => 'atestation_details',
+                      :action => 'attestation_details',
                       :id => study_plan, :evaluate => true}},
                     {:id => "detail_link#{study_plan.id}"})
     else
-      atestation_links(study_plan)
+      attestation_links(study_plan)
     end
   end
   

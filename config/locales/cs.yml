@@ -62,7 +62,7 @@ cs:
         message_0: Zkoušející
       contact: {}
 
-      atestation: {}
+      attestation: {}
 
       actuality: {}
 
@@ -662,7 +662,7 @@ cs:
         _obligate: 
           rhtml: {}
 
-        _atestation_detail: 
+        _attestation_detail: 
           rhtml: 
             message_0: Dodatečné informace poskytnuté studentem
         _voluntary: 
@@ -677,7 +677,7 @@ cs:
         _obligates: 
           rhtml: {}
 
-        _atest_information: 
+        _attest_information: 
           rhtml: 
             message_0: Student nemá žádný předmět pro tuto atestaci
             message_1: Nesplněné předměty jsou označeny červeně.
@@ -774,7 +774,7 @@ cs:
         departments: 
           rhtml: {}
 
-        atestation_terms: 
+        attestation_terms: 
           rhtml: {}
 
         scaffold: 
