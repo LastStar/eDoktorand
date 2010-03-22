@@ -249,7 +249,7 @@ class CSVExporter
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : Faculty.find(options[:faculty])
         cs = Candidate.find(:all, :conditions => ['invited_on is not null' + 
         #cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' + 
-          ' and coridor_id in (?)', faculty.coridors])
+          ' and specialization_id in (?)', faculty.specializations])
         file = "candidate_evident_#{faculty.short_name}.csv"
       else
         file = 'candidates_evident.csv'
@@ -277,7 +277,7 @@ class CSVExporter
           row << c.birth_on
           row << c.birth_at
           row << c.department.short_name
-          row << c.coridor.code
+          row << c.specialization.code
           row << c.study.name
           row << c.street
           row << c.number
@@ -348,7 +348,7 @@ class CSVExporter
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : Faculty.find(options[:faculty])
         cs = Candidate.find(:all, :conditions => ['invited_on is not null' + 
         #cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' + 
-          ' and coridor_id in (?)', faculty.coridors])
+          ' and specialization_id in (?)', faculty.specializations])
         file = "candidate_#{faculty.short_name}.csv"
       else
         file = 'candidates.csv'
@@ -373,7 +373,7 @@ class CSVExporter
           end
           row << c.email
           row << c.department.short_name
-          row << c.coridor.code
+          row << c.specialization.code
           row << c.study.name
           @@mylog.debug "Adding #{row}"
           csv << row
@@ -385,14 +385,14 @@ class CSVExporter
     def export_basic(students)
       outfile = File.open('students.csv', 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
-        csv << ['id', 'first name', 'last name', 'birth number', 'coridor id', 'faculty id', 'email']
+        csv << ['id', 'first name', 'last name', 'birth number', 'specialization id', 'faculty id', 'email']
         students.each do |s|
           row = []
           row << s.id
           row << s.firstname
           row << s.lastname
           row << s.birth_number
-          row << s.index.coridor.name
+          row << s.index.specialization.name
           row << s.index.faculty.name
           row << s.email.try(:name)
           csv << row
@@ -404,13 +404,13 @@ class CSVExporter
     def export_basic_by_index(indices)
       outfile = File.open('indices.csv', 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
-        csv << ['id', 'first name', 'last name', 'coridor name', 'faculty name', 'year','study','status']
+        csv << ['id', 'first name', 'last name', 'specialization name', 'faculty name', 'year','study','status']
         indices.each do |i|
           row = []
           row << i.student.id
           row << i.student.firstname
           row << i.student.lastname
-          row << i.coridor.name
+          row << i.specialization.name
           row << i.faculty.name
           row << i.year
           row << i.study.name
@@ -424,14 +424,14 @@ class CSVExporter
     def export_address(students)
       outfile = File.open('students_address.csv', 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
-        csv << ['id', 'first name', 'last name', 'birth number', 'coridor id', 'faculty id', 'email', 'street', 'desc_number', 'orient_number', 'city', 'zip', 'state']
+        csv << ['id', 'first name', 'last name', 'birth number', 'specialization id', 'faculty id', 'email', 'street', 'desc_number', 'orient_number', 'city', 'zip', 'state']
         students.each do |s|
           row = []
           row << s.id
           row << s.firstname
           row << s.lastname
           row << s.birth_number
-          row << s.index.coridor.name
+          row << s.index.specialization.name
           row << s.index.faculty.name
           row << s.email.try(:name)
           if s.address
@@ -448,11 +448,11 @@ class CSVExporter
       end
     end
 
-    def export_tutors_per_coridor
-      outfile = File.open('tutors_per_coridor.csv', 'wb')
+    def export_tutors_per_specialization
+      outfile = File.open('tutors_per_specialization.csv', 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
-        csv << ['coridor id', 'coridor name', 'amount']
-        Coridor.find(:all).each do |c|
+        csv << ['specialization id', 'specialization name', 'amount']
+        Specialization.find(:all).each do |c|
           csv << [c.id, c.name, c.tutors.size]
         end
       end
@@ -463,7 +463,7 @@ class CSVExporter
       outfile = File.open('students_with_disert_theme.csv', 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
         Index.find_for(user, :studying => true).each do |i|
-          row = [i.student.lastname, i.student.firstname, i.coridor.name, 
+          row = [i.student.lastname, i.student.firstname, i.specialization.name, 
                   i.year]
           if i.disert_theme
             row << [i.disert_theme.title, i.disert_theme.title_en]
@@ -638,19 +638,19 @@ class CSVExporter
     end
 
     # exports scholarships by corridor and month
-    def export_scholarship(coridor)
+    def export_scholarship(specialization)
       beg = Date.parse(TermsCalculator.starting_in(2008)) - 1.month
       fin = beg + 1.month
       sql = 'payed_on > ? and payed_on < ? and index_id = ?'
       indices = Index.find_for_scholarship(User.find_by_login('ticha'),
-                  :conditions => ["coridor_id = ?", coridor],
+                  :conditions => ["specialization_id = ?", specialization],
                   :paying_date => fin)
       unless indices.empty?
         (1..13).each do |month|
-          filename = '%s_%s.csv' % [coridor.code, fin.strftime('%m_%y')]
+          filename = '%s_%s.csv' % [specialization.code, fin.strftime('%m_%y')]
           File.open(filename, 'wb') do |outfile|
             CSV::Writer.generate(outfile, ';') do |csv|
-              csv << [coridor.name, beg.strftime('%Y-%m-%d'),
+              csv << [specialization.name, beg.strftime('%Y-%m-%d'),
                 fin.strftime('%Y-%m-%d'), '', '']
               csv << ['name', 'type', 'amount', 'disponent', 'payed_on']
               indices.each do |index|
@@ -680,7 +680,7 @@ class CSVExporter
       isd.each {|f|
         File.open("po_rocnicich_%s.csv" % f.first.short_name, 'wb') {|outfile|
           CSV::Writer.generate(outfile, ';') {|csv|
-            f.last.group_by(&:coridor).each {|c|
+            f.last.group_by(&:specialization).each {|c|
               csv << [c.first.code, c.first.name]
               c.last.group_by(&:year).map {|cyi|
                 csv << [cyi.first, cyi.last.select(&:present_study?).size, cyi.last.reject(&:present_study?).size]
@@ -711,7 +711,7 @@ class CSVExporter
             row << index.study.name
             row << index.status
             row << index.department.name
-            row << index.coridor.name
+            row << index.specialization.name
             row << index.tutor.try(:display_name)
             csv << row
           end
