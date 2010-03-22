@@ -156,7 +156,7 @@ some-LAN:
         message_5: Notification about admition procedure to postgradula study
         message_6: notification of study plan
         message_7: "with birth number "
-      coridor: {}
+      specialization: {}
 
       detail: 
         message_0: university can't be blank
@@ -290,11 +290,11 @@ some-LAN:
         message_7: confirm interrupt
         message_50: to
         message_39: absolved
-        message_28: coridor
+        message_28: specialization
         message_17: approved form of defence
       documents: {}
 
-      coridors: 
+      specializations: 
         message_0: Are you sure to delete?
         message_1: Add subject
         message_2: canceled
@@ -333,7 +333,7 @@ some-LAN:
         message_55: hide
         message_44: "approve like #{person}"
         message_33: scholarship
-        message_22: coridors
+        message_22: specializations
         message_11: dean statement
         message_2: "yes"
         message_56: Full name
@@ -437,12 +437,12 @@ some-LAN:
         message_43: reject
         message_32: not admitted
         message_21: list
-        message_10: by coridor up
+        message_10: by specialization up
         message_1: create commission
         message_44: admit
         message_33: admitted
         message_22: show all contacts
-        message_11: by coridor down
+        message_11: by specialization down
         message_2: protocol
         message_34: invited
         message_23: hide all contacts
@@ -703,7 +703,7 @@ some-LAN:
           rhtml: 
             message_0: 
             message_1: loading ...
-        coridors: 
+        specializations: 
           rhtml: {}
 
         titles: 
@@ -1110,7 +1110,7 @@ some-LAN:
         _form: 
           rhtml: {}
 
-      coridors: 
+      specializations: 
         new: 
           rhtml: {}
 
@@ -1125,7 +1125,7 @@ some-LAN:
             message_2: Firstname
             message_12: "no"
             message_3: Lastname
-            message_13: In these coridor are no students for atestation
+            message_13: In these specialization are no students for atestation
             message_4: Y.
             message_5: Tutor
             message_6: Form of study
@@ -1134,7 +1134,7 @@ some-LAN:
           rhtml: 
             message_8: Atestation
             message_9: Subjects
-            message_0: Listing coridors
+            message_0: Listing specializations
             message_1: Coridor|Name
             message_2: Coridor|Name english
             message_3: Coridor|Code
@@ -1145,10 +1145,10 @@ some-LAN:
         edit: 
           rhtml: {}
 
-        manage_coridor: 
+        manage_specialization: 
           rhtml: 
             message_0: Coridors list
-            message_1: No coridors found.
+            message_1: No specializations found.
         manage_edit: 
           rhtml: 
             message_0: Coridor
@@ -1161,7 +1161,7 @@ some-LAN:
         add_subject: 
           rhtml: {}
 
-        _coridor_subject: 
+        _specialization_subject: 
           rhtml: {}
 
         _view: 
@@ -1835,7 +1835,7 @@ some-LAN:
         edit: 
           rhtml: {}
 
-        _coridor: 
+        _specialization: 
           rhtml: {}
 
       exam_terms: 
@@ -1869,7 +1869,7 @@ some-LAN:
             message_10: member
             message_1: room
             message_2: Chairman of commission
-            message_3: coridor
+            message_3: specialization
             message_4: member
             message_5: member
             message_6: member
@@ -1903,7 +1903,7 @@ some-LAN:
           rhtml: 
             message_18: order all
             message_8: filter
-            message_9: paginated list sorted by coridor is displayed after click
+            message_9: paginated list sorted by specialization is displayed after click
             message_20: There are no candidates in your selection
             message_19: switch on paginating after click on one way of sorting
             message_0: by corridor
@@ -1917,7 +1917,7 @@ some-LAN:
             message_4: paginated list of ready candidates is displayed after click
             message_14: switch off paginating after click on one way of sorting
             message_5: paginated list of invited candidates is displayed after click
-            message_15: list on 1 page sorted by coridor is displayed after click
+            message_15: list on 1 page sorted by specialization is displayed after click
             message_6: paginated list of admited candidates is displayed after click
             message_16: list on 1 page sorted by lastname is displayed after click
             message_7: paginated list of enrolled candidates is displayed after click
@@ -1971,7 +1971,7 @@ some-LAN:
           rhtml: 
             message_0: Candidate
             message_1: birth number
-            message_2: coridor
+            message_2: specialization
             message_3: status
             message_4: study form
             message_5: Note
@@ -2054,7 +2054,7 @@ some-LAN:
         message_6: my studying
       documents: {}
 
-      coridors: {}
+      specializations: {}
 
       account: 
         message_0: Login to system

@@ -47,7 +47,7 @@ class IndexHash < ActionWebService::Struct
   member :year, :int
   member :study_form, :string
   member :atestation, :string
-  member :coridor, :string
+  member :specialization, :string
 end
 
 class LoginHash < ActionWebService::Struct
