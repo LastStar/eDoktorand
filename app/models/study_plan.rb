@@ -63,9 +63,9 @@ class StudyPlan < ActiveRecord::Base
     self.atested_for?(date)
   end
 
-  # returns true if tudy plan waits for actuala atestation
+  # returns true if study plan waits for actual atestation
   def waits_for_actual_atestation?
-    index.semester > 1 && !index.final_exam_passed? && 
+    !index.final_exam_passed? && 
       !atested_for?(Atestation.actual_for_faculty(index.student.faculty)) 
   end
 
