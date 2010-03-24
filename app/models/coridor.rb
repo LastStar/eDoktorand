@@ -16,6 +16,7 @@ class Coridor < ActiveRecord::Base
   validates_presence_of :faculty
 
   # returns array structured for html select
+  # FIXME remove from views/candidates/admit.rhtml move to candidates_helper
   def self.for_select(options = {})
     conditions = if options[:accredited]
                    ['accredited = 1']
@@ -39,12 +40,6 @@ class Coridor < ActiveRecord::Base
       [['---', '0']].concat(result)
     else
       result
-    end
-  end
-
-  def self.for_html_select(user)
-    if user.has_role?('faculty_secretary')
-      self.for_select(:faculty => user.person.faculty, :accredited => true)
     end
   end
 

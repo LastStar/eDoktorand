@@ -3,7 +3,7 @@
     <%= student.display_name %>&nbsp;&nbsp;
     <% exam = Exam.find_by_subject_id_and_index_id(probation_term.subject.id, student.index.id) %>
     <% ps = PlanSubject.find_for_exam(exam) %>
-    <% if exam %>
+    <% if exam.try(:passed?)%>
       <%= [t(:message_0, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml]), t(:message_1, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml])][exam.result] %>&nbsp;
       <%= exam.created_on.strftime("%d. %m. %Y") %>
     <% else %>
