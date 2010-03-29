@@ -6,21 +6,13 @@
 </div>
 <% end %>
 <h1><%= t(:message_0, :scope => [:txt, :view, :shared, :_student_detail, :rhtml]) %></h1>
-<%@links = student_action_links(index)%>
 <% unless @user.has_role?('student')%>
-  <% if @links != [] %>
-    <div class='links'>
-      <div class="left">
-        <%=t(:message_1, :scope => [:txt, :view, :shared, :_student_detail, :rhtml])%>:
-      </div>
-      <%= @links.join("&nbsp;&nbsp;") %>
+  <div class='links'>
+    <div class="left">
+      <%=t(:message_1, :scope => [:txt, :view, :shared, :_student_detail, :rhtml])%>:
     </div>
-    <!--<div  style="padding-left: 13px">-->
-    <!--  <li>-->
-    <!--    <div id='index_form_<%=index.id%>'>&nbsp;</div>-->
-    <!--  </li>-->
-    <!--</div>-->
-  <%end%>
+    <%= student_action_links(index).join("&nbsp;&nbsp;") %>
+  </div>
 <%end%>
 <br class="clear-all" /><br />
 <%= render(:partial => 'shared/personal_detail', :locals => {:index => index}) %>

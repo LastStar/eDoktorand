@@ -1624,6 +1624,7 @@ cs:
             message_14: SIDENT
             message_15: Konzultant
             message_16: Konto
+            message_17: Osobní údaje
             
         _final_exam: 
           rhtml: 

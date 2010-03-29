@@ -82,6 +82,7 @@ module CandidatesHelper
     
   end
 
+  # FIXME clean this mess vvvvvvv
   # prints sorting tags
   def sort_tags(action, args, titles, options = {})
     links = ''
@@ -97,7 +98,7 @@ module CandidatesHelper
       links << link_to(link, :action => action, :category => arg.first, 
       :prefix => params[:prefix])
     end
-    content_tag('div', options[:message] + links, :class => :links, :id=> 'list_all_links')
+    content_tag('div', options[:message] + links, :class => :links, :id=> 'list_all_links', :style => 'clear: both')
   end
 
   # prints ordered sorting tags
@@ -115,7 +116,7 @@ module CandidatesHelper
       links << link_to(link, :action => action, :filter => filtered_by, 
         :category => arg.first, :prefix => params[:prefix])
     end
-    content_tag('div', options[:message] + links, :class => :links, :id=> 'list_links')
+    content_tag('div', options[:message] + links, :class => :links, :id => 'list_links', :style => 'clear: both')
   end
 
   # prints sorting tags
@@ -143,7 +144,7 @@ module CandidatesHelper
       links << link_to("<span title='"+ titles[i] +"'>" + message + "</span>", :action => action, :filter => arg)
       i = i+1;
     end
-    content_tag('div', options[:message] + links, :class => :links)
+    content_tag('div', options[:message] + links, :class => :links, :style => 'clear: both')
   end
 
   # prints list links

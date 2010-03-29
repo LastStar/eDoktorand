@@ -38,12 +38,6 @@
                       "'>"  + switch_button(message) +"</span> ") %>
       </div>
   <% end %>
-  <%= view_filter_settings('filter_view') %>
-  <div id='candidates_delete' class='links' style="clear:right">
-    <%= link_to_remote(t(:message_21,
-      :scope => [:txt, :view, :candidates, :list, :rhtml]),
-      :url => {:action => 'delete_all'},
-      :update => "candidates_delete") %>
   <div id='candidates_delete' class='links' style="clear:right">
     <%=link_to_remote(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :url => { :action => 'delete_all_candidates'}, :method => :get, :update => "candidates_delete")%>
   </div>

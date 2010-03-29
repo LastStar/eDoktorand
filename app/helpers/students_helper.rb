@@ -20,7 +20,6 @@ module StudentsHelper
           links << cancel_scholarship_link(index)
         end
         if study_plan
-          links << study_plan_link(index)
           if study_plan.all_subjects_finished?
             if index.absolved?
               links << diploma_supplement_link(index)

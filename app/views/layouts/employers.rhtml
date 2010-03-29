@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= @htmllang %>" lang="<%= @htmllang %>">
 <head>
@@ -17,34 +16,30 @@
 		<div id="head">
   		<div id="logged-user">
         <% if @user %>
-          <%= @user.person.display_type + ":<strong> #{@user.person.display_name}" %></strong>
-      		<%= link_to_unless_current(image_tag('icons/door_in.png'), 
-                                          {:controller => 'account', 
-                                           :action => 'logout'}, 
-                                           :confirm =>  t(:message_29, :scope => [:txt, :helper, :application]) + 
-                                           ' ' + t(:message_30, :scope => [:txt, :helper, :application]) + '?')
-      		%>
+          <%= @user.person.display_type.strip %>: <strong><%=  @user.person.display_name %></strong>
       	<% end %>
-      	<%= print_link(image_tag('printer.png', :alt => t(:message_36, :scope => [:txt, :helper, :application])))%>
       </div>
   		<a href="/" class="home-btn"></a>
 		</div>
-		<% if @user %>
-		  <div id="main-menu">
-			<%= main_menu %>
-		  </div>
-		<% end %>
-		<%= image_tag "text_content_top.gif", :alt => "", :class => 'text-content-top-image' %>
-		<div id="text-content">
-      <%= @content_for_layout %>
+  <% if @user %>
+    <div id="main-menu">
+    <%= main_menu %>
     </div>
-
-    		<%= image_tag "text_content_bottom.gif", :alt => ""%>
-        <br class="clear-all">
-    	</div>
-    	<div id="foot">
-    	  <%= image_tag "ff3.gif", :alt => t(:message_0, :scope => [:txt, :view, :layouts, :employers, :rhtml]), :align => "left" %>
-    	  <span class="right"><%=mail_to ('helpdesk@czu.cz','HELPDESK')%>, +420 224384444</span>&nbsp;<a href='http://www.gravastar.cz'>GravaStar, s.r.o.</a></div>
+  <% end %>
+  <%= image_tag "text_content_top.gif", :alt => "", :class => 'text-content-top-image' %>
+  <div id="text-content">
+    <%= @content_for_layout %>
+  </div>
+    <%= image_tag "text_content_bottom.gif", :alt => ""%>
+    <br class="clear-all">
+  </div>
+    <div id="foot">
+      <%= image_tag "ff3.gif", :alt => t(:message_0, :scope => [:txt, :view, :layouts, :employers, :rhtml]), :align => "left" %>
+      <span class="right">
+        <%= mail_to('helpdesk@czu.cz','HELPDESK') %>, +420 224384444
+      </span>
+      &nbsp;<a href='http://www.poslednihvezda.cz'>Poslední hvězda, s.r.o.</a>
+    </div>
   </div>
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

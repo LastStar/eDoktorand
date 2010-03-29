@@ -1,6 +1,15 @@
 # TODO move all ids methods to corresponding models
 module ApplicationHelper
   
+  # prints link logout page
+  def logout_link
+    link_to_unless_current(image_tag('icons/door_in.png'), 
+                          {:controller => 'account', 
+                           :action => 'logout'}, 
+                           :confirm =>  t(:message_29, :scope => [:txt, :helper, :application]) + 
+                           ' ' + t(:message_30, :scope => [:txt, :helper, :application]) + '?')
+  end
+
   # TODO remove from form controller
   #translates country code 
   def translate_country(code)
@@ -171,7 +180,7 @@ module ApplicationHelper
 
   # prints main menu
   def main_menu
-    links = Array.new
+    links = []
     if @user.person.is_a?(Student) and @student 
       links << student_menu
     else
@@ -204,6 +213,7 @@ module ApplicationHelper
       links << link_to(t(:message_27, :scope => [:txt, :helper, :application]), 
                                       :controller => 'students')
     end
+    links << [print_link(image_tag('printer.png', :alt => t(:message_36, :scope => [:txt, :helper, :application]))), logout_link]
     links.flatten.join("\n")
   end
 

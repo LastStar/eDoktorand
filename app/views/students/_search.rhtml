@@ -1,6 +1,6 @@
 <% name_search_form do -%>
   <div id='name_search'>
-    <label for="search"><%= t(:message_0, :scope => [:txt, :view, :students, :_search, :rhtml]) %></label>
+    <label id='search-label' for="search"><%= t(:message_0, :scope => [:txt, :view, :students, :_search, :rhtml]) %></label>
     <%= tag('input', :name => 'search', :id => 'search_field', 'size' => '20') %>
     <%= submit_tag(t(:message_1, :scope => [:txt, :view, :students, :_search, :rhtml]), :id => 'search_submit', :class => 'button') %>
   </div>

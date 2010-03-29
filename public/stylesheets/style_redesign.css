@@ -113,7 +113,7 @@ body {
 	margin-left: 0px;
 	margin-top: 0px;
 	text-align: center;
-	padding: 4px 15px 0px 15px;
+	padding: 4px 13px 0px 13px;
 	height : 21px;
 	color : #000;
 	font-size : 110%;
@@ -522,6 +522,11 @@ table.embossed tr
 	margin:0px;
 }
 
+table.embossed th
+{
+	font-size: 120%;
+}
+
 table.embossed tr th
 {
 	padding: 5px 2px 5px 10px;
@@ -616,10 +621,11 @@ table.students-list tr th
 	background-position: left top;
 	background-repeat: repeat-x;
 	border-bottom: 1px solid #efefef;
+  font-size: 110%;
 }
 table.students-list tr td
 {
-	padding: 5px 2px 4px 4px;	
+	padding: 8px 0px 2px 8px;	
 	background-image: url(../images/td_bg.gif);
 	background-position: left top;
 	background-repeat: repeat-x;
@@ -801,3 +807,23 @@ a:link { color: #222222; text-decoration: underline;}
 a:active {color: #222222;text-decoration: underline;}
 a:visited {color: #222222;text-decoration: none;}
 a:hover {color: #D20403;text-decoration: underline;}
+td.action-link {
+  width: 8ex;
+  background: none !important;
+  border: none !important;
+}
+td.student_exception {
+  width: 4ex;
+  text-align: center;
+  font-size: 120%;
+  color: red;
+}
+
+#search-label {
+  font-size: 140%;
+  padding-left: 27%;
+}
+
+#login-form {
+  margin-left: 15ex;
+}
