@@ -18,6 +18,7 @@ class Student < Examinator
   def display_name
     disp_name = "#{lastname} #{firstname}"
     disp_name << (title_before ? ", %s" % title_before.label : '')
+    disp_name << (title_after ? " %s" % title_after.label : '')
     return disp_name
   end
 
