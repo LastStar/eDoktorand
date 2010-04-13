@@ -528,16 +528,27 @@ class CSVExporter
       end
     end
 
-    def export_year_exams_by_tutors(exam_date_from,exam_date_to)
-      @@mylog.info 'Exporting exams list by tutor from %s' %exam_date_from
-      outfile = File.open("exams_list_by_tutor_%s.csv" % exam_date_to, 'wb')
+    def exams_by_tutors(faculty, exam_date_from, exam_date_to)
+      @@mylog.info 'Exporting exams list by tutor from %s' % faculty.name
+      outfile = File.open("exams_tutors.csv", 'wb')
+      departments = Department.find_all_by_faculty_id(faculty.id)
+      @@mylog.info 'Departments %s' % departments
       CSV::Writer.generate(outfile, ';') do |csv|
-        Tutor.find(:all, :include => :tutorship, :order => 'tutorships.coridor_id, lastname').each do |tutor|
-              @@mylog.debug tutor.id.to_s + " " + tutor.display_name
-              exams = Exam.count(:conditions => ["passed_on > ? and passed_on < ? and (first_examinator_id = ? or second_examinator_id = ? or third_examinator_id = ? or fourth_examinator_id = ? )",
-                                                 exam_date_from, exam_date_to, tutor.id, tutor.id, tutor.id, tutor.id])          
-              @@mylog.debug exams
-              csv << [tutor.coridor.name, tutor.display_name, exams] if tutor.tutorship && exams > 0
+        examinators = Examinator.find(:all,
+                            :conditions => ["employments.unit_id in (?)",
+                                              departments],
+                            :include => :department_employment,
+                            :order => "employments.unit_id, people.lastname")
+        departments = examinators.group_by {|t| t.department}
+        departments.each do |department|
+          csv << [department.first.name]
+          @@mylog.info 'Department %s' % department.first.name
+          department.last.each do |examinator|
+            @@mylog.info 'examinator %s' % examinator.display_name
+            exams = Exam.count(:conditions => ["passed_on > ? and passed_on < ? and (first_examinator_id = ? or second_examinator_id = ? or third_examinator_id = ? or fourth_examinator_id = ? )",
+                                             exam_date_from, exam_date_to, examinator.id, examinator.id, examinator.id, examinator.id])          
+            csv << [examinator.display_name, exams] if exams > 0
+          end
         end
         outfile.close
       end
@@ -719,6 +730,25 @@ class CSVExporter
             csv << ['student', 'semestr', 'start', 'konec']
             faculty.last.each do |index|
               csv << [index.student.display_name, index.semester, index.enrolled_on.to_date, index.disert_theme.defense_passed_on.to_date]
+            end
+          end
+        end
+      end
+    end
+
+    # exports absolved students by faculties with study times
+    def absolved_students_with_address
+      is = Index.find_for(User.find_by_login('ticha'))
+      is = is.select {|i| i.absolved?}.sort {|i, j| i.semester <=> j.semester}
+      File.open('absolved_with_address.csv', 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          csv << ['absolvoval', 'titul pred', 'jmeno', 'prijmeni', 'titul za', 'ulice', 'mesto', 'psc']
+          is.each do |index|
+            s = index.student
+            if a = s.address and a.street
+              csv << [index.disert_theme.defense_passed_on.to_date,
+                s.title_before ? s.title_before.label : 'Ing.', s.firstname, s.lastname,
+                s.title_after ? s.title_after.label : '', a.street + " " + (a.desc_number or a.orient_number or ''), a.city, a.zip]
             end
           end
         end
