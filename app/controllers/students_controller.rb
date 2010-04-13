@@ -151,6 +151,7 @@ class StudentsController < ApplicationController
   end
 
   # methods for editing personal details
+  # TODO cleanup this mess vvvvvvvv
   def edit_email
     @student = Student.find(params[:id], :include => :index)
     @index = @student.index
@@ -173,16 +174,12 @@ class StudentsController < ApplicationController
     @lastname = @index.student.lastname
     @title_before_id = @index.student.title_before_id
     @title_after_id = @index.student.title_after_id
-    
   end
 
   def save_display_name
     @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
-    @student.update_attribute(:firstname, params[:student][:firstname])
-    @student.update_attribute(:lastname, params[:student][:lastname])
-    @student.update_attribute(:title_before_id, params[:student][:title_before_id])
-    @student.update_attribute(:title_after_id, params[:student][:title_after_id])
+    @student.update_attributes(params[:student])
   end
 
   def edit_phone
