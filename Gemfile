@@ -3,7 +3,7 @@ source 'http://gemcutter.org'
 
 gem 'rails', '3.0.0.beta3'
 
-gem "mysql"
+gem "ruby-mysql", :require => 'mysql'
 gem "log4r"
 gem "hpricot"
 gem "ruby-net-ldap", :require => "net/ldap"
