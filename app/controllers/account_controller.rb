@@ -1,4 +1,3 @@
-# encoding: utf-8
 class AccountController < ApplicationController
   include LoginSystem
   layout  'employers'
@@ -8,7 +7,7 @@ class AccountController < ApplicationController
 
   def login
     @title = t(:message_0, :scope => [:txt, :controller, :account])
-    if request.method == :post
+    if request.method == 'POST'
       if session[:user] = User.authenticate(params[:user_login], params[:user_password])
         redirect_back_or_default welcome_url
       else
