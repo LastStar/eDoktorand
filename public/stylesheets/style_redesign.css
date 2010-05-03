@@ -58,10 +58,7 @@ body {
 	padding-top: 3px;
 	margin-left:auto;
 	margin-right:auto;
-	background-image: url(../images/gradient_bg_28.gif);
-	background-position: left top;
-	background-repeat: repeat-y;
-	font-size: 90%;
+	font-size: 80%;
 }
 
 #head
@@ -478,12 +475,10 @@ table{
 	border-collapse:separate;
 	font-size: 100%;
 }
-td{
+td {
 	padding : 1px 3px 1px 3px;
 	border : none;
 	text-align: left;
-	background-color: #ffffff;
-
 }
 td.td-head
 {
@@ -530,7 +525,6 @@ table.embossed th
 table.embossed tr th
 {
 	padding: 5px 2px 5px 10px;
-	background-image: url(../images/btn_bg_07.gif);
 	background-position: left top;
 	background-repeat: repeat-x;
 	border-bottom: 1px solid #efefef;	
@@ -556,7 +550,6 @@ table.students-list tr.form-line td div,table.embossed tr.form-line td div {
 table.embossed tr td
 {
 	padding: 5px 2px 4px 4px;	
-	background-image: url(../images/td_bg.gif);
 	background-position: left top;
 	background-repeat: repeat-x;
 	border-bottom: 1px solid #EFEFEF;
@@ -577,13 +570,8 @@ table.embossed tr td.orange {
 table.embossed td a {
   margin-left: 0px;
 	padding: 1px 5px 2px 5px;
-	font-weight: normal;
-	color: white;
+	font-weight: bold;
 	text-decoration: none;
-	background-image: url(../images/students_line_actions_bg.gif);
-	background-position: left bottom;
-	background-repeat: repeat-x;
-	text-shadow: -1px -1px 0 #666;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	letter-spacing: .5px;
@@ -614,23 +602,21 @@ table.students-list
 table.students-list tr
 {
 	margin: 0px;
+	border-bottom: 1px solid #EFEFEF;
+	border-right: 1px solid #efefef;
+  background-color: white;
+}
+
+table.students-list tr.alternate {
+  background-color: #C1CA9F;
 }
 table.students-list tr th
 {
-	background-image: url(../images/btn_bg_07.gif);
-	background-position: left top;
-	background-repeat: repeat-x;
-	border-bottom: 1px solid #efefef;
   font-size: 110%;
 }
 table.students-list tr td
 {
 	padding: 8px 0px 2px 8px;	
-	background-image: url(../images/td_bg.gif);
-	background-position: left top;
-	background-repeat: repeat-x;
-	border-bottom: 1px solid #EFEFEF;
-	border-right: 1px solid #efefef;
 }
 
 table.students-list tr td.students-line-action
@@ -638,9 +624,6 @@ table.students-list tr td.students-line-action
 	text-align: right;
 	padding: 2px 5px 2px 5px;
 	border:none;
-	background-image: url(../images/students_line_actions_bg.gif);
-	background-position: right top;
-	background-repeat: no-repeat;
 }
 
 table.students-list tr td.students-line-action a
@@ -681,10 +664,6 @@ table.student-detail tr td img
 }
 table.student-detail tr th
 {
-	/*background-image: url../images/td_bg.gif);
-	background-position: left top;
-	background-repeat: repeat-x;
-*/
 	background-color: #efefef;
 	border-bottom: 1px solid #ffffff;
 }

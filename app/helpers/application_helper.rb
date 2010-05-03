@@ -193,10 +193,10 @@ module ApplicationHelper
           links << link_to(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams')
           links << link_to(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list')
           links << prepare_scholarship_link
-          links << link_to(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators') {}
-          links << link_to(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements') {}
-          links << link_to(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors') {}
-          links << link_to(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'specializations') {}
+          links << link_to(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators')
+          links << link_to(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements')
+          links << link_to(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors')
+          links << link_to(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'specializations')
       elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
         if @user.has_role?('board_chairman')
           links << link_to(t(:message_23, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname')

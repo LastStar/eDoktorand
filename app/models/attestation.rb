@@ -21,11 +21,11 @@ class Attestation < Approval
     def actual_for_faculty(faculty)
       faculty = faculty.id if faculty.is_a? Faculty
       year = Date.today.year
-      if Date.today <= (date = Date.civil(year, FACULTY_CFG[faculty]['atestation_month'], 
-      FACULTY_CFG[faculty]['atestation_day']))
+      month = FACULTY_CFG[faculty]['attestation_month']
+      day = FACULTY_CFG[faculty]['attestation_day']
+      if Date.today <= (date = Date.civil(year, month, day))
         year -= 1
-        return Date.civil(year, FACULTY_CFG[faculty]['atestation_month'], 
-        FACULTY_CFG[faculty]['atestation_day'])
+        return Date.civil(year, month, day)
       end
       return date
     end

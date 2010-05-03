@@ -429,7 +429,7 @@ class Index < ActiveRecord::Base
   def self.find_with_all_included(idx)
     inc = [:study_plan, :disert_theme, :interrupts, :specialization, :study, :student,
           :tutor, :department, :approval]
-    return self.find(idx, :include => inc, :order => 'interrupts.created_on desc')
+    return self.find(idx, :include => inc, :order => 'study_interrupts.created_on desc')
   end
 
   # returns status of index

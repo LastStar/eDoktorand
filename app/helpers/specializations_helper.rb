@@ -11,7 +11,7 @@ module SpecializationsHelper
                                           t(:message_1, :scope => [:txt, :helper, :specializations])],
                           :url => {:action => 'add_subject', :type => type},
                           :update => type.underscore.pluralize,
-                          :position => :bottom})
+                          :position => :bottom)
        
   end
 
