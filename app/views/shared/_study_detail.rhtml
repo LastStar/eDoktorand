@@ -3,7 +3,7 @@
   <li class="noborder"><h5><%= t(:message_0, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
   <li>
     <div class='info'>
-      <%= index.finished_on.strftime('%d. %m. %Y') %>
+      <%= raw index.finished_on.strftime('%d. %m. %Y') %>
     </div>
     <b><%= t(:message_1, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>: </b>
   </li>

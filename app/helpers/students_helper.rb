@@ -118,28 +118,17 @@ module StudentsHelper
             :id => index})
   end
 
-  # prints confirm interrupt link
-  def confirm_interrupt_link(index)
-    link_to_remote(t(:message_7, :scope => [:txt, :helper, :students]),
-                   :url => {:action => 'time_form',
-                           :controller => 'students',
-                           :form_action => 'confirm',
-                           :form_controller => 'study_interrupts',
-                           :id => index,
-                           :date => index.interrupt.start_on},
-                   :update => "index_form_#{index.id}")
-  end
-
-  # prints end interrupt link
-  def end_interrupt_link(index)
-    link_to_remote(t(:message_8, :scope => [:txt, :helper, :students]),
-                   :url => {:action => 'time_form',
-                           :controller => 'students',
-                           :form_action => 'end',
-                           :form_controller => 'study_interrupts',
-                           :id => index,
-                           :date => index.interrupt.end_on},
-                   :update => "index_form_#{index.id}")
+  # prints end interupt link
+  def end_interupt_link(index)
+    link_to(t(:message_8, :scope => [:txt, :helper, :students]),
+           :url => {:action => 'time_form',
+                   :controller => 'students',
+                   :form_action => 'end',
+                   :form_controller => 'study_interupts',
+                   :id => index,
+                   :date => index.interrupt.start_on},
+           :update => "index_form_#{index.id}",
+           :remote => true)
   end
 
   # prints link to create new study plan
@@ -162,11 +151,11 @@ module StudentsHelper
 
   # prints lint to interrupt study
   def confirm_interrupt_link(index)
-    link_to_remote(t(:message_11, :scope => [:txt, :helper, :students]),
-                   {:url => {:action => 'confirm',
-                             :controller => 'study_interrupts',
-                             :id => index},
-                    :complete => evaluate_remote_response})
+    link_to(t(:message_11, :scope => [:txt, :helper, :students]),
+                   {:action => 'confirm',
+                    :controller => 'study_interrupts',
+                    :id => index},
+                    :remote => true)
   end
 
   # prints link to approve scholarship
@@ -240,9 +229,9 @@ module StudentsHelper
   # prints link to student detail
   def student_link(index)
     link_to(index.student.display_name,
-            :url => {:action => 'show',
-                    :controller => 'students',
-                    :id => index},
+            :action => 'show',
+            :controller => 'students',
+            :id => index},
             :loading => visual_effect(:pulsate, "index_line_#{index.id}"),
             :remote => true)
   end

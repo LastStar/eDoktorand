@@ -13,33 +13,33 @@
   end %>
 <tr class='student-line <%= index_line.status_class %> <%= @alternate ? 'alternate' : '' %>' id='index_line_<%= index_line.id %>'>
   <% if @user.has_one_of_roles?(['faculty_secretary', 'dean']) %>
-  <td class='student_exception'>
-    <%= student_exception(index_line) %>
+  <td class='index-tags'>
+    <%= raw index_tags(index_line) %>
   </td>
   <% end %>
   <th class="printable no-rounded">
-   <%= student_link(index_line) %>
+   <%= raw student_link(index_line) %>
   </th>
-  <td><%= index_line.status %></td>
+  <td><%= raw index_line.status %></td>
 <% if index_line.absolved? %>
-  <td><%= index_line.disert_theme.defense_passed_on.strftime("%d. %m. %Y") %></td>
+  <td><%= raw index_line.disert_theme.defense_passed_on.strftime("%d. %m. %Y") %></td>
 <% elsif index_line.interrupted? %>
-  <td><%= interrupt_to_info(index_line) %></td>
+  <td><%= raw interrupt_to_info(index_line) %></td>
 <% elsif study_plan  %>
-  <td><%= study_plan.status  %></td>
+  <td><%= raw study_plan.status  %></td>
 <% else %>
   <td>&nbsp;</td>
 <% end %>
-  <td><%= index_line.year %>.<%= t(:message_0, :scope => [:txt, :view, :students, :_index, :rhtml]) %></td>
-  <td><%= index_line.study.name %></td>
+  <td><%= raw index_line.year %>.<%= t(:message_0, :scope => [:txt, :view, :students, :_index, :rhtml]) %></td>
+  <td><%= raw index_line.study.name %></td>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector']) %>
-  <td><%= index_line.department.short_name %></td>
-  <td><%= index_line.specialization.code %></td>
+  <td><%= raw index_line.department.short_name %></td>
+  <td><%= raw index_line.specialization.code %></td>
 <% end %>
 <% unless links.empty? %>
   <td class='action-link'>
-    <%= link_to_show_actions(index_line) %>
-    <%= link_to_hide_actions(index_line) %>
+    <%= raw link_to_show_actions(index_line) %>
+    <%= raw link_to_hide_actions(index_line) %>
   </td>
 <% end %>
 </tr>

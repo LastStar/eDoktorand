@@ -284,12 +284,14 @@ module ApplicationHelper
   
   # prints attestation link
   def attestation_link(study_plan)
-    link_to_remote(t(:message_38, :scope => [:txt, :helper, :application]), 
-                   {:url => {:controller => 'study_plans', :action => 'attest',
-                             :id => study_plan},
-                   :loading => 
-                    "$('attestation_link').innerHTML = '%s'" % t(:message_39, :scope => [:txt, :helper, :application])},
-      {:id => "attestation_link"})
+    link_to(t(:message_38, :scope => [:txt, :helper, :application]), 
+           {:controller => 'study_plans',
+            :action => 'attest',
+            :id => study_plan,
+            :remote => true},
+           {:id => "attestation_link", 
+            :onclick => "$('attestation_link').innerHTML = '%s'" %
+              t(:message_39, :scope => [:txt, :helper, :application])})
   end
   
   # prints approval link
@@ -414,13 +416,14 @@ module ApplicationHelper
     label = object.send(name)
     label = label.send(meth) if label && meth
     cntr = object.class.to_s.underscore.pluralize
-    link_to_remote("#{changer_image(name)}#{label}",
-                   {:update => name,
-                   :after => loader_image("#{name}_changer"),
-                   :url => {:controller => cntr, 
-                           :action => "edit_#{name}", :id => object.id}},
-                   :id => "#{name}_link",
-                   :class => 'change_field')
+    link_to("#{changer_image(name)}#{label}",
+           {:update => name,
+           :after => loader_image("#{name}_changer"),
+           :controller => cntr, 
+           :action => "edit_#{name}",
+           :id => object.id},
+           :id => "#{name}_link",
+           :class => 'change_field')
   end
 
   def contact_link(index)
@@ -612,12 +615,11 @@ module ApplicationHelper
   # returns form for approving
   def approve_document_form(document, action, &proc)
     controller = document.class.to_s.underscore.pluralize
-    form_remote_tag(:url => {:controller => controller,
-                            :action => action,
-                            :id => document},
-                    :loading => "$('submit-button').value = '%s'" % t(:message_65, :scope => [:txt, :helper, :application]),
-                    :complete => evaluate_remote_response,
-                    &proc)
+    form_tag({:controller => controller,
+             :action => action,
+             :id => document},
+             {:remote => true},
+            &proc)
 
   end
   

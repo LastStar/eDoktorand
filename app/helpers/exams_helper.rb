@@ -31,11 +31,11 @@ module ExamsHelper
   end
   
   # prints link to exam edit
-  def edit_link(exam)
-      link_to_remote(t(:message_12, :scope => [:txt, :helper, :exams]), :url => {:action => 'edit',
-        :id => exam.id}, 
-                    :loading => visual_effect(:pulsate, "edit_link_%i" % exam.id)) 
-  end
+  # def edit_link(exam)
+      # link_to_remote(t(:message_12, :scope => [:txt, :helper, :exams]), :url => {:action => 'edit',
+        # :id => exam.id}, 
+                    # :loading => visual_effect(:pulsate, "edit_link_%i" % exam.id)) 
+  # end
   
     
   # prints link to abandon exam 

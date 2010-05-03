@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   include LoginSystem
   helper :study_plans
   layout 'employers',
-        :except => [:edit_citizenship, :edit_display_name, :edit_phone,
+        :except => [:show, :edit_citizenship, :edit_display_name, :edit_phone,
                     :edit_email, :edit_birthname, :edit_consultant, :edit_tutor,
                     :edit_street, :edit_zip, :edit_city, :edit_desc_number,
                     :save_street, :save_city, :save_zip, :save_desc_number,
