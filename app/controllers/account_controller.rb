@@ -1,3 +1,4 @@
+# encoding: utf-8
 class AccountController < ApplicationController
   include LoginSystem
   layout  'employers'
@@ -50,6 +51,7 @@ class AccountController < ApplicationController
 
   private
   # sets title of the controller
+  # TODO redone with I18n translate
   def set_title
     @title = 'Systém e-doktorand'
   end
