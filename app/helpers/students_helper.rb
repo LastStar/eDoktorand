@@ -154,12 +154,11 @@ module StudentsHelper
 
   # prints lint to interrupt study
   def confirm_interupt_link(index)
-    link_to(t(:message_11, :scope => [:txt, :helper, :students]),
-           {:url => {:action => 'confirm',
-                     :controller => 'study_interrupts',
-                     :id => index},
-            :complete => evaluate_remote_response},
-           :remote => true)
+    link_to_remote(t(:message_11, :scope => [:txt, :helper, :students]),
+                   {:url => {:action => 'confirm',
+                             :controller => 'study_interrupts',
+                             :id => index},
+                   :complete => evaluate_remote_response})
   end
 
   # prints link to approve scholarship
