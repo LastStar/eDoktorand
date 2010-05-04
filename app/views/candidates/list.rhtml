@@ -7,12 +7,12 @@
                       :message => t(:message_8, :scope => [:txt, :view, :candidates, :list, :rhtml]))  %>
   <% end %>  
   <% if session[:list_mode] == 'list' %>
-    <%message = image_tag("pages.png")%>
+    <% message = image_tag("pages.png") %>
      <div id='list'>
   <% else %>
-    <%message = image_tag("pages.png")%>
+    <% message = image_tag("pages.png") %>
     <div id='list' style='display: none'>   
-  <%end%>
+  <% end %>
   <%titles = [t(:message_9, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_10, :scope => [:txt, :view, :candidates, :list, :rhtml]),
               t(:message_11, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
   <% if params[:action] == 'list_admission_ready'%>
@@ -23,8 +23,8 @@
                            switch_button_all(message) +"</span> ") %>
   <%end%>
     </div>
-  <%titles = [t(:message_15, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_16, :scope => [:txt, :view, :candidates, :list, :rhtml]),
-              t(:message_17, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
+  <% titles = [t(:message_15, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_16, :scope => [:txt, :view, :candidates, :list, :rhtml]),
+              t(:message_17, :scope => [:txt, :view, :candidates, :list, :rhtml])] %>
   <% if params[:action] != 'list_admission_ready'%>
     <% if session[:list_mode] == 'list' %>
       <%message = image_tag("page.png")%>
@@ -39,7 +39,7 @@
       </div>
   <% end %>
   <div id='candidates_delete' class='links' style="clear:right">
-    <%=link_to_remote(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :url => { :action => 'delete_all_candidates'}, :method => :get, :update => "candidates_delete")%>
+    <%= link_to_remote(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :url => { :action => 'delete_all_candidates'}, :method => :get, :update => "candidates_delete") %>
   </div>
 <% end %>
 
@@ -50,7 +50,6 @@
 <br class="clear-all" />
 <% unless @candidates.empty? %>
   <%= render(:partial => 'list') %>
-
   <div class='links'>
     <%= list_links %>                     
   </div>

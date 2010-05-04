@@ -192,6 +192,7 @@ module ApplicationHelper
           links << link_to(t(:message_18, :scope => [:txt, :helper, :application]), :controller => 'exam_terms') 
           links << link_to(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams')
           links << link_to(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list')
+          links << link_to(t(:message_70, :scope => [:txt, :helper, :application]), :controller => 'defenses', :action => 'list')
           links << prepare_scholarship_link
           links << link_to(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators')
           links << link_to(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements')
@@ -629,8 +630,8 @@ module ApplicationHelper
                     &proc)
 
   end
-private
   
+  private
   def loader_image(field)
     "Element.replace('#{field}', '#{image_tag('loader.gif', :size => '12x12')}')"
   end

@@ -1,52 +1,48 @@
 <% @ids = [] %>
-<table id='candidates_list' class="embossed students-list">
+<table id='candidates_list' class="embossed full-list">
   <tbody>
   <% for candidate in @candidates  %>
     <tr>
-      <th colspan="2">
-        <b>
-          <%= candidate.display_name %>
-          <%= t(:message_0, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>&nbsp;<%= candidate.birth_number %>
-          &nbsp;&nbsp;&nbsp;
-          <%= status_tag(candidate) %>
-          <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
-              <%= ready_link(candidate) %>
-              <%= invite_link(candidate) %>
-              <%= admit_link(candidate) %>
-              <%= enroll_link(candidate) %>
-            <% end %>
-            <% if @user.has_role?('faculty_secretary') %>
-              <%= admit_for_revocation_tag(candidate)%>
-            <%end%>
-        </b>
+      <th>
+        <%= candidate.display_name %>
+        <%= t(:message_0, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>&nbsp;<%= candidate.birth_number %>
+        &nbsp;&nbsp;&nbsp;
+        <%= status_tag(candidate) %>
+        <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
+          <%= ready_link(candidate) %>
+          <%= invite_link(candidate) %>
+          <%= admit_link(candidate) %>
+          <%= enroll_link(candidate) %>
+        <% end %>
+        <% if @user.has_role?('faculty_secretary') %>
+          <%= admit_for_revocation_tag(candidate)%>
+        <%end%>
       </th>
-    </tr>
-    <tr>
-      <td>
-        <%= t(:message_3, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>: <%= candidate.specialization.name %><br />
+      <td rowspan='3' class="right">
+      <% unless @user.has_role?('department_secretary') %>
+        <span id='<%= dom_id(candidate) %>'>
+          <% if !candidate.foreign_pay %>
+            <%= foreign_pay_link(candidate) %>
+          <% else %>
+            <%= t(:message_6, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>
+          <% end %>
+        </span>
+        <%= link_to 'detail', :action => 'show', :id => candidate %>
+      <%end%>
+      <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
+        <%= link_to t(:message_1, :scope => [:txt, :view, :candidates, :_list, :rhtml]), :action => 'edit', :id => candidate %>
+        <%= link_to t(:message_2, :scope => [:txt, :view, :candidates, :_list, :rhtml]), {:action => 'delete', :id => candidate}, :confirm =>  t(:message_7, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>
+      <% end %>
+      <%= contact_toggle_link(candidate) %>
+      <% unless @user.has_role?('board_chairman') %>
+        <%= history_toggle_link(candidate) %>
+      <% end %>
       </td>
     </tr>
     <tr>
       <td>
-        <%= t(:message_4, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>: <%= candidate.study.name %><br />
-      </td>
-      <td class="right">
-        
-            <% unless @user.has_role?('department_secretary') %>
-    	  <span id='foreign<%=candidate.id%>'><%= (candidate.foreign_pay != true)? link_to_remote(t(:message_5, :scope => [:txt, :view, :candidates, :_list, :rhtml]), :url => { :action => 'set_foreign_payer', :id => candidate.id}, :method => :get, :update => "foreign#{candidate.id}") : t(:message_6, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>
-              </span>
-              <%= link_to 'detail', :action => 'show', :id => candidate%>
-            <%end%>
-            <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
-              <%= link_to t(:message_1, :scope => [:txt, :view, :candidates, :_list, :rhtml]), :action => 'edit', :id => candidate %>
-              <%= link_to t(:message_2, :scope => [:txt, :view, :candidates, :_list, :rhtml]), {:action => 'delete', :id => candidate}, :confirm =>  t(:message_7, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>
-            <% end %>
-            <%=contact_toggle_link(candidate)%>
-           <% unless @user.has_role?('board_chairman') %>
-            <%=history_toggle_link(candidate)%>
-           <% end %>
-        
-        
+        <strong><%= candidate.study.name.capitalize %></strong> <%= t(:message_4, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %> 
+        <%= t(:message_3, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %> <strong><%= candidate.specialization.name %></strong>
       </td>
     </tr>
     <tr>
@@ -59,7 +55,6 @@
         <%= render(:partial => "history", :locals => {:candidate => candidate}) %>
       </td>
     </tr>
-    <tr class='line'></tr>
     <% @ids << candidate.id %>
   <% end %>
   </tbody>

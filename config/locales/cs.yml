@@ -333,6 +333,7 @@ cs:
         dean: děkan
         tutor: školitel
         leader: vedoucí katedry
+        message_70: obhajoby
         message_69: žádosti
         message_68: SDZ
         message_67: zkoušející
@@ -2203,8 +2204,8 @@ cs:
             message_0: r.č.
             message_1: opravit
             message_2: smazat
-            message_3: obor
-            message_4: forma studia
+            message_3: v oboru
+            message_4: studium
             message_5: nastav C.P.
             message_6: cizí plátce
             message_7: Jste si jistý?

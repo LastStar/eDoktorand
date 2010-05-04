@@ -245,5 +245,13 @@ module CandidatesHelper
       :order => [:day, :month, :year],
       :use_month_numbers => true
   end
+
+  # foreign payer link
+  def foreign_pay_link(candidate)
+    link_to_remote(t(:message_5, :scope => [:txt, :view, :candidates, :_list, :rhtml]),
+                   :url => { :action => 'set_foreign_payer', :id => candidate.id},
+                   :method => :get,
+                   :update => dom_id(candidate)) 
+  end
 end
 

@@ -27,7 +27,7 @@ class CandidatesController < ApplicationController
     session[:back_page] = 'list'
     conditions = Candidate.prepare_conditions(params, @faculty, @user)
     @candidates = Candidate.paginate :page => params[:page],
-                                     :per_page => 7,
+                                     :per_page => 13,
                                      :order => session[:category],
                                      :conditions => conditions
     session[:current_page_backward] = params[:page]

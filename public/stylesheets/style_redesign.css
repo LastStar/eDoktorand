@@ -110,7 +110,7 @@ body {
 	margin-left: 0px;
 	margin-top: 0px;
 	text-align: center;
-	padding: 4px 13px 0px 13px;
+	padding: 4px 10px 0px 13px;
 	height : 21px;
 	color : #000;
 	font-size : 110%;
@@ -805,4 +805,14 @@ td.student_exception {
 
 #login-form {
   margin-left: 15ex;
+}
+
+.three-quarter-list {
+  width: 75%;
+  margin: auto;
+}
+
+.full-list {
+  width: 95%;
+  margin: auto;
 }
