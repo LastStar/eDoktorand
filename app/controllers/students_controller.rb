@@ -325,7 +325,7 @@ class StudentsController < ApplicationController
   # prepares order variable for listin 
   # TODO create some better mechanism to do ordering
   def prepare_order
-    @order = 'people.lastname, study_plans.created_on, interrupts.created_on'
+    @order = 'people.lastname, study_plans.created_on, study_interrupts.created_on'
   end
   
   # prepares filter variable

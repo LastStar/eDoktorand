@@ -156,7 +156,7 @@ module StudentsHelper
   def confirm_interupt_link(index)
     link_to(t(:message_11, :scope => [:txt, :helper, :students]),
            {:url => {:action => 'confirm',
-                     :controller => 'interrupts',
+                     :controller => 'study_interrupts',
                      :id => index},
             :complete => evaluate_remote_response},
            :remote => true)

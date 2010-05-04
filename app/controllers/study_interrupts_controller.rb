@@ -28,7 +28,7 @@ class StudyInterruptsController < ApplicationController
     @interrupt.save
     if @user.has_role?('student')
       Notifications::deliver_interrupt_alert(@interrupt.index.study_plan,@interrupt)
-      redirect_to(:controller => 'interrupts', :action => 'print_interrupt',
+      redirect_to(:controller => 'study_interrupts', :action => 'print_interrupt',
                   :id => @interrupt.id)
     else
       if @user.has_role?('faculty_secretary')

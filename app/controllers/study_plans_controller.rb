@@ -197,7 +197,7 @@ class StudyPlansController < ApplicationController
         @disert_theme.save
         if @user.person.is_a?(Student)
           if session[:interrupt]
-            redirect_to :controller => 'interrupts', :action => 'finish'
+            redirect_to :controller => 'study_interrupts', :action => 'finish'
           else
             redirect_to :controller => 'study_plans'
           end

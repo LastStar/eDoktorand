@@ -169,7 +169,7 @@ module StudyPlansHelper
       links << change_link(student)
     end
     unless student.index.interrupted?
-      links << link_to_unless_current(t(:message_13, :scope => [:txt, :helper, :plans]), :controller => 'interrupts'){}
+      links << link_to_unless_current(t(:message_13, :scope => [:txt, :helper, :plans]), :controller => 'study_interrupts'){}
     end
     return links.join('&nbsp;')
   end
