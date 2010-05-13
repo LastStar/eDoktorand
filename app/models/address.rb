@@ -9,13 +9,15 @@ class Address < ActiveRecord::Base
     return [[self.street, self.desc_number].join(' '), self.city, self.zip].join(', ')
   end
 
-  def self.create_habitat_for(student)
-    student = student.id if student.is_a? Student
-    create(:student_id => student, :address_type_id => 1)
-  end
+  class << self 
+    def create_habitat_for(student)
+      student = student.id if student.is_a? Student
+      create(:student_id => student, :address_type_id => 1)
+    end
 
-  def self.new_habitat_for(student)
-    student = student.id if student.is_a? Student
-    new(:student_id => student, :address_type_id => 1)
+    def new_habitat_for(student)
+      student = student.id if student.is_a? Student
+      new(:student_id => student, :address_type_id => 1)
+    end
   end
 end

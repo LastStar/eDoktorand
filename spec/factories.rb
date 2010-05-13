@@ -57,3 +57,11 @@ Factory.define :department do |department|
   department.name_english "department en"
   department.association :faculty
 end
+
+Factory.define :address do |address|
+  address.association :student
+  address.street 'Street'
+  address.desc_number '8'
+  address.city 'City'
+  address.zip '11111'
+end
