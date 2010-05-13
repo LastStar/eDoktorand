@@ -71,7 +71,7 @@
 
 <% if study_plan ||= index.study_plan %>
   <% if study_plan.attestation  %>
-    <ul id='atestation' class='bordered half right'>
+    <ul id='attestation' class='bordered half right'>
       <li class="noborder"><h5><%= t(:message_12, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
       <%= print_statements(study_plan.attestation) %>
       <%= attestation_detail(study_plan) %>
