@@ -6,8 +6,9 @@ describe Index do
     before :each do
       Timecop.freeze(Time.zone.local(2010, 1, 2))
       @faculty = Factory(:faculty)
-      FACULTY_CFG[@faculty.id] = {'atestation_month' => 3,
-                                  'atestation_day' => 15}
+      Object.send(:remove_const, :FACULTY_CFG)
+      FACULTY_CFG = {@faculty.id => {'attestation_month' => 3,
+                                     'attestation_day' => 15}}
     end
 
     it "should compute date of next atestation" do

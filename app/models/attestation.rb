@@ -4,20 +4,20 @@ class Attestation < Approval
   belongs_to :study_plan, :foreign_key => 'document_id'
 
   class << self
-    # returns date of actual atestation on faculty
+    # returns date of actual attestation on faculty
     def next_for_faculty(faculty)
       faculty = faculty.id if faculty.is_a? Faculty
       year = Date.today.year
-      if Date.today > (date = Date.civil(year, FACULTY_CFG[faculty]['atestation_month'], 
-      FACULTY_CFG[faculty]['atestation_day']))
+      if Date.today > (date = Date.civil(year, FACULTY_CFG[faculty]['attestation_month'], 
+      FACULTY_CFG[faculty]['attestation_day']))
         year += 1
-        return Date.civil(year, FACULTY_CFG[faculty]['atestation_month'], 
-        FACULTY_CFG[faculty]['atestation_day'])
+        return Date.civil(year, FACULTY_CFG[faculty]['attestation_month'], 
+        FACULTY_CFG[faculty]['attestation_day'])
       end
       return date
     end
 
-    # returns date of actual atestation on faculty
+    # returns date of actual attestation on faculty
     def actual_for_faculty(faculty)
       faculty = faculty.id if faculty.is_a? Faculty
       year = Date.today.year
