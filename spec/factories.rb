@@ -42,7 +42,7 @@ end
 Factory.define :specialization do |specialization|
   specialization.name 'specialization'
   specialization.name_english 'en specialization'
-  specialization.code 'COR'
+  specialization.code 'SPE'
   specialization.association :faculty, :factory => :faculty
 end
 
