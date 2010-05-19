@@ -10,6 +10,8 @@ gem "ruby-net-ldap", :require => "net/ldap"
 gem "will_paginate", '3.0.pre'
 gem "mail"
 
+gem "mongrel", '1.2.0.pre2', :group => :development
+
 gem "test-unit", '2.0.7', :group => :test
 gem "rspec-core", :group => :test
 gem "rspec-expectations", :group => :test
