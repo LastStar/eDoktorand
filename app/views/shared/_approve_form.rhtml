@@ -8,7 +8,7 @@
   <label for="statement_result"><%= t(:message_1, :scope => [:txt, :view, :shared, :_approve_form, :rhtml]) %></label>
   <%= select 'statement', 'result', options %><br/>
   <%= hidden_field 'statement', 'person_id' %>
-  <%= hidden_field 'statement', 'type' %>
+  <%= hidden_field 'statement', 'class' %>
 </fieldset>
   <%= submit_tag t(:message_2, :scope => [:txt, :view, :shared, :_approve_form, :rhtml]), :id => 'submit-button', :class => 'button' %>
 <% end %>

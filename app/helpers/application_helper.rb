@@ -238,11 +238,11 @@ module ApplicationHelper
 
   def attribute_line(object, name, meth = nil)
     if @user.has_one_of_roles?(['faculty_secretary', 'student'])
-      long_info_helper(edit_link(object, name, meth), :id => name)
+      raw long_info_helper(edit_link(object, name, meth), :id => name)
     else
       label = object.send(name)
       label = label.send(meth) if label && meth
-      long_info_helper(label)
+      raw long_info_helper(label)
     end
   end
 
@@ -356,7 +356,7 @@ module ApplicationHelper
     end
   end
   
-  # prints small info div 
+  # prints long info div 
   # TODO redone with div on end
   def long_info_helper(content, options={})
     if options[:class]
@@ -364,7 +364,7 @@ module ApplicationHelper
     else
       options[:class] = 'long_info'
     end
-    content_tag('div', content, options)
+    raw content_tag('div', content, options)
   end
   
   # prints div tag
@@ -416,12 +416,13 @@ module ApplicationHelper
     label = object.send(name)
     label = label.send(meth) if label && meth
     cntr = object.class.to_s.underscore.pluralize
-    link_to("#{changer_image(name)}#{label}",
+    raw link_to(changer_image(name) + label,
            {:update => name,
            :after => loader_image("#{name}_changer"),
            :controller => cntr, 
            :action => "edit_#{name}",
            :id => object.id},
+           :remote => true,
            :id => "#{name}_link",
            :class => 'change_field')
   end
@@ -552,9 +553,9 @@ module ApplicationHelper
 
   def student_name_line(student)
     if @user.has_role?('faculty_secretary')
-      attribute_line(student, :display_name) + t(:message_56, :scope => [:txt, :helper, :application]) + ':'
+      raw attribute_line(student, :display_name) + t(:message_56, :scope => [:txt, :helper, :application]) + ':'
     else
-      long_info_helper(student.display_name, :class => 'printable') + 
+      raw long_info_helper(student.display_name, :class => 'printable') + 
         t(:message_57, :scope => [:txt, :helper, :application]) + ':'
     end
   end
@@ -568,10 +569,10 @@ module ApplicationHelper
       attribute_line(index, :tutor, :display_name) + t(:message_58, :scope => [:txt, :helper, :application]) + ':'
     else
       if index.tutor == nil
-        long_info_helper(t(:message_59, :scope => [:txt, :helper, :application]), :class => 'printable') + 
+        raw long_info_helper(t(:message_59, :scope => [:txt, :helper, :application]), :class => 'printable') + 
           t(:message_60, :scope => [:txt, :helper, :application]) + ':'        
       else
-        long_info_helper(index.tutor.display_name, :class => 'printable') + 
+        raw long_info_helper(index.tutor.display_name, :class => 'printable') + 
           t(:message_61, :scope => [:txt, :helper, :application]) + ':'
       end
     end
@@ -646,6 +647,6 @@ module ApplicationHelper
   end
 
   def changer_image(name)
-    image_tag('change.png', :id => "#{name}_changer")
+    raw image_tag('change.png', :id => "#{name}_changer")
   end
 end

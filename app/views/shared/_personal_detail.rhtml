@@ -11,10 +11,10 @@
   <%= raw birth_number_line(index.student) %>
   <%= raw birth_place_line(index.student) %>
   <li>
-    <%= raw attribute_line(index.student, :email, :name) %><%=t(:message_7, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+    <%= raw attribute_line(index.student, :email) %><%=t(:message_7, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
-    <%= raw attribute_line(index.student, :phone, :name) %><%=t(:message_8, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+    <%= raw attribute_line(index.student, :phone) %><%=t(:message_8, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
     <%= raw "#{long_info_helper(index.student.uic) if index.student.uic}#{t(:message_13, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>
@@ -36,23 +36,23 @@
   </li>
   <% if FACULTY_CFG[index.faculty.id] && FACULTY_CFG[index.faculty.id]['consultant'] %>
     <li class='printable'>
-    <%= attribute_line(index, :consultant) %><%= t(:message_15, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+    <%= raw attribute_line(index, :consultant) %><%= t(:message_15, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
     </li>
   <% end %>
   <li>
-    <%= "#{long_info_helper(index.semester.to_s.concat('.'))}#{t(:semester, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>
+    <%= raw long_info_helper(index.semester.to_s.concat('.')) + t(:message_3, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
-    <%= "#{long_info_helper(index.year.to_s.concat('.'))}#{t(:message_3, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>
+    <%= raw long_info_helper(index.year.to_s.concat('.')) + t(:message_3, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
-    <%= "#{long_info_helper(index.enrolled_on.strftime('%d. %m. %Y'))}#{t(:message_4, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>
+    <%= raw long_info_helper(index.enrolled_on.strftime('%d. %m. %Y')) + t(:message_4, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li class='nonprintable'>
-    <%= attribute_line(index.student, :account) %><%=t(:message_16, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+    <%= attribute_line(index.student, :account) %><%= t(:message_16, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
-    <%= attribute_line(index.student, :citizenship) %><%=t(:message_5, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])%>:
+    <%= attribute_line(index.student, :citizenship) %><%= t(:message_5, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])%>:
   </li>
 
 </ul>
