@@ -9,3 +9,4 @@ public/pdf/methodology
 db/*.sqlite3
 log/*.log
 tmp/**/*
+rerun.txt

@@ -4,6 +4,7 @@ source 'http://gemcutter.org'
 gem 'rails', '3.0.0.beta3'
 
 gem "ruby-mysql", :require => 'mysql'
+gem "sqlite3"
 gem "log4r"
 gem "hpricot"
 gem "ruby-net-ldap", :require => "net/ldap"
@@ -12,7 +13,19 @@ gem "mail"
 
 gem "mongrel", '1.2.0.pre2', :group => :development
 
-gem "test-unit", '2.0.7', :group => :test
-gem "rspec-core", :group => :test
-gem "rspec-expectations", :group => :test
-gem "rspec-mocks", :group => :test
+group :test do
+  gem "test-unit", '2.0.7'
+  gem "rspec", ">=2.0.0.beta.8"
+  gem "rspec-core", ">=2.0.0.beta.8"
+  gem "rspec-expectations", ">=2.0.0.beta.8"
+  gem "rspec-mocks", ">=2.0.0.beta.8"
+  gem 'rspec-rails', ">=2.0.0.beta.8"
+  gem "capybara", :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'database_cleaner', :git => 'git://github.com/bmabey/database_cleaner.git'
+  gem 'cucumber-rails', :git => "git://github.com/aslakhellesoy/cucumber-rails.git"
+  gem "cucumber"
+  gem 'spork'
+  gem 'launchy'
+  gem "factory_girl", ">= 1.2.4"
+end
+
