@@ -4,6 +4,7 @@ class ChangeApprovalTypes < ActiveRecord::Migration
     Approval.update_all("type='DisertThemeApproval'", "type='DisertThemeApprovement'")
     Approval.update_all("type='FinalExamApproval'", "type='FinalExamApprovement'")
     Approval.update_all("type='ScholarshipApproval'", "type='ScholarshipApprovement'")
+    Approval.update_all("type='StudyInterruptApproval'", "type='InteruptApprovement'")
     Approval.update_all("type='Attestation'", "type='Atestation'")
   end
 

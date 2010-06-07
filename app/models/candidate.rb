@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'genderize'
 
 class Candidate < ActiveRecord::Base
@@ -322,15 +323,15 @@ class Candidate < ActiveRecord::Base
 
   def self.filter_conditions(filter)
     case filter
-    when 'unready':' AND ready_on IS NULL'
-    when 'ready': ' AND ready_on IS NOT NULL AND
+    when 'unready' then ' AND ready_on IS NULL'
+    when 'ready' then  ' AND ready_on IS NOT NULL AND
       invited_on IS NULL'
-    when 'invited': ' AND invited_on IS NOT NULL AND
+    when 'invited' then  ' AND invited_on IS NOT NULL AND
       admited_on IS NULL'
-    when 'admited': ' AND admited_on IS NOT NULL AND
+    when 'admited' then  ' AND admited_on IS NOT NULL AND
       enrolled_on IS NULL'
-    when 'enrolled': ' AND enrolled_on IS NOT NULL'
-    when nil: ''
+    when 'enrolled' then  ' AND enrolled_on IS NOT NULL'
+    when nil then  ''
     end
   end
 

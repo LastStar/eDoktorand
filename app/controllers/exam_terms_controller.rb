@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ExamTermsController < ApplicationController
   include LoginSystem
   layout 'employers'
@@ -19,6 +20,7 @@ class ExamTermsController < ApplicationController
   end
 
   def new
+    # TODO remove to i18n
     @title = 'Vytváření komise příjimacích zkoušek'
     @tutors = Tutor.find_for(@user)
     @exam_term = AdmissionTerm.new

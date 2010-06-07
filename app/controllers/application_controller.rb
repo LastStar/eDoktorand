@@ -2,11 +2,9 @@
 class ApplicationController < ActionController::Base
   include LoginSystem
 
-  filter_parameter_logging :password
-  # protect_from_forgery 
-
   before_filter :utf8_locale
   # enable or disable enroll candidates in application
+  # TODO this must go!
   $enroll = 'disable'
 
   # sets utf8 for db and locale to cs_CZ

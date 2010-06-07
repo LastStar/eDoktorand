@@ -1,7 +1,7 @@
 <tr id='index_menu_<%= index_line.id %>_tr' style='display: none'>
   <td colspan='9' id='index_menu_<%= index_line.id %>_td' class="right">
     <div class="menu">
-      <%= links = student_action_links(index_line).join('&nbsp;') %>
+      <%= raw links = student_action_links(index_line).join('&nbsp;') %>
     </div>
   </td>
 </tr>

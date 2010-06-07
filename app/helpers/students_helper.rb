@@ -1,3 +1,4 @@
+# encoding: utf-8
 module StudentsHelper
 
   def admin_edit_mail_link(index)
@@ -51,9 +52,8 @@ module StudentsHelper
 
   #prints link to function witch show student line menu
   def link_to_show_actions(index)
-    link_to('&uarr;' + t(:message_1, :scope => [:txt, :helper, :students]),
-            '#',
-      :onclick => update_page do |page|
+    raw link_to('↑' + t(:message_1, :scope => [:txt, :helper, :students]),
+            '#', :onclick => update_page do |page|
                     page.show "index_menu_#{index.id}_tr"
                     page.show "index_form_#{index.id}_tr"
                     page.show "hide_action_#{index.id}"
@@ -65,8 +65,8 @@ module StudentsHelper
 
   #prints link to function witch hide student line menu
   def link_to_hide_actions(index)
-    link_to('&darr;' + t(:message_2, :scope => [:txt, :helper, :students]),
-            nil,
+    link_to('↓' + t(:message_2, :scope => [:txt, :helper, :students]),
+            '#',
             :onclick => update_page do |page|
               page.hide "index_menu_#{index.id}_tr"
               page.hide "index_form_#{index.id}_tr"

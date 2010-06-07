@@ -5,7 +5,7 @@ class StudyInterrupt < ActiveRecord::Base
 
   belongs_to :index
   has_one :approval,
-          :class_name => 'InterruptApproval',
+          :class_name => 'StudyInterruptApproval',
           :foreign_key => 'document_id'
 
   validates_presence_of :index

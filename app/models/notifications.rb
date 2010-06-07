@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Notifications < ActionMailer::Base
   def invite_candidate(candidate, faculty, sent_at = Time.now)
     @subject = I18n::t(:message_0, :scope => [:txt, :model, :notifications])

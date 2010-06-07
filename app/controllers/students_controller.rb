@@ -101,7 +101,9 @@ class StudentsController < ApplicationController
   # filters students
   def filter
     do_filter
-    render(:partial => 'list')
+    respond_to do |format|
+      format.js {render(:partial => 'list')}
+    end
   end
   
   # multiple filtering

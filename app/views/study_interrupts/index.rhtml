@@ -1,16 +1,16 @@
 <h5><%= t(:message_0, :scope => [:txt, :view, :interrupts, :index, :rhtml]) %></h5>
 <h6><%= @student.display_name %></h6>
-<% form_tag(:action => 'create') do -%>
-<fieldset>
-  <label><%= "#{t(:message_1, :scope => [:txt, :view, :interrupts, :index, :rhtml])}:" %></label>
-  <%= start_date_select %><br /> 
+<%= form_tag(:action => 'create') do -%>
+  <fieldset>
+    <label><%= "#{t(:message_1, :scope => [:txt, :view, :interrupts, :index, :rhtml])}:" %></label>
+    <%= start_date_select %><br /> 
     <label><%= t(:message_2, :scope => [:txt, :view, :interrupts, :index, :rhtml]) + " (" + t(:message_3, :scope => [:txt, :view, :interrupts, :index, :rhtml]) + "):" %></label>
-  <%= select('interrupt', 'duration', (1..24)) %><br /> 
-  <label><%= "#{t(:message_4, :scope => [:txt, :view, :interrupts, :index, :rhtml])}:" %></label> 
-  <%= text_area('interrupt', 'note') %><br /> 
-  <label><%= "#{t(:message_5, :scope => [:txt, :view, :interrupts, :index, :rhtml])}:" %></label>
-  <%= select('interrupt', 'plan_changed', yes_no_options) %><br />
-  <%= hidden_field('interrupt', 'index_id') %>
-</fieldset>
-<%= submit_tag(t(:message_6, :scope => [:txt, :view, :interrupts, :index, :rhtml])) %>
+    <%= select('interrupt', 'duration', (1..24)) %><br /> 
+    <label><%= "#{t(:message_4, :scope => [:txt, :view, :interrupts, :index, :rhtml])}:" %></label> 
+    <%= text_area('interrupt', 'note') %><br /> 
+    <label><%= "#{t(:message_5, :scope => [:txt, :view, :interrupts, :index, :rhtml])}:" %></label>
+    <%= select('interrupt', 'plan_changed', yes_no_options) %><br />
+    <%= hidden_field('interrupt', 'index_id') %>
+  </fieldset>
+  <%= submit_tag(t(:message_6, :scope => [:txt, :view, :interrupts, :index, :rhtml])) %>
 <% end %>

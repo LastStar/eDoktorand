@@ -1,4 +1,4 @@
-<% name_search_form do -%>
+<%= name_search_form do -%>
   <div id='name_search'>
     <label id='search-label' for="search"><%= t(:message_0, :scope => [:txt, :view, :students, :_search, :rhtml]) %></label>
     <%= tag('input', :name => 'search', :id => 'search_field', 'size' => '20') %>
@@ -6,29 +6,29 @@
   </div>
 <% end %>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector'])  %>
-<% detail_filter_form do -%>
-<fieldset>
-  <legend><%= detail_filter_link %>&nbsp;<%= spinner_image %></legend>
-  <div id='detail_info' class='form_info'><%= t(:message_2, :scope => [:txt, :view, :students, :_search, :rhtml]) %></div>
-  <div id='detail_search'  class='form' style='display: none'>
-    <div class='filter-line'>
-<% if @user.has_role?('vicerector') %>
-    <%= faculty_select %><br/>
+  <%= detail_filter_form do -%>
+  <fieldset>
+    <legend><%= detail_filter_link %>&nbsp;<%= spinner_image %></legend>
+    <div id='detail_info' class='form_info'><%= t(:message_2, :scope => [:txt, :view, :students, :_search, :rhtml]) %></div>
+    <div id='detail_search'  class='form' style='display: none'>
+      <div class='filter-line'>
+    <% if @user.has_role?('vicerector') %>
+      <%= faculty_select %><br/>
+      </div>
+      <div>
+    <% end %>
+      <%= year_select %>&nbsp;
+      <%= form_select %>
+      <%= study_status_select %>&nbsp;
+      <%= status_select %>&nbsp;
+      </div>
+      <div class='filter-line'>
+      <%= department_select %>&nbsp;
+      <%= specialization_select %>
+      </div>
+      <%= submit_tag(t(:message_3, :scope => [:txt, :view, :students, :_search, :rhtml])) %>
     </div>
-    <div>
+  </fieldset>
+  <% end %>
 <% end %>
-    <%= year_select %>&nbsp;
-    <%= form_select %>
-    <%= study_status_select %>&nbsp;
-    <%= status_select %>&nbsp;
-    </div>
-    <div class='filter-line'>
-    <%= department_select %>&nbsp;
-    <%= specialization_select %>
-    </div>
-    <%= submit_tag(t(:message_3, :scope => [:txt, :view, :students, :_search, :rhtml])) %>
-  </div>
-</fieldset>
-<% end %>
-<% end%>
 
