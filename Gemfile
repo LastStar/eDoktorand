@@ -26,6 +26,7 @@ group :test do
   gem "cucumber"
   gem 'spork'
   gem 'launchy'
-  gem "factory_girl", ">= 1.2.4"
+  gem "factory_girl", :git => "git://github.com/szimek/factory_girl.git", :branch => "rails3"
+  gem 'timecop'
 end
 

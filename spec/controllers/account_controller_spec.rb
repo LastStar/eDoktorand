@@ -7,7 +7,7 @@ describe AccountController do
       get :login
       response.should be_success
       response.should render_template 'login'
-      assigns[:actualities].should == []
+      assigns['actualities'].should == []
     end
   end
 
@@ -24,7 +24,7 @@ describe AccountController do
       User.should_receive(:authenticate).with('user', 'passwd').and_return(nil)
       post :login, {:user_login => 'user', :user_password => 'passwd'}
       response.should render_template 'login'
-      assigns[:actualities].should == []
+      assigns['actualities'].should == []
     end
   end
 

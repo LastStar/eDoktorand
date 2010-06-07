@@ -1,3 +1,4 @@
+# encoding: utf-8
 Factory.define :user do |user|
   user.login 'anonymous'
   user.association :person, :factory => :person
