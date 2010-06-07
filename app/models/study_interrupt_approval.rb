@@ -1,4 +1,4 @@
-class InterruptApproval < Approval
+ class StudyInterruptApproval < Approval
   
   belongs_to :interrupt, :foreign_key => 'document_id', :class_name => 'StudyInterrupt'
   # returns index of interrupt
