@@ -4,7 +4,7 @@ Feature: New feature
   needs page for it
 
   Scenario: Choosing specialization
-    Given there is 'Science' faculty with 'High' and 'Low' specializations
-    And I visit '/form' 
-    Then I should see 'Science faculty'
+    Given there is "Science" faculty with "High" and "Low" specializations
+    And I am on the admission page
+    Then I should see "Science"
 

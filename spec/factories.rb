@@ -51,6 +51,7 @@ Factory.define :specialization do |specialization|
   specialization.name_english 'en specialization'
   specialization.code 'SPE'
   specialization.msmt_code 'MSPE'
+  specialization.accredited true
   specialization.association :faculty, :factory => :faculty
   specialization.association :program
 end
