@@ -38,12 +38,12 @@ class Candidate < ActiveRecord::Base
 
   #TODO rename with tt
   #TODO spec it
-  named_scope :admited, :conditions => 'admited_on is not null'
-  named_scope :finished, :conditions => 'finished_on is not null'
-  named_scope :finished_before, lambda{|date|
+  scope :admited, :conditions => 'admited_on is not null'
+  scope :finished, :conditions => 'finished_on is not null'
+  scope :finished_before, lambda{|date|
     {:conditions => ['finished_on < ?', date]}
   }
-  named_scope :from_faculty, lambda {|faculty|
+  scope :from_faculty, lambda {|faculty|
     {:conditions => ['specialization_id in (?)', faculty.specializations]}
   }
 
