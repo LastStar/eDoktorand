@@ -1,6 +1,6 @@
 <%= render :partial => "error" %>
 <%= render :partial => "notice" %>
-<% form_tag :action => @action do -%>
+<%= form_tag :action => @action do -%>
   <fieldset id='personal'>
     <legend><%= t(:personal_details, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
     <%= hidden_field 'candidate', 'id' %>

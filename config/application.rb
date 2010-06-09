@@ -45,5 +45,6 @@ module Phdstudy
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.secret_token = '800891362fc8e36f6b5ee5ddeddd4dc54998e9f378039259423ed05a7e5d31cf3ff2fe3521af14384308aa4fbc9c354bd57d9d6ac5b2995e5083f7d815930c9f'
   end
 end

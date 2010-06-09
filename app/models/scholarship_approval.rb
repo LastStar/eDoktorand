@@ -3,7 +3,7 @@ class ScholarshipApproval < Approval
   
   HALF_MONTH = 1.month / 4
 
-  named_scope :last_weeks, :conditions => ['created_on > ?', 7.days.ago], :order => 'created_on desc'
+  scope :last_weeks, :conditions => ['created_on > ?', 7.days.ago], :order => 'created_on desc'
 
   belongs_to :dean_statement
 

@@ -52,8 +52,10 @@ class Candidate < ActiveRecord::Base
     self.birth_number.strip!
   end
 
+  validate :different_languages
+
   # validates if languages are not same
-  def validate
+  def different_languages
     errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
     errors.add_to_base(I18n::t(:message_20, :scope => [:txt, :model, :candidate])) if
     !finished? && invited?
@@ -90,7 +92,7 @@ class Candidate < ActiveRecord::Base
     self.update_attribute(:finished_on, Time.now)
   end
 
-  # checks if candidate is allready finished
+  # checks if candidate is already finished
   def finished?
     return !self.finished_on.nil?
   end
