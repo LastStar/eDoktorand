@@ -6,8 +6,9 @@ class DisertTheme < ActiveRecord::Base
 
   before_create :set_actual
   after_create :copy_methodology
+  validate :final_exam_first
 
-  def validate
+  def final_exam_first
     if defense_passed_on && !index.final_exam_passed?
       errors.add(:defense_passed_on, t(:message_1, :scope => [:txt, :model, :theme]))
     end

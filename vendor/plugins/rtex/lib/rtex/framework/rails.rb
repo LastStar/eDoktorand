@@ -5,7 +5,7 @@ module RTeX
     module Rails #:nodoc:
       
       def self.setup
-        RTeX::Document.options[:tempdir] = File.expand_path(File.join(RAILS_ROOT, 'tmp'))
+        RTeX::Document.options[:tempdir] = File.expand_path(File.join(::Rails.root, 'tmp'))
         if ActionView::Base.respond_to?(:register_template_handler)
           ActionView::Base.register_template_handler(:rtex, TemplateHandler)
         else

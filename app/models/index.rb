@@ -87,6 +87,8 @@ class Index < ActiveRecord::Base
   scope :passed_final_exam, where("final_exam_passed_on is not null")
   scope :absolved, includes(:disert_theme).where("disert_themes.defense_passed_on is not null")
 
+  validate :correct_acount_number, :all_exams_finished
+
   # return last interrupt
   def interrupt
     @interrupt ||= interrupts.sort{|x, y| x.created_on <=> y.created_on}.last
@@ -126,7 +128,14 @@ class Index < ActiveRecord::Base
     return false
   end
 
-  def validate
+  def all_exams_finished
+    if final_exam_passed_on && !study_plan.all_subjects_finished?
+      errors.add(:final_exam_passed_on, I18n.t(:message_5, :scope => [:txt, :model, :index]))
+    end
+  end
+
+  # validates account number correctness
+  def correct_acount_number
     if account_number
       if account_number_prefix
         pre_sum = 0
@@ -148,9 +157,6 @@ class Index < ActiveRecord::Base
           errors.add(:account_number, I18n.t(:message_4, :scope => [:txt, :model, :index]))
         end
       end
-    end
-    if final_exam_passed_on && !study_plan.all_subjects_finished?
-      errors.add(:final_exam_passed_on, I18n.t(:message_5, :scope => [:txt, :model, :index]))
     end
   end
 
