@@ -1,6 +1,9 @@
-Given /^there is "(.+)" faculty with "(.+)" and "(.+)" specializations$/ do |faculty, first_specialization, second_specialization|
-  faculty = Factory(:faculty, :name => faculty)
-  faculty.specializations << Factory(:specialization, :name => first_specialization)
-  faculty.specializations << Factory(:specialization, :name => second_specialization)
+Given /^there is "(.+)" faculty with all set$/ do |faculty|
+  @faculty = Factory(:faculty, :name => faculty)
+  first_specialization = Factory(:specialization, :name => "Low", :faculty => @faculty)
+  Factory(:specialization, :name => "High", :faculty => @faculty)
+  Factory(:title)
+  Factory(:language_subject, :specialization => first_specialization)
 end
+
 

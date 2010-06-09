@@ -7,10 +7,7 @@
   <% for f in @faculties do %>
   <% next if (specializations = f.accredited_specializations).empty? %>
   <li>
-    <a href='#' onClick="Element.toggle($('<%= f.id %>'))"><%= f.name %></a><br /> 
-    <% unless f.documents.empty? %>
-    <b><%= t(:message_1, :scope => [:txt, :view, :form, :index, :rhtml]) %>:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
-    <% end %>
+  <a href='#' onClick="Element.toggle($('<%= f.id %>'))"><%= f.name %></a><br /> 
     <ol style="display:none" id="<%= f.id %>">
     <% for c in specializations do %>
       <li>

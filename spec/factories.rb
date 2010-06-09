@@ -104,3 +104,18 @@ Factory.define :candidate do |candidate|
   candidate.sex 'M'
   candidate.foreign_pay false
 end
+
+Factory.define :subject do |subject|
+  subject.label 'Subject'
+  subject.code 'CDE'
+end
+
+Factory.define :language_subject do |language_subject|
+  language_subject.association :subject
+  language_subject.association :specialization
+  language_subject.type 'LanguageSubject'
+end
+
+Factory.define :title do |title|
+  title.label "Ing."
+end

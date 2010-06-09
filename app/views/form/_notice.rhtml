@@ -1,6 +1,6 @@
 <% if flash[:notice] %>
-<div id='notice'>
-<%= t(:message_0, :scope => [:txt, :view, :form, :_notice, :rhtml]) %>:
-<%= flash[:notice] %>
-</div>
+  <div id='notice'>
+    <%= t(:message_0, :scope => [:txt, :view, :form, :_notice, :rhtml]) %>:
+    <%= flash[:notice] %>
+  </div>
 <% end %>

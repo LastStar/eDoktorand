@@ -31,7 +31,7 @@ describe "Study Interrupt" do
     it "should compute current duration to finished on if finished" do
       @interrupt.finish!
       Timecop.freeze(Time.zone.local(2010, 3, 2))
-      @interrupt.current_duration.should == 31.days.to_i
+      @interrupt.current_duration.should > 30.days.to_i
     end
 
     it "should return planned duration if not finished and and end on in past" do

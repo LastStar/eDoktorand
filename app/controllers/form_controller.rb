@@ -94,6 +94,7 @@ class FormController < ApplicationController
       c.specialization = Specialization.find(params[:id])
       c.state = 'CZ'
       c.address_state = 'CZ'
+      # TODO refactor to some config
       c.university = t(:message_14, :scope => [:txt, :controller, :form])
       c.faculty = c.specialization.faculty.name
       language1_id = 1133 if c.admitting_faculty == 3
