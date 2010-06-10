@@ -106,8 +106,8 @@ Factory.define :candidate do |candidate|
 end
 
 Factory.define :subject do |subject|
-  subject.label 'Subject'
-  subject.code 'CDE'
+  subject.sequence(:label) {|n| "Subject#{n}" }
+  subject.sequence(:code) {|n| "CD#{n}"}
 end
 
 Factory.define :language_subject do |language_subject|
