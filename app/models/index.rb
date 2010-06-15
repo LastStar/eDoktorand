@@ -71,7 +71,7 @@ class Index < ActiveRecord::Base
 
   # return last interrupt
   def interrupt
-    interrupts.last
+    interrupts.first
   end
 
   # returns describe_error for bad index
