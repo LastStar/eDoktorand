@@ -107,7 +107,7 @@ module StudentsHelper
   def interrupt_link(index)
     link_to(t(:message_6, :scope => [:txt, :helper, :students]),
             {:action => 'index', 
-            :controller => 'interrupts',
+            :controller => 'study_interrupts',
             :id => index})
   end
 
