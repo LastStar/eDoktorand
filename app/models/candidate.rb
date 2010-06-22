@@ -42,7 +42,7 @@ class Candidate < ActiveRecord::Base
   scope :finished_before, lambda{|date|
     {:conditions => ['finished_on < ?', date]}
   }
-  scope :from_faculty, lambda {|faculty|
+  scope :for_faculty, lambda {|faculty|
     where(['specialization_id in (?)', faculty.specializations])
   }
   scope :unready, finished.where('ready_on is null')

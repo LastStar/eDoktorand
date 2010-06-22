@@ -76,15 +76,15 @@ describe "Candidate" do
       Candidate.destroy_all
     end
     it "should return candidates for faculty" do
-      candidates = Candidate.from_faculty(@faculty)
+      candidates = Candidate.for_faculty(@faculty)
       candidates.should_not be_empty
-      candidates.from_faculty(@faculty).count.should < Candidate.all.count
+      candidates.for_faculty(@faculty).count.should < Candidate.all.count
     end
     it "should return all finished candidates" do
       Candidate.finished.should == [@finished, @ready, @invited, @admitted]
     end
     it "should combine finished and from faculty" do
-      Candidate.from_faculty(@faculty).finished.should == [@finished]
+      Candidate.for_faculty(@faculty).finished.should == [@finished]
     end
     it "should return all unready candidates" do
       Candidate.unready.should == [@finished]
