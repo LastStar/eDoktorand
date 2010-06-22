@@ -2,7 +2,11 @@ class Notifications < ActionMailer::Base
   def invite_candidate(candidate, faculty, sent_at = Time.now)
     @subject = I18n::t(:message_0, :scope => [:txt, :model, :notifications])
     @body['display_name'] = candidate.display_name
-    @body['address'] = candidate.address
+    @body['address'] = if @candidate.postal_city.empty?
+                         candidate.address
+                       else
+                         candidate.postal_address
+                       end
     @body['specialization'] = candidate.specialization.name
     @body['exam_term'] = candidate.specialization.exam_term
     @body['sent_on'] = sent_at
