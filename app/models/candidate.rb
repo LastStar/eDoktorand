@@ -35,16 +35,22 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :number, :message => I18n::t(:message_12, :scope => [:txt, :model, :candidate])
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i,
     :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
+  validate :different_languages
+  validate :check_cs_birth_number
 
-  #TODO rename with tt
-  #TODO spec it
-  scope :admited, :conditions => 'admited_on is not null'
   scope :finished, :conditions => 'finished_on is not null'
   scope :finished_before, lambda{|date|
     {:conditions => ['finished_on < ?', date]}
   }
   scope :from_faculty, lambda {|faculty|
-    {:conditions => ['specialization_id in (?)', faculty.specializations]}
+    where(['specialization_id in (?)', faculty.specializations])
+  }
+  scope :unready, finished.where('ready_on is null')
+  scope :ready,  finished.where('ready_on is not null')
+  scope :invited, ready.where('invited_on is not null')
+  scope :admitted, invited.where('admited_on is not null')
+  scope :for_specialization, lambda {|specialization|
+    where(['specialization_id = ?', specialization])
   }
 
   # strips all spaces from birth number
@@ -65,7 +71,8 @@ class Candidate < ActiveRecord::Base
     !admited? && enrolled?
   end
 
-  def validate_on_create
+  # checks if birth number for czech and slovak in right format
+  def check_cs_birth_number
     if state == "CZ" || state == "SK"
       unless (birth_number =~ /\d+/) && (birth_number.to_i.remainder(11) == 0)
         errors.add(:birth_number, I18n::t(:message_23, :scope => [:txt, :model, :candidate]))
@@ -272,35 +279,6 @@ class Candidate < ActiveRecord::Base
     specialization.faculty
   end
 
-  # prepares conditions for paginate functions
-  def self.prepare_conditions(options, faculty, user)
-    if user.has_role?('vicerector')
-      conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
-                    Specialization.find(:all)]
-    else
-      conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
-                    faculty.specializations]
-    end
-    conditions.first << filter_conditions(options['filter'])
-    if options['specialization']
-       conditions.first << " AND specialization_id = #{options['specialization']}"
-    end
-    return conditions
-  end
-
-  # returns all candidates by filter
-  def self.find_all_finished(options, faculty)
-    conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
-                  faculty.specializations]
-    conditions.first << filter_conditions(options['filter'])
-    if options['specialization']
-      conditions.first << " AND specialization_id = ?"
-      conditions << options['specialization']
-    end
-    Candidate.find(:all, :order => options['category'],
-      :conditions => conditions)
-  end
-
   def self.find_all_finished_by_session_category(options, faculty, category, user)
     if user.has_role?('vicerector')
       conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
@@ -314,8 +292,7 @@ class Candidate < ActiveRecord::Base
       conditions.first << " AND specialization_id = ?"
       conditions << options['specialization']
     end
-    Candidate.find(:all, :order => category,
-      :conditions => conditions)
+    Candidate.find(:all, :order => category, :conditions => conditions)
   end
 
   # delete candidate, fill finished_on to nil
@@ -325,6 +302,7 @@ class Candidate < ActiveRecord::Base
 
   def self.filter_conditions(filter)
     case filter
+    when 'all' then ''
     when 'unready' then ' AND ready_on IS NULL'
     when 'ready' then  ' AND ready_on IS NOT NULL AND
       invited_on IS NULL'

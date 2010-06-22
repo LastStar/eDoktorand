@@ -1,7 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe Index do
-  #TODO test foreign candidates
+describe "Candidate" do
+  before(:all) do
+    @faculty = Faculty.make
+    @specialization = Specialization.make(:faculty => @faculty)
+  end
+
   it 'enrolls a return new student with index' do
     mock_uic_getter = mock(UicGetter)
     UicGetter.should_receive(:new).and_return(mock_uic_getter)
@@ -42,18 +46,61 @@ describe Index do
   end
 
   it "strips all spaces from birth number" do
-    candidate = Factory.build(:candidate, :birth_number => '7604242624 ')
+    candidate = Candidate.make(:birth_number => '7604242624 ')
     candidate.save
     candidate.reload
     candidate.birth_number.should == '7604242624'
   end
 
   it "toggles foreign payment" do
-    candidate = Factory(:candidate)
+    candidate = Candidate.make
     candidate.toggle_foreign_pay
     candidate.should be_foreign_pay
     candidate.toggle_foreign_pay
     candidate.should_not be_foreign_pay
+  end
+
+  context "Retrieving" do
+    before(:all) do
+      Candidate.make
+      @specialized = Candidate.make(:faculty => @faculty,
+                     :specialization => @specialization)
+      @finished = Candidate.make(:finished,
+                                 :faculty => @faculty,
+                                 :specialization => @specialization)
+      @ready = Candidate.make(:ready)
+      @invited = Candidate.make(:invited)
+      @admitted = Candidate.make(:admitted)
+    end
+    after(:all) do
+      Candidate.destroy_all
+    end
+    it "should return candidates for faculty" do
+      candidates = Candidate.from_faculty(@faculty)
+      candidates.should_not be_empty
+      candidates.from_faculty(@faculty).count.should < Candidate.all.count
+    end
+    it "should return all finished candidates" do
+      Candidate.finished.should == [@finished, @ready, @invited, @admitted]
+    end
+    it "should combine finished and from faculty" do
+      Candidate.from_faculty(@faculty).finished.should == [@finished]
+    end
+    it "should return all unready candidates" do
+      Candidate.unready.should == [@finished]
+    end
+    it "should return all ready candidates" do
+      Candidate.ready.should == [@ready, @invited, @admitted]
+    end
+    it "should return all invited candidates" do
+      Candidate.invited.should == [@invited, @admitted]
+    end
+    it "should return all admitted candidates" do
+      Candidate.admitted.should == [@admitted]
+    end
+    it "should return all for specialization" do
+      Candidate.for_specialization(@specialization).should == [@specialized, @finished]
+    end
   end
 end
 
