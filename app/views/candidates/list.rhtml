@@ -1,11 +1,7 @@
 <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
   <% sort_array = [['specialization_id', t(:message_0, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['lastname',
   t(:message_1, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['updated_on', t(:message_2, :scope => [:txt, :view, :candidates, :list, :rhtml])]] %>
-  <% if params[:action] != 'list_admission_ready'%>
-    <% titles = [t(:message_3, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_4, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_5, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_6, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_7, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
-    <%= filter_tags(:list, ['unready', 'ready', 'invited', 'admited', 'enrolled'], titles,
-                      :message => t(:message_8, :scope => [:txt, :view, :candidates, :list, :rhtml]))  %>
-  <% end %>  
+  <%= raw filter_tags  %>
   <% if session[:list_mode] == 'list' %>
     <% message = image_tag("pages.png") %>
      <div id='list'>
@@ -13,49 +9,39 @@
     <% message = image_tag("pages.png") %>
     <div id='list' style='display: none'>   
   <% end %>
-  <%titles = [t(:message_9, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_10, :scope => [:txt, :view, :candidates, :list, :rhtml]),
+  <% titles = [t(:message_9, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_10, :scope => [:txt, :view, :candidates, :list, :rhtml]),
               t(:message_11, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
-  <% if params[:action] == 'list_admission_ready'%>
-    <%= filtered_sort_tags(:list_admission_ready, sort_array, @filtered_by, titles, :message => t(:message_12, :scope => [:txt, :view, :candidates, :list, :rhtml])) %>    
-  <% else %>
-    <%= filtered_sort_tags(:list, sort_array, @filtered_by, titles,
-                           :message => t(:message_13, :scope => [:txt, :view, :candidates, :list, :rhtml]) + " <span title='"+ t(:message_14, :scope => [:txt, :view, :candidates, :list, :rhtml]) + "'>" +
-                           switch_button_all(message) +"</span> ") %>
-  <%end%>
     </div>
   <% titles = [t(:message_15, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_16, :scope => [:txt, :view, :candidates, :list, :rhtml]),
               t(:message_17, :scope => [:txt, :view, :candidates, :list, :rhtml])] %>
   <% if params[:action] != 'list_admission_ready'%>
     <% if session[:list_mode] == 'list' %>
-      <%message = image_tag("page.png")%>
+      <% message = image_tag("page.png") %>
       <div id='list_all' style='display: none'>
     <% else %>
-      <%message = image_tag("page.png")%>
+      <% message = image_tag("page.png") %>
       <div id='list_all'>
     <%end%>   
-        <%= sort_tags(:list_all, sort_array, titles, :message => t(:message_18, :scope => [:txt, :view, :candidates, :list, :rhtml]) + " <span title='"+
+        <%= raw sort_tags(:list_all, sort_array, titles, :message => t(:message_18, :scope => [:txt, :view, :candidates, :list, :rhtml]) + " <span title='"+
                       t(:message_19, :scope => [:txt, :view, :candidates, :list, :rhtml]) +
                       "'>"  + switch_button(message) +"</span> ") %>
       </div>
   <% end %>
   <div id='candidates_delete' class='links' style="clear:right">
-    <%= link_to_remote(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :url => { :action => 'delete_all_candidates'}, :method => :get, :update => "candidates_delete") %>
+    <%= raw link_to(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :action => 'destroy_all', :method => :get, :update => "candidates_delete") %>
   </div>
 <% end %>
 
 <h1><%=  t(:message_22, :scope => [:txt, :view, :candidates, :list, :rhtml]) %> </h1>
-<p><%= view_filter_settings('filter_view') %></p>
+<p><%= raw view_filter_settings('filter_view') %></p>
 <br class="clear-all" />
 <%= print_notice %>
 <br class="clear-all" />
 <% unless @candidates.empty? %>
   <%= render(:partial => 'list') %>
   <div class='links'>
-    <%= list_links %>                     
+    <%= raw index_links %>                     
   </div>
-  <% unless session[:back_page] == 'list_all' %>
-    <%= will_paginate %>
-  <% end %>
 <% else %>
   <h4><%= t(:message_20, :scope => [:txt, :view, :candidates, :list, :rhtml]) %></h4>
 <% end %>

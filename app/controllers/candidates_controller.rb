@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
   include LoginSystem
-  layout 'employers', :except => [:delete_all, :destroy_all]
+  layout 'employers'
 
   before_filter :login_required, :except => [:invitation]
   before_filter :prepare_user
@@ -21,25 +21,7 @@ class CandidatesController < ApplicationController
 
   # lists all candidates
   def list
-    session[:list_mode] = 'list'
-    @backward = false
-    @filtered_by = params[:filter]
-    session[:back_page] = 'list'
-    conditions = Candidate.prepare_conditions(params, @faculty, @user)
-    @candidates = Candidate.paginate :page => params[:page],
-                                     :per_page => 13,
-                                     :order => session[:category],
-                                     :conditions => conditions
-    session[:current_page_backward] = params[:page]
-  end
-
-  # lists all candidates ordered by category
-  def list_all
-    session[:list_mode] = 'list_all'
-    @backward = true
-    session[:back_page] = 'list_all'
     @candidates = Candidate.find_all_finished_by_session_category(params, @faculty, session[:category], @user)
-    session[:current_page_backward_all] = session[:category]
     render(:action => 'list')
   end
 
@@ -56,7 +38,7 @@ class CandidatesController < ApplicationController
   end
 
   def destroy_all
-    candidates = Candidate.finished_before(parse_date(params[:date])).from_faculty(@user.person.faculty)
+    candidates = Candidate.from_faculty(@user.person.faculty)
     candidates.each {|c| c.destroy}
     flash[:notice] = t(:message_11, :scope => [:txt, :controller, :candidates]) % candidates.size
     redirect_to :action => :list

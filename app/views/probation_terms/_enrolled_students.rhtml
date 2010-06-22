@@ -10,7 +10,7 @@
           <%= [t(:message_0, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml]), t(:message_1, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml])][exam.result] %>&nbsp;
           <%= exam.created_on.strftime("%d. %m. %Y") %>
         <% else %>
-          <%= enroll_link(probation_term, student) %>
+          <%= sign_up_link(probation_term, student) %>
           <%= signoff_link(probation_term, student) %>
         <% end %>
       </td>

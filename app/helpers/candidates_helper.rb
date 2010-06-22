@@ -1,4 +1,6 @@
 module CandidatesHelper
+  SPACER = '&nbsp;'.html_safe
+
   # ready link
   def ready_link(candidate)
     if !candidate.ready? 
@@ -8,15 +10,17 @@ module CandidatesHelper
 
   # admit link
   def admit_link(candidate)
-    links = ''
     if !candidate.admited? && !candidate.rejected? && candidate.invited? && candidate.ready?
       unless candidate.specialization.exam_term
-        links << link_to(t(:message_1, :scope => [:txt, :helper, :candidates]), :controller => 'exam_terms', 
-        :action => 'new', :id => candidate.specialization.id ,:from => 'candidate', :backward => @backward )
+        link_to(t(:message_1, :scope => [:txt, :helper, :candidates]),
+                :controller => 'exam_terms', :action => 'new',
+                :id => candidate.specialization.id,
+                :from => 'candidate', :backward => @backward )
       else
-        links << link_to(t(:message_2, :scope => [:txt, :helper, :candidates]), :action => 'admittance', :id => candidate) 
-        links << "&nbsp;" 
-        links << link_to(t(:message_3, :scope => [:txt, :helper, :candidates]), :action => 'admit', :id => candidate)  
+        [link_to(t(:message_2, :scope => [:txt, :helper, :candidates]),
+                :action => 'admittance', :id => candidate),
+        link_to(t(:message_3, :scope => [:txt, :helper, :candidates]),
+                :action => 'admit', :id => candidate)].join(SPACER)
       end
     end
   end
@@ -99,7 +103,7 @@ module CandidatesHelper
       links << link_to(link, :action => action, :category => arg.first, 
       :prefix => params[:prefix])
     end
-    content_tag('div', options[:message] + links, :class => :links, :id=> 'list_all_links', :style => 'clear: both')
+    content_tag('div', options[:message] + links, :class => :links, :id => 'list_all_links', :style => 'clear: both')
   end
 
   # prints ordered sorting tags
@@ -121,35 +125,35 @@ module CandidatesHelper
   end
 
   # prints sorting tags
-  def filter_tags(action, args, titles, options)
-    links = '&nbsp;' + link_to("<span title='"+t(:message_17, :scope => [:txt, :helper, :candidates])+"'>"+t(:message_18, :scope => [:txt, :helper, :candidates])+"</span>", :action => '')
-    
-    i = 0
-    for arg in args
-      links << '&nbsp;'
-      if arg == "unready"
-        message = t(:message_19, :scope => [:txt, :helper, :candidates])
+  def filter_tags
+    if params[:action] != 'list_admission_ready'
+      filters = {
+        'all' =>      [t(:message_18, :scope => [:txt, :helper, :candidates]), 
+                      t(:message_17, :scope => [:txt, :helper, :candidates])],
+        'unready' =>  [t(:message_19, :scope => [:txt, :helper, :candidates]),
+                      t(:message_3, :scope => [:txt, :view, :candidates, :list, :rhtml])],
+        'ready' =>    [t(:message_45, :scope => [:txt, :helper, :candidates]),
+                      t(:message_4, :scope => [:txt, :view, :candidates, :list, :rhtml])],
+        'invited' =>  [t(:message_46, :scope => [:txt, :helper, :candidates]),
+                      t(:message_5, :scope => [:txt, :view, :candidates, :list, :rhtml])],
+        'admited' =>  [t(:message_47, :scope => [:txt, :helper, :candidates]),
+                      t(:message_6, :scope => [:txt, :view, :candidates, :list, :rhtml])],
+        'enrolled' => [t(:message_48, :scope => [:txt, :helper, :candidates]),
+                      t(:message_7, :scope => [:txt, :view, :candidates, :list, :rhtml])]}
+      links = t(:message_8, :scope => [:txt, :view, :candidates, :list, :rhtml]).html_safe
+      filters.each_pair do |filter, message|
+        links << SPACER
+        
+        links << link_to(content_tag('span', message.first, :title => message.last),
+                         :action => :list, :filter => filter) 
       end
-      if arg == "ready"
-        message = t(:message_45, :scope => [:txt, :helper, :candidates])
-      end
-      if arg == "invited"
-        message = t(:message_46, :scope => [:txt, :helper, :candidates])
-      end
-      if arg == "admited"
-        message = t(:message_47, :scope => [:txt, :helper, :candidates])
-      end
-      if arg == "enrolled"
-        message = t(:message_48, :scope => [:txt, :helper, :candidates])
-      end
-      links << link_to("<span title='"+ titles[i] +"'>" + message + "</span>", :action => action, :filter => arg)
-      i = i+1;
+      content_tag('div', links, :class => :links, :style => 'clear: both')
     end
-    content_tag('div', options[:message] + links, :class => :links, :style => 'clear: both')
   end
+  #FIXME ^^^^^^^^^^
 
   # prints list links
-  def list_links
+  def index_links
     links = ''
     if params[:prefix]
       if @user.has_role?('board_chairman')
@@ -178,6 +182,7 @@ module CandidatesHelper
         links << '&nbsp;'
       end
     end
+    return links
   end
 
   # print summary department/specialization switcher
@@ -250,15 +255,17 @@ module CandidatesHelper
   # foreign payer link
   def foreign_pay_link(candidate)
     if candidate.foreign_pay?
-      link_to_remote(t(:unset_foreign_pay, :scope => [:txt, :view, :candidates, :_list, :rhtml]),
+      link_to(t(:unset_foreign_pay, :scope => [:txt, :view, :candidates, :_list, :rhtml]),
                      :url => { :action => 'set_foreign_payer', :id => candidate.id},
                      :method => :get,
-                     :update => dom_id(candidate)) 
+                     :update => dom_id(candidate),
+                     :remote => true) 
     else
       link_to_remote(t(:set_foreign_pay, :scope => [:txt, :view, :candidates, :_list, :rhtml]),
                      :url => { :action => 'set_foreign_payer', :id => candidate.id},
                      :method => :get,
-                     :update => dom_id(candidate)) 
+                     :update => dom_id(candidate),
+                     :remote => true) 
     end
   end
 end

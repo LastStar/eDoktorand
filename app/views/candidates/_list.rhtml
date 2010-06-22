@@ -7,16 +7,16 @@
         <%= candidate.display_name %>
         <%= t(:message_0, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>&nbsp;<%= candidate.birth_number %>
         &nbsp;&nbsp;&nbsp;
-        <%= status_tag(candidate) %>
+        <%= raw status_tag(candidate) %>
         <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
-          <%= ready_link(candidate) %>
-          <%= invite_link(candidate) %>
-          <%= admit_link(candidate) %>
-          <%= enroll_link(candidate) %>
+          <%= raw ready_link(candidate) %>
+          <%= raw invite_link(candidate) %>
+          <%= raw admit_link(candidate) %>
+          <%= raw enroll_link(candidate) %>
         <% end %>
         <% if @user.has_role?('faculty_secretary') %>
           <%= admit_for_revocation_tag(candidate)%>
-        <%end%>
+        <% end %>
       </th>
       <td rowspan='3' class="right">
       <% unless @user.has_role?('department_secretary') %>

@@ -56,7 +56,7 @@ module ProbationTermsHelper
                    {:id => "link_#{pt.id}"})
   end
 
-  def enroll_link(probation_term, student)
+  def sign_up_link(probation_term, student)
     link_to_remote(t(:message_12, :scope => [:txt, :helper, :terms]), 
                   {:url => {:action => 'enroll_exam', 
                            :id => probation_term,
