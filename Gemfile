@@ -4,17 +4,13 @@ source 'http://gemcutter.org'
 gem 'rails', '3.0.0.beta3'
 
 gem "ruby-mysql", :require => 'mysql'
-gem "sqlite3"
+gem "sqlite3-ruby"
 gem "log4r"
 gem "hpricot"
 gem "ruby-net-ldap", :require => "net/ldap"
 gem "will_paginate", '3.0.pre'
 gem "mail"
-
-group :development do
-  gem "mongrel", '1.2.0.pre2'
-  gem "ruby-debug19"
-end
+gem "ruby-debug"
 
 group :test do
   gem "test-unit", '2.0.7'
