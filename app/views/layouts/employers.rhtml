@@ -25,7 +25,6 @@
   <% if @user %>
     <div id="main-menu">
       <div id="HeadMenuLinks"><%= raw main_menu %></div>
-      <div id="HeadMenuUser"><h1 id="title"><%= @user.person.display_type + ": #{@user.person.display_name}" %></h1></div>
     </div>
   <% end %>
   <%= image_tag "text_content_top.gif", :alt => "", :class => 'text-content-top-image' %>
