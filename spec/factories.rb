@@ -113,7 +113,6 @@ end
 Factory.define :language_subject do |language_subject|
   language_subject.association :subject
   language_subject.association :specialization
-  language_subject.type 'LanguageSubject'
 end
 
 Factory.define :title do |title|

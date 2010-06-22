@@ -28,5 +28,7 @@ group :test do
   gem "factory_girl", :git => "git://github.com/szimek/factory_girl.git", :branch => "rails3"
   gem 'timecop'
   gem 'autotest'
+  gem "faker"
+  gem "machinist"
 end
 
