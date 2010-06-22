@@ -15,13 +15,17 @@ class CandidatesController < ApplicationController
       redirect_to :action => 'list_admission_ready', :specialization => @user.person.tutorship.specialization_id
     else
       list
-      render(:action => 'list')
     end
   end
 
   # lists all candidates
   def list
-    @candidates = Candidate.find_all_finished_by_session_category(params, @faculty, session[:category], @user)
+    @candidates = Candidate.finished
+    if @user.has_one_of_roles?(['dean', 'faculty_secretary'])
+      @candidates.for_faculty(@user.person.faculty)
+    end
+    @candidates.send(params[:filter]) if params[:filter]
+    @candidates.order(session[:category]) if session[:category]
     render(:action => 'list')
   end
 
@@ -229,22 +233,20 @@ class CandidatesController < ApplicationController
   # sets title of the controller
   def set_title
     @title = t(:message_7, :scope => [:txt, :controller, :candidates])
-    WillPaginate::ViewHelpers.pagination_options[:previous_label] = "&laquo; %s" % t(:message_8, :scope => [:txt, :controller, :candidates])
-    WillPaginate::ViewHelpers.pagination_options[:next_label] = "%s &raquo;" % t(:message_9, :scope => [:txt, :controller, :candidates])
   end
 
   def prepare_sort
       if params[:category]
         if params[:category] != session[:category]
           session[:order] = ''
-        else if params[:page] == nil
-             session[:order] = session[:order] == ' desc' ? '' : ' desc'
-            end
+        elsif params[:page] == nil
+          session[:order] = session[:order] == ' desc' ? '' : ' desc'
         end
         session[:category] = params[:category]
         if params[:page] == nil
           session[:category] << session[:order]
         end
+        session[:order] = 'lastname'
       end
   end
 

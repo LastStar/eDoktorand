@@ -33,3 +33,20 @@ def mocked_user
   @mocked_user ||= mock(User)
 end
 
+def mocked_faculty
+  @mock_faculty ||= mock(Faculty, :specializations => [mocked_specialization])
+end
+
+def mocked_specialization
+  @mock_specialization = mock(Specialization, :to_yaml => "specialization") # hacked to_yaml cause dup of anonymous class
+end
+  
+# returns mock of relation
+def mocked_relation
+  @mocked_relation ||= mock(ActiveRecord::Relation)
+end
+
+# returns mocked faculty secretary
+def mocked_faculty_secretary
+  @mocked_faculty_secretary ||= mock(FacultySecretary, :faculty => mocked_faculty)
+end
