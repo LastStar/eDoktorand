@@ -1,47 +1,17 @@
 <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
-  <% sort_array = [['specialization_id', t(:message_0, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['lastname',
-  t(:message_1, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['updated_on', t(:message_2, :scope => [:txt, :view, :candidates, :list, :rhtml])]] %>
-  <%= raw filter_tags  %>
-  <% if session[:list_mode] == 'list' %>
-    <% message = image_tag("pages.png") %>
-     <div id='list'>
-  <% else %>
-    <% message = image_tag("pages.png") %>
-    <div id='list' style='display: none'>   
-  <% end %>
-  <% titles = [t(:message_9, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_10, :scope => [:txt, :view, :candidates, :list, :rhtml]),
-              t(:message_11, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
-    </div>
-  <% titles = [t(:message_15, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_16, :scope => [:txt, :view, :candidates, :list, :rhtml]),
-              t(:message_17, :scope => [:txt, :view, :candidates, :list, :rhtml])] %>
-  <% if params[:action] != 'list_admission_ready'%>
-    <% if session[:list_mode] == 'list' %>
-      <% message = image_tag("page.png") %>
-      <div id='list_all' style='display: none'>
-    <% else %>
-      <% message = image_tag("page.png") %>
-      <div id='list_all'>
-    <%end%>   
-        <%= raw sort_tags(:list_all, sort_array, titles, :message => t(:message_18, :scope => [:txt, :view, :candidates, :list, :rhtml]) + " <span title='"+
-                      t(:message_19, :scope => [:txt, :view, :candidates, :list, :rhtml]) +
-                      "'>"  + switch_button(message) +"</span> ") %>
-      </div>
-  <% end %>
+  <%= filter_tags  %>
   <div id='candidates_delete' class='links' style="clear:right">
-    <%= raw link_to(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :action => 'destroy_all', :method => :get, :update => "candidates_delete") %>
+    <%= link_to(t(:destroy_all, :scope => [:txt, :view, :candidates, :list, :rhtml]), :action => 'destroy_all', :method => :get, :update => "candidates_delete") %>
   </div>
 <% end %>
 
-<h1><%=  t(:message_22, :scope => [:txt, :view, :candidates, :list, :rhtml]) %> </h1>
-<p><%= raw view_filter_settings('filter_view') %></p>
+<h1><%= t(:message_22, :scope => [:txt, :view, :candidates, :list, :rhtml]) %> (<%= @candidates.count %>) </h1>
+<p><%= view_filter %></p>
 <br class="clear-all" />
 <%= print_notice %>
 <br class="clear-all" />
 <% unless @candidates.empty? %>
   <%= render(:partial => 'list') %>
-  <div class='links'>
-    <%= raw index_links %>                     
-  </div>
 <% else %>
   <h4><%= t(:message_20, :scope => [:txt, :view, :candidates, :list, :rhtml]) %></h4>
 <% end %>

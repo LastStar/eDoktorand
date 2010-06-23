@@ -3,6 +3,7 @@ require 'genderize'
 
 class Candidate < ActiveRecord::Base
   include Genderize
+  SCOPE = [:txt, :model, :candidate].freeze
 
   belongs_to :specialization
   belongs_to :department
@@ -67,13 +68,7 @@ class Candidate < ActiveRecord::Base
 
   # validates if languages are not same
   def different_languages
-    errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
-    errors.add_to_base(I18n::t(:message_20, :scope => [:txt, :model, :candidate])) if
-    !finished? && invited?
-    errors.add_to_base(I18n::t(:message_21, :scope => [:txt, :model, :candidate])) if
-    !invited? && admited?
-    errors.add_to_base(I18n::t(:message_22, :scope => [:txt, :model, :candidate])) if
-    !admited? && enrolled?
+    errors.add_to_base(t(:message_19, :scope => SCOPE)) if language1_id == language2_id
   end
 
   # checks if birth number for czech and slovak in right format
@@ -155,13 +150,13 @@ class Candidate < ActiveRecord::Base
   end
 
   # checks if candidate is allready admited
-  def admited?
+  def admitted?
     !self.admited_on.nil?
   end
 
   # enroll candidate to study and returns new student based on
   # candidates details.
-  def enroll!(time)
+  def enroll!(time = Time.now)
     self.update_attribute('enrolled_on', Time.now)
     return new_student(time)
   end
@@ -177,9 +172,9 @@ class Candidate < ActiveRecord::Base
     self.save
   end
 
-  # checks if student is ready
+  # checks if candidate is ready
   def ready?
-    !self.ready_on.nil?
+    !ready_on.nil?
   end
 
   # sets candidate reject for admition
@@ -333,5 +328,15 @@ class Candidate < ActiveRecord::Base
   # returns faculty to which student is applying
   def admitting_faculty
     specialization.faculty
+  end
+
+  # sets foreign pay
+  def foreign_pay!
+    self.update_attribute(:foreign_pay, true)
+  end
+
+  # unsets foreign pay
+  def not_foreign_pay!
+    self.update_attribute(:foreign_pay, false)
   end
 end

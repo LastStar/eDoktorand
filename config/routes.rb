@@ -8,6 +8,9 @@ Phdstudy::Application.routes.draw do |map|
   # students url
   match '/students' => 'students#index', :as => :students
 
+  resources :candidates
+
+  match '/candidates/only/:filter' => 'candidates#list'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -104,6 +104,36 @@ describe "Candidate" do
     it "should return faculty from specialization" do
       Candidate.make(:specialization => @specialization).admitting_faculty.should == @faculty
     end
+    it "should return if it's foreign payer" do
+      Candidate.make(:foreign_pay => false).foreign_pay?.should be_false
+      Candidate.make(:foreign_pay => true).foreign_pay?.should be_true
+    end
+    it "should set foreign payer" do
+      candidate = Candidate.make(:foreign_pay => false)
+      candidate.foreign_pay!
+      candidate.foreign_pay?.should be_true
+    end
+    it "should unset foreign payer" do
+      candidate = Candidate.make(:foreign_pay => true)
+      candidate.not_foreign_pay!
+      candidate.foreign_pay?.should be_false
+    end
+    it "should set candidate ready" do
+      candidate = Candidate.make(:finished)
+      candidate.ready!
+      candidate.should be_ready
+    end
+    it "should set candidate invited" do
+      candidate = Candidate.make(:finished)
+      candidate.invite!
+      candidate.should be_invited
+    end
+    it "should set candidate admitted" do
+      candidate = Candidate.make(:ready)
+      candidate.admit!
+      candidate.should be_admitted
+    end
+    it "should set candidate enrolled"
   end
 end
 

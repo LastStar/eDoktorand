@@ -5,39 +5,32 @@ class CandidatesController < ApplicationController
   before_filter :login_required, :except => [:invitation]
   before_filter :prepare_user
   before_filter :set_title
-  before_filter :prepare_sort, :only => [:list, :list_all, :list_admission_ready , :index]
-
-
-  # lists all candidates
-  def index
-    if @user.has_role?('board_chairman')
-      redirect_to :action => 'list_admission_ready', :specialization => @user.person.tutorship.specialization_id
-    else
-      list
-    end
-  end
 
   # lists all candidates
   def list
-    @candidates = Candidate.finished
+    @candidates = Candidate.finished.order('lastname')
     if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'department_secretary'])
-      @candidates.for_faculty(@user.person.faculty)
+      @candidates = @candidates.for_faculty(@user.person.faculty)
     end
-    @candidates.send(params[:filter]) if params[:filter]
-    @candidates.order(session[:category]) if session[:category]
+    @candidates = @candidates.send(params[:filter]) if params[:filter]
     render(:action => 'list')
+  end
+
+  # shows candidate details
+  def show
+    @candidate = Candidate.find(params[:id])
+  end
+
+  # edits candidate
+  def edit
+    @candidate = Candidate.find(params[:id])
+    @action = 'update'
   end
 
   def set_foreign_payer
     @candidate = Candidate.find(params[:id])
     @candidate.toggle_foreign_pay
     render :inline => "<%= foreign_pay_link(@candidate) %>"
-  end
-
-  def set_no_foreign_payer
-    candidate = Candidate.find(params[:id])
-    candidate.update_attribute(:foreign_pay,false)
-    #render :inline => "<%= link_to_remote('set foreign payer', :url => { :action => 'set_foreign_payer', :id => candidate.id}, :method => :get, :update => 'foreign#{candidate.id}')"
   end
 
   def destroy_all
@@ -58,15 +51,13 @@ class CandidatesController < ApplicationController
     render(:action => :list)
   end
 
-  # shows candidate details
-  def show
-    @candidate = Candidate.find(params[:id])
-  end
-
-  # edits candidate
-  def edit
-    @candidate = Candidate.find(params[:id])
-    @action = 'update'
+  # lists all candidates
+  def index
+    if @user.has_role?('board_chairman')
+      redirect_to :action => 'list_admission_ready', :specialization => @user.person.tutorship.specialization_id
+    else
+      list
+    end
   end
 
   # updates candidate
@@ -227,18 +218,18 @@ class CandidatesController < ApplicationController
   end
 
   def prepare_sort
-      if params[:category]
-        if params[:category] != session[:category]
-          session[:order] = ''
-        elsif params[:page] == nil
-          session[:order] = session[:order] == ' desc' ? '' : ' desc'
-        end
-        session[:category] = params[:category]
-        if params[:page] == nil
-          session[:category] << session[:order]
-        end
-        session[:order] = 'lastname'
+    if params[:category]
+      if params[:category] != session[:category]
+        session[:order] = ''
+      elsif params[:page] == nil
+        session[:order] = session[:order] == ' desc' ? '' : ' desc'
       end
+      session[:category] = params[:category]
+      if params[:page] == nil
+        session[:category] << session[:order]
+      end
+      session[:order] = 'lastname'
+    end
   end
 
   # parses date from select_date helper

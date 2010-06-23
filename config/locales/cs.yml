@@ -313,7 +313,7 @@ cs:
         message_49: x
         message_38: přerušeno
         message_27: katedra
-        message_16: claimed for defence
+        message_16: požádal o obhajobu
         message_7: potvrdit přerušení
         message_50: do
         message_39: absolvoval
@@ -464,9 +464,22 @@ cs:
       login: {}
 
       candidates: 
+        filter_set_on: Filtr je nastaven
+        filter_not_set: Filtr není nastaven
+        all: všichni
+        all_title: zrušení filtru
+        only_unready: jen nepřipravení
+        only_ready: jen připravení
+        only_invited: jen pozvaní
+        only_admitted: jen přijatí
+        only_enrolled: jen zapsaní
+        only_unready_title: zobrazí pouze nepřipravené uchazeče
+        only_invited_title: zobrazí pouze pozvané uchazeče
+        only_admitted_title: zobrazí pouze přijaté uchazeče
+        only_enrolled_title: zobrazí pouze zapsané uchazeče
+        only_ready_title: zobrazí pouze připravené uchazeče
         message_40: prospěl
         message_29: kontakt
-        message_18: všichni
         message_8: podle příjmení vzestupně
         message_41: neprospěl
         message_30: historie
@@ -474,7 +487,6 @@ cs:
         message_42: prospěl
         message_31: zapsán
         message_20: seznam
-        message_19: jen nepřipravení
         message_0: odsouhlasit
         message_43: neschválit
         message_32: nepřijmutí
@@ -504,15 +516,9 @@ cs:
         message_6: zapsat
         message_38: nepřijmout
         message_27: podle oborů
-        message_16: "Filtr je nastaven:"
-        message_7: Filtr není nastaven
         message_39: neprospěl
         message_28: přijmout na odvolání
         message_17: po kliknutí zobrazí se stránkováním všechny uchazeče
-        message_45: jen připravení
-        message_46: jen pozvaní
-        message_47: jen přijatí
-        message_48: jen zapsaní
         message_49: podle kateder
         
       terms:
@@ -2131,6 +2137,7 @@ cs:
 
         list: 
           rhtml: 
+            destroy_all: smazat všechny uchazeče
             message_18: seřaď všechny
             message_8: filtrovat
             message_9: po kliknutí seřadí se stránkováním uchazeče podle koridorů
@@ -2142,17 +2149,11 @@ cs:
             message_11: po kliknutí seřadí se stránkováním uchazeče podle data změny
             message_2: podle data změny
             message_12: seřaď
-            message_3: po kliknutí zobrazí se stránkováním nepřipravené uchazeče
             message_13: seřaď
-            message_4: po kliknutí zobrazí se stránkováním připravené uchazeče
             message_14: vypne stránkování po kliknutí na jeden ze způsobů řazení
-            message_5: po kliknutí zobrazí se stránkováním pozvané uchazeče
             message_15: po kliknutí seřadí uchazeče podle koridorů na 1 stránce
-            message_6: po kliknutí zobrazí se stránkováním přijaté uchazeče
             message_16: po kliknutí seřadí uchazeče podle příjmení na 1 stránce
-            message_7: po kliknutí zobrazí se stránkováním zapsané uchazeče
             message_17: po kliknutí seřadí uchazeče podle data změny na 1 stránce
-            message_21: smazat všechny uchazeče
             message_22: Uchazeči 
             
         _delete_all_candidates:
