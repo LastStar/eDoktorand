@@ -12,6 +12,8 @@ gem "will_paginate", '3.0.pre'
 gem "mail"
 gem "ruby-debug"
 
+gem "mongrel", :group => :development
+
 group :test do
   gem "test-unit", '2.0.7'
   gem "rspec", ">=2.0.0.beta.12"
