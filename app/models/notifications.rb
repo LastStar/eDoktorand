@@ -1,12 +1,12 @@
 # encoding: utf-8
 class Notifications < ActionMailer::Base
-  def invite_candidate(candidate, faculty, sent_at = Time.now)
+  def invite_candidate(candidate, sent_at = Time.now)
     @subject = I18n::t(:message_0, :scope => [:txt, :model, :notifications])
     @body['display_name'] = candidate.display_name
     @body['specialization'] = candidate.specialization.name
     @body['exam_term'] = candidate.specialization.exam_term
     @body['sent_on'] = sent_at
-    @body['faculty'] = faculty
+    @body['faculty'] = candidate.specialization.admitting_faculty
     @body['study_id'] = candidate.study_id
     @body['salutation'] = candidate.genderize(I18n::t(:message_1, :scope => [:txt, :model, :notifications]), I18n::t(:message_2, :scope => [:txt, :model, :notifications]), I18n::t(:message_3, :scope => [:txt, :model, :notifications]))
     @recipients = candidate.email

@@ -60,6 +60,7 @@ class User < ActiveRecord::Base
   end
 
   # checks if user have one of the roles from array
+  # FIXME: redone with *args
   def has_one_of_roles?(roles)
     !roles.select {|r| has_role?(r)}.empty?
   end

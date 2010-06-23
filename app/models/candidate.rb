@@ -52,6 +52,11 @@ class Candidate < ActiveRecord::Base
   scope :for_specialization, lambda {|specialization|
     where(['specialization_id = ?', specialization])
   }
+  scope :for_user, lambda {|user|
+    if user.has_one_of_roles?(['dean', 'faculty_secretary'])
+      for_faculty(user.person.faculty)
+    end
+  }
 
   # strips all spaces from birth number
   def strip_birth_number
@@ -279,13 +284,13 @@ class Candidate < ActiveRecord::Base
     specialization.faculty
   end
 
-  def self.find_all_finished_by_session_category(options, faculty, category, user)
+  def self.find_all_finished_by_session_category(options, category, user)
     if user.has_role?('vicerector')
       conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
                     Specialization.find(:all)]
     else
       conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
-                    faculty.specializations]
+                    user.person.faculty.specializations]
     end
     conditions.first << filter_conditions(options['filter'])
     if options['specialization']
@@ -323,5 +328,10 @@ class Candidate < ActiveRecord::Base
   def toggle_foreign_pay
     new = foreign_pay ? nil : 1
     update_attribute(:foreign_pay, new)
+  end
+
+  # returns faculty to which student is applying
+  def admitting_faculty
+    specialization.faculty
   end
 end

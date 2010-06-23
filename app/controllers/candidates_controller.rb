@@ -4,7 +4,6 @@ class CandidatesController < ApplicationController
 
   before_filter :login_required, :except => [:invitation]
   before_filter :prepare_user
-  before_filter :prepare_faculty
   before_filter :set_title
   before_filter :prepare_sort, :only => [:list, :list_all, :list_admission_ready , :index]
 
@@ -21,7 +20,7 @@ class CandidatesController < ApplicationController
   # lists all candidates
   def list
     @candidates = Candidate.finished
-    if @user.has_one_of_roles?(['dean', 'faculty_secretary'])
+    if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'department_secretary'])
       @candidates.for_faculty(@user.person.faculty)
     end
     @candidates.send(params[:filter]) if params[:filter]
@@ -84,34 +83,26 @@ class CandidatesController < ApplicationController
   # destroys candidate
   def destroy
     Candidate.find(params[:id]).destroy
-    if session[:back_page] == 'list'
-      redirect_to :action => 'list', :page => session[:current_page_backward]
-    else
-      redirect_to :action => 'list_all'
-    end
-
+    redirect_to :action => 'list'
   end
   
   # delete candidate
   def delete
     Candidate.find(params[:id]).unfinish!
-      if session[:back_page] == 'list'
-        redirect_to :action => 'list', :page => session[:current_page_backward]
-      else
-        redirect_to :action => 'list_all'
-      end
+    redirect_to :action => 'list'
   end
 
   def admit_for_revocation
     candidate = Candidate.find(params[:id])
     candidate.delete_reject!
     candidate.admit!
-      if session[:back_page] == 'list'
-        redirect_to :action => 'list', :page => session[:current_page_backward]
-      else
-        redirect_to :action => 'list_all'
-      end
+    if session[:back_page] == 'list'
+      redirect_to :action => 'list', :page => session[:current_page_backward]
+    else
+      redirect_to :action => 'list_all'
+    end
   end
+
   # enroll candidate form
   def enroll
 		@candidate = Candidate.find(params[:id])
@@ -196,7 +187,7 @@ class CandidatesController < ApplicationController
   def invite_now
     @candidate = Candidate.find(params[:id])
     @candidate.invite!
-    Notifications::deliver_invite_candidate(@candidate, @faculty, Time.now)
+    Notifications::deliver_invite_candidate(@candidate, Time.now)
     render(:text => t(:message_5, :scope => [:txt, :controller, :candidates]))
   end
 
@@ -222,9 +213,9 @@ class CandidatesController < ApplicationController
   def summary
     faculty = Faculty.find(@user.person.faculty.id)
     if params[:id] == "department" || params[:id].empty?
-       @departments = faculty.departments
-     else
-       @corridors = faculty.specializations
+      @departments = faculty.departments
+    else
+      @corridors = faculty.specializations
     end
   end
   

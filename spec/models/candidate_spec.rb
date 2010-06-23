@@ -63,11 +63,8 @@ describe "Candidate" do
   context "Retrieving" do
     before(:all) do
       Candidate.make
-      @specialized = Candidate.make(:faculty => @faculty,
-                     :specialization => @specialization)
-      @finished = Candidate.make(:finished,
-                                 :faculty => @faculty,
-                                 :specialization => @specialization)
+      @specialized = Candidate.make(:specialization => @specialization)
+      @finished = Candidate.make(:finished, :specialization => @specialization)
       @ready = Candidate.make(:ready)
       @invited = Candidate.make(:invited)
       @admitted = Candidate.make(:admitted)
@@ -100,6 +97,12 @@ describe "Candidate" do
     end
     it "should return all for specialization" do
       Candidate.for_specialization(@specialization).should == [@specialized, @finished]
+    end
+  end
+
+  context "Attributes" do
+    it "should return faculty from specialization" do
+      Candidate.make(:specialization => @specialization).admitting_faculty.should == @faculty
     end
   end
 end

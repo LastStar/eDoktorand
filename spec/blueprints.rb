@@ -15,6 +15,36 @@ Sham.university {"University of #{Faker::Address.city}"}
 Sham.state {Faker::Address.us_state}
 Sham.label {|index| "Label #{index}"}
 Sham.code {|index| "CD#{index}"}
+Sham.login {Faker::Internet.user_name}
+
+Faculty.blueprint do
+  name {Sham.name}
+  short_name {Sham.short_name}
+end
+
+FacultyEmployment.blueprint do
+  faculty
+end
+
+Person.blueprint do
+  firstname
+  lastname
+end
+
+User.blueprint do
+  login
+  person
+end
+
+Role.blueprint do
+  name {'admin'}
+end
+
+FacultySecretary.blueprint do
+  firstname
+  lastname
+  faculty_employment
+end
 
 Candidate.blueprint do
   firstname
@@ -59,21 +89,6 @@ Candidate.blueprint(:admitted) do
   admited_on {Time.now}
 end
 
-Faculty.blueprint do
-  name {Sham.name}
-  short_name {Sham.short_name}
-end
-
-Specialization.blueprint do
-  name {Sham.name}
-  faculty
-  accredited {true}
-end
-
-Subject.blueprint do
-  label
-  code
-end
 
 LanguageSubject.blueprint do
   subject
@@ -87,5 +102,16 @@ end
 
 Title.blueprint(:title_after) do
   label {"Ph.D."}
+end
+
+Specialization.blueprint do
+  name {Sham.name}
+  faculty
+  accredited {true}
+end
+
+Subject.blueprint do
+  label
+  code
 end
 
