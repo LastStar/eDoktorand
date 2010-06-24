@@ -56,11 +56,13 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
     <% else %>
       <%= link_to t(:message_1, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), :action => 'list_all'%>    
     <% end %>
-	<% unless @candidate.admited? %>
-        <div id='mailLink'>
-	  <span id='mailLink1'><%= link_to_remote t(:message_2, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'mail'} %></span>
-	  <span id='mailLink2'><%= link_to_remote t(:message_3, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'no mail'} %></span>
-        </div>
+	<% unless @candidate.admitted? %>
+    <span id='mailLink1'>
+      <%= link_to(t(:message_2, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), {:action => 'admit_now', :id => @candidate.id, :mail => 'mail'}, 'data-update' => 'mailLink', :remote => true) %>
+    </span>
+    <span id='mailLink2'>
+      <%= link_to t(:message_3, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), :update => 'mailLink', :action => 'admit_now', :id => @candidate.id, :mail => 'no mail', :remote => true %>
+    </span>
 	<% end %>
 	<% end %>
 </div>

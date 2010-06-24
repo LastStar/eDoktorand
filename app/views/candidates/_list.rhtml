@@ -4,10 +4,10 @@
   <% for candidate in @candidates  %>
     <tr>
       <th>
-        <%= candidate.display_name %>
+        <span class='statusInfo'><%= status_tag(candidate) %></span>
+        <%= link_to candidate.display_name, :action => 'show', :id => candidate %>
         <%= t(:message_0, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>&nbsp;<%= candidate.birth_number %>
         &nbsp;&nbsp;&nbsp;
-        <%= raw status_tag(candidate) %>
         <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
           <%= raw ready_link(candidate) %>
           <%= raw invite_link(candidate) %>
@@ -23,7 +23,6 @@
         <span id='<%= dom_id(candidate) %>'>
           <%= foreign_pay_link(candidate) %>
         </span>
-        <%= link_to 'detail', :action => 'show', :id => candidate %>
       <%end%>
       <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
         <%= link_to t(:message_1, :scope => [:txt, :view, :candidates, :_list, :rhtml]), :action => 'edit', :id => candidate %>

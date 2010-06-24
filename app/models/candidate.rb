@@ -156,9 +156,9 @@ class Candidate < ActiveRecord::Base
 
   # enroll candidate to study and returns new student based on
   # candidates details.
-  def enroll!(time = Time.now)
+  def enroll!(time = Time.now, create_new_student = true)
     self.update_attribute('enrolled_on', Time.now)
-    return new_student(time)
+    return new_student(time) if create_new_student
   end
 
   # checks if candidate is allready enrolled
@@ -182,15 +182,14 @@ class Candidate < ActiveRecord::Base
     self.update_attribute('rejected_on', Time.now)
   end
 
-  def delete_reject!
-    if !self.rejected_on.nil?
-      self.update_attribute('rejected_on', nil)
-    end
-  end
-
   # checks if student is reject
   def rejected?
     !self.rejected_on.nil?
+  end
+
+  def admit_after_reject!
+    update_attribute('rejected_on', nil)
+    admit!
   end
 
   # TODO redone with aggregations
@@ -295,11 +294,6 @@ class Candidate < ActiveRecord::Base
     Candidate.find(:all, :order => category, :conditions => conditions)
   end
 
-  # delete candidate, fill finished_on to nil
-  def unfinish!
-    self.update_attribute(:finished_on, nil)
-  end
-
   def self.filter_conditions(filter)
     case filter
     when 'all' then ''
@@ -330,6 +324,11 @@ class Candidate < ActiveRecord::Base
     specialization.faculty
   end
 
+  # delete candidate, fill finished_on to nil
+  def unfinish!
+    self.update_attribute(:finished_on, nil)
+  end
+
   # sets foreign pay
   def foreign_pay!
     self.update_attribute(:foreign_pay, true)
@@ -338,5 +337,22 @@ class Candidate < ActiveRecord::Base
   # unsets foreign pay
   def not_foreign_pay!
     self.update_attribute(:foreign_pay, false)
+  end
+
+  # returns status
+  def status
+    if enrolled?
+      :enrolled
+    elsif rejected?
+      :rejected
+    elsif admitted?
+      :admitted
+    elsif invited?
+      :invited
+    elsif ready?
+      :ready
+    else
+      :not_ready
+    end
   end
 end

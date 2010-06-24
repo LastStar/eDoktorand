@@ -33,8 +33,8 @@ def mocked_user
   @mocked_user ||= mock(User)
 end
 
-def mocked_faculty
-  @mock_faculty ||= mock(Faculty, :specializations => [mocked_specialization])
+def mocked_faculty(stubs = {})
+  @mock_faculty ||= mock(Faculty, stubs)
 end
 
 def mocked_specialization
@@ -45,11 +45,18 @@ def mocked_relation
   @mocked_relation ||= mock(ActiveRecord::Relation)
 end
 
-def mocked_faculty_secretary
-  @mocked_faculty_secretary ||= mock(FacultySecretary, :faculty => mocked_faculty)
+def mocked_faculty_secretary(stubs = {})
+  @mocked_faculty_secretary ||= mock(FacultySecretary, stubs)
 end
 
-def mocked_candidate
-  @mocked_candidate ||= mock(Candidate)
+def mocked_candidate(stubs = {})
+  @mocked_candidate ||= mock(Candidate, stubs)
 end
 
+def mocked_department(stubs = {})
+  @mocked_department ||= mock(Department, stubs)
+end
+
+def mocked_email
+  @mocked_email = mock(Contact, :name => 'example@example.com')
+end

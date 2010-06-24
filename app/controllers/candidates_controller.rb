@@ -42,22 +42,13 @@ class CandidatesController < ApplicationController
 
   # lists all candidates ordered by category
   def list_admission_ready
-     if params[:specialization]
-       session[:list_admission_ready] = params[:specialization]
-     end
+    if params[:specialization]
+      session[:list_admission_ready] = params[:specialization]
+    end
     session[:list_mode] = 'list'
     @filtered_by = params[:category]
     @candidates = Specialization.find(session[:list_admission_ready]).approved_candidates.paginate :page => params[:page], :per_page => 7, :order => session[:category]
     render(:action => :list)
-  end
-
-  # lists all candidates
-  def index
-    if @user.has_role?('board_chairman')
-      redirect_to :action => 'list_admission_ready', :specialization => @user.person.tutorship.specialization_id
-    else
-      list
-    end
   end
 
   # updates candidate
@@ -71,27 +62,25 @@ class CandidatesController < ApplicationController
     end
   end
 
-  # destroys candidate
-  def destroy
-    Candidate.find(params[:id]).destroy
-    redirect_to :action => 'list'
-  end
-  
   # delete candidate
   def delete
     Candidate.find(params[:id]).unfinish!
     redirect_to :action => 'list'
   end
 
+  # lists all candidates
+  def index
+    if @user.has_role?('board_chairman')
+      redirect_to :action => 'list_admission_ready', :specialization => @user.person.tutorship.specialization_id
+    else
+      list
+    end
+  end
+
   def admit_for_revocation
     candidate = Candidate.find(params[:id])
-    candidate.delete_reject!
-    candidate.admit!
-    if session[:back_page] == 'list'
-      redirect_to :action => 'list', :page => session[:current_page_backward]
-    else
-      redirect_to :action => 'list_all'
-    end
+    candidate.admit_after_reject!
+    redirect_to :action => 'list'
   end
 
   # enroll candidate form
@@ -120,7 +109,7 @@ class CandidatesController < ApplicationController
     end
   end
 
-  # amits candidate form
+  # admits candidate form
   def admit
     @candidate = Candidate.find(params[:id])
   end
@@ -134,6 +123,7 @@ class CandidatesController < ApplicationController
       session[:conditional] = @conditional = true if params[:admit_id] == '2'
       @candidate = Candidate.find(params[:id])
       @candidate.update_attributes(params[:candidate])
+      @faculty = @candidate.admitting_faculty
     end
   end
 
@@ -141,7 +131,7 @@ class CandidatesController < ApplicationController
   def admit_now
     @candidate = Candidate.find(params[:id])
     if params[:mail] != 'no mail'
-      Notifications::deliver_admit_candidate(@candidate, session[:conditional])
+      Notifications.admit_candidate(@candidate, session[:conditional]).deliver
     end
     @candidate.admit!
     if params[:mail] != 'no mail'

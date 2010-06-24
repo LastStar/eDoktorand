@@ -12,7 +12,7 @@ module CandidatesHelper
 
   # admit link
   def admit_link(candidate)
-    if !candidate.admited? && !candidate.rejected? && candidate.invited? && candidate.ready?
+    if !candidate.admitted? && !candidate.rejected? && candidate.invited?
       unless candidate.specialization.exam_term
         link_to(t(:message_1, :scope => [:txt, :helper, :candidates]),
                 :controller => 'exam_terms', :action => 'new',
@@ -41,7 +41,7 @@ module CandidatesHelper
 
   # enroll link
   def enroll_link(candidate)
-    if !candidate.enrolled? and candidate.admited?
+    if !candidate.enrolled? and candidate.admitted?
       link_to(t(:message_6, :scope => [:txt, :helper, :candidates]), :action => 'enroll', :id => candidate) 
     end
   end
@@ -69,8 +69,7 @@ module CandidatesHelper
   def filter_tags
     if params[:action] != 'list_admission_ready'
       links = [link_to(content_tag('span', t(:all, :scope => SCOPE),
-                         :title => t(:all_title, :scope => SCOPE)),
-                         :action => :list)]
+                         :title => t(:all_title, :scope => SCOPE)))]
       ['unready', 'ready', 'invited', 'admitted', 'enrolled'].each do |filter|
         span = content_tag('span', t(:"only_#{filter}", :scope => SCOPE),
                            :title => t(:"only_#{filter}_title", :scope => SCOPE))
@@ -108,17 +107,7 @@ module CandidatesHelper
 
   # prints status of the candidate
   def status_tag(candidate)
-    if candidate.enrolled?
-      content_tag('span', t(:message_31, :scope => [:txt, :helper, :candidates]), :class => 'statusInfo')
-    elsif candidate.rejected?
-      content_tag('span', t(:message_32, :scope => [:txt, :helper, :candidates]), :class => 'statusInfo')
-    elsif candidate.admited?
-      content_tag('span', t(:message_33, :scope => [:txt, :helper, :candidates]), :class => 'statusInfo')
-    elsif candidate.invited?
-      content_tag('span', t(:message_34, :scope => [:txt, :helper, :candidates]), :class => 'statusInfo')
-    elsif candidate.ready?
-      content_tag('span', t(:message_35, :scope => [:txt, :helper, :candidates]), :class => 'statusInfo')
-    end
+    t(:"status_#{candidate.status}", :scope => SCOPE)
   end			
 
   # returns admit ids array

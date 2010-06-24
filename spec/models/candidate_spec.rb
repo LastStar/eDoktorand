@@ -101,39 +101,80 @@ describe "Candidate" do
   end
 
   context "Attributes" do
-    it "should return faculty from specialization" do
-      Candidate.make(:specialization => @specialization).admitting_faculty.should == @faculty
+    context "Hierarchy" do
+      it "should return faculty from specialization" do
+        Candidate.make(:specialization => @specialization).admitting_faculty.should == @faculty
+      end
     end
-    it "should return if it's foreign payer" do
-      Candidate.make(:foreign_pay => false).foreign_pay?.should be_false
-      Candidate.make(:foreign_pay => true).foreign_pay?.should be_true
+    context "Foreign pay" do
+      it "should return if it's foreign payer" do
+        Candidate.make(:foreign_pay => false).foreign_pay?.should be_false
+        Candidate.make(:foreign_pay => true).foreign_pay?.should be_true
+      end
+      it "should set foreign payer" do
+        candidate = Candidate.make(:foreign_pay => false)
+        candidate.foreign_pay!
+        candidate.foreign_pay?.should be_true
+      end
+      it "should unset foreign payer" do
+        candidate = Candidate.make(:foreign_pay => true)
+        candidate.not_foreign_pay!
+        candidate.foreign_pay?.should be_false
+      end
     end
-    it "should set foreign payer" do
-      candidate = Candidate.make(:foreign_pay => false)
-      candidate.foreign_pay!
-      candidate.foreign_pay?.should be_true
+    context "Status" do
+      it "should set unfinished to delete it from lists" do
+        candidate = Candidate.make(:finished)
+        candidate.unfinish!
+        candidate.should_not be_finished
+      end
+      it "should be set ready" do
+        candidate = Candidate.make(:finished)
+        candidate.ready!
+        candidate.should be_ready
+      end
+      it "should be set invited" do
+        candidate = Candidate.make(:ready)
+        candidate.invite!
+        candidate.should be_invited
+      end
+      it "should be set admitted" do
+        candidate = Candidate.make(:invited)
+        candidate.admit!
+        candidate.should be_admitted
+      end
+      it "should be set rejected" do
+        candidate = Candidate.make(:invited)
+        candidate.reject!
+        candidate.should be_rejected
+      end
+      it "should be admited even if rejected" do
+        candidate = Candidate.make(:invited)
+        candidate.reject!
+        candidate.admit_after_reject!
+        candidate.should_not be_rejected
+        candidate.should be_admitted
+      end
+      it "should set candidate enrolled" do
+        candidate = Candidate.make(:admitted)
+        candidate.enroll!(Time.now, false)
+        candidate.should be_enrolled
+      end
+      it "should return it's status" do
+        candidate = Candidate.make(:finished)
+        candidate.status.should == :not_ready
+        candidate.ready!
+        candidate.status.should == :ready
+        candidate.invite!
+        candidate.status.should == :invited
+        candidate.admit!
+        candidate.status.should == :admitted
+        candidate.reject!
+        candidate.status.should == :rejected
+        candidate.enroll!(Time.now, false)
+        candidate.status.should == :enrolled
+      end
     end
-    it "should unset foreign payer" do
-      candidate = Candidate.make(:foreign_pay => true)
-      candidate.not_foreign_pay!
-      candidate.foreign_pay?.should be_false
-    end
-    it "should set candidate ready" do
-      candidate = Candidate.make(:finished)
-      candidate.ready!
-      candidate.should be_ready
-    end
-    it "should set candidate invited" do
-      candidate = Candidate.make(:finished)
-      candidate.invite!
-      candidate.should be_invited
-    end
-    it "should set candidate admitted" do
-      candidate = Candidate.make(:ready)
-      candidate.admit!
-      candidate.should be_admitted
-    end
-    it "should set candidate enrolled"
   end
 end
 

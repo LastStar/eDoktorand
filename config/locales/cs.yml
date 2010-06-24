@@ -478,6 +478,12 @@ cs:
         only_admitted_title: zobrazí pouze přijaté uchazeče
         only_enrolled_title: zobrazí pouze zapsané uchazeče
         only_ready_title: zobrazí pouze připravené uchazeče
+        status_enrolled: zapsán
+        status_rejected: nepřijat
+        status_admitted: přijat
+        status_invited: pozván
+        status_ready: odsouhlasen
+        status_not_ready: neschválen
         message_40: prospěl
         message_29: kontakt
         message_8: podle příjmení vzestupně
@@ -485,24 +491,19 @@ cs:
         message_30: historie
         message_9: podle příjmení sestupně
         message_42: prospěl
-        message_31: zapsán
         message_20: seznam
         message_0: odsouhlasit
         message_43: neschválit
-        message_32: nepřijmutí
         message_21: seznam
         message_10: podle oboru vzestupně
         message_1: vytvořit komisi
         message_44: přijmout
-        message_33: přijat
         message_22: ukázat kontakty
         message_11: podle oboru sestupně
         message_2: protokol
-        message_34: pozván
         message_23: skrýt kontakty
         message_12: podle data změny vzestupně
         message_3: přijmout
-        message_35: odsouhlasen
         message_24: ukázat historii
         message_13: podle data změny sestupně
         message_4: vytvořit komisi
