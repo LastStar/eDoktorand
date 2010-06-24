@@ -16,11 +16,11 @@ gem "mongrel", :group => :development
 
 group :test do
   gem "test-unit", '2.0.7'
-  gem "rspec", ">=2.0.0.beta.12"
-  gem "rspec-core", ">=2.0.0.beta.12"
+  gem "rspec", "=2.0.0.beta.12"
+  gem "rspec-core", "=2.0.0.beta.12"
   gem "rspec-expectations", ">=2.0.0.beta.12"
-  gem "rspec-mocks", ">=2.0.0.beta.12"
-  gem 'rspec-rails', ">=2.0.0.beta.12"
+  gem "rspec-mocks", "=2.0.0.beta.12"
+  gem 'rspec-rails', "=2.0.0.beta.12"
   gem "capybara", :git => 'git://github.com/jnicklas/capybara.git'
   gem 'database_cleaner', :git => 'git://github.com/bmabey/database_cleaner.git'
   gem 'cucumber-rails', :git => "git://github.com/aslakhellesoy/cucumber-rails.git"
