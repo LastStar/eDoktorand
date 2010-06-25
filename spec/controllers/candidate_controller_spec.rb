@@ -166,17 +166,97 @@ describe CandidatesController do
   describe "Setting candidate as admitted" do
     before(:each) do
       mocked_user.should_receive(:has_permission?).with("candidates/admit_now").and_return(true)
-      mocked_faculty_secretary(:email => mocked_email)
-      mocked_faculty(:secretary => mocked_faculty_secretary, :short_name => 'fac', :dean => mock(Dean, :display_name => 'Dean'), :dean_label => 'Dean')
-      mocked_department(:name => 'Department', :faculty => mocked_faculty)
-      mocked_candidate(:department => mocked_department, :email => 'example@example.com', :display_name => 'Candidate', :address => mock(Address), :study => mock(Study, :name => 'study'), :tutor => mock(Tutor, :display_name => 'Tutor'), :present_study? => true)
     end
     it "should set as admitted and send mail if needed" do
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       session[:conditional] = false
+      Notifications.stub!(:admit_candidate)
       Notifications.should_receive(:admit_candidate).with(mocked_candidate, false).and_return(mock(Object, :deliver => true))
       mocked_candidate.should_receive(:admit!)
       get :admit_now, :id => 1, :mail => 'mail'
+      response.should be_success
+    end
+    it "should set as admitted and don't send mail if not needed" do
+      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
+      Notifications.should_not_receive(:admit_candidate)
+      mocked_candidate.should_receive(:admit!)
+      get :admit_now, :id => 1, :mail => 'no mail'
+      response.should be_success
+    end
+  end
+
+  describe "Admittance protocol" do
+    before(:each) do
+      mocked_user.should_receive(:has_permission?).with("candidates/admittance").and_return(true)
+    end   
+    it "should assign candidate" do
+      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
+      get :admittance, :id => 1
+      assigns['candidate'].should == mocked_candidate
+      response.should be_success
+    end
+  end
+
+  describe "Setting candidate ready" do
+    before(:each) do
+      mocked_user.should_receive(:has_permission?).with("candidates/ready").and_return(true)
+    end   
+    it "should assign candidate and set him ready" do
+      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
+      mocked_candidate.should_receive(:ready!)
+      mocked_candidate.should_receive(:display_name).and_return('Candidate')
+      get :ready, :id => 1
+      response.should be_redirect
+    end
+  end
+
+  describe "Invitation page" do
+    before(:each) do
+      mocked_user.should_receive(:has_permission?).with("candidates/invite").and_return(true)
+    end   
+    it "should assign candidate" do
+      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
+      get :invite, :id => 1
+      assigns['candidate'].should == mocked_candidate
+      response.should be_success
+    end
+  end
+
+  describe "Inviting candidate" do
+    before(:each) do
+      mocked_user.should_receive(:has_permission?).with("candidates/invite_now").and_return(true)
+    end   
+    it "should assign candidate, set him as invited and send email" do
+      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
+      mocked_candidate.should_receive(:invite!)
+      Notifications.stub!(:deliver_invite_candidate)
+      Notifications.should_receive(:deliver_invite_candidate)
+      get :invite_now, :id => 1
+    end
+  end
+
+  describe "Reject page" do
+    before(:each) do
+      mocked_user.should_receive(:has_permission?).with("candidates/reject").and_return(true)
+    end   
+    it "should assign candidate to reject" do
+      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
+      get :reject, :id => 1
+      assigns['candidate'].should == mocked_candidate
+      response.should be_success
+    end
+  end
+
+  describe "Rejecting candidate" do
+    before(:each) do
+      mocked_user.should_receive(:has_permission?).with("candidates/reject_now").and_return(true)
+      Notifications.stub!(:deliver_reject_candidate)
+    end   
+    it "should assign candidate, set him as rejected and send email" do
+      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
+      mocked_candidate.should_receive(:reject!)
+      Notifications.should_receive(:deliver_reject_candidate).with(mocked_candidate)
+      get :reject_now, :id => 1
       response.should be_success
     end
   end

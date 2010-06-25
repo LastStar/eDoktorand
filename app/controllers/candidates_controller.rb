@@ -151,20 +151,16 @@ class CandidatesController < ApplicationController
     candidate = Candidate.find(params[:id])
     candidate.ready!
     flash['notice'] = t(:message_3, :scope => [:txt, :controller, :candidates]) + candidate.display_name + t(:message_4, :scope => [:txt, :controller, :candidates])
-    if session[:back_page] == 'list'
-      redirect_to :action => 'list', :page => session[:current_page_backward]
-    else
-      redirect_to :action => 'list_all'
-    end
+    redirect_to :action => 'list'
   end
 
-  # set candidate ready for admition
+  # render invitation letter and mail page
   def invite
     @candidate = Candidate.find(params[:id])
     render(:action => :invitation)
   end
 
-	# action for remote link that invite candidate
+  # set candidate ready for admition
   def invite_now
     @candidate = Candidate.find(params[:id])
     @candidate.invite!
@@ -172,6 +168,7 @@ class CandidatesController < ApplicationController
     render(:text => t(:message_5, :scope => [:txt, :controller, :candidates]))
   end
 
+  # FIXME: this vs invite?
   # shows invitation for candidate
   def invitation
    @candidate = Candidate.find(params[:id])
@@ -192,7 +189,7 @@ class CandidatesController < ApplicationController
 
   # summary method for candidates
   def summary
-    faculty = Faculty.find(@user.person.faculty.id)
+    faculty = @user.person.faculty
     if params[:id] == "department" || params[:id].empty?
       @departments = faculty.departments
     else
