@@ -11,6 +11,7 @@ gem "ruby-net-ldap", :require => "net/ldap"
 gem "will_paginate", '3.0.pre'
 gem "mail"
 gem "ruby-debug"
+gem "state_machine"
 
 gem "mongrel", :group => :development
 
