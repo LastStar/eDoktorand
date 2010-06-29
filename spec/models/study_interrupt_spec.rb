@@ -2,8 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe "Study Interrupt" do
   before :all do
-    @index = Factory.build(:index)
-    @index.student = Factory(:student)
+    @student = Student.make
+    @index = Index.make(:student => @student)
     @index.save
   end
 

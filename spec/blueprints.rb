@@ -115,3 +115,36 @@ Subject.blueprint do
   code
 end
 
+Address.blueprint do
+  student
+  street
+  desc_number {666}
+  city
+  zip
+end
+
+Student.blueprint do
+  firstname
+  lastname
+end
+
+Index.blueprint do
+  enrolled_on {TermsCalculator.this_year_start}
+  study
+  tutor
+  specialization
+  department
+end
+
+Study.blueprint do
+  name {"present"}
+end
+
+Tutor.blueprint do
+  firstname
+  lastname
+end
+
+Department.blueprint do
+  name {"department"}
+end

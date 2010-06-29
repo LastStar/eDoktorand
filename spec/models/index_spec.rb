@@ -6,13 +6,13 @@ describe Index do
     it "should return continues based on specialization study length" do
       index = Index.new
       index.enrolled_on = 3.years.ago
-      specialization = Factory(:specialization, :study_length => 4)
+      specialization = Specialization.make(:study_length => 4)
       index.specialization = specialization
       index.continues?.should be_false
       index.status.should == I18n::t(:message_15, :scope => [:txt, :model, :index])
       index = Index.new
       index.enrolled_on = 3.years.ago
-      specialization = Factory(:specialization, :study_length => 3)
+      specialization = Specialization.make(:study_length => 3)
       index.specialization = specialization
       index.continues?.should be_true
       index.status.should == I18n::t(:message_14, :scope => [:txt, :model, :index])
@@ -60,13 +60,12 @@ describe Index do
 
   context "study duration" do
     before :all do
-      @student = Factory(:student)
+      @student = Student.make
     end
 
     before :each do
       Timecop.freeze(Time.zone.local(2010, 1, 2))
-      @index = Factory.build(:index)
-      @index.student = @student
+      @index = Index.make(:student => @student)
     end
 
     it "should compute semester" do
@@ -120,12 +119,12 @@ describe Index do
 
   context "interrupting" do
     before :all do
-      @student = Factory(:student)
+      @student = Student.make
     end
 
     before :each do
       Timecop.freeze(Time.zone.local(2010, 1, 2))
-      @index = Factory.build(:index)
+      @index = Index.make
       @index.student = @student
     end
   end
