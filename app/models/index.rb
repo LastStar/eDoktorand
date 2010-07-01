@@ -1,4 +1,4 @@
-# FIXME with arel in rails 3
+# FIXME: with arel in rails 3
 class String
   def sql_and(chunk)
     if self.empty?
@@ -13,7 +13,7 @@ class Index < ActiveRecord::Base
   include Approvable
   PREFIX_WEIGHTS = [1, 2, 4, 8, 5, 10]
   ACCOUNT_WEIGHTS = [1, 2, 4, 8, 5, 10, 9, 7, 3, 6]
-  #TODO name scope them all
+  #TODO: name scope them all
   NOT_FINISHED_COND = <<-SQL
     (indices.finished_on is null or indices.finished_on > ?)\
     and disert_themes.defense_passed_on is null
@@ -86,6 +86,17 @@ class Index < ActiveRecord::Base
 
   scope :passed_final_exam, where("final_exam_passed_on is not null")
   scope :absolved, includes(:disert_theme).where("disert_themes.defense_passed_on is not null")
+  scope :tutored_by, lambda {|tutor| where("tutor_id = ?", tutor.id)}
+  scope :for_faculty, lambda {|faculty| where("department_id in (?)", faculty.departments)}
+  scope :for_department, lambda {|department| where("department_id = ?", department)}
+  scope :studying_until, lambda { |date|
+    includes(:disert_theme).where(
+      "(finished_on is null or finished_on > ?) and \
+      disert_themes.defense_passed_on is null",
+      date)
+  }
+  scope :finished_from, lambda {|date| where("finished_on is not null and finished_on < ?", date)}
+  scope :enrolled_from, lambda {|date| where("enrolled_on < ?", date)}
 
   validate :correct_acount_number, :all_exams_finished
 
@@ -94,7 +105,7 @@ class Index < ActiveRecord::Base
     @interrupt ||= interrupts.sort{|x, y| x.created_on <=> y.created_on}.last
   end
 
-  # TODO this mess must go
+  #TODO: this mess must go
   # returns desrcibe_error for bad index
   def describe_error
      message = ""
@@ -116,7 +127,7 @@ class Index < ActiveRecord::Base
     return message
   end
 
-  # TODO this mess must go
+  #TODO: this mess must go
   # returns if index is bad
   def bad_index?
      if self.account_number == nil || self.account_bank_number == nil ||
@@ -282,7 +293,7 @@ class Index < ActiveRecord::Base
           Faculty.find(options[:faculty])
         conditions = [DEPARTMENTS_COND.clone, faculty.departments]
       else
-        #TODO must be there?
+        #TODO: must be there?
         conditions  = ['NULL IS NULL']
       end
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary'])
@@ -293,7 +304,7 @@ class Index < ActiveRecord::Base
     elsif user.has_role?('tutor')
       conditions = [TUTOR_COND.clone, user.person.id]
     else
-      #TODO must be there?
+      #TODO: must be there?
       conditions = ["NULL IS NOT NULL"]
     end
     options[:include] ||= []
@@ -331,11 +342,6 @@ class Index < ActiveRecord::Base
     find(:all, :conditions => conditions, :order => options[:order],
         :include => options[:include])
   end
-
-  # finds only indices tutored by user
-  scope :tutored_by, lambda {|user|
-    where("indices.tutor_id = ?", user.person.id)
-  }
 
   # returns all indices which waits for approval from persons
   # only for tutors, leader a deans
@@ -454,19 +460,23 @@ class Index < ActiveRecord::Base
   # returns status of index
   def status
     @status ||= if disert_theme && disert_theme.defense_passed?
-      I18n::t(:message_10, :scope => [:txt, :model, :index])
+      :absolved
     elsif final_exam_passed?
-      I18n::t(:message_11, :scope => [:txt, :model, :index])
+      :final_exam_passed
     elsif finished?
-      I18n::t(:message_12, :scope => [:txt, :model, :index])
+      :finished
     elsif interrupted?
-      I18n::t(:message_13, :scope => [:txt, :model, :index])
-    elsif continues?
-      I18n::t(:message_14, :scope => [:txt, :model, :index])
+      :interrupted
+    elsif continue?
+      :continue
     else
-      I18n::t(:message_15, :scope => [:txt, :model, :index])
+      :studying
     end
-    return @status
+  end
+
+  # returns translated status of index
+  def translated_status
+    I18n::t(:"status_#{status}", :scope => [:txt, :model, :index])
   end
 
   # TODO after merge with rails3 redone with new status
@@ -507,17 +517,22 @@ class Index < ActiveRecord::Base
   end
 
   # returns true if index have year more than 3
-  def continues?
+  def continue?
     year > specialization.study_length
   end
 
   # switches study form
-  # TODO add history and use date
+  # TODO: add history and use date
   def switch_study!(date = Date.today)
+<<<<<<< HEAD
     if study_id == 1
       update_attribute('study_id', 2)
+=======
+    if present_study?
+      self.study = Study.find_by_name_en('combined')
+>>>>>>> Redone status of index and added translated status method. Redone study form identification. Improved methods for scholarship questioning. Started with change from custom finder to Arel. Remove lots of unused code. Fixed views and controller for new method names and such.
     else
-      update_attribute('study_id', 1)
+      self.study = Study.find_by_name_en('full time')
     end
     update_attribute(:study_form_changed_on, date)
   end
@@ -562,7 +577,8 @@ class Index < ActiveRecord::Base
     update_attribute('interrupted_on', start_date)
   end
 
-  # TODO add transactions
+  # TODO: add transactions
+  # shouldn't be on interrupt?
   # interrupts study with date
   def end_interrupt!(end_date)
     update_attribute('interrupted_on', nil)
@@ -573,6 +589,7 @@ class Index < ActiveRecord::Base
     interrupt.update_attribute('finished_on', end_date)
   end
 
+<<<<<<< HEAD
   def status_class
     if finished?
       'finished'
@@ -583,6 +600,8 @@ class Index < ActiveRecord::Base
     end
   end
 
+=======
+>>>>>>> Redone status of index and added translated status method. Redone study form identification. Improved methods for scholarship questioning. Started with change from custom finder to Arel. Remove lots of unused code. Fixed views and controller for new method names and such.
   def not_even_admited_interrupt?
     !interrupted? && !admited_interrupt?
   end
@@ -640,7 +659,7 @@ class Index < ActiveRecord::Base
 
   # returns true if study is present
   def present_study?
-    study.id == 1
+    study.name_en == 'full time'
   end
 
   def self_payer?
@@ -660,7 +679,9 @@ class Index < ActiveRecord::Base
   end
 
   def regular_scholarship_or_create
-    regular_scholarship || RegularScholarship.create_for(self)
+    if present_study? && !self_payer?
+      regular_scholarship || RegularScholarship.create_for(self)
+    end
   end
 
   def claim_final_exam!
@@ -712,14 +733,6 @@ class Index < ActiveRecord::Base
     !defense_invitation_sent_at.nil?
   end
 
-  def study_name
-    study.name
-  end
-
-  def student_name
-    student.display_name
-  end
-
   def final_exam_passed?
     !final_exam_passed_on.nil?
   end
@@ -737,38 +750,12 @@ class Index < ActiveRecord::Base
     return sp
   end
 
-  # returns service struct for index
-  def to_service_struct
-    service_struct = IndexHash.new
-    service_struct.index_id = self.id
-    service_struct.student_uic = self.student.uic
-    service_struct.faculty_id = self.faculty.id
-    service_struct.faculty_name = self.faculty.name
-    service_struct.faculty_code = self.faculty.short_name
-    service_struct.department_id = self.department.id
-    service_struct.department_name = self.department.name
-    service_struct.department_code = self.department.short_name
-    service_struct.study_status = self.status
-    service_struct.status_from = self.updated_on
-    service_struct.status_to = ''
-    service_struct.year = self.year
-    service_struct.study_form = self.study_name
-    service_struct.attestation = self.study_plan ? self.study_plan.last_attested_on : ''
-    service_struct.specialization = self.specialization.code
-    return service_struct
-  end
-
   def has_study_plan_and_actual_attestation?
     study_plan && index.study_plan.attestation
   end
 
   def has_any_scholarship?
-    return ((has_regular_scholarship? && regular_scholarship_or_create.amount > 0) || (has_extra_scholarship? && extra_scholarship_sum > 0))
-  end
-
-  # updates index from StudentHash
-  def update_with_hash(index_hash)
-    return true
+    (regular_scholarship_or_create.amount > 0) || has_extra_scholarship?
   end
 
   private

@@ -3,19 +3,15 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Index do
   context "states" do
+    before(:each) {@index = Index.make(:enrolled_on => 3.years.ago)}
     it "should return continues based on specialization study length" do
-      index = Index.new
-      index.enrolled_on = 3.years.ago
-      specialization = Specialization.make(:study_length => 4)
-      index.specialization = specialization
-      index.continues?.should be_false
-      index.status.should == I18n::t(:message_15, :scope => [:txt, :model, :index])
-      index = Index.new
-      index.enrolled_on = 3.years.ago
-      specialization = Specialization.make(:study_length => 3)
-      index.specialization = specialization
-      index.continues?.should be_true
-      index.status.should == I18n::t(:message_14, :scope => [:txt, :model, :index])
+      @index.continue?.should be_false
+      @index.status.should == :studying
+      @index = Index.new
+      @index.enrolled_on = 3.years.ago
+      @index.specialization = Specialization.make(:study_length => 3)
+      @index.continue?.should be_true
+      @index.status.should == :continue
     end
     context 'status methods' do
       before :each do
@@ -35,6 +31,30 @@ describe Index do
       it "should return to when status is valid" do
         @index.status_to.should == Date.parse('2010/09/30')
       end
+    end
+    it "should return interrupted" do
+      @index.interrupt!(1.month.ago)
+      @index.should be_interrupted
+      @index.status.should == :interrupted
+    end
+    it "should return finished" do
+      @index.finish!(1.month.ago)
+      @index.should be_finished
+      @index.status.should == :finished
+    end
+    it "should return passed final exam" do
+      @index.final_exam_passed!(1.month.ago)
+      @index.should be_final_exam_passed
+      @index.status.should == :final_exam_passed
+    end
+    it "should return absolved" do
+      @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
+      @index.disert_theme.defense_passed!(1.month.ago)
+      @index.should be_absolved
+      @index.status.should == :absolved
+    end
+    it "should return translated status" do
+      @index.translated_status.should == "studying"
     end
   end
 
@@ -62,51 +82,48 @@ describe Index do
     before :all do
       @student = Student.make
     end
+  end
 
+  describe "Study duration" do
     before :each do
       Timecop.freeze(Time.zone.local(2010, 1, 2))
-      @index = Index.make(:student => @student)
+      @index = Index.make(:enrolled_on => TermsCalculator.this_year_start)
     end
-
-    it "should compute semester" do
-      @index.semester.should == 1
-    end
-
-    it "should compute year" do
-      @index.year.should == 1
-    end
-
-    describe "after one more year" do
-      before :each do
-        Timecop.freeze(Time.zone.local(2011, 1, 2))
-      end
-
+    describe "Plain" do
       it "should compute semester" do
-        @index.semester.should == 3
+        @index.semester.should == 1
       end
-
-      it "should compute year" do
-        @index.year.should == 2
-      end
-    end
-
-    describe "with interrupts" do
-      before :each do
-        @index.interrupts << StudyInterrupt.create(:start_on => Time.current,
-                                                  :duration => 8)
-        Timecop.freeze(Time.zone.local(2011, 1, 2))
-      end
-
-      it "should compute semester" do
-        @index.semester.should == 2
-      end
-
       it "should compute year" do
         @index.year.should == 1
       end
     end
-
-    describe 'absolved' do
+    describe "After one more year" do
+      before :each do
+        Timecop.freeze(Time.zone.local(2011, 1, 2))
+      end
+      it "should compute semester" do
+        @index.semester.should == 3
+      end
+      it "should compute year" do
+        @index.year.should == 2
+      end
+    end
+    describe "With interrupts" do
+      before :each do
+        StudyInterrupt.make(:index => @index)
+        Timecop.freeze(Time.zone.local(2011, 1, 2))
+      end
+      it "should compute semester" do
+        @index.semester.should == 2
+      end
+      it "should compute year" do
+        @index.year.should == 1
+      end
+      it "should compute sum time index was interrupted" do
+        @index.interrupted_time.should == 8.months
+      end
+    end
+    describe 'Absolved' do
       it "should compute semester and year only until absolved date" do
         @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
         @index.save
@@ -117,15 +134,66 @@ describe Index do
     end
   end
 
-  context "interrupting" do
-    before :all do
-      @student = Student.make
-    end
-
-    before :each do
-      Timecop.freeze(Time.zone.local(2010, 1, 2))
+  describe "Scopes" do
+    before(:all) do
+      Index.destroy_all
       @index = Index.make
-      @index.student = @student
+      @tutor = @index.tutor
+      @unfinished = Index.make
+      @finished = Index.make(:finished_on => Time.now)
+    end
+    it "should return all indices tutored by tutor" do
+      Index.tutored_by(@tutor).should == [@index]
+    end
+    it "should return all for faculty" do
+      Index.for_faculty(@index.faculty).should == [@index]
+    end
+    it "should return all for department" do
+      Index.for_department(@index.department).should == [@index]
+    end
+    it "should return all studying until some date" do
+      Index.studying_until(1.day.ago).should == [@index, @unfinished, @finished]
+    end
+    it "should return all unfinished till some date" do
+      Index.finished_from(1.day.from_now).should == [@finished]
+      Index.finished_from(1.day.ago).should == []
+    end
+    it "should return all enrolled from some date" do
+      Index.enrolled_from(Time.now) == Index.all
+    end
+  end
+
+  describe "Properties" do
+    before(:each) do
+      @index = Index.make
+      Study.make(:name_en => 'combined')
+    end
+    it "should switch study form" do
+      @index.should be_present_study
+      @index.switch_study!
+      @index.should_not be_present_study
+    end
+  end
+
+  describe "Scholarship questioning" do
+    before(:each) do
+      @index = Index.make
+      Study.make(:name_en => 'combined')
+    end
+    it "should confirm regular scholarship for full time student" do
+      @index.has_regular_scholarship?.should be_true
+      @index.switch_study!
+      @index.has_regular_scholarship?.should be_false
+      @index.switch_study!
+
+    end
+    it "should confirm extra scholarship when added" do
+      @index.has_extra_scholarship?.should be_false
+      @index.switch_study!
+      @index.has_extra_scholarship?.should be_false
+      ExtraScholarship.make(:index => @index)
+      @index.reload
+      @index.has_extra_scholarship?.should be_true
     end
   end
 

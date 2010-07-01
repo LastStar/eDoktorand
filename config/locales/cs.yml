@@ -139,26 +139,25 @@ cs:
       leadership: {}
 
       index: 
+        status_absolved: absolvoval
+        status_final_exam_passed: složil SDZ
+        status_interrupted: přerušeno
+        status_continue: uzavřeno
+        status_studying: studuje
         message_18: Špatné nebo chybějící číslo bankovního účtu.
         message_19: Špatné nebo chybějící číslo banky u b.ú.
         message_20: Chybí UIC.
         message_16: Chybí SIDENT (-666).
         message_17: Chybí SIDENT.
-
-        message_8: absolvoval
         message_9: přerušeno
         message_0: se změnou studijního plánu
         message_10: absolvoval
         message_1: ukončit
-        message_11: složil SDZ
         message_2: předvolba účtu je ve špatném formátu
         message_12: ukončeno
         message_3: číslo účtu je ve špatném formátu
-        message_13: přerušeno
         message_4: číslo účtu je ve špatném formátu
-        message_14: uzavřeno
         message_5: nejsou splněny všechny předměty
-        message_15: studuje
         message_6: absolvoval
         message_7: přerušeno
       program: {}

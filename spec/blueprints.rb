@@ -108,6 +108,7 @@ Specialization.blueprint do
   name {Sham.name}
   faculty
   accredited {true}
+  study_length {4}
 end
 
 Subject.blueprint do
@@ -129,15 +130,17 @@ Student.blueprint do
 end
 
 Index.blueprint do
-  enrolled_on {TermsCalculator.this_year_start}
+  enrolled_on {Time.now}
   study
+  student
   tutor
   specialization
   department
 end
 
 Study.blueprint do
-  name {"present"}
+  name {"prezenční"}
+  name_en {"full time"}
 end
 
 Tutor.blueprint do
@@ -147,4 +150,17 @@ end
 
 Department.blueprint do
   name {"department"}
+  faculty
+end
+
+StudyInterrupt.blueprint do
+  start_on {Time.current}
+  duration {8}
+end
+
+ExtraScholarship.blueprint do
+  amount {1}
+  commission_head {'4444'}
+  commission_body {'55555'}
+  commission_tail {'4444'}
 end

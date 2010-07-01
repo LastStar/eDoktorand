@@ -126,20 +126,20 @@ en:
       leadership: {}
 
       index: 
+        status_absolved: absolved
+        status_final_exam_passed: FE passed
+        status_interrupted: interrupted
+        status_continue: continue
+        status_studying: studying
         message_8: absolved
         message_9: interrupted
         message_0: with study change
-        message_10: absolved
         message_1: End
-        message_11: FE passed
         message_2: account prefix in wrong format
         message_12: finished
         message_3: account number in wrong format
-        message_13: interrupted
         message_4: account number in wrong format
-        message_14: continue
         message_5: not_all_subject_finished
-        message_15: studying
         message_6: absolved
         message_7: interrupted
       program: {}

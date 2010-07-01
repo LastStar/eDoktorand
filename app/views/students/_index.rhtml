@@ -1,5 +1,5 @@
 <% study_plan = index.study_plan %>
-<tr class='student-line <%= index.status_class %>' id='index_line_<%= index.id %>'>
+<tr class='student-line <%= index.status %>' id='index_line_<%= index.id %>'>
   <% if @user.has_one_of_roles?(['faculty_secretary', 'dean']) %>
   <td class='index_tags'>
     <%= raw index_tags(index) %>
@@ -15,7 +15,7 @@
 <% else %>
   <td>&nbsp;</td>
 <% end %>
-  <td><%= index.status %></td>
+  <td><%= index.translated_status %></td>
   <td><%= index.year %>.<%= t(:message_0, :scope => [:txt, :view, :students, :_index, :rhtml]) %></td>
   <td><%= index.study.name %></td>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector']) %>
