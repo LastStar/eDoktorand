@@ -16,6 +16,7 @@ Sham.state {Faker::Address.us_state}
 Sham.label {|index| "Label #{index}"}
 Sham.code {|index| "CD#{index}"}
 Sham.login {Faker::Internet.user_name}
+Sham.title {|index| "Title ##{index}"}
 
 Faculty.blueprint do
   name {Sham.name}
@@ -163,4 +164,10 @@ ExtraScholarship.blueprint do
   commission_head {'4444'}
   commission_body {'55555'}
   commission_tail {'4444'}
+end
+
+DisertTheme.blueprint do
+  index
+  title 
+  finishing_to {6}
 end

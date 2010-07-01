@@ -141,7 +141,14 @@ describe Index do
       @tutor = @index.tutor
       @unfinished = Index.make
       @finished = Index.make(:finished_on => Time.now)
+      @interrupted = Index.make(:interrupted_on => 1.day.ago)
+      @absolved = Index.make
+      DisertTheme.make(:defense_passed_on => 1.day.ago, :index => @absolved)
+      @not_present = Index.make(:study => Study.make(:name_en => 'combined'))
+      @passed_final_exam = Index.make(:final_exam_passed_on => 1.day.ago)
+      @all = Index.all
     end
+
     it "should return all indices tutored by tutor" do
       Index.tutored_by(@tutor).should == [@index]
     end
@@ -151,15 +158,33 @@ describe Index do
     it "should return all for department" do
       Index.for_department(@index.department).should == [@index]
     end
+    it "should return all for specialization" do
+      Index.for_specialization(@index.specialization).should == [@index]
+    end
     it "should return all studying until some date" do
-      Index.studying_until(1.day.ago).should == [@index, @unfinished, @finished]
+      Index.studying_until(1.day.ago).should == @all - [@absolved]
     end
     it "should return all unfinished till some date" do
       Index.finished_from(1.day.from_now).should == [@finished]
       Index.finished_from(1.day.ago).should == []
     end
     it "should return all enrolled from some date" do
-      Index.enrolled_from(Time.now) == Index.all
+      Index.enrolled_from(1.day.ago).should == @all
+    end
+    it "should return all not interrupted to some date" do
+      Index.not_interrupted_from(Time.now).should == @all - [@interrupted]
+      Index.not_interrupted_from(2.days.ago).should == @all
+    end
+    it "should return all not absolved to some date" do
+      Index.not_absolved_from(Time.now).should == @all - [@absolved]
+      Index.not_absolved_from(2.day.ago).should == @all
+    end
+    it "should return all which have passed final exam to some date" do
+      Index.passed_final_exam_from(Time.now).should == [@passed_final_exam]
+      Index.passed_final_exam_from(2.days.ago).should == []
+    end
+    it "should return all full time students" do
+      Index.full_time.should == @all - [@not_present]
     end
   end
 

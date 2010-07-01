@@ -91,14 +91,23 @@ class Index < ActiveRecord::Base
   scope :for_department, lambda {|department| where("department_id = ?", department)}
   scope :studying_until, lambda { |date|
     includes(:disert_theme).where(
-      "(finished_on is null or finished_on > ?) and \
-      disert_themes.defense_passed_on is null",
-      date)
-  }
+      "(finished_on is null or finished_on > ?) and disert_themes.defense_passed_on is null",
+      date)}
   scope :finished_from, lambda {|date| where("finished_on is not null and finished_on < ?", date)}
-  scope :enrolled_from, lambda {|date| where("enrolled_on < ?", date)}
+  scope :enrolled_from, lambda {|date| where("enrolled_on > ?", date)}
+  scope :not_interrupted_from, lambda {|date|
+    where("interrupted_on is null or interrupted_on > ?", date)}
+  scope :not_absolved_from, lambda {|date|
+    includes(:disert_theme).where(
+      "disert_themes.defense_passed_on is null or disert_themes.defense_passed_on > ?",
+      date)}
+  scope :full_time, includes(:study).where("studies.name_en = 'full time'")
+  scope :passed_final_exam_from, lambda {|date|
+    where("final_exam_passed_on is not null and final_exam_passed_on < ?", date)}
+  scope :for_specialization, lambda {|specialization|
+    where("specialization_id = ?", specialization)}
 
-  validate :correct_acount_number, :all_exams_finished
+  validate :correct_acount_number
 
   # return last interrupt
   def interrupt
@@ -137,12 +146,6 @@ class Index < ActiveRecord::Base
         end
      end
     return false
-  end
-
-  def all_exams_finished
-    if final_exam_passed_on && !study_plan.all_subjects_finished?
-      errors.add(:final_exam_passed_on, I18n.t(:message_5, :scope => [:txt, :model, :index]))
-    end
   end
 
   # validates account number correctness

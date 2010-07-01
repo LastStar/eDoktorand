@@ -6,13 +6,6 @@ class DisertTheme < ActiveRecord::Base
 
   before_create :set_actual
   after_create :copy_methodology
-  validate :final_exam_first
-
-  def final_exam_first
-    if defense_passed_on && !index.final_exam_passed?
-      errors.add(:defense_passed_on, t(:message_1, :scope => [:txt, :model, :theme]))
-    end
-  end
 
   def self.save_methodology(disert_theme, file)
     File.open("#{Rail.root}/public/pdf/methodology/#{disert_theme.id}.pdf", "w") do |f|
