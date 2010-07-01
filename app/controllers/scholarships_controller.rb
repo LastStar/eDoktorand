@@ -130,13 +130,8 @@ class ScholarshipsController < ApplicationController
                                          :order => 'studies.id, people.lastname',
                                          :include => [:student, :study, :disert_theme])
     @show_table_message = 1
-    @bad_indices = []
-    #TO DO rewrite to identihas_any_scholarshipfy bad index by itself - method in index model
-    for index in @indices
-      if index.bad_index? 
-          @bad_indices << index
-      end
-    end
+    @bad_indices = @indices.select {|i| i.bad_index?}
+    #TODO: remove ALL bad_index?
     render(:action => 'list')
   end
   
