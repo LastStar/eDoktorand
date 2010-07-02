@@ -24,9 +24,9 @@
   <div class='info'><%= @interrupt.end_on.strftime('%d. %m. %Y')%></div>
   <%= t(:message_2, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>
   </li>
-  <% elsif @interrupt.index.admited_interrupt? %>
+  <% elsif @interrupt.index.admitted_interrupt? %>
 <h5><%= t(:message_3, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %></h5>
-<ul id='admited_interrupt'>
+<ul id='admitted_interrupt'>
   <li>
   <div class='info'><%= @interrupt.index.interrupt.start_on.strftime('%m/%Y') %></div>
   <%= t(:message_4, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>

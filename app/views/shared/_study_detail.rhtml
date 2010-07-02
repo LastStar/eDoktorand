@@ -22,8 +22,8 @@
         <div class='info'><%= interrupt.end_on.strftime('%d. %m. %Y')%></div>
         <%= t(:message_4, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
       </li>
-  <% elsif index.admited_interrupt? %>
-    <ul id='admited_interrupt' class='bordered half right-visible'>
+  <% elsif index.admitted_interrupt? %>
+    <ul id='admitted_interrupt' class='bordered half right'>
       <li class="noborder"><h5><%= t(:message_5, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
       <li>
       <div class='info'><%= index.interrupt.start_on.strftime('%d. %m. %Y') %></div>
@@ -128,7 +128,7 @@
     :study_plan => study_plan, :methodology => true}) %>
   <% if index.claimed_final_application? %>
     <%= approve_forms(@user, index) %>
-  <% elsif index.admited_interrupt? %>
+  <% elsif index.admitted_interrupt? %>
     <%= approve_forms(@user, index.interrupt) %>
   <% elsif !study_plan.approved? || study_plan.waits_for_actual_attestation? %>
     <%= approve_forms(@user, study_plan) %>

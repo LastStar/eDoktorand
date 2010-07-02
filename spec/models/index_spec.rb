@@ -4,14 +4,13 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Index do
   context "states" do
     before(:each) {@index = Index.make(:enrolled_on => 3.years.ago)}
-    it "should return continues based on specialization study length" do
-      @index.continue?.should be_false
-      @index.status.should == :studying
-      @index = Index.new
-      @index.enrolled_on = 3.years.ago
+    it "should return studying" do
+      @index.status.should eq :studying
+    end
+    it "should return continue based on specialization study length" do
       @index.specialization = Specialization.make(:study_length => 3)
       @index.continue?.should be_true
-      @index.status.should == :continue
+      @index.status.should eq :continue
     end
     context 'status methods' do
       before :each do
@@ -35,26 +34,53 @@ describe Index do
     it "should return interrupted" do
       @index.interrupt!(1.month.ago)
       @index.should be_interrupted
-      @index.status.should == :interrupted
+      @index.status.should eq :interrupted
     end
     it "should return finished" do
       @index.finish!(1.month.ago)
       @index.should be_finished
-      @index.status.should == :finished
+      @index.status.should eq :finished
+    end
+    it "should return studying after unfinishing" do
+      @index.finish!(1.month.ago)
+      @index.unfinish!
+      @index.status.should eq :studying
     end
     it "should return passed final exam" do
       @index.final_exam_passed!(1.month.ago)
       @index.should be_final_exam_passed
-      @index.status.should == :final_exam_passed
+      @index.status.should eq :final_exam_passed
     end
     it "should return absolved" do
       @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
       @index.disert_theme.defense_passed!(1.month.ago)
       @index.should be_absolved
-      @index.status.should == :absolved
+      @index.status.should eq :absolved
     end
     it "should return translated status" do
-      @index.translated_status.should == "studying"
+      @index.translated_status.should eq "studying"
+    end
+    describe "Interrupts" do
+      it "should return if admitted interrupt" do
+        StudyInterrupt.make(:index => @index)
+        @index.should be_admitted_interrupt
+      end
+      it "should return if interrupted" do
+        @index.interrupt!(1.day.ago)
+        @index.should be_interrupted
+      end
+      it "should return if not even admitted interrupt" do
+        @index.should be_not_even_admitted_interrupt
+        StudyInterrupt.make(:index => @index)
+        @index.should_not be_not_even_admitted_interrupt
+      end
+    end
+    describe "Accomodation scholarship" do
+      it "should set scholarship claim" do
+        @index.claim_accommodation_scholarship!
+        @index.should be_scholarship_claimed
+        @index.should be_waits_for_scholarship_confirmation
+      end
     end
   end
 
@@ -91,10 +117,10 @@ describe Index do
     end
     describe "Plain" do
       it "should compute semester" do
-        @index.semester.should == 1
+        @index.semester.should eq 1
       end
       it "should compute year" do
-        @index.year.should == 1
+        @index.year.should eq 1
       end
     end
     describe "After one more year" do
@@ -102,10 +128,10 @@ describe Index do
         Timecop.freeze(Time.zone.local(2011, 1, 2))
       end
       it "should compute semester" do
-        @index.semester.should == 3
+        @index.semester.should eq 3
       end
       it "should compute year" do
-        @index.year.should == 2
+        @index.year.should eq 2
       end
     end
     describe "With interrupts" do
@@ -114,22 +140,22 @@ describe Index do
         Timecop.freeze(Time.zone.local(2011, 1, 2))
       end
       it "should compute semester" do
-        @index.semester.should == 2
+        @index.semester.should eq 2
       end
       it "should compute year" do
-        @index.year.should == 1
+        @index.year.should eq 1
       end
       it "should compute sum time index was interrupted" do
-        @index.interrupted_time.should == 8.months
+        @index.interrupted_time.should eq 8.months
       end
     end
     describe 'Absolved' do
       it "should compute semester and year only until absolved date" do
-        @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
+        @index.disert_theme = DisertTheme.make
         @index.save
-        Timecop.freeze(Time.zone.local(2016, 1, 2))
         @index.disert_theme.defense_passed!('2013-01-02')
-        @index.semester.should == 7
+        Timecop.freeze(Time.zone.local(2016, 1, 2))
+        @index.semester.should eq 7
       end
     end
   end
@@ -138,8 +164,9 @@ describe Index do
     before(:all) do
       Index.destroy_all
       @index = Index.make
+      @specialization = @index.specialization
       @tutor = @index.tutor
-      @unfinished = Index.make
+      @unfinished = Index.make(:specialization => @specialization)
       @finished = Index.make(:finished_on => Time.now)
       @interrupted = Index.make(:interrupted_on => 1.day.ago)
       @absolved = Index.make
@@ -150,41 +177,41 @@ describe Index do
     end
 
     it "should return all indices tutored by tutor" do
-      Index.tutored_by(@tutor).should == [@index]
+      Index.tutored_by(@tutor).should eq [@index]
     end
     it "should return all for faculty" do
-      Index.for_faculty(@index.faculty).should == [@index]
+      Index.for_faculty(@index.faculty).should eq [@index]
     end
     it "should return all for department" do
-      Index.for_department(@index.department).should == [@index]
+      Index.for_department(@index.department).should eq [@index]
     end
     it "should return all for specialization" do
-      Index.for_specialization(@index.specialization).should == [@index]
+      Index.for_specialization(@index.specialization).should eq [@index, @unfinished]
     end
     it "should return all studying until some date" do
-      Index.studying_until(1.day.ago).should == @all - [@absolved]
+      Index.studying_until(1.day.ago).should eq @all - [@absolved]
     end
     it "should return all unfinished till some date" do
-      Index.finished_from(1.day.from_now).should == [@finished]
-      Index.finished_from(1.day.ago).should == []
+      Index.finished_from(1.day.from_now).should eq [@finished]
+      Index.finished_from(1.day.ago).should eq []
     end
     it "should return all enrolled from some date" do
-      Index.enrolled_from(1.day.ago).should == @all
+      Index.enrolled_from(1.day.ago).should eq @all
     end
     it "should return all not interrupted to some date" do
-      Index.not_interrupted_from(Time.now).should == @all - [@interrupted]
-      Index.not_interrupted_from(2.days.ago).should == @all
+      Index.not_interrupted_from(Time.now).should eq @all - [@interrupted]
+      Index.not_interrupted_from(2.days.ago).should eq @all
     end
     it "should return all not absolved to some date" do
-      Index.not_absolved_from(Time.now).should == @all - [@absolved]
-      Index.not_absolved_from(2.day.ago).should == @all
+      Index.not_absolved_from(Time.now).should eq @all - [@absolved]
+      Index.not_absolved_from(2.day.ago).should eq @all
     end
     it "should return all which have passed final exam to some date" do
-      Index.passed_final_exam_from(Time.now).should == [@passed_final_exam]
-      Index.passed_final_exam_from(2.days.ago).should == []
+      Index.passed_final_exam_from(Time.now).should eq [@passed_final_exam]
+      Index.passed_final_exam_from(2.days.ago).should eq []
     end
     it "should return all full time students" do
-      Index.full_time.should == @all - [@not_present]
+      Index.full_time.should eq @all - [@not_present]
     end
   end
 
@@ -219,6 +246,25 @@ describe Index do
       ExtraScholarship.make(:index => @index)
       @index.reload
       @index.has_extra_scholarship?.should be_true
+    end
+  end
+
+  describe "Account number" do
+    before(:each) do
+      @index = Index.make(:account_number => '2303308001')
+    end
+    it "should say if account number prefix is filled"do
+      @index.should_not be_account_number_prefix_filled
+      @index.account_number_prefix = ''
+      @index.should_not be_account_number_prefix_filled
+      @index.account_number_prefix = '000000'
+      @index.should_not be_account_number_prefix_filled
+    end
+    
+    it "should print full account number" do
+      @index.full_account_number.should eq '2303308001'
+      @index.account_number_prefix = '666'
+      @index.full_account_number.should eq '666-2303308001'
     end
   end
 

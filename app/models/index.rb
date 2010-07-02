@@ -87,13 +87,15 @@ class Index < ActiveRecord::Base
   scope :passed_final_exam, where("final_exam_passed_on is not null")
   scope :absolved, includes(:disert_theme).where("disert_themes.defense_passed_on is not null")
   scope :tutored_by, lambda {|tutor| where("tutor_id = ?", tutor.id)}
-  scope :for_faculty, lambda {|faculty| where("department_id in (?)", faculty.departments)}
+  scope :for_faculty, lambda {|faculty|
+    where("department_id in (?)", faculty.departments)}
   scope :for_department, lambda {|department| where("department_id = ?", department)}
   scope :studying_until, lambda { |date|
     includes(:disert_theme).where(
       "(finished_on is null or finished_on > ?) and disert_themes.defense_passed_on is null",
       date)}
-  scope :finished_from, lambda {|date| where("finished_on is not null and finished_on < ?", date)}
+  scope :finished_from, lambda {|date|
+    where("finished_on is not null and finished_on < ?", date)}
   scope :enrolled_from, lambda {|date| where("enrolled_on > ?", date)}
   scope :not_interrupted_from, lambda {|date|
     where("interrupted_on is null or interrupted_on > ?", date)}
@@ -174,7 +176,7 @@ class Index < ActiveRecord::Base
     end
   end
 
-  # returns semesteer of the study
+  # returns semester of the study
   def semester
     if @semester
       return @semester
@@ -219,20 +221,106 @@ class Index < ActiveRecord::Base
     disert_theme && disert_theme.defense_passed?(date)
   end
 
-  # returns true if interrupt just admited
-  def admited_interrupt?
+  # returns true if interrupt just admitted
+  def admitted_interrupt?
     interrupt && !interrupted? && !interrupt.finished?
   end
 
-  # returns if stduy plan is interrupted
+  # returns if study plan is interrupted
   def interrupted?
     interrupted_on && interrupted_on < Time.now #&& interrupt && !interrupt.finished?
   end
 
-  # returns true if studen claimed for final exam
+  # returns status of index
+  def status
+    @status ||= if disert_theme && disert_theme.defense_passed?
+      :absolved
+    elsif final_exam_passed?
+      :final_exam_passed
+    elsif finished?
+      :finished
+    elsif interrupted?
+      :interrupted
+    elsif continue?
+      :continue
+    else
+      :studying
+    end
+  end
+
+  # returns translated status of index
+  def translated_status
+    I18n::t(:"status_#{status}", :scope => [:txt, :model, :index])
+  end
+
+  # returns true if index have year more than 3
+  def continue?
+    year > specialization.study_length
+  end
+
+  # switches study form
+  # TODO: add history and use date
+  def switch_study!(date = Date.today)
+    if present_study?
+      self.study = Study.find_by_name_en('combined')
+    else
+      self.study = Study.find_by_name_en('full time')
+    end
+  end
+
+  # finishes study
+  def finish!(date = Date.today)
+    update_attribute('finished_on', date)
+  end
+
+  # unfinishes study
+  def unfinish!
+    update_attribute('finished_on', nil)
+  end
+
+  # returns if account prefix filled in
+  def account_number_prefix_filled?
+    account_number_prefix && !account_number_prefix.empty? &&
+      account_number_prefix != '000000'
+  end
+
+  # returns full account number
+  def full_account_number
+    if account_number_prefix && !account_number_prefix.empty? && account_number_prefix != '000000'
+      "#{account_number_prefix}-#{account_number}"
+    else
+      "#{account_number}"
+    end
+  end
+
+  # returns time study was interrupted for
+  def interrupted_time
+    interrupts.inject(0) {|sum, i| sum += i.current_duration}
+  end
+
+  # interrupts study with date
+  def interrupt!(start_date)
+    update_attribute('interrupted_on', start_date)
+  end
+
+  def not_even_admitted_interrupt?
+    !interrupted? && !admitted_interrupt?
+  end
+  #
+  # returns true if student claimed for final exam
   def claimed_for_final_exam?
     claimed_final_application? && approved?
   end
+
+  def waits_for_scholarship_confirmation?
+    scholarship_claimed? && !scholarship_approved? && !scholarship_canceled?
+  end
+
+  def scholarship_claimed?
+    scholarship_claimed_at && scholarship_claimed_at > TermsCalculator.this_year_start
+  end
+
+  # ^^^^^^^^^^ have spec ^^^^^^^^^^^
 
   # returns statement if this index waits for approval from person
   def statement_for(user)
@@ -243,7 +331,7 @@ class Index < ActiveRecord::Base
         if approval.prepares_statement?(user)
           return approval.prepare_statement(user)
         end
-      elsif admited_interrupt?
+      elsif admitted_interrupt?
         interrupt.approval ||= InterruptApproval.create
         if interrupt.approval.prepares_statement?(user)
           return interrupt.approval.prepare_statement(user)
@@ -270,7 +358,7 @@ class Index < ActiveRecord::Base
     unless absolved? || interrupted? || final_exam_passed?
       if claimed_final_application?
         temp_approval = self.approval ||= FinalExamApproval.create
-      elsif admited_interrupt?
+      elsif admitted_interrupt?
         temp_approval = interrupt.approval ||= InterruptApproval.create
       elsif study_plan && !study_plan.approved?
         temp_approval = study_plan.approval ||= StudyPlanApproval.create
@@ -527,13 +615,8 @@ class Index < ActiveRecord::Base
   # switches study form
   # TODO: add history and use date
   def switch_study!(date = Date.today)
-<<<<<<< HEAD
-    if study_id == 1
-      update_attribute('study_id', 2)
-=======
     if present_study?
       self.study = Study.find_by_name_en('combined')
->>>>>>> Redone status of index and added translated status method. Redone study form identification. Improved methods for scholarship questioning. Started with change from custom finder to Arel. Remove lots of unused code. Fixed views and controller for new method names and such.
     else
       self.study = Study.find_by_name_en('full time')
     end
@@ -561,25 +644,6 @@ class Index < ActiveRecord::Base
     end
   end
 
-  # returns full account number
-  def full_account_number
-    if account_number_prefix && !account_number_prefix.empty? && account_number_prefix != '000000'
-      "#{account_number_prefix}-#{account_number}"
-    else
-      "#{account_number}"
-    end
-  end
-
-  # returns time study was interrupted for
-  def interrupted_time
-    interrupts.inject(0) {|sum, i| sum += i.current_duration}
-  end
-
-  # interrupts study with date
-  def interrupt!(start_date)
-    update_attribute('interrupted_on', start_date)
-  end
-
   # TODO: add transactions
   # shouldn't be on interrupt?
   # interrupts study with date
@@ -592,7 +656,6 @@ class Index < ActiveRecord::Base
     interrupt.update_attribute('finished_on', end_date)
   end
 
-<<<<<<< HEAD
   def status_class
     if finished?
       'finished'
@@ -603,29 +666,13 @@ class Index < ActiveRecord::Base
     end
   end
 
-=======
->>>>>>> Redone status of index and added translated status method. Redone study form identification. Improved methods for scholarship questioning. Started with change from custom finder to Arel. Remove lots of unused code. Fixed views and controller for new method names and such.
-  def not_even_admited_interrupt?
-    !interrupted? && !admited_interrupt?
-  end
-
   def interrupt_waits_for_confirmation?
-    admited_interrupt? && interrupt.approved? && !interrupt.finished? &&
+    admitted_interrupt? && interrupt.approved? && !interrupt.finished? &&
       !interrupted_on
   end
 
   def close_to_interrupt_end_or_after?(months = 3)
     interrupt && !interrupt.finished? && Time.now > interrupt.end_on.months_ago(months)
-  end
-
-  def waits_for_scholarship_confirmation?
-    claim_date = scholarship_claimed_at
-    claim_date && claim_date > TermsCalculator.this_year_start &&
-      !scholarship_approved? && !scholarship_canceled?
-  end
-
-  def scholarship_claimed?
-    scholarship_claimed_at.nil?
   end
 
   def scholarship_approved?

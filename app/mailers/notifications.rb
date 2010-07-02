@@ -60,9 +60,9 @@ class Notifications < ActionMailer::Base
     @year = study_plan.index.year
     if interrupt.index.interrupted?
       @interrupted_on = interrupt.index.interrupted_on.strftime('%d. %m. %Y')
-    elsif interrupt.index.admited_interrupt?
-      @admited_interrupt_start = interrupt.index.interrupt.start_on.strftime('%m/%Y')
-      @admited_interrupt_duration = interrupt.index.interrupt.duration
+    elsif interrupt.index.admitted_interrupt?
+      @admitted_interrupt_start = interrupt.index.interrupt.start_on.strftime('%m/%Y')
+      @admitted_interrupt_duration = interrupt.index.interrupt.duration
     else
       @last_interrupt = interrupt.start_on.strftime('%d. %m. %Y')
     end
