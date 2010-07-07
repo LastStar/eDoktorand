@@ -328,22 +328,22 @@ class Index < ActiveRecord::Base
     unless status == absolved? || interrupted? || final_exam_passed?
       if claimed_final_application?
         self.approval ||= FinalExamApproval.create
-        if approval.prepares_statement?(user)
+        if approval.prepares_statement?(user.person)
           return approval.prepare_statement(user)
         end
       elsif admitted_interrupt?
         interrupt.approval ||= InterruptApproval.create
-        if interrupt.approval.prepares_statement?(user)
+        if interrupt.approval.prepares_statement?(user.person)
           return interrupt.approval.prepare_statement(user)
         end
       elsif study_plan
         if !study_plan.approved?
           study_plan.approval ||= StudyPlanApproval.create(:document_id => study_plan.id)
-          if study_plan.approval.prepares_statement?(user)
+          if study_plan.approval.prepares_statement?(user.person)
             return study_plan.approval.prepare_statement(user)
           end
         elsif study_plan.waits_for_actual_attestation?
-          if !study_plan.attestation || !study_plan.attestation.is_actual?
+          if !study_plan.attestation || !study_plan.attestation.actual?
             study_plan.attestation = Attestation.create(:document_id => study_plan.id)
           end
           return study_plan.attestation.prepare_statement(user)
@@ -362,14 +362,15 @@ class Index < ActiveRecord::Base
         temp_approval = interrupt.approval ||= InterruptApproval.create
       elsif study_plan && !study_plan.approved?
         temp_approval = study_plan.approval ||= StudyPlanApproval.create
-      elsif study_plan && study_plan.approved?
-        if !study_plan.attestation || !study_plan.attestation.is_actual?
+      elsif study_plan && study_plan.approved? &&
+        study_plan.waits_for_actual_attestation?
+        if !study_plan.attestation || !study_plan.attestation.actual?
           temp_approval = study_plan.attestation = Attestation.create(:document_id => study_plan.id)
         else
           temp_approval = study_plan.attestation
         end
       end
-      temp_approval && temp_approval.prepares_statement?(user)
+      temp_approval && temp_approval.prepares_statement?(user.person)
     end
   end
 
