@@ -61,16 +61,13 @@ describe "Candidate" do
   end
 
   context "Retrieving" do
-    before(:all) do
+    before(:each) do
       Candidate.make
       @specialized = Candidate.make(:specialization => @specialization)
       @finished = Candidate.make(:finished, :specialization => @specialization)
       @ready = Candidate.make(:ready)
       @invited = Candidate.make(:invited)
       @admitted = Candidate.make(:admitted)
-    end
-    after(:all) do
-      Candidate.destroy_all
     end
     it "should return candidates for faculty" do
       candidates = Candidate.for_faculty(@faculty)

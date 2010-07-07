@@ -20,6 +20,6 @@ Feature: Login page
     Then I fill my credentials
     Then I press "login-button"
     Then I should see "Study plan"
-    Then I should see "Tutor Tutorov"
+    Then I should see "Tutor"
     Then I should see "Department"
     Then I should see "create study plan"

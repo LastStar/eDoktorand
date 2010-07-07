@@ -4,7 +4,7 @@ Then /^I fill my credentials$/ do
 end
 
 Given /^I have user named "(.+)"$/ do |user_name|
-  @user = Factory(:user, :login => user_name)
+  @user = User.make(:login => user_name)
 end
   
 Given /^I have logged in$/ do

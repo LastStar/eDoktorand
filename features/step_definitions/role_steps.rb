@@ -1,11 +1,11 @@
 Given /^I am student with account "(.+)"$/ do |user_name|
-  @person = Factory(:student)
-  @person.index = Factory.build(:index)
-  @role = Factory(:role, :name => "student")
-  @role.permissions << Factory(:permission, :name => 'account/welcome')
-  @role.permissions << Factory(:permission, :name => 'study_plans/index')
-  @role.permissions << Factory(:permission, :name => 'study_plans/create')
-  @user = Factory(:user, :login => user_name, :person => @person)
+  @person = Student.make
+  Index.make(:student => @person)
+  @role = Role.make(:name => "student")
+  @role.permissions << Permission.make(:name => 'account/welcome')
+  @role.permissions << Permission.make(:name => 'study_plans/index')
+  @role.permissions << Permission.make(:name => 'study_plans/create')
+  @user = User.make(:login => user_name, :person => @person)
   @user.roles << @role
 end
 

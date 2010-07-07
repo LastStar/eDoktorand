@@ -171,3 +171,21 @@ DisertTheme.blueprint do
   title 
   finishing_to {6}
 end
+
+StudyPlan.blueprint do
+  index
+end
+
+Leader.blueprint do
+  firstname
+  lastname
+  leadership
+end
+
+Leadership.blueprint do
+  department
+end
+
+Permission.blueprint do
+  name {'account/login'}
+end
