@@ -16,22 +16,20 @@ class Approval < ActiveRecord::Base
       return build_leader_statement('person_id' => user.person.id)
     elsif !leader_statement && !tutor_statement && index.tutor == user.person 
       return build_tutor_statement('person_id' => user.person.id)
-    elsif leader_statement && !dean_statement && user.person.is_dean_of?(index)
+    elsif leader_statement && !dean_statement && user.person.dean_of?(index)
       return build_dean_statement('person_id' => user.person.id)
     end
   end
 
-  # returns if it have statement for user
-  def prepares_statement?(user)
+  # returns if it have statement for person
+  def prepares_statement?(person)
     if dean_statement
       false
-    elsif user.has_role? 'faculty_secretary'
+    elsif person.is_a? FacultySecretary
       true
-    elsif ((tutor_statement || index.tutor == user.person) &&
-      !leader_statement && index.leader == user.person) || 
-      (!leader_statement && !tutor_statement && index.tutor ==
-      user.person) || (leader_statement && !dean_statement &&
-      user.person.is_dean_of?(index))
+    elsif waiting_for_tutor_statement?(person) || 
+      waiting_for_leader_statement?(person) || 
+      waiting_for_dean_statement?(person)
       true
     end
   end
@@ -39,6 +37,19 @@ class Approval < ActiveRecord::Base
   #TODO vvv get rid of these vvv
   def approved_by
     t(:message_0, :scope => [:txt, :model, last_approver.to_s.underscore])
+  end
+
+  def waiting_for_tutor_statement?(person)
+   !leader_statement && !tutor_statement && index.tutor == person 
+  end
+
+  def waiting_for_leader_statement?(person)
+   ((tutor_statement || index.tutor == person) &&
+      !leader_statement && index.leader == person) 
+  end
+
+  def waiting_for_dean_statement?(person)
+    leader_statement && !dean_statement && person.dean_of?(index)
   end
 
   def last_approver

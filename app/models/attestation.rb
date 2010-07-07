@@ -26,12 +26,13 @@ class Attestation < Approval
       if Date.today <= (date = Date.civil(year, month, day))
         year -= 1
         return Date.civil(year, month, day)
+      else
+        return date
       end
-      return date
     end
   end
 
-  def is_actual?
+  def actual?
     updated_on > Attestation.actual_for_faculty(study_plan.index.faculty).to_time
   end
 

@@ -155,6 +155,7 @@ Department.blueprint do
 end
 
 StudyInterrupt.blueprint do
+  index
   start_on {Time.current}
   duration {8}
 end
@@ -186,6 +187,28 @@ Leadership.blueprint do
   department
 end
 
+Dean.blueprint do
+  firstname
+  lastname
+  deanship
+end
+
+Deanship.blueprint do
+  faculty
+end
+
 Permission.blueprint do
   name {'account/login'}
+end
+
+TutorStatement.blueprint do
+  person {Tutor.make}
+end
+
+LeaderStatement.blueprint do
+  person {Leader.make}
+end
+
+DeanStatement.blueprint do
+  person {Dean.make}
 end
