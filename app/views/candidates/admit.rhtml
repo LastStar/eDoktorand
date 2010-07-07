@@ -11,7 +11,7 @@
     <label for="candidate_department_id"><%= t(:message_3, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
     <%= select 'candidate', 'department_id', Department.for_select(:faculty => @user.person.faculty) %><br/>
     <label for="candidate_study_id"><%= t(:message_4, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
-    <%= select 'candidate', 'study_id', Study.for_select %><br/>
+    <%= select 'candidate', 'study_id', Study.find(:all).map {|s| [s.name, s.id]} %><br/>
   </div>
   <%= submit_tag(t(:message_5, :scope => [:txt, :view, :candidates, :admit, :rhtml])) %>
 <% end %>
