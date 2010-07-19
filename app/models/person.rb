@@ -33,7 +33,7 @@ class Person < ActiveRecord::Base
     return false
   end
 
-  def is_dean_of?(index)
+  def dean_of?(index)
     return false
   end
 
