@@ -8,19 +8,16 @@ gem "sqlite3-ruby"
 gem "log4r"
 gem "hpricot"
 gem "ruby-net-ldap", :require => "net/ldap"
-gem "will_paginate", '3.0.pre'
 gem "mail"
 gem "ruby-debug"
 gem "state_machine"
 
-gem "mongrel", :group => :development
-
 group :test do
   gem "test-unit", '2.0.7'
-  gem "rspec-core", "2.0.0.beta.16"
-  gem "rspec-expectations", "2.0.0.beta.16"
-  gem "rspec-mocks", "2.0.0.beta.16"
-  gem 'rspec-rails', "2.0.0.beta.16"
+  gem "rspec-core", "2.0.0.beta.17"
+  gem "rspec-expectations", "2.0.0.beta.17"
+  gem "rspec-mocks", "2.0.0.beta.17"
+  gem 'rspec-rails', "2.0.0.beta.17"
   gem "capybara"
   gem 'database_cleaner'
   gem 'cucumber-rails'
