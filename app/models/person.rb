@@ -3,10 +3,6 @@ require 'genderize'
 class Person < ActiveRecord::Base
   include Genderize
   
-  has_one :email, :class_name => 'Contact', :foreign_key => 'person_id',
-      :conditions => 'contact_type_id = 1'
-  has_one :phone, :class_name => 'Contact', :foreign_key => 'person_id',
-      :conditions => 'contact_type_id = 2'
   belongs_to :title_before, :class_name => 'Title', :foreign_key => 
     'title_before_id'
   belongs_to :title_after, :class_name => 'Title', :foreign_key =>
@@ -39,32 +35,6 @@ class Person < ActiveRecord::Base
 
   def is_dean_of?(index)
     return false
-  end
-
-  def email=(value)
-    email_or_new.update_attribute(:name, value)
-  end
-
-  def phone=(value)
-    phone_or_new.update_attribute(:name, value)
-  end
- 
-  def email_or_new
-    return email if email
-    Contact.new_email_for(id)
-  end
-
-  def phone_or_new
-    return phone if phone
-    Contact.new_phone_for(id)
-  end
-
-  def email_name
-    unless email
-      ""
-    else
-      email.name
-    end
   end
 
   def <=>(other)

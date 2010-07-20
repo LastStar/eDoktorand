@@ -27,9 +27,7 @@ class StudentsController < ApplicationController
   
   def admin_update_mail
     @index = Index.find(params[:index][:id])
-    email = @index.student.email_or_new
-    email.update_attribute(:name, params[:student][:email])
-    @index = Index.find(params[:index][:id])
+    @index.update_attribute(:email, params[:student][:email])
     render :partial => "admin_show_mail"
   end
 
@@ -151,20 +149,25 @@ class StudentsController < ApplicationController
   end
 
   # methods for editing personal details
-  # TODO cleanup this mess vvvvvvvv
   def edit_email
-    @student = Student.find(params[:id], :include => :index)
-    @index = @student.index
-    @email = @index.student.email_or_new
+    @student = Student.find(params[:id])
   end
 
   def save_email
-    @student = Student.find(params[:student][:id], :include => :index)
-    @index = @student.index
-    @email = @index.student.email_or_new
-    @email.update_attribute(:name, params[:email][:name])
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:email, params[:student][:email])
   end
 
+  def edit_phone
+    @student = Student.find(params[:id])
+  end
+  
+  def save_phone
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:phone, params[:student][:phone])
+  end
+
+  # TODO cleanup this mess vvvvvvvv
   def edit_display_name
     @student = Student.find(params[:id], :include => :index)
     @titles = Title.find(:all, :order => "label").collect {|p| [ p.label, p.id ] }
@@ -180,19 +183,6 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
     @student.update_attributes(params[:student])
-  end
-
-  def edit_phone
-    @student = Student.find(params[:id], :include => :index)
-    @index = @student.index
-    @phone = @index.student.phone_or_new
-  end
-  
-  def save_phone
-    @student = Student.find(params[:student][:id], :include => :index)
-    @index = @student.index
-    @phone = @index.student.phone_or_new
-    @phone.update_attribute(:name, params[:phone][:name])
   end
 
   def edit_citizenship

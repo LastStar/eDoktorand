@@ -14,8 +14,8 @@ class Notifications < ActionMailer::Base
     @body['study_id'] = candidate.study_id
     @body['salutation'] = candidate.genderize(I18n::t(:message_1, :scope => [:txt, :model, :notifications]), I18n::t(:message_2, :scope => [:txt, :model, :notifications]), I18n::t(:message_3, :scope => [:txt, :model, :notifications]))
     @recipients = candidate.email
-    @cc        = faculty.secretary.email.name
-    @from       = faculty.secretary.email.name
+    @cc        = faculty.secretary.email
+    @from       = faculty.secretary.email
     @sent_on    = sent_at
   end
   
@@ -28,8 +28,8 @@ class Notifications < ActionMailer::Base
     @body[:conditional] = conditional
     @candidate = candidate
     @recipients = candidate.email
-    @cc        = faculty.secretary.email.name
-    @from       = faculty.secretary.email.name
+    @cc = faculty.secretary.email
+    @from = faculty.secretary.email
   end
   
   #sends reject mail to candidate
@@ -44,8 +44,8 @@ class Notifications < ActionMailer::Base
     @body['candidate'] = candidate
     @body[:faculty] = faculty = candidate.department.faculty
     @recipients = candidate.email
-    @cc        = faculty.secretary.email.name
-    @from       = faculty.secretary.email.name
+    @cc        = faculty.secretary.email
+    @from       = faculty.secretary.email
     @sent_on = sent_at
   end
 
@@ -93,7 +93,7 @@ class Notifications < ActionMailer::Base
     @body['specialization'] = study_plan.index.specialization.name
     @body['sent_on'] = sent_at
     @recipients = study_plan.index.tutor.email
-    @from = study_plan.index.faculty.secretary.email.name
+    @from = study_plan.index.faculty.secretary.email
     @sent_on = sent_at
   end
 
@@ -124,12 +124,12 @@ class Notifications < ActionMailer::Base
     @body[:student] = index.student
     @body[:sent_on] = sent_at
     if index.final_exam_term.chairman.email != nil
-      @recipients = index.student.email.name, index.final_exam_term.chairman.email.name
+      @recipients = index.student.email, index.final_exam_term.chairman.email
     else
-      @recipients = index.student.email.name
+      @recipients = index.student.email
     end
-    @cc        = faculty.secretary.email.name
-    @from       = faculty.secretary.email.name
+    @cc        = faculty.secretary.email
+    @from       = faculty.secretary.email
   end
 
   def invite_to_defense(index, sent_at = Time.now)
@@ -138,18 +138,18 @@ class Notifications < ActionMailer::Base
     @body[:student] = index.student
     @body[:sent_on] = sent_at
     if index.defense.chairman.email != nil
-      @recipients = index.student.email.name, index.defense.chairman.email.name
+      @recipients = index.student.email, index.defense.chairman.email
     else
-      @recipients = index.student.email.name
+      @recipients = index.student.email
     end
-    @cc        = faculty.secretary.email.name
-    @from       = faculty.secretary.email.name
+    @cc        = faculty.secretary.email
+    @from       = faculty.secretary.email
   end
 
   def created_account(student, sent_at = Time.now)
     @subject = I18n::t(:message_10, :scope => [:txt, :model, :notifications])
     @body[:student] = student
     @from = "edoktorand@edoktorand.czu.cz"
-    @recipients = student.email.name
+    @recipients = student.email
   end
 end

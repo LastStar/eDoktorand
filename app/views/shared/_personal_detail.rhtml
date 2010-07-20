@@ -11,10 +11,10 @@
   <%= birth_number_line(index.student) %>
   <%= birth_place_line(index.student) %>
   <li>
-    <%= attribute_line(index.student, :email, :name) %><%=t(:message_7, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+    <%= attribute_line(index.student, :email) %><%=t(:message_7, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
-    <%= attribute_line(index.student, :phone, :name) %><%=t(:message_8, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+    <%= attribute_line(index.student, :phone) %><%=t(:message_8, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li>
     <%= "#{long_info_helper(index.student.uic) if index.student.uic}#{t(:message_13, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>
