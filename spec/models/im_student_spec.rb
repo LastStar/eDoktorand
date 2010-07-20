@@ -2,48 +2,44 @@ require 'spec_helper'
 
 describe IMStudent do
   before(:each) do
-    @valid_attributes = {
-      :uic => 1,
-      :student_id => 1,
-      :firstname => "value for firstname",
-      :lastname => "value for lastname",
-      :birthname => "value for birthname",
-      :birth_number => "value for birth_number",
-      :sex => "value for sex",
-      :zip => "value for zip",
-      :street => "value for street",
-      :city => "value for city",
-      :created_on => Date.today,
-      :updated_on => Date.today,
-      :title_before => "value for title_before",
-      :title_after => "value for title_after",
-      :birth_on => Date.today,
-      :nationality => "value for nationality",
-      :birth_place => "value for birth_place",
-      :phone => "value for phone",
-      :email => "value for email",
-      :citizenship => "value for citizenship",
-      :qualif_citizenship => "value for qualif_citizenship",
-      :perm_residence => "value for perm_residence",
-      :contact_street => "value for contact_street",
-      :contact_housenr => "value for contact_housenr",
-      :contact_housenrguid => "value for contact_housenrguid",
-      :contact_city => "value for contact_city",
-      :contact_state => "value for contact_state",
-      :contact_zip => "value for contact_zip",
-      :permaddress_street => "value for permaddress_street",
-      :permaddress_housenr => "value for permaddress_housenr",
-      :permaddress_state => "value for permaddress_state",
-      :permaddress_city => "value for permaddress_city",
-      :permaddress_zip => "value for permaddress_zip",
-      :marital_status => "value for marital_status",
-      :bank_branch => "value for bank_branch",
-      :bank_account => "value for bank_account",
-      :bank_code => "value for bank_code"
-    }
+    @student = Student.create(:uic => 1,
+                              :firstname => 'Josef',
+                              :lastname => 'Nosek',
+                              :birthname => 'Kosek',
+                              :birth_number => '7604242624',
+                              :sex => 'M',
+                              :title_before => Title.create(:label => 'Ing.', :prefix => true),
+                              :title_after => Title.new(:label => 'PhD.', :prefix => false),
+                              :birth_place => 'Liberec',
+                              :birth_on => '1980-01-01',
+                              :citizenship => 'USA',
+                              :email => 'example@example.com',
+                              :phone => '777666555')
+    @im_student = IMStudent.new(:student_id => @student.id)
   end
 
-  it "should create a new instance given valid attributes" do
-    IMStudent.create!(@valid_attributes)
+  it "should have student before saving" do
+    @im_student.student = nil
+    @im_student.save.should be_false
+  end
+  it "should be connected to user" do
+    @im_student.student.should == @student
+  end
+  it "should get students attributes" do
+    @im_student.save
+    @im_student.uic.should == 1
+    @im_student.lastname.should == 'Nosek'
+    @im_student.firstname.should == 'Josef'
+    @im_student.birthname.should == 'Kosek'
+    @im_student.birth_number.should == '7604242624'
+    @im_student.sex.should == 'M'
+    @im_student.created_on.to_i.should == @student.created_on.to_i
+    @im_student.title_before.should == 'Ing.'
+    @im_student.title_after.should == 'PhD.'
+    @im_student.birth_place.should == 'Liberec'
+    @im_student.birth_on.should == Date.parse('1980-01-01')
+    @im_student.email.should == 'example@example.com'
+    @im_student.phone.should == '777666555'
+    @im_student.citizenship.should == 'USA'
   end
 end
