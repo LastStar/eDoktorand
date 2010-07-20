@@ -48,3 +48,5 @@ DROP TABLE IF EXISTS `subjects`;
 DROP TABLE IF EXISTS `titles`;
 DROP TABLE IF EXISTS `tutorships`;
 DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `im_students`;
+DROP TABLE IF EXISTS `logevents`;
