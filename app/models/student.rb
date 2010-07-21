@@ -7,6 +7,14 @@ class Student < Examinator
           :conditions => 'address_type_id = 2', :dependent => :destroy
   has_one :candidate
   has_and_belongs_to_many :probation_terms
+  has_one :im_student
+
+  after_create :prepare_im_student
+
+  # prepares ImStudent if there is no one
+  def prepare_im_student
+    build_im_student unless im_student
+  end
 
   #TODO delegate
   # returns faculty on which student is

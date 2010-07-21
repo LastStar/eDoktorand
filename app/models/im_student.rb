@@ -18,8 +18,8 @@ class ImStudent < ActiveRecord::Base
     self.birth_number = student.birth_number
     self.sex = student.sex
     self.created_on = student.created_on
-    self.title_before = student.title_before.label
-    self.title_after = student.title_after.label
+    self.title_before = student.title_before.label if student.title_before
+    self.title_after = student.title_after.label if student.title_after
     self.birth_place = student.birth_place
     self.birth_on = student.birth_on
     self.email = student.email
