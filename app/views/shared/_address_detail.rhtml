@@ -1,20 +1,21 @@
-<% address = student.address_or_create %>
 <ul class='bordered half right'>
-<li class="noborder"><h5><%= t(:message_2, :scope => [:txt, :view, :shared, :_student_detail, :rhtml]) %></h5></li>
-<li>
-<%= attribute_line(address, :street) %>
-<%=t(:message_9, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
-</li>
-<li>
-<%= attribute_line(address, :desc_number) %>
-<%=t(:message_10, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
-</li>
-<li>
-<%= attribute_line(address, :city) %>
-<%=t(:message_11, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
-</li>
-<li>
-<%= attribute_line(address, :zip) %>
-<%=t(:message_12, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
-</li>
+  <li class="noborder">
+    <h5><%= t(:message_2, :scope => [:txt, :view, :shared, :_student_detail, :rhtml]) %></h5>
+  </li>
+  <li>
+    <%= attribute_line(student, :street) %>
+    <%=t(:message_9, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+  </li>
+  <li>
+    <%= attribute_line(student, :desc_number) %>
+    <%=t(:message_10, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+  </li>
+  <li>
+    <%= attribute_line(student, :city) %>
+    <%=t(:message_11, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+  </li>
+  <li>
+    <%= attribute_line(student, :zip) %>
+    <%=t(:message_12, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
+  </li>
 </ul>

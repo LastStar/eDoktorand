@@ -1,0 +1,6 @@
+<% save_form(:desc_number) do -%>
+  <%= text_field 'student', 'desc_number', 'size' => 30 %>
+  <%= hidden_field 'student', 'id' %>
+  <%= ok_submit(:desc_number) %>
+<% end %>
+<%= javascript_tag "$('student_desc_number').select()" %>

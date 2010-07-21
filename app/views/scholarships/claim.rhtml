@@ -52,7 +52,7 @@
     </tr>
   </table>
   <br /><br />
-  <% if @student.address %>
+  <% if @student.street %>
     <%= t(:message_7, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
     <br /><br />
     <table>
@@ -61,13 +61,13 @@
           <%= t(:message_8, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
         </td>
         <td width="200px;">
-          <%= @student.address.street %>
+          <%= @student.street %>
         </td>
         <td>
           <%= t(:message_9, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>&nbsp;&nbsp;
         </td>
         <td>
-          <%= @student.address.desc_number %>
+          <%= @student.desc_number %>
         </td>
       </tr>
       <tr>
@@ -75,7 +75,7 @@
           <%= t(:message_10, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
         </td>
         <td width="100px;">
-          <%= @student.address.city %>
+          <%= @student.city %>
         </td>
       </tr>
       <tr>
@@ -83,7 +83,7 @@
           <%= t(:message_11, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
         </td>
         <td>
-          <%= @student.address.zip %>
+          <%= @student.zip %>
         </td>
       </tr>
     </table>

@@ -1,10 +1,6 @@
 class Student < Examinator
   
   has_one :index, :dependent => :destroy, :order => 'created_on desc'
-  has_one :address, :conditions => 'address_type_id = 1', 
-          :dependent => :destroy
-  has_one :postal_address, :class_name => 'Address', 
-          :conditions => 'address_type_id = 2', :dependent => :destroy
   has_one :candidate
   has_and_belongs_to_many :probation_terms
   has_one :im_student

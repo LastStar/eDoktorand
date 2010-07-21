@@ -4,6 +4,8 @@ class StudentsController < ApplicationController
   layout 'employers',
         :except => [:edit_citizenship, :edit_display_name, :edit_phone,
                     :edit_email, :edit_birthname, :edit_consultant, :edit_tutor,
+                    :edit_street, :edit_zip, :edit_city, :edit_desc_number,
+                    :save_street, :save_city, :save_zip, :save_desc_number,
                     :time_form, :filter, :list_xls, :edit_account]
 
   before_filter :login_required
@@ -11,7 +13,51 @@ class StudentsController < ApplicationController
   before_filter :prepare_order, :prepare_filter, :except => [:show, :contact]
   before_filter :prepare_conditions, :prepare_student
 
+  # saves the street of address to db 
+  def save_street
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:street, params[:student][:street])
+  end
+  
+  # saves the city of address to db
+  def save_city
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:city, params[:student][:city])
+  end
+  
+  # saves the zip of address to db
+  def save_zip
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:zip, params[:student][:zip])
+  end
 
+  # saves the description number of address to db
+  def save_desc_number
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:desc_number, params[:student][:desc_number])
+  end
+
+  def edit_street
+    @student = Student.find(params[:id])
+  end
+
+  def edit_city
+    @student = Student.find(params[:id])
+  end
+
+  def edit_desc_number
+    @student = Student.find(params[:id])
+  end
+
+  def edit_zip
+    @student = Student.find(params[:id])
+  end
+
+  def save_address
+    @student = Student.find(params[:student][:id])
+    @student.update_attributes(params[:student])
+  end
+  
   def mail_list
     @indices = Index.find_for(@user, :order => 'people.lastname', :conditions => ['indices.finished_on is null'])
   end

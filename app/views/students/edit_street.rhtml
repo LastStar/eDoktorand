@@ -1,0 +1,6 @@
+<% save_form(:street) do -%>
+  <%= text_field 'student', 'street', 'size' => 30 %>
+  <%= hidden_field 'student', 'id' %>
+  <%= ok_submit(:street) %>
+<% end %>
+<%= javascript_tag "$('student_street').select()" %>

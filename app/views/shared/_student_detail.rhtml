@@ -16,8 +16,8 @@
 <%end%>
 <br class="clear-all" /><br />
 <%= render(:partial => 'shared/personal_detail', :locals => {:index => index}) %>
-<% if index.student.address || @user.has_role?('student')%>
-<%= render :partial => 'shared/address_detail', :locals => {:student => index.student} %>
+<% if index.student.street || @user.has_role?('student')%>
+  <%= render :partial => 'shared/address_detail', :locals => {:student => index.student} %>
 <% end %>
 <%= render :partial => 'shared/study_detail', :locals => {:index => index} %>
 <% unless @user.has_role?('student') %>
