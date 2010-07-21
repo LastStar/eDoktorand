@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe IMStudent do
+describe ImStudent do
   before(:each) do
     @student = Student.create(:uic => 1,
                               :firstname => 'Josef',
@@ -15,7 +15,7 @@ describe IMStudent do
                               :citizenship => 'USA',
                               :email => 'example@example.com',
                               :phone => '777666555')
-    @im_student = IMStudent.new(:student_id => @student.id)
+    @im_student = ImStudent.new(:student_id => @student.id)
   end
 
   it "should have student before saving" do

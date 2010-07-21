@@ -1,11 +1,14 @@
-class IMStudent < ActiveRecord::Base
+# Every student should have one ImStudent created by migration.
+# On every update of student its ImStudent should be updated also.
+# On every create of student ImStudent should be created.
+# Once a night Eventlog would be created for every updated/created ImStudent
+class ImStudent < ActiveRecord::Base
   belongs_to :student
 
   validates_presence_of :student
 
   before_save :get_student_attributes
 
-  private
   # gets attributtes from student relation
   def get_student_attributes
     self.uic = student.uic
