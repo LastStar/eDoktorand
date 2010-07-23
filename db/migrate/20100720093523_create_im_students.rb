@@ -31,6 +31,7 @@ class CreateImStudents < ActiveRecord::Migration
       t.string :contact_zip
       t.string :permaddress_street
       t.string :permaddress_housenr
+      t.string :permaddress_housenrguid
       t.string :permaddress_state
       t.string :permaddress_city
       t.string :permaddress_zip

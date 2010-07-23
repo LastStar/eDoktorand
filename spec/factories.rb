@@ -16,6 +16,17 @@ Factory.define :person do |p|
   p.lastname 'Calvera'
 end
 
+Factory.define :index do |index|
+  index.enrolled_on TermsCalculator.this_year_start
+  index.association :study
+  index.association :tutor
+  index.association :specialization
+  index.association :department
+  index.account_number '2303308001'
+  index.account_number_prefix '35'
+  index.account_bank_number '5500'
+end
+
 Factory.define :student do |s|
   s.firstname 'Student'
   s.lastname 'Studentov'
@@ -24,14 +35,6 @@ end
 Factory.define :tutor do |s|
   s.firstname 'Tutor'
   s.lastname 'Tutorov'
-end
-
-Factory.define :index do |index|
-  index.enrolled_on TermsCalculator.this_year_start
-  index.association :study
-  index.association :tutor
-  index.association :specialization
-  index.association :department
 end
 
 Factory.define :study do |study|
