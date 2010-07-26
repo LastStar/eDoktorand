@@ -22,6 +22,7 @@ Factory.define :index do |index|
   index.association :tutor
   index.association :specialization
   index.association :department
+  index.payment_id 1
   index.account_number '2303308001'
   index.account_number_prefix '35'
   index.account_bank_number '5500'
@@ -40,13 +41,22 @@ end
 Factory.define :study do |study|
   study.name 'prezenční'
   study.name_en 'full time'
+  study.code 'D'
 end
 
 Factory.define :specialization do |specialization|
   specialization.name 'specialization'
   specialization.name_english 'en specialization'
   specialization.code 'SPE'
+  specialization.msmt_code 'MSPE'
   specialization.association :faculty, :factory => :faculty
+  specialization.association :program
+end
+
+Factory.define :program do |program|
+  program.label 'program'
+  program.label_en 'program'
+  program.code 'PRG'
 end
 
 Factory.define :faculty do |f|
@@ -58,6 +68,7 @@ end
 Factory.define :department do |department|
   department.name "department"
   department.name_english "department en"
+  department.short_name 'DEP'
   department.association :faculty
 end
 

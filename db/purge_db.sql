@@ -50,3 +50,5 @@ DROP TABLE IF EXISTS `tutorships`;
 DROP TABLE IF EXISTS `users`;
 DROP TABLE IF EXISTS `im_students`;
 DROP TABLE IF EXISTS `logevents`;
+DROP TABLE IF EXISTS `im_indices`;
+

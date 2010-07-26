@@ -8,9 +8,32 @@ class ImStudent < ActiveRecord::Base
   validates_presence_of :student
 
   before_save :get_student_attributes
+  after_create :create_logevent
+  after_update :update_logevent
+
+  # creates update logevent
+  def update_logevent
+    Logevent.create(:table_key => "id=#{self.id}",
+                    :status => 'N',
+                    :event_type => 6,
+                    :event_time => Time.now,
+                    :perpetrator => "IDM",
+                    :table_name => self.class.table_name)
+  end
+
+  # creates log event
+  def create_logevent
+    Logevent.create(:table_key => "id=#{self.id}",
+                    :status => 'N',
+                    :event_type => 5,
+                    :event_time => Time.now,
+                    :perpetrator => "IDM",
+                    :table_name => self.class.table_name)
+  end
 
   # gets attributtes from student relation
   def get_student_attributes
+    student.reload
     self.uic = student.uic
     self.lastname = student.lastname
     self.firstname = student.firstname
@@ -42,5 +65,6 @@ class ImStudent < ActiveRecord::Base
       self.bank_account = student.index.account_number
       self.bank_code = student.index.account_bank_number
     end
+    return self
   end
 end

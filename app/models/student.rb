@@ -5,7 +5,13 @@ class Student < Examinator
   has_and_belongs_to_many :probation_terms
   has_one :im_student
 
-  after_create :prepare_im_student
+  before_create :prepare_im_student
+  after_update :update_im_student
+
+  # updates ImStudent with new attributes
+  def update_im_student
+    im_student.save
+  end
 
   # prepares ImStudent if there is no one
   def prepare_im_student

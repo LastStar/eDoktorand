@@ -59,6 +59,7 @@ class Index < ActiveRecord::Base
   has_many :scholarships
   has_one :approval, :class_name => 'FinalExamApproval',
     :foreign_key => 'document_id'
+  has_one :im_index
 
   validates_presence_of :student
   validates_presence_of :tutor
@@ -68,6 +69,19 @@ class Index < ActiveRecord::Base
   validates_presence_of :enrolled_on
   validates_numericality_of :account_number, :only_integer => true, :allow_nil => true
   validates_numericality_of :account_bank_number, :only_integer => true, :allow_nil => true
+
+  before_create :prepare_im_index
+  after_update :update_im_index
+
+  # update ImIndex
+  def update_im_index
+    im_index.save
+  end
+
+  # creates ImIndex
+  def prepare_im_index
+    build_im_index unless im_index
+  end
 
   # return last interrupt
   def interrupt
@@ -448,6 +462,43 @@ class Index < ActiveRecord::Base
       I18n::t(:message_15, :scope => [:txt, :model, :index])
     end
     return @status
+  end
+
+  # TODO after merge with rails3 redone with new status
+  def status_code
+    @status_code ||= if disert_theme && disert_theme.defense_passed?
+      "A"
+    elsif final_exam_passed?
+      "S"
+    elsif finished?
+      "Z"
+    elsif interrupted?
+      "P"
+    elsif continues?
+      "S"
+    else
+      "S"
+    end
+    return @status_code
+  end
+
+  # TODO add logic for other statuses like interrupted from and so
+  def status_from
+    TermsCalculator.this_year_start.to_date
+  end
+
+  # TODO add logic for other statuses like interrupted to and so
+  def status_to
+    TermsCalculator.this_year_end.to_date
+  end
+
+  # TODO redone some better way
+  def payment_code
+    payment_id == 1 ? 1 : 7
+  end
+
+  def payment_type
+    payment_id == 1 ? 'studium ve standardní době studia' : 'cizinec, hrazeno ze zvláštní dotace dle evidence Domu zahr. služeb MŠMT'
   end
 
   # returns true if index have year more than 3

@@ -16,5 +16,7 @@ describe Student do
   it "should copy attributes to ImStudent when saved" do
     @student.save
     @student.im_student.lastname.should == 'Nosek'
+    @student.update_attribute(:lastname, 'Kosek')
+    @student.im_student.lastname.should == 'Kosek'
   end
 end
