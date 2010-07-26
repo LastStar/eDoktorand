@@ -10,7 +10,7 @@ class Student < Examinator
 
   # updates ImStudent with new attributes
   def update_im_student
-    im_student.save
+    im_student.save if im_student
   end
 
   # prepares ImStudent if there is no one
