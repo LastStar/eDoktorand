@@ -10,7 +10,7 @@ development:
 production:
   adapter: mysql
   database: phdstudy_production
-  host: edoktorand.czu.cz
+  host: 10.70.1.75
   port: 3306
   encoding: utf8
   username: w3b
