@@ -79,3 +79,23 @@ Factory.define :address do |address|
   address.city 'City'
   address.zip '11111'
 end
+
+Factory.define :candidate do |candidate|
+  candidate.firstname 'Karel'
+  candidate.lastname 'Marel'
+  candidate.birth_at '1980-01-01'
+  candidate.email 'karel@marel.cz'
+  candidate.phone '+420777888999'
+  candidate.street 'Long'
+  candidate.number '2'
+  candidate.city 'Prague'
+  candidate.zip '10000'
+  candidate.state 'Czech'
+  candidate.university 'CZU'
+  candidate.faculty 'FAAPPZ'
+  candidate.studied_branch 'Agro'
+  candidate.birth_number '7604242624'
+  candidate.association :department
+  candidate.language1_id 1
+  candidate.language2_id 2
+end

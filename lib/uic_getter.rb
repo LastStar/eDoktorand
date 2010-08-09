@@ -2,6 +2,7 @@
 require 'soap/netHttpClient'
 require 'log4r'
 
+#TODO spec this shit
 class UicGetter
   #setup logger for clss
   include Log4r
@@ -53,25 +54,29 @@ class UicGetter
         @@logger.debug "Student id #{student.id} already has uic #{student.uic}"
         next
       end
-      service = prepare_service(student.birth_number.to_s)
-      @@logger.debug "Trying service for student id #{student.id} and bn #{student.birth_number}"
-      @@logger.debug service
-      begin
-        service_response = query_service(service)
-      rescue Exception => e
-        @@logger.error 'Something gone wrong with service ' + e
-        next
-      end
-      begin
-        uic = extract_uic(service_response)
-        @@logger.debug "Service and parsing successful. Updating student"
-        student.update_attribute(:uic, uic)
-      rescue Exception => e
-        @@logger.error "Error parsing response: " + e
-        next
-      end
+      student.update_attribute(:uic, get_uic(student.birth_number.to_s))
     end
     @@logger.debug "All students done"
+  end
+
+  # get uic for new student
+  def get_uic(birt_number)
+    service = prepare_service()
+    @@logger.debug "Trying service for student id #{student.id} and bn #{student.birth_number}"
+    @@logger.debug service
+    begin
+      service_response = query_service(service)
+    rescue Exception => e
+      @@logger.error 'Something gone wrong with service ' + e
+      next
+    end
+    begin
+      uic = extract_uic(service_response)
+      @@logger.debug "Service and parsing successful. Updating student"
+    rescue Exception => e
+      @@logger.error "Error parsing response: " + e
+      next
+    end
   end
 
   private

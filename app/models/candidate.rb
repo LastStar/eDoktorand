@@ -213,7 +213,9 @@ class Candidate < ActiveRecord::Base
 
   # creates student and index from self
   def new_student(enrolled_on)
+    uic_getter = UicGetter.new
     student = Student.new
+    student.uic = uic_getter.get_uic(self.birth_number)
     student.firstname = self.firstname
     student.lastname = self.lastname
     student.birth_on = self.birth_on
@@ -222,18 +224,25 @@ class Candidate < ActiveRecord::Base
     student.birth_place = self.birth_at
     student.title_before = self.title_before
     student.title_after = self.title_after
+    student.street = self.street
+    student.desc_number = self.number
+    student.city = self.city
+    student.country = self.address_state
+    student.postal_street = self.postal_street
+    student.postal_city = self.postal_city
+    student.postal_desc_number = self.postal_number
+    student.postal_country = self.postal_state
+    student.email = self.email
+    student.phone = self.phone if self.phone
+    student.save!
     index = Index.new
+    index.student = student
     index.department = self.department
     index.specialization = self.specialization
     index.tutor = self.tutor
     index.study = self.study
-    index.student = student
     index.enrolled_on = enrolled_on
-    index.save_with_validation(false)
-    create_address(student.id)
-    create_postal_address(student.id) if self.postal_city
-    student.email = self.email
-    student.phone = self.phone if self.phone
+    index.save!
     self.update_attribute(:student_id, student.id) if student.save
     return student
   end
