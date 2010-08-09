@@ -26,23 +26,11 @@ class UicGetter
   # update uic from central database
   def update_foreign_uic(students)
     students.each do |student|
-      @@logger.debug "Trying service for student id #{student.id} and bn #{student.birth_number}"
-      begin
-        service_response = query_service(
-                                         "http://193.84.33.16/axis2/services/GetUicForeignerService/getUicByBirthNum?rc=%s" %
-                                         student.birth_on.strftime("%y%m%d41A9"))
-      rescue Exception => e
-        @@logger.error 'Something gone wrong with service ' + e
+      if student.uic
+        @@logger.debug "Student id #{student.id} already has uic #{student.uic}"
         next
       end
-      begin
-        uic = extract_uic(service_response)
-        @@logger.debug "Service and parsing successful. Updating student"
-        student.update_attribute(:uic, uic)
-      rescue Exception => e
-        @@logger.error "Error parsing response: " + e
-        next
-      end
+      student.update_attribute(:uic, get_foreign_uic(student.birth_number.to_s))
     end
     @@logger.debug "All students done"
   end
@@ -60,24 +48,44 @@ class UicGetter
   end
 
   # get uic for new student
-  def get_uic(birt_number)
-    service = prepare_service()
-    @@logger.debug "Trying service for student id #{student.id} and bn #{student.birth_number}"
+  def get_uic(birth_number)
+    service = prepare_service(birth_number)
+    @@logger.debug "Trying service for student with bn #{birth_number}"
     @@logger.debug service
     begin
       service_response = query_service(service)
     rescue Exception => e
       @@logger.error 'Something gone wrong with service ' + e
-      next
     end
     begin
       uic = extract_uic(service_response)
       @@logger.debug "Service and parsing successful. Updating student"
+      return uic
     rescue Exception => e
       @@logger.error "Error parsing response: " + e
-      next
     end
   end
+
+  # get uic for foreign student
+  def get_foreign_uic(birth_on)
+      @@logger.debug "Trying service for with bn #{birth_on}"
+      begin
+        service_response = query_service(
+                                         "http://193.84.33.16/axis2/services/GetUicForeignerService/getUicByBirthNum?rc=%s" %
+                                         birth_on.strftime("%y%m%d41A9"))
+      rescue Exception => e
+        @@logger.error 'Something gone wrong with service ' + e
+        next
+      end
+      begin
+        uic = extract_uic(service_response)
+        @@logger.debug "Service and parsing successful. Updating student"
+        return uic
+      rescue Exception => e
+        @@logger.error "Error parsing response: " + e
+        next
+      end
+    end
 
   private
   # prepares service path string

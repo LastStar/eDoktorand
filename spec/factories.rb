@@ -90,7 +90,7 @@ Factory.define :candidate do |candidate|
   candidate.number '2'
   candidate.city 'Prague'
   candidate.zip '10000'
-  candidate.state 'Czech'
+  candidate.state 'CZ'
   candidate.university 'CZU'
   candidate.faculty 'FAAPPZ'
   candidate.studied_branch 'Agro'
