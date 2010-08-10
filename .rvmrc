@@ -1,1 +1,1 @@
-rvm --create ree@rails2
+rvm  --create ree@rails3
