@@ -32,6 +32,7 @@ class Candidate < ActiveRecord::Base
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
     :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
 
+  #TODO rename with tt
   named_scope :admited, :conditions => 'admited_on is not null'
   named_scope :finished, :conditions => 'finished_on is not null'
   named_scope :finished_before, lambda{|date|
@@ -247,7 +248,7 @@ class Candidate < ActiveRecord::Base
     index.study = self.study
     index.enrolled_on = enrolled_on
     index.save!
-    self.update_attribute(:student_id, student.id) if student.save
+    self.update_attribute(:student_id, student.id)
     return student
   end
 

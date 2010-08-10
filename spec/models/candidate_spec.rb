@@ -2,6 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 
 describe Index do
+  #TODO test foreign candidates
   it 'enrolls a return new student with index' do
     mock_uic_getter = mock(UicGetter)
     UicGetter.should_receive(:new).and_return(mock_uic_getter)
