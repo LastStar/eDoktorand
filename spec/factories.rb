@@ -98,4 +98,5 @@ Factory.define :candidate do |candidate|
   candidate.association :department
   candidate.language1_id 1
   candidate.language2_id 2
+  candidate.sex 'M'
 end

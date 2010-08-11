@@ -216,7 +216,7 @@ class Candidate < ActiveRecord::Base
   def new_student(enrolled_on)
     uic_getter = UicGetter.new
     student = Student.new
-    if student.state == 'CZ' || student.state == "SK"
+    if self.state == 'CZ' || self.state == "SK"
       student.uic = uic_getter.get_uic(self.birth_number)
     else
       student.uic = uic_getter.get_foreign_uic(self.birth_on)
@@ -225,7 +225,7 @@ class Candidate < ActiveRecord::Base
     student.lastname = self.lastname
     student.birth_on = self.birth_on
     student.birth_number = self.birth_number
-    student.state = self.state
+    student.citizenship = student.state = self.state
     student.birth_place = self.birth_at
     student.title_before = self.title_before
     student.title_after = self.title_after
@@ -239,6 +239,8 @@ class Candidate < ActiveRecord::Base
     student.postal_country = self.postal_state
     student.email = self.email
     student.phone = self.phone if self.phone
+    student.sex = self.sex
+    student.marital_status = 'S'
     student.save!
     index = Index.new
     index.student = student

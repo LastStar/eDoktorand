@@ -13,11 +13,12 @@ describe Index do
     candidate.study = Factory(:study)
     student = candidate.new_student('2010-01-01')
     student.uic.should == 1
-    student.firstname.should == candidate.firstname
-    student.lastname.should == candidate.lastname
+    student.firstname.should == 'Karel'
+    student.lastname.should == 'Marel'
     student.birth_on.should == candidate.birth_on
     student.birth_number.should == candidate.birth_number
-    student.state.should == candidate.state
+    student.state.should == 'CZ'
+    student.citizenship.should == 'CZ'
     student.birth_place.should == candidate.birth_at
     student.title_before.should == candidate.title_before
     student.title_after.should == candidate.title_after
@@ -26,8 +27,10 @@ describe Index do
     student.city.should == candidate.city
     student.country.should == candidate.address_state
     student.postal_street.should == candidate.postal_street
-    student.email.should == candidate.email
+    student.email.should == 'karel@marel.cz'
     student.phone.should == candidate.phone
+    student.sex.should == 'M'
+    student.marital_status.should == 'S'
     student.index.department == candidate.department
     student.index.specialization == candidate.specialization
     student.index.tutor == candidate.tutor
