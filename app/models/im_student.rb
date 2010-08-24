@@ -48,6 +48,7 @@ class ImStudent < ActiveRecord::Base
     self.email = student.email
     self.phone = student.phone
     self.citizenship = student.citizenship
+    self.qualif_citizenship = Country.qualified_code(student.citizenship)
     self.permaddress_street = student.street
     self.permaddress_housenr = student.desc_number
     self.permaddress_housenrguid = student.orient_number
