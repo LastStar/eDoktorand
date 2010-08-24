@@ -27,7 +27,7 @@ describe ImStudent do
                                 :title_after => Title.new(:label => 'PhD.', :prefix => false),
                                 :birth_place => 'Liberec',
                                 :birth_on => '1980-01-01',
-                                :citizenship => 'CZ',
+                                :citizenship => 'Česká republika',
                                 :email => 'example@example.com',
                                 :phone => '777666555',
                                 :street => 'Veverkova',
@@ -60,7 +60,7 @@ describe ImStudent do
       @im_student.birth_on.should == Date.parse('1980-01-01')
       @im_student.email.should == 'example@example.com'
       @im_student.phone.should == '777666555'
-      @im_student.citizenship.should == 'CZ'
+      @im_student.citizenship.should == 'Česká republika'
       @im_student.qualif_citizenship.should == '203'
       @im_student.permaddress_street.should == 'Veverkova'
       @im_student.permaddress_housenr.should == '1410'
