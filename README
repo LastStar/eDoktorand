@@ -1,0 +1,5 @@
+# eDoktorand
+
+System for administering postgradual study on CUA
+
+DB is downloaded by ./script/load_production_db
