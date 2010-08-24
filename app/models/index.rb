@@ -75,7 +75,8 @@ class Index < ActiveRecord::Base
 
   # update ImIndex
   def update_im_index
-    im_index.save
+    prepare_im_index unless im_index
+    im_index.save 
   end
 
   # creates ImIndex
