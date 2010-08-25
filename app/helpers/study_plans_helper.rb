@@ -141,15 +141,18 @@ module StudyPlansHelper
 
   # prints select tags for language subject
   def language_select(plan_subject, subjects)
-    content_tag('select', options_for_select(subjects,
+    select = ''
+    select << content_tag('select', options_for_select(subjects,
       plan_subject.subject_id), {'id' => 
       "plan_subject_#{plan_subject.id}_subject_id",'name' =>
       "plan_subject[#{plan_subject.id}][subject_id]"}) + 
-    "&mdash;" + content_tag('select', options_for_select(1..(@student.specialization.study_length*2-2), 
+    select << "&mdash; " 
+    select << content_tag('select', options_for_select(1..(@student.specialization.study_length*2-2), 
       plan_subject.finishing_on), {'id' => 
       "plan_subject_#{plan_subject.id}_finishing_on",'name' =>
       "plan_subject[#{plan_subject.id}][finishing_on]"}) +
       ". " + t(:message_6, :scope => [:txt, :helper, :plans])  
+    return select
   end
 
   def study_plan_menu(student)
