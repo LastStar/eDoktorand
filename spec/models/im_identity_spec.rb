@@ -34,4 +34,27 @@ describe ImIndex do
       @identity.status.should == 'S'
     end
   end
+
+  context "scoped" do
+    it "find all not processed identities" do
+      @student = Factory(:student, :uic => 111222)
+      @identity = ImIdentity.create(:uic => @student.uic,
+                                    :loginname => 'student',
+                                    :status => 'N')
+      ImIdentity.to_process.should == [@identity]
+      @identity.update_user
+      ImIdentity.to_process.should == []
+    end
+  end
+
+  context 'processing' do
+    it "finds all not processed identities and update user" do
+      @student = Factory(:student, :uic => 111222)
+      @identity = ImIdentity.create(:uic => @student.uic,
+                                    :loginname => 'student',
+                                    :status => 'N')
+      ImIdentity.process_unprocessed
+      ImIdentity.to_process.should == []
+    end
+  end
 end
