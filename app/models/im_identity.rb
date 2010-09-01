@@ -7,7 +7,8 @@ class ImIdentity < ActiveRecord::Base
 
   # updates its student user
   def update_user
-    @user = student.user || student.build_user
+    @user = @user || student.user || student.build_user
     @user.update_attribute(:login, loginname)
+    self.update_attribute(:status, 'S')
   end
 end

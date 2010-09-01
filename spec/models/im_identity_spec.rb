@@ -7,7 +7,9 @@ describe ImIndex do
 
   before(:each) do
     @student = Factory(:student, :uic => 111222)
-    @identity = ImIdentity.create(:uic => @student.uic, :loginname => 'student')
+    @identity = ImIdentity.create(:uic => @student.uic,
+                                  :loginname => 'student',
+                                  :status => 'N')
   end
 
   it "has it's student" do
@@ -24,5 +26,10 @@ describe ImIndex do
     @identity.update_user
     @student.reload
     @student.user.login.should == 'student'
+  end
+
+  it "set its status to S if it worked" do
+    @identity.update_user
+    @identity.status.should == 'S'
   end
 end
