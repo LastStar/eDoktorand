@@ -34,12 +34,14 @@ module ProbationTermsHelper
       end 
     else 
       link = ''
-      link << detail_link(probation_term) + '&nbsp;' +
-      link_to(t(:message_8, :scope => [:txt, :helper, :terms]), {:action => 'edit', :id => probation_term.id})
-      if probation_term.students.size == 0
-        link << '&nbsp;' + link_to(t(:message_9, :scope => [:txt, :helper, :terms]), {:action => 'destroy', 
-                                                 :id => probation_term.id},
-                                   :confirm => t(:message_10, :scope => [:txt, :helper, :terms])) 	 
+      link << detail_link(probation_term) 
+      link << '&nbsp;' 
+      link << link_to(t(:message_8, :scope => [:txt, :helper, :terms]), {:action => 'edit', :id => probation_term.id})
+      if probation_term.students.empty?
+        link << '&nbsp;' 
+        link << link_to(t(:message_9, :scope => [:txt, :helper, :terms]), {:action => 'destroy', 
+                                                                         :id => probation_term.id},
+                         :confirm => t(:message_10, :scope => [:txt, :helper, :terms])) 	 
       end
       link
     end 
