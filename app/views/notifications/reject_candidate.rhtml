@@ -2,7 +2,7 @@ V Praze dne <%= @sent_on.strftime("%d. %m. %Y") %>
 
 <%= @candidate.genderize("Vážený pane/Vážená paní","Vážený pane","Vážená paní") %>,
 
-po projednání Vaší přihlášky ke studiu v doktorském oboru <%= @coridor %>
+po projednání Vaší přihlášky ke studiu v doktorském oboru <%= @specialization %>
 na <%= @faculty.short_name %> ČZU v Praze Vám sděluji, že jste <%= @candidate.genderize("nebyl/a","nebyl","nebyla") %>
 ke studiu <%= @candidate.genderize("přijat/a","přijat","přijata") %>.
 

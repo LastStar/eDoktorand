@@ -1,0 +1,38 @@
+<%# FIX this spacing and maybe whole idea %>
+<h5><%= t(:message_0, :scope => [:txt, :view, :specializations, :manage_edit, :rhtml])%></h5>
+<div id='links'>
+  <%=link_to(t(:message_1, :scope => [:txt, :view, :specializations, :manage_edit, :rhtml]), {:action => 'manage_specialization'})%>
+</div>
+<ul>
+  <li>
+    <b><%=@specialization.name%></b>
+  </li>
+    <li>
+      <b><%=t(:message_2, :scope => [:txt, :view, :specializations, :manage_edit, :rhtml])%>:</b>
+    </li>
+  <%for r_subject in @obligate_subjects%>
+    <li class='second'>
+      <%=del_link(r_subject)+r_subject.subject.label%>
+    </li>
+  <%end%>
+    <div id='add_obligate'>
+    </div>
+    <li class='second'>
+      <%=add_subject(@specialization,'obligate')%>
+    </li>
+
+    <li>
+      <b><%=t(:message_3, :scope => [:txt, :view, :specializations, :manage_edit, :rhtml])%>:</b>
+    </li>
+  <%for r_subject in @voluntary_subjects%>
+    <li class='second'>
+      <%=del_link(r_subject)+r_subject.subject.label%>
+    </li>
+  <%end%>
+    <div id='add_voluntary'>
+    </div>
+    <li class='second'>
+      <%=add_subject(@specialization,'voluntary')%>
+    </li>
+
+</ul>

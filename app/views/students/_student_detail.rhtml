@@ -5,8 +5,8 @@
   <th class='printable'>
     <%= student_link(index_line) %>
   </th>
-<% if index_line.interupted? %>
-  <td><%= interupt_to_info(index_line) %></td>
+<% if index_line.interrupted? %>
+  <td><%= interrupt_to_info(index_line) %></td>
 <% elsif study_plan  %>
   <td><%= study_plan.status  %></td>
 <% else %>
@@ -17,7 +17,7 @@
   <td><%= index_line.study.name %></td>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector']) %>
   <td><%= index_line.department.short_name %></td>
-  <td><%= index_line.coridor.code %></td>
+  <td><%= index_line.specialization.code %></td>
 <% end %>
 <% unless links.empty? %>
   <td class='smallerinfo'>

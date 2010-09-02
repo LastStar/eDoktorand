@@ -1,1 +1,1 @@
-page.replace_html "email", attribute_line(@student, :email, :name)
+page.replace_html "email", attribute_line(@student, :email)

@@ -1,42 +1,32 @@
-<h5><%= @title %></h5>
-<div class='links'>
-</div>
+<div class='links'><%= link_to t(:message_8, :scope => [:txt, :view, :exam_terms, :list, :rhtml]), :action => 'new' %></div>
+<h1><%= @title %></h1>
 <% unless @exam_terms.empty? %>
-<table id='comission_list'>
+<table id='comission_list' class="embossed three-quarter-list">
   <tbody>
 <% for exam_term in @exam_terms  %>
-<tr>
-    <td>
-    <b><%= exam_term.coridor.name %></b>
+  <tr>
+    <th>
+      <%= exam_term.specialization.name %>
+    </th>
+    <td rowspan='2'>
+      <div class='right'>
+        <%= link_to t(:message_0, :scope => [:txt, :view, :exam_terms, :list, :rhtml]), :action => 'edit', :id => exam_term %>
+        <%= link_to t(:message_1, :scope => [:txt, :view, :exam_terms, :list, :rhtml]) + "(#{exam_term.specialization.approved_candidates.size})",
+        :controller => 'candidates', :action => 'list_admission_ready', :specialization => exam_term.specialization ,:page => 1, :category => 'lastname'%>
+        <%= link_to t(:message_2, :scope => [:txt, :view, :exam_terms, :list, :rhtml]), {:action => 'destroy', :id => exam_term}, :confirm => t(:message_3, :scope => [:txt, :view, :exam_terms, :list, :rhtml]) %>
+      </div>
     </td>
-<td rowspan = 4>
-    <div class='right'>
-      <%= link_to t(:message_0, :scope => [:txt, :view, :exam_terms, :list, :rhtml]), :action => 'edit', :id => exam_term %>
-      <%= link_to t(:message_1, :scope => [:txt, :view, :exam_terms, :list, :rhtml]) + "(#{exam_term.coridor.approved_candidates.size})",
-      :controller => 'candidates', :action => 'list_admission_ready', :coridor => exam_term.coridor ,:page => 1, :category => 'lastname'%>
-      <%= link_to t(:message_2, :scope => [:txt, :view, :exam_terms, :list, :rhtml]), {:action => 'destroy', :id => exam_term}, :confirm => t(:message_3, :scope => [:txt, :view, :exam_terms, :list, :rhtml]) %>
-    </div>
-</td>
-</tr>
-<tr>
+  </tr>
+  <tr>
     <td>
-	  <%=t(:message_4, :scope => [:txt, :view, :exam_terms, :list, :rhtml])%>: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %>
+    <%= t(:message_4, :scope => [:txt, :view, :exam_terms, :list, :rhtml])%>: &nbsp;<%= [exam_term.date.strftime("%d. %m. %Y"), exam_term.start_time].join('&mdash;') %>
     </td>
-</tr>
-<tr>
-    <td>
-	  <%=t(:message_5, :scope => [:txt, :view, :exam_terms, :list, :rhtml])%>: <%= exam_term.room %>
-    </td>
-</tr>
-<tr class='line'>
-    <td>
-	  <%=t(:message_6, :scope => [:txt, :view, :exam_terms, :list, :rhtml])%>: <%= exam_term.chairman_name %>
-    </td>
-</tr>
+  </tr>
 <% end %>
-  </tbody>
+</tbody>
 </table>
 <% else %>
 <h4><%=t(:message_7, :scope => [:txt, :view, :exam_terms, :list, :rhtml])%></h4>
 <% end %>
 <div class='links'><%= link_to t(:message_8, :scope => [:txt, :view, :exam_terms, :list, :rhtml]), :action => 'new' %></div>
+<br class="clear-all" />

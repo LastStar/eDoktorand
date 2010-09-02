@@ -1,7 +1,7 @@
 module StudyPlansHelper
   # prints select tags for obligate subject 
   def obligate_select(plan_subject)
-    content_tag('select', options_for_select((1..(@student.coridor.study_length*2-2)), plan_subject.finishing_on), { 'id' => 
+    content_tag('select', options_for_select((1..(@student.specialization.study_length*2-2)), plan_subject.finishing_on), { 'id' => 
       "plan_subject_#{plan_subject.id}",'name' =>
       "plan_subject[#{plan_subject.id}][finishing_on]"}) + 
     ". " + t(:message_0, :scope => [:txt, :helper, :plans]) + 
@@ -17,7 +17,7 @@ module StudyPlansHelper
       {'id' => "plan_subject_#{plan_subject.id}_subject_id",
       'name' => "plan_subject[#{plan_subject.id}][subject_id]"})
     result << "&mdash; "
-    result << content_tag('select', options_for_select(1..(@student.coridor.study_length*2-2),
+    result << content_tag('select', options_for_select(1..(@student.specialization.study_length*2-2),
       plan_subject.finishing_on ), { 'id' => 
       "plan_subject_#{plan_subject.id}_finishing_on", 'name' => 
       "plan_subject[#{plan_subject.id}][finishing_on]"})
@@ -36,7 +36,7 @@ module StudyPlansHelper
       'name' => "plan_subject[#{plan_subject.id}][subject_id]",
       'onChange' => "hide_on_internal(#{plan_subject.id})"})
     select << "&mdash; "
-    select << content_tag('select', options_for_select(1..(@student.coridor.study_length*2-2),
+    select << content_tag('select', options_for_select(1..(@student.specialization.study_length*2-2),
       plan_subject.finishing_on ), { 'id' => 
       "plan_subject_#{plan_subject.id}_finishing_on", 'name' => 
       "plan_subject[#{plan_subject.id}][finishing_on]"})
@@ -141,15 +141,18 @@ module StudyPlansHelper
 
   # prints select tags for language subject
   def language_select(plan_subject, subjects)
-    content_tag('select', options_for_select(subjects,
+    select = ''
+    select << content_tag('select', options_for_select(subjects,
       plan_subject.subject_id), {'id' => 
       "plan_subject_#{plan_subject.id}_subject_id",'name' =>
       "plan_subject[#{plan_subject.id}][subject_id]"}) + 
-    "&mdash;" + content_tag('select', options_for_select(1..(@student.coridor.study_length*2-2), 
+    select << "&mdash; " 
+    select << content_tag('select', options_for_select(1..(@student.specialization.study_length*2-2), 
       plan_subject.finishing_on), {'id' => 
       "plan_subject_#{plan_subject.id}_finishing_on",'name' =>
       "plan_subject[#{plan_subject.id}][finishing_on]"}) +
       ". " + t(:message_6, :scope => [:txt, :helper, :plans])  
+    return select
   end
 
   def study_plan_menu(student)
@@ -168,8 +171,8 @@ module StudyPlansHelper
     if student.study_plan.approved? || student.study_plan.canceled?
       links << change_link(student)
     end
-    unless student.index.interupted?
-      links << link_to_unless_current(t(:message_13, :scope => [:txt, :helper, :plans]), :controller => 'interupts'){}
+    unless student.index.interrupted?
+      links << link_to_unless_current(t(:message_13, :scope => [:txt, :helper, :plans]), :controller => 'study_interrupts'){}
     end
     return links.join('&nbsp;')
   end

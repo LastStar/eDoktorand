@@ -19,7 +19,7 @@ class CSVLoader
   def self.load_all
     self.load_faculties('dumps/csv/faculties.csv', :destroy => true)
     self.load_departments('dumps/csv/departments.csv', :destroy => true)
-    self.load_coridors('dumps/csv/coridors.csv', :destroy => true)
+    self.load_specializations('dumps/csv/specializations.csv', :destroy => true)
     self.load_subjects('dumps/csv/subjects.csv', :destroy => true)
     self.load_tutors({:tutor => 'dumps/csv/tutors.csv', :tutorship => 'dumps/csv/tutorship.csv'}, :destroy => true)
     self.load_leaders({:leader => 'dumps/csv/leaders.csv',:leadership =>
@@ -31,16 +31,16 @@ class CSVLoader
   def self.load_for_enrollment
     self.load_faculties('dumps/csv/faculties.csv', :destroy => true)
     self.load_departments('dumps/csv/departments.csv', :destroy => true)
-    self.load_coridors('dumps/csv/coridors.csv', :destroy => true)
+    self.load_specializations('dumps/csv/specializations.csv', :destroy => true)
     self.load_subjects('dumps/csv/subjects.csv', :destroy => true)
     self.load_tutors({:tutor => 'dumps/csv/tutors.csv', :tutorship => 'dumps/csv/tutorship.csv'}, :destroy => true)
     self.load_leaders({:leader => 'dumps/csv/leaders.csv',:leadership =>
     'dumps/csv/leadership.csv'}, :destroy => true)
     self.load_deans({:dean => 'dumps/csv/deans.csv', :deanship =>
     'dumps/csv/deanship.csv'}, :destroy => true)
-    CoridorSubject.destroy_all
-    self.load_fle_subjects_coridors('dumps/csv/Corridors_Subjects_FLE.csv')
-    self.load_pef_subject_coridors('dumps/csv/subjects_corridors.csv')
+    SpecializationSubject.destroy_all
+    self.load_fle_subjects_specializations('dumps/csv/Corridors_Subjects_FLE.csv')
+    self.load_pef_subject_specializations('dumps/csv/subjects_corridors.csv')
     Student.destroy_all
     Index.destroy_all
     self.load_enrolled_students("dumps/csv/enrolled.csv")
@@ -71,12 +71,12 @@ class CSVLoader
     end
   end
 
-  # loads coridors to system
-  def self.load_coridors(file, options = {} )
-    Coridor.destroy_all if options[:destroy]
-    @@mylog.info "Loading coridors..."
+  # loads specializations to system
+  def self.load_specializations(file, options = {} )
+    Specialization.destroy_all if options[:destroy]
+    @@mylog.info "Loading specializations..."
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      f = Coridor.new('name' => row[2], 'faculty_id' =>
+      f = Specialization.new('name' => row[2], 'faculty_id' =>
       row[1], 'code' => row[4])
       f.id = row[0]
       f.save
@@ -126,7 +126,7 @@ class CSVLoader
     CSV::Reader.parse(File.open(files[:tutorship], 'rb'), ';') do |row|
       @@mylog.info row[0]
       if t = Tutor.find_by_uic(row[1]).tutorship
-        t.coridor = Coridor.find(row[2])
+        t.specialization = Specialization.find(row[2])
         t.save
       end
     end
@@ -232,7 +232,7 @@ class CSVLoader
       s.lastname = row[3]
       s.birth_on = row[4]
       s.birth_number = row[5]
-      i.coridor = Coridor.find(row[6])
+      i.specialization = Specialization.find(row[6])
       s.uic = row[10]
       i.tutor = Tutor.find_by_uic(row[8])
       if row[11] && !row[11].empty?
@@ -310,11 +310,11 @@ class CSVLoader
     end
   end
 
-  # loads fle subjects coridors 
-  def self.load_fle_subjects_coridors(file)
+  # loads fle subjects specializations 
+  def self.load_fle_subjects_specializations(file)
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      cs = CoridorSubject.new
-      cs.coridor = Coridor.find_by_code(row[3])
+      cs = SpecializationSubject.new
+      cs.specialization = Specialization.find_by_code(row[3])
       cs.subject = Subject.find_by_code(row[0])
       case row[2]
       when "P"
@@ -326,11 +326,11 @@ class CSVLoader
     end
   end
 
-  # loads pef subject coridors
-  def self.load_pef_subject_coridors(file)
+  # loads pef subject specializations
+  def self.load_pef_subject_specializations(file)
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      cs = CoridorSubject.new
-      cs.coridor = Coridor.find(row[0])
+      cs = SpecializationSubject.new
+      cs.specialization = Specialization.find(row[0])
       cs.subject = Subject.find(row[1])
       if row[2] =='true'
         cs.type = 'ObligateSubject'
@@ -343,13 +343,13 @@ class CSVLoader
   end
 
   # sets voluntary subjects for agro
-  def self.set_subjects_coridors(faculty_id)
+  def self.set_subjects_specializations(faculty_id)
     faculty = Faculty.find(faculty_id)
-    faculty.coridors.each do |c|
+    faculty.specializations.each do |c|
       faculty.subjects.each do |s| 
-        unless  VoluntarySubject.find_by_subject_id_and_coridor_id(s.id, c.id)
+        unless  VoluntarySubject.find_by_subject_id_and_specialization_id(s.id, c.id)
           @@mylog.debug "Voluntary subject created"
-          VoluntarySubject.create(:subject => s, :coridor => c)
+          VoluntarySubject.create(:subject => s, :specialization => c)
         else
           @@mylog.debug "Voluntary subject found"
         end
@@ -367,7 +367,7 @@ class CSVLoader
       s.firstname = row[2]
       s.lastname = row[1]
       i.department = Department.find(row[3])
-      i.coridor = Coridor.find(row[4])
+      i.specialization = Specialization.find(row[4])
       i.study = Study.find(row[5])
       i.tutor = Tutor.find_by_uic(row[6])
       u.login = row[7]
@@ -393,7 +393,7 @@ class CSVLoader
       s.firstname = row[2]
       s.lastname = row[1]
       i.department = Department.find(row[3])
-      i.coridor = Coridor.find(row[4])
+      i.specialization = Specialization.find(row[4])
       i.study = Study.find(row[5])
       i.tutor = Tutor.find(row[6])
       u.login = row[7]
@@ -419,7 +419,7 @@ class CSVLoader
       s.lastname = row[1]
       s.birthname = row[9]
       i.department = Department.find(row[3])
-      i.coridor = Coridor.find(row[4])
+      i.specialization = Specialization.find(row[4])
       i.study = Study.find(row[5])
       i.tutor = Tutor.find_by_uic(row[6])
       i.payment_id = row[10]
@@ -674,7 +674,7 @@ class CSVLoader
     @@mylog.info "Totaly #{count} student's have not been found"
   end
 
-  # loads interupted students to system
+  # loads interrupted students to system
   def self.load_interrupted(file)
     ActiveRecord::Base.connection.execute('SET NAMES UTF8')
     @@mylog.info "Loading students..."
@@ -689,7 +689,7 @@ class CSVLoader
         s.birth_on = row[4]
         s.birth_number = row[5]
         i.study = Study.find(row[6])
-        i.coridor = Coridor.find(row[7])
+        i.specialization = Specialization.find(row[7])
         row[8] =~ /(\d\d?)[.](\d\d?)[.](\d\d\d\d).*/
         i.enrolled_on = Date.civil($3.to_i, $2.to_i, $1.to_i)
         i.tutor = Tutor.find_by_uic(row[9])
@@ -824,7 +824,7 @@ class CSVLoader
         ts = Tutorship.new  
         t.tutorship = ts
         ts.department = Department.find(row[4])
-        ts.coridor = Coridor.find(110)
+        ts.specialization = Specialization.find(110)
         t.tutorship = ts
         ts.save
       end
@@ -930,30 +930,30 @@ class CSVLoader
   end
 
   # imports obligate subjects from csv
-  def self.import_obligate_coridor_subjects(file)
+  def self.import_obligate_specialization_subjects(file)
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      c = Coridor.find(row[3])
+      c = Specialization.find(row[3])
       s = Subject.find_by_code(row[2])
       unless s
         @@mylog.info 'creating %s' % row[0]
         s = Subject.create(:label => row[0], :label_en => row[1], :code => row[2])
       end
       @@mylog.info 'creating obligate subject %s for %s' % [s.label, c.name]
-      c.obligate_subjects << ObligateSubject.new(:coridor => c, :subject => s)
+      c.obligate_subjects << ObligateSubject.new(:specialization => c, :subject => s)
     end
   end
 
   # imports voluntary subjects from csv
-  def self.import_voluntary_coridor_subjects(file)
+  def self.import_voluntary_specialization_subjects(file)
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
-      c = Coridor.find(row[3])
+      c = Specialization.find(row[3])
       s = Subject.find_by_code(row[2])
       unless s
         @@mylog.info 'creating %s' % row[0]
         s = Subject.create(:label => row[0], :label_en => row[1], :code => row[2])
       end
       @@mylog.info 'creating voluntary subject %s for %s' % [s.label, c.name]
-      c.voluntary_subjects << VoluntarySubject.new(:coridor => c, :subject => s)
+      c.voluntary_subjects << VoluntarySubject.new(:specialization => c, :subject => s)
     end
   end
 end

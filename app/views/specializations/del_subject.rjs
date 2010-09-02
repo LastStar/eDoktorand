@@ -1,0 +1,1 @@
+page.remove "specialization_subject_"+@specialization_subject_id

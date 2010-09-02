@@ -1,17 +1,17 @@
 class Faculty < ActiveRecord::Base
   
-  has_many :coridors
+  has_many :specializations
   has_many :departments
   has_many :documents
   has_many :faculty_employments, :foreign_key => 'unit_id'
   has_one :secretary_employment, :class_name => 'FacultyEmployment',
       :foreign_key => 'unit_id', :order => :id
   has_one :deanship
-  has_many :candidates, :through => :coridors
+  has_many :candidates, :through => :specializations
 
-  # return acredited corridors
-  def accredited_coridors
-    Coridor.find(:all, 
+  # return acredited specializations
+  def accredited_specializations
+    Specialization.find(:all, 
                 :conditions => ['faculty_id = ? AND accredited = ? ', id, 1])
   end
 
@@ -33,7 +33,7 @@ class Faculty < ActiveRecord::Base
   # retuns dean of the faculty
   # TODO redone with faculty configuration
   def dean_label_en
-    return FACULTY_CFG[self.id]['atestation_title'] if FACULTY_CFG[self.id]['atestation_title']
+    return FACULTY_CFG[self.id]['attestation_title'] if FACULTY_CFG[self.id]['attestation_title']
     'dean'
   end
 

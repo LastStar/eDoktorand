@@ -1,3 +1,4 @@
+require 'soap/soap'
 class StudyPlansController < ApplicationController
   include LoginSystem
   helper :students
@@ -19,7 +20,7 @@ class StudyPlansController < ApplicationController
   def index
     @title = t(:message_0, :scope => [:txt, :controller, :plans])
     @index = @student.index
-    @voluntary_subjects = @index.coridor.voluntary_subjects 
+    @voluntary_subjects = @index.specialization.voluntary_subjects 
   end
 
   # shows student detail
@@ -31,9 +32,9 @@ class StudyPlansController < ApplicationController
   def create
     prepare_plan_session
     @title = t(:message_1, :scope => [:txt, :controller, :plans])
-    if ObligateSubject.has_for_coridor?(@student.coridor)
+    if ObligateSubject.has_for_specialization?(@student.specialization)
       @type = 'obligate'
-    elsif SeminarSubject.has_for_coridor?(@student.coridor)
+    elsif SeminarSubject.has_for_specialization?(@student.specialization)
       @type = 'seminar'
     else
       @type = 'voluntary'
@@ -119,10 +120,10 @@ class StudyPlansController < ApplicationController
     @student = Student.find(params[:id])
     @title = t(:message_3, :scope => [:txt, :controller, :plans])
     @requisite_subjects = PlanSubject.create_for(@student, :requisite)
-    @subjects = CoridorSubject.for_select(:coridor => @student.index.coridor)
+    @subjects = SpecializationSubject.for_select(:specialization => @student.index.specialization)
     @study_plan = @student.index.prepare_study_plan
     @plan_subjects = []
-    (@student.coridor.voluntary_amount + 8).times do |i|
+    (@student.specialization.voluntary_amount + 8).times do |i|
       (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i + 1)
       @plan_subjects << plan_subject
     end
@@ -133,8 +134,8 @@ class StudyPlansController < ApplicationController
   def change
     @title = t(:message_4, :scope => [:txt, :controller, :plans])
     @student ||= Student.find(params[:id])
-    coridor = @student.index.coridor
-    @subjects = CoridorSubject.for_select(:coridor => coridor)
+    specialization = @student.index.specialization
+    @subjects = SpecializationSubject.for_select(:specialization => specialization)
     if @study_plan = @student.index.study_plan
       if session[:change_back] && session[:change_back] == 1
         @plan_subjects = session[:voluntary_subjects]
@@ -142,7 +143,7 @@ class StudyPlansController < ApplicationController
       else
         @plan_subjects = @study_plan.unfinished_subjects
       end
-      (@student.coridor.voluntary_amount - @plan_subjects.size + 4).times do |i|
+      (@student.specialization.voluntary_amount - @plan_subjects.size + 4).times do |i|
         (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
         @plan_subjects << plan_subject
       end
@@ -158,16 +159,16 @@ class StudyPlansController < ApplicationController
   def save_full
     @errors = []
     extract_voluntary
-    new_approvement = nil
+    new_approval = nil
     if !extract_voluntary || !@errors.empty?
       flash[:errors] = @errors.uniq
       session[:change_back] = 1
       redirect_to(:action => 'change', :id => params[:student][:id])
     else
       @student = Student.find(params[:student][:id])
-      if @student.study_plan && @student.study_plan.atestation
-        @atestation = @student.study_plan.atestation 
-        @approvement = @student.study_plan.approvement
+      if @student.study_plan && @student.study_plan.attestation
+        @attestation = @student.study_plan.attestation 
+        @approval = @student.study_plan.approval
       end
       unless session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size <= session[:voluntary_subjects].size
         @errors << t(:message_5, :scope => [:txt, :controller, :plans])     
@@ -179,8 +180,8 @@ class StudyPlansController < ApplicationController
           @study_plan.plan_subjects << sub.clone 
         end 
       end
-      if (params[:url][:action] == "change") && @approvement
-        new_approvement = @approvement.clone
+      if (params[:url][:action] == "change") && @approval
+        new_approval = @approval.clone
       end
       @disert_theme = DisertTheme.new(params[:disert_theme])
       @disert_theme.index = @student.index
@@ -188,16 +189,16 @@ class StudyPlansController < ApplicationController
       @study_plan.index = @student.index
       if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
         @study_plan.save
-        if params[:url][:action] == "change" && new_approvement && @user.has_one_of_roles?(['faculty_secretary','vicerector'])
-          new_approvement.document_id = @study_plan.id
+        if params[:url][:action] == "change" && new_approval && @user.has_one_of_roles?(['faculty_secretary','vicerector'])
+          new_approval.document_id = @study_plan.id
           @study_plan.update_attribute(:approved_on,Time.now)
-          new_approvement.save
+          new_approval.save
         end
-        @atestation.update_attribute(:document_id, @study_plan.id) if @atestation
+        @attestation.update_attribute(:document_id, @study_plan.id) if @attestation
         @disert_theme.save
         if @user.person.is_a?(Student)
-          if session[:interupt]
-            redirect_to :controller => 'interupts', :action => 'finish'
+          if session[:interrupt]
+            redirect_to :controller => 'study_interrupts', :action => 'finish'
           else
             redirect_to :controller => 'study_plans'
           end
@@ -221,39 +222,39 @@ class StudyPlansController < ApplicationController
     end
   end
 
-  # atests study plan 
-  def atest
+  # attests study plan 
+  def attest
     @study_plan = StudyPlan.find(params[:id])
   end
 
   # confirms and saves statement
-  def confirm_atest
+  def confirm_attest
     @document = StudyPlan.find(params[:id])
-    @document.atest_with(params[:statement])
+    @document.attest_with(params[:statement])
     if good_browser?
       render(:partial => 'shared/confirm_approve', 
-            :locals => {:replace => 'atestation',
-                        :approvement => @document.atestation})
+            :locals => {:replace => 'attestation',
+                        :approval => @document.attestation})
     else
       render(:partial => 'students/redraw_list')
     end
   end
 
-  # prepares form for atestation details
-  def atestation_details
+  # prepares form for attestation details
+  def attestation_details
     @study_plan = @student.study_plan
-    @atestation_detail = @study_plan.next_atestation_detail_or_new
+    @attestation_detail = @study_plan.next_attestation_detail_or_new
   end
 
-  # saves atestation detail 
-  def save_atestation_detail
-    if params[:atestation_detail][:id] == ''
-      @atestation_detail = \
-        AtestationDetail.create(params[:atestation_detail])
+  # saves attestation detail 
+  def save_attestation_detail
+    if params[:attestation_detail][:id] == ''
+      @attestation_detail = \
+        AttestationDetail.create(params[:attestation_detail])
     else
-      @atestation_detail = \
-        AtestationDetail.find(params[:atestation_detail][:id])
-      @atestation_detail.update_attributes(params[:atestation_detail])
+      @attestation_detail = \
+        AttestationDetail.find(params[:attestation_detail][:id])
+      @attestation_detail.update_attributes(params[:attestation_detail])
     end
   end
 
@@ -314,18 +315,18 @@ class StudyPlansController < ApplicationController
     session[:study_plan] = @study_plan = @student.index.build_study_plan
     session[:disert_theme] = @student.index.build_disert_theme
     session[:last_semester] = 0
-    # TODO do all in one step trhrough model method
-    if RequisiteSubject.has_for_coridor?(@student.coridor)
+    # TODO do all in one step through model method
+    if RequisiteSubject.has_for_specialization?(@student.specialization)
       session[:requisite_subjects] = PlanSubject.create_for(@student, :requisite)
     end
-    if ObligateSubject.has_for_coridor?(@student.coridor)
+    if ObligateSubject.has_for_specialization?(@student.specialization)
       session[:obligate_subjects] = PlanSubject.create_for(@student, :obligate)
     end
-    if SeminarSubject.has_for_coridor?(@student.coridor)
+    if SeminarSubject.has_for_specialization?(@student.specialization)
       session[:seminar_subjects] = PlanSubject.create_for(@student, :seminar)
     end
     session[:voluntary_subjects] = PlanSubject.create_for(@student.index, :voluntary)
-    session[:language_subjects] = PlanSubject.create_for(@student.index.coridor, :language)
+    session[:language_subjects] = PlanSubject.create_for(@student.index.specialization, :language)
   end
 
   # controls last semester

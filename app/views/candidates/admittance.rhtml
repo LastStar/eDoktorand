@@ -8,7 +8,7 @@
   <th>Forma studia:</th><td><b><%= @candidate.study.name %></b></td>
 </tr>
 <tr>
-  <th>Obor:</th><td><b><%= @candidate.coridor.name %></b></td>
+  <th>Obor:</th><td><b><%= @candidate.specialization.name %></b></td>
 </tr>
 <tr>
   <th>&nbsp;</th><td><b><%= @candidate.department.name %></b></td> 
@@ -40,35 +40,35 @@ class='info'>...................................................................
 Poznámky, změny:
 </p>
 <p><b>Podpisy předsedy a členů komise:</b> <br/>
-předseda: <%= @candidate.coridor.exam_term.chairman_name %>
+předseda: <%= @candidate.specialization.exam_term.chairman_name %>
 <span class='dots'>........................................</span><br/>
 členové:<br/>
-<%= @candidate.coridor.exam_term.first_examinator %> 
+<%= @candidate.specialization.exam_term.first_examinator %> 
 <span class='dots'>........................................</span><br/><br/>
-<%= @candidate.coridor.exam_term.second_examinator %>
+<%= @candidate.specialization.exam_term.second_examinator %>
 <span class='dots'>........................................</span><br/><br/>
-<% unless @candidate.coridor.exam_term.third_examinator.empty? %>
-<%= @candidate.coridor.exam_term.third_examinator %> 
-<span class='dots'>........................................</span><br/><br/>
-<% end %>
-<% unless @candidate.coridor.exam_term.fourth_examinator.empty? %>
-<%= @candidate.coridor.exam_term.fourth_examinator %>
+<% unless @candidate.specialization.exam_term.third_examinator.empty? %>
+<%= @candidate.specialization.exam_term.third_examinator %> 
 <span class='dots'>........................................</span><br/><br/>
 <% end %>
-<% unless @candidate.coridor.exam_term.fifth_examinator.empty? %>
-<%= @candidate.coridor.exam_term.fifth_examinator %>
+<% unless @candidate.specialization.exam_term.fourth_examinator.empty? %>
+<%= @candidate.specialization.exam_term.fourth_examinator %>
 <span class='dots'>........................................</span><br/><br/>
 <% end %>
-<% unless @candidate.coridor.exam_term.sixth_examinator.empty? %>
-<%= @candidate.coridor.exam_term.sixth_examinator %>
+<% unless @candidate.specialization.exam_term.fifth_examinator.empty? %>
+<%= @candidate.specialization.exam_term.fifth_examinator %>
 <span class='dots'>........................................</span><br/><br/>
 <% end %>
-<% unless @candidate.coridor.exam_term.seventh_examinator.empty? %>
-<%= @candidate.coridor.exam_term.seventh_examinator %>
+<% unless @candidate.specialization.exam_term.sixth_examinator.empty? %>
+<%= @candidate.specialization.exam_term.sixth_examinator %>
+<span class='dots'>........................................</span><br/><br/>
+<% end %>
+<% unless @candidate.specialization.exam_term.seventh_examinator.empty? %>
+<%= @candidate.specialization.exam_term.seventh_examinator %>
 <span class='dots'>........................................</span><br/>
 <% end %>
 </p>
-<p>Datum přijímací zkoušky: <%= @candidate.coridor.exam_term.date.strftime("%d. %m. %Y") %></p>
+<p>Datum přijímací zkoušky: <%= @candidate.specialization.exam_term.date.strftime("%d. %m. %Y") %></p>
 <br/> 
 <hr style='border-bottom: 1px solid black'/>
 <p><b>Rozhodnutí děkana fakulty: <span class='dots'>přijmout x

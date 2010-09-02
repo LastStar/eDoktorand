@@ -41,7 +41,7 @@ cs:
       theme: 
         message_0: téma disertační práce nesmí být prázdné
         message_1: neuspěl u závěrečné zkoušky
-      approvement: {}
+      approval: {}
 
       employment: {}
 
@@ -62,7 +62,7 @@ cs:
         message_0: Zkoušející
       contact: {}
 
-      atestation: {}
+      attestation: {}
 
       actuality: {}
 
@@ -175,14 +175,14 @@ cs:
         message_5: Vyrozumění o přijímacím řízení na doktorské studium
         message_6: notification of study plan
         message_7: "with birth number "
-      coridor: {}
+      specialization: {}
 
       detail: 
         message_0: univerzita nesmí být prazdná
       user: {
       }
 
-      interupt: 
+      interrupt: 
         message_0: ukončit k
       department: {}
 
@@ -213,7 +213,7 @@ cs:
     helper:
       
       
-      interupts: {}
+      interrupts: {}
 
       plans: 
         message_18: volitelné předměty
@@ -319,7 +319,7 @@ cs:
         message_17: schválená žádost o obhajobu
       documents: {}
 
-      coridors: 
+      specializations: 
         message_0: Opravdu chcete předmět odebrat?
         message_1: Přidat předmět
         message_2: neschváleno
@@ -333,6 +333,7 @@ cs:
         dean: děkan
         tutor: školitel
         leader: vedoucí katedry
+        message_70: obhajoby
         message_69: žádosti
         message_68: SDZ
         message_67: zkoušející
@@ -529,7 +530,7 @@ cs:
         message_15: pracuji...
         message_6: zapsat
         message_16: pracuji...
-        message_7: Really enroll to this term?
+        message_7: Opravdu zapsat na tento termín?
       admittances: {}
 
       themes: {}
@@ -541,6 +542,8 @@ cs:
         list:
           rhtml:
             message_0: Seznam zkoušejících
+            message_1: Zkoušející
+            message_2: Katedra
       
       study_plans:
         save_disert:
@@ -660,7 +663,7 @@ cs:
         _obligate: 
           rhtml: {}
 
-        _atestation_detail: 
+        _attestation_detail: 
           rhtml: 
             message_0: Dodatečné informace poskytnuté studentem
         _voluntary: 
@@ -675,7 +678,7 @@ cs:
         _obligates: 
           rhtml: {}
 
-        _atest_information: 
+        _attest_information: 
           rhtml: 
             message_0: Student nemá žádný předmět pro tuto atestaci
             message_1: Nesplněné předměty jsou označeny červeně.
@@ -698,6 +701,8 @@ cs:
             message_6: Máte námět na nové funkce do e-Doktoranda nebo chcete odebírat aktuality? Staňte se fanouškem na Facebooku.
             message_7: žádost o SDZ
             message_8: žádost o podklady k obhajobě DP
+            message_9: Volitelné předměty
+            message_10: Dokumenty
         _study_plan_header: 
           rhtml: 
             message_0: studijní plán
@@ -770,7 +775,7 @@ cs:
         departments: 
           rhtml: {}
 
-        atestation_terms: 
+        attestation_terms: 
           rhtml: {}
 
         scaffold: 
@@ -796,7 +801,7 @@ cs:
             message_0: 
             message_1: nahrávám
             message_2: Používejte firefox !!
-        coridors: 
+        specializations: 
           rhtml: {}
 
         titles: 
@@ -847,8 +852,8 @@ cs:
         actualities: 
           rhtml: {}
 
-      interupts: 
-        print_interupt: 
+      interrupts: 
+        print_interrupt: 
           rhtml: 
             message_10: Student
             message_11: Rok
@@ -934,6 +939,7 @@ cs:
             message_0: Vytváření protokolu o zkoušce
             message_1: Vytváření zkoušky podle předmětu
             message_2: Zkouška z předmětu
+            message_3: Vybrali jste
         _with_student: 
           rhtml: 
             message_0: Vytváření protokolu o zkoušce
@@ -972,6 +978,7 @@ cs:
             message_5: Zkoušející
             message_6: Univerzita
             message_7: 1. zkoušející
+            message_15: Vybrali jste
         _main_form: 
           rhtml: 
             message_0: Vyzkoušení studenti
@@ -1056,6 +1063,7 @@ cs:
             message_0: externí zkouška
             message_1: zkouškové předměty
             message_2: odeslat
+            message_3: student
       addresses: 
         _edit: 
           rhtml: 
@@ -1278,7 +1286,7 @@ cs:
         _form: 
           rhtml: {}
 
-      coridors: 
+      specializations: 
         new: 
           rhtml: {}
 
@@ -1313,7 +1321,7 @@ cs:
         edit: 
           rhtml: {}
 
-        manage_coridor: 
+        manage_specialization: 
           rhtml: 
             message_0: Akreditováns list
             message_1: Obory nenalezeny
@@ -1329,7 +1337,7 @@ cs:
         add_subject: 
           rhtml: {}
 
-        _coridor_subject: 
+        _specialization_subject: 
           rhtml: {}
 
         _view: 
@@ -1572,7 +1580,7 @@ cs:
             message_15: odhlásit
             message_6: uchazeči
             message_7: komise
-        _interupt: 
+        _interrupt: 
           rhtml: 
             message_0: přerušeno od
         _disert_theme: 
@@ -1617,6 +1625,7 @@ cs:
             message_14: SIDENT
             message_15: Konzultant
             message_16: Konto
+            message_17: Osobní údaje
             
         _final_exam: 
           rhtml: 
@@ -1852,6 +1861,7 @@ cs:
         list: 
           rhtml: 
             message_0: V systému nejsou žádné zkouškové termíny podle Vašeho výběru
+            message_1: Termíny zkoušek
         edit: 
           rhtml: 
             message_0: Oprava termínu zkoušky
@@ -1934,7 +1944,7 @@ cs:
         study_plan_create: 
           rhtml: {}
 
-        interupt_alert: 
+        interrupt_alert: 
           rhtml: {}
 
         change_tutor_cs: 
@@ -2032,10 +2042,12 @@ cs:
         list: 
           rhtml: 
             message_0: Seznam školitelů
+            message_1: Školitel
+            message_2: Obor
         edit: 
           rhtml: {}
 
-        _coridor: 
+        _specialization: 
           rhtml: {}
         
         _bad_tutor:
@@ -2192,8 +2204,8 @@ cs:
             message_0: r.č.
             message_1: opravit
             message_2: smazat
-            message_3: obor
-            message_4: forma studia
+            message_3: v oboru
+            message_4: studium
             message_5: nastav C.P.
             message_6: cizí plátce
             message_7: Jste si jistý?
@@ -2260,7 +2272,7 @@ cs:
             message_3: Opravdu vymazat?
 
     controller: 
-      interupts: 
+      interrupts: 
         message_0: schváleno referentkou vědy a výzkumu
       plans: 
         message_8: jazyky musí být rozdílné
@@ -2292,7 +2304,7 @@ cs:
         message_6: moji studující
       documents: {}
 
-      coridors: {}
+      specializations: {}
 
       account: 
         message_0: Přihlášení do systému
@@ -2334,7 +2346,7 @@ cs:
         message_0: Termíny SDZ
         message_1: Termíny zkoušky byl uložen
         message_2: Termíny zkoušek
-        message_3: "Výpis komisí příjímacích komisí"
+        message_3: "Výpis komisí příjímacích řízení"
 
       probation_terms:
         message_0: Počet volných míst byl vyčerpán

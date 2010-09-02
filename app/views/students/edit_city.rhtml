@@ -1,0 +1,6 @@
+<% save_form(:city) do -%>
+  <%= text_field 'student', 'city', 'size' => 30 %>
+  <%= hidden_field 'student', 'id' %>
+  <%= ok_submit(:city) %>
+<% end %>
+<%= javascript_tag "$('student_city').select()" %>

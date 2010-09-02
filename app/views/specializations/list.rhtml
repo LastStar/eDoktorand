@@ -1,0 +1,34 @@
+<h5><%= t(:message_0, :scope => [:txt, :view, :specializations, :list, :rhtml]) %></h5>
+
+<table id='specializations_table_new'>
+  <tbody id='specializations_table'>
+  <tr>
+    <th><%= t(:message_1, :scope => [:txt, :view, :specializations, :list, :rhtml]) %></th>
+    <th><%= t(:message_2, :scope => [:txt, :view, :specializations, :list, :rhtml]) %></th>
+    <th><%= t(:message_3, :scope => [:txt, :view, :specializations, :list, :rhtml]) %></th>
+    <th><%= t(:message_4, :scope => [:txt, :view, :specializations, :list, :rhtml]) %></th>
+    <th><%= t(:message_5, :scope => [:txt, :view, :specializations, :list, :rhtml]) %></th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+<% for specialization in @specializations %>
+  <tr>
+    <td><%=h specialization.name %></td>
+    <td><%=h specialization.name_english %></td>
+    <td><%=h specialization.code %></td>
+    <td><%=h specialization.program.label %></td>
+    <td> <%if specialization.accredited == 1 %>
+             <%= t(:message_6, :scope => [:txt, :view, :specializations, :list, :rhtml])%>
+	 <%else%>
+	     <%= t(:message_7, :scope => [:txt, :view, :specializations, :list, :rhtml])%>
+	 <%end%></td>
+<td><%= link_to t(:message_8, :scope => [:txt, :view, :specializations, :list, :rhtml]), :action => :attestation, :id => specialization.id %></td>
+    <td><%= link_to t(:message_9, :scope => [:txt, :view, :specializations, :list, :rhtml]), :action => :subjects, :id => specialization %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+

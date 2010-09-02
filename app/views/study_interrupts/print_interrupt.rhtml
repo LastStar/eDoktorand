@@ -1,0 +1,67 @@
+<div id='student_detail'>
+<ul class='details'>
+  <li>
+     <div class='long_info'><%=@interrupt.index.student.display_name%></div> <%= t(:message_10, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>:
+  </li>
+  <li>
+     <div class='long_info'><%=@interrupt.index.student.index.year%></div> <%= t(:message_11, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>:
+  </li>
+  <li>
+    <div class='long_info'><%=@interrupt.index.student.specialization.name%></div>  <%= t(:message_12, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>:
+  </li>
+  <li>
+   <div class='long_info'><%=@interrupt.index.student.index.tutor.display_name%></div> <%= t(:message_13, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>:
+  </li>
+</ul>
+  <% if @interrupt.index.interrupted? %>
+<h5><%= t(:message_0, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %></h5>
+<ul>
+  <li>
+  <div class='info'><%= @interrupt.index.interrupted_on.strftime('%d. %m. %Y') %></div>
+  <%= t(:message_1, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>
+  </li>
+  <li>
+  <div class='info'><%= @interrupt.end_on.strftime('%d. %m. %Y')%></div>
+  <%= t(:message_2, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>
+  </li>
+  <% elsif @interrupt.index.admited_interrupt? %>
+<h5><%= t(:message_3, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %></h5>
+<ul id='admited_interrupt'>
+  <li>
+  <div class='info'><%= @interrupt.index.interrupt.start_on.strftime('%m/%Y') %></div>
+  <%= t(:message_4, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>
+  </li>
+  <li>
+  <div class='info'><%= @interrupt.index.interrupt.duration %></div>
+  <%= t(:message_5, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>
+  </li>
+  <% else %>
+<h5><%= t(:message_6, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %></h5>
+<ul id='last_interrupt'>
+  <li>
+  <div class='info'><%= @interrupt.start_on.strftime('%d. %m. %Y') %></div>
+  <%= t(:message_7, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %>
+  </li>
+    <% if index.interrupt.finished_on %>
+      <%= interrupt_finish_line(@interrupt.index) %>
+    <% end %>
+  <% end %>
+</ul>
+
+<% if study_plan ||= @interrupt.index.study_plan %>
+  <% if study_plan.attestation  %>
+  <h5><%= t(:message_8, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %></h5>
+  <ul id='attestation'>
+    <%= print_statements(study_plan.attestation) %>
+    <%= attestation_detail(study_plan) %>
+  </ul>
+  <% elsif study_plan.approval %>
+  <h5><%= t(:message_9, :scope => [:txt, :view, :interrupts, :print_interrupt, :rhtml]) %></h5>
+  <ul id='approval'>
+    <%= print_statements(study_plan.approval) %>
+  </ul>
+  <% end %>
+<% end %>
+
+</div>
+

@@ -3,7 +3,7 @@ require 'genderize'
 class Candidate < ActiveRecord::Base
   include Genderize
   
-  belongs_to :coridor
+  belongs_to :specialization
   belongs_to :department
   belongs_to :study
   belongs_to :student
@@ -32,13 +32,14 @@ class Candidate < ActiveRecord::Base
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
     :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
 
+  #TODO rename with tt
   named_scope :admited, :conditions => 'admited_on is not null'
   named_scope :finished, :conditions => 'finished_on is not null'
   named_scope :finished_before, lambda{|date|
     {:conditions => ['finished_on < ?', date]}
   }
   named_scope :from_faculty, lambda {|faculty|
-    {:conditions => ['coridor_id in (?)', faculty.coridors]}
+    {:conditions => ['specialization_id in (?)', faculty.specializations]}
   }
   # validates if languages are not same
   def validate
@@ -213,59 +214,74 @@ class Candidate < ActiveRecord::Base
 
   # creates student and index from self
   def new_student(enrolled_on)
+    uic_getter = UicGetter.new
     student = Student.new
+    if self.state == 'CZ' || self.state == "SK"
+      student.uic = uic_getter.get_uic(self.birth_number)
+    else
+      student.uic = uic_getter.get_foreign_uic(self.birth_on)
+    end
     student.firstname = self.firstname
     student.lastname = self.lastname
     student.birth_on = self.birth_on
     student.birth_number = self.birth_number
-    student.state = self.state
+    student.citizenship = student.state = self.state
     student.birth_place = self.birth_at
     student.title_before = self.title_before
     student.title_after = self.title_after
-    index = Index.new
-    index.department = self.department
-    index.coridor = self.coridor
-    index.tutor = self.tutor
-    index.study = self.study
-    index.student = student
-    index.enrolled_on = enrolled_on
-    index.save_with_validation(false)
-    create_address(student.id)
-    create_postal_address(student.id) if self.postal_city
+    student.street = self.street
+    student.desc_number = self.number
+    student.city = self.city
+    student.country = self.address_state
+    student.postal_street = self.postal_street
+    student.postal_city = self.postal_city
+    student.postal_desc_number = self.postal_number
+    student.postal_country = self.postal_state
     student.email = self.email
     student.phone = self.phone if self.phone
-    self.update_attribute(:student_id, student.id) if student.save
+    student.sex = self.sex
+    student.marital_status = 'S'
+    student.save!
+    index = Index.new
+    index.student = student
+    index.department = self.department
+    index.specialization = self.specialization
+    index.tutor = self.tutor
+    index.study = self.study
+    index.enrolled_on = enrolled_on
+    index.save!
+    self.update_attribute(:student_id, student.id)
     return student
   end
 
   def admitting_faculty
-    coridor.faculty
+    specialization.faculty
   end
 
   # prepares conditions for paginate functions
   def self.prepare_conditions(options, faculty, user)
     if user.has_role?('vicerector')
-      conditions = ["coridor_id in (?) AND finished_on IS NOT NULL",
-                    Coridor.find(:all)]
+      conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
+                    Specialization.find(:all)]
     else
-      conditions = ["coridor_id in (?) AND finished_on IS NOT NULL",
-                    faculty.coridors]
+      conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
+                    faculty.specializations]
     end
     conditions.first << filter_conditions(options['filter'])
-    if options['coridor']
-       conditions.first << " AND coridor_id = #{options['coridor']}"
+    if options['specialization']
+       conditions.first << " AND specialization_id = #{options['specialization']}"
     end
     return conditions
   end
 
   # returns all candidates by filter
   def self.find_all_finished(options, faculty)
-    conditions = ["coridor_id in (?) AND finished_on IS NOT NULL", 
-                  faculty.coridors]
+    conditions = ["specialization_id in (?) AND finished_on IS NOT NULL", 
+                  faculty.specializations]
     conditions.first << filter_conditions(options['filter'])
-    if options['coridor']
-      conditions.first << " AND coridor_id = ?"
-      conditions << options['coridor']
+    if options['specialization']
+      conditions.first << " AND specialization_id = ?"
+      conditions << options['specialization']
     end
     Candidate.find(:all, :order => options['category'],
       :conditions => conditions)
@@ -273,16 +289,16 @@ class Candidate < ActiveRecord::Base
 
   def self.find_all_finished_by_session_category(options, faculty, category, user)
     if user.has_role?('vicerector')
-      conditions = ["coridor_id in (?) AND finished_on IS NOT NULL",
-                    Coridor.find(:all)]      
+      conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
+                    Specialization.find(:all)]      
     else
-      conditions = ["coridor_id in (?) AND finished_on IS NOT NULL", 
-                    faculty.coridors]
+      conditions = ["specialization_id in (?) AND finished_on IS NOT NULL", 
+                    faculty.specializations]
     end
     conditions.first << filter_conditions(options['filter'])
-    if options['coridor']
-      conditions.first << " AND coridor_id = ?"
-      conditions << options['coridor']
+    if options['specialization']
+      conditions.first << " AND specialization_id = ?"
+      conditions << options['specialization']
     end
     Candidate.find(:all, :order => category,
       :conditions => conditions)

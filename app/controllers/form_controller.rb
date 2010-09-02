@@ -2,7 +2,7 @@ class FormController < ApplicationController
   include LoginSystem
   layout "employers"
   
-  # page where candidate chooses desired coridor
+  # page where candidate chooses desired specialization
   def index
     @faculties = Faculty.find(:all)
     @title = t(:message_0, :scope => [:txt, :controller, :form])
@@ -29,7 +29,7 @@ class FormController < ApplicationController
   def details
     prepare_candidate
     @action = 'save'
-    @title = t(:message_1, :scope => [:txt, :controller, :form]) % @candidate.coridor.name
+    @title = t(:message_1, :scope => [:txt, :controller, :form]) % @candidate.specialization.name
   end
 
   # preview what has been inserted
@@ -91,11 +91,11 @@ class FormController < ApplicationController
   # prepares candidate with some preloaded values
   def prepare_candidate
     @candidate = Candidate.new do |c| 
-      c.coridor = Coridor.find(params[:id])
+      c.specialization = Specialization.find(params[:id])
       c.state = 'CZ'
       c.address_state = 'CZ'
       c.university = t(:message_14, :scope => [:txt, :controller, :form])
-      c.faculty = c.coridor.faculty.name
+      c.faculty = c.specialization.faculty.name
       language1_id = 1133 if c.admitting_faculty == 3
     end
   end

@@ -1,9 +1,9 @@
-<li id='term_<%= term_line.id %>'>
-  <div class='right'>
+<tr id='term_<%= term_line.id %>'>
+  <th class="no-rounded"><%= term_line.index.student.display_name %></th>
+  <td><%= "%s %s %s" % [term_line.date_time, t(:message_0, :scope => [:txt, :view, :defenses, :_term_line, :rhtml]), term_line.room] %></td>
+  <td>
     <%= protocol_link term_line %>
     <%= announcement_link term_line %>
-  </div>
-  <b><%= term_line.index.student.display_name %></b><br /> 
-  <%= "%s %s %s" % [term_line.date_time, t(:message_0, :scope => [:txt, :view, :defenses, :_term_line, :rhtml]), term_line.room] %>
-</li>
+  </td>
+</tr>
 

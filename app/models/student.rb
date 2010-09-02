@@ -1,12 +1,22 @@
 class Student < Examinator
   
   has_one :index, :dependent => :destroy, :order => 'created_on desc'
-  has_one :address, :conditions => 'address_type_id = 1', 
-          :dependent => :destroy
-  has_one :postal_address, :class_name => 'Address', 
-          :conditions => 'address_type_id = 2', :dependent => :destroy
   has_one :candidate
   has_and_belongs_to_many :probation_terms
+  has_one :im_student
+
+  before_create :prepare_im_student
+  after_update :update_im_student
+
+  # updates ImStudent with new attributes
+  def update_im_student
+    im_student.save if im_student
+  end
+
+  # prepares ImStudent if there is no one
+  def prepare_im_student
+    build_im_student unless im_student
+  end
 
   #TODO delegate
   # returns faculty on which student is
@@ -18,6 +28,7 @@ class Student < Examinator
   def display_name
     disp_name = "#{lastname} #{firstname}"
     disp_name << (title_before ? ", %s" % title_before.label : '')
+    disp_name << (title_after ? " %s" % title_after.label : '')
     return disp_name
   end
 
@@ -35,8 +46,8 @@ class Student < Examinator
   end
 
   #TODO delegate
-  def coridor
-    index.coridor
+  def specialization
+    index.specialization
   end
 
   def address_or_create

@@ -16,6 +16,18 @@ Factory.define :person do |p|
   p.lastname 'Calvera'
 end
 
+Factory.define :index do |index|
+  index.enrolled_on TermsCalculator.this_year_start
+  index.association :study
+  index.association :tutor
+  index.association :specialization
+  index.association :department
+  index.payment_id 1
+  index.account_number '2303308001'
+  index.account_number_prefix '35'
+  index.account_bank_number '5500'
+end
+
 Factory.define :student do |s|
   s.firstname 'Student'
   s.lastname 'Studentov'
@@ -26,24 +38,25 @@ Factory.define :tutor do |s|
   s.lastname 'Tutorov'
 end
 
-Factory.define :index do |index|
-  index.enrolled_on TermsCalculator.this_year_start
-  index.association :study
-  index.association :tutor
-  index.association :coridor
-  index.association :department
-end
-
 Factory.define :study do |study|
   study.name 'prezenční'
   study.name_en 'full time'
+  study.code 'D'
 end
 
-Factory.define :coridor do |c|
-  c.name 'coridor'
-  c.name_english 'en coridor'
-  c.code 'COR'
-  c.association :faculty, :factory => :faculty
+Factory.define :specialization do |specialization|
+  specialization.name 'specialization'
+  specialization.name_english 'en specialization'
+  specialization.code 'SPE'
+  specialization.msmt_code 'MSPE'
+  specialization.association :faculty, :factory => :faculty
+  specialization.association :program
+end
+
+Factory.define :program do |program|
+  program.label 'program'
+  program.label_en 'program'
+  program.code 'PRG'
 end
 
 Factory.define :faculty do |f|
@@ -55,5 +68,35 @@ end
 Factory.define :department do |department|
   department.name "department"
   department.name_english "department en"
+  department.short_name 'DEP'
   department.association :faculty
+end
+
+Factory.define :address do |address|
+  address.association :student
+  address.street 'Street'
+  address.desc_number '8'
+  address.city 'City'
+  address.zip '11111'
+end
+
+Factory.define :candidate do |candidate|
+  candidate.firstname 'Karel'
+  candidate.lastname 'Marel'
+  candidate.birth_at '1980-01-01'
+  candidate.email 'karel@marel.cz'
+  candidate.phone '+420777888999'
+  candidate.street 'Long'
+  candidate.number '2'
+  candidate.city 'Prague'
+  candidate.zip '10000'
+  candidate.state 'CZ'
+  candidate.university 'CZU'
+  candidate.faculty 'FAAPPZ'
+  candidate.studied_branch 'Agro'
+  candidate.birth_number '7604242624'
+  candidate.association :department
+  candidate.language1_id 1
+  candidate.language2_id 2
+  candidate.sex 'M'
 end

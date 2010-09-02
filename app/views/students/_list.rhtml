@@ -1,27 +1,27 @@
-<% if @indices && !@indices.empty? %>
-  <h5><%= t(:message_0, :scope => [:txt, :view, :students, :_list, :rhtml]) + "(#{@indices.size})" %></h5>
-<% end %>
-  <div class='links'>
-    <%= filter_links(@filters) %> <%= link_to(t(:message_3, :scope => [:txt, :view, :students, :_list, :rhtml]),"students/mail_list")%>
-    <% if @user.has_one_of_roles?(['faculty_secretary', 'dean']) %>
-    <input type='checkbox' id='selected_only'/>
-    <span><%= t(:message_1, :scope => [:txt, :view, :students, :_list, :rhtml]) %></span>
-    <script type="text/javascript">
-      $('selected_only').observe('change', function(event){
-        if ($('selected_only').checked) {
-          $$('.student-line').each(function(e) {
-            if(!e.classNames().include('once-selected')) {
-              e.hide();
-            }});
-        } else {
-          $$('.student-line').each(function(e) {e.show();});
-        }});
+<div class='links'>
+  <%= filter_links(@filters) %> <%= link_to(t(:message_3, :scope => [:txt, :view, :students, :_list, :rhtml]),"students/mail_list")%>
+  <% if @user.has_one_of_roles?(['faculty_secretary', 'dean']) %>
+  <input type='checkbox' id='selected_only'/>
+  <span><%= t(:message_1, :scope => [:txt, :view, :students, :_list, :rhtml]) %></span>
+  <script type="text/javascript">
+    $('selected_only').observe('change', function(event){
+      if ($('selected_only').checked) {
+        $$('.student-line').each(function(e) {
+          if(!e.classNames().include('once-selected')) {
+            e.hide();
+          }});
+      } else {
+        $$('.student-line').each(function(e) {e.show();});
+      }});
 
-    </script>
-    <% end %>
-  </div>
+  </script>
+  <% end %>
+</div>
 <% if @indices && !@indices.empty? %>
-  <table id='students_table'>
+  <h1><%= t(:message_0, :scope => [:txt, :view, :students, :_list, :rhtml]) + "(#{@indices.size})" %></h1>
+<% end %>
+<% if @indices && !@indices.empty? %>
+  <table id='students_table' class="students-list embossed">
     <tbody id='students_table_body'>
       <%= render :partial => 'index_line', :collection => @indices %>
     </tbody>

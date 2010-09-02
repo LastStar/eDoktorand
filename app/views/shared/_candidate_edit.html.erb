@@ -89,21 +89,21 @@
   </fieldset>
   <fieldset id='study'>
     <legend><%= t(:message_38, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
-    <%= hidden_field 'candidate', 'coridor_id' %>
+    <%= hidden_field 'candidate', 'specialization_id' %>
     <label for="candidate_department_id"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <%= select 'candidate', 'department_id', Department.for_select(:faculty =>
-      @candidate.coridor.faculty.id) %><br /> 
+      @candidate.specialization.faculty.id) %><br /> 
     <label for="candidate_study_id" class="required"><%= t(:message_40, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <%= select 'candidate', 'study_id', study_ids %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for="candidate_language1" class="required"><%= t(:message_41, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <% if @candidate.admitting_faculty.id != 3 %>
-    <%= select 'candidate', 'language1_id', LanguageSubject.for_select(:coridor => @candidate.coridor_id) %><span class='required'>&nbsp;&lowast;</span ><br />
+    <%= select 'candidate', 'language1_id', LanguageSubject.for_select(:specialization => @candidate.specialization_id) %><span class='required'>&nbsp;&lowast;</span ><br />
     <% else %>
     <%= hidden_field 'candidate', 'language1_id', :value => 1133 %>
     <%= Subject.find(1133).label %>
     <% end %>
     <label for="candidate_language2" class="required">&nbsp;</label>
-    <%= select 'candidate', 'language2_id', LanguageSubject.for_select(:coridor => @candidate.coridor_id) %><span class='required'>&nbsp;&lowast;</span ><br /> 
+    <%= select 'candidate', 'language2_id', LanguageSubject.for_select(:specialization => @candidate.specialization_id) %><span class='required'>&nbsp;&lowast;</span ><br /> 
     <label for="candidate_study_theme"><%= t(:message_42, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <%= text_area 'candidate', 'study_theme', :cols => 40, :rows => 2 %><br /> 
   </fieldset>
@@ -113,8 +113,8 @@
   </fieldset>
   <fieldset id='action'>
     <legend><%= t(:message_44, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
-    <input type='submit' value='<%= t(:message_45, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %>' />&nbsp;
-    <input type='reset' value='<%= t(:message_46, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %>' />
+    <input type='submit' value='<%= t(:message_45, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %>' class='button' />&nbsp;
+    <input type='reset' value='<%= t(:message_46, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %>' class='button'/>
   </fieldset>
   <% end %>
   <script  type="text/javascript">

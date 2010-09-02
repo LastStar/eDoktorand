@@ -3,13 +3,13 @@ module Approvable
   def approve_with(params)
     statement = \
       eval("#{params['type']}.create(params)") 
-    eval("self.approvement.#{params['type'].underscore} =
+    eval("self.approval.#{params['type'].underscore} =
       statement")
-    if statement.is_a?(LeaderStatement) && !self.approvement.tutor_statement
-      self.approvement.tutor_statement =
+    if statement.is_a?(LeaderStatement) && !self.approval.tutor_statement
+      self.approval.tutor_statement =
         TutorStatement.create(statement.attributes)
     end
-    self.approvement.save
+    self.approval.save
     set_times(statement)
   end
 
@@ -23,19 +23,19 @@ module Approvable
     if approved?
       Dean
     else
-      approvement.last_approver
+      approval.last_approver
     end
   end
 
   # approve like one level
   def approve_like(level, note = 'machine approve')
-    unless self.approvement
-      self.approvement = eval("#{self.class.to_s}Approvement.new")
+    unless self.approval
+      self.approval = eval("#{self.class.to_s}Approval.new")
     end
-    person_id = self.approvement.document.index.send(level).id
+    person_id = self.approval.document.index.send(level).id
     statement = eval("#{level.camelize}Statement").create('person_id' => 
       person_id, 'result' => 1, 'note' => note)
-    self.approvement.send("#{level}_statement=", statement)
+    self.approval.send("#{level}_statement=", statement)
     set_times(statement)
   end
 

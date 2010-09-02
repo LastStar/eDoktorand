@@ -1,7 +1,5 @@
-<h5><%=  t(:message_22, :scope => [:txt, :view, :candidates, :list, :rhtml]) %> </h5>
-<%= print_notice %>
 <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
-  <% sort_array = [['coridor_id', t(:message_0, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['lastname',
+  <% sort_array = [['specialization_id', t(:message_0, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['lastname',
   t(:message_1, :scope => [:txt, :view, :candidates, :list, :rhtml])], ['updated_on', t(:message_2, :scope => [:txt, :view, :candidates, :list, :rhtml])]] %>
   <% if params[:action] != 'list_admission_ready'%>
     <% titles = [t(:message_3, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_4, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_5, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_6, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_7, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
@@ -9,12 +7,12 @@
                       :message => t(:message_8, :scope => [:txt, :view, :candidates, :list, :rhtml]))  %>
   <% end %>  
   <% if session[:list_mode] == 'list' %>
-    <%message = image_tag("pages.png")%>
+    <% message = image_tag("pages.png") %>
      <div id='list'>
   <% else %>
-    <%message = image_tag("pages.png")%>
+    <% message = image_tag("pages.png") %>
     <div id='list' style='display: none'>   
-  <%end%>
+  <% end %>
   <%titles = [t(:message_9, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_10, :scope => [:txt, :view, :candidates, :list, :rhtml]),
               t(:message_11, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
   <% if params[:action] == 'list_admission_ready'%>
@@ -25,8 +23,8 @@
                            switch_button_all(message) +"</span> ") %>
   <%end%>
     </div>
-  <%titles = [t(:message_15, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_16, :scope => [:txt, :view, :candidates, :list, :rhtml]),
-              t(:message_17, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
+  <% titles = [t(:message_15, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_16, :scope => [:txt, :view, :candidates, :list, :rhtml]),
+              t(:message_17, :scope => [:txt, :view, :candidates, :list, :rhtml])] %>
   <% if params[:action] != 'list_admission_ready'%>
     <% if session[:list_mode] == 'list' %>
       <%message = image_tag("page.png")%>
@@ -40,17 +38,18 @@
                       "'>"  + switch_button(message) +"</span> ") %>
       </div>
   <% end %>
-  <%= view_filter_settings('filter_view') %>
-  <div id='candidates_delete' class='links'>
-    <%= link_to_remote(t(:message_21,
-      :scope => [:txt, :view, :candidates, :list, :rhtml]),
-      :url => {:action => 'delete_all'},
-      :update => "candidates_delete") %>
+  <div id='candidates_delete' class='links' style="clear:right">
+    <%= link_to_remote(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :url => { :action => 'delete_all_candidates'}, :method => :get, :update => "candidates_delete") %>
   </div>
 <% end %>
+
+<h1><%=  t(:message_22, :scope => [:txt, :view, :candidates, :list, :rhtml]) %> </h1>
+<p><%= view_filter_settings('filter_view') %></p>
+<br class="clear-all" />
+<%= print_notice %>
+<br class="clear-all" />
 <% unless @candidates.empty? %>
   <%= render(:partial => 'list') %>
-
   <div class='links'>
     <%= list_links %>                     
   </div>

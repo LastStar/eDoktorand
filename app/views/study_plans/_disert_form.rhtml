@@ -12,7 +12,7 @@
 <ul class='nodecor'>
 <li>
   <label for="study_plan_finishing_to"><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %>:</label>
-  <%= select 'study_plan', 'finishing_to', session[:last_semester]..(@student.coridor.study_length * 2) %>
+  <%= select 'study_plan', 'finishing_to', session[:last_semester]..(@student.specialization.study_length * 2) %>
   <%= "." + t(:message_1, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %> 
 </li>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
@@ -33,7 +33,7 @@
 </li>
 <li>
   <label for="disert_theme_finishing_to"><%= t(:message_4, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %></label>
-  <%= select 'disert_theme', 'finishing_to', session[:last_semester]..(@student.coridor.study_length * 2) %><br/>
+  <%= select 'disert_theme', 'finishing_to', session[:last_semester]..(@student.specialization.study_length * 2) %><br/>
 </li>
 <li>
   <label for="disert_theme_methodology_summary"><%= t(:message_5, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %>:</label>
@@ -43,8 +43,9 @@
   <input type='hidden' name='return' id='return-value' value='0'/>
 </li>
 </fieldset>
-<%= submit_tag("<<< " + t(:message_6, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]), :id => 'return_button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + t(:message_7, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + "'") %>
-<%= submit_tag(t(:message_8, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % t(:message_9, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml])) %>
+<br/>
+<%= submit_tag("<<< " + t(:message_6, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]), :id => 'return_button',:class => 'button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + t(:message_7, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + "'") %>
+<%= submit_tag(t(:message_8, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + " >>>", :id => 'submit_button',:class => 'button', :onclick =>"$('submit_button').value = '%s'" % t(:message_9, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml])) %>
 
 <% end %>
 

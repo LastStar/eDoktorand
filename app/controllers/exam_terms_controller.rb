@@ -22,7 +22,7 @@ class ExamTermsController < ApplicationController
     @title = 'Vytváření komise příjimacích zkoušek'
     @tutors = Tutor.find_for(@user)
     @exam_term = AdmissionTerm.new
-    @exam_term.coridor_id = params[:id] if params[:id]
+    @exam_term.specialization_id = params[:id] if params[:id]
   end
 
    def create

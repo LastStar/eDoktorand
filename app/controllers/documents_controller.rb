@@ -62,9 +62,9 @@ class DocumentsController < ApplicationController
 
   end
 
-  # prints list of tutors by coridors to pdf
-  def tutors_by_coridors
+  # prints list of tutors by specializations to pdf
+  def tutors_by_specialization
     @faculty = Faculty.find_by_short_name(params[:id])
-    @coridors = @faculty.coridors
+    @specializations = @faculty.specializations
   end
 end

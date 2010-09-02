@@ -1,11 +1,11 @@
 <%= javascript_include_tag :defaults %>
 <% @ids = [] %>
-<table id='exams_list'>
+<table id='exams_list' class="embossed students-list">
 <tbody>
 <% for exam in @exams  %>
   <tr id='student_detail_<%= exam.id %>' class='student_detail'>
-    <th><%= exam.index.student.display_name %></th>
-    <td><%= truncate(exam.subject.label, :length => 30) %></td>
+    <th class="no-rounded"><%= exam.index.student.display_name %></th>
+    <td><%= truncate(exam.subject.label, :length => 80) %></td>
     <td><%= exam.passed_on.strftime("%d. %m. %Y") %></td>
     <td><%= result_word(exam.result) %></td>
     <td class='smallerinfo' id='edit_link_<%= exam.id %>'><%= edit_link(exam) %></td>

@@ -1,6 +1,15 @@
-<td colspan=6>
+<td colspan="6" class="orange right">
 <% save_form(scholarship) do %>
-<div class='small'>
+<%= t(:message_5, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %>
+<%if params[:scholarship]%>
+  <%= text_field 'scholarship', 'commission_head', 'size' => 10%> / 
+  <%= text_field 'scholarship', 'commission_body', 'size' => 10%> / 
+  <%= text_field 'scholarship', 'commission_tail', 'size' => 10%>
+<%else%>
+  <%= text_field 'scholarship', 'commission_head', 'size' => 10, 'value' => t(:message_2, :scope => [:txt, :view, :scholarships, :_add, :rhtml])%> / 
+  <%= text_field 'scholarship', 'commission_body', 'size' => 10, 'value' => t(:message_3, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %> / 
+  <%= text_field 'scholarship', 'commission_tail', 'size' => 10, 'value' => t(:message_4, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %>
+<%end%>
   <%if params[:scholarship]%>
     <%if @edit == 1%>
       <%= hidden_field 'scholarship_edit', 'edit', 'value' => scholarship_id %>
@@ -14,32 +23,9 @@
   <%if !params[:scholarship]%>
     <%= close_link("scholarship_form_#{@scholarship.index.id}") %>
   <%end%>
-</div>
-<div class='small'>
-  &nbsp;&nbsp;&nbsp;
-</div>
-<div class='small'>
-  <%if params[:scholarship]%>
-    <%= text_field 'scholarship', 'commission_head', 'size' => 10%> / 
-    <%= text_field 'scholarship', 'commission_body', 'size' => 10%> / 
-    <%= text_field 'scholarship', 'commission_tail', 'size' => 10%>
-  <%else%>
-    <%= text_field 'scholarship', 'commission_head', 'size' => 10, 'value' => t(:message_2, :scope => [:txt, :view, :scholarships, :_add, :rhtml])%> / 
-    <%= text_field 'scholarship', 'commission_body', 'size' => 10, 'value' => t(:message_3, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %> / 
-    <%= text_field 'scholarship', 'commission_tail', 'size' => 10, 'value' => t(:message_4, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %>
-  <%end%>
-</div>
-<div class='small'>
-  &nbsp;&nbsp;&nbsp;
-</div>
-<div class='small'>
   <%= hidden_field 'scholarship', 'type' %>
   <%= hidden_field 'scholarship', 'index_id' %>
   <%= hidden_field 'scholarship', 'id' %>
-</div>
-<div>
- <%= t(:message_5, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %>
-</div>
 <% end %>
 <%= javascript_tag "document.forms[0].amount.focus()" %>
 </td>

@@ -20,7 +20,7 @@
 <% if @conditional %><b>podmínečně přijat/a</b><% end %> 
 do <%= @candidate.study.name %> formy doktorského studia na&nbsp;<%= @faculty.short_name%> ČZU v Praze</p>
 
-<h3 class='centerAlign'>studijní obor: <%= @candidate.coridor.name %></h5>
+<h3 class='centerAlign'>studijní obor: <%= @candidate.specialization.name %></h5>
 <br/>
 <p>Vaším školitelem byl/a ustanoven/a <%= @candidate.tutor.display_name %>, 
  <%= first_lower(@candidate.department.name) %> <%= @faculty.short_name%>.</p>

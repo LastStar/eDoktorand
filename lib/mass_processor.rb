@@ -87,7 +87,7 @@ class MassProcessor
       @@mylog.info "There are #{indices.size} indices"
       indices.each do |i|
         if i.study_plan
-          app = i.study_plan.approvement || StudyPlanApprovement.new
+          app = i.study_plan.approval || StudyPlanApproval.new
           created = app.created_on = i.study_plan.approved_on = \
             i.enrolled_on + 1.month
           app.tutor_statement ||= TutorStatement.create('person_id' => i.tutor_id, 
@@ -106,10 +106,10 @@ class MassProcessor
       nil
     end
 
-    def clean_coridor_subjects
+    def clean_specialization_subjects
       @count = 0
       Faculty.find(:all).each do |f|
-        f.coridors.each do |c|
+        f.specializations.each do |c|
           @last = nil
           c.obligate_subjects.each {|cs| change_last_or_delete(cs)}
           c.voluntary_subjects.each {|cs| change_last_or_delete(cs)}
@@ -204,9 +204,9 @@ class MassProcessor
       end
     end
 
-    # creates copy of coridors with S on end of code
-    def copy_old_corridors(coridors)
-      coridors.map {|c|
+    # creates copy of specializations with S on end of code
+    def copy_old_corridors(specializations)
+      specializations.map {|c|
         c.clone.save
         c.code = "%sS" % c.code
         c.accredited = false
@@ -216,17 +216,17 @@ class MassProcessor
     end
 
     # copies corridor subject from one to another corridor
-    def copy_corridor_subject(from_coridor, to_coridor)
-      CoridorSubject.find_all_by_coridor_id(from_coridor).each {|cs|
+    def copy_corridor_subject(from_specialization, to_specialization)
+      SpecializationSubject.find_all_by_specialization_id(from_specialization).each {|cs|
         csn = cs.clone
-        csn.update_attribute(:coridor_id, to_coridor)
+        csn.update_attribute(:specialization_id, to_specialization)
       }
     end
 
     # adds corridor subjects from type and subjects ids
-    def add_corridor_subjects(coridor_id, type, *ids)
+    def add_corridor_subjects(specialization_id, type, *ids)
       ids.each {|i|
-        type.create(:subject_id => i, :coridor_id => coridor_id)
+        type.create(:subject_id => i, :specialization_id => specialization_id)
       }
     end
   end

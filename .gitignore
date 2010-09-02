@@ -7,4 +7,5 @@ tmp/*
 db/schema.rb
 *.kpf
 public/pdf/methodology
-
+.DS_Store
+*.csv

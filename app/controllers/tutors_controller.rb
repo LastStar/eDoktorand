@@ -17,7 +17,7 @@ class TutorsController < ApplicationController
   
   def edit
     @tutorship = Tutorship.find(params[:id])
-    @coridors = Coridor.accredited_for(@user)
+    @specializations = Specialization.accredited_for(@user)
     render :partial => 'edit'
   end
 

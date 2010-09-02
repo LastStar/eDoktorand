@@ -2,7 +2,7 @@
 <div id='done'></div>
 <div id='form'>
 <% end %>
-<H5> <%= t(:message_0, :scope => [:txt, :view, :exams, :by_subject, :rhtml])%></H5>
+<h1> <%= t(:message_0, :scope => [:txt, :view, :exams, :by_subject, :rhtml])%></h1>
 <% subject_form do -%>	
 <fieldset>
 <legend><%= t(:message_1, :scope => [:txt, :view, :exams, :by_subject, :rhtml]) %></legend>
@@ -13,7 +13,8 @@
   <%= label_options(@subjects, :select_label) %>
 </select>
 </fieldset>
-<%= submit_tag(t(:message_3, :scope => [:txt, :view, :exams, :by_subject, :rhtml]), :id => 'submit-button') %>
+<br/>
+<%= submit_tag(t(:message_3, :scope => [:txt, :view, :exams, :by_subject, :rhtml]), :id => 'submit-button', :class => 'button') %>
 <% end %>
 <% if params[:action] == 'create' %>
 </div>

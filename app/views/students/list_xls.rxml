@@ -30,7 +30,7 @@ xml.Workbook({
           xml.Data _('diplay_name'), 'ss:Type' => 'String'
         end
         xml.Cell do
-          xml.Data _('index_coridor_code'), 'ss:Type' => 'String'
+          xml.Data _('index_specialization_code'), 'ss:Type' => 'String'
         end
         xml.Cell do
           xml.Data _('index_department_short_name'), 'ss:Type' => 'String'
@@ -53,7 +53,7 @@ xml.Workbook({
             xml.Data indice.student.display_name, 'ss:Type' => 'String'
           end
           xml.Cell do
-            xml.Data indice.coridor.code, 'ss:Type' => 'String'
+            xml.Data indice.specialization.code, 'ss:Type' => 'String'
                 end
           xml.Cell do
             xml.Data indice.department.short_name, 'ss:Type' => 'String'

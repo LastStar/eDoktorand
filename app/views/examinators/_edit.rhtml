@@ -4,9 +4,9 @@
 <td>
 <% form_remote_tag(:url => {:action => "update"}, 
                             :complete => evaluate_remote_response,
-                            :after => loader_image("coridor_submit")) do %>
+                            :after => loader_image("specialization_submit")) do %>
   <%= collection_select :department_employment, :unit_id,  @departments, :id, :name %>
   <%= hidden_field :examinator,:id, :value => @examinator.id %>
-  <%= ok_submit(:coridor) %>
+  <%= ok_submit(:specialization) %>
 <% end %>
 </td>

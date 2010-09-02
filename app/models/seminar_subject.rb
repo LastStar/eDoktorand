@@ -1,3 +1,3 @@
-class SeminarSubject < CoridorSubject
+class SeminarSubject < SpecializationSubject
   
 end

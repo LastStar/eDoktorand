@@ -4,12 +4,12 @@ class StudyPlan < ActiveRecord::Base
   
   belongs_to :index
   has_many :plan_subjects, :order => 'finishing_on', :dependent => :delete_all
-  has_one :approvement, :class_name => 'StudyPlanApprovement',
+  has_one :approval, :class_name => 'StudyPlanApproval',
     :foreign_key => 'document_id'
-  has_one :atestation, :foreign_key => 'document_id', :order => 'created_on'
-  #Have to be tested:
-  #has_one :atestation_detail, :foreign_key => 'study_plan_id', :order => 'created_on'
-  has_many :approvements
+  has_one :attestation, :foreign_key => 'document_id', :order => 'created_on'
+  # Have to be tested: Should be removed
+  # has_one :attestation_detail, :foreign_key => 'study_plan_id', :order => 'created_on'
+  has_many :approvals
   acts_as_audited
   validates_presence_of :index
   serialize :final_areas, Hash
@@ -53,57 +53,58 @@ class StudyPlan < ActiveRecord::Base
     return true unless admited_on.nil?
   end
 
-  #  returns true if study plan has been atested for last atestation
-  def atested_for?(date)
-    last_atested_on && last_atested_on > date.to_time
+  #  returns true if study plan has been attested for last attestation Should be
+  #  removed
+  def attested_for?(date)
+    last_attested_on && last_attested_on > date.to_time
   end
 
-  def atested_actual?
-    date = Atestation.actual_for_faculty(self.index.faculty)
-    self.atested_for?(date)
+  def attested_actual?
+    date = Attestation.actual_for_faculty(self.index.faculty)
+    self.attested_for?(date)
   end
 
-  # returns true if study plan waits for actual atestation
-  def waits_for_actual_atestation?
+  # returns true if tudy plan waits for actuala attestation
+  def waits_for_actual_attestation?
     !index.final_exam_passed? && 
-      !atested_for?(Atestation.actual_for_faculty(index.student.faculty)) 
+      !attested_for?(Attestation.actual_for_faculty(index.student.faculty)) 
   end
 
-  # returns atestation detail for next atestation  
-  def next_atestation_detail
-    AtestationDetail.find_by_study_plan_id_and_atestation_term(id, 
-      Atestation.next_for_faculty(index.student.faculty))
+  # returns attestation detail for next attestation  
+  def next_attestation_detail
+    AttestationDetail.find_by_study_plan_id_and_attestation_term(id, 
+      Attestation.next_for_faculty(index.student.faculty))
   end
 
-  def next_atestation_detail_or_new
-    next_atestation_detail || AtestationDetail.new_for(index.student)
+  def next_attestation_detail_or_new
+    next_attestation_detail || AttestationDetail.new_for(index.student)
   end
-  # returns atestation detail for actual atestations
-  def actual_atestation_detail
-    AtestationDetail.find_by_study_plan_id_and_atestation_term(id, 
-      Atestation.actual_for_faculty(index.student.faculty))
-  end
-
-  # returns count of atestation for study plan
-  def atestation_count
-    Atestation.count(['document_id = ?', id])
+  # returns attestation detail for actual attestations
+  def actual_attestation_detail
+    AttestationDetail.find_by_study_plan_id_and_attestation_term(id, 
+      Attestation.actual_for_faculty(index.student.faculty))
   end
 
-  # return plan subjects for atestation
-  def atestation_subjects
+  # returns count of attestation for study plan
+  def attestation_count
+    Attestation.count(['document_id = ?', id])
+  end
+
+  # return plan subjects for attestation
+  def attestation_subjects
     beg_sem = semester - 3
     end_sem = semester - 1
-    return @atestation_subjects ||= plan_subjects.select do |ps|
+    return @attestation_subjects ||= plan_subjects.select do |ps|
       (beg_sem..end_sem).include? ps.finishing_on
     end
   end
 
-  def finished_atestation_subjects
-    atestation_subjects.select(&:finished?)
+  def finished_attestation_subjects
+    attestation_subjects.select(&:finished?)
   end
  
-  def atestation_subjects_ratio
-    "#{atestation_subjects.size} / #{finished_atestation_subjects.size}"
+  def attestation_subjects_ratio
+    "#{attestation_subjects.size} / #{finished_attestation_subjects.size}"
   end
 
   # return semester of the study from index
@@ -115,10 +116,10 @@ class StudyPlan < ActiveRecord::Base
   def approve_with(params)
     statement = \
     eval("#{params[:type]}.create(params)") 
-    self.approvement ||= StudyPlanApprovement.create
-    self.approvement.update_attribute("#{params[:type].underscore}_id", statement.id)
-    if statement.is_a?(LeaderStatement) && !approvement.tutor_statement
-      approvement.tutor_statement =
+    self.approval ||= StudyPlanApproval.create
+    self.approval.update_attribute("#{params[:type].underscore}_id", statement.id)
+    if statement.is_a?(LeaderStatement) && !approval.tutor_statement
+      approval.tutor_statement =
         TutorStatement.create(statement.attributes)
     end
     if statement.cancel?
@@ -129,19 +130,19 @@ class StudyPlan < ActiveRecord::Base
     save
   end
 
-  # atests study plan with statement from parameters
-  def atest_with(params)
+  # attests study plan with statement from parameters
+  def attest_with(params)
     statement = \
     eval("#{params[:type]}.create(params)")
-    atestation.update_attribute("#{params[:type].underscore}_id", statement.id)
+    attestation.update_attribute("#{params[:type].underscore}_id", statement.id)
     if statement.is_a?(DeanStatement)
       if statement.cancel?
         index.update_attribute('finished_on', Time.now)
       else
-        update_attribute('last_atested_on', Time.now)
+        update_attribute('last_attested_on', Time.now)
       end
-    elsif statement.is_a?(LeaderStatement) && !atestation.tutor_statement
-      atestation.tutor_statement =
+    elsif statement.is_a?(LeaderStatement) && !attestation.tutor_statement
+      attestation.tutor_statement =
         TutorStatement.create(statement.attributes)
     end
     save
@@ -170,14 +171,14 @@ class StudyPlan < ActiveRecord::Base
   def approved_by
     if approved?
       I18n::t(:message_5, :scope => [:txt, :model, :plan])
-    elsif approvement
-      approvement.approved_by
+    elsif approval
+      approval.approved_by
     end
   end
 
   def last_approver
-    if approvement
-      approvement.last_approver
+    if approval
+      approval.last_approver
     end
   end
 

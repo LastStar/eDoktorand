@@ -14,7 +14,7 @@ class ScholarshipsController < ApplicationController
                                          :order => 'studies.id, people.lastname',
                                          :include => [:student, :study, :disert_theme])
     if @user.has_role?('supervisor')
-      @approvals = ScholarshipApprovement.last_weeks
+      @approvals = ScholarshipApproval.last_weeks
     end
   end
 
@@ -147,7 +147,7 @@ class ScholarshipsController < ApplicationController
 
   def next_action_for(user)
     if user.has_one_of_roles?(['faculty_secretary', 'department_secretary', 'leader','vicerector'])
-      if !ScholarshipApprovement.approved_for?(user.person.faculty)
+      if !ScholarshipApproval.approved_for?(user.person.faculty)
         :prepare
       else
         :list
@@ -156,7 +156,7 @@ class ScholarshipsController < ApplicationController
   end
 
   def unapprove
-    @approval = ScholarshipApprovement.find(params[:id])
+    @approval = ScholarshipApproval.find(params[:id])
     @approval.destroy
     redirect_to :action => :list
   end

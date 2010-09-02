@@ -1,0 +1,1 @@
+page.replace_html "city", attribute_line(@student, :city)

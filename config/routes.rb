@@ -28,7 +28,7 @@ ActionController::Routing::Routes.draw do |map|
     :prefix => 'table_'
   
   # candidates for corridor
-  map.connect 'table/candidates/in/:coridor', :controller => 'candidates', 
+  map.connect 'table/candidates/in/:specialization', :controller => 'candidates', 
     :action => 'list_all', :prefix => 'table_'
 
   # sorting routes for candidate
@@ -44,7 +44,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/only/:filter/by/:category', :action => 'list'
 
   # candidates for corridor
-  map.connect 'candidates/in/:coridor', :controller => 'candidates', 
+  map.connect 'candidates/in/:specialization', :controller => 'candidates', 
     :action => 'list_all'
 
   # add path for prijimacky
@@ -69,7 +69,7 @@ ActionController::Routing::Routes.draw do |map|
   # welcome url
   map.welcome 'welcome', :controller => 'account', :action => 'welcome'
 
-  # for approvement purposes
+  # for approval purposes
   map.connect 'students/:action/:id', :controller => 'students'
   map.connect 'indices/:action/:id', :controller => 'students'
 

@@ -12,7 +12,7 @@ class CandidatesController < ApplicationController
   # lists all candidates
   def index
     if @user.has_role?('board_chairman')
-      redirect_to :action => 'list_admission_ready', :coridor => @user.person.tutorship.coridor_id
+      redirect_to :action => 'list_admission_ready', :specialization => @user.person.tutorship.specialization_id
     else
       list
       render(:action => 'list')
@@ -27,7 +27,7 @@ class CandidatesController < ApplicationController
     session[:back_page] = 'list'
     conditions = Candidate.prepare_conditions(params, @faculty, @user)
     @candidates = Candidate.paginate :page => params[:page],
-                                     :per_page => 7,
+                                     :per_page => 13,
                                      :order => session[:category],
                                      :conditions => conditions
     session[:current_page_backward] = params[:page]
@@ -65,12 +65,12 @@ class CandidatesController < ApplicationController
 
   # lists all candidates ordered by category
   def list_admission_ready
-     if params[:coridor]
-       session[:list_admission_ready] = params[:coridor]
+     if params[:specialization]
+       session[:list_admission_ready] = params[:specialization]
      end
     session[:list_mode] = 'list'
     @filtered_by = params[:category]
-    @candidates = Coridor.find(session[:list_admission_ready]).approved_candidates.paginate :page => params[:page], :per_page => 7, :order => session[:category]
+    @candidates = Specialization.find(session[:list_admission_ready]).approved_candidates.paginate :page => params[:page], :per_page => 7, :order => session[:category]
     render(:action => :list)
   end
 
@@ -144,7 +144,7 @@ class CandidatesController < ApplicationController
       @user.roles << Role.find_by_name('student')
       @user.person.index = Index.create('tutor_id' => @candidate.tutor_id,
       'department_id' => @candidate.department_id, 'study_id' => @candidate.study_id,
-      'coridor_id' => @candidate.coridor_id)
+      'specialization_id' => @candidate.specialization_id)
       if !@user.save
         render(:action => :enroll)
       else
@@ -239,7 +239,7 @@ class CandidatesController < ApplicationController
     if params[:id] == "department" || params[:id].empty?
        @departments = faculty.departments
      else
-       @corridors = faculty.coridors
+       @corridors = faculty.specializations
     end
   end
   

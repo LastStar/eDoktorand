@@ -111,14 +111,14 @@ class PlanSubject < ActiveRecord::Base
   def self.create_for(student, type)
     case type
     when :requisite
-      RequisiteSubject.for_coridor(student.coridor).map do |coridor_subject|
-        PlanSubject.new(:subject_id => coridor_subject.subject.id, 
-                        :finishing_on => coridor_subject.requisite_on)
+      RequisiteSubject.for_specialization(student.specialization).map do |specialization_subject|
+        PlanSubject.new(:subject_id => specialization_subject.subject.id, 
+                        :finishing_on => specialization_subject.requisite_on)
       end
     when :obligate
       i = 0
-      ObligateSubject.for_coridor(student.coridor).map do |coridor_subject|
-        (ps = PlanSubject.new(:subject_id => coridor_subject.subject.id)).id = i
+      ObligateSubject.for_specialization(student.specialization).map do |specialization_subject|
+        (ps = PlanSubject.new(:subject_id => specialization_subject.subject.id)).id = i
         i += 1
         ps
       end
@@ -131,7 +131,7 @@ class PlanSubject < ActiveRecord::Base
       subjects
     when :voluntary
       subjects = []
-      student.coridor.voluntary_amount.times do |i|
+      student.specialization.voluntary_amount.times do |i|
         (ps = PlanSubject.new).id = i + 1
         subjects << ps
       end

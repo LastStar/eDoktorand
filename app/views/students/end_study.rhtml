@@ -1,5 +1,7 @@
-<ul class='details'>
-  <h5><%= t(:message_1, :scope => [:txt, :view, :students, :end_study, :rhtml]) %></h5>
+<h1><%= t(:message_1, :scope => [:txt, :view, :students, :end_study, :rhtml]) %></h1>
+<% end_study_form do -%>
+<fieldset>
+<ul class='details bordered'>
   <li>
      <div class='long_info'><%= @student.display_name %></div> <%= t(:message_2, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:
   </li>
@@ -7,7 +9,7 @@
      <div class='long_info'><%= @student.index.year %></div> <%= t(:message_3, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:
   </li>
   <li>
-    <div class='long_info'><%= @student.coridor.name %></div>  <%= t(:message_4, :scope => [:txt, :view, :students, :end_study, :rhtml])  %>:
+    <div class='long_info'><%= @student.specialization.name %></div>  <%= t(:message_4, :scope => [:txt, :view, :students, :end_study, :rhtml])  %>:
   </li>
   <li>
    <div class='long_info'><%= @student.index.tutor.display_name %></div> <%= t(:message_5, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:
@@ -15,12 +17,13 @@
   <li>
    <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%= t(:message_6, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:
   </li>
-<% end_study_form do -%>
-  <li>
-   <%= t(:message_7, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:<br>
+  <li class="noborder">
+    <br />
+   <label><%= t(:message_7, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:</label>
    <textarea name='end_study_subject' id='end_study_subject' cols='60' rows='20'>
    </textarea>
   </li>
-  <%= submit_tag(t(:message_0, :scope => [:txt, :view, :students, :end_study, :rhtml]), :id => 'submit-button') %>
-<% end %>
 </ul>
+</fieldset>
+  <%= submit_tag(t(:message_0, :scope => [:txt, :view, :students, :end_study, :rhtml]), :id => 'submit-button', :class => 'button') %>
+<% end %>

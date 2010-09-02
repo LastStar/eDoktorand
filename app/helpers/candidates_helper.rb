@@ -10,9 +10,9 @@ module CandidatesHelper
   def admit_link(candidate)
     links = ''
     if !candidate.admited? && !candidate.rejected? && candidate.invited? && candidate.ready?
-      unless candidate.coridor.exam_term
+      unless candidate.specialization.exam_term
         links << link_to(t(:message_1, :scope => [:txt, :helper, :candidates]), :controller => 'exam_terms', 
-        :action => 'new', :id => candidate.coridor.id ,:from => 'candidate', :backward => @backward )
+        :action => 'new', :id => candidate.specialization.id ,:from => 'candidate', :backward => @backward )
       else
         links << link_to(t(:message_2, :scope => [:txt, :helper, :candidates]), :action => 'admittance', :id => candidate) + "&nbsp;" +
         link_to(t(:message_3, :scope => [:txt, :helper, :candidates]), :action => 'admit', :id => candidate)  
@@ -23,9 +23,9 @@ module CandidatesHelper
   # invite link
   def invite_link(candidate)
     if !candidate.invited? and candidate.ready? 
-      unless candidate.coridor.exam_term  
+      unless candidate.specialization.exam_term  
         link_to(t(:message_4, :scope => [:txt, :helper, :candidates]), :controller => 'exam_terms', 
-        :action => 'new', :id => candidate.coridor.id,:from => 'candidate',:backward => @backward)
+        :action => 'new', :id => candidate.specialization.id,:from => 'candidate',:backward => @backward)
       else
         link_to(t(:message_5, :scope => [:txt, :helper, :candidates]), :action => 'invite', :id => candidate.id)
       end
@@ -57,10 +57,10 @@ module CandidatesHelper
       if session[:category] == 'lastname desc'
         category = t(:message_9, :scope => [:txt, :helper, :candidates])
       end
-      if session[:category] == 'coridor_id'
+      if session[:category] == 'specialization_id'
         category = t(:message_10, :scope => [:txt, :helper, :candidates])
       end
-      if session[:category] == 'coridor_id desc'
+      if session[:category] == 'specialization_id desc'
         category = t(:message_11, :scope => [:txt, :helper, :candidates])
       end
       if session[:category] == 'updated_on'
@@ -76,12 +76,13 @@ module CandidatesHelper
       filter_set = t(:message_15, :scope => [:txt, :helper, :candidates]) + ', ' + category
     end
     
-    '<div id ="' + div_id + '" class="links">' +
+    '<div id ="' + div_id + '">' +
      t(:message_16, :scope => [:txt, :helper, :candidates]) + ' ' + filter_set +
     '</div>'
     
   end
 
+  # FIXME clean this mess vvvvvvv
   # prints sorting tags
   def sort_tags(action, args, titles, options = {})
     links = ''
@@ -97,7 +98,7 @@ module CandidatesHelper
       links << link_to(link, :action => action, :category => arg.first, 
       :prefix => params[:prefix])
     end
-    content_tag('div', options[:message] + links, :class => :links, :id=> 'list_all_links')
+    content_tag('div', options[:message] + links, :class => :links, :id=> 'list_all_links', :style => 'clear: both')
   end
 
   # prints ordered sorting tags
@@ -115,7 +116,7 @@ module CandidatesHelper
       links << link_to(link, :action => action, :filter => filtered_by, 
         :category => arg.first, :prefix => params[:prefix])
     end
-    content_tag('div', options[:message] + links, :class => :links, :id=> 'list_links')
+    content_tag('div', options[:message] + links, :class => :links, :id => 'list_links', :style => 'clear: both')
   end
 
   # prints sorting tags
@@ -143,7 +144,7 @@ module CandidatesHelper
       links << link_to("<span title='"+ titles[i] +"'>" + message + "</span>", :action => action, :filter => arg)
       i = i+1;
     end
-    content_tag('div', options[:message] + links, :class => :links)
+    content_tag('div', options[:message] + links, :class => :links, :style => 'clear: both')
   end
 
   # prints list links
@@ -178,7 +179,7 @@ module CandidatesHelper
     end
   end
 
-  # print summary department/coridor switcher
+  # print summary department/specialization switcher
   def summary_links
     links = ''
     link_name = params[:id]=="department" ? t(:message_27, :scope => [:txt, :helper, :candidates]) : t(:message_49, :scope => [:txt, :helper, :candidates])
@@ -243,6 +244,14 @@ module CandidatesHelper
     select_date TermsCalculator.this_year_start,
       :order => [:day, :month, :year],
       :use_month_numbers => true
+  end
+
+  # foreign payer link
+  def foreign_pay_link(candidate)
+    link_to_remote(t(:message_5, :scope => [:txt, :view, :candidates, :_list, :rhtml]),
+                   :url => { :action => 'set_foreign_payer', :id => candidate.id},
+                   :method => :get,
+                   :update => dom_id(candidate)) 
   end
 end
 

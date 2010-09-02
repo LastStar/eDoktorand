@@ -4,6 +4,8 @@ class StudentsController < ApplicationController
   layout 'employers',
         :except => [:edit_citizenship, :edit_display_name, :edit_phone,
                     :edit_email, :edit_birthname, :edit_consultant, :edit_tutor,
+                    :edit_street, :edit_zip, :edit_city, :edit_desc_number,
+                    :save_street, :save_city, :save_zip, :save_desc_number,
                     :time_form, :filter, :list_xls, :edit_account]
 
   before_filter :login_required
@@ -11,7 +13,51 @@ class StudentsController < ApplicationController
   before_filter :prepare_order, :prepare_filter, :except => [:show, :contact]
   before_filter :prepare_conditions, :prepare_student
 
+  # saves the street of address to db 
+  def save_street
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:street, params[:student][:street])
+  end
+  
+  # saves the city of address to db
+  def save_city
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:city, params[:student][:city])
+  end
+  
+  # saves the zip of address to db
+  def save_zip
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:zip, params[:student][:zip])
+  end
 
+  # saves the description number of address to db
+  def save_desc_number
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:desc_number, params[:student][:desc_number])
+  end
+
+  def edit_street
+    @student = Student.find(params[:id])
+  end
+
+  def edit_city
+    @student = Student.find(params[:id])
+  end
+
+  def edit_desc_number
+    @student = Student.find(params[:id])
+  end
+
+  def edit_zip
+    @student = Student.find(params[:id])
+  end
+
+  def save_address
+    @student = Student.find(params[:student][:id])
+    @student.update_attributes(params[:student])
+  end
+  
   def mail_list
     @indices = Index.find_for(@user, :order => 'people.lastname', :conditions => ['indices.finished_on is null'])
   end
@@ -27,9 +73,7 @@ class StudentsController < ApplicationController
   
   def admin_update_mail
     @index = Index.find(params[:index][:id])
-    email = @index.student.email_or_new
-    email.update_attribute(:name, params[:student][:email])
-    @index = Index.find(params[:index][:id])
+    @index.update_attribute(:email, params[:student][:email])
     render :partial => "admin_show_mail"
   end
 
@@ -152,18 +196,24 @@ class StudentsController < ApplicationController
 
   # methods for editing personal details
   def edit_email
-    @student = Student.find(params[:id], :include => :index)
-    @index = @student.index
-    @email = @index.student.email_or_new
+    @student = Student.find(params[:id])
   end
 
   def save_email
-    @student = Student.find(params[:student][:id], :include => :index)
-    @index = @student.index
-    @email = @index.student.email_or_new
-    @email.update_attribute(:name, params[:email][:name])
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:email, params[:student][:email])
   end
 
+  def edit_phone
+    @student = Student.find(params[:id])
+  end
+  
+  def save_phone
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:phone, params[:student][:phone])
+  end
+
+  # TODO cleanup this mess vvvvvvvv
   def edit_display_name
     @student = Student.find(params[:id], :include => :index)
     @titles = Title.find(:all, :order => "label").collect {|p| [ p.label, p.id ] }
@@ -173,29 +223,12 @@ class StudentsController < ApplicationController
     @lastname = @index.student.lastname
     @title_before_id = @index.student.title_before_id
     @title_after_id = @index.student.title_after_id
-    
   end
 
   def save_display_name
     @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
-    @student.update_attribute(:firstname, params[:student][:firstname])
-    @student.update_attribute(:lastname, params[:student][:lastname])
-    @student.update_attribute(:title_before_id, params[:student][:title_before_id])
-    @student.update_attribute(:title_after_id, params[:student][:title_after_id])
-  end
-
-  def edit_phone
-    @student = Student.find(params[:id], :include => :index)
-    @index = @student.index
-    @phone = @index.student.phone_or_new
-  end
-  
-  def save_phone
-    @student = Student.find(params[:student][:id], :include => :index)
-    @index = @student.index
-    @phone = @index.student.phone_or_new
-    @phone.update_attribute(:name, params[:phone][:name])
+    @student.update_attributes(params[:student])
   end
 
   def edit_citizenship
@@ -211,7 +244,7 @@ class StudentsController < ApplicationController
 
   def edit_tutor
     @index = Index.find(params[:id])
-    @tutors = @index.coridor.tutors_for_select
+    @tutors = @index.specialization.tutors_for_select
   end
 
   def save_tutor
@@ -328,7 +361,7 @@ class StudentsController < ApplicationController
   # prepares order variable for listin 
   # TODO create some better mechanism to do ordering
   def prepare_order
-    @order = 'people.lastname, study_plans.created_on, interupts.created_on'
+    @order = 'people.lastname, study_plans.created_on, study_interrupts.created_on'
   end
   
   # prepares filter variable
@@ -341,7 +374,7 @@ class StudentsController < ApplicationController
       end
     end
     unless @user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
-      # default filter to waiting for approvement 
+      # default filter to waiting for approval 
       session[:filter] ||= 2 
     else
       session[:filter] ||= 3

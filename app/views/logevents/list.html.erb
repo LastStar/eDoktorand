@@ -1,0 +1,21 @@
+<h1>Logevents#list</h1>
+<table>
+  <tr id='header'>
+    <th class='table_key'>table_key</th>
+    <th class='status'>status</th>
+    <th class='event_type'>event_type</th>
+    <th class='event_time'>event_time</th>
+    <th class='perpetrator'>perpetrator</th>
+    <th class='table_name'>table_name</th>
+  </tr>
+<% for logevent in @logevents %>
+  <tr id="<%= dom_id(logevent) %>">
+    <td class='table_key'><%= logevent.table_key %></td>
+    <td class='status'><%= logevent.status %></td>
+    <td class='event_type'><%= logevent.event_type %></td>
+    <td class='event_time'><%= logevent.event_time %></td>
+    <td class='perpetrator'><%= logevent.perpetrator %></td>
+    <td class='table_name'><%= logevent.table_name %></td>
+  </tr>
+<% end %>
+</table>

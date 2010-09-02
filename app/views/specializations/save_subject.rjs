@@ -1,0 +1,1 @@
+page.replace 'specialization_subject_form', :partial => 'specialization_subject', :locals => {:specialization_subject => @specialization_subject}

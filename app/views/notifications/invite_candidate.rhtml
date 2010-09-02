@@ -5,17 +5,17 @@ Adresát:
 <%= @salutation %>,
 na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s § 50 zákona č. 111/98 Sb. o vysokých školách Vám zasílám pozvánku k přijímací zkoušce do DSP pro akademický rok <%=Time.now.strftime("%Y")%>/<%=(Time.now+1.year).strftime("%y")%>, která proběhne dne <%= @exam_term.date.strftime("%d. %m. %Y") %>.
 
-Přijímací zkouška pro obor <%= @coridor %> proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>. Předsedou komise je <%= @exam_term.chairman.display_name %>
+Přijímací zkouška pro obor <%= @specialization %> proběhne od <%= @exam_term.start_time %> v místnosti č. <%= @exam_term.room %>. Předsedou komise je <%= @exam_term.chairman.display_name %>
 
 <%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
 
 K přijímací zkoušce si přineste:
  - průkaz totožnosti,<% if @study_id == 1 %>
- - doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou,<% end %>
+ - doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou (týká se studujících mimo ČZU),<% end %>
  - doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou.
 
 Vyřizuje:
 <%= @faculty.secretary.display_name %>,
 oddělení VaV <%= @faculty.short_name %> ČZU v Praze
-tel: <%= @faculty.secretary.phone.name %>
-e-mail: <%= @faculty.secretary.email.name %>
+tel: <%= @faculty.secretary.phone %>
+e-mail: <%= @faculty.secretary.email %>

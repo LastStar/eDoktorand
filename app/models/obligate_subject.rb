@@ -1,5 +1,5 @@
-class ObligateSubject < CoridorSubject
+class ObligateSubject < SpecializationSubject
   
-  validates_presence_of :coridor
+  validates_presence_of :specialization
 
 end

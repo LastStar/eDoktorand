@@ -229,6 +229,9 @@ li.higher {height: 2.25em;}
 #Head {
   display: none;
 }
+#logged-user {
+  display: none;
+}
 #printFooter {
   display: none;
 }
@@ -293,4 +296,9 @@ table.wide {
 }
 table.wide th {
   width: 65%;
+}
+
+
+img.text-content-top-image {
+  display: none;
 }

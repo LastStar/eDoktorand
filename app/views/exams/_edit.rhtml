@@ -1,12 +1,12 @@
+<div class="links">
+  <%=  link_to_function(t(:message_0, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), "Element.show('exam_title'), Element.show('exams_list'), Element.hide('form')") %> 
+</div>  
 
 
 <div id='done'></div>
 <div id='form'>
 
-<H5> <%= t(:message_0, :scope => [:txt, :view, :exams, :by_subject, :rhtml])%></H5>
-<div class="links">
-  <%=  link_to_function(t(:message_0, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), "Element.show('exam_title'), Element.show('exams_list'), Element.hide('form')") %> 
-</div>  
+<h1> <%= t(:message_0, :scope => [:txt, :view, :exams, :by_subject, :rhtml])%></h1>
 <% subject_form_edit do -%>
 <fieldset>
 <legend><%= t(:message_0, :scope => [:txt, :view, :exams, :_main_form, :rhtml]) %></legend>
@@ -40,7 +40,7 @@
   <%= collection_select(:exam, :first_examinator_id, examinators, :id, :display_name_with_title) %><br /> 
 
   <label for="exam_second_examinator"><%=t(:message_4, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
-  <%= collection_select(:exam, :second_examinator_id, examinators, :id, :display_name_with_title, {:include_blank => true}) %>
+  <%= collection_select(:exam, :second_examinator_id, examinators, :id, :display_name_with_title, {:include_blank => true}) %><br />
 
 
   <label for="exam_first_examinator"><%=t(:message_5, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
@@ -63,8 +63,8 @@
   <%= select 'exam', 'result', [[t(:message_10, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]), 1], [t(:message_11, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]), 0]]%><br />
 </fieldset>
 
-
-<%= submit_tag(t(:message_3, :scope => [:txt, :view, :exams, :by_subject, :rhtml]), :id => 'submit-button') %>
+<br />
+<%= submit_tag(t(:message_3, :scope => [:txt, :view, :exams, :by_subject, :rhtml]), :id => 'submit-button', :class=>'button') %>
 <% end %>
 
 </div>

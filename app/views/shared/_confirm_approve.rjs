@@ -1,6 +1,6 @@
 page.hide "approve_form_#{@document.id}"
-replace ||= 'approvement'
+replace ||= 'approval'
 @links = student_action_links(@document.index)
-approvement ||= @document.approvement
-page.replace_html replace, print_statements(approvement)
-page.replace "index_line_#{@document.index.id}", :partial => 'students/index', :object => @document.index
+approval ||= @document.approval
+page.replace_html replace, print_statements(approval)
+page.replace "index_line_#{@document.index.id}", :partial => 'students/index_line', :object => @document.index

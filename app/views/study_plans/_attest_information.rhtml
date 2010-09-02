@@ -1,0 +1,18 @@
+<% if attestation_subjects = study_plan.attestation_subjects 
+  attestation_term = Attestation.actual_for_faculty(study_plan.index.student.faculty)%> 
+<ul>
+  <% for subject in attestation_subjects %> 
+    <%= attestation_subject_line(subject, attestation_term) %>
+  <% end %>
+</ul>
+<% else %>
+<p><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_attest_information, :rhtml]) %></p>
+<% end %>
+<p><%= t(:message_1, :scope => [:txt, :view, :study_plans, :_attest_information, :rhtml]) %></p>
+<% if study_plan.actual_attestation_detail  %>
+<h6> <%= t(:message_2, :scope => [:txt, :view, :study_plans, :_attest_information, :rhtml]) %></h6>
+
+<p>
+  <%= study_plan.actual_attestation_detail.detail %>
+</p>
+<% end %>

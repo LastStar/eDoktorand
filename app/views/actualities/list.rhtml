@@ -1,5 +1,8 @@
 <% unless @actualities.empty? %>
-<h5><%= t(:message_0, :scope => [:txt, :view, :actualities, :list, :rhtml]) %></h5>
+<div class="links">
+  <%= link_to(t(:message_1, :scope => [:txt, :view, :actualities, :list, :rhtml]), :action => 'new') %>
+</div>
+<h1><%= t(:message_0, :scope => [:txt, :view, :actualities, :list, :rhtml]) %></h1>
 <ul id='actuallities'>
     <%= render(:partial => 'actuality', :collection => @actualities) %>
 </ul>
@@ -8,7 +11,3 @@
 <%= will_paginate %>
 
 <br />
-
-<div class="links">
-  <%= link_to(t(:message_1, :scope => [:txt, :view, :actualities, :list, :rhtml]), :action => 'new') %>
-</div>

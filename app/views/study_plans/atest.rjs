@@ -1,4 +1,0 @@
-page.remove 'atestation_link'
-page.replace_html "study_plan#{@study_plan.id}", 
-  render(:partial => "atest_information", 
-         :locals => {:study_plan => @study_plan})

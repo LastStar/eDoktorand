@@ -13,7 +13,7 @@
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
 <legend><%= t(:message_1, :scope => [:txt, :view, :study_plans, :_seminar_form, :rhtml]) %></legend>
-  <% voluntary_buff =  SeminarSubject.for_select(:coridor => @student.coridor) %>
+  <% voluntary_buff =  SeminarSubject.for_select(:specialization => @student.specialization) %>
   <%= render(:partial => 'seminar', :collection => session[:seminar_subjects], 
              :locals => {:subjects => voluntary_buff}) %>
 </fieldset>

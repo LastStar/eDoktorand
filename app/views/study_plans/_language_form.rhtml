@@ -11,13 +11,14 @@
 <fieldset>
 <legend><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]) %></legend>
 <ul>
-  <% language_buff = LanguageSubject.for_select(:coridor => @student.coridor) %>
+  <% language_buff = LanguageSubject.for_select(:specialization => @student.specialization) %>
   <%= render(:partial => 'language', :collection => session[:language_subjects], 
     :locals => {:subjects => language_buff}) %>
   <input type='hidden' name='return' id='return-value' value='0'/>
 </fieldset>
 </ul>
-<%= submit_tag("<<< " + t(:message_1, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]), :id => 'return_button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + t(:message_2, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]) + "'") %>
-<%= submit_tag(t(:message_3, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]) + " >>>", :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % t(:message_4, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml])) %>
+<br/>
+<%= submit_tag("<<< " + t(:message_1, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]), :class => 'button', :id => 'return_button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + t(:message_2, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]) + "'") %>
+<%= submit_tag(t(:message_3, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml]) + " >>>", :class => 'button', :id => 'submit_button', :onclick =>"$('submit_button').value = '%s'" % t(:message_4, :scope => [:txt, :view, :study_plans, :_language_form, :rhtml])) %>
 <% end %>
 

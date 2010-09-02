@@ -1,0 +1,2 @@
+page.insert_html :after, 'attestation', :partial => 'detail_form'
+page.remove "detail_link%s" % @study_plan.id

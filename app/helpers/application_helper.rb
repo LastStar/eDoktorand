@@ -1,6 +1,15 @@
 # TODO move all ids methods to corresponding models
 module ApplicationHelper
   
+  # prints link logout page
+  def logout_link
+    link_to_unless_current(image_tag('icons/door_in.png'), 
+                          {:controller => 'account', 
+                           :action => 'logout'}, 
+                           :confirm =>  t(:message_29, :scope => [:txt, :helper, :application]) + 
+                           ' ' + t(:message_30, :scope => [:txt, :helper, :application]) + '?')
+  end
+
   # TODO remove from form controller
   #translates country code 
   def translate_country(code)
@@ -44,12 +53,12 @@ module ApplicationHelper
     Study.find(:all).map {|s| [s.name, s.id]}
   end
   
-  # get coridor ids
-  def coridor_ids(faculty)
+  # get specialization ids
+  def specialization_ids(faculty)
     if faculty.is_a?(Faculty)
       faculty = faculty.id
     end
-    [['---', '0']].concat(Coridor.find_all_by_faculty_id(faculty).map {|s|
+    [['---', '0']].concat(Specialization.find_all_by_faculty_id(faculty).map {|s|
       [truncate(s.name, 40), s.id]})
   end
   
@@ -90,12 +99,12 @@ module ApplicationHelper
   end
   
   # get voluntary subjects for corridor 
-  def seminar_ids(coridor)
-    if coridor.is_a? Coridor
-      coridor = coridor.id
+  def seminar_ids(specialization)
+    if specialization.is_a? Specialization
+      specialization = specialization.id
     end
     arr = []
-    arr.concat(Coridor.find(coridor).seminar_subjects.map {|s|
+    arr.concat(Specialization.find(specialization).seminar_subjects.map {|s|
       [truncate(s.subject.label, 40), s.subject_id]})
   end
   
@@ -111,24 +120,24 @@ module ApplicationHelper
     end
   end
   
-  # prints atestation links
-  def atestation_links(study_plan)
-    if study_plan.waits_for_actual_atestation?
-      atestation_link(study_plan)
+  # prints attestation links
+  def attestation_links(study_plan)
+    if study_plan.waits_for_actual_attestation?
+      attestation_link(study_plan)
     end
   end
   
-  # prints statements approvement 
-  def print_statements(approvement)
-    unless approvement.nil?
-      print_statement(approvement.tutor_statement, t(:message_9, :scope => [:txt, :helper, :application])) +
-      print_statement(approvement.leader_statement, t(:message_10, :scope => [:txt, :helper, :application])) +
-      print_statement(approvement.dean_statement, t(:message_11, :scope => [:txt, :helper, :application]) ) 
+  # prints statements approval 
+  def print_statements(approval)
+    unless approval.nil?
+      print_statement(approval.tutor_statement, t(:message_9, :scope => [:txt, :helper, :application])) +
+      print_statement(approval.leader_statement, t(:message_10, :scope => [:txt, :helper, :application])) +
+      print_statement(approval.dean_statement, t(:message_11, :scope => [:txt, :helper, :application]) ) 
     end
   end
   
-  # prints atestaion subject line wihch depends on finishing of the subject
-  def atestation_subject_line(plan_subject, atestation_term)
+  # prints attestaion subject line wihch depends on finishing of the subject
+  def attestation_subject_line(plan_subject, attestation_term)
     content = ''
     if plan_subject.finished?
       content << content_tag('div', plan_subject.finished_on.strftime('%d. %m. %Y'), :class => 'info')
@@ -171,64 +180,58 @@ module ApplicationHelper
 
   # prints main menu
   def main_menu
-    links = [print_link(image_tag('printer.png', :alt => t(:message_15, :scope => [:txt, :helper, :application]), 
-                                  :size => '12x12' ))]
+    links = []
     if @user.person.is_a?(Student) and @student 
       links << student_menu
     else
       if @user.has_role?('examinator')
-        links << link_to_unless_current(t(:message_16, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
+        links << link_to(t(:message_16, :scope => [:txt, :helper, :application]), :controller => 'exams')
       elsif @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean', 'vicerector']) 
-          links << link_to_unless_current(t(:message_66, :scope => [:txt, :helper, :application]), :controller => 'actualities'){} 
-          links << link_to_unless_current(t(:message_17, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname'){} 
-          links << link_to_unless_current(t(:message_18, :scope => [:txt, :helper, :application]), :controller => 'exam_terms'){} 
-          links << link_to_unless_current(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
-          links << link_to_unless_current(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list'){}
+          links << link_to(t(:message_66, :scope => [:txt, :helper, :application]), :controller => 'actualities') 
+          links << link_to(t(:message_17, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname') 
+          links << link_to(t(:message_18, :scope => [:txt, :helper, :application]), :controller => 'exam_terms') 
+          links << link_to(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams')
+          links << link_to(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list')
+          links << link_to(t(:message_70, :scope => [:txt, :helper, :application]), :controller => 'defenses', :action => 'list')
           links << prepare_scholarship_link
-          links << "<br/>"
-          links << span_tag("&nbsp;&nbsp;&nbsp;",:id => "space_span")
-          links << link_to_unless_current(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators') {}
-          links << link_to_unless_current(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements') {}
-          links << link_to_unless_current(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors') {}
-          links << link_to_unless_current(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'coridors') {}
+          links << link_to(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators')
+          links << link_to(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements')
+          links << link_to(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors')
+          links << link_to(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'specializations')
       elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary']) 
         if @user.has_role?('board_chairman')
-          links << link_to_unless_current(t(:message_23, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname'){}
+          links << link_to(t(:message_23, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname')
         end
         if @user.has_role?('department_secretary')
-          links << link_to_unless_current(t(:message_24, :scope => [:txt, :helper, :application]), :controller => 'candidates', :action => 'list', :category => 'lastname'){} 
+          links << link_to(t(:message_24, :scope => [:txt, :helper, :application]), :controller => 'candidates', :action => 'list', :category => 'lastname') 
           links << prepare_scholarship_link
         end
-        links << link_to_unless_current(t(:message_25, :scope => [:txt, :helper, :application]), 
-                                        :controller => 'probation_terms'){} 
-        links << link_to_unless_current(t(:message_26, :scope => [:txt, :helper, :application]), :controller => 'exams'){}
+        links << link_to(t(:message_25, :scope => [:txt, :helper, :application]), 
+                                        :controller => 'probation_terms') 
+        links << link_to(t(:message_26, :scope => [:txt, :helper, :application]), :controller => 'exams')
       end 
-      links << link_to_unless_current(t(:message_27, :scope => [:txt, :helper, :application]), 
-                                      :controller => 'students'){}
+      links << link_to(t(:message_27, :scope => [:txt, :helper, :application]), 
+                                      :controller => 'students')
     end
-    links << link_to_unless_current(t(:message_28, :scope => [:txt, :helper, :application]), 
-                                    {:controller => 'account', 
-                                     :action => 'logout'}, 
-                                     :confirm =>  t(:message_29, :scope => [:txt, :helper, :application]) + 
-                                     ' ' + t(:message_30, :scope => [:txt, :helper, :application]) + '?'){} 
+    links << [print_link(image_tag('printer.png', :alt => t(:message_36, :scope => [:txt, :helper, :application]))), logout_link]
     links.flatten.join("\n")
   end
 
   def student_menu
     result = []
     if @student.index.study_plan && @student.index.study_plan.approved? 
-      result << link_to_unless_current(t(:message_31, :scope => [:txt, :helper, :application]), 
-                                      :controller => 'probation_terms'){} 
+      result << link_to(t(:message_31, :scope => [:txt, :helper, :application]), 
+                                      :controller => 'probation_terms') 
     end
-    result << link_to_unless_current(t(:message_69, :scope => [:txt, :helper, :application]),
+    result << link_to(t(:message_69, :scope => [:txt, :helper, :application]),
                                      :controller => 'study_plans',
-                                     :action => 'requests'){}
-    result << link_to_unless_current(t(:message_32, :scope => [:txt, :helper, :application]),
+                                     :action => 'requests')
+    result << link_to(t(:message_32, :scope => [:txt, :helper, :application]),
                                      :controller => 'study_plans',
-                                     :action => 'index'){}
-    result << link_to_unless_current(t(:message_33, :scope => [:txt, :helper, :application]),
+                                     :action => 'index')
+    result << link_to(t(:message_33, :scope => [:txt, :helper, :application]),
                                       :controller => 'scholarships',
-                                      :action => 'student_list'){}
+                                      :action => 'student_list')
     result
   end
   
@@ -297,23 +300,23 @@ module ApplicationHelper
     #{statement_type}", options)
   end
   
-  # prints atestation link
-  def atestation_link(study_plan)
+  # prints attestation link
+  def attestation_link(study_plan)
     link_to_remote(t(:message_38, :scope => [:txt, :helper, :application]), 
-                   {:url => {:controller => 'study_plans', :action => 'atest',
+                   {:url => {:controller => 'study_plans', :action => 'attest',
                              :id => study_plan},
                    :loading => 
-                    "$('atestation_link').innerHTML = '%s'" % t(:message_39, :scope => [:txt, :helper, :application])},
-      {:id => "atestation_link"})
+                    "$('attestation_link').innerHTML = '%s'" % t(:message_39, :scope => [:txt, :helper, :application])},
+      {:id => "attestation_link"})
   end
   
-  # prints approvement link
+  # prints approval link
   def approve_form(document, statement)
     statement.class.to_s =~ /(.*)Statement/
     person = $1.downcase
     if document.is_a?(StudyPlan) && document.approved? && 
-      document.waits_for_actual_atestation?
-      action = 'confirm_atest'
+      document.waits_for_actual_attestation?
+      action = 'confirm_attest'
       title = t(:message_40, :scope => [:txt, :helper, :application]) + " " + t(person, :scope => [:txt, :helper, :application])
       options = [[t(:message_41, :scope => [:txt, :helper, :application]), 1], [t(:message_42, :scope => [:txt, :helper, :application]), 2], [t(:message_43, :scope => [:txt, :helper, :application]), 0]]    
     else
@@ -333,16 +336,16 @@ module ApplicationHelper
             {:id => "methodology_link#{disert_theme.id}"})
   end
   
-  # prints atestation detail link
-  def atestation_detail(study_plan)
+  # prints attestation detail link
+  def attestation_detail(study_plan)
     if @student
       link_to_remote(t(:message_48, :scope => [:txt, :helper, :application]),
                     {:url => {:controller => 'study_plans', 
-                      :action => 'atestation_details',
+                      :action => 'attestation_details',
                       :id => study_plan, :evaluate => true}},
                     {:id => "detail_link#{study_plan.id}"})
     else
-      atestation_links(study_plan)
+      attestation_links(study_plan)
     end
   end
   
@@ -404,9 +407,9 @@ module ApplicationHelper
     div_tag(content, {:class => 'info'})
   end
 
-  # prints interupt finish line
-  def interupt_finish_line(interupt)
-    finished_on = info_div(interupt.finished_on.strftime('%d.%m.%Y'))
+  # prints interrupt finish line
+  def interrupt_finish_line(interrupt)
+    finished_on = info_div(interrupt.finished_on.strftime('%d.%m.%Y'))
     content_tag('li', finished_on + t(:message_51, :scope => [:txt, :helper, :application]))
   end
 
@@ -562,7 +565,7 @@ module ApplicationHelper
   end
 
   def remove_line
-    link_to_function(image_tag('close.png'), "$('coridor_subject_form').remove()")
+    link_to_function(image_tag('close.png'), "$('specialization_subject_form').remove()")
   end
   
   def student_tutor_line(index)
@@ -627,8 +630,8 @@ module ApplicationHelper
                     &proc)
 
   end
-private
   
+  private
   def loader_image(field)
     "Element.replace('#{field}', '#{image_tag('loader.gif', :size => '12x12')}')"
   end

@@ -1,0 +1,8 @@
+<% for column in Specialization.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%= @specialization.send(column.name) %></b>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @specialization.id %> |
+<%= link_to 'Back', :action => 'list' %>

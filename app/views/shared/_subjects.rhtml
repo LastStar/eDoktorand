@@ -1,5 +1,6 @@
 <% if title %>
-<li><b><%= title %></b></li>
+<li class='noborder'>&nbsp;</li>
+<li class='noborder'><h5><%= title %></h5></li>
 <% end %>
 <% for subject in subjects %>
 <li class='second' id='<%= "subject#{subject.id}" %>'>
@@ -7,7 +8,7 @@
 <%= subject.subject.label %>
 </li>
 <% if subject.finished? %>
-<li class='third'>
+<li class='highlight'>
 <div class='info'><%= subject.finished_on.strftime("%d. %m. %Y") %> </div>
 <%= "#{t(:message_1, :scope => [:txt, :view, :shared, :_subjects, :rhtml])} " %>
 &nbsp; 

@@ -1,2 +1,2 @@
-page.replace_html "phone", attribute_line(@student, :phone, :name)
+page.replace_html "phone", attribute_line(@student, :phone)
 
