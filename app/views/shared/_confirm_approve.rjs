@@ -3,4 +3,4 @@ replace ||= 'approval'
 @links = student_action_links(@document.index)
 approval ||= @document.approval
 page.replace_html replace, print_statements(approval)
-page.replace "index_line_#{@document.index.id}", :partial => 'students/index', :object => @document.index
+page.replace "index_line_#{@document.index.id}", :partial => 'students/index_line', :object => @document.index
