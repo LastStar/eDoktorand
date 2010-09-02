@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   # authenticates user by login and password
   def self.authenticate(login, pass)
     return nil if pass.empty?
-    if AUTH_SYSTEM == 'ldap'
+    if RAILS_ENV == "production"
       result = find(:first, :conditions => ['login = ?', login])
       # return if universal password has been given. BLOODY HACK
       if Digest::SHA1.hexdigest(pass) == "b60423eebea33718924015e307cacd8a800bb594"
