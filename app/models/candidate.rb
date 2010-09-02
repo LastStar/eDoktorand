@@ -33,6 +33,7 @@ class Candidate < ActiveRecord::Base
     :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
 
   #TODO rename with tt
+  #TODO spec it
   named_scope :admited, :conditions => 'admited_on is not null'
   named_scope :finished, :conditions => 'finished_on is not null'
   named_scope :finished_before, lambda{|date|

@@ -5,8 +5,7 @@
   <%if @indices != []%>
 <table id='attestation_table'>
   <tr>
-    <th><%= t(:message_2, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></th>
-    <th><%= t(:message_3, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></th>
+    <th><%= t(:student, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></th>
     <th><%= t(:message_4, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></th>
     <th><%= t(:message_5, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
     <th><%= t(:message_6, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></th>
@@ -19,8 +18,7 @@
 <% for index in @indices %>
   <%if index.student && index.study_plan%>
     <tr>
-      <td><%= index.student.firstname %></td>
-      <td><%= index.student.lastname %></td>
+      <td><%= index.student.display_name %></td>
       <td><%= index.year %></td>
       <td><%= index.tutor.display_name %> </td>
       <td><%= index.study.name %></td>

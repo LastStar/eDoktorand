@@ -90,7 +90,7 @@ class Student < Examinator
   end
 
   def has_address?
-    !address.nil?
+    !street.nil? && !street.empty?
   end
 
   def prepared_for_claim?

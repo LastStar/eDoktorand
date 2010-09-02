@@ -1292,15 +1292,14 @@ cs:
 
         attestation: 
           rhtml: 
+            student: Student
             message_8: Začátek studia
             message_9: Výsledek
             message_0: Přehled atestací
-            message_10: At.
+            message_10: Atestován
             message_1: zpět
             message_11: ano
-            message_2: Jméno
             message_12: ne
-            message_3: Příjmení
             message_13: V tomto oboru nejsou žádní studenti k atestaci
             message_4: r.
             message_5: Školitel
