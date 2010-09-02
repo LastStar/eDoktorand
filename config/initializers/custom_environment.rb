@@ -11,9 +11,6 @@ ExceptionNotifier.exception_recipients = %w(pepe@gravastar.cz)
 ExceptionNotifier.sender_address = 
   %("Edoktorand Exception Notifier" <exception.notifier@edoktorand.czu.cz>)
 
-# Set authenticate method of user login
-AUTH_SYSTEM = 'noldap'
-
 # faculty dependent configurations
 FACULTY_CFG =
   YAML::load(File.open("#{RAILS_ROOT}/config/initializers/faculty_configurations.yml"))
