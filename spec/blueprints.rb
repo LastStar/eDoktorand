@@ -117,14 +117,6 @@ Subject.blueprint do
   code
 end
 
-Address.blueprint do
-  student
-  street
-  desc_number {666}
-  city
-  zip
-end
-
 Student.blueprint do
   firstname
   lastname
