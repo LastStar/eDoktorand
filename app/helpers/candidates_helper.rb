@@ -14,8 +14,9 @@ module CandidatesHelper
         links << link_to(t(:message_1, :scope => [:txt, :helper, :candidates]), :controller => 'exam_terms', 
         :action => 'new', :id => candidate.specialization.id ,:from => 'candidate', :backward => @backward )
       else
-        links << link_to(t(:message_2, :scope => [:txt, :helper, :candidates]), :action => 'admittance', :id => candidate) + "&nbsp;" +
-        link_to(t(:message_3, :scope => [:txt, :helper, :candidates]), :action => 'admit', :id => candidate)  
+        links << link_to(t(:message_2, :scope => [:txt, :helper, :candidates]), :action => 'admittance', :id => candidate) 
+        links << "&nbsp;" 
+        links << link_to(t(:message_3, :scope => [:txt, :helper, :candidates]), :action => 'admit', :id => candidate)  
       end
     end
   end
