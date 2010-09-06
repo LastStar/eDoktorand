@@ -30,7 +30,12 @@ module Approvable
   # approve like one level
   def approve_like(level, note = 'machine approve')
     unless self.approval
-      self.approval = eval("#{self.class.to_s}Approval.new")
+      if self.is_a? StudyInterrupt
+        type = 'Interrupt'
+      else
+        type = self.class.to_s
+      end
+      self.approval = eval("#{type}Approval.new")
     end
     person_id = self.approval.document.index.send(level).id
     statement = eval("#{level.camelize}Statement").create('person_id' => 

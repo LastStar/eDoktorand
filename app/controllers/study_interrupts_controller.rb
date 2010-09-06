@@ -13,7 +13,7 @@ class StudyInterruptsController < ApplicationController
   end
 
   def create
-    @interrupt = Interrupt.new(params[:interrupt])
+    @interrupt = StudyInterrupt.new(params[:interrupt])
     if @interrupt.plan_changed.to_i == 1
       session[:interrupt] = @interrupt
       redirect_to(:action => 'change', :controller => 'study_plans',
@@ -41,7 +41,7 @@ class StudyInterruptsController < ApplicationController
 
   # confirms interrupt
   def confirm_approve
-    @document = Interrupt.find(params[:id])
+    @document = StudyInterrupt.find(params[:id])
     @document.approve_with(params[:statement])
     unless @document.index.study_plan.approved?
       @document.index.study_plan.approve_with(params[:statement])
@@ -79,6 +79,6 @@ class StudyInterruptsController < ApplicationController
   end
 
   def print_interrupt
-    @interrupt = Interrupt.find(params[:id])
+    @interrupt = StudyInterrupt.find(params[:id])
   end  
 end
