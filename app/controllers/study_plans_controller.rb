@@ -1,4 +1,4 @@
-require 'soap/soap'
+require 'soap/netHttpClient'
 class StudyPlansController < ApplicationController
   include LoginSystem
   helper :students

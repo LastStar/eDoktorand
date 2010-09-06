@@ -1,5 +1,8 @@
 # mail configuration
-ActionMailer::Base.delivery_method = :sendmail
+ActionMailer::Base.delivery_method = :smpt
+ActionMailer::Base.smtp_settings = {
+  :address => 'mail.oikt.czu.cz'
+}
 
 # localization
 $KCODE = 'u'
