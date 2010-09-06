@@ -18,12 +18,13 @@ Rails::Initializer.run do |config|
 
   config.action_controller.session_store = :active_record_store
 
-  config.plugins = [ :localized_country_select, :translate, :exception_notification, :ar_fixtures, :acts_as_audited, :rtex, :tiny_mce ]
+  config.plugins = [ :localized_country_select, :translate, :ar_fixtures, :acts_as_audited, :rtex, :tiny_mce ]
 
   config.gem "log4r"
   config.gem "ruby-net-ldap", :lib => "net/ldap"
   config.gem "mislav-will_paginate", :lib => 'will_paginate'
   config.gem "thoughtbot-factory_girl", :lib => 'factory_girl', :version => '1.2.2'
   config.gem "timecop"
+  config.gem 'super_exception_notifier', :lib => "exception_notification"
 
 end
