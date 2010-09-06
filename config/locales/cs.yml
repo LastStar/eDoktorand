@@ -2150,6 +2150,7 @@ cs:
 
         _history: 
           rhtml: 
+            rejected: nepřijat
             message_0: ukončeno
             message_1: odsouhlasen
             message_2: pozván

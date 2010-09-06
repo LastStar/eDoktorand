@@ -8,6 +8,10 @@
   <%= candidate.invited_on.strftime("%d. %m. %Y") %> <%= link_to(t(:message_2, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
   :action => 'invitation', :id => candidate) %><br />
 <% end %>
+<% if candidate.rejected? %>
+  <%= candidate.rejected_on.strftime("%d. %m. %Y") %> <%= link_to(t(:rejected, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
+  :action => 'reject', :id => candidate) %><br />
+<% end %>
 <% if candidate.admited_on %>
   <%= candidate.admited_on.strftime("%d. %m. %Y") %> <%= link_to(t(:message_3, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
   :action => 'confirm_admit', :id => candidate) %>&nbsp;<%= link_to(t(:message_4, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
