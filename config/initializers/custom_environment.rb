@@ -7,9 +7,12 @@ require 'jcode'
 
 # mixins
 require 'first_char_changer'
-ExceptionNotifier.exception_recipients = %w(pepe@gravastar.cz)
-ExceptionNotifier.sender_address = 
-  %("Edoktorand Exception Notifier" <exception.notifier@edoktorand.czu.cz>)
+ExceptionNotification::Notifier.configure_exception_notifier do |config|
+  config[:app_name]                 = "[eDoktorand]"
+  config[:sender_address]           = "system@edoktorand.czu.cz"
+  config[:exception_recipients]     = ["josef.pospisil@laststar.eu"] # You need to set at least one recipient if you want to get the notifications
+end
+
 
 # faculty dependent configurations
 FACULTY_CFG =
