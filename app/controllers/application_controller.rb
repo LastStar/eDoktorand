@@ -1,7 +1,6 @@
 
 class ApplicationController < ActionController::Base
   include LoginSystem
-  include ExceptionNotifiable
 
   filter_parameter_logging :password
   # protect_from_forgery 
