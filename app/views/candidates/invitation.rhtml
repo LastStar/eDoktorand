@@ -3,6 +3,7 @@
 <br />
 <br />
 <br />
+<br />
 <p class='rightAlign'><%= @candidate.genderize("Vážený pan/paní","Vážený pan","Vážená paní") %><br/>
 <%= @candidate.display_name %><br/>
 <% unless @candidate.postal_city.empty? %>
@@ -10,7 +11,6 @@
 <% else %>
 <%= @candidate.sending_address %></p>
 <% end %>
-<br/>
 <br/>
 <p class='subject'><b>Věc: pozvánka k přijímací zkoušce do DSP na <%= @faculty.short_name %> ČZU v Praze</b></p>
 
