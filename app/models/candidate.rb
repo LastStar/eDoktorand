@@ -250,6 +250,7 @@ class Candidate < ActiveRecord::Base
     index.tutor = self.tutor
     index.study = self.study
     index.enrolled_on = enrolled_on
+    index.payment_id = self.foreign_pay ? 0 : 1
     index.save!
     self.update_attribute(:student_id, student.id)
     return student

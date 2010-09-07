@@ -99,4 +99,5 @@ Factory.define :candidate do |candidate|
   candidate.language1_id 1
   candidate.language2_id 2
   candidate.sex 'M'
+  candidate.foreign_pay false
 end
