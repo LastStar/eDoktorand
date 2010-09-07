@@ -1,6 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-
 describe Index do
   #TODO test foreign candidates
   it 'enrolls a return new student with index' do
@@ -38,6 +37,7 @@ describe Index do
     student.index.student == candidate.student
     student.index.enrolled_on.should == Time.parse('2010-01-01')
     student.index.tutor.should == candidate.tutor
+    student.index.payment_id.should == 1
     candidate.student.should == student
   end
 end
