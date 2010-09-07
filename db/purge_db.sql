@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS `addresses`;
 DROP TABLE IF EXISTS `approvements`;
 DROP TABLE IF EXISTS `approvals`;
 DROP TABLE IF EXISTS `atestation_details`;
+DROP TABLE IF EXISTS `attestation_details`;
 DROP TABLE IF EXISTS `candidates`;
 DROP TABLE IF EXISTS `contact_types`;
 DROP TABLE IF EXISTS `contacts`;
