@@ -10,37 +10,38 @@ module StudentsHelper
   def student_action_links(index)
     links = []
     study_plan = index.study_plan 
-    if @user.has_one_of_roles?(['dean', 'faculty_secretary']) &&
-                               index.status != t(:message_0, :scope => [:txt, :helper, :students])
-      links << finish_link(index)
-      unless index.finished?
-        links << switch_link(index)
-        if index.waits_for_scholarship_confirmation?
-          links << approve_scholarship_link(index)
-          links << cancel_scholarship_link(index)
-        end
-        if study_plan
-          if study_plan.all_subjects_finished?
-            if index.absolved?
-              links << diploma_supplement_link(index)
-            elsif index.final_exam_passed?
-              links << pass_link(:defense, index)
+    if @user.has_one_of_roles?(['dean', 'faculty_secretary'])
+      if index.absolved?
+        links << diploma_supplement_link(index)
+      else
+        links << finish_link(index)
+        unless index.finished?
+          links << switch_link(index)
+          if index.waits_for_scholarship_confirmation?
+            links << approve_scholarship_link(index)
+            links << cancel_scholarship_link(index)
+          end
+          if study_plan
+            if study_plan.all_subjects_finished?
+              if index.final_exam_passed?
+                links << pass_link(:defense, index)
+              else
+                links << change_link(index.student)
+                links << pass_link(:final_exam, index)
+              end
             else
               links << change_link(index.student)
-              links << pass_link(:final_exam, index)
             end
           else
-            links << change_link(index.student)
+            links << create_link(index)
           end
-        else
-          links << create_link(index)
-        end
-        if index.not_even_admited_interrupt?
-          links << interrupt_link(index)
-        elsif index.interrupt_waits_for_confirmation?
-          links << confirm_interrupt_link(index) 
-        elsif index.interrupted?
-          links << end_interrupt_link(index)
+          if index.not_even_admited_interrupt?
+            links << interrupt_link(index)
+          elsif index.interrupt_waits_for_confirmation?
+            links << confirm_interrupt_link(index) 
+          elsif index.interrupted?
+            links << end_interrupt_link(index)
+          end
         end
       end
     end
