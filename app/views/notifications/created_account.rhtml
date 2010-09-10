@@ -2,9 +2,11 @@ Dobrý den,
 
 bylo Vám přiděleno uživatelské jméno pro přístup do systému Edoktorand:
 
-uživatelské jméno: <%= @student.user.login %>
+uživatelské jméno: <%= @im_identity.loginname %>
 
-uživatelské heslo: <%= @student.user.init_password %>
+uživatelské heslo Novel: <%= @im_identity.init_pwd %>
+
+uživatelské heslo GroupWise: <%= @im_identity.init_pwd_gw %>
 
 Do aplikace se můžete přihlásit na adrese http://edoktorand.czu.cz.
 

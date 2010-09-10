@@ -9,3 +9,4 @@ db/schema.rb
 public/pdf/methodology
 .DS_Store
 *.csv
+*.sql

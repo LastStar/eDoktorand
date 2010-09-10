@@ -1,5 +1,5 @@
 deploy.application = "edoktorand.czu.cz"
-deploy.repository = 'git://github.com/pepe/eDoktorand.git'
+deploy.repository = 'git@github.com:pepe/eDoktorand.git'
 deploy.user = 'deploy'
 deploy.hosts = ['ruby.czu.cz']
 deploy.path = '/var/apps'

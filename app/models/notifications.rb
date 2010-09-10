@@ -140,10 +140,10 @@ class Notifications < ActionMailer::Base
     @from       = faculty.secretary.email
   end
 
-  def created_account(student, sent_at = Time.now)
-    @subject = I18n::t(:message_10, :scope => [:txt, :model, :notifications])
-    @body[:student] = student
+  def created_account(im_identity, sent_at = Time.now)
+    @subject = I18n::t(:account_created, :scope => [:txt, :model, :notifications])
+    @body[:im_identity] = im_identity
     @from = "edoktorand@edoktorand.czu.cz"
-    @recipients = student.email
+    @recipients = im_identity.student.email
   end
 end

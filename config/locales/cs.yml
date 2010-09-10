@@ -167,7 +167,7 @@ cs:
         message_8: Pozvánka k státní doktorské zkoušce
         message_9: Pozvánka k obhajobě
         message_0: pozvánka k přijímací zkoušce do DSP na ČZU v Praze
-        message_10: Vytvořen účet
+        account_created: Vytvořen účet
         message_1: Vážená paní, vážený pane
         message_2: Vážený pane
         message_3: Vážená paní
