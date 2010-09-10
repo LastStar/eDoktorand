@@ -4,11 +4,11 @@ if [ $# -eq 1 ]
 then
   filename=$1
 else
-  filename=`date "+phdstudy%Y-%m-%d.sql"`
+  filename=`date "+%Y-%m-%d.sql"`
 fi
 
 echo "# downloading db"
-scp -P2222 edoktorand.czu.cz:/dumps/$filename .
+scp edoktorand.czu.cz:/dumps/$filename .
 
 echo "# purgin db"
 mysql -uweb -pw3b phdstudy_development < db/purge_db.sql
