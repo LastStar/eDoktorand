@@ -235,7 +235,8 @@ class StudyPlansController < ApplicationController
     if good_browser?
       render(:partial => 'shared/confirm_approve', 
             :locals => {:replace => 'attestation',
-                        :approval => @document.attestation})
+                        :approval => @document.attestation,
+                        :title => I18n::t(:message_12, :scope => [:txt, :view, :shared, :_study_detail, :rhtml])})
     else
       render(:partial => 'students/redraw_list')
     end
