@@ -648,9 +648,9 @@ cs:
             message_1: oblast předmětů
         _detail_form: 
           rhtml: 
-            message_0: pracuji...
-            message_1: další informace
-            message_2: odeslat
+            working: pracuji...
+            additional_information: další informace
+            submit: odeslat
         _voluntary_form: 
           rhtml: 
             message_0: volitelné předměty
