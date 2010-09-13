@@ -318,7 +318,11 @@ module ApplicationHelper
       document.waits_for_actual_attestation?
       action = 'confirm_attest'
       title = t(:message_40, :scope => [:txt, :helper, :application]) + " " + t(person, :scope => [:txt, :helper, :application])
-      options = [[t(:message_41, :scope => [:txt, :helper, :application]), 1], [t(:message_42, :scope => [:txt, :helper, :application]), 2], [t(:message_43, :scope => [:txt, :helper, :application]), 0]]    
+      options = [[t(:continue, :scope => [:txt, :helper, :application]), 1],
+        [t(:continue_with_reproof, :scope => [:txt, :helper, :application]), 2],
+        [t(:finish, :scope => [:txt, :helper, :application]), 0],
+        [t(:interrupt, :scope => [:txt, :helper, :application]), 0]
+      ]    
     else
       action = 'confirm_approve'
       title = t(:message_44, :scope => [:txt, :helper, :application]) + " " + t(person, :scope => [:txt, :helper, :application])
@@ -341,8 +345,7 @@ module ApplicationHelper
     if @student
       link_to_remote(t(:message_48, :scope => [:txt, :helper, :application]),
                     {:url => {:controller => 'study_plans', 
-                      :action => 'attestation_details',
-                      :id => study_plan, :evaluate => true}},
+                      :action => 'attestation_details', :id => study_plan}},
                     {:id => "detail_link#{study_plan.id}"})
     else
       attestation_links(study_plan)
