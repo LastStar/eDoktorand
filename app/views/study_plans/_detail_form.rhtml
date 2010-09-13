@@ -1,15 +1,14 @@
-<div id='form'>
-<% form_remote_tag(:url => {:action => 'save_attestation_detail'}, 
-                  :loading => "$('commit').value = '%s'" % t(:message_0, :scope => [:txt, :view, :study_plans, :_detail_form, :rhtml]),
-                  :complete => evaluate_remote_response) do -%>	
-  <label class='smaller' for="attestation_detail_detail">
-    <%= t(:message_1, :scope => [:txt, :view, :study_plans, :_detail_form, :rhtml]) %>
-  </label>
-  <%= text_area 'attestation_detail', 'detail'  %><br/> 
-  <%= hidden_field 'attestation_detail', 'id' %>
-  <%= hidden_field 'attestation_detail', 'study_plan_id' %>
-  <%= hidden_field 'attestation_detail', 'attestation_term' %>
-  <%= submit_tag t(:message_2, :scope => [:txt, :view, :study_plans, :_detail_form, :rhtml]), :id => 'commit' %>
-<% end %>
+<div id='form' class='half bordered right'>
+  <% form_remote_tag(:url => {:action => 'save_attestation_detail'}, 
+                    :loading => "$('commit').value = '%s'" % t(:working, :scope => [:txt, :view, :study_plans, :_detail_form, :rhtml])) do -%>	
+    <label class='smaller' for="attestation_detail_detail">
+      <%= t(:additional_information, :scope => [:txt, :view, :study_plans, :_detail_form, :rhtml]) %>
+    </label>
+    <%= text_area 'attestation_detail', 'detail', :rows => 10, :cols => 60  %><br/> 
+    <%= hidden_field 'attestation_detail', 'id' %>
+    <%= hidden_field 'attestation_detail', 'study_plan_id' %>
+    <%= hidden_field 'attestation_detail', 'attestation_term' %>
+    <%= submit_tag t(:submit, :scope => [:txt, :view, :study_plans, :_detail_form, :rhtml]), :id => 'commit' %>
+  <% end %>
 </div> 
 

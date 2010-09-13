@@ -156,6 +156,7 @@ class StudyPlansController < ApplicationController
   end
 
   # saves full form
+  #FIXME too fat method
   def save_full
     @errors = []
     extract_voluntary

@@ -333,6 +333,10 @@ cs:
         dean: děkan
         tutor: školitel
         leader: vedoucí katedry
+        continue: pokračování
+        continue_with_reproof: pokračování s výtkou
+        finish: ukončit
+        interrupt: přerušeno
         message_70: obhajoby
         message_69: žádosti
         message_68: SDZ
@@ -346,19 +350,16 @@ cs:
         message_8: schváleno s výtkou
         message_63: soubor s autoreferátem
         message_52: stipendia
-        message_41: schválit
         message_30: odhlásit
         message_9: vyjádření školitele
         message_64: soubor s disertační prácí
         message_53: termín SDZ        
-        message_42: schválit s výtkou
         message_31: termíny zkoušek
         message_20: diplomy
         message_19: zkoušky
         message_0: muž
         message_65: pracuji...
         message_54: obhajoba
-        message_43: neschválit
         message_32: studijní plán
         message_21: školitelé
         message_10: vyjádření vedoucího katedry
@@ -647,9 +648,9 @@ cs:
             message_1: oblast předmětů
         _detail_form: 
           rhtml: 
-            message_0: pracuji...
-            message_1: další informace
-            message_2: odeslat
+            working: pracuji...
+            additional_information: další informace
+            submit: odeslat
         _voluntary_form: 
           rhtml: 
             message_0: volitelné předměty
