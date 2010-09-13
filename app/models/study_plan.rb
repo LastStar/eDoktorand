@@ -79,6 +79,7 @@ class StudyPlan < ActiveRecord::Base
   def next_attestation_detail_or_new
     next_attestation_detail || AttestationDetail.new_for(index.student)
   end
+
   # returns attestation detail for actual attestations
   def actual_attestation_detail
     AttestationDetail.find_by_study_plan_id_and_attestation_term(id, 
