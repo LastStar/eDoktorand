@@ -242,15 +242,14 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approval from person
   def waits_for_statement?(user)
-    unless status == I18n.t(:message_8, :scope => [:txt, :model, :index]) || status == I18n.t(:message_9, :scope => [:txt, :model, :index])
+    unless absolved? || interrupted?
       if claimed_final_application?
         temp_approval = self.approval ||= FinalExamApproval.create
       elsif admited_interrupt?
         temp_approval = interrupt.approval ||= InterruptApproval.create
       elsif study_plan && !study_plan.approved?
         temp_approval = study_plan.approval ||= StudyPlanApproval.create
-      elsif study_plan && study_plan.approved? &&
-        study_plan.waits_for_actual_attestation?
+      elsif study_plan && study_plan.approved? && !final_exam_passed?
         if !study_plan.attestation || !study_plan.attestation.is_actual?
           temp_approval = study_plan.attestation = Attestation.create(:document_id => study_plan.id)
         else
