@@ -616,7 +616,14 @@ table.students-list tr th
 }
 table.students-list tr td
 {
-	padding: 8px 0px 2px 8px;	
+	padding: 0 0 0 8px;;	
+}
+table.students-list td.student_exception {
+  width: 4ex;
+  text-align: center;
+  font-size: 180%;
+  color: red;
+  padding: 0;
 }
 
 table.students-list tr td.students-line-action
@@ -790,12 +797,6 @@ td.action-link {
   width: 8ex;
   background: none !important;
   border: none !important;
-}
-td.student_exception {
-  width: 4ex;
-  text-align: center;
-  font-size: 120%;
-  color: red;
 }
 
 #search-label {
