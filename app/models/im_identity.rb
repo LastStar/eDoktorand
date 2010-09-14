@@ -11,6 +11,7 @@ class ImIdentity < ActiveRecord::Base
   def update_user
     @user = @user || student.user || student.build_user
     @user.update_attribute(:login, loginname)
+    @user.roles << Role.find_by_name('student')
     self.update_attribute(:status, 'S')
   end
 
