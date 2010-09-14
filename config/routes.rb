@@ -60,8 +60,7 @@ ActionController::Routing::Routes.draw do |map|
   map.error 'error', :controller => 'account', :action => 'error'
 
   # locale url
-  map.locale 'locale/:lang', :controller => 'account', :action =>
-    'login'
+  map.locale 'locale/:lang', :controller => 'account', :action => 'locale'
 
   # students url
   map.students 'students', :controller => 'students', :action => 'index'

@@ -1,13 +1,13 @@
 ﻿<div style='clear: both'>
-<div class='notice'>
+  <div class='notice'>
     <%= t(:message_0, :scope => [:txt, :view, :form, :index, :rhtml]) %>
-</div>
-<%= print_notice %>
+    <%= print_notice %>
+  </div>
 <ul>
   <% for f in @faculties do %>
-  <% if (specializations = f.accredited_specializations).empty? then next end %>
+  <% next if (specializations = f.accredited_specializations).empty? %>
   <li>
-  <a href='#' onClick="Element.toggle($('<%= f.id %>'))"><%= f.name %></a><br /> 
+    <a href='#' onClick="Element.toggle($('<%= f.id %>'))"><%= f.name %></a><br /> 
     <% unless f.documents.empty? %>
     <b><%= t(:message_1, :scope => [:txt, :view, :form, :index, :rhtml]) %>:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
     <% end %>
@@ -21,20 +21,22 @@
   </li>
   <% end %>
 </ul>
-<h5><%= t(:message_2, :scope => [:txt, :view, :form, :index, :rhtml]) %></h5>
-<ul>
-  <% form_tag(:action => "login") do %>          
-  <li>
-    <label for='candidate[id]'>Id:</label>
-    <input id="candidate_id" name="candidate[id]" size="30" type="text" />
-  </li>
-  <li>
-    <label for='candidate[hash]'><%= t(:message_3, :scope => [:txt, :view, :form, :index, :rhtml]) %>:</label>
-    <input id="candidate_hash" name="candidate[hash]" size="30" type="text" />
-  </li>
-  <li>
-    <label>&nbsp;</label>
-    <%= submit_tag(t(:message_4, :scope => [:txt, :view, :form, :index, :rhtml])) %></li>
-  <% end %>
-</ul>
+<h5><%= t(:login_to_fix, :scope => [:txt, :view, :form, :index, :rhtml]) %></h5>
+<% form_tag(:action => "login") do %>          
+<div>
+  <label for="locale"><%= t(:language, :scope => [:txt, :view, :form, :index, :rhtml]) %></label>
+  <%= locale_link %>
+</div>
+<div>
+  <label for='candidate[id]'>Id:</label>
+  <input id="candidate_id" name="candidate[id]" size="30" type="text" />
+</div>
+<div>
+  <label for='candidate[hash]'><%= t(:password, :scope => [:txt, :view, :form, :index, :rhtml]) %>:</label>
+  <input id="candidate_hash" name="candidate[hash]" size="30" type="text" />
+</div>
+<div>
+  <label>&nbsp;</label>
+  <%= submit_tag(t(:login, :scope => [:txt, :view, :form, :index, :rhtml])) %></li>
+<% end %>
 

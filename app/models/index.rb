@@ -213,7 +213,8 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approval from person
   def statement_for(user)
-    unless status == I18n.t(:message_6, :scope => [:txt, :model, :index]) || status == I18n.t(:message_7, :scope => [:txt, :model, :index])
+    #TODO move this two ors to it's own status method
+    unless status == absolved? || interrupted? || final_exam_passed?
       if claimed_final_application?
         self.approval ||= FinalExamApproval.create
         if approval.prepares_statement?(user)
@@ -242,6 +243,7 @@ class Index < ActiveRecord::Base
 
   # returns statement if this index waits for approval from person
   def waits_for_statement?(user)
+    #TODO move this two ors to it's own status method
     unless absolved? || interrupted? || final_exam_passed?
       if claimed_final_application?
         temp_approval = self.approval ||= FinalExamApproval.create

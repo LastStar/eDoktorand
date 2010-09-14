@@ -191,20 +191,21 @@ module StudentsHelper
   # TODO rename to index_tags
   def student_exception(index)
     tags = []
-    if index.status == t(:message_15, :scope => [:txt, :helper, :students])
+    if index.final_exam_passed?
       if index.defense_claimed?
-        tags <<  "<span title='" + t(:message_16, :scope => [:txt, :helper, :students]) + "'>po</span>"
+        tags <<  "<span title='" + t(:message_25, :scope => [:txt, :helper, :students]) + "'>po</span>"
       elsif index.defense_invitation_sent?
         tags << "<span title='" + t(:message_17, :scope => [:txt, :helper, :students]) + "'>so</span>"
       end
     else
-      unless index.status == t(:message_18, :scope => [:txt, :helper, :students]) || index.status == t(:message_19, :scope => [:txt, :helper, :students])
+      unless index.absolved? || index.finished?
         if index.close_to_interrupt_end_or_after?
           tags << "<span title='" + t(:message_20, :scope => [:txt, :helper, :students]) + "'>!</span>"
         end
         if index.waits_for_scholarship_confirmation?
           tags << "<span title='" + t(:message_21, :scope => [:txt, :helper, :students]) + "'>us</span>"
         end
+        #TODO create method for SDZ and fix this
         unless index.status == t(:message_22, :scope => [:txt, :helper, :students]) || index.final_exam_passed?
           if index.claimed_for_final_exam? 
             tags << "<span title='" + t(:message_23, :scope => [:txt, :helper, :students]) + "'>sz</span>"

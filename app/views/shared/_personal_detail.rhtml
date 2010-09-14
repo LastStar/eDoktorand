@@ -40,6 +40,9 @@
     </li>
   <% end %>
   <li>
+    <%= "#{long_info_helper(index.semester.to_s.concat('.'))}#{t(:semester, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %> 
+  </li>
+  <li>
     <%= "#{long_info_helper(index.year.to_s.concat('.'))}#{t(:message_3, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %> 
   </li>
   <li>
