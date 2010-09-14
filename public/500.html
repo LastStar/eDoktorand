@@ -1,19 +1,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= @htmllang %>" lang="<%= @htmllang %>">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta http-equiv="pragma" content="nocache"/>
-  <meta http-equiv="expires" content="Tue Oct 25 16:45:58 CEST 2005"/>
   <title>Edoktorand</title>
   <link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
-  <link href="/stylesheets/standard.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/style_redesign.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/ico" href="/images/ed.ico"/>
 </head>
 
 <body>
-  <img id="Head" src="/images/header.jpg" width="760" height="77" alt="logo"/>
-  <div id="main">
-    <h5>Chyba applikace</h5>
-    <p>V systému se vyskytla chyba. Administrátorovi byl poslán popis chyby.</p>
+	<div id="content">
+		<div id="head">
+      <a href="/" class="home-btn"></a>
+    </div>
+    <img src="/images/text_content_top.gif" class='text-content-top-image'/>
+    <div id="text-content">
+      <h3>Chyba applikace</h3>
+      <p>
+        V systému se vyskytla chyba. Administrátorovi byl poslán popis chyby.
+      </p>
+    </div>
+    <img src="/images/text_content_bottom.gif" class='text-content-bottom-image'/>
+    <br class="clear-all">
+    <div id="foot">
+      <span class="right">
+        <a href='mailto:helpdesk@czu.cz'>HELPDESK</a>, +420 224384444
+      </span>
+      &nbsp;<a href='http://www.laststar.eu'>Poslední hvězda, s.r.o.</a>
+    </div>
   </div>
 </body>
 </html>
+
