@@ -47,5 +47,13 @@ describe Index do
     candidate.reload
     candidate.birth_number.should == '7604242624'
   end
+
+  it "toggles foreign payment" do
+    candidate = Factory(:candidate)
+    candidate.toggle_foreign_pay
+    candidate.should be_foreign_pay
+    candidate.toggle_foreign_pay
+    candidate.should_not be_foreign_pay
+  end
 end
 

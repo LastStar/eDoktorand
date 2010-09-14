@@ -337,4 +337,10 @@ class Candidate < ActiveRecord::Base
   def present_study?
     study_id == 1
   end
+
+  # toggles foreign payment
+  def toggle_foreign_pay
+    new = foreign_pay ? nil : 1
+    update_attribute(:foreign_pay, new)
+  end
 end

@@ -44,10 +44,9 @@ class CandidatesController < ApplicationController
   end
 
   def set_foreign_payer
-    candidate = Candidate.find(params[:id])
-    candidate.update_attribute(:foreign_pay,true)
-    render :inline => "<%= t(:message_10, :scope => [:txt, :controller, :candidates])%>"
-
+    @candidate = Candidate.find(params[:id])
+    @candidate.toggle_foreign_pay
+    render :inline => "<%= foreign_pay_link(@candidate) %>"
   end
 
   def set_no_foreign_payer

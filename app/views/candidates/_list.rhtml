@@ -21,11 +21,7 @@
       <td rowspan='3' class="right">
       <% unless @user.has_role?('department_secretary') %>
         <span id='<%= dom_id(candidate) %>'>
-          <% if !candidate.foreign_pay %>
-            <%= foreign_pay_link(candidate) %>
-          <% else %>
-            <%= t(:message_6, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>
-          <% end %>
+          <%= foreign_pay_link(candidate) %>
         </span>
         <%= link_to 'detail', :action => 'show', :id => candidate %>
       <%end%>
