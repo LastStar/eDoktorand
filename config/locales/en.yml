@@ -1363,9 +1363,8 @@ en:
             message_9: birth number / passport
             message_42: theme area
             message_31: date of study end
-            message_20: don't fill if identic to habitat address
+            message_20: do not fill if identic to habitat address
             message_19: Postal address
-            message_0: Personal informations
             message_43: note
             message_32: Employer
             message_21: street
@@ -1475,6 +1474,7 @@ en:
             message_3: Year
             message_4: Enrolled on
             message_5: citizenship
+            semester: Semester
         _final_exam: 
           rhtml: 
             message_0: semester
