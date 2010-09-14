@@ -1418,9 +1418,10 @@ cs:
           rhtml: 
             message_0: Obory studia jsou přiřazeny k jednotlivým fakultám. Zobrazí se Vám po rozkliknutí.
             message_1: dokumenty
-            message_2: "Přihlásit se pro opravu přihlášky"
-            message_3: "Heslo"
-            message_4: "Přihlásit"
+            login_to_fix: "Přihlásit se pro opravu přihlášky"
+            password: "Heslo"
+            login: "Přihlásit"
+            language: Jazyk
         preview: 
           rhtml: 
             message_18: prosím klikněte zde pro elektronickou registraci Vaší přihlášky
@@ -1443,8 +1444,8 @@ cs:
             message_7: a
             message_17: elektronické přihlášky
             message_19: Přihlášení na přihlášku
-            message_20: Heslo
-            message_21: Tyto údaje slouží pro pozdější editaci rozepsané přihlášky (dosud neregistrované) či pro prohlížení již zaregistrované přihlášky.
+            password: Heslo
+            later_fix: Tyto údaje slouží pro pozdější editaci rozepsané přihlášky (dosud neregistrované) či pro prohlížení již zaregistrované přihlášky.
       shared: 
         _approve_form: 
           rhtml: 
@@ -1493,6 +1494,7 @@ cs:
             message_2: nahrát metodiku
         _candidate_edit: 
           rhtml: 
+            personal_details: Osobní údaje
             message_40: forma studia
             message_29: obor
             message_18: stát
@@ -1504,7 +1506,6 @@ cs:
             message_31: datum SZZ - skutečné nebo předpokládané
             message_20: nevyplňovat je-li shodná s bydlištěm
             message_19: Korespondenční adresa
-            message_0: Osobní údaje
             message_43: poznámka
             message_32: Zaměstnavatel
             message_21: ulice

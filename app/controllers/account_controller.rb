@@ -1,15 +1,14 @@
 class AccountController < ApplicationController
   include LoginSystem
   layout  'employers'
-  before_filter :login_required, :except => [:login, :logout, :error, :set_locale, :no_permission]
+  before_filter :login_required, :except => [:login, :logout, :error, :locale, :no_permission]
   before_filter :set_title
   before_filter :prepare_user, :only => :welcome
 
   def login
     @title = t(:message_0, :scope => [:txt, :controller, :account])
     if request.method == :post
-      if session[:user] = User.authenticate(params[:user_login], 
-                                              params[:user_password])
+      if session[:user] = User.authenticate(params[:user_login], params[:user_password])
         redirect_back_or_default welcome_url
       else
         @login    = params[:user_login]
@@ -42,6 +41,11 @@ class AccountController < ApplicationController
     if !(flash && flash[:error]) && @exception
       flash[:error] = @exception.message
     end
+  end
+
+  # locale changing page
+  def locale
+    redirect_to request.env['HTTP_REFERER']
   end
 
   private

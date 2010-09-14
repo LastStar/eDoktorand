@@ -1278,7 +1278,10 @@ en:
           rhtml: 
             message_0: After clicking the name of faculty, list of corridors  will be shown
             message_1: documents
-            message_2: "There is error in application. Please contact system administrator on address:"
+            login_to_fix: Login to fix admittance form
+            password: Password
+            login: Login
+            language: Language
         preview: 
           rhtml: 
             message_18: click here for registering your application  on-line, please
@@ -1287,11 +1290,11 @@ en:
             message_0: Appllication form for doctoral study
             message_10: Check the filled data
             message_1: action
-            message_11: check your correct application data
+            message_11: check your application data
             message_2: Signature
             message_12: Data correction
             message_3: "ATTENTION:"
-            message_13: click here for incorrect data correction, please
+            message_13: click here to fix incorrect data
             message_4: it is necessary to
             message_14: <a href='javascript:window.print()'>Print</a> out the application form
             message_5: check the filled data correctness,
@@ -1300,6 +1303,8 @@ en:
             message_16: Register
             message_7: and
             message_17: the application form on-line
+            password: Password
+            later_fix: Theese information could be used to fix (not registered) admittance form or to see already registered one.
       shared: 
         _approve_form: 
           rhtml: 
@@ -1346,8 +1351,9 @@ en:
             message_0: methodology summary
             message_1: show
             message_2: upload methodology
-        candidate_edit: 
+        _candidate_edit: 
           rhtml: 
+            personal_details: Personal details
             message_40: study form
             message_29: corridor
             message_18: address state

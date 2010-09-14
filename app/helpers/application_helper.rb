@@ -634,6 +634,14 @@ module ApplicationHelper
 
   end
   
+  def locale_link
+    if I18n.locale != :cs
+      link_to image_tag('cz.png', :style => 'margin: 5px 0px 7px 2px'), locale_url(:lang => 'cs')
+    else
+      link_to image_tag('gb.png'), locale_url(:lang => 'en')
+    end
+  end
+
   private
   def loader_image(field)
     "Element.replace('#{field}', '#{image_tag('loader.gif', :size => '12x12')}')"

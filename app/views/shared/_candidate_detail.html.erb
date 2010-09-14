@@ -1,53 +1,97 @@
 
   <h5><%= t(:message_0, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %></h5> 
   <ul class="bordered">
-  <li><div class="right_info"><%= @candidate.display_name %></div><%= t(:message_1, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.birth_on.strftime("%d.%m.%Y") + ", " + @candidate.birth_at %></div><%= t(:message_2, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.birth_number %></div><%= t(:message_3, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.print_sex %></div><%= t(:message_4, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= translate_country(@candidate.state) %></div><%= t(:message_5, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
+    <li>
+      <div class="right_info"><%= @candidate.display_name %></div><%= t(:message_1, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.birth_on.strftime("%d.%m.%Y") + ", " + @candidate.birth_at %></div><%= t(:message_2, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.birth_number %></div><%= t(:message_3, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.print_sex %></div><%= t(:message_4, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= translate_country(@candidate.state) %></div><%= t(:message_5, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
   </ul>
   <h5><%= t(:message_6, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %></h5> 
   <ul  class="bordered">
-  <li><div class="right_info"><%= @candidate.street + " " +  @candidate.number.to_s + "<br/>" + @candidate.zip + ", " + @candidate.city %></div><%= t(:message_7, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:<br/>&nbsp;</li>
-  <li><div class="right_info"><%= @candidate.email.to_s %></div><%= t(:message_8, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
+    <li>
+      <div class="right_info"><%= @candidate.street + " " +  @candidate.number.to_s + "<br/>" + @candidate.zip + ", " + @candidate.city %></div><%= t(:message_7, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:<br/>&nbsp;
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.email.to_s %></div><%= t(:message_8, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
   <% unless @candidate.phone.empty? %>
-  <li><div class="right_info"><%= @candidate.phone %></div><%= t(:message_9, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
+    <li>
+      <div class="right_info"><%= @candidate.phone %></div><%= t(:message_9, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
   <% end %>
   <% unless @candidate.postal_street.empty? %>
-  <li><div class="right_info"><%= @candidate.postal_street + " " + @candidate.postal_number.to_s + "<br/>" + @candidate.postal_zip + ", " + @candidate.postal_city %></div><%= t(:message_10, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:<br/>&nbsp;</li>
+    <li>
+      <div class="right_info"><%= @candidate.postal_street + " " + @candidate.postal_number.to_s + "<br/>" + @candidate.postal_zip + ", " + @candidate.postal_city %></div><%= t(:message_10, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:<br/>&nbsp;
+    </li>
   <% end %>
   </ul> 
   <h5><%= t(:message_11, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %></h5> 
-  <ul  class="bordered">
-  <li><div class="right_info"><%= @candidate.university %></div><%= t(:message_12, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.faculty %></div><%= t(:message_13, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.studied_branch %></div><span class='strut'></span ><%= t(:message_14, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></div><span class='strut'></span ><%= t(:message_15, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
+  <ul class="bordered">
+    <li>
+      <div class="right_info"><%= @candidate.university %></div><%= t(:message_12, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.faculty %></div><%= t(:message_13, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.studied_branch %></div><span class='strut'></span ><%= t(:message_14, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.study_end.strftime("%d. %m. %Y") %></div><span class='strut'></span ><%= t(:message_15, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
   </ul> 
   <% unless @candidate.employer.empty? %>
   <h5><%= t(:message_16, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %></h5> 
   <ul  class="bordered">
-  <li><div class="right_info"><%= @candidate.employer %></div> <%= t(:message_17, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class='right_info'><%= @candidate.employer_address %></div> &nbsp;</li>
-  <li><div class="right_info"><%= @candidate.employer_phone %></div><%= t(:message_18, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.employer_email %></div><%= t(:message_19, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.position %></div><%= t(:message_20, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
+    <li>
+      <div class="right_info"><%= @candidate.employer %></div> <%= t(:message_17, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class='right_info'><%= @candidate.employer_address %></div> &nbsp;
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.employer_phone %></div><%= t(:message_18, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.employer_email %></div><%= t(:message_19, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.position %></div><%= t(:message_20, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
   </ul> 
   <% end %>
   <h5><%= t(:message_21, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %></h5> 
-  <ul>
-  <li><div class="right_info"><%= @candidate.specialization.name %></div> <%= t(:message_22, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.department.name %></div><%= t(:message_23, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.study.name %></div><%= t(:message_24, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
-  <li><div class="right_info"><%= @candidate.language1.label %><br/><%= @candidate.language2.label %></div><%= t(:message_25, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:<br/>&nbsp;</li>
+  <ul class='bordered'>
+    <li>
+      <div class="right_info"><%= @candidate.specialization.name %></div> <%= t(:message_22, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.department.name %></div><%= t(:message_23, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.study.name %></div><%= t(:message_24, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+    <li>
+      <div class="right_info"><%= @candidate.language1.label %><br/><%= @candidate.language2.label %></div><%= t(:message_25, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:<br/>&nbsp;
+    </li>
   <% unless @candidate.study_theme.empty? %>
-  <li><div class="right_info"><%= @candidate.study_theme %></div><%= t(:message_26, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:</li>
+    <li>
+      <div class="right_info"><%= @candidate.study_theme %></div><%= t(:message_26, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
   <% end %>
   </ul> 
   <% unless @candidate.note.empty? %>
   <h5><%= t(:message_27, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %></h5> 
-  <ul  class="bordered">
-    <pre class="detail"><%= @candidate.note %></pre>
-  </ul>
+  <pre class="detail"><%= @candidate.note %></pre>
   <% end %>

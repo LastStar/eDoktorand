@@ -1,17 +1,16 @@
-
 <%= render(:partial => 'preview_header') %>
 <div class="printHeader">
   <h4><%= t(:message_0, :scope => [:txt, :view, :form, :preview, :rhtml]) %></h4>
 </div>
-<%= render :partial=> 'shared/candidate_detail' %>
+  <%= render :partial=> 'shared/candidate_detail' %>
   
   <% unless @candidate.finished? %>
   <div class="candidate_login">
   <h5><%= t(:message_19, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</h5> 
-  <ul>
+  <ul class='bordered'>
     <li><div class="right_info"><%= @candidate.id %></div>Id:</li>
-    <li><div class="right_info"><%= @candidate.hash %></div><%= t(:message_20, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</li>
-    <li><%= t(:message_21, :scope => [:txt, :view, :form, :preview, :rhtml]) %></li>
+    <li><div class="right_info"><%= @candidate.hash %></div><%= t(:password, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</li>
+    <li><%= t(:later_fix, :scope => [:txt, :view, :form, :preview, :rhtml]) %></li>
   </ul>
   </div>
   <h5><%= t(:message_1, :scope => [:txt, :view, :form, :preview, :rhtml]) %></h5> 
