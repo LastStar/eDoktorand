@@ -40,5 +40,12 @@ describe Index do
     student.index.payment_id.should == 1
     candidate.student.should == student
   end
+
+  it "strips all spaces from birth number" do
+    candidate = Factory.build(:candidate, :birth_number => '7604242624 ')
+    candidate.save
+    candidate.reload
+    candidate.birth_number.should == '7604242624'
+  end
 end
 

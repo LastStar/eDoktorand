@@ -16,6 +16,9 @@ class Candidate < ActiveRecord::Base
     :foreign_key => 'language1_id'
   belongs_to :language2, :class_name => 'Subject',
     :foreign_key => 'language2_id' 
+
+  before_save :strip_birth_number
+
   validates_presence_of :firstname, :message => I18n::t(:message_0, :scope => [:txt, :model, :candidate])
   validates_presence_of :lastname, :message => I18n::t(:message_1, :scope => [:txt, :model, :candidate])
   validates_presence_of :birth_at, :message => I18n::t(:message_2, :scope => [:txt, :model, :candidate])
@@ -42,6 +45,12 @@ class Candidate < ActiveRecord::Base
   named_scope :from_faculty, lambda {|faculty|
     {:conditions => ['specialization_id in (?)', faculty.specializations]}
   }
+
+  # strips all spaces from birth number
+  def strip_birth_number
+    self.birth_number.strip!
+  end
+
   # validates if languages are not same
   def validate
     errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
@@ -62,7 +71,7 @@ class Candidate < ActiveRecord::Base
   end
 
   def validate_on_update
-    if state == "Česká republika"
+    if state == "CZ" || state == "SK"
       if birth_number.to_i.remainder(11) != 0
         errors.add(:birth_number, I18n::t(:message_24, :scope => [:txt, :model, :candidate]))
       end
