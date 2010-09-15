@@ -825,3 +825,8 @@ td.action-link {
 #detail_search select {
   font-size: 133%;
 }
+
+#filter-loader {
+  text-align: center;
+  padding: 1em 0;
+}

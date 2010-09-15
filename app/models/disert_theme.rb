@@ -3,7 +3,6 @@ class DisertTheme < ActiveRecord::Base
   belongs_to :index
   validates_presence_of :title, :message => I18n::t(:message_0, :scope => [:txt, :model, :theme])
   validates_presence_of :finishing_to
-  acts_as_audited
 
   before_create :set_actual
   after_create :copy_methodology

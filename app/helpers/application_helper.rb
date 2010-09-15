@@ -284,20 +284,20 @@ module ApplicationHelper
   private 
   
   # prints statement
+  #FIXME string extrapolation should be done better
   def print_statement(statement, statement_type)
     result = ''
     options = {}
     if statement
       result << approve_word(statement.result)
-      if statement.note && !statement.note.empty?
+      unless statement.note.try(:empty?)
         result << ", #{t(:message_37, :scope => [:txt, :helper, :application])}: #{statement.note}"
         options[:class] = 'higher'
       end
       result = content_tag('div', statement.created_on.strftime('%d. %m. %Y'),
-      :class => 'info') + div_tag(result)
+                           :class => 'info') + div_tag(result)
     end
-    return content_tag('li', "#{div_tag(result, :class => 'long_info')}
-    #{statement_type}", options)
+    return content_tag('li', "#{div_tag(result, :class => 'long_info')} #{statement_type}", options)
   end
   
   # prints attestation link
@@ -321,7 +321,7 @@ module ApplicationHelper
       options = [[t(:continue, :scope => [:txt, :helper, :application]), 1],
         [t(:continue_with_reproof, :scope => [:txt, :helper, :application]), 2],
         [t(:finish, :scope => [:txt, :helper, :application]), 0],
-        [t(:interrupt, :scope => [:txt, :helper, :application]), 0]
+        [t(:interrupt, :scope => [:txt, :helper, :application]), 3]
       ]    
     else
       action = 'confirm_approve'

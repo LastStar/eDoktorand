@@ -4,7 +4,6 @@ class Approval < ActiveRecord::Base
   belongs_to :leader_statement
   belongs_to :dean_statement
   belongs_to :board_statement
-  acts_as_audited
 
   # prepares approval for object if it doesn't exists
   # returns statement for user
