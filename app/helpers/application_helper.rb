@@ -321,7 +321,7 @@ module ApplicationHelper
       options = [[t(:continue, :scope => [:txt, :helper, :application]), 1],
         [t(:continue_with_reproof, :scope => [:txt, :helper, :application]), 2],
         [t(:finish, :scope => [:txt, :helper, :application]), 0],
-        [t(:interrupt, :scope => [:txt, :helper, :application]), 0]
+        [t(:interrupt, :scope => [:txt, :helper, :application]), 3]
       ]    
     else
       action = 'confirm_approve'
