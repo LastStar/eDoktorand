@@ -3,7 +3,6 @@ class Scholarship < ActiveRecord::Base
   
   belongs_to :index
   validates_presence_of :index, :amount
-  acts_as_audited
 
   def creator_of_scholarship
     if self.updated_by_id != nil

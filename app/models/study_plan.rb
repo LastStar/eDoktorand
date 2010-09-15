@@ -10,7 +10,7 @@ class StudyPlan < ActiveRecord::Base
   # Have to be tested: Should be removed
   # has_one :attestation_detail, :foreign_key => 'study_plan_id', :order => 'created_on'
   has_many :approvals
-  acts_as_audited
+
   validates_presence_of :index
   serialize :final_areas, Hash
 

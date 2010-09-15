@@ -18,7 +18,7 @@ Rails::Initializer.run do |config|
 
   config.action_controller.session_store = :active_record_store
 
-  config.plugins = [ :localized_country_select, :translate, :ar_fixtures, :acts_as_audited, :rtex, :tiny_mce ]
+  config.plugins = [ :localized_country_select, :rtex, :tiny_mce ]
 
   config.gem "log4r"
   config.gem "ruby-net-ldap", :lib => "net/ldap"
