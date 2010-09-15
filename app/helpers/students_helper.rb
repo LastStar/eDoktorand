@@ -378,7 +378,7 @@ module StudentsHelper
   end
 
   def filter_links(filters) 
-    loader = content_tag('div', image_tag('big_loader.gif'), :class => 'centered')
+    loader = content_tag('div', image_tag('big_loader.gif'), :id => 'filter-loader')
     filters.map do |filter|
       link_to_remote(filter.first,
                     :url => {:action => :filter,
