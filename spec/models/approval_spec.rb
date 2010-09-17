@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Approval do
   before(:each){@approval = Approval.new}
-  it "should return last approver" do
+  it "returns last approver" do
     @approval.last_approver.should be_nil
     @approval.tutor_statement = TutorStatement.make(:person => Tutor.make)
     @approval.last_approver.should equal Tutor
@@ -24,10 +24,10 @@ describe Approval do
       @faculty_secretary = FacultySecretary.make
       @faculty_secretary.faculty_employment = FacultyEmployment.make(:faculty => @faculty)
     end
-    it "should return if waits for tutor statement from person" do
+    it "returns if waits for tutor statement from person" do
       @approval.should be_waiting_for_tutor_statement(@tutor)
     end
-    it "should return if waits for leader statement from person" do
+    it "returns if waits for leader statement from person" do
       @approval.should_not be_waiting_for_leader_statement(@leader)
       @approval.index.tutor = @leader
       @approval.should be_waiting_for_leader_statement(@leader)
@@ -35,13 +35,13 @@ describe Approval do
       @approval.tutor_statement = TutorStatement.make(:person => @tutor)
       @approval.should be_waiting_for_leader_statement(@leader)
     end
-    it "should return if waits for dean statement from person" do
+    it "returns if waits for dean statement from person" do
       @approval.index.tutor = @leader
       @approval.should_not be_waiting_for_dean_statement(@dean)
       @approval.leader_statement = LeaderStatement.make(:person => @leader)
       @approval.should be_waiting_for_dean_statement(@dean)
     end
-    it "should return if prepare statement" do
+    it "returns if prepare statement" do
       @approval.should be_prepares_statement(@faculty_secretary)
       @approval.should be_prepares_statement(@tutor)
       @approval.tutor_statement = TutorStatement.make(:person => @tutor)
@@ -53,23 +53,23 @@ describe Approval do
       @approval.dean_statement = DeanStatement.make(:person => @dean)
       @approval.should_not be_prepares_statement(@dean)
     end
-    it "should return document it approves" do
+    it "returns document it approves" do
       @approval.document.should equal @study_plan
     end
-    it "should return index of study plan it approves" do
+    it "returns index of study plan it approves" do
       @approval.index.should == @study_plan.index
     end
-    it "should return statement for person"
+    it "returns statement for person"
   end
   context "on dissertation" do
     before(:each) do
       @dissertation = DisertTheme.make
       @approval = DisertThemeApproval.new(:disert_theme => @dissertation)
     end
-    it "should return document it approves" do
+    it "returns document it approves" do
       @approval.document.should equal @dissertation
     end
-    it "should return index of dissertation it approves" do
+    it "returns index of dissertation it approves" do
       @approval.index.should == @dissertation.index
     end
   end
@@ -78,19 +78,17 @@ describe Approval do
       @study_interrupt = StudyInterrupt.make
       @approval = StudyInterruptApproval.new(:interrupt => @study_interrupt)
     end
-    it "should return document it approves" do
+    it "returns document it approves" do
       @approval.document.should equal @study_interrupt
     end
-    it "should return index of dissertation it approves" do
+    it "returns index of dissertation it approves" do
       @approval.index.should == @study_interrupt.index
     end
   end
   context "on final exam" do
-    before(:each) do
+    it "returns document it approves" do
       @index = Index.make
       @approval = FinalExamApproval.new(:index => @index)
-    end
-    it "should return document it approves" do
       @approval.document.should equal @index
     end
   end

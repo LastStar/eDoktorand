@@ -40,4 +40,6 @@ Phdstudy::Application.configure do
     :uri => 'http://comanche.czu.cz/axis2/services/GetSubjectService.GetSubjectServiceHttpSoap12Endpoint/',
     :version => 2
   }
+
+  config.active_support.deprecation = :stderr
 end
