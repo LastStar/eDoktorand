@@ -37,7 +37,7 @@ module StudentsHelper
           else
             links << create_link(index)
           end
-          if index.not_even_admited_interrupt?
+          if index.not_even_admitted_interrupt?
             links << interrupt_link(index)
           elsif index.interrupt_waits_for_confirmation?
             links << confirm_interrupt_link(index)
