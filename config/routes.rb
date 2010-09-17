@@ -1,4 +1,4 @@
-Phdstudy::Application.routes.draw do |map|
+Phdstudy::Application.routes.draw do
   # login url
   match '/login' => 'account#login', :as => :login
 
