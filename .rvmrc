@@ -1,1 +1,1 @@
-rvm  --create ree@rails3
+rvm --create 1.9.2@rails3
