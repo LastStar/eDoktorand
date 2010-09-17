@@ -1,5 +1,5 @@
+# encoding:utf-8
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-
 
 describe Index do
   context "states" do
@@ -14,12 +14,12 @@ describe Index do
     end
     context 'status methods' do
       before :each do
-        @student = Factory(:student)
-        @index = Factory(:index, :student => @student)
+        @student = Student.make
+        @index = Index.make(:student => @student)
         Timecop.freeze("2010/01/01")
       end
       it "should return status" do
-        @index.status.should == 'studuje'
+        @index.status.should == :studying
       end
       it "should return status code" do
         @index.status_code.should == 'S'
@@ -30,35 +30,35 @@ describe Index do
       it "should return to when status is valid" do
         @index.status_to.should == Date.parse('2010/09/30')
       end
-    end
-    it "should return interrupted" do
-      @index.interrupt!(1.month.ago)
-      @index.should be_interrupted
-      @index.status.should eq :interrupted
-    end
-    it "should return finished" do
-      @index.finish!(1.month.ago)
-      @index.should be_finished
-      @index.status.should eq :finished
-    end
-    it "should return studying after unfinishing" do
-      @index.finish!(1.month.ago)
-      @index.unfinish!
-      @index.status.should eq :studying
-    end
-    it "should return passed final exam" do
-      @index.final_exam_passed!(1.month.ago)
-      @index.should be_final_exam_passed
-      @index.status.should eq :final_exam_passed
-    end
-    it "should return absolved" do
-      @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
-      @index.disert_theme.defense_passed!(1.month.ago)
-      @index.should be_absolved
-      @index.status.should eq :absolved
-    end
-    it "should return translated status" do
-      @index.translated_status.should eq "studying"
+      it "should return interrupted" do
+        @index.interrupt!(1.month.ago)
+        @index.should be_interrupted
+        @index.status.should eq :interrupted
+      end
+      it "should return finished" do
+        @index.finish!(1.month.ago)
+        @index.should be_finished
+        @index.status.should eq :finished
+      end
+      it "should return studying after unfinishing" do
+        @index.finish!(1.month.ago)
+        @index.unfinish!
+        @index.status.should eq :studying
+      end
+      it "should return passed final exam" do
+        @index.final_exam_passed!(1.month.ago)
+        @index.should be_final_exam_passed
+        @index.status.should eq :final_exam_passed
+      end
+      it "should return absolved" do
+        @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
+        @index.disert_theme.defense_passed!(1.month.ago)
+        @index.should be_absolved
+        @index.status.should eq :absolved
+      end
+      it "should return translated status" do
+        @index.translated_status.should == 'studuje'
+      end
     end
     describe "Interrupts" do
       it "should return if admitted interrupt" do
@@ -86,8 +86,8 @@ describe Index do
 
   context "payment type" do
     before :each do
-      @student = Factory(:student)
-      @index = Factory(:index, :student => @student)
+      @student = Student.make
+      @index = Index.make(:student => @student)
     end
     it "should return payment code" do
       @index.payment_code.should == 1
@@ -161,8 +161,7 @@ describe Index do
   end
 
   describe "Scopes" do
-    before(:all) do
-      Index.destroy_all
+    before(:each) do
       @index = Index.make
       @specialization = @index.specialization
       @tutor = @index.tutor
@@ -196,7 +195,7 @@ describe Index do
       Index.finished_from(1.day.ago).should eq []
     end
     it "should return all enrolled from some date" do
-      Index.enrolled_from(1.day.ago).should eq @all
+      Index.enrolled_from(TermsCalculator.this_year_start - 1.day).should eq @all
     end
     it "should return all not interrupted to some date" do
       Index.not_interrupted_from(Time.now).should eq @all - [@interrupted]
@@ -251,10 +250,10 @@ describe Index do
 
   describe "Account number" do
     before(:each) do
-      @index = Index.make(:account_number => '2303308001')
+      @index = Index.make
     end
     it "should say if account number prefix is filled"do
-      @index.should_not be_account_number_prefix_filled
+      @index.should be_account_number_prefix_filled
       @index.account_number_prefix = ''
       @index.should_not be_account_number_prefix_filled
       @index.account_number_prefix = '000000'
@@ -262,16 +261,14 @@ describe Index do
     end
     
     it "should print full account number" do
-      @index.full_account_number.should eq '2303308001'
-      @index.account_number_prefix = '666'
-      @index.full_account_number.should eq '666-2303308001'
+      @index.full_account_number.should eq '35-2303308001'
     end
   end
 
   context "ImStudent connection" do
     before :each do
-      @student = Factory(:student)
-      @index = Factory(:index, :student => @student)
+      @student = Student.make
+      @index = Index.make(:student => @student)
     end
     it "should prepare ImIndex" do
       @index.im_index.should_not be_nil

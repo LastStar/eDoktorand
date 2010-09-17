@@ -75,7 +75,6 @@ class UicGetter
                                          birth_on.strftime("%y%m%d41A9"))
       rescue Exception => e
         @@logger.error 'Something gone wrong with service ' + e
-        next
       end
       begin
         uic = extract_uic(service_response)
@@ -83,7 +82,6 @@ class UicGetter
         return uic
       rescue Exception => e
         @@logger.error "Error parsing response: " + e
-        next
       end
     end
 

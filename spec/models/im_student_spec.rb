@@ -16,7 +16,7 @@ describe ImStudent do
   context "attribute copying" do
     before(:each) do
       # TODO redone with blueprint after merging with rails3
-      @index = Factory.build(:index)
+      @index = Index.make
       @student = Student.create(:uic => 1,
                                 :sident => 2,
                                 :firstname => 'Josef',

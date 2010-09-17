@@ -1,3 +1,4 @@
+# encoding:utf-8
 class ImIndex < ActiveRecord::Base
   belongs_to :index
 
@@ -46,11 +47,11 @@ class ImIndex < ActiveRecord::Base
     self.study_spec_msmt_code = index.specialization.msmt_code
     self.study_prog = index.specialization.program.label
     self.study_prog_code = index.specialization.program.code
-    self.study_status = index.status
+    self.study_status = index.translated_status
     self.study_status_code = index.status_code
     self.study_status_from = index.status_from
     self.study_status_to = index.status_to
-    self.enrollment_date = index.enrolled_on.to_date
+    self.enrollment_date = index.enrolled_on
     self.financing_type_code = index.payment_code
     self.financing_type = index.payment_type
     self.education_language = 'český jazyk'

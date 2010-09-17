@@ -30,10 +30,8 @@ describe CandidatesController do
   end
 
   describe "Candidate detail" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/show").and_return(true)
-    end   
     it "should allow to see candidate detail and assign candidate by id" do
+      mocked_user.should_receive(:has_permission?).with("candidates/show").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       get :show, :id => 1
       response.should be_success
@@ -42,10 +40,8 @@ describe CandidatesController do
   end
 
   describe "Edit candidate" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/edit").and_return(true)
-    end   
     it "should allow edit candidate and assign candidate by id" do
+      mocked_user.should_receive(:has_permission?).with("candidates/edit").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       get :edit, :id => 1
       response.should be_success
@@ -53,34 +49,19 @@ describe CandidatesController do
     end
   end
 
-  describe "Setting foreign payer" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/set_foreign_payer").and_return(true)
-    end   
+  describe "Toggling foreign payer" do
     it "should assign candidate by id and set foreign payer on it" do
-      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
-      mocked_candidate.should_receive(:foreign_pay!).and_return(true)
+      #FIXME redone with array of all permissions for controller
+      mocked_user.should_receive(:has_permission?).with("candidates/set_foreign_payer").and_return(true)
+      @candidate = Candidate.make
+      Candidate.should_receive(:find).with(1).and_return(@candidate)
       get :set_foreign_payer, :id => 1
     end
   end
 
-  describe "Unsetting foreign payer" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/set_no_foreign_payer").and_return(true)
-    end   
-    it "should assign candidate by id and set foreign payer on it" do
-      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
-      mocked_candidate.should_receive(:not_foreign_pay!).and_return(true)
-      get :set_no_foreign_payer, :id => 1
-      response.should be_success
-    end
-  end
-
   describe "Removing of candidate" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/delete").and_return(true)
-    end   
     it "should find candidate by id and call unfinish to hide it from list" do
+      mocked_user.should_receive(:has_permission?).with("candidates/delete").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       mocked_candidate.should_receive(:unfinish!)
       get :delete, :id => 1
@@ -89,10 +70,8 @@ describe CandidatesController do
   end
 
   describe "Destroying all candidates for faculty" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/destroy_all").and_return(true)
-    end   
     it "should assign all candidates from faculty and call destroy on each" do
+      mocked_user.should_receive(:has_permission?).with("candidates/destroy_all").and_return(true)
       mocked_user.should_receive(:person).and_return(mocked_faculty_secretary(:faculty => mocked_faculty))
       Candidate.should_receive(:from_faculty).and_return([mocked_candidate])
       mocked_candidate.should_receive(:destroy)
@@ -107,7 +86,7 @@ describe CandidatesController do
       @new_attributes = {'id' => 1, 'lastname' => 'Newton'}
     end   
     it "should update candidate from params" do
-      Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
+      Candidate.should_receive(:find).with(1).and_return(mocked_candidate('id' => 1))
       mocked_candidate.should_receive(:update_attributes).with(@new_attributes).and_return(true)
       post :update, :candidate => @new_attributes
       response.should be_redirect
@@ -121,10 +100,8 @@ describe CandidatesController do
   end
 
   describe "Admit rejected candidate" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/admit_for_revocation").and_return(true)
-    end   
     it "should find candidate and admit him after rejection" do
+      mocked_user.should_receive(:has_permission?).with("candidates/admit_for_revocation").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       mocked_candidate.should_receive(:admit_after_reject!)
       get :admit_for_revocation, :id => 1
@@ -133,10 +110,8 @@ describe CandidatesController do
   end
 
   describe "Admittance form" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/admit").and_return(true)
-    end   
     it "should assign candidate" do
+      mocked_user.should_receive(:has_permission?).with("candidates/admit").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       get :admit, :id => 1
       assigns['candidate'].should == mocked_candidate
@@ -145,15 +120,13 @@ describe CandidatesController do
   end
 
   describe "Confirmation of admittance" do
-    before(:each) do
+    it "should set all details and admit candidate" do
       mocked_user.should_receive(:has_permission?).with("candidates/confirm_admit").and_return(true)
       @candidate_attributes = {
         "tutor_id" => "1",
         "study_id" => "1",
         "specialization_id" => "1",
         "department_id" => "1"}
-    end   
-    it "should set all details and admit candidate" do
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       mocked_candidate.should_receive(:update_attributes).with(@candidate_attributes)
       mocked_candidate.should_receive(:admitting_faculty).and_return(mocked_faculty)
@@ -186,10 +159,8 @@ describe CandidatesController do
   end
 
   describe "Admittance protocol" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/admittance").and_return(true)
-    end   
     it "should assign candidate" do
+      mocked_user.should_receive(:has_permission?).with("candidates/admittance").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       get :admittance, :id => 1
       assigns['candidate'].should == mocked_candidate
@@ -198,10 +169,8 @@ describe CandidatesController do
   end
 
   describe "Setting candidate ready" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/ready").and_return(true)
-    end   
     it "should assign candidate and set him ready" do
+      mocked_user.should_receive(:has_permission?).with("candidates/ready").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       mocked_candidate.should_receive(:ready!)
       mocked_candidate.should_receive(:display_name).and_return('Candidate')
@@ -211,10 +180,8 @@ describe CandidatesController do
   end
 
   describe "Invitation page" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/invite").and_return(true)
-    end   
     it "should assign candidate" do
+      mocked_user.should_receive(:has_permission?).with("candidates/invite").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       get :invite, :id => 1
       assigns['candidate'].should == mocked_candidate
@@ -223,10 +190,8 @@ describe CandidatesController do
   end
 
   describe "Inviting candidate" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/invite_now").and_return(true)
-    end   
     it "should assign candidate, set him as invited and send email" do
+      mocked_user.should_receive(:has_permission?).with("candidates/invite_now").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       mocked_candidate.should_receive(:invite!)
       Notifications.stub!(:deliver_invite_candidate)
@@ -236,10 +201,8 @@ describe CandidatesController do
   end
 
   describe "Reject page" do
-    before(:each) do
-      mocked_user.should_receive(:has_permission?).with("candidates/reject").and_return(true)
-    end   
     it "should assign candidate to reject" do
+      mocked_user.should_receive(:has_permission?).with("candidates/reject").and_return(true)
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       get :reject, :id => 1
       assigns['candidate'].should == mocked_candidate
@@ -248,11 +211,9 @@ describe CandidatesController do
   end
 
   describe "Rejecting candidate" do
-    before(:each) do
+    it "should assign candidate, set him as rejected and send email" do
       mocked_user.should_receive(:has_permission?).with("candidates/reject_now").and_return(true)
       Notifications.stub!(:deliver_reject_candidate)
-    end   
-    it "should assign candidate, set him as rejected and send email" do
       Candidate.should_receive(:find).with(1).and_return(mocked_candidate)
       mocked_candidate.should_receive(:reject!)
       Notifications.should_receive(:deliver_reject_candidate).with(mocked_candidate)

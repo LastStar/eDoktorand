@@ -10,10 +10,10 @@ describe "Candidate" do
     mock_uic_getter = mock(UicGetter)
     UicGetter.should_receive(:new).and_return(mock_uic_getter)
     mock_uic_getter.should_receive(:get_uic).with('7604242624').and_return(1)
-    candidate = Factory(:candidate, :postal_street => 'Short')
-    candidate.tutor = Factory(:tutor)
-    candidate.specialization = Factory(:specialization)
-    candidate.study = Factory(:study)
+    candidate = Candidate.make(:postal_street => 'Short')
+    candidate.tutor = Tutor.make
+    candidate.specialization = Specialization.make
+    candidate.study = Study.make
     student = candidate.new_student('2010-01-01')
     student.uic.should == 1
     student.firstname.should == 'Karel'
@@ -39,7 +39,7 @@ describe "Candidate" do
     student.index.tutor == candidate.tutor
     student.index.study == candidate.study
     student.index.student == candidate.student
-    student.index.enrolled_on.should == Time.parse('2010-01-01')
+    student.index.enrolled_on.should == Date.parse('2010-01-01')
     student.index.tutor.should == candidate.tutor
     student.index.payment_id.should == 1
     candidate.student.should == student

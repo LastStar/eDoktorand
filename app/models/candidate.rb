@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'genderize'
+require 'uic_getter'
 
 class Candidate < ActiveRecord::Base
   include Genderize
@@ -38,6 +39,7 @@ class Candidate < ActiveRecord::Base
     :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
   validate :different_languages
   validate :check_cs_birth_number
+  validate :different_languages
 
   scope :finished, :conditions => 'finished_on is not null'
   scope :finished_before, lambda{|date|
@@ -64,7 +66,6 @@ class Candidate < ActiveRecord::Base
     self.birth_number.strip!
   end
 
-  validate :different_languages
 
   # validates if languages are not same
   def different_languages
@@ -76,14 +77,6 @@ class Candidate < ActiveRecord::Base
     if state == "CZ" || state == "SK"
       unless (birth_number =~ /\d+/) && (birth_number.to_i.remainder(11) == 0)
         errors.add(:birth_number, I18n::t(:message_23, :scope => [:txt, :model, :candidate]))
-      end
-    end
-  end
-
-  def validate_on_update
-    if state == "CZ" || state == "SK"
-      if birth_number.to_i.remainder(11) != 0
-        errors.add(:birth_number, I18n::t(:message_24, :scope => [:txt, :model, :candidate]))
       end
     end
   end

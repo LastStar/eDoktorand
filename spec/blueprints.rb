@@ -1,3 +1,4 @@
+# encoding:utf-8
 require 'machinist/active_record'
 require 'sham'
 require 'faker'
@@ -19,8 +20,8 @@ Sham.login {Faker::Internet.user_name}
 Sham.title {|index| "Title ##{index}"}
 
 Faculty.blueprint do
-  name {Sham.name}
-  short_name {Sham.short_name}
+  name {"Faculty"}
+  short_name {"FAC"}
 end
 
 FacultyEmployment.blueprint do
@@ -48,24 +49,26 @@ FacultySecretary.blueprint do
 end
 
 Candidate.blueprint do
-  firstname
-  lastname
-  title_before
-  title_after
-  birth_on
-  birth_at {Sham.city}
-  university
-  email
-  street
-  number {rand(100)}
-  city
-  zip
-  state
-  faculty {"Science faculty of #{university}"}
-  studied_branch {"Branch of science"}
-  birth_number {"7604242624"}
-  language1 {Subject.make}
-  language2 {Subject.make}
+  firstname 'Karel'
+  lastname 'Marel'
+  birth_at '1980-01-01'
+  email 'karel@marel.cz'
+  phone '+420777888999'
+  street 'Long'
+  number '2'
+  city 'Prague'
+  zip '10000'
+  state 'CZ'
+  university 'CZU'
+  faculty 'FAAPPZ'
+  studied_branch 'Agro'
+  birth_number '7604242624'
+  department
+  language1_id 1
+  language2_id 2
+  sex 'M'
+  foreign_pay false
+
 end
 
 Candidate.blueprint(:finished) do
@@ -106,10 +109,18 @@ Title.blueprint(:title_after) do
 end
 
 Specialization.blueprint do
-  name {Sham.name}
+  name 'Specialization'
+  code 'SPE'
+  msmt_code 'MSPE'
   faculty
-  accredited {true}
-  study_length {4}
+  accredited true
+  study_length 4
+  program
+end
+
+Program.blueprint do
+  label 'Program'
+  code 'PRG'
 end
 
 Subject.blueprint do
@@ -123,17 +134,22 @@ Student.blueprint do
 end
 
 Index.blueprint do
-  enrolled_on {Time.now}
-  study
+  enrolled_on TermsCalculator.this_year_start.to_date
   student
+  study
   tutor
   specialization
   department
+  payment_id 1
+  account_number '2303308001'
+  account_number_prefix '35'
+  account_bank_number '5500'
 end
 
 Study.blueprint do
-  name {"prezenční"}
-  name_en {"full time"}
+  name "prezenční"
+  name_en "full time"
+  code 'D'
 end
 
 Tutor.blueprint do
@@ -142,7 +158,8 @@ Tutor.blueprint do
 end
 
 Department.blueprint do
-  name {"department"}
+  name {"Department"}
+  short_name {"DEP"}
   faculty
 end
 

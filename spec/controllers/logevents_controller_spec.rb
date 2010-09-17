@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe LogeventsController do
 
-
   describe "GET 'list'" do
     it "should be successful" do
       Logevent.should_receive(:all).and_return([])

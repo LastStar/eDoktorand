@@ -53,7 +53,6 @@ module StudentsHelper
           links << confirm_interrupt_link(index) 
         elsif index.interrupted?
           links << end_interrupt_link(index)
->>>>>>> Specing and fixing index status methods and it's occurences in other part of code. Small code design changes
         end
       end
     end

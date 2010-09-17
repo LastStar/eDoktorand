@@ -1,3 +1,4 @@
+# encoding:utf-8
 # FIXME: with arel in rails 3
 class String
   def sql_and(chunk)
@@ -8,6 +9,9 @@ class String
     end
   end
 end
+
+require 'approvable'
+require 'terms_calculator'
 
 class Index < ActiveRecord::Base
   include Approvable
@@ -581,7 +585,7 @@ class Index < ActiveRecord::Base
       "Z"
     elsif interrupted?
       "P"
-    elsif continues?
+    elsif continue?
       "S"
     else
       "S"

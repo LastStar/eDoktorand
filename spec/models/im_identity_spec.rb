@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe ImIndex do
+describe ImIdentity do
   before(:each) do
-    @student = Factory(:student, :uic => 111222)
+    @student = Student.make(:uic => 111222)
     @identity = ImIdentity.create(:uic => @student.uic,
                                   :loginname => 'student',
                                   :status => 'N')
@@ -19,7 +19,7 @@ describe ImIndex do
       @student.user.roles.include?(@role).should be_true
     end
     it "updates existing student user" do
-      @student.user = Factory(:user, :person => @student)
+      @student.user = User.make(:person => @student)
       @identity.update_user
       @student.reload
       @student.user.login.should == 'student'

@@ -1,6 +1,6 @@
 class ImIdentity < ActiveRecord::Base
 
-  named_scope :to_process, :conditions => {:status => 'N'}
+  scope :to_process, :conditions => {:status => 'N'}
 
   # returns its student by uic
   def student

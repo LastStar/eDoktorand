@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Logevent do
   it "should be created when ImStudent created" do
-    @student = Factory(:student)
+    @student = Student.make
     @logevent = Logevent.last
     @logevent.should_not be_nil
     @logevent.table_key.should == "id=#{@student.im_student.id}"
@@ -14,8 +14,8 @@ describe Logevent do
     @logevent.table_name.should == "im_students"
   end
   it "should be created when ImIndex created" do
-    @student = Factory(:student)
-    @index = Factory(:index, :student => @student)
+    @student = Student.make
+    @index = Index.make(:student => @student)
     @logevent = Logevent.last
     @logevent.should_not be_nil
     @logevent.table_key.should == "id=#{@index.im_index.id}"
@@ -27,7 +27,7 @@ describe Logevent do
     @logevent.table_name.should == "im_indices"
   end
   it "should be created when ImStudent updated" do
-    @student = Factory(:student)
+    @student = Student.make
     @student.update_attribute(:lastname, 'Kosek')
     @logevent = Logevent.last
     @logevent.should_not be_nil
@@ -40,8 +40,8 @@ describe Logevent do
     @logevent.table_name.should == "im_students"
   end
   it "should be created when ImIndex created" do
-    @student = Factory(:student)
-    @index = Factory(:index, :student => @student)
+    @student = Student.make
+    @index = Index.make(:student => @student)
     @index.update_attribute(:payment_id, 2)
     @logevent = Logevent.last
     @logevent.should_not be_nil
