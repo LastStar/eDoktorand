@@ -24,7 +24,6 @@ class ExamsController < ApplicationController
     @exams = Exam.find_for(@user, :this_year => session[:this_year])
   end
     
-
   def show
     @exam = Exam.find(params[:id])
   end

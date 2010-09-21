@@ -32,7 +32,9 @@ class Exam < ActiveRecord::Base
       sub_ids = Subject.find_for(user).map {|s| s.id}
       sql = ["subject_id IN (?)", sub_ids]
     end
-    sql.first << ' and result = 1'
+    #NOTE we need all exams it seems 
+    #TODO vvv remove if we know vvv
+    # sql.first << ' and result = 1'
     if options[:this_year]
       sql.first << ' and passed_on > ?'
       sql << TermsCalculator.this_year_start
