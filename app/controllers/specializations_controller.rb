@@ -12,7 +12,7 @@ class SpecializationsController < ApplicationController
   end
 
   def list
-    @specializations = Specialization.accredited_for(@user)
+    @specializations = Specialization.find_for(@user)
   end
 
   def attestation
