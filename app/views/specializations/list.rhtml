@@ -17,7 +17,7 @@
     <td><%=h specialization.name %></td>
     <td><%=h specialization.name_english %></td>
     <td><%=h specialization.code %></td>
-    <td><%=h specialization.program.label %></td>
+    <td><%=h specialization.program.try(:label) %></td>
     <td> <%if specialization.accredited == 1 %>
              <%= t(:message_6, :scope => [:txt, :view, :specializations, :list, :rhtml])%>
 	 <%else%>
