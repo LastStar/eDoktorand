@@ -18,11 +18,11 @@ module SpecializationsHelper
   def show_result(result)
     case result
     when 0
-      return t(:message_2, :scope => [:txt, :helper, :specializations])
+      return t(:finish, :scope => [:txt, :helper, :specializations])
     when 1
-      return t(:message_3, :scope => [:txt, :helper, :specializations])
+      return t(:continue, :scope => [:txt, :helper, :specializations])
     when 2
-      return t(:message_4, :scope => [:txt, :helper, :specializations])
+      return t(:continue_with_reproof, :scope => [:txt, :helper, :specializations])
     end
   end
 
