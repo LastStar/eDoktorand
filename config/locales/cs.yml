@@ -333,6 +333,7 @@ cs:
         dean: děkan
         tutor: školitel
         leader: vedoucí katedry
+        nobody: nikdo
         continue: pokračování
         continue_with_reproof: pokračování s výtkou
         finish: ukončit

@@ -88,26 +88,6 @@ module ApplicationHelper
     end 
   end
   
-  # get index ids
-  def index_ids
-    Student.find(:all).map {|s| [s.display_name, s.index.id]}
-  end
-  
-  # get subject ids
-  def subject_ids
-    Subject.find(:all).map {|s| [s.label, s.id]}
-  end
-  
-  # get voluntary subjects for corridor 
-  def seminar_ids(specialization)
-    if specialization.is_a? Specialization
-      specialization = specialization.id
-    end
-    arr = []
-    arr.concat(Specialization.find(specialization).seminar_subjects.map {|s|
-      [truncate(s.subject.label, 40), s.subject_id]})
-  end
-  
   # returns approve word for statement result
   def approve_word(result)
     [ t(:message_6, :scope => [:txt, :helper, :application]), t(:message_7, :scope => [:txt, :helper, :application]), t(:message_8, :scope => [:txt, :helper, :application])][result]
@@ -136,7 +116,7 @@ module ApplicationHelper
     end
   end
   
-  # prints attestaion subject line wihch depends on finishing of the subject
+  # prints attestation subject line which depends on finishing of the subject
   def attestation_subject_line(plan_subject, attestation_term)
     content = ''
     if plan_subject.finished?
@@ -639,6 +619,15 @@ module ApplicationHelper
       link_to image_tag('cz.png', :style => 'margin: 5px 0px 7px 2px'), locale_url(:lang => 'cs')
     else
       link_to image_tag('gb.png'), locale_url(:lang => 'en')
+    end
+  end
+
+  # translates approver 
+  def translate_approver(approver)
+    if approver.nil?
+      I18n::t(:nobody, :scope => [:txt, :helper, :application])
+    else
+      I18n::t(approver.to_s.downcase, :scope => [:txt, :helper, :application])
     end
   end
 
