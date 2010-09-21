@@ -751,7 +751,7 @@ class Index < ActiveRecord::Base
   end
 
   def has_study_plan_and_actual_attestation?
-    study_plan && index.study_plan.attested_actual? && study_plan.attestation.dean_statement
+    study_plan && index.study_plan.attestation
   end
 
   def has_any_scholarship?

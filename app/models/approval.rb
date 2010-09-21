@@ -36,6 +36,7 @@ class Approval < ActiveRecord::Base
     end
   end
 
+  #TODO vvv get rid of these vvv
   def approved_by
     t(:message_0, :scope => [:txt, :model, last_approver.to_s.underscore])
   end
@@ -47,6 +48,17 @@ class Approval < ActiveRecord::Base
       Leader
     elsif tutor_statement
       Tutor
+    end
+  end
+
+  # returns last approvement
+  def last_statement
+    if dean_statement
+      dean_statement
+    elsif leader_statement
+      leader_statement
+    elsif tutor_statement
+      tutor_statement
     end
   end
 end
