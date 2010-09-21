@@ -43,8 +43,12 @@
         <%= index.study_plan.attestation.updated_on.strftime('%d. %m. %y') %>
       <% end %>
       </td>
+    </tr>
+      <% if (statement = index.study_plan.attestation.try(:last_statement)) && statement.try(:note) && !statement.note.empty? %>
+      <tr><td colspan='9'><%= "#{t(:note, :scope => [:txt, :view, :specializations, :attestation, :rhtml])}: #{statement.note}" %></td></tr>
+      <% else %>
+    <% end %>
   <% end %>
-  </tr>
 <%end%>
 </table>
   <% else %>
