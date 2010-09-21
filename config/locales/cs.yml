@@ -1297,6 +1297,7 @@ cs:
           rhtml: 
             student: Student
             date_of_last_change: Poslední změna
+            note: Poznámka
             message_8: Začátek studia
             message_9: Výsledek
             message_0: Přehled atestací

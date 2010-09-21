@@ -46,9 +46,9 @@ table#candidates_list {border-collapse: collapse;table-layout: auto;width: 100%;
 table#candidates_list tr.line {margin: 1px;border-bottom: 1px solid black;}
 table#candidates_list td {padding-left: 15px; padding-top: 5px}
 
-table#atestation_table {border-collapse: collapse;table-layout: auto;width: 100%;}
-table#atestation_table td {padding-left: 15px; padding-top: 5px}
-table#atestation_table tr {margin: 1px;border-bottom: 1px solid black;}
+table#attestation_table {border-collapse: collapse;table-layout: auto;width: 100%; font-size: 80%}
+table#attestation_table td {padding-left: 15px; padding-top: 5px}
+table#attestation_table tr th {border: none; border-bottom: 1px solid black;margin: 1px}
 
 table#tutors_table {border-collapse: collapse;table-layout: auto;width: 100%;}
 table#tutors_table td {padding-left: .5ex; font-size: 9pt}
