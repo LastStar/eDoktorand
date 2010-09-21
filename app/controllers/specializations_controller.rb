@@ -19,7 +19,6 @@ class SpecializationsController < ApplicationController
     @indices = Index.find_for(@user, :unfinished => true, :not_interrupted => true,
                               :conditions => ["specialization_id = ?", params[:id]],
                               :order => "people.lastname")
-
   end
 
   def subjects

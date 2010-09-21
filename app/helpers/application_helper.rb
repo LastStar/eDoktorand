@@ -622,6 +622,15 @@ module ApplicationHelper
     end
   end
 
+  # translates approver 
+  def translate_approver(approver)
+    if approver.nil?
+      I18n::t(:nobody, :scope => [:txt, :helper, :application])
+    else
+      I18n::t(approver.to_s.downcase, :scope => [:txt, :helper, :application])
+    end
+  end
+
   private
   def loader_image(field)
     "Element.replace('#{field}', '#{image_tag('loader.gif', :size => '12x12')}')"
