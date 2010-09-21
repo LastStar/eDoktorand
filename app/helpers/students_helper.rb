@@ -130,7 +130,7 @@ module StudentsHelper
                    :url => {:action => 'time_form',
                            :controller => 'students',
                            :form_action => 'end',
-                           :form_controller => 'interrupts',
+                           :form_controller => 'study_interrupts',
                            :id => index,
                            :date => index.interrupt.end_on},
                    :update => "index_form_#{index.id}")
