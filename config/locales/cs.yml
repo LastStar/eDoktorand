@@ -322,9 +322,10 @@ cs:
       specializations: 
         message_0: Opravdu chcete předmět odebrat?
         message_1: Přidat předmět
-        message_2: neschváleno
-        message_3: schváleno
-        message_4: schváleno s výtkou
+        continue: pokračování
+        continue_with_reproof: pokračování s výtkou
+        finish: ukončit
+        interrupt: přerušeno
       account: {}
 
       titles: {}
