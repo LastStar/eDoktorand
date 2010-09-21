@@ -11,8 +11,8 @@
     <th><%= t(:message_6, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></th>
     <th><%= t(:message_7, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
     <th><%= t(:message_8, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
-    <th><%= t(:message_9, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
     <th><%= t(:message_10, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
+    <th><%= t(:message_9, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
   </tr>
   
 <% for index in @indices %>
@@ -25,14 +25,15 @@
       <td><%= index.study_plan.attestation_subjects_ratio %></td>
       <td><%= index.enrolled_on.strftime('%d. %m. %Y') %></td>
       <td>
-      <% if index.has_study_plan_and_actual_attestation? %>
-        <%= show_result(index.study_plan.attestation.dean_statement.result) %></td>
-      <% end %>
-      <td>
       <% if index.study_plan.attested_actual? %>
         <%= t(:message_11, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %>
       <% else %>
-        <%= translate_approver index.study_plan.attestation.last_approver %>
+        <%= translate_approver index.study_plan.attestation.try(:last_approver) %>
+      <% end %>
+      </td>
+      <td>
+      <% if index.has_study_plan_and_actual_attestation? %>
+        <%= show_result(index.study_plan.attestation.dean_statement.result) %>
       <% end %>
       </td>
   <% end %>
