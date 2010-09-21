@@ -127,19 +127,6 @@ module StudentsHelper
             :id => index})
   end
 
-  # prints end interupt link
-  def end_interupt_link(index)
-    link_to(t(:message_8, :scope => [:txt, :helper, :students]),
-           :url => {:action => 'time_form',
-                   :controller => 'students',
-                   :form_action => 'end',
-                   :form_controller => 'study_interupts',
-                   :id => index,
-                   :date => index.interrupt.start_on},
-           :update => "index_form_#{index.id}",
-           :remote => true)
-  end
-
   # prints link to create new study plan
   def create_link(index)
     link_to(t(:message_9, :scope => [:txt, :helper, :students]),

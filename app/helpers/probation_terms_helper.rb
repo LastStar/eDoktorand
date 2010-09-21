@@ -83,19 +83,4 @@ module ProbationTermsHelper
                     &proc)
 
   end
-
-  def save_details_form(&proc)
-    form_remote_tag(:url => {:action => 'save_probation_term_details'},
-                    :loading => "$('submit-button').value = '%s'" % t(:message_16, :scope => [:txt, :helper, :terms]),
-                    :complete => evaluate_remote_response,
-                    &proc)
-
-  end
-
-  def term_date_select
-    date_select :probation_term, :date,
-                :start_year => 2005,
-                :order => [:day, :month, :year],
-                :use_month_numbers => true
-  end
 end

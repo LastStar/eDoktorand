@@ -182,10 +182,6 @@ module StudyPlansHelper
       :confirm => t(:message_15, :scope => [:txt, :helper, :plans])) 
   end
 
-#  def final_exam_link(index)
-#    link_to(t(:message_16, :scope => [:txt, :helper, :plans]), :action => 'final_application')
-#  end
-
   def render_requisite
     render(:partial => "shared/subjects", 
            :locals => {:subjects => session[:requisite_subjects],
@@ -202,12 +198,5 @@ module StudyPlansHelper
                                        :controller => 'study_plans',
                                        :id => student})
     end
-  end
-
-  def return_to_link
-    link_to_remote("<<< " + t(:message_20, :scope => [:txt, :helper, :plans]), 
-                    {:url => {:action => "edit_create", :type => @return_to}, 
-                    :complete => evaluate_remote_response}, 
-                    {:class => 'details_link'})
   end
 end

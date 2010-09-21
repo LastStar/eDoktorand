@@ -46,14 +46,6 @@ module CandidatesHelper
     end
   end
 
-  def switch_button_all(message)
-    link_to_function(message, "Element.show('list_all'); Element.hide('list')")
-  end
-
-  def switch_button(message)
-    link_to_function(message, "Element.show('list'); Element.hide('list_all')")
-  end
-
   # prints current filter settings
   def view_filter
    if !params[:filter] or params[:filter] == 'all'
@@ -113,21 +105,6 @@ module CandidatesHelper
   # returns admit ids array
   def admit_ids
     [[t(:message_36, :scope => [:txt, :helper, :candidates]), 1], [t(:message_37, :scope => [:txt, :helper, :candidates]), 2], [t(:message_38, :scope => [:txt, :helper, :candidates]), 0]]
-  end
-
-  # return pass ids array  
-  def pass_ids
-    [[t(:message_39, :scope => [:txt, :helper, :candidates]), 0], [t(:message_40, :scope => [:txt, :helper, :candidates]), 1]]
-  end
-
-  # returns pass word
-  def pass_word(id)
-    [t(:message_41, :scope => [:txt, :helper, :candidates]), t(:message_42, :scope => [:txt, :helper, :candidates])][id]
-  end
-
-  # returns admit word
-  def admit_word(id)      
-    [t(:message_43, :scope => [:txt, :helper, :candidates]), t(:message_44, :scope => [:txt, :helper, :candidates])][id]
   end
 
   # returns date select defaulting to start of this school year

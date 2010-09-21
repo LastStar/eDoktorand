@@ -1,4 +1,4 @@
-<H4 class='displayname'><%=@candidate.display_name%></H4>
+<h4 class='displayname'><%=@candidate.display_name%></h4>
 <% form_tag :action => 'confirm_admit', :id => @candidate do %>	
 	<label for="admit"><%= t(:message_0, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
   <%= content_tag('select', options_for_select(admit_ids), 

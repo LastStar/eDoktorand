@@ -53,15 +53,6 @@ module ApplicationHelper
     Study.find(:all).map {|s| [s.name, s.id]}
   end
   
-  # get specialization ids
-  def specialization_ids(faculty)
-    if faculty.is_a?(Faculty)
-      faculty = faculty.id
-    end
-    [['---', '0']].concat(Specialization.find_all_by_faculty_id(faculty).map {|s|
-      [truncate(s.name, 40), s.id]})
-  end
-  
   # get title_before ids
   def title_before_ids
     arr = [['---', '0']]
@@ -147,15 +138,6 @@ module ApplicationHelper
     if @user.has_one_of_roles?(['faculty_secretary', 'student']) && student.birth_number
       content_tag('li', 
               long_info_helper(student.birth_number) + t(:message_13, :scope => [:txt, :helper, :application]) + ' :',
-                 :class => 'nonprintable')
-    end
-  end
-
-  # prints birth number if user has faculty secretary role 
-  def birth_on_line(student)
-    if @user.has_one_of_roles?(['faculty_secretary', 'student']) && student.birth_on
-      content_tag('li', 
-              long_info_helper(student.birth_on) + t(:message_14, :scope => [:txt, :helper, :application]) + ':',
                  :class => 'nonprintable')
     end
   end
@@ -370,25 +352,6 @@ module ApplicationHelper
   # prints div tag
   def div_tag(content, options = {})
     content_tag('div', content, options)
-  end
-
-  # prints span tag
-  def span_tag(content, options = {})
-    content_tag('span', content, options)
-  end
-
-  def date_info_div(content)
-    div_tag(content, {:class => 'dateinfo'})
-  end
-
-  # prints div with smallerinfo class with content inside
-  def menu_div(content)
-    div_tag(content, {:class => 'menu'})
-  end
-
-  # prints div with smallerinfo class with content inside
-  def menu_tr(content)
-    content_tag('tr', content,{:class => 'menu'})
   end
 
   # prints div with smallinfo class with content inside
