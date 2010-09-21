@@ -13,6 +13,7 @@ gem "ruby-debug19"
 gem "state_machine"
 gem 'super_exception_notifier', :require => "exception_notification"
 gem 'soap4r'
+gem 'thin'
 
 group :test do
   gem "test-unit", '2.0.7'
