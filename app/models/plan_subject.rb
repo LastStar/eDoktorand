@@ -122,9 +122,17 @@ class PlanSubject < ActiveRecord::Base
         i += 1
         ps
       end
-    when :seminar, :language
+    when :seminar
       subjects = []
       2.times do |i|
+        (ps = PlanSubject.new).id = i + 1
+        subjects << ps
+      end
+      subjects
+    when :language
+      subjects = []
+      n = student.faculty == Faculty.find(14) ? 1 : 2
+      n.times do |i|
         (ps = PlanSubject.new).id = i + 1
         subjects << ps
       end

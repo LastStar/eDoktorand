@@ -392,7 +392,8 @@ class StudyPlansController < ApplicationController
       last_semester(ps['finishing_on'])
       session[:language_subjects] << plan_subject
     end
-    if session[:language_subjects].map {|ps| ps.subject_id}.uniq.size != 2
+    n = @student.faculty == Faculty.find(14) ? 1 : 2
+    if session[:language_subjects].map {|ps| ps.subject_id}.uniq.size != n
       flash.now[:error] = t(:message_8, :scope => [:txt, :controller, :plans])
       false
     else
