@@ -46,6 +46,8 @@ class ScholarshipCalculator
     elsif index.index.study_plan
       conditions = ["study_plan_id = ? AND finished_on IS NOT NULL", index.study_plan.id]
       ps = PlanSubject.find(:all, :conditions => conditions)
+      #FIXME move stipendia flag to subject
+      ps.delete_if {|s| s.subject_id == 24972 || s.subject_id == 24973}
       # Ugly hack. God bless us. FLE - credit
       if index.faculty.id == 3 && ps.find {|s| s.subject_id == 9003}
         ps.delete_if {|s| s.subject_id == 9003}
