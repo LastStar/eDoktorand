@@ -86,7 +86,7 @@ class Index < ActiveRecord::Base
 
   # return last interrupt
   def interrupt
-    interrupts.first
+    @interrupt ||= interrupts.sort{|x, y| x.created_on <=> y.created_on}.last
   end
 
   # returns describe_error for bad index
