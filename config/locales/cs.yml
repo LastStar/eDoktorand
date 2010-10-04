@@ -1999,7 +1999,7 @@ cs:
             message_6: Členové komise
         claim: 
           rhtml: 
-            message_0: 
+            message_0: Přihláška k obhajobě
             message_1: soubor s autoreferátem
             message_2: soubor s disertační prácí
             message_3: odeslat
