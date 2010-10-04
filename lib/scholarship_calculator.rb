@@ -21,9 +21,8 @@ class ScholarshipCalculator
   # calculates scholarship for student 
   def self.for(index)
     index = Index.find(index) unless index.is_a?(Index)
-    if index.year > 3
-      0
-    elsif index.payment_id == 3
+    #TODO return 0 for 3rd year
+    if index.payment_id == 3
       9500
     else
       case index.faculty.id
