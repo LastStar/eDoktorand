@@ -79,7 +79,7 @@ class UicGetter
       end
       begin
         uic = extract_uic(service_response)
-        @@logger.debug "Service and parsing successful. Updating student"
+        @@logger.debug "Service and parsing successful."
         return uic
       rescue Exception => e
         @@logger.error "Error parsing response: " + e

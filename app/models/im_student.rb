@@ -31,10 +31,11 @@ class ImStudent < ActiveRecord::Base
                     :table_name => self.class.table_name)
   end
 
-  # gets attributtes from student relation
+  # gets attributes from student relation
   def get_student_attributes
     student.reload
     self.uic = student.uic
+    self.sident = student.sident
     self.lastname = student.lastname
     self.firstname = student.firstname
     self.birthname = student.birthname

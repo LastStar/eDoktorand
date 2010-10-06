@@ -516,6 +516,7 @@ class Index < ActiveRecord::Base
     else
       update_attribute('study_id', 1)
     end
+    update_attribute(:study_form_changed_on, date)
   end
 
   # finishes study
