@@ -1,4 +1,4 @@
-require 'spec_helper'
+require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe ImStudent do
   context "creating" do
@@ -18,6 +18,7 @@ describe ImStudent do
       # TODO redone with blueprint after merging with rails3
       @index = Factory.build(:index)
       @student = Student.create(:uic => 1,
+                                :sident => 2,
                                 :firstname => 'Josef',
                                 :lastname => 'Nosek',
                                 :birthname => 'Kosek',
@@ -48,6 +49,7 @@ describe ImStudent do
     it "should get students attributes" do
       @im_student.save
       @im_student.uic.should == 1
+      @im_student.sident.should == 2
       @im_student.lastname.should == 'Nosek'
       @im_student.firstname.should == 'Josef'
       @im_student.birthname.should == 'Kosek'
@@ -73,6 +75,7 @@ describe ImStudent do
       @im_student.contact_city.should == 'Praha 9'
       @im_student.contact_zip.should == '19000'
       @im_student.marital_status.should == 'single'
+      @im_student
     end
     it "should get attributes from students index" do
       @im_student.save
