@@ -1,3 +1,4 @@
+Timecop.freeze("2010-01-01")
 Factory.define :user do |user|
   user.login 'anonymous'
   user.association :person, :factory => :person
@@ -26,6 +27,7 @@ Factory.define :index do |index|
   index.account_number '2303308001'
   index.account_number_prefix '35'
   index.account_bank_number '5500'
+  index.study_form_changed_on '2010-01-02'
 end
 
 Factory.define :student do |s|

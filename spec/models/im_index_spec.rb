@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe ImIndex do
   before(:each) do
-    Timecop.freeze('2010/01/01')
+    Timecop.freeze('2010-01-01')
   end
 
   it "should have index before creating" do
@@ -42,7 +42,8 @@ describe ImIndex do
     im_index.financing_type.should == 'studium ve standardní době studia'
     im_index.education_language.should == 'český jazyk'
     im_index.education_language_code.should == 'CZ'
-    im_index.education_place == 'Praha'
+    im_index.education_place.should == 'Praha'
+    im_index.study_form_changed_on.should == Date.parse('2010-01-02')
   end
   it "should get other study statuses" do
     pending
