@@ -1,4 +1,3 @@
-Timecop.freeze("2010-01-01")
 Factory.define :user do |user|
   user.login 'anonymous'
   user.association :person, :factory => :person
@@ -18,7 +17,7 @@ Factory.define :person do |p|
 end
 
 Factory.define :index do |index|
-  index.enrolled_on TermsCalculator.this_year_start
+  index.enrolled_on '2009-09-30'
   index.association :study
   index.association :tutor
   index.association :specialization
