@@ -51,6 +51,11 @@ describe Index do
       @index.payment_id = 2
       @index.payment_type.should == 'cizinec, hrazeno ze zvláštní dotace dle evidence Domu zahr. služeb MŠMT'
     end
+
+    it "returns payment_code 1 when payment_id set to nil" do
+      @index.payment_id = nil
+      @index.payment_code.should == 1
+    end
   end
 
   context "study duration" do
