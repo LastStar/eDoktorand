@@ -49,7 +49,6 @@ describe ImStudent do
     it "should get students attributes" do
       @im_student.save
       @im_student.uic.should == 1
-      @im_student.sident.should == 2
       @im_student.lastname.should == 'Nosek'
       @im_student.firstname.should == 'Josef'
       @im_student.birthname.should == 'Kosek'
