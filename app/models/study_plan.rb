@@ -93,8 +93,8 @@ class StudyPlan < ActiveRecord::Base
 
   # return plan subjects for attestation
   def attestation_subjects
-    beg_sem = semester - 2
-    end_sem = semester
+    beg_sem = semester - 3
+    end_sem = semester - 1
     return @attestation_subjects ||= plan_subjects.select do |ps|
       (beg_sem..end_sem).include? ps.finishing_on
     end
