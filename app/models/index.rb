@@ -496,7 +496,7 @@ class Index < ActiveRecord::Base
 
   # TODO redone some better way
   def payment_code
-    payment_id == 1 ? 1 : 7
+    (payment_id == 1 || payment_id.nil?) ? 1 : 7
   end
 
   def payment_type
