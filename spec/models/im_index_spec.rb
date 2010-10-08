@@ -15,7 +15,7 @@ describe ImIndex do
     im_index.index.should == index
   end
   it "should copy attributes from index" do
-    index = Factory(:index, :student => Student.new(:uic => 1, :lastname => "Josef", :firstname => "Nosek"))
+    index = Factory(:index, :student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"))
     im_index = ImIndex.create(:index => index)
     im_index.student_uic.should == 1
     im_index.department_name.should == "department"
@@ -44,6 +44,7 @@ describe ImIndex do
     im_index.education_language_code.should == 'CZ'
     im_index.education_place.should == 'Praha'
     im_index.study_form_changed_on.should == Date.parse('2010-01-02')
+    im_index.sident.should == 2
   end
   it "should get other study statuses" do
     pending
