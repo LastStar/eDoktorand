@@ -2,6 +2,7 @@ page.hide "approve_form_#{@document.id}"
 replace ||= 'approval'
 @links = student_action_links(@document.index)
 approval ||= @document.approval
+title ||= I18n::t(:message_15, :scope => [:txt, :view, :shared, :_study_detail, :rhtml])
 page.replace_html replace, print_statements(approval)
 page.insert_html :top, replace, "<li class='noborder'><h5>#{title}</h5></li>"
 page.replace "index_line_#{@document.index.id}", :partial => 'students/index_line', :object => @document.index
