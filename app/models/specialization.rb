@@ -83,4 +83,14 @@ class Specialization < ActiveRecord::Base
   def study_length
     read_attribute(:study_length) || 3
   end
+
+  # returns last semester when is possible to pass exams
+  def last_possible_exam_semester
+    study_length * 2 - 2
+  end
+
+  # returns last semester when is possible to pass defense
+  def last_possible_defense_semester
+    study_length * 2
+  end
 end
