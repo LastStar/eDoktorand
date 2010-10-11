@@ -17,13 +17,20 @@ class GetSubjectService < Handsoap::Service
   
   def get_subjects
     soap_action = 'urn:getSubjects'
-    response = invoke('tns:getSubjects', soap_action) do |message|
-      message
-      #raise "TODO"
-    end
+    response = invoke('tns:getSubjects', soap_action)
+    response.xpath("//subject").map {|node| parse_subject(node)}
   end
   
   private
   # helpers
-  # TODO
+
+  # corrects subject from node
+  def parse_subject(node)
+    {
+      :code => code = node.xpath("code").to_s.strip,
+      :label => node.xpath("label").to_s.strip,
+      :label_en => node.xpath("labelEn").to_s.try(:strip),
+      :department_short_name => node.xpath("depShortcut").to_s
+    }
+  end
 end
