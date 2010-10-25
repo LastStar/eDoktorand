@@ -1,19 +1,5 @@
 <div class='links'>
   <%= filter_links(@filters) %> <%= link_to(t(:message_3, :scope => [:txt, :view, :students, :_list, :rhtml]),"students/mail_list")%>
-  <% if @user.has_one_of_roles?(['faculty_secretary', 'dean']) %>
-  <script type="text/javascript">
-    $('selected_only').observe('change', function(event){
-      if ($('selected_only').checked) {
-        $$('.student-line').each(function(e) {
-          if(!e.classNames().include('once-selected')) {
-            e.hide();
-          }});
-      } else {
-        $$('.student-line').each(function(e) {e.show();});
-      }});
-
-  </script>
-  <% end %>
 </div>
 <% if @indices && !@indices.empty? %>
   <h1><%= t(:message_0, :scope => [:txt, :view, :students, :_list, :rhtml]) + "(#{@indices.size})" %></h1>
