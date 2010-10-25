@@ -90,7 +90,7 @@ module ApplicationHelper
   
   # returns approve word for statement result
   def approve_word(result)
-    [ t(:message_6, :scope => [:txt, :helper, :application]), t(:message_7, :scope => [:txt, :helper, :application]), t(:message_8, :scope => [:txt, :helper, :application])][result]
+    [ t(:message_6, :scope => [:txt, :helper, :application]), t(:message_7, :scope => [:txt, :helper, :application]), t(:message_8, :scope => [:txt, :helper, :application]), t(:interrupt, :scope => [:txt, :helper, :application])][result]
   end
   
   # prints approve form
