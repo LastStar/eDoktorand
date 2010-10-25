@@ -108,6 +108,7 @@ class PlanSubject < ActiveRecord::Base
     end
   end
 
+  #FIXME should be moved to corresponding classes
   def self.create_for(student, type)
     case type
     when :requisite
