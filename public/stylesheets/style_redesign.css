@@ -23,6 +23,13 @@ body {
 	clear:right;
 }
 
+.right-visible
+{
+	float: right;
+	text-align: right;
+	clear:right;
+}
+
 .left
 {
 	float: left;
