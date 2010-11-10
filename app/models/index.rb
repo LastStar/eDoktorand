@@ -326,7 +326,7 @@ class Index < ActiveRecord::Base
   def self.find_tutored_by(user, options={})
     #commented is old style of searching:
     #options[:conditions] = [TUTOR_COND.clone, user.person.id]
-    options[:order] = 'people.lastname'
+    options[:order] = 'indices.study_id, people.lastname'
     options[:include] ||= []
     options[:include] << [:student]
     #find_for(user, options) 
@@ -346,7 +346,7 @@ class Index < ActiveRecord::Base
     SQL
     options[:conditions] = [sql, 
       Attestation.actual_for_faculty(user.person.faculty)]
-    options[:order] = 'people.lastname'
+    options[:order] = 'indices.study_id, people.lastname'
     options[:only_tutor] = true
     options[:unfinished] = true
     result = find_for(user, options)
@@ -430,7 +430,7 @@ class Index < ActiveRecord::Base
 
   def self.find_studying_for(user, options = {})
     opts = {:unfinished => true, :not_interrupted => true} 
-    opts[:order] = options[:order] || 'people.lastname'
+    opts[:order] = options[:order] || 'indices.study_id, people.lastname'
     return find_for(user, opts)
   end
 
