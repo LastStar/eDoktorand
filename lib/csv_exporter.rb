@@ -528,10 +528,9 @@ class CSVExporter
       end
     end
 
-    def exams_by_tutors(faculty, exam_date_from, exam_date_to)
-      @@mylog.info 'Exporting exams list by tutor from %s' % faculty.name
+    def exams_by_tutors(departments, exam_date_from, exam_date_to)
+      Dean.columns
       outfile = File.open("exams_tutors.csv", 'wb')
-      departments = Department.find_all_by_faculty_id(faculty.id)
       @@mylog.info 'Departments %s' % departments
       CSV::Writer.generate(outfile, ';') do |csv|
         examinators = Examinator.find(:all,
@@ -548,6 +547,30 @@ class CSVExporter
             exams = Exam.count(:conditions => ["passed_on > ? and passed_on < ? and (first_examinator_id = ? or second_examinator_id = ? or third_examinator_id = ? or fourth_examinator_id = ? )",
                                              exam_date_from, exam_date_to, examinator.id, examinator.id, examinator.id, examinator.id])          
             csv << [examinator.display_name, exams] if exams > 0
+          end
+        end
+        outfile.close
+      end
+    end
+
+    def tutored_by_tutors(departments, year)
+      Dean.columns
+      outfile = File.open("tutored_tutors.csv", 'wb')
+      @@mylog.info 'Departments %s' % departments
+      CSV::Writer.generate(outfile, ';') do |csv|
+        tutors = Tutor.find(:all, :conditions => ["employments.unit_id in (?)",
+                                              departments],
+                            :include => :department_employment,
+                            :order => "employments.unit_id, people.lastname")
+        departments = tutors.group_by {|t| t.department}
+        departments.each do |department|
+          csv << [department.first.name]
+          @@mylog.info 'Department %s' % department.first.name
+          department.last.each do |tutor|
+            @@mylog.info 'tutor %s' % tutor.display_name
+            students = Student.count(:conditions => ["indices.tutor_id = ? and indices.enrolled_on < ? and (finished_on > ? or finished_on is null)",
+                                             tutor.id, year, year], :include => :index)
+            csv << [tutor.display_name, students] if students > 1
           end
         end
         outfile.close
