@@ -45,4 +45,9 @@ class Attestation < Approval
   def document
     study_plan
   end
+
+  # returns leader when there is not tutor statement
+  def tutor_or_leader_statement
+    tutor_statement || leader_statement
+  end
 end

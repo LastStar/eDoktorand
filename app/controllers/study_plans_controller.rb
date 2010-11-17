@@ -6,6 +6,12 @@ class StudyPlansController < ApplicationController
   before_filter :login_required, :prepare_user, :prepare_student
   CARD_SERVICE = 'http://193.84.33.16:80/axis2/services/GetCardStateService/getCardStateByUIC?uic=%i'
 
+  # prints annual report for student
+  def annual_report
+    @study_plan = StudyPlan.find(params[:id])
+    @attestation_detail = @study_plan.next_attestation_detail_or_new
+  end
+
   # shows result of student requests
   def requests
     client = SOAP::NetHttpClient.new

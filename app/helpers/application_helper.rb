@@ -90,7 +90,9 @@ module ApplicationHelper
   
   # returns approve word for statement result
   def approve_word(result)
-    [ t(:message_6, :scope => [:txt, :helper, :application]), t(:message_7, :scope => [:txt, :helper, :application]), t(:message_8, :scope => [:txt, :helper, :application]), t(:interrupt, :scope => [:txt, :helper, :application])][result]
+    if result
+      [ t(:message_6, :scope => [:txt, :helper, :application]), t(:message_7, :scope => [:txt, :helper, :application]), t(:message_8, :scope => [:txt, :helper, :application]), t(:interrupt, :scope => [:txt, :helper, :application])][result]
+    end
   end
   
   # prints approve form
@@ -330,6 +332,13 @@ module ApplicationHelper
     else
       attestation_links(study_plan)
     end
+  end
+
+  # prints link to annual report
+  def annual_report(study_plan)
+    link_to(t(:annual_report, :scope => [:txt, :helper, :application]),
+            {:action => :annual_report, :controller => :study_plans,
+           :id => study_plan.id}, :target => '_blank' )
   end
   
   def detail_links(user, index)
