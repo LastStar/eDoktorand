@@ -74,7 +74,8 @@
     <ul id='attestation' class='bordered half right-visible'>
       <li class="noborder"><h5><%= t(:message_12, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
       <%= print_statements(study_plan.attestation) %>
-      <%= attestation_detail(study_plan) %>
+      <li class="noborder"><%= attestation_detail(study_plan) %></li>
+      <li class="noborder"><%= annual_report(study_plan) %></li>
     </ul>
   <% end %>
   

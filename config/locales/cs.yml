@@ -339,6 +339,7 @@ cs:
         continue_with_reproof: pokračování s výtkou
         finish: ukončit
         interrupt: přerušeno
+        annual_report: výroční atestace
         message_70: obhajoby
         message_69: žádosti
         message_68: SDZ

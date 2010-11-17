@@ -1,0 +1,118 @@
+<% index = @study_plan.index %>
+<h2 style='text-align: center'>Výroční atestace za rok 2010</h2>
+<br/> 
+<br/> 
+<br/> 
+<br/> 
+
+<b>Česká zemědělská univerzita v Praze - <%= index.faculty.name %></b>
+<table class='information'>
+  <tr>
+    <th>Katedra:</th>
+    <td><%= index.department.name %></td>
+  </tr>
+
+  <tr>
+    <th>Jméno:</th>
+    <td><%= index.student.display_name %></td>
+  </tr>
+
+  <tr>
+    <th>Datum nástupu:</th>
+    <td><%= index.enrolled_on.strftime("%d. %m. %y") %></td>
+  </tr>
+
+  <tr>
+    <th>Studijní obor:</th>
+    <td><%= index.specialization.name %></td>
+  </tr>
+
+  <tr>
+    <th>Forma studia:</th>
+    <td><%= index.study.name %></td>
+  </tr>
+
+  <tr>
+    <th>Jméno školitele:</th>
+    <td><%= index.tutor.display_name %></td>
+  </tr>
+
+  <tr>
+    <th>Ročník:</th>
+    <td><%= index.year %></td>
+  </tr>
+
+</table>
+
+<h2 style='text-align: center'>I. Zkoušky v DSP</h2>
+
+<table width='100%' class='information'>
+  <tr>
+    <td/>
+    <th style='text-align: center'>Semestr splnění<br/>podle plánu</th>
+    <th style='text-align: center'>Datum<br/>vykonání ZK</th>
+    <th style='text-align: center'>Výsledek ZK</th>
+  </tr>
+
+  <% @study_plan.plan_subjects.each do |plan_subject| -%>
+  <tr>
+    <td><%= plan_subject.subject.label %></td>
+    <td style='text-align: right'><%= plan_subject.finishing_on %>.</td>
+    <% if plan_subject.finished? %>
+    <td style='text-align: right'><%= plan_subject.finished_on.strftime("%d.&nbsp;%m.&nbsp;%Y") %></td>
+    <% else %>
+      <td/>
+    <% end %>
+    <td style='text-align: center'>prospěl</td>
+  </tr>
+  <% end %>
+
+</table>
+
+<br/> 
+
+<p>Státní doktorská zkouška: <%= index.disert_theme.finishing_to %>. semestr</p>
+
+<p>Dodatečné informace k atestaci:</p>
+<p><%= AttestationDetail.find_all_by_study_plan_id(@study_plan.id).map(&:detail).join('<br/>') %></p>
+
+<h2 style='page-break-before: always;text-align: center'>II. Disertační práce</h2>
+<p>Název práce: <%= index.disert_theme.title %></p>
+
+<p>Stav rozpracování (uvést splnění úkolů uložených studijním plánem, v případě nedodržení uvést příčiny a opatření učiněná k nápravě):</p>
+<p><%= @study_plan.attestation.tutor_or_leader_statement.try(:note) %></p>
+
+<h2 style='text-align: center'>III. Celkové hodnocení studenta DSP</h2>
+
+<p>Zhodnocení školitelem: <%= approve_word(@study_plan.attestation.tutor_or_leader_statement.try(:result)) %></p>
+<br/>
+<p>Závěr katedry: <%= approve_word(@study_plan.attestation.leader_statement.try(:result)) %></p>
+<br/>
+<table width='80%'>
+  <tr>
+    <td width='50%'>...................</td>
+    <td width='50%'>...................</td>
+  </tr>
+  <tr>
+    <td>podpis školitele</td>
+    <td>podpis vedoucího katedry</td>
+  </tr>
+</table>
+
+<br/>
+<p>Návrh oborové rady: </p>
+
+<br/>
+<p>Vyjádření děkana fakulty: <%= approve_word(@study_plan.attestation.dean_statement.try(:result)) %></p>
+<br/>
+<table width='80%'>
+  <tr>
+    <td width='50%'>V praze dne: <%= Time.now.strftime('%d. %m. %Y') %></td>
+    <td width='50%'>...................</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>podpis děkana fakulty</td>
+  </tr>
+</table>
+<p></p>

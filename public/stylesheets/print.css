@@ -20,6 +20,9 @@ h5 {
 h1 {
   display: none;
 }
+h2 {
+  margin: 3em 0 1ex 0;
+}
 p {
   text-align: justify;
 }
@@ -74,6 +77,9 @@ table#scholarship_table th {text-align: left; padding-left: .5ex; font-size: 9pt
 table#scholarship_table td {padding-left: .5ex; font-size: 9pt}
 table#scholarship_table tr {margin: 1px;border-bottom: 1px solid #ddc;}
 table#scholarship_table tr.extra_scholarships {margin: 1px;border-bottom: 1px solid #ddc; background-color: #EEEEEE}
+
+table.information th{border: none; text-align: left;}
+table.information td{padding: 0 1ex}
 
 
 #student_detail li { 
