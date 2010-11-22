@@ -277,6 +277,7 @@ class Index < ActiveRecord::Base
         conditions  = ['NULL IS NULL']
       end
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary'])
+      options[:order] = 'people.lastname'
       conditions = [DEPARTMENTS_COND.clone, user.person.faculty.departments]
     elsif user.has_one_of_roles?(['leader', 'department_secretary'])
       conditions = [DEPARTMENTS_COND.clone, user.person.department.id]
@@ -346,11 +347,11 @@ class Index < ActiveRecord::Base
     SQL
     options[:conditions] = [sql, 
       Attestation.actual_for_faculty(user.person.faculty)]
-    options[:order] = 'indices.study_id, people.lastname'
     options[:only_tutor] = true
     options[:unfinished] = true
     result = find_for(user, options)
     if user.has_role?('faculty_secretary')
+      options[:order] = 'people.lastname'
       result.select do |i|
         i.waits_for_scholarship_confirmation? ||
         i.interrupt_waits_for_confirmation? ||
@@ -358,6 +359,7 @@ class Index < ActiveRecord::Base
         i.claimed_final_application?
       end
     elsif user.has_one_of_roles?(['tutor', 'leader', 'dean'])
+      options[:order] = 'indices.study_id, people.lastname'
       result.select {|i| i.waits_for_statement?(user)} 
     end
   end
