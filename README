@@ -2,4 +2,5 @@
 
 System for administering postgradual study on CUA
 
-DB is downloaded by ./script/load_production_db
+DB is downloaded by ./script/load_production_db. You need rights for ssh to
+edoktorand.czu.cz.
