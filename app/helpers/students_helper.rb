@@ -203,7 +203,11 @@ module StudentsHelper
           tags << "<span title='" + t(:message_20, :scope => [:txt, :helper, :students]) + "'>!</span>"
         end
         if index.waits_for_scholarship_confirmation?
-          tags << "<span title='" + t(:message_21, :scope => [:txt, :helper, :students]) + "'>us</span>"
+          tags << "<span title='" + t(:sholarship_claimed, :scope => [:txt, :helper, :students]) + "'>us</span>"
+        elsif index.scholarship_approved?
+          tags << "<span title='" + t(:sholarship_approved, :scope => [:txt, :helper, :students]) + "'>uss</span>"
+        elsif index.scholarship_canceled?
+          tags << "<span title='" + t(:sholarship_canceled, :scope => [:txt, :helper, :students]) + "'>usn</span>"
         end
         #TODO create method for SDZ and fix this
         unless index.status == t(:message_22, :scope => [:txt, :helper, :students]) || index.final_exam_passed?

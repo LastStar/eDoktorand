@@ -260,6 +260,9 @@ cs:
       parameters: {}
 
       students: 
+        sholarship_claimed: zažádáno o ubytovací stipendium
+        sholarship_approved: schváleno ubytovací stipendium
+        sholarship_canceled: neschváleno ubytovací stipendium
         message_51: zpět
         message_40: uzavřeno
         message_29: studijní plán
@@ -278,7 +281,6 @@ cs:
         message_54: pracuji...
         message_43: prezenční
         message_32: SP schválen školitelem
-        message_21: ubytovací stipendium
         message_10: termín SDZ
         message_1: akce
         message_55: studijní plán
