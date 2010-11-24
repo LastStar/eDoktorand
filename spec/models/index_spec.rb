@@ -146,5 +146,16 @@ describe Index do
       @index.im_index.financing_type_code.should == 7
     end
   end
+
+  describe "changing study form" do
+    it "has method for changing study form" do
+      index = Factory.build(:index, :student => Factory(:student))
+      index.switch_study!.should be_true
+    end
+    it "has method for changing study form" do
+      index = Factory.build(:index, :student => Factory(:student))
+      index.switched_study?.should be_true
+    end
+  end
 end
 

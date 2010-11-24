@@ -29,7 +29,12 @@
     <%= "#{long_info_helper(index.student.department.short_name)}#{t(:message_1, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %> 
   </li>  
   <li>
-    <%= "#{long_info_helper(index.study.name)}#{t(:message_2, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %>
+    <% res = index.study.name %>
+    <% if index.switched_study? %>
+      <% res << " (#{index.study_form_changed_on.strftime('%d.%m.%Y')})" %>
+    <% end %>
+    <%= long_info_helper(res) %>
+    <%= t(:message_2, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml]) %>:
   </li>
   <li class='printable'>
     <%= student_tutor_line(index) %>
