@@ -2022,6 +2022,10 @@ cs:
             message_7: člen komise
         _show: 
           rhtml: {}
+        send_invitation:
+          rjs:
+            email_sent: email odeslán
+            defense_confirmed: obhajoba potvrzena
 
         announcement: 
           rhtml: 
