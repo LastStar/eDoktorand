@@ -16,8 +16,8 @@
   attestation_day: 13
 5:
   final_areas_count: 4
-  attestation_month: 3
-  attestation_day: 15
+  attestation_month: 12
+  attestation_day: 1
 6:
   final_areas_count: 4
   attestation_month: 1
@@ -30,4 +30,3 @@
   final_areas_count: 5
   attestation_month: 1
   attestation_day: 30
-    
