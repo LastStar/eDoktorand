@@ -73,7 +73,7 @@ class Index < ActiveRecord::Base
   before_create :prepare_im_index
   after_update :update_im_index
 
-  # update ImIndex
+  # update ImIndfsdfsafdsdf
   def update_im_index
     prepare_im_index unless im_index
     im_index.save 
@@ -519,6 +519,10 @@ class Index < ActiveRecord::Base
       update_attribute('study_id', 1)
     end
     update_attribute(:study_form_changed_on, date)
+  end
+
+  def switched_study?
+    study_form_changed_on?
   end
 
   # finishes study
