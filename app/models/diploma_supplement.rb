@@ -36,7 +36,7 @@ class DiplomaSupplement < ActiveRecord::Base
     new.defense_passed_on = index.disert_theme.defense_passed_on.strftime('%B %d, %Y')
     new.final_areas = index.study_plan.final_areas['en'].map {|fa| fa.last}.join(';') if index.study_plan.final_areas
     new.final_exam_passed_on = index.final_exam_passed_on.strftime('%B %d, %Y')
-    new.plan_subjects = index.study_plan.plan_subjects.map {|ps| ps.subject.label_en.strip}.join(';')
+    new.plan_subjects = index.study_plan.plan_subjects.map {|ps| ps.subject.label_en.try(:strip)}.compact.join(';')
     new.faculty_www = index.faculty.www
     new.printed_on = Date.today.strftime('%B %d, %Y')
     new.dean_display_name = index.faculty.dean.display_name
