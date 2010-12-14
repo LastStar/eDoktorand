@@ -13,7 +13,7 @@ class Notifications < ActionMailer::Base
     @from       = faculty.secretary.email
     @sent_on    = sent_at
   end
-  
+
   #sends admit mail to candidate
   def admit_candidate(candidate, conditional, sent_at = Time.now)
     @subject = I18n::t(:message_4, :scope => [:txt, :model, :notifications])
@@ -26,7 +26,7 @@ class Notifications < ActionMailer::Base
     @cc = faculty.secretary.email
     @from = faculty.secretary.email
   end
-  
+
   #sends reject mail to candidate
   def reject_candidate(candidate, sent_at = Time.now)
     @subject = I18n::t(:message_5, :scope => [:txt, :model, :notifications])
@@ -70,7 +70,7 @@ class Notifications < ActionMailer::Base
     @from = 'edoktorand@edoktorand.czu.cz'
     @sent_on = sent_at
   end
-  
+
   #send study plan of student
   def study_plan_create(study_plan, sent_at = Time.now)
     #@subject = t(:message_6, :scope => [:txt, :model, :notifications])
@@ -104,7 +104,7 @@ class Notifications < ActionMailer::Base
     @body['year'] = student.index.year
     @body['subject_change_tutor'] = subject_change_tutor
   end
-  
+
   def change_tutor_cs(student, subject_change_tutor)
     @body['name'] = student.display_name
     @body['specialization'] = student.specialization.name

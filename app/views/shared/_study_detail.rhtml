@@ -67,7 +67,7 @@
 <% end %>
 
 <%# this is hot fix for fill approval if someone approve changed studyplan%>
-<%index.waits_for_statement?(@user)%> 
+<% index.waits_for_statement?(@user) %>
 
 <% if study_plan ||= index.study_plan %>
   <% if study_plan.attestation  %>
@@ -78,8 +78,8 @@
       <li class="noborder"><%= annual_report(study_plan) %></li>
     </ul>
   <% end %>
-  
- 
+
+
 
   <% if index.defense_claimed? %>
     <ul id='approval' class='bordered half right-visible'>
@@ -120,10 +120,10 @@
     </li>
   <% end %>
   <%= render(:partial => 'shared/final_exam', :locals => {:study_plan => study_plan}) %>
-  <%= render(:partial => 'shared/subjects', :locals => {:subjects => 
+  <%= render(:partial => 'shared/subjects', :locals => {:subjects =>
   study_plan.plan_subjects, :title => t(:message_19, :scope => [:txt, :view, :shared, :_study_detail, :rhtml])}) %>
   </ul>
-  <%= render(:partial => 'shared/disert_theme', 
+  <%= render(:partial => 'shared/disert_theme',
     :locals => {:disert_theme => index.disert_theme,
     :study_plan => study_plan, :methodology => true}) %>
   <% if index.claimed_final_application? %>

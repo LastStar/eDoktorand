@@ -52,7 +52,7 @@ class Index < ActiveRecord::Base
   belongs_to :department
   has_many :interrupts, :order => 'created_on', :class_name => 'StudyInterrupt'
   has_many :extra_scholarships, :conditions => "scholarships.payed_on IS NULL"
-  has_one :regular_scholarship, :conditions => "scholarships.payed_on IS NULL", 
+  has_one :regular_scholarship, :conditions => "scholarships.payed_on IS NULL",
     :order => 'updated_on desc'
   has_many :payed_scholarships, :class_name => 'Scholarship',
     :conditions => 'payed_on IS NOT NULL'
@@ -76,7 +76,7 @@ class Index < ActiveRecord::Base
   # update ImIndfsdfsafdsdf
   def update_im_index
     prepare_im_index unless im_index
-    im_index.save 
+    im_index.save
   end
 
   # creates ImIndex
@@ -106,7 +106,7 @@ class Index < ActiveRecord::Base
           message = message + I18n.t(:message_16, :scope => [:txt, :model, :index]) + " "
     end
     if self.student.sident == nil
-          message = message + I18n.t(:message_17, :scope => [:txt, :model, :index]) + " "    
+          message = message + I18n.t(:message_17, :scope => [:txt, :model, :index]) + " "
     end
     return message
 
@@ -119,7 +119,7 @@ class Index < ActiveRecord::Base
         if self.has_any_scholarship?
           return true
         end
-     end  
+     end
     return false
   end
 
@@ -164,7 +164,7 @@ class Index < ActiveRecord::Base
         end_date = Time.now
       end
       time = end_date - enrolled_on.to_time
-      if self.interrupt 
+      if self.interrupt
         time -= interrupted_time
       end
       return @semester = time.div(1.year / 2) + 1
@@ -225,7 +225,7 @@ class Index < ActiveRecord::Base
         if interrupt.approval.prepares_statement?(user)
           return interrupt.approval.prepare_statement(user)
         end
-      elsif study_plan 
+      elsif study_plan
         if !study_plan.approved?
           study_plan.approval ||= StudyPlanApproval.create(:document_id => study_plan.id)
           if study_plan.approval.prepares_statement?(user)
@@ -251,11 +251,11 @@ class Index < ActiveRecord::Base
         temp_approval = interrupt.approval ||= InterruptApproval.create
       elsif study_plan && !study_plan.approved?
         temp_approval = study_plan.approval ||= StudyPlanApproval.create
-      elsif study_plan && study_plan.approved? 
+      elsif study_plan && study_plan.approved?
         if !study_plan.attestation || !study_plan.attestation.is_actual?
           temp_approval = study_plan.attestation = Attestation.create(:document_id => study_plan.id)
         else
-          temp_approval = study_plan.attestation 
+          temp_approval = study_plan.attestation
         end
       end
       temp_approval && temp_approval.prepares_statement?(user)
@@ -330,22 +330,22 @@ class Index < ActiveRecord::Base
     options[:order] = 'indices.study_id, people.lastname'
     options[:include] ||= []
     options[:include] << [:student]
-    #find_for(user, options) 
+    #find_for(user, options)
     conditions = [TUTOR_COND.clone, user.person.id]
     find(:all, :conditions => conditions, :order => options[:order],
         :include => options[:include])
   end
 
-  # returns all indices which waits for approval from persons 
+  # returns all indices which waits for approval from persons
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user, options = {})
     sql = <<-SQL
       (study_plans.approved_on is null or disert_themes.approved_on is null \
       or study_plans.last_attested_on is null or indices.interrupted_on is null or \
       study_plans.last_attested_on < ?) and (indices.finished_on is null or \
-      indices.finished_on = '0000-00-00 00:00:00') 
+      indices.finished_on = '0000-00-00 00:00:00')
     SQL
-    options[:conditions] = [sql, 
+    options[:conditions] = [sql,
       Attestation.actual_for_faculty(user.person.faculty)]
     options[:only_tutor] = true
     options[:unfinished] = true
@@ -360,7 +360,7 @@ class Index < ActiveRecord::Base
       end
     elsif user.has_one_of_roles?(['tutor', 'leader', 'dean'])
       options[:order] = 'indices.study_id, people.lastname'
-      result.select {|i| i.waits_for_statement?(user)} 
+      result.select {|i| i.waits_for_statement?(user)}
     end
   end
 
@@ -399,14 +399,14 @@ class Index < ActiveRecord::Base
         conditions.first.sql_and(PASSED_FINAL_COND)
       end
     end
-    indices = Index.find_for(options[:user], :conditions => conditions.flatten, 
-                            :faculty => options[:faculty], 
+    indices = Index.find_for(options[:user], :conditions => conditions.flatten,
+                            :faculty => options[:faculty],
                             :order => options[:order])
     year = options[:year].to_i
     if options[:study_status].to_i == 5
       year = 4
     end
-    if year != 0 
+    if year != 0
       if year == 4
         indices.reject! {|i| i.year < 4}
       else
@@ -431,7 +431,7 @@ class Index < ActiveRecord::Base
   end
 
   def self.find_studying_for(user, options = {})
-    opts = {:unfinished => true, :not_interrupted => true} 
+    opts = {:unfinished => true, :not_interrupted => true}
     opts[:order] = options[:order] || 'indices.study_id, people.lastname'
     return find_for(user, opts)
   end
@@ -513,7 +513,7 @@ class Index < ActiveRecord::Base
   # switches study form
   # TODO add history and use date
   def switch_study!(date = Date.today)
-    if study_id == 1 
+    if study_id == 1
       update_attribute('study_id', 2)
     else
       update_attribute('study_id', 1)
@@ -530,7 +530,7 @@ class Index < ActiveRecord::Base
     update_attribute('finished_on', date)
   end
 
-  # unfinishes study 
+  # unfinishes study
   def unfinish!
     update_attribute('finished_on', nil)
   end
@@ -551,9 +551,9 @@ class Index < ActiveRecord::Base
     end
   end
 
-  # returns time study was interrupted for 
+  # returns time study was interrupted for
   def interrupted_time
-    interrupts.inject(0) {|sum, i| sum += i.current_duration} 
+    interrupts.inject(0) {|sum, i| sum += i.current_duration}
   end
 
   # interrupts study with date
@@ -573,8 +573,8 @@ class Index < ActiveRecord::Base
   end
 
   def status_class
-    if finished? 
-      'finished' 
+    if finished?
+      'finished'
     elsif absolved?
       'absolved'
     else
@@ -588,7 +588,7 @@ class Index < ActiveRecord::Base
 
   def interrupt_waits_for_confirmation?
     admited_interrupt? && interrupt.approved? && !interrupt.finished? &&
-      !interrupted_on 
+      !interrupted_on
   end
 
   def close_to_interrupt_end_or_after?(months = 3)
@@ -632,7 +632,7 @@ class Index < ActiveRecord::Base
     end
   end
 
-  # return faculty 
+  # return faculty
   def faculty
     department.faculty
   end
@@ -645,7 +645,7 @@ class Index < ActiveRecord::Base
   def self_payer?
     payment_id == 2
   end
-  
+
   def foreigner?
     payment_id == 3
   end
@@ -729,9 +729,9 @@ class Index < ActiveRecord::Base
 
   def prepare_study_plan
     sp = build_study_plan
-    sp.final_areas = {'cz' => 
+    sp.final_areas = {'cz' =>
                       {'1' => '', '2' => '', '3' => '', '4' => '', '5' => ''},
-                      'en' => 
+                      'en' =>
                       {'1' => '', '2' => '', '3' => '', '4' => '', '5' => ''}}
     return sp
   end

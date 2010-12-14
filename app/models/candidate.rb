@@ -2,7 +2,7 @@ require 'genderize'
 
 class Candidate < ActiveRecord::Base
   include Genderize
-  
+
   belongs_to :specialization
   belongs_to :department
   belongs_to :study
@@ -15,7 +15,7 @@ class Candidate < ActiveRecord::Base
   belongs_to :language1, :class_name => 'Subject',
     :foreign_key => 'language1_id'
   belongs_to :language2, :class_name => 'Subject',
-    :foreign_key => 'language2_id' 
+    :foreign_key => 'language2_id'
 
   before_save :strip_birth_number
 
@@ -32,7 +32,7 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :studied_branch, :message => I18n::t(:message_10, :scope => [:txt, :model, :candidate])
   validates_presence_of :birth_number, :message => I18n::t(:message_11, :scope => [:txt, :model, :candidate])
   validates_presence_of :number, :message => I18n::t(:message_12, :scope => [:txt, :model, :candidate])
-  validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i, 
+  validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i,
     :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
 
   #TODO rename with tt
@@ -89,7 +89,7 @@ class Candidate < ActiveRecord::Base
     self.update_attribute(:finished_on, Time.now)
   end
 
-  # checks if candidate is allready finished 
+  # checks if candidate is allready finished
   def finished?
     return !self.finished_on.nil?
   end
@@ -129,12 +129,12 @@ class Candidate < ActiveRecord::Base
     self.update_attribute('invited_on', Time.now)
   end
 
-  # checks if candidate is allready invited 
+  # checks if candidate is allready invited
   def invited?
     !self.invited_on.nil?
   end
 
-  # admits candidate to study. 
+  # admits candidate to study.
   def admit!
     self.update_attribute('admited_on', Time.now)
   end
@@ -144,8 +144,8 @@ class Candidate < ActiveRecord::Base
     !self.admited_on.nil?
   end
 
-  # enroll candidate to study and returns new student based on 
-  # candidates details. 
+  # enroll candidate to study and returns new student based on
+  # candidates details.
   def enroll!(time)
     self.update_attribute('enrolled_on', Time.now)
     return new_student(time)
@@ -194,7 +194,7 @@ class Candidate < ActiveRecord::Base
     return Contact.create(:name => self.phone, :contact_type_id => 2)
   end
 
-  # returns new address with attributes set by self 
+  # returns new address with attributes set by self
   def create_address(id)
     add = Address.new do |a|
       a.student_id = id
@@ -287,7 +287,7 @@ class Candidate < ActiveRecord::Base
 
   # returns all candidates by filter
   def self.find_all_finished(options, faculty)
-    conditions = ["specialization_id in (?) AND finished_on IS NOT NULL", 
+    conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
                   faculty.specializations]
     conditions.first << filter_conditions(options['filter'])
     if options['specialization']
@@ -301,9 +301,9 @@ class Candidate < ActiveRecord::Base
   def self.find_all_finished_by_session_category(options, faculty, category, user)
     if user.has_role?('vicerector')
       conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
-                    Specialization.find(:all)]      
+                    Specialization.find(:all)]
     else
-      conditions = ["specialization_id in (?) AND finished_on IS NOT NULL", 
+      conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
                     faculty.specializations]
     end
     conditions.first << filter_conditions(options['filter'])
@@ -319,7 +319,7 @@ class Candidate < ActiveRecord::Base
   def unfinish!
     self.update_attribute(:finished_on, nil)
   end
-  
+
   def self.filter_conditions(filter)
     case filter
     when 'unready':' AND ready_on IS NULL'
