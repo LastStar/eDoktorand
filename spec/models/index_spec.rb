@@ -136,7 +136,7 @@ describe Index do
       @index = Factory(:index, :student => @student)
     end
     it "should prepare ImIndex" do
-      @index.im_index.should_not be_nil   
+      @index.im_index.should_not be_nil
     end
     it "should copy attributes to ImIndex" do
       @index.im_index.study_spec.should == @index.specialization.name
@@ -147,7 +147,7 @@ describe Index do
     end
   end
 
-  describe "changing study form" do
+  context "changing study form" do
     it "has method for changing study form" do
       index = Factory.build(:index, :student => Factory(:student))
       index.switch_study!.should be_true
@@ -155,6 +155,52 @@ describe Index do
     it "has method for changing study form" do
       index = Factory.build(:index, :student => Factory(:student))
       index.switched_study?.should be_true
+    end
+  end
+
+  context "validating account" do
+    it "validates correct account number" do
+      index = Factory.build(:index, :student => Factory(:student))
+      index.account_number = "2303308001"
+      index.should be_valid
+    end
+
+    it "validates incorrect account number" do
+      index = Factory.build(:index, :student => Factory(:student))
+      index.account_number = "3303308001"
+      index.valid?
+      index.errors[:account_number].should_not be_nil
+    end
+
+    it "validates correct account number prefix" do
+      index = Factory.build(:index, :student => Factory(:student))
+      index.account_number = "2303308001"
+      index.account_number_prefix = "51"
+      index.should be_valid
+    end
+
+    it "validates incorrect account number prefix" do
+      index = Factory.build(:index, :student => Factory(:student))
+      index.account_number = "2303308001"
+      index.account_number_prefix = "52"
+      index.valid?
+      index.errors[:account_number_prefix].should_not be_nil
+    end
+
+    it "validates account number prefix with dash as error" do
+      index = Factory.build(:index, :student => Factory(:student))
+      index.account_number = "2303308001"
+      index.account_number_prefix = "0-"
+      index.valid?
+      index.errors[:account_number_prefix].should_not be_nil
+    end
+
+    it "validates account number prefix with space as error" do
+      index = Factory.build(:index, :student => Factory(:student))
+      index.account_number = "2303308001"
+      index.account_number_prefix = "0 "
+      index.valid?
+      index.errors[:account_number_prefix].should_not be_nil
     end
   end
 end

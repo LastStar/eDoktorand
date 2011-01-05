@@ -130,7 +130,7 @@ class Index < ActiveRecord::Base
         account_number_prefix.split('').reverse.each_with_index do |c, j|
           pre_sum += c.to_i * PREFIX_WEIGHTS[j]
         end
-        unless (pre_sum % 11) == 0
+        if account_number_prefix !~ /^[0-9]*$/ || (pre_sum % 11) != 0
           errors.add(:account_number_prefix, I18n::t(:message_2, :scope => [:txt, :model, :index]))
         end
       end
