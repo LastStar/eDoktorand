@@ -62,6 +62,7 @@ GEM
       rake (>= 0.8.7)
     gherkin (2.1.5)
       trollop (~> 1.16.2)
+    handsoap (1.1.7)
     hpricot (0.8.2)
     httpclient (2.1.5.2)
     i18n (0.4.1)
@@ -160,16 +161,18 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   faker
+  handsoap
   hpricot
   launchy
   log4r
   machinist
   mail
   rails (= 3.0.0)
-  rspec-core (= 2.0.0.beta.22)
-  rspec-expectations (= 2.0.0.beta.22)
-  rspec-mocks (= 2.0.0.beta.22)
-  rspec-rails (= 2.0.0.beta.22)
+  rspec
+  rspec-core
+  rspec-expectations
+  rspec-mocks
+  rspec-rails
   ruby-debug19
   ruby-mysql
   ruby-net-ldap
