@@ -53,6 +53,4 @@ describe ImIndex do
   it "should get other financing types" do
     pending
   end
-
-
 end

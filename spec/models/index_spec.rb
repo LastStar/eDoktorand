@@ -3,83 +3,82 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Index do
   context "states" do
-    before(:each) {@index = Index.make(:enrolled_on => 3.years.ago)}
+    let(:index) {Index.make(:enrolled_on => 3.years.ago)}
     it "should return studying" do
-      @index.status.should eq :studying
+      index.status.should eq :studying
     end
     it "should return continue based on specialization study length" do
-      @index.specialization = Specialization.make(:study_length => 3)
-      @index.continue?.should be_true
-      @index.status.should eq :continue
+      index.specialization = Specialization.make(:study_length => 3)
+      index.continue?.should be_true
+      index.status.should eq :continue
     end
     context 'status methods' do
       before :each do
         @student = Student.make
-        @index = Index.make(:student => @student)
+        index = Index.make(:student => @student)
         Timecop.freeze("2010/01/01")
       end
       it "should return status" do
-        @index.status.should == :studying
+        index.status.should == :studying
       end
       it "should return status code" do
-        @index.status_code.should == 'S'
+        index.status_code.should == 'S'
       end
       it "should return from when status is valid" do
-        @index.status_from.should == Date.parse('2009/09/30')
+        index.status_from.should == Date.parse('2009/09/30')
       end
       it "should return to when status is valid" do
-        @index.status_to.should == Date.parse('2010/09/30')
+        index.status_to.should == Date.parse('2010/09/30')
       end
       it "should return interrupted" do
-        @index.interrupt!(1.month.ago)
-        @index.should be_interrupted
-        @index.status.should eq :interrupted
+        index.interrupt!(1.month.ago)
+        index.should be_interrupted
+        index.status.should eq :interrupted
       end
       it "should return finished" do
-        @index.finish!(1.month.ago)
-        @index.should be_finished
-        @index.status.should eq :finished
+        index.finish!(1.month.ago)
+        index.should be_finished
+        index.status.should eq :finished
       end
       it "should return studying after unfinishing" do
-        @index.finish!(1.month.ago)
-        @index.unfinish!
-        @index.status.should eq :studying
+        index.finish!(1.month.ago)
+        index.unfinish!
+        index.status.should eq :studying
       end
       it "should return passed final exam" do
-        @index.final_exam_passed!(1.month.ago)
-        @index.should be_final_exam_passed
-        @index.status.should eq :final_exam_passed
+        index.final_exam_passed!(1.month.ago)
+        index.should be_final_exam_passed
+        index.status.should eq :final_exam_passed
       end
       it "should return absolved" do
-        @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
-        @index.disert_theme.defense_passed!(1.month.ago)
-        @index.should be_absolved
-        @index.status.should eq :absolved
+        index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
+        index.disert_theme.defense_passed!(1.month.ago)
+        index.should be_absolved
+        index.status.should eq :absolved
       end
       it "should return translated status" do
-        @index.translated_status.should == 'studuje'
+        index.translated_status.should == 'studuje'
       end
     end
     describe "Interrupts" do
       it "should return if admitted interrupt" do
-        StudyInterrupt.make(:index => @index)
-        @index.should be_admitted_interrupt
+        StudyInterrupt.make(:index => index)
+        index.should be_admitted_interrupt
       end
       it "should return if interrupted" do
-        @index.interrupt!(1.day.ago)
-        @index.should be_interrupted
+        index.interrupt!(1.day.ago)
+        index.should be_interrupted
       end
       it "should return if not even admitted interrupt" do
-        @index.should be_not_even_admitted_interrupt
-        StudyInterrupt.make(:index => @index)
-        @index.should_not be_not_even_admitted_interrupt
+        StudyInterrupt.make(:index => index)
+        index.should_not be_not_even_admitted_interrupt
       end
     end
     describe "Accomodation scholarship" do
       it "should set scholarship claim" do
-        @index.claim_accommodation_scholarship!
-        @index.should be_scholarship_claimed
-        @index.should be_waits_for_scholarship_confirmation
+        index.claim_accommodation_scholarship!
+        index.should be_scholarship_claimed
+        index.should be_waits_for_scholarship_confirmation
       end
     end
   end
@@ -259,7 +258,7 @@ describe Index do
       @index.account_number_prefix = '000000'
       @index.should_not be_account_number_prefix_filled
     end
-    
+
     it "should print full account number" do
       @index.full_account_number.should eq '35-2303308001'
     end
@@ -284,38 +283,46 @@ describe Index do
 
   context "changing study form" do
     it "has method for changing study form" do
-      index = Factory.build(:index, :student => Factory(:student))
+      Study.make(:name => 'kombinované', :name_en => 'combined')
+      index = Index.make(:student => Student.make)
       index.switch_study!.should be_true
     end
-    it "has method for changing study form" do
-      index = Factory.build(:index, :student => Factory(:student))
+    it "returns false if study form was not switched" do
+      Study.make(:name => 'kombinované', :name_en => 'combined')
+      index = Index.make(:student => Student.make)
+      index.switched_study?.should be_false
+    end
+    it "returns true if study form was not switched" do
+      Study.make(:name => 'kombinované', :name_en => 'combined')
+      index = Index.make(:student => Student.make)
+      index.switch_study!
       index.switched_study?.should be_true
     end
   end
 
   context "validating account" do
     it "validates correct account number" do
-      index = Factory.build(:index, :student => Factory(:student))
+      index = Index.make(:student => Student.make)
       index.account_number = "2303308001"
       index.should be_valid
     end
 
     it "validates incorrect account number" do
-      index = Factory.build(:index, :student => Factory(:student))
+      index = Index.make(:student => Student.make)
       index.account_number = "3303308001"
       index.valid?
       index.errors[:account_number].should_not be_nil
     end
 
     it "validates correct account number prefix" do
-      index = Factory.build(:index, :student => Factory(:student))
+      index = Index.make(:student => Student.make)
       index.account_number = "2303308001"
       index.account_number_prefix = "51"
       index.should be_valid
     end
 
     it "validates incorrect account number prefix" do
-      index = Factory.build(:index, :student => Factory(:student))
+      index = Index.make(:student => Student.make)
       index.account_number = "2303308001"
       index.account_number_prefix = "52"
       index.valid?
@@ -323,7 +330,7 @@ describe Index do
     end
 
     it "validates account number prefix with dash as error" do
-      index = Factory.build(:index, :student => Factory(:student))
+      index = Index.make(:student => Student.make)
       index.account_number = "2303308001"
       index.account_number_prefix = "0-"
       index.valid?
@@ -331,7 +338,7 @@ describe Index do
     end
 
     it "validates account number prefix with space as error" do
-      index = Factory.build(:index, :student => Factory(:student))
+      index = Index.make(:student => Student.make)
       index.account_number = "2303308001"
       index.account_number_prefix = "0 "
       index.valid?

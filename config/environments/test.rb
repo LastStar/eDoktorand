@@ -30,12 +30,6 @@ Phdstudy::Application.configure do
   # like if you have constraints or database-specific column types
   # config.active_record.schema_format = :sql
 
-  config.gem 'rspec', :lib => false
-  config.gem 'rspec-rails', :version => '>= 1.3.2', :lib => false
-  config.gem "thoughtbot-factory_girl", :lib => 'factory_girl', :version => '1.2.2'
-  config.gem 'shoulda', :lib => false
-  config.gem "timecop"
-
   GET_SUBJECT_SERVICE_ENDPOINT = {
     :uri => 'http://comanche.czu.cz/axis2/services/GetSubjectService.GetSubjectServiceHttpSoap12Endpoint/',
     :version => 2

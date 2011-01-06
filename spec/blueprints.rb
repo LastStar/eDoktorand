@@ -144,6 +144,7 @@ Index.blueprint do
   account_number '2303308001'
   account_number_prefix '35'
   account_bank_number '5500'
+  study_form_changed_on '2010-01-02'
 end
 
 Study.blueprint do
@@ -178,7 +179,7 @@ end
 
 DisertTheme.blueprint do
   index
-  title 
+  title
   finishing_to {6}
 end
 

@@ -310,7 +310,7 @@ class Index < ActiveRecord::Base
   def not_even_admitted_interrupt?
     !interrupted? && !admitted_interrupt?
   end
-  #
+
   # returns true if student claimed for final exam
   def claimed_for_final_exam?
     claimed_final_application? && approved?

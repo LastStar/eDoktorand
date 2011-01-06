@@ -1,4 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require File.expand_path(File.dirname(__FILE__) + '/../../lib/service_tools')
 
 describe ServiceTools::Subjects do
   context "with correct data" do
@@ -9,7 +10,7 @@ describe ServiceTools::Subjects do
           :label_en => 'Applied Meteorology and Climatology',
           :department_short_name => 'KET'}])
       Subject.create(:label => 'Bad one', :code => 'DAAA01Y')
-      @department = Factory(:department, :short_name => 'KET')
+      @department = Department.make(:short_name => 'KET')
       ServiceTools::Subjects.repair_all
       @subject = Subject.find_by_code('DAAA01Y')
     end
