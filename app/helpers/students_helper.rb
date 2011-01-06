@@ -50,7 +50,7 @@ module StudentsHelper
         if index.not_even_admitted_interrupt?
           links << interrupt_link(index)
         elsif index.interrupt_waits_for_confirmation?
-          links << confirm_interrupt_link(index) 
+          links << confirm_interrupt_link(index)
         elsif index.interrupted?
           links << end_interrupt_link(index)
         end
@@ -227,7 +227,7 @@ module StudentsHelper
     link_to(index.student.display_name,
             :action => 'show',
             :controller => 'students',
-            :id => index},
+            :id => index,
             :loading => visual_effect(:pulsate, "index_line_#{index.id}"),
             :remote => true)
   end
