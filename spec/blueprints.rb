@@ -20,8 +20,8 @@ Sham.login {Faker::Internet.user_name}
 Sham.title {|index| "Title ##{index}"}
 
 Faculty.blueprint do
-  name {"Faculty"}
-  short_name {"FAC"}
+  name "Faculty"
+  short_name "FAC"
 end
 
 FacultyEmployment.blueprint do
@@ -39,7 +39,7 @@ User.blueprint do
 end
 
 Role.blueprint do
-  name {'admin'}
+  name 'admin'
 end
 
 FacultySecretary.blueprint do
@@ -144,7 +144,6 @@ Index.blueprint do
   account_number '2303308001'
   account_number_prefix '35'
   account_bank_number '5500'
-  study_form_changed_on '2010-01-02'
 end
 
 Study.blueprint do

@@ -41,9 +41,9 @@ def mocked_faculty(stubs = {})
 end
 
 def mocked_specialization
-  @mock_specialization ||= mock(Specialization, :to_yaml => "specialization") # hacked to_yaml cause dup of anonymous class burns 
+  @mock_specialization ||= mock(Specialization, :to_yaml => "specialization") # hacked to_yaml cause dup of anonymous class burns
 end
-  
+
 def mocked_relation
   @mocked_relation ||= mock(ActiveRecord::Relation)
 end

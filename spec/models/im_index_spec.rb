@@ -16,7 +16,7 @@ describe ImIndex do
     im_index.index.should == index
   end
   it "should copy attributes from index" do
-    index = Index.make(:student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"))
+    index = Index.make(:student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"), :study_form_changed_on => '2010-01-02')
     im_index = ImIndex.create(:index => index)
     im_index.student_uic.should == 1
     im_index.department_name.should == "Department"

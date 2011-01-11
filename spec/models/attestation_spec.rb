@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Attestation do
   context "for date computing" do
-    before :all do
+    before do
       Timecop.freeze(Time.zone.local(2010, 1, 2))
       @faculty = Faculty.make
       Object.send(:remove_const, :FACULTY_CFG)

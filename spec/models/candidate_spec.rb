@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe "Candidate" do
-  before(:all) do
+  before do
     @faculty = Faculty.make
     @specialization = Specialization.make(:faculty => @faculty)
   end
