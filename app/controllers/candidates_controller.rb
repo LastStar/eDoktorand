@@ -56,7 +56,7 @@ class CandidatesController < ApplicationController
   end
 
   def destroy_all
-    candidates = Candidate.finished_before(parse_date(params[:date])).from_faculty(@user.person.faculty)
+    candidates = Candidate.finished_before(TermsCalculator.this_year_start).from_faculty(@user.person.faculty)
     candidates.each {|c| c.destroy}
     flash[:notice] = t(:message_11, :scope => [:txt, :controller, :candidates]) % candidates.size
     redirect_to :action => :list
@@ -105,7 +105,7 @@ class CandidatesController < ApplicationController
     end
 
   end
-  
+
   # delete candidate
   def delete
     Candidate.find(params[:id]).unfinish!
@@ -148,7 +148,7 @@ class CandidatesController < ApplicationController
         render(:action => :enroll)
       else
         redirect_to :action => 'list'
-      end  
+      end
     end
   end
 
@@ -241,7 +241,7 @@ class CandidatesController < ApplicationController
        @corridors = faculty.specializations
     end
   end
-  
+
   private
 
   # sets title of the controller
@@ -268,6 +268,6 @@ class CandidatesController < ApplicationController
 
   # parses date from select_date helper
   def parse_date(date)
-    return Date.new(date['year'].to_i, date['month'].to_i, date['day'].to_i)  
+    return Date.new(date['year'].to_i, date['month'].to_i, date['day'].to_i)
   end
 end
