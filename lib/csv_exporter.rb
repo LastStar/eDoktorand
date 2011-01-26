@@ -11,19 +11,19 @@ class CSVExporter
   class << self
     def export_social_stipendia(start = TermsCalculator.this_year_start,  file = 'stipendia.csv', faculty = nil)
       outfile = File.open(file, 'wb')
-      students = Student.find(:all, 
+      students = Student.find(:all,
                               :conditions => ['indices.scholarship_claimed_at > ?', start],
                               :include => :index)
-      students.delete_if {|s| s.faculty.id != faculty} if faculty 
+      students.delete_if {|s| s.faculty.id != faculty} if faculty
       CSV::Writer.generate(outfile, ';') do |csv|
-        csv << ['sident', 'claimed_at', 'supervised_at'] 
+        csv << ['sident', 'claimed_at', 'supervised_at']
         students.each do |s|
           row = []
           row << s.sident
           row << s.index.scholarship_claimed_at.strftime('%d.%m.%Y')
-          if s.index.scholarship_approved_at && 
+          if s.index.scholarship_approved_at &&
             s.index.scholarship_approved_at > TermsCalculator.this_year_start
-            row << s.index.scholarship_approved_at.strftime('%d.%m.%Y') 
+            row << s.index.scholarship_approved_at.strftime('%d.%m.%Y')
           else
             row << ''
           end
@@ -35,7 +35,7 @@ class CSVExporter
 
     def export_stipendia(user, file = 'stipendia.csv')
       outfile = File.open(file, 'wb')
-      @indices = Index.find_studying_for(user, 
+      @indices = Index.find_studying_for(user,
                                          :order => 'studies.id, people.lastname')
       CSV::Writer.generate(outfile, ';') do |csv|
         @indices.each do |index|
@@ -48,7 +48,7 @@ class CSVExporter
             row << index.regular_scholarship.amount
           end
           unless index.extra_scholarships.empty?
-            row << index.extra_scholarship_sum 
+            row << index.extra_scholarship_sum
           end
           csv << row
         end
@@ -173,7 +173,7 @@ class CSVExporter
             row << ""
           end
           row << index.student.faculty.short_name
-          row << index.student.department.short_name        
+          row << index.student.department.short_name
           @@mylog.debug "Adding #{row}"
           csv << row
         end
@@ -227,14 +227,14 @@ class CSVExporter
           if index.student.title_before
             row << index.student.title_before.label
           else
-            row << " "          
-          end        
+            row << " "
+          end
           row << index.student.display_name
           if index.student.title_after
             row << index.student.title_after.label
           else
-            row << " "          
-          end        
+            row << " "
+          end
           row << index.department.name
           row << index.faculty.name
           @@mylog.debug "Adding #{row}"
@@ -247,8 +247,8 @@ class CSVExporter
     def export_candidates_evident_card(options = {})
       unless cs = options[:candidates]
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : Faculty.find(options[:faculty])
-        cs = Candidate.find(:all, :conditions => ['invited_on is not null' + 
-        #cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' + 
+        cs = Candidate.find(:all, :conditions => ['invited_on is not null' +
+        #cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' +
           ' and specialization_id in (?)', faculty.specializations])
         file = "candidate_evident_#{faculty.short_name}.csv"
       else
@@ -261,14 +261,14 @@ class CSVExporter
           row = []
           row << c.id
           if c.title_before
-            row << c.title_before.label 
+            row << c.title_before.label
           else
             row << ''
           end
           row << c.firstname
           row << c.lastname
           if c.title_after
-            row << c.title_after.label 
+            row << c.title_after.label
           else
             row << ''
           end
@@ -288,7 +288,7 @@ class CSVExporter
           else
             row << ''
           end
-          
+
           @@mylog.debug "Adding #{row}"
           csv << row
         end
@@ -300,8 +300,8 @@ class CSVExporter
       file = "bad_account.csv"
       outfile = File.open(file, 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
-        is = Index.find(:all, 
-                        :conditions => "account_number is not 
+        is = Index.find(:all,
+                        :conditions => "account_number is not
                                         null and account_number <> ''",
                        :order => 'department_id')
         is.reject! {|i| i.valid?}
@@ -326,7 +326,7 @@ class CSVExporter
               and people.sident is not null"
       outfile = File.open(file, 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
-        indices ||= Index.find(:all, 
+        indices ||= Index.find(:all,
                               :conditions => sql, :order => 'department_id',
                               :include => :student)
         @@mylog.info "There are #{indices.size} students"
@@ -346,8 +346,8 @@ class CSVExporter
     def export_candidates_for(options = {})
       unless cs = options[:candidates]
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : Faculty.find(options[:faculty])
-        cs = Candidate.find(:all, :conditions => ['invited_on is not null' + 
-        #cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' + 
+        cs = Candidate.find(:all, :conditions => ['invited_on is not null' +
+        #cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' +
           ' and specialization_id in (?)', faculty.specializations])
         file = "candidate_#{faculty.short_name}.csv"
       else
@@ -360,14 +360,14 @@ class CSVExporter
           row = []
           row << c.id
           if c.title_before
-            row << c.title_before.label 
+            row << c.title_before.label
           else
             row << ''
           end
           row << c.firstname
           row << c.lastname
           if c.title_after
-            row << c.title_after.label 
+            row << c.title_after.label
           else
             row << ''
           end
@@ -440,7 +440,7 @@ class CSVExporter
             row << s.address.orient_number
             row << s.address.city
             row << s.address.zip
-            row << s.address.state      
+            row << s.address.state
           end
           csv << row
         end
@@ -463,7 +463,7 @@ class CSVExporter
       outfile = File.open('students_with_disert_theme.csv', 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
         Index.find_for(user, :studying => true).each do |i|
-          row = [i.student.lastname, i.student.firstname, i.specialization.name, 
+          row = [i.student.lastname, i.student.firstname, i.specialization.name,
                   i.year]
           if i.disert_theme
             row << [i.disert_theme.title, i.disert_theme.title_en]
@@ -475,7 +475,7 @@ class CSVExporter
       end
       outfile.close
     end
-    
+
     def export_students_without_sident
       outfile = File.open('students.csv', 'wb')
       students = Student.find(:all, :conditions => "sident is null and indices.finished_on is null and indices.study_id = 1", :include => :index)
@@ -507,7 +507,7 @@ class CSVExporter
         outfile.close
       end
     end
-    
+
     def export_year_exams(exam_date_from,exam_date_to)
       @@mylog.info 'Exporting exams list from %s' %exam_date_from
       Faculty.find(:all).each do |faculty|
@@ -516,10 +516,10 @@ class CSVExporter
           faculty.departments.each do |department|
             @@mylog.debug department.name
             subjs = department.subjects.map(&:id)
-            @@mylog.debug subjs          
+            @@mylog.debug subjs
             subjs.each do |subject_id|
               subject_name = Subject.find(subject_id).label
-              exams = Exam.count(:conditions => ["subject_id = ? and passed_on > ? and passed_on < ?", subject_id, exam_date_from, exam_date_to])  
+              exams = Exam.count(:conditions => ["subject_id = ? and passed_on > ? and passed_on < ?", subject_id, exam_date_from, exam_date_to])
             csv << [department.name, subject_name, exams]
             end
           end
@@ -545,7 +545,7 @@ class CSVExporter
           department.last.each do |examinator|
             @@mylog.info 'examinator %s' % examinator.display_name
             exams = Exam.count(:conditions => ["passed_on > ? and passed_on < ? and (first_examinator_id = ? or second_examinator_id = ? or third_examinator_id = ? or fourth_examinator_id = ? )",
-                                             exam_date_from, exam_date_to, examinator.id, examinator.id, examinator.id, examinator.id])          
+                                             exam_date_from, exam_date_to, examinator.id, examinator.id, examinator.id, examinator.id])
             csv << [examinator.display_name, exams] if exams > 0
           end
         end
@@ -584,7 +584,7 @@ class CSVExporter
       indices = Index.find(:all, :conditions => ['finished_on is null and department_id = ?', department])
       indices.sort {|x,y| x.year <=> y.year}
       CSV::Writer.generate(outfile) do |csv|
-        indices.each do |i| 
+        indices.each do |i|
           @@mylog.debug i.id
           row = []
           row << i.year
@@ -610,12 +610,33 @@ class CSVExporter
       outfile = File.open('indices_details.csv', 'wb')
       CSV::Writer.generate(outfile) do |csv|
         csv << ['index id', 'student_uic', 'faculty_id', 'department_id', 'study_status', 'year']
-        indices.each do |index| 
+        indices.each do |index|
           @@mylog.debug index.id
           row = []
           row << index.id
           row << index.student.uic
           row << index.faculty.id
+          row << index.department_id
+          row << index.status
+          row << index.year
+          csv << row
+        end
+      end
+      outfile.close
+    end
+
+    # exports index details
+    def all_students_basics
+      outfile = File.open('student_details.csv', 'wb')
+      CSV::Writer.generate(outfile) do |csv|
+        csv << ['index id', 'student uic', 'student id', 'department id', 'study status', 'year']
+        Student.all.each do |student|
+          next unless index = student.index
+          @@mylog.debug index.id
+          row = []
+          row << index.id
+          row << student.uic
+          row << student.id
           row << index.department_id
           row << index.status
           row << index.year
@@ -777,5 +798,42 @@ class CSVExporter
         end
       end
     end
+
+    # GroupWise licencees
+    def export_group_wise(indices = nil)
+      unless indices
+        indices = Index.find(:all)
+      end
+      outfile = File.open('indices.csv', 'wb')
+      CSV::Writer.generate(outfile, ';') do |csv|
+        csv << ['login', 'uic', 'first name', 'last name', 'faculty code', 'year','study','status']
+        indices.sort {|a, b| a.status <=> b.status}.each do |i|
+          row = []
+          row << i.student.try(:user).try(:login) || 'NaN'
+          row << i.student.uic
+          row << i.student.firstname
+          row << i.student.lastname
+          row << i.faculty.short_name
+          row << i.study.name
+          row << i.status
+          csv << row
+        end
+        outfile.close
+      end
+    end
+
+    def all_by_faculty_year_study_final_exam_passed(date)
+       indices = Index.all(:conditions => ["enrolled_on < ? and (finished_on is null or finished_on > ?)", date, date])
+       indices.reject! {|i| i.disert_theme && i.disert_theme.defense_passed_on && i.disert_theme.defense_passed_on < date}
+       indices.sort {|a, b| a.year <=> b.year}.group_by {|i|
+         i.index.faculty.short_name
+       }.map {|p|
+         [p.first, p.last.group_by {|i| i.year}.map {|i|
+           [i.first, i.last.group_by {|i| i.study.name prezenční }.map{|i| [i.first, i.last.size]}, i.last.select {|i| i.final_exam_passed?}.size]
+         }]
+       }
+    end
+
+
   end
 end
