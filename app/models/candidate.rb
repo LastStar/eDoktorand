@@ -30,7 +30,7 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :state, :message => I18n::t(:message_7, :scope => [:txt, :model, :candidate])
   validates_presence_of :university, :message => I18n::t(:message_8, :scope => [:txt, :model, :candidate])
   validates_presence_of :faculty, :message => I18n::t(:message_9, :scope => [:txt, :model, :candidate])
-  validates_presence_of :studied_branch, :message => I18n::t(:message_10, :scope => [:txt, :model, :candidate])
+  validates_presence_of :studied_specialization, :message => I18n::t(:message_10, :scope => [:txt, :model, :candidate])
   validates_presence_of :birth_number, :message => I18n::t(:message_11, :scope => [:txt, :model, :candidate])
   validates_presence_of :number, :message => I18n::t(:message_12, :scope => [:txt, :model, :candidate])
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i,
