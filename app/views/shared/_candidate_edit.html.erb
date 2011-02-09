@@ -88,9 +88,6 @@
   <fieldset id='study'>
     <legend><%= t(:message_38, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></legend>
     <%= hidden_field 'candidate', 'specialization_id' %>
-    <label for="candidate_department_id"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
-    <%= select 'candidate', 'department_id', Department.for_select(:faculty =>
-      @candidate.specialization.faculty.id) %><br />
     <label for="candidate_study_id" class="required"><%= t(:message_40, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <%= select 'candidate', 'study_id', study_ids %><span class='required'>&nbsp;&lowast;</span ><br />
     <label for="candidate_language1" class="required"><%= t(:message_41, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
@@ -99,8 +96,18 @@
     <label for="candidate_language2" class="required">&nbsp;</label>
     <%= select 'candidate', 'language2_id', LanguageSubject.for_select(:specialization => @candidate.specialization_id) %><span class='required'>&nbsp;&lowast;</span ><br />
     <% end %>
-    <label for="candidate_study_theme"><%= t(:message_42, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
-    <%= text_area 'candidate', 'study_theme', :cols => 40, :rows => 2 %><br />
+    <% if AdmittanceTheme.has_for?(@candidate.specialization) %>
+      <label for="candidate_department_id"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+      <%= select 'candidate', 'department_id', AdmittanceTheme.departments_for_specialization(@candidate.specialization).map{|d| [d.name, d.id]} %><br />
+      <label for="candidate_admitance_theme_id"><%= t(:message_42, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+      <%= select 'candidate', 'admittance_theme_id', AdmittanceTheme.all(:conditions => {:specialization_id => @candidate.specialization.id}).map {|at| [at.name, at.id]} %>
+      <%= hidden_field 'candidate', 'study_theme', :value => ''%><br />
+    <% else %>
+      <label for="candidate_department_id"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+      <%= select 'candidate', 'department_id', Department.for_select(:faculty => @candidate.specialization.faculty.id) %><br />
+      <label for="candidate_study_theme"><%= t(:message_42, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+      <%= text_area 'candidate', 'study_theme', :cols => 40, :rows => 2 %><br />
+    <% end %>
   </fieldset>
   <fieldset id='note'>
     <label for="candidate_note"><%= t(:message_43, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>

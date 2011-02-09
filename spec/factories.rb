@@ -94,11 +94,26 @@ Factory.define :candidate do |candidate|
   candidate.state 'CZ'
   candidate.university 'CZU'
   candidate.faculty 'FAAPPZ'
-  candidate.studied_branch 'Agro'
+  candidate.studied_specialization 'Agro'
   candidate.birth_number '7604242624'
   candidate.association :department
   candidate.language1_id 1
   candidate.language2_id 2
   candidate.sex 'M'
   candidate.foreign_pay false
+end
+
+Factory.define :title do |title|
+  title.label 'Ing.'
+  title.prefix true
+end
+
+Factory.define :subject do |subject|
+  subject.label 'Subject'
+  subject.code 'CD'
+end
+
+Factory.define :language_subject do |language_subject|
+  language_subject.association :specialization
+  language_subject.association :subject
 end

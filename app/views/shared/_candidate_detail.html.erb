@@ -90,9 +90,13 @@
         <% end %>
       </div><%= t(:message_25, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:<br/>&nbsp;
     </li>
-  <% unless @candidate.study_theme.empty? %>
+  <% if !@candidate.study_theme.empty? %>
     <li>
       <div class="right_info"><%= @candidate.study_theme %></div><%= t(:message_26, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
+    </li>
+  <% elsif @candidate.admittance_theme %>
+    <li>
+      <div class="right_info"><%= @candidate.admittance_theme.name %></div><%= t(:message_26, :scope => [:txt, :view, :shared, :candidate_detail, :rhtml]) %>:
     </li>
   <% end %>
   </ul>
