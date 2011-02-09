@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe Index do
+describe Candidate do
   #TODO test foreign candidates
   it 'enrolls a return new student with index' do
     mock_uic_getter = mock(UicGetter)
@@ -54,6 +54,13 @@ describe Index do
     candidate.should be_foreign_pay
     candidate.toggle_foreign_pay
     candidate.should_not be_foreign_pay
+  end
+
+  it "has admittance theme" do
+    candidate = Factory(:candidate)
+    admittance_theme = AdmittanceTheme.new
+    candidate.admittance_theme = admittance_theme
+    candidate.admittance_theme.should == admittance_theme
   end
 end
 

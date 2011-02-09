@@ -16,6 +16,7 @@ class Candidate < ActiveRecord::Base
     :foreign_key => 'language1_id'
   belongs_to :language2, :class_name => 'Subject',
     :foreign_key => 'language2_id'
+  belongs_to :admittance_theme
 
   before_save :strip_birth_number
 
