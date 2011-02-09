@@ -2,6 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe ImIndex do
   before(:each) do
+    Role.destroy_all
     @student = Factory(:student, :uic => 111222)
     @identity = ImIdentity.create(:uic => @student.uic,
                                   :loginname => 'student',
