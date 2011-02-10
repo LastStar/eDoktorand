@@ -40,6 +40,7 @@ describe AdmittanceTheme do
       admittance_theme.department = department
       admittance_theme.name = 'Some name'
       admittance_theme.save
+      AdmittanceTheme.create(:specialization => specialization, :department => department, :name => 'some name')
       AdmittanceTheme.departments_for_specialization(specialization).should =~ [department]
     end
   end
