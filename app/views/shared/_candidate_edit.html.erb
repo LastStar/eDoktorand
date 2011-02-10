@@ -98,9 +98,9 @@
     <% end %>
     <% if AdmittanceTheme.has_for?(@candidate.specialization) %>
       <label for="candidate_department_id"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
-      <%= select 'candidate', 'department_id', AdmittanceTheme.departments_for_specialization(@candidate.specialization).map{|d| [d.name, d.id]} %><br />
+      <%= select 'candidate', 'department_id', departments_for(@candidate.specialization) %><br />
       <label for="candidate_admitance_theme_id"><%= t(:message_42, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
-      <%= select 'candidate', 'admittance_theme_id', AdmittanceTheme.all(:conditions => {:specialization_id => @candidate.specialization.id}).map {|at| [at.name, at.id]} %>
+      <%= select 'candidate', 'admittance_theme_id', admittance_themes_for(@candidate.specialization) %>
       <%= hidden_field 'candidate', 'study_theme', :value => ''%><br />
     <% else %>
       <label for="candidate_department_id"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>

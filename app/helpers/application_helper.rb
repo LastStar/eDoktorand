@@ -1,6 +1,15 @@
 # TODO move all ids methods to corresponding models
 module ApplicationHelper
 
+  def departments_for(specialization)
+    AdmittanceTheme.departments_for_specialization(
+      specialization).map {|d| [d.name, d.id]}
+  end
+
+  def admittance_themes_for(specialization)
+    AdmittanceTheme.all(:conditions => {:specialization_id => specialization.id}).map {|at| [at.display_name, at.id]}
+  end
+
   # prints link logout page
   def logout_link
     link_to_unless_current(image_tag('icons/door_in.png'),
