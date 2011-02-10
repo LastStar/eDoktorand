@@ -1,11 +1,11 @@
---- 
-cs: 
-  txt: 
+---
+cs:
+  txt:
     model:
       study_plan:
         message_0: Oblasti předmětů musí být vyplněny
 
-      plan: 
+      plan:
         message_0: SP splněn
         message_1: SP neschválen
         message_2: SP schválen
@@ -14,16 +14,16 @@ cs:
         message_5: děkan
       parameter: {}
 
-      exam: 
+      exam:
         message_0: externí zkouška
         message_1: Zkouška pro studenta
       defense: {}
 
       address: {}
 
-      person: 
+      person:
         message_0: Uživatel
-      tutor: 
+      tutor:
         message_0: Školitel
         message_1: schválit jako školitel
         message_2: atestovat jako školitel
@@ -31,14 +31,14 @@ cs:
 
       study: {}
 
-      leader: 
+      leader:
         message_0: Vedoucí katedry
         message_1: Státní doktorská zkouška
         message_2: schválit jako vedoucí katedry
         message_3: atestovat jako vedoucí
       scholarship: {}
 
-      theme: 
+      theme:
         message_0: téma disertační práce nesmí být prázdné
         message_1: neuspěl u závěrečné zkoušky
       approval: {}
@@ -47,7 +47,7 @@ cs:
 
       deanship: {}
 
-      term: 
+      term:
         message_0: Špatný formát času - hh:mm
         message_1: Musí být vyplněna místnost
         message_2: Špatný formát času - hh:mm
@@ -58,7 +58,7 @@ cs:
 
       role: {}
 
-      examinator: 
+      examinator:
         message_0: Zkoušející
       contact: {}
 
@@ -70,13 +70,13 @@ cs:
 
       supplement: {}
 
-      dean: 
+      dean:
         message_0: Děkan
         message_1: schválit jako děkan
         message_2: atestovat jako děkan
-      subject: 
+      subject:
         message_0: externí předmět
-      candidate: 
+      candidate:
         message_18: jen zapsaní
         message_8: univerzita nesmí být prazdná
         message_9: fakultr nesmí být prazdná
@@ -102,9 +102,10 @@ cs:
         message_16: jen pozvaní
         message_7: státní příslušnost nesmí být prazdná
         message_17: jen přijatí
+        theme_department_mismatch: Téma je vypsáno pro jinou katedru, než jste vybral
       permission: {}
 
-      faculty: 
+      faculty:
         message_0: děkan
       faculty_secretary:
         message_0: Referentka VaV
@@ -120,7 +121,7 @@ cs:
 
       tutorship: {}
 
-      student: 
+      student:
         message_8: Změnit formu k
         message_9: ukončit k
         message_0: Student
@@ -138,7 +139,7 @@ cs:
         message_7: Obhájil
       leadership: {}
 
-      index: 
+      index:
         message_18: Špatné nebo chybějící číslo bankovního účtu.
         message_19: Špatné nebo chybějící číslo banky u b.ú.
         message_20: Chybí UIC.
@@ -163,7 +164,7 @@ cs:
         message_7: přerušeno
       program: {}
 
-      notifications: 
+      notifications:
         message_8: Pozvánka k státní doktorské zkoušce
         message_9: Pozvánka k obhajobě
         message_0: pozvánka k přijímací zkoušce do DSP na ČZU v Praze
@@ -177,16 +178,16 @@ cs:
         message_7: "with birth number "
       specialization: {}
 
-      detail: 
+      detail:
         message_0: univerzita nesmí být prazdná
       user: {
       }
 
-      interrupt: 
+      interrupt:
         message_0: ukončit k
       department: {}
 
-    lib: 
+    lib:
       getter: {}
 
       system: {}
@@ -205,21 +206,21 @@ cs:
 
       approver: {}
 
-      genderize: 
+      genderize:
         message_0: muž
         message_1: žena
       loader: {}
 
     helper:
-      
-      
+
+
       interrupts: {}
 
-      plans: 
+      plans:
         message_18: volitelné předměty
         message_8: Jste si jistý, že chcete
         message_9: ukončit studium
-        message_20: 
+        message_20:
         message_19: změnit SP
         message_0: semestr
         message_10: změnit školitele
@@ -259,7 +260,7 @@ cs:
 
       parameters: {}
 
-      students: 
+      students:
         sholarship_claimed: zažádáno o ubytovací stipendium
         sholarship_approved: schváleno ubytovací stipendium
         sholarship_canceled: neschváleno ubytovací stipendium
@@ -321,7 +322,7 @@ cs:
         message_17: schválená žádost o obhajobu
       documents: {}
 
-      specializations: 
+      specializations:
         message_0: Opravdu chcete předmět odebrat?
         message_1: Přidat předmět
         continue: pokračování
@@ -358,7 +359,7 @@ cs:
         message_30: odhlásit
         message_9: vyjádření školitele
         message_64: soubor s disertační prácí
-        message_53: termín SDZ        
+        message_53: termín SDZ
         message_31: termíny zkoušek
         message_20: diplomy
         message_19: zkoušky
@@ -370,7 +371,7 @@ cs:
         message_10: vyjádření vedoucího katedry
         message_1: žena
         message_55: skrýt
-        message_44: schválit jako 
+        message_44: schválit jako
         message_33: stipendia
         message_22: obory
         message_11: vyjádření děkana
@@ -392,7 +393,7 @@ cs:
         message_36: vytisknout
         message_25: termíny zkoušek
         message_14: Narozen dne
-        message_5: 
+        message_5:
         message_59: NEMÁTE ŠKOLITELE! KONTAKTUJTE HELPDESK!
         message_48: další informace pro následující atestaci
         message_37: s poznámkou
@@ -420,7 +421,7 @@ cs:
 
       types: {}
 
-      scholarships: 
+      scholarships:
         message_13: Špatné nebo chybějící číslo bankovního účtu.
         message_14: Špatné nebo chybějící číslo banky u b.ú.
         message_15: Chybí UIC.
@@ -443,7 +444,7 @@ cs:
 
       people: {}
 
-      defenses: 
+      defenses:
         message_0: pracuji...
         message_1: poslat email
         message_2: potvrdit bez odeslání mailu
@@ -463,7 +464,7 @@ cs:
 
       login: {}
 
-      candidates: 
+      candidates:
         message_40: prospěl
         message_29: kontakt
         message_18: všichni
@@ -514,7 +515,7 @@ cs:
         message_47: jen přijatí
         message_48: jen zapsaní
         message_49: podle kateder
-        
+
       terms:
         message_20: budoucí termíny
         message_19: vytvořit termín
@@ -550,7 +551,7 @@ cs:
             message_0: Seznam zkoušejících
             message_1: Zkoušející
             message_2: Katedra
-      
+
       study_plans:
         save_disert:
           rhtml:
@@ -566,7 +567,7 @@ cs:
             message_2: cizí jazyky
             message_3: odborné semináře
             message_4: předepsané předměty
-        
+
         save_language:
           rhtml:
             message_0: cizí jazyky
@@ -590,14 +591,14 @@ cs:
             message_1: volitelné přeměty
             message_2: předepsané přeměty
             message_3: odborné semináře
-            
-        _obligate_form: 
-          rhtml: 
+
+        _obligate_form:
+          rhtml:
             message_0: povinné předměty
             message_1: volitelné předměty
             message_2: pracuji...
-        _disert_form: 
-          rhtml: 
+        _disert_form:
+          rhtml:
             message_8: ukončit vytváření studijního plánu (nebude možný krok zpět)
             message_9: pracuji...
             message_0: semestr státní doktorské zkoušky
@@ -608,21 +609,21 @@ cs:
             message_5: anotace metodiky
             message_6: cizí jazyky
             message_7: pracuji...
-        _print_statements: 
-          rhtml: 
+        _print_statements:
+          rhtml:
             message_0: vyjádření školitele
             message_1: vyjádření vedoucího katedry
             message_2: vyjádření děkana
-        save_en: 
+        save_en:
           rhtml: {}
 
-        create_by_other: 
-          rhtml: 
+        create_by_other:
+          rhtml:
             message_0: Studijní plán
             message_1: předepsané předměty
             message_2: již ukončené předměty
-        _help: 
-          rhtml: 
+        _help:
+          rhtml:
             message_8: Máte splněny všechny předměty, pokračujte vyplněním přihlášky k státní zavěrečné zkoušce
             message_9: Přihláška ke státní doktorské zkoušce
             message_0: Váš studijní plán nebyl schválen.
@@ -637,67 +638,67 @@ cs:
             message_5: Přihláška k obhajobě
             message_6: Počkejte než bude Vaše žádost schválena a termín státní doktorské zkoušky vytvořen.
             message_7: Termín závěrečné zkoušky byl vytvořen a odeslán na Váš email. Termín lze ověřit i ve studijním plánu
-        _language_form: 
-          rhtml: 
+        _language_form:
+          rhtml:
             message_0: cizí jazyky
             message_1: volitelné předměty
             message_2: pracuji...
             message_3: SDZ a disertační práce
             message_4: pracuji...
-        _language: 
+        _language:
           rhtml: {}
 
-        _final_exam_areas: 
-          rhtml: 
+        _final_exam_areas:
+          rhtml:
             message_0: oblast předmětů
             message_1: oblast předmětů
-        _detail_form: 
-          rhtml: 
+        _detail_form:
+          rhtml:
             working: pracuji...
             additional_information: další informace
             submit: odeslat
-        _voluntary_form: 
-          rhtml: 
+        _voluntary_form:
+          rhtml:
             message_0: volitelné předměty
             message_1: povinné předměty
             message_2: pracuji...
             message_3: cizí jazyky
             message_4: pracuji...
-        _plan_error: 
+        _plan_error:
           rhtml: {}
 
-        _obligate: 
+        _obligate:
           rhtml: {}
 
-        _attestation_detail: 
-          rhtml: 
+        _attestation_detail:
+          rhtml:
             message_0: Dodatečné informace poskytnuté studentem
-        _voluntary: 
-          rhtml: 
+        _voluntary:
+          rhtml:
             message_0: předměty musí být rozdílné
-            message_1: univerzita nesmí být prazdná 
+            message_1: univerzita nesmí být prazdná
             message_2: semestr
             message_3: předmět
             message_4: předmět en
             message_5: univerzita
             message_6: zkoušející
-        _obligates: 
+        _obligates:
           rhtml: {}
 
-        _attest_information: 
-          rhtml: 
+        _attest_information:
+          rhtml:
             message_0: Student nemá žádný předmět pro tuto atestaci
             message_1: Nesplněné předměty jsou označeny červeně.
             message_2: Dodatečné informace poskytnuté studentem
-        _create_head: 
-          rhtml: 
+        _create_head:
+          rhtml:
             message_0: Studijní plán
-        show: 
-          rhtml: 
+        show:
+          rhtml:
             message_0: skrýt
             message_1: skrýt
-        index: 
-          rhtml: 
+        index:
+          rhtml:
             message_0: dokumenty
             message_1: studijní zkušební řád
             message_2: stipendijní řád
@@ -709,51 +710,51 @@ cs:
             message_8: žádost o podklady k obhajobě DP
             message_9: Volitelné předměty
             message_10: Dokumenty
-        _study_plan_header: 
-          rhtml: 
+        _study_plan_header:
+          rhtml:
             message_0: studijní plán
-        _language_edit: 
+        _language_edit:
           rhtml: {}
 
-        create: 
-          rhtml: 
+        create:
+          rhtml:
             message_0: |-
               Na této stránce začínáte vytvářet Váš studijní plán. Než ho začnete vytvářet, měl/a byste ho mít konzultován se školitelem.
-        _voluntary_edit: 
-          rhtml: 
+        _voluntary_edit:
+          rhtml:
             message_0: semestr
             message_1: předmět
             message_2: univerzita
             message_3: zkoušející
-        _seminar_form: 
-          rhtml: 
+        _seminar_form:
+          rhtml:
             message_0: pracuji...
             message_1: odborný seminář
             message_2: volitelné předměty
-        _final_areas_fields: 
-          rhtml: 
+        _final_areas_fields:
+          rhtml:
             message_0: oblast předmětů
-        add_en: 
+        add_en:
           rhtml: {}
 
-        _seminar: 
-          rhtml: 
+        _seminar:
+          rhtml:
             message_0: semestr
-        _general: 
-          rhtml: 
-            message_0: 
-            message_1: 
+        _general:
+          rhtml:
+            message_0:
+            message_1:
             message_2: semestr
             message_3: předmět
             message_4: předmět en
             message_5: univerzita
             message_6: zkoušející
-        _accept: 
-          rhtml: 
+        _accept:
+          rhtml:
             message_0: potvrdit
             message_1: Jste si jitý/á, že Váš plán je připraven?
-        _full_form: 
-          rhtml: 
+        _full_form:
+          rhtml:
             message_8: semestr
             message_9: oblast předmětů
             message_0: Předměty
@@ -771,96 +772,96 @@ cs:
             message_6: zkoušející
             message_16: odeslat
             message_7: semestr státní doktorské zkoušky
-        _create_done: 
-          rhtml: 
+        _create_done:
+          rhtml:
             message_0: Studijní plán
-      layouts: 
-        diploma_supplements: 
+      layouts:
+        diploma_supplements:
           rhtml: {}
 
-        departments: 
+        departments:
           rhtml: {}
 
-        attestation_terms: 
+        attestation_terms:
           rhtml: {}
 
-        scaffold: 
+        scaffold:
           rhtml: {}
 
-        exams: 
+        exams:
           rhtml: {}
 
-        _error: 
+        _error:
           rhtml: {}
 
-        parameters: 
+        parameters:
           rhtml: {}
 
-        _notice: 
+        _notice:
           rhtml: {}
 
-        employers: 
-          rhtml: 
+        employers:
+          rhtml:
             message_0: Používejte firefox !!
-        documents: 
-          rhtml: 
-            message_0: 
+        documents:
+          rhtml:
+            message_0:
             message_1: nahrávám
             message_2: Používejte firefox !!
-        specializations: 
+        specializations:
           rhtml: {}
 
-        titles: 
+        titles:
           rhtml: {}
 
-        address_types: 
+        address_types:
           rhtml: {}
 
-        faculties: 
+        faculties:
           rhtml: {}
 
-        contact_types: 
+        contact_types:
           rhtml: {}
 
-        languages: 
+        languages:
           rhtml: {}
 
-        probation_terms: 
+        probation_terms:
           rhtml: {}
 
-        permissions: 
+        permissions:
           rhtml: {}
 
-        people: 
+        people:
           rhtml: {}
 
-        admitances: 
+        admitances:
           rhtml: {}
 
-        subjects: 
+        subjects:
           rhtml: {}
 
-        studies: 
+        studies:
           rhtml: {}
 
-        standard: 
+        standard:
           rhtml: {}
 
-        roles: 
+        roles:
           rhtml: {}
 
-        candidates: 
+        candidates:
           rhtml: {}
 
-        admittances: 
+        admittances:
           rhtml: {}
 
-        actualities: 
+        actualities:
           rhtml: {}
 
-      interrupts: 
-        print_interrupt: 
-          rhtml: 
+      interrupts:
+        print_interrupt:
+          rhtml:
             message_10: Student
             message_11: Rok
             message_12: Obor
@@ -875,8 +876,8 @@ cs:
             message_5: trvání
             message_6: Poslední přerušení tohoto studia
             message_7: přerušeno od
-        index: 
-          rhtml: 
+        index:
+          rhtml:
             message_0: Přerušení studijního plánu
             message_1: začátek
             message_2: trvání
@@ -884,14 +885,14 @@ cs:
             message_4: poznámka
             message_5: se změnou studijního plánu
             message_6: odeslat
-      diploma_supplements: 
-        new: 
-          rhtml: 
+      diploma_supplements:
+        new:
+          rhtml:
             message_0: Nový diploma supplement
             message_1: vytvořit
             message_2: zpět
-        list: 
-          rhtml: 
+        list:
+          rhtml:
             message_8: smazat
             message_9: Opravdu chcete vymazat diplom?
             message_0: Výpis diploma supplements
@@ -904,15 +905,15 @@ cs:
             message_5: akce
             message_6: ukázat
             message_7: opravit
-            
-        edit: 
-          rhtml: 
+
+        edit:
+          rhtml:
             message_0: Oprava diploma supplement
             message_1: opravit
             message_2: ukázat
             message_3: zpět
-        _form: 
-          rhtml: 
+        _form:
+          rhtml:
             message_18: jméno děkana
             message_8: specializace
             message_9: název fakulty
@@ -933,26 +934,26 @@ cs:
             message_16: fakultní www
             message_7: studijní program
             message_17: datum
-      exams: 
-        new: 
+      exams:
+        new:
           rhtml: {}
 
-        list: 
-          rhtml: 
+        list:
+          rhtml:
             message_0: V systému pro Vás nejsou zkoušky
-        _with_subject: 
-          rhtml: 
+        _with_subject:
+          rhtml:
             message_0: Vytváření protokolu o zkoušce
             message_1: Vytváření zkoušky podle předmětu
             message_2: Zkouška z předmětu
             message_3: Vybrali jste
-        _with_student: 
-          rhtml: 
+        _with_student:
+          rhtml:
             message_0: Vytváření protokolu o zkoušce
             message_1: Zkouška pro studenta
             message_2: Zkouška z předmětu
-        _detail_form: 
-          rhtml: 
+        _detail_form:
+          rhtml:
             message_8: Otázky
             message_9: Výsledek
             message_0: Datum zkoušky
@@ -967,8 +968,8 @@ cs:
             message_5: 3. zkoušející
             message_6: 4. zkoušející
             message_7: Výsledek zkoušky
-        save_external_subject: 
-          rhtml: 
+        save_external_subject:
+          rhtml:
             message_8: Výsledek zkoušky
             message_9: Otázky
             message_0: externí zkouška
@@ -985,13 +986,13 @@ cs:
             message_6: Univerzita
             message_7: 1. zkoušející
             message_15: Vybrali jste
-        _main_form: 
-          rhtml: 
+        _main_form:
+          rhtml:
             message_0: Vyzkoušení studenti
             message_1: studenti
             message_2: student
-        _protocol: 
-          rhtml: 
+        _protocol:
+          rhtml:
             message_18: 4. zkoušející
             message_8: Školitel
             message_9: Katedra
@@ -1014,22 +1015,22 @@ cs:
             message_16: 3. zkoušející
             message_7: Obor
             message_17: Podpis
-        external: 
-          rhtml: 
+        external:
+          rhtml:
             message_0: externí zkouška
             message_1: Vyzkoušení studenti
             message_2: odeslat
-        show: 
-          rhtml: 
+        show:
+          rhtml:
             message_0: Výsledek zkoušky
-        _table_list: 
-          rhtml: 
+        _table_list:
+          rhtml:
             message_0: Student
             message_1: Předmět
             message_2: Výsledek
             message_3: Poznámka
-        _show_protocol: 
-          rhtml: 
+        _show_protocol:
+          rhtml:
             message_8: Školitel
             message_9: Katedra
             message_0: Protokol o vykonané zkoušce
@@ -1048,31 +1049,31 @@ cs:
             message_16: vytisknout
             message_7: Obor
             message_17: vytvořit další zkoušku
-        _list: 
+        _list:
           rhtml: {}
 
-        create: 
-          rhtml: 
+        create:
+          rhtml:
             message_0: Vyberte si prosím způsob vytváření zkoušky
             message_1: Zpět na výpis
-        by_subject: 
-          rhtml: 
+        by_subject:
+          rhtml:
             message_0: zkouška z předmětu
             message_1: zkouškové předměty
             message_2: předmět
             message_3: odeslat
-        _show: 
-          rhtml: 
+        _show:
+          rhtml:
             message_0: Protokol o vykonané zkoušce
-        save_external_student: 
-          rhtml: 
+        save_external_student:
+          rhtml:
             message_0: externí zkouška
             message_1: zkouškové předměty
             message_2: odeslat
             message_3: student
-      addresses: 
-        _edit: 
-          rhtml: 
+      addresses:
+        _edit:
+          rhtml:
             message_8: obec
             message_9: psč
             message_0: Státní občanství
@@ -1086,27 +1087,27 @@ cs:
             message_5: Adresa
             message_6: ulice
             message_7: číslo popisné
-        edit_city: 
+        edit_city:
           rhtml: {}
 
-        edit_zip: 
+        edit_zip:
           rhtml: {}
 
-        edit_street: 
+        edit_street:
           rhtml: {}
 
-        edit_desc_number: 
+        edit_desc_number:
           rhtml: {}
 
-        _save: 
+        _save:
           rhtml: {}
 
-      parameters: 
+      parameters:
         sample_page:
           rhtml:
             message_0: Tento parametr nemá náhled
-        
-        new: 
+
+        new:
           rhtml:
             message_0: Nový parametr
             message_1: Název
@@ -1115,7 +1116,7 @@ cs:
             message_4: Zpět
             message_5: Vytvořit
 
-        list: 
+        list:
           rhtml:
             message_0: Název
             message_1: Hodnota
@@ -1125,14 +1126,14 @@ cs:
             message_5: Upravit
             message_6: Smazat
             message_7: Nový parametr
-        edit: 
+        edit:
           rhtml:
             message_0: Úprava parametru
             message_1: Zpět
             message_2: Zobrazit
             message_3: Uložit
 
-        show: 
+        show:
           rhtml:
             message_0: Parametr
             message_1: Název
@@ -1141,11 +1142,11 @@ cs:
             message_4: Zpět
             message_5: Upravit
 
-        _form: 
+        _form:
           rhtml: {}
 
-      students: 
-        _index_line: 
+      students:
+        _index_line:
           rhtml: {}
         mail_list:
           rhtml:
@@ -1153,42 +1154,42 @@ cs:
         show:
           rjs:
             message_0: odeslat
-      
 
-        index: 
-          rhtml: 
+
+        index:
+          rhtml:
             message_0: Výpis studentů
             message_1: nahrávám
-        edit_birthname: 
+        edit_birthname:
           rhtml: {}
 
-        time_form: 
-          rhtml: 
+        time_form:
+          rhtml:
             message_0: Ukončit k
             message_1: Změnit formu k
             message_2: Složil SDZ k
-            message_3: Obhajil DP k            
-        scholarship: 
-          rhtml: 
+            message_3: Obhajil DP k
+        scholarship:
+          rhtml:
             message_0: Stipendia pro studenty
-        _student_detail: 
-          rhtml: 
+        _student_detail:
+          rhtml:
             message_0: ročník
-        _scholarship_list: 
-          rhtml: 
+        _scholarship_list:
+          rhtml:
             message_0: Jméno a příjmení
             message_1: Katedra
             message_2: Řádné
             message_3: Mimořádné
             message_4: Kč
-        edit_account: 
+        edit_account:
           rhtml: {}
 
-        _student_menu: 
+        _student_menu:
           rhtml: {}
 
-        end_study: 
-          rhtml: 
+        end_study:
+          rhtml:
             message_0: odeslat
             message_1: Žádost o ukončení studia
             message_2: Student
@@ -1198,8 +1199,8 @@ cs:
             message_6: Datum
             message_7: Důvod ukončení studia
 
-        end_study_confirm: 
-          rhtml: 
+        end_study_confirm:
+          rhtml:
             message_0: odeslat
             message_1: Žádost o ukončení studia
             message_2: Student
@@ -1208,38 +1209,38 @@ cs:
             message_5: Školitel
             message_6: Datum
             message_7: Důvod ukončení studia
-        edit_tutor: 
+        edit_tutor:
           rhtml: {}
 
-        edit_phone: 
+        edit_phone:
           rhtml: {}
 
-        _search: 
-          rhtml: 
+        _search:
+          rhtml:
             message_0: hledat podle příjmení
             message_1: odeslat
             message_2: Pro nastavení filtru klikněte na nadpis
             message_3: odeslat
-        _list: 
-          rhtml: 
+        _list:
+          rhtml:
             message_0: Výpis studentů
             message_1: jen vybrané
             message_2: Nenalezeni žádní studenti. Použijte filtry ke změně výběru.
             message_3: e-maily
-        edit_citizenship: 
+        edit_citizenship:
           rhtml: {}
 
-        edit_email: 
+        edit_email:
           rhtml: {}
 
-        edit_display_name: 
+        edit_display_name:
           rhtml: {}
 
-        edit_consultant: 
+        edit_consultant:
           rhtml: {}
 
-        change_tutor: 
-          rhtml: 
+        change_tutor:
+          rhtml:
             message_0: odeslat
             message_1: Žádost na změnu školitele
             message_2: Student
@@ -1249,7 +1250,7 @@ cs:
             message_6: Datum
             message_7: Důvod změny školitele
 
-        change_tutor_confirm: 
+        change_tutor_confirm:
           rhtml:
             message_0: nic
             message_1: Žádost na změnu školitele
@@ -1259,45 +1260,45 @@ cs:
             message_5: Školitel
             message_6: Datum
             message_7: Důvod změny školitele
-           
-        _index: 
-          rhtml: 
+
+        _index:
+          rhtml:
             message_0: ročník
-        _account_form: 
-          rhtml: 
+        _account_form:
+          rhtml:
             message_0: předčíslí
             message_1: konto
             message_2: kód banky
-      documents: 
-        new: 
+      documents:
+        new:
           rhtml: {}
 
-        list: 
+        list:
           rhtml: {}
 
-        how_to: 
+        how_to:
           rhtml: {}
 
-        edit: 
+        edit:
           rhtml: {}
 
-        diploma_supplement: 
-          rhtml: 
+        diploma_supplement:
+          rhtml:
             message_0: zpět
             message_1: tisk pro zaměstnavatele
             message_2: diploma supplement
-        show: 
+        show:
           rhtml: {}
 
-        _form: 
+        _form:
           rhtml: {}
 
-      specializations: 
-        new: 
+      specializations:
+        new:
           rhtml: {}
 
-        attestation: 
-          rhtml: 
+        attestation:
+          rhtml:
             student: Student
             date_of_last_change: Poslední změna
             note: Poznámka
@@ -1313,8 +1314,8 @@ cs:
             message_5: Školitel
             message_6: Forma
             message_7: P/S
-        list: 
-          rhtml: 
+        list:
+          rhtml:
             message_8: Atestace
             message_9: Předměty
             message_0: Výpis oborů
@@ -1325,59 +1326,59 @@ cs:
             message_5: Akreditován
             message_6: ano
             message_7: ne
-        edit: 
+        edit:
           rhtml: {}
 
-        manage_specialization: 
-          rhtml: 
+        manage_specialization:
+          rhtml:
             message_0: Akreditováns list
             message_1: Obory nenalezeny
-        manage_edit: 
-          rhtml: 
+        manage_edit:
+          rhtml:
             message_0: Akreditován
             message_1: zpět
             message_2: Povinné předměty
             message_3: Volitelné předměty
-        show: 
+        show:
           rhtml: {}
 
-        add_subject: 
+        add_subject:
           rhtml: {}
 
-        _specialization_subject: 
+        _specialization_subject:
           rhtml: {}
 
-        _view: 
+        _view:
           rhtml: {}
 
-        subjects: 
-          rhtml: 
+        subjects:
+          rhtml:
             message_0: Akreditován
             message_1: zpět
             message_2: Povinné předměty
             message_3: Volitelné předměty
-      account: 
-        user_roles: 
+      account:
+        user_roles:
           rhtml: {}
 
-        logout: 
+        logout:
           rhtml: {}
 
-        welcome: 
+        welcome:
           rhtml: {}
 
-        user_roles_update: 
+        user_roles_update:
           rhtml: {}
 
-        no_permission: 
-          rhtml: 
+        no_permission:
+          rhtml:
             message_0: Na požadovanou akci nemáte práva
             message_1: zpět
-        _actuality: 
+        _actuality:
           rhtml: {}
 
-        login: 
-          rhtml: 
+        login:
+          rhtml:
             message_0: přihlašuji se ...
             message_1: Přihlašovací formulář
             message_2: Uživatelské jméno
@@ -1388,13 +1389,13 @@ cs:
             message_7: Aktuality
             message_8: Použijte Firefox 3
             message_9: Nyní používáte
-        error: 
-          rhtml: 
+        error:
+          rhtml:
             message_0: "V aplikaci se vyskytla chyba:"
             message_1: zpět
-      form: 
-        finish: 
-          rhtml: 
+      form:
+        finish:
+          rhtml:
             message_8: S přáním všeho nejlepšího
             message_9: Oddělení pro Vědu a Výzkum
             message_0: Vaše přihláška byla úspěšně elektronicky zaregistrována.
@@ -1405,32 +1406,32 @@ cs:
             message_3: Česká zemědělská univerzita v Praze
             message_4: odd. VaV
             message_5: 165 21 Praha 6 - Suchdol.
-            message_6: Další informace Vám budou sdělovány poštou či elektronicky. 
+            message_6: Další informace Vám budou sdělovány poštou či elektronicky.
             message_7: Děkujeme Vám za Váš zájem
-        details: 
+        details:
           rhtml: {}
 
-        _error: 
-          rhtml: 
+        _error:
+          rhtml:
             message_0: Chyba
             message_1: Vyplňte prosím všechny údaje, jejichž popiska je červená
-        _notice: 
-          rhtml: 
+        _notice:
+          rhtml:
             message_0: Poznámka
-        _preview_header: 
-          rhtml: 
+        _preview_header:
+          rhtml:
             message_0: Česká zemědělská univerzita v Praze
             message_1: Fakulta
-        index: 
-          rhtml: 
+        index:
+          rhtml:
             message_0: Obory studia jsou přiřazeny k jednotlivým fakultám. Zobrazí se Vám po rozkliknutí.
             message_1: dokumenty
             login_to_fix: "Přihlásit se pro opravu přihlášky"
             password: "Heslo"
             login: "Přihlásit"
             language: Jazyk
-        preview: 
-          rhtml: 
+        preview:
+          rhtml:
             message_18: prosím klikněte zde pro elektronickou registraci Vaší přihlášky
             message_8: zaslat poštou všechny požadované dokumenty
             message_9: na oddělení Vědy a Výzkumu. V případě, že tyto kroky neučiníte, nelze zaručit Vaši úspěšnou registraci.
@@ -1453,19 +1454,19 @@ cs:
             message_19: Přihlášení na přihlášku
             password: Heslo
             later_fix: Tyto údaje slouží pro pozdější editaci rozepsané přihlášky (dosud neregistrované) či pro prohlížení již zaregistrované přihlášky.
-      shared: 
-        _approve_form: 
-          rhtml: 
+      shared:
+        _approve_form:
+          rhtml:
             message_0: poznámka
             message_1: výsledek
             message_2: odeslat
-        _student_detail: 
-          rhtml: 
+        _student_detail:
+          rhtml:
             message_0: Osobní a studijní údaje
             message_1: Akce
             message_2: Kontaktní údaje
-        candidate_detail: 
-          rhtml: 
+        candidate_detail:
+          rhtml:
             message_18: telefon
             message_8: email
             message_9: telefon
@@ -1494,13 +1495,13 @@ cs:
             message_16: Zaměstnavatel
             message_7: Adresa
             message_17: Zaměstnavatel
-        _methodology: 
-          rhtml: 
+        _methodology:
+          rhtml:
             message_0: anotace metodiky
             message_1: ukázat
             message_2: nahrát metodiku
-        _candidate_edit: 
-          rhtml: 
+        _candidate_edit:
+          rhtml:
             personal_details: Osobní údaje
             message_40: forma studia
             message_29: obor
@@ -1548,8 +1549,8 @@ cs:
             message_39: katedra
             message_28: fakulta
             message_17: psč
-        _study_detail: 
-          rhtml: 
+        _study_detail:
+          rhtml:
             message_18: schválen dne
             message_8: Poslední přerušení tohoto studia
             message_9: poznámka
@@ -1570,8 +1571,8 @@ cs:
             message_16: Studijní plán
             message_7: trvání
             message_17: neschváleno dne
-        _main_menu: 
-          rhtml: 
+        _main_menu:
+          rhtml:
             message_8: stipendia
             message_9: zkoušky
             message_0: nový studijní plán
@@ -1588,34 +1589,34 @@ cs:
             message_15: odhlásit
             message_6: uchazeči
             message_7: komise
-        _interrupt: 
-          rhtml: 
+        _interrupt:
+          rhtml:
             message_0: přerušeno od
-        _disert_theme: 
-          rhtml: 
+        _disert_theme:
+          rhtml:
             message_0: Disertační práce
             message_1: téma disertační práce
             message_2: semestr
             message_3: termín obhajoby disertační práce
-        _system_menu: 
+        _system_menu:
           rhtml: {}
 
-        _student_contact: 
-          rhtml: 
+        _student_contact:
+          rhtml:
             message_0: Kontakt
             message_1: email
             message_2: telefon
             message_3: Adresa
             message_4: korespondenční adresa
-        _address_detail: 
+        _address_detail:
           rhtml: {}
 
-        _subjects: 
-          rhtml: 
+        _subjects:
+          rhtml:
             message_0: semestr
             message_1: prospěl
-        _personal_detail: 
-          rhtml: 
+        _personal_detail:
+          rhtml:
             message_0: Obor
             message_1: Katedra
             message_2: Forma studia
@@ -1635,9 +1636,9 @@ cs:
             message_16: Konto
             message_17: Osobní údaje
             semester: Semestr
-            
-        _final_exam: 
-          rhtml: 
+
+        _final_exam:
+          rhtml:
             message_0: semestr
             message_1: Státní doktorská zkouška
             message_2: Tento student byl pozván k obhajobě disertační práce.
@@ -1646,21 +1647,21 @@ cs:
             message_5: Tento student požádal o vykonání státní doktorské zkoušky.
             message_6: oblast předmětů
             message_7: oblast předmětů
-      final_exam_terms: 
-        _edit: 
-          rhtml: 
+      final_exam_terms:
+        _edit:
+          rhtml:
             message_0: Uložit
-        prepare_print: 
-          rhtml: 
+        prepare_print:
+          rhtml:
             message_0: Česká zemědělská univerzita v Praze
             message_1: Oznámení zasedání komise pro státní doktorské zkoušky.
             message_2: Komise budou zasedat dne
             message_3: v místnosti
-        list: 
-          rhtml: 
+        list:
+          rhtml:
             message_0: Vytisknout oznámení
-        protocol: 
-          rhtml: 
+        protocol:
+          rhtml:
             message_18: Podpis předsedy
             message_8: Začátek studia
             message_9: Konzultant
@@ -1680,8 +1681,8 @@ cs:
             message_16: Oponent
             message_7: Školitel
             message_17: Klasifikace státní doktorské zkoušky
-        _detail: 
-          rhtml: 
+        _detail:
+          rhtml:
             message_8: Oponent
             message_9: Členové komise
             message_0: Jméno a příjmení
@@ -1692,14 +1693,14 @@ cs:
             message_5: Místnost
             message_6: Teze disertační práce
             message_7: Předseda komise
-        claim: 
-          rhtml: 
+        claim:
+          rhtml:
             message_0: Přihláška ke státní doktorské zkoušce
             message_1: název teze disertační práce
             message_2: soubor s tezí disertační práce
             message_3: odeslat
-        _form: 
-          rhtml: 
+        _form:
+          rhtml:
             message_8: člen komise
             message_9: oponent
             message_0: datum a čas
@@ -1710,30 +1711,30 @@ cs:
             message_5: člen komise
             message_6: člen komise
             message_7: člen komise
-        _show: 
+        _show:
           rhtml: {}
 
-        _term_line: 
-          rhtml: 
+        _term_line:
+          rhtml:
             message_0: v místnosti
         send_invitation:
           rjs:
             message_0: email odeslán
             message_1: potvrzeno
-      scholarships: 
-        sum: 
-          rhtml: 
+      scholarships:
+        sum:
+          rhtml:
             message_0: součet řádných stipendií
             message_1: součet mimořádných stipendií z fakultních zdrojů
-        prepare: 
-          rhtml: 
+        prepare:
+          rhtml:
             message_0: Stipendia pro studenty
-        _index_line: 
-          rhtml: 
+        _index_line:
+          rhtml:
             message_0: Kč
             message_1: Kč
-        list: 
-          rhtml: 
+        list:
+          rhtml:
             message_8: Disponent
             message_9: Amount (CZK)
             message_0: stipendia
@@ -1755,16 +1756,16 @@ cs:
             message_18: Chybí v systému
             message_19: Zrušit schválení
             message_20: Jste si opravdu jist, že chcete zrušit schválení stipendií? Tato operace je nevratná!
-        add: 
-          rhtml: 
+        add:
+          rhtml:
             message_0: částka
             message_1: Kč
             message_2: zakázka
             message_3: pracoviště
             message_4: činnost
             message_5: přidání mimořádného stipendia
-        _prepare_list: 
-          rhtml: 
+        _prepare_list:
+          rhtml:
             message_0: Jméno a příjmení
             message_1: Konto
             message_2: Katedra
@@ -1772,14 +1773,14 @@ cs:
             message_4: Řádné
             message_5: Mimořádné
             message_6: Vytvořil
-        scholarship: 
+        scholarship:
           rhtml: {}
 
-        _scholarship_line: 
-          rhtml: 
+        _scholarship_line:
+          rhtml:
             message_0: Kč
-        student_list: 
-          rhtml: 
+        student_list:
+          rhtml:
             message_0: Vyplacená stipendia
             message_1: Vyplňte adresu a číslo účtu pro povolení žádosti o ubytovací stipendium.
             message_2: Nebylo Vám přiznáno žádné stipendium.
@@ -1788,22 +1789,22 @@ cs:
             message_5: Disponent
             message_6: Amount (CZK)
             message_7: Vyplacení stipendia trvá týden
-        _add: 
-          rhtml: 
+        _add:
+          rhtml:
             message_0: částka
             message_1: Kč
             message_2: zakázka
             message_3: pracoviště
             message_4: činnost
             message_5: přidání mimořádného stipendia
-        change: 
-          rhtml: 
+        change:
+          rhtml:
             message_0: Kč
-        _detail: 
-          rhtml: 
+        _detail:
+          rhtml:
             message_0: Kč
-        claim: 
-          rhtml: 
+        claim:
+          rhtml:
             message_18: Podpis
             message_8: Ulice
             message_9: Č.P.
@@ -1824,58 +1825,58 @@ cs:
             message_16: Datum
             message_7: Adresa místa trvalého pobytu
             message_17: odd. VaV
-        _detail_scholarship: 
+        _detail_scholarship:
           rhtml: {}
 
-        _list: 
+        _list:
           rhtml: {}
 
-        _account: 
-          rhtml: 
+        _account:
+          rhtml:
             message_0: Konto
-        detail: 
-          rhtml: 
+        detail:
+          rhtml:
             message_0: Kč
-        approve: 
-          rhtml: 
+        approve:
+          rhtml:
             message_0: Stipendia pro studenty
             message_1: Mimořádné
             message_2: Řádné
             message_3: Jméno a příjmení
-        _student_list_line: 
+        _student_list_line:
           rhtml: {}
 
-        _regular: 
-          rhtml: 
+        _regular:
+          rhtml:
             message_0: Kč
-        _approved_line: 
+        _approved_line:
           rhtml: {}
 
-      probation_terms: 
-        new: 
+      probation_terms:
+        new:
           rhtml: {}
 
-        _subject_form: 
-          rhtml: 
+        _subject_form:
+          rhtml:
             message_0: předměty termínu zkoušky
             message_1: předmět
-        _probation_term_details_form: 
-          rhtml: 
+        _probation_term_details_form:
+          rhtml:
             message_0: Detail termínu zkoušky
             message_1: místnost
             message_2: začátek
             message_3: datum
             message_4: maximální počet studentů
             message_5: poznámka pro studenty
-        list: 
-          rhtml: 
+        list:
+          rhtml:
             message_0: V systému nejsou žádné zkouškové termíny podle Vašeho výběru
             message_1: Termíny zkoušek
-        edit: 
-          rhtml: 
+        edit:
+          rhtml:
             message_0: Oprava termínu zkoušky
-        _probation_term_with_details: 
-          rhtml: 
+        _probation_term_with_details:
+          rhtml:
             message_0: Vytváření termínu zkoušky
             message_1: Zkouškový termín z předmětu
             message_2: datum
@@ -1883,19 +1884,19 @@ cs:
             message_4: začátek
             message_5: maximální počet studentů
             message_6: poznámka pro studenty
-        _examinators_form: 
-          rhtml: 
+        _examinators_form:
+          rhtml:
             message_0: Termíny zkoušek
             message_1: 1. zkoušející
             message_2: 2. zkoušející
             message_3: akce
             message_4: odeslat
             message_5: vymazat
-        show: 
+        show:
           rhtml: {}
 
-        _list: 
-          rhtml: 
+        _list:
+          rhtml:
             message_0: maximum/zapsáno
             message_1: místnost
             message_2: začátek
@@ -1903,71 +1904,71 @@ cs:
             message_4: 1. zkoušející
             message_5: 2. zkoušející
             message_6: poznámka
-        _form: 
+        _form:
           rhtml: {}
 
-        detail: 
-          rhtml: 
+        detail:
+          rhtml:
             message_0: přihlásit studenta
             message_1: zapsat
-        create: 
-          rhtml: 
+        create:
+          rhtml:
             message_0: Vytváření termínu zkoušky
-        _enrolled_students: 
-          rhtml: 
+        _enrolled_students:
+          rhtml:
             message_0: neprospěl
             message_1: prospěl
-        _probation_term_with_subject: 
-          rhtml: 
+        _probation_term_with_subject:
+          rhtml:
             message_0: Vytváření termínu zkoušky
             message_1: Zkouškový termín z předmětu
-      notifications: 
-        invite_to_defense: 
-          rhtml: 
+      notifications:
+        invite_to_defense:
+          rhtml:
             message_0: Dobrý den
             message_1: byl vytvořen termín Vaší obhajoby. Přihlašte se prosím ke svému účtu pro zkontrolování detailů.
             message_2: S přáním všeho nejlepšího
-        invite_to_final_exam: 
-          rhtml: 
+        invite_to_final_exam:
+          rhtml:
             message_0: Dobrý den
             message_1: byl vytvořen termín Vaší státní doktorské zkoušky. Přihlašte se prosím ke svému účtu pro zkontrolování detailů.
             message_2: S přáním všeho nejlepšího
-        invite_candidate: 
+        invite_candidate:
           rhtml: {}
 
-        created_account: 
+        created_account:
           rhtml: {}
 
-        change_tutor_en: 
+        change_tutor_en:
           rhtml: {}
 
-        reject_candidate: 
+        reject_candidate:
           rhtml: {}
 
-        end_study: 
+        end_study:
           rhtml: {}
 
-        admit_candidate: 
+        admit_candidate:
           rhtml: {}
 
-        study_plan_create: 
+        study_plan_create:
           rhtml: {}
 
-        interrupt_alert: 
+        interrupt_alert:
           rhtml: {}
 
-        change_tutor_cs: 
+        change_tutor_cs:
           rhtml: {}
 
-      defenses: 
-        _edit: 
-          rhtml: 
+      defenses:
+        _edit:
+          rhtml:
             message_0: Uložit
-        list: 
+        list:
           rhtml: {}
 
-        protocol: 
-          rhtml: 
+        protocol:
+          rhtml:
             message_18: Záporných
             message_8: Začátek studia
             message_9: Konzultant
@@ -1991,8 +1992,8 @@ cs:
             message_16: Přítomných členů komise
             message_7: Název disertační práce
             message_17: Kladných
-        _detail: 
-          rhtml: 
+        _detail:
+          rhtml:
             message_0: Datum a čas
             message_1: Místnost
             message_2: Předseda komise
@@ -2000,14 +2001,14 @@ cs:
             message_4: Druhý oponent
             message_5: Třetí oponent
             message_6: Členové komise
-        claim: 
-          rhtml: 
+        claim:
+          rhtml:
             message_0: Přihláška k obhajobě
             message_1: soubor s autoreferátem
             message_2: soubor s disertační prácí
             message_3: odeslat
-        _form: 
-          rhtml: 
+        _form:
+          rhtml:
             message_8: člen komise
             message_9: oponent
             message_0: datum a čas
@@ -2020,15 +2021,15 @@ cs:
             message_5: člen komise
             message_6: člen komise
             message_7: člen komise
-        _show: 
+        _show:
           rhtml: {}
         send_invitation:
           rjs:
             email_sent: email odeslán
             defense_confirmed: obhajoba potvrzena
 
-        announcement: 
-          rhtml: 
+        announcement:
+          rhtml:
             message_8: Místnost
             message_9: Název disertační práce
             message_0: Česká zemědělská univerzita v Praze
@@ -2045,35 +2046,35 @@ cs:
             message_5: Konzultant
             message_6: Začátek
             message_7: Datum a čas
-        _term_line: 
-          rhtml: 
+        _term_line:
+          rhtml:
             message_0: v místnosti
-      tutors: 
-        _edit: 
+      tutors:
+        _edit:
           rhtml: {}
 
-        list: 
-          rhtml: 
+        list:
+          rhtml:
             message_0: Seznam školitelů
             message_1: Školitel
             message_2: Obor
-        edit: 
+        edit:
           rhtml: {}
 
-        _specialization: 
+        _specialization:
           rhtml: {}
-        
+
         _bad_tutor:
           rhtml:
             message_0: Školitel není nikam zařazen, kontaktujte HELPDESK
 
-      exam_terms: 
-        new: 
-          rhtml: 
+      exam_terms:
+        new:
+          rhtml:
             message_0: vytvořit
             message_1: zpět
-        list: 
-          rhtml: 
+        list:
+          rhtml:
             message_8: nový termín
             message_0: opravit
             message_1: uchazeči
@@ -2083,16 +2084,16 @@ cs:
             message_5: místnost
             message_6: předseda komise
             message_7: V systému nejsou žádné komise pro příjímací zkoušky
-        edit: 
-          rhtml: 
+        edit:
+          rhtml:
             message_0: Uložit
             message_1: zpět
             message_2: Přijímací komise
-        show: 
+        show:
           rhtml: {}
 
-        _form: 
-          rhtml: 
+        _form:
+          rhtml:
             message_12: zadat ručně
             message_11: zpět na seznam
             message_8: člen komise
@@ -2106,31 +2107,31 @@ cs:
             message_5: člen komise
             message_6: člen komise
             message_7: člen komise
-      disert_themes: 
-        upload_methodology: 
-          rhtml: 
+      disert_themes:
+        upload_methodology:
+          rhtml:
             message_0: |-
               Na této stránce můžete nahrát Váš soubor s metodikou. Soubor musí být pouze ve formátu PDF.
             message_1: soubor
             message_2: nahrát
-        save_en: 
+        save_en:
           rhtml: {}
 
-        methodology: 
-          rhtml: 
+        methodology:
+          rhtml:
             message_0: |-
              Na této stránce můžete nahrát Váš soubor s metodikou. Soubor musí být pouze ve formátu PDF.
             message_1: soubor
             message_2: nahrát
-        add_en: 
+        add_en:
           rhtml: {}
 
-      candidates: 
-        new: 
+      candidates:
+        new:
           rhtml: {}
 
-        list: 
-          rhtml: 
+        list:
+          rhtml:
             message_18: seřaď všechny
             message_8: filtrovat
             message_9: po kliknutí seřadí se stránkováním uchazeče podle koridorů
@@ -2153,68 +2154,68 @@ cs:
             message_7: po kliknutí zobrazí se stránkováním zapsané uchazeče
             message_17: po kliknutí seřadí uchazeče podle data změny na 1 stránce
             message_21: smazat všechny uchazeče
-            message_22: Uchazeči 
-            
+            message_22: Uchazeči
+
         _delete_all_candidates:
           rhtml:
             message_1: k datu
 
-        edit: 
+        edit:
           rhtml: {}
 
-        _history: 
-          rhtml: 
+        _history:
+          rhtml:
             rejected: nepřijat
             message_0: ukončeno
             message_1: odsouhlasen
             message_2: pozván
             message_3: přijat
             message_4: protokol
-        confirm_admit: 
-          rhtml: 
+        confirm_admit:
+          rhtml:
             message_0: zpět na výpis
             message_1: zpět na výpis
             message_2: odešli mail s dekretem o přijetí
             message_3: přijmout bez odeslání mailem
-        _error: 
-          rhtml: 
+        _error:
+          rhtml:
             message_0: Chyba
             message_1: Vyplňte prosím všechny údaje, jejichž popiska je červená
-        _notice: 
-          rhtml: 
+        _notice:
+          rhtml:
             message_0: Poznámka
-        _contact: 
-          rhtml: 
+        _contact:
+          rhtml:
             message_0: email
             message_1: telefon
             message_2: Adresa
             message_3: correspondence address
-        _department_summary: 
-          rhtml: 
+        _department_summary:
+          rhtml:
             message_0: prezenční
             message_1: kombinované
-        invitation: 
+        invitation:
           rhtml: {}
 
-        admittance: 
+        admittance:
           rhtml: {}
 
-        _back: 
+        _back:
           rhtml: {}
 
-        show: 
+        show:
           rhtml: {}
 
-        _table_list: 
-          rhtml: 
+        _table_list:
+          rhtml:
             message_0: Uchazeč
             message_1: rodné číslo
             message_2: obor
             message_3: status
             message_4: forma studia
             message_5: Poznámka
-        _list: 
-          rhtml: 
+        _list:
+          rhtml:
             message_0: r.č.
             message_1: opravit
             message_2: smazat
@@ -2224,72 +2225,72 @@ cs:
             unset_foreign_pay: zruš C. P.
             message_6: cizí plátce
             message_7: Jste si jistý?
-        _corridor_summary: 
-          rhtml: 
+        _corridor_summary:
+          rhtml:
             message_0: prezenční
             message_1: kombinované
-        summary: 
+        summary:
           rhtml: {}
 
-        reject: 
-          rhtml: 
+        reject:
+          rhtml:
             message_0: zpět
-        enroll: 
-          rhtml: 
+        enroll:
+          rhtml:
             message_0: Desired login
             message_1: zapsat
             message_2: Zapsání uchazečů do sytému je zakázáno. Obraťte se na HELPDESK.
             message_3: zpět
-        admit: 
-          rhtml: 
+        admit:
+          rhtml:
             message_0: přijmout
             message_1: obor
             message_2: školitel
             message_3: katedra
             message_4: forma studia
             message_5: odeslat
-      actualities: 
-        new: 
+      actualities:
+        new:
           rhtml:
             message_0: Nová aktualita
             message_1: Vytvořit
             message_2: Zpět
 
-        list: 
+        list:
           rhtml:
             message_0: Aktuality
             message_1: Přidat aktualitu
 
-        edit: 
+        edit:
           rhtml:
             message_0: Editace Aktuality
             message_1: Uložit
             message_2: Zobrazit
             message_3: Zpět
-            
 
-        show: 
+
+        show:
           rhtml:
             message_0: Aktuality
             message_1: Upravit
             message_2: Zpět
 
-        _form: 
+        _form:
           rhtml:
             message_0: Nadpis
             message_1: Zpráva
 
-        _actuality: 
+        _actuality:
           rhtml:
             message_0: Zobrazit
             message_1: Upravit
             message_2: Smazat
             message_3: Opravdu vymazat?
 
-    controller: 
-      interrupts: 
+    controller:
+      interrupts:
         message_0: schváleno referentkou vědy a výzkumu
-      plans: 
+      plans:
         message_8: jazyky musí být rozdílné
         message_9: předměty musí být rozdílné
         message_0: Studijní plán
@@ -2301,16 +2302,16 @@ cs:
         message_6: některý externí předmět není správný
         message_7: předměty musí být rozdílné
         message_10: Nepodařilo se kontaktovat službu OIKT
-      exams: 
+      exams:
         message_0: Vytváření protokolu o zkoušce
         message_1: Zkouška byla úspěšně vytvořena
         message_2: Zkoušky
-      addresses: 
+      addresses:
         message_0: Kontakty
       parameters: {}
 
-      students: 
-        message_0: 
+      students:
+        message_0:
         message_1: Studenti
         message_2: ke schválení
         message_3: všichni studenti
@@ -2321,12 +2322,12 @@ cs:
 
       specializations: {}
 
-      account: 
+      account:
         message_0: Přihlášení do systému
         message_1: Přihlášení se nepodařilo
       application: {}
 
-      form: 
+      form:
         message_8: Tisk
         message_9: Vyplňte prosím všechny údaje, jejichž popiska je červená
         message_0: Přijímací řízení k doktorskému studiu
@@ -2346,9 +2347,9 @@ cs:
         message_16: Oprava neregistrované přihlášky
       supplements: {}
 
-      scholarships: 
+      scholarships:
         message_0: Stipendia
-      defenses: 
+      defenses:
         message_0: Přihláška k obhajobě
         message_1: Musíte přidat autoreferát
         message_2: termín obhajoby byl úspěšně vytvořen
@@ -2357,7 +2358,7 @@ cs:
         message_5: Protokol obhajoby disertační práce
       tutors: {}
 
-      terms: 
+      terms:
         message_0: Termíny SDZ
         message_1: Termíny zkoušky byl uložen
         message_2: Termíny zkoušek
@@ -2366,7 +2367,7 @@ cs:
       probation_terms:
         message_0: Počet volných míst byl vyčerpán
 
-      candidates: 
+      candidates:
         message_8: předchozí stránka
         message_9: další stránka
         message_0: Uchazeč byl opraven
@@ -2379,7 +2380,7 @@ cs:
         message_7: Uchazeči o studium
         message_10: cizí plátce
         message_11: Smazáno %i uchazečů
-      themes: 
+      themes:
         message_0: nahrání metodiky
         message_1: nahrání metodiky
         message_2: Soubor s metodikou musí být vybrán

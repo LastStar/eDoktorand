@@ -17,6 +17,15 @@ Feature: Admission form
     When I fill all on the admittance page
     And I select "Nice work (Tutor Tutorov)" from "candidate_admittance_theme_id"
     And I press "Odeslat"
-    Then I should see "Nice work"
+    Then I should see "Přihláška ke studiu v doktorském studijním programu"
+    And I should see "Nice work"
 
-  Scenario: Changing themes by department
+  Scenario: Setting theme not on department
+    Given there is "Science" faculty with all set
+    And "Low" specialization has admittance theme "Nice work" on "Good" department with "Tutorov" tutor
+    And "Low" specialization has admittance theme "Bad werk" on "Bad" department with "Tutorov" tutor
+    When I fill all on the admittance page
+    And I select "Bad" from "Katedra"
+    And I select "Nice work (Tutor Tutorov)" from "candidate_admittance_theme_id"
+    And I press "Odeslat"
+    Then I should see "Téma je vypsáno pro jinou katedru, než jste vybral"

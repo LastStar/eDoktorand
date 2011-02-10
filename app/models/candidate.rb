@@ -54,6 +54,7 @@ class Candidate < ActiveRecord::Base
 
   # validates if languages are not same
   def validate
+    # TODO check if used then remove vvvvv
     errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
     errors.add_to_base(I18n::t(:message_20, :scope => [:txt, :model, :candidate])) if
     !finished? && invited?
@@ -61,6 +62,12 @@ class Candidate < ActiveRecord::Base
     !invited? && admited?
     errors.add_to_base(I18n::t(:message_22, :scope => [:txt, :model, :candidate])) if
     !admited? && enrolled?
+    #^^^^^^^^
+    if admittance_theme.department != department
+      errors.add(:admittance_theme,
+                  I18n::t(:theme_department_mismatch,
+                          :scope => [:txt, :model, :candidate]))
+    end
   end
 
   def validate_on_create

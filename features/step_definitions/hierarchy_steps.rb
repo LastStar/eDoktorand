@@ -9,6 +9,7 @@ Given /^there is "(.+)" faculty with all set$/ do |faculty|
   first_specialization = Factory(:specialization, :name => "Low", :faculty => @faculty, :accredited => true)
   Factory(:specialization, :name => "High", :faculty => @faculty, :accredited => true)
   Factory(:department, :name => "Good", :faculty => @faculty)
+  Factory(:department, :name => "Bad", :faculty => @faculty)
   Factory(:title, :prefix => true)
   subject1 = Factory(:subject, :label => 'Subject 1', :code => 'CD1')
   subject2 = Factory(:subject, :label => 'Subject 2', :code => 'CD2')
