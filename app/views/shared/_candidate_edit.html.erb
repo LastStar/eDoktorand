@@ -92,16 +92,16 @@
     <%= select 'candidate', 'study_id', study_ids %><span class='required'>&nbsp;&lowast;</span ><br />
     <label for="candidate_language1" class="required"><%= t(:message_41, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <%= select 'candidate', 'language1_id', LanguageSubject.for_select(:specialization => @candidate.specialization_id) %><span class='required'>&nbsp;&lowast;</span ><br />
-    <% unless @candidate.admitting_faculty.id == 14 %>
+    <% if @candidate.admitting_faculty.id != 14 %>
     <label for="candidate_language2" class="required">&nbsp;</label>
     <%= select 'candidate', 'language2_id', LanguageSubject.for_select(:specialization => @candidate.specialization_id) %><span class='required'>&nbsp;&lowast;</span ><br />
     <% end %>
     <% if AdmittanceTheme.has_for?(@candidate.specialization) %>
-      <label for="candidate_department_id"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
-      <%= select 'candidate', 'department_id', departments_for(@candidate.specialization) %><br />
-      <label for="candidate_admitance_theme_id"><%= t(:message_42, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+      <label for="candidate_department_id" class="required"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
+      <%= select 'candidate', 'department_id', departments_for(@candidate.specialization) %><span class='required'>&nbsp;&lowast;</span ><br />
+      <label for="candidate_admitance_theme_id" class="required"><%= t(:message_42, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
       <%= select 'candidate', 'admittance_theme_id', admittance_themes_for(@candidate.specialization) %>
-      <%= hidden_field 'candidate', 'study_theme', :value => ''%><br />
+      <%= hidden_field 'candidate', 'study_theme', :value => ''%><span class='required'>&nbsp;&lowast;</span ><br />
     <% else %>
       <label for="candidate_department_id"><%= t(:message_39, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
       <%= select 'candidate', 'department_id', Department.for_select(:faculty => @candidate.specialization.faculty.id) %><br />

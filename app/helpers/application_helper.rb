@@ -7,7 +7,10 @@ module ApplicationHelper
   end
 
   def admittance_themes_for(specialization)
-    AdmittanceTheme.all(:conditions => {:specialization_id => specialization.id}).map {|at| [at.display_name, at.id]}
+    [[t(:choose_theme, :scope => [:txt, :helper, :application]), 0]].concat(AdmittanceTheme.all(
+      :conditions => {:specialization_id => specialization.id}).map do |at|
+      [at.display_name, at.id]
+    end)
   end
 
   # prints link logout page

@@ -63,9 +63,15 @@ class Candidate < ActiveRecord::Base
     errors.add_to_base(I18n::t(:message_22, :scope => [:txt, :model, :candidate])) if
     !admited? && enrolled?
     #^^^^^^^^
-    if admittance_theme && admittance_theme.department != department
+    if admittance_theme
+      if admittance_theme.department != department
       errors.add(:admittance_theme,
                   I18n::t(:theme_department_mismatch,
+                          :scope => [:txt, :model, :candidate]))
+      end
+    elsif specialization && AdmittanceTheme.has_for?(specialization)
+      errors.add(:admittance_theme,
+                  I18n::t(:theme_missing,
                           :scope => [:txt, :model, :candidate]))
     end
   end

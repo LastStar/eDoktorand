@@ -5,6 +5,7 @@ Given /^there is "(.+)" faculty with all set$/ do |faculty|
   Title.destroy_all
   Subject.destroy_all
   LanguageSubject.destroy_all
+  AdmittanceTheme.destroy_all
   @faculty = Factory(:faculty, :name => faculty)
   first_specialization = Factory(:specialization, :name => "Low", :faculty => @faculty, :accredited => true)
   Factory(:specialization, :name => "High", :faculty => @faculty, :accredited => true)

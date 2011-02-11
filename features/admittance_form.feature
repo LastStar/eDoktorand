@@ -1,3 +1,4 @@
+@admittance
 Feature: Admission form
   In order to fill in admission form
   as a candidate

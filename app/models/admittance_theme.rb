@@ -14,6 +14,6 @@ class AdmittanceTheme < ActiveRecord::Base
   end
 
   def self.departments_for_specialization(specialization)
-    all(:conditions => {:specialization_id => specialization.id}).map(&:department).uniq!
+    all(:conditions => {:specialization_id => specialization.id}).map(&:department).uniq
   end
 end

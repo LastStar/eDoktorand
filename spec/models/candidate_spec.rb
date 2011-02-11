@@ -62,5 +62,19 @@ describe Candidate do
     candidate.admittance_theme = admittance_theme
     candidate.admittance_theme.should == admittance_theme
   end
+
+  it 'is not valid when department is from other department' do
+    candidate = Factory(:candidate)
+    candidate.admittance_theme = AdmittanceTheme.new(:department => Factory(:department))
+    candidate.should_not be_valid
+  end
+
+  it 'is not valid when does not have admittance theme and some exists for its specialization' do
+    candidate = Factory(:candidate)
+    candidate.specialization = Factory(:specialization)
+    AdmittanceTheme.create(:name => 'some name', :specialization => candidate.specialization)
+    candidate.should_not be_valid
+  end
+
 end
 

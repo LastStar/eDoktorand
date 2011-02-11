@@ -77,6 +77,8 @@ cs:
       subject:
         message_0: externí předmět
       candidate:
+        theme_department_mismatch: Téma je vypsáno pro jinou katedru, než jste vybral\/-a
+        theme_missing: Vyberte prosím rámcové téma
         message_18: jen zapsaní
         message_8: univerzita nesmí být prazdná
         message_9: fakultr nesmí být prazdná
@@ -102,7 +104,6 @@ cs:
         message_16: jen pozvaní
         message_7: státní příslušnost nesmí být prazdná
         message_17: jen přijatí
-        theme_department_mismatch: Téma je vypsáno pro jinou katedru, než jste vybral
       permission: {}
 
       faculty:
@@ -180,36 +181,9 @@ cs:
 
       detail:
         message_0: univerzita nesmí být prazdná
-      user: {
-      }
 
       interrupt:
         message_0: ukončit k
-      department: {}
-
-    lib:
-      getter: {}
-
-      system: {}
-
-      merger: {}
-
-      exporter: {}
-
-      calculator: {}
-
-      changer: {}
-
-      approvable: {}
-
-      processor: {}
-
-      approver: {}
-
-      genderize:
-        message_0: muž
-        message_1: žena
-      loader: {}
 
     helper:
 
@@ -343,6 +317,7 @@ cs:
         finish: ukončit
         interrupt: přerušeno
         annual_report: výroční atestace
+        choose_theme: "--- vyberte rámcové téma ---"
         message_70: obhajoby
         message_69: žádosti
         message_68: SDZ
