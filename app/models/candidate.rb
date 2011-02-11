@@ -16,6 +16,7 @@ class Candidate < ActiveRecord::Base
     :foreign_key => 'language1_id'
   belongs_to :language2, :class_name => 'Subject',
     :foreign_key => 'language2_id'
+  belongs_to :admittance_theme
 
   before_save :strip_birth_number
 
@@ -29,7 +30,7 @@ class Candidate < ActiveRecord::Base
   validates_presence_of :state, :message => I18n::t(:message_7, :scope => [:txt, :model, :candidate])
   validates_presence_of :university, :message => I18n::t(:message_8, :scope => [:txt, :model, :candidate])
   validates_presence_of :faculty, :message => I18n::t(:message_9, :scope => [:txt, :model, :candidate])
-  validates_presence_of :studied_branch, :message => I18n::t(:message_10, :scope => [:txt, :model, :candidate])
+  validates_presence_of :studied_specialization, :message => I18n::t(:message_10, :scope => [:txt, :model, :candidate])
   validates_presence_of :birth_number, :message => I18n::t(:message_11, :scope => [:txt, :model, :candidate])
   validates_presence_of :number, :message => I18n::t(:message_12, :scope => [:txt, :model, :candidate])
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i,
@@ -53,6 +54,7 @@ class Candidate < ActiveRecord::Base
 
   # validates if languages are not same
   def validate
+    # TODO check if used then remove vvvvv
     errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
     errors.add_to_base(I18n::t(:message_20, :scope => [:txt, :model, :candidate])) if
     !finished? && invited?
@@ -60,6 +62,18 @@ class Candidate < ActiveRecord::Base
     !invited? && admited?
     errors.add_to_base(I18n::t(:message_22, :scope => [:txt, :model, :candidate])) if
     !admited? && enrolled?
+    #^^^^^^^^
+    if admittance_theme
+      if admittance_theme.department != department
+      errors.add(:admittance_theme,
+                  I18n::t(:theme_department_mismatch,
+                          :scope => [:txt, :model, :candidate]))
+      end
+    elsif specialization && AdmittanceTheme.has_for?(specialization)
+      errors.add(:admittance_theme,
+                  I18n::t(:theme_missing,
+                          :scope => [:txt, :model, :candidate]))
+    end
   end
 
   def validate_on_create

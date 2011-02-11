@@ -1,13 +1,13 @@
 class FormController < ApplicationController
   include LoginSystem
   layout "employers"
-  
+
   # page where candidate chooses desired specialization
   def index
     @faculties = Faculty.find(:all)
     @title = t(:message_0, :scope => [:txt, :controller, :form])
   end
-  
+
   # login for edit or check candidate detail
   def login
     @candidate = Candidate.find(:first, :conditions => ["id = ?", params[:candidate][:id]])
@@ -22,10 +22,10 @@ class FormController < ApplicationController
     else
       flash[:notice] = t(:message_15, :scope => [:txt, :controller, :form])
       redirect_to :action => :index
-    end    
+    end
   end
-  
-  # form details  
+
+  # form details
   def details
     prepare_candidate
     @action = 'save'
@@ -64,7 +64,7 @@ class FormController < ApplicationController
   def preview
     if @candidate
       @title = t(:message_6, :scope => [:txt, :controller, :form])
-      flash.now['notice'] = t(:message_7, :scope => [:txt, :controller, :form]) 
+      flash.now['notice'] = t(:message_7, :scope => [:txt, :controller, :form])
     else
       @candidate = Candidate.find(params[:id])
       @title = t(:message_8, :scope => [:txt, :controller, :form])
@@ -90,7 +90,7 @@ class FormController < ApplicationController
   private
   # prepares candidate with some preloaded values
   def prepare_candidate
-    @candidate = Candidate.new do |c| 
+    @candidate = Candidate.new do |c|
       c.specialization = Specialization.find(params[:id])
       c.state = 'CZ'
       c.address_state = 'CZ'

@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe Index do
+describe Candidate do
   #TODO test foreign candidates
   it 'enrolls a return new student with index' do
     mock_uic_getter = mock(UicGetter)
@@ -55,5 +55,26 @@ describe Index do
     candidate.toggle_foreign_pay
     candidate.should_not be_foreign_pay
   end
+
+  it "has admittance theme" do
+    candidate = Factory(:candidate)
+    admittance_theme = AdmittanceTheme.new
+    candidate.admittance_theme = admittance_theme
+    candidate.admittance_theme.should == admittance_theme
+  end
+
+  it 'is not valid when department is from other department' do
+    candidate = Factory(:candidate)
+    candidate.admittance_theme = AdmittanceTheme.new(:department => Factory(:department))
+    candidate.should_not be_valid
+  end
+
+  it 'is not valid when does not have admittance theme and some exists for its specialization' do
+    candidate = Factory(:candidate)
+    candidate.specialization = Factory(:specialization)
+    AdmittanceTheme.create(:name => 'some name', :specialization => candidate.specialization)
+    candidate.should_not be_valid
+  end
+
 end
 

@@ -5,18 +5,18 @@
     <% titles = [t(:message_3, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_4, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_5, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_6, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_7, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
     <%= filter_tags(:list, ['unready', 'ready', 'invited', 'admited', 'enrolled'], titles,
                       :message => t(:message_8, :scope => [:txt, :view, :candidates, :list, :rhtml]))  %>
-  <% end %>  
+  <% end %>
   <% if session[:list_mode] == 'list' %>
     <% message = image_tag("pages.png") %>
      <div id='list'>
   <% else %>
     <% message = image_tag("pages.png") %>
-    <div id='list' style='display: none'>   
+    <div id='list' style='display: none'>
   <% end %>
   <%titles = [t(:message_9, :scope => [:txt, :view, :candidates, :list, :rhtml]),t(:message_10, :scope => [:txt, :view, :candidates, :list, :rhtml]),
               t(:message_11, :scope => [:txt, :view, :candidates, :list, :rhtml])]%>
   <% if params[:action] == 'list_admission_ready'%>
-    <%= filtered_sort_tags(:list_admission_ready, sort_array, @filtered_by, titles, :message => t(:message_12, :scope => [:txt, :view, :candidates, :list, :rhtml])) %>    
+    <%= filtered_sort_tags(:list_admission_ready, sort_array, @filtered_by, titles, :message => t(:message_12, :scope => [:txt, :view, :candidates, :list, :rhtml])) %>
   <% else %>
     <%= filtered_sort_tags(:list, sort_array, @filtered_by, titles,
                            :message => t(:message_13, :scope => [:txt, :view, :candidates, :list, :rhtml]) + " <span title='"+ t(:message_14, :scope => [:txt, :view, :candidates, :list, :rhtml]) + "'>" +
@@ -32,14 +32,14 @@
     <% else %>
       <%message = image_tag("page.png")%>
       <div id='list_all'>
-    <%end%>   
+    <%end%>
         <%= sort_tags(:list_all, sort_array, titles, :message => t(:message_18, :scope => [:txt, :view, :candidates, :list, :rhtml]) + " <span title='"+
                       t(:message_19, :scope => [:txt, :view, :candidates, :list, :rhtml]) +
                       "'>"  + switch_button(message) +"</span> ") %>
       </div>
   <% end %>
   <div id='candidates_delete' class='links' style="clear:right">
-    <%= link_to_remote(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :url => { :action => 'delete_all_candidates'}, :method => :get, :update => "candidates_delete") %>
+    <%= link_to(t(:message_21, :scope => [:txt, :view, :candidates, :list, :rhtml]), :action => 'destroy_all') %>
   </div>
 <% end %>
 
@@ -51,7 +51,7 @@
 <% unless @candidates.empty? %>
   <%= render(:partial => 'list') %>
   <div class='links'>
-    <%= list_links %>                     
+    <%= list_links %>
   </div>
   <% unless session[:back_page] == 'list_all' %>
     <%= will_paginate %>

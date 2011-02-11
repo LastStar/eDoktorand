@@ -1,4 +1,10 @@
-config.cache_classes = true # This must be true for Cucumber to operate correctly!
+# Settings specified here will take precedence over those in config/environment.rb
+
+# The test environment is used exclusively to run your application's
+# test suite.  You never need to work with it otherwise.  Remember that
+# your test database is "scratch space" for the test suite and is wiped
+# and recreated between test runs.  Don't rely on the data there!
+config.cache_classes = true
 
 # Log error messages when you accidentally call methods on nil.
 config.whiny_nils = true
@@ -6,6 +12,7 @@ config.whiny_nils = true
 # Show full error reports and disable caching
 config.action_controller.consider_all_requests_local = true
 config.action_controller.perform_caching             = false
+config.action_view.cache_template_loading            = true
 
 # Disable request forgery protection in test environment
 config.action_controller.allow_forgery_protection    = false
@@ -15,10 +22,18 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-config.gem 'cucumber',    :lib => false,        :version => '>=0.3.100' unless File.directory?(File.join(Rails.root, 'vendor/plugins/cucumber'))
-config.gem 'webrat',      :lib => false,        :version => '>=0.5.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/webrat'))
-config.gem 'rspec',       :lib => false,        :version => '>=1.2.6' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
-config.gem 'rspec-rails', :lib => 'spec/rails', :version => '>=1.2.6' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
-config.gem 'spork',       :lib => false,        :version => '>=0.5.9' unless File.directory?(File.join(Rails.root, 'vendor/plugins/spork'))
+# Use SQL instead of Active Record's schema dumper when creating the test database.
+# This is necessary if your schema can't be completely dumped by the schema dumper,
+# like if you have constraints or database-specific column types
+# config.active_record.schema_format = :sql
 
-config.i18n.default_locale = :en
+config.gem 'rspec', :lib => false
+config.gem 'rspec-rails', :version => '>= 1.3.2', :lib => false
+config.gem "thoughtbot-factory_girl", :lib => 'factory_girl', :version => '1.2.2'
+config.gem 'shoulda', :lib => false
+config.gem "timecop"
+
+GET_SUBJECT_SERVICE_ENDPOINT = {
+  :uri => 'http://comanche.czu.cz/axis2/services/GetSubjectService.GetSubjectServiceHttpSoap12Endpoint/',
+  :version => 2
+}
