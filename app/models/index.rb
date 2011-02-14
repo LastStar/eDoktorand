@@ -454,10 +454,10 @@ class Index < ActiveRecord::Base
   def status
     @status ||= if disert_theme && disert_theme.defense_passed?
       I18n::t(:message_10, :scope => [:txt, :model, :index])
-    elsif final_exam_passed?
-      I18n::t(:message_11, :scope => [:txt, :model, :index])
     elsif finished?
       I18n::t(:message_12, :scope => [:txt, :model, :index])
+    elsif final_exam_passed?
+      I18n::t(:message_11, :scope => [:txt, :model, :index])
     elsif interrupted?
       I18n::t(:message_13, :scope => [:txt, :model, :index])
     elsif continues?
