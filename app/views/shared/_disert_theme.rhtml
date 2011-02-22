@@ -1,7 +1,7 @@
 <ul id=<%= "disert_theme#{study_plan.id}" %> class="bordered">
   <li class="noborder"><h5><%= t(:message_0, :scope => [:txt, :view, :shared, :_disert_theme, :rhtml]) %></h5></li>
   <li>
-  <div class='long_info'><%= "#{disert_theme.title}" %></div> <b><%= t(:message_1, :scope => [:txt, :view, :shared, :_disert_theme, :rhtml]) %></b>
+  <div class='long_info' id="title"><%= edit_link(disert_theme,"title") %></div> <b><%= t(:message_1, :scope => [:txt, :view, :shared, :_disert_theme, :rhtml]) %></b>
   </li>
   <li>
     <div class='long_info'>
