@@ -500,7 +500,7 @@ class CSVExporter
             @@mylog.debug department.name
             subjs = department.subjects.map(&:id)
             @@mylog.debug subjs
-            exams = Exam.count(:conditions => ["subject_id in(?) and passed_on > '2007-03-01'", subjs])
+            exams = Exam.count(:conditions => ["subject_id in(?) and passed_on > '2010-03-01'", subjs])
             csv << [department.name, exams]
           end
         end

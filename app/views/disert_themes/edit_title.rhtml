@@ -1,0 +1,4 @@
+<% save_disert_theme_title_cz_form(@disert_theme) do -%>
+  <input type='text', name='title', size='60', value='<%= @disert_theme.title.to_s %>' />
+  <%= image_submit_tag('ok.png') %>
+<% end %>

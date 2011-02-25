@@ -1,8 +1,19 @@
 class DisertThemesController < ApplicationController
 include LoginSystem
-  layout 'employers', :except => [:add_en, :save_en]
+  layout 'employers', :except => [:add_en, :save_en, :edit_title, :update_title]
   before_filter :login_required, :prepare_student, :prepare_user
   
+  # edit cz title
+  def edit_title
+    @disert_theme = DisertTheme.find(params[:id])
+  end
+
+  # update title cz
+  def update_title 
+    @disert_theme = DisertTheme.find(params[:disert_theme])
+    @disert_theme.update_attribute(:title, params[:title])
+  end
+
   # page for adding methodology to disert theme
   def methodology
     disert_theme = DisertTheme.find(params[:id])

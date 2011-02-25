@@ -92,10 +92,14 @@
     <%= select 'candidate', 'study_id', study_ids %><span class='required'>&nbsp;&lowast;</span ><br />
     <label for="candidate_language1" class="required"><%= t(:message_41, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]) %></label>
     <%= select 'candidate', 'language1_id', LanguageSubject.for_select(:specialization => @candidate.specialization_id) %><span class='required'>&nbsp;&lowast;</span ><br />
+<<<<<<< HEAD
     <% if @candidate.admitting_faculty.id == 4 %>
     <label for="candidate_language2" class="required">&nbsp;</label>
     <%= select 'candidate', 'language2_id', [["Angličtina odborná", 9005]] %><span class='required'>&nbsp;&lowast;</span ><br />
     <% elsif @candidate.admitting_faculty.id != 14 %>
+=======
+    <% unless @candidate.admitting_faculty.id == 14 %>
+>>>>>>> Changing if in candidate edit to unless
     <label for="candidate_language2" class="required">&nbsp;</label>
     <%= select 'candidate', 'language2_id', LanguageSubject.for_select(:specialization => @candidate.specialization_id) %><span class='required'>&nbsp;&lowast;</span ><br />
     <% end %>
