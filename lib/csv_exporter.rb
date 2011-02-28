@@ -762,6 +762,31 @@ class CSVExporter
         end
       end
     end
+    # exports all students for vice dean with attributes for acreditation
+    # committee
+    def students_for_acreditation_committee(dean_user)
+      indices = Index.find_for(dean_user)
+      @@mylog.info("There is %i students" % indices.size)
+      File.open("students.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          indices.each do |index|
+            row = []
+            row << index.student.display_name
+            row << index.status
+            row << index.year
+            row << index.study_name
+            row << index.department.short_name
+            row << index.specialization.code
+            row << index.enrolled_on.strftime('%d/%m/%Y')
+            row << index.study_plan.try(:status)
+            row << index.disert_theme.try(:title)
+            row << index.tutor.try(:display_name)
+            csv << row
+          end
+        end
+      end
+      
+    end
 
     # exports absolved students by faculties with study times
     def absolved_students_with_years
