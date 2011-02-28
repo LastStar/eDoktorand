@@ -15,7 +15,8 @@ class FinalExamTerm < ExamTerm
     if options.delete :not_passed
       indices.reject! {|i|
         i.status == I18n::t(:message_11, :scope => [:txt, :model, :index]) ||
-        i.status == I18n::t(:message_8, :scope => [:txt, :model, :index])
+        i.status == I18n::t(:message_8, :scope => [:txt, :model, :index]) ||
+        i.status == I18n::t(:message_12, :scope => [:txt, :model, :index])
       }
     end
     options[:conditions] = ['index_id in (?)', indices]
