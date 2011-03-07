@@ -638,6 +638,18 @@ module ApplicationHelper
     options_from_collection_for_select(subjects, :id, :label, exam.subject_id)
   end
 
+  # returns approve document form confirm message
+  def approve_document_form_confirm(action)
+    if action == "confirm_attest"
+      confirm = t(:message_71, :scope => [:txt, :helper, :application])
+    elsif action == "confirm_approve"
+      confirm = t(:message_72, :scope => [:txt, :helper, :application])
+    else
+      confirm = ""
+    end
+    return confirm
+  end
+
   # returns form for approving
   def approve_document_form(document, action, &proc)
     controller = document.class.to_s.underscore.pluralize

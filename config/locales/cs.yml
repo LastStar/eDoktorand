@@ -318,6 +318,8 @@ cs:
         interrupt: přerušeno
         annual_report: výroční atestace
         choose_theme: "--- vyberte rámcové téma ---"
+        message_72: Opravdu chcete schválit?
+        message_71: Opravdu chcete provést atestaci?
         message_70: obhajoby
         message_69: žádosti
         message_68: SDZ
