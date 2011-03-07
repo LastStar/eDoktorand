@@ -28,10 +28,6 @@
   <%= text_field 'disert_theme', 'title', 'size' => 65 %>
 </li>
 <li>
-  <label for="disert_theme_title_en"><%= t(:message_3, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %> (en):</label>
-  <%= text_field 'disert_theme', 'title_en', 'size' => 65 %>
-</li>
-<li>
   <label for="disert_theme_finishing_to"><%= t(:message_4, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %></label>
   <%= select 'disert_theme', 'finishing_to', session[:last_semester]..(@student.specialization.last_possible_defense_semester) %><br/>
 </li>

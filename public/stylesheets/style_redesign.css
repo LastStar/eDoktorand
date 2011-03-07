@@ -839,3 +839,10 @@ td.action-link {
 }
 
 .red {color: red;}
+
+.confirm-admitt {
+  margin-top: -40px;
+}
+.confirm-admitt-top-links {
+  margin-bottom: 5px;
+}
