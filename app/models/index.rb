@@ -590,6 +590,10 @@ class Index < ActiveRecord::Base
     admited_interrupt? && interrupt.approved? && !interrupt.finished? &&
       !interrupted_on
   end
+  
+  def interrupt_ended?
+    interrupt && !interrupt.finished? && Time.now > interrupt.end_on
+  end
 
   def close_to_interrupt_end_or_after?(months = 3)
     interrupt && !interrupt.finished? && Time.now > interrupt.end_on.months_ago(months)
