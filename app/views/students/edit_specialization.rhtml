@@ -1,0 +1,5 @@
+<% save_form(:specialization) do -%>
+<%= select :index, :specialization_id, @specializations.map {|s| [s.name, s.id]}, :selected => @index.specialization.id%>
+  <%= hidden_field 'index', 'id' %>
+  <%= ok_submit(:specialization) %>
+<% end %>
