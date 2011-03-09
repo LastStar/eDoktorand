@@ -1,6 +1,6 @@
 @links = student_action_links(@index)
 page.replace_html "index_menu_#{@index.id}_td", :partial => 'students/student_menu'
-page.replace_html "index_form_#{@index.id}", :inline => '&nbsp;'
+page.replace_html "index_form_#{@index.id}", :inline => ''
 page.replace "index_line_#{@index.id}", :partial => 'students/index_line', :object => @index
 page.hide "index_form_#{@index.id}_tr"
 page.hide "index_menu_#{@index.id}_tr"

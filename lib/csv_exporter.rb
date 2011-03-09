@@ -762,6 +762,7 @@ class CSVExporter
         end
       end
     end
+
     # exports all students for vice dean with attributes for acreditation
     # committee
     def students_for_acreditation_committee(dean_user)
@@ -772,7 +773,12 @@ class CSVExporter
           indices.each do |index|
             row = []
             row << index.student.display_name
-            row << index.status
+              row << index.status
+            if index.status == 'absolvoval'
+              row << index.disert_theme.defense_passed_on
+            else
+              row << ''
+            end
             row << index.year
             row << index.study_name
             row << index.department.short_name
@@ -785,7 +791,7 @@ class CSVExporter
           end
         end
       end
-      
+
     end
 
     # exports absolved students by faculties with study times

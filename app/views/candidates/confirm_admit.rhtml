@@ -47,7 +47,8 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <p class='rightAlignLefter'><%= first_upper(@faculty.dean.display_name) %><br/>
 <%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</p>
 
-<div class='links'>
+<div class='links confirm-admitt'>
+  <div class="confirm-admitt-top-links">
 	<a href='javascript:window.print()'>tisk</a>
 	<% if @user %>
 	<%#= link_to 'zpět', :page => session[:current_page_backward], :action => 'list'%>
@@ -56,6 +57,8 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
     <% else %>
       <%= link_to t(:message_1, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), :action => 'list_all'%>    
     <% end %>
+  
+  </div>
 	<% unless @candidate.admited? %>
         <div id='mailLink'>
 	  <span id='mailLink1'><%= link_to_remote t(:message_2, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'mail'} %></span>

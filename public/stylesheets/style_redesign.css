@@ -617,6 +617,9 @@ table.students-list tr
 table.students-list tr.alternate {
   background-color: #C1CA9F;
 }
+table.students-list tr.interupt-ended {
+  background-color: #F56767;
+}
 table.students-list tr th
 {
   font-size: 110%;
@@ -839,3 +842,10 @@ td.action-link {
 }
 
 .red {color: red;}
+
+.confirm-admitt {
+  margin-top: -40px;
+}
+.confirm-admitt-top-links {
+  margin-bottom: 5px;
+}

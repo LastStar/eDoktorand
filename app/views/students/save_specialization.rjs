@@ -1,0 +1,1 @@
+page.replace_html "specialization", attribute_line(@index, :specialization, :name)
