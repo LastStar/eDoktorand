@@ -1,6 +1,10 @@
 ---
 cs:
   txt:
+    lib:
+      genderize:
+        message_0: muž
+        message_1: žena
     model:
       study_plan:
         message_0: Oblasti předmětů musí být vyplněny
