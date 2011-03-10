@@ -591,7 +591,7 @@ module ApplicationHelper
     if @user.has_role?(Role.find(2))
       attribute_line(index, :specialization, :name) + t(:message_73, :scope => [:txt, :helper, :application]) + ':'
     else
-      if index.specializaion == nil
+      if index.specialization == nil
         long_info_helper(t(:message_73, :scope => [:txt, :helper, :application])) +
           t(:message_60, :scope => [:txt, :helper, :application]) + ':'
       else
