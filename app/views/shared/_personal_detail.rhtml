@@ -26,8 +26,8 @@
     <%= student_specialization_line(index) %>
   </li>
   <li>
-    <%= "#{long_info_helper(index.student.department.short_name)}#{t(:message_1, :scope => [:txt, :view, :shared, :_personal_detail, :rhtml])}: " %> 
-  </li>  
+    <%= student_department_line(index) %>
+  </li>
   <li>
     <% res = index.study.name %>
     <% if index.switched_study? %>

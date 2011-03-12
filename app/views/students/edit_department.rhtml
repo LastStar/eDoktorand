@@ -1,0 +1,5 @@
+<% save_form(:department) do -%>
+<%= select :index, :department_id, @departments.map {|d| [d.short_name, d.id]}, :selected => @index.department.id%>
+  <%= hidden_field 'index', 'id' %>
+  <%= ok_submit(:department) %>
+<% end %>

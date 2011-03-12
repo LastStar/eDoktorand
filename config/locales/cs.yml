@@ -322,6 +322,7 @@ cs:
         interrupt: přerušeno
         annual_report: výroční atestace
         choose_theme: "--- vyberte rámcové téma ---"
+        message_74: Katedra
         message_73: Obor
         message_72: Opravdu chcete schválit?
         message_71: Opravdu chcete provést atestaci?
