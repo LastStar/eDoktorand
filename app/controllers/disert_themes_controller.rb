@@ -31,9 +31,9 @@ include LoginSystem
     if (file = params[:disert_theme][:methodology_file]).is_a? Tempfile
       DisertTheme.save_methodology(@disert_theme, file)   
       if @user.has_one_of_roles?(['faculty_secretary','vicerector'])
-        redirect_to(:action => 'index', :controller => 'students')
+        render :text => "<script>window.close()</script>"
       else
-        redirect_to(:action => 'index', :controller => 'study_plans')
+        render :text => "<script>window.close()</script>"
       end
     else
       @title = t(:message_1, :scope => [:txt, :controller, :themes]) 
