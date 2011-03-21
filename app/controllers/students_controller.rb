@@ -117,6 +117,9 @@ class StudentsController < ApplicationController
   # renders student details
   def show
     @index = Index.find_with_all_included(params[:id])
+    if @index.disert_theme.nil?
+      @index.disert_theme = DisertTheme.create(:finishing_to => 6, :title => "doplnit", :index => @index)
+    end
   end
   
   # finishes study
