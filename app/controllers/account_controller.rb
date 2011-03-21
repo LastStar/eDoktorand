@@ -51,6 +51,6 @@ class AccountController < ApplicationController
   private
   # sets title of the controller
   def set_title
-    @title = 'Systém e-doktorand'
+    @title = t(:edoctorand_system, :scope => [:txt, :controller, :account])
   end
 end

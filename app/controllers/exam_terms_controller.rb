@@ -19,7 +19,7 @@ class ExamTermsController < ApplicationController
   end
 
   def new
-    @title = 'Vytváření komise příjimacích zkoušek'
+    @title = t(:creation_commission, :scope => [:txt, :controller, :terms])
     @tutors = Tutor.find_for(@user)
     @exam_term = AdmissionTerm.new
     @exam_term.specialization_id = params[:id] if params[:id]
@@ -29,7 +29,7 @@ class ExamTermsController < ApplicationController
       @exam_term = AdmissionTerm.new(params[:exam_term])
       @exam_term.detect_external_chairman(params[:external_chairman])  
     if @exam_term.save
-      flash['notice'] = 'Komise byla úspěšně vytvořena.'
+      flash['notice'] = t(:commision_was_created, :scope => [:txt, :controller, :terms])
       if params[:from] && params[:from] == 'candidate'
         if session[:back_page] == 'list'
           redirect_to :action => 'list', :page => session[:current_page_backward] , :controller => 'candidates'
@@ -57,7 +57,7 @@ class ExamTermsController < ApplicationController
     if @exam_term.update_attributes(params[:exam_term])
       @exam_term.detect_external_chairman(params[:external_chairman])
       @exam_term.save
-      flash['notice'] = 'Komise byla úspěšně opravena'
+      flash['notice'] = t(:commision_was_updated, :scope => [:txt, :controller, :terms])
       redirect_to :action => 'list'
     else
       render(:action => :edit)

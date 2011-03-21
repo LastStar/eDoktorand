@@ -514,7 +514,7 @@ class Index < ActiveRecord::Base
   end
 
   def payment_type
-    payment_id == 1 ? 'studium ve standardní době studia' : 'cizinec, hrazeno ze zvláštní dotace dle evidence Domu zahr. služeb MŠMT'
+    payment_id == 1 ? I18n.t(:study_in_standart_time, :scope => [:txt, :model, :index]) : I18n.t(:foreigner_pay_throught_dotation, :scope => [:txt, :model, :index])
   end
 
   # returns true if index have year more than 3

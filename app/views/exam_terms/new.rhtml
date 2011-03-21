@@ -1,9 +1,9 @@
 <div class='links'>
   <% if  params[:from] == 'candidate'%>
     <% if session[:back_page] == 'list' %>
-      <%= link_to 'zpět na výpis', :action => 'list', :controller => 'candidates', :page => session[:current_page_backward] %>
+      <%= link_to t(:back_to_list, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list', :controller => 'candidates', :page => session[:current_page_backward] %>
     <% else %>
-      <%= link_to 'zpět na výpis', :action => 'list_all', :controller => 'candidates'%>    
+      <%= link_to t(:back_to_list, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list_all', :controller => 'candidates'%>    
     <% end %>
   <% else %>
 	<%= link_to t(:message_1, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list' %>
@@ -22,9 +22,9 @@
 <div class='links'>
   <% if  params[:from] == 'candidate'%>
     <% if session[:back_page] == 'list' %>
-      <%= link_to 'zpět na výpis', :action => 'list', :controller => 'candidates', :page => session[:current_page_backward] %>
+      <%= link_to t(:back_to_list, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list', :controller => 'candidates', :page => session[:current_page_backward] %>
     <% else %>
-      <%= link_to 'zpět na výpis', :action => 'list_all', :controller => 'candidates'%>    
+      <%= link_to t(:back_to_list, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list_all', :controller => 'candidates'%>    
     <% end %>
   <% else %>
 	<%= link_to t(:message_1, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list' %>
