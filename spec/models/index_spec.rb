@@ -58,6 +58,64 @@ describe Index do
     end
   end
 
+  context "real study duration" do
+    before :all do
+      @student = Factory(:student)
+      @index = Factory(:index, :student => @student)
+    end
+
+    describe "with interrupts" do
+      before :each do
+        @index.interrupts << StudyInterrupt.create(:start_on => Time.current,
+                                                  :duration => 8)
+        Timecop.freeze(Time.zone.local(2011, 1, 2))
+      end
+
+      it "should compute real study year" do
+        @index.real_study_years.should == 2
+      end
+    end
+    
+    describe "without interrupts" do
+      before :each do
+        Timecop.freeze(Time.zone.local(2011, 1, 2))
+      end
+
+      it "should compute real study year" do
+        @index.real_study_years.should == 2
+      end
+    end
+    
+    describe "current year without interrupts" do
+      before :each do
+        Timecop.freeze(Time.zone.local(2009, 12, 2))
+      end
+
+      it "should compute real study year" do
+        @index.real_study_years.should == 1
+      end
+    end
+    
+    describe 'absolved' do
+      it "should compute real study year" do
+        @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
+        @index.save
+        Timecop.freeze(Time.zone.local(2016, 1, 2))
+        @index.disert_theme.defense_passed!('2013-01-02')
+        @index.real_study_years.should == 4
+      end
+    end
+    
+    describe 'finished' do
+      it "should compute real study year" do
+        @index.finished_on = '2014-01-02'
+        @index.save
+        Timecop.freeze(Time.zone.local(2016, 1, 2))
+        @index.real_study_years.should == 5
+      end
+    end
+  end
+
   context "study duration" do
     before :all do
       @student = Factory(:student)

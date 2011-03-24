@@ -144,7 +144,13 @@ cs:
         message_7: Obhájil
       leadership: {}
 
+      im_index:
+        czech_language: český jazyk
+        doctorate: doktorský
+
       index:
+        foreigner_pay_throught_dotation: cizinec, hrazeno ze zvláštní dotace dle evidence Domu zahr. služeb MŠMT
+        study_in_standart_time: studium ve standardní době studia
         message_18: Špatné nebo chybějící číslo bankovního účtu.
         message_19: Špatné nebo chybějící číslo banky u b.ú.
         message_20: Chybí UIC.
@@ -170,6 +176,9 @@ cs:
       program: {}
 
       notifications:
+        notice_about_study_plan: Vyrozumnění o studijním plánu
+        with_personal_identfication_number: s rodným číslem
+        study_plan_interruption_notice: Vyrozumnění o přerušení studijního plánu
         message_8: Pozvánka k státní doktorské zkoušce
         message_9: Pozvánka k obhajobě
         message_0: pozvánka k přijímací zkoušce do DSP na ČZU v Praze
@@ -322,6 +331,7 @@ cs:
         interrupt: přerušeno
         annual_report: výroční atestace
         choose_theme: "--- vyberte rámcové téma ---"
+        message_74: Katedra
         message_73: Obor
         message_72: Opravdu chcete schválit?
         message_71: Opravdu chcete provést atestaci?
@@ -535,6 +545,39 @@ cs:
             message_2: Katedra
 
       study_plans:
+        annual_report:
+          rhtml:
+            university_name: Česká zemědělská univerzita v Praze
+            annual_attestation: Výroční atestace za rok
+            first_exam_dsp: I. Zkoušky v DSP
+            completion_term: Semestr splnění
+            by_plan: podle plánu
+            date: Datum
+            taking_exam: vykonání ZK
+            result_of_exam: Výsledek ZK
+            passed: prospěl
+            state_doctorate_exam: Státní doktorská zkouška
+            term: semestr
+            additional_info_attestation: Dodatečné informace k atestaci
+            second_disert_theme: II. Disertační práce
+            name_of_work: Název práce
+            state_of_work: Stav rozpracování (uvést splnění úkolů uložených studijním plánem, v případě nedodržení uvést příčiny a opatření učiněná k nápravě)
+            student_evaluation: III. Celkové hodnocení studenta DSP
+            approve_word: Zhodnocení školitelem
+            department_statement: Závěr katedry
+            tutor_signature: podpis školitele
+            leader_signature: podpis vedoucího katedry
+            executive_proposal: Návrh oborové rady
+            dean_statement: Vyjádření děkana fakulty
+            at_prague_at: V praze dne
+            dean_signature: podpis děkana fakulty
+            study_year: Ročník
+            tutor_name: Jméno školitele
+            study_name: Forma studia
+            specialization_name: Studijní obor
+            enroll_date: Datum nástupu
+            name: Jméno
+            department: Katedra
         save_disert:
           rhtml:
             message_0: V tuto chvíli můžete vidět studijní plán tak jak jste si ho v předchozích krocích sestavil/-a. Pokud ho nepotvrdíte, všechny změny budou ztraceny.
@@ -1484,6 +1527,7 @@ cs:
             message_2: nahrát metodiku
         _candidate_edit:
           rhtml:
+            technical_english: Angličtina odborná
             personal_details: Osobní údaje
             message_40: forma studia
             message_29: obor
@@ -2055,6 +2099,7 @@ cs:
           rhtml:
             message_0: vytvořit
             message_1: zpět
+            back_to_list: zpět na výpis
         list:
           rhtml:
             message_8: nový termín
@@ -2305,6 +2350,7 @@ cs:
       specializations: {}
 
       account:
+        edoctorand_system: Systém e-doktorand
         message_0: Přihlášení do systému
         message_1: Přihlášení se nepodařilo
       application: {}
@@ -2341,6 +2387,9 @@ cs:
       tutors: {}
 
       terms:
+        commision_was_updated: Komise byla úspěšně opravena
+        creation_commission: Vytváření komise příjimacích zkoušek
+        commision_was_created: Komise byla úspěšně vytvořena.
         message_0: Termíny SDZ
         message_1: Termíny zkoušky byl uložen
         message_2: Termíny zkoušek

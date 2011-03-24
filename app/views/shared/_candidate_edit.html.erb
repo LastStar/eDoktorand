@@ -94,7 +94,7 @@
     <%= select 'candidate', 'language1_id', LanguageSubject.for_select(:specialization => @candidate.specialization_id) %><span class='required'>&nbsp;&lowast;</span ><br />
     <% if @candidate.admitting_faculty.id == 4 %>
     <label for="candidate_language2" class="required">&nbsp;</label>
-    <%= select 'candidate', 'language2_id', [["Angličtina odborná", 9005]] %><span class='required'>&nbsp;&lowast;</span ><br />
+    <%= select 'candidate', 'language2_id', [[t(:technical_english, :scope => [:txt, :view, :shared, :_candidate_edit, :rhtml]), 9005]] %><span class='required'>&nbsp;&lowast;</span ><br />
     <% elsif @candidate.admitting_faculty.id != 14 %>
     <label for="candidate_language2" class="required">&nbsp;</label>
     <%= select 'candidate', 'language2_id', LanguageSubject.for_select(:specialization => @candidate.specialization_id) %><span class='required'>&nbsp;&lowast;</span ><br />

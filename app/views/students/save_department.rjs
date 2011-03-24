@@ -1,0 +1,1 @@
+page.replace_html "department", attribute_line(@index, :department, :short_name)

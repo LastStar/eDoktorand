@@ -151,6 +151,18 @@ class Index < ActiveRecord::Base
     end
   end
 
+  # returns real number of study years
+  def real_study_years
+    if finished?
+      end_date = finished_on.to_time
+    elsif absolved?
+      end_date = disert_theme.defense_passed_on.to_time
+    else
+      end_date = Time.now
+    end
+    return (end_date - enrolled_on.to_time).div(1.year) + 1
+  end
+
   # returns semesteer of the study
   def semester
     if @semester
@@ -502,7 +514,7 @@ class Index < ActiveRecord::Base
   end
 
   def payment_type
-    payment_id == 1 ? 'studium ve standardní době studia' : 'cizinec, hrazeno ze zvláštní dotace dle evidence Domu zahr. služeb MŠMT'
+    payment_id == 1 ? I18n.t(:study_in_standart_time, :scope => [:txt, :model, :index]) : I18n.t(:foreigner_pay_throught_dotation, :scope => [:txt, :model, :index])
   end
 
   # returns true if index have year more than 3

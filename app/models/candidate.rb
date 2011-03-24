@@ -78,7 +78,7 @@ class Candidate < ActiveRecord::Base
 
   def validate_on_create
     if state == "CZ" || state == "SK"
-      unless (birth_number =~ /\d+/) && (birth_number.to_i.remainder(11) == 0)
+      if !(birth_number =~ /\d+/) || (birth_number.size == 10 && birth_number.to_i.remainder(11) != 0)
         errors.add(:birth_number, I18n::t(:message_23, :scope => [:txt, :model, :candidate]))
       end
     end

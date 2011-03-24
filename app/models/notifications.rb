@@ -44,14 +44,14 @@ class Notifications < ActionMailer::Base
   end
 
   def interrupt_alert(study_plan, interrupt, sent_at = Time.now)
-  @subject = 'Vyrozumnění o přerušení studijního plánu'
+  @subject = I18n.t(:study_plan_interruption_notice, :scope => [:txt, :model, :notifications])
     #@body['department_name'] = study_plan.index.department.name
     @body['first_name'] = study_plan.index.student.firstname
     @body['last_name'] = study_plan.index.student.lastname
     if study_plan.index.student.birth_number == nil
      @body['birth_number'] = ''
       else
-       @body['birth_number'] = 's rodným číslem'  + study_plan.index.student.birth_number
+       @body['birth_number'] = I18n.t(:with_personal_identfication_number, :scope => [:txt, :model, :notifications])  + study_plan.index.student.birth_number
     end
     @body['year'] = study_plan.index.year
     if interrupt.index.interrupted?
@@ -74,7 +74,7 @@ class Notifications < ActionMailer::Base
   #send study plan of student
   def study_plan_create(study_plan, sent_at = Time.now)
     #@subject = t(:message_6, :scope => [:txt, :model, :notifications])
-    @subject = 'Vyrozumnění o studijním plánu'
+    @subject = I18n.t(:notice_about_study_plan, :scope => [:txt, :model, :notifications])
     @body['department_name'] = study_plan.index.department.name
     @body['first_name'] = study_plan.index.student.firstname
     @body['last_name'] = study_plan.index.student.lastname
@@ -82,7 +82,7 @@ class Notifications < ActionMailer::Base
      @body['birth_number'] = ''
       else
        # @body['birth_number'] = I18n::t(:message_7, :scope => [:txt, :model, :notifications]) + study_plan.index.student.birth_number
-       @body['birth_number'] = 's rodným číslem'  + study_plan.index.student.birth_number
+       @body['birth_number'] = I18n.t(:with_personal_identfication_number, :scope => [:txt, :model, :notifications])  + study_plan.index.student.birth_number
     end
     @body['specialization'] = study_plan.index.specialization.name
     @body['sent_on'] = sent_at

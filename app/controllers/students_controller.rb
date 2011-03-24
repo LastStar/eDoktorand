@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
                     :edit_street, :edit_zip, :edit_city, :edit_desc_number,
                     :save_street, :save_city, :save_zip, :save_desc_number,
                     :time_form, :filter, :list_xls, :edit_account, :edit_specialization,
-                    :save_specialization]
+                    :save_specialization, :save_department, :edit_department]
 
   before_filter :login_required
   before_filter :set_title
@@ -117,6 +117,9 @@ class StudentsController < ApplicationController
   # renders student details
   def show
     @index = Index.find_with_all_included(params[:id])
+    if @index.disert_theme.nil?
+      @index.disert_theme = DisertTheme.create(:finishing_to => 6, :title => "doplnit", :index => @index)
+    end
   end
   
   # finishes study
@@ -241,6 +244,16 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
     @student.update_attribute(:citizenship, params[:student][:citizenship])
+  end
+
+  def edit_department
+    @index = Index.find(params[:id])
+    @departments = @index.faculty.departments
+  end
+
+  def save_department
+    @index = Index.find(params[:index][:id])
+    @index.update_attributes(:department_id => params[:index][:department_id])
   end
 
   def edit_specialization
