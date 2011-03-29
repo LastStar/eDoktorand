@@ -15,7 +15,7 @@ class GetSubjectService < Handsoap::Service
   
   # public methods
   
-  def get_subjects
+  def self.get_subjects
     soap_action = 'urn:getSubjects'
     response = invoke('tns:getSubjects', soap_action)
     response.xpath("//subject").map {|node| parse_subject(node)}
@@ -25,7 +25,7 @@ class GetSubjectService < Handsoap::Service
   # helpers
 
   # corrects subject from node
-  def parse_subject(node)
+  def self.parse_subject(node)
     {
       :code => code = node.xpath("code").to_s.strip,
       :label => node.xpath("label").to_s.strip,
