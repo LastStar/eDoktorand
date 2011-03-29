@@ -1,7 +1,7 @@
 class Defense < ExamTerm
 
   belongs_to :index
-	validates_presence_of :chairman_id, :message => I18n::t(:message_2, :scope => [:txt, :model, :term])
+	validates_presence_of :chairman_id, :message => I18n::t(:chairman_must_be_present, :scope => [:txt, :model, :term])
 
   # returns formated date time
   def date_time

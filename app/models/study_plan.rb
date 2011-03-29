@@ -21,7 +21,7 @@ class StudyPlan < ActiveRecord::Base
     if final_areas
       if final_areas['cz'].values.join('').strip == '' ||
         final_areas['en'].values.join('').strip == ''
-        errors.add('final_areas', I18n.t(:message_0, :scope => [:txt, :model, :study_plan]))
+        errors.add('final_areas', I18n.t(:final_areas_must_be_filled, :scope => [:txt, :model, :study_plan]))
       end
     end
   end
@@ -155,23 +155,23 @@ class StudyPlan < ActiveRecord::Base
       @status ||= if index.disert_theme.defense_passed? || index.final_exam_passed?
         ''
       elsif all_subjects_finished?
-        I18n::t(:message_0, :scope => [:txt, :model, :plan])
+        I18n::t(:study_plan_completed, :scope => [:txt, :model, :plan])
       elsif canceled?
-        I18n::t(:message_1, :scope => [:txt, :model, :plan])
+        I18n::t(:study_plan_not_approved, :scope => [:txt, :model, :plan])
       elsif approved?
-        I18n::t(:message_2, :scope => [:txt, :model, :plan])
+        I18n::t(:study_plan_approved, :scope => [:txt, :model, :plan])
       elsif admited?
-        I18n::t(:message_3, :scope => [:txt, :model, :plan])
+        I18n::t(:study_plan_admited, :scope => [:txt, :model, :plan])
       end
     else
-      I18n::t(:message_4, :scope => [:txt, :model, :plan])
+      I18n::t(:missing_disert_theme_title, :scope => [:txt, :model, :plan])
     end
   end
 
   # return last approving person localized string
   def approved_by
     if approved?
-      I18n::t(:message_5, :scope => [:txt, :model, :plan])
+      I18n::t(:dean, :scope => [:txt, :model, :plan])
     elsif approval
       approval.approved_by
     end

@@ -14,7 +14,7 @@ class Person < ActiveRecord::Base
 
   # displays person type localized
   def display_type
-    I18n::t(:message_0, :scope => [:txt, :model, self.class.to_s.underscore])
+    I18n::t(:user, :scope => [:txt, :model, self.class.to_s.underscore])
   end
 
   # returns display name for person
