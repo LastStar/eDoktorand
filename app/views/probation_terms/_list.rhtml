@@ -24,7 +24,7 @@
 <% unless probation_term.empty_note? %>
   <li><%= t(:message_6, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:&nbsp;<%= probation_term.note %></li>
 <% end %>
-  <li class='detail' id='info_<%= probation_term.id %>' style="display: none">
+  <li class='detail' id='<%= dom_id(probation_term, :info) %>' style="display: none">
   </li>
 </ul>
 <% end %>

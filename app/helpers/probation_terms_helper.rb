@@ -50,9 +50,9 @@ module ProbationTermsHelper
   def detail_link(pt)
     link_to_remote(t(:message_11, :scope => [:txt, :helper, :terms]), 
                    {:url => {:action => 'detail', :id => pt.id},
-                   :update => "info_#{pt.id}", 
+                   :update => dom_id(pt, :info), 
                    :loading => visual_effect(:pulsate, "link_#{pt.id}", {:duration => 2.0, :from => 0.3}),
-                   :complete => "Element.show('info_#{pt.id}')"},
+                   :complete => "Element.show('#{dom_id(pt, :info)}')"},
                    {:id => "link_#{pt.id}"})
   end
 
@@ -70,7 +70,7 @@ module ProbationTermsHelper
 
   def signoff_link(probation_term, student)
     link_to_remote(t(:message_14, :scope => [:txt, :helper, :terms]),
-                  :update => "info_#{probation_term.id}",
+                  :update => dom_id(probation_term, :info),
                   :url => {:action => 'sign_off_student', 
                            :id => probation_term,
                            :student_id => student.id})
@@ -78,7 +78,7 @@ module ProbationTermsHelper
 
   def enroll_form(probation_term, &proc)
     form_remote_tag(:url => {:action => 'enroll_student'},
-                    :update => "info_#{probation_term.id}",
+                    :update => dom_id(probation_term, :info),
                     :loading => "$('submit-button').value = '%s'" % t(:message_15, :scope => [:txt, :helper, :terms]),
                     &proc)
 

@@ -1,6 +1,6 @@
-<div id='students_<%= @probation_term.id %>'>
+<div id='<%= dom_id(@probation_term, :students) %>'>
 <% unless @probation_term.students.empty? %>
-  <ul id="enrolled_<%= @probation_term.id %>">
+  <ul id="<%= dom_id(@probation_term, :enrolled) %>">
     <%= render(:partial => "enrolled_students", 
                :locals => {:probation_term => @probation_term}) %>
   </ul>

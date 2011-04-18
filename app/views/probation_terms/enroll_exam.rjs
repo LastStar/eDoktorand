@@ -3,6 +3,6 @@ page.replace_html "done", render(:partial => "exams/with_student",
 page.replace_html "form", render(:partial => "exams/detail_form", 
                                        :locals => {:exam => @exam,
                                        :plan_subject => @plan_subject,
-                                       :form => form_remote_tag(:url => {:action => "save_exam"}, :update => "info_#{session[:probation_term].id}")})
-page.hide "students_#{@probation_term.id}"
+                                       :form => form_remote_tag(:url => {:action => "save_exam"}, :update => "#{dom_id(session[:probation_term], :info)}")})
+page.hide dom_id(@probation_term, :students)
 
