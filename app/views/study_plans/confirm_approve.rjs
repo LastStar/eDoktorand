@@ -1,2 +1,2 @@
-page.hide "approve_form_#{@document.id}"
+page.hide dom_id(@document, :approve_form)
 page.replace_html 'approval', print_statements(@study_plan.approval)

@@ -1,5 +1,5 @@
 <% @statement = statement %>
-<div id='approve_form_<%= document.id %>'>
+<div id='<%= dom_id(document, :approve_form) %>'>
 <% approve_document_form(document, action) do -%>	
 <fieldset>
   <legend><%= title %></legend>
