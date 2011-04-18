@@ -42,12 +42,12 @@
       </td>
     </tr>
     <tr>
-      <td colspan="2" class='contact' id='contact<%= candidate.id %>' style='display: none;'>
+      <td colspan="2" class='contact' id='<%= dom_id(candidate, :contact) %>' style='display: none;'>
         <%= render(:partial => "contact", :locals => {:candidate => candidate}) %>
       </td>
     </tr>
     <tr>
-      <td colspan="2" class='history' id='history<%= candidate.id %>' style='display: none;'>
+      <td colspan="2" class='history' id='<%= dom_id(candidate, :history) %>' style='display: none;'>
         <%= render(:partial => "history", :locals => {:candidate => candidate}) %>
       </td>
     </tr>

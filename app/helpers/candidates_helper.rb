@@ -197,12 +197,12 @@ module CandidatesHelper
 
   def contact_toggle_link(candidate)
         link_to_function(t(:message_29, :scope => [:txt, :helper, :candidates]),
-                     "Element.toggle('contact#{candidate.id}')") 
+                     "Element.toggle('#{dom_id(candidate, :contact)}')") 
   end
 
   def history_toggle_link(candidate)
         link_to_function(t(:message_30, :scope => [:txt, :helper, :candidates]),
-                     "Element.toggle('history#{candidate.id}')") 
+                     "Element.toggle('#{dom_id(candidate, :history)}')") 
   end
 
   # prints status of the candidate
