@@ -1,1 +1,1 @@
-page.replace_html "examinator_%i" % @examinator.id, :partial => 'specialization', :locals => {:examinator => @examinator}
+page.replace_html dom_id(@examinator), :partial => 'specialization', :locals => {:examinator => @examinator}

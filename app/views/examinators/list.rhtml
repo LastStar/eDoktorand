@@ -5,7 +5,7 @@
     <th class='no-rounded'> <%= t(:message_2, :scope => [:txt, :view, :examinators, :list, :rhtml])%></th>
   </tr>
   <% for examinator in @examinators %>
-    <tr  class='line' id='examinator_<%= examinator.id %>'>
+    <tr  class='line' id='<%= dom_id(examinator) %>'>
       <td><%= examinator.display_name %></td>
       <td>
         <% if examinator.department_employment %>
