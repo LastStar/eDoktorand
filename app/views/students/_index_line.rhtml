@@ -1,5 +1,5 @@
-<tr id='index_menu_<%= index_line.id %>_tr' style='display: none'>
-  <td colspan='9' id='index_menu_<%= index_line.id %>_td' class="right">
+<tr id='<%= dom_id(index_line, :menu_tr) %>' style='display: none'>
+  <td colspan='9' id='<%= dom_id(index_line, :menu_td) %>' class="right">
     <div class="menu">
       <%= links = student_action_links(index_line).join('&nbsp;') %>
     </div>
@@ -11,7 +11,7 @@
   else
     @alternate = true
   end %>
-  <tr class='student-line <%= index_line.status_class %> <%= @alternate ? 'alternate' : '' %> <%= index_line.interrupt_ended? ? "interupt-ended" : "" %>' id='index_line_<%= index_line.id %>'>
+  <tr class='student-line <%= index_line.status_class %> <%= @alternate ? 'alternate' : '' %> <%= index_line.interrupt_ended? ? "interupt-ended" : "" %>' id='<%= dom_id(index_line) %>'>
   <% if @user.has_one_of_roles?(['faculty_secretary', 'dean']) %>
   <td class='student_exception'>
     <%= student_exception(index_line) %>
@@ -44,10 +44,10 @@
 <% end %>
 </tr>
 
-<tr id ='index_form_<%= index_line.id %>_tr' class='form-line' style='display: none'>
-  <td colspan='9' id ='index_form_<%= index_line.id %>_td' class="right orange">
-    <div id ='index_form_<%= index_line.id %>'></div>
+<tr id ='<%= dom_id(index_line, :form_tr) %>' class='form-line' style='display: none'>
+  <td colspan='9' id ='<%= dom_id(index_line, :form_td) %>' class="right orange">
+    <div id ='<%= dom_id(index_line, :form) %>'></div>
   </td>
 </tr>
-<tr id='index_detail_<%= index_line.id %>_tr'>
+<tr id='<%= dom_id(index_line, :detail_tr) %>'>
 </tr>

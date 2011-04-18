@@ -52,12 +52,12 @@ module StudentsHelper
   def link_to_show_actions(index)
     link_to_function('&uarr; ' + t(:message_1, :scope => [:txt, :helper, :students]),
       update_page do |page|
-        page.show "index_menu_#{index.id}_tr"
-        page.show "index_form_#{index.id}_tr"
+        page.show  dom_id(index, :menu_tr)
+        page.show dom_id(index, :form_tr)
         page.show "hide_action_#{index.id}"
         page.hide "show_action_#{index.id}"
-        page["index_line_#{index.id}"].addClassName('selected')
-        page["index_line_#{index.id}"].addClassName('once-selected')
+        page[dom_id(index)].addClassName('selected')
+        page[dom_id(index)].addClassName('once-selected')
       end, :id => "show_action_#{index.id}")
   end
 
@@ -65,11 +65,11 @@ module StudentsHelper
   def link_to_hide_actions(index)
     link_to_function('&darr; ' + t(:message_2, :scope => [:txt, :helper, :students]),
       update_page do |page|
-        page.hide "index_menu_#{index.id}_tr"
-        page.hide "index_form_#{index.id}_tr"
+        page.hide dom_id(index, :menu_tr)
+        page.hide dom_id(index, :form_tr)
         page.hide "hide_action_#{index.id}"
         page.show "show_action_#{index.id}"
-        page["index_line_#{index.id}"].removeClassName('selected')
+        page[dom_id(index)].removeClassName('selected')
       end,
       :id => "hide_action_#{index.id}",
       :style => 'display: none')
@@ -90,7 +90,7 @@ module StudentsHelper
       link_to_remote(t(:message_4, :scope => [:txt, :helper, :students]),
                     :url => {:action => 'time_form', :controller => 'students',
                     :form_action => 'finish', :id => index, :day => true},
-                    :update => "index_form_#{index.id}")
+                    :update => dom_id(index, :form))
     end
   end
 
@@ -101,7 +101,7 @@ module StudentsHelper
                           :controller => 'students',
                           :form_action => 'switch_study',
                           :id => index},
-                  :update => "index_form_#{index.id}")
+                  :update => dom_id(index, :form))
   end
 
   # prints interrupt link
@@ -121,7 +121,7 @@ module StudentsHelper
                            :form_controller => 'study_interrupts',
                            :id => index,
                            :date => index.interrupt.start_on},
-                   :update => "index_form_#{index.id}")
+                   :update => dom_id(index, :form))
   end
 
   # prints end interrupt link
@@ -133,7 +133,7 @@ module StudentsHelper
                            :form_controller => 'study_interrupts',
                            :id => index,
                            :date => index.interrupt.end_on},
-                   :update => "index_form_#{index.id}")
+                   :update => dom_id(index, :form))
   end
 
   # prints link to create new study plan
@@ -235,7 +235,7 @@ module StudentsHelper
                     :url => {:action => 'show',
                             :controller => 'students',
                             :id => index},
-                    :loading => visual_effect(:pulsate, "index_line_#{index.id}"))
+                    :loading => visual_effect(:pulsate, dom_id(index)))
   end
 
   def pass_link(what, index)
@@ -251,7 +251,7 @@ module StudentsHelper
       sentence = what.to_s
     end
     link_to_remote(sentence,
-                   :update => "index_form_#{index.id}",
+                   :update => dom_id(index, :form),
                    :url => url)
   end
 
@@ -320,7 +320,7 @@ module StudentsHelper
                     update_page do |page|
                       page.show 'students_list', 'search'
                       page.remove 'student_detail'
-                      page["index_line_%i" % index.id].scrollTo.highlight :duration => 5
+                      page[dom_id(index)].scrollTo.highlight :duration => 5
                     end,
                     :id => 'back_link')
 
@@ -329,9 +329,9 @@ module StudentsHelper
   def back_and_remove_from_list(index)
     link_to_function(t(:message_52, :scope => [:txt, :helper, :students]),
                     update_page do |page|
-                      page.remove "index_line_#{index.id}",
-                                  "index_menu_#{index.id}_tr",
-                                  "index_form_#{index.id}_tr",
+                      page.remove dom_id(index),
+                                  dom_id(index, :menu_tr),
+                                  dom_id(index, :form_tr),
                                   'student_detail'
                       page.show 'students_list', 'search'
                     end,
@@ -377,7 +377,7 @@ module StudentsHelper
                      :url => {:action => :show,
                              :controller => :study_plans,
                              :id => index},
-                     :update => "index_detail_#{index.id}_tr")
+                     :update => dom_id(index, :detail_tr))
     end
   end
 
