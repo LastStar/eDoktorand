@@ -1,2 +1,2 @@
-page.hide "student_detail_#{@exam.id}"
+page.hide "#{dom_id(@exam, :student_detail)}"
 
