@@ -1,5 +1,5 @@
 class Subject < ActiveRecord::Base
-  
+
   has_many :specialization_subjects
   has_many :plan_subjects
   has_many :exams
@@ -17,24 +17,23 @@ class Subject < ActiveRecord::Base
       faculties = Faculty.find(:all)
       subjects = []
       for faculty in faculties
-        subjects.concat(faculty.departments.map {|dep| dep.subjects}.flatten)       
+        subjects.concat(faculty.departments.map {|dep| dep.subjects}.flatten)
       end
     elsif user.has_one_of_roles?(['tutor', 'leader', 'department_secretary', 'examinator'])
       subjects = user.person.department.subjects
-    elsif user.has_one_of_roles?(['dean', 'faculty_secretary']) 
+    elsif user.has_one_of_roles?(['dean', 'faculty_secretary'])
       subjects = user.person.faculty.departments.map {|dep| dep.subjects}.flatten
     elsif user.has_role?('student')
       subjects = user.person.index.study_plan.plan_subjects.map {|ps| ps.subject}
     end
     if option == :not_finished
-      subjects.select do |sub|
+      subjects = subjects.select do |sub|
         sub.plan_subjects.detect do |ps|
-          ps.study_plan.approved? && !ps.finished?  
+          ps.study_plan.approved? && !ps.finished?
         end
       end
-    else
-      subjects
     end
+    return subjects.uniq.sort {|x, y| x.label <=> y.label}
   end
 
   # returns subjects for faculty
@@ -61,7 +60,7 @@ class Subject < ActiveRecord::Base
 
   def self.find_for_specialization(specialization, options = {})
     # TODO pure sql
-    taken = SpecializationSubject.find(:all, 
+    taken = SpecializationSubject.find(:all,
                                 :conditions => ['specialization_id = ?', specialization])
     taken.map!(&:subject_id)
 
