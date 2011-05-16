@@ -38,7 +38,7 @@ class DiplomaSupplement < ActiveRecord::Base
     new.final_exam_passed_on = index.final_exam_passed_on.strftime('%B %d, %Y')
     new.plan_subjects = index.study_plan.plan_subjects.map {|ps| ps.subject.label_en.try(:strip)}.compact.join(';')
     new.faculty_www = index.faculty.www
-    new.printed_on = Date.today.strftime('%B %d, %Y')
+    new.printed_on = index.disert_theme.defense_passed_on
     new.dean_display_name = index.faculty.dean.display_name
     new.dean_title = index.faculty.dean_label_en
     return new
