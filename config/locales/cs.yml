@@ -77,7 +77,7 @@ cs:
         message_5: Musí být vyplněn 1. člen komise
         message_6: Musí být vyplněn 2. člen komise
         message_7: Jméno předsedy komise nesmí být prázdné
-        
+
       role: {}
 
       examinator:
@@ -846,18 +846,19 @@ cs:
             message_1: Jste si jitý/á, že Váš plán je připraven?
         _full_form:
           rhtml:
+            title: téma disertační práce
+            title_en: téma disertační práce v angličtině
             message_8: semestr
             message_9: oblast předmětů
             message_0: Předměty
             message_10: oblast předmětů
             message_1: Přidat předmět
-            message_11: téma disertační práce
             message_2: semestr
             message_12: téma disertační práce
             message_3: předmět
             message_13: termín obhajoby disertační práce
             message_4: předmět en
-            message_14: "Methodology added on:"
+            message_14: 'Metodika přidána dne:'
             message_5: univerzita
             message_15: anotace metodiky
             message_6: zkoušející
