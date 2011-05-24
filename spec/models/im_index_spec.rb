@@ -46,12 +46,32 @@ describe ImIndex do
     im_index.study_form_changed_on.should == Date.parse('2010-01-02')
     im_index.sident.should == 2
   end
-  it "should get other study statuses" do
-    pending
-  end
-  it "should get other financing types" do
-    pending
+  it "gets final exam term status" do
+    index = Factory(:index, :student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"))
+    study_plan = StudyPlan.create(:index => index)
+    index.study_plan = study_plan
+    index.final_exam_passed_on = Date.today - 14.days
+    index.save
+    im_index = ImIndex.create(:index => index)
+    im_index.study_status.should == "složil SDZ"
   end
 
+  it "gets interrupted status" do
+    index = Factory(:index, :student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"), :interrupted_on => Date.today - 14.days)
+    im_index = ImIndex.create(:index => index)
+    im_index.study_status.should == "přerušeno"
+  end
+
+  it "gets study in standard time financing type" do
+    index = Factory(:index, :student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"))
+    im_index = ImIndex.create(:index => index)
+    im_index.financing_type.should == "studium ve standardní době studia"
+  end
+
+  it "gets study in standard time financing type" do
+    index = Factory(:index, :student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"), :payment_id => 7)
+    im_index = ImIndex.create(:index => index)
+    im_index.financing_type.should == "cizinec, hrazeno ze zvláštní dotace dle evidence Domu zahr. služeb MŠMT"
+  end
 
 end

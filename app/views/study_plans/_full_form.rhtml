@@ -1,4 +1,4 @@
-<% form_tag(:controller => 'study_plans', :action => 'save_full') do -%>	
+<% form_tag(:controller => 'study_plans', :action => 'save_full') do -%>
 <fieldset>
   <%= hidden_field('student', 'id') %>
   <%= hidden_field('url','action',:value => params[:action]) %>
@@ -18,13 +18,13 @@
   <div id="externalnew" style='display: none' >
     <label><%= t(:message_3, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
     <%= input_external_empty("label") %>
-    <br/> 
+    <br/>
     <label><%= t(:message_4, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
     <%= input_external_empty("label_en") %>
-    <br/> 
+    <br/>
     <label><%= t(:message_5, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
     <%= input_external_empty_detail("university") %>
-    <br/> 
+    <br/>
     <label><%= t(:message_6, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
     <%= input_external_empty_detail("person") %>
   </div>
@@ -61,8 +61,12 @@
 <%= hidden_field 'disert_theme', 'index_id' %>
 <ul class='nodecor'>
 <li>
-<label for="disert_theme_title"><%= t(:message_11, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>:</label>
+<label for="disert_theme_title"><%= t(:title, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>:</label>
 <%= text_field 'disert_theme', 'title', 'size' => 65 %><br/>
+</li>
+<li>
+<label for="disert_theme_title_en"><%= t(:title_en, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>:</label>
+<%= text_field 'disert_theme', 'title_en', 'size' => 65 %><br/>
 </li>
 <li>
 <label for="candidate_study_id"><%= t(:message_13, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>

@@ -10,8 +10,8 @@ module Genderize
 
   def print_sex
     if sex
-      return I18n::t(:message_0, :scope => [:txt, :lib, :genderize]) if 'M' == sex
-      return I18n::t(:message_1, :scope => [:txt, :lib, :genderize]) if 'F' == sex
+      return I18n::t(:male, :scope => [:txt, :lib, :genderize]) if 'M' == sex
+      return I18n::t(:female, :scope => [:txt, :lib, :genderize]) if 'F' == sex
     end
   end
 

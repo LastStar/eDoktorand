@@ -20,21 +20,21 @@ class Candidate < ActiveRecord::Base
 
   before_save :strip_birth_number
 
-  validates_presence_of :firstname, :message => I18n::t(:message_0, :scope => [:txt, :model, :candidate])
-  validates_presence_of :lastname, :message => I18n::t(:message_1, :scope => [:txt, :model, :candidate])
-  validates_presence_of :birth_at, :message => I18n::t(:message_2, :scope => [:txt, :model, :candidate])
-  validates_presence_of :email, :message => I18n::t(:message_3, :scope => [:txt, :model, :candidate])
-  validates_presence_of :street, :message => I18n::t(:message_4, :scope => [:txt, :model, :candidate])
-  validates_presence_of :city, :message => I18n::t(:message_5, :scope => [:txt, :model, :candidate])
-  validates_presence_of :zip, :message => I18n::t(:message_6, :scope => [:txt, :model, :candidate])
-  validates_presence_of :state, :message => I18n::t(:message_7, :scope => [:txt, :model, :candidate])
-  validates_presence_of :university, :message => I18n::t(:message_8, :scope => [:txt, :model, :candidate])
-  validates_presence_of :faculty, :message => I18n::t(:message_9, :scope => [:txt, :model, :candidate])
-  validates_presence_of :studied_specialization, :message => I18n::t(:message_10, :scope => [:txt, :model, :candidate])
-  validates_presence_of :birth_number, :message => I18n::t(:message_11, :scope => [:txt, :model, :candidate])
-  validates_presence_of :number, :message => I18n::t(:message_12, :scope => [:txt, :model, :candidate])
+  validates_presence_of :firstname, :message => I18n::t(:name_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :lastname, :message => I18n::t(:last_name_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :birth_at, :message => I18n::t(:birth_at_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :email, :message => I18n::t(:email_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :street, :message => I18n::t(:street_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :city, :message => I18n::t(:city_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :zip, :message => I18n::t(:zip_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :state, :message => I18n::t(:state_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :university, :message => I18n::t(:university_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :faculty, :message => I18n::t(:faculty_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :studied_specialization, :message => I18n::t(:studied_specialization_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :birth_number, :message => I18n::t(:birth_number_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :number, :message => I18n::t(:number_must_be_present, :scope => [:txt, :model, :candidate])
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i,
-    :on => :create, :message => I18n::t(:message_13, :scope => [:txt, :model, :candidate])
+    :on => :create, :message => I18n::t(:wrong_email_format, :scope => [:txt, :model, :candidate])
 
   #TODO rename with tt
   #TODO spec it
@@ -55,12 +55,12 @@ class Candidate < ActiveRecord::Base
   # validates if languages are not same
   def validate
     # TODO check if used then remove vvvvv
-    errors.add_to_base(I18n::t(:message_19, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
-    errors.add_to_base(I18n::t(:message_20, :scope => [:txt, :model, :candidate])) if
+    errors.add_to_base(I18n::t(:languages_must_be_different, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
+    errors.add_to_base(I18n::t(:candidate_must_be_registered_before_invite, :scope => [:txt, :model, :candidate])) if
     !finished? && invited?
-    errors.add_to_base(I18n::t(:message_21, :scope => [:txt, :model, :candidate])) if
+    errors.add_to_base(I18n::t(:candidate_must_be_invited_before_admit, :scope => [:txt, :model, :candidate])) if
     !invited? && admited?
-    errors.add_to_base(I18n::t(:message_22, :scope => [:txt, :model, :candidate])) if
+    errors.add_to_base(I18n::t(:candidate_must_be_admited_before_enroll, :scope => [:txt, :model, :candidate])) if
     !admited? && enrolled?
     #^^^^^^^^
     if admittance_theme
@@ -79,7 +79,7 @@ class Candidate < ActiveRecord::Base
   def validate_on_create
     if state == "CZ" || state == "SK"
       if !(birth_number =~ /\d+/) || (birth_number.size == 10 && birth_number.to_i.remainder(11) != 0)
-        errors.add(:birth_number, I18n::t(:message_23, :scope => [:txt, :model, :candidate]))
+        errors.add(:birth_number, I18n::t(:wrong_birth_number_format, :scope => [:txt, :model, :candidate]))
       end
     end
   end
@@ -87,7 +87,7 @@ class Candidate < ActiveRecord::Base
   def validate_on_update
     if state == "CZ" || state == "SK"
       if birth_number.to_i.remainder(11) != 0
-        errors.add(:birth_number, I18n::t(:message_24, :scope => [:txt, :model, :candidate]))
+        errors.add(:birth_number, I18n::t(:wrong_birth_number_format, :scope => [:txt, :model, :candidate]))
       end
     end
   end

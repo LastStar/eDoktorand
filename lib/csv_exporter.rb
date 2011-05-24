@@ -372,9 +372,16 @@ class CSVExporter
             row << ''
           end
           row << c.email
+          row << c.study.name
           row << c.department.short_name
           row << c.specialization.code
-          row << c.study.name
+          if c.admittance_theme
+            row << c.admittance_theme.display_name
+          elsif c.tutor
+            c.tutor.display_name
+          else
+            ''
+          end
           @@mylog.debug "Adding #{row}"
           csv << row
         end
@@ -763,9 +770,9 @@ class CSVExporter
       end
     end
 
-    # exports all students for vice dean with attributes for acreditation
+    # exports all students for vice dean with attributes for accreditation
     # committee
-    def students_for_acreditation_committee(dean_user)
+    def students_for_accreditation_committee(dean_user)
       indices = Index.find_for(dean_user)
       @@mylog.info("There is %i students" % indices.size)
       File.open("students.csv", 'wb') do |outfile|
@@ -865,6 +872,25 @@ class CSVExporter
        }
     end
 
+    def all_for_accreditation(secretary_user)
+      indices = Index.find_for(secretary_user, :unfinished => true,
+                               :not_interrupted => true,
+                               :not_absolved => true)
+      @@mylog.info("There is %i students" % indices.size)
+      File.open("accreditation.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          indices.each do |index|
+            row = []
+            row << index.student.uic
+            row << index.student.display_name
+            row << index.tutor.display_name
+            row << index.disert_theme.try(:title)
+            row << index.specialization.name
+            csv << row
+          end
+        end
+      end
+    end
 
   end
 end

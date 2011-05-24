@@ -1,7 +1,7 @@
 class DisertTheme < ActiveRecord::Base
   
   belongs_to :index
-  validates_presence_of :title, :message => I18n::t(:message_0, :scope => [:txt, :model, :theme])
+  validates_presence_of :title, :message => I18n::t(:title_must_be_present, :scope => [:txt, :model, :theme])
   validates_presence_of :finishing_to
 
   before_create :set_actual
@@ -9,7 +9,7 @@ class DisertTheme < ActiveRecord::Base
 
   def validate
     if defense_passed_on && !index.final_exam_passed?
-      errors.add(:defense_passed_on, t(:message_1, :scope => [:txt, :model, :theme]))
+      errors.add(:defense_passed_on, t(:did_not_passed_final_exam, :scope => [:txt, :model, :theme]))
     end
   end
 
