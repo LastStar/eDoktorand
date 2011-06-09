@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  # You can have the root of your site routed by hooking up '' 
+  # You can have the root of your site routed by hooking up ''
   # -- just remember to delete public/index.html.
   map.connect '', :controller => "account", :action => 'welcome'
 
@@ -10,23 +10,23 @@ ActionController::Routing::Routes.draw do |map|
   # add path for table changer
   map.connect 'table/:controller/:action', :prefix => 'table_'
 
-  ### table versions 
+  ### table versions
   # sorting routes for candidate
   map.connect 'table/:controller/by/:category', :action => 'list', :prefix => 'table_'
 
   # sorting routes for all candidate
-  map.connect 'table/:controller/all_by/:category', :action => 'list_all', 
+  map.connect 'table/:controller/all_by/:category', :action => 'list_all',
     :prefix => 'table_'
 
   # filter routes for candidate
   map.connect 'table/:controller/only/:filter', :action => 'list', :prefix => 'table_'
 
   # sorted filter routes for candidate
-  map.connect 'table/:controller/only/:filter/by/:category', :action => 'list', 
+  map.connect 'table/:controller/only/:filter/by/:category', :action => 'list',
     :prefix => 'table_'
-  
+
   # candidates for corridor
-  map.connect 'table/candidates/in/:specialization', :controller => 'candidates', 
+  map.connect 'table/candidates/in/:specialization', :controller => 'candidates',
     :action => 'list_all', :prefix => 'table_'
 
   # sorting routes for candidate
@@ -42,11 +42,11 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/only/:filter/by/:category', :action => 'list'
 
   # candidates for corridor
-  map.connect 'candidates/in/:specialization', :controller => 'candidates', 
+  map.connect 'candidates/in/:specialization', :controller => 'candidates',
     :action => 'list_all'
 
   # add path for prijimacky
-  map.connect 'prijimacky/:action/:id', :controller => 'form', :lang => 'cs'
+  # map.connect 'prijimacky/:action/:id', :controller => 'form', :lang => 'cs'
 
   # add path for admittance
   map.connect 'application_form/:action/:id', :controller => 'form', :lang => 'en'
