@@ -1,7 +1,7 @@
 <h3 class='printHeader'>ZÁPIS O PŘIJÍMACÍ ZKOUŠCE</h3>
 <div style='text-align: right'>
 <table class='letter_header'>
-<tr>  
+<tr>
   <th>Uchazeč:</th><td><b><%= @candidate.display_name %></b></td>
 </tr>
 <tr>
@@ -11,7 +11,7 @@
   <th>Obor:</th><td><b><%= @candidate.specialization.name %></b></td>
 </tr>
 <tr>
-  <th>&nbsp;</th><td><b><%= @candidate.department.name %></b></td> 
+  <th>&nbsp;</th><td><b><%= @candidate.department.name %></b></td>
 </tr>
 </table>
 </div>
@@ -21,8 +21,10 @@ Odborná zkouška:
 </p>
 <p><div class='info'>........................................*</div>
 1. jazyk: <b><%= Subject.find(@candidate.language1_id).label %></b>:
-<p><div class='info'>........................................*</div>
- 2. jazyk: <b> <%= Subject.find(@candidate.language2_id).label %></b>:</p>
+<% unless @candidate.faculty == Faculty.find(14)
+  <p><div class='info'>........................................*</div>
+   2. jazyk: <b> <%= Subject.find(@candidate.language2_id).label %></b>:</p>
+<% end %>
 <p> <div class='info'>prospěl x neprospěl</div>Celkový výsledek zkoušky: </p>
 <p> <div class='info'>přijmout x nepřijmout</div>
 Doporučení přijímací komise:</p>
@@ -30,7 +32,7 @@ Doporučení přijímací komise:</p>
 
 <p><div
 class='info'>...................................................................................................</div>
-Doporučený školitel, katedra: 
+Doporučený školitel, katedra:
 </p>
 <p>
 <div
@@ -43,12 +45,12 @@ Poznámky, změny:
 předseda: <%= @candidate.specialization.exam_term.chairman_name %>
 <span class='dots'>........................................</span><br/>
 členové:<br/>
-<%= @candidate.specialization.exam_term.first_examinator %> 
+<%= @candidate.specialization.exam_term.first_examinator %>
 <span class='dots'>........................................</span><br/><br/>
 <%= @candidate.specialization.exam_term.second_examinator %>
 <span class='dots'>........................................</span><br/><br/>
 <% unless @candidate.specialization.exam_term.third_examinator.empty? %>
-<%= @candidate.specialization.exam_term.third_examinator %> 
+<%= @candidate.specialization.exam_term.third_examinator %>
 <span class='dots'>........................................</span><br/><br/>
 <% end %>
 <% unless @candidate.specialization.exam_term.fourth_examinator.empty? %>
@@ -69,14 +71,14 @@ předseda: <%= @candidate.specialization.exam_term.chairman_name %>
 <% end %>
 </p>
 <p>Datum přijímací zkoušky: <%= @candidate.specialization.exam_term.date.strftime("%d. %m. %Y") %></p>
-<br/> 
+<br/>
 <hr style='border-bottom: 1px solid black'/>
 <p><b>Rozhodnutí děkana fakulty: <span class='dots'>přijmout x
 nepřijmout</span></b></p>
 
-<p>Datum:<br/><br/> 
+<p>Datum:<br/><br/>
  Podpis:</p>
- 
+
 <br/>
 <p>POZN: * HODNOCENÍ: čtyřstupňově - výborně, velmi dobře, dobře a neprospěl</p>
  <div class='links'>
@@ -84,7 +86,7 @@ nepřijmout</span></b></p>
     <% if session[:back_page] == 'list' %>
       <%= link_to 'zpět na výpis', :page => session[:current_page_backward], :action => 'list' if @user %>
     <% else %>
-      <%= link_to 'zpět na výpis', :action => 'list_all' if @user%>    
+      <%= link_to 'zpět na výpis', :action => 'list_all' if @user%>
     <% end %>
 
  </div>
