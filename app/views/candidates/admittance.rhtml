@@ -21,7 +21,7 @@ Odborná zkouška:
 </p>
 <p><div class='info'>........................................*</div>
 1. jazyk: <b><%= Subject.find(@candidate.language1_id).label %></b>:
-<% unless @candidate.faculty == Faculty.find(14) %>
+<% unless @candidate.admitting_faculty.id == 14 %>
   <p><div class='info'>........................................*</div>
    2. jazyk: <b> <%= Subject.find(@candidate.language2_id).label %></b>:</p>
 <% end %>
