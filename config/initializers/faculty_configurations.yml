@@ -1,6 +1,6 @@
 # this file stores configuration values for each faculty
 1:
-  final_areas_on: create   
+  final_areas_on: create
   final_areas_count: 4
   attestation_month: 9
   attestation_day: 20
@@ -10,6 +10,7 @@
   attestation_month: 11
   attestation_day: 30
   attestation_title: director
+  dean_title: ředitel
 4:
   final_areas_count: 4
   attestation_month: 9

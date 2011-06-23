@@ -1,5 +1,5 @@
 class Faculty < ActiveRecord::Base
-  
+
   has_many :specializations
   has_many :departments
   has_many :documents
@@ -11,7 +11,7 @@ class Faculty < ActiveRecord::Base
 
   # return acredited specializations
   def accredited_specializations
-    Specialization.find(:all, 
+    Specialization.find(:all,
                 :conditions => ['faculty_id = ? AND accredited = ? ', id, 1])
   end
 
@@ -27,7 +27,8 @@ class Faculty < ActiveRecord::Base
 
   # retuns dean of the faculty
   def dean_label
-    I18n::t(:dean, :scope => [:txt, :model, :faculty])
+    return FACULTY_CFG[self.id]['dean_title'] if FACULTY_CFG[self.id]['dean_title']
+    'děkan'
   end
 
   # retuns dean of the faculty
@@ -42,9 +43,9 @@ class Faculty < ActiveRecord::Base
   end
 
   def study_plans
-    StudyPlan.find(:all, :include => [:index => :department], 
+    StudyPlan.find(:all, :include => [:index => :department],
                    :conditions => ["departments.faculty_id = ? \
-                                   and indices.finished_on is null 
+                                   and indices.finished_on is null
                                    and study_plans.canceled_on is null", self.id])
   end
 end
