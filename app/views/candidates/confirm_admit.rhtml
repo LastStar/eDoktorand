@@ -9,20 +9,20 @@
 <% else %>
 <%= @candidate.sending_address %></p>
 <% end %>
-<br/> 
+<br/>
 <br/>
 
 <p>Vážený pane/paní,</p>
 
 <p>na základě úspěšně vykonané přijímací zkoušky, jste byl/a
-<% unless @conditional %><strong> s účinností od 
+<% unless @conditional %><strong> s účinností od
   <%= Parameter.get("enrolled_from", @faculty) %> <%=Time.now.strftime("%Y")%> přijat/a</strong><% end %> ve&nbsp;smyslu § 47, zákona č. 111/98 Sb. o vysokých školách,
-<% if @conditional %><b>podmínečně přijat/a</b><% end %> 
+<% if @conditional %><b>podmínečně přijat/a</b><% end %>
 do <%= @candidate.study.name %> formy doktorského studia na&nbsp;<%= @faculty.short_name%> ČZU v Praze</p>
 
-<h3 class='centerAlign'>studijní obor: <%= @candidate.specialization.name %></h5>
+<h3 class='centerAlign'>studijní obor: <%= @candidate.specialization.name %></h3>
 <br/>
-<p>Vaším školitelem byl/a ustanoven/a <%= @candidate.tutor.display_name %>, 
+<p>Vaším školitelem byl/a ustanoven/a <%= @candidate.tutor.display_name %>,
  <%= first_lower(@candidate.department.name) %> <%= @faculty.short_name%>.</p>
 <% unless @conditional %>
 <h3 class='centerAlign'>Zápis do studia se uskuteční dne <%= Parameter.get("enroll_invitation_time_and_place", @faculty) %>.</h5>
@@ -30,8 +30,8 @@ do <%= @candidate.study.name %> formy doktorského studia na&nbsp;<%= @faculty.s
 <p>Do studia budete zapsán po předložení dokladů o ukončení magisterského stupně vzdělání.</p>
 <% end %>
 <% if @candidate.study_id == 1 %>
-<p>Zároveň Vám přiznávám stipendium ve výši 
-<%= Parameter.get("start_stipendia", @faculty) %>,- Kč měsíčně, které Vám bude 
+<p>Zároveň Vám přiznávám stipendium ve výši
+<%= Parameter.get("start_stipendia", @faculty) %>,- Kč měsíčně, které Vám bude
 vypláceno <% if @conditional %>ode dne nástupu do studia,<% else %>od&nbsp;1.&nbsp;října <%= Time.now.year %>,<% end %>
 vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <% end %>
@@ -55,9 +55,9 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
     <% if session[:back_page] == 'list' %>
       <%= link_to t(:message_0, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), :action => 'list',:page => session[:current_page_backward] %>
     <% else %>
-      <%= link_to t(:message_1, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), :action => 'list_all'%>    
+      <%= link_to t(:message_1, :scope => [:txt, :view, :candidates, :confirm_admit, :rhtml]), :action => 'list_all'%>
     <% end %>
-  
+
   </div>
 	<% unless @candidate.admited? %>
         <div id='mailLink'>
