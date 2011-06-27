@@ -54,8 +54,8 @@ class Candidate < ActiveRecord::Base
 
   # validates if languages are not same
   def validate
-    # TODO check if used then remove vvvvv
     errors.add_to_base(I18n::t(:languages_must_be_different, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
+    # TODO check if used then remove vvvvv
     errors.add_to_base(I18n::t(:candidate_must_be_registered_before_invite, :scope => [:txt, :model, :candidate])) if
     !finished? && invited?
     errors.add_to_base(I18n::t(:candidate_must_be_invited_before_admit, :scope => [:txt, :model, :candidate])) if
@@ -78,7 +78,7 @@ class Candidate < ActiveRecord::Base
 
   def validate_on_create
     if state == "CZ" || state == "SK"
-      if !(birth_number =~ /\d+/) || (birth_number.size == 10 && birth_number.to_i.remainder(11) != 0)
+      if !(birth_number =~ /^\d+$/) || (birth_number.size == 10 && birth_number.to_i.remainder(11) != 0)
         errors.add(:birth_number, I18n::t(:wrong_birth_number_format, :scope => [:txt, :model, :candidate]))
       end
     end
