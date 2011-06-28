@@ -59,10 +59,10 @@ class CSVExporter
     def export_students(faculty, format = [:student_name])
       faculty = faculty.is_a?(Faculty) ? faculty  : Faculty.find(faculty)
       faculty.departments.each do |dep|
-        file = "student_#{dep.id}.csv"
+        file = "student_#{dep.short_name}.csv"
         outfile = File.open(file, 'wb')
         CSV::Writer.generate(outfile, ';') do |csv|
-          indices = Index.find_studying_on_department(dep)
+          indices = Index.find_all_by_department_id(dep.id, :include => :student, :order => 'people.lastname asc')
           @@mylog.info "On #{dep.name} are #{indices.size} indices."
           indices.each do |ind|
             row = []
