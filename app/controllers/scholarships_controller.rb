@@ -10,7 +10,7 @@ class ScholarshipsController < ApplicationController
   end
 
   def list
-    @indices = Index.find_for_scholarship(@user, 
+    @indices = Index.find_for_scholarship(@user,
                                          :order => 'studies.id, people.lastname',
                                          :include => [:student, :study, :disert_theme])
     if @user.has_role?('supervisor')
@@ -26,9 +26,9 @@ class ScholarshipsController < ApplicationController
 
   # scholarship list preparation
   def prepare
-    @indices = Index.find_for_scholarship(@user, 
+    @indices = Index.find_for_scholarship(@user,
                                          :order => 'studies.id, people.lastname',
-                                         :include => [:student, :study, 
+                                         :include => [:student, :study,
                                                       :disert_theme])
   end
 
@@ -42,13 +42,13 @@ class ScholarshipsController < ApplicationController
     @index = Index.find(params['id'])
     @scholarships = ExtraScholarship.find_all_unpayed_by_index(@index.id)
   end
- 
+
   # adding scholarships for faculty secretaries
   def add
    @index = Index.find(params['id'])
    @scholarship = @index.extra_scholarships.build
   end
-  
+
   def edit
     @scholarship = ExtraScholarship.find(params[:id])
     render(:action => 'add')
@@ -74,24 +74,24 @@ class ScholarshipsController < ApplicationController
   end
 
   def recalculate
-    @indices = Index.find_for_scholarship(@user, 
+    @indices = Index.find_for_scholarship(@user,
                                          :order => 'studies.id, people.lastname',
-                                         :include => [:student, :study, 
+                                         :include => [:student, :study,
                                                       :disert_theme])
     RegularScholarship.recalculate_amount(@indices)
     render(:action => :prepare)
   end
-  
+
   def student_list
     @index = @student.index
   end
-    
+
   def update
     @scholarship = Scholarship.find(params[:scholarship][:id])
     unless @scholarship.attributes = params[:scholarship]
       render(:action => 'add')
-    end  
-    @scholarship.amount = 0 if !@scholarship.amount 
+    end
+    @scholarship.amount = 0 if !@scholarship.amount
   end
 
   def create
@@ -118,28 +118,28 @@ class ScholarshipsController < ApplicationController
     # TODO send mail to machyk
     render(:text => stipendias)
   end
-  
+
   def approve
     @indices = Scholarship.approve_for(@user)
     render(:action => 'list')
   end
-  
+
   # renders control table of scholarships
   def control_table
-    @indices = Index.find_for_scholarship(@user, 
+    @indices = Index.find_for_scholarship(@user,
                                          :order => 'studies.id, people.lastname',
                                          :include => [:student, :study, :disert_theme])
     @show_table_message = 1
     @bad_indices = []
     #TO DO rewrite to identihas_any_scholarshipfy bad index by itself - method in index model
     for index in @indices
-      if index.bad_index? 
+      if index.bad_index?
           @bad_indices << index
       end
     end
     render(:action => 'list')
   end
-  
+
   # sets title of the controller
   def set_title
     @title = t(:message_0, :scope => [:txt, :controller, :scholarships])
@@ -160,5 +160,5 @@ class ScholarshipsController < ApplicationController
     @approval.destroy
     redirect_to :action => :list
   end
-  
+
 end

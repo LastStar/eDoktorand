@@ -55,7 +55,7 @@ body {
 	width:986px;
 	top:0px;
 	background-color: #ffffff;
-	line-height: 60%;	
+	line-height: 60%;
 }
 #content img.logo {display:block;position:absolute; margin-left: 15px;top:15px;float:left;}
 
@@ -82,7 +82,7 @@ body {
 	background-repeat: no-repeat;
 	text-shadow: -1px -1px 0 #222;
 	letter-spacing: 1px;
-	
+
 }
 #head img
 {
@@ -109,7 +109,7 @@ body {
   float:right;
   margin-bottom: 5px;
   margin-top: -1px;
-  
+
 }
 #main-menu a {
 	display : block;
@@ -128,7 +128,7 @@ body {
 	-moz-border-radius-bottomleft: 8px;
 	-moz-border-radius-bottomright: 8px;
 	-webkit-border-radius: 8px;
-	
+
 }
 #main-menu a:hover {
 	color: #000;
@@ -209,8 +209,8 @@ label.subject_line {
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	letter-spacing: .5px;
-	
-	
+
+
 }
 
 .links a:hover
@@ -278,8 +278,8 @@ h1 {
 	line-height: 140%;
 	font-weight: bold;
 	text-shadow: 1px 1px 0 #fff;
-	
-	
+
+
 }
 
 
@@ -385,7 +385,7 @@ ul li li
 {
 	list-style: square;
 	list-style-image: url(../_images/icons/bullet_yellow.png);
-	font-weight: normal;	
+	font-weight: normal;
 }
 
 ul.nodecor, ul.nodecor li, ul.nodecor li li
@@ -434,12 +434,12 @@ ul.bordered {
 }
 
 
-ul.bordered li.third { 
+ul.bordered li.third {
   padding-left: 4em;
   background-color: #ddc;
 }
 
-.highlight { 
+.highlight {
   padding-left: 4em;
   background-color: #ddc;
 }
@@ -534,7 +534,7 @@ table.embossed tr th
 	padding: 5px 2px 5px 10px;
 	background-position: left top;
 	background-repeat: repeat-x;
-	border-bottom: 1px solid #efefef;	
+	border-bottom: 1px solid #efefef;
 	border-right: 1px solid #efefef;
 	-moz-border-radius-topleft: 8px;
 	-moz-border-radius-topright: 8px;
@@ -545,7 +545,7 @@ table.embossed tr th
 table.embossed tr th.no-rounded
 {
 	-moz-border-radius: 0px;
-	-webkit-border-radius: 0px;  
+	-webkit-border-radius: 0px;
 }
 
 table.students-list tr.form-line td,table.embossed tr.form-line td {
@@ -556,7 +556,7 @@ table.students-list tr.form-line td div,table.embossed tr.form-line td div {
 
 table.embossed tr td
 {
-	padding: 5px 2px 4px 4px;	
+	padding: 5px 2px 4px 4px;
 	background-position: left top;
 	background-repeat: repeat-x;
 	border-bottom: 1px solid #EFEFEF;
@@ -601,10 +601,10 @@ table.embossed a:hover
 
 
 table.students-list
-{	
+{
 	width: 98%;
 	border-collapse: collapse;
-	
+
 }
 table.students-list tr
 {
@@ -626,7 +626,7 @@ table.students-list tr th
 }
 table.students-list tr td
 {
-	padding: 0 0 0 8px;;	
+	padding: 0 0 0 8px;;
 }
 table.students-list td.student_exception {
   width: 4ex;
@@ -776,7 +776,7 @@ input.button{
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	letter-spacing: .5px;
-	
+
 }
 
 input.noformat
@@ -848,4 +848,10 @@ td.action-link {
 }
 .confirm-admitt-top-links {
   margin-bottom: 5px;
+}
+#scholarship_table div.fieldWithErrors {
+  display: inline;
+}
+#scholarship_table div.fieldWithErrors input {
+  border-color: red;
 }
