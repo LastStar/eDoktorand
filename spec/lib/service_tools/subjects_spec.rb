@@ -1,17 +1,15 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe ServiceTools::Subjects do
   context "with correct data" do
     before(:each) do
-      GetSubjectService.should_receive(:get_subjects).and_return(
-        [{:code => 'DAAA01Y',
+      @subject = Subject.create(:label => 'Bad one', :code => 'DAAA01Y')
+      @department = Factory(:department, :short_name => 'KET')
+      ServiceTools::Subjects.repair_all([{:code => 'DAAA01Y',
           :label => 'Aplikovana meteorologie a klimatologie',
           :label_en => 'Applied Meteorology and Climatology',
           :department_short_name => 'KET'}])
-      Subject.create(:label => 'Bad one', :code => 'DAAA01Y')
-      @department = Factory(:department, :short_name => 'KET')
-      ServiceTools::Subjects.repair_all
-      @subject = Subject.find_by_code('DAAA01Y')
+      @subject.reload
     end
     it "repairs label" do
       @subject.label.should == 'Aplikovana meteorologie a klimatologie'
@@ -25,20 +23,17 @@ describe ServiceTools::Subjects do
   end
   context "with not correct data" do
     before(:each) do
-      GetSubjectService.should_receive(:get_subjects).and_return(
-        [{:code => 'DAAA01Y',
+      ServiceTools::Subjects.repair_all([{:code => 'DAAA01Y',
           :label => 'Aplikovana meteorologie a klimatologie',
           :label_en => 'Applied Meteorology and Climatology',
           :department_short_name => 'KET'}])
     end
     it "not try to add non existing department" do
       Subject.create(:label => 'Bad one', :code => 'DAAA01Y')
-      ServiceTools::Subjects.repair_all
       @subject = Subject.find_by_code('DAAA01Y')
       @subject.departments.include?(@department).should be_false
     end
     it "create non existing subject" do
-      ServiceTools::Subjects.repair_all
       @subject = Subject.find_by_code('DAAA01Y')
       @subject.should_not be_nil
       @subject.label.should == 'Aplikovana meteorologie a klimatologie'

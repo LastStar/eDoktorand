@@ -1,9 +1,9 @@
 module ServiceTools
   module Subjects
     # repairs all subjects from subjects service
-    def self.repair_all
-      subjects = GetSubjectService.get_subjects
-      subjects.each do |subjectHash|
+    # based on response from GetSubjectService
+    def self.repair_all(response)
+      response.each do |subjectHash|
         subject = Subject.find_by_code(subjectHash[:code]) || Subject.new(:code => subjectHash[:code])
         subject.label = subjectHash[:label]
         subject.label_en = subjectHash[:label_en]

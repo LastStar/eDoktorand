@@ -24,5 +24,6 @@ Rails::Initializer.run do |config|
   config.gem "ruby-net-ldap", :lib => "net/ldap"
   config.gem "mislav-will_paginate", :lib => 'will_paginate'
   config.gem 'super_exception_notifier', :lib => "exception_notification"
+  config.gem 'curb'
 
 end
