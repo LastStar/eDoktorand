@@ -21,3 +21,8 @@ GET_SUBJECT_SERVICE_ENDPOINT = {
   :uri => 'http://comanche.czu.cz/axis2/services/GetSubjectService.GetSubjectServiceHttpSoap12Endpoint/',
   :version => 2
 }
+
+CENTRAL_REGISTER_SERVICE = {
+  :uri => 'http://193.84.33.16:80/axis2/services/OSZService.OSZServiceHttpSoap11Endpoint/',
+  :version => 2
+}

@@ -70,6 +70,7 @@ Factory.define :department do |department|
   department.name "department"
   department.name_english "department en"
   department.short_name 'DEP'
+  department.code '11100'
   department.association :faculty
 end
 
