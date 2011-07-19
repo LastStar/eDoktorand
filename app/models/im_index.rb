@@ -30,9 +30,9 @@ class ImIndex < ActiveRecord::Base
   # gets attributes from index
   def get_index_attributes
     index.reload
-    self.student_uic = index.student.uic   
+    self.student_uic = index.student.uic
     self.department_name = index.department.name
-    self.department_code = index.department.short_name
+    self.department_code = index.department.code
     self.faculty_name = index.faculty.name
     self.faculty_code = index.faculty.short_name
     self.study_year = index.year

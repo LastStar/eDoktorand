@@ -19,7 +19,7 @@ describe ImIndex do
     im_index = ImIndex.create(:index => index)
     im_index.student_uic.should == 1
     im_index.department_name.should == "department"
-    im_index.department_code.should == "DEP"
+    im_index.department_code.should == "11100"
     im_index.faculty_name.should == "faculty"
     im_index.faculty_code.should == "FAC"
     im_index.study_year.should == 1
