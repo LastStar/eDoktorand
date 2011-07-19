@@ -57,3 +57,17 @@ end
 def mocked_user
   @mocked_user ||= mock(User)
 end
+
+def mock_service(body)
+  headers =<<HEADERS
+Connection: close
+Content-Type: text/xml;charset=UTF-8
+Date: #{Time.now.strftime('%c')}
+Server: Apache-Coyote/1.1
+HEADERS
+  Handsoap::Http.drivers[:mock] = Handsoap::Http::Drivers::MockDriver.new :headers => headers.gsub(/\n/, "\r\n"),
+                                                                          :content => body,
+                                                                          :status => 200
+  Handsoap.http_driver = :mock
+  Handsoap::Http.drivers[:mock].new
+end

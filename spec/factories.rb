@@ -94,7 +94,7 @@ Factory.define :candidate do |candidate|
   candidate.zip '10000'
   candidate.state 'CZ'
   candidate.university 'CZU'
-  candidate.faculty 'FAAPPZ'
+  candidate.faculty 'FAPPZ'
   candidate.studied_specialization 'Agro'
   candidate.birth_number '7604242624'
   candidate.association :department

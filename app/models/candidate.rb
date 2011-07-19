@@ -77,6 +77,7 @@ class Candidate < ActiveRecord::Base
   end
 
   def validate_on_create
+    self.birth_number = birth_number.strip
     if state == "CZ" || state == "SK"
       if !(birth_number =~ /^\d+$/) || (birth_number.size == 10 && birth_number.to_i.remainder(11) != 0)
         errors.add(:birth_number, I18n::t(:wrong_birth_number_format, :scope => [:txt, :model, :candidate]))

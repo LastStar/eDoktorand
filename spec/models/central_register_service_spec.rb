@@ -4,13 +4,7 @@ describe CentralRegister::Department do
 
   context "when parsing correct response" do
     before do
-      headers =<<HEADERS
-Connection: close
-Content-Type: text/xml;charset=UTF-8
-Date: Tue, 19 Jul 2011 07:51:59 GMT
-Server: Apache-Coyote/1.1
-HEADERS
-      body =<<BODY
+      mock_service <<BODY
 <?xml version='1.0' encoding='UTF-8'?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Body>
@@ -31,11 +25,6 @@ HEADERS
   </soapenv:Body>
 </soapenv:Envelope>
 BODY
-      Handsoap::Http.drivers[:mock] = Handsoap::Http::Drivers::MockDriver.new :headers => headers.gsub(/\n/, "\r\n"),
-                                                                              :content => body,
-                                                                              :status => 200
-      Handsoap.http_driver = :mock
-      Handsoap::Http.drivers[:mock].new
     end
     it "it returns array of department hashes" do
       CentralRegister::Department.all_departments.should == [
@@ -53,13 +42,7 @@ BODY
   end
   context "when parsing response with some nil" do
     before do
-      headers =<<HEADERS
-Connection: close
-Content-Type: text/xml;charset=UTF-8
-Date: Tue, 19 Jul 2011 07:51:59 GMT
-Server: Apache-Coyote/1.1
-HEADERS
-      body =<<BODY
+      mock_service <<BODY
 <?xml version='1.0' encoding='UTF-8'?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Body>
@@ -79,11 +62,6 @@ HEADERS
   </soapenv:Body>
 </soapenv:Envelope>
 BODY
-      Handsoap::Http.drivers[:mock] = Handsoap::Http::Drivers::MockDriver.new :headers => headers.gsub(/\n/, "\r\n"),
-                                                                              :content => body,
-                                                                              :status => 200
-      Handsoap.http_driver = :mock
-      Handsoap::Http.drivers[:mock].new
     end
     it "what" do
       lambda {CentralRegister::Department.all_departments}.should_not raise_error
