@@ -3,7 +3,7 @@ require 'handsoap'
 
 module CentralRegister
   class Department < Handsoap::Service
-    endpoint CENTRAL_REGISTER_SERVICE
+    endpoint Services::UNIVERSITY_REGISTER
     def on_create_document(doc)
       # register namespaces for the request
       doc.alias 'tns', 'http://osz.services'
@@ -25,7 +25,7 @@ module CentralRegister
     private
     # helpers
 
-    # corrects subject from node
+    # corrects program from node
     def self.parse(node)
       {
         :name => string_attr(node, "nazev_cz"),

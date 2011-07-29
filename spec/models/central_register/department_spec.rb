@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe CentralRegister::Department do
 
@@ -63,7 +63,7 @@ BODY
 </soapenv:Envelope>
 BODY
     end
-    it "what" do
+    it "should not raise error" do
       lambda {CentralRegister::Department.all_departments}.should_not raise_error
     end
   end
