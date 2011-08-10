@@ -4,7 +4,11 @@
     <b><%= term_line.index.student.display_name %></b><br />
   </td>
   <td>
-    <%= "%s %s %s" % [term_line.date_time, t(:message_0, :scope => [:txt, :view, :final_exam_terms, :_term_line, :rhtml]), term_line.room] %>
+    <%= "%s %s %s" % [term_line.date_time, t(:room, :scope => [:txt, :view, :final_exam_terms, :_term_line, :rhtml]), term_line.room] %>
   </td>
-  <td class='right'><%= protocol_link term_line %></td>
+  <td class='right'>
+    <%= link_to t(:show, :scope => [:txt, :view, :final_exam_terms, :_term_line, :rhtml]), :action => :show, :id => term_line %>
+    <%= protocol_link term_line %>
+    <%= pass_link 'final_exam_term', term_line.index %>
+  </td>
 </tr>

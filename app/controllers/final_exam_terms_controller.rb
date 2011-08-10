@@ -1,7 +1,7 @@
 class FinalExamTermsController < ApplicationController
   layout 'employers'
   include LoginSystem
-  helper :exam_terms
+  helper :exam_terms, :students
 
   before_filter :login_required, :prepare_user
 
@@ -46,27 +46,26 @@ class FinalExamTermsController < ApplicationController
    def new
     @title = t(:message_2, :scope => [:txt, :controller, :terms])
     @tutors = Tutor.find_for(@user)
-    index = Index.find(params[:id]) 
+    index = Index.find(params[:id])
     if index.final_exam_term
-      @exam_term = index.final_exam_term
+      @final_exam_term = index.final_exam_term
       @tutors << Tutor.external_chairman
     else
-      @exam_term = FinalExamTerm.new
-      @exam_term.index = index
+      @final_exam_term = FinalExamTerm.new
+      @final_exam_term.index = index
     end
   end
 
   def create
-    if @exam_term = FinalExamTerm.find_by_index_id(params[:exam_term][:index_id])
-      @exam_term.update_attributes(params[:exam_term])
-      @exam_term.detect_external_chairman(params[:external_chairman])  
+    if @final_exam_term = FinalExamTerm.find_by_index_id(params[:final_exam_term][:index_id])
+      @final_exam_term.update_attributes(params[:final_exam_term])
     else
-      @exam_term = FinalExamTerm.new(params[:exam_term])
-      @exam_term.detect_external_chairman(params[:external_chairman])  
-    end 
-    if @exam_term.save
+      @final_exam_term = FinalExamTerm.new(params[:final_exam_term])
+    end
+    @final_exam_term.detect_external_chairman(params[:external_chairman])
+    if @final_exam_term.save
       flash['notice'] = t(:message_3, :scope => [:txt, :controller, :terms])
-      render(:action => :show)
+      redirect_to :action => :list
     else
       @tutors = Tutor.find_for(@user)
       render(:action => :new)
@@ -81,7 +80,6 @@ class FinalExamTermsController < ApplicationController
     @tutors = Tutor.find_for(@user)
     @tutors << Tutor.external_chairman
     @exam_term = FinalExamTerm.find(params[:id])
-
   end
 
   def destroy
@@ -93,7 +91,7 @@ class FinalExamTermsController < ApplicationController
   def send_invitation
     @index = Index.find(params[:id])
     @index.send_final_exam_invitation!
-    if params[:mail] != 'no mail' 
+    if params[:mail]
       Notifications::deliver_invite_to_final_exam(@index)
     end
   end
@@ -101,5 +99,19 @@ class FinalExamTermsController < ApplicationController
   # prints protocol for final exam term
   def protocol
     @term = FinalExamTerm.find(params[:id])
+  end
+
+  def pass
+    @date = Date.today
+    @final_exam_term = Index.find(params[:id]).final_exam_term
+  end
+
+  def save_pass
+    @final_exam_term = FinalExamTerm.find(params[:id])
+    @final_exam_term.update_attributes(:questions => params[:questions], :discussion => params[:discussion])
+    date = params[:date]
+    date = Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
+    @final_exam_term.index.final_exam_passed!(date)
+    redirect_to :action => :list
   end
 end

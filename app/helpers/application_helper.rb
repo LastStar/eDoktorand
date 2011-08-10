@@ -465,15 +465,11 @@ module ApplicationHelper
 
   def final_exam_term_link(user, index)
     if user.has_role?('faculty_secretary') && !index.final_exam_invitation_sent?
-      opts = {:url => {:controller => 'final_exam_terms', :action => 'new',
-                      :id => index},
-              :complete => evaluate_remote_response}
+      opts = {:controller => 'final_exam_terms', :action => 'new', :id => index}
     elsif index.final_exam_term
-      opts = {:url => {:controller => 'final_exam_terms', :action => 'show',
-                       :id => index.final_exam_term.id},
-              :complete => evaluate_remote_response}
+      opts = {:controller => 'final_exam_terms', :action => 'show', :id => index.final_exam_term.id}
     end
-    link_to_remote(t(:message_53, :scope => [:txt, :helper, :application]), opts, :id => 'final_exam_link') if opts
+    link_to(t(:message_53, :scope => [:txt, :helper, :application]), opts, :id => 'final_exam_link')
   end
 
   def final_exam_terms_link
@@ -586,7 +582,7 @@ module ApplicationHelper
   def remove_line
     link_to_function(image_tag('close.png'), "$('specialization_subject_form').remove()")
   end
-  
+
   def student_department_line(index)
     if @user.has_role?(Role.find(2))
       attribute_line(index, :department, :short_name) + t(:message_74, :scope => [:txt, :helper, :application]) + ':'
@@ -705,6 +701,10 @@ module ApplicationHelper
     else
       I18n::t(approver.to_s.downcase, :scope => [:txt, :helper, :application])
     end
+  end
+
+  def pass_link(what, index)
+    link_to(t("passed_#{what}", :scope => [:txt, :helper, :application]), :controller => what.pluralize, :action => :pass, :id => index)
   end
 
   private

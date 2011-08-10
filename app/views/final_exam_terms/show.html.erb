@@ -1,9 +1,5 @@
 <div class='links'>
-  <span id='invitation_link'>
     <%= send_invitation_link(@user, @exam_term.index, 'mail') %>
-  </span>
-  <span id='invitation_link_no_mail'>
     <%= send_invitation_link(@user, @exam_term.index, 'no mail') %>
-  </span>
 </div>
 <%= render(:partial => 'detail', :locals => {:exam_term => @exam_term, :many => false}) %>
