@@ -11,7 +11,7 @@ Services
 
 * **Structure**
 
-  * **getFaculties**         all faculties on university
+  * **getFaculties** - all faculties on university
 
     * id
     * name
@@ -20,7 +20,7 @@ Services
     * code
     * ldap_context
 
-  * **getDepartments**       all departments
+  * **getDepartments** - all departments
 
     * id
     * name
@@ -32,7 +32,7 @@ Services
 
 * **Personal info**
 
-  * **getEmploee**           employee by **uic**
+  * **getEmploee** - employee by **uic**
 
     * uic
     * first_name
@@ -44,11 +44,11 @@ Services
     * phone_line
     * department_code
 
-  * **getEmployees**         all employees
+  * **getEmployees** - all employees
 
     * same as getEmployee in collection
 
-  * **getPhoto**             photo by **uic**
+  * **getPhoto** - photo by **uic**
 
     * uic
     * cdata
@@ -57,7 +57,7 @@ Services
 
 * **Study**
 
-  * **getSubject**           subject by **code**
+  * **getSubject** - subject by **code**
 
     * id
     * code
@@ -65,11 +65,11 @@ Services
     * name_english
     * guarantee_uic
 
-  * **getSubjectsFor**       all subjects for employee by **uic**
+  * **getSubjectsFor** - all subjects for employee by **uic**
 
     * same as for getSubject in collection
 
-  * **getSpecializations**   all study specializations
+  * **getSpecializations** - all study specializations
 
     * id
     * code
@@ -78,7 +78,7 @@ Services
     * name_english
     * guarantee_uic
 
-  * **getPrograms**          all study programs
+  * **getPrograms** - all study programs
 
     * id
     * code
@@ -86,25 +86,25 @@ Services
     * name_english
     * guarantee_uic
 
-  * **getStudyStatuses**     all study statuses
+  * **getStudyStatuses** - all study statuses
 
     * code
     * name
     * name_english
 
-  * **getStudyForms**        all study forms
+  * **getStudyForms** - all study forms
 
     * code
     * name
     * name_english
 
-  * **getStudyLevels**       all study levels
+  * **getStudyLevels** - all study levels
 
     * code
     * name
     * name_english
 
-  * **getEducations**        all education types
+  * **getEducations** - all education types
 
     * code
     * name
@@ -112,7 +112,7 @@ Services
 
 * **Science**
 
-  * **getPublication**       all publications for uic of eployer
+  * **getPublication** - all publications for uic of eployer
 
     * id
     * name
@@ -123,7 +123,7 @@ Services
     * publication_type
     * cep
 
-  * **getGrants**            all grants
+  * **getGrants** - all grants
 
     * id
     * guarantee_uic
@@ -137,43 +137,43 @@ Services
 
 * **General**
 
-  * **getCountries**         all countries in the world
+  * **getCountries** - all countries in the world
 
     * code
     * name
     * name_english
 
-  * **getCitizenshipTypes**  all citizenship types
+  * **getCitizenshipTypes** - all citizenship types
 
     * code
     * name
     * name_english
 
-  * **getPaymentTypes**      all payment types
+  * **getPaymentTypes** - all payment types
 
     * code
     * name
     * name_english
 
-  * **getMunipalities**      all czech municipalities
+  * **getMunipalities** - all czech municipalities
 
     * code
     * name
     * name_english
 
-  * **getZips**              all czech zips with municipalities
+  * **getZips** - all czech zips with municipalities
 
     * zip
     * name
     * name_english
 
-  * **getMaritalStatuses**   all marital statuses
+  * **getMaritalStatuses** - all marital statuses
 
     * code
     * name
     * name_english
 
-  * **getGenders**           both genders :)
+  * **getGenders** - both genders :)
 
     * code
     * name
