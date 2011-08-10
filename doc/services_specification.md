@@ -1,181 +1,179 @@
-Central rgister of services on CULS
-====================================
+# Central rgister of services on CULS
 
 SOAP services for all important information which are created or consumed by
 other systems on university.
 
 WSDL: http://services.czu.cz/CULSServices?wsdl
 
-Services
----------
+## Services
 
-* **Structure**
+### **Structure**
 
-  * **getFaculties** - all faculties on university
+* **getFaculties** - all faculties on university
 
-    * id
-    * name
-    * name_english
-    * short_name
-    * code
-    * ldap_context
+  * id
+  * name
+  * name_english
+  * short_name
+  * code
+  * ldap_context
 
-  * **getDepartments** - all departments
+* **getDepartments** - all departments
 
-    * id
-    * name
-    * name_english
-    * short_name
-    * code
-    * faculty_id
-    * department_type_id
+  * id
+  * name
+  * name_english
+  * short_name
+  * code
+  * faculty_id
+  * department_type_id
 
-* **Personal info**
+### **Personal info**
 
-  * **getEmploee** - employee by **uic**
+* **getEmploee** - employee by **uic**
 
-    * uic
-    * first_name
-    * last_name
-    * birth_name
-    * title_before
-    * title_after
-    * email
-    * phone_line
-    * department_code
+  * uic
+  * first_name
+  * last_name
+  * birth_name
+  * title_before
+  * title_after
+  * email
+  * phone_line
+  * department_code
 
-  * **getEmployees** - all employees
+* **getEmployees** - all employees
 
-    * same as getEmployee in collection
+  * same as getEmployee in collection
 
-  * **getPhoto** - photo by **uic**
+* **getPhoto** - photo by **uic**
 
-    * uic
-    * cdata
-    * format
-    * type
+  * uic
+  * cdata
+  * format
+  * type
 
-* **Study**
+### **Study**
 
-  * **getSubject** - subject by **code**
+* **getSubject** - subject by **code**
 
-    * id
-    * code
-    * name
-    * name_english
-    * guarantee_uic
+  * id
+  * code
+  * name
+  * name_english
+  * guarantee_uic
 
-  * **getSubjectsFor** - all subjects for employee by **uic**
+* **getSubjectsFor** - all subjects for employee by **uic**
 
-    * same as for getSubject in collection
+  * same as for getSubject in collection
 
-  * **getSpecializations** - all study specializations
+* **getSpecializations** - all study specializations
 
-    * id
-    * code
-    * short_name
-    * name
-    * name_english
-    * guarantee_uic
+  * id
+  * code
+  * short_name
+  * name
+  * name_english
+  * guarantee_uic
 
-  * **getPrograms** - all study programs
+* **getPrograms** - all study programs
 
-    * id
-    * code
-    * name
-    * name_english
-    * guarantee_uic
+  * id
+  * code
+  * name
+  * name_english
+  * guarantee_uic
 
-  * **getStudyStatuses** - all study statuses
+* **getStudyStatuses** - all study statuses
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
-  * **getStudyForms** - all study forms
+* **getStudyForms** - all study forms
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
-  * **getStudyLevels** - all study levels
+* **getStudyLevels** - all study levels
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
-  * **getEducations** - all education types
+* **getEducations** - all education types
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
-* **Science**
+### **Science**
 
-  * **getPublication** - all publications for uic of eployer
+* **getPublication** - all publications for uic of eployer
 
-    * id
-    * name
-    * name_english
-    * publication_year
-    * authors
-    * quotations
-    * publication_type
-    * cep
+  * id
+  * name
+  * name_english
+  * publication_year
+  * authors
+  * quotations
+  * publication_type
+  * cep
 
-  * **getGrants** - all grants
+* **getGrants** - all grants
 
-    * id
-    * guarantee_uic
-    * name
-    * name_english
-    * finance
-    * year_from
-    * year_to
-    * provider_code
-    * provider_name
+  * id
+  * guarantee_uic
+  * name
+  * name_english
+  * finance
+  * year_from
+  * year_to
+  * provider_code
+  * provider_name
 
-* **General**
+### **General**
 
-  * **getCountries** - all countries in the world
+* **getCountries** - all countries in the world
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
-  * **getCitizenshipTypes** - all citizenship types
+* **getCitizenshipTypes** - all citizenship types
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
-  * **getPaymentTypes** - all payment types
+* **getPaymentTypes** - all payment types
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
-  * **getMunipalities** - all czech municipalities
+* **getMunipalities** - all czech municipalities
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
-  * **getZips** - all czech zips with municipalities
+* **getZips** - all czech zips with municipalities
 
-    * zip
-    * name
-    * name_english
+  * zip
+  * name
+  * name_english
 
-  * **getMaritalStatuses** - all marital statuses
+* **getMaritalStatuses** - all marital statuses
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
-  * **getGenders** - both genders :)
+* **getGenders** - both genders :)
 
-    * code
-    * name
-    * name_english
+  * code
+  * name
+  * name_english
 
