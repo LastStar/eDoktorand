@@ -3,7 +3,7 @@ class DefensesController < ApplicationController
   include LoginSystem
   helper :exam_terms
 
-  before_filter :login_required, :prepare_user
+  before_filter :login_required, :prepare_user, :prepare_student
 
   # page for student defense claim
   def claim
@@ -58,6 +58,7 @@ class DefensesController < ApplicationController
     if params[:mail] != 'no mail'
       Notifications::deliver_invite_to_defense(@index)
     end
+    redirect_to :action => :list
   end
 
   #shows defense term in study plan
@@ -68,7 +69,7 @@ class DefensesController < ApplicationController
   # shows list of all defenses in system for user
   def list
     @title = t(:message_3, :scope => [:txt, :controller, :defenses])
-    @defenses = Defense.find_for(@user)
+    @defenses = Defense.find_for(@user, :not_passed => true)
   end
 
   # prints of announcement of defense
@@ -81,5 +82,20 @@ class DefensesController < ApplicationController
   def protocol
     @title = t(:message_5, :scope => [:txt, :controller, :defenses])
     @defense = Defense.find(params[:id])
+  end
+
+  def pass
+    @title = t(:passing, :scope => [:txt, :controller, :defenses])
+    @date = Date.today
+    @defense = Index.find(params[:id]).defense
+  end
+
+  def save_pass
+    @defense = Defense.find(params[:id])
+    @defense.update_attributes(:questions => params[:questions], :discussion => params[:discussion])
+    date = params[:date]
+    date = Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
+    @defense.index.final_exam_passed!(date)
+    redirect_to :action => :list
   end
 end

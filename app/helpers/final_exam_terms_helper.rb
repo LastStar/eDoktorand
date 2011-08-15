@@ -5,18 +5,14 @@ module FinalExamTermsHelper
       :controller => :final_exam_terms, :future => 1
   end
 
-  def send_invitation_link(user, index, mail)
-    if user.has_role?('faculty_secretary') && !index.final_exam_invitation_sent?
-      if mail =='mail'
-        link_to_remote(t(:confirm_mail, :scope => [:txt, :helper, :final_exam_terms]),
-                       :complete => evaluate_remote_response,
-                       :url => {:action => 'send_invitation', :id => index, :mail => true})
-      else
-        link_to_remote(t(:confirm_no_mail, :scope => [:txt, :helper, :final_exam_terms]),
-                       :complete => evaluate_remote_response,
-                       :url => {:action => 'send_invitation', :id => index, :mail => false})
+  def send_invitation_link(index, mail)
+    if mail =='mail'
+      link_to(t(:confirm_mail, :scope => [:txt, :helper, :final_exam_terms]),
+                     :action => 'send_invitation', :id => index, :mail => true)
+    else
+      link_to(t(:confirm_no_mail, :scope => [:txt, :helper, :final_exam_terms]),
+                     :action => 'send_invitation', :id => index, :mail => false)
 
-      end
     end
   end
 
@@ -24,4 +20,11 @@ module FinalExamTermsHelper
     link_to t(:message_17, :scope => [:txt, :helper, :terms]), :action => :protocol, :id => term
   end
 
+  def status(term)
+    if term.index.final_exam_invitation_sent?
+      t(:confirmed, :scope => [:txt, :helper, :final_exam_terms])
+    else
+      t(:created, :scope => [:txt, :helper, :final_exam_terms])
+    end
+  end
 end

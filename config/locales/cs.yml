@@ -265,8 +265,6 @@ cs:
         message_0: ukončit k
 
     helper:
-
-
       interrupts: {}
 
       plans:
@@ -361,8 +359,6 @@ cs:
         message_5: změnit formu
         message_48: 3. ročník
         message_37: ukončeno
-        message_26: obhájil DP
-        message_15: složil SDZ
         message_6: přerušit
         message_49: x
         message_38: přerušeno
@@ -397,6 +393,9 @@ cs:
         interrupt: přerušeno
         annual_report: výroční atestace
         choose_theme: "--- vyberte rámcové téma ---"
+        passed_defense: obhájil DP
+        passed_final_exam_term: složil SDZ
+        passed_defense: obhájil DP
         message_74: Katedra
         message_73: Obor
         message_72: Opravdu chcete schválit?
@@ -508,6 +507,9 @@ cs:
         message_2: potvrdit bez odeslání mailu
         message_3: protokol
         message_4: oznámení
+        confirmed: potvrzený
+        created: vytvořený
+
       admitances: {}
 
       controller: {}
@@ -601,6 +603,12 @@ cs:
       themes: {}
 
       actualities: {}
+
+      final_exam_terms:
+        confirm_mail: potvrdit a odeslat mail
+        confirm_no_mail: potvrdit bez odeslání mailu
+        confirmed: potvrzený
+        created: vytvořený
 
     view:
       examinators:
@@ -1729,7 +1737,6 @@ cs:
             message_16: Konto
             message_17: Osobní údaje
             semester: Semestr
-
         _final_exam:
           rhtml:
             message_0: semestr
@@ -1740,10 +1747,13 @@ cs:
             message_5: Tento student požádal o vykonání státní doktorské zkoušky.
             message_6: oblast předmětů
             message_7: oblast předmětů
+
       final_exam_terms:
-        _edit:
+        new:
           rhtml:
-            message_0: Uložit
+            creating_term: Vytváření termínu SDZ
+            create_term: Vytvořit
+            term: Termín SDZ
         prepare_print:
           rhtml:
             message_0: Česká zemědělská univerzita v Praze
@@ -1806,14 +1816,25 @@ cs:
             message_7: člen komise
         _show:
           rhtml: {}
-
         _term_line:
           rhtml:
-            message_0: v místnosti
+            room: v místnosti
+            show: zobrazit
         send_invitation:
           rjs:
             message_0: email odeslán
             message_1: potvrzeno
+        pass:
+          rhtml:
+            passing_date: Datum splnění
+            questions: Otázky
+            discussion: Diskuze
+            passed: Složena SDZ
+            passing: Složení SDZ
+        show:
+          rhtml:
+            back_to_list: zpět na seznam
+
       scholarships:
         sum:
           rhtml:
@@ -2054,12 +2075,33 @@ cs:
           rhtml: {}
 
       defenses:
+        show:
+          rhtml:
+            back_to_list: zpět na seznam
+            term: Termín obhajoby DP
+        send_invitation:
+          rjs:
+            email_sent: email odeslán
+            defense_confirmed: obhajoba potvrzena
+        new:
+          rhtml:
+            creating_term: Vytváření termínu obhajoby
+        _term_line:
+          rhtml:
+            room: v místnosti
+            show: zobrazit
+        pass:
+          rhtml:
+            passing: Záznam o obhajobě DP
+            passing_date: Datum obhajoby
+            signed_protocol: Podepsaný protokol
+            review: Posudky DP
+            passed: Obhájil
         _edit:
           rhtml:
             message_0: Uložit
         list:
           rhtml: {}
-
         protocol:
           rhtml:
             message_18: Záporných
@@ -2114,13 +2156,6 @@ cs:
             message_5: člen komise
             message_6: člen komise
             message_7: člen komise
-        _show:
-          rhtml: {}
-        send_invitation:
-          rjs:
-            email_sent: email odeslán
-            defense_confirmed: obhajoba potvrzena
-
         announcement:
           rhtml:
             message_8: Místnost
@@ -2139,9 +2174,7 @@ cs:
             message_5: Konzultant
             message_6: Začátek
             message_7: Datum a čas
-        _term_line:
-          rhtml:
-            message_0: v místnosti
+
       tutors:
         _edit:
           rhtml: {}
@@ -2381,9 +2414,11 @@ cs:
             message_2: Smazat
             message_3: Opravdu vymazat?
 
+
     controller:
       interrupts:
         message_0: schváleno referentkou vědy a výzkumu
+
       plans:
         message_8: jazyky musí být rozdílné
         message_9: předměty musí být rozdílné
@@ -2396,12 +2431,15 @@ cs:
         message_6: některý externí předmět není správný
         message_7: předměty musí být rozdílné
         message_10: Nepodařilo se kontaktovat službu OIKT
+
       exams:
         message_0: Vytváření protokolu o zkoušce
         message_1: Zkouška byla úspěšně vytvořena
         message_2: Zkoušky
+
       addresses:
         message_0: Kontakty
+
       parameters: {}
 
       students:
@@ -2412,6 +2450,7 @@ cs:
         message_4: všichni studující
         message_5: moji studenti
         message_6: moji studující
+
       documents: {}
 
       specializations: {}
@@ -2420,6 +2459,7 @@ cs:
         edoctorand_system: Systém e-doktorand
         message_0: Přihlášení do systému
         message_1: Přihlášení se nepodařilo
+
       application: {}
 
       form:
@@ -2440,10 +2480,12 @@ cs:
         message_7: Prohlédněte si pozorně Vámi zadané informace. Poté postupujte podle návodu ve spodní části stránky.
         message_15: Špatné Id nebo heslo
         message_16: Oprava neregistrované přihlášky
+
       supplements: {}
 
       scholarships:
         message_0: Stipendia
+
       defenses:
         message_0: Přihláška k obhajobě
         message_1: Musíte přidat autoreferát
@@ -2451,6 +2493,8 @@ cs:
         message_3: Termíny obhajoby
         message_4: Oznámení obhajoby disertační práce
         message_5: Protokol obhajoby disertační práce
+        passing: Záznam o obhajobě DP
+
       tutors: {}
 
       terms:
@@ -2478,9 +2522,15 @@ cs:
         message_7: Uchazeči o studium
         message_10: cizí plátce
         message_11: Smazáno %i uchazečů
+
       themes:
         message_0: nahrání metodiky
         message_1: nahrání metodiky
         message_2: Soubor s metodikou musí být vybrán
+
       actualities: {}
+
+      final_exam_terms:
+        term: Termín SDZ
+        passing: Záznam o SDZ
 

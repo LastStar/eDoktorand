@@ -7,7 +7,7 @@
   <%= flash[:error] %>
 </div>
 <% end %>
-<% form_tag({:action => 'save_pass'}, {:multipart => true}) do -%>
+<% form_tag({:action => 'save_pass'}) do -%>
   <%= hidden_field_tag :id, @final_exam_term.id %>
   <fieldset>
     <label><%= t(:passing_date, :scope => [:txt, :view, :final_exam_terms, :pass, :rhtml]) %></label>

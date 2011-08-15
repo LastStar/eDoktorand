@@ -1,9 +1,14 @@
 <tr id='term_<%= term_line.id %>'>
   <th class="no-rounded"><%= term_line.index.student.display_name %></th>
-  <td><%= "%s %s %s" % [term_line.date_time, t(:message_0, :scope => [:txt, :view, :defenses, :_term_line, :rhtml]), term_line.room] %></td>
+  <td><%= "%s %s %s" % [term_line.date_time, t(:room, :scope => [:txt, :view, :defenses, :_term_line, :rhtml]), term_line.room] %></td>
   <td>
+    <%= status(term_line) %>
+  </td>
+  <td>
+    <%= link_to t(:show, :scope => [:txt, :view, :defenses, :_term_line, :rhtml]), :action => :show, :id => term_line %>
     <%= protocol_link term_line %>
     <%= announcement_link term_line %>
+    <%= pass_link 'defense', term_line.index %>
   </td>
 </tr>
 

@@ -3,9 +3,8 @@ class FinalExamTermsController < ApplicationController
   include LoginSystem
   helper :exam_terms, :students
 
-  before_filter :login_required, :prepare_user
+  before_filter :login_required, :prepare_user, :prepare_student
 
-  # shows list of all defenses in system for user
   def list
     @title = t(:message_0, :scope => [:txt, :controller, :terms])
     @final_exam_terms = FinalExamTerm.find_for(@user,
@@ -73,7 +72,8 @@ class FinalExamTermsController < ApplicationController
   end
 
   def show
-    @exam_term = FinalExamTerm.find(params[:id])
+    @title = t(:term, :scope => [:txt, :controller, :final_exam_terms])
+    @final_exam_term = FinalExamTerm.find(params[:id])
   end
 
   def edit
@@ -94,6 +94,7 @@ class FinalExamTermsController < ApplicationController
     if params[:mail]
       Notifications::deliver_invite_to_final_exam(@index)
     end
+    redirect_to :action => :list
   end
 
   # prints protocol for final exam term
@@ -102,6 +103,7 @@ class FinalExamTermsController < ApplicationController
   end
 
   def pass
+    @title = t(:passing, :scope => [:txt, :controller, :final_exam_terms])
     @date = Date.today
     @final_exam_term = Index.find(params[:id]).final_exam_term
   end

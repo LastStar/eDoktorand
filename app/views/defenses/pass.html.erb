@@ -1,0 +1,28 @@
+<h3>
+<%= t(:passing, :scope => [:txt, :view, :defenses, :pass, :rhtml]) %> -
+<%= @defense.index.student.display_name %>
+</h3>
+<% if flash[:error] %>
+<div id='error' class='error'>
+  <%= flash[:error] %>
+</div>
+<% end %>
+<% form_tag({:action => 'save_pass'}, {:multipart => true}) do -%>
+  <%= hidden_field_tag :id, @defense.id %>
+  <fieldset>
+    <label><%= t(:passing_date, :scope => [:txt, :view, :defenses, :pass, :rhtml]) %></label>
+    <%= select_date(@date) %>
+    <br/>
+    <br/>
+    <label><%= t(:signed_protocol, :scope => [:txt, :view, :defenses, :pass, :rhtml]) %></label>
+    <%= file_field_tag(:signed_protocol) %>
+    <br/>
+    <br/>
+    <label><%= t(:review, :scope => [:txt, :view, :defenses, :pass, :rhtml]) %></label>
+    <%= file_field_tag(:review) %>
+    <br/>
+    <br/>
+    <%= submit_tag t(:passed, :scope => [:txt, :view, :defenses, :pass, :rhtml]) %>
+  </fieldset>
+<% end %>
+

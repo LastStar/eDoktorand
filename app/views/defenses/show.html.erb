@@ -1,0 +1,21 @@
+<h3>
+  <%= t(:term, :scope => [:txt, :view, :defenses, :show, :rhtml]) %> -
+  <%= @defense.index.student.display_name %>
+</h3>
+<% if @user.has_role?('faculty_secretary') %>
+<div class='links'>
+  <span id='list_link'>
+    <%= link_to t(:back_to_list, :scope => [:txt, :view, :defenses, :show, :rhtml]), :action => :list %>
+  </span>
+  <% if !@defense.index.defense_invitation_sent? %>
+  <span id='invitation_link'>
+    <%= send_invitation_link(@user, @defense.index, 'mail') %>
+  </span>
+  <span id='invitation_link_no_mail'>
+    <%= send_invitation_link(@user, @defense.index, 'no mail') %>
+  </span>
+  <% end %>
+</div>
+<% end %>
+<%= render(:partial => 'detail') %>
+

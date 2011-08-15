@@ -602,7 +602,7 @@ class Index < ActiveRecord::Base
     admited_interrupt? && interrupt.approved? && !interrupt.finished? &&
       !interrupted_on
   end
-  
+
   def interrupt_ended?
     interrupt && !interrupt.finished? && Time.now > interrupt.end_on
   end
@@ -711,6 +711,8 @@ class Index < ActiveRecord::Base
     self
   end
 
+  #TODO should be in coresponding models
+  #vvvvv
   def send_final_exam_invitation!
     update_attribute(:final_exam_invitation_sent_at, Time.now)
   end
@@ -726,6 +728,7 @@ class Index < ActiveRecord::Base
   def defense_invitation_sent?
     !defense_invitation_sent_at.nil?
   end
+  #^^^^^
 
   def study_name
     study.name

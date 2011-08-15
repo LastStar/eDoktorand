@@ -22,16 +22,7 @@ module StudentsHelper
             links << cancel_scholarship_link(index)
           end
           if study_plan
-            if study_plan.all_subjects_finished?
-              if index.final_exam_passed?
-                links << pass_link(:defense, index)
-              else
-                links << change_link(index.student)
-                links << pass_link(:final_exam, index)
-              end
-            else
               links << change_link(index.student)
-            end
           else
             links << create_link(index)
           end
@@ -236,23 +227,6 @@ module StudentsHelper
                             :controller => 'students',
                             :id => index},
                     :loading => visual_effect(:pulsate, "index_line_#{index.id}"))
-  end
-
-  def pass_link(what, index)
-    action = 'pass_' + what.to_s
-    url = {:action => 'time_form', :controller => 'students',
-           :form_action => action, :id => index, :day => true}
-    sentence = ""
-    if what.to_s == "final_exam"
-      sentence = t(:message_15, :scope => [:txt, :helper, :students])
-    elsif what.to_s == "defense"
-      sentence = t(:message_26, :scope => [:txt, :helper, :students])
-    else
-      sentence = what.to_s
-    end
-    link_to_remote(sentence,
-                   :update => "index_form_#{index.id}",
-                   :url => url)
   end
 
   # prints select for departments

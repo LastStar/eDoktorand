@@ -1,5 +1,20 @@
+<h3>
+  <%= t(:term, :scope => [:txt, :view, :final_exam_terms, :new, :rhtml]) %> -
+  <%= @final_exam_term.index.student.display_name %>
+</h3>
+<% if @user.has_role?('faculty_secretary') %>
 <div class='links'>
-    <%= send_invitation_link(@user, @exam_term.index, 'mail') %>
-    <%= send_invitation_link(@user, @exam_term.index, 'no mail') %>
+  <span id='list_link'>
+    <%= link_to t(:back_to_list, :scope => [:txt, :view, :final_exam_terms, :show, :rhtml]), :action => :list %>
+  </span>
+  <% if !@final_exam_term.index.defense_invitation_sent? %>
+  <span id='invitation_link'>
+    <%= send_invitation_link(@user, @final_exam_term.index, 'mail') %>
+  </span>
+  <span id='invitation_link_no_mail'>
+    <%= send_invitation_link(@user, @final_exam_term.index, 'no mail') %>
+  </span>
+  <% end %>
 </div>
-<%= render(:partial => 'detail', :locals => {:exam_term => @exam_term, :many => false}) %>
+<% end %>
+<%= render(:partial => 'detail', :locals => {:exam_term => @final_exam_term, :many => false}) %>

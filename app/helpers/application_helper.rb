@@ -478,15 +478,11 @@ module ApplicationHelper
 
   def defense_term_link(user, index)
     if user.has_role?('faculty_secretary') && !index.defense_invitation_sent?
-      opts = {:url => {:controller => 'defenses', :action => 'new',
-                      :id => index},
-              :complete => evaluate_remote_response}
+      url = {:controller => 'defenses', :action => 'new', :id => index}
     elsif index.defense
-      opts = {:url => {:controller => 'defenses', :action => 'show',
-                       :id => index.defense.id},
-              :complete => evaluate_remote_response}
+      url = {:controller => 'defenses', :action => 'show', :id => index.defense.id}
     end
-    link_to_remote(t(:message_54, :scope => [:txt, :helper, :application]), opts, :id => 'defense_link') if opts
+    link_to(t(:message_54, :scope => [:txt, :helper, :application]), url, :id => 'defense_link') if url
   end
 
   def hide_link(element, text = t(:message_55, :scope => [:txt, :helper, :application]))
