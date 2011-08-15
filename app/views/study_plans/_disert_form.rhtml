@@ -5,15 +5,15 @@
 <% end %>
 </ul>
 </div>
-<% form_remote_tag(:url => {:action => 'save_disert'}) do -%>	
+<% form_remote_tag(:url => {:action => 'save_disert'}) do -%>
 <% @study_plan ||= session[:study_plan] %>
 <% @disert_theme ||= session[:disert_theme]%>
 <fieldset>
 <ul class='nodecor'>
 <li>
-  <label for="study_plan_finishing_to"><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %>:</label>
+  <label for="study_plan_finishing_to"><%= t(:message_0, :scope => [:view, :study_plans, :_disert_form]) %>:</label>
   <%= select 'study_plan', 'finishing_to', session[:last_semester]..(@student.specialization.last_possible_defense_semester) %>
-  <%= "." + t(:message_1, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %> 
+  <%= "." + t(:message_1, :scope => [:view, :study_plans, :_disert_form]) %>
 </li>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
 <%= render(:partial => 'final_exam_areas', :locals => {:areas => @study_plan.final_areas}) %>
@@ -24,15 +24,15 @@
 <%= hidden_field 'disert_theme', 'index_id' %>
 <ul class='nodecor'>
 <li>
-  <label for="disert_theme_title"><%= t(:message_2, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %>:</label>
+  <label for="disert_theme_title"><%= t(:message_2, :scope => [:view, :study_plans, :_disert_form]) %>:</label>
   <%= text_field 'disert_theme', 'title', 'size' => 65 %>
 </li>
 <li>
-  <label for="disert_theme_finishing_to"><%= t(:message_4, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %></label>
+  <label for="disert_theme_finishing_to"><%= t(:message_4, :scope => [:view, :study_plans, :_disert_form]) %></label>
   <%= select 'disert_theme', 'finishing_to', session[:last_semester]..(@student.specialization.last_possible_defense_semester) %><br/>
 </li>
 <li>
-  <label for="disert_theme_methodology_summary"><%= t(:message_5, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) %>:</label>
+  <label for="disert_theme_methodology_summary"><%= t(:message_5, :scope => [:view, :study_plans, :_disert_form]) %>:</label>
   <textarea name='disert_theme[methodology_summary]'
     id='disert_theme_methodology_summary' cols='60' rows='35'>
   <%= @disert_theme.methodology_summary %></textarea>
@@ -40,8 +40,8 @@
 </li>
 </fieldset>
 <br/>
-<%= submit_tag("<<< " + t(:message_6, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]), :id => 'return_button',:class => 'button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + t(:message_7, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + "'") %>
-<%= submit_tag(t(:message_8, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml]) + " >>>", :id => 'submit_button',:class => 'button', :onclick =>"$('submit_button').value = '%s'" % t(:message_9, :scope => [:txt, :view, :study_plans, :_disert_form, :rhtml])) %>
+<%= submit_tag("<<< " + t(:message_6, :scope => [:view, :study_plans, :_disert_form]), :id => 'return_button',:class => 'button', :onclick => "$('return-value').value = 1;$('return_button').value = '" + t(:message_7, :scope => [:view, :study_plans, :_disert_form]) + "'") %>
+<%= submit_tag(t(:message_8, :scope => [:view, :study_plans, :_disert_form]) + " >>>", :id => 'submit_button',:class => 'button', :onclick =>"$('submit_button').value = '%s'" % t(:message_9, :scope => [:view, :study_plans, :_disert_form])) %>
 
 <% end %>
 

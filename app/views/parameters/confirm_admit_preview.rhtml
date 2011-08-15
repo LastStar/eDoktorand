@@ -1,4 +1,4 @@
-<h5><%= t(:message_3, :scope => [:txt, :view, :parameters, :list, :rhtml]) %></h5>
+<h5><%= t(:message_3, :scope => [:view, :parameters, :list]) %></h5>
 <br />
 <p><h3>Náhled umístění parametru</h3></p>
 <p><small>parametr je <span class="yellow">zvýrazněn žlutě</span>, ostatní údaje jsou fiktivní</small></p>
@@ -7,16 +7,16 @@
 Novak Jan<br/>
 Zahradni 5<br/>
 140 00  Praha 4</p>
-<br/> 
+<br/>
 <br/>
 
 
 <p>Vážený pane/paní,</p>
 
 <p>na základě úspěšně vykonané přijímací zkoušky, jste byl/a
-<% unless @conditional %><strong> s účinností od 
+<% unless @conditional %><strong> s účinností od
 1. října <%=Time.now.strftime("%Y")%> přijat/a</strong><% end %> ve&nbsp;smyslu § 47, zákona č. 111/98 Sb. o vysokých školách,
-<% if @conditional %><b>podmínečně přijat/a</b><% end %> 
+<% if @conditional %><b>podmínečně přijat/a</b><% end %>
 do prezenční formy doktorského studia na ČZU v Praze</p>
 
 <h3 class='centerAlign'>studijní obor: <%= Specialization.find_by_faculty_id(@faculty.id).name %></h3>
@@ -28,13 +28,13 @@ do prezenční formy doktorského studia na ČZU v Praze</p>
 <p>Do studia budete zapsán po předložení dokladů o ukončení magisterského stupně vzdělání.</p>
 
 
-<p>Zároveň Vám přiznávám stipendium ve výši <% if @parameter.value == Parameter.get('start_stipendia', @faculty) %><span class="yellow"><%= Parameter.get('start_stipendia', @faculty) %></span><% else %><%= Parameter.get('start_stipendia', @faculty) %><% end %>,- Kč měsíčně, které Vám bude 
+<p>Zároveň Vám přiznávám stipendium ve výši <% if @parameter.value == Parameter.get('start_stipendia', @faculty) %><span class="yellow"><%= Parameter.get('start_stipendia', @faculty) %></span><% else %><%= Parameter.get('start_stipendia', @faculty) %><% end %>,- Kč měsíčně, které Vám bude
 vypláceno ode dne nástupu do studia,
 vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 
 <p>Upozorňuji Vás, že je Vaší povinností do <% if @parameter.value == Parameter.get('methodics_term', @faculty) %><span class="yellow"><%= Parameter.get('methodics_term', @faculty) %></span><% else %><%= Parameter.get('methodics_term', @faculty) %><% end %>  vypracovat a předložit studijní plán a do 3 měsíců od nástupu metodiku disertační práce.</p>
 
-<p>Proti tomuto rozhodnutí je možno podat odvolání k rukám 
+<p>Proti tomuto rozhodnutí je možno podat odvolání k rukám
 ČZU v Praze do 30&nbsp;dnů ode dne doručení.</p>
 </p>
 <br/>
@@ -43,7 +43,7 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
 <p class='rightAlignLefter'><%= Faculty.find(@faculty.id).dean.display_name %><br/>děkan <%=  Faculty.find(@faculty.id).short_name %> ČZU</p>
 <div class="links">
-  <%= link_to t(:message_1, :scope => [:txt, :view, :parameters, :edit, :rhtml]), :action => 'list' %>
+  <%= link_to t(:message_1, :scope => [:view, :parameters, :edit]), :action => 'list' %>
 </div>
 
 

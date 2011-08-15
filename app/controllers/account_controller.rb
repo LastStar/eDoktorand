@@ -6,23 +6,23 @@ class AccountController < ApplicationController
   before_filter :prepare_user, :only => :welcome
 
   def login
-    @title = t(:message_0, :scope => [:txt, :controller, :account])
+    @title = t(:message_0, :scope => [:controller, :account])
     if request.method == :post
       if session[:user] = User.authenticate(params[:user_login], params[:user_password])
         redirect_back_or_default welcome_url
       else
         @login    = params[:user_login]
-        @message  = t(:message_1, :scope => [:txt, :controller, :account])
+        @message  = t(:message_1, :scope => [:controller, :account])
       end
     end
     @actualities = Actuality.find(:all, :order => 'id desc')
   end
-  
+
   def logout
     reset_session
     redirect_to login_url
   end
-    
+
   def welcome
     if @user.has_role?('student')
       redirect_to :controller => 'study_plans'
@@ -37,7 +37,7 @@ class AccountController < ApplicationController
   end
 
   # error page for system
-  def error 
+  def error
     if !(flash && flash[:error]) && @exception
       flash[:error] = @exception.message
     end
@@ -51,6 +51,6 @@ class AccountController < ApplicationController
   private
   # sets title of the controller
   def set_title
-    @title = t(:edoctorand_system, :scope => [:txt, :controller, :account])
+    @title = t(:edoctorand_system, :scope => [:controller, :account])
   end
 end

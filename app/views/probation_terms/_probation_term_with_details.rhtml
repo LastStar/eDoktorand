@@ -1,21 +1,21 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :probation_terms, :_probation_term_with_details, :rhtml]) %></h5>
+<h5><%= t(:message_0, :scope => [:view, :probation_terms, :_probation_term_with_details]) %></h5>
   <% if !probation_term.subject.nil? %>
     <li>
-      <%= "#{t(:message_1, :scope => [:txt, :view, :probation_terms, :_probation_term_with_details, :rhtml])}: #{probation_term.subject.label}" %>
+      <%= "#{t(:message_1, :scope => [:view, :probation_terms, :_probation_term_with_details])}: #{probation_term.subject.label}" %>
     </li>
     <li>
-      <%= "#{t(:message_2, :scope => [:txt, :view, :probation_terms, :_probation_term_with_details, :rhtml])}: #{probation_term.date.strftime("%d. %m. %Y")}" %> 
+      <%= "#{t(:message_2, :scope => [:view, :probation_terms, :_probation_term_with_details])}: #{probation_term.date.strftime("%d. %m. %Y")}" %>
     </li>
     <li>
-      <%= "#{t(:message_3, :scope => [:txt, :view, :probation_terms, :_probation_term_with_details, :rhtml])}: #{probation_term.room}" %> 
+      <%= "#{t(:message_3, :scope => [:view, :probation_terms, :_probation_term_with_details])}: #{probation_term.room}" %>
     </li>
     <li>
-      <%= "#{t(:message_4, :scope => [:txt, :view, :probation_terms, :_probation_term_with_details, :rhtml])}: #{probation_term.start_time}" %> 
+      <%= "#{t(:message_4, :scope => [:view, :probation_terms, :_probation_term_with_details])}: #{probation_term.start_time}" %>
     </li>
     <li>
-      <%= "#{t(:message_5, :scope => [:txt, :view, :probation_terms, :_probation_term_with_details, :rhtml])}: #{probation_term.max_students}" %> 
+      <%= "#{t(:message_5, :scope => [:view, :probation_terms, :_probation_term_with_details])}: #{probation_term.max_students}" %>
     </li>
     <li>
-      <%= "#{t(:message_6, :scope => [:txt, :view, :probation_terms, :_probation_term_with_details, :rhtml])}: #{probation_term.note}" %> 
+      <%= "#{t(:message_6, :scope => [:view, :probation_terms, :_probation_term_with_details])}: #{probation_term.note}" %>
     </li>
   <% end %>

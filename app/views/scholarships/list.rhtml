@@ -4,13 +4,13 @@
     <td><%= approval.faculty.name %></td>
     <td><%= approval.created_on.strftime("%d. %m. %Y") %></td>
     <td><%= approval.dean_statement.person.display_name %></td>
-    <td><%= link_to(t(:message_19, :scope =>[:txt, :view, :scholarships, :list, :rhtml]), {:action => 'unapprove', :id => approval.id}, :confirm => t(:message_20, :scope =>[:txt, :view, :scholarships, :list, :rhtml])) %></td>
+    <td><%= link_to(t(:message_19, :scope =>[:view, :scholarships, :list]), {:action => 'unapprove', :id => approval.id}, :confirm => t(:message_20, :scope =>[:view, :scholarships, :list])) %></td>
     <% end %>
   </tr>
   <% end %>
 
 <div id='students_list'>
-<h1><%= t(:message_0, :scope => [:txt, :view, :scholarships, :list, :rhtml]) %> <%= (Time.now - 3.weeks).strftime('%m/%Y') %></h1>
+<h1><%= t(:message_0, :scope => [:view, :scholarships, :list]) %> <%= (Time.now - 3.weeks).strftime('%m/%Y') %></h1>
 <div class='links'>
 <%= pay_link %>
 </div>
@@ -21,14 +21,14 @@
 <% codes.default = 0%>
 <% if @show_table_message == 1%>
   <br>
-  <div class='t1'> <%=t(:message_16, :scope => [:txt, :view, :scholarships, :list, :rhtml])%>:</div>
+  <div class='t1'> <%=t(:message_16, :scope => [:view, :scholarships, :list])%>:</div>
   <br>
   <table class="scholarship embossed" align = "center">
   <tr>
     <th>ID</th>
     <th>SIDENT</th>
-    <th><%=t(:message_17, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th>
-    <th><%=t(:message_18, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th>
+    <th><%=t(:message_17, :scope => [:view, :scholarships, :list])%></th>
+    <th><%=t(:message_18, :scope => [:view, :scholarships, :list])%></th>
   </tr>
   <%for bad_index in @bad_indices %>
     <tr>
@@ -42,15 +42,15 @@
 <% end %>
 <br>
 <% if @show_table_message == 1 %>
-  <div class='t1'><%= t(:message_1, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></div>
+  <div class='t1'><%= t(:message_1, :scope => [:view, :scholarships, :list])%></div>
   <br>
-  <% end %>  
-  
+  <% end %>
+
 <table class = "scholarship embossed" cellspacing = "0" cellpading = "0" align = "center">
 <tr>
-  <th><%= t(:message_2, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th>
-  <th><%= t(:message_3, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th><th><%= t(:message_4, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th><th><%= t(:message_5, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th><th><%= t(:message_6, :scope => [:txt, :view, :scholarships, :list, :rhtml]) %></th>
-<th><%= t(:message_7, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th><th><%= t(:message_8, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th><th><%= t(:message_9, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th></tr>
+  <th><%= t(:message_2, :scope => [:view, :scholarships, :list])%></th>
+  <th><%= t(:message_3, :scope => [:view, :scholarships, :list])%></th><th><%= t(:message_4, :scope => [:view, :scholarships, :list])%></th><th><%= t(:message_5, :scope => [:view, :scholarships, :list])%></th><th><%= t(:message_6, :scope => [:view, :scholarships, :list]) %></th>
+<th><%= t(:message_7, :scope => [:view, :scholarships, :list])%></th><th><%= t(:message_8, :scope => [:view, :scholarships, :list])%></th><th><%= t(:message_9, :scope => [:view, :scholarships, :list])%></th></tr>
 <% for index in @indices %>
   <% if index.has_any_scholarship? %>
     <%= render(:partial => 'approved_line', :locals => {:index => index, :disponents => disponents, :codes => codes}) %>
@@ -59,22 +59,22 @@
 </table>
 <br><br>
 <table class = "scholarship" cellspacing = "0" cellpading = "0" style ="float :right" >
-<tr><th><%= t(:message_10, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th><th><%= t(:message_11, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th></tr>
+<tr><th><%= t(:message_10, :scope => [:view, :scholarships, :list])%></th><th><%= t(:message_11, :scope => [:view, :scholarships, :list])%></th></tr>
 <% codes.each_pair do |code,sum| %>
  <tr><td><%= code %></td><td class="number"><%= sum %></td></tr>
  <% final_sum = final_sum + sum %>
 <% end %>
-<tr><td><%= t(:message_12, :scope => [:txt, :view, :scholarships, :list, :rhtml]) %></th><td class ="number"><%= final_sum %></td></tr>
+<tr><td><%= t(:message_12, :scope => [:view, :scholarships, :list]) %></th><td class ="number"><%= final_sum %></td></tr>
 </table>
 <table class = "scholarship" cellspacing = "0" cellpading = "0" >
-<tr><th><%= t(:message_13, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th><th><%= t(:message_14, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></th></tr>
+<tr><th><%= t(:message_13, :scope => [:view, :scholarships, :list])%></th><th><%= t(:message_14, :scope => [:view, :scholarships, :list])%></th></tr>
 <% disponents.each_pair do |disponent,sum| %>
   <tr><td><%= disponent %></td><td class ="number"><%= sum %></td></tr>
 <% end %>
 </table>
 <br>
 <% if @show_table_message == 1%>
-  <div class='t1'><%= t(:message_15, :scope => [:txt, :view, :scholarships, :list, :rhtml])%></div>
+  <div class='t1'><%= t(:message_15, :scope => [:view, :scholarships, :list])%></div>
 <% end %>
 <br>
 </div>

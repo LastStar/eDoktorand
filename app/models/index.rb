@@ -94,19 +94,19 @@ class Index < ActiveRecord::Base
   def describe_error
      message = ""
     if self.account_number == nil
-              message = message + I18n.t(:wrong_or_missing_account_number, :scope => [:txt, :model, :index]) + " "
+              message = message + I18n.t(:wrong_or_missing_account_number, :scope => [:model, :index]) + " "
     end
     if self.account_bank_number == nil
-              message = message + I18n.t(:wrong_or_missing_account_bank_number, :scope => [:txt, :model, :index]) + " "
+              message = message + I18n.t(:wrong_or_missing_account_bank_number, :scope => [:model, :index]) + " "
     end
     if self.student.uic == nil
-          message = message + I18n.t(:missing_uic, :scope => [:txt, :model, :index]) + " "
+          message = message + I18n.t(:missing_uic, :scope => [:model, :index]) + " "
     end
     if self.student.sident == -666
-          message = message + I18n.t(:missing_sident_666, :scope => [:txt, :model, :index]) + " "
+          message = message + I18n.t(:missing_sident_666, :scope => [:model, :index]) + " "
     end
     if self.student.sident == nil
-          message = message + I18n.t(:missing_sident, :scope => [:txt, :model, :index]) + " "
+          message = message + I18n.t(:missing_sident, :scope => [:model, :index]) + " "
     end
     return message
 
@@ -131,23 +131,23 @@ class Index < ActiveRecord::Base
           pre_sum += c.to_i * PREFIX_WEIGHTS[j]
         end
         if account_number_prefix !~ /^[0-9]*$/ || (pre_sum % 11) != 0
-          errors.add(:account_number_prefix, I18n::t(:wrong_account_number_prefix_format, :scope => [:txt, :model, :index]))
+          errors.add(:account_number_prefix, I18n::t(:wrong_account_number_prefix_format, :scope => [:model, :index]))
         end
       end
       if account_number.size > 10 && account_number =~ /[0-9]/
-        errors.add(:account_number, I18n.t(:wrong_account_number_format, :scope => [:txt, :model, :index]))
+        errors.add(:account_number, I18n.t(:wrong_account_number_format, :scope => [:model, :index]))
       else
         acc_sum = 0
         account_number.split('').reverse.each_with_index do |c, j|
           acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
         end
         unless (acc_sum % 11) == 0
-          errors.add(:account_number, I18n.t(:wrong_account_number_format, :scope => [:txt, :model, :index]))
+          errors.add(:account_number, I18n.t(:wrong_account_number_format, :scope => [:model, :index]))
         end
       end
     end
     if final_exam_passed_on && !study_plan.all_subjects_finished?
-      errors.add(:final_exam_passed_on, I18n.t(:all_subjects_are_not_finished, :scope => [:txt, :model, :index]))
+      errors.add(:final_exam_passed_on, I18n.t(:all_subjects_are_not_finished, :scope => [:model, :index]))
     end
   end
 
@@ -465,17 +465,17 @@ class Index < ActiveRecord::Base
   # returns status of index
   def status
     @status ||= if disert_theme && disert_theme.defense_passed?
-      I18n::t(:absolved, :scope => [:txt, :model, :index])
+      I18n::t(:absolved, :scope => [:model, :index])
     elsif finished?
-      I18n::t(:finished, :scope => [:txt, :model, :index])
+      I18n::t(:finished, :scope => [:model, :index])
     elsif final_exam_passed?
-      I18n::t(:passed_sdz, :scope => [:txt, :model, :index])
+      I18n::t(:passed_sdz, :scope => [:model, :index])
     elsif interrupted?
-      I18n::t(:interrupted, :scope => [:txt, :model, :index])
+      I18n::t(:interrupted, :scope => [:model, :index])
     elsif continues?
-      I18n::t(:closed, :scope => [:txt, :model, :index])
+      I18n::t(:closed, :scope => [:model, :index])
     else
-      I18n::t(:studies, :scope => [:txt, :model, :index])
+      I18n::t(:studies, :scope => [:model, :index])
     end
     return @status
   end
@@ -514,7 +514,7 @@ class Index < ActiveRecord::Base
   end
 
   def payment_type
-    payment_id == 1 ? I18n.t(:study_in_standart_time, :scope => [:txt, :model, :index]) : I18n.t(:foreigner_pay_throught_dotation, :scope => [:txt, :model, :index])
+    payment_id == 1 ? I18n.t(:study_in_standart_time, :scope => [:model, :index]) : I18n.t(:foreigner_pay_throught_dotation, :scope => [:model, :index])
   end
 
   # returns true if index have year more than 3

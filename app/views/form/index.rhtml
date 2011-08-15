@@ -1,15 +1,15 @@
 ﻿<div style='clear: both'>
   <div class='notice'>
-    <%= t(:message_0, :scope => [:txt, :view, :form, :index, :rhtml]) %>
+    <%= t(:message_0, :scope => [:view, :form, :index]) %>
     <%= print_notice %>
   </div>
 <ul>
   <% for f in @faculties do %>
   <% next if (specializations = f.accredited_specializations).empty? %>
   <li>
-    <a href='#' onClick="Element.toggle($('<%= f.id %>'))"><%= f.name %></a><br /> 
+    <a href='#' onClick="Element.toggle($('<%= f.id %>'))"><%= f.name %></a><br />
     <% unless f.documents.empty? %>
-    <b><%= t(:message_1, :scope => [:txt, :view, :form, :index, :rhtml]) %>:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
+    <b><%= t(:message_1, :scope => [:view, :form, :index]) %>:&nbsp;</b><% for d in f.documents %><a href='<%= d.path %>'><%= d.name %></a>&nbsp;<% end %>
     <% end %>
     <ol style="display:none" id="<%= f.id %>">
     <% for c in specializations do %>
@@ -21,10 +21,10 @@
   </li>
   <% end %>
 </ul>
-<h5><%= t(:login_to_fix, :scope => [:txt, :view, :form, :index, :rhtml]) %></h5>
-<% form_tag(:action => "login") do %>          
+<h5><%= t(:login_to_fix, :scope => [:view, :form, :index]) %></h5>
+<% form_tag(:action => "login") do %>
 <div>
-  <label for="locale"><%= t(:language, :scope => [:txt, :view, :form, :index, :rhtml]) %></label>
+  <label for="locale"><%= t(:language, :scope => [:view, :form, :index]) %></label>
   <%= locale_link %>
 </div>
 <div>
@@ -32,11 +32,11 @@
   <input id="candidate_id" name="candidate[id]" size="30" type="text" />
 </div>
 <div>
-  <label for='candidate[hash]'><%= t(:password, :scope => [:txt, :view, :form, :index, :rhtml]) %>:</label>
+  <label for='candidate[hash]'><%= t(:password, :scope => [:view, :form, :index]) %>:</label>
   <input id="candidate_hash" name="candidate[hash]" size="30" type="text" />
 </div>
 <div>
   <label>&nbsp;</label>
-  <%= submit_tag(t(:login, :scope => [:txt, :view, :form, :index, :rhtml])) %></li>
+  <%= submit_tag(t(:login, :scope => [:view, :form, :index])) %></li>
 <% end %>
 

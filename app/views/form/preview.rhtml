@@ -1,35 +1,35 @@
 <%= render(:partial => 'preview_header') %>
 <div class="printHeader">
-  <h4><%= t(:message_0, :scope => [:txt, :view, :form, :preview, :rhtml]) %></h4>
+  <h4><%= t(:message_0, :scope => [:view, :form, :preview]) %></h4>
 </div>
   <%= render :partial=> 'shared/candidate_detail' %>
-  
+
   <% unless @candidate.finished? %>
   <div class="candidate_login">
-  <h5><%= t(:message_19, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</h5> 
+  <h5><%= t(:message_19, :scope => [:view, :form, :preview]) %>:</h5>
   <ul class='bordered'>
     <li><div class="right_info"><%= @candidate.id %></div>Id:</li>
-    <li><div class="right_info"><%= @candidate.hash %></div><%= t(:password, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</li>
-    <li><%= t(:later_fix, :scope => [:txt, :view, :form, :preview, :rhtml]) %></li>
+    <li><div class="right_info"><%= @candidate.hash %></div><%= t(:password, :scope => [:view, :form, :preview]) %>:</li>
+    <li><%= t(:later_fix, :scope => [:view, :form, :preview]) %></li>
   </ul>
   </div>
-  <h5><%= t(:message_1, :scope => [:txt, :view, :form, :preview, :rhtml]) %></h5> 
+  <h5><%= t(:message_1, :scope => [:view, :form, :preview]) %></h5>
   <br/>
   <ul>
-    <div class='signature'><%= t(:message_2, :scope => [:txt, :view, :form, :preview, :rhtml]) %>:</div>
+    <div class='signature'><%= t(:message_2, :scope => [:view, :form, :preview]) %>:</div>
   </ul>
 
   <p class='instruction'>
-  <o class='red'><b><%= t(:message_3, :scope => [:txt, :view, :form, :preview, :rhtml]) %> </b></o>
-  <%= t(:message_4, :scope => [:txt, :view, :form, :preview, :rhtml]) %> <o class='red'><%= t(:message_5, :scope => [:txt, :view, :form, :preview, :rhtml]) %> <%= t(:message_6, :scope => [:txt, :view, :form, :preview, :rhtml]) %> </o>
-  <%= t(:message_7, :scope => [:txt, :view, :form, :preview, :rhtml]) %> <o class='red'><%=t(:message_8, :scope => [:txt, :view, :form, :preview, :rhtml]) %> </o>
-  <%= t(:message_9, :scope => [:txt, :view, :form, :preview, :rhtml]) %><br /><br />
-  1. <b><%= t(:message_10, :scope => [:txt, :view, :form, :preview, :rhtml]) %></b> - <%= t(:message_11, :scope => [:txt, :view, :form, :preview, :rhtml]) %><br />
-  2. <b><%= link_to t(:message_12, :scope => [:txt, :view, :form, :preview, :rhtml]), :action => 'correct', :id => @candidate.id  %></b>
-  - <%= t(:message_13, :scope => [:txt, :view, :form, :preview, :rhtml]) %><br />
-  3. <b><%= t(:message_14, :scope => [:txt, :view, :form, :preview, :rhtml]) %></b>
-  - <%= t(:message_15, :scope => [:txt, :view, :form, :preview, :rhtml]) %><br />
-  4. <b><%= link_to t(:message_16, :scope => [:txt, :view, :form, :preview, :rhtml]), :action => 'finish', :id => @candidate.id   %>
-    <%= t(:message_17, :scope => [:txt, :view, :form, :preview, :rhtml]) %></b> - <%= t(:message_18, :scope => [:txt, :view, :form, :preview, :rhtml]) %>
+  <o class='red'><b><%= t(:message_3, :scope => [:view, :form, :preview]) %> </b></o>
+  <%= t(:message_4, :scope => [:view, :form, :preview]) %> <o class='red'><%= t(:message_5, :scope => [:view, :form, :preview]) %> <%= t(:message_6, :scope => [:view, :form, :preview]) %> </o>
+  <%= t(:message_7, :scope => [:view, :form, :preview]) %> <o class='red'><%=t(:message_8, :scope => [:view, :form, :preview]) %> </o>
+  <%= t(:message_9, :scope => [:view, :form, :preview]) %><br /><br />
+  1. <b><%= t(:message_10, :scope => [:view, :form, :preview]) %></b> - <%= t(:message_11, :scope => [:view, :form, :preview]) %><br />
+  2. <b><%= link_to t(:message_12, :scope => [:view, :form, :preview]), :action => 'correct', :id => @candidate.id  %></b>
+  - <%= t(:message_13, :scope => [:view, :form, :preview]) %><br />
+  3. <b><%= t(:message_14, :scope => [:view, :form, :preview]) %></b>
+  - <%= t(:message_15, :scope => [:view, :form, :preview]) %><br />
+  4. <b><%= link_to t(:message_16, :scope => [:view, :form, :preview]), :action => 'finish', :id => @candidate.id   %>
+    <%= t(:message_17, :scope => [:view, :form, :preview]) %></b> - <%= t(:message_18, :scope => [:view, :form, :preview]) %>
   </p>
   <% end %>

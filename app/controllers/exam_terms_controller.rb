@@ -10,7 +10,7 @@ class ExamTermsController < ApplicationController
   end
 
   def list
-    @title = t(:message_3, :scope => [:txt, :controller, :terms])
+    @title = t(:message_3, :scope => [:controller, :terms])
     @exam_terms = AdmissionTerm.find_for(@user)
   end
 
@@ -19,7 +19,7 @@ class ExamTermsController < ApplicationController
   end
 
   def new
-    @title = t(:creation_commission, :scope => [:txt, :controller, :terms])
+    @title = t(:creation_commission, :scope => [:controller, :terms])
     @tutors = Tutor.find_for(@user)
     @exam_term = AdmissionTerm.new
     @exam_term.specialization_id = params[:id] if params[:id]
@@ -27,9 +27,9 @@ class ExamTermsController < ApplicationController
 
    def create
       @exam_term = AdmissionTerm.new(params[:exam_term])
-      @exam_term.detect_external_chairman(params[:external_chairman])  
+      @exam_term.detect_external_chairman(params[:external_chairman])
     if @exam_term.save
-      flash['notice'] = t(:commision_was_created, :scope => [:txt, :controller, :terms])
+      flash['notice'] = t(:commision_was_created, :scope => [:controller, :terms])
       if params[:from] && params[:from] == 'candidate'
         if session[:back_page] == 'list'
           redirect_to :action => 'list', :page => session[:current_page_backward] , :controller => 'candidates'
@@ -53,11 +53,11 @@ class ExamTermsController < ApplicationController
 
   def update
     @exam_term = AdmissionTerm.find(params[:id])
-     
+
     if @exam_term.update_attributes(params[:exam_term])
       @exam_term.detect_external_chairman(params[:external_chairman])
       @exam_term.save
-      flash['notice'] = t(:commision_was_updated, :scope => [:txt, :controller, :terms])
+      flash['notice'] = t(:commision_was_updated, :scope => [:controller, :terms])
       redirect_to :action => 'list'
     else
       render(:action => :edit)

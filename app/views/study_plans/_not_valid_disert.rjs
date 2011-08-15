@@ -1,28 +1,28 @@
 page.replace_html "done", :partial => "create_head"
 if session[:seminar_subjects]
-  page.replace_html "studyPlan", :partial => 'shared/subjects', 
+  page.replace_html "studyPlan", :partial => 'shared/subjects',
                                        :locals => {:subjects =>
                                          session[:seminar_subjects],
-                                       :title => I18n::t(:message_3, :scope => [:txt, :view, :study_plans, :_not_valid_disert, :rhtml])}
+                                       :title => I18n::t(:message_3, :scope => [:view, :study_plans, :_not_valid_disert])}
 end
 if session[:obligate_subjects]
-  page.replace_html "studyPlan", :partial => 'shared/subjects', 
+  page.replace_html "studyPlan", :partial => 'shared/subjects',
                                        :locals => {:subjects =>
                                          session[:obligate_subjects],
-                                       :title => I18n::t(:message_0, :scope => [:txt, :view, :study_plans, :_not_valid_disert, :rhtml])}
+                                       :title => I18n::t(:message_0, :scope => [:view, :study_plans, :_not_valid_disert])}
 end
 if session[:requisite_subjects]
-  page.insert_html :top, 'studyPlan', :partial => 'shared/subjects', 
+  page.insert_html :top, 'studyPlan', :partial => 'shared/subjects',
                                  :locals => {:subjects =>
                                    session[:requisite_subjects],
-                                 :title => I18n::t(:message_4, :scope => [:txt, :view, :study_plans, :_not_valid_disert, :rhtml])}
+                                 :title => I18n::t(:message_4, :scope => [:view, :study_plans, :_not_valid_disert])}
 end
-page.insert_html :bottom, "studyPlan", :partial => 'shared/subjects', 
+page.insert_html :bottom, "studyPlan", :partial => 'shared/subjects',
                                      :locals => {:subjects =>
                                        session[:voluntary_subjects],
-                                     :title => I18n::t(:message_1, :scope => [:txt, :view, :study_plans, :_not_valid_disert, :rhtml])}
-page.insert_html :bottom, "studyPlan", :partial => 'shared/subjects', 
+                                     :title => I18n::t(:message_1, :scope => [:view, :study_plans, :_not_valid_disert])}
+page.insert_html :bottom, "studyPlan", :partial => 'shared/subjects',
                                      :locals => {:subjects =>
                                        session[:language_subjects],
-                                     :title => I18n::t(:message_2, :scope => [:txt, :view, :study_plans, :_not_valid_disert, :rhtml])}
+                                     :title => I18n::t(:message_2, :scope => [:view, :study_plans, :_not_valid_disert])}
 page.replace_html "form", :partial => 'disert_form'

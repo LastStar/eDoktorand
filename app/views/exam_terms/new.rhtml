@@ -1,15 +1,15 @@
 <div class='links'>
   <% if  params[:from] == 'candidate'%>
     <% if session[:back_page] == 'list' %>
-      <%= link_to t(:back_to_list, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list', :controller => 'candidates', :page => session[:current_page_backward] %>
+      <%= link_to t(:back_to_list, :scope => [:view, :exam_terms, :new]), :action => 'list', :controller => 'candidates', :page => session[:current_page_backward] %>
     <% else %>
-      <%= link_to t(:back_to_list, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list_all', :controller => 'candidates'%>    
+      <%= link_to t(:back_to_list, :scope => [:view, :exam_terms, :new]), :action => 'list_all', :controller => 'candidates'%>
     <% end %>
   <% else %>
-	<%= link_to t(:message_1, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list' %>
+	<%= link_to t(:message_1, :scope => [:view, :exam_terms, :new]), :action => 'list' %>
   <%end%>
 </div>
-<h1><%=t(:message_8, :scope => [:txt, :view, :exam_terms, :list, :rhtml])%></h1>
+<h1><%=t(:message_8, :scope => [:view, :exam_terms, :list])%></h1>
 
 <% form_tag :action => 'create' do %>
 <% if params[:from]%>
@@ -17,17 +17,17 @@
 <%end%>
 
   <%= render (:partial => "form") %>
-  <%= submit_tag t(:message_0, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :class=> 'button' %>
+  <%= submit_tag t(:message_0, :scope => [:view, :exam_terms, :new]), :class=> 'button' %>
 <% end %>
 <div class='links'>
   <% if  params[:from] == 'candidate'%>
     <% if session[:back_page] == 'list' %>
-      <%= link_to t(:back_to_list, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list', :controller => 'candidates', :page => session[:current_page_backward] %>
+      <%= link_to t(:back_to_list, :scope => [:view, :exam_terms, :new]), :action => 'list', :controller => 'candidates', :page => session[:current_page_backward] %>
     <% else %>
-      <%= link_to t(:back_to_list, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list_all', :controller => 'candidates'%>    
+      <%= link_to t(:back_to_list, :scope => [:view, :exam_terms, :new]), :action => 'list_all', :controller => 'candidates'%>
     <% end %>
   <% else %>
-	<%= link_to t(:message_1, :scope => [:txt, :view, :exam_terms, :new, :rhtml]), :action => 'list' %>
+	<%= link_to t(:message_1, :scope => [:view, :exam_terms, :new]), :action => 'list' %>
   <%end%>
 </div>
 

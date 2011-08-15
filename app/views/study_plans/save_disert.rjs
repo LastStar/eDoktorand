@@ -1,8 +1,8 @@
-page.replace_html 'guide', I18n::t(:message_0, :scope => [:txt, :view, :study_plans, :save_disert, :rhtml])
+page.replace_html 'guide', I18n::t(:message_0, :scope => [:view, :study_plans, :save_disert])
 
-page.insert_html :bottom, 'studyPlan', :partial => 'shared/final_exam', 
+page.insert_html :bottom, 'studyPlan', :partial => 'shared/final_exam',
                  :locals => {:study_plan => session[:study_plan]}
-page.insert_html :after, 'studyPlan', :partial => 'shared/disert_theme', 
-                 :locals => {:disert_theme => session[:disert_theme], 
+page.insert_html :after, 'studyPlan', :partial => 'shared/disert_theme',
+                 :locals => {:disert_theme => session[:disert_theme],
                              :study_plan => session[:study_plan]}
 page.replace_html 'form', :partial => 'accept'

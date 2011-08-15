@@ -1,8 +1,8 @@
 <div class='links'>
-  <%= filter_links(@filters) %> <%= link_to(t(:message_3, :scope => [:txt, :view, :students, :_list, :rhtml]),"students/mail_list")%>
+  <%= filter_links(@filters) %> <%= link_to(t(:message_3, :scope => [:view, :students, :_list]),"students/mail_list")%>
 </div>
 <% if @indices && !@indices.empty? %>
-  <h1><%= t(:message_0, :scope => [:txt, :view, :students, :_list, :rhtml]) + "(#{@indices.size})" %></h1>
+  <h1><%= t(:message_0, :scope => [:view, :students, :_list]) + "(#{@indices.size})" %></h1>
 <% end %>
 <% if @indices && !@indices.empty? %>
   <table id='students_table' class="students-list embossed">
@@ -11,5 +11,5 @@
     </tbody>
 </table>
 <% else %>
-  <h4><%= t(:message_2, :scope => [:txt, :view, :students, :_list, :rhtml]) %></h4>
+  <h4><%= t(:message_2, :scope => [:view, :students, :_list]) %></h4>
 <% end %>

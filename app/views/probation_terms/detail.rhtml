@@ -1,20 +1,20 @@
 <div id='students_<%= @probation_term.id %>'>
 <% unless @probation_term.students.empty? %>
   <ul id="enrolled_<%= @probation_term.id %>">
-    <%= render(:partial => "enrolled_students", 
+    <%= render(:partial => "enrolled_students",
                :locals => {:probation_term => @probation_term}) %>
   </ul>
 <% end %>
 
 <% if @students && !@students.empty? %>
 <div>
-  <label><%= t(:message_0, :scope => [:txt, :view, :probation_terms, :detail, :rhtml]) %></label>
-  <% enroll_form(@probation_term) do -%>	
+  <label><%= t(:message_0, :scope => [:view, :probation_terms, :detail]) %></label>
+  <% enroll_form(@probation_term) do -%>
     <select id="student_id" name="student[id]">
     <%= display_name_options(@students) %>
     </select>
     <%= hidden_field(:probation_term, :id) %>
-    <%= submit_tag(t(:message_1, :scope => [:txt, :view, :probation_terms, :detail, :rhtml]), :id => 'submit-button') %>
+    <%= submit_tag(t(:message_1, :scope => [:view, :probation_terms, :detail]), :id => 'submit-button') %>
   <% end %>
 </div>
 <% end %>

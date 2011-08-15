@@ -1,11 +1,11 @@
 <h3>
-  <%= t(:creating_term, :scope => [:txt, :view, :defenses, :new, :rhtml]) %> -
+  <%= t(:creating_term, :scope => [:view, :defenses, :new]) %> -
   <%= @defense.index.student.display_name %>
 </h3>
 <% form_tag :action => :create do -%>
   <fieldset>
     <%= render(:partial => "form") %>
-    <%= submit_tag t(:message_0, :scope => [:txt, :view, :defenses, :_edit, :rhtml]), :id => 'submit-button' %>
+    <%= submit_tag t(:message_0, :scope => [:view, :defenses, :_edit]), :id => 'submit-button' %>
   </fieldset>
 <% end %>
 

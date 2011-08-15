@@ -1,13 +1,13 @@
 <% if $enroll != 'disable' %>
-<% form_tag :action => 'confirm_enroll', :id => @candidate do %>	
-  <label for="user_login"><%=t(:message_0, :scope => [:txt, :view, :candidates, :enroll, :rhtml])%>:</label><br/>
+<% form_tag :action => 'confirm_enroll', :id => @candidate do %>
+  <label for="user_login"><%=t(:message_0, :scope => [:view, :candidates, :enroll])%>:</label><br/>
   <%= text_field "user", "login", :size => 30, :value => ''%><br/>
-  <%= submit_tag t(:message_1, :scope => [:txt, :view, :candidates, :enroll, :rhtml]) %>
+  <%= submit_tag t(:message_1, :scope => [:view, :candidates, :enroll]) %>
 <% end %>
 <% else %>
-  <%= t(:message_2, :scope => [:txt, :view, :candidates, :enroll, :rhtml]) %>
+  <%= t(:message_2, :scope => [:view, :candidates, :enroll]) %>
 <% end %>
 <div class='links'>
-  <%= link_to t(:message_3, :scope => [:txt, :view, :candidates, :enroll, :rhtml]), :action => 'list' %>
+  <%= link_to t(:message_3, :scope => [:view, :candidates, :enroll]), :action => 'list' %>
 </div >
 

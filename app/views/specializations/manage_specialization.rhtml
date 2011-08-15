@@ -1,6 +1,6 @@
 <div id='main'>
 <% if @specializations && !@specializations.empty? %>
-<h5><%= t(:message_0, :scope => [:txt, :view, :specializations, :manage_specialization, :rhtml]) + "(#{@specializations.size})" %></h5>
+<h5><%= t(:message_0, :scope => [:view, :specializations, :manage_specialization]) + "(#{@specializations.size})" %></h5>
 <div id='specializations_list'>
 <ul>
   <% for specialization in @specializations %>
@@ -12,7 +12,7 @@
   <% end %>
 </ul>
 <% else %>
-<h4><%= t(:message_1, :scope => [:txt, :view, :specializations, :manage_specialization, :rhtml]) %></h4>
+<h4><%= t(:message_1, :scope => [:view, :specializations, :manage_specialization]) %></h4>
 <% end %>
 </div>
 </div>

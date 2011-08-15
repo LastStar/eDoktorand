@@ -20,21 +20,21 @@ class Candidate < ActiveRecord::Base
 
   before_save :strip_birth_number
 
-  validates_presence_of :firstname, :message => I18n::t(:name_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :lastname, :message => I18n::t(:last_name_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :birth_at, :message => I18n::t(:birth_at_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :email, :message => I18n::t(:email_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :street, :message => I18n::t(:street_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :city, :message => I18n::t(:city_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :zip, :message => I18n::t(:zip_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :state, :message => I18n::t(:state_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :university, :message => I18n::t(:university_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :faculty, :message => I18n::t(:faculty_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :studied_specialization, :message => I18n::t(:studied_specialization_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :birth_number, :message => I18n::t(:birth_number_must_be_present, :scope => [:txt, :model, :candidate])
-  validates_presence_of :number, :message => I18n::t(:number_must_be_present, :scope => [:txt, :model, :candidate])
+  validates_presence_of :firstname, :message => I18n::t(:name_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :lastname, :message => I18n::t(:last_name_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :birth_at, :message => I18n::t(:birth_at_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :email, :message => I18n::t(:email_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :street, :message => I18n::t(:street_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :city, :message => I18n::t(:city_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :zip, :message => I18n::t(:zip_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :state, :message => I18n::t(:state_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :university, :message => I18n::t(:university_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :faculty, :message => I18n::t(:faculty_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :studied_specialization, :message => I18n::t(:studied_specialization_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :birth_number, :message => I18n::t(:birth_number_must_be_present, :scope => [:model, :candidate])
+  validates_presence_of :number, :message => I18n::t(:number_must_be_present, :scope => [:model, :candidate])
   validates_format_of :email, :with => /^\s*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\s*$/i,
-    :on => :create, :message => I18n::t(:wrong_email_format, :scope => [:txt, :model, :candidate])
+    :on => :create, :message => I18n::t(:wrong_email_format, :scope => [:model, :candidate])
 
   #TODO rename with tt
   #TODO spec it
@@ -54,25 +54,25 @@ class Candidate < ActiveRecord::Base
 
   # validates if languages are not same
   def validate
-    errors.add_to_base(I18n::t(:languages_must_be_different, :scope => [:txt, :model, :candidate])) if language1_id == language2_id
+    errors.add_to_base(I18n::t(:languages_must_be_different, :scope => [:model, :candidate])) if language1_id == language2_id
     # TODO check if used then remove vvvvv
-    errors.add_to_base(I18n::t(:candidate_must_be_registered_before_invite, :scope => [:txt, :model, :candidate])) if
+    errors.add_to_base(I18n::t(:candidate_must_be_registered_before_invite, :scope => [:model, :candidate])) if
     !finished? && invited?
-    errors.add_to_base(I18n::t(:candidate_must_be_invited_before_admit, :scope => [:txt, :model, :candidate])) if
+    errors.add_to_base(I18n::t(:candidate_must_be_invited_before_admit, :scope => [:model, :candidate])) if
     !invited? && admited?
-    errors.add_to_base(I18n::t(:candidate_must_be_admited_before_enroll, :scope => [:txt, :model, :candidate])) if
+    errors.add_to_base(I18n::t(:candidate_must_be_admited_before_enroll, :scope => [:model, :candidate])) if
     !admited? && enrolled?
     #^^^^^^^^
     if admittance_theme
       if admittance_theme.department != department
       errors.add(:admittance_theme,
                   I18n::t(:theme_department_mismatch,
-                          :scope => [:txt, :model, :candidate]))
+                          :scope => [:model, :candidate]))
       end
     elsif specialization && AdmittanceTheme.has_for?(specialization)
       errors.add(:admittance_theme,
                   I18n::t(:theme_missing,
-                          :scope => [:txt, :model, :candidate]))
+                          :scope => [:model, :candidate]))
     end
   end
 
@@ -80,7 +80,7 @@ class Candidate < ActiveRecord::Base
     self.birth_number = birth_number.strip
     if state == "CZ" || state == "SK"
       if !(birth_number =~ /^\d+$/) || (birth_number.size == 10 && birth_number.to_i.remainder(11) != 0)
-        errors.add(:birth_number, I18n::t(:wrong_birth_number_format, :scope => [:txt, :model, :candidate]))
+        errors.add(:birth_number, I18n::t(:wrong_birth_number_format, :scope => [:model, :candidate]))
       end
     end
   end
@@ -88,7 +88,7 @@ class Candidate < ActiveRecord::Base
   def validate_on_update
     if state == "CZ" || state == "SK"
       if birth_number.to_i.remainder(11) != 0
-        errors.add(:birth_number, I18n::t(:wrong_birth_number_format, :scope => [:txt, :model, :candidate]))
+        errors.add(:birth_number, I18n::t(:wrong_birth_number_format, :scope => [:model, :candidate]))
       end
     end
   end

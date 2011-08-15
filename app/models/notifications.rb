@@ -1,13 +1,13 @@
 class Notifications < ActionMailer::Base
   def invite_candidate(candidate, faculty, sent_at = Time.now)
-    @subject = I18n::t(:invite_candidate_to_exam, :scope => [:txt, :model, :notifications])
+    @subject = I18n::t(:invite_candidate_to_exam, :scope => [:model, :notifications])
     @body['display_name'] = candidate.display_name
     @body['specialization'] = candidate.specialization.name
     @body['exam_term'] = candidate.specialization.exam_term
     @body['sent_on'] = sent_at
     @body['faculty'] = faculty
     @body['study_id'] = candidate.study_id
-    @body['salutation'] = candidate.genderize(I18n::t(:dear_ms_mr, :scope => [:txt, :model, :notifications]), I18n::t(:dear_mr, :scope => [:txt, :model, :notifications]), I18n::t(:dear_ms, :scope => [:txt, :model, :notifications]))
+    @body['salutation'] = candidate.genderize(I18n::t(:dear_ms_mr, :scope => [:model, :notifications]), I18n::t(:dear_mr, :scope => [:model, :notifications]), I18n::t(:dear_ms, :scope => [:model, :notifications]))
     @recipients = candidate.email
     @cc        = faculty.secretary.email
     @from       = faculty.secretary.email
@@ -16,7 +16,7 @@ class Notifications < ActionMailer::Base
 
   # sends admit mail to candidate
   def admit_candidate(candidate, conditional, sent_at = Time.now)
-    @subject = I18n::t(:notice_about_admitance, :scope => [:txt, :model, :notifications])
+    @subject = I18n::t(:notice_about_admitance, :scope => [:model, :notifications])
     @body[:candidate] = candidate
     @body[:faculty] = faculty = candidate.department.faculty
     @body[:sent_on] = sent_at
@@ -29,7 +29,7 @@ class Notifications < ActionMailer::Base
 
   #sends reject mail to candidate
   def reject_candidate(candidate, sent_at = Time.now)
-    @subject = I18n::t(:notice_about_admitance, :scope => [:txt, :model, :notifications])
+    @subject = I18n::t(:notice_about_admitance, :scope => [:model, :notifications])
     @body['study'] = candidate.study.name
     @body['display_name'] = candidate.display_name
     @body['specialization'] = candidate.specialization.name
@@ -44,14 +44,14 @@ class Notifications < ActionMailer::Base
   end
 
   def interrupt_alert(study_plan, interrupt, sent_at = Time.now)
-  @subject = I18n.t(:study_plan_interruption_notice, :scope => [:txt, :model, :notifications])
+  @subject = I18n.t(:study_plan_interruption_notice, :scope => [:model, :notifications])
     #@body['department_name'] = study_plan.index.department.name
     @body['first_name'] = study_plan.index.student.firstname
     @body['last_name'] = study_plan.index.student.lastname
     if study_plan.index.student.birth_number == nil
      @body['birth_number'] = ''
       else
-       @body['birth_number'] = I18n.t(:with_personal_identfication_number, :scope => [:txt, :model, :notifications])  + study_plan.index.student.birth_number
+       @body['birth_number'] = I18n.t(:with_personal_identfication_number, :scope => [:model, :notifications])  + study_plan.index.student.birth_number
     end
     @body['year'] = study_plan.index.year
     if interrupt.index.interrupted?
@@ -73,16 +73,16 @@ class Notifications < ActionMailer::Base
 
   #send study plan of student
   def study_plan_create(study_plan, sent_at = Time.now)
-    #@subject = t(:message_6, :scope => [:txt, :model, :notifications])
-    @subject = I18n.t(:notice_about_study_plan, :scope => [:txt, :model, :notifications])
+    #@subject = t(:message_6, :scope => [:model, :notifications])
+    @subject = I18n.t(:notice_about_study_plan, :scope => [:model, :notifications])
     @body['department_name'] = study_plan.index.department.name
     @body['first_name'] = study_plan.index.student.firstname
     @body['last_name'] = study_plan.index.student.lastname
     if study_plan.index.student.birth_number == nil
      @body['birth_number'] = ''
       else
-       # @body['birth_number'] = I18n::t(:message_7, :scope => [:txt, :model, :notifications]) + study_plan.index.student.birth_number
-       @body['birth_number'] = I18n.t(:with_personal_identfication_number, :scope => [:txt, :model, :notifications])  + study_plan.index.student.birth_number
+       # @body['birth_number'] = I18n::t(:message_7, :scope => [:model, :notifications]) + study_plan.index.student.birth_number
+       @body['birth_number'] = I18n.t(:with_personal_identfication_number, :scope => [:model, :notifications])  + study_plan.index.student.birth_number
     end
     @body['specialization'] = study_plan.index.specialization.name
     @body['sent_on'] = sent_at
@@ -114,7 +114,7 @@ class Notifications < ActionMailer::Base
 
   def invite_to_final_exam(index, sent_at = Time.now)
     faculty = index.faculty
-    @subject = I18n::t(:final_exam_invitation, :scope => [:txt, :model, :notifications])
+    @subject = I18n::t(:final_exam_invitation, :scope => [:model, :notifications])
     @body[:student] = index.student
     @body[:sent_on] = sent_at
     if index.final_exam_term.chairman.email != nil
@@ -128,7 +128,7 @@ class Notifications < ActionMailer::Base
 
   def invite_to_defense(index, sent_at = Time.now)
     faculty = index.faculty
-    @subject = I18n::t(:defense_invitation, :scope => [:txt, :model, :notifications])
+    @subject = I18n::t(:defense_invitation, :scope => [:model, :notifications])
     @body[:student] = index.student
     @body[:sent_on] = sent_at
     if index.defense.chairman.email != nil
@@ -141,7 +141,7 @@ class Notifications < ActionMailer::Base
   end
 
   def created_account(im_identity, sent_at = Time.now)
-    @subject = I18n::t(:account_created, :scope => [:txt, :model, :notifications])
+    @subject = I18n::t(:account_created, :scope => [:model, :notifications])
     @body[:im_identity] = im_identity
     @from = "edoktorand@edoktorand.czu.cz"
     @recipients = im_identity.student.email

@@ -25,11 +25,11 @@
   <% end %>
   </div>
   <div id="main">
-    <div id='loading'><%= t(:message_1, :scope => [:txt, :view, :layouts, :documents, :rhtml]) %></div>
+    <div id='loading'><%= t(:message_1, :scope => [:view, :layouts, :documents]) %></div>
     <%= @content_for_layout %>
   </div>
   <div id="footer" class="footer">
-    <%= image_tag "ff3.gif", :alt => t(:message_2, :scope => [:txt, :view, :exams, :_show, :rhtml]), :align => "left" %>
+    <%= image_tag "ff3.gif", :alt => t(:message_2, :scope => [:view, :exams, :_show]), :align => "left" %>
     <%=mail_to ('helpdesk@czu.cz','HELPDESK')%>, +420 224384444
   </div>
 </body>

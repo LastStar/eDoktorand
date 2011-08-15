@@ -1,11 +1,11 @@
 <h3>
-  <%= t(:term, :scope => [:txt, :view, :final_exam_terms, :new, :rhtml]) %> -
+  <%= t(:term, :scope => [:view, :final_exam_terms, :new]) %> -
   <%= @final_exam_term.index.student.display_name %>
 </h3>
 <% if @user.has_role?('faculty_secretary') %>
 <div class='links'>
   <span id='list_link'>
-    <%= link_to t(:back_to_list, :scope => [:txt, :view, :final_exam_terms, :show, :rhtml]), :action => :list %>
+    <%= link_to t(:back_to_list, :scope => [:view, :final_exam_terms, :show]), :action => :list %>
   </span>
   <% if !@final_exam_term.index.defense_invitation_sent? %>
   <span id='invitation_link'>

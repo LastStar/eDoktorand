@@ -1,9 +1,9 @@
 if params[:mail] == 'mail'
- page.replace_html 'invitation_link',  t(:message_0, :scope => [:txt, :view, :final_exam_terms, :send_invitation, :rjs])
+ page.replace_html 'invitation_link',  t(:message_0, :scope => [:view, :final_exam_terms, :send_invitation])
  page.hide 'invitation_link_no_mail'
  page.replace 'final_exam_link', final_exam_term_link(@user, @index)
 else
  page.hide 'invitation_link'
- page.replace_html 'invitation_link_no_mail', t(:message_1, :scope => [:txt, :view, :final_exam_terms, :send_invitation, :rjs])
- page.replace 'final_exam_link', final_exam_term_link(@user, @index)    
+ page.replace_html 'invitation_link_no_mail', t(:message_1, :scope => [:view, :final_exam_terms, :send_invitation])
+ page.replace 'final_exam_link', final_exam_term_link(@user, @index)
 end

@@ -6,7 +6,7 @@ class FinalExamTermsController < ApplicationController
   before_filter :login_required, :prepare_user, :prepare_student
 
   def list
-    @title = t(:message_0, :scope => [:txt, :controller, :terms])
+    @title = t(:message_0, :scope => [:controller, :terms])
     @final_exam_terms = FinalExamTerm.find_for(@user,
                                                :future => params[:future],
                                                :not_passed => true)
@@ -21,7 +21,7 @@ class FinalExamTermsController < ApplicationController
   end
 
   def claim
-    @title = t(:message_1, :scope => [:txt, :controller, :terms])
+    @title = t(:message_1, :scope => [:controller, :terms])
     @study_plan = @user.person.index.study_plan
   end
 
@@ -37,13 +37,13 @@ class FinalExamTermsController < ApplicationController
       index.disert_theme.update_attributes(params[:disert_theme])
       redirect_to :controller => :study_plans, :action => :index
     else
-      @title = t(:message_1, :scope => [:txt, :controller, :terms])
+      @title = t(:message_1, :scope => [:controller, :terms])
       render :action => 'claim'
     end
   end
 
    def new
-    @title = t(:message_2, :scope => [:txt, :controller, :terms])
+    @title = t(:message_2, :scope => [:controller, :terms])
     @tutors = Tutor.find_for(@user)
     index = Index.find(params[:id])
     if index.final_exam_term
@@ -63,7 +63,7 @@ class FinalExamTermsController < ApplicationController
     end
     @final_exam_term.detect_external_chairman(params[:external_chairman])
     if @final_exam_term.save
-      flash['notice'] = t(:message_3, :scope => [:txt, :controller, :terms])
+      flash['notice'] = t(:message_3, :scope => [:controller, :terms])
       redirect_to :action => :list
     else
       @tutors = Tutor.find_for(@user)
@@ -72,7 +72,7 @@ class FinalExamTermsController < ApplicationController
   end
 
   def show
-    @title = t(:term, :scope => [:txt, :controller, :final_exam_terms])
+    @title = t(:term, :scope => [:controller, :final_exam_terms])
     @final_exam_term = FinalExamTerm.find(params[:id])
   end
 
@@ -103,7 +103,7 @@ class FinalExamTermsController < ApplicationController
   end
 
   def pass
-    @title = t(:passing, :scope => [:txt, :controller, :final_exam_terms])
+    @title = t(:passing, :scope => [:controller, :final_exam_terms])
     @date = Date.today
     @final_exam_term = Index.find(params[:id]).final_exam_term
   end

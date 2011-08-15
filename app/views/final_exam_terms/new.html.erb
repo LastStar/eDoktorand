@@ -1,11 +1,11 @@
 <h3>
-  <%= t(:creating_term, :scope => [:txt, :view, :final_exam_terms, :new, :rhtml]) %> -
+  <%= t(:creating_term, :scope => [:view, :final_exam_terms, :new]) %> -
   <%= @final_exam_term.index.student.display_name %>
 </h3>
 <% form_tag(:action => 'create') do -%>
   <fieldset>
     <%= render(:partial => "form") %>
-    <%= submit_tag t(:create_term, :scope => [:txt, :view, :final_exam_terms, :new, :rhtml]), :id => 'submit-button' %>
+    <%= submit_tag t(:create_term, :scope => [:view, :final_exam_terms, :new]), :id => 'submit-button' %>
   </fieldset>
 <% end %>
 

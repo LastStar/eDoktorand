@@ -1,39 +1,39 @@
 <% index = @defense.index %>
 <div class='links'>
-  <%= link_to t(:message_0, :scope => [:txt, :view, :defenses, :protocol, :rhtml]), :action => :list %>
+  <%= link_to t(:message_0, :scope => [:view, :defenses, :protocol]), :action => :list %>
 </div>
-<p class='right_date'><%= t(:message_1, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) + " " + @defense.date.strftime("%d. %m. %Y") %></p>
+<p class='right_date'><%= t(:message_1, :scope => [:view, :defenses, :protocol]) + " " + @defense.date.strftime("%d. %m. %Y") %></p>
 <p>
-  <%= t(:message_2, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %><br />
+  <%= t(:message_2, :scope => [:view, :defenses, :protocol]) %><br />
   <%= index.faculty.name %>
 </p>
 
-<h2><%= t(:message_3, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %></h2>
+<h2><%= t(:message_3, :scope => [:view, :defenses, :protocol]) %></h2>
 
 <table class='two-columns condensed'>
   <tr>
-    <th><%= t(:message_4, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_4, :scope => [:view, :defenses, :protocol]) %>:</th>
     <td><strong><%= index.student.display_name %></strong></td>
   </tr>
   <tr>
-    <th><%= t(:message_5, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_5, :scope => [:view, :defenses, :protocol]) %>:</th>
     <td><%= index.specialization.name %></td>
   </tr>
   <tr>
-    <th><%= t(:message_6, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_6, :scope => [:view, :defenses, :protocol]) %>:</th>
     <td><%= index.department.name %></td>
   </tr>
   <tr>
-    <th><%= t(:message_7, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_7, :scope => [:view, :defenses, :protocol]) %>:</th>
     <td><%= index.disert_theme.title %></td>
   </tr>
   <tr>
-    <th><%= t(:message_8, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_8, :scope => [:view, :defenses, :protocol]) %>:</th>
     <td><%= index.enrolled_on.strftime("%d. %m. %Y") %></td>
   </tr>
 <% if index.consultant %>
   <tr>
-    <th><%= t(:message_9, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_9, :scope => [:view, :defenses, :protocol]) %>:</th>
     <td><%= index.consultant %></td>
   </tr>
 <% end %>
@@ -41,14 +41,14 @@
 
 <table class='two-columns wide'>
   <tr colspan='2'>
-    <th><%= t(:message_10, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_10, :scope => [:view, :defenses, :protocol]) %>:</th>
   </tr>
   <tr>
     <th><%= @defense.chairman_name %>
     <td>......................................</td>
   </tr>
   <tr colspan='2'>
-    <th><%= t(:message_11, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %></th>
+    <th><%= t(:message_11, :scope => [:view, :defenses, :protocol]) %></th>
   </tr>
   <tr>
     <td><%= @defense.first_examinator %></td>
@@ -75,7 +75,7 @@
     <td>......................................</td>
   </tr>
   <tr colspan='2'>
-    <th><%= t(:message_12, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_12, :scope => [:view, :defenses, :protocol]) %>:</th>
   </tr>
   <tr>
     <td><%= @defense.opponent %>:</td>
@@ -90,7 +90,7 @@
     <td>......................................</td>
   </tr>
   <tr colspan='2'>
-    <th><%= t(:message_13, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_13, :scope => [:view, :defenses, :protocol]) %>:</th>
   </tr>
   <tr>
     <td><%= index.tutor.display_name %></td>
@@ -100,17 +100,17 @@
 
 <table class='two-columns'>
   <tr colspan='2'>
-    <th><%= t(:message_14, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_14, :scope => [:view, :defenses, :protocol]) %>:</th>
   </tr>
   <tr>
     <td>
       <table class='two-columns'>
         <tr>
-          <th><%= t(:message_15, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+          <th><%= t(:message_15, :scope => [:view, :defenses, :protocol]) %>:</th>
           <td>.....</td>
         </tr>
         <tr>
-          <th><%= t(:message_16, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+          <th><%= t(:message_16, :scope => [:view, :defenses, :protocol]) %>:</th>
           <td>.....</td>
         </tr>
       </table>
@@ -118,15 +118,15 @@
     <td>
       <table class='two-columns'>
         <tr>
-          <th><%= t(:message_17, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+          <th><%= t(:message_17, :scope => [:view, :defenses, :protocol]) %>:</th>
           <td>.....</td>
         </tr>
         <tr>
-          <th><%= t(:message_18, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+          <th><%= t(:message_18, :scope => [:view, :defenses, :protocol]) %>:</th>
           <td>.....</td>
         </tr>
         <tr>
-          <th><%= t(:message_19, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %>:</th>
+          <th><%= t(:message_19, :scope => [:view, :defenses, :protocol]) %>:</th>
           <td>.....</td>
         </tr>
       </table>
@@ -134,11 +134,11 @@
   </tr>
 </table>
 
-<h3><%= t(:message_20, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %></h3>
+<h3><%= t(:message_20, :scope => [:view, :defenses, :protocol]) %></h3>
 <table class='bigger two-columns'>
   <tr>
-    <td class='centered'><%= t(:message_21, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %></td>
-    <td class='centered'><%= t(:message_22, :scope => [:txt, :view, :defenses, :protocol, :rhtml]) %></td>
+    <td class='centered'><%= t(:message_21, :scope => [:view, :defenses, :protocol]) %></td>
+    <td class='centered'><%= t(:message_22, :scope => [:view, :defenses, :protocol]) %></td>
   </tr>
 </table>
 

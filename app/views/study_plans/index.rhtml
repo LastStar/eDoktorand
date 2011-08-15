@@ -1,23 +1,23 @@
 <p class='help'>
 <div class='links'>
-  <%=link_to(t(:message_5, :scope => [:txt, :view, :study_plans, :index, :rhtml]), "http://www.facebook.com/pages/eDoktorand/86527318132",
-  :class => "facebook", :title => t(:message_6, :scope => [:txt, :view, :study_plans, :index, :rhtml]), :target => "_blank")%>
-  <%= voluntary_link %> <%= link_to_function(t(:message_0, :scope => [:txt, :view, :study_plans, :index, :rhtml]), "$('documents').toggle()") %></div>
+  <%=link_to(t(:message_5, :scope => [:view, :study_plans, :index]), "http://www.facebook.com/pages/eDoktorand/86527318132",
+  :class => "facebook", :title => t(:message_6, :scope => [:view, :study_plans, :index]), :target => "_blank")%>
+  <%= voluntary_link %> <%= link_to_function(t(:message_0, :scope => [:view, :study_plans, :index]), "$('documents').toggle()") %></div>
 <ul style='display:none' id='voluntarys' class='bordered'>
-  <li class='noborder'> <h5><%=t(:message_9, :scope => [:txt, :view, :study_plans, :index, :rhtml])%></h5></li>
+  <li class='noborder'> <h5><%=t(:message_9, :scope => [:view, :study_plans, :index])%></h5></li>
   <% @voluntary_subjects.each do |vs| %>
   <li><%= vs.subject.label %></li>
   <% end %>
 </ul>
 <ul id='documents' style='display: none' class='bordered'>
-<li class='noborder'> <h5><%=t(:message_10, :scope => [:txt, :view, :study_plans, :index, :rhtml])%></h5></li>
-<li><a href="/pdf/StudijniZkusebniRadDSP2006.pdf" target="_blank"><%= t(:message_1, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
-<li><a href="/pdf/StipendijniRadDSP2006.pdf" target="_blank"><%= t(:message_2, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
-<li> <a href="/pdf/UbytovaciStipendia2006-07.pdf" target="_blank"><%= t(:message_3, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
-<li><a href="/documents/how_to" target="_blank"><%= t(:message_4, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+<li class='noborder'> <h5><%=t(:message_10, :scope => [:view, :study_plans, :index])%></h5></li>
+<li><a href="/pdf/StudijniZkusebniRadDSP2006.pdf" target="_blank"><%= t(:message_1, :scope => [:view, :study_plans, :index]) %></a></li>
+<li><a href="/pdf/StipendijniRadDSP2006.pdf" target="_blank"><%= t(:message_2, :scope => [:view, :study_plans, :index]) %></a></li>
+<li> <a href="/pdf/UbytovaciStipendia2006-07.pdf" target="_blank"><%= t(:message_3, :scope => [:view, :study_plans, :index]) %></a></li>
+<li><a href="/documents/how_to" target="_blank"><%= t(:message_4, :scope => [:view, :study_plans, :index]) %></a></li>
 <% if @user.person.faculty.id == 4%>
-  <li><a href="/pdf/zadost_o_SDZ.pdf" target="_blank"><%= t(:message_7, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
-  <li><a href="/pdf/zadost_a_podklady_k_obhajobe_DP.pdf" target="_blank"><%= t(:message_8, :scope => [:txt, :view, :study_plans, :index, :rhtml]) %></a></li>
+  <li><a href="/pdf/zadost_o_SDZ.pdf" target="_blank"><%= t(:message_7, :scope => [:view, :study_plans, :index]) %></a></li>
+  <li><a href="/pdf/zadost_a_podklady_k_obhajobe_DP.pdf" target="_blank"><%= t(:message_8, :scope => [:view, :study_plans, :index]) %></a></li>
 <% end %>
 </ul>
 <%= render :partial => 'help' %>

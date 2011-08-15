@@ -1,14 +1,14 @@
 <td colspan="6" class="orange right">
 <% save_form(scholarship) do %>
-<%= t(:message_5, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %>
+<%= t(:message_5, :scope => [:view, :scholarships, :_add]) %>
 <%if params[:scholarship]%>
-  <%= text_field 'scholarship', 'commission_head', 'size' => 10%> / 
-  <%= text_field 'scholarship', 'commission_body', 'size' => 10%> / 
+  <%= text_field 'scholarship', 'commission_head', 'size' => 10%> /
+  <%= text_field 'scholarship', 'commission_body', 'size' => 10%> /
   <%= text_field 'scholarship', 'commission_tail', 'size' => 10%>
 <%else%>
-  <%= text_field 'scholarship', 'commission_head', 'size' => 10, 'value' => t(:message_2, :scope => [:txt, :view, :scholarships, :_add, :rhtml])%> / 
-  <%= text_field 'scholarship', 'commission_body', 'size' => 10, 'value' => t(:message_3, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %> / 
-  <%= text_field 'scholarship', 'commission_tail', 'size' => 10, 'value' => t(:message_4, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %>
+  <%= text_field 'scholarship', 'commission_head', 'size' => 10, 'value' => t(:message_2, :scope => [:view, :scholarships, :_add])%> /
+  <%= text_field 'scholarship', 'commission_body', 'size' => 10, 'value' => t(:message_3, :scope => [:view, :scholarships, :_add]) %> /
+  <%= text_field 'scholarship', 'commission_tail', 'size' => 10, 'value' => t(:message_4, :scope => [:view, :scholarships, :_add]) %>
 <%end%>
   <%if params[:scholarship]%>
     <%if @edit == 1%>
@@ -16,9 +16,9 @@
     <%end%>
     <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount'%>
   <%else%>
-    <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount', 'value' => t(:message_0, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %>
+    <%= text_field 'scholarship', 'amount', 'size' => 10, 'maxlength' => 6, 'id' => 'amount', 'value' => t(:message_0, :scope => [:view, :scholarships, :_add]) %>
   <%end%>
-  <%= t(:message_1, :scope => [:txt, :view, :scholarships, :_add, :rhtml]) %> &nbsp;
+  <%= t(:message_1, :scope => [:view, :scholarships, :_add]) %> &nbsp;
   <%= image_submit_tag('ok.png') %>
   <%if !params[:scholarship]%>
     <%= close_link("scholarship_form_#{@scholarship.index.id}") %>

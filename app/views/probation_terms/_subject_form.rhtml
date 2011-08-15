@@ -1,9 +1,9 @@
 <fieldset>
-<legend><%= t(:message_0, :scope => [:txt, :view, :probation_terms, :_subject_form, :rhtml]) %></legend>
+<legend><%= t(:message_0, :scope => [:view, :probation_terms, :_subject_form]) %></legend>
 <label>
-  <%= t(:message_1, :scope => [:txt, :view, :probation_terms, :_subject_form, :rhtml]) %>
+  <%= t(:message_1, :scope => [:view, :probation_terms, :_subject_form]) %>
 </label>
 <%= select('probation_term', 'subject_id', @subjects.map {|sub| [sub.select_label, sub.id]}) %>
-<br/> 
+<br/>
 </fieldset>
 

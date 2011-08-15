@@ -324,7 +324,7 @@ class StudentsController < ApplicationController
   end
 
   def method_missing(method_id, *arguments)
-    if match = /passt(:message_0, :scope => [:txt, :controller, :students])/.match(method_id.to_s)
+    if match = /passt(:message_0, :scope => [:controller, :students])/.match(method_id.to_s)
       params[:what] = match[1]
       pass
     else
@@ -365,7 +365,7 @@ class StudentsController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = t(:message_1, :scope => [:txt, :controller, :students])
+    @title = t(:message_1, :scope => [:controller, :students])
   end
 
   # prepares order variable for listin
@@ -376,11 +376,11 @@ class StudentsController < ApplicationController
 
   # prepares filter variable
   def prepare_filter
-    @filters = [[t(:message_2, :scope => [:txt, :controller, :students]), 2], [t(:message_3, :scope => [:txt, :controller, :students]), 0],
-      [t(:message_4, :scope => [:txt, :controller, :students]), 3]]
+    @filters = [[t(:message_2, :scope => [:controller, :students]), 2], [t(:message_3, :scope => [:controller, :students]), 0],
+      [t(:message_4, :scope => [:controller, :students]), 3]]
     if (@user.has_one_of_roles?(['leader', 'dean', 'vicerector']))
       if !@user.person.indices.empty?
-        @filters.concat([[t(:message_5, :scope => [:txt, :controller, :students]), 1], [t(:message_6, :scope => [:txt, :controller, :students]), 4]])
+        @filters.concat([[t(:message_5, :scope => [:controller, :students]), 1], [t(:message_6, :scope => [:controller, :students]), 4]])
       end
     end
     unless @user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])

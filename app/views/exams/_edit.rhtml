@@ -1,54 +1,54 @@
 <div class="links">
-  <%=  link_to_function(t(:message_0, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), "Element.show('exam_title'), Element.show('exams_list'), Element.hide('form')") %> 
-</div>  
+  <%=  link_to_function(t(:message_0, :scope => [:view, :exams, :_protocol]), "Element.show('exam_title'), Element.show('exams_list'), Element.hide('form')") %>
+</div>
 
 
 <div id='done'></div>
 <div id='form'>
 
-<h1> <%= t(:message_0, :scope => [:txt, :view, :exams, :by_subject, :rhtml])%></h1>
+<h1> <%= t(:message_0, :scope => [:view, :exams, :by_subject])%></h1>
 <% subject_form_edit do -%>
 <fieldset>
-<legend><%= t(:message_0, :scope => [:txt, :view, :exams, :_main_form, :rhtml]) %></legend>
+<legend><%= t(:message_0, :scope => [:view, :exams, :_main_form]) %></legend>
   <label>
-    <%= t(:message_2, :scope => [:txt, :view, :exams, :_main_form, :rhtml]) %>
+    <%= t(:message_2, :scope => [:view, :exams, :_main_form]) %>
   </label>
     <%= @exam.index.student.display_name %>
 </fieldset>
 <fieldset id='date'>
-<legend><%= t(:message_0, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]) %></legend>
+<legend><%= t(:message_0, :scope => [:view, :exams, :_detail_form]) %></legend>
 <label>
-  <%= t(:message_1, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]) %>
+  <%= t(:message_1, :scope => [:view, :exams, :_detail_form]) %>
 </label>
   <%= date_select 'exam', 'passed_on', :start_year => 2002,
                   :order => [:day, :month, :year], :use_month_numbers => true %>
   <span class='required'>&nbsp;&lowast;</span ><br />
 </fieldset>
 <fieldset>
-<legend><%= t(:message_1, :scope => [:txt, :view, :exams, :by_subject, :rhtml]) %></legend>
-<label><%= t(:message_2, :scope => [:txt, :view, :exams, :by_subject, :rhtml]) %></label>
+<legend><%= t(:message_1, :scope => [:view, :exams, :by_subject]) %></legend>
+<label><%= t(:message_2, :scope => [:view, :exams, :by_subject]) %></label>
 <select id="subject_id", name="exam[subject_id]" disabled>
   <%= label_options_edit(@subjects,@exam) %>
 </select>
 </fieldset>
 <fieldset id='agenda'>
-<legend><%= t(:message_2, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]) %></legend>
+<legend><%= t(:message_2, :scope => [:view, :exams, :_detail_form]) %></legend>
 
-  <label for="exam_first_examinator"><%=t(:message_3, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
-     
+  <label for="exam_first_examinator"><%=t(:message_3, :scope => [:view, :exams, :_detail_form])%></label>
+
   <% examinators = Examinator.find_for(@user) %>
-  <%= collection_select(:exam, :first_examinator_id, examinators, :id, :display_name_with_title) %><br /> 
+  <%= collection_select(:exam, :first_examinator_id, examinators, :id, :display_name_with_title) %><br />
 
-  <label for="exam_second_examinator"><%=t(:message_4, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
+  <label for="exam_second_examinator"><%=t(:message_4, :scope => [:view, :exams, :_detail_form])%></label>
   <%= collection_select(:exam, :second_examinator_id, examinators, :id, :display_name_with_title, {:include_blank => true}) %><br />
 
 
-  <label for="exam_first_examinator"><%=t(:message_5, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
-     
-  <% examinators = Examinator.find_for(@user) %>
-  <%= collection_select(:exam, :third_examinator_id, examinators, :id, :display_name_with_title, {:include_blank => true})%><br /> 
+  <label for="exam_first_examinator"><%=t(:message_5, :scope => [:view, :exams, :_detail_form])%></label>
 
-  <label for="exam_second_examinator"><%=t(:message_6, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
+  <% examinators = Examinator.find_for(@user) %>
+  <%= collection_select(:exam, :third_examinator_id, examinators, :id, :display_name_with_title, {:include_blank => true})%><br />
+
+  <label for="exam_second_examinator"><%=t(:message_6, :scope => [:view, :exams, :_detail_form])%></label>
   <%= collection_select(:exam, :fourth_examinator_id, examinators, :id, :display_name_with_title, {:include_blank => true}) %>
 
 
@@ -56,15 +56,15 @@
 </fieldset>
 
 <fieldset id='result'>
-<legend><%= t(:message_7, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]) %></legend>
-  <label for="exam_questions"><%=t(:message_8, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
+<legend><%= t(:message_7, :scope => [:view, :exams, :_detail_form]) %></legend>
+  <label for="exam_questions"><%=t(:message_8, :scope => [:view, :exams, :_detail_form])%></label>
   <%= text_area 'exam', 'questions'  %><br />
-  <label for="exam_result"><%=t(:message_9, :scope => [:txt, :view, :exams, :_detail_form, :rhtml])%></label>
-  <%= select 'exam', 'result', [[t(:message_10, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]), 1], [t(:message_11, :scope => [:txt, :view, :exams, :_detail_form, :rhtml]), 0]]%><br />
+  <label for="exam_result"><%=t(:message_9, :scope => [:view, :exams, :_detail_form])%></label>
+  <%= select 'exam', 'result', [[t(:message_10, :scope => [:view, :exams, :_detail_form]), 1], [t(:message_11, :scope => [:view, :exams, :_detail_form]), 0]]%><br />
 </fieldset>
 
 <br />
-<%= submit_tag(t(:message_3, :scope => [:txt, :view, :exams, :by_subject, :rhtml]), :id => 'submit-button', :class=>'button') %>
+<%= submit_tag(t(:message_3, :scope => [:view, :exams, :by_subject]), :id => 'submit-button', :class=>'button') %>
 <% end %>
 
 </div>

@@ -1,57 +1,57 @@
 <% index = @study_plan.index %>
-<h2 style='text-align: center'><%= t(:annual_attestation, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %> 2010</h2>
-<br/> 
-<br/> 
-<br/> 
-<br/> 
+<h2 style='text-align: center'><%= t(:annual_attestation, :scope => [:view, :study_plans, :annual_report]) %> 2010</h2>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<b><%= t(:university_name, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %> - <%= index.faculty.name %></b>
+<b><%= t(:university_name, :scope => [:view, :study_plans, :annual_report]) %> - <%= index.faculty.name %></b>
 <table class='information'>
   <tr>
-    <th><%= t(:department, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>:</th>
+    <th><%= t(:department, :scope => [:view, :study_plans, :annual_report]) %>:</th>
     <td><%= index.department.name %></td>
   </tr>
 
   <tr>
-    <th><%= t(:name, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>:</th>
+    <th><%= t(:name, :scope => [:view, :study_plans, :annual_report]) %>:</th>
     <td><%= index.student.display_name %></td>
   </tr>
 
   <tr>
-    <th><%= t(:enroll_date, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>:</th>
+    <th><%= t(:enroll_date, :scope => [:view, :study_plans, :annual_report]) %>:</th>
     <td><%= index.enrolled_on.strftime("%d. %m. %y") %></td>
   </tr>
 
   <tr>
-    <th><%= t(:specialization_name, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>:</th>
+    <th><%= t(:specialization_name, :scope => [:view, :study_plans, :annual_report]) %>:</th>
     <td><%= index.specialization.name %></td>
   </tr>
 
   <tr>
-    <th><%= t(:study_name, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>:</th>
+    <th><%= t(:study_name, :scope => [:view, :study_plans, :annual_report]) %>:</th>
     <td><%= index.study.name %></td>
   </tr>
 
   <tr>
-    <th><%= t(:tutor_name, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>:</th>
+    <th><%= t(:tutor_name, :scope => [:view, :study_plans, :annual_report]) %>:</th>
     <td><%= index.tutor.display_name %></td>
   </tr>
 
   <tr>
-    <th><%= t(:study_year, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>:</th>
+    <th><%= t(:study_year, :scope => [:view, :study_plans, :annual_report]) %>:</th>
     <td><%= index.year %></td>
   </tr>
 
 </table>
 
-<h2 style='text-align: center'><%= t(:first_exam_dsp, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></h2>
+<h2 style='text-align: center'><%= t(:first_exam_dsp, :scope => [:view, :study_plans, :annual_report]) %></h2>
 
 <table width='100%' class='information'>
   <tr>
     <td/>
-    <th style='text-align: center'><%= t(:completion_term, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %><br/><%= t(:by_plan, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></th>
-    <th style='text-align: center'><%= t(:date, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %><br/><%= t(:taking_exam, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></th>
-    <th style='text-align: center'><%= t(:result_of_exam, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></th>
+    <th style='text-align: center'><%= t(:completion_term, :scope => [:view, :study_plans, :annual_report]) %><br/><%= t(:by_plan, :scope => [:view, :study_plans, :annual_report]) %></th>
+    <th style='text-align: center'><%= t(:date, :scope => [:view, :study_plans, :annual_report]) %><br/><%= t(:taking_exam, :scope => [:view, :study_plans, :annual_report]) %></th>
+    <th style='text-align: center'><%= t(:result_of_exam, :scope => [:view, :study_plans, :annual_report]) %></th>
   </tr>
 
   <% @study_plan.plan_subjects.each do |plan_subject| -%>
@@ -63,30 +63,30 @@
     <% else %>
       <td/>
     <% end %>
-    <td style='text-align: center'><%= t(:passed, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></td>
+    <td style='text-align: center'><%= t(:passed, :scope => [:view, :study_plans, :annual_report]) %></td>
   </tr>
   <% end %>
 
 </table>
 
-<br/> 
+<br/>
 
-<p><%= t(:state_doctorate_exam, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>: <%= index.disert_theme.finishing_to %>. <%= t(:term, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></p>
+<p><%= t(:state_doctorate_exam, :scope => [:view, :study_plans, :annual_report]) %>: <%= index.disert_theme.finishing_to %>. <%= t(:term, :scope => [:view, :study_plans, :annual_report]) %></p>
 
-<p><%= t(:additional_info_attestation, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>:</p>
+<p><%= t(:additional_info_attestation, :scope => [:view, :study_plans, :annual_report]) %>:</p>
 <p><%= AttestationDetail.find_all_by_study_plan_id(@study_plan.id).map(&:detail).join('<br/>') %></p>
 
-<h2 style='page-break-before: always;text-align: center'><%= t(:second_disert_theme, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></h2>
-<p><%= t(:name_of_work, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>: <%= index.disert_theme.title %></p>
+<h2 style='page-break-before: always;text-align: center'><%= t(:second_disert_theme, :scope => [:view, :study_plans, :annual_report]) %></h2>
+<p><%= t(:name_of_work, :scope => [:view, :study_plans, :annual_report]) %>: <%= index.disert_theme.title %></p>
 
-<p><%= t(:state_of_work, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>:</p>
+<p><%= t(:state_of_work, :scope => [:view, :study_plans, :annual_report]) %>:</p>
 <p><%= @study_plan.attestation.tutor_or_leader_statement.try(:note) %></p>
 
-<h2 style='text-align: center'><%= t(:student_evaluation, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></h2>
+<h2 style='text-align: center'><%= t(:student_evaluation, :scope => [:view, :study_plans, :annual_report]) %></h2>
 
-<p><%= t(:approve_word, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>: <%= approve_word(@study_plan.attestation.tutor_or_leader_statement.try(:result)) %></p>
+<p><%= t(:approve_word, :scope => [:view, :study_plans, :annual_report]) %>: <%= approve_word(@study_plan.attestation.tutor_or_leader_statement.try(:result)) %></p>
 <br/>
-<p><%= t(:department_statement, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>: <%= approve_word(@study_plan.attestation.leader_statement.try(:result)) %></p>
+<p><%= t(:department_statement, :scope => [:view, :study_plans, :annual_report]) %>: <%= approve_word(@study_plan.attestation.leader_statement.try(:result)) %></p>
 <br/>
 <table width='80%'>
   <tr>
@@ -94,25 +94,25 @@
     <td width='50%'>...................</td>
   </tr>
   <tr>
-    <td><%= t(:tutor_signature, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></td>
-    <td><%= t(:leader_signature, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></td>
+    <td><%= t(:tutor_signature, :scope => [:view, :study_plans, :annual_report]) %></td>
+    <td><%= t(:leader_signature, :scope => [:view, :study_plans, :annual_report]) %></td>
   </tr>
 </table>
 
 <br/>
-<p><%= t(:executive_proposal, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>: </p>
+<p><%= t(:executive_proposal, :scope => [:view, :study_plans, :annual_report]) %>: </p>
 
 <br/>
-<p><%= t(:dean_statement, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>: <%= approve_word(@study_plan.attestation.dean_statement.try(:result)) %></p>
+<p><%= t(:dean_statement, :scope => [:view, :study_plans, :annual_report]) %>: <%= approve_word(@study_plan.attestation.dean_statement.try(:result)) %></p>
 <br/>
 <table width='80%'>
   <tr>
-    <td width='50%'><%= t(:at_prague_at, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>: <%= Time.now.strftime('%d. %m. %Y') %></td>
+    <td width='50%'><%= t(:at_prague_at, :scope => [:view, :study_plans, :annual_report]) %>: <%= Time.now.strftime('%d. %m. %Y') %></td>
     <td width='50%'>...................</td>
   </tr>
   <tr>
     <td></td>
-    <td><%= t(:dean_signature, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></td>
+    <td><%= t(:dean_signature, :scope => [:view, :study_plans, :annual_report]) %></td>
   </tr>
 </table>
 <p></p>

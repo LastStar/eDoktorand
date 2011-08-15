@@ -1,13 +1,13 @@
 <div>
-  <b><%= t(:message_0, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %> <%= @school_year %></b>
+  <b><%= t(:message_0, :scope => [:view, :scholarships, :claim]) %> <%= @school_year %></b>
 </div>
 <br />
 <p>
-<span><%= t(:message_1, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %></span> &nbsp;&nbsp;&nbsp;&nbsp;<%= @student.uic %><br /><br />
+<span><%= t(:message_1, :scope => [:view, :scholarships, :claim]) %></span> &nbsp;&nbsp;&nbsp;&nbsp;<%= @student.uic %><br /><br />
   <table>
     <tr>
       <td width="200px;">
-        <%= t(:message_2, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+        <%= t(:message_2, :scope => [:view, :scholarships, :claim]) %>
       </td>
       <td>
         <%= @student.firstname %>
@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <td width="200px;">
-        <%= t(:message_3, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+        <%= t(:message_3, :scope => [:view, :scholarships, :claim]) %>
       </td>
       <td>
         <%= @student.lastname %>
@@ -23,7 +23,7 @@
     </tr>
     <tr>
       <td width="200px;">
-        <%= t(:message_4, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+        <%= t(:message_4, :scope => [:view, :scholarships, :claim]) %>
       </td>
       <td>
         <%= @student.birthname %>
@@ -34,7 +34,7 @@
   <table>
     <tr>
       <td width="200px;">
-        <%= t(:message_5, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+        <%= t(:message_5, :scope => [:view, :scholarships, :claim]) %>
       </td>
       <td>
         <%= @student.citizenship %>
@@ -42,7 +42,7 @@
     </tr>
     <tr>
       <td width="200px;">
-        <%= t(:message_6, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+        <%= t(:message_6, :scope => [:view, :scholarships, :claim]) %>
       </td>
       <td>
         <% if @student.birth_on %>
@@ -53,18 +53,18 @@
   </table>
   <br /><br />
   <% if @student.street %>
-    <%= t(:message_7, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+    <%= t(:message_7, :scope => [:view, :scholarships, :claim]) %>
     <br /><br />
     <table>
       <tr>
         <td width="100px;">
-          <%= t(:message_8, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+          <%= t(:message_8, :scope => [:view, :scholarships, :claim]) %>
         </td>
         <td width="200px;">
           <%= @student.street %>
         </td>
         <td>
-          <%= t(:message_9, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>&nbsp;&nbsp;
+          <%= t(:message_9, :scope => [:view, :scholarships, :claim]) %>&nbsp;&nbsp;
         </td>
         <td>
           <%= @student.desc_number %>
@@ -72,7 +72,7 @@
       </tr>
       <tr>
         <td width="100px;">
-          <%= t(:message_10, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+          <%= t(:message_10, :scope => [:view, :scholarships, :claim]) %>
         </td>
         <td width="100px;">
           <%= @student.city %>
@@ -80,7 +80,7 @@
       </tr>
       <tr>
         <td width="100px;">
-          <%= t(:message_11, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+          <%= t(:message_11, :scope => [:view, :scholarships, :claim]) %>
         </td>
         <td>
           <%= @student.zip %>
@@ -89,36 +89,36 @@
     </table>
   <% else %>
     <div>
-      <%= t(:message_12, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
-    </div>  
+      <%= t(:message_12, :scope => [:view, :scholarships, :claim]) %>
+    </div>
   <% end %>
   <br /><br />
-  <%= t(:message_13, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>
+  <%= t(:message_13, :scope => [:view, :scholarships, :claim]) %>
   <br /><br />
   <table width="80%">
     <tr>
       <td width="50%">
         <div>
-          <span style="font-size: 16px; font-weight: bold;"><%= t(:message_14, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %></span>
+          <span style="font-size: 16px; font-weight: bold;"><%= t(:message_14, :scope => [:view, :scholarships, :claim]) %></span>
         </div>
         <div>
-          <%= t(:message_15, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>:
+          <%= t(:message_15, :scope => [:view, :scholarships, :claim]) %>:
         </div>
         <br /><br />
         <div>
-          <%= t(:message_16, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>:
+          <%= t(:message_16, :scope => [:view, :scholarships, :claim]) %>:
         </div>
       </td>
       <td width="50%">
         <div>
-          <span style="font-size: 16px; font-weight: bold;"><%= t(:message_17, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %></span>
+          <span style="font-size: 16px; font-weight: bold;"><%= t(:message_17, :scope => [:view, :scholarships, :claim]) %></span>
         </div>
         <div>
-          <%= t(:message_18, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>:
+          <%= t(:message_18, :scope => [:view, :scholarships, :claim]) %>:
         </div>
         <br /><br />
         <div>
-          <%= t(:message_19, :scope => [:txt, :view, :scholarships, :claim, :rhtml]) %>:
+          <%= t(:message_19, :scope => [:view, :scholarships, :claim]) %>:
         </div>
       </td>
     </tr>

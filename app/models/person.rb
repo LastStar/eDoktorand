@@ -2,8 +2,8 @@ require 'genderize'
 
 class Person < ActiveRecord::Base
   include Genderize
-  
-  belongs_to :title_before, :class_name => 'Title', :foreign_key => 
+
+  belongs_to :title_before, :class_name => 'Title', :foreign_key =>
     'title_before_id'
   belongs_to :title_after, :class_name => 'Title', :foreign_key =>
     'title_after_id'
@@ -14,7 +14,7 @@ class Person < ActiveRecord::Base
 
   # displays person type localized
   def display_type
-    I18n::t(:message_0, :scope => [:txt, :model, self.class.to_s.underscore])
+    I18n::t(:message_0, :scope => [:model, self.class.to_s.underscore])
   end
 
   # returns display name for person

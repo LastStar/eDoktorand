@@ -1,10 +1,10 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :diploma_supplements, :edit, :rhtml]) %></h5>
+<h5><%= t(:message_0, :scope => [:view, :diploma_supplements, :edit]) %></h5>
 
 <% form_tag :action => 'update', :id => @diploma_supplement do %>
   <%= render :partial => 'form' %>
-  <%= submit_tag t(:message_1, :scope => [:txt, :view, :diploma_supplements, :edit, :rhtml]) %>
+  <%= submit_tag t(:message_1, :scope => [:view, :diploma_supplements, :edit]) %>
 <% end %>
 <div class="links">
-<%= link_to t(:message_2, :scope => [:txt, :view, :diploma_supplements, :edit, :rhtml]), :controller => :documents, :action => 'diploma_supplement', :id => @diploma_supplement %>
-<%= link_to t(:message_3, :scope => [:txt, :view, :diploma_supplements, :edit, :rhtml]), :action => 'index' %>
+<%= link_to t(:message_2, :scope => [:view, :diploma_supplements, :edit]), :controller => :documents, :action => 'diploma_supplement', :id => @diploma_supplement %>
+<%= link_to t(:message_3, :scope => [:view, :diploma_supplements, :edit]), :action => 'index' %>
 </div>

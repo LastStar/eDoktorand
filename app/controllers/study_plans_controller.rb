@@ -18,15 +18,15 @@ class StudyPlansController < ApplicationController
     begin
       @card_request = Hash.from_xml(client.get_content(CARD_SERVICE % @student.uic))['getCardStateByUICResponse']['cardState']['NAZEV']
     rescue
-      @card_request = t(:message_10, :scope => [:txt, :controller, :plans])
+      @card_request = t(:message_10, :scope => [:controller, :plans])
     end
   end
 
   # shows student basic information
   def index
-    @title = t(:message_0, :scope => [:txt, :controller, :plans])
+    @title = t(:message_0, :scope => [:controller, :plans])
     @index = @student.index
-    @voluntary_subjects = @index.specialization.voluntary_subjects 
+    @voluntary_subjects = @index.specialization.voluntary_subjects
   end
 
   # shows student detail
@@ -37,7 +37,7 @@ class StudyPlansController < ApplicationController
   # starts the study plan creating process
   def create
     prepare_plan_session
-    @title = t(:message_1, :scope => [:txt, :controller, :plans])
+    @title = t(:message_1, :scope => [:controller, :plans])
     if ObligateSubject.has_for_specialization?(@student.specialization)
       @type = 'obligate'
     elsif SeminarSubject.has_for_specialization?(@student.specialization)
@@ -60,11 +60,11 @@ class StudyPlansController < ApplicationController
     session[:return_to] = 'obligate'
   end
 
-  # saves seminar subjects to session 
+  # saves seminar subjects to session
   # and creates voluntary subjects
   def save_seminar
     if extract_seminar
-      flash[:error] = t(:message_2, :scope => [:txt, :controller, :plans])
+      flash[:error] = t(:message_2, :scope => [:controller, :plans])
       render(:partial => 'not_valid_seminar')
     else
       @created_subjects = session[:seminar_subjects]
@@ -81,7 +81,7 @@ class StudyPlansController < ApplicationController
       flash[:errors] = @errors.uniq
       render(:partial => 'not_valid_voluntarys')
     elsif params[:return] == '1'
-      render(:partial => "not_valid_%s" % session[:return_to]) 
+      render(:partial => "not_valid_%s" % session[:return_to])
     end
   end
 
@@ -90,7 +90,7 @@ class StudyPlansController < ApplicationController
     if extract_language
       render(:partial => 'not_valid_voluntarys') if params[:return] == '1'
     else
-      render(:partial => 'not_valid_languages')  
+      render(:partial => 'not_valid_languages')
     end
   end
 
@@ -100,20 +100,20 @@ class StudyPlansController < ApplicationController
     session[:study_plan].index = @student.index
     session[:disert_theme].attributes = params[:disert_theme]
     if !session[:disert_theme].valid?
-      render(:partial => 'not_valid_disert') 
+      render(:partial => 'not_valid_disert')
     elsif params[:return] == '1'
       render(:partial => 'not_valid_languages')
     end
   end
 
-  # confirms study plan 
+  # confirms study plan
   def confirm
     @study_plan = session[:study_plan]
     @study_plan.admited_on = Time.now
     @study_plan.plan_subjects = concat_plan_subjects
     @study_plan.index_id = @student.index.id
     disert_theme = session[:disert_theme]
-    disert_theme.index = @study_plan.index 
+    disert_theme.index = @study_plan.index
     disert_theme.save
     Notifications::deliver_study_plan_create(@study_plan)
     @study_plan.save
@@ -121,10 +121,10 @@ class StudyPlansController < ApplicationController
     redirect_to :action => 'index'
   end
 
-  # create study plan like no-student 
-  def create_by_other 
+  # create study plan like no-student
+  def create_by_other
     @student = Student.find(params[:id])
-    @title = t(:message_3, :scope => [:txt, :controller, :plans])
+    @title = t(:message_3, :scope => [:controller, :plans])
     @requisite_subjects = PlanSubject.create_for(@student, :requisite)
     @subjects = SpecializationSubject.for_select(:specialization => @student.index.specialization)
     @study_plan = @student.index.prepare_study_plan
@@ -138,7 +138,7 @@ class StudyPlansController < ApplicationController
 
   # renders change page for study plan
   def change
-    @title = t(:message_4, :scope => [:txt, :controller, :plans])
+    @title = t(:message_4, :scope => [:controller, :plans])
     @student ||= Student.find(params[:id])
     specialization = @student.index.specialization
     @subjects = SpecializationSubject.for_select(:specialization => specialization)
@@ -174,18 +174,18 @@ class StudyPlansController < ApplicationController
     else
       @student = Student.find(params[:student][:id])
       if @student.study_plan && @student.study_plan.attestation
-        @attestation = @student.study_plan.attestation 
+        @attestation = @student.study_plan.attestation
         @approval = @student.study_plan.approval
       end
       unless session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size <= session[:voluntary_subjects].size
-        @errors << t(:message_5, :scope => [:txt, :controller, :plans])     
+        @errors << t(:message_5, :scope => [:controller, :plans])
       end
       @study_plan = StudyPlan.new(params[:study_plan])
       @study_plan.plan_subjects = reindex_plan_subjects(session[:voluntary_subjects])
       if session[:finished_subjects]
         session[:finished_subjects].each do |sub|
-          @study_plan.plan_subjects << sub.clone 
-        end 
+          @study_plan.plan_subjects << sub.clone
+        end
       end
       if (params[:url][:action] == "change") && @approval
         new_approval = @approval.clone
@@ -229,7 +229,7 @@ class StudyPlansController < ApplicationController
     end
   end
 
-  # attests study plan 
+  # attests study plan
   def attest
     @study_plan = StudyPlan.find(params[:id])
   end
@@ -239,10 +239,10 @@ class StudyPlansController < ApplicationController
     @document = StudyPlan.find(params[:id])
     @document.attest_with(params[:statement])
     if good_browser?
-      render(:partial => 'shared/confirm_approve', 
+      render(:partial => 'shared/confirm_approve',
             :locals => {:replace => 'attestation',
                         :approval => @document.attestation,
-                        :title => I18n::t(:message_12, :scope => [:txt, :view, :shared, :_study_detail, :rhtml])})
+                        :title => I18n::t(:message_12, :scope => [:view, :shared, :_study_detail, :rhtml])})
     else
       render(:partial => 'students/redraw_list')
     end
@@ -254,7 +254,7 @@ class StudyPlansController < ApplicationController
     @attestation_detail = @study_plan.next_attestation_detail_or_new
   end
 
-  # saves attestation detail 
+  # saves attestation detail
   def save_attestation_detail
     if params[:attestation_detail][:id] == ''
       @attestation_detail = \
@@ -341,7 +341,7 @@ class StudyPlansController < ApplicationController
   def last_semester(semester)
     session[:last_semester] ||= 0
     if session[:last_semester] < semester.to_i
-      session[:last_semester] = semester.to_i   
+      session[:last_semester] = semester.to_i
     end
   end
 
@@ -360,14 +360,14 @@ class StudyPlansController < ApplicationController
     session[:voluntary_subjects] = []
     params[:plan_subject].each do |id, ps|
       next if ps['subject_id'] == '-1'
-      if ps['subject_id'] == '0' 
+      if ps['subject_id'] == '0'
         external += 1
         subject = ExternalSubject.new(:label => ps['label'],
                                       :label_en => ps['label_en'])
         esd = subject.build_external_subject_detail(params[:external_subject_detail][id])
         subject.external_subject_detail = esd
         if !subject.valid? || !subject.external_subject_detail.valid?
-          @errors << t(:message_6, :scope => [:txt, :controller, :plans])
+          @errors << t(:message_6, :scope => [:controller, :plans])
         else
           subject.save
           esd.save
@@ -381,10 +381,10 @@ class StudyPlansController < ApplicationController
       plan_subject.id = id
       session[:voluntary_subjects] << plan_subject
     end
-    uniq = session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size 
+    uniq = session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size
     external = external == 0 ? 0 : external - 1
-    if uniq < session[:voluntary_subjects].size - external 
-      @errors << t(:message_7, :scope => [:txt, :controller, :plans])
+    if uniq < session[:voluntary_subjects].size - external
+      @errors << t(:message_7, :scope => [:controller, :plans])
     else
       session[:voluntary_subjects].each {|ps| last_semester(ps.finishing_on)}
     end
@@ -400,7 +400,7 @@ class StudyPlansController < ApplicationController
     end
     n = @student.faculty == Faculty.find(14) ? 1 : 2
     if session[:language_subjects].map {|ps| ps.subject_id}.uniq.size != n
-      flash.now[:error] = t(:message_8, :scope => [:txt, :controller, :plans])
+      flash.now[:error] = t(:message_8, :scope => [:controller, :plans])
       false
     else
       true
@@ -416,7 +416,7 @@ class StudyPlansController < ApplicationController
       session[:seminar_subjects] << plan_subject
     end
     if session[:seminar_subjects].map {|ps| ps.subject_id}.uniq.size != 2
-      flash.now[:error] = t(:message_9, :scope => [:txt, :controller, :plans])
+      flash.now[:error] = t(:message_9, :scope => [:controller, :plans])
     end
   end
 
@@ -425,13 +425,13 @@ class StudyPlansController < ApplicationController
     plan_subjects.concat(session[:voluntary_subjects])
     plan_subjects.concat(session[:language_subjects])
     if session[:requisite_subjects]
-      plan_subjects.concat(session[:requisite_subjects]) 
+      plan_subjects.concat(session[:requisite_subjects])
     end
     if session[:seminar_subjects]
-      plan_subjects.concat(session[:seminar_subjects]) 
+      plan_subjects.concat(session[:seminar_subjects])
     end
     if session[:obligate_subjects]
-      plan_subjects.concat(session[:obligate_subjects]) 
+      plan_subjects.concat(session[:obligate_subjects])
     end
     if reindex
       reindex_plan_subjects(plan_subjects)

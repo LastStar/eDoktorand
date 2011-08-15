@@ -11,11 +11,11 @@ class ProbationTermsController < ApplicationController
     list
     render :action => 'list'
   end
-  
+
   def list
     @probation_terms = ProbationTerm.find_for(@user, params[:period] || :future)
   end
-  
+
   # enrolls student for a probation term
   def enroll
     if (@user.person.is_a?(Student))
@@ -23,12 +23,12 @@ class ProbationTermsController < ApplicationController
       if term.students.size < term.max_students
         @user.person.probation_terms << term
       else
-        flash[:errors] = t(:message_0, :scope => [:txt, :controller, :probation_terms])
-      end      
+        flash[:errors] = t(:message_0, :scope => [:controller, :probation_terms])
+      end
     end
     redirect_to :action => 'index'
   end
-  
+
   def show
     @probation_term = ProbationTerm.find(params[:id])
   end
@@ -39,12 +39,12 @@ class ProbationTermsController < ApplicationController
   end
 
   #TODO render only message when students empty
-  #TODO change name to students 
+  #TODO change name to students
   def detail
     @probation_term = ProbationTerm.find(params[:id])
     @students = Student.find_to_enroll(@probation_term, :sort)
   end
- 
+
   # enroll student for probation term
   def enroll_student
     @probation_term = ProbationTerm.find(params[:probation_term][:id])
@@ -54,7 +54,7 @@ class ProbationTermsController < ApplicationController
     @students = Student.find_to_enroll(@probation_term, :sort)
     render(:action => "detail")
   end
-  
+
   # sign off the desired student
   def sign_off_student
     @probation_term = ProbationTerm.find(params[:id])
@@ -67,26 +67,26 @@ class ProbationTermsController < ApplicationController
       render(:action => "detail")
     end
   end
-  
-  # created exam object and subjects for select 
+
+  # created exam object and subjects for select
   def create
     @probation_term = ProbationTerm.new
     @subjects = Subject.find_for(@user, :not_finished)
   end
 
-  # saves probation term 
+  # saves probation term
   def save
     params[:probation_term][:created_by] = @user.person.id
     @probation_term = ProbationTerm.create(params[:probation_term])
     if @probation_term.save
-      flash[:notice] = t(:message_0, :scope => [:txt, :controller, :terms])
+      flash[:notice] = t(:message_0, :scope => [:controller, :terms])
       redirect_to :action => 'index'
     else
       @subjects = Subject.find_for(@user, :not_finished)
       render :action => 'create'
     end
   end
-  
+
   def edit
     @probation_term = ProbationTerm.find(params[:id])
     @subjects = Subject.find_for(@user, :not_finished)
@@ -95,7 +95,7 @@ class ProbationTermsController < ApplicationController
   def update
     @probation_term = ProbationTerm.find(params[:probation_term][:id])
     if @probation_term.update_attributes(params[:probation_term])
-      flash[:notice] = t(:message_1, :scope => [:txt, :controller, :terms])
+      flash[:notice] = t(:message_1, :scope => [:controller, :terms])
       redirect_to :action => 'index'
     else
       @subjects = Subject.find_for(@user, :not_finished)
@@ -107,7 +107,7 @@ class ProbationTermsController < ApplicationController
     ProbationTerm.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
-  
+
   # enroll exam for student from probation term
   def enroll_exam
     @probation_term = ProbationTerm.find(params[:id])
@@ -119,8 +119,8 @@ class ProbationTermsController < ApplicationController
     @students = PlanSubject.find_unfinished_by_subject(\
       session[:exam].subject_id, :students => true)
   end
-  
-  # saves exam 
+
+  # saves exam
   def save_exam
     exam = session[:exam]
     exam.attributes = params[:exam]
@@ -133,6 +133,6 @@ class ProbationTermsController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = t(:message_2, :scope => [:txt, :controller, :terms])
+    @title = t(:message_2, :scope => [:controller, :terms])
   end
 end

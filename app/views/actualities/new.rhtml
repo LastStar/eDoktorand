@@ -1,12 +1,12 @@
 <div class="links">
-  <%= link_to(t(:message_2, :scope => [:txt, :view, :actualities, :new, :rhtml]), :action => 'list')%>
+  <%= link_to(t(:message_2, :scope => [:view, :actualities, :new]), :action => 'list')%>
 </div>
-<h1><%= t(:message_0, :scope => [:txt, :view, :actualities, :new, :rhtml]) %></h1>
+<h1><%= t(:message_0, :scope => [:view, :actualities, :new]) %></h1>
 
 <% form_tag :action => 'create' do %>
   <%= render :partial => 'form' %>
-  <%= submit_tag(t(:message_1, :scope => [:txt, :view, :actualities, :new, :rhtml]) ,:class => "button")%>
+  <%= submit_tag(t(:message_1, :scope => [:view, :actualities, :new]) ,:class => "button")%>
   <div class="links">
-    <%= link_to(t(:message_2, :scope => [:txt, :view, :actualities, :new, :rhtml]), :action => 'list')%>
+    <%= link_to(t(:message_2, :scope => [:view, :actualities, :new]), :action => 'list')%>
   </div>
 <% end %>

@@ -3,29 +3,29 @@
   <%= hidden_field('student', 'id') %>
   <%= hidden_field('url','action',:value => params[:action]) %>
 <%= hidden_field('study_plan', 'last_attested_on') %>
-<legend><%= t(:message_0, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></legend>
+<legend><%= t(:message_0, :scope => [:view, :study_plans, :_full_form]) %></legend>
 <ul>
   <%= render(:partial => 'general',
             :collection => @plan_subjects,
             :locals => {:subjects => subjects}) %>
   <li id='subject_button' class='subject_select'>
-  <input type="button" value="<%=t(:message_1, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml])%>" class='button' onclick="javascript:Element.show('new_subject');Element.hide('subject_button');" >
+  <input type="button" value="<%=t(:message_1, :scope => [:view, :study_plans, :_full_form])%>" class='button' onclick="javascript:Element.show('new_subject');Element.hide('subject_button');" >
   </li>
   <li class='subject_select' id='new_subject' style='display: none'>
     <%= empty_subject_select(subjects) %>
-    <%= "." + t(:message_2, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>
+    <%= "." + t(:message_2, :scope => [:view, :study_plans, :_full_form]) %>
   <br/>
   <div id="externalnew" style='display: none' >
-    <label><%= t(:message_3, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
+    <label><%= t(:message_3, :scope => [:view, :study_plans, :_full_form]) %></label>
     <%= input_external_empty("label") %>
     <br/>
-    <label><%= t(:message_4, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
+    <label><%= t(:message_4, :scope => [:view, :study_plans, :_full_form]) %></label>
     <%= input_external_empty("label_en") %>
     <br/>
-    <label><%= t(:message_5, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
+    <label><%= t(:message_5, :scope => [:view, :study_plans, :_full_form]) %></label>
     <%= input_external_empty_detail("university") %>
     <br/>
-    <label><%= t(:message_6, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
+    <label><%= t(:message_6, :scope => [:view, :study_plans, :_full_form]) %></label>
     <%= input_external_empty_detail("person") %>
   </div>
   </li>
@@ -34,21 +34,21 @@
 <fieldset>
 <ul class='nodecor'>
 <li>
-<label for="study_plan_finishing_to"><%= t(:message_7, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>:</label>
+<label for="study_plan_finishing_to"><%= t(:message_7, :scope => [:view, :study_plans, :_full_form]) %>:</label>
 <%= select 'study_plan', 'finishing_to', 1..8 %>
-<%= ". " + t(:message_8, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>
+<%= ". " + t(:message_8, :scope => [:view, :study_plans, :_full_form]) %>
 </li>
 <% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
     <% FACULTY_CFG[@student.faculty.id]['final_areas_count'].times do |index| %>
       <% i = index + 1 %>
 <li>
-  <label><%= "#{i}. " + t(:message_9, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
+  <label><%= "#{i}. " + t(:message_9, :scope => [:view, :study_plans, :_full_form]) %></label>
   <input type='text' id="study_plan_final_areas_<%= i %>"
   name="study_plan[final_areas][cz][<%= i %>]" size="30"
   value="<%= @study_plan.final_areas['cz'][i.to_s] %>"/>
 </li>
 <li>
-  <label><%= "#{i}. " + t(:message_10, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %> (en) </label>
+  <label><%= "#{i}. " + t(:message_10, :scope => [:view, :study_plans, :_full_form]) %> (en) </label>
   <input type='text' id="study_plan_final_areas_en_<%= i %>"
   name="study_plan[final_areas][en][<%= i %>]" size="30"
   value="<%= @study_plan.final_areas['en'][i.to_s] %>"/>
@@ -61,30 +61,30 @@
 <%= hidden_field 'disert_theme', 'index_id' %>
 <ul class='nodecor'>
 <li>
-<label for="disert_theme_title"><%= t(:title, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>:</label>
+<label for="disert_theme_title"><%= t(:title, :scope => [:view, :study_plans, :_full_form]) %>:</label>
 <%= text_field 'disert_theme', 'title', 'size' => 65 %><br/>
 </li>
 <li>
-<label for="disert_theme_title_en"><%= t(:title_en, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>:</label>
+<label for="disert_theme_title_en"><%= t(:title_en, :scope => [:view, :study_plans, :_full_form]) %>:</label>
 <%= text_field 'disert_theme', 'title_en', 'size' => 65 %><br/>
 </li>
 <li>
-<label for="candidate_study_id"><%= t(:message_13, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %></label>
+<label for="candidate_study_id"><%= t(:message_13, :scope => [:view, :study_plans, :_full_form]) %></label>
 <%= select 'disert_theme', 'finishing_to', 1..8 %>
 </li>
 <% if @disert_theme.has_methodology?%>
 <li>
-  <label for="methodology_added_on"> <%=t(:message_14, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml])%></label> <%=text_field 'disert_theme', 'methodology_added_on', 'size' => 65, 'readonly' => 'readonly' %>
+  <label for="methodology_added_on"> <%=t(:message_14, :scope => [:view, :study_plans, :_full_form])%></label> <%=text_field 'disert_theme', 'methodology_added_on', 'size' => 65, 'readonly' => 'readonly' %>
 </li>
 <% end %>
 <li>
-<label for="disert_theme_methodology_summary"><%= t(:message_15, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]) %>:</label>
+<label for="disert_theme_methodology_summary"><%= t(:message_15, :scope => [:view, :study_plans, :_full_form]) %>:</label>
 <textarea name='disert_theme[methodology_summary]'
   id='disert_theme_methodology_summary' cols='55' rows='35'><%= @disert_theme.methodology_summary %></textarea>
 </li>
 </ul>
 </fieldset>
 <br/>
-<%= submit_tag( t(:message_16, :scope => [:txt, :view, :study_plans, :_full_form, :rhtml]), :class => 'button') %>
+<%= submit_tag( t(:message_16, :scope => [:view, :study_plans, :_full_form]), :class => 'button') %>
 <% end %>
 

@@ -2,19 +2,19 @@
 <div id='done'></div>
 <div id='form'>
 <% end %>
-<h1> <%= t(:message_0, :scope => [:txt, :view, :exams, :by_subject, :rhtml])%></h1>
-<% subject_form do -%>	
+<h1> <%= t(:message_0, :scope => [:view, :exams, :by_subject])%></h1>
+<% subject_form do -%>
 <fieldset>
-<legend><%= t(:message_1, :scope => [:txt, :view, :exams, :by_subject, :rhtml]) %></legend>
+<legend><%= t(:message_1, :scope => [:view, :exams, :by_subject]) %></legend>
 <label>
-<%= t(:message_2, :scope => [:txt, :view, :exams, :by_subject, :rhtml]) %>
+<%= t(:message_2, :scope => [:view, :exams, :by_subject]) %>
 </label>
 <select id="subject_id", name="subject[id]">
   <%= label_options(@subjects, :select_label) %>
 </select>
 </fieldset>
 <br/>
-<%= submit_tag(t(:message_3, :scope => [:txt, :view, :exams, :by_subject, :rhtml]), :id => 'submit-button', :class => 'button') %>
+<%= submit_tag(t(:message_3, :scope => [:view, :exams, :by_subject]), :id => 'submit-button', :class => 'button') %>
 <% end %>
 <% if params[:action] == 'create' %>
 </div>

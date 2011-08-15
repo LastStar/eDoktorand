@@ -5,10 +5,10 @@
       <%= remove_link(scholarship) %>
       <%= change_link(scholarship) %>
     <% end %>
-    <%= scholarship.commission_head %> / 
-    <%= scholarship.commission_body %> / 
+    <%= scholarship.commission_head %> /
+    <%= scholarship.commission_body %> /
     <%= scholarship.commission_tail %> &nbsp;
-    <%= scholarship.amount %> <%= t(:message_0, :scope => [:txt, :view, :scholarships, :detail, :rhtml]) %>
+    <%= scholarship.amount %> <%= t(:message_0, :scope => [:view, :scholarships, :detail]) %>
   </li>
 <% end %>
 <li>

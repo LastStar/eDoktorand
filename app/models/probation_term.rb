@@ -1,5 +1,5 @@
 class ProbationTerm < ActiveRecord::Base
-  
+
   belongs_to :subject
   belongs_to :creator, :class_name => "Person", :foreign_key => "created_by"
   belongs_to :first_examinator, :class_name => "Person", :foreign_key => "first_examinator_id"
@@ -9,19 +9,19 @@ class ProbationTerm < ActiveRecord::Base
   validates_presence_of :subject
   validates_presence_of :creator
   validates_presence_of :room
-  validates_format_of :start_time, :with => /^[0-9]{1,2}[:][0-9]{1,2}$/, :on => :create, :message => I18n::t(:wrong_time_format, :scope => [:txt, :model, :term])
-  validates_inclusion_of :max_students, :in => 1..500, :message => I18n::t(:room_must_be_filled, :scope => [:txt, :model, :term])
-  
+  validates_format_of :start_time, :with => /^[0-9]{1,2}[:][0-9]{1,2}$/, :on => :create, :message => I18n::t(:wrong_time_format, :scope => [:model, :term])
+  validates_inclusion_of :max_students, :in => 1..500, :message => I18n::t(:room_must_be_filled, :scope => [:model, :term])
+
   def validate
 
     if !(buffer = start_time).empty? && buffer =~ /[0-9]{1,2}:[0-9]{1,2}/
       hours = (buffer.at(0) + buffer.at(1)).to_i
       minutes = (buffer.at(3) + buffer.at(4)).to_i
       if hours > 23 || minutes > 59
-        errors.add(:start_time, t(:wrong_time_format, :scope => [:txt, :model, :term]))
+        errors.add(:start_time, t(:wrong_time_format, :scope => [:model, :term]))
       end
     else
-      errors.add(:start_time, I18n.t(:wrong_time_format, :scope => [:txt, :model, :term]))
+      errors.add(:start_time, I18n.t(:wrong_time_format, :scope => [:model, :term]))
     end
   end
 
@@ -41,7 +41,7 @@ class ProbationTerm < ActiveRecord::Base
   def self.find_by(subjects, option = nil)
     s_ids = subjects.map &:id
     options = {:conditions => ["subject_id in (?)", s_ids]}
-    if option 
+    if option
       if option == :history
         options[:conditions].first << ' and date <= ?'
         options[:limit] = 30

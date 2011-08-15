@@ -1,15 +1,15 @@
 <div class="links">
-  <%= link_to(t(:message_2, :scope => [:txt, :view, :actualities, :edit, :rhtml]), :action => 'show', :id => @actuality) %> |
-  <%= link_to(t(:message_3, :scope => [:txt, :view, :actualities, :edit, :rhtml]), :action => 'list') %>
+  <%= link_to(t(:message_2, :scope => [:view, :actualities, :edit]), :action => 'show', :id => @actuality) %> |
+  <%= link_to(t(:message_3, :scope => [:view, :actualities, :edit]), :action => 'list') %>
 </div>
-<h1><%= t(:message_0, :scope => [:txt, :view, :actualities, :edit, :rhtml]) %></h1>
+<h1><%= t(:message_0, :scope => [:view, :actualities, :edit]) %></h1>
 
 <% form_tag :action => 'update', :id => @actuality do -%>
   <%= render :partial => 'form' %>
-  <%= submit_tag(t(:message_1, :scope => [:txt, :view, :actualities, :edit, :rhtml]), :class => "button") %>
+  <%= submit_tag(t(:message_1, :scope => [:view, :actualities, :edit]), :class => "button") %>
   <div class="links">
-    <%= link_to(t(:message_2, :scope => [:txt, :view, :actualities, :edit, :rhtml]), :action => 'show', :id => @actuality) %> |
-    <%= link_to(t(:message_3, :scope => [:txt, :view, :actualities, :edit, :rhtml]), :action => 'list') %>
+    <%= link_to(t(:message_2, :scope => [:view, :actualities, :edit]), :action => 'show', :id => @actuality) %> |
+    <%= link_to(t(:message_3, :scope => [:view, :actualities, :edit]), :action => 'list') %>
   </div>
 <% end %>
 

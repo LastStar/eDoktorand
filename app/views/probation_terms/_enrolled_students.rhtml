@@ -7,7 +7,7 @@
       <td>
         <% exam = Exam.find_by_subject_id_and_index_id_and_result(probation_term.subject.id, student.index.id, 1) %>
         <% if exam %>
-          <%= [t(:message_0, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml]), t(:message_1, :scope => [:txt, :view, :probation_terms, :_enrolled_students, :rhtml])][exam.result] %>&nbsp;
+          <%= [t(:message_0, :scope => [:view, :probation_terms, :_enrolled_students]), t(:message_1, :scope => [:view, :probation_terms, :_enrolled_students])][exam.result] %>&nbsp;
           <%= exam.created_on.strftime("%d. %m. %Y") %>
         <% else %>
           <%= enroll_link(probation_term, student) %>

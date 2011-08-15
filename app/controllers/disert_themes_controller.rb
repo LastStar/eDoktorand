@@ -2,14 +2,14 @@ class DisertThemesController < ApplicationController
 include LoginSystem
   layout 'employers', :except => [:add_en, :save_en, :edit_title, :update_title]
   before_filter :login_required, :prepare_student, :prepare_user
-  
+
   # edit cz title
   def edit_title
     @disert_theme = DisertTheme.find(params[:id])
   end
 
   # update title cz
-  def update_title 
+  def update_title
     @disert_theme = DisertTheme.find(params[:disert_theme])
     @disert_theme.update_attribute(:title, params[:title])
   end
@@ -18,30 +18,30 @@ include LoginSystem
   def methodology
     disert_theme = DisertTheme.find(params[:id])
   end
-  
+
   # upload methodology form
   def upload_methodology
-    @title = t(:message_0, :scope => [:txt, :controller, :themes]) 
+    @title = t(:message_0, :scope => [:controller, :themes])
     @disert_theme = DisertTheme.find(params[:id])
   end
-  
+
   # saves methogology file
   def save_methodology
     @disert_theme = DisertTheme.find(params[:disert_theme][:id])
     if (file = params[:disert_theme][:methodology_file]).is_a? Tempfile
-      DisertTheme.save_methodology(@disert_theme, file)   
+      DisertTheme.save_methodology(@disert_theme, file)
       if @user.has_one_of_roles?(['faculty_secretary','vicerector'])
         render :text => "<script>window.close()</script>"
       else
         render :text => "<script>window.close()</script>"
       end
     else
-      @title = t(:message_1, :scope => [:txt, :controller, :themes]) 
-      flash.now[:error] = t(:message_2, :scope => [:txt, :controller, :themes])
+      @title = t(:message_1, :scope => [:controller, :themes])
+      flash.now[:error] = t(:message_2, :scope => [:controller, :themes])
       render :action => :upload_methodology
     end
   end
-  
+
   #adding only disaer_themes en (fixing bug)
   def add_en
     @disert_theme = DisertTheme.find(params[:disert_theme])
@@ -52,5 +52,5 @@ include LoginSystem
     @disert_theme = DisertTheme.find(params[:disert_theme])
     @disert_theme.update_attribute(:title_en, params[:en_title])
   end
-  
+
 end

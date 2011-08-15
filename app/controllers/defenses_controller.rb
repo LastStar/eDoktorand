@@ -7,7 +7,7 @@ class DefensesController < ApplicationController
 
   # page for student defense claim
   def claim
-    @title = t(:message_0, :scope => [:txt, :controller, :defenses])
+    @title = t(:message_0, :scope => [:controller, :defenses])
   end
 
   # confirm defense claim and redirect to study plan
@@ -22,7 +22,7 @@ class DefensesController < ApplicationController
       index.claim_defense!
       redirect_to :controller => :study_plans, :action => :index
     else
-      flash[:error] = t(:message_1, :scope => [:txt, :controller, :defenses])
+      flash[:error] = t(:message_1, :scope => [:controller, :defenses])
       redirect_to :action => :claim
     end
   end
@@ -44,7 +44,7 @@ class DefensesController < ApplicationController
       @defense = Defense.new(params[:defense])
     end
     if @defense.save
-      flash['notice'] = t(:message_2, :scope => [:txt, :controller, :defenses])
+      flash['notice'] = t(:message_2, :scope => [:controller, :defenses])
       render(:action => :show)
     else
       render(:action => :new)
@@ -68,24 +68,24 @@ class DefensesController < ApplicationController
 
   # shows list of all defenses in system for user
   def list
-    @title = t(:message_3, :scope => [:txt, :controller, :defenses])
+    @title = t(:message_3, :scope => [:controller, :defenses])
     @defenses = Defense.find_for(@user, :not_passed => true)
   end
 
   # prints of announcement of defense
   def announcement
-    @title = t(:message_4, :scope => [:txt, :controller, :defenses])
+    @title = t(:message_4, :scope => [:controller, :defenses])
     @defense = Defense.find(params[:id])
   end
 
   # prints protocol for defense
   def protocol
-    @title = t(:message_5, :scope => [:txt, :controller, :defenses])
+    @title = t(:message_5, :scope => [:controller, :defenses])
     @defense = Defense.find(params[:id])
   end
 
   def pass
-    @title = t(:passing, :scope => [:txt, :controller, :defenses])
+    @title = t(:passing, :scope => [:controller, :defenses])
     @date = Date.today
     @defense = Index.find(params[:id]).defense
   end

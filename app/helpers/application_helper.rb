@@ -7,7 +7,7 @@ module ApplicationHelper
   end
 
   def admittance_themes_for(specialization)
-    [[t(:choose_theme, :scope => [:txt, :helper, :application]), 0]].concat(AdmittanceTheme.all(
+    [[t(:choose_theme, :scope => [:helper, :application]), 0]].concat(AdmittanceTheme.all(
       :conditions => {:specialization_id => specialization.id}).map do |at|
       [at.display_name, at.id]
     end)
@@ -18,8 +18,8 @@ module ApplicationHelper
     link_to_unless_current(image_tag('icons/door_in.png'),
                           {:controller => 'account',
                            :action => 'logout'},
-                           :confirm =>  t(:message_29, :scope => [:txt, :helper, :application]) +
-                           ' ' + t(:message_30, :scope => [:txt, :helper, :application]) + '?')
+                           :confirm =>  t(:message_29, :scope => [:helper, :application]) +
+                           ' ' + t(:message_30, :scope => [:helper, :application]) + '?')
   end
 
   # TODO remove from form controller
@@ -34,19 +34,19 @@ module ApplicationHelper
   end
 
   def sex_select(model, method)
-    select model, method, [[t(:message_0, :scope => [:txt, :helper, :application]), 'M'],[t(:message_1, :scope => [:txt, :helper, :application]), 'F']]
+    select model, method, [[t(:message_0, :scope => [:helper, :application]), 'M'],[t(:message_1, :scope => [:helper, :application]), 'F']]
   end
 
   # returns yes or no options
   def yes_no_options
-    [[t(:message_2, :scope => [:txt, :helper, :application]), 1], [t(:message_3, :scope => [:txt, :helper, :application]), 2]]
+    [[t(:message_2, :scope => [:helper, :application]), 1], [t(:message_3, :scope => [:helper, :application]), 2]]
   end
 
   # prints errors for object
   def errors_for(object)
     unless object.errors.empty?
       tbc = ""
-      tbc << "#{t(:message_4, :scope => [:txt, :helper, :application])}"
+      tbc << "#{t(:message_4, :scope => [:helper, :application])}"
       tbc << content_tag('ul',
       object.errors.to_a.map do |attr, message|
         content_tag('li', message)
@@ -103,7 +103,7 @@ module ApplicationHelper
   # returns approve word for statement result
   def approve_word(result)
     if result
-      [ t(:message_6, :scope => [:txt, :helper, :application]), t(:message_7, :scope => [:txt, :helper, :application]), t(:message_8, :scope => [:txt, :helper, :application]), t(:interrupt, :scope => [:txt, :helper, :application])][result]
+      [ t(:message_6, :scope => [:helper, :application]), t(:message_7, :scope => [:helper, :application]), t(:message_8, :scope => [:helper, :application]), t(:interrupt, :scope => [:helper, :application])][result]
     end
   end
 
@@ -124,9 +124,9 @@ module ApplicationHelper
   # prints statements approval
   def print_statements(approval)
     unless approval.nil?
-      print_statement(approval.tutor_statement, t(:message_9, :scope => [:txt, :helper, :application])) +
-      print_statement(approval.leader_statement, t(:message_10, :scope => [:txt, :helper, :application])) +
-      print_statement(approval.dean_statement, t(:message_11, :scope => [:txt, :helper, :application]) )
+      print_statement(approval.tutor_statement, t(:message_9, :scope => [:helper, :application])) +
+      print_statement(approval.leader_statement, t(:message_10, :scope => [:helper, :application])) +
+      print_statement(approval.dean_statement, t(:message_11, :scope => [:helper, :application]) )
     end
   end
 
@@ -137,7 +137,7 @@ module ApplicationHelper
       content << content_tag('div', plan_subject.finished_on.strftime('%d. %m. %Y'), :class => 'info')
       html_class = ''
     else
-      content << content_tag('div', "#{plan_subject.finishing_on}. #{t(:message_12, :scope => [:txt, :helper, :application])}", :class => 'info')
+      content << content_tag('div', "#{plan_subject.finishing_on}. #{t(:message_12, :scope => [:helper, :application])}", :class => 'info')
       html_class = 'red'
     end
     content << plan_subject.subject.label
@@ -158,7 +158,7 @@ module ApplicationHelper
   def birth_number_line(student)
     if @user.has_one_of_roles?(['faculty_secretary', 'student']) && student.birth_number
       content_tag('li',
-              long_info_helper(student.birth_number) + t(:message_13, :scope => [:txt, :helper, :application]) + ' :',
+              long_info_helper(student.birth_number) + t(:message_13, :scope => [:helper, :application]) + ' :',
                  :class => 'nonprintable')
     end
   end
@@ -167,7 +167,7 @@ module ApplicationHelper
   def birth_on_line(student)
     if @user.has_one_of_roles?(['faculty_secretary', 'student']) && student.birth_on
       content_tag('li',
-              long_info_helper(student.birth_on) + t(:message_14, :scope => [:txt, :helper, :application]) + ':',
+              long_info_helper(student.birth_on) + t(:message_14, :scope => [:helper, :application]) + ':',
                  :class => 'nonprintable')
     end
   end
@@ -179,37 +179,37 @@ module ApplicationHelper
       links << student_menu
     else
       if @user.has_role?('examinator')
-        links << link_to(t(:message_16, :scope => [:txt, :helper, :application]), :controller => 'exams')
+        links << link_to(t(:message_16, :scope => [:helper, :application]), :controller => 'exams')
       else
         if @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean', 'vicerector'])
-          links << link_to(t(:message_66, :scope => [:txt, :helper, :application]), :controller => 'actualities')
-          links << link_to(t(:message_17, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname')
-          links << link_to(t(:message_18, :scope => [:txt, :helper, :application]), :controller => 'exam_terms')
-          links << link_to(t(:message_19, :scope => [:txt, :helper, :application]), :controller => 'exams')
-          links << link_to(t(:message_68, :scope => [:txt, :helper, :application]), :controller => 'final_exam_terms', :action => 'list')
-          links << link_to(t(:message_70, :scope => [:txt, :helper, :application]), :controller => 'defenses', :action => 'list')
+          links << link_to(t(:message_66, :scope => [:helper, :application]), :controller => 'actualities')
+          links << link_to(t(:message_17, :scope => [:helper, :application]), :controller => 'candidates', :category => 'lastname')
+          links << link_to(t(:message_18, :scope => [:helper, :application]), :controller => 'exam_terms')
+          links << link_to(t(:message_19, :scope => [:helper, :application]), :controller => 'exams')
+          links << link_to(t(:message_68, :scope => [:helper, :application]), :controller => 'final_exam_terms', :action => 'list')
+          links << link_to(t(:message_70, :scope => [:helper, :application]), :controller => 'defenses', :action => 'list')
           links << prepare_scholarship_link
-          links << link_to(t(:message_67, :scope => [:txt, :helper, :application]), :controller => 'examinators')
-          links << link_to(t(:message_20, :scope => [:txt, :helper, :application]), :controller => 'diploma_supplements')
-          links << link_to(t(:message_21, :scope => [:txt, :helper, :application]), :controller => 'tutors')
-          links << link_to(t(:message_22, :scope => [:txt, :helper, :application]), :controller => 'specializations')
+          links << link_to(t(:message_67, :scope => [:helper, :application]), :controller => 'examinators')
+          links << link_to(t(:message_20, :scope => [:helper, :application]), :controller => 'diploma_supplements')
+          links << link_to(t(:message_21, :scope => [:helper, :application]), :controller => 'tutors')
+          links << link_to(t(:message_22, :scope => [:helper, :application]), :controller => 'specializations')
         elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary'])
           if @user.has_role?('board_chairman')
-            links << link_to(t(:message_23, :scope => [:txt, :helper, :application]), :controller => 'candidates', :category => 'lastname')
+            links << link_to(t(:message_23, :scope => [:helper, :application]), :controller => 'candidates', :category => 'lastname')
           end
           if @user.has_role?('department_secretary')
-            links << link_to(t(:message_24, :scope => [:txt, :helper, :application]), :controller => 'candidates', :action => 'list', :category => 'lastname')
+            links << link_to(t(:message_24, :scope => [:helper, :application]), :controller => 'candidates', :action => 'list', :category => 'lastname')
             links << prepare_scholarship_link
           end
-          links << link_to(t(:message_25, :scope => [:txt, :helper, :application]),
+          links << link_to(t(:message_25, :scope => [:helper, :application]),
                                           :controller => 'probation_terms')
-          links << link_to(t(:message_26, :scope => [:txt, :helper, :application]), :controller => 'exams')
+          links << link_to(t(:message_26, :scope => [:helper, :application]), :controller => 'exams')
         end
-        links << link_to(t(:message_27, :scope => [:txt, :helper, :application]),
+        links << link_to(t(:message_27, :scope => [:helper, :application]),
                                         :controller => 'students')
       end
     end
-    links << print_link(image_tag('printer.png', :alt => t(:message_36, :scope => [:txt, :helper, :application])))
+    links << print_link(image_tag('printer.png', :alt => t(:message_36, :scope => [:helper, :application])))
     links << logout_link
     links.join("\n")
   end
@@ -217,16 +217,16 @@ module ApplicationHelper
   def student_menu
     result = []
     if @student.index.study_plan && @student.index.study_plan.approved?
-      result << link_to(t(:message_31, :scope => [:txt, :helper, :application]),
+      result << link_to(t(:message_31, :scope => [:helper, :application]),
                                       :controller => 'probation_terms')
     end
-    result << link_to(t(:message_69, :scope => [:txt, :helper, :application]),
+    result << link_to(t(:message_69, :scope => [:helper, :application]),
                                      :controller => 'study_plans',
                                      :action => 'requests')
-    result << link_to(t(:message_32, :scope => [:txt, :helper, :application]),
+    result << link_to(t(:message_32, :scope => [:helper, :application]),
                                      :controller => 'study_plans',
                                      :action => 'index')
-    result << link_to(t(:message_33, :scope => [:txt, :helper, :application]),
+    result << link_to(t(:message_33, :scope => [:helper, :application]),
                                       :controller => 'scholarships',
                                       :action => 'student_list')
     result
@@ -236,7 +236,7 @@ module ApplicationHelper
   def birth_place_line(student)
     if student.birth_place
       content_tag('li',
-        long_info_helper(student.birth_place) + t(:message_34, :scope => [:txt, :helper, :application]) + ':')
+        long_info_helper(student.birth_place) + t(:message_34, :scope => [:helper, :application]) + ':')
     end
   end
 
@@ -246,7 +246,7 @@ module ApplicationHelper
       content_tag('li',
         %{
           #{long_info_helper(student.birth_on.strftime('%d.%m.%Y'))}
-          #{t(:message_35, :scope => [:txt, :helper, :application])}:
+          #{t(:message_35, :scope => [:helper, :application])}:
         })
     end
   end
@@ -274,7 +274,7 @@ module ApplicationHelper
   end
 
   # prints print link
-  def print_link(text = t(:message_36, :scope => [:txt, :helper, :application]))
+  def print_link(text = t(:message_36, :scope => [:helper, :application]))
     link_to_function(text, 'window.print()')
   end
 
@@ -288,7 +288,7 @@ module ApplicationHelper
     if statement
       result << approve_word(statement.result)
       unless statement.note.try(:empty?)
-        result << ", #{t(:message_37, :scope => [:txt, :helper, :application])}: #{statement.note}"
+        result << ", #{t(:message_37, :scope => [:helper, :application])}: #{statement.note}"
         options[:class] = 'higher'
       end
       result = content_tag('div', statement.created_on.strftime('%d. %m. %Y'),
@@ -299,11 +299,11 @@ module ApplicationHelper
 
   # prints attestation link
   def attestation_link(study_plan)
-    link_to_remote(t(:message_38, :scope => [:txt, :helper, :application]),
+    link_to_remote(t(:message_38, :scope => [:helper, :application]),
                    {:url => {:controller => 'study_plans', :action => 'attest',
                              :id => study_plan},
                    :loading =>
-                    "$('attestation_link').innerHTML = '%s'" % t(:message_39, :scope => [:txt, :helper, :application])},
+                    "$('attestation_link').innerHTML = '%s'" % t(:message_39, :scope => [:helper, :application])},
       {:id => "attestation_link"})
   end
 
@@ -314,16 +314,16 @@ module ApplicationHelper
     if document.is_a?(StudyPlan) && document.approved? &&
       document.waits_for_actual_attestation?
       action = 'confirm_attest'
-      title = t(:message_40, :scope => [:txt, :helper, :application]) + " " + t(person, :scope => [:txt, :helper, :application])
-      options = [[t(:continue, :scope => [:txt, :helper, :application]), 1],
-        [t(:continue_with_reproof, :scope => [:txt, :helper, :application]), 2],
-        [t(:finish, :scope => [:txt, :helper, :application]), 0],
-        [t(:interrupt, :scope => [:txt, :helper, :application]), 3]
+      title = t(:message_40, :scope => [:helper, :application]) + " " + t(person, :scope => [:helper, :application])
+      options = [[t(:continue, :scope => [:helper, :application]), 1],
+        [t(:continue_with_reproof, :scope => [:helper, :application]), 2],
+        [t(:finish, :scope => [:helper, :application]), 0],
+        [t(:interrupt, :scope => [:helper, :application]), 3]
       ]
     else
       action = 'confirm_approve'
-      title = t(:message_44, :scope => [:txt, :helper, :application]) + " " + t(person, :scope => [:txt, :helper, :application])
-      options = [[t(:message_45, :scope => [:txt, :helper, :application]), 1], [t(:message_46, :scope => [:txt, :helper, :application]), 0]]
+      title = t(:message_44, :scope => [:helper, :application]) + " " + t(person, :scope => [:helper, :application])
+      options = [[t(:message_45, :scope => [:helper, :application]), 1], [t(:message_46, :scope => [:helper, :application]), 0]]
     end
     render(:partial => 'shared/approve_form', :locals => {:document => document,
       :title => title, :options => options, :action => action, :statement =>
@@ -332,7 +332,7 @@ module ApplicationHelper
 
   # prints methodology link
   def methodology_link(disert_theme)
-    link_to(t(:message_47, :scope => [:txt, :helper, :application]),
+    link_to(t(:message_47, :scope => [:helper, :application]),
             "pdf/methodology/%i.pdf" % disert_theme.id,
             {:id => "methodology_link#{disert_theme.id}"})
   end
@@ -340,7 +340,7 @@ module ApplicationHelper
   # prints attestation detail link
   def attestation_detail(study_plan)
     if @student
-      link_to_remote(t(:message_48, :scope => [:txt, :helper, :application]),
+      link_to_remote(t(:message_48, :scope => [:helper, :application]),
                     {:url => {:controller => 'study_plans',
                       :action => 'attestation_details', :id => study_plan}},
                     {:id => "detail_link#{study_plan.id}"})
@@ -351,7 +351,7 @@ module ApplicationHelper
 
   # prints link to annual report
   def annual_report(study_plan)
-    link_to(t(:annual_report, :scope => [:txt, :helper, :application]),
+    link_to(t(:annual_report, :scope => [:helper, :application]),
             {:action => :annual_report, :controller => :study_plans,
            :id => study_plan.id}, :target => '_blank' )
   end
@@ -359,10 +359,10 @@ module ApplicationHelper
   def detail_links(user, index)
     if user.non_student?
       content = []
-      content << link_to_function(t(:message_49, :scope => [:txt, :helper, :application]),
+      content << link_to_function(t(:message_49, :scope => [:helper, :application]),
                                   back_to_list,
                                   :id => 'back_link')
-      content << link_to_function(t(:message_50, :scope => [:txt, :helper, :application]),
+      content << link_to_function(t(:message_50, :scope => [:helper, :application]),
                                   back_and_remove_from_list(index),
                                   :id => 'back_remove_link')
       content.join(' ')
@@ -417,11 +417,11 @@ module ApplicationHelper
   # prints interrupt finish line
   def interrupt_finish_line(interrupt)
     finished_on = info_div(interrupt.finished_on.strftime('%d.%m.%Y'))
-    content_tag('li', finished_on + t(:message_51, :scope => [:txt, :helper, :application]))
+    content_tag('li', finished_on + t(:message_51, :scope => [:helper, :application]))
   end
 
   def prepare_scholarship_link
-    link_to_unless_current(t(:message_52, :scope => [:txt, :helper, :application]), :controller => 'scholarships',
+    link_to_unless_current(t(:message_52, :scope => [:helper, :application]), :controller => 'scholarships',
                           :action => 'index'){}
   end
 
@@ -469,11 +469,11 @@ module ApplicationHelper
     elsif index.final_exam_term
       opts = {:controller => 'final_exam_terms', :action => 'show', :id => index.final_exam_term.id}
     end
-    link_to(t(:message_53, :scope => [:txt, :helper, :application]), opts, :id => 'final_exam_link')
+    link_to(t(:message_53, :scope => [:helper, :application]), opts, :id => 'final_exam_link')
   end
 
   def final_exam_terms_link
-    link_to t(:message_0, :scope => [:txt, :helper, :terms]), :action => :list, :controller => :final_exam_terms, :future => 1
+    link_to t(:message_0, :scope => [:helper, :terms]), :action => :list, :controller => :final_exam_terms, :future => 1
   end
 
   def defense_term_link(user, index)
@@ -482,10 +482,10 @@ module ApplicationHelper
     elsif index.defense
       url = {:controller => 'defenses', :action => 'show', :id => index.defense.id}
     end
-    link_to(t(:message_54, :scope => [:txt, :helper, :application]), url, :id => 'defense_link') if url
+    link_to(t(:message_54, :scope => [:helper, :application]), url, :id => 'defense_link') if url
   end
 
-  def hide_link(element, text = t(:message_55, :scope => [:txt, :helper, :application]))
+  def hide_link(element, text = t(:message_55, :scope => [:helper, :application]))
     link_to_function(text, "Element.hide('#{element}')")
   end
 
@@ -568,10 +568,10 @@ module ApplicationHelper
 
   def student_name_line(student)
     if @user.has_role?('faculty_secretary')
-      attribute_line(student, :display_name) + t(:message_56, :scope => [:txt, :helper, :application]) + ':'
+      attribute_line(student, :display_name) + t(:message_56, :scope => [:helper, :application]) + ':'
     else
       long_info_helper(student.display_name, :class => 'printable') +
-        t(:message_57, :scope => [:txt, :helper, :application]) + ':'
+        t(:message_57, :scope => [:helper, :application]) + ':'
     end
   end
 
@@ -581,42 +581,42 @@ module ApplicationHelper
 
   def student_department_line(index)
     if @user.has_role?(Role.find(2))
-      attribute_line(index, :department, :short_name) + t(:message_74, :scope => [:txt, :helper, :application]) + ':'
+      attribute_line(index, :department, :short_name) + t(:message_74, :scope => [:helper, :application]) + ':'
     else
       if index.department == nil
-        long_info_helper(t(:message_74, :scope => [:txt, :helper, :application])) +
-          t(:message_74, :scope => [:txt, :helper, :application]) + ':'
+        long_info_helper(t(:message_74, :scope => [:helper, :application])) +
+          t(:message_74, :scope => [:helper, :application]) + ':'
       else
         long_info_helper(index.department.short_name) +
-          t(:message_74, :scope => [:txt, :helper, :application]) + ':'
+          t(:message_74, :scope => [:helper, :application]) + ':'
       end
     end
   end
 
   def student_specialization_line(index)
     if @user.has_role?(Role.find(2))
-      attribute_line(index, :specialization, :name) + t(:message_73, :scope => [:txt, :helper, :application]) + ':'
+      attribute_line(index, :specialization, :name) + t(:message_73, :scope => [:helper, :application]) + ':'
     else
       if index.specialization == nil
-        long_info_helper(t(:message_73, :scope => [:txt, :helper, :application])) +
-          t(:message_73, :scope => [:txt, :helper, :application]) + ':'
+        long_info_helper(t(:message_73, :scope => [:helper, :application])) +
+          t(:message_73, :scope => [:helper, :application]) + ':'
       else
         long_info_helper(index.specialization.name) +
-          t(:message_73, :scope => [:txt, :helper, :application]) + ':'
+          t(:message_73, :scope => [:helper, :application]) + ':'
       end
     end
   end
 
   def student_tutor_line(index)
     if @user.has_role?('faculty_secretary')
-      attribute_line(index, :tutor, :display_name) + t(:message_58, :scope => [:txt, :helper, :application]) + ':'
+      attribute_line(index, :tutor, :display_name) + t(:message_58, :scope => [:helper, :application]) + ':'
     else
       if index.tutor == nil
-        long_info_helper(t(:message_59, :scope => [:txt, :helper, :application]), :class => 'printable') +
-          t(:message_60, :scope => [:txt, :helper, :application]) + ':'
+        long_info_helper(t(:message_59, :scope => [:helper, :application]), :class => 'printable') +
+          t(:message_60, :scope => [:helper, :application]) + ':'
       else
         long_info_helper(index.tutor.display_name, :class => 'printable') +
-          t(:message_61, :scope => [:txt, :helper, :application]) + ':'
+          t(:message_61, :scope => [:helper, :application]) + ':'
       end
     end
   end
@@ -624,14 +624,14 @@ module ApplicationHelper
   def literature_review_link(disert_theme)
     path = "/pdf/literature_review/%i.pdf" % disert_theme.id
     if File.exists?("#{RAILS_ROOT}/public/" + path)
-      link_to t(:message_62, :scope => [:txt, :helper, :application]), path, :popup => true
+      link_to t(:message_62, :scope => [:helper, :application]), path, :popup => true
     end
   end
 
   def self_report_link(disert_theme)
     path = "/pdf/self_report/%i.pdf" % disert_theme.id
     if File.exists?("#{RAILS_ROOT}/public/" + path)
-      link_to t(:message_63, :scope => [:txt, :helper, :application]), path, :popup => true
+      link_to t(:message_63, :scope => [:helper, :application]), path, :popup => true
     end
   end
 
@@ -639,7 +639,7 @@ module ApplicationHelper
     path = "/pdf/disert_theme/%i.pdf" % disert_theme.id
     # TODO remove after fixing upload
     # if File.exists?("#{RAILS_ROOT}/public/" + path)
-      link_to t(:message_64, :scope => [:txt, :helper, :application]), path, :popup => true
+      link_to t(:message_64, :scope => [:helper, :application]), path, :popup => true
     #end
   end
 
@@ -661,9 +661,9 @@ module ApplicationHelper
   # returns approve document form confirm message
   def approve_document_form_confirm(action)
     if action == "confirm_attest"
-      confirm = t(:message_71, :scope => [:txt, :helper, :application])
+      confirm = t(:message_71, :scope => [:helper, :application])
     elsif action == "confirm_approve"
-      confirm = t(:message_72, :scope => [:txt, :helper, :application])
+      confirm = t(:message_72, :scope => [:helper, :application])
     else
       confirm = ""
     end
@@ -676,7 +676,7 @@ module ApplicationHelper
     form_remote_tag(:url => {:controller => controller,
                             :action => action,
                             :id => document},
-                    :loading => "$('submit-button').value = '%s'" % t(:message_65, :scope => [:txt, :helper, :application]),
+                    :loading => "$('submit-button').value = '%s'" % t(:message_65, :scope => [:helper, :application]),
                     :complete => evaluate_remote_response,
                     &proc)
 
@@ -693,14 +693,14 @@ module ApplicationHelper
   # translates approver
   def translate_approver(approver)
     if approver.nil?
-      I18n::t(:nobody, :scope => [:txt, :helper, :application])
+      I18n::t(:nobody, :scope => [:helper, :application])
     else
-      I18n::t(approver.to_s.downcase, :scope => [:txt, :helper, :application])
+      I18n::t(approver.to_s.downcase, :scope => [:helper, :application])
     end
   end
 
   def pass_link(what, index)
-    link_to(t("passed_#{what}", :scope => [:txt, :helper, :application]), :controller => what.pluralize, :action => :pass, :id => index)
+    link_to(t("passed_#{what}", :scope => [:helper, :application]), :controller => what.pluralize, :action => :pass, :id => index)
   end
 
   private

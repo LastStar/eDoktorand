@@ -1,10 +1,10 @@
-page.replace_html 'studyPlan', :partial => 'shared/subjects', 
+page.replace_html 'studyPlan', :partial => 'shared/subjects',
                                      :locals => {:subjects => @created_subjects,
-                                     :title => I18n::t(:"#{session[:return_to]}_subjects", :scope => [:txt, :view, :study_plans, :_save_obligate, :rhtml])}
+                                     :title => I18n::t(:"#{session[:return_to]}_subjects", :scope => [:view, :study_plans, :_save_obligate])}
 if session[:requisite_subjects]
-  page.insert_html :top, 'studyPlan', :partial => 'shared/subjects', 
+  page.insert_html :top, 'studyPlan', :partial => 'shared/subjects',
                                  :locals => {:subjects =>
                                    session[:requisite_subjects],
-                                 :title => I18n::t(:"#{session[:return_to]}_subjects", :scope => [:txt, :view, :study_plans, :_save_obligate, :rhtml])}
+                                 :title => I18n::t(:"#{session[:return_to]}_subjects", :scope => [:view, :study_plans, :_save_obligate])}
 end
-page.replace_html 'form', render(:partial => "voluntary_form") 
+page.replace_html 'form', render(:partial => "voluntary_form")

@@ -7,7 +7,7 @@
   <%= render(:partial => 'term_line', :collection => @final_exam_terms) %>
 </table>
 <% if @final_exam_terms != []%>
-  <%= submit_tag t(:message_0, :scope => [:txt, :view, :final_exam_terms, :list, :rhtml]), :class=>'button' %>
+  <%= submit_tag t(:message_0, :scope => [:view, :final_exam_terms, :list]), :class=>'button' %>
 <% end %>
 <% end %>
 <div class='links'>

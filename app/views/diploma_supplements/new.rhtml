@@ -1,8 +1,8 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :diploma_supplements, :new, :rhtml]) %></h5>
+<h5><%= t(:message_0, :scope => [:view, :diploma_supplements, :new]) %></h5>
 
 <% form_tag :action => 'create' do %>
   <%= render :partial => 'form' %>
-  <%= submit_tag t(:message_1, :scope => [:txt, :view, :diploma_supplements, :new, :rhtml]) %>
+  <%= submit_tag t(:message_1, :scope => [:view, :diploma_supplements, :new]) %>
 <% end %>
 
-<%= link_to t(:message_2, :scope => [:txt, :view, :diploma_supplements, :new, :rhtml]), :action => 'index' %>
+<%= link_to t(:message_2, :scope => [:view, :diploma_supplements, :new]), :action => 'index' %>

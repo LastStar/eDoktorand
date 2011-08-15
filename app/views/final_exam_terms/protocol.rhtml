@@ -1,38 +1,38 @@
 <div class='links'>
-  <%= link_to t(:message_0, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]), :action => :list %>
+  <%= link_to t(:message_0, :scope => [:view, :final_exam_terms, :protocol]), :action => :list %>
 </div>
-<p class='right_date'><%= t(:message_1, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) + " " + @term.date.strftime("%d. %m. %Y") %></p>
+<p class='right_date'><%= t(:message_1, :scope => [:view, :final_exam_terms, :protocol]) + " " + @term.date.strftime("%d. %m. %Y") %></p>
 <p>
-  <%= t(:message_2, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %><br />
+  <%= t(:message_2, :scope => [:view, :final_exam_terms, :protocol]) %><br />
   <%= @term.index.faculty.name %>
 </p>
 
-<h2><%= t(:message_3, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %></h2>
+<h2><%= t(:message_3, :scope => [:view, :final_exam_terms, :protocol]) %></h2>
 
 <table class='two-columns'>
   <tr>
-    <th style='width: 50%'><%= t(:message_4, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th style='width: 50%'><%= t(:message_4, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><strong><%= @term.index.student.display_name_with_title %></strong></td>
   </tr>
   <tr>
-    <th><%= t(:message_5, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_5, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><%= @term.index.specialization.name %></td>
   </tr>
   <tr>
-    <th><%= t(:message_6, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_6, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><%= @term.index.department.name %></td>
   </tr>
   <tr>
-    <th><%= t(:message_7, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_7, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><%= @term.index.tutor.display_name %></td>
   </tr>
   <tr>
-    <th><%= t(:message_8, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_8, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><%= @term.index.enrolled_on.strftime("%d. %m. %Y") %></td>
   </tr>
 <% if @term.index.consultant %>
   <tr>
-    <th><%= t(:message_9, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_9, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><%= @term.index.consultant %></td>
   </tr>
 <% end %>
@@ -40,48 +40,48 @@
 
 <table class='three-columns'>
   <tr>
-    <th><%= t(:message_10, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %></th>
-    <th><%= t(:message_11, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %></th>
-    <th><%= t(:message_12, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %></th>
+    <th><%= t(:message_10, :scope => [:view, :final_exam_terms, :protocol]) %></th>
+    <th><%= t(:message_11, :scope => [:view, :final_exam_terms, :protocol]) %></th>
+    <th><%= t(:message_12, :scope => [:view, :final_exam_terms, :protocol]) %></th>
   </tr>
   <tr>
-    <td><%= @term.index.study_plan.final_areas['cz']['1'] %><br /> 
+    <td><%= @term.index.study_plan.final_areas['cz']['1'] %><br />
     <%= @term.index.study_plan.final_areas['en']['1'] %></td>
     <td class='dotted'>.......................</td>
     <td class='dotted'>.......................</td>
   </tr>
   <tr>
-    <td><%= @term.index.study_plan.final_areas['cz']['2'] %><br /> 
+    <td><%= @term.index.study_plan.final_areas['cz']['2'] %><br />
     <%= @term.index.study_plan.final_areas['en']['2'] %></td>
     <td class='dotted'>.......................</td>
     <td class='dotted'>.......................</td>
   </tr>
   <tr>
-    <td><%= @term.index.study_plan.final_areas['cz']['3'] %><br /> 
+    <td><%= @term.index.study_plan.final_areas['cz']['3'] %><br />
     <%= @term.index.study_plan.final_areas['en']['3'] %></td>
     <td class='dotted'>.......................</td>
     <td class='dotted'>.......................</td>
   </tr>
   <tr>
-    <td><%= @term.index.study_plan.final_areas['cz']['4'] %><br /> 
+    <td><%= @term.index.study_plan.final_areas['cz']['4'] %><br />
     <%= @term.index.study_plan.final_areas['en']['4'] %></td>
     <td class='dotted'>.......................</td>
     <td class='dotted'>.......................</td>
   </tr>
 <table>
   <tr>
-    <th style='border: none'><%= t(:message_13, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th style='border: none'><%= t(:message_13, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><%= @term.index.disert_theme.literature_review %></td>
   </tr>
 </table>
 
 <table class='two-columns'>
   <tr>
-    <th><%= t(:message_14, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_14, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><%= @term.chairman_name %>
   </tr>
   <tr>
-    <th><%= t(:message_15, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_15, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><%= @term.first_examinator %></td>
   </tr>
   <tr>
@@ -99,20 +99,20 @@
   <% unless @term.fifth_examinator.empty? %>
   <tr>
     <th></th>
-    <td><%= @term.fifth_examinator %> </td> 
+    <td><%= @term.fifth_examinator %> </td>
     <td><%= @term.fifth_subject %></td>
   </tr>
   <% end %>
   <% unless @term.sixth_examinator.empty? %>
   <tr>
     <th></th>
-    <td><%= @term.sixth_examinator %> </td> 
+    <td><%= @term.sixth_examinator %> </td>
     <td><%= @term.sixth_subject %></td>
   </tr>
   <% end %>
 <% if @term.opponent && !@term.opponent.empty?%>
   <tr>
-    <th><%= t(:message_16, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_16, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td><%= @term.opponent %></td>
   </tr>
 <% end %>
@@ -121,14 +121,14 @@
 <br />
 <table class='two-columns'>
   <tr>
-    <th><%= t(:message_17, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_17, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td>......................................</td>
   </tr>
   <tr colspan='2'>
     <td>&nbsp;<td>
   </tr>
   <tr>
-    <th><%= t(:message_18, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]) %>:</th>
+    <th><%= t(:message_18, :scope => [:view, :final_exam_terms, :protocol]) %>:</th>
     <td>......................................</td>
   </tr>
 </table>

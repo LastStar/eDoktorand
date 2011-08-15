@@ -1,8 +1,8 @@
-page.insert_html :before, "students_list", 
+page.insert_html :before, "students_list",
   render(:partial => 'shared/student_detail',
-        :locals => {:index => @index, :study_plan => @index.study_plan, 
+        :locals => {:index => @index, :study_plan => @index.study_plan,
                     :disert_theme => @index.disert_theme})
 page.hide 'search'
 page.hide 'students_list'
 page['student_detail'].scrollTo
-page['search_submit'].value = I18n.t(:message_0, :scope => [:txt, :view, :students, :show, :rjs])
+page['search_submit'].value = I18n.t(:message_0, :scope => [:view, :students, :show])

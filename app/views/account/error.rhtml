@@ -1,7 +1,7 @@
 <h3 class='memo'>
-  <%= t(:message_0, :scope => [:txt, :view, :account, :error, :rhtml]) %>
+  <%= t(:message_0, :scope => [:view, :account, :error]) %>
 </h3>
 <p class='error'>
   <%= flash[:error] %>
 </p>
-<p><%= link_to_function t(:message_1, :scope => [:txt, :view, :account, :error, :rhtml]), 'history.back()' %></p>
+<p><%= link_to_function t(:message_1, :scope => [:view, :account, :error]), 'history.back()' %></p>

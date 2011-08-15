@@ -10,19 +10,19 @@
 </div>
 <h5><%= probation_term.subject.label %></h5>
 <ul class="bordered">
-  <li><div class='longinfo'> <%= t(:message_0, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:&nbsp;
+  <li><div class='longinfo'> <%= t(:message_0, :scope => [:view, :probation_terms, :_list]) %>:&nbsp;
     <%= probation_term.enrolled_ratio %></div>
-  <div class='longinfo'><%=t(:message_1, :scope => [:txt, :view, :probation_terms, :_list, :rhtml])%>: <%= probation_term.room %></div>
-  <div class='longinfo'><%=t(:message_2, :scope => [:txt, :view, :probation_terms, :_list, :rhtml])%>: <%= probation_term.start_time %></div>
-  <%=t(:message_3, :scope => [:txt, :view, :probation_terms, :_list, :rhtml])%>: <%= probation_term.date.strftime("%d. %m. %Y") %></li>
-  <li><%= t(:message_4, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:
+  <div class='longinfo'><%=t(:message_1, :scope => [:view, :probation_terms, :_list])%>: <%= probation_term.room %></div>
+  <div class='longinfo'><%=t(:message_2, :scope => [:view, :probation_terms, :_list])%>: <%= probation_term.start_time %></div>
+  <%=t(:message_3, :scope => [:view, :probation_terms, :_list])%>: <%= probation_term.date.strftime("%d. %m. %Y") %></li>
+  <li><%= t(:message_4, :scope => [:view, :probation_terms, :_list]) %>:
   &nbsp;<%= probation_term.first_examinator.display_name_with_title %></li>
 <% if probation_term.second_examinator %>
-  <li><%= t(:message_5, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:
+  <li><%= t(:message_5, :scope => [:view, :probation_terms, :_list]) %>:
   &nbsp;<%= probation_term.second_examinator.display_name_with_title %></li>
 <% end %>
 <% unless probation_term.empty_note? %>
-  <li><%= t(:message_6, :scope => [:txt, :view, :probation_terms, :_list, :rhtml]) %>:&nbsp;<%= probation_term.note %></li>
+  <li><%= t(:message_6, :scope => [:view, :probation_terms, :_list]) %>:&nbsp;<%= probation_term.note %></li>
 <% end %>
   <li class='detail' id='info_<%= probation_term.id %>' style="display: none">
   </li>

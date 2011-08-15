@@ -2,81 +2,81 @@
 <table class='two-columns'>
 <% if many %>
 <tr>
-  <th><%= t(:message_0, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
+  <th><%= t(:message_0, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
   <td><%= index.student.display_name %></td>
 </tr>
 <tr>
-  <th><%= t(:message_1, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
+  <th><%= t(:message_1, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
   <td><%= index.tutor.display_name %></td>
 </tr>
   <% if index.consultant  %>
 <tr>
-  <th><%= t(:message_2, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
+  <th><%= t(:message_2, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
   <td><%= index.consultant %></td>
 </tr>
   <% end %>
 <tr>
-  <th><%= t(:message_3, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
+  <th><%= t(:message_3, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
   <td><%= exam_term.start_time %></td>
 </tr>
 <% else %>
 <tr>
-  <th><%= t(:message_4, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
+  <th><%= t(:message_4, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
   <td><%= exam_term.date_time %></td>
 </tr>
 <tr>
-  <th><%= t(:message_5, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
+  <th><%= t(:message_5, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
   <td><%= exam_term.room %></td>
 </tr>
 <% end %>
 <tr>
-  <th style='width: 25ex;'><%= t(:message_6, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>:</th>
+  <th style='width: 25ex;'><%= t(:message_6, :scope => [:view, :final_exam_terms, :_detail]) %>:</th>
   <td style='width: 45ex;'><%= index.disert_theme.literature_review %></td>
 </tr>
 <tr>
-  <th><%= t(:message_7, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
+  <th><%= t(:message_7, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
   <td><%= exam_term.chairman_name %></td>
 </tr>
 <% unless exam_term.opponent.empty? %>
 <tr>
-  <th><%= t(:message_8, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>:</th>
-  <td><%= exam_term.opponent %> </td> 
+  <th><%= t(:message_8, :scope => [:view, :final_exam_terms, :_detail]) %>:</th>
+  <td><%= exam_term.opponent %> </td>
 </tr>
 <% end %>
 </table>
 <table class='two-columns'>
 <tr>
-  <th colspan='2'><%= t(:message_9, :scope => [:txt, :view, :final_exam_terms, :_detail, :rhtml]) %>: </th>
+  <th colspan='2'><%= t(:message_9, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
 </tr>
 <tr>
   <td><%= exam_term.first_examinator %></td>
   <td><%= exam_term.first_subject %></td>
 </tr>
 <tr>
-  <td><%= exam_term.second_examinator %> </td> 
+  <td><%= exam_term.second_examinator %> </td>
   <td><%= exam_term.second_subject %></td>
 </tr>
 <% unless exam_term.third_examinator.empty? %>
 <tr>
-  <td><%= exam_term.third_examinator %> </td> 
+  <td><%= exam_term.third_examinator %> </td>
   <td><%= exam_term.third_subject %></td>
 </tr>
 <% end %>
 <% unless exam_term.fourth_examinator.empty? %>
 <tr>
-  <td><%= exam_term.fourth_examinator %> </td> 
+  <td><%= exam_term.fourth_examinator %> </td>
   <td><%= exam_term.fourth_subject %></td>
 </tr>
 <% end %>
 <% unless exam_term.fifth_examinator.empty? %>
 <tr>
-  <td><%= exam_term.fifth_examinator %> </td> 
+  <td><%= exam_term.fifth_examinator %> </td>
   <td><%= exam_term.fifth_subject %></td>
 </tr>
 <% end %>
 <% unless exam_term.sixth_examinator.empty? %>
 <tr>
-  <td><%= exam_term.sixth_examinator %> </td> 
+  <td><%= exam_term.sixth_examinator %> </td>
   <td><%= exam_term.sixth_subject %></td>
 </tr>
 <% end %>

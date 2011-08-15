@@ -1,7 +1,7 @@
 <% if disert_theme.has_methodology_summary? %>
 <li>
-<div class="long_info"><%= link_to_function(t(:message_1, :scope => [:txt, :view, :shared, :_methodology, :rhtml]), "$('methodology_summary').show()", :style => "text-decoration: underline;") %></div>
-<b><%= t(:message_0, :scope => [:txt, :view, :shared, :_methodology, :rhtml]) %></b>
+<div class="long_info"><%= link_to_function(t(:message_1, :scope => [:view, :shared, :_methodology]), "$('methodology_summary').show()", :style => "text-decoration: underline;") %></div>
+<b><%= t(:message_0, :scope => [:view, :shared, :_methodology]) %></b>
 </li>
   <% if disert_theme.methodology_summary %>
 <li class="second" id="methodology_summary" style='display: none'>
@@ -13,7 +13,7 @@
   <% if (@student && !disert_theme.has_methodology?) || @user.has_one_of_roles?(['faculty_secretary','vicerector']) %>
 <li>
 <div class="long_info">
-  <%= link_to(t(:message_2, :scope => [:txt, :view, :shared, :_methodology, :rhtml]), {:controller => "disert_themes", :action =>
+  <%= link_to(t(:message_2, :scope => [:view, :shared, :_methodology]), {:controller => "disert_themes", :action =>
   "upload_methodology", :id => disert_theme.id,}, {:style => "text-decoration: underline;", :target => "_blank"}) %>
 </div>
 &nbsp;

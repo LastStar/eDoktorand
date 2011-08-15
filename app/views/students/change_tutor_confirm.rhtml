@@ -1,23 +1,23 @@
 <div id='student_detail'>
-<h5><%= t(:message_1, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %></h5>
+<h5><%= t(:message_1, :scope => [:view, :students, :change_tutor_confirm]) %></h5>
 <ul class='details'>
   <li>
-     <div class='long_info'><%=@student.display_name%></div> <%= t(:message_2, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
+     <div class='long_info'><%=@student.display_name%></div> <%= t(:message_2, :scope => [:view, :students, :change_tutor_confirm]) %>:
   </li>
   <li>
-     <div class='long_info'><%=@student.index.year%></div> <%= t(:message_3, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
+     <div class='long_info'><%=@student.index.year%></div> <%= t(:message_3, :scope => [:view, :students, :change_tutor_confirm]) %>:
   </li>
   <li>
-    <div class='long_info'><%=@student.specialization.name%></div>  <%= t(:message_4, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
+    <div class='long_info'><%=@student.specialization.name%></div>  <%= t(:message_4, :scope => [:view, :students, :change_tutor_confirm]) %>:
   </li>
   <li>
-   <div class='long_info'><%=@student.index.tutor.display_name%></div> <%= t(:message_5, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
+   <div class='long_info'><%=@student.index.tutor.display_name%></div> <%= t(:message_5, :scope => [:view, :students, :change_tutor_confirm]) %>:
   </li>
   <li>
-    <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%= t(:message_6, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
+    <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%= t(:message_6, :scope => [:view, :students, :change_tutor_confirm]) %>:
   </li>
   <li>
-   <%= t(:message_7, :scope => [:txt, :view, :students, :change_tutor_confirm, :rhtml]) %>:
+   <%= t(:message_7, :scope => [:view, :students, :change_tutor_confirm]) %>:
   </li>
   <li class='second'>
    <%= @subject_change %>

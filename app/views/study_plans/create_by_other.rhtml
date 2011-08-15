@@ -10,20 +10,20 @@
 <% end %>
 <div id="done">
 <ul id='studyPlan' class="nodecor">
-  <%= content_tag('h1', t(:message_0, :scope => [:txt, :view, :study_plans, :create_by_other, :rhtml])) %>
+  <%= content_tag('h1', t(:message_0, :scope => [:view, :study_plans, :create_by_other])) %>
   <% if @requisite_subjects && !@requisite_subjects.empty? %>
   <%= render(:partial => "shared/subjects",
-            :locals => {:subjects => @requisite_subjects, :title => t(:message_1, :scope => [:txt, :view, :study_plans, :create_by_other, :rhtml])}) %>
+            :locals => {:subjects => @requisite_subjects, :title => t(:message_1, :scope => [:view, :study_plans, :create_by_other])}) %>
   <% elsif session[:finished_subjects] && !session[:finished_subjects].empty? %>
   <%= render(:partial => "shared/subjects",
-            :locals => {:subjects => session[:finished_subjects], :title => t(:message_2, :scope => [:txt, :view, :study_plans, :create_by_other, :rhtml])}) %>
+            :locals => {:subjects => session[:finished_subjects], :title => t(:message_2, :scope => [:view, :study_plans, :create_by_other])}) %>
   <% end %>
 </ul>
 </div>
 <div id="form">
   <%= render(:partial => "full_form", :locals => {:subjects => @subjects}) %>
 </div>
-<%= 
+<%=
 javascript_tag <<-CODE
 function hide_on_internal(id) {
   var element = eval("document.forms[0].plan_subject_" + id + "_subject_id");

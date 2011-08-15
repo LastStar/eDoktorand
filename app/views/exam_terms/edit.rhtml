@@ -1,12 +1,12 @@
 <div class='links'>
-	<%= link_to t(:message_1, :scope => [:txt, :view, :exam_terms, :edit, :rhtml]), :action => 'list' %>
+	<%= link_to t(:message_1, :scope => [:view, :exam_terms, :edit]), :action => 'list' %>
 </div>
-<h1><%= t(:message_2, :scope => [:txt, :view, :exam_terms, :edit, :rhtml])  %></h1>
+<h1><%= t(:message_2, :scope => [:view, :exam_terms, :edit])  %></h1>
 <% form_tag :action => 'update', :id => @exam_term do %>
   <%= render(:partial => "form") %>
-  <%= submit_tag t(:message_0, :scope => [:txt, :view, :exam_terms, :edit, :rhtml]), :class => 'button' %>
+  <%= submit_tag t(:message_0, :scope => [:view, :exam_terms, :edit]), :class => 'button' %>
 <% end %>
 <div class='links'>
-	<%= link_to t(:message_1, :scope => [:txt, :view, :exam_terms, :edit, :rhtml]), :action => 'list' %>
+	<%= link_to t(:message_1, :scope => [:view, :exam_terms, :edit]), :action => 'list' %>
 </div>
 <br class="clear-all" />

@@ -1,43 +1,43 @@
-<h1> <%= t(:message_0, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></h1>
+<h1> <%= t(:message_0, :scope => [:view, :exams, :save_external_subject])%></h1>
 <fieldset>
-<legend><%= t(:message_15, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></legend>
+<legend><%= t(:message_15, :scope => [:view, :exams, :save_external_subject])%></legend>
 <ul>
-  <li><%= t(:message_1, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>: <%= @exam.index.student.display_name %></li>
-  <li><%= t(:message_2, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>: <%= @exam.subject.label %></li>
+  <li><%= t(:message_1, :scope => [:view, :exams, :save_external_subject]) %>: <%= @exam.index.student.display_name %></li>
+  <li><%= t(:message_2, :scope => [:view, :exams, :save_external_subject]) %>: <%= @exam.subject.label %></li>
 </ul>
 </fieldset>
-<% form_tag(:action => 'save_external') do -%>	
+<% form_tag(:action => 'save_external') do -%>
 <fieldset id='date'>
-<legend><%= t(:message_3, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
+<legend><%= t(:message_3, :scope => [:view, :exams, :save_external_subject]) %></legend>
 <label>
-  <%= t(:message_4, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>
+  <%= t(:message_4, :scope => [:view, :exams, :save_external_subject]) %>
 </label>
   <%= date_select 'exam', 'passed_on', :start_year => 2002,
                   :order => [:day, :month, :year], :use_month_numbers => true %>
   <span class='required'>&nbsp;&lowast;</span ><br />
 </fieldset>
 <fieldset id='agenda'>
-<legend><%= t(:message_5, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
-  <label for="exam_university"><%=t(:message_6, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></label>
+<legend><%= t(:message_5, :scope => [:view, :exams, :save_external_subject]) %></legend>
+  <label for="exam_university"><%=t(:message_6, :scope => [:view, :exams, :save_external_subject])%></label>
   <%= @exam.subject.external_subject_detail.university %><br/>
 <% if @exam.subject.external_subject_detail.person  %>
-  <label for="exam_first_examinator"><%=t(:message_7, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></label>
+  <label for="exam_first_examinator"><%=t(:message_7, :scope => [:view, :exams, :save_external_subject])%></label>
   <%= @exam.subject.external_subject_detail.person %><br/>
   <%= hidden_field 'exam', 'first_examinator_id', :value => -1 %>
 <% end %>
-  
+
 </fieldset>
 
 <fieldset id='result'>
-<legend><%= t(:message_8, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
-  <label for="exam_questions"><%=t(:message_9, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></label>
+<legend><%= t(:message_8, :scope => [:view, :exams, :save_external_subject]) %></legend>
+  <label for="exam_questions"><%=t(:message_9, :scope => [:view, :exams, :save_external_subject])%></label>
   <%= text_area 'exam', 'questions'  %><br />
-  <label for="exam_result"><%=t(:message_10, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml])%></label>
-  <%= select 'exam', 'result', [[t(:message_11, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]), 1], [t(:message_12, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]), 0]]%><br />
+  <label for="exam_result"><%=t(:message_10, :scope => [:view, :exams, :save_external_subject])%></label>
+  <%= select 'exam', 'result', [[t(:message_11, :scope => [:view, :exams, :save_external_subject]), 1], [t(:message_12, :scope => [:view, :exams, :save_external_subject]), 0]]%><br />
 </fieldset>
 
 <fieldset id='action'>
-  <legend><%= t(:message_13, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %></legend>
-  <input type='submit' value='<%= t(:message_14, :scope => [:txt, :view, :exams, :save_external_subject, :rhtml]) %>' class='button' />
+  <legend><%= t(:message_13, :scope => [:view, :exams, :save_external_subject]) %></legend>
+  <input type='submit' value='<%= t(:message_14, :scope => [:view, :exams, :save_external_subject]) %>' class='button' />
 </fieldset>
 <% end %>

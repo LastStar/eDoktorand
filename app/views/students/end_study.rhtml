@@ -1,29 +1,29 @@
-<h1><%= t(:message_1, :scope => [:txt, :view, :students, :end_study, :rhtml]) %></h1>
+<h1><%= t(:message_1, :scope => [:view, :students, :end_study]) %></h1>
 <% end_study_form do -%>
 <fieldset>
 <ul class='details bordered'>
   <li>
-     <div class='long_info'><%= @student.display_name %></div> <%= t(:message_2, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:
+     <div class='long_info'><%= @student.display_name %></div> <%= t(:message_2, :scope => [:view, :students, :end_study]) %>:
   </li>
   <li>
-     <div class='long_info'><%= @student.index.year %></div> <%= t(:message_3, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:
+     <div class='long_info'><%= @student.index.year %></div> <%= t(:message_3, :scope => [:view, :students, :end_study]) %>:
   </li>
   <li>
-    <div class='long_info'><%= @student.specialization.name %></div>  <%= t(:message_4, :scope => [:txt, :view, :students, :end_study, :rhtml])  %>:
+    <div class='long_info'><%= @student.specialization.name %></div>  <%= t(:message_4, :scope => [:view, :students, :end_study])  %>:
   </li>
   <li>
-   <div class='long_info'><%= @student.index.tutor.display_name %></div> <%= t(:message_5, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:
+   <div class='long_info'><%= @student.index.tutor.display_name %></div> <%= t(:message_5, :scope => [:view, :students, :end_study]) %>:
   </li>
   <li>
-   <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%= t(:message_6, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:
+   <div class='long_info'><%= Date.today.strftime("%d. %m. %Y") %></div> <%= t(:message_6, :scope => [:view, :students, :end_study]) %>:
   </li>
   <li class="noborder">
     <br />
-   <label><%= t(:message_7, :scope => [:txt, :view, :students, :end_study, :rhtml]) %>:</label>
+   <label><%= t(:message_7, :scope => [:view, :students, :end_study]) %>:</label>
    <textarea name='end_study_subject' id='end_study_subject' cols='60' rows='20'>
    </textarea>
   </li>
 </ul>
 </fieldset>
-  <%= submit_tag(t(:message_0, :scope => [:txt, :view, :students, :end_study, :rhtml]), :id => 'submit-button', :class => 'button') %>
+  <%= submit_tag(t(:message_0, :scope => [:view, :students, :end_study]), :id => 'submit-button', :class => 'button') %>
 <% end %>
