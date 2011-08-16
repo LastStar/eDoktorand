@@ -57,8 +57,6 @@ class Index < ActiveRecord::Base
   has_many :payed_scholarships, :class_name => 'Scholarship',
     :conditions => 'payed_on IS NOT NULL'
   has_many :scholarships
-  has_one :approval, :class_name => 'FinalExamApproval',
-    :foreign_key => 'document_id'
   has_one :im_index
 
   validates_presence_of :student
@@ -220,19 +218,14 @@ class Index < ActiveRecord::Base
 
   # returns true if studen claimed for final exam
   def claimed_for_final_exam?
-    claimed_final_application? && approved?
+    claimed_final_application?
   end
 
   # returns statement if this index waits for approval from person
   def statement_for(user)
     #TODO move this two ors to it's own status method
     unless status == absolved? || interrupted? || final_exam_passed?
-      if claimed_final_application?
-        self.approval ||= FinalExamApproval.create
-        if approval.prepares_statement?(user)
-          return approval.prepare_statement(user)
-        end
-      elsif admited_interrupt?
+      if admited_interrupt?
         interrupt.approval ||= InterruptApproval.create
         if interrupt.approval.prepares_statement?(user)
           return interrupt.approval.prepare_statement(user)
@@ -257,9 +250,7 @@ class Index < ActiveRecord::Base
   def waits_for_statement?(user)
     #TODO move this two ors to it's own status method
     unless absolved? || interrupted? || final_exam_passed?
-      if claimed_final_application?
-        temp_approval = self.approval ||= FinalExamApproval.create
-      elsif admited_interrupt?
+      if admited_interrupt?
         temp_approval = interrupt.approval ||= InterruptApproval.create
       elsif study_plan && !study_plan.approved?
         temp_approval = study_plan.approval ||= StudyPlanApproval.create
@@ -352,7 +343,7 @@ class Index < ActiveRecord::Base
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user, options = {})
     sql = <<-SQL
-      (study_plans.approved_on is null or disert_themes.approved_on is null \
+      (study_plans.approved_on is null \
       or study_plans.last_attested_on is null or indices.interrupted_on is null or \
       study_plans.last_attested_on < ?) and (indices.finished_on is null or \
       indices.finished_on = '0000-00-00 00:00:00')
@@ -458,7 +449,7 @@ class Index < ActiveRecord::Base
   # find with all relation included
   def self.find_with_all_included(idx)
     inc = [:study_plan, :disert_theme, :interrupts, :specialization, :study, :student,
-          :tutor, :department, :approval]
+          :tutor, :department]
     return self.find(idx, :include => inc, :order => 'study_interrupts.created_on desc')
   end
 
@@ -704,11 +695,6 @@ class Index < ActiveRecord::Base
 
   def defense_created?
     !defense.nil?
-  end
-
-  # for approval purposes
-  def index
-    self
   end
 
   #TODO should be in coresponding models

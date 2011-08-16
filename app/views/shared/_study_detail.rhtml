@@ -81,17 +81,7 @@
 
 
 
-  <% if index.defense_claimed? %>
-    <ul id='approval' class='bordered half right-visible'>
-      <li class="noborder"><h5><%= t(:message_13, :scope => [:view, :shared, :_study_detail]) %></h5></li>
-      <%= print_statements(index.approval) %>
-    </ul>
-  <% elsif index.claimed_final_application? %>
-    <ul id='approval' class='bordered half right-visible'>
-       <li class="noborder"><h5><%= t(:message_14, :scope => [:view, :shared, :_study_detail]) %></h5></li>
-      <%= print_statements(index.approval) %>
-    </ul>
-  <% elsif study_plan.approval %>
+  <% if study_plan.approval %>
     <ul id='approval' class='bordered half right-visible'>
       <li class="noborder"><h5><%= t(:message_15, :scope => [:view, :shared, :_study_detail]) %></h5></li>
       <%= print_statements(study_plan.approval) %>
@@ -126,9 +116,7 @@
   <%= render(:partial => 'shared/disert_theme',
     :locals => {:disert_theme => index.disert_theme,
     :study_plan => study_plan, :methodology => true}) %>
-  <% if index.claimed_final_application? %>
-    <%= approve_forms(@user, index) %>
-  <% elsif index.admited_interrupt? %>
+  <% if index.admited_interrupt? %>
     <%= approve_forms(@user, index.interrupt) %>
   <% elsif !study_plan.approved? || study_plan.waits_for_actual_attestation? %>
     <%= approve_forms(@user, study_plan) %>
