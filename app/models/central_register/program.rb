@@ -18,7 +18,7 @@ module CentralRegister
 
     def self.all
       response = invoke('tns:getStupr', 'urn:getStupr')
-      response.xpath("//ciselnik/polozka").map {|node| parse(node)}
+      response.xpath("//studyPrograms/studyProgram").map {|node| parse(node)}
     end
 
     private
@@ -26,11 +26,11 @@ module CentralRegister
 
     # corrects program from node
     def self.parse(node)
-      {
-        :name => string_attr(node, "nazev"),
-        :name_english => string_attr(node, "anazev"),
-        :code => string_attr(node, "kod")
-      }
+      result = {}
+      %w(name name_english code guarantee_uic).each do |name|
+        result[name.to_sym] = string_attr(node, name)
+      end
+      return result
     end
 
     def self.string_attr(node, xpath)

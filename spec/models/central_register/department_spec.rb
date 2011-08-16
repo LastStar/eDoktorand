@@ -9,18 +9,28 @@ describe CentralRegister::Department do
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Body>
     <soap:utvaryResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-      <utvary>
-        <utvar>
-          <idUtvar>2</idUtvar>
-          <nazev_cz>Katedra matematiky</nazev_cz>
-          <nazev_en>Department of Mathematics</nazev_en>
-          <zkratka>KM</zkratka>
-          <kodUtvar>31110</kodUtvar>
-          <idFakulta>5</idFakulta>
-          <kodFakulta>41310</kodFakulta>
-          <idTypUtvar>5</idTypUtvar>
-        </utvar>
-      </utvary>
+      <departments>
+        <department>
+          <id>2</id>
+          <name>Katedra matematiky</name>
+          <name_english>Department of Mathematics</name_english>
+          <short_name>KM</short_name>
+          <code>31110</code>
+          <faculty_id>5</faculty_id>
+          <faculty_code>41310</faculty_code>
+          <department_type_id>1</department_type_id>
+        </department>
+        <department>
+          <id>3</id>
+          <name>Katedra fyziky</name>
+          <name_english>Department of Physics</name_english>
+          <short_name>KF</short_name>
+          <code>31120</code>
+          <faculty_id>5</faculty_id>
+          <faculty_code>41310</faculty_code>
+          <department_type_id>1</department_type_id>
+        </department>
+      </departments>
     </soap:utvaryResponse>
   </soapenv:Body>
 </soapenv:Envelope>
@@ -35,7 +45,16 @@ BODY
           :code => '31110',
           :faculty_id => '5',
           :faculty_code => '41310',
-          :type_id => '5'
+          :department_type_id => '1'
+        },
+        {
+          :name => 'Katedra fyziky',
+          :name_english => 'Department of Physics',
+          :short_name => 'KF',
+          :code => '31120',
+          :faculty_id => '5',
+          :faculty_code => '41310',
+          :department_type_id => '1'
         }
       ]
     end
@@ -47,17 +66,18 @@ BODY
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Body>
     <soap:utvaryResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-      <utvary>
-        <utvar>
-          <idUtvar>2</idUtvar>
-          <nazev_cz>Katedra matematiky</nazev_cz>
-          <nazev_en>Department of Mathematics</nazev_en>
-          <zkratka>KM</zkratka>
-          <kodUtvar>31110</kodUtvar>
-          <idFakulta>5</idFakulta>
-          <idTypUtvar>5</idTypUtvar>
-        </utvar>
-      </utvary>
+      <departments>
+        <department>
+          <id>3</id>
+          <name>Katedra fyziky</name>
+          <name_english>Department of Physics</name_english>
+          <short_name>KF</short_name>
+          <code>31120</code>
+          <faculty_id>5</faculty_id>
+          <faculty_code>41310</faculty_code>
+          <department_type_id>1</department_type_id>
+        </department>
+      </departments>
     </soap:utvaryResponse>
   </soapenv:Body>
 </soapenv:Envelope>

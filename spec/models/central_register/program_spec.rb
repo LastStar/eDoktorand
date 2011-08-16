@@ -7,22 +7,38 @@ describe CentralRegister::Program do
       mock_service <<BODY
 <?xml version='1.0' encoding='UTF-8'?>
 <soap:ciselnikyResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <ciselnik>
-    <polozka>
-      <kod>P6209</kod>
-      <nazev>Systémové inženýrství a informatika</nazev>
-      <anazev>Engineering and Informatics</anazev>
-    </polozka>
-  </ciselnik>
+  <studyPrograms>
+    <studyProgram>
+      <id>1</id>
+      <code>B6202</code>
+      <guarantee_uic>51381</guarantee_uic>
+      <name>Hospodářská politika a správa</name>
+      <name_english>Economic Policy and Administration</name_english>
+    </studyProgram>
+    <studyProgram>
+      <id>2</id>
+      <code>B6207</code>
+      <guarantee_uic>53475</guarantee_uic>
+      <name>Kvantitativní metody v ekonomice</name>
+      <name_english>Quantitative Methods in Economics</name_english>
+    </studyProgram>
+  </studyPrograms>
 </soap:ciselnikyResponse>
 BODY
     end
-    it "it returns array of specialization hashes" do
+    it "it returns array of study program hashes" do
       CentralRegister::Program.all.should == [
         {
-          :code => 'P6209',
-          :name => 'Systémové inženýrství a informatika',
-          :name_english => 'Engineering and Informatics'
+          :code => 'B6202',
+          :name => 'Hospodářská politika a správa',
+          :name_english => 'Economic Policy and Administration',
+          :guarantee_uic => '51381',
+        },
+        {
+          :code => 'B6207',
+          :name => 'Kvantitativní metody v ekonomice',
+          :name_english => 'Quantitative Methods in Economics',
+          :guarantee_uic => '53475',
         }
       ]
     end
@@ -33,11 +49,13 @@ BODY
 <?xml version='1.0' encoding='UTF-8'?>
 <soap:ciselnikyResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <ciselnik>
-    <polozka>
-      <kod>P6209</kod>
-      <nazev>Systémové inženýrství a informatika</nazev>
-      <anazev/>
-    </polozka>
+  <studyPrograms>
+    <studyProgram>
+      <code>B6207</code>
+      <guarantee_uic>53475</guarantee_uic>
+      <name>Kvantitativní metody v ekonomice</name>
+    </studyProgram>
+  </studyPrograms>
   </ciselnik>
 </soap:ciselnikyResponse>
 BODY
