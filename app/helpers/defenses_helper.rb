@@ -10,7 +10,7 @@ module DefensesHelper
   end
 
   def protocol_link(term)
-    link_to t(:message_3, :scope => [:helper, :defenses]), :action => :protocol, :id => term
+    link_to t(:protocol, :scope => [:helper, :defenses]), :action => :protocol, :id => term
   end
 
   def announcement_link(term)

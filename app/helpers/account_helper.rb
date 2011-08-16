@@ -4,7 +4,7 @@ module AccountHelper
    form_tag({:action=> "login"},
             {:id => 'login-form',
             :onSubmit => "$('login-button').value = '%s'" %
-              t(:message_0, :scope => [:view, :account, :login, :rhtml])},
+              t(:message_0, :scope => [:view, :account, :login])},
             &proc)
   end
 end

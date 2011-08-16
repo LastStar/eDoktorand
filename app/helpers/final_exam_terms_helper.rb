@@ -17,7 +17,7 @@ module FinalExamTermsHelper
   end
 
   def protocol_link(term)
-    link_to t(:message_17, :scope => [:helper, :terms]), :action => :protocol, :id => term
+    link_to t(:protocol, :scope => [:helper, :terms]), :action => :protocol, :id => term
   end
 
   def status(term)
