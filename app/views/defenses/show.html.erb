@@ -9,10 +9,10 @@
   </span>
   <% if !@defense.index.defense_invitation_sent? %>
   <span id='invitation_link'>
-    <%= send_invitation_link(@user, @defense.index, 'mail') %>
+    <%= send_invitation_link(@defense.index, 'mail') %>
   </span>
   <span id='invitation_link_no_mail'>
-    <%= send_invitation_link(@user, @defense.index, 'no mail') %>
+    <%= send_invitation_link(@defense.index, 'no mail') %>
   </span>
   <% end %>
 </div>
