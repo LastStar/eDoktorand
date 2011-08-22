@@ -8,7 +8,8 @@ describe ServiceTools::Programs do
         {
           :code => 'P6209',
           :name => 'Systémové inženýrství a informatika',
-          :name_english => 'Engineering and Informatics'
+          :name_english => 'Engineering and Informatics',
+          :guarantee_uic => '50005'
         }
       ])
       @department.reload

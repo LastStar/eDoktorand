@@ -3,7 +3,7 @@ require 'handsoap'
 
 module CentralRegister
   class Program < Handsoap::Service
-    endpoint Services::ERUDIO_REGISTER
+    endpoint Services::UNIVERSITY_REGISTER
     def on_create_document(doc)
       # register namespaces for the request
       doc.alias 'tns', 'http://ciselniky.services'
@@ -17,7 +17,7 @@ module CentralRegister
     # public methods
 
     def self.all
-      response = invoke('tns:getStupr', 'urn:getStupr')
+      response = invoke('tns:getStudyPrograms')
       response.xpath("//studyPrograms/studyProgram").map {|node| parse(node)}
     end
 

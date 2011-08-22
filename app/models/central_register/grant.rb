@@ -2,7 +2,7 @@
 require 'handsoap'
 
 module CentralRegister
-  class Specialization < Handsoap::Service
+  class Grant < Handsoap::Service
     endpoint Services::UNIVERSITY_REGISTER
     def on_create_document(doc)
       # register namespaces for the request
@@ -17,8 +17,8 @@ module CentralRegister
     # public methods
 
     def self.all
-      response = invoke('tns:getSpecializations')
-      response.xpath("//specializations/specialization").map {|node| parse(node)}
+      response = invoke('tns:getGrants')
+      response.xpath("//grants/grant").map {|node| parse(node)}
     end
 
     private
@@ -27,7 +27,7 @@ module CentralRegister
     # corrects subject from node
     def self.parse(node)
       result = {}
-      %w(name name_english code guarantee_uic).each do |name|
+      %w(name name_english guarantee_uic finance year_from year_to provider_code provider_name).each do |name|
         result[name.to_sym] = string_attr(node, name)
       end
       return result

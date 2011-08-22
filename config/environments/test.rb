@@ -43,8 +43,4 @@ module Services
     :uri => 'http://193.84.47.226/axis2/services/CULSServices.CULSServicesHttpSoap11Endpoint/',
     :version => 2
   }
-  ERUDIO_REGISTER = {
-    :uri => 'http://193.84.47.226/axis2/services/CiselnikyService.CiselnikyServiceHttpSoap11Endpoint/',
-    :version => 2
-  }
 end

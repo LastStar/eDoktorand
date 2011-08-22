@@ -6,19 +6,18 @@ module CentralRegister
     endpoint Services::UNIVERSITY_REGISTER
     def on_create_document(doc)
       # register namespaces for the request
-      doc.alias 'tns', 'http://osz.services'
+      doc.alias 'tns', 'http://culsServices.services'
     end
 
     def on_response_document(doc)
       # register namespaces for the response
-      doc.add_namespace 'ns', 'http://osz.services'
+      doc.add_namespace 'ns', 'http://culsServices.services'
     end
 
     # public methods
 
-    def self.all_departments
-      soap_action = 'urn:getUtvary'
-      response = invoke('tns:getUtvary', soap_action)
+    def self.all
+      response = invoke('tns:getDepartments')
       response.xpath("//department").map {|node| parse(node)}
     end
 

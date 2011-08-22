@@ -133,6 +133,18 @@ WSDL: http://services.czu.cz/CULSServices?wsdl
   * provider_code
   * provider_name
 
+* **getGrant** - grant for uic
+
+  * id
+  * guarantee_uic
+  * name
+  * name_english
+  * finance
+  * year_from
+  * year_to
+  * provider_code
+  * provider_name
+
 ### **General**
 
 * **getCountries** - all countries in the world
@@ -151,13 +163,11 @@ WSDL: http://services.czu.cz/CULSServices?wsdl
 
   * code
   * name
-  * name_english
 
 * **getMunipalities** - all czech municipalities
 
   * code
   * name
-  * name_english
 
 * **getZips** - all czech zips with municipalities
 

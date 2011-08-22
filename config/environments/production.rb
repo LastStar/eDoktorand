@@ -31,11 +31,7 @@ config.action_view.cache_template_loading            = true
 
 module Services
   UNIVERSITY_REGISTER = {
-    :uri => 'http://193.84.33.16:80/axis2/services/OSZService.OSZServiceHttpSoap11Endpoint/',
-    :version => 2
-  }
-  ERUDIO_REGISTER = {
-    :uri => 'http://193.84.47.226/axis2/services/CiselnikyService.CiselnikyServiceHttpSoap11Endpoint/',
+    :uri => 'http://193.84.47.226/axis2/services/CULSServices.CULSServicesHttpSoap11Endpoint/',
     :version => 2
   }
 end
