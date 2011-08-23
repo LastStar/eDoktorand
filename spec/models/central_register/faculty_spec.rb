@@ -5,18 +5,18 @@ describe CentralRegister::Faculty do
   context "when parsing correct response" do
     before do
       mock_service <<BODY
-<soap:facultiesResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:facultyResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <faculties>
     <faculty>
       <id>1</id>
-      <name>Fakulta agrobiologie, potravinových a přírodních zdrojů</nazev_cz>
-      <name_english>Faculty of Agrobiology, Food and Natural Resources</nazev_en>
+      <name>Fakulta agrobiologie, potravinových a přírodních zdrojů</name>
+      <name_english>Faculty of Agrobiology, Food and Natural Resources</name_english>
       <short_name>FAPPZ</short_name>
       <code>41210</code>
       <ldap_context>OU=AF,O=CZU,C=CZ</ldap_context>
     </faculty>
   </faculties>
-</soap:facultiesResponse>
+</soap:facultyResponse>
 BODY
     end
     it "it returns array of faculties hashes" do
