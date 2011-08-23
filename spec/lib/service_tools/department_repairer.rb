@@ -1,10 +1,10 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe ServiceTools::Departments do
+describe ServiceTools::DepartmentRepairer do
   context "when repairing by short name" do
     before(:each) do
       @department = Factory(:department, :short_name => 'KM')
-      ServiceTools::Departments.repair_all_by_short_name([
+      ServiceTools::DepartmentRepairer.repair_all_by_short_name([
         {
           :name => 'Katedra matematiky',
           :name_english => 'Department of Mathematics',
@@ -29,7 +29,7 @@ describe ServiceTools::Departments do
   end
   context "when unit is not department" do
     it "does not raise error" do
-      lambda{ServiceTools::Departments.repair_all_by_short_name([
+      lambda{ServiceTools::DepartmentRepairer.repair_all_by_short_name([
         {
           :name => 'Proste utvar',
           :name_english => 'Some unit',
@@ -42,7 +42,7 @@ describe ServiceTools::Departments do
   end
   context "when department does not exists ind DB yet" do
     it "does not raise error" do
-      lambda{ServiceTools::Departments.repair_all_by_short_name([
+      lambda{ServiceTools::DepartmentRepairer.repair_all_by_short_name([
         {
           :name => 'Katedra alter matematiky',
           :name_english => 'Department of Alter Mathematics',

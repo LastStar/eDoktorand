@@ -1,5 +1,5 @@
 module ServiceTools
-  module Departments
+  module DepartmentRepairer
     # repairs all departments from departments service
     # based on response from CentralRegister::Department
     def self.repair_all_by_short_name(response)
