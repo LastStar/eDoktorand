@@ -29,7 +29,7 @@ module CentralRegister
     # corrects subject from node
     def self.parse(node)
       result = {}
-      %w(uic first_name last_name birth_name title_before title_after).each do |name|
+      %w(uic first_name last_name birth_name title_before title_after mail phone_line department_code).each do |name|
         result[name.to_sym] = string_attr(node, name)
       end
       return result
