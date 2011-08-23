@@ -11,7 +11,7 @@ module CentralRegister
 
     def on_response_document(doc)
       # register namespaces for the response
-      doc.add_namespace 'ns', 'http://ciselniky.services'
+      doc.add_namespace 'ns', 'http://culsServices.services'
     end
 
     # public methods
