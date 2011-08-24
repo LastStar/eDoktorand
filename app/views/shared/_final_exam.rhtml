@@ -4,7 +4,7 @@
 <% if index.final_exam_passed? %>
       <%= index.final_exam_passed_on.strftime('%d. %m. %Y') %>
 <% else %>
-      <%= "%i. %s" % [study_plan.finishing_to, t(:message_0, :scope => [:view, :shared, :_final_exam])] %>
+      <%= "%i. %s" % [study_plan.finishing_to, t(:semester, :scope => [:view, :shared, :_final_exam])] %>
 <% end %>
     </div>
     <b><%= "#{t(:message_1, :scope => [:view, :shared, :_final_exam])}" %></b>
@@ -31,7 +31,6 @@
     <%= defense_term_link(@user, index) %>
     </li>
   <% end %>
-  <li id='defense' style="display:none"></li>
 <% else %>
   <% if index.final_exam_invitation_sent? %>
     <li><b><%= t(:message_4, :scope => [:view, :shared, :_final_exam]) %></b></li>
@@ -50,9 +49,6 @@
     <li>
     <%= final_exam_term_link(@user, index) %>
     </li>
-  <% end %>
-  <% if index.approved? %>
-    <li id='final_exam' style="display:none"></li>
   <% end %>
 <% if study_plan.final_areas? %>
   <% FACULTY_CFG[study_plan.index.faculty.id]['final_areas_count'].times do |i|%>

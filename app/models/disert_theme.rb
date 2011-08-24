@@ -58,8 +58,20 @@ class DisertTheme < ActiveRecord::Base
     end
   end
 
-  def save_theme_file(file)
+  def save_disert_theme_file(file)
     File.open("#{RAILS_ROOT}/public/pdf/disert_theme/#{self.id}.pdf", "w") do |f|
+      f.write(file.read)
+    end
+  end
+
+  def save_review_file(file)
+    File.open("#{RAILS_ROOT}/public/pdf/review/#{self.id}.pdf", "w") do |f|
+      f.write(file.read)
+    end
+  end
+
+  def save_signed_protocol_file(file)
+    File.open("#{RAILS_ROOT}/public/pdf/signed_protocol/#{self.id}.pdf", "w") do |f|
       f.write(file.read)
     end
   end

@@ -836,7 +836,7 @@ cs:
         message_17: Osobní údaje
         semester: Semestr
       _final_exam:
-        message_0: semestr
+        semester: semestr
         message_1: Státní doktorská zkouška
         message_2: Tento student byl pozván k obhajobě disertační práce.
         message_3: Tento student požádal o obhajobu disertační práce.

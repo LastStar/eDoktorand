@@ -18,7 +18,7 @@ class DefensesController < ApplicationController
     if (self_report = params[:self_report_file]) && self_report.is_a?(Tempfile) &&
       (theme = params[:disert_theme_file]) && theme.is_a?(Tempfile)
       index.disert_theme.save_self_report_file(self_report)
-      index.disert_theme.save_theme_file(theme)
+      index.disert_theme.save_disert_theme_file(theme)
       index.claim_defense!
       redirect_to :controller => :study_plans, :action => :index
     else
@@ -93,9 +93,16 @@ class DefensesController < ApplicationController
   def save_pass
     @defense = Defense.find(params[:id])
     @defense.update_attributes(:questions => params[:questions], :discussion => params[:discussion])
-    date = params[:date]
-    date = Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
-    @defense.index.final_exam_passed!(date)
+    @defense.index.disert_theme.tap do |disert_theme|
+      if (review = params[:review]) && review.is_a?(Tempfile) &&
+        (signed_protocol = params[:signed_protocol]) && signed_protocol.is_a?(Tempfile)
+        disert_theme.save_review_file(review)
+        disert_theme.save_signed_protocol_file(signed_protocol)
+      end
+      date = params[:date]
+      date = Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
+      disert_theme.defense_passed!(date)
+    end
     redirect_to :action => :list
   end
 end
