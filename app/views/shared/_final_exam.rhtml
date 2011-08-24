@@ -42,14 +42,16 @@
   <% elsif index.claimed_final_application? %>
     <li><b><%= t(:message_5, :scope => [:view, :shared, :_final_exam]) %></b></li>
     <li>
-    <%= literature_review_link(index.disert_theme) %>
     <%= index.disert_theme.literature_review %>
     </li>
-  <% end %>
-  <% if index.approved? %>
+    <li>
+    <%= literature_review_link(index.disert_theme) %>
+    </li>
     <li>
     <%= final_exam_term_link(@user, index) %>
     </li>
+  <% end %>
+  <% if index.approved? %>
     <li id='final_exam' style="display:none"></li>
   <% end %>
 <% if study_plan.final_areas? %>
