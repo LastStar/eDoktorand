@@ -1140,6 +1140,7 @@ cs:
         message_1: soubor s autoreferátem
         message_2: soubor s disertační prácí
         message_3: odeslat
+        small_defense_file: protokol z malé obhajoby
       _form:
         message_8: člen komise
         message_9: oponent

@@ -8,6 +8,10 @@
 <fieldset>
   <ul class='nodecor'>
     <li>
+      <label for="small_defense_file"><%= t(:small_defense_file, :scope => [:view, :defenses, :claim]) %></label>
+      <%= file_field_tag :small_defense_file %>
+    </li>
+    <li>
       <label for="self_report_file"><%= t(:message_1, :scope => [:view, :defenses, :claim]) %></label>
       <%= file_field_tag :self_report_file %>
     </li>
