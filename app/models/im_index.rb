@@ -33,6 +33,7 @@ class ImIndex < ActiveRecord::Base
     self.student_uic = index.student.uic
     self.department_name = index.department.name
     self.department_code = index.department.code
+    self.department_short_name = index.department.short_name
     self.faculty_name = index.faculty.name
     self.faculty_code = index.faculty.short_name
     self.study_year = index.year
