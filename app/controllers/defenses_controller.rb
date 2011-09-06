@@ -3,7 +3,8 @@ class DefensesController < ApplicationController
   include LoginSystem
   helper :exam_terms
 
-  before_filter :login_required, :prepare_user, :prepare_student
+  before_filter :login_required, :except => :announcement
+  before_filter :prepare_user, :prepare_student
 
   # page for student defense claim
   def claim
@@ -17,14 +18,28 @@ class DefensesController < ApplicationController
     disert_theme = index.disert_theme
     if (self_report = params[:self_report_file]) && self_report.is_a?(Tempfile) &&
       (theme = params[:disert_theme_file]) && theme.is_a?(Tempfile) &&
-      (small_defense = params[:small_defense_file]) && small_defense.is_a?(Tempfile)
-      index.disert_theme.save_self_report_file(self_report)
-      index.disert_theme.save_disert_theme_file(theme)
-      index.disert_theme.save_small_defense_file(small_defense)
-      index.claim_defense!
-      redirect_to :controller => :study_plans, :action => :index
+      (small_defense = params[:small_defense_file]) && small_defense.is_a?(Tempfile) &&
+      params[:agreement_of_conformity]
+        index.disert_theme.save_self_report_file(self_report)
+        index.disert_theme.save_disert_theme_file(theme)
+        index.disert_theme.save_small_defense_file(small_defense)
+        index.claim_defense!
+        Notifications::deliver_claimed_defense(index)
+        redirect_to :controller => :study_plans, :action => :index
     else
-      flash[:error] = t(:message_1, :scope => [:controller, :defenses])
+      flash[:error] = []
+      unless params[:agreement_of_conformity]
+        flash[:error] << t(:agreement_requirement, :scope => [:controller, :defenses])
+      end
+      unless self_report
+        flash[:error] << t(:self_report_requirement, :scope => [:controller, :defenses])
+      end
+      unless small_defense
+        flash[:error] << t(:small_defense_requirement, :scope => [:controller, :defenses])
+      end
+      unless disert_theme
+        flash[:error] << t(:disert_theme_requirement, :scope => [:controller, :defenses])
+      end
       redirect_to :action => :claim
     end
   end

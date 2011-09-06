@@ -7,7 +7,7 @@
   <span id='list_link'>
     <%= link_to t(:back_to_list, :scope => [:view, :final_exam_terms, :show]), :action => :list %>
   </span>
-  <% if !@final_exam_term.index.defense_invitation_sent? %>
+  <% if !@final_exam_term.index.final_exam_invitation_sent? %>
   <span id='invitation_link'>
     <%= send_invitation_link(@final_exam_term.index, 'mail') %>
   </span>

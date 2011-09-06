@@ -1,9 +1,9 @@
 <% index = exam_term.index %>
-<table class='two-columns'>
+<table class='two-columns' style='width: 100%'>
 <% if many %>
 <tr>
-  <th><%= t(:message_0, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
-  <td><%= index.student.display_name %></td>
+  <th style='width: 30%'><%= t(:message_0, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
+  <th style='width: 65%'><%= index.student.display_name %></td>
 </tr>
 <tr>
   <th><%= t(:message_1, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
@@ -43,8 +43,6 @@
   <td><%= exam_term.opponent %> </td>
 </tr>
 <% end %>
-</table>
-<table class='two-columns'>
 <tr>
   <th colspan='2'><%= t(:message_9, :scope => [:view, :final_exam_terms, :_detail]) %>: </th>
 </tr>

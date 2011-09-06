@@ -1,9 +1,11 @@
 <% index = @defense.index %>
+<% if @user %>
 <div class='links'>
   <%= defense_terms_link %>
 </div>
+<% end %>
 <div id='header'>
-  <h2><%= @user.person.faculty.name %></h2>
+  <h2><%= index.faculty.name %></h2>
   <h3><%= t(:message_0, :scope => [:view, :defenses, :announcement]) %></h3>
 </div>
 <p><%= t(:message_1, :scope => [:view, :defenses, :announcement]) %></p>

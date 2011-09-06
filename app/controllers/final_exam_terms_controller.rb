@@ -3,7 +3,8 @@ class FinalExamTermsController < ApplicationController
   include LoginSystem
   helper :exam_terms, :students
 
-  before_filter :login_required, :prepare_user, :prepare_student
+  before_filter :login_required, :except => :prepare_print
+  before_filter :prepare_user, :prepare_student
 
   def list
     @title = t(:message_0, :scope => [:controller, :terms])
@@ -15,6 +16,7 @@ class FinalExamTermsController < ApplicationController
   def prepare_print
     if params[:terms] && !params[:terms].empty?
       @final_exam_terms = FinalExamTerm.find(params[:terms])
+      @faculty = @final_exam_terms.first.index.faculty
     else
       redirect_to :action => :list
     end
@@ -25,19 +27,26 @@ class FinalExamTermsController < ApplicationController
     @study_plan = @user.person.index.study_plan
   end
 
+  #TODO if ever gets to refactoring do all this saving with carrierwave
+  #GOD BLESS
   def confirm_claim
     index = @user.person.index
     @study_plan = index.study_plan
-    if @study_plan.update_attributes(params[:study_plan])
-      index.claim_final_exam!
-      if (literature_review = params[:literature_review_file]) &&
-        literature_review.is_a?(Tempfile)
+    if (literature_review = params[:literature_review_file]) &&
+      literature_review.is_a?(Tempfile)
+      if @study_plan.update_attributes(params[:study_plan])
+        index.claim_final_exam!
         index.disert_theme.save_literature_review(literature_review)
+        index.disert_theme.update_attributes(params[:disert_theme])
+        Notifications::deliver_claimed_final_exam(index)
+        redirect_to :controller => :study_plans, :action => :index
+      else
+        @title = t(:message_1, :scope => [:controller, :terms])
+        render :action => 'claim'
       end
-      index.disert_theme.update_attributes(params[:disert_theme])
-      redirect_to :controller => :study_plans, :action => :index
     else
       @title = t(:message_1, :scope => [:controller, :terms])
+      @study_plan.errors.add_to_base t(:review_required, :scope => [:controller, :terms])
       render :action => 'claim'
     end
   end

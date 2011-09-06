@@ -25,7 +25,7 @@ class FinalExamTerm < ExamTerm
       options[:conditions] << Date.today
     end
     options[:include] = :index
-    options[:order] = 'date desc'
+    options[:order] = 'date asc'
     final_exams = find(:all, options)
     return final_exams
   end

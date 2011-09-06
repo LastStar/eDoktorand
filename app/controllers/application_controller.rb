@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include LoginSystem
 
   filter_parameter_logging :password
-  # protect_from_forgery 
+  # protect_from_forgery
 
   before_filter :utf8_locale
   # enable or disable enroll candidates in application
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   def utf8_locale
     if params[:lang]
       cookies[:lang] = params[:lang]
-    elsif cookies[:lang] 
+    elsif cookies[:lang]
       params[:lang] = cookies[:lang]
     end
     I18n.locale = params[:lang]
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def csv_headers(file = 'atachment.csv')
-    headers['Content-Type'] = "application/vnd.ms-excel" 
+    headers['Content-Type'] = "application/vnd.ms-excel"
     headers['Content-Disposition'] = 'attachment; filename="' + file + '"'
     headers['Cache-Control'] = ''
   end
@@ -40,14 +40,16 @@ class ApplicationController < ActionController::Base
   # checks if user is student
   # if true creates @student variable with current student
   def prepare_student
-    if @user.person.kind_of?(Student)
-      @student = @user.person 
+    if @user && @user.person.kind_of?(Student)
+      @student = @user.person
     end
   end
 
   # prepares user class variable
   def prepare_user
-    @user = User.find(session[:user])
+    if session[:user]
+      @user = User.find(session[:user])
+    end
   end
 
   # prepares faculty class variable
@@ -75,5 +77,5 @@ class ApplicationController < ActionController::Base
   def good_browser?(agent = /Firefox/)
     request.env['HTTP_USER_AGENT'] =~ agent
   end
- 
+
 end

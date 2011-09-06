@@ -1,6 +1,8 @@
+<%-if @user %>
 <div class='links'><%= final_exam_terms_link %> <%= link_to t(:message_0, :scope => [:view, :final_exam_terms, :protocol]), :action => :list %></div>
+<% end %>
 <div id='header'>
-<h2><%= @user.person.faculty.name %></h2>
+<h2><%= @faculty.name %></h2>
 <h3><%= t(:message_0, :scope => [:view, :final_exam_terms, :prepare_print]) %></h3>
 </div>
 <p><%= t(:message_1, :scope => [:view, :final_exam_terms, :prepare_print]) %></p>

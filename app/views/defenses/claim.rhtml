@@ -1,23 +1,30 @@
 <h5><%= t(:message_0, :scope => [:view, :defenses, :claim]) %></h5>
-<div id='error'>
+<div class='error'>
 <% if flash[:error] %>
-  <%= flash[:error] %>
+  <% flash[:error].each do |message| %>
+    <p><%= message %></p>
+  <% end %>
 <% end %>
 </div>
+<p><%= t(:red_is_required, :scope => [:view, :defenses, :claim]) %></p>
 <% form_tag({:action => :confirm_claim}, {:multipart => true}) do %>
 <fieldset>
   <ul class='nodecor'>
     <li>
-      <label for="small_defense_file"><%= t(:small_defense_file, :scope => [:view, :defenses, :claim]) %></label>
+      <label for="small_defense_file" class='required'><%= t(:small_defense_file, :scope => [:view, :defenses, :claim]) %></label>
       <%= file_field_tag :small_defense_file %>
     </li>
     <li>
-      <label for="self_report_file"><%= t(:message_1, :scope => [:view, :defenses, :claim]) %></label>
+      <label for="self_report_file" class='required'><%= t(:message_1, :scope => [:view, :defenses, :claim]) %></label>
       <%= file_field_tag :self_report_file %>
     </li>
     <li>
-      <label for="disert_theme_file"><%= t(:message_2, :scope => [:view, :defenses, :claim]) %></label>
+      <label for="disert_theme_file" class='required'><%= t(:message_2, :scope => [:view, :defenses, :claim]) %></label>
       <%= file_field_tag :disert_theme_file %>
+    </li>
+    <li>
+      <label for="disert_theme_conformity" class='required'><%= t(:agreement_of_conformity, :scope => [:view, :defenses, :claim]) %></label>
+      <%= check_box_tag :agreement_of_conformity %>
     </li>
   </ul>
 </fieldset>

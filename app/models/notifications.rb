@@ -79,10 +79,10 @@ class Notifications < ActionMailer::Base
     @body['first_name'] = study_plan.index.student.firstname
     @body['last_name'] = study_plan.index.student.lastname
     if study_plan.index.student.birth_number == nil
-     @body['birth_number'] = ''
-      else
-       # @body['birth_number'] = I18n::t(:message_7, :scope => [:model, :notifications]) + study_plan.index.student.birth_number
-       @body['birth_number'] = I18n.t(:with_personal_identfication_number, :scope => [:model, :notifications])  + study_plan.index.student.birth_number
+      @body['birth_number'] = ''
+    else
+      # @body['birth_number'] = I18n::t(:message_7, :scope => [:model, :notifications]) + study_plan.index.student.birth_number
+      @body['birth_number'] = I18n.t(:with_personal_identfication_number, :scope => [:model, :notifications])  + study_plan.index.student.birth_number
     end
     @body['specialization'] = study_plan.index.specialization.name
     @body['sent_on'] = sent_at
@@ -112,38 +112,90 @@ class Notifications < ActionMailer::Base
     @body['subject_change_tutor'] = subject_change_tutor
   end
 
-  def invite_to_final_exam(index, sent_at = Time.now)
-    faculty = index.faculty
-    @subject = I18n::t(:final_exam_invitation, :scope => [:model, :notifications])
-    @body[:student] = index.student
-    @body[:sent_on] = sent_at
-    if index.final_exam_term.chairman.email != nil
-      @recipients = index.student.email, index.final_exam_term.chairman.email
-    else
-      @recipients = index.student.email
-    end
-    @cc        = faculty.secretary.email
-    @from       = faculty.secretary.email
-  end
-
-  def invite_to_defense(index, sent_at = Time.now)
-    faculty = index.faculty
-    @subject = I18n::t(:defense_invitation, :scope => [:model, :notifications])
-    @body[:student] = index.student
-    @body[:sent_on] = sent_at
-    if index.defense.chairman.email != nil
-      @recipients = index.student.email, index.defense.chairman.email
-    else
-      @recipients = index.student.email
-    end
-    @cc        = faculty.secretary.email
-    @from       = faculty.secretary.email
-  end
-
   def created_account(im_identity, sent_at = Time.now)
     @subject = I18n::t(:account_created, :scope => [:model, :notifications])
     @body[:im_identity] = im_identity
     @from = "edoktorand@edoktorand.czu.cz"
     @recipients = im_identity.student.email
   end
+
+  def claimed_final_exam(index, sent_at = Time.now)
+    faculty = index.faculty
+    @subject = I18n::t(:claimed_final_exam, :scope => [:model, :notifications])
+    @body[:student] = index.student
+    @body[:sent_on] = sent_at
+    #TODO add to configuration
+    @from = 'edoktorand@edoktorand.czu.cz'
+    @recipients = faculty.secretary.email
+    @cc = index.student.email
+  end
+
+  def invite_to_final_exam(index, sent_at = Time.now)
+    faculty = index.faculty
+    @subject = I18n::t(:final_exam_invitation, :scope => [:model, :notifications])
+    @final_exam = index.final_exam_term
+    @body[:student] = index.student.display_name_with_title
+    @body[:chairman] = @final_exam.chairman.display_name
+    @body[:sent_on] = sent_at
+    @body[:room] = @final_exam.room
+    @body[:date] = @final_exam.date
+    @body[:start_time] = @final_exam.start_time
+    @body[:id] = @final_exam.id
+    @body['examinators'] = [
+      @final_exam.first_examinator, @final_exam.second_examinator,
+      @final_exam.third_examinator, @final_exam.fourth_examinator,
+      @final_exam.fifth_examinator, @final_exam.sixth_examinator,
+      @final_exam.seventh_examinator, @final_exam.eighth_examinator,
+      @final_exam.nineth_examinator
+    ].compact.reject(&:empty?)
+    @body['opponents'] = [
+      @final_exam.opponent, @final_exam.second_opponent,
+      @final_exam.third_opponent
+    ].compact.reject(&:empty?)
+    @from = 'edoktorand@edoktorand.czu.cz'
+    @recipients = [index.student.email, faculty.secretary.email]
+    if @defense.chairman.email != nil
+      @recipients << @defense.chairman.email
+    end
+  end
+
+  def claimed_defense(index, sent_at = Time.now)
+    faculty = index.faculty
+    @subject = I18n::t(:claimed_defense, :scope => [:model, :notifications])
+    @body[:student] = index.student
+    @body[:sent_on] = sent_at
+    #TODO add to configuration
+    @from = 'edoktorand@edoktorand.czu.cz'
+    @recipients = faculty.secretary.email
+    @cc = index.student.email
+  end
+
+  def invite_to_defense(index, sent_at = Time.now)
+    faculty = index.faculty
+    @defense = index.defense
+    @body[:student] = index.student.display_name_with_title
+    @body[:chairman] = @defense.chairman.display_name
+    @body[:sent_on] = sent_at
+    @body[:room] = @defense.room
+    @body[:date] = @defense.date
+    @body[:start_time] = @defense.start_time
+    @body[:id] = @defense.id
+    @body['examinators'] = [
+      @defense.first_examinator, @defense.second_examinator,
+      @defense.third_examinator, @defense.fourth_examinator,
+      @defense.fifth_examinator, @defense.sixth_examinator,
+      @defense.seventh_examinator, @defense.eighth_examinator,
+      @defense.nineth_examinator
+    ].compact.reject(&:empty?)
+    @body['opponents'] = [
+      @defense.opponent, @defense.second_opponent,
+      @defense.third_opponent
+    ].compact.reject(&:empty?)
+    @from = 'edoktorand@edoktorand.czu.cz'
+    @recipients = [index.student.email, faculty.secretary.email]
+    if @defense.chairman.email != nil
+      @recipients << @defense.chairman.email
+    end
+  end
+
 end

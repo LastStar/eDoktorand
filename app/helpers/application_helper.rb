@@ -469,7 +469,7 @@ module ApplicationHelper
     elsif index.final_exam_term
       opts = {:controller => 'final_exam_terms', :action => 'show', :id => index.final_exam_term.id}
     end
-    link_to(t(:message_53, :scope => [:helper, :application]), opts, :id => 'final_exam_link')
+    link_to(t(:message_53, :scope => [:helper, :application]), opts, :popup => true, :id => 'final_exam_link')
   end
 
   def final_exam_terms_link
@@ -478,11 +478,11 @@ module ApplicationHelper
 
   def defense_term_link(user, index)
     if user.has_role?('faculty_secretary') && !index.defense_invitation_sent?
-      url = {:controller => 'defenses', :action => 'new', :id => index}
+      options = {:controller => 'defenses', :action => 'new', :id => index}
     elsif index.defense
-      url = {:controller => 'defenses', :action => 'show', :id => index.defense.id}
+      options = {:controller => 'defenses', :action => 'show', :id => index.defense.id}
     end
-    link_to(t(:message_54, :scope => [:helper, :application]), url, :id => 'defense_link') if url
+    link_to(t(:message_54, :scope => [:helper, :application]), options, :popup => true, :id => 'defense_link') if options
   end
 
   def hide_link(element, text = t(:message_55, :scope => [:helper, :application]))

@@ -1070,14 +1070,11 @@ cs:
         message_0: Vytváření termínu zkoušky
         message_1: Zkouškový termín z předmětu
     notifications:
-      invite_to_defense:
-        message_0: Dobrý den
-        message_1: byl vytvořen termín Vaší obhajoby. Přihlašte se prosím ke svému účtu pro zkontrolování detailů.
-        message_2: S přáním všeho nejlepšího
-      invite_to_final_exam:
-        message_0: Dobrý den
-        message_1: byl vytvořen termín Vaší státní doktorské zkoušky. Přihlašte se prosím ke svému účtu pro zkontrolování detailů.
-        message_2: S přáním všeho nejlepšího
+      greeting: Dobrý den
+      signature: S přáním všeho nejlepšího
+      system_signature: S přáním všeho nejlepšího, systém eDoktorand
+      final_exam_term_created: byl vytvořen termín Vaší státní doktorské zkoušky. Přihlašte se prosím ke svému účtu pro zkontrolování detailů.
+      defense_term_created: byl vytvořen termín Vaší obhajoby. Přihlašte se prosím ke svému účtu pro zkontrolování detailů.
       created_account:
       reject_candidate:
       admit_candidate:
@@ -1136,6 +1133,8 @@ cs:
         message_5: Třetí oponent
         message_6: Členové komise
       claim:
+        agreement_of_conformity: práce je shodná s papírovou
+        red_is_required: všechny červené položky jsou povinné
         message_0: Přihláška k obhajobě
         message_1: soubor s autoreferátem
         message_2: soubor s disertační prácí
@@ -1820,6 +1819,7 @@ cs:
       dear_mr: Vážený pane
       dear_ms: Vážená paní
       notice_about_admitance: Vyrozumění o přijímacím řízení na doktorské studium
+      claimed_final_exam: Podána žádost o statní doktorskou zkoušku
       final_exam_invitation: Pozvánka k státní doktorské zkoušce
       defense_invitation: Pozvánka k obhajobě
       message_9: Pozvánka k obhajobě
@@ -1894,6 +1894,10 @@ cs:
     scholarships:
       message_0: Stipendia
     defenses:
+      agreement_requirement: musíte potvrdit shodnost
+      self_report_requirement: musíte přiložit autoreferát
+      disert_theme_requirement: musíte přiložit disertační práci
+      small_defense_requirement: musíte přiložit záznam z katedrové obhajoby
       message_0: Přihláška k obhajobě
       message_1: Musíte přidat autoreferát
       message_2: termín obhajoby byl úspěšně vytvořen
@@ -1902,6 +1906,7 @@ cs:
       message_5: Protokol obhajoby disertační práce
       passing: Záznam o obhajobě DP
     terms:
+      review_required: Soubor s tezí dizertační práce je povinný
       commision_was_updated: Komise byla úspěšně opravena
       creation_commission: Vytváření komise příjimacích zkoušek
       commision_was_created: Komise byla úspěšně vytvořena.
