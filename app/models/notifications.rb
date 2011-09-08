@@ -153,10 +153,12 @@ class Notifications < ActionMailer::Base
       @final_exam.third_opponent
     ].compact.reject(&:empty?)
     @from = 'edoktorand@edoktorand.czu.cz'
-    @recipients = [index.student.email, faculty.secretary.email]
-    if @defense.chairman.email != nil
-      @recipients << @defense.chairman.email
-    end
+    @recipients = [index.student.email, faculty.secretary.email,
+      @final_exam.chairman.email, @final_exam.first_examinator_email,
+      @final_exam.second_examinator_email, @final_exam.third_examinator_email,
+      @final_exam.fourth_examinator_email, @final_exam.fifth_examinator_email,
+      @final_exam.sixth_examinator_email, @final_exam.opponent
+    ].compact.reject(&:empty?)
   end
 
   def claimed_defense(index, sent_at = Time.now)
@@ -192,10 +194,13 @@ class Notifications < ActionMailer::Base
       @defense.third_opponent
     ].compact.reject(&:empty?)
     @from = 'edoktorand@edoktorand.czu.cz'
-    @recipients = [index.student.email, faculty.secretary.email]
-    if @defense.chairman.email != nil
-      @recipients << @defense.chairman.email
-    end
+    @recipients = [index.student.email, faculty.secretary.email,
+      @defense.chairman.email, @defense.first_examinator_email,
+      @defense.second_examinator_email, @defense.third_examinator_email,
+      @defense.fourth_examinator_email, @defense.fifth_examinator_email,
+      @defense.sixth_examinator_email, @defense.opponent,
+      @defense.second_opponent, @defense.third_opponent
+    ].compact.reject(&:empty?)
   end
 
 end
