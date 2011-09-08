@@ -893,16 +893,7 @@ cs:
         message_2: soubor s tezí disertační práce
         message_3: odeslat
       _form:
-        message_8: člen komise
-        message_9: oponent
-        message_0: datum a čas
-        message_1: místnost
         message_2: předseda komise
-        message_3: člen komise
-        message_4: člen komise
-        message_5: člen komise
-        message_6: člen komise
-        message_7: člen komise
       _term_line:
         room: v místnosti
         show: zobrazit
@@ -1140,19 +1131,6 @@ cs:
         message_2: soubor s disertační prácí
         message_3: odeslat
         small_defense_file: protokol z malé obhajoby
-      _form:
-        message_8: člen komise
-        message_9: oponent
-        message_0: datum a čas
-        message_10: druhý oponent
-        message_1: místnost
-        message_11: třetí oponent
-        message_2: předseda komise
-        message_3: člen komise
-        message_4: člen komise
-        message_5: člen komise
-        message_6: člen komise
-        message_7: člen komise
       announcement:
         message_8: Místnost
         message_9: Název disertační práce
@@ -1179,6 +1157,16 @@ cs:
       _bad_tutor:
         message_0: Školitel není nikam zařazen, kontaktujte HELPDESK
     exam_terms:
+      date_and_time: datum a čas
+      room: místnost
+      chairman: Předseda komise
+      enter_manually: zadat ručně
+      back_to_list: zpět na seznam
+      member: člen komise
+      opponent: oponent
+      date_and_time: datum a čas
+      subject: předmět
+      email: email
       new:
         message_0: vytvořit
         message_1: zpět
@@ -1198,11 +1186,9 @@ cs:
         message_1: zpět
         message_2: Přijímací komise
       _form:
-        message_12: zadat ručně
-        message_11: zpět na seznam
         message_8: člen komise
         message_9: člen komise
-        message_0: datum a čas
+        message_0:
         message_10: člen komise
         message_1: místnost
         message_2: Předseda komise
