@@ -247,8 +247,8 @@ class CSVExporter
     def export_candidates_evident_card(options = {})
       unless cs = options[:candidates]
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : Faculty.find(options[:faculty])
-        cs = Candidate.find(:all, :conditions => ['invited_on is not null' +
-        #cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' +
+        #cs = Candidate.find(:all, :conditions => ['invited_on is not null' +
+        cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' +
           ' and specialization_id in (?)', faculty.specializations])
         file = "candidate_evident_#{faculty.short_name}.csv"
       else
@@ -892,5 +892,53 @@ class CSVExporter
       end
     end
 
+    def candidates_for_post(faculty)
+      cs = faculty.candidates.select {|c| c.admited? || c.rejected?}
+      File.open("post_candidates_#{faculty.short_name}.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          cs.each do |c|
+            row = []
+            row << c.display_name
+            row << c.address
+            csv << row
+          end
+        end
+      end
+    end
+
+    def students_for_jitka(dean_user)
+      indices = Index.find_for(dean_user)
+      @@mylog.info("There are %i students" % indices.size)
+      File.open("students.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          csv << ['jmeno', 'stav', 'absolvoval', 'sdz', 'rok', 'forma', 'katedra', 'obor', 'prijat', 'stav SP']
+          indices.each do |index|
+            row = []
+            row << index.student.display_name
+            row << index.status
+            if index.status == 'absolvoval'
+              row << index.disert_theme.defense_passed_on
+            else
+              row << ''
+            end
+            if index.final_exam_passed_on
+              row << index.final_exam_passed_on
+            else
+              row << ''
+            end
+            row << index.year
+            row << index.study_name
+            row << index.department.short_name
+            row << index.specialization.code
+            row << index.enrolled_on.strftime('%d/%m/%Y')
+            row << index.study_plan.try(:status)
+            row << index.disert_theme.try(:title)
+            row << index.tutor.try(:display_name)
+            @@mylog.info(row)
+            csv << row
+          end
+        end
+      end
+    end
   end
 end
