@@ -4,7 +4,7 @@ class Department < ActiveRecord::Base
   has_many :candidates, :conditions => "finished_on IS NOT NULL"
   has_many :indices
   has_many :tutorships
-  has_many :tutors, :through => :tutorships
+  has_many :tutors, :through => :department_employment
   has_one :leadership
   has_one :department_employment, :foreign_key => 'unit_id'
   belongs_to :faculty
