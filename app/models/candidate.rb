@@ -258,10 +258,12 @@ class Candidate < ActiveRecord::Base
     student.desc_number = self.number
     student.city = self.city
     student.country = self.address_state
+    student.zip = self.address_state
     student.postal_street = self.postal_street
     student.postal_city = self.postal_city
     student.postal_desc_number = self.postal_number
     student.postal_country = self.postal_state
+    student.postal_zip = self.postal_state
     student.email = self.email
     student.phone = self.phone if self.phone
     student.sex = self.sex
