@@ -1,9 +1,9 @@
 <% index = @study_plan.index %>
-<h2 style='text-align: center'><%= t(:annual_attestation, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %> 2010</h2>
-<br/> 
-<br/> 
-<br/> 
-<br/> 
+<h2 style='text-align: center'><%= t(:annual_attestation, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %> <%= Date.today.year %></h2>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <b><%= t(:university_name, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %> - <%= index.faculty.name %></b>
 <table class='information'>
@@ -69,7 +69,7 @@
 
 </table>
 
-<br/> 
+<br/>
 
 <p><%= t(:state_doctorate_exam, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %>: <%= index.disert_theme.finishing_to %>. <%= t(:term, :scope => [:txt, :view, :study_plans, :annual_report, :rhtml]) %></p>
 
