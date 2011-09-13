@@ -239,6 +239,7 @@ class Candidate < ActiveRecord::Base
 
   # creates student and index from self
   def new_student(enrolled_on)
+    Dean.columns #Table inheritance biting our ass again
     uic_getter = UicGetter.new
     student = Student.new
     if self.state == 'CZ' || self.state == "SK"
@@ -258,12 +259,12 @@ class Candidate < ActiveRecord::Base
     student.desc_number = self.number
     student.city = self.city
     student.country = self.address_state
-    student.zip = self.address_state
+    student.zip = self.zip
     student.postal_street = self.postal_street
     student.postal_city = self.postal_city
     student.postal_desc_number = self.postal_number
     student.postal_country = self.postal_state
-    student.postal_zip = self.postal_state
+    student.postal_zip = self.postal_zip
     student.email = self.email
     student.phone = self.phone if self.phone
     student.sex = self.sex
