@@ -23,6 +23,10 @@
   <td><%= index_line.status %></td>
 <% if index_line.absolved? %>
   <td><%= index_line.disert_theme.defense_passed_on.strftime("%d. %m. %Y") %></td>
+<% elsif index_line.final_exam_passed? %>
+  <td><%= index_line.final_exam_passed_on.strftime("%d. %m. %Y") %></td>
+<% elsif index_line.finished? %>
+  <td><%= index_line.finished_on.strftime("%d. %m. %Y") %></td>
 <% elsif index_line.interrupted? %>
   <td><%= interrupt_to_info(index_line) %></td>
 <% elsif study_plan  %>
