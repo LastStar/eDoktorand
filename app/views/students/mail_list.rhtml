@@ -1,4 +1,4 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :students, :mail_list, :rhtml]) + "(#{@indices.size})" %></h5>
+<h5><%= t(:message_0, :scope => [:view, :students, :mail_list]) + "(#{@indices.size})" %></h5>
 <table id="emails_table">
   <tbody>
   <% for index in @indices %>
@@ -7,7 +7,7 @@
       <td>
         <%= admin_edit_mail_link(index) %>
           <% if index.student.email %>
-            <%= index.student.email %>      
+            <%= index.student.email %>
         <% end %>
       </td>
     </tr>

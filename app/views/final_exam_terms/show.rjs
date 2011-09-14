@@ -1,2 +1,0 @@
-page.show 'final_exam'
-page.replace_html 'final_exam', :partial => 'show'

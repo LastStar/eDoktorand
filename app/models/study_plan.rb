@@ -1,7 +1,7 @@
 require 'approvable'
 class StudyPlan < ActiveRecord::Base
   include Approvable
-  
+
   belongs_to :index
   has_many :plan_subjects, :order => 'finishing_on', :dependent => :delete_all
   has_one :approval, :class_name => 'StudyPlanApproval',
@@ -21,7 +21,7 @@ class StudyPlan < ActiveRecord::Base
     if final_areas
       if final_areas['cz'].values.join('').strip == '' ||
         final_areas['en'].values.join('').strip == ''
-        errors.add('final_areas', I18n.t(:final_areas_must_be_filled, :scope => [:txt, :model, :study_plan]))
+        errors.add('final_areas', I18n.t(:final_areas_must_be_filled, :scope => [:model, :study_plan]))
       end
     end
   end
@@ -34,7 +34,7 @@ class StudyPlan < ActiveRecord::Base
     update_attribute(:approved_on, time)
   end
 
-  # returns if study plan is canceled 
+  # returns if study plan is canceled
   def canceled?
     #if canceled_on && approved_on && canceled_on.to_time > approved_on.to_time
     if canceled_on != nil
@@ -66,13 +66,13 @@ class StudyPlan < ActiveRecord::Base
 
   # returns true if tudy plan waits for actuala attestation
   def waits_for_actual_attestation?
-    !index.final_exam_passed? && 
-      !attested_for?(Attestation.actual_for_faculty(index.student.faculty)) 
+    !index.final_exam_passed? &&
+      !attested_for?(Attestation.actual_for_faculty(index.student.faculty))
   end
 
-  # returns attestation detail for next attestation  
+  # returns attestation detail for next attestation
   def next_attestation_detail
-    AttestationDetail.find_by_study_plan_id_and_attestation_term(id, 
+    AttestationDetail.find_by_study_plan_id_and_attestation_term(id,
       Attestation.next_for_faculty(index.student.faculty))
   end
 
@@ -82,7 +82,7 @@ class StudyPlan < ActiveRecord::Base
 
   # returns attestation detail for actual attestations
   def actual_attestation_detail
-    AttestationDetail.find_by_study_plan_id_and_attestation_term(id, 
+    AttestationDetail.find_by_study_plan_id_and_attestation_term(id,
       Attestation.actual_for_faculty(index.student.faculty))
   end
 
@@ -103,7 +103,7 @@ class StudyPlan < ActiveRecord::Base
   def finished_attestation_subjects
     attestation_subjects.select(&:finished?)
   end
- 
+
   def attestation_subjects_ratio
     "#{attestation_subjects.size} / #{finished_attestation_subjects.size}"
   end
@@ -113,10 +113,10 @@ class StudyPlan < ActiveRecord::Base
     index.semester
   end
 
-  # aproves study plan with statement from parameters 
+  # aproves study plan with statement from parameters
   def approve_with(params)
     statement = \
-    eval("#{params[:type]}.create(params)") 
+    eval("#{params[:type]}.create(params)")
     self.approval ||= StudyPlanApproval.create
     self.approval.update_attribute("#{params[:type].underscore}_id", statement.id)
     if statement.is_a?(LeaderStatement) && !approval.tutor_statement
@@ -124,9 +124,9 @@ class StudyPlan < ActiveRecord::Base
         TutorStatement.create(statement.attributes)
     end
     if statement.cancel?
-      cancel! 
+      cancel!
     elsif statement.is_a?(DeanStatement)
-      approve! 
+      approve!
     end
     save
   end
@@ -155,23 +155,23 @@ class StudyPlan < ActiveRecord::Base
       @status ||= if index.disert_theme.defense_passed? || index.final_exam_passed?
         ''
       elsif all_subjects_finished?
-        I18n::t(:study_plan_completed, :scope => [:txt, :model, :plan])
+        I18n::t(:study_plan_completed, :scope => [:model, :plan])
       elsif canceled?
-        I18n::t(:study_plan_not_approved, :scope => [:txt, :model, :plan])
+        I18n::t(:study_plan_not_approved, :scope => [:model, :plan])
       elsif approved?
-        I18n::t(:study_plan_approved, :scope => [:txt, :model, :plan])
+        I18n::t(:study_plan_approved, :scope => [:model, :plan])
       elsif admited?
-        I18n::t(:study_plan_admited, :scope => [:txt, :model, :plan])
+        I18n::t(:study_plan_admited, :scope => [:model, :plan])
       end
     else
-      I18n::t(:missing_disert_theme_title, :scope => [:txt, :model, :plan])
+      I18n::t(:missing_disert_theme_title, :scope => [:model, :plan])
     end
   end
 
   # return last approving person localized string
   def approved_by
     if approved?
-      I18n::t(:dean, :scope => [:txt, :model, :plan])
+      I18n::t(:dean, :scope => [:model, :plan])
     elsif approval
       approval.approved_by
     end
@@ -192,7 +192,7 @@ class StudyPlan < ActiveRecord::Base
   def unfinished_subjects(param = nil)
     @unfinished_subjects ||= plan_subjects - self.finished_subjects
 
-    if param == :subjects 
+    if param == :subjects
      return @unfinished_subjects.map {|p| p.subject}
     else
      return @unfinished_subjects

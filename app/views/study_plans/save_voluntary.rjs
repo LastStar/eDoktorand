@@ -1,6 +1,6 @@
-page.insert_html :bottom, 'studyPlan', :partial => 'shared/subjects', 
+page.insert_html :bottom, 'studyPlan', :partial => 'shared/subjects',
                                        :locals => {:subjects =>
                                          session[:voluntary_subjects],
-                                       :title => I18n::t(:message_0, :scope => [:txt, :view, :study_plans, :save_voluntary, :rhtml])}
-page.replace_html 'form', render(:partial => "language_form") 
+                                       :title => I18n::t(:message_0, :scope => [:view, :study_plans, :save_voluntary])}
+page.replace_html 'form', render(:partial => "language_form")
 

@@ -1,6 +1,6 @@
-<%=t(:message_0, :scope => [:txt, :view, :candidates, :_contact, :rhtml])%>: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br /> 
-<%=t(:message_1, :scope => [:txt, :view, :candidates, :_contact, :rhtml])%>: <%= candidate.phone %><br /> 
-<%=t(:message_2, :scope => [:txt, :view, :candidates, :_contact, :rhtml])%>: <%= candidate.address %><br /> 
+<%=t(:message_0, :scope => [:view, :candidates, :_contact])%>: <a href='mailto:<%= candidate.email %>'><%= candidate.email %></a><br />
+<%=t(:message_1, :scope => [:view, :candidates, :_contact])%>: <%= candidate.phone %><br />
+<%=t(:message_2, :scope => [:view, :candidates, :_contact])%>: <%= candidate.address %><br />
 <% unless candidate.postal_street.empty? %>
-<%=t(:message_3, :scope => [:txt, :view, :candidates, :_contact, :rhtml])%>: <%= candidate.postal_address %>
+<%=t(:message_3, :scope => [:view, :candidates, :_contact])%>: <%= candidate.postal_address %>
 <% end %>

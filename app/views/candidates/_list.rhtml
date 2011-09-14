@@ -5,7 +5,7 @@
     <tr>
       <th>
         <%= candidate.display_name %>
-        <%= t(:message_0, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>&nbsp;<%= candidate.birth_number %>
+        <%= t(:message_0, :scope => [:view, :candidates, :_list]) %>&nbsp;<%= candidate.birth_number %>
         &nbsp;&nbsp;&nbsp;
         <%= status_tag(candidate) %>
         <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
@@ -26,8 +26,8 @@
         <%= link_to 'detail', :action => 'show', :id => candidate %>
       <%end%>
       <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
-        <%= link_to t(:message_1, :scope => [:txt, :view, :candidates, :_list, :rhtml]), :action => 'edit', :id => candidate %>
-        <%= link_to t(:message_2, :scope => [:txt, :view, :candidates, :_list, :rhtml]), {:action => 'delete', :id => candidate}, :confirm =>  t(:message_7, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %>
+        <%= link_to t(:message_1, :scope => [:view, :candidates, :_list]), :action => 'edit', :id => candidate %>
+        <%= link_to t(:message_2, :scope => [:view, :candidates, :_list]), {:action => 'delete', :id => candidate}, :confirm =>  t(:message_7, :scope => [:view, :candidates, :_list]) %>
       <% end %>
       <%= contact_toggle_link(candidate) %>
       <% unless @user.has_role?('board_chairman') %>
@@ -37,8 +37,8 @@
     </tr>
     <tr>
       <td>
-        <strong><%= candidate.study.name.capitalize %></strong> <%= t(:message_4, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %> 
-        <%= t(:message_3, :scope => [:txt, :view, :candidates, :_list, :rhtml]) %> <strong><%= candidate.specialization.name %></strong>
+        <strong><%= candidate.study.name.capitalize %></strong> <%= t(:message_4, :scope => [:view, :candidates, :_list]) %>
+        <%= t(:message_3, :scope => [:view, :candidates, :_list]) %> <strong><%= candidate.specialization.name %></strong>
       </td>
     </tr>
     <tr>

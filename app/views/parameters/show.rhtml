@@ -1,18 +1,18 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :parameters, :show, :rhtml]) %></h5>
+<h5><%= t(:message_0, :scope => [:view, :parameters, :show]) %></h5>
 
 <p>
-  <b><%= t(:message_1, :scope => [:txt, :view, :parameters, :show, :rhtml]) %>:</b> <%=h @parameter.name %>
+  <b><%= t(:message_1, :scope => [:view, :parameters, :show]) %>:</b> <%=h @parameter.name %>
 </p>
 <p>
-    <b><%= t(:message_3, :scope => [:txt, :view, :parameters, :show, :rhtml]) %>:</b> <%=h Faculty.find_by_id(@parameter.faculty_id).short_name %>
+    <b><%= t(:message_3, :scope => [:view, :parameters, :show]) %>:</b> <%=h Faculty.find_by_id(@parameter.faculty_id).short_name %>
 </p>
 <p>
-    <b><%= t(:message_2, :scope => [:txt, :view, :parameters, :show, :rhtml]) %>:</b> <%=h @parameter.value %>
+    <b><%= t(:message_2, :scope => [:view, :parameters, :show]) %>:</b> <%=h @parameter.value %>
 </p>
 
 
 
 <div class="links">
-  <%= link_to t(:message_5, :scope => [:txt, :view, :parameters, :show, :rhtml]), :action => 'edit', :id => @parameter %> |
-  <%= link_to t(:message_4, :scope => [:txt, :view, :parameters, :show, :rhtml]), :action => 'list' %>
+  <%= link_to t(:message_5, :scope => [:view, :parameters, :show]), :action => 'edit', :id => @parameter %> |
+  <%= link_to t(:message_4, :scope => [:view, :parameters, :show]), :action => 'list' %>
 </div>

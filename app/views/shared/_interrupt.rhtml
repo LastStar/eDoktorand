@@ -1,6 +1,6 @@
 <li>
   <div class='info'><%= interrupt.start_on.strftime('%d. %m. %Y') %></div>
-  <%= t(:message_0, :scope => [:txt, :view, :shared, :_interrupt, :rhtml]) %>
+  <%= t(:message_0, :scope => [:view, :shared, :_interrupt]) %>
 </li>
 <% if interrupt.finished_on %>
   <%= interrupt_finish_line(interrupt) %>

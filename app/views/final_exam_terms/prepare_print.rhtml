@@ -1,11 +1,13 @@
-<div class='links'><%= final_exam_terms_link %> <%= link_to t(:message_0, :scope => [:txt, :view, :final_exam_terms, :protocol, :rhtml]), :action => :list %></div>
+<%-if @user %>
+<div class='links'><%= final_exam_terms_link %> <%= link_to t(:message_0, :scope => [:view, :final_exam_terms, :protocol]), :action => :list %></div>
+<% end %>
 <div id='header'>
-<h2><%= @user.person.faculty.name %></h2>
-<h3><%= t(:message_0, :scope => [:txt, :view, :final_exam_terms, :prepare_print, :rhtml]) %></h3>
+<h2><%= @faculty.name %></h2>
+<h3><%= t(:message_0, :scope => [:view, :final_exam_terms, :prepare_print]) %></h3>
 </div>
-<p><%= t(:message_1, :scope => [:txt, :view, :final_exam_terms, :prepare_print, :rhtml]) %></p>
+<p><%= t(:message_1, :scope => [:view, :final_exam_terms, :prepare_print]) %></p>
 <p>
-  <%= t(:message_2, :scope => [:txt, :view, :final_exam_terms, :prepare_print, :rhtml]) +" "+ @final_exam_terms.first.date.strftime("%d. %m. %Y") +" "+ t(:message_3, :scope => [:txt, :view, :final_exam_terms, :prepare_print, :rhtml]) +" "+ @final_exam_terms.first.room.to_s %>.</p>
+  <%= t(:message_2, :scope => [:view, :final_exam_terms, :prepare_print]) +" "+ @final_exam_terms.first.date.strftime("%d. %m. %Y") +" "+ t(:message_3, :scope => [:view, :final_exam_terms, :prepare_print]) +" "+ @final_exam_terms.first.room.to_s %>.</p>
 </p>
 <% for exam_term in @final_exam_terms %>
 <div class='final_exam_term'>

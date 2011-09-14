@@ -1,27 +1,27 @@
 <H4 class='displayname'><%=@candidate.display_name%></H4>
-<% form_tag :action => 'confirm_admit', :id => @candidate do %>	
-	<label for="admit"><%= t(:message_0, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
-  <%= content_tag('select', options_for_select(admit_ids), 
-  {'id' => "admit_id", 'name' => "admit_id", 'onchange' => "hide_on_noadmit(this)"}) %><br/> 
+<% form_tag :action => 'confirm_admit', :id => @candidate do %>
+	<label for="admit"><%= t(:message_0, :scope => [:view, :candidates, :admit]) %></label>
+  <%= content_tag('select', options_for_select(admit_ids),
+  {'id' => "admit_id", 'name' => "admit_id", 'onchange' => "hide_on_noadmit(this)"}) %><br/>
   <div id='admit_form'>
-    <label for="candidate_specialization_id"><%= t(:message_1, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
+    <label for="candidate_specialization_id"><%= t(:message_1, :scope => [:view, :candidates, :admit]) %></label>
     <%= select 'candidate', 'specialization_id', Specialization.for_select(:faculty =>
     @user.person.faculty) %><br/>
-    <label for="candidate_tutor_id"><%= t(:message_2, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
+    <label for="candidate_tutor_id"><%= t(:message_2, :scope => [:view, :candidates, :admit]) %></label>
     <%= collection_select :candidate, :tutor_id, Tutor.find_for(@user), :id, :display_name %><br/>
-    <label for="candidate_department_id"><%= t(:message_3, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
+    <label for="candidate_department_id"><%= t(:message_3, :scope => [:view, :candidates, :admit]) %></label>
     <%= select 'candidate', 'department_id', Department.for_select(:faculty =>
     @user.person.faculty) %><br/>
-    <label for="candidate_study_id"><%= t(:message_4, :scope => [:txt, :view, :candidates, :admit, :rhtml]) %></label>
+    <label for="candidate_study_id"><%= t(:message_4, :scope => [:view, :candidates, :admit]) %></label>
     <%= select 'candidate', 'study_id', Study.for_select %><br/>
   </div>
-  <%= submit_tag(t(:message_5, :scope => [:txt, :view, :candidates, :admit, :rhtml])) %>
+  <%= submit_tag(t(:message_5, :scope => [:view, :candidates, :admit])) %>
 <% end %>
 <div class='links'>
     <% if session[:back_page] == 'list' %>
       <%= link_to 'zpět na výpis', :action => 'list',:page => session[:current_page_backward] %>
     <% else %>
-      <%= link_to 'zpět na výpis', :action => 'list_all'%>    
+      <%= link_to 'zpět na výpis', :action => 'list_all'%>
     <% end %>
 
 </div >
@@ -31,7 +31,7 @@ function hide_on_noadmit(element) {
   if(element.value == 0) {
     Element.hide('admit_form');
   } else {
-    Element.show('admit_form'); 
+    Element.show('admit_form');
   }
 }
 CODE

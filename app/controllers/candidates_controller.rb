@@ -58,7 +58,7 @@ class CandidatesController < ApplicationController
   def destroy_all
     candidates = Candidate.finished_before(TermsCalculator.this_year_start).from_faculty(@user.person.faculty)
     candidates.each {|c| c.destroy}
-    flash[:notice] = t(:message_11, :scope => [:txt, :controller, :candidates]) % candidates.size
+    flash[:notice] = t(:message_11, :scope => [:controller, :candidates]) % candidates.size
     redirect_to :action => :list
   end
 
@@ -88,7 +88,7 @@ class CandidatesController < ApplicationController
   def update
     @candidate = Candidate.find(params[:candidate][:id])
     if @candidate.update_attributes(params[:candidate])
-      flash[:notice] = t(:message_0, :scope => [:txt, :controller, :candidates])
+      flash[:notice] = t(:message_0, :scope => [:controller, :candidates])
       redirect_to :action => 'show', :id => @candidate.id
     else
       render(:action => :edit)
@@ -177,9 +177,9 @@ class CandidatesController < ApplicationController
     end
     @candidate.admit!
     if params[:mail] != 'no mail'
-      render(:text => t(:message_1, :scope => [:txt, :controller, :candidates]))
+      render(:text => t(:message_1, :scope => [:controller, :candidates]))
     else
-      render(:text => t(:message_2, :scope => [:txt, :controller, :candidates]))
+      render(:text => t(:message_2, :scope => [:controller, :candidates]))
     end
   end
 
@@ -192,7 +192,7 @@ class CandidatesController < ApplicationController
   def ready
     candidate = Candidate.find(params[:id])
     candidate.ready!
-    flash['notice'] = t(:message_3, :scope => [:txt, :controller, :candidates]) + candidate.display_name + t(:message_4, :scope => [:txt, :controller, :candidates])
+    flash['notice'] = t(:message_3, :scope => [:controller, :candidates]) + candidate.display_name + t(:message_4, :scope => [:controller, :candidates])
     if session[:back_page] == 'list'
       redirect_to :action => 'list', :page => session[:current_page_backward]
     else
@@ -211,7 +211,7 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.find(params[:id])
     @candidate.invite!
     Notifications::deliver_invite_candidate(@candidate, @faculty, Time.now)
-    render(:text => t(:message_5, :scope => [:txt, :controller, :candidates]))
+    render(:text => t(:message_5, :scope => [:controller, :candidates]))
   end
 
   # shows invitation for candidate
@@ -229,7 +229,7 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.find(params[:id])
     @candidate.reject!
 		Notifications::deliver_reject_candidate(@candidate)
-    render(:text => t(:message_6, :scope => [:txt, :controller, :candidates]))
+    render(:text => t(:message_6, :scope => [:controller, :candidates]))
   end
 
   # summary method for candidates
@@ -246,9 +246,9 @@ class CandidatesController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = t(:message_7, :scope => [:txt, :controller, :candidates])
-    WillPaginate::ViewHelpers.pagination_options[:previous_label] = "&laquo; %s" % t(:message_8, :scope => [:txt, :controller, :candidates])
-    WillPaginate::ViewHelpers.pagination_options[:next_label] = "%s &raquo;" % t(:message_9, :scope => [:txt, :controller, :candidates])
+    @title = t(:message_7, :scope => [:controller, :candidates])
+    WillPaginate::ViewHelpers.pagination_options[:previous_label] = "&laquo; %s" % t(:message_8, :scope => [:controller, :candidates])
+    WillPaginate::ViewHelpers.pagination_options[:next_label] = "%s &raquo;" % t(:message_9, :scope => [:controller, :candidates])
   end
 
   def prepare_sort

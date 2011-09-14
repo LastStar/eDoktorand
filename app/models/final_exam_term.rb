@@ -1,7 +1,7 @@
 class FinalExamTerm < ExamTerm
-  
+
   belongs_to :index
-  validates_presence_of :index_id, :message => I18n::t(:wrong_time_format, :scope => [:txt, :model, :term])
+  validates_presence_of :index_id, :message => I18n::t(:wrong_time_format, :scope => [:model, :term])
 
   # returns formated date time
   def date_time
@@ -14,9 +14,9 @@ class FinalExamTerm < ExamTerm
     indices = Index.find_for(user, :not_absolved => true)
     if options.delete :not_passed
       indices.reject! {|i|
-        i.status == I18n::t(:passed_sdz_l, :scope => [:txt, :model, :index]) ||
-        i.status == I18n::t(:absolved_l, :scope => [:txt, :model, :index]) ||
-        i.status == I18n::t(:finished_l, :scope => [:txt, :model, :index])
+        i.status == I18n::t(:passed_sdz_l, :scope => [:model, :index]) ||
+        i.status == I18n::t(:absolved_l, :scope => [:model, :index]) ||
+        i.status == I18n::t(:finished_l, :scope => [:model, :index])
       }
     end
     options[:conditions] = ['index_id in (?)', indices]
@@ -25,7 +25,7 @@ class FinalExamTerm < ExamTerm
       options[:conditions] << Date.today
     end
     options[:include] = :index
-    options[:order] = 'date desc'
+    options[:order] = 'date asc'
     final_exams = find(:all, options)
     return final_exams
   end

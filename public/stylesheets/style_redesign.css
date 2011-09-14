@@ -855,3 +855,17 @@ td.action-link {
 #scholarship_table div.fieldWithErrors input {
   border-color: red;
 }
+.finished {
+  padding-left: 3px;
+  color: #333;
+  font-size: smaller;
+}
+.absolved {
+  padding-left: 3px;
+  color: #000;
+  font-size: smaller;
+}
+.finished a {
+  color: #333;
+}
+

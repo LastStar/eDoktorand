@@ -1,7 +1,7 @@
 <div class="links">
-  <%= link_to(t(:message_1, :scope => [:txt, :view, :actualities, :show, :rhtml]), :action => 'edit', :id => @actuality) %>
-  <%= link_to(t(:message_2, :scope => [:txt, :view, :actualities, :show, :rhtml]), :action => 'list') %>
-</div><h1><%= t(:message_0, :scope => [:txt, :view, :actualities, :show, :rhtml]) %></h1>
+  <%= link_to(t(:message_1, :scope => [:view, :actualities, :show]), :action => 'edit', :id => @actuality) %>
+  <%= link_to(t(:message_2, :scope => [:view, :actualities, :show]), :action => 'list') %>
+</div><h1><%= t(:message_0, :scope => [:view, :actualities, :show]) %></h1>
 <ul id="actualities">
  <li>
     <div class="actuality">
@@ -10,11 +10,11 @@
           <%= @actuality.content %>
         </p>
     </div>
- </li>      
+ </li>
 </ul>
 
 <div class="links">
-  <%= link_to(t(:message_1, :scope => [:txt, :view, :actualities, :show, :rhtml]), :action => 'edit', :id => @actuality) %>
-  <%= link_to(t(:message_2, :scope => [:txt, :view, :actualities, :show, :rhtml]), :action => 'list') %>
+  <%= link_to(t(:message_1, :scope => [:view, :actualities, :show]), :action => 'edit', :id => @actuality) %>
+  <%= link_to(t(:message_2, :scope => [:view, :actualities, :show]), :action => 'list') %>
 </div>
-<br class="clear-all" />  
+<br class="clear-all" />

@@ -1,7 +1,7 @@
 class DisertTheme < ActiveRecord::Base
-  
+
   belongs_to :index
-  validates_presence_of :title, :message => I18n::t(:title_must_be_present, :scope => [:txt, :model, :theme])
+  validates_presence_of :title, :message => I18n::t(:title_must_be_present, :scope => [:model, :theme])
   validates_presence_of :finishing_to
 
   before_create :set_actual
@@ -9,13 +9,13 @@ class DisertTheme < ActiveRecord::Base
 
   def validate
     if defense_passed_on && !index.final_exam_passed?
-      errors.add(:defense_passed_on, t(:did_not_passed_final_exam, :scope => [:txt, :model, :theme]))
+      errors.add(:defense_passed_on, t(:did_not_passed_final_exam, :scope => [:model, :theme]))
     end
   end
 
   def self.save_methodology(disert_theme, file)
     File.open("#{RAILS_ROOT}/public/pdf/methodology/#{disert_theme.id}.pdf", "w") do |f|
-      f.write(file.read) 
+      f.write(file.read)
     end
     disert_theme.update_attribute('methodology_added_on', Time.now)
   end
@@ -58,8 +58,26 @@ class DisertTheme < ActiveRecord::Base
     end
   end
 
-  def save_theme_file(file)
+  def save_disert_theme_file(file)
     File.open("#{RAILS_ROOT}/public/pdf/disert_theme/#{self.id}.pdf", "w") do |f|
+      f.write(file.read)
+    end
+  end
+
+  def save_review_file(file)
+    File.open("#{RAILS_ROOT}/public/pdf/review/#{self.id}.pdf", "w") do |f|
+      f.write(file.read)
+    end
+  end
+
+  def save_signed_protocol_file(file)
+    File.open("#{RAILS_ROOT}/public/pdf/signed_protocol/#{self.id}.pdf", "w") do |f|
+      f.write(file.read)
+    end
+  end
+
+  def save_small_defense_file(file)
+    File.open("#{RAILS_ROOT}/public/pdf/small_defense/#{self.id}.pdf", "w") do |f|
       f.write(file.read)
     end
   end

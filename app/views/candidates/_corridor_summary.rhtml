@@ -4,13 +4,13 @@
     <li>
      <%= corridor.name %>
      <ul>
-       <%= t(:message_0, :scope => [:txt, :view, :candidates, :_corridor_summary, :rhtml]) %>: <%= corridor.candidates.select {|c| c.study.id ==
-       1}.size %><br/> 
-       <%= t(:message_1, :scope => [:txt, :view, :candidates, :_corridor_summary, :rhtml]) %>: <%= corridor.candidates.select {|c| c.study.id ==
+       <%= t(:message_0, :scope => [:view, :candidates, :_corridor_summary]) %>: <%= corridor.candidates.select {|c| c.study.id ==
+       1}.size %><br/>
+       <%= t(:message_1, :scope => [:view, :candidates, :_corridor_summary]) %>: <%= corridor.candidates.select {|c| c.study.id ==
        2}.size %>
-     </ul> 
+     </ul>
     </li>
   <% end %>
 <% end %>
 </ul>
-<br/> 
+<br/>

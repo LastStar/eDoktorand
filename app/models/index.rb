@@ -57,8 +57,6 @@ class Index < ActiveRecord::Base
   has_many :payed_scholarships, :class_name => 'Scholarship',
     :conditions => 'payed_on IS NOT NULL'
   has_many :scholarships
-  has_one :approval, :class_name => 'FinalExamApproval',
-    :foreign_key => 'document_id'
   has_one :im_index
 
   validates_presence_of :student
@@ -94,19 +92,19 @@ class Index < ActiveRecord::Base
   def describe_error
      message = ""
     if self.account_number == nil
-              message = message + I18n.t(:wrong_or_missing_account_number, :scope => [:txt, :model, :index]) + " "
+              message = message + I18n.t(:wrong_or_missing_account_number, :scope => [:model, :index]) + " "
     end
     if self.account_bank_number == nil
-              message = message + I18n.t(:wrong_or_missing_account_bank_number, :scope => [:txt, :model, :index]) + " "
+              message = message + I18n.t(:wrong_or_missing_account_bank_number, :scope => [:model, :index]) + " "
     end
     if self.student.uic == nil
-          message = message + I18n.t(:missing_uic, :scope => [:txt, :model, :index]) + " "
+          message = message + I18n.t(:missing_uic, :scope => [:model, :index]) + " "
     end
     if self.student.sident == -666
-          message = message + I18n.t(:missing_sident_666, :scope => [:txt, :model, :index]) + " "
+          message = message + I18n.t(:missing_sident_666, :scope => [:model, :index]) + " "
     end
     if self.student.sident == nil
-          message = message + I18n.t(:missing_sident, :scope => [:txt, :model, :index]) + " "
+          message = message + I18n.t(:missing_sident, :scope => [:model, :index]) + " "
     end
     return message
 
@@ -131,23 +129,23 @@ class Index < ActiveRecord::Base
           pre_sum += c.to_i * PREFIX_WEIGHTS[j]
         end
         if account_number_prefix !~ /^[0-9]*$/ || (pre_sum % 11) != 0
-          errors.add(:account_number_prefix, I18n::t(:wrong_account_number_prefix_format, :scope => [:txt, :model, :index]))
+          errors.add(:account_number_prefix, I18n::t(:wrong_account_number_prefix_format, :scope => [:model, :index]))
         end
       end
       if account_number.size > 10 && account_number =~ /[0-9]/
-        errors.add(:account_number, I18n.t(:wrong_account_number_format, :scope => [:txt, :model, :index]))
+        errors.add(:account_number, I18n.t(:wrong_account_number_format, :scope => [:model, :index]))
       else
         acc_sum = 0
         account_number.split('').reverse.each_with_index do |c, j|
           acc_sum += c.to_i * ACCOUNT_WEIGHTS[j]
         end
         unless (acc_sum % 11) == 0
-          errors.add(:account_number, I18n.t(:wrong_account_number_format, :scope => [:txt, :model, :index]))
+          errors.add(:account_number, I18n.t(:wrong_account_number_format, :scope => [:model, :index]))
         end
       end
     end
     if final_exam_passed_on && !study_plan.all_subjects_finished?
-      errors.add(:final_exam_passed_on, I18n.t(:all_subjects_are_not_finished, :scope => [:txt, :model, :index]))
+      errors.add(:final_exam_passed_on, I18n.t(:all_subjects_are_not_finished, :scope => [:model, :index]))
     end
   end
 
@@ -222,19 +220,14 @@ class Index < ActiveRecord::Base
 
   # returns true if studen claimed for final exam
   def claimed_for_final_exam?
-    claimed_final_application? && approved?
+    claimed_final_application?
   end
 
   # returns statement if this index waits for approval from person
   def statement_for(user)
     #TODO move this two ors to it's own status method
     unless status == absolved? || interrupted? || final_exam_passed?
-      if claimed_final_application?
-        self.approval ||= FinalExamApproval.create
-        if approval.prepares_statement?(user)
-          return approval.prepare_statement(user)
-        end
-      elsif admited_interrupt?
+      if admited_interrupt?
         interrupt.approval ||= InterruptApproval.create
         if interrupt.approval.prepares_statement?(user)
           return interrupt.approval.prepare_statement(user)
@@ -259,9 +252,7 @@ class Index < ActiveRecord::Base
   def waits_for_statement?(user)
     #TODO move this two ors to it's own status method
     unless absolved? || interrupted? || final_exam_passed?
-      if claimed_final_application?
-        temp_approval = self.approval ||= FinalExamApproval.create
-      elsif admited_interrupt?
+      if admited_interrupt?
         temp_approval = interrupt.approval ||= InterruptApproval.create
       elsif study_plan && !study_plan.approved?
         temp_approval = study_plan.approval ||= StudyPlanApproval.create
@@ -354,7 +345,7 @@ class Index < ActiveRecord::Base
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user, options = {})
     sql = <<-SQL
-      (study_plans.approved_on is null or disert_themes.approved_on is null \
+      (study_plans.approved_on is null \
       or study_plans.last_attested_on is null or indices.interrupted_on is null or \
       study_plans.last_attested_on < ?) and (indices.finished_on is null or \
       indices.finished_on = '0000-00-00 00:00:00')
@@ -460,24 +451,24 @@ class Index < ActiveRecord::Base
   # find with all relation included
   def self.find_with_all_included(idx)
     inc = [:study_plan, :disert_theme, :interrupts, :specialization, :study, :student,
-          :tutor, :department, :approval]
+          :tutor, :department]
     return self.find(idx, :include => inc, :order => 'study_interrupts.created_on desc')
   end
 
   # returns status of index
   def status
     @status ||= if disert_theme && disert_theme.defense_passed?
-      I18n::t(:absolved, :scope => [:txt, :model, :index])
+      I18n::t(:absolved, :scope => [:model, :index])
     elsif finished?
-      I18n::t(:finished, :scope => [:txt, :model, :index])
+      I18n::t(:finished, :scope => [:model, :index])
     elsif final_exam_passed?
-      I18n::t(:passed_sdz, :scope => [:txt, :model, :index])
+      I18n::t(:passed_sdz, :scope => [:model, :index])
     elsif interrupted?
-      I18n::t(:interrupted, :scope => [:txt, :model, :index])
+      I18n::t(:interrupted, :scope => [:model, :index])
     elsif continues?
-      I18n::t(:closed, :scope => [:txt, :model, :index])
+      I18n::t(:closed, :scope => [:model, :index])
     else
-      I18n::t(:studies, :scope => [:txt, :model, :index])
+      I18n::t(:studies, :scope => [:model, :index])
     end
     return @status
   end
@@ -516,7 +507,7 @@ class Index < ActiveRecord::Base
   end
 
   def payment_type
-    payment_id == 1 ? I18n.t(:study_in_standart_time, :scope => [:txt, :model, :index]) : I18n.t(:foreigner_pay_throught_dotation, :scope => [:txt, :model, :index])
+    payment_id == 1 ? I18n.t(:study_in_standart_time, :scope => [:model, :index]) : I18n.t(:foreigner_pay_throught_dotation, :scope => [:model, :index])
   end
 
   # returns true if index have year more than 3
@@ -604,9 +595,9 @@ class Index < ActiveRecord::Base
     admited_interrupt? && interrupt.approved? && !interrupt.finished? &&
       !interrupted_on
   end
-  
+
   def interrupt_ended?
-    interrupt && !interrupt.finished? && Time.now > interrupt.end_on
+    !finished? && interrupt && !interrupt.finished? && Time.now > interrupt.end_on
   end
 
   def close_to_interrupt_end_or_after?(months = 3)
@@ -708,11 +699,8 @@ class Index < ActiveRecord::Base
     !defense.nil?
   end
 
-  # for approval purposes
-  def index
-    self
-  end
-
+  #TODO should be in coresponding models
+  #vvvvv
   def send_final_exam_invitation!
     update_attribute(:final_exam_invitation_sent_at, Time.now)
   end
@@ -728,6 +716,7 @@ class Index < ActiveRecord::Base
   def defense_invitation_sent?
     !defense_invitation_sent_at.nil?
   end
+  #^^^^^
 
   def study_name
     study.name

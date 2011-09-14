@@ -1,33 +1,33 @@
 <% login_form do %>
-  <div title="<%= t(:message_1, :scope => [:txt, :view, :account, :login, :rhtml]) %>" id="loginform" class="form">
+  <div title="<%= t(:message_1, :scope => [:view, :account, :login]) %>" id="loginform" class="form">
     <% if @message %>
     <div id="message"><%= @message %></div>
     <% end %>
 
     <div style='clear: both'>
-      <label for="user_login"><%= t(:message_2, :scope => [:txt, :view, :account, :login, :rhtml]) %></label>
+      <label for="user_login"><%= t(:message_2, :scope => [:view, :account, :login]) %></label>
       <input type="text" name="user_login" id="user_login" size="30" value=""/>
     </div>
 
     <div style='clear: both'>
-      <label for="user_password"><%= t(:message_3, :scope => [:txt, :view, :account, :login, :rhtml]) %></label>
+      <label for="user_password"><%= t(:message_3, :scope => [:view, :account, :login]) %></label>
       <input type="password" name="user_password" id="user_password" size="30"/>
     </div>
 
     <div style='clear: both'>
-      <label for="locale"><%= t(:message_4, :scope => [:txt, :view, :account, :login, :rhtml]) %></label>
+      <label for="locale"><%= t(:message_4, :scope => [:view, :account, :login]) %></label>
       <%= locale_link %>
     </div>
     <div style='clear: both'>
-      <label for="submit"><%= t(:message_5, :scope => [:txt, :view, :account, :login, :rhtml]) %></label>
-      <%= submit_tag(t(:message_6, :scope => [:txt, :view, :account, :login, :rhtml]), :id => 'login-button', :class => 'button') %>
+      <label for="submit"><%= t(:message_5, :scope => [:view, :account, :login]) %></label>
+      <%= submit_tag(t(:message_6, :scope => [:view, :account, :login]), :id => 'login-button', :class => 'button') %>
     </div>
     <br />
   </div>
 <% end %>
 
 <% unless @actualities.empty? %>
-<h5><%= t(:message_7, :scope => [:txt, :view, :account, :login, :rhtml]) %></h5>
+<h5><%= t(:message_7, :scope => [:view, :account, :login]) %></h5>
 <ul id='actuallities'>
   <%= render(:partial => 'actuality', :collection => @actualities) %>
 </ul>

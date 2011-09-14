@@ -1,6 +1,6 @@
 <% unless @candidate.errors.empty? %>
 <div id='error'>
-<%= t(:message_0, :scope => [:txt, :view, :candidates, :_error, :rhtml]) %>:
+<%= t(:message_0, :scope => [:view, :candidates, :_error]) %>:
 <%= flash[:error] %>
 <% if @candidate && !@candidate.errors.empty? %>
 <ul>
@@ -12,6 +12,6 @@
 </div>
 <% else %>
 <div class='notice'>
-   <%= t(:message_1, :scope => [:txt, :view, :candidates, :_error, :rhtml]) %>
+   <%= t(:message_1, :scope => [:view, :candidates, :_error]) %>
 </div>
 <% end %>

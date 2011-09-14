@@ -1,41 +1,41 @@
 <% if sp = @index.study_plan %>
 <p class='help'>
   <% if sp.canceled? %>
-    <%= t(:message_0, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
+    <%= t(:message_0, :scope => [:view, :study_plans, :_help]) %>
     <%= change_link(@index.student) %>
   <% elsif !sp.approved? %>
-    <%= t(:message_1, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
+    <%= t(:message_1, :scope => [:view, :study_plans, :_help]) %>
   <% elsif @index.defense_claimed? %>
     <% unless @index.defense_created? %>
-      <%= t(:message_2, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
+      <%= t(:message_2, :scope => [:view, :study_plans, :_help]) %>
     <% else %>
-      <%= t(:message_3, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
+      <%= t(:message_3, :scope => [:view, :study_plans, :_help]) %>
     <% end %>
   <% elsif @index.final_exam_passed? %>
-    <%= t(:message_4, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>. <br />
-    <%= link_to(t(:message_5, :scope => [:txt, :view, :study_plans, :_help, :rhtml]), :action => :claim, :controller => :defenses) %>
+    <%= t(:message_4, :scope => [:view, :study_plans, :_help]) %>. <br />
+    <%= link_to(t(:message_5, :scope => [:view, :study_plans, :_help]), :action => :claim, :controller => :defenses) %>
   <% elsif @index.claimed_final_application? %>
     <% unless @index.final_term_created? %>
-      <%= t(:message_6, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
+      <%= t(:message_6, :scope => [:view, :study_plans, :_help]) %>
     <% else %>
-      <%= t(:message_7, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
+      <%= t(:message_7, :scope => [:view, :study_plans, :_help]) %>
     <% end %>
   <% elsif sp.all_subjects_finished? %>
-    <%= t(:message_8, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>. <br /> 
-    <%= link_to(t(:message_9, :scope => [:txt, :view, :study_plans, :_help, :rhtml]), :action => :claim, :controller => :final_exam_terms) %>
+    <%= t(:message_8, :scope => [:view, :study_plans, :_help]) %>. <br />
+    <%= link_to(t(:message_9, :scope => [:view, :study_plans, :_help]), :action => :claim, :controller => :final_exam_terms) %>
   <% end %>
 </p>
 <% else %>
-<h1><%= t(:message_10, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %></h1>
+<h1><%= t(:message_10, :scope => [:view, :study_plans, :_help]) %></h1>
 <p class='help'>
-  <%= t(:message_11, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
-</p> 
+  <%= t(:message_11, :scope => [:view, :study_plans, :_help]) %>
+</p>
 <p class='help'>
-  <%= t(:message_12, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
+  <%= t(:message_12, :scope => [:view, :study_plans, :_help]) %>
   <a href='mailto:helpdesk@czu.cz'>helpdesk</a>
-</p> 
+</p>
 <p class='help'>
-  <%= t(:message_13, :scope => [:txt, :view, :study_plans, :_help, :rhtml]) %>
+  <%= t(:message_13, :scope => [:view, :study_plans, :_help]) %>
   <%= create_study_plan_link(@student) %>
 </p>
 <% end %>

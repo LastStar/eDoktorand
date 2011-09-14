@@ -1,5 +1,22 @@
-<%= t(:message_0, :scope => [:txt, :view, :notifications, :invite_to_final_exam, :rhtml]) %>,
+Rádi bychom vás informovali o termínu konání státní doktorské zkoušky.
 
-<%= t(:message_1, :scope => [:txt, :view, :notifications, :invite_to_final_exam, :rhtml]) %>
+V souladu s Článkem 10 Studijního a zkušebního řádu bude
+dne <%= I18n::l(@date) %> od <%= @start_time %> hodin
+v místnosti <%= @room %>
+<%= @student %> skládat státní doktorskou zkoušku.
 
-<%= t(:message_2, :scope => [:txt, :view, :notifications, :invite_to_final_exam, :rhtml]) %>
+Zkušební komise pro státní doktorskou zkoušku bude na základě
+jmenování děkanem zasedat v následujícím složení:
+
+<%= @chairman %> (předseda)
+
+<%= @examinators.join("\n") %>
+
+<%= @opponents.map{|o| o + ' (oponent)'}.join("\n") %>
+
+Veškeré podklady k dané státní doktorské zkoušce jsou dostupné na adrese:
+
+http://edoktorand.czu.cz/final_exam_terms/show/<%= @id %>
+
+Váš systém eDoktorand.
+

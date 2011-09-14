@@ -1,11 +1,11 @@
 <% if index.finished? %>
 <ul class='bordered half right-visible'>
-  <li class="noborder"><h5><%= t(:message_0, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
+  <li class="noborder"><h5><%= t(:message_0, :scope => [:view, :shared, :_study_detail]) %></h5></li>
   <li>
     <div class='info'>
       <%= index.finished_on.strftime('%d. %m. %Y') %>
     </div>
-    <b><%= t(:message_1, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>: </b>
+    <b><%= t(:message_1, :scope => [:view, :shared, :_study_detail]) %>: </b>
   </li>
 </ul>
 <% end %>
@@ -13,34 +13,34 @@
 <% if interrupt = index.interrupt %>
   <% if index.interrupted? %>
     <ul class='bordered half right-visible'>
-      <li class="noborder"><h5><%= t(:message_2, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
+      <li class="noborder"><h5><%= t(:message_2, :scope => [:view, :shared, :_study_detail]) %></h5></li>
       <li>
         <div class='info'><%= index.interrupted_on.strftime('%d. %m. %Y') %></div>
-        <%= t(:message_3, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
+        <%= t(:message_3, :scope => [:view, :shared, :_study_detail]) %>
       </li>
       <li>
         <div class='info'><%= interrupt.end_on.strftime('%d. %m. %Y')%></div>
-        <%= t(:message_4, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
+        <%= t(:message_4, :scope => [:view, :shared, :_study_detail]) %>
       </li>
   <% elsif index.admited_interrupt? %>
     <ul id='admited_interrupt' class='bordered half right-visible'>
-      <li class="noborder"><h5><%= t(:message_5, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
+      <li class="noborder"><h5><%= t(:message_5, :scope => [:view, :shared, :_study_detail]) %></h5></li>
       <li>
       <div class='info'><%= index.interrupt.start_on.strftime('%d. %m. %Y') %></div>
-      <%= t(:message_6, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
+      <%= t(:message_6, :scope => [:view, :shared, :_study_detail]) %>
       </li>
       <li>
       <div class='info'><%= index.interrupt.duration %></div>
-      <%= t(:message_7, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
+      <%= t(:message_7, :scope => [:view, :shared, :_study_detail]) %>
       </li>
   <% else %>
     <ul id='last_interrupt' class='bordered half right-visible'>
-      <li class="noborder"><h5><%= t(:message_8, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
+      <li class="noborder"><h5><%= t(:message_8, :scope => [:view, :shared, :_study_detail]) %></h5></li>
       <%= render(:partial => 'shared/interrupt', :locals => {:interrupt => interrupt}) %>
   <% end %>
   <% if index.interrupt.note && !index.interrupt.note.empty? %>
     <li>
-      <%= t(:message_9, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
+      <%= t(:message_9, :scope => [:view, :shared, :_study_detail]) %>
     </li>
   <li class='second'>
     <%= index.interrupt.note %>
@@ -48,7 +48,7 @@
   <% end %>
   <% if index.interrupt.plan_changed == 1 %>
     <li>
-    <%= t(:message_10, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
+    <%= t(:message_10, :scope => [:view, :shared, :_study_detail]) %>
     </li>
   <% end %>
   <div id='interrupt_approval'>
@@ -61,7 +61,7 @@
 <% if (ints = index.interrupts).size > 1 %>
   <% ints.shift %>
   <ul class='bordered half right-visible'>
-    <li class="noborder"><h5><%= t(:message_11, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
+    <li class="noborder"><h5><%= t(:message_11, :scope => [:view, :shared, :_study_detail]) %></h5></li>
     <%= render(:partial => 'shared/interrupt', :collection => ints) %>
   </ul>
 <% end %>
@@ -72,7 +72,7 @@
 <% if study_plan ||= index.study_plan %>
   <% if study_plan.attestation  %>
     <ul id='attestation' class='bordered half right-visible'>
-      <li class="noborder"><h5><%= t(:message_12, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
+      <li class="noborder"><h5><%= t(:message_12, :scope => [:view, :shared, :_study_detail]) %></h5></li>
       <%= print_statements(study_plan.attestation) %>
       <li class="noborder"><%= attestation_detail(study_plan) %></li>
       <li class="noborder"><%= annual_report(study_plan) %></li>
@@ -81,19 +81,9 @@
 
 
 
-  <% if index.defense_claimed? %>
+  <% if study_plan.approval %>
     <ul id='approval' class='bordered half right-visible'>
-      <li class="noborder"><h5><%= t(:message_13, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
-      <%= print_statements(index.approval) %>
-    </ul>
-  <% elsif index.claimed_final_application? %>
-    <ul id='approval' class='bordered half right-visible'>
-       <li class="noborder"><h5><%= t(:message_14, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
-      <%= print_statements(index.approval) %>
-    </ul>
-  <% elsif study_plan.approval %>
-    <ul id='approval' class='bordered half right-visible'>
-      <li class="noborder"><h5><%= t(:message_15, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %></h5></li>
+      <li class="noborder"><h5><%= t(:message_15, :scope => [:view, :shared, :_study_detail]) %></h5></li>
       <%= print_statements(study_plan.approval) %>
     </ul>
   <% end %>
@@ -105,30 +95,28 @@
   <% end %>
   <ul id='<%= "study_plan#{study_plan.id}" %>' class='bordered'>
     <li class="noborder"><h5 id='shortcut_study_plan'>
-      <%= t(:message_16, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>
+      <%= t(:message_16, :scope => [:view, :shared, :_study_detail]) %>
     </h5></li>
   <% if study_plan.canceled? %>
     <li>
     <div class='info'><%= study_plan.canceled_on.strftime('%d. %m. %Y') %></div>
-    <b><%= t(:message_17, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>:</b>
+    <b><%= t(:message_17, :scope => [:view, :shared, :_study_detail]) %>:</b>
     </li>
   <% end %>
   <% if study_plan.approved? %>
     <li>
     <div class='info'><%= study_plan.approved_on.strftime('%d. %m. %Y') %></div>
-    <b><%= t(:message_18, :scope => [:txt, :view, :shared, :_study_detail, :rhtml]) %>: </b>
+    <b><%= t(:message_18, :scope => [:view, :shared, :_study_detail]) %>: </b>
     </li>
   <% end %>
   <%= render(:partial => 'shared/final_exam', :locals => {:study_plan => study_plan}) %>
   <%= render(:partial => 'shared/subjects', :locals => {:subjects =>
-  study_plan.plan_subjects, :title => t(:message_19, :scope => [:txt, :view, :shared, :_study_detail, :rhtml])}) %>
+  study_plan.plan_subjects, :title => t(:message_19, :scope => [:view, :shared, :_study_detail])}) %>
   </ul>
   <%= render(:partial => 'shared/disert_theme',
     :locals => {:disert_theme => index.disert_theme,
     :study_plan => study_plan, :methodology => true}) %>
-  <% if index.claimed_final_application? %>
-    <%= approve_forms(@user, index) %>
-  <% elsif index.admited_interrupt? %>
+  <% if index.admited_interrupt? %>
     <%= approve_forms(@user, index.interrupt) %>
   <% elsif !study_plan.approved? || study_plan.waits_for_actual_attestation? %>
     <%= approve_forms(@user, study_plan) %>

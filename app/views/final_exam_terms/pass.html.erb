@@ -1,0 +1,27 @@
+<h3>
+<%= t(:passing, :scope => [:view, :final_exam_terms, :pass]) %> -
+<%= @final_exam_term.index.student.display_name %>
+</h3>
+<% if flash[:error] %>
+<div id='error' class='error'>
+  <%= flash[:error] %>
+</div>
+<% end %>
+<% form_tag({:action => 'save_pass'}) do -%>
+  <%= hidden_field_tag :id, @final_exam_term.id %>
+  <fieldset>
+    <label><%= t(:passing_date, :scope => [:view, :final_exam_terms, :pass]) %></label>
+    <%= select_date(@date) %>
+    <br/>
+    <br/>
+    <label><%= t(:questions, :scope => [:view, :final_exam_terms, :pass]) %></label>
+    <%= text_area_tag :questions, "1. \n2. \n3. \n4.", :rows => 4, :cols => 60 %>
+    <br/>
+    <br/>
+    <label><%= t(:discussion, :scope => [:view, :final_exam_terms, :pass]) %></label>
+    <%= text_area_tag :discussion, "1. \n2. \n3. \n4.", :rows => 4, :cols => 60 %>
+    <br/>
+    <br/>
+    <%= submit_tag t(:passed, :scope => [:view, :final_exam_terms, :pass]) %>
+  </fieldset>
+<% end %>

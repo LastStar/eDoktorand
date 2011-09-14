@@ -4,23 +4,26 @@
 <% if index.final_exam_passed? %>
       <%= index.final_exam_passed_on.strftime('%d. %m. %Y') %>
 <% else %>
-      <%= "%i. %s" % [study_plan.finishing_to, t(:message_0, :scope => [:txt, :view, :shared, :_final_exam, :rhtml])] %>
+      <%= "%i. %s" % [study_plan.finishing_to, t(:semester, :scope => [:view, :shared, :_final_exam])] %>
 <% end %>
     </div>
-    <b><%= "#{t(:message_1, :scope => [:txt, :view, :shared, :_final_exam, :rhtml])}" %></b>
+    <b><%= "#{t(:message_1, :scope => [:view, :shared, :_final_exam])}" %></b>
   </li>
 
 <% if index.final_exam_passed? %>
   <% if index.defense_invitation_sent? %>
-    <li><b><%= t(:message_2, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %></b></li>
+    <li><b><%= t(:message_2, :scope => [:view, :shared, :_final_exam]) %></b></li>
     <li>
     <%= self_report_link(index.disert_theme) %>
+    </li>
+    <li>
+    <%= disert_theme_link(index.disert_theme) %>
     </li>
     <li>
     <%= defense_term_link(@user, index) %>
     </li>
   <% elsif index.defense_claimed? %>
-    <li><b><%= t(:message_3, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %></b></li>
+    <li><b><%= t(:message_3, :scope => [:view, :shared, :_final_exam]) %></b></li>
     <li>
     <%= self_report_link(index.disert_theme) %>
     </li>
@@ -31,26 +34,24 @@
     <%= defense_term_link(@user, index) %>
     </li>
   <% end %>
-  <li id='defense' style="display:none"></li>
 <% else %>
   <% if index.final_exam_invitation_sent? %>
-    <li><b><%= t(:message_4, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %></b></li>
+    <li><b><%= t(:message_4, :scope => [:view, :shared, :_final_exam]) %></b></li>
     <li>
     <%= literature_review_link(index.disert_theme) %>
     <%= index.disert_theme.literature_review %>
     </li>
   <% elsif index.claimed_final_application? %>
-    <li><b><%= t(:message_5, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %></b></li>
+    <li><b><%= t(:message_5, :scope => [:view, :shared, :_final_exam]) %></b></li>
     <li>
-    <%= literature_review_link(index.disert_theme) %>
     <%= index.disert_theme.literature_review %>
     </li>
-  <% end %>
-  <% if index.approved? %>
+    <li>
+    <%= literature_review_link(index.disert_theme) %>
+    </li>
     <li>
     <%= final_exam_term_link(@user, index) %>
     </li>
-    <li id='final_exam' style="display:none"></li>
   <% end %>
 <% if study_plan.final_areas? %>
   <% FACULTY_CFG[study_plan.index.faculty.id]['final_areas_count'].times do |i|%>
@@ -58,7 +59,7 @@
     <% fa = study_plan.final_areas['cz'] %>
       <li class='second'>
         <div class='long_info' id='final_area_cz<%=i%>'><%=edit_cz_link(index,i,fa[i.to_s])%> <%= fa[i.to_s]%> </div>
-        <%= "#{i}. " + t(:message_6, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %>
+        <%= "#{i}. " + t(:message_6, :scope => [:view, :shared, :_final_exam]) %>
       </li>
     <% fa = study_plan.final_areas['en'] %>
       <li class='second'>
@@ -66,10 +67,10 @@
         <% if (fa[i.to_s] == nil || fa[i.to_s] == "") && params[:action] != 'save_disert' %>
           <%= add_en_link(index,i) %>
         <% else %>
-          <%= edit_en_link(index,i,fa[i.to_s]) %>        
+          <%= edit_en_link(index,i,fa[i.to_s]) %>
         <% end %>
         <%=  fa[i.to_s] %></div>
-        <%= "#{i}. " + t(:message_7, :scope => [:txt, :view, :shared, :_final_exam, :rhtml]) %> (en)
+        <%= "#{i}. " + t(:message_7, :scope => [:view, :shared, :_final_exam]) %> (en)
       </li>
   <% end %>
 <% end %>

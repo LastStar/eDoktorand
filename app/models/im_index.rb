@@ -38,14 +38,14 @@ class ImIndex < ActiveRecord::Base
     self.faculty_code = index.faculty.short_name
     self.study_year = index.year
     self.academic_year = TermsCalculator.current_school_year
-    self.study_type = I18n.t(:doctorate, :scope => [:txt, :model, :im_index])
+    self.study_type = I18n.t(:doctorate, :scope => [:model, :im_index])
     self.study_type_code = 'D'
     self.study_form = index.study.name
     self.study_form_code = index.study.code
     self.study_spec = index.specialization.name
     self.study_spec_code = index.specialization.code
     self.study_spec_msmt_code = index.specialization.msmt_code
-    self.study_prog = index.specialization.program.label
+    self.study_prog = index.specialization.program.name
     self.study_prog_code = index.specialization.program.code
     self.study_status = index.status
     self.study_status_code = index.status_code
@@ -54,7 +54,7 @@ class ImIndex < ActiveRecord::Base
     self.enrollment_date = index.enrolled_on.to_date
     self.financing_type_code = index.payment_code
     self.financing_type = index.payment_type
-    self.education_language = I18n.t(:czech_language, :scope => [:txt, :model, :im_index])
+    self.education_language = I18n.t(:czech_language, :scope => [:model, :im_index])
     self.education_language_code = 'CZ'
     self.education_place = "Praha"
     self.study_form_changed_on = index.study_form_changed_on

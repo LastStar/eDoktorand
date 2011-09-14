@@ -23,6 +23,10 @@
   <td><%= index_line.status %></td>
 <% if index_line.absolved? %>
   <td><%= index_line.disert_theme.defense_passed_on.strftime("%d. %m. %Y") %></td>
+<% elsif index_line.final_exam_passed? %>
+  <td><%= index_line.final_exam_passed_on.strftime("%d. %m. %Y") %></td>
+<% elsif index_line.finished? %>
+  <td><%= index_line.finished_on.strftime("%d. %m. %Y") %></td>
 <% elsif index_line.interrupted? %>
   <td><%= interrupt_to_info(index_line) %></td>
 <% elsif study_plan  %>
@@ -30,7 +34,7 @@
 <% else %>
   <td>&nbsp;</td>
 <% end %>
-  <td><%= index_line.year %>.<%= t(:message_0, :scope => [:txt, :view, :students, :_index, :rhtml]) %></td>
+  <td><%= index_line.year %>.<%= t(:message_0, :scope => [:view, :students, :_index]) %></td>
   <td><%= index_line.study.name %></td>
 <% if @user.has_one_of_roles?(['dean', 'faculty_secretary', 'vicerector']) %>
   <td><%= index_line.department.short_name %></td>

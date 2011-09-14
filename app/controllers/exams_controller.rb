@@ -10,7 +10,7 @@ class ExamsController < ApplicationController
     list
     render(:action => 'list')
   end
-  
+
   def list_for_vicerector
   if @user.has_role?('vicerector') && params[:vicerector] == "1"
     @exams = Exam.find_for_univerzity(@user,:this_year => 1)
@@ -20,10 +20,10 @@ class ExamsController < ApplicationController
 
   def list
     session[:this_year] = params[:this_year] == "0" ? false : true
-    @partial = params[:prefix] ? params[:prefix] + 'list' : 'list' 
+    @partial = params[:prefix] ? params[:prefix] + 'list' : 'list'
     @exams = Exam.find_for(@user, :this_year => session[:this_year])
   end
-    
+
   def show
     @exam = Exam.find(params[:id])
   end
@@ -36,7 +36,7 @@ class ExamsController < ApplicationController
   # start of the exam creating process
   # rendering the two links
   def create
-    @title = t(:message_0, :scope => [:txt, :controller, :exams])
+    @title = t(:message_0, :scope => [:controller, :exams])
     unless @user.has_role? 'faculty_secretary'
       by_subject
       render :action => :by_subject
@@ -45,7 +45,7 @@ class ExamsController < ApplicationController
     end
   end
 
-  # created exam object and subjects for select 
+  # created exam object and subjects for select
   def by_subject
     @exam = Exam.new
     session[:exam] = @exam
@@ -88,8 +88,8 @@ class ExamsController < ApplicationController
     exam.index = @index
     session[:exam] = exam
     @subjects = @index.study_plan.unfinished_external_subjects
-  end  
-  
+  end
+
   # saving subject for external exam of the selected student
   def save_external_subject
     session[:exam].subject = @subject = Subject.find(params['subject']['id'])
@@ -104,18 +104,18 @@ class ExamsController < ApplicationController
     session[:exam] = nil
     redirect_to(:action => 'create', :controller => 'exams')
   end
-  
+
   # updates exam
   def update
     @exam = Exam.find(params[:id])
     if @exam.update_attributes(params[:exam])
-      #flash['notice'] = t(:message_1, :scope => [:txt, :controller, :exams])
-      
+      #flash['notice'] = t(:message_1, :scope => [:controller, :exams])
+
     else
       render(:action => :edit)
     end
   end
-  
+
   # edits exam
   def edit
      @exam = Exam.find(params[:id])
@@ -133,10 +133,10 @@ class ExamsController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = t(:message_2, :scope => [:txt, :controller, :exams])
+    @title = t(:message_2, :scope => [:controller, :exams])
   end
 
-    
+
 
 end
 

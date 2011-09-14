@@ -1,21 +1,21 @@
-<h5><%= t(:message_0, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></h5>
+<h5><%= t(:message_0, :scope => [:view, :specializations, :attestation]) %></h5>
 <div class='links'>
-  <%= link_to(t(:message_1, :scope => [:txt, :view, :specializations, :attestation, :rhtml]), {:controller => 'specializations'}) %>
+  <%= link_to(t(:message_1, :scope => [:view, :specializations, :attestation]), {:controller => 'specializations'}) %>
 </div>
   <%if @indices != []%>
 <table id='attestation_table'>
   <tr>
-    <th><%= t(:student, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></th>
-    <th><%= t(:message_4, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></th>
-    <th><%= t(:message_5, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
-    <th><%= t(:message_6, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %></th>
-    <th><%= t(:message_7, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
-    <th><%= t(:message_8, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
-    <th><%= t(:message_10, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
-    <th><%= t(:message_9, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
-    <th><%= t(:date_of_last_change, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%></th>
+    <th><%= t(:student, :scope => [:view, :specializations, :attestation]) %></th>
+    <th><%= t(:message_4, :scope => [:view, :specializations, :attestation]) %></th>
+    <th><%= t(:message_5, :scope => [:view, :specializations, :attestation])%></th>
+    <th><%= t(:message_6, :scope => [:view, :specializations, :attestation]) %></th>
+    <th><%= t(:message_7, :scope => [:view, :specializations, :attestation])%></th>
+    <th><%= t(:message_8, :scope => [:view, :specializations, :attestation])%></th>
+    <th><%= t(:message_10, :scope => [:view, :specializations, :attestation])%></th>
+    <th><%= t(:message_9, :scope => [:view, :specializations, :attestation])%></th>
+    <th><%= t(:date_of_last_change, :scope => [:view, :specializations, :attestation])%></th>
   </tr>
-  
+
 <% for index in @indices %>
   <%if index.student && index.study_plan%>
     <tr>
@@ -28,7 +28,7 @@
       <td>
       <% #FIXME this should go to model
         if index.study_plan.attested_actual? %>
-        <%= t(:message_11, :scope => [:txt, :view, :specializations, :attestation, :rhtml]) %>
+        <%= t(:message_11, :scope => [:view, :specializations, :attestation]) %>
       <% else %>
         <%= translate_approver index.study_plan.attestation.try(:last_approver) %>
       <% end %>
@@ -45,12 +45,12 @@
       </td>
     </tr>
       <% if (statement = index.study_plan.attestation.try(:last_statement)) && statement.try(:note) && !statement.note.empty? %>
-      <tr><td colspan='9'><%= "#{t(:note, :scope => [:txt, :view, :specializations, :attestation, :rhtml])}: #{statement.note}" %></td></tr>
+      <tr><td colspan='9'><%= "#{t(:note, :scope => [:view, :specializations, :attestation])}: #{statement.note}" %></td></tr>
       <% else %>
     <% end %>
   <% end %>
 <%end%>
 </table>
   <% else %>
-    <%=t(:message_13, :scope => [:txt, :view, :specializations, :attestation, :rhtml])%>
+    <%=t(:message_13, :scope => [:view, :specializations, :attestation])%>
   <% end%>

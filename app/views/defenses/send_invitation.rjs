@@ -1,10 +1,10 @@
 
 if params[:mail] == 'mail'
-  page.replace_html 'invitation_link', t(:email_sent, :scope => [:txt, :view, :defenses, :send_invitation, :rjs])
+  page.replace_html 'invitation_link', t(:email_sent, :scope => [:view, :defenses, :send_invitation])
   page.hide 'invitation_link_no_mail'
   page.replace 'defense_link', defense_term_link(@user, @index)
 else
   page.hide 'invitation_link'
-  page.replace_html 'invitation_link_no_mail', t(:defense_confirmed, :scope => [:txt, :view, :defenses, :send_invitation, :rjs])
+  page.replace_html 'invitation_link_no_mail', t(:defense_confirmed, :scope => [:view, :defenses, :send_invitation])
   page.replace 'defense_link', defense_term_link(@user, @index)
 end

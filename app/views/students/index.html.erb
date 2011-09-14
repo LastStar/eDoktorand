@@ -3,7 +3,7 @@
 </div>
 <div id="students_list">
   <%= javascript_tag "Event.observe(window, 'load', " + remote_function(:update => 'students_list', :url => {:action => :filter}) + ')' %>
-  <h1><%= t(:message_0, :scope => [:txt, :view, :students, :index, :rhtml]) + "(%s)" % t(:message_1, :scope => [:txt, :view, :students, :index, :rhtml]) %></h1>
+  <h1><%= t(:message_0, :scope => [:view, :students, :index]) + "(%s)" % t(:message_1, :scope => [:view, :students, :index]) %></h1>
   <div class="center">
     <%= image_tag 'big_loader.gif' %>
   </div>

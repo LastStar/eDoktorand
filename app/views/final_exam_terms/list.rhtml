@@ -2,12 +2,12 @@
   <%= final_exam_terms_link %>
 </div>
 <h1><%= @title %></h1>
-<% form_tag :action => 'prepare_print' do -%>
+<% form_tag({:action => 'prepare_print'}, :method => :get) do -%>
 <table class="embossed students-list">
   <%= render(:partial => 'term_line', :collection => @final_exam_terms) %>
 </table>
 <% if @final_exam_terms != []%>
-  <%= submit_tag t(:message_0, :scope => [:txt, :view, :final_exam_terms, :list, :rhtml]), :class=>'button' %>
+  <%= submit_tag t(:message_0, :scope => [:view, :final_exam_terms, :list]), :class=>'button' %>
 <% end %>
 <% end %>
 <div class='links'>

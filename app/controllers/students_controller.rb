@@ -14,18 +14,18 @@ class StudentsController < ApplicationController
   before_filter :prepare_order, :prepare_filter, :except => [:show, :contact]
   before_filter :prepare_conditions, :prepare_student
 
-  # saves the street of address to db 
+  # saves the street of address to db
   def save_street
     @student = Student.find(params[:student][:id])
     @student.update_attribute(:street, params[:student][:street])
   end
-  
+
   # saves the city of address to db
   def save_city
     @student = Student.find(params[:student][:id])
     @student.update_attribute(:city, params[:student][:city])
   end
-  
+
   # saves the zip of address to db
   def save_zip
     @student = Student.find(params[:student][:id])
@@ -58,11 +58,11 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:student][:id])
     @student.update_attributes(params[:student])
   end
-  
+
   def mail_list
     @indices = Index.find_for(@user, :order => 'people.lastname', :conditions => ['indices.finished_on is null'])
   end
-  
+
   def admin_edit_mail
     @index = Index.find(params[:id])
     if @index.student.email != nil
@@ -71,7 +71,7 @@ class StudentsController < ApplicationController
       render :partial => "admin_create_mail"
     end
   end
-  
+
   def admin_update_mail
     @index = Index.find(params[:index][:id])
     @index.update_attribute(:email, params[:student][:email])
@@ -81,11 +81,11 @@ class StudentsController < ApplicationController
   # main page with students for employers
   def index
   end
-  
+
   # renders xls file with curent filter
   def list_xls
     do_filter
-    headers['Content-Type'] = "application/vnd.ms-excel" 
+    headers['Content-Type'] = "application/vnd.ms-excel"
     headers['Content-Disposition'] = 'attachment; filename="excel-export.xls"'
     headers['Cache-Control'] = ''
   end
@@ -98,13 +98,13 @@ class StudentsController < ApplicationController
       render(:action => 'show')
     end
   end
-  
+
   # filters students
   def filter
     do_filter
     render(:partial => 'list')
   end
-  
+
   # multiple filtering
   def multiple_filter
     options = params.to_hash.symbolize_keys
@@ -113,7 +113,7 @@ class StudentsController < ApplicationController
     @indices = Index.find_by_criteria(options)
     render(:partial => 'list')
   end
-  
+
   # renders student details
   def show
     @index = Index.find_with_all_included(params[:id])
@@ -121,7 +121,7 @@ class StudentsController < ApplicationController
       @index.disert_theme = DisertTheme.create(:finishing_to => 6, :title => "doplnit", :index => @index)
     end
   end
-  
+
   # finishes study
   def finish
     @index = Index.find(params[:id])
@@ -130,7 +130,7 @@ class StudentsController < ApplicationController
     render(:partial => 'redraw_student')
   end
 
-  
+
   # unfinishes study
   def unfinish
     @index = Index.find(params[:id])
@@ -141,7 +141,7 @@ class StudentsController < ApplicationController
       render(:partial => 'redraw_list')
     end
   end
-  
+
   # switches study on index
   def switch_study
     @index = Index.find(params['id'])
@@ -211,7 +211,7 @@ class StudentsController < ApplicationController
   def edit_phone
     @student = Student.find(params[:id])
   end
-  
+
   def save_phone
     @student = Student.find(params[:student][:id])
     @student.update_attribute(:phone, params[:student][:phone])
@@ -239,7 +239,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id], :include => :index)
     @index = @student.index
   end
-  
+
   def save_citizenship
     @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
@@ -300,16 +300,16 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id], :include => :index)
     @index = @student.index
   end
-  
+
   def save_account
     @student = Student.find(params[:student][:id], :include => :index)
     @index = @student.index
     unless @index.update_attributes(params[:index])
       render(:partial => 'notsave_account')
-    end  
+    end
   end
   # end of methods for editing personal details
- 
+
   #TO DO: THIS METHOD MAYBE UNUSED NOW - NEED TO CHECK!
   def pass
     @index = Index.find(params[:id])
@@ -323,22 +323,8 @@ class StudentsController < ApplicationController
     render(:partial => 'redraw_student')
   end
 
-  def pass_final_exam
-    @index = Index.find(params[:id])
-    date = create_date(params[:date])
-    @index.final_exam_passed!(date)    
-    render(:partial => 'redraw_student')
-  end
-
-  def pass_defense
-    @index = Index.find(params[:id])
-    date = create_date(params[:date])
-    @index.disert_theme.defense_passed!(date)
-    render(:partial => 'redraw_student')   
-  end
-
   def method_missing(method_id, *arguments)
-    if match = /passt(:message_0, :scope => [:txt, :controller, :students])/.match(method_id.to_s)
+    if match = /passt(:message_0, :scope => [:controller, :students])/.match(method_id.to_s)
       params[:what] = match[1]
       pass
     else
@@ -363,12 +349,12 @@ class StudentsController < ApplicationController
       Notifications::deliver_change_tutor_cs(@student, @subject_change)
     else
       Notifications::deliver_change_tutor_en(@student, @subject_change)
-  
+
     end
   end
 
   private
-  
+
   def create_date(date)
     if date['day']
       Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
@@ -379,27 +365,27 @@ class StudentsController < ApplicationController
 
   # sets title of the controller
   def set_title
-    @title = t(:message_1, :scope => [:txt, :controller, :students])
+    @title = t(:message_1, :scope => [:controller, :students])
   end
-  
-  # prepares order variable for listin 
+
+  # prepares order variable for listin
   # TODO create some better mechanism to do ordering
   def prepare_order
     @order = 'people.lastname, study_plans.created_on, study_interrupts.created_on'
   end
-  
+
   # prepares filter variable
-  def prepare_filter 
-    @filters = [[t(:message_2, :scope => [:txt, :controller, :students]), 2], [t(:message_3, :scope => [:txt, :controller, :students]), 0], 
-      [t(:message_4, :scope => [:txt, :controller, :students]), 3]]
+  def prepare_filter
+    @filters = [[t(:message_2, :scope => [:controller, :students]), 2], [t(:message_3, :scope => [:controller, :students]), 0],
+      [t(:message_4, :scope => [:controller, :students]), 3]]
     if (@user.has_one_of_roles?(['leader', 'dean', 'vicerector']))
       if !@user.person.indices.empty?
-        @filters.concat([[t(:message_5, :scope => [:txt, :controller, :students]), 1], [t(:message_6, :scope => [:txt, :controller, :students]), 4]])
+        @filters.concat([[t(:message_5, :scope => [:controller, :students]), 1], [t(:message_6, :scope => [:controller, :students]), 4]])
       end
     end
     unless @user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
-      # default filter to waiting for approval 
-      session[:filter] ||= 2 
+      # default filter to waiting for approval
+      session[:filter] ||= 2
     else
       session[:filter] ||= 3
     end

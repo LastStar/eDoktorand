@@ -1,14 +1,14 @@
 <div id='form' class='half bordered right'>
-  <% form_remote_tag(:url => {:action => 'save_attestation_detail'}, 
-                    :loading => "$('commit').value = '%s'" % t(:working, :scope => [:txt, :view, :study_plans, :_detail_form, :rhtml])) do -%>	
+  <% form_remote_tag(:url => {:action => 'save_attestation_detail'},
+                    :loading => "$('commit').value = '%s'" % t(:working, :scope => [:view, :study_plans, :_detail_form])) do -%>
     <label class='smaller' for="attestation_detail_detail">
-      <%= t(:additional_information, :scope => [:txt, :view, :study_plans, :_detail_form, :rhtml]) %>
+      <%= t(:additional_information, :scope => [:view, :study_plans, :_detail_form]) %>
     </label>
-    <%= text_area 'attestation_detail', 'detail', :rows => 10, :cols => 60  %><br/> 
+    <%= text_area 'attestation_detail', 'detail', :rows => 10, :cols => 60  %><br/>
     <%= hidden_field 'attestation_detail', 'id' %>
     <%= hidden_field 'attestation_detail', 'study_plan_id' %>
     <%= hidden_field 'attestation_detail', 'attestation_term' %>
-    <%= submit_tag t(:submit, :scope => [:txt, :view, :study_plans, :_detail_form, :rhtml]), :id => 'commit' %>
+    <%= submit_tag t(:submit, :scope => [:view, :study_plans, :_detail_form]), :id => 'commit' %>
   <% end %>
-</div> 
+</div>
 

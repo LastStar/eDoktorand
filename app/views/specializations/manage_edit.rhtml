@@ -1,14 +1,14 @@
 <%# FIX this spacing and maybe whole idea %>
-<h5><%= t(:message_0, :scope => [:txt, :view, :specializations, :manage_edit, :rhtml])%></h5>
+<h5><%= t(:message_0, :scope => [:view, :specializations, :manage_edit])%></h5>
 <div id='links'>
-  <%=link_to(t(:message_1, :scope => [:txt, :view, :specializations, :manage_edit, :rhtml]), {:action => 'manage_specialization'})%>
+  <%=link_to(t(:message_1, :scope => [:view, :specializations, :manage_edit]), {:action => 'manage_specialization'})%>
 </div>
 <ul>
   <li>
     <b><%=@specialization.name%></b>
   </li>
     <li>
-      <b><%=t(:message_2, :scope => [:txt, :view, :specializations, :manage_edit, :rhtml])%>:</b>
+      <b><%=t(:message_2, :scope => [:view, :specializations, :manage_edit])%>:</b>
     </li>
   <%for r_subject in @obligate_subjects%>
     <li class='second'>
@@ -22,7 +22,7 @@
     </li>
 
     <li>
-      <b><%=t(:message_3, :scope => [:txt, :view, :specializations, :manage_edit, :rhtml])%>:</b>
+      <b><%=t(:message_3, :scope => [:view, :specializations, :manage_edit])%>:</b>
     </li>
   <%for r_subject in @voluntary_subjects%>
     <li class='second'>

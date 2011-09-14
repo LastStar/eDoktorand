@@ -32,7 +32,7 @@ class StudyInterruptsController < ApplicationController
                   :id => @interrupt.id)
     else
       if @user.has_role?('faculty_secretary')
-        @interrupt.approve_like('dean', t(:message_0, :scope => [:txt, :controller, :interrupts]))
+        @interrupt.approve_like('dean', t(:message_0, :scope => [:controller, :interrupts]))
         @interrupt.index.interrupt!(@interrupt.start_on)
       end
       redirect_to(:controller => 'students')
@@ -49,9 +49,9 @@ class StudyInterruptsController < ApplicationController
     if @user.has_role?('faculty_secretary')
       @document.index.interrupt!(@document.start_on)
     end
-    
+
     if good_browser?
-      render(:partial => 'shared/confirm_approve', 
+      render(:partial => 'shared/confirm_approve',
              :locals => {:replace => 'interrupt_approval'})
     else
       render(:partial => 'students/redraw_list')
@@ -80,5 +80,5 @@ class StudyInterruptsController < ApplicationController
 
   def print_interrupt
     @interrupt = StudyInterrupt.find(params[:id])
-  end  
+  end
 end

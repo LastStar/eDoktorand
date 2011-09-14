@@ -1,64 +1,64 @@
 <div id='protocol'>
 <% if back_link %>
 <div class='links'>
-<%= link_to_function(t(:message_0, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), "Element.show('exams_list'); Element.remove('protocol')") %>
+<%= link_to_function(t(:message_0, :scope => [:view, :exams, :_protocol]), "Element.show('exams_list'); Element.remove('protocol')") %>
 </div>
 <% end %>
 <div>
-<%= t(:message_1, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %><br /><br />
-<%= t(:message_2, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;<%= exam.first_examinator.faculty.name if exam.first_examinator %>
+<%= t(:message_1, :scope => [:view, :exams, :_protocol]) %><br /><br />
+<%= t(:message_2, :scope => [:view, :exams, :_protocol]) %>:&nbsp;<%= exam.first_examinator.faculty.name if exam.first_examinator %>
 </div>
 <br /><br />
 <div style="text-align: right; padding-right: 50px;">
-  <%= t(:message_3, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>&nbsp;&nbsp;<%= exam.passed_on.strftime("%d. %m. %Y")%>
+  <%= t(:message_3, :scope => [:view, :exams, :_protocol]) %>&nbsp;&nbsp;<%= exam.passed_on.strftime("%d. %m. %Y")%>
 </div>
 <br /><br />
 <div style="text-align: center">
-  <span style="font-size: 20px; font-weight: bold;"><%= t(:message_4, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %></span>
+  <span style="font-size: 20px; font-weight: bold;"><%= t(:message_4, :scope => [:view, :exams, :_protocol]) %></span>
 </div><br />
 <div style="text-align: left">
-  <%= t(:message_5, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;<%= exam.subject.label %><br /> 
+  <%= t(:message_5, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;<%= exam.subject.label %><br />
 </div>
 <br /><br />
 <br /><br /><br />
 <div>
-<%= t(:message_6, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.student.display_name.strip %><br /><br /> 
-<%= t(:message_7, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.specialization.name %><br /><br />
-<%= t(:message_8, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.tutor.display_name %> <br /><br />
-<%= t(:message_9, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
+<%= t(:message_6, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.student.display_name.strip %><br /><br />
+<%= t(:message_7, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.specialization.name %><br /><br />
+<%= t(:message_8, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.index.tutor.display_name %> <br /><br />
+<%= t(:message_9, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
 exam.index.department.name %>
 </div>
 <br /><br /><br />
 <br />
 <% if exam.questions && !exam.questions.empty?%>
 <div>
-<%= t(:message_10, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<pre class="detail"><%= exam.questions%></pre>
+<%= t(:message_10, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<pre class="detail"><%= exam.questions%></pre>
 </div>
 <% end %>
 <br /><br /><br />
 <div>
-<%= t(:message_11, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= result_word(exam.result) %><br /><br /> 
+<%= t(:message_11, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= result_word(exam.result) %><br /><br />
 </div>
 <div>
-<%= t(:message_12, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
+<%= t(:message_12, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%=
 exam.first_examinator.display_name_with_title if exam.first_examinator%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<% unless exam.first_examinator %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<% end %><%= t(:message_13, :scope => [:txt, :view, :exams, :_protocol, :rhtml])
-%>:&nbsp;&nbsp;<br /><br />  
+<% unless exam.first_examinator %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<% end %><%= t(:message_13, :scope => [:view, :exams, :_protocol])
+%>:&nbsp;&nbsp;<br /><br />
 <% if exam.second_examinator %>
-<%= t(:message_14, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t(:message_15, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;<br /><br /> 
+<%= t(:message_14, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.second_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t(:message_15, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;<br /><br />
 <% end %>
 <% if exam.third_examinator %>
-<%= t(:message_16, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.third_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t(:message_17, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;<br /><br /> 
+<%= t(:message_16, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.third_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t(:message_17, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;<br /><br />
 <% end %>
 <% if exam.fourth_examinator %>
-<%= t(:message_18, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.fourth_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t(:message_19, :scope => [:txt, :view, :exams, :_protocol, :rhtml]) %>:&nbsp;&nbsp;<br /><br /> 
+<%= t(:message_18, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= exam.fourth_examinator.display_name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= t(:message_19, :scope => [:view, :exams, :_protocol]) %>:&nbsp;&nbsp;<br /><br />
 <% end %>
 
 </div>
 <% if back_link %>
   &nbsp;
   <div class='links'>
-    <%= link_to_function(t(:message_0, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), "Element.show('exams_list'); Element.remove('protocol')") %>
+    <%= link_to_function(t(:message_0, :scope => [:view, :exams, :_protocol]), "Element.show('exams_list'); Element.remove('protocol')") %>
   </div>
 <% end %>
 </div><!-- protocol end -->
@@ -66,7 +66,7 @@ exam.first_examinator.display_name_with_title if exam.first_examinator%>&nbsp;&n
 <% unless back_link %>
 &nbsp;
   <div class='links'>
-  <%= link_to (t(:message_20, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), {:action => 'save'})%>
-  <%= link_to_remote (t(:message_21, :scope => [:txt, :view, :exams, :_protocol, :rhtml]), :url => {:action => 'save_subject'}, :complete => evaluate_remote_response)%>
+  <%= link_to (t(:message_20, :scope => [:view, :exams, :_protocol]), {:action => 'save'})%>
+  <%= link_to_remote (t(:message_21, :scope => [:view, :exams, :_protocol]), :url => {:action => 'save_subject'}, :complete => evaluate_remote_response)%>
   </div>
 <% end %>

@@ -1,20 +1,20 @@
 <% if candidate.finished_on %>
-  <%= candidate.finished_on.strftime("%d. %m. %Y") %> <%= t(:message_0, :scope => [:txt, :view, :candidates, :_history, :rhtml]) %><br />
+  <%= candidate.finished_on.strftime("%d. %m. %Y") %> <%= t(:message_0, :scope => [:view, :candidates, :_history]) %><br />
 <% end %>
 <% if candidate.ready_on %>
-  <%= candidate.ready_on.strftime("%d. %m. %Y") %> <%= t(:message_1, :scope => [:txt, :view, :candidates, :_history, :rhtml]) %><br />
+  <%= candidate.ready_on.strftime("%d. %m. %Y") %> <%= t(:message_1, :scope => [:view, :candidates, :_history]) %><br />
 <% end %>
 <% if candidate.invited_on %>
-  <%= candidate.invited_on.strftime("%d. %m. %Y") %> <%= link_to(t(:message_2, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
+  <%= candidate.invited_on.strftime("%d. %m. %Y") %> <%= link_to(t(:message_2, :scope => [:view, :candidates, :_history]),
   :action => 'invitation', :id => candidate) %><br />
 <% end %>
 <% if candidate.rejected? %>
-  <%= candidate.rejected_on.strftime("%d. %m. %Y") %> <%= link_to(t(:rejected, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
+  <%= candidate.rejected_on.strftime("%d. %m. %Y") %> <%= link_to(t(:rejected, :scope => [:view, :candidates, :_history]),
   :action => 'reject', :id => candidate) %><br />
 <% end %>
 <% if candidate.admited_on %>
-  <%= candidate.admited_on.strftime("%d. %m. %Y") %> <%= link_to(t(:message_3, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
-  :action => 'confirm_admit', :id => candidate) %>&nbsp;<%= link_to(t(:message_4, :scope => [:txt, :view, :candidates, :_history, :rhtml]),
+  <%= candidate.admited_on.strftime("%d. %m. %Y") %> <%= link_to(t(:message_3, :scope => [:view, :candidates, :_history]),
+  :action => 'confirm_admit', :id => candidate) %>&nbsp;<%= link_to(t(:message_4, :scope => [:view, :candidates, :_history]),
   :action => 'admittance', :id => candidate) %><br />
 <% end %>
 <% if candidate.enrolled_on %>

@@ -1,20 +1,20 @@
-<h1><%= t(:message_0, :scope => [:txt, :view, :tutors, :list, :rhtml]) + "(#{@tutors.size})" %></h1>
+<h1><%= t(:message_0, :scope => [:view, :tutors, :list]) + "(#{@tutors.size})" %></h1>
 <table id='tutors_table' class="embossed">
   <tr>
-    <th class='no-rounded'> <%= t(:message_1, :scope => [:txt, :view, :tutors, :list, :rhtml])%></th>
-    <th class='no-rounded'> <%= t(:message_2, :scope => [:txt, :view, :tutors, :list, :rhtml])%></th>
+    <th class='no-rounded'> <%= t(:message_1, :scope => [:view, :tutors, :list])%></th>
+    <th class='no-rounded'> <%= t(:message_2, :scope => [:view, :tutors, :list])%></th>
   </tr>
   <% for tutor in @tutors %>
     <% if tutor.tutorship %>
     <tr class='line' id='specialization_<%= tutor.tutorship.id if tutor.tutorship%>'>
         <%@tutor = tutor%>
-        <%= render :partial => 'specialization', 
+        <%= render :partial => 'specialization',
                    :locals => {:tutorship => tutor.tutorship, :tutor => tutor} %>
     </tr>
     <% else %>
-    <tr class='line' id='tutor_<%= tutor.id%>'>      
-        <%= render :partial => 'bad_tutor', 
-                   :locals => {:tutor => tutor} %>      
+    <tr class='line' id='tutor_<%= tutor.id%>'>
+        <%= render :partial => 'bad_tutor',
+                   :locals => {:tutor => tutor} %>
     </tr>
     <% end %>
   <% end %>

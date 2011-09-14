@@ -1,20 +1,20 @@
-<h5><%= t(:message_3, :scope => [:txt, :view, :parameters, :list, :rhtml]) %></h5>
+<h5><%= t(:message_3, :scope => [:view, :parameters, :list]) %></h5>
 
 <table id="parameters_list">
 <tbody>
-    <th><%= t(:message_0, :scope => [:txt, :view, :parameters, :list, :rhtml]) %></th>
-    <th><%= t(:message_1, :scope => [:txt, :view, :parameters, :list, :rhtml]) %></th>
-    <th><%= t(:message_2, :scope => [:txt, :view, :parameters, :list, :rhtml]) %></th>
+    <th><%= t(:message_0, :scope => [:view, :parameters, :list]) %></th>
+    <th><%= t(:message_1, :scope => [:view, :parameters, :list]) %></th>
+    <th><%= t(:message_2, :scope => [:view, :parameters, :list]) %></th>
 <% for parameter in @parameters %>
   <tr>
     <td><%= link_to parameter.name, :action => :sample_page, :id => parameter.id %></td>
     <td><%= parameter.value %></td>
-    
-  
+
+
     <td><%= h Faculty.find_by_id(parameter.faculty_id).short_name %></td>
     <td>
-      <%= link_to t(:message_4, :scope => [:txt, :view, :parameters, :list, :rhtml]), :action => 'show', :id => parameter %>
-      <%= link_to t(:message_5, :scope => [:txt, :view, :parameters, :list, :rhtml]), :action => 'edit', :id => parameter %>
+      <%= link_to t(:message_4, :scope => [:view, :parameters, :list]), :action => 'show', :id => parameter %>
+      <%= link_to t(:message_5, :scope => [:view, :parameters, :list]), :action => 'edit', :id => parameter %>
     </td>
   </tr>
   <% end %>

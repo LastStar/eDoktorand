@@ -1,4 +1,5 @@
 require 'log4r'
+require 'csv'
 class MassProcessor
   include Log4r
 
@@ -71,7 +72,7 @@ class MassProcessor
             subject.departments << Department.find(remote_subject.idDepartment.to_i)
           else
             @@mylog.debug "Department IS MISSING in our database! for subject %s" % subject.code
-            missing_departments = missing_departments + 1          
+            missing_departments = missing_departments + 1
           end
           @@mylog.debug "Subject %s is created" % remote_subject.code
           created_subjects = created_subjects + 1
@@ -79,10 +80,10 @@ class MassProcessor
       end
       @@mylog.info "%i subjects are created" % created_subjects
       @@mylog.info "%i subjects are updated" % updated_subjects
-      @@mylog.info "ERROR - %i departments ARE MISSING in our database. See log above." % missing_departments    
+      @@mylog.info "ERROR - %i departments ARE MISSING in our database. See log above." % missing_departments
     end
 
-    # approve all indexes 
+    # approve all indexes
     def mass_approve(indices)
       @@mylog.info "There are #{indices.size} indices"
       indices.each do |i|
@@ -90,11 +91,11 @@ class MassProcessor
           app = i.study_plan.approval || StudyPlanApproval.new
           created = app.created_on = i.study_plan.approved_on = \
             i.enrolled_on + 1.month
-          app.tutor_statement ||= TutorStatement.create('person_id' => i.tutor_id, 
+          app.tutor_statement ||= TutorStatement.create('person_id' => i.tutor_id,
             'result' => 1, 'note' => '', 'created_on' => created)
-          app.leader_statement ||= LeaderStatement.create('person_id' => i.leader.id, 
+          app.leader_statement ||= LeaderStatement.create('person_id' => i.leader.id,
             'result' => 1, 'note' => '', 'created_on' => created)
-          app.dean_statement ||= DeanStatement.create('person_id' => i.dean.id, 
+          app.dean_statement ||= DeanStatement.create('person_id' => i.dean.id,
             'result' => 1, 'note' => 'approved by machine', 'created_on' => created)
           i.study_plan.approve!
           app.save
@@ -142,7 +143,7 @@ class MassProcessor
                                                     "%s_" % student.birth_number])
           if c.size > 0
             if c.size > 1
-              @@mylog.info "More than one candidate for student %i. Getting first." % student.id 
+              @@mylog.info "More than one candidate for student %i. Getting first." % student.id
             end
             c = c.first
             @@mylog.info "Found one candidate for student %i" % student.id
@@ -161,7 +162,7 @@ class MassProcessor
       end
       return notfound
     end
-    
+
     # reads sident from webservice and change it for students
     def repair_sident(students)
       @@mylog.info "There are %i students" % students.size
@@ -228,6 +229,40 @@ class MassProcessor
       ids.each {|i|
         type.create(:subject_id => i, :specialization_id => specialization_id)
       }
+    end
+
+    def compare_im(file)
+      outfile = File.open('idm_diff.csv', 'wb')
+      File.open(file, 'rb') do |file|
+        CSV::Reader.parse(file, ';') do |row|
+          uic = row[5]
+          if p = ImStudent.find_by_uic(uic)
+            if user = p.student.try(:user)
+              if user.login != row[3]
+                puts "#{uic}; login; #{p.student.user.login}; #{row[3]}"
+                outfile.puts "#{uic}; login; #{p.student.user.login}; #{row[3]}"
+              end
+            end
+            {6 => 'firstname', 7 => 'lastname', 4 => 'birth_number',
+             8 => 'contact_street', 12 => 'contact_housenr',
+             13 => 'contact_city', 16 => 'title_before',
+             28 => 'bank_code', 29 => 'bank_account', 30 => 'bank_branch',
+             21 => 'phone', 19 => 'birth_place'
+            }.each_pair do |num, meth|
+              idm = row[num].try(:strip)
+              edo = p.send(meth.to_sym).try(:strip)
+              if edo != idm
+                puts "#{uic}; #{meth.humanize}; #{edo}; #{idm}"
+                outfile.puts "#{uic}; #{meth.humanize}; #{edo}; #{idm}"
+              end
+            end
+          else
+            puts "#{uic}; could not be found"
+            outfile.puts "#{uic}; could not be found"
+          end
+        end
+      end
+      outfile.close
     end
   end
 end

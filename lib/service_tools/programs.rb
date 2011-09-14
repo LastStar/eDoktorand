@@ -1,13 +1,12 @@
 module ServiceTools
-  module Departments
+  module Programs
     # repairs all departments from departments service
-    # based on response from CentralRegister::Department
-    def self.repair_all_by_short_name(response)
+    # based on response from CentralRegister::Program
+    def self.repair_all_by_code(response)
       response.each do |hash|
-        if hash[:type_id] == '1' && department = Department.find_by_short_name(hash[:short_name])
+        if department = Program.find_by_code(hash[:code])
           department.name = hash[:name]
           department.name_english = hash[:name_english]
-          department.code = hash[:code]
           department.save
         end
       end

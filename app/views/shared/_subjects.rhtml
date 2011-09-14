@@ -4,14 +4,14 @@
 <% end %>
 <% for subject in subjects %>
 <li class='second' id='<%= "subject#{subject.id}" %>'>
-<div class='info'><%= subject.finishing_on %>. <%= t(:message_0, :scope => [:txt, :view, :shared, :_subjects, :rhtml]) %></div>
+<div class='info'><%= subject.finishing_on %>. <%= t(:message_0, :scope => [:view, :shared, :_subjects]) %></div>
 <%= subject.subject.label %>
 </li>
 <% if subject.finished? %>
 <li class='highlight'>
 <div class='info'><%= subject.finished_on.strftime("%d. %m. %Y") %> </div>
-<%= "#{t(:message_1, :scope => [:txt, :view, :shared, :_subjects, :rhtml])} " %>
-&nbsp; 
+<%= "#{t(:message_1, :scope => [:view, :shared, :_subjects])} " %>
+&nbsp;
 </li>
 <% end %>
 <% end %>

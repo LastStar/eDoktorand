@@ -1,11 +1,11 @@
-<h1> <%= t(:message_0, :scope => [:txt, :view, :exams, :external, :rhtml])%></h1>
-<% external_student_form do -%>	
+<h1> <%= t(:message_0, :scope => [:view, :exams, :external])%></h1>
+<% external_student_form do -%>
 <fieldset>
-  <legend><%= t(:message_1, :scope => [:txt, :view, :exams, :external, :rhtml]) %></legend>
+  <legend><%= t(:message_1, :scope => [:view, :exams, :external]) %></legend>
   <select id='index_id' name='index[id]'>
     <%= display_name_options(@students) %>
   </select>
 </fieldset>
 <br/>
-<%= submit_tag(t(:message_2, :scope => [:txt, :view, :exams, :external, :rhtml]), :id => 'submit-button', :class => 'button') %>
+<%= submit_tag(t(:message_2, :scope => [:view, :exams, :external]), :id => 'submit-button', :class => 'button') %>
 <% end %>

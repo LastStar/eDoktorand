@@ -1,1 +1,1 @@
-rvm --create ree@rails2
+rvm ree@rails2 --create
