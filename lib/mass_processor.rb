@@ -233,6 +233,7 @@ class MassProcessor
 
     def compare_im(file)
       outfile = File.open('idm_diff.csv', 'wb')
+      cnbf = 0
       File.open(file, 'rb') do |file|
         CSV::Reader.parse(file, ';') do |row|
           uic = row[5]
@@ -244,14 +245,14 @@ class MassProcessor
               end
             end
             {6 => 'firstname', 7 => 'lastname', 4 => 'birth_number',
-             8 => 'contact_street', 12 => 'contact_housenr',
-             13 => 'contact_city', 16 => 'title_before',
+             8 => 'permaddress_street', 12 => 'permaddress_housenr',
+             19 => 'permaddress_city', 24 => 'permaddress_zip', 16 => 'title_before',
              28 => 'bank_code', 29 => 'bank_account', 30 => 'bank_branch',
-             21 => 'phone', 19 => 'birth_place'
+             21 => 'phone', 19 => 'birth_place', 2 => 'student_id', 35 => 'birthname',
             }.each_pair do |num, meth|
-              idm = row[num].try(:strip)
-              edo = p.send(meth.to_sym).try(:strip)
-              if edo != idm
+              idm = row[num].to_s.strip
+              edo = p.send(meth.to_sym).to_s.strip
+              if (edo != idm)
                 puts "#{uic}; #{meth.humanize}; #{edo}; #{idm}"
                 outfile.puts "#{uic}; #{meth.humanize}; #{edo}; #{idm}"
               end
@@ -259,10 +260,12 @@ class MassProcessor
           else
             puts "#{uic}; could not be found"
             outfile.puts "#{uic}; could not be found"
+            cnbf += 1
           end
         end
       end
       outfile.close
+      puts "Not found #{cnbf}"
     end
   end
 end
