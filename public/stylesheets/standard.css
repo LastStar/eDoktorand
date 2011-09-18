@@ -1,4 +1,4 @@
-body { 
+body {
   margin-right: auto;
   margin-left: auto;
   margin-top: 0px;
@@ -23,8 +23,8 @@ body, p, ol, ul, td {
 }
 
 a {
-  color: #003366; 
-} 
+  color: #003366;
+}
 a:hover { color: red }
 
 .t1 {
@@ -55,19 +55,19 @@ tr.student {
 
   }
 
-table.scholarship { 
-  border-collapse: collapse; 
-  border : 0px; 
+table.scholarship {
+  border-collapse: collapse;
+  border : 0px;
 }
 
-table.scholarship th { 
-  border: 1px 
-  solid #ddc 
+table.scholarship th {
+  border: 1px
+  solid #ddc
 }
 
-table.scholarship td { 
-  border: 1px 
-  solid #ddc 
+table.scholarship td {
+  border: 1px
+  solid #ddc
 }
 
 table.scholarship td.number {
@@ -75,7 +75,7 @@ table.scholarship td.number {
 }
 
 table.scholarship_disponent{
-  border-collapse: collapse; 
+  border-collapse: collapse;
   border : none;
   float: right;
 }
@@ -92,7 +92,7 @@ hr {
   border-top: 1px solid black;
 }
 h1, h2, h3, h4, h5 { color: black;}
-/*h1 { 
+/*h1 {
   font-size: 12pt;
   padding-left: 1.5em;
   margin: 0px;
@@ -107,10 +107,10 @@ h4 { padding: 4px; margin: 0px; font-size: 18px; text-align: center; }
 h6 { padding: 4px; margin: 0px; font-size: 14px; }
 h4.displayname { padding: 4px; margin: 0px; font-size: 14px; text-align: left;}
 
-/*h5 { 
+/*h5 {
   font-size: 16px;
   margin: 0px;
-  margin-top: 0.5ex; 
+  margin-top: 0.5ex;
   border-bottom: 1px solid #784;
   border-top: 1px solid #784;
   border-left: 10px solid #784;
@@ -118,24 +118,24 @@ h4.displayname { padding: 4px; margin: 0px; font-size: 14px; text-align: left;}
   color: #452;
 }*/
 
-li { 
-  clear: right; 
+li {
+  clear: right;
   margin: 0 0 0 0;
   padding: 2px 0 0 0.5ex;
   border-bottom: 1px solid #ddc;
   border-left: 3px solid #ddc;
-  list-style: none; 
+  list-style: none;
 }
 
-li.second { 
+li.second {
   padding-left: 2em;
   background-color: white;
 }
-li.third { 
+li.third {
   padding-left: 4em;
   background-color: #ddc;
 }
-li.letter { 
+li.letter {
   border: none;
 }
 ul {
@@ -171,7 +171,7 @@ form {
 }
 
 #main {  padding: 0px;}
-.notice { 
+.notice {
   color: darkblue;
   font-style: italic;
   padding: 6px;
@@ -196,7 +196,7 @@ form {
   padding: 1px;
   padding-left: 30px;
 }
-  
+
 .noact { color: #666; font-size: 10px; }
 .centered, .smaller {
   text-align: center;
@@ -216,7 +216,7 @@ label.parameter {
   font-size: 13px;
   width: 40px;
   margin: 0px;
-  text-align: right; 
+  text-align: right;
   padding-right: 2em;
   padding-top: 2px;
   clear: both;
@@ -227,7 +227,7 @@ label.actuality {
   font-size: 13px;
   width: 40px;
   margin: 0px;
-  text-align: right; 
+  text-align: right;
   padding-right: 1em;
   padding-top: 2px;
   clear: both;
@@ -238,14 +238,14 @@ div.actuality ol li {
   list-style-type: decimal;
   border-bottom: none;
   border-left: none;
-  
+
 }
 
 div.actuality ul li {
-  list-style-type: disc; 
+  list-style-type: disc;
   border-bottom: none;
   border-left: none;
-  
+
 }
 
 input.parameter_submit {
@@ -264,7 +264,7 @@ label {
   font-size: 13px;
   width: 280px;
   margin: 0px;
-  text-align: right; 
+  text-align: right;
   padding-right: 1em;
   padding-top: 5px;
   clear: both;
@@ -274,7 +274,7 @@ label {
   font-size: 13px;
   width: 280px;
   margin: 0px;
-  text-align: right; 
+  text-align: right;
   margin: 5px 1em 5px 0;
   clear: both;
 }
@@ -287,7 +287,7 @@ li.unfinished {
 input, select  {
   margin-top: 0px;
   border: 1px solid black;
-} 
+}
 
 fieldset {
   border: 1px solid #b00;
@@ -402,7 +402,7 @@ pre.detail {
 h2.printHeader, h3.printHeader, h4.printHeader { display: none; }
 div.printHeader { display: none; }
 .right { float: right; text-align: right; padding-right: 1em; font-size: 14px;}
-.topMenu { 
+.topMenu {
   float: right;
   text-align: right;
   font-size: 11pt;
@@ -412,17 +412,17 @@ div.printHeader { display: none; }
   background-color: #ddc;
 }
 
-.topMenu a { 
+.topMenu a {
   color: #b00;
   padding: 2px;
   text-decoration: none;
 }
-.topMenu a:hover { 
+.topMenu a:hover {
  color: #784;
 }
 .right a {
   padding: 1px;
-} 
+}
 .links {
   background-color: #ddc;
 	padding-right: 1em;
@@ -449,8 +449,8 @@ a.revocation {
 }
 .rightAlign {
 	text-align: right;
-	padding-right: 1em;	
-	padding-bottom: 1em;	
+	padding-right: 1em;
+	padding-bottom: 1em;
 }
 .centerAlign {
 	text-align: center;
@@ -466,10 +466,10 @@ table.list th {
   border:1px solid;
 }
 table.list td {
-  padding-left: 5px;	
-  padding-right: 3px;	
-  padding-top: 1px;	
-  padding-bottom: 1px;	
+  padding-left: 5px;
+  padding-right: 3px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   margin: 0px;
   border:1px solid;
 }
@@ -538,20 +538,6 @@ h5 {
 	background-image: url(/images/h5_bg.gif);
 	background-repeat: no-repeat;
 }
-.finished {
-  padding-left: 3px;
-  color: #bbb;
-  font-size: smaller;
-}
-.absolved {
-  padding-left: 3px;
-  color: #666;
-  font-size: smaller;
-}
-.finished a {
-  color: #aaa;
-}
-
 .right_info {
   float: right;
   text-align: left;
@@ -658,7 +644,7 @@ a:hover.change_field {border: 1px dashed #ccc; color: black}
 #sum ul {padding: 0px; margin: 0px; background: #ddc; border-bottom: 1px solid white;}
 #sum ul li {border-top: 1px solid white; color: black;}
 
-.nodecor textarea {margin-left:10%} 
+.nodecor textarea {margin-left:10%}
 table.letter_header th {
 border: none;
 text-align: left;

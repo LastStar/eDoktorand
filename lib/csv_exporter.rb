@@ -256,6 +256,7 @@ class CSVExporter
       end
       outfile = File.open(file, 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
+        csv << %w(titul jmeno prijmeni email rc misto\ narozeni katedra obor ulice cislo mesto psc telefon)
         @@mylog.info "There are #{cs.size} candidates"
         cs.each do |c|
           row = []
@@ -285,6 +286,50 @@ class CSVExporter
           row << c.zip
           if c.phone
             row << c.phone
+          else
+            row << ''
+          end
+
+          @@mylog.debug "Adding #{row}"
+          csv << row
+        end
+      end
+      outfile.close
+    end
+
+    def export_created_candidates(students)
+      outfile = File.open('created_students.csv', 'wb')
+      CSV::Writer.generate(outfile, ';') do |csv|
+        csv << %w(uic titul jmeno prijmeni titul\ za email rc misto\ narozeni katedra obor ulice cislo mesto psc telefon)
+        @@mylog.info "There are #{students.size} students"
+        students.each do |s|
+          row = []
+          row << s.uic
+          if s.title_before
+            row << s.title_before.label
+          else
+            row << ''
+          end
+          row << s.firstname
+          row << s.lastname
+          if s.title_after
+            row << s.title_after.label
+          else
+            row << ''
+          end
+          row << s.email
+          row << s.birth_number
+          row << s.birth_on
+          row << s.birth_place
+          row << s.department.short_name
+          row << s.specialization.code
+          row << s.index.study.name
+          row << s.street
+          row << s.desc_number
+          row << s.city
+          row << s.zip
+          if s.phone
+            row << s.phone
           else
             row << ''
           end
