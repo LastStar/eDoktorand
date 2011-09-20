@@ -11,12 +11,14 @@ describe ImIndex do
   end
   it "should be connected to index" do
     index = Factory(:index, :student => Student.new(:lastname => "Josef", :firstname => "Nosek"))
-    im_index = ImIndex.new(:index => index)
+    index.update_im_index
+    im_index = index.im_index
     im_index.index.should == index
   end
   it "should copy attributes from index" do
     index = Factory(:index, :student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"))
-    im_index = ImIndex.create(:index => index)
+    index.update_im_index
+    im_index = index.im_index
     im_index.student_uic.should == 1
     im_index.department_name.should == "department"
     im_index.department_code.should == "11100"
@@ -53,25 +55,26 @@ describe ImIndex do
     index.study_plan = study_plan
     index.final_exam_passed_on = Date.today - 14.days
     index.save
-    im_index = ImIndex.create(:index => index)
+    index.update_im_index
+    im_index = index.im_index
     im_index.study_status.should == "složil SDZ"
   end
-
   it "gets interrupted status" do
     index = Factory(:index, :student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"), :interrupted_on => Date.today - 14.days)
-    im_index = ImIndex.create(:index => index)
+    index.update_im_index
+    im_index = index.im_index
     im_index.study_status.should == "přerušeno"
   end
-
   it "gets study in standard time financing type" do
     index = Factory(:index, :student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"))
-    im_index = ImIndex.create(:index => index)
+    index.update_im_index
+    im_index = index.im_index
     im_index.financing_type.should == "studium ve standardní době studia"
   end
-
   it "gets study in standard time financing type" do
     index = Factory(:index, :student => Student.new(:uic => 1, :sident => 2, :lastname => "Josef", :firstname => "Nosek"), :payment_id => 7)
-    im_index = ImIndex.create(:index => index)
+    index.update_im_index
+    im_index = index.im_index
     im_index.financing_type.should == "cizinec, hrazeno ze zvláštní dotace dle evidence Domu zahr. služeb MŠMT"
   end
 

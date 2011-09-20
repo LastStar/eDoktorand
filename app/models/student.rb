@@ -1,22 +1,21 @@
 class Student < Examinator
-  
+
   has_one :index, :dependent => :destroy, :order => 'created_on desc'
   has_one :candidate
   has_and_belongs_to_many :probation_terms
   has_one :im_student
 
-  before_create :prepare_im_student
-  after_update :update_im_student
-
   # updates ImStudent with new attributes
   def update_im_student
     prepare_im_student unless im_student
-    im_student.save
+    im_student.get_student_attributes
   end
 
   # prepares ImStudent if there is no one
   def prepare_im_student
     build_im_student unless im_student
+    im_student.student = self
+    im_student.get_student_attributes
   end
 
   #TODO delegate
@@ -68,7 +67,7 @@ class Student < Examinator
 
   def has_enrolled?(subject)
     subject = subject.id if subject.is_a? Subject
-    !ProbationTerm.find(:all, 
+    !ProbationTerm.find(:all,
                        :conditions => ['subject_id = ? and date > ?',
                                         subject, Date.today]).detect do |pt|
       pt.students.include? self
@@ -95,7 +94,7 @@ class Student < Examinator
   end
 
   def prepared_for_claim?
-    has_account? && has_address? 
+    has_account? && has_address?
   end
 
   def <=>(other)
@@ -139,7 +138,7 @@ class Student < Examinator
   def update_with_hash(student_hash)
     raise 'uic needed' unless uic
     self.uic = student_hash.uic
-    self.firstname = student_hash.firstname if student_hash.firstname 
+    self.firstname = student_hash.firstname if student_hash.firstname
     self.lastname = student_hash.lastname if student_hash.lastname
     self.birthname = student_hash.birthname if student_hash.birthname
     self.birth_on = student_hash.birth_on if student_hash.birth_on
@@ -155,9 +154,9 @@ class Student < Examinator
       title = Title.find_by_label_and_prefix(student_hash.title_after, 0)
       self.title_after = title
     end
-    if student_hash.email 
+    if student_hash.email
       if self.email
-        self.email.update_attribute(:name, student_hash.email) 
+        self.email.update_attribute(:name, student_hash.email)
       else
         self.email = Contact.new(:name => student_hash.email,
                                  :contact_type_id => 1)
@@ -165,7 +164,7 @@ class Student < Examinator
     end
     if student_hash.phone
       if self.phone
-        self.phone.update_attribute(:name, student_hash.phone) 
+        self.phone.update_attribute(:name, student_hash.phone)
       else
         self.phone = Contact.new(:name => student_hash.email,
                                  :contact_type_id => 2)
@@ -174,4 +173,4 @@ class Student < Examinator
     self.save
   end
 
-end 
+end

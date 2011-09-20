@@ -55,8 +55,8 @@ Factory.define :specialization do |specialization|
 end
 
 Factory.define :program do |program|
-  program.name 'program'
-  program.name_english 'program'
+  program.label 'program'
+  program.label_en 'program'
   program.code 'PRG'
 end
 

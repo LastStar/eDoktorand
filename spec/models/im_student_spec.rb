@@ -8,7 +8,8 @@ describe ImStudent do
     end
     it "should be connected to user" do
       student = Student.new(:firstname => "Josef", :lastname => "Nosek")
-      im_student = ImStudent.new(:student => student)
+      student.update_im_student
+      im_student = student.im_student
       im_student.student.firstname.should == "Josef"
     end
   end
@@ -43,12 +44,11 @@ describe ImStudent do
                                 :postal_zip => '19000',
                                 :marital_status => 'single',
                                 :index => @index)
-      @im_student = ImStudent.new(:student_id => @student.id)
     end
 
     it "should get students attributes" do
-      @im_student.save
-      @im_student.uic.should == 1
+      @student.update_im_student
+      @im_student = @student.im_student
       @im_student.lastname.should == 'Nosek'
       @im_student.firstname.should == 'Josef'
       @im_student.birthname.should == 'Kosek'
@@ -74,10 +74,10 @@ describe ImStudent do
       @im_student.contact_city.should == 'Praha 9'
       @im_student.contact_zip.should == '19000'
       @im_student.marital_status.should == 'single'
-      @im_student
     end
     it "should get attributes from students index" do
-      @im_student.save
+      @student.update_im_student
+      @im_student = @student.im_student
       @im_student.bank_branch.should == '35'
       @im_student.bank_account.should == '2303308001'
       @im_student.bank_code.should == '5500'
