@@ -82,6 +82,10 @@ class Index < ActiveRecord::Base
     im_index.get_index_attributes
   end
 
+  def index
+    self
+  end
+
   # return last interrupt
   def interrupt
     @interrupt ||= interrupts.sort{|x, y| x.created_on <=> y.created_on}.last

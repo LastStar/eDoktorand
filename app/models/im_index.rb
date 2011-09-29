@@ -20,7 +20,7 @@ class ImIndex < ActiveRecord::Base
     self.study_spec = index.specialization.name
     self.study_spec_code = index.specialization.code
     self.study_spec_msmt_code = index.specialization.msmt_code
-    self.study_prog = index.specialization.program.label
+    self.study_prog = index.specialization.program.name
     self.study_prog_code = index.specialization.program.code
     self.study_status = index.status
     self.study_status_code = index.status_code

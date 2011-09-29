@@ -26,7 +26,7 @@ describe ImIndex do
     im_index.faculty_name.should == "faculty"
     im_index.faculty_code.should == "FAC"
     im_index.study_year.should == 1
-    im_index.academic_year.should == '2009/2010'
+    im_index.academic_year.should == '2009'
     im_index.study_type.should == 'doktorský'
     im_index.study_type_code.should == 'D'
     im_index.study_form.should == 'prezenční'

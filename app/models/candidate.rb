@@ -161,9 +161,9 @@ class Candidate < ActiveRecord::Base
 
   # enroll candidate to study and returns new student based on
   # candidates details.
-  def enroll!(time)
+  def enroll!(enrolled_on, study_start_on)
     self.update_attribute('enrolled_on', Time.now)
-    return new_student(time)
+    return new_student(enrolled_on, study_start_on)
   end
 
   # checks if candidate is allready enrolled
@@ -238,7 +238,7 @@ class Candidate < ActiveRecord::Base
   end
 
   # creates student and index from self
-  def new_student(enrolled_on)
+  def new_student(enrolled_on, study_start_on)
     Dean.columns #Table inheritance biting our ass again
     uic_getter = UicGetter.new
     student = Student.new
@@ -278,6 +278,7 @@ class Candidate < ActiveRecord::Base
     index.study = self.study
     index.enrolled_on = enrolled_on
     index.payment_id = self.foreign_pay ? 0 : 1
+    index.study_start_on = study_start_on
     index.save!
     self.update_attribute(:student_id, student.id)
     return student

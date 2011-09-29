@@ -45,5 +45,23 @@ class TermsCalculator
     def ending_in(year)
       return '%s/09/30' % year
     end
+
+    def idm_next_year
+      today = Date.today
+      if today.month < 10
+        today.year.to_s
+      else
+        (today.year + 1).to_s
+      end
+    end
+
+    def idm_current_year
+      today = Date.today
+      if today.month < 10
+        (today.year - 1).to_s
+      else
+        today.year.to_s
+      end
+    end
   end
 end

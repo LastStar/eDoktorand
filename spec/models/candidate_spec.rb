@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Candidate do
   #TODO test foreign candidates
-  it 'enrolls a return new student with index' do
+  it 'enrolls and return new student with index' do
     mock_uic_getter = mock(UicGetter)
     UicGetter.should_receive(:new).and_return(mock_uic_getter)
     mock_uic_getter.should_receive(:get_uic).with('7604242624').and_return(1)
@@ -10,7 +10,7 @@ describe Candidate do
     candidate.tutor = Factory(:tutor)
     candidate.specialization = Factory(:specialization)
     candidate.study = Factory(:study)
-    student = candidate.new_student('2010-01-01')
+    student = candidate.enroll!('2010-07-12', '2010-10-01')
     student.uic.should == 1
     student.firstname.should == 'Karel'
     student.lastname.should == 'Marel'
@@ -35,7 +35,8 @@ describe Candidate do
     student.index.tutor == candidate.tutor
     student.index.study == candidate.study
     student.index.student == candidate.student
-    student.index.enrolled_on.should == Time.parse('2010-01-01')
+    student.index.enrolled_on.should == Time.parse('2010-07-12')
+    student.index.study_start_on.should == Date.parse('2010-10-01')
     student.index.tutor.should == candidate.tutor
     student.index.payment_id.should == 1
     candidate.student.should == student

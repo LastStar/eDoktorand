@@ -17,11 +17,11 @@
     <td><%=h specialization.name %></td>
     <td><%=h specialization.name_english %></td>
     <td><%=h specialization.code %></td>
-    <td><%=h specialization.program.try(:label) %></td>
-    <td> <%if specialization.accredited == 1 %>
-             <%= t(:message_6, :scope => [:view, :specializations, :list])%>
+    <td><%=h specialization.program.try(:name) %></td>
+    <td><% if specialization.accredited == 1 %>
+        <%= t(:message_6, :scope => [:view, :specializations, :list])%>
 	 <%else%>
-	     <%= t(:message_7, :scope => [:view, :specializations, :list])%>
+	      <%= t(:message_7, :scope => [:view, :specializations, :list])%>
 	 <%end%></td>
 <td><%= link_to t(:message_8, :scope => [:view, :specializations, :list]), :action => :attestation, :id => specialization.id %></td>
     <td><%= link_to t(:message_9, :scope => [:view, :specializations, :list]), :action => :subjects, :id => specialization %></td>
