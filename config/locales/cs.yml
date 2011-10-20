@@ -84,7 +84,8 @@ cs:
         message_9: pracuji...
         message_0: semestr státní doktorské zkoušky
         message_1: semestr
-        message_2: téma disertační práce
+        title: téma disertační práce
+        title_en: téma disertační práce anglicky
         message_3: téma disertační práce
         message_4: termín obhajoby disertační práce
         message_5: anotace metodiky

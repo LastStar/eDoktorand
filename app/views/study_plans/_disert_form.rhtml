@@ -24,7 +24,11 @@
 <%= hidden_field 'disert_theme', 'index_id' %>
 <ul class='nodecor'>
 <li>
-  <label for="disert_theme_title"><%= t(:message_2, :scope => [:view, :study_plans, :_disert_form]) %>:</label>
+  <label for="disert_theme_title"><%= t(:title, :scope => [:view, :study_plans, :_disert_form]) %>:</label>
+  <%= text_field 'disert_theme', 'title', 'size' => 65 %>
+</li>
+<li>
+  <label for="disert_theme_title_en"><%= t(:title_en, :scope => [:view, :study_plans, :_disert_form]) %>:</label>
   <%= text_field 'disert_theme', 'title', 'size' => 65 %>
 </li>
 <li>
