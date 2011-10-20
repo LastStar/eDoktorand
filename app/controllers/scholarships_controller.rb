@@ -10,7 +10,8 @@ class ScholarshipsController < ApplicationController
   end
 
   def list
-    @indices = Index.find_for_scholarship(@user,
+    @paying_date = Time.now.last_month.end_of_month
+    @indices = Index.find_for_scholarship(@user, @paying_date,
                                          :order => 'studies.id, people.lastname',
                                          :include => [:student, :study, :disert_theme])
     if @user.has_role?('supervisor')

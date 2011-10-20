@@ -67,10 +67,14 @@
 <tr><td><%= t(:message_12, :scope => [:view, :scholarships, :list]) %></th><td class ="number"><%= final_sum %></td></tr>
 </table>
 <table class = "scholarship" cellspacing = "0" cellpading = "0" >
-<tr><th><%= t(:message_13, :scope => [:view, :scholarships, :list])%></th><th><%= t(:message_14, :scope => [:view, :scholarships, :list])%></th></tr>
-<% disponents.each_pair do |disponent,sum| %>
-  <tr><td><%= disponent %></td><td class ="number"><%= sum %></td></tr>
-<% end %>
+  <tr>
+    <th><%= t(:message_13, :scope => [:view, :scholarships, :list])%></th>
+    <th><%= t(:message_14, :scope => [:view, :scholarships, :list])%></th></tr>
+    <% disponents.each_pair do |disponent,sum| %>
+      <tr>
+        <td><%= disponent %></td><td class ="number"><%= sum %></td>
+      </tr>
+    <% end %>
 </table>
 <br>
 <% if @show_table_message == 1%>

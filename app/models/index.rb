@@ -445,10 +445,13 @@ class Index < ActiveRecord::Base
     return find_for(user, opts)
   end
 
-  def self.find_for_scholarship(user, opts = {})
-    paying_date = Time.now.last_month.end_of_month
-    opts.update({:unfinished => paying_date, :not_interrupted => paying_date,
-                 :enrolled => (paying_date - 1.day), :not_absolved => paying_date, :include => [:extra_scholarships]})
+  def self.find_for_scholarship(user, paying_date, opts = {})
+    opts.update({:unfinished => (paying_date - 1.day),
+                 :not_interrupted => (paying_date - 1.day),
+                 :enrolled => (paying_date - 1.day),
+                 :not_absolved => (paying_date - 1.day),
+                 :include => [:extra_scholarships]})
+
     return find_for(user, opts)
   end
 
@@ -651,8 +654,8 @@ class Index < ActiveRecord::Base
   end
 
   # returns true if study is present
-  def present_study?
-    study.id == 1
+  def present_study?(date = Time.now)
+    study.id == 1 || (study.id == 2 && study_form_changed_on > date)
   end
 
   def self_payer?
@@ -663,8 +666,8 @@ class Index < ActiveRecord::Base
     payment_id == 3
   end
 
-  def has_regular_scholarship?
-    present_study? && !self_payer?
+  def has_regular_scholarship?(date = Time.now)
+    present_study?(date) && !self_payer?
   end
 
   def has_extra_scholarship?
