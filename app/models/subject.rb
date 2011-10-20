@@ -59,15 +59,12 @@ class Subject < ActiveRecord::Base
   end
 
   def self.find_for_specialization(specialization, options = {})
-    # TODO pure sql
-    taken = SpecializationSubject.find(:all,
-                                :conditions => ['specialization_id = ?', specialization])
-    taken.map!(&:subject_id)
-
+    taken = SpecializationSubject.all(:select => 'subject_id',
+                                      :conditions => ['specialization_id = ?',
+                                        specialization]).map(&:subject_id)
     if options[:not_taken]
-      Subject.find(:all, :conditions => ['id not in(?) and type is null',
-                                         taken],
-                   :order => 'label')
+      all(:conditions => ['id not in(?) and type is null', taken],
+          :order => 'label')
     else
       Subject.find(taken, :order => 'label')
     end
