@@ -530,16 +530,20 @@ module ApplicationHelper
   end
 
   def add_disert_theme_en_link(disert_theme, edit = nil)
-    if edit == true
-      icon_image = image_tag('change.png') + disert_theme.title_en.to_s
+    if disert_theme.id
+      if edit == true
+        icon_image = image_tag('change.png') + disert_theme.title_en.to_s
+      else
+        icon_image = image_tag('plus.png')
+      end
+      link_to_remote(icon_image,
+                     :url => {:controller => 'disert_themes',
+                             :action => 'add_en',
+                             :disert_theme => disert_theme},
+                     :update => "disert_theme_title_en")
     else
-      icon_image = image_tag('plus.png')
+      disert_theme.title_en.to_s
     end
-    link_to_remote(icon_image,
-                   :url => {:controller => 'disert_themes',
-                           :action => 'add_en',
-                           :disert_theme => disert_theme},
-                   :update => "disert_theme_title_en")
   end
 
   def save_disert_theme_form(disert_theme, &proc)
