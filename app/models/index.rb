@@ -20,6 +20,7 @@ class Index < ActiveRecord::Base
   SQL
   DEPARTMENTS_COND = "indices.department_id in (?)"
   TUTOR_COND = "indices.tutor_id = ?"
+  SPECIALIZATION_COND = "indices.specialization_id = ?"
   NOT_INTERRUPTED_COND = <<-SQL
     (indices.interrupted_on is null or indices.interrupted_on > ?)
   SQL
@@ -299,6 +300,10 @@ class Index < ActiveRecord::Base
     options[:include] ||= []
     options[:include] << [:study_plan, :student, :disert_theme, :department,
                            :study, :specialization, :interrupts]
+    if user.has_role?('board_chairman')
+      conditions.first.sql_and(SPECIALIZATION_COND.clone)
+      conditions << user.person.tutorship.specialization_id
+    end
     if options[:conditions]
       conditions.first.sql_and(options[:conditions].first)
       conditions.concat(options[:conditions][1..-1])
