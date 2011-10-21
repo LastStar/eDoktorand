@@ -660,7 +660,7 @@ class Index < ActiveRecord::Base
 
   # returns true if study is present
   def present_study?(date = Time.now)
-    study.id == 1 || (study.id == 2 && study_form_changed_on && study_form_changed_on > date)
+    study.id == 1 || (study.id == 2 && study_form_changed_on && study_form_changed_on > date.to_date)
   end
 
   def self_payer?
