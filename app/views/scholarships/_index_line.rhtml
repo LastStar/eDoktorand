@@ -13,7 +13,7 @@
 
 <td><%= index.study.name %></td>
 
-<% if index.has_regular_scholarship? %>
+<% if index.has_regular_scholarship?(@paying_date) %>
 <td id='regular_scholarship_<%= index.id %>'>
 <div id='regular_<%= index.id %>'>
   <% if @user.has_role?('department_secretary') %>
