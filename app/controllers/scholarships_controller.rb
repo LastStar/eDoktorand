@@ -130,7 +130,7 @@ class ScholarshipsController < ApplicationController
   # renders control table of scholarships
   def control_table
     @paying_date = Time.now.last_month.end_of_month
-    @indices = Index.find_for_scholarship(@user, @paying_date
+    @indices = Index.find_for_scholarship(@user, @paying_date,
                                          :order => 'studies.id, people.lastname',
                                          :include => [:student, :study, :disert_theme])
     @show_table_message = 1
