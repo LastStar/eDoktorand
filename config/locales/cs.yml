@@ -1364,10 +1364,17 @@ cs:
       message_6: pracuji...
       message_7: pracuji...
       message_14: zkoušky na ČZU
+
     students:
       sholarship_claimed: zažádáno o ubytovací stipendium
       sholarship_approved: schváleno ubytovací stipendium
       sholarship_canceled: neschváleno ubytovací stipendium
+      year: ročník
+      first_year: 1. ročník
+      second_year: 2. ročník
+      third_year: 3. ročník
+      fourth_year: 4. ročník
+      over: x
       message_51: zpět
       message_40: uzavřeno
       message_29: studijní plán
@@ -1395,25 +1402,20 @@ cs:
       message_11: potvrdit přerušení
       message_2: akce
       message_56: studijní plán
-      message_45: ročník
       message_34: SP schválen děkanem
       message_23: schválena žádost o SDZ
       message_12: schválit US
       message_3: obnovit
-      message_46: 1. ročník
       message_35: stav studia
       message_24: podaná žádost o SDZ
       message_13: neschválit US
       message_4: ukončit
-      message_47: 2. ročník
       message_36: studuje
       message_25: podaná žádost o obhajobu
       message_14: Detailní filtr
       message_5: změnit formu
-      message_48: 3. ročník
       message_37: ukončeno
       message_6: přerušit
-      message_49: x
       message_38: přerušeno
       message_27: katedra
       message_16: claimed for defence

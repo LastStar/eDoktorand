@@ -279,8 +279,9 @@ module StudentsHelper
 
   # prints select for years
   def year_select
-    ops = [['-- ' + t(:message_45, :scope => [:helper, :students]) + ' --', '0'], [t(:message_46, :scope => [:helper, :students]), 1], [t(:message_47, :scope => [:helper, :students]), 2],
-            [t(:message_48, :scope => [:helper, :students]), 3], [t(:message_49, :scope => [:helper, :students]), 4]]
+    ops = [['-- ' + t(:year, :scope => [:helper, :students]) + ' --', '0'], [t(:first_year, :scope => [:helper, :students]), 1], [t(:second_year, :scope => [:helper, :students]), 2],
+            [t(:third_year, :scope => [:helper, :students]), 3], [t(:fourth_year, :scope => [:helper, :students]), 4],
+            [t(:over, :scope => [:helper, :students]), 5]]
     content_tag('select', options_for_select(ops),
       {'id' => "year", 'name' => "year"})
   end

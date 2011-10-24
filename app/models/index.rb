@@ -418,11 +418,11 @@ class Index < ActiveRecord::Base
                             :order => options[:order])
     year = options[:year].to_i
     if options[:study_status].to_i == 5
-      year = 4
+      year = 5
     end
     if year != 0
-      if year == 4
-        indices.reject! {|i| i.year < 4}
+      if year == 5
+        indices.reject! {|i| i.year < 5}
       else
         indices.reject! {|i| i.year != year}
       end
