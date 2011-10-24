@@ -261,48 +261,49 @@ cs:
         message_6: odeslat
     diploma_supplements:
       new:
-        message_0: Nový diploma supplement
-        message_1: vytvořit
-        message_2: zpět
+        new_diploma_supplement: Nový diploma supplement
+        create: vytvořit
+        back: zpět
       list:
-        message_8: smazat
-        message_9: Opravdu chcete vymazat diplom?
-        message_0: Výpis diploma supplements
-        message_10: nenalezen žádný diploma supplement
-        message_1: číslo diplomu
-        message_11: Nový diploma supplement
-        message_2: příjmení
-        message_3: jméno
-        message_4: obor
-        message_5: akce
-        message_6: ukázat
-        message_7: opravit
+        diploma_no: číslo diplomu
+        family_name: příjmení
+        given_name: jméno
+        study_specialization: obor
+        action: akce
+        show: ukázat
+        edit: opravit
+        delete: smazat
+        are_you_sure: Opravdu chcete vymazat diplom?
+        diploma_supplement_list: Výpis diploma supplements
+        no_diploma_supplements: nenalezen žádný diploma supplement
+        new_diploma_stupplement: Nový diploma supplement
       edit:
-        message_0: Oprava diploma supplement
-        message_1: opravit
-        message_2: ukázat
-        message_3: zpět
+        edit_diploma_supplement: Oprava diploma supplement
+        edit: opravit
+        show: ukázat
+        back: zpět
       _form:
-        message_18: jméno děkana
-        message_8: specializace
-        message_9: název fakulty
-        message_19: děkanova funkce
-        message_0: Všechny údaje jsou povinné
-        message_10: forma studia
-        message_1: sident
-        message_11: předměty oddělené středníkem
-        message_2: číslo diplomu
-        message_12: název disertační práce
-        message_3: jméno fakulty anglicky
-        message_13: obhajoba vykonána dne
-        message_4: příjmení
-        message_14: předměty SDZ oddělené středníkem
-        message_5: jméno
-        message_15: státní doktorská zkouška vykonána dne
-        message_6: datum narození
-        message_16: fakultní www
-        message_7: studijní program
-        message_17: datum
+        study_length: délka studia
+        dean_display_name: jméno děkana
+        specialization: specializace
+        faculty_name: název fakulty
+        dean_title: děkanova funkce
+        all_required: Všechny údaje jsou povinné
+        study_mode: forma studia
+        sident: sident
+        plan_subjects: předměty oddělené středníkem
+        diploma_no: číslo diplomu
+        disert_theme_title: název disertační práce
+        faculty_name_en: jméno fakulty anglicky
+        defense_passed_on: obhajoba vykonána dne
+        family_name: příjmení
+        final_areas: předměty SDZ oddělené středníkem
+        given_name: jméno
+        final_exam_passed_on: státní doktorská zkouška vykonána dne
+        date_of_birth: datum narození
+        faculty_www: fakultní www
+        study_programme: studijní program
+        printed_on: datum
     exams:
       list:
         message_0: V systému pro Vás nejsou zkoušky
@@ -552,9 +553,9 @@ cs:
       list:
       edit:
       diploma_supplement:
-        message_0: zpět
-        message_1: tisk pro zaměstnavatele
-        message_2: diploma supplement
+        back: zpět
+        employer_print: tisk pro zaměstnavatele
+        diploma_supplement: diploma supplement
       _form:
     specializations:
       attestation:

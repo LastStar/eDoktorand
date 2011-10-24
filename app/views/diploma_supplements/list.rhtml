@@ -1,13 +1,13 @@
 <% unless @diploma_supplements.empty? %>
-<h5><%= t(:message_0, :scope => [:view, :diploma_supplements, :list]) %></h5>
+<h5><%= t(:diploma_supplement_list, :scope => [:view, :diploma_supplements, :list]) %></h5>
 
 <table id='diploma_table'>
   <tr>
-    <th><%= t(:message_1, :scope => [:view, :diploma_supplements, :list]) %></th>
-    <th><%= t(:message_2, :scope => [:view, :diploma_supplements, :list]) %></th>
-    <th><%= t(:message_3, :scope => [:view, :diploma_supplements, :list]) %></th>
-    <th><%= t(:message_4, :scope => [:view, :diploma_supplements, :list]) %></th>
-    <th class='action' colspan='3'><%= t(:message_5, :scope => [:view, :diploma_supplements, :list]) %></th>
+    <th><%= t(:diploma_no, :scope => [:view, :diploma_supplements, :list]) %></th>
+    <th><%= t(:family_name, :scope => [:view, :diploma_supplements, :list]) %></th>
+    <th><%= t(:given_name, :scope => [:view, :diploma_supplements, :list]) %></th>
+    <th><%= t(:study_specialization, :scope => [:view, :diploma_supplements, :list]) %></th>
+    <th class='action' colspan='3'><%= t(:action, :scope => [:view, :diploma_supplements, :list]) %></th>
   </tr>
 
 <% for diploma_supplement in @diploma_supplements %>
@@ -15,16 +15,16 @@
   <% for column in ['diploma_no', 'family_name', 'given_name', 'study_specialization'] %>
     <td><%=h diploma_supplement.send(column) %></td>
   <% end %>
-    <td><%= link_to t(:message_6, :scope => [:view, :diploma_supplements, :list]), :controller => :documents, :action => 'diploma_supplement', :id => diploma_supplement %></td>
-    <td><%= link_to t(:message_7, :scope => [:view, :diploma_supplements, :list]), :action => 'edit', :id => diploma_supplement %></td>
-    <td><%= link_to t(:message_8, :scope => [:view, :diploma_supplements, :list]), { :action => 'destroy', :id => diploma_supplement }, :confirm => t(:message_9, :scope => [:view, :diploma_supplements, :list]), :method => :post %></td>
+    <td><%= link_to t(:show, :scope => [:view, :diploma_supplements, :list]), :controller => :documents, :action => 'diploma_supplement', :id => diploma_supplement %></td>
+    <td><%= link_to t(:edit, :scope => [:view, :diploma_supplements, :list]), :action => 'edit', :id => diploma_supplement %></td>
+    <td><%= link_to t(:delete, :scope => [:view, :diploma_supplements, :list]), { :action => 'destroy', :id => diploma_supplement }, :confirm => t(:are_you_sure, :scope => [:view, :diploma_supplements, :list]), :method => :post %></td>
   </tr>
 <% end %>
 </table>
 
 <% else %>
-<h4><%= t(:message_10, :scope => [:view, :diploma_supplements, :list]) %></h4>
+<h4><%= t(:no_diploma_supplements, :scope => [:view, :diploma_supplements, :list]) %></h4>
 <% end %>
 <br />
 
-<%= link_to t(:message_11, :scope => [:view, :diploma_supplements, :list]), :action => 'new' %>
+<%= link_to t(:new_diploma_stupplement, :scope => [:view, :diploma_supplements, :list]), :action => 'new' %>

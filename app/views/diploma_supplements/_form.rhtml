@@ -4,63 +4,66 @@
   </div>
 <%end%>
 
-<%= t(:message_0, :scope => [:view, :diploma_supplements, :_form]) %>
+<%= t(:all_required, :scope => [:view, :diploma_supplements, :_form]) %>
 <!--[form:diploma_supplement]-->
-<p><label for="diploma_supplement_sident"><%= t(:message_1, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_sident"><%= t(:sident, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'sident', :size => 60 %></p>
 
-<p><label for="diploma_supplement_diploma_no"><%= t(:message_2, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_diploma_no"><%= t(:diploma_no, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'diploma_no', :size => 60 %></p>
 
-<p><label for="diploma_supplement_faculty_name_en"><%= t(:message_3, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_faculty_name_en"><%= t(:faculty_name_en, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'faculty_name_en', :size => 60 %></p>
 
-<p><label for="diploma_supplement_family_name"><%= t(:message_4, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_family_name"><%= t(:family_name, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'family_name', :size => 60 %></p>
 
-<p><label for="diploma_supplement_given_name"><%= t(:message_5, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_given_name"><%= t(:given_name, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'given_name', :size => 60 %></p>
 
-<p><label for="diploma_supplement_date_of_birth"><%= t(:message_6, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_date_of_birth"><%= t(:date_of_birth, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'date_of_birth', :size => 60 %></p>
 
-<p><label for="diploma_supplement_study_programme"><%= t(:message_7, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_study_programme"><%= t(:study_programme, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'study_programme', :size => 60 %></p>
 
-<p><label for="diploma_supplement_study_specialization"><%= t(:message_8, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_study_specialization"><%= t(:specialization, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'study_specialization', :size => 60 %></p>
 
-<p><label for="diploma_supplement_faculty_name"><%= t(:message_9, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_study_specialization"><%= t(:study_length, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<%= text_field 'diploma_supplement', 'study_length', :size => 60 %></p>
+
+<p><label for="diploma_supplement_faculty_name"><%= t(:faculty_name, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'faculty_name', :size => 60 %></p>
 
-<p><label for="diploma_supplement_study_mode"><%= t(:message_10, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_study_mode"><%= t(:study_mode, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'study_mode', :size => 60 %></p>
 
-<p><label for="diploma_supplement_plan_subjects"><%= t(:message_11, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_plan_subjects"><%= t(:plan_subjects, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_area 'diploma_supplement', 'plan_subjects', :cols => 60  %></p>
 
-<p><label for="diploma_supplement_disert_theme_title"><%= t(:message_12, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_disert_theme_title"><%= t(:disert_theme_title, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'disert_theme_title', :size => 60 %></p>
 
-<p><label for="diploma_supplement_defense_passed_on"><%= t(:message_13, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_defense_passed_on"><%= t(:defense_passed_on, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'defense_passed_on', :size => 60 %></p>
 
-<p><label for="diploma_supplement_final_areas"><%= t(:message_14, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_final_areas"><%= t(:final_areas, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_area 'diploma_supplement', 'final_areas', :cols => 60  %></p>
 
-<p><label for="diploma_supplement_final_exam_passed_on"><%= t(:message_15, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_final_exam_passed_on"><%= t(:final_exam_passed_on, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'final_exam_passed_on', :size => 60 %></p>
 
-<p><label for="diploma_supplement_faculty_www"><%= t(:message_16, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_faculty_www"><%= t(:faculty_www, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'faculty_www', :size => 60 %></p>
 
-<p><label for="diploma_supplement_printed_on"><%= t(:message_17, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_printed_on"><%= t(:printed_on, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'printed_on', :size => 60 %></p>
 
-<p><label for="diploma_supplement_dean_display_name"><%= t(:message_18, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_dean_display_name"><%= t(:dean_display_name, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'dean_display_name', :size => 60 %></p>
 
-<p><label for="diploma_supplement_dean_title"><%= t(:message_19, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
+<p><label for="diploma_supplement_dean_title"><%= t(:dean_title, :scope => [:view, :diploma_supplements, :_form]) %></label><br/>
 <%= text_field 'diploma_supplement', 'dean_title', :size => 60 %></p>
 
 <!--[eoform:diploma_supplement]-->

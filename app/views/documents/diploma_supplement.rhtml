@@ -58,7 +58,7 @@ give the reason why.
   3. INFORMATION ON THE LEVEL OF THE QUALIFICATION
     <ul class='sub_list'>
       <li>3.1. Level of qualification:&nbsp;<strong> Doctoral Study Programme</strong></li>
-      <li>3.2. Official length of programme:&nbsp;<strong> 3 years</strong></li>
+      <li>3.2. Official length of programme:&nbsp;<strong> <%= @diploma_supplement.study_length %> years</strong></li>
       <li>3.3. Access requirements:&nbsp;
       <strong>MSc. level degree;
       further details:&nbsp;http://www.czu.cz</strong></li>
@@ -290,5 +290,5 @@ give the reason why.
 <div id='logo'><%= image_tag 'this_is_copy.gif' %></div>
 <% end %>
 <div class="links">
-  <%= link_to t(:message_0, :scope => [:view, :documents, :diploma_supplement]), :controller => 'diploma_supplements', :action => 'index' %>
+  <%= link_to t(:back, :scope => [:view, :documents, :diploma_supplement]), :controller => 'diploma_supplements', :action => 'index' %>
 </div>

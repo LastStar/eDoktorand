@@ -19,6 +19,16 @@ class DiplomaSupplement < ActiveRecord::Base
   validates_presence_of :printed_on
   validates_presence_of :dean_display_name
   validates_presence_of :dean_title
+  validates_presence_of :study_length
+
+  def study_length
+    sl = read_attribute(:study_length)
+    if sl.blank?
+      3
+    else
+      sl
+    end
+  end
 
   def self.new_from_index(index)
     index =  Index.find(index) unless index.is_a? Index
@@ -41,6 +51,7 @@ class DiplomaSupplement < ActiveRecord::Base
     new.printed_on = index.disert_theme.defense_passed_on
     new.dean_display_name = index.faculty.dean.display_name
     new.dean_title = index.faculty.dean_label_en
+    new.study_lenght = index.specialization.study_length
     return new
   end
 
