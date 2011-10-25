@@ -1,4 +1,4 @@
-<h1><%= t(:message_0, :scope => [:view, :final_exam_terms, :claim]) %></h1>
+<h1><%= t(:claim_final_exam_term, :scope => [:view, :final_exam_terms, :claim]) %></h1>
 
 <%= errors_for(@study_plan) %>
 <% form_tag({:action => :confirm_claim}, {:multipart => true}) do %>
@@ -8,17 +8,17 @@
               :locals => {:areas => @study_plan.final_areas})  %>
     <li>
     <label for='disert_themes_literature_review'>
-      <%= t(:message_1, :scope => [:view, :final_exam_terms, :claim]) %>
+      <%= t(:literature_review_title, :scope => [:view, :final_exam_terms, :claim]) %>
     </label>
     <%= text_field :disert_theme, :literature_review,
       :value => @study_plan.index.disert_theme.title %>
     </li>
     <li>
-      <label for="literature_review_file"><%= t(:message_2, :scope => [:view, :final_exam_terms, :claim]) %></label>
+      <label for="literature_review_file"><%= t(:literature_review_file, :scope => [:view, :final_exam_terms, :claim]) %></label>
       <%= file_field_tag :literature_review_file %>
     </li>
   </ul>
 </fieldset>
   <br />
-  <%= submit_tag(t(:message_3, :scope => [:view, :final_exam_terms, :claim]), :class => 'button') %>
+  <%= submit_tag(t(:submit, :scope => [:view, :final_exam_terms, :claim]), :class => 'button') %>
 <% end %>

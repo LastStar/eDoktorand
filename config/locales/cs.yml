@@ -890,10 +890,10 @@ cs:
         message_6: Teze disertační práce
         message_7: Předseda komise
       claim:
-        message_0: Přihláška ke státní doktorské zkoušce
-        message_1: název teze disertační práce
-        message_2: soubor s tezí disertační práce
-        message_3: odeslat
+        claim_final_exam_term: Přihláška ke státní doktorské zkoušce
+        literature_review_title: název teze disertační práce
+        literature_review_file: soubor s tezí disertační práce
+        submit: odeslat
       _form:
         message_2: předseda komise
       _term_line:

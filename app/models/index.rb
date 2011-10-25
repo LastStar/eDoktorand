@@ -27,7 +27,7 @@ class Index < ActiveRecord::Base
   ENROLLED_COND = "indices.enrolled_on < ?"
   NOT_ABSOLVED_COND = <<-SQL
     (disert_themes.defense_passed_on is null\
-    or disert_themes.defense_passed_on > ?)
+    or disert_themes.defense_passed_on >= ?)
   SQL
   LASTNAME_COND = "people.lastname like ?"
   PRESENT_COND = "indices.study_id = 1"
@@ -300,10 +300,6 @@ class Index < ActiveRecord::Base
     options[:include] ||= []
     options[:include] << [:study_plan, :student, :disert_theme, :department,
                            :study, :specialization, :interrupts]
-    if user.has_role?('board_chairman')
-      conditions.first.sql_and(SPECIALIZATION_COND.clone)
-      conditions << user.person.tutorship.specialization_id
-    end
     if options[:conditions]
       conditions.first.sql_and(options[:conditions].first)
       conditions.concat(options[:conditions][1..-1])

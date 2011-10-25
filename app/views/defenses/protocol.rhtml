@@ -44,7 +44,13 @@
     <th><%= t(:message_10, :scope => [:view, :defenses, :protocol]) %>:</th>
   </tr>
   <tr>
-    <th><%= @defense.chairman_name %>
+    <th>
+    <% if @defense.chairman_name.blank? %>
+      <%= @defense.chairman.display_name %></td>
+    <% else %>
+      <%= @defense.chairman_name %></td>
+    <% end %>
+    </th>
     <td>......................................</td>
   </tr>
   <tr colspan='2'>
@@ -58,22 +64,30 @@
     <td><%= @defense.second_examinator %></td>
     <td>......................................</td>
   </tr>
-  <tr>
-    <td><%= @defense.third_examinator %></td>
-    <td>......................................</td>
-  </tr>
-  <tr>
-    <td><%= @defense.fourth_examinator %></td>
-    <td>......................................</td>
-  </tr>
-  <tr>
-    <td><%= @defense.fifth_examinator %></td>
-    <td>......................................</td>
-  </tr>
-  <tr>
-    <td><%= @defense.sixth_examinator %></td>
-    <td>......................................</td>
-  </tr>
+  <% unless @defense.third_examinator.blank? %>
+    <tr>
+      <td><%= @defense.third_examinator %></td>
+      <td>......................................</td>
+    </tr>
+  <% end %>
+  <% unless @defense.fourth_examinator.blank? %>
+    <tr>
+      <td><%= @defense.fourth_examinator %></td>
+      <td>......................................</td>
+    </tr>
+  <% end %>
+  <% unless @defense.fifth_examinator.blank? %>
+    <tr>
+      <td><%= @defense.fifth_examinator %></td>
+      <td>......................................</td>
+    </tr>
+  <% end %>
+  <% unless @defense.sixth_examinator.blank? %>
+    <tr>
+      <td><%= @defense.sixth_examinator %></td>
+      <td>......................................</td>
+    </tr>
+  <% end %>
   <tr colspan='2'>
     <th><%= t(:message_12, :scope => [:view, :defenses, :protocol]) %>:</th>
   </tr>
@@ -81,14 +95,18 @@
     <td><%= @defense.opponent %>:</td>
     <td>......................................</td>
   </tr>
-  <tr>
-    <td><%= @defense.second_opponent %>:</td>
-    <td>......................................</td>
-  </tr>
-  <tr>
-    <td><%= @defense.third_opponent %>:</td>
-    <td>......................................</td>
-  </tr>
+  <% unless @defense.second_opponent.blank? %>
+    <tr>
+      <td><%= @defense.second_opponent %>:</td>
+      <td>......................................</td>
+    </tr>
+  <% end %>
+  <% unless @defense.third_opponent.blank? %>
+    <tr>
+      <td><%= @defense.third_opponent %>:</td>
+      <td>......................................</td>
+    </tr>
+  <% end %>
   <tr colspan='2'>
     <th><%= t(:message_13, :scope => [:view, :defenses, :protocol]) %>:</th>
   </tr>
