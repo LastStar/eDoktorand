@@ -346,6 +346,14 @@ class Index < ActiveRecord::Base
         :include => options[:include])
   end
 
+  # finds only indices which have specialization for board chairman
+  def self.chairmaned_by(user)
+    opts = {:unfinished => true, :not_interrupted => true}
+    opts[:order] = options[:order] || 'indices.study_id, people.lastname'
+    opts[:chairman] = true
+    return find_for(user, opts)
+  end
+
   # returns all indices which waits for approval from persons
   # only for tutors, leader a deans
   def self.find_waiting_for_statement(user, options = {})
@@ -449,7 +457,7 @@ class Index < ActiveRecord::Base
   def self.find_for_scholarship(user, paying_date, opts = {})
     opts.update({:unfinished => (paying_date - 1.day),
                  :not_interrupted => (paying_date - 1.day),
-                 :enrolled => (paying_date - 1.day),
+                 :enrolled => (paying_date + 1.day),
                  :not_absolved => (paying_date - 1.day),
                  :include => [:extra_scholarships]})
 
