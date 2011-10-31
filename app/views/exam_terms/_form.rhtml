@@ -1,70 +1,101 @@
 <%=errors_for(@exam_term) %>
 
 <!--[form:exam_term]-->
-<p><label for="exam_term_start_time"><%= t(:message_0, :scope => [:view, :exam_terms, :_form]) %></label>
-<%= date_select 'exam_term', 'date', :order => [:day, :month, :year], :use_month_numbers => true %>
-&mdash;<%= select 'exam_term', 'start_time', str_time_select %></p>
+<p>
+  <label for="exam_term_start_time"><%= t(:message_0, :scope => [:view, :exam_terms, :_form]) %></label>
+  <%= date_select 'exam_term', 'date', :order => [:day, :month, :year], :use_month_numbers => true %>
+  &mdash;<%= select 'exam_term', 'start_time', str_time_select %>
+</p>
 
-<p><label for="exam_term_room" class='required'><%= t(:message_1, :scope => [:view, :exam_terms, :_form]) %></label>
-<%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span ></p>
+<p>
+  <label for="exam_term_room" class='required'><%= t(:message_1, :scope => [:view, :exam_terms, :_form]) %></label>
+  <%= text_field 'exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span >
+</p>
 
 <% if params[:action] == "edit" %>
-<% if @exam_term.chairman_name == nil || @exam_term.chairman_name == Tutor.find(@exam_term.chairman_id).display_name %><p id="chairman_select" ><% else %><p id="chairman_select" style="display: none;" ><% end %><label for="exam_term_chairman"><%=t(:message_2, :scope => [:view, :exam_terms, :_form])%></label><%=  button_to_function(t(:message_12, :scope => [:view, :exam_terms, :_form]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
-<%= collection_select :exam_term, :chairman_id, @tutors , :id, :display_name %>
+  <% if @exam_term.chairman_name == nil || @exam_term.chairman_name == Tutor.find(@exam_term.chairman_id).display_name %>
+    <p id="chairman_select" >
+  <% else %>
+    <p id="chairman_select" style="display: none;" >
+  <% end %>
+  <label for="exam_term_chairman"><%=t(:message_2, :scope => [:view, :exam_terms, :_form])%></label>
+  <%= button_to_function(t(:message_12, :scope => [:view, :exam_terms, :_form]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
+  <%= collection_select :exam_term, :chairman_id, @tutors , :id, :display_name %>
+  </p>
 
-</p>
-
-<% if @exam_term.chairman_name == "" || @exam_term.chairman_name == Tutor.find(@exam_term.chairman_id).display_name %><p id="chairman_text" style="display: none;"><% else %><p id="chairman_text"><% end %><label><%=t(:message_2, :scope => [:view, :exam_terms, :_form])%></label><%=  button_to_function(t(:message_11, :scope => [:view, :exam_terms, :_form]), "Element.show('chairman_select'), Element.hide('chairman_text'), document.getElementById('external_chairman').value=false") %> <%= text_field 'exam_term', 'chairman_name' %>
-
-</p>
+  <% if @exam_term.chairman_name == "" || @exam_term.chairman_name == Tutor.find(@exam_term.chairman_id).display_name %>
+    <p id="chairman_text" style="display: none;">
+  <% else %>
+    <p id="chairman_text">
+  <% end %>
+  <label><%=t(:message_2, :scope => [:view, :exam_terms, :_form])%></label>
+  <%= button_to_function(t(:message_11, :scope => [:view, :exam_terms, :_form]), "Element.show('chairman_select'), Element.hide('chairman_text'), document.getElementById('external_chairman').value=false") %>
+  <%= text_field 'exam_term', 'chairman_name' %>
+  </p>
 <% else %>
 
-<p id="chairman_select" ><label for="exam_term_chairman"><%=t(:message_2, :scope => [:view, :exam_terms, :_form])%></label><%=  button_to_function(t(:message_12, :scope => [:view, :exam_terms, :_form]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
-<%= collection_select :exam_term, :chairman_id, @tutors , :id, :display_name %>
+  <p id="chairman_select" >
+    <label for="exam_term_chairman"><%=t(:message_2, :scope => [:view, :exam_terms, :_form])%></label>
+    <%= button_to_function(t(:message_12, :scope => [:view, :exam_terms, :_form]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
+    <%= collection_select :exam_term, :chairman_id, @tutors , :id, :display_name %>
+  </p>
 
-</p>
-
-<p id="chairman_text" style="display: none;"><label><%=t(:message_2, :scope => [:view, :exam_terms, :_form])%></label><%=  button_to_function(t(:message_11, :scope => [:view, :exam_terms, :_form]), "Element.show('chairman_select'), Element.hide('chairman_text'), document.getElementById('external_chairman').value=false") %> <%= text_field 'exam_term', 'chairman_name' %>
-
-</p>
-
+  <p id="chairman_text" style="display: none;">
+    <label><%=t(:message_2, :scope => [:view, :exam_terms, :_form])%></label>
+    <%= button_to_function(t(:message_11, :scope => [:view, :exam_terms, :_form]), "Element.show('chairman_select'), Element.hide('chairman_text'), document.getElementById('external_chairman').value=false") %>
+    <%= text_field 'exam_term', 'chairman_name' %>
+  </p>
 <% end %>
 
 <% if params[:action] == "edit" %>
-
-<% if @exam_term.chairman_id == Tutor.external_chairman.id %>
-<input type="hidden" id="external_chairman" name="external_chairman" value="true"><% else %><input type="hidden" id="external_chairman" name="external_chairman" value="false">
-<% end %>
+  <% if @exam_term.chairman_id == Tutor.external_chairman.id %>
+    <input type="hidden" id="external_chairman" name="external_chairman" value="true">
+  <% else %>
+    <input type="hidden" id="external_chairman" name="external_chairman" value="false">
+  <% end %>
 <% else %>
-<input type="hidden" id="external_chairman" name="external_chairman" value="false">
+  <input type="hidden" id="external_chairman" name="external_chairman" value="false">
 <% end %>
 
+<p>
+  <label for='candidate_title_before_id'><%=t(:message_3, :scope => [:view, :exam_terms, :_form])%></label>
+  <%= collection_select :exam_term, :specialization_id, Specialization.accredited_for(@user), :id, :name %>
+</p>
 
+<p>
+  <label for="exam_term_first_examinator" class='required'>1. <%= t(:message_4, :scope => [:view, :exam_terms, :_form]) %></label>
+  <%= text_field 'exam_term', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span >
+</p>
 
+<p>
+  <label for="exam_term_second_examinator" class='required'>2. <%= t(:message_5, :scope => [:view, :exam_terms, :_form]) %></label>
+  <%= text_field 'exam_term', 'second_examinator'  %><span class='required'>&nbsp;&lowast;</span >
+</p>
 
-<p><label for='candidate_title_before_id'><%=t(:message_3, :scope => [:view, :exam_terms, :_form])%></label>
-<%= collection_select :exam_term, :specialization_id, Specialization.accredited_for(@user), :id, :name %></p>
+<p>
+  <label for="exam_term_third_examinator">3. <%= t(:message_6, :scope => [:view, :exam_terms, :_form]) %></label>
+  <%= text_field 'exam_term', 'third_examinator'  %>
+</p>
 
-<p><label for="exam_term_first_examinator" class='required'>1. <%= t(:message_4, :scope => [:view, :exam_terms, :_form]) %></label>
-<%= text_field 'exam_term', 'first_examinator'  %><span class='required'>&nbsp;&lowast;</span ></p>
+<p>
+  <label for="exam_term_fourth_examinator">4. <%= t(:message_7, :scope => [:view, :exam_terms, :_form]) %></label>
+  <%= text_field 'exam_term', 'fourth_examinator'  %>
+</p>
 
-<p><label for="exam_term_second_examinator" class='required'>2. <%= t(:message_5, :scope => [:view, :exam_terms, :_form]) %></label>
-<%= text_field 'exam_term', 'second_examinator'  %><span class='required'>&nbsp;&lowast;</span ></p>
+<p>
+  <label for="exam_term_fifth_examinator">5. <%= t(:message_8, :scope => [:view, :exam_terms, :_form]) %></label>
+  <%= text_field 'exam_term', 'fifth_examinator'  %>
+</p>
 
-<p><label for="exam_term_third_examinator">3. <%= t(:message_6, :scope => [:view, :exam_terms, :_form]) %></label>
-<%= text_field 'exam_term', 'third_examinator'  %></p>
+<p>
+  <label for="exam_term_sixth_examinator">6. <%= t(:message_9, :scope => [:view, :exam_terms, :_form]) %></label>
+  <%= text_field 'exam_term', 'sixth_examinator'  %>
+</p>
 
-<p><label for="exam_term_fourth_examinator">4. <%= t(:message_7, :scope => [:view, :exam_terms, :_form]) %></label>
-<%= text_field 'exam_term', 'fourth_examinator'  %></p>
-
-<p><label for="exam_term_fifth_examinator">5. <%= t(:message_8, :scope => [:view, :exam_terms, :_form]) %></label>
-<%= text_field 'exam_term', 'fifth_examinator'  %></p>
-
-<p><label for="exam_term_sixth_examinator">6. <%= t(:message_9, :scope => [:view, :exam_terms, :_form]) %></label>
-<%= text_field 'exam_term', 'sixth_examinator'  %></p>
-
-<p><label for="exam_term_seventh_examinator">7. <%= t(:message_10, :scope => [:view, :exam_terms, :_form]) %></label>
-<%= text_field 'exam_term', 'seventh_examinator'  %></p>
+<p>
+  <label for="exam_term_seventh_examinator">7. <%= t(:message_10, :scope => [:view, :exam_terms, :_form]) %></label>
+  <%= text_field 'exam_term', 'seventh_examinator'  %>
+</p>
 
 
 <!--[eoform:exam_term]-->

@@ -1126,7 +1126,7 @@ cs:
         message_5: Třetí oponent
         message_6: Členové komise
       claim:
-        agreement_of_conformity: práce je shodná s papírovou
+        agreement_of_conformity: prohlašuji, že elektronická verze práce je shodná s odevzdanou prací
         red_is_required: všechny červené položky jsou povinné
         message_0: Přihláška k obhajobě
         message_1: soubor s autoreferátem
@@ -1159,6 +1159,7 @@ cs:
       _bad_tutor:
         message_0: Školitel není nikam zařazen, kontaktujte HELPDESK
     exam_terms:
+      department_defense_successful: vykonal katedrovou obhajobu
       date_and_time: datum a čas
       room: místnost
       chairman: Předseda komise

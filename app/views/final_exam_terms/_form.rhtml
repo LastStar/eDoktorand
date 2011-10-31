@@ -23,7 +23,7 @@
   <% end %>
   <label for="exam_term_chairman"><%= t(:chairman, :scope => [:view, :exam_terms]) %></label>
   <%= collection_select :final_exam_term, :chairman_id, @tutors , :id, :display_name %>
-  <%= button_to_function(t(:enter_manually, :scope => [:view, :exam_terms, :_form]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
+  <%= button_to_function(t(:enter_manually, :scope => [:view, :exam_terms]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
   </p>
 
   <% if @final_exam_term.chairman_name == "" || @final_exam_term.chairman_name == Tutor.find(@final_exam_term.chairman_id).display_name %>
@@ -31,7 +31,7 @@
   <% else %>
     <p id="chairman_text">
   <% end %>
-  <label><%=t(:chairman, :scope => [:view, :exam_terms, :_form])%></label>
+  <label><%=t(:chairman, :scope => [:view, :exam_terms])%></label>
   <%= text_field 'final_exam_term', 'chairman_name' %>
   <%=  button_to_function(t(:back_to_list, :scope => [:view, :exam_terms]), "Element.show('chairman_select'), Element.hide('chairman_text'), document.getElementById('external_chairman').value=false") %>
   </p>
@@ -41,7 +41,7 @@
   <p id="chairman_select" >
     <label for="exam_term_chairman"><%=t(:chairman, :scope => [:view, :exam_terms])%></label>
     <%= collection_select :final_exam_term, :chairman_id, @tutors , :id, :display_name %>
-    <%=  button_to_function(t(:enter_manually, :scope => [:view, :exam_terms]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
+    <%= button_to_function(t(:enter_manually, :scope => [:view, :exam_terms]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
   </p>
 
   <p id="chairman_text" style="display: none;">

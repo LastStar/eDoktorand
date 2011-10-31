@@ -17,12 +17,10 @@ class DefensesController < ApplicationController
     index = @user.person.index
     disert_theme = index.disert_theme
     if (self_report = params[:self_report_file]) && self_report.is_a?(Tempfile) &&
-      (theme = params[:disert_theme_file]) && theme.is_a?(Tempfile) &&
-      (small_defense = params[:small_defense_file]) && small_defense.is_a?(Tempfile) &&
+      (theme = params[:disert_theme_file]) && theme.is_a?(Tempfile)
       params[:agreement_of_conformity]
         index.disert_theme.save_self_report_file(self_report)
         index.disert_theme.save_disert_theme_file(theme)
-        index.disert_theme.save_small_defense_file(small_defense)
         index.claim_defense!
         Notifications::deliver_claimed_defense(index)
         redirect_to :controller => :study_plans, :action => :index
@@ -33,9 +31,6 @@ class DefensesController < ApplicationController
       end
       unless self_report
         flash[:error] << t(:self_report_requirement, :scope => [:controller, :defenses])
-      end
-      unless small_defense
-        flash[:error] << t(:small_defense_requirement, :scope => [:controller, :defenses])
       end
       unless disert_theme
         flash[:error] << t(:disert_theme_requirement, :scope => [:controller, :defenses])

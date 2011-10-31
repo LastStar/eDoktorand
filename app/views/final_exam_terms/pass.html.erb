@@ -14,14 +14,6 @@
     <%= select_date(@date) %>
     <br/>
     <br/>
-    <label><%= t(:questions, :scope => [:view, :final_exam_terms, :pass]) %></label>
-    <%= text_area_tag :questions, "1. \n2. \n3. \n4.", :rows => 4, :cols => 60 %>
-    <br/>
-    <br/>
-    <label><%= t(:discussion, :scope => [:view, :final_exam_terms, :pass]) %></label>
-    <%= text_area_tag :discussion, "1. \n2. \n3. \n4.", :rows => 4, :cols => 60 %>
-    <br/>
-    <br/>
     <%= submit_tag t(:passed, :scope => [:view, :final_exam_terms, :pass]) %>
   </fieldset>
 <% end %>
