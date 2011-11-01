@@ -71,7 +71,9 @@
 
 <br/>
 
-<p><%= t(:state_doctorate_exam, :scope => [:view, :study_plans, :annual_report]) %>: <%= index.disert_theme.finishing_to %>. <%= t(:term, :scope => [:view, :study_plans, :annual_report]) %></p>
+<p>
+  <%= t(:state_doctorate_exam, :scope => [:view, :study_plans, :annual_report]) %>: <%= index.study_plan.finishing_to %>. <%= t(:term, :scope => [:view, :study_plans, :annual_report]) %>
+</p>
 
 <p><%= t(:additional_info_attestation, :scope => [:view, :study_plans, :annual_report]) %>:</p>
 <p><%= AttestationDetail.find_all_by_study_plan_id(@study_plan.id).map(&:detail).join('<br/>') %></p>
