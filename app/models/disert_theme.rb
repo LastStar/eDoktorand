@@ -39,7 +39,7 @@ class DisertTheme < ActiveRecord::Base
   end
 
   def defense_passed?(date = Date.today)
-    true if defense_passed_on && defense_passed_on < date
+    true if defense_passed_on && defense_passed_on <= date
   end
 
   def defense_passed!(date = Date.today)
