@@ -114,7 +114,8 @@ class ScholarshipsController < ApplicationController
 
   def pay
     csv_headers('stipendia.csv')
-    stipendias = Scholarship.pay_and_generate_for(@user)
+    @paying_date = Time.now.last_month.end_of_month
+    stipendias = Scholarship.pay_and_generate_for(@user, @paying_date)
     date = Time.now.last_month.strftime('%Y%m')
     file = "#{RAILS_ROOT}/public/csv/#{date}.csv"
     File.open(file, 'w') {|file| file.write(stipendias)}
@@ -123,7 +124,8 @@ class ScholarshipsController < ApplicationController
   end
 
   def approve
-    @indices = Scholarship.approve_for(@user)
+    @paying_date = Time.now.last_month.end_of_month
+    @indices = Scholarship.approve_for(@user, @paying_date)
     render(:action => 'list')
   end
 
