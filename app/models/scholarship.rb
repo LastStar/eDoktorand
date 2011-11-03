@@ -22,7 +22,7 @@ class Scholarship < ActiveRecord::Base
 
   def self.find_unpayed_by_index(index)
     index = index.id if index.is_a? Index
-    find(:first, :conditions => ['index_id = ? and payed_on is null', index], :order => 'created_on desc')
+    find(:first, :conditions => ['index_id = ? and payed_on is null', index], :order => 'updated_on desc')
   end
 
   def pay!(time = Time.now)
