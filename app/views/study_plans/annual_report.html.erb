@@ -86,9 +86,9 @@
 
 <h2 style='text-align: center'><%= t(:student_evaluation, :scope => [:view, :study_plans, :annual_report]) %></h2>
 
-<p><%= t(:approve_word, :scope => [:view, :study_plans, :annual_report]) %>: <%= approve_word(@study_plan.attestation.tutor_or_leader_statement.try(:result)) %></p>
+<p><%= t(:approve_word, :scope => [:view, :study_plans, :annual_report]) %>: <%= approve_word(@study_plan.attestation.tutor_or_leader_statement.try(:result)) %> <%= @study_plan.attestation.tutor_or_leader_statement.try(:created_on).try(:strftime, '%d. %m. %Y') %></p>
 <br/>
-<p><%= t(:department_statement, :scope => [:view, :study_plans, :annual_report]) %>: <%= approve_word(@study_plan.attestation.leader_statement.try(:result)) %></p>
+<p><%= t(:department_statement, :scope => [:view, :study_plans, :annual_report]) %>: <%= approve_word(@study_plan.attestation.leader_statement.try(:result)) %> <%= @study_plan.attestation.leader_statement.try(:created_on).try(:strftime, '%d. %m. %Y') %></p>
 <br/>
 <table width='80%'>
   <tr>
