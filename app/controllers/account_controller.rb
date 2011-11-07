@@ -25,7 +25,11 @@ class AccountController < ApplicationController
 
   def welcome
     if @user.has_role?('student')
-      redirect_to :controller => 'study_plans'
+      if @user.person.index.intellectual_property?
+        redirect_to :controller => 'study_plans'
+      else
+        redirect_to :controller => 'study_plans', :action => 'intellectual_property'
+      end
     elsif @user.has_one_of_roles?(['tutor', 'dean',
       'department_secretary', 'faculty_secretary'])
       redirect_to  students_url

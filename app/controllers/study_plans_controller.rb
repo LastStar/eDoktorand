@@ -311,6 +311,16 @@ class StudyPlansController < ApplicationController
     @study_plan.save
   end
 
+  def intellectual_property
+    @title = t(:intellectual_property, :scope => [:controller, :plans])
+    @index = @student.index
+  end
+
+  def confirm_intellectual_property
+    @student.index.confirm_intellectual_property
+    redirect_to :action => :index
+  end
+
   private
   def reset_plan_session
     session[:study_plan] = nil

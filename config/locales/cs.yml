@@ -14,6 +14,9 @@ cs:
         examinator: Zkoušející
         department: Katedra
     study_plans:
+      intellectual_property: Duševní vlastnictví
+      intellectual_property_agreement: 'Jakožto student České zemědělské univerzity v Praze, sídlem Kamýcká 129, Praha - Suchdol, IČ: 60460709 (dále jen jako: ČZU) tímto ČZU poskytuji časově neomezený souhlas k bezúplatnému užívání výsledků duševní tvůrčí činnosti v neomezeném rozsahu, které vytvořím během svého studia v souvislosti s plněním studijních povinností na ČZU, a to i v případě, že podléhají ochraně dle zvláštních právních předpisů (zákon č. 478/1992 Sb., o užitných vzorech, ve znění pozdějších, zákon č. 207/2000 Sb., o ochraně průmyslových vzorů a o změně zákona č. 527/1990 Sb., o vynálezech, průmyslových vzorech a zlepšovacích návrzích, ve znění pozdějších předpisů, zákon č. 206/2000 Sb. o ochraně biotechnologických vynálezů, ve znění pozdních předpisů, zákon č. 527/1990 Sb., o vynálezech a zlepšovacích návrzích, ve znění pozdějších předpisů, zákon č. 121/2000 Sb., o právu autorském, o právech souvisejících s právem autorským a o změně některých zákonů).'
+      confirm_intellectual_property: Souhlasím s užíváním
       annual_report:
         university_name: Česká zemědělská univerzita v Praze
         annual_attestation: Výroční atestace za rok
@@ -1835,6 +1838,7 @@ cs:
     interrupts:
       message_0: schváleno referentkou vědy a výzkumu
     plans:
+      intellectual_property: Duševní vlastnictví
       message_8: jazyky musí být rozdílné
       message_9: předměty musí být rozdílné
       message_0: Studijní plán

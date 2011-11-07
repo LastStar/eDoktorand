@@ -793,6 +793,9 @@ class Index < ActiveRecord::Base
     return true
   end
 
+  def confirm_intellectual_property
+    update_attribute(:intellectual_property, true)
+  end
   private
   def self.get_time_condition(time)
     if time.is_a? Time

@@ -1,0 +1,8 @@
+<h1><%= t(:intellectual_property, :scope => [:view, :study_plans]) %></h1>
+<p>
+  <%= t(:intellectual_property_agreement, :scope => [:view, :study_plans]) %>
+</p>
+
+<form action='/study_plans/confirm_intellectual_property'>
+  <%= submit_tag t(:confirm_intellectual_property, :scope => [:view, :study_plans]) %>
+</form>
