@@ -37,7 +37,7 @@ class DiplomaSupplement < ActiveRecord::Base
     new.family_name = index.student.lastname
     new.given_name = index.student.firstname
     new.date_of_birth = index.student.birth_on
-    new.study_programme = index.specialization.program.label_en if index.specialization.program
+    new.study_programme = index.specialization.program.name_english if index.specialization.program
     new.study_specialization = index.specialization.name_english
     new.faculty_name_en = index.faculty.name_english
     new.faculty_name = index.faculty.name
@@ -51,7 +51,7 @@ class DiplomaSupplement < ActiveRecord::Base
     new.printed_on = index.disert_theme.defense_passed_on
     new.dean_display_name = index.faculty.dean.display_name
     new.dean_title = index.faculty.dean_label_en
-    new.study_lenght = index.specialization.study_length
+    new.study_length = index.specialization.study_length
     return new
   end
 
