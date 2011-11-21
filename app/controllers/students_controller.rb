@@ -383,6 +383,9 @@ class StudentsController < ApplicationController
         @filters.concat([[t(:message_5, :scope => [:controller, :students]), 1], [t(:message_6, :scope => [:controller, :students]), 4]])
       end
     end
+    if @user.has_role?('board_chairman')
+      @filters.concat([[t(:chairmaned, :scope => [:controller, :students]), 5]])
+    end
     unless @user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
       # default filter to waiting for approval
       session[:filter] ||= 2
@@ -396,6 +399,8 @@ class StudentsController < ApplicationController
   def do_filter
     @filter = params[:id] || session[:filter]
     case @filter.to_i
+    when 5
+      @indices = Index.chairmaned_by(@user)
     when 4
       @indices = Index.find_tutored_by(@user, :unfinished => true)
     when 3
