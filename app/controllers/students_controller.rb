@@ -375,6 +375,7 @@ class StudentsController < ApplicationController
   end
 
   # prepares filter variable
+  # FIXME this is a mess vvvvv
   def prepare_filter
     @filters = [[t(:message_2, :scope => [:controller, :students]), 2], [t(:message_3, :scope => [:controller, :students]), 0],
       [t(:message_4, :scope => [:controller, :students]), 3]]
