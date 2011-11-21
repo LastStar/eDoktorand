@@ -8,6 +8,7 @@ class IndividualStudyPlanApplication < ActiveRecord::Migration
     Role.find_by_name('student').permissions << Permission.create(:name => 'study_plans/save_claim_individual')
     Role.find_by_name('faculty_secretary').permissions << Permission.create(:name => 'students/claimed_individual')
     Role.find_by_name('faculty_secretary').permissions << Permission.create(:name => 'students/decide_individual')
+    Role.find_by_name('faculty_secretary').permissions << Permission.create(:name => 'students/individual_protocol')
   end
 
   def self.down
@@ -15,16 +16,16 @@ class IndividualStudyPlanApplication < ActiveRecord::Migration
     remove_column :indices, :individual_application_claimed_on
     remove_column :indices, :individual_application_result
     remove_column :indices, :individual_application_decided_at
-    per = Permission.first(:name => 'study_plans/claim_individual')
+    per = Permission.first(:conditions => {:name => 'study_plans/claim_individual'})
     Role.find_by_name('student').permissions.delete(per)
     per.destroy
-    per = Permission.first(:name => 'study_plans/save_claim_individual')
+    per = Permission.first(:conditions => {:name => 'study_plans/save_claim_individual'})
     Role.find_by_name('student').permissions.delete(per)
     per.destroy
-    per = Permission.first(:name => 'students/claimed_individual')
+    per = Permission.first(:conditions => {:name => 'students/claimed_individual'})
     Role.find_by_name('faculty_secretary').permissions.delete(per)
     per.destroy
-    per = Permission.first(:name => 'students/decide_individual')
+    per = Permission.first(:conditions => {:name => 'students/decide_individual'})
     Role.find_by_name('faculty_secretary').permissions.delete(per)
     per.destroy
   end
