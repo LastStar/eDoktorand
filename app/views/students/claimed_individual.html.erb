@@ -1,0 +1,21 @@
+<h2><%= t(:claimed_individual, :scope => [:view, :students, :individual_study_plan]) %></h2>
+
+<table class='two-columns condensed'>
+  <tr>
+    <th><%= t(:display_name, :scope => [:view, :students]) %>:</th>
+    <td><strong><%= @index.student.display_name %></strong></td>
+  </tr>
+</table>
+
+<form action='/students/decide_individual'>
+  <fieldset>
+    <%= hidden_field_tag :id, @index.id %>
+    <%= submit_tag t(:approve, :scope => [:view]) %>
+    <%= submit_tag t(:cancel, :scope => [:view]) %>
+  </fieldset>
+</form>
+
+<div class='links'>
+  <%= link_to t(:protocol, :scope => [:view, :students, :individual_study_plan]), :action => 'individual_protocol', :id => @index.id %>
+</div>
+

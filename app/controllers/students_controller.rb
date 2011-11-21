@@ -353,6 +353,24 @@ class StudentsController < ApplicationController
     end
   end
 
+  def individual_protocol
+    @index = Index.find(params[:id])
+  end
+
+  def claimed_individual
+    @index = Index.find(params[:id])
+  end
+
+  def decide_individual
+    @index = Index.find(params[:id])
+    if params['commit'] == t(:approve, :scope => [:view])
+      @index.approve_individual!
+    else
+      @index.cancel_individual!
+    end
+    redirect_to :action => :individual_protocol, :id => @index.id
+  end
+
   private
 
   def create_date(date)

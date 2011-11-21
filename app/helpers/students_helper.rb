@@ -189,6 +189,17 @@ module StudentsHelper
     elsif index.scholarship_canceled?
       tags << "<span title='" + t(:sholarship_canceled, :scope => [:helper, :students]) + "'>usn</span>"
     end
+    if index.claimed_individual_study_plan?
+      if !index.individual_decided?
+        tags << "<span title='" + t(:individual_claimed, :scope => [:helper, :students]) + "'>pisp</span>"
+      else
+        if index.individual_application_result
+          tags << "<span title='" + t(:individual_approved, :scope => [:helper, :students]) + "'>isps</span>"
+        else
+          tags << "<span title='" + t(:individual_canceled, :scope => [:helper, :students]) + "'>ispn</span>"
+        end
+      end
+    end
     if index.final_exam_passed?
       if index.defense_claimed?
         tags <<  "<span title='" + t(:message_25, :scope => [:helper, :students]) + "'>po</span>"

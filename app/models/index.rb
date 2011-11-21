@@ -533,6 +533,10 @@ class Index < ActiveRecord::Base
     year > specialization.study_length
   end
 
+  def studying?
+    !finished? && !final_exam_passed? && !interrupted? && !continues?
+  end
+
   # switches study form
   # TODO add history and use date
   def switch_study!(date = Date.today)
@@ -798,6 +802,36 @@ class Index < ActiveRecord::Base
   def confirm_intellectual_property
     update_attribute(:intellectual_property, true)
   end
+
+  def claim_individual_study_plan!(note)
+    update_attributes(:individual_application_note => note,
+                      :individual_application_claimed_on => Date.today)
+  end
+
+  def claimed_individual_study_plan?
+    !individual_application_claimed_on.blank?
+  end
+
+  def approve_individual!
+    update_attributes(:individual_application_result => true,
+                      :individual_application_decided_at => Time.now)
+  end
+
+  def cancel_individual!
+    update_attributes(:individual_application_result => false,
+                      :individual_application_decided_at => Time.now)
+  end
+
+  def individual_decided?
+    !individual_application_decided_at.blank?
+  end
+
+  def individual_result
+    if individual_decided?
+      individual_application_result ? I18n::t(:approved, :scope => [:model, :index]) : I18n::t(:canceled, :scope => [:model, :index])
+    end
+  end
+
   private
   def self.get_time_condition(time)
     if time.is_a? Time

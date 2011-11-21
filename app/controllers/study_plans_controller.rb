@@ -321,6 +321,16 @@ class StudyPlansController < ApplicationController
     redirect_to :action => :index
   end
 
+  def claim_individual
+    @index = @student.index
+  end
+
+  def save_claim_individual
+    @student.index.claim_individual_study_plan!(params[:note])
+    Notifications.deliver_claimed_individual(@student)
+    redirect_to :action => :index
+  end
+
   private
   def reset_plan_session
     session[:study_plan] = nil

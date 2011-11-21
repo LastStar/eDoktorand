@@ -1,0 +1,36 @@
+<h2><%= t(:individual_study_plan_protocol, :scope => [:view, :students, :individual_study_plan]) %></h2>
+
+<table class='two-columns condensed'>
+  <tr>
+    <th><%= t(:display_name, :scope => [:view, :students]) %>:</th>
+    <td><strong><%= @index.student.display_name %></strong></td>
+  </tr>
+  <tr>
+    <th><%= t(:specialization, :scope => [:view, :students]) %>:</th>
+    <td><%= @index.specialization.name %></td>
+  </tr>
+  <tr>
+    <th><%= t(:department, :scope => [:view, :students]) %>:</th>
+    <td><%= @index.department.name %></td>
+  </tr>
+  <tr>
+    <th><%= t(:tutor, :scope => [:view, :students]) %>:</th>
+    <td><%= @index.tutor.display_name %></td>
+  </tr>
+</table>
+
+<% unless @index.individual_application_note.blank? %>
+  <h3><%= t(:note, :scope => [:view, :students]) %></h3>
+  <p><%= @index.individual_application_note %></p>
+<% end %>
+
+<p><%= t(:date, :scope => [:view, :students]) %>: <%= @index.individual_application_claimed_on.strftime('%d. %m. %Y') %></p>
+
+<% if !@index.individual_decided? %>
+<div class='links'>
+  <%= link_to t(:decide, :scope => [:view, :students, :individual_study_plan]), :action => 'claimed_individual', :id => @index.id %>
+</div>
+<% else %>
+  <p><%= t(:with_result, :scope => [:view, :students]) %>: <%= @index.individual_result %></p>
+  <p><%= t(:date, :scope => [:view, :students]) %>: <%= @index.individual_application_decided_at.strftime('%d. %m. %Y') %></p>
+<% end %>

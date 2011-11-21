@@ -203,4 +203,12 @@ class Notifications < ActionMailer::Base
     ].compact.reject(&:empty?)
   end
 
+  def claimed_individual(student, sent_at = Time.now)
+    @from = 'edoktorand@edoktorand.czu.cz'
+    @recipients = student.faculty.secretary.email
+    @body[:student] = student.display_name
+    @body[:index_id] = student.index.id
+    @body[:note] = student.index.individual_application_note
+  end
+
 end

@@ -8,12 +8,17 @@ cs:
       female: žena
 
   view:
+    approve: Schválit
+    cancel: Neschválit
     examinators:
       list:
         list: Seznam zkoušejících
         examinator: Zkoušející
         department: Katedra
     study_plans:
+      individual_study_plan_application: Žádost o individuální studijní plán
+      note_for_individual_study_plan: Poznámka k žádosti
+      confirm_individual_application: Odeslat žádost
       intellectual_property: Duševní vlastnictví
       intellectual_property_agreement: 'Jakožto student České zemědělské univerzity v Praze, sídlem Kamýcká 129, Praha - Suchdol, IČ: 60460709 (dále jen jako: ČZU) tímto ČZU poskytuji časově neomezený souhlas k bezúplatnému užívání výsledků duševní tvůrčí činnosti v neomezeném rozsahu, které vytvořím během svého studia v souvislosti s plněním studijních povinností na ČZU, a to i v případě, že podléhají ochraně dle zvláštních právních předpisů (zákon č. 478/1992 Sb., o užitných vzorech, ve znění pozdějších, zákon č. 207/2000 Sb., o ochraně průmyslových vzorů a o změně zákona č. 527/1990 Sb., o vynálezech, průmyslových vzorech a zlepšovacích návrzích, ve znění pozdějších předpisů, zákon č. 206/2000 Sb. o ochraně biotechnologických vynálezů, ve znění pozdních předpisů, zákon č. 527/1990 Sb., o vynálezech a zlepšovacích návrzích, ve znění pozdějších předpisů, zákon č. 121/2000 Sb., o právu autorském, o právech souvisejících s právem autorským a o změně některých zákonů).'
       confirm_intellectual_property: Souhlasím s užíváním
@@ -474,6 +479,18 @@ cs:
         message_5: Upravit
       _form:
     students:
+      display_name: Příjmení a jméno
+      specialization: Obor
+      department: Katedra
+      tutor: Školitel
+      note: S poznámkou
+      date: Dne
+      with_result: S výsledkem
+      individual_study_plan:
+        individual_study_plan_protocol: Žádost o individuální studijní plán
+        decide: Rozhodnout
+        protocol: Žádost
+        claimed_individual: Schválení žádosti o individuální studijní plán
       mail_list:
         message_0: Seznam e-mailů
       show:
@@ -1331,6 +1348,7 @@ cs:
 
   helper:
     plans:
+      claim_individual: individuální SP
       message_18: volitelné předměty
       message_8: Jste si jistý, že chcete
       message_9: ukončit studium
@@ -1370,6 +1388,9 @@ cs:
       message_14: zkoušky na ČZU
 
     students:
+      individual_claimed: Požádáno o individuální studijní plán
+      individual_approved: Individuální studijní plán schválen
+      individual_canceled: Individuální studijní plán neschválen
       sholarship_claimed: zažádáno o ubytovací stipendium
       sholarship_approved: schváleno ubytovací stipendium
       sholarship_canceled: neschváleno ubytovací stipendium
@@ -1764,6 +1785,8 @@ cs:
       czech_language: český jazyk
       doctorate: doktorský
     index:
+      approved: Schváleno
+      canceled: Neschváleno
       foreigner_pay_throught_dotation: cizinec, hrazeno ze zvláštní dotace dle evidence Domu zahr. služeb MŠMT
       study_in_standart_time: studium ve standardní době studia
       absolved_l: absolvoval

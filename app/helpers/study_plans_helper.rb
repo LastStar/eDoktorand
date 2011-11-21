@@ -174,6 +174,10 @@ module StudyPlansHelper
     unless student.index.interrupted?
       links << link_to_unless_current(t(:message_13, :scope => [:helper, :plans]), :controller => 'study_interrupts'){}
     end
+    if student.index.studying? && !student.index.claimed_individual_study_plan?
+      links << link_to_unless_current(t(:claim_individual, :scope => [:helper, :plans]),
+                      :action => 'claim_individual', :controller => 'study_plans'){}
+    end
     return links.join('&nbsp;')
   end
 

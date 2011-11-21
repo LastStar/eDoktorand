@@ -9,6 +9,9 @@ en:
 
   view:
     study_plans:
+      individual_study_plan_application: Individual study plan application
+      note_for_individual_study_plan: Note for application
+      confirm_individual_application: Submit application
       intellectual_property: Intellectual property
       intellectual_property_agreement: 'I, a student of the Czech University of Life Sciences (Kamýcká 129, Prague Suchdol, Czech Republic, VAT Nr. CZ 60460709, further CULS), hereby agree, on a time unlimited basis, to: provide all rights to CULS to use unlimitedly and free of charge all outcomes of my intellectual and creative activities, which I produce during my studies and in connection with  fulfilling my study obligations at CULS, even in the eventuality that these outcomes are subjected to specific legal dispositions (Act. No. 478/1992 Coll., on Utility Models, as amended, Act No. 207/2000 Coll., on the Protection of Industrial Designs and Amended Act No. 527/1990 Coll., on Inventions, Industrial Designs and Rationalisation Proposals, as amended, Act No. 206/2000 Coll., on the Protection of Biotechnological Inventions, as amended, Act No. 527/1990 Coll., on Inventions and Industrial Designs and Rationalisation Proposals, as amended, Act No. 121/2000 Coll., of Copyright, Rights Related to Copyright and on the Amendment of Certain Laws).'
       confirm_intellectual_property: I agree with providing all rights
