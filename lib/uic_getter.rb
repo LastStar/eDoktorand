@@ -67,12 +67,10 @@ class UicGetter
   end
 
   # get uic for foreign student
-  def get_foreign_uic(birth_on)
-      @@logger.debug "Trying service for with bn #{birth_on}"
+  def get_foreign_uic(birth_number)
+      @@logger.debug "Trying service for with bn #{birth_number}"
       begin
-        service_response = query_service(
-                                         "http://193.84.33.16/axis2/services/GetUicForeignerService/getUicByBirthNum?rc=%s" %
-                                         birth_on.strftime("%y%m%d41A9"))
+        service_response = query_service(SERVICES[:foreign_uic] % birth_number)
       rescue Exception => e
         @@logger.error 'Something gone wrong with service ' + e
         next

@@ -245,7 +245,7 @@ class Candidate < ActiveRecord::Base
     if self.state == 'CZ' || self.state == "SK"
       student.uic = uic_getter.get_uic(self.birth_number)
     else
-      student.uic = uic_getter.get_foreign_uic(self.birth_on)
+      student.uic = uic_getter.get_foreign_uic(self.birth_number)
     end
     student.firstname = self.firstname
     student.lastname = self.lastname
