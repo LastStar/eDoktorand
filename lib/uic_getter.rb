@@ -12,6 +12,7 @@ class UicGetter
 
   # constants definition
   SERVICES = {:uic => "http://193.84.33.16/axis2/services/GetUicService/getUicByBirthNum?rc=%s",
+    :foreign => "http://193.84.33.16/axis2/services/GetUicForeignerService/getUicByBirthNum?rc=%s",
     :pokus => "http://193.84.34.6/axis2/services/GetUicService/getUicByBirthNum?rc=8111191638"}
   UIC_REGEX = /<uic>(-?[0-9]{3,6})<\/uic>/
   MESSAGE_REGEXP = /<message>(.*)<\/message>/
