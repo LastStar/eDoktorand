@@ -12,9 +12,9 @@ class ExamsController < ApplicationController
   end
 
   def list_for_vicerector
-  if @user.has_role?('vicerector') && params[:vicerector] == "1"
-    @exams = Exam.find_for_univerzity(@user,:this_year => 1)
-  end
+    if @user.has_role?('vicerector') && params[:vicerector] == "1"
+      @exams = Exam.find_for_univerzity(@user,:this_year => 1)
+    end
     render(:action => 'list')
   end
 

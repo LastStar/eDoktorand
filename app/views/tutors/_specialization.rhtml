@@ -1,6 +1,8 @@
 <td><%= @tutor.display_name %></td>
 <td>
+  <% if @user.has_role?('faculty_secretary') %>
   <%= edit_link(tutorship) %>
+  <% end %>
   <%=h tutorship.specialization ?  tutorship.specialization.name : '&nbsp;' %>
 </td>
 

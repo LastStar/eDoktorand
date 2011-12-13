@@ -8,7 +8,7 @@
         <%= t(:message_0, :scope => [:view, :candidates, :_list]) %>&nbsp;<%= candidate.birth_number %>
         &nbsp;&nbsp;&nbsp;
         <%= status_tag(candidate) %>
-        <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
+        <% if @user.has_role?('faculty_secretary') %>
           <%= ready_link(candidate) %>
           <%= invite_link(candidate) %>
           <%= admit_link(candidate) %>
@@ -19,13 +19,13 @@
         <%end%>
       </th>
       <td rowspan='3' class="right">
-      <% unless @user.has_role?('department_secretary') %>
+      <% if @user.has_role?('faculty_secretary') %>
         <span id='<%= dom_id(candidate) %>'>
           <%= foreign_pay_link(candidate) %>
         </span>
         <%= link_to 'detail', :action => 'show', :id => candidate %>
       <%end%>
-      <% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
+      <% if @user.has_role?('faculty_secretary') %>
         <%= link_to t(:message_1, :scope => [:view, :candidates, :_list]), :action => 'edit', :id => candidate %>
         <%= link_to t(:message_2, :scope => [:view, :candidates, :_list]), {:action => 'delete', :id => candidate}, :confirm =>  t(:message_7, :scope => [:view, :candidates, :_list]) %>
       <% end %>

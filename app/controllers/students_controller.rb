@@ -405,13 +405,12 @@ class StudentsController < ApplicationController
     if @user.has_role?('board_chairman')
       @filters.concat([[t(:chairmaned, :scope => [:controller, :students]), 5]])
     end
-    unless @user.has_one_of_roles?(['faculty_secretary', 'department_secretary'])
+    if !@user.has_one_of_roles?(['faculty_secretary', 'department_secretary', 'university_secretary'])
       # default filter to waiting for approval
       session[:filter] ||= 2
     else
       session[:filter] ||= 3
     end
-
   end
 
   # filtering students by user and filter

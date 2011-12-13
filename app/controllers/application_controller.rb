@@ -54,7 +54,9 @@ class ApplicationController < ActionController::Base
 
   # prepares faculty class variable
   def prepare_faculty
-    @faculty = @user.person.faculty
+    unless @user.has_role?('university_secretary')
+      @faculty = @user.person.faculty
+    end
   end
 
   # prepares conditions for various queries

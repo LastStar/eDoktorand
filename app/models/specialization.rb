@@ -7,8 +7,8 @@ class Specialization < ActiveRecord::Base
   has_many :obligate_subjects, :order => 'subjects.label', :include => :subject
   has_many :voluntary_subjects, :order => 'subjects.label', :include => :subject
   has_many :seminar_subjects, :order => 'subjects.label', :include => :subject
-  has_many :language_subjects, :order => 'subjects.label', :include => :subject 
-  has_many :requisite_subjects, :order => 'subjects.label', :include => :subject 
+  has_many :language_subjects, :order => 'subjects.label', :include => :subject
+  has_many :requisite_subjects, :order => 'subjects.label', :include => :subject
   has_one :exam_term
   has_many :indices
   has_many :tutorships
@@ -26,7 +26,7 @@ class Specialization < ActiveRecord::Base
     if options[:faculty]
       if options[:faculty] == :all
         conditions.first << ' AND' if !conditions.first.empty?
-        conditions = '1=1' 
+        conditions = 'NULL IS NULL'
       else
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty].id : options[:faculty]
         conditions.first << ' AND' if !conditions.first.empty?
@@ -34,7 +34,7 @@ class Specialization < ActiveRecord::Base
         conditions << faculty
       end
     end
-    result = find(:all, :conditions => conditions, 
+    result = find(:all, :conditions => conditions,
                   :order => 'name').map {|d| [d.name, d.id]}
     if options[:include_empty]
       [['---', '0']].concat(result)
@@ -44,7 +44,7 @@ class Specialization < ActiveRecord::Base
   end
 
   def self.find_for(user)
-    if user.has_role?('vicerector')
+    if user.has_one_of_roles?(['vicerector', 'university_secretary'])
       find(:all)
     else
       user.person.faculty.specializations

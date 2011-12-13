@@ -16,8 +16,10 @@
     <td><%=h diploma_supplement.send(column) %></td>
   <% end %>
     <td><%= link_to t(:show, :scope => [:view, :diploma_supplements, :list]), :controller => :documents, :action => 'diploma_supplement', :id => diploma_supplement %></td>
+    <% if @user.has_role?('faculty_secretary') %>
     <td><%= link_to t(:edit, :scope => [:view, :diploma_supplements, :list]), :action => 'edit', :id => diploma_supplement %></td>
     <td><%= link_to t(:delete, :scope => [:view, :diploma_supplements, :list]), { :action => 'destroy', :id => diploma_supplement }, :confirm => t(:are_you_sure, :scope => [:view, :diploma_supplements, :list]), :method => :post %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

@@ -12,6 +12,8 @@
   <td class='right'>
     <%= link_to t(:show, :scope => [:view, :final_exam_terms, :_term_line]), :action => :show, :id => term_line %>
     <%= protocol_link term_line %>
+    <% if @user.has_role?('faculty_secretary') %>
     <%= pass_link 'final_exam_term', term_line.index %>
+    <% end %>
   </td>
 </tr>

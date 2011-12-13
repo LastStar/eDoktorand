@@ -2,7 +2,9 @@ module ExamsHelper
   # prints list links
   def list_links
     links = ''
-    links << link_to(t(:message_0, :scope => [:helper, :exams]), {:action => 'create'})
+    unless @user.has_role?('university_secretary')
+      links << link_to(t(:message_0, :scope => [:helper, :exams]), {:action => 'create'})
+    end
     links << '&nbsp;'
     if !@user.has_role?('department_secretary')
       if session[:this_year]

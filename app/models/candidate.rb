@@ -290,7 +290,7 @@ class Candidate < ActiveRecord::Base
 
   # prepares conditions for paginate functions
   def self.prepare_conditions(options, faculty, user)
-    if user.has_role?('vicerector')
+    if user.has_one_of_roles?(['vicerector', 'university_secretary'])
       conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
                     Specialization.find(:all)]
     else

@@ -277,7 +277,7 @@ class Index < ActiveRecord::Base
   def self.find_for(user, options ={})
     if user.has_role?('board_chairman') && options[:chairman]
       conditions = [SPECIALIZATION_COND.clone, user.person.specialization.id]
-    elsif user.has_one_of_roles?(['admin', 'vicerector','supervisor'])
+    elsif user.has_one_of_roles?(['admin', 'vicerector','supervisor', 'university_secretary'])
       if options[:only_tutor]
         conditions = [TUTOR_COND.clone, user.person.id]
       elsif options[:faculty] && options[:faculty] != '0'

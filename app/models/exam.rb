@@ -1,6 +1,6 @@
 require 'terms_calculator'
 class Exam < ActiveRecord::Base
-  
+
 
   belongs_to :index
   belongs_to :subject
@@ -24,28 +24,30 @@ class Exam < ActiveRecord::Base
 
   # returns all exams for user
   # got option :with_plan_subject if needed
-  # then you can add :this_year to filter only this year exams 
+  # then you can add :this_year to filter only this year exams
   def self.find_for(user, options = {})
-    if user.has_one_of_roles?(['tutor','examinator']) 
+    if user.has_one_of_roles?(['vicerector','university_secretary'])
+      sql = ['NULL IS NULL']
+    elsif user.has_one_of_roles?(['tutor','examinator'])
       sql = ['first_examinator_id = ?', user.person.id]
     else
       sub_ids = Subject.find_for(user).map {|s| s.id}
       sql = ["subject_id IN (?)", sub_ids]
     end
-    #NOTE we need all exams it seems 
+    #NOTE we need all exams it seems
     #TODO vvv remove if we know vvv
     # sql.first << ' and result = 1'
     if options[:this_year]
       sql.first << ' and passed_on > ?'
       sql << TermsCalculator.this_year_start
     end
-    find(:all, :conditions => sql, :include => [{:index => :student}, :subject], 
+    find(:all, :conditions => sql, :include => [{:index => :student}, :subject],
       :order => 'subjects.label')
     # remove exams that don't have plan subject
     # exams.delete_if {|e| !(e.plan_subject = PlanSubject.find_for_exam(e))}
   end
-  
-  def self.find_for_univerzity(user,options = {})
+
+  def self.find_for_univerzity(user, options = {})
     sub_ids = Subject.find_for(user).map {|s| s.id}
     sql = ["subject_id IN (?)", sub_ids]
     sql.first << ' and result = 1'
@@ -53,7 +55,7 @@ class Exam < ActiveRecord::Base
       sql.first << ' and passed_on > ?'
       sql << TermsCalculator.this_year_start
     end
-    find(:all, :conditions => sql, :include => [{:index => :student}, :subject], 
+    find(:all, :conditions => sql, :include => [{:index => :student}, :subject],
       :order => 'subjects.label')
   end
 

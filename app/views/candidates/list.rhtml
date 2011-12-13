@@ -38,9 +38,11 @@
                       "'>"  + switch_button(message) +"</span> ") %>
       </div>
   <% end %>
+  <% if @user.has_role?('faculty_secretary') %>
   <div id='candidates_delete' class='links' style="clear:right">
     <%= link_to(t(:message_21, :scope => [:view, :candidates, :list]), :action => 'destroy_all') %>
   </div>
+  <% end %>
 <% end %>
 
 <h1><%=  t(:message_22, :scope => [:view, :candidates, :list]) %> </h1>

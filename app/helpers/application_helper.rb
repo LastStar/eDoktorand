@@ -181,7 +181,7 @@ module ApplicationHelper
       if @user.has_role?('examinator')
         links << link_to(t(:message_16, :scope => [:helper, :application]), :controller => 'exams')
       else
-        if @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean', 'vicerector'])
+        if @user.has_one_of_roles?(['admin', 'faculty_secretary', 'dean', 'vicerector', 'university_secretary'])
           links << link_to(t(:message_66, :scope => [:helper, :application]), :controller => 'actualities')
           links << link_to(t(:message_17, :scope => [:helper, :application]), :controller => 'candidates', :category => 'lastname')
           links << link_to(t(:message_18, :scope => [:helper, :application]), :controller => 'exam_terms')
@@ -421,8 +421,10 @@ module ApplicationHelper
   end
 
   def prepare_scholarship_link
-    link_to_unless_current(t(:message_52, :scope => [:helper, :application]), :controller => 'scholarships',
-                          :action => 'index'){}
+    if !@user.has_role?('university_secretary')
+      link_to_unless_current(t(:message_52, :scope => [:helper, :application]), :controller => 'scholarships',
+                            :action => 'index'){}
+    end
   end
 
   def edit_link(object, name, meth = nil)

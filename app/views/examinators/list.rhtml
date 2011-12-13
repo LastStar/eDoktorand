@@ -1,19 +1,19 @@
-<h1><%= t(:message_0, :scope => [:view, :examinators, :list]) + "(#{@examinators.size})" %></h1>
+<h1><%= t(:list, :scope => [:view, :examinators, :list]) + "(#{@examinators.size})" %></h1>
 <table id='tutors_table' class="embossed">
   <tr>
-    <th class='no-rounded'> <%= t(:message_1, :scope => [:view, :examinators, :list])%></th>
-    <th class='no-rounded'> <%= t(:message_2, :scope => [:view, :examinators, :list])%></th>
+    <th class='no-rounded'> <%= t(:examinator, :scope => [:view, :examinators, :list])%></th>
+    <th class='no-rounded'> <%= t(:department, :scope => [:view, :examinators, :list])%></th>
   </tr>
   <% for examinator in @examinators %>
     <tr  class='line' id='examinator_<%= examinator.id %>'>
       <td><%= examinator.display_name %></td>
       <td>
-        <% if examinator.department_employment %>
+        <% if examinator.department_employment && !@user.has_role?('university_secretary') %>
           <%= edit_link(examinator)%>
         <% end %>
-      <% if examinator.department_employment && examinator.department_employment.department%>
-        <%= examinator.department_employment.department.name %></td>
-      <% end %>
+        <% if examinator.department_employment && examinator.department_employment.department %>
+          <%= examinator.department_employment.department.name %></td>
+        <% end %>
     </tr>
   <% end %>
 </table>

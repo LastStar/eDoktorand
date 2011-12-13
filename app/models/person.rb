@@ -42,7 +42,7 @@ class Person < ActiveRecord::Base
   end
 
   def self.find_for(user)
-    if user.has_role? 'vicerector'
+    if user.has_one_of_roles?(['vicerector', 'university_secretary'])
       find(:all, :order => 'lastname', :include => [:title_before, :title_after])
     elsif user.has_one_of_roles? ['faculty_secretary', 'dean']
       find_for_faculty(user.person.faculty)

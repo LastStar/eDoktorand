@@ -31,7 +31,7 @@ class AccountController < ApplicationController
         redirect_to :controller => 'study_plans', :action => 'intellectual_property'
       end
     elsif @user.has_one_of_roles?(['tutor', 'dean',
-      'department_secretary', 'faculty_secretary'])
+      'department_secretary', 'faculty_secretary', 'university_secretary'])
       redirect_to  students_url
     elsif @user.has_role?('supervisor')
       redirect_to :controller => 'scholarships', :action => 'list'
