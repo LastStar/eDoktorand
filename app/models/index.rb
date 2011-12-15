@@ -171,14 +171,7 @@ class Index < ActiveRecord::Base
     if @semester
       return @semester
     else
-      if finished?
-        end_date = finished_on.to_time
-      elsif absolved?
-        end_date = disert_theme.defense_passed_on.to_time
-      else
-        end_date = Time.now
-      end
-      time = end_date - enrolled_on.to_time
+      time = time_from_enrollment
       if self.interrupt
         time -= interrupted_time
       end
@@ -186,6 +179,45 @@ class Index < ActiveRecord::Base
       @semester = 1 if @semester == 0
       return @semester
     end
+  end
+
+  def time_from_enrollment
+    if finished?
+      end_date = finished_on.to_time
+    elsif absolved?
+      end_date = disert_theme.defense_passed_on.to_time
+    else
+      end_date = Time.now
+    end
+    end_date - enrolled_on.to_time
+  end
+
+  def nominal_length
+    years = (time_from_enrollment/1.year).to_i
+    months = ((time_from_enrollment%1.year)/1.month).to_i
+    logger.debug years, months
+    case years
+    when 0
+      years = ''
+    when 1
+      years = "1 rok"
+    when 2..4
+      years = "%i roky" % years
+    else
+      years = "%i let" % years
+    end
+    case months
+    when 0
+      months = ''
+    when 1
+      months = "1 měsíc"
+    when 2..4
+      months = "%i měsíce" % months
+    else
+      months = "%i měsíců" % months
+    end
+
+    "%s a %s" % [years, months]
   end
 
   # returns year of the study

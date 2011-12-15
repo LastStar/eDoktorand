@@ -838,10 +838,12 @@ cs:
         message_0: semestr
         message_1: prospěl
       _personal_detail:
+        year: Ročník
+        semester: Semestr
+        nominal_length: Nominální délka studia
         message_0: Obor
         message_1: Katedra
         message_2: Forma studia
-        message_3: Ročník
         message_4: Začátek studia
         message_5: Občanství
         message_6: Rodné příjmení
@@ -856,7 +858,6 @@ cs:
         message_15: Konzultant
         message_16: Konto
         message_17: Osobní údaje
-        semester: Semestr
       _final_exam:
         semester: semestr
         message_1: Státní doktorská zkouška

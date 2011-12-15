@@ -48,10 +48,13 @@
     <%= "#{long_info_helper(index.semester.to_s.concat('.'))}#{t(:semester, :scope => [:view, :shared, :_personal_detail])}: " %>
   </li>
   <li>
-    <%= "#{long_info_helper(index.year.to_s.concat('.'))}#{t(:message_3, :scope => [:view, :shared, :_personal_detail])}: " %>
+    <%= "#{long_info_helper(index.year.to_s.concat('.'))}#{t(:year, :scope => [:view, :shared, :_personal_detail])}: " %>
   </li>
   <li>
     <%= "#{long_info_helper(index.enrolled_on.strftime('%d. %m. %Y'))}#{t(:message_4, :scope => [:view, :shared, :_personal_detail])}: " %>
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.nominal_length)}#{t(:nominal_length, :scope => [:view, :shared, :_personal_detail])}: " %>
   </li>
   <li class='nonprintable'>
     <%= attribute_line(index.student, :account) %><%=t(:message_16, :scope => [:view, :shared, :_personal_detail]) %>:
