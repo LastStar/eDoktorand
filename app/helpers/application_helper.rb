@@ -634,11 +634,18 @@ module ApplicationHelper
     end
   end
 
+  def has_self_report?(disert_theme)
+    File.exists?("#{RAILS_ROOT}/public/" + self_report_path % disert_theme.id)
+  end
+
   def self_report_link(disert_theme)
-    path = "/pdf/self_report/%i.pdf" % disert_theme.id
-    if File.exists?("#{RAILS_ROOT}/public/" + path)
-      link_to t(:message_63, :scope => [:helper, :application]), path, :popup => true
+    if has_self_report?(disert_theme)
+      link_to t(:message_63, :scope => [:helper, :application]), self_report_path % disert_theme.id, :popup => true
     end
+  end
+
+  def self_report_path
+    @self_report_path ||= "/pdf/self_report/%i.pdf"
   end
 
   def disert_theme_link(disert_theme)

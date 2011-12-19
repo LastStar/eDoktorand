@@ -44,12 +44,7 @@
 </tr>
 <tr>
   <th><%= t(:message_10, :scope => [:view, :defenses, :announcement]) %>: </th>
-  <td>
-    <% if @defense.chairman_name.blank? %>
-      <%= @defense.chairman.display_name %></td>
-    <% else %>
-      <%= @defense.chairman_name %></td>
-    <% end %>
+  <td><%= @defense.chairman_display_name %></td>
 </tr>
 <tr>
   <th><%= t(:message_11, :scope => [:view, :defenses, :announcement]) %>:</th>
@@ -97,6 +92,16 @@
 <tr>
   <th></th>
   <td><%= @defense.sixth_examinator %> </td>
+</tr>
+<% end %>
+<tr>
+  <th><%= t(:files, :scope => [:view, :defenses, :_detail]) %>: </th>
+  <td><%= disert_theme_link(@defense.index.disert_theme) %></td>
+</tr>
+<% if has_self_report?(@defense.index.disert_theme) %>
+<tr>
+  <th></th>
+  <td><%= self_report_link(@defense.index.disert_theme) %></td>
 </tr>
 <% end %>
 </table>

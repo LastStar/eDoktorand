@@ -1,36 +1,36 @@
 <table class='two-columns'>
 <tr>
-  <th><%= t(:message_0, :scope => [:view, :defenses, :_detail]) %>: </th>
+  <th><%= t(:date_and_time, :scope => [:view, :defenses, :_detail]) %>: </th>
   <td><%= @defense.date_time %></td>
 </tr>
 <tr>
-  <th><%= t(:message_1, :scope => [:view, :defenses, :_detail]) %>: </th>
+  <th><%= t(:room, :scope => [:view, :defenses, :_detail]) %>: </th>
   <td><%= @defense.room %></td>
 </tr>
 <tr>
-  <th><%= t(:message_2, :scope => [:view, :defenses, :_detail]) %>: </th>
+  <th><%= t(:chairman, :scope => [:view, :defenses, :_detail]) %>: </th>
   <td><%= @defense.chairman_display_name %></td>
 </tr>
 <% unless @defense.opponent.empty? %>
 <tr>
-  <th><%= t(:message_3, :scope => [:view, :defenses, :_detail]) %>:</th>
+  <th><%= t(:opponent, :scope => [:view, :defenses, :_detail]) %>:</th>
   <td><%= @defense.opponent %> </td>
 </tr>
 <% end %>
 <% unless @defense.second_opponent.empty? %>
 <tr>
-  <th><%= t(:message_4, :scope => [:view, :defenses, :_detail]) %>:</th>
+  <th><%= t(:second_opponent, :scope => [:view, :defenses, :_detail]) %>:</th>
   <td><%= @defense.second_opponent %> </td>
 </tr>
 <% end %>
 <% unless @defense.third_opponent.empty? %>
 <tr>
-  <th><%= t(:message_5, :scope => [:view, :defenses, :_detail]) %>:</th>
+  <th><%= t(:third_opponent, :scope => [:view, :defenses, :_detail]) %>:</th>
   <td><%= @defense.third_opponent %> </td>
 </tr>
 <% end %>
 <tr>
-  <th><%= t(:message_6, :scope => [:view, :defenses, :_detail]) %>: </th>
+  <th><%= t(:members, :scope => [:view, :defenses, :_detail]) %>: </th>
   <td><%= @defense.first_examinator %></td>
 </tr>
 <tr>

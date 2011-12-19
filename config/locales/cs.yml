@@ -1139,13 +1139,14 @@ cs:
         message_7: Název disertační práce
         message_17: Kladných
       _detail:
-        message_0: Datum a čas
-        message_1: Místnost
-        message_2: Předseda komise
-        message_3: Oponent
-        message_4: Druhý oponent
-        message_5: Třetí oponent
-        message_6: Členové komise
+        members: Členové komise
+        files: Soubory s pracemi
+        date_and_time: Datum a čas
+        room: Místnost
+        chairman: Předseda komise
+        opponent: Oponent
+        second_opponent: Druhý oponent
+        third_opponent: Třetí oponent
       claim:
         agreement_of_conformity: prohlašuji, že elektronická verze práce je shodná s odevzdanou prací
         red_is_required: všechny červené položky jsou povinné
@@ -1956,4 +1957,6 @@ cs:
     final_exam_terms:
       term: Termín SDZ
       passing: Záznam o SDZ
+    defense:
+      missing_chairman: Předseda komise je povinný
 
