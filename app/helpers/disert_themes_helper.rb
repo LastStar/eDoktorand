@@ -1,6 +1,7 @@
 module DisertThemesHelper
   
   require "builder"
+  require 'tempfile'
   
   DISERT_TYPE = "Disertační práce"
   DEGREE_NAME = "Ph.D."
@@ -14,7 +15,8 @@ module DisertThemesHelper
   
   # prepares XML schema to send to Theses portal
   def prepare_theses_xml(disert_theme)
-    xml = Builder::XmlMarkup.new(:indent => 2)
+    xml_ret = ""
+    xml = Builder::XmlMarkup.new(:target => xml_ret, :indent => 2)
     xml.instruct!
     xml.tag!("pts:metadata", "version"=>"1.0", "xmlns:pts".to_sym => "http://theses.cz/pts/elements/1.0/", 
           "xmlns:dc".to_sym => "http://purl.org/dc/elements/1.1/", "xmlns:dcterms".to_sym => "http://purl.org/dc/terms/",
@@ -22,7 +24,7 @@ module DisertThemesHelper
           "xsi:schemaLocation".to_sym => "http://theses.cz/pts/elements/1.0/ http://theses.cz/pts/elements/1.0/schemaTheses.xsd") {
             xml.tag!("pts:thesis") {
               xml.tag!("pts:sender.id"){xml.text! "S4111"} #faculty id
-              xml.tag!("pts:theses.id"){xml.text! disert_theme.id.to_s} #disert_theme.id
+              xml.tag!("pts:thesis.id"){xml.text! "dsp_" + disert_theme.id.to_s} #disert_theme.id
               xml.tag!("dc:title", "xml:lang".to_sym => "cze"){xml.text! disert_theme.title.strip} #disert_theme.title
               xml.tag!("pts:title.translated", "xml:lang".to_sym => "eng"){xml.text! disert_theme.title_en.strip} if disert_theme.title_en != nil  #disert_theme.title_en
               xml.tag!("dcterms:dateSubmitted"){xml.text! disert_theme.index.defense_claimed_at.iso8601} if disert_theme.index.defense_claimed_at != nil #submition date in ISO 8601 
@@ -54,7 +56,20 @@ module DisertThemesHelper
               }  if FileTest.exists?("http://edoktorand.czu.cz/public/pdf/disert_theme/#{disert_theme.id}.pdf") # get file
             }
           }
-    return xml      
+    return xml_ret      
+  end
+  
+  def pokus(xml_to_send)
+    #tempfile gen
+    tf = Tempfile.new("export");
+    tf.write(xml_to_send)
+    tf.rewind
+    
+    result = `curl --insecure -X POST -H 'Content-type: multipart/form-data' -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} -F "soubor=@#{tf.path}" https://theses.cz/auth/th_sprava/neosobni_import_dat.pl`
+    
+    puts result
+    
+    tf.close!
   end
   
   def send_theses_xml(xml_to_send)
