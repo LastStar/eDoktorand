@@ -20,12 +20,5 @@
   <div class='long_info'><%= "#{disert_theme.finishing_to}. #{t(:message_2, :scope => [:view, :shared, :_disert_theme])}" %></div>
   <b><%= "#{t(:message_3, :scope => [:view, :shared, :_disert_theme])}" %></b>
   </li>
-  <li>
-	<div class="long_info">
-		<%= link_to(t(:message_2, :scope => [:view, :shared, :_methodology]), {:controller => "disert_themes", :action =>
-		  "upload_theses", :id => disert_theme.id,}, {:style => "text-decoration: underline;", :target => "_blank"}) %>
-	</div>
-	<b>odeslani theses</b>
-  </li>
     <%= render(:partial => 'shared/methodology', :locals => {:disert_theme => disert_theme}) %>
 </ul>
