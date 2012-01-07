@@ -2,6 +2,8 @@ module DisertThemesHelper
   
   require "builder"
   require 'tempfile'
+  require 'nokogiri'
+  require 'open-uri'
   
   DISERT_TYPE = "Disertační práce"
   DEGREE_NAME = "Ph.D."
@@ -59,7 +61,8 @@ module DisertThemesHelper
     return xml_ret      
   end
   
-  def pokus(xml_to_send)
+  #esnds generated XML to theses.cz portal
+  def send_theses_xml(xml_to_send)
     #tempfile gen
     tf = Tempfile.new("export");
     tf.write(xml_to_send)
@@ -67,25 +70,82 @@ module DisertThemesHelper
     
     result = `curl --insecure -X POST -H 'Content-type: multipart/form-data' -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} -F "soubor=@#{tf.path}" https://theses.cz/auth/th_sprava/neosobni_import_dat.pl`
     
-    puts result
+    res = Nokogiri::XML(result)
+    
+    res.xpath('//commited').first do |comNode|
+      #update disert_theme model - save theses_sent ? OK
+      #TODO implement theses result saving :)
+      puts comNode.text
+    end
     
     tf.close!
   end
   
-  def send_theses_xml(xml_to_send)
-    c = Curl::Easy.new(THESIS_SEND_SERVER)
-    c.http_auth_types = Curl::CURLAUTH_BASIC
-    c.username = THESIS_USERNAME
-    c.password = THESIS_PASSWORD
-    c.ssl_version = Curl::CURL_SSLVERSION_SSLv3
-    c.multipart_form_post = true
-
-    post_field = Curl::PostField.content('export', xml_to_send)
-    post_field.remote_file = 'export.xml'
-    post_field.content_type = 'application/xml'
-    c.http_post(post_field)
+  #parses theses result obtained from theses.cz after 24 hrs
+  def parse_theses_result(theses_result)
     
-    puts c.body_str
+    if theses_result.length > 0 
+    
+      result = Nokogiri::XML(theses_result)
+      result.remove_namespaces!
+        
+      result.xpath('//similarDocuments/plagiat').each do |plagiat|
+      
+        puts "plagiat = " + plagiat
+      
+        fileName = plagiat.xpath('filename').first
+        puts "filename = " + fileName.text
+      
+        similar = plagiat.xpath('similarities[@type = "pdf"]').each do |similar|
+          puts "similarity = " + similar.text if similar
+        end
+      
+        score = plagiat.xpath('score').first
+        puts "with Score: " + score.text
+      end
+    end
+    
   end
   
+  # method takes four arguments: disertTheme, name of theses file to download, the number of the file used for name generation,
+  # and the last argument is path where we should download the file..
+  def download_theses_file(disert_theme, theses_file, numFile, destination_dir)
+    # should be theses.cz
+    domain = theses_file.split('/')[2]
+    
+    # the rest after theses.cz/........ (file to download)
+    rest = ""
+    i = 0
+    theses_file.split('/').each do |part|
+      if i > 2 
+        if i > 3
+          rest = rest + '/' 
+        end
+        rest = rest + part
+      end
+      i = i + 1
+    end
+    
+    # create the file path
+    fileName = 'dsp_' + disert_theme.id.to_s + '_similar_' + numFile.to_s + '.pdf'
+    path = File.join(destination_dir, fileName)
+    
+    # and download it..
+    http = Net::HTTP.new(domain, 443)
+    http.use_ssl = true
+    http.start() { |http|
+         req = Net::HTTP::Get.new('/' + rest)
+         req.basic_auth THESIS_USERNAME, THESIS_PASSWORD
+         response = http.request(req)
+         
+         File.open(path, "w+") do |f|
+           f.write response.body
+           puts "File = " + f.path
+         end
+         
+         #attachment = Attachment.new(:uploaded_data => LocalFile.new(tempfile.path))
+         #attachement.save
+      }
+  end
+    
 end
