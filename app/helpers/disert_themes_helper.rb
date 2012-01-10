@@ -17,6 +17,10 @@ module DisertThemesHelper
   
   # prepares XML schema to send to Theses portal
   def prepare_theses_xml(disert_theme)
+    
+    #TODO faculty sender.id impl
+    #senderId = disert_theme.index.faculty.thesis_id
+    
     xml_ret = ""
     xml = Builder::XmlMarkup.new(:target => xml_ret, :indent => 2)
     xml.instruct!
@@ -25,6 +29,7 @@ module DisertThemesHelper
           "xmlns:dcmitype".to_sym => "http://purl.org/dc/dcmitype/", "xmlns:xsi".to_sym => "http://www.w3.org/2001/XMLSchema-instance",
           "xsi:schemaLocation".to_sym => "http://theses.cz/pts/elements/1.0/ http://theses.cz/pts/elements/1.0/schemaTheses.xsd") {
             xml.tag!("pts:thesis") {
+              # TODO replace with #{senderId}
               xml.tag!("pts:sender.id"){xml.text! "S4111"} #faculty id
               xml.tag!("pts:thesis.id"){xml.text! "dsp_" + disert_theme.id.to_s} #disert_theme.id
               xml.tag!("dc:title", "xml:lang".to_sym => "cze"){xml.text! disert_theme.title.strip} #disert_theme.title
@@ -80,6 +85,46 @@ module DisertThemesHelper
     
     tf.close!
   end
+  
+  def check_theses_result(disert_theme)
+    
+    #TODO faculty sender.id impl
+    #senderId = disert_theme.index.faculty.thesis_id
+    
+    #TODO replace sender.id with #{senderId}
+    result = `curl -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=S4111;pts:thesis.id=dsp_#{disert_theme.id.to_s}}"`
+    
+    res = Nokogiri::XML(result)
+    res.remove_namespaces!
+    
+    status = -1
+    res.xpath('//info').each do |statusNode|
+      status = statusNode['status']
+    end
+    
+    #1. - Dokument není v metadatech - neznámé url. Je nutné provést nový import.
+    #2. - Dokument je připraven ke stažení (stahování by mělo proběhnout v noci).
+    #3. - Dokument je zaveden v systému, ale nemá vytvořenou textovou verzi (může se zobrazit i důvod, proč bylo vytvoření neúspěšné nebo upozornění, že soubor není v textovém formátu ale např. ve formátu .eps apod.).
+    #4. - Dokument není zkontrolovaný systémem na odhalování plagiátů - po vytvoření textové verze chvíli trvá, než dojde k nalezení podobností (prvek plg:info se zde nachází v prvku plg:record).
+    #5. - K souboru nebyly nalezeny žádné podobnosti (prvek plg:info se zde nachází v prvku plg:record).
+    #6. - K souboru byly nalezeny podobnosti, informace najdete ve vnořených prvcích plg:plagiat.
+    #7. - Dokument zkontrolován u předchozí verze, podobnosti se teď přepočítávají.
+    #8. - Dokument nezkontrolován, je přiliš malý.
+    
+    case status
+      when 5:
+        #TODO implement no similarities
+        puts "No similarities"
+      when 6:
+        #TODO similarities found
+        puts "There are similarities"
+      else
+        #TODO implement default action
+    end
+    
+    # TODO implement status save, and result save
+    
+  end 
   
   #parses theses result obtained from theses.cz after 24 hrs
   def parse_theses_result(theses_result)
@@ -142,9 +187,6 @@ module DisertThemesHelper
            f.write response.body
            puts "File = " + f.path
          end
-         
-         #attachment = Attachment.new(:uploaded_data => LocalFile.new(tempfile.path))
-         #attachement.save
       }
   end
     
