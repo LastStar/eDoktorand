@@ -24,7 +24,7 @@
 	      <%= t(:message_7, :scope => [:view, :specializations, :list])%>
 	 <%end%></td>
     <td><%= link_to t(:message_8, :scope => [:view, :specializations, :list]), :action => :attestation, :id => specialization.id %></td>
-    <% if !@user.has_role?('faculty_secretary') %>
+    <% if @user.has_role?('faculty_secretary') %>
     <td><%= link_to t(:message_9, :scope => [:view, :specializations, :list]), :action => :subjects, :id => specialization %></td>
     <% end %>
   </tr>
