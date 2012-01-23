@@ -793,8 +793,12 @@ class CSVExporter
       @@mylog.info("There is %i students" % indices.size)
       File.open("students.csv", 'wb') do |outfile|
         CSV::Writer.generate(outfile, ';') do |csv|
+          csv << ['uic', 'name', 'enrolled', 'finished/absolved', 'form', 'status',
+            'department', 'specialization', 'program', 'faculty', 'tutor',
+            'title', 'title_en']
           indices.each do |index|
             row = []
+            row << index.student.uic
             row << index.student.display_name
             row << index.enrolled_on.strftime('%d. %m. %Y')
             if index.finished?
@@ -808,7 +812,47 @@ class CSVExporter
             row << index.status
             row << index.department.name
             row << index.specialization.name
+            row << index.program.name
+            row << index.faculty.name
             row << index.tutor.try(:display_name)
+            row << index.disert_them.try(:title)
+            row << index.disert_them.try(:title_en)
+            csv << row
+          end
+        end
+      end
+    end
+
+    # exports all students for vice dean
+    def students_for_dean(dean_user)
+      indices = Index.find_for(dean_user)
+      @@mylog.info("There is %i students" % indices.size)
+      File.open("students.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          csv << ['uic', 'name', 'enrolled', 'finished/absolved', 'form', 'status',
+            'department', 'specialization', 'program', 'faculty', 'tutor',
+            'title', 'title_en']
+          indices.each do |index|
+            row = []
+            row << index.student.uic
+            row << index.student.display_name
+            row << index.enrolled_on.strftime('%d. %m. %Y')
+            if index.finished?
+              row << index.finished_on.strftime('%d. %m. %Y')
+            elsif index.absolved?
+              row << index.disert_theme.defense_passed_on.strftime('%d. %m. %Y')
+            else
+              row << ''
+            end
+            row << index.study.name
+            row << index.status
+            row << index.department.name
+            row << index.specialization.name
+            row << index.program.name
+            row << index.faculty.name
+            row << index.tutor.try(:display_name)
+            row << index.disert_them.try(:title)
+            row << index.disert_them.try(:title_en)
             csv << row
           end
         end
@@ -951,13 +995,14 @@ class CSVExporter
       end
     end
 
-    def students_for_jitka(dean_user)
-      indices = Index.find_for(dean_user)
+    def students_for_jitka(indices)
+      Dean.columns
       @@mylog.info("There are %i students" % indices.size)
       File.open("students.csv", 'wb') do |outfile|
         CSV::Writer.generate(outfile, ';') do |csv|
-          csv << ['jmeno', 'stav', 'absolvoval', 'sdz', 'rok', 'forma', 'katedra', 'obor', 'prijat', 'stav SP']
+          csv << ['jmeno', 'stav', 'absolvoval', 'sdz', 'rok', 'forma', 'katedra', 'fakulta','obor', 'program', 'prijat', 'stav SP', 'nazev DP', 'nazev DP en', 'skolitel']
           indices.each do |index|
+            next unless index.student
             row = []
             row << index.student.display_name
             row << index.status
@@ -973,11 +1018,14 @@ class CSVExporter
             end
             row << index.year
             row << index.study_name
-            row << index.department.short_name
+            row << index.department.name
+            row << index.faculty.name
             row << index.specialization.code
+            row << index.specialization.program.code
             row << index.enrolled_on.strftime('%d/%m/%Y')
             row << index.study_plan.try(:status)
             row << index.disert_theme.try(:title)
+            row << index.disert_theme.try(:title_en)
             row << index.tutor.try(:display_name)
             @@mylog.info(row)
             csv << row
