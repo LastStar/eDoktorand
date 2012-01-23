@@ -69,7 +69,7 @@ class UicGetter
 
   # get uic for foreign student
   def get_foreign_uic(birth_number)
-      @@logger.debug "Trying service for with bn #{birth_number}"
+      @@logger.debug "Trying service for foreign student with bn #{birth_number}"
       begin
         service_response = query_service(SERVICES[:foreign_uic] % birth_number)
       rescue Exception => e
