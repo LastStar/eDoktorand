@@ -55,7 +55,6 @@ class ScholarshipCalculator
         ps.delete_if {|s| s.subject_id == 9003}
         amount = 100
       end
-      logger.debug index.id
       amount += AMOUNTS[index.faculty.id][ps.size]
     else
       amount = AMOUNTS[index.faculty.id][0]
