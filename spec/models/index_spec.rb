@@ -193,14 +193,18 @@ describe Index do
       @student = Factory(:student)
       @index = Factory(:index, :student => @student)
     end
-    it "should prepare ImIndex" do
+    it "prepares ImIndex" do
+      @index.prepare_im_index
       @index.im_index.should_not be_nil
     end
     it "should copy attributes to ImIndex" do
+      @index.prepare_im_index
       @index.im_index.study_spec.should == @index.specialization.name
     end
     it "should copy attributes when updates" do
+      @index.prepare_im_index
       @index.update_attribute(:payment_id, 2)
+      @index.update_im_index
       @index.im_index.financing_type_code.should == 7
     end
   end

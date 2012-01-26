@@ -118,3 +118,10 @@ Factory.define :language_subject do |language_subject|
   language_subject.association :specialization
   language_subject.association :subject
 end
+
+Factory.define :disert_theme do |disert_theme|
+  disert_theme.association :index
+  disert_theme.title "Hnojit nebo nehnojit"
+  disert_theme.title_en "To shit or not to shit"
+  disert_theme.finishing_to 6
+end

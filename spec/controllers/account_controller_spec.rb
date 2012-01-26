@@ -43,6 +43,7 @@ describe AccountController do
     end
 
     it "should redirect to study plans for student role" do
+      pending 'For intellectual property'
       mocked_user.should_receive(:has_role?).with('student').and_return(true)
       get :welcome
       response.should be_redirect
@@ -51,7 +52,7 @@ describe AccountController do
 
     it "should redirect to students for dean, tutor, department and facutly secretary role" do
       mocked_user.should_receive(:has_role?).with('student').and_return(false)
-      mocked_user.should_receive(:has_one_of_roles?).with(['tutor', 'dean', 'department_secretary', 'faculty_secretary']).and_return(true)
+      mocked_user.should_receive(:has_one_of_roles?).with(['tutor', 'dean', 'department_secretary', 'faculty_secretary', 'university_secretary']).and_return(true)
       get :welcome
       response.should be_redirect
       response.should redirect_to(:controller => 'students')
@@ -59,7 +60,7 @@ describe AccountController do
 
     it "should redirect to scholarships for supervisor role" do
       mocked_user.should_receive(:has_role?).with('student').and_return(false)
-      mocked_user.should_receive(:has_one_of_roles?).with(['tutor', 'dean', 'department_secretary', 'faculty_secretary']).and_return(false)
+      mocked_user.should_receive(:has_one_of_roles?).with(['tutor', 'dean', 'department_secretary', 'faculty_secretary', 'university_secretary']).and_return(false)
       mocked_user.should_receive(:has_role?).with('supervisor').and_return(true)
       get :welcome
       response.should be_redirect
@@ -68,7 +69,7 @@ describe AccountController do
 
     it "should redirect to exams for examinator role" do
       mocked_user.should_receive(:has_role?).with('student').and_return(false)
-      mocked_user.should_receive(:has_one_of_roles?).with(['tutor', 'dean', 'department_secretary', 'faculty_secretary']).and_return(false)
+      mocked_user.should_receive(:has_one_of_roles?).with(['tutor', 'dean', 'department_secretary', 'faculty_secretary', 'university_secretary']).and_return(false)
       mocked_user.should_receive(:has_role?).with('supervisor').and_return(false)
       mocked_user.should_receive(:has_role?).with('examinator').and_return(true)
       get :welcome

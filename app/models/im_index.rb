@@ -12,7 +12,7 @@ class ImIndex < ActiveRecord::Base
     self.faculty_name = index.faculty.name
     self.faculty_code = index.faculty.short_name
     self.study_year = index.year
-    self.academic_year = TermsCalculator.current_school_year
+    self.academic_year = TermsCalculator.idm_current_year
     self.study_type = I18n.t(:doctorate, :scope => [:model, :im_index])
     self.study_type_code = 'D'
     self.study_form = index.study.name
