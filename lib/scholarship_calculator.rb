@@ -2,7 +2,8 @@ class ScholarshipCalculator
   AMOUNTS = {
     1 => {0 => 6500, 1 => 6900, 2 => 7200, 3 => 7500, 4 => 7800,
           5 => 8100, 6 => 8400, 7 => 8700, 8 => 9000, 9 => 9300,
-          10 => 9300, 11 => 9300, 'final_exam' => 9800},
+          10 => 9300, 11 => 9300, 12 => 9300, 13 => 9300,
+          'final_exam' => 9800},
     3 => {0 => 4600, 1 => 4900, 2 => 5200, 3 => 5500, 4 => 5800,
           5 => 6100, 6 => 6400, 7 => 6700, 8 => 6700, 9 => 6700,
           10 => 6700, 'final_exam' => 8000},
@@ -54,6 +55,7 @@ class ScholarshipCalculator
         ps.delete_if {|s| s.subject_id == 9003}
         amount = 100
       end
+      logger.debug index.id
       amount += AMOUNTS[index.faculty.id][ps.size]
     else
       amount = AMOUNTS[index.faculty.id][0]
