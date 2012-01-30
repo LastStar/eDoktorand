@@ -66,7 +66,7 @@ module DisertThemesHelper
     return xml_ret      
   end
   
-  #esnds generated XML to theses.cz portal
+  #sends generated XML to theses.cz portal
   def send_theses_xml(xml_to_send)
     #tempfile gen
     tf = Tempfile.new("export");
@@ -114,9 +114,15 @@ module DisertThemesHelper
     case status
       when 5:
         #TODO implement no similarities
+        disert_theme.update_attribute('theses_result', result)
+        disert_theme.update_attribute('status', status)
         puts "No similarities"
       when 6:
         #TODO similarities found
+        disert_theme.update_attribute('theses_result', result)
+        disert_theme.update_attribute('status', status)
+        #parse theses result and create theses_result records
+        parse_theses_result(result, disert_theme)
         puts "There are similarities"
       else
         #TODO implement default action
@@ -126,27 +132,40 @@ module DisertThemesHelper
     
   end 
   
-  #parses theses result obtained from theses.cz after 24 hrs
-  def parse_theses_result(theses_result)
+  #parses theses result obtained from theses.cz after 48 hrs
+  def parse_theses_result(theses_result, disert_theme)
     
     if theses_result.length > 0 
     
       result = Nokogiri::XML(theses_result)
       result.remove_namespaces!
-        
+      
+      #iterates over each plagiat node in document  
       result.xpath('//similarDocuments/plagiat').each do |plagiat|
-      
-        puts "plagiat = " + plagiat
-      
+        #parse file name of similarity
         fileName = plagiat.xpath('filename').first
-        puts "filename = " + fileName.text
-      
-        similar = plagiat.xpath('similarities[@type = "pdf"]').each do |similar|
-          puts "similarity = " + similar.text if similar
+        
+        #parse similarity of type pdf => link to desired pdf report
+        similar = ""
+        plagiat.xpath('similarities[@type = "pdf"]').each do |similar|
+          similar = similar.text if similar
         end
       
+        #parse similarity score
         score = plagiat.xpath('score').first
-        puts "with Score: " + score.text
+        
+        #create ThesesResult record
+        tr = ThesesResult.new
+        tr.disert_theme_id = disert_theme.id #disert_theme
+        tr.theses_filename = filename
+        tr.theses_pdf = similar
+        tr.theses_score = score
+        tr.save
+        
+        #clean variables
+        filename = ""
+        similar = ""
+        score = 0
       end
     end
     
