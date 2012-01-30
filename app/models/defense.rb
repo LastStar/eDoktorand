@@ -38,7 +38,7 @@ class Defense < ExamTerm
   end
 
   def chairman_display_name
-    return chairman_name if chairman_name
+    return chairman_name if chairman_name.present?
     return chairman.display_name
   end
 end
