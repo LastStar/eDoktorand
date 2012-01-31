@@ -92,7 +92,7 @@ module DisertThemesHelper
     #senderId = disert_theme.index.faculty.thesis_id
     
     #TODO replace sender.id with #{senderId}
-    result = `curl -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=S4111;pts:thesis.id=dsp_#{disert_theme.id.to_s}}"`
+    result = `curl -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=S4111;pts:thesis.id=dsp_#{disert_theme.id.to_s}"`
     
     res = Nokogiri::XML(result)
     res.remove_namespaces!
@@ -110,20 +110,21 @@ module DisertThemesHelper
     #6. - K souboru byly nalezeny podobnosti, informace najdete ve vnořených prvcích plg:plagiat.
     #7. - Dokument zkontrolován u předchozí verze, podobnosti se teď přepočítávají.
     #8. - Dokument nezkontrolován, je přiliš malý.
-    
-    case status
-      when 5:
+        
+    case Integer(status.to_s)
+      when 5 then
         #TODO implement no similarities
-        disert_theme.update_attribute('theses_result', result)
-        disert_theme.update_attribute('status', status)
-        puts "No similarities"
-      when 6:
+        disert_theme.update_attribute('theses_response', result)
+        disert_theme.update_attribute('theses_response_at', Time.now)
+        disert_theme.update_attribute('teses_status', status)
+      when 6 then
         #TODO similarities found
-        disert_theme.update_attribute('theses_result', result)
-        disert_theme.update_attribute('status', status)
+        disert_theme.update_attribute('theses_response', result)
+        disert_theme.update_attribute('theses_response_at', Time.now)
+        disert_theme.update_attribute('theses_status', status)
+        
         #parse theses result and create theses_result records
         parse_theses_result(result, disert_theme)
-        puts "There are similarities"
       else
         #TODO implement default action
     end
@@ -157,7 +158,7 @@ module DisertThemesHelper
         #create ThesesResult record
         tr = ThesesResult.new
         tr.disert_theme_id = disert_theme.id #disert_theme
-        tr.theses_filename = filename
+        tr.theses_filename = fileName.text
         tr.theses_pdf = similar
         tr.theses_score = score
         tr.save
