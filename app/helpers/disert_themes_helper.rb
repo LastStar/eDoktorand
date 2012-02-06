@@ -89,10 +89,10 @@ module DisertThemesHelper
   def check_theses_result(disert_theme)
     
     #TODO faculty sender.id impl
-    #senderId = disert_theme.index.faculty.thesis_id
+    senderId = disert_theme.index.faculty.theses_id
     
     #TODO replace sender.id with #{senderId}
-    result = `curl -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=S4111;pts:thesis.id=dsp_#{disert_theme.id.to_s}"`
+    result = `curl -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=#{senderId};pts:thesis.id=dsp_#{disert_theme.id.to_s}"`
     
     res = Nokogiri::XML(result)
     res.remove_namespaces!
@@ -208,6 +208,13 @@ module DisertThemesHelper
            puts "File = " + f.path
          end
       }
+  end
+  
+  # periodically checks for disert_themes in DB and after the 48hrs interval of request, checks for results..
+  def periodic_theses_check()
+    disert_themes_to_check = DisertTheme.ready_for_theses_check(2).each do |disert_theme|
+      check_theses_result(disert_theme)
+    end
   end
     
 end
