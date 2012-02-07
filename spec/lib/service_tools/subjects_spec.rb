@@ -4,11 +4,11 @@ describe ServiceTools::Subjects do
   context "with correct data" do
     before(:each) do
       @subject = Subject.create(:label => 'Bad one', :code => 'DAAA01Y')
-      @department = Factory(:department, :short_name => 'KET')
+      @department = Factory(:department, :short_name => 'KET', :code => '20201')
       ServiceTools::Subjects.repair_all([{:code => 'DAAA01Y',
           :label => 'Aplikovana meteorologie a klimatologie',
-          :label_en => 'Applied Meteorology and Climatology',
-          :department_short_name => 'KET'}])
+          :labelEn => 'Applied Meteorology and Climatology',
+          :department => '20201'}])
       @subject.reload
     end
     it "repairs label" do
@@ -25,8 +25,8 @@ describe ServiceTools::Subjects do
     before(:each) do
       ServiceTools::Subjects.repair_all([{:code => 'DAAA01Y',
           :label => 'Aplikovana meteorologie a klimatologie',
-          :label_en => 'Applied Meteorology and Climatology',
-          :department_short_name => 'KET'}])
+          :labelEn => 'Applied Meteorology and Climatology',
+          :department => '20201'}])
     end
     it "not try to add non existing department" do
       Subject.create(:label => 'Bad one', :code => 'DAAA01Y')
