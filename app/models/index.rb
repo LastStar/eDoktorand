@@ -172,9 +172,6 @@ class Index < ActiveRecord::Base
       return @semester
     else
       time = time_from_enrollment
-      if self.interrupt
-        time -= interrupted_time
-      end
       @semester = time.div(1.year / 2) + 1
       @semester = 1 if @semester == 0
       return @semester
@@ -189,22 +186,25 @@ class Index < ActiveRecord::Base
     else
       end_date = Time.now
     end
-    end_date - enrolled_on.to_time
+    time = (end_date - enrolled_on.to_time)
+    if self.interrupt
+      time -= interrupted_time
+    end
+    return time
   end
 
   def nominal_length
     years = (time_from_enrollment/1.year).to_i
     months = ((time_from_enrollment%1.year)/1.month).to_i
-    logger.debug years, months
     case years
     when 0
       years = ''
     when 1
-      years = "1 rok"
+      years = "1 rok a "
     when 2..4
-      years = "%i roky" % years
+      years = "%i roky a " % years
     else
-      years = "%i let" % years
+      years = "%i let a " % years
     end
     case months
     when 0
@@ -217,7 +217,7 @@ class Index < ActiveRecord::Base
       months = "%i měsíců" % months
     end
 
-    "%s a %s" % [years, months]
+    "%s%s" % [years, months]
   end
 
   # returns year of the study

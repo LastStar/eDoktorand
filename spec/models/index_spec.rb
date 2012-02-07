@@ -135,6 +135,10 @@ describe Index do
       @index.year.should == 1
     end
 
+    it "should compute nominal length" do
+      @index.nominal_length.should == '3 měsíce'
+    end
+
     describe "after one more year" do
       before :each do
         Timecop.freeze(Time.zone.local(2011, 1, 2))
@@ -146,6 +150,10 @@ describe Index do
 
       it "should compute year" do
         @index.year.should == 2
+      end
+
+      it "should compute nominal length" do
+        @index.nominal_length.should == '1 rok a 3 měsíce'
       end
     end
 
@@ -162,6 +170,10 @@ describe Index do
 
       it "should compute year" do
         @index.year.should == 1
+      end
+
+      it "should compute nominal length" do
+        @index.nominal_length.should == '7 měsíců'
       end
     end
 
