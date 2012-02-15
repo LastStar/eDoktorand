@@ -13,6 +13,8 @@ class AddThesesSupport < ActiveRecord::Migration
     
     add_column :disert_themes, :theses_request, :text
     add_column :disert_themes, :theses_request_at, :datetime
+    add_column :disert_themes, :theses_request_response, :text
+    add_column :disert_themes, :theses_request_succesfull, :binary
     add_column :disert_themes, :theses_response, :text
     add_column :disert_themes, :theses_response_at, :datetime
     add_column :disert_themes, :theses_status, :integer
@@ -33,6 +35,8 @@ class AddThesesSupport < ActiveRecord::Migration
     
     remove_column :disert_themes, :theses_request
     remove_column :disert_themes, :theses_request_at
+    remove_column :disert_themes, :theses_request_response
+    remove_column :disert_themes, :theses_request_succesfull
     remove_column :disert_themes, :theses_response
     remove_column :disert_themes, :theses_response_at
     remove_column :disert_themes, :theses_status

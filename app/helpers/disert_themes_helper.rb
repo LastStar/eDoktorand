@@ -14,12 +14,13 @@ module DisertThemesHelper
   THESIS_SEND_SERVER = "https://theses.cz/auth/th_sprava/neosobni_import_dat.pl"
   THESIS_USERNAME = "31417"
   THESIS_PASSWORD = "dysfov-eri"
+  THESIS_ID_PREFIX = "dsp_"
   
   # prepares XML schema to send to Theses portal
   def prepare_theses_xml(disert_theme)
     
     #TODO faculty sender.id impl
-    #senderId = disert_theme.index.faculty.thesis_id
+    sender_id = disert_theme.index.faculty.theses_id
     
     xml_ret = ""
     xml = Builder::XmlMarkup.new(:target => xml_ret, :indent => 2)
@@ -30,8 +31,8 @@ module DisertThemesHelper
           "xsi:schemaLocation".to_sym => "http://theses.cz/pts/elements/1.0/ http://theses.cz/pts/elements/1.0/schemaTheses.xsd") {
             xml.tag!("pts:thesis") {
               # TODO replace with #{senderId}
-              xml.tag!("pts:sender.id"){xml.text! "S4111"} #faculty id
-              xml.tag!("pts:thesis.id"){xml.text! "dsp_" + disert_theme.id.to_s} #disert_theme.id
+              xml.tag!("pts:sender.id"){xml.text! sender_id} #faculty theses_id
+              xml.tag!("pts:thesis.id"){xml.text! THESIS_ID_PREFIX + disert_theme.id.to_s} #disert_theme.id
               xml.tag!("dc:title", "xml:lang".to_sym => "cze"){xml.text! disert_theme.title.strip} #disert_theme.title
               xml.tag!("pts:title.translated", "xml:lang".to_sym => "eng"){xml.text! disert_theme.title_en.strip} if disert_theme.title_en != nil  #disert_theme.title_en
               xml.tag!("dcterms:dateSubmitted"){xml.text! disert_theme.index.defense_claimed_at.iso8601} if disert_theme.index.defense_claimed_at != nil #submition date in ISO 8601 
@@ -67,7 +68,11 @@ module DisertThemesHelper
   end
   
   #sends generated XML to theses.cz portal
-  def send_theses_xml(xml_to_send)
+  def send_theses_xml(disert_theme)
+    
+    # prepare theses xml
+    xml_to_send = prepare_theses_xml(disert_theme)
+    
     #tempfile gen
     tf = Tempfile.new("export");
     tf.write(xml_to_send)
@@ -77,10 +82,13 @@ module DisertThemesHelper
     
     res = Nokogiri::XML(result)
     
+    disert_theme.update_attribute('theses_request', xml_to_send)
+    disert_theme.update_attribute('theses_request_at', Time.now)
+    disert_theme.update_attribute('theses_request_response', result)
+    disert_theme.update_attribute('theses_request_succesfull', false)
+    
     res.xpath('//commited').first do |comNode|
-      #update disert_theme model - save theses_sent ? OK
-      #TODO implement theses result saving :)
-      puts comNode.text
+      disert_theme.update_attribute('theses_request_succesfull', true)
     end
     
     tf.close!
@@ -92,7 +100,7 @@ module DisertThemesHelper
     senderId = disert_theme.index.faculty.theses_id
     
     #TODO replace sender.id with #{senderId}
-    result = `curl -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=#{senderId};pts:thesis.id=dsp_#{disert_theme.id.to_s}"`
+    result = `curl -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=#{senderId};pts:thesis.id=#{THESIS_ID_PREFIX + disert_theme.id.to_s}"`
     
     res = Nokogiri::XML(result)
     res.remove_namespaces!
