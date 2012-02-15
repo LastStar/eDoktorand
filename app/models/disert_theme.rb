@@ -98,6 +98,6 @@ class DisertTheme < ActiveRecord::Base
   
   # select disert themes ready for theses_periodical_check
   def self.ready_for_theses_check(days = 2)
-    DisertTheme.find(:all, :conditions => [" theses_response_at IS NULL AND theses_request_at >= DATE_SUB( NOW( ) , INTERVAL ? DAY)", days])
+    DisertTheme.find(:all, :conditions => [" theses_response_at IS NULL AND theses_request_succesfull = 1 AND theses_request_at >= DATE_SUB( NOW( ) , INTERVAL ? DAY)", days])
   end
 end
