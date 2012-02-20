@@ -26,14 +26,6 @@ helper :disert_themes
     @disert_theme = DisertTheme.find(params[:id])
   end
   
-  # upload dsert_theme to Theses portal
-  def upload_theses
-    @disert_theme = DisertTheme.find(params[:id])
-    if @disert_theme != nil
-      @xml = prepare_theses_xml(@disert_theme)
-    end
-  end
-  
   # saves methogology file
   def save_methodology
     @disert_theme = DisertTheme.find(params[:disert_theme][:id])
