@@ -57,11 +57,11 @@ module DisertThemesHelper
                 xml.tag!("pts:academicTitleAfter"){xml.text! disert_theme.index.tutor.title_after.label.strip}
               } if disert_theme.index.tutor != nil # tutor
               xml.tag!("pts:get.file"){
-                xml.tag!("pts:url"){xml.text! "http://edoktorand.czu.cz/public/pdf/disert_theme/#{disert_theme.id}.pdf"}
+                xml.tag!("pts:url"){xml.text! "http://edoktorand.czu.cz/pdf/disert_theme/#{disert_theme.id.to_s}.pdf"}
                 xml.tag!("pts:ctype"){xml.text! "thesis"}
                 xml.tag!("pts:author"){xml.text! disert_theme.index.student.uic.to_s}
-                xml.tag!("pts:filename"){xml.text! "#{disert_theme.id}.pdf"}
-              }  if FileTest.exists?("http://edoktorand.czu.cz/public/pdf/disert_theme/#{disert_theme.id}.pdf") # get file
+                xml.tag!("pts:filename"){xml.text! "#{disert_theme.id.to_s}.pdf"}
+              } #if FileTest.exists?("http://edoktorand.czu.cz/pdf/disert_theme/#{disert_theme.id.to_s}.pdf") # get file
             }
           }
     return xml_ret      
