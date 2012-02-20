@@ -45,7 +45,7 @@ module DisertThemesHelper
               xml.tag!("pts:degree.grantor", "xml:lang".to_sym => "cze"){xml.text! CZU} # CZU
               xml.tag!("pts:degree.grantor", "xml:lang".to_sym => "eng"){xml.text! CULS} # CULS
               xml.tag!("pts:degree.grantor.faculty", "xml:lang".to_sym => "cze"){xml.text! disert_theme.index.department.faculty.name.strip} # CZU
-              xml.tag!("pts:degree.grantor.faculty", "xml:lang".to_sym => "eng"){xml.text! disert_theme.index.department.faculty.name_english.strip}
+              xml.tag!("pts:degree.grantor.faculty", "xml:lang".to_sym => "eng"){xml.text! disert_theme.index.department.faculty.name_english.strip} if disert_theme.index.department.faculty.name_english != nil
               xml.tag!("pts:creator", "pts:id".to_sym => disert_theme.index.student.uic.to_s){
                 xml.tag!("pts:foreName"){xml.text! disert_theme.index.student.firstname.strip}
                 xml.tag!("pts:surName"){xml.text! disert_theme.index.student.lastname.strip}
@@ -87,7 +87,7 @@ module DisertThemesHelper
     disert_theme.update_attribute('theses_request_response', result)
     disert_theme.update_attribute('theses_request_succesfull', false)
     
-    res.xpath('//commited').first do |comNode|
+    res.xpath('//commited').each do |comNode|
       disert_theme.update_attribute('theses_request_succesfull', true)
     end
     
