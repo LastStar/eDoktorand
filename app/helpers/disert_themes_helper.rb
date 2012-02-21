@@ -99,11 +99,17 @@ module DisertThemesHelper
     #TODO faculty sender.id impl
     senderId = disert_theme.index.faculty.theses_id
     
+    #puts 'senderId = ' + senderId
+    
     #TODO replace sender.id with #{senderId}
     result = `curl -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=#{senderId};pts:thesis.id=#{THESIS_ID_PREFIX + disert_theme.id.to_s}"`
     
+    #puts 'identifier = ' + THESIS_ID_PREFIX + disert_theme.id.to_s
+    
     res = Nokogiri::XML(result)
     res.remove_namespaces!
+    
+    #puts 'result = ' + res
     
     status = -1
     res.xpath('//info').each do |statusNode|
@@ -161,7 +167,7 @@ module DisertThemesHelper
         end
       
         #parse similarity score
-        score = plagiat.xpath('score').first
+        score = plagiat.xpath('score').first.content
         
         #create ThesesResult record
         tr = ThesesResult.new
