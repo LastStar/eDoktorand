@@ -92,6 +92,10 @@ class Index < ActiveRecord::Base
     @interrupt ||= interrupts.sort{|x, y| x.created_on <=> y.created_on}.last
   end
 
+  def older_interrupts
+    (interrupts.sort{|x, y| x.created_on <=> y.created_on} - [interrupt])
+  end
+
   # returns describe_error for bad index
   # TODO this mess must go
   def describe_error

@@ -58,11 +58,10 @@
   </div>
   </ul>
 <% end %>
-<% if (ints = index.interrupts).size > 1 %>
-  <% ints.shift %>
+<% unless index.older_interrupts.empty? %>
   <ul class='bordered half right-visible'>
     <li class="noborder"><h5><%= t(:message_11, :scope => [:view, :shared, :_study_detail]) %></h5></li>
-    <%= render(:partial => 'shared/interrupt', :collection => ints) %>
+    <%= render(:partial => 'shared/interrupt', :collection => index.older_interrupts) %>
   </ul>
 <% end %>
 
