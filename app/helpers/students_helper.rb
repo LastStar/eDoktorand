@@ -180,6 +180,7 @@ module StudentsHelper
 
   # TODO move logic to model. Here only printing
   # TODO rename to index_tags
+  # FIXME this is crazy shit man
   def student_exception(index)
     tags = []
     if index.waits_for_scholarship_confirmation?
