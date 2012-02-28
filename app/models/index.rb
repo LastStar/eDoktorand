@@ -52,11 +52,9 @@ class Index < ActiveRecord::Base
   belongs_to :specialization
   belongs_to :department
   has_many :interrupts, :order => 'created_on', :class_name => 'StudyInterrupt'
-  has_many :extra_scholarships, :conditions => "scholarships.payed_on IS NULL"
-  has_one :regular_scholarship, :conditions => "scholarships.payed_on IS NULL",
-    :order => 'updated_on desc'
-  has_many :payed_scholarships, :class_name => 'Scholarship',
-    :conditions => 'payed_on IS NOT NULL'
+  has_many :extra_scholarships, :conditions => {:scholarship_month_id => ScholarshipMonth.current.id}
+  has_one :regular_scholarship, :conditions => {:scholarship_month_id => ScholarshipMonth.current.id}
+  has_many :payed_scholarships, :class_name => 'Scholarship', :conditions => {:scholarship_month_id => ScholarshipMonth.current.id}
   has_many :scholarships
   has_one :im_index
 
@@ -497,9 +495,27 @@ class Index < ActiveRecord::Base
                  :not_interrupted => (paying_date - 1.day),
                  :enrolled => (paying_date + 1.day),
                  :not_absolved => (paying_date - 1.day),
-                 :include => [:extra_scholarships]})
+                 :include => [:regular_scholarship, :extra_scholarships]})
 
     return find_for(user, opts)
+  end
+
+  def self.find_with_scholarship(user)
+    ids = ScholarshipMonth.current.scholarships.map(&:index_id)
+
+    conditions = ["id in (?)", ids]
+    if user.has_role?('faculty_secretary')
+      conditions.first.sql_and("department_id in (?)")
+      conditions << user.person.faculty.departments.map(&:id)
+    elsif user.has_role?('department_secretary')
+      conditions.first.sql_and("department_id = ?")
+      conditions << user.person.department.id
+    end
+
+    return all(:conditions => conditions,
+               :include => [:study, :student, :disert_theme,
+                 :regular_scholarship, :extra_scholarships, :department,
+                 :specialization])
   end
 
   # find with all relation included

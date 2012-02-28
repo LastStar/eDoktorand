@@ -277,5 +277,23 @@ describe Index do
       index.errors[:account_number_prefix].should_not be_nil
     end
   end
+
+  context "with finders" do
+    before do
+      prepare_scholarships
+    end
+    it "searches for faculty supervisor" do
+      @user.roles << Factory(:role, :name => 'supervisor')
+      Index.find_with_scholarship(@user).should == [@index1, @index2, @index3]
+    end
+    it "searches for faculty secretary" do
+      @user.roles << Factory(:role, :name => 'faculty_secretary')
+      Index.find_with_scholarship(@user).should == [@index1, @index2]
+    end
+    it "searches for department secretary" do
+      @user.roles << Factory(:role, :name => 'department_secretary')
+      Index.find_with_scholarship(@user).should == [@index1]
+    end
+  end
 end
 

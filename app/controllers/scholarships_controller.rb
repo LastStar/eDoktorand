@@ -10,12 +10,9 @@ class ScholarshipsController < ApplicationController
   end
 
   def list
-    @paying_date = Time.now.last_month.end_of_month
-    @indices = Index.find_for_scholarship(@user, @paying_date,
-                                         :order => 'studies.id, people.lastname',
-                                         :include => [:student, :study, :disert_theme])
+    @indices = Index.find_with_scholarship(@user)
     if @user.has_role?('supervisor')
-      @approvals = ScholarshipApproval.last_weeks
+      @approvals = ScholarshipApproval.current
     end
   end
 
@@ -27,11 +24,8 @@ class ScholarshipsController < ApplicationController
 
   # scholarship list preparation
   def prepare
-    @paying_date = Time.now.last_month.end_of_month
-    @indices = Index.find_for_scholarship(@user, @paying_date,
-                                         :order => 'studies.id, people.lastname',
-                                         :include => [:student, :study,
-                                                      :disert_theme])
+    @paying_date = ScholarshipMonth.current.starts_on
+    @indices = Index.find_for_scholarship(@user, ScholarshipMonth.current.starts_on)
   end
 
   def change
@@ -42,7 +36,7 @@ class ScholarshipsController < ApplicationController
   # this method shows all extra scholarships for index
   def detail
     @index = Index.find(params['id'])
-    @scholarships = ExtraScholarship.find_all_unpayed_by_index(@index.id)
+    @scholarships = ExtraScholarship.find_all_unpaid_by_index(@index.id)
   end
 
   # adding scholarships for faculty secretaries
@@ -76,11 +70,7 @@ class ScholarshipsController < ApplicationController
   end
 
   def recalculate
-    @paying_date = Time.now.last_month.end_of_month
-    @indices = Index.find_for_scholarship(@user, @paying_date,
-                                         :order => 'studies.id, people.lastname',
-                                         :include => [:student, :study,
-                                                      :disert_theme])
+    @indices = Index.find_with_scholarship(@user)
     RegularScholarship.recalculate_amount(@indices)
     render(:action => :prepare)
   end
@@ -114,33 +104,43 @@ class ScholarshipsController < ApplicationController
 
   def pay
     csv_headers('stipendia.csv')
-    @paying_date = Time.now.last_month.end_of_month
-    stipendias = Scholarship.pay_and_generate_for(@user, @paying_date)
-    date = Time.now.last_month.strftime('%Y%m')
-    file = "#{RAILS_ROOT}/public/csv/#{date}.csv"
+    stipendias = Scholarship.pay_and_generate
+    file = "#{RAILS_ROOT}/public#{scholarship_file}"
     File.open(file, 'w') {|file| file.write(stipendias)}
+
     # TODO send mail to machyk
-    render(:text => stipendias)
+    redirect_to :action => :list
+  end
+
+  def unpay
+    ScholarshipMonth.current.unpay!
+    file = "#{RAILS_ROOT}/public#{scholarship_file}"
+    FileUtils.rm(file)
+
+    redirect_to :action => :control_table
+  end
+
+  def close
+    ScholarshipMonth.current.close!
+
+    redirect_to :action => :list
   end
 
   def approve
-    @paying_date = Time.now.last_month.end_of_month
-    @indices = Scholarship.approve_for(@user, @paying_date)
-    render(:action => 'list')
+    ScholarshipApproval.approve_for(@user)
+
+    redirect_to :action => :list
   end
 
   # renders control table of scholarships
   def control_table
-    @paying_date = Time.now.last_month.end_of_month
-    @indices = Index.find_for_scholarship(@user, @paying_date,
-                                         :order => 'studies.id, people.lastname',
-                                         :include => [:student, :study, :disert_theme])
+    @indices = Index.find_with_scholarship(@user)
     @show_table_message = 1
     @bad_indices = []
     #TO DO rewrite to identihas_any_scholarshipfy bad index by itself - method in index model
     for index in @indices
       if index.bad_index?
-          @bad_indices << index
+        @bad_indices << index
       end
     end
     render(:action => 'list')
@@ -167,4 +167,10 @@ class ScholarshipsController < ApplicationController
     redirect_to :action => :list
   end
 
+  helper_method :scholarship_file
+
+
+  def scholarship_file
+    "/csv/#{ScholarshipMonth.current.title}.csv"
+  end
 end

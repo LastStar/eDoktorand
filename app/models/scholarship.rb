@@ -2,8 +2,10 @@ require 'csv'
 class Scholarship < ActiveRecord::Base
 
   belongs_to :index
-  validates_presence_of :index, :amount
+  validates_presence_of :index, :amount, :scholarship_month
+  belongs_to :scholarship_month
 
+  #TODO remove as soon as possible
   def creator_of_scholarship
     if self.updated_by_id != nil
       if User.exists?(self.updated_by_id)
@@ -20,62 +22,26 @@ class Scholarship < ActiveRecord::Base
     end
   end
 
-  def self.find_unpayed_by_index(index)
-    index = index.id if index.is_a? Index
-    find(:first, :conditions => ['index_id = ? and payed_on is null', index], :order => 'updated_on desc')
-  end
-
-  def pay!(time = Time.now)
-    update_attribute('payed_on', time)
-    return csv_row
+  def payed_on
+    'Deprecated. Paying through month'
   end
 
   def csv_row
-    [index.student.sident, code, disponent, amount, nil, nil, nil,
-      (Time.now - 1.month).strftime('%Y%m')]
+    return [index.student.sident, code, disponent, amount,
+            nil, nil, nil, scholarship_month.title]
   end
 
-  def self.pay_and_generate_for(user, paying_date)
-    indices = Index.find_for_scholarship(user, paying_date, :include => [:disert_theme])
+  def self.pay_and_generate
+    month = ScholarshipMonth.current
+    scholarships = Scholarship.all(:conditions => {:scholarship_month_id => month.id},
+                                   :include => {:index => :student})
     outfile = ''
     CSV::Writer.generate(outfile, ';') do |csv|
-      indices.each do |i|
-        if i.has_extra_scholarship?
-          i.extra_scholarships.each {|es| csv << es.pay!}
-        end
-        if i.has_regular_scholarship?
-          if i.regular_scholarship.amount > 0
-            csv << i.regular_scholarship.pay!
-          end
-        end
-      end
+      scholarships.each {|s| csv << s.csv_row}
     end
-    outfile
-  end
+    month.pay!
 
-  def self.approve_for(user, paying_date)
-    indices = Index.find_for_scholarship(user, paying_date, :include => [:disert_theme])
-    sa = ScholarshipApproval.new(:faculty => user.person.faculty)
-    sa.create_dean_statement(:person => user.person)
-    sa.save
-    indices.select do |i|
-      approved = false
-      if i.has_extra_scholarship?
-        i.extra_scholarships.each {|es| es.approve!}
-        approved = true
-      end
-      if i.has_regular_scholarship?
-        if i.regular_scholarship.amount > 0
-          i.regular_scholarship.approve!
-          approved = true
-        end
-      end
-      approved
-    end
-  end
-
-  def approve!
-    update_attribute('approved_on',Time.now)
+    return outfile
   end
 
   def short_code
