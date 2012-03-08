@@ -94,6 +94,24 @@
   <td><%= @defense.sixth_examinator %> </td>
 </tr>
 <% end %>
+<% unless @defense.seventh_examinator.blank? %>
+<tr>
+  <th></th>
+  <td><%= @defense.seventh_examinator %> </td>
+</tr>
+<% end %>
+<% unless @defense.eighth_examinator.blank? %>
+<tr>
+  <th></th>
+  <td><%= @defense.eighth_examinator %> </td>
+</tr>
+<% end %>
+<% unless @defense.nineth_examinator.blank? %>
+<tr>
+  <th></th>
+  <td><%= @defense.nineth_examinator %> </td>
+</tr>
+<% end %>
 <tr>
   <th><%= t(:files, :scope => [:view, :defenses, :_detail]) %>: </th>
   <td><%= disert_theme_link(@defense.index.disert_theme) %></td>
