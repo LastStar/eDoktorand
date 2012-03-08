@@ -88,6 +88,24 @@
       <td>......................................</td>
     </tr>
   <% end %>
+  <% unless @defense.seventh_examinator.blank? %>
+    <tr>
+      <td><%= @defense.seventh_examinator %></td>
+      <td>......................................</td>
+    </tr>
+  <% end %>
+  <% unless @defense.eighth_examinator.blank? %>
+    <tr>
+      <td><%= @defense.eighth_examinator %></td>
+      <td>......................................</td>
+    </tr>
+  <% end %>
+  <% unless @defense.nineth_examinator.blank? %>
+    <tr>
+      <td><%= @defense.nineth_examinator %></td>
+      <td>......................................</td>
+    </tr>
+  <% end %>
   <tr colspan='2'>
     <th><%= t(:message_12, :scope => [:view, :defenses, :protocol]) %>:</th>
   </tr>

@@ -11,19 +11,19 @@
   <th><%= t(:chairman, :scope => [:view, :defenses, :_detail]) %>: </th>
   <td><%= @defense.chairman_display_name %></td>
 </tr>
-<% unless @defense.opponent.empty? %>
+<% unless @defense.opponent.blank? %>
 <tr>
   <th><%= t(:opponent, :scope => [:view, :defenses, :_detail]) %>:</th>
   <td><%= @defense.opponent %> </td>
 </tr>
 <% end %>
-<% unless @defense.second_opponent.empty? %>
+<% unless @defense.second_opponent.blank? %>
 <tr>
   <th><%= t(:second_opponent, :scope => [:view, :defenses, :_detail]) %>:</th>
   <td><%= @defense.second_opponent %> </td>
 </tr>
 <% end %>
-<% unless @defense.third_opponent.empty? %>
+<% unless @defense.third_opponent.blank? %>
 <tr>
   <th><%= t(:third_opponent, :scope => [:view, :defenses, :_detail]) %>:</th>
   <td><%= @defense.third_opponent %> </td>
@@ -37,28 +37,46 @@
   <th></th>
   <td><%= @defense.second_examinator %> </td>
 </tr>
-<% unless @defense.third_examinator.empty? %>
+<% unless @defense.third_examinator.blank? %>
 <tr>
   <th></th>
   <td><%= @defense.third_examinator %> </td>
 </tr>
 <% end %>
-<% unless @defense.fourth_examinator.empty? %>
+<% unless @defense.fourth_examinator.blank? %>
 <tr>
   <th></th>
   <td><%= @defense.fourth_examinator %> </td>
 </tr>
 <% end %>
-<% unless @defense.fifth_examinator.empty? %>
+<% unless @defense.fifth_examinator.blank? %>
 <tr>
   <th></th>
   <td><%= @defense.fifth_examinator %> </td>
 </tr>
 <% end %>
-<% unless @defense.sixth_examinator.empty? %>
+<% unless @defense.sixth_examinator.blank? %>
 <tr>
   <th></th>
   <td><%= @defense.sixth_examinator %> </td>
+</tr>
+<% end %>
+<% unless @defense.seventh_examinator.blank? %>
+<tr>
+  <th></th>
+  <td><%= @defense.seventh_examinator %> </td>
+</tr>
+<% end %>
+<% unless @defense.eighth_examinator.blank? %>
+<tr>
+  <th></th>
+  <td><%= @defense.eighth_examinator %> </td>
+</tr>
+<% end %>
+<% unless @defense.nineth_examinator.blank? %>
+<tr>
+  <th></th>
+  <td><%= @defense.nineth_examinator %> </td>
 </tr>
 <% end %>
 </table>
