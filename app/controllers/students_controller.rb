@@ -334,7 +334,7 @@ class StudentsController < ApplicationController
 
   def end_study
   end
-  #propably not used, should be removed
+
   def change_tutor
   end
 
@@ -349,7 +349,6 @@ class StudentsController < ApplicationController
       Notifications::deliver_change_tutor_cs(@student, @subject_change)
     else
       Notifications::deliver_change_tutor_en(@student, @subject_change)
-
     end
   end
 
