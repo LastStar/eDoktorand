@@ -514,8 +514,8 @@ class Index < ActiveRecord::Base
 
     return all(:conditions => conditions,
                :include => [:study, :student, :disert_theme,
-                 :regular_scholarship, :extra_scholarships, :department,
-                 :specialization])
+               :regular_scholarship, :extra_scholarships, :department,
+               :specialization])
   end
 
   # find with all relation included
