@@ -42,11 +42,13 @@ module ScholarshipsHelper
   end
 
   def add_link(index)
-    link_to_remote(image_tag('plus.png', :title=>t(:message_2, :scope => [:helper, :scholarships])),
-                   {:update => "scholarship_form_#{index.id}",
-                   :complete => show_scholarship_form(index),
-                   :url => {:action => 'add', :id => index.id}},
-                   {:class => 'nobg'})
+    if index.present_study? || index.account_number.present?
+      link_to_remote(image_tag('plus.png', :title=>t(:message_2, :scope => [:helper, :scholarships])),
+                     {:update => "scholarship_form_#{index.id}",
+                     :complete => show_scholarship_form(index),
+                     :url => {:action => 'add', :id => index.id}},
+                     {:class => 'nobg'})
+    end
   end
 
   def remove_link(scholarship)
