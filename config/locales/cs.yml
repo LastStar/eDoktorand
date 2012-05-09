@@ -839,8 +839,10 @@ cs:
         message_1: prospěl
       _personal_detail:
         year: Ročník
+        years: ' roky'
         semester: Semestr
         nominal_length: Nominální délka studia
+        study_length: Standartní délka studia
         message_0: Obor
         message_1: Katedra
         message_2: Forma studia

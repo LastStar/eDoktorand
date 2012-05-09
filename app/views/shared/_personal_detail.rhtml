@@ -56,6 +56,9 @@
   <li>
     <%= "#{long_info_helper(index.nominal_length)}#{t(:nominal_length, :scope => [:view, :shared, :_personal_detail])}: " %>
   </li>
+  <li>
+    <%= "#{long_info_helper(index.specialization.study_length.to_s + t(:years, :scope => [:view, :shared, :_personal_detail]))}#{t(:study_length, :scope => [:view, :shared, :_personal_detail])}: " %>
+  </li>
   <li class='nonprintable'>
     <%= attribute_line(index.student, :account) %><%=t(:message_16, :scope => [:view, :shared, :_personal_detail]) %>:
   </li>
