@@ -1545,6 +1545,13 @@ cs:
       message_28: odhlásit
       message_17: uchazeči
     scholarships:
+      scholarship_file: Soubor se stipendii
+      pay: Vyplatit
+      pay_confirm: Označí měsíc jako vyplacený a vygeneruje soubor
+      unpay: Zrušit
+      unpay_confirm: Zruši označení měsíce jako vyplaceného a smaže soubor
+      close: Uzavřít
+      close_confirm: Uzavře tento měsíc a otevře měsíc nový s možností vkládat stipendia pro VaV
       message_13: Špatné nebo chybějící číslo bankovního účtu.
       message_14: Špatné nebo chybějící číslo banky u b.ú.
       message_15: Chybí UIC.

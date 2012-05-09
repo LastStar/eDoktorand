@@ -7,6 +7,8 @@ class AddWwwToFaculties < ActiveRecord::Migration
     Faculty.find(4).update_attribute(:www, 'http://www.pef.czu.cz/')
     Faculty.find(5).update_attribute(:www, 'http://www.tf.czu.cz/')
     Faculty.find(6).update_attribute(:www, 'http://www.ivp.czu.cz/')
+    Faculty.find(14).update_attribute(:www, 'http://www.fzp.czu.cz/')
+    Faculty.find(15).update_attribute(:www, 'http://www.fld.czu.cz/')
   end
 
   def self.dowm

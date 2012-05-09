@@ -560,7 +560,7 @@ class CSVExporter
       end
     end
 
-    def export_year_exams(exam_date_from,exam_date_to)
+    def export_year_exams(exam_date_from, exam_date_to)
       @@mylog.info 'Exporting exams list from %s' %exam_date_from
       Faculty.find(:all).each do |faculty|
         outfile = File.open("exams_list_%s.csv" % faculty.short_name, 'wb')

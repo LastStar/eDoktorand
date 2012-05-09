@@ -54,5 +54,6 @@ DROP TABLE IF EXISTS `logevents`;
 DROP TABLE IF EXISTS `im_indices`;
 DROP TABLE IF EXISTS `im_identities`;
 DROP TABLE IF EXISTS `admittance_themes`;
+DROP TABLE IF EXISTS `scholarship_months`;
 DROP VIEW IF EXISTS `personal_pages`;
 

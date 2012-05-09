@@ -13,7 +13,7 @@ module ScholarshipsHelper
   end
 
   def detail_links(index)
-    scholarships = ExtraScholarship.find_all_unpayed_by_index(index.id)
+    scholarships = ExtraScholarship.find_all_unpaid_by_index(index.id)
     link_to_function(image_tag('open.png'), :class => 'nobg') do |page|
       page.insert_html :after, "index_#{index.id}",
         render(:partial => 'detail', :locals => {:scholarships => scholarships, :index => index})
@@ -42,11 +42,13 @@ module ScholarshipsHelper
   end
 
   def add_link(index)
-    link_to_remote(image_tag('plus.png', :title=>t(:message_2, :scope => [:helper, :scholarships])),
-                   {:update => "scholarship_form_#{index.id}",
-                   :complete => show_scholarship_form(index),
-                   :url => {:action => 'add', :id => index.id}},
-                   {:class => 'nobg'})
+    if index.present_study? || index.account_number.present?
+      link_to_remote(image_tag('plus.png', :title=>t(:message_2, :scope => [:helper, :scholarships])),
+                     {:update => "scholarship_form_#{index.id}",
+                     :complete => show_scholarship_form(index),
+                     :url => {:action => 'add', :id => index.id}},
+                     {:class => 'nobg'})
+    end
   end
 
   def remove_link(scholarship)
@@ -67,9 +69,20 @@ module ScholarshipsHelper
 
   def pay_link
     if @user.has_role?('supervisor') &&
-      (ScholarshipApproval.all_approved?)
-      link_to(t(:message_5, :scope => [:helper, :scholarships]), {:action => 'pay'},
-        :confirm => t(:message_6, :scope => [:helper, :scholarships]))
+      ScholarshipApproval.all_approved?
+      if !ScholarshipMonth.current.paid?
+        link_to(t(:pay, :scope => [:helper, :scholarships]), {:action => 'pay'},
+          :confirm => t(:pay_confirm, :scope => [:helper, :scholarships]))
+      else
+        link_to(t(:scholarship_file, :scope => [:helper, :scholarships]),
+                scholarship_file) + ' ' +
+        link_to(t(:unpay, :scope => [:helper, :scholarships]),
+                {:action => 'unpay'},
+                :confirm => t(:unpay_confirm, :scope => [:helper, :scholarships])) + ' ' +
+        link_to(t(:close, :scope => [:helper, :scholarships]),
+                {:action => 'close'},
+                :confirm => t(:close_confirm, :scope => [:helper, :scholarships]))
+      end
     end
   end
 

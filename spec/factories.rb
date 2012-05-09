@@ -64,6 +64,7 @@ Factory.define :faculty do |f|
   f.name 'faculty'
   f.name_english 'en faculty'
   f.short_name 'FAC'
+  f.stipendia_code "666"
 end
 
 Factory.define :department do |department|
@@ -125,3 +126,4 @@ Factory.define :disert_theme do |disert_theme|
   disert_theme.title_en "To shit or not to shit"
   disert_theme.finishing_to 6
 end
+

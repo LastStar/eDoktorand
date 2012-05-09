@@ -1,7 +1,13 @@
 class RegularScholarship < Scholarship
-  
+
+  def self.find_unpaid_by_index(index)
+    find(:first, :conditions => ['index_id = ? and scholarship_month_id = ?',
+                                 index, ScholarshipMonth.current.id],
+                 :order => 'updated_on desc')
+  end
+
   def self.prepare_for_this_month(index)
-    unless rs = find_unpayed_by_index(index)
+    unless rs = find_unpaid_by_index(index)
       rs = create('index_id' => index.id,
                   'amount' => ScholarshipCalculator.for(index))
     end
@@ -34,12 +40,7 @@ class RegularScholarship < Scholarship
 
   def self.sum_for(user)
     ids = Index.find_for_scholarship(user, {:include => :disert_theme}).map &:id
-    sum(:amount, :conditions => ["index_id in (?) and payed_on is null", ids]) 
-  end
-
-  def pay!(time = Time.now)
-    clone.save
-    super time
+    sum(:amount, :conditions => ["index_id in (?) and scholarship_month_id = ?", ids, ScholarshipMonth.current.id])
   end
 
   def self.recalculate_amount(indices)

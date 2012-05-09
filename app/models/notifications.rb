@@ -106,6 +106,8 @@ class Notifications < ActionMailer::Base
   end
 
   def change_tutor_cs(student, subject_change_tutor)
+    @from = "edoktorand@edoktorand.czu.cz"
+    @subject = I18n::t(:change_tutor, :scope => [:model, :notifications])
     @body['name'] = student.display_name
     @body['specialization'] = student.specialization.name
     @body['year'] = student.index.year

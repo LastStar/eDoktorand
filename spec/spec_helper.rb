@@ -71,3 +71,24 @@ HEADERS
   Handsoap.http_driver = :mock
   Handsoap::Http.drivers[:mock].new
 end
+
+def prepare_scholarships
+  [User, Role, Index, Scholarship].each {|c| c.send(:delete_all)}
+  Timecop.freeze(Date.parse('2012-02-02'))
+  ScholarshipMonth.open
+  @index1 = Factory(:index, :student => Factory(:student))
+  @index2 = Factory(:index, :department => Factory(:department,
+                                                   :faculty => @index1.faculty),
+                    :student => Factory(:student))
+  @index3 = Factory(:index, :student => Factory(:student))
+  [@index1, @index2].each do |i|
+    RegularScholarship.create(:index => i,
+                              :scholarship_month => ScholarshipMonth.current)
+  end
+  ExtraScholarship.create(:index => @index3, :amount => '1000', :commission_head => '1234',
+                          :commission_body => '12345', :commission_tail => '1234',
+                          :scholarship_month => ScholarshipMonth.current)
+  @user = Factory(:user)
+  @user.person.stub(:faculty).and_return(@index1.faculty)
+  @user.person.stub(:department).and_return(@index1.department)
+end

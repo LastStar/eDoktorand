@@ -1,5 +1,6 @@
 class DisertThemesController < ApplicationController
 include LoginSystem
+helper :disert_themes
   layout 'employers', :except => [:add_en, :save_en, :edit_title, :update_title]
   before_filter :login_required, :prepare_student, :prepare_user
 
@@ -24,7 +25,7 @@ include LoginSystem
     @title = t(:message_0, :scope => [:controller, :themes])
     @disert_theme = DisertTheme.find(params[:id])
   end
-
+  
   # saves methogology file
   def save_methodology
     @disert_theme = DisertTheme.find(params[:disert_theme][:id])

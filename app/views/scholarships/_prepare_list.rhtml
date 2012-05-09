@@ -1,17 +1,14 @@
 <div id='sum'></div>
 <table id='scholarship_table' class='embossed students-list'>
   <tbody id="scholarship_table_body">
-<tr style='color: gray'>
-
-<th class="no-rounded"><%= t(:message_0, :scope => [:view, :scholarships, :_prepare_list]) %></th>
-<th class="no-rounded"><%= t(:message_1, :scope => [:view, :scholarships, :_prepare_list]) %></th>
-<th class="no-rounded"><%= t(:message_2, :scope => [:view, :scholarships, :_prepare_list]) %></th>
-<th class="no-rounded"><%= t(:message_3, :scope => [:view, :scholarships, :_prepare_list]) %></th>
-<th class="no-rounded"><%= t(:message_4, :scope => [:view, :scholarships, :_prepare_list]) %></th>
-<th class="no-rounded"><%= t(:message_5, :scope => [:view, :scholarships, :_prepare_list]) %></th>
-<th class="no-rounded"><%= t(:message_6, :scope => [:view, :scholarships, :_prepare_list]) %></th>
-
-</tr>
+    <tr style='color: gray'>
+      <th class="no-rounded"><%= t(:message_0, :scope => [:view, :scholarships, :_prepare_list]) %></th>
+      <th class="no-rounded"><%= t(:message_1, :scope => [:view, :scholarships, :_prepare_list]) %></th>
+      <th class="no-rounded"><%= t(:message_2, :scope => [:view, :scholarships, :_prepare_list]) %></th>
+      <th class="no-rounded"><%= t(:message_3, :scope => [:view, :scholarships, :_prepare_list]) %></th>
+      <th class="no-rounded"><%= t(:message_4, :scope => [:view, :scholarships, :_prepare_list]) %></th>
+      <th class="no-rounded"><%= t(:message_5, :scope => [:view, :scholarships, :_prepare_list]) %></th>
+    </tr>
 <% for index in @indices %>
 
 <%= render(:partial => 'index_line', :locals => {:index => index}) %>
