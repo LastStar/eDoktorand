@@ -139,7 +139,7 @@ class Index < ActiveRecord::Base
           errors.add(:account_number_prefix, I18n::t(:wrong_account_number_prefix_format, :scope => [:model, :index]))
         end
       end
-      if account_number.size > 10 && account_number =~ /[0-9]/
+      if account_number.size > 10 || !account_number =~ /^[0-9]*$/
         errors.add(:account_number, I18n.t(:wrong_account_number_format, :scope => [:model, :index]))
       else
         acc_sum = 0
