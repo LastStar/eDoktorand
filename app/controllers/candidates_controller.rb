@@ -23,10 +23,10 @@ class CandidatesController < ApplicationController
   def list
     session[:list_mode] = 'list'
     @backward = false
-    session[:filter] = params[:filter] if params[:filter]
-    @filtered_by = session[:filter]
+    session[:candidate_filter] = params[:filter] if params[:filter]
+    @filtered_by = session[:candidate_filter]
     session[:back_page] = 'list'
-    conditions = Candidate.prepare_conditions(session[:filter], @faculty, @user, params[:specialization])
+    conditions = Candidate.prepare_conditions(session[:candidate_filter], @faculty, @user, params[:specialization])
     @candidates = Candidate.paginate :page => params[:page],
                                      :per_page => 13,
                                      :order => session[:category],

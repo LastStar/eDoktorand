@@ -342,14 +342,13 @@ class Candidate < ActiveRecord::Base
   def self.filter_conditions(filter)
     case filter
     when 'unready':' AND ready_on IS NULL'
-    when 'ready': ' AND ready_on IS NOT NULL AND
-      invited_on IS NULL'
-    when 'invited': ' AND invited_on IS NOT NULL AND
-      admited_on IS NULL'
-    when 'admited': ' AND admited_on IS NOT NULL AND
-      enrolled_on IS NULL'
+    when 'ready': ' AND ready_on IS NOT NULL AND invited_on IS NULL'
+    when 'invited': ' AND invited_on IS NOT NULL AND admited_on IS NULL'
+    when 'admited': ' AND admited_on IS NOT NULL AND enrolled_on IS NULL'
     when 'enrolled': ' AND enrolled_on IS NOT NULL'
     when nil: ''
+    else
+      ''
     end
   end
 
