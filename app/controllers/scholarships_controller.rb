@@ -79,6 +79,7 @@ class ScholarshipsController < ApplicationController
 
   def student_list
     @index = @student.index
+    @scholarships = @index.paid_scholarships
   end
 
   def update

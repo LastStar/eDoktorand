@@ -52,7 +52,7 @@ class ScholarshipMonth < ActiveRecord::Base
     end
 
     def current
-      @current ||= first(:conditions => {:closed_at => nil})
+      first(:conditions => {:closed_at => nil})
     end
   end
 end

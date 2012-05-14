@@ -10,13 +10,13 @@
 
   <% end %>
 <h1><%= t(:message_0, :scope => [:view, :scholarships, :student_list]) %></h1>
-<% if @index.payed_scholarships == [] %>
+<% if @scholarships.present? %>
   <%= t(:message_2, :scope => [:view, :scholarships, :student_list]) %>
 <% else %>
   <p><%= t(:message_7, :scope => [:view, :scholarships, :student_list]) %></p>
   <table class = "scholarship embossed" cellspacing = "0" cellpading = "0" align = "center">
   <tr><th><%= t(:message_3, :scope => [:view, :scholarships, :student_list]) %></th><th><%= t(:message_4, :scope => [:view, :scholarships, :student_list]) %></th><th><%= t(:message_5, :scope => [:view, :scholarships, :student_list])%></th><th><%= t(:message_6, :scope => [:view, :scholarships, :student_list]) %></th></tr>
-  <% for scholarship in @index.payed_scholarships %>
+  <% for scholarship in @scholarships %>
     <%= render(:partial => 'student_list_line', :locals => {:scholarship => scholarship}) %>
   <% end %>
   </table>

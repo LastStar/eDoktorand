@@ -1,5 +1,5 @@
 <tr>
- <td><%= scholarship.scholarship_month.paid_at.strftime("%d. %m. %Y") %></td>
+ <td><%= scholarship.scholarship_month.try(:paid_at).try(:strftime, "%d. %m. %Y") %></td>
  <td><%= scholarship.code %></td>
  <td><%= scholarship.disponent %></td>
  <td class="number"><%= scholarship.amount %>

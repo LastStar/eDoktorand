@@ -1,6 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe RegularScholarship do
+  before do
+    ScholarshipMonth.destroy_all
+    ExtraScholarship.destroy_all
+  end
+
   context "when searching" do
     before do
       @index = Factory(:index, :student => Factory(:student))
