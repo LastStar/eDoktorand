@@ -54,7 +54,6 @@ class Index < ActiveRecord::Base
   has_many :interrupts, :order => 'created_on', :class_name => 'StudyInterrupt'
   has_many :extra_scholarships, :conditions => {:scholarship_month_id => ScholarshipMonth.current.id}
   has_one :regular_scholarship, :conditions => {:scholarship_month_id => ScholarshipMonth.current.id}
-  has_many :payed_scholarships, :class_name => 'Scholarship', :conditions => {:scholarship_month_id => ScholarshipMonth.current.id}
   has_many :scholarships
   has_one :im_index
 
@@ -882,6 +881,11 @@ class Index < ActiveRecord::Base
     if individual_decided?
       individual_application_result ? I18n::t(:approved, :scope => [:model, :index]) : I18n::t(:canceled, :scope => [:model, :index])
     end
+  end
+
+  def paid_scholarships
+    sms = ScholarshipMonth.all(:conditions => "paid_at is not null")
+    Scholarship.all(:conditions => ["index_id = ? and scholarship_month_id in (?)", self.id, sms.map(&:id)])
   end
 
   private

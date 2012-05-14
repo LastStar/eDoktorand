@@ -85,6 +85,9 @@ def prepare_scholarships
     RegularScholarship.create(:index => i,
                               :scholarship_month => ScholarshipMonth.current)
   end
+  ExtraScholarship.create(:index => @index1, :amount => '1000', :commission_head => '1234',
+                          :commission_body => '12345', :commission_tail => '1234',
+                          :scholarship_month => ScholarshipMonth.current)
   ExtraScholarship.create(:index => @index3, :amount => '1000', :commission_head => '1234',
                           :commission_body => '12345', :commission_tail => '1234',
                           :scholarship_month => ScholarshipMonth.current)

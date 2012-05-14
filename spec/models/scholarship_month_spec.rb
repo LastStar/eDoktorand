@@ -22,7 +22,7 @@ describe ScholarshipMonth do
       month.should_not be_new_record
     end
     it "starts on the begining of current month" do
-      month.starts_on.should == Date.parse('2012-02-1')
+      month.starts_on.should == Date.parse('2012-02-1').to_time
     end
   end
   context "when paying" do
@@ -75,7 +75,7 @@ describe ScholarshipMonth do
       prepare_scholarships
     end
     it "it has many scholarships" do
-      month.scholarships.count.should == 3
+      month.scholarships.count.should == 4
     end
   end
   context "when opening with prior month had scholarships" do
@@ -85,7 +85,7 @@ describe ScholarshipMonth do
     it "prepares new regular scholarships " do
       ScholarshipMonth.current.pay!
       ScholarshipMonth.current.close!
-      Timecop.freeze(Date.parse('2012-02-02'))
+      Timecop.freeze(Date.parse('2012-03-02'))
       ScholarshipMonth.current.scholarships.size.should == 2
     end
   end

@@ -4,6 +4,7 @@ class ScholarshipsController < ApplicationController
   layout "employers", :except => [:save, :change, :add, :edit, :sum]
   before_filter :set_title, :login_required, :prepare_student,
                 :prepare_user
+  helper_method :scholarship_file
 
   def index
     redirect_to :action => next_action_for(@user)
@@ -70,13 +71,15 @@ class ScholarshipsController < ApplicationController
   end
 
   def recalculate
-    @indices = Index.find_with_scholarship(@user)
+    @paying_date = ScholarshipMonth.current.starts_on
+    @indices = Index.find_for_scholarship(@user, ScholarshipMonth.current.starts_on)
     RegularScholarship.recalculate_amount(@indices)
     render(:action => :prepare)
   end
 
   def student_list
     @index = @student.index
+    @scholarships = @index.paid_scholarships
   end
 
   def update
@@ -166,9 +169,6 @@ class ScholarshipsController < ApplicationController
     @approval.destroy
     redirect_to :action => :list
   end
-
-  helper_method :scholarship_file
-
 
   def scholarship_file
     "/csv/#{ScholarshipMonth.current.title}.csv"

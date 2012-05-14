@@ -282,6 +282,7 @@ describe Index do
     before do
       prepare_scholarships
     end
+
     it "searches for faculty supervisor" do
       @user.roles << Factory(:role, :name => 'supervisor')
       Index.find_with_scholarship(@user).should == [@index1, @index2, @index3]
@@ -293,6 +294,19 @@ describe Index do
     it "searches for department secretary" do
       @user.roles << Factory(:role, :name => 'department_secretary')
       Index.find_with_scholarship(@user).should == [@index1]
+    end
+  end
+
+  context "with paid scholarships" do
+    before do
+      prepare_scholarships
+      ScholarshipMonth.current.pay!
+      ScholarshipMonth.current.close!
+      ScholarshipMonth.open
+    end
+
+    it "returns all paid scholarships" do
+      @index1.paid_scholarships.size.should == 2
     end
   end
 end
