@@ -95,6 +95,7 @@ class ScholarshipsController < ApplicationController
       eval("#{params[:scholarship][:type]}.new(params[:scholarship])")
       render(:action => 'add')
     end
+    @scholarship.scholarship_month = ScholarshipMonth.current
     @scholarship.amount = 0 if !@scholarship.amount
   end
 
