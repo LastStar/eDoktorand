@@ -44,8 +44,7 @@ class ScholarshipMonth < ActiveRecord::Base
   end
 
   class << self
-    def open
-      datetime = Time.now
+    def open(datetime = Time.now)
       first(:conditions => {:closed_at => nil}) || create(:opened_at => datetime,
                         :title => datetime.strftime('%Y%m'),
                         :starts_on => datetime.beginning_of_month)
