@@ -502,16 +502,17 @@ class Index < ActiveRecord::Base
   def self.find_with_scholarship(user)
     ids = ScholarshipMonth.current.scholarships.map(&:index_id)
 
-    conditions = ["id in (?)", ids]
+    conditions = ["indices.id in (?)", ids]
     if user.has_role?('faculty_secretary')
-      conditions.first.sql_and("department_id in (?)")
+      conditions.first.sql_and("indices.department_id in (?)")
       conditions << user.person.faculty.departments.map(&:id)
     elsif user.has_role?('department_secretary')
-      conditions.first.sql_and("department_id = ?")
+      conditions.first.sql_and("indices.department_id = ?")
       conditions << user.person.department.id
     end
 
     return all(:conditions => conditions,
+               :order => "people.lastname",
                :include => [:study, :student, :disert_theme,
                :regular_scholarship, :extra_scholarships, :department,
                :specialization])
