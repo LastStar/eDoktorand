@@ -1215,7 +1215,7 @@ cs:
       _form:
         message_8: člen komise
         message_9: člen komise
-        message_0:
+        message_0: datum
         message_10: člen komise
         message_1: místnost
         message_2: Předseda komise
@@ -1224,6 +1224,8 @@ cs:
         message_5: člen komise
         message_6: člen komise
         message_7: člen komise
+        message_11: Vybrat ze seznamu
+        message_12: Zadat ručně
     disert_themes:
       upload_methodology:
         message_0: |-
