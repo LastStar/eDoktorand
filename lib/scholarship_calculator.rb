@@ -16,7 +16,7 @@ class ScholarshipCalculator
           10 => 7200, 'final_exam' => 8200},
     15 => {0 => 4600, 1 => 4900, 2 => 5200, 3 => 5500, 4 => 5800,
           5 => 6100, 6 => 6400, 7 => 6700, 8 => 6700, 9 => 6700,
-          10 => 6700, 'final_exam' => 8000}
+          10 => 6700, 11 => 6700, 'final_exam' => 8000}
   }
 
   # calculates scholarship for student
