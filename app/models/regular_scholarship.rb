@@ -35,7 +35,8 @@ class RegularScholarship < Scholarship
   end
 
   def self.create_for(index)
-    index.regular_scholarship = create(:amount => ScholarshipCalculator.for(index))
+    index.regular_scholarship = create(:amount => ScholarshipCalculator.for(index),
+                                       :scholarship_month => ScholarshipMonth.current)
   end
 
   def self.sum_for(user)
