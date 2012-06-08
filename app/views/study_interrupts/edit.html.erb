@@ -1,6 +1,6 @@
 <h5><%= t(:message_0, :scope => [:view, :interrupts, :index]) %></h5>
 <h6><%= @student.display_name %></h6>
-<% form_tag(:action => 'create') do -%>
-  <%= hidden_field('interrupt', 'index_id') %>
+<% form_tag(:action => 'update') do -%>
+  <%= hidden_field :interrupt, :id %>
   <%= render(:partial => 'form') %>
 <% end %>

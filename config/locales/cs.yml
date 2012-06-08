@@ -1406,6 +1406,7 @@ cs:
       third_year: 3. ročník
       fourth_year: 4. ročník
       over: x
+      edit_interrupt: opravit přerušení
       message_51: zpět
       message_40: uzavřeno
       message_29: studijní plán

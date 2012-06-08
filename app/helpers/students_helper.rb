@@ -30,8 +30,10 @@ module StudentsHelper
             links << interrupt_link(index)
           elsif index.interrupt_waits_for_confirmation?
             links << confirm_interrupt_link(index)
+            links << edit_interrupt_link(index)
           elsif index.interrupted?
             links << end_interrupt_link(index)
+            links << edit_interrupt_link(index)
           end
         end
       end
@@ -125,6 +127,14 @@ module StudentsHelper
                            :id => index,
                            :date => index.interrupt.end_on},
                    :update => "index_form_#{index.id}")
+  end
+
+  # prints edit interrupt link
+  def edit_interrupt_link(index)
+    link_to(t(:edit_interrupt, :scope => [:helper, :students]),
+            {:action => 'edit',
+            :controller => 'study_interrupts',
+            :id => index.interrupt.id})
   end
 
   # prints link to create new study plan

@@ -27,20 +27,27 @@
 <br/>
 <%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
 
-<p>Přijímací zkouška pro obor <%= @candidate.specialization.name %> proběhne od 
+<p>Přijímací zkouška pro obor <%= @candidate.specialization.name %> proběhne od
 <%= @candidate.specialization.exam_term.start_time %> v místnosti č. <%=
 @candidate.specialization.exam_term.room %>, předsedou komise je <%=
 @candidate.specialization.exam_term.chairman.display_name %></p>
 
 <p>K přijímací zkoušce si přineste:
 <ul>
-  <li class='letter'>průkaz totožnosti</>
-  <% if @candidate.study_id == 1 && @candidate.specialization.faculty.id != 14 %>
-  <li class='letter'>doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr  potvrzený fakultou (týká se studujících mimo ČZU)</li>
-  <% end %>
-  <li class='letter'>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou</li>
-  <% if @candidate.specialization.faculty.id == 14 %> 
-  <li class='letter'>další doklady k přijímacímu řízení, pokud nebyly dodány s přihláškou</li>
+  <% if @candidate.specialization.faculty.id == 4 %>
+    <li class='letter'>občanský průkaz</li>
+    <li class='letter'>doklad o ukončení vysokoškolského vzdělání (diplom)</li>
+    <li class='letter'>přehled složených zkoušek v magisterském typu studiu, anebo v posledních dvou letech v případě pětiletého studijního oboru, a jejich klasifikaci (kopii potvrzenou studijním oddělením příslušné vysoké školy)</li>
+    <li class='letter'>kopii diplomové práce (nebo vědeckého článku, jehož autorem či spoluautorem je uchazeč o studium)</li>
+  <% else %>
+    <li class='letter'>průkaz totožnosti</>
+    <% if @candidate.study_id == 1 && @candidate.specialization.faculty.id != 14 %>
+    <li class='letter'>doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr  potvrzený fakultou (týká se studujících mimo ČZU)</li>
+    <% end %>
+    <li class='letter'>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou</li>
+    <% if @candidate.specialization.faculty.id == 14 %>
+    <li class='letter'>další doklady k přijímacímu řízení, pokud nebyly dodány s přihláškou</li>
+    <% end %>
   <% end %>
 </ul>
 </p>
@@ -64,7 +71,7 @@ e-mail: <%= @faculty.secretary.email %>
         <% if session[:back_page] == 'list' %>
           <%= link_to 'zpět na výpis', :action => 'list',:page => session[:current_page_backward] %>
         <% else %>
-          <%= link_to 'zpět na výpis', :action => 'list_all'%>    
+          <%= link_to 'zpět na výpis', :action => 'list_all'%>
         <% end %>
 	<% unless @candidate.invited? %>
 	<span id='mailLink'><%= link_to_remote 'odešli mail s pozvánkou', :update => 'mailLink', :url => {:action => 'invite_now', :id => @candidate.id} %></span>

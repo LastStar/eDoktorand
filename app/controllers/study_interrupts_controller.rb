@@ -23,6 +23,17 @@ class StudyInterruptsController < ApplicationController
     end
   end
 
+  def edit
+    @interrupt = StudyInterrupt.find(params[:id])
+    @student = @interrupt.index.student
+  end
+
+  def update
+    @document = StudyInterrupt.find(params[:interrupt][:id])
+    @document.update_attributes(params[:interrupt])
+    redirect_to(:controller => 'students')
+  end
+
   def finish
     @interrupt ||= session[:interrupt]
     @interrupt.save
