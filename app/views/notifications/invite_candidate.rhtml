@@ -9,9 +9,16 @@ Přijímací zkouška pro obor <%= @specialization %> proběhne od <%= @exam_ter
 <%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
 
 K přijímací zkoušce si přineste:
+<% if @faculty.id == 4 %>
+ - občanský průkaz
+ - doklad o ukončení vysokoškolského vzdělání (diplom)
+ - přehled složených zkoušek v magisterském typu studiu, anebo v posledních dvou letech v případě pětiletého studijního oboru, a jejich klasifikaci (kopii potvrzenou studijním oddělením příslušné vysoké školy)
+ - kopii diplomové práce (nebo vědeckého článku, jehož autorem či spoluautorem je uchazeč o studium)
+<% else %>
  - průkaz totožnosti,<% if @study_id == 1 %>
  - doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr potvrzený fakultou (týká se studujících mimo ČZU),<% end %>
  - doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou.
+<% end %>
 
 Vyřizuje:
 <%= @faculty.secretary.display_name %>,
