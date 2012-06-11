@@ -10,7 +10,7 @@
 
   <% end %>
 <h1><%= t(:message_0, :scope => [:view, :scholarships, :student_list]) %></h1>
-<% if @scholarships.present? %>
+<% if @scholarships.empty? %>
   <%= t(:message_2, :scope => [:view, :scholarships, :student_list]) %>
 <% else %>
   <p><%= t(:message_7, :scope => [:view, :scholarships, :student_list]) %></p>
