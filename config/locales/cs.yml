@@ -989,7 +989,7 @@ cs:
         message_4: Typ Stipendia
         message_5: Disponent
         message_6: Amount (CZK)
-        message_7: Vyplacení stipendia trvá týden. V tuto chvíli je nasazený nový process vyplácení stipendií a starší stipendia se nemusí zobrazovat správně. Prosím omluvte tento krátký výpadek.
+        message_7: Vyplacení stipendia trvá týden.
       _add:
         message_0: částka
         message_1: kč
