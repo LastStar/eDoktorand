@@ -267,5 +267,30 @@ class MassProcessor
       outfile.close
       puts "Not found #{cnbf}"
     end
+
+    def add_scholarship_months
+      date = Date.parse('2006-05-01')
+      (0..71).each do |i|
+        beg = date + i.months
+        fin = beg.end_of_month
+        puts "Begin: #{beg}. Finish: #{fin}"
+        scholarships = Scholarship.all(:conditions => ["payed_on > ? and payed_on < ?", beg, fin])
+        if scholarships.present?
+          payed_on = scholarships.first.read_attribute(:payed_on)
+          puts "#{scholarships.size} scholarships, paid on: #{payed_on}"
+          month = ScholarshipMonth.create(:opened_at => beg,
+                                          :title => beg.strftime('%Y%m'),
+                                          :starts_on => beg)
+          puts "Adding month id: #{month.id}"
+          scholarships.each {|s| s.update_attribute(:scholarship_month_id, month.id)}
+          month.paid_at = payed_on
+          month.closed_at = fin
+          month.save!
+        else
+          puts "NO SHOLARSHIPS"
+        end
+      end
+      puts 'Done'
+    end
   end
 end
