@@ -391,9 +391,10 @@ class CSVExporter
     def export_candidates_for(options = {})
       unless cs = options[:candidates]
         faculty = options[:faculty].is_a?(Faculty) ? options[:faculty] : Faculty.find(options[:faculty])
-        cs = Candidate.find(:all, :conditions => ['invited_on is not null' +
-        #cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' +
-          ' and specialization_id in (?)', faculty.specializations])
+        # cs = Candidate.find(:all, :conditions => ['invited_on is not null' +
+        # cs = Candidate.find(:all, :conditions => ['invited_on is not null and admited_on is not null' +
+        cs = Candidate.all(:conditions =>  ['finished_on is not null' +
+                   ' and specialization_id in (?)', faculty.specializations])
         file = "candidate_#{faculty.short_name}.csv"
       else
         file = 'candidates.csv'
@@ -401,6 +402,8 @@ class CSVExporter
       outfile = File.open(file, 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
         @@mylog.info "There are #{cs.size} candidates"
+        csv << ['id', 'title_before', 'firstname', 'lastname', 'title_after', 'email',
+            'study_form', 'department', 'specialization', 'theme', 'tutor']
         cs.each do |c|
           row = []
           row << c.id
@@ -786,7 +789,6 @@ class CSVExporter
         }
       }
     end
-
     # exports all students for vice dean
     def students_for_dean(dean_user)
       indices = Index.find_for(dean_user)
@@ -795,9 +797,10 @@ class CSVExporter
         CSV::Writer.generate(outfile, ';') do |csv|
           csv << ['uic', 'name', 'enrolled', 'finished/absolved', 'form', 'status',
             'department', 'specialization', 'program', 'faculty', 'tutor',
-            'title', 'title_en']
+            'title', 'title_en', 'nominal_length']
           indices.each do |index|
             row = []
+            @@mylog.info("Adding %s" % index.student.display_name)
             row << index.student.uic
             row << index.student.display_name
             row << index.enrolled_on.strftime('%d. %m. %Y')
@@ -812,47 +815,12 @@ class CSVExporter
             row << index.status
             row << index.department.name
             row << index.specialization.name
-            row << index.program.name
+            row << index.specialization.program.name
             row << index.faculty.name
             row << index.tutor.try(:display_name)
-            row << index.disert_them.try(:title)
-            row << index.disert_them.try(:title_en)
-            csv << row
-          end
-        end
-      end
-    end
-
-    # exports all students for vice dean
-    def students_for_dean(dean_user)
-      indices = Index.find_for(dean_user)
-      @@mylog.info("There is %i students" % indices.size)
-      File.open("students.csv", 'wb') do |outfile|
-        CSV::Writer.generate(outfile, ';') do |csv|
-          csv << ['uic', 'name', 'enrolled', 'finished/absolved', 'form', 'status',
-            'department', 'specialization', 'program', 'faculty', 'tutor',
-            'title', 'title_en']
-          indices.each do |index|
-            row = []
-            row << index.student.uic
-            row << index.student.display_name
-            row << index.enrolled_on.strftime('%d. %m. %Y')
-            if index.finished?
-              row << index.finished_on.strftime('%d. %m. %Y')
-            elsif index.absolved?
-              row << index.disert_theme.defense_passed_on.strftime('%d. %m. %Y')
-            else
-              row << ''
-            end
-            row << index.study.name
-            row << index.status
-            row << index.department.name
-            row << index.specialization.name
-            row << index.program.name
-            row << index.faculty.name
-            row << index.tutor.try(:display_name)
-            row << index.disert_them.try(:title)
-            row << index.disert_them.try(:title_en)
+            row << index.disert_theme.try(:title)
+            row << index.disert_theme.try(:title_en)
+            row << index.nominal_length
             csv << row
           end
         end
