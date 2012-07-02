@@ -1,0 +1,75 @@
+<br />
+<br />
+<br />
+<br />
+<p class='rightAlign'>
+<%= @candidate.display_name %><br/>
+<% unless @candidate.postal_city.empty? %>
+<%= @candidate.sending_postal_address %></p>
+<% else %>
+<%= @candidate.sending_address %></p>
+<% end %>
+<br/>
+<p>Prague <%= I18n::l(Date.today, :format => :long) %></p>
+<br/>
+
+<p>Dear Sir or Madam,</p>
+
+<p>
+  It is my great pleasure to notify you that, in accordance with § 47 of Act No. 111/1998 on Higher Education Institutions,
+  you have been accepted into the <%= @candidate.study.name_en %> Ph.D. program
+</p>
+
+<h3 class='centerAlign'><%= @candidate.specialization.name_english %></h3>
+<br/>
+<p>
+  at the <%= @faculty.name_english %> Czech University of Life Sciences Prague, starting on October 1st, <%= Time.now.strftime("%Y") %>.
+  Your tutor will be <%= @candidate.tutor.display_name %>, <%= first_lower(@candidate.department.name_english) %>
+</p>
+<h3 class='centerAlign'>Registration will take place on <%= Parameter.get("enroll_invitation_time_and_place_en", @faculty) %>.</h3>
+<% if @candidate.study_id == 1 %>
+<p>
+  With this acceptance, you have been awarded a monthly stipend of <%= Parameter.get("start_stipendia", @faculty) %>,- Czech Crowns,
+  which will be paid to you from October 1st, <%= Time.now.year %>. The stipend for each month will be sent to your account
+  on the 15th of the following month.
+</p>
+<% end %>
+
+<p>
+  It will be your duty to complete and present your study plan within one month after beginning the program and to complete
+  the methodology of your dissertation within three months after beginning the program.
+</p>
+
+<p>
+  An appeal against this decision may be filed with the Dean of the Faculty of Environmental Sciences, CULS, within 30 days
+  of receipt.
+</p>
+<br/>
+<br/>
+<br/>
+<p class='rightAlignLefter'>
+  <%= @faculty.dean.display_name %><br/>
+  Dean <%= @faculty.name_english %> ČZU</p>
+
+<div class='links confirm-admitt'>
+  <div class="confirm-admitt-top-links">
+	<a href='javascript:window.print()'>tisk</a>
+	<% if @user %>
+	<%#= link_to 'zpět', :page => session[:current_page_backward], :action => 'list'%>
+    <% if session[:back_page] == 'list' %>
+      <%= link_to t(:message_0, :scope => [:view, :candidates, :confirm_admit]), :action => 'list',:page => session[:current_page_backward] %>
+    <% else %>
+      <%= link_to t(:message_1, :scope => [:view, :candidates, :confirm_admit]), :action => 'list_all'%>
+    <% end %>
+
+  </div>
+	<% unless @candidate.admited? %>
+        <div id='mailLink'>
+	  <span id='mailLink1'><%= link_to_remote t(:message_2, :scope => [:view, :candidates, :confirm_admit]), :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'mail'} %></span>
+	  <span id='mailLink2'><%= link_to_remote t(:message_3, :scope => [:view, :candidates, :confirm_admit]), :update => 'mailLink', :url => {:action => 'admit_now', :id => @candidate.id, :mail => 'no mail'} %></span>
+        </div>
+	<% end %>
+	<% end %>
+</div>
+<script type="text/javascript">window.print()</script>
+

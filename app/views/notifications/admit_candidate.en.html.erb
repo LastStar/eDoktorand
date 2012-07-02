@@ -1,0 +1,29 @@
+Prague <%= I18n::l(@sent_on, :format => :long) %>
+
+<%= @candidate.display_name %>
+<%= @candidate.address %>
+
+Dear Sir or Madam,
+
+It is my great pleasure to notify you that, in accordance
+with § 47 of Act No. 111/1998 on Higher Education Institutions,
+you have been accepted into the <%= @candidate.study.name_en %> Ph.D. program
+<%= @candidate.specialization.name_english %>
+
+Your tutor will be <%= @candidate.tutor.display_name %>, <%= @candidate.department.name_english %>
+Registration will take place on <%= Parameter.get("enroll_invitation_time_and_place_en", @faculty) %>.
+<% if @candidate.present_study? %>
+With this acceptance, you have been awarded a monthly stipend of <%= Parameter.get("start_stipendia", @faculty) %>,- Czech Crowns,
+which will be paid to you from October 1st, <%= Time.now.year %>.
+The stipend for each month will be sent to your account
+on the 15th of the following month.
+<% end %>
+It will be your duty to complete and present your study plan within one month
+after beginning the program and to complete the methodology of your dissertation
+within three months after beginning the program.
+
+An appeal against this decision may be filed with the Dean of the Faculty
+of Environmental Sciences, CULS, within 30 days of receipt.
+
+<%= @faculty.dean.display_name %>
+Dean <%= @faculty.name_english %>
