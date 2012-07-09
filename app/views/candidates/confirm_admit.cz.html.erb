@@ -43,7 +43,7 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <br/>
 <br/>
 <br/>
-<p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
+<p>V Praze dne <%= (@candidate.admited_on || Time.now).strftime("%d. %m. %Y") %></p>
 <p class='rightAlignLefter'><%= first_upper(@faculty.dean.display_name) %><br/>
 <%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</p>
 
