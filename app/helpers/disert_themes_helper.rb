@@ -130,7 +130,7 @@ module DisertThemesHelper
         #TODO implement no similarities
         disert_theme.update_attribute('theses_response', result)
         disert_theme.update_attribute('theses_response_at', Time.now)
-        disert_theme.update_attribute('teses_status', status)
+        disert_theme.update_attribute('theses_status', status)
       when 6 then
         #TODO similarities found
         disert_theme.update_attribute('theses_response', result)
