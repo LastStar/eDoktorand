@@ -1,2 +1,2 @@
-1       0       *       *       *       /var/apps/edoktorand.czu.cz/bin/dump_phdstudy
-2       0       *       *       *       /var/apps/edoktorand.czu.cz/bin/check_theses
+1       0       *       *       *       /var/apps/edoktorand.czu.cz/bin/dump_phdstudy.sh
+2       0       *       *       *       /var/apps/edoktorand.czu.cz/bin/check_theses.sh
