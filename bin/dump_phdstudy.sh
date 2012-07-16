@@ -1,6 +1,7 @@
 #!/bin/sh
 
-if [ $# -eq 1 ] then
+if [ $# -eq 1 ]
+then
   filename=$1
 else
   filename=`date "+%Y-%m-%d.sql"`
