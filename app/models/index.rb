@@ -734,7 +734,7 @@ class Index < ActiveRecord::Base
   end
 
   def has_regular_scholarship?(date = Time.now)
-    present_study?(date) && !self_payer?
+    present_study?(date) && !self_payer? && !absolved?
   end
 
   def has_extra_scholarship?
