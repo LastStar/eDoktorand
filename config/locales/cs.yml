@@ -8,6 +8,7 @@ cs:
       female: žena
 
   view:
+    back: zpět
     approve: Schválit
     cancel: Neschválit
     examinators:
@@ -1315,10 +1316,7 @@ cs:
       reject:
         message_0: zpět
       enroll:
-        message_0: Desired login
-        message_1: zapsat
-        message_2: Zapsání uchazečů do sytému je zakázáno. Obraťte se na HELPDESK.
-        message_3: zpět
+        enrolled: Student %{name} byl zapsán od %{on}
       admit:
         message_0: přijmout
         message_1: obor
