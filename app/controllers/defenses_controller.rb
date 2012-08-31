@@ -60,6 +60,7 @@ class DefensesController < ApplicationController
     else
       @defense = Defense.new(params[:defense])
     end
+    @defense.detect_external_chairman(params[:has_external_chairman])
     if @defense.save
       flash['notice'] = t(:message_2, :scope => [:controller, :defenses])
       render(:action => :show)

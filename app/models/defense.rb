@@ -36,9 +36,4 @@ class Defense < ExamTerm
     options[:order] = 'date'
     find(:all, options)
   end
-
-  def chairman_display_name
-    return chairman_name if chairman_name.present?
-    return chairman.display_name
-  end
 end

@@ -70,7 +70,7 @@ class FinalExamTermsController < ApplicationController
     else
       @final_exam_term = FinalExamTerm.new(params[:final_exam_term])
     end
-    @final_exam_term.detect_external_chairman(params[:external_chairman])
+    @final_exam_term.detect_external_chairman(params[:has_external_chairman])
     if @final_exam_term.save
       flash['notice'] = t(:message_3, :scope => [:controller, :terms])
       redirect_to :action => :list

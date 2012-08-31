@@ -17,4 +17,12 @@ class ExamTerm < ActiveRecord::Base
     end
   end
 
+  def has_external_or_empty_chairman?
+    self.chairman_id == Tutor.external_chairman.id || self.chairman_id.nil?
+  end
+
+  def chairman_display_name
+    return chairman_name if chairman_name.present?
+    return chairman.display_name
+  end
  end
