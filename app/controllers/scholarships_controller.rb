@@ -11,6 +11,7 @@ class ScholarshipsController < ApplicationController
   end
 
   def list
+    @paying_date = ScholarshipMonth.current.starts_on
     @indices = Index.find_with_scholarship(@user)
     if @user.has_role?('supervisor')
       @approvals = ScholarshipApproval.current
