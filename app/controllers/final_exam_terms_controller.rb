@@ -65,6 +65,7 @@ class FinalExamTermsController < ApplicationController
   end
 
   def create
+    logger.debug params
     if @final_exam_term = FinalExamTerm.find_by_index_id(params[:final_exam_term][:index_id])
       @final_exam_term.update_attributes(params[:final_exam_term])
     else
