@@ -138,6 +138,7 @@ class ScholarshipsController < ApplicationController
 
   # renders control table of scholarships
   def control_table
+    @paying_date = ScholarshipMonth.current.starts_on
     @indices = Index.find_with_scholarship(@user)
     @show_table_message = 1
     @bad_indices = @indices.select(&:bad_index?)

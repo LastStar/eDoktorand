@@ -2,7 +2,7 @@ class Defense < ExamTerm
 
   belongs_to :index
   belongs_to :chairman, :class_name => 'Person'
-	#validates_presence_of :chairman_id, :message => I18n::t(:chairman_must_be_present, :scope => [:model, :term])
+	validates_presence_of :chairman_id, :message => I18n::t(:chairman_must_be_present, :scope => [:model, :term])
 
   def validate
     unless chairman
@@ -35,10 +35,5 @@ class Defense < ExamTerm
     options[:include] = :index
     options[:order] = 'date'
     find(:all, options)
-  end
-
-  def chairman_display_name
-    return chairman_name if chairman_name.present?
-    return chairman.display_name
   end
 end

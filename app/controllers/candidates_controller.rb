@@ -127,10 +127,16 @@ class CandidatesController < ApplicationController
         redirect_to :action => 'list_all'
       end
   end
+
   # enroll candidate form
   def enroll
-		@candidate = Candidate.find(params[:id])
-		@new_user = User.new
+    @candidate = Candidate.find(params[:id])
+    @enrolled_on = if (date = Parameter.get('enroll_date', @user.person.faculty)).present?
+      Date.parse(date)
+    else
+      Date.today
+    end
+		@candidate.enroll!(TermsCalculator.this_year_start, @enrolled_on).update_im_student
   end
 
 	# confirms enrollment of candidate and sends email

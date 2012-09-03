@@ -14,3 +14,9 @@ function close_all_histories() {
   $$('.history').each(function(value) {value.hide();});
 }
 
+
+function switch_external_chairman() {
+  Element.toggle('chairman_text')
+  Element.toggle('chairman_select')
+  $('external_chairman').value = !($('external_chairman').value == 'true')
+}

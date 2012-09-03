@@ -23,10 +23,10 @@ class DefensesController < ApplicationController
         index.disert_theme.save_self_report_file(self_report)
         index.disert_theme.save_disert_theme_file(theme)
         index.claim_defense!
-        
+
         #send theme file right to theses portal
         send_theses_xml(index.disert_theme)
-        
+
         Notifications::deliver_claimed_defense(index)
         redirect_to :controller => :study_plans, :action => :index
     else
@@ -55,11 +55,13 @@ class DefensesController < ApplicationController
 
   # created defense term
   def create
+    logger.debug params
     if @defense = Defense.find_by_index_id(params[:defense][:index_id])
       @defense.update_attributes(params[:defense])
     else
       @defense = Defense.new(params[:defense])
     end
+    @defense.detect_external_chairman(params[:has_external_chairman])
     if @defense.save
       flash['notice'] = t(:message_2, :scope => [:controller, :defenses])
       render(:action => :show)

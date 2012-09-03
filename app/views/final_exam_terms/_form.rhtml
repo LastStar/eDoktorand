@@ -3,6 +3,7 @@
 
 <!--[form:final_exam_term]-->
 <%= hidden_field 'final_exam_term', 'index_id' %>
+<input type='hidden' name='has_external_chairman' id='external_chairman' value='<%= @final_exam_term.has_external_or_empty_chairman? %>'/>
 
 <p>
   <label for="exam_term_start_time"><%= t(:date_and_time, :scope => [:view, :exam_terms]) %></label>
@@ -15,29 +16,29 @@
   <%= text_field 'final_exam_term', 'room'  %><span class='required'>&nbsp;&lowast;</span >
 </p>
 
-<% if !@final_exam_term.chairman_id.nil? %>
-  <p id="chairman_select" >
-  <label for="exam_term_chairman"><%= t(:chairman, :scope => [:view, :exam_terms]) %></label>
-  <%= collection_select :final_exam_term, :chairman_id, @tutors , :id, :display_name %>
-  <%= button_to_function(t(:enter_manually, :scope => [:view, :exam_terms]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
-  </p>
-
-  <p id="chairman_text" style="display: none;">
-  <label><%=t(:chairman, :scope => [:view, :exam_terms])%></label>
-  <%= text_field 'final_exam_term', 'chairman_name' %>
-  <%=  button_to_function(t(:back_to_list, :scope => [:view, :exam_terms]), "Element.show('chairman_select'), Element.hide('chairman_text'), document.getElementById('external_chairman').value=false") %>
-  </p>
-<% else %>
+<% if @final_exam_term.has_external_or_empty_chairman? %>
   <p id="chairman_select" style="display: none;">
     <label for="exam_term_chairman"><%=t(:chairman, :scope => [:view, :exam_terms])%></label>
     <%= collection_select :final_exam_term, :chairman_id, @tutors , :id, :display_name %>
-    <%= button_to_function(t(:enter_manually, :scope => [:view, :exam_terms]), "Element.show('chairman_text'), Element.hide('chairman_select'), document.getElementById('external_chairman').value=true") %>
+    <%= button_to_function(t(:enter_manually, :scope => [:view, :exam_terms]), "switch_external_chairman()") %>
   </p>
 
   <p id="chairman_text">
     <label><%=t(:message_2, :scope => [:view, :exam_terms, :_form])%></label>
     <%= text_field 'final_exam_term', 'chairman_name' %>
-    <%=  button_to_function(t(:back_to_list, :scope => [:view, :exam_terms]), "Element.show('chairman_select'), Element.hide('chairman_text'), document.getElementById('external_chairman').value=false") %>
+    <%=  button_to_function(t(:back_to_list, :scope => [:view, :exam_terms]), "switch_external_chairman()") %>
+  </p>
+<% else %>
+  <p id="chairman_select" >
+  <label for="exam_term_chairman"><%= t(:chairman, :scope => [:view, :exam_terms]) %></label>
+  <%= collection_select :final_exam_term, :chairman_id, @tutors , :id, :display_name %>
+  <%= button_to_function(t(:enter_manually, :scope => [:view, :exam_terms]), "switch_external_chairman()") %>
+  </p>
+
+  <p id="chairman_text" style="display: none;">
+  <label><%=t(:chairman, :scope => [:view, :exam_terms])%></label>
+  <%= text_field 'final_exam_term', 'chairman_name' %>
+  <%=  button_to_function(t(:back_to_list, :scope => [:view, :exam_terms]), "switch_external_chairman()") %>
   </p>
 <% end %>
 
@@ -85,4 +86,3 @@
 <%= text_field 'final_exam_term_email', 'opponent'  %></p>
 
 <!--[eoform:final_exam_term]-->
-

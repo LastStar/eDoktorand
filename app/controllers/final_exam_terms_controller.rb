@@ -65,12 +65,13 @@ class FinalExamTermsController < ApplicationController
   end
 
   def create
+    logger.debug params
     if @final_exam_term = FinalExamTerm.find_by_index_id(params[:final_exam_term][:index_id])
       @final_exam_term.update_attributes(params[:final_exam_term])
     else
       @final_exam_term = FinalExamTerm.new(params[:final_exam_term])
     end
-    @final_exam_term.detect_external_chairman(params[:external_chairman])
+    @final_exam_term.detect_external_chairman(params[:has_external_chairman])
     if @final_exam_term.save
       flash['notice'] = t(:message_3, :scope => [:controller, :terms])
       redirect_to :action => :list
