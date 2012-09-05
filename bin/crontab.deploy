@@ -1,3 +1,4 @@
 1       0       *       *       *       /var/apps/edoktorand.czu.cz/bin/dump_phdstudy.sh
 1      30       *       *       *       /var/apps/edoktorand.czu.cz/bin/send_to_theses.sh
 2       0       *       *       *       /var/apps/edoktorand.czu.cz/bin/check_theses.sh
+3       0       *       *       *       /var/apps/edoktorand.czu.cz/bin/update_im_tables.sh
