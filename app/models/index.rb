@@ -78,6 +78,18 @@ class Index < ActiveRecord::Base
     build_im_index unless im_index
     im_index.index = self
     im_index.get_index_attributes
+    im_index
+  end
+
+  def enrolling_im_index
+    build_im_index
+    im_index.index = self
+    im_index.get_index_attributes
+    im_index.academic_year = TermsCalculator.idm_next_year
+    im_index.study_status_from = TermsCalculator.next_year_start.to_date
+    im_index.study_status_to = TermsCalculator.next_year_end.to_date
+    im_index.save
+    im_index
   end
 
   def index
