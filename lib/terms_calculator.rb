@@ -2,20 +2,22 @@ class TermsCalculator
   class << self
     def this_year_start
       today = Date.today
-      if today.month < 10
-        Date.civil(today.year - 1, 9, 30).to_time
-      else
-        Date.civil(today.year, 9, 30).to_time
-      end
+      year_start(today)
     end
 
     def this_year_end
       today = Date.today
-      if today.month < 10
-        Date.civil(today.year, 9, 30).to_time
-      else
-        Date.civil(today.year + 1, 9, 30).to_time
-      end
+      year_end(today)
+    end
+
+    def next_year_start
+      today = 1.year.since
+      year_start(today)
+    end
+
+    def next_year_end
+      today = 1.year.since
+      year_end(today)
     end
 
     def current_school_year
@@ -61,6 +63,22 @@ class TermsCalculator
         (today.year - 1).to_s
       else
         today.year.to_s
+      end
+    end
+    private
+    def year_start(date)
+      if date.month < 10
+        Date.civil(date.year - 1, 9, 30).to_time
+      else
+        Date.civil(date.year, 9, 30).to_time
+      end
+    end
+
+    def year_end(date)
+      if date.month < 10
+        Date.civil(date.year, 9, 30).to_time
+      else
+        Date.civil(date.year + 1, 9, 30).to_time
       end
     end
   end
