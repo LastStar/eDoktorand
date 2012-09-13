@@ -139,6 +139,20 @@ describe Index do
       @index.nominal_length.should == '3 měsíce'
     end
 
+    it "should return nenastoupil before study start" do
+      Timecop.freeze(Time.zone.local(2009, 9, 20))
+      @index.nominal_length.should == 'studium ještě nezačalo'
+    end
+
+    it "should compute nominal length in days month before end" do
+      Timecop.freeze(Time.zone.local(2012, 9, 20))
+      @index.nominal_length.should == 'zbývá 10 dní'
+      Timecop.freeze(Time.zone.local(2012, 9, 28))
+      @index.nominal_length.should == 'zbývají 2 dny'
+      Timecop.freeze(Time.zone.local(2012, 9, 30))
+      @index.nominal_length.should == 'zbývá poslední den'
+    end
+
     describe "after one more year" do
       before :each do
         Timecop.freeze(Time.zone.local(2011, 1, 2))
