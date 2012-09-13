@@ -207,6 +207,21 @@ class Index < ActiveRecord::Base
   end
 
   def nominal_length
+    if Time.now < enrolled_on
+      return 'studium ještě nezačalo'
+    end
+    days = (((specialization.study_length.years - time_from_enrollment) / 1.day).to_i) + 1
+    if days < 30
+      case days
+      when 1
+        return "zbývá poslední den"
+      when 2..4
+        return "zbývají #{days} dny"
+      else
+        return "zbývá #{days} dní"
+      end
+      return "#{days} dní (zbývá)"
+    end
     years = (time_from_enrollment/1.year).to_i
     months = ((time_from_enrollment%1.year)/1.month).to_i
     case years
