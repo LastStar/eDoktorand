@@ -292,5 +292,30 @@ class MassProcessor
       end
       puts 'Done'
     end
+
+    def update_and_purge_im_tables
+      @@mylog.info "Start purgin"
+      i = ImIndex.all
+      @@mylog.info "There are #{i.size} indices"
+      is = i.reject(&:index)
+      @@mylog.info "There are #{is.size} im indices without index"
+      puts "Delete im indices without index? y=yes"
+      if gets.strip == "y"
+        @@mylog.info "Deleting"
+        is.each { |ind| ind.destroy }
+      end
+
+      @@mylog.info "Updating im indices"
+      (i - is).each do |ind|
+        ind.index.update_im_index
+        ind.index.student.update_im_student
+      end
+
+
+      ImStudent.all do |student|
+        student.update_attribute(:permaddress_zip, student.permaddress_zip.gsub(/ /, ''))
+        student.update_attribute(:contact_zip, student.contact_zip.gsub(/ /, ''))
+      end
+    end
   end
 end
