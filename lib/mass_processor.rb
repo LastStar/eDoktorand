@@ -334,5 +334,19 @@ class MassProcessor
         end
       end
     end
+
+    def remove_empty_im_indices
+      ImIndex.all.each do |index|
+        if index.index
+          begin
+            index.index.update_im_index
+          rescue
+            puts index.id
+          end
+        else
+          index.destroy
+        end
+      end
+    end
   end
 end
