@@ -312,9 +312,26 @@ class MassProcessor
       end
 
 
-      ImStudent.all do |student|
-        student.update_attribute(:permaddress_zip, student.permaddress_zip.gsub(/ /, ''))
-        student.update_attribute(:contact_zip, student.contact_zip.gsub(/ /, ''))
+    end
+
+    def remove_student_duplicates(uics)
+      uics.each do |uic|
+        a = Student.all(:conditions => ["uic = ?", uic], :order => :created_on)
+        puts "#{a.size} for #{uic}"
+        if a.size > 1
+          real = a.first
+          duplicate = a.last
+          if duplicate.index
+            duplicate.index.update_attribute(:student_id, real.id)
+          else
+            puts "no index for #{uic}"
+          end
+          duplicate.candidate.update_attribute(:student_id, real.id) if duplicate.candidate
+          duplicate.im_student.destroy
+          duplicate.destroy
+        else
+          puts "no duplicate for #{uic}"
+        end
       end
     end
   end
