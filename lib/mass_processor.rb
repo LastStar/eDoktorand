@@ -348,5 +348,37 @@ class MassProcessor
         end
       end
     end
+
+    def fix_duplicates_from_yml(file)
+      ys = YAML::load(File.read(file))
+
+      ys.each do |hash|
+        next unless hash
+        uic = hash.first.first
+        student = Student.find_by_uic(uic)
+        old_index_id = hash[uic].first
+
+        index = YAML::load(hash[uic].last).clone
+        index.student_id = student.id
+        index.save(false)
+        puts index_id = index.id
+        puts :DT
+        DisertTheme.find_all_by_index_id(old_index_id).each { |i| puts i.update_attribute(:index_id, index_id) }
+        puts :SC
+        Scholarship.find_all_by_index_id(old_index_id).each { |i| puts i.update_attribute(:index_id, index_id) }
+        puts :SP
+        StudyPlan.find_all_by_index_id(old_index_id).each { |i| puts i.update_attribute(:index_id, index_id) }
+        puts :FE
+        FinalExamTerm.find_all_by_index_id(old_index_id).each { |i| puts i.update_attribute(:index_id, index_id) }
+        puts :DE
+        Defense.find_all_by_index_id(old_index_id).each { |i| puts i.update_attribute(:index_id, index_id) }
+        puts :EX
+        Exam.find_all_by_index_id(old_index_id).each { |i| puts i.update_attribute(:index_id, index_id) }
+        puts :SI
+        StudyInterrupt.find_all_by_index_id(old_index_id).each { |i| puts i.update_attribute(:index_id, index_id) }
+        puts :II
+        ImIndex.find_all_by_index_id(old_index_id).each { |i| puts i.update_attribute(:index_id, index_id) }
+      end
+    end
   end
 end
