@@ -241,8 +241,7 @@ class Candidate < ActiveRecord::Base
   def new_student(enrolled_on, study_start_on)
     Dean.columns #Table inheritance biting our ass again
     uic_getter = UicGetter.new
-    student = Student.find_by_birth_number(self.birth_number)
-    unless student
+    unless student = Student.find_by_birth_number(self.birth_number.strip)
       student = Student.new
       if self.state == 'CZ' || self.state == "SK"
         student.uic = uic_getter.get_uic(self.birth_number)
