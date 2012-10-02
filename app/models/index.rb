@@ -218,7 +218,7 @@ class Index < ActiveRecord::Base
       when 2..4
         return "zbývají #{days} dny"
       else
-        return "zbývá #{days} dní"
+         return "zbývá #{days} dní"
       end
       return "#{days} dní (zbývá)"
     end
