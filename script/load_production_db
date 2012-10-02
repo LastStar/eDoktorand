@@ -7,8 +7,16 @@ else
   filename=`date "+%Y-%m-%d.sql"`
 fi
 
-echo "# downloading db"
-scp edoktorand.czu.cz:/dumps/$filename .
+if [ -f $filename ]
+then
+  echo "# local file"
+  purge=0
+else
+  echo "# downloading db"
+  scp edoktorand.czu.cz:/dumps/$filename .
+  purge=1
+fi
+
 
 echo "# purgin db"
 mysql -uweb -pw3b phdstudy_development < db/purge_db.sql
@@ -19,5 +27,8 @@ cat db/set_utf8.sql $filename | mysql -uweb -pw3b phdstudy_development
 echo "# migrating"
 rake db:migrate
 
-echo "# cleaning"
-rm $filename
+if [ "$purge" -ge 1 ]
+then
+  echo "# cleaning"
+  rm $filename
+fi

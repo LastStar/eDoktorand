@@ -55,8 +55,10 @@ DROP TABLE IF EXISTS `im_indices`;
 DROP TABLE IF EXISTS `im_identities`;
 DROP TABLE IF EXISTS `admittance_themes`;
 DROP TABLE IF EXISTS `scholarship_months`;
-DROP VIEW IF EXISTS `personal_pages`;
 DROP TABLE IF EXISTS `personal_pages`;
 DROP TABLE IF EXISTS `theses_requests`;
 DROP TABLE IF EXISTS `theses_results`;
+DROP VIEW IF EXISTS `personal_pages`;
+DROP VIEW IF EXISTS `reports_student`;
+DROP VIEW IF EXISTS `reports_study`;
 
