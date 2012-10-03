@@ -211,6 +211,17 @@ class Index < ActiveRecord::Base
       return 'studium ještě nezačalo'
     end
     days = (((specialization.study_length.years - time_from_enrollment) / 1.day).to_i) + 1
+    if days < 0
+      days = -days
+      case days
+      when 1
+        return "přes jeden den"
+      when 2..4
+        return "přes #{days} dny"
+      else
+        return "přes #{days} dní"
+      end
+    end
     if days < 30
       case days
       when 1
@@ -218,9 +229,8 @@ class Index < ActiveRecord::Base
       when 2..4
         return "zbývají #{days} dny"
       else
-         return "zbývá #{days} dní"
+        return "zbývá #{days} dní"
       end
-      return "#{days} dní (zbývá)"
     end
     years = (time_from_enrollment/1.year).to_i
     months = ((time_from_enrollment%1.year)/1.month).to_i
@@ -228,21 +238,21 @@ class Index < ActiveRecord::Base
     when 0
       years = ''
     when 1
-      years = "1 rok a "
+      years = "1 rok"
     when 2..4
-      years = "%i roky a " % years
+      years = "%i roky" % years
     else
-      years = "%i let a " % years
+      years = "%i let" % years
     end
     case months
     when 0
       months = ''
     when 1
-      months = "1 měsíc"
+      months = " a 1 měsíc"
     when 2..4
-      months = "%i měsíce" % months
+      months = " a %i měsíce" % months
     else
-      months = "%i měsíců" % months
+      months = " a %i měsíců" % months
     end
 
     "%s%s" % [years, months]
