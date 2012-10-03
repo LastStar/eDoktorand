@@ -270,7 +270,7 @@ class Index < ActiveRecord::Base
 
   # returns if study is absolved
   def absolved?(date = Date.today)
-    disert_theme && disert_theme.defense_passed?(date)
+    disert_theme && disert_theme.defense_passed?(date.to_date)
   end
 
   # returns true if interrupt just admited
@@ -761,7 +761,7 @@ class Index < ActiveRecord::Base
   end
 
   def has_regular_scholarship?(date = Time.now)
-    present_study?(date) && !self_payer? && !absolved?
+    present_study?(date) && !self_payer? && !absolved?(date)
   end
 
   def has_extra_scholarship?
@@ -869,8 +869,8 @@ class Index < ActiveRecord::Base
     study_plan && index.study_plan.attestation
   end
 
-  def has_any_scholarship?
-    return ((has_regular_scholarship? && regular_scholarship_or_create.amount > 0) || (has_extra_scholarship? && extra_scholarship_sum > 0))
+  def has_any_scholarship?(date = Date.today)
+    return ((has_regular_scholarship?(date) && regular_scholarship_or_create.amount > 0) || (has_extra_scholarship? && extra_scholarship_sum > 0))
   end
 
   # updates index from StudentHash
