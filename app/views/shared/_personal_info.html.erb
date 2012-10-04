@@ -1,0 +1,34 @@
+
+<ul class='bordered half left'>
+  <li class="noborder"><h5><%= t(:personal_informations, :scope => [:view, :shared, :_personal_info]) %></h5></li>
+  <li class='printable'>
+    <%= student_name_line(index.student) %>
+  </li>
+  <li>
+    <%= attribute_line(index.student, :birthname) %><%= t(:birthname, :scope => [:view, :shared, :_personal_info]) %>:
+  </li>
+  <%= birth_date_line(index.student) %>
+  <%= birth_number_line(index.student) %>
+  <%= birth_place_line(index.student) %>
+  <li>
+    <%= attribute_line(index.student, :email) %><%=t(:email, :scope => [:view, :shared, :_personal_info]) %>:
+  </li>
+  <li>
+    <%= attribute_line(index.student, :phone) %><%=t(:phone, :scope => [:view, :shared, :_personal_info]) %>:
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.student.uic) if index.student.uic}#{t(:uic, :scope => [:view, :shared, :_personal_info])}: " %>
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.student.sident) if index.student.sident}#{t(:sident, :scope => [:view, :shared, :_personal_info])}: " %>
+  </li>
+  <li class='nonprintable'>
+    <%= attribute_line(index.student, :account) %>
+    <%=t(:account, :scope => [:view, :shared, :_personal_info]) %>:
+  </li>
+  <li>
+    <%= attribute_line(index.student, :citizenship) %>
+    <%=t(:citizenship, :scope => [:view, :shared, :_personal_info])%>:
+  </li>
+</ul>
+
