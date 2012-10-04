@@ -587,29 +587,19 @@ module ApplicationHelper
 
   def student_department_line(index)
     if @user.has_role?(Role.find(2))
-      attribute_line(index, :department, :short_name) + t(:message_74, :scope => [:helper, :application]) + ':'
+      attribute_line(index, :department, :short_name) + t(:department, :scope => [:helper, :application]) + ':'
     else
-      if index.department == nil
-        long_info_helper(t(:message_74, :scope => [:helper, :application])) +
-          t(:message_74, :scope => [:helper, :application]) + ':'
-      else
-        long_info_helper(index.department.short_name) +
-          t(:message_74, :scope => [:helper, :application]) + ':'
-      end
+      long_info_helper(index.department.short_name) +
+        t(:department, :scope => [:helper, :application]) + ':'
     end
   end
 
   def student_specialization_line(index)
     if @user.has_role?(Role.find(2))
-      attribute_line(index, :specialization, :name) + t(:message_73, :scope => [:helper, :application]) + ':'
+      attribute_line(index, :specialization, :name) + t(:specialization, :scope => [:helper, :application]) + ':'
     else
-      if index.specialization == nil
-        long_info_helper(t(:message_73, :scope => [:helper, :application])) +
-          t(:message_73, :scope => [:helper, :application]) + ':'
-      else
-        long_info_helper(index.specialization.name) +
-          t(:message_73, :scope => [:helper, :application]) + ':'
-      end
+      long_info_helper(index.specialization.name) +
+        t(:specialization, :scope => [:helper, :application]) + ':'
     end
   end
 

@@ -1,0 +1,50 @@
+<ul class='bordered half left'>
+  <li class="noborder"><h5><%= t(:study_informations, :scope => [:view, :shared, :_study_info]) %></h5></li>
+  <li>
+    <%= long_info_helper(index.status) %>
+    <%= t(:study_status, :scope => [:view, :shared, :_study_info]) %>:
+  </li>
+  <li>
+    <%= long_info_helper(index.study_plan.status[2..-1]) %>
+    <%= t(:study_plan_status, :scope => [:view, :shared, :_study_info]) %>:
+  </li>
+  <li>
+    <%= student_specialization_line(index) %>
+  </li>
+  <li>
+    <%= student_department_line(index) %>
+  </li>
+  <li>
+    <% res = index.study.name %>
+    <% if index.switched_study? %>
+      <% res << " (#{index.study_form_changed_on.strftime('%d.%m.%Y')})" %>
+    <% end %>
+    <%= long_info_helper(res) %>
+    <%= t(:study_form, :scope => [:view, :shared, :_study_info]) %>:
+  </li>
+  <li class='printable'>
+    <%= student_tutor_line(index) %>
+  </li>
+  <% if FACULTY_CFG[index.faculty.id] && FACULTY_CFG[index.faculty.id]['consultant'] %>
+    <li class='printable'>
+    <%= attribute_line(index, :consultant) %><%= t(:consultant, :scope => [:view, :shared, :_study_info]) %>:
+    </li>
+  <% end %>
+  <li>
+    <%= "#{long_info_helper(index.semester.to_s.concat('.'))}#{t(:semester, :scope => [:view, :shared, :_study_info])}: " %>
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.year.to_s.concat('.'))}#{t(:year, :scope => [:view, :shared, :_study_info])}: " %>
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.enrolled_on.strftime('%d. %m. %Y'))}#{t(:enrolled_on, :scope => [:view, :shared, :_study_info])}: " %>
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.nominal_length)}#{t(:nominal_length, :scope => [:view, :shared, :_study_info])}: " %>
+  </li>
+  <li>
+    <%= "#{long_info_helper(index.specialization.study_length.to_s + t(:years, :scope => [:view, :shared, :_study_info]))}#{t(:study_length, :scope => [:view, :shared, :_study_info])}: " %>
+  </li>
+
+</ul>
+

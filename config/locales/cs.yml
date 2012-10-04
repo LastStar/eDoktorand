@@ -838,29 +838,32 @@ cs:
       _subjects:
         message_0: semestr
         message_1: prospěl
-      _personal_detail:
-        year: Ročník
-        years: ' roky'
-        semester: Semestr
-        nominal_length: Nominální délka studia
-        study_length: Standartní délka studia
-        message_0: Obor
-        message_1: Katedra
-        message_2: Forma studia
-        message_4: Začátek studia
-        message_5: Občanství
-        message_6: Rodné příjmení
-        message_7: Email
-        message_8: Telefon
+      _personal_info:
+        account: Konto
+        citizenship: Občanství
+        birthname: Rodné příjmení
+        email: Email
+        phone: Telefon
+        uic: UIC
+        sident: SIDENT
+        personal_informations: Osobní údaje
+      _address_detail:
         message_9: Ulice
         message_10: Číslo popisné
         message_11: Obec
         message_12: Psč
-        message_13: UIC
-        message_14: SIDENT
-        message_15: Konzultant
-        message_16: Konto
-        message_17: Osobní údaje
+      _study_info:
+        study_status: Stav studia
+        study_plan_status: Stav studijního plánu
+        study_form: Forma studia
+        enrolled_on: Začátek studia
+        consultant: Konzultant
+        study_informations: Studijní údaje
+        nominal_length: Nominální délka studia
+        study_length: Standartní délka studia
+        year: Ročník
+        years: ' roky'
+        semester: Semestr
       _final_exam:
         semester: semestr
         message_1: Státní doktorská zkouška
@@ -1475,8 +1478,8 @@ cs:
       passed_defense: obhájil DP
       passed_final_exam_term: složil SDZ
       passed_defense: obhájil DP
-      message_74: Katedra
-      message_73: Obor
+      department: Katedra
+      specialization: Obor
       message_72: Opravdu chcete schválit?
       message_71: Opravdu chcete provést atestaci?
       message_70: obhajoby
