@@ -1,5 +1,5 @@
 module DisertThemes
-  class Checker
+  module Checker
     require "builder"
     require 'tempfile'
     require 'nokogiri'
@@ -15,11 +15,12 @@ module DisertThemes
     THESIS_USERNAME = "31417"
     THESIS_PASSWORD = "dysfov-eri"
     THESIS_ID_PREFIX = "dsp_"
+    THESIS_RESULT_DIR = "public/pdf/thesis_result"
 
     # prepares XML schema to send to Theses portal
     def prepare_theses_xml(disert_theme)
 
-      #TODO faculty sender.id impl
+      # TODO faculty sender.id impl
       sender_id = disert_theme.index.faculty.theses_id
 
       xml_ret = ""
@@ -35,13 +36,13 @@ module DisertThemes
         "http://theses.cz/pts/elements/1.0/ http://theses.cz/pts/elements/1.0/schemaTheses.xsd") do
         xml.tag!("pts:thesis") do
           # TODO replace with #{senderId}
-          xml.tag!("pts:sender.id") { xml.text! sender_id } #faculty theses_id
-          xml.tag!("pts:thesis.id") { xml.text! THESIS_ID_PREFIX + disert_theme.id.to_s } #disert_theme.id
-          xml.tag!("dc:title", "xml:lang".to_sym => "cze") { xml.text! disert_theme.title.strip } #disert_theme.title
-          if disert_theme.title_en != nil  #disert_theme.title_en
+          xml.tag!("pts:sender.id") { xml.text! sender_id } # faculty theses_id
+          xml.tag!("pts:thesis.id") { xml.text! THESIS_ID_PREFIX + disert_theme.id.to_s } # disert_theme.id
+          xml.tag!("dc:title", "xml:lang".to_sym => "cze") { xml.text! disert_theme.title.strip } # disert_theme.title
+          if disert_theme.title_en != nil  # disert_theme.title_en
             xml.tag!("pts:title.translated", "xml:lang".to_sym => "eng") { xml.text! disert_theme.title_en.strip }
           end
-          if disert_theme.index.defense_claimed_at != nil #submition date in ISO 8601
+          if disert_theme.index.defense_claimed_at != nil # submition date in ISO 8601
             xml.tag!("dcterms:dateSubmitted") { xml.text! disert_theme.index.defense_claimed_at.iso8601 }
           end
           xml.tag!("dc:type") { xml.text! DISERT_TYPE } # thesis type
@@ -73,19 +74,19 @@ module DisertThemes
             xml.tag!("pts:ctype") { xml.text! "thesis" }
             xml.tag!("pts:author") { xml.text! disert_theme.index.student.uic.to_s }
             xml.tag!("pts:filename") { xml.text! "#{disert_theme.id.to_s}.pdf" }
-          end #if FileTest.exists?("http://edoktorand.czu.cz/pdf/disert_theme/#{disert_theme.id.to_s}.pdf") # get file
+          end # if FileTest.exists?("http://edoktorand.czu.cz/pdf/disert_theme/#{disert_theme.id.to_s}.pdf") # get file
         end
       end
       return xml_ret
     end
 
-    #sends generated XML to theses.cz portal
+    # sends generated XML to theses.cz portal
     def send_theses(disert_theme)
 
       # prepare theses xml
       xml_to_send = prepare_theses_xml(disert_theme)
 
-      #tempfile gen
+      # tempfile gen
       tf = Tempfile.new("export");
       tf.write(xml_to_send)
       tf.rewind
@@ -108,22 +109,17 @@ module DisertThemes
 
     def check_theses_result(disert_theme)
 
-      #TODO faculty sender.id impl
+      # TODO faculty sender.id impl
       sender_id = disert_theme.index.faculty.theses_id
 
-      #puts 'senderId = ' + senderId
-
-      #TODO replace sender.id with #{senderId}
+      # TODO replace sender.id with #{senderId}
       result = `curl -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=#{sender_id};pts:thesis.id=#{THESIS_ID_PREFIX + disert_theme.id.to_s}"`
 
-      #puts 'identifier = ' + THESIS_ID_PREFIX + disert_theme.id.to_s
+      # puts 'identifier = ' + THESIS_ID_PREFIX + disert_theme.id.to_s
 
       res = Nokogiri::XML(result)
       res.remove_namespaces!
 
-      #puts 'result = ' + res
-
-      status = -1
       res.xpath('//info').each do |statusNode|
         status = statusNode['status']
       end
@@ -137,103 +133,57 @@ module DisertThemes
       #7. - Dokument zkontrolován u předchozí verze, podobnosti se teď přepočítávají.
       #8. - Dokument nezkontrolován, je přiliš malý.
 
-      case Integer(status.to_s)
-        when 5 then
-          #TODO implement no similarities
-          disert_theme.update_attribute('theses_response', result)
-          disert_theme.update_attribute('theses_response_at', Time.now)
-          disert_theme.update_attribute('theses_status', status)
-        when 6 then
-          #TODO similarities found
-          disert_theme.update_attribute('theses_response', result)
-          disert_theme.update_attribute('theses_response_at', Time.now)
-          disert_theme.update_attribute('theses_status', status)
+      disert_theme.update_attribute('theses_response', result)
+      disert_theme.update_attribute('theses_response_at', Time.now)
+      disert_theme.update_attribute('theses_status', status)
 
-          #parse theses result and create theses_result records
-          parse_theses_result(result, disert_theme)
-        else
-          #TODO implement default action
+      if status.to_s == "6"
+          parse_theses_result(disert_theme, result)
       end
-
-      # TODO implement status save, and result save
-
     end
 
-    #parses theses result obtained from theses.cz after 48 hrs
-    def parse_theses_result(theses_result, disert_theme)
-
-      if theses_result.length > 0
-
+    # parses theses result obtained from theses.cz after 48 hrs
+    def parse_theses_result(disert_theme, theses_result)
+      if theses_result.present?
         result = Nokogiri::XML(theses_result)
         result.remove_namespaces!
 
-        #iterates over each plagiat node in document
-        result.xpath('//similarDocuments/plagiat').each do |plagiat|
-          #parse file name of similarity
-          fileName = plagiat.xpath('filename').first
-
-          #parse similarity of type pdf => link to desired pdf report
-          similar = ""
-          plagiat.xpath('similarities[@type = "pdf"]').each do |similar|
-            similar = similar.text if similar
+        # iterates over each plagiat node in document
+        result.xpath('//similarDocuments/plagiat').map do |plagiat|
+          # create ThesesResult record
+          ThesesResult.create do |tr|
+            tr.disert_theme = disert_theme
+            tr.theses_filename = plagiat.xpath('filename').first.try(:content)
+            tr.theses_pdf = plagiat.xpath('similarities[@type = "pdf"]').first.try(:content)
+            tr.theses_score = plagiat.xpath('score').first.content
           end
-
-          #parse similarity score
-          score = plagiat.xpath('score').first.content
-
-          #create ThesesResult record
-          tr = ThesesResult.new
-          tr.disert_theme_id = disert_theme.id #disert_theme
-          tr.theses_filename = fileName.text
-          tr.theses_pdf = similar
-          tr.theses_score = score
-          tr.save
-
-          #clean variables
-          filename = ""
-          similar = ""
-          score = 0
         end
       end
 
     end
 
-    # method takes four arguments: disertTheme, name of theses file to download, the number of the file used for name generation,
-    # and the last argument is path where we should download the file..
-    def download_theses_file(disert_theme, theses_file, numFile, destination_dir)
+    # Public: Downloads pdf with result of thesis plagiat
+    #
+    # theses_result - The ThesesResult for which we want to download file
+    #
+    # Returns true if it was succesful else false
+    def download_theses_file(theses_result)
       # should be theses.cz
-      domain = theses_file.split('/')[2]
-
-      # the rest after theses.cz/........ (file to download)
-      rest = ""
-      i = 0
-      theses_file.split('/').each do |part|
-        if i > 2
-          if i > 3
-            rest = rest + '/'
-          end
-          rest = rest + part
-        end
-        i = i + 1
-      end
+      uri = URI(theses_result.theses_pdf)
 
       # create the file path
-      fileName = 'dsp_' + disert_theme.id.to_s + '_similar_' + numFile.to_s + '.pdf'
-      path = File.join(destination_dir, fileName)
+      file_name =
+      path = File.join(THESIS_RESULT_DIR, "#{theses_result.id}.pdf")
 
       # and download it..
-      http = Net::HTTP.new(domain, 443)
-      http.use_ssl = true
-      http.start() { |http|
-           req = Net::HTTP::Get.new('/' + rest)
-           req.basic_auth THESIS_USERNAME, THESIS_PASSWORD
-           response = http.request(req)
+      Net::HTTP.new(uri.host, uri.port, :use_ssl => true).start do |https|
+         req = Net::HTTP::Get.new(uri.request_uri)
+         req.basic_auth THESIS_USERNAME, THESIS_PASSWORD
 
-           File.open(path, "w+") do |f|
-             f.write response.body
-             puts "File = " + f.path
-           end
-        }
+         File.open(path, "w+") do |f|
+           f.write http.request(req).body
+         end
+      end
     end
 
     # periodically checks for disert_themes in DB and after the 48hrs interval of request, checks for results..

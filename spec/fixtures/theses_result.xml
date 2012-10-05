@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plg:plagiarism plg:version="1.0" 
+			xmlns:plg="http://theses.cz/pts/elements/1.0/plagiat" 
+			xmlns:pts="http://theses.cz/pts/elements/1.0/" 
+			xmlns:dc="http://purl.org/dc/elements/1.1/">
+<plg:record>
+	<pts:sender.id>S4121</pts:sender.id>
+	<pts:thesis.id>dsp_5485</pts:thesis.id>
+	<dc:publisher>Fakulta agrobiologie, potravinových a přírodních zdrojů - Česká zemědělská univerzita v Praze </dc:publisher>
+	<dc:title>Vliv pěstování mát na obsah a kvalitu silic</dc:title>
+	<pts:creator pts:id="71191">
+		<pts:foreName>Barbora</pts:foreName>
+		<pts:surName>Sedláčková</pts:surName>
+	</pts:creator>
+	<pts:filename>5485.pdf</pts:filename>
+	<pts:fileinfo>thesis</pts:fileinfo>
+	<pts:txtsize>212972</pts:txtsize>
+	<plg:inserted>1. 10. 2012 00:51</plg:inserted>
+	<plg:checked>Podobnost tohoto dokumentu byla zkontrolována.</plg:checked>
+	<dc:identifier>https://theses.cz/auth/id/92rkti/5485.pdf</dc:identifier>
+	<pts:url>http://edoktorand.czu.cz/pdf/disert_theme/5485.pdf</pts:url>
+	<plg:similar plg:type='html'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=b97d6fe871299dc2</plg:similar>
+	<plg:similar plg:type='pdf'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=b97d6fe871299dc2;pdf=1</plg:similar>
+	<plg:similar plg:type='xml'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=b97d6fe871299dc2;xml=1</plg:similar>
+
+	<plg:similarDocuments>
+	<plg:plagiat>
+			<pts:sender.id>S4121</pts:sender.id>
+<pts:thesis.id>73069</pts:thesis.id>
+<dc:publisher>Fakulta agrobiologie, potravinových a přírodních zdrojů - Česká zemědělská univerzita v Praze </dc:publisher>
+<dc:title>Kvalitativní hodnocení rodu Mentha</dc:title>
+<pts:creator pts:id="68875">
+	<pts:foreName>Martina</pts:foreName>
+	<pts:surName>Brabcová</pts:surName>
+</pts:creator>
+<pts:filename>xbram201_dp.pdf</pts:filename>
+<pts:fileinfo>thesis</pts:fileinfo>
+<plg:inserted>28. 5. 2010 07:37</plg:inserted>
+<plg:checked>Podobnost tohoto dokumentu byla zkontrolována.</plg:checked>
+<dc:identifier>https://theses.cz/auth/id/h77i6q/xbram201_dp.pdf</dc:identifier>
+<pts:url>https://badis.czu.cz/Files/prace/xbram201_dp.pdf</pts:url>
+<plg:similar plg:type='html'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=e730e171c7159ade</plg:similar>
+<plg:similar plg:type='pdf'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=e730e171c7159ade;pdf=1</plg:similar>
+<plg:similar plg:type='xml'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=e730e171c7159ade;xml=1</plg:similar>
+<plg:similarities plg:type='html'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=e730e171c7159ade;s1=5;s2=5</plg:similarities>
+<plg:similarities plg:type='pdf'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=e730e171c7159ade;s1=5;s2=5;pdf=1</plg:similarities>
+<plg:similarities plg:type='xml'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=e730e171c7159ade;s1=5;s2=5;xml=1</plg:similarities>
+<plg:score>12</plg:score>
+		</plg:plagiat>
+	<plg:plagiat>
+			<pts:filename>Zdroj z Internetu</pts:filename>
+<pts:fileinfo>http://cheminfo.chemi.muni.cz/chem_sekce/predmety/C7300/GC/uvod.pdf 
+http://extranet.kr-vysocina.cz/download/ozp/kvalita_ovzdusi/04a-VYSOCINA_EMISNI_A_IMISNI_ANALYZA.pdf</pts:fileinfo>
+<plg:checked>Podobnost tohoto dokumentu byla zkontrolována.</plg:checked>
+<dc:identifier>https://theses.cz/auth/dstore/crawling/00/00/55/19fuseFile.txt</dc:identifier>
+<plg:similar plg:type='html'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=0949e7fd5d30a591</plg:similar>
+<plg:similar plg:type='pdf'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=0949e7fd5d30a591;pdf=1</plg:similar>
+<plg:similar plg:type='xml'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=0949e7fd5d30a591;xml=1</plg:similar>
+<plg:similarities plg:type='html'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=0949e7fd5d30a591;s1=5;s2=5</plg:similarities>
+<plg:similarities plg:type='pdf'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=0949e7fd5d30a591;s1=5;s2=5;pdf=1</plg:similarities>
+<plg:similarities plg:type='xml'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=0949e7fd5d30a591;s1=5;s2=5;xml=1</plg:similarities>
+<plg:score>5</plg:score>
+		</plg:plagiat>
+	<plg:plagiat>
+			<plg:checked>Podobnost tohoto dokumentu byla zkontrolována.</plg:checked>
+<dc:identifier></dc:identifier>
+<plg:info>Soubor pochází z jiného systému: is.muni.cz</plg:info>
+<plg:similar plg:type='html'>http://is.muni.cz/system/podobny_uzel.pl?uzel=1d9d61d561c47924</plg:similar>
+<plg:similar plg:type='pdf'>http://is.muni.cz/system/podobny_uzel.pl?uzel=1d9d61d561c47924;pdf=1</plg:similar>
+<plg:similar plg:type='xml'>http://is.muni.cz/system/podobny_uzel.pl?uzel=1d9d61d561c47924;xml=1</plg:similar>
+<plg:similarities plg:type='html'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=1d9d61d561c47924;s1=5;s2=1</plg:similarities>
+<plg:similarities plg:type='pdf'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=1d9d61d561c47924;s1=5;s2=1;pdf=1</plg:similarities>
+<plg:similarities plg:type='xml'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=1d9d61d561c47924;s1=5;s2=1;xml=1</plg:similarities>
+<plg:score>5</plg:score>
+		</plg:plagiat>
+	<plg:plagiat>
+			<plg:checked>Podobnost tohoto dokumentu byla zkontrolována.</plg:checked>
+<dc:identifier></dc:identifier>
+<plg:info>Soubor pochází z jiného systému: is.muni.cz</plg:info>
+<plg:similar plg:type='html'>http://is.muni.cz/system/podobny_uzel.pl?uzel=cf9b8a182ab8f8ea</plg:similar>
+<plg:similar plg:type='pdf'>http://is.muni.cz/system/podobny_uzel.pl?uzel=cf9b8a182ab8f8ea;pdf=1</plg:similar>
+<plg:similar plg:type='xml'>http://is.muni.cz/system/podobny_uzel.pl?uzel=cf9b8a182ab8f8ea;xml=1</plg:similar>
+<plg:similarities plg:type='html'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=cf9b8a182ab8f8ea;s1=5;s2=1</plg:similarities>
+<plg:similarities plg:type='pdf'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=cf9b8a182ab8f8ea;s1=5;s2=1;pdf=1</plg:similarities>
+<plg:similarities plg:type='xml'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=b97d6fe871299dc2;u2=cf9b8a182ab8f8ea;s1=5;s2=1;xml=1</plg:similarities>
+<plg:score>5</plg:score>
+		</plg:plagiat>
+		<plg:info plg:status="6"/>
+
+	</plg:similarDocuments>
+</plg:record>
+</plg:plagiarism>
