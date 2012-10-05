@@ -4,10 +4,12 @@
     <%= long_info_helper(index.status) %>
     <%= t(:study_status, :scope => [:view, :shared, :_study_info]) %>:
   </li>
-  <li>
-    <%= long_info_helper(index.study_plan.status[2..-1]) %>
-    <%= t(:study_plan_status, :scope => [:view, :shared, :_study_info]) %>:
-  </li>
+  <% if index.study_plan %>
+    <li>
+      <%= long_info_helper(index.study_plan.status[2..-1]) %>
+      <%= t(:study_plan_status, :scope => [:view, :shared, :_study_info]) %>:
+    </li>
+  <% end %>
   <li>
     <%= student_specialization_line(index) %>
   </li>
