@@ -7,6 +7,7 @@ tmp/*
 db/schema.rb
 *.kpf
 public/pdf/methodology
+public/pdf/thesis_result
 .DS_Store
 *.csv
 *.sql

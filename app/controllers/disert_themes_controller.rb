@@ -25,7 +25,7 @@ helper :disert_themes
     @title = t(:message_0, :scope => [:controller, :themes])
     @disert_theme = DisertTheme.find(params[:id])
   end
-  
+
   # saves methogology file
   def save_methodology
     @disert_theme = DisertTheme.find(params[:disert_theme][:id])
@@ -54,4 +54,14 @@ helper :disert_themes
     @disert_theme.update_attribute(:title_en, params[:en_title])
   end
 
+  def plagiat
+    @disert_theme = DisertTheme.find(params[:id])
+    @theses_results = @disert_theme.theses_results
+  end
+
+  def theses_result
+    @theses_result = ThesesResult.find(params[:id])
+    extend DisertThemes::Checker
+    send_file download_theses_file(@theses_result)
+  end
 end

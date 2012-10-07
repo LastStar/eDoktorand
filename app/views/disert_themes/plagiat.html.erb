@@ -1,0 +1,15 @@
+<h1>Podobnost dizertační práce: <%= @disert_theme.title %></h1>
+
+<% if @theses_results.present? %>
+  <ul>
+    <% @theses_results.each do |result| %>
+      <li>
+        <%= result.theses_filename %>
+        <%= result.theses_score %> %
+        <%= link_to "detail", :action => :theses_result, :id => result.id %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  Žádně podobnosti nenalezeny
+<% end %>

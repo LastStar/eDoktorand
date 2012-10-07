@@ -32,11 +32,15 @@ end
 Factory.define :student do |s|
   s.firstname 'Student'
   s.lastname 'Studentov'
+  s.uic 1
 end
 
 Factory.define :tutor do |s|
   s.firstname 'Tutor'
   s.lastname 'Tutorov'
+  s.association :title_before, :factory => :title
+  s.association :title_after, :factory => :title, :prefix => false
+  s.uic 666
 end
 
 Factory.define :study do |study|
@@ -65,6 +69,7 @@ Factory.define :faculty do |f|
   f.name_english 'en faculty'
   f.short_name 'FAC'
   f.stipendia_code "666"
+  f.theses_id "S4121"
 end
 
 Factory.define :department do |department|

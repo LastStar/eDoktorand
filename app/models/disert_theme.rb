@@ -6,6 +6,7 @@ class DisertTheme < ActiveRecord::Base
 
   before_create :set_actual
   after_create :copy_methodology
+  has_many :theses_results
 
   def validate
     if defense_passed_on && !index.final_exam_passed?
