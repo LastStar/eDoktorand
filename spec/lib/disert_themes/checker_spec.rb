@@ -34,6 +34,11 @@ describe DisertThemes::Checker do
   end
 
   describe "#check_result" do
+    before do
+      Factory(:faculty_secretary,
+              :faculty_employment => FacultyEmployment.create(:unit_id => disert_theme.index.faculty.id))
+
+    end
     it "returns true on success" do
       Curl::Easy.should_receive(:perform).and_return(File.read("spec/fixtures/theses_check_response_6.xml"))
       check_result(disert_theme).should be_kind_of(Array)
@@ -53,7 +58,7 @@ describe DisertThemes::Checker do
     end
 
     it "contains file url" do
-      xml.xpath("//pts:url").first.text.strip.should == "http://edoktorand.czu.cz/pdf/disert_theme/1.pdf"
+      xml.xpath("//pts:url").first.text.strip.should == "http://edoktorand.czu.cz/pdf/disert_theme/#{disert_theme.id}.pdf"
     end
   end
 

@@ -35,12 +35,17 @@ Factory.define :student do |s|
   s.uic 1
 end
 
-Factory.define :tutor do |s|
-  s.firstname 'Tutor'
-  s.lastname 'Tutorov'
-  s.association :title_before, :factory => :title
-  s.association :title_after, :factory => :title, :prefix => false
-  s.uic 666
+Factory.define :tutor do |t|
+  t.firstname 'Tutor'
+  t.lastname 'Tutorov'
+  t.association :title_before, :factory => :title
+  t.association :title_after, :factory => :title, :prefix => false
+  t.uic 666
+end
+
+Factory.define :faculty_secretary do |fs|
+  fs.firstname 'Tutor'
+  fs.lastname 'Tutorov'
 end
 
 Factory.define :study do |study|

@@ -172,6 +172,7 @@ module DisertThemes
         disert_theme.theses_results = parse_result(response)
         Notifications::deliver_plagiat_found(disert_theme)
       end
+      return disert_theme.theses_results
     end
 
     # Internal: Parses theses result obtained from theses.cz after 48 hrs

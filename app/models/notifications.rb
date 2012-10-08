@@ -216,7 +216,8 @@ class Notifications < ActionMailer::Base
   def plagiat_found(disert_theme)
     index = disert_theme.index
     @from = 'edoktorand@edoktorand.czu.cz'
-    @recipients = [index.faculty.secretary.email, index.tutor.email, "sedmikova@af.czu.cz"]
+    @recipients = [index.faculty.secretary.email, index.tutor.email,
+      "sedmikova@af.czu.cz"]
     @body[:student] = index.student.display_name
     @body[:title] = disert_theme.title
     @body[:disert_theme_id] = disert_theme.id
