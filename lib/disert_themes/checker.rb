@@ -117,14 +117,12 @@ module DisertThemes
 
 
       #TODO all URL to CONSTS
-      response = Curl::Easy.perform("https://theses.cz/auth/th_sprava/neosobni_import_dat.pl") do |curl|
-        c.multipart_form_post = true
-        curl.http_auth_types = :basic
-        curl.username = THESIS_USERNAME
-        curl.password = THESIS_PASSWORD
-      end
-      # result = `curl --insecure -X POST -H 'Content-type: multipart/form-data' -u #{THESIS_USERNAME}:#{THESIS_PASSWORD} -F "soubor=@#{tf.path}" `
-
+      curl = Curl::Easy.new("https://theses.cz/auth/th_sprava/neosobni_import_dat.pl")
+      curl.multipart_form_post = true
+      curl.http_auth_types = :basic
+      curl.username = THESIS_USERNAME
+      curl.password = THESIS_PASSWORD
+      curl.http_post(Curl::PostField.file('soubor', tf.path))
 
       disert_theme.update_attributes(:theses_request => xml_to_send,
                                     :theses_request_at => Time.now,
