@@ -14,6 +14,7 @@ describe ServiceTools::DisertTheme do
       @disert_theme = Factory(:disert_theme, :index => @index)
       @disert_theme.defense_passed!('2011-10-10')
     end
+
     it "it returns hash for sending" do
       ServiceTools::DisertTheme.for_sending(@disert_theme).should == {
         :id_prace => @disert_theme.id,

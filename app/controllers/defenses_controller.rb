@@ -20,15 +20,12 @@ class DefensesController < ApplicationController
     if (self_report = params[:self_report_file]) && self_report.is_a?(Tempfile) &&
       (theme = params[:disert_theme_file]) && theme.is_a?(Tempfile)
       params[:agreement_of_conformity]
-        index.disert_theme.save_self_report_file(self_report)
-        index.disert_theme.save_disert_theme_file(theme)
-        index.claim_defense!
+      index.disert_theme.save_self_report_file(self_report)
+      index.disert_theme.save_disert_theme_file(theme)
+      index.claim_defense!
 
-        #send theme file right to theses portal
-        send_theses_xml(index.disert_theme)
-
-        Notifications::deliver_claimed_defense(index)
-        redirect_to :controller => :study_plans, :action => :index
+      Notifications::deliver_claimed_defense(index)
+      redirect_to :controller => :study_plans, :action => :index
     else
       flash[:error] = []
       unless params[:agreement_of_conformity]

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plg:plagiarism plg:version="1.0" 
+			xmlns:plg="http://theses.cz/pts/elements/1.0/plagiat" 
+			xmlns:pts="http://theses.cz/pts/elements/1.0/" 
+			xmlns:dc="http://purl.org/dc/elements/1.1/">
+<plg:record>
+	<pts:sender.id>S4111</pts:sender.id>
+	<pts:thesis.id>dsp_1124</pts:thesis.id>
+	<dc:publisher>Provozně ekonomická fakulta - Česká zemědělská univerzita v Praze </dc:publisher>
+	<dc:title>Proces sjednocování právních a ekonomických aspektů společné zemědělské politiky</dc:title>
+	<pts:creator pts:id="53985">
+		<pts:foreName>Radek</pts:foreName>
+		<pts:surName>Vanka</pts:surName>
+	</pts:creator>
+	<pts:filename>1124.pdf</pts:filename>
+	<pts:fileinfo>thesis</pts:fileinfo>
+	<pts:txtsize>305763</pts:txtsize>
+	<plg:inserted>24. 9. 2012 00:54</plg:inserted>
+	<plg:checked>Podobnost tohoto dokumentu byla zkontrolována.</plg:checked>
+	<dc:identifier>https://theses.cz/auth/id/d021nd/1124.pdf</dc:identifier>
+	<plg:similar plg:type='html'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=7cc6d960d3ac3d6f</plg:similar>
+	<plg:similar plg:type='pdf'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=7cc6d960d3ac3d6f;pdf=1</plg:similar>
+	<plg:similar plg:type='xml'>https://theses.cz/auth/system/podobny_uzel.pl?uzel=7cc6d960d3ac3d6f;xml=1</plg:similar>
+
+	<plg:similarDocuments>
+	<plg:plagiat>
+			<plg:checked>Podobnost tohoto dokumentu byla zkontrolována.</plg:checked>
+<dc:identifier></dc:identifier>
+<plg:info>Soubor pochází z jiného systému: odevzdej.cz</plg:info>
+<plg:similar plg:type='html'>http://odevzdej.cz/system/podobny_uzel.pl?uzel=2c0eefdc02784154</plg:similar>
+<plg:similar plg:type='pdf'>http://odevzdej.cz/system/podobny_uzel.pl?uzel=2c0eefdc02784154;pdf=1</plg:similar>
+<plg:similar plg:type='xml'>http://odevzdej.cz/system/podobny_uzel.pl?uzel=2c0eefdc02784154;xml=1</plg:similar>
+<plg:similarities plg:type='html'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=7cc6d960d3ac3d6f;u2=2c0eefdc02784154;s1=5;s2=9</plg:similarities>
+<plg:similarities plg:type='pdf'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=7cc6d960d3ac3d6f;u2=2c0eefdc02784154;s1=5;s2=9;pdf=1</plg:similarities>
+<plg:similarities plg:type='xml'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=7cc6d960d3ac3d6f;u2=2c0eefdc02784154;s1=5;s2=9;xml=1</plg:similarities>
+<plg:score>5</plg:score>
+		</plg:plagiat>
+	<plg:plagiat>
+			<plg:checked>Podobnost tohoto dokumentu byla zkontrolována.</plg:checked>
+<dc:identifier></dc:identifier>
+<plg:info>Soubor pochází z jiného systému: odevzdej.cz</plg:info>
+<plg:similar plg:type='html'>http://odevzdej.cz/system/podobny_uzel.pl?uzel=8723f8f72bf5f182</plg:similar>
+<plg:similar plg:type='pdf'>http://odevzdej.cz/system/podobny_uzel.pl?uzel=8723f8f72bf5f182;pdf=1</plg:similar>
+<plg:similar plg:type='xml'>http://odevzdej.cz/system/podobny_uzel.pl?uzel=8723f8f72bf5f182;xml=1</plg:similar>
+<plg:similarities plg:type='html'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=7cc6d960d3ac3d6f;u2=8723f8f72bf5f182;s1=5;s2=9</plg:similarities>
+<plg:similarities plg:type='pdf'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=7cc6d960d3ac3d6f;u2=8723f8f72bf5f182;s1=5;s2=9;pdf=1</plg:similarities>
+<plg:similarities plg:type='xml'>https://theses.cz/auth/dok/plag_podobnost_uzlu.pl?u1=7cc6d960d3ac3d6f;u2=8723f8f72bf5f182;s1=5;s2=9;xml=1</plg:similarities>
+<plg:score>5</plg:score>
+		</plg:plagiat>
+		<plg:info plg:status="6"/>
+
+	</plg:similarDocuments>
+</plg:record>
+</plg:plagiarism>

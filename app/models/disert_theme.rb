@@ -6,6 +6,7 @@ class DisertTheme < ActiveRecord::Base
 
   before_create :set_actual
   after_create :copy_methodology
+  has_many :theses_results
 
   def validate
     if defense_passed_on && !index.final_exam_passed?
@@ -97,7 +98,12 @@ class DisertTheme < ActiveRecord::Base
   end
 
   # select disert themes ready for theses_periodical_check
-  def self.ready_for_theses_check(days = 2)
-    DisertTheme.find(:all, :conditions => [" theses_response_at IS NULL AND theses_request_succesfull = 1 AND theses_request_at <= DATE_SUB( NOW( ) , INTERVAL ? DAY)", days])
+  def self.ready_for_theses_check(ago = 2.days.ago)
+    DisertTheme.all(:conditions => ["theses_response_at IS NULL AND theses_request_succesfull = 1 AND theses_request_at <=  ?", ago])
+  end
+
+  def self.ready_to_send_to_theses_check(remaining = 10.days.since)
+    ids = Defense.all(:conditions => ["date <= ?", remaining], :select => 'index_id')
+    DisertTheme.all(:conditions => ["index_id in (?)", ids])
   end
 end

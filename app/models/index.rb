@@ -255,7 +255,12 @@ class Index < ActiveRecord::Base
       months = " a %i měsíců" % months
     end
 
-    "%s%s" % [years, months]
+    if years.present? && months.present?
+      return "%s a %s" % [years, months]
+    elsif years.present?
+      return years
+    end
+    return months
   end
 
   # returns year of the study

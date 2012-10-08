@@ -22,7 +22,16 @@ class Tutor < Examinator
   # returns external chairman
   #FIXME this is crazy shit man
   def self.external_chairman
-    return Tutor.find_by_firstname_and_lastname("externi","predseda")
+    return Tutor.find_by_firstname_and_lastname("externi", "predseda")
   end
 
+  # TODO document and spec
+  def email
+    if read_attribute(:email)
+      return read_attribute(:email)
+    elsif user
+      return "#{user}@#{faculty.ldap_context}.czu.cz"
+    end
+    ""
+  end
 end
