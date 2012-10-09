@@ -204,24 +204,25 @@ describe Index do
   end
 
   describe "interrupting" do
-    subject { Factory.build(:index, :student => Factory(:student)) }
+    subject { Factory.build(:index, :student => Factory(:student),
+                            :study_plan => Factory.build(:study_plan)) }
 
     context "when too early" do
       it "cannot have interrupt in days" do
-        Timecop.freeze(Time.zone.local(2010, 1, 2))
-        subject.should_not have_interrupts_in_days
+        Timecop.freeze(Time.zone. local(2010, 1, 2))
+        subject.should_not have_interrupt_from_day
       end
     end
 
     context "when less than 30 days to end of study" do
-      it "can have interrupt in days" do
+      it "can have interrupt from particular day" do
         Timecop.freeze(Time.zone.local(2012, 9, 20))
-        subject.should have_interrupts_in_days
+        subject.should have_interrupt_from_day
       end
 
       it "can have interrupt in days" do
         Timecop.freeze(Time.zone.local(2012, 10, 20))
-        subject.should have_interrupts_in_days
+        subject.should have_interrupt_from_day
       end
     end
   end

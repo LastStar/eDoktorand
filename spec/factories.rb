@@ -137,3 +137,9 @@ Factory.define :disert_theme do |disert_theme|
   disert_theme.finishing_to 6
 end
 
+Factory.define :study_plan do |study_plan|
+  study_plan.finishing_to 6
+  study_plan.actual 1
+  study_plan.admited_on Time.now
+  study_plan.approved_on Time.now
+end

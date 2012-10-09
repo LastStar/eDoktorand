@@ -3,9 +3,5 @@
 <% form_tag(:action => 'create') do -%>
   <%= hidden_field('interrupt', 'index_id') %>
 
-  <% if @index.has_interrupts_in_days? %>
-    <%= render(:partial => 'days_form') %>
-  <% else %>
-    <%= render(:partial => 'months_form') %>
-  <% end %>
+  <%= render(:partial => 'form') %>
 <% end %>

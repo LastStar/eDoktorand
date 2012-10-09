@@ -52,11 +52,11 @@ describe "Study Interrupt" do
     end
   end
 
-  context "when duration in days" do
+  context "when start on particular day" do
     subject {
       StudyInterrupt.create(:index => index,
-                            :start_on => Time.current,
-                            :duration_in_days => true,
+                            :start_on => "2012-04-20",
+                            :start_on_day => true,
                             :duration => 6)
     }
 
@@ -66,9 +66,9 @@ describe "Study Interrupt" do
 
     it { should be_valid }
 
-    it { subject.start_on.should == Date.parse("2012-09-20").to_time }
+    it { subject.start_on.should == Date.parse("2012-04-20").to_time }
 
-    it { subject.end_on.should == Date.parse("2012-09-25").to_time }
+    it { subject.end_on.should == Date.parse("2012-10-20").to_time }
   end
 
   context "when just builded" do
