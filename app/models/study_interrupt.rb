@@ -15,8 +15,8 @@ class StudyInterrupt < ActiveRecord::Base
   # computes date it end from duration
   def end_on
     return unless duration
-    if duration_in_days
-      start_on.advance(:days => (duration - 1))
+    if start_on_day
+      start_on.advance(:months => duration)
     else
       start_on.advance(:months => (duration - 1)).end_of_month
     end
@@ -48,7 +48,7 @@ class StudyInterrupt < ActiveRecord::Base
   # normalizes start on to beginning of the month
   # if start on set only!
   def normalize_start_on
-    unless duration_in_days
+    unless start_on_day
       self.start_on = start_on.beginning_of_month if start_on
     end
   end

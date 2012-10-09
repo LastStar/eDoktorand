@@ -1,0 +1,22 @@
+<% form_tag(:action => 'create') do -%>
+<fieldset>
+  <label><%= "#{t(:start_on, :scope => [:view, :interrupts, :index])}:" %></label>
+  <% if @index.has_interrupt_from_day? %>
+    <%= hidden_field "interrupt", "start_on_day", :value => true %>
+    <%= start_day_select %><br />
+  <% else %>
+    <%= start_month_select %><br />
+  <% end %>
+
+  <label><%= t(:duration, :scope => [:view, :interrupts, :index]) + " (" + t(:months, :scope => [:view, :interrupts, :index]) + "):" %></label>
+  <%= select('interrupt', 'duration', (1..24)) %><br />
+  <% unless @index.has_interrupt_from_day? %>
+    <label><%= "#{t(:note, :scope => [:view, :interrupts, :index])}:" %></label>
+    <%= text_area('interrupt', 'note') %><br />
+    <label><%= "#{t(:change_plan, :scope => [:view, :interrupts, :index])}:" %></label>
+    <%= select('interrupt', 'plan_changed', yes_no_options) %><br />
+  <% end %>
+</fieldset>
+<%= submit_tag(t(:submit, :scope => [:view, :interrupts, :index])) %>
+<% end %>
+

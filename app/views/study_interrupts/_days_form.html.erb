@@ -1,9 +1,0 @@
-<%= hidden_field('interrupt', 'duration_in_days', :value => true) %>
-<fieldset>
-  <label><%= "#{t(:start_on, :scope => [:view, :interrupts, :index])}:" %></label>
-  <%= start_day_select %><br />
-    <label><%= t(:duration, :scope => [:view, :interrupts, :index]) + " (" + t(:days, :scope => [:view, :interrupts, :index]) + "):" %></label>
-  <%= select('interrupt', 'duration', (1..30)) %><br />
-</fieldset>
-<%= submit_tag(t(:submit, :scope => [:view, :interrupts, :index])) %>
-

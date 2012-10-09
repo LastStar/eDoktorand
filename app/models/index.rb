@@ -99,8 +99,7 @@ class Index < ActiveRecord::Base
   # return last interrupt
   def interrupt
     @interrupt ||= interrupts.reject(&:new_record?).sort { |x, y|
-      x.created_on <=> y.created_on
-    }.last
+      x.created_on <=> y.created_on}.last
   end
 
   def older_interrupts
@@ -939,10 +938,8 @@ class Index < ActiveRecord::Base
     Scholarship.all(:conditions => ["index_id = ? and scholarship_month_id in (?)", self.id, sms.map(&:id)])
   end
 
-  def has_interrupts_in_days?
-    if days_left < 30
-      return true
-    end
+  def has_interrupt_from_day?
+    study_plan.try(:all_subjects_finished?) && days_left < 30
   end
 
   private
