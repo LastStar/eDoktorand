@@ -7,9 +7,10 @@ class StudyInterruptsController < ApplicationController
 
   def index
     unless @student
-      @student = Index.find(params[:id]).student
+      @index = Index.find(params[:id])
+      @student = @index.student
     end
-    @interrupt = @student.index.interrupts.build
+    @interrupt = @index.interrupts.build
   end
 
   def create

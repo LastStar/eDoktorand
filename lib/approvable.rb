@@ -1,7 +1,7 @@
 module Approvable
-  # approves study plan with statement from parameters 
+  # approves study plan with statement from parameters
   def approve_with(params)
-    statement = eval("#{params['type']}.create(params)") 
+    statement = eval("#{params['type']}.create(params)")
     eval("self.approval.#{params['type'].underscore} = statement")
     if statement.is_a?(LeaderStatement) && !self.approval.tutor_statement
       self.approval.tutor_statement =
@@ -36,9 +36,9 @@ module Approvable
       self.approval = eval("#{type}Approval.new")
     end
     person_id = self.approval.document.index.send(level).id
-    statement = eval("#{level.camelize}Statement").create('person_id' => 
+    statement = eval("#{level.camelize}Statement").create('person_id' =>
       person_id, 'result' => 1, 'note' => note)
-    self.approval.send("#{level}_statement=", statement)
+    self.approval.update_attribute("#{level}_statement_id", statement.id)
     set_times(statement)
   end
 

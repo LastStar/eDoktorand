@@ -2,5 +2,10 @@
 <h6><%= @student.display_name %></h6>
 <% form_tag(:action => 'create') do -%>
   <%= hidden_field('interrupt', 'index_id') %>
-  <%= render(:partial => 'form') %>
+
+  <% if @index.has_interrupts_in_days? %>
+    <%= render(:partial => 'days_form') %>
+  <% else %>
+    <%= render(:partial => 'months_form') %>
+  <% end %>
 <% end %>
