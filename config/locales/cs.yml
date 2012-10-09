@@ -262,12 +262,13 @@ cs:
         message_7: přerušeno od
       index:
         message_0: Přerušení studijního plánu
-        message_1: začátek
-        message_2: trvání
-        message_3: měsíce
-        message_4: poznámka
-        message_5: se změnou studijního plánu
-        message_6: odeslat
+        start_on: začátek
+        duration: trvání
+        months: měsíce
+        days: dny
+        note: poznámka
+        change_plan: se změnou studijního plánu
+        submit: odeslat
     diploma_supplements:
       new:
         new_diploma_supplement: Nový diploma supplement
@@ -805,6 +806,7 @@ cs:
         message_16: Studijní plán
         message_7: trvání
         message_17: neschváleno dne
+        days: dní
       _main_menu:
         message_8: stipendia
         message_9: zkoušky

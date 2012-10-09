@@ -58,21 +58,18 @@ describe Index do
     end
   end
 
-  context "real study duration" do
-    before :all do
-      @student = Factory(:student)
-      @index = Factory(:index, :student => @student)
-    end
+  describe "real study duration" do
+    subject { Factory(:index, :student => Factory(:student)) }
 
-    describe "with interrupts" do
+    context "with interrupts" do
       before :each do
-        @index.interrupts << StudyInterrupt.create(:start_on => Time.current,
+        subject.interrupts << StudyInterrupt.create(:start_on => Time.current,
                                                   :duration => 8)
         Timecop.freeze(Time.zone.local(2011, 1, 2))
       end
 
       it "should compute real study year" do
-        @index.real_study_years.should == 2
+        subject.real_study_years.should == 2
       end
     end
 
@@ -82,7 +79,7 @@ describe Index do
       end
 
       it "should compute real study year" do
-        @index.real_study_years.should == 2
+        subject.real_study_years.should == 2
       end
     end
 
@@ -92,65 +89,69 @@ describe Index do
       end
 
       it "should compute real study year" do
-        @index.real_study_years.should == 1
+        subject.real_study_years.should == 1
       end
     end
 
     describe 'absolved' do
       it "should compute real study year" do
-        @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
-        @index.save
+        subject.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
+        subject.save
         Timecop.freeze(Time.zone.local(2016, 1, 2))
-        @index.disert_theme.defense_passed!('2013-01-02')
-        @index.real_study_years.should == 4
+        subject.disert_theme.defense_passed!('2013-01-02')
+        subject.real_study_years.should == 4
       end
     end
 
     describe 'finished' do
       it "should compute real study year" do
-        @index.finished_on = '2014-01-02'
-        @index.save
+        subject.finished_on = '2014-01-02'
+        subject.save
         Timecop.freeze(Time.zone.local(2016, 1, 2))
-        @index.real_study_years.should == 5
+        subject.real_study_years.should == 5
       end
     end
   end
 
-  context "study duration" do
-    before :all do
-      @student = Factory(:student)
-    end
+  describe "study duration" do
+    subject { Factory(:index, :student => Factory(:student)) }
 
     before :each do
       Timecop.freeze(Time.zone.local(2010, 1, 2))
-      @index = Factory.build(:index)
-      @index.student = @student
     end
 
-    it "should compute semester" do
-      @index.semester.should == 1
+    it "computes semester" do
+      subject.semester.should == 1
     end
 
-    it "should compute year" do
-      @index.year.should == 1
+    it "computes year" do
+      subject.year.should == 1
     end
 
-    it "should compute nominal length" do
-      @index.nominal_length.should == '3 měsíce'
+    it "computes nominal length" do
+      subject.nominal_length.should == '3 měsíce'
     end
 
-    it "should return nenastoupil before study start" do
+    it "return non started before study start" do
       Timecop.freeze(Time.zone.local(2009, 9, 20))
-      @index.nominal_length.should == 'studium ještě nezačalo'
+      subject.nominal_length.should == 'studium ještě nezačalo'
     end
 
-    it "should compute nominal length in days month before end" do
-      Timecop.freeze(Time.zone.local(2012, 9, 20))
-      @index.nominal_length.should == 'zbývá 10 dní'
-      Timecop.freeze(Time.zone.local(2012, 9, 28))
-      @index.nominal_length.should == 'zbývají 2 dny'
-      Timecop.freeze(Time.zone.local(2012, 9, 30))
-      @index.nominal_length.should == 'zbývá poslední den'
+    context "when closing to end" do
+      it "returns 10 days" do
+        Timecop.freeze(Time.zone.local(2012, 9, 20))
+        subject.nominal_length.should == 'zbývá 10 dní'
+      end
+
+      it "returns 2 days" do
+        Timecop.freeze(Time.zone.local(2012, 9, 28))
+        subject.nominal_length.should == 'zbývají 2 dny'
+      end
+
+      it "returns last day" do
+        Timecop.freeze(Time.zone.local(2012, 9, 30))
+        subject.nominal_length.should == 'zbývá poslední den'
+      end
     end
 
     describe "after one more year" do
@@ -159,58 +160,69 @@ describe Index do
       end
 
       it "should compute semester" do
-        @index.semester.should == 3
+        subject.semester.should == 3
       end
 
       it "should compute year" do
-        @index.year.should == 2
+        subject.year.should == 2
       end
 
       it "should compute nominal length" do
-        @index.nominal_length.should == '1 rok a 3 měsíce'
+        subject.nominal_length.should == '1 rok a 3 měsíce'
       end
     end
 
-    describe "with interrupts" do
+    context "with interrupts" do
       before :each do
-        @index.interrupts << StudyInterrupt.create(:start_on => Time.current,
+        subject.interrupts << StudyInterrupt.create(:start_on => Time.current,
                                                   :duration => 8)
         Timecop.freeze(Time.zone.local(2011, 1, 2))
       end
 
       it "should compute semester" do
-        @index.semester.should == 2
+        subject.semester.should == 2
       end
 
       it "should compute year" do
-        @index.year.should == 1
+        subject.year.should == 1
       end
 
       it "should compute nominal length" do
-        @index.nominal_length.should == '7 měsíců'
+        subject.nominal_length.should == '7 měsíců'
       end
     end
 
     describe 'absolved' do
       it "should compute semester and year only until absolved date" do
-        @index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
-        @index.save
+        subject.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
+        subject.save
         Timecop.freeze(Time.zone.local(2016, 1, 2))
-        @index.disert_theme.defense_passed!('2013-01-02')
-        @index.semester.should == 7
+        subject.disert_theme.defense_passed!('2013-01-02')
+        subject.semester.should == 7
       end
     end
   end
 
-  context "interrupting" do
-    before :all do
-      @student = Factory(:student)
+  describe "interrupting" do
+    subject { Factory.build(:index, :student => Factory(:student)) }
+
+    context "when too early" do
+      it "cannot have interrupt in days" do
+        Timecop.freeze(Time.zone.local(2010, 1, 2))
+        subject.should_not have_interrupts_in_days
+      end
     end
 
-    before :each do
-      Timecop.freeze(Time.zone.local(2010, 1, 2))
-      @index = Factory.build(:index)
-      @index.student = @student
+    context "when less than 30 days to end of study" do
+      it "can have interrupt in days" do
+        Timecop.freeze(Time.zone.local(2012, 9, 20))
+        subject.should have_interrupts_in_days
+      end
+
+      it "can have interrupt in days" do
+        Timecop.freeze(Time.zone.local(2012, 10, 20))
+        subject.should have_interrupts_in_days
+      end
     end
   end
 
@@ -246,49 +258,38 @@ describe Index do
     end
   end
 
-  context "validating account" do
-    it "validates correct account number" do
-      index = Factory.build(:index, :student => Factory(:student))
-      index.account_number = "2303308001"
-      index.should be_valid
-    end
+  context "when validating account" do
+    subject { Factory.build(:index, :student => Factory(:student),
+                           :account_number => "2303308001") }
+    it { should be_valid }
 
     it "validates incorrect account number" do
-      index = Factory.build(:index, :student => Factory(:student))
-      index.account_number = "3303308001"
-      index.valid?
-      index.errors[:account_number].should_not be_nil
+      subject.account_number = "3303308001"
+      subject.valid?
+      subject.errors[:account_number].should_not be_nil
     end
 
     it "validates correct account number prefix" do
-      index = Factory.build(:index, :student => Factory(:student))
-      index.account_number = "2303308001"
-      index.account_number_prefix = "51"
-      index.should be_valid
+      subject.account_number_prefix = "51"
+      subject.should be_valid
     end
 
     it "validates incorrect account number prefix" do
-      index = Factory.build(:index, :student => Factory(:student))
-      index.account_number = "2303308001"
-      index.account_number_prefix = "52"
-      index.valid?
-      index.errors[:account_number_prefix].should_not be_nil
+      subject.account_number_prefix = "52"
+      subject.valid?
+      subject.errors[:account_number_prefix].should_not be_nil
     end
 
     it "validates account number prefix with dash as error" do
-      index = Factory.build(:index, :student => Factory(:student))
-      index.account_number = "2303308001"
-      index.account_number_prefix = "0-"
-      index.valid?
-      index.errors[:account_number_prefix].should_not be_nil
+      subject.account_number_prefix = "0-"
+      subject.valid?
+      subject.errors[:account_number_prefix].should_not be_nil
     end
 
     it "validates account number prefix with space as error" do
-      index = Factory.build(:index, :student => Factory(:student))
-      index.account_number = "2303308001"
-      index.account_number_prefix = "0 "
-      index.valid?
-      index.errors[:account_number_prefix].should_not be_nil
+      subject.account_number_prefix = "0 "
+      subject.valid?
+      subject.errors[:account_number_prefix].should_not be_nil
     end
   end
 

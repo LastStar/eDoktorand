@@ -14,11 +14,17 @@ class StudyInterrupt < ActiveRecord::Base
 
   # computes date it end from duration
   def end_on
-    start_on.advance(:months => (duration - 1)).end_of_month
+    return unless duration
+    if duration_in_days
+      start_on.advance(:days => (duration - 1))
+    else
+      start_on.advance(:months => (duration - 1)).end_of_month
+    end
   end
 
   # returns current duration of interrupt
   def current_duration
+    return 0 unless duration
     if finished?
       (finished_on - start_on).ceil
     elsif end_on.past?
@@ -42,6 +48,8 @@ class StudyInterrupt < ActiveRecord::Base
   # normalizes start on to beginning of the month
   # if start on set only!
   def normalize_start_on
-    self.start_on = start_on.beginning_of_month if start_on
+    unless duration_in_days
+      self.start_on = start_on.beginning_of_month if start_on
+    end
   end
 end

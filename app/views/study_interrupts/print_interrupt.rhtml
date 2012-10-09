@@ -53,7 +53,6 @@
   <h5><%= t(:message_8, :scope => [:view, :interrupts, :print_interrupt]) %></h5>
   <ul id='attestation'>
     <%= print_statements(study_plan.attestation) %>
-    <%= attestation_detail(study_plan) %>
   </ul>
   <% elsif study_plan.approval %>
   <h5><%= t(:message_9, :scope => [:view, :interrupts, :print_interrupt]) %></h5>

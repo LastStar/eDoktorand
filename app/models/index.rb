@@ -98,11 +98,13 @@ class Index < ActiveRecord::Base
 
   # return last interrupt
   def interrupt
-    @interrupt ||= interrupts.sort{|x, y| x.created_on <=> y.created_on}.last
+    @interrupt ||= interrupts.reject(&:new_record?).sort { |x, y|
+      x.created_on <=> y.created_on
+    }.last
   end
 
   def older_interrupts
-    (interrupts.sort{|x, y| x.created_on <=> y.created_on} - [interrupt])
+    (interrupts.sort {|x, y| x.created_on <=> y.created_on} - [interrupt])
   end
 
   # returns describe_error for bad index
@@ -206,13 +208,17 @@ class Index < ActiveRecord::Base
     return time
   end
 
+  def days_left
+    @days_left = (((specialization.study_length.years - time_from_enrollment) / 1.day).to_i) + 1
+  end
+
   def nominal_length
     if Time.now < enrolled_on
       return 'studium ještě nezačalo'
     end
-    days = (((specialization.study_length.years - time_from_enrollment) / 1.day).to_i) + 1
-    if days < 0
-      days = -days
+
+    if days_left < 0
+      days = -days_left
       case days
       when 1
         return "přes jeden den"
@@ -222,14 +228,14 @@ class Index < ActiveRecord::Base
         return "přes #{days} dní"
       end
     end
-    if days < 30
-      case days
+    if days_left < 30
+      case days_left
       when 1
         return "zbývá poslední den"
       when 2..4
-        return "zbývají #{days} dny"
+        return "zbývají #{days_left} dny"
       else
-        return "zbývá #{days} dní"
+        return "zbývá #{days_left} dní"
       end
     end
     years = (time_from_enrollment/1.year).to_i
@@ -304,9 +310,10 @@ class Index < ActiveRecord::Base
   end
 
   # returns statement if this index waits for approval from person
+  # TODO this method needs specs!!!
   def statement_for(user)
     #TODO move this two ors to it's own status method
-    unless status == absolved? || interrupted? || final_exam_passed?
+    unless status == absolved? || interrupted?
       if admited_interrupt?
         interrupt.approval ||= InterruptApproval.create
         if interrupt.approval.prepares_statement?(user)
@@ -329,14 +336,15 @@ class Index < ActiveRecord::Base
   end
 
   # returns statement if this index waits for approval from person
+  # TODO this method needs specs!!!
   def waits_for_statement?(user)
     #TODO move this two ors to it's own status method
-    unless absolved? || interrupted? || final_exam_passed?
+    unless absolved? || interrupted?
       if admited_interrupt?
         temp_approval = interrupt.approval ||= InterruptApproval.create
-      elsif study_plan && !study_plan.approved?
+      elsif !final_exam_passed? && study_plan && !study_plan.approved?
         temp_approval = study_plan.approval ||= StudyPlanApproval.create
-      elsif study_plan && study_plan.approved?
+      elsif !final_exam_passed? && study_plan && study_plan.approved?
         if !study_plan.attestation || !study_plan.attestation.is_actual?
           temp_approval = study_plan.attestation = Attestation.create(:document_id => study_plan.id)
         else
@@ -929,6 +937,12 @@ class Index < ActiveRecord::Base
   def paid_scholarships
     sms = ScholarshipMonth.all(:conditions => "paid_at is not null")
     Scholarship.all(:conditions => ["index_id = ? and scholarship_month_id in (?)", self.id, sms.map(&:id)])
+  end
+
+  def has_interrupts_in_days?
+    if days_left < 30
+      return true
+    end
   end
 
   private
