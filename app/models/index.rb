@@ -580,10 +580,10 @@ class Index < ActiveRecord::Base
       I18n::t(:absolved, :scope => [:model, :index])
     elsif finished?
       I18n::t(:finished, :scope => [:model, :index])
-    elsif final_exam_passed?
-      I18n::t(:passed_sdz, :scope => [:model, :index])
     elsif interrupted?
       I18n::t(:interrupted, :scope => [:model, :index])
+    elsif final_exam_passed?
+      I18n::t(:passed_sdz, :scope => [:model, :index])
     elsif continues?
       I18n::t(:closed, :scope => [:model, :index])
     else
