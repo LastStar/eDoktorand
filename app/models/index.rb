@@ -695,8 +695,11 @@ class Index < ActiveRecord::Base
     update_attribute('interrupted_on', nil)
     if end_date.is_a? Hash
       end_date = Time.local(end_date['year'].to_i,
-                           end_date['month'].to_i).end_of_month
+                           end_date['month'].to_i,
+                           end_date['day'])
     end
+    end_date = end_date.end_of_month unless interrupt.start_on_day
+
     interrupt.update_attribute('finished_on', end_date)
   end
 

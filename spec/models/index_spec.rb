@@ -225,6 +225,23 @@ describe Index do
         subject.should have_interrupt_from_day
       end
     end
+
+    context "when finishing interrupt" do
+      subject { Factory.build(:index, :student => Factory(:student),
+                              :study_plan => Factory.build(:study_plan)) }
+
+      it "ends on month's end when does not start on a day" do
+        subject.interrupts = [StudyInterrupt.new]
+        subject.end_interrupt!({ 'year' => 2012, 'month' => 10 })
+        subject.interrupt.finished_on.should == Time.local(2012, 10).end_of_month
+      end
+
+      it "ends on date when starts on a day" do
+        subject.interrupts = [StudyInterrupt.new(:start_on_day => true)]
+        subject.end_interrupt!({ 'year' => 2012, 'month' => 10, 'day' => 3 })
+        subject.interrupt.finished_on.should == Time.local(2012, 10, 3)
+      end
+    end
   end
 
   context "ImStudent connection" do
