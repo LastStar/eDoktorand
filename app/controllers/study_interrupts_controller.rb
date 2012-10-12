@@ -26,7 +26,8 @@ class StudyInterruptsController < ApplicationController
 
   def edit
     @interrupt = StudyInterrupt.find(params[:id])
-    @student = @interrupt.index.student
+    @index = @interrupt.index
+    @student = @index.student
   end
 
   def update
