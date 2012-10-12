@@ -17,23 +17,57 @@ describe Index do
       index.continues?.should be_true
       index.status.should == I18n::t(:message_14, :scope => [:model, :index])
     end
+
     context 'status methods' do
+      let(:subject) { Factory(:index, :student => Factory(:student)) }
+
       before :each do
-        @student = Factory(:student)
-        @index = Factory(:index, :student => @student)
         Timecop.freeze("2010/01/01")
       end
-      it "should return status" do
-        @index.status.should == 'studuje'
+
+
+      it "returns studying" do
+        subject.status.should == 'studuje'
       end
-      it "should return status code" do
-        @index.status_code.should == 'S'
+
+      it "returns status code" do
+        subject.status_code.should == 'S'
       end
-      it "should return from when status is valid" do
-        @index.status_from.should == Date.parse('2009/09/30')
+
+      it "returns from when status is valid" do
+        subject.status_from.should == Date.parse('2009/09/30')
       end
+
       it "should return to when status is valid" do
-        @index.status_to.should == Date.parse('2010/09/30')
+        subject.status_to.should == Date.parse('2010/09/30')
+      end
+
+      context "when final exam passed" do
+        let(:subject) { Factory(:index, :student => Factory(:student),
+                               :final_exam_passed_on => Time.now) }
+
+        it "returns passed status" do
+          subject.status.should == "složil SDZ"
+        end
+
+        it "should return status code" do
+          subject.status_code.should == 'S'
+        end
+      end
+
+      context "when interrupted" do
+        let(:subject) { Factory(:index, :student => Factory(:student),
+                                :study_plan => Factory.build(:study_plan),
+                                :interrupted_on => 1.day.ago) }
+
+        it "returns interrupted status" do
+          subject.status.should == "přerušeno"
+        end
+
+        it "returns interrupted even after final exam" do
+          subject.update_attribute(:final_exam_passed_on, Time.now)
+          subject.status.should == "přerušeno"
+        end
       end
     end
   end
@@ -223,6 +257,23 @@ describe Index do
       it "can have interrupt in days" do
         Timecop.freeze(Time.zone.local(2012, 10, 20))
         subject.should have_interrupt_from_day
+      end
+    end
+
+    context "when finishing interrupt" do
+      subject { Factory.build(:index, :student => Factory(:student),
+                              :study_plan => Factory.build(:study_plan)) }
+
+      it "ends on month's end when does not start on a day" do
+        subject.interrupts = [StudyInterrupt.new]
+        subject.end_interrupt!({ 'year' => 2012, 'month' => 10 })
+        subject.interrupt.finished_on.should == Time.local(2012, 10).end_of_month
+      end
+
+      it "ends on date when starts on a day" do
+        subject.interrupts = [StudyInterrupt.new(:start_on_day => true)]
+        subject.end_interrupt!({ 'year' => 2012, 'month' => 10, 'day' => 3 })
+        subject.interrupt.finished_on.should == Time.local(2012, 10, 3)
       end
     end
   end

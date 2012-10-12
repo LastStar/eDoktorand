@@ -125,7 +125,8 @@ module StudentsHelper
                            :form_action => 'end',
                            :form_controller => 'study_interrupts',
                            :id => index,
-                           :date => index.interrupt.end_on},
+                           :date => index.interrupt.end_on,
+                           :day => index.interrupt.start_on_day},
                    :update => "index_form_#{index.id}")
   end
 

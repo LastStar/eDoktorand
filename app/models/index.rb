@@ -580,10 +580,10 @@ class Index < ActiveRecord::Base
       I18n::t(:absolved, :scope => [:model, :index])
     elsif finished?
       I18n::t(:finished, :scope => [:model, :index])
-    elsif final_exam_passed?
-      I18n::t(:passed_sdz, :scope => [:model, :index])
     elsif interrupted?
       I18n::t(:interrupted, :scope => [:model, :index])
+    elsif final_exam_passed?
+      I18n::t(:passed_sdz, :scope => [:model, :index])
     elsif continues?
       I18n::t(:closed, :scope => [:model, :index])
     else
@@ -695,8 +695,11 @@ class Index < ActiveRecord::Base
     update_attribute('interrupted_on', nil)
     if end_date.is_a? Hash
       end_date = Time.local(end_date['year'].to_i,
-                           end_date['month'].to_i).end_of_month
+                           end_date['month'].to_i,
+                           end_date['day'])
     end
+    end_date = end_date.end_of_month unless interrupt.start_on_day
+
     interrupt.update_attribute('finished_on', end_date)
   end
 
