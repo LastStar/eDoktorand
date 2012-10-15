@@ -82,12 +82,12 @@ table.information th{border: none; text-align: left;}
 table.information td{padding: 0 1ex}
 
 
-#student_detail li { 
-  clear: right; 
+#student_detail li {
+  clear: right;
   margin: 0 0 0 0;
   padding: 2px 0 0 0.5ex;
   border: none;
-  list-style: none; 
+  list-style: none;
 }
 #error {
   display: none;
@@ -151,13 +151,13 @@ p.subject {
 }
 .rightAlign {
 	text-align: left;
-	padding-left: 10cm;	
-	padding-bottom: 1em;	
+	padding-left: 10cm;
+	padding-bottom: 1em;
 }
 .rightAlignLefter {
 	text-align: left;
-	padding-left: 10cm;	
-	padding-bottom: 1em;	
+	padding-left: 10cm;
+	padding-bottom: 1em;
 }
 .centerAlign {
 	text-align: center;
@@ -183,10 +183,10 @@ table.list th {
 }
 table.list td {
   white-space: nowrap;
-  padding-left: 5px;	
-  padding-right: 3px;	
-  padding-top: 1px;	
-  padding-bottom: 1px;	
+  padding-left: 5px;
+  padding-right: 3px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   margin: 0px;
   border:1px solid;
 }
@@ -217,7 +217,7 @@ a {
 .printable a {
   display: inline;
   text-decoration: none;
-  color: black;  
+  color: black;
 }
 .nonprintable {
   display: none
