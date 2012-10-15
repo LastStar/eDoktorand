@@ -128,7 +128,7 @@ module DisertThemes
                                     :theses_request_at => Time.now,
                                     :theses_request_response => response)
 
-      unless Nokogiri::XML(response).xpath('//commited').empty?
+      unless Nokogiri::XML(response).xpath('//commited')
         disert_theme.update_attribute('theses_request_succesfull', true)
       end
 
