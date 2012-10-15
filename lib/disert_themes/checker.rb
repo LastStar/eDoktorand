@@ -117,18 +117,20 @@ module DisertThemes
 
 
       #TODO all URL to CONSTS
+      response = ""
       curl = Curl::Easy.new("https://theses.cz/auth/th_sprava/neosobni_import_dat.pl")
       curl.multipart_form_post = true
       curl.http_auth_types = :basic
       curl.username = THESIS_USERNAME
       curl.password = THESIS_PASSWORD
-      response = curl.http_post(Curl::PostField.file('soubor', tf.path))
+      curl.on_body{ |data| response = data }
+      curl.http_post(Curl::PostField.file('soubor', tf.path))
 
       disert_theme.update_attributes(:theses_request => xml_to_send,
                                     :theses_request_at => Time.now,
                                     :theses_request_response => response)
 
-      unless Nokogiri::XML(response).xpath('//commited')
+      unless Nokogiri::XML(response).xpath('//commited').empty?
         disert_theme.update_attribute('theses_request_succesfull', true)
       end
 
