@@ -145,7 +145,7 @@ module DisertThemes
     # disert_theme - The DisertTheme for which we are checking results
     #
     # Returns the Array of ThesesResult on success, false when something went wrong
-    def check_result(disert_theme)
+    def check_result(disert_theme, send_mail = false)
       thesis_id = THESIS_ID_PREFIX + disert_theme.id.to_s
       sender_id = disert_theme.index.faculty.theses_id
       uri = "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=#{sender_id};pts:thesis.id=#{thesis_id}"
@@ -170,7 +170,9 @@ module DisertThemes
 
       if status == "6"
         disert_theme.theses_results = parse_result(response)
-        Notifications::deliver_plagiat_found(disert_theme)
+        if send_mail
+          Notifications::deliver_plagiat_found(disert_theme)
+        end
       end
       return disert_theme.theses_results
     end
