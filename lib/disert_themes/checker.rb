@@ -122,7 +122,7 @@ module DisertThemes
       curl.http_auth_types = :basic
       curl.username = THESIS_USERNAME
       curl.password = THESIS_PASSWORD
-      curl.http_post(Curl::PostField.file('soubor', tf.path))
+      response = curl.http_post(Curl::PostField.file('soubor', tf.path))
 
       disert_theme.update_attributes(:theses_request => xml_to_send,
                                     :theses_request_at => Time.now,
@@ -229,13 +229,13 @@ module DisertThemes
     # periodically checks for disert_themes in DB and after the 48hrs interval of request, checks for results..
     def receive_results
       DisertTheme.ready_for_theses_check.each do |disert_theme|
-        check_theses_result(disert_theme)
+        check_result(disert_theme)
       end
     end
 
     def send_for_check
       DisertTheme.ready_to_send_to_theses_check.each do |disert_theme|
-        send_to_theses(disert_theme)
+        send_theses(disert_theme)
       end
     end
 
