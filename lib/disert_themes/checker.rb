@@ -150,11 +150,13 @@ module DisertThemes
       sender_id = disert_theme.index.faculty.theses_id
       uri = "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=#{sender_id};pts:thesis.id=#{thesis_id}"
 
+      response = ""
       begin
-        response = Curl::Easy.perform(uri) do |curl|
+        Curl::Easy.perform(uri) do |curl|
           curl.http_auth_types = :basic
           curl.username = THESIS_USERNAME
           curl.password = THESIS_PASSWORD
+          curl.on_body{ |data| response = data }
         end
       rescue
         return false
