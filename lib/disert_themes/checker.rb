@@ -61,14 +61,14 @@ module DisertThemes
           xml.tag!("pts:degree.discipline", "xml:lang" => "cze") {
             xml.text! disert_theme.index.specialization.name.strip }
           xml.tag!("pts:degree.discipline", "xml:lang" => "eng") {
-            xml.text! disert_theme.index.specialization.name_english.strip }
+            xml.text! disert_theme.index.specialization.name_english.try(:strip) }
           xml.tag!("pts:degree.grantor", "xml:lang" => "cze") { xml.text! CZU }
           xml.tag!("pts:degree.grantor", "xml:lang" => "eng") { xml.text! CULS }
           xml.tag!("pts:degree.grantor.faculty", "xml:lang" => "cze") {
             xml.text! disert_theme.index.department.faculty.name.strip }
           if disert_theme.index.department.faculty.name_english.present?
             xml.tag!("pts:degree.grantor.faculty", "xml:lang" => "eng") {
-              xml.text! disert_theme.index.department.faculty.name_english.strip
+              xml.text! disert_theme.index.department.faculty.name_english.try(:strip)
             }
           end
           xml.tag!("pts:creator",
@@ -86,9 +86,9 @@ module DisertThemes
               xml.tag!("pts:surName") {
                 xml.text! disert_theme.index.tutor.lastname.strip }
               xml.tag!("pts:academicTitleBefore") {
-                xml.text! disert_theme.index.tutor.title_before.label.strip }
+                xml.text! disert_theme.index.tutor.title_before.label.try(:strip) }
               xml.tag!("pts:academicTitleAfter") {
-                xml.text! disert_theme.index.tutor.title_after.label.strip }
+                xml.text! disert_theme.index.tutor.title_after.label.try(:strip) }
             end
           end
           xml.tag!("pts:get.file") do
