@@ -308,3 +308,11 @@ table.wide th {
 img.text-content-top-image {
   display: none;
 }
+
+div.result {
+  page-break-inside: avoid;
+}
+
+.result table {
+  width: 60%;
+}
