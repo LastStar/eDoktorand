@@ -1123,21 +1123,22 @@ cs:
       _edit:
         message_0: Uložit
       protocol:
+        consultant: Konzultant
+        tutor: Školitel
+        defended: obhájil
+        not_defended: neobhájil
         message_18: Záporných
         message_8: Začátek studia
         message_9: Konzultant
         message_20: Výsledek obhajoby disertační práce
         message_19: Neplatných
         message_0: zpět
-        message_21: obhájil
         message_10: Předseda komise
         message_1: V Praze dne
-        message_22: neobhájil
         message_11: Členové komise
         message_2: Česká zemědělská univerzita v Praze
         message_12: Oponenti
         message_3: Protokol o obhajobě disertační práce
-        message_13: Školitel
         message_4: Příjmení a jméno
         message_14: Výsledek hlasování
         message_5: Akreditován
