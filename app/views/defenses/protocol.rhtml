@@ -31,6 +31,10 @@
     <th><%= t(:message_8, :scope => [:view, :defenses, :protocol]) %>:</th>
     <td><%= index.enrolled_on.strftime("%d. %m. %Y") %></td>
   </tr>
+  <tr>
+    <th><%= t(:tutor, :scope => [:view, :defenses, :protocol]) %>:</th>
+    <td><%= index.tutor.display_name %></td>
+  </tr>
 <% if index.consultant %>
   <tr>
     <th><%= t(:consultant, :scope => [:view, :defenses, :protocol]) %>:</th>
@@ -72,10 +76,6 @@
       <td>......................................</td>
     </tr>
   <% end %>
-  <tr>
-    <td><%= index.tutor.display_name %></td>
-    <td>......................................</td>
-  </tr>
   <tr colspan='2'>
     <th><%= t(:message_11, :scope => [:view, :defenses, :protocol]) %></th>
   </tr>
