@@ -693,15 +693,6 @@ module ApplicationHelper
     end
   end
 
-  # translates approver
-  def translate_approver(approver)
-    if approver.nil?
-      I18n::t(:nobody, :scope => [:helper, :application])
-    else
-      I18n::t(approver.to_s.downcase, :scope => [:helper, :application])
-    end
-  end
-
   def pass_link(what, index)
     link_to(t("passed_#{what}", :scope => [:helper, :application]), :controller => what.pluralize, :action => :pass, :id => index)
   end
