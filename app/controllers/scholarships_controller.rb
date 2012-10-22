@@ -55,6 +55,7 @@ class ScholarshipsController < ApplicationController
   # FIXME what the fuck is edit for?
   def save
     @edit = 0
+    @paying_date = ScholarshipMonth.current.starts_on
     if params[:scholarship][:id] && !params[:scholarship][:id].empty?
       update
       @edit = 1
