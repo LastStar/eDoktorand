@@ -106,6 +106,7 @@ module DisertThemes
 
     # sends generated XML to theses.cz portal
     def send_theses(disert_theme)
+      print "Sending DT id #{disert_theme.id} with title #{disert_theme.title}.... "
 
       # prepare theses xml
       xml_to_send = prepare_xml(disert_theme)
@@ -130,7 +131,10 @@ module DisertThemes
                                     :theses_request_at => Time.now,
                                     :theses_request_response => response)
 
-      unless Nokogiri::XML(response).xpath('//commited').empty?
+      if Nokogiri::XML(response).xpath('//commited').empty?
+        puts "Error, check the response"
+      else
+        puts "Sent"
         disert_theme.update_attribute('theses_request_succesfull', true)
       end
 
@@ -146,6 +150,7 @@ module DisertThemes
     #
     # Returns the Array of ThesesResult on success, false when something went wrong
     def check_result(disert_theme, send_mail = true)
+      print "Receiving results for DT id #{disert_theme.id} with title #{disert_theme.title}.... "
       thesis_id = THESIS_ID_PREFIX + disert_theme.id.to_s
       sender_id = disert_theme.index.faculty.theses_id
       uri = "https://theses.cz/auth/plagiaty/plag_vskp.pl?pts:sender.id=#{sender_id};pts:thesis.id=#{thesis_id}"
@@ -171,10 +176,13 @@ module DisertThemes
       disert_theme.update_attribute('theses_status', status)
 
       if status == "6"
+        puts "Plagiat found"
         disert_theme.theses_results = parse_result(response)
         if send_mail
           Notifications::deliver_plagiat_found(disert_theme)
         end
+      else
+        puts "Plagiat not found"
       end
       return disert_theme.theses_results
     end

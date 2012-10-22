@@ -104,6 +104,6 @@ class DisertTheme < ActiveRecord::Base
 
   def self.ready_to_send_to_theses_check(remaining = 10.days.since)
     ids = Defense.all(:conditions => ["date <= ? and date > ?", remaining, 2.days.since], :select => 'index_id').map(&:index_id)
-    DisertTheme.all(:conditions => ["index_id in (?) AND theses_request_succesfull IS NULL", ids])
+    DisertTheme.all(:conditions => ["index_id in (?) AND theses_request_succesfull IS NULL AND actual=1", ids])
   end
 end
