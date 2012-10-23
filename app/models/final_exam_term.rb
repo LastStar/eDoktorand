@@ -14,12 +14,12 @@ class FinalExamTerm < ExamTerm
     indices = Index.find_for(user, :not_absolved => true)
     if options.delete :not_passed
       indices.reject! {|i|
-        i.status == I18n::t(:passed_sdz_l, :scope => [:model, :index]) ||
-        i.status == I18n::t(:absolved_l, :scope => [:model, :index]) ||
-        i.status == I18n::t(:finished_l, :scope => [:model, :index])
+        i.finished? ||
+        i.final_exam_passed? ||
+        i.absolved?
       }
     end
-    options[:conditions] = ['index_id in (?)', indices]
+    options[:conditions] = ['index_id in (?)', indices.map(&:id)]
     if options.delete :future
       options[:conditions].first << ' and date >= ? and indices.final_exam_invitation_sent_at is not null'
       options[:conditions] << Date.today

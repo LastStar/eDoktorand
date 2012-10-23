@@ -576,7 +576,7 @@ class Index < ActiveRecord::Base
 
   # returns status of index
   def status
-    @status ||= if disert_theme && disert_theme.defense_passed?
+    @status ||= if absolved?
       I18n::t(:absolved, :scope => [:model, :index])
     elsif finished?
       I18n::t(:finished, :scope => [:model, :index])
