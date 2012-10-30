@@ -167,12 +167,17 @@ module DisertThemes
         return false
       end
 
-      res = Nokogiri::XML(response)
-      res.remove_namespaces!
-      status = res.xpath('//info[@status]').first["status"]
-
       disert_theme.update_attribute('theses_response', response)
       disert_theme.update_attribute('theses_response_at', Time.now)
+
+      res = Nokogiri::XML(response)
+      res.remove_namespaces!
+      status = if res.xpath('//info[@status]').first
+                 res.xpath('//info[@status]').first["status"]
+               else
+                 ""
+               end
+
       disert_theme.update_attribute('theses_status', status)
 
       if status == "6"
