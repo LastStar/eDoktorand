@@ -172,11 +172,7 @@ module DisertThemes
 
       res = Nokogiri::XML(response)
       res.remove_namespaces!
-      status = if res.xpath('//info[@status]').first
-                 res.xpath('//info[@status]').first["status"]
-               else
-                 ""
-               end
+      status = res.xpath('//info[@status]').select { |n| n["status"] }["status"]
 
       disert_theme.update_attribute('theses_status', status)
 
