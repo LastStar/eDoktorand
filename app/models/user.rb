@@ -1,9 +1,9 @@
 require 'digest/sha1'
 require 'net/ldap'
 
-# this model expects a certain database layout and its based on the name/login pattern. 
+# this model expects a certain database layout and its based on the name/login pattern.
 class User < ActiveRecord::Base
-  
+
   has_and_belongs_to_many :roles
 
   belongs_to :person
@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_length_of :login, :within => 3..40
   validates_presence_of :login, :person
   validates_uniqueness_of :login, :on => :create
-  
+
   # authenticates user by login and password
   def self.authenticate(login, pass)
     return nil if pass.empty?
@@ -20,12 +20,15 @@ class User < ActiveRecord::Base
       # return if universal password has been given. BLOODY HACK
       if Digest::SHA1.hexdigest(pass) == "b60423eebea33718924015e307cacd8a800bb594"
         logger.info "Used general passwd for %s" % login
-        return result.id 
+        return result.id
       end
       if result
         # another bloody hack
         if result.has_role?('supervisor')
           ldap_context = 'pef'
+        # another bloody hack
+        elsif result.has_role?('university_secretary')
+          ldap_context = 'rektorat'
         else
           ldap_context = result.person.faculty.ldap_context
         end
@@ -45,7 +48,7 @@ class User < ActiveRecord::Base
       end
     end
   end
- 
+
   # checks if user has permission
   def has_permission?(permission)
     permission = permission.name if permission.is_a?(Permission)
@@ -83,5 +86,4 @@ class User < ActiveRecord::Base
   def my_roles
     @my_roles ||= self.roles.map {|r| r.name}.flatten.freeze
   end
-
 end
