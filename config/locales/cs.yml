@@ -1008,26 +1008,24 @@ cs:
       _detail:
         message_0: Kč
       claim:
-        message_18: Podpis
-        message_8: Ulice
-        message_9: Č.P.
-        message_19: Datum
-        message_0: Žádost o ubytovací stipendium na ČZU pro akademický rok
-        message_10: Obec
-        message_1: UIC (číslo studenta)
-        message_11: PSČ
-        message_2: First name (names)
-        message_12: Nutné vyplnit adresu trvalého bydliště
-        message_3: Příjmení
-        message_13: Prohlašuji a svým podpisem stvrzuji, že všechny mnou uvedené údaje v této žádosti jsou pravdivé a úplné.
-        message_4: Rodné příjmení
-        message_14: ŽADATEL
-        message_5: Státní občanství
-        message_15: Podpis
-        message_6: Datum narození
-        message_16: Datum
-        message_7: Adresa místa trvalého pobytu
-        message_17: odd. VaV
+        street: Ulice
+        number: Č.P.
+        title: Žádost o ubytovací stipendium na ČZU pro akademický rok
+        city: Obec
+        uic: UIC (číslo studenta)
+        zip: PSČ
+        first_name: Jméno
+        address_needed: Nutné vyplnit adresu trvalého bydliště
+        last_name: Příjmení
+        declaration: Prohlašuji a svým podpisem stvrzuji, že všechny mnou uvedené údaje v této žádosti jsou pravdivé a úplné.
+        birth_name: Rodné příjmení
+        applicant: Žadatel
+        citizenship: Státní občanství
+        signature: Podpis
+        birth_date: Datum narození
+        date: Datum
+        address: Adresa místa trvalého pobytu
+        rd: odd. VaV
       _list:
       _account:
         message_0: Konto
