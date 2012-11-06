@@ -1,126 +1,116 @@
-<div>
-  <b><%= t(:message_0, :scope => [:view, :scholarships, :claim]) %> <%= @school_year %></b>
-</div>
-<br />
+<h2><%= t(:title, :scope => [:view, :scholarships, :claim]) %> <%= @school_year %></h2>
 <p>
-<span><%= t(:message_1, :scope => [:view, :scholarships, :claim]) %></span> &nbsp;&nbsp;&nbsp;&nbsp;<%= @student.uic %><br /><br />
-  <table>
+<table class="claim">
+  <tr>
+    <th>
+      <%= t(:uic, :scope => [:view, :scholarships, :claim]) %>
+    </th>
+    <td>
+      <%= @student.uic %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= t(:first_name, :scope => [:view, :scholarships, :claim]) %>
+    </th>
+    <td>
+      <%= @student.firstname %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= t(:last_name, :scope => [:view, :scholarships, :claim]) %>
+    </th>
+    <td>
+      <%= @student.lastname %>
+    </td>
+  </tr>
+  <% if @student.birthname.present? %>
+  <tr>
+    <th>
+      <%= t(:birth_name, :scope => [:view, :scholarships, :claim]) %>
+    </th>
+    <td>
+      <%= @student.birthname %>
+    </td>
+  </tr>
+<% end %>
+  <tr>
+    <th>
+      <%= t(:citizenship, :scope => [:view, :scholarships, :claim]) %>
+    </td>
+    <th>
+      <%= @student.citizenship %>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <%= t(:birth_date, :scope => [:view, :scholarships, :claim]) %>
+    </th>
+    <td>
+      <% if @student.birth_on %>
+        <%= @student.birth_on.strftime("%d. %m. %Y") %>
+      <% end  %>
+    </td>
+  </tr>
+</table>
+<% if @student.street %>
+  <h3><%= t(:address, :scope => [:view, :scholarships, :claim]) %></h3>
+  <table class="claim">
     <tr>
+      <th>
+        <%= t(:street, :scope => [:view, :scholarships, :claim]) %>
+      </th>
       <td width="200px;">
-        <%= t(:message_2, :scope => [:view, :scholarships, :claim]) %>
-      </td>
-      <td>
-        <%= @student.firstname %>
+        <%= @student.street %>
       </td>
     </tr>
     <tr>
-      <td width="200px;">
-        <%= t(:message_3, :scope => [:view, :scholarships, :claim]) %>
-      </td>
+      <th>
+        <%= t(:number, :scope => [:view, :scholarships, :claim]) %>&nbsp;&nbsp;
+      </th>
       <td>
-        <%= @student.lastname %>
+        <%= @student.desc_number %>
       </td>
     </tr>
     <tr>
-      <td width="200px;">
-        <%= t(:message_4, :scope => [:view, :scholarships, :claim]) %>
+      <th>
+        <%= t(:city, :scope => [:view, :scholarships, :claim]) %>
+      </th>
+      <td width="100px;">
+        <%= @student.city %>
       </td>
+    </tr>
+    <tr>
+      <th>
+        <%= t(:zip, :scope => [:view, :scholarships, :claim]) %>
+      </th>
       <td>
-        <%= @student.birthname %>
+        <%= @student.zip %>
       </td>
     </tr>
   </table>
-  <br />
-  <table>
-    <tr>
-      <td width="200px;">
-        <%= t(:message_5, :scope => [:view, :scholarships, :claim]) %>
-      </td>
-      <td>
-        <%= @student.citizenship %>
-      </td>
-    </tr>
-    <tr>
-      <td width="200px;">
-        <%= t(:message_6, :scope => [:view, :scholarships, :claim]) %>
-      </td>
-      <td>
-        <% if @student.birth_on %>
-          <%= @student.birth_on.strftime("%d. %m. %Y") %>
-        <% end  %>
-      </td>
-    </tr>
-  </table>
-  <br /><br />
-  <% if @student.street %>
-    <%= t(:message_7, :scope => [:view, :scholarships, :claim]) %>
-    <br /><br />
-    <table>
-      <tr>
-        <td width="100px;">
-          <%= t(:message_8, :scope => [:view, :scholarships, :claim]) %>
-        </td>
-        <td width="200px;">
-          <%= @student.street %>
-        </td>
-        <td>
-          <%= t(:message_9, :scope => [:view, :scholarships, :claim]) %>&nbsp;&nbsp;
-        </td>
-        <td>
-          <%= @student.desc_number %>
-        </td>
-      </tr>
-      <tr>
-        <td width="100px;">
-          <%= t(:message_10, :scope => [:view, :scholarships, :claim]) %>
-        </td>
-        <td width="100px;">
-          <%= @student.city %>
-        </td>
-      </tr>
-      <tr>
-        <td width="100px;">
-          <%= t(:message_11, :scope => [:view, :scholarships, :claim]) %>
-        </td>
-        <td>
-          <%= @student.zip %>
-        </td>
-      </tr>
-    </table>
-  <% else %>
-    <div>
-      <%= t(:message_12, :scope => [:view, :scholarships, :claim]) %>
-    </div>
-  <% end %>
-  <br /><br />
-  <%= t(:message_13, :scope => [:view, :scholarships, :claim]) %>
-  <br /><br />
-  <table width="80%">
-    <tr>
-      <td width="50%">
-        <div>
-          <span style="font-size: 16px; font-weight: bold;"><%= t(:message_14, :scope => [:view, :scholarships, :claim]) %></span>
-        </div>
-        <div>
-          <%= t(:message_15, :scope => [:view, :scholarships, :claim]) %>:
-        </div>
-        <br /><br />
-        <div>
-          <%= t(:message_16, :scope => [:view, :scholarships, :claim]) %>:
-        </div>
-      </td>
-      <td width="50%">
-        <div>
-          <span style="font-size: 16px; font-weight: bold;"><%= t(:message_17, :scope => [:view, :scholarships, :claim]) %></span>
-        </div>
-        <div>
-          <%= t(:message_18, :scope => [:view, :scholarships, :claim]) %>:
-        </div>
-        <br /><br />
-        <div>
-          <%= t(:message_19, :scope => [:view, :scholarships, :claim]) %>:
-        </div>
-      </td>
-    </tr>
-  </table>
-</p>
+<% else %>
+  <div>
+    <%= t(:address_needed, :scope => [:view, :scholarships, :claim]) %>
+  </div>
+<% end %>
+<h3><%= t(:declaration, :scope => [:view, :scholarships, :claim]) %></h3>
+<table class="claim signature">
+  <tr>
+    <th>
+      <%= t(:applicant, :scope => [:view, :scholarships, :claim]) %>
+    </th>
+    <th>
+      <%= t(:rd, :scope => [:view, :scholarships, :claim]) %>
+    </th>
+  </tr>
+  <tr>
+    <td><%= t(:signature, :scope => [:view, :scholarships, :claim]) %>:
+    <td><%= t(:signature, :scope => [:view, :scholarships, :claim]) %>:
+  </tr>
+  <tr>
+    <td><%= t(:date, :scope => [:view, :scholarships, :claim]) %>:
+    <td><%= t(:date, :scope => [:view, :scholarships, :claim]) %>:
+  </tr>
+</table>
