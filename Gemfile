@@ -13,3 +13,6 @@ gem 'sqlite3'
 gem 'nokogiri'
 gem 'mysql'
 gem 'hpricot'
+gem 'log4r'
+gem 'ruby-net-ldap'
+gem 'will_paginate', "2.3.16"
