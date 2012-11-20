@@ -242,7 +242,7 @@ class StudyPlansController < ApplicationController
       render(:partial => 'shared/confirm_approve',
             :locals => {:replace => 'attestation',
                         :approval => @document.attestation,
-                        :title => I18n::t(:message_12, :scope => [:view, :shared, :_study_detail, :rhtml])})
+                        :title => I18n::t(:message_12, :scope => [:view, :shared, :_study_detail])})
     else
       render(:partial => 'students/redraw_list')
     end
