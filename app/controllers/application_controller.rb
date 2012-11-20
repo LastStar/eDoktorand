@@ -76,7 +76,7 @@ class ApplicationController < ActionController::Base
   end
 
   # choses what to do on browsers
-  def good_browser?(agent = /Firefox/)
+  def good_browser?(agent = /Firefox|Safari|Chrome/)
     request.env['HTTP_USER_AGENT'] =~ agent
   end
 
