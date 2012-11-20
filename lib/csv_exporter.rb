@@ -1001,5 +1001,25 @@ class CSVExporter
         end
       end
     end
+
+    def for_specialization_chairman(specialization)
+      indices = Index.all(:conditions => {:specialization_id => Specialization.find(13).id}).reject { |i| i.absolved? || i.finished? }
+      @@mylog.info("There is %i students" % indices.size)
+      File.open(specialization.code +  ".csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          indices.each do |index|
+            row = []
+            row << index.status
+            row << index.student.firstname
+            row << index.student.lastname
+            row << index.year
+            row << index.study.name
+            row << index.tutor.try(:display_name)
+            row << index.disert_theme.try(:title)
+            csv << row
+          end
+        end
+      end
+    end
   end
 end

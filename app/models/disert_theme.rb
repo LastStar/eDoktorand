@@ -79,7 +79,7 @@ class DisertTheme < ActiveRecord::Base
 
   private
   def set_actual
-    if old_actual = DisertTheme.find_by_index_id_and_actual(self.index.id, 1)
+    if old_actual = self.find_by_index_id_and_actual(self.index.id, 1)
       if has_methodology?
         FileUtils.cp("#{RAILS_ROOT}/public/pdf/methodology/#{old_actual.id}.pdf",
                      "#{RAILS_ROOT}/public/pdf/methodology/temp_#{self.index.id}.pdf")
@@ -99,11 +99,11 @@ class DisertTheme < ActiveRecord::Base
 
   # select disert themes ready for theses_periodical_check
   def self.ready_for_theses_check(ago = 2.days.ago)
-    DisertTheme.all(:conditions => ["theses_response_at IS NULL AND theses_request_succesfull = 1 AND theses_request_at <=  ?", ago])
+    self.all(:conditions => ["theses_response_at IS NULL AND theses_request_succesfull = 1 AND theses_request_at <=  ?", ago])
   end
 
   def self.ready_to_send_to_theses_check(remaining = 10.days.since)
     ids = Defense.all(:conditions => ["date <= ? and date > ?", remaining, 2.days.since], :select => 'index_id').map(&:index_id)
-    DisertTheme.all(:conditions => ["index_id in (?) AND theses_request_succesfull IS NULL AND actual=1", ids])
+    self.all(:conditions => ["index_id in (?) AND theses_request_succesfull IS NULL AND actual=1", ids])
   end
 end

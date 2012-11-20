@@ -22,8 +22,7 @@ Rails::Initializer.run do |config|
 
   config.gem "log4r"
   config.gem "ruby-net-ldap", :lib => "net/ldap"
-  config.gem "mislav-will_paginate", :lib => 'will_paginate'
-  config.gem 'super_exception_notifier', :lib => "exception_notification"
+  config.gem "will_paginate", :version => "2.3.16", :lib => 'will_paginate'
   config.gem 'curb'
 
 end
