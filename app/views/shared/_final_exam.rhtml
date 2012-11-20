@@ -53,25 +53,28 @@
     <%= final_exam_term_link(@user, index) %>
     </li>
   <% end %>
-<% if study_plan.final_areas? %>
-  <% FACULTY_CFG[study_plan.index.faculty.id]['final_areas_count'].times do |i|%>
-    <% i=i+1 %>
-    <% fa = study_plan.final_areas['cz'] %>
+  <% if study_plan.final_areas? %>
+    <% facz = study_plan.final_areas['cz'] %>
+    <% faen = study_plan.final_areas['en'] %>
+    <% FACULTY_CFG[study_plan.index.faculty.id]['final_areas_count'].times do |i|%>
+      <% i += 1 %>
       <li class='second'>
-        <div class='long_info' id='final_area_cz<%=i%>'><%=edit_cz_link(index,i,fa[i.to_s])%> <%= fa[i.to_s]%> </div>
+        <div class='long_info' id='final_area_cz<%=i%>'>
+          <%= edit_cz_link(index,i,facz[i.to_s]) %>
+          <%= facz[i.to_s] %>
+        </div>
         <%= "#{i}. " + t(:message_6, :scope => [:view, :shared, :_final_exam]) %>
       </li>
-    <% fa = study_plan.final_areas['en'] %>
       <li class='second'>
         <div class='long_info' id='final_area_en<%= i %>'>
-        <% if (fa[i.to_s] == nil || fa[i.to_s] == "") && params[:action] != 'save_disert' %>
+        <% if (faen[i.to_s] == nil || faen[i.to_s] == "") && params[:action] != 'save_disert' %>
           <%= add_en_link(index,i) %>
         <% else %>
-          <%= edit_en_link(index,i,fa[i.to_s]) %>
+          <%= edit_en_link(index,i,faen[i.to_s]) %>
         <% end %>
-        <%=  fa[i.to_s] %></div>
+        <%=  faen[i.to_s] %></div>
         <%= "#{i}. " + t(:message_7, :scope => [:view, :shared, :_final_exam]) %> (en)
       </li>
+    <% end %>
   <% end %>
-<% end %>
 <% end %>
