@@ -1,11 +1,13 @@
 module Approvable
   # approves study plan with statement from parameters
   def approve_with(params)
-    statement = eval("#{params['type']}.create(params)")
-    eval("self.approval.#{params['type'].underscore} = statement")
+    params = params.clone
+    type = params.delete('type')
+    statement = type.constantize.create(params)
+    self.approval.send(type.underscore + "=", statement)
     if statement.is_a?(LeaderStatement) && !self.approval.tutor_statement
       self.approval.tutor_statement =
-        TutorStatement.create(statement.attributes)
+        TutorStatement.create(params)
     end
     self.approval.save
     set_times(statement)
