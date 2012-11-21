@@ -79,7 +79,7 @@ class DisertTheme < ActiveRecord::Base
 
   private
   def set_actual
-    if old_actual = self.find_by_index_id_and_actual(self.index.id, 1)
+    if old_actual = DisertTheme.find_by_index_id_and_actual(self.index.id, 1)
       if has_methodology?
         FileUtils.cp("#{RAILS_ROOT}/public/pdf/methodology/#{old_actual.id}.pdf",
                      "#{RAILS_ROOT}/public/pdf/methodology/temp_#{self.index.id}.pdf")
