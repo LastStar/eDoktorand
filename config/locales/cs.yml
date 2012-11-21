@@ -923,6 +923,7 @@ cs:
         literature_review_title: název teze disertační práce
         literature_review_file: soubor s tezí disertační práce
         submit: odeslat
+        both_in_one_day: SDZ a obhajoba v jeden den
       _form:
         message_2: předseda komise
       _term_line:
