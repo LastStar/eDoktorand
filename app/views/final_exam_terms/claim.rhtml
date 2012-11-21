@@ -4,6 +4,16 @@
 <% form_tag({:action => :confirm_claim}, {:multipart => true}) do %>
 <fieldset>
   <ul class='nodecor'>
+    <li>
+      <label for='both_in_one_day'>
+        <strong>
+          <%= t(:both_in_one_day, :scope => [:view, :final_exam_terms, :claim]) %>
+        </strong>
+      </label>
+      <%= check_box_tag :both_in_one_day, :value => "both" %>
+      </br>
+      </br>
+    </li>
     <%= render(:partial => 'study_plans/final_exam_areas',
               :locals => {:areas => @study_plan.final_areas})  %>
     <li>
@@ -12,13 +22,7 @@
       </label>
       <%= text_field :disert_theme, :literature_review, :value => @study_plan.index.disert_theme.title %>
     </li>
-    <li>
-      <label for='both_in_one_day'>
-        <%= t(:both_in_one_day, :scope => [:view, :final_exam_terms, :claim]) %>
-      </label>
-      <%= check_box_tag :both_in_one_day, :value => @study_plan.index.disert_theme.title %>
-    </li>
-    <li>
+    <li id="file">
       <label for="literature_review_file"><%= t(:literature_review_file, :scope => [:view, :final_exam_terms, :claim]) %></label>
       <%= file_field_tag :literature_review_file %>
     </li>
