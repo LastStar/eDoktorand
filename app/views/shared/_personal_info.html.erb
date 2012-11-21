@@ -10,10 +10,10 @@
   <%= birth_date_line(index.student) %>
   <%= birth_number_line(index.student) %>
   <%= birth_place_line(index.student) %>
-  <li>
+  <li class="not_print">
     <%= attribute_line(index.student, :email) %><%=t(:email, :scope => [:view, :shared, :_personal_info]) %>:
   </li>
-  <li>
+  <li class="not_print">
     <%= attribute_line(index.student, :phone) %><%=t(:phone, :scope => [:view, :shared, :_personal_info]) %>:
   </li>
   <li>
@@ -26,7 +26,7 @@
     <%= attribute_line(index.student, :account) %>
     <%=t(:account, :scope => [:view, :shared, :_personal_info]) %>:
   </li>
-  <li>
+  <li class="not_print">
     <%= attribute_line(index.student, :citizenship) %>
     <%=t(:citizenship, :scope => [:view, :shared, :_personal_info])%>:
   </li>
