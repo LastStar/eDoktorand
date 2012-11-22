@@ -23,7 +23,7 @@ class FinalExamTermsController < ApplicationController
   end
 
   def claim
-    @title = t(:message_1, :scope => [:controller, :terms])
+    @title = t(:claim, :scope => [:controller, :terms])
     @study_plan = @user.person.index.study_plan
   end
 
@@ -32,14 +32,19 @@ class FinalExamTermsController < ApplicationController
   def confirm_claim
     index = @user.person.index
     @study_plan = index.study_plan
-    if (literature_review = params[:literature_review_file]) &&
-      literature_review.is_a?(Tempfile)
+    both = params.delete(:both_in_one_day)
+    if ((literature_review = params[:literature_review_file]) &&
+      literature_review.is_a?(Tempfile)) || both
       if @study_plan.update_attributes(params[:study_plan])
         index.claim_final_exam!
-        index.disert_theme.save_literature_review(literature_review)
-        index.disert_theme.update_attributes(params[:disert_theme])
         Notifications::deliver_claimed_final_exam(index)
-        redirect_to :controller => :study_plans, :action => :index
+        if both
+          redirect_to :controller => :defenses, :action => :claim
+        else
+          index.disert_theme.save_literature_review(literature_review)
+          index.disert_theme.update_attributes(params[:disert_theme])
+          redirect_to :controller => :study_plans, :action => :index
+        end
       else
         @title = t(:message_1, :scope => [:controller, :terms])
         render :action => 'claim'

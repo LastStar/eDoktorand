@@ -1945,6 +1945,7 @@ cs:
       commision_was_updated: Komise byla úspěšně opravena
       creation_commission: Vytváření komise příjimacích zkoušek
       commision_was_created: Komise byla úspěšně vytvořena.
+      claim: Příhláška k SDZ
       message_0: Termíny SDZ
       message_1: Termíny zkoušky byl uložen
       message_2: Termíny zkoušek
