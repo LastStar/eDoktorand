@@ -26,7 +26,7 @@ describe ServiceTools::DisertTheme do
         :fakulta => 41210,
         :utvar => '31110',
         :obor => '6209V015',
-        :prace_URL => "http://edoktorand.czu.cz/pdf/disert_themes/#{@disert_theme.id}.pdf",
+        :prace_URL => "http://edoktorand.czu.cz/pdf/disert_theme/#{@disert_theme.id}.pdf",
         :autoreferat_URL => "http://edoktorand.czu.cz/pdf/self_report/#{@disert_theme.id}.pdf",
         :posudek_oponent_URL => "http://edoktorand.czu.cz/pdf/opponent_review/#{@disert_theme.id}.pdf"
       }
