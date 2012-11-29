@@ -371,7 +371,7 @@ class Index < ActiveRecord::Base
         conditions  = ['NULL IS NULL']
       end
     elsif user.has_one_of_roles?(['dean', 'faculty_secretary'])
-      options[:order] = 'people.lastname'
+      options[:order] = 'people.lastname, people.firstname'
       conditions = [DEPARTMENTS_COND.clone, user.person.faculty.departments]
     elsif user.has_one_of_roles?(['leader', 'department_secretary'])
       conditions = [DEPARTMENTS_COND.clone, user.person.department.id]
@@ -421,7 +421,7 @@ class Index < ActiveRecord::Base
   def self.find_tutored_by(user, options={})
     #commented is old style of searching:
     #options[:conditions] = [TUTOR_COND.clone, user.person.id]
-    options[:order] = 'indices.study_id, people.lastname'
+    options[:order] = 'indices.study_id, people.lastname, people.firstname'
     options[:include] ||= []
     options[:include] << [:student]
     #find_for(user, options)
@@ -433,7 +433,7 @@ class Index < ActiveRecord::Base
   # finds only indices which have specialization for board chairman
   def self.chairmaned_by(user)
     opts = {:unfinished => true, :not_interrupted => true}
-    opts[:order] = 'indices.study_id, people.lastname'
+    opts[:order] = 'indices.study_id, people.lastname, people.firstname'
     opts[:chairman] = true
     return find_for(user, opts)
   end
@@ -453,7 +453,7 @@ class Index < ActiveRecord::Base
     options[:unfinished] = true
     result = find_for(user, options)
     if user.has_role?('faculty_secretary')
-      options[:order] = 'people.lastname'
+      options[:order] = 'people.lastname, people.firstname'
       result.select do |i|
         i.waits_for_scholarship_confirmation? ||
         i.interrupt_waits_for_confirmation? ||
@@ -461,7 +461,7 @@ class Index < ActiveRecord::Base
         i.claimed_final_application?
       end
     elsif user.has_one_of_roles?(['tutor', 'leader', 'dean'])
-      options[:order] = 'indices.study_id, people.lastname'
+      options[:order] = 'indices.study_id, people.lastname, people.firstname'
       result.select {|i| i.waits_for_statement?(user)}
     end
   end
@@ -534,7 +534,7 @@ class Index < ActiveRecord::Base
 
   def self.find_studying_for(user, options = {})
     opts = {:unfinished => true, :not_interrupted => true}
-    opts[:order] = options[:order] || 'indices.study_id, people.lastname'
+    opts[:order] = options[:order] || 'indices.study_id, people.lastname, people.firstname'
     return find_for(user, opts)
   end
 
@@ -561,7 +561,7 @@ class Index < ActiveRecord::Base
     end
 
     return all(:conditions => conditions,
-               :order => "people.lastname",
+               :order => "people.lastname, people.firstname",
                :include => [:study, :student, :disert_theme,
                :regular_scholarship, :extra_scholarships, :department,
                :specialization])
