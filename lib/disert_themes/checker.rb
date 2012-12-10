@@ -161,7 +161,7 @@ module DisertThemes
           curl.http_auth_types = :basic
           curl.username = THESIS_USERNAME
           curl.password = THESIS_PASSWORD
-          curl.on_body{ |data| response = data }
+          curl.on_body { |data| response = data }
         end
       rescue
         return false
