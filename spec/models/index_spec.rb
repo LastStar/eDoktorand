@@ -8,64 +8,87 @@ describe Index do
       specialization = Factory(:specialization, :study_length => 4)
       index.specialization = specialization
       index.continues?.should be_false
-      index.status.should == I18n::t(:message_15, :scope => [:model, :index])
+      index.status.should == "studuje"
       index = Index.new
       index.enrolled_on = 3.years.ago
       specialization = Factory(:specialization, :study_length => 3)
       index.specialization = specialization
       index.continues?.should be_true
-      index.status.should == I18n::t(:message_14, :scope => [:model, :index])
+      index.status.should == "uzavřeno"
     end
 
     context 'status methods' do
-      let(:subject) { Factory(:index, :student => Factory(:student)) }
+      let(:index) { Factory(:index, :student => Factory(:student)) }
 
       before :each do
-        Timecop.freeze("2010/01/01")
+        Timecop.travel("2010/01/01")
       end
 
-
       it "returns studying" do
-        subject.status.should == 'studuje'
+        index.status.should == 'studuje'
       end
 
       it "returns status code" do
-        subject.status_code.should == 'S'
+        index.status_code.should == 'S'
       end
 
       it "returns from when status is valid" do
-        subject.status_from.should == Date.parse('2009/09/30')
+        index.status_from.should == Date.parse('2009/09/30')
       end
 
       it "should return to when status is valid" do
-        subject.status_to.should == Date.parse('2010/09/30')
+        index.status_to.should == Date.parse('2010/09/30')
       end
 
       context "when final exam passed" do
-        let(:subject) { Factory(:index, :student => Factory(:student),
-                               :final_exam_passed_on => Time.now) }
+        let(:index) { Factory(:index, :student => Factory(:student),
+                              :study_plan => Factory.build(:study_plan),
+                              :final_exam_passed_on => Time.now) }
 
         it "returns passed status" do
-          subject.status.should == "složil SDZ"
+          index.status.should == "složil SDZ"
         end
 
         it "should return status code" do
-          subject.status_code.should == 'S'
+          index.status_code.should == 'S'
         end
       end
 
       context "when interrupted" do
-        let(:subject) { Factory(:index, :student => Factory(:student),
+        let(:index) { Factory(:index, :student => Factory(:student),
                                 :study_plan => Factory.build(:study_plan),
                                 :interrupted_on => 1.day.ago) }
 
         it "returns interrupted status" do
-          subject.status.should == "přerušeno"
+          index.status.should == "přerušeno"
+        end
+
+        it "returns interrupted status code" do
+          index.status_code.should == "P"
         end
 
         it "returns interrupted even after final exam" do
-          subject.update_attribute(:final_exam_passed_on, Time.now)
-          subject.status.should == "přerušeno"
+          index.update_attribute(:final_exam_passed_on, 1.day.ago)
+          index.status.should == "přerušeno"
+        end
+      end
+
+      context "when absolved" do
+        let(:index) { Factory(:index, :student => Factory(:student),
+                                :study_plan => Factory.build(:study_plan)) }
+
+        before do
+          index.update_attribute(:final_exam_passed_on, 1.day.ago)
+          Factory(:disert_theme, :index => index)
+          index.disert_theme.update_attribute(:defense_passed_on, 1.day.ago)
+        end
+
+        it "returns absolved status" do
+          index.status.should == "absolvoval"
+        end
+
+        it "returns absolved status code" do
+          index.status_code == "A"
         end
       end
     end

@@ -586,26 +586,30 @@ class Index < ActiveRecord::Base
       I18n::t(:passed_sdz, :scope => [:model, :index])
     elsif continues?
       I18n::t(:closed, :scope => [:model, :index])
-    else
+    elsif studying?
       I18n::t(:studies, :scope => [:model, :index])
+    else
+      raise UnknownState
     end
     return @status
   end
 
   # TODO after merge with rails3 redone with new status
   def status_code
-    @status_code ||= if disert_theme && disert_theme.defense_passed?
+    @status_code ||= if absolved?
       "A"
-    elsif final_exam_passed?
-      "S"
     elsif finished?
       "Z"
     elsif interrupted?
       "P"
+    elsif final_exam_passed?
+      "S"
     elsif continues?
       "S"
-    else
+    elsif studying?
       "S"
+    else
+      raise UnknownState
     end
     return @status_code
   end
