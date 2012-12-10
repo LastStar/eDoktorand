@@ -9,6 +9,9 @@ class String
   end
 end
 
+class UnknownState < Exception
+end
+
 class Index < ActiveRecord::Base
   include Approvable
   PREFIX_WEIGHTS = [1, 2, 4, 8, 5, 10]
@@ -52,8 +55,8 @@ class Index < ActiveRecord::Base
   belongs_to :specialization
   belongs_to :department
   has_many :interrupts, :order => 'created_on', :class_name => 'StudyInterrupt'
-  has_many :extra_scholarships, :conditions => {:scholarship_month_id => ScholarshipMonth.current.id}
-  has_one :regular_scholarship, :conditions => {:scholarship_month_id => ScholarshipMonth.current.id}
+  has_many :extra_scholarships, :conditions => {:scholarship_month_id => ScholarshipMonth.current.try(:id)}
+  has_one :regular_scholarship, :conditions => {:scholarship_month_id => ScholarshipMonth.current.try(:id)}
   has_many :scholarships
   has_one :im_index
 
@@ -856,6 +859,7 @@ class Index < ActiveRecord::Base
     student.display_name
   end
 
+  # FIXME with date
   def final_exam_passed?
     !final_exam_passed_on.nil?
   end
