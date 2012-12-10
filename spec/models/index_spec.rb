@@ -1,6 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-
 describe Index do
   context "states" do
     it "should return continues based on specialization study length" do

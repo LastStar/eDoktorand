@@ -20,3 +20,14 @@ function switch_external_chairman() {
   Element.toggle('chairman_select')
   $('external_chairman').value = !($('external_chairman').value == 'true')
 }
+
+
+document.observe("dom:loaded", function() {
+  $("both_in_one_day").observe("click", function() {
+    if ($("both_in_one_day").checked) {
+      $("file").hide()
+    } else {
+      $("file").show()
+    }
+  })
+});

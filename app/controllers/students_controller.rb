@@ -388,7 +388,7 @@ class StudentsController < ApplicationController
   # prepares order variable for listin
   # TODO create some better mechanism to do ordering
   def prepare_order
-    @order = 'people.lastname, study_plans.created_on, study_interrupts.created_on'
+    @order = 'people.lastname, people.firstname, study_plans.created_on, study_interrupts.created_on'
   end
 
   # prepares filter variable
@@ -425,7 +425,7 @@ class StudentsController < ApplicationController
     when 2
       @indices = Index.find_waiting_for_statement(@user)
     when 1
-      @indices = Index.find_tutored_by(@user, :order => 'people.lastname')
+      @indices = Index.find_tutored_by(@user, :order => @order)
     when 0
       @indices = Index.find_for(@user, :order => @order)
     end

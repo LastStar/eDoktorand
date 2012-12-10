@@ -11,7 +11,7 @@ module ServiceTools
         :fakulta => disert_theme.index.faculty.code,
         :utvar => disert_theme.index.department.code,
         :obor => disert_theme.index.specialization.msmt_code,
-        :prace_URL => "http://edoktorand.czu.cz/pdf/disert_themes/#{disert_theme.id}.pdf",
+        :prace_URL => "http://edoktorand.czu.cz/pdf/disert_theme/#{disert_theme.id}.pdf",
         :autoreferat_URL => "http://edoktorand.czu.cz/pdf/self_report/#{disert_theme.id}.pdf",
         :posudek_oponent_URL => "http://edoktorand.czu.cz/pdf/opponent_review/#{disert_theme.id}.pdf"
       }

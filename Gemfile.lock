@@ -11,11 +11,20 @@ GEM
     activeresource (2.3.14)
       activesupport (= 2.3.14)
     activesupport (2.3.14)
+    cgi_multipart_eof_fix (2.5.0)
     curb (0.8.0)
+    daemons (1.1.8)
     factory_girl (1.2.2)
+    fastthread (1.0.7)
+    gem_plugin (0.2.3)
     handsoap (1.1.8)
     hpricot (0.8.6)
     log4r (1.1.10)
+    mongrel (1.1.5)
+      cgi_multipart_eof_fix (>= 2.4)
+      daemons (>= 1.0.3)
+      fastthread (>= 1.0.1)
+      gem_plugin (>= 0.2.3)
     mysql (2.8.1)
     nokogiri (1.5.0)
     rack (1.1.3)
@@ -34,9 +43,6 @@ GEM
     ruby-net-ldap (0.0.4)
     shoulda (2.11.3)
     sqlite3 (1.3.5)
-    super_exception_notifier (3.0.13)
-      actionmailer
-      rake
     timecop (0.3.5)
     will_paginate (2.3.16)
 
@@ -49,6 +55,7 @@ DEPENDENCIES
   handsoap
   hpricot
   log4r
+  mongrel
   mysql
   nokogiri
   rails (= 2.3.14)
@@ -57,6 +64,5 @@ DEPENDENCIES
   ruby-net-ldap
   shoulda
   sqlite3
-  super_exception_notifier
   timecop
   will_paginate (= 2.3.16)

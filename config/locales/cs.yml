@@ -923,6 +923,7 @@ cs:
         literature_review_title: název teze disertační práce
         literature_review_file: soubor s tezí disertační práce
         submit: odeslat
+        both_in_one_day: SDZ a obhajoba v jeden den
       _form:
         message_2: předseda komise
       _term_line:
@@ -1945,6 +1946,7 @@ cs:
       commision_was_updated: Komise byla úspěšně opravena
       creation_commission: Vytváření komise příjimacích zkoušek
       commision_was_created: Komise byla úspěšně vytvořena.
+      claim: Příhláška k SDZ
       message_0: Termíny SDZ
       message_1: Termíny zkoušky byl uložen
       message_2: Termíny zkoušek
