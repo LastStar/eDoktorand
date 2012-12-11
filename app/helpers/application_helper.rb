@@ -618,9 +618,18 @@ module ApplicationHelper
 
   def literature_review_link(disert_theme)
     path = "/pdf/literature_review/%i.pdf" % disert_theme.id
-    if File.exists?("#{RAILS_ROOT}/public/" + path)
-      link_to t(:message_62, :scope => [:helper, :application]), path, :popup => true
+    res = ""
+    if File.exists?(File.join(RAILS_ROOT, "public", path))
+      res = link_to(t(:message_62, :scope => [:helper, :application]), path, :popup => true)
+      if @user.has_role?("faculty_secretary")
+        res += form_tag({:controller => :disert_theme,
+                        :action => :update_literature_review,
+                        :id => disert_theme.id}) do
+          file_field_tag :literature_review_file
+        end
+      end
     end
+    return res
   end
 
   def has_self_report?(disert_theme)
