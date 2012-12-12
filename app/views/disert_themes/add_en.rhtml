@@ -1,4 +1,5 @@
 <% save_disert_theme_form(@disert_theme) do -%>
-  <input type='text', name='en_title', size='60' />
+  <%= hidden_field :disert_theme, :id %>
+  <%= text_field :disert_theme, :title_en, :size => 60 %>
   <%= image_submit_tag('ok.png') %>
 <% end %>

@@ -550,8 +550,7 @@ module ApplicationHelper
 
   def save_disert_theme_form(disert_theme, &proc)
     form_remote_tag(:url => {:controller => 'disert_themes',
-                            :action => 'save_en',
-                            :disert_theme => disert_theme},
+                            :action => 'save_en'},
                     :update => "disert_theme_title_en", &proc)
   end
 
