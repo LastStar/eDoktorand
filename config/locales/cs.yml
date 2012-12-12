@@ -850,10 +850,11 @@ cs:
         sident: SIDENT
         personal_informations: Osobní údaje
       _address_detail:
-        message_9: Ulice
-        message_10: Číslo popisné
-        message_11: Obec
-        message_12: Psč
+        postal_address: Korespondenční adresa
+        street: Ulice
+        desc_number: Číslo popisné
+        city: Obec
+        zip: Psč
       _study_info:
         study_status: Stav studia
         study_plan_status: Stav studijního plánu

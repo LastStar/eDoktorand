@@ -4,18 +4,37 @@
   </li>
   <li>
     <%= attribute_line(student, :street) %>
-    <%=t(:message_9, :scope => [:view, :shared, :_address_detail]) %>:
+    <%=t(:street, :scope => [:view, :shared, :_address_detail]) %>:
   </li>
   <li>
     <%= attribute_line(student, :desc_number) %>
-    <%=t(:message_10, :scope => [:view, :shared, :_address_detail]) %>:
+    <%=t(:desc_number, :scope => [:view, :shared, :_address_detail]) %>:
   </li>
   <li>
     <%= attribute_line(student, :city) %>
-    <%=t(:message_11, :scope => [:view, :shared, :_address_detail]) %>:
+    <%=t(:city, :scope => [:view, :shared, :_address_detail]) %>:
   </li>
   <li>
     <%= attribute_line(student, :zip) %>
-    <%=t(:message_12, :scope => [:view, :shared, :_address_detail]) %>:
+    <%=t(:zip, :scope => [:view, :shared, :_address_detail]) %>:
   </li>
+  <% if student.postal_street %>
+    <li><strong><%= t(:postal_address, :scope => [:view, :shared, :_address_detail]) %></strong></li>
+    <li>
+      <%= attribute_line(student, :postal_street) %>
+      <%=t(:street, :scope => [:view, :shared, :_address_detail]) %>:
+    </li>
+    <li>
+      <%= attribute_line(student, :postal_desc_number) %>
+      <%=t(:desc_number, :scope => [:view, :shared, :_address_detail]) %>:
+    </li>
+    <li>
+      <%= attribute_line(student, :postal_city) %>
+      <%=t(:city, :scope => [:view, :shared, :_address_detail]) %>:
+    </li>
+    <li>
+      <%= attribute_line(student, :postal_zip) %>
+      <%=t(:zip, :scope => [:view, :shared, :_address_detail]) %>:
+    </li>
+  <% end %>
 </ul>
