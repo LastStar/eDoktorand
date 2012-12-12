@@ -588,7 +588,7 @@ module ApplicationHelper
     if @user.has_role?(Role.find(2))
       attribute_line(index, :department, :short_name) + t(:department, :scope => [:helper, :application]) + ':'
     else
-      long_info_helper(index.department.short_name) +
+      long_info_helper(index.department.short_name, :class => 'printable') +
         t(:department, :scope => [:helper, :application]) + ':'
     end
   end
@@ -597,7 +597,7 @@ module ApplicationHelper
     if @user.has_role?(Role.find(2))
       attribute_line(index, :specialization, :name) + t(:specialization, :scope => [:helper, :application]) + ':'
     else
-      long_info_helper(index.specialization.name) +
+      long_info_helper(index.specialization.name, :class => 'printable') +
         t(:specialization, :scope => [:helper, :application]) + ':'
     end
   end
