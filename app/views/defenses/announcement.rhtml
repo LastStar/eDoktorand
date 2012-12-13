@@ -21,15 +21,11 @@
   <td><%= index.tutor.display_name %></td>
 </tr>
   <% if index.consultant  %>
-<tr>
-  <th><%= t(:message_5, :scope => [:view, :defenses, :announcement]) %>: </th>
-  <td><%= index.consultant %></td>
-</tr>
+  <tr>
+    <th><%= t(:message_5, :scope => [:view, :defenses, :announcement]) %>: </th>
+    <td><%= index.consultant %></td>
+  </tr>
   <% end %>
-<tr>
-  <th><%= t(:message_6, :scope => [:view, :defenses, :announcement]) %>: </th>
-  <td><%= @defense.start_time %></td>
-</tr>
 <tr>
   <th><%= t(:message_7, :scope => [:view, :defenses, :announcement]) %>: </th>
   <td><%= @defense.date_time %></td>
