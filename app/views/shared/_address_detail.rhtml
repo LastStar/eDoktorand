@@ -18,7 +18,7 @@
     <%= attribute_line(student, :zip) %>
     <%=t(:zip, :scope => [:view, :shared, :_address_detail]) %>:
   </li>
-  <% if student.postal_street %>
+  <% if student.postal_street.present? %>
     <li><strong><%= t(:postal_address, :scope => [:view, :shared, :_address_detail]) %></strong></li>
     <li>
       <%= attribute_line(student, :postal_street) %>
