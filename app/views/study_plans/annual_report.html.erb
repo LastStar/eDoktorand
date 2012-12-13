@@ -60,10 +60,10 @@
     <td style='text-align: right'><%= plan_subject.finishing_on %>.</td>
     <% if plan_subject.finished? %>
     <td style='text-align: right'><%= plan_subject.finished_on.strftime("%d.&nbsp;%m.&nbsp;%Y") %></td>
-    <% else %>
-      <td/>
-    <% end %>
     <td style='text-align: center'><%= t(:passed, :scope => [:view, :study_plans, :annual_report]) %></td>
+    <% else %>
+      <td colspan="2"></td>
+    <% end %>
   </tr>
   <% end %>
 

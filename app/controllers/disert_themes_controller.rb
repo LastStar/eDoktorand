@@ -31,11 +31,7 @@ helper :disert_themes
     @disert_theme = DisertTheme.find(params[:disert_theme][:id])
     if (file = params[:disert_theme][:methodology_file]).is_a? Tempfile
       DisertTheme.save_methodology(@disert_theme, file)
-      if @user.has_one_of_roles?(['faculty_secretary','vicerector'])
-        render :text => "<script>window.close()</script>"
-      else
-        render :text => "<script>window.close()</script>"
-      end
+      render :text => "<script>window.close()</script>"
     else
       @title = t(:message_1, :scope => [:controller, :themes])
       flash.now[:error] = t(:message_2, :scope => [:controller, :themes])
@@ -43,15 +39,15 @@ helper :disert_themes
     end
   end
 
-  #adding only disaer_themes en (fixing bug)
+  # add disert theme english title
   def add_en
     @disert_theme = DisertTheme.find(params[:disert_theme])
   end
 
   #saving only disert_themes en (fixing bug)
   def save_en
-    @disert_theme = DisertTheme.find(params[:disert_theme])
-    @disert_theme.update_attribute(:title_en, params[:en_title])
+    @disert_theme = DisertTheme.find(params[:disert_theme][:id])
+    @disert_theme.update_attribute(:title_en, params[:disert_theme][:title_en])
   end
 
   def plagiat

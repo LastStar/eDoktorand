@@ -5,7 +5,6 @@ gem 'mongrel'
 
 gem 'curb'
 gem 'handsoap'
-gem 'sqlite3'
 gem 'nokogiri'
 gem 'mysql'
 gem 'hpricot'

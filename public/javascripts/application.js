@@ -23,11 +23,13 @@ function switch_external_chairman() {
 
 
 document.observe("dom:loaded", function() {
-  $("both_in_one_day").observe("click", function() {
-    if ($("both_in_one_day").checked) {
-      $("file").hide()
-    } else {
-      $("file").show()
-    }
-  })
+  if($("both_in_one_day") != null) {
+    $("both_in_one_day").observe("click", function() {
+      if ($("both_in_one_day").checked) {
+        $("file").hide()
+      } else {
+        $("file").show()
+      }
+    })
+  }
 });
