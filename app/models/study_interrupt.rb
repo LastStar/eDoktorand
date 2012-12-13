@@ -1,6 +1,8 @@
 require 'approvable'
 class StudyInterrupt < ActiveRecord::Base
 
+  MAX_LENGTH = 36
+
   include Approvable
 
   belongs_to :index

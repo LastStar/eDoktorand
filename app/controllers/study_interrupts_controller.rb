@@ -6,7 +6,9 @@ class StudyInterruptsController < ApplicationController
   before_filter :login_required, :prepare_student, :prepare_user
 
   def index
-    unless @student
+    if @student
+      @index = @student.index
+    else
       @index = Index.find(params[:id])
       @student = @index.student
     end

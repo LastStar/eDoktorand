@@ -13,7 +13,7 @@
     <% end %>
 
     <label><%= t(:duration, :scope => [:view, :interrupts, :index]) + " (" + t(:months, :scope => [:view, :interrupts, :index]) + "):" %></label>
-    <%= select('interrupt', 'duration', (1..24)) %><br />
+    <%= select('interrupt', 'duration', (1..StudyInterrupt::MAX_LENGTH)) %><br />
     <% unless @interrupt.start_on_day %>
       <label><%= "#{t(:note, :scope => [:view, :interrupts, :index])}:" %></label>
       <%= text_area('interrupt', 'note') %><br />
