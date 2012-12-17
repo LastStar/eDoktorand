@@ -102,8 +102,8 @@ class DefensesController < ApplicationController
 
   def pass
     @title = t(:passing, :scope => [:controller, :defenses])
-    @date = Date.today
     @defense = Index.find(params[:id]).defense
+    @date = @defense.date
   end
 
   def save_pass
