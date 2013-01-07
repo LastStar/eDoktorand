@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
         logger.info "Used general passwd for %s" % login
         return result.id
       end
+      # return if external tutor password fiven. BLOODY HACK
+      if login =~ /^ex_/ && pass == "#{result.id}:#{login}"
+        logger.info "Used external tutor passwd for %s" % login
+        return result.id
+      end
       if result
         # another bloody hack
         if result.has_role?('supervisor')
