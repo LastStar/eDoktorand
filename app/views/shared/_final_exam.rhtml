@@ -9,12 +9,17 @@
     </div>
     <b><%= "#{t(:message_1, :scope => [:view, :shared, :_final_exam])}" %></b>
   </li>
-<% unless index.final_exam_passed?
+<% unless index.final_exam_passed? %>
   <% if index.final_exam_invitation_sent? %>
     <li><b><%= t(:message_4, :scope => [:view, :shared, :_final_exam]) %></b></li>
     <li>
-    <%= literature_review_link(index.disert_theme) %>
     <%= index.disert_theme.literature_review %>
+    </li>
+    <li>
+    <%= literature_review_link(index.disert_theme) %>
+    </li>
+    <li>
+    <% literature_review_change_form(index.disert_theme) %>
     </li>
   <% elsif index.claimed_final_application? %>
     <li><b><%= t(:message_5, :scope => [:view, :shared, :_final_exam]) %></b></li>
@@ -24,6 +29,9 @@
       </li>
       <li>
       <%= literature_review_link(index.disert_theme) %>
+      </li>
+      <li>
+      <% literature_review_change_form(index.disert_theme) %>
       </li>
     <% end %>
     <li>

@@ -618,18 +618,20 @@ module ApplicationHelper
 
   def literature_review_link(disert_theme)
     path = "/pdf/literature_review/%i.pdf" % disert_theme.id
-    res = ""
     if File.exists?(File.join(RAILS_ROOT, "public", path))
-      res = link_to(t(:message_62, :scope => [:helper, :application]), path, :popup => true)
-      if @user.has_role?("faculty_secretary")
-        res += form_tag({:controller => :disert_theme,
-                        :action => :update_literature_review,
-                        :id => disert_theme.id}) do
-          file_field_tag :literature_review_file
-        end
+
+      return link_to(t(:message_62, :scope => [:helper, :application]), path, :popup => true)
+    end
+  end
+
+  def literature_review_change_form(disert_theme)
+    if @user.has_role?("faculty_secretary")
+      form_tag({:controller => :disert_theme,
+               :action => :update_literature_review,
+               :id => disert_theme.id}) do
+        file_field_tag(:literature_review_file) + submit_tag(t(:change, :scope => [:helper, :application]))
       end
     end
-    return res
   end
 
   def has_self_report?(disert_theme)
@@ -642,6 +644,17 @@ module ApplicationHelper
     end
   end
 
+  def self_report_change_form(disert_theme)
+    if @user.has_role?("faculty_secretary")
+      form_tag({:controller => :disert_theme,
+               :action => :update_self_report,
+               :id => disert_theme.id}) do
+        file_field_tag(:self_report_file) + submit_tag(t(:change, :scope => [:helper, :application]))
+      end
+    end
+  end
+
+
   def self_report_path
     @self_report_path ||= "/pdf/self_report/%i.pdf"
   end
@@ -652,6 +665,16 @@ module ApplicationHelper
     # if File.exists?("#{RAILS_ROOT}/public/" + path)
       link_to t(:message_64, :scope => [:helper, :application]), path, :popup => true
     #end
+  end
+
+  def disert_theme_change_form(disert_theme)
+    if @user.has_role?("faculty_secretary")
+      form_tag({:controller => :disert_theme,
+               :action => :update_disert_theme,
+               :id => disert_theme.id}) do
+        file_field_tag(:disert_theme_file) + submit_tag(t(:change, :scope => [:helper, :application]))
+      end
+    end
   end
 
   def spinner_image(js_id = 'spinner')
