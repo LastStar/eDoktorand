@@ -54,6 +54,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  # FIXME is this really needed?
   def save_address
     @student = Student.find(params[:student][:id])
     @student.update_attributes(params[:student])
