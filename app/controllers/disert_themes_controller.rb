@@ -60,4 +60,13 @@ helper :disert_themes
     extend DisertThemes::Checker
     send_file download_theses_file(@theses_result)
   end
+
+  def update_literature_review
+    @disert_theme = DisertTheme.find(params[:id])
+    if ((literature_review = params[:literature_review_file]) &&
+      literature_review.is_a?(Tempfile))
+      @disert_theme.save_literature_review(literature_review)
+    end
+    redirect_to :controller => :students
+  end
 end

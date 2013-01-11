@@ -626,9 +626,9 @@ module ApplicationHelper
 
   def literature_review_change_form(disert_theme)
     if @user.has_role?("faculty_secretary")
-      form_tag({:controller => :disert_theme,
+      form_tag({:controller => :disert_themes,
                :action => :update_literature_review,
-               :id => disert_theme.id}) do
+               :id => disert_theme.id}, :multipart => true) do
         file_field_tag(:literature_review_file) + submit_tag(t(:change, :scope => [:helper, :application]))
       end
     end
@@ -646,7 +646,7 @@ module ApplicationHelper
 
   def self_report_change_form(disert_theme)
     if @user.has_role?("faculty_secretary")
-      form_tag({:controller => :disert_theme,
+      form_tag({:controller => :disert_themes,
                :action => :update_self_report,
                :id => disert_theme.id}) do
         file_field_tag(:self_report_file) + submit_tag(t(:change, :scope => [:helper, :application]))
@@ -669,7 +669,7 @@ module ApplicationHelper
 
   def disert_theme_change_form(disert_theme)
     if @user.has_role?("faculty_secretary")
-      form_tag({:controller => :disert_theme,
+      form_tag({:controller => :disert_themes,
                :action => :update_disert_theme,
                :id => disert_theme.id}) do
         file_field_tag(:disert_theme_file) + submit_tag(t(:change, :scope => [:helper, :application]))
