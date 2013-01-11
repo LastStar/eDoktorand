@@ -648,7 +648,7 @@ module ApplicationHelper
     if @user.has_role?("faculty_secretary")
       form_tag({:controller => :disert_themes,
                :action => :update_self_report,
-               :id => disert_theme.id}) do
+               :id => disert_theme.id}, :multipart => true) do
         file_field_tag(:self_report_file) + submit_tag(t(:change, :scope => [:helper, :application]))
       end
     end
@@ -671,7 +671,7 @@ module ApplicationHelper
     if @user.has_role?("faculty_secretary")
       form_tag({:controller => :disert_themes,
                :action => :update_disert_theme,
-               :id => disert_theme.id}) do
+               :id => disert_theme.id}, :multipart => true) do
         file_field_tag(:disert_theme_file) + submit_tag(t(:change, :scope => [:helper, :application]))
       end
     end

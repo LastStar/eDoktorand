@@ -69,4 +69,20 @@ helper :disert_themes
     end
     redirect_to :controller => :students
   end
+
+  def update_self_report
+    @disert_theme = DisertTheme.find(params[:id])
+    if (self_report = params[:self_report_file]) && self_report.is_a?(Tempfile)
+      @disert_theme.save_self_report_file(self_report)
+    end
+    redirect_to :controller => :students
+  end
+
+  def update_disert_theme
+    @disert_theme = DisertTheme.find(params[:id])
+    if (disert_theme = params[:disert_theme_file]) && disert_theme.is_a?(Tempfile)
+      @disert_theme.save_disert_theme_file(disert_theme)
+    end
+    redirect_to :controller => :students
+  end
 end
