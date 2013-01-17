@@ -88,7 +88,7 @@ module DisertThemes
               xml.tag!("pts:academicTitleBefore") {
                 xml.text! disert_theme.index.tutor.title_before.label.try(:strip) }
               xml.tag!("pts:academicTitleAfter") {
-                xml.text! disert_theme.index.tutor.title_after.label.try(:strip) }
+                xml.text! disert_theme.index.tutor.title_after.try(:label).try(:strip) }
             end
           end
           xml.tag!("pts:get.file") do
