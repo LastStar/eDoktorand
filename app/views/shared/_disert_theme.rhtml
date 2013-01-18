@@ -1,5 +1,40 @@
 <ul id=<%= "disert_theme#{study_plan.id}" %> class="bordered">
   <li class="noborder"><h5><%= t(:message_0, :scope => [:view, :shared, :_disert_theme]) %></h5></li>
+<% if disert_theme.index.defense_invitation_sent? %>
+  <li><b><%= t(:message_2, :scope => [:view, :shared, :_final_exam]) %></b></li>
+  <li>
+  <%= self_report_link(disert_theme) %>
+  </li>
+  <li>
+  <% self_report_change_form(disert_theme) %>
+  </li>
+  <li>
+  <%= disert_theme_link(disert_theme) %>
+  </li>
+  <li>
+  <% disert_theme_change_form(disert_theme) %>
+  </li>
+  <li>
+  <%= defense_term_link(@user, disert_theme.index) %>
+  </li>
+<% elsif disert_theme.index.defense_claimed? %>
+  <li><b><%= t(:message_3, :scope => [:view, :shared, :_final_exam]) %></b></li>
+  <li>
+  <%= self_report_link(disert_theme) %>
+  </li>
+  <li>
+  <% self_report_change_form(disert_theme) %>
+  </li>
+  <li>
+  <%= disert_theme_link(disert_theme) %>
+  </li>
+  <li>
+  <% disert_theme_change_form(disert_theme) %>
+  </li>
+  <li>
+  <%= defense_term_link(@user, disert_theme.index) %>
+  </li>
+<% end %>
   <li>
   <div class='long_info printable' id="title">
     <% if @user.has_role?(Role.find(2)) %>
@@ -21,4 +56,5 @@
   <b><%= "#{t(:message_3, :scope => [:view, :shared, :_disert_theme])}" %></b>
   </li>
     <%= render(:partial => 'shared/methodology', :locals => {:disert_theme => disert_theme}) %>
+
 </ul>
