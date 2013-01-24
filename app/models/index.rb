@@ -489,7 +489,7 @@ class Index < ActiveRecord::Base
     end
     if options[:study_status] && options[:study_status].to_i != 0
       case options[:study_status].to_i
-      when 1, 5
+      when 1
         conditions.first.sql_and(NOT_FINISHED_COND).sql_and(NOT_INTERRUPTED_COND)
         conditions << ([today] * 2)
       when 2
@@ -500,17 +500,12 @@ class Index < ActiveRecord::Base
         conditions << [today]
       when 4
         conditions.first.sql_and(ABSOLVED_COND)
-      when 6
-        conditions.first.sql_and(PASSED_FINAL_COND)
       end
     end
     indices = Index.find_for(options[:user], :conditions => conditions.flatten,
                             :faculty => options[:faculty],
                             :order => options[:order])
     year = options[:year].to_i
-    if options[:study_status].to_i == 5
-      year = 5
-    end
     if year != 0
       if year == 5
         indices.reject! {|i| i.year < 5}
@@ -530,6 +525,8 @@ class Index < ActiveRecord::Base
         indices.reject! {|i| i.study_plan_last_approver != Leader}
       when 5
         indices.reject! {|i| i.study_plan_last_approver != Dean}
+      when 6
+        indices.reject! {|i| !i.final_exam_passed?}
       end
     end
     return indices
@@ -585,10 +582,6 @@ class Index < ActiveRecord::Base
       I18n::t(:finished, :scope => [:model, :index])
     elsif interrupted?
       I18n::t(:interrupted, :scope => [:model, :index])
-    elsif final_exam_passed?
-      I18n::t(:passed_sdz, :scope => [:model, :index])
-    elsif continues?
-      I18n::t(:closed, :scope => [:model, :index])
     elsif studying?
       I18n::t(:studies, :scope => [:model, :index])
     else
@@ -642,7 +635,7 @@ class Index < ActiveRecord::Base
   end
 
   def studying?
-    !finished? && !final_exam_passed? && !interrupted? && !continues?
+    !finished? && !interrupted? && !absolved?
   end
 
   # switches study form

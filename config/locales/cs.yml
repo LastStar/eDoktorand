@@ -1413,36 +1413,36 @@ cs:
       edit_interrupt: opravit přerušení
       message_51: zpět
       message_40: uzavřeno
-      message_29: studijní plán
+      SP_status: stav studijního plánu
+      SP_not_admited: SP nesestaven
+      SP_admited: SP sestaven
+      SP_tutor_approved: SP schválen školitelem
+      SP_leader_approved: SP schválen vedoucím
+      SP_dean_approved: SP schválen děkanem
+      SP_pass_final_exam: složil SDZ
       message_18: absolvoval
       message_8: ukončit přerušení
       message_52: zpět a vyřadit ze seznamu
-      message_41: složil SDZ
-      message_30: SP nesestaven
       message_9: vytvoř SP
       message_53: diploma supplement
       message_42: forma studia
-      message_31: SP sestaven
       message_20: blíží se konec přerušení
       message_19: ukončeno
       message_0: absolvoval
       message_54: pracuji...
       message_43: prezenční
-      message_32: SP schválen školitelem
       message_10: termín SDZ
       message_1: akce
       message_55: studijní plán
       message_44: kombinované
-      message_33: SP schválen vedoucím
       message_22: SDZ
       message_11: potvrdit přerušení
       message_2: akce
       message_56: studijní plán
-      message_34: SP schválen děkanem
       message_23: schválena žádost o SDZ
       message_12: schválit US
       message_3: obnovit
-      message_35: stav studia
+      study_status: stav studia
       message_24: podaná žádost o SDZ
       message_13: neschválit US
       message_4: ukončit

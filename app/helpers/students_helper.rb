@@ -278,17 +278,24 @@ module StudentsHelper
 
   # prints select for statuses
   def status_select(options = {})
-    ops = [['-- ' + t(:message_29, :scope => [:helper, :students]) + ' --', '0'], [t(:message_30, :scope => [:helper, :students]), 1],\
-        [t(:message_31, :scope => [:helper, :students]), 2], [t(:message_32, :scope => [:helper, :students]), 3],\
-        [t(:message_33, :scope => [:helper, :students]), 4], [t(:message_34, :scope => [:helper, :students]), 5]]
+    ops = [['-- ' + t(:SP_status, :scope => [:helper, :students]) + ' --', '0'],
+      [t(:SP_not_admited, :scope => [:helper, :students]), 1],
+        [t(:SP_admited, :scope => [:helper, :students]), 2],
+        [t(:SP_tutor_approved, :scope => [:helper, :students]), 3],
+        [t(:SP_leader_approved, :scope => [:helper, :students]), 4],
+        [t(:SP_dean_approved, :scope => [:helper, :students]), 5],
+        [t(:SP_pass_final_exam, :scope => [:helper, :students]), 6]]
     content_tag('select', options_for_select(ops),
                 {:id => "status-srch", :name => "status"})
   end
 
   # prints select for statuses
   def study_status_select(options = {})
-    ops = [['-- ' + t(:message_35, :scope => [:helper, :students]) + ' --', '0'], [t(:message_36, :scope => [:helper, :students]), 1], [t(:message_37, :scope => [:helper, :students]), 2],
-            [t(:message_38, :scope => [:helper, :students]), 3], [t(:message_39, :scope => [:helper, :students]), 4], [t(:message_40, :scope => [:helper, :students]), 5], [t(:message_41, :scope => [:helper, :students]), 6]]
+    ops = [['-- ' + t(:study_status, :scope => [:helper, :students]) + ' --', '0'],
+          [t(:message_36, :scope => [:helper, :students]), 1],
+          [t(:message_37, :scope => [:helper, :students]), 2],
+          [t(:message_38, :scope => [:helper, :students]), 3],
+          [t(:message_39, :scope => [:helper, :students]), 4]]
     content_tag('select', options_for_select(ops),
                 {:id => "study_status-srch", :name => "study_status"})
   end
