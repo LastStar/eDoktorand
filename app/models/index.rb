@@ -69,6 +69,8 @@ class Index < ActiveRecord::Base
   validates_numericality_of :account_number, :only_integer => true, :allow_nil => true
   validates_numericality_of :account_bank_number, :only_integer => true, :allow_nil => true
 
+  after_save :update_im_index
+
   # update ImIndfsdfsafdsdf
   def update_im_index
     prepare_im_index unless im_index
