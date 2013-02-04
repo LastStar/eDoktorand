@@ -5,6 +5,8 @@ class Student < Examinator
   has_and_belongs_to_many :probation_terms
   has_one :im_student
 
+  after_save :update_im_student
+
   # updates ImStudent with new attributes
   def update_im_student
     prepare_im_student unless im_student
