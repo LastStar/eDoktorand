@@ -9,6 +9,7 @@
   <h3><%= t(:message_0, :scope => [:view, :defenses, :announcement]) %></h3>
 </div>
 <p><%= t(:message_1, :scope => [:view, :defenses, :announcement]) %></p>
+<p><%= t(:specialization, :scope => [:view, :defenses, :announcement]) + ": " + index.specialization.name %></p>
 <p><%= t(:message_2, :scope => [:view, :defenses, :announcement]) + " " + @defense.date.strftime("%d. %m. %Y") + " " + t(:message_15, :scope => [:view, :defenses, :announcement]) + " " +  @defense.room %>
 <div class='defense'>
 <table class='two-columns'>
@@ -19,6 +20,10 @@
 <tr>
   <th><%= t(:message_4, :scope => [:view, :defenses, :announcement]) %>: </th>
   <td><%= index.tutor.display_name %></td>
+</tr>
+<tr>
+  <th><%= t(:department, :scope => [:view, :defenses, :announcement]) %>: </th>
+  <td><%= index.department.name %></td>
 </tr>
   <% if index.consultant  %>
   <tr>
@@ -119,6 +124,8 @@
 </tr>
 <% end %>
 </table>
+
+<p><%= t(:public, :scope => [:view, :defenses, :announcement]) %></p>
 
 </div>
 
