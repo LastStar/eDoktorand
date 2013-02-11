@@ -1165,6 +1165,9 @@ cs:
         message_3: odeslat
         small_defense_file: protokol z malé obhajoby
       announcement:
+        specialization: Obor doktorského studijního programu
+        department: Katedra
+        public: Obhajoba je veřejná, přístupná všem zájemcům o danou problematiku.
         message_8: Místnost
         message_9: Název disertační práce
         message_0: Česká zemědělská univerzita v Praze
