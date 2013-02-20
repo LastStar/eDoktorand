@@ -1,0 +1,6 @@
+<% save_form(:postal_zip) do -%>
+  <%= text_field 'student', 'postal_zip', 'size' => 30 %>
+  <%= hidden_field 'student', 'id' %>
+  <%= ok_submit(:postal_zip) %>
+<% end %>
+<%= javascript_tag "$('student_postal_zip').select()" %>
