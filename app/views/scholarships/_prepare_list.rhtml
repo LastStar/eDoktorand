@@ -9,14 +9,13 @@
       <th class="no-rounded"><%= t(:message_4, :scope => [:view, :scholarships, :_prepare_list]) %></th>
       <th class="no-rounded"><%= t(:message_5, :scope => [:view, :scholarships, :_prepare_list]) %></th>
     </tr>
-<% for index in @indices %>
 
-<%= render(:partial => 'index_line', :locals => {:index => index}) %>
-
-<tr id='scholarship_form_<%= index.id %>'>
-</tr >
-<% end %>
-<tr class='tiny' id='index_<%= index.id %>'>
-</tr>
+  <% for index in @indices %>
+    <%= render(:partial => 'index_line', :locals => {:index => index}) %>
+    <tr id='scholarship_form_<%= index.id %>'>
+    </tr >
+  <% end %>
+  <tr class='tiny'>
+  </tr>
   </tbody>
 </table>
