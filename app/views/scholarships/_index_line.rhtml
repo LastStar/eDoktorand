@@ -1,11 +1,13 @@
 <tr class='tiny' id='index_<%= index.id %>'>
-  <td><%= index.student.display_name %></td>
+  <td>
+    <%= link_to index.student.display_name, {:action => :secretary_list, :id => index.id}, :target => "_blank" %>
+  </td>
 
   <td>
   <% if index.account_number == nil%>
     <%="&nbsp;&nbsp;"%>
   <% else %>
-     <%= index.student.account%>
+    <%= index.student.account %>
   <% end %>
   </td>
 

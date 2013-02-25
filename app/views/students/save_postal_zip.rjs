@@ -1,0 +1,1 @@
+page.replace_html "postal_zip", attribute_line(@student, :postal_zip)

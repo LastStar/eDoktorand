@@ -6,13 +6,57 @@ class StudentsController < ApplicationController
                     :edit_email, :edit_birthname, :edit_consultant, :edit_tutor,
                     :edit_street, :edit_zip, :edit_city, :edit_desc_number,
                     :save_street, :save_city, :save_zip, :save_desc_number,
-                    :time_form, :filter, :list_xls, :edit_account, :edit_specialization,
-                    :save_specialization, :save_department, :edit_department]
+                    :edit_postal_street, :edit_postal_zip, :edit_postal_city,
+                    :edit_postal_desc_number, :save_postal_street,
+                    :save_postal_city, :save_postal_zip, :save_postal_desc_number,
+                    :time_form, :filter, :list_xls, :edit_account,
+                    :edit_specialization, :save_specialization, :save_department,
+                    :edit_department]
 
   before_filter :login_required
   before_filter :set_title
   before_filter :prepare_order, :prepare_filter, :except => [:show, :contact]
   before_filter :prepare_conditions, :prepare_student
+
+  # saves the street of address to db
+  def save_postal_street
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:postal_street, params[:student][:postal_street])
+  end
+
+  # saves the city of address to db
+  def save_postal_city
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:postal_city, params[:student][:postal_city])
+  end
+
+  # saves the zip of address to db
+  def save_postal_zip
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:postal_zip, params[:student][:postal_zip])
+  end
+
+  # saves the description number of address to db
+  def save_postal_desc_number
+    @student = Student.find(params[:student][:id])
+    @student.update_attribute(:postal_desc_number, params[:student][:postal_desc_number])
+  end
+
+  def edit_postal_street
+    @student = Student.find(params[:id])
+  end
+
+  def edit_postal_city
+    @student = Student.find(params[:id])
+  end
+
+  def edit_postal_desc_number
+    @student = Student.find(params[:id])
+  end
+
+  def edit_postal_zip
+    @student = Student.find(params[:id])
+  end
 
   # saves the street of address to db
   def save_street

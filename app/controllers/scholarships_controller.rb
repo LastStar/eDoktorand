@@ -84,6 +84,11 @@ class ScholarshipsController < ApplicationController
     @scholarships = @index.paid_scholarships
   end
 
+  def secretary_list
+    @index = Index.find(params[:id])
+    @scholarships = @index.paid_scholarships
+  end
+
   def update
     @scholarship = Scholarship.find(params[:scholarship][:id])
     unless @scholarship.attributes = params[:scholarship]
