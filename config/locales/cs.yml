@@ -869,6 +869,7 @@ cs:
         years: ' roky'
         semester: Semestr
       _final_exam:
+        already_sent: Dizertační práce již byla odeslána ke kontrole plagiátu.
         semester: semestr
         message_1: Státní doktorská zkouška
         message_2: Tento student byl pozván k obhajobě disertační práce.
