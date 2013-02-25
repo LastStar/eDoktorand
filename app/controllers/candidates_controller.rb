@@ -1,3 +1,5 @@
+require 'will_paginate'
+
 class CandidatesController < ApplicationController
   include LoginSystem
   layout 'employers', :except => [:delete_all, :destroy_all]
