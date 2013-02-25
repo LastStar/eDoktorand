@@ -180,7 +180,9 @@ module DisertThemes
         puts "Plagiat found"
         disert_theme.theses_results = parse_result(response)
         if send_mail
+          puts 'Sending email'
           Notifications::deliver_plagiat_found(disert_theme)
+          puts 'Sent'
         end
       else
         puts "Plagiat not found"

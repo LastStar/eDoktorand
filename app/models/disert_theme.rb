@@ -77,6 +77,10 @@ class DisertTheme < ActiveRecord::Base
     end
   end
 
+  def sent_for_check?
+    theses_request_succesfull.present?
+  end
+
   private
   def set_actual
     if old_actual = DisertTheme.find_by_index_id_and_actual(self.index.id, 1)

@@ -22,15 +22,21 @@
   <li>
   <%= self_report_link(disert_theme) %>
   </li>
-  <li>
-  <% self_report_change_form(disert_theme) %>
-  </li>
+  <%- unless disert_theme.sent_for_check? %>
+    <li>
+    <% self_report_change_form(disert_theme) %>
+    </li>
+  <% end %>
+
   <li>
   <%= disert_theme_link(disert_theme) %>
   </li>
-  <li>
-  <% disert_theme_change_form(disert_theme) %>
-  </li>
+  <% if disert_theme.sent_for_check? %>
+    <li><b><%= t(:already_sent, :scope => [:view, :shared, :_final_exam]) %></b></li>
+  <% else %>
+    <% disert_theme_change_form(disert_theme) %>
+    </li>
+  <% end %>
   <li>
   <%= defense_term_link(@user, disert_theme.index) %>
   </li>
