@@ -1,5 +1,5 @@
 # mail configuration
-ActionMailer::Base.delivery_method = :smpt
+ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address => 'mail.oikt.czu.cz'
 }
