@@ -14,7 +14,6 @@ require 'first_char_changer'
 # faculty dependent configurations
 FACULTY_CFG =
   YAML::load(File.open("#{RAILS_ROOT}/config/initializers/faculty_configurations.yml"))
-ActionMailer::Base.delivery_method = :sendmail
 
 
 # webservices stuff
