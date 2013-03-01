@@ -30,7 +30,7 @@ class Tutor < Examinator
     if read_attribute(:email)
       return read_attribute(:email)
     elsif user
-      return "#{user}@#{faculty.ldap_context}.czu.cz"
+      return "#{user.login}@#{faculty.ldap_context}.czu.cz"
     end
     ""
   end
