@@ -13,7 +13,8 @@ module ServiceTools
         :obor => disert_theme.index.specialization.code,
         :prace_URL => "http://edoktorand.czu.cz/pdf/disert_theme/#{disert_theme.id}.pdf",
         :autoreferat_URL => "http://edoktorand.czu.cz/pdf/self_report/#{disert_theme.id}.pdf",
-        :posudek_oponent_URL => "http://edoktorand.czu.cz/pdf/opponent_review/#{disert_theme.id}.pdf"
+        :posudek_oponent_URL => "http://edoktorand.czu.cz/pdf/opponent_review/#{disert_theme.id}.pdf",
+        :protokol_obhajoba_URL => "http://edoktorand.czu.cz/pdf/signed_protocol/#{disert_theme.id}.pdf"
       }
     end
   end
