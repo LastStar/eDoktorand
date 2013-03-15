@@ -10,7 +10,7 @@ module ServiceTools
         :termin_obhajoby => disert_theme.defense_passed_on.strftime('%Y-%m-%d 00:00:00'),
         :fakulta => disert_theme.index.faculty.code,
         :utvar => disert_theme.index.department.code,
-        :obor => disert_theme.index.specialization.msmt_code,
+        :obor => disert_theme.index.specialization.code,
         :prace_URL => "http://edoktorand.czu.cz/pdf/disert_theme/#{disert_theme.id}.pdf",
         :autoreferat_URL => "http://edoktorand.czu.cz/pdf/self_report/#{disert_theme.id}.pdf",
         :posudek_oponent_URL => "http://edoktorand.czu.cz/pdf/opponent_review/#{disert_theme.id}.pdf"
