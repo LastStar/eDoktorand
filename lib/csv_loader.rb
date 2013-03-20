@@ -98,7 +98,7 @@ class CSVLoader
   # loads tutors
   def self.load_tutors(files, options = {})
     if options[:destroy]
-      Tutor.destroy_all 
+      Tutor.destroy_all
       Tutorship.destroy_all
     end
     @@mylog.info "Loading tutors..."
@@ -116,7 +116,7 @@ class CSVLoader
       t.id = row[6]
       @@mylog.debug "Tutor: #{t.id} " if t.save
       if row[8] && !row[8].empty?
-        ts = Tutorship.new  
+        ts = Tutorship.new
         t.tutorship = ts
         ts.department = Department.find(row[8])
         ts.save(false)
@@ -135,7 +135,7 @@ class CSVLoader
   # loads leaders
   def self.load_leaders(files, options = {})
     if options[:destroy]
-      Dean.destroy_all 
+      Dean.destroy_all
       Deanship.destroy_all
     end
     @@mylog.info "Loading leaders..."
@@ -170,10 +170,10 @@ class CSVLoader
   # loads tutors to system
   def self.load_deans(files, options = {})
     if options[:destroy]
-      Dean.destroy_all 
+      Dean.destroy_all
       Deanship.destroy_all
     end
-    Deanship.destroy_all  
+    Deanship.destroy_all
     @@mylog.info "Loading deans..."
     CSV::Reader.parse(File.open(files[:dean], 'rb'), ';') do |row|
       if Person.exists?(row[0])
@@ -269,7 +269,7 @@ class CSVLoader
             dt.title = row[7]
             dt.finishing_to = row[9].to_i
             dt.save
-            sp.admited_on = Time.now 
+            sp.admited_on = Time.now
             sp.id = row[11]
             sp.save
             u = User.new
@@ -279,7 +279,7 @@ class CSVLoader
             s.save
           end
         else
-          @@mylog.debug "uic #{row[1]} not found" 
+          @@mylog.debug "uic #{row[1]} not found"
         end
       end
     end
@@ -301,16 +301,16 @@ class CSVLoader
            PlanSubject.create('study_plan_id' => sp.id, 'subject_id' =>
              arr[row[3].to_i], 'finishing_on' => row[5])
           end
-        else 
-          @@mylog.debug "student uic: #{s.display_name} doesn't have study plan" 
+        else
+          @@mylog.debug "student uic: #{s.display_name} doesn't have study plan"
         end
       else
-        @@mylog.debug "student uic: #{s.display_name} doesn't have index" 
+        @@mylog.debug "student uic: #{s.display_name} doesn't have index"
       end
     end
   end
 
-  # loads fle subjects specializations 
+  # loads fle subjects specializations
   def self.load_fle_subjects_specializations(file)
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       cs = SpecializationSubject.new
@@ -346,7 +346,7 @@ class CSVLoader
   def self.set_subjects_specializations(faculty_id)
     faculty = Faculty.find(faculty_id)
     faculty.specializations.each do |c|
-      faculty.subjects.each do |s| 
+      faculty.subjects.each do |s|
         unless  VoluntarySubject.find_by_subject_id_and_specialization_id(s.id, c.id)
           @@mylog.debug "Voluntary subject created"
           VoluntarySubject.create(:subject => s, :specialization => c)
@@ -377,7 +377,7 @@ class CSVLoader
       u.person = s
       u.roles << Role.find(3)
       u.save(false)
-      @@mylog.debug "User #{u.login}" 
+      @@mylog.debug "User #{u.login}"
       i.save
     end
   end
@@ -403,7 +403,7 @@ class CSVLoader
       u.person = s
       u.roles << Role.find(3)
       u.save(false)
-      @@mylog.debug "User #{u.login}" 
+      @@mylog.debug "User #{u.login}"
       i.save
     end
   end
@@ -430,7 +430,7 @@ class CSVLoader
       u.person = s
       u.roles << Role.find(3)
       u.save(false)
-      @@mylog.debug "User #{u.login}" 
+      @@mylog.debug "User #{u.login}"
       i.save
     end
   end
@@ -438,12 +438,12 @@ class CSVLoader
   # loads external subjects
   def self.load_external_subjects(file)
     @@mylog.info "Loading external subjects..."
-    arr = [] 
+    arr = []
     CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
       es = ExternalSubject.new
       es.label = row[2]
       esd = ExternalSubjectDetail.new
-      esd.university = row[1] 
+      esd.university = row[1]
       es.save
       esd.external_subject = es
       esd.save
@@ -474,7 +474,7 @@ class CSVLoader
       end
       unless User.find_by_login(row[6])
         u = User.new(:login => row[6], :password => row[6], :person_id => row[0])
-        
+
         u.save
         @@mylog.info "Saving user #{u.login}"
       else
@@ -490,7 +490,7 @@ class CSVLoader
       if Student.exists?(row[4]) && Subject.exists?(row[1])
         e = Exam.new
         e.subject = Subject.find(row[1])
-        e.result = 1 
+        e.result = 1
         e.questions = row[3]
         e.index_id = Student.find(row[4]).index.id
         e.created_on = row[6]
@@ -514,7 +514,7 @@ class CSVLoader
           sub = Subject.find(row[2])
           e = Exam.new
           e.subject = sub
-          e.result = 1 
+          e.result = 1
           e.index = st.index
           e.created_on = Time.now
           e.first_examinator = Examinator.find(row[3])
@@ -537,13 +537,13 @@ class CSVLoader
         s = Student.find(row[3])
         sub = Subject.find(row[0])
         e = Exam.new
-        ps = PlanSubject.new 
+        ps = PlanSubject.new
         e.subject = sub
         ps.subject = sub
-        ps.finishing_on = row[10] 
+        ps.finishing_on = row[10]
         case row[1]
         when 'S'
-          e.result = 1 
+          e.result = 1
           ps.finished_on = row[5]
         when 'N'
           e.result = 0
@@ -581,11 +581,11 @@ class CSVLoader
         u = Student.find(row[0]).user
         u.login = row[1] if u
         u.save if u
-        i = Student.find(row[0]).index 
+        i = Student.find(row[0]).index
         i.study = Study.find(row[2]) if i
         i.save if i
       end
-    end   
+    end
   end
 
   # loads fle logins and study
@@ -597,17 +597,17 @@ class CSVLoader
         u.login = row[1] if u
         u.person = Student.find(row[0])
         u.save if u
-        i = Student.find(row[0]).index 
+        i = Student.find(row[0]).index
         i.study = Study.find(row[2]) if i
         i.save if i
       end
-    end   
+    end
   end
 
   # loads tutors
   def self.load_secretaries(file, options = {})
     if options[:destroy]
-      DepartmentSecretary.destroy_all 
+      DepartmentSecretary.destroy_all
       DepartmentEmployment.destroy_all
     end
     @@mylog.info "Loading department secretaries..."
@@ -624,7 +624,7 @@ class CSVLoader
       ds.uic = row[0]
       ds.id = row[6]
       @@mylog.debug "Secretary: #{ds.id} " if ds.save
-      de = DepartmentEmployment.new  
+      de = DepartmentEmployment.new
       de.person = ds
       de.department = Department.find(row[5])
       @@mylog.debug "department #{de.department.name}"
@@ -821,7 +821,7 @@ class CSVLoader
       t.id = row[2]
       @@mylog.debug "Tutor: #{t.id} " if t.save
       if row[4] && !row[4].empty?
-        ts = Tutorship.new  
+        ts = Tutorship.new
         t.tutorship = ts
         ts.department = Department.find(row[4])
         ts.specialization = Specialization.find(110)
@@ -954,6 +954,26 @@ class CSVLoader
       end
       @@mylog.info 'creating voluntary subject %s for %s' % [s.label, c.name]
       c.voluntary_subjects << VoluntarySubject.new(:specialization => c, :subject => s)
+    end
+  end
+
+  def self.admittance_themes(file)
+    Dean.columns
+    CSV::Reader.parse(File.open(file, 'rb'), ';') do |row|
+      @@mylog.info row.join(";")
+      s = Specialization.find(row[0])
+      t = Tutor.find_by_uic(row[1])
+      d = t.department
+      n = row[2]
+      at = AdmittanceTheme.new(:tutor => t,
+                               :specialization => s,
+                               :department => d,
+                               :name => n)
+      if at.save
+        @@mylog.info "Saved"
+      else
+        @@mylog.info "Problem saving"
+      end
     end
   end
 end
