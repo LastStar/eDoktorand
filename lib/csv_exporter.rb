@@ -19,7 +19,7 @@ class CSVExporter
         csv << ['sident', 'claimed_at', 'supervised_at']
         students.each do |s|
           row = []
-          row << s.sident
+          row << s.index.sident
           row << s.index.scholarship_claimed_at.strftime('%d.%m.%Y')
           if s.index.scholarship_approved_at &&
             s.index.scholarship_approved_at > TermsCalculator.this_year_start
@@ -195,7 +195,7 @@ class CSVExporter
           row << student.id
           row << student.uic
           row << (student.user ? student.user.login : 'NO LOGIN!!!')
-          row << student.sident if index.student.sident
+          row << index.sident if index.sident
           row << student.display_name
           row << index.department.name
           row << index.faculty.name
@@ -223,7 +223,7 @@ class CSVExporter
             row << " "
           end
           row << index.student.uic
-          row << index.student.sident if index.student.sident
+          row << index.sident if index.sident
           if index.student.title_before
             row << index.student.title_before.label
           else
@@ -368,7 +368,7 @@ class CSVExporter
     def export_sident_with_account(indices = nil)
       file = "sident_account.csv"
       sql = "account_number is not null and account_number <> '' \
-              and people.sident is not null"
+              and sident is not null"
       outfile = File.open(file, 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
         indices ||= Index.find(:all,
@@ -378,7 +378,7 @@ class CSVExporter
         indices.each do |i|
           # TODO redo with index instance method
           row = []
-          row << i.student.sident
+          row << i.sident
           row << i.full_account_number
           row << i.account_bank_number
           @@mylog.debug "Adding #{row}"

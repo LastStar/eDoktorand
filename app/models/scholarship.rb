@@ -27,7 +27,7 @@ class Scholarship < ActiveRecord::Base
   end
 
   def csv_row
-    return [index.student.sident, code, disponent, amount,
+    return [index.sident, code, disponent, amount,
             nil, nil, nil, scholarship_month.title]
   end
 

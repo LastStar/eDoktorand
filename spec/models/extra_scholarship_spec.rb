@@ -25,7 +25,7 @@ describe RegularScholarship do
                       :scholarship_month => ScholarshipMonth.open)
     end
     it "returns csv row" do
-      @scholarship.csv_row.should == [@index.student.sident, '66DTUM',  '1234123451234', 1000.0,
+      @scholarship.csv_row.should == [@index.sident, '66DTUM',  '1234123451234', 1000.0,
         nil, nil, nil, '201202']
     end
   end

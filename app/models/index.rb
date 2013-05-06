@@ -124,10 +124,10 @@ class Index < ActiveRecord::Base
     if self.student.uic == nil
           message = message + I18n.t(:missing_uic, :scope => [:model, :index]) + " "
     end
-    if self.student.sident == -666
+    if self.sident == -666
           message = message + I18n.t(:missing_sident_666, :scope => [:model, :index]) + " "
     end
-    if self.student.sident == nil
+    if self.sident == nil
           message = message + I18n.t(:missing_sident, :scope => [:model, :index]) + " "
     end
     return message
@@ -137,7 +137,7 @@ class Index < ActiveRecord::Base
   # returns if index is bad
   def bad_index?
      if self.account_number == nil || self.account_bank_number == nil ||
-      self.student.uic == nil || self.student.sident == -666 || self.student.sident == nil
+      self.student.uic == nil || self.sident == -666 || self.sident == nil
         if self.has_any_scholarship?
           return true
         end

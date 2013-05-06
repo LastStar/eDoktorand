@@ -20,7 +20,7 @@
     <%= "#{long_info_helper(index.student.uic) if index.student.uic}#{t(:uic, :scope => [:view, :shared, :_personal_info])}: " %>
   </li>
   <li>
-    <%= "#{long_info_helper(index.student.sident) if index.student.sident}#{t(:sident, :scope => [:view, :shared, :_personal_info])}: " %>
+    <%= "#{long_info_helper(index.sident) if index.sident}#{t(:sident, :scope => [:view, :shared, :_personal_info])}: " %>
   </li>
   <li class='nonprintable'>
     <%= attribute_line(index.student, :account) %>

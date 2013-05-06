@@ -20,7 +20,7 @@
     <%= "#{long_info_helper(index.student.uic) if index.student.uic}#{t(:message_13, :scope => [:view, :shared, :_personal_detail])}: " %>
   </li>
   <li>
-    <%= "#{long_info_helper(index.student.sident) if index.student.sident}#{t(:message_14, :scope => [:view, :shared, :_personal_detail])}: " %>
+    <%= "#{long_info_helper(index.sident) if index.sident}#{t(:message_14, :scope => [:view, :shared, :_personal_detail])}: " %>
   </li>
   <li>
     <%= student_specialization_line(index) %>
