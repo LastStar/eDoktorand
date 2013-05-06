@@ -187,14 +187,10 @@ class Index < ActiveRecord::Base
 
   # returns semesteer of the study
   def semester
-    if @semester
-      return @semester
-    else
-      time = time_from_enrollment
-      @semester = time.div(1.year / 2) + 1
-      @semester = 1 if @semester == 0
-      return @semester
-    end
+    time = time_from_enrollment
+    @semester = time.div(1.year / 2) + 1
+    @semester = 1 if @semester == 0
+    return @semester
   end
 
   def time_from_enrollment
@@ -578,7 +574,7 @@ class Index < ActiveRecord::Base
 
   # returns status of index
   def status
-    @status ||= if absolved?
+    status = if absolved?
       I18n::t(:absolved, :scope => [:model, :index])
     elsif finished?
       I18n::t(:finished, :scope => [:model, :index])
@@ -589,7 +585,7 @@ class Index < ActiveRecord::Base
     else
       raise UnknownState
     end
-    return @status
+    return status
   end
 
   # TODO after merge with rails3 redone with new status

@@ -14,7 +14,7 @@ describe Index do
       specialization = Factory(:specialization, :study_length => 3)
       index.specialization = specialization
       index.continues?.should be_true
-      index.status.should == "uzavřeno"
+      index.status.should == "studuje"
     end
 
     context 'status methods' do
@@ -38,20 +38,6 @@ describe Index do
 
       it "should return to when status is valid" do
         index.status_to.should == Date.parse('2010/09/30')
-      end
-
-      context "when final exam passed" do
-        let(:index) { Factory(:index, :student => Factory(:student),
-                              :study_plan => Factory.build(:study_plan),
-                              :final_exam_passed_on => Time.now) }
-
-        it "returns passed status" do
-          index.status.should == "složil SDZ"
-        end
-
-        it "should return status code" do
-          index.status_code.should == 'S'
-        end
       end
 
       context "when interrupted" do
@@ -80,8 +66,14 @@ describe Index do
         before do
           index.update_attribute(:final_exam_passed_on, 1.day.ago)
           Factory(:disert_theme, :index => index)
-          index.disert_theme.update_attribute(:defense_passed_on, 1.day.ago)
+          index.reload
+          index.disert_theme.defense_passed!(3.day.ago)
         end
+
+        it "is absolved" do
+          index.absolved?.should be_true
+        end
+
 
         it "returns absolved status" do
           index.status.should == "absolvoval"
@@ -121,7 +113,7 @@ describe Index do
       before :each do
         index.interrupts << StudyInterrupt.create(:start_on => Time.current,
                                                   :duration => 8)
-        Timecop.freeze(Time.zone.local(2011, 1, 2))
+        Timecop.travel(Time.zone.local(2011, 1, 2))
       end
 
       it "should compute real study year" do
@@ -131,7 +123,7 @@ describe Index do
 
     describe "without interrupts" do
       before :each do
-        Timecop.freeze(Time.zone.local(2011, 1, 2))
+        Timecop.travel(Time.zone.local(2011, 1, 2))
       end
 
       it "should compute real study year" do
@@ -141,7 +133,7 @@ describe Index do
 
     describe "current year without interrupts" do
       before :each do
-        Timecop.freeze(Time.zone.local(2009, 12, 2))
+        Timecop.travel(Time.zone.local(2009, 12, 2))
       end
 
       it "should compute real study year" do
@@ -153,7 +145,7 @@ describe Index do
       it "should compute real study year" do
         index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
         index.save
-        Timecop.freeze(Time.zone.local(2016, 1, 2))
+        Timecop.travel(Time.zone.local(2016, 1, 2))
         index.disert_theme.defense_passed!('2013-01-02')
         index.real_study_years.should == 4
       end
@@ -163,7 +155,7 @@ describe Index do
       it "should compute real study year" do
         index.finished_on = '2014-01-02'
         index.save
-        Timecop.freeze(Time.zone.local(2016, 1, 2))
+        Timecop.travel(Time.zone.local(2016, 1, 2))
         index.real_study_years.should == 5
       end
     end
@@ -173,7 +165,7 @@ describe Index do
     let(:index) { Factory(:index, :student => Factory(:student)) }
 
     before :each do
-      Timecop.freeze(Time.zone.local(2010, 1, 2))
+      Timecop.travel(Time.zone.local(2010, 1, 2))
     end
 
     it "computes semester" do
@@ -189,30 +181,30 @@ describe Index do
     end
 
     it "return non started before study start" do
-      Timecop.freeze(Time.zone.local(2009, 9, 20))
+      Timecop.travel(Time.zone.local(2009, 9, 20))
       index.nominal_length.should == 'studium ještě nezačalo'
     end
 
     context "when closing to end" do
       it "returns 10 days" do
-        Timecop.freeze(Time.zone.local(2012, 9, 20))
+        Timecop.travel(Time.zone.local(2012, 9, 20))
         index.nominal_length.should == 'zbývá 10 dní'
       end
 
       it "returns 2 days" do
-        Timecop.freeze(Time.zone.local(2012, 9, 28))
+        Timecop.travel(Time.zone.local(2012, 9, 28))
         index.nominal_length.should == 'zbývají 2 dny'
       end
 
       it "returns last day" do
-        Timecop.freeze(Time.zone.local(2012, 9, 30))
+        Timecop.travel(Time.zone.local(2012, 9, 30))
         index.nominal_length.should == 'zbývá poslední den'
       end
     end
 
     describe "after one more year" do
       before :each do
-        Timecop.freeze(Time.zone.local(2011, 1, 2))
+        Timecop.travel(Time.zone.local(2011, 1, 2))
       end
 
       it "should compute semester" do
@@ -232,28 +224,28 @@ describe Index do
       before :each do
         index.interrupts << StudyInterrupt.create(:start_on => Time.current,
                                                   :duration => 8)
-        Timecop.freeze(Time.zone.local(2011, 1, 2))
+        Timecop.travel(Time.zone.local(2011, 1, 2))
       end
 
-      it "should compute semester" do
+      it "computes semester" do
         index.semester.should == 2
       end
 
-      it "should compute year" do
+      it "computes year" do
         index.year.should == 1
       end
 
-      it "should compute nominal length" do
+      it "computes nominal length" do
         index.nominal_length.should == '7 měsíců'
       end
     end
 
     describe 'absolved' do
-      it "should compute semester and year only until absolved date" do
+      it "computes semester and year only until absolved date" do
         index.disert_theme = DisertTheme.new(:title => 'test', :finishing_to => 6)
         index.save
-        Timecop.freeze(Time.zone.local(2016, 1, 2))
         index.disert_theme.defense_passed!('2013-01-02')
+        Timecop.travel(Time.zone.local(2016, 1, 2))
         index.semester.should == 7
       end
     end
@@ -265,19 +257,19 @@ describe Index do
 
     context "when too early" do
       it "cannot have interrupt in days" do
-        Timecop.freeze(Time.zone. local(2010, 1, 2))
+        Timecop.travel(Time.zone. local(2010, 1, 2))
         index.should_not have_interrupt_from_day
       end
     end
 
     context "when less than 30 days to end of study" do
       it "can have interrupt from particular day" do
-        Timecop.freeze(Time.zone.local(2012, 9, 20))
+        Timecop.travel(Time.zone.local(2012, 9, 20))
         index.should have_interrupt_from_day
       end
 
       it "can have interrupt in days" do
-        Timecop.freeze(Time.zone.local(2012, 10, 20))
+        Timecop.travel(Time.zone.local(2012, 10, 20))
         index.should have_interrupt_from_day
       end
     end
