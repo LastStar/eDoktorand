@@ -564,7 +564,7 @@ class CSVExporter
     end
 
     def export_year_exams(exam_date_from, exam_date_to)
-      @@mylog.info 'Exporting exams list from %s' %exam_date_from
+      @@mylog.info "Exporting exams list from #{exam_date_from}"
       Faculty.find(:all).each do |faculty|
         outfile = File.open("exams_list_%s.csv" % faculty.short_name, 'wb')
         CSV::Writer.generate(outfile, ';') do |csv|
@@ -575,7 +575,7 @@ class CSVExporter
             subjs.each do |subject_id|
               subject_name = Subject.find(subject_id).label
               exams = Exam.count(:conditions => ["subject_id = ? and passed_on > ? and passed_on < ?", subject_id, exam_date_from, exam_date_to])
-            csv << [department.name, subject_name, exams]
+              csv << [department.name, subject_name.strip, exams] if exams > 0
             end
           end
         end
@@ -847,8 +847,8 @@ class CSVExporter
             row << index.study_name
             row << index.department.short_name
             row << index.specialization.code
-            row << index.enrolled_on.strftime('%d/%m/%Y')
-            row << index.study_plan.try(:status)
+            row << index.enrolled_on
+            row << index.final_exam_passed_on || index.study_plan.try(:status) || "nemá"
             row << index.disert_theme.try(:title)
             row << index.tutor.try(:display_name)
             csv << row
@@ -1003,7 +1003,7 @@ class CSVExporter
     end
 
     def for_specialization_chairman(specialization)
-      indices = Index.all(:conditions => {:specialization_id => Specialization.find(13).id}).reject { |i| i.absolved? || i.finished? }
+      indices = Index.all(:conditions => {:specialization_id => Specialization.find(1).id}).reject { |i| i.absolved? || i.finished? }
       @@mylog.info("There is %i students" % indices.size)
       File.open(specialization.code +  ".csv", 'wb') do |outfile|
         CSV::Writer.generate(outfile, ';') do |csv|
