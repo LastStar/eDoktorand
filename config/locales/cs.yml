@@ -948,27 +948,28 @@ cs:
         message_0: součet řádných stipendií
         message_1: součet mimořádných stipendií z fakultních zdrojů
       prepare:
-        message_0: Stipendia pro studenty
+        scholarships: Stipendia pro studenty
+        not_in_table: Vytvořená pro studenty bez nároku
       _index_line:
         message_0: Kč
         message_1: Kč
       list:
-        message_8: Disponent
-        message_9: Amount (CZK)
-        message_0: stipendia
+        disponent: Disponent
+        amount: Částka (Kč)
+        scholarships: stipendia
         message_10: Typ Stipendia
         message_1: Toto je pouze kontrolní tabulka!
         message_11: Celková částka
-        message_2: SIDENT
+        sident: SIDENT
         message_12: Konečná částka
-        message_3: Rodné číslo
+        birth_number: Rodné číslo
         message_13: Disponent
-        message_4: Příjmení
+        lastname: Příjmení
         message_14: Celková částka
-        message_5: jméno
+        firstname: Jméno
         message_15: Toto je pouze kontrolní tabulka!
-        message_6: Akreditován
-        message_7: Typ Stipendia
+        specialization: Obor
+        type: Typ Stipendia
         message_16: Studenti se špatnými nebo chybějícími údaji
         message_17: Příjmení
         message_18: Chybí v systému
@@ -1560,6 +1561,7 @@ cs:
       message_28: odhlásit
       message_17: uchazeči
     scholarships:
+      destroy: Smazat stipendium
       scholarship_file: Soubor se stipendii
       pay: Vyplatit
       pay_confirm: Označí měsíc jako vyplacený a vygeneruje soubor

@@ -67,6 +67,14 @@ module ScholarshipsHelper
     link_to_function(image_tag('close.png'), "Element.hide('#{element}')", {:class => 'nobg'})
   end
 
+  def destroy_link(scholarship)
+    link_to_remote(image_tag('close.png', :title => t(:destroy, :scope => [:helper, :scholarships])),
+                   {:complete => "$('over_#{scholarship.index.id}').hide()",
+                   :url => {:action => 'destroy_over', :id => scholarship.id}},
+                   {:class => 'nobg'})
+
+  end
+
   def pay_link
     if @user.has_role?('supervisor') &&
       ScholarshipApproval.all_approved?

@@ -4,11 +4,11 @@
   </td>
 
   <td>
-  <% if index.account_number == nil%>
-    <%="&nbsp;&nbsp;"%>
-  <% else %>
-    <%= index.student.account %>
-  <% end %>
+    <% if index.account_number == nil%>
+      <%="&nbsp;&nbsp;"%>
+    <% else %>
+      <%= index.student.account %>
+    <% end %>
   </td>
 
   <td><%= index.department.short_name %></td>

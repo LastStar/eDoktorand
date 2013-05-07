@@ -27,7 +27,8 @@ class ScholarshipsController < ApplicationController
   # scholarship list preparation
   def prepare
     @paying_date = ScholarshipMonth.current.starts_on
-    @indices = Index.find_for_scholarship(@user, ScholarshipMonth.current.starts_on)
+    @indices = Index.find_for_scholarship(@user, @paying_date)
+    @over = Index.find_with_scholarship(@user).reject { |i| @indices.include? i }
   end
 
   def change
@@ -111,6 +112,12 @@ class ScholarshipsController < ApplicationController
     @index = scholarship.index
     @old_id = scholarship.id
     scholarship.destroy
+  end
+
+  def destroy_over
+    scholarship = Scholarship.find(params[:id])
+    scholarship.destroy
+    render :text => "Destroyed", :status => 200
   end
 
   def pay

@@ -1,0 +1,11 @@
+<tr id="over_<%= index.id %>">
+  <td><%= index.sident %></td>
+  <td><%= index.student.birth_number %></td>
+  <td><%= index.student.lastname %></td>
+  <td><%= index.student.firstname %></td>
+  <td><%= index.specialization.code %></td>
+  <% if index.has_regular_scholarship?(@paying_date) && index.regular_scholarship_or_create.amount > 0 %>
+    <%= render(:partial => 'over', :locals => {:scholarship => index.regular_scholarship}) %>
+  <% end %>
+</tr>
+
