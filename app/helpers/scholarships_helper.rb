@@ -1,9 +1,6 @@
 require 'scholarship_calculator'
 
 module ScholarshipsHelper
-
-
-
   def detail_link(index)
     link_to_remote(image_tag('open.png'),
                    {:update => "scholarship_form_#{index.id}",
@@ -122,6 +119,13 @@ module ScholarshipsHelper
     form_remote_tag(:url => {:action => 'save', :id => scholarship},
                     #:update => "index_#{scholarship.index.id}",
                     &proc)
+  end
+
+  def add_form(&proc)
+    form_remote_tag(:url => {:action => 'save', :id => scholarship},
+                    :update => "add",
+                    &proc)
+
   end
 
   def show_scholarship_form(index)

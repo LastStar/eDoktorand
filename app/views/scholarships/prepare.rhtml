@@ -9,6 +9,13 @@
   </div>
   <h1><%= t(:scholarships, :scope => [:view, :scholarships, :prepare]) %></h1>
 
+  <div id='add'>
+    <h3><%= t(:add, :scope => [:view, :scholarships, :prepare]) %></h1>
+    <% add_form do %>
+      <input type="text" name="lastname" id="lastname" placeholder="Hledat podle příjmení"/>
+      <input type="submit" name="search" id="search"/>
+    <% end %>
+  </div>
   <% if @over.present? %>
     <div class='t1'>
       <h3><%= t(:not_in_table, :scope => [:view, :scholarships, :prepare])%></h3>
