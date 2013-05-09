@@ -194,13 +194,11 @@ module ApplicationHelper
           links << link_to(t(:message_21, :scope => [:helper, :application]), :controller => 'tutors')
           links << link_to(t(:message_22, :scope => [:helper, :application]), :controller => 'specializations')
         elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary'])
-          if @user.has_role?('board_chairman')
-            links << link_to(t(:message_23, :scope => [:helper, :application]), :controller => 'candidates', :category => 'lastname')
-          end
           if @user.has_role?('department_secretary')
-            links << link_to(t(:message_24, :scope => [:helper, :application]), :controller => 'candidates', :action => 'list', :category => 'lastname')
             links << prepare_scholarship_link
           end
+
+          links << link_to(t(:message_23, :scope => [:helper, :application]), :controller => 'candidates', :category => 'lastname', :action => 'list')
           links << link_to(t(:message_25, :scope => [:helper, :application]),
                                           :controller => 'probation_terms')
           links << link_to(t(:message_26, :scope => [:helper, :application]), :controller => 'exams')
