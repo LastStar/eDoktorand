@@ -1,4 +1,4 @@
-<% unless @user.has_one_of_roles?(['board_chairman','department_secretary']) %>
+<% unless @user.has_one_of_roles?(['board_chairman','department_secretary', 'leader']) %>
   <% sort_array = [['specialization_id', t(:message_0, :scope => [:view, :candidates, :list])], ['lastname',
   t(:message_1, :scope => [:view, :candidates, :list])], ['updated_on', t(:message_2, :scope => [:view, :candidates, :list])]] %>
   <% if params[:action] != 'list_admission_ready'%>
