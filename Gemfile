@@ -18,4 +18,5 @@ group :test do
   gem 'factory_girl', '1.2.2'
   gem 'shoulda'
   gem 'timecop'
+  gem 'sqlite3'
 end

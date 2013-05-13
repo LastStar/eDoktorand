@@ -1,5 +1,7 @@
+require "soap/netHttpClient"
 require 'log4r'
 require 'csv'
+
 class MassProcessor
   include Log4r
 
@@ -8,7 +10,7 @@ class MassProcessor
   @@mylog.level = 1
 
   SERVICE_URL = "http://193.84.33.16/axis2"
-  SIDENT_SERVICE_PATH = "/services/GetSidentService/getSidentByBirthNum?rc=%s"
+  SIDENT_SERVICE_PATH = "/services/GetSidentService/getSidentByBirthNum?rc=%s&obor=%s"
   SUBJECT_SERVICE_PATH = "/services/GetSubjectService/getSubjects"
 
   class << self
@@ -164,14 +166,14 @@ class MassProcessor
     end
 
     # reads sident from webservice and change it for students
-    def repair_sident(students)
-      @@mylog.info "There are %i students" % students.size
+    def repair_sident(indices)
+      @@mylog.info "There are %i students" % indices.size
       @client = SOAP::NetHttpClient.new
       service = SERVICE_URL + SIDENT_SERVICE_PATH
-      students.each do |student|
-        @@mylog.info "Procesing student #%i" % student.id
+      indices.each do |index|
+        @@mylog.info "Procesing index #%i" % index.id
 
-        service_url = service % student.birth_number
+        service_url = service % [index.student.birth_number, index.specialization.code]
         @@mylog.debug "Service url is: %s" % service_url
         begin
           sident = @client.get_content(service_url)
@@ -182,12 +184,11 @@ class MassProcessor
         if sident =~ /<SIDENT>(.*)<\/SIDENT>/
           sident = $1
           @@mylog.info "Got sident %i" % sident
-
           if sident != -1
-            student.update_attribute(:sident, sident)
+            index.update_attribute(:sident, sident)
             @@mylog.info "Updated sident"
           else
-            @@mylog.error "Service returned bad code for student #%i" % student.id
+            @@mylog.error "Service returned bad code for student #%i" % index.id
           end
         end
       end

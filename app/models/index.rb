@@ -124,10 +124,10 @@ class Index < ActiveRecord::Base
     if self.student.uic == nil
           message = message + I18n.t(:missing_uic, :scope => [:model, :index]) + " "
     end
-    if self.student.sident == -666
+    if self.sident == -666
           message = message + I18n.t(:missing_sident_666, :scope => [:model, :index]) + " "
     end
-    if self.student.sident == nil
+    if self.sident == nil
           message = message + I18n.t(:missing_sident, :scope => [:model, :index]) + " "
     end
     return message
@@ -137,7 +137,7 @@ class Index < ActiveRecord::Base
   # returns if index is bad
   def bad_index?
      if self.account_number == nil || self.account_bank_number == nil ||
-      self.student.uic == nil || self.student.sident == -666 || self.student.sident == nil
+      self.student.uic == nil || self.sident == -666 || self.sident == nil
         if self.has_any_scholarship?
           return true
         end
@@ -187,14 +187,10 @@ class Index < ActiveRecord::Base
 
   # returns semesteer of the study
   def semester
-    if @semester
-      return @semester
-    else
-      time = time_from_enrollment
-      @semester = time.div(1.year / 2) + 1
-      @semester = 1 if @semester == 0
-      return @semester
-    end
+    time = time_from_enrollment
+    @semester = time.div(1.year / 2) + 1
+    @semester = 1 if @semester == 0
+    return @semester
   end
 
   def time_from_enrollment
@@ -578,7 +574,7 @@ class Index < ActiveRecord::Base
 
   # returns status of index
   def status
-    @status ||= if absolved?
+    status = if absolved?
       I18n::t(:absolved, :scope => [:model, :index])
     elsif finished?
       I18n::t(:finished, :scope => [:model, :index])
@@ -589,7 +585,7 @@ class Index < ActiveRecord::Base
     else
       raise UnknownState
     end
-    return @status
+    return status
   end
 
   # TODO after merge with rails3 redone with new status

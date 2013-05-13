@@ -33,6 +33,6 @@ class ImIndex < ActiveRecord::Base
     self.education_language_code = 'CZ'
     self.education_place = "Praha"
     self.study_form_changed_on = index.study_form_changed_on
-    self.sident = index.student.sident
+    self.sident = index.sident
   end
 end
