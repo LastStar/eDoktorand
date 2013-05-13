@@ -295,11 +295,17 @@ class Candidate < ActiveRecord::Base
     if user.has_one_of_roles?(['vicerector', 'university_secretary'])
       conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
                     Specialization.find(:all)]
-    else
+    elsif user.has_one_of_roles?(['faculty_secretary', 'dean'])
       conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
                     faculty.specializations]
+    else
+      conditions = ["department_id = ? AND finished_on IS NOT NULL",
+                    user.person.department.id]
+
     end
+
     conditions.first << filter_conditions(filter)
+
     if specialization
        conditions.first << " AND specialization_id = #{specialization}"
     end
