@@ -1,7 +1,8 @@
 require 'terms_calculator'
 class ScholarshipsController < ApplicationController
   include LoginSystem
-  layout "employers", :except => [:save, :change, :add, :edit, :sum]
+  layout "employers", :except => [:save, :change, :add, :edit, :sum,
+    :search_to_add]
   before_filter :set_title, :login_required, :prepare_student,
                 :prepare_user
   helper_method :scholarship_file
@@ -182,5 +183,9 @@ class ScholarshipsController < ApplicationController
 
   def scholarship_file
     "/csv/#{ScholarshipMonth.current.title}.csv"
+  end
+
+  def search_to_add
+    @indices = Index.find_for(@user, :search => params[:lastname], :order => 'people.lastname')
   end
 end

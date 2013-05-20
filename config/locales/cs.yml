@@ -944,15 +944,22 @@ cs:
       show:
         back_to_list: zpět na seznam
     scholarships:
+      display_name: Jméno a příjmení
+      account: Konto
+      department: Katedra
+      study_form: Forma studia
+      regular: Řádné
+      extra: Mimořádné
+      CZK: Kč
       sum:
         message_0: součet řádných stipendií
         message_1: součet mimořádných stipendií z fakultních zdrojů
+      search_to_add:
+        found_students: Nalezení studenti
       prepare:
         scholarships: Stipendia pro studenty
         not_in_table: Vytvořená pro studenty bez nároku
-      _index_line:
-        message_0: Kč
-        message_1: Kč
+        add: Přidat studenta
       list:
         disponent: Disponent
         amount: Částka (Kč)

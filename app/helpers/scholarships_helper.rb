@@ -122,9 +122,8 @@ module ScholarshipsHelper
   end
 
   def add_form(&proc)
-    form_remote_tag(:url => {:action => 'save', :id => scholarship},
-                    :update => "add",
-                    &proc)
+    form_remote_tag(:url => {:action => 'search_to_add'},
+                    :update => "add", &proc)
 
   end
 
