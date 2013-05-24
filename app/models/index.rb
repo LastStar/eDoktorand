@@ -189,7 +189,7 @@ class Index < ActiveRecord::Base
   def semester
     time = time_from_enrollment
     @semester = time.div(1.year / 2) + 1
-    @semester = 1 if @semester == 0
+    @semester = 1 if @semester <= 0
     return @semester
   end
 
