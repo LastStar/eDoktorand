@@ -29,6 +29,8 @@ class StudyInterrupt < ActiveRecord::Base
     return 0 unless duration
     if finished?
       (finished_on - start_on).ceil
+    elsif index.finished?
+      (index.finished_on - start_on).ceil
     elsif end_on.past?
       duration.months
     else
