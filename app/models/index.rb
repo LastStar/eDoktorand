@@ -189,7 +189,7 @@ class Index < ActiveRecord::Base
   def semester
     time = time_from_enrollment
     @semester = time.div(1.year / 2) + 1
-    @semester = 1 if @semester == 0
+    @semester = 1 if @semester <= 0
     return @semester
   end
 
@@ -254,11 +254,11 @@ class Index < ActiveRecord::Base
     when 0
       months = ''
     when 1
-      months = "1 měsíc"
+      months = " a 1 měsíc"
     when 2..4
-      months = "%i měsíce" % months
+      months = " a %i měsíce" % months
     else
-      months = "%i měsíců" % months
+      months = " a %i měsíců" % months
     end
 
     if years.present? && months.present?
