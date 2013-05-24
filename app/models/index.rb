@@ -679,7 +679,7 @@ class Index < ActiveRecord::Base
 
   # returns time study was interrupted for
   def interrupted_time
-    interrupts.inject(0) {|sum, i| sum += i.current_duration}
+    interrupts.inject(0) { |sum, i| i.approved? ? (sum + i.current_duration) : sum }
   end
 
   # interrupts study with date
