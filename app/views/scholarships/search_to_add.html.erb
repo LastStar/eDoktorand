@@ -1,0 +1,51 @@
+<h3><%= t(:found_students, :scope => [:view, :scholarships, :search_to_add]) %></h3>
+
+<table id='scholarship_table' class='embossed students-list'>
+  <tbody id="scholarship_table_body">
+    <tr style='color: gray'>
+      <th class="no-rounded"><%= t(:display_name, :scope => [:view, :scholarships]) %></th>
+      <th class="no-rounded"><%= t(:account, :scope => [:view, :scholarships]) %></th>
+      <th class="no-rounded"><%= t(:department, :scope => [:view, :scholarships]) %></th>
+      <th class="no-rounded"><%= t(:study_form, :scope => [:view, :scholarships]) %></th>
+      <th class="no-rounded"><%= t(:regular, :scope => [:view, :scholarships]) %></th>
+      <th class="no-rounded"><%= t(:extra, :scope => [:view, :scholarships]) %></th>
+    </tr>
+
+  <%- @indices.each do |index| %>
+    <tr class='tiny' id='index_<%= index.id %>'>
+      <td>
+        <%= link_to index.student.display_name, {:action => :secretary_list, :id => index.id}, :target => "_blank" %>
+      </td>
+
+      <td>
+        <% if index.account_number == nil%>
+          <%="&nbsp;&nbsp;"%>
+        <% else %>
+          <%= index.student.account %>
+        <% end %>
+      </td>
+
+      <td><%= index.department.short_name %></td>
+
+      <td><%= index.study.name %></td>
+
+      <td id='regular_scholarship_<%= index.id %>'>
+        <div id='regular_<%= index.id %>'>
+          <%= change_link(index) %>
+          0 Kč
+        </div>
+      </td>
+
+      <td id='scholarship_<%= index.id %>'>
+      <% if index.has_extra_scholarship? %>
+          <%= detail_links(index) %>
+          <%= index.extra_scholarship_sum %> <%= t(:CZK, :scope => [:view, :scholarships]) %>
+      <% else %>
+        <%= add_link(index) %>&nbsp;
+      <% end %>
+      </td>
+    </tr>
+    <tr id='scholarship_form_<%= index.id %>'>
+    </tr >
+  <% end %>
+</table>

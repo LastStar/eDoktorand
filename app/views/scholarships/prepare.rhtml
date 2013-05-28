@@ -5,9 +5,42 @@
     <%= approve_link %>
     <%= control_table_link %>
   <% end %>
-
   </div>
-  <h1><%= t(:message_0, :scope => [:view, :scholarships, :prepare]) %></h1>
+
+  <h1><%= t(:scholarships, :scope => [:view, :scholarships, :prepare]) %></h1>
+
+  <div id='add'>
+    <h3><%= t(:add, :scope => [:view, :scholarships, :prepare]) %></h1>
+    <% add_form do %>
+      <input type="text" name="lastname" id="lastname" placeholder="Hledat podle příjmení"/>
+      <input class="button" type="submit" name="search" id="search"/>
+    <% end %>
+  </div>
+
+  <% if @over.present? %>
+    <div id="over">
+      <h3><%= t(:not_in_table, :scope => [:view, :scholarships, :prepare])%></h3>
+
+      <table class = "over scholarship embossed" cellspacing = "0" cellpading = "0" align = "center">
+      <tr>
+        <th><%= t(:sident, :scope => [:view, :scholarships, :list])%></th>
+        <th><%= t(:birth_number, :scope => [:view, :scholarships, :list])%></th>
+        <th><%= t(:lastname, :scope => [:view, :scholarships, :list])%></th>
+        <th><%= t(:firstname, :scope => [:view, :scholarships, :list])%></th>
+        <th><%= t(:specialization, :scope => [:view, :scholarships, :list]) %></th>
+        <th><%= t(:type, :scope => [:view, :scholarships, :list])%></th>
+        <th><%= t(:disponent, :scope => [:view, :scholarships, :list])%></th>
+        <th><%= t(:amount, :scope => [:view, :scholarships, :list])%></th>
+      </tr>
+
+      <% for index in @over %>
+        <% if index.has_any_scholarship?(@paying_date) %>
+          <%= render(:partial => 'over_line', :locals => {:index => index}) %>
+        <% end %>
+      <% end %>
+      </table>
+    </div>
+  <% end %>
 
   <%= render :partial => 'prepare_list' %>
 </div>

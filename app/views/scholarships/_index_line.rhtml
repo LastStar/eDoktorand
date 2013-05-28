@@ -4,11 +4,11 @@
   </td>
 
   <td>
-  <% if index.account_number == nil%>
-    <%="&nbsp;&nbsp;"%>
-  <% else %>
-    <%= index.student.account %>
-  <% end %>
+    <% if index.account_number.blank? %>
+      <%= "&nbsp;&nbsp;"%>
+    <% else %>
+      <%= index.student.account %>
+    <% end %>
   </td>
 
   <td><%= index.department.short_name %></td>
@@ -19,7 +19,7 @@
   <td id='regular_scholarship_<%= index.id %>'>
   <div id='regular_<%= index.id %>'>
     <% if @user.has_role?('department_secretary') %>
-      <%= index.regular_scholarship_or_create.amount %> <%= t(:message_0, :scope => [:view, :scholarships, :_index_line]) %>
+      <%= index.regular_scholarship_or_create.amount %> <%= t(:CZK, :scope => [:view, :scholarships]) %>
     <% else %>
       <%= render(:partial => 'regular', :locals => {:index => index}) %>
     <% end %>
@@ -32,7 +32,7 @@
   <td id='scholarship_<%= index.id %>'>
   <% if index.has_extra_scholarship? %>
       <%= detail_links(index) %>
-      <%= index.extra_scholarship_sum %> <%= t(:message_1, :scope => [:view, :scholarships, :_index_line]) %>
+      <%= index.extra_scholarship_sum %> <%= t(:CZK, :scope => [:view, :scholarships]) %>
   <% else %>
     <%= add_link(index) %>&nbsp;
   <% end %>
