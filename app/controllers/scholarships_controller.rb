@@ -29,7 +29,12 @@ class ScholarshipsController < ApplicationController
   def prepare
     @paying_date = ScholarshipMonth.current.starts_on
     @indices = Index.find_for_scholarship(@user, @paying_date)
-    @over = Index.find_with_scholarship(@user).reject { |i| @indices.include? i }
+    @over = Index.find_with_scholarship(@user).reject do |i|
+      @indices.include?(i) ||
+        (i.extra_scholarships.empty? &&
+         i.regular_scholarship &&
+         i.regular_scholarship.amount ==  0)
+    end
   end
 
   def change
@@ -54,13 +59,10 @@ class ScholarshipsController < ApplicationController
     render(:action => 'add')
   end
 
-  # FIXME what the fuck is edit for?
   def save
-    @edit = 0
     @paying_date = ScholarshipMonth.current.starts_on
     if params[:scholarship][:id] && !params[:scholarship][:id].empty?
       update
-      @edit = 1
     else
       create
     end
