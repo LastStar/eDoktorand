@@ -1,13 +1,13 @@
 class AddPermissionFacultySecretaryExaminators < ActiveRecord::Migration
   def self.up
     Role.find(2).permissions <<
-    Permission.create('name' => 'examinators/index')
+      Permission.create('name' => 'examinators/index')
     Role.find(2).permissions <<
-    Permission.create('name' => 'examinators/list')
+      Permission.create('name' => 'examinators/list')
     Role.find(2).permissions <<
-    Permission.create('name' => 'examinators/edit')
+      Permission.create('name' => 'examinators/edit')
     Role.find(2).permissions <<
-    Permission.create('name' => 'examinators/update')
+      Permission.create('name' => 'examinators/update')
   end
 
   def self.down
@@ -22,6 +22,6 @@ class AddPermissionFacultySecretaryExaminators < ActiveRecord::Migration
     permission.destroy
     permission = Permission.find_by_name('examinators/update')
     Role.find(2).permissions.delete(permission)
-    permission.destroy  
+    permission.destroy
   end
 end

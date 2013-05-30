@@ -1,9 +1,6 @@
 require 'scholarship_calculator'
 
 module ScholarshipsHelper
-
-
-
   def detail_link(index)
     link_to_remote(image_tag('open.png'),
                    {:update => "scholarship_form_#{index.id}",
@@ -67,6 +64,14 @@ module ScholarshipsHelper
     link_to_function(image_tag('close.png'), "Element.hide('#{element}')", {:class => 'nobg'})
   end
 
+  def destroy_link(scholarship)
+    link_to_remote(image_tag('close.png', :title => t(:destroy, :scope => [:helper, :scholarships])),
+                   {:complete => "$('over_#{scholarship.index.id}').hide()",
+                   :url => {:action => 'destroy_over', :id => scholarship.id}},
+                   {:class => 'nobg'})
+
+  end
+
   def pay_link
     if @user.has_role?('supervisor') &&
       ScholarshipApproval.all_approved?
@@ -114,6 +119,12 @@ module ScholarshipsHelper
     form_remote_tag(:url => {:action => 'save', :id => scholarship},
                     #:update => "index_#{scholarship.index.id}",
                     &proc)
+  end
+
+  def add_form(&proc)
+    form_remote_tag(:url => {:action => 'search_to_add'},
+                    :update => "add", &proc)
+
   end
 
   def show_scholarship_form(index)

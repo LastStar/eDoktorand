@@ -3,9 +3,7 @@ class MoveSidentToIndex < ActiveRecord::Migration
     add_column :indices, :sident, :string
     Student.all(:conditions => "sident is not null").each do |s|
       next unless s.index
-      puts s.sident
       s.index.update_attribute(:sident, s.sident)
-      puts s.index.sident
     end
     remove_column :people, :sident
   end
