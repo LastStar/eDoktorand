@@ -1,0 +1,70 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<p class='rightAlign'>
+<%= @candidate.display_name %><br/>
+<% unless @candidate.postal_city.empty? %>
+<%= @candidate.sending_postal_address %></p>
+<% else %>
+<%= @candidate.sending_address %></p>
+<% end %>
+<br/>
+<p class='subject'>
+  <b>Subject: Invitation to an entrance exam for doctoral studies at Faculty of Environmental Sciences,
+    Czech University of Life Sciences in Prague (FES CULS)</b>
+</p>
+
+<p>Based on your application to study in a doctoral program at <%= @faculty.short_name %> CULS and according to §&nbsp;50&nbsp;of&nbsp;the&nbsp;Act No.111/98 Sb.
+  on&nbsp;Higher Education Institutions, I am hereby sending you an&nbsp;invitation&nbsp;to</p>
+
+<div class='centerAlign'>
+  <h3>an entrance exam for doctoral studies in the academic year <%= TermsCalculator.next_school_year %>, </h3>
+
+  <h3>which will take place,</h3>
+
+  <h3>on <%= I18n.l(@candidate.specialization.exam_term.date, :format => :long) %></h3>
+</div>
+
+<br/>
+<%= Parameter.get("admittance_invitation_time_and_place_en", @faculty) %>
+
+<p>The entrance exam for the program <%= @candidate.specialization.name %> will take place at <%= @candidate.specialization.exam_term.start_time %> in room No. <%= @candidate.specialization.exam_term.room %>, the committee is chaired by <%= @candidate.specialization.exam_term.chairman.display_name %>
+
+<p>Please bring the following documents:
+<ul>
+    <li class='letter'>I.D.</>
+    <li class='letter'>Proof of payment of the administrative fee, if not submitted with the application</>
+    <li class='letter'>Other documents required for the application procedure, if not submitted with the application</>
+</ul>
+</p>
+<br/>
+<p>In Prague <%= I18n.l(Date.today, :format => :long) %></p>
+<div style='float: right'><%= @faculty.dean.display_name %><br/>
+dean <%= @faculty.short_name %> ČZU</div>
+
+<div>
+Contact person:<br/>
+<%= @faculty.secretary.display_name %>,<br/>
+Science and Research Department,<%= @faculty.short_name %> CULS<br/>
+tel: <%= @faculty.secretary.phone %><br/>
+e-mail: <%= @faculty.secretary.email %>
+</div>
+
+<div class='links'>
+	<a href='javascript:window.print()'>tisk</a>
+	<% if @user %>
+	<%#= link_to 'zpět', :page => session[:current_page_backward] ,:action => 'list'%>
+        <% if session[:back_page] == 'list' %>
+          <%= link_to 'zpět na výpis', :action => 'list',:page => session[:current_page_backward] %>
+        <% else %>
+          <%= link_to 'zpět na výpis', :action => 'list_all'%>
+        <% end %>
+	<% unless @candidate.invited? %>
+	<span id='mailLink'><%= link_to_remote 'odešli mail s pozvánkou', :update => 'mailLink', :url => {:action => 'invite_now', :id => @candidate.id} %></span>
+	<% end %>
+	<% end %>
+</div>
+<script type="text/javascript">window.print()</script>
+

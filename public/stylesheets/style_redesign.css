@@ -869,3 +869,8 @@ td.action-link {
   color: #333;
 }
 
+#add, #over {
+  margin: 2em auto;
+  width: 75%;
+}
+

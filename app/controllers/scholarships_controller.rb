@@ -1,7 +1,8 @@
 require 'terms_calculator'
 class ScholarshipsController < ApplicationController
   include LoginSystem
-  layout "employers", :except => [:save, :change, :add, :edit, :sum]
+  layout "employers", :except => [:save, :change, :add, :edit, :sum,
+    :search_to_add]
   before_filter :set_title, :login_required, :prepare_student,
                 :prepare_user
   helper_method :scholarship_file
@@ -27,7 +28,13 @@ class ScholarshipsController < ApplicationController
   # scholarship list preparation
   def prepare
     @paying_date = ScholarshipMonth.current.starts_on
-    @indices = Index.find_for_scholarship(@user, ScholarshipMonth.current.starts_on)
+    @indices = Index.find_for_scholarship(@user, @paying_date)
+    @over = Index.find_with_scholarship(@user).reject do |i|
+      @indices.include?(i) ||
+        (i.extra_scholarships.empty? &&
+         i.regular_scholarship &&
+         i.regular_scholarship.amount ==  0)
+    end
   end
 
   def change
@@ -52,13 +59,10 @@ class ScholarshipsController < ApplicationController
     render(:action => 'add')
   end
 
-  # FIXME what the fuck is edit for?
   def save
-    @edit = 0
     @paying_date = ScholarshipMonth.current.starts_on
     if params[:scholarship][:id] && !params[:scholarship][:id].empty?
       update
-      @edit = 1
     else
       create
     end
@@ -111,6 +115,12 @@ class ScholarshipsController < ApplicationController
     @index = scholarship.index
     @old_id = scholarship.id
     scholarship.destroy
+  end
+
+  def destroy_over
+    scholarship = Scholarship.find(params[:id])
+    scholarship.destroy
+    render :text => "Destroyed", :status => 200
   end
 
   def pay
@@ -175,5 +185,9 @@ class ScholarshipsController < ApplicationController
 
   def scholarship_file
     "/csv/#{ScholarshipMonth.current.title}.csv"
+  end
+
+  def search_to_add
+    @indices = Index.find_for(@user, :search => params[:lastname], :order => 'people.lastname')
   end
 end

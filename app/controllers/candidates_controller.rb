@@ -221,6 +221,7 @@ class CandidatesController < ApplicationController
   # set candidate ready for admition
   def invite
     @candidate = Candidate.find(params[:id])
+    I18n.locale = @candidate.specialization.locale || "cz"
     render(:action => :invitation)
   end
 
