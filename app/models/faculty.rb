@@ -27,14 +27,12 @@ class Faculty < ActiveRecord::Base
 
   # retuns dean of the faculty
   def dean_label
-    return FACULTY_CFG[self.id]['dean_title'] if FACULTY_CFG[self.id]['dean_title']
     'děkan'
   end
 
   # retuns dean of the faculty
   # TODO redone with faculty configuration
   def dean_label_en
-    return FACULTY_CFG[self.id]['attestation_title'] if FACULTY_CFG[self.id]['attestation_title']
     'dean'
   end
 
