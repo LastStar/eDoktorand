@@ -13,9 +13,12 @@ module ServiceTools
                           :phone => response.phone_line,
                           :title_before => title_before,
                           :title_after => title_after}
-      department = Department.find_by_code(response.department_code)
-      person.department_employment = DepartmentEmployment.new(:unit_id => department.id)
-      person
+      if response.department_code &&
+        department = Department.find_by_code(response.department_code)
+        person.department_employment = DepartmentEmployment.new(:unit_id => department.id)
+      end
+
+      return person
     end
   end
 end
