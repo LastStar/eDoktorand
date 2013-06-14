@@ -18,7 +18,9 @@ module CentralRegister
 
     def self.all
       response = invoke('tns:getSpecializations')
-      response.xpath("//specializations/specialization").map {|node| parse(node)}
+      response.xpath("//oboryList/specialization").map do |node|
+        parse(node)
+      end.uniq.compact
     end
 
     private
@@ -27,14 +29,16 @@ module CentralRegister
     # corrects subject from node
     def self.parse(node)
       result = {}
-      %w(name name_english code guarantee_uic).each do |name|
-        result[name.to_sym] = string_attr(node, name)
+      if string_attr(node, "qualificationCode") == "D"
+        %w(nameCz nameEn shortName msmtCode language).each do |name|
+          result[name.to_sym] = string_attr(node, name)
+        end
+        return result
       end
-      return result
     end
 
     def self.string_attr(node, xpath)
-      node.xpath(xpath).to_s.try(:strip)
+      node.xpath(xpath).to_s.try(:strip).to_s
     end
   end
 end

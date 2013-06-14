@@ -170,6 +170,7 @@ class MassProcessor
       @@mylog.info "There are %i students" % indices.size
       @client = SOAP::NetHttpClient.new
       service = SERVICE_URL + SIDENT_SERVICE_PATH
+      f = File.new("sident_errs.txt", "wb")
       indices.each do |index|
         @@mylog.info "Procesing index #%i" % index.id
 
@@ -184,14 +185,17 @@ class MassProcessor
         if sident =~ /<SIDENT>(.*)<\/SIDENT>/
           sident = $1
           @@mylog.info "Got sident %i" % sident
-          if sident != -1
+          if sident != "-1"
             index.update_attribute(:sident, sident)
             @@mylog.info "Updated sident"
           else
             @@mylog.error "Service returned bad code for student #%i" % index.id
+            f.puts "%i, %s, %s, %s" % [index.id, index.student.display_name, index.student.birth_number, index.specialization.code]
           end
         end
       end
+    ensure
+      f.close
     end
 
     # removes , Ing from names

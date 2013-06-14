@@ -10,7 +10,7 @@ describe CentralRegister::Specialization do
     <specialization>
       <id>128</id>
       <nameCz>Ochrana lesů a myslivost</nameCz>
-      <nameEn/>
+      <nameEn>Forest Protection and Game Management</nameEn>
       <shortName>XOCHMY</shortName>
       <msmtCode>4107V013</msmtCode>
       <faculty>41410</faculty>
@@ -50,11 +50,11 @@ BODY
     it "returns array of specialization hashes" do
       CentralRegister::Specialization.all.should == [
         {
-          :code => '4107V013',
-          :short_name => "XOCHMY",
-          :guarantee_uic => '0',
-          :name => 'Ochrana lesů a myslivost',
-          :name_english => '',
+          :msmtCode => '4107V013',
+          :shortName => "XOCHMY",
+          :nameCz => 'Ochrana lesů a myslivost',
+          :nameEn => 'Forest Protection and Game Management',
+          :language => "CZE"
         }
       ]
     end
