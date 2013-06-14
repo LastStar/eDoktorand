@@ -5,7 +5,7 @@
     <%= student_name_line(index.student) %>
   </li>
   <li>
-    <%= attribute_line(index.student, :birthname) %><%= t(:birthname, :scope => [:view, :shared, :_personal_info]) %>:
+    <%= protected_attribute_line(index.student, :birthname) %><%= t(:birthname, :scope => [:view, :shared, :_personal_info]) %>:
   </li>
   <%= birth_date_line(index.student) %>
   <%= birth_number_line(index.student) %>
@@ -27,7 +27,7 @@
     <%=t(:account, :scope => [:view, :shared, :_personal_info]) %>:
   </li>
   <li class="not_print">
-    <%= attribute_line(index.student, :citizenship) %>
+    <%= protected_attribute_line(index.student, :citizenship) %>
     <%=t(:citizenship, :scope => [:view, :shared, :_personal_info])%>:
   </li>
 </ul>
