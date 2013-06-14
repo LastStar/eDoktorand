@@ -3,19 +3,19 @@
     <h5><%= t(:message_2, :scope => [:view, :shared, :_student_detail]) %></h5>
   </li>
   <li>
-    <%= attribute_line(student, :street) %>
+    <%= protected_attribute_line(student, :street) %>
     <%=t(:street, :scope => [:view, :shared, :_address_detail]) %>:
   </li>
   <li>
-    <%= attribute_line(student, :desc_number) %>
+    <%= protected_attribute_line(student, :desc_number) %>
     <%=t(:desc_number, :scope => [:view, :shared, :_address_detail]) %>:
   </li>
   <li>
-    <%= attribute_line(student, :city) %>
+    <%= protected_attribute_line(student, :city) %>
     <%=t(:city, :scope => [:view, :shared, :_address_detail]) %>:
   </li>
   <li>
-    <%= attribute_line(student, :zip) %>
+    <%= protected_attribute_line(student, :zip) %>
     <%=t(:zip, :scope => [:view, :shared, :_address_detail]) %>:
   </li>
   <% if student.postal_street.present? %>
