@@ -249,6 +249,15 @@ module ApplicationHelper
     end
   end
 
+  def protected_attribute_line(object, name)
+    if @user.has_role?('faculty_secretary')
+      long_info_helper(edit_link(object, name, nil), :id => name)
+    else
+      label = object.send(name)
+      long_info_helper(label)
+    end
+  end
+
   def attribute_line(object, name, meth = nil)
     if @user.has_one_of_roles?(['faculty_secretary', 'student'])
       long_info_helper(edit_link(object, name, meth), :id => name)
