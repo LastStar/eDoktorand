@@ -608,7 +608,7 @@ class CSVExporter
       end
     end
 
-    def tutored_by_tutors(departments, year)
+    def tutored_by_tutors(departments, start, finish)
       Dean.columns
       outfile = File.open("tutored_tutors.csv", 'wb')
       @@mylog.info 'Departments %s' % departments
@@ -623,9 +623,13 @@ class CSVExporter
           @@mylog.info 'Department %s' % department.first.name
           department.last.each do |tutor|
             @@mylog.info 'tutor %s' % tutor.display_name
-            students = Student.count(:conditions => ["indices.tutor_id = ? and indices.enrolled_on < ? and (finished_on > ? or finished_on is null)",
-                                             tutor.id, year, year], :include => :index)
-            csv << [tutor.display_name, students] if students > 1
+            p studying = Index.count(:conditions => ["tutor_id = ? and enrolled_on < ? and (finished_on > ? or finished_on is null) and (disert_themes.defense_passed_on > ? or disert_themes.defense_passed_on is null)",
+                                   tutor.id, finish, finish, start], :include => :disert_theme)
+            absolved = Index.count(:conditions => ["tutor_id = ? and enrolled_on < ? and (finished_on > ? or finished_on is null) and disert_themes.defense_passed_on < ? and disert_themes.defense_passed_on > ?",
+                                   tutor.id, finish, finish, finish, start], :include => :disert_theme)
+            finished = Index.count(:conditions => ["tutor_id = ? and enrolled_on < ? and finished_on < ? and finished_on > ?",
+                                   tutor.id, finish, finish, start], :include => :disert_theme)
+            csv << [tutor.display_name, studying, absolved, finished] if studying > 0
           end
         end
         outfile.close
