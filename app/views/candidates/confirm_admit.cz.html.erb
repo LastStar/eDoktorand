@@ -37,7 +37,7 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <% end %>
 <p>Upozorňuji Vás, že je Vaší povinností do <%= Parameter.get('methodics_term', @faculty) %> vypracovat a předložit studijní plán a do 3 měsíců od nástupu metodiku disertační práce.</p>
 
-<p>Proti tomuto rozhodnutí je možno podat odvolání k rukám <%= @faculty.id==2 ? "ředitele" : "děkana" %> <%= @faculty.short_name%>
+<p>Proti tomuto rozhodnutí je možno podat odvolání k rukám děkana <%= @faculty.short_name%>
 ČZU v Praze do 30&nbsp;dnů ode dne doručení.</p>
 </p>
 <br/>
@@ -45,7 +45,7 @@ vždy zpětně 15. následujícího měsíce na Váš peněžní účet.</p>
 <br/>
 <p>V Praze dne <%= (@candidate.admited_on || Time.now).strftime("%d. %m. %Y") %></p>
 <p class='rightAlignLefter'><%= first_upper(@faculty.dean.display_name) %><br/>
-<%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</p>
+děkan <%= @faculty.short_name %> ČZU</p>
 
 <div class='links confirm-admitt'>
   <div class="confirm-admitt-top-links">

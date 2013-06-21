@@ -1,0 +1,63 @@
+<br />
+<br />
+<br />
+<br />
+<p class='rightAlign'><%= @candidate.genderize("Dear", "Dear Sir", "Dear Madam") %><br/>
+<%= @candidate.display_name %><br/>
+<% unless @candidate.postal_city.empty? %>
+<%= @candidate.sending_postal_address %></p>
+<% else %>
+<%= @candidate.sending_address %></p>
+<% end %>
+<br/>
+<br/>
+
+<h3><%= @candidate.genderize("Dear", "Dear Sir", "Dear Madam") %></h3>
+<br/>
+<p>
+  With regret I would like to inform you, that in accordance with ' 50,
+  paragraph 2, of Act No. 111/1998 on Higher Education Institutions,
+  <strong>you have not been accepted into the Ph.D. program</strong> at the
+  <%= @faculty.name_english %>, Czech University of Life Sciences Prague,
+  starting on October 1st, <%= Date.today.year %>.
+</p>
+
+
+<h3>Justification:</h3>
+<p>
+  After assessing the results of the admission procedure and assessment of your
+  assumptions to study Ph.D. program the admissions committee recommended to
+  give preference to candidates with better results.
+</p>
+
+<h3>Edification:</h3>
+<p>
+  An appeal against this decision may be filed with the Dean of the Faculty of
+  Environmental Sciences, CULS, within 30 days of receipt.
+</p>
+<br/>
+<br/>
+<br/>
+
+<p>Prague <%= I18n.l(@candidate.rejected_on || Time.now, :format => :long) %></p>
+<p class='rightAlignLefter'>
+<%= first_upper(@faculty.dean.display_name) %><br/>
+Dean <%= @faculty.name_english %> CULS</p>
+</p>
+<br/>
+<br/>
+<br/>
+
+<div class='links'>
+	<a href='javascript:window.print()'>tisk</a>
+	<% if @user %>
+    <%= link_to t(:message_0, :scope => [:view, :candidates, :reject]), :action => 'list'%>
+    <% unless @candidate.admited? %>
+    <span id='mailLink'>
+      <%= link_to_remote 'odešli mail s dekretem o nepřijetí', :update => 'mailLink', :url => {:action => 'reject_now', :id => @candidate.id} %>
+    </span>
+    <% end %>
+	<% end %>
+</div>
+<script type="text/javascript">window.print()</script>
+

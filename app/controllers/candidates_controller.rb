@@ -183,6 +183,7 @@ class CandidatesController < ApplicationController
     else
       session[:conditional] = @conditional = true if params[:admit_id] == '2'
       @candidate = Candidate.find(params[:id])
+      I18n.locale = @candidate.specialization.locale || "cz"
       @candidate.update_attributes(params[:candidate])
     end
   end
@@ -203,7 +204,7 @@ class CandidatesController < ApplicationController
 
   # finishes admittance
   def admittance
-   @candidate = Candidate.find(params[:id])
+     @candidate = Candidate.find(params[:id])
   end
 
   # set candidate ready for invitation
@@ -241,6 +242,7 @@ class CandidatesController < ApplicationController
   # rejects candidate from study
   def reject
     @candidate = Candidate.find(params[:id])
+    I18n.locale = @candidate.specialization.locale || "cz"
   end
 
   # action for remote link that reject candidate
