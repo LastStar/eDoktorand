@@ -16,6 +16,8 @@ Rails::Initializer.run do |config|
     :secret      => 'c485da746d1515cc7b6753b1b4b440f4313f429f30d3aa148b67a1da4b139eef8143902fd37670874ffc609ffa1cff25d675d5631b4ac83fca8200ae8c831f53'
   }
 
+  config.action_controller.session_store = :active_record_store
+
   config.plugins = [ :localized_country_select, :rtex, :tiny_mce ]
 
   config.gem "log4r"
