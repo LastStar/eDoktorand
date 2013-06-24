@@ -1,0 +1,32 @@
+---
+cz:
+  view:
+    candidates:
+      confirm_admit:
+        message_0: zpět na výpis
+        message_1: zpět na výpis
+        message_2: odešli mail s dekretem o přijetí
+        message_3: přijmout bez odeslání mailem
+
+  helper:
+    application:
+      message_67: zkoušející
+      message_66: aktuality
+      message_70: obhajoby
+      message_69: žádosti
+      message_68: SDZ
+      message_18: komise
+      message_17: uchazeči
+      message_20: diplomy
+      message_19: zkoušky
+      message_21: školitelé
+      message_22: obory
+      message_52: stipendia
+      message_27: studenti
+
+  model:
+    faculty_secretary:
+      message_0: Referentka VaV
+
+
+
