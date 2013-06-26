@@ -93,4 +93,17 @@ class Specialization < ActiveRecord::Base
   def last_possible_defense_semester
     study_length * 2
   end
+
+  def name_with_students_count
+    "#{self.name} (#{students_count})"
+  end
+
+  def students_count
+    Index.count(:conditions => ["specialization_id = ? and finished_on is not null and disert_themes.defense_passed_on is null", self.id],
+                :include => :disert_theme)
+  end
+
+  def accredited?
+    accredited.to_s == "1"
+  end
 end

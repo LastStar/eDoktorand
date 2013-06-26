@@ -1,0 +1,36 @@
+<h5><%= t(:specialization_list, :scope => [:view, :specializations, :list]) %></h5>
+
+<table id='specializations_table_new'>
+  <tbody id='specializations_table'>
+  <tr>
+    <th><%= t(:name, :scope => [:view, :specializations, :list]) %></th>
+    <th><%= t(:name_english, :scope => [:view, :specializations, :list]) %></th>
+    <th><%= t(:short_name, :scope => [:view, :specializations, :list]) %></th>
+    <th><%= t(:program, :scope => [:view, :specializations, :list]) %></th>
+    <th><%= t(:accredited, :scope => [:view, :specializations, :list]) %></th>
+    <th class="right"><%= t(:studying, :scope => [:view, :specializations, :list]) %></th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% for specialization in @specializations %>
+  <tr>
+    <td><%=h specialization.name %></td>
+    <td><%=h specialization.name_english %></td>
+    <td><%=h specialization.code %></td>
+    <td><%=h specialization.program.try(:name) %></td>
+    <td><%= specialization.accredited? ? t(:yess) : t(:noo) %></td>
+    <td><%=h specialization.students_count %></td>
+    <td><%= link_to t(:attestations, :scope => [:view, :specializations, :list]),
+      :action => :attestation, :id => specialization.id %></td>
+    <% if @user.has_role?('faculty_secretary') %>
+      <td><%= link_to t(:subjects, :scope => [:view, :specializations, :list]),
+        :action => :subjects, :id => specialization %></td>
+    <% end %>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+

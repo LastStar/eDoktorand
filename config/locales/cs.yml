@@ -1,5 +1,8 @@
 ---
 cs:
+  yess: ano
+  noo: ne
+
   lib:
     genderize:
       message_0: muž
@@ -598,16 +601,15 @@ cs:
         message_6: Forma
         message_7: P/S
       list:
-        message_8: Atestace
-        message_9: Předměty
-        message_0: Výpis oborů
-        message_1: Název
-        message_2: Anglický název
-        message_3: Kód
-        message_4: Program
-        message_5: Akreditován
-        message_6: ano
-        message_7: ne
+        attestations: Atestace
+        subjects: Předměty
+        specialization_list: Výpis oborů
+        name: Název
+        name_english: Anglický název
+        short_name: Zkratka
+        program: Program
+        accredited: Akreditován
+        studying: Studujících
       manage_specialization:
         message_0: Akreditováns list
         message_1: Obory nenalezeny
