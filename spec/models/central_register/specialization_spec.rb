@@ -5,62 +5,58 @@ describe CentralRegister::Specialization do
   context "when parsing correct response" do
     before do
       mock_service <<BODY
-<?xml version='1.0' encoding='UTF-8'?>
-<soap:ciselnikyResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <specializations>
+<soap:oboryResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <oboryList>
     <specialization>
-      <id>3</id>
-      <code>6208R110</code>
-      <guarantee_uic>51579</guarantee_uic>
-      <name>Agricultural Economics and Management</name>
-      <name_english>Agricultural Economics and Management</name_english>
+      <id>128</id>
+      <nameCz>Ochrana lesů a myslivost</nameCz>
+      <nameEn>Forest Protection and Game Management</nameEn>
+      <shortName>XOCHMY</shortName>
+      <msmtCode>4107V013</msmtCode>
+      <faculty>41410</faculty>
+      <language>CZE</language>
+      <qualificationCode>D</qualificationCode>
+      <qualificationCz>doktorské</qualificationCz>
+      <qualificationEn>doctoral</qualificationEn>
+      <studyFormCz>prezenční</studyFormCz>
+      <studyFormEn>full-time</studyFormEn>
+      <acreditedFrom/>
+      <acreditedTill/>
+      <grantorUIC>0</grantorUIC>
     </specialization>
     <specialization>
-      <id>6</id>
-      <code>1604V001</code>
-      <guarantee_uic>0</guarantee_uic>
-      <name>Aplikovaná a krajinná ekologie</name>
-      <name_english/>
+      <id>115</id>
+      <nameCz>Výživa a ochrana rostlin</nameCz>
+      <nameEn>Plant Nutrition and Protection</nameEn>
+      <shortName>AMRV</shortName>
+      <msmtCode>4102T017</msmtCode>
+      <faculty>41210</faculty>
+      <language>CZE</language>
+      <qualificationCode>N</qualificationCode>
+      <qualificationCz>navazující magisterské</qualificationCz>
+      <qualificationEn>Master's (post-Bachelor)</qualificationEn>
+      <studyFormCz>prezenční</studyFormCz>
+      <studyFormEn>full-time</studyFormEn>
+      <acreditedFrom>10.04.2006</acreditedFrom>
+      <acreditedTill>01.12.2015</acreditedTill>
+      <grantorUIC>53288</grantorUIC>
     </specialization>
-  </specializations>
-</soap:ciselnikyResponse>
+  </oboryList>
+</soap:oboryResponse>
+
 BODY
     end
-    it "it returns array of specialization hashes" do
+
+    it "returns array of specialization hashes" do
       CentralRegister::Specialization.all.should == [
         {
-          :code => '6208R110',
-          :guarantee_uic => '51579',
-          :name => 'Agricultural Economics and Management',
-          :name_english => 'Agricultural Economics and Management',
-        },
-        {
-          :code => '1604V001',
-          :guarantee_uic => '0',
-          :name => 'Aplikovaná a krajinná ekologie',
-          :name_english => nil,
+          :msmtCode => '4107V013',
+          :shortName => "XOCHMY",
+          :nameCz => 'Ochrana lesů a myslivost',
+          :nameEn => 'Forest Protection and Game Management',
+          :language => "CZE"
         }
       ]
-    end
-  end
-  context "when parsing response with some nil" do
-    before do
-      mock_service <<BODY
-<?xml version='1.0' encoding='UTF-8'?>
-<soap:ciselnikyResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <specializations>
-    <specialization>
-      <id>3</id>
-      <code>6208R110</code>
-      <guarantee_uic>51579</guarantee_uic>
-      <name>Agricultural Economics and Management</name>
-    </specialization>
-  </specializations>
-</soap:ciselnikyResponse>
-BODY
-    end
-    it "should not raise error" do
-      lambda {CentralRegister::Specialization.all}.should_not raise_error
     end
   end
 
