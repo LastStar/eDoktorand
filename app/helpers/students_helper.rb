@@ -262,7 +262,7 @@ module StudentsHelper
 
   # prints select for specialization
   def specialization_select(options = {:include_empty => true})
-    ops = Specialization.find(:user => @user).map {|c| [c.name, c.id]}
+    ops = Specialization.find(:user => @user).map {|c| [c.name_with_students_count, c.id]}
     ops = [['-- ' + t(:message_28, :scope => [:helper, :students]) + ' --', '0']].concat(ops) if options[:include_empty]
     content_tag('select', options_for_select(ops),
                 {:id => "specialization-srch", :name => "specialization"})
