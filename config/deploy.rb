@@ -3,16 +3,24 @@ require 'mina/rails'
 require 'mina/git'
 
 set :domain, 'edoktorand.czu.cz'
-set :deploy_to, '/var/apps/new.edoktorand.czu.cz'
 set :repository, 'git@github.com:LastStar/eDoktorand.git'
-set :branch, 'master'
 set :user, 'deploy'    # Username in the server to SSH to.
 
 set :shared_paths, ['config/database.yml', 'log', 'public/pdf', 'tmp']
 
-task :environment do
+desc "Sets the production path and the branch"
+task :production do
+  set :deploy_to, '/var/apps/new.edoktorand.czu.cz'
+  set :branch, 'master'
 end
 
+desc "Sets the staging path and the branch"
+task :staging do
+  set :deploy_to, '/var/apps/staging.czu.cz'
+  set :branch, 'develop'
+end
+
+desc "Sets up environment on the server"
 task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/log"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
