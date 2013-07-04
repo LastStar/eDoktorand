@@ -136,7 +136,7 @@ class ScholarshipsController < ApplicationController
   def unpay
     ScholarshipMonth.current.unpay!
     file = "#{RAILS_ROOT}/public#{scholarship_file}"
-    FileUtils.rm(file)
+    FileUtils.rm(file) rescue nil
 
     redirect_to :action => :control_table
   end
