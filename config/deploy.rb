@@ -6,7 +6,8 @@ set :domain, 'edoktorand.czu.cz'
 set :repository, 'git@github.com:LastStar/eDoktorand.git'
 set :user, 'deploy'    # Username in the server to SSH to.
 
-set :shared_paths, ['config/database.yml', 'log', 'public/pdf', 'tmp']
+set :shared_paths, ['config/database.yml', 'log', 'public/pdf', 'tmp',
+  'public/csv']
 
 desc "Sets the production path and branch"
 task :production do
@@ -27,6 +28,9 @@ task :setup => :environment do
 
   queue! %[mkdir -p "#{deploy_to}/shared/public/pdf"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/public/pdf"]
+
+  queue! %[mkdir -p "#{deploy_to}/shared/public/csv"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/public/csv"]
 
   queue! %[mkdir -p "#{deploy_to}/shared/config"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
