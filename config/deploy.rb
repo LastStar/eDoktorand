@@ -8,13 +8,13 @@ set :user, 'deploy'    # Username in the server to SSH to.
 
 set :shared_paths, ['config/database.yml', 'log', 'public/pdf', 'tmp']
 
-desc "Sets the production path and the branch"
+desc "Sets the production path and branch"
 task :production do
   set :deploy_to, '/var/apps/new.edoktorand.czu.cz'
   set :branch, 'master'
 end
 
-desc "Sets the staging path and the branch"
+desc "Sets the staging path and branch"
 task :staging do
   set :deploy_to, '/var/apps/staging.czu.cz'
   set :branch, 'develop'

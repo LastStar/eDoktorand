@@ -3,30 +3,41 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe ServiceTools::Specializations do
   context "when repairing by short name" do
     before(:each) do
-      @department = Factory(:specialization, :code => 'XINM')
+      @department = Factory(:specialization, :msmt_code => '4107V013', :locale => 'cz')
       ServiceTools::Specializations.repair_all_by_code([
         {
-          :code => 'XINM',
-          :name => 'Informační management',
-          :name_english => 'Information Management'
+          :msmtCode => '4107V013',
+          :shortName => "XOCHMY",
+          :nameCz => 'Ochrana lesů a myslivost',
+          :nameEn => 'Forest Protection and Game Management',
+          :language => "CZE"
         }
       ])
       @department.reload
     end
+
     it "repairs name" do
-      @department.name.should == 'Informační management'
+      @department.name.should == 'Ochrana lesů a myslivost'
     end
+
     it "repairs english name" do
-      @department.name_english.should == 'Information Management'
+      @department.name_english.should == 'Forest Protection and Game Management'
+    end
+
+    it "repairs code" do
+      @department.code.should == 'XOCHMY'
     end
   end
+
   context "when specialization does not exists ind DB yet" do
     it "does not raise error" do
       lambda{ServiceTools::Specializations.repair_all_by_code([
         {
-          :code => 'XINN',
-          :name => 'Informační nanagement',
-          :name_english => 'Information Nanagement'
+          :msmtCode => 'T107V013',
+          :shortName => "XOCHMY",
+          :nameCz => 'Ochrana lesů a myslivost',
+          :nameEn => 'Forest Protection and Game Management',
+          :language => "CZE"
         }
       ])}.should_not raise_error
     end

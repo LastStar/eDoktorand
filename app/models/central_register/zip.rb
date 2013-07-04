@@ -2,8 +2,9 @@
 require 'handsoap'
 
 module CentralRegister
-  class Specialization < Handsoap::Service
+  class Zip < Handsoap::Service
     endpoint Services::UNIVERSITY_REGISTER
+
     def on_create_document(doc)
       # register namespaces for the request
       doc.alias 'tns', 'http://culsServices.services'
@@ -17,10 +18,8 @@ module CentralRegister
     # public methods
 
     def self.all
-      response = invoke('tns:getSpecializations')
-      response.xpath("//oboryList/specialization").map do |node|
-        parse(node)
-      end.uniq.compact
+      response = invoke('tns:getZips')
+      response.xpath("//enumeration/item").map {|node| parse(node)}
     end
 
     private
@@ -29,17 +28,16 @@ module CentralRegister
     # corrects subject from node
     def self.parse(node)
       result = {}
-      if string_attr(node, "qualificationCode") == "D"
-        %w(nameCz nameEn shortName msmtCode language).each do |name|
-          result[name.to_sym] = string_attr(node, name)
-        end
-        return result
+      %w(name code).each do |name|
+        result[name.to_sym] = string_attr(node, name)
       end
+      return result
     end
 
     def self.string_attr(node, xpath)
-      node.xpath(xpath).to_s.try(:strip).to_s
+      node.xpath(xpath).to_s.try(:strip)
     end
   end
 end
+
 

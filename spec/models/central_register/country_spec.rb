@@ -31,7 +31,7 @@ describe CentralRegister::Country do
 </soap:enumerationResponse>
 BODY
     end
-    it "it returns array of education hashes" do
+    it "returns array of education hashes" do
       CentralRegister::Country.all.should == [
         {:code => '0',
         :name => 'bez státního občanství',
