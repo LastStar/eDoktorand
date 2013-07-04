@@ -33,7 +33,7 @@ class Scholarship < ActiveRecord::Base
 
   def self.pay_and_generate
     month = ScholarshipMonth.current
-    scholarships = Scholarship.all(:conditions => {:scholarship_month_id => month.id},
+    scholarships = Scholarship.all(:conditions => ["scholarship_month_id = ? and amount > 0.0",  month.id],
                                    :include => {:index => :student})
     outfile = ''
     CSV::Writer.generate(outfile, ';') do |csv|
