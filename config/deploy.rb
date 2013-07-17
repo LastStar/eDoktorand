@@ -17,7 +17,7 @@ end
 
 desc "Sets the staging path and branch"
 task :staging do
-  set :deploy_to, '/var/apps/staging.czu.cz'
+  set :deploy_to, '/var/apps/staging.edoktorand.czu.cz'
   set :branch, 'develop'
 end
 

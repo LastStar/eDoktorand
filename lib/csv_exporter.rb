@@ -18,6 +18,7 @@ class CSVExporter
       CSV::Writer.generate(outfile, ';') do |csv|
         csv << ['sident', 'claimed_at', 'supervised_at']
         students.each do |s|
+          next if s.index.sident.blank? || s.index.sident.to_s == "-1"
           row = []
           row << s.index.sident
           row << s.index.scholarship_claimed_at.strftime('%d.%m.%Y')
@@ -376,6 +377,7 @@ class CSVExporter
                               :include => :student)
         @@mylog.info "There are #{indices.size} students"
         indices.each do |i|
+          next if i.sident.blank? || i.sident.to_s == "-1"
           # TODO redo with index instance method
           row = []
           row << i.sident
