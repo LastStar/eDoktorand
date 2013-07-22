@@ -1027,5 +1027,45 @@ class CSVExporter
         end
       end
     end
+
+    def specializations
+      File.open("specializations.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          csv << ["id", "obor"]
+          Specialization.all.each do |specialization|
+            csv << [specialization.id, specialization.name]
+          end
+        end
+      end
+
+    end
+
+    def specializations_details
+      File.open("specializations.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          csv << ["specializace", "počet doktorandů", "počet školitelů", "průměrná délka studia", "počet absolventů"]
+          Specialization.all.each do |specialization|
+            row = []
+            row << specialization.id
+            indices = Index.all(:conditions => { :specialization_id => specialization.id })
+            row << indices.reject { |index| index.absolved? || index.finished? }.count
+
+            row << Tutorship.all(:conditions => { :specialization_id => specialization.id }).map(&:tutor).uniq.count
+
+            if indices.empty?
+              row << 0
+              row << 0
+            else
+              row << indices.select { |index| index.absolved? }.count
+              row << indices.inject(0) { |sum, index|  sum += index.year } / indices.count.to_f
+            end
+
+            puts row.join(";")
+
+            csv << row
+          end
+        end
+      end
+    end
   end
 end
