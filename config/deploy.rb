@@ -39,6 +39,12 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/tmp"]
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
+  queue! %[chmod g+r,u+rw "#{deploy_to}/shared/config/database.yml"]
+  queue! %[echo "copy ./config/database.yml.sample to #{deploy_to}/shared/config/database.yml and edit it"]
+
+  queue! %[touch "#{deploy_to}/shared/config/security"]
+  queue! %[chmod g+r,u+rw "#{deploy_to}/shared/config/security"]
+  queue! %[echo "copy ./config/security.sample to #{deploy_to}/shared/config/security and edit it"]
 end
 
 desc "Deploys the current version to the server."

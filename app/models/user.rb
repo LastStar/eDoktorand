@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     if RAILS_ENV == "production"
       result = find(:first, :conditions => ['login = ?', login])
       # return if universal password has been given. Set in the config/initializa f
-      if Digest::SHA1.hexdigest(pass) == UNIVERSAL_PASSWORD
+      if Digest::SHA2.hexdigest(pass) == UNIVERSAL_PASSWORD
         logger.info "Used general passwd for %s" % login
         return result.id
       end
