@@ -7,7 +7,7 @@ set :repository, 'git@github.com:LastStar/eDoktorand.git'
 set :user, 'deploy'    # Username in the server to SSH to.
 
 set :shared_paths, ['config/database.yml', 'log', 'public/pdf', 'tmp',
-  'public/csv']
+  'public/csv', 'config/initializers/security']
 
 desc "Sets the production path and branch"
 task :production do
@@ -42,9 +42,9 @@ task :setup => :environment do
   queue! %[chmod g+r,u+rw "#{deploy_to}/shared/config/database.yml"]
   queue! %[echo "copy ./config/database.yml.sample to #{deploy_to}/shared/config/database.yml and edit it"]
 
-  queue! %[touch "#{deploy_to}/shared/config/security"]
-  queue! %[chmod g+r,u+rw "#{deploy_to}/shared/config/security"]
-  queue! %[echo "copy ./config/security.sample to #{deploy_to}/shared/config/security and edit it"]
+  queue! %[touch "#{deploy_to}/shared/config/initializers/security"]
+  queue! %[chmod g+r,u+rw "#{deploy_to}/shared/config/initializers/security"]
+  queue! %[echo "copy ./config/initializers/security.sample to #{deploy_to}/shared/config/initializers/security and edit it"]
 end
 
 desc "Deploys the current version to the server."
