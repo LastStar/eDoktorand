@@ -281,7 +281,8 @@ class Candidate < ActiveRecord::Base
     index.enrolled_on = enrolled_on
     index.payment_id = self.foreign_pay ? 0 : 1
     index.study_start_on = study_start_on
-    index.save!
+    index.send(:create_without_callbacks)
+    index.enrolling_im_index
     self.update_attribute(:student_id, student.id)
     return student
   end

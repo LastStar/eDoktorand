@@ -610,12 +610,12 @@ class Index < ActiveRecord::Base
 
   # TODO add logic for other statuses like interrupted from and so
   def status_from
-    TermsCalculator.this_year_start.to_date
+    TermsCalculator.next_year_start.to_date
   end
 
   # TODO add logic for other statuses like interrupted to and so
   def status_to
-    TermsCalculator.this_year_end.to_date
+    TermsCalculator.next_year_end.to_date
   end
 
   # TODO redone some better way
