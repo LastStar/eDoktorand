@@ -878,31 +878,38 @@ en:
         message_3: habitat address
         message_4: postal address
       _address_detail:
-
-
+        postal_address: Postal address
+        street: Street
+        desc_number: Desc. number
+        city: City
+        zip: Zip
       _subjects:
         message_0: semester
         message_1: date finished
-      _personal_detail:
-        semester: Semester
         message_0: Corridor
         message_1: Department
         message_2: Study form
         message_3: Year
         message_4: Enrolled on
-        message_5: citizenship
-        message_6: Birth name
-        message_7: Email
-        message_8: Phone
-        message_9: Street
-        message_10: Number
-        message_11: City
-        message_12: ZIP
-        message_13: UIC
-        message_14: SIDENT
+      _personal_info:
+        email: Email
+        phone: Phone
+        uic: UIC
+        sident: SIDENT
         message_15: Consultant
-        message_16: Account
-        message_17: Personal details
+        account: Account
+        personal_information: Personal informations
+        birthname: Birth name
+        citizenship: citizenship
+      _study_info:
+        study_status: Study status
+        study_plan_status: Study plan status
+        study_form: Study form
+        semester: Semester
+        year: Year
+        enrolled_on: Enrolled on
+        nominal_length: Nominal length
+        study_length: Study length
       _final_exam:
         semester: semester
         message_1: final exam
@@ -1604,10 +1611,10 @@ en:
     interrupts: {}
 
     plans:
+      claim_individual: claim individual
       message_18: voluntary subjects
       message_8: Are you sure to
       message_9: end study
-      message_20:
       message_19: change study plan
       message_0: semester
       message_10: change tutor
@@ -1715,6 +1722,8 @@ en:
     titles: {}
 
     application:
+      department: Department
+      specialization: Specialization
       message_69: applications
       message_67: examinators
       message_62: literature review file
