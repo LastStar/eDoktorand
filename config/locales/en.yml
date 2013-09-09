@@ -898,7 +898,7 @@ en:
         sident: SIDENT
         message_15: Consultant
         account: Account
-        personal_information: Personal informations
+        personal_information: Personal information
         birthname: Birth name
         citizenship: citizenship
       _study_info:
@@ -910,6 +910,7 @@ en:
         enrolled_on: Enrolled on
         nominal_length: Nominal length
         study_length: Study length
+        study_information: Study information
       _final_exam:
         semester: semester
         message_1: final exam
@@ -1444,6 +1445,12 @@ en:
 
   model:
     plan:
+      study_plan_completed: SP completed
+      study_plan_not_approved: SP not approved
+      study_plan_approved: SP approved
+      study_plan_admited: SP admited
+      missing_disert_theme_title: not disert theme title
+      dean: dean
       message_0: all finished
       message_1: SP canceled
       message_2: SP approved
@@ -1567,10 +1574,27 @@ en:
     leadership: {}
 
     index:
-      message_8: absolved
+      approved: Approved
+      canceled: Canceled
+      foreigner_pay_throught_dotation: Foreigner pay throught donation
+      study_in_standart_time: Study in the standart time
+      wrong_or_missing_account_number: Wrong or missing account number
+      wrong_or_missing_account_bank_number: Wrong or missing account bank number
+      missing_uic: Missing UIC
+      missing_sident_666: Missing sident
+      missing_sident: Missing sident
+      wrong_account_number_prefix_format: Wrong account number prefix format
+      wrong_account_number_format: Wrong account bymber prefix format
+      all_subjects_are_not_finished: All subject are not finished
+      absolved: absolved
+      finished: finished
+      passed_sdz: passed final exam
+      interrupted: interrupted
+      closed: closed
+      studies: studies
       message_9: interrupted
       message_0: with study change
-      message_10: absolved
+      absolved: absolved
       message_1: End
       message_11: FE passed
       message_2: account prefix in wrong format
@@ -1724,6 +1748,19 @@ en:
     application:
       department: Department
       specialization: Specialization
+      leader: leader
+      nobody: nobody
+      continue: continue
+      continue_with_reproof: continue with reproof
+      finish: finish
+      interrupt: interrupt
+      annual_report: annual report
+      choose_theme: "--- choose theme ---"
+      passed_defense: passed defense
+      passed_final_exam_term: passed FE
+      department: Department
+      specialization: Specialization
+      change: Change
       message_69: applications
       message_67: examinators
       message_62: literature review file

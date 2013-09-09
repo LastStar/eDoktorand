@@ -851,7 +851,7 @@ cs:
         phone: Telefon
         uic: UIC
         sident: SIDENT
-        personal_informations: Osobní údaje
+        personal_information: Osobní údaje
       _address_detail:
         postal_address: Korespondenční adresa
         street: Ulice
@@ -864,7 +864,7 @@ cs:
         study_form: Forma studia
         enrolled_on: Začátek studia
         consultant: Konzultant
-        study_informations: Studijní údaje
+        study_information: Studijní údaje
         nominal_length: Nominální délka studia
         study_length: Standardní délka studia
         year: Ročník
@@ -1495,7 +1495,6 @@ cs:
       choose_theme: "--- vyberte rámcové téma ---"
       passed_defense: obhájil DP
       passed_final_exam_term: složil SDZ
-      passed_defense: obhájil DP
       department: Katedra
       specialization: Obor
       change: Změnit
@@ -1824,8 +1823,6 @@ cs:
       canceled: Neschváleno
       foreigner_pay_throught_dotation: cizinec, hrazeno ze zvláštní dotace dle evidence Domu zahr. služeb MŠMT
       study_in_standart_time: studium ve standardní době studia
-      absolved_l: absolvoval
-      passed_sdz_l: složil SDZ
       finished_l: ukončeno
       wrong_or_missing_account_number: Špatné nebo chybějící číslo bankovního účtu.
       wrong_or_missing_account_bank_number: Špatné nebo chybějící číslo banky u b.ú.
