@@ -961,10 +961,11 @@ en:
         message_6: Literature review
         message_7: Chairman
       claim:
-        message_0:
-        message_1: literature review title
-        message_2: literature review file
-        message_3: commit
+        claim_final_exam_term: admition to final exam
+        literature_review_title: title of the literature review
+        literature_review_file: file  with the literature review
+        submit: submit
+        both_in_one_day: Final exam and the defense of the disertation theme in one day
       _form:
         message_8: member
         message_9: opponent
