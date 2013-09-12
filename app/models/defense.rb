@@ -20,19 +20,11 @@ class Defense < ExamTerm
   # finds defense for given user
   def self.find_for(user, options = {})
     # TODO redo with only ids of indices
-    indices = Index.find_for(user, :not_absolved => true)
-    if options.delete :not_passed
-      indices.reject! do |i|
-        i.absolved? || i.finished?
-      end
-    end
-    options[:conditions] = ['index_id in (?)', indices]
-    if options.delete :future
-      options[:conditions].first << ' and date >= ? and indices.final_exam_invitation_sent_at is not null'
-      options[:conditions] << Date.today
-    end
-    options[:include] = :index
-    options[:order] = 'date'
+    indices = Index.find_for(user, :not_absolved => true, :unfinished => true)
+    options = { :conditions => ['index_id in (?) and not_passed_on is null',
+                                indices],
+                :include => :index,
+                :order => 'date'}
     find(:all, options)
   end
 end

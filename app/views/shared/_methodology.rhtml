@@ -12,10 +12,12 @@
 <% if disert_theme.index.study_plan && disert_theme.index.study_plan.approved? %>
   <% if (@student && !disert_theme.has_methodology?) || @user.has_one_of_roles?(['faculty_secretary','vicerector']) %>
 <li>
+  <% unless disert_theme.defense_passed_on %>
 <div class="long_info">
   <%= link_to(t(:message_2, :scope => [:view, :shared, :_methodology]), {:controller => "disert_themes", :action =>
   "upload_methodology", :id => disert_theme.id,}, {:style => "text-decoration: underline;", :target => "_blank"}) %>
 </div>
+  <% end %>
 &nbsp;
 </li>
   <% end %>

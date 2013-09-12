@@ -830,10 +830,15 @@ cs:
       _interrupt:
         message_0: přerušeno od
       _disert_theme:
-        message_0: Disertační práce
-        message_1: téma disertační práce
-        message_2: semestr
-        message_3: termín obhajoby disertační práce
+        disert_theme: Disertační práce
+        title: téma disertační práce
+        semester: semestr
+        term: termín obhajoby disertační práce
+        passed: Obhájil
+        not_passed: Neobhájil
+        invited: Tento student byl pozván k obhajobě disertační práce.
+        claimed: Tento student požádal o obhajobu disertační práce.
+        already_sent: Dizertační práce již byla odeslána ke kontrole plagiátu.
       _student_contact:
         message_0: Kontakt
         message_1: email
@@ -871,12 +876,9 @@ cs:
         years: ' roky'
         semester: Semestr
       _final_exam:
-        already_sent: Dizertační práce již byla odeslána ke kontrole plagiátu.
         semester: semestr
         final_exam: Státní doktorská zkouška
         not_passed: Nesložil
-        message_2: Tento student byl pozván k obhajobě disertační práce.
-        message_3: Tento student požádal o obhajobu disertační práce.
         message_4: Tento student byl pozván k státní doktorské zkoušce.
         message_5: Tento student požádal o vykonání státní doktorské zkoušky.
         message_6: oblast předmětů
@@ -1134,6 +1136,7 @@ cs:
         signed_protocol: Podepsaný protokol
         review: Posudky DP
         passed: Obhájil
+        not_passed: Neobhájil
       _edit:
         message_0: Uložit
       protocol:

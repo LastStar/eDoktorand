@@ -25,4 +25,11 @@ class ExamTerm < ActiveRecord::Base
     return chairman_name if chairman_name.present?
     return chairman.display_name
   end
- end
+  #
+  # Public: sets that final exam has not been passed
+  #
+  def not_passed!(date)
+    self.update_attribute(:not_passed_on, date)
+  end
+
+end

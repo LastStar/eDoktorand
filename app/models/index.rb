@@ -53,7 +53,10 @@ class Index < ActiveRecord::Base
     :conditions => 'not_passed_on is null'
   has_one :not_passed_final_exam_term, :conditions => 'not_passed_on is not null',
     :class_name => 'FinalExamTerm'
-  has_one :defense
+  has_one :defense, :order => 'created_on desc',
+    :conditions => 'not_passed_on is null'
+  has_one :not_passed_defense, :conditions => 'not_passed_on is not null',
+      :class_name => 'Defense'
   has_many :exams
   belongs_to :specialization
   belongs_to :department
@@ -864,6 +867,11 @@ class Index < ActiveRecord::Base
 
   def final_exam_not_passed!
     update_attributes(:final_application_claimed_at => nil, :final_exam_invitation_sent_at => nil)
+  end
+
+  def defense_not_passed!
+    update_attributes(:defense_claimed_at => nil, :defense_invitation_sent_at => nil)
+    disert_theme.update_attributes( :theses_request => nil, :theses_request_at => nil, :theses_request_response => nil, :theses_request_succesfull => nil, :theses_response => nil, :theses_response_at => nil, :theses_status => nil)
   end
 
   def prepare_study_plan

@@ -8,12 +8,6 @@ class FinalExamTerm < ExamTerm
     "%s %s" % [date.strftime("%d. %m. %Y"), start_time]
   end
 
-  # Public: sets that final exam has not been passed
-  #
-  def not_passed!(date)
-    self.update_attribute(:not_passed_on, date)
-  end
-
   # finds final exam terms for given user
   def self.find_for(user, options = {})
     # TODO redo with only ids of indices
