@@ -23,8 +23,7 @@ class Defense < ExamTerm
     indices = Index.find_for(user, :not_absolved => true)
     if options.delete :not_passed
       indices.reject! do |i|
-        i.status == I18n::t(:absolved_l, :scope => [:model, :index]) ||
-        i.status == I18n::t(:finished_l, :scope => [:model, :index])
+        i.absolved? || i.finished?
       end
     end
     options[:conditions] = ['index_id in (?)', indices]
