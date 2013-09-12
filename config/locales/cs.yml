@@ -873,7 +873,8 @@ cs:
       _final_exam:
         already_sent: Dizertační práce již byla odeslána ke kontrole plagiátu.
         semester: semestr
-        message_1: Státní doktorská zkouška
+        final_exam: Státní doktorská zkouška
+        not_passed: Nesložil
         message_2: Tento student byl pozván k obhajobě disertační práce.
         message_3: Tento student požádal o obhajobu disertační práce.
         message_4: Tento student byl pozván k státní doktorské zkoušce.
@@ -938,10 +939,11 @@ cs:
         message_0: email odeslán
         message_1: potvrzeno
       pass:
-        passing_date: Datum splnění
+        passing_date: Datum konání
         questions: Otázky
         discussion: Diskuze
         passed: Složena SDZ
+        not_passed: Nesložena SDZ
         passing: Složení SDZ
       show:
         back_to_list: zpět na seznam
@@ -1681,6 +1683,8 @@ cs:
       confirm_no_mail: potvrdit bez odeslání mailu
       confirmed: potvrzený
       created: vytvořený
+      passed: uspěšný
+      not_passed: neúspěšný
 
   model:
     study_plan:

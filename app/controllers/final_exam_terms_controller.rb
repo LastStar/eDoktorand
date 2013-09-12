@@ -70,8 +70,7 @@ class FinalExamTermsController < ApplicationController
   end
 
   def create
-    logger.debug params
-    if @final_exam_term = FinalExamTerm.find_by_index_id(params[:final_exam_term][:index_id])
+    if @final_exam_term = Index.find(params[:final_exam_term][:index_id]).final_exam_term
       @final_exam_term.update_attributes(params[:final_exam_term])
     else
       @final_exam_term = FinalExamTerm.new(params[:final_exam_term])
@@ -128,7 +127,12 @@ class FinalExamTermsController < ApplicationController
     @final_exam_term.update_attributes(:questions => params[:questions], :discussion => params[:discussion])
     date = params[:date]
     date = Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
-    @final_exam_term.index.final_exam_passed!(date)
+    if params[:commit] == t(:not_passed, :scope => [:view, :final_exam_terms, :pass])
+      @final_exam_term.not_passed!(date)
+      @final_exam_term.index.final_exam_not_passed!
+    else
+      @final_exam_term.index.final_exam_passed!(date)
+    end
     redirect_to :action => :list
   end
 end

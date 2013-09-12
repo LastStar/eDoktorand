@@ -7,8 +7,16 @@
       <%= "%i. %s" % [study_plan.finishing_to, t(:semester, :scope => [:view, :shared, :_final_exam])] %>
 <% end %>
     </div>
-    <b><%= "#{t(:message_1, :scope => [:view, :shared, :_final_exam])}" %></b>
+    <b><%= t(:final_exam, :scope => [:view, :shared, :_final_exam]) %></b>
   </li>
+<% if index.not_passed_final_exam_term %>
+  <li>
+    <div class='info'>
+      <%= index.not_passed_final_exam_term.not_passed_on.strftime('%d. %m. %Y') %>
+    </div>
+    <b><%= t(:not_passed, :scope => [:view, :shared, :_final_exam]) %></b>
+  </li>
+<% end %>
 <% unless index.final_exam_passed? %>
   <% if index.final_exam_invitation_sent? %>
     <li><b><%= t(:message_4, :scope => [:view, :shared, :_final_exam]) %></b></li>
