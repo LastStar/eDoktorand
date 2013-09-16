@@ -109,15 +109,20 @@ class DefensesController < ApplicationController
   def save_pass
     @defense = Defense.find(params[:id])
     @defense.update_attributes(:questions => params[:questions], :discussion => params[:discussion])
-    @defense.index.disert_theme.tap do |disert_theme|
-      if (review = params[:review]) && review.is_a?(Tempfile) &&
-        (signed_protocol = params[:signed_protocol]) && signed_protocol.is_a?(Tempfile)
-        disert_theme.save_review_file(review)
-        disert_theme.save_signed_protocol_file(signed_protocol)
+    date = params[:date]
+    date = Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
+    if params[:commit] == t(:not_passed, :scope => [:view, :defenses, :pass])
+      @defense.not_passed!(date)
+      @defense.index.defense_not_passed!
+    else
+      @defense.index.disert_theme.tap do |disert_theme|
+        if (review = params[:review]) && review.is_a?(Tempfile) &&
+          (signed_protocol = params[:signed_protocol]) && signed_protocol.is_a?(Tempfile)
+          disert_theme.save_review_file(review)
+          disert_theme.save_signed_protocol_file(signed_protocol)
+        end
+        disert_theme.defense_passed!(date)
       end
-      date = params[:date]
-      date = Date.civil(date['year'].to_i, date['month'].to_i, date['day'].to_i)
-      disert_theme.defense_passed!(date)
     end
     redirect_to :action => :list
   end
