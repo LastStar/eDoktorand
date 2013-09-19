@@ -138,7 +138,7 @@ class CandidatesController < ApplicationController
     else
       Date.today
     end
-		@student = @candidate.enroll!(TermsCalculator.next_year_start, @enrolled_on)
+		@student = @candidate.enroll!(@enrolled_on, @enrolled_on)
 
     if @student.state == 'CZ' || @student.state == 'SK'
       @student.update_attribute(:uic, UicGetter.new.get_uic(@student.birth_number))
