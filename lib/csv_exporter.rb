@@ -257,7 +257,7 @@ class CSVExporter
       end
       outfile = File.open(file, 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
-        csv << %w(titul jmeno prijmeni email rc misto\ narozeni katedra obor ulice cislo mesto psc telefon)
+        csv << %w(id titul jmeno prijmeni titul\ za email rc datum\ narozeni misto\ narozeni katedra obor forma ulice cislo mesto psc telefon)
         @@mylog.info "There are #{cs.size} candidates"
         cs.each do |c|
           row = []
