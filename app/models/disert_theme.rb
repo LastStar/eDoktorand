@@ -45,6 +45,7 @@ class DisertTheme < ActiveRecord::Base
 
   def defense_passed!(date = Date.today)
     update_attribute(:defense_passed_on, date)
+    index.update_im_index
   end
 
   def save_literature_review(file)
