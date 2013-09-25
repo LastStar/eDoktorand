@@ -614,9 +614,14 @@ class Index < ActiveRecord::Base
     return @status_code
   end
 
-  # TODO add logic for other statuses like interrupted from and so
   def status_from
-    TermsCalculator.next_year_start.to_date
+    if absolved?
+      disert_theme.defense_passed_on
+    elsif interrupted?
+      interrupted_on
+    else
+      TermsCalculator.next_year_start.to_date
+    end
   end
 
   # TODO add logic for other statuses like interrupted to and so
