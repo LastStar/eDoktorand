@@ -139,15 +139,6 @@ class CandidatesController < ApplicationController
       Date.today
     end
 		@student = @candidate.enroll!(@enrolled_on, @enrolled_on)
-
-    if @student.state == 'CZ' || @student.state == 'SK'
-      @student.update_attribute(:uic, UicGetter.new.get_uic(@student.birth_number))
-    else
-      @student.update_attribute(:uic, UicGetter.new(:foreign_uic).get_foreign_uic(@student.birth_number))
-    end
-
-    @student.update_im_student
-    @student.index.enrolling_im_index
   end
 
 	# confirms enrollment of candidate and sends email
