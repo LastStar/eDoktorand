@@ -620,13 +620,13 @@ class Index < ActiveRecord::Base
     elsif interrupted?
       interrupted_on
     else
-      TermsCalculator.next_year_start.to_date
+      TermsCalculator.this_year_start.to_date
     end
   end
 
   # TODO add logic for other statuses like interrupted to and so
   def status_to
-    TermsCalculator.next_year_end.to_date
+    TermsCalculator.this_year_end.to_date
   end
 
   # TODO redone some better way
