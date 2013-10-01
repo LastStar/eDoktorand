@@ -281,8 +281,11 @@ class Candidate < ActiveRecord::Base
     index.enrolled_on = enrolled_on
     index.payment_id = self.foreign_pay ? 0 : 1
     index.study_start_on = study_start_on
-    index.send(:create_without_callbacks)
-    index.enrolling_im_index
+    if Date.today < Date.parse(enrolled_on)
+      index.enrolling_im_index
+    else
+      index.update_im_index
+    end
     self.update_attribute(:student_id, student.id)
     return student
   end
