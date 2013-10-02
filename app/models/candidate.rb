@@ -239,6 +239,7 @@ class Candidate < ActiveRecord::Base
 
   # creates student and index from self
   def new_student(enrolled_on, study_start_on)
+    enrolled_on = Date.parse(enrolled_on) unless enrolled_on.is_a?(Date)
     Dean.columns #Table inheritance biting our ass again
     uic_getter = UicGetter.new
     unless student = Student.find_by_birth_number(self.birth_number.strip)
@@ -281,7 +282,7 @@ class Candidate < ActiveRecord::Base
     index.enrolled_on = enrolled_on
     index.payment_id = self.foreign_pay ? 0 : 1
     index.study_start_on = study_start_on
-    if Date.today < Date.parse(enrolled_on)
+    if Date.today < enrolled_on
       index.enrolling_im_index
     else
       index.update_im_index
