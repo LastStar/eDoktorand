@@ -377,7 +377,10 @@ class CSVExporter
                               :include => :student)
         @@mylog.info "There are #{indices.size} students"
         indices.each do |i|
-          next if i.sident.blank? || i.sident.to_s == "-1"
+          if i.sident.blank? || i.sident.to_s == "-1" || i.absolved? ||
+            i.finished?
+            next
+          end
           # TODO redo with index instance method
           row = []
           row << i.sident

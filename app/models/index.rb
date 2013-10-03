@@ -545,7 +545,7 @@ class Index < ActiveRecord::Base
   def self.find_for_scholarship(user, paying_date, opts = {})
     opts.update({:unfinished => (paying_date - 1.day),
                  :not_interrupted => (paying_date - 1.day),
-                 :enrolled => (paying_date + 1.day),
+                 :enrolled => paying_date,
                  :not_absolved => (paying_date - 1.day),
                  :include => [:regular_scholarship, :extra_scholarships]})
 
@@ -966,8 +966,8 @@ class Index < ActiveRecord::Base
 
   private
   def self.get_time_condition(time)
-    if time.is_a? Time
-      time
+    if time.respond_to? :to_time
+      time.to_time
     else
       Time.now
     end
