@@ -543,10 +543,10 @@ class Index < ActiveRecord::Base
   end
 
   def self.find_for_scholarship(user, paying_date, opts = {})
-    opts.update({:unfinished => (paying_date - 1.day),
-                 :not_interrupted => (paying_date - 1.day),
+    opts.update({:unfinished => paying_date,
+                 :not_interrupted => paying_date,
                  :enrolled => paying_date,
-                 :not_absolved => (paying_date - 1.day),
+                 :not_absolved => paying_date,
                  :include => [:regular_scholarship, :extra_scholarships]})
 
     return find_for(user, opts)
