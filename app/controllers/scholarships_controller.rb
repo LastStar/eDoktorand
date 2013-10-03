@@ -29,6 +29,7 @@ class ScholarshipsController < ApplicationController
   def prepare
     @paying_date = ScholarshipMonth.current.starts_on
     @indices = Index.find_for_scholarship(@user, @paying_date)
+    # TODO move to model class
     @over = Index.find_with_scholarship(@user).reject do |i|
       @indices.include?(i) ||
         (i.extra_scholarships.empty? &&
