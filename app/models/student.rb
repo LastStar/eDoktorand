@@ -3,7 +3,7 @@ class Student < Examinator
   has_one :index, :dependent => :destroy, :order => 'finished_on asc, created_on desc'
   has_one :candidate
   has_and_belongs_to_many :probation_terms
-  has_one :im_student
+  has_one :im_student, :depentent => :destroy
 
   after_save :update_im_student
 
