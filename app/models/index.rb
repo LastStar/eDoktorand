@@ -64,7 +64,7 @@ class Index < ActiveRecord::Base
   has_many :extra_scholarships, :conditions => {:scholarship_month_id => ScholarshipMonth.current.try(:id)}
   has_one :regular_scholarship, :conditions => {:scholarship_month_id => ScholarshipMonth.current.try(:id)}
   has_many :scholarships
-  has_one :im_index, :depentent => :destroy
+  has_one :im_index, :dependent => :destroy
 
   validates_presence_of :student
   validates_presence_of :tutor
