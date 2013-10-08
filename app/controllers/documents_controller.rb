@@ -62,6 +62,16 @@ class DocumentsController < ApplicationController
 
   end
 
+  # prints diploma supplement to pdf in en
+  def diploma_supplement_en
+    @diploma_supplement = DiplomaSupplement.find(params[:id])
+    respond_to do |format|
+     format.html
+     format.pdf {render :layout => false}
+    end
+
+  end
+
   # prints list of tutors by specializations to pdf
   def tutors_by_specialization
     @faculty = Faculty.find_by_short_name(params[:id])
