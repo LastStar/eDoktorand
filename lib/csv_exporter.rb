@@ -1070,5 +1070,34 @@ class CSVExporter
         end
       end
     end
+
+    def result_word(result)
+      case result
+      when 1
+        "schválena"
+      when 2
+        "schválena s výtkou"
+      when 3
+        "neschválena"
+      end
+    end
+
+    def attestation_results(indices)
+      File.open("atest.csv", "wb") do |f|
+        result = indices.map do |i|
+          line = [i.id, i.student.display_name, i.specialization.code, i.tutor.display_name, i.try(:disert_theme).try(:title)]
+          if (statement = i.study_plan.try(:attestation).try(:tutor_or_leader_statement))
+             line.concat([statement.created_on,
+             result_word(statement.result),
+             statement.try(:note).gsub(/[\r\n]/, ' ')])
+          else
+             line.concat(["neatestován"])
+          end
+          line.join(";")
+        end.join("\n")
+
+        f.write(result)
+      end
+    end
   end
 end
