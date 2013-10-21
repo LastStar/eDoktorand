@@ -143,7 +143,7 @@ module StudentsHelper
     link_to(t(:message_9, :scope => [:helper, :students]),
             :action => 'create_by_other',
             :controller => 'study_plans',
-            :id => index.student)
+            :id => index)
   end
 
   # prints link to create final exam term
