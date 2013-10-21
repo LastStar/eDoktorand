@@ -38,8 +38,8 @@
 <%= select 'study_plan', 'finishing_to', 1..8 %>
 <%= ". " + t(:message_8, :scope => [:view, :study_plans, :_full_form]) %>
 </li>
-<% if FACULTY_CFG[@student.faculty.id]['final_areas_on'] == 'create' %>
-    <% FACULTY_CFG[@student.faculty.id]['final_areas_count'].times do |index| %>
+<% if FACULTY_CFG[@index.faculty.id]['final_areas_on'] == 'create' %>
+    <% FACULTY_CFG[@index.faculty.id]['final_areas_count'].times do |index| %>
       <% i = index + 1 %>
 <li>
   <label><%= "#{i}. " + t(:message_9, :scope => [:view, :study_plans, :_full_form]) %></label>

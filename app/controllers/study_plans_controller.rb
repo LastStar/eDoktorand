@@ -123,17 +123,18 @@ class StudyPlansController < ApplicationController
 
   # create study plan like no-student
   def create_by_other
-    @student = Student.find(params[:id])
+    @index = Index.find(params[:id])
+    @student = @index.student
     @title = t(:message_3, :scope => [:controller, :plans])
     @requisite_subjects = PlanSubject.create_for(@student, :requisite)
-    @subjects = SpecializationSubject.for_select(:specialization => @student.index.specialization)
+    @subjects = SpecializationSubject.for_select(:specialization => @index.specialization)
     @study_plan = @student.index.prepare_study_plan
     @plan_subjects = []
     (@student.specialization.voluntary_amount + 8).times do |i|
       (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i + 1)
       @plan_subjects << plan_subject
     end
-    @disert_theme = @student.index.build_disert_theme
+    @disert_theme = @index.build_disert_theme
   end
 
   # renders change page for study plan
