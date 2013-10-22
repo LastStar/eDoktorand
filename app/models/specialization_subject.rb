@@ -1,5 +1,5 @@
 class SpecializationSubject < ActiveRecord::Base
-  
+
   belongs_to :specialization
   belongs_to :subject
   validates_presence_of :subject
@@ -7,17 +7,18 @@ class SpecializationSubject < ActiveRecord::Base
   # returns options for html select
   # there is only one option :specialization which is obligate
   def self.for_select(options = {})
+    options = { :locale => 'cz' }.merge(options)
     if options[:specialization]
       if options[:specialization].is_a?(Specialization)
-        options[:specialization] = options[:specialization].id 
+        options[:specialization] = options[:specialization].id
       end
       sql = ["specialization_id = ?", options[:specialization]]
     end
-    self.find(:all, :conditions => sql, :order => 'subjects.label', 
+    self.find(:all, :conditions => sql, :order => 'subjects.label',
              :include => :subject).sort do |x, y|
                                      x.subject.label <=> y.subject.label
                                    end.map do |sub|
-      [sub.subject.select_label, sub.subject.id]
+      [sub.subject.select_label(options[:locale]), sub.subject.id]
     end
   end
 
@@ -30,7 +31,7 @@ class SpecializationSubject < ActiveRecord::Base
                 options[:specialization]
               end
     sql = ['specialization_id = ?', specialization]
-    find(:all, :conditions => sql, :include => :subject).map {|cs| 
+    find(:all, :conditions => sql, :include => :subject).map {|cs|
       [cs.subject.label, cs.subject.id]}
   end
 

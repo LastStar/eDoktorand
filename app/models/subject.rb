@@ -48,13 +48,17 @@ class Subject < ActiveRecord::Base
     self.find(:all).map {|sub| [sub.label, sub.id]}
   end
 
-  def select_label
-    chars = label.split(//)
-    trunc = chars.length > 40 ? chars[0...37].join + '...' : label
-     unless code == nil or code == ''
-       "#{code} - #{trunc}"
+  def select_label(locale = 'cz')
+    lbl = if locale != 'cz' && label_en
+            label_en
+          else
+            label
+          end.split(//)
+    lbl = lbl.length > 40 ? lbl[0...37].join + '...' : lbl.join
+     if code.present?
+       "#{code} - #{lbl}"
      else
-       "#{trunc}"
+       "#{lbl}"
      end
   end
 

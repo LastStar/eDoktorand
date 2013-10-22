@@ -9,6 +9,16 @@ en:
 
   view:
     study_plans:
+      save_disert:
+        message_0: Now you can see study plan as you created it in the previous steps. If you will not confirm it, all will changes will be lost!
+      save_language:
+        message_0: language subjects
+      save_voluntary:
+        message_0: voluntary subjects
+      _not_valid_voluntarys:
+        message_3: Seminar subjects
+      _save_obligate:
+        seminar_subjects: Seminar subjects
       individual_study_plan_application: Individual study plan application
       note_for_individual_study_plan: Note for application
       confirm_individual_application: Submit application
@@ -20,6 +30,8 @@ en:
         message_1: voluntary subjects
         message_2: working...
       _disert_form:
+        title: Title
+        title_en: Title in english
         message_8: finish study plan creating (no steps back)
         message_9: working...
         message_0: semester of final exam
@@ -30,6 +42,10 @@ en:
         message_5: methodology summary
         message_6: language subjects
         message_7: working...
+      _not_valid_disert:
+        message_1: seminar subjects
+        message_2: voluntary subjects
+        message_3: language subjects
       _print_statements:
         message_0: Tutor statement
         message_1: Leader statement
@@ -71,7 +87,7 @@ en:
         message_2: commit
       _voluntary_form:
         message_0: voluntary subjects
-        message_1:
+        message_1: voluntary subjects
         message_2: working...
         message_3: language subjects
         message_4: working...
@@ -83,7 +99,7 @@ en:
         message_0: Additional information provided by student
       _voluntary:
         message_0:
-        message_1:
+        message_1: university must be present
         message_2: semester
         message_3: subject
         message_4: subject en
@@ -864,10 +880,11 @@ en:
       _interrupt:
         message_0: interrupted on
       _disert_theme:
+        disert_theme: Disert theme
         message_0: Disert theme
-        message_1: theme of disert theme
-        message_2: semester
-        message_3: term of disert theme defense
+        title: title of the disert theme
+        semester: semester
+        term: term of the disert theme defense
       _system_menu:
 
 
@@ -886,11 +903,6 @@ en:
       _subjects:
         message_0: semester
         message_1: date finished
-        message_0: Corridor
-        message_1: Department
-        message_2: Study form
-        message_3: Year
-        message_4: Enrolled on
       _personal_info:
         email: Email
         phone: Phone
@@ -912,6 +924,7 @@ en:
         study_length: Study length
         study_information: Study information
       _final_exam:
+        final_exam: Final exam
         semester: semester
         message_1: final exam
         message_2: This student was invited for defense.
@@ -1485,6 +1498,7 @@ en:
     scholarship: {}
 
     theme:
+      title_must_be_present: Title must be present
       message_0: title must not be empty
       message_1: not_passed_final_exam
     approval: {}
@@ -1517,7 +1531,7 @@ en:
       message_1: approve like dean
       message_2: attest like dean
     subject:
-      message_0: external subject
+      external_subject: external subject
     candidate:
       message_18: only enrolled
       message_8: university cannot be empty
