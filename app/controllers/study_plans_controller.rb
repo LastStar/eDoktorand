@@ -141,6 +141,7 @@ class StudyPlansController < ApplicationController
   def change
     @title = t(:message_4, :scope => [:controller, :plans])
     @student ||= Student.find(params[:id])
+    @index = @student.index
     specialization = @student.index.specialization
     @subjects = SpecializationSubject.for_select(:specialization => specialization)
     if @study_plan = @student.index.study_plan
