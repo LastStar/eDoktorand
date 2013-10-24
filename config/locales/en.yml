@@ -8,6 +8,10 @@ en:
       female: female
 
   view:
+
+    requests:
+      message_0: Card state
+      message_1: No
     study_plans:
       save_disert:
         message_0: Now you can see study plan as you created it in the previous steps. If you will not confirm it, all will changes will be lost!
@@ -122,7 +126,7 @@ en:
         message_2: scholarship_directive
         message_3: accomodation_scholarship_directive
         message_4: how to
-        message_5: eD on Facebooku
+        message_5: eD on Facebook
       _study_plan_header:
         message_0: study plan
       _language_edit:
@@ -914,6 +918,7 @@ en:
         birthname: Birth name
         citizenship: citizenship
       _study_info:
+        years: " years"
         study_status: Study status
         study_plan_status: Study plan status
         study_form: Study form
@@ -1985,6 +1990,7 @@ en:
       message_5: subjects have to be different
       message_6: some external subject is invalid
       message_7: subjects have to be different
+      message_10: There were an error when contacting service
     exams:
       message_0: Creating exam
       message_1: Exam was successfully updated.
