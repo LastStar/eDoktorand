@@ -13,9 +13,9 @@
 <fieldset>
 <%= hidden_field 'study_plan', 'index_id' %>
 <legend><%= t(:message_1, :scope => [:view, :study_plans, :_seminar_form]) %></legend>
-  <% voluntary_buff =  SeminarSubject.for_select(:specialization => @student.specialization) %>
+<% buff = SeminarSubject.for_select(:specialization => @student.specialization, :locale => I18n.locale) %>
   <%= render(:partial => 'seminar', :collection => session[:seminar_subjects],
-             :locals => {:subjects => voluntary_buff}) %>
+             :locals => {:subjects => buff}) %>
 </fieldset>
 <%= submit_tag(t(:message_2, :scope => [:view, :study_plans, :_seminar_form]) + " >>>", :id => 'submit_button') %>
 <% end %>
