@@ -140,23 +140,23 @@ class StudyPlansController < ApplicationController
   # renders change page for study plan
   def change
     @title = t(:message_4, :scope => [:controller, :plans])
-    @student ||= Student.find(params[:id])
-    @index = @student.index
-    specialization = @student.index.specialization
+    @index = Index.find(params[:id])
+    @student ||= @index.student
+    specialization = @index.specialization
     @subjects = SpecializationSubject.for_select(:specialization => specialization)
-    if @study_plan = @student.index.study_plan
+    if @study_plan = @index.study_plan
       if session[:change_back] && session[:change_back] == 1
         @plan_subjects = session[:voluntary_subjects]
         session[:change_back] = 0
       else
         @plan_subjects = @study_plan.unfinished_subjects
       end
-      (@student.specialization.voluntary_amount - @plan_subjects.size + 4).times do |i|
+      (@index.specialization.voluntary_amount - @plan_subjects.size + 4).times do |i|
         (plan_subject = PlanSubject.new('subject_id' => -1)).id = (i+1)
         @plan_subjects << plan_subject
       end
-      session[:finished_subjects] = @student.index.study_plan.finished_subjects
-      @disert_theme = @student.index.disert_theme
+      session[:finished_subjects] = @index.study_plan.finished_subjects
+      @disert_theme = @index.disert_theme
     else
       create_by_other
     end
@@ -174,10 +174,11 @@ class StudyPlansController < ApplicationController
       session[:change_back] = 1
       redirect_to(:action => 'change', :id => params[:student][:id])
     else
-      @student = Student.find(params[:student][:id])
-      if @student.study_plan && @student.study_plan.attestation
-        @attestation = @student.study_plan.attestation
-        @approval = @student.study_plan.approval
+      @index = Index.find(params[:index][:id])
+      @student = @index.student
+      if @index.study_plan && @index.study_plan.attestation
+        @attestation = @index.study_plan.attestation
+        @approval = @index.study_plan.approval
       end
       unless session[:voluntary_subjects].map {|ps| ps.subject_id}.uniq.size <= session[:voluntary_subjects].size
         @errors << t(:message_5, :scope => [:controller, :plans])
@@ -193,9 +194,9 @@ class StudyPlansController < ApplicationController
         new_approval = @approval.clone
       end
       @disert_theme = DisertTheme.new(params[:disert_theme])
-      @disert_theme.index = @student.index
+      @disert_theme.index = @index
       @study_plan.admited_on = Time.now
-      @study_plan.index = @student.index
+      @study_plan.index = @index
       if @study_plan.valid? && @disert_theme.valid? && @errors.empty?
         @study_plan.save
         if params[:url][:action] == "change" && new_approval && @user.has_one_of_roles?(['faculty_secretary','vicerector'])
@@ -215,7 +216,7 @@ class StudyPlansController < ApplicationController
           redirect_to :controller => 'students'
         end
       else
-        redirect_to :action => 'create_by_other', :id => params[:student][:id]
+        redirect_to :action => 'create_by_other', :id => @index.id
       end
     end
   end
