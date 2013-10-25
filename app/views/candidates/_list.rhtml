@@ -23,8 +23,10 @@
         <span id='<%= dom_id(candidate) %>'>
           <%= foreign_pay_link(candidate) %>
         </span>
+      <% end %>
+      <% if @user.has_one_of_roles?(['faculty_secretary', 'board_chairman']) %>
         <%= link_to 'detail', :action => 'show', :id => candidate %>
-      <%end%>
+      <% end %>
       <% if @user.has_role?('faculty_secretary') %>
         <%= link_to t(:message_1, :scope => [:view, :candidates, :_list]), :action => 'edit', :id => candidate %>
         <%= link_to t(:message_2, :scope => [:view, :candidates, :_list]), {:action => 'delete', :id => candidate}, :confirm =>  t(:message_7, :scope => [:view, :candidates, :_list]) %>

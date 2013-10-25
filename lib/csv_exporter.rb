@@ -18,6 +18,7 @@ class CSVExporter
       CSV::Writer.generate(outfile, ';') do |csv|
         csv << ['sident', 'claimed_at', 'supervised_at']
         students.each do |s|
+          next if s.index.sident.blank? || s.index.sident.to_s == "-1"
           row = []
           row << s.index.sident
           row << s.index.scholarship_claimed_at.strftime('%d.%m.%Y')
@@ -256,7 +257,7 @@ class CSVExporter
       end
       outfile = File.open(file, 'wb')
       CSV::Writer.generate(outfile, ';') do |csv|
-        csv << %w(titul jmeno prijmeni email rc misto\ narozeni katedra obor ulice cislo mesto psc telefon)
+        csv << %w(id titul jmeno prijmeni titul\ za email rc datum\ narozeni misto\ narozeni katedra obor forma ulice cislo mesto psc telefon)
         @@mylog.info "There are #{cs.size} candidates"
         cs.each do |c|
           row = []
@@ -1027,6 +1028,75 @@ class CSVExporter
             csv << row
           end
         end
+      end
+    end
+
+    def specializations
+      File.open("specializations.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          csv << ["id", "obor"]
+          Specialization.all.each do |specialization|
+            csv << [specialization.id, specialization.name]
+          end
+        end
+      end
+
+    end
+
+    def specializations_details
+      File.open("specializations.csv", 'wb') do |outfile|
+        CSV::Writer.generate(outfile, ';') do |csv|
+          csv << ["specializace", "počet doktorandů", "počet školitelů", "průměrná délka studia", "počet absolventů"]
+          Specialization.all.each do |specialization|
+            row = []
+            row << specialization.id
+            indices = Index.all(:conditions => { :specialization_id => specialization.id })
+            row << indices.reject { |index| index.absolved? || index.finished? }.count
+
+            row << Tutorship.all(:conditions => { :specialization_id => specialization.id }).map(&:tutor).uniq.count
+
+            if indices.empty?
+              row << 0
+              row << 0
+            else
+              row << indices.select { |index| index.absolved? }.count
+              row << indices.inject(0) { |sum, index|  sum += index.year } / indices.count.to_f
+            end
+
+            puts row.join(";")
+
+            csv << row
+          end
+        end
+      end
+    end
+
+    def result_word(result)
+      case result
+      when 1
+        "schválena"
+      when 2
+        "schválena s výtkou"
+      when 3
+        "neschválena"
+      end
+    end
+
+    def attestation_results(indices)
+      File.open("atest.csv", "wb") do |f|
+        result = indices.map do |i|
+          line = [i.id, i.student.display_name, i.specialization.code, i.tutor.display_name, i.try(:disert_theme).try(:title)]
+          if (statement = i.study_plan.try(:attestation).try(:tutor_or_leader_statement))
+             line.concat([statement.created_on,
+             result_word(statement.result),
+             statement.try(:note).gsub(/[\r\n]/, ' ')])
+          else
+             line.concat(["neatestován"])
+          end
+          line.join(";")
+        end.join("\n")
+
+        f.write(result)
       end
     end
   end

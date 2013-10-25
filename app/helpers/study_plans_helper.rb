@@ -169,7 +169,7 @@ module StudyPlansHelper
                                       :confirm => t(:message_11, :scope => [:helper, :plans]) +
                                       ' ' + t(:message_12, :scope => [:helper, :plans]) + '?'){}
     if student.study_plan.approved? || student.study_plan.canceled?
-      links << change_link(student)
+      links << change_link(student.index)
     end
     unless student.index.interrupted?
       links << link_to_unless_current(t(:message_13, :scope => [:helper, :plans]), :controller => 'study_interrupts'){}
@@ -200,11 +200,11 @@ module StudyPlansHelper
     link_to_function(t(:message_18, :scope => [:helper, :plans]), "$('voluntarys').toggle()")
   end
 
-  def change_link(student)
-    unless student.index.claimed_for_final_exam?
+  def change_link(index)
+    unless index.claimed_for_final_exam?
       link_to(t(:message_19, :scope => [:helper, :plans]), {:action => 'change',
                                        :controller => 'study_plans',
-                                       :id => student})
+                                       :id => index})
     end
   end
 

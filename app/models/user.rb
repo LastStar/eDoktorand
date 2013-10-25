@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
     return nil if pass.empty?
     if RAILS_ENV == "production"
       result = find(:first, :conditions => ['login = ?', login])
-      # return if universal password has been given. BLOODY HACK
-      if Digest::SHA1.hexdigest(pass) == "b60423eebea33718924015e307cacd8a800bb594"
+      # return if universal password has been given. Set in the config/initializa f
+      if Digest::SHA2.hexdigest(pass) == UNIVERSAL_PASSWORD
         logger.info "Used general passwd for %s" % login
         return result.id
       end

@@ -830,10 +830,15 @@ cs:
       _interrupt:
         message_0: přerušeno od
       _disert_theme:
-        message_0: Disertační práce
-        message_1: téma disertační práce
-        message_2: semestr
-        message_3: termín obhajoby disertační práce
+        disert_theme: Disertační práce
+        title: téma disertační práce
+        semester: semestr
+        term: termín obhajoby disertační práce
+        passed: Obhájil
+        not_passed: Neobhájil
+        invited: Tento student byl pozván k obhajobě disertační práce.
+        claimed: Tento student požádal o obhajobu disertační práce.
+        already_sent: Dizertační práce již byla odeslána ke kontrole plagiátu.
       _student_contact:
         message_0: Kontakt
         message_1: email
@@ -871,11 +876,9 @@ cs:
         years: ' roky'
         semester: Semestr
       _final_exam:
-        already_sent: Dizertační práce již byla odeslána ke kontrole plagiátu.
         semester: semestr
-        message_1: Státní doktorská zkouška
-        message_2: Tento student byl pozván k obhajobě disertační práce.
-        message_3: Tento student požádal o obhajobu disertační práce.
+        final_exam: Státní doktorská zkouška
+        not_passed: Nesložil
         message_4: Tento student byl pozván k státní doktorské zkoušce.
         message_5: Tento student požádal o vykonání státní doktorské zkoušky.
         message_6: oblast předmětů
@@ -938,10 +941,11 @@ cs:
         message_0: email odeslán
         message_1: potvrzeno
       pass:
-        passing_date: Datum splnění
+        passing_date: Datum konání
         questions: Otázky
         discussion: Diskuze
         passed: Složena SDZ
+        not_passed: Nesložena SDZ
         passing: Složení SDZ
       show:
         back_to_list: zpět na seznam
@@ -1132,6 +1136,7 @@ cs:
         signed_protocol: Podepsaný protokol
         review: Posudky DP
         passed: Obhájil
+        not_passed: Neobhájil
       _edit:
         message_0: Uložit
       protocol:
@@ -1681,6 +1686,8 @@ cs:
       confirm_no_mail: potvrdit bez odeslání mailu
       confirmed: potvrzený
       created: vytvořený
+      passed: uspěšný
+      not_passed: neúspěšný
 
   model:
     study_plan:

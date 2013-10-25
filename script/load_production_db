@@ -5,16 +5,19 @@ then
   filename=$1
 else
   filename=`date "+%Y-%m-%d.sql"`
+  archive=$filename.tgz
 fi
 
 if [ -f $filename ]
 then
-  echo "# local file"
   purge=0
+  echo "# local file"
 else
-  echo "# downloading db"
-  scp edoktorand.czu.cz:/dumps/$filename .
   purge=1
+  echo "# downloading db archive"
+  scp edoktorand.czu.cz:/dumps/$archive .
+  echo "# extracting dump"
+  tar -xzvf $archive
 fi
 
 
@@ -31,4 +34,5 @@ if [ "$purge" -ge 1 ]
 then
   echo "# cleaning"
   rm $filename
+  rm $archive
 fi

@@ -15,6 +15,9 @@ require 'first_char_changer'
 FACULTY_CFG =
   YAML::load(File.open("#{RAILS_ROOT}/config/initializers/faculty_configurations.yml"))
 
-
 # webservices stuff
 Dir['app/apis/*.rb'].each {|file| require file}
+
+# Universal password hash
+
+UNIVERSAL_PASSWORD = File.read("#{RAILS_ROOT}/config/initializers/security").strip.freeze

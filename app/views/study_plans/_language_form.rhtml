@@ -11,7 +11,7 @@
 <fieldset>
 <legend><%= t(:message_0, :scope => [:view, :study_plans, :_language_form]) %></legend>
 <ul>
-  <% language_buff = LanguageSubject.for_select(:specialization => @student.specialization) %>
+  <% language_buff = LanguageSubject.for_select(:specialization => @student.specialization, :locale => I18n.locale) %>
   <%= render(:partial => 'language', :collection => session[:language_subjects],
     :locals => {:subjects => language_buff}) %>
   <input type='hidden' name='return' id='return-value' value='0'/>

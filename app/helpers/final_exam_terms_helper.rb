@@ -21,7 +21,11 @@ module FinalExamTermsHelper
   end
 
   def status(term)
-    if term.index.final_exam_invitation_sent?
+    if term.index.final_exam_passed_on
+      t(:passed, :scope => [:helper, :final_exam_terms])
+    elsif term.not_passed_on
+      t(:not_passed, :scope => [:helper, :final_exam_terms])
+    elsif term.index.final_exam_invitation_sent?
       t(:confirmed, :scope => [:helper, :final_exam_terms])
     else
       t(:created, :scope => [:helper, :final_exam_terms])

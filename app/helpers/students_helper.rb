@@ -22,7 +22,7 @@ module StudentsHelper
             links << cancel_scholarship_link(index)
           end
           if study_plan
-              links << change_link(index.student)
+              links << change_link(index)
           else
             links << create_link(index)
           end

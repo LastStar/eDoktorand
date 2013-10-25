@@ -385,5 +385,116 @@ class MassProcessor
         ImIndex.find_all_by_index_id(old_index_id).each { |i| puts i.update_attribute(:index_id, index_id) }
       end
     end
+
+    def prepare_demo
+      require 'faker'
+
+      Faculty.find(1, 3, 4, 6, 14, 15).each do |faculty|
+        puts 'specializations'
+        faculty.specializations.each do |specialization|
+          specialization.indices.each do |index|
+            index.student.try(:user).try(:destroy)
+            DisertTheme.find_all_by_index_id(index.id).each(&:destroy)
+            StudyPlan.find_all_by_index_id(index.id).each do |study_plan|
+              study_plan.approval.try(:destroy)
+              study_plan.destroy
+            end
+            index.interrupts.each do |interrupt|
+              interrupt.approval.try(:destroy)
+              interrupt.destroy
+            end
+            index.try(:student).try(:destroy)
+          end
+          specialization.candidates.each(&:destroy)
+          specialization.tutors.each do |tutor|
+            tutor.user.try(:destroy)
+            Statement.find_all_by_person_id(tutor.id).each do |statement|
+              statement.destroy
+            end
+            tutor.tutorship.destroy
+            tutor.destroy
+          end
+          SpecializationSubject.find_all_by_specialization_id(specialization.id).each(&:destroy)
+          specialization.exam_term.try(:destroy)
+          specialization.program.try(:destroy)
+          specialization.destroy
+        end
+
+        puts 'departments'
+        faculty.departments.each do |department|
+          Leadership.find_all_by_department_id(department.id).each(&:destroy)
+          DepartmentEmployment.find_all_by_unit_id(department.id).each(&:destroy)
+          department.destroy
+        end
+
+        puts 'all other'
+        faculty.documents.each(&:destroy)
+        faculty.faculty_employments.each(&:destroy)
+        faculty.deanship.try(:destroy)
+        faculty.destroy
+      end
+      AdmittanceTheme.destroy_all
+      Statement.all.each { |st| st.update_attribute(:note, '') }
+
+      puts 'rename people'
+      FacultySecretary.all.each { |fs| fs.destroy unless fs.faculty_employment }
+      Tutor.all.each { |tu| tu.destroy unless tu.tutorship }
+      DiplomaSupplement.all.each do |diploma|
+        n = Faker::Name.name
+        fn = n.split(" ").first
+        ln = n.split(" ").last
+        diploma.update_attributes(:given_name => fn, :family_name => ln)
+      end
+      Candidate.all.each do |person|
+        n = Faker::Name.name
+        fn = n.split(" ").first
+        ln = n.split(" ").last
+        person.update_attributes(:firstname => fn, :lastname => ln)
+        a = Faker::Address.street_address
+        s = a.split(" ")[1..-1].join(" ")
+        n = a.split(" ")[0]
+        person.update_attributes(:street => s, :number => n,
+                                 :city => Faker::Address.city)
+        s = a.split(" ")[1..-1].join(" ")
+        n = a.split(" ")[0]
+        person.update_attributes(:postal_street => s, :postal_number => n,
+                                 :postal_city => Faker::Address.city)
+        person.update_attribute(:birth_number, "9988899977")
+        person.update_attribute(:email, Faker::Internet.email)
+      end
+      Person.all.each do |person|
+        n = Faker::Name.name
+        fn = n.split(" ").first
+        ln = n.split(" ").last
+        person.update_attributes(:firstname => fn, :lastname => ln)
+        a = Faker::Address.street_address
+        s = a.split(" ")[1..-1].join(" ")
+        n = a.split(" ")[0]
+        person.update_attributes(:street => s, :desc_number => n,
+                                 :city => Faker::Address.city)
+        s = a.split(" ")[1..-1].join(" ")
+        n = a.split(" ")[0]
+        person.update_attributes(:postal_street => s, :postal_desc_number => n,
+                                 :postal_city => Faker::Address.city)
+        person.update_attribute(:birth_number, "9988899977")
+        person.update_attribute(:email, Faker::Internet.email)
+        person.update_attribute(:phone, Faker::PhoneNumber.cell_phone)
+        begin
+          if u = person.user
+            if u.has_role?("student")
+              u.destroy
+              next
+            end
+            u.update_attributes(:login => ln.parameterize)
+            puts "%i: %s - %s " % [person.faculty.id, u.login, u.roles.map(&:name).join(", ")] if u.has_one_of_roles?(["faculty_secretary", "dean"])
+          end
+        rescue Exception => e
+          puts e.message
+          puts person.id, person.user.id
+        end
+      end
+
+      return "Done"
+    end
   end
 end
