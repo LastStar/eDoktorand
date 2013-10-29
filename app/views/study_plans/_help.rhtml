@@ -2,7 +2,7 @@
 <p class='help'>
   <% if sp.canceled? %>
     <%= t(:message_0, :scope => [:view, :study_plans, :_help]) %>
-    <%= change_link(@index.student) %>
+    <%= change_link(@index) %>
   <% elsif !sp.approved? %>
     <%= t(:message_1, :scope => [:view, :study_plans, :_help]) %>
   <% elsif @index.defense_claimed? %>
