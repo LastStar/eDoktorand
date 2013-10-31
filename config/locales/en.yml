@@ -1463,6 +1463,9 @@ en:
 
 
   model:
+    im_index:
+      czech_language: český jazyk
+      doctorate: doktorský
     plan:
       study_plan_completed: SP completed
       study_plan_not_approved: SP not approved
