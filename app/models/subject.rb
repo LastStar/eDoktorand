@@ -48,7 +48,7 @@ class Subject < ActiveRecord::Base
     self.find(:all).map {|sub| [sub.label, sub.id]}
   end
 
-  def select_label(locale = 'cs')
+  def select_label(locale = :cs)
     logger.debug locale == :cs
     lbl = if locale != :cs && label_en
             label_en
