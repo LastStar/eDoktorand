@@ -1,6 +1,5 @@
 <% form_tag(:controller => 'study_plans', :action => 'save_full') do -%>
 <fieldset>
-  <%= hidden_field('student', 'id') %>
   <%= hidden_field('index', 'id') %>
   <%= hidden_field('url','action',:value => params[:action]) %>
 <%= hidden_field('study_plan', 'last_attested_on') %>
