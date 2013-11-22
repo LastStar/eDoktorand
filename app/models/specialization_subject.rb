@@ -7,7 +7,7 @@ class SpecializationSubject < ActiveRecord::Base
   # returns options for html select
   # there is only one option :specialization which is obligate
   def self.for_select(options = {})
-    options = { :locale => 'cz' }.merge(options)
+    options = { :locale => :cs }.merge(options)
     if options[:specialization]
       if options[:specialization].is_a?(Specialization)
         options[:specialization] = options[:specialization].id
