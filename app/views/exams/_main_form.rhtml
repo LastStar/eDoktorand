@@ -4,9 +4,9 @@
 <label>
 <%= t(:message_1, :scope => [:view, :exams, :_main_form]) %>
 </label>
-<%= content_tag('select', options_for_select(students.map {|stud|
-[stud.display_name, stud.id]}), {'id' => "student_id", 'name' =>
-"student[id]"}) %>
+<%= content_tag('select', options_for_select(indices.map {|index|
+[index.student.display_name, index.id]}), {'id' => "index_id", 'name' =>
+"index[id]"}) %>
 <br/>
 </fieldset>
 
