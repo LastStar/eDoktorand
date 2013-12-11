@@ -63,7 +63,7 @@ class PlanSubject < ActiveRecord::Base
   end
 
   # returns all unfinished plan subjects from approved study plans
-  # got option to return students
+  # got option to return indices
   def self.find_unfinished_by_subject(subject_id, options = {})
     sql = <<-SQL
     plan_subjects.subject_id = ? and \
@@ -75,9 +75,9 @@ class PlanSubject < ActiveRecord::Base
     SQL
     plan_subjects = find(:all, :include => [{:study_plan => :index}],
                          :conditions => [sql, subject_id])
-    if options[:students]
-      plan_subjects.map {|ps| ps.study_plan.index.student}.uniq.sort do |x,y|
-        x.display_name <=> y.display_name
+    if options[:indices]
+      plan_subjects.map { |ps| ps.study_plan.index }.uniq.sort do |x,y|
+        x.student.display_name <=> y.student.display_name
       end
     else
       plan_subjects
