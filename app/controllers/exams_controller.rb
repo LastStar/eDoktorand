@@ -58,13 +58,13 @@ class ExamsController < ApplicationController
     if session[:exam].subject_id == nil
       session[:exam].subject_id = params[:subject][:id]
     end
-    @students = PlanSubject.find_unfinished_by_subject(\
-      session[:exam].subject_id, :students => true)
+    @indices = PlanSubject.find_unfinished_by_subject(\
+      session[:exam].subject_id, :indices => true)
   end
 
   # save student of exam to session and view protocol
   def save_student_subject
-    session[:exam].index = Student.find(params[:student][:id]).index
+    session[:exam].index = Index.find(params[:index][:id])
     session[:exam].attributes = params[:exam]
     @exam = session[:exam]
   end
