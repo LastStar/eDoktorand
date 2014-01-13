@@ -23,6 +23,7 @@ class ScholarshipMonth < ActiveRecord::Base
       to_clone.each do |s|
         if s.index.studying?
           ns = s.clone
+          ns.created_on = ns.update_on = Time.now
           ns.scholarship_month = month
           ns.save
         end

@@ -37,7 +37,10 @@ class Scholarship < ActiveRecord::Base
                                    :include => {:index => :student})
     outfile = ''
     CSV::Writer.generate(outfile, ';') do |csv|
-      scholarships.each {|s| csv << s.csv_row}
+      scholarships.each do |s|
+        next unless s.index.has_any_scholarship?(month.starts_on)
+        csv << s.csv_row
+      end
     end
     month.pay!
 
