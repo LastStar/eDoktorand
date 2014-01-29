@@ -9,6 +9,8 @@ class ImStudent < ActiveRecord::Base
 
   # gets attributes from student relation
   def get_student_attributes
+    old_loc = I18n.locale
+    I18n.locale = :cs
     self.uic = student.uic
     self.lastname = student.lastname
     self.firstname = student.firstname
@@ -41,6 +43,7 @@ class ImStudent < ActiveRecord::Base
       self.bank_account = student.index.account_number
       self.bank_code = student.index.account_bank_number
     end
+    I18n.locale = old_loc
     return self
   end
 end

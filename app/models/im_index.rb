@@ -5,6 +5,8 @@ class ImIndex < ActiveRecord::Base
 
   # gets attributes from index
   def get_index_attributes
+    old_loc = I18n.locale
+    I18n.locale = :cs
     self.student_uic = index.student.uic
     self.department_name = index.department.name
     self.department_code = index.department.code
@@ -34,5 +36,6 @@ class ImIndex < ActiveRecord::Base
     self.education_place = "Praha"
     self.study_form_changed_on = index.study_form_changed_on
     self.sident = index.sident
+    I18n.locale = old_loc
   end
 end
