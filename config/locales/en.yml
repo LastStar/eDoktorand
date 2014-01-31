@@ -121,6 +121,7 @@ en:
         message_0: hide
         message_1: hide
       index:
+        vademekum: Vademekum
         message_0: documents
         message_1: study_directive
         message_2: scholarship_directive
@@ -912,7 +913,6 @@ en:
         phone: Phone
         uic: UIC
         sident: SIDENT
-        message_15: Consultant
         account: Account
         personal_information: Personal information
         birthname: Birth name
@@ -928,6 +928,7 @@ en:
         nominal_length: Nominal length
         study_length: Study length
         study_information: Study information
+        consultant: Consultant
       _final_exam:
         final_exam: Final exam
         semester: semester
