@@ -77,7 +77,7 @@ class Index < ActiveRecord::Base
 
   after_save :update_im_index
 
-  # update ImIndfsdfsafdsdf
+  # update ImIndex
   def update_im_index
     prepare_im_index unless im_index
     im_index.get_index_attributes
@@ -291,8 +291,8 @@ class Index < ActiveRecord::Base
   end
 
   # returns if study is finished
-  def finished?
-    !finished_on.nil? && finished_on.to_time < Date.today.to_time
+  def finished?(date = Date.today)
+    !finished_on.nil? && finished_on < date
   end
 
   # returns if study is absolved
@@ -306,8 +306,8 @@ class Index < ActiveRecord::Base
   end
 
   # returns if stduy plan is interrupted
-  def interrupted?
-    interrupted_on && interrupted_on < Time.now #&& interrupt && !interrupt.finished?
+  def interrupted?(date = Date.today)
+    interrupted_on && interrupted_on < date #&& interrupt && !interrupt.finished?
   end
 
   # returns true if studen claimed for final exam
@@ -579,14 +579,14 @@ class Index < ActiveRecord::Base
   end
 
   # returns status of index
-  def status
-    status = if absolved?
+  def status(date = Date.today)
+    status = if absolved?(date)
       I18n::t(:absolved, :scope => [:model, :index])
-    elsif finished?
+    elsif finished?(date)
       I18n::t(:finished, :scope => [:model, :index])
-    elsif interrupted?
+    elsif interrupted?(date)
       I18n::t(:interrupted, :scope => [:model, :index])
-    elsif studying?
+    elsif studying?(date)
       I18n::t(:studies, :scope => [:model, :index])
     else
       raise UnknownState
@@ -643,8 +643,8 @@ class Index < ActiveRecord::Base
     year > specialization.study_length
   end
 
-  def studying?
-    !finished? && !interrupted? && !absolved?
+  def studying?(date = Date.today)
+    !finished?(date) && !interrupted?(date) && !absolved?(date)
   end
 
   # switches study form
@@ -795,7 +795,7 @@ class Index < ActiveRecord::Base
   end
 
   def has_regular_scholarship?(date = Time.now)
-    present_study?(date) && !self_payer? && !absolved?(date) && !finished?
+    present_study?(date) && !self_payer? && !absolved?(date) && !finished?(date)
   end
 
   def has_extra_scholarship?
@@ -861,9 +861,8 @@ class Index < ActiveRecord::Base
     student.display_name
   end
 
-  # FIXME with date
-  def final_exam_passed?
-    !final_exam_passed_on.nil?
+  def final_exam_passed?(date = Date.today)
+    final_exam_passed_on && final_exam_passed_on < date
   end
 
   def final_exam_passed!(date = Date.today)
