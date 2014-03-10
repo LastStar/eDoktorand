@@ -569,6 +569,8 @@ class CSVExporter
     end
 
     def export_year_exams(exam_date_from, exam_date_to)
+      exam_date_from = Date.parse(exam_date_from)
+      exam_date_to = Date.parse(exam_date_to)
       @@mylog.info "Exporting exams list from #{exam_date_from}"
       Faculty.find(:all).each do |faculty|
         outfile = File.open("exams_list_%s.csv" % faculty.short_name, 'wb')
@@ -576,7 +578,10 @@ class CSVExporter
           faculty.departments.each do |department|
             @@mylog.debug department.name
             subjs = department.subjects.map(&:id)
-            @@mylog.debug subjs
+            final_exams = department.indices.select do |index|
+              index.final_exam_passed? && (exam_date_from..exam_date_to).include?(index.final_exam_passed_on)
+            end.size
+            csv << [department.name, 'SDZ', final_exams] if final_exams > 0
             subjs.each do |subject_id|
               subject_name = Subject.find(subject_id).label
               exams = Exam.count(:conditions => ["subject_id = ? and passed_on > ? and passed_on < ?", subject_id, exam_date_from, exam_date_to])
@@ -1135,6 +1140,25 @@ class CSVExporter
         end.join("\n")
 
         f.write(result)
+      end
+    end
+
+    def indices_by_tutors(faculty, date = Date.parse("2013-12-31"))
+      Dean.columns
+      faculty = Faculty.find(faculty) unless faculty.is_a? Faculty
+      File.open("studenti.csv", "wb") do |f|
+        CSV::Writer.generate(f, ';') do |csv|
+          faculty.departments.each do |department|
+            indices = department.indices.select { |i| !i.absolved?(date) && !i.finished?(date) && (i.studying?(date) || i.interrupted?(date)) }
+            if indices.size > 0
+              csv << [department.name]
+              csv << ["Celkem", indices.size]
+              indices.group_by(&:tutor).each_pair do |tutor, indices|
+                csv << [tutor.display_name, indices.size] if indices.size > 0
+              end
+            end
+          end
+        end
       end
     end
   end

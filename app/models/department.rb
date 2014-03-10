@@ -1,6 +1,5 @@
-# this is stub for admit form. In application should be changed to unit
 class Department < ActiveRecord::Base
-  
+
   has_many :candidates, :conditions => "finished_on IS NOT NULL"
   has_many :indices
   has_many :tutorships

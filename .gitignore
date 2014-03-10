@@ -11,5 +11,6 @@ public/pdf/thesis_result
 .DS_Store
 *.csv
 *.sql
+*.sql.tgz
 config/database.yml*
 config/initializers/security
