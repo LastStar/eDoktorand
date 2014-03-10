@@ -307,7 +307,7 @@ class Index < ActiveRecord::Base
 
   # returns if stduy plan is interrupted
   def interrupted?(date = Date.today)
-    interrupted_on && interrupted_on < date #&& interrupt && !interrupt.finished?
+    enrolled?(date) && interrupted_on && interrupted_on < date #&& interrupt && !interrupt.finished?
   end
 
   # returns true if studen claimed for final exam
@@ -644,7 +644,11 @@ class Index < ActiveRecord::Base
   end
 
   def studying?(date = Date.today)
-    !finished?(date) && !interrupted?(date) && !absolved?(date)
+    enrolled?(date) && !finished?(date) && !interrupted?(date) && !absolved?(date)
+  end
+
+  def enrolled?(date = Date.today)
+    enrolled_on <= date
   end
 
   # switches study form
