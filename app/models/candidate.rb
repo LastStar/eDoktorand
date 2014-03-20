@@ -303,6 +303,9 @@ class Candidate < ActiveRecord::Base
     elsif user.has_one_of_roles?(['faculty_secretary', 'dean'])
       conditions = ["specialization_id in (?) AND finished_on IS NOT NULL",
                     faculty.specializations]
+    elsif user.has_role?('board_chairman')
+      conditions = ["specialization_id = ? AND finished_on IS NOT NULL",
+                    user.person.specialization]
     else
       conditions = ["department_id = ? AND finished_on IS NOT NULL",
                     user.person.department.id]
