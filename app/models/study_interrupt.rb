@@ -17,6 +17,7 @@ class StudyInterrupt < ActiveRecord::Base
   # computes date it end from duration
   def end_on
     return unless duration
+    return ended_on if ended_on?
     if start_on_day
       start_on.advance(:months => duration)
     else
