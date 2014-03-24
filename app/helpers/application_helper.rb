@@ -194,7 +194,7 @@ module ApplicationHelper
           links << link_to(t(:message_21, :scope => [:helper, :application]), :controller => 'tutors')
           links << link_to(t(:message_22, :scope => [:helper, :application]), :controller => 'specializations')
         elsif @user.has_one_of_roles?(['tutor', 'leader', 'department_secretary'])
-          if @user.has_role?('department_secretary')
+          if @user.has_role?('department_secretary') && @user.person.faculty != Faculty.find(4)
             links << prepare_scholarship_link
           end
 
