@@ -96,7 +96,7 @@ class Candidate < ActiveRecord::Base
   # returns candidate's hash
   def hash
     str = "%s%i%s" % [self.lastname.first, self.id, self.firstname.first]
-    return '#' + str.hash.abs.to_s
+    return '#' + Digest::SHA256.hexdigest(str)[0..8].to_i(16).to_s
   end
 
   # finishes candidate

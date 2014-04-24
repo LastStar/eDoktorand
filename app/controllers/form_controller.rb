@@ -10,7 +10,7 @@ class FormController < ApplicationController
 
   # login for edit or check candidate detail
   def login
-    @candidate = Candidate.find(:first, :conditions => ["id = ?", params[:candidate][:id]])
+    @candidate = Candidate.find(params[:candidate][:id])
     if @candidate && @candidate.hash == params[:candidate][:hash]
       if !@candidate.finished?
         @action = 'update'
