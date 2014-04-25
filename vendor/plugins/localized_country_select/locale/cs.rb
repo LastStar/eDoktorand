@@ -259,13 +259,14 @@
 			:VU => "Vanuatu",
 			:WF => "Wallis a Futuna",
 			:WS => "Samoa",
+      :XK => "Kosovo",
 			:YE => "Jemen",
 			:YT => "Mayotte",
 			:ZA => "Jihoafrická republika",
 			:ZM => "Zambie",
 			:ZW => "Zimbabwe",
 			:ZZ => "Neznámá nebo neplatná oblast",
-    } 
+    }
 
   }
 }
