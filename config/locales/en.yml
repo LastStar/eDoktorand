@@ -13,6 +13,38 @@ en:
       message_0: Card state
       message_1: No
     study_plans:
+      annual_report:
+        university_name: Czech University of Life sciences in Prague
+        annual_attestation: Annual atestation
+        first_exam_dsp: I. Zkoušky v DSP
+        completion_term: Planed semester
+        by_plan: planned
+        date: Date
+        taking_exam: Passed on
+        result_of_exam: Result
+        passed: passed
+        state_doctorate_exam: Final exam
+        term: semester
+        additional_info_attestation: Additional attestation info
+        second_disert_theme: II. Disert theme
+        name_of_work: Title
+        state_of_work: Progress Report (Please indicate which assignments have already been submitted, in accordance with your study plan. In case that assignments were not yet submitted, indicate why, and what measures have been taken to comply with your study plan commitments).
+        student_evaluation: III. General student assesment
+        approve_word: Tutor's assessment
+        department_statement: Department's assessment
+        tutor_signature: Tutor's signature
+        leader_signature: Department leader's signature
+        executive_proposal: Specialization board proposal
+        dean_statement: Dean's statement
+        at_prague_at: In Prague at
+        dean_signature: Dean's signature
+        study_year: Study year
+        tutor_name: Tutor
+        study_name: Study form
+        specialization_name: Specialization
+        enroll_date: Enrollment date
+        name: Name
+        department: Katedra
       save_disert:
         message_0: Now you can see study plan as you created it in the previous steps. If you will not confirm it, all will changes will be lost!
       save_language:
