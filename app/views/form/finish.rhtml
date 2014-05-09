@@ -12,6 +12,28 @@
 <%= @candidate.specialization.faculty.name %><br />
 <%= t(:message_10, :scope => [:view, :form, :finish]) %>
 </p>
+
+<% if @candidate.specialization.faculty.id == 15 %>
+  <iframe width="119" height="22" frameborder="0" scrolling="no" src="http://c.imedia.cz/checkConversion?c=100004416&color=ffffff&v=1"></iframe>
+  <script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 974069551;
+  var google_conversion_language = "en";
+  var google_conversion_format = "3";
+  var google_conversion_color = "ffffff";
+  var google_conversion_label = "frAUCMG7lQkQr7680AM";
+  var google_remarketing_only = false;
+  /* ]]> */
+  </script>
+  <script type="text/javascript"  src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+    <div style="display:inline;">
+      <img height="1" width="1" style="border-style:none;" alt=""
+      src="//www.googleadservices.com/pagead/conversion/974069551/?label=frAUCMG7lQkQr7680AM&amp;guid=ON&amp;script=0"/>
+    </div>
+  </noscript>
+<% end %>
 <div class='links'>
   <%= link_to t(:message_11, :scope => [:view, :form, :finish]), :action => 'index' %>
 </div>
