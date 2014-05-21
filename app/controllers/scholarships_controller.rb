@@ -27,9 +27,6 @@ class ScholarshipsController < ApplicationController
 
   # scholarship list preparation
   def prepare
-    if @user.has_role?('department_secretary') && @user.person.faculty == Faculty.find(4)
-      redirect_to :action => :list
-    end
     @paying_date = ScholarshipMonth.current.starts_on
     @indices = Index.find_for_scholarship(@user, @paying_date)
     # TODO move to model class
@@ -172,6 +169,7 @@ class ScholarshipsController < ApplicationController
   end
 
   def next_action_for(user)
+    debugger
     if user.has_one_of_roles?(['faculty_secretary', 'department_secretary', 'leader','vicerector'])
       if !ScholarshipApproval.approved_for?(user.person.faculty)
         :prepare
