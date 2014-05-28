@@ -83,7 +83,10 @@ class ExamsController < ApplicationController
 
   # saving student and selecting external subjects
   def save_external_student
-    @index = Student.find(params[:index][:id]).index
+    @index = Index.find_all_by_student_id(params[:index][:id])
+    if @index.size > 1
+      @index = @index.detect { |i| i.status == 'studuje' && i.faculty == @user.person.faculty }
+    end
     exam = Exam.new
     exam.index = @index
     session[:exam] = exam
