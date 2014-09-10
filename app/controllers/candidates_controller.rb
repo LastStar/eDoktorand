@@ -227,7 +227,7 @@ class CandidatesController < ApplicationController
 
   # shows invitation for candidate
   def invitation
-   @candidate = Candidate.find(params[:id])
+    @candidate = Candidate.find(params[:id])
   end
 
   # rejects candidate from study

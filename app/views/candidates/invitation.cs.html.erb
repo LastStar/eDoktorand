@@ -1,0 +1,83 @@
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<p class='rightAlign'><%= @candidate.genderize("Vážený pan/paní","Vážený pan","Vážená paní") %><br/>
+<%= @candidate.display_name %><br/>
+<% unless @candidate.postal_city.empty? %>
+<%= @candidate.sending_postal_address %></p>
+<% else %>
+<%= @candidate.sending_address %></p>
+<% end %>
+<br/>
+<p class='subject'><b>Věc: pozvánka k přijímací zkoušce do DSP na <%= @faculty.short_name %> ČZU v Praze</b></p>
+
+<p>Na základě Vaší přihlášky ke studiu v DSP na <%= @faculty.short_name %> ČZU v Praze a v souladu s&nbsp;§&nbsp;50&nbsp;zákona č.&nbsp;111/98&nbsp;Sb. o vysokých školách Vám zasílám</p>
+
+<div class='centerAlign'>
+<h3>pozvánku k přijímací zkoušce do DSP pro akademický rok <%= Time.now.strftime("%Y") %>/<%= (Time.now+1.year).strftime("%Y") %>,</h3>
+
+<h3>která proběhne</h3>
+
+<h3>dne <%= @candidate.specialization.exam_term.date.strftime("%d. %m. %Y") %></h3>
+</div>
+
+<br/>
+<%= Parameter.get("admittance_invitation_time_and_place", @faculty) %>
+
+<p>Přijímací zkouška pro obor <%= @candidate.specialization.name %> proběhne od
+<%= @candidate.specialization.exam_term.start_time %> v místnosti č. <%=
+@candidate.specialization.exam_term.room %>, předsedou komise je <%=
+@candidate.specialization.exam_term.chairman.display_name %></p>
+
+<p>K přijímací zkoušce si přineste:
+<ul>
+  <% if @candidate.specialization.faculty.id == 4 %>
+    <li class='letter'>občanský průkaz</li>
+    <li class='letter'>doklad o ukončení vysokoškolského vzdělání (diplom)</li>
+    <li class='letter'>přehled složených zkoušek v magisterském typu studia, anebo v posledních dvou letech v případě pětiletého studijního oboru, a jejich klasifikaci (kopii potvrzenou studijním oddělením příslušné vysoké školy)</li>
+    <li class='letter'>kopii diplomové práce (nebo vědeckého článku, jehož autorem či spoluautorem je uchazeč o studium)</li>
+  <% else %>
+    <li class='letter'>průkaz totožnosti</>
+    <% if @candidate.study_id == 1 && @candidate.specialization.faculty.id != 14 %>
+    <li class='letter'>doklad o ukončení VŠ vzdělání, přehled složených zkoušek a celkový studijní průměr  potvrzený fakultou (týká se studujících mimo ČZU)</li>
+    <% end %>
+    <li class='letter'>doklad o zaplacení administrativního poplatku, pokud nebyl dodán s přihláškou</li>
+    <% if @candidate.specialization.faculty.id == 14 %>
+    <li class='letter'>další doklady k přijímacímu řízení, pokud nebyly dodány s přihláškou</li>
+    <% end %>
+  <% end %>
+</ul>
+</p>
+<br/>
+<p>V Praze dne <%= Time.now.strftime("%d. %m. %Y") %></p>
+<div style='float: right'><%= @faculty.dean.display_name %><br/>
+<%= @faculty.dean_label %> <%= @faculty.short_name %> ČZU</div>
+
+<div>
+Vyřizuje:<br/>
+<%= @faculty.secretary.display_name %>,<br/>
+oddělení VaV <%= @faculty.short_name %> ČZU v Praze<br/>
+tel: <%= @faculty.secretary.phone %><br/>
+e-mail: <%= @faculty.secretary.email %>
+</div>
+
+<div class='links'>
+	<a href='javascript:window.print()'>tisk</a>
+	<% if @user %>
+	<%#= link_to 'zpět', :page => session[:current_page_backward] ,:action => 'list'%>
+        <% if session[:back_page] == 'list' %>
+          <%= link_to 'zpět na výpis', :action => 'list',:page => session[:current_page_backward] %>
+        <% else %>
+          <%= link_to 'zpět na výpis', :action => 'list_all'%>
+        <% end %>
+	<% unless @candidate.invited? %>
+	<span id='mailLink'><%= link_to_remote 'odešli mail s pozvánkou', :update => 'mailLink', :url => {:action => 'invite_now', :id => @candidate.id} %></span>
+	<% end %>
+	<% end %>
+</div>
+<script type="text/javascript">window.print()</script>
+
+
