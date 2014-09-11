@@ -14,7 +14,6 @@ class ImIndex < ActiveRecord::Base
     self.faculty_name = index.faculty.name
     self.faculty_code = index.faculty.short_name
     self.study_year = index.year
-    self.academic_year = TermsCalculator.idm_current_year
     self.study_type = I18n.t(:doctorate, :scope => [:model, :im_index])
     self.study_type_code = 'D'
     self.study_form = index.study.name
@@ -26,8 +25,15 @@ class ImIndex < ActiveRecord::Base
     self.study_prog_code = index.specialization.program.code
     self.study_status = index.status
     self.study_status_code = index.status_code
-    self.study_status_from = index.status_from
-    self.study_status_to = index.status_to
+    if index.before_admit?
+      self.academic_year = TermsCalculator.idm_next_year
+      self.study_status_from = TermsCalculator.next_year_start.to_date
+      self.study_status_to = TermsCalculator.next_year_end.to_date
+    else
+      self.academic_year = TermsCalculator.idm_current_year
+      self.study_status_from = index.status_from
+      self.study_status_to = index.status_to
+    end
     self.enrollment_date = index.enrolled_on.to_date
     self.financing_type_code = index.payment_code
     self.financing_type = index.payment_type

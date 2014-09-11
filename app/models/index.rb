@@ -588,6 +588,10 @@ class Index < ActiveRecord::Base
       I18n::t(:interrupted, :scope => [:model, :index])
     elsif studying?(date)
       I18n::t(:studies, :scope => [:model, :index])
+    elsif enrolled?(date)
+      I18n::t(:studies, :scope => [:model, :index])
+    elsif before_admit?(date)
+      I18n::t(:studies, :scope => [:model, :index])
     else
       raise UnknownState
     end
@@ -607,6 +611,8 @@ class Index < ActiveRecord::Base
     elsif continues?
       "S"
     elsif studying?
+      "S"
+    elsif before_admit?
       "S"
     else
       raise UnknownState
@@ -635,7 +641,7 @@ class Index < ActiveRecord::Base
   end
 
   def payment_type
-    payment_id == 1 ? I18n.t(:study_in_standart_time, :scope => [:model, :index]) : I18n.t(:foreigner_pay_throught_dotation, :scope => [:model, :index])
+    payment_code == 1 ? I18n.t(:study_in_standart_time, :scope => [:model, :index]) : I18n.t(:foreigner_pay_throught_dotation, :scope => [:model, :index])
   end
 
   # returns true if index have year more than 3
@@ -649,6 +655,10 @@ class Index < ActiveRecord::Base
 
   def enrolled?(date = Date.today)
     enrolled_on <= date
+  end
+
+  def before_admit?(date = Date.today)
+    enrolled_on >= date
   end
 
   # switches study form
