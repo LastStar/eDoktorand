@@ -217,7 +217,7 @@ class Notifications < ActionMailer::Base
     index = disert_theme.index
     @from = 'edoktorand@edoktorand.czu.cz'
     @recipients = [index.faculty.secretary.email, index.tutor.email,
-      "sedmikova@af.czu.cz"]
+      index.faculty.dean.email, "sedmikova@af.czu.cz"]
     @body[:student] = index.student.display_name
     @body[:title] = disert_theme.title
     @body[:disert_theme_id] = disert_theme.id
