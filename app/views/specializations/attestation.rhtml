@@ -46,8 +46,10 @@
     </tr>
       <% if (statement = index.study_plan.attestation.try(:last_statement)) && statement.try(:note) && !statement.note.empty? %>
       <tr><td colspan='9'><%= "#{t(:note, :scope => [:view, :specializations, :attestation])}: #{statement.note}" %></td></tr>
-      <% else %>
-    <% end %>
+      <% end %>
+      <% if (disert_theme = index.disert_theme) %>
+      <tr><td style='border-bottom: 1px solid black' colspan='9'><%= disert_theme.title %></td></tr>
+      <% end %>
   <% end %>
 <%end%>
 </table>
