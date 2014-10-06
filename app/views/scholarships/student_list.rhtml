@@ -1,14 +1,4 @@
 <div id='students_list'>
-  <% if @student.prepared_for_claim? %>
-    <div class = 'links'>
-      <%= claim_accomodation_scholarship_link %>
-    </div>
-  <% else %>
-      <div class = 'links'>
-      <%= t(:message_1, :scope => [:view, :scholarships, :student_list]) %>
-    </div>
-
-  <% end %>
 <h1><%= t(:message_0, :scope => [:view, :scholarships, :student_list]) %></h1>
 <% if @scholarships.empty? %>
   <%= t(:message_2, :scope => [:view, :scholarships, :student_list]) %>
