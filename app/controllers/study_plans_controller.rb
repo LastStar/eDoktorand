@@ -172,7 +172,7 @@ class StudyPlansController < ApplicationController
     if !extract_voluntary || !@errors.empty?
       flash[:errors] = @errors.uniq
       session[:change_back] = 1
-      redirect_to(:action => 'change', :id => params[:student][:id])
+      redirect_to(:action => 'change', :id => params[:index][:id])
     else
       @index = Index.find(params[:index][:id])
       @student = @index.student
@@ -357,7 +357,7 @@ class StudyPlansController < ApplicationController
       session[:seminar_subjects] = PlanSubject.create_for(@student, :seminar)
     end
     session[:voluntary_subjects] = PlanSubject.create_for(@student.index, :voluntary)
-    session[:language_subjects] = PlanSubject.create_for(@student.index.specialization, :language)
+    session[:language_subjects] = PlanSubject.create_for(@student.index, :language)
   end
 
   # controls last semester
@@ -421,7 +421,7 @@ class StudyPlansController < ApplicationController
       last_semester(ps['finishing_on'])
       session[:language_subjects] << plan_subject
     end
-    n = @student.faculty == Faculty.find(14) ? 1 : 2
+    n = [14, 15].include?(@student.faculty.id) ? 1 : 2
     if session[:language_subjects].map {|ps| ps.subject_id}.uniq.size != n
       flash.now[:error] = t(:message_8, :scope => [:controller, :plans])
       false

@@ -136,7 +136,7 @@ class PlanSubject < ActiveRecord::Base
       subjects
     when :language
       subjects = []
-      n = student.faculty == Faculty.find(14) ? 1 : 2
+      n = [14, 15].include?(student.faculty.id) ? 1 : 2
       n.times do |i|
         (ps = PlanSubject.new).id = i + 1
         subjects << ps
