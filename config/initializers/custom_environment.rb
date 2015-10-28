@@ -9,7 +9,7 @@ $KCODE = 'u'
 require 'jcode'
 
 require 'timecop'
-Timecop.freeze "2015-06-30"
+Timecop.freeze Date.parse "2015-06-30"
 
 # mixins
 require 'first_char_changer'
