@@ -8,6 +8,9 @@ ActionMailer::Base.smtp_settings = {
 $KCODE = 'u'
 require 'jcode'
 
+require 'timecop'
+Timecop.freeze "2015-06-30"
+
 # mixins
 require 'first_char_changer'
 

@@ -19,6 +19,7 @@
           <%= @user.person.display_type.strip %>: <strong><%=  @user.person.display_name %></strong>
       	<% end %>
       </div>
+       <div id='archived'>Verze ke dni: <%= Time.now.strftime('%d. %m. %Y')%></div>
   		<a href="/" class="home-btn"></a>
 		</div>
   <% if @user %>

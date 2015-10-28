@@ -89,6 +89,16 @@ body {
 	float: left;
 }
 
+#head #archived
+{
+	margin-top: 16px;
+	color: #fff;
+	line-height: 120%;
+	text-align: right;
+	margin-right:100px;
+	float:right;
+}
+
 #head #logged-user
 {
 	margin-top: 16px;

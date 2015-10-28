@@ -1,6 +1,5 @@
 require 'csv'
 class Scholarship < ActiveRecord::Base
-
   belongs_to :index
   validates_presence_of :index, :amount, :scholarship_month
   belongs_to :scholarship_month

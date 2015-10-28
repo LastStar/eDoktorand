@@ -626,7 +626,6 @@ module ApplicationHelper
   def literature_review_link(disert_theme)
     path = "/pdf/literature_review/%i.pdf" % disert_theme.id
     if File.exists?(File.join(RAILS_ROOT, "public", path))
-
       return link_to(t(:message_62, :scope => [:helper, :application]), path, :popup => true)
     end
   end
